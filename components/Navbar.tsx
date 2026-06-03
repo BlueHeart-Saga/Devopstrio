@@ -172,7 +172,7 @@ export function Navbar() {
         <Link href="/" className="flex items-center gap-3 group">
           <img
             src="/assets/logo/logo.png"
-            alt="devopstrio logo"
+            alt="Devopstrio logo"
             className="w-7 h-7 transition-transform duration-300 group-hover:scale-105 object-contain"
           />
           <span className="text-lg sm:text-xl font-bold tracking-tight text-white font-sans">

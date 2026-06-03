@@ -4,7 +4,7 @@ import React from "react";
 import { Reveal } from "@/components/ui/Reveal";
 
 const timelineEvents = [
-  { year: "2020", title: "Foundation", desc: "devopstrio is founded in Palo Alto by three platform engineering veterans with a vision to eliminate consultancy overhead." },
+  { year: "2020", title: "Foundation", desc: "Devopstrio is founded in Palo Alto by three platform engineering veterans with a vision to eliminate consultancy overhead." },
   { year: "2022", title: "European Expansion", desc: "Opened the London office to deliver cloud modernization and zero-trust security services to EMEA fintech operations." },
   { year: "2024", title: "AI Practice Launch", desc: "Established the custom AI and agentic engineering practice, deploying governed vector engines and automated workflow platforms." },
   { year: "2026", title: "Global Scale", desc: "Expanded to 140+ senior architects across London, Palo Alto, and Bangalore, supporting global SaaS and public sector enterprises." }
@@ -14,7 +14,7 @@ export function OurStory() {
   return (
     <section className="w-full py-20 bg-[#050505] text-white border-b border-zinc-900 relative">
       <div className="max-w-site mx-auto w-full px-6 md:px-12 lg:px-16 xl:px-20">
-        
+
         <Reveal className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-12 lg:gap-20 items-start mb-16">
           <div>
             <div className="flex items-center gap-2 mb-4">

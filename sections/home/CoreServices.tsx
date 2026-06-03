@@ -79,13 +79,13 @@ export function CoreServices() {
 
   return (
     <section className="w-full pt-24 md:pt-36 pb-16 md:pb-20 bg-[#030303] text-white border-b border-zinc-900 relative overflow-hidden" id="capabilities">
-      
+
       {/* Background ambient red glow */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[radial-gradient(circle_at_center,rgba(220,38,38,0.04),transparent_70%)] blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-[radial-gradient(circle_at_center,rgba(225,29,72,0.03),transparent_70%)] blur-3xl pointer-events-none" />
 
       <div className="max-w-site mx-auto w-full px-6 md:px-12 lg:px-16 xl:px-20 relative z-10">
-        
+
         {/* Section Header */}
         <Reveal>
           <div className="mb-20 max-w-4xl">
@@ -103,26 +103,25 @@ export function CoreServices() {
 
         {/* Huge Text Tabs + Visual Card Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.85fr] gap-12 lg:gap-20 items-start mb-16 lg:mb-24">
-          
+
           {/* Left Side: Massive Navigation List */}
           <div className="flex flex-col gap-3 md:gap-4">
             {services.map((service) => {
               const isActive = activeId === service.id;
               return (
-                <button 
+                <button
                   key={service.id}
                   onClick={() => setActiveId(service.id)}
-                  className={`text-left text-2xl md:text-3xl lg:text-[34px] tracking-tight font-bold transition-all duration-300 ${
-                    isActive ? "text-white" : "text-zinc-600 hover:text-zinc-400"
-                  }`}
+                  className={`text-left text-2xl md:text-3xl lg:text-[34px] tracking-tight font-bold transition-all duration-300 ${isActive ? "text-white" : "text-zinc-600 hover:text-zinc-400"
+                    }`}
                 >
                   {service.title}
                 </button>
               );
             })}
-            
-            <a 
-              href="/services" 
+
+            <a
+              href="/services"
               className="mt-8 text-white text-base md:text-lg font-medium tracking-wide flex items-center gap-2 border-b border-white pb-1 w-fit hover:text-rose-400 hover:border-rose-400 transition-colors"
             >
               All capabilities <ArrowRight size={18} />
@@ -141,9 +140,9 @@ export function CoreServices() {
                 className="absolute inset-0"
               >
                 {/* Wave Background Image */}
-                <img 
-                  src={activeService.bgImage} 
-                  alt={activeService.title} 
+                <img
+                  src={activeService.bgImage}
+                  alt={activeService.title}
                   className="absolute inset-0 w-full h-full object-cover opacity-50 mix-blend-screen pointer-events-none"
                 />
                 {/* Dark gradient overlay to ensure text readability */}
@@ -168,7 +167,7 @@ export function CoreServices() {
                 <p className="text-zinc-300 text-base md:text-[17px] leading-[1.7] font-bold mb-8 max-w-lg">
                   {activeService.desc}
                 </p>
-                
+
                 <ul className="flex flex-col gap-3 mb-8">
                   {activeService.features.map((feature, i) => (
                     <li key={i} className="flex items-center gap-3 text-zinc-300 text-sm md:text-[15px] font-bold">
@@ -177,8 +176,8 @@ export function CoreServices() {
                     </li>
                   ))}
                 </ul>
-                
-                <a 
+
+                <a
                   href={activeService.href}
                   className="inline-flex items-center gap-2 text-sm font-semibold text-rose-500 hover:text-rose-400 transition-colors uppercase tracking-wider"
                 >
@@ -205,7 +204,7 @@ export function CoreServices() {
 
       </div>
 
-    
+
 
     </section>
   );

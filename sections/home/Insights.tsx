@@ -31,7 +31,7 @@ export function Insights() {
   return (
     <section className="w-full py-20 md:py-32 bg-[#030303] text-white border-b border-zinc-900 relative">
       <div className="max-w-site mx-auto w-full px-6 md:px-12 lg:px-16 xl:px-20">
-        
+
         {/* Header Block */}
         <Reveal className="flex justify-between items-end mb-16 pb-6 border-b border-zinc-900">
           <div>
@@ -39,7 +39,7 @@ export function Insights() {
               Latest Highlights
             </h2>
           </div>
-          <a 
+          <a
             href="/contact"
             className="inline-flex items-center gap-1.5 text-sm font-medium text-rose-500 hover:text-rose-400 transition-colors"
           >
@@ -49,14 +49,14 @@ export function Insights() {
 
         {/* 3-Column Highlights Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_1.8fr_1.1fr] gap-8">
-          
+
           {/* Column 1: AI insights & case study */}
           <div className="flex flex-col gap-8">
             {/* Top Card: AI & Data Insights */}
             <div className="p-6 rounded-2xl border border-zinc-900 bg-zinc-950/20 hover:border-zinc-800 transition-all duration-300 relative group overflow-hidden flex flex-col justify-between aspect-square">
               {/* Background gradient waves */}
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,rgba(220,38,38,0.05),transparent_70%)] pointer-events-none" />
-              
+
               <div>
                 <span className="text-xs font-semibold text-rose-500 uppercase tracking-wider block mb-4">
                   AI & Data Insights
@@ -66,7 +66,7 @@ export function Insights() {
                 </p>
               </div>
 
-              <a 
+              <a
                 href="/contact"
                 className="inline-flex items-center gap-1.5 text-xs font-semibold text-rose-500 hover:text-rose-455 transition-colors uppercase tracking-wider"
               >
@@ -77,8 +77,8 @@ export function Insights() {
             {/* Bottom Card: Case Study: Retail AI Inventory */}
             <div className="rounded-2xl border border-zinc-900 bg-zinc-950/20 hover:border-zinc-850/80 overflow-hidden group transition-all duration-300 flex flex-col justify-between h-full">
               <div className="relative aspect-[16/9] w-full overflow-hidden">
-                <img 
-                  src="/assets/cases/retail_inventory.png" 
+                <img
+                  src="/assets/cases/retail_inventory.png"
                   alt="Retail AI Inventory"
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
@@ -90,7 +90,7 @@ export function Insights() {
                 <p className="text-sm font-medium text-zinc-200 leading-snug group-hover:text-white transition-colors">
                   Retail AI Inventory Optimization
                 </p>
-                <a 
+                <a
                   href="/contact"
                   className="inline-flex items-center gap-1.5 text-xs font-semibold text-rose-500 hover:text-rose-400 transition-colors uppercase tracking-wider"
                 >
@@ -103,8 +103,8 @@ export function Insights() {
           {/* Column 2: Large event highlight */}
           <div className="rounded-2xl border border-zinc-900 bg-zinc-950/20 hover:border-zinc-800 overflow-hidden group transition-all duration-300 flex flex-col h-full relative">
             <div className="relative aspect-[16/10] w-full overflow-hidden border-b border-zinc-900">
-              <img 
-                src="/assets/events/nasscom_keynote.png" 
+              <img
+                src="/assets/events/nasscom_keynote.png"
                 alt="NASSCOM Forum"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.02]"
               />
@@ -117,14 +117,14 @@ export function Insights() {
                   EVENT HIGHLIGHT
                 </span>
                 <h3 className="text-xl md:text-2xl font-bold text-white tracking-tight leading-snug mb-3 group-hover:text-zinc-100 transition-colors">
-                  DevOpsTrio at NASSCOM Technology & Leadership Forum 2026
+                  Devopstrio at NASSCOM Technology & Leadership Forum 2026
                 </h3>
                 <p className="text-zinc-450 text-sm md:text-base font-bold leading-relaxed">
                   Driving conversations on AI transformation, cloud innovation and digital leadership.
                 </p>
               </div>
 
-              <a 
+              <a
                 href="/contact"
                 className="inline-flex items-center gap-2 text-xs font-semibold text-rose-500 hover:text-rose-400 transition-colors uppercase tracking-wider self-start"
               >
@@ -137,7 +137,7 @@ export function Insights() {
           <div className="rounded-2xl border border-zinc-900 bg-zinc-950/10 p-6 flex flex-col justify-between gap-6">
             <div className="flex flex-col gap-6 divide-y divide-zinc-900">
               {listInsights.map((insight, index) => (
-                <a 
+                <a
                   key={insight.title}
                   href={insight.href}
                   className={`flex flex-col gap-2 group block ${index > 0 ? "pt-6" : ""}`}

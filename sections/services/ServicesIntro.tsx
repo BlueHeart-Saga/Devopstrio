@@ -15,7 +15,7 @@ export function ServicesIntro() {
         <Reveal>
           <div className="flex flex-col gap-6 text-zinc-400 text-xs md:text-sm font-light leading-relaxed">
             <p>
-              At devopstrio, we do not build simple MVPs. We engineer enterprise systems designed for maximum durability. Our teams consist of senior consultants, cloud architects, and data scientists with decades of collective experience in financial technology, healthcare systems, and high-frequency cloud operations.
+              At Devopstrio, we do not build simple MVPs. We engineer enterprise systems designed for maximum durability. Our teams consist of senior consultants, cloud architects, and data scientists with decades of collective experience in financial technology, healthcare systems, and high-frequency cloud operations.
             </p>
             <p>
               Every engagement is backed by our strict Service Level Agreements (SLAs), automated zero-trust security enforcement, and state-of-the-art platform engineering practices to ensure your teams can build, test, and release securely at any volume.

@@ -2,15 +2,16 @@
 
 import React from "react";
 import { Reveal } from "@/components/ui/Reveal";
-import { MapPin } from "lucide-react";
+import { MapPin, ChevronRight, ChevronLeft, ChevronDown } from "lucide-react";
 
 const deliveryProcess = [
-  { step: "Discover", desc: "Audit existing infrastructure, telemetry pipelines & software stack bottlenecks." },
-  { step: "Strategize", desc: "Draft landing zones, compliance criteria & AI integration opportunities." },
-  { step: "Architect", desc: "Formulate declarative Terraform/Kubernetes blueprints & API schemas." },
+  { step: "Consult", desc: "Audit existing infrastructure, telemetry pipelines & software stack bottlenecks." },
+  { step: "Design", desc: "Draft landing zones, compliance criteria & AI integration opportunities." },
   { step: "Build", desc: "Execute core software development, CI/CD flows & LLM evaluations." },
   { step: "Deploy", desc: "Automate canary rollouts, post-deployment tests & security posture scans." },
-  { step: "Optimize", desc: "Assess resource utilization, FinOps spend & agent response times." }
+  { step: "Operate", desc: "Manage infrastructure, monitor performance, and ensure continuous availability." },
+  { step: "Optimize", desc: "Assess resource utilization, FinOps spend & system response times." },
+  { step: "Scale", desc: "Expand architecture seamlessly to support business growth and global reach." }
 ];
 
 const offices = [
@@ -45,27 +46,126 @@ export function GlobalNetworks() {
           </div>
         </Reveal>
 
-        {/* Horizontal Steps List */}
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-6 mb-20">
-          {deliveryProcess.map((item, index) => (
-            <div 
-              key={item.step}
-              className="process-step p-5 rounded-xl border border-zinc-900 bg-zinc-950/20 hover:border-zinc-800 transition-all duration-300 flex flex-col justify-between"
-            >
-              <div className="flex justify-between items-center mb-6">
-                <span className="text-xs font-mono text-rose-500">0{index + 1}</span>
-                <span className="text-[10px] font-mono text-zinc-600 uppercase tracking-widest">PHASE</span>
+        {/* Client Success Lifecycle Diagram */}
+        <div className="mb-24 relative p-8 md:p-12 rounded-3xl border border-zinc-900 bg-zinc-950/30 overflow-hidden">
+          
+          <Reveal>
+            <div className="mb-16">
+               <span className="text-xs font-bold tracking-[0.25em] uppercase text-rose-500 block mb-3">
+                 CLIENT SUCCESS LIFECYCLE
+               </span>
+               <h3 className="text-2xl md:text-4xl font-light text-white tracking-tight">
+                 Our Proven Delivery <span className="font-bold">Framework</span>
+               </h3>
+            </div>
+          </Reveal>
+
+          {/* Desktop Zigzag Pipeline */}
+          <div className="hidden lg:block w-full relative pt-12 pb-24">
+            
+            {/* Relative wrapper for absolute SVG alignment */}
+            <div className="relative z-10 w-full">
+              
+              {/* SVG Zigzag Connecting Line */}
+              <div className="absolute top-[68px] left-0 right-0 h-[100px] z-0 pointer-events-none">
+                 <svg preserveAspectRatio="none" viewBox="0 0 100 100" className="w-full h-full opacity-40">
+                    <polyline 
+                      points="7.14,0 21.4,100 35.7,0 50,100 64.3,0 78.6,100 92.8,0" 
+                      fill="none" 
+                      stroke="#f43f5e" 
+                      strokeWidth="0.5" 
+                      strokeDasharray="2, 2"
+                    />
+                 </svg>
               </div>
-              <div>
-                <strong className="block text-sm font-semibold tracking-wide text-zinc-200 mb-2">
-                  {item.step}
-                </strong>
-                <p className="text-xs text-zinc-450 leading-relaxed font-bold">
-                  {item.desc}
-                </p>
+
+              {/* 7-Step Staggered Grid */}
+              <div className="grid grid-cols-7 gap-4 relative z-10">
+                {deliveryProcess.map((item, index) => {
+                   const isTop = index % 2 === 0;
+                   
+                   return (
+                     <div key={item.step} className={`flex flex-col items-center text-center ${isTop ? '' : 'mt-[100px]'}`}>
+                        
+                        {/* Floating Accent Number */}
+                        <div className="text-2xl font-black text-rose-500/20 italic mb-3 select-none">
+                          0{index + 1}
+                        </div>
+
+                        {/* 3D Isometric Diamond Node */}
+                        <Reveal delay={index * 0.1}>
+                          <div className="relative group w-12 h-12 mb-8 mx-auto cursor-default">
+                             {/* Glow Effect */}
+                             <div className="absolute inset-0 bg-rose-500/20 blur-xl rounded-full group-hover:bg-rose-500/40 transition-all duration-500 opacity-0 group-hover:opacity-100" />
+                             
+                             {/* Isometric Diamond Body */}
+                             <div className="absolute inset-0 rotate-45 rounded-xl border border-zinc-700 bg-gradient-to-br from-zinc-900 to-[#050505] shadow-2xl group-hover:border-rose-500 transition-all duration-500 flex items-center justify-center overflow-hidden">
+                                <div className="absolute inset-0 bg-gradient-to-tr from-rose-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                             </div>
+                             
+                             {/* Inner Glowing Dot */}
+                             <div className="absolute inset-0 flex items-center justify-center z-10 text-rose-500 font-bold group-hover:scale-150 transition-transform duration-500">
+                                <div className="w-2 h-2 rounded-full bg-rose-500 shadow-[0_0_10px_rgba(225,29,72,0.8)]" />
+                             </div>
+                          </div>
+                        </Reveal>
+
+                        {/* Content Card */}
+                        <Reveal delay={index * 0.1 + 0.1} className="w-full">
+                          <div className="bg-zinc-950/40 px-2 py-4 rounded-xl border border-zinc-800/40 hover:border-zinc-700 transition-colors h-full group cursor-default shadow-lg hover:shadow-2xl">
+                            <h4 className="text-xs xl:text-sm font-bold text-zinc-100 uppercase tracking-widest mb-3 group-hover:text-rose-400 transition-colors">
+                              {item.step}
+                            </h4>
+                            <p className="text-[10px] xl:text-[11px] text-zinc-400 font-medium leading-relaxed">
+                              {item.desc}
+                            </p>
+                          </div>
+                        </Reveal>
+
+                     </div>
+                   )
+                })}
               </div>
             </div>
-          ))}
+          </div>
+
+          {/* Mobile/Tablet Flow (Diamond Stack) */}
+          <div className="lg:hidden flex flex-col gap-0 pb-10">
+            {deliveryProcess.map((item, index) => (
+              <React.Fragment key={item.step}>
+                <Reveal className="w-full">
+                  <div className="p-6 rounded-2xl border border-zinc-800/60 bg-zinc-950/40 hover:border-rose-500/50 hover:bg-zinc-900/60 transition-all duration-300 relative overflow-hidden group shadow-lg">
+                    {/* Background Watermark Number */}
+                    <div className="absolute -top-4 -right-2 p-4 text-7xl font-black text-rose-500/5 italic select-none pointer-events-none group-hover:text-rose-500/10 transition-colors duration-500">
+                      0{index + 1}
+                    </div>
+                    
+                    <div className="flex items-center gap-6 mb-4 relative z-10">
+                      {/* Diamond Icon */}
+                      <div className="relative w-10 h-10 flex-shrink-0">
+                         <div className="absolute inset-0 rotate-45 rounded-lg border border-rose-500/50 bg-gradient-to-br from-zinc-900 to-[#050505] shadow-[0_0_15px_rgba(225,29,72,0.2)] group-hover:border-rose-500 transition-all duration-300" />
+                         <div className="absolute inset-0 flex items-center justify-center z-10">
+                            <div className="w-1.5 h-1.5 rounded-full bg-rose-500 shadow-[0_0_10px_rgba(225,29,72,0.8)]" />
+                         </div>
+                      </div>
+                      <h4 className="text-xl font-bold text-zinc-100 tracking-wide group-hover:text-rose-400 transition-colors">{item.step}</h4>
+                    </div>
+                    <p className="text-sm text-zinc-400 font-medium leading-relaxed relative z-10">
+                      {item.desc}
+                    </p>
+                  </div>
+                </Reveal>
+                
+                {/* Connecting Vertical Dashed Line */}
+                {index < deliveryProcess.length - 1 && (
+                  <div className="flex justify-center h-8">
+                     <div className="w-[1px] h-full border-l border-dashed border-rose-500/40" />
+                  </div>
+                )}
+              </React.Fragment>
+            ))}
+          </div>
+
         </div>
 
         {/* Global Offices Grid */}

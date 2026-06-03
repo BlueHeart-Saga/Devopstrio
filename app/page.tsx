@@ -8,7 +8,7 @@ import { Testimonials } from "@/sections/home/Testimonials";
 import { CoreServices } from "@/sections/home/CoreServices";
 import { IndustriesSection } from "@/sections/home/IndustriesSection";
 import { CaseStudies } from "@/sections/home/CaseStudies";
-import { Whydevopstrio } from "@/sections/home/WhyDevOpsTrio";
+import { WhyDevopstrio } from "@/sections/home/WhyDevopstrio";
 import { OurAdvantage } from "@/sections/home/OurAdvantage";
 import { TechnicalPartnerships } from "@/sections/home/TechnicalPartnerships";
 import { GlobalNetworks } from "@/sections/home/GlobalNetworks";
@@ -23,7 +23,7 @@ const homeSections = [
   { id: "capabilities", label: "Capabilities" },
   { id: "industries", label: "Industries" },
   { id: "impact", label: "Impact" },
-  { id: "why-devopstrio", label: "Why Devopstrio" },
+  { id: "why-Devopstrio", label: "Why Devopstrio" },
   { id: "partnerships", label: "Partnerships" },
   { id: "networks", label: "Networks" },
   { id: "insights", label: "Insights" },
@@ -34,7 +34,7 @@ export default function Home() {
   useEffect(() => {
     let lenis: { raf: (time: number) => void; destroy: () => void } | null = null;
     let raf = 0;
-    let cleanupTriggers = () => {};
+    let cleanupTriggers = () => { };
     let alive = true;
 
     const startMotion = async () => {
@@ -101,8 +101,8 @@ export default function Home() {
       <div id="impact">
         <CaseStudies />
       </div>
-      <div id="why-devopstrio">
-        <Whydevopstrio />
+      <div id="why-Devopstrio">
+        <WhyDevopstrio />
         <OurAdvantage />
       </div>
       <div id="partnerships">

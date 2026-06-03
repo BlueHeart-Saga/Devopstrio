@@ -14,7 +14,7 @@ export function WhyContactUs() {
   return (
     <section className="w-full py-20 bg-[#030303] text-white border-b border-zinc-900 relative">
       <div className="max-w-site mx-auto w-full px-6 md:px-12 lg:px-16 xl:px-20">
-        
+
         <Reveal className="max-w-3xl mb-16">
           <div className="flex items-center gap-2 mb-4">
             <span className="h-[1px] w-6 bg-rose-600"></span>
@@ -29,9 +29,9 @@ export function WhyContactUs() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {options.map((opt) => (
-            <a 
-              href="mailto:hello@devopstrio.com" 
-              key={opt.title} 
+            <a
+              href="mailto:hello@Devopstrio.com"
+              key={opt.title}
               className="border border-zinc-900 bg-zinc-950/20 p-8 rounded-xl flex flex-col justify-between hover:border-zinc-800 transition-colors group relative"
             >
               <div>

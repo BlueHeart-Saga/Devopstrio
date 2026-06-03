@@ -35,9 +35,9 @@ export function ImperativesBanner() {
                     Explore how organizations are turning AI potential into measurable business impact.
                   </p>
                 </div>
-                
-                <a 
-                  href="/contact" 
+
+                <a
+                  href="/contact"
                   className="inline-flex items-center gap-2 px-5 py-3 rounded-lg text-xs font-semibold uppercase tracking-wider border border-zinc-800 hover:border-zinc-700 bg-zinc-950/80 hover:bg-zinc-900 text-zinc-200 hover:text-white transition-all duration-300 self-start md:self-center flex-shrink-0"
                 >
                   Download Report <Download size={14} className="text-rose-500" />
@@ -79,7 +79,7 @@ export function ImperativesBanner() {
                 <div className="absolute top-0 right-0 w-32 h-32 bg-[radial-gradient(circle_at_top_right,rgba(220,38,38,0.2),transparent_70%)] pointer-events-none" />
                 {/* Visual red waves decoration */}
                 <div className="absolute inset-x-0 bottom-0 h-1/2 bg-[linear-gradient(to_top,rgba(220,38,38,0.1),transparent)] [mask-image:linear-gradient(rgba(0,0,0,1),transparent)]" />
-                
+
                 <div className="flex justify-between items-start">
                   <span className="text-[8px] font-mono text-zinc-500 tracking-widest uppercase">RESEARCH REPORT</span>
                   <FileText size={16} className="text-rose-500" />
@@ -94,7 +94,7 @@ export function ImperativesBanner() {
                 </div>
 
                 <div className="flex justify-between items-center text-[8px] font-mono text-zinc-500 mt-4">
-                  <span>DEVOPSTRIO</span>
+                  <span>Devopstrio</span>
                   <span className="text-white">2026 EDITION</span>
                 </div>
               </div>

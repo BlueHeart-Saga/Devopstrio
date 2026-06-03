@@ -7,7 +7,7 @@ const sections = [
   { id: "capabilities", label: "Capabilities" },
   { id: "industries", label: "Industries" },
   { id: "impact", label: "Impact" },
-  { id: "why-devopstrio", label: "Why devopstrio" },
+  { id: "why-Devopstrio", label: "Why Devopstrio" },
   { id: "networks", label: "Global Networks" },
   { id: "careers", label: "Careers" }
 ];
@@ -17,7 +17,7 @@ const defaultSections = [
   { id: "capabilities", label: "Capabilities" },
   { id: "industries", label: "Industries" },
   { id: "impact", label: "Impact" },
-  { id: "why-devopstrio", label: "Why devopstrio" },
+  { id: "why-Devopstrio", label: "Why Devopstrio" },
   { id: "networks", label: "Global Networks" },
   { id: "careers", label: "Careers" }
 ];
@@ -89,19 +89,18 @@ export function SectionNavbar({ sections = defaultSections }: { sections?: { id:
   };
 
   return (
-    <div 
+    <div
       ref={navRef}
       className="sticky z-40 w-full transition-all duration-300 pointer-events-none"
       style={{ top: isMainNavbarVisible ? "74px" : "16px" }}
     >
       <div className="max-w-site mx-auto px-4 md:px-12 lg:px-16">
-        <nav 
+        <nav
           aria-label="Section navigation"
-          className={`pointer-events-auto w-full transition-all duration-350 ${
-            isSticky 
-              ? "bg-[#000000]/70 border border-zinc-900/80 backdrop-blur-md rounded-full px-6 py-2 shadow-2xl scale-[0.98]" 
+          className={`pointer-events-auto w-full transition-all duration-350 ${isSticky
+              ? "bg-[#000000]/70 border border-zinc-900/80 backdrop-blur-md rounded-full px-6 py-2 shadow-2xl scale-[0.98]"
               : "border-b border-zinc-900 bg-transparent py-4 px-2"
-          } flex items-center justify-start overflow-x-auto scrollbar-none gap-8`}
+            } flex items-center justify-start overflow-x-auto scrollbar-none gap-8`}
         >
           {sections.map((section) => {
             const isActive = activeSection === section.id;
@@ -110,9 +109,8 @@ export function SectionNavbar({ sections = defaultSections }: { sections?: { id:
                 key={section.id}
                 href={`#${section.id}`}
                 onClick={(e) => handleLinkClick(e, section.id)}
-                className={`relative py-1 text-xs font-semibold tracking-wide uppercase transition-colors whitespace-nowrap flex-shrink-0 ${
-                  isActive ? "text-white" : "text-zinc-400 hover:text-zinc-200"
-                }`}
+                className={`relative py-1 text-xs font-semibold tracking-wide uppercase transition-colors whitespace-nowrap flex-shrink-0 ${isActive ? "text-white" : "text-zinc-400 hover:text-zinc-200"
+                  }`}
               >
                 {section.label}
                 {isActive && (

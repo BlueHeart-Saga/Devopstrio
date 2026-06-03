@@ -8,22 +8,22 @@ export function BusinessOverview() {
   return (
     <section className="w-full py-20 bg-[#050505] text-white border-b border-zinc-900 relative">
       <div className="max-w-site mx-auto w-full px-6 md:px-12 lg:px-16 xl:px-20">
-        
+
         {/* Top Header & Overview */}
         <Reveal className="relative grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start mb-24 p-8 md:p-12 lg:p-16 rounded-[2.5rem] border border-zinc-800/40 bg-zinc-950/20 overflow-hidden shadow-2xl">
-          
+
           {/* Microsoft Fluent-Style Calm Mesh/Wave Background */}
           <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
-             {/* Deep base color to maintain readability */}
-             <div className="absolute inset-0 bg-[#030303]/80" />
-             
-             {/* Soft glowing abstract waves */}
-             <div className="absolute -top-[20%] -left-[10%] w-[60%] h-[70%] bg-rose-600/15 rounded-full blur-[140px] mix-blend-screen transition-all duration-1000" />
-             <div className="absolute -bottom-[20%] -right-[10%] w-[70%] h-[80%] bg-indigo-600/15 rounded-full blur-[150px] mix-blend-screen transition-all duration-1000" />
-             <div className="absolute top-[20%] left-[20%] w-[50%] h-[50%] bg-blue-900/15 rounded-full blur-[120px] opacity-70 mix-blend-screen transition-all duration-1000" />
-             
-             {/* Top glass border reflection */}
-             <div className="absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-white/5 to-transparent" />
+            {/* Deep base color to maintain readability */}
+            <div className="absolute inset-0 bg-[#030303]/80" />
+
+            {/* Soft glowing abstract waves */}
+            <div className="absolute -top-[20%] -left-[10%] w-[60%] h-[70%] bg-rose-600/15 rounded-full blur-[140px] mix-blend-screen transition-all duration-1000" />
+            <div className="absolute -bottom-[20%] -right-[10%] w-[70%] h-[80%] bg-indigo-600/15 rounded-full blur-[150px] mix-blend-screen transition-all duration-1000" />
+            <div className="absolute top-[20%] left-[20%] w-[50%] h-[50%] bg-blue-900/15 rounded-full blur-[120px] opacity-70 mix-blend-screen transition-all duration-1000" />
+
+            {/* Top glass border reflection */}
+            <div className="absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-white/5 to-transparent" />
           </div>
 
           <div className="lg:col-span-7 relative z-10">
@@ -35,7 +35,7 @@ export function BusinessOverview() {
             <h2 className="text-3xl md:text-5xl font-bold tracking-tight leading-[1.15] mb-8">
               Transforming Businesses Through Cloud, AI & Digital Innovation
             </h2>
-            
+
             <div className="space-y-6 text-zinc-300 text-base md:text-[17px] leading-[1.7] mb-8">
               <p>
                 Devopstrio is a global technology consulting and digital engineering company headquartered in London, with delivery centres across the United Kingdom, United States, and India. We help organizations accelerate growth, modernize infrastructure, and unlock new opportunities through Cloud, Artificial Intelligence, Data Engineering, DevOps, Cybersecurity, and Enterprise Applications.
@@ -45,8 +45,8 @@ export function BusinessOverview() {
               </p>
             </div>
 
-            <a 
-              href="#capabilities" 
+            <a
+              href="#capabilities"
               className="inline-flex items-center gap-1.5 text-sm font-semibold text-rose-500 hover:text-rose-400 transition-colors uppercase tracking-wider"
             >
               Explore Our Services <ArrowRight size={14} />
@@ -56,14 +56,14 @@ export function BusinessOverview() {
           <div className="lg:col-span-5 flex flex-col gap-8 relative z-10 lg:mt-8">
             <div className="bg-black border border-zinc-900 rounded-2xl p-8 md:p-10 relative overflow-hidden group shadow-2xl">
               {/* Wave Background */}
-              <img 
-                src="/assets/wavebg/homepage/overview.png" 
-                alt="Mission Background" 
-                className="absolute inset-0 w-full h-full object-cover opacity-60 mix-blend-screen transition-transform duration-700 group-hover:scale-105 pointer-events-none" 
+              <img
+                src="/assets/wavebg/homepage/overview.png"
+                alt="Mission Background"
+                className="absolute inset-0 w-full h-full object-cover opacity-60 mix-blend-screen transition-transform duration-700 group-hover:scale-105 pointer-events-none"
               />
               {/* Gradient Overlay */}
               <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-black/40 to-transparent pointer-events-none" />
-              
+
               <h3 className="text-xs font-mono tracking-widest text-zinc-400 group-hover:text-rose-500 transition-colors uppercase mb-4 relative z-10">
                 Mission Statement
               </h3>

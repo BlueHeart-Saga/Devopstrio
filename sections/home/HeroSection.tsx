@@ -185,116 +185,116 @@ export function HeroSection() {
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#111111_1px,transparent_1px),linear-gradient(to_bottom,#111111_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-35 pointer-events-none" />
 
       <div className="max-w-site mx-auto w-full px-6 md:px-12 lg:px-16 xl:px-20 relative z-10 flex flex-col justify-between h-full">
-        
+
         {/* Top Section wrapper for precise image positioning */}
         <div className="relative w-full">
           {/* Main Columns Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-[1.15fr_0.85fr] gap-12 lg:gap-16 items-center min-h-[460px] relative z-20">
-          
-          <AnimatePresence mode="wait">
-            <motion.div 
-              key={currentSlide}
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: 20 }}
-              transition={{ duration: 0.5, ease: "easeInOut" }}
-              style={{ y: heroY }}
-              className="flex flex-col justify-center"
-            >
-              {/* Eyebrow */}
-              <div className="inline-flex items-center gap-2 mb-5">
-                <span className="text-xs font-semibold tracking-[0.2em] uppercase text-rose-500">
-                  {slides[currentSlide].eyebrow}
-                </span>
-              </div>
 
-              {/* Heading */}
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.08] text-white mb-6">
-                {slides[currentSlide].title.split(" ").map((word, i) => {
-                  const cleanWord = word.replace(/[^\w&']/g, "");
-                  const isAccent = [
-                    "AI", "Cloud", "Digital", "Innovation", "Secure", "Scalable", "Platforms", "Vision", "Product", "Scale", "Securing", "Protecting", "Assets", "Data", "Value", "Delivery", "Dedicated", "Teams"
-                  ].includes(cleanWord);
-                  return (
-                    <span key={i} className={isAccent ? "text-white font-medium bg-gradient-to-r from-red-600 via-rose-600 to-rose-500 bg-clip-text text-transparent mr-2.5 inline-block" : "mr-2.5 inline-block"}>
-                      {word}
-                    </span>
-                  );
-                })}
-              </h1>
-
-              {/* Subheading */}
-              <p className="text-zinc-400 text-sm md:text-base leading-relaxed max-w-xl mb-6 font-bold">
-                {slides[currentSlide].desc}
-              </p>
-
-              {/* Scrollable Keywords list */}
-              <div 
-                className="flex gap-2 items-center overflow-x-auto py-2 mb-8 -mx-1 px-1"
-                style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
-              >
-                {slides[currentSlide].keywords.map((kw, idx) => (
-                  <span 
-                    key={idx} 
-                    className="flex-shrink-0 text-[10px] font-mono tracking-wider uppercase border border-zinc-900 bg-zinc-950/40 text-zinc-400 px-3 py-1 rounded select-none hover:border-zinc-800 transition-colors"
-                  >
-                    {kw}
-                  </span>
-                ))}
-              </div>
-
-              {/* CTAs */}
-              <div className="flex flex-wrap gap-4 items-center">
-                <a 
-                  className="inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-semibold tracking-wider uppercase bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white transition-all duration-300 hover:shadow-[0_0_20px_rgba(225,29,72,0.25)] hover:-translate-y-0.5" 
-                  href={slides[currentSlide].primaryBtn.href}
-                >
-                  {slides[currentSlide].primaryBtn.text}
-                </a>
-                <a 
-                  className="inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-semibold tracking-wider uppercase border border-zinc-800 hover:border-zinc-700 bg-zinc-950/60 hover:bg-zinc-900 text-zinc-355 hover:text-white transition-all duration-300 hover:-translate-y-0.5" 
-                  href={slides[currentSlide].secondaryBtn.href}
-                >
-                  {slides[currentSlide].secondaryBtn.text}
-                </a>
-              </div>
-            </motion.div>
-          </AnimatePresence>
-
-          {/* Visual Image Block (Visible on mobile/tablet, hidden on desktop to use absolute viewport alignment) */}
-          <div className="lg:hidden relative w-full max-w-[500px] mx-auto overflow-hidden flex items-center justify-center min-h-[300px]">
-            <div 
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[110%] h-[110%] rounded-full pointer-events-none blur-3xl transition-all duration-700" 
-              style={{ background: `radial-gradient(circle at center, ${slides[currentSlide].glowColor}, transparent 65%)` }}
-            />
-            
             <AnimatePresence mode="wait">
               <motion.div
                 key={currentSlide}
-                initial={{ opacity: 0, scale: 0.95, x: 20 }}
-                animate={{ opacity: 1, scale: 1, x: 0 }}
-                exit={{ opacity: 0, scale: 0.95, x: -20 }}
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: 20 }}
                 transition={{ duration: 0.5, ease: "easeInOut" }}
-                className="relative z-10 w-full flex items-center justify-center"
+                style={{ y: heroY }}
+                className="flex flex-col justify-center"
               >
-                <img
-                  src={slides[currentSlide].image}
-                  alt={slides[currentSlide].title}
-                  className="w-full h-auto object-contain max-h-[360px] select-none pointer-events-none filter drop-shadow-[0_0_30px_rgba(225,29,72,0.12)]"
-                />
+                {/* Eyebrow */}
+                <div className="inline-flex items-center gap-2 mb-5">
+                  <span className="text-xs font-semibold tracking-[0.2em] uppercase text-rose-500">
+                    {slides[currentSlide].eyebrow}
+                  </span>
+                </div>
+
+                {/* Heading */}
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.08] text-white mb-6">
+                  {slides[currentSlide].title.split(" ").map((word, i) => {
+                    const cleanWord = word.replace(/[^\w&']/g, "");
+                    const isAccent = [
+                      "AI", "Cloud", "Digital", "Innovation", "Secure", "Scalable", "Platforms", "Vision", "Product", "Scale", "Securing", "Protecting", "Assets", "Data", "Value", "Delivery", "Dedicated", "Teams"
+                    ].includes(cleanWord);
+                    return (
+                      <span key={i} className={isAccent ? "text-white font-medium bg-gradient-to-r from-red-600 via-rose-600 to-rose-500 bg-clip-text text-transparent mr-2.5 inline-block" : "mr-2.5 inline-block"}>
+                        {word}
+                      </span>
+                    );
+                  })}
+                </h1>
+
+                {/* Subheading */}
+                <p className="text-zinc-400 text-sm md:text-base leading-relaxed max-w-xl mb-6 font-bold">
+                  {slides[currentSlide].desc}
+                </p>
+
+                {/* Scrollable Keywords list */}
+                <div
+                  className="flex gap-2 items-center overflow-x-auto py-2 mb-8 -mx-1 px-1"
+                  style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+                >
+                  {slides[currentSlide].keywords.map((kw, idx) => (
+                    <span
+                      key={idx}
+                      className="flex-shrink-0 text-[10px] font-mono tracking-wider uppercase border border-zinc-900 bg-zinc-950/40 text-zinc-400 px-3 py-1 rounded select-none hover:border-zinc-800 transition-colors"
+                    >
+                      {kw}
+                    </span>
+                  ))}
+                </div>
+
+                {/* CTAs */}
+                <div className="flex flex-wrap gap-4 items-center">
+                  <a
+                    className="inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-semibold tracking-wider uppercase bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white transition-all duration-300 hover:shadow-[0_0_20px_rgba(225,29,72,0.25)] hover:-translate-y-0.5"
+                    href={slides[currentSlide].primaryBtn.href}
+                  >
+                    {slides[currentSlide].primaryBtn.text}
+                  </a>
+                  <a
+                    className="inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-semibold tracking-wider uppercase border border-zinc-800 hover:border-zinc-700 bg-zinc-950/60 hover:bg-zinc-900 text-zinc-355 hover:text-white transition-all duration-300 hover:-translate-y-0.5"
+                    href={slides[currentSlide].secondaryBtn.href}
+                  >
+                    {slides[currentSlide].secondaryBtn.text}
+                  </a>
+                </div>
               </motion.div>
             </AnimatePresence>
-          </div>
 
-          <div className="hidden lg:block w-full h-full pointer-events-none" />
+            {/* Visual Image Block (Visible on mobile/tablet, hidden on desktop to use absolute viewport alignment) */}
+            <div className="lg:hidden relative w-full max-w-[500px] mx-auto overflow-hidden flex items-center justify-center min-h-[300px]">
+              <div
+                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[110%] h-[110%] rounded-full pointer-events-none blur-3xl transition-all duration-700"
+                style={{ background: `radial-gradient(circle at center, ${slides[currentSlide].glowColor}, transparent 65%)` }}
+              />
+
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={currentSlide}
+                  initial={{ opacity: 0, scale: 0.95, x: 20 }}
+                  animate={{ opacity: 1, scale: 1, x: 0 }}
+                  exit={{ opacity: 0, scale: 0.95, x: -20 }}
+                  transition={{ duration: 0.5, ease: "easeInOut" }}
+                  className="relative z-10 w-full flex items-center justify-center"
+                >
+                  <img
+                    src={slides[currentSlide].image}
+                    alt={slides[currentSlide].title}
+                    className="w-full h-auto object-contain max-h-[360px] select-none pointer-events-none filter drop-shadow-[0_0_30px_rgba(225,29,72,0.12)]"
+                  />
+                </motion.div>
+              </AnimatePresence>
+            </div>
+
+            <div className="hidden lg:block w-full h-full pointer-events-none" />
 
           </div>
 
           {/* Viewport-edge aligned Right Image (Large screens) */}
           <div className="hidden lg:flex absolute top-0 bottom-[-160px] right-[calc(50%-50vw)] w-[48vw] items-end justify-end pointer-events-none z-10 overflow-visible">
             {/* Ambient background glow behind image */}
-            <div 
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[110%] h-[110%] rounded-full pointer-events-none blur-3xl transition-all duration-700" 
+            <div
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[110%] h-[110%] rounded-full pointer-events-none blur-3xl transition-all duration-700"
               style={{ background: `radial-gradient(circle at center, ${slides[currentSlide].glowColor}, transparent 65%)` }}
             />
             <AnimatePresence mode="wait">
@@ -325,7 +325,7 @@ export function HeroSection() {
                 key={index}
                 onClick={() => setCurrentSlide(index)}
                 className="relative h-[2px] transition-all duration-300"
-                style={{ 
+                style={{
                   width: currentSlide === index ? "48px" : "24px",
                   background: currentSlide === index ? "#e11d48" : "#27272a"
                 }}
@@ -335,14 +335,14 @@ export function HeroSection() {
 
           {/* Navigation Arrows */}
           <div className="flex items-center gap-3">
-            <button 
+            <button
               onClick={handlePrev}
               className="w-10 h-10 rounded-full border border-zinc-850 hover:border-zinc-700 bg-zinc-950/60 hover:bg-zinc-900/80 flex items-center justify-center text-zinc-400 hover:text-white transition-all duration-300"
               aria-label="Previous slide"
             >
               <ChevronLeft size={18} />
             </button>
-            <button 
+            <button
               onClick={handleNext}
               className="w-10 h-10 rounded-full border border-zinc-850 hover:border-zinc-700 bg-zinc-950/60 hover:bg-zinc-900/80 flex items-center justify-center text-zinc-400 hover:text-white transition-all duration-300"
               aria-label="Next slide"
@@ -386,12 +386,12 @@ export function HeroSection() {
           <p className="text-zinc-400 text-xs md:text-sm mb-10 text-center font-bold">
             Join 10,000+ companies worldwide that trust our platform
           </p>
-          
+
           <div className="relative w-full flex items-center overflow-hidden py-4">
             <div className="absolute left-0 top-0 bottom-0 w-24 md:w-40 bg-gradient-to-r from-[#030303] to-transparent z-10 pointer-events-none" />
             <div className="absolute right-0 top-0 bottom-0 w-24 md:w-40 bg-gradient-to-l from-[#030303] to-transparent z-10 pointer-events-none" />
-            
-            <motion.div 
+
+            <motion.div
               className="flex gap-16 md:gap-24 items-center whitespace-nowrap"
               animate={{ x: ["0%", "-50%"] }}
               transition={{

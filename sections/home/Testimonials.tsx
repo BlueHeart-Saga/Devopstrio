@@ -124,19 +124,19 @@ export function Testimonials() {
   return (
     <section className="w-full py-24 md:py-36 bg-[#030303] text-white border-b border-zinc-900 relative overflow-hidden">
       {/* Background Image */}
-      <img 
-        src="/assets/wavebg/homepage/testimonals.png" 
-        alt="Background Wave" 
-        className="absolute inset-0 w-full h-full object-cover opacity-70 pointer-events-none z-0" 
+      <img
+        src="/assets/wavebg/homepage/testimonals.png"
+        alt="Background Wave"
+        className="absolute inset-0 w-full h-full object-cover opacity-70 pointer-events-none z-0"
       />
       {/* Ambient Gradient Overlays for readability */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#030303]/95 via-[#030303]/50 to-[#030303]/95 pointer-events-none z-0" />
       <div className="absolute top-1/2 right-0 -translate-y-1/2 w-[400px] h-[400px] bg-[radial-gradient(circle_at_center,rgba(220,38,38,0.05),transparent_70%)] blur-3xl pointer-events-none z-0" />
 
       <div className="max-w-site mx-auto w-full px-6 md:px-12 lg:px-16 xl:px-20 relative z-10">
-        
+
         <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-12 lg:gap-20 items-center">
-          
+
           {/* Quote Content Side */}
           <div className="flex flex-col justify-between min-h-[300px]">
             <AnimatePresence mode="wait">
@@ -151,7 +151,7 @@ export function Testimonials() {
                 <span className="block text-xs font-semibold tracking-[0.25em] uppercase text-rose-500 mb-8">
                   HEAR FROM OUR CLIENTS
                 </span>
-                
+
                 {/* Big quotation mark */}
                 <span className="block text-rose-600 text-7xl font-serif leading-none select-none -ml-2 mb-2">
                   &ldquo;
@@ -213,10 +213,10 @@ export function Testimonials() {
           <div className="relative w-full max-w-[420px] lg:max-w-none mx-auto flex items-center justify-center">
             {/* Dynamic red energy ring / overlay background */}
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(220,38,38,0.06),transparent_60%)] pointer-events-none scale-125" />
-            
+
             {/* Abstract red waves behind the headshot */}
             <div className="absolute w-[120%] h-[120%] border border-zinc-900/40 rounded-full pointer-events-none opacity-20 bg-[radial-gradient(circle_at_center,transparent_30%,#030303_70%)] z-0" />
-            
+
             <AnimatePresence mode="wait">
               <motion.div
                 key={current}
@@ -229,7 +229,7 @@ export function Testimonials() {
                 {/* Visual red trails mesh overlay on the testimonial photo */}
                 <div className="absolute inset-0 bg-gradient-to-t from-[#030303] via-transparent to-transparent opacity-50 z-20 pointer-events-none" />
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,rgba(220,38,38,0.06),transparent_60%)] z-20 pointer-events-none" />
-                
+
                 <img
                   src={testimonials[current].image}
                   alt={testimonials[current].author}

@@ -18,7 +18,7 @@ export function AIDataIntro() {
               AI and Data represent the dual engines of modern enterprise growth. However, most implementations fail to transition from sandboxes to production due to hallucinations, latency problems, and lack of integration with core transactional databases.
             </p>
             <p>
-              At devopstrio, we build deterministic cognitive workflows. By coupling Large Language Models with vector search databases, semantic caches, and rigorous model evaluation loops, we construct systems that are fast, cost-effective, and safe for customer interaction.
+              At Devopstrio, we build deterministic cognitive workflows. By coupling Large Language Models with vector search databases, semantic caches, and rigorous model evaluation loops, we construct systems that are fast, cost-effective, and safe for customer interaction.
             </p>
           </div>
         </Reveal>

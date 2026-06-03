@@ -15,12 +15,12 @@ export function WhyChoose() {
   return (
     <section className="w-full py-20 bg-[#030303] text-white border-b border-zinc-900 relative">
       <div className="max-w-site mx-auto w-full px-6 md:px-12 lg:px-16 xl:px-20">
-        
+
         <Reveal className="max-w-3xl mb-16">
           <div className="flex items-center gap-2 mb-4">
             <span className="h-[1px] w-6 bg-rose-600"></span>
             <span className="text-[10px] font-medium tracking-[0.2em] uppercase text-zinc-400">
-              07 / WHY DEVOPSTRIO
+              07 / WHY Devopstrio
             </span>
           </div>
           <h2 className="text-3xl font-light tracking-tight leading-tight">
@@ -30,9 +30,9 @@ export function WhyChoose() {
 
         <div className="flex flex-col border-t border-zinc-900">
           {reasons.map((item) => (
-            <a 
-              href="/contact" 
-              key={item.title} 
+            <a
+              href="/contact"
+              key={item.title}
               className="flex flex-col md:flex-row md:items-center justify-between py-8 border-b border-zinc-900 hover:bg-zinc-950/40 hover:px-4 transition-all duration-300 group"
             >
               <div className="flex-1 max-w-sm mb-4 md:mb-0">

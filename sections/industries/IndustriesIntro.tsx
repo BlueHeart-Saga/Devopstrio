@@ -18,7 +18,7 @@ export function IndustriesIntro() {
               Integrating AI models, setting up scalable microservice nodes, and scheduling database queries require special domain context. Financial structures demand strict audit trails; medical systems require encrypted patient privacy; logistics teams need low-latency routing calculations.
             </p>
             <p>
-              At devopstrio, our engineering teams are segmented by sector specialization. This structure ensures that your system builders understand your compliance frameworks, operations benchmarks, and security goals from day one.
+              At Devopstrio, our engineering teams are segmented by sector specialization. This structure ensures that your system builders understand your compliance frameworks, operations benchmarks, and security goals from day one.
             </p>
           </div>
         </Reveal>

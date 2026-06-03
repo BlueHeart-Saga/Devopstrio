@@ -18,20 +18,20 @@ export function Footer() {
   return (
     <footer className="w-full bg-[#030303] text-zinc-400 border-t border-zinc-900 pt-16 pb-8 relative overflow-hidden">
       <div className="max-w-site mx-auto px-6 md:px-12 lg:px-16 xl:px-20">
-        
+
         {/* Top 4-Column Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-16">
-          
+
           {/* Col 1: Brand & Socials */}
           <div className="flex flex-col gap-6">
             <Link href="/" className="flex items-center gap-2 group">
-              <img 
-                src="/assets/logo/logo.png" 
-                alt="devopstrio logo" 
+              <img
+                src="/assets/logo/logo.png"
+                alt="Devopstrio logo"
                 className="w-5 h-5 transition-transform duration-300 group-hover:scale-110 object-contain"
               />
               <span className="text-sm font-semibold tracking-wide text-zinc-100">
-                devopstrio
+                Devopstrio
               </span>
             </Link>
             <p className="text-[11px] text-zinc-500 leading-relaxed font-light max-w-xs">

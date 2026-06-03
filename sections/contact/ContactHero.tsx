@@ -11,7 +11,7 @@ export function ContactHero() {
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_center,rgba(220,38,38,0.02),transparent_70%)] pointer-events-none" />
 
       <div className="max-w-site mx-auto w-full px-6 md:px-12 lg:px-16 xl:px-20 grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-12 lg:gap-16 items-center relative z-10">
-        
+
         {/* Left Side Details */}
         <Reveal className="flex flex-col justify-center text-left">
           <div className="inline-flex items-center gap-2 mb-6">
@@ -24,7 +24,7 @@ export function ContactHero() {
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light tracking-tight leading-[1.1] text-white mb-6">
             Let&apos;s discuss the system, product, or team <span className="text-white font-medium bg-gradient-to-r from-red-600 via-rose-600 to-rose-500 bg-clip-text text-transparent">you need to engineer</span>.
           </h1>
-          
+
           <p className="text-zinc-400 text-xs md:text-sm leading-relaxed font-light max-w-xl">
             Speak directly with senior practitioners about custom AI pipelines, cloud infrastructure migrations, platform SRE models, and cybersecurity compliance controls.
           </p>
@@ -32,9 +32,9 @@ export function ContactHero() {
 
         {/* Right Side Image */}
         <div className="relative w-full max-w-[500px] lg:max-w-none mx-auto overflow-hidden flex items-center justify-center">
-          <img 
-            src="/assets/herocard/contactpage.png" 
-            alt="Contact devopstrio Hero" 
+          <img
+            src="/assets/herocard/contactpage.png"
+            alt="Contact Devopstrio Hero"
             className="w-full h-auto object-contain max-h-[460px] select-none pointer-events-none"
           />
         </div>

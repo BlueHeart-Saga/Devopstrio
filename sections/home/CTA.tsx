@@ -9,10 +9,10 @@ export function CTA() {
     <section id="contact" className="w-full py-28 md:py-40 bg-[#030303] text-white border-t border-zinc-900 relative overflow-hidden">
       {/* Background Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-[radial-gradient(ellipse_at_center,rgba(220,38,38,0.04),transparent_60%)] pointer-events-none" />
-      
+
       <div className="max-w-site mx-auto w-full px-6 md:px-12 lg:px-16 xl:px-20 relative z-10 text-center">
         <Reveal className="max-w-3xl mx-auto flex flex-col items-center">
-          
+
           <div className="inline-flex items-center gap-2 mb-4">
 
             <span className="text-xs font-semibold tracking-[0.2em] uppercase text-zinc-400">
@@ -23,21 +23,21 @@ export function CTA() {
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-tight mb-8">
             Ready to design your next <span className="text-white font-medium bg-gradient-to-r from-red-600 via-rose-600 to-rose-500 bg-clip-text text-transparent">enterprise system</span>?
           </h2>
-          
+
           <p className="text-zinc-400 text-sm md:text-lg leading-relaxed font-bold mb-10 max-w-lg">
             Connect directly with an engineering expert. We will audit your cloud estate, review database indices, and design high-integrity system architectures.
           </p>
 
           <div className="flex flex-wrap gap-4 justify-center items-center">
-            <a 
-              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-lg text-xs font-semibold tracking-wider uppercase bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white transition-all duration-300 hover:shadow-[0_0_20px_rgba(225,29,72,0.25)] hover:-translate-y-0.5" 
+            <a
+              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-lg text-xs font-semibold tracking-wider uppercase bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white transition-all duration-300 hover:shadow-[0_0_20px_rgba(225,29,72,0.25)] hover:-translate-y-0.5"
               href="/contact"
             >
               Book Consultation <ArrowUpRight size={14} />
             </a>
-            <a 
-              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-lg text-xs font-semibold tracking-wider uppercase border border-zinc-800 hover:border-zinc-700 bg-zinc-950/60 hover:bg-zinc-900 text-zinc-350 hover:text-white transition-all duration-300 hover:-translate-y-0.5" 
-              href="mailto:hello@devopstrio.com"
+            <a
+              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-lg text-xs font-semibold tracking-wider uppercase border border-zinc-800 hover:border-zinc-700 bg-zinc-950/60 hover:bg-zinc-900 text-zinc-350 hover:text-white transition-all duration-300 hover:-translate-y-0.5"
+              href="mailto:hello@Devopstrio.com"
             >
               Contact Experts <ArrowUpRight size={14} />
             </a>

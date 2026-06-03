@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Landmark, HeartPulse, Truck, Film, Radio, Car, ShoppingCart, Cpu, ArrowUpRight } from "lucide-react";
+import { Landmark, HeartPulse, Truck, Film, Radio, Car, ShoppingCart, Cpu, ArrowUpRight, ArrowRight } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
 
 const industries = [
@@ -49,24 +49,39 @@ const industries = [
 
 export function IndustriesSection() {
   return (
-    <section className="w-full py-20 md:py-32 bg-[#030303] text-white border-b border-zinc-900 relative">
+    <section className="w-full py-6 md:py-8 bg-[#030303] text-white border-b border-zinc-900 relative">
       <div className="max-w-site mx-auto w-full px-6 md:px-12 lg:px-16 xl:px-20">
-        
-        <Reveal className="max-w-3xl mb-16 md:mb-24">
-          <div className="flex items-center gap-2 mb-4">
 
-            <span className="text-[10px] font-medium tracking-[0.2em] uppercase text-zinc-400">
-              INDUSTRIES
+        <Reveal className="max-w-4xl mx-auto text-center mb-16 md:mb-24">
+          <div className="mb-6">
+            <span className="text-[11px] font-bold tracking-[0.25em] uppercase text-rose-500 block">
+              GLOBAL INDUSTRY EXPERIENCE
             </span>
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight leading-tight">
-            Tailored solutions built for <span className="text-white font-medium bg-gradient-to-r from-red-600 via-rose-600 to-rose-500 bg-clip-text text-transparent">complex industries</span>.
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-light tracking-tight leading-[1.1] mb-8 text-white">
+            Empowering businesses across <span className="font-bold">every sector</span>.
           </h2>
+          <p className="text-zinc-400 text-lg md:text-xl font-bold leading-relaxed max-w-3xl mx-auto">
+            From AI-powered automation and cloud modernization to secure digital platforms and enterprise applications, we help organizations transform operations and achieve sustainable growth.
+          </p>
+          <div className="mt-8 flex justify-center">
+            <a href="/services" className="inline-flex items-center gap-2 text-rose-500 hover:text-rose-400 font-bold uppercase tracking-wider text-sm transition-colors border-b border-transparent hover:border-rose-400 pb-1">
+              Explore Our Services <ArrowRight size={16} />
+            </a>
+          </div>
         </Reveal>
 
         {/* Bento/Grid style for Industries */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {industries.map((ind) => {
+        <div className="relative w-full">
+          {/* Soft Wave-like Ambient Background (Red & Blue on Black) */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[140%] pointer-events-none -z-10 opacity-60">
+            <div className="absolute top-1/4 left-1/4 w-[60%] h-[40%] bg-[radial-gradient(ellipse_at_center,rgba(225,29,72,0.12),transparent_70%)] blur-[100px] rounded-[100%] -rotate-12" />
+            <div className="absolute bottom-1/4 right-1/4 w-[50%] h-[50%] bg-[radial-gradient(ellipse_at_center,rgba(37,99,235,0.1),transparent_70%)] blur-[120px] rounded-[100%] rotate-12" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[70%] h-[30%] bg-[radial-gradient(ellipse_at_center,rgba(225,29,72,0.08),transparent_70%)] blur-[90px] rounded-[100%] -rotate-6" />
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative z-10">
+            {industries.map((ind) => {
             const Icon = ind.icon;
             return (
               <div
@@ -96,6 +111,7 @@ export function IndustriesSection() {
               </div>
             );
           })}
+          </div>
         </div>
 
       </div>

@@ -4,9 +4,9 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "devopstrio | Enterprise AI, Cloud and Product Engineering",
+  title: "Devopstrio | Enterprise AI, Cloud and Product Engineering",
   description:
-    "devopstrio helps enterprises build, modernize and scale mission-critical AI platforms, cloud infrastructure and digital products."
+    "Devopstrio helps enterprises build, modernize and scale mission-critical AI platforms, cloud infrastructure and digital products."
 };
 
 export default function RootLayout({

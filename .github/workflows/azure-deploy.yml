@@ -1,4 +1,4 @@
-name: Build and deploy Next.js app to Azure Web App - devopstrio-global
+name: Build and deploy Next.js app to Azure Web App - Devopstrio-global
 
 on:
   push:
@@ -52,7 +52,7 @@ jobs:
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v3
         with:
-          app-name: 'devopstrio-global'
+          app-name: 'Devopstrio-global'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE }}
           package: ./release
