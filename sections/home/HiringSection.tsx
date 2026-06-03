@@ -1,20 +1,57 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Reveal } from "@/components/ui/Reveal";
-import { ArrowUpRight, Cpu, HardDrive, ShieldAlert } from "lucide-react";
+import { ArrowUpRight, MapPin, Briefcase, CalendarDays } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+
+type Poster = {
+  id: number;
+  role: string;
+  location: string;
+  type: string;
+  status: string;
+  req: string;
+  accent: string;
+  date: string;
+  image?: string;
+};
 
 export function HiringSection() {
+  const [hiringPosters, setHiringPosters] = useState<Poster[]>([]);
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    // Fetch dynamic posters from the API
+    fetch("/api/hiring-posters")
+      .then(res => res.json())
+      .then(data => setHiringPosters(data))
+      .catch(err => console.error("Failed to load posters", err));
+  }, []);
+
+  useEffect(() => {
+    if (hiringPosters.length === 0) return;
+    const timer = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % hiringPosters.length);
+    }, 4500);
+    return () => clearInterval(timer);
+  }, [hiringPosters.length]);
+
+  const poster = hiringPosters[currentIndex];
+  
+  if (!poster) return null; // Avoid rendering if no posters are available yet
+
+  const isActive = poster.status === "active";
+
   return (
-    <section className="w-full py-20 md:py-32 bg-[#050505] text-white border-b border-zinc-900 relative">
-      <div className="max-w-site mx-auto w-full px-6 md:px-12 lg:px-16 xl:px-20">
+    <section className="w-full py-20 md:py-32 bg-[#050505] text-white border-b border-zinc-900 relative overflow-hidden">
+      <div className="max-w-site mx-auto w-full px-6 md:px-12 lg:px-16 xl:px-20 relative z-10">
         
         <Reveal className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-12 lg:gap-24 items-center">
           
           {/* Left Block */}
           <div>
             <div className="flex items-center gap-2 mb-4">
-
               <span className="text-xs font-semibold tracking-[0.2em] uppercase text-zinc-400">
                 CAREERS
               </span>
@@ -34,40 +71,116 @@ export function HiringSection() {
             </a>
           </div>
 
-          {/* Right Block: Open Roles Minimal List */}
-          <div className="border border-zinc-900 bg-zinc-950/20 p-8 rounded-2xl flex flex-col gap-6 shadow-2xl relative">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,rgba(220,38,38,0.02),transparent_50%)] pointer-events-none" />
-            <span className="text-xs font-mono tracking-wider text-zinc-500 uppercase pb-4 border-b border-zinc-900">
-              ACTIVE ENGINEERING ROLES
-            </span>
-            
-            <div className="flex justify-between items-center py-2 border-b border-zinc-900/60 last:border-b-0">
-              <div>
-                <span className="block text-sm font-semibold text-zinc-250">Senior Site Reliability Engineer</span>
-                <span className="text-xs text-zinc-500 uppercase tracking-wide">Palo Alto // Hybrid</span>
-              </div>
-              <span className="text-[10px] font-mono text-rose-500 px-2 py-0.5 bg-rose-950/20 border border-rose-900/30 rounded">HOT</span>
-            </div>
+          {/* Right Block: Dynamic Hiring Poster */}
+          <div className="relative h-[440px] w-full flex items-center justify-center perspective-[1000px]">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={poster.id}
+                initial={{ opacity: 0, rotateY: 15, scale: 0.95, x: 20 }}
+                animate={{ opacity: 1, rotateY: 0, scale: 1, x: 0 }}
+                exit={{ opacity: 0, rotateY: -15, scale: 0.95, x: -20 }}
+                transition={{ duration: 0.5, ease: [0.19, 1, 0.22, 1] }}
+                className={`absolute w-full max-w-sm h-[400px] rounded-xl border p-8 flex flex-col shadow-2xl overflow-hidden ${
+                  isActive 
+                    ? "bg-[#0a0a0a] border-rose-900/40 shadow-[0_0_50px_rgba(225,29,72,0.15)]" 
+                    : "bg-zinc-950 border-zinc-800 grayscale opacity-80"
+                }`}
+              >
+                {/* Background Grid Pattern */}
+                <div className="absolute inset-0 opacity-[0.04] bg-[linear-gradient(to_right,#fff_1px,transparent_1px),linear-gradient(to_bottom,#fff_1px,transparent_1px)] bg-[size:1rem_1rem] pointer-events-none" />
 
-            <div className="flex justify-between items-center py-2 border-b border-zinc-900/60 last:border-b-0">
-              <div>
-                <span className="block text-sm font-semibold text-zinc-250">Lead ML Platform Architect</span>
-                <span className="text-xs text-zinc-500 uppercase tracking-wide">London // Hybrid</span>
-              </div>
-              <span className="text-[10px] font-mono text-zinc-500 px-2 py-0.5 bg-zinc-900 border border-zinc-850 rounded">FULL_TIME</span>
-            </div>
+                {/* Custom Image Background */}
+                {poster.image && (
+                  <div className="absolute inset-0 z-0 pointer-events-none">
+                    <img src={poster.image} alt={poster.role} className="w-full h-full object-cover opacity-40 mix-blend-overlay" />
+                    <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#0a0a0a]/80 to-[#0a0a0a]" />
+                  </div>
+                )}
 
-            <div className="flex justify-between items-center py-2 last:border-b-0">
-              <div>
-                <span className="block text-sm font-semibold text-zinc-250">Senior Cloud Security Engineer</span>
-                <span className="text-xs text-zinc-500 uppercase tracking-wide">Bangalore // Hybrid</span>
-              </div>
-              <span className="text-[10px] font-mono text-zinc-500 px-2 py-0.5 bg-zinc-900 border border-zinc-850 rounded">FULL_TIME</span>
+                {/* Corner Accent Glow */}
+                {isActive && (
+                  <div className={`absolute top-0 right-0 w-48 h-48 bg-gradient-to-br ${poster.accent} opacity-[0.15] blur-3xl rounded-full translate-x-1/2 -translate-y-1/2`} />
+                )}
+
+                {/* Header */}
+                <div className="flex justify-between items-start mb-8 relative z-10">
+                  <div className="flex flex-col gap-1">
+                    <span className="text-[10px] font-mono tracking-widest text-zinc-500">
+                      {poster.req}
+                    </span>
+                    <span className={`text-[11px] font-bold tracking-[0.25em] uppercase ${isActive ? "text-rose-500" : "text-zinc-600"}`}>
+                      {isActive ? "We're Hiring" : "Closed"}
+                    </span>
+                  </div>
+                  <div className={`px-2 py-1 text-[10px] font-mono font-bold uppercase rounded border ${
+                    isActive 
+                      ? "bg-rose-500/10 text-rose-400 border-rose-500/30" 
+                      : "bg-zinc-900 text-zinc-500 border-zinc-800"
+                  }`}>
+                    {poster.status}
+                  </div>
+                </div>
+
+                {/* Role Info */}
+                <div className="flex-1 relative z-10">
+                  <h3 className={`text-3xl font-black uppercase tracking-tight leading-[1.1] mb-8 ${
+                    isActive ? "text-white" : "text-zinc-500"
+                  }`}>
+                    {poster.role}
+                  </h3>
+                  
+                  <div className="flex flex-col gap-3.5">
+                    <div className={`flex items-center gap-4 text-sm font-bold ${isActive ? "text-zinc-300" : "text-zinc-600"}`}>
+                      <MapPin size={18} strokeWidth={2.5} className={isActive ? "text-rose-500" : "text-zinc-700"} />
+                      {poster.location}
+                    </div>
+                    <div className={`flex items-center gap-4 text-sm font-bold ${isActive ? "text-zinc-300" : "text-zinc-600"}`}>
+                      <Briefcase size={18} strokeWidth={2.5} className={isActive ? "text-rose-500" : "text-zinc-700"} />
+                      {poster.type}
+                    </div>
+                    <div className={`flex items-center gap-4 text-sm font-bold ${isActive ? "text-zinc-300" : "text-zinc-600"}`}>
+                      <CalendarDays size={18} strokeWidth={2.5} className={isActive ? "text-rose-500" : "text-zinc-700"} />
+                      {poster.date}
+                    </div>
+                  </div>
+                </div>
+
+                {/* Footer/Action */}
+                <div className="pt-6 mt-auto border-t border-zinc-800/50 relative z-10">
+                  <button className={`w-full py-3.5 rounded-lg text-xs font-bold tracking-widest uppercase transition-all duration-300 ${
+                    isActive 
+                      ? "bg-rose-600 hover:bg-rose-500 text-white shadow-[0_0_15px_rgba(225,29,72,0.3)] hover:-translate-y-0.5" 
+                      : "bg-zinc-900 text-zinc-600 cursor-not-allowed border border-zinc-800"
+                  }`}>
+                    {isActive ? "Apply Now" : "Position Filled"}
+                  </button>
+                </div>
+
+                {/* Expired Stamp overlay */}
+                {!isActive && (
+                  <div className="absolute inset-0 flex items-center justify-center z-20 pointer-events-none overflow-hidden">
+                     <div className="text-5xl font-black text-red-600/40 border-[8px] border-red-600/40 uppercase -rotate-[20deg] px-8 py-3 tracking-widest mix-blend-overlay shadow-2xl">
+                       FILLED
+                     </div>
+                  </div>
+                )}
+              </motion.div>
+            </AnimatePresence>
+
+            {/* Slider Dots */}
+            <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 flex items-center gap-2">
+              {hiringPosters.map((_, idx) => (
+                <div 
+                  key={idx} 
+                  className={`h-1.5 rounded-full transition-all duration-500 ${
+                    currentIndex === idx ? "w-8 bg-rose-500 shadow-[0_0_10px_rgba(225,29,72,0.5)]" : "w-1.5 bg-zinc-800"
+                  }`} 
+                />
+              ))}
             </div>
           </div>
 
         </Reveal>
-
       </div>
     </section>
   );

@@ -11,7 +11,8 @@ import { CaseStudies } from "@/sections/home/CaseStudies";
 import { WhyDevopstrio } from "@/sections/home/WhyDevopstrio";
 import { OurAdvantage } from "@/sections/home/OurAdvantage";
 import { TechnicalPartnerships } from "@/sections/home/TechnicalPartnerships";
-import { GlobalNetworks } from "@/sections/home/GlobalNetworks";
+import { DeliveryWorkflow } from "@/sections/home/DeliveryWorkflow";
+import { GlobalLocations } from "@/sections/home/GlobalLocations";
 import { Insights } from "@/sections/home/Insights";
 import { HiringSection } from "@/sections/home/HiringSection";
 import { CTA } from "@/sections/home/CTA";
@@ -109,7 +110,12 @@ export default function Home() {
         <TechnicalPartnerships />
       </div>
       <div id="networks">
-        <GlobalNetworks />
+        <section className="w-full py-20 md:py-32 bg-[#050505] text-white border-b border-zinc-900 relative">
+          <div className="max-w-site mx-auto w-full px-6 md:px-12 lg:px-16 xl:px-20">
+            <DeliveryWorkflow />
+            <GlobalLocations />
+          </div>
+        </section>
       </div>
       <div id="insights">
         <Insights />

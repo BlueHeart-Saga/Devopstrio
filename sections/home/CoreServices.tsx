@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { CheckCircle2, ArrowRight } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
@@ -10,7 +10,7 @@ const services = [
     id: "ai-automation",
     title: "AI & Automation",
     desc: "Transform business operations with AI solutions, Generative AI, AI agents, machine learning, automation, and intelligent decision-making systems.",
-    bgImage: "/assets/wavebg/homepage/core1.png",
+    bgImage: "/assets/wavebg/homepage/services/image.png",
     href: "/services/ai",
     features: ["Generative AI Models", "Machine Learning", "AI Agents", "Process Automation"]
   },
@@ -18,7 +18,7 @@ const services = [
     id: "cloud-migration",
     title: "Cloud Engineering",
     desc: "Design, migrate, optimize, and manage cloud environments across AWS, Microsoft Azure, Google Cloud, and hybrid infrastructures.",
-    bgImage: "/assets/wavebg/homepage/core2.png",
+    bgImage: "/assets/wavebg/homepage/services/image copy.png",
     href: "/services/cloud",
     features: ["AWS & Azure Migration", "Google Cloud Optimization", "Hybrid Infrastructure", "Cloud Management"]
   },
@@ -26,7 +26,7 @@ const services = [
     id: "devops-iac",
     title: "DevOps & IaC",
     desc: "Accelerate delivery with CI/CD pipelines, Kubernetes, Terraform, automation, platform engineering, and Infrastructure as Code.",
-    bgImage: "/assets/wavebg/homepage/core3.png",
+    bgImage: "/assets/wavebg/homepage/services/image copy 2.png",
     href: "/services/devops",
     features: ["CI/CD Pipelines", "Kubernetes Management", "Terraform & IaC", "Platform Engineering"]
   },
@@ -34,7 +34,7 @@ const services = [
     id: "software-engineering",
     title: "Software Engineering",
     desc: "Build enterprise web applications, mobile apps, SaaS platforms, APIs, and digital products tailored to business needs.",
-    bgImage: "/assets/wavebg/homepage/core4.png",
+    bgImage: "/assets/wavebg/homepage/services/image copy 3.png",
     href: "/services/software-development",
     features: ["Enterprise Web Apps", "Mobile Applications", "SaaS Platform Development", "API Integrations"]
   },
@@ -42,7 +42,7 @@ const services = [
     id: "cybersecurity",
     title: "Cybersecurity",
     desc: "Protect digital assets through security assessments, monitoring, compliance, vulnerability management, SOC services, and proactive support.",
-    bgImage: "/assets/wavebg/homepage/core1.png",
+    bgImage: "/assets/wavebg/homepage/services/image copy 4.png",
     href: "/services/cybersecurity",
     features: ["Security Assessments", "SOC Services", "Vulnerability Management", "Compliance Monitoring"]
   },
@@ -50,7 +50,7 @@ const services = [
     id: "public-sector",
     title: "Enterprise Solutions",
     desc: "Deliver scalable technology solutions for government organizations, public services, enterprises, education, healthcare, and regulated industries.",
-    bgImage: "/assets/wavebg/homepage/core2.png",
+    bgImage: "/assets/wavebg/homepage/services/image copy 5.png",
     href: "/industries",
     features: ["Government IT Solutions", "Regulated Compliance", "Healthcare Tech", "Enterprise Scaling"]
   }
@@ -76,6 +76,19 @@ const tags = [
 export function CoreServices() {
   const [activeId, setActiveId] = useState(services[0].id);
   const activeService = services.find(s => s.id === activeId) || services[0];
+
+  // Auto-rotate through services
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveId((currentId) => {
+        const currentIndex = services.findIndex((s) => s.id === currentId);
+        const nextIndex = (currentIndex + 1) % services.length;
+        return services[nextIndex].id;
+      });
+    }, 5000); // Change every 5 seconds
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <section className="w-full pt-24 md:pt-36 pb-16 md:pb-20 bg-[#030303] text-white border-b border-zinc-900 relative overflow-hidden" id="capabilities">
@@ -128,27 +141,29 @@ export function CoreServices() {
             </a>
           </div>
 
-          {/* Right Side: Detailed Card */}
-          <div className="relative w-full min-h-[350px] md:min-h-[420px] lg:min-h-[460px] rounded-3xl overflow-hidden bg-zinc-950 p-8 md:p-14 border border-zinc-800/60 shadow-2xl flex flex-col justify-end">
+          {/* Right Side: Detailed Content Area */}
+          <div className="relative w-full min-h-[350px] md:min-h-[420px] lg:min-h-[460px] flex flex-col justify-start pt-4">
             <AnimatePresence mode="wait">
               <motion.div
                 key={activeService.id}
-                initial={{ opacity: 0, scale: 0.98 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.98 }}
-                transition={{ duration: 0.4 }}
-                className="absolute inset-0"
+                initial={{ opacity: 0, scale: 0.98, x: 20 }}
+                animate={{ opacity: 1, scale: 1, x: 0 }}
+                exit={{ opacity: 0, scale: 0.98, x: 20 }}
+                transition={{ duration: 0.5 }}
+                className="absolute inset-0 pointer-events-none"
               >
-                {/* Wave Background Image */}
+                {/* Accent Image positioned at Bottom Right */}
                 <img
                   src={activeService.bgImage}
                   alt={activeService.title}
-                  className="absolute inset-0 w-full h-full object-cover opacity-50 mix-blend-screen pointer-events-none"
+                  className="absolute bottom-0 right-0 w-full md:w-[85%] lg:w-[80%] h-full object-contain opacity-50 mix-blend-screen pointer-events-none"
+                  style={{
+                    WebkitMaskImage: "radial-gradient(circle at bottom right, black 50%, transparent 90%)",
+                    maskImage: "radial-gradient(circle at bottom right, black 50%, transparent 90%)"
+                  }}
                 />
-                {/* Dark gradient overlay to ensure text readability */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#030303] via-[#030303]/60 to-transparent pointer-events-none" />
-                {/* Red Glow */}
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,rgba(220,38,38,0.15),transparent_60%)] pointer-events-none" />
+                {/* Red Glow Accent */}
+                <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-[radial-gradient(circle_at_bottom_right,rgba(220,38,38,0.1),transparent_70%)] pointer-events-none" />
               </motion.div>
             </AnimatePresence>
 

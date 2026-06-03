@@ -14,11 +14,11 @@ export function HeroSection() {
   const slides = [
     {
       eyebrow: "UK-Based Global Technology Partner",
-      title: "Engineering Digital Transformation at Enterprise Scale",
-      desc: "Devopstrio helps organizations accelerate innovation through Artificial Intelligence, Cloud Engineering, DevOps, Cybersecurity, Data Platforms, and Enterprise Software Development. We partner with businesses to build secure, scalable, and future-ready digital ecosystems.",
+      title: "Where Bold Ideas Transform Into Powerful Digital Realities Today",
+      desc: "Devopstrio helps modern organizations accelerate innovation through advanced AI, Cloud Engineering, DevOps, and Enterprise Software Development. We partner with businesses worldwide to build secure, scalable digital ecosystems.",
       primaryBtn: { text: "Book a Consultation", href: "/contact" },
       secondaryBtn: { text: "Explore Our Services", href: "#capabilities" },
-      image: "/assets/homehero/1.png",
+      image: "/assets/homehero/Sagadevan.S.svg",
       glowColor: "rgba(220, 38, 38, 0.08)",
       keywords: [
         "Digital Transformation",
@@ -31,11 +31,11 @@ export function HeroSection() {
     },
     {
       eyebrow: "End-to-End Technology Services",
-      title: "Solutions Designed for Growth, Security & Performance",
-      desc: "From cloud migration and DevOps automation to AI implementation, cybersecurity, and custom software development, we deliver technology solutions that create measurable business value.",
+      title: "Smarter Solutions Built for Growth, Security, and Lasting Performance",
+      desc: "From complex cloud migrations and DevOps automation to intelligent AI implementation and cybersecurity, we deliver end-to-end technology solutions designed to create immediate and measurable business value.",
       primaryBtn: { text: "View Services", href: "/services" },
       secondaryBtn: { text: "Talk to an Expert", href: "/contact" },
-      image: "/assets/homehero/2.png",
+      image: "/assets/homehero/Kishore.P.svg",
       glowColor: "rgba(244, 63, 94, 0.06)",
       keywords: [
         "Cloud Services",
@@ -48,11 +48,11 @@ export function HeroSection() {
     },
     {
       eyebrow: "Industry-Focused Expertise",
-      title: "Technology Solutions Built for Every Industry",
-      desc: "We help organizations across Financial Services, Healthcare, Logistics, Telecommunications, Manufacturing, Retail, Media, and Public Sector modernize operations and accelerate digital growth.",
+      title: "Precision Technology Solutions Crafted for Every Industry We Serve",
+      desc: "We empower organizations across Financial Services, Healthcare, Telecommunications, Retail, and the Public Sector to modernize their core operations, optimize performance, and accelerate sustainable digital business growth.",
       primaryBtn: { text: "Explore Industries", href: "/industries" },
       secondaryBtn: { text: "View Success Stories", href: "#impact" },
-      image: "/assets/homehero/3.png",
+      image: "/assets/homehero/Ooviya%20R.svg",
       glowColor: "rgba(225, 29, 72, 0.05)",
       keywords: [
         "Financial Services",
@@ -65,11 +65,11 @@ export function HeroSection() {
     },
     {
       eyebrow: "Cloud & Infrastructure Excellence",
-      title: "Building Resilient Multi-Cloud Platforms",
-      desc: "Our cloud specialists design, migrate, optimize, and manage enterprise workloads across Microsoft Azure, AWS, Google Cloud, Kubernetes, and hybrid infrastructure environments.",
+      title: "Resilient Multi-Cloud Platforms That Power Your Enterprise Without Limits",
+      desc: "Our expert cloud specialists design, migrate, optimize, and continuously manage secure enterprise workloads across Microsoft Azure, AWS, Google Cloud, advanced Kubernetes, and highly complex hybrid environments.",
       primaryBtn: { text: "Cloud Services", href: "/services/cloud" },
       secondaryBtn: { text: "Speak with an Architect", href: "/contact" },
-      image: "/assets/homehero/4.png",
+      image: "/assets/homehero/Punitha%20A.svg",
       glowColor: "rgba(244, 63, 94, 0.05)",
       keywords: [
         "AWS",
@@ -82,11 +82,11 @@ export function HeroSection() {
     },
     {
       eyebrow: "AI & Data Innovation",
-      title: "Unlock Business Intelligence Through AI",
-      desc: "Transform data into actionable insights with Generative AI, Machine Learning, AI Agents, Data Engineering, Predictive Analytics, and intelligent automation solutions.",
+      title: "Unlock the True Power of Your Data Through Intelligent AI",
+      desc: "Transform your raw data into powerful, actionable insights using Generative AI, Machine Learning, specialized AI Agents, enterprise Data Engineering, Predictive Analytics, and comprehensive intelligent automation solutions.",
       primaryBtn: { text: "Explore AI Services", href: "/services/ai" },
       secondaryBtn: { text: "Start Your AI Journey", href: "/contact" },
-      image: "/assets/homehero/5.png",
+      image: "/assets/homehero/Sermaraja.V.svg",
       glowColor: "rgba(220, 38, 38, 0.06)",
       keywords: [
         "Generative AI",
@@ -99,11 +99,11 @@ export function HeroSection() {
     },
     {
       eyebrow: "Product Engineering & Innovation",
-      title: "From Vision to Scalable Digital Products",
-      desc: "We design and develop enterprise web applications, SaaS platforms, mobile applications, APIs, and digital products engineered for performance, security, and long-term growth.",
+      title: "From Vision to Launch We Engineer Products People Love",
+      desc: "Our engineering teams design and develop robust enterprise web applications, scalable SaaS platforms, mobile experiences, and modern APIs specifically engineered for ultimate performance, security, and growth.",
       primaryBtn: { text: "Start Your Project", href: "/contact" },
       secondaryBtn: { text: "View Capabilities", href: "/services/software-development" },
-      image: "/assets/homehero/6.png",
+      image: "/assets/homehero/Subbiah%20Muthu.M.svg",
       glowColor: "rgba(244, 63, 94, 0.05)",
       keywords: [
         "Product Engineering",
@@ -116,11 +116,11 @@ export function HeroSection() {
     },
     {
       eyebrow: "Enterprise Security & Compliance",
-      title: "Securing Platforms, Protecting Digital Assets",
-      desc: "From zero-trust network architectures and penetration testing to SOC 2 readiness, we implement compliance-driven security systems that guard your corporate ecosystem.",
+      title: "Protecting Your Digital Assets with Enterprise-Grade Security That Works",
+      desc: "From advanced zero-trust network architectures and thorough penetration testing to SOC 2 readiness, we implement robust, compliance-driven enterprise security systems that continuously guard your corporate ecosystem.",
       primaryBtn: { text: "Start Security Audit", href: "/contact" },
       secondaryBtn: { text: "Explore Security", href: "/services/cybersecurity" },
-      image: "/assets/homehero/7.png",
+      image: "/assets/homehero/Sudalairajan.%20A.svg",
       glowColor: "rgba(244, 63, 94, 0.05)",
       keywords: [
         "Zero Trust",
@@ -133,11 +133,11 @@ export function HeroSection() {
     },
     {
       eyebrow: "DevOps & Automation Excellence",
-      title: "Accelerating Delivery with Intelligent Pipelines",
-      desc: "We automate your entire software lifecycle. By integrating continuous integration, deployment pipelines, and proactive monitoring, we eliminate bottlenecks and speed up your time to market.",
+      title: "Accelerate Delivery, Eliminate Bottlenecks, and Ship With Total Confidence",
+      desc: "We completely automate your entire software lifecycle. By integrating advanced continuous integration, scalable deployment pipelines, and proactive system monitoring, we effectively eliminate bottlenecks and accelerate delivery.",
       primaryBtn: { text: "Optimize Delivery", href: "/contact" },
       secondaryBtn: { text: "Explore DevOps", href: "/services/devops" },
-      image: "/assets/homehero/8.png",
+      image: "/assets/homehero/Thangalakshmi.M.svg",
       glowColor: "rgba(220, 38, 38, 0.06)",
       keywords: [
         "CI/CD Pipelines",
@@ -187,7 +187,7 @@ export function HeroSection() {
       <div className="max-w-site mx-auto w-full px-6 md:px-12 lg:px-16 xl:px-20 relative z-10 flex flex-col justify-between h-full">
 
         {/* Top Section wrapper for precise image positioning */}
-        <div className="relative w-full">
+        <div className="relative w-full pb-16">
           {/* Main Columns Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-[1.15fr_0.85fr] gap-12 lg:gap-16 items-center min-h-[460px] relative z-20">
 
@@ -280,8 +280,10 @@ export function HeroSection() {
                   <img
                     src={slides[currentSlide].image}
                     alt={slides[currentSlide].title}
-                    className="w-full h-auto object-contain max-h-[360px] select-none pointer-events-none filter drop-shadow-[0_0_30px_rgba(225,29,72,0.12)]"
+                    className="w-full h-auto object-contain max-h-[360px] select-none pointer-events-none filter drop-shadow-[0_0_30px_rgba(225,29,72,0.12)] relative z-10"
                   />
+                  {/* Bottom fade shadow to blend effectively into black theme */}
+                  <div className="absolute bottom-[-10px] left-[-10px] right-[-10px] h-24 bg-gradient-to-t from-[#030303] via-[#030303]/90 to-transparent blur-[2px] pointer-events-none z-20" />
                 </motion.div>
               </AnimatePresence>
             </div>
@@ -291,7 +293,7 @@ export function HeroSection() {
           </div>
 
           {/* Viewport-edge aligned Right Image (Large screens) */}
-          <div className="hidden lg:flex absolute top-0 bottom-[-160px] right-[calc(50%-50vw)] w-[48vw] items-end justify-end pointer-events-none z-10 overflow-visible">
+          <div className="hidden lg:flex absolute top-0 bottom-0 right-[calc(50%-50vw)] w-[48vw] items-end justify-end pointer-events-none z-10 overflow-visible">
             {/* Ambient background glow behind image */}
             <div
               className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[110%] h-[110%] rounded-full pointer-events-none blur-3xl transition-all duration-700"
@@ -309,15 +311,16 @@ export function HeroSection() {
                 <img
                   src={slides[currentSlide].image}
                   alt={slides[currentSlide].title}
-                  className="w-full h-[100%] object-contain object-right-bottom select-none pointer-events-none drop-shadow-[0_10px_35px_rgba(225,29,72,0.15)]"
+                  className="w-full h-[100%] object-contain object-right-bottom select-none pointer-events-none drop-shadow-[0_10px_35px_rgba(225,29,72,0.15)] relative z-10"
                 />
+                {/* Bottom fade shadow to blend effectively into black theme */}
+                <div className="absolute bottom-[-10px] left-[-10px] right-[-10px] h-32 bg-gradient-to-t from-[#030303] via-[#030303]/90 to-transparent blur-[4px] pointer-events-none z-20" />
               </motion.div>
             </AnimatePresence>
           </div>
-        </div>
 
-        {/* Slider Controls (Indicators & Chevron Arrows) */}
-        <div className="mt-8 flex flex-col sm:flex-row gap-6 justify-between items-center relative z-20">
+          {/* Slider Controls (Indicators & Chevron Arrows) */}
+          <div className="mt-8 flex flex-col sm:flex-row gap-6 justify-between items-center relative z-20">
           {/* Progress Indicators */}
           <div className="flex items-center gap-3">
             {slides.map((_, index) => (
@@ -351,9 +354,10 @@ export function HeroSection() {
             </button>
           </div>
         </div>
+        </div>
 
         {/* Premium Stats Section */}
-        <div className="mt-16 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-6 md:gap-8 gap-y-10 border-t border-zinc-900/60 pt-10 relative z-20">
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-6 md:gap-8 gap-y-10 border-t border-zinc-900/60 pt-10 relative z-20">
           {[
             { num: 7, suffix: "+", label: "Years" },
             { num: 6, suffix: "+", label: "Offices" },

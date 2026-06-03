@@ -1,0 +1,53 @@
+[
+  {
+    "id": 1,
+    "role": "Senior Site Reliability Engineer",
+    "location": "Greater London, United Kingdom",
+    "type": "Full-Time",
+    "status": "active",
+    "req": "REQ-092",
+    "accent": "from-emerald-500 to-teal-500",
+    "date": "2026-06-12"
+  },
+  {
+    "id": 2,
+    "role": "Lead ML Platform Architect",
+    "location": "London // Hybrid",
+    "type": "Full-Time",
+    "status": "active",
+    "req": "REQ-084",
+    "accent": "from-rose-600 to-orange-600",
+    "date": "Closing: Dec 15"
+  },
+  {
+    "id": 3,
+    "role": "Senior Cloud Security Engineer",
+    "location": "Bangalore // On-Site",
+    "type": "Full-Time",
+    "status": "expired",
+    "req": "REQ-071",
+    "accent": "from-zinc-500 to-zinc-700",
+    "date": "Filled: Nov 20"
+  },
+  {
+    "id": 1780512445083,
+    "role": "AI developer",
+    "location": "UK",
+    "type": "Full-Time",
+    "status": "active",
+    "req": "REQ-1234",
+    "accent": "from-rose-500 to-red-600",
+    "date": "June-7"
+  },
+  {
+    "id": 1780512721214,
+    "role": "AI developer",
+    "location": "",
+    "type": "Full-Time",
+    "status": "active",
+    "req": "REQ-",
+    "accent": "from-orange-500 to-amber-500",
+    "date": "",
+    "image": "/uploads/1780512708237-Screenshot_4-6-2026_02125_www.instagram.com.jpeg"
+  }
+]

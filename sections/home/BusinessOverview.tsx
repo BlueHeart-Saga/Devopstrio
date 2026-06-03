@@ -36,7 +36,7 @@ export function BusinessOverview() {
               Transforming Businesses Through Cloud, AI & Digital Innovation
             </h2>
 
-            <div className="space-y-6 text-zinc-300 text-base md:text-[17px] leading-[1.7] mb-8">
+            <div className="space-y-6 text-zinc-200 font-medium text-base md:text-[17px] leading-[1.7] mb-8">
               <p>
                 Devopstrio is a global technology consulting and digital engineering company headquartered in London, with delivery centres across the United Kingdom, United States, and India. We help organizations accelerate growth, modernize infrastructure, and unlock new opportunities through Cloud, Artificial Intelligence, Data Engineering, DevOps, Cybersecurity, and Enterprise Applications.
               </p>
@@ -72,7 +72,7 @@ export function BusinessOverview() {
               </p>
             </div>
 
-            <div className="space-y-6 text-zinc-300 text-[15px] md:text-base leading-[1.7] px-2">
+            <div className="space-y-6 text-zinc-200 font-medium text-[15px] md:text-base leading-[1.7] px-2">
               <p>
                 Our multi-cloud expertise across Microsoft Azure, AWS, and Google Cloud helps organizations innovate faster while maximizing performance, security, and cost efficiency.
               </p>
@@ -93,7 +93,7 @@ export function BusinessOverview() {
                 <h3 className="text-xl md:text-2xl font-bold tracking-tight text-white mb-4">
                   Your Growth, Our Priority
                 </h3>
-                <p className="text-zinc-300 text-[15px] leading-relaxed mb-8">
+                <p className="text-zinc-200 font-medium text-[15px] leading-relaxed mb-8">
                   We align our technical expertise with your goals, ensuring every pipeline and cloud configuration directly contributes to your bottom-line success.
                 </p>
               </div>
@@ -109,7 +109,7 @@ export function BusinessOverview() {
                 <h3 className="text-xl md:text-2xl font-bold tracking-tight text-white mb-4">
                   Innovating for Your Success
                 </h3>
-                <p className="text-zinc-300 text-[15px] leading-relaxed mb-8">
+                <p className="text-zinc-200 font-medium text-[15px] leading-relaxed mb-8">
                   By integrating predictive AI checks and zero-trust security compliance directly into your CI/CD cycles, we deliver cutting-edge continuous innovation by default.
                 </p>
               </div>

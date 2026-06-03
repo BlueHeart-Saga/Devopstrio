@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import { Send, Linkedin, Facebook, Instagram, Youtube } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 
 export function Footer() {
   const [email, setEmail] = useState("");
@@ -16,139 +16,154 @@ export function Footer() {
   };
 
   return (
-    <footer className="w-full bg-[#030303] text-zinc-400 border-t border-zinc-900 pt-16 pb-8 relative overflow-hidden">
-      <div className="max-w-site mx-auto px-6 md:px-12 lg:px-16 xl:px-20">
+    <footer className="w-full bg-[#030303] text-zinc-400 pt-16 pb-8 relative overflow-hidden font-sans">
+      <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16">
+        
+       
 
-        {/* Top 4-Column Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-16">
-
-          {/* Col 1: Brand & Socials */}
-          <div className="flex flex-col gap-6">
-            <Link href="/" className="flex items-center gap-2 group">
-              <img
-                src="/assets/logo/logo.png"
-                alt="Devopstrio logo"
-                className="w-5 h-5 transition-transform duration-300 group-hover:scale-110 object-contain"
-              />
-              <span className="text-sm font-semibold tracking-wide text-zinc-100">
-                Devopstrio
-              </span>
-            </Link>
-            <p className="text-[11px] text-zinc-500 leading-relaxed font-light max-w-xs">
-              Next-generation cognitive AI pipelines, secure multi-cloud automation, and robust multi-platform runtimes built by senior engineers.
-            </p>
-            <div className="flex items-center gap-4">
-              <a href="#" className="w-8 h-8 rounded-full border border-zinc-900 bg-zinc-950/20 flex items-center justify-center text-zinc-550 hover:text-rose-500 hover:border-rose-900/40 transition-colors" aria-label="LinkedIn">
-                <Linkedin size={13} />
-              </a>
-              <a href="#" className="w-8 h-8 rounded-full border border-zinc-900 bg-zinc-950/20 flex items-center justify-center text-zinc-550 hover:text-rose-500 hover:border-rose-900/40 transition-colors" aria-label="Facebook">
-                <Facebook size={13} />
-              </a>
-              <a href="#" className="w-8 h-8 rounded-full border border-zinc-900 bg-zinc-950/20 flex items-center justify-center text-zinc-550 hover:text-rose-500 hover:border-rose-900/40 transition-colors" aria-label="Instagram">
-                <Instagram size={13} />
-              </a>
-              <a href="#" className="w-8 h-8 rounded-full border border-zinc-900 bg-zinc-950/20 flex items-center justify-center text-zinc-550 hover:text-rose-500 hover:border-rose-900/40 transition-colors" aria-label="YouTube">
-                <Youtube size={13} />
-              </a>
+        {/* MIDDLE ROW: 4-Column Mega Menu */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-12 gap-y-16 mb-20">
+          
+          {/* Col 1 */}
+          <div className="flex flex-col gap-10">
+            {/* AI Tools Links (No bold heading in image) */}
+            <ul className="flex flex-col gap-4 text-sm text-zinc-400">
+              <li><Link href="/services/ai" className="hover:text-white transition-colors">AI Tools</Link></li>
+              <li><Link href="/services/ai" className="hover:text-white transition-colors">Artificial Intelligence</Link></li>
+              <li><Link href="/services/ai" className="hover:text-white transition-colors">Data Science</Link></li>
+              <li><Link href="/services/ai" className="hover:text-white transition-colors">Database Creation</Link></li>
+              <li><Link href="/services/ai" className="hover:text-white transition-colors">Hire AI Experts</Link></li>
+            </ul>
+            {/* Cloud & Security Block */}
+            <div>
+              <h4 className="text-[15px] font-bold text-white mb-6 tracking-wide">Cloud & Security</h4>
+              <ul className="flex flex-col gap-4 text-sm text-zinc-400">
+                <li><Link href="/services/devops" className="hover:text-white transition-colors">CI/CD Pipeline</Link></li>
+                <li><Link href="/services/cloud" className="hover:text-white transition-colors">Cloud Migration</Link></li>
+                <li><Link href="/services/devops" className="hover:text-white transition-colors">DevOps Consulting</Link></li>
+                <li><Link href="/services/devops" className="hover:text-white transition-colors">Infrastructure as Code</Link></li>
+                <li><Link href="/services/devops" className="hover:text-white transition-colors">Kubernetes Solutions</Link></li>
+                <li><Link href="/services/cloud" className="hover:text-white transition-colors">Digital Sovereignty</Link></li>
+                <li><Link href="/services/cloud" className="hover:text-white transition-colors">Digital Transformation</Link></li>
+                <li><Link href="/services/cloud" className="hover:text-white transition-colors">IT Consulting</Link></li>
+                <li><Link href="/services/cybersecurity" className="hover:text-white transition-colors">Penetration Testing</Link></li>
+                <li><Link href="/services/cybersecurity" className="hover:text-white transition-colors">Security Management</Link></li>
+                <li><Link href="/services/cybersecurity" className="hover:text-white transition-colors">Security Ops Center</Link></li>
+              </ul>
             </div>
           </div>
 
-          {/* Col 2: What We Do */}
-          <div>
-            <span className="block text-[10px] font-mono tracking-widest text-zinc-500 uppercase mb-5">
-              What We Do
-            </span>
-            <ul className="flex flex-col gap-2.5 text-[11px] font-light">
-              <li>
-                <Link href="/#capabilities" className="text-zinc-450 hover:text-white transition-colors">
-                  AI & Generative AI
-                </Link>
-              </li>
-              <li>
-                <Link href="/#capabilities" className="text-zinc-450 hover:text-white transition-colors">
-                  Cloud & Security
-                </Link>
-              </li>
-              <li>
-                <Link href="/#capabilities" className="text-zinc-450 hover:text-white transition-colors">
-                  Digital Sovereignty
-                </Link>
-              </li>
-              <li>
-                <Link href="/#capabilities" className="text-zinc-450 hover:text-white transition-colors">
-                  Applications Dev
-                </Link>
-              </li>
+          {/* Col 2 */}
+          <div className="flex flex-col gap-10">
+            {/* Industries Links */}
+            <ul className="flex flex-col gap-4 text-sm text-zinc-400">
+              <li><Link href="/industries" className="hover:text-white transition-colors">Healthcare</Link></li>
+              <li><Link href="/industries" className="hover:text-white transition-colors">Logistics</Link></li>
+              <li><Link href="/industries" className="hover:text-white transition-colors">Media & Entertainment</Link></li>
+              <li><Link href="/industries" className="hover:text-white transition-colors">Retail & E-commerce</Link></li>
+              <li><Link href="/industries" className="hover:text-white transition-colors">SaaS Applications</Link></li>
+              <li><Link href="/industries" className="hover:text-white transition-colors">Telecom</Link></li>
+            </ul>
+            {/* Applications Block */}
+            <div>
+              <h4 className="text-[15px] font-bold text-white mb-6 tracking-wide">Applications</h4>
+              <ul className="flex flex-col gap-4 text-sm text-zinc-400">
+                <li><Link href="/services/software-development" className="hover:text-white transition-colors">CMS Web Development</Link></li>
+                <li><Link href="/services/software-development" className="hover:text-white transition-colors">Cross-platform Dev</Link></li>
+                <li><Link href="/services/software-development" className="hover:text-white transition-colors">Mobile Development</Link></li>
+                <li><Link href="/services/software-development" className="hover:text-white transition-colors">PWA Development</Link></li>
+                <li><Link href="/services/software-development" className="hover:text-white transition-colors">Web Development</Link></li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Col 3 */}
+          <div className="flex flex-col gap-10">
+            {/* Insights / About Links */}
+            <ul className="flex flex-col gap-4 text-sm text-zinc-400">
+              <li><Link href="#" className="hover:text-white transition-colors">Blog</Link></li>
+              <li><Link href="#" className="hover:text-white transition-colors">Case Studies</Link></li>
+              <li><Link href="#" className="hover:text-white transition-colors">Celebrations</Link></li>
+              <li><Link href="#" className="hover:text-white transition-colors">Client Transformations</Link></li>
+              <li><Link href="/contact" className="hover:text-white transition-colors">Contact Us</Link></li>
+              <li><Link href="#" className="hover:text-white transition-colors">Events</Link></li>
+              <li><Link href="/about" className="hover:text-white transition-colors">Overview</Link></li>
+              <li><Link href="/about" className="hover:text-white transition-colors">Team Culture</Link></li>
+              <li><Link href="#" className="hover:text-white transition-colors">Testimonials</Link></li>
+              <li><Link href="/about" className="hover:text-white transition-colors">Values</Link></li>
+              <li><Link href="#" className="hover:text-white transition-colors">White Papers</Link></li>
             </ul>
           </div>
 
-          {/* Col 3: Who We Are */}
-          <div>
-            <span className="block text-[10px] font-mono tracking-widest text-zinc-500 uppercase mb-5">
-              Who We Are
-            </span>
-            <ul className="flex flex-col gap-2.5 text-[11px] font-light">
-              <li>
-                <Link href="/about" className="text-zinc-450 hover:text-white transition-colors">
-                  About Us
-                </Link>
-              </li>
-              <li>
-                <Link href="/about#achievements" className="text-zinc-450 hover:text-white transition-colors">
-                  Awards & Milestones
-                </Link>
-              </li>
-              <li>
-                <Link href="/#insights" className="text-zinc-450 hover:text-white transition-colors">
-                  Insights & White Papers
-                </Link>
-              </li>
-              <li>
-                <Link href="/#careers" className="text-zinc-450 hover:text-white transition-colors">
-                  Careers & Job Opportunities
-                </Link>
-              </li>
-            </ul>
+          {/* Col 4 */}
+          <div className="flex flex-col gap-10">
+            {/* Global Presence */}
+            <div>
+              <h4 className="text-[15px] font-bold text-white mb-6 tracking-wide">Global Presence</h4>
+              <ul className="flex flex-col gap-4 text-sm text-zinc-400">
+                <li className="hover:text-white transition-colors">London - Head Office</li>
+                <li className="hover:text-white transition-colors">Tennessee - Sub-Regional Office</li>
+                <li className="hover:text-white transition-colors">Bengaluru - Corporate Office</li>
+                <li className="hover:text-white transition-colors">Chennai - Sub-Regional Office</li>
+                <li className="hover:text-white transition-colors">Thoothukudi - Sub-Regional Office</li>
+              </ul>
+            </div>
+            
+            {/* Newsletter */}
+            <div>
+              <h4 className="text-[15px] font-bold text-white mb-6 tracking-wide">Newsletter</h4>
+              <p className="text-sm text-zinc-400 leading-relaxed mb-6">
+                Subscribe to our newsletter for the latest tech insights and company updates.
+              </p>
+              <form onSubmit={handleSubmit} className="flex relative w-full border border-zinc-800 rounded-lg bg-[#0a0a0a] focus-within:border-zinc-700 transition-colors overflow-hidden">
+                <input
+                  type="email"
+                  required
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="Your Email Address"
+                  className="flex-grow bg-transparent px-4 py-3.5 text-sm text-white focus:outline-none placeholder:text-zinc-600"
+                />
+                <button
+                  type="submit"
+                  className="px-5 border-l border-zinc-800 flex items-center justify-center text-zinc-500 hover:text-white hover:bg-zinc-900 transition-colors"
+                  aria-label="Subscribe"
+                >
+                  <ChevronRight size={16} />
+                </button>
+              </form>
+            </div>
           </div>
-
-          {/* Col 4: Newsletter */}
-          <div>
-            <span className="block text-[10px] font-mono tracking-widest text-zinc-500 uppercase mb-5">
-              Newsletter
-            </span>
-            <p className="text-[11px] text-zinc-500 leading-relaxed font-light mb-4">
-              Subscribe to our newsletter for the latest tech insights and company updates.
-            </p>
-            <form onSubmit={handleSubmit} className="flex gap-2 w-full">
-              <input
-                type="email"
-                required
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="Your Email Address"
-                className="flex-grow bg-[#000000] border border-zinc-900 rounded-full px-4 py-2 text-[11px] font-light text-white focus:outline-none focus:border-rose-900/60 transition-colors"
-              />
-              <button
-                type="submit"
-                className="w-9 h-9 rounded-full bg-rose-600 hover:bg-rose-700 transition-colors text-white flex items-center justify-center flex-shrink-0"
-                aria-label="Subscribe"
-              >
-                <Send size={12} />
-              </button>
-            </form>
-          </div>
-
         </div>
 
-        {/* Bottom copyright & utilities bar */}
-        <div className="border-t border-zinc-900 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] text-zinc-550 font-light">
+        {/* BOTTOM MID ROW: Socials */}
+        <div className="flex flex-col md:flex-row justify-between items-center py-8 border-b border-zinc-900 mb-6">
+          <Link href="/" className="flex items-center gap-3 group mb-6 md:mb-0">
+            <img src="/assets/logo/logo.png" alt="Devopstrio" className="w-7 h-7 object-contain transition-transform duration-300 group-hover:scale-110" />
+            <span className="text-[17px] font-bold text-white tracking-wide">Devopstrio</span>
+          </Link>
+          <div className="flex flex-wrap justify-center gap-6 md:gap-10 text-[13px] font-bold tracking-widest text-white">
+            <a href="#" className="hover:text-rose-500 transition-colors">LINKEDIN</a>
+            <a href="#" className="hover:text-rose-500 transition-colors">FACEBOOK</a>
+            <a href="#" className="hover:text-rose-500 transition-colors">INSTAGRAM</a>
+            <a href="#" className="hover:text-rose-500 transition-colors">YOUTUBE</a>
+          </div>
+        </div>
+
+        {/* BOTTOM MOST ROW: Copyright & Legal */}
+        <div className="flex flex-col md:flex-row justify-center items-center gap-3 text-[13px] text-zinc-500 font-medium pb-2">
           <span>Copyright © 2026 Devopstrio Limited</span>
-          <div className="flex flex-wrap gap-x-6 gap-y-2 justify-center">
+          <span className="hidden md:inline">&nbsp;&nbsp;&nbsp;</span>
+          <div className="flex flex-wrap justify-center gap-x-3 gap-y-2">
             <Link href="/contact" className="hover:text-zinc-300 transition-colors">Contact Us</Link>
-            <Link href="/contact" className="hover:text-zinc-300 transition-colors">Disclaimer</Link>
-            <Link href="/contact" className="hover:text-zinc-300 transition-colors">Privacy Statement</Link>
-            <Link href="/contact" className="hover:text-zinc-300 transition-colors">Terms of use</Link>
-            <Link href="/contact" className="hover:text-zinc-300 transition-colors">Sitemap</Link>
+            <span>/</span>
+            <Link href="#" className="hover:text-zinc-300 transition-colors">Disclaimer</Link>
+            <span>/</span>
+            <Link href="#" className="hover:text-zinc-300 transition-colors">Privacy Statement</Link>
+            <span>/</span>
+            <Link href="#" className="hover:text-zinc-300 transition-colors">Terms of use</Link>
+            <span>/</span>
+            <Link href="#" className="hover:text-zinc-300 transition-colors">Sitemap</Link>
           </div>
         </div>
 
