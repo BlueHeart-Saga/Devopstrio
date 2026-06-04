@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { Reveal } from "@/components/ui/Reveal";
-import { ArrowUpRight, MapPin, Briefcase, CalendarDays } from "lucide-react";
+import { ArrowUpRight, MapPin, Briefcase, CalendarDays, ChevronLeft, ChevronRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 type Poster = {
@@ -20,6 +20,7 @@ type Poster = {
 export function HiringSection() {
   const [hiringPosters, setHiringPosters] = useState<Poster[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
 
   useEffect(() => {
     // Fetch dynamic posters from the API
@@ -31,11 +32,21 @@ export function HiringSection() {
 
   useEffect(() => {
     if (hiringPosters.length === 0) return;
+    if (isHovered) return; // Pause auto-slide when interacting
+
     const timer = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % hiringPosters.length);
     }, 4500);
     return () => clearInterval(timer);
-  }, [hiringPosters.length]);
+  }, [hiringPosters.length, isHovered]);
+
+  const handleNext = () => {
+    setCurrentIndex((prev) => (prev + 1) % hiringPosters.length);
+  };
+  
+  const handlePrev = () => {
+    setCurrentIndex((prev) => (prev - 1 + hiringPosters.length) % hiringPosters.length);
+  };
 
   const poster = hiringPosters[currentIndex];
   
@@ -72,7 +83,11 @@ export function HiringSection() {
           </div>
 
           {/* Right Block: Dynamic Hiring Poster */}
-          <div className="relative h-[440px] w-full flex items-center justify-center perspective-[1000px]">
+          <div 
+            className="relative h-[440px] w-full flex items-center justify-center perspective-[1000px]"
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+          >
             <AnimatePresence mode="wait">
               <motion.div
                 key={poster.id}
@@ -167,16 +182,36 @@ export function HiringSection() {
               </motion.div>
             </AnimatePresence>
 
-            {/* Slider Dots */}
-            <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 flex items-center gap-2">
-              {hiringPosters.map((_, idx) => (
-                <div 
-                  key={idx} 
-                  className={`h-1.5 rounded-full transition-all duration-500 ${
-                    currentIndex === idx ? "w-8 bg-rose-500 shadow-[0_0_10px_rgba(225,29,72,0.5)]" : "w-1.5 bg-zinc-800"
-                  }`} 
-                />
-              ))}
+            {/* Slider Dots & Controls */}
+            <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-4 z-30">
+              <button 
+                onClick={handlePrev} 
+                className="text-zinc-500 hover:text-rose-500 transition-colors p-1"
+                aria-label="Previous Poster"
+              >
+                <ChevronLeft size={20} />
+              </button>
+              
+              <div className="flex items-center gap-2">
+                {hiringPosters.map((_, idx) => (
+                  <button 
+                    key={idx} 
+                    onClick={() => setCurrentIndex(idx)}
+                    aria-label={`Go to poster ${idx + 1}`}
+                    className={`h-1.5 rounded-full transition-all duration-500 ${
+                      currentIndex === idx ? "w-8 bg-rose-500 shadow-[0_0_10px_rgba(225,29,72,0.5)]" : "w-1.5 bg-zinc-800 hover:bg-zinc-600"
+                    }`} 
+                  />
+                ))}
+              </div>
+
+              <button 
+                onClick={handleNext} 
+                className="text-zinc-500 hover:text-rose-500 transition-colors p-1"
+                aria-label="Next Poster"
+              >
+                <ChevronRight size={20} />
+              </button>
             </div>
           </div>
 

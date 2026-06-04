@@ -5,23 +5,32 @@ import { Reveal } from "@/components/ui/Reveal";
 import { Lightbulb, PenTool, Code2, Rocket, ServerCog, LineChart, Globe } from "lucide-react";
 
 const deliveryProcess = [
-  { step: "Consult", desc: "Audit existing infrastructure, telemetry pipelines & software stack bottlenecks.", icon: Lightbulb },
-  { step: "Design", desc: "Draft landing zones, compliance criteria & AI integration opportunities.", icon: PenTool },
-  { step: "Build", desc: "Execute core software development, CI/CD flows & LLM evaluations.", icon: Code2 },
-  { step: "Deploy", desc: "Automate canary rollouts, post-deployment tests & security posture scans.", icon: Rocket },
-  { step: "Operate", desc: "Manage infrastructure, monitor performance, and ensure continuous availability.", icon: ServerCog },
-  { step: "Optimize", desc: "Assess resource utilization, FinOps spend & system response times.", icon: LineChart },
-  { step: "Scale", desc: "Expand architecture seamlessly to support business growth and global reach.", icon: Globe }
+  { step: "Consult", desc: "Audit infrastructure & pipeline bottlenecks.", icon: Lightbulb },
+  { step: "Design", desc: "Draft landing zones & AI integrations.", icon: PenTool },
+  { step: "Build", desc: "Execute core development & CI/CD flows.", icon: Code2 },
+  { step: "Deploy", desc: "Automate rollouts & security scans.", icon: Rocket },
+  { step: "Operate", desc: "Manage infrastructure & ensure uptime.", icon: ServerCog },
+  { step: "Optimize", desc: "Assess utilization & FinOps spend.", icon: LineChart },
+  { step: "Scale", desc: "Expand architecture seamlessly.", icon: Globe }
+];
+
+const nodeColors = [
+  "text-lime-500 border-lime-500 shadow-lime-500/20",
+  "text-emerald-500 border-emerald-500 shadow-emerald-500/20",
+  "text-cyan-500 border-cyan-500 shadow-cyan-500/20",
+  "text-blue-500 border-blue-500 shadow-blue-500/20",
+  "text-indigo-500 border-indigo-500 shadow-indigo-500/20",
+  "text-violet-500 border-violet-500 shadow-violet-500/20",
+  "text-rose-500 border-rose-500 shadow-rose-500/20",
 ];
 
 export function DeliveryWorkflow() {
   return (
     <>
-      {/* Client Success Lifecycle Diagram */}
-      <div className="mb-24 relative p-8 md:p-12 rounded-3xl border border-zinc-900 bg-zinc-950/30 overflow-hidden">
+      <div className="mb-24 relative p-8 md:p-12 rounded-3xl border border-zinc-900 bg-zinc-950/30 shadow-2xl">
         
         <Reveal>
-          <div className="mb-16">
+          <div className="mb-16 text-center">
              <span className="text-xs font-bold tracking-[0.25em] uppercase text-rose-500 block mb-3">
                CLIENT SUCCESS LIFECYCLE
              </span>
@@ -31,83 +40,102 @@ export function DeliveryWorkflow() {
           </div>
         </Reveal>
 
-        {/* Desktop Zigzag Pipeline */}
-        <div className="hidden lg:block w-full relative pt-12 pb-24">
-          <div className="relative z-10 w-full">
-            <div className="absolute top-[68px] left-0 right-0 h-[100px] z-0 pointer-events-none">
-               <svg preserveAspectRatio="none" viewBox="0 0 100 100" className="w-full h-full opacity-40">
-                  <polyline 
-                    points="7.14,0 21.4,100 35.7,0 50,100 64.3,0 78.6,100 92.8,0" 
-                    fill="none" 
-                    stroke="#f43f5e" 
-                    strokeWidth="0.5" 
-                    strokeDasharray="2, 2"
-                  />
-               </svg>
-            </div>
+        {/* Desktop Infographic Flow */}
+        <div className="hidden lg:block w-full relative pt-20 pb-16 max-w-6xl mx-auto">
+          
+          {/* S-Curve SVG Background */}
+          <div className="absolute inset-0 z-0 pointer-events-none w-full h-[280px] mt-4">
+            <svg preserveAspectRatio="none" viewBox="0 0 1000 280" className="w-full h-full">
+              <path 
+                d="M 71 40 C 142 40, 142 240, 214 240 C 285 240, 285 40, 357 40 C 428 40, 428 240, 500 240 C 571 240, 571 40, 643 40 C 714 40, 714 240, 786 240 C 857 240, 857 40, 929 40" 
+                fill="none" 
+                stroke="#3f3f46" 
+                strokeWidth="2.5" 
+                strokeDasharray="6, 6"
+                className="opacity-60"
+              />
+            </svg>
+          </div>
 
-            <div className="grid grid-cols-7 gap-4 relative z-10">
-              {deliveryProcess.map((item, index) => {
-                 const isTop = index % 2 === 0;
-                 return (
-                   <div key={item.step} className={`flex flex-col items-center text-center ${isTop ? '' : 'mt-[100px]'}`}>
-                      <div className="text-2xl font-black text-rose-500/20 italic mb-3 select-none">
-                        0{index + 1}
-                      </div>
+          <div className="grid grid-cols-7 gap-0 relative z-10 w-full h-[280px]">
+            {deliveryProcess.map((item, index) => {
+               const isTop = index % 2 === 0;
+               const colorClass = nodeColors[index];
+               const textColor = colorClass.split(" ")[0];
+               const borderColor = colorClass.split(" ")[1];
+               const shadowColor = colorClass.split(" ")[2];
 
+               return (
+                 <div key={item.step} className={`flex flex-col items-center text-center w-full h-full ${isTop ? 'justify-start' : 'justify-end'}`}>
+                    
+                    <div className="relative">
+                      {/* Top Text (Only for TOP nodes) */}
+                      {isTop && (
+                        <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-4 flex flex-col items-center px-1 w-[140px]">
+                          <span className={`text-[11px] font-black tracking-widest ${textColor}`}>STEP 0{index + 1}</span>
+                          <h4 className="text-sm font-bold text-white mt-1 mb-1">{item.step}</h4>
+                          <p className="text-[10px] text-zinc-400 leading-snug">{item.desc}</p>
+                        </div>
+                      )}
+
+                      {/* Circular Broken Node */}
                       <Reveal delay={index * 0.1}>
-                        <div className="relative group w-12 h-12 mb-8 mx-auto cursor-default">
-                           <div className="absolute inset-0 bg-rose-500/20 blur-xl rounded-full group-hover:bg-rose-500/40 transition-all duration-500 opacity-0 group-hover:opacity-100" />
-                           <div className="absolute inset-0 rotate-45 rounded-xl border border-zinc-700 bg-gradient-to-br from-zinc-900 to-[#050505] shadow-2xl group-hover:border-rose-500 transition-all duration-500 flex items-center justify-center overflow-hidden">
-                              <div className="absolute inset-0 bg-gradient-to-tr from-rose-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                           </div>
-                           <div className="absolute inset-0 flex items-center justify-center z-10 text-rose-500 group-hover:text-white transition-colors duration-500">
-                              <item.icon size={22} strokeWidth={2} className="group-hover:scale-110 transition-transform duration-500 drop-shadow-[0_0_8px_rgba(225,29,72,0.8)] group-hover:drop-shadow-[0_0_12px_rgba(255,255,255,0.8)]" />
-                           </div>
+                        <div className={`w-20 h-20 rounded-full bg-zinc-950 border-[5px] ${borderColor} shadow-lg ${shadowColor} flex items-center justify-center relative z-10 transition-transform hover:scale-110 duration-300 ${isTop ? 'border-b-transparent -rotate-45' : 'border-t-transparent rotate-45'}`}>
+                          {/* Inner icon container (counter-rotate to stay upright) */}
+                          <div className={`absolute inset-0 flex items-center justify-center ${isTop ? 'rotate-45' : '-rotate-45'}`}>
+                             <item.icon size={26} strokeWidth={2.5} className={`${textColor} drop-shadow-md`} />
+                          </div>
                         </div>
                       </Reveal>
 
-                      <Reveal delay={index * 0.1 + 0.1} className="w-full">
-                        <div className="bg-zinc-950/40 px-2 py-4 rounded-xl border border-zinc-800/40 hover:border-zinc-700 transition-colors h-full group cursor-default shadow-lg hover:shadow-2xl flex items-center justify-center">
-                          <h4 className="text-xs xl:text-sm font-bold text-zinc-100 uppercase tracking-widest group-hover:text-rose-400 transition-colors">
-                            {item.step}
-                          </h4>
+                      {/* Bottom Text (Only for BOTTOM nodes) */}
+                      {!isTop && (
+                        <div className="absolute top-full left-1/2 -translate-x-1/2 mt-4 flex flex-col items-center px-1 w-[140px]">
+                          <span className={`text-[11px] font-black tracking-widest ${textColor}`}>STEP 0{index + 1}</span>
+                          <h4 className="text-sm font-bold text-white mt-1 mb-1">{item.step}</h4>
+                          <p className="text-[10px] text-zinc-400 leading-snug">{item.desc}</p>
                         </div>
-                      </Reveal>
-                   </div>
-                 )
-              })}
-            </div>
+                      )}
+                    </div>
+
+                 </div>
+               )
+            })}
           </div>
         </div>
 
-        {/* Mobile/Tablet Flow */}
-        <div className="lg:hidden flex flex-col gap-0 pb-10">
-          {deliveryProcess.map((item, index) => (
-            <React.Fragment key={item.step}>
-              <Reveal className="w-full">
-                <div className="p-6 rounded-2xl border border-zinc-800/60 bg-zinc-950/40 hover:border-rose-500/50 hover:bg-zinc-900/60 transition-all duration-300 relative overflow-hidden group shadow-lg">
-                  <div className="absolute -top-4 -right-2 p-4 text-7xl font-black text-rose-500/5 italic select-none pointer-events-none group-hover:text-rose-500/10 transition-colors duration-500">
-                    0{index + 1}
-                  </div>
-                  <div className="flex items-center gap-6 relative z-10">
-                    <div className="relative w-10 h-10 flex-shrink-0">
-                       <div className="absolute inset-0 rotate-45 rounded-lg border border-rose-500/50 bg-gradient-to-br from-zinc-900 to-[#050505] shadow-[0_0_15px_rgba(225,29,72,0.2)] group-hover:border-rose-500 transition-all duration-300" />
-                       <div className="absolute inset-0 flex items-center justify-center z-10 text-rose-500 group-hover:text-white transition-colors duration-300">
-                          <item.icon size={18} strokeWidth={2.5} className="drop-shadow-[0_0_5px_rgba(225,29,72,0.6)] group-hover:scale-110 transition-transform duration-300" />
-                       </div>
+        {/* Mobile/Tablet Vertical Flow */}
+        <div className="lg:hidden flex flex-col gap-0 pt-8 pb-4 relative">
+          <div className="absolute left-[39px] top-12 bottom-12 w-[2px] border-l-2 border-dashed border-zinc-700 opacity-60 z-0" />
+          
+          {deliveryProcess.map((item, index) => {
+            const colorClass = nodeColors[index];
+            const textColor = colorClass.split(" ")[0];
+            const borderColor = colorClass.split(" ")[1];
+            const shadowColor = colorClass.split(" ")[2];
+
+            return (
+              <Reveal key={item.step} className="w-full relative z-10 mb-10 last:mb-0">
+                <div className="flex items-center gap-6">
+                  {/* Node */}
+                  <div className={`w-20 h-20 flex-shrink-0 rounded-full bg-zinc-950 border-[5px] ${borderColor} border-l-transparent rotate-45 shadow-lg ${shadowColor} flex items-center justify-center relative z-10`}>
+                    <div className="absolute inset-0 flex items-center justify-center -rotate-45">
+                        <item.icon size={26} strokeWidth={2.5} className={`${textColor} drop-shadow-md`} />
                     </div>
-                    <h4 className="text-xl font-bold text-zinc-100 tracking-wide group-hover:text-rose-400 transition-colors">{item.step}</h4>
+                  </div>
+                  
+                  {/* Text */}
+                  <div className="flex-1 bg-zinc-900/40 p-5 rounded-2xl border border-zinc-800/60 shadow-lg">
+                    <span className={`text-[10px] font-black tracking-widest uppercase ${textColor} block mb-1`}>
+                      Step 0{index + 1}
+                    </span>
+                    <h4 className="text-lg font-bold text-zinc-100 tracking-wide mb-2">{item.step}</h4>
+                    <p className="text-sm text-zinc-400 leading-relaxed">{item.desc}</p>
                   </div>
                 </div>
               </Reveal>
-              {index < deliveryProcess.length - 1 && (
-                <div className="flex justify-center h-8">
-                   <div className="w-[1px] h-full border-l border-dashed border-rose-500/40" />
-                </div>
-              )}
-            </React.Fragment>
-          ))}
+            );
+          })}
         </div>
       </div>
     </>
