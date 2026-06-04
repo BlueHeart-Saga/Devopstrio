@@ -85,7 +85,7 @@ export function Testimonials() {
       quote: "The CI/CD pipeline automation completely transformed how we ship software. We went from monthly releases to multiple daily deployments with absolute confidence.",
       author: "Sophia Martinez",
       role: "Head of DevOps, InnovateTech",
-      image: "/assets/client-reviews/image%20176.png"
+      image: "/assets/client-reviews/image%20180.png"
     },
     {
       quote: "Their site reliability engineering team came in and immediately optimized our resource allocation. We saw a dramatic drop in latency and a massive boost in customer satisfaction.",

@@ -213,7 +213,8 @@ export function HeroSection() {
                   {slides[currentSlide].title.split(" ").map((word, i) => {
                     const cleanWord = word.replace(/[^\w&']/g, "");
                     const isAccent = [
-                      "AI", "Cloud", "Digital", "Innovation", "Secure", "Scalable", "Platforms", "Vision", "Product", "Scale", "Securing", "Protecting", "Assets", "Data", "Value", "Delivery", "Dedicated", "Teams"
+                      "AI", "Cloud", "Digital", "Innovation", "Secure", "Scalable", "Platforms", "Vision", "Product", "Scale", "Securing", "Protecting", "Assets", "Data", "Value", "Delivery", "Dedicated", "Teams",
+                      "Bold", "Powerful", "Growth", "Security", "Performance", "Secured", "Threat", "Precision", "Industry", "Resilient", "Enterprise", "Limits", "Power", "Intelligent", "Launch", "Engineer", "Automate", "DevOps"
                     ].includes(cleanWord);
                     return (
                       <span key={i} className={isAccent ? "text-white font-medium bg-gradient-to-r from-red-600 via-rose-600 to-rose-500 bg-clip-text text-transparent mr-2.5 inline-block" : "mr-2.5 inline-block"}>

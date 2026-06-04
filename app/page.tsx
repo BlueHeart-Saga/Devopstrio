@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import { HeroSection } from "@/sections/home/HeroSection";
 import { ImperativesBanner } from "@/sections/home/ImperativesBanner";
 import { BusinessOverview } from "@/sections/home/BusinessOverview";
-import { Testimonials } from "@/sections/home/Testimonials";
+// import { Testimonials } from "@/sections/home/Testimonials";
 import { CoreServices } from "@/sections/home/CoreServices";
 import { IndustriesSection } from "@/sections/home/IndustriesSection";
 import { CaseStudies } from "@/sections/home/CaseStudies";
@@ -91,7 +91,7 @@ export default function Home() {
       <SectionNavbar sections={homeSections} />
       <div id="overview">
         <BusinessOverview />
-        <Testimonials />
+        {/* <Testimonials /> */}
       </div>
       <div id="capabilities">
         <CoreServices />
