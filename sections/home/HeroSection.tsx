@@ -13,8 +13,25 @@ export function HeroSection() {
 
   const slides = [
     {
-      eyebrow: "UK-Based Global Technology Partner",
+      eyebrow: "DevOps & Automation Excellence",
       title: "Where Bold Ideas Transform Into Powerful Digital Realities Today",
+      desc: "We completely automate your entire software lifecycle. By integrating advanced continuous integration, scalable deployment pipelines, and proactive system monitoring, we effectively eliminate bottlenecks and accelerate delivery.",
+      primaryBtn: { text: "Optimize Delivery", href: "/contact" },
+      secondaryBtn: { text: "Explore DevOps", href: "/services/devops" },
+      image: "/assets/homehero/Thangalakshmi.M.svg",
+      glowColor: "rgba(220, 38, 38, 0.06)",
+      keywords: [
+        "CI/CD Pipelines",
+        "Site Reliability",
+        "DevSecOps",
+        "Infrastructure as Code",
+        "Continuous Testing",
+        "Platform Automation"
+      ]
+    },
+    {
+      eyebrow: "UK-Based Global Technology Partner",
+      title: "Smarter Solutions, Built for Growth, Security, and Lasting Performance",
       desc: "Devopstrio helps modern organizations accelerate innovation through advanced AI, Cloud Engineering, DevOps, and Enterprise Software Development. We partner with businesses worldwide to build secure, scalable digital ecosystems.",
       primaryBtn: { text: "Book a Consultation", href: "/contact" },
       secondaryBtn: { text: "Explore Our Services", href: "#capabilities" },
@@ -31,7 +48,7 @@ export function HeroSection() {
     },
     {
       eyebrow: "End-to-End Technology Services",
-      title: "Smarter Solutions Built for Growth, Security, and Lasting Performance",
+      title: "Your Assets Secured Against Every Threat, Every Hour, Every Day",
       desc: "From complex cloud migrations and DevOps automation to intelligent AI implementation and cybersecurity, we deliver end-to-end technology solutions designed to create immediate and measurable business value.",
       primaryBtn: { text: "View Services", href: "/services" },
       secondaryBtn: { text: "Talk to an Expert", href: "/contact" },
@@ -116,7 +133,7 @@ export function HeroSection() {
     },
     {
       eyebrow: "Enterprise Security & Compliance",
-      title: "Protecting Your Digital Assets with Enterprise-Grade Security That Works",
+      title: "Automate Everything, Scale Smarter With Devopstrio DevOps.",
       desc: "From advanced zero-trust network architectures and thorough penetration testing to SOC 2 readiness, we implement robust, compliance-driven enterprise security systems that continuously guard your corporate ecosystem.",
       primaryBtn: { text: "Start Security Audit", href: "/contact" },
       secondaryBtn: { text: "Explore Security", href: "/services/cybersecurity" },
@@ -129,23 +146,6 @@ export function HeroSection() {
         "ISO 27001",
         "Threat Detection",
         "Vulnerability Management"
-      ]
-    },
-    {
-      eyebrow: "DevOps & Automation Excellence",
-      title: "Accelerate Delivery, Eliminate Bottlenecks, and Ship With Total Confidence",
-      desc: "We completely automate your entire software lifecycle. By integrating advanced continuous integration, scalable deployment pipelines, and proactive system monitoring, we effectively eliminate bottlenecks and accelerate delivery.",
-      primaryBtn: { text: "Optimize Delivery", href: "/contact" },
-      secondaryBtn: { text: "Explore DevOps", href: "/services/devops" },
-      image: "/assets/homehero/Thangalakshmi.M.svg",
-      glowColor: "rgba(220, 38, 38, 0.06)",
-      keywords: [
-        "CI/CD Pipelines",
-        "Site Reliability",
-        "DevSecOps",
-        "Infrastructure as Code",
-        "Continuous Testing",
-        "Platform Automation"
       ]
     }
   ];
