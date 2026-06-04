@@ -8,7 +8,7 @@ import { Testimonials } from "@/sections/home/Testimonials";
 import { CoreServices } from "@/sections/home/CoreServices";
 import { IndustriesSection } from "@/sections/home/IndustriesSection";
 import { CaseStudies } from "@/sections/home/CaseStudies";
-import { WhyDevopstrio } from "@/sections/home/WhyDevopstrio";
+import { WhyDevopstrio } from "@/sections/home/WhyDevOpsTrio";
 import { OurAdvantage } from "@/sections/home/OurAdvantage";
 import { TechnicalPartnerships } from "@/sections/home/TechnicalPartnerships";
 import { DeliveryWorkflow } from "@/sections/home/DeliveryWorkflow";
