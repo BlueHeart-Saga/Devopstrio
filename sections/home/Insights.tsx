@@ -29,7 +29,7 @@ export function Insights() {
   ];
 
   return (
-    <section className="w-full py-20 md:py-32 bg-[#030303] text-white border-b border-zinc-900 relative">
+    <section className="w-full pt-10 md:pt-14 pb-20 md:pb-32 bg-[#030303] text-white  relative">
       <div className="max-w-site mx-auto w-full px-6 md:px-12 lg:px-16 xl:px-20">
 
         {/* Header Block */}
@@ -78,7 +78,7 @@ export function Insights() {
             <div className="rounded-2xl border border-zinc-900 bg-zinc-950/20 hover:border-zinc-850/80 overflow-hidden group transition-all duration-300 flex flex-col justify-between h-full">
               <div className="relative aspect-[16/9] w-full overflow-hidden">
                 <img
-                  src="/assets/cases/retail_inventory.png"
+                  src="/assets/Home-page/cases/retail_inventory.png"
                   alt="Retail AI Inventory"
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
@@ -104,7 +104,7 @@ export function Insights() {
           <div className="rounded-2xl border border-zinc-900 bg-zinc-950/20 hover:border-zinc-800 overflow-hidden group transition-all duration-300 flex flex-col h-full relative">
             <div className="relative aspect-[16/10] w-full overflow-hidden border-b border-zinc-900">
               <img
-                src="/assets/events/nasscom_keynote.png"
+                src="/assets/Home-page/events/nasscom_keynote.png"
                 alt="NASSCOM Forum"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.02]"
               />

@@ -5,6 +5,7 @@ import Link from "next/link";
 import { ArrowUpRight, CheckCircle2, ChevronRight, Plus, Minus, ShieldCheck } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionNavbar } from "@/components/ui/SectionNavbar";
+import { IndustriesHero } from "@/sections/industries/IndustriesHero";
 
 export interface IndustryFocusArea {
   title: string;
@@ -87,41 +88,15 @@ export function IndustryDetailTemplate({
 
   return (
     <main className="min-h-screen bg-black text-white pt-16">
-      
+
       {/* 1. Hero Section */}
-      <section className="w-full py-24 md:py-32 bg-[#030303] text-white border-b border-zinc-900 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#111111_1px,transparent_1px),linear-gradient(to_bottom,#111111_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-35 pointer-events-none" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_center,rgba(225,29,72,0.02),transparent_70%)] pointer-events-none" />
-        
-        <div className="max-w-site mx-auto w-full px-6 md:px-12 lg:px-16 xl:px-20 grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-12 lg:gap-16 items-center relative z-10">
-          
-          <Reveal className="flex flex-col justify-center text-left">
-            <div className="inline-flex items-center gap-2 mb-6">
-              <span className="h-[1px] w-6 bg-rose-600"></span>
-              <span className="text-[10px] font-medium tracking-[0.2em] uppercase text-zinc-400">
-                INDUSTRIES / {industryName}
-              </span>
-            </div>
-
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light tracking-tight leading-[1.1] text-white mb-6">
-              {title} <span className="text-white font-medium bg-gradient-to-r from-red-600 via-rose-600 to-rose-500 bg-clip-text text-transparent">{highlightedWord}</span>.
-            </h1>
-            
-            <p className="text-zinc-400 text-xs md:text-sm leading-relaxed font-light max-w-xl">
-              {subtitle}
-            </p>
-          </Reveal>
-
-          <div className="relative w-full max-w-[500px] lg:max-w-none mx-auto overflow-hidden flex items-center justify-center">
-            <img 
-              src={heroImage} 
-              alt={title} 
-              className="w-full h-auto object-contain max-h-[460px] select-none pointer-events-none"
-            />
-          </div>
-
-        </div>
-      </section>
+      <IndustriesHero
+        breadcrumbCurrent={industryName}
+        titlePrefix={title}
+        titleHighlight={highlightedWord}
+        subtitle={subtitle}
+        bgImage={heroImage}
+      />
 
       {/* 2. Section Navbar */}
       <SectionNavbar sections={subSections} />
@@ -134,7 +109,7 @@ export function IndustryDetailTemplate({
             <h2 className="text-2xl md:text-3xl font-light text-white tracking-tight leading-snug">
               {overviewHeading}
             </h2>
-            
+
             <div className="flex flex-col gap-3 mt-8">
               <span className="text-[9px] font-mono text-zinc-500 uppercase tracking-wider block mb-1">Key Operational Challenges</span>
               {challenges.map((challenge, i) => (
@@ -145,7 +120,7 @@ export function IndustryDetailTemplate({
               ))}
             </div>
           </Reveal>
-          
+
           <Reveal className="text-left">
             <div className="flex flex-col gap-6 text-zinc-400 text-xs md:text-sm font-light leading-relaxed">
               <span className="text-[10px] font-mono text-zinc-550 uppercase tracking-widest block mb-1">Our Approach</span>
@@ -157,9 +132,9 @@ export function IndustryDetailTemplate({
       </section>
 
       {/* 4. Focus Areas Grid */}
-      <section id="focus-areas" className="w-full py-24 bg-[#050505] border-b border-zinc-900">
+      <section id="focus-areas" className="w-full py-24 bg-[#030303] border-b border-zinc-900">
         <div className="max-w-site mx-auto px-6 md:px-12 lg:px-16 xl:px-20">
-          
+
           <Reveal className="mb-16 text-left">
             <div className="inline-flex items-center gap-2 mb-4">
               <span className="h-[1px] w-6 bg-rose-600"></span>
@@ -198,7 +173,7 @@ export function IndustryDetailTemplate({
       {/* 5. Compliance & Audits */}
       <section id="compliance" className="w-full py-24 bg-[#030303] border-b border-zinc-900">
         <div className="max-w-site mx-auto px-6 md:px-12 lg:px-16 xl:px-20">
-          <div className="bg-[#050505] border border-zinc-900 rounded-2xl p-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center text-left">
+          <div className="bg-[#030303] border border-zinc-900 rounded-2xl p-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center text-left">
             <Reveal>
               <div className="inline-flex items-center gap-2 mb-4">
                 <span className="h-[1px] w-6 bg-rose-600"></span>
@@ -230,7 +205,7 @@ export function IndustryDetailTemplate({
       </section>
 
       {/* 6. Tech Stack Section */}
-      <section id="tech-stack" className="w-full py-24 bg-[#050505] border-b border-zinc-900">
+      <section id="tech-stack" className="w-full py-24 bg-[#030303] border-b border-zinc-900">
         <div className="max-w-site mx-auto px-6 md:px-12 lg:px-16 xl:px-20">
           <div className="grid grid-cols-1 lg:grid-cols-[0.8fr_1.2fr] gap-12 lg:gap-16 items-start">
             <Reveal className="text-left">
@@ -263,8 +238,8 @@ export function IndustryDetailTemplate({
       {/* 7. Case Study Section */}
       <section id="case-study" className="w-full py-24 bg-[#030303] border-b border-zinc-900">
         <div className="max-w-site mx-auto px-6 md:px-12 lg:px-16 xl:px-20">
-          <div className="bg-[#050505] border border-zinc-900 rounded-3xl p-8 lg:p-12 grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-12 items-center relative overflow-hidden">
-            
+          <div className="bg-[#030303] border border-zinc-900 rounded-3xl p-8 lg:p-12 grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-12 items-center relative overflow-hidden">
+
             <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-rose-600/5 rounded-full blur-[100px] pointer-events-none" />
 
             <Reveal className="text-left relative z-10">
@@ -272,7 +247,7 @@ export function IndustryDetailTemplate({
               <h3 className="text-xl md:text-2xl font-light text-white mb-6">
                 {caseStudyTitle}
               </h3>
-              
+
               <p className="text-zinc-400 text-xs md:text-sm font-light leading-relaxed mb-8">
                 {caseStudyDesc}
               </p>
@@ -304,7 +279,7 @@ export function IndustryDetailTemplate({
       </section>
 
       {/* 8. FAQ Section */}
-      <section id="faq" className="w-full py-24 bg-[#050505] border-b border-zinc-900">
+      <section id="faq" className="w-full py-24 bg-[#030303] border-b border-zinc-900">
         <div className="max-w-3xl mx-auto px-6">
           <Reveal className="mb-16 text-center">
             <div className="inline-flex items-center gap-2 mb-4">
@@ -356,11 +331,11 @@ export function IndustryDetailTemplate({
                 GET IN TOUCH
               </span>
             </div>
-            
+
             <h2 className="text-3xl md:text-5xl font-light text-white tracking-tight leading-tight mb-6">
               {ctaTitle} <span className="font-semibold text-rose-500">{ctaHighlight}</span>
             </h2>
-            
+
             <p className="text-zinc-400 text-xs md:text-sm font-light leading-relaxed max-w-xl mx-auto mb-10">
               {ctaDesc}
             </p>

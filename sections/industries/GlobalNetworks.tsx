@@ -22,7 +22,7 @@ export function GlobalNetworks() {
   return (
     <section className="w-full py-24 bg-[#030303] text-white border-b border-zinc-900">
       <div className="max-w-site mx-auto px-6 md:px-12 lg:px-16 xl:px-20">
-        
+
         <Reveal className="mb-16 text-center">
           <div className="inline-flex items-center gap-2 mb-4">
             <span className="h-[1px] w-6 bg-rose-600"></span>
@@ -41,7 +41,7 @@ export function GlobalNetworks() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {regions.map((region, idx) => (
             <Reveal key={region.name} delay={idx * 0.05} className="h-full">
-              <div className="h-full bg-[#050505] border border-zinc-900 rounded-2xl p-6 flex flex-col justify-between hover:border-zinc-800 transition-colors text-left">
+              <div className="h-full bg-[#030303] border border-zinc-900 rounded-2xl p-6 flex flex-col justify-between hover:border-zinc-800 transition-colors text-left">
                 <div>
                   <span className="text-[10px] font-mono text-rose-600 block mb-4 uppercase tracking-widest">
                     Region {(idx + 1).toString().padStart(2, "0")}

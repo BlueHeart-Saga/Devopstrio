@@ -50,7 +50,21 @@ const offices = [
 
 export function GlobalLocations() {
   return (
-    <div className="pt-24 mt-12 border-t border-zinc-900/50">
+    <div className="pt-10 mt-4 border-t border-zinc-900/50">
+      <Reveal className="max-w-3xl mb-16">
+        <div className="flex items-center gap-2 mb-4">
+          <span className="text-[10px] font-medium tracking-[0.2em] uppercase text-zinc-400">
+            OUR LOCATIONS
+          </span>
+        </div>
+        <h2 className="text-3xl md:text-4xl font-bold tracking-tight leading-tight mb-4 text-white">
+          Visit Our <span className="font-bold bg-gradient-to-r from-red-600 via-rose-600 to-rose-500 bg-clip-text text-transparent">Global Offices</span>.
+        </h2>
+        <p className="text-zinc-400 text-sm leading-relaxed font-bold max-w-2xl">
+          We&apos;d love to meet you in person. Our global locations and engineering hubs are always open for client visits, workshops, and architecture reviews. Coffee&apos;s on us — always.
+        </p>
+      </Reveal>
+
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-20 gap-x-12">
         {offices.map((office, idx) => (
           <Reveal key={idx} delay={idx * 0.1}>

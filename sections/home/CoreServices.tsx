@@ -10,7 +10,7 @@ const services = [
     id: "ai-automation",
     title: "AI & Automation",
     desc: "Transform business operations with AI solutions, Generative AI, AI agents, machine learning, automation, and intelligent decision-making systems.",
-    bgImage: "/assets/wavebg/homepage/services/image.png",
+    bgImage: "/assets/Home-page/core-services/Ai%20%26%20Automation.png",
     href: "/services/ai",
     features: ["Generative AI Models", "Machine Learning", "AI Agents", "Process Automation"]
   },
@@ -18,7 +18,7 @@ const services = [
     id: "cloud-migration",
     title: "Cloud Engineering",
     desc: "Design, migrate, optimize, and manage cloud environments across AWS, Microsoft Azure, Google Cloud, and hybrid infrastructures.",
-    bgImage: "/assets/wavebg/homepage/services/image copy.png",
+    bgImage: "/assets/Home-page/core-services/cloud%20computing.png",
     href: "/services/cloud",
     features: ["AWS & Azure Migration", "Google Cloud Optimization", "Hybrid Infrastructure", "Cloud Management"]
   },
@@ -26,7 +26,7 @@ const services = [
     id: "devops-iac",
     title: "DevOps & IaC",
     desc: "Accelerate delivery with CI/CD pipelines, Kubernetes, Terraform, automation, platform engineering, and Infrastructure as Code.",
-    bgImage: "/assets/wavebg/homepage/services/image copy 2.png",
+    bgImage: "/assets/Home-page/core-services/Devops%20and%20iac.png",
     href: "/services/devops",
     features: ["CI/CD Pipelines", "Kubernetes Management", "Terraform & IaC", "Platform Engineering"]
   },
@@ -34,7 +34,7 @@ const services = [
     id: "software-engineering",
     title: "Software Engineering",
     desc: "Build enterprise web applications, mobile apps, SaaS platforms, APIs, and digital products tailored to business needs.",
-    bgImage: "/assets/wavebg/homepage/services/image copy 3.png",
+    bgImage: "/assets/Home-page/core-services/Engineering.png",
     href: "/services/software-development",
     features: ["Enterprise Web Apps", "Mobile Applications", "SaaS Platform Development", "API Integrations"]
   },
@@ -42,7 +42,7 @@ const services = [
     id: "cybersecurity",
     title: "Cybersecurity",
     desc: "Protect digital assets through security assessments, monitoring, compliance, vulnerability management, SOC services, and proactive support.",
-    bgImage: "/assets/wavebg/homepage/services/image copy 4.png",
+    bgImage: "/assets/Home-page/core-services/cyber%20security.png",
     href: "/services/cybersecurity",
     features: ["Security Assessments", "SOC Services", "Vulnerability Management", "Compliance Monitoring"]
   },
@@ -50,7 +50,7 @@ const services = [
     id: "public-sector",
     title: "Enterprise Solutions",
     desc: "Deliver scalable technology solutions for government organizations, public services, enterprises, education, healthcare, and regulated industries.",
-    bgImage: "/assets/wavebg/homepage/services/image copy 5.png",
+    bgImage: "/assets/Home-page/core-services/enterprise%20solution.png",
     href: "/industries",
     features: ["Government IT Solutions", "Regulated Compliance", "Healthcare Tech", "Enterprise Scaling"]
   }
@@ -91,7 +91,16 @@ export function CoreServices() {
   }, []);
 
   return (
-    <section className="w-full pt-24 md:pt-36 pb-16 md:pb-20 bg-[#030303] text-white border-b border-zinc-900 relative overflow-hidden" id="capabilities">
+    <section className="w-full pt-10 md:pt-14 pb-10 md:pb-12 bg-[#030303] text-white relative overflow-hidden" id="capabilities">
+
+      {/* Background wave/mesh image */}
+      <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden opacity-60 mix-blend-screen">
+        <img
+          src="/assets/Home-page/core-services/bg3.png"
+          alt="Core Services Background"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+      </div>
 
       {/* Background ambient red glow */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[radial-gradient(circle_at_center,rgba(220,38,38,0.04),transparent_70%)] blur-3xl pointer-events-none" />
@@ -101,7 +110,7 @@ export function CoreServices() {
 
         {/* Section Header */}
         <Reveal>
-          <div className="mb-20 max-w-4xl">
+          <div className="mb-12 max-w-4xl">
             <span className="text-xs font-semibold tracking-[0.25em] uppercase text-rose-500 mb-6 block">
               WHAT WE DO BEST
             </span>
@@ -115,7 +124,7 @@ export function CoreServices() {
         </Reveal>
 
         {/* Huge Text Tabs + Visual Card Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.85fr] gap-12 lg:gap-20 items-start mb-16 lg:mb-24">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.85fr] gap-12 lg:gap-20 items-start mb-4 lg:mb-6">
 
           {/* Left Side: Massive Navigation List */}
           <div className="flex flex-col gap-3 md:gap-4">
@@ -152,18 +161,18 @@ export function CoreServices() {
                 transition={{ duration: 0.5 }}
                 className="absolute inset-0 pointer-events-none"
               >
-                {/* Accent Image positioned at Bottom Right */}
+                {/* Accent Image filling the entire right container */}
                 <img
                   src={activeService.bgImage}
                   alt={activeService.title}
-                  className="absolute bottom-0 right-0 w-full md:w-[85%] lg:w-[80%] h-full object-contain opacity-50 mix-blend-screen pointer-events-none"
+                  className="absolute inset-0 w-full h-full object-cover opacity-70 mix-blend-screen pointer-events-none rounded-xl"
                   style={{
-                    WebkitMaskImage: "radial-gradient(circle at bottom right, black 50%, transparent 90%)",
-                    maskImage: "radial-gradient(circle at bottom right, black 50%, transparent 90%)"
+                    WebkitMaskImage: "linear-gradient(to right, transparent 0%, rgba(0,0,0,0.8) 40%, black 100%)",
+                    maskImage: "linear-gradient(to right, transparent 0%, rgba(0,0,0,0.8) 40%, black 100%)"
                   }}
                 />
                 {/* Red Glow Accent */}
-                <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-[radial-gradient(circle_at_bottom_right,rgba(220,38,38,0.1),transparent_70%)] pointer-events-none" />
+                {/* <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-[radial-gradient(circle_at_bottom_right,rgba(220,38,38,0.1),transparent_70%)] pointer-events-none" /> */}
               </motion.div>
             </AnimatePresence>
 

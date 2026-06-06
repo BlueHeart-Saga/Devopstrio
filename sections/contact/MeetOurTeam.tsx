@@ -12,24 +12,24 @@ const keyLeaders = [
 
 export function MeetOurTeam() {
   return (
-    <section className="w-full py-20 bg-[#050505] text-white border-b border-zinc-900 relative">
+    <section className="w-full py-20 bg-[#030303] text-white relative">
       <div className="max-w-site mx-auto w-full px-6 md:px-12 lg:px-16 xl:px-20">
-        
+
         <Reveal className="max-w-3xl mb-16">
           <div className="flex items-center gap-2 mb-4">
-            <span className="h-[1px] w-6 bg-rose-600"></span>
+            
             <span className="text-[10px] font-medium tracking-[0.2em] uppercase text-zinc-400">
-              04 / TECHNICAL LEADERSHIP
+              TECHNICAL LEADERSHIP
             </span>
           </div>
-          <h2 className="text-3xl font-light tracking-tight leading-tight">
-            Meet our <span className="text-white font-medium bg-gradient-to-r from-red-600 via-rose-600 to-rose-500 bg-clip-text text-transparent">practices leaders</span>.
+          <h2 className="text-3xl font-bold tracking-tight leading-tight">
+            Meet our <span className="text-white font-bold bg-gradient-to-r from-red-600 via-rose-600 to-rose-500 bg-clip-text text-transparent">practices leaders</span>.
           </h2>
         </Reveal>
-
+ 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {keyLeaders.map((leader) => (
-            <div 
+            <div
               key={leader.name}
               className="p-6 rounded-xl border border-zinc-900 bg-zinc-950/20 hover:border-zinc-800 transition-colors group flex flex-col justify-between"
             >
@@ -41,7 +41,7 @@ export function MeetOurTeam() {
                 <span className="block text-[11px] text-zinc-450 font-normal uppercase tracking-wider mb-4">
                   {leader.role}
                 </span>
-                <p className="text-xs text-zinc-450 leading-relaxed font-light">
+                <p className="text-xs text-zinc-450 leading-relaxed font-bold">
                   {leader.expertise}
                 </p>
               </div>

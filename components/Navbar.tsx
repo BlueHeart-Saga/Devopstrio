@@ -6,39 +6,36 @@ import Link from "next/link";
 
 const serviceCategories = [
   {
-    id: "ai-data",
-    name: "AI & Data",
-    href: "/services/ai-data",
+    id: "ai-data-innovation",
+    name: "AI & Data Innovation",
+    href: "/services/ai-data-innovation",
     items: [
-      { name: "Artificial Intelligence", desc: "Enterprise AI tools: Recruiter, Self-Assessment, AI Agents, Chatbots...", href: "/services/ai-data/artificial-intelligence" },
-      { name: "AI Consulting Services", desc: "Strategy development, safe integration, audits and deployment roadmaps", href: "/services/ai-data/ai-consulting" },
-      { name: "AI Tools for Business Transformation", desc: "Tailored generative AI solutions and pipeline setups", href: "/services/ai-data/ai-tools" },
-      { name: "Data Science", desc: "Workflow analysis, metrics tracking, and semantic database automations", href: "/services/ai-data/data-science" },
-      { name: "Database Creation and Management", desc: "Building scalable transactional storage with modern tech stack", href: "/services/ai-data/database-management" },
-      { name: "Hire AI Engineers", desc: "Dedicated certified machine learning and data specialists", href: "/services/ai-data/hire-ai-engineers" },
-      { name: "AI Powered Robotic Integration", desc: "Robotic systems orchestration across hardware and cloud runtimes", href: "/services/ai-data/robotic-integration" }
+      { name: "Generative AI & LLMs", desc: "Custom fine-tuning, autonomous agents, semantic routing", href: "/services/ai-data-innovation#genai" },
+      { name: "AI Consulting & Audits", desc: "Feasibility audits, security governance, deployment maps", href: "/services/ai-data-innovation#consulting" },
+      { name: "Machine Learning Pipelines", desc: "Hardened MLOps pipelines and training schedules", href: "/services/ai-data-innovation#pipelines" },
+      { name: "Business Analytics & BI", desc: "Enterprise telemetry panels, reportings and charts", href: "/services/ai-data-innovation#analytics" }
     ]
   },
   {
-    id: "app-development",
-    name: "Application Development",
-    href: "/services/app-development",
+    id: "cloud-services",
+    name: "Cloud Services",
+    href: "/services/cloud-services",
     items: [
-      { name: "Web Development", desc: "Modern, secure frontend and backend web applications", href: "/services/app-development#web" },
-      { name: "Mobile App Development", desc: "Native iOS, Android, and cross-platform Flutter/React Native development", href: "/services/app-development#mobile" },
-      { name: "CMS & E-commerce", desc: "Headless CMS, Shopify integrations, Custom checkout solutions", href: "/services/app-development#cms" },
-      { name: "PWA & SPA Development", desc: "Highly interactive progressive web apps", href: "/services/app-development#pwa" }
+      { name: "Cloud Migration", desc: "Zero-downtime database and VM moves to AWS/Azure/GCP", href: "/services/cloud-services#migration" },
+      { name: "Multi-Cloud Infrastructure", desc: "Standardized multi-cloud landing zones architectures", href: "/services/cloud-services#infrastructure" },
+      { name: "Cloud Governance & Sec", desc: "Automatic policy guardrails and continuous audits", href: "/services/cloud-services#governance" },
+      { name: "Hybrid Cloud Integration", desc: "ExpressRoute, VPN tunnels, Active Directory syncs", href: "/services/cloud-services#hybrid" }
     ]
   },
   {
-    id: "cloud",
-    name: "Cloud",
-    href: "/services/cloud",
+    id: "devops-automation",
+    name: "DevOps & Automation",
+    href: "/services/devops-automation",
     items: [
-      { name: "DevOps Consulting", desc: "CI/CD setups, pipeline audits, GitOps workflows", href: "/services/cloud#devops" },
-      { name: "Cloud Migration", desc: "Zero-downtime database and app migration to AWS, Azure, GCP", href: "/services/cloud#migration" },
-      { name: "Infrastructure as Code", desc: "Terraform, Pulumi, and CloudFormation infrastructure templates", href: "/services/cloud#iac" },
-      { name: "Kubernetes & Containers", desc: "EKS, GKE, AKS architecture, cluster resizing and service meshes", href: "/services/cloud#k8s" }
+      { name: "CI/CD Pipelines", desc: "Fast build, scan and deployment automation loops", href: "/services/devops-automation#cicd" },
+      { name: "Infrastructure as Code", desc: "Terraform, Ansible, and Vault secure automations", href: "/services/devops-automation#iac" },
+      { name: "Containerization & K8s", desc: "Hardened Kubernetes blueprints (EKS, AKS, GKE)", href: "/services/devops-automation#k8s" },
+      { name: "GitOps Automation", desc: "Continuous reconciliation using ArgoCD or Flux", href: "/services/devops-automation#gitops" }
     ]
   },
   {
@@ -46,9 +43,21 @@ const serviceCategories = [
     name: "Cybersecurity",
     href: "/services/cybersecurity",
     items: [
-      { name: "Penetration Testing", desc: "Ethical hacking, API validation, and system vulnerability audits", href: "/services/cybersecurity#pentest" },
-      { name: "Security Management", desc: "SOC 2, ISO 27001, HIPAA compliance framework setups", href: "/services/cybersecurity#compliance" },
-      { name: "Security Ops Center (SOC)", desc: "24/7 threat monitoring, intrusion detection, and incident response", href: "/services/cybersecurity#soc" }
+      { name: "Penetration Testing", desc: "Ethical hacking audits and API vulnerabilities scans", href: "/services/cybersecurity#pentest" },
+      { name: "Vulnerability Audits", desc: "Continuous software package and image audits", href: "/services/cybersecurity#vulnerabilities" },
+      { name: "SOC & Incident Response", desc: "24/7 alert monitoring and automated playbooks", href: "/services/cybersecurity#soc" },
+      { name: "Compliance Frameworks", desc: "SOC2, ISO27001, HIPAA audit preparations", href: "/services/cybersecurity#compliance" }
+    ]
+  },
+  {
+    id: "software-development",
+    name: "Software Development",
+    href: "/services/software-development",
+    items: [
+      { name: "Custom Web Applications", desc: "React, Next.js, and high-performance microservices", href: "/services/software-development#web" },
+      { name: "Mobile App Development", desc: "Native iOS/Android and Flutter/React Native builds", href: "/services/software-development#mobile" },
+      { name: "API & Microservices", desc: "GraphQL/REST API gateways and event routers", href: "/services/software-development#apis" },
+      { name: "Enterprise Backends", desc: "Robust APIs built in Go, .NET, Java, or Python", href: "/services/software-development#backend" }
     ]
   },
   {
@@ -56,41 +65,54 @@ const serviceCategories = [
     name: "Digital Transformation",
     href: "/services/digital-transformation",
     items: [
-      { name: "IT Strategy Consulting", desc: "Digital roadmap development, tech stack modernization plan", href: "/services/digital-transformation#it" },
-      { name: "Legacy Modernization", desc: "Monolith-to-microservices refactoring and database architecture redesign", href: "/services/digital-transformation#legacy" }
+      { name: "Stack Modernization", desc: "Converting legacy monolith systems to cloud architecture", href: "/services/digital-transformation#modernization" },
+      { name: "Monolith to Microservices", desc: "Refactoring application databases and code paths", href: "/services/digital-transformation#monolith" },
+      { name: "Process Automation", desc: "Automating workflows with custom orchestrators", href: "/services/digital-transformation#automation" },
+      { name: "ERP & CRM Integration", desc: "Salesforce, SAP, and Dynamics integration dashboards", href: "/services/digital-transformation#erp" }
     ]
   },
   {
-    id: "software-engineering",
-    name: "Software Engineering",
-    href: "/services/software-engineering",
+    id: "data-engineering",
+    name: "Data Engineering",
+    href: "/services/data-engineering",
     items: [
-      { name: "Enterprise Systems", desc: "Highly scalable, distributed backends in Go, Rust, Java, Node.js", href: "/services/software-engineering#backend" },
-      { name: "API & Microservices", desc: "GraphQL/REST API gateways, event-driven architectures with Kafka", href: "/services/software-engineering#microservices" }
+      { name: "Data Warehousing", desc: "Snowflake, Databricks and BigQuery implementations", href: "/services/data-engineering#warehousing" },
+      { name: "ETL Pipelines", desc: "Modern processing data pipelines with dbt and Airflow", href: "/services/data-engineering#etl" },
+      { name: "Data Lakehouse Setups", desc: "Unifying structured and unstructured data storage", href: "/services/data-engineering#lakehouse" },
+      { name: "Real-Time Streaming", desc: "Event logs processing using Kafka and Flink", href: "/services/data-engineering#streaming" }
     ]
   },
   {
-    id: "enterprise-applications",
-    name: "Enterprise Applications",
-    href: "/services/enterprise-applications",
+    id: "managed-services",
+    name: "Managed Services",
+    href: "/services/managed-services",
     items: [
-      { name: "ERP & CRM Integration", desc: "Custom Salesforce, SAP, and Dynamics integration and dashboards", href: "/services/enterprise-applications#erp" }
+      { name: "24/7 SRE Support", desc: "Uptime monitoring, database failover support", href: "/services/managed-services#sre" },
+      { name: "Infrastructure Operations", desc: "Complete management of cloud resources and grids", href: "/services/managed-services#operations" },
+      { name: "Database Management", desc: "Performance tuning, index scaling and backups", href: "/services/managed-services#database" },
+      { name: "Backup & Disaster Recovery", desc: "Multi-region backup routines and failover drills", href: "/services/managed-services#backup" }
     ]
   },
   {
-    id: "staff-augmentation",
-    name: "Staff Augmentation",
-    href: "/services/staff-augmentation",
+    id: "qa-testing",
+    name: "QA & Testing",
+    href: "/services/qa-testing",
     items: [
-      { name: "Dedicated Developers", desc: "Hire senior cloud, backend, frontend, and AI engineers", href: "/services/staff-augmentation#dedicated" }
+      { name: "Automated Testing", desc: "Writing test suites using Playwright, Selenium, Jest", href: "/services/qa-testing#automated" },
+      { name: "Functional & Performance", desc: "Load testing tools integration and manual testing", href: "/services/qa-testing#functional" },
+      { name: "API & Security Testing", desc: "Endpoint load validation and credentials audits", href: "/services/qa-testing#security" },
+      { name: "Continuous QA Pipelines", desc: "Integrating testing steps directly inside CI/CD", href: "/services/qa-testing#continuous" }
     ]
   },
   {
-    id: "support-services",
-    name: "Support Services",
-    href: "/services/support-services",
+    id: "it-consulting",
+    name: "IT Consulting",
+    href: "/services/it-consulting",
     items: [
-      { name: "24/7 Platform SRE Support", desc: "Continuous uptime management, database failovers, SRE monitoring", href: "/services/support-services#sre" }
+      { name: "Technology Assessment", desc: "Analyzing current tech stacks and highlighting issues", href: "/services/it-consulting#assessment" },
+      { name: "Architecture Advisory", desc: "Selecting the optimal infrastructure layout and software design", href: "/services/it-consulting#architecture" },
+      { name: "Digital Roadmaps", desc: "Planning transformation and migration steps", href: "/services/it-consulting#roadmap" },
+      { name: "Cloud Strategy", desc: "Estimating public cloud budgets and governance grids", href: "/services/it-consulting#strategy" }
     ]
   }
 ];
@@ -98,28 +120,107 @@ const serviceCategories = [
 const servicesList = serviceCategories.map(cat => ({ name: cat.name, href: cat.href }));
 
 const industriesList = [
-  { name: "Financial Services", desc: "Secure fintech software, banking platforms, and compliant crypto solutions.", href: "/industries/financial-services" },
-  { name: "Healthcare", desc: "HIPAA-compliant telehealth apps, EHR systems, and patient monitoring.", href: "/industries/healthcare" },
-  { name: "Logistics", desc: "Supply chain automation, fleet tracking, and AI warehouse management.", href: "/industries/logistics" },
-  { name: "Travel & Hospitality", desc: "Booking engine optimization and smart hospitality management systems.", href: "/industries/travel-hospitality" },
-  { name: "Automotive", desc: "Connected vehicle ecosystems, ADAS integrations, and telemetry solutions.", href: "/industries/automotive" },
-  { name: "Media & Entertainment", desc: "High-bandwidth VOD platforms, live broadcasting, and asset management.", href: "/industries/media-entertainment" },
-  { name: "Telecom", desc: "Scalable OSS/BSS infrastructures, 5G cloud services, and telecom analytics.", href: "/industries/telecom" },
-  { name: "Manufacturing & Retail", desc: "Industrial IoT integrations, smart POS software, and predictive maintenance.", href: "/industries/manufacturing-retail" }
+  { name: "Banking & Finance", desc: "Secure, regulatory-compliant solutions for banking, investing, and digital payments.", href: "/industries/banking-finance" },
+  { name: "Healthcare & Life Sciences", desc: "HIPAA-compliant telehealth apps, EHR platforms, and research databases.", href: "/industries/healthcare-life-sciences" },
+  { name: "Retail & E-Commerce", desc: "Omni-channel engines, high-speed checkouts, and real-time inventory systems.", href: "/industries/retail-ecommerce" },
+  { name: "Manufacturing", desc: "Industrial IoT integrations, predictive maintenance logs, and smart supply chains.", href: "/industries/manufacturing" },
+  { name: "Telecommunications", desc: "Scalable OSS/BSS infrastructures, 5G cloud services, and telecom analytics.", href: "/industries/telecommunications" },
+  { name: "Media & Entertainment", desc: "High-bandwidth VOD platforms, live broadcasting, and digital assets.", href: "/industries/media-entertainment" },
+  { name: "Education", desc: "LMS environments, remote learning tools, and digital collaboration spaces.", href: "/industries/education" },
+  { name: "Government & Public Sector", desc: "Citizen portals, cloud modernization, and strict security compliance.", href: "/industries/government-public-sector" }
 ];
 
-const ecosystemList = [
-  { name: "AWS Partnership", desc: "Certified AWS architects delivering secure, scalable, and highly available infrastructure.", href: "/ecosystem/aws" },
-  { name: "Azure Solutions", desc: "Enterprise-grade Azure deployments, seamless migrations, and hybrid cloud setups.", href: "/ecosystem/azure" },
-  { name: "Google Cloud Ecosystem", desc: "Data-driven GCP environments, Kubernetes optimization, and machine learning integrations.", href: "/ecosystem/google-cloud" },
-  { name: "CNCF Cloud Native Stack", desc: "Modernizing applications with Kubernetes, Helm, and the CNCF open-source ecosystem.", href: "/ecosystem/cncf" },
-  { name: "Snowflake & Databricks", desc: "Modern data architectures for real-time analytics, ETL, and AI data warehousing.", href: "/ecosystem/data-platforms" },
-  { name: "HashiCorp Stack", desc: "Infrastructure automation using Terraform and Vault for secure, compliant deployments.", href: "/ecosystem/hashicorp" }
+const ecosystemCategories = [
+  {
+    id: "overview",
+    name: "Ecosystem Overview",
+    href: "/ecosystem",
+    items: [
+      { name: "Overview Landing Page", desc: "Enterprise pillars, stats, and next-gen highlights", href: "/ecosystem" }
+    ]
+  },
+  {
+    id: "partnerships",
+    name: "Partnerships",
+    href: "/ecosystem/partnerships",
+    items: [
+      { name: "Partnership Overview", desc: "Strategic technology alliances network", href: "/ecosystem/partnerships" },
+      { name: "Microsoft Partnership", desc: "Gold Partner for cloud and hybrid infrastructures", href: "/ecosystem/partnerships/microsoft" },
+      { name: "AWS Partnership", desc: "Advanced Tier Partner for serverless and DevSecOps", href: "/ecosystem/partnerships/aws" },
+      { name: "Google Cloud Partnership", desc: "Premier Partner for Vertex AI and data platforms", href: "/ecosystem/partnerships/google-cloud" },
+      { name: "Oracle Partnership", desc: "Platinum Partner for database and hybrid systems", href: "/ecosystem/partnerships/oracle" },
+      { name: "ServiceNow Partnership", desc: "Elite Partner for ITSM & ESM automations", href: "/ecosystem/partnerships/servicenow" },
+      { name: "SAP Partnership", desc: "Silver Partner for S/4HANA & ERP integration", href: "/ecosystem/partnerships/sap" },
+      { name: "Cisco Partnership", desc: "Gold Integrator for enterprise security & zero-trust", href: "/ecosystem/partnerships/cisco" }
+    ]
+  },
+  {
+    id: "labs",
+    name: "Innovation Labs",
+    href: "/ecosystem/innovation-labs",
+    items: [
+      { name: "Labs Overview", desc: "Research, prototyping, and next-gen development", href: "/ecosystem/innovation-labs" },
+      { name: "AI Innovation Lab", desc: "Agentic workflows, fine-tuning LLMs, semantic routing", href: "/ecosystem/innovation-labs/ai" },
+      { name: "Cloud Innovation Lab", desc: "Green computing, serverless virtualization, edge frameworks", href: "/ecosystem/innovation-labs/cloud" },
+      { name: "Cybersecurity Lab", desc: "Next-gen threat intelligence, zero-trust network modeling", href: "/ecosystem/innovation-labs/cybersecurity" },
+      { name: "Data & Analytics Lab", desc: "Real-time streaming grids, decentralized database meshes", href: "/ecosystem/innovation-labs/data-analytics" }
+    ]
+  },
+  {
+    id: "platforms",
+    name: "Platforms & Solutions",
+    href: "/ecosystem/platforms-solutions",
+    items: [
+      { name: "Solutions Overview", desc: "Proprietary products and accelerators built for scale", href: "/ecosystem/platforms-solutions" },
+      { name: "AI Solutions", desc: "Enterprise AI agents and recruitment pipelines", href: "/ecosystem/platforms-solutions/ai" },
+      { name: "DevOps Platform", desc: "Bootstrap CI/CD pipelines and infrastructure", href: "/ecosystem/platforms-solutions/devops" },
+      { name: "Cloud Solutions", desc: "Pre-configured landing zones and FinOps platforms", href: "/ecosystem/platforms-solutions/cloud" },
+      { name: "Security Solutions", desc: "Hardened SOC platform and compliance dashboards", href: "/ecosystem/platforms-solutions/security" }
+    ]
+  },
+  {
+    id: "cloud",
+    name: "Cloud Ecosystem",
+    href: "/ecosystem/cloud",
+    items: [
+      { name: "Cloud Ecosystem Overview", desc: "End-to-end multi-cloud transformation", href: "/ecosystem/cloud" },
+      { name: "Microsoft Azure", desc: "AKS, Azure AI, Azure DevOps integrations", href: "/ecosystem/cloud/azure" },
+      { name: "Amazon Web Services", desc: "EKS, serverless Lambda, AWS migrations", href: "/ecosystem/cloud/aws" },
+      { name: "Google Cloud Platform", desc: "Vertex AI, GKE, BigQuery data pipelines", href: "/ecosystem/cloud/gcp" }
+    ]
+  },
+  {
+    id: "tech",
+    name: "Our Technology",
+    href: "/ecosystem/our-technology",
+    items: [
+      { name: "Technology Stack", desc: "Modern engineering core stack powering enterprise products", href: "/ecosystem/our-technology" }
+    ]
+  },
+  {
+    id: "delivery",
+    name: "Global Delivery Network",
+    href: "/ecosystem/global-delivery",
+    items: [
+      { name: "Global Delivery Network", desc: "Distributed high-performance hub execution", href: "/ecosystem/global-delivery" }
+    ]
+  }
+];
+
+const ecosystemMobileList = [
+  { name: "Ecosystem Overview", href: "/ecosystem" },
+  { name: "Partnerships", href: "/ecosystem/partnerships" },
+  { name: "Innovation Labs", href: "/ecosystem/innovation-labs" },
+  { name: "Platforms & Solutions", href: "/ecosystem/platforms-solutions" },
+  { name: "Cloud Ecosystem", href: "/ecosystem/cloud" },
+  { name: "Our Technology Stack", href: "/ecosystem/our-technology" },
+  { name: "Global Delivery Network", href: "/ecosystem/global-delivery" }
 ];
 
 export function Navbar() {
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
-  const [activeCategory, setActiveCategory] = useState("ai-data");
+  const [activeCategory, setActiveCategory] = useState("ai-data-innovation");
+  const [activeEcoCategory, setActiveEcoCategory] = useState("overview");
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
@@ -135,6 +236,17 @@ export function Navbar() {
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
+
+  useEffect(() => {
+    if (mobileOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [mobileOpen]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -160,7 +272,8 @@ export function Navbar() {
   return (
     <div ref={navRef} className="fixed inset-x-0 top-0 z-50 flex justify-center px-4 py-4 pointer-events-none">
       <header
-        className={`w-full max-w-7xl rounded-full border transition-all duration-350 ${isVisible
+        onMouseLeave={() => setActiveMenu(null)}
+        className={`w-full max-w-7xl relative rounded-full border transition-all duration-350 ${isVisible
           ? "translate-y-0 opacity-100 pointer-events-auto"
           : "-translate-y-24 opacity-0 pointer-events-none"
           } ${scrolled
@@ -169,7 +282,7 @@ export function Navbar() {
           } text-white flex items-center justify-between`}
       >
         {/* Brand Logo & Name (Improved Logo Size) */}
-        <Link href="/" className="flex items-center gap-3 group">
+        <Link href="/" className="flex items-center gap-3 group" onMouseEnter={() => setActiveMenu(null)}>
           <img
             src="/assets/logo/logo.png"
             alt="Devopstrio logo"
@@ -181,19 +294,18 @@ export function Navbar() {
         </Link>
 
         {/* Center Links (Improved Link Text Sizes to text-sm) */}
-        <nav aria-label="Primary navigation" className="hidden lg:flex items-center gap-7 relative">
+        <nav aria-label="Primary navigation" className="hidden lg:flex items-center gap-7">
 
           {/* Services Dropdown */}
           <div
-            className="relative"
             onMouseEnter={() => setActiveMenu("services")}
           >
             <button className="flex items-center gap-1.5 px-3 py-1.5 text-[15px] font-medium text-zinc-300 hover:text-white transition-colors">
               Services <ChevronDown size={14} className={`transition-transform duration-300 ${activeMenu === "services" ? "rotate-180" : ""}`} />
             </button>
             {activeMenu === "services" && (
-              <div className="fixed left-1/2 -translate-x-1/2 top-[90px] w-[1200px] max-w-[95vw] animate-fadeIn pointer-events-auto">
-                <div className="bg-black border border-zinc-850 rounded-2xl p-8 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.9)] grid grid-cols-[280px_240px_1fr] gap-8 text-left relative">
+              <div className="absolute left-1/2 -translate-x-1/2 top-full mt-3 w-[1200px] max-w-[95vw] pointer-events-auto z-50">
+                <div className="animate-fadeIn bg-black border border-zinc-850 rounded-2xl p-8 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.9)] grid grid-cols-[280px_240px_1fr] gap-8 text-left relative">
 
                   {/* Gloss reflection line */}
                   <div className="absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-zinc-800 to-transparent pointer-events-none" />
@@ -241,7 +353,7 @@ export function Navbar() {
                   {/* Right panel with active sub-services */}
                   <div className="flex flex-col">
                     <span className="text-[9px] font-mono tracking-widest text-zinc-500 uppercase block px-2 mb-2">Strategic Capabilities</span>
-                    <div className="grid grid-cols-2 gap-x-6 gap-y-4 max-h-[300px] overflow-y-auto pr-2 custom-scrollbar">
+                    <div className="grid grid-cols-2 gap-x-6 gap-y-4 max-h-[300px] overflow-y-auto overscroll-contain pr-2 custom-scrollbar">
                       {serviceCategories.find(c => c.id === activeCategory)?.items.map((item) => (
                         <Link
                           key={item.name}
@@ -267,15 +379,14 @@ export function Navbar() {
 
           {/* Industries Dropdown */}
           <div
-            className="relative"
             onMouseEnter={() => setActiveMenu("industries")}
           >
             <button className="flex items-center gap-1.5 px-3 py-1.5 text-[15px] font-medium text-zinc-300 hover:text-white transition-colors">
               Industries <ChevronDown size={14} className={`transition-transform duration-300 ${activeMenu === "industries" ? "rotate-180" : ""}`} />
             </button>
             {activeMenu === "industries" && (
-              <div className="fixed left-1/2 -translate-x-1/2 top-[90px] w-[1200px] max-w-[95vw] animate-fadeIn pointer-events-auto">
-                <div className="bg-black border border-zinc-850 rounded-2xl p-8 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.9)] grid grid-cols-[280px_1fr] gap-8 text-left relative">
+              <div className="absolute left-1/2 -translate-x-1/2 top-full mt-3 w-[1200px] max-w-[95vw] pointer-events-auto z-50">
+                <div className="animate-fadeIn bg-black border border-zinc-850 rounded-2xl p-8 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.9)] grid grid-cols-[280px_1fr] gap-8 text-left relative">
 
                   {/* Gloss reflection line */}
                   <div className="absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-zinc-850 to-transparent pointer-events-none" />
@@ -302,7 +413,7 @@ export function Navbar() {
                   {/* Right industries list grid */}
                   <div>
                     <span className="text-[9px] font-mono tracking-widest text-zinc-500 uppercase block mb-4">Target Sectors</span>
-                    <div className="grid grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-4 max-h-[300px] overflow-y-auto pr-2 custom-scrollbar">
+                    <div className="grid grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-4 max-h-[300px] overflow-y-auto overscroll-contain pr-2 custom-scrollbar">
                       {industriesList.map((ind) => (
                         <Link
                           key={ind.name}
@@ -328,47 +439,74 @@ export function Navbar() {
 
           {/* Ecosystem Dropdown */}
           <div
-            className="relative"
             onMouseEnter={() => setActiveMenu("ecosystem")}
           >
             <button className="flex items-center gap-1.5 px-3 py-1.5 text-[15px] font-medium text-zinc-300 hover:text-white transition-colors">
               Ecosystem <ChevronDown size={14} className={`transition-transform duration-300 ${activeMenu === "ecosystem" ? "rotate-180" : ""}`} />
             </button>
             {activeMenu === "ecosystem" && (
-              <div className="fixed left-1/2 -translate-x-1/2 top-[90px] w-[1200px] max-w-[95vw] animate-fadeIn pointer-events-auto">
-                <div className="bg-black border border-zinc-850 rounded-2xl p-8 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.9)] grid grid-cols-[280px_1fr] gap-8 text-left relative">
+              <div className="absolute left-1/2 -translate-x-1/2 top-full mt-3 w-[1200px] max-w-[95vw] pointer-events-auto z-50">
+                <div className="animate-fadeIn bg-black border border-zinc-850 rounded-2xl p-8 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.9)] grid grid-cols-[280px_240px_1fr] gap-8 text-left relative">
 
                   {/* Gloss reflection line */}
-                  <div className="absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-zinc-850 to-transparent pointer-events-none" />
+                  <div className="absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-zinc-800 to-transparent pointer-events-none" />
 
-                  {/* Left Callout */}
+                  {/* Visual Promo Column (Services style) */}
                   <div className="relative overflow-hidden rounded-xl border border-zinc-900 p-5 flex flex-col justify-between h-[340px] group bg-white">
                     <img src="/assets/wavebg/navbar/ecosystem.png" alt="" className="absolute inset-0 w-full h-full object-cover transition-all duration-700 group-hover:scale-105" />
                     <div className="relative z-10">
-                      <span className="text-[9px] font-mono tracking-widest text-red-600 uppercase block mb-3 font-bold">Alliances</span>
-                      <h4 className="text-sm font-bold leading-snug text-red-600 mb-2">Global Clouds</h4>
+                      <span className="text-[9px] font-mono tracking-widest text-red-600 uppercase block mb-3 font-bold">Ecosystem Infrastructure</span>
+                      <h4 className="text-sm font-bold leading-snug text-red-600 mb-2">Everything You Need to Scale</h4>
                       <p className="text-[10px] text-black font-bold leading-relaxed">
-                        Certified architectures for major cloud providers.
+                        Explore our world-class technology alliances, research innovation labs, and custom platforms built to transform your enterprise.
                       </p>
                     </div>
+                    <Link
+                      href="/ecosystem"
+                      onClick={() => setActiveMenu(null)}
+                      className="relative z-10 inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-wider text-red-700 hover:text-black transition-colors mt-4"
+                    >
+                      Explore Ecosystem &rarr;
+                    </Link>
                   </div>
 
-                  {/* Right List */}
-                  <div>
-                    <span className="text-[9px] font-mono tracking-widest text-zinc-500 uppercase block mb-4">Partner Networks</span>
-                    <div className="grid grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-4 max-h-[300px] overflow-y-auto pr-2 custom-scrollbar">
-                      {ecosystemList.map((eco) => (
+                  {/* Middle sidebar with categories */}
+                  <div className="flex flex-col border-r border-zinc-900 pr-4 gap-1">
+                    <span className="text-[9px] font-mono tracking-widest text-zinc-500 uppercase block px-3 mb-2">Ecosystem Pillars</span>
+                    {ecosystemCategories.map((cat) => (
+                      <button
+                        key={cat.id}
+                        onMouseEnter={() => setActiveEcoCategory(cat.id)}
+                        onClick={() => {
+                          setActiveMenu(null);
+                        }}
+                        className={`flex items-center justify-between px-3 py-2 rounded-lg text-[13px] font-bold transition-all duration-200 text-left ${activeEcoCategory === cat.id
+                          ? "bg-zinc-900 text-rose-500"
+                          : "text-zinc-300 hover:text-white hover:bg-zinc-900/30"
+                          }`}
+                      >
+                        <span>{cat.name}</span>
+                        {activeEcoCategory === cat.id && <span className="text-[10px]">&rarr;</span>}
+                      </button>
+                    ))}
+                  </div>
+
+                  {/* Right panel with active sub-items */}
+                  <div className="flex flex-col">
+                    <span className="text-[9px] font-mono tracking-widest text-zinc-500 uppercase block px-2 mb-2">Sub-Pages & Links</span>
+                    <div className="grid grid-cols-2 gap-x-6 gap-y-4 max-h-[300px] overflow-y-auto overscroll-contain pr-2 custom-scrollbar">
+                      {ecosystemCategories.find(c => c.id === activeEcoCategory)?.items.map((item) => (
                         <Link
-                          key={eco.name}
-                          href={eco.href}
+                          key={item.name}
+                          href={item.href}
                           onClick={() => setActiveMenu(null)}
-                          className="group/eco block p-2 rounded-lg hover:bg-zinc-900/30 transition-colors"
+                          className="group/subitem block p-2 rounded-lg hover:bg-zinc-900/30 transition-colors"
                         >
-                          <span className="block text-sm font-bold text-white group-hover/eco:text-rose-500 transition-colors mb-1">
-                            {eco.name}
+                          <span className="block text-sm font-bold text-white group-hover/subitem:text-rose-500 transition-colors mb-1">
+                            {item.name}
                           </span>
                           <span className="block text-xs text-zinc-400 font-medium leading-relaxed">
-                            {eco.desc}
+                            {item.desc}
                           </span>
                         </Link>
                       ))}
@@ -381,13 +519,13 @@ export function Navbar() {
           </div>
 
           {/* Regular Links */}
-          <Link href="/#insights" className="px-3 py-1.5 text-[15px] font-medium text-zinc-300 hover:text-white transition-colors">
+          <Link href="/#insights" onMouseEnter={() => setActiveMenu(null)} className="px-3 py-1.5 text-[15px] font-medium text-zinc-300 hover:text-white transition-colors">
             Insights
           </Link>
-          <Link href="/#careers" className="px-3 py-1.5 text-[15px] font-medium text-zinc-300 hover:text-white transition-colors">
+          <Link href="/#careers" onMouseEnter={() => setActiveMenu(null)} className="px-3 py-1.5 text-[15px] font-medium text-zinc-300 hover:text-white transition-colors">
             Careers
           </Link>
-          <Link href="/about" className="px-3 py-1.5 text-[15px] font-medium text-zinc-300 hover:text-white transition-colors">
+          <Link href="/about" onMouseEnter={() => setActiveMenu(null)} className="px-3 py-1.5 text-[15px] font-medium text-zinc-300 hover:text-white transition-colors">
             About
           </Link>
         </nav>
@@ -396,6 +534,7 @@ export function Navbar() {
         <div className="flex items-center gap-3">
           <Link
             href="/contact"
+            onMouseEnter={() => setActiveMenu(null)}
             className="hidden sm:inline-flex items-center gap-1.5 px-5 py-2 rounded-full text-xs font-semibold tracking-wide text-white border border-rose-600 bg-rose-600/5 hover:bg-rose-600 transition-all duration-300 hover:shadow-[0_0_15px_rgba(225,29,72,0.35)]"
           >
             Contact Us <ArrowUpRight size={13} />
@@ -415,7 +554,7 @@ export function Navbar() {
       {/* Mobile Drawer */}
       {mobileOpen && (
         <div className="fixed inset-0 top-[72px] z-40 bg-[#000000]/98 backdrop-blur-lg flex flex-col p-6 border-t border-zinc-900 pointer-events-auto animate-fadeIn lg:hidden">
-          <div className="flex flex-col gap-6 overflow-y-auto pb-8">
+          <div className="flex flex-col gap-6 overflow-y-auto overscroll-contain pb-8">
             <div>
               <span className="text-[10px] uppercase tracking-wider text-zinc-500 block mb-3 font-mono">Services</span>
               <div className="flex flex-col gap-3 pl-2">
@@ -451,7 +590,7 @@ export function Navbar() {
             <div>
               <span className="text-[10px] uppercase tracking-wider text-zinc-500 block mb-3 font-mono">Ecosystem</span>
               <div className="flex flex-col gap-3 pl-2">
-                {ecosystemList.map((item) => (
+                {ecosystemMobileList.map((item) => (
                   <Link
                     key={item.name}
                     href={item.href}

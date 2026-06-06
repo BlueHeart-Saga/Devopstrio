@@ -7,34 +7,34 @@ import { Reveal } from "@/components/ui/Reveal";
 
 const industries = [
   {
-    slug: "financial-services",
-    name: "Financial Services",
+    slug: "banking-finance",
+    name: "Banking & Finance",
     desc: "Scale high-frequency ledger processing, fraud-detection pipelines, and secure payment pathways under SOC-2 guidelines.",
-    href: "/industries/financial-services"
+    href: "/industries/banking-finance"
   },
   {
-    slug: "healthcare",
-    name: "Healthcare",
+    slug: "healthcare-life-sciences",
+    name: "Healthcare & Life Sciences",
     desc: "Build medical information portals, sensor data collectors, and predictive health trackers fully aligned with HIPAA.",
-    href: "/industries/healthcare"
+    href: "/industries/healthcare-life-sciences"
   },
   {
-    slug: "logistics",
-    name: "Logistics",
-    desc: "Deploy geographic routing models, autonomous fleet tracking systems, and supply-chain warehouse calculators.",
-    href: "/industries/logistics"
+    slug: "retail-ecommerce",
+    name: "Retail & E-Commerce",
+    desc: "Implement omni-channel purchase engines, automated inventory tracking logs, and personalized commerce recommendations.",
+    href: "/industries/retail-ecommerce"
   },
   {
-    slug: "travel-hospitality",
-    name: "Travel & Hospitality",
-    desc: "Manage high-traffic booking engines, custom package recommender filters, and real-time support chatbots.",
-    href: "/industries/travel-hospitality"
+    slug: "manufacturing",
+    name: "Manufacturing",
+    desc: "Deploy predictive machine maintenance metrics, automated supply chain forecasting filters, and industrial IoT monitoring systems.",
+    href: "/industries/manufacturing"
   },
   {
-    slug: "automotive",
-    name: "Automotive",
-    desc: "Configure hardware firmware communication channels, sensor telemetry ingestion pipelines, and driver navigation systems.",
-    href: "/industries/automotive"
+    slug: "telecommunications",
+    name: "Telecommunications",
+    desc: "Manage high-bandwidth network monitors, automated customer billing databases, and 5G edge telemetry nodes.",
+    href: "/industries/telecommunications"
   },
   {
     slug: "media-entertainment",
@@ -43,24 +43,24 @@ const industries = [
     href: "/industries/media-entertainment"
   },
   {
-    slug: "telecom",
-    name: "Telecom",
-    desc: "Manage high-bandwidth network monitors, automated customer billing databases, and 5G edge telemetry nodes.",
-    href: "/industries/telecom"
+    slug: "education",
+    name: "Education",
+    desc: "Develop secure learning management systems (LMS), digital collaboration workspaces, and scalable interactive class portals.",
+    href: "/industries/education"
   },
   {
-    slug: "manufacturing-retail",
-    name: "Manufacturing & Retail",
-    desc: "Implement predictive machine maintenance metrics, automated inventory logs, and supply-chain forecasting filters.",
-    href: "/industries/manufacturing-retail"
+    slug: "government-public-sector",
+    name: "Government & Public Sector",
+    desc: "Migrate public services to secure cloud infrastructures, build citizen access portals, and align with federal safety parameters.",
+    href: "/industries/government-public-sector"
   }
 ];
 
 export function IndustriesGrid() {
   return (
-    <section className="w-full py-24 bg-[#050505] text-white border-b border-zinc-900">
+    <section className="w-full py-24 bg-[#030303] text-white border-b border-zinc-900">
       <div className="max-w-site mx-auto px-6 md:px-12 lg:px-16 xl:px-20">
-        
+
         <Reveal className="mb-16 text-left">
           <div className="inline-flex items-center gap-2 mb-4">
             <span className="h-[1px] w-6 bg-rose-600"></span>
@@ -79,7 +79,7 @@ export function IndustriesGrid() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {industries.map((ind, idx) => (
             <Reveal key={ind.slug} delay={idx * 0.05} className="h-full">
-              <Link 
+              <Link
                 href={ind.href}
                 className="group flex flex-col justify-between h-full bg-[#080808] border border-zinc-900/60 rounded-2xl p-6 hover:border-zinc-800 hover:bg-zinc-900/10 transition-all duration-300 relative overflow-hidden"
               >
@@ -96,7 +96,7 @@ export function IndustriesGrid() {
                   <h3 className="text-sm font-semibold text-zinc-100 group-hover:text-white transition-colors mb-3">
                     {ind.name}
                   </h3>
-                  
+
                   <p className="text-[11px] text-zinc-450 leading-relaxed font-light mb-6">
                     {ind.desc}
                   </p>

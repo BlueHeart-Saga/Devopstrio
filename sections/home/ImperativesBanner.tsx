@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { Reveal } from "@/components/ui/Reveal";
-import { Download, Mail, ArrowRight, FileText } from "lucide-react";
+import { Mail, ArrowRight, FileText } from "lucide-react";
 
 export function ImperativesBanner() {
   const [email, setEmail] = useState("");
@@ -16,7 +16,7 @@ export function ImperativesBanner() {
   };
 
   return (
-    <section className="w-full py-12 bg-[#030303] text-white relative border-b border-zinc-900">
+    <section className="w-full py-12 bg-[#030303] text-white relative ">
       <div className="max-w-site mx-auto w-full px-6 md:px-12 lg:px-16 xl:px-20">
         <Reveal>
           <div className="relative w-full rounded-2xl border border-zinc-800 bg-zinc-950/40 p-8 lg:p-12 overflow-hidden shadow-2xl flex flex-col lg:flex-row items-center justify-between gap-10">
@@ -35,19 +35,12 @@ export function ImperativesBanner() {
                     Explore how organizations are turning AI potential into measurable business impact.
                   </p>
                 </div>
-
-                <a
-                  href="/contact"
-                  className="inline-flex items-center gap-2 px-5 py-3 rounded-lg text-xs font-semibold uppercase tracking-wider border border-zinc-800 hover:border-zinc-700 bg-zinc-950/80 hover:bg-zinc-900 text-zinc-200 hover:text-white transition-all duration-300 self-start md:self-center flex-shrink-0"
-                >
-                  Download Report <Download size={14} className="text-rose-500" />
-                </a>
               </div>
 
               {/* Newsletter Sub-Form */}
               <div>
                 <span className="block text-xs font-medium text-zinc-400 mb-3">
-                  Stay ahead with our latest insights
+                  Stay ahead with our latest Updates
                 </span>
                 <form onSubmit={handleSubmit} className="flex max-w-md items-center relative">
                   <div className="absolute left-3.5 text-zinc-500">

@@ -93,20 +93,20 @@ export function ServiceDetailTemplate({
 
   return (
     <main className="min-h-screen bg-black text-white pt-16">
-      
+
       {/* 1. Hero Section (HCLTech-style Card Design) */}
       <section className="w-full py-12 bg-[#030303] text-white relative">
         <div className="max-w-site mx-auto w-full px-6 md:px-12 lg:px-16 xl:px-20">
           <Reveal>
             <div className="relative w-full rounded-2xl border border-zinc-850/80 bg-zinc-950/40 p-8 lg:p-12 overflow-hidden shadow-2xl flex flex-col justify-between gap-10 min-h-[500px]">
-              
+
               {/* Background Glows */}
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(220,38,38,0.03),transparent_50%)] pointer-events-none" />
               <div className="absolute -top-40 -right-40 w-96 h-96 bg-[radial-gradient(circle_at_center,rgba(225,29,72,0.02),transparent_70%)] blur-3xl pointer-events-none" />
 
               {/* Main Content Grid */}
               <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-10 items-center z-10 w-full">
-                
+
                 {/* Left Text Block */}
                 <div className="flex flex-col text-left">
                   {/* Breadcrumb */}
@@ -129,7 +129,7 @@ export function ServiceDetailTemplate({
                   </p>
 
                   {/* Button */}
-                  <a 
+                  <a
                     href="#overview"
                     className="inline-flex items-center gap-2 px-6 py-3.5 rounded bg-white hover:bg-zinc-200 text-black text-xs font-semibold uppercase tracking-wider transition-colors self-start"
                   >
@@ -141,9 +141,9 @@ export function ServiceDetailTemplate({
                 <div className="w-full aspect-[4/3] max-w-[500px] lg:max-w-none mx-auto rounded-lg border border-zinc-900 overflow-hidden bg-zinc-950 flex items-center justify-center shadow-inner relative">
                   {/* Inner overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/60 to-transparent pointer-events-none" />
-                  <img 
-                    src={heroImage} 
-                    alt={title} 
+                  <img
+                    src={heroImage}
+                    alt={title}
                     className="w-full h-full object-cover select-none pointer-events-none"
                   />
                 </div>
@@ -180,14 +180,14 @@ export function ServiceDetailTemplate({
       <SectionNavbar sections={subSections} />
 
       {/* 3. Overview Section */}
-      <section id="overview" className="w-full py-20 bg-[#030303] border-b border-zinc-900">
+      <section id="overview" className="w-full py-20 bg-[#030303]">
         <div className="max-w-site mx-auto px-6 md:px-12 lg:px-16 xl:px-20 grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           <Reveal className="text-left">
             <span className="text-[10px] font-mono text-zinc-550 uppercase tracking-widest block mb-4">Value Proposition</span>
             <h2 className="text-2xl md:text-3xl font-light text-white tracking-tight leading-snug">
               {overviewHeading}
             </h2>
-            
+
             <div className="flex flex-col gap-3 mt-8">
               {benefits.map((benefit, i) => (
                 <div key={i} className="flex items-center gap-2.5 text-xs text-zinc-300">
@@ -197,7 +197,7 @@ export function ServiceDetailTemplate({
               ))}
             </div>
           </Reveal>
-          
+
           <Reveal className="text-left">
             <div className="flex flex-col gap-6 text-zinc-400 text-xs md:text-sm font-light leading-relaxed">
               <span className="text-[10px] font-mono text-zinc-550 uppercase tracking-widest block mb-1">Details</span>
@@ -209,9 +209,9 @@ export function ServiceDetailTemplate({
       </section>
 
       {/* 4. Capabilities Grid Section */}
-      <section id="capabilities" className="w-full py-24 bg-[#050505] border-b border-zinc-900">
+      <section id="capabilities" className="w-full py-24 bg-[#030303] border-b border-zinc-900">
         <div className="max-w-site mx-auto px-6 md:px-12 lg:px-16 xl:px-20">
-          
+
           <Reveal className="mb-16 text-left">
             <div className="inline-flex items-center gap-2 mb-4">
               <span className="h-[1px] w-6 bg-rose-600"></span>
@@ -266,7 +266,7 @@ export function ServiceDetailTemplate({
               </p>
             </Reveal>
 
-            <div className="bg-[#050505] border border-zinc-900 rounded-2xl p-8 grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
+            <div className="bg-[#030303] border border-zinc-900 rounded-2xl p-8 grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
               {techs.map((tech) => (
                 <div key={tech.name} className="flex flex-col border-b border-zinc-900 pb-4 last:border-b-0">
                   <strong className="text-xs font-semibold text-zinc-200 mb-1">{tech.name}</strong>
@@ -279,7 +279,7 @@ export function ServiceDetailTemplate({
       </section>
 
       {/* 6. Process Section */}
-      <section id="process" className="w-full py-24 bg-[#050505] border-b border-zinc-900">
+      <section id="process" className="w-full py-24 bg-[#030303] border-b border-zinc-900">
         <div className="max-w-site mx-auto px-6 md:px-12 lg:px-16 xl:px-20">
           <Reveal className="mb-16 text-center">
             <div className="inline-flex items-center gap-2 mb-4">
@@ -302,7 +302,7 @@ export function ServiceDetailTemplate({
                     <h3 className="text-xs font-semibold text-zinc-100 mb-3 tracking-wide text-left">{step.title}</h3>
                     <p className="text-[10px] text-zinc-450 leading-relaxed font-light text-left">{step.desc}</p>
                   </div>
-                  
+
                   <div className="w-full h-[1px] bg-rose-950/20 mt-8" />
                 </div>
               </Reveal>
@@ -314,8 +314,8 @@ export function ServiceDetailTemplate({
       {/* 7. Case Study Section */}
       <section id="case-study" className="w-full py-24 bg-[#030303] border-b border-zinc-900">
         <div className="max-w-site mx-auto px-6 md:px-12 lg:px-16 xl:px-20">
-          <div className="bg-[#050505] border border-zinc-900 rounded-3xl p-8 lg:p-12 grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-12 items-center relative overflow-hidden">
-            
+          <div className="bg-[#030303] border border-zinc-900 rounded-3xl p-8 lg:p-12 grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-12 items-center relative overflow-hidden">
+
             <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-rose-600/5 rounded-full blur-[100px] pointer-events-none" />
 
             <Reveal className="text-left relative z-10">
@@ -323,7 +323,7 @@ export function ServiceDetailTemplate({
               <h3 className="text-xl md:text-2xl font-light text-white mb-6">
                 {caseStudyTitle}
               </h3>
-              
+
               <p className="text-zinc-400 text-xs md:text-sm font-light leading-relaxed mb-8">
                 {caseStudyDesc}
               </p>
@@ -355,7 +355,7 @@ export function ServiceDetailTemplate({
       </section>
 
       {/* 8. FAQ Section */}
-      <section id="faq" className="w-full py-24 bg-[#050505] border-b border-zinc-900">
+      <section id="faq" className="w-full py-24 bg-[#030303] border-b border-zinc-900">
         <div className="max-w-3xl mx-auto px-6">
           <Reveal className="mb-16 text-center">
             <div className="inline-flex items-center gap-2 mb-4">
@@ -407,11 +407,11 @@ export function ServiceDetailTemplate({
                 GET IN TOUCH
               </span>
             </div>
-            
+
             <h2 className="text-3xl md:text-5xl font-light text-white tracking-tight leading-tight mb-6">
               {ctaTitle} <span className="font-semibold text-rose-500">{ctaHighlight}</span>
             </h2>
-            
+
             <p className="text-zinc-400 text-xs md:text-sm font-light leading-relaxed max-w-xl mx-auto mb-10">
               {ctaDesc}
             </p>

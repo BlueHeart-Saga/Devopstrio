@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Reveal } from "@/components/ui/Reveal";
 import { CheckCircle2 } from "lucide-react";
 
@@ -37,8 +37,8 @@ const corePoints = [
   },
   {
     num: "07",
-    title: "Global Delivery Model",
-    desc: "Access world-class technology expertise with flexible engagement models designed for startups, enterprises, and government organizations."
+    title: "Global Delivery & Business Value",
+    desc: "Access world-class technology expertise and flexible engagement models designed to deliver measurable outcomes, operational efficiency, and long-term business value."
   },
   {
     num: "08",
@@ -59,37 +59,73 @@ const checklist = [
 ];
 
 export function WhyDevopstrio() {
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const elements = document.querySelectorAll("[data-why-point]");
+      let closestIdx = 0;
+      let minDistance = Infinity;
+
+      elements.forEach((el, idx) => {
+        const rect = el.getBoundingClientRect();
+        // Calculate the element's center relative to viewport
+        const elementCenter = rect.top + rect.height / 2;
+        // Compare to 30% of viewport height (higher up on screen to delay the change)
+        const distance = Math.abs(elementCenter - window.innerHeight * 0.30);
+        if (distance < minDistance) {
+          minDistance = distance;
+          closestIdx = idx;
+        }
+      });
+
+      setActiveIndex(closestIdx);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll(); // Initial run
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const activeInd = corePoints[activeIndex] || corePoints[0];
+
   return (
-    <section className="w-full py-20 md:py-32 bg-[#050505] text-white border-y border-zinc-900 relative">
-      <div className="max-w-site mx-auto w-full px-6 md:px-12 lg:px-16 xl:px-20 grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-16 lg:gap-24 items-start">
+    <section className="w-full pt-10 md:pt-14 pb-20 md:pb-32 bg-[#030303] text-white relative">
+      <div className="max-w-site mx-auto w-full px-6 md:px-12 lg:px-16 xl:px-20 grid grid-cols-1 lg:grid-cols-[1.1fr_1fr] gap-16 lg:gap-24 items-start">
 
         {/* Left Side: Sticky Image & Intro */}
-        <div className="sticky top-28 flex flex-col gap-10">
+        <div className="lg:sticky lg:top-28 flex flex-col gap-8">
           <div>
             <div className="mb-4">
               <span className="text-[11px] font-bold tracking-[0.25em] uppercase text-rose-500 block">
                 WHY Devopstrio
               </span>
             </div>
-            <h2 className="text-4xl md:text-5xl font-light tracking-tight text-white mb-6 leading-[1.1]">
-              Engineering Innovation. <br className="hidden lg:block" /> Delivering <span className="font-bold">Business Outcomes</span>.
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight leading-[1.1] text-white mb-6">
+              Engineering Innovation. <br className="hidden lg:block" /> Delivering <span className="text-[#E11D48]">Business Outcomes.</span>
             </h2>
             <p className="text-zinc-400 text-base md:text-lg leading-relaxed font-bold">
               We combine deep technical expertise, industry knowledge, and modern engineering practices to help organizations innovate faster, operate securely, and scale confidently in an increasingly digital world.
             </p>
           </div>
 
-          {/* Premium UI Image (Floating, Unboxed) */}
-          <div className="w-full h-48 md:h-[240px] relative flex justify-center mt-4 pointer-events-none">
-            <img
-              src="/assets/why_hero.png"
-              alt="Devopstrio Digital Ecosystem"
-              className="absolute inset-0 w-full h-full object-cover mix-blend-screen opacity-60"
-              style={{
-                maskImage: "radial-gradient(ellipse at center, black 40%, transparent 80%)",
-                WebkitMaskImage: "radial-gradient(ellipse at center, black 40%, transparent 80%)"
-              }}
-            />
+          {/* Premium Dynamic Scroll Image (Sticky Box) */}
+          <div className="w-full aspect-[16/10] relative overflow-hidden min-h-[200px] sm:min-h-[280px] lg:min-h-[340px]">
+            {/* Ambient Background Glow behind the images */}
+            <div className="absolute inset-0 bg-gradient-to-tr from-rose-500/10 to-transparent blur-3xl pointer-events-none -z-10" />
+
+            {corePoints.map((point, idx) => (
+              <img
+                key={point.title}
+                src={idx === 7 ? "/assets/Home-page/why-choose/whychoose.png" : `/assets/Home-page/why-choose/${idx + 1}.png`}
+                alt={point.title}
+                className={`absolute inset-0 w-full h-full object-contain transition-all duration-700 ease-in-out ${activeIndex === idx
+                    ? "opacity-100 scale-100 translate-y-0"
+                    : "opacity-0 scale-95 translate-y-2 pointer-events-none"
+                  }`}
+              />
+            ))}
           </div>
         </div>
 
@@ -98,21 +134,32 @@ export function WhyDevopstrio() {
 
           {/* Core Points */}
           <div className="flex flex-col gap-12 border-t border-zinc-900/40 pt-10 lg:pt-6">
-            {corePoints.map((point) => (
-              <Reveal key={point.title} className="flex gap-6 pb-12 border-b border-zinc-900/60 last:border-b-0 last:pb-0 group">
-                <span className="text-sm font-mono text-rose-500 tracking-wider pt-1 font-bold">
-                  {point.num}
-                </span>
-                <div>
-                  <h3 className="text-xl md:text-2xl font-bold tracking-tight text-white mb-3 group-hover:text-rose-400 transition-colors">
-                    {point.title}
-                  </h3>
-                  <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-bold">
-                    {point.desc}
-                  </p>
+            {corePoints.map((point, idx) => {
+              const isActive = activeIndex === idx;
+              return (
+                <div
+                  key={point.title}
+                  data-why-point
+                  className={`flex gap-6 pb-12 border-b border-zinc-900/60 last:border-b-0 last:pb-0 transition-all duration-500 ${isActive ? "opacity-100 translate-x-2" : "opacity-40 translate-x-0"
+                    }`}
+                >
+                  <span className={`text-sm font-mono tracking-wider pt-1 font-bold transition-colors duration-300 ${isActive ? "text-rose-500" : "text-zinc-600"
+                    }`}>
+                    {point.num}
+                  </span>
+                  <div>
+                    <h3 className={`text-xl md:text-2xl font-bold tracking-tight mb-3 transition-colors duration-300 ${isActive ? "text-white" : "text-zinc-500"
+                      }`}>
+                      {point.title}
+                    </h3>
+                    <p className={`text-sm md:text-base leading-relaxed font-bold transition-colors duration-300 ${isActive ? "text-zinc-300" : "text-zinc-600"
+                      }`}>
+                      {point.desc}
+                    </p>
+                  </div>
                 </div>
-              </Reveal>
-            ))}
+              );
+            })}
           </div>
 
           {/* Alternative Premium Section - Checklist */}

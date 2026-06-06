@@ -23,9 +23,9 @@ const metrics = [
 
 export function EngagementSLA() {
   return (
-    <section className="w-full py-24 bg-[#050505] text-white border-b border-zinc-900">
+    <section className="w-full py-24 bg-[#030303] text-white border-b border-zinc-900">
       <div className="max-w-site mx-auto px-6 md:px-12 lg:px-16 xl:px-20">
-        
+
         <div className="grid grid-cols-1 lg:grid-cols-[0.8fr_1.2fr] gap-12 lg:gap-16 items-start">
           <Reveal className="text-left">
             <div className="inline-flex items-center gap-2 mb-4">

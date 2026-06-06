@@ -6,65 +6,91 @@ import { Compass, Eye } from "lucide-react";
 
 export function MissionVision() {
   return (
-    <section className="w-full py-24 bg-[#030303] text-white border-b border-zinc-900 relative overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(220,38,38,0.01),transparent_60%)] pointer-events-none" />
-      
-      <div className="max-w-site mx-auto w-full px-6 md:px-12 lg:px-16 xl:px-20">
+    <section className="w-full py-20 bg-[#030303] text-white relative">
+      <div className="max-w-site mx-auto w-full px-6 md:px-12 lg:px-20">
         
-        <Reveal className="mb-20">
+        {/* Header Block */}
+        <Reveal className="mb-16">
           <div className="flex items-center gap-2 mb-4">
-            <span className="h-[1px] w-6 bg-rose-600"></span>
-            <span className="text-[10px] font-medium tracking-[0.2em] uppercase text-zinc-400">
-              03 / DRIVING MISSION
+            <span className="h-[2px] w-6 bg-rose-600"></span>
+            <span className="text-[11px] font-semibold tracking-wider uppercase text-rose-500">
+              Our Purpose
             </span>
           </div>
-          <h2 className="text-3xl font-light tracking-tight leading-tight">
-            Clear standards guiding our <span className="text-white font-medium bg-gradient-to-r from-red-600 via-rose-600 to-rose-500 bg-clip-text text-transparent">technical execution</span>.
+          <h2 className="text-3xl md:text-5xl font-bold tracking-tight leading-tight text-white">
+            Guided by a clear purpose. <span className="font-bold block">Driven by a bold vision.</span>
           </h2>
+          <p className="text-zinc-400 text-sm md:text-base max-w-2xl mt-4 font-bold">
+            Everything we build, every decision we make, and every partnership we form is anchored in two deeply held beliefs about what technology should do for people.
+          </p>
         </Reveal>
 
-        {/* 3D Half-in, Half-out Card Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-12 pt-8">
+        {/* Content Split: Left Quotes, Right Mission/Vision Cards */}
+        <div className="grid grid-cols-1 lg:grid-cols-[0.8fr_1.2fr] gap-12 pt-4">
           
-          {/* Card 1: Mission */}
-          <div className="relative border border-zinc-900 bg-zinc-950/20 p-8 rounded-2xl flex flex-col justify-between shadow-2xl min-h-[260px] group hover:border-zinc-800 transition-colors duration-300">
-            {/* The "Half-in, Half-out" badge */}
-            <div className="absolute -top-6 left-8 w-12 h-12 rounded-xl bg-zinc-900 border border-zinc-850 flex items-center justify-center text-rose-500 shadow-xl group-hover:border-rose-500/30 transition-all duration-300">
-              <Compass size={20} strokeWidth={1.5} />
+          {/* Left Column: Quotes/Core Beliefs */}
+          <Reveal className="flex flex-col gap-6">
+            <div className="p-6 bg-zinc-950/20 border border-zinc-900 rounded-xl border-l-4 border-l-rose-600">
+              <span className="text-[10px] font-bold text-rose-500 uppercase tracking-widest block mb-2">
+                Our Core Belief
+              </span>
+              <p className="text-sm italic text-zinc-300 leading-relaxed font-bold">
+                "Technology should be an enabler, not a hurdle. We bridge the gap between human ambition and technical excellence."
+              </p>
             </div>
             
-            <div className="pt-6">
-              <span className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest block mb-3">
-                MISSION STATEMENT
+            <div className="p-6 bg-zinc-950/20 border border-zinc-900 rounded-xl border-l-4 border-l-rose-600">
+              <span className="text-[10px] font-bold text-rose-500 uppercase tracking-widest block mb-2">
+                Our Promise
               </span>
-              <h3 className="text-xl font-normal text-white mb-4">
-                Accelerating Technical Autonomy
-              </h3>
-              <p className="text-xs md:text-sm text-zinc-405 leading-relaxed font-light">
-                To build high-integrity, secure cloud systems and custom artificial intelligence pipelines that allow enterprises to scale autonomously, operate safely, and maintain full ownership of their intellectual assets.
+              <p className="text-sm italic text-zinc-300 leading-relaxed font-bold">
+                "Every line of code we write is a step toward a more efficient, automated, and imaginative world."
               </p>
             </div>
-          </div>
+          </Reveal>
 
-          {/* Card 2: Vision */}
-          <div className="relative border border-zinc-900 bg-zinc-950/20 p-8 rounded-2xl flex flex-col justify-between shadow-2xl min-h-[260px] group hover:border-zinc-800 transition-colors duration-300">
-            {/* The "Half-in, Half-out" badge */}
-            <div className="absolute -top-6 left-8 w-12 h-12 rounded-xl bg-zinc-900 border border-zinc-850 flex items-center justify-center text-rose-500 shadow-xl group-hover:border-rose-500/30 transition-all duration-300">
-              <Eye size={20} strokeWidth={1.5} />
-            </div>
-
-            <div className="pt-6">
-              <span className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest block mb-3">
-                VISION STATEMENT
+          {/* Right Column: Mission and Vision Cards */}
+          <Reveal className="flex flex-col gap-8">
+            
+            {/* Card 1: Mission */}
+            <div className="bg-zinc-950/20 border border-zinc-900 p-8 rounded-xl relative hover:border-zinc-800 transition-colors">
+              <div className="absolute top-8 right-8 text-rose-500 bg-rose-950/30 p-2.5 rounded-lg">
+                <Compass size={22} strokeWidth={1.5} />
+              </div>
+              <span className="text-[10px] font-bold text-rose-500 uppercase tracking-widest block mb-2">
+                MISSION
               </span>
-              <h3 className="text-xl font-normal text-white mb-4">
-                The Enterprise Benchmark
+              <h3 className="text-xl font-bold text-white mb-3">
+                To empower enterprises by turning complexity into competitive advantage.
               </h3>
-              <p className="text-xs md:text-sm text-zinc-405 leading-relaxed font-light">
-                To establish the benchmark for digital consultancy delivery, replacing standard hours-based consulting models with outcome-driven partnerships that deliver permanent technology advantages.
+              <p className="text-xs md:text-sm text-zinc-400 leading-relaxed font-bold mb-4">
+                We believe the best technology disappears into the background — making everything faster, smarter, and more reliable without demanding constant attention. Our mission is to deliver intelligent, AI-driven cloud ecosystems that become a seamless extension of your team.
+              </p>
+              <p className="text-xs md:text-sm text-zinc-400 leading-relaxed font-bold">
+                We don't just manage infrastructure. We make it your greatest competitive advantage — reducing friction, accelerating delivery, and freeing your people to focus on what truly matters: innovation and growth.
               </p>
             </div>
-          </div>
+
+            {/* Card 2: Vision */}
+            <div className="bg-zinc-950/20 border border-zinc-900 p-8 rounded-xl relative hover:border-zinc-800 transition-colors">
+              <div className="absolute top-8 right-8 text-rose-500 bg-rose-950/30 p-2.5 rounded-lg">
+                <Eye size={22} strokeWidth={1.5} />
+              </div>
+              <span className="text-[10px] font-bold text-rose-500 uppercase tracking-widest block mb-2">
+                VISION
+              </span>
+              <h3 className="text-xl font-bold text-white mb-3">
+                To architect a world where enterprise software never fails.
+              </h3>
+              <p className="text-xs md:text-sm text-zinc-400 leading-relaxed font-bold mb-4">
+                We envision a future where the boundary between human ambition and technical reality simply ceases to exist. Where AI and engineering work in perfect harmony — self-healing, self-optimising, always on.
+              </p>
+              <p className="text-xs md:text-sm text-zinc-400 leading-relaxed font-bold">
+                We're building toward a world where every enterprise, regardless of size or sector, can harness the full power of multi-cloud environments, intelligent automation, and data-driven decision-making — staying competitive and resilient in an always-changing digital landscape.
+              </p>
+            </div>
+
+          </Reveal>
 
         </div>
 

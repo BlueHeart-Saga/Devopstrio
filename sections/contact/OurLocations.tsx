@@ -1,47 +1,107 @@
 "use client";
 
 import React from "react";
-import { MapPin } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
 
 const offices = [
-  { city: "Palo Alto", region: "Americas Hub", details: "340 University Ave, Palo Alto, CA" },
-  { city: "London", region: "EMEA Operations", details: "8 Devonshire Square, Spitalfields, London" },
-  { city: "Bangalore", region: "APAC Delivery", details: "Prestige Trade Tower, Palace Rd, Bangalore" }
+  { 
+    city: "London", 
+    region: "(Head Office)", 
+    details: "128 City Road, London, United Kingdom\nEC1V 2NX", 
+    image: "/assets/locations/london.png",
+    gradient: "from-rose-500 to-red-500"
+  },
+  { 
+    city: "Tennessee", 
+    region: "(Sub-Regional Office)", 
+    details: "522 Aventura Dr, Mt Juliet, Tennessee\n37122 United States",
+    image: "/assets/locations/Tennessee.png",
+    gradient: "from-zinc-500 to-zinc-300"
+  },
+  { 
+    city: "Bengaluru", 
+    region: "(Corporate Office)", 
+    details: "Embassy Golf Links Business Park,\nBengaluru, Karnataka-560071, India",
+    image: "/assets/locations/Bengaluru.png",
+    gradient: "from-zinc-400 to-zinc-200"
+  },
+  { 
+    city: "London", 
+    region: "(Support Office)", 
+    details: "167-169 Great Portland Street, 5th Floor,\nLondon, W1W 5PF",
+    image: "/assets/locations/london.png",
+    gradient: "from-rose-600 to-red-700"
+  },
+  { 
+    city: "Chennai", 
+    region: "(Operations Center)", 
+    details: "Ground Floor, Primus Building, Door No.\nSP – 7A, Guindy Industrial Estate, SIDCO\nIndustrial Estate, Chennai 600032",
+    image: "/assets/locations/chennai.png",
+    gradient: "from-orange-600 to-amber-500"
+  },
+  { 
+    city: "Thoothukudi", 
+    region: "(Operations Center)", 
+    details: "4/ 367, Rajeev Colony, Pasuvanthanai\n628718 Thoothukudi, Tamilnadu, IN",
+    image: "/assets/locations/Thoothukudi.png",
+    gradient: "from-red-600 to-orange-500"
+  }
 ];
 
 export function OurLocations() {
   return (
-    <section className="w-full py-20 bg-[#030303] text-white border-b border-zinc-900 relative">
+    <section className="w-full py-20 md:py-28 bg-[#030303] text-white relative">
       <div className="max-w-site mx-auto w-full px-6 md:px-12 lg:px-16 xl:px-20">
         
         <Reveal className="max-w-3xl mb-16">
           <div className="flex items-center gap-2 mb-4">
-            <span className="h-[1px] w-6 bg-rose-600"></span>
+            
             <span className="text-[10px] font-medium tracking-[0.2em] uppercase text-zinc-400">
-              03 / PHYSICAL OFFICES
+              OUR LOCATIONS
             </span>
           </div>
-          <h2 className="text-3xl font-light tracking-tight leading-tight">
-            Our global <span className="text-white font-medium bg-gradient-to-r from-red-600 via-rose-600 to-rose-500 bg-clip-text text-transparent">delivery hubs</span>.
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight leading-tight mb-4">
+            Visit Our <span className="text-white font-bold bg-gradient-to-r from-red-650 via-rose-600 to-rose-500 bg-clip-text text-transparent">Global Offices</span>.
           </h2>
+          <p className="text-zinc-400 text-sm leading-relaxed font-bold max-w-2xl">
+            We&apos;d love to meet you in person. Our global locations and engineering hubs are always open for client visits, workshops, and architecture reviews. Coffee&apos;s on us — always.
+          </p>
         </Reveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {offices.map((office) => (
-            <div 
-              key={office.city}
-              className="flex gap-4 items-start p-6 rounded-xl border border-zinc-900 bg-zinc-950/20 hover:border-zinc-800 transition-colors"
-            >
-              <div className="w-8 h-8 rounded bg-zinc-900 flex items-center justify-center text-rose-500 flex-shrink-0">
-                <MapPin size={14} />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-20 gap-x-12">
+          {offices.map((office, idx) => (
+            <Reveal key={idx} delay={idx * 0.1}>
+              <div className="flex flex-col items-center text-center group cursor-default">
+                
+                <div className="w-full h-48 relative mb-6 overflow-hidden flex items-end justify-center">
+                  <img 
+                    src={office.image} 
+                    alt={`${office.city} Office`}
+                    className="object-contain h-full w-full opacity-80 group-hover:opacity-100 transition-opacity duration-500"
+                  />
+                </div>
+
+                <div className={`w-12 h-[3px] rounded-full bg-gradient-to-r ${office.gradient} mb-6 opacity-80`} />
+
+                <h4 className="text-2xl md:text-3xl font-bold text-white mb-4 tracking-wide group-hover:text-zinc-200 transition-colors">
+                  {office.city}
+                </h4>
+
+                <div className="text-xs md:text-sm text-zinc-400 font-medium leading-relaxed mb-8 max-w-[280px]">
+                  {office.details.split('\n').map((line, i) => (
+                    <React.Fragment key={i}>
+                      {line}
+                      <br />
+                    </React.Fragment>
+                  ))}
+                </div>
+
+                <div className="border border-zinc-800 bg-[#0a0a0a]/50 text-zinc-300 text-[11px] font-medium px-5 py-2 rounded-full tracking-wide hover:border-zinc-700 transition-colors">
+                  {office.region}
+                </div>
+
               </div>
-              <div>
-                <h4 className="text-sm font-semibold text-zinc-200">{office.city}</h4>
-                <span className="block text-[10px] text-zinc-500 uppercase tracking-wider mb-1">{office.region}</span>
-                <p className="text-xs text-zinc-450 font-light leading-relaxed">{office.details}</p>
-              </div>
-            </div>
+            </Reveal>
           ))}
         </div>
 

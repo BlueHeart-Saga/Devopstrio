@@ -52,9 +52,9 @@ const subServices = [
 
 export function AIDataSubServices() {
   return (
-    <section className="w-full py-24 bg-[#050505] text-white border-b border-zinc-900">
+    <section className="w-full py-24 bg-[#030303] text-white border-b border-zinc-900">
       <div className="max-w-site mx-auto px-6 md:px-12 lg:px-16 xl:px-20">
-        
+
         <Reveal className="mb-16 text-left">
           <div className="inline-flex items-center gap-2 mb-4">
             <span className="h-[1px] w-6 bg-rose-600"></span>
@@ -73,7 +73,7 @@ export function AIDataSubServices() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {subServices.map((sub, idx) => (
             <Reveal key={sub.slug} delay={idx * 0.05} className="h-full">
-              <Link 
+              <Link
                 href={sub.href}
                 className="group flex flex-col justify-between h-full bg-[#080808] border border-zinc-900/60 rounded-2xl p-6 hover:border-zinc-800 hover:bg-zinc-900/10 transition-all duration-300 relative overflow-hidden"
               >
@@ -90,7 +90,7 @@ export function AIDataSubServices() {
                   <h3 className="text-sm font-semibold text-zinc-100 group-hover:text-white transition-colors mb-3">
                     {sub.name}
                   </h3>
-                  
+
                   <p className="text-[11px] text-zinc-450 leading-relaxed font-light mb-6">
                     {sub.desc}
                   </p>

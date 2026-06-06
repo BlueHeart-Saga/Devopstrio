@@ -26,7 +26,7 @@ export function AITechStack() {
   return (
     <section className="w-full py-24 bg-[#030303] text-white border-b border-zinc-900">
       <div className="max-w-site mx-auto px-6 md:px-12 lg:px-16 xl:px-20">
-        
+
         <div className="grid grid-cols-1 lg:grid-cols-[0.8fr_1.2fr] gap-12 lg:gap-16 items-start">
           <Reveal className="text-left">
             <div className="inline-flex items-center gap-2 mb-4">
@@ -45,7 +45,7 @@ export function AITechStack() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
             {techGroups.map((group, idx) => (
-              <Reveal key={group.category} delay={idx * 0.05} className="bg-[#050505] border border-zinc-900 rounded-2xl p-6 text-left">
+              <Reveal key={group.category} delay={idx * 0.05} className="bg-[#030303] border border-zinc-900 rounded-2xl p-6 text-left">
                 <span className="text-[10px] font-mono text-zinc-550 uppercase tracking-wider block mb-4">
                   {group.category}
                 </span>

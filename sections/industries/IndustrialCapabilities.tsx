@@ -31,7 +31,7 @@ export function IndustrialCapabilities() {
   return (
     <section className="w-full py-24 bg-[#030303] text-white border-b border-zinc-900">
       <div className="max-w-site mx-auto px-6 md:px-12 lg:px-16 xl:px-20">
-        
+
         <Reveal className="mb-16 text-center">
           <div className="inline-flex items-center gap-2 mb-4">
             <span className="h-[1px] w-6 bg-rose-600"></span>
@@ -50,7 +50,7 @@ export function IndustrialCapabilities() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {certs.map((cert, idx) => (
             <Reveal key={cert.title} delay={idx * 0.05} className="h-full">
-              <div className="h-full bg-[#050505] border border-zinc-900 rounded-2xl p-6 flex flex-col justify-between hover:border-zinc-800 transition-colors text-left">
+              <div className="h-full bg-[#030303] border border-zinc-900 rounded-2xl p-6 flex flex-col justify-between hover:border-zinc-800 transition-colors text-left">
                 <div>
                   <div className="mb-6 w-12 h-12 rounded-xl bg-rose-950/10 flex items-center justify-center border border-rose-900/10">
                     {cert.icon}

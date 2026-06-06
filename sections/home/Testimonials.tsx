@@ -13,97 +13,97 @@ export function Testimonials() {
       quote: "Devopstrio has been a transformative partner in our digital journey. Their expertise in AI, cloud and DevOps helped us modernize our platform, reduce costs and deliver exceptional customer experiences.",
       author: "James Carter",
       role: "CTO, Global Retail Group",
-      image: "/assets/client-reviews/image%20164.png"
+      image: "/assets/Home-page/client-reviews/image%20164.png"
     },
     {
       quote: "Their team embedded seamlessly into our engineering unit. We successfully launched our automated multi-cloud data broker platform two months ahead of schedule with complete error budget compliance.",
       author: "Sarah Jenkins",
       role: "VP of Platform Infrastructure, Zenith Capital",
-      image: "/assets/client-reviews/image%20165.png"
+      image: "/assets/Home-page/client-reviews/image%20165.png"
     },
     {
       quote: "The transition to a cloud-native microservices architecture was flawless. Devopstrio's deep understanding of Kubernetes and CI/CD automation revolutionized our deployment cadence.",
       author: "Michael Chen",
       role: "VP of Engineering, FinTech Solutions",
-      image: "/assets/client-reviews/image%20166.png"
+      image: "/assets/Home-page/client-reviews/image%20166.png"
     },
     {
       quote: "We partnered with Devopstrio to overhaul our cybersecurity governance. Their zero-trust implementation across our AWS environments gave our enterprise the robust security posture it desperately needed.",
       author: "Elena Rodriguez",
       role: "CISO, HealthCorp",
-      image: "/assets/client-reviews/image%20167.png"
+      image: "/assets/Home-page/client-reviews/image%20167.png"
     },
     {
       quote: "The AI-driven analytics platform built by Devopstrio provided us with real-time actionable insights, fundamentally changing how we approach global supply chain logistics.",
       author: "David O'Connor",
       role: "Chief Data Officer, Nexus Logistics",
-      image: "/assets/client-reviews/image%20168.png"
+      image: "/assets/Home-page/client-reviews/image%20168.png"
     },
     {
       quote: "From strategy to execution, Devopstrio delivered unparalleled excellence. They successfully migrated our legacy monolithic applications to Microsoft Azure with absolute zero downtime.",
       author: "Amina Al-Fayed",
       role: "Director of IT, Horizon Telecom",
-      image: "/assets/client-reviews/image%20169.png"
+      image: "/assets/Home-page/client-reviews/image%20169.png"
     },
     {
       quote: "Their managed services team acts as a true extension of our own. The 24/7 proactive monitoring and incident resolution have significantly improved our core system reliability.",
       author: "Thomas Wright",
       role: "Head of Operations, EduTech Global",
-      image: "/assets/client-reviews/image%20170.png"
+      image: "/assets/Home-page/client-reviews/image%20170.png"
     },
     {
       quote: "Devopstrio's data engineering experts architected a highly scalable data lake that eliminated our data silos and enabled advanced predictive modeling across the enterprise.",
       author: "Marcus Lin",
       role: "VP of Data Science, Retail Dynamics",
-      image: "/assets/client-reviews/image%20171.png"
+      image: "/assets/Home-page/client-reviews/image%20171.png"
     },
     {
       quote: "Integrating security into our DevOps pipelines was a challenge until Devopstrio stepped in. Their DevSecOps approach transformed our development lifecycle, making security a seamless default.",
       author: "Julia Gomez",
       role: "Director of DevOps, CyberNet Systems",
-      image: "/assets/client-reviews/image%20172.png"
+      image: "/assets/Home-page/client-reviews/image%20172.png"
     },
     {
       quote: "The level of technical proficiency and strategic foresight brought by Devopstrio is unmatched. They didn't just build a cloud platform; they engineered a foundation for our future growth.",
       author: "Samuel Peterson",
       role: "CIO, Global Manufacturing Inc.",
-      image: "/assets/client-reviews/image%20173.png"
+      image: "/assets/Home-page/client-reviews/image%20173.png"
     },
     {
       quote: "By leveraging their expertise in Google Cloud Platform, Devopstrio helped us build a highly resilient, globally distributed infrastructure that seamlessly scales with our fluctuating user demand.",
       author: "Lisa Chang",
       role: "CTO, Streamline Media",
-      image: "/assets/client-reviews/image%20174.png"
+      image: "/assets/Home-page/client-reviews/image%20174.png"
     },
     {
       quote: "Devopstrio's approach to application modernization breathed new life into our core systems. We experienced a 40% reduction in operational overhead within the first six months.",
       author: "Robert Hughes",
       role: "VP of Enterprise Architecture, Nexus Financial",
-      image: "/assets/client-reviews/image%20175.png"
+      image: "/assets/Home-page/client-reviews/image%20175.png"
     },
     {
       quote: "The CI/CD pipeline automation completely transformed how we ship software. We went from monthly releases to multiple daily deployments with absolute confidence.",
       author: "Sophia Martinez",
       role: "Head of DevOps, InnovateTech",
-      image: "/assets/client-reviews/image%20180.png"
+      image: "/assets/Home-page/client-reviews/image%20180.png"
     },
     {
       quote: "Their site reliability engineering team came in and immediately optimized our resource allocation. We saw a dramatic drop in latency and a massive boost in customer satisfaction.",
       author: "Daniel Foster",
       role: "Director of SRE, Quantum Data Systems",
-      image: "/assets/client-reviews/image%20177.png"
+      image: "/assets/Home-page/client-reviews/image%20177.png"
     },
     {
       quote: "Working with Devopstrio was a masterclass in modern digital engineering. Their deep knowledge of serverless architecture was crucial to scaling our core product line.",
       author: "Olivia Bennett",
       role: "VP of Product Engineering, Acumen Tech",
-      image: "/assets/client-reviews/image%20178.png"
+      image: "/assets/Home-page/client-reviews/image%20178.png"
     },
     {
       quote: "Their robust multi-cloud strategy not only eliminated vendor lock-in but empowered us to leverage the best tools from AWS and Azure simultaneously without friction.",
       author: "William Takahashi",
       role: "Chief Architect, CloudNet Solutions",
-      image: "/assets/client-reviews/image%20179.png"
+      image: "/assets/Home-page/client-reviews/image%20179.png"
     }
   ];
 
@@ -122,7 +122,7 @@ export function Testimonials() {
   }, []);
 
   return (
-    <section className="w-full py-24 md:py-36 bg-[#030303] text-white border-b border-zinc-900 relative overflow-hidden">
+    <section className="w-full py-24 md:py-36 bg-[#030303] text-white  relative overflow-hidden">
       {/* Background Image */}
       <img
         src="/assets/wavebg/homepage/testimonals.png"

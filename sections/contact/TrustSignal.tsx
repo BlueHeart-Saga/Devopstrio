@@ -12,11 +12,11 @@ const trustSignals = [
 
 export function TrustSignal() {
   return (
-    <section className="w-full py-8 border-b border-zinc-900 bg-[#050505] overflow-hidden" aria-label="Trust and credibility">
+    <section className="w-full py-8 bg-[#030303] overflow-hidden" aria-label="Trust and credibility">
       <div className="flex whitespace-nowrap overflow-x-hidden relative w-full">
         <div className="flex gap-16 animate-marquee">
           {[...trustSignals, ...trustSignals, ...trustSignals].map((item, index) => (
-            <span key={`${item}-${index}`} className="text-zinc-550 text-xs font-semibold tracking-widest uppercase">
+            <span key={`${item}-${index}`} className="text-zinc-550 text-xs font-bold tracking-widest uppercase">
               {item}
             </span>
           ))}

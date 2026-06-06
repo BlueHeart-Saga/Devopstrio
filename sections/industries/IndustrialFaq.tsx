@@ -23,9 +23,9 @@ export function IndustrialFaq() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   return (
-    <section className="w-full py-24 bg-[#050505] text-white border-b border-zinc-900">
+    <section className="w-full py-24 bg-[#030303] text-white border-b border-zinc-900">
       <div className="max-w-3xl mx-auto px-6">
-        
+
         <Reveal className="mb-16 text-center">
           <div className="inline-flex items-center gap-2 mb-4">
             <span className="h-[1px] w-6 bg-rose-600"></span>

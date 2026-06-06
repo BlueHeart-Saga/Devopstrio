@@ -8,10 +8,13 @@ import { BusinessOverview } from "@/sections/home/BusinessOverview";
 import { CoreServices } from "@/sections/home/CoreServices";
 import { IndustriesSection } from "@/sections/home/IndustriesSection";
 import { CaseStudies } from "@/sections/home/CaseStudies";
+import { WeImagine } from "@/sections/home/WeImagine";
 import { WhyDevopstrio } from "@/sections/home/WhyDevOpsTrio";
 import { OurAdvantage } from "@/sections/home/OurAdvantage";
 import { TechnicalPartnerships } from "@/sections/home/TechnicalPartnerships";
 import { DeliveryWorkflow } from "@/sections/home/DeliveryWorkflow";
+import { OurProducts } from "@/sections/home/OurProducts";
+import { PartnersSection } from "@/sections/home/PartnersSection";
 import { GlobalLocations } from "@/sections/home/GlobalLocations";
 import { Insights } from "@/sections/home/Insights";
 import { HiringSection } from "@/sections/home/HiringSection";
@@ -100,6 +103,9 @@ export default function Home() {
         <IndustriesSection />
       </div>
       <div id="impact">
+        <div className="max-w-site mx-auto w-full px-6 md:px-12 lg:px-16 xl:px-20">
+          <WeImagine />
+        </div>
         <CaseStudies />
       </div>
       <div id="why-Devopstrio">
@@ -108,14 +114,13 @@ export default function Home() {
       </div>
       <div id="partnerships">
         <TechnicalPartnerships />
+        <OurProducts />
+        <PartnersSection />
       </div>
       <div id="networks">
-        <section className="w-full py-20 md:py-32 bg-[#050505] text-white border-b border-zinc-900 relative">
-          <div className="max-w-site mx-auto w-full px-6 md:px-12 lg:px-16 xl:px-20">
-            <DeliveryWorkflow />
-            <GlobalLocations />
-          </div>
-        </section>
+        <div className="max-w-site mx-auto w-full px-6 md:px-12 lg:px-16 xl:px-20">
+          <GlobalLocations />
+        </div>
       </div>
       <div id="insights">
         <Insights />

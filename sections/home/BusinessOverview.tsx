@@ -6,7 +6,7 @@ import { ArrowRight, ArrowUpRight } from "lucide-react";
 
 export function BusinessOverview() {
   return (
-    <section className="w-full py-20 bg-[#050505] text-white border-b border-zinc-900 relative">
+    <section className="w-full py-20 bg-[#030303] text-white relative">
       <div className="max-w-site mx-auto w-full px-6 md:px-12 lg:px-16 xl:px-20">
 
         {/* Top Header & Overview */}

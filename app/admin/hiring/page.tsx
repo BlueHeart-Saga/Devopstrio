@@ -27,13 +27,13 @@ const GRADIENT_PRESETS = [
 export default function HiringAdminPage() {
   const [posters, setPosters] = useState<Poster[]>([]);
   const [isLoading, setIsLoading] = useState(true);
-  
+
   const [editingId, setEditingId] = useState<number | null>(null);
   const [formData, setFormData] = useState<Partial<Poster>>({});
-  
+
   const [isAdding, setIsAdding] = useState(false);
   const [isUploading, setIsUploading] = useState(false);
-  
+
   const [locationSuggestions, setLocationSuggestions] = useState<string[]>([]);
   const formRef = useRef<HTMLDivElement>(null);
   const locationTimeoutRef = useRef<NodeJS.Timeout | null>(null);
@@ -62,26 +62,26 @@ export default function HiringAdminPage() {
   const handleLocationChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     setFormData((prev) => ({ ...prev, location: value }));
-    
+
     if (value.length < 3) {
       setLocationSuggestions([]);
       return;
     }
-    
+
     if (locationTimeoutRef.current) {
       clearTimeout(locationTimeoutRef.current);
     }
-    
+
     locationTimeoutRef.current = setTimeout(async () => {
       try {
         const res = await fetch(`/api/location-suggest?q=${encodeURIComponent(value)}`);
         const data = await res.json();
-        
+
         if (!Array.isArray(data)) return;
-        
+
         const suggestions = data.map((d: any) => {
           const parts = d.display_name.split(", ");
-          return parts.length > 2 ? `${parts[0]}, ${parts[parts.length-1]}` : d.display_name;
+          return parts.length > 2 ? `${parts[0]}, ${parts[parts.length - 1]}` : d.display_name;
         });
         setLocationSuggestions(suggestions);
       } catch (err) {
@@ -126,7 +126,7 @@ export default function HiringAdminPage() {
     setEditingId(poster.id);
     setFormData(poster);
     setIsAdding(false);
-    
+
     setTimeout(() => {
       formRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
     }, 100);
@@ -152,7 +152,7 @@ export default function HiringAdminPage() {
       date: "",
       image: ""
     });
-    
+
     setTimeout(() => {
       formRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
     }, 100);
@@ -173,7 +173,7 @@ export default function HiringAdminPage() {
           body: JSON.stringify(formData),
         });
       }
-      
+
       await fetchPosters();
       handleCancel();
     } catch (err) {
@@ -192,13 +192,13 @@ export default function HiringAdminPage() {
   };
 
   if (isLoading) {
-    return <div className="p-20 text-white min-h-screen bg-[#050505]">Loading admin panel...</div>;
+    return <div className="p-20 text-white min-h-screen bg-[#030303]">Loading admin panel...</div>;
   }
 
   const renderPreview = () => {
     const isActive = formData.status === "active";
     const p = formData as Poster;
-    
+
     return (
       <div className="relative w-full max-w-sm h-[400px] rounded-xl border p-8 flex flex-col shadow-2xl overflow-hidden mx-auto transition-all duration-300 bg-[#0a0a0a] border-zinc-800">
         <div className="absolute inset-0 opacity-[0.04] bg-[linear-gradient(to_right,#fff_1px,transparent_1px),linear-gradient(to_bottom,#fff_1px,transparent_1px)] bg-[size:1rem_1rem] pointer-events-none" />
@@ -223,9 +223,8 @@ export default function HiringAdminPage() {
               {isActive ? "We're Hiring" : "Closed"}
             </span>
           </div>
-          <div className={`px-2 py-1 text-[10px] font-mono font-bold uppercase rounded border ${
-            isActive ? "bg-rose-500/10 text-rose-400 border-rose-500/30" : "bg-zinc-900 text-zinc-500 border-zinc-800"
-          }`}>
+          <div className={`px-2 py-1 text-[10px] font-mono font-bold uppercase rounded border ${isActive ? "bg-rose-500/10 text-rose-400 border-rose-500/30" : "bg-zinc-900 text-zinc-500 border-zinc-800"
+            }`}>
             {p.status || "active"}
           </div>
         </div>
@@ -251,9 +250,8 @@ export default function HiringAdminPage() {
         </div>
 
         <div className="pt-6 mt-auto border-t border-zinc-800/50 relative z-10">
-          <button className={`w-full py-3.5 rounded-lg text-xs font-bold tracking-widest uppercase transition-all duration-300 ${
-            isActive ? "bg-rose-600 text-white shadow-[0_0_15px_rgba(225,29,72,0.3)]" : "bg-zinc-900 text-zinc-600 border border-zinc-800"
-          }`}>
+          <button className={`w-full py-3.5 rounded-lg text-xs font-bold tracking-widest uppercase transition-all duration-300 ${isActive ? "bg-rose-600 text-white shadow-[0_0_15px_rgba(225,29,72,0.3)]" : "bg-zinc-900 text-zinc-600 border border-zinc-800"
+            }`}>
             {isActive ? "Apply Now" : "Position Filled"}
           </button>
         </div>
@@ -270,7 +268,7 @@ export default function HiringAdminPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#050505] text-white pt-32 pb-16 px-8 md:px-16">
+    <div className="min-h-screen bg-[#030303] text-white pt-32 pb-16 px-8 md:px-16">
       <div className="max-w-7xl mx-auto">
         <div className="flex justify-between items-center mb-12">
           <div>
@@ -278,7 +276,7 @@ export default function HiringAdminPage() {
             <p className="text-zinc-400">Manage your open roles and career posters for the website.</p>
           </div>
           {!isAdding && !editingId && (
-            <button 
+            <button
               onClick={handleAddNew}
               className="flex items-center gap-2 bg-rose-600 hover:bg-rose-500 text-white px-6 py-3 rounded-lg font-bold text-sm tracking-wide transition-colors"
             >
@@ -291,21 +289,21 @@ export default function HiringAdminPage() {
         {(isAdding || editingId) && (
           <div ref={formRef} className="bg-zinc-900 border border-zinc-800 p-8 rounded-xl mb-12 shadow-2xl scroll-mt-32">
             <h2 className="text-xl font-bold mb-8">{isAdding ? "Create New Poster" : "Edit Poster"}</h2>
-            
+
             <div className="grid grid-cols-1 xl:grid-cols-3 gap-12">
               <div className="xl:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label className="block text-xs font-bold text-zinc-400 uppercase tracking-widest mb-2">Role Title</label>
-                  <input 
+                  <input
                     type="text" name="role" value={formData.role || ""} onChange={handleInputChange}
                     className="w-full bg-zinc-950 border border-zinc-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-rose-500"
                     placeholder="e.g. Senior Backend Engineer"
                   />
                 </div>
-                
+
                 <div className="relative">
                   <label className="block text-xs font-bold text-zinc-400 uppercase tracking-widest mb-2">Location</label>
-                  <input 
+                  <input
                     type="text" name="location" value={formData.location || ""} onChange={handleLocationChange}
                     className="w-full bg-zinc-950 border border-zinc-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-rose-500"
                     placeholder="Search globally..."
@@ -314,8 +312,8 @@ export default function HiringAdminPage() {
                   {locationSuggestions.length > 0 && (
                     <div className="absolute top-full left-0 right-0 mt-1 bg-zinc-950 border border-zinc-800 rounded-lg shadow-xl z-50 overflow-hidden">
                       {locationSuggestions.map((loc, idx) => (
-                        <div 
-                          key={idx} 
+                        <div
+                          key={idx}
                           onClick={() => handleSelectLocation(loc)}
                           className="px-4 py-3 hover:bg-zinc-900 cursor-pointer text-sm text-zinc-300 border-b border-zinc-900 last:border-b-0"
                         >
@@ -328,7 +326,7 @@ export default function HiringAdminPage() {
 
                 <div>
                   <label className="block text-xs font-bold text-zinc-400 uppercase tracking-widest mb-2">Req Number</label>
-                  <input 
+                  <input
                     type="text" name="req" value={formData.req || ""} onChange={handleInputChange}
                     className="w-full bg-zinc-950 border border-zinc-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-rose-500"
                     placeholder="e.g. REQ-042"
@@ -337,7 +335,7 @@ export default function HiringAdminPage() {
 
                 <div>
                   <label className="block text-xs font-bold text-zinc-400 uppercase tracking-widest mb-2">Status</label>
-                  <select 
+                  <select
                     name="status" value={formData.status || "active"} onChange={handleInputChange}
                     className="w-full bg-zinc-950 border border-zinc-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-rose-500 appearance-none"
                   >
@@ -348,7 +346,7 @@ export default function HiringAdminPage() {
 
                 <div>
                   <label className="block text-xs font-bold text-zinc-400 uppercase tracking-widest mb-2">Job Type</label>
-                  <input 
+                  <input
                     type="text" name="type" value={formData.type || ""} onChange={handleInputChange}
                     className="w-full bg-zinc-950 border border-zinc-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-rose-500"
                     placeholder="e.g. Full-Time"
@@ -357,7 +355,7 @@ export default function HiringAdminPage() {
 
                 <div>
                   <label className="block text-xs font-bold text-zinc-400 uppercase tracking-widest mb-2">Closing Date</label>
-                  <input 
+                  <input
                     type="date" name="date" value={formData.date || ""} onChange={handleInputChange}
                     className="w-full bg-zinc-950 border border-zinc-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-rose-500 [color-scheme:dark]"
                   />
@@ -378,7 +376,7 @@ export default function HiringAdminPage() {
                   </div>
                   <div className="mt-4 flex items-center gap-3">
                     <span className="text-[10px] text-zinc-600 uppercase tracking-widest font-bold">Custom Classes:</span>
-                    <input 
+                    <input
                       type="text" name="accent" value={formData.accent || ""} onChange={handleInputChange}
                       className="bg-transparent border-b border-zinc-800 text-xs font-mono text-zinc-400 focus:outline-none focus:border-zinc-500 pb-1 w-64"
                       placeholder="e.g. from-rose-500 to-red-600"
@@ -389,8 +387,8 @@ export default function HiringAdminPage() {
                 <div className="md:col-span-2">
                   <label className="block text-xs font-bold text-zinc-400 uppercase tracking-widest mb-2">Poster Background Image (Optional)</label>
                   <div className="flex items-center gap-4">
-                    <input 
-                      type="file" 
+                    <input
+                      type="file"
                       accept="image/*"
                       onChange={handleFileUpload}
                       className="block w-full text-sm text-zinc-400 file:mr-4 file:py-2.5 file:px-4 file:rounded-lg file:border-0 file:text-xs file:font-bold file:tracking-widest file:uppercase file:bg-zinc-800 file:text-white hover:file:bg-zinc-700 cursor-pointer"
@@ -400,7 +398,7 @@ export default function HiringAdminPage() {
                   {formData.image && (
                     <div className="mt-4 relative w-32 h-32 rounded-lg overflow-hidden border border-zinc-800">
                       <img src={formData.image} alt="Preview" className="object-cover w-full h-full" />
-                      <button 
+                      <button
                         onClick={() => setFormData(prev => ({ ...prev, image: "" }))}
                         className="absolute top-1 right-1 bg-black/70 p-1 rounded-full hover:bg-red-600 transition-colors"
                       >
@@ -411,13 +409,13 @@ export default function HiringAdminPage() {
                 </div>
 
                 <div className="md:col-span-2 flex gap-4 mt-4">
-                  <button 
+                  <button
                     onClick={handleSave}
                     className="flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white px-8 py-3.5 rounded-lg font-bold text-sm tracking-wide transition-colors"
                   >
                     <Save size={16} /> Save Poster
                   </button>
-                  <button 
+                  <button
                     onClick={handleCancel}
                     className="flex items-center justify-center gap-2 bg-zinc-800 hover:bg-zinc-700 text-white px-8 py-3.5 rounded-lg font-bold text-sm tracking-wide transition-colors"
                   >
@@ -425,7 +423,7 @@ export default function HiringAdminPage() {
                   </button>
                 </div>
               </div>
-              
+
               {/* Live Preview */}
               <div className="xl:border-l xl:border-zinc-800 xl:pl-12 flex flex-col items-center">
                 <span className="block text-xs font-bold text-zinc-500 uppercase tracking-widest mb-6 self-start xl:self-center">Live Preview</span>
@@ -441,11 +439,10 @@ export default function HiringAdminPage() {
             <div key={poster.id} className="bg-zinc-900 border border-zinc-800 p-6 rounded-xl flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
               <div>
                 <div className="flex items-center gap-3 mb-2">
-                  <span className={`px-2 py-0.5 text-[10px] font-mono font-bold uppercase rounded border ${
-                    poster.status === 'active' 
-                      ? "bg-rose-500/10 text-rose-400 border-rose-500/30" 
+                  <span className={`px-2 py-0.5 text-[10px] font-mono font-bold uppercase rounded border ${poster.status === 'active'
+                      ? "bg-rose-500/10 text-rose-400 border-rose-500/30"
                       : "bg-zinc-800 text-zinc-500 border-zinc-700"
-                  }`}>
+                    }`}>
                     {poster.status}
                   </span>
                   <span className="text-xs font-mono text-zinc-500">{poster.req}</span>
@@ -460,15 +457,15 @@ export default function HiringAdminPage() {
                   </div>
                 </div>
               </div>
-              
+
               <div className="flex gap-2 w-full md:w-auto">
-                <button 
+                <button
                   onClick={() => handleEdit(poster)}
                   className="flex-1 md:flex-none flex items-center justify-center gap-2 bg-zinc-800 hover:bg-zinc-700 text-white px-4 py-2.5 rounded-lg font-bold text-xs tracking-wide transition-colors"
                 >
                   <Pencil size={14} /> Edit
                 </button>
-                <button 
+                <button
                   onClick={() => handleDelete(poster.id)}
                   className="flex-1 md:flex-none flex items-center justify-center gap-2 bg-red-950 hover:bg-red-900 text-red-500 border border-red-900/50 px-4 py-2.5 rounded-lg font-bold text-xs tracking-wide transition-colors"
                 >
@@ -477,7 +474,7 @@ export default function HiringAdminPage() {
               </div>
             </div>
           ))}
-          
+
           {posters.length === 0 && (
             <div className="text-center py-20 text-zinc-500 font-medium">
               No posters found. Click 'Add New Poster' to create one.

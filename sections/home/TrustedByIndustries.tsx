@@ -34,9 +34,9 @@ const industries = [
 
 export function TrustedByIndustries() {
   return (
-    <section className="w-full py-16 md:py-24 bg-[#050505] text-white border-b border-zinc-900 relative">
+    <section className="w-full py-16 md:py-24 bg-[#030303] text-white border-b border-zinc-900 relative">
       <div className="max-w-site mx-auto w-full px-6 md:px-12 lg:px-16 xl:px-20">
-        
+
         <Reveal className="mb-12">
           <div className="flex items-center gap-2 mb-4">
 
@@ -53,7 +53,7 @@ export function TrustedByIndustries() {
           {industries.map((ind, index) => {
             const Icon = ind.icon;
             return (
-              <div 
+              <div
                 key={ind.name}
                 className="p-6 md:p-8 flex flex-col justify-between hover:bg-zinc-950/60 transition-all duration-300 group"
               >

@@ -8,7 +8,7 @@ export function CaseStudyHighlight() {
   return (
     <section className="w-full py-24 bg-[#030303] text-white border-b border-zinc-900">
       <div className="max-w-site mx-auto px-6 md:px-12 lg:px-16 xl:px-20">
-        
+
         <Reveal className="mb-16 text-left">
           <div className="inline-flex items-center gap-2 mb-4">
             <span className="h-[1px] w-6 bg-rose-600"></span>
@@ -21,8 +21,8 @@ export function CaseStudyHighlight() {
           </h2>
         </Reveal>
 
-        <div className="bg-[#050505] border border-zinc-900 rounded-3xl p-8 lg:p-12 grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-12 items-center relative overflow-hidden">
-          
+        <div className="bg-[#030303] border border-zinc-900 rounded-3xl p-8 lg:p-12 grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-12 items-center relative overflow-hidden">
+
           <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-rose-600/5 rounded-full blur-[100px] pointer-events-none" />
 
           {/* Left Panel: Impact Description */}
@@ -31,7 +31,7 @@ export function CaseStudyHighlight() {
             <h3 className="text-xl md:text-2xl font-light text-white mb-6">
               Migrating a high-frequency trading platform to AWS Kubernetes with zero packet loss.
             </h3>
-            
+
             <p className="text-zinc-400 text-xs md:text-sm font-light leading-relaxed mb-8">
               We partnered with a top Tier-1 financial provider to decouple their monolithic legacy order execution engine into containerized Go microservices on EKS. We integrated zero-trust mesh routing and customized sidecar kernels to achieve sub-millisecond execution times.
             </p>
@@ -91,8 +91,8 @@ export function CaseStudyHighlight() {
               </li>
             </ul>
 
-            <a 
-              href="#" 
+            <a
+              href="#"
               className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-[10px] font-semibold tracking-wide text-white border border-rose-600 bg-rose-600/5 hover:bg-rose-600 transition-colors"
             >
               Read full report <ArrowUpRight size={12} />

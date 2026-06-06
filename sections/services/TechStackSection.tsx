@@ -52,9 +52,9 @@ export function TechStackSection() {
   return (
     <section className="w-full py-24 bg-[#030303] text-white border-b border-zinc-900">
       <div className="max-w-site mx-auto px-6 md:px-12 lg:px-16 xl:px-20">
-        
+
         <div className="grid grid-cols-1 lg:grid-cols-[0.8fr_1.2fr] gap-12 lg:gap-16 items-start">
-          
+
           {/* Left panel: Tab select */}
           <Reveal className="text-left">
             <div className="inline-flex items-center gap-2 mb-4">
@@ -75,11 +75,10 @@ export function TechStackSection() {
                 <button
                   key={tab.category}
                   onClick={() => setActiveTab(idx)}
-                  className={`w-full text-left px-4 py-3 rounded-xl text-xs font-semibold tracking-wide transition-all duration-300 ${
-                    activeTab === idx
+                  className={`w-full text-left px-4 py-3 rounded-xl text-xs font-semibold tracking-wide transition-all duration-300 ${activeTab === idx
                       ? "bg-zinc-900 border border-zinc-800 text-rose-500 pl-6"
                       : "text-zinc-400 border border-transparent hover:text-zinc-200 hover:bg-zinc-950/20"
-                  }`}
+                    }`}
                 >
                   {tab.category}
                 </button>
@@ -88,7 +87,7 @@ export function TechStackSection() {
           </Reveal>
 
           {/* Right panel: Active tab content */}
-          <div className="bg-[#050505] border border-zinc-900 rounded-2xl p-8 min-h-[380px] flex flex-col justify-between">
+          <div className="bg-[#030303] border border-zinc-900 rounded-2xl p-8 min-h-[380px] flex flex-col justify-between">
             <Reveal key={activeTab}>
               <div className="mb-6">
                 <span className="text-[10px] font-mono text-zinc-650 uppercase tracking-widest block mb-2">Practice Overview</span>
