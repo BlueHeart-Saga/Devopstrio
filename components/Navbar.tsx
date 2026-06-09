@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import { ArrowUpRight, Menu, X, ChevronDown } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { insightsApi } from "@/lib/insightsApi";
 
 const serviceCategories = [
   {
@@ -11,14 +12,14 @@ const serviceCategories = [
     name: "AI & Data Innovation",
     href: "/services/ai-data-innovation",
     items: [
-      { name: "Generative AI Solutions", desc: "Enterprise LLM applications, custom fine-tuning, and semantic caching layers.", href: "/services/ai-data-innovation#generative-ai-solutions" },
-      { name: "AI Agents & Automation", desc: "Stateful autonomous multi-agent workflows executing complex processes.", href: "/services/ai-data-innovation#ai-agents-automation" },
-      { name: "Machine Learning Engineering", desc: "Training, validating, and deploying deep learning models at scale.", href: "/services/ai-data-innovation#machine-learning-engineering" },
-      { name: "Data Engineering", desc: "High-throughput data pipelines, Kafka streaming, and unified lakehouses.", href: "/services/ai-data-innovation#data-engineering" },
-      { name: "Business Intelligence & Analytics", desc: "Consolidated enterprise dashboards, telemetry, and reporting engines.", href: "/services/ai-data-innovation#business-intelligence-analytics" },
-      { name: "Predictive Analytics", desc: "Time-series forecasting, customer churn and lifetime value predictive models.", href: "/services/ai-data-innovation#predictive-analytics" },
-      { name: "Data Governance", desc: "Data compliance audits, cataloging, lineage tracking, and security controls.", href: "/services/ai-data-innovation#data-governance" },
-      { name: "MLOps & AI Operations", desc: "Continuous training loops, model registries, drift detection, and registries.", href: "/services/ai-data-innovation#mlops-ai-operations" }
+      { name: "Generative AI Solutions", desc: "Enterprise LLM applications, custom fine-tuning, and semantic caching layers.", href: "/services/ai-data-innovation/generative-ai-solutions" },
+      { name: "AI Agents & Automation", desc: "Stateful autonomous multi-agent workflows executing complex processes.", href: "/services/ai-data-innovation/ai-agents-automation" },
+      { name: "Machine Learning Engineering", desc: "Training, validating, and deploying deep learning models at scale.", href: "/services/ai-data-innovation#capabilities" },
+      { name: "Data Engineering", desc: "High-throughput data pipelines, Kafka streaming, and unified lakehouses.", href: "/services/ai-data-innovation#capabilities" },
+      { name: "Business Intelligence & Analytics", desc: "Consolidated enterprise dashboards, telemetry, and reporting engines.", href: "/services/ai-data-innovation#capabilities" },
+      { name: "Predictive Analytics", desc: "Time-series forecasting, customer churn and predictive models.", href: "/services/ai-data-innovation#capabilities" },
+      { name: "Data Governance", desc: "Data compliance audits, cataloging, lineage tracking, and security controls.", href: "/services/ai-data-innovation#capabilities" },
+      { name: "MLOps & AI Operations", desc: "Continuous training loops, model registries, and drift detection.", href: "/services/ai-data-innovation#capabilities" }
     ]
   },
   {
@@ -26,14 +27,14 @@ const serviceCategories = [
     name: "Cloud Services",
     href: "/services/cloud-services",
     items: [
-      { name: "Cloud Strategy & Consulting", desc: "Tailored architecture blueprints, vendor evaluation, and cloud readiness.", href: "/services/cloud-services#cloud-strategy-consulting" },
-      { name: "Cloud Migration", desc: "Re-hosting, re-platforming, and database replication with zero downtime.", href: "/services/cloud-services#cloud-migration" },
-      { name: "Azure Services", desc: "Landing zones, AKS clusters, and serverless applications on Microsoft Azure.", href: "/services/cloud-services#azure-services" },
-      { name: "AWS Services", desc: "Scalable EKS grids, serverless Lambdas, and secure DynamoDB setups on AWS.", href: "/services/cloud-services#aws-services" },
-      { name: "Google Cloud Services", desc: "GKE autopilot setups, BigQuery data platforms, and Vertex AI integrations on GCP.", href: "/services/cloud-services#google-cloud-services" },
-      { name: "Cloud Security", desc: "Wiz security posture management, IAM policies, and key rotations.", href: "/services/cloud-services#cloud-security" },
-      { name: "Cloud Managed Services", desc: "24/7 outsourced management, OS patching, and active cloud backups.", href: "/services/cloud-services#cloud-managed-services" },
-      { name: "FinOps & Cost Optimization", desc: "Spend optimization, Savings Plan allocations, and traffic auto-scaling.", href: "/services/cloud-services#finops-cost-optimization" }
+      { name: "Cloud Strategy & Consulting", desc: "Tailored architecture blueprints, vendor evaluation, and cloud readiness.", href: "/services/cloud-services/cloud-strategy-consulting" },
+      { name: "Cloud Migration", desc: "Re-hosting, re-platforming, and database replication with zero downtime.", href: "/services/cloud-services/cloud-migration" },
+      { name: "Azure Services", desc: "Landing zones, AKS clusters, and serverless applications on Microsoft Azure.", href: "/services/cloud-services#capabilities" },
+      { name: "AWS Services", desc: "Scalable EKS grids, serverless Lambdas, and secure DynamoDB setups on AWS.", href: "/services/cloud-services#capabilities" },
+      { name: "Google Cloud Services", desc: "GKE autopilot setups, BigQuery data platforms, and Vertex AI integrations on GCP.", href: "/services/cloud-services#capabilities" },
+      { name: "Cloud Security", desc: "Wiz security posture management, IAM policies, and key rotations.", href: "/services/cloud-services#capabilities" },
+      { name: "Cloud Managed Services", desc: "24/7 outsourced management, OS patching, and active cloud backups.", href: "/services/cloud-services#capabilities" },
+      { name: "FinOps & Cost Optimization", desc: "Spend optimization, Savings Plan allocations, and traffic auto-scaling.", href: "/services/cloud-services#capabilities" }
     ]
   },
   {
@@ -41,14 +42,14 @@ const serviceCategories = [
     name: "DevOps & Automation",
     href: "/services/devops-automation",
     items: [
-      { name: "CI/CD Implementation", desc: "Automated Git-triggered builds and testing environments.", href: "/services/devops-automation#cicd-implementation" },
-      { name: "Platform Engineering", desc: "Developer self-service templates and Backstage portal configurations.", href: "/services/devops-automation#platform-engineering" },
-      { name: "Infrastructure as Code", desc: "Reusable Terraform, Ansible, and Packer infrastructure setups.", href: "/services/devops-automation#infrastructure-as-code" },
-      { name: "Kubernetes Services", desc: "Multi-tenant EKS, AKS, GKE clusters with Karpenter and service mesh.", href: "/services/devops-automation#kubernetes-services" },
-      { name: "DevSecOps", desc: "Sonarqube SAST checks and Snyk vulnerability scanning inside pipelines.", href: "/services/devops-automation#devsecops" },
-      { name: "Site Reliability Engineering (SRE)", desc: "SLI/SLO definition, error budget tracking, and pager alerts.", href: "/services/devops-automation#sre" },
-      { name: "Release Automation", desc: "Canary deployments, blue-green releases, and rollback alerts.", href: "/services/devops-automation#release-automation" },
-      { name: "Monitoring & Observability", desc: "Distributed OpenTelemetry tracing, Jaeger dashboards, and ELK logs.", href: "/services/devops-automation#monitoring-observability" }
+      { name: "CI/CD Implementation", desc: "Automated Git-triggered builds and testing environments.", href: "/services/devops-automation#capabilities" },
+      { name: "Platform Engineering", desc: "Developer self-service templates and Backstage portal configurations.", href: "/services/devops-automation#capabilities" },
+      { name: "Infrastructure as Code", desc: "Reusable Terraform, Ansible, and Packer infrastructure setups.", href: "/services/devops-automation#capabilities" },
+      { name: "Kubernetes Services", desc: "Multi-tenant EKS, AKS, GKE clusters with Karpenter and service mesh.", href: "/services/devops-automation/kubernetes-services" },
+      { name: "DevSecOps", desc: "Sonarqube SAST checks and Snyk vulnerability scanning inside pipelines.", href: "/services/devops-automation#capabilities" },
+      { name: "Site Reliability Engineering (SRE)", desc: "SLI/SLO definition, error budget tracking, and pager alerts.", href: "/services/devops-automation#capabilities" },
+      { name: "Release Automation", desc: "Canary deployments, blue-green releases, and rollback alerts.", href: "/services/devops-automation#capabilities" },
+      { name: "Monitoring & Observability", desc: "Distributed OpenTelemetry tracing, Jaeger dashboards, and ELK logs.", href: "/services/devops-automation#capabilities" }
     ]
   },
   {
@@ -56,14 +57,14 @@ const serviceCategories = [
     name: "Cybersecurity",
     href: "/services/cybersecurity",
     items: [
-      { name: "Security Assessment", desc: "Threat modeling, network configuration audits, and risk assessments.", href: "/services/cybersecurity#security-assessment" },
-      { name: "Vulnerability Management", desc: "Continuous Nessus and Qualys scans, risk patching schedules.", href: "/services/cybersecurity#vulnerability-management" },
-      { name: "Penetration Testing", desc: "Ethical hacking, API authorization checks, and exploit reports.", href: "/services/cybersecurity#penetration-testing" },
-      { name: "Security Operations Center (SOC)", desc: "24/7 SIEM monitoring, threat hunts, and SOAR event actions.", href: "/services/cybersecurity#soc" },
-      { name: "Identity & Access Management", desc: "Okta single sign-on (SSO), adaptive MFA, and PAM tools.", href: "/services/cybersecurity#identity-access-management" },
-      { name: "Cloud Security", desc: "Prisma Cloud audits, micro-segmentation, and least-privilege rules.", href: "/services/cybersecurity#cloud-security" },
-      { name: "Compliance & Governance", desc: "Audit readiness for SOC2, ISO27001, HIPAA, and policy planning.", href: "/services/cybersecurity#compliance-governance" },
-      { name: "Zero Trust Architecture", desc: "Endpoint checks, SDP setups, and SASE security perimeters.", href: "/services/cybersecurity#zero-trust-architecture" }
+      { name: "Security Assessment", desc: "Threat modeling, network configuration audits, and risk assessments.", href: "/services/cybersecurity/security-assessment" },
+      { name: "Vulnerability Management", desc: "Continuous Nessus and Qualys scans, risk patching schedules.", href: "/services/cybersecurity#capabilities" },
+      { name: "Penetration Testing", desc: "Ethical hacking, API authorization checks, and exploit reports.", href: "/services/cybersecurity#capabilities" },
+      { name: "Security Operations Center (SOC)", desc: "24/7 SIEM monitoring, threat hunts, and SOAR event actions.", href: "/services/cybersecurity#capabilities" },
+      { name: "Identity & Access Management", desc: "Okta single sign-on (SSO), adaptive MFA, and PAM tools.", href: "/services/cybersecurity#capabilities" },
+      { name: "Cloud Security", desc: "Prisma Cloud audits, micro-segmentation, and least-privilege rules.", href: "/services/cybersecurity#capabilities" },
+      { name: "Compliance & Governance", desc: "Audit readiness for SOC2, ISO27001, HIPAA, and policy planning.", href: "/services/cybersecurity#capabilities" },
+      { name: "Zero Trust Architecture", desc: "Endpoint checks, SDP setups, and SASE security perimeters.", href: "/services/cybersecurity#capabilities" }
     ]
   },
   {
@@ -71,14 +72,14 @@ const serviceCategories = [
     name: "Software Development",
     href: "/services/software-development",
     items: [
-      { name: "Enterprise Application Development", desc: "High-throughput database design and monolithic splits.", href: "/services/software-development#enterprise-application-development" },
-      { name: "Web Application Development", desc: "Responsive React/Next.js platforms with advanced SEO layouts.", href: "/services/software-development#web-application-development" },
-      { name: "Mobile Application Development", desc: "Flutter and native iOS/Android builds with hardware integration.", href: "/services/software-development#mobile-application-development" },
-      { name: "SaaS Product Development", desc: "Multi-tenant system configurations and subscription gateways.", href: "/services/software-development#saas-product-development" },
-      { name: "API Development & Integration", desc: "gRPC microservices, REST/GraphQL gateways, and OpenAPI specs.", href: "/services/software-development#api-development-integration" },
-      { name: "Microservices Architecture", desc: "Event-driven Apache Kafka loops and saga pattern integration.", href: "/services/software-development#microservices-architecture" },
-      { name: "Product Engineering", desc: "Rapid MVP prototyping and customer experience design sprints.", href: "/services/software-development#product-engineering" },
-      { name: "Application Modernization", desc: "Monolith database decoupling and serverless architecture migrations.", href: "/services/software-development#application-modernization" }
+      { name: "Enterprise Application Development", desc: "High-throughput database design and monolithic splits.", href: "/services/software-development/enterprise-app-development" },
+      { name: "Web Application Development", desc: "Responsive React/Next.js platforms with advanced SEO layouts.", href: "/services/software-development#capabilities" },
+      { name: "Mobile Application Development", desc: "Flutter and native iOS/Android builds with hardware integration.", href: "/services/software-development#capabilities" },
+      { name: "SaaS Product Development", desc: "Multi-tenant system configurations and subscription gateways.", href: "/services/software-development#capabilities" },
+      { name: "API Development & Integration", desc: "gRPC microservices, REST/GraphQL gateways, and OpenAPI specs.", href: "/services/software-development#capabilities" },
+      { name: "Microservices Architecture", desc: "Event-driven Apache Kafka loops and saga pattern integration.", href: "/services/software-development#capabilities" },
+      { name: "Product Engineering", desc: "Rapid MVP prototyping and customer experience design sprints.", href: "/services/software-development#capabilities" },
+      { name: "Application Modernization", desc: "Monolith database decoupling and serverless architecture migrations.", href: "/services/software-development#capabilities" }
     ]
   },
   {
@@ -86,14 +87,14 @@ const serviceCategories = [
     name: "Digital Transformation",
     href: "/services/digital-transformation",
     items: [
-      { name: "Digital Strategy", desc: "IT roadmaps, cloud readiness audits, and budget optimization planning.", href: "/services/digital-transformation#digital-strategy" },
-      { name: "Enterprise Modernization", desc: "Refactoring legacy mainframes to cloud-native stacks.", href: "/services/digital-transformation#enterprise-modernization" },
-      { name: "Process Automation", desc: "OCR tools integration and cross-platform RPA pipelines.", href: "/services/digital-transformation#process-automation" },
-      { name: "Intelligent Workflows", desc: "Customer service routing systems based on sentiment scoring.", href: "/services/digital-transformation#intelligent-workflows" },
-      { name: "Customer Experience Transformation", desc: "Omni-channel client portals and ML-driven recommendation flows.", href: "/services/digital-transformation#customer-experience-transformation" },
-      { name: "Legacy System Modernization", desc: "Migrating legacy ColdFusion/COBOL/PHP workloads to Go and NodeJS.", href: "/services/digital-transformation#legacy-system-modernization" },
-      { name: "Business Transformation", desc: "Scaling Scrum frameworks and corporate KPI transparency models.", href: "/services/digital-transformation#business-transformation" },
-      { name: "Change Management", desc: "Internal developer coaching and technology adoption guides.", href: "/services/digital-transformation#change-management" }
+      { name: "Digital Strategy", desc: "IT roadmaps, cloud readiness audits, and budget optimization planning.", href: "/services/digital-transformation#capabilities" },
+      { name: "Enterprise Modernization", desc: "Refactoring legacy mainframes to cloud-native stacks.", href: "/services/digital-transformation#capabilities" },
+      { name: "Process Automation", desc: "OCR tools integration and cross-platform RPA pipelines.", href: "/services/digital-transformation#capabilities" },
+      { name: "Intelligent Workflows", desc: "Customer service routing systems based on sentiment scoring.", href: "/services/digital-transformation#capabilities" },
+      { name: "Customer Experience Transformation", desc: "Omni-channel client portals and ML-driven recommendation flows.", href: "/services/digital-transformation#capabilities" },
+      { name: "Legacy System Modernization", desc: "Migrating legacy ColdFusion/COBOL/PHP workloads to Go and NodeJS.", href: "/services/digital-transformation/legacy-modernization" },
+      { name: "Business Transformation", desc: "Scaling Scrum frameworks and corporate KPI transparency models.", href: "/services/digital-transformation#capabilities" },
+      { name: "Change Management", desc: "Internal developer coaching and technology adoption guides.", href: "/services/digital-transformation#capabilities" }
     ]
   },
   {
@@ -101,14 +102,14 @@ const serviceCategories = [
     name: "Data Engineering",
     href: "/services/data-engineering",
     items: [
-      { name: "Data Platform Development", desc: "Columnar databases design and multi-tier data storage setups.", href: "/services/data-engineering#data-platform-development" },
-      { name: "Data Warehousing", desc: "Snowflake, Databricks, and Google BigQuery analytical platforms.", href: "/services/data-engineering#data-warehousing" },
-      { name: "Data Lakes & Lakehouse", desc: "Apache Iceberg configurations and S3 parquet partitioning.", href: "/services/data-engineering#data-lakes-lakehouse" },
-      { name: "ETL/ELT Pipelines", desc: "Airflow orchestrators and dbt models checking raw entries.", href: "/services/data-engineering#etl-elt-pipelines" },
-      { name: "Real-Time Data Processing", desc: "Apache Spark Streaming, Flink loops, and Druid databases.", href: "/services/data-engineering#real-time-data-processing" },
-      { name: "Data Quality Management", desc: "Great Expectations assertions and anomaly alerts.", href: "/services/data-engineering#data-quality-management" },
-      { name: "Master Data Management", desc: "Deduplication algorithms and master record sync tools.", href: "/services/data-engineering#master-data-management" },
-      { name: "Big Data Engineering", desc: "Hadoop ecosystems, Spark cluster optimizations, and Elasticsearch grids.", href: "/services/data-engineering#big-data-engineering" }
+      { name: "Data Platform Development", desc: "Columnar databases design and multi-tier data storage setups.", href: "/services/data-engineering#capabilities" },
+      { name: "Data Warehousing", desc: "Snowflake, Databricks, and Google BigQuery analytical platforms.", href: "/services/data-engineering/data-warehousing" },
+      { name: "Data Lakes & Lakehouse", desc: "Apache Iceberg configurations and S3 parquet partitioning.", href: "/services/data-engineering#capabilities" },
+      { name: "ETL/ELT Pipelines", desc: "Airflow orchestrators and dbt models checking raw entries.", href: "/services/data-engineering#capabilities" },
+      { name: "Real-Time Data Processing", desc: "Apache Spark Streaming, Flink loops, and Druid databases.", href: "/services/data-engineering#capabilities" },
+      { name: "Data Quality Management", desc: "Great Expectations assertions and anomaly alerts.", href: "/services/data-engineering#capabilities" },
+      { name: "Master Data Management", desc: "Deduplication algorithms and master record sync tools.", href: "/services/data-engineering#capabilities" },
+      { name: "Big Data Engineering", desc: "Hadoop ecosystems, Spark cluster optimizations, and Elasticsearch grids.", href: "/services/data-engineering#capabilities" }
     ]
   },
   {
@@ -116,14 +117,14 @@ const serviceCategories = [
     name: "Managed Services",
     href: "/services/managed-services",
     items: [
-      { name: "Managed Cloud Services", desc: "Multi-account admin support, security patches, OS updates.", href: "/services/managed-services#managed-cloud-services" },
-      { name: "Managed DevOps Services", desc: "CI/CD cache optimization, environment updates, and pipeline tuning.", href: "/services/managed-services#managed-devops-services" },
-      { name: "Managed Security Services", desc: "24/7 threat monitoring, WAF policies, and incident containment.", href: "/services/managed-services#managed-security-services" },
-      { name: "Application Support", desc: "SLA bug resolutions, Sentry monitoring, and performance tuning.", href: "/services/managed-services#application-support" },
-      { name: "Infrastructure Management", desc: "SAN configuration, hypervisor updates, and load balancers.", href: "/services/managed-services#infrastructure-management" },
-      { name: "Database Administration", desc: "PostgreSQL index rebuilds, backups, and security hardening.", href: "/services/managed-services#database-administration" },
-      { name: "Monitoring & Incident Management", desc: "PagerDuty escalations, custom thresholds, and root-cause post-mortems.", href: "/services/managed-services#monitoring-incident-management" },
-      { name: "24/7 Support Services", desc: "Slack and phone developer help desks with fast response SLAs.", href: "/services/managed-services#247-support-services" }
+      { name: "Managed Cloud Services", desc: "Multi-account admin support, security patches, OS updates.", href: "/services/managed-services/managed-cloud" },
+      { name: "Managed DevOps Services", desc: "CI/CD cache optimization, environment updates, and pipeline tuning.", href: "/services/managed-services#capabilities" },
+      { name: "Managed Security Services", desc: "24/7 threat monitoring, WAF policies, and incident containment.", href: "/services/managed-services#capabilities" },
+      { name: "Application Support", desc: "SLA bug resolutions, Sentry monitoring, and performance tuning.", href: "/services/managed-services#capabilities" },
+      { name: "Infrastructure Management", desc: "SAN configuration, hypervisor updates, and load balancers.", href: "/services/managed-services#capabilities" },
+      { name: "Database Administration", desc: "PostgreSQL index rebuilds, backups, and security hardening.", href: "/services/managed-services#capabilities" },
+      { name: "Monitoring & Incident Management", desc: "PagerDuty escalations, custom thresholds, and root-cause post-mortems.", href: "/services/managed-services#capabilities" },
+      { name: "24/7 Support Services", desc: "Slack and phone developer help desks with fast response SLAs.", href: "/services/managed-services#capabilities" }
     ]
   },
   {
@@ -131,14 +132,14 @@ const serviceCategories = [
     name: "QA & Testing",
     href: "/services/qa-testing",
     items: [
-      { name: "Test Automation", desc: "Playwright and Cypress end-to-end client scripts.", href: "/services/qa-testing#test-automation" },
-      { name: "Performance Testing", desc: "API peak load simulations using k6 and Apache JMeter.", href: "/services/qa-testing#performance-testing" },
-      { name: "Security Testing", desc: "Dependabot audits and access control authorization checks.", href: "/services/qa-testing#security-testing" },
-      { name: "API Testing", desc: "JSON contract validations, Postman pipelines, and Newman scripts.", href: "/services/qa-testing#api-testing" },
-      { name: "Mobile Application Testing", desc: "Appium browser farms testing native application packages.", href: "/services/qa-testing#mobile-application-testing" },
-      { name: "Functional Testing", desc: "Regression testing suites and User Acceptance Testing boards.", href: "/services/qa-testing#functional-testing" },
-      { name: "Continuous Testing", desc: "Parallel build integrations, code coverage checkers.", href: "/services/qa-testing#continuous-testing" },
-      { name: "Quality Engineering", desc: "Shift-left methodologies, defect escape reports, and standards.", href: "/services/qa-testing#quality-engineering" }
+      { name: "Test Automation", desc: "Playwright and Cypress end-to-end client scripts.", href: "/services/qa-testing/test-automation" },
+      { name: "Performance Testing", desc: "API peak load simulations using k6 and Apache JMeter.", href: "/services/qa-testing#capabilities" },
+      { name: "Security Testing", desc: "Dependabot audits and access control authorization checks.", href: "/services/qa-testing#capabilities" },
+      { name: "API Testing", desc: "JSON contract validations, Postman pipelines, and Newman scripts.", href: "/services/qa-testing#capabilities" },
+      { name: "Mobile Application Testing", desc: "Appium browser farms testing native application packages.", href: "/services/qa-testing#capabilities" },
+      { name: "Functional Testing", desc: "Regression testing suites and User Acceptance Testing boards.", href: "/services/qa-testing#capabilities" },
+      { name: "Continuous Testing", desc: "Parallel build integrations, code coverage checkers.", href: "/services/qa-testing#capabilities" },
+      { name: "Quality Engineering", desc: "Shift-left methodologies, defect escape reports, and standards.", href: "/services/qa-testing#capabilities" }
     ]
   },
   {
@@ -146,14 +147,14 @@ const serviceCategories = [
     name: "IT Consulting",
     href: "/services/it-consulting",
     items: [
-      { name: "Technology Consulting", desc: "Cost-benefit analyses, legacy upgrade guides, and stacks selection.", href: "/services/it-consulting#technology-consulting" },
-      { name: "Enterprise Architecture", desc: "Distributed system component layouts and active sync failovers.", href: "/services/it-consulting#enterprise-architecture" },
-      { name: "Cloud Consulting", desc: "Public cloud budget forecasts, land zone configs, and cost estimation.", href: "/services/it-consulting#cloud-consulting" },
-      { name: "AI Consulting", desc: "Generative AI workshops, feasibility checkouts, and alignment policies.", href: "/services/it-consulting#ai-consulting" },
-      { name: "Cybersecurity Consulting", desc: "Incident response plan drafts and risk register configuration.", href: "/services/it-consulting#cybersecurity-consulting" },
-      { name: "Digital Transformation Consulting", desc: "Digital transformation roadmaps, design thinking sprints.", href: "/services/it-consulting#digital-transformation-consulting" },
-      { name: "IT Strategy & Roadmap", desc: "IT capability adoption steps, budget planning, skill gap audits.", href: "/services/it-consulting#it-strategy-roadmap" },
-      { name: "Technology Assessment", desc: "Scalability audits, query bottlenecks tracking, and code checks.", href: "/services/it-consulting#technology-assessment" }
+      { name: "Technology Consulting", desc: "Cost-benefit analyses, legacy upgrade guides, and stacks selection.", href: "/services/it-consulting/technology-consulting" },
+      { name: "Enterprise Architecture", desc: "Distributed system component layouts and active sync failovers.", href: "/services/it-consulting#capabilities" },
+      { name: "Cloud Consulting", desc: "Public cloud budget forecasts, land zone configs, and cost estimation.", href: "/services/it-consulting#capabilities" },
+      { name: "AI Consulting", desc: "Generative AI workshops, feasibility checkouts, and alignment policies.", href: "/services/it-consulting#capabilities" },
+      { name: "Cybersecurity Consulting", desc: "Incident response plan drafts and risk register configuration.", href: "/services/it-consulting#capabilities" },
+      { name: "Digital Transformation Consulting", desc: "Digital transformation roadmaps, design thinking sprints.", href: "/services/it-consulting#capabilities" },
+      { name: "IT Strategy & Roadmap", desc: "IT capability adoption steps, budget planning, skill gap audits.", href: "/services/it-consulting#capabilities" },
+      { name: "Technology Assessment", desc: "Scalability audits, query bottlenecks tracking, and code checks.", href: "/services/it-consulting#capabilities" }
     ]
   }
 ];
@@ -173,77 +174,111 @@ const industriesList = [
 
 const ecosystemCategories = [
   {
-    id: "overview",
-    name: "Ecosystem Overview",
-    href: "/ecosystem",
-    items: [
-      { name: "Overview Landing Page", desc: "Enterprise pillars, stats, and next-gen highlights", href: "/ecosystem" }
-    ]
-  },
-  {
     id: "partnerships",
     name: "Partnerships",
     href: "/ecosystem/partnerships",
     items: [
-      { name: "Partnership Overview", desc: "Strategic technology alliances network", href: "/ecosystem/partnerships" },
-      { name: "Microsoft Partnership", desc: "Gold Partner for cloud and hybrid infrastructures", href: "/ecosystem/partnerships/microsoft" },
-      { name: "AWS Partnership", desc: "Advanced Tier Partner for serverless and DevSecOps", href: "/ecosystem/partnerships/aws" },
-      { name: "Google Cloud Partnership", desc: "Premier Partner for Vertex AI and data platforms", href: "/ecosystem/partnerships/google-cloud" },
-      { name: "Oracle Partnership", desc: "Platinum Partner for database and hybrid systems", href: "/ecosystem/partnerships/oracle" },
-      { name: "ServiceNow Partnership", desc: "Elite Partner for ITSM & ESM automations", href: "/ecosystem/partnerships/servicenow" },
-      { name: "SAP Partnership", desc: "Silver Partner for S/4HANA & ERP integration", href: "/ecosystem/partnerships/sap" },
-      { name: "Cisco Partnership", desc: "Gold Integrator for enterprise security & zero-trust", href: "/ecosystem/partnerships/cisco" }
+      { name: "Alliances Overview", desc: "Strategic technology alliances network", href: "/ecosystem/partnerships" },
+      { name: "Microsoft Alliance", desc: "Azure migrations, landing zones, and SQL databases", href: "/ecosystem/partnerships/microsoft" },
+      { name: "AWS Partner Network", desc: "Serverless AWS backends and autoscaling EKS", href: "/ecosystem/partnerships/aws" },
+      { name: "Google Cloud Ecosystem", desc: "BigQuery database structure and Vertex AI tools", href: "/ecosystem/partnerships/google-cloud" },
+      { name: "Oracle Alliance", desc: "Autonomous database clusters and OCI setups", href: "/ecosystem/partnerships/oracle" },
+      { name: "ServiceNow Integration", desc: "ITSM incidents automation and virtual agents", href: "/ecosystem/partnerships/servicenow" },
+      { name: "SAP on Cloud", desc: "S/4HANA migrations and secure cloud hosting", href: "/ecosystem/partnerships/sap" },
+      { name: "Cisco Networking", desc: "SD-WAN networks and Zero-Trust segmentation", href: "/ecosystem/partnerships/cisco" }
     ]
   },
   {
-    id: "labs",
+    id: "innovation-labs",
     name: "Innovation Labs",
     href: "/ecosystem/innovation-labs",
     items: [
-      { name: "Labs Overview", desc: "Research, prototyping, and next-gen development", href: "/ecosystem/innovation-labs" },
-      { name: "AI Innovation Lab", desc: "Agentic workflows, fine-tuning LLMs, semantic routing", href: "/ecosystem/innovation-labs/ai" },
-      { name: "Cloud Innovation Lab", desc: "Green computing, serverless virtualization, edge frameworks", href: "/ecosystem/innovation-labs/cloud" },
-      { name: "Cybersecurity Lab", desc: "Next-gen threat intelligence, zero-trust network modeling", href: "/ecosystem/innovation-labs/cybersecurity" },
-      { name: "Data & Analytics Lab", desc: "Real-time streaming grids, decentralized database meshes", href: "/ecosystem/innovation-labs/data-analytics" }
+      { name: "Labs Overview", desc: "R&D innovation and prototyping centers", href: "/ecosystem/innovation-labs" },
+      { name: "AI Innovation Lab", desc: "Stateful agent networks and vector lookups", href: "/ecosystem/innovation-labs/ai-lab" },
+      { name: "Cloud Innovation Lab", desc: "Green computing and serverless edge WASM", href: "/ecosystem/innovation-labs/cloud-lab" },
+      { name: "DevOps Innovation Lab", desc: "Canary rollouts and dynamic pipeline tasks", href: "/ecosystem/innovation-labs/devops-lab" },
+      { name: "Cybersecurity Lab", desc: "eBPF security rules and SBOM vulnerability scans", href: "/ecosystem/innovation-labs/cybersecurity-lab" },
+      { name: "Data & Analytics Lab", desc: "Flink stream engines and Delta Lake compression", href: "/ecosystem/innovation-labs/data-analytics-lab" }
     ]
   },
   {
-    id: "platforms",
+    id: "platforms-solutions",
     name: "Platforms & Solutions",
     href: "/ecosystem/platforms-solutions",
     items: [
-      { name: "Solutions Overview", desc: "Proprietary products and accelerators built for scale", href: "/ecosystem/platforms-solutions" },
-      { name: "AI Solutions", desc: "Enterprise AI agents and recruitment pipelines", href: "/ecosystem/platforms-solutions/ai" },
-      { name: "DevOps Platform", desc: "Bootstrap CI/CD pipelines and infrastructure", href: "/ecosystem/platforms-solutions/devops" },
-      { name: "Cloud Solutions", desc: "Pre-configured landing zones and FinOps platforms", href: "/ecosystem/platforms-solutions/cloud" },
-      { name: "Security Solutions", desc: "Hardened SOC platform and compliance dashboards", href: "/ecosystem/platforms-solutions/security" }
+      { name: "Platforms Overview", desc: "Proprietary software products and IP assets", href: "/ecosystem/platforms-solutions" },
+      { name: "AI Hiring Platform", desc: "Recruiter search engine matching candidate profiles", href: "/ecosystem/platforms-solutions/ai-hiring-platform" },
+      { name: "DevOps Platform", desc: "Self-service Backstage portal templates", href: "/ecosystem/platforms-solutions/devops-platform" },
+      { name: "Cloud Management Platform", desc: "Grafana cost dashboard tracking cloud bills", href: "/ecosystem/platforms-solutions/cloud-management-platform" },
+      { name: "Security Platform", desc: "Continuous SAST image checking audits", href: "/ecosystem/platforms-solutions/security-platform" },
+      { name: "Data Platform", desc: "Flink stream sync and Delta Lake warehouses", href: "/ecosystem/platforms-solutions/data-platform" },
+      { name: "Automation Platform", desc: "Temporal.io stateful background workflow runs", href: "/ecosystem/platforms-solutions/automation-platform" },
+      { name: "Customer Experience Platform", desc: "Conversational AI support chatbot widgets", href: "/ecosystem/platforms-solutions/customer-experience-platform" }
     ]
   },
   {
-    id: "cloud",
-    name: "Cloud Ecosystem",
-    href: "/ecosystem/cloud",
+    id: "technology-stack",
+    name: "Technology Stack",
+    href: "/ecosystem/technology-stack",
     items: [
-      { name: "Cloud Ecosystem Overview", desc: "End-to-end multi-cloud transformation", href: "/ecosystem/cloud" },
-      { name: "Microsoft Azure", desc: "AKS, Azure AI, Azure DevOps integrations", href: "/ecosystem/cloud/azure" },
-      { name: "Amazon Web Services", desc: "EKS, serverless Lambda, AWS migrations", href: "/ecosystem/cloud/aws" },
-      { name: "Google Cloud Platform", desc: "Vertex AI, GKE, BigQuery data pipelines", href: "/ecosystem/cloud/gcp" }
+      { name: "Stack Overview", desc: "Full-stack languages, libraries and frameworks", href: "/ecosystem/technology-stack" },
+      { name: "Artificial Intelligence", desc: "LangChain orchestration and PyTorch code models", href: "/ecosystem/technology-stack/artificial-intelligence" },
+      { name: "Cloud Native", desc: "AKS Kubernetes clusters and microservices", href: "/ecosystem/technology-stack/cloud-native" },
+      { name: "DevOps Toolchain", desc: "GitOps deployment tasks and CI/CD pipelines", href: "/ecosystem/technology-stack/devops-toolchain" },
+      { name: "Data Engineering", desc: "Kafka telemetry streams and Spark analytics", href: "/ecosystem/technology-stack/data-engineering" },
+      { name: "Cybersecurity", desc: "Cilium network policies and SSO authentication", href: "/ecosystem/technology-stack/cybersecurity" }
     ]
   },
   {
-    id: "tech",
-    name: "Our Technology",
-    href: "/ecosystem/our-technology",
-    items: [
-      { name: "Technology Stack", desc: "Modern engineering core stack powering enterprise products", href: "/ecosystem/our-technology" }
-    ]
-  },
-  {
-    id: "delivery",
+    id: "global-delivery",
     name: "Global Delivery Network",
     href: "/ecosystem/global-delivery",
     items: [
-      { name: "Global Delivery Network", desc: "Distributed high-performance hub execution", href: "/ecosystem/global-delivery" }
+      { name: "Delivery Overview", desc: "Distributed international offices and hubs", href: "/ecosystem/global-delivery" },
+      { name: "United Kingdom Hub", desc: "Local consulting meeting UK security rules", href: "/ecosystem/global-delivery/united-kingdom" },
+      { name: "India Operations", desc: "SRE support center and database upkeep tasks", href: "/ecosystem/global-delivery/india" },
+      { name: "Europe Hub", desc: "GDPR privacy audits and regional host sites", href: "/ecosystem/global-delivery/europe" },
+      { name: "Follow-the-Sun Support", desc: "Continuous support schedules with zero burnout", href: "/ecosystem/global-delivery/follow-the-sun-support" },
+      { name: "Managed Services Center", desc: "Ansible OS patches and automated backups", href: "/ecosystem/global-delivery/managed-services-center" }
+    ]
+  },
+  {
+    id: "engineering-excellence",
+    name: "Engineering Excellence",
+    href: "/ecosystem/engineering-excellence",
+    items: [
+      { name: "Engineering Culture", desc: "Decoupled software architecture guidelines", href: "/ecosystem/engineering-excellence" },
+      { name: "Software Engineering", desc: "Clean domains and decoupled APIs templates", href: "/ecosystem/engineering-excellence/software-engineering" },
+      { name: "Platform Engineering", desc: "Developer portal templates accelerating onboard", href: "/ecosystem/engineering-excellence/platform-engineering" },
+      { name: "Site Reliability Engineering", desc: "OpenTelemetry tracing and SLO alert rules", href: "/ecosystem/engineering-excellence/site-reliability-engineering" },
+      { name: "DevSecOps", desc: "Continuous Trivy scanner blocks inside pipelines", href: "/ecosystem/engineering-excellence/devsecops" },
+      { name: "Quality Engineering", desc: "Playwright browser tests and k6 load tests", href: "/ecosystem/engineering-excellence/quality-engineering" }
+    ]
+  },
+  {
+    id: "accelerators-frameworks",
+    name: "Accelerators & Frameworks",
+    href: "/ecosystem/accelerators-frameworks",
+    items: [
+      { name: "Accelerators Overview", desc: "Declarative scripts and custom repositories", href: "/ecosystem/accelerators-frameworks" },
+      { name: "Cloud Accelerator", desc: "Terraform cloud landing zones in minutes", href: "/ecosystem/accelerators-frameworks/cloud-accelerator" },
+      { name: "DevOps Accelerator", desc: "GitHub Actions caching and Helm chart modules", href: "/ecosystem/accelerators-frameworks/devops-accelerator" },
+      { name: "AI Framework", desc: "FastAPI and vector lookup search layouts", href: "/ecosystem/accelerators-frameworks/ai-framework" },
+      { name: "Security Framework", desc: "Cilium network segmentation Helm charts", href: "/ecosystem/accelerators-frameworks/security-framework" },
+      { name: "Data Framework", desc: "Flink telemetry stream processing templates", href: "/ecosystem/accelerators-frameworks/data-framework" }
+    ]
+  },
+  {
+    id: "community-talent-network",
+    name: "Community & Talent Network",
+    href: "/ecosystem/community-talent-network",
+    items: [
+      { name: "Community Overview", desc: "University programs and developer networks", href: "/ecosystem/community-talent-network" },
+      { name: "Engineering Community", desc: "Meetup event groups and public repositories", href: "/ecosystem/community-talent-network/engineering-community" },
+      { name: "University Programs", desc: "CS student hackathons and guest lectures", href: "/ecosystem/community-talent-network/university-programs" },
+      { name: "Open Source Contributions", desc: "MIT licensed Terraform modules on GitHub", href: "/ecosystem/community-talent-network/open-source-contributions" },
+      { name: "Talent Network", desc: "Database of pre-vetted senior SRE candidates", href: "/ecosystem/community-talent-network/talent-network" },
+      { name: "Certification Programs", desc: "CKA study cohorts and sponsored exams", href: "/ecosystem/community-talent-network/certification-programs" }
     ]
   }
 ];
@@ -253,21 +288,99 @@ const ecosystemMobileList = [
   { name: "Partnerships", href: "/ecosystem/partnerships" },
   { name: "Innovation Labs", href: "/ecosystem/innovation-labs" },
   { name: "Platforms & Solutions", href: "/ecosystem/platforms-solutions" },
-  { name: "Cloud Ecosystem", href: "/ecosystem/cloud" },
-  { name: "Our Technology Stack", href: "/ecosystem/our-technology" },
-  { name: "Global Delivery Network", href: "/ecosystem/global-delivery" }
+  { name: "Technology Stack", href: "/ecosystem/technology-stack" },
+  { name: "Global Delivery Network", href: "/ecosystem/global-delivery" },
+  { name: "Engineering Excellence", href: "/ecosystem/engineering-excellence" },
+  { name: "Accelerators & Frameworks", href: "/ecosystem/accelerators-frameworks" },
+  { name: "Community & Talent Network", href: "/ecosystem/community-talent-network" }
 ];
 
 export function Navbar() {
   const pathname = usePathname();
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const [activeCategory, setActiveCategory] = useState("ai-data-innovation");
-  const [activeEcoCategory, setActiveEcoCategory] = useState("overview");
+  const [activeEcoCategory, setActiveEcoCategory] = useState("partnerships");
+  
+  interface SectionCategory {
+    slug: string;
+    name: string;
+    desc?: string;
+  }
+  interface InsightsSection {
+    slug: string;
+    name: string;
+    categories: SectionCategory[];
+  }
+
+  const [insightsSections, setInsightsSections] = useState<InsightsSection[]>([
+    {
+      slug: "media",
+      name: "Media Hub",
+      categories: [
+        { slug: "blogs", name: "Blogs", desc: "Corporate technology logs & engineering updates" },
+        { slug: "case-studies", name: "Case Studies", desc: "Real-world scaling and migration case logs" },
+        { slug: "testimonials", name: "Testimonials", desc: "Client success validations and reviews" }
+      ]
+    },
+    {
+      slug: "resources",
+      name: "Knowledge Center",
+      categories: [
+        { slug: "white-papers", name: "White Papers", desc: "Deep-dives into architecture and compliance planning" },
+        { slug: "newsletters", name: "Newsletters", desc: "Weekly summaries on SRE and dev tools" }
+      ]
+    }
+  ]);
+  const [activeInsightsSection, setActiveInsightsSection] = useState<string>("media");
+
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const lastScrollY = useRef(0);
   const navRef = useRef<HTMLDivElement>(null);
+
+  // Dynamic fetch for Insights structure
+  useEffect(() => {
+    async function fetchNavbarInsights() {
+      try {
+        const sectionsRes = await insightsApi.getSections();
+        if (sectionsRes && sectionsRes.sections) {
+          const sectionsList = sectionsRes.sections;
+          const fullStructure = await Promise.all(
+            sectionsList.map(async (sec: any) => {
+              try {
+                const catsRes = await insightsApi.getCategories(sec.slug);
+                const categories = (catsRes?.categories || []).map((cat: any) => ({
+                  slug: cat.slug,
+                  name: cat.name,
+                  desc: cat.description || `Explore our latest ${cat.name.toLowerCase()} publications`
+                }));
+                return {
+                  slug: sec.slug,
+                  name: sec.name,
+                  categories
+                };
+              } catch {
+                return {
+                  slug: sec.slug,
+                  name: sec.name,
+                  categories: []
+                };
+              }
+            })
+          );
+          const validStructure = fullStructure.filter(s => s.categories && s.categories.length > 0);
+          if (validStructure && validStructure.length > 0) {
+            setInsightsSections(validStructure);
+            setActiveInsightsSection(validStructure[0].slug);
+          }
+        }
+      } catch (err) {
+        console.error("Error loading insights structure for navbar:", err);
+      }
+    }
+    fetchNavbarInsights();
+  }, []);
 
   useEffect(() => {
     setIsVisible(true);
@@ -599,10 +712,92 @@ export function Navbar() {
             )}
           </div>
 
-          {/* Regular Links */}
-          <Link href="/insights" onMouseEnter={() => setActiveMenu(null)} className="px-3 py-1.5 text-[15px] font-medium text-zinc-300 hover:text-white transition-colors">
-            Insights
-          </Link>
+          {/* Insights Dropdown */}
+          <div
+            onMouseEnter={() => setActiveMenu("insights")}
+          >
+            <Link
+              href="/insights"
+              onClick={() => setActiveMenu(null)}
+              className="flex items-center gap-1.5 px-3 py-1.5 text-[15px] font-medium text-zinc-300 hover:text-white transition-colors"
+            >
+              Insights <ChevronDown size={14} className={`transition-transform duration-300 ${activeMenu === "insights" ? "rotate-180" : ""}`} />
+            </Link>
+            {activeMenu === "insights" && (
+              <div className="absolute left-1/2 -translate-x-1/2 top-full mt-3 w-[1200px] max-w-[95vw] pointer-events-auto z-50">
+                <div className="animate-fadeIn bg-black border border-zinc-850 rounded-2xl p-8 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.9)] grid grid-cols-[280px_240px_1fr] gap-8 text-left relative">
+
+                  {/* Gloss reflection line */}
+                  <div className="absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-zinc-800 to-transparent pointer-events-none" />
+
+                  {/* Visual Promo Column (Insights Style) */}
+                  <div className="relative overflow-hidden rounded-xl border border-zinc-900 p-5 flex flex-col justify-between h-[340px] group bg-white">
+                    <div className="absolute inset-0 bg-gradient-to-tr from-[#ce2453]/20 to-[#e79e57]/10 pointer-events-none z-0" />
+                    <div className="relative z-10">
+                      <span className="text-[9px] font-mono tracking-widest text-[#ce2453] uppercase block mb-3 font-bold">Thought Leadership</span>
+                      <h4 className="text-sm font-bold leading-snug text-black mb-2">Devopstrio Insights</h4>
+                      <p className="text-[10px] text-zinc-650 leading-relaxed font-medium">
+                        Read deep-dive articles, SRE blueprints, and research papers from our global engineering teams.
+                      </p>
+                    </div>
+                    <Link
+                      href="/insights"
+                      onClick={() => setActiveMenu(null)}
+                      className="relative z-10 inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-wider text-[#ce2453] hover:text-black transition-colors mt-4"
+                    >
+                      All Publications &rarr;
+                    </Link>
+                  </div>
+
+                  {/* Middle sidebar with dynamic sections */}
+                  <div className="flex flex-col border-r border-zinc-900 pr-4 gap-1">
+                    <span className="text-[9px] font-mono tracking-widest text-zinc-500 uppercase block px-3 mb-2">Insights Hubs</span>
+                    {insightsSections.map((sec) => (
+                      <button
+                        key={sec.slug}
+                        onMouseEnter={() => setActiveInsightsSection(sec.slug)}
+                        onClick={() => {
+                          setActiveMenu(null);
+                        }}
+                        className={`flex items-center justify-between px-3 py-2 rounded-lg text-[13px] font-bold transition-all duration-200 text-left ${activeInsightsSection === sec.slug
+                          ? "bg-zinc-900 text-rose-500"
+                          : "text-zinc-300 hover:text-white hover:bg-zinc-900/30"
+                          }`}
+                      >
+                        <span>{sec.name}</span>
+                        {activeInsightsSection === sec.slug && <span className="text-[10px]">&rarr;</span>}
+                      </button>
+                    ))}
+                  </div>
+
+                  {/* Right panel with active section categories */}
+                  <div className="flex flex-col">
+                    <span className="text-[9px] font-mono tracking-widest text-zinc-500 uppercase block px-2 mb-2">Categories</span>
+                    <div className="grid grid-cols-2 gap-x-6 gap-y-4 max-h-[380px] overflow-y-auto overscroll-contain pr-2 custom-scrollbar">
+                      {insightsSections.find(s => s.slug === activeInsightsSection)?.categories.map((cat) => (
+                        <Link
+                          key={cat.slug}
+                          href={`/insights/${cat.slug}`}
+                          onClick={() => setActiveMenu(null)}
+                          className="group/subitem block p-2 rounded-lg hover:bg-zinc-900/30 transition-colors"
+                        >
+                          <span className="block text-sm font-bold text-white group-hover/subitem:text-rose-500 transition-colors mb-1">
+                            {cat.name}
+                          </span>
+                          {cat.desc && (
+                            <span className="block text-xs text-zinc-400 font-medium leading-relaxed">
+                              {cat.desc}
+                            </span>
+                          )}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            )}
+          </div>
           <Link href="/careers" onMouseEnter={() => setActiveMenu(null)} className="px-3 py-1.5 text-[15px] font-medium text-zinc-300 hover:text-white transition-colors">
             Careers
           </Link>
@@ -684,15 +879,31 @@ export function Navbar() {
               </div>
             </div>
 
+            <div>
+              <span className="text-[10px] uppercase tracking-wider text-zinc-500 block mb-3 font-mono">Insights</span>
+              <div className="flex flex-col gap-3 pl-2">
+                <Link
+                  href="/insights"
+                  onClick={() => setMobileOpen(false)}
+                  className="text-xs text-zinc-300 hover:text-rose-500 font-bold transition-colors"
+                >
+                  Insights Hub
+                </Link>
+                {insightsSections.flatMap(s => s.categories).map((item) => (
+                  <Link
+                    key={item.slug}
+                    href={`/insights/${item.slug}`}
+                    onClick={() => setMobileOpen(false)}
+                    className="text-xs text-zinc-300 hover:text-rose-500 transition-colors"
+                  >
+                    {item.name}
+                  </Link>
+                ))}
+              </div>
+            </div>
+
             <div className="h-[1px] bg-zinc-900 my-2" />
 
-            <Link
-              href="/#insights"
-              onClick={() => setMobileOpen(false)}
-              className="text-sm font-semibold text-zinc-200 hover:text-white"
-            >
-              Insights
-            </Link>
             <Link
               href="/#careers"
               onClick={() => setMobileOpen(false)}

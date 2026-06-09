@@ -23,13 +23,14 @@ export function IndustrialFaq() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   return (
-    <section className="w-full py-24 bg-[#030303] text-white border-b border-zinc-900">
+    <section className="w-full py-24 bg-black text-white border-b border-zinc-900/60 relative">
       <div className="max-w-3xl mx-auto px-6">
 
+        {/* Section Header */}
         <Reveal className="mb-16 text-center">
-          <div className="inline-flex items-center gap-2 mb-4">
-            <span className="h-[1px] w-6 bg-rose-600"></span>
-            <span className="text-[10px] font-medium tracking-[0.2em] uppercase text-zinc-400">
+          <div className="flex items-center justify-center gap-2 mb-4">
+            <span className="h-[2px] w-6 bg-rose-600"></span>
+            <span className="text-[10px] font-bold tracking-widest uppercase text-rose-500">
               FAQ
             </span>
           </div>
@@ -38,24 +39,27 @@ export function IndustrialFaq() {
           </h2>
         </Reveal>
 
+        {/* Accordions */}
         <div className="flex flex-col gap-4">
           {faqs.map((faq, idx) => {
             const isOpen = openFaq === idx;
             return (
               <Reveal key={idx} className="w-full">
-                <div className="bg-[#080808] border border-zinc-900 rounded-2xl overflow-hidden">
+                <div className="bg-zinc-950/20 border border-zinc-900 rounded-2xl overflow-hidden hover:border-zinc-800 transition-colors">
                   <button
                     onClick={() => setOpenFaq(isOpen ? null : idx)}
-                    className="w-full flex items-center justify-between p-5 text-left"
+                    className="w-full flex items-center justify-between p-5 text-left transition-colors"
                   >
-                    <span className="text-xs font-semibold text-zinc-200">{faq.q}</span>
-                    <span className="text-zinc-500 hover:text-white flex-shrink-0 ml-4">
-                      {isOpen ? <Minus size={14} /> : <Plus size={14} />}
+                    <span className="text-xs md:text-sm font-semibold text-zinc-200 group-hover:text-white transition-colors">{faq.q}</span>
+                    <span className="text-zinc-500 hover:text-white flex-shrink-0 ml-4 transition-colors">
+                      {isOpen ? <Minus size={16} /> : <Plus size={16} />}
                     </span>
                   </button>
 
-                  <div className={`transition-all duration-300 ${isOpen ? "max-h-[200px] border-t border-zinc-900/50 p-5" : "max-h-0 overflow-hidden"}`}>
-                    <p className="text-[11px] text-zinc-450 leading-relaxed font-light">{faq.a}</p>
+                  <div className={`transition-all duration-300 ease-in-out ${
+                    isOpen ? "max-h-[250px] border-t border-zinc-900/50 p-5 opacity-100" : "max-h-0 overflow-hidden opacity-0"
+                  }`}>
+                    <p className="text-xs text-zinc-400 leading-relaxed font-light">{faq.a}</p>
                   </div>
                 </div>
               </Reveal>

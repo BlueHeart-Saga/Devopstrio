@@ -7,15 +7,16 @@ import { Reveal } from "@/components/ui/Reveal";
 
 export function IndustriesCTA() {
   return (
-    <section className="w-full py-24 bg-[#030303] text-white relative overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_center,rgba(220,38,38,0.03),transparent_60%)] pointer-events-none" />
+    <section className="w-full py-24 bg-black text-white relative overflow-hidden">
+      {/* Background radial glow */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_center,rgba(220,38,38,0.04),transparent_60%)] pointer-events-none" />
       
       <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
         <Reveal>
-          <div className="inline-flex items-center gap-2 mb-4">
-            <span className="h-[1px] w-6 bg-rose-600"></span>
-            <span className="text-[10px] font-medium tracking-[0.2em] uppercase text-zinc-400">
-              ENGAGE WITH US
+          <div className="flex items-center justify-center gap-2 mb-4">
+            <span className="h-[2px] w-6 bg-rose-600"></span>
+            <span className="text-[10px] font-bold tracking-widest uppercase text-rose-500">
+              Engage With Us
             </span>
           </div>
           
@@ -30,13 +31,13 @@ export function IndustriesCTA() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
               href="/contact"
-              className="inline-flex items-center gap-1.5 px-6 py-3 rounded-full text-xs font-semibold tracking-wide text-white bg-rose-600 hover:bg-rose-700 transition-colors shadow-lg"
+              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full text-xs font-bold uppercase tracking-wider text-white bg-rose-600 hover:bg-rose-700 transition-all duration-300 hover:shadow-[0_0_20px_rgba(244,63,94,0.35)]"
             >
-              Consult an Industry Expert <ArrowUpRight size={14} />
+              Consult an Industry Expert <ArrowUpRight size={14} className="stroke-[2.5]" />
             </Link>
             <Link
               href="/services"
-              className="inline-flex items-center gap-1.5 px-6 py-3 rounded-full text-xs font-semibold tracking-wide text-zinc-300 border border-zinc-800 hover:border-zinc-700 hover:text-white transition-colors"
+              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full text-xs font-bold uppercase tracking-wider text-zinc-300 border border-zinc-800 bg-transparent hover:border-zinc-700 hover:text-white transition-all duration-300"
             >
               View our tech stack capabilities
             </Link>

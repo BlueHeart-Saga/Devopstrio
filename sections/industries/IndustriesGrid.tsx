@@ -58,14 +58,15 @@ const industries = [
 
 export function IndustriesGrid() {
   return (
-    <section className="w-full py-24 bg-[#030303] text-white border-b border-zinc-900">
-      <div className="max-w-site mx-auto px-6 md:px-12 lg:px-16 xl:px-20">
+    <section className="w-full py-24 bg-black text-white border-b border-zinc-900/60 relative">
+      <div className="max-w-site mx-auto px-6 md:px-12 lg:px-20 relative z-10">
 
+        {/* Section Header */}
         <Reveal className="mb-16 text-left">
-          <div className="inline-flex items-center gap-2 mb-4">
-            <span className="h-[1px] w-6 bg-rose-600"></span>
-            <span className="text-[10px] font-medium tracking-[0.2em] uppercase text-zinc-400">
-              CORE DOMAINS
+          <div className="flex items-center gap-2 mb-4">
+            <span className="h-[2px] w-6 bg-rose-600"></span>
+            <span className="text-[10px] font-bold tracking-widest uppercase text-rose-500">
+              Core Domains
             </span>
           </div>
           <h2 className="text-2xl md:text-3xl font-light text-white tracking-tight leading-snug">
@@ -76,35 +77,39 @@ export function IndustriesGrid() {
           </p>
         </Reveal>
 
+        {/* Grid Layout */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {industries.map((ind, idx) => (
             <Reveal key={ind.slug} delay={idx * 0.05} className="h-full">
               <Link
                 href={ind.href}
-                className="group flex flex-col justify-between h-full bg-[#080808] border border-zinc-900/60 rounded-2xl p-6 hover:border-zinc-800 hover:bg-zinc-900/10 transition-all duration-300 relative overflow-hidden"
+                className="group flex flex-col justify-between h-full bg-zinc-950/20 border border-zinc-900/80 rounded-2xl p-6 hover:border-rose-500/30 hover:bg-zinc-900/10 transition-all duration-300 hover:scale-[1.02] relative overflow-hidden cursor-pointer"
               >
+                {/* Radial Glow on Hover */}
+                <div className="absolute top-0 right-0 w-32 h-32 bg-[radial-gradient(circle_at_center,rgba(244,63,94,0.03),transparent_70%)] opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+
                 <div>
-                  <div className="flex items-center justify-between mb-4">
-                    <span className="text-[10px] font-mono text-zinc-650 tracking-wider">
+                  <div className="flex items-center justify-between mb-5">
+                    <span className="text-[9px] font-mono text-zinc-550 tracking-wider">
                       {(idx + 1).toString().padStart(2, "0")} / SECTOR
                     </span>
-                    <span className="w-8 h-8 rounded-full bg-zinc-900/50 flex items-center justify-center text-zinc-500 group-hover:text-rose-500 group-hover:bg-rose-950/20 transition-all duration-300">
-                      <ArrowUpRight size={14} />
+                    <span className="w-8 h-8 rounded-full bg-zinc-900/40 border border-zinc-800/60 flex items-center justify-center text-zinc-500 group-hover:text-rose-500 group-hover:bg-rose-950/20 group-hover:border-rose-500/20 transition-all duration-300">
+                      <ArrowUpRight size={13} className="stroke-[2.5]" />
                     </span>
                   </div>
 
-                  <h3 className="text-sm font-semibold text-zinc-100 group-hover:text-white transition-colors mb-3">
+                  <h3 className="text-xs font-semibold text-zinc-100 group-hover:text-white transition-colors mb-3 text-left">
                     {ind.name}
                   </h3>
 
-                  <p className="text-[11px] text-zinc-450 leading-relaxed font-light mb-6">
+                  <p className="text-[11px] text-zinc-450 leading-relaxed font-light mb-6 text-left group-hover:text-zinc-350 transition-colors">
                     {ind.desc}
                   </p>
                 </div>
 
-                <div className="border-t border-zinc-900/80 pt-4 mt-auto">
-                  <span className="text-[10px] text-rose-500 font-medium group-hover:pl-1 transition-all duration-200 inline-flex items-center gap-1">
-                    View sector detail <span>→</span>
+                <div className="border-t border-zinc-900/60 pt-4 mt-auto text-left">
+                  <span className="text-[10px] text-rose-500 font-semibold group-hover:translate-x-1 transition-transform duration-250 inline-flex items-center gap-1">
+                    View sector detail <span className="transition-transform group-hover:translate-x-0.5">→</span>
                   </span>
                 </div>
               </Link>
