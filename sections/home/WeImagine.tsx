@@ -1,146 +1,205 @@
 "use client";
 
 import React from "react";
-import { Lightbulb, Code2, Cloud, Cog } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
-
-const DATA = [
-  {
-    id: "ideas",
-    title: "We imagine",
-    subtitle: "We Design Intelligent Digital Solutions",
-    desc: "We develop <a href='/services/artificial-intelligence' class='about-inline-link'>AI-powered systems</a>, automation frameworks, and data-driven platforms that open up new revenue streams and operational efficiency.",
-    points: [
-      "Integrated Multi-Cloud Design",
-      "Practical DevOps and Operational Knowledge",
-      "Secure, High-Performance Data Systems",
-    ],
-    icon: <Lightbulb size={28} />,
-    image: "/assets/Home-page/our-solutions/humanex_das.png",
-  },
-  {
-    id: "develop",
-    title: "We develop",
-    subtitle: "We Build High-Performance Software",
-    desc: "To increase release velocity, fortify <a href='/services/security' class='about-inline-link'>security posture</a>, and guarantee enterprise-grade scalability, we optimise <a href='/services/devops-enablement' class='about-inline-link'>development workflows</a>.",
-    points: [
-      "Scalability at the Enterprise Level",
-      "Architecture that is Secure and Compliant",
-      "Observability & Real-Time Monitoring",
-    ],
-    icon: <Code2 size={28} />,
-    image: "/assets/Home-page/our-solutions/homela-banner.png",
-  },
-  {
-    id: "modernize",
-    title: "We modernize",
-    subtitle: "We Modernize Infrastructure & Applications",
-    desc: "We use scalable <a href='/services/explore' class='about-inline-link'>DevOps techniques</a>, automation, and AI-driven workflows to convert legacy systems into agile, <a href='/services/cloud-architecture' class='about-inline-link'>cloud-native environments</a>.",
-    points: [
-      "Automation of Processes Driven by AI",
-      "Cloud-Native Development",
-      "Re-Architecting Legacy Systems",
-    ],
-    icon: <Cloud size={28} />,
-    image: "/assets/Home-page/our-solutions/influencer_chages.png",
-  },
-  {
-    id: "manage",
-    title: "We manage",
-    subtitle: "Optimize operations",
-    desc: "We transform and <a href='/services/ai-consulting-services' class='about-inline-link'>optimize operations</a> to reduce costs, enhance efficiency, and enable sustainable growth.",
-    points: [
-      "24/7 Proactive Monitoring",
-      "Predictive Maintenance",
-      "Cost Optimization Strategies",
-    ],
-    icon: <Cog size={28} />,
-    image: "/assets/Home-page/our-solutions/Prestivo-banner.png",
-  },
-];
 
 export function WeImagine() {
   return (
-    <section className="relative w-full py-16 md:py-24 bg-[#030303] text-white overflow-visible">
-      {/* Header section (aligned with homepage design) */}
-      <div className="mb-16 max-w-4xl">
-        <Reveal>
-          <span className="text-[11px] font-bold tracking-[0.25em] uppercase text-rose-500 mb-5 block">
-            OUR INNOVATIONS
-          </span>
-        </Reveal>
-        <Reveal>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight leading-[1.1] mb-6 text-white">
-            How we engineer <span className="text-[#E11D48]">innovation.</span>
-          </h2>
-        </Reveal>
-        <Reveal>
-          <p className="text-zinc-400 text-lg md:text-xl font-bold leading-relaxed max-w-3xl">
-            We design, build, and optimize bleeding-edge digital solutions that turn visionary ideas into enterprise-grade realities.
-          </p>
-        </Reveal>
-      </div>
+    <section className="relative w-full pt-4 md:pt-8 bg-[#030303] text-white overflow-hidden">
+      
+      {/* Centered Content Wrapper for Header, Banner, and Intro */}
+      <div className="max-w-site mx-auto w-full px-6 md:px-12 lg:px-20 relative z-10 mb-16">
 
-      {/* Cards list using native sticky stacking */}
-      <div className="flex flex-col relative w-full">
-        {DATA.map((section, idx) => (
-          <div
-            key={section.id}
-            className="sticky top-28 bg-[#0b0b0c]/90 backdrop-blur-xl border border-zinc-900/80 rounded-2xl p-8 md:p-12 lg:p-16 mb-12 flex flex-col lg:flex-row gap-12 lg:gap-16 items-center shadow-[0_24px_80px_rgba(0,0,0,0.5)] hover:border-zinc-800/80 transition-all duration-300"
-            style={{ zIndex: 10 + idx }}
-          >
-            {/* Left Column: Copywriting */}
-            <div className="flex-1 flex flex-col items-start w-full">
-              <div className="flex items-center gap-5 mb-6">
-                <div className="w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-zinc-900 border border-zinc-800 flex items-center justify-center text-rose-500 shadow-md flex-shrink-0">
-                  {section.icon}
-                </div>
+        {/* Main Section Header */}
+        <div className="mb-12">
+          <Reveal>
+            <span className="text-[11px] font-bold tracking-[0.25em] uppercase text-rose-500 mb-4 block">
+              OUR INNOVATIONS
+            </span>
+          </Reveal>
+          <Reveal>
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-4">
+              How We Engineer <span className="text-rose-500">Innovation</span>
+            </h2>
+          </Reveal>
+        </div>
 
-                <div className="flex flex-col">
-                  <h3 className="text-2xl md:text-3xl font-light tracking-tight text-white leading-none">
-                    {section.title.split(" ").map((word, wIdx) => (
-                      <span key={wIdx} className={wIdx === 0 ? "font-bold mr-1.5" : "mr-1.5"}>
-                        {word}
-                      </span>
-                    ))}
-                  </h3>
-                  <p className="text-xs md:text-sm font-bold text-rose-500 tracking-[0.2em] uppercase mt-2">
-                    {section.subtitle}
-                  </p>
-                </div>
+        {/* ── 1. Top Innovation Lab Banner ── */}
+        <Reveal>
+          <div className="relative rounded-2xl overflow-hidden mb-16 h-[260px] md:h-[380px] w-full border border-zinc-800/40">
+            {/* Banner image */}
+            <img
+              src="/assets/Home-page/innovation/image.png"
+              alt="Devopstrio Innovation Lab"
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+            {/* Dark glassmorphic card overlay */}
+            <div className="absolute bottom-6 left-6 md:bottom-10 md:left-10 bg-black/40 backdrop-blur-md border border-white/10 p-6 md:p-8 rounded-xl max-w-sm md:max-w-md shadow-2xl">
+              <h3 className="text-xl md:text-2xl font-bold text-white mb-2 tracking-tight">
+                Devopstrio Innovation Lab
+              </h3>
+              <p className="text-zinc-300 text-xs md:text-sm leading-relaxed">
+                The lab for enterprise innovation and next-generation cloud architecture.
+              </p>
+            </div>
+          </div>
+        </Reveal>
+
+        {/* ── 2. Microsoft-Style Capabilities Grid ── */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
+          
+          {/* Card 1: We Imagine */}
+          <Reveal delay={0.05}>
+            <div className="relative rounded-xl border border-zinc-800/60 bg-zinc-950/20 hover:bg-zinc-950/40 hover:border-zinc-700/80 p-6 md:p-8 transition-all duration-300 flex flex-col justify-between group h-full shadow-lg">
+              <div>
+               
+                <h3 className="text-base md:text-lg font-bold text-white mb-3 tracking-tight group-hover:text-rose-400 transition-colors duration-300">
+                  We Design Intelligent Digital Solutions
+                </h3>
+                <p className="text-zinc-400 text-xs md:text-sm leading-relaxed mb-6 font-semibold">
+                  We architect AI-powered systems, automation frameworks, and data platforms that unlock new revenue streams and drive measurable operational efficiency from day one.
+                </p>
               </div>
-
-              <div className="w-full">
-                <p
-                  className="text-zinc-400 text-base md:text-lg leading-relaxed max-w-xl font-bold"
-                  dangerouslySetInnerHTML={{ __html: section.desc }}
-                />
-
-                <ul className="list-none p-0 mt-8 space-y-4">
-                  {section.points.map((point, i) => (
-                    <li key={i} className="flex items-center gap-3.5 text-zinc-300 text-sm md:text-base font-bold">
-                      <span className="w-5 h-5 rounded-full border border-rose-500/40 text-rose-500 flex items-center justify-center font-bold flex-shrink-0 bg-rose-500/5 text-[10px]">
-                        ✓
-                      </span>
-                      <span>{point}</span>
+              <div className="border-t border-zinc-900 pt-4 mt-auto">
+                <ul className="space-y-2">
+                  {["Multi-Cloud Architecture", "AI-First Design", "Secure Data Platforms"].map((bullet) => (
+                    <li key={bullet} className="flex items-center gap-2 text-[11px] font-bold text-zinc-300">
+                      <span className="w-1.5 h-1.5 rounded-full bg-rose-500/70" />
+                      {bullet}
                     </li>
                   ))}
                 </ul>
               </div>
             </div>
+          </Reveal>
 
-            {/* Right Column: Visual Device/Product Graphic */}
-            <div className="flex-1 flex justify-center lg:justify-end items-center pointer-events-none w-full lg:w-auto">
-              <img
-                src={section.image}
-                alt={section.title}
-                className="w-full max-w-[420px] lg:max-w-[460px] h-auto object-contain rounded-xl drop-shadow-[0_20px_50px_rgba(0,0,0,0.6)]"
-                draggable="false"
-              />
+          {/* Card 2: We Develop */}
+          <Reveal delay={0.1}>
+            <div className="relative rounded-xl border border-zinc-800/60 bg-zinc-950/20 hover:bg-zinc-950/40 hover:border-zinc-700/80 p-6 md:p-8 transition-all duration-300 flex flex-col justify-between group h-full shadow-lg">
+              <div>
+               
+                <h3 className="text-base md:text-lg font-bold text-white mb-3 tracking-tight group-hover:text-rose-400 transition-colors duration-300">
+                  We Build Software That Performs at Scale
+                </h3>
+                <p className="text-zinc-400 text-xs md:text-sm leading-relaxed mb-6 font-semibold">
+                  We engineer high-performance, enterprise-grade software — accelerating release velocity, hardening security posture, and guaranteeing the scalability your business demands.
+                </p>
+              </div>
+              <div className="border-t border-zinc-900 pt-4 mt-auto">
+                <ul className="space-y-2">
+                  {["Enterprise Scalability", "Secure Compliant Architecture", "Full Observability"].map((bullet) => (
+                    <li key={bullet} className="flex items-center gap-2 text-[11px] font-bold text-zinc-300">
+                      <span className="w-1.5 h-1.5 rounded-full bg-rose-500/70" />
+                      {bullet}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
-          </div>
-        ))}
+          </Reveal>
+
+          {/* Card 3: We Modernise */}
+          <Reveal delay={0.15}>
+            <div className="relative rounded-xl border border-zinc-800/60 bg-zinc-950/20 hover:bg-zinc-950/40 hover:border-zinc-700/80 p-6 md:p-8 transition-all duration-300 flex flex-col justify-between group h-full shadow-lg">
+              <div>
+                
+                <h3 className="text-base md:text-lg font-bold text-white mb-3 tracking-tight group-hover:text-rose-400 transition-colors duration-300">
+                  We Transform Legacy Into Cloud-Native Power
+                </h3>
+                <p className="text-zinc-400 text-xs md:text-sm leading-relaxed mb-6 font-semibold">
+                  We convert brittle legacy systems into agile, cloud-native environments using AI-driven workflows, DevOps automation, and modern architecture — without disrupting your operations.
+                </p>
+              </div>
+              <div className="border-t border-zinc-900 pt-4 mt-auto">
+                <ul className="space-y-2">
+                  {["AI-Driven Automation", "Cloud-Native Migration", "Legacy Re-Architecture"].map((bullet) => (
+                    <li key={bullet} className="flex items-center gap-2 text-[11px] font-bold text-zinc-300">
+                      <span className="w-1.5 h-1.5 rounded-full bg-rose-500/70" />
+                      {bullet}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </Reveal>
+
+          {/* Card 4: We Manage */}
+          <Reveal delay={0.2}>
+            <div className="relative rounded-xl border border-zinc-800/60 bg-zinc-950/20 hover:bg-zinc-950/40 hover:border-zinc-700/80 p-6 md:p-8 transition-all duration-300 flex flex-col justify-between group h-full shadow-lg">
+              <div>
+                
+                <h3 className="text-base md:text-lg font-bold text-white mb-3 tracking-tight group-hover:text-rose-400 transition-colors duration-300">
+                  We Keep Your Operations Running Flawlessly
+                </h3>
+                <p className="text-zinc-400 text-xs md:text-sm leading-relaxed mb-6 font-semibold">
+                  We take full ownership of your platform operations — reducing costs, eliminating downtime, and enabling sustainable growth through proactive monitoring and intelligent optimisation.
+                </p>
+              </div>
+              <div className="border-t border-zinc-900 pt-4 mt-auto">
+                <ul className="space-y-2">
+                  {["24/7 Proactive Monitoring", "Predictive Maintenance", "Cloud Cost Optimisation"].map((bullet) => (
+                    <li key={bullet} className="flex items-center gap-2 text-[11px] font-bold text-zinc-300">
+                      <span className="w-1.5 h-1.5 rounded-full bg-rose-500/70" />
+                      {bullet}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </Reveal>
+
+        </div>
+
       </div>
+
+      {/* ── 3. High-Level Innovation Idea Banner (Immersive Artwork Style, Full-Width BG) ── */}
+      {/* 
+      <div className="relative w-full min-h-[600px] md:min-h-[750px] flex items-start justify-center pt-20 md:pt-28 pb-48 md:pb-64 overflow-hidden border-t border-b border-zinc-900/40 my-16 md:my-24 group">
+        <div className="absolute inset-0 z-0">
+          <img
+            src="/assets/Home-page/innovation-bg.jpg"
+            alt="Where Innovation Meets Execution"
+            className="w-full h-full object-cover transition-transform duration-[1000ms] group-hover:scale-102"
+          />
+        </div>
+
+        <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-[#030303] via-[#030303]/70 to-transparent z-1 pointer-events-none" />
+
+        <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-[#030303] via-[#030303]/70 to-transparent z-1 pointer-events-none" />
+
+        <div className="max-w-site mx-auto w-full px-6 md:px-12 lg:px-20 relative z-10 text-center flex flex-col items-center justify-start drop-shadow-[0_4px_16px_rgba(0,0,0,0.95)]">
+          <Reveal>
+            <span className="text-[11px] font-bold tracking-[0.25em] uppercase text-rose-500 mb-4 block">
+              INNOVATION LAB
+            </span>
+          </Reveal>
+          <Reveal>
+            <h3 className="text-3xl md:text-5xl font-bold tracking-tight leading-tight text-white mb-6">
+              Where Innovation Meets <span className="text-rose-500 block sm:inline">Execution</span>
+            </h3>
+          </Reveal>
+          <Reveal>
+            <p className="text-zinc-300 text-sm md:text-base leading-relaxed font-semibold max-w-2xl mb-8">
+              For leaders who want more than strategy — engineering that builds with you. Harness the power of enterprise AI and cloud automation to transform your vision into scalable digital products.
+            </p>
+          </Reveal>
+
+          <Reveal>
+            <a
+              href="/services"
+              className="inline-flex items-center gap-2.5 bg-rose-600 hover:bg-rose-700 text-white rounded-lg px-6 py-3.5 text-xs md:text-sm font-semibold uppercase tracking-wider transition-all duration-300 shadow-md group/btn"
+            >
+              Meet Our Innovation Team
+              <ArrowRight size={16} className="transition-transform duration-300 group-hover/btn:translate-x-1" />
+            </a>
+          </Reveal>
+
+         
+        </div>
+      </div>
+      */}
+
     </section>
   );
 }

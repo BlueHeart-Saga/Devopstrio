@@ -35,7 +35,7 @@ export function MetricsStats() {
                 By the Numbers
               </span>
             </div>
-            <h2 className="text-3xl md:text-5xl font-bold tracking-tight leading-tight text-white mb-4">
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-4">
               The <span className="text-rose-500">results speak for themselves</span> — <span className="font-bold">every time.</span>
             </h2>
             <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-bold">

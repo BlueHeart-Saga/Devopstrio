@@ -85,9 +85,9 @@ const CardSwap: React.FC<CardSwapProps> = ({
     easing === 'elastic'
       ? {
           ease: 'elastic.out(0.6,0.9)',
-          durDrop: 2,
-          durMove: 2,
-          durReturn: 2,
+          durDrop: 1,
+          durMove: 1,
+          durReturn: 1,
           promoteOverlap: 0.9,
           returnDelay: 0.05
         }
@@ -113,8 +113,10 @@ const CardSwap: React.FC<CardSwapProps> = ({
   const isHoveringRef = useRef(false);
 
   const swap = useCallback(() => {
-    // Prevent double animating if a swap is already active
-    if (tlRef.current?.isActive()) return;
+    // If a swap is already active, force complete it to allow immediate next swap
+    if (tlRef.current?.isActive()) {
+      tlRef.current.progress(1);
+    }
     if (order.current.length < 2) return;
 
     const [front, ...rest] = order.current;

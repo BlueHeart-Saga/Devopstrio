@@ -74,7 +74,7 @@ const products = [
 
 export function OurProducts() {
   return (
-    <section id="products" className="w-full py-24 md:py-32 bg-[#030303] text-white relative overflow-hidden">
+    <section id="products" className="w-full pt-0 pb-24 md:pb-32 bg-[#030303] text-white relative overflow-hidden">
       <div className="max-w-site mx-auto w-full px-6 md:px-12 lg:px-16 xl:px-20 relative z-10">
 
         <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-8">
@@ -82,26 +82,35 @@ export function OurProducts() {
           {/* Left Text Content */}
           <div className="w-full lg:w-5/12 z-20">
             <Reveal>
-              <div className="flex items-center gap-2 mb-6">
-                <span className="text-[11px] font-bold tracking-[0.25em] uppercase text-rose-500">
-                  PRODUCT INNOVATION
-                </span>
-              </div>
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-light tracking-tight leading-[1.1] mb-6">
-                Next-gen SaaS <br className="hidden md:block" />
-                <span className="font-bold text-[#E11D48]">Platforms</span>.
+              <span className="text-[11px] font-bold tracking-[0.25em] uppercase text-rose-500 mb-4 block">
+                PRODUCT INNOVATION
+              </span>
+            </Reveal>
+            <Reveal>
+              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-4">
+                Next-gen SaaS <span className="text-rose-500">Platforms</span>
               </h2>
+            </Reveal>
+            <Reveal>
               <p className="text-zinc-400 text-lg md:text-xl leading-relaxed mb-10 max-w-xl">
                 We build and operate a suite of vertical-specific SaaS products designed to transform industries. From PropTech to HealthTech, our platforms represent the cutting-edge of product innovation.
               </p>
-
+            </Reveal>
+            <Reveal>
               <div className="flex flex-col sm:flex-row gap-4">
-                <a href="#contact" className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-black font-semibold rounded-full hover:bg-zinc-200 transition-colors">
+                <a
+                  href="#contact"
+                  className="inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white transition-all duration-300 hover:shadow-[0_0_25px_rgba(225,29,72,0.35)] hover:-translate-y-0.5"
+                >
                   Discuss a project
+                  <span className="ml-2">→</span>
                 </a>
-                <a href="/products" className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-zinc-900 border border-zinc-800 text-white font-semibold rounded-full hover:bg-zinc-800 transition-colors group">
+                <a
+                  href="/products"
+                  className="inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase border border-zinc-850 hover:border-zinc-750 bg-zinc-950/60 hover:bg-zinc-900 text-white transition-all duration-300 hover:-translate-y-0.5"
+                >
                   View all products
-                  <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                  <span className="ml-2">→</span>
                 </a>
               </div>
             </Reveal>

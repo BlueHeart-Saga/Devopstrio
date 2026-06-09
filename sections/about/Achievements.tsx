@@ -32,7 +32,7 @@ export function Achievements() {
                 Innovation & Achievements
               </span>
             </div>
-            <h2 className="text-3xl md:text-5xl font-bold tracking-tight leading-tight text-white">
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white">
               Recognised for <span className="font-bold block"><span className="text-rose-500">engineering excellence</span>.</span>
             </h2>
           </div>

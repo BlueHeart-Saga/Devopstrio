@@ -1,235 +1,215 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { CheckCircle2, ArrowRight } from "lucide-react";
+import { motion } from "framer-motion";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
 
 const services = [
   {
     id: "ai-automation",
-    title: "AI & Automation",
-    desc: "Transform business operations with AI solutions, Generative AI, AI agents, machine learning, automation, and intelligent decision-making systems.",
-    bgImage: "/assets/Home-page/core-services/Ai%20%26%20Automation.png",
-    href: "/services/ai",
-    features: ["Generative AI Models", "Machine Learning", "AI Agents", "Process Automation"]
+    tag: "Innovate",
+    title: "Transform operations with AI-driven intelligence and automation.",
+    desc: "Leverage Generative AI, machine learning, and intelligent automation to modernise business processes and unlock measurable value at scale.",
+    bgImage: "/assets/Home-page/core-services/Ai & Automation.png",
+    href: "/services/ai-data-innovation",
+    cta: "AI & Automation"
   },
   {
     id: "cloud-migration",
-    title: "Cloud Engineering",
-    desc: "Design, migrate, optimize, and manage cloud environments across AWS, Microsoft Azure, Google Cloud, and hybrid infrastructures.",
-    bgImage: "/assets/Home-page/core-services/cloud%20computing.png",
-    href: "/services/cloud",
-    features: ["AWS & Azure Migration", "Google Cloud Optimization", "Hybrid Infrastructure", "Cloud Management"]
+    tag: "Migrate",
+    title: "Move, optimise, and scale confidently on any cloud platform.",
+    desc: "Design and manage resilient cloud environments across AWS, Azure, and Google Cloud — built for performance, compliance, and cost efficiency.",
+    bgImage: "/assets/Home-page/core-services/cloud computing.png",
+    href: "/services/cloud-services",
+    cta: "Cloud Engineering"
   },
   {
     id: "devops-iac",
-    title: "DevOps & IaC",
-    desc: "Accelerate delivery with CI/CD pipelines, Kubernetes, Terraform, automation, platform engineering, and Infrastructure as Code.",
-    bgImage: "/assets/Home-page/core-services/Devops%20and%20iac.png",
-    href: "/services/devops",
-    features: ["CI/CD Pipelines", "Kubernetes Management", "Terraform & IaC", "Platform Engineering"]
+    tag: "Accelerate",
+    title: "Ship faster with fully automated DevOps and IaC pipelines.",
+    desc: "CI/CD automation, Kubernetes orchestration, Terraform, and platform engineering practices that eliminate friction and accelerate delivery.",
+    bgImage: "/assets/Home-page/core-services/Devops and iac.png",
+    href: "/services/devops-automation",
+    cta: "DevOps & IaC"
   },
   {
     id: "software-engineering",
-    title: "Software Engineering",
-    desc: "Build enterprise web applications, mobile apps, SaaS platforms, APIs, and digital products tailored to business needs.",
+    tag: "Build",
+    title: "Create enterprise-grade software, apps, and SaaS platforms.",
+    desc: "From complex web applications and mobile products to API ecosystems and SaaS platforms — engineered for reliability and business impact.",
     bgImage: "/assets/Home-page/core-services/Engineering.png",
     href: "/services/software-development",
-    features: ["Enterprise Web Apps", "Mobile Applications", "SaaS Platform Development", "API Integrations"]
+    cta: "Software Engineering"
   },
   {
     id: "cybersecurity",
-    title: "Cybersecurity",
-    desc: "Protect digital assets through security assessments, monitoring, compliance, vulnerability management, SOC services, and proactive support.",
-    bgImage: "/assets/Home-page/core-services/cyber%20security.png",
+    tag: "Protect",
+    title: "Embed security and compliance into every layer of your stack.",
+    desc: "Proactive threat management, SOC services, vulnerability assessments, and zero-trust security frameworks for regulated industries.",
+    bgImage: "/assets/Home-page/core-services/cyber security.png",
     href: "/services/cybersecurity",
-    features: ["Security Assessments", "SOC Services", "Vulnerability Management", "Compliance Monitoring"]
+    cta: "Cybersecurity"
   },
   {
-    id: "public-sector",
-    title: "Enterprise Solutions",
-    desc: "Deliver scalable technology solutions for government organizations, public services, enterprises, education, healthcare, and regulated industries.",
-    bgImage: "/assets/Home-page/core-services/enterprise%20solution.png",
+    id: "enterprise-solutions",
+    tag: "Scale",
+    title: "Deliver scalable technology solutions across every sector.",
+    desc: "Tailored solutions for government, healthcare, finance, and enterprise organisations — built for compliance, resilience, and long-term value.",
+    bgImage: "/assets/Home-page/core-services/enterprise solution.png",
     href: "/industries",
-    features: ["Government IT Solutions", "Regulated Compliance", "Healthcare Tech", "Enterprise Scaling"]
+    cta: "Enterprise Solutions"
   }
 ];
 
-const outcomes = [
-  "Faster Time-to-Market",
-  "Reduced Infrastructure Costs",
-  "Enhanced Security & Compliance",
-  "Improved Operational Efficiency",
-  "Scalable Cloud Architecture",
-  "Future-Ready Digital Products"
-];
-
-const tags = [
-  "Artificial Intelligence", "Generative AI", "AI Agents", "Cloud Migration",
-  "AWS", "Microsoft Azure", "Google Cloud", "Kubernetes", "Terraform",
-  "DevOps", "Platform Engineering", "Cybersecurity", "SOC Operations",
-  "Data Engineering", "Analytics", "Web Development", "Mobile Development",
-  "SaaS Platforms", "Digital Transformation", "Managed Services"
-];
-
 export function CoreServices() {
-  const [activeId, setActiveId] = useState(services[0].id);
-  const activeService = services.find(s => s.id === activeId) || services[0];
+  const [startIndex, setStartIndex] = useState(0);
+  const [visibleCards, setVisibleCards] = useState(3);
+  const [isPaused, setIsPaused] = useState(false);
 
-  // Auto-rotate through services
+  // Handle responsive visible card counts
   useEffect(() => {
-    const interval = setInterval(() => {
-      setActiveId((currentId) => {
-        const currentIndex = services.findIndex((s) => s.id === currentId);
-        const nextIndex = (currentIndex + 1) % services.length;
-        return services[nextIndex].id;
-      });
-    }, 5000); // Change every 5 seconds
-
-    return () => clearInterval(interval);
+    const handleResize = () => {
+      if (window.innerWidth >= 1024) {
+        setVisibleCards(3);
+      } else if (window.innerWidth >= 768) {
+        setVisibleCards(2);
+      } else {
+        setVisibleCards(1);
+      }
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  const maxIndex = services.length - visibleCards;
+
+  // Auto-scroll loop one-by-one
+  useEffect(() => {
+    if (isPaused) return;
+
+    const timer = setInterval(() => {
+      setStartIndex((prev) => (prev < maxIndex ? prev + 1 : 0));
+    }, 4500);
+
+    return () => clearInterval(timer);
+  }, [maxIndex, isPaused]);
+
+  const prev = () => {
+    setStartIndex((prev) => (prev > 0 ? prev - 1 : maxIndex));
+  };
+
+  const next = () => {
+    setStartIndex((prev) => (prev < maxIndex ? prev + 1 : 0));
+  };
+
+  const gap = 24; // gap-6
+  const xTranslation = startIndex * (100 / visibleCards);
+
   return (
-    <section className="w-full pt-10 md:pt-14 pb-10 md:pb-12 bg-[#030303] text-white relative overflow-hidden" id="capabilities">
-
-      {/* Background wave/mesh image */}
-      <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden opacity-60 mix-blend-screen">
-        <img
-          src="/assets/Home-page/core-services/bg3.png"
-          alt="Core Services Background"
-          className="absolute inset-0 w-full h-full object-cover"
-        />
-      </div>
-
-      {/* Background ambient red glow */}
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[radial-gradient(circle_at_center,rgba(220,38,38,0.04),transparent_70%)] blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-[radial-gradient(circle_at_center,rgba(225,29,72,0.03),transparent_70%)] blur-3xl pointer-events-none" />
+    <section
+      className="w-full pt-14 md:pt-20 pb-16 md:pb-24 bg-[#030303] text-white relative overflow-hidden"
+      id="capabilities"
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
+    >
+      {/* Ambient glow */}
+      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[radial-gradient(circle_at_top_right,rgba(220,38,38,0.05),transparent_70%)] blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[radial-gradient(circle_at_bottom_left,rgba(225,29,72,0.04),transparent_70%)] blur-3xl pointer-events-none" />
 
       <div className="max-w-site mx-auto w-full px-6 md:px-12 lg:px-16 xl:px-20 relative z-10">
 
         {/* Section Header */}
         <Reveal>
-          <div className="mb-12 max-w-4xl">
-            <span className="text-xs font-semibold tracking-[0.25em] uppercase text-rose-500 mb-6 block">
-              WHAT WE DO BEST
+          <div className="text-center max-w-3xl mx-auto mb-14">
+            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+              CAPABILITIES
             </span>
-            <h2 className="text-3xl md:text-5xl font-bold tracking-tight leading-tight mb-8 text-white">
-              Our core capabilities
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
+              Technology at the core of every business breakthrough
             </h2>
-            <p className="text-zinc-400 text-lg md:text-xl font-bold leading-relaxed">
-              Helping organizations innovate, modernize, secure, and scale through AI-powered technology solutions.
+            <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
+              End-to-end services across Cloud, AI, DevOps, Security, and Software Engineering — built to deliver measurable outcomes.
             </p>
           </div>
         </Reveal>
 
-        {/* Huge Text Tabs + Visual Card Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.85fr] gap-12 lg:gap-20 items-start mb-4 lg:mb-6">
-
-          {/* Left Side: Massive Navigation List */}
-          <div className="flex flex-col gap-3 md:gap-4">
-            {services.map((service) => {
-              const isActive = activeId === service.id;
-              return (
-                <button
-                  key={service.id}
-                  onClick={() => setActiveId(service.id)}
-                  className={`text-left text-2xl md:text-3xl lg:text-[34px] tracking-tight font-bold transition-all duration-300 ${isActive ? "text-white" : "text-zinc-600 hover:text-zinc-400"
-                    }`}
-                >
-                  {service.title}
-                </button>
-              );
-            })}
-
-            <a
-              href="/services"
-              className="mt-8 text-white text-base md:text-lg font-medium tracking-wide flex items-center gap-2 border-b border-white pb-1 w-fit hover:text-rose-400 hover:border-rose-400 transition-colors"
-            >
-              All capabilities <ArrowRight size={18} />
-            </a>
-          </div>
-
-          {/* Right Side: Detailed Content Area */}
-          <div className="relative w-full min-h-[350px] md:min-h-[420px] lg:min-h-[460px] flex flex-col justify-start pt-4">
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={activeService.id}
-                initial={{ opacity: 0, scale: 0.98, x: 20 }}
-                animate={{ opacity: 1, scale: 1, x: 0 }}
-                exit={{ opacity: 0, scale: 0.98, x: 20 }}
-                transition={{ duration: 0.5 }}
-                className="absolute inset-0 pointer-events-none"
+        {/* Sliding Carousel Viewport */}
+        <div className="relative overflow-hidden w-full pb-4">
+          <motion.div
+            className="flex gap-6"
+            animate={{ x: `calc(-${xTranslation}% - ${startIndex * gap}px)` }}
+            transition={{ type: "spring", stiffness: 80, damping: 20 }}
+          >
+            {services.map((service) => (
+              <div
+                key={service.id}
+                className="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] flex-shrink-0 group flex flex-col bg-zinc-950 border border-zinc-800/60 rounded-2xl overflow-hidden hover:border-rose-500/30 transition-all duration-300 hover:shadow-[0_0_40px_rgba(225,29,72,0.07)]"
               >
-                {/* Accent Image filling the entire right container */}
-                <img
-                  src={activeService.bgImage}
-                  alt={activeService.title}
-                  className="absolute inset-0 w-full h-full object-cover opacity-70 mix-blend-screen pointer-events-none rounded-xl"
-                  style={{
-                    WebkitMaskImage: "linear-gradient(to right, transparent 0%, rgba(0,0,0,0.8) 40%, black 100%)",
-                    maskImage: "linear-gradient(to right, transparent 0%, rgba(0,0,0,0.8) 40%, black 100%)"
-                  }}
-                />
-                {/* Red Glow Accent */}
-                {/* <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-[radial-gradient(circle_at_bottom_right,rgba(220,38,38,0.1),transparent_70%)] pointer-events-none" /> */}
-              </motion.div>
-            </AnimatePresence>
+                {/* Cover Image */}
+                <div className="relative w-full aspect-[16/9] overflow-hidden bg-zinc-900">
+                  <img
+                    src={service.bgImage}
+                    alt={service.cta}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/60 via-transparent to-transparent" />
+                </div>
 
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={activeService.id + "-content"}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
-                transition={{ duration: 0.4, delay: 0.1 }}
-                className="relative z-10 w-full"
-              >
-                <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                  {activeService.title}
-                </h3>
-                <p className="text-zinc-300 text-base md:text-[17px] leading-[1.7] font-bold mb-8 max-w-lg">
-                  {activeService.desc}
-                </p>
+                {/* Card Body */}
+                <div className="flex flex-col flex-1 p-6 gap-3">
+                  <span className="text-rose-500 text-[11px] font-bold uppercase tracking-widest">
+                    {service.tag}
+                  </span>
+                  <h3 className="text-white text-base md:text-[17px] font-bold leading-snug">
+                    {service.title}
+                  </h3>
+                  <p className="text-zinc-400 text-sm leading-relaxed flex-1">
+                    {service.desc}
+                  </p>
 
-                <ul className="flex flex-col gap-3 mb-8">
-                  {activeService.features.map((feature, i) => (
-                    <li key={i} className="flex items-center gap-3 text-zinc-300 text-sm md:text-[15px] font-bold">
-                      <CheckCircle2 size={18} className="text-rose-500 flex-shrink-0" />
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-
-                <a
-                  href={activeService.href}
-                  className="inline-flex items-center gap-2 text-sm font-semibold text-rose-500 hover:text-rose-400 transition-colors uppercase tracking-wider"
-                >
-                  Explore Service <ArrowRight size={16} className="ml-1" />
-                </a>
-              </motion.div>
-            </AnimatePresence>
-          </div>
+                  {/* CTA */}
+                  <a
+                    href={service.href}
+                    className="mt-2 inline-flex items-center gap-2.5 bg-zinc-900 hover:bg-rose-600 border border-zinc-800 hover:border-rose-600 text-zinc-300 hover:text-white rounded-lg px-4 py-2.5 text-xs font-semibold uppercase tracking-wider transition-all duration-300 w-fit group/btn"
+                  >
+                    <span className="w-5 h-5 rounded-sm bg-rose-600 group-hover/btn:bg-white flex items-center justify-center flex-shrink-0 transition-colors duration-300">
+                      <ArrowRight size={11} className="text-white group-hover/btn:text-rose-600 transition-colors duration-300" />
+                    </span>
+                    {service.cta}
+                  </a>
+                </div>
+              </div>
+            ))}
+          </motion.div>
         </div>
 
-
-
-        {/* SEO Text Section */}
-        <Reveal>
-          <div className="max-w-4xl mx-auto text-center mb-0">
-            <h3 className="text-2xl font-bold text-white mb-6">
-              Technology Expertise Across the Entire Digital Lifecycle
-            </h3>
-            <p className="text-zinc-400 text-base leading-relaxed font-bold">
-              From strategy and architecture to development, deployment, and ongoing optimization, Devopstrio delivers end-to-end technology services that help organizations innovate faster, operate securely, and scale confidently in a rapidly evolving digital world.
-            </p>
-          </div>
-        </Reveal>
+        {/* Navigation Controls */}
+        <div className="flex items-center gap-3 mt-8">
+          <button
+            onClick={prev}
+            className="w-11 h-11 rounded-full border border-zinc-700 hover:border-rose-500 hover:bg-rose-500/10 text-white flex items-center justify-center transition-all duration-300 active:scale-95"
+            aria-label="Previous services"
+          >
+            <ArrowLeft size={16} />
+          </button>
+          <button
+            onClick={next}
+            className="w-11 h-11 rounded-full border border-zinc-700 hover:border-rose-500 hover:bg-rose-500/10 text-white flex items-center justify-center transition-all duration-300 active:scale-95"
+            aria-label="Next services"
+          >
+            <ArrowRight size={16} />
+          </button>
+          <a
+            href="/services"
+            className="ml-4 text-sm font-semibold text-zinc-400 hover:text-rose-400 transition-colors uppercase tracking-wider flex items-center gap-1.5"
+          >
+            All capabilities <ArrowRight size={14} />
+          </a>
+        </div>
 
       </div>
-
-
-
     </section>
   );
 }

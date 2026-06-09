@@ -2,135 +2,217 @@
 
 import React from "react";
 import { Reveal } from "@/components/ui/Reveal";
+import { motion } from "framer-motion";
+import { CheckCircle2, MapPin, ArrowUpRight } from "lucide-react";
 
-const keyLeaders = [
+const founderTags = ["Multi-Cloud Architect", "15+ Years Experience", "Azure · AWS · GCP"];
+
+const teamMembers = [
   {
-    name: "Manikandan",
-    role: "Cloud Data & AI Lead",
-    expertise: "Specialises in scalable AI model deployment and cloud data engineering across multi-cloud environments."
+    name: "Sudalairajan",
+    role: "Cloud-Native Product Lead",
+    photo: "/assets/About-page/team/membars/Suman_1.png",
+    rotate: "-rotate-3",
+    zIndex: "z-[1]",
   },
   {
-    name: "Kishore",
-    role: "Azure Hybrid Cloud & AI Security",
-    expertise: "Expert in zero-trust architecture, Azure security posture management, and hybrid identity."
-  },
-  {
-    name: "Mareeswaran",
-    role: "SAP on Azure & Cloud-Native Product",
-    expertise: "Leads enterprise SAP migrations and cloud-native product architecture on Azure."
+    name: "Sagadevan",
+    role: "Machine Learning Engineer",
+    photo: "/assets/About-page/team/membars/sagadevan.png",
+    rotate: "rotate-2",
+    zIndex: "z-[2]",
   },
   {
     name: "Subbiah Muthu",
-    role: "Business Applications & Deep Learning",
-    expertise: "Deep learning specialist driving AI-powered enterprise application modernisation."
+    role: "Deep Learning Specialist",
+    photo: "/assets/About-page/team/membars/subbiah_muthu.png",
+    rotate: "-rotate-1",
+    zIndex: "z-[3]",
   },
   {
-    name: "Punitha",
-    role: "App Modernisation & Migration",
-    expertise: "Guides legacy-to-cloud migration programmes and application re-architecture strategies."
+    name: "Kishore",
+    role: "AI Security Engineer",
+    photo: "/assets/About-page/team/membars/Kishore2.jpg",
+    rotate: "rotate-3",
+    zIndex: "z-[4]",
   },
   {
     name: "Sermaraja",
-    role: "Analytics & AI / UI Design",
-    expertise: "Bridges data science and human-centred design to create intelligent, usable enterprise platforms."
-  }
+    role: "UI/UX Design Manager",
+    photo: "/assets/About-page/team/membars/Serma_2.jpg",
+    rotate: "-rotate-2",
+    zIndex: "z-[5]",
+  },
+  {
+    name: "Thangalakshmi",
+    role: "Cognitive Success Lead",
+    photo: "/assets/About-page/team/membars/thangalakshimi_6.jpeg",
+    rotate: "rotate-1",
+    zIndex: "z-[6]",
+  },
+  {
+    name: "Punitha",
+    role: "Design Thinking Lead",
+    photo: "/assets/About-page/team/membars/Punitha_2.png",
+    rotate: "-rotate-3",
+    zIndex: "z-[7]",
+  },
+  {
+    name: "Ooviya",
+    role: "SEO & Content Marketing",
+    photo: "/assets/About-page/team/membars/Ooviya_2.png",
+    rotate: "rotate-2",
+    zIndex: "z-[8]",
+  },
 ];
 
 export function Leadership() {
   return (
-    <section className="w-full py-20 bg-[#030303] text-white relative">
-      <div className="max-w-site mx-auto w-full px-6 md:px-12 lg:px-20">
+    <section className="w-full py-20 bg-[#030303] text-white relative overflow-hidden" id="leadership">
+      {/* Ambient glow */}
+      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[radial-gradient(circle_at_top_right,rgba(220,38,38,0.05),transparent_70%)] blur-3xl pointer-events-none" />
 
-        {/* Intro Header */}
-        <Reveal className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-12 items-start mb-14">
-          <div>
-            <div className="flex items-center gap-2 mb-4">
-              <span className="h-[2px] w-6 bg-rose-600"></span>
-              <span className="text-[11px] font-semibold tracking-wider uppercase text-rose-500">
-                Our People
-              </span>
-            </div>
-            <h2 className="text-3xl md:text-5xl font-bold tracking-tight leading-tight text-white">
-              The minds behind <span className="font-bold block">every <span className="text-rose-500">breakthrough</span>.</span>
+      <div className="max-w-site mx-auto w-full px-6 md:px-12 lg:px-20 relative z-10">
+
+        {/* Section Header */}
+        <Reveal>
+          <div className="text-center max-w-2xl mx-auto mb-16">
+            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+              Leadership
+            </span>
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-4">
+              The minds behind every <span className="text-rose-500">breakthrough</span>
             </h2>
-            <p className="text-zinc-400 text-sm md:text-base mt-4 font-bold">
-              Our leadership team brings decades of combined experience across cloud architecture, AI engineering, DevOps, and enterprise security — drawn from the world's leading technology organisations.
+            <p className="text-zinc-400 text-base leading-relaxed">
+              Decades of combined experience across cloud, AI, DevOps, and enterprise engineering — drawn from the world's leading technology organisations.
             </p>
           </div>
+        </Reveal>
 
-          <div className="bg-zinc-950/20 border border-zinc-900 p-6 rounded-xl flex flex-col gap-4">
-            <span className="text-[10px] font-bold text-rose-500 uppercase tracking-widest block">
-              Team Footprint
-            </span>
-            <p className="text-zinc-400 text-xs md:text-sm leading-relaxed font-bold">
-              At Devopstrio, leadership isn't a title — it's a practice. Our senior team works alongside clients, rolls up its sleeves when it matters, and builds the culture of precision and ownership that defines every project we touch.
-            </p>
-            <div className="grid grid-cols-3 gap-2 border-t border-zinc-800 pt-4 mt-2">
-              <div>
-                <p className="text-sm font-bold text-white">200+</p>
-                <p className="text-[9px] text-zinc-500 font-semibold uppercase">Pros</p>
+        {/* ── Founder Card ── */}
+        <Reveal>
+          <div className="relative rounded-2xl overflow-hidden border border-zinc-800/50 bg-zinc-950/30 mb-16 group hover:border-zinc-700/60 transition-all duration-500">
+            <div className="grid grid-cols-1 lg:grid-cols-[360px_1fr]">
+
+              {/* Photo */}
+              <div className="relative min-h-[320px] lg:min-h-[420px] overflow-hidden bg-zinc-900">
+                <img
+                  src="/assets/About-page/leader/Founder.png"
+                  alt="Manikandan PS"
+                  className="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.02]"
+                />
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent to-zinc-950/70 pointer-events-none hidden lg:block" />
+                <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/80 to-transparent pointer-events-none lg:hidden" />
               </div>
-              <div>
-                <p className="text-sm font-bold text-white">50+</p>
-                <p className="text-[9px] text-zinc-500 font-semibold uppercase">Architects</p>
-              </div>
-              <div>
-                <p className="text-sm font-bold text-white">200+</p>
-                <p className="text-[9px] text-zinc-500 font-semibold uppercase">Certs</p>
+
+              {/* Content */}
+              <div className="flex flex-col justify-center p-8 md:p-10 lg:p-12 gap-6">
+
+                <div>
+                  <span className="text-[11px] font-bold uppercase tracking-[0.25em] text-rose-500 block mb-3">Founder & CEO</span>
+                  <h3 className="text-3xl md:text-4xl font-bold text-white tracking-tight mb-2">Manikandan PS</h3>
+                  <div className="flex items-center gap-1.5 text-zinc-500 text-sm">
+                    <MapPin size={12} />
+                    <span>London, United Kingdom</span>
+                  </div>
+                </div>
+
+                <p className="text-zinc-300 text-base md:text-lg leading-relaxed max-w-lg">
+                  A cloud visionary who turns complex infrastructure challenges into elegant, business-driven solutions — trusted by enterprises across three continents.
+                </p>
+
+                {/* Tags */}
+                <div className="flex flex-wrap gap-2">
+                  {founderTags.map(tag => (
+                    <span key={tag} className="px-3 py-1.5 rounded-full border border-zinc-800 bg-zinc-900/60 text-zinc-400 text-xs font-medium tracking-wide">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+
+                <blockquote className="border-l-2 border-rose-500/70 pl-4 text-zinc-400 text-sm italic leading-relaxed">
+                  &ldquo;I transform complex cloud challenges into secure, scalable, and business-focused solutions that drive measurable results.&rdquo;
+                </blockquote>
+
+                <a
+                  href="/contact"
+                  className="inline-flex items-center gap-2 text-sm font-semibold text-white hover:text-rose-400 transition-colors w-fit group/link"
+                >
+                  Connect with Manikandan
+                  <ArrowUpRight size={15} className="transition-transform duration-300 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5" />
+                </a>
+
               </div>
             </div>
           </div>
         </Reveal>
 
-        {/* Culture Subheading Note */}
-        <Reveal className="bg-zinc-950/20 border border-zinc-900 rounded-xl p-5 mb-12 flex flex-col sm:flex-row sm:items-center justify-between gap-4 max-w-4xl">
-          <div>
-            <span className="text-[10px] font-mono text-zinc-500 uppercase tracking-wider block mb-1">
-              Culture Note
-            </span>
-            <p className="text-sm md:text-base font-semibold text-zinc-200 italic">
-              "Built by engineers. Led by people who still write code."
-            </p>
+        {/* ── Our People ── */}
+        <Reveal>
+          <div className="relative rounded-3xl overflow-hidden border border-zinc-800/40 bg-zinc-950/30 p-8 md:p-12 lg:p-16">
+
+            {/* Dot grid texture */}
+            <div className="absolute inset-0 opacity-[0.03] pointer-events-none"
+              style={{ backgroundImage: "radial-gradient(circle, #fff 1px, transparent 1px)", backgroundSize: "24px 24px" }} />
+              
+            <div className="relative z-10 flex flex-col items-center">
+              
+              {/* Centered Heading */}
+              <div className="text-center max-w-xl mx-auto mb-16 relative z-10">
+               
+                <h3 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-4">
+                  Meet Our <span className="text-rose-500">Team</span>
+                </h3>
+                <p className="text-zinc-400 text-sm md:text-base leading-relaxed">
+                  A collision of different minds on a single mission — to build technology that leaves the world better than we found it.
+                </p>
+              </div>
+
+              {/* Photos container with Background Watermark */}
+              <div className="relative w-full z-10">
+                {/* Background watermark text "Our PEOPLE" */}
+                <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none select-none z-0">
+                  <span className="font-serif italic font-normal text-rose-500/5 text-[8vw] leading-none lowercase first-letter:uppercase mb-2">
+                    Our
+                  </span>
+                  <span className="font-black text-zinc-900/40 text-[15vw] leading-none tracking-tighter uppercase">
+                    PEOPLE
+                  </span>
+                </div>
+                
+                {/* Centered Photo Grid (4 columns, 2 rows for the 8 cards) */}
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto relative z-10">
+                  {teamMembers.map((member, idx) => (
+                    <motion.div
+                      key={member.name}
+                      className={`group relative p-3 pb-5 bg-white border border-zinc-200/80 shadow-[0_12px_24px_rgba(0,0,0,0.25)] rounded cursor-pointer ${member.rotate} origin-center transition-all duration-300`}
+                      initial={{ opacity: 0, y: 40 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.55, delay: idx * 0.07, ease: [0.22, 1, 0.36, 1] }}
+                      whileHover={{ y: -12, scale: 1.05, rotate: 0, zIndex: 50, boxShadow: "0 25px 50px -12px rgba(225,29,72,0.25)", transition: { duration: 0.3 } }}
+                    >
+                      {/* Number in corner */}
+                     
+
+                      <img
+                        src={member.photo}
+                        alt={member.name}
+                        className="w-full aspect-[3/4] object-cover object-top grayscale group-hover:grayscale-0 transition-all duration-500 rounded-sm"
+                      />
+                      
+                      <div className="mt-3 text-center">
+                        <p className="text-zinc-900 text-xs font-bold leading-tight">{member.name}</p>
+                        <p className="text-rose-600 text-[10px] leading-tight font-medium mt-0.5">{member.role}</p>
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
-          <p className="text-xs text-zinc-400 font-bold max-w-md sm:text-right">
-            Our leadership team stays close to the work. That's what makes the difference.
-          </p>
         </Reveal>
 
-        {/* Leaders Grid (3x2 Layout) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {keyLeaders.map((leader) => {
-            const initials = leader.name.charAt(0);
-            return (
-              <Reveal
-                key={leader.name}
-                className="p-6 rounded-xl border border-zinc-900 bg-zinc-950/20 hover:border-zinc-800 transition-all duration-300 relative group flex flex-col justify-between"
-              >
-                <div>
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-10 h-10 rounded-lg bg-rose-950/30 text-rose-500 font-bold flex items-center justify-center border border-rose-900/60">
-                      {initials}
-                    </div>
-                    <div>
-                      <h3 className="text-base font-bold text-white leading-tight">
-                        {leader.name}
-                      </h3>
-                      <span className="text-[10px] font-semibold text-zinc-500 uppercase tracking-wider">
-                        {leader.name === "Manikandan" ? "Lead Developer" : "Partner"}
-                      </span>
-                    </div>
-                  </div>
-                  <span className="block text-[11px] text-rose-500 font-bold uppercase tracking-wider mb-3">
-                    {leader.role}
-                  </span>
-                  <p className="text-xs text-zinc-400 leading-relaxed font-bold">
-                    {leader.expertise}
-                  </p>
-                </div>
-              </Reveal>
-            );
-          })}
-        </div>
 
       </div>
     </section>

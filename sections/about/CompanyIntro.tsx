@@ -14,7 +14,7 @@ export function CompanyIntro() {
       <div className="max-w-site mx-auto w-full px-6 md:px-12 lg:px-16 xl:px-20 relative z-10">
 
         {/* ========================================================================= */}
-        {/* SECTION 1: Philosophy & Curved Image Row (Microsoft Style About Intro)   */}
+        {/* Headline & Paragraph                                                      */}
         {/* ========================================================================= */}
         <div className="text-center max-w-4xl mx-auto mb-10 md:mb-12">
           <Reveal>
@@ -23,7 +23,7 @@ export function CompanyIntro() {
             </span>
           </Reveal>
           <Reveal delay={0.1}>
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight leading-tight text-white mb-4">
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-4">
               We build the intelligent <br />
               <span className="text-rose-500">digital foundations</span> that scale global innovation.
             </h2>
@@ -35,17 +35,41 @@ export function CompanyIntro() {
           </Reveal>
         </div>
 
-        {/* Team Group Image */}
+        {/* ========================================================================= */}
+        {/* Premium Redesigned Mockup Card                                           */}
+        {/* ========================================================================= */}
         <Reveal delay={0.3}>
-          <div className="max-w-5xl mx-auto mb-8 px-4">
-            <div className="relative overflow-hidden rounded-3xl border border-zinc-900 shadow-2xl shadow-rose-950/20 group">
+          <div className="max-w-4xl mx-auto rounded-3xl overflow-hidden shadow-[0_25px_50px_-12px_rgba(0,0,0,0.5)] border border-zinc-800 bg-[#f4f4f5] text-zinc-900 mb-12">
+            <div className="relative w-full overflow-hidden">
               <img
-                src="/assets/About-page/team/Group_image.png"
-                alt="Devopstrio Team"
-                className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-[1.02]"
+                src="/assets/About-page/team/image.png"
+                alt="Devopstrio Engineering Team"
+                className="w-full h-auto object-cover max-h-[350px]"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent pointer-events-none" />
             </div>
+            {/* <div className="p-6 md:p-8 lg:p-10">
+              <h3 className="text-center text-xl md:text-2xl lg:text-3xl font-bold text-zinc-900 mb-8 tracking-tight">
+                Our Global Engineering & Leadership Team
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 text-sm leading-relaxed text-zinc-600 font-medium">
+                <div>
+                  <p className="mb-4">
+                    Devopstrio was founded with a singular mission: to bridge the gap between complex cloud architectures and real-world business outcomes. Operating from our headquarters in London and global delivery centers, we bring together senior cloud architects, data scientists, and DevOps practitioners who thrive on solving complex infrastructure challenges.
+                  </p>
+                  <p>
+                    We do not believe in one-size-fits-all solutions. Instead, we build bespoke, secure, and highly scalable cloud platforms designed to align with strict compliance guidelines while empowering your developers to ship features with speed and complete confidence.
+                  </p>
+                </div>
+                <div>
+                  <p className="mb-4">
+                    By partnering with forward-thinking enterprises, we help modernize legacy systems, implement fully automated CI/CD pipelines, and embed security controls directly into the software lifecycle. Our co-investment ODC model ensures that we are fully aligned with your success, delivering measurable cost-optimization, velocity, and absolute reliability.
+                  </p>
+                  <p>
+                    From day-one architecture consulting to 24/7 continuous operations, we stand by our clients as their dedicated engineering partners.
+                  </p>
+                </div>
+              </div>
+            </div> */}
           </div>
         </Reveal>
 

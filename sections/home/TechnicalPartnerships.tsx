@@ -120,7 +120,7 @@ export function TechnicalPartnerships() {
               <span className="text-[11px] font-bold tracking-[0.25em] uppercase text-rose-500 block mb-4">
                 TECHNOLOGY ECOSYSTEM
               </span>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight leading-[1.12] text-white mb-6">
+              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-[1.12] text-white mb-6">
                 Strategic <span className="text-[#E11D48]">Technology</span> <span className="text-[#E11D48]">Partnerships</span> <br className="hidden md:block" />
                 The Foundation Behind Digital Success
               </h2>

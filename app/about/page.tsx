@@ -55,12 +55,12 @@ export default function AboutPage() {
         <div id="overview">
           <CompanyIntro />
         </div>
-        <SvgWaveLine variant="dashed" />
+        {/* <SvgWaveLine variant="dashed" /> */}
 
         <div id="mission">
           <MissionVision />
         </div>
-        <SvgWaveLine variant="particles" />
+        {/* <SvgWaveLine variant="particles" /> */}
 
         <div id="story">
           <OurStory />

@@ -95,7 +95,7 @@ export function HiringSection() {
                 CAREERS
               </span>
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight leading-tight mb-8">
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-8">
               Join our team of <span className="text-white font-medium bg-gradient-to-r from-red-600 via-rose-600 to-rose-500 bg-clip-text text-transparent">technical creators</span>.
             </h2>
             <p className="text-zinc-400 text-sm md:text-lg leading-relaxed font-bold max-w-md mb-8">

@@ -84,7 +84,7 @@ export function HeroSection() {
       ),
       primaryBtn: { text: "Explore Services", href: "/services" },
       secondaryBtn: { text: "Contact Us", href: "/contact" },
-      image: "/assets/Home-page/homehero/Ooviya R.svg"
+      image: "/assets/Home-page/homehero/Ooviya.R.svg"
     },
     {
       eyebrow: "Cloud & Infrastructure",
@@ -101,7 +101,7 @@ export function HeroSection() {
       ),
       primaryBtn: { text: "Explore Services", href: "/services" },
       secondaryBtn: { text: "Contact Us", href: "/contact" },
-      image: "/assets/Home-page/homehero/Punitha A.svg"
+      image: "/assets/Home-page/homehero/Punitha.A.svg"
     },
     {
       eyebrow: "AI & Data Innovation",
@@ -135,7 +135,7 @@ export function HeroSection() {
       ),
       primaryBtn: { text: "Explore Services", href: "/services" },
       secondaryBtn: { text: "Contact Us", href: "/contact" },
-      image: "/assets/Home-page/homehero/Subbiah Muthu.M.svg"
+      image: "/assets/Home-page/homehero/Subbiah_Muthu.M.svg"
     },
     {
       eyebrow: "Cybersecurity & Compliance",
@@ -152,7 +152,7 @@ export function HeroSection() {
       ),
       primaryBtn: { text: "Explore Services", href: "/services" },
       secondaryBtn: { text: "Contact Us", href: "/contact" },
-      image: "/assets/Home-page/homehero/Sudalairajan. A.svg"
+      image: "/assets/Home-page/homehero/Sudalairajan.A.svg"
     }
   ];
 

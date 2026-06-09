@@ -207,7 +207,7 @@ export function GlobalPresence() {
         <span className="inline-flex items-center gap-1.5 tracking-widest text-[10px] font-bold text-rose-500  px-3.5 py-1.5 rounded-full uppercase mb-4">
           Global Presence
         </span>
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-6">
+        <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-6">
           Our <span className="text-rose-500">Global Presence</span>
         </h2>
 

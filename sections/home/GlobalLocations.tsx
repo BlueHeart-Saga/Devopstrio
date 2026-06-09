@@ -57,7 +57,7 @@ export function GlobalLocations() {
             OUR LOCATIONS
           </span>
         </div>
-        <h2 className="text-3xl md:text-4xl font-bold tracking-tight leading-tight mb-4 text-white">
+        <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-4 text-white">
           Visit Our <span className="text-rose-500">Global Offices</span>.
         </h2>
         <p className="text-zinc-400 text-sm leading-relaxed font-bold max-w-2xl">

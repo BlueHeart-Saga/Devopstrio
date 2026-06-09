@@ -55,7 +55,7 @@ export function WorkflowModel() {
               Engagement Process
             </span>
           </div>
-          <h2 className="text-3xl md:text-5xl font-bold tracking-tight leading-tight text-white mb-4">
+          <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-4">
             A structured, repeatable <span className="font-bold block">framework for <span className="text-rose-500">digital execution</span>.</span>
           </h2>
           <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-bold">

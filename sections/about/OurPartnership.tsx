@@ -31,7 +31,7 @@ export function OurPartnership() {
               Our Ecosystem
             </span>
           </div>
-          <h2 className="text-3xl md:text-5xl font-bold tracking-tight leading-tight text-white mb-4">
+          <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-4">
             Authorised by the best. <span className="font-bold block"><span className="text-rose-500">Trusted to deliver</span> the rest.</span>
           </h2>
           <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-bold">

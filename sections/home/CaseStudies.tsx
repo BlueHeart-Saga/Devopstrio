@@ -1,10 +1,22 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { Reveal } from "@/components/ui/Reveal";
-import { Award, Zap, CheckCircle2, ArrowRight, ArrowUpRight, ArrowLeft } from "lucide-react";
+import { Zap, ArrowRight, ArrowLeft } from "lucide-react";
 
-const caseStudies = [
+interface CaseStudy {
+  tag: string;
+  title: string;
+  challenge: string;
+  strategy: string;
+  solution: string;
+  technologies: string[];
+  result: string;
+  image: string;
+}
+
+const caseStudies: CaseStudy[] = [
   {
     tag: "COMPOSABLE KYC & AML",
     title: "AI-Powered AML, Financial Crime, and Investigations Platform",
@@ -63,7 +75,7 @@ export function CaseStudies() {
   useEffect(() => {
     const timer = setInterval(() => {
       setActiveIndex((current) => (current + 1) % caseStudies.length);
-    }, 7000); // Auto-scroll every 7 seconds
+    }, 9000); // Smooth auto-scroll every 9 seconds
     return () => clearInterval(timer);
   }, []);
 
@@ -76,24 +88,28 @@ export function CaseStudies() {
   };
 
   return (
-    <section id="cases" className="w-full pt-20 md:pt-32 pb-10 md:pb-14 bg-[#030303] text-white relative">
+    <section id="cases" className="w-full pt-4 md:pt-8 pb-14 md:pb-20 bg-[#030303] text-white relative">
       <div className="max-w-site mx-auto w-full px-6 md:px-12 lg:px-16 xl:px-20 grid grid-cols-1 lg:grid-cols-[0.8fr_1.2fr] gap-16 lg:gap-20 items-start">
 
         {/* Left Side: Overview & Trusted Stats */}
         <div className="relative flex flex-col gap-10 lg:pr-6">
-          <Reveal>
-            <div className="mb-4">
-              <span className="text-[11px] font-bold tracking-[0.25em] uppercase text-rose-500 block">
+          <div>
+            <Reveal>
+              <span className="text-[11px] font-bold tracking-[0.25em] uppercase text-rose-500 mb-4 block">
                 CASE STUDIES
               </span>
-            </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight leading-[1.1] text-white mb-6">
-              Technology Investments That Deliver <span className="text-[#E11D48]">Business Value.</span>
-            </h2>
-            <p className="text-zinc-400 text-base md:text-lg leading-relaxed font-bold">
-              We partner with organizations to solve complex challenges through AI, cloud engineering, cybersecurity, DevOps, and software development—creating measurable outcomes that drive efficiency, innovation, and long-term growth.
-            </p>
-          </Reveal>
+            </Reveal>
+            <Reveal>
+              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-6">
+                Technology Investments That Deliver <span className="text-rose-500">Business Value</span>
+              </h2>
+            </Reveal>
+            <Reveal>
+              <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-medium">
+                We partner with organizations to solve complex challenges through AI, cloud engineering, cybersecurity, DevOps, and software development — creating measurable outcomes that drive efficiency, innovation, and long-term growth.
+              </p>
+            </Reveal>
+          </div>
 
           {/* High-Level Enterprise Metrics (UI Box) */}
           <Reveal className="relative border border-zinc-900 bg-zinc-950/40 p-6 md:p-8 rounded-xl overflow-hidden shadow-2xl mt-2">
@@ -131,97 +147,105 @@ export function CaseStudies() {
         </div>
 
         {/* Right Side: Case Studies Auto-Carousel */}
-        <div className="flex flex-col mt-10 lg:mt-0 w-full h-full">
-
-          <div className="relative w-full">
-            {caseStudies.map((study, idx) => (
-              <div
-                key={study.title}
-                className={`w-full transition-opacity duration-1000 ${idx === activeIndex ? "opacity-100 z-10 relative" : "opacity-0 z-0 absolute top-0 left-0 pointer-events-none"
-                  }`}
+        <div className="flex flex-col mt-10 lg:mt-0 w-full h-full relative">
+          <div className="w-full relative min-h-[580px] md:min-h-[520px] lg:min-h-[540px]">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={activeIndex}
+                initial={{ opacity: 0, y: 15, filter: "blur(4px)" }}
+                animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                exit={{ opacity: 0, y: -15, filter: "blur(4px)" }}
+                transition={{ duration: 0.4, ease: [0.25, 1, 0.5, 1] }}
+                className="w-full flex flex-col gap-6"
               >
-                <div className="flex flex-col gap-6">
-                  {/* Image UI with Tag and Title Inside */}
-                  <div className="w-full h-64 md:h-80 rounded-xl overflow-hidden mb-2 relative border border-zinc-800 flex flex-col justify-end p-6 md:p-8 shadow-2xl group cursor-pointer">
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/70 to-transparent z-10 pointer-events-none"></div>
-                    <img src={study.image} alt={study.title} className="absolute inset-0 w-full h-full object-cover opacity-50 mix-blend-screen transition-all duration-700 group-hover:scale-105 group-hover:opacity-80" />
+                {/* Image UI with Tag and Title Inside */}
+                <div className="w-full h-64 md:h-80 rounded-xl overflow-hidden mb-2 relative border border-zinc-800/80 flex flex-col justify-end p-6 md:p-8 shadow-2xl group cursor-pointer">
+                  {/* Subtle clean dark gradient overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#030303] via-[#030303]/60 to-transparent z-10 pointer-events-none" />
+                  
+                  <img 
+                    src={caseStudies[activeIndex].image} 
+                    alt={caseStudies[activeIndex].title} 
+                    className="absolute inset-0 w-full h-full object-cover opacity-60 transition-transform duration-[1.2s] group-hover:scale-103 group-hover:opacity-85 select-none" 
+                  />
 
-                    {/* Left/Right Navigation Arrows Inside Image */}
-                    <div className="absolute inset-0 flex items-center justify-between px-4 md:px-6 z-30 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                      <button
-                        onClick={(e) => { e.stopPropagation(); handlePrev(); }}
-                        className="w-12 h-12 rounded-full bg-black/40 backdrop-blur-md border border-white/10 flex items-center justify-center text-white hover:bg-rose-600 hover:border-rose-500 transition-all shadow-xl transform -translate-x-4 group-hover:translate-x-0"
-                      >
-                        <ArrowLeft size={20} />
-                      </button>
-                      <button
-                        onClick={(e) => { e.stopPropagation(); handleNext(); }}
-                        className="w-12 h-12 rounded-full bg-black/40 backdrop-blur-md border border-white/10 flex items-center justify-center text-white hover:bg-rose-600 hover:border-rose-500 transition-all shadow-xl transform translate-x-4 group-hover:translate-x-0"
-                      >
-                        <ArrowRight size={20} />
-                      </button>
-                    </div>
-
-                    <div className="relative z-20">
-                      <span className="text-xs font-mono tracking-widest text-rose-400 block mb-3 drop-shadow-md">
-                        {study.tag}
-                      </span>
-                      <h3 className="text-2xl md:text-3xl font-bold text-white leading-tight drop-shadow-lg">
-                        {study.title}
-                      </h3>
-                    </div>
+                  {/* Left/Right Navigation Arrows Inside Image */}
+                  <div className="absolute inset-0 flex items-center justify-between px-4 md:px-6 z-30 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <button
+                      onClick={(e) => { e.stopPropagation(); handlePrev(); }}
+                      className="w-10 h-10 rounded-full bg-black/60 backdrop-blur-md border border-white/10 flex items-center justify-center text-white hover:bg-rose-600 hover:border-rose-500 transition-all shadow-xl transform -translate-x-2 group-hover:translate-x-0"
+                    >
+                      <ArrowLeft size={18} />
+                    </button>
+                    <button
+                      onClick={(e) => { e.stopPropagation(); handleNext(); }}
+                      className="w-10 h-10 rounded-full bg-black/60 backdrop-blur-md border border-white/10 flex items-center justify-center text-white hover:bg-rose-600 hover:border-rose-500 transition-all shadow-xl transform translate-x-2 group-hover:translate-x-0"
+                    >
+                      <ArrowRight size={18} />
+                    </button>
                   </div>
 
-                  {/* Challenge -> Strategy -> Solution */}
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm text-zinc-455 border-y border-zinc-900/60 py-6">
-                    <div>
-                      <span className="block font-semibold text-zinc-300 mb-1">Challenge</span>
-                      <p className="leading-relaxed font-bold">{study.challenge}</p>
-                    </div>
-                    <div>
-                      <span className="block font-semibold text-zinc-300 mb-1">Strategy</span>
-                      <p className="leading-relaxed font-bold">{study.strategy}</p>
-                    </div>
-                    <div>
-                      <span className="block font-semibold text-zinc-300 mb-1">Solution</span>
-                      <p className="leading-relaxed font-bold">{study.solution}</p>
-                    </div>
+                  <div className="relative z-20">
+                    <span className="text-xs font-mono tracking-widest text-rose-400 block mb-3 drop-shadow-sm uppercase">
+                      {caseStudies[activeIndex].tag}
+                    </span>
+                    <h3 className="text-xl md:text-2xl font-bold text-white leading-snug drop-shadow-md">
+                      {caseStudies[activeIndex].title}
+                    </h3>
                   </div>
+                </div>
 
+                {/* Challenge -> Strategy -> Solution */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm border-y border-zinc-900/60 py-6">
+                  <div>
+                    <span className="block font-semibold text-zinc-300 mb-1.5 uppercase text-[10px] tracking-wider font-mono">Challenge</span>
+                    <p className="leading-relaxed text-zinc-400 font-medium">{caseStudies[activeIndex].challenge}</p>
+                  </div>
+                  <div>
+                    <span className="block font-semibold text-zinc-300 mb-1.5 uppercase text-[10px] tracking-wider font-mono">Strategy</span>
+                    <p className="leading-relaxed text-zinc-400 font-medium">{caseStudies[activeIndex].strategy}</p>
+                  </div>
+                  <div>
+                    <span className="block font-semibold text-zinc-300 mb-1.5 uppercase text-[10px] tracking-wider font-mono">Solution</span>
+                    <p className="leading-relaxed text-zinc-400 font-medium">{caseStudies[activeIndex].solution}</p>
+                  </div>
+                </div>
+
+                {/* Bottom details row: Technologies & Results */}
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mt-2">
                   {/* Technologies */}
                   <div className="flex flex-wrap gap-2 items-center">
-                    <span className="text-xs font-mono text-zinc-500 mr-2 uppercase">Core Tech:</span>
-                    {study.technologies.map((tech) => (
+                    <span className="text-[10px] font-mono text-zinc-500 mr-2 uppercase tracking-wider">Core Tech:</span>
+                    {caseStudies[activeIndex].technologies.map((tech) => (
                       <span
                         key={tech}
-                        className="px-2.5 py-0.5 bg-zinc-900 border border-zinc-850 rounded text-xs text-zinc-350"
+                        className="px-2.5 py-0.5 bg-zinc-900/60 border border-zinc-800/80 rounded text-xs text-zinc-300"
                       >
                         {tech}
                       </span>
                     ))}
                   </div>
 
-                  {/* Result Indicator */}
-                  <div className="inline-flex items-center gap-2 p-3 bg-rose-950/20 border border-rose-900/30 rounded-lg text-rose-500 text-sm font-semibold max-w-max mt-2">
-                    <Zap size={14} />
-                    <span>{study.result}</span>
+                  {/* Result Indicator Badge */}
+                  <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-rose-500/10 border border-rose-500/20 rounded-lg text-rose-400 text-xs font-bold uppercase tracking-wider max-w-max">
+                    <Zap size={12} className="animate-pulse" />
+                    <span>{caseStudies[activeIndex].result}</span>
                   </div>
                 </div>
-              </div>
-            ))}
+              </motion.div>
+            </AnimatePresence>
           </div>
 
           {/* Carousel Controls & View All Button */}
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6 pt-6 mt-8 border-t border-zinc-900/60 w-full">
-
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6 pt-6 mt-8 border-t border-zinc-900/60 w-full relative z-20">
             <div className="flex items-center gap-6">
               {/* Dots */}
-              <div className="flex gap-3">
+              <div className="flex gap-2.5">
                 {caseStudies.map((_, i) => (
                   <button
                     key={i}
                     onClick={() => setActiveIndex(i)}
-                    className={`h-2 rounded-full transition-all duration-500 ${i === activeIndex ? "w-8 bg-rose-500" : "w-2 bg-zinc-700 hover:bg-zinc-500"
+                    className={`h-1.5 rounded-full transition-all duration-500 ${i === activeIndex ? "w-6 bg-rose-500" : "w-1.5 bg-zinc-800 hover:bg-zinc-650"
                       }`}
                     aria-label={`Go to slide ${i + 1}`}
                   />
@@ -229,9 +253,13 @@ export function CaseStudies() {
               </div>
             </div>
 
-            {/* View All */}
-            <a href="/case-studies" className="group flex items-center gap-2 text-rose-500 hover:text-rose-400 font-bold transition-all text-sm uppercase tracking-wider">
-              Explore All Outcomes <ArrowRight size={16} className="transform group-hover:translate-x-1 transition-transform" />
+            {/* View All Button */}
+            <a 
+              href="/case-studies" 
+              className="group flex items-center gap-2 text-rose-500 hover:text-rose-400 font-bold transition-all text-xs uppercase tracking-wider"
+            >
+              Explore All Outcomes 
+              <ArrowRight size={14} className="transform group-hover:translate-x-1 transition-transform duration-300" />
             </a>
           </div>
 

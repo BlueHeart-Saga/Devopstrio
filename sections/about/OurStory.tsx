@@ -1,106 +1,268 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Reveal } from "@/components/ui/Reveal";
+import { motion, AnimatePresence } from "framer-motion";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 
-const timelineEvents = [
+const milestones = [
   {
     year: "2019",
-    title: "Origins in Bangalore, India",
-    desc: "Founded as a specialist DevOps team. First clients onboarded via Upwork. Rapid growth driven by exceptional delivery quality."
+    title: "Company Foundation",
+    description:
+      "Devopstrio began its journey in Bangalore, India, serving global clients through digital platforms and remote engineering services. This marked the foundation of our commitment to delivering reliable technology solutions worldwide."
   },
   {
     year: "2020",
-    title: "Multi-Cloud Expansion",
-    desc: "Expanded service offerings to Azure, AWS, and GCP migrations. First enterprise clients onboarded. ISO certifications initiated."
+    title: "London Headquarters Established",
+    description:
+      "During a period of global uncertainty, we expanded internationally by establishing our London headquarters. This milestone strengthened our presence in the United Kingdom and accelerated our focus on Cloud Transformation, Infrastructure Modernization, and Enterprise Technology Services."
   },
   {
     year: "2021",
-    title: "London Headquarters Established",
-    desc: "Opened UK head office at 128 City Road, London. Became a registered UK limited company. Microsoft Partner status achieved."
+    title: "Multi-Cloud & Industry Expansion",
+    description:
+      "We expanded our capabilities across Microsoft Azure, Amazon Web Services (AWS), and Google Cloud Platform (GCP). At the same time, we entered Healthcare and Financial Services, delivering secure, scalable, and industry-focused digital solutions."
+  },
+  {
+    year: "2022",
+    title: "Enterprise Delivery Growth",
+    description:
+      "Our engineering teams scaled significantly, enabling us to support larger enterprise engagements across cloud platforms, automation initiatives, application modernization programs, and managed services."
   },
   {
     year: "2023",
-    title: "AI-First Engineering Pivot",
-    desc: "Integrated Generative AI and ML into core DevOps delivery. Launched AI consulting practice. NHS and BP engagements delivered."
+    title: "Product Engineering & SaaS Innovation",
+    description:
+      "We launched industry-focused digital products and SaaS platforms for Healthcare, Banking, and Retail organizations. These solutions helped customers improve operational efficiency, customer experiences, and business performance."
   },
   {
     year: "2024",
-    title: "Global Delivery Network",
-    desc: "Opened Tennessee and Chennai offices. Grew to 525+ professionals. Delivered £56k/month savings for Asda via Azure Virtual Desktop."
+    title: "United States Expansion",
+    description:
+      "Expanding into the United States strengthened our global delivery network and enabled us to support growing demand for Artificial Intelligence, Cloud Engineering, Data Platforms, and Enterprise Transformation services."
   },
   {
     year: "2025",
-    title: "Top Cloud Employer Recognition",
-    desc: "Named Top Cloud Employer 2025. HashiCorp Specialized Partner. AWS Advanced Tier Partner. 100% carbon-neutral operations."
+    title: "Global Delivery & Strategic Partnerships",
+    description:
+      "We expanded our operational footprint with new offices and delivery centers while investing in specialized Data, AI, and Cloud capabilities. Strategic partnerships and enhanced delivery models enabled us to provide faster, scalable, and innovation-driven outcomes for clients worldwide."
   },
   {
     year: "2026",
-    title: "Eco-Cloud Excellence Award",
-    desc: "Won 2026 Eco-Cloud Excellence Award. 36,000+ trees planted globally. 565 tonnes CO₂ saved annually. 6 offices across 4+ countries."
+    title: "AI-Driven Global Evolution",
+    description:
+      "Today, Devopstrio continues to evolve as a global technology partner, helping enterprises accelerate innovation through Artificial Intelligence, Cloud Platforms, DevOps, Cybersecurity, Data Engineering, and Digital Product Development."
   }
 ];
 
 export function OurStory() {
+  const [activeIdx, setActiveIdx] = useState(2); // Start at 2021
+  const [isPaused, setIsPaused] = useState(false);
+  const [lastScrollTime, setLastScrollTime] = useState(0);
+
+  // Auto-play interval
+  useEffect(() => {
+    if (isPaused) return;
+    const timer = setInterval(() => {
+      setActiveIdx((prev) => (prev + 1) % milestones.length);
+    }, 6000);
+    return () => clearInterval(timer);
+  }, [isPaused]);
+
+  // Throttled mouse wheel scroll navigation
+  const handleWheel = (e: React.WheelEvent) => {
+    const now = Date.now();
+    if (now - lastScrollTime < 800) return; // Throttle scroll inputs to 800ms
+    setLastScrollTime(now);
+    
+    if (e.deltaY > 0) {
+      setActiveIdx((prev) => (prev + 1) % milestones.length);
+    } else {
+      setActiveIdx((prev) => (prev - 1 + milestones.length) % milestones.length);
+    }
+  };
+
+  const activeEvent = milestones[activeIdx];
+
   return (
-    <section className="w-full py-20 bg-black text-white relative">
-      <div className="max-w-site mx-auto w-full px-6 md:px-12 lg:px-20">
+    <section className="w-full py-24 bg-[#030303] text-white relative overflow-hidden" id="our-story">
+      {/* Background ambient mesh grid */}
+      <div className="absolute inset-0 opacity-[0.02] pointer-events-none"
+        style={{ backgroundImage: "radial-gradient(circle, #fff 1px, transparent 1px)", backgroundSize: "32px 32px" }} />
 
-        {/* Intro Split */}
-        <Reveal className="grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-12 items-start mb-16">
-          <div>
-            <div className="flex items-center gap-2 mb-4">
-              <span className="h-[2px] w-6 bg-rose-600"></span>
-              <span className="text-[11px] font-semibold tracking-wider uppercase text-rose-500">
-                Our Story
-              </span>
+      <div className="max-w-site mx-auto w-full px-6 md:px-12 lg:px-20 relative z-10">
+
+        {/* Redesigned Intro Card Container (BusinessOverview Style) */}
+        <Reveal className="mb-20">
+          <div className="group relative overflow-hidden rounded-[32px] border border-zinc-800/60 bg-zinc-950/30 backdrop-blur-xl">
+            
+            {/* Background Glow */}
+            <div className="absolute inset-0 pointer-events-none">
+              <div className="absolute -top-20 -left-20 w-96 h-96 bg-rose-600/10 blur-[120px]" />
+              <div className="absolute -bottom-20 -right-20 w-96 h-96 bg-blue-600/10 blur-[120px]" />
             </div>
-            <h2 className="text-3xl md:text-5xl font-bold tracking-tight leading-tight text-white">
-              From a Bangalore startup <span className="font-bold block">to a <span className="text-rose-500">global engineering force</span>.</span>
-            </h2>
-            <p className="text-zinc-400 text-sm md:text-base mt-6 leading-relaxed font-bold">
-              Founded in 2019 with a simple idea — that cloud infrastructure could be smarter, faster, and more human — Devopstrio has grown into a trusted partner for enterprises across four continents.
-            </p>
-          </div>
 
-          <div className="text-zinc-400 text-sm md:text-base leading-relaxed font-bold flex flex-col gap-6 lg:pl-6">
-            <p>
-              Devopstrio was born from a clear-eyed frustration: traditional cloud management was too slow for the AI era. Our founders — a team of cloud architects and ML engineers — saw that enterprises were drowning in complexity, held back by brittle infrastructure and disconnected toolchains.
-            </p>
-            <p>
-              We opened our first small office in Bangalore, India, in 2019 — reaching early clients through platforms like Upwork. The work was precise, the delivery exceptional, and the reputation grew quickly. What started as a specialist DevOps team became something far larger: a full-spectrum digital transformation partner.
-            </p>
-            <div className="p-5 bg-zinc-950/20 border border-zinc-900 rounded-lg border-l-4 border-l-rose-600 mt-2">
-              <span className="text-[10px] font-bold text-zinc-500 uppercase tracking-widest block mb-1">
-                Our Story in One Line
-              </span>
-              <p className="text-sm italic text-zinc-300 font-bold leading-relaxed">
-                "We didn't set out to build a company. We set out to fix a problem — and the problem turned out to be everywhere."
-              </p>
+            <div className="relative grid grid-cols-1 lg:grid-cols-12 gap-0">
+              
+              {/* LEFT CONTENT */}
+              <div className="lg:col-span-7 flex flex-col justify-center p-6 md:p-10 lg:p-12">
+                <span className="text-[11px] font-semibold tracking-[0.25em] uppercase text-rose-500 mb-6 block">
+                  Our Story
+                </span>
+                
+                <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold leading-tight tracking-tight mb-6">
+                  From a Bangalore startup
+                  <span className="block text-rose-500 mt-1">
+                    to a global engineering force.
+                  </span>
+                </h2>
+                
+                <div className="space-y-6 text-zinc-400 text-sm leading-relaxed font-bold">
+                  <p>
+                    Founded in 2019 with a simple idea — that cloud infrastructure could be smarter, faster, and more human — Devopstrio has grown into a trusted partner for enterprises across four continents.
+                  </p>
+                  <p>
+                    Devopstrio was born from a clear-eyed frustration: traditional cloud management was too slow for the AI era. Our founders — a team of cloud architects and ML engineers — saw that enterprises were drowning in complexity, held back by brittle infrastructure and disconnected toolchains.
+                  </p>
+                </div>
+              </div>
+
+              {/* RIGHT CONTENT */}
+              <div className="lg:col-span-5 p-6 md:p-10 lg:p-12 flex flex-col justify-between bg-zinc-950/20 border-t lg:border-t-0 lg:border-l border-zinc-900/60">
+                <div className="space-y-6 text-zinc-400 text-sm leading-relaxed font-bold">
+                  <p>
+                    We opened our first small office in Bangalore, India, in 2019 — reaching early clients through platforms like Upwork. The work was precise, the delivery exceptional, and the reputation grew quickly. What started as a specialist DevOps team became something far larger: a full-spectrum digital transformation partner.
+                  </p>
+                  
+                  <div className="p-5 bg-zinc-950/60 border border-zinc-800/80 rounded-none border-r-4 border-r-rose-600">
+                    <span className="text-[10px] font-bold text-rose-500 uppercase tracking-widest block mb-1">
+                      Our Story in One Line
+                    </span>
+                    <p className="text-sm italic text-zinc-200 font-bold leading-relaxed">
+                      "We didn't set out to build a company. We set out to fix a problem — and the problem turned out to be everywhere."
+                    </p>
+                  </div>
+                </div>
+              </div>
+
             </div>
           </div>
         </Reveal>
 
-        {/* Timeline Path Grid */}
-        <div className="relative border-l border-zinc-800 ml-4 md:ml-6 pl-8 md:pl-10 space-y-12">
-          {timelineEvents.map((event, idx) => (
-            <Reveal key={event.year} className="relative group">
-              {/* Chronological Indicator Dot */}
-              <span className="absolute -left-[41px] md:-left-[49px] top-1.5 w-5 h-5 rounded-full border-4 border-black bg-rose-600 shadow-sm flex items-center justify-center transition-transform group-hover:scale-110" />
+        {/* Circular Scroll Timeline Interface */}
+        <div 
+          className="grid grid-cols-1 lg:grid-cols-[1fr_1.5fr] gap-12 lg:gap-6 items-center min-h-[450px]"
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
+          onWheel={handleWheel}
+        >
+          {/* LEFT: Half-Circle Dial (Center is pinned to the left edge of this container) */}
+          <div className="relative w-full h-[320px] md:h-[480px] flex items-center overflow-hidden select-none">
+            {/* The actual circle positioned half off-screen left */}
+            <div className="absolute w-[360px] h-[360px] md:w-[500px] md:h-[500px] left-[-180px] md:left-[-250px] top-1/2 -translate-y-1/2 flex items-center justify-center shrink-0">
+              {/* Dashed circular timeline track */}
+              <svg className="absolute inset-0 w-full h-full text-zinc-800/40 pointer-events-none" viewBox="0 0 100 100">
+                <circle 
+                  cx="50" 
+                  cy="50" 
+                  r="40" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  strokeWidth="0.3" 
+                  strokeDasharray="1.5 2" 
+                />
+              </svg>
 
-              <div className="bg-zinc-950/20 border border-zinc-900 p-6 rounded-xl max-w-4xl hover:border-zinc-800 transition-colors">
-                <span className="text-lg font-bold text-rose-500 font-mono block mb-1">
-                  {event.year}
+              {/* Active pointer dot at peak of the curve */}
+              <div className="absolute top-1/2 right-[10%] -translate-y-1/2 w-2 h-2 rounded-full bg-rose-500 z-30 shadow-[0_0_12px_rgba(244,63,94,0.8)] animate-pulse" />
+
+              {/* Rotating dial years */}
+              {milestones.map((event, idx) => {
+                let diff = idx - activeIdx;
+                const half = milestones.length / 2;
+                if (diff > half) diff -= milestones.length;
+                if (diff <= -half) diff += milestones.length;
+
+                const theta = diff * 22; // 22 degrees gap
+                const rad = (theta * Math.PI) / 180;
+                const x = 50 + 40 * Math.cos(rad);
+                const y = 50 + 40 * Math.sin(rad);
+                
+                const isActive = idx === activeIdx;
+                const distance = Math.abs(diff);
+                const opacity = Math.max(0.12, 1 - distance * 0.28); // Dynamic opacity based on proximity
+
+                return (
+                  <button
+                    key={event.year}
+                    onClick={() => setActiveIdx(idx)}
+                    className={`absolute w-20 h-10 flex items-center justify-center rounded-full transition-all duration-700 focus:outline-none ${
+                      isActive
+                        ? "text-rose-500 scale-125 font-black z-20 text-xl md:text-2xl"
+                        : "text-zinc-600 hover:text-zinc-400 scale-95 font-medium z-10 text-xs md:text-sm"
+                    }`}
+                    style={{
+                      left: `${x}%`,
+                      top: `${y}%`,
+                      transform: `translate(-50%, -50%) rotate(${theta}deg)`,
+                      opacity: opacity
+                    }}
+                  >
+                    <span className="font-sans font-bold tracking-tight">{event.year}</span>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* RIGHT: Active Details Content */}
+          <div className="flex flex-col justify-center pl-0 lg:pl-10 min-h-[260px]">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={activeIdx}
+                initial={{ opacity: 0, x: 25 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -25 }}
+                transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+                className="flex flex-col"
+              >
+                {/* Large Year Display */}
+                <span className="text-[#ebd0be] text-7xl md:text-[8rem] xl:text-[10rem] font-black tracking-tighter leading-none mb-2 select-none font-sans block">
+                  {activeEvent.year}
                 </span>
-                <h3 className="text-base font-bold text-white mb-2">
-                  {event.title}
-                </h3>
-                <p className="text-xs md:text-sm text-zinc-400 leading-relaxed font-bold">
-                  {event.desc}
+                
+                {/* Event Title */}
+                <h4 className="text-2xl md:text-3xl xl:text-4xl font-extrabold text-white mb-4 tracking-tight leading-tight">
+                  {activeEvent.title}
+                </h4>
+                
+                {/* Event Description */}
+                <p className="text-zinc-400 text-sm md:text-base leading-relaxed max-w-xl font-medium">
+                  {activeEvent.description}
                 </p>
-              </div>
-            </Reveal>
-          ))}
+              </motion.div>
+            </AnimatePresence>
+
+            {/* Navigation Buttons */}
+            {/* <div className="flex items-center gap-3 mt-8 relative z-20">
+              <button
+                onClick={() => setActiveIdx((prev) => (prev - 1 + milestones.length) % milestones.length)}
+                className="w-10 h-10 rounded-full border border-zinc-800 bg-zinc-950/20 hover:border-rose-500 hover:text-rose-400 text-zinc-400 flex items-center justify-center transition-all duration-300"
+                aria-label="Previous story event"
+              >
+                <ArrowLeft size={16} />
+              </button>
+              <button
+                onClick={() => setActiveIdx((prev) => (prev + 1) % milestones.length)}
+                className="w-10 h-10 rounded-full border border-zinc-800 bg-zinc-950/20 hover:border-rose-500 hover:text-rose-400 text-zinc-400 flex items-center justify-center transition-all duration-300"
+                aria-label="Next story event"
+              >
+                <ArrowRight size={16} />
+              </button>
+            </div> */}
+          </div>
+
         </div>
 
       </div>

@@ -7,43 +7,59 @@ import { CheckCircle2 } from "lucide-react";
 const corePoints = [
   {
     num: "01",
-    title: "AI-Driven Innovation",
-    desc: "Leverage Artificial Intelligence, Generative AI, intelligent automation, and data-driven solutions to transform business operations and unlock new growth opportunities."
+    tabName: "Global Presence, Local Expertise",
+    title: "Global Presence, Local Expertise",
+    desc: "Access world-class engineering expertise locally with global delivery teams designed to scale seamlessly under flexible engagement models.",
+    gradient: "from-rose-950/40 via-purple-950/30 to-zinc-950/80"
   },
   {
     num: "02",
-    title: "Cloud-First Engineering",
-    desc: "Design, migrate, and optimize scalable cloud environments across AWS, Microsoft Azure, Google Cloud, and hybrid infrastructures."
+    tabName: "Cloud, Data & AI Excellence",
+    title: "Cloud, Data & AI Excellence",
+    desc: "Leverage intelligence-driven automation, GenAI, and cloud platforms (Azure, AWS, GCP) to unlock next-generation product engineering.",
+    gradient: "from-blue-950/40 via-indigo-950/30 to-zinc-950/80"
   },
   {
     num: "03",
-    title: "Infrastructure as Code Expertise",
-    desc: "Build reliable, repeatable, and automated infrastructure using Terraform, Kubernetes, GitOps, and modern platform engineering practices."
+    tabName: "Outcome-Driven Transformation",
+    title: "Outcome-Driven Transformation",
+    desc: "We align every project outcome with direct business value, performance milestones, cost-efficiency metrics, and operational goals.",
+    gradient: "from-teal-950/40 via-emerald-950/30 to-zinc-950/80"
   },
   {
     num: "04",
-    title: "Security by Design",
-    desc: "Integrate cybersecurity, compliance, monitoring, and governance into every stage of the technology lifecycle."
+    tabName: "End-to-End Technology Delivery",
+    title: "End-to-End Technology Delivery",
+    desc: "From conceptualization, design, architecture, implementation to managed operations and continuous delivery—all managed under one strategic partner.",
+    gradient: "from-emerald-950/40 via-zinc-900/30 to-zinc-950/80"
   },
   {
     num: "05",
-    title: "End-to-End Delivery",
-    desc: "From strategy and architecture to development, deployment, and ongoing support, we deliver complete technology solutions under one partner."
+    tabName: "Multi-Cloud Engineering Leadership",
+    title: "Multi-Cloud Engineering Leadership",
+    desc: "Our certified cloud experts build resilient infrastructures on AWS, Azure, Google Cloud, and complex hybrid environments.",
+    gradient: "from-indigo-950/40 via-pink-950/30 to-zinc-950/80"
   },
   {
     num: "06",
-    title: "Industry-Focused Solutions",
-    desc: "Experience delivering solutions across Financial Services, Healthcare, Logistics, Telecommunications, Retail, Manufacturing, and Public Sector organizations."
+    tabName: "Enterprise-Grade Security & Reliability",
+    title: "Enterprise-Grade Security & Reliability",
+    desc: "Zero-trust environments, compliance guardrails, automated threat-detection, and highly reliable Site Reliability Engineering built into every delivery.",
+    gradient: "from-violet-950/40 via-fuchsia-950/30 to-zinc-950/80"
   },
   {
     num: "07",
-    title: "Global Delivery & Business Value",
-    desc: "Access world-class technology expertise and flexible engagement models designed to deliver measurable outcomes, operational efficiency, and long-term business value."
+    tabName: "Scalable Global Delivery Model",
+    title: "Scalable Global Delivery Model",
+    desc: "Scale teams dynamically with elite developers, DevOps engineers, and cloud architects operating under our optimized global framework.",
+    gradient: "from-fuchsia-950/40 via-rose-950/30 to-zinc-950/80"
   },
   {
     num: "08",
-    title: "Business-First Approach",
-    desc: "We focus on measurable outcomes, operational efficiency, scalability, and long-term business value—not just technology implementation."
+    tabName: "Long-Term Strategic Partnership",
+    title: "Long-Term Strategic Partnership",
+    desc: "We focus on long-term relationships, strategic consulting, knowledge-sharing, and continuous value creation beyond transactional contracts.",
+    gradient: "from-rose-950/40 via-orange-950/30 to-zinc-950/80"
   }
 ];
 
@@ -61,132 +77,155 @@ const checklist = [
 export function WhyDevopstrio() {
   const [activeIndex, setActiveIndex] = useState(0);
 
+  // Auto-rotate tabs
   useEffect(() => {
-    const handleScroll = () => {
-      const elements = document.querySelectorAll("[data-why-point]");
-      let closestIdx = 0;
-      let minDistance = Infinity;
-
-      elements.forEach((el, idx) => {
-        const rect = el.getBoundingClientRect();
-        // Calculate the element's center relative to viewport
-        const elementCenter = rect.top + rect.height / 2;
-        // Compare to 30% of viewport height (higher up on screen to delay the change)
-        const distance = Math.abs(elementCenter - window.innerHeight * 0.30);
-        if (distance < minDistance) {
-          minDistance = distance;
-          closestIdx = idx;
-        }
-      });
-
-      setActiveIndex(closestIdx);
-    };
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    handleScroll(); // Initial run
-
-    return () => window.removeEventListener("scroll", handleScroll);
+    const timer = setInterval(() => {
+      setActiveIndex((prev) => (prev + 1) % corePoints.length);
+    }, 7000);
+    return () => clearInterval(timer);
   }, []);
 
-  const activeInd = corePoints[activeIndex] || corePoints[0];
+  const activePoint = corePoints[activeIndex];
 
   return (
-    <section className="w-full pt-10 md:pt-14 pb-20 md:pb-32 bg-[#030303] text-white relative">
-      <div className="max-w-site mx-auto w-full px-6 md:px-12 lg:px-16 xl:px-20 grid grid-cols-1 lg:grid-cols-[1.1fr_1fr] gap-16 lg:gap-24 items-start">
+    <section className="w-full py-24 bg-[#030303] text-white relative overflow-hidden">
+      {/* Background ambient mesh grid */}
+      <div className="absolute inset-0 opacity-[0.02] pointer-events-none"
+        style={{ backgroundImage: "radial-gradient(circle, #fff 1px, transparent 1px)", backgroundSize: "32px 32px" }} />
 
-        {/* Left Side: Sticky Image & Intro */}
-        <div className="lg:sticky lg:top-28 flex flex-col gap-8">
-          <div>
-            <div className="mb-4">
-              <span className="text-[11px] font-bold tracking-[0.25em] uppercase text-rose-500 block">
-                WHY Devopstrio
-              </span>
-            </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight leading-[1.1] text-white mb-6">
-              Engineering Innovation. <br className="hidden lg:block" /> Delivering <span className="text-[#E11D48]">Business Outcomes.</span>
+      <div className="max-w-site mx-auto w-full px-6 md:px-12 lg:px-20 relative z-10">
+        
+        {/* Top Header Block */}
+        <div className="max-w-3xl mx-auto text-center mb-16">
+          <Reveal>
+            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+              Why Devopstrio
+            </span>
+          </Reveal>
+          <Reveal delay={0.1}>
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-4">
+              Engineering Innovation. <span className="block md:inline">Delivering <span className="text-rose-500">Business Outcomes.</span></span>
             </h2>
-            <p className="text-zinc-400 text-base md:text-lg leading-relaxed font-bold">
+          </Reveal>
+          <Reveal delay={0.2}>
+            <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-bold max-w-2xl mx-auto">
               We combine deep technical expertise, industry knowledge, and modern engineering practices to help organizations innovate faster, operate securely, and scale confidently in an increasingly digital world.
             </p>
-          </div>
-
-          {/* Premium Dynamic Scroll Image (Sticky Box) */}
-          <div className="w-full aspect-[16/10] relative overflow-hidden min-h-[200px] sm:min-h-[280px] lg:min-h-[340px]">
-            {/* Ambient Background Glow behind the images */}
-            <div className="absolute inset-0 bg-gradient-to-tr from-rose-500/10 to-transparent blur-3xl pointer-events-none -z-10" />
-
-            {corePoints.map((point, idx) => (
-              <img
-                key={point.title}
-                src={idx === 7 ? "/assets/Home-page/why-choose/whychoose.png" : `/assets/Home-page/why-choose/${idx + 1}.png`}
-                alt={point.title}
-                className={`absolute inset-0 w-full h-full object-contain transition-all duration-700 ease-in-out ${activeIndex === idx
-                    ? "opacity-100 scale-100 translate-y-0"
-                    : "opacity-0 scale-95 translate-y-2 pointer-events-none"
-                  }`}
-              />
-            ))}
-          </div>
+          </Reveal>
         </div>
 
-        {/* Right Side: Core Value Props & Checklist */}
-        <div className="flex flex-col gap-16 mt-4 lg:mt-0">
-
-          {/* Core Points */}
-          <div className="flex flex-col gap-12 border-t border-zinc-900/40 pt-10 lg:pt-6">
+        {/* Interactive Showcase Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-12 lg:gap-20 items-start">
+          
+          {/* LEFT: Large Tab Switcher */}
+          <div className="flex flex-col gap-3 md:gap-4 select-none">
             {corePoints.map((point, idx) => {
-              const isActive = activeIndex === idx;
+              const isActive = idx === activeIndex;
               return (
-                <div
+                <button
                   key={point.title}
-                  data-why-point
-                  className={`pb-12 border-b border-zinc-900/60 last:border-b-0 last:pb-0 transition-all duration-500 ${isActive ? "opacity-100 translate-x-2" : "opacity-40 translate-x-0"
-                    }`}
+                  onClick={() => setActiveIndex(idx)}
+                  className="flex items-center gap-4 text-left group focus:outline-none py-1"
                 >
-                  <div>
-                    <h3 className={`text-xl md:text-2xl font-bold tracking-tight mb-3 transition-colors duration-300 ${isActive ? "text-white" : "text-zinc-500"
-                      }`}>
-                      {point.title}
-                    </h3>
-                    <p className={`text-sm md:text-base leading-relaxed font-bold transition-colors duration-300 ${isActive ? "text-zinc-300" : "text-zinc-600"
-                      }`}>
-                      {point.desc}
-                    </p>
-                  </div>
-                </div>
+                  {/* Left indicator vertical line */}
+                  <span className={`w-1 h-8 bg-rose-500 transition-all duration-300 origin-center ${
+                    isActive ? "opacity-100 scale-y-100 animate-pulse" : "opacity-0 scale-y-0"
+                  }`} />
+                  
+                  {/* Tab Name */}
+                  <span className={`text-lg md:text-xl xl:text-2xl font-bold tracking-tight transition-all duration-300 ${
+                    isActive 
+                      ? "text-white scale-[1.01] origin-left" 
+                      : "text-zinc-600 hover:text-zinc-400"
+                  }`}>
+                    {point.tabName}.
+                  </span>
+                </button>
               );
             })}
           </div>
 
-          {/* Alternative Premium Section - Checklist */}
-          <Reveal className="border border-zinc-800 bg-zinc-950/50 rounded-2xl p-8 md:p-10 shadow-2xl relative overflow-hidden">
-            {/* Ambient Background Glow */}
-            <div className="absolute -top-32 -right-32 w-96 h-96 bg-[radial-gradient(circle_at_center,rgba(225,29,72,0.05),transparent_70%)] blur-3xl pointer-events-none" />
+          {/* RIGHT: Visual Card & Description */}
+          <div className="flex flex-col lg:sticky lg:top-28">
+            
+            {/* Elegant visual card */}
+            <div className={`relative w-full aspect-[16/10] rounded-[32px] overflow-hidden border border-zinc-800/80 bg-gradient-to-br ${activePoint.gradient} p-8 flex flex-col justify-between shadow-[0_20px_40px_rgba(0,0,0,0.6)] mb-8 transition-all duration-700`}>
+              
+              {/* Subtle top-left indicator dot */}
+              <div className="w-1.5 h-1.5 rounded-full bg-white/60" />
 
-            <h3 className="text-2xl md:text-3xl font-light text-white mb-8 relative z-10">
+              {/* Sparkle star matrix grid */}
+              <div className="absolute right-8 top-1/2 -translate-y-1/2 grid grid-cols-5 gap-4 opacity-50 pointer-events-none">
+                {Array.from({ length: 25 }).map((_, i) => {
+                  // Highlight index values for dynamic pulsing glows
+                  const isSpecial = i === 12 || i === 18 || i === 7;
+                  return (
+                    <svg
+                      key={i}
+                      className={`w-3.5 h-3.5 transition-all duration-700 ${
+                        isSpecial ? "text-rose-500 scale-125 animate-pulse" : "text-white/10"
+                      }`}
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path d="M12 0l3 9 9 3-9 3-3 9-3-9-9-3 9-3z" />
+                    </svg>
+                  );
+                })}
+              </div>
+
+              {/* Giant bottom-left number */}
+              <span className="text-6xl md:text-7xl font-black text-white/80 leading-none select-none font-sans">
+                {activePoint.num}
+              </span>
+            </div>
+
+            {/* Active Content description */}
+            <div className="min-h-[140px] flex flex-col justify-start">
+              <h3 className="text-lg md:text-xl font-extrabold text-white mb-3 tracking-tight">
+                {activePoint.title}
+              </h3>
+              <p className="text-zinc-400 text-xs md:text-sm leading-relaxed font-bold max-w-lg">
+                {activePoint.desc}
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+
+        {/* Checklist & Closing Statement Block */}
+        {/*
+        <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-12 lg:gap-20 items-start pt-12 border-t border-zinc-900/60">
+          
+          <Reveal className="border border-zinc-850 bg-zinc-950/40 backdrop-blur-md rounded-3xl p-8 md:p-10 shadow-2xl relative overflow-hidden">
+            <div className="absolute -top-32 -right-32 w-96 h-96 bg-[radial-gradient(circle_at_center,rgba(225,29,72,0.03),transparent_70%)] blur-3xl pointer-events-none" />
+
+            <h3 className="text-xl md:text-2xl font-bold text-white mb-8 relative z-10">
               Why Organizations Choose <span className="font-bold text-rose-500">Devopstrio</span>
             </h3>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-6 gap-x-4 relative z-10">
               {checklist.map((item) => (
                 <div key={item} className="flex items-start gap-3">
-                  <CheckCircle2 size={18} className="text-rose-500 mt-1 flex-shrink-0" />
-                  <span className="text-zinc-300 font-bold text-sm md:text-base leading-snug">{item}</span>
+                  <CheckCircle2 size={16} className="text-rose-500 mt-1 flex-shrink-0" />
+                  <span className="text-zinc-350 font-bold text-sm leading-snug">{item}</span>
                 </div>
               ))}
             </div>
           </Reveal>
 
-          {/* Strong Closing Statement */}
-          <Reveal className="py-8 border-l-4 border-rose-600 pl-8 bg-gradient-to-r from-rose-950/20 to-transparent">
-            <p className="text-lg md:text-xl font-light leading-relaxed text-zinc-200">
+          <Reveal className="py-8 border-r-4 border-r-rose-600 pr-8 pl-4 bg-gradient-to-l from-rose-950/10 to-transparent flex items-center h-full">
+            <p className="text-base md:text-lg font-light leading-relaxed text-zinc-300">
               Devopstrio is more than a technology provider—we are a <span className="font-bold text-white">strategic partner</span> helping organizations build secure, scalable, and intelligent digital ecosystems for the future.
             </p>
           </Reveal>
 
         </div>
+        */}
 
       </div>
     </section>
   );
 }
+export { WhyDevopstrio as default };

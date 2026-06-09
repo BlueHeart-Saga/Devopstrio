@@ -56,7 +56,7 @@ export function WhyChoose() {
                 Why Devopstrio
               </span>
             </div>
-            <h2 className="text-3xl md:text-5xl font-bold tracking-tight leading-tight text-white">
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white">
               There are many options. <span className="font-bold block">Here's why <span className="text-rose-500">enterprises choose us</span>.</span>
             </h2>
           </div>

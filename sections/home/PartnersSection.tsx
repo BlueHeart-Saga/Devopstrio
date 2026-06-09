@@ -692,7 +692,7 @@ export function PartnersSection() {
               OUR CLIENTS & PARTNERS
             </span>
           </div>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-tight mb-4 text-white">
+          <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-4 text-white">
             Some of Our <span className="font-bold text-rose-500">Clients</span>
           </h2>
           <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-light max-w-2xl mx-auto">

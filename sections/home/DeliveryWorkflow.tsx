@@ -34,7 +34,7 @@ export function DeliveryWorkflow() {
             <span className="inline-flex items-center gap-1.5 tracking-widest text-[10px] font-bold text-rose-500 px-3.5 py-1.5 rounded-full uppercase mb-4">
               Client Success Lifecycle
             </span>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-6">
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-6">
               Our Proven <span className="text-rose-500">Delivery Framework</span>
             </h2>
           </div>

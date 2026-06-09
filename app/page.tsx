@@ -107,10 +107,7 @@ export default function Home() {
         <IndustriesSection />
       </div>
       <div id="innovation">
-        <div className="max-w-site mx-auto w-full px-6 md:px-12 lg:px-16 xl:px-20">
-          <WeImagine />
-          {/* <DeliveryWorkflow /> */}
-        </div>
+        <WeImagine />
         <OurProducts />
       </div>
       <div id="impact">
