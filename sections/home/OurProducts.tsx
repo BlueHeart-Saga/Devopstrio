@@ -84,15 +84,15 @@ export function OurProducts() {
             <Reveal>
               <div className="flex items-center gap-2 mb-6">
                 <span className="text-[11px] font-bold tracking-[0.25em] uppercase text-rose-500">
-                  OUR PRODUCTS
+                  PRODUCT INNOVATION
                 </span>
               </div>
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-light tracking-tight leading-[1.1] mb-6">
                 Next-gen SaaS <br className="hidden md:block" />
-                <span className="font-bold">Platforms</span>.
+                <span className="font-bold text-[#E11D48]">Platforms</span>.
               </h2>
               <p className="text-zinc-400 text-lg md:text-xl leading-relaxed mb-10 max-w-xl">
-                We build and operate a suite of vertical-specific SaaS products designed to transform industries. From PropTech to HealthTech, our platforms empower modern enterprises to scale seamlessly.
+                We build and operate a suite of vertical-specific SaaS products designed to transform industries. From PropTech to HealthTech, our platforms represent the cutting-edge of product innovation.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4">
@@ -108,7 +108,7 @@ export function OurProducts() {
           </div>
 
           {/* Right CardSwap */}
-          <div className="w-full lg:w-7/12 h-[650px] relative pointer-events-none lg:pointer-events-auto">
+          <div className="w-full lg:w-7/12 h-[650px] relative">
             {/* Gradient glow behind the cards */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-rose-500/10 rounded-full blur-[120px] pointer-events-none" />
 

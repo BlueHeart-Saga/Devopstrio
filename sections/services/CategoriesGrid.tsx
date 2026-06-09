@@ -7,67 +7,164 @@ import { Reveal } from "@/components/ui/Reveal";
 
 const serviceCategories = [
   {
-    id: "ai-data",
-    name: "AI & Data",
-    desc: "Cognitive workflows, LLM orchestration, model evaluations, and enterprise data warehousing.",
-    href: "/services/ai-data",
-    items: ["Artificial Intelligence", "AI Consulting Services", "AI Tools for Business Transformation", "Data Science", "Database Creation & Management"]
+    id: "ai-data-innovation",
+    name: "AI & Data Innovation",
+    desc: "Autonomous multi-agent workflows, custom LLM fine-tuning, machine learning engineering, and data governance.",
+    href: "/services/ai-data-innovation",
+    items: [
+      "Generative AI Solutions",
+      "AI Agents & Automation",
+      "Machine Learning Engineering",
+      "Data Engineering",
+      "Business Intelligence & Analytics",
+      "Predictive Analytics",
+      "Data Governance",
+      "MLOps & AI Operations"
+    ]
   },
   {
-    id: "app-development",
-    name: "Application Development",
-    desc: "Custom high-load web systems, responsive mobile applications, and headless ecommerce platforms.",
-    href: "/services/app-development",
-    items: ["Web Development", "Mobile App Development", "CMS & E-commerce", "PWA & SPA Development"]
+    id: "cloud-services",
+    name: "Cloud Services",
+    desc: "Zero-downtime multi-cloud migrations, landing zone construction, AWS/Azure/GCP scaling, and FinOps cost controls.",
+    href: "/services/cloud-services",
+    items: [
+      "Cloud Strategy & Consulting",
+      "Cloud Migration",
+      "Azure Services",
+      "AWS Services",
+      "Google Cloud Services",
+      "Cloud Security",
+      "Cloud Managed Services",
+      "FinOps & Cost Optimization"
+    ]
   },
   {
-    id: "cloud",
-    name: "Cloud",
-    desc: "Multi-cloud architecture, DevOps pipelines, Kubernetes orchestrations, and Infrastructure as Code.",
-    href: "/services/cloud",
-    items: ["DevOps Consulting", "Cloud Migration", "Infrastructure as Code", "Kubernetes & Containers"]
+    id: "devops-automation",
+    name: "DevOps & Automation",
+    desc: "Standardizing GitOps CI/CD pipelines, Platform Engineering, Infrastructure as Code, and 24/7 site reliability engineering.",
+    href: "/services/devops-automation",
+    items: [
+      "CI/CD Implementation",
+      "Platform Engineering",
+      "Infrastructure as Code",
+      "Kubernetes Services",
+      "DevSecOps",
+      "Site Reliability Engineering (SRE)",
+      "Release Automation",
+      "Monitoring & Observability"
+    ]
   },
   {
     id: "cybersecurity",
     name: "Cybersecurity",
-    desc: "Zero-Trust setups, SOC-2 readiness compliance audits, penetration testing, and 24/7 monitoring.",
+    desc: "Ethical hacking penetration tests, automated compliance posture audits, zero-trust setups, and 24/7 SIEM monitoring.",
     href: "/services/cybersecurity",
-    items: ["Penetration Testing", "Security Management", "Security Ops Center (SOC)"]
+    items: [
+      "Security Assessment",
+      "Vulnerability Management",
+      "Penetration Testing",
+      "Security Operations Center (SOC)",
+      "Identity & Access Management",
+      "Cloud Security",
+      "Compliance & Governance",
+      "Zero Trust Architecture"
+    ]
+  },
+  {
+    id: "software-development",
+    name: "Software Development",
+    desc: "Custom high-load web systems, responsive mobile applications, scalable SaaS portals, and decoupled microservices architectures.",
+    href: "/services/software-development",
+    items: [
+      "Enterprise Application Development",
+      "Web Application Development",
+      "Mobile Application Development",
+      "SaaS Product Development",
+      "API Development & Integration",
+      "Microservices Architecture",
+      "Product Engineering",
+      "Application Modernization"
+    ]
   },
   {
     id: "digital-transformation",
     name: "Digital Transformation",
-    desc: "Strategic modernization roadmaps, legacy architecture decoupling, and tech stack migrations.",
+    desc: "Modernizing legacy monolith setups, workflow process automation, intelligent decisions, and change management strategies.",
     href: "/services/digital-transformation",
-    items: ["IT Strategy Consulting", "Legacy Modernization"]
+    items: [
+      "Digital Strategy",
+      "Enterprise Modernization",
+      "Process Automation",
+      "Intelligent Workflows",
+      "Customer Experience Transformation",
+      "Legacy System Modernization",
+      "Business Transformation",
+      "Change Management"
+    ]
   },
   {
-    id: "software-engineering",
-    name: "Software Engineering",
-    desc: "Highly robust backend services, microservices design patterns, and high-performance API gateways.",
-    href: "/services/software-engineering",
-    items: ["Enterprise Systems", "API & Microservices"]
+    id: "data-engineering",
+    name: "Data Engineering",
+    desc: "High-throughput data platforms, Snowflake/BigQuery data warehouses, Apache Iceberg lakehouses, and ETL pipelines.",
+    href: "/services/data-engineering",
+    items: [
+      "Data Platform Development",
+      "Data Warehousing",
+      "Data Lakes & Lakehouse",
+      "ETL/ELT Pipelines",
+      "Real-Time Data Processing",
+      "Data Quality Management",
+      "Master Data Management",
+      "Big Data Engineering"
+    ]
   },
   {
-    id: "enterprise-applications",
-    name: "Enterprise Applications",
-    desc: "Seamless integration of ERP and CRM solutions like Salesforce, SAP, and custom dashboards.",
-    href: "/services/enterprise-applications",
-    items: ["ERP & CRM Integration"]
+    id: "managed-services",
+    name: "Managed Services",
+    desc: "Outsourced IT operations, managed DevOps, application L3 support, database administration, and SLA-backed on-call response.",
+    href: "/services/managed-services",
+    items: [
+      "Managed Cloud Services",
+      "Managed DevOps Services",
+      "Managed Security Services",
+      "Application Support",
+      "Infrastructure Management",
+      "Database Administration",
+      "Monitoring & Incident Management",
+      "24/7 Support Services"
+    ]
   },
   {
-    id: "staff-augmentation",
-    name: "Staff Augmentation",
-    desc: "Direct access to senior developers, database administrators, and security specialists to scale teams.",
-    href: "/services/staff-augmentation",
-    items: ["Dedicated Developers"]
+    id: "qa-testing",
+    name: "QA & Testing",
+    desc: "Automated end-to-end testing, API validation, performance load simulation, and shift-left quality engineering.",
+    href: "/services/qa-testing",
+    items: [
+      "Test Automation",
+      "Performance Testing",
+      "Security Testing",
+      "API Testing",
+      "Mobile Application Testing",
+      "Functional Testing",
+      "Continuous Testing",
+      "Quality Engineering"
+    ]
   },
   {
-    id: "support-services",
-    name: "Support Services",
-    desc: "Round-the-clock site reliability monitoring, database backups, disaster recovery, and support SLAs.",
-    href: "/services/support-services",
-    items: ["24/7 Platform SRE Support"]
+    id: "it-consulting",
+    name: "IT Consulting",
+    desc: "Enterprise architecture design, cloud adoption models, cybersecurity strategies, and comprehensive technology assessments.",
+    href: "/services/it-consulting",
+    items: [
+      "Technology Consulting",
+      "Enterprise Architecture",
+      "Cloud Consulting",
+      "AI Consulting",
+      "Cybersecurity Consulting",
+      "Digital Transformation Consulting",
+      "IT Strategy & Roadmap",
+      "Technology Assessment"
+    ]
   }
 ];
 

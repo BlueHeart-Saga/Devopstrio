@@ -12,20 +12,35 @@ import { WorkflowModel } from "@/sections/about/WorkflowModel";
 import { MetricsStats } from "@/sections/about/MetricsStats";
 import { Achievements } from "@/sections/about/Achievements";
 import { AboutCTA } from "@/sections/about/AboutCTA";
+import { GlobalLocations } from "@/sections/home/GlobalLocations";
 import { Reveal } from "@/components/ui/Reveal";
+import { SectionNavbar } from "@/components/ui/SectionNavbar";
+
+const aboutSections = [
+  { id: "overview", label: "Overview" },
+  { id: "mission", label: "Mission & Vision" },
+  { id: "story", label: "Our Story" },
+  { id: "leadership", label: "Leadership" },
+  { id: "services", label: "Services" },
+  { id: "why-choose", label: "Why Us" },
+  { id: "partnership", label: "Partnership" },
+  { id: "workflow", label: "Workflow" },
+  { id: "metrics", label: "Metrics" },
+  { id: "achievements", label: "Achievements" }
+];
 
 export default function AboutPage() {
   return (
     <main className="min-h-screen bg-black text-white pt-16 font-sans">
-      
+
       {/* New Cinematic Hero Intro */}
       <section className="pt-16 pb-4 md:pb-8 text-center relative bg-[#030303]">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(220,38,38,0.06),transparent_50%)] pointer-events-none" />
         <Reveal>
-          <h1 className="text-4xl md:text-6xl font-light tracking-tight mb-4 text-white">
-            About <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-rose-500">Devopstrio</span>
+          <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-4 text-white">
+            About <span className="text-rose-500">Devopstrio</span>
           </h1>
-          <p className="text-zinc-400 font-medium max-w-xl mx-auto">
+          <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-bold max-w-xl mx-auto">
             Discover the principles, mission, and engineering culture that drives our global technology solutions.
           </p>
         </Reveal>
@@ -34,38 +49,64 @@ export default function AboutPage() {
       {/* Existing About Components with High-Level Coded SVG Wave Lines */}
       <div id="about-components-start" className="flex flex-col bg-black">
         <AboutHero />
+        <SectionNavbar sections={aboutSections} />
         <SvgWaveLine variant="smooth" />
-        
-        <CompanyIntro />
+
+        <div id="overview">
+          <CompanyIntro />
+        </div>
         <SvgWaveLine variant="dashed" />
-        
-        <MissionVision />
+
+        <div id="mission">
+          <MissionVision />
+        </div>
         <SvgWaveLine variant="particles" />
-        
-        <OurStory />
+
+        <div id="story">
+          <OurStory />
+        </div>
         <SvgWaveLine variant="grid" />
-        
-        <Leadership />
+
+        <div id="leadership">
+          <Leadership />
+        </div>
         <SvgWaveLine variant="liquid" />
-        
-        <AboutServices />
+
+        <div id="services">
+          <AboutServices />
+        </div>
         <SvgWaveLine variant="smooth" />
-        
-        <WhyChoose />
+
+        <div id="why-choose">
+          <WhyChoose />
+        </div>
         <SvgWaveLine variant="dashed" />
-        
-        <OurPartnership />
+
+        <div id="partnership">
+          <OurPartnership />
+        </div>
         <SvgWaveLine variant="particles" />
-        
-        <WorkflowModel />
+
+        <div id="workflow">
+          <WorkflowModel />
+        </div>
         <SvgWaveLine variant="grid" />
-        
-        <MetricsStats />
+
+        <div id="metrics">
+          <MetricsStats />
+        </div>
         <SvgWaveLine variant="liquid" />
-        
-        <Achievements />
+
+        <div id="achievements">
+          <Achievements />
+        </div>
         <SvgWaveLine variant="smooth" />
-        
+
+        <div className="max-w-site mx-auto w-full px-6 md:px-12 lg:px-16 xl:px-20 pb-20">
+          <GlobalLocations />
+        </div>
+        <SvgWaveLine variant="liquid" />
+
         <AboutCTA />
       </div>
     </main>
@@ -90,18 +131,18 @@ function SvgWaveLine({ variant }: { variant: "smooth" | "dashed" | "particles" |
       </linearGradient>
       {/* Grid specific fading gradient */}
       <linearGradient id="grid-fade" x1="0" y1="0" x2="0" y2="100" gradientUnits="userSpaceOnUse">
-         <stop stopColor="#e11d48" stopOpacity="0.2" />
-         <stop offset="1" stopColor="#e11d48" stopOpacity="0" />
+        <stop stopColor="#e11d48" stopOpacity="0.2" />
+        <stop offset="1" stopColor="#e11d48" stopOpacity="0" />
       </linearGradient>
     </defs>
   );
 
   return (
     <div className="w-full h-16 md:h-24 relative bg-transparent flex items-center justify-center overflow-hidden -my-8 md:-my-12 z-10 pointer-events-none">
-      <svg 
-        viewBox="0 0 1440 96" 
-        fill="none" 
-        xmlns="http://www.w3.org/2000/svg" 
+      <svg
+        viewBox="0 0 1440 96"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
         className="w-full h-full"
         preserveAspectRatio="none"
       >

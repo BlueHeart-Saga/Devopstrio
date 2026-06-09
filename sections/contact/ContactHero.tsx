@@ -11,11 +11,11 @@ export function ContactHero() {
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(244,63,94,0.03),transparent_70%)] pointer-events-none" />
 
       {/* Absolute Right-Aligned Contact Illustration (matching the About page design style) */}
-      <div className="absolute right-0 bottom-0 w-[70%] md:w-[45%] lg:w-[32%] h-[90%] pointer-events-none z-0 opacity-40 hidden md:block">
+      <div className="absolute right-0 bottom-0 w-[70%] md:w-[45%] lg:w-[32%] h-[90%] pointer-events-none z-0 hidden md:block">
         <img
           src="/assets/herocard/contactpage.png"
           alt="Global Contact Network"
-          className="w-full h-full object-contain object-bottom filter grayscale contrast-125 brightness-90"
+          className="w-full h-full object-contain object-bottom"
         />
       </div>
 

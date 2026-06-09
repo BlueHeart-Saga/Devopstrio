@@ -57,7 +57,7 @@ export function WhyChoose() {
               </span>
             </div>
             <h2 className="text-3xl md:text-5xl font-bold tracking-tight leading-tight text-white">
-              There are many options. <span className="font-bold block">Here's why enterprises choose us.</span>
+              There are many options. <span className="font-bold block">Here's why <span className="text-rose-500">enterprises choose us</span>.</span>
             </h2>
           </div>
           <div className="text-zinc-400 text-base md:text-lg leading-relaxed font-bold">
@@ -70,7 +70,7 @@ export function WhyChoose() {
         {/* Reasons Grid (2 columns) */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {reasons.map((item) => (
-            <Reveal 
+            <Reveal
               key={item.num}
               className="bg-zinc-950/20 border border-zinc-900 p-8 rounded-xl flex flex-col justify-between hover:border-zinc-800 transition-colors"
             >
@@ -85,7 +85,7 @@ export function WhyChoose() {
                   {item.desc}
                 </p>
               </div>
-              
+
               <div className="p-3 bg-emerald-950/20 border border-emerald-900/60 rounded text-emerald-400 text-[10px] md:text-[11px] font-semibold">
                 {item.badge}
               </div>

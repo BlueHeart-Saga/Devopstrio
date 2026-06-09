@@ -56,13 +56,13 @@ export function OurStory() {
               </span>
             </div>
             <h2 className="text-3xl md:text-5xl font-bold tracking-tight leading-tight text-white">
-              From a Bangalore startup <span className="font-bold block">to a global engineering force.</span>
+              From a Bangalore startup <span className="font-bold block">to a <span className="text-rose-500">global engineering force</span>.</span>
             </h2>
             <p className="text-zinc-400 text-sm md:text-base mt-6 leading-relaxed font-bold">
               Founded in 2019 with a simple idea — that cloud infrastructure could be smarter, faster, and more human — Devopstrio has grown into a trusted partner for enterprises across four continents.
             </p>
           </div>
-          
+
           <div className="text-zinc-400 text-sm md:text-base leading-relaxed font-bold flex flex-col gap-6 lg:pl-6">
             <p>
               Devopstrio was born from a clear-eyed frustration: traditional cloud management was too slow for the AI era. Our founders — a team of cloud architects and ML engineers — saw that enterprises were drowning in complexity, held back by brittle infrastructure and disconnected toolchains.
@@ -87,7 +87,7 @@ export function OurStory() {
             <Reveal key={event.year} className="relative group">
               {/* Chronological Indicator Dot */}
               <span className="absolute -left-[41px] md:-left-[49px] top-1.5 w-5 h-5 rounded-full border-4 border-black bg-rose-600 shadow-sm flex items-center justify-center transition-transform group-hover:scale-110" />
-              
+
               <div className="bg-zinc-950/20 border border-zinc-900 p-6 rounded-xl max-w-4xl hover:border-zinc-800 transition-colors">
                 <span className="text-lg font-bold text-rose-500 font-mono block mb-1">
                   {event.year}

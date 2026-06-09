@@ -15,12 +15,12 @@ const deliveryProcess = [
 ];
 
 const nodeColors = [
-  "text-lime-500 border-lime-500 shadow-lime-500/20",
-  "text-emerald-500 border-emerald-500 shadow-emerald-500/20",
-  "text-cyan-500 border-cyan-500 shadow-cyan-500/20",
-  "text-blue-500 border-blue-500 shadow-blue-500/20",
-  "text-indigo-500 border-indigo-500 shadow-indigo-500/20",
-  "text-violet-500 border-violet-500 shadow-violet-500/20",
+  "text-rose-500 border-rose-500 shadow-rose-500/20",
+  "text-rose-500 border-rose-500 shadow-rose-500/20",
+  "text-rose-500 border-rose-500 shadow-rose-500/20",
+  "text-rose-500 border-rose-500 shadow-rose-500/20",
+  "text-rose-500 border-rose-500 shadow-rose-500/20",
+  "text-rose-500 border-rose-500 shadow-rose-500/20",
   "text-rose-500 border-rose-500 shadow-rose-500/20",
 ];
 
@@ -31,12 +31,12 @@ export function DeliveryWorkflow() {
         
         <Reveal>
           <div className="mb-16 text-center">
-             <span className="text-xs font-bold tracking-[0.25em] uppercase text-rose-500 block mb-3">
-               CLIENT SUCCESS LIFECYCLE
-             </span>
-             <h3 className="text-2xl md:text-4xl font-light text-white tracking-tight">
-               Our Proven Delivery <span className="font-bold">Framework</span>
-             </h3>
+            <span className="inline-flex items-center gap-1.5 tracking-widest text-[10px] font-bold text-rose-500 px-3.5 py-1.5 rounded-full uppercase mb-4">
+              Client Success Lifecycle
+            </span>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-6">
+              Our Proven <span className="text-rose-500">Delivery Framework</span>
+            </h2>
           </div>
         </Reveal>
 

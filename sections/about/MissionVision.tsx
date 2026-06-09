@@ -8,7 +8,7 @@ export function MissionVision() {
   return (
     <section className="w-full py-20 bg-[#030303] text-white relative">
       <div className="max-w-site mx-auto w-full px-6 md:px-12 lg:px-20">
-        
+
         {/* Header Block */}
         <Reveal className="mb-16">
           <div className="flex items-center gap-2 mb-4">
@@ -18,7 +18,7 @@ export function MissionVision() {
             </span>
           </div>
           <h2 className="text-3xl md:text-5xl font-bold tracking-tight leading-tight text-white">
-            Guided by a clear purpose. <span className="font-bold block">Driven by a bold vision.</span>
+            Guided by a <span className="text-rose-500">clear purpose</span>. <span className="font-bold block">Driven by a <span className="text-rose-500">bold vision</span>.</span>
           </h2>
           <p className="text-zinc-400 text-sm md:text-base max-w-2xl mt-4 font-bold">
             Everything we build, every decision we make, and every partnership we form is anchored in two deeply held beliefs about what technology should do for people.
@@ -27,7 +27,7 @@ export function MissionVision() {
 
         {/* Content Split: Left Quotes, Right Mission/Vision Cards */}
         <div className="grid grid-cols-1 lg:grid-cols-[0.8fr_1.2fr] gap-12 pt-4">
-          
+
           {/* Left Column: Quotes/Core Beliefs */}
           <Reveal className="flex flex-col gap-6">
             <div className="p-6 bg-zinc-950/20 border border-zinc-900 rounded-xl border-l-4 border-l-rose-600">
@@ -38,7 +38,7 @@ export function MissionVision() {
                 "Technology should be an enabler, not a hurdle. We bridge the gap between human ambition and technical excellence."
               </p>
             </div>
-            
+
             <div className="p-6 bg-zinc-950/20 border border-zinc-900 rounded-xl border-l-4 border-l-rose-600">
               <span className="text-[10px] font-bold text-rose-500 uppercase tracking-widest block mb-2">
                 Our Promise
@@ -51,7 +51,7 @@ export function MissionVision() {
 
           {/* Right Column: Mission and Vision Cards */}
           <Reveal className="flex flex-col gap-8">
-            
+
             {/* Card 1: Mission */}
             <div className="bg-zinc-950/20 border border-zinc-900 p-8 rounded-xl relative hover:border-zinc-800 transition-colors">
               <div className="absolute top-8 right-8 text-rose-500 bg-rose-950/30 p-2.5 rounded-lg">

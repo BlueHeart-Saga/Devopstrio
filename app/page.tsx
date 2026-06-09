@@ -2,12 +2,14 @@
 
 import { useEffect } from "react";
 import { HeroSection } from "@/sections/home/HeroSection";
+import { TrustBanner } from "@/sections/home/TrustBanner";
 import { ImperativesBanner } from "@/sections/home/ImperativesBanner";
 import { BusinessOverview } from "@/sections/home/BusinessOverview";
-// import { Testimonials } from "@/sections/home/Testimonials";
+import { Testimonials } from "@/sections/home/Testimonials";
 import { CoreServices } from "@/sections/home/CoreServices";
 import { IndustriesSection } from "@/sections/home/IndustriesSection";
 import { CaseStudies } from "@/sections/home/CaseStudies";
+import { ImpactSection } from "@/sections/home/ImpactSection";
 import { WeImagine } from "@/sections/home/WeImagine";
 import { WhyDevopstrio } from "@/sections/home/WhyDevOpsTrio";
 import { OurAdvantage } from "@/sections/home/OurAdvantage";
@@ -15,7 +17,7 @@ import { TechnicalPartnerships } from "@/sections/home/TechnicalPartnerships";
 import { DeliveryWorkflow } from "@/sections/home/DeliveryWorkflow";
 import { OurProducts } from "@/sections/home/OurProducts";
 import { PartnersSection } from "@/sections/home/PartnersSection";
-import { GlobalLocations } from "@/sections/home/GlobalLocations";
+import { GlobalPresence } from "@/sections/home/GlobalPresence";
 import { Insights } from "@/sections/home/Insights";
 import { HiringSection } from "@/sections/home/HiringSection";
 import { CTA } from "@/sections/home/CTA";
@@ -26,6 +28,7 @@ const homeSections = [
   { id: "overview", label: "Overview" },
   { id: "capabilities", label: "Capabilities" },
   { id: "industries", label: "Industries" },
+  { id: "innovation", label: "Innovation" },
   { id: "impact", label: "Impact" },
   { id: "why-Devopstrio", label: "Why Devopstrio" },
   { id: "partnerships", label: "Partnerships" },
@@ -91,10 +94,11 @@ export default function Home() {
   return (
     <main>
       <HeroSection />
+      <TrustBanner />
       <SectionNavbar sections={homeSections} />
       <div id="overview">
         <BusinessOverview />
-        {/* <Testimonials /> */}
+        
       </div>
       <div id="capabilities">
         <CoreServices />
@@ -102,11 +106,17 @@ export default function Home() {
       <div id="industries">
         <IndustriesSection />
       </div>
-      <div id="impact">
+      <div id="innovation">
         <div className="max-w-site mx-auto w-full px-6 md:px-12 lg:px-16 xl:px-20">
           <WeImagine />
+          {/* <DeliveryWorkflow /> */}
         </div>
+        <OurProducts />
+      </div>
+      <div id="impact">
+        {/* <ImpactSection /> */}
         <CaseStudies />
+        {/* <Testimonials /> */}
       </div>
       <div id="why-Devopstrio">
         <WhyDevopstrio />
@@ -114,12 +124,11 @@ export default function Home() {
       </div>
       <div id="partnerships">
         <TechnicalPartnerships />
-        <OurProducts />
         <PartnersSection />
       </div>
       <div id="networks">
         <div className="max-w-site mx-auto w-full px-6 md:px-12 lg:px-16 xl:px-20">
-          <GlobalLocations />
+          <GlobalPresence />
         </div>
       </div>
       <div id="insights">

@@ -58,7 +58,7 @@ export function GlobalLocations() {
           </span>
         </div>
         <h2 className="text-3xl md:text-4xl font-bold tracking-tight leading-tight mb-4 text-white">
-          Visit Our <span className="font-bold bg-gradient-to-r from-red-600 via-rose-600 to-rose-500 bg-clip-text text-transparent">Global Offices</span>.
+          Visit Our <span className="text-rose-500">Global Offices</span>.
         </h2>
         <p className="text-zinc-400 text-sm leading-relaxed font-bold max-w-2xl">
           We&apos;d love to meet you in person. Our global locations and engineering hubs are always open for client visits, workshops, and architecture reviews. Coffee&apos;s on us — always.

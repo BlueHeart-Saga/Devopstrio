@@ -2,6 +2,7 @@ import { ArrowLeft, CheckCircle2, ChevronRight, PhoneCall } from "lucide-react";
 import Link from "next/link";
 
 interface CapabilityItem {
+  id?: string;
   title: string;
   description: string;
   items?: string[];
@@ -84,7 +85,7 @@ export function ServicePageLayout({
         {/* Capability Sections */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
           {capabilities.map((section, idx) => (
-            <div key={idx} className="bg-zinc-950/20 border border-zinc-900/60 rounded-2xl p-6 md:p-8 hover:border-zinc-800/80 transition-all duration-300 relative group">
+            <div key={idx} id={section.id} className="bg-zinc-950/20 border border-zinc-900/60 rounded-2xl p-6 md:p-8 hover:border-zinc-800/80 transition-all duration-300 relative group scroll-mt-28">
               <div className="absolute inset-0 bg-gradient-to-br from-rose-500/0 to-rose-500/[0.02] opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl pointer-events-none" />
               <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2 border-b border-zinc-900 pb-3">
                 <span className="w-1.5 h-1.5 rounded-full bg-rose-500" />

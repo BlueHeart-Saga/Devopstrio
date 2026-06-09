@@ -4,35 +4,35 @@ import React from "react";
 import { Reveal } from "@/components/ui/Reveal";
 
 const keyLeaders = [
-  { 
-    name: "Manikandan", 
-    role: "Cloud Data & AI Lead", 
-    expertise: "Specialises in scalable AI model deployment and cloud data engineering across multi-cloud environments." 
+  {
+    name: "Manikandan",
+    role: "Cloud Data & AI Lead",
+    expertise: "Specialises in scalable AI model deployment and cloud data engineering across multi-cloud environments."
   },
-  { 
-    name: "Kishore", 
-    role: "Azure Hybrid Cloud & AI Security", 
-    expertise: "Expert in zero-trust architecture, Azure security posture management, and hybrid identity." 
+  {
+    name: "Kishore",
+    role: "Azure Hybrid Cloud & AI Security",
+    expertise: "Expert in zero-trust architecture, Azure security posture management, and hybrid identity."
   },
-  { 
-    name: "Mareeswaran", 
-    role: "SAP on Azure & Cloud-Native Product", 
-    expertise: "Leads enterprise SAP migrations and cloud-native product architecture on Azure." 
+  {
+    name: "Mareeswaran",
+    role: "SAP on Azure & Cloud-Native Product",
+    expertise: "Leads enterprise SAP migrations and cloud-native product architecture on Azure."
   },
-  { 
-    name: "Subbiah Muthu", 
-    role: "Business Applications & Deep Learning", 
-    expertise: "Deep learning specialist driving AI-powered enterprise application modernisation." 
+  {
+    name: "Subbiah Muthu",
+    role: "Business Applications & Deep Learning",
+    expertise: "Deep learning specialist driving AI-powered enterprise application modernisation."
   },
-  { 
-    name: "Punitha", 
-    role: "App Modernisation & Migration", 
-    expertise: "Guides legacy-to-cloud migration programmes and application re-architecture strategies." 
+  {
+    name: "Punitha",
+    role: "App Modernisation & Migration",
+    expertise: "Guides legacy-to-cloud migration programmes and application re-architecture strategies."
   },
-  { 
-    name: "Sermaraja", 
-    role: "Analytics & AI / UI Design", 
-    expertise: "Bridges data science and human-centred design to create intelligent, usable enterprise platforms." 
+  {
+    name: "Sermaraja",
+    role: "Analytics & AI / UI Design",
+    expertise: "Bridges data science and human-centred design to create intelligent, usable enterprise platforms."
   }
 ];
 
@@ -40,7 +40,7 @@ export function Leadership() {
   return (
     <section className="w-full py-20 bg-[#030303] text-white relative">
       <div className="max-w-site mx-auto w-full px-6 md:px-12 lg:px-20">
-        
+
         {/* Intro Header */}
         <Reveal className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-12 items-start mb-14">
           <div>
@@ -51,18 +51,18 @@ export function Leadership() {
               </span>
             </div>
             <h2 className="text-3xl md:text-5xl font-bold tracking-tight leading-tight text-white">
-              The minds behind <span className="font-bold block">every breakthrough.</span>
+              The minds behind <span className="font-bold block">every <span className="text-rose-500">breakthrough</span>.</span>
             </h2>
             <p className="text-zinc-400 text-sm md:text-base mt-4 font-bold">
               Our leadership team brings decades of combined experience across cloud architecture, AI engineering, DevOps, and enterprise security — drawn from the world's leading technology organisations.
             </p>
           </div>
-          
+
           <div className="bg-zinc-950/20 border border-zinc-900 p-6 rounded-xl flex flex-col gap-4">
             <span className="text-[10px] font-bold text-rose-500 uppercase tracking-widest block">
               Team Footprint
             </span>
-            <p className="text-zinc-450 text-xs md:text-sm leading-relaxed font-bold">
+            <p className="text-zinc-400 text-xs md:text-sm leading-relaxed font-bold">
               At Devopstrio, leadership isn't a title — it's a practice. Our senior team works alongside clients, rolls up its sleeves when it matters, and builds the culture of precision and ownership that defines every project we touch.
             </p>
             <div className="grid grid-cols-3 gap-2 border-t border-zinc-800 pt-4 mt-2">
@@ -102,7 +102,7 @@ export function Leadership() {
           {keyLeaders.map((leader) => {
             const initials = leader.name.charAt(0);
             return (
-              <Reveal 
+              <Reveal
                 key={leader.name}
                 className="p-6 rounded-xl border border-zinc-900 bg-zinc-950/20 hover:border-zinc-800 transition-all duration-300 relative group flex flex-col justify-between"
               >
@@ -123,7 +123,7 @@ export function Leadership() {
                   <span className="block text-[11px] text-rose-500 font-bold uppercase tracking-wider mb-3">
                     {leader.role}
                   </span>
-                  <p className="text-xs text-zinc-450 leading-relaxed font-bold">
+                  <p className="text-xs text-zinc-400 leading-relaxed font-bold">
                     {leader.expertise}
                   </p>
                 </div>

@@ -174,7 +174,6 @@ export function IndustriesSection() {
             {industries.map((ind, idx) => {
               const offset = wrappedOffset(idx, active);
               const isCenter = offset === 0;
-              const { Icon } = ind;
 
               return (
                 <div
@@ -195,39 +194,6 @@ export function IndustriesSection() {
                       transform: isCenter ? "scale(1.05)" : "scale(1)",
                     }}
                   />
-                  {/* Gradient Dark Scrim */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/35 to-black/20" />
-                  
-                  {/* Accent Color Tint overlay */}
-                  <div
-                    className="absolute inset-0 mix-blend-multiply pointer-events-none transition-opacity duration-700"
-                    style={{ background: ind.accent, opacity: isCenter ? 0.25 : 0.4 }}
-                  />
-
-
-                  {/* Card Bottom: Content overlay */}
-                  <div className="absolute inset-x-0 bottom-0 p-6 z-10 flex flex-col gap-2">
-                    <div className="flex items-center gap-3">
-                      <div
-                        className="w-9 h-9 rounded-lg flex items-center justify-center backdrop-blur-sm"
-                        style={{
-                          background: `${ind.accent}33`,
-                          border: `1px solid ${ind.accent}55`,
-                        }}
-                      >
-                        <Icon size={18} style={{ color: ind.accent }} />
-                      </div>
-                      <h3 className="text-base sm:text-lg font-bold tracking-tight text-white">
-                        {ind.name}
-                      </h3>
-                    </div>
-
-                    {isCenter && (
-                      <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed line-clamp-2 mt-1 animate-fadeIn duration-500">
-                        {ind.desc}
-                      </p>
-                    )}
-                  </div>
 
                   {/* Right Edge Indicator Dot for active card connection */}
                   {isCenter && (

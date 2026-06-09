@@ -28,27 +28,27 @@ export function Footer() {
           <div className="flex flex-col gap-10">
             {/* AI Tools Links (No bold heading in image) */}
             <ul className="flex flex-col gap-4 text-sm text-zinc-400">
-              <li><Link href="/services/ai" className="hover:text-white transition-colors">AI Tools</Link></li>
-              <li><Link href="/services/ai" className="hover:text-white transition-colors">Artificial Intelligence</Link></li>
-              <li><Link href="/services/ai" className="hover:text-white transition-colors">Data Science</Link></li>
-              <li><Link href="/services/ai" className="hover:text-white transition-colors">Database Creation</Link></li>
-              <li><Link href="/services/ai" className="hover:text-white transition-colors">Hire AI Experts</Link></li>
+              <li><Link href="/services/ai-data-innovation" className="hover:text-white transition-colors">AI & Data Innovation</Link></li>
+              <li><Link href="/services/ai-data-innovation#generative-ai-solutions" className="hover:text-white transition-colors">Generative AI Solutions</Link></li>
+              <li><Link href="/services/data-engineering" className="hover:text-white transition-colors">Data Engineering</Link></li>
+              <li><Link href="/services/data-engineering#data-platform-development" className="hover:text-white transition-colors">Database Management</Link></li>
+              <li><Link href="/services/ai-data-innovation" className="hover:text-white transition-colors">Hire AI Engineers</Link></li>
             </ul>
             {/* Cloud & Security Block */}
             <div>
               <h4 className="text-[15px] font-bold text-white mb-6 tracking-wide">Cloud & Security</h4>
               <ul className="flex flex-col gap-4 text-sm text-zinc-400">
-                <li><Link href="/services/devops" className="hover:text-white transition-colors">CI/CD Pipeline</Link></li>
-                <li><Link href="/services/cloud" className="hover:text-white transition-colors">Cloud Migration</Link></li>
-                <li><Link href="/services/devops" className="hover:text-white transition-colors">DevOps Consulting</Link></li>
-                <li><Link href="/services/devops" className="hover:text-white transition-colors">Infrastructure as Code</Link></li>
-                <li><Link href="/services/devops" className="hover:text-white transition-colors">Kubernetes Solutions</Link></li>
-                <li><Link href="/services/cloud" className="hover:text-white transition-colors">Digital Sovereignty</Link></li>
-                <li><Link href="/services/cloud" className="hover:text-white transition-colors">Digital Transformation</Link></li>
-                <li><Link href="/services/cloud" className="hover:text-white transition-colors">IT Consulting</Link></li>
-                <li><Link href="/services/cybersecurity" className="hover:text-white transition-colors">Penetration Testing</Link></li>
+                <li><Link href="/services/devops-automation#cicd-implementation" className="hover:text-white transition-colors">CI/CD Pipeline</Link></li>
+                <li><Link href="/services/cloud-services#cloud-migration" className="hover:text-white transition-colors">Cloud Migration</Link></li>
+                <li><Link href="/services/devops-automation" className="hover:text-white transition-colors">DevOps Consulting</Link></li>
+                <li><Link href="/services/devops-automation#infrastructure-as-code" className="hover:text-white transition-colors">Infrastructure as Code</Link></li>
+                <li><Link href="/services/devops-automation#kubernetes-services" className="hover:text-white transition-colors">Kubernetes Solutions</Link></li>
+                <li><Link href="/services/cloud-services#cloud-security" className="hover:text-white transition-colors">Cloud Security</Link></li>
+                <li><Link href="/services/digital-transformation" className="hover:text-white transition-colors">Digital Transformation</Link></li>
+                <li><Link href="/services/it-consulting" className="hover:text-white transition-colors">IT Strategy & Consulting</Link></li>
+                <li><Link href="/services/cybersecurity#penetration-testing" className="hover:text-white transition-colors">Penetration Testing</Link></li>
                 <li><Link href="/services/cybersecurity" className="hover:text-white transition-colors">Security Management</Link></li>
-                <li><Link href="/services/cybersecurity" className="hover:text-white transition-colors">Security Ops Center</Link></li>
+                <li><Link href="/services/cybersecurity#soc" className="hover:text-white transition-colors">Security Ops Center (SOC)</Link></li>
               </ul>
             </div>
           </div>
@@ -68,11 +68,11 @@ export function Footer() {
             <div>
               <h4 className="text-[15px] font-bold text-white mb-6 tracking-wide">Applications</h4>
               <ul className="flex flex-col gap-4 text-sm text-zinc-400">
-                <li><Link href="/services/software-development" className="hover:text-white transition-colors">CMS Web Development</Link></li>
-                <li><Link href="/services/software-development" className="hover:text-white transition-colors">Cross-platform Dev</Link></li>
-                <li><Link href="/services/software-development" className="hover:text-white transition-colors">Mobile Development</Link></li>
-                <li><Link href="/services/software-development" className="hover:text-white transition-colors">PWA Development</Link></li>
-                <li><Link href="/services/software-development" className="hover:text-white transition-colors">Web Development</Link></li>
+                <li><Link href="/services/software-development" className="hover:text-white transition-colors">Enterprise Systems</Link></li>
+                <li><Link href="/services/software-development#mobile-application-development" className="hover:text-white transition-colors">Mobile App Development</Link></li>
+                <li><Link href="/services/software-development#saas-product-development" className="hover:text-white transition-colors">SaaS Product Development</Link></li>
+                <li><Link href="/services/software-development#web-application-development" className="hover:text-white transition-colors">Web Application Development</Link></li>
+                <li><Link href="/services/software-development#api-development-integration" className="hover:text-white transition-colors">API & Microservices</Link></li>
               </ul>
             </div>
           </div>

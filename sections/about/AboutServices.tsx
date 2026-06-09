@@ -46,7 +46,7 @@ export function AboutServices() {
   return (
     <section className="w-full py-20 bg-black text-white relative">
       <div className="max-w-site mx-auto w-full px-6 md:px-12 lg:px-20">
-        
+
         {/* Header Block */}
         <Reveal className="max-w-3xl mb-16">
           <div className="flex items-center gap-2 mb-4">
@@ -56,7 +56,7 @@ export function AboutServices() {
             </span>
           </div>
           <h2 className="text-3xl md:text-5xl font-bold tracking-tight leading-tight text-white mb-4">
-            Every service we offer <span className="font-bold block">exists to solve a real problem.</span>
+            Every service we offer <span className="font-bold block">exists to <span className="text-rose-500">solve a real problem</span>.</span>
           </h2>
           <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-bold">
             We don't sell technology for its own sake. Every capability we've built — from cloud migration to generative AI — exists because an enterprise needed it solved, and we delivered.
@@ -66,8 +66,8 @@ export function AboutServices() {
         {/* Services Card Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((item) => (
-            <Reveal 
-              key={item.name} 
+            <Reveal
+              key={item.name}
               className="flex flex-col justify-between border border-zinc-900 bg-zinc-950/20 p-8 rounded-xl hover:border-zinc-800 transition-all duration-300"
             >
               <div>
@@ -77,11 +77,11 @@ export function AboutServices() {
                   {item.desc}
                 </p>
               </div>
-              
+
               <div className="flex flex-wrap gap-2 pt-4 border-t border-zinc-800">
                 {item.tags.map((tag) => (
-                  <span 
-                    key={tag} 
+                  <span
+                    key={tag}
                     className="text-[10px] md:text-[11px] px-2.5 py-1 bg-zinc-900 text-zinc-300 rounded font-medium border border-zinc-800"
                   >
                     {tag}

@@ -66,17 +66,17 @@ export function WeImagine() {
       <div className="mb-16 max-w-4xl">
         <Reveal>
           <span className="text-[11px] font-bold tracking-[0.25em] uppercase text-rose-500 mb-5 block">
-            OUR SOLUTION CAPABILITIES
+            OUR INNOVATIONS
           </span>
         </Reveal>
         <Reveal>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight leading-[1.1] mb-6 text-white">
-            How we <span className="text-[#E11D48]">deliver impact.</span>
+            How we engineer <span className="text-[#E11D48]">innovation.</span>
           </h2>
         </Reveal>
         <Reveal>
           <p className="text-zinc-400 text-lg md:text-xl font-bold leading-relaxed max-w-3xl">
-            We engineer, automate, and optimize digital solutions that accelerate business growth and simplify core operations.
+            We design, build, and optimize bleeding-edge digital solutions that turn visionary ideas into enterprise-grade realities.
           </p>
         </Reveal>
       </div>

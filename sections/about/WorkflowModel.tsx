@@ -46,7 +46,7 @@ export function WorkflowModel() {
   return (
     <section className="w-full py-20 bg-black text-white relative">
       <div className="max-w-site mx-auto w-full px-6 md:px-12 lg:px-20">
-        
+
         {/* Header Block */}
         <Reveal className="max-w-3xl mb-16">
           <div className="flex items-center gap-2 mb-4">
@@ -56,7 +56,7 @@ export function WorkflowModel() {
             </span>
           </div>
           <h2 className="text-3xl md:text-5xl font-bold tracking-tight leading-tight text-white mb-4">
-            A structured, repeatable <span className="font-bold block">framework for digital execution.</span>
+            A structured, repeatable <span className="font-bold block">framework for <span className="text-rose-500">digital execution</span>.</span>
           </h2>
           <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-bold">
             We operate through a 6-phase engineering lifecycle that guarantees alignment between target architecture, deployment security, and long-term operation scalability.
@@ -66,7 +66,7 @@ export function WorkflowModel() {
         {/* 3x2 Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {workflowPhases.map((item) => (
-            <Reveal 
+            <Reveal
               key={item.phase}
               className="bg-zinc-950/20 border border-zinc-900 p-6 rounded-xl flex flex-col justify-between hover:border-zinc-800 transition-colors shadow-sm"
             >
@@ -81,7 +81,7 @@ export function WorkflowModel() {
                   {item.desc}
                 </p>
               </div>
-              
+
               <div className="pt-4 border-t border-zinc-800 flex flex-col gap-1.5">
                 <span className="text-[9px] font-bold text-zinc-500 uppercase tracking-wider block">
                   KEY DELIVERABLE

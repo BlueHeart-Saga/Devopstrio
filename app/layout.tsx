@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import CustomCursor from "@/components/CustomCursor";
+import ClickSpark from "@/components/ui/ClickSpark";
 
 export const metadata: Metadata = {
   title: "Devopstrio | Enterprise AI, Cloud and Product Engineering",
@@ -17,9 +19,18 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body>
-        <Navbar />
-        {children}
-        <Footer />
+        <CustomCursor />
+        <ClickSpark
+          sparkColor="#ff2d55"
+          sparkSize={12}
+          sparkRadius={20}
+          sparkCount={8}
+          duration={500}
+        >
+          <Navbar />
+          {children}
+          <Footer />
+        </ClickSpark>
       </body>
     </html>
   );

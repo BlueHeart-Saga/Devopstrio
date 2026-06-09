@@ -110,6 +110,7 @@ const CardSwap: React.FC<CardSwapProps> = ({
   const tlRef = useRef<gsap.core.Timeline | null>(null);
   const intervalRef = useRef<number>(0);
   const container = useRef<HTMLDivElement>(null);
+  const isHoveringRef = useRef(false);
 
   const swap = useCallback(() => {
     // Prevent double animating if a swap is already active
@@ -176,8 +177,9 @@ const CardSwap: React.FC<CardSwapProps> = ({
 
   const resetInterval = useCallback(() => {
     if (intervalRef.current) window.clearInterval(intervalRef.current);
+    if (pauseOnHover && isHoveringRef.current) return;
     intervalRef.current = window.setInterval(swap, delay);
-  }, [swap, delay]);
+  }, [swap, delay, pauseOnHover]);
 
   useEffect(() => {
     const total = refs.length;
@@ -192,10 +194,12 @@ const CardSwap: React.FC<CardSwapProps> = ({
     if (pauseOnHover) {
       const node = container.current!;
       const pause = () => {
+        isHoveringRef.current = true;
         tlRef.current?.pause();
         clearInterval(intervalRef.current);
       };
       const resume = () => {
+        isHoveringRef.current = false;
         tlRef.current?.play();
         intervalRef.current = window.setInterval(swap, delay);
       };

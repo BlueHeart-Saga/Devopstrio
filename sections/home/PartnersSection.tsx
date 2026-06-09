@@ -648,140 +648,158 @@ const categories = [
 ];
 
 export function PartnersSection() {
-  const [selectedCategory, setSelectedCategory] = useState<string>("Cloud & Infrastructure");
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      const currentIndex = categories.findIndex((c) => c.name === selectedCategory);
-      const nextIndex = (currentIndex + 1) % categories.length;
-      setSelectedCategory(categories[nextIndex].name);
-    }, 8000); // 8 seconds cycle time for reading detailed cards
-
-    return () => clearTimeout(timer);
-  }, [selectedCategory]);
-
-  const currentCategoryObj = categories.find(c => c.name === selectedCategory) || categories[0];
-  const activePartners = partners.filter(p => currentCategoryObj.partners.includes(p.name));
+  const row1 = partners.slice(0, 14);
+  const row2 = partners.slice(14, 28);
+  const row3 = partners.slice(28);
 
   return (
-    <section className="w-full py-20 bg-[#030303] text-white border-t border-zinc-900/50 relative overflow-hidden" id="partners">
+    <section className="w-full py-24 bg-[#030303] text-white border-t border-zinc-900/50 relative overflow-hidden" id="partners">
+      {/* Global CSS for seamless marquee */}
+      <style dangerouslySetInnerHTML={{ __html: `
+        @keyframes marqueeLeft {
+          0% { transform: translate3d(0, 0, 0); }
+          100% { transform: translate3d(-50%, 0, 0); }
+        }
+        @keyframes marqueeRight {
+          0% { transform: translate3d(-50%, 0, 0); }
+          100% { transform: translate3d(0, 0, 0); }
+        }
+        .animate-marquee-left-1 {
+          animation: marqueeLeft 48s linear infinite;
+          will-change: transform;
+        }
+        .animate-marquee-right-2 {
+          animation: marqueeRight 54s linear infinite;
+          will-change: transform;
+        }
+        .animate-marquee-left-3 {
+          animation: marqueeLeft 42s linear infinite;
+          will-change: transform;
+        }
+        .animate-marquee-left-1:hover,
+        .animate-marquee-right-2:hover,
+        .animate-marquee-left-3:hover {
+          animation-play-state: paused;
+        }
+      `}} />
+
       <div className="max-w-site mx-auto w-full px-6 md:px-12 lg:px-16 xl:px-20 relative z-10">
         
         {/* Header */}
-        <Reveal className="max-w-3xl mb-12">
-          <div className="flex items-center gap-2 mb-4">
+        <Reveal className="max-w-3xl mb-16 text-center mx-auto">
+          <div className="flex items-center justify-center gap-2 mb-4">
             <span className="text-[10px] font-semibold tracking-[0.2em] uppercase text-rose-500">
               OUR CLIENTS & PARTNERS
             </span>
           </div>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-tight mb-4 text-white">
-            Trusted by <span className="font-bold text-rose-500">Leading Brands</span> Worldwide.
+            Some of Our <span className="font-bold text-rose-500">Clients</span>
           </h2>
-          <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-light max-w-2xl">
-            We collaborate with ambitious start-ups, public sector services, and Fortune 500 enterprises to engineer robust cloud ecosystems and scalable software runtimes.
+          <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-light max-w-2xl mx-auto">
+            The following are just a few of our regular clients and strategic partners worldwide.
           </p>
         </Reveal>
+      </div>
 
-        {/* Tabbed grid layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-10 mt-8 items-start">
-          
-          {/* Left Side: Category Buttons */}
-          <div className="flex flex-col gap-3">
-            {categories.map((cat) => {
-              const isActive = selectedCategory === cat.name;
-              return (
-                <button
-                  key={cat.id}
-                  onClick={() => setSelectedCategory(cat.name)}
-                  className={`w-full text-left p-5 rounded-2xl border transition-all duration-300 flex flex-col gap-1.5 ${
-                    isActive
-                      ? "border-rose-500/30 bg-rose-500/5 text-white shadow-[0_4px_20px_rgba(225,29,72,0.05)]"
-                      : "border-zinc-900 bg-[#060608]/50 text-zinc-400 hover:text-white hover:border-zinc-800 hover:bg-[#08080a]"
-                  }`}
-                >
-                  <span className="font-bold text-xs sm:text-sm tracking-tight">{cat.name}</span>
-                  <span className="text-[10px] text-zinc-500 leading-normal font-medium">{cat.description}</span>
-                </button>
-              );
-            })}
-          </div>
+      {/* Infinite Scroll Container */}
+      <div className="relative w-full overflow-hidden flex flex-col gap-6 select-none my-8">
+        
+        {/* Edge Gradient Overlays */}
+        <div className="absolute top-0 bottom-0 left-0 w-24 md:w-48 bg-gradient-to-r from-[#030303] to-transparent z-20 pointer-events-none" />
+        <div className="absolute top-0 bottom-0 right-0 w-24 md:w-48 bg-gradient-to-l from-[#030303] to-transparent z-20 pointer-events-none" />
 
-          {/* Right Side: Grid of Showcase Cards */}
-          <div className="w-full relative min-h-[320px]">
-            <div className="absolute inset-0 bg-gradient-to-tr from-rose-500/2 to-transparent blur-3xl -z-10 rounded-full" />
-            
-            <div 
-              key={selectedCategory} 
-              className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 w-full animate-fadeIn"
-            >              {activePartners.map((partner) => (
-                <div 
-                  key={partner.name}
-                  className="bg-[#0f0f15] border border-zinc-800/80 rounded-2xl p-6 flex flex-col justify-between transition-all duration-300 group hover:-translate-y-1 hover:border-rose-500/20 hover:bg-[#12121a] hover:shadow-[0_8px_30px_rgb(0,0,0,0.6)]"
-                >
-                  <div>
-                    {/* Top Row: Logo & Badge */}
-                    <div className="flex items-center justify-between w-full mb-6">
-                      <div className="h-8 w-auto flex items-center justify-start overflow-hidden">
-                        {partner.render ? (
-                          partner.render()
-                        ) : (
-                          <img
-                            src={partner.logo}
-                            alt={`${partner.name} logo`}
-                            className="h-full w-auto object-contain max-w-[110px]"
-                          />
-                        )}
-                      </div>
-
-                      <span className="text-[9px] font-mono tracking-widest uppercase px-2.5 py-1 rounded-full bg-rose-500/10 text-rose-400 border border-rose-500/20">
-                        {partner.badge}
-                      </span>
+        {/* Row 1: Left */}
+        <div className="w-full overflow-hidden flex">
+          <div className="flex gap-6 animate-marquee-left-1 w-max py-1">
+            {[...row1, ...row1].map((partner, idx) => (
+              <div 
+                key={`${partner.name}-r1-${idx}`}
+                className="w-36 h-20 bg-zinc-950/30 backdrop-blur-md border border-zinc-900/60 rounded-xl flex items-center justify-center p-4 transition-all duration-300 hover:border-rose-500/30 hover:bg-zinc-900/10 hover:-translate-y-1 shadow-[inset_0_1px_1px_rgba(255,255,255,0.08),0_8px_24px_rgba(0,0,0,0.7)] hover:shadow-[inset_0_1px_1px_rgba(255,255,255,0.15),0_12px_32px_rgba(0,0,0,0.8),0_0_20px_rgba(225,29,72,0.06)] relative overflow-hidden flex-shrink-0 group"
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-rose-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="relative z-10 flex items-center justify-center w-full h-full p-1">
+                  {partner.render ? (
+                    <div className="h-8 flex items-center justify-center w-full text-white transition-colors duration-300 scale-75 sm:scale-90">
+                      {partner.render()}
                     </div>
-
-                    {/* Middle Info: Name, Partnership Year, Title */}
-                    <div className="flex flex-col gap-1 mb-4">
-                      <span className="text-[10px] font-mono text-zinc-400 uppercase tracking-widest font-medium">
-                        {partner.name} &bull; {partner.year}
-                      </span>
-                      <h3 className="text-sm sm:text-base font-bold text-white tracking-tight leading-snug group-hover:text-rose-500 transition-colors">
-                        {partner.title}
-                      </h3>
-                    </div>
-
-                    {/* Tech Tags */}
-                    <div className="flex flex-wrap gap-2 mb-6">
-                      {partner.tags.map((tag) => (
-                        <span key={tag} className="text-[10px] font-medium text-zinc-300 bg-zinc-800/30 border border-zinc-700/20 px-3 py-1 rounded-full hover:bg-zinc-800/60 hover:text-white transition-colors duration-200">
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Bottom Row: Metrics & Discuss CTA */}
-                  <div className="border-t border-zinc-800/60 pt-4 mt-auto flex justify-between items-end">
-                    <div className="flex flex-col gap-0.5">
-                      <span className="text-xs font-bold text-white leading-none">
-                        {partner.metric}
-                      </span>
-                      <span className="text-[9px] font-mono text-zinc-400 uppercase tracking-wider leading-none mt-1.5">
-                        {partner.location}
-                      </span>
-                    </div>
-
-                    <a
-                      href="/contact"
-                      className="inline-flex items-center gap-1 px-4 py-2 rounded-full bg-rose-600 hover:bg-rose-700 text-white text-[10px] font-bold uppercase tracking-wider transition-colors duration-300"
-                    >
-                      Discuss project <span className="text-white font-bold">&rarr;</span>
-                    </a>
-                  </div>
+                  ) : (
+                    <img
+                      src={partner.logo}
+                      alt={`${partner.name} logo`}
+                      className="h-8 w-auto object-contain max-w-[100px] select-none"
+                    />
+                  )}
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
         </div>
 
+        {/* Row 2: Right */}
+        <div className="w-full overflow-hidden flex">
+          <div className="flex gap-6 animate-marquee-right-2 w-max py-1">
+            {[...row2, ...row2].map((partner, idx) => (
+              <div 
+                key={`${partner.name}-r2-${idx}`}
+                className="w-36 h-20 bg-zinc-950/30 backdrop-blur-md border border-zinc-900/60 rounded-xl flex items-center justify-center p-4 transition-all duration-300 hover:border-rose-500/30 hover:bg-zinc-900/10 hover:-translate-y-1 shadow-[inset_0_1px_1px_rgba(255,255,255,0.08),0_8px_24px_rgba(0,0,0,0.7)] hover:shadow-[inset_0_1px_1px_rgba(255,255,255,0.15),0_12px_32px_rgba(0,0,0,0.8),0_0_20px_rgba(225,29,72,0.06)] relative overflow-hidden flex-shrink-0 group"
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-rose-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="relative z-10 flex items-center justify-center w-full h-full p-1">
+                  {partner.render ? (
+                    <div className="h-8 flex items-center justify-center w-full text-white transition-colors duration-300 scale-75 sm:scale-90">
+                      {partner.render()}
+                    </div>
+                  ) : (
+                    <img
+                      src={partner.logo}
+                      alt={`${partner.name} logo`}
+                      className="h-8 w-auto object-contain max-w-[100px] select-none"
+                    />
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Row 3: Left */}
+        <div className="w-full overflow-hidden flex">
+          <div className="flex gap-6 animate-marquee-left-3 w-max py-1">
+            {[...row3, ...row3].map((partner, idx) => (
+              <div 
+                key={`${partner.name}-r3-${idx}`}
+                className="w-36 h-20 bg-zinc-950/30 backdrop-blur-md border border-zinc-900/60 rounded-xl flex items-center justify-center p-4 transition-all duration-300 hover:border-rose-500/30 hover:bg-zinc-900/10 hover:-translate-y-1 shadow-[inset_0_1px_1px_rgba(255,255,255,0.08),0_8px_24px_rgba(0,0,0,0.7)] hover:shadow-[inset_0_1px_1px_rgba(255,255,255,0.15),0_12px_32px_rgba(0,0,0,0.8),0_0_20px_rgba(225,29,72,0.06)] relative overflow-hidden flex-shrink-0 group"
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-rose-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="relative z-10 flex items-center justify-center w-full h-full p-1">
+                  {partner.render ? (
+                    <div className="h-8 flex items-center justify-center w-full text-white transition-colors duration-300 scale-75 sm:scale-90">
+                      {partner.render()}
+                    </div>
+                  ) : (
+                    <img
+                      src={partner.logo}
+                      alt={`${partner.name} logo`}
+                      className="h-8 w-auto object-contain max-w-[100px] select-none"
+                    />
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+      </div>
+
+      <div className="max-w-site mx-auto w-full px-6 md:px-12 lg:px-16 xl:px-20 relative z-10">
+        {/* Quote Footer */}
+        <Reveal>
+          <div className="mt-16 text-center max-w-2xl mx-auto border-t border-zinc-900/60 pt-10">
+            <p className="text-zinc-400 text-sm md:text-base leading-relaxed italic">
+              "We've created lasting relationships with our clients. Our success is our client's success."
+            </p>
+          </div>
+        </Reveal>
       </div>
     </section>
   );

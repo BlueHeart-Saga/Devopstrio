@@ -7,18 +7,18 @@ import { ArrowRight } from "lucide-react";
 export function AboutHero() {
   return (
     <section className="w-full bg-[#030303] text-white relative overflow-hidden pt-12 md:pt-16 pb-0">
-      
+
       {/* Absolute Right-Aligned Globe/Person Image */}
-      <div className="absolute right-0 bottom-0 w-[70%] md:w-[45%] lg:w-[32%] h-[90%] pointer-events-none z-0 opacity-40 hidden md:block">
+      <div className="absolute right-0 bottom-0 w-[70%] md:w-[45%] lg:w-[32%] h-[90%] pointer-events-none z-0 hidden md:block">
         <img
           src="/assets/herocard/aboutpage.png"
           alt="Global Network Globe"
-          className="w-full h-full object-contain object-bottom filter grayscale contrast-125 brightness-90"
+          className="w-full h-full object-contain object-bottom"
         />
       </div>
 
       <div className="max-w-site mx-auto w-full px-6 md:px-12 lg:px-20 relative z-10 flex flex-col justify-center">
-        
+
         {/* Main Title */}
         <Reveal delay={0.1}>
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.05] mb-6 text-white">

@@ -25,7 +25,7 @@ export function MetricsStats() {
   return (
     <section className="w-full py-20 bg-black text-white relative">
       <div className="max-w-site mx-auto w-full px-6 md:px-12 lg:px-20">
-        
+
         {/* Header Grid */}
         <Reveal className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-12 items-start mb-16">
           <div>
@@ -36,18 +36,18 @@ export function MetricsStats() {
               </span>
             </div>
             <h2 className="text-3xl md:text-5xl font-bold tracking-tight leading-tight text-white mb-4">
-              The results speak <span className="font-bold block">for themselves — every time.</span>
+              The <span className="text-rose-500">results speak for themselves</span> — <span className="font-bold">every time.</span>
             </h2>
             <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-bold">
               These aren't marketing numbers. They're metrics pulled from real client engagements, measured against real business outcomes, and verified by the enterprises we serve.
             </p>
           </div>
-          
+
           <div className="bg-zinc-950/20 border border-zinc-900 p-6 rounded-xl border-l-4 border-l-rose-600">
             <span className="text-[10px] font-bold text-rose-500 uppercase tracking-widest block mb-2">
               Our Perspective
             </span>
-            <p className="text-xs md:text-sm italic text-zinc-300 leading-relaxed font-bold">
+            <p className="text-xs md:text-sm italic text-zinc-400 leading-relaxed font-bold">
               "Numbers only matter when they mean something to the business behind them. Every metric below represents a client who moved faster, spent less, and worried less about their infrastructure."
             </p>
           </div>
@@ -56,8 +56,8 @@ export function MetricsStats() {
         {/* 12-Stat Grid */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
           {metrics.map((item) => (
-            <Reveal 
-              key={item.label} 
+            <Reveal
+              key={item.label}
               className="bg-zinc-950/20 border border-zinc-900 p-6 rounded-xl flex flex-col justify-between hover:border-zinc-800 transition-colors"
             >
               <div>

@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { Reveal } from "@/components/ui/Reveal";
-import { ArrowUpRight, MapPin, Briefcase, CalendarDays, ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowUpRight, MapPin, Briefcase, CalendarDays, ChevronLeft, ChevronRight, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 type Poster = {
@@ -21,6 +21,34 @@ export function HiringSection() {
   const [hiringPosters, setHiringPosters] = useState<Poster[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+
+  // Disable scroll when modal is active
+  useEffect(() => {
+    if (showModal) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [showModal]);
+
+  // Handle escape key to close modal
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setShowModal(false);
+      }
+    };
+    if (showModal) {
+      window.addEventListener("keydown", handleKeyDown);
+    }
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [showModal]);
 
   useEffect(() => {
     // Fetch dynamic posters from the API
@@ -32,13 +60,13 @@ export function HiringSection() {
 
   useEffect(() => {
     if (hiringPosters.length === 0) return;
-    if (isHovered) return; // Pause auto-slide when interacting
+    if (isHovered || showModal) return; // Pause auto-slide when interacting or viewing the image
 
     const timer = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % hiringPosters.length);
     }, 4500);
     return () => clearInterval(timer);
-  }, [hiringPosters.length, isHovered]);
+  }, [hiringPosters.length, isHovered, showModal]);
 
   const handleNext = () => {
     setCurrentIndex((prev) => (prev + 1) % hiringPosters.length);
@@ -95,85 +123,111 @@ export function HiringSection() {
                 animate={{ opacity: 1, rotateY: 0, scale: 1, x: 0 }}
                 exit={{ opacity: 0, rotateY: -15, scale: 0.95, x: -20 }}
                 transition={{ duration: 0.5, ease: [0.19, 1, 0.22, 1] }}
-                className={`absolute w-full max-w-sm h-[400px] rounded-xl border p-8 flex flex-col shadow-2xl overflow-hidden ${isActive
-                    ? "bg-[#0a0a0a] border-rose-900/40 shadow-[0_0_50px_rgba(225,29,72,0.15)]"
-                    : "bg-zinc-950 border-zinc-800 grayscale opacity-80"
-                  }`}
+                className={`absolute w-full max-w-sm h-[400px] rounded-xl border flex flex-col shadow-2xl overflow-hidden ${
+                  poster.image ? "p-4 bg-zinc-950 border-zinc-800/80" : "p-8 bg-[#0a0a0a]"
+                } ${
+                  isActive
+                    ? "border-rose-900/40 shadow-[0_0_50px_rgba(225,29,72,0.15)]"
+                    : "border-zinc-800 grayscale opacity-80"
+                }`}
               >
-                {/* Background Grid Pattern */}
-                <div className="absolute inset-0 opacity-[0.04] bg-[linear-gradient(to_right,#fff_1px,transparent_1px),linear-gradient(to_bottom,#fff_1px,transparent_1px)] bg-[size:1rem_1rem] pointer-events-none" />
-
-                {/* Custom Image Background */}
-                {poster.image && (
-                  <div className="absolute inset-0 z-0 pointer-events-none">
-                    <img src={poster.image} alt={poster.role} className="w-full h-full object-cover opacity-40 mix-blend-overlay" />
-                    <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#0a0a0a]/80 to-[#0a0a0a]" />
-                  </div>
-                )}
-
-                {/* Corner Accent Glow */}
-                {isActive && (
-                  <div className={`absolute top-0 right-0 w-48 h-48 bg-gradient-to-br ${poster.accent} opacity-[0.15] blur-3xl rounded-full translate-x-1/2 -translate-y-1/2`} />
-                )}
-
-                {/* Header */}
-                <div className="flex justify-between items-start mb-8 relative z-10">
-                  <div className="flex flex-col gap-1">
-                    <span className="text-[10px] font-mono tracking-widest text-zinc-500">
-                      {poster.req}
-                    </span>
-                    <span className={`text-[11px] font-bold tracking-[0.25em] uppercase ${isActive ? "text-rose-500" : "text-zinc-600"}`}>
-                      {isActive ? "We're Hiring" : "Closed"}
-                    </span>
-                  </div>
-                  <div className={`px-2 py-1 text-[10px] font-mono font-bold uppercase rounded border ${isActive
-                      ? "bg-rose-500/10 text-rose-400 border-rose-500/30"
-                      : "bg-zinc-900 text-zinc-500 border-zinc-800"
-                    }`}>
-                    {poster.status}
-                  </div>
-                </div>
-
-                {/* Role Info */}
-                <div className="flex-1 relative z-10">
-                  <h3 className={`text-3xl font-black uppercase tracking-tight leading-[1.1] mb-8 ${isActive ? "text-white" : "text-zinc-500"
-                    }`}>
-                    {poster.role}
-                  </h3>
-
-                  <div className="flex flex-col gap-3.5">
-                    <div className={`flex items-center gap-4 text-sm font-bold ${isActive ? "text-zinc-300" : "text-zinc-600"}`}>
-                      <MapPin size={18} strokeWidth={2.5} className={isActive ? "text-rose-500" : "text-zinc-700"} />
-                      {poster.location}
+                {poster.image ? (
+                  <>
+                    <div 
+                      onClick={() => setShowModal(true)}
+                      className="flex-1 w-full rounded-lg overflow-hidden relative bg-zinc-900 cursor-zoom-in group"
+                    >
+                      <img
+                        src={poster.image}
+                        alt={poster.role}
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                      {/* Hover overlay hint */}
+                      <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center pointer-events-none">
+                        <span className="bg-black/70 px-3 py-1.5 rounded-full text-[10px] font-bold tracking-widest uppercase text-white border border-white/10 shadow-lg">
+                          Click to Expand
+                        </span>
+                      </div>
                     </div>
-                    <div className={`flex items-center gap-4 text-sm font-bold ${isActive ? "text-zinc-300" : "text-zinc-600"}`}>
-                      <Briefcase size={18} strokeWidth={2.5} className={isActive ? "text-rose-500" : "text-zinc-700"} />
-                      {poster.type}
+                    <div className="pt-3 mt-auto">
+                      <button className={`w-full py-3.5 rounded-lg text-xs font-bold tracking-widest uppercase transition-all duration-300 ${isActive
+                          ? "bg-rose-600 hover:bg-rose-500 text-white shadow-[0_0_15px_rgba(225,29,72,0.3)] hover:-translate-y-0.5"
+                          : "bg-zinc-900 text-zinc-600 cursor-not-allowed border border-zinc-800"
+                        }`}>
+                        {isActive ? "Apply Now" : "Position Filled"}
+                      </button>
                     </div>
-                    <div className={`flex items-center gap-4 text-sm font-bold ${isActive ? "text-zinc-300" : "text-zinc-600"}`}>
-                      <CalendarDays size={18} strokeWidth={2.5} className={isActive ? "text-rose-500" : "text-zinc-700"} />
-                      {poster.date}
-                    </div>
-                  </div>
-                </div>
+                  </>
+                ) : (
+                  <>
+                    {/* Background Grid Pattern */}
+                    <div className="absolute inset-0 opacity-[0.04] bg-[linear-gradient(to_right,#fff_1px,transparent_1px),linear-gradient(to_bottom,#fff_1px,transparent_1px)] bg-[size:1rem_1rem] pointer-events-none" />
 
-                {/* Footer/Action */}
-                <div className="pt-6 mt-auto border-t border-zinc-800/50 relative z-10">
-                  <button className={`w-full py-3.5 rounded-lg text-xs font-bold tracking-widest uppercase transition-all duration-300 ${isActive
-                      ? "bg-rose-600 hover:bg-rose-500 text-white shadow-[0_0_15px_rgba(225,29,72,0.3)] hover:-translate-y-0.5"
-                      : "bg-zinc-900 text-zinc-600 cursor-not-allowed border border-zinc-800"
-                    }`}>
-                    {isActive ? "Apply Now" : "Position Filled"}
-                  </button>
-                </div>
+                    {/* Corner Accent Glow */}
+                    {isActive && (
+                      <div className={`absolute top-0 right-0 w-48 h-48 bg-gradient-to-br ${poster.accent} opacity-[0.15] blur-3xl rounded-full translate-x-1/2 -translate-y-1/2`} />
+                    )}
 
-                {/* Expired Stamp overlay */}
-                {!isActive && (
-                  <div className="absolute inset-0 flex items-center justify-center z-20 pointer-events-none overflow-hidden">
-                    <div className="text-5xl font-black text-red-600/40 border-[8px] border-red-600/40 uppercase -rotate-[20deg] px-8 py-3 tracking-widest mix-blend-overlay shadow-2xl">
-                      FILLED
+                    {/* Header */}
+                    <div className="flex justify-between items-start mb-8 relative z-10">
+                      <div className="flex flex-col gap-1">
+                        <span className="text-[10px] font-mono tracking-widest text-zinc-500">
+                          {poster.req}
+                        </span>
+                        <span className={`text-[11px] font-bold tracking-[0.25em] uppercase ${isActive ? "text-rose-500" : "text-zinc-600"}`}>
+                          {isActive ? "We're Hiring" : "Closed"}
+                        </span>
+                      </div>
+                      <div className={`px-2 py-1 text-[10px] font-mono font-bold uppercase rounded border ${isActive
+                          ? "bg-rose-500/10 text-rose-400 border-rose-500/30"
+                          : "bg-zinc-900 text-zinc-500 border-zinc-800"
+                        }`}>
+                        {poster.status}
+                      </div>
                     </div>
-                  </div>
+
+                    {/* Role Info */}
+                    <div className="flex-1 relative z-10">
+                      <h3 className={`text-3xl font-black uppercase tracking-tight leading-[1.1] mb-8 ${isActive ? "text-white" : "text-zinc-500"
+                        }`}>
+                        {poster.role}
+                      </h3>
+
+                      <div className="flex flex-col gap-3.5">
+                        <div className={`flex items-center gap-4 text-sm font-bold ${isActive ? "text-zinc-300" : "text-zinc-600"}`}>
+                          <MapPin size={18} strokeWidth={2.5} className={isActive ? "text-rose-500" : "text-zinc-700"} />
+                          {poster.location}
+                        </div>
+                        <div className={`flex items-center gap-4 text-sm font-bold ${isActive ? "text-zinc-300" : "text-zinc-600"}`}>
+                          <Briefcase size={18} strokeWidth={2.5} className={isActive ? "text-rose-500" : "text-zinc-700"} />
+                          {poster.type}
+                        </div>
+                        <div className={`flex items-center gap-4 text-sm font-bold ${isActive ? "text-zinc-300" : "text-zinc-600"}`}>
+                          <CalendarDays size={18} strokeWidth={2.5} className={isActive ? "text-rose-500" : "text-zinc-700"} />
+                          {poster.date}
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Footer/Action */}
+                    <div className="pt-6 mt-auto border-t border-zinc-800/50 relative z-10">
+                      <button className={`w-full py-3.5 rounded-lg text-xs font-bold tracking-widest uppercase transition-all duration-300 ${isActive
+                          ? "bg-rose-600 hover:bg-rose-500 text-white shadow-[0_0_15px_rgba(225,29,72,0.3)] hover:-translate-y-0.5"
+                          : "bg-zinc-900 text-zinc-600 cursor-not-allowed border border-zinc-800"
+                        }`}>
+                        {isActive ? "Apply Now" : "Position Filled"}
+                      </button>
+                    </div>
+
+                    {/* Expired Stamp overlay */}
+                    {!isActive && (
+                      <div className="absolute inset-0 flex items-center justify-center z-20 pointer-events-none overflow-hidden">
+                        <div className="text-5xl font-black text-red-600/40 border-[8px] border-red-600/40 uppercase -rotate-[20deg] px-8 py-3 tracking-widest mix-blend-overlay shadow-2xl">
+                          FILLED
+                        </div>
+                      </div>
+                    )}
+                  </>
                 )}
               </motion.div>
             </AnimatePresence>
@@ -212,6 +266,45 @@ export function HiringSection() {
 
         </Reveal>
       </div>
+
+      {/* Full-size Image Lightbox Modal */}
+      <AnimatePresence>
+        {showModal && poster.image && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="fixed inset-0 z-[100] flex items-center justify-center bg-black/95 backdrop-blur-md p-4"
+            onClick={() => setShowModal(false)}
+          >
+            {/* Close Button */}
+            <button
+              onClick={() => setShowModal(false)}
+              className="absolute top-6 right-6 text-zinc-400 hover:text-white transition-colors duration-200 cursor-pointer p-2.5 bg-zinc-900/60 border border-zinc-800/80 rounded-full hover:bg-zinc-800"
+              aria-label="Close modal"
+            >
+              <X size={20} />
+            </button>
+
+            {/* Modal Image Wrapper */}
+            <motion.div
+              initial={{ scale: 0.95, y: 15 }}
+              animate={{ scale: 1, y: 0 }}
+              exit={{ scale: 0.95, y: 15 }}
+              transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+              className="relative max-w-4xl max-h-[85vh] w-full flex items-center justify-center"
+              onClick={(e) => e.stopPropagation()} // Prevent closing when clicking the image itself
+            >
+              <img
+                src={poster.image}
+                alt={poster.role}
+                className="max-w-full max-h-[85vh] object-contain rounded-lg shadow-2xl border border-zinc-800/50"
+              />
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 }

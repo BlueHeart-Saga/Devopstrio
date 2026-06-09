@@ -140,13 +140,9 @@ export function WhyDevopstrio() {
                 <div
                   key={point.title}
                   data-why-point
-                  className={`flex gap-6 pb-12 border-b border-zinc-900/60 last:border-b-0 last:pb-0 transition-all duration-500 ${isActive ? "opacity-100 translate-x-2" : "opacity-40 translate-x-0"
+                  className={`pb-12 border-b border-zinc-900/60 last:border-b-0 last:pb-0 transition-all duration-500 ${isActive ? "opacity-100 translate-x-2" : "opacity-40 translate-x-0"
                     }`}
                 >
-                  <span className={`text-sm font-mono tracking-wider pt-1 font-bold transition-colors duration-300 ${isActive ? "text-rose-500" : "text-zinc-600"
-                    }`}>
-                    {point.num}
-                  </span>
                   <div>
                     <h3 className={`text-xl md:text-2xl font-bold tracking-tight mb-3 transition-colors duration-300 ${isActive ? "text-white" : "text-zinc-500"
                       }`}>
