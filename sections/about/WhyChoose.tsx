@@ -98,7 +98,7 @@ export function WhyChoose() {
                 </div>
 
                 {/* Bottom glassmorphic badge */}
-                <div className="p-4 bg-emerald-950/10 border border-emerald-900/30 rounded-2xl text-emerald-400 text-[10px] md:text-xs font-semibold leading-relaxed group-hover:border-emerald-500/20 group-hover:bg-emerald-950/20 transition-all duration-300">
+                <div className="p-4 bg-white/[0.02] border border-white/[0.05] rounded-2xl text-zinc-350 text-[10px] md:text-xs font-semibold leading-relaxed group-hover:border-rose-500/20 group-hover:bg-rose-500/[0.02] group-hover:text-rose-350 transition-all duration-300">
                   {item.badge}
                 </div>
 
