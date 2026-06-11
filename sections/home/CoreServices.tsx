@@ -11,7 +11,7 @@ const services = [
     tag: "Innovate",
     title: "Transform operations with AI-driven intelligence and automation.",
     desc: "Leverage Generative AI, machine learning, and intelligent automation to modernise business processes and unlock measurable value at scale.",
-    bgImage: "/assets/Home-page/core-services/Ai & Automation.png",
+    bgImage: "/assets/Home-page/core-services/AIAutomation.png",
     href: "/services/ai-data-innovation",
     cta: "AI & Automation"
   },
@@ -20,7 +20,7 @@ const services = [
     tag: "Migrate",
     title: "Move, optimise, and scale confidently on any cloud platform.",
     desc: "Design and manage resilient cloud environments across AWS, Azure, and Google Cloud — built for performance, compliance, and cost efficiency.",
-    bgImage: "/assets/Home-page/core-services/cloud computing.png",
+    bgImage: "/assets/Home-page/core-services/cloudengineering.png",
     href: "/services/cloud-services",
     cta: "Cloud Engineering"
   },
@@ -29,7 +29,7 @@ const services = [
     tag: "Accelerate",
     title: "Ship faster with fully automated DevOps and IaC pipelines.",
     desc: "CI/CD automation, Kubernetes orchestration, Terraform, and platform engineering practices that eliminate friction and accelerate delivery.",
-    bgImage: "/assets/Home-page/core-services/Devops and iac.png",
+    bgImage: "/assets/Home-page/core-services/Devops.png",
     href: "/services/devops-automation",
     cta: "DevOps & IaC"
   },
@@ -38,7 +38,7 @@ const services = [
     tag: "Build",
     title: "Create enterprise-grade software, apps, and SaaS platforms.",
     desc: "From complex web applications and mobile products to API ecosystems and SaaS platforms — engineered for reliability and business impact.",
-    bgImage: "/assets/Home-page/core-services/Engineering.png",
+    bgImage: "/assets/Home-page/core-services/software engineering.png",
     href: "/services/software-development",
     cta: "Software Engineering"
   },
@@ -47,7 +47,7 @@ const services = [
     tag: "Protect",
     title: "Embed security and compliance into every layer of your stack.",
     desc: "Proactive threat management, SOC services, vulnerability assessments, and zero-trust security frameworks for regulated industries.",
-    bgImage: "/assets/Home-page/core-services/cyber security.png",
+    bgImage: "/assets/Home-page/core-services/cybersecurity..png",
     href: "/services/cybersecurity",
     cta: "Cybersecurity"
   },
@@ -56,7 +56,7 @@ const services = [
     tag: "Scale",
     title: "Deliver scalable technology solutions across every sector.",
     desc: "Tailored solutions for government, healthcare, finance, and enterprise organisations — built for compliance, resilience, and long-term value.",
-    bgImage: "/assets/Home-page/core-services/enterprise solution.png",
+    bgImage: "/assets/Home-page/core-services/enterprisesolution.png",
     href: "/industries",
     cta: "Enterprise Solutions"
   }

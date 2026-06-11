@@ -2,6 +2,7 @@ import React from "react";
 import { notFound } from "next/navigation";
 import { getServiceByCategory } from "@/data/services";
 import { Hero } from "@/components/services/Hero";
+import { getHeroBgImage } from "@/lib/services-utils";
 import { SectionNavbar } from "@/components/ui/SectionNavbar";
 import { CapabilityGrid } from "@/components/services/CapabilityGrid";
 import { BenefitCards } from "@/components/services/BenefitCards";
@@ -59,7 +60,7 @@ export default async function ServiceCategoryPage({ params }: PageProps) {
   ];
 
   return (
-    <main className="min-h-screen bg-black text-white pt-16">
+    <main className="min-h-screen bg-black text-white">
       {/* 1. Hero Block */}
       <Hero
         badge={data.badge}
@@ -67,6 +68,7 @@ export default async function ServiceCategoryPage({ params }: PageProps) {
         subtitle={data.subtitle}
         stats={data.stats}
         breadcrumbs={breadcrumbs}
+        bgImage={getHeroBgImage(service)}
       />
 
       {/* 2. Sticky Subsections Navbar */}

@@ -126,7 +126,7 @@ export function OurPartnership() {
             </Reveal>
 
             <Reveal delay={0.1}>
-              <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold tracking-tight leading-tight text-white mb-6 font-sans">
+              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6 font-sans">
                 Pre-built recipes for the <span className="text-rose-500">most popular tools</span>
               </h2>
             </Reveal>

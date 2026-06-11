@@ -1,40 +1,35 @@
 "use client";
 
 import React from "react";
-import { Clock, Layers, ShieldCheck, Zap, Mail, Phone, MessageCircle } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
 
 const cards = [
   {
-    icon: Clock,
-    title: "< 2 Hour Response",
-    desc: "Every enquiry is reviewed and replied to by a real engineer — no automated queues, no ticket systems.",
+    title: "Direct Architect Consultation",
+    desc: "Bypass sales filters. Connect directly with principal systems architects to review your technical challenges.",
     side: "left",
   },
   {
-    icon: Zap,
-    title: "Senior Engineers Only",
-    desc: "You speak to architects and senior specialists from day one. Not sales reps, not juniors.",
+    title: "2-Hour Response SLA",
+    desc: "Every request receives a detailed, engineer-led assessment and meeting schedule options within 2 hours.",
     side: "left",
   },
   {
-    icon: Layers,
-    title: "End-to-End Delivery",
-    desc: "From scoping to deployment to managed support — one team, full ownership, zero hand-off confusion.",
+    title: "Flexible Resourcing Models",
+    desc: "Align delivery with custom offshore development centers (ODC), managed pods, or consulting retainers.",
     side: "right",
   },
   {
-    icon: ShieldCheck,
-    title: "ISO 27001 Compliant",
-    desc: "Enterprise-grade security posture built in. Your data, your systems, your confidentiality — protected.",
+    title: "Compliance & Security Built-In",
+    desc: "Access ready-to-deploy multi-cloud patterns aligned with GDPR, ISO 27001, and HIPAA compliance.",
     side: "right",
   },
 ];
 
 const channels = [
-  { icon: Mail,          label: "Email Us",    href: "mailto:info@devopstrioglobal.com" },
-  { icon: Phone,         label: "Call Us",     href: "tel:+447471482903"                },
-  { icon: MessageCircle, label: "WhatsApp",    href: "https://wa.me/447471482903"       },
+  { label: "Email Us", colorClass: "text-rose-500 hover:text-rose-400", href: "mailto:info@devopstrioglobal.com" },
+  { label: "Call Us", colorClass: "text-sky-500 hover:text-sky-400", href: "tel:+447471482903" },
+  { label: "WhatsApp", colorClass: "text-[#25D366] hover:text-[#12ec6e]", href: "https://wa.me/447471482903" },
 ];
 
 export function WhyContactUs() {
@@ -56,7 +51,7 @@ export function WhyContactUs() {
             <span className="text-[10px] font-bold tracking-[0.22em] uppercase text-zinc-500">Why Contact Us</span>
             <span className="h-[1px] w-5 bg-rose-600" />
           </div>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-tight">
+          <h2 className="text-2xl md:text-3xl font-bold tracking-tight leading-tight">
             Senior-led. <span className="text-rose-500">Not sales-led.</span>
           </h2>
           <p className="text-zinc-500 text-sm font-bold leading-relaxed max-w-xl mx-auto mt-4">
@@ -68,18 +63,16 @@ export function WhyContactUs() {
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr] gap-6 lg:gap-8 items-center">
 
           {/* Left cards */}
-          <div className="flex flex-col gap-3">
+          <div className="flex flex-col gap-4">
             {leftCards.map((card) => {
-              const Icon = card.icon;
               return (
                 <Reveal key={card.title} delay={0.1}>
-                  <div className="bg-zinc-950/60 rounded-2xl p-4 flex flex-col gap-3 hover:bg-zinc-900/40 transition-colors duration-300 group">
-                    <div className="w-9 h-9 rounded-lg bg-rose-900/40 flex items-center justify-center">
-                      <Icon size={16} className="text-rose-400" />
-                    </div>
-                    <div>
-                      <h3 className="text-sm font-bold text-white mb-1.5">{card.title}</h3>
-                      <p className="text-xs text-zinc-500 font-bold leading-relaxed">{card.desc}</p>
+                  <div className="bg-[#09090b] border border-zinc-900 hover:border-zinc-800 transition-all duration-300 p-6 rounded-none relative group">
+                    {/* Microsoft-style left accent indicator */}
+                    <div className="absolute left-0 top-0 bottom-0 w-[3px] bg-zinc-800 group-hover:bg-rose-600 transition-colors duration-300" />
+                    <div className="pl-2">
+                      <h3 className="text-sm font-bold text-white mb-2 tracking-tight group-hover:text-rose-500 transition-colors duration-250">{card.title}</h3>
+                      <p className="text-xs text-zinc-400 font-medium leading-relaxed">{card.desc}</p>
                     </div>
                   </div>
                 </Reveal>
@@ -99,18 +92,16 @@ export function WhyContactUs() {
           </Reveal>
 
           {/* Right cards */}
-          <div className="flex flex-col gap-5">
+          <div className="flex flex-col gap-4">
             {rightCards.map((card) => {
-              const Icon = card.icon;
               return (
                 <Reveal key={card.title} delay={0.2}>
-                  <div className="bg-zinc-950/60 rounded-2xl p-6 flex flex-col gap-4 hover:bg-zinc-900/40 transition-colors duration-300 group">
-                    <div className="w-9 h-9 rounded-lg bg-rose-900/40 flex items-center justify-center">
-                      <Icon size={16} className="text-rose-400" />
-                    </div>
-                    <div>
-                      <h3 className="text-sm font-bold text-white mb-1.5">{card.title}</h3>
-                      <p className="text-xs text-zinc-500 font-bold leading-relaxed">{card.desc}</p>
+                  <div className="bg-[#09090b] border border-zinc-900 hover:border-zinc-800 transition-all duration-300 p-6 rounded-none relative group">
+                    {/* Microsoft-style left accent indicator */}
+                    <div className="absolute left-0 top-0 bottom-0 w-[3px] bg-zinc-800 group-hover:bg-rose-600 transition-colors duration-300" />
+                    <div className="pl-2">
+                      <h3 className="text-sm font-bold text-white mb-2 tracking-tight group-hover:text-rose-500 transition-colors duration-250">{card.title}</h3>
+                      <p className="text-xs text-zinc-400 font-medium leading-relaxed">{card.desc}</p>
                     </div>
                   </div>
                 </Reveal>
@@ -122,17 +113,16 @@ export function WhyContactUs() {
 
         {/* Quick contact strip */}
         <Reveal delay={0.3}>
-          <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-            {channels.map(({ icon: Icon, label, href }) => (
+          <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-8 sm:gap-16 border-t border-zinc-900/40 pt-8">
+            {channels.map(({ label, colorClass, href }) => (
               <a
                 key={label}
                 href={href}
                 target={href.startsWith("http") ? "_blank" : "_self"}
                 rel="noopener noreferrer"
-                className="flex items-center gap-2.5 px-5 py-3 rounded-xl bg-zinc-950/60 hover:bg-zinc-900/60 border border-zinc-900 hover:border-zinc-800 text-zinc-300 hover:text-white transition-all duration-300 group"
+                className={`group text-xs md:text-sm font-extrabold tracking-[0.18em] uppercase transition-all duration-300 ${colorClass}`}
               >
-                <Icon size={14} className="text-rose-500 group-hover:scale-110 transition-transform" />
-                <span className="text-xs font-bold tracking-wide">{label}</span>
+                <span className="border-b-2 border-transparent group-hover:border-current transition-all pb-1">{label}</span>
               </a>
             ))}
           </div>

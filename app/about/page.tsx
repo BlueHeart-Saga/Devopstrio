@@ -80,7 +80,7 @@ export default function AboutPage() {
         <div id="why-choose">
           <WhyChoose />
         </div>
-        <SvgWaveLine variant="dashed" />
+        {/* <SvgWaveLine variant="dashed" /> */}
 
         <div id="partnership">
           <OurPartnership />

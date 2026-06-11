@@ -86,7 +86,7 @@ export function AboutServices() {
             </span>
           </Reveal>
           <Reveal delay={0.1}>
-            <h2 className="text-3xl md:text-4xl xl:text-5xl font-black text-white tracking-tight leading-none mb-6">
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold text-white tracking-tight leading-tight mb-6">
               AI &amp; Cloud in the flow of work—built for scale and trust
             </h2>
           </Reveal>

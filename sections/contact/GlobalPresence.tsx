@@ -80,24 +80,18 @@ export function GlobalPresence() {
       <div className="max-w-site mx-auto w-full px-6 md:px-12 lg:px-20 relative z-10">
 
         {/* ── Header ─────────────────────────────────────────────────────── */}
-        <Reveal className="mb-8">
-          <div className="flex items-center gap-2 mb-3">
-            
+        <Reveal className="mb-12 text-center max-w-3xl mx-auto flex flex-col items-center">
+          <div className="flex items-center justify-center gap-2 mb-3">
             <span className="text-[10px] font-bold tracking-[0.22em] uppercase text-zinc-500">
               Global Presence
             </span>
           </div>
-          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight leading-tight">
-              Wherever you build.<br />
-              <span className="text-rose-500">
-                We&apos;re already there.
-              </span>
-            </h2>
-            <p className="text-zinc-400 text-xs font-bold leading-relaxed max-w-xs md:text-right">
-              Six offices. Four countries. 525+ professionals — strategically positioned to serve global enterprises 24/7.
-            </p>
-          </div>
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight leading-tight mb-4">
+            Wherever you build. <span className="text-rose-500">We&apos;re already there.</span>
+          </h2>
+          <p className="text-zinc-400 text-xs md:text-sm font-bold leading-relaxed max-w-xl mx-auto">
+            Six offices. Four countries. 525+ professionals — strategically positioned to serve global enterprises 24/7.
+          </p>
         </Reveal>
 
         {/* ── Map Card ───────────────────────────────────────────────────── */}

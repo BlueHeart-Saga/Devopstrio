@@ -2,6 +2,7 @@ import React from "react";
 import { notFound } from "next/navigation";
 import { getServiceByCategory, getCapability } from "@/data/services";
 import { Hero } from "@/components/services/Hero";
+import { getHeroBgImage } from "@/lib/services-utils";
 import { SectionNavbar } from "@/components/ui/SectionNavbar";
 import { BenefitCards } from "@/components/services/BenefitCards";
 import { TechnologyStack } from "@/components/services/TechnologyStack";
@@ -69,13 +70,14 @@ export default async function CapabilityPage({ params }: PageProps) {
   ];
 
   return (
-    <main className="min-h-screen bg-black text-white pt-16">
+    <main className="min-h-screen bg-black text-white">
       {/* 1. Hero */}
       <Hero
         badge={serviceData.title}
         title={data.title}
         subtitle={data.heroSubtitle}
         breadcrumbs={breadcrumbs}
+        bgImage={getHeroBgImage(service, capability)}
       />
 
       {/* 2. Subsections Navbar */}

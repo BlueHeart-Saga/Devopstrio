@@ -1,0 +1,468 @@
+========================================================
+DEVOPSTRIO SITE MAP: SERVICES, INDUSTRIES, & ECOSYSTEM
+========================================================
+
+1. SERVICES PAGES
+--------------------------------------------------------
+- Name: Services (Main Hub)
+  Link: /services
+
+- Name: AI & Data Innovation
+  Link: /services/ai-data-innovation
+
+- Name: AI & Data Innovation - Generative AI Solutions
+  Link: /services/ai-data-innovation/generative-ai-solutions
+
+- Name: AI & Data Innovation - AI Agents & Automation
+  Link: /services/ai-data-innovation/ai-agents-automation
+
+- Name: AI & Data Innovation - Machine Learning Engineering
+  Link: /services/ai-data-innovation/machine-learning-engineering
+
+- Name: AI & Data Innovation - Data Engineering
+  Link: /services/ai-data-innovation/data-engineering
+
+- Name: AI & Data Innovation - Business Intelligence & Analytics
+  Link: /services/ai-data-innovation/business-intelligence-analytics
+
+- Name: AI & Data Innovation - Predictive Analytics
+  Link: /services/ai-data-innovation/predictive-analytics
+
+- Name: AI & Data Innovation - Data Governance
+  Link: /services/ai-data-innovation/data-governance
+
+- Name: AI & Data Innovation - MLOps & AI Operations
+  Link: /services/ai-data-innovation/mlops-ai-operations
+
+- Name: Cloud Services
+  Link: /services/cloud-services
+
+- Name: Cloud Services - Cloud Strategy & Consulting
+  Link: /services/cloud-services/cloud-strategy-consulting
+
+- Name: Cloud Services - Cloud Migration
+  Link: /services/cloud-services/cloud-migration
+
+- Name: Cloud Services - Azure Services
+  Link: /services/cloud-services/azure-services
+
+- Name: Cloud Services - AWS Services
+  Link: /services/cloud-services/aws-services
+
+- Name: Cloud Services - Google Cloud Services
+  Link: /services/cloud-services/google-cloud-services
+
+- Name: Cloud Services - Cloud Security
+  Link: /services/cloud-services/cloud-security
+
+- Name: Cloud Services - Cloud Managed Services
+  Link: /services/cloud-services/cloud-managed-services
+
+- Name: Cloud Services - FinOps & Cost Optimization
+  Link: /services/cloud-services/finops-cost-optimization
+
+- Name: DevOps & Automation
+  Link: /services/devops-automation
+
+- Name: DevOps & Automation - CI/CD Implementation
+  Link: /services/devops-automation/cicd-implementation
+
+- Name: DevOps & Automation - Platform Engineering
+  Link: /services/devops-automation/platform-engineering
+
+- Name: DevOps & Automation - Infrastructure as Code
+  Link: /services/devops-automation/infrastructure-as-code
+
+- Name: DevOps & Automation - Kubernetes Services
+  Link: /services/devops-automation/kubernetes-services
+
+- Name: DevOps & Automation - DevSecOps
+  Link: /services/devops-automation/devsecops
+
+- Name: DevOps & Automation - Site Reliability Engineering (SRE)
+  Link: /services/devops-automation/site-reliability-engineering
+
+- Name: DevOps & Automation - Release Automation
+  Link: /services/devops-automation/release-automation
+
+- Name: DevOps & Automation - Monitoring & Observability
+  Link: /services/devops-automation/monitoring-observability
+
+- Name: Cybersecurity
+  Link: /services/cybersecurity
+
+- Name: Cybersecurity - Security Assessment
+  Link: /services/cybersecurity/security-assessment
+
+- Name: Cybersecurity - Vulnerability Management
+  Link: /services/cybersecurity/vulnerability-management
+
+- Name: Cybersecurity - Penetration Testing
+  Link: /services/cybersecurity/penetration-testing
+
+- Name: Cybersecurity - Security Operations Center (SOC)
+  Link: /services/cybersecurity/security-operations-center
+
+- Name: Cybersecurity - Identity & Access Management
+  Link: /services/cybersecurity/identity-access-management
+
+- Name: Cybersecurity - Cloud Security
+  Link: /services/cybersecurity/cloud-security
+
+- Name: Cybersecurity - Compliance & Governance
+  Link: /services/cybersecurity/compliance-governance
+
+- Name: Cybersecurity - Zero Trust Architecture
+  Link: /services/cybersecurity/zero-trust-architecture
+
+- Name: Software Development
+  Link: /services/software-development
+
+- Name: Software Development - Enterprise Application Development
+  Link: /services/software-development/enterprise-app-development
+
+- Name: Software Development - Web Application Development
+  Link: /services/software-development/web-app-development
+
+- Name: Software Development - Mobile Application Development
+  Link: /services/software-development/mobile-app-development
+
+- Name: Software Development - SaaS Product Development
+  Link: /services/software-development/saas-product-development
+
+- Name: Software Development - API Development & Integration
+  Link: /services/software-development/api-development-integration
+
+- Name: Software Development - Microservices Architecture
+  Link: /services/software-development/microservices-architecture
+
+- Name: Software Development - Product Engineering
+  Link: /services/software-development/product-engineering
+
+- Name: Software Development - Application Modernization
+  Link: /services/software-development/application-modernization
+
+- Name: Digital Transformation
+  Link: /services/digital-transformation
+
+- Name: Digital Transformation - Digital Strategy
+  Link: /services/digital-transformation/digital-strategy
+
+- Name: Digital Transformation - Enterprise Modernization
+  Link: /services/digital-transformation/enterprise-modernization
+
+- Name: Digital Transformation - Process Automation
+  Link: /services/digital-transformation/process-automation
+
+- Name: Digital Transformation - Intelligent Workflows
+  Link: /services/digital-transformation/intelligent-workflows
+
+- Name: Digital Transformation - Customer Experience Transformation
+  Link: /services/digital-transformation/customer-experience-transformation
+
+- Name: Digital Transformation - Legacy System Modernization
+  Link: /services/digital-transformation/legacy-modernization
+
+- Name: Digital Transformation - Business Transformation
+  Link: /services/digital-transformation/business-transformation
+
+- Name: Digital Transformation - Change Management
+  Link: /services/digital-transformation/change-management
+
+- Name: Data Engineering
+  Link: /services/data-engineering
+
+- Name: Data Engineering - Data Platform Development
+  Link: /services/data-engineering/data-platform-development
+
+- Name: Data Engineering - Data Warehousing
+  Link: /services/data-engineering/data-warehousing
+
+- Name: Data Engineering - Data Lakes & Lakehouse
+  Link: /services/data-engineering/data-lakes-lakehouse
+
+- Name: Data Engineering - ETL/ELT Pipelines
+  Link: /services/data-engineering/etl-elt-pipelines
+
+- Name: Data Engineering - Real-Time Data Processing
+  Link: /services/data-engineering/real-time-data-processing
+
+- Name: Data Engineering - Data Quality Management
+  Link: /services/data-engineering/data-quality-management
+
+- Name: Data Engineering - Master Data Management
+  Link: /services/data-engineering/master-data-management
+
+- Name: Data Engineering - Big Data Engineering
+  Link: /services/data-engineering/big-data-engineering
+
+- Name: Managed Services
+  Link: /services/managed-services
+
+- Name: Managed Services - Managed Cloud Services
+  Link: /services/managed-services/managed-cloud
+
+- Name: Managed Services - Managed DevOps Services
+  Link: /services/managed-services/managed-devops
+
+- Name: Managed Services - Managed Security Services
+  Link: /services/managed-services/managed-security
+
+- Name: Managed Services - Application Support
+  Link: /services/managed-services/application-support
+
+- Name: Managed Services - Infrastructure Management
+  Link: /services/managed-services/infrastructure-management
+
+- Name: Managed Services - Database Administration
+  Link: /services/managed-services/database-administration
+
+- Name: Managed Services - Monitoring & Incident Management
+  Link: /services/managed-services/monitoring-incident-management
+
+- Name: Managed Services - 24/7 Support Services
+  Link: /services/managed-services/twenty-four-seven-support
+
+- Name: QA & Testing
+  Link: /services/qa-testing
+
+- Name: QA & Testing - Test Automation
+  Link: /services/qa-testing/test-automation
+
+- Name: QA & Testing - Performance Testing
+  Link: /services/qa-testing/performance-testing
+
+- Name: QA & Testing - Security Testing
+  Link: /services/qa-testing/security-testing
+
+- Name: QA & Testing - API Testing
+  Link: /services/qa-testing/api-testing
+
+- Name: QA & Testing - Mobile Application Testing
+  Link: /services/qa-testing/mobile-app-testing
+
+- Name: QA & Testing - Functional Testing
+  Link: /services/qa-testing/functional-testing
+
+- Name: QA & Testing - Continuous Testing
+  Link: /services/qa-testing/continuous-testing
+
+- Name: QA & Testing - Quality Engineering
+  Link: /services/qa-testing/quality-engineering
+
+- Name: IT Consulting
+  Link: /services/it-consulting
+
+- Name: IT Consulting - Technology Consulting
+  Link: /services/it-consulting/technology-consulting
+
+- Name: IT Consulting - Enterprise Architecture
+  Link: /services/it-consulting/enterprise-architecture
+
+- Name: IT Consulting - Cloud Consulting
+  Link: /services/it-consulting/cloud-consulting
+
+- Name: IT Consulting - AI Consulting
+  Link: /services/it-consulting/ai-consulting
+
+- Name: IT Consulting - Cybersecurity Consulting
+  Link: /services/it-consulting/cybersecurity-consulting
+
+- Name: IT Consulting - Digital Transformation Consulting
+  Link: /services/it-consulting/digital-transformation-consulting
+
+- Name: IT Consulting - IT Strategy & Roadmap
+  Link: /services/it-consulting/it-strategy-roadmap
+
+- Name: IT Consulting - Technology Assessment
+  Link: /services/it-consulting/technology-assessment
+
+2. INDUSTRIES PAGES
+--------------------------------------------------------
+- Name: Industries (Main Hub)
+  Link: /industries
+
+- Name: Banking & Finance
+  Link: /industries/banking-finance
+
+- Name: Education
+  Link: /industries/education
+
+- Name: Government & Public Sector
+  Link: /industries/government-public-sector
+
+- Name: Healthcare & Life Sciences
+  Link: /industries/healthcare-life-sciences
+
+- Name: Manufacturing
+  Link: /industries/manufacturing
+
+- Name: Media & Entertainment
+  Link: /industries/media-entertainment
+
+- Name: Retail & E-Commerce
+  Link: /industries/retail-ecommerce
+
+- Name: Telecommunications
+  Link: /industries/telecommunications
+
+3. ECOSYSTEM PAGES
+--------------------------------------------------------
+- Name: Ecosystem (Main Hub)
+  Link: /ecosystem
+
+- Name: Strategic Partnerships
+  Link: /ecosystem/partnerships
+
+- Name: Strategic Partnerships - Microsoft Alliance
+  Link: /ecosystem/partnerships/microsoft
+
+- Name: Strategic Partnerships - AWS Partner Network
+  Link: /ecosystem/partnerships/aws
+
+- Name: Strategic Partnerships - Google Cloud Ecosystem
+  Link: /ecosystem/partnerships/google-cloud
+
+- Name: Strategic Partnerships - Oracle Alliance
+  Link: /ecosystem/partnerships/oracle
+
+- Name: Strategic Partnerships - ServiceNow Integration
+  Link: /ecosystem/partnerships/servicenow
+
+- Name: Strategic Partnerships - SAP on Cloud
+  Link: /ecosystem/partnerships/sap
+
+- Name: Strategic Partnerships - Cisco Networking
+  Link: /ecosystem/partnerships/cisco
+
+- Name: Innovation Labs
+  Link: /ecosystem/innovation-labs
+
+- Name: Innovation Labs - AI Innovation Lab
+  Link: /ecosystem/innovation-labs/ai-lab
+
+- Name: Innovation Labs - Cloud Innovation Lab
+  Link: /ecosystem/innovation-labs/cloud-lab
+
+- Name: Innovation Labs - DevOps Innovation Lab
+  Link: /ecosystem/innovation-labs/devops-lab
+
+- Name: Innovation Labs - Cybersecurity Lab
+  Link: /ecosystem/innovation-labs/cybersecurity-lab
+
+- Name: Innovation Labs - Data & Analytics Lab
+  Link: /ecosystem/innovation-labs/data-analytics-lab
+
+- Name: Platforms & Solutions
+  Link: /ecosystem/platforms-solutions
+
+- Name: Platforms & Solutions - AI Hiring Platform
+  Link: /ecosystem/platforms-solutions/ai-hiring-platform
+
+- Name: Platforms & Solutions - DevOps Platform
+  Link: /ecosystem/platforms-solutions/devops-platform
+
+- Name: Platforms & Solutions - Cloud Management Platform
+  Link: /ecosystem/platforms-solutions/cloud-management-platform
+
+- Name: Platforms & Solutions - Security Platform
+  Link: /ecosystem/platforms-solutions/security-platform
+
+- Name: Platforms & Solutions - Data Platform
+  Link: /ecosystem/platforms-solutions/data-platform
+
+- Name: Platforms & Solutions - Automation Platform
+  Link: /ecosystem/platforms-solutions/automation-platform
+
+- Name: Platforms & Solutions - Customer Experience Platform
+  Link: /ecosystem/platforms-solutions/customer-experience-platform
+
+- Name: Technology Stack
+  Link: /ecosystem/technology-stack
+
+- Name: Technology Stack - Artificial Intelligence
+  Link: /ecosystem/technology-stack/artificial-intelligence
+
+- Name: Technology Stack - Cloud Native
+  Link: /ecosystem/technology-stack/cloud-native
+
+- Name: Technology Stack - DevOps Toolchain
+  Link: /ecosystem/technology-stack/devops-toolchain
+
+- Name: Technology Stack - Data Engineering
+  Link: /ecosystem/technology-stack/data-engineering
+
+- Name: Technology Stack - Cybersecurity
+  Link: /ecosystem/technology-stack/cybersecurity
+
+- Name: Global Delivery Network
+  Link: /ecosystem/global-delivery
+
+- Name: Global Delivery Network - United Kingdom Hub
+  Link: /ecosystem/global-delivery/united-kingdom
+
+- Name: Global Delivery Network - India Operations
+  Link: /ecosystem/global-delivery/india
+
+- Name: Global Delivery Network - Europe Hub
+  Link: /ecosystem/global-delivery/europe
+
+- Name: Global Delivery Network - Follow-the-Sun Support
+  Link: /ecosystem/global-delivery/follow-the-sun-support
+
+- Name: Global Delivery Network - Managed Services Center
+  Link: /ecosystem/global-delivery/managed-services-center
+
+- Name: Engineering Excellence
+  Link: /ecosystem/engineering-excellence
+
+- Name: Engineering Excellence - Software Engineering
+  Link: /ecosystem/engineering-excellence/software-engineering
+
+- Name: Engineering Excellence - Platform Engineering
+  Link: /ecosystem/engineering-excellence/platform-engineering
+
+- Name: Engineering Excellence - Site Reliability Engineering
+  Link: /ecosystem/engineering-excellence/site-reliability-engineering
+
+- Name: Engineering Excellence - DevSecOps
+  Link: /ecosystem/engineering-excellence/devsecops
+
+- Name: Engineering Excellence - Quality Engineering
+  Link: /ecosystem/engineering-excellence/quality-engineering
+
+- Name: Accelerators & Frameworks
+  Link: /ecosystem/accelerators-frameworks
+
+- Name: Accelerators & Frameworks - Cloud Accelerator
+  Link: /ecosystem/accelerators-frameworks/cloud-accelerator
+
+- Name: Accelerators & Frameworks - DevOps Accelerator
+  Link: /ecosystem/accelerators-frameworks/devops-accelerator
+
+- Name: Accelerators & Frameworks - AI Framework
+  Link: /ecosystem/accelerators-frameworks/ai-framework
+
+- Name: Accelerators & Frameworks - Security Framework
+  Link: /ecosystem/accelerators-frameworks/security-framework
+
+- Name: Accelerators & Frameworks - Data Framework
+  Link: /ecosystem/accelerators-frameworks/data-framework
+
+- Name: Community & Talent Network
+  Link: /ecosystem/community-talent-network
+
+- Name: Community & Talent Network - Engineering Community Program
+  Link: /ecosystem/community-talent-network/engineering-community
+
+- Name: Community & Talent Network - University Programs
+  Link: /ecosystem/community-talent-network/university-programs
+
+- Name: Community & Talent Network - Open Source Contributions
+  Link: /ecosystem/community-talent-network/open-source-contributions
+
+- Name: Community & Talent Network - Talent Network
+  Link: /ecosystem/community-talent-network/talent-network
+
+- Name: Community & Talent Network - Certification Programs
+  Link: /ecosystem/community-talent-network/certification-programs

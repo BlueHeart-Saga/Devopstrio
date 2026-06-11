@@ -14,12 +14,12 @@ const serviceCategories = [
     items: [
       { name: "Generative AI Solutions", desc: "Enterprise LLM applications, custom fine-tuning, and semantic caching layers.", href: "/services/ai-data-innovation/generative-ai-solutions" },
       { name: "AI Agents & Automation", desc: "Stateful autonomous multi-agent workflows executing complex processes.", href: "/services/ai-data-innovation/ai-agents-automation" },
-      { name: "Machine Learning Engineering", desc: "Training, validating, and deploying deep learning models at scale.", href: "/services/ai-data-innovation#capabilities" },
-      { name: "Data Engineering", desc: "High-throughput data pipelines, Kafka streaming, and unified lakehouses.", href: "/services/ai-data-innovation#capabilities" },
-      { name: "Business Intelligence & Analytics", desc: "Consolidated enterprise dashboards, telemetry, and reporting engines.", href: "/services/ai-data-innovation#capabilities" },
-      { name: "Predictive Analytics", desc: "Time-series forecasting, customer churn and predictive models.", href: "/services/ai-data-innovation#capabilities" },
-      { name: "Data Governance", desc: "Data compliance audits, cataloging, lineage tracking, and security controls.", href: "/services/ai-data-innovation#capabilities" },
-      { name: "MLOps & AI Operations", desc: "Continuous training loops, model registries, and drift detection.", href: "/services/ai-data-innovation#capabilities" }
+      { name: "Machine Learning Engineering", desc: "Training, validating, and deploying deep learning models at scale.", href: "/services/ai-data-innovation/machine-learning-engineering" },
+      { name: "Data Engineering", desc: "High-throughput data pipelines, Kafka streaming, and unified lakehouses.", href: "/services/ai-data-innovation/data-engineering" },
+      { name: "Business Intelligence & Analytics", desc: "Consolidated enterprise dashboards, telemetry, and reporting engines.", href: "/services/ai-data-innovation/business-intelligence-analytics" },
+      { name: "Predictive Analytics", desc: "Time-series forecasting, customer churn and predictive models.", href: "/services/ai-data-innovation/predictive-analytics" },
+      { name: "Data Governance", desc: "Data compliance audits, cataloging, lineage tracking, and security controls.", href: "/services/ai-data-innovation/data-governance" },
+      { name: "MLOps & AI Operations", desc: "Continuous training loops, model registries, and drift detection.", href: "/services/ai-data-innovation/mlops-ai-operations" }
     ]
   },
   {
@@ -29,12 +29,12 @@ const serviceCategories = [
     items: [
       { name: "Cloud Strategy & Consulting", desc: "Tailored architecture blueprints, vendor evaluation, and cloud readiness.", href: "/services/cloud-services/cloud-strategy-consulting" },
       { name: "Cloud Migration", desc: "Re-hosting, re-platforming, and database replication with zero downtime.", href: "/services/cloud-services/cloud-migration" },
-      { name: "Azure Services", desc: "Landing zones, AKS clusters, and serverless applications on Microsoft Azure.", href: "/services/cloud-services#capabilities" },
-      { name: "AWS Services", desc: "Scalable EKS grids, serverless Lambdas, and secure DynamoDB setups on AWS.", href: "/services/cloud-services#capabilities" },
-      { name: "Google Cloud Services", desc: "GKE autopilot setups, BigQuery data platforms, and Vertex AI integrations on GCP.", href: "/services/cloud-services#capabilities" },
-      { name: "Cloud Security", desc: "Wiz security posture management, IAM policies, and key rotations.", href: "/services/cloud-services#capabilities" },
-      { name: "Cloud Managed Services", desc: "24/7 outsourced management, OS patching, and active cloud backups.", href: "/services/cloud-services#capabilities" },
-      { name: "FinOps & Cost Optimization", desc: "Spend optimization, Savings Plan allocations, and traffic auto-scaling.", href: "/services/cloud-services#capabilities" }
+      { name: "Azure Services", desc: "Landing zones, AKS clusters, and serverless applications on Microsoft Azure.", href: "/services/cloud-services/azure-services" },
+      { name: "AWS Services", desc: "Scalable EKS grids, serverless Lambdas, and secure DynamoDB setups on AWS.", href: "/services/cloud-services/aws-services" },
+      { name: "Google Cloud Services", desc: "GKE autopilot setups, BigQuery data platforms, and Vertex AI integrations on GCP.", href: "/services/cloud-services/google-cloud-services" },
+      { name: "Cloud Security", desc: "Wiz security posture management, IAM policies, and key rotations.", href: "/services/cloud-services/cloud-security" },
+      { name: "Cloud Managed Services", desc: "24/7 outsourced management, OS patching, and active cloud backups.", href: "/services/cloud-services/cloud-managed-services" },
+      { name: "FinOps & Cost Optimization", desc: "Spend optimization, Savings Plan allocations, and traffic auto-scaling.", href: "/services/cloud-services/finops-cost-optimization" }
     ]
   },
   {
@@ -42,14 +42,14 @@ const serviceCategories = [
     name: "DevOps & Automation",
     href: "/services/devops-automation",
     items: [
-      { name: "CI/CD Implementation", desc: "Automated Git-triggered builds and testing environments.", href: "/services/devops-automation#capabilities" },
-      { name: "Platform Engineering", desc: "Developer self-service templates and Backstage portal configurations.", href: "/services/devops-automation#capabilities" },
-      { name: "Infrastructure as Code", desc: "Reusable Terraform, Ansible, and Packer infrastructure setups.", href: "/services/devops-automation#capabilities" },
+      { name: "CI/CD Implementation", desc: "Automated Git-triggered builds and testing environments.", href: "/services/devops-automation/cicd-implementation" },
+      { name: "Platform Engineering", desc: "Developer self-service templates and Backstage portal configurations.", href: "/services/devops-automation/platform-engineering" },
+      { name: "Infrastructure as Code", desc: "Reusable Terraform, Ansible, and Packer infrastructure setups.", href: "/services/devops-automation/infrastructure-as-code" },
       { name: "Kubernetes Services", desc: "Multi-tenant EKS, AKS, GKE clusters with Karpenter and service mesh.", href: "/services/devops-automation/kubernetes-services" },
-      { name: "DevSecOps", desc: "Sonarqube SAST checks and Snyk vulnerability scanning inside pipelines.", href: "/services/devops-automation#capabilities" },
-      { name: "Site Reliability Engineering (SRE)", desc: "SLI/SLO definition, error budget tracking, and pager alerts.", href: "/services/devops-automation#capabilities" },
-      { name: "Release Automation", desc: "Canary deployments, blue-green releases, and rollback alerts.", href: "/services/devops-automation#capabilities" },
-      { name: "Monitoring & Observability", desc: "Distributed OpenTelemetry tracing, Jaeger dashboards, and ELK logs.", href: "/services/devops-automation#capabilities" }
+      { name: "DevSecOps", desc: "Sonarqube SAST checks and Snyk vulnerability scanning inside pipelines.", href: "/services/devops-automation/devsecops" },
+      { name: "Site Reliability Engineering (SRE)", desc: "SLI/SLO definition, error budget tracking, and pager alerts.", href: "/services/devops-automation/site-reliability-engineering" },
+      { name: "Release Automation", desc: "Canary deployments, blue-green releases, and rollback alerts.", href: "/services/devops-automation/release-automation" },
+      { name: "Monitoring & Observability", desc: "Distributed OpenTelemetry tracing, Jaeger dashboards, and ELK logs.", href: "/services/devops-automation/monitoring-observability" }
     ]
   },
   {
@@ -58,13 +58,13 @@ const serviceCategories = [
     href: "/services/cybersecurity",
     items: [
       { name: "Security Assessment", desc: "Threat modeling, network configuration audits, and risk assessments.", href: "/services/cybersecurity/security-assessment" },
-      { name: "Vulnerability Management", desc: "Continuous Nessus and Qualys scans, risk patching schedules.", href: "/services/cybersecurity#capabilities" },
-      { name: "Penetration Testing", desc: "Ethical hacking, API authorization checks, and exploit reports.", href: "/services/cybersecurity#capabilities" },
-      { name: "Security Operations Center (SOC)", desc: "24/7 SIEM monitoring, threat hunts, and SOAR event actions.", href: "/services/cybersecurity#capabilities" },
-      { name: "Identity & Access Management", desc: "Okta single sign-on (SSO), adaptive MFA, and PAM tools.", href: "/services/cybersecurity#capabilities" },
-      { name: "Cloud Security", desc: "Prisma Cloud audits, micro-segmentation, and least-privilege rules.", href: "/services/cybersecurity#capabilities" },
-      { name: "Compliance & Governance", desc: "Audit readiness for SOC2, ISO27001, HIPAA, and policy planning.", href: "/services/cybersecurity#capabilities" },
-      { name: "Zero Trust Architecture", desc: "Endpoint checks, SDP setups, and SASE security perimeters.", href: "/services/cybersecurity#capabilities" }
+      { name: "Vulnerability Management", desc: "Continuous Nessus and Qualys scans, risk patching schedules.", href: "/services/cybersecurity/vulnerability-management" },
+      { name: "Penetration Testing", desc: "Ethical hacking, API authorization checks, and exploit reports.", href: "/services/cybersecurity/penetration-testing" },
+      { name: "Security Operations Center (SOC)", desc: "24/7 SIEM monitoring, threat hunts, and SOAR event actions.", href: "/services/cybersecurity/security-operations-center" },
+      { name: "Identity & Access Management", desc: "Okta single sign-on (SSO), adaptive MFA, and PAM tools.", href: "/services/cybersecurity/identity-access-management" },
+      { name: "Cloud Security", desc: "Prisma Cloud audits, micro-segmentation, and least-privilege rules.", href: "/services/cybersecurity/cloud-security" },
+      { name: "Compliance & Governance", desc: "Audit readiness for SOC2, ISO27001, HIPAA, and policy planning.", href: "/services/cybersecurity/compliance-governance" },
+      { name: "Zero Trust Architecture", desc: "Endpoint checks, SDP setups, and SASE security perimeters.", href: "/services/cybersecurity/zero-trust-architecture" }
     ]
   },
   {
@@ -73,13 +73,13 @@ const serviceCategories = [
     href: "/services/software-development",
     items: [
       { name: "Enterprise Application Development", desc: "High-throughput database design and monolithic splits.", href: "/services/software-development/enterprise-app-development" },
-      { name: "Web Application Development", desc: "Responsive React/Next.js platforms with advanced SEO layouts.", href: "/services/software-development#capabilities" },
-      { name: "Mobile Application Development", desc: "Flutter and native iOS/Android builds with hardware integration.", href: "/services/software-development#capabilities" },
-      { name: "SaaS Product Development", desc: "Multi-tenant system configurations and subscription gateways.", href: "/services/software-development#capabilities" },
-      { name: "API Development & Integration", desc: "gRPC microservices, REST/GraphQL gateways, and OpenAPI specs.", href: "/services/software-development#capabilities" },
-      { name: "Microservices Architecture", desc: "Event-driven Apache Kafka loops and saga pattern integration.", href: "/services/software-development#capabilities" },
-      { name: "Product Engineering", desc: "Rapid MVP prototyping and customer experience design sprints.", href: "/services/software-development#capabilities" },
-      { name: "Application Modernization", desc: "Monolith database decoupling and serverless architecture migrations.", href: "/services/software-development#capabilities" }
+      { name: "Web Application Development", desc: "Responsive React/Next.js platforms with advanced SEO layouts.", href: "/services/software-development/web-app-development" },
+      { name: "Mobile Application Development", desc: "Flutter and native iOS/Android builds with hardware integration.", href: "/services/software-development/mobile-app-development" },
+      { name: "SaaS Product Development", desc: "Multi-tenant system configurations and subscription gateways.", href: "/services/software-development/saas-product-development" },
+      { name: "API Development & Integration", desc: "gRPC microservices, REST/GraphQL gateways, and OpenAPI specs.", href: "/services/software-development/api-development-integration" },
+      { name: "Microservices Architecture", desc: "Event-driven Apache Kafka loops and saga pattern integration.", href: "/services/software-development/microservices-architecture" },
+      { name: "Product Engineering", desc: "Rapid MVP prototyping and customer experience design sprints.", href: "/services/software-development/product-engineering" },
+      { name: "Application Modernization", desc: "Monolith database decoupling and serverless architecture migrations.", href: "/services/software-development/application-modernization" }
     ]
   },
   {
@@ -87,14 +87,14 @@ const serviceCategories = [
     name: "Digital Transformation",
     href: "/services/digital-transformation",
     items: [
-      { name: "Digital Strategy", desc: "IT roadmaps, cloud readiness audits, and budget optimization planning.", href: "/services/digital-transformation#capabilities" },
-      { name: "Enterprise Modernization", desc: "Refactoring legacy mainframes to cloud-native stacks.", href: "/services/digital-transformation#capabilities" },
-      { name: "Process Automation", desc: "OCR tools integration and cross-platform RPA pipelines.", href: "/services/digital-transformation#capabilities" },
-      { name: "Intelligent Workflows", desc: "Customer service routing systems based on sentiment scoring.", href: "/services/digital-transformation#capabilities" },
-      { name: "Customer Experience Transformation", desc: "Omni-channel client portals and ML-driven recommendation flows.", href: "/services/digital-transformation#capabilities" },
+      { name: "Digital Strategy", desc: "IT roadmaps, cloud readiness audits, and budget optimization planning.", href: "/services/digital-transformation/digital-strategy" },
+      { name: "Enterprise Modernization", desc: "Refactoring legacy mainframes to cloud-native stacks.", href: "/services/digital-transformation/enterprise-modernization" },
+      { name: "Process Automation", desc: "OCR tools integration and cross-platform RPA pipelines.", href: "/services/digital-transformation/process-automation" },
+      { name: "Intelligent Workflows", desc: "Customer service routing systems based on sentiment scoring.", href: "/services/digital-transformation/intelligent-workflows" },
+      { name: "Customer Experience Transformation", desc: "Omni-channel client portals and ML-driven recommendation flows.", href: "/services/digital-transformation/customer-experience-transformation" },
       { name: "Legacy System Modernization", desc: "Migrating legacy ColdFusion/COBOL/PHP workloads to Go and NodeJS.", href: "/services/digital-transformation/legacy-modernization" },
-      { name: "Business Transformation", desc: "Scaling Scrum frameworks and corporate KPI transparency models.", href: "/services/digital-transformation#capabilities" },
-      { name: "Change Management", desc: "Internal developer coaching and technology adoption guides.", href: "/services/digital-transformation#capabilities" }
+      { name: "Business Transformation", desc: "Scaling Scrum frameworks and corporate KPI transparency models.", href: "/services/digital-transformation/business-transformation" },
+      { name: "Change Management", desc: "Internal developer coaching and technology adoption guides.", href: "/services/digital-transformation/change-management" }
     ]
   },
   {
@@ -102,14 +102,14 @@ const serviceCategories = [
     name: "Data Engineering",
     href: "/services/data-engineering",
     items: [
-      { name: "Data Platform Development", desc: "Columnar databases design and multi-tier data storage setups.", href: "/services/data-engineering#capabilities" },
+      { name: "Data Platform Development", desc: "Columnar databases design and multi-tier data storage setups.", href: "/services/data-engineering/data-platform-development" },
       { name: "Data Warehousing", desc: "Snowflake, Databricks, and Google BigQuery analytical platforms.", href: "/services/data-engineering/data-warehousing" },
-      { name: "Data Lakes & Lakehouse", desc: "Apache Iceberg configurations and S3 parquet partitioning.", href: "/services/data-engineering#capabilities" },
-      { name: "ETL/ELT Pipelines", desc: "Airflow orchestrators and dbt models checking raw entries.", href: "/services/data-engineering#capabilities" },
-      { name: "Real-Time Data Processing", desc: "Apache Spark Streaming, Flink loops, and Druid databases.", href: "/services/data-engineering#capabilities" },
-      { name: "Data Quality Management", desc: "Great Expectations assertions and anomaly alerts.", href: "/services/data-engineering#capabilities" },
-      { name: "Master Data Management", desc: "Deduplication algorithms and master record sync tools.", href: "/services/data-engineering#capabilities" },
-      { name: "Big Data Engineering", desc: "Hadoop ecosystems, Spark cluster optimizations, and Elasticsearch grids.", href: "/services/data-engineering#capabilities" }
+      { name: "Data Lakes & Lakehouse", desc: "Apache Iceberg configurations and S3 parquet partitioning.", href: "/services/data-engineering/data-lakes-lakehouse" },
+      { name: "ETL/ELT Pipelines", desc: "Airflow orchestrators and dbt models checking raw entries.", href: "/services/data-engineering/etl-elt-pipelines" },
+      { name: "Real-Time Data Processing", desc: "Apache Spark Streaming, Flink loops, and Druid databases.", href: "/services/data-engineering/real-time-data-processing" },
+      { name: "Data Quality Management", desc: "Great Expectations assertions and anomaly alerts.", href: "/services/data-engineering/data-quality-management" },
+      { name: "Master Data Management", desc: "Deduplication algorithms and master record sync tools.", href: "/services/data-engineering/master-data-management" },
+      { name: "Big Data Engineering", desc: "Hadoop ecosystems, Spark cluster optimizations, and Elasticsearch grids.", href: "/services/data-engineering/big-data-engineering" }
     ]
   },
   {
@@ -118,13 +118,13 @@ const serviceCategories = [
     href: "/services/managed-services",
     items: [
       { name: "Managed Cloud Services", desc: "Multi-account admin support, security patches, OS updates.", href: "/services/managed-services/managed-cloud" },
-      { name: "Managed DevOps Services", desc: "CI/CD cache optimization, environment updates, and pipeline tuning.", href: "/services/managed-services#capabilities" },
-      { name: "Managed Security Services", desc: "24/7 threat monitoring, WAF policies, and incident containment.", href: "/services/managed-services#capabilities" },
-      { name: "Application Support", desc: "SLA bug resolutions, Sentry monitoring, and performance tuning.", href: "/services/managed-services#capabilities" },
-      { name: "Infrastructure Management", desc: "SAN configuration, hypervisor updates, and load balancers.", href: "/services/managed-services#capabilities" },
-      { name: "Database Administration", desc: "PostgreSQL index rebuilds, backups, and security hardening.", href: "/services/managed-services#capabilities" },
-      { name: "Monitoring & Incident Management", desc: "PagerDuty escalations, custom thresholds, and root-cause post-mortems.", href: "/services/managed-services#capabilities" },
-      { name: "24/7 Support Services", desc: "Slack and phone developer help desks with fast response SLAs.", href: "/services/managed-services#capabilities" }
+      { name: "Managed DevOps Services", desc: "CI/CD cache optimization, environment updates, and pipeline tuning.", href: "/services/managed-services/managed-devops" },
+      { name: "Managed Security Services", desc: "24/7 threat monitoring, WAF policies, and incident containment.", href: "/services/managed-services/managed-security" },
+      { name: "Application Support", desc: "SLA bug resolutions, Sentry monitoring, and performance tuning.", href: "/services/managed-services/application-support" },
+      { name: "Infrastructure Management", desc: "SAN configuration, hypervisor updates, and load balancers.", href: "/services/managed-services/infrastructure-management" },
+      { name: "Database Administration", desc: "PostgreSQL index rebuilds, backups, and security hardening.", href: "/services/managed-services/database-administration" },
+      { name: "Monitoring & Incident Management", desc: "PagerDuty escalations, custom thresholds, and root-cause post-mortems.", href: "/services/managed-services/monitoring-incident-management" },
+      { name: "24/7 Support Services", desc: "Slack and phone developer help desks with fast response SLAs.", href: "/services/managed-services/twenty-four-seven-support" }
     ]
   },
   {
@@ -133,13 +133,13 @@ const serviceCategories = [
     href: "/services/qa-testing",
     items: [
       { name: "Test Automation", desc: "Playwright and Cypress end-to-end client scripts.", href: "/services/qa-testing/test-automation" },
-      { name: "Performance Testing", desc: "API peak load simulations using k6 and Apache JMeter.", href: "/services/qa-testing#capabilities" },
-      { name: "Security Testing", desc: "Dependabot audits and access control authorization checks.", href: "/services/qa-testing#capabilities" },
-      { name: "API Testing", desc: "JSON contract validations, Postman pipelines, and Newman scripts.", href: "/services/qa-testing#capabilities" },
-      { name: "Mobile Application Testing", desc: "Appium browser farms testing native application packages.", href: "/services/qa-testing#capabilities" },
-      { name: "Functional Testing", desc: "Regression testing suites and User Acceptance Testing boards.", href: "/services/qa-testing#capabilities" },
-      { name: "Continuous Testing", desc: "Parallel build integrations, code coverage checkers.", href: "/services/qa-testing#capabilities" },
-      { name: "Quality Engineering", desc: "Shift-left methodologies, defect escape reports, and standards.", href: "/services/qa-testing#capabilities" }
+      { name: "Performance Testing", desc: "API peak load simulations using k6 and Apache JMeter.", href: "/services/qa-testing/performance-testing" },
+      { name: "Security Testing", desc: "Dependabot audits and access control authorization checks.", href: "/services/qa-testing/security-testing" },
+      { name: "API Testing", desc: "JSON contract validations, Postman pipelines, and Newman scripts.", href: "/services/qa-testing/api-testing" },
+      { name: "Mobile Application Testing", desc: "Appium browser farms testing native application packages.", href: "/services/qa-testing/mobile-app-testing" },
+      { name: "Functional Testing", desc: "Regression testing suites and User Acceptance Testing boards.", href: "/services/qa-testing/functional-testing" },
+      { name: "Continuous Testing", desc: "Parallel build integrations, code coverage checkers.", href: "/services/qa-testing/continuous-testing" },
+      { name: "Quality Engineering", desc: "Shift-left methodologies, defect escape reports, and standards.", href: "/services/qa-testing/quality-engineering" }
     ]
   },
   {
@@ -148,13 +148,13 @@ const serviceCategories = [
     href: "/services/it-consulting",
     items: [
       { name: "Technology Consulting", desc: "Cost-benefit analyses, legacy upgrade guides, and stacks selection.", href: "/services/it-consulting/technology-consulting" },
-      { name: "Enterprise Architecture", desc: "Distributed system component layouts and active sync failovers.", href: "/services/it-consulting#capabilities" },
-      { name: "Cloud Consulting", desc: "Public cloud budget forecasts, land zone configs, and cost estimation.", href: "/services/it-consulting#capabilities" },
-      { name: "AI Consulting", desc: "Generative AI workshops, feasibility checkouts, and alignment policies.", href: "/services/it-consulting#capabilities" },
-      { name: "Cybersecurity Consulting", desc: "Incident response plan drafts and risk register configuration.", href: "/services/it-consulting#capabilities" },
-      { name: "Digital Transformation Consulting", desc: "Digital transformation roadmaps, design thinking sprints.", href: "/services/it-consulting#capabilities" },
-      { name: "IT Strategy & Roadmap", desc: "IT capability adoption steps, budget planning, skill gap audits.", href: "/services/it-consulting#capabilities" },
-      { name: "Technology Assessment", desc: "Scalability audits, query bottlenecks tracking, and code checks.", href: "/services/it-consulting#capabilities" }
+      { name: "Enterprise Architecture", desc: "Distributed system component layouts and active sync failovers.", href: "/services/it-consulting/enterprise-architecture" },
+      { name: "Cloud Consulting", desc: "Public cloud budget forecasts, land zone configs, and cost estimation.", href: "/services/it-consulting/cloud-consulting" },
+      { name: "AI Consulting", desc: "Generative AI workshops, feasibility checkouts, and alignment policies.", href: "/services/it-consulting/ai-consulting" },
+      { name: "Cybersecurity Consulting", desc: "Incident response plan drafts and risk register configuration.", href: "/services/it-consulting/cybersecurity-consulting" },
+      { name: "Digital Transformation Consulting", desc: "Digital transformation roadmaps, design thinking sprints.", href: "/services/it-consulting/digital-transformation-consulting" },
+      { name: "IT Strategy & Roadmap", desc: "IT capability adoption steps, budget planning, skill gap audits.", href: "/services/it-consulting/it-strategy-roadmap" },
+      { name: "Technology Assessment", desc: "Scalability audits, query bottlenecks tracking, and code checks.", href: "/services/it-consulting/technology-assessment" }
     ]
   }
 ];
@@ -454,7 +454,6 @@ export function Navbar() {
   return (
     <div ref={navRef} className="fixed inset-x-0 top-0 z-50 flex justify-center px-4 py-4 pointer-events-none">
       <header
-        onMouseLeave={() => setActiveMenu(null)}
         className={`w-full max-w-7xl relative rounded-full border transition-all duration-350 ${isVisible
           ? "translate-y-0 opacity-100 pointer-events-auto"
           : "-translate-y-24 opacity-0 pointer-events-none"
@@ -519,8 +518,9 @@ export function Navbar() {
                   <div className="flex flex-col border-r border-zinc-900 pr-4 gap-1">
                     <span className="text-[9px] font-mono tracking-widest text-zinc-500 uppercase block px-3 mb-2">Practice Areas</span>
                     {serviceCategories.map((cat) => (
-                      <button
+                      <Link
                         key={cat.id}
+                        href={cat.href}
                         onMouseEnter={() => setActiveCategory(cat.id)}
                         onClick={() => {
                           setActiveMenu(null);
@@ -532,7 +532,7 @@ export function Navbar() {
                       >
                         <span>{cat.name}</span>
                         {activeCategory === cat.id && <span className="text-[10px]">&rarr;</span>}
-                      </button>
+                      </Link>
                     ))}
                   </div>
 
@@ -668,8 +668,9 @@ export function Navbar() {
                   <div className="flex flex-col border-r border-zinc-900 pr-4 gap-1">
                     <span className="text-[9px] font-mono tracking-widest text-zinc-500 uppercase block px-3 mb-2">Ecosystem Pillars</span>
                     {ecosystemCategories.map((cat) => (
-                      <button
+                      <Link
                         key={cat.id}
+                        href={cat.href}
                         onMouseEnter={() => setActiveEcoCategory(cat.id)}
                         onClick={() => {
                           setActiveMenu(null);
@@ -681,7 +682,7 @@ export function Navbar() {
                       >
                         <span>{cat.name}</span>
                         {activeEcoCategory === cat.id && <span className="text-[10px]">&rarr;</span>}
-                      </button>
+                      </Link>
                     ))}
                   </div>
 
@@ -735,8 +736,8 @@ export function Navbar() {
                     <div className="absolute inset-0 bg-gradient-to-tr from-[#ce2453]/20 to-[#e79e57]/10 pointer-events-none z-0" />
                     <div className="relative z-10">
                       <span className="text-[9px] font-mono tracking-widest text-[#ce2453] uppercase block mb-3 font-bold">Thought Leadership</span>
-                      <h4 className="text-sm font-bold leading-snug text-black mb-2">Devopstrio Insights</h4>
-                      <p className="text-[10px] text-zinc-650 leading-relaxed font-medium">
+                      <h4 className="text-sm font-bold leading-snug text-red-600 mb-2">Devopstrio Insights</h4>
+                      <p className="text-[10px] text-black leading-relaxed font-medium">
                         Read deep-dive articles, SRE blueprints, and research papers from our global engineering teams.
                       </p>
                     </div>

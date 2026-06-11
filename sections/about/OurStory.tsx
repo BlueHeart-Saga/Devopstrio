@@ -174,9 +174,6 @@ export function OurStory() {
                 />
               </svg>
 
-              {/* Active pointer dot at peak of the curve */}
-              <div className="absolute top-1/2 right-[10%] -translate-y-1/2 w-2 h-2 rounded-full bg-rose-500 z-30 shadow-[0_0_12px_rgba(244,63,94,0.8)] animate-pulse" />
-
               {/* Rotating dial years */}
               {milestones.map((event, idx) => {
                 let diff = idx - activeIdx;

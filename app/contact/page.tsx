@@ -8,6 +8,7 @@ import { WhyContactUs } from "@/sections/contact/WhyContactUs";
 import { TrustSignal } from "@/sections/contact/TrustSignal";
 import { FAQ } from "@/sections/contact/FAQ";
 import { ContactCTA } from "@/sections/contact/ContactCTA";
+import { TalkToExpert } from "@/sections/contact/TalkToExpert";
 import { Reveal } from "@/components/ui/Reveal";
 
 export default function ContactPage() {
@@ -35,16 +36,37 @@ export default function ContactPage() {
         
         <ContactForm />
         
-        <WhyContactUs />
-        <SvgWaveLine variant="dashed" />
         
+        {/* <SvgWaveLine variant="dashed" /> */}
+        
+        {/* Security & Compliance Section Header */}
+        <div className="text-center pt-4 pb-3 max-w-3xl mx-auto">
+          {/* <Reveal>
+            <span className="inline-block px-3 py-1 text-[10px] font-bold tracking-[0.2em] uppercase text-rose-500 border border-rose-500/30 rounded-none bg-black/40 mb-3">
+              Security & Trust
+            </span>
+          </Reveal> */}
+          <Reveal delay={0.1}>
+            <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-white">
+              Enterprise Compliance & Engineering Standards
+            </h2>
+          </Reveal>
+        </div>
         <TrustSignal />
-        <SvgWaveLine variant="particles" />
+        {/* <SvgWaveLine variant="particles" /> */}
+        <SvgWaveLine variant="liquid" />
+
+        <GlobalPresence />
+        
+        <SvgWaveLine variant="grid" />
+
+        <TalkToExpert />
+        
+        <SvgWaveLine variant="liquid" />
+
+        <WhyContactUs />
         
         <OurLocations />
-        <SvgWaveLine variant="grid" />
-        
-        <GlobalPresence />
         <SvgWaveLine variant="liquid" />
         
         <FAQ />

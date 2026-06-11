@@ -10,56 +10,64 @@ const corePoints = [
     tabName: "Global Presence, Local Expertise",
     title: "Global Presence, Local Expertise",
     desc: "Access world-class engineering expertise locally with global delivery teams designed to scale seamlessly under flexible engagement models.",
-    gradient: "from-rose-950/40 via-purple-950/30 to-zinc-950/80"
+    gradient: "from-rose-950/40 via-purple-950/30 to-zinc-950/80",
+    image: "/assets/Home-page/whychoose/globalpresence.png"
   },
   {
     num: "02",
     tabName: "Cloud, Data & AI Excellence",
     title: "Cloud, Data & AI Excellence",
     desc: "Leverage intelligence-driven automation, GenAI, and cloud platforms (Azure, AWS, GCP) to unlock next-generation product engineering.",
-    gradient: "from-blue-950/40 via-indigo-950/30 to-zinc-950/80"
+    gradient: "from-blue-950/40 via-indigo-950/30 to-zinc-950/80",
+    image: "/assets/Home-page/whychoose/cloudai.png"
   },
   {
     num: "03",
     tabName: "Outcome-Driven Transformation",
     title: "Outcome-Driven Transformation",
     desc: "We align every project outcome with direct business value, performance milestones, cost-efficiency metrics, and operational goals.",
-    gradient: "from-teal-950/40 via-emerald-950/30 to-zinc-950/80"
+    gradient: "from-teal-950/40 via-emerald-950/30 to-zinc-950/80",
+    image: "/assets/Home-page/whychoose/outcome.png"
   },
   {
     num: "04",
     tabName: "End-to-End Technology Delivery",
     title: "End-to-End Technology Delivery",
     desc: "From conceptualization, design, architecture, implementation to managed operations and continuous delivery—all managed under one strategic partner.",
-    gradient: "from-emerald-950/40 via-zinc-900/30 to-zinc-950/80"
+    gradient: "from-emerald-950/40 via-zinc-900/30 to-zinc-950/80",
+    image: "/assets/Home-page/whychoose/technology.png"
   },
   {
     num: "05",
     tabName: "Multi-Cloud Engineering Leadership",
     title: "Multi-Cloud Engineering Leadership",
     desc: "Our certified cloud experts build resilient infrastructures on AWS, Azure, Google Cloud, and complex hybrid environments.",
-    gradient: "from-indigo-950/40 via-pink-950/30 to-zinc-950/80"
+    gradient: "from-indigo-950/40 via-pink-950/30 to-zinc-950/80",
+    image: "/assets/Home-page/whychoose/multicloud.png"
   },
   {
     num: "06",
     tabName: "Enterprise-Grade Security & Reliability",
     title: "Enterprise-Grade Security & Reliability",
     desc: "Zero-trust environments, compliance guardrails, automated threat-detection, and highly reliable Site Reliability Engineering built into every delivery.",
-    gradient: "from-violet-950/40 via-fuchsia-950/30 to-zinc-950/80"
+    gradient: "from-violet-950/40 via-fuchsia-950/30 to-zinc-950/80",
+    image: "/assets/Home-page/whychoose/gradesecurity.png"
   },
   {
     num: "07",
     tabName: "Scalable Global Delivery Model",
     title: "Scalable Global Delivery Model",
     desc: "Scale teams dynamically with elite developers, DevOps engineers, and cloud architects operating under our optimized global framework.",
-    gradient: "from-fuchsia-950/40 via-rose-950/30 to-zinc-950/80"
+    gradient: "from-fuchsia-950/40 via-rose-950/30 to-zinc-950/80",
+    image: "/assets/Home-page/whychoose/globaldeliver.png"
   },
   {
     num: "08",
     tabName: "Long-Term Strategic Partnership",
     title: "Long-Term Strategic Partnership",
     desc: "We focus on long-term relationships, strategic consulting, knowledge-sharing, and continuous value creation beyond transactional contracts.",
-    gradient: "from-rose-950/40 via-orange-950/30 to-zinc-950/80"
+    gradient: "from-rose-950/40 via-orange-950/30 to-zinc-950/80",
+    image: "/assets/Home-page/whychoose/partnership.png"
   }
 ];
 
@@ -149,35 +157,54 @@ export function WhyDevopstrio() {
           <div className="flex flex-col lg:sticky lg:top-28">
             
             {/* Elegant visual card */}
-            <div className={`relative w-full aspect-[16/10] rounded-[32px] overflow-hidden border border-zinc-800/80 bg-gradient-to-br ${activePoint.gradient} p-8 flex flex-col justify-between shadow-[0_20px_40px_rgba(0,0,0,0.6)] mb-8 transition-all duration-700`}>
-              
-              {/* Subtle top-left indicator dot */}
-              <div className="w-1.5 h-1.5 rounded-full bg-white/60" />
+            <div className="relative w-full aspect-[16/10] rounded-[32px] overflow-hidden border border-zinc-800/80 bg-zinc-950 shadow-[0_20px_40px_rgba(0,0,0,0.6)] mb-8 select-none">
+              {corePoints.map((point, idx) => (
+                <div
+                  key={point.num}
+                  className={`absolute inset-0 transition-all duration-700 ease-in-out ${
+                    idx === activeIndex ? "opacity-90 scale-100 z-10" : "opacity-0 scale-105 z-0 pointer-events-none"
+                  }`}
+                >
+                  <img
+                    src={point.image}
+                    alt={point.title}
+                    className="w-full h-full object-cover object-center"
+                  />
+                  {/* Premium overlay gradients for readability and style blending */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/30 to-transparent" />
+                  <div className={`absolute inset-0 bg-gradient-to-br ${point.gradient} opacity-25 mix-blend-color-dodge`} />
+                </div>
+              ))}
 
-              {/* Sparkle star matrix grid */}
-              <div className="absolute right-8 top-1/2 -translate-y-1/2 grid grid-cols-5 gap-4 opacity-50 pointer-events-none">
-                {Array.from({ length: 25 }).map((_, i) => {
-                  // Highlight index values for dynamic pulsing glows
-                  const isSpecial = i === 12 || i === 18 || i === 7;
-                  return (
-                    <svg
-                      key={i}
-                      className={`w-3.5 h-3.5 transition-all duration-700 ${
-                        isSpecial ? "text-rose-500 scale-125 animate-pulse" : "text-white/10"
-                      }`}
-                      fill="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M12 0l3 9 9 3-9 3-3 9-3-9-9-3 9-3z" />
-                    </svg>
-                  );
-                })}
+              {/* Foreground content: Number & top-left indicator */}
+              <div className="absolute inset-0 p-8 flex flex-col justify-between z-20 pointer-events-none">
+                {/* Subtle top-left indicator dot */}
+                <div className="w-1.5 h-1.5 rounded-full bg-white/60" />
+
+                {/* Sparkle star matrix grid */}
+                <div className="absolute right-8 top-1/2 -translate-y-1/2 grid grid-cols-5 gap-4 opacity-40 pointer-events-none">
+                  {Array.from({ length: 25 }).map((_, i) => {
+                    const isSpecial = i === 12 || i === 18 || i === 7;
+                    return (
+                      <svg
+                        key={i}
+                        className={`w-3.5 h-3.5 transition-all duration-700 ${
+                          isSpecial ? "text-rose-500 scale-125 animate-pulse" : "text-white/10"
+                        }`}
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path d="M12 0l3 9 9 3-9 3-3 9-3-9-9-3 9-3z" />
+                      </svg>
+                    );
+                  })}
+                </div>
+
+                {/* Giant bottom-left number */}
+                <span className="text-6xl md:text-7xl font-black text-white/90 leading-none select-none font-sans drop-shadow-md">
+                  {activePoint.num}
+                </span>
               </div>
-
-              {/* Giant bottom-left number */}
-              <span className="text-6xl md:text-7xl font-black text-white/80 leading-none select-none font-sans">
-                {activePoint.num}
-              </span>
             </div>
 
             {/* Active Content description */}

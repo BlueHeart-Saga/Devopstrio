@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Reveal } from "@/components/ui/Reveal";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, ArrowRight } from "lucide-react";
 
 export function CompanyIntro() {
   return (
@@ -29,7 +29,7 @@ export function CompanyIntro() {
             </h2>
           </Reveal>
           <Reveal delay={0.2}>
-            <p className="text-zinc-400 text-base md:text-lg leading-relaxed font-bold max-w-3xl mx-auto">
+            <p className="text-zinc-400 text-base md:text-lg leading-relaxed font-medium max-w-3xl mx-auto">
               Devopstrio is a London-headquartered global technology company specialising in Cloud, AI, DevOps, and Enterprise Software. We partner with forward-thinking enterprises to modernise infrastructure, unlock new value, and accelerate digital success — quietly, precisely, and at scale.
             </p>
           </Reveal>
@@ -39,37 +39,60 @@ export function CompanyIntro() {
         {/* Premium Redesigned Mockup Card                                           */}
         {/* ========================================================================= */}
         <Reveal delay={0.3}>
-          <div className="max-w-4xl mx-auto rounded-3xl overflow-hidden shadow-[0_25px_50px_-12px_rgba(0,0,0,0.5)] border border-zinc-800 bg-[#f4f4f5] text-zinc-900 mb-12">
-            <div className="relative w-full overflow-hidden">
+          <div className="relative w-full rounded-[2rem] border border-zinc-800 bg-[#09090b] overflow-hidden min-h-[480px] flex items-center mb-12">
+
+            {/* Background Collage Image shown fully without desaturation or heavy dark shadows */}
+            <div className="absolute inset-0 w-full h-full">
               <img
                 src="/assets/About-page/team/image.png"
                 alt="Devopstrio Engineering Team"
-                className="w-full h-auto object-cover max-h-[350px]"
+                className="w-full h-full object-cover"
               />
             </div>
-            {/* <div className="p-6 md:p-8 lg:p-10">
-              <h3 className="text-center text-xl md:text-2xl lg:text-3xl font-bold text-zinc-900 mb-8 tracking-tight">
-                Our Global Engineering & Leadership Team
-              </h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 text-sm leading-relaxed text-zinc-600 font-medium">
-                <div>
-                  <p className="mb-4">
-                    Devopstrio was founded with a singular mission: to bridge the gap between complex cloud architectures and real-world business outcomes. Operating from our headquarters in London and global delivery centers, we bring together senior cloud architects, data scientists, and DevOps practitioners who thrive on solving complex infrastructure challenges.
+
+            {/* Grid Layout containing Left Info and Right Card */}
+            <div className="relative z-10 w-full grid grid-cols-1 lg:grid-cols-12 gap-8 items-center p-8 md:p-12 lg:p-16">
+
+              {/* Left Side: Editorial Heading with a subtle backdrop to ensure readability on full color background */}
+              <div className="lg:col-span-6 flex flex-col items-start gap-4 bg-black/60 p-6 border border-zinc-800/50">
+                <span className="inline-block px-3 py-1 text-[10px] font-bold tracking-[0.2em] uppercase text-rose-500 border border-rose-500/30 rounded-none bg-black/40">
+                  WHO WE ARE
+                </span>
+                <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight leading-tight text-white max-w-[420px]">
+                  Powering Digital Evolution Through Precision Engineering
+                </h3>
+              </div>
+
+              {/* Right Side: High Contrast Floating Card */}
+              <div className="lg:col-span-6 flex justify-end">
+                <div className="w-full max-w-[460px] bg-black border-2 border-white/90 p-8 md:p-10 flex flex-col gap-6 text-left shadow-[0_30px_60px_rgba(0,0,0,0.8)]">
+                  <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-rose-500 block mb-0">
+                    OUR PHILOSOPHY
+                  </span>
+
+                  {/* Elegant Quote */}
+                  <blockquote className="text-sm md:text-base italic font-semibold text-white border-l-2 border-rose-500 pl-4 leading-relaxed">
+                    "We don't just build systems; we architect the digital engines that power tomorrow's enterprises."
+                  </blockquote>
+
+                  {/* Concise Summary Paragraph */}
+                  <p className="text-xs md:text-sm leading-relaxed text-zinc-300 font-medium">
+                    Devopstrio is an elite engineering partner. We combine advanced cloud design, automated delivery pipelines, and secure scale to accelerate business transformation at global scale.
                   </p>
-                  <p>
-                    We do not believe in one-size-fits-all solutions. Instead, we build bespoke, secure, and highly scalable cloud platforms designed to align with strict compliance guidelines while empowering your developers to ship features with speed and complete confidence.
-                  </p>
-                </div>
-                <div>
-                  <p className="mb-4">
-                    By partnering with forward-thinking enterprises, we help modernize legacy systems, implement fully automated CI/CD pipelines, and embed security controls directly into the software lifecycle. Our co-investment ODC model ensures that we are fully aligned with your success, delivering measurable cost-optimization, velocity, and absolute reliability.
-                  </p>
-                  <p>
-                    From day-one architecture consulting to 24/7 continuous operations, we stand by our clients as their dedicated engineering partners.
-                  </p>
+
+                  <div className="pt-2">
+                    <a
+                      href="/services"
+                      className="inline-flex items-center gap-2 bg-rose-600 hover:bg-rose-700 text-white px-6 py-3 rounded text-xs md:text-sm font-medium transition-colors shadow-sm"
+                    >
+                      Explore Our Services <ArrowRight className="w-4 h-4" />
+                    </a>
+                  </div>
                 </div>
               </div>
-            </div> */}
+
+            </div>
+
           </div>
         </Reveal>
 

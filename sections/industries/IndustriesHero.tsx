@@ -30,9 +30,9 @@ export function IndustriesHero({
           className="w-full h-full object-cover object-center select-none pointer-events-none opacity-40 filter brightness-[0.8] contrast-[1.05]"
         />
         {/* Premium Dark Gradient Overlay for Text Readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/85 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/35" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(225,29,72,0.06),transparent_50%)] pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/90 via-30% to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
+        {/* <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(225,29,72,0.06),transparent_50%)] pointer-events-none" /> */}
       </div>
 
       <div className="max-w-site mx-auto w-full px-6 md:px-12 lg:px-20 relative z-10 py-20 lg:py-28">

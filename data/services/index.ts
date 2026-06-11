@@ -38,10 +38,19 @@ export const capabilitiesData: Record<string, Record<string, CapabilityDetail>> 
   "it-consulting": consultingCapabilities
 };
 
+import { generateCapabilityDetail } from "./dynamic-capabilities";
+
 export function getServiceByCategory(slug: string): ServiceCategory | undefined {
   return servicesData[slug];
 }
 
 export function getCapability(serviceSlug: string, capabilitySlug: string): CapabilityDetail | undefined {
-  return capabilitiesData[serviceSlug]?.[capabilitySlug];
+  const explicitCap = capabilitiesData[serviceSlug]?.[capabilitySlug];
+  if (explicitCap) return explicitCap;
+
+  const service = servicesData[serviceSlug];
+  if (!service) return undefined;
+
+  return generateCapabilityDetail(serviceSlug, capabilitySlug, service);
 }
+
