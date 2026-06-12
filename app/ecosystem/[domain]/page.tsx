@@ -130,7 +130,7 @@ export default async function EcosystemDomainPage({ params }: PageProps) {
                     </h3>
 
                     <p className="text-[11px] text-zinc-450 leading-relaxed font-light mb-6">
-                      {sub.desc}
+                      {sub.description}
                     </p>
                   </div>
 

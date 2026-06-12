@@ -29,6 +29,7 @@ import {
 import { getEcosystemDomain, getEcosystemSubpage } from "@/data/ecosystem";
 import { SectionNavbar } from "@/components/ui/SectionNavbar";
 import { Reveal } from "@/components/ui/Reveal";
+import { CTA } from "@/components/ecosystem/CTA";
 
 // FAQs specifically for the AI Innovation Lab
 const aiLabFaqs = [
@@ -1193,7 +1194,7 @@ export default function EcosystemSubpagePage() {
               <p className="text-xs text-zinc-450 leading-relaxed font-light mb-8 max-w-3xl">{data.caseStudy.desc}</p>
 
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-6 border-t border-zinc-900">
-                {data.caseStudy.metrics.map((metric, idx) => (
+                {data.caseStudy.metrics?.map((metric, idx) => (
                   <div key={idx}>
                     <span className="block text-3xl font-bold font-mono text-rose-500 mb-1">{metric.value}</span>
                     <span className="block text-[10px] font-mono tracking-wider text-zinc-500 uppercase">{metric.label}</span>
