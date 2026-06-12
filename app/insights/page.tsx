@@ -33,7 +33,7 @@ export default function InsightsLandingPage() {
     <main className="min-h-screen bg-black text-white pt-16 font-sans">
       
       {/* Cinematic Hero Title Header */}
-      <section className="pt-16 pb-4 md:pb-8 text-center relative bg-[#030303]">
+      {/* <section className="pt-16 pb-4 md:pb-8 text-center relative bg-[#030303]">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(244,63,94,0.05),transparent_50%)] pointer-events-none" />
         <Reveal>
           <h1 className="text-4xl md:text-6xl font-light tracking-tight mb-4 text-white">
@@ -43,7 +43,7 @@ export default function InsightsLandingPage() {
             Deep-dives, post-mortems, and cloud-native blueprints written by SRE and platform specialists.
           </p>
         </Reveal>
-      </section>
+      </section> */}
 
       {/* Structured Insights Sections */}
       <InsightsHero />

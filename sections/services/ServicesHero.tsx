@@ -7,7 +7,7 @@ import Link from "next/link";
 
 export function ServicesHero() {
   return (
-    <section className="w-full bg-black text-white relative overflow-hidden pt-12 md:pt-16 lg:pt-20 pb-0">
+    <section className="w-full bg-black text-white relative overflow-hidden -mt-16 pt-28 md:pt-36 lg:pt-44 pb-0">
       
       <div className="max-w-site mx-auto w-full px-6 md:px-12 lg:px-20 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-[3fr_2fr] gap-10 lg:gap-16 items-center">

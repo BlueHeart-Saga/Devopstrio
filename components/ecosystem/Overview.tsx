@@ -16,7 +16,7 @@ export function Overview({ heading, desc1, desc2 }: OverviewProps) {
         <div className="lg:col-span-5">
           <Reveal>
             <div className="flex items-center gap-2 mb-4">
-              <span className="h-[2px] w-6 bg-rose-600"></span>
+
               <span className="text-[10px] font-bold tracking-widest uppercase text-rose-500">
                 Overview
               </span>

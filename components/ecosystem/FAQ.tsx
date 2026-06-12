@@ -14,11 +14,11 @@ export function FAQ({ faqs }: FAQProps) {
   return (
     <section id="faq" className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
       <div className="max-w-3xl mx-auto px-6">
-        
+
         {/* Section Header */}
         <Reveal className="mb-16 text-center">
           <div className="flex items-center justify-center gap-2 mb-4">
-            <span className="h-[2px] w-6 bg-rose-600"></span>
+
             <span className="text-[10px] font-bold tracking-widest uppercase text-rose-500">
               FAQ
             </span>
@@ -45,9 +45,8 @@ export function FAQ({ faqs }: FAQProps) {
                     </span>
                   </button>
 
-                  <div className={`transition-all duration-300 ease-in-out ${
-                    isOpen ? "max-h-[300px] border-t border-zinc-900/50 p-5 opacity-100" : "max-h-0 overflow-hidden opacity-0"
-                  }`}>
+                  <div className={`transition-all duration-300 ease-in-out ${isOpen ? "max-h-[300px] border-t border-zinc-900/50 p-5 opacity-100" : "max-h-0 overflow-hidden opacity-0"
+                    }`}>
                     <p className="text-xs text-zinc-400 leading-relaxed font-light">{faq.a}</p>
                   </div>
                 </div>

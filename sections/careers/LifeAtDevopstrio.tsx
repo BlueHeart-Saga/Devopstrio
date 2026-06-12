@@ -13,7 +13,7 @@ export function LifeAtDevopstrio() {
           <div className="lg:sticky lg:top-28">
             <Reveal>
               <div className="flex items-center gap-2 mb-4">
-                <span className="h-[2px] w-6 bg-rose-600"></span>
+
                 <span className="text-[10px] font-bold tracking-widest uppercase text-rose-500">Life at Devopstrio</span>
               </div>
               <h2 className="text-2xl md:text-3xl font-light text-white tracking-tight leading-snug mb-6">
@@ -35,7 +35,7 @@ export function LifeAtDevopstrio() {
                 <div className="group relative rounded-2xl overflow-hidden border border-zinc-900 bg-zinc-950/40 p-6 flex flex-col justify-end aspect-[1.8/1] hover:border-zinc-800 transition-all duration-300">
                   {/* Glowing corner indicator */}
                   <div className="absolute top-4 left-4 w-1.5 h-1.5 rounded-full bg-rose-500 opacity-40 group-hover:opacity-100 transition-opacity" />
-                  
+
                   <div className="relative z-10 text-left">
                     <span className="block text-xs font-semibold text-white mb-1">{img.title}</span>
                     <span className="block text-[10px] text-zinc-400 leading-relaxed font-light">{img.desc}</span>

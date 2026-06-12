@@ -21,7 +21,7 @@ export function Hero({ badge, title, subtitle, stats, breadcrumbs }: HeroProps) 
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#09090b_1px,transparent_1px),linear-gradient(to_bottom,#09090b_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none" />
 
       <div className="max-w-site mx-auto relative z-10">
-        
+
         {/* Breadcrumb Navigation */}
         <nav className="flex items-center gap-2 text-xs font-mono text-zinc-550 mb-8 overflow-x-auto whitespace-nowrap py-1">
           {breadcrumbs.map((crumb, idx) => {
@@ -46,7 +46,7 @@ export function Hero({ badge, title, subtitle, stats, breadcrumbs }: HeroProps) 
           {badge && (
             <Reveal>
               <div className="flex items-center gap-2 mb-4">
-                <span className="h-[2px] w-6 bg-rose-600"></span>
+
                 <span className="text-[10px] font-bold tracking-widest uppercase text-rose-500">
                   {badge}
                 </span>
@@ -74,7 +74,7 @@ export function Hero({ badge, title, subtitle, stats, breadcrumbs }: HeroProps) 
               <Reveal key={idx} delay={idx * 0.05}>
                 <div className="bg-zinc-950/20 border border-zinc-900/80 rounded-2xl p-5 hover:border-zinc-800 hover:bg-zinc-900/5 transition-all duration-300 group cursor-pointer relative overflow-hidden">
                   <div className="absolute top-0 right-0 w-28 h-28 bg-[radial-gradient(circle_at_center,rgba(244,63,94,0.015),transparent_75%)] opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
-                  
+
                   <span className="block text-3xl font-bold font-mono text-rose-500 mb-1 group-hover:scale-105 transition-transform duration-300 origin-left">
                     {stat.value}
                   </span>

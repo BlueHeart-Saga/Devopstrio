@@ -22,7 +22,7 @@ export function CTA({ ctaTitle, ctaHighlight, ctaDesc, ctaBtnText, backLink = "/
       <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
         <Reveal>
           <div className="flex items-center justify-center gap-2 mb-4">
-            <span className="h-[2px] w-6 bg-rose-600"></span>
+
             <span className="text-[10px] font-bold tracking-widest uppercase text-rose-500">
               Get In Touch
             </span>

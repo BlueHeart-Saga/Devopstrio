@@ -12,11 +12,11 @@ export function Timeline({ title = "Our execution roadmap", steps }: TimelinePro
   return (
     <section id="process" className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
       <div className="max-w-site mx-auto px-6 md:px-12 lg:px-20 relative z-10">
-        
+
         {/* Section Header */}
         <Reveal className="mb-16 text-left">
           <div className="flex items-center gap-2 mb-4">
-            <span className="h-[2px] w-6 bg-rose-600"></span>
+
             <span className="text-[10px] font-bold tracking-widest uppercase text-rose-500">
               Timeline
             </span>
@@ -35,7 +35,7 @@ export function Timeline({ title = "Our execution roadmap", steps }: TimelinePro
             return (
               <Reveal key={idx} delay={idx * 0.05} className="relative pl-8 md:pl-10">
                 <span className="absolute left-[-5px] top-1.5 w-2.5 h-2.5 rounded-full bg-rose-600 border-2 border-black ring-4 ring-rose-950/20" />
-                
+
                 <h3 className="text-xs font-semibold text-zinc-150 uppercase tracking-widest mb-2">
                   {label}
                 </h3>

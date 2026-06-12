@@ -24,11 +24,11 @@ export function IndustryCards({ industries }: IndustryCardsProps) {
   return (
     <section className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
       <div className="max-w-site mx-auto px-6 md:px-12 lg:px-20 relative z-10">
-        
+
         {/* Section Header */}
         <Reveal className="mb-16 text-left">
           <div className="flex items-center gap-2 mb-4">
-            <span className="h-[2px] w-6 bg-rose-600"></span>
+
             <span className="text-[10px] font-bold tracking-widest uppercase text-rose-500">
               Industries
             </span>
@@ -48,7 +48,7 @@ export function IndustryCards({ industries }: IndustryCardsProps) {
               <Reveal key={idx} delay={idx * 0.05} className="h-full">
                 <div className="h-full bg-zinc-950/20 border border-zinc-900/80 rounded-2xl p-6 md:p-8 flex flex-col justify-between hover:border-rose-500/30 hover:bg-zinc-900/10 transition-all duration-300 hover:scale-[1.02] group text-left relative overflow-hidden cursor-pointer">
                   <div className="absolute top-0 right-0 w-28 h-28 bg-[radial-gradient(circle_at_center,rgba(244,63,94,0.02),transparent_75%)] opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
-                  
+
                   <div>
                     <div className="mb-6 w-11 h-11 rounded-xl bg-rose-950/15 border border-rose-900/20 flex items-center justify-center group-hover:border-rose-500/30 transition-colors">
                       {getIcon(title)}

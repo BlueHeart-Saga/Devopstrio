@@ -11,7 +11,7 @@ export function CoreValues() {
         <div className="max-w-3xl text-left mb-16">
           <Reveal>
             <div className="flex items-center gap-2 mb-4">
-              <span className="h-[2px] w-6 bg-rose-600"></span>
+
               <span className="text-[10px] font-bold tracking-widest uppercase text-rose-500">Core Values</span>
             </div>
             <h2 className="text-2xl md:text-3xl font-light text-white tracking-tight leading-snug">

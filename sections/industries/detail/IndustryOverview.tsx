@@ -24,12 +24,12 @@ export function IndustryOverview({
 
       <div className="max-w-site mx-auto px-6 md:px-12 lg:px-20 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
-          
+
           {/* Left Side: Context & Operational Challenges */}
           <div className="lg:col-span-6 text-left">
             <Reveal>
               <div className="flex items-center gap-2 mb-4">
-                <span className="h-[2px] w-6 bg-rose-600"></span>
+
                 <span className="text-[10px] font-bold tracking-widest uppercase text-rose-500">
                   Domain Context
                 </span>

@@ -11,7 +11,7 @@ export function AboutCTA() {
         <Reveal className="max-w-3xl mx-auto flex flex-col items-center">
 
           <div className="inline-flex items-center gap-2 mb-4">
-            <span className="h-[2px] w-6 bg-rose-600"></span>
+
             <span className="text-[11px] font-semibold tracking-wider uppercase text-rose-500">
               Start Your Journey
             </span>

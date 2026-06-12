@@ -34,7 +34,7 @@ export default function AboutPage() {
     <main className="min-h-screen bg-black text-white pt-16 font-sans">
 
       {/* New Cinematic Hero Intro */}
-      <section className="pt-16 pb-4 md:pb-8 text-center relative bg-[#030303]">
+      {/* <section className="pt-16 pb-4 md:pb-8 text-center relative bg-[#030303]">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(220,38,38,0.06),transparent_50%)] pointer-events-none" />
         <Reveal>
           <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-4 text-white">
@@ -44,7 +44,7 @@ export default function AboutPage() {
             Discover the principles, mission, and engineering culture that drives our global technology solutions.
           </p>
         </Reveal>
-      </section>
+      </section> */}
 
       {/* Existing About Components with High-Level Coded SVG Wave Lines */}
       <div id="about-components-start" className="flex flex-col bg-black">

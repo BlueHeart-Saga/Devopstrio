@@ -16,7 +16,7 @@ export default function ContactPage() {
     <main className="min-h-screen bg-black text-white pt-16 font-sans">
       
       {/* Cinematic Hero Title Header */}
-      <section className="pt-16 pb-4 md:pb-8 text-center relative bg-[#030303]">
+      {/* <section className="pt-16 pb-4 md:pb-8 text-center relative bg-[#030303]">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(244,63,94,0.05),transparent_50%)] pointer-events-none" />
         <Reveal>
           <h1 className="text-4xl md:text-6xl font-light tracking-tight mb-4 text-white">
@@ -26,7 +26,7 @@ export default function ContactPage() {
             Connect directly with our senior engineering architects and global delivery leads.
           </p>
         </Reveal>
-      </section>
+      </section> */}
 
       {/* Structured Contact Sections with High-Level Coded SVG Wave Lines */}
       <div className="flex flex-col bg-black">

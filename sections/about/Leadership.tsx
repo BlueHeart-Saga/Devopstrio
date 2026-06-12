@@ -46,7 +46,7 @@ const teamMembers = [
   {
     name: "Thangalakshmi",
     role: "Cognitive Success Lead",
-    photo: "/assets/About-page/team/membars/thangalakshimi_6.jpeg",
+    photo: "/assets/About-page/team/membars/thangalakshimi_7.jpeg",
     rotate: "rotate-1",
     zIndex: "z-[6]",
   },

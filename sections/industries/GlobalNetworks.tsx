@@ -26,7 +26,7 @@ export function GlobalNetworks() {
         {/* Section Header */}
         <Reveal className="mb-16 text-center">
           <div className="flex items-center justify-center gap-2 mb-4">
-            <span className="h-[2px] w-6 bg-rose-600"></span>
+
             <span className="text-[10px] font-bold tracking-widest uppercase text-rose-500">
               Geographic Capability
             </span>
@@ -45,7 +45,7 @@ export function GlobalNetworks() {
             <Reveal key={region.name} delay={idx * 0.05} className="h-full">
               <div className="h-full bg-zinc-950/20 border border-zinc-900/80 rounded-2xl p-8 flex flex-col justify-between hover:border-rose-500/30 hover:bg-zinc-900/10 transition-all duration-300 hover:scale-[1.02] group text-left relative overflow-hidden cursor-pointer">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-[radial-gradient(circle_at_center,rgba(244,63,94,0.02),transparent_75%)] opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
-                
+
                 <div>
                   <span className="block text-[9px] font-mono text-zinc-550 mb-4 uppercase tracking-widest">
                     Region {(idx + 1).toString().padStart(2, "0")}

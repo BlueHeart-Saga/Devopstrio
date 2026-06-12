@@ -25,7 +25,7 @@ export function LearningGrowth() {
           <div>
             <Reveal>
               <div className="flex items-center gap-2 mb-4">
-                <span className="h-[2px] w-6 bg-rose-600"></span>
+
                 <span className="text-[10px] font-bold tracking-widest uppercase text-rose-500">Growth Pathway</span>
               </div>
               <h2 className="text-2xl md:text-3xl font-light text-white tracking-tight leading-snug mb-6">
@@ -57,7 +57,7 @@ export function LearningGrowth() {
           {/* Right Box: Programs and Labs */}
           <div className="bg-zinc-950/20 border border-zinc-900 rounded-3xl p-8 lg:p-10 relative overflow-hidden h-full flex flex-col justify-between">
             <div className="absolute top-0 right-0 w-40 h-40 bg-[radial-gradient(circle_at_center,rgba(225,29,72,0.02),transparent_75%)] pointer-events-none" />
-            
+
             <div>
               <Reveal>
                 <span className="text-[10px] font-mono tracking-widest text-rose-500 uppercase block mb-3 font-bold">Academic Tracks</span>

@@ -20,7 +20,7 @@ export function IndustriesHero({
   bgImage = "/assets/industries_hero_bg.png"
 }: IndustriesHeroProps) {
   return (
-    <section className="w-full relative overflow-hidden bg-black text-white min-h-[550px] lg:min-h-[640px] flex items-center border-b border-zinc-900/60">
+    <section className="w-full relative overflow-hidden bg-black text-white min-h-[550px] lg:min-h-[640px] flex items-center border-b border-zinc-900/60 -mt-16">
       
       {/* Cover Background Image */}
       <div className="absolute inset-0 z-0">
@@ -35,7 +35,7 @@ export function IndustriesHero({
         {/* <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(225,29,72,0.06),transparent_50%)] pointer-events-none" /> */}
       </div>
 
-      <div className="max-w-site mx-auto w-full px-6 md:px-12 lg:px-20 relative z-10 py-20 lg:py-28">
+      <div className="max-w-site mx-auto w-full px-6 md:px-12 lg:px-20 relative z-10 pt-36 pb-20 lg:pt-44 lg:pb-28">
         <div className="max-w-3xl text-left">
           
           {/* Breadcrumb Navigation */}

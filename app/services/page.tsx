@@ -2,21 +2,39 @@
 
 import React from "react";
 import { ServicesHero } from "@/sections/services/ServicesHero";
-import { ServicesIntro } from "@/sections/services/ServicesIntro";
 import { CategoriesGrid } from "@/sections/services/CategoriesGrid";
-import { TechStackSection } from "@/sections/services/TechStackSection";
+import { CoreServices } from "@/sections/home/CoreServices";
+import { DetailedServices } from "@/sections/services/DetailedServices";
 import { LifecycleSection } from "@/sections/services/LifecycleSection";
+import { IndustriesSection } from "@/sections/home/IndustriesSection";
+import { WhyDevopstrio } from "@/sections/home/WhyDevOpsTrio";
+import { TechStackSection } from "@/sections/services/TechStackSection";
 import { CaseStudyHighlight } from "@/sections/services/CaseStudyHighlight";
+import { EngagementModels } from "@/sections/services/EngagementModels";
 import { FaqSection } from "@/sections/services/FaqSection";
 import { ServicesCTA } from "@/sections/services/ServicesCTA";
+import { SectionNavbar } from "@/components/ui/SectionNavbar";
 import { Reveal } from "@/components/ui/Reveal";
+
+const servicesSections = [
+  { id: "categories", label: "Categories" },
+  { id: "capabilities", label: "Capabilities" },
+  { id: "detailed-services", label: "Services Explorer" },
+  { id: "delivery-framework", label: "Framework" },
+  { id: "industries", label: "Industries" },
+  { id: "why-devopstrio", label: "Why Us" },
+  { id: "technology-ecosystem", label: "Tech Ecosystem" },
+  { id: "client-impact", label: "Client Impact" },
+  { id: "engagement-models", label: "Engagement Models" },
+  { id: "faq", label: "FAQ" }
+];
 
 export default function ServicesPage() {
   return (
     <main className="min-h-screen bg-black text-white pt-16 font-sans">
       
       {/* Cinematic Hero Title Header */}
-      <section className="pt-16 pb-4 md:pb-8 text-center relative bg-[#030303]">
+      {/* <section className="pt-16 pb-4 md:pb-8 text-center relative bg-[#030303]">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(244,63,94,0.05),transparent_50%)] pointer-events-none" />
         <Reveal>
           <h1 className="text-4xl md:text-6xl font-light tracking-tight mb-4 text-white">
@@ -26,35 +44,80 @@ export default function ServicesPage() {
             From cognitive AI pipelines and global cloud orchestration to zero-trust compliance frameworks.
           </p>
         </Reveal>
-      </section>
+      </section> */}
 
       {/* Structured Services Sections with High-Level Coded SVG Wave Lines */}
       <div className="flex flex-col bg-black">
         <ServicesHero />
-        <SvgWaveLine variant="smooth" />
-        
-        <div id="services-start">
-          <ServicesIntro />
-        </div>
-        <SvgWaveLine variant="dashed" />
-        
-        <CategoriesGrid />
-        <SvgWaveLine variant="particles" />
-        
-        <TechStackSection />
-        <SvgWaveLine variant="grid" />
-        
-        <LifecycleSection />
-        <SvgWaveLine variant="liquid" />
-        
-        <CaseStudyHighlight />
-        <SvgWaveLine variant="smooth" />
-        
-        <FaqSection />
-        <SvgWaveLine variant="dashed" />
-        
-        <ServicesCTA />
       </div>
+
+      {/* Sticky Section Sub-Navbar */}
+      <SectionNavbar sections={servicesSections} />
+      <SvgWaveLine variant="smooth" />
+
+      {/* 2. Service Categories Grid */}
+      <div id="categories">
+        <CategoriesGrid />
+      </div>
+      <SvgWaveLine variant="dashed" />
+
+      {/* 3. Core Capabilities Slider */}
+      <div id="capabilities">
+        <CoreServices />
+      </div>
+      <SvgWaveLine variant="particles" />
+
+      {/* 4. Detailed Services Explorer */}
+      <div id="detailed-services">
+        <DetailedServices />
+      </div>
+      <SvgWaveLine variant="grid" />
+
+      {/* 5. Delivery Framework (Lifecycle) */}
+      <div id="delivery-framework">
+        <LifecycleSection />
+      </div>
+      <SvgWaveLine variant="liquid" />
+
+      {/* 6. Industries Served */}
+      <div id="industries">
+        <IndustriesSection />
+      </div>
+      <SvgWaveLine variant="smooth" />
+
+      {/* 7. Why Devopstrio (Stats & Tabs) */}
+      <div id="why-devopstrio">
+        <WhyDevopstrio />
+      </div>
+      <SvgWaveLine variant="dashed" />
+
+      {/* 8. Technology Ecosystem (Tech Stack) */}
+      <div id="technology-ecosystem">
+        <TechStackSection />
+      </div>
+      <SvgWaveLine variant="particles" />
+
+      {/* 9. Client Impact Case Study */}
+      <div id="client-impact">
+        <CaseStudyHighlight />
+      </div>
+      <SvgWaveLine variant="grid" />
+
+      {/* 10. Engagement Models */}
+      <div id="engagement-models">
+        <EngagementModels />
+      </div>
+      <SvgWaveLine variant="liquid" />
+
+      {/* 11. FAQ Accordions */}
+      <div id="faq">
+        <FaqSection />
+      </div>
+      <SvgWaveLine variant="smooth" />
+
+      {/* 12. Final CTA Section */}
+      <ServicesCTA />
+
     </main>
   );
 }

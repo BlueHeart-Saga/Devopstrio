@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import CustomCursor from "@/components/CustomCursor";
 import ClickSpark from "@/components/ui/ClickSpark";
 
 export const metadata: Metadata = {
@@ -19,7 +18,6 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body>
-        <CustomCursor />
         <ClickSpark
           sparkColor="#ff2d55"
           sparkSize={12}

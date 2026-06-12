@@ -9,6 +9,7 @@ import { dataengineeringService, dataengineeringCapabilities } from "./dataengin
 import { managedService, managedCapabilities } from "./managed";
 import { testingService, testingCapabilities } from "./testing";
 import { consultingService, consultingCapabilities } from "./consulting";
+import { getEnrichedServiceFaqs, generateFaqsForCapability } from "./faq-generator";
 
 export * from "./types";
 
@@ -38,7 +39,21 @@ export const capabilitiesData: Record<string, Record<string, CapabilityDetail>> 
   "it-consulting": consultingCapabilities
 };
 
-import { generateCapabilityDetail } from "./dynamic-capabilities";
+// Enrich all servicesData with exactly 10 FAQs
+Object.entries(servicesData).forEach(([slug, service]) => {
+  service.faqs = getEnrichedServiceFaqs(slug);
+});
+
+// Enrich all explicit capabilitiesData with exactly 10 FAQs and 6-phase delivery approach
+Object.entries(capabilitiesData).forEach(([serviceSlug, capabilities]) => {
+  Object.entries(capabilities).forEach(([capSlug, capDetail]) => {
+    capDetail.faqs = generateFaqsForCapability(serviceSlug, capDetail.title);
+    capDetail.deliveryApproach = generate6PhaseDeliveryApproach(serviceSlug, capDetail.title);
+  });
+});
+
+import { generateCapabilityDetail, generate6PhaseDeliveryApproach } from "./dynamic-capabilities";
+
 
 export function getServiceByCategory(slug: string): ServiceCategory | undefined {
   return servicesData[slug];
@@ -51,6 +66,11 @@ export function getCapability(serviceSlug: string, capabilitySlug: string): Capa
   const service = servicesData[serviceSlug];
   if (!service) return undefined;
 
-  return generateCapabilityDetail(serviceSlug, capabilitySlug, service);
+  const dynamicCap = generateCapabilityDetail(serviceSlug, capabilitySlug, service);
+  if (dynamicCap) {
+    dynamicCap.faqs = generateFaqsForCapability(serviceSlug, dynamicCap.title);
+  }
+  return dynamicCap;
 }
+
 

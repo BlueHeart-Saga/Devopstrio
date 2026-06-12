@@ -12,7 +12,7 @@ export function TalentNetwork() {
       <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
         <Reveal>
           <div className="flex items-center justify-center gap-2 mb-4">
-            <span className="h-[2px] w-6 bg-rose-600"></span>
+
             <span className="text-[10px] font-bold tracking-widest uppercase text-rose-500">
               Join Us
             </span>
@@ -30,30 +30,30 @@ export function TalentNetwork() {
         <Reveal delay={0.1}>
           <div className="bg-zinc-950/30 border border-zinc-900 rounded-[32px] p-8 max-w-lg mx-auto text-left relative">
             <span className="text-[9px] font-mono tracking-widest text-zinc-500 uppercase block mb-6">Talent Network Portal</span>
-            
-            <form 
+
+            <form
               onSubmit={(e) => {
                 e.preventDefault();
                 alert("Thank you! You have joined our Talent Network.");
-              }} 
+              }}
               className="space-y-4"
             >
               <div className="grid grid-cols-2 gap-4">
                 <div>
                   <label className="block text-[9px] font-mono tracking-wider text-zinc-450 uppercase mb-2">First Name</label>
-                  <input 
-                    type="text" 
-                    required 
-                    placeholder="John" 
+                  <input
+                    type="text"
+                    required
+                    placeholder="John"
                     className="w-full bg-zinc-900/40 border border-zinc-850 rounded-xl px-4 py-3 text-xs text-white placeholder-zinc-650 focus:border-rose-500 focus:outline-none transition-colors"
                   />
                 </div>
                 <div>
                   <label className="block text-[9px] font-mono tracking-wider text-zinc-450 uppercase mb-2">Last Name</label>
-                  <input 
-                    type="text" 
-                    required 
-                    placeholder="Doe" 
+                  <input
+                    type="text"
+                    required
+                    placeholder="Doe"
                     className="w-full bg-zinc-900/40 border border-zinc-850 rounded-xl px-4 py-3 text-xs text-white placeholder-zinc-650 focus:border-rose-500 focus:outline-none transition-colors"
                   />
                 </div>
@@ -61,17 +61,17 @@ export function TalentNetwork() {
 
               <div>
                 <label className="block text-[9px] font-mono tracking-wider text-zinc-450 uppercase mb-2">Email Address</label>
-                <input 
-                  type="email" 
-                  required 
-                  placeholder="john.doe@enterprise.com" 
+                <input
+                  type="email"
+                  required
+                  placeholder="john.doe@enterprise.com"
                   className="w-full bg-zinc-900/40 border border-zinc-850 rounded-xl px-4 py-3 text-xs text-white placeholder-zinc-650 focus:border-rose-500 focus:outline-none transition-colors"
                 />
               </div>
 
               <div>
                 <label className="block text-[9px] font-mono tracking-wider text-zinc-450 uppercase mb-2">Preferred Domain</label>
-                <select 
+                <select
                   className="w-full bg-zinc-900/40 border border-zinc-850 rounded-xl px-4 py-3 text-xs text-white focus:border-rose-500 focus:outline-none transition-colors"
                 >
                   <option value="cloud">Cloud Engineering</option>
@@ -83,8 +83,8 @@ export function TalentNetwork() {
                 </select>
               </div>
 
-              <button 
-                type="submit" 
+              <button
+                type="submit"
                 className="w-full inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl text-xs font-bold uppercase tracking-wider text-white bg-rose-600 hover:bg-rose-700 transition-all duration-300"
               >
                 Join Talent Network <ArrowUpRight size={13} />

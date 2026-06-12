@@ -11,7 +11,7 @@ export function HiringProcess() {
         <div className="max-w-3xl text-left mb-16">
           <Reveal>
             <div className="flex items-center gap-2 mb-4">
-              <span className="h-[2px] w-6 bg-rose-600"></span>
+
               <span className="text-[10px] font-bold tracking-widest uppercase text-rose-500">Recruitment Pathway</span>
             </div>
             <h2 className="text-2xl md:text-3xl font-light text-white tracking-tight leading-snug">
@@ -23,7 +23,7 @@ export function HiringProcess() {
         {/* Timeline Process */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-6 relative">
           <div className="absolute top-[40px] left-[30px] right-[30px] h-[1px] bg-zinc-900 hidden lg:block z-0 pointer-events-none" />
-          
+
           {hiringSteps.map((step, idx) => (
             <Reveal key={idx} delay={idx * 0.05} className="h-full relative z-10">
               <div className="group h-full bg-zinc-950/20 border border-zinc-900 rounded-3xl p-6 hover:border-zinc-800 transition-all duration-300 text-left">

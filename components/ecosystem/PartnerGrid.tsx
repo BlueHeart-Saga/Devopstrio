@@ -20,11 +20,11 @@ export function PartnerGrid({ domainSlug, subpages }: PartnerGridProps) {
   return (
     <section id="ecosystem-pillars" className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
       <div className="max-w-site mx-auto px-6 md:px-12 lg:px-20 relative z-10">
-        
+
         {/* Section Header */}
         <Reveal className="mb-16 text-left">
           <div className="flex items-center gap-2 mb-4">
-            <span className="h-[2px] w-6 bg-rose-600"></span>
+
             <span className="text-[10px] font-bold tracking-widest uppercase text-rose-500">
               Ecosystem Pillars
             </span>

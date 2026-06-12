@@ -22,7 +22,7 @@ export function OpenPositions({ onApplyClick }: OpenPositionsProps) {
         <div className="max-w-3xl text-left mb-16">
           <Reveal>
             <div className="flex items-center gap-2 mb-4">
-              <span className="h-[2px] w-6 bg-rose-600"></span>
+
               <span className="text-[10px] font-bold tracking-widest uppercase text-rose-500">Active Roles</span>
             </div>
             <h2 className="text-2xl md:text-3xl font-light text-white tracking-tight leading-snug">
@@ -40,11 +40,10 @@ export function OpenPositions({ onApplyClick }: OpenPositionsProps) {
             <button
               key={cat}
               onClick={() => setSelectedCategory(cat)}
-              className={`px-4 py-2 rounded-full text-xs font-semibold border transition-all duration-200 ${
-                selectedCategory === cat
+              className={`px-4 py-2 rounded-full text-xs font-semibold border transition-all duration-200 ${selectedCategory === cat
                   ? "bg-rose-600 border-rose-600 text-white"
                   : "bg-zinc-950/20 border-zinc-900 text-zinc-400 hover:text-white hover:border-zinc-800"
-              }`}
+                }`}
             >
               {cat}
             </button>
@@ -58,7 +57,7 @@ export function OpenPositions({ onApplyClick }: OpenPositionsProps) {
               <Reveal key={job.id} delay={idx * 0.05} className="h-full">
                 <div className="group h-full bg-zinc-950/20 border border-zinc-900 rounded-3xl p-6 md:p-8 hover:border-rose-500/35 transition-all duration-300 relative overflow-hidden flex flex-col justify-between text-left">
                   <div className="absolute top-0 right-0 w-24 h-24 bg-[radial-gradient(circle_at_center,rgba(225,29,72,0.015),transparent_75%)] opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
-                  
+
                   <div>
                     <div className="flex items-center gap-2 mb-4">
                       <span className="bg-rose-950/30 border border-rose-500/20 text-[9px] font-bold tracking-wide uppercase text-rose-500 px-2 py-0.5 rounded">
@@ -72,7 +71,7 @@ export function OpenPositions({ onApplyClick }: OpenPositionsProps) {
                     <h3 className="text-sm font-bold text-white mb-2 leading-tight group-hover:text-rose-500 transition-colors">
                       {job.title}
                     </h3>
-                    
+
                     <div className="flex items-center gap-1.5 text-[10px] text-zinc-550 mb-4 font-mono">
                       <MapPin size={11} className="text-zinc-650" /> {job.location} | <Clock size={11} className="text-zinc-650" /> {job.experience}
                     </div>
@@ -82,7 +81,7 @@ export function OpenPositions({ onApplyClick }: OpenPositionsProps) {
                     </p>
                   </div>
 
-                  <button 
+                  <button
                     onClick={() => onApplyClick(job)}
                     className="w-full inline-flex items-center justify-between border border-zinc-900 group-hover:border-rose-500/20 bg-zinc-950/40 rounded-xl px-4 py-3 text-[10px] font-bold uppercase tracking-wider text-zinc-350 group-hover:text-white transition-colors"
                   >

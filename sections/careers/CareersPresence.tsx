@@ -20,7 +20,7 @@ export function CareersPresence() {
           <div>
             <Reveal>
               <div className="flex items-center gap-2 mb-4">
-                <span className="h-[2px] w-6 bg-rose-600"></span>
+
                 <span className="text-[10px] font-bold tracking-widest uppercase text-rose-500">Global Presence</span>
               </div>
               <h2 className="text-2xl md:text-3xl font-light text-white tracking-tight leading-snug mb-6">
@@ -47,7 +47,7 @@ export function CareersPresence() {
           {/* Right Map Canvas (Interactive SVG Vector Map) */}
           <Reveal delay={0.15} className="relative w-full aspect-[1.6/1] bg-zinc-950/10 border border-zinc-900 rounded-[32px] overflow-hidden p-6 flex items-center justify-center group">
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(225,29,72,0.03),transparent_75%)] pointer-events-none" />
-            
+
             {/* World Grid Vector Map */}
             <svg viewBox="0 0 1000 500" className="w-full h-full opacity-20 text-zinc-700 stroke-zinc-800 fill-none stroke-[0.5]">
               {/* Simulated Grid Latitudes / Longitudes */}
@@ -59,7 +59,7 @@ export function CareersPresence() {
               <line x1="400" y1="0" x2="400" y2="500" strokeDasharray="3,3" />
               <line x1="600" y1="0" x2="600" y2="500" strokeDasharray="3,3" />
               <line x1="800" y1="0" x2="800" y2="500" strokeDasharray="3,3" />
-              
+
               {/* World outline placeholder path to simulate world geography */}
               <path d="M150,150 Q180,120 220,180 T300,160 T350,220 T200,280 Z" />
               <path d="M480,100 Q550,80 620,120 T700,200 T600,350 T500,200 Z" />
