@@ -2,16 +2,16 @@ import React from "react";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
-import { 
-  ArrowUpRight, 
-  Layers, 
-  Cpu, 
-  Activity, 
-  Globe, 
-  CheckCircle2, 
-  ShieldCheck, 
-  Workflow, 
-  FileText 
+import {
+  ArrowUpRight,
+  Layers,
+  Cpu,
+  Activity,
+  Globe,
+  CheckCircle2,
+  ShieldCheck,
+  Workflow,
+  FileText
 } from "lucide-react";
 import { getEcosystemDomain } from "@/data/ecosystem";
 import { Hero } from "@/components/ecosystem/Hero";
@@ -78,7 +78,7 @@ export default async function EcosystemDomainPage({ params }: PageProps) {
 
   return (
     <main className="min-h-screen bg-black text-white pt-16 font-sans">
-      
+
       {/* 1. Hero Block */}
       <Hero
         badge={data.badge}
@@ -95,10 +95,10 @@ export default async function EcosystemDomainPage({ params }: PageProps) {
       {/* 2. Ecosystem Domains (Subpages Grid) */}
       <section id="domains" className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
         <div className="max-w-site mx-auto px-6 md:px-12 lg:px-20 relative z-10 text-left">
-          
+
           <Reveal className="mb-16">
             <div className="flex items-center gap-2 mb-4">
-              <span className="h-[2px] w-6 bg-rose-600"></span>
+
               <span className="text-[10px] font-bold tracking-widest uppercase text-rose-500">
                 Subpages & Resources
               </span>
@@ -153,10 +153,10 @@ export default async function EcosystemDomainPage({ params }: PageProps) {
       {/* 3. Ecosystem Architecture */}
       <section id="architecture" className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
         <div className="max-w-site mx-auto px-6 md:px-12 lg:px-20 text-left">
-          
+
           <Reveal className="mb-16">
             <div className="flex items-center gap-2 mb-4">
-              <span className="h-[2px] w-6 bg-rose-600"></span>
+
               <span className="text-[10px] font-bold tracking-widest uppercase text-rose-500">
                 Ecosystem Topology
               </span>
@@ -245,10 +245,10 @@ export default async function EcosystemDomainPage({ params }: PageProps) {
       {/* 4. Innovation Labs */}
       <section id="labs" className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
         <div className="max-w-site mx-auto px-6 md:px-12 lg:px-20 text-left">
-          
+
           <Reveal className="mb-16">
             <div className="flex items-center gap-2 mb-4">
-              <span className="h-[2px] w-6 bg-rose-600"></span>
+
               <span className="text-[10px] font-bold tracking-widest uppercase text-rose-500">
                 Innovation Centers
               </span>
@@ -259,7 +259,7 @@ export default async function EcosystemDomainPage({ params }: PageProps) {
           </Reveal>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            
+
             {/* Lab 1 */}
             <Reveal className="h-full">
               <div className="h-full bg-zinc-950/10 border border-zinc-900 rounded-3xl p-8 hover:border-rose-500/20 hover:bg-zinc-900/5 transition-all duration-300">
@@ -328,10 +328,10 @@ export default async function EcosystemDomainPage({ params }: PageProps) {
       {/* 5. Technology Stack */}
       <section id="tech-stack" className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
         <div className="max-w-site mx-auto px-6 md:px-12 lg:px-20 text-left">
-          
+
           <Reveal className="mb-16">
             <div className="flex items-center gap-2 mb-4">
-              <span className="h-[2px] w-6 bg-rose-600"></span>
+
               <span className="text-[10px] font-bold tracking-widest uppercase text-rose-500">
                 Integrations Catalog
               </span>
@@ -345,7 +345,7 @@ export default async function EcosystemDomainPage({ params }: PageProps) {
             <IntegrationsExplorer />
           ) : (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              
+
               <Reveal className="h-full">
                 <div className="h-full bg-zinc-950/20 border border-zinc-900 rounded-2xl p-6 hover:border-zinc-800 transition-colors">
                   <h4 className="text-xs font-semibold text-zinc-200 mb-3 border-b border-zinc-900 pb-2 uppercase tracking-wider font-mono">
@@ -411,10 +411,10 @@ export default async function EcosystemDomainPage({ params }: PageProps) {
       {/* 6. Strategic Partnerships */}
       <section id="partnerships" className="py-24 bg-black border-b border-zinc-900/60 relative">
         <div className="max-w-site mx-auto px-6 md:px-12 lg:px-20 text-left">
-          
+
           <Reveal className="mb-16">
             <div className="flex items-center gap-2 mb-4">
-              <span className="h-[2px] w-6 bg-rose-600"></span>
+
               <span className="text-[10px] font-bold tracking-widest uppercase text-rose-500">
                 Alliances
               </span>
@@ -446,10 +446,10 @@ export default async function EcosystemDomainPage({ params }: PageProps) {
       {/* 7. Engineering Excellence */}
       <section id="excellence" className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
         <div className="max-w-site mx-auto px-6 md:px-12 lg:px-20 text-left">
-          
+
           <Reveal className="mb-16">
             <div className="flex items-center gap-2 mb-4">
-              <span className="h-[2px] w-6 bg-rose-600"></span>
+
               <span className="text-[10px] font-bold tracking-widest uppercase text-rose-500">
                 Excellence Benchmarks
               </span>
@@ -460,7 +460,7 @@ export default async function EcosystemDomainPage({ params }: PageProps) {
           </Reveal>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            
+
             <Reveal className="h-full">
               <div className="h-full bg-zinc-950/20 border border-zinc-900 rounded-2xl p-6 relative group hover:border-rose-500/20 transition-all duration-300">
                 <div className="w-8 h-8 rounded-lg bg-rose-950/15 border border-rose-900/20 flex items-center justify-center text-rose-500 mb-4">
@@ -510,10 +510,10 @@ export default async function EcosystemDomainPage({ params }: PageProps) {
       {/* 8. Global Delivery Network */}
       <section id="delivery" className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
         <div className="max-w-site mx-auto px-6 md:px-12 lg:px-20 text-left">
-          
+
           <Reveal className="mb-16">
             <div className="flex items-center gap-2 mb-4">
-              <span className="h-[2px] w-6 bg-rose-600"></span>
+
               <span className="text-[10px] font-bold tracking-widest uppercase text-rose-500">
                 Availability Map
               </span>
@@ -524,7 +524,7 @@ export default async function EcosystemDomainPage({ params }: PageProps) {
           </Reveal>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            
+
             <Reveal className="h-full">
               <div className="h-full bg-zinc-950/20 border border-zinc-900 rounded-2xl p-6 relative group hover:border-rose-500/20 transition-all duration-300">
                 <span className="block text-[9px] font-mono tracking-widest text-zinc-550 mb-3 uppercase">
@@ -574,10 +574,10 @@ export default async function EcosystemDomainPage({ params }: PageProps) {
       {/* 9. Impact Metrics */}
       <section id="metrics" className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
         <div className="max-w-site mx-auto px-6 md:px-12 lg:px-20 text-left">
-          
+
           <Reveal className="mb-16">
             <div className="flex items-center gap-2 mb-4">
-              <span className="h-[2px] w-6 bg-rose-600"></span>
+
               <span className="text-[10px] font-bold tracking-widest uppercase text-rose-500">
                 Impact Quantified
               </span>
@@ -588,7 +588,7 @@ export default async function EcosystemDomainPage({ params }: PageProps) {
           </Reveal>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            
+
             {/* If the domain has specific stats, use them; otherwise fall back to standard ones */}
             {data.stats && data.stats.length >= 4 ? (
               data.stats.slice(0, 4).map((stat, idx) => (

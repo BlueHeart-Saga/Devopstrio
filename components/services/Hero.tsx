@@ -17,7 +17,7 @@ export interface HeroProps {
 
 export function Hero({ badge, title, subtitle, stats, breadcrumbs, bgImage }: HeroProps) {
   return (
-    <section className="relative overflow-hidden bg-black text-white min-h-[75vh] md:min-h-[80vh] flex flex-col justify-between pt-36 pb-20 px-6 border-b border-zinc-900/60">
+    <section className="relative overflow-hidden bg-black text-white min-h-[75vh] md:min-h-[80vh] flex flex-col justify-between pt-36 pb-20 border-b border-zinc-900/60">
       {/* Background Image */}
       {bgImage && (
         <div className="absolute inset-0 z-0">
@@ -36,7 +36,7 @@ export function Hero({ badge, title, subtitle, stats, breadcrumbs, bgImage }: He
         </div>
       )}
 
-      <div className="max-w-site mx-auto relative z-10 w-full flex-grow flex flex-col justify-between">
+      <div className="max-w-7xl mx-auto relative z-10 w-full px-6 md:px-12 lg:px-16 flex-grow flex flex-col justify-between">
         {/* Breadcrumb Navigation - Pinned to the top of the content container */}
         <nav className="flex items-center justify-start gap-2.5 text-[9px] md:text-[10px] font-medium tracking-[0.12em] text-zinc-400 mb-6 overflow-x-auto whitespace-nowrap py-1">
           {breadcrumbs.map((crumb, idx) => {

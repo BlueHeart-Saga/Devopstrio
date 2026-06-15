@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useMemo } from "react";
-import { Search, Trophy, Calendar, Sparkles, Filter, ChevronDown, Award } from "lucide-react";
+import { Search, Award } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -285,10 +285,130 @@ const awardsData: AwardItem[] = [
   }
 ];
 
+function getAwardDescription(title: string, issuer: string, year: string) {
+  const t = title.toLowerCase();
+  
+  if (t.includes("networking computing")) {
+    return `Finalist in the Network Computing Awards, recognizing Devopstrio's excellence in high-availability enterprise network design, virtual routing, and telemetry monitoring setups.`;
+  }
+  if (t.includes("computing security") && t.includes("winner")) {
+    return `Winner of the Computing Security Award for outstanding achievements in automated vulnerability containment, endpoint threat detection, and private cloud sandbox security controls.`;
+  }
+  if (t.includes("computing security") && t.includes("finalist")) {
+    return `Finalist selection for pioneering secure DevSecOps software delivery pipelines, real-time threat logging integration, and okta identity access architectures.`;
+  }
+  if (t.includes("hsj partnership")) {
+    return `Recognized for excellence in healthcare cloud-native modernization, ensuring strict NHS patient data privacy compliance, HIPAA security standards, and seamless EHR pipeline migrations.`;
+  }
+  if (t.includes("it europa channel") && t.includes("winner")) {
+    return `Winner of the IT Europa Channel Award for exceptional performance in delivering automated environments, cloud strategy consulting, and software release velocity upgrades.`;
+  }
+  if (t.includes("it europa channel") && t.includes("finalist")) {
+    return `Shortlisted finalist for leading achievements in multi-tenant Kubernetes orchestrations, platform engineering portals, and enterprise-level database systems integration.`;
+  }
+  if (t.includes("cloudtango msp select")) {
+    return `Selected as a premier managed service provider by Cloudtango, validating our 24/7 technical helpdesk operations, proactive software patching, and SLA-bound uptime guarantees.`;
+  }
+  if (t.includes("dell technologies gold")) {
+    return `Dell Technologies Gold Partner status representing deep technical competency in scaling enterprise-grade bare metal, storage arrays, and virtual machine setups.`;
+  }
+  if (t.includes("cyber essentials")) {
+    return `Official compliance certification validating our adherence to cybersecurity baselines, including secure VPC boundaries, key rotations, and least-privilege access rules.`;
+  }
+  if (t.includes("european it & software excellence") && t.includes("finalist")) {
+    return `Finalist nomination for software engineering excellence, recognizing our custom API gateway designs, SaaS multi-tenancy configurations, and Next.js frontend performance.`;
+  }
+  if (t.includes("european it & software excellence") && t.includes("winner")) {
+    return `Winner of the European IT & Software Excellence award for custom enterprise application development, microservices migration, and system decoupling workflows.`;
+  }
+  if (t.includes("highly commended")) {
+    return `Highly commended distinction from IT Europa for superior software quality, developer velocity upgrades, and outstanding client delivery metrics.`;
+  }
+  if (t.includes("it europa finalist")) {
+    return `Recognized as a leading technology provider for deploying secure cloud landing zones, automated Terraform pipelines, and active application monitoring stacks.`;
+  }
+  if (t.includes("lenovo platinum data center")) {
+    return `Platinum-tier Lenovo partnership status representing expert capability in configuring high-density computing clusters, data center migration schedules, and storage networks.`;
+  }
+  if (t.includes("crown commercial service")) {
+    return `Approved government framework supplier, enabling public sector organizations to procure secure, compliant cloud-native software and digital transformation consulting.`;
+  }
+  if (t.includes("ibm business partner") && t.includes("winner")) {
+    return `Recipient of the IBM Partner Award for exceptional delivery of enterprise database administration, zero-downtime replication clusters, and hybrid cloud integration services.`;
+  }
+  if (t.includes("microsoft partner of the year")) {
+    return `Named a global finalist for outstanding contribution to the Microsoft partner ecosystem, recognized for building custom Azure Cloud solutions and SaaS products.`;
+  }
+  if (t.includes("ibm business partner") && t.includes("finalist")) {
+    return `Nominated for technical expertise in database administration, zero-downtime replication clusters, and IBM cloud virtualization workflows.`;
+  }
+  if (t.includes("ibm platinum")) {
+    return `IBM Platinum accreditation representing the highest tier of service partnership, technical certification, and successful enterprise deployment volume.`;
+  }
+  if (t.includes("achilles network silver")) {
+    return `Silver-tier certification from the Achilles Network, confirming our verified financial stability, rigorous corporate compliance, and supply chain security frameworks.`;
+  }
+  if (t.includes("arctic wolf partner")) {
+    return `Certified security partner with Arctic Wolf, delivering 24/7 managed detection and response, SIEM telemetry monitoring, and vulnerability patching workflows.`;
+  }
+  if (t.includes("bramble hub")) {
+    return `Registered partner listing enabling the streamlined deployment of custom software, DevOps engineering, and digital transformation consulting through public frameworks.`;
+  }
+  if (t.includes("certificate of compliance")) {
+    return `Verified compliance accreditation confirming our adherence to global digital data privacy laws, secure development operations, and active system risk assessments.`;
+  }
+  if (t.includes("cloud solution provider of the year")) {
+    return `Awarded for exceptional delivery of cloud migration strategies, cost-optimization FinOps consulting, and multi-cloud container orchestration frameworks.`;
+  }
+  if (t.includes("data estate modernisation")) {
+    return `Honored for outstanding achievements in engineering unified data platforms, Snowflake/Databricks migrations, and high-throughput real-time streaming pipelines.`;
+  }
+  if (t.includes("data management solution")) {
+    return `Recognized for excellence in data governance, automated data quality controls, and comprehensive metadata lineage auditing setups.`;
+  }
+  if (t.includes("fsqs")) {
+    return `FSQS (Financial Services Qualification System) accreditation, validating our compliance with strict banking security, operational risk mitigation, and data governance policies.`;
+  }
+  if (t.includes("g-cloud 11")) {
+    return `UK Government G-Cloud framework supplier status, allowing public organizations to directly deploy our secure, cloud-native services and DevOps pipelines.`;
+  }
+  if (t.includes("ibm gold")) {
+    return `IBM Gold Partner certification, showing mastery in building enterprise-grade Java/Go web architectures, secure database indexing, and mainframe migrations.`;
+  }
+  if (t.includes("ibm partnerworld")) {
+    return `Active membership in IBM PartnerWorld, supporting the joint development of containerized middleware and secure hybrid cloud solutions.`;
+  }
+  if (t.includes("iso certification")) {
+    return `Audited ISO accreditation validating our global information security management systems (ISMS) and software development lifecycle controls.`;
+  }
+  if (t.includes("knowbe4 partner")) {
+    return `Accredited implementation partner for KnowBe4 security, enabling organizations to deploy adaptive phishing simulations and user threat training.`;
+  }
+  if (t.includes("living wage")) {
+    return `Accredited Living Wage Employer, reflecting our commitment to fair compensation, ethical employment practices, and human-first engineering environments.`;
+  }
+  if (t.includes("ms_gold_status") || t.includes("microsoft gold status")) {
+    return `Premier Microsoft Gold Partner certification, demonstrating specialized capability in designing Azure landing zones, AKS container grids, and secure SaaS products.`;
+  }
+  if (t.includes("risk management solution")) {
+    return `Awarded for engineering automated threat analysis algorithms, self-healing routing failovers, and incident alert integrations.`;
+  }
+  if (t.includes("solution provider tier")) {
+    return `Accredited partner status validating our full-cycle platform engineering, continuous test automation, and SRE incident response setups.`;
+  }
+  if (t.includes("top 1% of microsoft partner marketers")) {
+    return `Recognized as a top-performing global partner, driving adoption of Microsoft Azure Cloud services and digital-first client enablement programs.`;
+  }
+  if (t.includes("top uk cyber security")) {
+    return `Ranked among the leading security advisory firms, providing penetration testing, zero-trust network setups, and policy compliance reviews.`;
+  }
+
+  return `Devopstrio's credentials are fully audited and verified by ${issuer}, confirming our adherence to enterprise-grade compliance, security, and delivery excellence standards.`;
+}
+
 export const AwardsList = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedYear, setSelectedYear] = useState("All");
-  const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
 
   const years = useMemo(() => {
     const list = ["All", ...new Set(awardsData.map((item) => item.year))];
@@ -312,40 +432,34 @@ export const AwardsList = () => {
     });
   }, [searchQuery, selectedYear]);
 
-  const toggleRow = (idx: number) => {
-    setExpandedIndex(expandedIndex === idx ? null : idx);
-  };
-
   return (
-    <section className="w-full py-16 bg-black text-white relative">
+    <section className="w-full py-20 bg-[#030303] text-white relative">
       <div className="max-w-site mx-auto px-6 md:px-12 lg:px-20">
         
         {/* Section Intro */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 border-b border-zinc-900 pb-8">
           <Reveal>
             <div className="flex items-center gap-2 mb-3">
-              <span className="h-[2px] w-6 bg-rose-600"></span>
-              <span className="text-[10px] font-bold tracking-widest uppercase text-rose-500">
+              <span className="text-[10px] font-extrabold tracking-widest uppercase text-rose-500">
                 Official Directory
               </span>
             </div>
             <h2 className="text-2xl md:text-3xl font-light text-white tracking-tight">
-              Ecosystem <span className="font-semibold text-rose-500">Accreditation & Awards</span>
+              Ecosystem <span className="font-extrabold text-rose-500">Accreditation & Awards</span>
             </h2>
           </Reveal>
 
           {/* Year filtering tabs */}
-          <div className="flex flex-wrap gap-1.5 bg-zinc-950/80 border border-zinc-900 p-1 rounded-xl">
+          <div className="flex flex-wrap gap-1.5 bg-zinc-950/80 border border-zinc-900 p-1.5 rounded-xl">
             {years.slice(0, 7).map((year) => (
               <button
                 key={year}
                 onClick={() => {
                   setSelectedYear(year);
-                  setExpandedIndex(null);
                 }}
-                className={`px-3 py-1.5 rounded-lg text-[10px] font-semibold uppercase tracking-wider transition-all duration-200 ${
+                className={`px-4 py-2 rounded-lg text-[10px] font-black uppercase tracking-wider transition-all duration-200 ${
                   selectedYear === year
-                    ? "bg-rose-600 text-white font-bold"
+                    ? "bg-rose-600 text-white font-extrabold"
                     : "text-zinc-400 hover:text-white"
                 }`}
               >
@@ -356,7 +470,7 @@ export const AwardsList = () => {
         </div>
 
         {/* Search Input Bar */}
-        <div className="max-w-lg mb-8">
+        <div className="max-w-lg mb-12">
           <div className="relative flex items-center">
             <Search className="absolute left-4 w-4 h-4 text-rose-500" />
             <input
@@ -365,113 +479,80 @@ export const AwardsList = () => {
               value={searchQuery}
               onChange={(e) => {
                 setSearchQuery(e.target.value);
-                setExpandedIndex(null);
               }}
-              className="w-full bg-zinc-950/60 border border-zinc-900 focus:border-rose-500/50 focus:ring-1 focus:ring-rose-500/20 rounded-xl py-3 pl-11 pr-4 text-xs text-white placeholder-zinc-500 transition-all outline-none"
+              className="w-full bg-zinc-950/60 border border-zinc-900 focus:border-rose-500/50 focus:ring-1 focus:ring-rose-500/20 rounded-xl py-3.5 pl-11 pr-4 text-xs font-bold text-white placeholder-zinc-500 transition-all outline-none"
             />
           </div>
         </div>
 
-        {/* Stack List Container */}
-        <div className="w-full border-t border-zinc-900">
-          <AnimatePresence initial={false}>
-            {filteredAwards.map((item, idx) => {
-              const isExpanded = expandedIndex === idx;
-              return (
-                <div
-                  key={idx}
-                  className={`border-b border-zinc-900 transition-all duration-300 ${
-                    isExpanded ? "bg-zinc-950/40" : "hover:bg-zinc-950/20"
-                  }`}
-                >
-                  {/* Row Header clickable */}
-                  <div
-                    onClick={() => toggleRow(idx)}
-                    className="flex items-center justify-between py-6 px-4 cursor-pointer select-none group"
-                  >
-                    <div className="flex items-center gap-6 md:gap-10 flex-grow">
-                      {/* Year badge */}
-                      <span className="text-xs font-mono font-bold text-rose-500 tracking-wider w-14 shrink-0">
-                        {item.year}
-                      </span>
-                      
-                      {/* Award details */}
-                      <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-8">
-                        <span className="text-sm font-semibold text-zinc-100 group-hover:text-rose-400 transition-colors">
-                          {item.title}
-                        </span>
-                        <span className="text-[10px] text-zinc-500 uppercase tracking-widest font-bold">
-                          {item.issuer}
-                        </span>
-                      </div>
-                    </div>
+        {/* Card Grid Container */}
+        <motion.div 
+          layout 
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
+        >
+          <AnimatePresence mode="popLayout">
+            {filteredAwards.map((item, idx) => (
+              <motion.div
+                layout
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.95 }}
+                transition={{ duration: 0.3, ease: "easeOut" }}
+                key={item.title + "-" + item.year}
+                className="group relative overflow-hidden rounded-[24px] border border-white/10 bg-zinc-950/30 backdrop-blur-xl p-5 hover:border-rose-500/35 hover:shadow-[0_12px_40px_rgba(244,63,94,0.15)] transition-all duration-300 flex flex-col justify-between"
+              >
+                {/* Background Glow on hover */}
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
+                  <div className="absolute -top-12 -left-12 w-32 h-32 bg-rose-600/10 blur-2xl" />
+                  <div className="absolute -bottom-12 -right-12 w-32 h-32 bg-rose-600/5 blur-2xl" />
+                </div>
 
-                    <div className="flex items-center gap-4 shrink-0">
-                      <span className="text-[9px] font-mono text-zinc-650 opacity-0 group-hover:opacity-100 transition-opacity hidden md:inline">
-                        {isExpanded ? "COLLAPSE" : "EXPAND PREVIEW"}
-                      </span>
-                      <ChevronDown
-                        size={16}
-                        className={`text-zinc-500 transition-transform duration-300 ${
-                          isExpanded ? "rotate-180 text-rose-500" : "group-hover:text-zinc-300"
-                        }`}
-                      />
-                    </div>
+                <div className="relative z-10 flex flex-col">
+                  {/* White Logo Container for perfect brand rendering */}
+                  <div className="relative w-full aspect-[16/10] bg-white rounded-xl flex items-center justify-center p-5 mb-4 shadow-[inset_0_2px_8px_rgba(0,0,0,0.06)] overflow-hidden transition-all duration-300 group-hover:scale-[1.02]">
+                    <img
+                      src={item.src}
+                      alt={item.title}
+                      className="max-w-full max-h-full object-contain select-none pointer-events-none filter brightness-100 contrast-100"
+                    />
+                    {/* Subtle overlay reflection */}
+                    <div className="absolute inset-0 bg-gradient-to-tr from-white/0 via-white/10 to-transparent pointer-events-none" />
                   </div>
 
-                  {/* Expanded badge image container */}
-                  <AnimatePresence>
-                    {isExpanded && (
-                      <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: "auto", opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.3, ease: "easeInOut" }}
-                        className="overflow-hidden"
-                      >
-                        <div className="px-6 pb-8 pt-2 flex flex-col md:flex-row md:items-center gap-8 border-t border-zinc-950">
-                          {/* Image Box */}
-                          <div className="relative w-48 h-32 bg-zinc-900/60 border border-zinc-800 rounded-xl overflow-hidden flex items-center justify-center p-4 shadow-2xl shadow-rose-950/10 shrink-0">
-                            <img
-                              src={item.src}
-                              alt={item.title}
-                              className="max-w-full max-h-full object-contain filter brightness-110 select-none pointer-events-none"
-                            />
-                          </div>
+                  {/* Year & Authority Badge */}
+                  <div className="flex items-center justify-between mb-3">
+                    <span className="px-3 py-0.5 rounded-full text-[9px] font-black uppercase tracking-widest bg-rose-500/15 text-rose-500 border border-rose-500/30">
+                      {item.year}
+                    </span>
+                    <span className="text-[10px] font-black text-rose-400 uppercase tracking-widest">
+                      {item.issuer}
+                    </span>
+                  </div>
 
-                          {/* Text description */}
-                          <div className="max-w-lg">
-                            <div className="flex items-center gap-2 mb-3">
-                              <Award className="w-4 h-4 text-rose-500" />
-                              <span className="text-[9px] font-mono text-zinc-400 uppercase tracking-widest font-bold">
-                                VERIFIED ACCREDITATION
-                              </span>
-                            </div>
-                            <h4 className="text-sm font-semibold text-white mb-2">
-                              {item.title}
-                            </h4>
-                            <p className="text-xs text-zinc-450 leading-relaxed font-light">
-                              Devopstrio's credentials are audited and certified by leading global compliance, network security, and channel assessment authorities, including {item.issuer}.
-                            </p>
-                          </div>
-                        </div>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
+                  {/* Award Title */}
+                  <h4 className="text-sm font-extrabold text-white leading-snug tracking-tight mb-2 group-hover:text-rose-400 transition-colors duration-300">
+                    {item.title}
+                  </h4>
                 </div>
-              );
-            })}
-          </AnimatePresence>
 
-          {filteredAwards.length === 0 && (
-            <div className="text-center py-16">
-              <Award className="w-8 h-8 text-zinc-750 mx-auto mb-3" />
-              <p className="text-zinc-500 text-xs font-light">
-                No certificates found matching your search.
-              </p>
-            </div>
-          )}
-        </div>
+                {/* Description - bold, white, high contrast */}
+                <p className="relative z-10 text-[11px] font-extrabold text-zinc-100 leading-relaxed border-t border-white/5 pt-3 mt-3">
+                  {getAwardDescription(item.title, item.issuer, item.year)}
+                </p>
+
+              </motion.div>
+            ))}
+          </AnimatePresence>
+        </motion.div>
+
+        {filteredAwards.length === 0 && (
+          <div className="text-center py-24">
+            <Award className="w-10 h-10 text-zinc-850 mx-auto mb-3" />
+            <p className="text-white text-sm font-extrabold">
+              No certificates found matching your search.
+            </p>
+          </div>
+        )}
         
       </div>
     </section>

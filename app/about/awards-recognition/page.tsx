@@ -27,12 +27,16 @@ export default function AwardsRecognitionPage() {
       </section>
 
       {/* Main Content */}
+
+       <div className="border-t border-zinc-900/60">
+          <AwardsList />
+        </div>
+
+
       <div className="bg-black flex flex-col gap-12">
         <Achievements />
 
-        <div className="border-t border-zinc-900/60">
-          <AwardsList />
-        </div>
+       
         
         <div className="border-t border-zinc-900/60">
           <MetricsStats />

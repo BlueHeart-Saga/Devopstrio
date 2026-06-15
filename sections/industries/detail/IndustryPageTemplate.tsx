@@ -2,16 +2,16 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import { 
-  ArrowUpRight, 
-  ChevronRight, 
-  Layers, 
-  Cpu, 
-  Activity, 
-  Globe, 
-  CheckCircle2, 
-  ShieldCheck, 
-  Workflow, 
+import {
+  ArrowUpRight,
+  ChevronRight,
+  Layers,
+  Cpu,
+  Activity,
+  Globe,
+  CheckCircle2,
+  ShieldCheck,
+  Workflow,
   FileText,
   AlertTriangle,
   Lightbulb,
@@ -135,7 +135,7 @@ export function IndustryPageTemplate({
 
   return (
     <main className="min-h-screen bg-black text-white pt-16 font-sans">
-      
+
       {/* 1. Hero Block */}
       <IndustryHero
         industryName={industryName}
@@ -154,7 +154,7 @@ export function IndustryPageTemplate({
           <div className="lg:col-span-6">
             <Reveal>
               <div className="flex items-center gap-2 mb-4">
-                <span className="h-[2px] w-6 bg-rose-600"></span>
+
                 <span className="text-[10px] font-bold tracking-widest uppercase text-rose-500">
                   Overview
                 </span>
@@ -180,7 +180,7 @@ export function IndustryPageTemplate({
         <div className="max-w-site mx-auto px-6 md:px-12 lg:px-20 text-left">
           <Reveal className="mb-16">
             <div className="flex items-center gap-2 mb-4">
-              <span className="h-[2px] w-6 bg-rose-600"></span>
+
               <span className="text-[10px] font-bold tracking-widest uppercase text-rose-500">
                 Challenges We Solve
               </span>
@@ -211,7 +211,7 @@ export function IndustryPageTemplate({
         <div className="max-w-site mx-auto px-6 md:px-12 lg:px-20 text-left">
           <Reveal className="mb-16">
             <div className="flex items-center gap-2 mb-4">
-              <span className="h-[2px] w-6 bg-rose-600"></span>
+
               <span className="text-[10px] font-bold tracking-widest uppercase text-rose-500">
                 Solutions We Deliver
               </span>
@@ -242,7 +242,7 @@ export function IndustryPageTemplate({
         <div className="max-w-site mx-auto px-6 md:px-12 lg:px-20 text-left">
           <Reveal className="mb-16">
             <div className="flex items-center gap-2 mb-4">
-              <span className="h-[2px] w-6 bg-rose-600"></span>
+
               <span className="text-[10px] font-bold tracking-widest uppercase text-rose-500">
                 Core Capabilities
               </span>
@@ -276,7 +276,7 @@ export function IndustryPageTemplate({
         <div className="max-w-site mx-auto px-6 md:px-12 lg:px-20 text-left">
           <Reveal className="mb-16">
             <div className="flex items-center gap-2 mb-4">
-              <span className="h-[2px] w-6 bg-rose-600"></span>
+
               <span className="text-[10px] font-bold tracking-widest uppercase text-rose-500">
                 Use Cases
               </span>
@@ -304,7 +304,7 @@ export function IndustryPageTemplate({
         <div className="max-w-site mx-auto px-6 md:px-12 lg:px-20 text-left">
           <Reveal className="mb-16">
             <div className="flex items-center gap-2 mb-4">
-              <span className="h-[2px] w-6 bg-rose-600"></span>
+
               <span className="text-[10px] font-bold tracking-widest uppercase text-rose-500">
                 Technology Stack
               </span>
@@ -335,7 +335,7 @@ export function IndustryPageTemplate({
         <div className="max-w-site mx-auto px-6 md:px-12 lg:px-20 text-left">
           <Reveal className="mb-16">
             <div className="flex items-center gap-2 mb-4">
-              <span className="h-[2px] w-6 bg-rose-600"></span>
+
               <span className="text-[10px] font-bold tracking-widest uppercase text-rose-500">
                 Business Outcomes
               </span>
@@ -365,7 +365,7 @@ export function IndustryPageTemplate({
           <div className="max-w-site mx-auto px-6 md:px-12 lg:px-20 text-left">
             <Reveal className="mb-16">
               <div className="flex items-center gap-2 mb-4">
-                <span className="h-[2px] w-6 bg-rose-600"></span>
+
                 <span className="text-[10px] font-bold tracking-widest uppercase text-rose-500">
                   Success Stories
                 </span>
@@ -397,7 +397,7 @@ export function IndustryPageTemplate({
         <div className="max-w-site mx-auto px-6 md:px-12 lg:px-20 text-left">
           <Reveal className="mb-16">
             <div className="flex items-center gap-2 mb-4">
-              <span className="h-[2px] w-6 bg-rose-600"></span>
+
               <span className="text-[10px] font-bold tracking-widest uppercase text-rose-500">
                 Compliance & Security
               </span>
@@ -428,7 +428,7 @@ export function IndustryPageTemplate({
         <div className="max-w-site mx-auto px-6 md:px-12 lg:px-20 text-left">
           <Reveal className="mb-16">
             <div className="flex items-center gap-2 mb-4">
-              <span className="h-[2px] w-6 bg-rose-600"></span>
+
               <span className="text-[10px] font-bold tracking-widest uppercase text-rose-500">
                 Why Devopstrio
               </span>
@@ -459,7 +459,7 @@ export function IndustryPageTemplate({
         <div className="max-w-site mx-auto px-6 md:px-12 lg:px-20 text-left">
           <Reveal className="mb-16">
             <div className="flex items-center gap-2 mb-4">
-              <span className="h-[2px] w-6 bg-rose-600"></span>
+
               <span className="text-[10px] font-bold tracking-widest uppercase text-rose-500">
                 Practice Links
               </span>
@@ -499,7 +499,7 @@ export function IndustryPageTemplate({
         <div className="max-w-site mx-auto px-6 md:px-12 lg:px-20 text-left">
           <Reveal className="mb-16">
             <div className="flex items-center gap-2 mb-4">
-              <span className="h-[2px] w-6 bg-rose-600"></span>
+
               <span className="text-[10px] font-bold tracking-widest uppercase text-rose-500">
                 Insights & Research
               </span>
@@ -536,8 +536,8 @@ export function IndustryPageTemplate({
               <div className="flex items-center justify-center gap-2 mb-4">
                 <span className="text-[10px] font-bold tracking-widest uppercase text-rose-500">FAQ</span>
               </div>
-              <h2 className="text-2xl md:text-3xl font-light text-white tracking-tight leading-snug">
-                Technical <span className="font-semibold text-rose-500">clarifications</span>
+              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white uppercase">
+                Technical <span className="text-rose-500">clarifications</span>
               </h2>
             </Reveal>
 

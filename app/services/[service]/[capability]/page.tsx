@@ -5,6 +5,7 @@ import { getHeroBgImage, getArchitectureSteps } from "@/lib/services-utils";
 import { Hero } from "@/components/services/Hero";
 import { SectionNavbar } from "@/components/ui/SectionNavbar";
 import { CapabilityOverview } from "@/sections/services/capability/CapabilityOverview";
+import { CapabilityProblem } from "@/sections/services/capability/CapabilityProblem";
 import { CapabilityUseCases } from "@/sections/services/capability/CapabilityUseCases";
 import { CapabilityOutcomes } from "@/sections/services/capability/CapabilityOutcomes";
 import { CapabilityArchitecture } from "@/sections/services/capability/CapabilityArchitecture";
@@ -68,8 +69,9 @@ export default async function CapabilityPage({ params }: PageProps) {
 
   const subSections = [
     { id: "overview", label: "Overview" },
-    { id: "use-cases", label: "Use Cases" },
+    { id: "business-problem", label: "Challenge" },
     { id: "solutions-outcomes", label: "Solutions & Outcomes" },
+    { id: "use-cases", label: "Use Cases" },
     { id: "architecture", label: "Architecture" },
     { id: "tech-stack", label: "Technology" },
     { id: "benefits", label: "Benefits" },
@@ -100,19 +102,29 @@ export default async function CapabilityPage({ params }: PageProps) {
         image={getOverviewImage(service)} 
       />
 
-      {/* 3. Use Cases (Key Deliverables) Section */}
-      <CapabilityUseCases features={data.features} />
+      {/* Business Problem Section */}
+      <CapabilityProblem 
+        serviceSlug={service} 
+        capabilityTitle={data.title} 
+      />
 
       {/* 4. Solutions, Benefits & Outcomes Section */}
       <CapabilityOutcomes
-        solution={data.solution}
-        deliveryApproach={data.deliveryApproach}
-        challenge={data.challenge}
-        benefits={data.benefits}
+        serviceSlug={service}
+        capabilityTitle={data.title}
+      />
+
+      {/* 3. Use Cases (Key Deliverables) Section */}
+      <CapabilityUseCases 
+        serviceSlug={service}
+        capabilityTitle={data.title}
       />
 
       {/* 5. Architecture Section */}
-      <CapabilityArchitecture steps={getArchitectureSteps(service, data.title)} />
+      <CapabilityArchitecture 
+        serviceSlug={service}
+        capabilityTitle={data.title}
+      />
 
       {/* 6. Technology Stack Section */}
       <div id="tech-stack">
@@ -125,11 +137,14 @@ export default async function CapabilityPage({ params }: PageProps) {
       {/* 8. Industries Section */}
       <CapabilityIndustries industries={serviceData.industries} />
 
+
+{/* 10. Related Services Section */}
+      <RelatedServices currentServiceSlug={service} />
+      
       {/* 9. FAQ Section */}
       <FAQ faqs={data.faqs} />
 
-      {/* 10. Related Services Section */}
-      <RelatedServices currentServiceSlug={service} />
+      
 
       {/* 11. CTA Section */}
       <CTA

@@ -33,14 +33,14 @@ export function RelatedServices({ currentServiceSlug }: RelatedServicesProps) {
         
         {/* Header Section */}
         <Reveal className="mb-16 text-center">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-zinc-900 bg-zinc-950/40 mb-4">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full mb-4">
             <span className="w-1.5 h-1.5 rounded-full bg-rose-600 animate-pulse" />
             <span className="text-[10px] font-bold tracking-widest uppercase text-rose-500">
               Internal Ecosystem
             </span>
           </div>
-          <h2 className="text-2xl md:text-3xl font-light text-white tracking-tight leading-snug">
-            Explore <span className="font-semibold text-rose-500">Related Services</span>
+          <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white uppercase">
+            Explore <span className="text-rose-500">Related Services</span>
           </h2>
         </Reveal>
 
@@ -67,11 +67,11 @@ export function RelatedServices({ currentServiceSlug }: RelatedServicesProps) {
                       </span>
                     </div>
 
-                    <h3 className="text-xs font-semibold text-zinc-100 group-hover:text-white transition-colors mb-2">
+                    <h3 className="text-xs font-bold text-white group-hover:text-rose-500 transition-colors mb-2">
                       {service.title}
                     </h3>
 
-                    <p className="text-[11px] text-zinc-400 leading-relaxed font-light mb-6">
+                    <p className="text-xs text-white leading-relaxed font-bold mb-6">
                       {service.subtitle}
                     </p>
                   </div>

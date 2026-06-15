@@ -3,22 +3,22 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { notFound, useParams } from "next/navigation";
-import { 
-  ArrowUpRight, 
-  ChevronRight, 
-  Layers, 
-  Cpu, 
-  Activity, 
-  Globe, 
-  CheckCircle2, 
-  ShieldCheck, 
-  Workflow, 
-  FileText, 
-  ArrowRight, 
-  Database, 
-  Bot, 
-  Users, 
-  Brain, 
+import {
+  ArrowUpRight,
+  ChevronRight,
+  Layers,
+  Cpu,
+  Activity,
+  Globe,
+  CheckCircle2,
+  ShieldCheck,
+  Workflow,
+  FileText,
+  ArrowRight,
+  Database,
+  Bot,
+  Users,
+  Brain,
   Maximize2,
   Zap,
   Flame,
@@ -77,14 +77,14 @@ export default function EcosystemSubpagePage() {
   if (subpage === "ai-lab") {
     return (
       <main className="min-h-screen bg-black text-white pt-24 pb-16 font-sans">
-        
+
         {/* 1. Hero Section */}
-        <section className="relative overflow-hidden bg-black text-white pt-20 pb-16 px-6 border-b border-zinc-900/60">
+        <section className="relative overflow-hidden bg-black text-white pt-20 pb-16 border-b border-zinc-900/60">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(225,29,72,0.08),transparent_50%)] pointer-events-none" />
           <div className="absolute inset-0 bg-[linear-gradient(to_right,#09090b_1px,transparent_1px),linear-gradient(to_bottom,#09090b_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none" />
 
-          <div className="max-w-site mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            
+          <div className="max-w-7xl mx-auto w-full px-6 md:px-12 lg:px-16 relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+
             <div className="lg:col-span-7 text-left">
               <nav className="flex items-center gap-2 text-xs font-mono text-zinc-550 mb-8">
                 <Link href="/" className="hover:text-rose-500 transition-colors">HOME</Link>
@@ -160,11 +160,11 @@ export default function EcosystemSubpagePage() {
         {/* 2. Lab Overview */}
         <section className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
           <div className="max-w-site mx-auto px-6 md:px-12 lg:px-20 text-left grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            
+
             <div className="lg:col-span-7">
               <Reveal>
                 <div className="flex items-center gap-2 mb-4">
-                  <span className="h-[2px] w-6 bg-rose-600"></span>
+
                   <span className="text-[10px] font-bold tracking-widest uppercase text-rose-500">
                     WHERE INNOVATION MEETS EXECUTION
                   </span>
@@ -226,10 +226,10 @@ export default function EcosystemSubpagePage() {
         {/* 3. Innovation Areas */}
         <section id="innovation-areas" className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
           <div className="max-w-site mx-auto px-6 md:px-12 lg:px-20 text-left">
-            
+
             <Reveal className="mb-16">
               <div className="flex items-center gap-2 mb-4">
-                <span className="h-[2px] w-6 bg-rose-600"></span>
+
                 <span className="text-[10px] font-bold tracking-widest uppercase text-rose-500">
                   R&D Practice areas
                 </span>
@@ -240,7 +240,7 @@ export default function EcosystemSubpagePage() {
             </Reveal>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              
+
               {/* Card 1 */}
               <Reveal className="h-full">
                 <div className="h-full bg-zinc-950/20 border border-zinc-900 rounded-2xl p-6 hover:border-zinc-850 hover:bg-zinc-900/5 transition-all duration-300">
@@ -339,10 +339,10 @@ export default function EcosystemSubpagePage() {
         {/* 4. AI Innovation Workflow */}
         <section className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
           <div className="max-w-site mx-auto px-6 md:px-12 lg:px-20 text-left">
-            
+
             <Reveal className="mb-16">
               <div className="flex items-center gap-2 mb-4">
-                <span className="h-[2px] w-6 bg-rose-600"></span>
+
                 <span className="text-[10px] font-bold tracking-widest uppercase text-rose-500">
                   PROCESS ROADMAP
                 </span>
@@ -411,10 +411,10 @@ export default function EcosystemSubpagePage() {
         {/* 5. AI Technology Stack */}
         <section className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
           <div className="max-w-site mx-auto px-6 md:px-12 lg:px-20 text-left">
-            
+
             <Reveal className="mb-16">
               <div className="flex items-center gap-2 mb-4">
-                <span className="h-[2px] w-6 bg-rose-600"></span>
+
                 <span className="text-[10px] font-bold tracking-widest uppercase text-rose-500">
                   ENGINEERING FOUNDATION
                 </span>
@@ -425,7 +425,7 @@ export default function EcosystemSubpagePage() {
             </Reveal>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              
+
               <Reveal className="h-full">
                 <div className="h-full bg-zinc-950/20 border border-zinc-900 rounded-2xl p-6">
                   <h4 className="text-xs font-semibold text-zinc-200 mb-3 border-b border-zinc-900 pb-2 uppercase tracking-wider font-mono">
@@ -492,10 +492,10 @@ export default function EcosystemSubpagePage() {
         {/* 6. AI Accelerators */}
         <section className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
           <div className="max-w-site mx-auto px-6 md:px-12 lg:px-20 text-left">
-            
+
             <Reveal className="mb-16">
               <div className="flex items-center gap-2 mb-4">
-                <span className="h-[2px] w-6 bg-rose-600"></span>
+
                 <span className="text-[10px] font-bold tracking-widest uppercase text-rose-500">
                   BOILERPLATES & ACCELERATORS
                 </span>
@@ -506,7 +506,7 @@ export default function EcosystemSubpagePage() {
             </Reveal>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              
+
               <Reveal className="h-full">
                 <div className="h-full bg-zinc-950/20 border border-zinc-900 rounded-2xl p-5 hover:border-rose-500/25 transition-all">
                   <h4 className="text-xs font-semibold text-zinc-250 mb-2">AI Knowledge Assistant</h4>
@@ -571,10 +571,10 @@ export default function EcosystemSubpagePage() {
         {/* 7. Industry Applications */}
         <section className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
           <div className="max-w-site mx-auto px-6 md:px-12 lg:px-20 text-left">
-            
+
             <Reveal className="mb-16">
               <div className="flex items-center gap-2 mb-4">
-                <span className="h-[2px] w-6 bg-rose-600"></span>
+
                 <span className="text-[10px] font-bold tracking-widest uppercase text-rose-500">
                   MARKET VERTICALS
                 </span>
@@ -585,7 +585,7 @@ export default function EcosystemSubpagePage() {
             </Reveal>
 
             <div className="grid grid-cols-2 md:grid-cols-7 gap-4">
-              
+
               <Reveal className="h-full">
                 <div className="h-full bg-zinc-950/20 border border-zinc-900 rounded-2xl p-5 hover:border-rose-500/20 transition-all text-center">
                   <span className="block text-[11px] font-semibold text-zinc-200">Financial</span>
@@ -636,10 +636,10 @@ export default function EcosystemSubpagePage() {
         {/* 8. Enterprise AI Architecture Diagram */}
         <section className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
           <div className="max-w-site mx-auto px-6 md:px-12 lg:px-20 text-left">
-            
+
             <Reveal className="mb-16">
               <div className="flex items-center gap-2 mb-4">
-                <span className="h-[2px] w-6 bg-rose-600"></span>
+
                 <span className="text-[10px] font-bold tracking-widest uppercase text-rose-500">
                   SYSTEM ARCHITECTURE
                 </span>
@@ -654,7 +654,7 @@ export default function EcosystemSubpagePage() {
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(244,63,94,0.01),transparent_75%)] pointer-events-none" />
 
               <div className="grid grid-cols-1 md:grid-cols-6 gap-6 relative items-center text-center">
-                
+
                 {/* Step 1 */}
                 <div className="bg-zinc-900 border border-zinc-800 p-5 rounded-2xl relative z-10 group hover:border-rose-500/20 transition-colors">
                   <span className="block text-[9px] font-mono text-rose-500 mb-2">INPUTS</span>
@@ -706,10 +706,10 @@ export default function EcosystemSubpagePage() {
         {/* 9. Business Impact */}
         <section className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
           <div className="max-w-site mx-auto px-6 md:px-12 lg:px-20 text-left">
-            
+
             <Reveal className="mb-16">
               <div className="flex items-center gap-2 mb-4">
-                <span className="h-[2px] w-6 bg-rose-600"></span>
+
                 <span className="text-[10px] font-bold tracking-widest uppercase text-rose-500">
                   IMPACT QUANTIFIED
                 </span>
@@ -720,7 +720,7 @@ export default function EcosystemSubpagePage() {
             </Reveal>
 
             <div className="grid grid-cols-2 md:grid-cols-6 gap-4">
-              
+
               <Reveal className="h-full">
                 <div className="h-full bg-zinc-950/20 border border-zinc-900 rounded-2xl p-5 hover:border-rose-500/25 transition-all">
                   <span className="block text-3xl font-bold font-mono text-rose-500 mb-1">40%</span>
@@ -771,10 +771,10 @@ export default function EcosystemSubpagePage() {
         {/* 10. Featured Use Cases */}
         <section className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
           <div className="max-w-site mx-auto px-6 md:px-12 lg:px-20 text-left">
-            
+
             <Reveal className="mb-16">
               <div className="flex items-center gap-2 mb-4">
-                <span className="h-[2px] w-6 bg-rose-600"></span>
+
                 <span className="text-[10px] font-bold tracking-widest uppercase text-rose-500">
                   REAL-WORLD IMPLEMENTATIONS
                 </span>
@@ -785,7 +785,7 @@ export default function EcosystemSubpagePage() {
             </Reveal>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              
+
               <Reveal className="h-full">
                 <div className="h-full bg-zinc-950/20 border border-zinc-900 rounded-2xl p-6 hover:border-zinc-800 transition-colors">
                   <h4 className="text-xs font-semibold text-zinc-200 mb-2">AI Customer Support</h4>
@@ -836,10 +836,10 @@ export default function EcosystemSubpagePage() {
         {/* 11. Future Technologies */}
         <section className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
           <div className="max-w-site mx-auto px-6 md:px-12 lg:px-20 text-left">
-            
+
             <Reveal className="mb-16">
               <div className="flex items-center gap-2 mb-4">
-                <span className="h-[2px] w-6 bg-rose-600"></span>
+
                 <span className="text-[10px] font-bold tracking-widest uppercase text-rose-500">
                   R&D ROADMAP
                 </span>
@@ -850,7 +850,7 @@ export default function EcosystemSubpagePage() {
             </Reveal>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              
+
               <Reveal className="h-full">
                 <div className="h-full bg-zinc-950/20 border border-zinc-900 rounded-2xl p-6 hover:border-rose-500/10 transition-colors">
                   <h4 className="text-xs font-semibold text-zinc-200 mb-2">Agentic AI & Swarms</h4>
@@ -880,10 +880,10 @@ export default function EcosystemSubpagePage() {
         {/* 12. Related Ecosystem Areas */}
         <section className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
           <div className="max-w-site mx-auto px-6 md:px-12 lg:px-20 text-left">
-            
+
             <Reveal className="mb-16">
               <div className="flex items-center gap-2 mb-4">
-                <span className="h-[2px] w-6 bg-rose-600"></span>
+
                 <span className="text-[10px] font-bold tracking-widest uppercase text-rose-500">
                   CONNECTED PRACTICE AREAS
                 </span>
@@ -894,7 +894,7 @@ export default function EcosystemSubpagePage() {
             </Reveal>
 
             <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
-              
+
               <Reveal className="h-full">
                 <Link href="/ecosystem/innovation-labs/cloud-lab" className="block h-full bg-zinc-950/20 border border-zinc-900 rounded-2xl p-5 hover:border-zinc-850 hover:bg-zinc-900/5 transition-all text-center">
                   <span className="text-[11px] font-semibold text-zinc-200">Cloud Innovation Lab</span>
@@ -937,8 +937,8 @@ export default function EcosystemSubpagePage() {
               <div className="flex items-center justify-center gap-2 mb-4">
                 <span className="text-[10px] font-bold tracking-widest uppercase text-rose-500">FAQ</span>
               </div>
-              <h2 className="text-2xl md:text-3xl font-light text-white tracking-tight leading-snug">
-                Technical <span className="font-semibold text-rose-500">clarifications</span>
+              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white uppercase">
+                Technical <span className="text-rose-500">clarifications</span>
               </h2>
             </Reveal>
 
@@ -1029,13 +1029,13 @@ export default function EcosystemSubpagePage() {
 
   return (
     <main className="min-h-screen bg-black text-white pt-24 pb-16 font-sans">
-      
+
       {/* 1. Hero */}
-      <section className="relative overflow-hidden bg-black text-white pt-20 pb-16 px-6 border-b border-zinc-900/60">
+      <section className="relative overflow-hidden bg-black text-white pt-20 pb-16 border-b border-zinc-900/60">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(225,29,72,0.06),transparent_50%)] pointer-events-none" />
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#09090b_1px,transparent_1px),linear-gradient(to_bottom,#09090b_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none" />
 
-        <div className="max-w-site mx-auto relative z-10">
+        <div className="max-w-7xl mx-auto w-full px-6 md:px-12 lg:px-16 relative z-10">
           <nav className="flex items-center gap-2 text-xs font-mono text-zinc-550 mb-8">
             {defaultBreadcrumbs.map((crumb, idx) => (
               <React.Fragment key={idx}>
@@ -1211,8 +1211,8 @@ export default function EcosystemSubpagePage() {
         <div className="max-w-3xl mx-auto px-6 text-left">
           <Reveal className="mb-16 text-center">
             <span className="text-[10px] font-bold tracking-widest uppercase text-rose-500 block mb-2">FAQ</span>
-            <h2 className="text-2xl md:text-3xl font-light text-white tracking-tight leading-snug">
-              Technical <span className="font-semibold text-rose-500">clarifications</span>
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white uppercase">
+              Technical <span className="text-rose-500">clarifications</span>
             </h2>
           </Reveal>
 

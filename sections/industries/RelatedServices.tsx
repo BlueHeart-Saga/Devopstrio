@@ -18,7 +18,7 @@ export function RelatedServices() {
       <div className="max-w-site mx-auto px-6 md:px-12 lg:px-20 text-left">
         <Reveal className="mb-16">
           <div className="flex items-center gap-2 mb-4">
-            <span className="h-[2px] w-6 bg-rose-600"></span>
+
             <span className="text-[10px] font-bold tracking-widest uppercase text-rose-500">
               PRACTICE CONNECTIVITY
             </span>

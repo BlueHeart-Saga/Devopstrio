@@ -3,19 +3,19 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { 
-  ArrowUpRight, 
-  ChevronRight, 
-  Layers, 
-  Cpu, 
-  Activity, 
-  Globe, 
-  CheckCircle2, 
-  ShieldCheck, 
-  Timer, 
-  LineChart, 
-  Flame, 
-  Compass, 
+import {
+  ArrowUpRight,
+  ChevronRight,
+  Layers,
+  Cpu,
+  Activity,
+  Globe,
+  CheckCircle2,
+  ShieldCheck,
+  Timer,
+  LineChart,
+  Flame,
+  Compass,
   Workflow
 } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
@@ -82,35 +82,25 @@ const alliances = [
 
 export default function EcosystemLandingPage() {
   return (
-    <main className="min-h-screen bg-black text-white pb-16 font-sans">
-      
+    <main className="min-h-screen bg-black text-white pt-16 pb-16 font-sans">
+
       {/* 1. Hero Section */}
-      <section className="relative w-full min-h-[80vh] flex items-center bg-[#030303] text-white pt-20 pb-16 lg:pt-20 lg:pb-24 overflow-hidden border-b border-zinc-900/60">
+      <section className="relative w-full min-h-[80vh] flex items-center bg-[#030303] text-white pt-24 pb-16 md:pt-28 md:pb-20 lg:pt-32 lg:pb-24 overflow-hidden border-b border-zinc-900/60">
         {/* Background Ambient Glows */}
         <div className="absolute top-[-10%] right-[-10%] w-[50%] aspect-square bg-[radial-gradient(circle_at_center,rgba(244,63,94,0.06),transparent_70%)] pointer-events-none z-0" />
         <div className="absolute bottom-[-10%] left-[-10%] w-[50%] aspect-square bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.01),transparent_70%)] pointer-events-none z-0" />
 
         <div className="max-w-7xl mx-auto w-full px-6 md:px-12 lg:px-16 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center w-full">
-            
+
             {/* Left Column: Text & Metrics */}
             <div className="lg:col-span-7 flex flex-col items-start text-left justify-center z-20">
               {/* Breadcrumb Navigation */}
-              <nav className="flex items-center gap-2 text-xs font-mono text-zinc-550 mb-8">
+              <nav className="flex items-center gap-2 text-xs font-mono text-zinc-555 mb-8">
                 <Link href="/" className="hover:text-rose-500 transition-colors">HOME</Link>
                 <ChevronRight size={10} className="text-zinc-700" />
                 <span className="text-rose-500 font-bold uppercase">ECOSYSTEM</span>
               </nav>
-
-              {/* Eyebrow */}
-              <Reveal>
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-zinc-800/80 bg-zinc-950/40 mb-6">
-                  <span className="w-1.5 h-1.5 rounded-full bg-rose-600 animate-pulse" />
-                  <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-zinc-400">
-                    GLOBAL ALLIANCE ECOSYSTEM
-                  </span>
-                </div>
-              </Reveal>
 
               {/* Heading */}
               <Reveal delay={0.1}>
@@ -123,38 +113,30 @@ export default function EcosystemLandingPage() {
 
               {/* Description */}
               <Reveal delay={0.2}>
-                <p className="text-zinc-450 text-xs sm:text-sm md:text-base leading-relaxed font-semibold max-w-xl mb-8">
+                <p className="text-zinc-400 text-xs sm:text-sm md:text-base leading-relaxed font-semibold max-w-xl mb-8">
                   Devopstrio brings together cloud providers, innovation centers, accelerators, and talent channels into a unified network, providing high-performance, compliant, and cost-effective solutions.
                 </p>
               </Reveal>
 
-              {/* Quick Metrics */}
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 w-full mt-4">
-                <Reveal delay={0.15}>
-                  <div className="bg-zinc-950/20 border border-zinc-900/80 rounded-xl p-4 hover:border-zinc-800 transition-colors">
-                    <span className="block text-2xl font-bold font-mono text-rose-500 mb-1">50+</span>
-                    <span className="block text-[8px] font-mono tracking-wider text-zinc-500 uppercase leading-snug">Technology Partners</span>
-                  </div>
-                </Reveal>
-                <Reveal delay={0.2}>
-                  <div className="bg-zinc-950/20 border border-zinc-900/80 rounded-xl p-4 hover:border-zinc-800 transition-colors">
-                    <span className="block text-2xl font-bold font-mono text-rose-500 mb-1">30+</span>
-                    <span className="block text-[8px] font-mono tracking-wider text-zinc-500 uppercase leading-snug">R&D Innovation Labs</span>
-                  </div>
-                </Reveal>
-                <Reveal delay={0.25}>
-                  <div className="bg-zinc-950/20 border border-zinc-900/80 rounded-xl p-4 hover:border-zinc-800 transition-colors">
-                    <span className="block text-2xl font-bold font-mono text-rose-500 mb-1">25+</span>
-                    <span className="block text-[8px] font-mono tracking-wider text-zinc-500 uppercase leading-snug">Owned Products &amp; IP</span>
-                  </div>
-                </Reveal>
-                <Reveal delay={0.3}>
-                  <div className="bg-zinc-950/20 border border-zinc-900/80 rounded-xl p-4 hover:border-zinc-800 transition-colors">
-                    <span className="block text-2xl font-bold font-mono text-rose-500 mb-1">50k+</span>
-                    <span className="block text-[8px] font-mono tracking-wider text-zinc-500 uppercase leading-snug">Community Devs</span>
-                  </div>
-                </Reveal>
-              </div>
+              {/* CTA Buttons */}
+              <Reveal delay={0.3}>
+                <div className="flex flex-wrap gap-4 items-center justify-start">
+                  <a
+                    className="inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white transition-all duration-300 hover:shadow-[0_0_25px_rgba(225,29,72,0.35)] hover:-translate-y-0.5"
+                    href="#pillars"
+                  >
+                    Explore Pillars
+                    <span className="ml-2">→</span>
+                  </a>
+                  <Link
+                    className="inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase border border-zinc-850 hover:border-zinc-750 bg-zinc-950/60 hover:bg-zinc-900 text-white transition-all duration-300 hover:-translate-y-0.5"
+                    href="/contact"
+                  >
+                    Talk to Expert
+                    <span className="ml-2">→</span>
+                  </Link>
+                </div>
+              </Reveal>
             </div>
 
             {/* Right Column: Ecosystem Image */}
@@ -175,10 +157,10 @@ export default function EcosystemLandingPage() {
       {/* 2. Ecosystem Domains Section */}
       <section id="pillars" className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
         <div className="max-w-site mx-auto px-6 md:px-12 lg:px-20 relative z-10 text-left">
-          
+
           <Reveal className="mb-16">
             <div className="flex items-center gap-2 mb-4">
-              <span className="h-[2px] w-6 bg-rose-600"></span>
+
               <span className="text-[10px] font-bold tracking-widest uppercase text-rose-500">
                 Ecosystem Pillars
               </span>
@@ -233,14 +215,14 @@ export default function EcosystemLandingPage() {
         </div>
       </section>
 
-       {/* 3. System Architecture Section */}
+      {/* 3. System Architecture Section */}
       <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60 relative overflow-hidden">
         {/* Ambient Glow */}
         <div className="absolute top-[20%] left-[-10%] w-[30%] aspect-square bg-[radial-gradient(circle_at_center,rgba(244,63,94,0.02),transparent_70%)] pointer-events-none z-0" />
 
         <div className="max-w-7xl mx-auto w-full px-6 md:px-12 lg:px-16 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center w-full">
-            
+
             {/* Left Column: Stats & Description */}
             <div className="lg:col-span-7 flex flex-col items-start text-left justify-center z-20">
               <Reveal>
@@ -294,7 +276,7 @@ export default function EcosystemLandingPage() {
               <Reveal delay={0.2} className="w-full max-w-[440px]">
                 <div className="bg-zinc-950/20 border border-zinc-900/80 rounded-2xl p-6 sm:p-8 backdrop-blur-md relative overflow-hidden">
                   <div className="absolute top-0 right-0 w-32 h-32 bg-[radial-gradient(circle_at_center,rgba(244,63,94,0.015),transparent_75%)] pointer-events-none" />
-                  
+
                   <h3 className="text-xs font-bold uppercase tracking-wider text-zinc-300 mb-2">
                     Our Technology Fabric
                   </h3>
@@ -304,14 +286,14 @@ export default function EcosystemLandingPage() {
 
                   <div className="grid grid-cols-3 gap-3">
                     {alliances.map((partner, index) => (
-                      <div 
+                      <div
                         className="group/logo relative h-16 bg-white border border-zinc-900 rounded-xl flex items-center justify-center p-3 hover:border-rose-500/20 hover:shadow-[0_0_20px_rgba(225,29,72,0.1)] transition-all duration-300 cursor-pointer"
                         key={index}
                       >
-                        <Image 
-                          src={partner.path} 
-                          alt={partner.name} 
-                          width={60} 
+                        <Image
+                          src={partner.path}
+                          alt={partner.name}
+                          width={60}
                           height={20}
                           className="max-h-6 object-contain opacity-80 group-hover/logo:opacity-100 transition-opacity duration-300"
                           unoptimized
@@ -353,7 +335,7 @@ export default function EcosystemLandingPage() {
       {/* 4. Ecosystem Topology Section */}
       <section className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
         <div className="max-w-7xl mx-auto w-full px-6 md:px-12 lg:px-16 text-left">
-          
+
           <Reveal className="mb-16">
             <div className="flex items-center gap-2 mb-4">
               <span className="w-1.5 h-1.5 rounded-full bg-rose-600 animate-pulse" />
@@ -371,7 +353,7 @@ export default function EcosystemLandingPage() {
 
           {/* Interactive Topology Steps */}
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6 relative">
-            
+
             {/* Horizontal Line Connector */}
             <div className="absolute top-1/2 left-0 right-0 h-[1px] bg-gradient-to-r from-rose-500/5 via-rose-500/20 to-rose-500/5 hidden md:block z-0 -translate-y-6" />
 
@@ -451,7 +433,7 @@ export default function EcosystemLandingPage() {
       {/* 5. Innovation Labs Section */}
       <section className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
         <div className="max-w-7xl mx-auto w-full px-6 md:px-12 lg:px-16 text-left">
-          
+
           <Reveal className="mb-16">
             <div className="flex items-center gap-2 mb-4">
               <span className="w-1.5 h-1.5 rounded-full bg-rose-600 animate-pulse" />
@@ -465,7 +447,7 @@ export default function EcosystemLandingPage() {
           </Reveal>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            
+
             {/* Lab 1 */}
             <Reveal className="h-full">
               <div className="h-full bg-zinc-950/10 border border-zinc-900 rounded-3xl p-8 hover:border-rose-500/20 hover:bg-zinc-900/5 transition-all duration-300">
@@ -534,7 +516,7 @@ export default function EcosystemLandingPage() {
       {/* 6. Reference Architectures / Delivery Stacks Section */}
       <section className="w-full py-24 bg-black border-b border-zinc-900/60 relative overflow-hidden">
         <div className="max-w-7xl mx-auto w-full px-6 md:px-12 lg:px-16 relative z-10 text-left">
-          
+
           <Reveal className="mb-16">
             <div className="flex items-center gap-2 mb-4">
               <span className="w-1.5 h-1.5 rounded-full bg-rose-600 animate-pulse" />
@@ -551,7 +533,7 @@ export default function EcosystemLandingPage() {
           </Reveal>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            
+
             {/* Stack 1 */}
             <Reveal className="h-full">
               <div className="h-full bg-zinc-950/20 border border-zinc-900/80 rounded-2xl p-6 sm:p-8 hover:border-rose-500/25 transition-all duration-300 group relative overflow-hidden">
@@ -623,7 +605,7 @@ export default function EcosystemLandingPage() {
 
         <div className="max-w-7xl mx-auto w-full px-6 md:px-12 lg:px-16 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center w-full">
-            
+
             {/* Left Column: Outcome list */}
             <div className="lg:col-span-7 flex flex-col items-start text-left justify-center z-20">
               <Reveal>
@@ -689,7 +671,7 @@ export default function EcosystemLandingPage() {
               <Reveal delay={0.2} className="w-full max-w-[440px]">
                 <div className="bg-gradient-to-br from-[#100816] to-[#170b1b] border border-[#281438] hover:border-rose-500/35 rounded-3xl p-8 transition-all duration-300 relative overflow-hidden group">
                   <div className="absolute top-0 right-0 w-32 h-32 bg-[radial-gradient(circle_at_center,rgba(225,29,72,0.06),transparent_75%)] pointer-events-none" />
-                  
+
                   <span className="inline-block px-2.5 py-1 rounded bg-rose-950/30 border border-rose-900/40 text-[#E11D48] text-[8px] font-bold tracking-wider uppercase mb-6">
                     STRATEGIC COLLABORATION
                   </span>
@@ -697,13 +679,13 @@ export default function EcosystemLandingPage() {
                   <h3 className="text-base sm:text-lg font-bold text-white leading-snug mb-4 group-hover:text-rose-400 transition-colors">
                     Devopstrio Partners with Azure to Accelerate Enterprise AI Adoption
                   </h3>
-                  
+
                   <p className="text-[11px] text-zinc-400 leading-relaxed mb-8 font-semibold">
                     We are proud to announce a multi-year technical partnership aimed at accelerating secure cloud-native deployment patterns and custom cognitive service integrations for healthcare and fintech industries.
                   </p>
 
-                  <Link 
-                    href="/insights-knowledge/white-paper" 
+                  <Link
+                    href="/insights-knowledge/white-paper"
                     className="inline-flex items-center gap-1.5 text-xs font-bold text-white group-hover:text-rose-500 transition-colors"
                   >
                     Read the Full Announcement <ChevronRight size={14} className="group-hover:translate-x-0.5 transition-transform" />
@@ -719,7 +701,7 @@ export default function EcosystemLandingPage() {
       {/* 8. Rationale Section */}
       <section className="w-full py-24 bg-black border-b border-zinc-900/60 relative overflow-hidden">
         <div className="max-w-7xl mx-auto w-full px-6 md:px-12 lg:px-16 relative z-10 text-left">
-          
+
           <Reveal className="mb-16">
             <div className="flex items-center gap-2 mb-4">
               <span className="w-1.5 h-1.5 rounded-full bg-rose-600 animate-pulse" />
@@ -736,7 +718,7 @@ export default function EcosystemLandingPage() {
           </Reveal>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            
+
             {/* Block 1 */}
             <Reveal className="h-full">
               <div className="h-full bg-zinc-950/20 border border-zinc-900/80 rounded-2xl p-6 sm:p-8 hover:border-rose-500/25 transition-all duration-300 group relative overflow-hidden">
@@ -789,10 +771,10 @@ export default function EcosystemLandingPage() {
       {/* 9. Global Delivery Network Section */}
       <section className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
         <div className="max-w-site mx-auto px-6 md:px-12 lg:px-20 text-left">
-          
+
           <Reveal className="mb-16">
             <div className="flex items-center gap-2 mb-4">
-              <span className="h-[2px] w-6 bg-rose-600"></span>
+
               <span className="text-[10px] font-bold tracking-widest uppercase text-rose-500">
                 Availability Map
               </span>
@@ -803,7 +785,7 @@ export default function EcosystemLandingPage() {
           </Reveal>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            
+
             {/* Hub 1 */}
             <Reveal className="h-full">
               <div className="h-full bg-zinc-950/20 border border-zinc-900 rounded-2xl p-6 relative group hover:border-rose-500/20 transition-all duration-300">
@@ -860,7 +842,7 @@ export default function EcosystemLandingPage() {
 
         <div className="max-w-7xl mx-auto w-full px-6 md:px-12 lg:px-16 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center w-full">
-            
+
             {/* Left Column: Support info */}
             <div className="lg:col-span-7 flex flex-col items-start text-left justify-center z-20">
               <Reveal>
@@ -914,7 +896,7 @@ export default function EcosystemLandingPage() {
               <Reveal delay={0.2} className="w-full max-w-[440px]">
                 <div className="bg-zinc-950/25 border border-zinc-900/80 rounded-2xl p-6 sm:p-8 backdrop-blur-md relative overflow-hidden">
                   <div className="absolute top-0 right-0 w-32 h-32 bg-[radial-gradient(circle_at_center,rgba(244,63,94,0.015),transparent_75%)] pointer-events-none" />
-                  
+
                   <h3 className="text-[10px] font-bold uppercase tracking-wider text-zinc-500 border-b border-zinc-900/60 pb-4 mb-4">
                     Support Commitments
                   </h3>

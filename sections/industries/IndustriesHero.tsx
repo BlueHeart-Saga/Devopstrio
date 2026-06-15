@@ -35,7 +35,7 @@ export function IndustriesHero({
         {/* <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(225,29,72,0.06),transparent_50%)] pointer-events-none" /> */}
       </div>
 
-      <div className="max-w-site mx-auto w-full px-6 md:px-12 lg:px-20 relative z-10 pt-36 pb-20 lg:pt-44 lg:pb-28">
+      <div className="max-w-7xl mx-auto w-full px-6 md:px-12 lg:px-16 relative z-10 pt-36 pb-20 lg:pt-44 lg:pb-28">
         <div className="max-w-3xl text-left">
           
           {/* Breadcrumb Navigation */}

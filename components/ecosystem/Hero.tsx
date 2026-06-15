@@ -21,7 +21,7 @@ export function Hero({ badge, title, subtitle, stats, breadcrumbs, cta, imageSrc
   const remainingText = words.join(" ");
 
   return (
-    <section className="relative w-full min-h-[80vh] flex items-center bg-[#030303] text-white pt-20 pb-16 lg:pt-20 lg:pb-24 overflow-hidden border-b border-zinc-900/60">
+    <section className="relative w-full min-h-[80vh] flex items-center bg-[#030303] text-white pt-24 pb-16 md:pt-28 md:pb-20 lg:pt-32 lg:pb-24 overflow-hidden border-b border-zinc-900/60">
       {/* Background Ambient Glows */}
       <div className="absolute top-[-10%] right-[-10%] w-[50%] aspect-square bg-[radial-gradient(circle_at_center,rgba(244,63,94,0.06),transparent_70%)] pointer-events-none z-0" />
       <div className="absolute bottom-[-10%] left-[-10%] w-[50%] aspect-square bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.01),transparent_70%)] pointer-events-none z-0" />
@@ -50,7 +50,7 @@ export function Hero({ badge, title, subtitle, stats, breadcrumbs, cta, imageSrc
               })}
             </nav>
 
-            {/* Headline block */}
+            {/* Heading & description block */}
             <div className="max-w-4xl text-left w-full">
               {badge && (
                 <Reveal>
@@ -83,11 +83,11 @@ export function Hero({ badge, title, subtitle, stats, breadcrumbs, cta, imageSrc
                 </p>
               </Reveal>
             </div>
-
             {/* CTA Buttons */}
-            {cta && (
-              <Reveal delay={0.25}>
-                <div className="flex flex-wrap gap-4 items-center justify-start mb-8">
+            {/* CTA Buttons */}
+            <Reveal delay={0.25}>
+              <div className="flex flex-wrap gap-4 items-center justify-start">
+                {cta && (
                   <a
                     className="inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white transition-all duration-300 hover:shadow-[0_0_25px_rgba(225,29,72,0.35)] hover:-translate-y-0.5"
                     href={cta.href}
@@ -95,29 +95,18 @@ export function Hero({ badge, title, subtitle, stats, breadcrumbs, cta, imageSrc
                     {cta.label}
                     <span className="ml-2">→</span>
                   </a>
-                </div>
-              </Reveal>
-            )}
-
-            {/* Metrics Row */}
-            {stats && stats.length > 0 && (
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 w-full mt-4">
-                {stats.map((stat, idx) => (
-                  <Reveal key={idx} delay={0.3 + idx * 0.05}>
-                    <div className="bg-zinc-950/20 border border-zinc-900/80 rounded-xl p-4 hover:border-zinc-800 hover:bg-zinc-900/5 transition-all duration-300 group cursor-pointer relative overflow-hidden">
-                      <div className="absolute top-0 right-0 w-28 h-28 bg-[radial-gradient(circle_at_center,rgba(244,63,94,0.015),transparent_75%)] opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
-
-                      <span className="block text-2xl font-bold font-mono text-rose-500 mb-1 group-hover:scale-105 transition-transform duration-300 origin-left">
-                        {stat.value}
-                      </span>
-                      <span className="block text-[8px] font-mono tracking-wider text-zinc-550 uppercase leading-snug">
-                        {stat.label}
-                      </span>
-                    </div>
-                  </Reveal>
-                ))}
+                )}
+                <Link
+                  className="inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase border border-zinc-850 hover:border-zinc-750 bg-zinc-950/60 hover:bg-zinc-900 text-white transition-all duration-300 hover:-translate-y-0.5"
+                  href="/contact"
+                >
+                  Talk to Expert
+                  <span className="ml-2">→</span>
+                </Link>
               </div>
-            )}
+            </Reveal>
+
+
           </div>
 
           {/* Right Column: Ecosystem Image */}

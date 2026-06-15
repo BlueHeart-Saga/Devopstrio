@@ -28,8 +28,8 @@ export function IndustryFAQ({ faqs }: IndustryFAQProps) {
               FAQ
             </span>
           </div>
-          <h2 className="text-2xl md:text-3xl font-light text-white tracking-tight leading-snug">
-            Technical <span className="font-semibold text-rose-500">clarifications</span>
+          <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white uppercase">
+            Technical <span className="text-rose-500">clarifications</span>
           </h2>
         </Reveal>
 

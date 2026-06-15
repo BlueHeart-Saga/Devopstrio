@@ -9,7 +9,99 @@ interface CapabilityOverviewProps {
   image: string;
 }
 
+function getCapabilityDefinition(title: string, subtitle: string) {
+  const t = title.toLowerCase();
+  
+  if (t.includes("generative ai") || t.includes("llm") || t.includes("rag")) {
+    return {
+      heading: "Understanding Generative AI",
+      paragraph1: "Generative AI represents a paradigm shift in how enterprise organizations process information, automate complex decision-making, and interact with data. Unlike traditional systems that rely on hardcoded rules, Generative AI leverages deep learning models trained on massive datasets to understand context, generate human-like text, synthesize insights, and reason through multi-step workflows in real time.",
+      paragraph2: "By deploying secure, Retrieval-Augmented Generation (RAG) pipelines and private fine-tuning engines, we transform raw institutional knowledge into high-value cognitive assets. This capability allows you to build domain-specific virtual experts, automate content generation, and query complex databases using natural language, all while guaranteeing absolute data privacy and compliance."
+    };
+  }
+  
+  if (t.includes("ai") || t.includes("machine learning") || t.includes("ml") || t.includes("agent")) {
+    return {
+      heading: `What is ${title}?`,
+      paragraph1: `${title} is the deployment of cognitive intelligence and autonomous workflows directly into enterprise software architecture. It moves organizations past static automation into the realm of self-learning systems that analyze historical telemetry, recognize complex patterns, and execute high-value business processes with minimal human intervention.`,
+      paragraph2: `Using stateful agent networks, custom neural modeling, and low-latency inference pipelines, this capability enables your organization to predict customer behavior, automate repetitive operational loops, and optimize resource allocation. It serves as the intelligent foundation for modern digital-first enterprises.`
+    };
+  }
+
+  if (t.includes("cloud") || t.includes("aws") || t.includes("azure") || t.includes("gcp") || t.includes("finops")) {
+    return {
+      heading: `What is ${title}?`,
+      paragraph1: `${title} is the strategic alignment of computing resources, storage, and networking in highly-available virtualized environments. It empowers enterprises to scale workloads dynamically, secure sensitive workloads within private landing zones, and transition from capital-intensive physical servers to agile, pay-as-you-go cloud architectures.`,
+      paragraph2: `Whether establishing multi-region AKS/EKS container grids, optimizing database queries, or automating cost tracking through FinOps practices, this capability ensures that your infrastructure is highly secure, fully compliant with industry standards, and ready to meet traffic demands of any scale.`
+    };
+  }
+
+  if (t.includes("devops") || t.includes("ci/cd") || t.includes("infrastructure as code") || t.includes("kubernetes") || t.includes("sre") || t.includes("platform engineering")) {
+    return {
+      heading: `What is ${title}?`,
+      paragraph1: `${title} is an engineering methodology that unites software development (Dev) and IT operations (Ops) through automated workflows, shared telemetry, and a culture of continuous collaboration. By treating infrastructure as code (IaC) and automating the build, test, and release cycles, organizations can push updates with speed, reliability, and precision.`,
+      paragraph2: `Through platform engineering portals, GitOps deployment gates, and site reliability metrics, this capability eliminates manual release friction. The result is a self-healing system where code updates are verified and deployed to production with zero downtime and full audit trails.`
+    };
+  }
+
+  if (t.includes("security") || t.includes("vulnerability") || t.includes("penetration") || t.includes("soc") || t.includes("iam") || t.includes("compliance") || t.includes("zero trust")) {
+    return {
+      heading: `What is ${title}?`,
+      paragraph1: `${title} is the systematic hardening of digital assets, network boundaries, and user identities against malicious actors and data breaches. It establishes a resilient defense posture through continuous vulnerability scans, strict access management, and compliance alignment with international regulations like SOC-2, ISO-27001, and HIPAA.`,
+      paragraph2: `By implementing zero-trust architectures, micro-segmentation, and real-time SIEM event monitoring, this capability ensures that every system entry point is verified, authenticated, and logged. It protects your brand reputation and client trust by turning security from a checkbox into a core operational strength.`
+    };
+  }
+
+  if (t.includes("data") || t.includes("lake") || t.includes("warehouse") || t.includes("pipeline") || t.includes("etl") || t.includes("elt")) {
+    return {
+      heading: `What is ${title}?`,
+      paragraph1: `${title} is the engineering of high-throughput systems that ingest, transform, clean, and store vast amounts of raw business data. It provides the structured foundation for modern analytics by transforming fragmented data streams from APIs, databases, and logs into a single source of truth.`,
+      paragraph2: `By deploying modern data lakehouses, Apache Airflow orchestrators, and automated quality assertions, this capability guarantees that your business intelligence tools and predictive models run on clean, consistent, and low-latency data. It enables real-time decision-making backed by verifiable facts.`
+    };
+  }
+
+  if (t.includes("app") || t.includes("web") || t.includes("mobile") || t.includes("saas") || t.includes("api") || t.includes("microservices") || t.includes("software")) {
+    return {
+      heading: `What is ${title}?`,
+      paragraph1: `${title} is the process of planning, coding, and deploying custom software applications tailored to deliver high-performance user experiences and robust backend performance. It utilizes modern frameworks (such as Next.js, React, and Go) to build scalable, responsive platforms that load in milliseconds.`,
+      paragraph2: `From API integration gateways to decoupled microservice topologies, this capability focuses on engineering modular systems that are easy to maintain, simple to scale, and deeply aligned with your customer needs. It turns custom software into a primary driver of digital revenue and operational efficiency.`
+    };
+  }
+
+  if (t.includes("transformation") || t.includes("strategy") || t.includes("process") || t.includes("workflow") || t.includes("change")) {
+    return {
+      heading: `What is ${title}?`,
+      paragraph1: `${title} is the comprehensive modernization of legacy technologies, manual corporate workflows, and operational mindsets to align with the digital age. It goes beyond simple software updates, restructuring how business departments collaborate, share insights, and deliver value to their end customers.`,
+      paragraph2: `By automating manual validation loops, refactoring legacy codebases, and coaching teams in agile Scrum frameworks, this capability ensures your organization remains highly competitive, responsive to market shifts, and capable of rapid engineering innovation.`
+    };
+  }
+
+  if (t.includes("test") || t.includes("qa") || t.includes("quality") || t.includes("regression")) {
+    return {
+      heading: `What is ${title}?`,
+      paragraph1: `${title} is the rigorous, automated verification of software applications to ensure they meet strict functional, performance, and security benchmarks before reaching production. By embedding automated testing suites (like Playwright, Cypress, and k6) into development pipelines, we catch bugs and performance drift instantly.`,
+      paragraph2: `This quality engineering practice minimizes release regressions, protects the user experience, and accelerates developer velocity by providing instant feedback. It guarantees that every code release is solid, stable, and ready for your users.`
+    };
+  }
+
+  if (t.includes("consult") || t.includes("architecture") || t.includes("roadmap") || t.includes("assessment")) {
+    return {
+      heading: `What is ${title}?`,
+      paragraph1: `${title} is the advisory and planning practice that defines technical roadmaps, audits current IT capabilities, and blueprints robust enterprise architectures. It bridges the gap between high-level business goals and down-to-earth engineering execution, preventing costly tech debt and alignment failures.`,
+      paragraph2: `By executing stakeholder discovery sprints, choosing ideal technology stacks, and drafting detailed disaster recovery and security runbooks, this capability ensures that your engineering resources are invested wisely and built on stable, future-proof foundations.`
+    };
+  }
+
+  return {
+    heading: `What is ${title}?`,
+    paragraph1: `${title} is a dedicated operational and engineering capability designed to streamline systems, eliminate tech bottlenecks, and deploy production-grade configurations. By establishing secure, automated environments, this practice helps organizations align their digital platforms with modern industry standards and compliance policies.`,
+    paragraph2: `Leveraging advanced design principles and custom integrations, this capability focuses on ${subtitle.toLowerCase().replace(/\.$/, '')}. It provides the technical scaffolding your teams need to accelerate deployment cycles, enhance observability, and achieve consistent, high-impact business outcomes.`
+  };
+}
+
 export function CapabilityOverview({ title, subtitle, image }: CapabilityOverviewProps) {
+  const def = getCapabilityDefinition(title, subtitle);
+
   return (
     <section id="overview" className="w-full py-16 bg-[#030303] text-white relative overflow-hidden">
       <div className="max-w-site mx-auto px-6 md:px-12 lg:px-20">
@@ -60,8 +152,34 @@ export function CapabilityOverview({ title, subtitle, image }: CapabilityOvervie
               </div>
 
             </div>
+
           </div>
         </Reveal>
+
+        {/* What Is Definition Section - Separated & Clean */}
+        <div className="mt-20 w-full relative z-10">
+          <Reveal delay={0.15}>
+            {/* Center Main Heading */}
+            <div className="text-center mb-8">
+              <span className="text-[10px] font-semibold tracking-[0.25em] uppercase text-rose-500 block mb-3">
+                Deep Dive Explanation
+              </span>
+              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold leading-tight tracking-tight text-white uppercase">
+                What is <span className="text-rose-500">{title}</span> ?
+              </h3>
+            </div>
+
+            {/* Centered Professional Paragraph Content */}
+            <div className="max-w-6xl mx-auto text-center space-y-6">
+              <p className="text-sm md:text-base lg:text-lg font-normal text-zinc-100 leading-relaxed font-sans">
+                {def.paragraph1}
+              </p>
+              <p className="text-sm md:text-base lg:text-lg font-normal text-zinc-300 leading-relaxed font-sans">
+                {def.paragraph2}
+              </p>
+            </div>
+          </Reveal>
+        </div>
 
       </div>
     </section>

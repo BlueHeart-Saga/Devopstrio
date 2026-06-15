@@ -1,116 +1,226 @@
 "use client";
 
 import React from "react";
+import { Check, ArrowDown } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
-import { 
-  Server, 
-  ShieldCheck, 
-  Database, 
-  BarChart3, 
-  Compass, 
-  Settings, 
-  GitBranch, 
-  Cpu, 
-  Key, 
-  AlertTriangle,
-  ArrowRight
-} from "lucide-react";
-import { ArchitectureStep } from "@/lib/services-utils";
 
 interface CapabilityArchitectureProps {
-  steps: ArchitectureStep[];
+  serviceSlug: string;
+  capabilityTitle: string;
 }
 
-const iconMap: Record<string, any> = {
-  Server,
-  ShieldCheck,
-  Database,
-  BarChart3,
-  Compass,
-  Settings,
-  GitBranch,
-  Cpu,
-  Key,
-  AlertTriangle
+interface ArchitectureFlow {
+  title: string;
+  layers: {
+    label: string;
+    node: string;
+  }[];
+}
+
+const architectureRegistry: Record<string, ArchitectureFlow> = {
+  "ai-data-innovation": {
+    title: "Generative AI Architecture Flow",
+    layers: [
+      { label: "Layer 01: User Experience", node: "Web Portal, Chat Interfaces & Mobile SDKs" },
+      { label: "Layer 02: Application Services", node: "API Gateway & Authentication Controllers" },
+      { label: "Layer 03: AI & Automation", node: "AI Orchestrator (LangChain, LlamaIndex & Multi-Agent Frameworks)" },
+      { label: "Layer 04: Data Platform", node: "Vector Database (Pinecone, pgvector & Chroma DB)" },
+      { label: "Layer 05: Cloud & Security", node: "Enterprise Data Sources & LLM Providers (OpenAI, Claude, Gemini)" }
+    ]
+  },
+  "cloud-services": {
+    title: "Multi-Cloud Landing Zone System",
+    layers: [
+      { label: "Layer 01: User Experience", node: "Client Requests & Route 53 Edge DNS Services" },
+      { label: "Layer 02: Application Services", node: "API Routers & Edge Load Balancers" },
+      { label: "Layer 03: AI & Automation", node: "Auto-Scaling Pods (KEDA) & Dynamic Node Pools" },
+      { label: "Layer 04: Data Platform", node: "Replicated Global Databases (Aurora, DynamoDB)" },
+      { label: "Layer 05: Cloud & Security", node: "Multi-Region Landing Zones & Encryption KMS Keys" }
+    ]
+  },
+  "devops-automation": {
+    title: "GitOps Continuous Delivery Flow",
+    layers: [
+      { label: "Layer 01: User Experience", node: "Developer Code Push & Git Version Control" },
+      { label: "Layer 02: Application Services", node: "CI Build Pipelines (GitHub Actions / GitLab CI)" },
+      { label: "Layer 03: AI & Automation", node: "Terraform IaC Configurations & Ansible Playbooks" },
+      { label: "Layer 04: Data Platform", node: "Container Image Registry & Artifact Archives" },
+      { label: "Layer 05: Cloud & Security", node: "Kubernetes Control Planes (EKS / GKE) & Telemetry" }
+    ]
+  },
+  "cybersecurity": {
+    title: "Zero-Trust Defense Architecture",
+    layers: [
+      { label: "Layer 01: User Experience", node: "Enterprise Clients & Multi-Factor Authentication" },
+      { label: "Layer 02: Application Services", node: "Identity Provider Gateway (OIDC / SSO / Okta)" },
+      { label: "Layer 03: AI & Automation", node: "Application Shielding & WAF Rules Enforcers" },
+      { label: "Layer 04: Data Platform", node: "Log Aggregators & SIEM Threat Storage Databases" },
+      { label: "Layer 05: Cloud & Security", node: "SOC Monitoring Centers & Compliance Reporting Tools" }
+    ]
+  },
+  "software-development": {
+    title: "Distributed Microservices Pipeline",
+    layers: [
+      { label: "Layer 01: User Experience", node: "React Client Webapps & Native Mobile Apps" },
+      { label: "Layer 02: Application Services", node: "API Gateway Router & Envoy Message Proxy" },
+      { label: "Layer 03: AI & Automation", node: "Asynchronous Message Queues (Apache Kafka / RabbitMQ)" },
+      { label: "Layer 04: Data Platform", node: "Distributed Cache Clusters (Redis) & Relational DBs" },
+      { label: "Layer 05: Cloud & Security", node: "Secure Cloud Compute Containers (Docker / ECS)" }
+    ]
+  },
+  "digital-transformation": {
+    title: "Legacy Modernization Ecosystem",
+    layers: [
+      { label: "Layer 01: User Experience", node: "Customer Web Portals & Mobile Booking Apps" },
+      { label: "Layer 02: Application Services", node: "Modern API Adapters & JSON Schema Transformers" },
+      { label: "Layer 03: AI & Automation", node: "Workflow Orchestrations & Notification Senders" },
+      { label: "Layer 04: Data Platform", node: "Operational Data Stores & Legacy Mainframe Databases" },
+      { label: "Layer 05: Cloud & Security", node: "Audited Enterprise Cloud Stacks & Security Gates" }
+    ]
+  },
+  "data-engineering": {
+    title: "Streaming Data Lakehouse Pipeline",
+    layers: [
+      { label: "Layer 01: User Experience", node: "Telemetry Events & Real-time IoT Ingestion Routes" },
+      { label: "Layer 02: Application Services", node: "Distributed Stream Processors (Apache Spark / Flink)" },
+      { label: "Layer 03: AI & Automation", node: "Schema Validation Rules & Data Quality Audits" },
+      { label: "Layer 04: Data Platform", node: "Data Lakehouse Storage (Delta Lake, Apache Iceberg)" },
+      { label: "Layer 05: Cloud & Security", node: "Enterprise BI Connectors & Query Security Logs" }
+    ]
+  },
+  "managed-services": {
+    title: "Incident Monitoring & Auto-Resolution",
+    layers: [
+      { label: "Layer 01: User Experience", node: "Public Status Dashboards & User Incident Forms" },
+      { label: "Layer 02: Application Services", node: "Service Desk Systems & Incident Router API" },
+      { label: "Layer 03: AI & Automation", node: "Active Resource Monitors & Telemetry Scanners" },
+      { label: "Layer 04: Data Platform", node: "Metric Vault Databases (Prometheus / InfluxDB)" },
+      { label: "Layer 05: Cloud & Security", node: "Auto-Backup Verifications & Cloud Failover Actions" }
+    ]
+  },
+  "qa-testing": {
+    title: "Continuous Quality Gating Grid",
+    layers: [
+      { label: "Layer 01: User Experience", node: "QA Engineer Dashboards & CI Build Triggers" },
+      { label: "Layer 02: Application Services", node: "Parallel Playwright Browser Grid Controllers" },
+      { label: "Layer 03: AI & Automation", node: "Visual Layout Regression Checkers & Mock Payload Gen" },
+      { label: "Layer 04: Data Platform", node: "Test Report Databases & Execution logs" },
+      { label: "Layer 05: Cloud & Security", node: "Quality Guardrail Gates Blocking Defect Deployments" }
+    ]
+  },
+  "it-consulting": {
+    title: "IT Enterprise Portfolio Blueprint",
+    layers: [
+      { label: "Layer 01: User Experience", node: "Management Planning Boards & Strategic Portals" },
+      { label: "Layer 02: Application Services", node: "Vendor Application Auditing Utilities" },
+      { label: "Layer 03: AI & Automation", node: "Capacity Projection Engines & Migration Planners" },
+      { label: "Layer 04: Data Platform", node: "Consolidated Software Asset Catalogs" },
+      { label: "Layer 05: Cloud & Security", node: "Disaster Recovery Playbooks & Business Safety Audits" }
+    ]
+  }
 };
 
-export function CapabilityArchitecture({ steps }: CapabilityArchitectureProps) {
+const benefitsList = [
+  { title: "Scalable", desc: "Auto-scaling compute clusters expand to handle unpredictable traffic spikes without performance loss." },
+  { title: "Secure", desc: "Zero-trust policy gates combined with end-to-end encryption keep organizational records fully protected." },
+  { title: "Automated", desc: "Orchestrated GitOps deployment templates reduce system updates and setup times by up to 90%." },
+  { title: "High Availability", desc: "Active-active multi-region replication setups keep applications online during local service outages." },
+  { title: "Cloud Native", desc: "Designed around containerized modules running on managed Kubernetes nodes for optimal efficiency." },
+  { title: "Future Ready", desc: "Fully-decoupled modular architectures allow teams to upgrade core tools without rebuilds." }
+];
+
+export function CapabilityArchitecture({ serviceSlug, capabilityTitle }: CapabilityArchitectureProps) {
+  const flow = architectureRegistry[serviceSlug] || architectureRegistry["ai-data-innovation"];
+
   return (
-    <section id="architecture" className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
-      <div className="max-w-site mx-auto px-6 md:px-12 lg:px-20 text-left">
-        <Reveal className="mb-16">
-          <div className="flex items-center gap-2 mb-4">
-            <span className="text-[10px] font-bold tracking-widest uppercase text-rose-500">
-              Architecture Blueprint
-            </span>
-          </div>
-          <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-6 text-white">
-            System request <span className="text-rose-500">dataflow architecture</span>
-          </h2>
-          <p className="text-zinc-250 text-xs md:text-sm font-semibold leading-relaxed mt-2 max-w-xl">
-            A detailed trace flow mapping request pipelines from edge routing to secure database states.
-          </p>
-        </Reveal>
+    <section id="architecture" className="w-full py-24 bg-black border-b border-zinc-900/60 relative overflow-hidden">
+      {/* Background Graphic Glow */}
+      <div className="absolute top-[30%] right-[-10%] w-[35%] aspect-square bg-[radial-gradient(circle_at_center,rgba(244,63,94,0.015),transparent_70%)] pointer-events-none z-0" />
 
-        {/* Dynamic Interactive Flow Diagram */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 relative">
-          {/* Flow Line Connector */}
-          <div className="absolute top-1/2 left-0 right-0 h-[1px] bg-gradient-to-r from-rose-500/5 via-rose-500/20 to-rose-500/5 hidden md:block z-0 -translate-y-[85px]" />
+      <div className="max-w-site mx-auto px-6 md:px-12 lg:px-20 relative z-10">
+        
+        {/* Main Grid: Left Side Diagram, Right Side Benefits */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+          
+          {/* Left Column: Microsoft Layered Architecture Flow Diagram */}
+          <div className="lg:col-span-6 w-full flex flex-col justify-start">
+            <Reveal className="mb-8">
+              <span className="text-[10px] font-mono tracking-widest text-rose-500 uppercase font-bold block mb-2">
+                SYSTEM TOPOLOGY
+              </span>
+              <h3 className="text-lg font-bold text-white uppercase tracking-wider">
+                {flow.title}
+              </h3>
+            </Reveal>
 
-          {steps.map((step, idx) => {
-            const IconComponent = iconMap[step.icon] || Server;
-            return (
-              <Reveal key={idx} delay={idx * 0.03} className="h-full z-10">
-                <div className="h-full bg-zinc-950/45 border border-white/10 hover:border-rose-500/30 rounded-[32px] p-5 flex flex-col justify-between hover:bg-zinc-900/40 transition-all duration-300 relative group backdrop-blur-sm shadow-[0_8px_32px_rgba(0,0,0,0.5)]">
-                  
-                  {/* Padded Rounded Image Header */}
-                  <div className="relative w-full aspect-[16/10] rounded-2xl overflow-hidden mb-5 group/img border border-white/5 bg-zinc-900/10">
-                    <img
-                      src={step.image}
-                      alt={step.title}
-                      className="w-full h-full object-cover opacity-90 group-hover/img:scale-[1.03] transition-transform duration-700 pointer-events-none select-none"
-                    />
-                    {/* Soft reflection overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none" />
-                  </div>
-
-                  {/* Card Content & Action Button */}
-                  <div className="flex flex-col flex-grow justify-between text-left">
-                    <div>
-                      {/* Step Badge & Icon */}
-                      <div className="flex items-center justify-between mb-4">
-                        <span className="block text-[10px] font-mono tracking-widest text-rose-500 uppercase font-bold">
-                          {step.step}
-                        </span>
-                        <div className="w-7 h-7 rounded-lg bg-zinc-900 border border-zinc-800 flex items-center justify-center text-rose-500 group-hover:scale-105 transition-transform">
-                          <IconComponent size={13} />
-                        </div>
-                      </div>
-
-                      <h4 className="text-sm font-bold text-white mb-2 leading-snug group-hover:text-rose-500 transition-colors">
-                        {step.title}
+            <div className="flex flex-col">
+              {flow.layers.map((layer, idx) => (
+                <React.Fragment key={idx}>
+                  {/* Layer Card */}
+                  <Reveal delay={idx * 0.05} className="w-full">
+                    <div className="group w-full bg-zinc-950/40 border border-white/5 rounded-2xl p-5 hover:border-rose-500/35 hover:shadow-[0_0_20px_rgba(244,63,94,0.08)] hover:bg-zinc-900/10 transition-all duration-300 relative text-left backdrop-blur-sm">
+                      <span className="block text-[8px] font-mono tracking-widest text-rose-500 uppercase font-bold mb-2">
+                        {layer.label}
+                      </span>
+                      <h4 className="text-xs font-bold text-white leading-normal group-hover:text-rose-500 transition-colors">
+                        {layer.node}
                       </h4>
-                      <p className="text-[10px] text-zinc-400 leading-relaxed font-semibold">
-                        {step.desc}
-                      </p>
                     </div>
+                  </Reveal>
 
-                    {/* Circular Action Button Row */}
-                    <div className="flex items-center gap-3 pt-4 mt-4 border-t border-white/5">
-                      <span className="w-8 h-8 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-450 group-hover:bg-rose-600 group-hover:text-white group-hover:border-rose-500 transition-all duration-300">
-                        <ArrowRight size={13} className="transition-transform duration-300 group-hover:translate-x-0.5" />
-                      </span>
-                      <span className="text-[10px] font-bold uppercase tracking-wider text-zinc-450 group-hover:text-white transition-colors">
-                        Trace Pipeline
-                      </span>
+                  {/* Red Glowing Connector Line between cards */}
+                  {idx < flow.layers.length - 1 && (
+                    <div className="flex justify-center my-2 select-none pointer-events-none">
+                      <div className="w-[1px] h-8 bg-gradient-to-b from-rose-500 to-transparent relative flex items-center justify-center">
+                        <ArrowDown size={10} className="text-rose-500 absolute bottom-[-4px] animate-pulse" />
+                      </div>
                     </div>
+                  )}
+                </React.Fragment>
+              ))}
+            </div>
+          </div>
+
+          {/* Right Column: Title Block and Key Benefits Card Matrix */}
+          <div className="lg:col-span-6 flex flex-col justify-start text-left lg:sticky lg:top-28">
+            <Reveal className="mb-12">
+              <div className="flex items-center gap-2 mb-4">
+                <span className="text-[10px] font-bold tracking-[0.25em] uppercase text-rose-500">
+                  SOLUTION ARCHITECTURE
+                </span>
+              </div>
+              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white uppercase leading-tight mb-4">
+                Built for Scale, Security &amp; <span className="text-rose-500">Performance</span>
+              </h2>
+              <p className="text-sm md:text-base font-normal text-zinc-400 leading-relaxed">
+                Our architecture combines modern cloud platforms, AI technologies, secure policy controls, and automation frameworks to deliver enterprise-grade solutions.
+              </p>
+            </Reveal>
+
+            {/* Benefits Matrix (6 Cards) */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {benefitsList.map((benefit, idx) => (
+                <Reveal key={idx} delay={idx * 0.04}>
+                  <div className="group bg-zinc-950/20 border border-white/5 rounded-2xl p-5 hover:border-rose-500/25 hover:bg-zinc-900/5 transition-all duration-300 h-full flex flex-col justify-start text-left">
+                    <div className="flex items-center gap-2 mb-3">
+                      <div className="w-5 h-5 rounded-md bg-rose-950/20 border border-rose-900/30 flex items-center justify-center text-rose-500 flex-shrink-0 group-hover:bg-rose-500 group-hover:text-white transition-colors duration-300">
+                        <Check size={10} strokeWidth={3} />
+                      </div>
+                      <h4 className="text-xs font-bold text-white group-hover:text-rose-500 transition-colors">
+                        {benefit.title}
+                      </h4>
+                    </div>
+                    <p className="text-xs text-white leading-relaxed font-bold">
+                      {benefit.desc}
+                    </p>
                   </div>
+                </Reveal>
+              ))}
+            </div>
+          </div>
 
-                </div>
-              </Reveal>
-            );
-          })}
         </div>
+
       </div>
     </section>
   );

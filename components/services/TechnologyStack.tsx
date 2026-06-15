@@ -58,21 +58,52 @@ function getTechIcon(name: string): string {
 }
 
 const standardEcosystem = [
-  { name: "AWS", path: "/assets/Tech-icons/amazon-aws-logo_svgstack_com_7491780931192.svg" },
-  { name: "Azure", path: "/assets/Tech-icons/microsoft-azure-logo_svgstack_com_7501780931055.svg" },
-  { name: "Google Cloud", path: "/assets/Tech-icons/google-cloud-logo_svgstack_com_28371780931185.svg" },
-  { name: "Docker", path: "/assets/Tech-icons/docker-logo_svgstack_com_28191780931128.svg" },
-  { name: "GitLab", path: "/assets/Tech-icons/gitlab-logo_svgstack_com_28401780931548.svg" },
-  { name: "GitHub", path: "/assets/Tech-icons/github-logo-svg_svgstack_com_28391780931442.svg" },
-  { name: "TypeScript", path: "/assets/Tech-icons/typescript-logo_svgstack_com_31481780931142.svg" },
-  { name: "Node.js", path: "/assets/Tech-icons/nodejs-logo_svgstack_com_28911780931118.svg" },
-  { name: "Python", path: "/assets/Tech-icons/python-logo_svgstack_com_29121780931061.svg" },
-  { name: "Rust", path: "/assets/Tech-icons/rust-logo_svgstack_com_31291780931285.svg" },
-  { name: "Go", path: "/assets/Tech-icons/go-lang-logo_svgstack_com_28411780931472.svg" },
-  { name: "OpenAI", path: "/assets/Tech-icons/openai-logo_svgstack_com_28971780931370.svg" }
+  { name: "AWS", path: "/assets/Tech-icons/amazon-aws-logo_svgstack_com_7491780931192.svg", backName: "Azure", backPath: "/assets/Tech-icons/microsoft-azure-logo_svgstack_com_7501780931055.svg" },
+  { name: "Azure", path: "/assets/Tech-icons/microsoft-azure-logo_svgstack_com_7501780931055.svg", backName: "Google Cloud", backPath: "/assets/Tech-icons/google-cloud-logo_svgstack_com_28371780931185.svg" },
+  { name: "Google Cloud", path: "/assets/Tech-icons/google-cloud-logo_svgstack_com_28371780931185.svg", backName: "AWS", backPath: "/assets/Tech-icons/amazon-aws-logo_svgstack_com_7491780931192.svg" },
+  { name: "Cloudflare", path: "/assets/Tech-icons/cloudflare-logo-icon_svgstack_com_28071780931769.svg", backName: "Netlify", backPath: "/assets/Tech-icons/netlify-logo-icon_svgstack_com_28881780931932.svg" },
+  { name: "Docker", path: "/assets/Tech-icons/docker-logo_svgstack_com_28191780931128.svg", backName: "Git", backPath: "/assets/Tech-icons/git-logo-svg_svgstack_com_28381780931315.svg" },
+  { name: "GitLab", path: "/assets/Tech-icons/gitlab-logo_svgstack_com_28401780931548.svg", backName: "GitHub", backPath: "/assets/Tech-icons/github-logo-svg_svgstack_com_28391780931442.svg" },
+  { name: "GitHub", path: "/assets/Tech-icons/github-logo-svg_svgstack_com_28391780931442.svg", backName: "GitLab", backPath: "/assets/Tech-icons/gitlab-logo_svgstack_com_28401780931548.svg" },
+  { name: "TypeScript", path: "/assets/Tech-icons/typescript-logo_svgstack_com_31481780931142.svg", backName: "Go", backPath: "/assets/Tech-icons/go-lang-logo_svgstack_com_28411780931472.svg" },
+  { name: "React", path: "/assets/Tech-icons/react-icon_svgstack_com_29171780931136.svg", backName: "Vue.js", backPath: "/assets/Tech-icons/vue-js-logo_svgstack_com_31551780931568.svg" },
+  { name: "Next.js", path: "/assets/Tech-icons/nextjs-logo_svgstack_com_28891780931519.svg", backName: "NestJS", backPath: "/assets/Tech-icons/nestjs-logo_svgstack_com_28861780931513.svg" },
+  { name: "Angular", path: "/assets/Tech-icons/free-angular-js-logo_svgstack_com_7451780931851.svg", backName: "Svelte", backPath: "/assets/Tech-icons/svelte-logo_svgstack_com_31421780931630.svg" },
+  { name: "Tailwind CSS", path: "/assets/Tech-icons/tailwindcss-logo_svgstack_com_31451780931467.svg", backName: "Material UI", backPath: "/assets/Tech-icons/material-ui-logo_svgstack_com_28781780931646.svg" },
+  { name: "Node.js", path: "/assets/Tech-icons/nodejs-logo_svgstack_com_28911780931118.svg", backName: "Python", backPath: "/assets/Tech-icons/python-logo_svgstack_com_29121780931061.svg" },
+  { name: "Python", path: "/assets/Tech-icons/python-logo_svgstack_com_29121780931061.svg", backName: "Node.js", backPath: "/assets/Tech-icons/nodejs-logo_svgstack_com_28911780931118.svg" },
+  { name: "Rust", path: "/assets/Tech-icons/rust-logo_svgstack_com_31291780931285.svg", backName: "C++", backPath: "/assets/Tech-icons/cpp-icon-logo_svgstack_com_28021780931821.svg" },
+  { name: "Go", path: "/assets/Tech-icons/go-lang-logo_svgstack_com_28411780931472.svg", backName: "Rust", backPath: "/assets/Tech-icons/rust-logo_svgstack_com_31291780931285.svg" },
+  { name: "PostgreSQL", path: "/assets/Tech-icons/postgre-sql-logo_svgstack_com_29021780931526.svg", backName: "MySQL", backPath: "/assets/Tech-icons/mysql-logo_svgstack_com_28851780931423.svg" },
+  { name: "MongoDB", path: "/assets/Tech-icons/mongo-db-logo_svgstack_com_28831780931486.svg", backName: "Redis", backPath: "/assets/Tech-icons/redis-logo_svgstack_com_29201780931292.svg" },
+  { name: "GraphQL", path: "/assets/Tech-icons/graphql_svgstack_com_28421780931889.svg", backName: "Prisma", backPath: "/assets/Tech-icons/prisma-logo_svgstack_com_29081780931562.svg" },
+  { name: "OpenAI", path: "/assets/Tech-icons/openai-logo_svgstack_com_28971780931370.svg", backName: "GitHub Copilot", backPath: "/assets/Tech-icons/github-copilot-logo_svgstack_com_28101780931046.svg" },
+  { name: "Vite", path: "/assets/Tech-icons/vite-js-logo_svgstack_com_31531780931342.svg", backName: "Webpack", backPath: "/assets/Tech-icons/webpack-logo_svgstack_com_31561780931625.svg" },
+  { name: "Postman", path: "/assets/Tech-icons/postman-logo_svgstack_com_29031780931748.svg", backName: "Cypress", backPath: "/assets/Tech-icons/cypress-logo_svgstack_com_28141780931497.svg" },
+  { name: "Slack", path: "/assets/Tech-icons/slack-logo_svgstack_com_31371780931112.svg", backName: "Jira", backPath: "/assets/Tech-icons/jira-logo_svgstack_com_28621780931167.svg" },
+  { name: "Java", path: "/assets/Tech-icons/java-logo_svgstack_com_28601780931218.svg", backName: "Android", backPath: "/assets/Tech-icons/green-android-logo_svgstack_com_7441780931950.svg" }
 ];
 
 export function TechnologyStack({ techs }: TechnologyStackProps) {
+  const [flippedCards, setFlippedCards] = React.useState<Record<number, boolean>>({});
+
+  React.useEffect(() => {
+    const interval = setInterval(() => {
+      // Toggle 2 to 4 random card flips every 2.5 seconds
+      const count = Math.floor(Math.random() * 3) + 2;
+      setFlippedCards(prev => {
+        const next = { ...prev };
+        for (let i = 0; i < count; i++) {
+          const randomIdx = Math.floor(Math.random() * standardEcosystem.length);
+          next[randomIdx] = !next[randomIdx];
+        }
+        return next;
+      });
+    }, 2500);
+
+    return () => clearInterval(interval);
+  }, []);
+
   // Pad/slice techs to exactly 4 items to ensure a balanced grid of 4 cards
   const displayTechs = [...techs];
   if (displayTechs.length === 3) {
@@ -105,12 +136,12 @@ export function TechnologyStack({ techs }: TechnologyStackProps) {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start mb-20">
 
           {/* Left Block */}
-          <div className="lg:col-span-5 text-left lg:sticky lg:top-28">
+          <div className="lg:col-span-5 text-left lg:sticky lg:top-24">
             <Reveal className="text-left">
               <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
                 INTEGRATION STACK
               </span>
-              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
+              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white uppercase">
                 Target tech <span className="text-rose-500">frameworks</span>
               </h2>
               <p className="text-zinc-100 text-xs md:text-sm font-semibold leading-relaxed mt-4 max-w-sm">
@@ -133,7 +164,7 @@ export function TechnologyStack({ techs }: TechnologyStackProps) {
                     <img
                       src={iconPath}
                       alt={tech.name}
-                      className="w-8 h-8 object-contain brightness-0 invert opacity-45 group-hover:opacity-100 group-hover:scale-105 transition-all duration-300 mb-3"
+                      className="w-8 h-8 object-contain opacity-70 group-hover:opacity-100 group-hover:scale-105 transition-all duration-300 mb-3"
                     />
                     
                     {/* Title */}
@@ -159,24 +190,77 @@ export function TechnologyStack({ techs }: TechnologyStackProps) {
             <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
               GLOBAL SUPPORTED SYSTEM
             </span>
-            <h3 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
-              Supported Partner & <span className="text-rose-500">Integration Ecosystem</span>
+            <h3 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white uppercase">
+              Supported Partner &amp; <span className="text-rose-500">Integration Ecosystem</span>
             </h3>
           </Reveal>
+
+          {/* CSS flip card helper rules */}
+          <style dangerouslySetInnerHTML={{__html: `
+            .flip-card {
+              perspective: 1000px;
+            }
+            .flip-card-inner {
+              position: relative;
+              width: 100%;
+              height: 100%;
+              text-align: center;
+              transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+              transform-style: preserve-3d;
+            }
+            .flip-card:hover .flip-card-inner {
+              transform: rotateY(180deg);
+            }
+            .flip-card-front, .flip-card-back {
+              position: absolute;
+              width: 100%;
+              height: 100%;
+              -webkit-backface-visibility: hidden;
+              backface-visibility: hidden;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border-radius: 12px;
+            }
+            .flip-card-back {
+              transform: rotateY(180deg);
+            }
+            .flip-card:hover .flip-card-inner,
+            .flip-card.is-flipped .flip-card-inner {
+              transform: rotateY(180deg);
+            }
+          `}} />
 
           <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-4 justify-items-center">
             {standardEcosystem.map((partner, index) => (
               <Reveal key={index} delay={index * 0.03} className="w-full">
-                <div className="group relative h-16 bg-zinc-950/20 border border-zinc-900/80 rounded-xl flex items-center justify-center p-4 hover:border-rose-500/25 hover:shadow-[0_0_20px_rgba(225,29,72,0.08)] transition-all duration-300 cursor-pointer w-full">
-                  <img 
-                    src={partner.path} 
-                    alt={partner.name} 
-                    className="max-h-6 max-w-[80px] object-contain opacity-80 group-hover:opacity-100 group-hover:scale-[1.05] brightness-0 invert transition-all duration-300"
-                  />
-                  {/* Tooltip */}
-                  <span className="absolute bottom-full left-[50%] translate-x-[-50%] mb-2 bg-rose-600 text-white text-[8px] font-bold py-1 px-2 rounded shadow-lg opacity-0 pointer-events-none group-hover:opacity-100 transition-all duration-200 whitespace-nowrap z-50">
-                    {partner.name}
-                  </span>
+                <div className={`flip-card w-full h-16 cursor-pointer group ${flippedCards[index] ? "is-flipped" : ""}`}>
+                  <div className="flip-card-inner">
+                    {/* Front Face */}
+                    <div className="flip-card-front bg-zinc-900/45 border border-white/10 p-4 transition-all duration-300 group-hover:border-rose-500/40 backdrop-blur-md shadow-[inset_0_1px_1px_rgba(255,255,255,0.05)]">
+                      <img 
+                        src={partner.path} 
+                        alt={partner.name} 
+                        className="max-h-7 max-w-[85px] object-contain opacity-90 group-hover:opacity-100 group-hover:scale-[1.03] transition-all duration-300 filter brightness-105"
+                      />
+                      {/* Tooltip Front */}
+                      <span className="absolute bottom-full left-[50%] translate-x-[-50%] mb-2 bg-rose-600 text-white text-[8px] font-bold py-1 px-2 rounded shadow-lg opacity-0 pointer-events-none group-hover:opacity-100 transition-all duration-200 whitespace-nowrap z-50">
+                        {partner.name}
+                      </span>
+                    </div>
+                    {/* Back Face */}
+                    <div className="flip-card-back bg-zinc-900/65 border border-rose-500/35 p-4 shadow-[inset_0_1px_1px_rgba(255,255,255,0.05),0_0_20px_rgba(244,63,94,0.08)] backdrop-blur-md">
+                      <img 
+                        src={partner.backPath} 
+                        alt={partner.backName} 
+                        className="max-h-7 max-w-[85px] object-contain opacity-100 filter brightness-105"
+                      />
+                      {/* Tooltip Back */}
+                      <span className="absolute bottom-full left-[50%] translate-x-[-50%] mb-2 bg-zinc-900 text-white text-[8px] font-bold py-1 px-2 rounded shadow-lg opacity-0 pointer-events-none group-hover:opacity-100 transition-all duration-200 whitespace-nowrap z-50">
+                        {partner.backName}
+                      </span>
+                    </div>
+                  </div>
                 </div>
               </Reveal>
             ))}
