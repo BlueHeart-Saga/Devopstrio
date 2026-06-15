@@ -73,6 +73,28 @@ const standardEcosystem = [
 ];
 
 export function TechnologyStack({ techs }: TechnologyStackProps) {
+  // Pad/slice techs to exactly 4 items to ensure a balanced grid of 4 cards
+  const displayTechs = [...techs];
+  if (displayTechs.length === 3) {
+    displayTechs.push({
+      name: "Git / CI-CD Pipelines",
+      desc: "Version-controlled deployment code and automated build pipelines."
+    });
+  } else if (displayTechs.length < 3) {
+    const fallbacks = [
+      { name: "Git / CI-CD Pipelines", desc: "Version-controlled deployment code and automated build pipelines." },
+      { name: "Docker / Containers", desc: "Standard containerization for secure application hosting." },
+      { name: "Kubernetes / K8s", desc: "Container orchestration for microservices autoscaling." }
+    ];
+    for (const fb of fallbacks) {
+      if (displayTechs.length >= 4) break;
+      if (!displayTechs.some(t => t.name.toLowerCase().includes(fb.name.split(" ")[0].toLowerCase()))) {
+        displayTechs.push(fb);
+      }
+    }
+  }
+  const finalTechs = displayTechs.slice(0, 4);
+
   return (
     <section id="tech-stack" className="w-full py-24 bg-black border-b border-zinc-900/60 relative overflow-hidden">
       <div className="absolute top-[30%] right-[-10%] w-[35%] aspect-square bg-[radial-gradient(circle_at_center,rgba(225,29,72,0.015),transparent_70%)] pointer-events-none z-0" />
@@ -91,7 +113,7 @@ export function TechnologyStack({ techs }: TechnologyStackProps) {
               <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
                 Target tech <span className="text-rose-500">frameworks</span>
               </h2>
-              <p className="text-zinc-400 text-xs md:text-sm font-light leading-relaxed mt-4 max-w-sm">
+              <p className="text-zinc-100 text-xs md:text-sm font-semibold leading-relaxed mt-4 max-w-sm">
                 We integrate with high-performance tools, libraries, and microservice hosts optimized to handle large transaction volume and zero-latency workloads.
               </p>
             </Reveal>
@@ -99,7 +121,7 @@ export function TechnologyStack({ techs }: TechnologyStackProps) {
 
           {/* Right Block: Technical Frameworks Cards */}
           <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {techs.map((tech, idx) => {
+            {finalTechs.map((tech, idx) => {
               const iconPath = getTechIcon(tech.name);
               return (
                 <Reveal key={tech.name} delay={idx * 0.05}>
@@ -120,7 +142,7 @@ export function TechnologyStack({ techs }: TechnologyStackProps) {
                     </strong>
                     
                     {/* Description */}
-                    <span className="text-[10px] text-zinc-500 group-hover:text-zinc-400 leading-normal font-light max-w-[150px] transition-colors">
+                    <span className="text-[10px] text-zinc-300 group-hover:text-white leading-normal font-semibold max-w-[150px] transition-colors">
                       {tech.desc}
                     </span>
                   </div>
@@ -132,24 +154,24 @@ export function TechnologyStack({ techs }: TechnologyStackProps) {
         </div>
 
         {/* Extended Partner Ecosystem Sub-Section */}
-        <div className="border-t border-zinc-900/80 pt-16 mt-16 w-full text-left">
-          <Reveal className="mb-10">
-            <span className="text-[9px] font-mono tracking-widest text-zinc-500 uppercase block mb-2 font-bold">
+        <div className="border-t border-zinc-900/80 pt-16 mt-16 w-full text-center">
+          <Reveal className="mb-10 text-center">
+            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
               GLOBAL SUPPORTED SYSTEM
             </span>
-            <h3 className="text-sm font-bold text-zinc-350 tracking-tight">
-              Supported Partner & Integration Ecosystem
+            <h3 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
+              Supported Partner & <span className="text-rose-500">Integration Ecosystem</span>
             </h3>
           </Reveal>
 
-          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-4">
+          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-4 justify-items-center">
             {standardEcosystem.map((partner, index) => (
-              <Reveal key={index} delay={index * 0.03}>
-                <div className="group relative h-16 bg-zinc-950/20 border border-zinc-900/80 rounded-xl flex items-center justify-center p-4 hover:border-rose-500/25 hover:shadow-[0_0_20px_rgba(225,29,72,0.08)] transition-all duration-300 cursor-pointer">
+              <Reveal key={index} delay={index * 0.03} className="w-full">
+                <div className="group relative h-16 bg-zinc-950/20 border border-zinc-900/80 rounded-xl flex items-center justify-center p-4 hover:border-rose-500/25 hover:shadow-[0_0_20px_rgba(225,29,72,0.08)] transition-all duration-300 cursor-pointer w-full">
                   <img 
                     src={partner.path} 
                     alt={partner.name} 
-                    className="max-h-6 max-w-[80px] object-contain opacity-40 group-hover:opacity-100 group-hover:scale-[1.04] brightness-0 invert transition-all duration-300"
+                    className="max-h-6 max-w-[80px] object-contain opacity-80 group-hover:opacity-100 group-hover:scale-[1.05] brightness-0 invert transition-all duration-300"
                   />
                   {/* Tooltip */}
                   <span className="absolute bottom-full left-[50%] translate-x-[-50%] mb-2 bg-rose-600 text-white text-[8px] font-bold py-1 px-2 rounded shadow-lg opacity-0 pointer-events-none group-hover:opacity-100 transition-all duration-200 whitespace-nowrap z-50">
@@ -160,6 +182,7 @@ export function TechnologyStack({ techs }: TechnologyStackProps) {
             ))}
           </div>
         </div>
+
 
       </div>
     </section>
