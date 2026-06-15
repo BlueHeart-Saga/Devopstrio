@@ -21,7 +21,7 @@ export function Hero({ badge, title, subtitle, stats, breadcrumbs, cta, imageSrc
   const remainingText = words.join(" ");
 
   return (
-    <section className="relative w-full min-h-[80vh] flex items-center bg-[#030303] text-white pt-24 pb-16 md:pt-28 md:pb-20 lg:pt-32 lg:pb-24 overflow-hidden border-b border-zinc-900/60">
+    <section className="relative w-full min-h-screen flex items-center bg-[#030303] text-white pt-24 pb-16 md:pt-28 md:pb-20 lg:pt-32 lg:pb-24 overflow-hidden border-b border-zinc-900/60">
       {/* Background Ambient Glows */}
       <div className="absolute top-[-10%] right-[-10%] w-[50%] aspect-square bg-[radial-gradient(circle_at_center,rgba(244,63,94,0.06),transparent_70%)] pointer-events-none z-0" />
       <div className="absolute bottom-[-10%] left-[-10%] w-[50%] aspect-square bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.01),transparent_70%)] pointer-events-none z-0" />
@@ -32,7 +32,7 @@ export function Hero({ badge, title, subtitle, stats, breadcrumbs, cta, imageSrc
           {/* Left Column: Content */}
           <div className="lg:col-span-7 flex flex-col items-start text-left justify-center z-20">
             {/* Breadcrumb Navigation */}
-            <nav className="flex items-center gap-2 text-xs font-mono text-zinc-550 mb-8 overflow-x-auto whitespace-nowrap py-1">
+            {/* <nav className="flex items-center gap-2 text-xs font-mono text-zinc-550 mb-8 overflow-x-auto whitespace-nowrap py-1">
               {breadcrumbs.map((crumb, idx) => {
                 const isLast = idx === breadcrumbs.length - 1;
                 return (
@@ -48,11 +48,11 @@ export function Hero({ badge, title, subtitle, stats, breadcrumbs, cta, imageSrc
                   </React.Fragment>
                 );
               })}
-            </nav>
+            </nav> */}
 
             {/* Heading & description block */}
             <div className="max-w-4xl text-left w-full">
-              {badge && (
+              {/* {badge && (
                 <Reveal>
                   <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-zinc-800/80 bg-zinc-950/40 mb-6">
                     <span className="w-1.5 h-1.5 rounded-full bg-rose-600 animate-pulse" />
@@ -61,7 +61,7 @@ export function Hero({ badge, title, subtitle, stats, breadcrumbs, cta, imageSrc
                     </span>
                   </div>
                 </Reveal>
-              )}
+              )} */}
 
               <Reveal delay={0.1}>
                 <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold tracking-tight leading-[1.12] text-white mb-6">

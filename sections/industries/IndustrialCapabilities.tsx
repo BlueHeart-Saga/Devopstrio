@@ -6,22 +6,22 @@ import { Reveal } from "@/components/ui/Reveal";
 
 const certs = [
   {
-    icon: <ShieldCheck className="text-rose-500" size={20} />,
+    icon: <ShieldCheck size={18} />,
     title: "SOC-2 Type II Certification",
     desc: "Rigorous annual security evaluations on all hosting centers, employee access permissions, and codebase modifications."
   },
   {
-    icon: <Lock className="text-rose-500" size={20} />,
+    icon: <Lock size={18} />,
     title: "HIPAA & GDPR Standards",
     desc: "Strict personal data masking algorithms and database security patterns that protect medical files and client credentials."
   },
   {
-    icon: <FileText className="text-rose-500" size={20} />,
+    icon: <FileText size={18} />,
     title: "PCI-DSS Level 1 Compliance",
     desc: "Vulnerability scanning, payment processor isolation, and end-to-end tokenization configurations."
   },
   {
-    icon: <CheckCircle className="text-rose-500" size={20} />,
+    icon: <CheckCircle size={18} />,
     title: "ISO/IEC 27001 Alignment",
     desc: "Standardized risk assessment procedures, operational checks, and incident logs."
   }
@@ -29,24 +29,23 @@ const certs = [
 
 export function IndustrialCapabilities() {
   return (
-    <section className="w-full py-24 bg-black text-white border-b border-zinc-900/60 relative">
-      {/* Soft overlay glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-rose-600/5 rounded-full blur-[140px] pointer-events-none" />
+    <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60 relative overflow-hidden text-white">
+      {/* Background Graphic Glow */}
+      <div className="absolute top-[30%] left-[-10%] w-[35%] aspect-square bg-[radial-gradient(circle_at_center,rgba(244,63,94,0.015),transparent_70%)] pointer-events-none z-0" />
 
-      <div className="max-w-site mx-auto px-6 md:px-12 lg:px-20 relative z-10">
+      <div className="max-w-site mx-auto px-6 md:px-12 lg:px-16 xl:px-20 relative z-10">
 
         {/* Section Header */}
-        <Reveal className="mb-16 text-center">
+        <Reveal className="mb-20 text-center">
           <div className="flex items-center justify-center gap-2 mb-4">
-
-            <span className="text-[10px] font-bold tracking-widest uppercase text-rose-500">
+            <span className="text-[11px] font-semibold tracking-[0.25em] uppercase text-zinc-500">
               Trust Deployment
             </span>
           </div>
-          <h2 className="text-2xl md:text-3xl font-light text-white tracking-tight leading-snug">
-            Regulatory security by <span className="font-semibold text-rose-500">default</span>
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight leading-tight text-white">
+            Regulatory security by <span className="text-[#E11D48]">default</span>
           </h2>
-          <p className="text-zinc-500 text-xs md:text-sm font-light leading-relaxed mt-2 max-w-xl mx-auto">
+          <p className="text-zinc-400 text-xs md:text-sm font-semibold leading-relaxed mt-4 max-w-xl mx-auto">
             We operate under international security guidelines to guarantee absolute network isolation and software safety.
           </p>
         </Reveal>
@@ -55,20 +54,25 @@ export function IndustrialCapabilities() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {certs.map((cert, idx) => (
             <Reveal key={cert.title} delay={idx * 0.05} className="h-full">
-              <div className="h-full bg-zinc-950/20 border border-zinc-900/80 rounded-2xl p-6 flex flex-col justify-between hover:border-rose-500/30 hover:bg-zinc-900/10 transition-all duration-300 hover:scale-[1.02] group text-left relative overflow-hidden cursor-pointer">
-                <div className="absolute top-0 right-0 w-28 h-28 bg-[radial-gradient(circle_at_center,rgba(244,63,94,0.02),transparent_75%)] opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+              <div className="group h-full bg-[#0b0b0c] border border-white/10 rounded-[24px] p-8 flex flex-col justify-between hover:border-rose-500/35 hover:shadow-[0_8px_32px_rgba(244,63,94,0.08)] transition-all duration-300 relative overflow-hidden cursor-pointer text-left">
+                
+                {/* Subtle Inner Glow on Hover */}
+                <div className="absolute inset-0 bg-gradient-to-br from-[#E11D48]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-0" />
 
-                <div>
-                  <div className="mb-6 w-11 h-11 rounded-xl bg-rose-950/15 border border-rose-900/20 flex items-center justify-center group-hover:border-rose-500/30 transition-colors">
+                <div className="relative z-10">
+                  <div className="w-10 h-10 rounded-[12px] bg-rose-950/15 border border-[#E11D48]/20 flex items-center justify-center text-[#E11D48] group-hover:bg-[#E11D48] group-hover:text-white transition-all duration-300 mb-6">
                     {cert.icon}
                   </div>
-                  <h3 className="text-xs font-semibold text-zinc-100 mb-3 tracking-wide group-hover:text-white transition-colors">
+                  
+                  <h3 className="text-base font-bold text-white mb-2 tracking-tight group-hover:text-[#E11D48] transition-colors duration-300">
                     {cert.title}
                   </h3>
-                  <p className="text-[10.5px] text-zinc-450 leading-relaxed font-light group-hover:text-zinc-350 transition-colors">
+                  
+                  <p className="text-xs text-zinc-400 leading-relaxed font-semibold">
                     {cert.desc}
                   </p>
                 </div>
+                
               </div>
             </Reveal>
           ))}

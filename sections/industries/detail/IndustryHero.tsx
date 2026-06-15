@@ -54,15 +54,16 @@ export function IndustryHero({
 
           {/* Animated Header */}
           <Reveal delay={0.1}>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light tracking-tight leading-[1.12] text-white mb-6">
-              {title} <br className="hidden sm:inline" />
-              <span className="font-semibold bg-gradient-to-r from-white via-zinc-200 to-zinc-400 bg-clip-text text-transparent">{highlightedWord}</span>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold tracking-tight leading-[1.12] text-white mb-6">
+              {title}
+              <br />
+              <span className="text-[#E11D48]">{highlightedWord}</span>
             </h1>
           </Reveal>
 
           {/* Subtitle block */}
           <Reveal delay={0.2}>
-            <p className="text-zinc-350 text-sm md:text-base leading-relaxed font-light max-w-xl mb-10">
+            <p className="text-zinc-400 text-xs sm:text-sm md:text-base leading-relaxed font-semibold max-w-xl mb-8">
               {subtitle}
             </p>
           </Reveal>
@@ -71,9 +72,9 @@ export function IndustryHero({
           <Reveal delay={0.3}>
             <a 
               href="#overview" 
-              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full border border-zinc-800 bg-zinc-950/40 hover:bg-zinc-900/40 hover:border-zinc-700 text-white text-xs font-bold uppercase tracking-wider transition-all duration-300"
+              className="inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white transition-all duration-300 hover:shadow-[0_0_25px_rgba(225,29,72,0.35)] hover:-translate-y-0.5"
             >
-              Explore Capabilities <span className="text-rose-500 font-bold">&darr;</span>
+              Explore Capabilities <span className="ml-2">↓</span>
             </a>
           </Reveal>
 

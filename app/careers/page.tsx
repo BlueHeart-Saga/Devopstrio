@@ -38,7 +38,7 @@ export default function CareersPage() {
 
   return (
     <main className="min-h-screen bg-black text-white pt-16 font-sans">
-      
+
       {/* Cinematic Hero Title Header */}
       {/* <section className="pt-16 pb-4 md:pb-8 text-center relative bg-[#030303]">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(244,63,94,0.05),transparent_50%)] pointer-events-none" />
@@ -55,8 +55,8 @@ export default function CareersPage() {
       {activeJob && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md animate-fadeIn">
           <div className="relative w-full max-w-xl bg-zinc-950 border border-zinc-900 rounded-[32px] p-8 md:p-10 shadow-[0_25px_60px_-15px_rgba(225,29,72,0.15)]">
-            
-            <button 
+
+            <button
               onClick={() => setActiveJob(null)}
               className="absolute top-6 right-6 text-zinc-400 hover:text-white bg-zinc-900/60 p-2 rounded-full border border-zinc-800 transition-colors"
             >
@@ -74,53 +74,53 @@ export default function CareersPage() {
                 <form onSubmit={handleSubmit} className="space-y-4 text-left">
                   <div>
                     <label className="block text-[10px] font-mono tracking-wider text-zinc-450 uppercase mb-2">Full Name</label>
-                    <input 
-                      type="text" 
+                    <input
+                      type="text"
                       required
                       placeholder="e.g. John Doe"
                       value={formData.name}
-                      onChange={(e) => setFormData({...formData, name: e.target.value})}
+                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                       className="w-full bg-zinc-900/40 border border-zinc-850 rounded-xl px-4 py-3 text-xs text-white placeholder-zinc-650 focus:border-rose-500 focus:outline-none transition-colors"
                     />
                   </div>
 
                   <div>
                     <label className="block text-[10px] font-mono tracking-wider text-zinc-450 uppercase mb-2">Email Address</label>
-                    <input 
-                      type="email" 
+                    <input
+                      type="email"
                       required
                       placeholder="john.doe@enterprise.com"
                       value={formData.email}
-                      onChange={(e) => setFormData({...formData, email: e.target.value})}
+                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                       className="w-full bg-zinc-900/40 border border-zinc-850 rounded-xl px-4 py-3 text-xs text-white placeholder-zinc-650 focus:border-rose-500 focus:outline-none transition-colors"
                     />
                   </div>
 
                   <div>
                     <label className="block text-[10px] font-mono tracking-wider text-zinc-450 uppercase mb-2">Resume / Portfolio Link</label>
-                    <input 
-                      type="url" 
+                    <input
+                      type="url"
                       required
                       placeholder="https://github.com/johndoe or Google Drive link"
                       value={formData.resume}
-                      onChange={(e) => setFormData({...formData, resume: e.target.value})}
+                      onChange={(e) => setFormData({ ...formData, resume: e.target.value })}
                       className="w-full bg-zinc-900/40 border border-zinc-850 rounded-xl px-4 py-3 text-xs text-white placeholder-zinc-650 focus:border-rose-500 focus:outline-none transition-colors"
                     />
                   </div>
 
                   <div>
                     <label className="block text-[10px] font-mono tracking-wider text-zinc-450 uppercase mb-2">Cover Note (Optional)</label>
-                    <textarea 
+                    <textarea
                       rows={3}
                       placeholder="Tell us why you are interested in joining Devopstrio..."
                       value={formData.note}
-                      onChange={(e) => setFormData({...formData, note: e.target.value})}
+                      onChange={(e) => setFormData({ ...formData, note: e.target.value })}
                       className="w-full bg-zinc-900/40 border border-zinc-850 rounded-xl px-4 py-3 text-xs text-white placeholder-zinc-650 focus:border-rose-500 focus:outline-none transition-colors resize-none"
                     />
                   </div>
 
-                  <button 
-                    type="submit" 
+                  <button
+                    type="submit"
                     className="w-full inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl text-xs font-bold uppercase tracking-wider text-white bg-rose-600 hover:bg-rose-700 transition-all duration-300"
                   >
                     Submit Application <Send size={13} />

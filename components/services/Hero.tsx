@@ -17,7 +17,7 @@ export interface HeroProps {
 
 export function Hero({ badge, title, subtitle, stats, breadcrumbs, bgImage }: HeroProps) {
   return (
-    <section className="relative overflow-hidden bg-black text-white min-h-[75vh] md:min-h-[80vh] flex flex-col justify-between pt-36 pb-20 border-b border-zinc-900/60">
+    <section className="relative overflow-hidden bg-black text-white min-h-screen flex flex-col justify-between pt-36 pb-20 border-b border-zinc-900/60">
       {/* Background Image */}
       {bgImage && (
         <div className="absolute inset-0 z-0">

@@ -6,50 +6,84 @@ import { Layers, ArrowUpRight } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
 
 const relatedServices = [
-  { title: "Cloud Platform Engineering", path: "/services/cloud-platform-engineering" },
-  { title: "DevOps & Release Automation", path: "/services/devops-automation" },
-  { title: "Product Engineering", path: "/services/product-engineering" },
-  { title: "Site Reliability Engineering", path: "/services/sre-operations" }
+  {
+    title: "Platform Engineering",
+    desc: "Automate delivery chains, design secure compute pools, and manage multi-region orchestrators.",
+    path: "/services/devops-automation/platform-engineering"
+  },
+  {
+    title: "DevOps & Release Automation",
+    desc: "Accelerate release pipelines, enforce testing boundaries, and standardise infrastructure templates.",
+    path: "/services/devops-automation"
+  },
+  {
+    title: "Product Engineering",
+    desc: "Design premium client dashboards, build low-latency server gateways, and construct responsive interfaces.",
+    path: "/services/product-engineering"
+  },
+  {
+    title: "Site Reliability Engineering",
+    desc: "Enforce uptime compliance, scale cluster boundaries, and direct automated incident triage loops.",
+    path: "/services/devops-automation/site-reliability-engineering"
+  }
 ];
 
 export function RelatedServices() {
   return (
-    <section className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
-      <div className="max-w-site mx-auto px-6 md:px-12 lg:px-20 text-left">
-        <Reveal className="mb-16">
-          <div className="flex items-center gap-2 mb-4">
+    <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60 relative overflow-hidden text-white">
+      {/* Background Graphic Glow */}
+      <div className="absolute top-[30%] left-[-10%] w-[35%] aspect-square bg-[radial-gradient(circle_at_center,rgba(244,63,94,0.015),transparent_70%)] pointer-events-none z-0" />
 
-            <span className="text-[10px] font-bold tracking-widest uppercase text-rose-500">
-              PRACTICE CONNECTIVITY
+      <div className="max-w-site mx-auto px-6 md:px-12 lg:px-16 xl:px-20 relative z-10 text-left">
+        
+        {/* Section Header */}
+        <Reveal className="mb-20">
+          <div className="flex items-center gap-2 mb-4">
+            <span className="text-[11px] font-semibold tracking-[0.25em] uppercase text-zinc-500">
+              Practice Connectivity
             </span>
           </div>
-          <h2 className="text-2xl md:text-3xl font-light text-white tracking-tight leading-snug">
-            Explore related <span className="font-semibold text-rose-500">services</span>
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight leading-tight text-white max-w-2xl">
+            Explore related <span className="text-[#E11D48]">services</span>
           </h2>
         </Reveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+        {/* Grid Layout */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
           {relatedServices.map((srv, idx) => (
             <Reveal key={idx} delay={idx * 0.05} className="h-full">
               <Link
                 href={srv.path}
-                className="group block h-full bg-zinc-950/20 border border-zinc-900 rounded-2xl p-5 hover:border-rose-500/20 hover:bg-zinc-900/5 transition-all"
+                className="group flex flex-col justify-between h-full bg-[#0b0b0c] border border-white/10 rounded-[24px] p-6 hover:border-rose-500/35 hover:shadow-[0_8px_32px_rgba(244,63,94,0.08)] transition-all duration-300 relative overflow-hidden cursor-pointer"
               >
-                <div className="flex justify-between items-center mb-4">
-                  <span className="w-6 h-6 rounded bg-zinc-900 border border-zinc-800 flex items-center justify-center text-rose-500">
-                    <Layers size={12} />
-                  </span>
-                  <span className="text-zinc-650 group-hover:text-rose-500 transition-colors">
-                    <ArrowUpRight size={13} />
-                  </span>
+                {/* Subtle Inner Glow on Hover */}
+                <div className="absolute inset-0 bg-gradient-to-br from-[#E11D48]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-0" />
+
+                <div className="relative z-10 flex flex-col h-full justify-between">
+                  <div className="flex justify-between items-center w-full">
+                    <span className="w-8 h-8 rounded-[8px] bg-rose-950/15 border border-[#E11D48]/20 flex items-center justify-center text-[#E11D48] group-hover:bg-[#E11D48] group-hover:text-white transition-all duration-300">
+                      <Layers size={14} />
+                    </span>
+                    <span className="w-8 h-8 rounded-full bg-zinc-955/40 border border-white/10 flex items-center justify-center text-zinc-500 group-hover:text-white group-hover:bg-[#E11D48] group-hover:border-[#E11D48]/20 transition-all duration-300">
+                      <ArrowUpRight size={14} className="stroke-[2.5]" />
+                    </span>
+                  </div>
+
+                  <div>
+                    <h3 className="text-base font-bold text-white group-hover:text-[#E11D48] transition-colors duration-300 mb-2 mt-6">
+                      {srv.title}
+                    </h3>
+                    <p className="text-xs text-zinc-400 leading-relaxed font-semibold">
+                      {srv.desc}
+                    </p>
+                  </div>
                 </div>
-                <h4 className="text-[11px] font-semibold text-zinc-200 group-hover:text-white transition-colors">
-                  {srv.title}
-                </h4>
+
               </Link>
             </Reveal>
           ))}
         </div>
+
       </div>
     </section>
   );

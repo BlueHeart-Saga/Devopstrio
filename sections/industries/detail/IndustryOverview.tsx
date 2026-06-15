@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { CheckCircle2 } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
 
 interface IndustryOverviewProps {
@@ -9,71 +9,75 @@ interface IndustryOverviewProps {
   overviewDesc1: string;
   overviewDesc2: string;
   challenges: string[];
+  image?: string;
 }
 
 export function IndustryOverview({
   overviewHeading,
   overviewDesc1,
   overviewDesc2,
-  challenges
+  challenges,
+  image
 }: IndustryOverviewProps) {
+  // Fallback default image if none specified
+  const displayImage = image || "/assets/Home-page/business-overview/overview-lifestyle.png";
+
   return (
-    <section id="overview" className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
-      {/* Glow highlight background */}
-      <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[450px] h-[450px] bg-rose-600/5 rounded-full blur-[120px] pointer-events-none" />
+    <section id="overview" className="w-full py-24 bg-[#030303] text-white relative overflow-hidden border-b border-zinc-900/60">
+      <div className="max-w-site mx-auto px-6 md:px-12 lg:px-16 xl:px-20">
+        <Reveal>
+          <div className="group relative overflow-hidden rounded-[32px] border border-zinc-800/60 bg-zinc-950/30 backdrop-blur-xl">
+            
+            {/* Background Glow */}
+            <div className="absolute inset-0 pointer-events-none">
+              <div className="absolute -top-20 -left-20 w-96 h-96 bg-rose-600/10 blur-[120px]" />
+              <div className="absolute -bottom-20 -right-20 w-96 h-96 bg-blue-600/10 blur-[120px]" />
+            </div>
 
-      <div className="max-w-site mx-auto px-6 md:px-12 lg:px-20 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
-
-          {/* Left Side: Context & Operational Challenges */}
-          <div className="lg:col-span-6 text-left">
-            <Reveal>
-              <div className="flex items-center gap-2 mb-4">
-
-                <span className="text-[10px] font-bold tracking-widest uppercase text-rose-500">
+            <div className="relative grid lg:grid-cols-2 gap-0">
+              
+              {/* LEFT CONTENT: Overview Context & Approach */}
+              <div className="flex flex-col justify-center p-8 md:p-10 lg:p-12 text-left">
+                <span className="text-[11px] font-semibold tracking-[0.25em] uppercase text-zinc-500 mb-8 block">
                   Domain Context
                 </span>
-              </div>
-            </Reveal>
+                
+                <h2 className="text-xl md:text-2xl xl:text-3xl font-bold leading-tight tracking-tight mb-6 text-white">
+                  {overviewHeading}
+                </h2>
 
-            <Reveal delay={0.05}>
-              <h2 className="text-2xl md:text-3xl font-light text-white tracking-tight leading-snug mb-8">
-                {overviewHeading}
-              </h2>
-            </Reveal>
+                <div className="space-y-4 text-zinc-400 text-sm leading-relaxed mb-8 font-medium">
+                  <p className="border-l-2 border-[#E11D48] pl-4">{overviewDesc1}</p>
+                  <p className="border-l-2 border-zinc-800/80 pl-4">{overviewDesc2}</p>
+                </div>
 
-            <Reveal delay={0.1} className="p-6 bg-zinc-950/40 border border-zinc-900 rounded-2xl">
-              <span className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest block mb-4">
-                Key Operational Challenges
-              </span>
-              <div className="flex flex-col gap-3.5">
-                {challenges.map((challenge, i) => (
-                  <div key={i} className="flex items-start gap-3 text-xs md:text-sm text-zinc-300">
-                    <CheckCircle2 size={16} className="text-rose-500 flex-shrink-0 mt-0.5" />
-                    <span>{challenge}</span>
-                  </div>
-                ))}
+                <a
+                  href="#challenges"
+                  className="inline-flex items-center gap-2 text-white font-semibold group/link w-fit text-sm"
+                >
+                  Analyze Challenges
+                  <span className="w-8 h-8 rounded-full bg-[#E11D48] flex items-center justify-center transition-transform duration-300 group-hover/link:translate-x-1">
+                    <ArrowRight size={14} />
+                  </span>
+                </a>
               </div>
-            </Reveal>
+
+              {/* RIGHT CONTENT: Lifestyle/Sector Image with Curved Padding */}
+              <div className="p-0.5 flex items-center justify-center bg-zinc-950/20 border-t lg:border-t-0 lg:border-l border-zinc-900/60">
+                <div className="relative w-full aspect-[16/10] rounded-2xl overflow-hidden border border-zinc-800/80 shadow-2xl group/img">
+                  <img
+                    src={displayImage}
+                    alt="Industry Domain Context"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover/img:scale-[1.02]"
+                  />
+                  {/* Subtle glow/reflection */}
+                  <div className="absolute inset-0 bg-gradient-to-tr from-white/0 via-white/5 to-transparent pointer-events-none" />
+                </div>
+              </div>
+
+            </div>
           </div>
-
-          {/* Right Side: Our Approach */}
-          <div className="lg:col-span-6 text-left lg:pt-10">
-            <Reveal>
-              <span className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest block mb-4">
-                Our Engineering Approach
-              </span>
-            </Reveal>
-
-            <Reveal delay={0.1}>
-              <div className="flex flex-col gap-6 text-zinc-400 text-sm font-light leading-relaxed">
-                <p className="border-l-2 border-zinc-800 pl-4">{overviewDesc1}</p>
-                <p className="border-l-2 border-zinc-800 pl-4">{overviewDesc2}</p>
-              </div>
-            </Reveal>
-          </div>
-
-        </div>
+        </Reveal>
       </div>
     </section>
   );

@@ -2,6 +2,7 @@
 
 import React from "react";
 import { Reveal } from "@/components/ui/Reveal";
+import { AlertCircle } from "lucide-react";
 
 interface CapabilityProblemProps {
   serviceSlug: string;
@@ -17,7 +18,7 @@ const problemData: Record<string, { title: string; subtitle: string; points: str
       "High compute latency during model inference causing performance drops and customer churn.",
       "Absence of continuous evaluation, leading to rapid model decay and operational drift."
     ],
-    image: "/assets/services/problem-ai.png"
+    image: "/assets/Services-Page/capability/banner/aidatainnovation.png"
   },
   "cloud-services": {
     title: "Escalating Cloud Waste & Outages",
@@ -27,7 +28,7 @@ const problemData: Record<string, { title: string; subtitle: string; points: str
       "Lack of geo-redundant configurations resulting in catastrophic system downtime.",
       "Slow, manual response mechanisms to traffic peaks, leading to platform unresponsive states."
     ],
-    image: "/assets/services/problem-cloud.png"
+    image: "/assets/Services-Page/capability/banner/cloudservices.png"
   },
   "devops-automation": {
     title: "Manual Delivery & Release Chaos",
@@ -37,7 +38,7 @@ const problemData: Record<string, { title: string; subtitle: string; points: str
       "Absence of automated validation loops, causing critical defects to reach live environments.",
       "Slow, manual server builds causing severe deployment bottlenecks and delays."
     ],
-    image: "/assets/services/problem-devops.png"
+    image: "/assets/Services-Page/capability/banner/devopsautomation.png"
   },
   "cybersecurity": {
     title: "Vulnerable Assets & Compliance Risks",
@@ -47,7 +48,7 @@ const problemData: Record<string, { title: string; subtitle: string; points: str
       "Non-compliance with GDPR, HIPAA, or FSQS exposing the firm to heavy legal penalties.",
       "Unmanaged access rights allowing privilege escalation and internal data leakage."
     ],
-    image: "/assets/services/problem-cybersecurity.png"
+    image: "/assets/Services-Page/capability/banner/Cybersecurity.png"
   },
   "software-development": {
     title: "Monolithic Software Sprawl & Tech Debt",
@@ -57,7 +58,7 @@ const problemData: Record<string, { title: string; subtitle: string; points: str
       "Slow, unoptimized page speeds degrading overall search rankings and UX.",
       "High overhead cost of maintaining legacy code compared to microservices."
     ],
-    image: "/assets/services/problem-software.png"
+    image: "/assets/Services-Page/capability/banner/Softwaredevelopment.png"
   },
   "digital-transformation": {
     title: "Operational Friction & Legacy Lag",
@@ -67,7 +68,7 @@ const problemData: Record<string, { title: string; subtitle: string; points: str
       "Outdated database engines incapable of supporting modern API requirements.",
       "Siloed systems leading to duplicate data processing and operations delays."
     ],
-    image: "/assets/services/problem-transformation.png"
+    image: "/assets/Services-Page/capability/banner/Digital_trasfrormation.png"
   },
   "data-engineering": {
     title: "Siloed Data Clusters & High Latency",
@@ -77,7 +78,7 @@ const problemData: Record<string, { title: string; subtitle: string; points: str
       "No unified schema registry, creating conflicting definitions of core business KPIs.",
       "High cloud database query costs due to unindexed, unstructured data lakes."
     ],
-    image: "/assets/services/problem-data.png"
+    image: "/assets/Services-Page/capability/banner/Data_Engineering.png"
   },
   "managed-services": {
     title: "Operational Blindspots & Slow Incidents",
@@ -87,7 +88,7 @@ const problemData: Record<string, { title: string; subtitle: string; points: str
       "High MTTR (Mean Time to Resolution) leading to system downtime.",
       "Inconsistent system backups and failover checks exposing data to loss."
     ],
-    image: "/assets/services/problem-managed.png"
+    image: "/assets/Services-Page/capability/banner/Managed_Services.png"
   },
   "qa-testing": {
     title: "Post-Release Regressions & Bugs",
@@ -97,7 +98,7 @@ const problemData: Record<string, { title: string; subtitle: string; points: str
       "Slow manual testing cycles delaying product release windows.",
       "Inconsistent layout validation causing brand damage on mobile browsers."
     ],
-    image: "/assets/services/problem-testing.png"
+    image: "/assets/Services-Page/capability/banner/QA&Testing.png"
   },
   "it-consulting": {
     title: "Architecture Bloat & Stack Overlap",
@@ -107,7 +108,7 @@ const problemData: Record<string, { title: string; subtitle: string; points: str
       "Vague cloud transition strategies causing delays in transformation cycles.",
       "Complex custom-coded structures where a simpler SaaS product suffices."
     ],
-    image: "/assets/services/problem-consulting.png"
+    image: "/assets/Services-Page/capability/banner/IT_Consulting.png"
   }
 };
 
@@ -115,29 +116,75 @@ export function CapabilityProblem({ serviceSlug, capabilityTitle }: CapabilityPr
   const data = problemData[serviceSlug] || problemData["ai-data-innovation"];
 
   return (
-    <section id="business-problem" className="w-full bg-[#030303] text-white relative overflow-hidden pt-16 pb-0">
-      {/* Centered Top Heading */}
-      <div className="max-w-site mx-auto w-full px-6 md:px-12 lg:px-20 relative z-10 text-center mb-12">
-        <Reveal>
-          <span className="text-[10px] font-semibold tracking-[0.25em] uppercase text-rose-500 block mb-3">
-            The Business Challenge
-          </span>
-          <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-6 text-white uppercase">
-            Solving <span className="text-rose-500">{data.title}</span>
-          </h2>
-        </Reveal>
-      </div>
+    <section id="business-problem" className="w-full bg-[#030303] text-white relative overflow-hidden py-16 border-b border-zinc-900/60">
+      
+      {/* Background glow */}
+      <div className="absolute top-[20%] left-1/2 -translate-x-1/2 w-[40%] aspect-square bg-[radial-gradient(circle_at_center,rgba(244,63,94,0.02),transparent_70%)] pointer-events-none z-0" />
 
-      {/* Full-bleed Poster Image (Edge-to-edge, No Borders) */}
-      <div className="w-full relative overflow-hidden aspect-[21/9] md:aspect-[24/9]">
-        <img
-          src={data.image}
-          alt={data.title}
-          className="w-full h-full object-cover brightness-[0.7] contrast-[1.05]"
-        />
-        {/* Soft edge gradients to blend top & bottom transitions */}
-        <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-[#030303] to-transparent pointer-events-none" />
-        <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#030303] to-transparent pointer-events-none" />
+      <div className="max-w-site mx-auto px-6 md:px-12 lg:px-20 relative z-10 flex flex-col items-center">
+        
+        {/* 1. Centered Heading Block */}
+        <div className="max-w-2xl text-center mb-10">
+          <Reveal>
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-zinc-800/80 bg-zinc-950/40 mb-4 mx-auto">
+              <span className="w-1 h-1 rounded-full bg-rose-600 animate-pulse" />
+              <span className="text-[9px] font-bold tracking-[0.2em] uppercase text-zinc-400">
+                THE BUSINESS CHALLENGE
+              </span>
+            </div>
+          </Reveal>
+
+          <Reveal delay={0.05}>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight leading-tight mb-4 text-white uppercase">
+              Solving <span className="text-[#E11D48]">{data.title}</span>
+            </h2>
+          </Reveal>
+
+          <Reveal delay={0.1}>
+            <p className="text-zinc-400 text-xs sm:text-sm leading-relaxed font-semibold max-w-xl mx-auto">
+              {data.subtitle}
+            </p>
+          </Reveal>
+        </div>
+
+        {/* 2. Responsive Poster Card with 4-Directional Black Edge Fades */}
+        <Reveal delay={0.15} className="w-full mb-10 max-w-5xl mx-auto relative">
+          
+          <div className="relative w-full overflow-hidden z-10 flex justify-center items-center">
+            {/* The Image */}
+            <img
+              src={data.image}
+              alt={data.title}
+              className="w-full h-auto object-contain brightness-[0.95] contrast-[1.02]"
+            />
+
+            {/* Edge Fades: Top, Bottom, Left, Right into #030303 background */}
+            <div className="absolute inset-x-0 top-0 h-12 bg-gradient-to-b from-[#030303] to-transparent pointer-events-none z-20" />
+            <div className="absolute inset-x-0 bottom-0 h-12 bg-gradient-to-t from-[#030303] to-transparent pointer-events-none z-20" />
+            <div className="absolute inset-y-0 left-0 w-12 bg-gradient-to-r from-[#030303] to-transparent pointer-events-none z-20" />
+            <div className="absolute inset-y-0 right-0 w-12 bg-gradient-to-l from-[#030303] to-transparent pointer-events-none z-20" />
+          </div>
+        </Reveal>
+
+        {/* 3. Problem Points Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6 w-full border-t border-zinc-900/40 pt-10">
+          {data.points.map((point, idx) => (
+            <Reveal key={idx} delay={0.2 + idx * 0.05}>
+              <div className="bg-zinc-950/20 border border-zinc-900/60 rounded-xl p-5 hover:border-zinc-800 hover:bg-zinc-900/5 transition-all duration-300 group relative">
+                <div className="absolute top-0 right-0 w-16 h-16 bg-[radial-gradient(circle_at_center,rgba(244,63,94,0.01),transparent_75%)] pointer-events-none" />
+                
+                <div className="w-7 h-7 rounded bg-rose-950/10 border border-rose-900/10 flex items-center justify-center text-rose-500 mb-4 group-hover:bg-rose-950/20 group-hover:border-rose-500/20 transition-colors">
+                  <AlertCircle size={12} />
+                </div>
+                
+                <p className="text-xs text-zinc-350 leading-relaxed font-semibold">
+                  {point}
+                </p>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+
       </div>
     </section>
   );

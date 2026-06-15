@@ -164,13 +164,15 @@ export function Footer() {
 
         {/* Legal Links */}
         <div className="flex flex-wrap justify-center md:justify-start gap-x-5 gap-y-2 text-xs text-zinc-500 font-medium">
-          <Link href="/contact" className="hover:text-zinc-350 transition-colors">Disclaimer</Link>
+          <Link href="/disclaimer" className="hover:text-zinc-350 transition-colors">Disclaimer</Link>
           <span>•</span>
-          <Link href="/contact" className="hover:text-zinc-350 transition-colors">Privacy Statement</Link>
+          <Link href="/privacy-policy" className="hover:text-zinc-350 transition-colors">Privacy Policy</Link>
           <span>•</span>
-          <Link href="/contact" className="hover:text-zinc-350 transition-colors">Terms of Use</Link>
+          <Link href="/terms-of-service" className="hover:text-zinc-350 transition-colors">Terms of Service</Link>
           <span>•</span>
-          <Link href="/contact" className="hover:text-zinc-350 transition-colors">Sitemap</Link>
+          <Link href="/cookie-policy" className="hover:text-zinc-350 transition-colors">Cookie Policy</Link>
+          <span>•</span>
+          <Link href="/gdpr" className="hover:text-zinc-350 transition-colors">GDPR Compliance</Link>
         </div>
 
       </div>

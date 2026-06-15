@@ -2,7 +2,55 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { notFound, useParams } from "next/navigation";
+
+function getHeroBgImage(domain: string, subpage: string): string {
+  const s = subpage.toLowerCase();
+  const d = domain.toLowerCase();
+
+  // Explicit mappings based on slugs
+  if (s.includes("ai") || s.includes("intelligence") || s.includes("artificial")) {
+    return "/assets/ecosystem/bg-ai.png";
+  }
+  if (s.includes("cloud") || s.includes("serverless")) {
+    return "/assets/ecosystem/bg-cloud.png";
+  }
+  if (s.includes("cyber") || s.includes("security") || s.includes("compliance") || s === "cisco") {
+    return "/assets/ecosystem/bg-cybersecurity.png";
+  }
+  if (s.includes("data") || s.includes("analytics") || s.includes("warehouse") || s.includes("lakehouse") || s === "oracle") {
+    return "/assets/ecosystem/bg-data.png";
+  }
+  if (s.includes("devops") || s.includes("pipeline") || s.includes("gitops") || s.includes("toolchain") || s.includes("ci-cd")) {
+    return "/assets/ecosystem/bg-devops.png";
+  }
+  if (s.includes("testing") || s.includes("qa") || s.includes("quality") || s.includes("automation")) {
+    return "/assets/ecosystem/bg-testing.png";
+  }
+  if (s.includes("managed") || s.includes("support") || s.includes("delivery") || s.includes("operations") || s === "india" || s === "europe" || s === "united-kingdom" || s.includes("follow-the-sun") || s === "servicenow") {
+    return "/assets/ecosystem/bg-managed.png";
+  }
+  if (s.includes("consulting") || s.includes("strategy") || s.includes("transformation") || s === "sap" || s === "microsoft" || s === "aws" || s === "google-cloud") {
+    return "/assets/ecosystem/bg-transformation.png";
+  }
+  if (s.includes("software") || s.includes("platform") || s.includes("framework") || s.includes("architecture") || s.includes("accelerator") || s.includes("engineering")) {
+    return "/assets/ecosystem/bg-software.png";
+  }
+
+  // Fallback by domain
+  if (d.includes("delivery") || d.includes("support") || d.includes("community")) {
+    return "/assets/ecosystem/bg-managed.png";
+  }
+  if (d.includes("technology") || d.includes("platform") || d.includes("accelerator")) {
+    return "/assets/ecosystem/bg-software.png";
+  }
+  if (d.includes("partnership")) {
+    return "/assets/ecosystem/bg-transformation.png";
+  }
+
+  return "/assets/ecosystem/bg-case-study.png";
+}
 import {
   ArrowUpRight,
   ChevronRight,
@@ -66,6 +114,8 @@ export default function EcosystemSubpagePage() {
     notFound();
   }
 
+  const bgImage = getHeroBgImage(domain, subpage);
+
   const breadcrumbs = [
     { label: "Home", href: "/" },
     { label: "Ecosystem", href: "/ecosystem" },
@@ -76,44 +126,64 @@ export default function EcosystemSubpagePage() {
   // Specific path for AI Innovation Lab
   if (subpage === "ai-lab") {
     return (
-      <main className="min-h-screen bg-black text-white pt-24 pb-16 font-sans">
+      <main className="min-h-screen bg-black text-white font-sans">
 
         {/* 1. Hero Section */}
-        <section className="relative overflow-hidden bg-black text-white pt-20 pb-16 border-b border-zinc-900/60">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(225,29,72,0.08),transparent_50%)] pointer-events-none" />
-          <div className="absolute inset-0 bg-[linear-gradient(to_right,#09090b_1px,transparent_1px),linear-gradient(to_bottom,#09090b_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none" />
+        <section className="relative overflow-hidden bg-black text-white min-h-screen flex flex-col justify-between pt-36 pb-20 border-b border-zinc-900/60">
+          {/* Background Image */}
+          {bgImage && (
+            <div className="absolute inset-0 z-0">
+              <Image
+                src={bgImage}
+                alt={data.title}
+                fill
+                priority
+                sizes="100vw"
+                className="object-cover object-center opacity-100 select-none pointer-events-none transition-transform duration-1000 scale-[1.02]"
+              />
+              {/* Only a dark radial circle in the center behind the text */}
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,0,0,0.95)_0%,rgba(0,0,0,0.7)_45%,transparent_75%)] pointer-events-none" />
+              {/* Bottom shadow fade to blend with the black page background */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent pointer-events-none" />
+            </div>
+          )}
 
-          <div className="max-w-7xl mx-auto w-full px-6 md:px-12 lg:px-16 relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div className="max-w-7xl mx-auto relative z-10 w-full px-6 md:px-12 lg:px-16 flex-grow flex flex-col justify-between">
+            {/* Breadcrumb Navigation - Pinned to the top of the content container */}
+            <nav className="flex items-center justify-start gap-2.5 text-[9px] md:text-[10px] font-medium tracking-[0.12em] text-zinc-400 mb-6 overflow-x-auto whitespace-nowrap py-1">
+              <Link href="/" className="hover:text-white transition-colors text-zinc-400">HOME</Link>
+              <ChevronRight size={10} className="text-zinc-650 flex-shrink-0" />
+              <Link href="/ecosystem" className="hover:text-white transition-colors text-zinc-400">ECOSYSTEM</Link>
+              <ChevronRight size={10} className="text-zinc-650 flex-shrink-0" />
+              <span className="text-rose-500 font-semibold">AI INNOVATION LAB</span>
+            </nav>
 
-            <div className="lg:col-span-7 text-left">
-              <nav className="flex items-center gap-2 text-xs font-mono text-zinc-550 mb-8">
-                <Link href="/" className="hover:text-rose-500 transition-colors">HOME</Link>
-                <ChevronRight size={10} className="text-zinc-700" />
-                <Link href="/ecosystem" className="hover:text-rose-500 transition-colors">ECOSYSTEM</Link>
-                <ChevronRight size={10} className="text-zinc-700" />
-                <span className="text-rose-500 font-bold uppercase">AI INNOVATION LAB</span>
-              </nav>
-
+            {/* Headline block - Centered my-auto */}
+            <div className="max-w-4xl mx-auto text-center flex flex-col items-center justify-center my-auto py-8">
               <Reveal>
-                <span className="text-[10px] font-bold tracking-widest uppercase text-rose-500 mb-4 block">
-                  DEVOPSTRIO AI INNOVATION LAB
-                </span>
+                <div className="flex items-center justify-center gap-2.5 mb-5">
+                  <span className="h-[1px] w-8 bg-gradient-to-r from-transparent to-rose-600"></span>
+                  <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-rose-500">
+                    DEVOPSTRIO AI INNOVATION LAB
+                  </span>
+                  <span className="h-[1px] w-8 bg-gradient-to-l from-transparent to-rose-600"></span>
+                </div>
               </Reveal>
 
               <Reveal delay={0.05}>
-                <h1 className="text-4xl md:text-6xl font-light tracking-tight leading-tight mb-6 text-white">
-                  Building the Future of <span className="font-semibold text-rose-500">Intelligent</span> Enterprises
+                <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-tight mb-5 text-white text-center">
+                  Building the Future of <span className="text-rose-500 font-semibold">Intelligent</span> Enterprises
                 </h1>
               </Reveal>
 
               <Reveal delay={0.1}>
-                <p className="text-zinc-400 text-xs md:text-sm leading-relaxed font-light max-w-2xl mb-10">
+                <p className="text-zinc-300 text-xs md:text-sm lg:text-base leading-relaxed font-normal max-w-3xl text-center mx-auto opacity-95 mb-8">
                   From Generative AI and Agentic Systems to Enterprise Automation and Predictive Intelligence, our AI Innovation Lab helps organizations transform ideas into production-ready AI solutions.
                 </p>
               </Reveal>
 
               <Reveal delay={0.15}>
-                <div className="flex flex-wrap items-center gap-4">
+                <div className="flex flex-wrap items-center justify-center gap-4">
                   <Link
                     href="/contact"
                     className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full text-xs font-bold uppercase tracking-wider text-white bg-rose-600 hover:bg-rose-700 transition-all duration-300 hover:shadow-[0_0_20px_rgba(244,63,94,0.35)]"
@@ -122,38 +192,13 @@ export default function EcosystemSubpagePage() {
                   </Link>
                   <a
                     href="#innovation-areas"
-                    className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full text-xs font-bold uppercase tracking-wider text-zinc-355 border border-zinc-800 hover:border-zinc-700 transition-colors"
+                    className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full text-xs font-bold uppercase tracking-wider text-zinc-300 border border-zinc-800 hover:border-zinc-700 transition-colors"
                   >
                     Explore AI Solutions
                   </a>
                 </div>
               </Reveal>
             </div>
-
-            {/* Glowing red AI visual */}
-            <div className="lg:col-span-5 flex justify-center relative">
-              <div className="w-72 h-72 rounded-full bg-rose-600/10 absolute filter blur-3xl animate-pulse" />
-              <svg className="w-80 h-80 relative z-10" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-                {/* Node orbits */}
-                <circle cx="100" cy="100" r="80" stroke="rgba(244, 63, 94, 0.15)" strokeWidth="1" strokeDasharray="4 4" />
-                <circle cx="100" cy="100" r="50" stroke="rgba(244, 63, 94, 0.25)" strokeWidth="1.5" />
-                {/* Core brain icon */}
-                <g transform="translate(85, 85)">
-                  <Brain className="w-8 h-8 text-rose-500 animate-pulse" />
-                </g>
-                {/* Orbital nodes */}
-                <circle cx="100" cy="20" r="5" fill="#f43f5e" />
-                <circle cx="180" cy="100" r="4" fill="#18181b" stroke="#f43f5e" strokeWidth="1.5" />
-                <circle cx="100" cy="180" r="6" fill="#f43f5e" />
-                <circle cx="20" cy="100" r="4" fill="#18181b" stroke="#f43f5e" strokeWidth="1.5" />
-                {/* Connected network pathways */}
-                <line x1="100" y1="20" x2="100" y2="85" stroke="rgba(244, 63, 94, 0.3)" strokeWidth="1.5" />
-                <line x1="100" y1="180" x2="100" y2="115" stroke="rgba(244, 63, 94, 0.3)" strokeWidth="1.5" />
-                <line x1="20" y1="100" x2="85" y2="100" stroke="rgba(244, 63, 94, 0.3)" strokeWidth="1.5" />
-                <line x1="180" y1="100" x2="115" y2="100" stroke="rgba(244, 63, 94, 0.3)" strokeWidth="1.5" />
-              </svg>
-            </div>
-
           </div>
         </section>
 
@@ -1028,42 +1073,66 @@ export default function EcosystemSubpagePage() {
   ];
 
   return (
-    <main className="min-h-screen bg-black text-white pt-24 pb-16 font-sans">
+    <main className="min-h-screen bg-black text-white font-sans">
 
       {/* 1. Hero */}
-      <section className="relative overflow-hidden bg-black text-white pt-20 pb-16 border-b border-zinc-900/60">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(225,29,72,0.06),transparent_50%)] pointer-events-none" />
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#09090b_1px,transparent_1px),linear-gradient(to_bottom,#09090b_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none" />
+      <section className="relative overflow-hidden bg-black text-white min-h-screen flex flex-col justify-between pt-36 pb-20 border-b border-zinc-900/60">
+        {/* Background Image */}
+        {bgImage && (
+          <div className="absolute inset-0 z-0">
+            <Image
+              src={bgImage}
+              alt={data.title}
+              fill
+              priority
+              sizes="100vw"
+              className="object-cover object-center opacity-100 select-none pointer-events-none transition-transform duration-1000 scale-[1.02]"
+            />
+            {/* Only a dark radial circle in the center behind the text */}
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,0,0,0.95)_0%,rgba(0,0,0,0.7)_45%,transparent_75%)] pointer-events-none" />
+            {/* Bottom shadow fade to blend with the black page background */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent pointer-events-none" />
+          </div>
+        )}
 
-        <div className="max-w-7xl mx-auto w-full px-6 md:px-12 lg:px-16 relative z-10">
-          <nav className="flex items-center gap-2 text-xs font-mono text-zinc-550 mb-8">
-            {defaultBreadcrumbs.map((crumb, idx) => (
-              <React.Fragment key={idx}>
-                {crumb.href ? (
-                  <Link href={crumb.href} className="hover:text-rose-500 transition-colors">
-                    {crumb.label.toUpperCase()}
-                  </Link>
-                ) : (
-                  <span className="text-rose-500 font-bold uppercase">{crumb.label}</span>
-                )}
-                {idx < defaultBreadcrumbs.length - 1 && <ChevronRight size={10} className="text-zinc-700" />}
-              </React.Fragment>
-            ))}
+        <div className="max-w-7xl mx-auto relative z-10 w-full px-6 md:px-12 lg:px-16 flex-grow flex flex-col justify-between">
+          <nav className="flex items-center justify-start gap-2.5 text-[9px] md:text-[10px] font-medium tracking-[0.12em] text-zinc-400 mb-6 overflow-x-auto whitespace-nowrap py-1">
+            {defaultBreadcrumbs.map((crumb, idx) => {
+              const isLast = idx === defaultBreadcrumbs.length - 1;
+              return (
+                <React.Fragment key={idx}>
+                  {crumb.href ? (
+                    <Link href={crumb.href} className="hover:text-white transition-colors text-zinc-400">
+                      {crumb.label.toUpperCase()}
+                    </Link>
+                  ) : (
+                    <span className="text-rose-500 font-semibold">{crumb.label.toUpperCase()}</span>
+                  )}
+                  {!isLast && <ChevronRight size={10} className="text-zinc-650 flex-shrink-0" />}
+                </React.Fragment>
+              );
+            })}
           </nav>
 
-          <div className="max-w-4xl text-left">
+          <div className="max-w-4xl mx-auto text-center flex flex-col items-center justify-center my-auto py-8">
             <Reveal>
-              <span className="text-[10px] font-bold tracking-widest uppercase text-rose-500 mb-4 block">
-                {domainData.title}
-              </span>
+              <div className="flex items-center justify-center gap-2.5 mb-5">
+                <span className="h-[1px] w-8 bg-gradient-to-r from-transparent to-rose-600"></span>
+                <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-rose-500">
+                  {domainData.title}
+                </span>
+                <span className="h-[1px] w-8 bg-gradient-to-l from-transparent to-rose-600"></span>
+              </div>
             </Reveal>
+
             <Reveal delay={0.05}>
-              <h1 className="text-4xl md:text-6xl font-light tracking-tight leading-tight mb-6 text-white">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-tight mb-5 text-white text-center">
                 {data.title}
               </h1>
             </Reveal>
+
             <Reveal delay={0.1}>
-              <p className="text-zinc-400 text-xs md:text-sm leading-relaxed font-light max-w-3xl mb-12">
+              <p className="text-zinc-300 text-xs md:text-sm lg:text-base leading-relaxed font-normal max-w-3xl text-center mx-auto opacity-95">
                 {data.heroSubtitle}
               </p>
             </Reveal>

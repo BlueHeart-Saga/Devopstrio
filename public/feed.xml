@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Devopstrio Insights &amp; Blogs</title>
+    <link>https://devopstrio.co.uk/insights</link>
+    <description>Latest enterprise AI, cloud engineering, and DevOps automation posts from Devopstrio.</description>
+    <language>en-gb</language>
+    <atom:link href="https://devopstrio.co.uk/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Oracle Cloud Azure for Enterprises: Lowering TCO and Accelerating Large-Scale Database Migration</title>
+      <link>https://devopstrio.co.uk/insights/blogs/6a2fce435aa89f0cf02bf50d</link>
+      <guid isPermaLink="true">https://devopstrio.co.uk/insights/blogs/6a2fce435aa89f0cf02bf50d</guid>
+      <description>Explore how Oracle Cloud Azure enables seamless Oracle database modernization while reducing infrastructure costs and operational complexity. Learn how Devopstrio delivers scalable, secure, and cost-efficient database migration solutions for enterprises.</description>
+      <pubDate>Mon, 15 Jun 2026 10:04:51 GMT</pubDate>
+      <author>info@devopstrio.co.uk (Digital Team)</author>
+    </item>
+    <item>
+      <title>Why Cloud-Native Applications Are Powering the Future of Digital Transformation</title>
+      <link>https://devopstrio.co.uk/insights/blogs/6a2a97089ceb411b4316f965</link>
+      <guid isPermaLink="true">https://devopstrio.co.uk/insights/blogs/6a2a97089ceb411b4316f965</guid>
+      <description>Explore how cloud-native applications empower enterprises with greater agility, scalability, security, and operational efficiency. Learn why cloud-native architecture is becoming the foundation of digital innovation and business growth worldwide.</description>
+      <pubDate>Thu, 11 Jun 2026 11:07:52 GMT</pubDate>
+      <author>info@devopstrio.co.uk (Digital Team)</author>
+    </item>
+    <item>
+      <title>How Devopstrio Uses Azure Arc to Streamline Hybrid &amp; Multi-Cloud Kubernetes Management</title>
+      <link>https://devopstrio.co.uk/insights/blogs/6a27f7c29ceb411b4316f926</link>
+      <guid isPermaLink="true">https://devopstrio.co.uk/insights/blogs/6a27f7c29ceb411b4316f926</guid>
+      <description>Discover how DevOpsTrio leverages Azure Arc to simplify hybrid and multi-cloud Kubernetes management, improve governance, enhance security, and boost operational efficiency by up to 50%</description>
+      <pubDate>Tue, 09 Jun 2026 11:23:46 GMT</pubDate>
+      <author>info@devopstrio.co.uk (Digital Team)</author>
+    </item>
+    <item>
+      <title>How Zero Trust Helps Reduce Multi-Cloud Security Risks by 60%</title>
+      <link>https://devopstrio.co.uk/insights/blogs/6a229dd3b9074df556d032c8</link>
+      <guid isPermaLink="true">https://devopstrio.co.uk/insights/blogs/6a229dd3b9074df556d032c8</guid>
+      <description>Learn how a Zero Trust architecture protects multi-cloud environments by improving visibility, controlling access, reducing cyber risks, and strengthening enterprise cloud security and compliance.</description>
+      <pubDate>Fri, 05 Jun 2026 09:58:43 GMT</pubDate>
+      <author>info@devopstrio.co.uk (Digital Team)</author>
+    </item>
+    <item>
+      <title>Azure AI Studio vs Amazon Bedrock: Which Enterprise AI Platform Is Right for Your Business?</title>
+      <link>https://devopstrio.co.uk/insights/blogs/6a1941d0e996bad9ded56dca</link>
+      <guid isPermaLink="true">https://devopstrio.co.uk/insights/blogs/6a1941d0e996bad9ded56dca</guid>
+      <description>Explore the key differences between Azure AI Studio and Amazon Bedrock, including AI model access, enterprise integration, security, governance, scalability, and Generative AI development capabilities.</description>
+      <pubDate>Fri, 29 May 2026 07:35:44 GMT</pubDate>
+      <author>info@devopstrio.co.uk (Digital Team)</author>
+    </item>
+    <item>
+      <title>Azure Arc at Enterprise Scale: Simplifying Hybrid Cloud Management</title>
+      <link>https://devopstrio.co.uk/insights/blogs/6a193a57e996bad9ded56dbe</link>
+      <guid isPermaLink="true">https://devopstrio.co.uk/insights/blogs/6a193a57e996bad9ded56dbe</guid>
+      <description>Learn how Azure Arc enables enterprises to manage hybrid and multi-cloud infrastructure at scale with unified governance, security, compliance, monitoring, and operational control.</description>
+      <pubDate>Fri, 29 May 2026 07:03:51 GMT</pubDate>
+      <author>info@devopstrio.co.uk (Digital Team)</author>
+    </item>
+    <item>
+      <title>Why Enterprises Choose Oracle Cloud for Secure and Scalable Performance</title>
+      <link>https://devopstrio.co.uk/insights/blogs/6a193108e996bad9ded56da9</link>
+      <guid isPermaLink="true">https://devopstrio.co.uk/insights/blogs/6a193108e996bad9ded56da9</guid>
+      <description>Explore the benefits of Oracle Cloud Infrastructure, including enterprise security, scalable cloud resources, high-performance computing, AI-powered innovation, and hybrid cloud flexibility for modern businesses.</description>
+      <pubDate>Fri, 29 May 2026 06:24:08 GMT</pubDate>
+      <author>info@devopstrio.co.uk (Digital Team)</author>
+    </item>
+    <item>
+      <title>Why Azure Is the Top Choice for Secure Enterprise Cloud Infrastructure</title>
+      <link>https://devopstrio.co.uk/insights/blogs/6a192ad8e996bad9ded56d97</link>
+      <guid isPermaLink="true">https://devopstrio.co.uk/insights/blogs/6a192ad8e996bad9ded56d97</guid>
+      <description>Discover why enterprises choose Microsoft Azure for secure, scalable cloud solutions. Learn how Azure enables cloud migration, cybersecurity, hybrid cloud, AI innovation, and business growth.</description>
+      <pubDate>Fri, 29 May 2026 05:57:44 GMT</pubDate>
+      <author>info@devopstrio.co.uk (Digital Team)</author>
+    </item>
+    <item>
+      <title>Edge Cloud Computing: The Future of Real-Time Data Access and Security</title>
+      <link>https://devopstrio.co.uk/insights/blogs/6a192485e996bad9ded56d8b</link>
+      <guid isPermaLink="true">https://devopstrio.co.uk/insights/blogs/6a192485e996bad9ded56d8b</guid>
+      <description>Discover how edge cloud computing delivers faster, secure real-time data access by reducing latency, improving performance, enhancing cybersecurity, and supporting AI, IoT, and modern enterprise applications.</description>
+      <pubDate>Fri, 29 May 2026 05:30:45 GMT</pubDate>
+      <author>info@devopstrio.co.uk (Digital Team)</author>
+    </item>
+    <item>
+      <title>The Future of AI Search and Retrieval: Faster, Smarter, and More Accurate Results</title>
+      <link>https://devopstrio.co.uk/insights/blogs/6a191ec2e996bad9ded56d7f</link>
+      <guid isPermaLink="true">https://devopstrio.co.uk/insights/blogs/6a191ec2e996bad9ded56d7f</guid>
+      <description>Discover how AI-powered search and retrieval are transforming enterprise intelligence with faster data access, semantic search, vector databases, RAG architectures, and more accurate AI-driven insights.</description>
+      <pubDate>Fri, 29 May 2026 05:06:10 GMT</pubDate>
+      <author>info@devopstrio.co.uk (Digital Team)</author>
+    </item>
+    <item>
+      <title>The Future of Cybersecurity in the Quantum Era: Protecting Data Beyond Traditional Security</title>
+      <link>https://devopstrio.co.uk/insights/blogs/6a1918e3e996bad9ded56d72</link>
+      <guid isPermaLink="true">https://devopstrio.co.uk/insights/blogs/6a1918e3e996bad9ded56d72</guid>
+      <description>Discover how cybersecurity is evolving in the quantum era. Learn how quantum-safe security, post-quantum cryptography, and future-ready cyber resilience help protect enterprise data from emerging threats.</description>
+      <pubDate>Fri, 29 May 2026 04:41:07 GMT</pubDate>
+      <author>info@devopstrio.co.uk (Digital Team)</author>
+    </item>
+    <item>
+      <title>How AI Agents Boost Enterprise Automation and Business Growth</title>
+      <link>https://devopstrio.co.uk/insights/blogs/6a182be3e996bad9ded56d35</link>
+      <guid isPermaLink="true">https://devopstrio.co.uk/insights/blogs/6a182be3e996bad9ded56d35</guid>
+      <description>Discover how enterprise AI agents improve automation, operational efficiency, customer experience, and scalable business growth through intelligent AI-powered solutions.</description>
+      <pubDate>Thu, 28 May 2026 11:49:55 GMT</pubDate>
+      <author>info@devopstrio.co.uk (Digital Team)</author>
+    </item>
+    <item>
+      <title>MLOps to LLMOps: Streamlining AI Model Deployment &amp; Scaling</title>
+      <link>https://devopstrio.co.uk/insights/blogs/6a182155e996bad9ded56d23</link>
+      <guid isPermaLink="true">https://devopstrio.co.uk/insights/blogs/6a182155e996bad9ded56d23</guid>
+      <description>Explore how the shift from MLOps to LLMOps streamlines AI model deployment, scalability, monitoring, and enterprise AI operations for modern businesses.</description>
+      <pubDate>Thu, 28 May 2026 11:04:53 GMT</pubDate>
+      <author>info@devopstrio.co.uk (Digital Team)</author>
+    </item>
+    <item>
+      <title>Cloud Migration Services: Complete Guide to Modern Cloud Transformation</title>
+      <link>https://devopstrio.co.uk/insights/blogs/6a14197ce996bad9ded56cd2</link>
+      <guid isPermaLink="true">https://devopstrio.co.uk/insights/blogs/6a14197ce996bad9ded56cd2</guid>
+      <description>Discover how cloud migration helps businesses reduce costs, improve scalability, strengthen security, and accelerate digital transformation with modern cloud infrastructure solutions.</description>
+      <pubDate>Mon, 25 May 2026 09:42:20 GMT</pubDate>
+      <author>info@devopstrio.co.uk (Digital Team)</author>
+    </item>
+    <item>
+      <title>Cloud Cost Optimization Crisis: Why C-Suite Leaders Are Losing Millions in Hidden Cloud Spend</title>
+      <link>https://devopstrio.co.uk/insights/blogs/6a0ee93ee996bad9ded56c96</link>
+      <guid isPermaLink="true">https://devopstrio.co.uk/insights/blogs/6a0ee93ee996bad9ded56c96</guid>
+      <description>Discover hidden cloud spending risks and learn cloud cost optimization strategies C-suite leaders use to reduce Azure costs and maximize ROI.</description>
+      <pubDate>Thu, 21 May 2026 11:15:10 GMT</pubDate>
+      <author>info@devopstrio.co.uk (Digital Team)</author>
+    </item>
+    <item>
+      <title>How Enterprises Achieved 42% Better Cloud Cost Visibility Through Azure Cost Optimization</title>
+      <link>https://devopstrio.co.uk/insights/blogs/6a0d8efbe996bad9ded56c47</link>
+      <guid isPermaLink="true">https://devopstrio.co.uk/insights/blogs/6a0d8efbe996bad9ded56c47</guid>
+      <description>Improve cloud spend visibility, reduce waste, and optimize Azure costs with smarter governance and insights.</description>
+      <pubDate>Wed, 20 May 2026 10:37:47 GMT</pubDate>
+      <author>info@devopstrio.co.uk (Digital Team)</author>
+    </item>
+    <item>
+      <title>How Devopstrio Helped an eCommerce Brand Achieve 3x Customer Engagement with a Scalable Mobile-First Architecture</title>
+      <link>https://devopstrio.co.uk/insights/blogs/6a0d479935389b2b80e3ceba</link>
+      <guid isPermaLink="true">https://devopstrio.co.uk/insights/blogs/6a0d479935389b2b80e3ceba</guid>
+      <description>A real-world look at how the right technology stack, secure payment systems, and intuitive design can completely transform a brand's digital commerce performance.</description>
+      <pubDate>Wed, 20 May 2026 05:33:13 GMT</pubDate>
+      <author>info@devopstrio.co.uk (Digital team)</author>
+    </item>
+    <item>
+      <title>Devopstrio Global Internship Program Guide 2026 | AI, Cybersecurity, Cloud</title>
+      <link>https://devopstrio.co.uk/insights/blogs/69fc1ee77230edf42505cfb7</link>
+      <guid isPermaLink="true">https://devopstrio.co.uk/insights/blogs/69fc1ee77230edf42505cfb7</guid>
+      <description>Launch your tech career with Devopstrio Global Internship Program in AI, Cybersecurity, Cloud, DevOps &amp; Software Engineering.</description>
+      <pubDate>Mon, 18 May 2026 11:07:30 GMT</pubDate>
+      <author>info@devopstrio.co.uk (Digital Team)</author>
+    </item>
+    <item>
+      <title>AWS RAG Combines Cloud Knowledge Retrieval with AI for Accurate Contextual Responses</title>
+      <link>https://devopstrio.co.uk/insights/blogs/6a0ae9d65b1125696becb1e1</link>
+      <guid isPermaLink="true">https://devopstrio.co.uk/insights/blogs/6a0ae9d65b1125696becb1e1</guid>
+      <description>AWS RAG combines cloud knowledge retrieval with AI to deliver accurate, secure, and context-aware responses.</description>
+      <pubDate>Mon, 18 May 2026 10:30:16 GMT</pubDate>
+      <author>info@devopstrio.co.uk (Esakkiraja S)</author>
+    </item>
+    <item>
+      <title>How Agentic AI on AWS Delivered a 45% Productivity Increase for Institutional Banking Operations</title>
+      <link>https://devopstrio.co.uk/insights/blogs/6a06b0975b1125696becb1bc</link>
+      <guid isPermaLink="true">https://devopstrio.co.uk/insights/blogs/6a06b0975b1125696becb1bc</guid>
+      <description>When Devopstrio deployed an intelligent Agentic AI platform across multi-geography institutional banking teams, the results weren't just measurable they were transformational.</description>
+      <pubDate>Fri, 15 May 2026 05:35:19 GMT</pubDate>
+      <author>info@devopstrio.co.uk (Digital team)</author>
+    </item>
+  </channel>
+</rss>

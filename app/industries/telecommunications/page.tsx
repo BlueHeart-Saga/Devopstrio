@@ -228,6 +228,7 @@ export default function TelecommunicationsPage() {
         overviewDesc1={data.overview.desc1}
         overviewDesc2={data.overview.desc2}
         challenges={mappedOverviewChallenges}
+        image={data.hero.bgImage}
       />
 
       {/* 3. Challenges We Solve */}

@@ -96,11 +96,11 @@ export default function EcosystemLandingPage() {
             {/* Left Column: Text & Metrics */}
             <div className="lg:col-span-7 flex flex-col items-start text-left justify-center z-20">
               {/* Breadcrumb Navigation */}
-              <nav className="flex items-center gap-2 text-xs font-mono text-zinc-555 mb-8">
+              {/* <nav className="flex items-center gap-2 text-xs font-mono text-zinc-555 mb-8">
                 <Link href="/" className="hover:text-rose-500 transition-colors">HOME</Link>
                 <ChevronRight size={10} className="text-zinc-700" />
                 <span className="text-rose-500 font-bold uppercase">ECOSYSTEM</span>
-              </nav>
+              </nav> */}
 
               {/* Heading */}
               <Reveal delay={0.1}>

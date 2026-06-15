@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
 
@@ -36,51 +37,81 @@ const featuredIndustries = [
       { value: "-35%", label: "Maintenance Expenses" },
       { value: "50k/sec", label: "Telemetry Message Rates" }
     ],
-    slug: "manufacturing-iot"
+    slug: "manufacturing"
   }
 ];
 
 export function FeaturedIndustries() {
   return (
-    <section id="featured" className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
-      <div className="max-w-site mx-auto px-6 md:px-12 lg:px-20 text-left">
-        <Reveal className="mb-16">
-          <div className="flex items-center gap-2 mb-4">
+    <section id="featured" className="w-full py-24 bg-[#030303] border-b border-zinc-900/60 relative overflow-hidden text-white">
+      {/* Background Graphic Glow */}
+      <div className="absolute top-[30%] left-[-10%] w-[35%] aspect-square bg-[radial-gradient(circle_at_center,rgba(244,63,94,0.015),transparent_70%)] pointer-events-none z-0" />
 
-            <span className="text-[10px] font-bold tracking-widest uppercase text-rose-500">
-              FEATURED DOMAINS
+      <div className="max-w-site mx-auto px-6 md:px-12 lg:px-16 xl:px-20 relative z-10 text-left">
+        
+        {/* Section Header */}
+        <Reveal className="mb-20">
+          <div className="flex items-center gap-2 mb-4">
+            <span className="text-[11px] font-semibold tracking-[0.25em] uppercase text-zinc-500">
+              Featured Domains
             </span>
           </div>
-          <h2 className="text-2xl md:text-3xl font-light text-white tracking-tight leading-snug">
-            Key specialized <span className="font-semibold text-rose-500">industry solutions</span>
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight leading-tight text-white max-w-2xl">
+            Key specialized <span className="text-[#E11D48]">industry solutions</span>
           </h2>
         </Reveal>
 
+        {/* Rows List */}
         <div className="space-y-12">
           {featuredIndustries.map((feat, idx) => (
             <Reveal key={idx} className="w-full">
-              <div className="bg-zinc-955/10 border border-zinc-900 rounded-3xl p-8 lg:p-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center hover:border-zinc-800 transition-colors">
-                <div className="lg:col-span-7">
-                  <span className="text-[9px] font-mono tracking-widest text-rose-500 uppercase block mb-2">{feat.subtitle}</span>
-                  <h3 className="text-sm font-semibold text-zinc-200 mb-4">{feat.title}</h3>
-                  <p className="text-xs text-zinc-450 leading-relaxed font-light mb-6">{feat.desc}</p>
-                  <span className="text-[10px] text-rose-500 font-semibold inline-flex items-center gap-1 group cursor-pointer">
-                    Explore Specialization <ArrowUpRight size={12} />
-                  </span>
+              <Link
+                href={`/industries/${feat.slug}`}
+                className="group block bg-[#0b0b0c] border border-white/10 rounded-[32px] p-8 lg:p-12 hover:border-rose-500/35 hover:shadow-[0_8px_32px_rgba(244,63,94,0.08)] transition-all duration-300 relative overflow-hidden cursor-pointer"
+              >
+                
+                {/* Subtle Inner Glow on Hover */}
+                <div className="absolute inset-0 bg-gradient-to-br from-[#E11D48]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-0" />
+
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
+                  
+                  {/* Left content block */}
+                  <div className="lg:col-span-7 text-left">
+                    <span className="text-[11px] font-semibold tracking-[0.15em] text-[#E11D48] uppercase block mb-2">
+                      {feat.subtitle}
+                    </span>
+                    <h3 className="text-xl md:text-2xl font-bold text-white mb-4 group-hover:text-[#E11D48] transition-colors duration-300">
+                      {feat.title}
+                    </h3>
+                    <p className="text-xs md:text-sm text-zinc-400 leading-relaxed font-semibold mb-6">
+                      {feat.desc}
+                    </p>
+                    <span className="text-xs text-zinc-500 group-hover:text-white transition-colors duration-300 font-bold inline-flex items-center gap-1.5">
+                      Explore Specialization <ArrowUpRight size={14} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-350" />
+                    </span>
+                  </div>
+
+                  {/* Right metrics block */}
+                  <div className="lg:col-span-5 grid grid-cols-3 gap-6 border-t lg:border-t-0 lg:border-l border-white/10 pt-6 lg:pt-0 lg:pl-12">
+                    {feat.metrics.map((met, mIdx) => (
+                      <div key={mIdx} className="text-left">
+                        <span className="block text-3xl md:text-4xl font-black text-white group-hover:text-[#E11D48] transition-colors duration-300 mb-1">
+                          {met.value}
+                        </span>
+                        <span className="block text-[10px] font-bold tracking-widest text-zinc-500 uppercase leading-snug">
+                          {met.label}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+
                 </div>
 
-                <div className="lg:col-span-5 grid grid-cols-3 gap-4 border-t lg:border-t-0 lg:border-l border-zinc-900 pt-6 lg:pt-0 lg:pl-8">
-                  {feat.metrics.map((met, mIdx) => (
-                    <div key={mIdx} className="text-left">
-                      <span className="block text-2xl font-bold font-mono text-rose-500 mb-1">{met.value}</span>
-                      <span className="block text-[9px] font-mono text-zinc-550 uppercase leading-snug">{met.label}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
+              </Link>
             </Reveal>
           ))}
         </div>
+
       </div>
     </section>
   );
