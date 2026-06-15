@@ -2,6 +2,7 @@
 
 import React from "react";
 import { Achievements } from "@/sections/about/Achievements";
+import { AwardsList } from "@/sections/about/AwardsList";
 import { MetricsStats } from "@/sections/about/MetricsStats";
 import { AboutCTA } from "@/sections/about/AboutCTA";
 import { Reveal } from "@/components/ui/Reveal";
@@ -28,6 +29,10 @@ export default function AwardsRecognitionPage() {
       {/* Main Content */}
       <div className="bg-black flex flex-col gap-12">
         <Achievements />
+
+        <div className="border-t border-zinc-900/60">
+          <AwardsList />
+        </div>
         
         <div className="border-t border-zinc-900/60">
           <MetricsStats />
