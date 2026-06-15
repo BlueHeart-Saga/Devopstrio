@@ -214,7 +214,7 @@ export function ServiceDetailTemplate({
 
           <Reveal className="mb-16 text-left">
             <div className="inline-flex items-center gap-2 mb-4">
-              <span className="h-[1px] w-6 bg-rose-600"></span>
+
               <span className="text-[10px] font-medium tracking-[0.2em] uppercase text-zinc-400">
                 PRACTICE FOCUS
               </span>
@@ -253,7 +253,7 @@ export function ServiceDetailTemplate({
           <div className="grid grid-cols-1 lg:grid-cols-[0.8fr_1.2fr] gap-12 lg:gap-16 items-start">
             <Reveal className="text-left">
               <div className="inline-flex items-center gap-2 mb-4">
-                <span className="h-[1px] w-6 bg-rose-600"></span>
+
                 <span className="text-[10px] font-medium tracking-[0.2em] uppercase text-zinc-400">
                   STACK DETAILS
                 </span>
@@ -283,7 +283,7 @@ export function ServiceDetailTemplate({
         <div className="max-w-site mx-auto px-6 md:px-12 lg:px-16 xl:px-20">
           <Reveal className="mb-16 text-center">
             <div className="inline-flex items-center gap-2 mb-4">
-              <span className="h-[1px] w-6 bg-rose-600"></span>
+
               <span className="text-[10px] font-medium tracking-[0.2em] uppercase text-zinc-400">
                 PRACTICE ROADMAP
               </span>
@@ -359,7 +359,7 @@ export function ServiceDetailTemplate({
         <div className="max-w-3xl mx-auto px-6">
           <Reveal className="mb-16 text-center">
             <div className="inline-flex items-center gap-2 mb-4">
-              <span className="h-[1px] w-6 bg-rose-600"></span>
+
               <span className="text-[10px] font-medium tracking-[0.2em] uppercase text-zinc-400">
                 FAQ
               </span>
@@ -402,7 +402,7 @@ export function ServiceDetailTemplate({
         <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
           <Reveal>
             <div className="inline-flex items-center gap-2 mb-4">
-              <span className="h-[1px] w-6 bg-rose-600"></span>
+
               <span className="text-[10px] font-medium tracking-[0.2em] uppercase text-zinc-400">
                 GET IN TOUCH
               </span>

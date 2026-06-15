@@ -37,7 +37,16 @@ try {
 }
 
 const nextConfig: NextConfig = {
-  outputFileTracingRoot: path.resolve(__dirname)
+  outputFileTracingRoot: path.resolve(__dirname),
+  distDir: process.env.NODE_ENV === "development" ? ".next-dev" : ".next",
+  async rewrites() {
+    return [
+      {
+        source: "/api/insights-proxy/api/:path*",
+        destination: "https://mediahub-backend-docker-hgh6hzgacraqbhb2.southindia-01.azurewebsites.net/api/:path*",
+      },
+    ];
+  },
 };
 
 export default nextConfig;

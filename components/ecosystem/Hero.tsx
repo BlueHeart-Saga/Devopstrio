@@ -11,82 +11,129 @@ export interface HeroProps {
   subtitle: string;
   stats?: { value: string; label: string }[];
   breadcrumbs: { label: string; href?: string }[];
+  cta?: { label: string; href: string };
+  imageSrc?: string;
 }
 
-export function Hero({ badge, title, subtitle, stats, breadcrumbs }: HeroProps) {
+export function Hero({ badge, title, subtitle, stats, breadcrumbs, cta, imageSrc }: HeroProps) {
+  const words = title.split(" ");
+  const lastWord = words.pop();
+  const remainingText = words.join(" ");
+
   return (
-    <section className="relative overflow-hidden bg-black text-white pt-32 pb-16 px-6 border-b border-zinc-900/60">
-      {/* Dynamic ambient glowing backgrounds */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(225,29,72,0.06),transparent_50%)] pointer-events-none" />
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#09090b_1px,transparent_1px),linear-gradient(to_bottom,#09090b_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none" />
+    <section className="relative w-full min-h-[80vh] flex items-center bg-[#030303] text-white pt-20 pb-16 lg:pt-20 lg:pb-24 overflow-hidden border-b border-zinc-900/60">
+      {/* Background Ambient Glows */}
+      <div className="absolute top-[-10%] right-[-10%] w-[50%] aspect-square bg-[radial-gradient(circle_at_center,rgba(244,63,94,0.06),transparent_70%)] pointer-events-none z-0" />
+      <div className="absolute bottom-[-10%] left-[-10%] w-[50%] aspect-square bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.01),transparent_70%)] pointer-events-none z-0" />
 
-      <div className="max-w-site mx-auto relative z-10">
+      <div className="max-w-7xl mx-auto w-full px-6 md:px-12 lg:px-16 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center w-full">
+          
+          {/* Left Column: Content */}
+          <div className="lg:col-span-7 flex flex-col items-start text-left justify-center z-20">
+            {/* Breadcrumb Navigation */}
+            <nav className="flex items-center gap-2 text-xs font-mono text-zinc-550 mb-8 overflow-x-auto whitespace-nowrap py-1">
+              {breadcrumbs.map((crumb, idx) => {
+                const isLast = idx === breadcrumbs.length - 1;
+                return (
+                  <React.Fragment key={idx}>
+                    {crumb.href ? (
+                      <Link href={crumb.href} className="hover:text-rose-500 transition-colors">
+                        {crumb.label.toUpperCase()}
+                      </Link>
+                    ) : (
+                      <span className="text-rose-500 font-bold uppercase">{crumb.label}</span>
+                    )}
+                    {!isLast && <ChevronRight size={10} className="text-zinc-700 flex-shrink-0" />}
+                  </React.Fragment>
+                );
+              })}
+            </nav>
 
-        {/* Breadcrumb Navigation */}
-        <nav className="flex items-center gap-2 text-xs font-mono text-zinc-550 mb-8 overflow-x-auto whitespace-nowrap py-1">
-          {breadcrumbs.map((crumb, idx) => {
-            const isLast = idx === breadcrumbs.length - 1;
-            return (
-              <React.Fragment key={idx}>
-                {crumb.href ? (
-                  <Link href={crumb.href} className="hover:text-rose-500 transition-colors">
-                    {crumb.label.toUpperCase()}
-                  </Link>
-                ) : (
-                  <span className="text-rose-500 font-bold uppercase">{crumb.label}</span>
-                )}
-                {!isLast && <ChevronRight size={10} className="text-zinc-700 flex-shrink-0" />}
-              </React.Fragment>
-            );
-          })}
-        </nav>
+            {/* Headline block */}
+            <div className="max-w-4xl text-left w-full">
+              {badge && (
+                <Reveal>
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-zinc-800/80 bg-zinc-950/40 mb-6">
+                    <span className="w-1.5 h-1.5 rounded-full bg-rose-600 animate-pulse" />
+                    <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-zinc-400">
+                      {badge}
+                    </span>
+                  </div>
+                </Reveal>
+              )}
 
-        {/* Headline block */}
-        <div className="max-w-4xl text-left">
-          {badge && (
-            <Reveal>
-              <div className="flex items-center gap-2 mb-4">
+              <Reveal delay={0.1}>
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold tracking-tight leading-[1.12] text-white mb-6">
+                  {remainingText ? (
+                    <>
+                      {remainingText}
+                      <br />
+                      <span className="text-[#E11D48] whitespace-nowrap">{lastWord}</span>
+                    </>
+                  ) : (
+                    title
+                  )}
+                </h1>
+              </Reveal>
 
-                <span className="text-[10px] font-bold tracking-widest uppercase text-rose-500">
-                  {badge}
-                </span>
-              </div>
-            </Reveal>
-          )}
+              <Reveal delay={0.2}>
+                <p className="text-zinc-400 text-xs sm:text-sm md:text-base leading-relaxed font-semibold max-w-xl mb-8">
+                  {subtitle}
+                </p>
+              </Reveal>
+            </div>
 
-          <Reveal delay={0.05}>
-            <h1 className="text-4xl md:text-6xl font-light tracking-tight leading-tight mb-6 text-white">
-              {title}
-            </h1>
-          </Reveal>
-
-          <Reveal delay={0.1}>
-            <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-light max-w-3xl mb-12">
-              {subtitle}
-            </p>
-          </Reveal>
-        </div>
-
-        {/* Metrics Row */}
-        {stats && stats.length > 0 && (
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
-            {stats.map((stat, idx) => (
-              <Reveal key={idx} delay={idx * 0.05}>
-                <div className="bg-zinc-950/20 border border-zinc-900/80 rounded-2xl p-5 hover:border-zinc-800 hover:bg-zinc-900/5 transition-all duration-300 group cursor-pointer relative overflow-hidden">
-                  <div className="absolute top-0 right-0 w-28 h-28 bg-[radial-gradient(circle_at_center,rgba(244,63,94,0.015),transparent_75%)] opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
-
-                  <span className="block text-3xl font-bold font-mono text-rose-500 mb-1 group-hover:scale-105 transition-transform duration-300 origin-left">
-                    {stat.value}
-                  </span>
-                  <span className="block text-[10px] font-mono tracking-wider text-zinc-550 uppercase">
-                    {stat.label}
-                  </span>
+            {/* CTA Buttons */}
+            {cta && (
+              <Reveal delay={0.25}>
+                <div className="flex flex-wrap gap-4 items-center justify-start mb-8">
+                  <a
+                    className="inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white transition-all duration-300 hover:shadow-[0_0_25px_rgba(225,29,72,0.35)] hover:-translate-y-0.5"
+                    href={cta.href}
+                  >
+                    {cta.label}
+                    <span className="ml-2">→</span>
+                  </a>
                 </div>
               </Reveal>
-            ))}
+            )}
+
+            {/* Metrics Row */}
+            {stats && stats.length > 0 && (
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 w-full mt-4">
+                {stats.map((stat, idx) => (
+                  <Reveal key={idx} delay={0.3 + idx * 0.05}>
+                    <div className="bg-zinc-950/20 border border-zinc-900/80 rounded-xl p-4 hover:border-zinc-800 hover:bg-zinc-900/5 transition-all duration-300 group cursor-pointer relative overflow-hidden">
+                      <div className="absolute top-0 right-0 w-28 h-28 bg-[radial-gradient(circle_at_center,rgba(244,63,94,0.015),transparent_75%)] opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+
+                      <span className="block text-2xl font-bold font-mono text-rose-500 mb-1 group-hover:scale-105 transition-transform duration-300 origin-left">
+                        {stat.value}
+                      </span>
+                      <span className="block text-[8px] font-mono tracking-wider text-zinc-550 uppercase leading-snug">
+                        {stat.label}
+                      </span>
+                    </div>
+                  </Reveal>
+                ))}
+              </div>
+            )}
           </div>
-        )}
+
+          {/* Right Column: Ecosystem Image */}
+          <div className="lg:col-span-5 flex items-center justify-center lg:justify-end z-10 w-full">
+            <Reveal delay={0.2} className="w-full flex items-center justify-center lg:justify-end">
+              <img
+                src={imageSrc || "/assets/herocard/ecosystempage.png"}
+                alt="Ecosystem Illustration"
+                className="w-full max-w-[320px] sm:max-w-[380px] lg:max-w-[480px] h-auto object-contain select-none"
+              />
+            </Reveal>
+          </div>
+
+        </div>
       </div>
     </section>
   );
 }
+

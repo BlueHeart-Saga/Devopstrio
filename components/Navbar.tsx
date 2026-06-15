@@ -885,7 +885,7 @@ export function Navbar() {
           <Link
             href="/contact"
             onMouseEnter={() => setActiveMenu(null)}
-            className="hidden sm:inline-flex items-center gap-1.5 px-5 py-2 rounded-full text-xs font-semibold tracking-wide text-white border border-rose-600 bg-rose-600/5 hover:bg-rose-600 transition-all duration-300 hover:shadow-[0_0_15px_rgba(225,29,72,0.35)]"
+            className="hidden sm:inline-flex nav-contact-btn"
           >
             Contact Us <ArrowUpRight size={13} />
           </Link>
@@ -1010,7 +1010,7 @@ export function Navbar() {
             <Link
               href="/contact"
               onClick={() => setMobileOpen(false)}
-              className="mt-4 flex items-center justify-center gap-1.5 px-6 py-3 rounded-full text-xs font-semibold text-white bg-gradient-to-r from-red-600 to-rose-600"
+              className="mt-4 flex items-center justify-center nav-contact-btn w-full"
             >
               Contact Us <ArrowUpRight size={14} />
             </Link>

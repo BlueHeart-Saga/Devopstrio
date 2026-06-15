@@ -57,7 +57,7 @@ export function AIDataSubServices() {
 
         <Reveal className="mb-16 text-left">
           <div className="inline-flex items-center gap-2 mb-4">
-            <span className="h-[1px] w-6 bg-rose-600"></span>
+
             <span className="text-[10px] font-medium tracking-[0.2em] uppercase text-zinc-400">
               AI PRACTICE CAPABILITIES
             </span>

@@ -82,68 +82,92 @@ const alliances = [
 
 export default function EcosystemLandingPage() {
   return (
-    <main className="min-h-screen bg-black text-white pt-24 pb-16 font-sans">
+    <main className="min-h-screen bg-black text-white pb-16 font-sans">
       
       {/* 1. Hero Section */}
-      <section className="relative overflow-hidden bg-black text-white pt-20 pb-16 px-6 border-b border-zinc-900/60">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(225,29,72,0.06),transparent_50%)] pointer-events-none" />
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#09090b_1px,transparent_1px),linear-gradient(to_bottom,#09090b_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none" />
+      <section className="relative w-full min-h-[80vh] flex items-center bg-[#030303] text-white pt-20 pb-16 lg:pt-20 lg:pb-24 overflow-hidden border-b border-zinc-900/60">
+        {/* Background Ambient Glows */}
+        <div className="absolute top-[-10%] right-[-10%] w-[50%] aspect-square bg-[radial-gradient(circle_at_center,rgba(244,63,94,0.06),transparent_70%)] pointer-events-none z-0" />
+        <div className="absolute bottom-[-10%] left-[-10%] w-[50%] aspect-square bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.01),transparent_70%)] pointer-events-none z-0" />
 
-        <div className="max-w-site mx-auto relative z-10">
-          <nav className="flex items-center gap-2 text-xs font-mono text-zinc-550 mb-8">
-            <Link href="/" className="hover:text-rose-500 transition-colors">HOME</Link>
-            <ChevronRight size={10} className="text-zinc-700" />
-            <span className="text-rose-500 font-bold uppercase">ECOSYSTEM</span>
-          </nav>
+        <div className="max-w-7xl mx-auto w-full px-6 md:px-12 lg:px-16 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center w-full">
+            
+            {/* Left Column: Text & Metrics */}
+            <div className="lg:col-span-7 flex flex-col items-start text-left justify-center z-20">
+              {/* Breadcrumb Navigation */}
+              <nav className="flex items-center gap-2 text-xs font-mono text-zinc-550 mb-8">
+                <Link href="/" className="hover:text-rose-500 transition-colors">HOME</Link>
+                <ChevronRight size={10} className="text-zinc-700" />
+                <span className="text-rose-500 font-bold uppercase">ECOSYSTEM</span>
+              </nav>
 
-          <div className="max-w-4xl text-left">
-            <Reveal>
-              <div className="flex items-center gap-2 mb-4">
-                <span className="text-[10px] font-bold tracking-widest uppercase text-rose-500">
-                  Global Alliance Ecosystem
-                </span>
-              </div>
-            </Reveal>
+              {/* Eyebrow */}
+              <Reveal>
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-zinc-800/80 bg-zinc-950/40 mb-6">
+                  <span className="w-1.5 h-1.5 rounded-full bg-rose-600 animate-pulse" />
+                  <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-zinc-400">
+                    GLOBAL ALLIANCE ECOSYSTEM
+                  </span>
+                </div>
+              </Reveal>
 
-            <Reveal delay={0.05}>
-              <h1 className="text-4xl md:text-6xl font-light tracking-tight leading-tight mb-6 text-white">
-                Co-engineering the <span className="font-semibold text-rose-500">future of cloud</span> operations
-              </h1>
-            </Reveal>
+              {/* Heading */}
+              <Reveal delay={0.1}>
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold tracking-tight leading-[1.12] text-white mb-6">
+                  Co-engineering the
+                  <br />
+                  <span className="text-[#E11D48] whitespace-nowrap">Future of Cloud.</span>
+                </h1>
+              </Reveal>
 
-            <Reveal delay={0.1}>
-              <p className="text-zinc-450 text-xs md:text-sm leading-relaxed font-light max-w-3xl mb-12">
-                Devopstrio brings together cloud providers, innovation centers, accelerators, and talent channels into a unified network, providing high-performance, compliant, and cost-effective solutions.
-              </p>
-            </Reveal>
-          </div>
+              {/* Description */}
+              <Reveal delay={0.2}>
+                <p className="text-zinc-450 text-xs sm:text-sm md:text-base leading-relaxed font-semibold max-w-xl mb-8">
+                  Devopstrio brings together cloud providers, innovation centers, accelerators, and talent channels into a unified network, providing high-performance, compliant, and cost-effective solutions.
+                </p>
+              </Reveal>
 
-          {/* Quick Metrics */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-8">
-            <Reveal delay={0.15}>
-              <div className="bg-zinc-950/20 border border-zinc-900/80 rounded-2xl p-5 hover:border-zinc-800 transition-colors">
-                <span className="block text-3xl font-bold font-mono text-rose-500 mb-1">50+</span>
-                <span className="block text-[9px] font-mono tracking-wider text-zinc-500 uppercase">Technology Partners</span>
+              {/* Quick Metrics */}
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 w-full mt-4">
+                <Reveal delay={0.15}>
+                  <div className="bg-zinc-950/20 border border-zinc-900/80 rounded-xl p-4 hover:border-zinc-800 transition-colors">
+                    <span className="block text-2xl font-bold font-mono text-rose-500 mb-1">50+</span>
+                    <span className="block text-[8px] font-mono tracking-wider text-zinc-500 uppercase leading-snug">Technology Partners</span>
+                  </div>
+                </Reveal>
+                <Reveal delay={0.2}>
+                  <div className="bg-zinc-950/20 border border-zinc-900/80 rounded-xl p-4 hover:border-zinc-800 transition-colors">
+                    <span className="block text-2xl font-bold font-mono text-rose-500 mb-1">30+</span>
+                    <span className="block text-[8px] font-mono tracking-wider text-zinc-500 uppercase leading-snug">R&D Innovation Labs</span>
+                  </div>
+                </Reveal>
+                <Reveal delay={0.25}>
+                  <div className="bg-zinc-950/20 border border-zinc-900/80 rounded-xl p-4 hover:border-zinc-800 transition-colors">
+                    <span className="block text-2xl font-bold font-mono text-rose-500 mb-1">25+</span>
+                    <span className="block text-[8px] font-mono tracking-wider text-zinc-500 uppercase leading-snug">Owned Products &amp; IP</span>
+                  </div>
+                </Reveal>
+                <Reveal delay={0.3}>
+                  <div className="bg-zinc-950/20 border border-zinc-900/80 rounded-xl p-4 hover:border-zinc-800 transition-colors">
+                    <span className="block text-2xl font-bold font-mono text-rose-500 mb-1">50k+</span>
+                    <span className="block text-[8px] font-mono tracking-wider text-zinc-500 uppercase leading-snug">Community Devs</span>
+                  </div>
+                </Reveal>
               </div>
-            </Reveal>
-            <Reveal delay={0.2}>
-              <div className="bg-zinc-950/20 border border-zinc-900/80 rounded-2xl p-5 hover:border-zinc-800 transition-colors">
-                <span className="block text-3xl font-bold font-mono text-rose-500 mb-1">30+</span>
-                <span className="block text-[9px] font-mono tracking-wider text-zinc-500 uppercase">R&D Innovation Labs</span>
-              </div>
-            </Reveal>
-            <Reveal delay={0.25}>
-              <div className="bg-zinc-950/20 border border-zinc-900/80 rounded-2xl p-5 hover:border-zinc-800 transition-colors">
-                <span className="block text-3xl font-bold font-mono text-rose-500 mb-1">25+</span>
-                <span className="block text-[9px] font-mono tracking-wider text-zinc-500 uppercase">Owned Products & IP</span>
-              </div>
-            </Reveal>
-            <Reveal delay={0.3}>
-              <div className="bg-zinc-950/20 border border-zinc-900/80 rounded-2xl p-5 hover:border-zinc-800 transition-colors">
-                <span className="block text-3xl font-bold font-mono text-rose-500 mb-1">50k+</span>
-                <span className="block text-[9px] font-mono tracking-wider text-zinc-500 uppercase">Community Developers</span>
-              </div>
-            </Reveal>
+            </div>
+
+            {/* Right Column: Ecosystem Image */}
+            <div className="lg:col-span-5 flex items-center justify-center lg:justify-end z-10 w-full">
+              <Reveal delay={0.2} className="w-full flex items-center justify-center lg:justify-end">
+                <img
+                  src="/assets/herocard/ecosystempage.png"
+                  alt="Global Alliance Ecosystem Illustration"
+                  className="w-full max-w-[320px] sm:max-w-[380px] lg:max-w-[480px] h-auto object-contain select-none"
+                />
+              </Reveal>
+            </div>
+
           </div>
         </div>
       </section>
@@ -209,21 +233,138 @@ export default function EcosystemLandingPage() {
         </div>
       </section>
 
-      {/* 3. Ecosystem Architecture Section */}
+       {/* 3. System Architecture Section */}
+      <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60 relative overflow-hidden">
+        {/* Ambient Glow */}
+        <div className="absolute top-[20%] left-[-10%] w-[30%] aspect-square bg-[radial-gradient(circle_at_center,rgba(244,63,94,0.02),transparent_70%)] pointer-events-none z-0" />
+
+        <div className="max-w-7xl mx-auto w-full px-6 md:px-12 lg:px-16 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center w-full">
+            
+            {/* Left Column: Stats & Description */}
+            <div className="lg:col-span-7 flex flex-col items-start text-left justify-center z-20">
+              <Reveal>
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-zinc-800/80 bg-zinc-950/40 mb-6">
+                  <span className="w-1.5 h-1.5 rounded-full bg-rose-600 animate-pulse" />
+                  <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-zinc-400">
+                    SYSTEM ARCHITECTURE
+                  </span>
+                </div>
+              </Reveal>
+
+              <Reveal delay={0.1}>
+                <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-4xl xl:text-5xl font-bold tracking-tight leading-[1.15] text-white mb-6">
+                  A Unified Ecosystem Built
+                  <br />
+                  <span className="text-[#E11D48] whitespace-nowrap">for Extreme Scale</span>
+                </h2>
+              </Reveal>
+
+              <Reveal delay={0.2}>
+                <p className="text-zinc-400 text-xs sm:text-sm leading-relaxed font-semibold max-w-xl mb-12">
+                  We combine industry-leading cloud platforms, container engines, and continuous integration pipelines into a single, cohesive delivery system. This unified fabric empowers our engineering teams to deploy resilient, zero-downtime solutions instantly.
+                </p>
+              </Reveal>
+
+              {/* Stats Row */}
+              <div className="grid grid-cols-3 gap-6 sm:gap-12 w-full border-t border-zinc-900/60 pt-8">
+                <Reveal delay={0.25}>
+                  <div>
+                    <span className="block text-2xl sm:text-3xl font-bold font-mono text-white mb-2">200+</span>
+                    <span className="block text-[8px] sm:text-[9px] font-mono tracking-widest text-zinc-550 uppercase leading-snug">Certified Tech Integrations</span>
+                  </div>
+                </Reveal>
+                <Reveal delay={0.3}>
+                  <div>
+                    <span className="block text-2xl sm:text-3xl font-bold font-mono text-white mb-2">99.999%</span>
+                    <span className="block text-[8px] sm:text-[9px] font-mono tracking-widest text-zinc-550 uppercase leading-snug">Production Pipeline SLA</span>
+                  </div>
+                </Reveal>
+                <Reveal delay={0.35}>
+                  <div>
+                    <span className="block text-2xl sm:text-3xl font-bold font-mono text-white mb-2">24/7</span>
+                    <span className="block text-[8px] sm:text-[9px] font-mono tracking-widest text-zinc-550 uppercase leading-snug">Follow-the-Sun Support</span>
+                  </div>
+                </Reveal>
+              </div>
+            </div>
+
+            {/* Right Column: Technology Fabric Logo Grid with Tooltips */}
+            <div className="lg:col-span-5 w-full flex justify-center lg:justify-end z-20">
+              <Reveal delay={0.2} className="w-full max-w-[440px]">
+                <div className="bg-zinc-950/20 border border-zinc-900/80 rounded-2xl p-6 sm:p-8 backdrop-blur-md relative overflow-hidden">
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-[radial-gradient(circle_at_center,rgba(244,63,94,0.015),transparent_75%)] pointer-events-none" />
+                  
+                  <h3 className="text-xs font-bold uppercase tracking-wider text-zinc-300 mb-2">
+                    Our Technology Fabric
+                  </h3>
+                  <p className="text-[10px] text-zinc-500 leading-relaxed mb-6 font-semibold">
+                    Hover over the nodes to explore the integrated tools in our delivery pipeline:
+                  </p>
+
+                  <div className="grid grid-cols-3 gap-3">
+                    {alliances.map((partner, index) => (
+                      <div 
+                        className="group/logo relative h-16 bg-white border border-zinc-900 rounded-xl flex items-center justify-center p-3 hover:border-rose-500/20 hover:shadow-[0_0_20px_rgba(225,29,72,0.1)] transition-all duration-300 cursor-pointer"
+                        key={index}
+                      >
+                        <Image 
+                          src={partner.path} 
+                          alt={partner.name} 
+                          width={60} 
+                          height={20}
+                          className="max-h-6 object-contain opacity-80 group-hover/logo:opacity-100 transition-opacity duration-300"
+                          unoptimized
+                        />
+                        {/* Tooltip */}
+                        <span className="absolute bottom-full left-[50%] translate-x-[-50%] mb-2 bg-rose-600 text-white text-[8px] font-bold py-1 px-2.5 rounded shadow-lg opacity-0 pointer-events-none group-hover/logo:opacity-100 transition-all duration-200 whitespace-nowrap z-50">
+                          {partner.name}
+                        </span>
+                      </div>
+                    ))}
+                    {/* Add extra standard tools */}
+                    <div className="group/logo relative h-16 bg-zinc-900/40 border border-zinc-900 rounded-xl flex items-center justify-center p-3 hover:border-rose-500/25 hover:shadow-[0_0_20px_rgba(225,29,72,0.1)] transition-all duration-300 cursor-pointer text-zinc-400 hover:text-white">
+                      <span className="text-[10px] font-mono font-bold">K8S</span>
+                      <span className="absolute bottom-full left-[50%] translate-x-[-50%] mb-2 bg-rose-600 text-white text-[8px] font-bold py-1 px-2.5 rounded shadow-lg opacity-0 pointer-events-none group-hover/logo:opacity-100 transition-all duration-200 whitespace-nowrap z-50">
+                        Kubernetes
+                      </span>
+                    </div>
+                    <div className="group/logo relative h-16 bg-zinc-900/40 border border-zinc-900 rounded-xl flex items-center justify-center p-3 hover:border-rose-500/25 hover:shadow-[0_0_20px_rgba(225,29,72,0.1)] transition-all duration-300 cursor-pointer text-zinc-400 hover:text-white">
+                      <span className="text-[10px] font-mono font-bold">TF</span>
+                      <span className="absolute bottom-full left-[50%] translate-x-[-50%] mb-2 bg-rose-600 text-white text-[8px] font-bold py-1 px-2.5 rounded shadow-lg opacity-0 pointer-events-none group-hover/logo:opacity-100 transition-all duration-200 whitespace-nowrap z-50">
+                        Terraform
+                      </span>
+                    </div>
+                    <div className="group/logo relative h-16 bg-zinc-900/40 border border-zinc-900 rounded-xl flex items-center justify-center p-3 hover:border-rose-500/25 hover:shadow-[0_0_20px_rgba(225,29,72,0.1)] transition-all duration-300 cursor-pointer text-zinc-400 hover:text-white">
+                      <span className="text-[10px] font-mono font-bold">VAULT</span>
+                      <span className="absolute bottom-full left-[50%] translate-x-[-50%] mb-2 bg-rose-600 text-white text-[8px] font-bold py-1 px-2.5 rounded shadow-lg opacity-0 pointer-events-none group-hover/logo:opacity-100 transition-all duration-200 whitespace-nowrap z-50">
+                        HashiCorp Vault
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </Reveal>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* 4. Ecosystem Topology Section */}
       <section className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
-        <div className="max-w-site mx-auto px-6 md:px-12 lg:px-20 text-left">
+        <div className="max-w-7xl mx-auto w-full px-6 md:px-12 lg:px-16 text-left">
           
           <Reveal className="mb-16">
             <div className="flex items-center gap-2 mb-4">
-              <span className="h-[2px] w-6 bg-rose-600"></span>
-              <span className="text-[10px] font-bold tracking-widest uppercase text-rose-500">
-                Ecosystem Topology
+              <span className="w-1.5 h-1.5 rounded-full bg-rose-600 animate-pulse" />
+              <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-zinc-400">
+                ECOSYSTEM TOPOLOGY
               </span>
             </div>
             <h2 className="text-2xl md:text-3xl font-light text-white tracking-tight leading-snug">
               Connected alliance <span className="font-semibold text-rose-500">dataflow & layers</span>
             </h2>
-            <p className="text-zinc-550 text-xs md:text-sm font-light leading-relaxed mt-2 max-w-xl">
+            <p className="text-zinc-555 text-xs md:text-sm font-semibold leading-relaxed mt-2 max-w-xl">
               How our technology partners, accelerators, and R&D labs collaborate to deploy workloads.
             </p>
           </Reveal>
@@ -245,7 +386,7 @@ export default function EcosystemLandingPage() {
                 <h4 className="text-xs font-semibold text-zinc-200 mb-2">
                   Cloud Infrastructure
                 </h4>
-                <p className="text-[10px] text-zinc-500 leading-relaxed font-light">
+                <p className="text-[10px] text-zinc-550 leading-relaxed font-light">
                   Raw public cloud partitions, IAM roles, and storage components hosted on AWS, Azure, and Google Cloud.
                 </p>
               </div>
@@ -262,7 +403,7 @@ export default function EcosystemLandingPage() {
                 <h4 className="text-xs font-semibold text-zinc-200 mb-2">
                   Devopstrio Accelerators
                 </h4>
-                <p className="text-[10px] text-zinc-500 leading-relaxed font-light">
+                <p className="text-[10px] text-zinc-550 leading-relaxed font-light">
                   Pre-compiled landing zones, Terraform boilerplates, and deployment blueprints configured for SOC-2 compliance.
                 </p>
               </div>
@@ -279,7 +420,7 @@ export default function EcosystemLandingPage() {
                 <h4 className="text-xs font-semibold text-zinc-200 mb-2">
                   Cognitive Engines
                 </h4>
-                <p className="text-[10px] text-zinc-500 leading-relaxed font-light">
+                <p className="text-[10px] text-zinc-550 leading-relaxed font-light">
                   Private RAG configurations, semantic LLM routers, agentic workflows, and low-latency databases.
                 </p>
               </div>
@@ -296,7 +437,7 @@ export default function EcosystemLandingPage() {
                 <h4 className="text-xs font-semibold text-zinc-200 mb-2">
                   Client Environments
                 </h4>
-                <p className="text-[10px] text-zinc-500 leading-relaxed font-light">
+                <p className="text-[10px] text-zinc-550 leading-relaxed font-light">
                   Production-ready business endpoints, automated retries, and active OpenTelemetry performance trackers.
                 </p>
               </div>
@@ -307,15 +448,15 @@ export default function EcosystemLandingPage() {
         </div>
       </section>
 
-      {/* 4. Innovation Labs Section */}
+      {/* 5. Innovation Labs Section */}
       <section className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
-        <div className="max-w-site mx-auto px-6 md:px-12 lg:px-20 text-left">
+        <div className="max-w-7xl mx-auto w-full px-6 md:px-12 lg:px-16 text-left">
           
           <Reveal className="mb-16">
             <div className="flex items-center gap-2 mb-4">
-              <span className="h-[2px] w-6 bg-rose-600"></span>
-              <span className="text-[10px] font-bold tracking-widest uppercase text-rose-500">
-                Innovation Centers
+              <span className="w-1.5 h-1.5 rounded-full bg-rose-600 animate-pulse" />
+              <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-zinc-400">
+                INNOVATION CENTERS
               </span>
             </div>
             <h2 className="text-2xl md:text-3xl font-light text-white tracking-tight leading-snug">
@@ -390,182 +531,252 @@ export default function EcosystemLandingPage() {
         </div>
       </section>
 
-      {/* 5. Technology Stack Section */}
-      <section className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
-        <div className="max-w-site mx-auto px-6 md:px-12 lg:px-20 text-left">
+      {/* 6. Reference Architectures / Delivery Stacks Section */}
+      <section className="w-full py-24 bg-black border-b border-zinc-900/60 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto w-full px-6 md:px-12 lg:px-16 relative z-10 text-left">
           
           <Reveal className="mb-16">
             <div className="flex items-center gap-2 mb-4">
-              <span className="h-[2px] w-6 bg-rose-600"></span>
-              <span className="text-[10px] font-bold tracking-widest uppercase text-rose-500">
-                Integrations Catalog
+              <span className="w-1.5 h-1.5 rounded-full bg-rose-600 animate-pulse" />
+              <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-zinc-400">
+                REFERENCE ARCHITECTURES
               </span>
             </div>
             <h2 className="text-2xl md:text-3xl font-light text-white tracking-tight leading-snug">
-              Ecosystem <span className="font-semibold text-rose-500">technology integrations</span>
+              Our standard <span className="font-semibold text-rose-500">delivery stacks</span>
             </h2>
+            <p className="text-zinc-550 text-xs md:text-sm font-semibold leading-relaxed mt-2 max-w-xl">
+              Pre-validated, robust technical templates designed to spin up secure production infrastructure in minutes.
+            </p>
           </Reveal>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             
-            {/* Tech Box 1 */}
+            {/* Stack 1 */}
             <Reveal className="h-full">
-              <div className="h-full bg-zinc-950/20 border border-zinc-900 rounded-2xl p-6 hover:border-zinc-800 transition-colors">
-                <h4 className="text-xs font-semibold text-zinc-200 mb-3 border-b border-zinc-900 pb-2 uppercase tracking-wider font-mono">
-                  Cloud Platforms
-                </h4>
-                <ul className="space-y-2 text-[10px] text-zinc-450 font-light">
-                  <li>Amazon Web Services (AWS)</li>
-                  <li>Microsoft Azure Cloud</li>
-                  <li>Google Cloud Platform (GCP)</li>
-                  <li>Kubernetes Container Orchestration</li>
-                </ul>
+              <div className="h-full bg-zinc-950/20 border border-zinc-900/80 rounded-2xl p-6 sm:p-8 hover:border-rose-500/25 transition-all duration-300 group relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-24 h-24 bg-[radial-gradient(circle_at_center,rgba(244,63,94,0.01),transparent_75%)] pointer-events-none" />
+                <h3 className="text-sm font-semibold text-zinc-150 group-hover:text-white transition-colors mb-3">
+                  Enterprise DevOps Stack
+                </h3>
+                <p className="text-xs text-zinc-400 leading-relaxed mb-6 font-semibold">
+                  Designed for scalable, resilient container deployments on secure clouds.
+                </p>
+                <div className="flex flex-wrap gap-2 pt-4 border-t border-zinc-900/60">
+                  {["Kubernetes", "Terraform", "AWS Cloud", "Docker Engine", "GitLab CI"].map((tag, i) => (
+                    <span key={i} className="px-2 py-1 rounded bg-zinc-900/60 border border-zinc-800/80 text-zinc-500 text-[9px] font-mono">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
               </div>
             </Reveal>
 
-            {/* Tech Box 2 */}
+            {/* Stack 2 */}
             <Reveal delay={0.05} className="h-full">
-              <div className="h-full bg-zinc-950/20 border border-zinc-900 rounded-2xl p-6 hover:border-zinc-800 transition-colors">
-                <h4 className="text-xs font-semibold text-zinc-200 mb-3 border-b border-zinc-900 pb-2 uppercase tracking-wider font-mono">
-                  Automation & IaC
-                </h4>
-                <ul className="space-y-2 text-[10px] text-zinc-450 font-light">
-                  <li>Terraform & OpenTofu Codification</li>
-                  <li>Ansible Configuration Automation</li>
-                  <li>ArgoCD GitOps Deployment</li>
-                  <li>GitHub Actions Pipeline Engines</li>
-                </ul>
+              <div className="h-full bg-zinc-950/20 border border-zinc-900/80 rounded-2xl p-6 sm:p-8 hover:border-rose-500/25 transition-all duration-300 group relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-24 h-24 bg-[radial-gradient(circle_at_center,rgba(244,63,94,0.01),transparent_75%)] pointer-events-none" />
+                <h3 className="text-sm font-semibold text-zinc-150 group-hover:text-white transition-colors mb-3">
+                  SecOps & Vault Stack
+                </h3>
+                <p className="text-xs text-zinc-400 leading-relaxed mb-6 font-semibold">
+                  Implements strict zero-trust networks with automated compliance guardrails.
+                </p>
+                <div className="flex flex-wrap gap-2 pt-4 border-t border-zinc-900/60">
+                  {["HashiCorp Vault", "Zero-Trust Auth", "SonarQube SAST", "OWASP", "IAM Roles"].map((tag, i) => (
+                    <span key={i} className="px-2 py-1 rounded bg-zinc-900/60 border border-zinc-800/80 text-zinc-500 text-[9px] font-mono">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
               </div>
             </Reveal>
 
-            {/* Tech Box 3 */}
+            {/* Stack 3 */}
             <Reveal delay={0.1} className="h-full">
-              <div className="h-full bg-zinc-950/20 border border-zinc-900 rounded-2xl p-6 hover:border-zinc-800 transition-colors">
-                <h4 className="text-xs font-semibold text-zinc-200 mb-3 border-b border-zinc-900 pb-2 uppercase tracking-wider font-mono">
-                  AI & Data Platforms
-                </h4>
-                <ul className="space-y-2 text-[10px] text-zinc-450 font-light">
-                  <li>PyTorch Neural Foundations</li>
-                  <li>LangChain / LangGraph Orchestrators</li>
-                  <li>Pinecone Vector Indexes</li>
-                  <li>Qdrant High-Performance Stores</li>
-                </ul>
-              </div>
-            </Reveal>
-
-            {/* Tech Box 4 */}
-            <Reveal delay={0.15} className="h-full">
-              <div className="h-full bg-zinc-950/20 border border-zinc-900 rounded-2xl p-6 hover:border-zinc-800 transition-colors">
-                <h4 className="text-xs font-semibold text-zinc-200 mb-3 border-b border-zinc-900 pb-2 uppercase tracking-wider font-mono">
-                  Observability & SRE
-                </h4>
-                <ul className="space-y-2 text-[10px] text-zinc-450 font-light">
-                  <li>OpenTelemetry Tracing Frameworks</li>
-                  <li>Prometheus Latency Collectors</li>
-                  <li>Grafana Unified Telemetry Views</li>
-                  <li>Datadog Dashboard Monitoring</li>
-                </ul>
+              <div className="h-full bg-zinc-950/20 border border-zinc-900/80 rounded-2xl p-6 sm:p-8 hover:border-rose-500/25 transition-all duration-300 group relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-24 h-24 bg-[radial-gradient(circle_at_center,rgba(244,63,94,0.01),transparent_75%)] pointer-events-none" />
+                <h3 className="text-sm font-semibold text-zinc-150 group-hover:text-white transition-colors mb-3">
+                  Next-Gen AI / App Stack
+                </h3>
+                <p className="text-xs text-zinc-400 leading-relaxed mb-6 font-semibold">
+                  For custom machine learning workflows and premium visual interfaces.
+                </p>
+                <div className="flex flex-wrap gap-2 pt-4 border-t border-zinc-900/60">
+                  {["Next.js", "FastAPI MLOps", "React Engine", "Vite Bundler", "Node.js API"].map((tag, i) => (
+                    <span key={i} className="px-2 py-1 rounded bg-zinc-900/60 border border-zinc-800/80 text-zinc-500 text-[9px] font-mono">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
               </div>
             </Reveal>
 
           </div>
-
         </div>
       </section>
 
-      {/* 6. Strategic Partnerships Section */}
-      <section className="py-24 bg-black border-b border-zinc-900/60 relative">
-        <div className="max-w-site mx-auto px-6 md:px-12 lg:px-20 text-left">
-          
-          <Reveal className="mb-16">
-            <div className="flex items-center gap-2 mb-4">
-              <span className="h-[2px] w-6 bg-rose-600"></span>
-              <span className="text-[10px] font-bold tracking-widest uppercase text-rose-500">
-                Alliances
-              </span>
-            </div>
-            <h2 className="text-2xl md:text-3xl font-light text-white tracking-tight leading-snug">
-              Strategic <span className="font-semibold text-rose-500">partnership network</span>
-            </h2>
-          </Reveal>
+      {/* 7. Business Outcomes Section */}
+      <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60 relative overflow-hidden">
+        {/* Ambient background glow */}
+        <div className="absolute bottom-[-10%] right-[-10%] w-[40%] aspect-square bg-[radial-gradient(circle_at_center,rgba(244,63,94,0.03),transparent_70%)] pointer-events-none z-0" />
 
-          <div className="grid grid-cols-2 md:grid-cols-6 gap-6 items-center">
-            {alliances.map((partner, i) => (
-              <Reveal key={i} delay={i * 0.05} className="h-full">
-                <div className="h-24 bg-zinc-950/20 border border-zinc-900 rounded-2xl flex items-center justify-center p-6 grayscale hover:grayscale-0 hover:border-zinc-850 hover:bg-zinc-900/5 transition-all duration-300">
-                  <Image
-                    src={partner.path}
-                    alt={partner.name}
-                    width={100}
-                    height={32}
-                    className="object-contain max-h-8"
-                    unoptimized
-                  />
+        <div className="max-w-7xl mx-auto w-full px-6 md:px-12 lg:px-16 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center w-full">
+            
+            {/* Left Column: Outcome list */}
+            <div className="lg:col-span-7 flex flex-col items-start text-left justify-center z-20">
+              <Reveal>
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-zinc-800/80 bg-zinc-950/40 mb-6">
+                  <span className="w-1.5 h-1.5 rounded-full bg-rose-600 animate-pulse" />
+                  <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-zinc-400">
+                    QUANTIFIABLE IMPACT
+                  </span>
                 </div>
               </Reveal>
-            ))}
+
+              <Reveal delay={0.1}>
+                <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-4xl xl:text-5xl font-bold tracking-tight leading-[1.15] text-white mb-6">
+                  Proven Business Results
+                  <br />
+                  <span className="text-[#E11D48] whitespace-nowrap">for Our Clients</span>
+                </h2>
+              </Reveal>
+
+              <Reveal delay={0.2}>
+                <p className="text-zinc-400 text-xs sm:text-sm leading-relaxed font-semibold max-w-xl mb-10">
+                  By leveraging our integrated ecosystems, enterprises achieve unprecedented efficiency gains, drastically reduced time-to-market, and ironclad security guardrails.
+                </p>
+              </Reveal>
+
+              {/* Outcome rows */}
+              <div className="flex flex-col gap-6 w-full">
+                {[
+                  {
+                    title: "85% Reduction in Manual Processes",
+                    desc: "GitOps and automated IaC deployments replace human error patterns completely."
+                  },
+                  {
+                    title: "99.999% Platform Uptime Maintained",
+                    desc: "Self-healing Kubernetes clusters adjust capacity dynamically under traffic surges."
+                  },
+                  {
+                    title: "70% Faster Pipeline Delivery Loops",
+                    desc: "Pre-validated container patterns accelerate testing cycles across dev teams."
+                  }
+                ].map((item, idx) => (
+                  <Reveal key={idx} delay={0.25 + idx * 0.05}>
+                    <div className="flex items-start gap-4">
+                      <div className="w-6 h-6 rounded-md bg-rose-950/15 border border-rose-900/20 flex items-center justify-center text-rose-500 mt-0.5 flex-shrink-0">
+                        <CheckCircle2 size={13} />
+                      </div>
+                      <div>
+                        <strong className="block text-xs font-bold text-white mb-1">
+                          {item.title}
+                        </strong>
+                        <p className="text-[11px] text-zinc-450 leading-relaxed font-semibold">
+                          {item.desc}
+                        </p>
+                      </div>
+                    </div>
+                  </Reveal>
+                ))}
+              </div>
+            </div>
+
+            {/* Right Column: Purple Azure Partnership Announcement Card */}
+            <div className="lg:col-span-5 w-full flex justify-center lg:justify-end z-20">
+              <Reveal delay={0.2} className="w-full max-w-[440px]">
+                <div className="bg-gradient-to-br from-[#100816] to-[#170b1b] border border-[#281438] hover:border-rose-500/35 rounded-3xl p-8 transition-all duration-300 relative overflow-hidden group">
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-[radial-gradient(circle_at_center,rgba(225,29,72,0.06),transparent_75%)] pointer-events-none" />
+                  
+                  <span className="inline-block px-2.5 py-1 rounded bg-rose-950/30 border border-rose-900/40 text-[#E11D48] text-[8px] font-bold tracking-wider uppercase mb-6">
+                    STRATEGIC COLLABORATION
+                  </span>
+
+                  <h3 className="text-base sm:text-lg font-bold text-white leading-snug mb-4 group-hover:text-rose-400 transition-colors">
+                    Devopstrio Partners with Azure to Accelerate Enterprise AI Adoption
+                  </h3>
+                  
+                  <p className="text-[11px] text-zinc-400 leading-relaxed mb-8 font-semibold">
+                    We are proud to announce a multi-year technical partnership aimed at accelerating secure cloud-native deployment patterns and custom cognitive service integrations for healthcare and fintech industries.
+                  </p>
+
+                  <Link 
+                    href="/insights-knowledge/white-paper" 
+                    className="inline-flex items-center gap-1.5 text-xs font-bold text-white group-hover:text-rose-500 transition-colors"
+                  >
+                    Read the Full Announcement <ChevronRight size={14} className="group-hover:translate-x-0.5 transition-transform" />
+                  </Link>
+                </div>
+              </Reveal>
+            </div>
+
           </div>
         </div>
       </section>
 
-      {/* 7. Engineering Excellence Section */}
-      <section className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
-        <div className="max-w-site mx-auto px-6 md:px-12 lg:px-20 text-left">
+      {/* 8. Rationale Section */}
+      <section className="w-full py-24 bg-black border-b border-zinc-900/60 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto w-full px-6 md:px-12 lg:px-16 relative z-10 text-left">
           
           <Reveal className="mb-16">
             <div className="flex items-center gap-2 mb-4">
-              <span className="h-[2px] w-6 bg-rose-600"></span>
-              <span className="text-[10px] font-bold tracking-widest uppercase text-rose-500">
-                Excellence Benchmarks
+              <span className="w-1.5 h-1.5 rounded-full bg-rose-600 animate-pulse" />
+              <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-zinc-400">
+                RATIONALE
               </span>
             </div>
             <h2 className="text-2xl md:text-3xl font-light text-white tracking-tight leading-snug">
-              Rigorous <span className="font-semibold text-rose-500">engineering standards</span>
+              Why partner with <span className="font-semibold text-rose-500">Devopstrio?</span>
             </h2>
+            <p className="text-zinc-550 text-xs md:text-sm font-semibold leading-relaxed mt-2 max-w-xl">
+              We translate raw computing infrastructure into highly reliable business capabilities.
+            </p>
           </Reveal>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             
-            {/* Standard 1 */}
+            {/* Block 1 */}
             <Reveal className="h-full">
-              <div className="h-full bg-zinc-950/20 border border-zinc-900 rounded-2xl p-6 relative group hover:border-rose-500/20 transition-all duration-300">
-                <div className="w-8 h-8 rounded-lg bg-rose-950/15 border border-rose-900/20 flex items-center justify-center text-rose-500 mb-4">
-                  <CheckCircle2 size={15} />
+              <div className="h-full bg-zinc-950/20 border border-zinc-900/80 rounded-2xl p-6 sm:p-8 hover:border-rose-500/25 transition-all duration-300 group relative overflow-hidden">
+                <div className="w-10 h-10 rounded-xl bg-rose-950/15 border border-rose-900/20 flex items-center justify-center text-rose-500 mb-6 group-hover:bg-rose-950/25 group-hover:border-rose-500/30 transition-all duration-300">
+                  <Cpu size={16} />
                 </div>
-                <h4 className="text-xs font-semibold text-zinc-200 mb-2">
-                  Automated Pipeline Testing
-                </h4>
-                <p className="text-[10px] text-zinc-500 leading-relaxed font-light">
+                <h3 className="text-sm font-semibold text-white mb-3">
+                  Engineering Leadership
+                </h3>
+                <p className="text-xs text-zinc-400 leading-relaxed font-semibold">
                   Every code commit runs through automated testing pipelines, executing regression checks, SAST code analysis, and CVE security scans.
                 </p>
               </div>
             </Reveal>
 
-            {/* Standard 2 */}
+            {/* Block 2 */}
             <Reveal delay={0.05} className="h-full">
-              <div className="h-full bg-zinc-950/20 border border-zinc-900 rounded-2xl p-6 relative group hover:border-rose-500/20 transition-all duration-300">
-                <div className="w-8 h-8 rounded-lg bg-rose-950/15 border border-rose-900/20 flex items-center justify-center text-rose-500 mb-4">
-                  <ShieldCheck size={15} />
+              <div className="h-full bg-zinc-950/20 border border-zinc-900/80 rounded-2xl p-6 sm:p-8 hover:border-rose-500/25 transition-all duration-300 group relative overflow-hidden">
+                <div className="w-10 h-10 rounded-xl bg-rose-950/15 border border-rose-900/20 flex items-center justify-center text-rose-500 mb-6 group-hover:bg-rose-950/25 group-hover:border-rose-500/30 transition-all duration-300">
+                  <Workflow size={16} />
                 </div>
-                <h4 className="text-xs font-semibold text-zinc-200 mb-2">
-                  GitOps Configuration State
-                </h4>
-                <p className="text-[10px] text-zinc-500 leading-relaxed font-light">
+                <h3 className="text-sm font-semibold text-white mb-3">
+                  Proven Solutions
+                </h3>
+                <p className="text-xs text-zinc-400 leading-relaxed font-semibold">
                   Live cloud infrastructure state is synchronized with git repository configurations, preventing manual shifts and ensuring auditability.
                 </p>
               </div>
             </Reveal>
 
-            {/* Standard 3 */}
+            {/* Block 3 */}
             <Reveal delay={0.1} className="h-full">
-              <div className="h-full bg-zinc-950/20 border border-zinc-900 rounded-2xl p-6 relative group hover:border-rose-500/20 transition-all duration-300">
-                <div className="w-8 h-8 rounded-lg bg-rose-950/15 border border-rose-900/20 flex items-center justify-center text-rose-500 mb-4">
-                  <Workflow size={15} />
+              <div className="h-full bg-zinc-950/20 border border-zinc-900/80 rounded-2xl p-6 sm:p-8 hover:border-rose-500/25 transition-all duration-300 group relative overflow-hidden">
+                <div className="w-10 h-10 rounded-xl bg-rose-950/15 border border-rose-900/20 flex items-center justify-center text-rose-500 mb-6 group-hover:bg-rose-950/25 group-hover:border-rose-500/30 transition-all duration-300">
+                  <ShieldCheck size={16} />
                 </div>
-                <h4 className="text-xs font-semibold text-zinc-200 mb-2">
-                  Zero Trust Privileges
-                </h4>
-                <p className="text-[10px] text-zinc-500 leading-relaxed font-light">
+                <h3 className="text-sm font-semibold text-white mb-3">
+                  Certified Workforce
+                </h3>
+                <p className="text-xs text-zinc-400 leading-relaxed font-semibold">
                   Access keys are never stored in plain text. Compute hosts pull scoped credentials dynamically from HashiCorp Vault.
                 </p>
               </div>
@@ -575,7 +786,7 @@ export default function EcosystemLandingPage() {
         </div>
       </section>
 
-      {/* 8. Global Delivery Network Section */}
+      {/* 9. Global Delivery Network Section */}
       <section className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
         <div className="max-w-site mx-auto px-6 md:px-12 lg:px-20 text-left">
           
@@ -626,13 +837,13 @@ export default function EcosystemLandingPage() {
             {/* Hub 3 */}
             <Reveal delay={0.1} className="h-full">
               <div className="h-full bg-zinc-950/20 border border-zinc-900 rounded-2xl p-6 relative group hover:border-rose-500/20 transition-all duration-300">
-                <span className="block text-[9px] font-mono tracking-widest text-zinc-550 mb-3 uppercase">
+                <span className="block text-[9px] font-mono tracking-widest text-zinc-555 mb-3 uppercase">
                   APAC CENTER
                 </span>
                 <h4 className="text-xs font-semibold text-zinc-200 mb-2">
                   24/7 Managed Operations & Testing
                 </h4>
-                <p className="text-[10px] text-zinc-550 leading-relaxed font-light">
+                <p className="text-[10px] text-zinc-555 leading-relaxed font-light">
                   Managing system backups, running scale testing suites, and responding to system outages.
                 </p>
               </div>
@@ -642,81 +853,94 @@ export default function EcosystemLandingPage() {
         </div>
       </section>
 
-      {/* 9. Impact Metrics Section */}
-      <section className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
-        <div className="max-w-site mx-auto px-6 md:px-12 lg:px-20 text-left">
-          
-          <Reveal className="mb-16">
-            <div className="flex items-center gap-2 mb-4">
-              <span className="h-[2px] w-6 bg-rose-600"></span>
-              <span className="text-[10px] font-bold tracking-widest uppercase text-rose-500">
-                Impact Quantified
-              </span>
-            </div>
-            <h2 className="text-2xl md:text-3xl font-light text-white tracking-tight leading-snug">
-              Quantifiable <span className="font-semibold text-rose-500">engineering outcomes</span>
-            </h2>
-          </Reveal>
+      {/* 10. Global Support Section */}
+      <section className="w-full py-24 bg-black border-b border-zinc-900/60 relative overflow-hidden">
+        {/* Ambient background glow */}
+        <div className="absolute top-[20%] left-[-10%] w-[35%] aspect-square bg-[radial-gradient(circle_at_center,rgba(244,63,94,0.02),transparent_70%)] pointer-events-none z-0" />
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div className="max-w-7xl mx-auto w-full px-6 md:px-12 lg:px-16 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center w-full">
             
-            {/* Metric 1 */}
-            <Reveal className="h-full">
-              <div className="h-full bg-gradient-to-b from-zinc-950 to-black border border-zinc-900 rounded-2xl p-6 hover:border-rose-500/20 transition-all duration-300">
-                <span className="block text-4xl font-bold font-mono text-rose-500 mb-2">4.8x</span>
-                <h4 className="text-xs font-semibold text-zinc-200 mb-1">
-                  Workflow Frequency Increase
-                </h4>
-                <p className="text-[10px] text-zinc-500 leading-relaxed font-light">
-                  Accelerated pipelines reduce manual coding checks and compile times.
-                </p>
-              </div>
-            </Reveal>
+            {/* Left Column: Support info */}
+            <div className="lg:col-span-7 flex flex-col items-start text-left justify-center z-20">
+              <Reveal>
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-zinc-800/80 bg-zinc-950/40 mb-6">
+                  <span className="w-1.5 h-1.5 rounded-full bg-rose-600 animate-pulse" />
+                  <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-zinc-400">
+                    GLOBAL SUPPORT
+                  </span>
+                </div>
+              </Reveal>
 
-            {/* Metric 2 */}
-            <Reveal delay={0.05} className="h-full">
-              <div className="h-full bg-gradient-to-b from-zinc-950 to-black border border-zinc-900 rounded-2xl p-6 hover:border-rose-500/20 transition-all duration-300">
-                <span className="block text-4xl font-bold font-mono text-rose-500 mb-2">-45%</span>
-                <h4 className="text-xs font-semibold text-zinc-200 mb-1">
-                  Drift Reductions
-                </h4>
-                <p className="text-[10px] text-zinc-500 leading-relaxed font-light">
-                  Continuous synchronization prevents unauthorized alterations of server layouts.
-                </p>
-              </div>
-            </Reveal>
+              <Reveal delay={0.1}>
+                <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-4xl xl:text-5xl font-bold tracking-tight leading-[1.15] text-white mb-6">
+                  24/7 Enterprise
+                  <br />
+                  <span className="text-[#E11D48] whitespace-nowrap">Follow-the-Sun Support</span>
+                </h2>
+              </Reveal>
 
-            {/* Metric 3 */}
-            <Reveal delay={0.1} className="h-full">
-              <div className="h-full bg-gradient-to-b from-zinc-950 to-black border border-zinc-900 rounded-2xl p-6 hover:border-rose-500/20 transition-all duration-300">
-                <span className="block text-4xl font-bold font-mono text-rose-500 mb-2">120ms</span>
-                <h4 className="text-xs font-semibold text-zinc-200 mb-1">
-                  Query Latency
-                </h4>
-                <p className="text-[10px] text-zinc-500 leading-relaxed font-light">
-                  Highly-scalable data indexing fetches search items in fractions of a second.
+              <Reveal delay={0.2}>
+                <p className="text-zinc-450 text-xs sm:text-sm leading-relaxed font-semibold max-w-xl mb-10">
+                  Our technical support desks span critical time zones (London, India, USA) to ensure continuous monitoring, immediate incident management, and seamless pipeline recoveries at all times.
                 </p>
-              </div>
-            </Reveal>
+              </Reveal>
 
-            {/* Metric 4 */}
-            <Reveal delay={0.15} className="h-full">
-              <div className="h-full bg-gradient-to-b from-zinc-950 to-black border border-zinc-900 rounded-2xl p-6 hover:border-rose-500/20 transition-all duration-300">
-                <span className="block text-4xl font-bold font-mono text-rose-500 mb-2">99.99%</span>
-                <h4 className="text-xs font-semibold text-zinc-200 mb-1">
-                  Target Uptime SLAs
-                </h4>
-                <p className="text-[10px] text-zinc-500 leading-relaxed font-light">
-                  Multi-region failover and SRE coverage protect client operations round-the-clock.
-                </p>
+              {/* Details table */}
+              <div className="flex flex-col gap-4 w-full border-t border-zinc-900/60 pt-6">
+                <Reveal delay={0.25}>
+                  <div className="flex text-xs">
+                    <span className="w-32 font-bold text-white">Headquarters:</span>
+                    <span className="text-[#E11D48] font-semibold">128 City Road, London, EC1V 2NX</span>
+                  </div>
+                </Reveal>
+                <Reveal delay={0.3}>
+                  <div className="flex text-xs">
+                    <span className="w-32 font-bold text-white">Hotline Support:</span>
+                    <span className="text-[#E11D48] font-semibold">+44 7471 482903</span>
+                  </div>
+                </Reveal>
+                <Reveal delay={0.35}>
+                  <div className="flex text-xs">
+                    <span className="w-32 font-bold text-white">Partner Escalation:</span>
+                    <span className="text-[#E11D48] font-semibold">partners@devopstrioglobal.com</span>
+                  </div>
+                </Reveal>
               </div>
-            </Reveal>
+            </div>
+
+            {/* Right Column: SLA Dashboard */}
+            <div className="lg:col-span-5 w-full flex justify-center lg:justify-end z-20">
+              <Reveal delay={0.2} className="w-full max-w-[440px]">
+                <div className="bg-zinc-950/25 border border-zinc-900/80 rounded-2xl p-6 sm:p-8 backdrop-blur-md relative overflow-hidden">
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-[radial-gradient(circle_at_center,rgba(244,63,94,0.015),transparent_75%)] pointer-events-none" />
+                  
+                  <h3 className="text-[10px] font-bold uppercase tracking-wider text-zinc-500 border-b border-zinc-900/60 pb-4 mb-4">
+                    Support Commitments
+                  </h3>
+
+                  <div className="flex flex-col gap-4">
+                    {[
+                      { label: "Critical Incidents (P1)", val: "< 15 Mins" },
+                      { label: "Standard Incidents (P2)", val: "< 1 Hour" },
+                      { label: "Deployment Queries", val: "< 4 Hours" },
+                      { label: "SLA Guarantee", val: "99.99%" }
+                    ].map((row, idx) => (
+                      <div key={idx} className="flex justify-between items-center text-xs border-b border-zinc-900/30 pb-2 last:border-0 last:pb-0">
+                        <span className="text-zinc-400 font-semibold">{row.label}</span>
+                        <strong className="text-emerald-500 font-bold font-mono">{row.val}</strong>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </Reveal>
+            </div>
 
           </div>
         </div>
       </section>
 
-      {/* 10. CTA Section */}
+      {/* 11. CTA Section */}
       <section className="w-full py-24 bg-black text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_center,rgba(220,38,38,0.04),transparent_60%)] pointer-events-none" />
 

@@ -1,0 +1,93 @@
+"use client";
+
+import React from "react";
+import Link from "next/link";
+import { ArrowUpRight, Layers } from "lucide-react";
+import { Reveal } from "@/components/ui/Reveal";
+import { servicesData } from "@/data/services";
+
+interface RelatedServicesProps {
+  currentServiceSlug: string;
+}
+
+export function RelatedServices({ currentServiceSlug }: RelatedServicesProps) {
+  // Deterministically select 3 other services to prevent hydration mismatch
+  const allSlugs = Object.keys(servicesData);
+  const currentIndex = allSlugs.indexOf(currentServiceSlug);
+  
+  const selectedServices = [];
+  for (let i = 1; i <= 3; i++) {
+    const targetIndex = (currentIndex + i) % allSlugs.length;
+    const slug = allSlugs[targetIndex];
+    if (servicesData[slug]) {
+      selectedServices.push(servicesData[slug]);
+    }
+  }
+
+  return (
+    <section id="related-services" className="w-full py-24 bg-black border-b border-zinc-900/60 relative overflow-hidden">
+      {/* Background glow */}
+      <div className="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-[50%] aspect-square bg-[radial-gradient(circle_at_center,rgba(244,63,94,0.01),transparent_70%)] pointer-events-none z-0" />
+
+      <div className="max-w-site mx-auto px-6 md:px-12 lg:px-20 relative z-10 text-center">
+        
+        {/* Header Section */}
+        <Reveal className="mb-16 text-center">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-zinc-900 bg-zinc-950/40 mb-4">
+            <span className="w-1.5 h-1.5 rounded-full bg-rose-600 animate-pulse" />
+            <span className="text-[10px] font-bold tracking-widest uppercase text-rose-500">
+              Internal Ecosystem
+            </span>
+          </div>
+          <h2 className="text-2xl md:text-3xl font-light text-white tracking-tight leading-snug">
+            Explore <span className="font-semibold text-rose-500">Related Services</span>
+          </h2>
+        </Reveal>
+
+        {/* 3 Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {selectedServices.map((service, idx) => {
+            return (
+              <Reveal key={service.slug} delay={idx * 0.05} className="h-full">
+                <Link
+                  href={`/services/${service.slug}`}
+                  className="group flex flex-col justify-between h-full bg-zinc-950/20 border border-zinc-900 hover:border-rose-500/35 hover:bg-zinc-900/10 rounded-[24px] p-6 transition-all duration-300 relative overflow-hidden text-left cursor-pointer hover:scale-[1.01] hover:shadow-[0_8px_32px_rgba(0,0,0,0.5)]"
+                >
+                  {/* Subtle hover background accent */}
+                  <div className="absolute top-0 right-0 w-24 h-24 bg-[radial-gradient(circle_at_center,rgba(244,63,94,0.02),transparent_70%)] opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+
+                  <div>
+                    {/* Badge / Indicator */}
+                    <div className="flex items-center justify-between mb-4 border-b border-zinc-900/60 pb-3">
+                      <span className="text-[9px] font-mono tracking-widest text-rose-500 uppercase font-bold">
+                        Service 0{idx + 1}
+                      </span>
+                      <span className="text-zinc-600 group-hover:text-rose-500 transition-colors">
+                        <Layers size={13} />
+                      </span>
+                    </div>
+
+                    <h3 className="text-xs font-semibold text-zinc-100 group-hover:text-white transition-colors mb-2">
+                      {service.title}
+                    </h3>
+
+                    <p className="text-[11px] text-zinc-400 leading-relaxed font-light mb-6">
+                      {service.subtitle}
+                    </p>
+                  </div>
+
+                  <div className="border-t border-zinc-900/60 pt-4 mt-auto">
+                    <span className="text-[9px] text-rose-500 font-bold uppercase tracking-wider group-hover:translate-x-1 transition-transform duration-300 inline-flex items-center gap-1.5">
+                      View Details <ArrowUpRight size={13} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                    </span>
+                  </div>
+                </Link>
+              </Reveal>
+            );
+          })}
+        </div>
+
+      </div>
+    </section>
+  );
+}

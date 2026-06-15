@@ -19,7 +19,7 @@ import { Reveal } from "@/components/ui/Reveal";
 const servicesSections = [
   { id: "categories", label: "Categories" },
   { id: "capabilities", label: "Capabilities" },
-  { id: "detailed-services", label: "Services Explorer" },
+  // { id: "detailed-services", label: "Services Explorer" },
   { id: "delivery-framework", label: "Framework" },
   { id: "industries", label: "Industries" },
   { id: "why-devopstrio", label: "Why Us" },
@@ -59,18 +59,18 @@ export default function ServicesPage() {
       <div id="categories">
         <CategoriesGrid />
       </div>
-      <SvgWaveLine variant="dashed" />
+      {/* <SvgWaveLine variant="dashed" /> */}
 
       {/* 3. Core Capabilities Slider */}
       <div id="capabilities">
         <CoreServices />
       </div>
-      <SvgWaveLine variant="particles" />
+      {/* <SvgWaveLine variant="particles" /> */}
 
       {/* 4. Detailed Services Explorer */}
-      <div id="detailed-services">
+      {/* <div id="detailed-services">
         <DetailedServices />
-      </div>
+      </div> */}
       <SvgWaveLine variant="grid" />
 
       {/* 5. Delivery Framework (Lifecycle) */}
@@ -89,13 +89,13 @@ export default function ServicesPage() {
       <div id="why-devopstrio">
         <WhyDevopstrio />
       </div>
-      <SvgWaveLine variant="dashed" />
+      {/* <SvgWaveLine variant="dashed" /> */}
 
       {/* 8. Technology Ecosystem (Tech Stack) */}
       <div id="technology-ecosystem">
         <TechStackSection />
       </div>
-      <SvgWaveLine variant="particles" />
+      {/* <SvgWaveLine variant="particles" /> */}
 
       {/* 9. Client Impact Case Study */}
       <div id="client-impact">

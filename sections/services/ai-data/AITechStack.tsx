@@ -30,7 +30,7 @@ export function AITechStack() {
         <div className="grid grid-cols-1 lg:grid-cols-[0.8fr_1.2fr] gap-12 lg:gap-16 items-start">
           <Reveal className="text-left">
             <div className="inline-flex items-center gap-2 mb-4">
-              <span className="h-[1px] w-6 bg-rose-600"></span>
+
               <span className="text-[10px] font-medium tracking-[0.2em] uppercase text-zinc-400">
                 AI TOOLING
               </span>

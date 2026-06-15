@@ -180,26 +180,25 @@ export function DetailedServices() {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-rose-600/5 rounded-full blur-[140px] pointer-events-none" />
 
       <div className="max-w-site mx-auto px-6 md:px-12 lg:px-20 relative z-10">
-        
+
         {/* Header Block */}
-        <Reveal className="mb-16 text-center">
-          <div className="inline-flex items-center gap-2 mb-4">
-            <span className="h-[1px] w-6 bg-rose-600"></span>
-            <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-zinc-400">
+        <Reveal>
+          <div className="text-center max-w-3xl mx-auto mb-14">
+            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
               DETAILED SERVICES
             </span>
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
+              Strategic delivery <span className="text-rose-500">capability map</span>
+            </h2>
+            <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
+              Browse through our exhaustive registry of technology and operations practices aligned with global enterprise standards.
+            </p>
           </div>
-          <h2 className="text-2xl md:text-4xl font-light text-white tracking-tight leading-snug">
-            Strategic delivery <span className="font-semibold text-rose-500">capability map</span>
-          </h2>
-          <p className="text-zinc-400 text-xs md:text-sm font-light leading-relaxed mt-3 max-w-xl mx-auto">
-            Browse through our exhaustive registry of technology and operations practices aligned with global enterprise standards.
-          </p>
         </Reveal>
 
         {/* Layout Grid: Left Sidebar Tabs, Right Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-12 items-start">
-          
+
           {/* Left Panel: Tabs List */}
           <div className="flex flex-row lg:flex-col overflow-x-auto lg:overflow-visible gap-2 pb-4 lg:pb-0 border-b lg:border-b-0 border-zinc-900 custom-scrollbar scrollbar-thin">
             {detailedServiceCategories.map((cat, idx) => {
@@ -209,11 +208,10 @@ export function DetailedServices() {
                 <button
                   key={cat.id}
                   onClick={() => setActiveIdx(idx)}
-                  className={`flex items-center gap-3 px-4 py-3.5 rounded-xl text-xs font-semibold tracking-wide transition-all duration-300 text-left flex-shrink-0 lg:flex-shrink ${
-                    isActive
+                  className={`flex items-center gap-3 px-4 py-3.5 rounded-xl text-xs font-semibold tracking-wide transition-all duration-300 text-left flex-shrink-0 lg:flex-shrink ${isActive
                       ? "bg-zinc-950 border border-zinc-800 text-rose-500 shadow-md translate-x-1"
                       : "text-zinc-450 border border-transparent hover:text-zinc-200 hover:bg-zinc-905/10"
-                  }`}
+                    }`}
                 >
                   <Icon size={15} className={isActive ? "text-rose-500" : "text-zinc-500"} />
                   <span>{cat.name}</span>
@@ -224,7 +222,7 @@ export function DetailedServices() {
 
           {/* Right Panel: Content Grid */}
           <div className="flex flex-col gap-8">
-            
+
             {/* Active Category Description Banner */}
             <Reveal key={`banner-${currentCategory.id}`}>
               <div className="bg-zinc-950/40 border border-zinc-900 rounded-2xl p-6 flex flex-col md:flex-row md:items-center gap-6">
@@ -259,7 +257,7 @@ export function DetailedServices() {
                         {item.desc}
                       </p>
                     </div>
-                    
+
                     <div className="w-full h-[1px] bg-zinc-950 mt-4 group-hover:bg-rose-950/20 transition-colors" />
                   </div>
                 </Reveal>

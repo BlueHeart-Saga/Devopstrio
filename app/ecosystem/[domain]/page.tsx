@@ -84,6 +84,7 @@ export default async function EcosystemDomainPage({ params }: PageProps) {
         subtitle={data.subtitle}
         stats={data.stats}
         breadcrumbs={breadcrumbs}
+        cta={{ label: "Explore Domains", href: "#domains" }}
       />
 
       {/* Sticky Section Navbar */}

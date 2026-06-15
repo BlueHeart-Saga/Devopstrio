@@ -52,7 +52,8 @@ class InsightsApiService {
   private pendingRequests: Map<string, Promise<any>>;
 
   constructor() {
-    this.baseUrl = API_BASE_URL.replace(/\/$/, "");
+    const isClient = typeof window !== "undefined";
+    this.baseUrl = isClient ? "/api/insights-proxy" : API_BASE_URL.replace(/\/$/, "");
     this.companyId = COMPANY_ID;
     this.cache = new Map();
     this.pendingRequests = new Map();
