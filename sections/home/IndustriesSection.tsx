@@ -10,59 +10,60 @@ const industries = [
     name: "Banking & Finance",
     tag: "Financial Services",
     desc: "Secure, regulatory-compliant solutions for banking, investing, and digital payments.",
-    icon: "/assets/Home-page/industries-icon/Banking.png",
+    icon: "/assets/Home-page/industries/icons/bankingfiannace.png",
     href: "/industries/banking-finance",
   },
   {
     name: "Healthcare & Life Sciences",
     tag: "Specialized Solutions",
     desc: "HIPAA-compliant telehealth apps, EHR platforms, and research databases.",
-    icon: "/assets/Home-page/industries-icon/healthcare.png",
+    icon: "/assets/Home-page/industries/icons/healthcarescience.png",
     href: "/industries/healthcare-life-sciences",
   },
   {
     name: "Retail & E-Commerce",
     tag: "Digital Commerce",
     desc: "Omni-channel engines, high-speed checkouts, and real-time inventory systems.",
-    icon: "/assets/Home-page/industries-icon/retails-ecommerce.png",
+    icon: "/assets/Home-page/industries/icons/reatilecommerce.png",
     href: "/industries/retail-ecommerce",
   },
   {
     name: "Manufacturing",
     tag: "Industry 4.0",
     desc: "Industrial IoT integrations, predictive maintenance logs, and smart supply chains.",
-    icon: "/assets/Home-page/industries-icon/manufacture.png",
+    icon: "/assets/Home-page/industries/icons/Manufacturing (2).png",
     href: "/industries/manufacturing",
   },
   {
     name: "Telecommunications",
     tag: "Network Solutions",
     desc: "Scalable OSS/BSS infrastructures, 5G cloud services, and telecom analytics.",
-    icon: "/assets/Home-page/industries-icon/tel-com.png",
-    href: "/industries/telecom",
+    icon: "/assets/Home-page/industries/icons/telecommunicate.png",
+    href: "/industries/telecommunications",
   },
   {
     name: "Media & Entertainment",
     tag: "Digital Media",
     desc: "High-bandwidth VOD platforms, live broadcasting, and digital assets.",
-    icon: "/assets/Home-page/industries-icon/media-entertainments.png",
+    icon: "/assets/Home-page/industries/icons/Mediaentertainement.png",
     href: "/industries/media-entertainment",
   },
   {
     name: "Education",
     tag: "EdTech Platforms",
     desc: "LMS environments, remote learning tools, and digital collaboration spaces.",
-    icon: "/assets/Home-page/industries-icon/education.png",
+    icon: "/assets/Home-page/industries/icons/educationn.png",
     href: "/industries/education",
   },
   {
     name: "Government & Public Sector",
     tag: "Government Solutions",
     desc: "Citizen portals, cloud modernization, and strict security compliance.",
-    icon: "/assets/Home-page/industries-icon/Finacial.png",
+    icon: "/assets/Home-page/industries/icons/governmentpublicsector.png",
     href: "/industries/government-public-sector",
   },
 ];
+
 
 const cardVariants = {
   hidden: { opacity: 0, x: 60 },
@@ -104,7 +105,7 @@ export function IndustriesSection() {
         </Reveal>
 
         {/* Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-zinc-800/40 rounded-2xl overflow-hidden border border-zinc-800/40">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {industries.map((ind, i) => (
             <motion.a
               key={ind.name}
@@ -114,40 +115,36 @@ export function IndustriesSection() {
               whileInView="visible"
               viewport={{ once: true, amount: 0.1 }}
               variants={cardVariants}
-              className="group flex flex-col bg-[#0c0c0c] hover:bg-zinc-900/80 transition-colors duration-300 p-8 relative overflow-hidden"
+              className="group flex flex-col justify-end bg-black border border-zinc-900/80 hover:border-rose-500/35 rounded-[2rem] p-6 relative overflow-hidden transition-all duration-500 hover:scale-[1.02] hover:shadow-[0_12px_40px_rgba(244,63,94,0.12)] cursor-pointer min-h-[360px]"
             >
-              {/* Hover glow */}
-              <div className="absolute inset-0 bg-gradient-to-br from-rose-600/0 via-rose-600/0 to-rose-600/0 group-hover:from-rose-600/5 group-hover:via-transparent group-hover:to-transparent transition-all duration-500 pointer-events-none" />
-
-              {/* Icon */}
-              <div className="w-full flex justify-center mb-6">
-                <div className="w-56 h-56 flex items-center justify-center">
-                  <img
-                    src={ind.icon}
-                    alt={ind.name}
-                    className="w-full h-full object-contain opacity-80 group-hover:opacity-100 transition-opacity duration-300"
-                  />
-                </div>
+              {/* Cover Image */}
+              <div className="absolute inset-0 z-0">
+                <img
+                  src={ind.icon}
+                  alt={ind.name}
+                  className="w-full h-full object-cover object-center opacity-90 group-hover:opacity-100 group-hover:scale-[1.04] transition-all duration-500"
+                />
+                {/* Dark Vignette Overlay for readability and premium depth */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20" />
               </div>
 
-              {/* Red Accent Divider */}
-              <div className="w-8 h-0.5 bg-rose-500 mb-5 mx-auto transition-all duration-300 group-hover:w-14" />
-
-              {/* Title */}
-              <h3 className="text-center text-lg font-bold text-white mb-5 group-hover:text-rose-100 transition-colors duration-300">
-                {ind.name}
-              </h3>
-
-              {/* CTA Link */}
-              <div className="flex justify-center mt-auto">
-                <span className="inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-widest text-zinc-500 group-hover:text-rose-400 border-b border-zinc-700 group-hover:border-rose-500/60 pb-0.5 transition-all duration-300">
-                  Explore Solutions
-                  <ArrowRight size={11} className="transition-transform duration-300 group-hover:translate-x-1" />
-                </span>
+              {/* Premium White Label Box */}
+              <div className="bg-white text-zinc-900 rounded-2xl p-4 flex items-center justify-between shadow-lg w-full transition-all duration-300 group-hover:bg-zinc-50 relative z-10 mt-auto">
+                <div className="text-left">
+                  <h3 className="font-extrabold text-[11px] uppercase tracking-wider text-zinc-950 leading-tight">
+                    {ind.name}
+                  </h3>
+                </div>
+                <div className="w-7 h-7 rounded-full bg-zinc-100 flex items-center justify-center text-zinc-800 group-hover:bg-rose-500 group-hover:text-white transition-all duration-300 shrink-0 ml-2">
+                  <ArrowRight size={12} className="transition-transform group-hover:translate-x-0.5" />
+                </div>
               </div>
             </motion.a>
           ))}
         </div>
+
+
+
 
         {/* Bottom CTA */}
         <Reveal>
