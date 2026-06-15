@@ -115,7 +115,7 @@ export function IndustriesSection() {
               whileInView="visible"
               viewport={{ once: true, amount: 0.1 }}
               variants={cardVariants}
-              className="group flex flex-col justify-end bg-black border border-zinc-900/80 hover:border-rose-500/35 rounded-[2rem] p-6 relative overflow-hidden transition-all duration-500 hover:scale-[1.02] hover:shadow-[0_12px_40px_rgba(244,63,94,0.12)] cursor-pointer min-h-[360px]"
+              className="group flex flex-col justify-end bg-black border border-zinc-900/80 hover:border-rose-500/35 rounded-[2rem] p-4 relative overflow-hidden transition-all duration-500 hover:scale-[1.02] hover:shadow-[0_12px_40px_rgba(244,63,94,0.12)] cursor-pointer h-[260px]"
             >
               {/* Cover Image */}
               <div className="absolute inset-0 z-0">
@@ -129,7 +129,7 @@ export function IndustriesSection() {
               </div>
 
               {/* Premium White Label Box */}
-              <div className="bg-white text-zinc-900 rounded-2xl p-4 flex items-center justify-between shadow-lg w-full transition-all duration-300 group-hover:bg-zinc-50 relative z-10 mt-auto">
+              <div className="bg-white text-zinc-900 rounded-xl p-3.5 flex items-center justify-between shadow-lg w-full transition-all duration-300 group-hover:bg-zinc-50 relative z-10 mt-auto">
                 <div className="text-left">
                   <h3 className="font-extrabold text-[11px] uppercase tracking-wider text-zinc-950 leading-tight">
                     {ind.name}
