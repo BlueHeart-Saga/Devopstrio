@@ -84,20 +84,20 @@ const CardSwap: React.FC<CardSwapProps> = ({
   const config = useMemo(() => 
     easing === 'elastic'
       ? {
-          ease: 'elastic.out(0.6,0.9)',
-          durDrop: 1,
-          durMove: 1,
-          durReturn: 1,
-          promoteOverlap: 0.9,
-          returnDelay: 0.05
+          ease: 'power3.out',
+          durDrop: 1.5,
+          durMove: 1.5,
+          durReturn: 1.5,
+          promoteOverlap: 0.85,
+          returnDelay: 0.08
         }
       : {
-          ease: 'power1.inOut',
-          durDrop: 0.8,
-          durMove: 0.8,
-          durReturn: 0.8,
-          promoteOverlap: 0.45,
-          returnDelay: 0.2
+          ease: 'power2.out',
+          durDrop: 1.2,
+          durMove: 1.2,
+          durReturn: 1.2,
+          promoteOverlap: 0.8,
+          returnDelay: 0.12
         },
     [easing]
   );

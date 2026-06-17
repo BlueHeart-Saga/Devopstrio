@@ -24,65 +24,65 @@ const STATIC_METADATA: Record<string, {
 }> = {
   "blogs": {
     description: "Thought leadership, industry insights, and strategic perspectives on global tech and cloud engineering.",
-    image: "/assets/Industries-page/industriescard/Banking and finance.png",
+    image: "/assets/Insights-page/nav/blog.png",
     accentColor: "#f97316",
     tag: "EDITORIAL"
   },
   "case-studies": {
     description: "Real-world success stories, digital transformation journeys, and metric-driven talent acquisition solutions.",
-    image: "/assets/Industries-page/industriescard/Healthcare & Life Sciences.png",
+    image: "/assets/Insights-page/nav/Case_study.png",
     accentColor: "#3b82f6",
     tag: "CASE STUDY"
   },
-  "awards": {
+  "awards-milestones": {
     description: "Celebrating our team's recognition, benchmark excellence, and engineering milestones.",
-    image: "/assets/Industries-page/industriescard/Manufacturing.png",
+    image: "/assets/Insights-page/nav/Awards&mailstones.png",
     accentColor: "#a855f7",
     tag: "AWARDS"
   },
-  "events": {
+  "industry-events": {
     description: "Upcoming webinars, leadership roundtables, and international staffing conferences by Devopstrio.",
-    image: "/assets/Industries-page/industriescard/Media & Entertainment.png",
+    image: "/assets/Insights-page/nav/Industry_event.png",
     accentColor: "#f43f5e",
     tag: "EVENTS"
   },
   "impact-metrics": {
     description: "Quantitative analysis, scalability benchmarks, cost-optimization metrics, and measurable business value.",
-    image: "/assets/Industries-page/industriescard/Telecommunications.png",
+    image: "/assets/Insights-page/nav/Impact_ metrics.png",
     accentColor: "#06b6d4",
     tag: "METRICS"
   },
   "team-culture": {
     description: "Discover the collaborative, inclusive, and high-performance culture that drives Devopstrio.",
-    image: "/assets/Industries-page/industriescard/Government & Public Sector.png",
+    image: "/assets/Insights-page/nav/team_culture.png",
     accentColor: "#10b981",
     tag: "CULTURE"
   },
   "celebrations": {
     description: "Behind-the-scenes looks at our team celebrations, social impact, and core value expressions.",
-    image: "/assets/Industries-page/industriescard/Retail & E-Commerce.png",
+    image: "/assets/Insights-page/nav/celebrations.png",
     accentColor: "#ec4899",
     tag: "CULTURE"
   },
-  "white-papers": {
+  "white-paper": {
     description: "In-depth research papers, architectural blueprints, and compliance frameworks by senior engineers.",
-    image: "/assets/Industries-page/industriescard/Education.png",
+    image: "/assets/Insights-page/nav/White_paper.png",
     accentColor: "#6366f1",
     tag: "RESEARCH"
   },
-  "clients": {
+  "client-transformations": {
     description: "Stories of collaboration, digital transformation journeys, and how we empower our clients.",
-    image: "/assets/Home-page/industries/Financial-Services.png",
+    image: "/assets/Insights-page/nav/Client_transormation.png",
     accentColor: "#f97316",
     tag: "CLIENTS"
   }
 };
 
 const FALLBACK_IMAGES = [
-  "/assets/Industries-page/industriescard/Banking and finance.png",
-  "/assets/Industries-page/industriescard/Healthcare & Life Sciences.png",
-  "/assets/Industries-page/industriescard/Manufacturing.png",
-  "/assets/Industries-page/industriescard/Retail & E-Commerce.png",
+  "/assets/Insights-page/nav/blog.png",
+  "/assets/Insights-page/nav/Case_study.png",
+  "/assets/Insights-page/nav/Awards&mailstones.png",
+  "/assets/Insights-page/nav/Industry_event.png",
 ];
 const FALLBACK_COLORS = ["#f97316", "#3b82f6", "#a855f7", "#f43f5e", "#06b6d4", "#10b981"];
 
@@ -177,7 +177,7 @@ export function InsightsNavigationCards() {
               <Reveal key={item.slug} delay={idx * 0.04}>
                 <Link
                   href={`/insights/${item.slug}`}
-                  className="group relative flex flex-col rounded-[20px] overflow-hidden border border-white/5 hover:border-white/15 transition-all duration-400 hover:-translate-y-2 hover:shadow-[0_24px_48px_rgba(0,0,0,0.6)] bg-zinc-950"
+                  className="group relative flex flex-col rounded-[20px] overflow-hidden border border-white/5 hover:border-white/15 bg-zinc-950"
                   style={{ "--accent": item.accentColor } as React.CSSProperties}
                 >
                   {/* Cover Image */}
@@ -185,17 +185,12 @@ export function InsightsNavigationCards() {
                     <img
                       src={item.image}
                       alt={item.title}
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                      className="w-full h-full object-cover"
                     />
                     {/* Dark gradient overlay */}
                     <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/40 to-transparent" />
-                    {/* Accent color top line */}
-                    <div
-                      className="absolute top-0 left-0 right-0 h-[2px] opacity-80"
-                      style={{ background: item.accentColor }}
-                    />
                     {/* Tag badge top-right */}
-                    <span
+                    {/* <span
                       className="absolute top-3 right-3 text-[9px] font-bold tracking-[0.2em] uppercase px-2.5 py-1 rounded-full backdrop-blur-md border"
                       style={{
                         color: item.accentColor,
@@ -204,11 +199,11 @@ export function InsightsNavigationCards() {
                       }}
                     >
                       {item.tag}
-                    </span>
+                    </span> */}
                     {/* Number badge bottom-left */}
-                    <span className="absolute bottom-3 left-4 font-mono text-[10px] font-bold text-white/40">
+                    {/* <span className="absolute bottom-3 left-4 font-mono text-[10px] font-bold text-white/40">
                       / {item.number}
-                    </span>
+                    </span> */}
                   </div>
 
                   {/* Card body */}

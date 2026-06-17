@@ -173,6 +173,8 @@ export function Footer() {
           <Link href="/cookie-policy" className="hover:text-zinc-350 transition-colors">Cookie Policy</Link>
           <span>•</span>
           <Link href="/gdpr" className="hover:text-zinc-350 transition-colors">GDPR Compliance</Link>
+          <span>•</span>
+          <Link href="/sitemap" className="hover:text-zinc-350 transition-colors">Sitemap</Link>
         </div>
 
       </div>

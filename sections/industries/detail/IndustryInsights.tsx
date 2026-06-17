@@ -1,9 +1,8 @@
-"use client";
-
-import React, { useRef } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight, ArrowUpRight } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
+import { insightsApi } from "@/lib/insightsApi";
 
 interface InsightItem {
   title: string;
@@ -62,14 +61,39 @@ const defaultExtraInsights: InsightItem[] = [
 
 export function IndustryInsights({ insights }: IndustryInsightsProps) {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const [backendInsights, setBackendInsights] = useState<InsightItem[]>([]);
 
-  // Merge incoming insights with defaults to ensure a rich list (minimum 6 items)
-  const mergedInsights = [...insights];
-  let extraIdx = 0;
-  while (mergedInsights.length < 6 && extraIdx < defaultExtraInsights.length) {
-    mergedInsights.push({ ...defaultExtraInsights[extraIdx] });
-    extraIdx++;
-  }
+  useEffect(() => {
+    async function fetchInsights() {
+      try {
+        const posts = await insightsApi.getAllPosts(15);
+        if (posts && posts.length > 0) {
+          const mapped = posts.map(post => ({
+            title: post.title,
+            desc: post.excerpt || "Read more about this technology update on Devopstrio.",
+            link: `/insights/${post.category.slug}/${post.id}`,
+            image: post.image || undefined
+          }));
+          setBackendInsights(mapped);
+        }
+      } catch (e) {
+        console.error("Failed to load backend insights:", e);
+      }
+    }
+    fetchInsights();
+  }, []);
+
+  // Show only backend insights
+  const uniqueInsights: InsightItem[] = [];
+  const titlesSeen = new Set<string>();
+  
+  backendInsights.forEach(item => {
+    const titleKey = item.title.toLowerCase().trim();
+    if (!titlesSeen.has(titleKey)) {
+      titlesSeen.add(titleKey);
+      uniqueInsights.push(item);
+    }
+  });
 
   const scroll = (direction: "left" | "right") => {
     if (scrollContainerRef.current) {
@@ -134,7 +158,7 @@ export function IndustryInsights({ insights }: IndustryInsightsProps) {
           ref={scrollContainerRef}
           className="flex gap-6 overflow-x-auto hide-scrollbar pb-8 pt-4 snap-x snap-mandatory relative"
         >
-          {mergedInsights.map((ins, idx) => {
+          {uniqueInsights.map((ins, idx) => {
             const displayImage = ins.image || defaultImages[idx % defaultImages.length];
 
             return (

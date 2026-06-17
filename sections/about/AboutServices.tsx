@@ -9,7 +9,7 @@ const services = [
     num: "01",
     name: "Cloud & Migration",
     category: "Modernize",
-    image: "/assets/Home-page/core-services/cloud computing.png",
+    image: "/assets/Home-page/core-services/cloudengineering.png",
     desc: "Seamless migration of complex enterprise workloads to Azure, AWS, and GCP — with zero downtime, full compliance mapping, and measurable cost reduction from day one.",
     tags: ["Azure", "AWS", "GCP", "Multi-Cloud"]
   },
@@ -17,7 +17,7 @@ const services = [
     num: "02",
     name: "AI & Data Science",
     category: "Intelligence",
-    image: "/assets/Home-page/core-services/Ai & Automation.png",
+    image: "/assets/Home-page/core-services/AIAutomation.png",
     desc: "From Generative AI strategy and LLM deployment to predictive analytics, automated data pipelines, and ML model engineering — we turn your raw data into operational intelligence.",
     tags: ["Gen AI", "ML Models", "Data Engineering"]
   },
@@ -25,7 +25,7 @@ const services = [
     num: "03",
     name: "DevOps & Platform",
     category: "Automation",
-    image: "/assets/Home-page/core-services/Devops and iac.png",
+    image: "/assets/Home-page/core-services/Devops.png",
     desc: "CI/CD pipelines, Infrastructure as Code, Kubernetes orchestration, GitOps, and Site Reliability Engineering — we automate the entire software delivery lifecycle.",
     tags: ["CI/CD", "Kubernetes", "Terraform", "IaC"]
   },
@@ -33,7 +33,7 @@ const services = [
     num: "04",
     name: "Cybersecurity",
     category: "Protection",
-    image: "/assets/Home-page/core-services/cyber security.png",
+    image: "/assets/Home-page/core-services/cybersecurity..png",
     desc: "Zero-trust architectures, penetration testing, SOC operations, threat intelligence, and compliance management — security embedded into every layer, not bolted on after.",
     tags: ["Zero Trust", "SOC", "ISO 27001", "GDPR"]
   },
@@ -41,7 +41,7 @@ const services = [
     num: "05",
     name: "Product Engineering",
     category: "Innovation",
-    image: "/assets/Home-page/core-services/Engineering.png",
+    image: "/assets/Home-page/core-services/software engineering.png",
     desc: "Web applications, mobile platforms, SaaS architectures, enterprise APIs, and UI/UX design — engineered for performance, built for users, designed to scale.",
     tags: ["Web Dev", "Mobile", "SaaS", "API"]
   },
@@ -49,7 +49,7 @@ const services = [
     num: "06",
     name: "Staff Augmentation",
     category: "Scale",
-    image: "/assets/Home-page/core-services/enterprise solution.png",
+    image: "/assets/Home-page/core-services/enterprisesolution.png",
     desc: "On-demand access to 525+ certified cloud, AI, DevOps, and security specialists — embedded into your team, operating under your processes, delivering to your standards.",
     tags: ["ODC", "CMMI Level 5", "Flexible Teams"]
   }

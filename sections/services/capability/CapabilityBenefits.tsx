@@ -95,7 +95,7 @@ export function CapabilityBenefits({ benefits }: CapabilityBenefitsProps) {
           <div className="lg:col-span-5 lg:sticky lg:top-24 w-full z-20">
             <Reveal delay={0.2} className="w-full">
               <img
-                src="/assets/Services-Page/capability/benifit.png"
+                src="/assets/Services-Page/capability/benifit1.png"
                 alt="Capability Technical Benefits"
                 className="w-full h-auto object-contain pointer-events-none select-none"
               />

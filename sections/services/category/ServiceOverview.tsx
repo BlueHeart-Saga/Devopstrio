@@ -11,6 +11,28 @@ interface ServiceOverviewProps {
   overviewDesc2: string;
 }
 
+function getOverviewImage(title: string, incomingImage: string): string {
+  const overviewImages = [
+    "/assets/Services-Page/overview/ai1.png",
+    "/assets/Services-Page/overview/ai2.png",
+    "/assets/Services-Page/overview/ai3.png",
+    "/assets/Services-Page/overview/ai4.png",
+    "/assets/Services-Page/overview/ai5.png",
+    "/assets/Services-Page/overview/ai6.png",
+    "/assets/Services-Page/overview/ai7.png",
+    "/assets/Services-Page/overview/ai8.png",
+    "/assets/Services-Page/overview/ai9.png",
+    "/assets/Services-Page/overview/ai10.png"
+  ];
+  
+  let charSum = 0;
+  for (let i = 0; i < title.length; i++) {
+    charSum += title.charCodeAt(i);
+  }
+  
+  return overviewImages[charSum % overviewImages.length];
+}
+
 export function ServiceOverview({
   title,
   subtitle,
@@ -19,6 +41,8 @@ export function ServiceOverview({
   overviewDesc1,
   overviewDesc2,
 }: ServiceOverviewProps) {
+  const displayImage = getOverviewImage(title, image);
+
   return (
     <section id="overview" className="w-full py-16 bg-[#030303] text-white relative overflow-hidden">
       <div className="max-w-site mx-auto px-6 md:px-12 lg:px-20">
@@ -59,7 +83,7 @@ export function ServiceOverview({
               <div className="p-4 md:p-6 flex items-center justify-center bg-zinc-950/20 border-t lg:border-t-0 lg:border-l border-white/5">
                 <div className="relative w-full aspect-[16/10] rounded-2xl overflow-hidden border border-white/10 shadow-2xl group/img">
                   <img
-                    src={image}
+                    src={displayImage}
                     alt={title}
                     className="w-full h-full object-cover opacity-90 transition-transform duration-700 group-hover/img:scale-[1.02] pointer-events-none select-none"
                   />

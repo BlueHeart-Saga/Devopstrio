@@ -24,19 +24,6 @@ interface IndustryCaseStudyProps {
   caseStudyHighlights: string[];
 }
 
-const defaultImages = [
-  "/assets/Home-page/arch-design.png",
-  "/assets/Home-page/arch-life.png",
-  "/assets/Home-page/biz-envisioning.png",
-  "/assets/Home-page/biz-life.png",
-  "/assets/Home-page/rapid-prototype.png",
-  "/assets/Home-page/rapid-life.png",
-  "/assets/Home-page/sol-envisioning.png",
-  "/assets/Home-page/sol-life.png",
-  "/assets/Home-page/innovation-banner.png",
-  "/assets/Home-page/mission-bg.png"
-];
-
 export function IndustryCaseStudy({
   caseStudyTitle,
   caseStudyDesc,
@@ -47,7 +34,7 @@ export function IndustryCaseStudy({
   const [animating, setAnimating] = useState(false);
   const autoPlayTimer = useRef<NodeJS.Timeout | null>(null);
 
-  // Define 9 high-quality DevOps case study fallback slides with corresponding images
+  // Define 9 high-quality DevOps case study slides using case-studies images 2.png through 10.png
   const defaultSlides: CaseStudyItem[] = [
     {
       title: "Global High-Frequency Ledger Migrations",
@@ -62,7 +49,7 @@ export function IndustryCaseStudy({
         "Built automated data reconciliation pipelines.",
         "Configured multi-region active-active clusters."
       ],
-      image: "/assets/Home-page/arch-life.png"
+      image: "/assets/Industries-page/case-studies/2.png"
     },
     {
       title: "Automated SOC-2 Security Audits",
@@ -77,7 +64,7 @@ export function IndustryCaseStudy({
         "Automated IAM policy validation rules.",
         "Self-healing security group policies."
       ],
-      image: "/assets/Home-page/sol-life.png"
+      image: "/assets/Industries-page/case-studies/3.png"
     },
     {
       title: "Multi-Region Disaster Protection",
@@ -92,7 +79,7 @@ export function IndustryCaseStudy({
         "Automated DNS failover systems.",
         "Chaos monkey stress-test confirmed."
       ],
-      image: "/assets/Home-page/rapid-life.png"
+      image: "/assets/Industries-page/case-studies/4.png"
     },
     {
       title: "Cloud Cost Optimization Initiative",
@@ -107,7 +94,7 @@ export function IndustryCaseStudy({
         "Auto-scaling Kubernetes execution nodes.",
         "Real-time cost telemetry alerts."
       ],
-      image: "/assets/Home-page/biz-life.png"
+      image: "/assets/Industries-page/case-studies/5.png"
     },
     {
       title: "Generative AI Platform Scale",
@@ -122,7 +109,7 @@ export function IndustryCaseStudy({
         "Distributed GPU scheduling rules.",
         "Secure enterprise tenant isolation."
       ],
-      image: "/assets/Home-page/arch-design.png"
+      image: "/assets/Industries-page/case-studies/6.png"
     },
     {
       title: "GitOps CD Continuous Deployments",
@@ -137,7 +124,7 @@ export function IndustryCaseStudy({
         "Container validation scans on merge.",
         "Automated canary release testing."
       ],
-      image: "/assets/Home-page/sol-envisioning.png"
+      image: "/assets/Industries-page/case-studies/7.png"
     },
     {
       title: "24/7 SRE Telemetry & Monitoring",
@@ -152,7 +139,7 @@ export function IndustryCaseStudy({
         "Slack/PagerDuty automated escalations.",
         "Machine learning anomaly detection."
       ],
-      image: "/assets/Home-page/rapid-prototype.png"
+      image: "/assets/Industries-page/case-studies/8.png"
     },
     {
       title: "Microservices API Mesh Implementation",
@@ -167,7 +154,7 @@ export function IndustryCaseStudy({
         "Granular route policy rules.",
         "Real-time traffic trace mappings."
       ],
-      image: "/assets/Home-page/biz-envisioning.png"
+      image: "/assets/Industries-page/case-studies/9.png"
     },
     {
       title: "Zero-Trust Network Perimeter",
@@ -182,18 +169,18 @@ export function IndustryCaseStudy({
         "Dynamic firewall rule evaluations.",
         "Continuous device health verification."
       ],
-      image: "/assets/Home-page/innovation-banner.png"
+      image: "/assets/Industries-page/case-studies/10.png"
     }
   ];
 
-  // Merge the dynamically provided page case study as Slide 0, followed by the 9 default slides
+  // Merge the dynamically provided page case study as Slide 0 (using image 1.png), followed by the default slides
   const slides: CaseStudyItem[] = [
     {
       title: caseStudyTitle,
       desc: caseStudyDesc,
       metrics: metrics,
       highlights: caseStudyHighlights,
-      image: "/assets/Home-page/arch-design.png"
+      image: "/assets/Industries-page/case-studies/1.png"
     },
     ...defaultSlides
   ];
@@ -242,54 +229,54 @@ export function IndustryCaseStudy({
   }, [activeIdx, totalSlides]);
 
   const currentSlide = slides[activeIdx];
-  const displayImage = currentSlide.image || defaultImages[activeIdx % defaultImages.length];
+  const displayImage = currentSlide.image || "/assets/Industries-page/case-studies/1.png";
 
   return (
-    <section id="case-study" className="w-full py-24 bg-[#030303] border-b border-zinc-900/60 relative overflow-hidden text-white">
+    <section id="case-study" className="w-full py-20 bg-[#030303] border-b border-zinc-900/60 relative overflow-hidden text-white">
       {/* Background Graphic Glow */}
       <div className="absolute top-[30%] left-[-10%] w-[35%] aspect-square bg-[radial-gradient(circle_at_center,rgba(244,63,94,0.015),transparent_70%)] pointer-events-none z-0" />
 
-      <div className="max-w-site mx-auto px-6 md:px-12 lg:px-16 xl:px-20 relative z-10 text-left">
+      <div className="max-w-site mx-auto px-6 md:px-12 lg:px-16 relative z-10 text-left">
         
         {/* Section Header */}
-        <Reveal className="mb-12">
-          <div className="flex items-center gap-2 mb-4">
+        <Reveal className="mb-8">
+          <div className="flex items-center gap-2 mb-3">
             <span className="text-[11px] font-semibold tracking-[0.25em] uppercase text-zinc-500">
               Case Validation
             </span>
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight leading-tight text-white max-w-2xl">
+          <h2 className="text-2xl md:text-3xl font-bold tracking-tight leading-tight text-white max-w-2xl">
             Proven <span className="text-[#E11D48]">milestone achievements</span>
           </h2>
         </Reveal>
 
-        {/* Big Card Slider Container */}
-        <div className="relative w-full bg-[#0b0b0c] border border-white/10 rounded-[32px] p-8 lg:p-16 min-h-[500px] flex flex-col justify-between overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+        {/* Big Card Slider Container - Compact padding p-2 (8px) on mobile, p-6 on desktop */}
+        <div className="relative w-full bg-[#0b0b0c] border border-white/10 rounded-[24px] p-1 sm:p-5 lg:p-6 flex flex-col justify-between overflow-hidden shadow-[0_16px_40px_rgba(0,0,0,0.4)]">
           
           {/* Decorative ambient glow inside card */}
-          <div className="absolute top-0 right-0 w-[450px] h-[450px] bg-gradient-to-br from-[#E11D48]/10 to-transparent rounded-full blur-[100px] pointer-events-none z-0" />
+          <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-gradient-to-br from-[#E11D48]/5 to-transparent rounded-full blur-[80px] pointer-events-none z-0" />
 
           {/* Active Card Body Wrapper */}
-          <div className={`transition-all duration-300 ${animating ? "opacity-0 translate-y-2" : "opacity-100 translate-y-0"} grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-12 lg:gap-20 items-center relative z-10`}>
+          <div className={`transition-all duration-300 ${animating ? "opacity-0 translate-y-1" : "opacity-100 translate-y-0"} grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-6 lg:gap-10 items-center relative z-10 p-2 sm:p-3`}>
             
             {/* Left Panel: Title, Description, Highlights, Metrics */}
             <div>
-              <span className="text-[10px] font-mono tracking-widest text-[#E11D48] uppercase font-bold block mb-4">
+              <span className="text-[9px] font-mono tracking-widest text-[#E11D48] uppercase font-bold block mb-2">
                 Case Study {(activeIdx + 1).toString().padStart(2, "0")} / {totalSlides.toString().padStart(2, "0")}
               </span>
 
-              <h3 className="text-2xl md:text-3xl font-bold text-white mb-6 leading-tight max-w-xl">
+              <h3 className="text-xl md:text-2xl font-bold text-white mb-3 leading-tight max-w-xl">
                 {currentSlide.title}
               </h3>
 
-              <p className="text-zinc-400 text-sm leading-relaxed font-semibold mb-8 max-w-xl">
+              <p className="text-zinc-400 text-xs leading-relaxed font-semibold mb-4 max-w-xl">
                 {currentSlide.desc}
               </p>
 
               {/* Highlights List (re-positioned to the left side in a clean grid) */}
-              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-10 text-xs text-zinc-300 font-semibold max-w-xl">
+              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-6 text-[11px] text-zinc-300 font-semibold max-w-xl">
                 {currentSlide.highlights.map((hl, i) => (
-                  <li key={i} className="flex items-start gap-2.5">
+                  <li key={i} className="flex items-start gap-2">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#E11D48] mt-1.5 flex-shrink-0" />
                     <span className="leading-relaxed">{hl}</span>
                   </li>
@@ -297,13 +284,13 @@ export function IndustryCaseStudy({
               </ul>
 
               {/* Metrics Row */}
-              <div className="grid grid-cols-3 gap-6 pt-8 border-t border-white/5 max-w-xl">
+              <div className="grid grid-cols-3 gap-4 pt-4 border-t border-white/5 max-w-xl">
                 {currentSlide.metrics.map((m, i) => (
                   <div key={i}>
-                    <span className="block text-2xl md:text-3xl font-black text-white font-mono tracking-tight">
+                    <span className="block text-xl md:text-2xl font-black text-white font-mono tracking-tight">
                       {m.value}
                     </span>
-                    <span className="text-[10px] text-zinc-500 font-bold uppercase tracking-wider block mt-1">
+                    <span className="text-[9px] text-zinc-500 font-bold uppercase tracking-wider block mt-0.5">
                       {m.label}
                     </span>
                   </div>
@@ -311,49 +298,49 @@ export function IndustryCaseStudy({
               </div>
             </div>
 
-            {/* Right Panel: Project Showcase Image (Double-bordered card layout) */}
-            <div className="relative w-full aspect-[4/3] rounded-[24px] border border-white/10 p-0.5 bg-zinc-950 overflow-hidden group/img">
+            {/* Right Panel: Project Showcase Image */}
+            <div className="relative w-full aspect-[16/11] rounded-[16px] border border-white/5 p-0.5 bg-zinc-950 overflow-hidden group/img">
               <div className="absolute inset-0 bg-gradient-to-tr from-[#E11D48]/10 via-transparent to-transparent pointer-events-none z-10" />
               <img
                 src={displayImage}
                 alt={currentSlide.title}
-                className="w-full h-full object-cover rounded-[22px] transition-transform duration-700 group-hover/img:scale-[1.03] select-none pointer-events-none"
+                className="w-full h-full object-cover rounded-[14px] transition-transform duration-700 group-hover/img:scale-[1.02] select-none pointer-events-none"
               />
             </div>
 
           </div>
 
           {/* Slider Controls Footer */}
-          <div className="mt-12 pt-8 border-t border-white/5 flex flex-col sm:flex-row gap-6 justify-between items-center relative z-10">
+          <div className="mt-6 pt-4 border-t border-white/5 flex flex-col sm:flex-row gap-4 justify-between items-center relative z-10 px-3 pb-2">
             
             {/* Indicators Dots */}
-            <div className="flex gap-2.5 items-center">
+            <div className="flex gap-2 items-center">
               {slides.map((_, idx) => (
                 <div
                   key={idx}
                   onClick={() => { resetTimer(); changeSlide(idx); }}
-                  className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${
-                    activeIdx === idx ? "w-8 bg-[#E11D48]" : "w-2.5 bg-zinc-800 hover:bg-zinc-700"
+                  className={`h-1 rounded-full transition-all duration-300 cursor-pointer ${
+                    activeIdx === idx ? "w-6 bg-[#E11D48]" : "w-2 bg-zinc-800 hover:bg-zinc-700"
                   }`}
                 />
               ))}
             </div>
 
             {/* Left/Right Buttons */}
-            <div className="flex gap-4 items-center">
+            <div className="flex gap-3 items-center">
               <button
                 onClick={handlePrev}
                 aria-label="Previous slide"
-                className="w-11 h-11 rounded-full border border-white/5 bg-[#0b0b0c] hover:bg-zinc-900 flex items-center justify-center text-zinc-400 hover:text-white transition-colors duration-300"
+                className="w-9 h-9 rounded-full border border-white/5 bg-[#0b0b0c] hover:bg-zinc-900 flex items-center justify-center text-zinc-400 hover:text-white transition-colors duration-300"
               >
-                <ArrowLeft size={16} />
+                <ArrowLeft size={14} />
               </button>
               <button
                 onClick={handleNext}
                 aria-label="Next slide"
-                className="w-11 h-11 rounded-full border border-white/5 bg-[#0b0b0c] hover:bg-zinc-900 flex items-center justify-center text-zinc-400 hover:text-white transition-colors duration-300"
+                className="w-9 h-9 rounded-full border border-white/5 bg-[#0b0b0c] hover:bg-zinc-900 flex items-center justify-center text-zinc-400 hover:text-white transition-colors duration-300"
               >
-                <ArrowRight size={16} />
+                <ArrowRight size={14} />
               </button>
             </div>
 

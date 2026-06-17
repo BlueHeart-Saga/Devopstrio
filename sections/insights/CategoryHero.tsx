@@ -19,107 +19,107 @@ interface CategoryConfig {
 
 const CATEGORY_MAP: Record<string, CategoryConfig> = {
   "awards": {
-    image: "/assets/Insights-page/herocard/Awards.png",
+    image: "/assets/Insights-page/herocard/1.png",
     titlePrefix: "Honors &",
     description: "Celebrating our industry recognition, benchmark excellence, and the milestones achieved by the Devopstrio engineering teams."
   },
   "blogs": {
-    image: "/assets/Insights-page/herocard/Blogs.png",
+    image: "/assets/Insights-page/herocard/2.png",
     titlePrefix: "Technical",
     description: "Deep dives, expert perspectives, and step-by-step guides on modern cloud architecture, security, and developer experience."
   },
   "blog": {
-    image: "/assets/Insights-page/herocard/Blogs.png",
+    image: "/assets/Insights-page/herocard/2.png",
     titlePrefix: "Technical",
     description: "Deep dives, expert perspectives, and step-by-step guides on modern cloud architecture, security, and developer experience."
   },
   "case-studies": {
-    image: "/assets/Insights-page/herocard/case_study.png",
+    image: "/assets/Insights-page/herocard/3.png",
     titlePrefix: "Enterprise",
     description: "Detailed breakdowns of real-world challenges solved, systems migrated, and performance optimized for our clients."
   },
   "case-study": {
-    image: "/assets/Insights-page/herocard/case_study.png",
+    image: "/assets/Insights-page/herocard/3.png",
     titlePrefix: "Enterprise",
     description: "Detailed breakdowns of real-world challenges solved, systems migrated, and performance optimized for our clients."
   },
   "case_study": {
-    image: "/assets/Insights-page/herocard/case_study.png",
+    image: "/assets/Insights-page/herocard/3.png",
     titlePrefix: "Enterprise",
     description: "Detailed breakdowns of real-world challenges solved, systems migrated, and performance optimized for our clients."
   },
   "celebration": {
-    image: "/assets/Insights-page/herocard/Celebration.png",
+    image: "/assets/Insights-page/herocard/4.png",
     titlePrefix: "Milestones &",
     description: "Commemorating our growth, team events, and the shared successes that shape the vibrant ecosystem of Devopstrio."
   },
   "celebrations": {
-    image: "/assets/Insights-page/herocard/Celebration.png",
+    image: "/assets/Insights-page/herocard/4.png",
     titlePrefix: "Milestones &",
     description: "Commemorating our growth, team events, and the shared successes that shape the vibrant ecosystem of Devopstrio."
   },
   "client": {
-    image: "/assets/Insights-page/herocard/Client.png",
+    image: "/assets/Insights-page/herocard/5.png",
     titlePrefix: "Partner &",
     description: "Stories of collaboration, digital transformation journeys, and how we empower our clients to achieve market-leading velocity."
   },
   "clients": {
-    image: "/assets/Insights-page/herocard/Client.png",
+    image: "/assets/Insights-page/herocard/5.png",
     titlePrefix: "Partner &",
     description: "Stories of collaboration, digital transformation journeys, and how we empower our clients to achieve market-leading velocity."
   },
   "events": {
-    image: "/assets/Insights-page/herocard/Events.png",
+    image: "/assets/Insights-page/herocard/6.png",
     titlePrefix: "Industry",
     description: "Stay updated with our upcoming webinars, hackathons, international conferences, and community-driven knowledge sharing."
   },
   "event": {
-    image: "/assets/Insights-page/herocard/Events.png",
+    image: "/assets/Insights-page/herocard/6.png",
     titlePrefix: "Industry",
     description: "Stay updated with our upcoming webinars, hackathons, international conferences, and community-driven knowledge sharing."
   },
   "impact-metrics": {
-    image: "/assets/Insights-page/herocard/Impact_metrics.png",
+    image: "/assets/Insights-page/herocard/7.png",
     titlePrefix: "Performance &",
     description: "Quantitative analysis, scalability benchmarks, cost-optimization metrics, and measurable business value delivered."
   },
   "impact_metrics": {
-    image: "/assets/Insights-page/herocard/Impact_metrics.png",
+    image: "/assets/Insights-page/herocard/7.png",
     titlePrefix: "Performance &",
     description: "Quantitative analysis, scalability benchmarks, cost-optimization metrics, and measurable business value delivered."
   },
   "team-culture": {
-    image: "/assets/Insights-page/herocard/Team_culture.png",
+    image: "/assets/Insights-page/herocard/8.png",
     titlePrefix: "People &",
     description: "A look inside Devopstrio. Discover our remote-first philosophies, engineering principles, and continuous learning initiatives."
   },
   "team_culture": {
-    image: "/assets/Insights-page/herocard/Team_culture.png",
+    image: "/assets/Insights-page/herocard/8.png",
     titlePrefix: "People &",
     description: "A look inside Devopstrio. Discover our remote-first philosophies, engineering principles, and continuous learning initiatives."
   },
   "white-paper": {
-    image: "/assets/Insights-page/herocard/White_paper.png",
+    image: "/assets/Insights-page/herocard/9.png",
     titlePrefix: "Research &",
     description: "In-depth research papers, architectural blueprints, and compliance frameworks authored by senior platform engineers."
   },
   "white-papers": {
-    image: "/assets/Insights-page/herocard/White_paper.png",
+    image: "/assets/Insights-page/herocard/9.png",
     titlePrefix: "Research &",
     description: "In-depth research papers, architectural blueprints, and compliance frameworks authored by senior platform engineers."
   },
   "white_paper": {
-    image: "/assets/Insights-page/herocard/White_paper.png",
+    image: "/assets/Insights-page/herocard/9.png",
     titlePrefix: "Research &",
     description: "In-depth research papers, architectural blueprints, and compliance frameworks authored by senior platform engineers."
   },
   "whitepapers": {
-    image: "/assets/Insights-page/herocard/White_paper.png",
+    image: "/assets/Insights-page/herocard/9.png",
     titlePrefix: "Research &",
     description: "In-depth research papers, architectural blueprints, and compliance frameworks authored by senior platform engineers."
   },
   "whitepaper": {
-    image: "/assets/Insights-page/herocard/White_paper.png",
+    image: "/assets/Insights-page/herocard/9.png",
     titlePrefix: "Research &",
     description: "In-depth research papers, architectural blueprints, and compliance frameworks authored by senior platform engineers."
   }

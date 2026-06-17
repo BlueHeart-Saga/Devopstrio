@@ -65,12 +65,12 @@ export function ServicesHero() {
           </div>
 
           {/* Right Column: Services Image */}
-          <div className="lg:col-span-5 flex items-center justify-center lg:justify-end z-10 w-full opacity-40">
+          <div className="lg:col-span-5 flex items-center justify-center lg:justify-end z-10 w-full">
             <Reveal delay={0.2} className="w-full flex items-center justify-center lg:justify-end">
               <img
                 src="/assets/herocard/servicespage.png"
                 alt="Services Capabilities"
-                className="w-full max-w-[320px] sm:max-w-[380px] lg:max-w-[480px] h-auto object-contain select-none filter grayscale contrast-125 brightness-90"
+                className="w-full max-w-[320px] sm:max-w-[380px] lg:max-w-[480px] h-auto object-contain select-none"
               />
             </Reveal>
           </div>

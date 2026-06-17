@@ -20,10 +20,12 @@ export interface CapabilityGridProps {
 
 function getCapabilityCardImage(index: number): string {
   const capImages = [
-    "/assets/services/usecase_integration.png",
-    "/assets/services/usecase_security.png",
-    "/assets/services/usecase_synergy.png",
-    "/assets/services/usecase_governance.png"
+    "/assets/Services-Page/core-services/GenerativeAISolutions.png",
+    "/assets/Services-Page/core-services/AIAgentsAutomation.png",
+    "/assets/Services-Page/core-services/MLOps&AIOperations.png",
+    "/assets/Services-Page/core-services/MachineLearningEngineering.png",
+    "/assets/Services-Page/core-services/image.png",
+    "/assets/Services-Page/core-services/image2.png"
   ];
   return capImages[index % capImages.length];
 }
@@ -32,6 +34,20 @@ export function CapabilityGrid({ serviceSlug, capabilities }: CapabilityGridProp
   const [startIndex, setStartIndex] = useState(0);
   const [visibleCards, setVisibleCards] = useState(3);
   const [isPaused, setIsPaused] = useState(false);
+
+  // Pad capabilities list to always have at least 6 cards (min 4-6 cards)
+  let displayCapabilities = [...capabilities];
+  if (displayCapabilities.length > 0 && displayCapabilities.length < 6) {
+    while (displayCapabilities.length < 6) {
+      displayCapabilities = [
+        ...displayCapabilities,
+        ...capabilities.map((cap) => ({
+          ...cap,
+          slug: `${cap.slug}-dup-${displayCapabilities.length}`
+        }))
+      ];
+    }
+  }
 
   // Handle responsive visible card counts matching CoreServices.tsx
   useEffect(() => {
@@ -49,8 +65,8 @@ export function CapabilityGrid({ serviceSlug, capabilities }: CapabilityGridProp
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const showCarousel = capabilities.length > visibleCards;
-  const maxIndex = capabilities.length - visibleCards;
+  const showCarousel = displayCapabilities.length > visibleCards;
+  const maxIndex = displayCapabilities.length - visibleCards;
 
   // Auto-scroll loop one-by-one
   useEffect(() => {
@@ -110,8 +126,9 @@ export function CapabilityGrid({ serviceSlug, capabilities }: CapabilityGridProp
               animate={{ x: `calc(-${xTranslation}% - ${startIndex * gap}px)` }}
               transition={{ type: "spring", stiffness: 80, damping: 20 }}
             >
-              {capabilities.map((cap, idx) => {
-                const href = `/services/${serviceSlug}/${cap.slug}`;
+              {displayCapabilities.map((cap, idx) => {
+                const originalSlug = cap.slug.split("-dup-")[0];
+                const href = `/services/${serviceSlug}/${originalSlug}`;
                 const bgImage = getCapabilityCardImage(idx);
                 return (
                   <div
@@ -168,8 +185,9 @@ export function CapabilityGrid({ serviceSlug, capabilities }: CapabilityGridProp
             </motion.div>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {capabilities.map((cap, idx) => {
-                const href = `/services/${serviceSlug}/${cap.slug}`;
+              {displayCapabilities.map((cap, idx) => {
+                const originalSlug = cap.slug.split("-dup-")[0];
+                const href = `/services/${serviceSlug}/${originalSlug}`;
                 const bgImage = getCapabilityCardImage(idx);
                 return (
                   <Reveal key={cap.slug} delay={idx * 0.05}>

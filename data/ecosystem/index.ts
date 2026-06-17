@@ -32,6 +32,20 @@ export const ecosystemSubpages: Record<string, Record<string, EcosystemSubpageDe
   "community-talent-network": communitySubpages
 };
 
+import { getEnrichedDomainFaqs, generateFaqsForSubpage } from "./faq-generator";
+
+// Enrich all ecosystemDomains with exactly 10 FAQs
+Object.entries(ecosystemDomains).forEach(([slug, domain]) => {
+  domain.faqs = getEnrichedDomainFaqs(slug);
+});
+
+// Enrich all ecosystemSubpages with exactly 10 FAQs
+Object.entries(ecosystemSubpages).forEach(([domainSlug, subpages]) => {
+  Object.entries(subpages).forEach(([subpageSlug, subpageDetail]) => {
+    subpageDetail.faqs = generateFaqsForSubpage(domainSlug, subpageDetail.title);
+  });
+});
+
 export function getEcosystemDomain(slug: string): EcosystemDomain | undefined {
   return ecosystemDomains[slug];
 }

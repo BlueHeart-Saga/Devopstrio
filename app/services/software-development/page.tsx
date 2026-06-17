@@ -1,0 +1,136 @@
+import React from "react";
+import { notFound } from "next/navigation";
+import { getServiceByCategory, servicesData } from "@/data/services";
+import { getHeroBgImage } from "@/lib/services-utils";
+import { Hero } from "@/components/services/Hero";
+import { SectionNavbar } from "@/components/ui/SectionNavbar";
+import { ServiceOverview } from "@/sections/services/category/ServiceOverview";
+import { CapabilityGrid } from "@/components/services/CapabilityGrid";
+import { Challenges } from "@/components/services/Challenges";
+import { TimelineProcess } from "@/components/services/TimelineProcess";
+import { TechnologyStack } from "@/components/services/TechnologyStack";
+import { IndustryCards } from "@/components/services/IndustryCards";
+import { WhyDevopstrio } from "@/sections/home/WhyDevOpsTrio";
+import { ServiceMetrics } from "@/sections/services/category/ServiceMetrics";
+import { ServiceRelated } from "@/sections/services/category/ServiceRelated";
+import { FAQ } from "@/components/services/FAQ";
+import { CTA } from "@/components/services/CTA";
+
+export async function generateMetadata() {
+  const service = "software-development";
+  const data = getServiceByCategory(service);
+  if (!data) return {};
+
+  return {
+    title: `${data.title} | Devopstrio`,
+    description: data.subtitle,
+    openGraph: {
+      title: `${data.title} | Devopstrio`,
+      description: data.subtitle
+    }
+  };
+}
+
+export default async function ServiceCategoryPage() {
+  const service = "software-development";
+  const data = getServiceByCategory(service);
+
+  if (!data) {
+    notFound();
+  }
+
+  const breadcrumbs = [
+    { label: "Home", href: "/" },
+    { label: "Services", href: "/services" },
+    { label: data.title }
+  ];
+
+  // Defined navbar anchors in matching display sequence
+  const subSections = [
+    { id: "overview", label: "Overview" },
+    { id: "capabilities", label: "Capabilities" },
+    { id: "challenges", label: "Challenges" },
+    { id: "process", label: "Process" },
+    { id: "technology", label: "Technology" },
+    { id: "industries", label: "Industries" },
+    { id: "why-devopstrio", label: "Why Us" },
+    { id: "metrics", label: "Metrics" },
+    { id: "related-services", label: "Related Services" },
+    { id: "faq", label: "FAQ" }
+  ];
+
+  // Query up to 3 related services (excluding active slug)
+  const allServices = Object.values(servicesData);
+  const relatedServices = allServices
+    .filter((s) => s.slug !== data.slug)
+    .slice(0, 3);
+
+  return (
+    <main className="min-h-screen bg-black text-white font-sans">
+
+      {/* 1. Hero Block (pass stats as undefined since they have their own section now) */}
+      <Hero
+        badge={data.badge}
+        title={data.title}
+        subtitle={data.subtitle}
+        stats={undefined}
+        breadcrumbs={breadcrumbs}
+        bgImage={getHeroBgImage(service)}
+      />
+
+      {/* Sticky Navigation Sub-Navbar */}
+      <SectionNavbar sections={subSections} />
+
+      {/* 2. Overview Paragraphs */}
+      <ServiceOverview
+        title={data.title}
+        subtitle={data.subtitle}
+        image={getHeroBgImage(service)}
+        overviewHeading={data.overviewHeading}
+        overviewDesc1={data.overviewDesc1}
+        overviewDesc2={data.overviewDesc2}
+      />
+
+      {/* 3. Capabilities Grid */}
+      <CapabilityGrid serviceSlug={data.slug} capabilities={data.capabilities} />
+
+      {/* 4. Challenges & Solutions Tabbed Panel */}
+      <Challenges serviceSlug={data.slug} capabilities={data.capabilities} />
+
+      {/* 5. Delivery Framework (Process) */}
+      <TimelineProcess serviceSlug={data.slug} steps={data.deliveryFramework} />
+
+      {/* 6. Technology Stack */}
+      <div id="technology">
+        <TechnologyStack techs={data.techStack} />
+      </div>
+
+      {/* 7. Industries Served */}
+      <div id="industries">
+        <IndustryCards industries={data.industries} />
+      </div>
+
+      {/* 8. Why Devopstrio Showcase */}
+      <div id="why-devopstrio">
+        <WhyDevopstrio />
+      </div>
+
+      {/* 9. Metrics Section */}
+      <ServiceMetrics stats={data.stats || []} />
+
+      {/* 10. Related Services Section */}
+      <ServiceRelated relatedServices={relatedServices} />
+
+      {/* 11. FAQ Accordions */}
+      <FAQ faqs={data.faqs} />
+
+      {/* 12. CTA Engage */}
+      <CTA
+        ctaTitle={data.ctaTitle}
+        ctaHighlight={data.ctaHighlight}
+        ctaDesc={data.ctaDesc}
+        ctaBtnText={data.ctaBtnText}
+      />
+    </main>
+  );
+}

@@ -14,12 +14,47 @@ interface IndustryUseCasesProps {
   useCases: UseCaseItem[];
 }
 
-const defaultImages = [
-  "/assets/Home-page/arch-life.png",
-  "/assets/Home-page/sol-life.png",
-  "/assets/Home-page/rapid-life.png",
-  "/assets/Home-page/biz-life.png"
+const allUseCaseImages = [
+  "/assets/Industries-page/main-usecases/multicloudgitopsingress.png",
+  "/assets/Industries-page/main-usecases/infra.png",
+  "/assets/Industries-page/main-usecases/zerotrustacces.png",
+  "/assets/Industries-page/main-usecases/automationintegrate.png",
+  "/assets/Industries-page/main-usecases/distributedtelemetrylogging.png",
+  "/assets/Industries-page/main-usecases/loadverification.png",
+  "/assets/Industries-page/main-usecases/Dynamiccreditscoring.png",
+  "/assets/Industries-page/main-usecases/transactionledgerauditing.png"
 ];
+
+const getUseCaseImage = (title: string, index: number): string => {
+  const cleanTitle = title.toLowerCase().trim();
+  
+  if (cleanTitle.includes("credit") || cleanTitle.includes("score") || cleanTitle.includes("scoring")) {
+    return "/assets/Industries-page/main-usecases/Dynamiccreditscoring.png";
+  }
+  if (cleanTitle.includes("automation") || cleanTitle.includes("integrate")) {
+    return "/assets/Industries-page/main-usecases/automationintegrate.png";
+  }
+  if (cleanTitle.includes("telemetry") || cleanTitle.includes("logging") || cleanTitle.includes("log")) {
+    return "/assets/Industries-page/main-usecases/distributedtelemetrylogging.png";
+  }
+  if (cleanTitle.includes("infra") || cleanTitle.includes("code") || cleanTitle.includes("iac") || cleanTitle.includes("baseline")) {
+    return "/assets/Industries-page/main-usecases/infra.png";
+  }
+  if (cleanTitle.includes("load") || cleanTitle.includes("verification") || cleanTitle.includes("peak")) {
+    return "/assets/Industries-page/main-usecases/loadverification.png";
+  }
+  if (cleanTitle.includes("gitops") || cleanTitle.includes("ingress") || cleanTitle.includes("multi-cloud")) {
+    return "/assets/Industries-page/main-usecases/multicloudgitopsingress.png";
+  }
+  if (cleanTitle.includes("ledger") || cleanTitle.includes("audit") || cleanTitle.includes("transaction")) {
+    return "/assets/Industries-page/main-usecases/transactionledgerauditing.png";
+  }
+  if (cleanTitle.includes("zero") || cleanTitle.includes("trust") || cleanTitle.includes("access") || cleanTitle.includes("isolation")) {
+    return "/assets/Industries-page/main-usecases/zerotrustacces.png";
+  }
+
+  return allUseCaseImages[index % allUseCaseImages.length];
+};
 
 const defaultExtraUseCases: UseCaseItem[] = [
   {
@@ -112,7 +147,7 @@ export function IndustryUseCases({ useCases }: IndustryUseCasesProps) {
             }}
           >
             {mergedUseCases.map((uc, idx) => {
-              const displayImage = uc.image || defaultImages[idx % defaultImages.length];
+              const displayImage = uc.image || getUseCaseImage(uc.title, idx);
 
               return (
                 <div
