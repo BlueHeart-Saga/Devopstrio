@@ -7,6 +7,52 @@ import { insightsApi, TransformedPost } from "@/lib/insightsApi";
 import { CategoryHero } from "@/sections/insights/CategoryHero";
 import { CategoryFeatured } from "@/sections/insights/CategoryFeatured";
 import { CategoryList } from "@/sections/insights/CategoryList";
+import { InsightsNavigationCards } from "@/components/insights/InsightsNavigationCards";
+import { FAQ } from "@/components/services/FAQ";
+import { CTA } from "@/components/services/CTA";
+
+const INSIGHTS_FAQS = [
+  {
+    q: "How frequently are Devopstrio insights and engineering articles updated?",
+    a: "Our SRE, Cloud Architecture, and DevOps engineering teams publish deep-dives, post-mortems, and technology benchmarks weekly, capturing learnings from live client implementations."
+  },
+  {
+    q: "Can I request a deep-dive or whitepaper on a specific technology stack?",
+    a: "Yes! We welcome community and client suggestions. You can submit requests via our contact form to cover specific Kubernetes, IaC, or GenAI integration architectures."
+  },
+  {
+    q: "Are the architecture patterns and blueprints shared in your blogs production-ready?",
+    a: "While our whitepapers and blogs outline industry-standard best practices, architectures should be tailored to your specific scale, security, and workload parameters."
+  },
+  {
+    q: "How does Devopstrio calculate the metrics presented in your case studies?",
+    a: "Metrics are gathered directly from real-world telemetry dashboards and financial reporting tools, comparing pre-migration benchmarks to post-deployment outputs."
+  },
+  {
+    q: "Can I use or reference Devopstrio's technical diagrams in my own work?",
+    a: "Yes, our content is open for attribution under standard educational usage. Please attribute diagrams and technical checklists to Devopstrio."
+  },
+  {
+    q: "How are Devopstrio case studies structured for client confidentiality?",
+    a: "We prioritize client privacy. Case studies use sanitized architectural diagrams, anonymized metrics, or generic industry profiles unless explicit client approval is obtained."
+  },
+  {
+    q: "Who authors the publications and whitepapers on the Devopstrio portal?",
+    a: "Every post is written directly by our practitioners—active platform developers, Senior SRE specialists, and Tech Leads working on real engineering challenges."
+  },
+  {
+    q: "Does Devopstrio offer training or custom workshops based on the blogs?",
+    a: "Absolutely. We translate our written insights into tailored engineering workshops, training sessions, and design audits for enterprise cloud migrations."
+  },
+  {
+    q: "How can I register for the upcoming webinars and industry conferences?",
+    a: "Simply visit our Events category channel and select the specific webinar or roundtable card to register online and receive invite coordinates."
+  },
+  {
+    q: "Where can I find the downloadable PDFs of your whitepapers and engineering briefs?",
+    a: "Within individual whitepaper and deep-dive detail pages, look for the glassmorphic Document Reader panel to view or download high-fidelity PDF blueprints."
+  }
+];
 
 interface CategoryPageProps {
   params: Promise<{
@@ -53,18 +99,22 @@ export default function CategoryLandingPage({ params }: CategoryPageProps) {
     loadCategoryData();
   }, [categorySlug]);
 
-  // Find most viewed post as featured
-  const featuredPost = posts.reduce<TransformedPost | null>((max, current) => {
-    if (!max) return current;
-    return (current.views || 0) > (max.views || 0) ? current : max;
-  }, null);
+  // Sort posts: featured first, then by views descending
+  const sortedPosts = [...posts].sort((a, b) => {
+    if (a.featured && !b.featured) return -1;
+    if (!a.featured && b.featured) return 1;
+    return (b.views || 0) - (a.views || 0);
+  });
 
-  const adjacentPosts = featuredPost 
-    ? posts.filter((p) => p.id !== featuredPost.id) 
-    : posts;
+  // Select top posts (up to 5) for featured carousel
+  const featuredPosts = sortedPosts.slice(0, 5);
+
+  // Remaining posts for the list below
+  const listPosts = posts.filter((p) => !featuredPosts.some((f) => f.id === p.id));
+  const adjacentPosts = listPosts.length > 0 ? listPosts : posts;
 
   return (
-    <main className="min-h-screen bg-black text-white pt-24 pb-16">
+    <main className="min-h-screen bg-black text-white pb-16">
       {/* Decorative gradients */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[radial-gradient(circle_at_center,rgba(206,36,83,0.04),transparent_70%)] pointer-events-none" />
 
@@ -85,9 +135,9 @@ export default function CategoryLandingPage({ params }: CategoryPageProps) {
           <p className="text-xs text-zinc-550">We haven&apos;t published any articles in this category yet.</p>
         </div>
       ) : (
-        <div className="space-y-4">
+        <div className="space-y-12">
           <CategoryFeatured 
-            featuredPost={featuredPost} 
+            posts={featuredPosts} 
             categorySlug={categorySlug} 
           />
           <CategoryList 
@@ -96,6 +146,17 @@ export default function CategoryLandingPage({ params }: CategoryPageProps) {
           />
         </div>
       )}
+
+      {/* Navigation section for all other insights channels */}
+      <InsightsNavigationCards />
+      <FAQ faqs={INSIGHTS_FAQS} />
+      <CTA 
+        ctaTitle="Harness our engineering" 
+        ctaHighlight="expertise" 
+        ctaDesc="Partner with Devopstrio's world-class platform specialists to build, automate, and scale your digital assets with confidence." 
+        ctaBtnText="Connect With Experts" 
+        backLink="/insights" 
+      />
     </main>
   );
 }

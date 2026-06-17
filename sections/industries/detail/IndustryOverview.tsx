@@ -19,8 +19,39 @@ export function IndustryOverview({
   challenges,
   image
 }: IndustryOverviewProps) {
-  // Fallback default image if none specified
-  const displayImage = image || "/assets/Home-page/business-overview/overview-lifestyle.png";
+  // Map incoming bgImage/image to the premium illustration from /assets/Industries-page/industriescard/
+  const getPremiumIllustration = (imgSrc: string) => {
+    const src = imgSrc.toLowerCase();
+    
+    if (src.includes("finance") || src.includes("banking") || src.includes("bank")) {
+      return "/assets/Industries-page/industriescard/Banking and finance.png";
+    }
+    if (src.includes("education")) {
+      return "/assets/Industries-page/industriescard/Education.png";
+    }
+    if (src.includes("public") || src.includes("government") || src.includes("govt")) {
+      return "/assets/Industries-page/industriescard/Government & Public Sector.png";
+    }
+    if (src.includes("healthcare") || src.includes("health") || src.includes("life")) {
+      return "/assets/Industries-page/industriescard/Healthcare & Life Sciences.png";
+    }
+    if (src.includes("manufactur") || src.includes("manuf")) {
+      return "/assets/Industries-page/industriescard/Manufacturing.png";
+    }
+    if (src.includes("media") || src.includes("entertainment")) {
+      return "/assets/Industries-page/industriescard/Media & Entertainment.png";
+    }
+    if (src.includes("retail") || src.includes("commerce") || src.includes("retails")) {
+      return "/assets/Industries-page/industriescard/Retail & E-Commerce.png";
+    }
+    if (src.includes("telecommunication") || src.includes("telecom") || src.includes("tele")) {
+      return "/assets/Industries-page/industriescard/Telecommunications.png";
+    }
+    
+    return "/assets/Home-page/business-overview/overview-lifestyle.png";
+  };
+
+  const displayImage = getPremiumIllustration(image || "");
 
   return (
     <section id="overview" className="w-full py-24 bg-[#030303] text-white relative overflow-hidden border-b border-zinc-900/60">

@@ -1,8 +1,9 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import { ArrowUpRight, CheckCircle2 } from "lucide-react";
+import { motion } from "framer-motion";
+import { ArrowLeft, ArrowRight, CheckCircle2 } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
 
 export interface CapabilityItem {
@@ -17,76 +18,233 @@ export interface CapabilityGridProps {
   capabilities: CapabilityItem[];
 }
 
+function getCapabilityCardImage(index: number): string {
+  const capImages = [
+    "/assets/services/usecase_integration.png",
+    "/assets/services/usecase_security.png",
+    "/assets/services/usecase_synergy.png",
+    "/assets/services/usecase_governance.png"
+  ];
+  return capImages[index % capImages.length];
+}
+
 export function CapabilityGrid({ serviceSlug, capabilities }: CapabilityGridProps) {
+  const [startIndex, setStartIndex] = useState(0);
+  const [visibleCards, setVisibleCards] = useState(3);
+  const [isPaused, setIsPaused] = useState(false);
+
+  // Handle responsive visible card counts matching CoreServices.tsx
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 1024) {
+        setVisibleCards(3);
+      } else if (window.innerWidth >= 768) {
+        setVisibleCards(2);
+      } else {
+        setVisibleCards(1);
+      }
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const showCarousel = capabilities.length > visibleCards;
+  const maxIndex = capabilities.length - visibleCards;
+
+  // Auto-scroll loop one-by-one
+  useEffect(() => {
+    if (!showCarousel || isPaused) return;
+
+    const timer = setInterval(() => {
+      setStartIndex((prev) => (prev < maxIndex ? prev + 1 : 0));
+    }, 4500);
+
+    return () => clearInterval(timer);
+  }, [maxIndex, isPaused, showCarousel]);
+
+  const prev = () => {
+    setStartIndex((prev) => (prev > 0 ? prev - 1 : maxIndex));
+  };
+
+  const next = () => {
+    setStartIndex((prev) => (prev < maxIndex ? prev + 1 : 0));
+  };
+
+  const gap = 24; // gap-6
+  const xTranslation = startIndex * (100 / visibleCards);
+
   return (
-    <section id="capabilities" className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
-      <div className="max-w-site mx-auto px-6 md:px-12 lg:px-20 relative z-10">
+    <section
+      id="capabilities"
+      className="w-full pt-14 md:pt-20 pb-16 md:pb-24 bg-[#030303] text-white relative overflow-hidden"
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
+    >
+      {/* Ambient glows */}
+      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[radial-gradient(circle_at_top_right,rgba(220,38,38,0.05),transparent_70%)] blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[radial-gradient(circle_at_bottom_left,rgba(225,29,72,0.04),transparent_70%)] blur-3xl pointer-events-none" />
 
+      <div className="max-w-site mx-auto w-full px-6 md:px-12 lg:px-16 xl:px-20 relative z-10">
+        
         {/* Section Header */}
-        <Reveal className="mb-16 text-left">
-          <div className="flex items-center gap-2 mb-4">
-
-            <span className="text-[10px] font-bold tracking-widest uppercase text-rose-500">
-              Capabilities
+        <Reveal>
+          <div className="text-center max-w-3xl mx-auto mb-14">
+            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+              CAPABILITIES
             </span>
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
+              Core Practice <span className="text-rose-500">Specializations</span>
+            </h2>
+            <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
+              Choose a capability below to view technical solution details, deliverables, and framework processes.
+            </p>
           </div>
-          <h2 className="text-2xl md:text-3xl font-light text-white tracking-tight leading-snug">
-            Core practice <span className="font-semibold text-rose-500">specializations</span>
-          </h2>
-          <p className="text-zinc-500 text-xs md:text-sm font-light leading-relaxed mt-2 max-w-xl">
-            Choose a capability below to view technical solution details, deliverables, and framework processes.
-          </p>
         </Reveal>
 
-        {/* Grid Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {capabilities.map((cap, idx) => {
-            const href = `/services/${serviceSlug}/${cap.slug}`;
-            return (
-              <Reveal key={cap.slug} delay={idx * 0.05} className="h-full">
-                <Link
-                  href={href}
-                  className="group flex flex-col justify-between h-full bg-zinc-950/20 border border-zinc-900/80 rounded-2xl p-6 md:p-8 hover:border-rose-500/30 hover:bg-zinc-900/10 transition-all duration-300 hover:scale-[1.01] relative overflow-hidden cursor-pointer text-left"
-                >
-                  {/* Hover Spot Light Glow */}
-                  <div className="absolute top-0 right-0 w-36 h-36 bg-[radial-gradient(circle_at_center,rgba(244,63,94,0.025),transparent_70%)] opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
-
-                  <div>
-                    <div className="flex items-center justify-between mb-6 border-b border-zinc-900/60 pb-4">
-                      <h3 className="text-sm font-semibold text-zinc-100 group-hover:text-white transition-colors">
-                        {cap.title}
-                      </h3>
-                      <span className="w-8 h-8 rounded-full bg-zinc-900/40 border border-zinc-800/60 flex items-center justify-center text-zinc-500 group-hover:text-rose-500 group-hover:bg-rose-950/20 group-hover:border-rose-500/20 transition-all duration-300">
-                        <ArrowUpRight size={13} className="stroke-[2.5]" />
-                      </span>
+        {/* Carousel / Grid Viewport */}
+        <div className="relative overflow-hidden w-full pb-4">
+          {showCarousel ? (
+            <motion.div
+              className="flex gap-6"
+              animate={{ x: `calc(-${xTranslation}% - ${startIndex * gap}px)` }}
+              transition={{ type: "spring", stiffness: 80, damping: 20 }}
+            >
+              {capabilities.map((cap, idx) => {
+                const href = `/services/${serviceSlug}/${cap.slug}`;
+                const bgImage = getCapabilityCardImage(idx);
+                return (
+                  <div
+                    key={cap.slug}
+                    className="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] flex-shrink-0 group flex flex-col bg-zinc-950 border border-zinc-800/60 rounded-2xl overflow-hidden hover:border-rose-500/30 transition-all duration-300 hover:shadow-[0_0_40px_rgba(225,29,72,0.07)]"
+                  >
+                    {/* Cover Image */}
+                    <div className="relative w-full aspect-[16/9] overflow-hidden bg-zinc-900">
+                      <img
+                        src={bgImage}
+                        alt={cap.title}
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/60 via-transparent to-transparent" />
                     </div>
 
-                    <p className="text-xs text-zinc-400 leading-relaxed font-light mb-6 group-hover:text-zinc-350 transition-colors">
-                      {cap.description}
-                    </p>
+                    {/* Card Body */}
+                    <div className="flex flex-col flex-1 p-6 gap-3 text-left">
+                      <span className="text-rose-500 text-[11px] font-bold uppercase tracking-widest">
+                        CAPABILITY 0{idx + 1}
+                      </span>
+                      <h3 className="text-white text-base md:text-[17px] font-bold leading-snug">
+                        {cap.title}
+                      </h3>
+                      <p className="text-zinc-400 text-sm leading-relaxed mb-2">
+                        {cap.description}
+                      </p>
 
-                    {cap.items && cap.items.length > 0 && (
-                      <ul className="flex flex-col gap-3 mb-6">
-                        {cap.items.map((item, i) => (
-                          <li key={i} className="flex items-start gap-2.5 text-[11px] text-zinc-450 leading-relaxed">
-                            <CheckCircle2 size={13} className="text-rose-500 mt-0.5 flex-shrink-0" />
-                            <span className="font-light">{item}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    )}
-                  </div>
+                      {cap.items && cap.items.length > 0 && (
+                        <ul className="flex flex-col gap-2.5 mb-6">
+                          {cap.items.slice(0, 3).map((item, i) => (
+                            <li key={i} className="flex items-start gap-2 text-[11px] text-zinc-400 leading-normal">
+                              <CheckCircle2 size={11} className="text-rose-500 mt-0.5 flex-shrink-0" />
+                              <span>{item}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
 
-                  <div className="border-t border-zinc-900/60 pt-4 mt-auto">
-                    <span className="text-[10px] text-rose-500 font-semibold group-hover:translate-x-1 transition-transform duration-250 inline-flex items-center gap-1">
-                      View capability details <span className="transition-transform group-hover:translate-x-0.5">→</span>
-                    </span>
+                      {/* CTA */}
+                      <Link
+                        href={href}
+                        className="mt-auto inline-flex items-center gap-2.5 bg-zinc-900 hover:bg-rose-600 border border-zinc-800 hover:border-rose-600 text-zinc-300 hover:text-white rounded-lg px-4 py-2.5 text-xs font-semibold uppercase tracking-wider transition-all duration-300 w-fit group/btn"
+                      >
+                        <span className="w-5 h-5 rounded-sm bg-rose-600 group-hover/btn:bg-white flex items-center justify-center flex-shrink-0 transition-colors duration-300">
+                          <ArrowRight size={11} className="text-white group-hover/btn:text-rose-600 transition-colors duration-300" />
+                        </span>
+                        Explore Details
+                      </Link>
+                    </div>
                   </div>
-                </Link>
-              </Reveal>
-            );
-          })}
+                );
+              })}
+            </motion.div>
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {capabilities.map((cap, idx) => {
+                const href = `/services/${serviceSlug}/${cap.slug}`;
+                const bgImage = getCapabilityCardImage(idx);
+                return (
+                  <Reveal key={cap.slug} delay={idx * 0.05}>
+                    <div className="group h-full flex flex-col bg-zinc-950 border border-zinc-800/60 rounded-2xl overflow-hidden hover:border-rose-500/30 transition-all duration-300 hover:shadow-[0_0_40px_rgba(225,29,72,0.07)]">
+                      {/* Cover Image */}
+                      <div className="relative w-full aspect-[16/9] overflow-hidden bg-zinc-900">
+                        <img
+                          src={bgImage}
+                          alt={cap.title}
+                          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/60 via-transparent to-transparent" />
+                      </div>
+
+                      {/* Card Body */}
+                      <div className="flex flex-col flex-1 p-6 gap-3 text-left">
+                        <span className="text-rose-500 text-[11px] font-bold uppercase tracking-widest">
+                          CAPABILITY 0{idx + 1}
+                        </span>
+                        <h3 className="text-white text-base md:text-[17px] font-bold leading-snug">
+                          {cap.title}
+                        </h3>
+                        <p className="text-zinc-400 text-sm leading-relaxed mb-2">
+                          {cap.description}
+                        </p>
+
+                        {cap.items && cap.items.length > 0 && (
+                          <ul className="flex flex-col gap-2.5 mb-6">
+                            {cap.items.slice(0, 3).map((item, i) => (
+                              <li key={i} className="flex items-start gap-2 text-[11px] text-zinc-400 leading-normal">
+                                <CheckCircle2 size={11} className="text-rose-500 mt-0.5 flex-shrink-0" />
+                                <span>{item}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        )}
+
+                        {/* CTA */}
+                        <Link
+                          href={href}
+                          className="mt-auto inline-flex items-center gap-2.5 bg-zinc-900 hover:bg-rose-600 border border-zinc-800 hover:border-rose-600 text-zinc-300 hover:text-white rounded-lg px-4 py-2.5 text-xs font-semibold uppercase tracking-wider transition-all duration-300 w-fit group/btn"
+                        >
+                          <span className="w-5 h-5 rounded-sm bg-rose-600 group-hover/btn:bg-white flex items-center justify-center flex-shrink-0 transition-colors duration-300">
+                            <ArrowRight size={11} className="text-white group-hover/btn:text-rose-600 transition-colors duration-300" />
+                          </span>
+                          Explore Details
+                        </Link>
+                      </div>
+                    </div>
+                  </Reveal>
+                );
+              })}
+            </div>
+          )}
         </div>
+
+        {/* Carousel Navigation Buttons */}
+        {showCarousel && (
+          <div className="flex items-center gap-3 mt-8">
+            <button
+              onClick={prev}
+              className="w-11 h-11 rounded-full border border-zinc-700 hover:border-rose-500 hover:bg-rose-500/10 text-white flex items-center justify-center transition-all duration-300 active:scale-95"
+              aria-label="Previous capabilities"
+            >
+              <ArrowLeft size={16} />
+            </button>
+            <button
+              onClick={next}
+              className="w-11 h-11 rounded-full border border-zinc-700 hover:border-rose-500 hover:bg-rose-500/10 text-white flex items-center justify-center transition-all duration-300 active:scale-95"
+              aria-label="Next capabilities"
+            >
+              <ArrowRight size={16} />
+            </button>
+          </div>
+        )}
 
       </div>
     </section>

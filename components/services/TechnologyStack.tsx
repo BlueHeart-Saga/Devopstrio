@@ -156,24 +156,24 @@ export function TechnologyStack({ techs }: TechnologyStackProps) {
               const iconPath = getTechIcon(tech.name);
               return (
                 <Reveal key={tech.name} delay={idx * 0.05}>
-                  <div className="flex flex-col items-center justify-center bg-zinc-950/40 border border-zinc-900 rounded-2xl p-5 hover:border-rose-500/50 hover:bg-zinc-900/30 transition-all duration-350 hover:scale-[1.03] group relative overflow-hidden text-center min-h-[140px]">
+                  <div className="group flex flex-col items-center justify-center bg-white border border-white/20 rounded-2xl p-5 hover:shadow-[0_8px_32px_rgba(255,255,255,0.12)] hover:scale-[1.03] transition-all duration-350 relative overflow-hidden text-center min-h-[140px] cursor-pointer">
                     {/* Hover ambient mesh glow */}
-                    <div className="absolute top-0 right-0 w-20 h-20 bg-rose-600/5 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+                    <div className="absolute inset-0 bg-gradient-to-br from-zinc-100 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-0" />
                     
                     {/* Icon */}
                     <img
                       src={iconPath}
                       alt={tech.name}
-                      className="w-8 h-8 object-contain opacity-70 group-hover:opacity-100 group-hover:scale-105 transition-all duration-300 mb-3"
+                      className="w-8 h-8 object-contain group-hover:scale-105 transition-all duration-300 mb-3 relative z-10"
                     />
                     
                     {/* Title */}
-                    <strong className="text-xs font-bold text-zinc-200 group-hover:text-white transition-colors mb-1">
+                    <strong className="text-xs font-bold text-zinc-900 group-hover:text-rose-600 transition-colors mb-1 relative z-10">
                       {tech.name}
                     </strong>
                     
                     {/* Description */}
-                    <span className="text-[10px] text-zinc-300 group-hover:text-white leading-normal font-semibold max-w-[150px] transition-colors">
+                    <span className="text-[10px] text-zinc-600 group-hover:text-zinc-800 leading-normal font-semibold max-w-[150px] transition-colors relative z-10">
                       {tech.desc}
                     </span>
                   </div>
@@ -237,19 +237,19 @@ export function TechnologyStack({ techs }: TechnologyStackProps) {
                 <div className={`flip-card w-full h-16 cursor-pointer group ${flippedCards[index] ? "is-flipped" : ""}`}>
                   <div className="flip-card-inner">
                     {/* Front Face */}
-                    <div className="flip-card-front bg-zinc-900/45 border border-white/10 p-4 transition-all duration-300 group-hover:border-rose-500/40 backdrop-blur-md shadow-[inset_0_1px_1px_rgba(255,255,255,0.05)]">
+                    <div className="flip-card-front bg-white border border-white/20 p-4 transition-all duration-300 group-hover:border-rose-500/50 shadow-[0_4px_12px_rgba(255,255,255,0.05)]">
                       <img 
                         src={partner.path} 
                         alt={partner.name} 
-                        className="max-h-7 max-w-[85px] object-contain opacity-90 group-hover:opacity-100 group-hover:scale-[1.03] transition-all duration-300 filter brightness-105"
+                        className="max-h-7 max-w-[85px] object-contain group-hover:scale-[1.03] transition-all duration-300 filter brightness-105"
                       />
                       {/* Tooltip Front */}
-                      <span className="absolute bottom-full left-[50%] translate-x-[-50%] mb-2 bg-rose-600 text-white text-[8px] font-bold py-1 px-2 rounded shadow-lg opacity-0 pointer-events-none group-hover:opacity-100 transition-all duration-200 whitespace-nowrap z-50">
+                      <span className="absolute bottom-full left-[50%] translate-x-[-50%] mb-2 bg-zinc-900 text-white text-[8px] font-bold py-1 px-2 rounded shadow-lg opacity-0 pointer-events-none group-hover:opacity-100 transition-all duration-200 whitespace-nowrap z-50">
                         {partner.name}
                       </span>
                     </div>
                     {/* Back Face */}
-                    <div className="flip-card-back bg-zinc-900/65 border border-rose-500/35 p-4 shadow-[inset_0_1px_1px_rgba(255,255,255,0.05),0_0_20px_rgba(244,63,94,0.08)] backdrop-blur-md">
+                    <div className="flip-card-back bg-rose-950/[0.12] border border-rose-500/30 p-4 shadow-[inset_0_1px_1px_rgba(255,255,255,0.03),0_0_20px_rgba(244,63,94,0.12)] backdrop-blur-md">
                       <img 
                         src={partner.backPath} 
                         alt={partner.backName} 

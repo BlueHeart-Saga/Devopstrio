@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Award, ShieldCheck, Cpu, Workflow, Clock, Sliders } from "lucide-react";
+import { Award, ShieldCheck, Cpu, Workflow, Clock, Sliders, ArrowUpRight } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
 
 interface WhyChooseItem {
@@ -40,12 +40,12 @@ export function IndustryWhyChoose({ whyChoose }: IndustryWhyChooseProps) {
 
   // Icon mapping list
   const iconsList = [
-    <Award size={18} key="0" />,
-    <ShieldCheck size={18} key="1" />,
-    <Cpu size={18} key="2" />,
-    <Workflow size={18} key="3" />,
-    <Clock size={18} key="4" />,
-    <Sliders size={18} key="5" />
+    <Award size={22} key="0" className="transition-transform duration-300 group-hover:scale-110" />,
+    <ShieldCheck size={22} key="1" className="transition-transform duration-300 group-hover:scale-110" />,
+    <Cpu size={22} key="2" className="transition-transform duration-300 group-hover:scale-110" />,
+    <Workflow size={22} key="3" className="transition-transform duration-300 group-hover:scale-110" />,
+    <Clock size={22} key="4" className="transition-transform duration-300 group-hover:scale-110" />,
+    <Sliders size={22} key="5" className="transition-transform duration-300 group-hover:scale-110" />
   ];
 
   return (
@@ -63,62 +63,79 @@ export function IndustryWhyChoose({ whyChoose }: IndustryWhyChooseProps) {
             </span>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight leading-tight text-white max-w-2xl">
-            Unrivaled <span className="text-[#E11D48]">engineering advantages</span>
+            Unrivaled <span className="text-rose-500">engineering advantages</span>
           </h2>
         </Reveal>
 
-        {/* 3-Column Grid of Aspect-Square Cards */}
+        {/* 3-Column Grid of Premium Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 pb-12">
           {finalWhyChoose.map((why, idx) => {
             const borderColors = [
-              "hover:border-rose-500/40",
-              "hover:border-blue-500/40",
-              "hover:border-emerald-500/40",
-              "hover:border-amber-500/40",
-              "hover:border-purple-500/40",
-              "hover:border-cyan-500/40"
+              "hover:border-rose-500/35",
+              "hover:border-blue-500/35",
+              "hover:border-emerald-500/35",
+              "hover:border-amber-500/35",
+              "hover:border-purple-500/35",
+              "hover:border-cyan-500/35"
             ];
             const glowGradients = [
-              "from-[#E11D48]/5",
-              "from-[#3B82F6]/5",
-              "from-[#10B981]/5",
-              "from-[#F59E0B]/5",
-              "from-[#8B5CF6]/5",
-              "from-[#06B6D4]/5"
+              "from-rose-500/5",
+              "from-blue-500/5",
+              "from-emerald-500/5",
+              "from-amber-500/5",
+              "from-purple-500/5",
+              "from-cyan-500/5"
             ];
-            const iconColors = [
-              "text-[#E11D48] border-[#E11D48]/20 bg-rose-950/15 group-hover:bg-[#E11D48]",
-              "text-[#3B82F6] border-[#3B82F6]/20 bg-blue-950/15 group-hover:bg-[#3B82F6]",
-              "text-[#10B981] border-[#10B981]/20 bg-emerald-950/15 group-hover:bg-[#10B981]",
-              "text-[#F59E0B] border-[#F59E0B]/20 bg-amber-950/15 group-hover:bg-[#F59E0B]",
-              "text-[#8B5CF6] border-[#8B5CF6]/20 bg-purple-950/15 group-hover:bg-[#8B5CF6]",
-              "text-[#06B6D4] border-[#06B6D4]/20 bg-cyan-950/15 group-hover:bg-[#06B6D4]"
+            const titleHoverColors = [
+              "group-hover:text-rose-500",
+              "group-hover:text-blue-500",
+              "group-hover:text-emerald-500",
+              "group-hover:text-amber-500",
+              "group-hover:text-purple-500",
+              "group-hover:text-cyan-500"
+            ];
+            const graphicColors = [
+              "text-rose-500",
+              "text-blue-500",
+              "text-emerald-500",
+              "text-amber-500",
+              "text-purple-500",
+              "text-cyan-500"
             ];
 
             return (
               <Reveal key={idx} delay={idx * 0.05} className="h-full">
-                <div className={`group h-full aspect-square bg-[#0b0b0c] border border-white/10 rounded-[24px] p-8 flex flex-col justify-between transition-all duration-300 relative overflow-hidden cursor-pointer ${borderColors[idx]} hover:shadow-[0_8px_32px_rgba(0,0,0,0.4)]`}>
+                <div className={`group h-full bg-[#0b0b0c] border border-white/10 rounded-[24px] overflow-hidden flex flex-col justify-between min-h-[380px] ${borderColors[idx]} hover:shadow-[0_8px_32px_rgba(244,63,94,0.08)] transition-all duration-300 relative cursor-pointer`}>
                   
                   {/* Subtle Inner Glow on Hover */}
-                  <div className={`absolute inset-0 bg-gradient-to-br ${glowGradients[idx]} to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-0`} />
+                  <div className={`absolute inset-0 bg-gradient-to-br ${glowGradients[idx]} to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none`} />
 
-                  <div className="relative z-10 flex flex-col h-full justify-between">
-                    {/* Icon Badge */}
-                    <div className={`w-10 h-10 rounded-[12px] border flex items-center justify-center group-hover:text-white transition-all duration-300 mb-6 ${iconColors[idx]}`}>
-                      {iconsList[idx]}
+                  {/* Top Padded Graphic Container */}
+                  <div className="p-3 pb-0">
+                    <div className="relative w-full aspect-[16/6] overflow-hidden bg-zinc-950 rounded-[16px] border border-white/5 flex items-center justify-center transition-colors duration-300">
+                      <div className="absolute inset-0 bg-gradient-to-tr from-white/5 via-transparent to-transparent pointer-events-none" />
+                      <span className={`${graphicColors[idx]} transition-colors duration-300`}>
+                        {iconsList[idx]}
+                      </span>
                     </div>
+                  </div>
 
-                    <div>
-                      {/* Title */}
-                      <h4 className="text-base font-bold text-white mb-2 tracking-tight transition-colors duration-300">
-                        {why.title}
-                      </h4>
-                      
-                      {/* Description */}
-                      <p className="text-xs text-zinc-400 leading-relaxed font-semibold">
-                        {why.desc}
-                      </p>
-                    </div>
+                  {/* Card Main Body */}
+                  <div className="p-6 flex flex-col flex-grow text-left">
+                    <h3 className={`text-base font-bold text-white mb-2 leading-snug ${titleHoverColors[idx]} transition-colors duration-300`}>
+                      {why.title}
+                    </h3>
+                    
+                    <p className="text-xs text-zinc-400 leading-relaxed font-semibold mb-6">
+                      {why.desc}
+                    </p>
+                  </div>
+
+                  {/* Card Footer */}
+                  <div className="px-6 pb-6 pt-3 mt-auto border-t border-white/5 flex items-center justify-between">
+                    <span className={`text-[10px] ${graphicColors[idx]} font-bold uppercase tracking-wider transition-colors inline-flex items-center gap-1.5`}>
+                      Enterprise Advantage <ArrowUpRight size={13} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                    </span>
                   </div>
 
                 </div>

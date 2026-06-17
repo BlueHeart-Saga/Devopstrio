@@ -22,7 +22,7 @@ const industryList: IndustryUseCase[] = [
   {
     slug: "banking-finance",
     name: "Banking & Finance",
-    image: "/assets/Home-page/industries/Financial-Services.png",
+    image: "/assets/Industries-page/industriescard/Banking and finance.png",
     desc: "Secure, regulatory-compliant solutions for banking, investing, and digital payments.",
     bulletsMap: {
       "ai-data-innovation": ["AI Fraud Detection", "AI Credit Scoring", "Conversational Portfolio Assistants"],
@@ -36,7 +36,7 @@ const industryList: IndustryUseCase[] = [
   {
     slug: "healthcare-life-sciences",
     name: "Healthcare & Life Sciences",
-    image: "/assets/Home-page/industries/Healthcare.png",
+    image: "/assets/Industries-page/industriescard/Healthcare & Life Sciences.png",
     desc: "HIPAA-compliant telehealth apps, EHR platforms, and research databases.",
     bulletsMap: {
       "ai-data-innovation": ["Clinical Scribes & Summaries", "Genomic Research Accelerations", "Intelligent Patient Ingest Routing"],
@@ -50,7 +50,7 @@ const industryList: IndustryUseCase[] = [
   {
     slug: "retail-ecommerce",
     name: "Retail & E-Commerce",
-    image: "/assets/Home-page/industries/Manufacturing-Retail.png",
+    image: "/assets/Industries-page/industriescard/Retail & E-Commerce.png",
     desc: "Omni-channel engines, high-speed checkouts, and real-time inventory systems.",
     bulletsMap: {
       "ai-data-innovation": ["Personalized Shopping Feeds", "AI Chat Support Assistants", "Seasonal Demand Forecasts"],
@@ -64,7 +64,7 @@ const industryList: IndustryUseCase[] = [
   {
     slug: "manufacturing",
     name: "Manufacturing",
-    image: "/assets/Home-page/industries/Manufacturing-Retail.png",
+    image: "/assets/Industries-page/industriescard/Manufacturing.png",
     desc: "Industrial IoT integrations, predictive maintenance logs, and smart supply chains.",
     bulletsMap: {
       "ai-data-innovation": ["Predictive Machinery Failures", "Defect Detection Vision Networks", "Supply Chain Ingestion Forecasts"],
@@ -78,7 +78,7 @@ const industryList: IndustryUseCase[] = [
   {
     slug: "telecommunications",
     name: "Telecommunications",
-    image: "/assets/Home-page/industries/Telecom.png",
+    image: "/assets/Industries-page/industriescard/Telecommunications.png",
     desc: "Scalable OSS/BSS infrastructures, 5G cloud services, and telecom analytics.",
     bulletsMap: {
       "ai-data-innovation": ["Network Congestion Predictors", "Telecom Customer Churn Analytics", "AI Voice Support Routers"],
@@ -92,7 +92,7 @@ const industryList: IndustryUseCase[] = [
   {
     slug: "media-entertainment",
     name: "Media & Entertainment",
-    image: "/assets/Home-page/industries/Media-Entertainment.png",
+    image: "/assets/Industries-page/industriescard/Media & Entertainment.png",
     desc: "High-bandwidth VOD platforms, live broadcasting, and digital assets.",
     bulletsMap: {
       "ai-data-innovation": ["Automatic Video Tagging", "User Content Recommendation", "AI Subtitle Generation"],
@@ -106,7 +106,7 @@ const industryList: IndustryUseCase[] = [
   {
     slug: "education",
     name: "Education",
-    image: "/assets/Home-page/industries/education.png",
+    image: "/assets/Industries-page/industriescard/Education.png",
     desc: "LMS environments, remote learning tools, and digital collaboration spaces.",
     bulletsMap: {
       "ai-data-innovation": ["Automated Assignment Graders", "Student Performance Predictors", "Personalized Learning Bots"],
@@ -120,7 +120,7 @@ const industryList: IndustryUseCase[] = [
   {
     slug: "government-public-sector",
     name: "Government & Public Sector",
-    image: "/assets/Home-page/industries/govt-public-sector.png",
+    image: "/assets/Industries-page/industriescard/Government & Public Sector.png",
     desc: "Citizen portals, cloud modernization, and strict security compliance.",
     bulletsMap: {
       "ai-data-innovation": ["Citizen Document AI Scanners", "Public Data Analysis Models", "Intelligent Support Systems"],

@@ -18,7 +18,7 @@ export function InsightsJourney() {
   return (
     <section className="py-24 bg-black border-b border-zinc-900/60 relative overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_center,rgba(231,158,87,0.015),transparent_70%)] pointer-events-none" />
-      <div className="max-w-site mx-auto px-6 text-left">
+      <div className="max-w-7xl mx-auto w-full px-6 md:px-12 lg:px-16 text-left">
         <Reveal className="mb-16">
           <div className="flex items-center gap-2 mb-4">
 

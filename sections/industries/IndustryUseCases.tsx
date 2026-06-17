@@ -9,61 +9,61 @@ const useCases = [
     title: "Dynamic Credit Scoring",
     industry: "Banking",
     result: "92% faster loan approval decision loops.",
-    image: "/assets/Home-page/arch-design.png"
+    image: "/assets/Industries-page/usecase/Banking.png"
   },
   {
     title: "Patient Record Auditing",
     industry: "Healthcare",
     result: "Zero security violations across 1,400 pod nodes.",
-    image: "/assets/Home-page/sol-life.png"
+    image: "/assets/Industries-page/usecase/Healthcare.png"
   },
   {
     title: "Checkout Load Scaling",
     industry: "Retail",
     result: "Handled 4.5x traffic peaks during holiday sales.",
-    image: "/assets/Home-page/rapid-prototype.png"
+    image: "/assets/Industries-page/usecase/Retail.png"
   },
   {
     title: "IoT Asset Trackers",
     industry: "Logistics",
     result: "Real-time delivery routing updates under 3 seconds.",
-    image: "/assets/Home-page/biz-envisioning.png"
+    image: "/assets/Industries-page/usecase/Logistics.png"
   },
   {
     title: "Mainframe Database Shift",
     industry: "Telecom",
     result: "Migrated 80TB database with zero transaction downtime.",
-    image: "/assets/Home-page/arch-life.png"
+    image: "/assets/Industries-page/usecase/Telecom.png"
   },
   {
     title: "Citizen API Gateway",
     industry: "Public Sector",
     result: "API lookup times reduced from 4.8s to 180ms.",
-    image: "/assets/Home-page/biz-life.png"
+    image: "/assets/Industries-page/usecase/Public Sector.png"
   },
   {
     title: "Distributed Media CDN",
     industry: "Media",
     result: "Global load latency reduced to under 45ms.",
-    image: "/assets/Home-page/sol-envisioning.png"
+    image: "/assets/Industries-page/usecase/Media.png"
   },
   {
     title: "Classroom Live Workspace",
     industry: "Education",
     result: "Supported 25,000 concurrent streaming classrooms.",
-    image: "/assets/Home-page/rapid-life.png"
+    image: "/assets/Industries-page/usecase/Education.png"
   },
   {
     title: "Predictive Device Care",
     industry: "Manufacturing",
     result: "Reduced production machine downtime by 35%.",
-    image: "/assets/Home-page/sol-life.png"
+    image: "/assets/Industries-page/usecase/Manufacturing.png"
   },
   {
     title: "Automated Invoicing Gates",
     industry: "Fintech",
     result: "Automated verification for 50,000 daily files.",
-    image: "/assets/Home-page/arch-design.png"
+    image: "/assets/Industries-page/usecase/Fintech.png"
   }
 ];
 

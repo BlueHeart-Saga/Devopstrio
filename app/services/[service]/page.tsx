@@ -87,6 +87,9 @@ export default async function ServiceCategoryPage({ params }: PageProps) {
 
       {/* 2. Overview Paragraphs */}
       <ServiceOverview
+        title={data.title}
+        subtitle={data.subtitle}
+        image={getHeroBgImage(service)}
         overviewHeading={data.overviewHeading}
         overviewDesc1={data.overviewDesc1}
         overviewDesc2={data.overviewDesc2}
@@ -99,7 +102,7 @@ export default async function ServiceCategoryPage({ params }: PageProps) {
       <Challenges serviceSlug={data.slug} capabilities={data.capabilities} />
 
       {/* 5. Delivery Framework (Process) */}
-      <TimelineProcess steps={data.deliveryFramework} />
+      <TimelineProcess serviceSlug={data.slug} steps={data.deliveryFramework} />
 
       {/* 6. Technology Stack */}
       <div id="technology">

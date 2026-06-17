@@ -1,110 +1,252 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { Reveal } from "@/components/ui/Reveal";
 
+const locations = [
+  {
+    id: "london",
+    city: "London",
+    label: "Global HQ",
+    role: "Strategy & Leadership",
+    country: "United Kingdom",
+    flag: "🇬🇧",
+    x: 47.4,
+    y: 37.1,
+    hiring: true,
+  },
+  {
+    id: "tennessee",
+    city: "Tennessee",
+    label: "North America Ops",
+    role: "EST Timezone Coverage",
+    country: "United States",
+    flag: "🇺🇸",
+    x: 33.6,
+    y: 46.6,
+    hiring: true,
+  },
+  {
+    id: "bengaluru",
+    city: "Bengaluru",
+    label: "Engineering Centre",
+    role: "300+ Specialists",
+    country: "India",
+    flag: "🇮🇳",
+    x: 61.1,
+    y: 58.4,
+    hiring: true,
+  },
+  {
+    id: "chennai",
+    city: "Chennai",
+    label: "Cloud & SecOps Hub",
+    role: "24/7 Monitoring",
+    country: "India",
+    flag: "🇮🇳",
+    x: 61.7,
+    y: 58.5,
+    hiring: true,
+  },
+  {
+    id: "thoothukudi",
+    city: "Thoothukudi",
+    label: "DevOps & Automation",
+    role: "Rapid Delivery Team",
+    country: "India",
+    flag: "🇮🇳",
+    x: 61.5,
+    y: 60,
+    hiring: true,
+  },
+];
+
+const defaultVisible = new Set(["london", "tennessee", "bengaluru"]);
+
 export function CareersPresence() {
-  const offices = [
-    { city: "London", country: "United Kingdom", role: "UK Consulting Hub" },
-    { city: "New York", country: "United States", role: "US Client Services" },
-    { city: "Bangalore", country: "India", role: "SRE Operations Center" },
-    { city: "Chennai", country: "India", role: "Cloud Delivery Center" },
-    { city: "Thoothukudi", country: "India", role: "IP & Frameworks Lab" }
-  ];
+  const [active, setActive] = useState<string | null>(null);
 
   return (
-    <section className="py-24 bg-black border-b border-zinc-900/60 relative">
-      <div className="max-w-site mx-auto px-6 md:px-12 lg:px-20 text-left">
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.3fr] gap-16 items-center">
-          {/* Left Info */}
-          <div>
-            <Reveal>
-              <div className="flex items-center gap-2 mb-4">
+    <section className="w-full py-20 bg-black border-b border-zinc-900 relative overflow-hidden">
+      {/* Ambient glow */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[300px] bg-[radial-gradient(ellipse_at_top,rgba(244,63,94,0.05),transparent_70%)] pointer-events-none" />
 
-                <span className="text-[10px] font-bold tracking-widest uppercase text-rose-500">Global Presence</span>
-              </div>
-              <h2 className="text-2xl md:text-3xl font-light text-white tracking-tight leading-snug mb-6">
-                One team. <span className="block font-semibold text-rose-500">Multiple locations.</span> Unlimited opportunities.
-              </h2>
-              <p className="text-zinc-450 text-xs md:text-sm font-light leading-relaxed mb-8">
-                We design and maintain systems across offices in the UK, US, and India, coordinating delivery models that ensure continuous operations.
-              </p>
-            </Reveal>
+      <div className="max-w-7xl mx-auto w-full px-6 md:px-12 lg:px-16 relative z-10">
 
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-              {offices.map((office, idx) => (
-                <Reveal key={idx} delay={idx * 0.05}>
-                  <div className="bg-zinc-950/40 border border-zinc-900 rounded-2xl p-4">
-                    <span className="text-xs font-bold text-white block mb-0.5">{office.city}</span>
-                    <span className="text-[9px] text-zinc-500 font-semibold block mb-2">{office.country}</span>
-                    <span className="text-[9px] text-rose-500 font-bold uppercase tracking-wider block">{office.role}</span>
+        {/* Section Header */}
+        <Reveal>
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+              GLOBAL PRESENCE
+            </span>
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white uppercase">
+              One team. <span className="text-rose-500">Worldwide opportunities.</span>
+            </h2>
+            <p className="text-zinc-400 text-base leading-relaxed">
+              Join a globally distributed team across the UK, US, and India — with hybrid roles, flexible hours, and open positions in every timezone.
+            </p>
+          </div>
+        </Reveal>
+
+        {/* Interactive Map */}
+        <Reveal delay={0.1}>
+          <div className="relative w-full">
+            {/* Map image */}
+            <div className="relative w-full" style={{ paddingBottom: "38%" }}>
+              <img
+                src="/assets/Contact-page/map/image1.png"
+                alt="Devopstrio global hiring locations"
+                className="absolute inset-0 w-full h-full object-contain opacity-50"
+                draggable={false}
+              />
+              {/* Edge vignette */}
+              <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_40%,#000_100%)] pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent pointer-events-none" />
+
+              {/* Location pins */}
+              {locations.map((loc) => {
+                const isActive = active === loc.id;
+                const showLabel = isActive || defaultVisible.has(loc.id);
+
+                return (
+                  <div
+                    key={loc.id}
+                    className="absolute -translate-x-1/2 -translate-y-1/2 cursor-pointer z-10"
+                    style={{ left: `${loc.x}%`, top: `${loc.y}%` }}
+                    onMouseEnter={() => setActive(loc.id)}
+                    onMouseLeave={() => setActive(null)}
+                  >
+                    {/* Pulse ring */}
+                    <span
+                      className={`absolute rounded-full transition-all duration-300 ${
+                        isActive
+                          ? "animate-ping bg-rose-500/30 scale-150"
+                          : "bg-rose-500/15 scale-125"
+                      }`}
+                      style={{ width: 7, height: 7, top: -1, left: -1 }}
+                    />
+                    {/* Core dot */}
+                    <span
+                      className={`block rounded-full border transition-all duration-200 ${
+                        isActive
+                          ? "bg-white border-rose-500 w-2.5 h-2.5 shadow-[0_0_8px_rgba(244,63,94,0.8)]"
+                          : "bg-rose-500 border-rose-400/60 w-1.5 h-1.5 shadow-[0_0_5px_rgba(244,63,94,0.6)]"
+                      }`}
+                    />
+
+                    {/* Label pill */}
+                    <div
+                      className={`absolute bottom-full mb-2 left-1/2 -translate-x-1/2 transition-all duration-200 whitespace-nowrap ${
+                        showLabel ? "opacity-100 translate-y-0" : "opacity-0 translate-y-1 pointer-events-none"
+                      }`}
+                    >
+                      <div
+                        className={`flex items-center gap-1 px-2 py-1 rounded-md border shadow-lg text-[9px] font-bold backdrop-blur-sm ${
+                          isActive
+                            ? "bg-zinc-900/95 border-rose-800/60 text-white"
+                            : "bg-zinc-950/90 border-zinc-800/80 text-zinc-200"
+                        }`}
+                      >
+                        <span className="text-xs leading-none">{loc.flag}</span>
+                        <span>{loc.city}</span>
+                      </div>
+                      <div className="w-1.5 h-1.5 bg-zinc-900/95 border-r border-b border-zinc-800/80 rotate-45 mx-auto -mt-[3px]" />
+                    </div>
+
+                    {/* Detail card on hover */}
+                    {isActive && (
+                      <div className="absolute top-full mt-3 left-1/2 -translate-x-1/2 z-20">
+                        <div className="bg-zinc-950/95 border border-zinc-800 rounded-lg p-2.5 shadow-xl text-left min-w-[140px] backdrop-blur-md">
+                          <div className="text-[8px] font-bold text-rose-500 uppercase tracking-widest mb-0.5">
+                            {loc.label}
+                          </div>
+                          <div className="text-[10px] font-bold text-white leading-none mb-0.5">
+                            {loc.city}, {loc.country}
+                          </div>
+                          <div className="text-[9px] text-zinc-500 font-bold mb-1.5">
+                            {loc.role}
+                          </div>
+                          {loc.hiring && (
+                            <span className="text-[8px] font-extrabold text-emerald-400 uppercase tracking-wider bg-emerald-500/10 border border-emerald-500/20 px-1.5 py-0.5 rounded-full">
+                              Now Hiring
+                            </span>
+                          )}
+                        </div>
+                      </div>
+                    )}
                   </div>
-                </Reveal>
-              ))}
+                );
+              })}
+            </div>
+
+            {/* Legend */}
+            <div className="flex items-center justify-center gap-6 py-2 mt-1">
+              <div className="flex items-center gap-1.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-rose-500 shadow-[0_0_5px_rgba(244,63,94,0.7)]" />
+                <span className="text-[9px] font-bold text-zinc-600 uppercase tracking-widest">Office Location</span>
+              </div>
+              <div className="flex items-center gap-1.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-zinc-700" />
+                <span className="text-[9px] font-bold text-zinc-600 uppercase tracking-widest">Hover to explore</span>
+              </div>
             </div>
           </div>
+        </Reveal>
 
-          {/* Right Map Canvas (Interactive SVG Vector Map) */}
-          <Reveal delay={0.15} className="relative w-full aspect-[1.6/1] bg-zinc-950/10 border border-zinc-900 rounded-[32px] overflow-hidden p-6 flex items-center justify-center group">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(225,29,72,0.03),transparent_75%)] pointer-events-none" />
+        {/* Office quick cards */}
+        <Reveal delay={0.2}>
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 mt-6">
+            {locations.map((loc) => {
+              const isActive = active === loc.id;
+              return (
+                <button
+                  key={loc.id}
+                  onMouseEnter={() => setActive(loc.id)}
+                  onMouseLeave={() => setActive(null)}
+                  className={`text-left p-4 rounded-xl border transition-all duration-250 group ${
+                    isActive
+                      ? "border-rose-900/70 bg-rose-950/15"
+                      : "border-white/[0.06] bg-zinc-950/40 hover:border-zinc-800"
+                  }`}
+                >
+                  <div className="text-lg mb-2 leading-none">{loc.flag}</div>
+                  <div className={`text-[12px] font-bold leading-none mb-1 transition-colors ${isActive ? "text-white" : "text-zinc-300 group-hover:text-white"}`}>
+                    {loc.city}
+                  </div>
+                  <div className={`text-[9px] font-bold transition-colors leading-tight mb-1.5 ${isActive ? "text-rose-500" : "text-zinc-600 group-hover:text-zinc-500"}`}>
+                    {loc.label}
+                  </div>
+                  {loc.hiring && (
+                    <span className="text-[8px] font-extrabold text-emerald-400 uppercase tracking-wider">
+                      Now Hiring
+                    </span>
+                  )}
+                </button>
+              );
+            })}
+          </div>
+        </Reveal>
 
-            {/* World Grid Vector Map */}
-            <svg viewBox="0 0 1000 500" className="w-full h-full opacity-20 text-zinc-700 stroke-zinc-800 fill-none stroke-[0.5]">
-              {/* Simulated Grid Latitudes / Longitudes */}
-              <line x1="0" y1="100" x2="1000" y2="100" strokeDasharray="3,3" />
-              <line x1="0" y1="200" x2="1000" y2="200" strokeDasharray="3,3" />
-              <line x1="0" y1="300" x2="1000" y2="300" strokeDasharray="3,3" />
-              <line x1="0" y1="400" x2="1000" y2="400" strokeDasharray="3,3" />
-              <line x1="200" y1="0" x2="200" y2="500" strokeDasharray="3,3" />
-              <line x1="400" y1="0" x2="400" y2="500" strokeDasharray="3,3" />
-              <line x1="600" y1="0" x2="600" y2="500" strokeDasharray="3,3" />
-              <line x1="800" y1="0" x2="800" y2="500" strokeDasharray="3,3" />
-
-              {/* World outline placeholder path to simulate world geography */}
-              <path d="M150,150 Q180,120 220,180 T300,160 T350,220 T200,280 Z" />
-              <path d="M480,100 Q550,80 620,120 T700,200 T600,350 T500,200 Z" />
-              <path d="M720,250 Q780,220 840,280 T880,350 T750,420 Z" />
-            </svg>
-
-            {/* Glowing Office Locations overlay */}
-            <div className="absolute inset-0">
-              {/* London */}
-              <div className="absolute top-[32%] left-[45%] group/pin">
-                <span className="absolute -top-6 -left-8 bg-zinc-950 border border-zinc-800 text-[8px] font-mono font-bold px-1.5 py-0.5 rounded text-white opacity-0 group-hover/pin:opacity-100 transition-opacity whitespace-nowrap z-20">London Hub</span>
-                <div className="w-3.5 h-3.5 rounded-full bg-rose-600/30 border border-rose-500 flex items-center justify-center animate-ping absolute -inset-0.5" />
-                <div className="relative w-2.5 h-2.5 rounded-full bg-rose-500 border border-black z-10 cursor-pointer" />
+        {/* Stats row */}
+        <Reveal delay={0.3}>
+          <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4">
+            {[
+              { value: "5", label: "Global Offices" },
+              { value: "3", label: "Countries" },
+              { value: "525+", label: "Professionals" },
+              { value: "24/7", label: "Operations" },
+            ].map((stat) => (
+              <div
+                key={stat.label}
+                className="flex flex-col items-center justify-center py-5 rounded-xl border border-white/[0.06] bg-zinc-950/40 text-center"
+              >
+                <span className="text-2xl font-extrabold text-rose-500 leading-none mb-1">{stat.value}</span>
+                <span className="text-[9px] font-bold text-zinc-500 uppercase tracking-widest">{stat.label}</span>
               </div>
+            ))}
+          </div>
+        </Reveal>
 
-              {/* New York */}
-              <div className="absolute top-[38%] left-[28%] group/pin">
-                <span className="absolute -top-6 -left-10 bg-zinc-950 border border-zinc-800 text-[8px] font-mono font-bold px-1.5 py-0.5 rounded text-white opacity-0 group-hover/pin:opacity-100 transition-opacity whitespace-nowrap z-20">New York Hub</span>
-                <div className="w-3.5 h-3.5 rounded-full bg-rose-600/30 border border-rose-500 flex items-center justify-center animate-ping absolute -inset-0.5" />
-                <div className="relative w-2.5 h-2.5 rounded-full bg-rose-500 border border-black z-10 cursor-pointer" />
-              </div>
-
-              {/* Bangalore */}
-              <div className="absolute top-[62%] left-[71%] group/pin">
-                <span className="absolute -top-6 -left-12 bg-zinc-950 border border-zinc-800 text-[8px] font-mono font-bold px-1.5 py-0.5 rounded text-white opacity-0 group-hover/pin:opacity-100 transition-opacity whitespace-nowrap z-20">Bangalore SRE</span>
-                <div className="w-3.5 h-3.5 rounded-full bg-rose-600/30 border border-rose-500 flex items-center justify-center animate-ping absolute -inset-0.5" />
-                <div className="relative w-2.5 h-2.5 rounded-full bg-rose-500 border border-black z-10 cursor-pointer" />
-              </div>
-
-              {/* Chennai */}
-              <div className="absolute top-[64%] left-[72%] group/pin">
-                <span className="absolute -top-6 -left-12 bg-zinc-950 border border-zinc-800 text-[8px] font-mono font-bold px-1.5 py-0.5 rounded text-white opacity-0 group-hover/pin:opacity-100 transition-opacity whitespace-nowrap z-20">Chennai Delivery</span>
-                <div className="w-3.5 h-3.5 rounded-full bg-rose-600/30 border border-rose-500 flex items-center justify-center animate-ping absolute -inset-0.5" />
-                <div className="relative w-2.5 h-2.5 rounded-full bg-rose-500 border border-black z-10 cursor-pointer" />
-              </div>
-
-              {/* Thoothukudi */}
-              <div className="absolute top-[68%] left-[71.5%] group/pin">
-                <span className="absolute -top-6 -left-12 bg-zinc-950 border border-zinc-800 text-[8px] font-mono font-bold px-1.5 py-0.5 rounded text-white opacity-0 group-hover/pin:opacity-100 transition-opacity whitespace-nowrap z-20">Thoothukudi IP Lab</span>
-                <div className="w-3.5 h-3.5 rounded-full bg-rose-600/30 border border-rose-500 flex items-center justify-center animate-ping absolute -inset-0.5" />
-                <div className="relative w-2.5 h-2.5 rounded-full bg-rose-500 border border-black z-10 cursor-pointer" />
-              </div>
-            </div>
-          </Reveal>
-        </div>
       </div>
     </section>
   );

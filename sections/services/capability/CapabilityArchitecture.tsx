@@ -121,12 +121,12 @@ const architectureRegistry: Record<string, ArchitectureFlow> = {
 };
 
 const benefitsList = [
-  { title: "Scalable", desc: "Auto-scaling compute clusters expand to handle unpredictable traffic spikes without performance loss." },
-  { title: "Secure", desc: "Zero-trust policy gates combined with end-to-end encryption keep organizational records fully protected." },
-  { title: "Automated", desc: "Orchestrated GitOps deployment templates reduce system updates and setup times by up to 90%." },
-  { title: "High Availability", desc: "Active-active multi-region replication setups keep applications online during local service outages." },
-  { title: "Cloud Native", desc: "Designed around containerized modules running on managed Kubernetes nodes for optimal efficiency." },
-  { title: "Future Ready", desc: "Fully-decoupled modular architectures allow teams to upgrade core tools without rebuilds." }
+  { title: "Scalable", desc: "Built for dynamic enterprise growth." },
+  { title: "Secure", desc: "Zero-trust global access protection." },
+  { title: "Automated", desc: "Continuous rapid cloud deployment." },
+  { title: "High Availability", desc: "Always online with zero downtime." },
+  { title: "Cloud Native", desc: "Optimized for modern cloud stacks." },
+  { title: "Future Ready", desc: "Modular, decoupled, and upgradable." }
 ];
 
 export function CapabilityArchitecture({ serviceSlug, capabilityTitle }: CapabilityArchitectureProps) {
@@ -142,9 +142,9 @@ export function CapabilityArchitecture({ serviceSlug, capabilityTitle }: Capabil
         {/* Main Grid: Left Side Diagram, Right Side Benefits */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
           
-          {/* Left Column: Microsoft Layered Architecture Flow Diagram */}
-          <div className="lg:col-span-6 w-full flex flex-col justify-start">
-            <Reveal className="mb-8">
+          {/* Left Column: Alternate Zigzag Architecture Flow Diagram */}
+          <div className="lg:col-span-6 w-full flex flex-col justify-start relative">
+            <Reveal className="mb-12">
               <span className="text-[10px] font-mono tracking-widest text-rose-500 uppercase font-bold block mb-2">
                 SYSTEM TOPOLOGY
               </span>
@@ -153,31 +153,68 @@ export function CapabilityArchitecture({ serviceSlug, capabilityTitle }: Capabil
               </h3>
             </Reveal>
 
-            <div className="flex flex-col">
-              {flow.layers.map((layer, idx) => (
-                <React.Fragment key={idx}>
-                  {/* Layer Card */}
-                  <Reveal delay={idx * 0.05} className="w-full">
-                    <div className="group w-full bg-zinc-950/40 border border-white/5 rounded-2xl p-5 hover:border-rose-500/35 hover:shadow-[0_0_20px_rgba(244,63,94,0.08)] hover:bg-zinc-900/10 transition-all duration-300 relative text-left backdrop-blur-sm">
-                      <span className="block text-[8px] font-mono tracking-widest text-rose-500 uppercase font-bold mb-2">
-                        {layer.label}
-                      </span>
-                      <h4 className="text-xs font-bold text-white leading-normal group-hover:text-rose-500 transition-colors">
-                        {layer.node}
-                      </h4>
-                    </div>
-                  </Reveal>
+            {/* Diagram container with vertical spine line */}
+            <div className="relative flex flex-col w-full pl-8 lg:pl-0">
+              {/* Mobile-only Left Spine Line */}
+              <div className="absolute left-3 top-4 bottom-4 w-[1px] bg-gradient-to-b from-rose-500/60 via-rose-500/30 to-rose-500/5 lg:hidden pointer-events-none z-0" />
 
-                  {/* Red Glowing Connector Line between cards */}
-                  {idx < flow.layers.length - 1 && (
-                    <div className="flex justify-center my-2 select-none pointer-events-none">
-                      <div className="w-[1px] h-8 bg-gradient-to-b from-rose-500 to-transparent relative flex items-center justify-center">
-                        <ArrowDown size={10} className="text-rose-500 absolute bottom-[-4px] animate-pulse" />
+              {flow.layers.map((layer, idx) => {
+                const parts = layer.label.split(": ");
+                const layerNum = parts[0] || `Layer 0${idx + 1}`;
+                const layerTitle = parts[1] || layer.label;
+                const numOnly = layerNum.replace(/layer/i, "").trim();
+
+                return (
+                  <div
+                    key={idx}
+                    className={`relative w-full flex flex-col justify-start lg:w-1/2 mb-8 last:mb-0
+                      ${idx % 2 === 0 ? "lg:self-start lg:items-end lg:pr-12" : "lg:self-end lg:items-start lg:pl-12"}
+                    `}
+                  >
+                    {/* Mobile Connector Line: From the left vertical line to the card */}
+                    <div className="absolute left-[-20px] top-1/2 -translate-y-1/2 w-[20px] h-[1px] bg-rose-500/50 lg:hidden pointer-events-none" />
+
+                    {/* Top Entry Line: Vertical trace coming into the first card */}
+                    {idx === 0 && (
+                      <div className="absolute bottom-full left-1/2 -translate-x-1/2 w-[1px] h-[48px] bg-gradient-to-t from-rose-500/50 to-transparent hidden lg:block" />
+                    )}
+
+                    {/* Desktop Zigzag Connector: From center-bottom of current card to center-top of next card */}
+                    {idx < flow.layers.length - 1 && (
+                      idx % 2 === 0 ? (
+                        /* Left to Right line */
+                        <svg className="absolute left-1/2 top-[100%] w-[376px] h-[32px] pointer-events-none hidden lg:block z-0" viewBox="0 0 376 32" fill="none">
+                          <line x1="0" y1="0" x2="376" y2="32" stroke="#f43f5e" strokeWidth="1.5" strokeDasharray="4 4" className="opacity-50" />
+                        </svg>
+                      ) : (
+                        /* Right to Left line */
+                        <svg className="absolute right-1/2 top-[100%] w-[376px] h-[32px] pointer-events-none hidden lg:block z-0" viewBox="0 0 376 32" fill="none">
+                          <line x1="376" y1="0" x2="0" y2="32" stroke="#f43f5e" strokeWidth="1.5" strokeDasharray="4 4" className="opacity-50" />
+                        </svg>
+                      )
+                    )}
+
+                    {/* Bottom Exit Line: Vertical trace leaving the last card */}
+                    {idx === flow.layers.length - 1 && (
+                      <div className="absolute top-full left-1/2 -translate-x-1/2 w-[1px] h-[48px] bg-gradient-to-b from-rose-500/50 to-transparent hidden lg:block" />
+                    )}
+
+                    {/* Diagram-Like Card */}
+                    <Reveal delay={idx * 0.05} className="w-full max-w-[280px]">
+                      <div className="group w-full bg-rose-950/[0.08] border border-rose-500/15 rounded-2xl p-4 hover:border-rose-500/50 hover:shadow-[0_0_25px_rgba(244,63,94,0.2)] hover:bg-rose-950/[0.18] transition-all duration-300 relative text-left backdrop-blur-sm">
+                        <div className="flex items-center justify-between mb-2">
+                          <span className="text-[15px] font-black font-mono tracking-tight text-transparent bg-clip-text bg-gradient-to-br from-white via-rose-400 to-rose-600 drop-shadow-[0_2px_4px_rgba(244,63,94,0.5)]">
+                            {numOnly}
+                          </span>
+                        </div>
+                        <h4 className="text-xs font-bold text-white leading-snug group-hover:text-rose-500 transition-colors uppercase tracking-wider">
+                          {layerTitle}
+                        </h4>
                       </div>
-                    </div>
-                  )}
-                </React.Fragment>
-              ))}
+                    </Reveal>
+                  </div>
+                );
+              })}
             </div>
           </div>
 

@@ -32,15 +32,15 @@ export function RelatedServices({ currentServiceSlug }: RelatedServicesProps) {
       <div className="max-w-site mx-auto px-6 md:px-12 lg:px-20 relative z-10 text-center">
         
         {/* Header Section */}
-        <Reveal className="mb-16 text-center">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full mb-4">
-            <span className="w-1.5 h-1.5 rounded-full bg-rose-600 animate-pulse" />
+        <Reveal className="mb-16 w-full flex flex-col items-center text-center">
+          <div className="inline-flex items-center justify-center gap-2 px-3 py-1 rounded-full mb-4">
+            
             <span className="text-[10px] font-bold tracking-widest uppercase text-rose-500">
               Internal Ecosystem
             </span>
           </div>
-          <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white uppercase">
-            Explore <span className="text-rose-500">Related Services</span>
+          <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white uppercase text-center mx-auto">
+            Explore related <span className="text-rose-500">services</span>
           </h2>
         </Reveal>
 

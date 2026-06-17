@@ -5,7 +5,7 @@ import { Reveal } from "@/components/ui/Reveal";
 
 export function InsightsHero() {
   return (
-    <section className="relative w-full min-h-[80vh] flex items-center bg-[#030303] text-white pt-20 pb-16 lg:pt-20 lg:pb-24 overflow-hidden">
+    <section className="relative w-full min-h-[80vh] flex items-center bg-[#030303] text-white pt-28 pb-16 lg:pt-36 lg:pb-24 overflow-hidden">
       {/* Background Ambient Glows */}
       <div className="absolute top-[-10%] right-[-10%] w-[50%] aspect-square bg-[radial-gradient(circle_at_center,rgba(244,63,94,0.06),transparent_70%)] pointer-events-none z-0" />
       <div className="absolute bottom-[-10%] left-[-10%] w-[50%] aspect-square bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.01),transparent_70%)] pointer-events-none z-0" />
@@ -16,14 +16,14 @@ export function InsightsHero() {
           {/* Left Column: Text Content */}
           <div className="lg:col-span-7 flex flex-col items-start text-left justify-center z-20">
             {/* Eyebrow */}
-            <Reveal>
+            {/* <Reveal>
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-zinc-800/80 bg-zinc-950/40 mb-6">
                 <span className="w-1.5 h-1.5 rounded-full bg-rose-600 animate-pulse" />
                 <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-zinc-400">
                   ENGINEERING BLOG &amp; INSIGHTS
                 </span>
               </div>
-            </Reveal>
+            </Reveal> */}
 
             {/* Heading */}
             <Reveal delay={0.1}>

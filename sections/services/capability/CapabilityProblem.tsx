@@ -126,9 +126,9 @@ export function CapabilityProblem({ serviceSlug, capabilityTitle }: CapabilityPr
         {/* 1. Centered Heading Block */}
         <div className="max-w-2xl text-center mb-10">
           <Reveal>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-zinc-800/80 bg-zinc-950/40 mb-4 mx-auto">
-              <span className="w-1 h-1 rounded-full bg-rose-600 animate-pulse" />
-              <span className="text-[9px] font-bold tracking-[0.2em] uppercase text-zinc-400">
+            <div className="inline-flex items-center gap-2 px-3 py-1 mb-4 mx-auto">
+            
+              <span className="text-[9px] font-bold tracking-[0.2em] uppercase text-rose-500">
                 THE BUSINESS CHALLENGE
               </span>
             </div>

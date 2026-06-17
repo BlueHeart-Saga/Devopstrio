@@ -8,6 +8,52 @@ import { InsightsHero } from "@/sections/insights/InsightsHero";
 import { FeaturedHighlights } from "@/sections/insights/FeaturedHighlights";
 import { InsightsJourney } from "@/sections/insights/InsightsJourney";
 import { InsightsLibrary } from "@/sections/insights/InsightsLibrary";
+import { InsightsNavigationCards } from "@/components/insights/InsightsNavigationCards";
+import { FAQ } from "@/components/services/FAQ";
+import { CTA } from "@/components/services/CTA";
+
+const INSIGHTS_FAQS = [
+  {
+    q: "How frequently are Devopstrio insights and engineering articles updated?",
+    a: "Our SRE, Cloud Architecture, and DevOps engineering teams publish deep-dives, post-mortems, and technology benchmarks weekly, capturing learnings from live client implementations."
+  },
+  {
+    q: "Can I request a deep-dive or whitepaper on a specific technology stack?",
+    a: "Yes! We welcome community and client suggestions. You can submit requests via our contact form to cover specific Kubernetes, IaC, or GenAI integration architectures."
+  },
+  {
+    q: "Are the architecture patterns and blueprints shared in your blogs production-ready?",
+    a: "While our whitepapers and blogs outline industry-standard best practices, architectures should be tailored to your specific scale, security, and workload parameters."
+  },
+  {
+    q: "How does Devopstrio calculate the metrics presented in your case studies?",
+    a: "Metrics are gathered directly from real-world telemetry dashboards and financial reporting tools, comparing pre-migration benchmarks to post-deployment outputs."
+  },
+  {
+    q: "Can I use or reference Devopstrio's technical diagrams in my own work?",
+    a: "Yes, our content is open for attribution under standard educational usage. Please attribute diagrams and technical checklists to Devopstrio."
+  },
+  {
+    q: "How are Devopstrio case studies structured for client confidentiality?",
+    a: "We prioritize client privacy. Case studies use sanitized architectural diagrams, anonymized metrics, or generic industry profiles unless explicit client approval is obtained."
+  },
+  {
+    q: "Who authors the publications and whitepapers on the Devopstrio portal?",
+    a: "Every post is written directly by our practitioners—active platform developers, Senior SRE specialists, and Tech Leads working on real engineering challenges."
+  },
+  {
+    q: "Does Devopstrio offer training or custom workshops based on the blogs?",
+    a: "Absolutely. We translate our written insights into tailored engineering workshops, training sessions, and design audits for enterprise cloud migrations."
+  },
+  {
+    q: "How can I register for the upcoming webinars and industry conferences?",
+    a: "Simply visit our Events category channel and select the specific webinar or roundtable card to register online and receive invite coordinates."
+  },
+  {
+    q: "Where can I find the downloadable PDFs of your whitepapers and engineering briefs?",
+    a: "Within individual whitepaper and deep-dive detail pages, look for the glassmorphic Document Reader panel to view or download high-fidelity PDF blueprints."
+  }
+];
 
 export default function InsightsLandingPage() {
   const [posts, setPosts] = useState<TransformedPost[]>([]);
@@ -48,8 +94,17 @@ export default function InsightsLandingPage() {
       {/* Structured Insights Sections */}
       <InsightsHero />
       <FeaturedHighlights posts={posts} />
-      <InsightsJourney />
+      {/* <InsightsJourney /> */}
       <InsightsLibrary posts={posts} loading={loading} />
+      <InsightsNavigationCards />
+      <FAQ faqs={INSIGHTS_FAQS} />
+      <CTA 
+        ctaTitle="Harness our engineering" 
+        ctaHighlight="expertise" 
+        ctaDesc="Partner with Devopstrio's world-class platform specialists to build, automate, and scale your digital assets with confidence." 
+        ctaBtnText="Connect With Experts" 
+        backLink="/insights" 
+      />
       
     </main>
   );

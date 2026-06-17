@@ -25,15 +25,14 @@ export default function DocumentReaderPage({ params }: ReaderPageProps) {
     async function loadPostDoc() {
       try {
         setLoading(true);
-        const data = await insightsApi.getContentById(postId);
-        if (data) {
+        const raw = await insightsApi.getContentById(postId);
+        const data = raw?.item ?? raw;
+        if (data && data.id) {
           const transformed = insightsApi.transformContent(data);
           setPost(transformed);
-
-          // Find the first document block
           if (transformed.rawBlocks) {
             const docBlock = transformed.rawBlocks.find((b) => b.type === "document");
-            if (docBlock && docBlock.data) {
+            if (docBlock?.data) {
               const url = docBlock.data.file_id
                 ? `https://mediahub-backend-docker-hgh6hzgacraqbhb2.southindia-01.azurewebsites.net/api/documents/${docBlock.data.file_id}`
                 : docBlock.data.url || null;

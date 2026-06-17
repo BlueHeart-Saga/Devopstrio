@@ -166,31 +166,31 @@ export function IndustryTechStack({ techs }: IndustryTechStackProps) {
             </Reveal>
           </div>
 
-          {/* Right Column: 4 Technical Frameworks Cards (Colored Icons, no shadow filters overlaying them) */}
+          {/* Right Column: 4 Technical Frameworks Cards */}
           <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
             {finalTechs.map((tech, idx) => {
               const iconPath = getTechIconColored(tech.name);
               return (
                 <Reveal key={tech.name} delay={idx * 0.05}>
-                  <div className="group h-full flex flex-col items-center justify-center bg-[#0b0b0c] border border-white/10 rounded-[24px] p-6 hover:border-rose-500/35 hover:shadow-[0_8px_32px_rgba(244,63,94,0.08)] transition-all duration-300 relative overflow-hidden text-center min-h-[160px] cursor-pointer">
+                  <div className="group flex flex-col items-center justify-center bg-white border border-white/20 rounded-2xl p-5 hover:shadow-[0_8px_32px_rgba(255,255,255,0.12)] hover:scale-[1.03] transition-all duration-350 relative overflow-hidden text-center min-h-[140px] cursor-pointer">
                     
                     {/* Hover Glow Behind Content */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-[#E11D48]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-0" />
+                    <div className="absolute inset-0 bg-gradient-to-br from-zinc-100 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-0" />
                     
-                    {/* Icon (placed above background glow to avoid color overlays) */}
+                    {/* Icon */}
                     <img
                       src={iconPath}
                       alt={tech.name}
-                      className="w-10 h-10 object-contain group-hover:scale-110 transition-transform duration-300 mb-4 relative z-10"
+                      className="w-8 h-8 object-contain group-hover:scale-105 transition-all duration-300 mb-3 relative z-10"
                     />
                     
                     {/* Title */}
-                    <strong className="text-sm font-bold text-white mb-1.5 group-hover:text-[#E11D48] transition-colors duration-300 relative z-10">
+                    <strong className="text-xs font-bold text-zinc-900 group-hover:text-rose-600 transition-colors mb-1 relative z-10">
                       {tech.name}
                     </strong>
                     
                     {/* Description */}
-                    <span className="text-xs text-zinc-400 leading-normal font-semibold max-w-[170px] transition-colors duration-300 relative z-10">
+                    <span className="text-[10px] text-zinc-600 group-hover:text-zinc-800 leading-normal font-semibold max-w-[150px] transition-colors relative z-10">
                       {tech.desc}
                     </span>
                   </div>
@@ -225,20 +225,20 @@ export function IndustryTechStack({ techs }: IndustryTechStackProps) {
                     <div className="flip-card-inner">
                       
                       {/* Front Face */}
-                      <div className="flip-card-front bg-[#0b0b0c] border border-white/10 p-4 transition-all duration-300 group-hover:border-rose-500/40 backdrop-blur-md shadow-[inset_0_1px_1px_rgba(255,255,255,0.05)]">
+                      <div className="flip-card-front bg-white border border-white/20 p-4 transition-all duration-300 group-hover:border-rose-500/50 shadow-[0_4px_12px_rgba(255,255,255,0.05)]">
                         <img 
                           src={frontIcon} 
                           alt={partner.name} 
                           className="max-h-7 max-w-[85px] object-contain transition-transform duration-300 group-hover:scale-[1.03]"
                         />
                         {/* Tooltip Front */}
-                        <span className="absolute bottom-full left-[50%] translate-x-[-50%] mb-2 bg-[#E11D48] text-white text-[8px] font-bold py-1 px-2 rounded shadow-lg opacity-0 pointer-events-none group-hover:opacity-100 transition-all duration-200 whitespace-nowrap z-50">
+                        <span className="absolute bottom-full left-[50%] translate-x-[-50%] mb-2 bg-zinc-900 text-white text-[8px] font-bold py-1 px-2 rounded shadow-lg opacity-0 pointer-events-none group-hover:opacity-100 transition-all duration-200 whitespace-nowrap z-50">
                           {partner.name}
                         </span>
                       </div>
                       
                       {/* Back Face */}
-                      <div className="flip-card-back bg-[#0d0d0f] border border-rose-500/35 p-4 shadow-[inset_0_1px_1px_rgba(255,255,255,0.05),0_0_20px_rgba(244,63,94,0.08)] backdrop-blur-md">
+                      <div className="flip-card-back bg-rose-950/[0.12] border border-rose-500/30 p-4 shadow-[inset_0_1px_1px_rgba(255,255,255,0.03),0_0_20px_rgba(244,63,94,0.12)] backdrop-blur-md">
                         <img 
                           src={backIcon} 
                           alt={partner.backName} 

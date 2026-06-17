@@ -267,16 +267,16 @@ export default function GovernmentPublicSectorPage() {
       {/* 11. Why Devopstrio */}
       <IndustryWhyChoose whyChoose={data.whyChoose} />
 
-      {/* 12. Related Services */}
-      <IndustryRelatedServices relatedServices={data.relatedServices} />
-
-      {/* 13. Insights */}
+      {/* 12. Insights */}
       <IndustryInsights insights={data.insights} />
+
+      {/* 13. Related Services */}
+      <IndustryRelatedServices relatedServices={data.relatedServices} />
 
       {/* 14. FAQ */}
       <IndustryFAQ faqs={data.faqs} />
 
-      {/* CTA */}
+      {/* 15. CTA */}
       <IndustryCTA
         ctaTitle={data.cta.ctaTitle}
         ctaHighlight={data.cta.ctaHighlight}

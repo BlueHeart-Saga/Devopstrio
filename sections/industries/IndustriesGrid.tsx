@@ -10,49 +10,49 @@ const industries = [
     slug: "banking-finance",
     name: "Banking & Finance",
     href: "/industries/banking-finance",
-    image: "/assets/Home-page/arch-design.png"
+    image: "/assets/Industries-page/industriescard/Banking and finance.png"
   },
   {
     slug: "healthcare-life-sciences",
     name: "Healthcare & Life Sciences",
     href: "/industries/healthcare-life-sciences",
-    image: "/assets/Home-page/sol-life.png"
+    image: "/assets/Industries-page/industriescard/Healthcare & Life Sciences.png"
   },
   {
     slug: "retail-ecommerce",
     name: "Retail & E-Commerce",
     href: "/industries/retail-ecommerce",
-    image: "/assets/Home-page/rapid-prototype.png"
+    image: "/assets/Industries-page/industriescard/Retail & E-Commerce.png"
   },
   {
     slug: "manufacturing",
     name: "Manufacturing",
     href: "/industries/manufacturing",
-    image: "/assets/Home-page/biz-envisioning.png"
+    image: "/assets/Industries-page/industriescard/Manufacturing.png"
   },
   {
     slug: "telecommunications",
     name: "Telecommunications",
     href: "/industries/telecommunications",
-    image: "/assets/Home-page/arch-life.png"
+    image: "/assets/Industries-page/industriescard/Telecommunications.png"
   },
   {
     slug: "media-entertainment",
     name: "Media & Entertainment",
     href: "/industries/media-entertainment",
-    image: "/assets/Home-page/sol-envisioning.png"
+    image: "/assets/Industries-page/industriescard/Media & Entertainment.png"
   },
   {
     slug: "education",
     name: "Education",
     href: "/industries/education",
-    image: "/assets/Home-page/rapid-life.png"
+    image: "/assets/Industries-page/industriescard/Education.png"
   },
   {
     slug: "government-public-sector",
     name: "Government & Public Sector",
     href: "/industries/government-public-sector",
-    image: "/assets/Home-page/biz-life.png"
+    image: "/assets/Industries-page/industriescard/Government & Public Sector.png"
   }
 ];
 
