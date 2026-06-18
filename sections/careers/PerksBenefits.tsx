@@ -51,7 +51,7 @@ export function PerksBenefits() {
     <section className="w-full py-24 bg-[#030303] border-b border-zinc-900 relative overflow-hidden">
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[600px] bg-rose-600/[0.04] rounded-full blur-[180px] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto w-full px-6 md:px-12 lg:px-16 relative z-10">
+      <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
 
         {/* Section Header */}
         <Reveal>

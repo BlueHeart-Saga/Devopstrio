@@ -76,7 +76,7 @@ export function AboutServices() {
       <div className="absolute top-1/4 left-1/4 w-[400px] h-[400px] bg-rose-950/10 rounded-full blur-[100px] pointer-events-none" />
       <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-blue-900/5 rounded-full blur-[120px] pointer-events-none" />
 
-      <div className="max-w-site mx-auto w-full px-6 md:px-12 lg:px-20 relative z-10">
+      <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
         
         {/* Header Block */}
         <div className="text-center max-w-3xl mx-auto mb-16">

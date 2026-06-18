@@ -528,7 +528,7 @@ export function UnifiedIntegrations() {
         }
       `}} />
 
-      <div className="max-w-site mx-auto w-full px-6 md:px-12 lg:px-16 xl:px-20 relative z-10">
+      <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
         {/* HEADER */}
         <div className="hub-header mb-16 max-w-3xl mx-auto text-center">
           <span className="inline-block px-4 py-1.5 rounded-full border border-rose-500/20 text-[10px] font-semibold tracking-[0.2em] uppercase text-rose-500 bg-rose-500/5 mb-6">

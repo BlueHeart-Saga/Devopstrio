@@ -8,7 +8,7 @@ export function AiLabImpact() {
     <>
       {/* 1. Stats Metrics */}
       <section className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
-        <div className="max-w-7xl mx-auto w-full px-6 md:px-12 lg:px-16 text-left">
+        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 text-left">
           <Reveal className="mb-16">
             <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
               IMPACT QUANTIFIED
@@ -69,7 +69,7 @@ export function AiLabImpact() {
 
       {/* 2. Real-World Use Cases */}
       <section className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
-        <div className="max-w-7xl mx-auto w-full px-6 md:px-12 lg:px-16 text-left">
+        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 text-left">
           <Reveal className="mb-16">
             <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
               REAL-WORLD IMPLEMENTATIONS
@@ -130,7 +130,7 @@ export function AiLabImpact() {
 
       {/* 3. Industry Applications */}
       <section className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
-        <div className="max-w-7xl mx-auto w-full px-6 md:px-12 lg:px-16 text-left">
+        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 text-left">
           <Reveal className="mb-16">
             <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
               MARKET VERTICALS
@@ -157,7 +157,7 @@ export function AiLabImpact() {
 
       {/* 4. Enterprise AI Architecture Diagram */}
       <section className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
-        <div className="max-w-7xl mx-auto w-full px-6 md:px-12 lg:px-16 text-left">
+        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 text-left">
           <Reveal className="mb-16">
             <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
               SYSTEM ARCHITECTURE

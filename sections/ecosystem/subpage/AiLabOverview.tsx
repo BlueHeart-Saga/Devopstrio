@@ -9,7 +9,7 @@ export function AiLabOverview() {
     <>
       {/* Overview Section */}
       <section className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
-        <div className="max-w-7xl mx-auto w-full px-6 md:px-12 lg:px-16 text-left grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 text-left grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           <div className="lg:col-span-7">
             <Reveal>
               <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
@@ -73,7 +73,7 @@ export function AiLabOverview() {
 
       {/* R&D Practice Areas */}
       <section id="innovation-areas" className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
-        <div className="max-w-7xl mx-auto w-full px-6 md:px-12 lg:px-16 text-left">
+        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 text-left">
           <Reveal className="mb-16">
             <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
               R&D PRACTICE AREAS

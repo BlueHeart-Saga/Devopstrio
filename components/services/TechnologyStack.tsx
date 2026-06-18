@@ -130,7 +130,7 @@ export function TechnologyStack({ techs }: TechnologyStackProps) {
     <section id="tech-stack" className="w-full py-24 bg-black border-b border-zinc-900/60 relative overflow-hidden">
       <div className="absolute top-[30%] right-[-10%] w-[35%] aspect-square bg-[radial-gradient(circle_at_center,rgba(225,29,72,0.015),transparent_70%)] pointer-events-none z-0" />
 
-      <div className="max-w-site mx-auto px-6 md:px-12 lg:px-20 relative z-10">
+      <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
         
         {/* Main Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start mb-20">

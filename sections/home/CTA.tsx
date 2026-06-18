@@ -10,7 +10,7 @@ export function CTA() {
       {/* Background Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-[radial-gradient(ellipse_at_center,rgba(220,38,38,0.04),transparent_60%)] pointer-events-none" />
 
-      <div className="max-w-site mx-auto w-full px-6 md:px-12 lg:px-16 xl:px-20 relative z-10 text-center">
+      <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10 text-center">
         <Reveal className="max-w-3xl mx-auto flex flex-col items-center">
 
           <div className="inline-flex items-center gap-2 mb-4">

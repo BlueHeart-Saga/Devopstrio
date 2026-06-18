@@ -127,7 +127,7 @@ export function CapabilityOverview({ title, subtitle, image }: CapabilityOvervie
 
   return (
     <section id="overview" className="w-full py-16 bg-[#030303] text-white relative overflow-hidden">
-      <div className="max-w-site mx-auto px-6 md:px-12 lg:px-20">
+      <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
 
         <Reveal>
           <div className="group relative overflow-hidden rounded-[32px] border border-white/10 bg-zinc-950/30 backdrop-blur-xl shadow-[0_8px_32px_0_rgba(0,0,0,0.5)]">

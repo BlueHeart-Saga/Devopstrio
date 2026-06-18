@@ -71,7 +71,7 @@ export function ImpactSection() {
         <div className="absolute inset-x-0 top-0 h-1/4 bg-gradient-to-b from-[#030303] to-transparent pointer-events-none" />
         <div className="absolute inset-x-0 bottom-0 h-1/4 bg-gradient-to-t from-[#030303] to-transparent pointer-events-none" />
 
-        <div className="max-w-site mx-auto w-full px-6 md:px-12 lg:px-16 xl:px-20 relative z-10 flex-grow flex flex-col justify-between py-12 md:py-20 lg:py-24">
+        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10 flex-grow flex flex-col justify-between py-12 md:py-20 lg:py-24">
 
           {/* Top Header Row: Logo Branding */}
           <div className="flex justify-between items-center w-full border-b border-zinc-900/60 pb-6 mb-12">
@@ -135,7 +135,7 @@ export function ImpactSection() {
 
       {/* Metrics Section: KPI Cards & Success Outcomes */}
       <div className="w-full bg-[#030303] relative z-10 border-t border-zinc-900/60 py-16">
-        <div className="max-w-site mx-auto w-full px-6 md:px-12 lg:px-16 xl:px-20">
+        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
 
           {/* Mid-Section: KPI Cards */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 border-b border-zinc-900/60 pb-16 mb-16">

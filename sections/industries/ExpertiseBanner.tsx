@@ -6,7 +6,7 @@ import { Reveal } from "@/components/ui/Reveal";
 export function ExpertiseBanner() {
   return (
     <section id="expertise" className="w-full py-16 bg-[#030303] border-b border-zinc-900/60 relative overflow-hidden text-white">
-      <div className="max-w-site mx-auto px-6 md:px-12 lg:px-16 xl:px-20 relative z-10 text-left">
+      <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10 text-left">
         
         {/* Glassmorphic Banner Container */}
         <div className="bg-[#0b0b0c] border border-white/10 rounded-[32px] p-8 lg:p-12 relative overflow-hidden flex flex-col lg:flex-row gap-10 lg:gap-16 justify-between items-center text-left">

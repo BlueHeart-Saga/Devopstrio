@@ -168,7 +168,7 @@ export function CategoryHero({ categoryName, categorySlug }: CategoryHeroProps) 
         </div>
       )}
 
-      <div className="max-w-7xl mx-auto relative z-10 w-full px-6 md:px-12 lg:px-16 flex-grow flex flex-col justify-between">
+      <div className="max-w-7xl mx-auto relative z-10 w-full px-12 xl:px-8 flex-grow flex flex-col justify-between">
         {/* Breadcrumb Navigation - Pinned to the top of the content container */}
         <nav className="flex items-center justify-start gap-2.5 text-[9px] md:text-[10px] font-medium tracking-[0.12em] text-zinc-400 mb-6 overflow-x-auto whitespace-nowrap py-1">
           <Link href="/insights" className="hover:text-white transition-colors text-zinc-400">

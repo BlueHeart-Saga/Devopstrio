@@ -91,7 +91,7 @@ export function OurStory() {
       <div className="absolute inset-0 opacity-[0.02] pointer-events-none"
         style={{ backgroundImage: "radial-gradient(circle, #fff 1px, transparent 1px)", backgroundSize: "32px 32px" }} />
 
-      <div className="max-w-site mx-auto w-full px-6 md:px-12 lg:px-20 relative z-10">
+      <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
 
         {/* Redesigned Intro Card Container (BusinessOverview Style) */}
         <Reveal className="mb-20">

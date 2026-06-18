@@ -124,7 +124,7 @@ export default function Home() {
         <PartnersSection />
       </div>
       <div id="networks">
-        <div className="max-w-site mx-auto w-full px-6 md:px-12 lg:px-16 xl:px-20">
+        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
           <GlobalPresence />
         </div>
       </div>

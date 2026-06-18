@@ -70,7 +70,7 @@ export function IndustryFAQ({ faqs }: IndustryFAQProps) {
       {/* Background Graphic Glow */}
       <div className="absolute top-[30%] left-[-10%] w-[35%] aspect-square bg-[radial-gradient(circle_at_center,rgba(244,63,94,0.015),transparent_70%)] pointer-events-none z-0" />
 
-      <div className="max-w-4xl mx-auto px-6 relative z-10 text-left">
+      <div className="max-w-4xl mx-auto px-12 xl:px-8 relative z-10 text-left">
 
         {/* Section Header */}
         <Reveal className="mb-20 text-center">

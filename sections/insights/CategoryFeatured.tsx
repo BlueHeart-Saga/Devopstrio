@@ -38,7 +38,7 @@ export function CategoryFeatured({ posts, categorySlug }: CategoryFeaturedProps)
 
   return (
     <section className="py-12 md:py-16 bg-black overflow-hidden select-none">
-      <div className="max-w-7xl mx-auto w-full px-6 md:px-12 lg:px-16 text-center">
+      <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 text-center">
         
         {/* Header Block */}
         <Reveal>

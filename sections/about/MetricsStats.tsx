@@ -24,7 +24,7 @@ const metrics = [
 export function MetricsStats() {
   return (
     <section className="w-full py-20 bg-black text-white relative">
-      <div className="max-w-site mx-auto w-full px-6 md:px-12 lg:px-20">
+      <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
 
         {/* Header Grid */}
         <Reveal className="grid grid-cols-1 lg:grid-cols-[1.15fr_0.85fr] gap-8 lg:gap-16 items-center mb-16">

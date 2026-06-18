@@ -77,7 +77,7 @@ export function GlobalPresence() {
       {/* Subtle top glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[200px] bg-[radial-gradient(ellipse_at_top,rgba(244,63,94,0.04),transparent_70%)] pointer-events-none" />
 
-      <div className="max-w-site mx-auto w-full px-6 md:px-12 lg:px-20 relative z-10">
+      <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
 
         {/* ── Header ─────────────────────────────────────────────────────── */}
         <Reveal className="mb-12 text-center max-w-3xl mx-auto flex flex-col items-center">

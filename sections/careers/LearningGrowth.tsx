@@ -66,7 +66,7 @@ export function LearningGrowth() {
       <div className="absolute top-[20%] left-1/4 w-[600px] h-[600px] bg-[radial-gradient(circle_at_center,rgba(244,63,94,0.03),transparent_70%)] pointer-events-none" />
       <div className="absolute bottom-[10%] right-1/4 w-[600px] h-[600px] bg-[radial-gradient(circle_at_center,rgba(244,63,94,0.03),transparent_70%)] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto w-full px-6 md:px-12 lg:px-16 relative z-10">
+      <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
         
         {/* ── BLOCK 1: How It Works ───────────────────────────────────────── */}
         <div className="text-center max-w-3xl mx-auto mb-20">

@@ -55,7 +55,7 @@ export function IndustryOverview({
 
   return (
     <section id="overview" className="w-full py-24 bg-[#030303] text-white relative overflow-hidden border-b border-zinc-900/60">
-      <div className="max-w-site mx-auto px-6 md:px-12 lg:px-16 xl:px-20">
+      <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
         <Reveal>
           <div className="group relative overflow-hidden rounded-[32px] border border-zinc-800/60 bg-zinc-950/30 backdrop-blur-xl">
             

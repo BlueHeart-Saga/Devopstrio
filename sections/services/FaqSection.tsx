@@ -60,7 +60,7 @@ export function FaqSection() {
 
   return (
     <section className="w-full py-24 bg-[#030303] text-white border-b border-zinc-900">
-      <div className="max-w-4xl mx-auto px-6">
+      <div className="max-w-4xl mx-auto px-12 xl:px-8">
 
         <Reveal>
           <div className="text-center max-w-3xl mx-auto mb-14">

@@ -47,7 +47,7 @@ export function InsightsLibrary({ posts, loading }: InsightsLibraryProps) {
 
   return (
     <section className="py-16 md:py-24 bg-black">
-      <div className="max-w-7xl mx-auto w-full px-6 md:px-12 lg:px-16">
+      <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
         <div className="flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-6 border-b border-zinc-900/60 pb-8 mb-12">
           
           {/* Categories filters */}

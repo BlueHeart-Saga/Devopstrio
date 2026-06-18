@@ -67,7 +67,7 @@ const awards = [
 export function Achievements() {
   return (
     <section className="w-full py-20 bg-black text-white relative">
-      <div className="max-w-site mx-auto w-full px-6 md:px-12 lg:px-20">
+      <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
         
         {/* Split Section Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">

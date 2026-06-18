@@ -39,7 +39,7 @@ export default function EcosystemSubpage({ params }: SubpageProps) {
       {/* Challenge & Solution Section */}
       <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[radial-gradient(ellipse_at_top_right,rgba(244,63,94,0.03),transparent_70%)] pointer-events-none" />
-        <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16 grid grid-cols-1 lg:grid-cols-2 gap-16 relative z-10">
+        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 grid grid-cols-1 lg:grid-cols-2 gap-16 relative z-10">
           <div>
             <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
               THE CHALLENGE
@@ -61,7 +61,7 @@ export default function EcosystemSubpage({ params }: SubpageProps) {
 
       {/* Features & Benefits */}
       <section className="w-full py-24 bg-black border-b border-zinc-900/60">
-        <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16 grid grid-cols-1 lg:grid-cols-2 gap-16">
+        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 grid grid-cols-1 lg:grid-cols-2 gap-16">
           <div>
             <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-6 block">
               CORE CAPABILITIES
@@ -93,7 +93,7 @@ export default function EcosystemSubpage({ params }: SubpageProps) {
 
       {/* Tech Stack */}
       <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60">
-        <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16 text-center mb-16">
+        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 text-center mb-16">
           <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
             TECHNOLOGY STACK
           </span>
@@ -101,7 +101,7 @@ export default function EcosystemSubpage({ params }: SubpageProps) {
             Powered by Modern Tools
           </h2>
         </div>
-        <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16 grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 grid grid-cols-1 md:grid-cols-3 gap-6">
           {data.techStack.map((tech, idx) => (
             <div key={idx} className="bg-zinc-950/40 border border-zinc-900/80 rounded-xl p-6">
               <h4 className="text-sm font-bold text-white mb-2">{tech.name}</h4>

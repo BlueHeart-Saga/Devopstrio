@@ -96,7 +96,7 @@ export function IndustryUseCases() {
         }
       `}} />
 
-      <div className="max-w-site mx-auto px-6 md:px-12 lg:px-16 xl:px-20 relative z-10 text-left">
+      <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10 text-left">
         
         {/* Section Header with Navigation Arrow Actions */}
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-6 mb-12">

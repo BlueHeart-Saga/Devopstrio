@@ -19,7 +19,7 @@ export function IndustryChallenges({ challenges }: IndustryChallengesProps) {
       {/* Subtle background glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-rose-900/5 rounded-full blur-[140px] pointer-events-none z-0" />
 
-      <div className="max-w-site mx-auto px-6 md:px-12 lg:px-16 xl:px-20 relative z-10 text-left">
+      <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10 text-left">
         <Reveal className="mb-16">
           <div className="flex items-center gap-2 mb-4">
             <span className="text-[11px] font-semibold tracking-[0.25em] uppercase text-zinc-500">

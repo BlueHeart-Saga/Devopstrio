@@ -77,7 +77,7 @@ export function EngagementModels() {
     <section className="w-full py-24 bg-[#080808] text-white border-b border-zinc-900 relative" id="engagement-models">
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[radial-gradient(circle_at_top_right,rgba(220,38,38,0.02),transparent_70%)] blur-3xl pointer-events-none" />
 
-      <div className="max-w-site mx-auto px-6 md:px-12 lg:px-20 relative z-10">
+      <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
 
         {/* Header Block */}
         <Reveal>

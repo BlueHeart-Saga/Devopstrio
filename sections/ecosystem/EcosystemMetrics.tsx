@@ -17,7 +17,7 @@ export function EcosystemMetrics() {
     <section id="metrics" className="w-full py-24 bg-[#030303] text-white border-b border-zinc-900/60 relative">
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-rose-600/5 rounded-full blur-[130px] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16 relative z-10">
+      <div className="max-w-7xl mx-auto px-12 xl:px-8 relative z-10">
         <Reveal className="mb-16 text-center max-w-2xl mx-auto">
           <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
             ECOSYSTEM METRICS

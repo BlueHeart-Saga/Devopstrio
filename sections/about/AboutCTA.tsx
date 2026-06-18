@@ -7,7 +7,7 @@ import { ArrowRight } from "lucide-react";
 export function AboutCTA() {
   return (
     <section className="w-full py-28 md:py-36 bg-black text-white border-t border-zinc-900 relative overflow-hidden">
-      <div className="max-w-site mx-auto w-full px-6 md:px-12 lg:px-20 relative z-10 text-center">
+      <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10 text-center">
         <Reveal className="max-w-3xl mx-auto flex flex-col items-center">
 
           <div className="inline-flex items-center gap-2 mb-4">

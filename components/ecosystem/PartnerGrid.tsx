@@ -19,7 +19,7 @@ export interface PartnerGridProps {
 export function PartnerGrid({ domainSlug, subpages }: PartnerGridProps) {
   return (
     <section id="ecosystem-pillars" className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
-      <div className="max-w-site mx-auto px-6 md:px-12 lg:px-20 relative z-10">
+      <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
 
         {/* Section Header */}
         <Reveal className="mb-16 text-left">

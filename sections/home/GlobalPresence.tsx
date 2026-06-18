@@ -168,7 +168,7 @@ export function GlobalPresence() {
   const mapStyle = getMapTransform();
 
   return (
-    <section className="w-full py-0 text-white font-sans max-w-site mx-auto">
+    <section className="w-full py-0 text-white font-sans max-w-7xl mx-auto">
       {/* Custom Keyframes & Continents Mask CSS */}
       <style dangerouslySetInnerHTML={{
         __html: `

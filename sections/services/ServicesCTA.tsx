@@ -10,7 +10,7 @@ export function ServicesCTA() {
     <section className="w-full py-24 bg-[#030303] text-white relative overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_center,rgba(220,38,38,0.03),transparent_60%)] pointer-events-none" />
 
-      <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
+      <div className="max-w-4xl mx-auto px-12 xl:px-8 text-center relative z-10">
         <Reveal>
           <div className="text-center max-w-3xl mx-auto mb-14">
             <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">

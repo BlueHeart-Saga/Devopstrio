@@ -6,7 +6,7 @@ import { Reveal } from "@/components/ui/Reveal";
 export function AiLabRoadmap() {
   return (
     <section className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
-      <div className="max-w-7xl mx-auto w-full px-6 md:px-12 lg:px-16 text-left">
+      <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 text-left">
         <Reveal className="mb-16">
           <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
             R&D ROADMAP

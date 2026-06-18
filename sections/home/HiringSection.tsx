@@ -84,7 +84,7 @@ export function HiringSection() {
 
   return (
     <section className="w-full py-20 md:py-32 bg-[#030303] text-white  relative overflow-hidden">
-      <div className="max-w-site mx-auto w-full px-6 md:px-12 lg:px-16 xl:px-20 relative z-10">
+      <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
 
         <Reveal className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-12 lg:gap-24 items-center">
 

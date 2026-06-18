@@ -77,7 +77,7 @@ export function ContactForm() {
         <div className="absolute top-1/3 left-1/4 w-[500px] h-[500px] bg-[radial-gradient(circle,rgba(244,63,94,0.07),transparent_65%)] pointer-events-none" />
       </div>
 
-      <div className="relative z-10 w-full max-w-site mx-auto px-6 md:px-12 lg:px-20 py-20 md:py-28">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-12 xl:px-8 py-20 md:py-28">
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_0.6fr] gap-10 lg:gap-20 items-start">
 
           {/* ── LEFT: Glass Form ────────────────────────────────────────── */}

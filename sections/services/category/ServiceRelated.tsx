@@ -24,7 +24,7 @@ export function ServiceRelated({ relatedServices }: ServiceRelatedProps) {
       {/* Background glow */}
       <div className="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-[50%] aspect-square bg-[radial-gradient(circle_at_center,rgba(244,63,94,0.01),transparent_70%)] pointer-events-none z-0" />
 
-      <div className="max-w-site mx-auto px-6 md:px-12 lg:px-20 relative z-10 text-center">
+      <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10 text-center">
         
         {/* Header Section */}
         <Reveal className="mb-16 w-full flex flex-col items-center text-center">

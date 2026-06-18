@@ -137,7 +137,7 @@ export function CapabilityArchitecture({ serviceSlug, capabilityTitle }: Capabil
       {/* Background Graphic Glow */}
       <div className="absolute top-[30%] right-[-10%] w-[35%] aspect-square bg-[radial-gradient(circle_at_center,rgba(244,63,94,0.015),transparent_70%)] pointer-events-none z-0" />
 
-      <div className="max-w-site mx-auto px-6 md:px-12 lg:px-20 relative z-10">
+      <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
         
         {/* Main Grid: Left Side Diagram, Right Side Benefits */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">

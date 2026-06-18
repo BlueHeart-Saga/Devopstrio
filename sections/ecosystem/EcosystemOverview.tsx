@@ -7,7 +7,7 @@ import { ArrowRight } from "lucide-react";
 export function EcosystemOverview() {
   return (
     <section id="overview" className="w-full pt-4 pb-12 bg-[#030303] text-white relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16 relative z-10">
+      <div className="max-w-7xl mx-auto px-12 xl:px-8 relative z-10">
 
         <Reveal>
           <div className="group relative overflow-hidden rounded-3xl border border-zinc-800/60 bg-zinc-950/30 backdrop-blur-xl">

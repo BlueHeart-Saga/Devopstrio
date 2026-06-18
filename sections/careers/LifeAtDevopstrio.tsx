@@ -23,7 +23,7 @@ export function LifeAtDevopstrio() {
       {/* Top right ambient glow */}
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[radial-gradient(circle_at_top_right,rgba(244,63,94,0.05),transparent_70%)] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto w-full px-6 md:px-12 lg:px-16 relative z-10">
+      <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.6fr] gap-14 lg:gap-20 items-start">
           
           {/* Left Panel: Sticky Info */}

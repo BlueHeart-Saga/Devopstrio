@@ -251,7 +251,7 @@ export function TechStackSection() {
         }
       `}} />
 
-      <div className="max-w-site mx-auto px-6 md:px-12 lg:px-16 xl:px-20 text-center">
+      <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 text-center">
 
         {/* Top Header Panel */}
         <Reveal className="max-w-3xl mx-auto mb-6">

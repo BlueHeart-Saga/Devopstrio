@@ -82,7 +82,7 @@ export function SystemArchitecture() {
       {/* Ambient Glow */}
       <div className="absolute top-[20%] left-[-10%] w-[30%] aspect-square bg-[radial-gradient(circle_at_center,rgba(244,63,94,0.03),transparent_70%)] pointer-events-none z-0" />
 
-      <div className="max-w-7xl mx-auto w-full px-6 md:px-12 lg:px-16 relative z-10 flex flex-col items-center">
+      <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10 flex flex-col items-center">
         
         {/* Top Section: Centered Header & Description */}
         <div className="flex flex-col items-center text-center max-w-3xl mx-auto mb-16">
@@ -166,7 +166,7 @@ export function SystemArchitecture() {
         <div className="absolute top-0 bottom-0 left-0 w-32 sm:w-64 bg-gradient-to-r from-[#030303] via-[#030303]/80 via-[#030303]/30 to-transparent pointer-events-none z-30" />
         <div className="absolute top-0 bottom-0 right-0 w-32 sm:w-64 bg-gradient-to-l from-[#030303] via-[#030303]/80 via-[#030303]/30 to-transparent pointer-events-none z-30" />
 
-        <div className="max-w-7xl mx-auto w-full px-6 md:px-12 lg:px-16 flex flex-col gap-10">
+        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 flex flex-col gap-10">
           
           {/* Row 1: Strategic Technology Stack */}
           <div>

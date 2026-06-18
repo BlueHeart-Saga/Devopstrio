@@ -149,7 +149,7 @@ export function TimelineProcess({ steps, serviceSlug }: TimelineProcessProps) {
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[radial-gradient(circle_at_top_right,rgba(239,68,68,0.02),transparent_70%)] blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[radial-gradient(circle_at_bottom_left,rgba(239,68,68,0.01),transparent_70%)] blur-3xl pointer-events-none" />
 
-      <div className="max-w-site mx-auto px-6 md:px-12 lg:px-20 relative z-10">
+      <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
 
         {/* Section Header */}
         <Reveal className="mb-20 text-center max-w-3xl mx-auto">
@@ -165,7 +165,7 @@ export function TimelineProcess({ steps, serviceSlug }: TimelineProcessProps) {
         </Reveal>
 
         {/* Horizontal Inline Timeline */}
-        <div className="relative mt-16 max-w-site mx-auto">
+        <div className="relative mt-16 max-w-7xl mx-auto w-full">
           {/* Horizontal connector line on desktop behind the 3D numbers */}
           <div className="absolute top-[22px] left-12 right-12 h-[1px] bg-gradient-to-r from-red-500/20 via-red-500/5 to-zinc-900 hidden lg:block" />
 

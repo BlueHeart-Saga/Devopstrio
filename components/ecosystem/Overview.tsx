@@ -12,7 +12,7 @@ export interface OverviewProps {
 export function Overview({ heading, desc1, desc2 }: OverviewProps) {
   return (
     <section id="overview" className="w-full py-24 bg-black border-b border-zinc-900/60 text-zinc-300">
-      <div className="max-w-site mx-auto px-6 md:px-12 lg:px-20 grid grid-cols-1 lg:grid-cols-12 gap-12 items-start text-left">
+      <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 grid grid-cols-1 lg:grid-cols-12 gap-12 items-start text-left">
         <div className="lg:col-span-5">
           <Reveal>
             <div className="flex items-center gap-2 mb-4">

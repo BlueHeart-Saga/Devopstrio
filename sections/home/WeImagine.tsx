@@ -9,7 +9,7 @@ export function WeImagine() {
     <section className="relative w-full pt-4 md:pt-8 bg-[#030303] text-white overflow-hidden">
       
       {/* Centered Content Wrapper for Header, Banner, and Intro */}
-      <div className="max-w-site mx-auto w-full px-6 md:px-12 lg:px-20 relative z-10 mb-16">
+      <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10 mb-16">
 
         {/* Main Section Header */}
         <div className="mb-12">
@@ -168,7 +168,7 @@ export function WeImagine() {
 
         <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-[#030303] via-[#030303]/70 to-transparent z-1 pointer-events-none" />
 
-        <div className="max-w-site mx-auto w-full px-6 md:px-12 lg:px-20 relative z-10 text-center flex flex-col items-center justify-start drop-shadow-[0_4px_16px_rgba(0,0,0,0.95)]">
+        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10 text-center flex flex-col items-center justify-start drop-shadow-[0_4px_16px_rgba(0,0,0,0.95)]">
           <Reveal>
             <span className="text-[11px] font-bold tracking-[0.25em] uppercase text-rose-500 mb-4 block">
               INNOVATION LAB

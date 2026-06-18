@@ -39,7 +39,7 @@ export function TalkToExpert() {
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#08080a_1px,transparent_1px),linear-gradient(to_bottom,#08080a_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-35 pointer-events-none" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-rose-950/5 rounded-full blur-[160px] pointer-events-none" />
 
-      <div className="max-w-site mx-auto w-full px-6 md:px-12 lg:px-20 relative z-10">
+      <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
         
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-8">

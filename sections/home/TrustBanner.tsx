@@ -30,7 +30,7 @@ export function TrustBanner() {
       {/* Decorative premium radial glow */}
       <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-96 h-20 bg-rose-500/5 rounded-full blur-[80px] pointer-events-none" />
 
-      <div className="max-w-site mx-auto w-full px-6 md:px-12 lg:px-16 xl:px-20">
+      <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
         <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8 lg:gap-12">
           
           {/* Left Side: Premium Enterprise Copy */}

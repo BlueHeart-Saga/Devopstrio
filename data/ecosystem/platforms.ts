@@ -15,7 +15,7 @@ export const platformsDomain: EcosystemDomain = {
     { value: "SOC-2", label: "Pre-Audit Compliance" }
   ],
   subpages: [
-    { slug: "ai-hiring-platform", title: "AI Hiring Platform", description: "Automated candidate ranking, resume parsing, and interview scoring." },
+    { slug: "saas-platforms", title: "SaaS Platforms", description: "Enterprise SaaS products, digital platforms, and business applications." },
     { slug: "devops-platform", title: "DevOps Platform", description: "Unified developer portal, CI/CD templates, and Kubernetes provisioning." },
     { slug: "cloud-management-platform", title: "Cloud Management Platform", description: "Multi-cloud budget dashboard, resource audits, and automated sizing." },
     { slug: "security-platform", title: "Security Platform", description: "Automated policy checker, container scans, and compliance audits." },
@@ -39,39 +39,39 @@ export const platformsDomain: EcosystemDomain = {
 };
 
 export const platformsSubpages: Record<string, EcosystemSubpageDetail> = {
-  "ai-hiring-platform": {
-    slug: "ai-hiring-platform",
-    title: "AI Hiring Platform",
-    heroSubtitle: "Scale candidate evaluations using semantic search, resume parsing, and automated ranking.",
-    challenge: "Human resource teams spend hundreds of hours manually reviewing unqualified resumes, missing key candidate capabilities.",
-    solution: "We build a secure Next.js portal integrated with parsing APIs, semantic searches, and automated grading metrics.",
+  "saas-platforms": {
+    slug: "saas-platforms",
+    title: "SaaS Platforms",
+    heroSubtitle: "Deploy and scale multi-tenant subscription applications, billing systems, and business platforms.",
+    challenge: "Developing SaaS infrastructure (subscriptions, tenant isolation, billing) from scratch is slow and prone to errors.",
+    solution: "We build secure, multi-tenant templates integrated with Stripe, user directories, and isolated DB schemas.",
     features: [
-      "Semantic resume parsing and candidate indexing pipelines",
-      "Automated skill matching using vector searches",
-      "Interactive candidate profile dashboards with evaluation scoring"
+      "Multi-tenant database schema isolation rules",
+      "Stripe subscription and billing engine setups",
+      "Centralized identity access and tenant management"
     ],
     benefits: [
-      "80% reduction in manual candidate review times",
-      "Discovery of hidden skill alignments via semantic search",
-      "Safe evaluation algorithms preventing hiring bias"
+      "90% reduction in SaaS setup architecture time",
+      "Robust billing integration preventing revenue leakage",
+      "Pre-integrated security and compliance baselines"
     ],
     techStack: [
-      { name: "Next.js / React", desc: "Fast responsive recruiter portal frontend." },
-      { name: "Python / PyPDF", desc: "Serverless resume parsing scripts." },
-      { name: "Qdrant", desc: "Vector search index matching resume details." }
+      { name: "Next.js / React", desc: "Responsive client app dashboard frontends." },
+      { name: "Node.js / Express", desc: "Multi-tenant service controller APIs." },
+      { name: "PostgreSQL", desc: "Isolated relational schema data storage." }
     ],
     caseStudy: {
-      title: "Hiring acceleration for global advisory firm.",
-      desc: "We deployed our AI recruitment portal, allowing the firm to parse and score 10k resume uploads in under 2 hours, hiring 50 analysts.",
+      title: "SaaS platform rollout for enterprise client.",
+      desc: "We deployed our multi-tenant SaaS workspace, enabling the client to onboard 6 custom sub-tenants and process transactions in weeks.",
       metrics: [
-        { value: "10k+", label: "Resumes parsed and indexed" },
-        { value: "2 hours", label: "Processing completion time" },
-        { value: "80%", label: "Reduction in candidate review labor" }
+        { value: "6", label: "Onboarded tenant workspaces" },
+        { value: "90%", label: "Faster time-to-market speed" },
+        { value: "100%", label: "Subscription revenue visibility" }
       ]
     },
     faqs: [
-      { q: "How do you protect candidate PII data?", a: "We encrypt all uploaded PDFs, anonymize candidate profiles before analysis, and restrict access using Okta MFA." },
-      { q: "Can we integrate this platform with our ATS?", a: "Yes, our portal provides clean REST webhooks that connect with Workday, Greenhouse, or Lever." }
+      { q: "Is each tenant's data isolated?", a: "Yes, we support both row-level security (RLS) schemas and separate database-per-tenant configurations." },
+      { q: "Can we use custom domains for tenants?", a: "Yes, our routing setup integrates with cloud CDN endpoints to map tenant-specific custom domains." }
     ]
   },
   "devops-platform": {

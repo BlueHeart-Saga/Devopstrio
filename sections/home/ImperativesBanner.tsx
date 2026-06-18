@@ -17,7 +17,7 @@ export function ImperativesBanner() {
 
   return (
     <section className="w-full py-12 bg-[#030303] text-white relative ">
-      <div className="max-w-site mx-auto w-full px-6 md:px-12 lg:px-16 xl:px-20">
+      <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
         <Reveal>
           <div className="relative w-full rounded-2xl border border-zinc-800 bg-zinc-950/40 p-8 lg:p-12 overflow-hidden shadow-2xl flex flex-col lg:flex-row items-center justify-between gap-10">
             {/* Background Red Mesh waves / glow */}

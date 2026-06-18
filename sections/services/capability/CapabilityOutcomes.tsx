@@ -342,7 +342,7 @@ export function CapabilityOutcomes({ serviceSlug, capabilityTitle }: CapabilityO
 
   return (
     <section id="solutions-outcomes" className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
-      <div className="max-w-site mx-auto px-6 md:px-12 lg:px-20 text-left">
+      <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 text-left">
         <Reveal className="mb-16">
           <div className="flex items-center gap-2 mb-4">
             <span className="text-[10px] font-bold tracking-widest uppercase text-rose-500">

@@ -23,7 +23,7 @@ export function IndustryCTA({
       {/* Background glow overlay */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_center,rgba(220,38,38,0.04),transparent_60%)] pointer-events-none" />
 
-      <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
+      <div className="max-w-4xl mx-auto px-12 xl:px-8 text-center relative z-10">
         <Reveal>
           <div className="flex items-center justify-center gap-2 mb-4">
 

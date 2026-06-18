@@ -41,7 +41,7 @@ export function FAQ() {
 
   return (
     <section id="faq" className="w-full py-20 md:py-28 bg-[#030303] text-white relative">
-      <div className="max-w-site mx-auto w-full px-6 md:px-12 lg:px-16 xl:px-20">
+      <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
         
         <Reveal className="max-w-3xl mb-16">
           <div className="flex items-center gap-2 mb-4">

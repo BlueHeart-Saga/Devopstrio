@@ -13,7 +13,7 @@ export function FAQ({ faqs }: FAQProps) {
 
   return (
     <section id="faq" className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
-      <div className="max-w-3xl mx-auto px-6">
+      <div className="max-w-3xl mx-auto px-12 xl:px-8">
 
         {/* Section Header */}
         <Reveal className="mb-16 text-center">

@@ -75,7 +75,7 @@ const products = [
 export function OurProducts() {
   return (
     <section id="products" className="w-full pt-0 pb-24 md:pb-32 bg-[#030303] text-white relative overflow-hidden">
-      <div className="max-w-site mx-auto w-full px-6 md:px-12 lg:px-16 xl:px-20 relative z-10">
+      <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
 
         <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-8">
 

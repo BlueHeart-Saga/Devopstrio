@@ -60,7 +60,7 @@ export function Insights() {
 
   return (
     <section className="w-full pt-10 md:pt-14 pb-20 md:pb-32 bg-[#030303] text-white relative">
-      <div className="max-w-site mx-auto w-full px-6 md:px-12 lg:px-16 xl:px-20">
+      <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
 
         {/* Header Block with Standardized Eyebrow & Headline */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 pb-6 border-b border-zinc-900/60">

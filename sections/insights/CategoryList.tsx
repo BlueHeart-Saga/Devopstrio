@@ -16,7 +16,7 @@ export function CategoryList({ posts, categorySlug }: CategoryListProps) {
 
   return (
     <section className="py-12 md:py-16 bg-black">
-      <div className="max-w-7xl mx-auto w-full px-6 md:px-12 lg:px-16 text-left space-y-8">
+      <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 text-left space-y-8">
         <Reveal>
           <h3 className="text-xs font-mono tracking-widest text-zinc-550 uppercase">
             All Publications in this Category

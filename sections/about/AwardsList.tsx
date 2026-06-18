@@ -434,7 +434,7 @@ export const AwardsList = () => {
 
   return (
     <section className="w-full py-20 bg-[#030303] text-white relative">
-      <div className="max-w-site mx-auto px-6 md:px-12 lg:px-20">
+      <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
         
         {/* Section Intro */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 border-b border-zinc-900 pb-8">

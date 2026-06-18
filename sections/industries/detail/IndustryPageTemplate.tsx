@@ -150,7 +150,7 @@ export function IndustryPageTemplate({
 
       {/* 2. Industry Overview */}
       <section id="overview" className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
-        <div className="max-w-site mx-auto px-6 md:px-12 lg:px-20 text-left grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 text-left grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           <div className="lg:col-span-6">
             <Reveal>
               <div className="flex items-center gap-2 mb-4">
@@ -177,7 +177,7 @@ export function IndustryPageTemplate({
 
       {/* 3. Challenges We Solve */}
       <section id="challenges" className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
-        <div className="max-w-site mx-auto px-6 md:px-12 lg:px-20 text-left">
+        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 text-left">
           <Reveal className="mb-16">
             <div className="flex items-center gap-2 mb-4">
 
@@ -208,7 +208,7 @@ export function IndustryPageTemplate({
 
       {/* 4. Solutions We Deliver */}
       <section id="solutions" className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
-        <div className="max-w-site mx-auto px-6 md:px-12 lg:px-20 text-left">
+        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 text-left">
           <Reveal className="mb-16">
             <div className="flex items-center gap-2 mb-4">
 
@@ -239,7 +239,7 @@ export function IndustryPageTemplate({
 
       {/* 5. Core Capabilities */}
       <section id="capabilities" className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
-        <div className="max-w-site mx-auto px-6 md:px-12 lg:px-20 text-left">
+        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 text-left">
           <Reveal className="mb-16">
             <div className="flex items-center gap-2 mb-4">
 
@@ -273,7 +273,7 @@ export function IndustryPageTemplate({
 
       {/* 6. Use Cases */}
       <section id="use-cases" className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
-        <div className="max-w-site mx-auto px-6 md:px-12 lg:px-20 text-left">
+        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 text-left">
           <Reveal className="mb-16">
             <div className="flex items-center gap-2 mb-4">
 
@@ -301,7 +301,7 @@ export function IndustryPageTemplate({
 
       {/* 7. Technology Stack */}
       <section id="tech-stack" className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
-        <div className="max-w-site mx-auto px-6 md:px-12 lg:px-20 text-left">
+        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 text-left">
           <Reveal className="mb-16">
             <div className="flex items-center gap-2 mb-4">
 
@@ -332,7 +332,7 @@ export function IndustryPageTemplate({
 
       {/* 8. Business Outcomes */}
       <section id="outcomes" className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
-        <div className="max-w-site mx-auto px-6 md:px-12 lg:px-20 text-left">
+        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 text-left">
           <Reveal className="mb-16">
             <div className="flex items-center gap-2 mb-4">
 
@@ -362,7 +362,7 @@ export function IndustryPageTemplate({
       {/* 9. Success Stories */}
       {caseStudy && (
         <section id="success-stories" className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
-          <div className="max-w-site mx-auto px-6 md:px-12 lg:px-20 text-left">
+          <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 text-left">
             <Reveal className="mb-16">
               <div className="flex items-center gap-2 mb-4">
 
@@ -394,7 +394,7 @@ export function IndustryPageTemplate({
 
       {/* 10. Compliance & Security */}
       <section id="compliance" className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
-        <div className="max-w-site mx-auto px-6 md:px-12 lg:px-20 text-left">
+        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 text-left">
           <Reveal className="mb-16">
             <div className="flex items-center gap-2 mb-4">
 
@@ -425,7 +425,7 @@ export function IndustryPageTemplate({
 
       {/* 11. Why Devopstrio */}
       <section id="why-choose" className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
-        <div className="max-w-site mx-auto px-6 md:px-12 lg:px-20 text-left">
+        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 text-left">
           <Reveal className="mb-16">
             <div className="flex items-center gap-2 mb-4">
 
@@ -456,7 +456,7 @@ export function IndustryPageTemplate({
 
       {/* 12. Related Services */}
       <section className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
-        <div className="max-w-site mx-auto px-6 md:px-12 lg:px-20 text-left">
+        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 text-left">
           <Reveal className="mb-16">
             <div className="flex items-center gap-2 mb-4">
 
@@ -496,7 +496,7 @@ export function IndustryPageTemplate({
 
       {/* 13. Insights */}
       <section className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
-        <div className="max-w-site mx-auto px-6 md:px-12 lg:px-20 text-left">
+        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 text-left">
           <Reveal className="mb-16">
             <div className="flex items-center gap-2 mb-4">
 
@@ -531,7 +531,7 @@ export function IndustryPageTemplate({
       {/* FAQ Block (if faqs present) */}
       {faqs.length > 0 && (
         <section id="faq" className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
-          <div className="max-w-3xl mx-auto px-6 text-left">
+          <div className="max-w-3xl mx-auto px-12 xl:px-8 text-left">
             <Reveal className="mb-16 text-center">
               <div className="flex items-center justify-center gap-2 mb-4">
                 <span className="text-[10px] font-bold tracking-widest uppercase text-rose-500">FAQ</span>
@@ -572,7 +572,7 @@ export function IndustryPageTemplate({
       <section className="w-full py-24 bg-black text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_center,rgba(220,38,38,0.04),transparent_60%)] pointer-events-none" />
 
-        <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
+        <div className="max-w-4xl mx-auto px-12 xl:px-8 text-center relative z-10">
           <Reveal>
             <div className="flex items-center justify-center gap-2 mb-4">
               <span className="text-[10px] font-bold tracking-widest uppercase text-rose-500">

@@ -34,7 +34,7 @@ export function IndustriesHero({
         <div className="absolute inset-0 bg-gradient-to-t from-[#030303] via-transparent to-transparent" />
       </div>
 
-      <div className="max-w-site mx-auto w-full px-6 md:px-12 lg:px-16 xl:px-20 relative z-10 pt-36 pb-20 lg:pt-44 lg:pb-28">
+      <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10 pt-36 pb-20 lg:pt-44 lg:pb-28">
         <div className="max-w-3xl text-left">
           
           {/* Breadcrumb Navigation */}

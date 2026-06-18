@@ -133,7 +133,7 @@ export function Testimonials() {
       <div className="absolute inset-0 bg-gradient-to-br from-[#030303]/95 via-[#030303]/50 to-[#030303]/95 pointer-events-none z-0" />
       <div className="absolute top-1/2 right-0 -translate-y-1/2 w-[400px] h-[400px] bg-[radial-gradient(circle_at_center,rgba(220,38,38,0.05),transparent_70%)] blur-3xl pointer-events-none z-0" />
 
-      <div className="max-w-site mx-auto w-full px-6 md:px-12 lg:px-16 xl:px-20 relative z-10">
+      <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
 
         <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-12 lg:gap-20 items-center">
 

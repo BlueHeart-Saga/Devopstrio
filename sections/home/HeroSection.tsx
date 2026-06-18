@@ -165,7 +165,7 @@ export function HeroSection() {
 
   return (
     <section ref={heroRef} className="relative w-full h-[95vh] min-h-[600px] lg:min-h-[750px] xl:min-h-[850px] max-h-[950px] flex items-center justify-center bg-[#030303] text-white pt-24 pb-12 lg:pb-0 overflow-hidden">
-      <div className="max-w-7xl mx-auto w-full px-6 md:px-12 lg:px-16 relative z-10">
+      <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center w-full">
           
           {/* Left Column: Text content */}

@@ -220,7 +220,7 @@ const ecosystemCategories = [
     href: "/ecosystem/platforms-solutions",
     items: [
       { name: "Platforms Overview", desc: "Proprietary software products and IP assets", href: "/ecosystem/platforms-solutions" },
-      { name: "AI Hiring Platform", desc: "Recruiter search engine matching candidate profiles", href: "/ecosystem/platforms-solutions/ai-hiring-platform" },
+      { name: "SaaS Platforms", desc: "Enterprise SaaS products, digital platforms, and business applications", href: "/ecosystem/platforms-solutions/saas-platforms" },
       { name: "DevOps Platform", desc: "Self-service Backstage portal templates", href: "/ecosystem/platforms-solutions/devops-platform" },
       { name: "Cloud Management Platform", desc: "Grafana cost dashboard tracking cloud bills", href: "/ecosystem/platforms-solutions/cloud-management-platform" },
       { name: "Security Platform", desc: "Continuous SAST image checking audits", href: "/ecosystem/platforms-solutions/security-platform" },

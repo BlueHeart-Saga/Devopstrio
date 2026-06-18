@@ -18,7 +18,7 @@ export function FeaturedHighlights({ posts }: FeaturedHighlightsProps) {
 
   return (
     <section className="py-16 md:py-24 bg-black border-b border-zinc-900/60">
-      <div className="max-w-7xl mx-auto w-full px-6 md:px-12 lg:px-16 text-left">
+      <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 text-left">
         <Reveal className="mb-8">
           <span className="text-[10px] font-mono tracking-widest text-zinc-550 uppercase block mb-3 font-bold">
             Featured Highlights

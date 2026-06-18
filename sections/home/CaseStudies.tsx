@@ -89,7 +89,7 @@ export function CaseStudies() {
 
   return (
     <section id="cases" className="w-full pt-4 md:pt-8 pb-14 md:pb-20 bg-[#030303] text-white relative">
-      <div className="max-w-site mx-auto w-full px-6 md:px-12 lg:px-16 xl:px-20 grid grid-cols-1 lg:grid-cols-[0.8fr_1.2fr] gap-16 lg:gap-20 items-start">
+      <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 grid grid-cols-1 lg:grid-cols-[0.8fr_1.2fr] gap-16 lg:gap-20 items-start">
 
         {/* Left Side: Overview & Trusted Stats */}
         <div className="relative flex flex-col gap-10 lg:pr-6">
