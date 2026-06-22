@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useRef } from "react";
-import { ArrowLeft, ArrowRight, ArrowUpRight } from "lucide-react";
+import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
 
 interface UseCaseItem {
@@ -27,7 +27,7 @@ const allUseCaseImages = [
 
 const getUseCaseImage = (title: string, index: number): string => {
   const cleanTitle = title.toLowerCase().trim();
-  
+
   if (cleanTitle.includes("credit") || cleanTitle.includes("score") || cleanTitle.includes("scoring")) {
     return "/assets/Industries-page/main-usecases/Dynamiccreditscoring.png";
   }
@@ -111,7 +111,7 @@ export function IndustryUseCases({ useCases }: IndustryUseCasesProps) {
       <div className="absolute top-[30%] left-[-10%] w-[35%] aspect-square bg-[radial-gradient(circle_at_center,rgba(244,63,94,0.015),transparent_70%)] pointer-events-none z-0" />
 
       <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10 text-left">
-        
+
         {/* Section Header */}
         <Reveal className="mb-12">
           <div className="flex items-center gap-2 mb-4">
@@ -125,7 +125,8 @@ export function IndustryUseCases({ useCases }: IndustryUseCasesProps) {
         </Reveal>
 
         {/* CSS style block to hide scrollbar across all major browsers */}
-        <style dangerouslySetInnerHTML={{__html: `
+        <style dangerouslySetInnerHTML={{
+          __html: `
           .hide-scrollbar::-webkit-scrollbar {
             display: none !important;
           }
@@ -140,7 +141,7 @@ export function IndustryUseCases({ useCases }: IndustryUseCasesProps) {
           <div
             ref={scrollContainerRef}
             className="flex gap-6 overflow-x-auto hide-scrollbar pb-8 snap-x snap-mandatory scroll-smooth"
-            style={{ 
+            style={{
               WebkitOverflowScrolling: "touch",
               msOverflowStyle: "none",
               scrollbarWidth: "none"
@@ -175,7 +176,7 @@ export function IndustryUseCases({ useCases }: IndustryUseCasesProps) {
                     <h3 className="text-base font-bold text-white mb-2 leading-snug group-hover:text-rose-500 transition-colors">
                       {uc.title}
                     </h3>
-                    
+
                     <p className="text-xs text-zinc-400 leading-relaxed font-semibold">
                       {uc.result}
                     </p>
@@ -208,7 +209,7 @@ export function IndustryUseCases({ useCases }: IndustryUseCasesProps) {
             aria-label="Scroll right"
             className="w-12 h-12 rounded-full border border-zinc-800 bg-zinc-950/60 hover:bg-zinc-900 hover:border-white/20 flex items-center justify-center text-zinc-400 hover:text-white transition-all duration-300"
           >
-            <ArrowRight size={18} />
+            <ArrowUpRight size={18} />
           </button>
         </div>
 

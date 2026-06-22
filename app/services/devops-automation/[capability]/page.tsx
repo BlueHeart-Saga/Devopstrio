@@ -13,6 +13,7 @@ import { TechnologyStack } from "@/components/services/TechnologyStack";
 import { CapabilityBenefits } from "@/sections/services/capability/CapabilityBenefits";
 import { CapabilityIndustries } from "@/sections/services/capability/CapabilityIndustries";
 import { FAQ } from "@/components/services/FAQ";
+import { BreadcrumbSchema, ServiceSchema, FAQSchema } from "@/components/seo/Schemas";
 import { CTA } from "@/components/services/CTA";
 import { RelatedServices } from "@/components/services/RelatedServices";
 
@@ -48,6 +49,9 @@ export async function generateMetadata({ params }: PageProps) {
     openGraph: {
       title: `${data.title} | Devopstrio`,
       description: data.heroSubtitle
+    },
+    alternates: {
+      canonical: `/services/${service}/${capability}`
     }
   };
 }
@@ -84,6 +88,14 @@ export default function CapabilityPage({ params }: PageProps) {
 
   return (
     <main className="min-h-screen bg-black text-white font-sans">
+      <BreadcrumbSchema items={[
+        { name: "Home", item: "/" },
+        { name: "Services", item: "/services" },
+        { name: serviceData.title, item: `/services/${service}` },
+        { name: data.title, item: `/services/${service}/${capability}` }
+      ]} />
+      <ServiceSchema name={data.title} description={data.heroSubtitle} offers={data.benefits} />
+      {data.faqs && <FAQSchema faqs={data.faqs} />}
 
       {/* 1. Hero Block */}
       <Hero

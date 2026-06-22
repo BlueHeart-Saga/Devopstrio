@@ -1,6 +1,7 @@
-"use client";
 
 import React from "react";
+import { Metadata } from "next";
+import { BreadcrumbSchema, ServiceSchema, FAQSchema } from "@/components/seo/Schemas";
 import { SectionNavbar } from "@/components/ui/SectionNavbar";
 
 // Component imports
@@ -203,12 +204,29 @@ const data = {
   ]
 };
 
+export async function generateMetadata(): Promise<Metadata> {
+  return {
+    title: `${data.hero.title} ${data.hero.highlightedWord}`,
+    description: data.hero.subtitle,
+    alternates: {
+      canonical: `/industries/banking-finance`
+    }
+  };
+}
+
 export default function BankingFinancePage() {
   const mappedOverviewChallenges = data.challenges.map(c => c.title);
   const mappedCompliance = data.compliance.map(c => `${c.title}: ${c.desc}`);
 
   return (
     <main className="min-h-screen bg-black text-white pt-16 font-sans">
+      <BreadcrumbSchema items={[
+        { name: "Home", item: "/" },
+        { name: "Industries", item: "/industries" },
+        { name: "Banking & Finance", item: "/industries/banking-finance" }
+      ]} />
+      <ServiceSchema name="Banking & Finance Solutions" description={data.hero.subtitle} offers={data.capabilities.map(c => c.title)} />
+      {data.faqs && <FAQSchema faqs={data.faqs} />}
 
       {/* 1. Hero */}
       <IndustryHero

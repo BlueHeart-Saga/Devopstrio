@@ -162,7 +162,7 @@ export function InsightsLibrary({ posts, loading }: InsightsLibraryProps) {
               <Reveal className="mt-12 text-center">
                 <button
                   onClick={() => setVisibleCount(visibleCount + 6)}
-                  className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full text-xs font-bold uppercase tracking-wider text-zinc-300 border border-zinc-800 bg-transparent hover:border-zinc-700 hover:text-white transition-all duration-300"
+                  className="gap-2 inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase border border-zinc-850 hover:border-zinc-750 bg-zinc-950/60 hover:bg-zinc-900 text-white transition-all duration-300 hover:-translate-y-0.5"
                 >
                   Load More Publications
                 </button>

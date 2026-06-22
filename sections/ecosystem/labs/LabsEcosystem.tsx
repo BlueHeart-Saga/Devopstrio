@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Reveal } from "@/components/ui/Reveal";
-import { Brain, Cloud, Terminal, Shield, Database, Cpu, ArrowRight } from "lucide-react";
+import { Brain, Cloud, Terminal, Shield, Database, Cpu, ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 
 interface LabCard {
@@ -116,7 +116,7 @@ export function LabsEcosystem() {
                   className="inline-flex items-center gap-2 text-[10px] font-mono font-bold uppercase tracking-wider text-rose-500 group-hover:text-rose-400 transition-colors"
                 >
                   Explore Lab
-                  <ArrowRight size={12} className="group-hover:translate-x-1 transition-transform" />
+                  <ArrowUpRight size={12} className="group-hover:translate-x-1 transition-transform" />
                 </Link>
               </div>
             </div>

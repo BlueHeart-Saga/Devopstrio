@@ -1,15 +1,30 @@
-"use client";
 
 import React from "react";
+import { Metadata } from "next";
+import { BreadcrumbSchema } from "@/components/seo/Schemas";
 import { Achievements } from "@/sections/about/Achievements";
 import { AwardsList } from "@/sections/about/AwardsList";
 import { MetricsStats } from "@/sections/about/MetricsStats";
 import { AboutCTA } from "@/sections/about/AboutCTA";
 import { Reveal } from "@/components/ui/Reveal";
 
+
+
+export const metadata: Metadata = {
+  title: "Awards & Recognition",
+  description: "Explore the industry awards and engineering recognition received by Devopstrio.",
+  alternates: {
+    canonical: "/about/awards-recognition"
+  }
+};
 export default function AwardsRecognitionPage() {
   return (
     <main className="min-h-screen bg-black text-white pt-16 font-sans">
+      <BreadcrumbSchema items={[
+        { name: "Home", item: "/" },
+        { name: "About Us", item: "/about/company-overview" },
+        { name: "Awards & Recognition", item: "/about/awards-recognition" }
+      ]} />
       {/* Page Header */}
       <section className="pt-20 pb-4 text-center relative bg-[#030303]">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(244,63,94,0.05),transparent_50%)] pointer-events-none" />

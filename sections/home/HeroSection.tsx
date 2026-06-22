@@ -19,7 +19,7 @@ export function HeroSection() {
 
   const slides: Slide[] = [
     {
-      eyebrow: "UK-Based Global Technology Partner",
+      eyebrow: "Elite Global Technology Partner",
       title: (
         <>
           The World Runs on
@@ -167,7 +167,7 @@ export function HeroSection() {
     <section ref={heroRef} className="relative w-full h-[95vh] min-h-[600px] lg:min-h-[750px] xl:min-h-[850px] max-h-[950px] flex items-center justify-center bg-[#030303] text-white pt-24 pb-12 lg:pb-0 overflow-hidden">
       <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center w-full">
-          
+
           {/* Left Column: Text content */}
           <div className="lg:col-span-8 lg:pr-12 flex flex-col items-start text-left justify-center relative z-20 py-8 lg:py-16">
             <AnimatePresence mode="wait">
@@ -196,7 +196,7 @@ export function HeroSection() {
               >
                 {/* Eyebrow */}
                 <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-zinc-800/80 bg-zinc-950/40 mb-6">
-                  <span className="w-1.5 h-1.5 rounded-full bg-red-600 animate-pulse" />
+                  {/* <span className="w-1.5 h-1.5 rounded-full bg-red-600 animate-pulse" /> */}
                   <span className="text-[10px] sm:text-xs font-semibold tracking-[0.2em] uppercase text-zinc-400">
                     {slides[currentSlide].eyebrow}
                   </span>
@@ -214,14 +214,14 @@ export function HeroSection() {
                     href={slides[currentSlide].primaryBtn.href}
                   >
                     {slides[currentSlide].primaryBtn.text}
-                    <span className="ml-2">→</span>
+
                   </a>
                   <a
                     className="inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase border border-zinc-850 hover:border-zinc-750 bg-zinc-950/60 hover:bg-zinc-900 text-white transition-all duration-300 hover:-translate-y-0.5"
                     href={slides[currentSlide].secondaryBtn.href}
                   >
                     {slides[currentSlide].secondaryBtn.text}
-                    <span className="ml-2">→</span>
+
                   </a>
                 </div>
 
@@ -231,9 +231,8 @@ export function HeroSection() {
                     <button
                       key={idx}
                       onClick={() => setCurrentSlide(idx)}
-                      className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                        currentSlide === idx ? "bg-[#E11D48] w-6" : "bg-zinc-800 hover:bg-zinc-750"
-                      }`}
+                      className={`w-2 h-2 rounded-full transition-all duration-300 ${currentSlide === idx ? "bg-[#E11D48] w-6" : "bg-zinc-800 hover:bg-zinc-750"
+                        }`}
                       aria-label={`Go to slide ${idx + 1}`}
                     />
                   ))}

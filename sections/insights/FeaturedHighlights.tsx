@@ -2,7 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import { Clock, ArrowRight } from "lucide-react";
+import { Clock, ArrowUpRight } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
 import { TransformedPost } from "@/lib/insightsApi";
 
@@ -54,7 +54,7 @@ export function FeaturedHighlights({ posts }: FeaturedHighlightsProps) {
                 <div className="flex items-center justify-between border-t border-zinc-900/60 pt-4 mt-auto">
                   <span className="text-[10px] text-zinc-550 font-mono">{post.date}</span>
                   <span className="text-[10px] font-bold uppercase tracking-wider text-rose-500 flex items-center gap-1 group-hover:translate-x-1 transition-transform">
-                    Read post <ArrowRight size={11} />
+                    Read post <ArrowUpRight size={11} />
                   </span>
                 </div>
               </Link>

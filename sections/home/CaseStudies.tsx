@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Reveal } from "@/components/ui/Reveal";
-import { Zap, ArrowRight, ArrowLeft } from "lucide-react";
+import { Zap, ArrowUpRight, ArrowLeft } from "lucide-react";
 
 interface CaseStudy {
   tag: string;
@@ -162,11 +162,11 @@ export function CaseStudies() {
                 <div className="w-full h-64 md:h-80 rounded-xl overflow-hidden mb-2 relative border border-zinc-800/80 flex flex-col justify-end p-6 md:p-8 shadow-2xl group cursor-pointer">
                   {/* Subtle clean dark gradient overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-[#030303] via-[#030303]/60 to-transparent z-10 pointer-events-none" />
-                  
-                  <img 
-                    src={caseStudies[activeIndex].image} 
-                    alt={caseStudies[activeIndex].title} 
-                    className="absolute inset-0 w-full h-full object-cover opacity-60 transition-transform duration-[1.2s] group-hover:scale-103 group-hover:opacity-85 select-none" 
+
+                  <img
+                    src={caseStudies[activeIndex].image}
+                    alt={caseStudies[activeIndex].title}
+                    className="absolute inset-0 w-full h-full object-cover opacity-60 transition-transform duration-[1.2s] group-hover:scale-103 group-hover:opacity-85 select-none"
                   />
 
                   {/* Left/Right Navigation Arrows Inside Image */}
@@ -181,7 +181,7 @@ export function CaseStudies() {
                       onClick={(e) => { e.stopPropagation(); handleNext(); }}
                       className="w-10 h-10 rounded-full bg-black/60 backdrop-blur-md border border-white/10 flex items-center justify-center text-white hover:bg-rose-600 hover:border-rose-500 transition-all shadow-xl transform translate-x-2 group-hover:translate-x-0"
                     >
-                      <ArrowRight size={18} />
+                      <ArrowUpRight size={18} />
                     </button>
                   </div>
 
@@ -227,7 +227,7 @@ export function CaseStudies() {
                   </div>
 
                   {/* Result Indicator Badge */}
-                  <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-rose-500/10 border border-rose-500/20 rounded-lg text-rose-400 text-xs font-bold uppercase tracking-wider max-w-max">
+                  <div className="gap-2 inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white transition-all duration-300 hover:shadow-[0_0_25px_rgba(225,29,72,0.35)] hover:-translate-y-0.5">
                     <Zap size={12} className="animate-pulse" />
                     <span>{caseStudies[activeIndex].result}</span>
                   </div>
@@ -254,12 +254,12 @@ export function CaseStudies() {
             </div>
 
             {/* View All Button */}
-            <a 
-              href="/case-studies" 
+            <a
+              href="/case-studies"
               className="group flex items-center gap-2 text-rose-500 hover:text-rose-400 font-bold transition-all text-xs uppercase tracking-wider"
             >
-              Explore All Outcomes 
-              <ArrowRight size={14} className="transform group-hover:translate-x-1 transition-transform duration-300" />
+              Explore All Outcomes
+              <ArrowUpRight size={14} className="transform group-hover:translate-x-1 transition-transform duration-300" />
             </a>
           </div>
 

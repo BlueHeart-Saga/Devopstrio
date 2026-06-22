@@ -175,7 +175,7 @@ export function LabsShowcase() {
                         >
                           <div className="flex items-center justify-between mb-2">
                             <h5 className="text-[11px] font-bold text-white uppercase tracking-wider">{proj.name}</h5>
-                            <span className="text-[8px] bg-rose-500/10 text-rose-500 border border-rose-500/20 px-2 py-0.5 rounded-full font-mono font-bold uppercase">
+                            <span className="inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white transition-all duration-300 hover:shadow-[0_0_25px_rgba(225,29,72,0.35)] hover:-translate-y-0.5">
                               {proj.stage}
                             </span>
                           </div>

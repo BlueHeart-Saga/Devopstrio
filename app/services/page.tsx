@@ -1,6 +1,5 @@
-"use client";
-
 import React from "react";
+import { Metadata } from "next";
 import { ServicesHero } from "@/sections/services/ServicesHero";
 import { CategoriesGrid } from "@/sections/services/CategoriesGrid";
 import { CoreServices } from "@/sections/home/CoreServices";
@@ -15,6 +14,15 @@ import { FaqSection } from "@/sections/services/FaqSection";
 import { ServicesCTA } from "@/sections/services/ServicesCTA";
 import { SectionNavbar } from "@/components/ui/SectionNavbar";
 import { Reveal } from "@/components/ui/Reveal";
+import { BreadcrumbSchema } from "@/components/seo/Schemas";
+
+export const metadata: Metadata = {
+  title: "Engineering Services",
+  description: "Explore our practice areas: Cognitive AI pipelines, multi-region AKS/EKS container grids, platform engineering, and compliance hardening.",
+  alternates: {
+    canonical: "/services"
+  }
+};
 
 const servicesSections = [
   { id: "categories", label: "Categories" },
@@ -30,8 +38,15 @@ const servicesSections = [
 ];
 
 export default function ServicesPage() {
+  const breadcrumbs = [
+    { name: "Home", item: "/" },
+    { name: "Services", item: "/services" }
+  ];
+
   return (
     <main className="min-h-screen bg-black text-white pt-16 font-sans">
+      <BreadcrumbSchema items={breadcrumbs} />
+
       
       {/* Cinematic Hero Title Header */}
       {/* <section className="pt-16 pb-4 md:pb-8 text-center relative bg-[#030303]">

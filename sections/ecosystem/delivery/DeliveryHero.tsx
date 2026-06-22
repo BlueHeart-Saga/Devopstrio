@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Reveal } from "@/components/ui/Reveal";
-import { ArrowRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -17,7 +17,7 @@ export function DeliveryHero() {
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#080808_1px,transparent_1px),linear-gradient(to_bottom,#080808_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10 flex flex-col items-center text-center flex-grow justify-center pt-8">
-        
+
         {/* Center Heading & Subtitle */}
         <Reveal delay={0.1} className="max-w-4xl">
           <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight mb-6 text-white text-center">
@@ -39,7 +39,7 @@ export function DeliveryHero() {
           >
             Explore Our Presence
             <div className="w-7 h-7 rounded-full bg-black flex items-center justify-center transition-transform duration-300 hover:scale-105">
-              <ArrowRight className="w-3.5 h-3.5 text-white" />
+              <ArrowUpRight className="w-3.5 h-3.5 text-white" />
             </div>
           </Link>
         </Reveal>

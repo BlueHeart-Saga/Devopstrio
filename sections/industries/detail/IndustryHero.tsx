@@ -47,7 +47,7 @@ export function IndustryHero({
 
           {/* Premium Tag */}
           <Reveal delay={0.05}>
-            <span className="inline-block px-3 py-1 bg-rose-600/10 border border-rose-500/20 text-rose-500 text-[10px] font-bold uppercase tracking-widest rounded-full mb-6">
+            <span className="mb-6 inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white transition-all duration-300 hover:shadow-[0_0_25px_rgba(225,29,72,0.35)] hover:-translate-y-0.5">
               Sector Specialization
             </span>
           </Reveal>

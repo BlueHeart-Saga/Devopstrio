@@ -176,7 +176,7 @@ export function CategoryFeatured({ posts, categorySlug }: CategoryFeaturedProps)
                     {isActive ? (
                       <Link
                         href={`/insights/${categorySlug}/${post.id}`}
-                        className="inline-flex items-center justify-center px-5 py-2.5 rounded-xl text-[10px] sm:text-xs font-bold tracking-wider uppercase bg-[#E11D48] hover:bg-rose-600 text-white transition-all duration-300 shadow-[0_4px_15px_rgba(225,29,72,0.25)] hover:shadow-[0_4px_25px_rgba(225,29,72,0.45)] active:scale-98"
+                        className="inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white transition-all duration-300 hover:shadow-[0_0_25px_rgba(225,29,72,0.35)] hover:-translate-y-0.5"
                       >
                         Read Article
                         <span className="ml-1.5">→</span>

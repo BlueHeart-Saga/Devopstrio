@@ -15,9 +15,9 @@ export const deliveryDomain: EcosystemDomain = {
     { value: "99.99%", label: "Uptime Maintenance SLA" }
   ],
   subpages: [
-    { slug: "united-kingdom", title: "United Kingdom Hub", description: "Local advisory, architecture consulting, and federal compliance guides." },
-    { slug: "india", title: "India Operations", description: "Scale SRE execution, database maintenance, and continuous automation." },
-    { slug: "europe", title: "Europe Hub", description: "GDPR compliance, regional cloud hosting, and consulting." },
+    { slug: "united-kingdom-hub", title: "United Kingdom Hub", description: "Local advisory, architecture consulting, and federal compliance guides." },
+    { slug: "india-operations", title: "India Operations", description: "Scale SRE execution, database maintenance, and continuous automation." },
+    { slug: "europe-hub", title: "Europe Hub", description: "GDPR compliance, regional cloud hosting, and consulting." },
     { slug: "follow-the-sun-support", title: "Follow-the-Sun Support", description: "Seamless timezone handovers, continuous monitoring, and alerts." },
     { slug: "managed-services-center", title: "Managed Services Center", description: "Outsourced system patching, backup checks, and cost reviews." }
   ],
@@ -37,8 +37,8 @@ export const deliveryDomain: EcosystemDomain = {
 };
 
 export const deliverySubpages: Record<string, EcosystemSubpageDetail> = {
-  "united-kingdom": {
-    slug: "united-kingdom",
+  "united-kingdom-hub": {
+    slug: "united-kingdom-hub",
     title: "United Kingdom Hub",
     heroSubtitle: "Consult UK-based solutions architects and design architectures meeting local compliance rules.",
     challenge: "UK businesses face complex data storage rules, local security requirements, and need onshore advisors for architecture strategy.",
@@ -72,8 +72,8 @@ export const deliverySubpages: Record<string, EcosystemSubpageDetail> = {
       { q: "Where is our customer data stored?", a: "We configure resource locations to store all transactional data inside London regions." }
     ]
   },
-  india: {
-    slug: "india",
+  "india-operations": {
+    slug: "india-operations",
     title: "India Operations",
     heroSubtitle: "Scale operations using our Bangalore and Chennai SRE hubs.",
     challenge: "Hiring offshore SRE staff leads to quality issues, slow communication, and brittle pipeline configurations.",
@@ -107,8 +107,8 @@ export const deliverySubpages: Record<string, EcosystemSubpageDetail> = {
       { q: "How do you maintain code quality standards?", a: "All code undergoes peer reviews and automated checks before merging." }
     ]
   },
-  europe: {
-    slug: "europe",
+  "europe-hub": {
+    slug: "europe-hub",
     title: "Europe Hub",
     heroSubtitle: "Design GDPR-compliant architectures and coordinate regional cloud deployments.",
     challenge: "European Union companies must navigate GDPR data rules, require local language support, and localized database hosting.",

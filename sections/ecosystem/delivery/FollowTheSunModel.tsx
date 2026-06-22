@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Reveal } from "@/components/ui/Reveal";
-import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { ArrowUpRight, CheckCircle2 } from "lucide-react";
 
 export function FollowTheSunModel() {
   const steps = [
@@ -38,7 +38,7 @@ export function FollowTheSunModel() {
         </Reveal>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          
+
           {/* Left: Follow the sun flow steps */}
           <div className="lg:col-span-7 flex flex-col gap-4 relative">
             {/* Connecting line */}

@@ -125,7 +125,7 @@ export function LegalPageLayout({
                 </div>
                 <button
                   onClick={handlePrint}
-                  className="inline-flex items-center justify-center gap-2 bg-zinc-950/60 hover:bg-zinc-900 border border-zinc-900 hover:border-zinc-800 transition-all px-4 py-2.5 rounded-xl text-xs font-mono text-zinc-400 hover:text-white"
+                  className="gap-2 inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase border border-zinc-850 hover:border-zinc-750 bg-zinc-950/60 hover:bg-zinc-900 text-white transition-all duration-300 hover:-translate-y-0.5"
                   title="Print / Save PDF"
                 >
                   <Printer size={14} className="text-rose-500" />
@@ -212,7 +212,7 @@ export function LegalPageLayout({
               </div>
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-zinc-900 border border-zinc-800 hover:border-zinc-700 hover:bg-zinc-850 rounded-xl font-mono text-xs font-bold uppercase tracking-wider text-rose-500 transition-all flex-shrink-0"
+                className="gap-2 inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase border border-zinc-850 hover:border-zinc-750 bg-zinc-950/60 hover:bg-zinc-900 text-white transition-all duration-300 hover:-translate-y-0.5"
               >
                 <Mail size={13} />
                 Contact Trust Team

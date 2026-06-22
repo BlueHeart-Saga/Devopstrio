@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
 
 const industries = [
@@ -10,56 +10,56 @@ const industries = [
     name: "Banking & Finance",
     tag: "Financial Services",
     desc: "Secure, regulatory-compliant solutions for banking, investing, and digital payments.",
-    icon: "/assets/Home-page/industries/icons/bankingfiannace.png",
+    icon: "/assets/Home-page/industries/bankifinance.png",
     href: "/industries/banking-finance",
   },
   {
     name: "Healthcare & Life Sciences",
     tag: "Specialized Solutions",
     desc: "HIPAA-compliant telehealth apps, EHR platforms, and research databases.",
-    icon: "/assets/Home-page/industries/icons/healthcarescience.png",
+    icon: "/assets/Home-page/industries/healthcaree.png",
     href: "/industries/healthcare-life-sciences",
   },
   {
     name: "Retail & E-Commerce",
     tag: "Digital Commerce",
     desc: "Omni-channel engines, high-speed checkouts, and real-time inventory systems.",
-    icon: "/assets/Home-page/industries/icons/reatilecommerce.png",
+    icon: "/assets/Home-page/industries/retailecommerce.png",
     href: "/industries/retail-ecommerce",
   },
   {
     name: "Manufacturing",
     tag: "Industry 4.0",
     desc: "Industrial IoT integrations, predictive maintenance logs, and smart supply chains.",
-    icon: "/assets/Home-page/industries/icons/Manufacturing (2).png",
+    icon: "/assets/Home-page/industries/manufacturingg.png",
     href: "/industries/manufacturing",
   },
   {
     name: "Telecommunications",
     tag: "Network Solutions",
     desc: "Scalable OSS/BSS infrastructures, 5G cloud services, and telecom analytics.",
-    icon: "/assets/Home-page/industries/icons/telecommunicate.png",
+    icon: "/assets/Home-page/industries/telecommunicationn.png",
     href: "/industries/telecommunications",
   },
   {
     name: "Media & Entertainment",
     tag: "Digital Media",
     desc: "High-bandwidth VOD platforms, live broadcasting, and digital assets.",
-    icon: "/assets/Home-page/industries/icons/Mediaentertainement.png",
+    icon: "/assets/Home-page/industries/mediaentertainment.png",
     href: "/industries/media-entertainment",
   },
   {
     name: "Education",
     tag: "EdTech Platforms",
     desc: "LMS environments, remote learning tools, and digital collaboration spaces.",
-    icon: "/assets/Home-page/industries/icons/educationn.png",
+    icon: "/assets/Home-page/industries/educationn.png",
     href: "/industries/education",
   },
   {
     name: "Government & Public Sector",
     tag: "Government Solutions",
     desc: "Citizen portals, cloud modernization, and strict security compliance.",
-    icon: "/assets/Home-page/industries/icons/governmentpublicsector.png",
+    icon: "/assets/Home-page/industries/governmentsector.png",
     href: "/industries/government-public-sector",
   },
 ];
@@ -136,7 +136,7 @@ export function IndustriesSection() {
                   </h3>
                 </div>
                 <div className="w-7 h-7 rounded-full bg-zinc-100 flex items-center justify-center text-zinc-800 group-hover:bg-rose-500 group-hover:text-white transition-all duration-300 shrink-0 ml-2">
-                  <ArrowRight size={12} className="transition-transform group-hover:translate-x-0.5" />
+                  <ArrowUpRight size={12} className="transition-transform group-hover:translate-x-0.5" />
                 </div>
               </div>
             </motion.a>
@@ -153,7 +153,7 @@ export function IndustriesSection() {
               href="/industries"
               className="inline-flex items-center gap-2 text-sm font-semibold text-zinc-400 hover:text-rose-400 transition-colors uppercase tracking-wider"
             >
-              Explore all industries <ArrowRight size={14} />
+              Explore all industries <ArrowUpRight size={14} />
             </a>
           </div>
         </Reveal>

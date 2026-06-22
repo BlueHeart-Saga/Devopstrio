@@ -44,7 +44,7 @@ export function InsightsJourney() {
               onMouseLeave={() => setActiveMilestone(null)}
             >
               <div className="flex items-center justify-between w-full mb-4 relative z-10">
-                <span className="text-xl font-bold font-mono text-white bg-black border border-zinc-900 px-3 py-1 rounded-full group-hover:border-rose-500/40 transition-colors">
+                <span className="inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase border border-zinc-850 hover:border-zinc-750 bg-zinc-950/60 hover:bg-zinc-900 text-white transition-all duration-300 hover:-translate-y-0.5">
                   {m.year}
                 </span>
                 <span className="w-1.5 h-1.5 rounded-full bg-rose-600 ring-4 ring-rose-950/20" />

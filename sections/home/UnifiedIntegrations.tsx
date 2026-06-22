@@ -531,7 +531,7 @@ export function UnifiedIntegrations() {
       <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
         {/* HEADER */}
         <div className="hub-header mb-16 max-w-3xl mx-auto text-center">
-          <span className="inline-block px-4 py-1.5 rounded-full border border-rose-500/20 text-[10px] font-semibold tracking-[0.2em] uppercase text-rose-500 bg-rose-500/5 mb-6">
+          <span className="mb-6 inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white transition-all duration-300 hover:shadow-[0_0_25px_rgba(225,29,72,0.35)] hover:-translate-y-0.5">
             PRODUCT ECOSYSTEM
           </span>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] text-white mb-6">

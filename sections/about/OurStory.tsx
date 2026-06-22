@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { Reveal } from "@/components/ui/Reveal";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowLeft, ArrowRight } from "lucide-react";
+import { ArrowLeft, ArrowUpRight } from "lucide-react";
 
 const milestones = [
   {
@@ -75,7 +75,7 @@ export function OurStory() {
     const now = Date.now();
     if (now - lastScrollTime < 800) return; // Throttle scroll inputs to 800ms
     setLastScrollTime(now);
-    
+
     if (e.deltaY > 0) {
       setActiveIdx((prev) => (prev + 1) % milestones.length);
     } else {
@@ -96,7 +96,7 @@ export function OurStory() {
         {/* Redesigned Intro Card Container (BusinessOverview Style) */}
         <Reveal className="mb-20">
           <div className="group relative overflow-hidden rounded-[32px] border border-zinc-800/60 bg-zinc-950/30 backdrop-blur-xl">
-            
+
             {/* Background Glow */}
             <div className="absolute inset-0 pointer-events-none">
               <div className="absolute -top-20 -left-20 w-96 h-96 bg-rose-600/10 blur-[120px]" />
@@ -104,20 +104,20 @@ export function OurStory() {
             </div>
 
             <div className="relative grid grid-cols-1 lg:grid-cols-12 gap-0">
-              
+
               {/* LEFT CONTENT */}
               <div className="lg:col-span-7 flex flex-col justify-center p-6 md:p-10 lg:p-12">
                 <span className="text-[11px] font-semibold tracking-[0.25em] uppercase text-rose-500 mb-6 block">
                   Our Story
                 </span>
-                
+
                 <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold leading-tight tracking-tight mb-6">
                   From a Bangalore startup
                   <span className="block text-rose-500 mt-1">
                     to a global engineering force.
                   </span>
                 </h2>
-                
+
                 <div className="space-y-6 text-zinc-400 text-sm leading-relaxed font-bold">
                   <p>
                     Founded in 2019 with a simple idea — that cloud infrastructure could be smarter, faster, and more human — Devopstrio has grown into a trusted partner for enterprises across four continents.
@@ -134,7 +134,7 @@ export function OurStory() {
                   <p>
                     We opened our first small office in Bangalore, India, in 2019 — reaching early clients through platforms like Upwork. The work was precise, the delivery exceptional, and the reputation grew quickly. What started as a specialist DevOps team became something far larger: a full-spectrum digital transformation partner.
                   </p>
-                  
+
                   <div className="p-5 bg-zinc-950/60 border border-zinc-800/80 rounded-none border-r-4 border-r-rose-600">
                     <span className="text-[10px] font-bold text-rose-500 uppercase tracking-widest block mb-1">
                       Our Story in One Line
@@ -151,7 +151,7 @@ export function OurStory() {
         </Reveal>
 
         {/* Circular Scroll Timeline Interface */}
-        <div 
+        <div
           className="grid grid-cols-1 lg:grid-cols-[1fr_1.5fr] gap-12 lg:gap-6 items-center min-h-[450px]"
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
@@ -163,14 +163,14 @@ export function OurStory() {
             <div className="absolute w-[360px] h-[360px] md:w-[500px] md:h-[500px] left-[-180px] md:left-[-250px] top-1/2 -translate-y-1/2 flex items-center justify-center shrink-0">
               {/* Dashed circular timeline track */}
               <svg className="absolute inset-0 w-full h-full text-zinc-800/40 pointer-events-none" viewBox="0 0 100 100">
-                <circle 
-                  cx="50" 
-                  cy="50" 
-                  r="40" 
-                  fill="none" 
-                  stroke="currentColor" 
-                  strokeWidth="0.3" 
-                  strokeDasharray="1.5 2" 
+                <circle
+                  cx="50"
+                  cy="50"
+                  r="40"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="0.3"
+                  strokeDasharray="1.5 2"
                 />
               </svg>
 
@@ -185,7 +185,7 @@ export function OurStory() {
                 const rad = (theta * Math.PI) / 180;
                 const x = 50 + 40 * Math.cos(rad);
                 const y = 50 + 40 * Math.sin(rad);
-                
+
                 const isActive = idx === activeIdx;
                 const distance = Math.abs(diff);
                 const opacity = Math.max(0.12, 1 - distance * 0.28); // Dynamic opacity based on proximity
@@ -194,11 +194,10 @@ export function OurStory() {
                   <button
                     key={event.year}
                     onClick={() => setActiveIdx(idx)}
-                    className={`absolute w-20 h-10 flex items-center justify-center rounded-full transition-all duration-700 focus:outline-none ${
-                      isActive
-                        ? "text-rose-500 scale-125 font-black z-20 text-xl md:text-2xl"
-                        : "text-zinc-600 hover:text-zinc-400 scale-95 font-medium z-10 text-xs md:text-sm"
-                    }`}
+                    className={`absolute w-20 h-10 flex items-center justify-center rounded-full transition-all duration-700 focus:outline-none ${isActive
+                        ? "text-[#ebd0be] scale-125 font-black z-20 text-xl md:text-2xl drop-shadow-[0_0_15px_rgba(235,208,190,0.5)]"
+                        : "text-zinc-600 hover:text-[#ebd0be]/70 scale-95 font-medium z-10 text-xs md:text-sm"
+                      }`}
                     style={{
                       left: `${x}%`,
                       top: `${y}%`,
@@ -225,15 +224,15 @@ export function OurStory() {
                 className="flex flex-col"
               >
                 {/* Large Year Display */}
-                <span className="text-[#ebd0be] text-7xl md:text-[8rem] xl:text-[10rem] font-black tracking-tighter leading-none mb-2 select-none font-sans block">
+                <span className="text-transparent bg-clip-text bg-gradient-to-b from-[#ebd0be] to-[#b39580] text-7xl md:text-[8rem] xl:text-[10rem] font-black tracking-tighter leading-none mb-2 select-none font-sans block drop-shadow-[0_10px_20px_rgba(235,208,190,0.1)]">
                   {activeEvent.year}
                 </span>
-                
+
                 {/* Event Title */}
                 <h4 className="text-2xl md:text-3xl xl:text-4xl font-extrabold text-white mb-4 tracking-tight leading-tight">
                   {activeEvent.title}
                 </h4>
-                
+
                 {/* Event Description */}
                 <p className="text-zinc-400 text-sm md:text-base leading-relaxed max-w-xl font-medium">
                   {activeEvent.description}
@@ -255,7 +254,7 @@ export function OurStory() {
                 className="w-10 h-10 rounded-full border border-zinc-800 bg-zinc-950/20 hover:border-rose-500 hover:text-rose-400 text-zinc-400 flex items-center justify-center transition-all duration-300"
                 aria-label="Next story event"
               >
-                <ArrowRight size={16} />
+                <ArrowUpRight size={16} />
               </button>
             </div> */}
           </div>

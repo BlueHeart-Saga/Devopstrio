@@ -1,3 +1,4 @@
+
 "use client";
 
 import React, { useState, useMemo } from "react";
@@ -285,6 +286,8 @@ const techTools = [
   }
 ];
 
+
+
 export default function PartnershipsCertificationsPage() {
   const [activeTab, setActiveTab] = useState<"business" | "tech" | "certifications" | "join">("business");
 
@@ -344,6 +347,9 @@ export default function PartnershipsCertificationsPage() {
 
   return (
     <main className="min-h-screen bg-[#030303] text-white pt-16 font-sans relative">
+      <title>Partnerships & Certifications | Devopstrio</title>
+      <meta name="description" content="Our industry certifications and co-engineering alliances with AWS, Microsoft Azure, Google Cloud, and Oracle." />
+      <link rel="canonical" href="https://devopstrio.co.uk/about/partnerships-certifications" />
       {/* Decorative top lighting glow */}
       <div className="absolute inset-x-0 top-0 h-[500px] bg-[radial-gradient(ellipse_at_top,rgba(244,63,94,0.08),transparent_60%)] pointer-events-none z-0" />
 
@@ -555,7 +561,7 @@ export default function PartnershipsCertificationsPage() {
                       </div>
 
                       {/* Category Badge */}
-                      <span className="px-2.5 py-0.5 rounded-full text-[8px] font-black uppercase tracking-widest bg-rose-500/10 text-rose-500 border border-rose-500/20 w-fit mb-3">
+                      <span className="w-fit mb-3 inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white transition-all duration-300 hover:shadow-[0_0_25px_rgba(225,29,72,0.35)] hover:-translate-y-0.5">
                         {tool.category}
                       </span>
 

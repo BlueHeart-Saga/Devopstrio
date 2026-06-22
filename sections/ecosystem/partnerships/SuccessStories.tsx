@@ -64,14 +64,14 @@ export function SuccessStories() {
                 <div className="flex items-center justify-between mb-6 border-b border-zinc-900/60 pb-4">
                   <div className="flex items-center gap-3">
                     <img src={story.logo} alt={story.partner} className="h-6 w-auto object-contain" />
-                    <span className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest font-bold">
+                    <span className="text-xs font-mono text-zinc-400 uppercase tracking-widest font-bold">
                       {story.partner} Alliance
                     </span>
                   </div>
                 </div>
 
-                <h3 className="text-sm font-bold text-white uppercase tracking-wider mb-3">{story.title}</h3>
-                <p className="text-[11px] text-zinc-455 font-semibold leading-relaxed mb-8">
+                <h3 className="text-base font-bold text-white uppercase tracking-wider mb-3">{story.title}</h3>
+                <p className="text-sm text-zinc-300 font-medium leading-relaxed mb-8">
                   {story.desc}
                 </p>
               </div>
@@ -81,7 +81,7 @@ export function SuccessStories() {
                 {story.results.map((res) => (
                   <div key={res.label}>
                     <div className="text-lg md:text-xl font-black text-rose-500 mb-0.5">{res.value}</div>
-                    <div className="text-[9px] font-mono text-zinc-500 uppercase tracking-wider leading-tight">
+                    <div className="text-xs font-mono text-zinc-400 uppercase tracking-wider leading-tight">
                       {res.label}
                     </div>
                   </div>

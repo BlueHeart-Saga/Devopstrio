@@ -59,88 +59,31 @@ export function EcosystemNetworkMap() {
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center min-h-[480px]">
           {/* Constellation Diagram - Left */}
-          <div className="lg:col-span-7 relative h-[420px] flex items-center justify-center">
-            {/* Background Orbits */}
-            <div className="absolute w-[280px] h-[280px] rounded-full border border-zinc-900/60 pointer-events-none" />
-            <div className="absolute w-[160px] h-[160px] rounded-full border border-zinc-900/40 pointer-events-none" />
-
-            {/* Connecting Lines SVG */}
-            <svg className="absolute inset-0 w-full h-full pointer-events-none" style={{ overflow: "visible" }}>
-              <g transform="translate(245, 210)" className="opacity-30">
-                {nodes.map(n => {
-                  const pos = getPosition(n.angle, n.radius);
-                  const isSelected = selectedNode === n.id;
-                  return (
-                    <line
-                      key={n.id}
-                      x1="0"
-                      y1="0"
-                      x2={pos.x}
-                      y2={pos.y}
-                      stroke={isSelected ? "#f43f5e" : "#27272a"}
-                      strokeWidth={isSelected ? "2" : "1"}
-                      className="transition-all duration-300"
-                    />
-                  );
-                })}
-              </g>
-            </svg>
-
-            {/* Central Node */}
-            <button
-              onClick={() => setSelectedNode("center")}
-              className={`absolute w-20 h-20 rounded-full flex flex-col items-center justify-center z-20 cursor-pointer border transition-all duration-300 ${
-                selectedNode === "center"
-                  ? "bg-rose-500/20 text-rose-500 border-rose-500 shadow-[0_0_20px_rgba(244,63,94,0.3)]"
-                  : "bg-zinc-950 text-zinc-500 border-zinc-900 hover:border-zinc-800"
-              }`}
-            >
-              <Network size={20} className="mb-1" />
-              <span className="text-[8px] font-mono font-bold tracking-widest">DTRIO</span>
-            </button>
-
-            {/* Surrounding Nodes */}
-            {nodes.map((node) => {
-              const pos = getPosition(node.angle, node.radius);
-              const isSelected = selectedNode === node.id;
-              
-              return (
-                <button
-                  key={node.id}
-                  onClick={() => setSelectedNode(node.id)}
-                  style={{
-                    transform: `translate(${pos.x}px, ${pos.y}px)`
-                  }}
-                  className={`absolute w-12 h-12 rounded-full flex items-center justify-center text-[8px] font-mono font-bold uppercase cursor-pointer border transition-all duration-300 z-10 ${
-                    isSelected
-                      ? "bg-rose-500/10 text-rose-500 border-rose-500 shadow-[0_0_15px_rgba(244,63,94,0.25)]"
-                      : "bg-zinc-950 text-zinc-400 border-zinc-900/80 hover:border-rose-500/30 hover:text-rose-500"
-                  }`}
-                  title={node.name}
-                >
-                  {node.name.substring(0, 4)}
-                </button>
-              );
-            })}
+          <div className="lg:col-span-7 flex items-center justify-center">
+            <img
+              src="/assets/ecosystem/main-page/logoss.png"
+              alt="Ecosystem Network Map"
+              className="w-full h-auto max-h-[420px] object-contain select-none pointer-events-none"
+            />
           </div>
 
           {/* Details Panel - Right */}
           <div className="lg:col-span-5">
             <div className="bg-zinc-950/40 border border-zinc-900/60 rounded-3xl p-8 min-h-[320px] flex flex-col justify-between backdrop-blur-sm">
               <div>
-                <span className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest block mb-2">
+                <span className="text-xs font-mono text-zinc-400 uppercase tracking-widest block mb-2">
                   SELECTED ALLIANCE NODE
                 </span>
-                <h3 className="text-xl font-bold text-white mb-2">{activeNodeDetails.name}</h3>
-                <p className="text-xs text-rose-500 font-mono mb-6 uppercase tracking-wider">{activeNodeDetails.role}</p>
+                <h3 className="text-2xl font-bold text-white mb-2">{activeNodeDetails.name}</h3>
+                <p className="text-sm md:text-base text-rose-500 font-mono mb-6 uppercase tracking-wider">{activeNodeDetails.role}</p>
                 
-                <span className="block text-[10px] font-mono font-bold text-zinc-400 uppercase tracking-wider mb-3">
+                <span className="block text-xs font-mono font-bold text-zinc-300 uppercase tracking-wider mb-3.5">
                   Capabilities & Integrations
                 </span>
-                <ul className="space-y-2.5">
+                <ul className="space-y-3">
                   {activeNodeDetails.details.map((detail, idx) => (
-                    <li key={idx} className="flex items-start gap-2.5 text-xs text-zinc-400 font-semibold leading-normal">
-                      <CheckCircle2 size={13} className="text-rose-500 mt-0.5 flex-shrink-0" />
+                    <li key={idx} className="flex items-start gap-2.5 text-sm md:text-base text-zinc-300 font-semibold leading-normal">
+                      <CheckCircle2 size={16} className="text-rose-500 mt-1 flex-shrink-0" />
                       <span>{detail}</span>
                     </li>
                   ))}
@@ -148,8 +91,8 @@ export function EcosystemNetworkMap() {
               </div>
 
               <div className="mt-8 pt-6 border-t border-zinc-900/80">
-                <span className="text-[10px] font-mono text-zinc-500">
-                  Click on any surrounding bubble node to display its structural capabilities.
+                <span className="text-xs font-mono text-zinc-500 leading-relaxed block">
+                  Orchestrating connections across public clouds, SaaS platforms, and core enterprise systems.
                 </span>
               </div>
             </div>

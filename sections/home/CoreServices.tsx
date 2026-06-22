@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { ArrowLeft, ArrowRight } from "lucide-react";
+import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
 
 const services = [
@@ -175,7 +175,7 @@ export function CoreServices() {
                     className="mt-2 inline-flex items-center gap-2.5 bg-zinc-900 hover:bg-rose-600 border border-zinc-800 hover:border-rose-600 text-zinc-300 hover:text-white rounded-lg px-4 py-2.5 text-xs font-semibold uppercase tracking-wider transition-all duration-300 w-fit group/btn"
                   >
                     <span className="w-5 h-5 rounded-sm bg-rose-600 group-hover/btn:bg-white flex items-center justify-center flex-shrink-0 transition-colors duration-300">
-                      <ArrowRight size={11} className="text-white group-hover/btn:text-rose-600 transition-colors duration-300" />
+                      <ArrowUpRight size={11} className="text-white group-hover/btn:text-rose-600 transition-colors duration-300" />
                     </span>
                     {service.cta}
                   </a>
@@ -199,13 +199,13 @@ export function CoreServices() {
             className="w-11 h-11 rounded-full border border-zinc-700 hover:border-rose-500 hover:bg-rose-500/10 text-white flex items-center justify-center transition-all duration-300 active:scale-95"
             aria-label="Next services"
           >
-            <ArrowRight size={16} />
+            <ArrowUpRight size={16} />
           </button>
           <a
             href="/services"
             className="ml-4 text-sm font-semibold text-zinc-400 hover:text-rose-400 transition-colors uppercase tracking-wider flex items-center gap-1.5"
           >
-            All capabilities <ArrowRight size={14} />
+            All capabilities <ArrowUpRight size={14} />
           </a>
         </div>
 

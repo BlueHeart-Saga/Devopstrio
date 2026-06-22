@@ -521,7 +521,7 @@ export const AwardsList = () => {
 
                   {/* Year & Authority Badge */}
                   <div className="flex items-center justify-between mb-3">
-                    <span className="px-3 py-0.5 rounded-full text-[9px] font-black uppercase tracking-widest bg-rose-500/15 text-rose-500 border border-rose-500/30">
+                    <span className="inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white transition-all duration-300 hover:shadow-[0_0_25px_rgba(225,29,72,0.35)] hover:-translate-y-0.5">
                       {item.year}
                     </span>
                     <span className="text-[10px] font-black text-rose-400 uppercase tracking-widest">

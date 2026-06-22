@@ -2,53 +2,48 @@
 
 import React from "react";
 import { Reveal } from "@/components/ui/Reveal";
-import { Mail, ArrowRight } from "lucide-react";
+import { Mail, ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 
 export function DeliveryCTA() {
   return (
-    <section className="w-full py-28 bg-black text-white relative overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_center,rgba(244,63,94,0.06),transparent_60%)] pointer-events-none" />
+    <section id="contact" className="w-full py-28 md:py-40 bg-[#030303] text-white border-t border-zinc-900 relative overflow-hidden">
+      {/* Background Glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-[radial-gradient(ellipse_at_center,rgba(220,38,38,0.04),transparent_60%)] pointer-events-none" />
 
-      <div className="max-w-4xl mx-auto px-12 xl:px-8 text-center relative z-10">
-        <Reveal>
-          <div className="flex items-center justify-center gap-2 mb-4">
+      <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10 text-center">
+        <Reveal className="max-w-3xl mx-auto flex flex-col items-center">
+
+          <div className="inline-flex items-center gap-2 mb-4">
             <span className="w-1.5 h-1.5 rounded-full bg-rose-500 animate-ping" />
-            <span className="text-xs font-mono font-bold tracking-widest text-rose-500 uppercase">
+            <span className="text-xs font-semibold tracking-[0.2em] uppercase text-zinc-400">
               GLOBAL TEAM
             </span>
           </div>
-        </Reveal>
 
-        <Reveal delay={0.1}>
-          <h2 className="text-3xl md:text-4xl xl:text-5xl font-black tracking-tight leading-tight mb-6">
-            One Global Team. <span className="text-rose-500">Unlimited Possibilities.</span>
+          <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-8">
+            One Global Team. <span className="text-white font-medium bg-gradient-to-r from-red-600 via-rose-600 to-rose-500 bg-clip-text text-transparent">Unlimited Possibilities.</span>
           </h2>
-        </Reveal>
 
-        <Reveal delay={0.2}>
-          <p className="text-zinc-405 text-xs md:text-sm xl:text-base font-semibold leading-relaxed mb-10 max-w-2xl mx-auto">
+          <p className="text-zinc-400 text-sm md:text-lg leading-relaxed font-bold mb-10 max-w-lg">
             Leverage Devopstrio's global delivery network to accelerate innovation, scale operations, and achieve business outcomes through world-class engineering and consulting expertise.
           </p>
-        </Reveal>
 
-        <Reveal delay={0.3}>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <div className="flex flex-wrap gap-4 justify-center items-center">
             <Link
               href="#overview"
-              className="w-full sm:w-auto px-6 py-3.5 bg-rose-600 hover:bg-rose-700 text-white rounded-xl text-xs font-mono font-bold uppercase tracking-wider transition-all duration-300 shadow-[0_0_20px_rgba(244,63,94,0.2)] flex items-center justify-center gap-2 group border border-rose-500/20"
+              className="gap-2 inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white transition-all duration-300 hover:shadow-[0_0_25px_rgba(225,29,72,0.35)] hover:-translate-y-0.5"
             >
-              Explore Our Global Presence
-              <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+              Explore Our Global Presence <ArrowUpRight size={14} />
             </Link>
             <Link
               href="/contact"
-              className="w-full sm:w-auto px-6 py-3.5 bg-zinc-950/60 hover:bg-zinc-900 text-zinc-350 hover:text-white rounded-xl text-xs font-mono font-bold uppercase tracking-wider transition-all duration-300 border border-zinc-900 hover:border-zinc-800 flex items-center justify-center gap-2"
+              className="gap-2 inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase border border-zinc-850 hover:border-zinc-750 bg-zinc-950/60 hover:bg-zinc-900 text-white transition-all duration-300 hover:-translate-y-0.5"
             >
-              <Mail size={13} className="text-rose-500" />
-              Connect With Delivery Team
+              <Mail size={14} className="text-rose-500 mr-1" /> Connect With Delivery Team
             </Link>
           </div>
+
         </Reveal>
       </div>
     </section>

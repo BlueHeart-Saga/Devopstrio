@@ -1,13 +1,13 @@
 "use client";
 
 import React from "react";
-import { ArrowRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
 
 export function WeImagine() {
   return (
     <section className="relative w-full pt-4 md:pt-8 bg-[#030303] text-white overflow-hidden">
-      
+
       {/* Centered Content Wrapper for Header, Banner, and Intro */}
       <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10 mb-16">
 
@@ -48,12 +48,12 @@ export function WeImagine() {
 
         {/* ── 2. Microsoft-Style Capabilities Grid ── */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
-          
+
           {/* Card 1: We Imagine */}
           <Reveal delay={0.05}>
             <div className="relative rounded-xl border border-zinc-800/60 bg-zinc-950/20 hover:bg-zinc-950/40 hover:border-zinc-700/80 p-6 md:p-8 transition-all duration-300 flex flex-col justify-between group h-full shadow-lg">
               <div>
-               
+
                 <h3 className="text-base md:text-lg font-bold text-white mb-3 tracking-tight group-hover:text-rose-400 transition-colors duration-300">
                   We Design Intelligent Digital Solutions
                 </h3>
@@ -78,7 +78,7 @@ export function WeImagine() {
           <Reveal delay={0.1}>
             <div className="relative rounded-xl border border-zinc-800/60 bg-zinc-950/20 hover:bg-zinc-950/40 hover:border-zinc-700/80 p-6 md:p-8 transition-all duration-300 flex flex-col justify-between group h-full shadow-lg">
               <div>
-               
+
                 <h3 className="text-base md:text-lg font-bold text-white mb-3 tracking-tight group-hover:text-rose-400 transition-colors duration-300">
                   We Build Software That Performs at Scale
                 </h3>
@@ -103,7 +103,7 @@ export function WeImagine() {
           <Reveal delay={0.15}>
             <div className="relative rounded-xl border border-zinc-800/60 bg-zinc-950/20 hover:bg-zinc-950/40 hover:border-zinc-700/80 p-6 md:p-8 transition-all duration-300 flex flex-col justify-between group h-full shadow-lg">
               <div>
-                
+
                 <h3 className="text-base md:text-lg font-bold text-white mb-3 tracking-tight group-hover:text-rose-400 transition-colors duration-300">
                   We Transform Legacy Into Cloud-Native Power
                 </h3>
@@ -128,7 +128,7 @@ export function WeImagine() {
           <Reveal delay={0.2}>
             <div className="relative rounded-xl border border-zinc-800/60 bg-zinc-950/20 hover:bg-zinc-950/40 hover:border-zinc-700/80 p-6 md:p-8 transition-all duration-300 flex flex-col justify-between group h-full shadow-lg">
               <div>
-                
+
                 <h3 className="text-base md:text-lg font-bold text-white mb-3 tracking-tight group-hover:text-rose-400 transition-colors duration-300">
                   We Keep Your Operations Running Flawlessly
                 </h3>
@@ -188,10 +188,10 @@ export function WeImagine() {
           <Reveal>
             <a
               href="/services"
-              className="inline-flex items-center gap-2.5 bg-rose-600 hover:bg-rose-700 text-white rounded-lg px-6 py-3.5 text-xs md:text-sm font-semibold uppercase tracking-wider transition-all duration-300 shadow-md group/btn"
+              className="gap-2.5 inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white transition-all duration-300 hover:shadow-[0_0_25px_rgba(225,29,72,0.35)] hover:-translate-y-0.5"
             >
               Meet Our Innovation Team
-              <ArrowRight size={16} className="transition-transform duration-300 group-hover/btn:translate-x-1" />
+              <ArrowUpRight size={16} className="transition-transform duration-300 group-hover/btn:translate-x-1" />
             </a>
           </Reveal>
 

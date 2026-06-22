@@ -5,6 +5,9 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Disclaimer | Devopstrio",
   description: "Devopstrio website and services disclaimer outlines general information limits, professional advice exclusions, and liability boundaries.",
+  alternates: {
+    canonical: "/disclaimer"
+  }
 };
 
 export default function DisclaimerPage() {

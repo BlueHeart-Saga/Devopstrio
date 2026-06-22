@@ -1,6 +1,7 @@
-"use client";
 
 import React from "react";
+import { Metadata } from "next";
+import { BreadcrumbSchema, ServiceSchema, FAQSchema } from "@/components/seo/Schemas";
 import { SectionNavbar } from "@/components/ui/SectionNavbar";
 
 // Component imports
@@ -202,6 +203,16 @@ const data = {
     }
   ]
 };
+
+export async function generateMetadata(): Promise<Metadata> {
+  return {
+    title: `${data.hero.title} ${data.hero.highlightedWord}`,
+    description: data.hero.subtitle,
+    alternates: {
+      canonical: `/industries/education`
+    }
+  };
+}
 
 export default function EducationPage() {
   const mappedOverviewChallenges = data.challenges.map(c => c.title);

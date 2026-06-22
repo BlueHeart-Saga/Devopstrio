@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
-import { ArrowLeft, ArrowRight } from "lucide-react";
+import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
 
 interface Metric {
@@ -237,7 +237,7 @@ export function IndustryCaseStudy({
       <div className="absolute top-[30%] left-[-10%] w-[35%] aspect-square bg-[radial-gradient(circle_at_center,rgba(244,63,94,0.015),transparent_70%)] pointer-events-none z-0" />
 
       <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10 text-left">
-        
+
         {/* Section Header */}
         <Reveal className="mb-8">
           <div className="flex items-center gap-2 mb-3">
@@ -252,13 +252,13 @@ export function IndustryCaseStudy({
 
         {/* Big Card Slider Container - Compact padding p-2 (8px) on mobile, p-6 on desktop */}
         <div className="relative w-full bg-[#0b0b0c] border border-white/10 rounded-[24px] p-1 sm:p-5 lg:p-6 flex flex-col justify-between overflow-hidden shadow-[0_16px_40px_rgba(0,0,0,0.4)]">
-          
+
           {/* Decorative ambient glow inside card */}
           <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-gradient-to-br from-[#E11D48]/5 to-transparent rounded-full blur-[80px] pointer-events-none z-0" />
 
           {/* Active Card Body Wrapper */}
           <div className={`transition-all duration-300 ${animating ? "opacity-0 translate-y-1" : "opacity-100 translate-y-0"} grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-6 lg:gap-10 items-center relative z-10 p-2 sm:p-3`}>
-            
+
             {/* Left Panel: Title, Description, Highlights, Metrics */}
             <div>
               <span className="text-[9px] font-mono tracking-widest text-[#E11D48] uppercase font-bold block mb-2">
@@ -312,16 +312,15 @@ export function IndustryCaseStudy({
 
           {/* Slider Controls Footer */}
           <div className="mt-6 pt-4 border-t border-white/5 flex flex-col sm:flex-row gap-4 justify-between items-center relative z-10 px-3 pb-2">
-            
+
             {/* Indicators Dots */}
             <div className="flex gap-2 items-center">
               {slides.map((_, idx) => (
                 <div
                   key={idx}
                   onClick={() => { resetTimer(); changeSlide(idx); }}
-                  className={`h-1 rounded-full transition-all duration-300 cursor-pointer ${
-                    activeIdx === idx ? "w-6 bg-[#E11D48]" : "w-2 bg-zinc-800 hover:bg-zinc-700"
-                  }`}
+                  className={`h-1 rounded-full transition-all duration-300 cursor-pointer ${activeIdx === idx ? "w-6 bg-[#E11D48]" : "w-2 bg-zinc-800 hover:bg-zinc-700"
+                    }`}
                 />
               ))}
             </div>
@@ -340,7 +339,7 @@ export function IndustryCaseStudy({
                 aria-label="Next slide"
                 className="w-9 h-9 rounded-full border border-white/5 bg-[#0b0b0c] hover:bg-zinc-900 flex items-center justify-center text-zinc-400 hover:text-white transition-colors duration-300"
               >
-                <ArrowRight size={14} />
+                <ArrowUpRight size={14} />
               </button>
             </div>
 

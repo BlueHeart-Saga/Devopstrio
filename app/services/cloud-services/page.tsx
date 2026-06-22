@@ -14,6 +14,7 @@ import { WhyDevopstrio } from "@/sections/home/WhyDevOpsTrio";
 import { ServiceMetrics } from "@/sections/services/category/ServiceMetrics";
 import { ServiceRelated } from "@/sections/services/category/ServiceRelated";
 import { FAQ } from "@/components/services/FAQ";
+import { BreadcrumbSchema, ServiceSchema, FAQSchema } from "@/components/seo/Schemas";
 import { CTA } from "@/components/services/CTA";
 
 export async function generateMetadata() {
@@ -27,6 +28,9 @@ export async function generateMetadata() {
     openGraph: {
       title: `${data.title} | Devopstrio`,
       description: data.subtitle
+    },
+    alternates: {
+      canonical: `/services/${service}`
     }
   };
 }
@@ -67,6 +71,13 @@ export default async function ServiceCategoryPage() {
 
   return (
     <main className="min-h-screen bg-black text-white font-sans">
+      <BreadcrumbSchema items={[
+        { name: "Home", item: "/" },
+        { name: "Services", item: "/services" },
+        { name: data.title, item: `/services/${service}` }
+      ]} />
+      <ServiceSchema name={data.title} description={data.subtitle} offers={data.capabilities.map(c => c.title)} />
+      {data.faqs && <FAQSchema faqs={data.faqs} />}
 
       {/* 1. Hero Block (pass stats as undefined since they have their own section now) */}
       <Hero

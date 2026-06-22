@@ -2,7 +2,7 @@
 
 // import React from "react";
 // import { Reveal } from "@/components/ui/Reveal";
-// import { ArrowRight, ArrowUpRight } from "lucide-react";
+// import { ArrowUpRight } from "lucide-react";
 
 // export function BusinessOverview() {
 //   return (
@@ -49,7 +49,7 @@
 //               href="#capabilities"
 //               className="inline-flex items-center gap-1.5 text-sm font-semibold text-rose-500 hover:text-rose-400 transition-colors uppercase tracking-wider"
 //             >
-//               Explore Our Services <ArrowRight size={14} />
+//               Explore Our Services <ArrowUpRight size={14} />
 //             </a>
 //           </div>
 
@@ -145,7 +145,7 @@
 
 import React from "react";
 import { Reveal } from "@/components/ui/Reveal";
-import { ArrowRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 
 export function BusinessOverview() {
   return (
@@ -193,7 +193,7 @@ export function BusinessOverview() {
                 >
                   Explore Capabilities
                   <span className="w-9 h-9 rounded-full bg-[#E11D48] flex items-center justify-center transition-transform duration-300 group-hover/link:translate-x-1">
-                    <ArrowRight size={16} />
+                    <ArrowUpRight size={16} />
                   </span>
                 </a>
               </div>

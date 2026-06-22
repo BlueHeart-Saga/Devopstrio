@@ -11,6 +11,7 @@ import { InsightsLibrary } from "@/sections/insights/InsightsLibrary";
 import { InsightsNavigationCards } from "@/components/insights/InsightsNavigationCards";
 import { FAQ } from "@/components/services/FAQ";
 import { CTA } from "@/components/services/CTA";
+import { NewsletterSubscription } from "@/components/NewsletterSubscription";
 
 const INSIGHTS_FAQS = [
   {
@@ -97,6 +98,7 @@ export default function InsightsLandingPage() {
       {/* <InsightsJourney /> */}
       <InsightsLibrary posts={posts} loading={loading} />
       <InsightsNavigationCards />
+      <NewsletterSubscription className="my-20" />
       <FAQ faqs={INSIGHTS_FAQS} />
       <CTA 
         ctaTitle="Harness our engineering" 

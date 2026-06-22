@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Reveal } from "@/components/ui/Reveal";
-import { ArrowRight, BookOpen, UserCheck, Award, Users, Lightbulb, Send } from "lucide-react";
+import { ArrowUpRight, BookOpen, UserCheck, Award, Users, Lightbulb, Send } from "lucide-react";
 
 interface StepItem {
   name: string;
@@ -55,7 +55,7 @@ export function EcosystemIntegrationLoop() {
               {/* Connecting arrow pointing to next element (only on desktop) */}
               {idx < steps.length - 1 && (
                 <div className="hidden md:flex absolute top-1/2 -right-3.5 -translate-y-1/2 z-20 w-7 h-7 rounded-full bg-zinc-900 border border-zinc-850 items-center justify-center text-zinc-500 group-hover:border-rose-500/30 group-hover:text-rose-500 transition-all duration-300">
-                  <ArrowRight size={12} />
+                  <ArrowUpRight size={12} />
                 </div>
               )}
             </div>

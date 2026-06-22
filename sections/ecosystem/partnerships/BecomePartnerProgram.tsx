@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Reveal } from "@/components/ui/Reveal";
-import { ArrowRight, HelpCircle, Code2, Users2, Building2, Rocket, GraduationCap } from "lucide-react";
+import { ArrowUpRight, HelpCircle, Code2, Users2, Building2, Rocket, GraduationCap } from "lucide-react";
 import Link from "next/link";
 
 interface ProgramItem {
@@ -62,11 +62,11 @@ export function BecomePartnerProgram() {
               className="group flex flex-col justify-between p-6 bg-zinc-950/40 border border-zinc-900 hover:border-rose-500/20 rounded-2xl transition-all duration-300 min-h-[260px]"
             >
               <div>
-                <div className="w-10 h-10 rounded-xl bg-zinc-900 border border-zinc-850 flex items-center justify-center text-rose-500 group-hover:bg-rose-950/20 transition-all duration-300 mb-6">
+                <div className="text-rose-500 mb-6">
                   {prog.icon}
                 </div>
-                <h3 className="text-xs font-bold text-white uppercase tracking-wider mb-3 leading-normal">{prog.title}</h3>
-                <p className="text-[10px] text-zinc-450 font-semibold leading-relaxed">
+                <h3 className="text-sm md:text-base font-bold text-white uppercase tracking-wider mb-3 leading-normal">{prog.title}</h3>
+                <p className="text-xs md:text-sm text-zinc-400 font-medium leading-relaxed">
                   {prog.desc}
                 </p>
               </div>
@@ -74,10 +74,10 @@ export function BecomePartnerProgram() {
               <div className="mt-6 pt-4 border-t border-zinc-900/60">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center gap-1.5 text-[9px] font-mono font-bold uppercase tracking-wider text-rose-500 group-hover:text-rose-400 transition-colors"
+                  className="inline-flex items-center gap-1.5 text-xs font-mono font-semibold uppercase tracking-wider text-rose-500 group-hover:text-rose-400 transition-colors"
                 >
                   Apply Track
-                  <ArrowRight size={10} className="group-hover:translate-x-1 transition-transform" />
+                  <ArrowUpRight size={12} className="group-hover:translate-x-1 transition-transform" />
                 </Link>
               </div>
             </div>

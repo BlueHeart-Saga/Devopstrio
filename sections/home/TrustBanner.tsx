@@ -41,9 +41,11 @@ export function TrustBanner() {
               </span>
             </Reveal>
             <Reveal>
-              <h3 className="text-base md:text-lg font-bold text-white tracking-tight leading-snug">
-                Trusted by the world's most <br className="hidden sm:block lg:hidden" />
-                innovative enterprises.
+              <h3 className="text-xl md:text-2xl font-semibold tracking-tight text-zinc-200 leading-tight">
+                Trusted by the world's most <br className="hidden sm:block" />
+                <span className="text-white font-bold bg-gradient-to-r from-white via-zinc-100 to-zinc-400 bg-clip-text text-transparent">
+                  innovative enterprises.
+                </span>
               </h3>
             </Reveal>
           </div>

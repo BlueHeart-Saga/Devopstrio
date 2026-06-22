@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Reveal } from "@/components/ui/Reveal";
-import { ArrowRight, Maximize2, Globe } from "lucide-react";
+import { ArrowUpRight, Maximize2, Globe } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -11,7 +11,7 @@ export function LabsHero() {
     {
       id: 1,
       label: "Cybersecurity",
-      src: "/assets/labs/cyber_grid.png",
+      src: "/assets/ecosystem/herocard/labs/Cybersecurity.png",
       alt: "Cybersecurity & Networks",
       heightClass: "h-[200px] md:h-[220px]",
       icon: <Maximize2 className="w-3.5 h-3.5" />
@@ -19,7 +19,7 @@ export function LabsHero() {
     {
       id: 2,
       label: "AI Agents",
-      src: "/assets/labs/cyber_agent.png",
+      src: "/assets/ecosystem/herocard/labs/AIAgentt.png",
       alt: "AI Robotic Agents",
       heightClass: "h-[240px] md:h-[270px]",
       icon: <Maximize2 className="w-3.5 h-3.5" />
@@ -27,7 +27,7 @@ export function LabsHero() {
     {
       id: 3,
       label: "Neural Vision",
-      src: "/assets/labs/gold_interface.png",
+      src: "/assets/ecosystem/herocard/labs/Neuralvision.png",
       alt: "Cybernetic Interface Visor",
       heightClass: "h-[280px] md:h-[320px]",
       icon: <Globe className="w-3.5 h-3.5" />,
@@ -36,7 +36,7 @@ export function LabsHero() {
     {
       id: 4,
       label: "Quantum computing",
-      src: "/assets/labs/ai_research.png",
+      src: "/assets/ecosystem/herocard/labs/quantumcomputing.png",
       alt: "AI & Neural Networks",
       heightClass: "h-[240px] md:h-[270px]",
       icon: <Maximize2 className="w-3.5 h-3.5" />
@@ -44,7 +44,7 @@ export function LabsHero() {
     {
       id: 5,
       label: "Data Spheres",
-      src: "/assets/labs/quantum_sphere.png",
+      src: "/assets/ecosystem/herocard/labs/DataSpheres.png",
       alt: "Quantum Data Sphere",
       heightClass: "h-[200px] md:h-[220px]",
       icon: <Maximize2 className="w-3.5 h-3.5" />
@@ -61,7 +61,7 @@ export function LabsHero() {
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#080808_1px,transparent_1px),linear-gradient(to_bottom,#080808_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10 flex flex-col items-center text-center">
-        
+
         {/* Arched Height Row of Cards (Inspired by the Reference Screenshot) */}
         <div className="flex items-end justify-center gap-[8px] w-full max-w-[950px] mb-14 select-none overflow-visible">
           {cards.map((card) => (
@@ -70,14 +70,13 @@ export function LabsHero() {
               <span className="font-mono text-[8px] md:text-[9px] text-zinc-400 font-bold uppercase tracking-wider block text-left pl-1">
                 ○ {card.label}
               </span>
-              
+
               {/* Card wrapper */}
               <div
-                className={`relative w-full ${card.heightClass} rounded-[22px] overflow-hidden bg-zinc-950 border transition-all duration-300 hover:scale-[1.04] group ${
-                  card.highlight 
-                    ? "border-rose-500/25 shadow-[0_20px_40px_rgba(244,63,94,0.08)]" 
+                className={`relative w-full ${card.heightClass} rounded-[22px] overflow-hidden bg-zinc-950 border transition-all duration-300 hover:scale-[1.04] group ${card.highlight
+                    ? "border-rose-500/25 shadow-[0_20px_40px_rgba(244,63,94,0.08)]"
                     : "border-zinc-850"
-                }`}
+                  }`}
               >
                 {/* White Tab Badge in top right corner of image */}
                 <div className="absolute top-0 right-0 w-8 h-8 bg-white text-black rounded-bl-xl flex items-center justify-center z-20">
@@ -85,7 +84,7 @@ export function LabsHero() {
                 </div>
 
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none z-10" />
-                
+
                 <Image
                   src={card.src}
                   alt={card.alt}
@@ -120,7 +119,7 @@ export function LabsHero() {
           >
             Explore Labs & Initiatives
             <div className="w-7 h-7 rounded-full bg-black flex items-center justify-center transition-transform duration-300 hover:scale-105">
-              <ArrowRight className="w-3.5 h-3.5 text-white" />
+              <ArrowUpRight className="w-3.5 h-3.5 text-white" />
             </div>
           </Link>
         </Reveal>

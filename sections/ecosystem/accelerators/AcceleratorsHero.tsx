@@ -2,18 +2,18 @@
 
 import React from "react";
 import { Reveal } from "@/components/ui/Reveal";
-import { ArrowRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 
 export function AcceleratorsHero() {
   const images = [
-    { id: 0, title: "Cloud Infrastructure", src: "/assets/accelerators/accel_cloud.png" },
-    { id: 1, title: "AI Prompt Orchestration", src: "/assets/accelerators/accel_code.png" },
-    { id: 2, title: "DevSecOps Automation", src: "/assets/accelerators/accel_devops.png" },
-    { id: 3, title: "Custom SaaS Boilerplate", src: "/assets/accelerators/accel_cloud.png" },
-    { id: 4, title: "Identity Integration", src: "/assets/accelerators/accel_code.png" },
-    { id: 5, title: "Serverless Blueprints", src: "/assets/accelerators/accel_devops.png" }
+    { id: 0, title: "Cloud Infrastructure", src: "/assets/ecosystem/herocard/acc-frameworks/Group 23.png" },
+    { id: 1, title: "AI Prompt Orchestration", src: "/assets/ecosystem/herocard/acc-frameworks/Group 24.png" },
+    { id: 2, title: "DevSecOps Automation", src: "/assets/ecosystem/herocard/acc-frameworks/Group 25 (1).png" },
+    { id: 3, title: "Custom SaaS Boilerplate", src: "/assets/ecosystem/herocard/acc-frameworks/Group 26.png" },
+    { id: 4, title: "Identity Integration", src: "/assets/ecosystem/herocard/acc-frameworks/Group 27 (1).png" },
+    { id: 5, title: "Serverless Blueprints", src: "/assets/ecosystem/herocard/acc-frameworks/Group 28.png" }
   ];
 
   // Duplicate the array to create a seamless infinite loop marquee effect
@@ -67,7 +67,7 @@ export function AcceleratorsHero() {
           >
             Explore Accelerators
             <div className="w-7 h-7 rounded-full bg-black flex items-center justify-center transition-transform duration-300 hover:scale-105">
-              <ArrowRight className="w-3.5 h-3.5 text-white" />
+              <ArrowUpRight className="w-3.5 h-3.5 text-white" />
             </div>
           </Link>
         </Reveal>

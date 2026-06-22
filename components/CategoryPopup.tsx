@@ -1,0 +1,241 @@
+import React, { useEffect, useState, useCallback } from "react";
+import Swal from "sweetalert2";
+import { insightsApi as api } from "@/lib/insightsApi";
+import { X, Check } from "lucide-react";
+import "./CategoryPopup.css";
+
+interface CategoryPopupProps {
+  email: string;
+  closePopup: () => void;
+}
+
+const CategoryPopup: React.FC<CategoryPopupProps> = ({ email, closePopup }) => {
+  const [sections, setSections] = useState<any[]>([]);
+  const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
+  const [loading, setLoading] = useState(false);
+  const [dataLoading, setDataLoading] = useState(true);
+
+  const showAlert = (message: string, type: any) => {
+    Swal.fire({
+      icon: type,
+      title: type === "error" ? "Oops..." : "Alert!",
+      text: message,
+      confirmButtonColor: "#ce2453",
+      background: "#0a0a0a",
+      color: "#fff",
+      // Force z-index high
+      didOpen: () => {
+        const container = Swal.getContainer();
+        if (container) container.style.zIndex = "100000";
+      },
+    }).then(() => {
+      // Automatically close the preference popup after user clicks OK
+      closePopup();
+    });
+  };
+
+  const loadSections = useCallback(async () => {
+    try {
+      setDataLoading(true);
+
+      // 1️⃣ get user preferences first
+      const prefs = await api.getSubscriberPreferences(email);
+      const existingCategories = prefs?.categories || [];
+
+      // 2️⃣ load sections
+      const data = await api.getSections();
+      if (!data) {
+        setSections([]);
+        return;
+      }
+
+      const sectionsData = data.sections || data;
+
+      const sectionsWithCategories = await Promise.all(
+        sectionsData.map(async (section: any) => {
+          const categoriesRes = await api.getCategories(section.slug);
+
+          return {
+            ...section,
+            categories: categoriesRes?.categories || [],
+          };
+        }),
+      );
+
+      // 3️⃣ update state together
+      setSections(sectionsWithCategories);
+      setSelectedCategories(
+        existingCategories.map((c: any) => c.toLowerCase().trim()),
+      );
+    } catch (err) {
+      console.error("Error loading categories", err);
+    } finally {
+      setDataLoading(false);
+    }
+  }, [email]);
+
+  useEffect(() => {
+    loadSections();
+  }, [loadSections]);
+
+  const toggleCategory = (slug: string) => {
+    const normalized = slug.toLowerCase().trim();
+
+    setSelectedCategories((prev) => {
+      if (prev.includes(normalized)) {
+        return prev.filter((c) => c !== normalized);
+      }
+      return [...prev, normalized];
+    });
+  };
+
+  const submitSubscription = async () => {
+    if (!email || !email.includes("@") || !email.includes(".")) {
+      Swal.fire({
+        icon: "error",
+        title: "Invalid Email",
+        text: "Please provide a valid email address.",
+        confirmButtonColor: "#ce2453",
+        background: "#000000ff",
+        color: "#fff",
+        didOpen: () => {
+          const container = Swal.getContainer();
+          if (container) container.style.zIndex = "100000";
+        },
+      });
+      return;
+    }
+
+    if (selectedCategories.length === 0) {
+      // Don't close for warnings, just alert
+      Swal.fire({
+        icon: "warning",
+        title: "Wait!",
+        text: "Please select at least one category",
+        confirmButtonColor: "#ce2453",
+        background: "#0a0a0a",
+        color: "#fff",
+        // Force z-index high
+        didOpen: () => {
+          const container = Swal.getContainer();
+          if (container) container.style.zIndex = "100000";
+        },
+      });
+      return;
+    }
+
+    try {
+      setLoading(true);
+
+      await api.subscribe(email, [], selectedCategories);
+
+      Swal.fire({
+        icon: "success",
+        title: "Subscription Successful!",
+        text: "Your preferences have been updated.",
+        confirmButtonColor: "#ce2453",
+        background: "#0a0a0a",
+        color: "#fff",
+        timer: 2000,
+        showConfirmButton: false,
+        // Force z-index high
+        didOpen: () => {
+          const container = Swal.getContainer();
+          if (container) container.style.zIndex = "100000";
+        },
+      });
+
+      setTimeout(() => {
+        closePopup();
+      }, 2000);
+    } catch (err: any) {
+      const errorMsg = err.message || "Subscription failed";
+      showAlert(errorMsg, "error");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  return (
+    <div className="cat-popup-overlay" onClick={closePopup}>
+      <div className="cat-popup-box" onClick={(e) => e.stopPropagation()}>
+        <button className="cat-popup-close" onClick={closePopup}>
+          <X size={18} />
+        </button>
+
+        <div className="cat-popup-header">
+          <span className="cat-popup-badge">Preferences</span>
+          <h3>Personalize Your Feed</h3>
+          <p>
+            Select the topics you&apos;re most interested in to receive tailored
+            updates.
+          </p>
+        </div>
+
+        <div className="cat-popup-content">
+          {dataLoading ? (
+            <div className="cat-popup-loader">
+              <div className="cat-spinner"></div>
+              <span>Curating sections...</span>
+            </div>
+          ) : (
+            sections.map((section, sIdx) => (
+              <div
+                key={section.slug}
+                className="cat-popup-section"
+                style={{ "--delay": sIdx * 0.1 + "s" } as React.CSSProperties}
+              >
+                <h4>{section.name}</h4>
+                <div className="cat-popup-grid">
+                  {section.categories.map((cat: any) => {
+                    return (
+                      <label
+                        key={cat.slug}
+                        className={`cat-popup-item ${
+                          selectedCategories.includes(
+                            cat.slug.toLowerCase().trim(),
+                          )
+                            ? "active"
+                            : ""
+                        }`}
+                      >
+                        <input
+                          type="checkbox"
+                          checked={selectedCategories.includes(
+                            cat.slug.toLowerCase().trim(),
+                          )}
+                          onChange={() => toggleCategory(cat.slug)}
+                        />
+                        <div className="cat-checkbox-custom">
+                          {selectedCategories.includes(
+                            cat.slug.toLowerCase().trim(),
+                          ) && <Check size={14} />}
+                        </div>
+                        <span className="cat-cat-name">{cat.name}</span>
+                      </label>
+                    );
+                  })}
+                </div>
+              </div>
+            ))
+          )}
+        </div>
+
+        <div className="cat-popup-actions">
+          <button className="cat-btn-cancel" onClick={closePopup}>
+            Maybe Later
+          </button>
+          <button
+            className="cat-btn-submit"
+            onClick={submitSubscription}
+            disabled={loading || dataLoading}
+          >
+            {loading ? "Joining..." : "Save Preferences"}
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default CategoryPopup;

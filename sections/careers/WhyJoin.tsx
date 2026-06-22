@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Users, Globe, Terminal, Award, Briefcase, Clock, ArrowRight } from "lucide-react";
+import { Users, Globe, Terminal, Award, Briefcase, Clock, ArrowUpRight } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
 
 export function WhyJoin() {
@@ -53,14 +53,14 @@ export function WhyJoin() {
       <div className="absolute bottom-[10%] left-1/4 w-[600px] h-[400px] bg-[radial-gradient(circle_at_center,rgba(244,63,94,0.02),transparent_70%)] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
-        
+
         {/* ── PART 1: Features Grid ────────────────────────────────────────── */}
         <div className="text-center max-w-3xl mx-auto mb-20">
           <Reveal>
             <h2 className="text-xl md:text-2xl xl:text-3xl font-bold text-white tracking-tight leading-tight mb-5">
               Everything you need to <span className="text-rose-500">launch your tech career</span>
             </h2>
-            <p className="text-white text-sm md:text-base leading-relaxed max-w-2xl mx-auto font-semibold">
+            <p className="text-zinc-200 text-sm md:text-base leading-relaxed max-w-2xl mx-auto font-medium">
               Beyond certificates every element is built to develop real industry skills and open real global doors.
             </p>
           </Reveal>
@@ -77,14 +77,14 @@ export function WhyJoin() {
                   <div className="w-14 h-14 rounded-2xl bg-zinc-950 border border-white/[0.08] group-hover:border-rose-500/30 flex items-center justify-center text-white mb-6 group-hover:bg-rose-950/10 transition-all duration-300 shadow-[0_4px_20px_rgba(0,0,0,0.4)]">
                     <Icon size={22} className="text-white group-hover:text-rose-400 transition-colors" />
                   </div>
-                  
+
                   {/* Title */}
-                  <h3 className="text-sm font-bold text-white mb-3 group-hover:text-rose-400 transition-colors duration-300 leading-snug">
+                  <h3 className="text-base font-bold text-white mb-3 group-hover:text-rose-400 transition-colors duration-300 leading-snug">
                     {feature.title}
                   </h3>
-                  
+
                   {/* Desc */}
-                  <p className="text-[11px] text-white leading-relaxed font-semibold">
+                  <p className="text-xs md:text-sm text-zinc-350 font-medium leading-relaxed">
                     {feature.desc}
                   </p>
                 </div>
@@ -97,7 +97,7 @@ export function WhyJoin() {
         <Reveal className="flex justify-center mb-32">
           <button
             onClick={handleScrollToRoles}
-            className="px-8 py-3 rounded-full text-xs font-bold uppercase tracking-wider text-white bg-gradient-to-r from-rose-600 to-rose-500 hover:from-rose-500 hover:to-rose-400 transition-all duration-300 shadow-[0_4px_20px_rgba(225,29,72,0.3)] hover:scale-[1.03]"
+            className="px-8 py-3 rounded-full text-sm font-semibold uppercase tracking-wider text-white bg-gradient-to-r from-rose-600 to-rose-500 hover:from-rose-500 hover:to-rose-400 transition-all duration-300 shadow-[0_4px_20px_rgba(225,29,72,0.3)] hover:scale-[1.03]"
           >
             Apply Now
           </button>
@@ -106,38 +106,16 @@ export function WhyJoin() {
 
         {/* ── PART 2: Why People Choose Devopstrio ───────────────────────── */}
         <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_1.3fr] gap-14 lg:gap-20 items-center pt-12">
-          
+
           {/* Left Visual: Girl with Laptop Mockup */}
           <Reveal className="relative flex justify-center lg:justify-start">
-            <div className="relative w-full max-w-[420px] aspect-[4/5] rounded-[32px] overflow-hidden border border-white/[0.08] shadow-[0_30px_60px_rgba(0,0,0,0.8)] bg-zinc-950 group">
+            <div className="relative w-full max-w-[420px] aspect-[4/5] overflow-hidden group">
               <img
-                src="/assets/About-page/careers_girl.png"
+                src="/assets/careers/image2.png"
                 alt="Devopstrio Career Success"
-                className="w-full h-full object-cover brightness-[0.75] group-hover:brightness-[0.85] transition-all duration-700"
+                className="w-full h-full object-cover brightness-[0.8] group-hover:brightness-[0.9] transition-all duration-700 rounded-3xl"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/20 to-transparent" />
-
-              {/* Floating avatar card 1 (bottom-left) */}
-              {/* <div className="absolute bottom-10 left-6 right-12 md:right-20 backdrop-blur-md bg-black/60 border border-white/10 p-3 rounded-2xl flex items-center gap-3 shadow-[0_20px_40px_rgba(0,0,0,0.5)] animate-fadeIn duration-700">
-                <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-rose-500 to-indigo-600 flex items-center justify-center text-[10px] font-bold text-white shrink-0 shadow-lg ring-1 ring-white/10">
-                  SJ
-                </div>
-                <div className="flex-1 space-y-1">
-                  <div className="h-2 w-20 bg-white/20 rounded" />
-                  <div className="h-1.5 w-12 bg-white/10 rounded" />
-                </div>
-              </div> */}
-
-              {/* Floating avatar card 2 (bottom-right) */}
-              {/* <div className="absolute bottom-2 right-6 left-16 md:left-24 backdrop-blur-md bg-black/60 border border-white/10 p-3 rounded-2xl flex items-center gap-3 shadow-[0_20px_40px_rgba(0,0,0,0.5)] animate-fadeIn duration-1000">
-                <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-emerald-500 to-teal-600 flex items-center justify-center text-[10px] font-bold text-white shrink-0 shadow-lg ring-1 ring-white/10">
-                  AS
-                </div>
-                <div className="flex-1 space-y-1">
-                  <div className="h-2 w-24 bg-white/20 rounded" />
-                  <div className="h-1.5 w-16 bg-white/10 rounded" />
-                </div>
-              </div> */}
+              <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/20 to-transparent rounded-3xl" />
             </div>
           </Reveal>
 
@@ -147,7 +125,7 @@ export function WhyJoin() {
               <h2 className="text-xl md:text-2xl xl:text-3xl font-bold text-white tracking-tight leading-tight mb-4">
                 Why people choose <span className="text-rose-500">Devopstrio</span>
               </h2>
-              <p className="text-white text-sm md:text-base mb-10 font-semibold max-w-xl">
+              <p className="text-zinc-250 text-sm md:text-base mb-10 font-medium max-w-xl">
                 We bridge the gap between education and employment.
               </p>
             </Reveal>
@@ -171,10 +149,10 @@ export function WhyJoin() {
                 <Reveal key={idx} delay={idx * 0.05} className="flex gap-4">
                   <div className="w-1.5 h-1.5 rounded-full bg-rose-500 mt-2 shrink-0 shadow-[0_0_8px_rgba(244,63,94,0.6)]" />
                   <div>
-                    <h4 className="text-sm font-bold text-white mb-1 leading-snug">
+                    <h4 className="text-base font-bold text-white mb-1.5 leading-snug">
                       {point.title}
                     </h4>
-                    <p className="text-[12px] text-white leading-relaxed font-semibold">
+                    <p className="text-xs md:text-sm text-zinc-300 font-medium leading-relaxed">
                       {point.desc}
                     </p>
                   </div>
@@ -186,10 +164,10 @@ export function WhyJoin() {
             <Reveal>
               <button
                 onClick={handleScrollToRoles}
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-xs font-bold uppercase tracking-wider text-white bg-gradient-to-r from-rose-600 to-rose-500 hover:from-rose-500 hover:to-rose-400 transition-all duration-300 shadow-[0_4px_20px_rgba(225,29,72,0.3)] hover:scale-[1.02]"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold uppercase tracking-wider text-white bg-gradient-to-r from-rose-600 to-rose-500 hover:from-rose-500 hover:to-rose-400 transition-all duration-300 shadow-[0_4px_20px_rgba(225,29,72,0.3)] hover:scale-[1.02]"
               >
                 <span>Explore the Programs</span>
-                <ArrowRight size={14} />
+                <ArrowUpRight size={14} />
               </button>
             </Reveal>
           </div>

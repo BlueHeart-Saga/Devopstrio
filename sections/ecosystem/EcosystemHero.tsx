@@ -13,10 +13,10 @@ export function EcosystemHero() {
 
       <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center w-full">
-          
+
           {/* Left Column: Text Content */}
           <div className="lg:col-span-7 flex flex-col items-start text-left justify-center z-20">
-            
+
             {/* Tagline / Eyebrow */}
             <Reveal>
               <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
@@ -48,14 +48,14 @@ export function EcosystemHero() {
                   href="#pillars"
                 >
                   Explore Pillars
-                  <span className="ml-2">→</span>
+
                 </a>
                 <Link
-                  className="inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase border border-zinc-855 hover:border-zinc-755 bg-zinc-950/60 hover:bg-zinc-900 text-white transition-all duration-300 hover:-translate-y-0.5"
+                  className="inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase border border-zinc-850 hover:border-zinc-750 bg-zinc-950/60 hover:bg-zinc-900 text-white transition-all duration-300 hover:-translate-y-0.5"
                   href="/contact"
                 >
                   Talk to Expert
-                  <span className="ml-2">→</span>
+
                 </Link>
               </div>
             </Reveal>

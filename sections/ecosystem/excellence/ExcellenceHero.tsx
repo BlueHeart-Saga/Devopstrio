@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Reveal } from "@/components/ui/Reveal";
-import { ArrowRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 
 export function ExcellenceHero() {
@@ -142,7 +142,7 @@ export function ExcellenceHero() {
           >
             Explore Standards
             <div className="w-7 h-7 rounded-full bg-black flex items-center justify-center transition-transform duration-300 hover:scale-105">
-              <ArrowRight className="w-3.5 h-3.5 text-white" />
+              <ArrowUpRight className="w-3.5 h-3.5 text-white" />
             </div>
           </Link>
         </Reveal>
@@ -154,8 +154,8 @@ export function ExcellenceHero() {
               <div
                 key={card.id}
                 className={`absolute w-38 h-[220px] md:w-52 md:h-[280px] rounded-2xl p-5 bg-[#0a0a0c] border flex flex-col justify-between transition-all duration-500 hover:scale-[1.1] hover:-translate-y-8 hover:z-50 cursor-pointer ${card.highlight
-                    ? "border-rose-500/30 shadow-[0_20px_40px_rgba(244,63,94,0.1)]"
-                    : "border-zinc-850 hover:border-zinc-700"
+                  ? "border-rose-500/30 shadow-[0_20px_40px_rgba(244,63,94,0.1)]"
+                  : "border-zinc-850 hover:border-zinc-700"
                   }`}
                 style={card.style}
               >

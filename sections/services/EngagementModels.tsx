@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { Reveal } from "@/components/ui/Reveal";
-import { Users, Briefcase, Settings, Compass, ArrowRight, ChevronDown, ChevronUp } from "lucide-react";
+import { Users, Briefcase, Settings, Compass, ArrowUpRight, ChevronDown, ChevronUp } from "lucide-react";
 import Link from "next/link";
 
 const models = [
@@ -96,7 +96,7 @@ export function EngagementModels() {
 
         {/* Dynamic Accordion/Tab Split Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-stretch">
-          
+
           {/* Left Panel: Overlapping Interactive Card displaying active model illustration */}
           <div className="lg:col-span-5 flex flex-col justify-center">
             <Reveal key={activeIdx} className="h-full">
@@ -119,22 +119,19 @@ export function EngagementModels() {
               return (
                 <div
                   key={model.id}
-                  className={`border rounded-2xl transition-all duration-300 overflow-hidden cursor-pointer backdrop-blur-sm shadow-[0_4px_16px_rgba(0,0,0,0.25)] ${
-                    isSelected ? "bg-zinc-950/50 border-white/10 hover:border-rose-500/20" : "bg-transparent hover:bg-zinc-950/30 border-white/5"
-                  }`}
+                  className={`border rounded-2xl transition-all duration-300 overflow-hidden cursor-pointer backdrop-blur-sm shadow-[0_4px_16px_rgba(0,0,0,0.25)] ${isSelected ? "bg-zinc-950/50 border-white/10 hover:border-rose-500/20" : "bg-transparent hover:bg-zinc-950/30 border-white/5"
+                    }`}
                   onClick={() => setActiveIdx(idx)}
                 >
                   {/* Accordion Trigger Header */}
                   <div className="flex items-center justify-between p-6 select-none">
                     <div className="flex items-center gap-4">
-                      <div className={`w-8 h-8 rounded-lg flex items-center justify-center transition-colors duration-300 ${
-                        isSelected ? "bg-rose-950/30 text-rose-500" : "bg-zinc-900 text-zinc-400"
-                      }`}>
+                      <div className={`w-8 h-8 rounded-lg flex items-center justify-center transition-colors duration-300 ${isSelected ? "bg-rose-950/30 text-rose-500" : "bg-zinc-900 text-zinc-400"
+                        }`}>
                         <Icon size={16} />
                       </div>
-                      <span className={`text-sm font-semibold tracking-wide transition-colors duration-300 ${
-                        isSelected ? "text-white" : "text-zinc-300 hover:text-zinc-200"
-                      }`}>
+                      <span className={`text-sm font-semibold tracking-wide transition-colors duration-300 ${isSelected ? "text-white" : "text-zinc-300 hover:text-zinc-200"
+                        }`}>
                         {model.name}
                       </span>
                     </div>
@@ -145,11 +142,10 @@ export function EngagementModels() {
 
                   {/* Accordion Content */}
                   <div
-                    className={`transition-all duration-350 ease-in-out ${
-                      isSelected
+                    className={`transition-all duration-350 ease-in-out ${isSelected
                         ? "max-h-[160px] opacity-100 border-t border-zinc-900/50 p-6 pt-4"
                         : "max-h-0 opacity-0 overflow-hidden"
-                    }`}
+                      }`}
                   >
                     <div className="flex gap-4">
                       {/* Left vertical Accent Line */}

@@ -5,6 +5,9 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "GDPR Compliance | Devopstrio",
   description: "Devopstrio GDPR compliance details our commitments, data subject rights, security safeguards, and sub-processor regulations for European Union clients.",
+  alternates: {
+    canonical: "/gdpr"
+  }
 };
 
 export default function GDPRPage() {

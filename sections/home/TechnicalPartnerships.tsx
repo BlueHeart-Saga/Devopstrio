@@ -106,7 +106,7 @@ export function TechnicalPartnerships() {
       {/* Background ambient lighting - Custom Wave Image */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
         <img
-          src="/assets/wavebg/image.png"
+          src="/assets/wavebg/3.png"
           alt="Background Wave"
           className="w-full h-full object-cover opacity-60"
         />

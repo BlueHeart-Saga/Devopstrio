@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Reveal } from "@/components/ui/Reveal";
-import { ArrowRight, History, Zap, CheckCircle2 } from "lucide-react";
+import { ArrowUpRight, History, Zap, CheckCircle2 } from "lucide-react";
 
 export function WhyAcceleratorsMatter() {
   const traditional = [
@@ -37,7 +37,7 @@ export function WhyAcceleratorsMatter() {
         </Reveal>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch max-w-5xl mx-auto">
-          
+
           {/* Traditional Delivery */}
           <div className="bg-zinc-950/45 border border-zinc-900 rounded-3xl p-8 flex flex-col justify-between">
             <div>
@@ -74,7 +74,7 @@ export function WhyAcceleratorsMatter() {
                   <Zap className="text-rose-500" size={18} />
                   <h3 className="text-sm font-bold text-white uppercase tracking-wider">Accelerated Delivery</h3>
                 </div>
-                <span className="text-[8px] bg-rose-500/10 text-rose-500 border border-rose-500/20 px-2 py-0.5 rounded-full font-mono font-bold">
+                <span className="inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white transition-all duration-300 hover:shadow-[0_0_25px_rgba(225,29,72,0.35)] hover:-translate-y-0.5">
                   RECOMMENDED
                 </span>
               </div>

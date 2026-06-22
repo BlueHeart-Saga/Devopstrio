@@ -2,24 +2,25 @@ import { EcosystemDomain, EcosystemSubpageDetail } from "./types";
 
 export const engineeringDomain: EcosystemDomain = {
   slug: "engineering-excellence",
-  title: "Engineering Excellence",
+  title: "Engineering Excellence Framework",
   badge: "Architecture Standards",
-  subtitle: "Enforcing rigorous software standards, automated testing gates, GitOps deployments, and site reliability metrics.",
+  subtitle: "Building Scalable, Secure and Reliable Digital Platforms Through Modern Engineering Practices.",
   overviewHeading: "High-quality software standards built for reliability",
   overviewDesc1: "We define clean architecture standards, mandate high unit test coverage, and automate secrets checks. Our pipelines prevent configuration errors before code hits production.",
   overviewDesc2: "We build self-service developer templates, reducing setup times while maintaining absolute security compliance.",
   stats: [
-    { value: "95%+", label: "Test Coverage Standard" },
-    { value: "0", label: "Production Secrets Leaks" },
-    { value: "<15m", label: "Build Delivery Time" },
-    { value: "100%", label: "IaC Declarative Code" }
+    { value: "99.95%", label: "Availability" },
+    { value: "500+", label: "Deployments Monthly" },
+    { value: "80%", label: "Automated Operations" },
+    { value: "100%", label: "Security-First Development" }
   ],
   subpages: [
-    { slug: "software-engineering", title: "Software Engineering", description: "Clean architectures, serverless patterns, and domain-driven design layouts." },
-    { slug: "platform-engineering", title: "Platform Engineering", description: "Self-service developer portals, automated cluster creation, and Backstage." },
-    { slug: "site-reliability-engineering", title: "Site Reliability Engineering", description: "SLA/SLO definition, distributed monitoring, and automated incident escalations." },
-    { slug: "devsecops", title: "DevSecOps", description: "Continuous SAST image checking, Secrets management, and compliance checks." },
-    { slug: "quality-engineering", title: "Quality Engineering", description: "Automated end-to-end testing, browser tests, and load simulation pipelines." }
+    { slug: "engineering-culture", title: "Engineering Culture", description: "Creating an environment where innovation, ownership and continuous learning thrive." },
+    { slug: "software-engineering", title: "Software Engineering", description: "Clean architectures, modular monoliths, and domain-driven design layouts." },
+    { slug: "platform-engineering", title: "Platform Engineering", description: "Self-service developer portals, automated cluster creation, and golden paths." },
+    { slug: "site-reliability-engineering", title: "Site Reliability Engineering", description: "SLO definition, distributed monitoring, and automated incident response." },
+    { slug: "devsecops", title: "DevSecOps", description: "Continuous SAST checks, secrets management, and compliance automation." },
+    { slug: "quality-engineering", title: "Quality Engineering", description: "Automated end-to-end testing, browser tests, and continuous quality gates." }
   ],
   benefits: [
     "Zero database credentials committed to code repositories",
@@ -37,6 +38,22 @@ export const engineeringDomain: EcosystemDomain = {
 };
 
 export const engineeringSubpages: Record<string, EcosystemSubpageDetail> = {
+  "engineering-culture": {
+    slug: "engineering-culture",
+    title: "Engineering Culture",
+    heroSubtitle: "Creating an environment where innovation, ownership and continuous learning thrive.",
+    challenge: "Traditional organizations struggle with silos and low developer productivity.",
+    solution: "We build an engineering culture focused on autonomy, mastery, and purpose.",
+    features: ["Ownership Mindset", "Customer First", "Continuous Improvement"],
+    benefits: ["High retention", "Faster delivery", "Innovation"],
+    techStack: [],
+    caseStudy: {
+      title: "Building an engineering culture.",
+      desc: "Transformed an enterprise IT department into a high-performing product engineering organization.",
+      metrics: []
+    },
+    faqs: []
+  },
   "software-engineering": {
     slug: "software-engineering",
     title: "Software Engineering",

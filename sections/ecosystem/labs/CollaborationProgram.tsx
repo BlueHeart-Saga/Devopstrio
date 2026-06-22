@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Reveal } from "@/components/ui/Reveal";
-import { ArrowRight, Landmark, Rocket, GraduationCap, Link2, Users } from "lucide-react";
+import { ArrowUpRight, Landmark, Rocket, GraduationCap, Link2, Users } from "lucide-react";
 import Link from "next/link";
 
 interface Program {
@@ -77,7 +77,7 @@ export function CollaborationProgram() {
                   className="inline-flex items-center gap-1.5 text-[9px] font-mono font-bold uppercase tracking-wider text-rose-500 group-hover:text-rose-400 transition-colors"
                 >
                   Join Program
-                  <ArrowRight size={10} className="group-hover:translate-x-1 transition-transform" />
+                  <ArrowUpRight size={10} className="group-hover:translate-x-1 transition-transform" />
                 </Link>
               </div>
             </div>

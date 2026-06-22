@@ -2,20 +2,20 @@
 
 import React from "react";
 import { Reveal } from "@/components/ui/Reveal";
-import { ArrowRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 
 export function CommunityHero() {
   const avatars = [
     // Center Focus (Large, sharp)
     { id: 1, x: 0, y: 0, size: 76, filter: "none", src: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=120&auto=format&fit=crop&q=80" },
-    
+
     // Ring 1 (Radius 52px, slightly smaller, very minor blur)
     { id: 2, x: 0, y: -52, size: 56, filter: "blur(0.4px)", src: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop&q=80" },
     { id: 3, x: 52, y: 0, size: 56, filter: "blur(0.4px)", src: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&auto=format&fit=crop&q=80" },
     { id: 4, x: 0, y: 52, size: 56, filter: "blur(0.4px)", src: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&auto=format&fit=crop&q=80" },
     { id: 5, x: -52, y: 0, size: 56, filter: "blur(0.4px)", src: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&auto=format&fit=crop&q=80" },
-    
+
     // Ring 2 (Radius 104px, medium size, medium blur)
     { id: 6, x: -73, y: -73, size: 44, filter: "blur(1.2px)", src: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&auto=format&fit=crop&q=80" },
     { id: 7, x: 73, y: -73, size: 44, filter: "blur(1.2px)", src: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&auto=format&fit=crop&q=80" },
@@ -47,7 +47,7 @@ export function CommunityHero() {
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#080808_1px,transparent_1px),linear-gradient(to_bottom,#080808_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10 flex flex-col items-center text-center">
-        
+
         {/* Circular Face Cluster representing Community Network */}
         <div className="relative w-[340px] h-[340px] flex items-center justify-center mb-10 select-none">
           {/* Orbital lines */}
@@ -99,7 +99,7 @@ export function CommunityHero() {
           >
             Join Our Network
             <div className="w-7 h-7 rounded-full bg-black flex items-center justify-center transition-transform duration-300 hover:scale-105">
-              <ArrowRight className="w-3.5 h-3.5 text-white" />
+              <ArrowUpRight className="w-3.5 h-3.5 text-white" />
             </div>
           </Link>
         </Reveal>

@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Reveal } from "@/components/ui/Reveal";
-import { ArrowRight, Lightbulb, Zap, Cpu, Layout, Globe } from "lucide-react";
+import { ArrowUpRight, Lightbulb, Zap, Cpu, Layout, Globe } from "lucide-react";
 
 interface StepItem {
   name: string;
@@ -54,7 +54,7 @@ export function EcosystemIntegration() {
               {/* Connecting arrow pointing to next element (only on desktop/tablet) */}
               {idx < steps.length - 1 && (
                 <div className="hidden md:flex absolute top-1/2 -right-3.5 -translate-y-1/2 z-20 w-7 h-7 rounded-full bg-zinc-900 border border-zinc-800 items-center justify-center text-zinc-500 group-hover:border-rose-500/30 group-hover:text-rose-500 transition-all duration-300">
-                  <ArrowRight size={12} />
+                  <ArrowUpRight size={12} />
                 </div>
               )}
             </div>

@@ -1,19 +1,51 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Reveal } from "@/components/ui/Reveal";
-import { Mail, ArrowRight, FileText } from "lucide-react";
+import { Mail, ArrowUpRight, FileText } from "lucide-react";
+
+type Announcement = {
+  id: number;
+  titlePrefix: string;
+  titleHighlight: string;
+  titleSuffix: string;
+  description: string;
+  formTitle: string;
+  reportType: string;
+  coverTitleLine1: string;
+  coverTitleLine2: string;
+  coverEdition: string;
+  coverBrand: string;
+  status: string;
+};
 
 export function ImperativesBanner() {
   const [email, setEmail] = useState("");
+  const [announcement, setAnnouncement] = useState<Announcement | null>(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetch("/api/announcements")
+      .then(res => res.json())
+      .then(data => {
+        // Find the first active announcement
+        const active = data.find((item: Announcement) => item.status === "active");
+        if (active) setAnnouncement(active);
+      })
+      .catch(err => console.error("Failed to load announcements", err))
+      .finally(() => setLoading(false));
+  }, []);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (email) {
-      alert(`Thank you! ${email} has been registered for the 2026 Imperatives report.`);
+      alert(`Thank you! ${email} has been registered for the ${announcement?.coverEdition || 'report'}.`);
       setEmail("");
     }
   };
+
+  if (loading) return null;
+  if (!announcement) return null; // Don't render the banner if there's no active announcement
 
   return (
     <section className="w-full py-12 bg-[#030303] text-white relative ">
@@ -29,10 +61,12 @@ export function ImperativesBanner() {
               <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-8 pb-8 border-b border-zinc-900">
                 <div>
                   <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-white mb-2 leading-tight">
-                    The <span className="text-white font-medium bg-gradient-to-r from-red-600 via-rose-600 to-rose-500 bg-clip-text text-transparent">AI Impact</span> Imperatives, 2026
+                    {announcement.titlePrefix} 
+                    <span className="text-white font-medium bg-gradient-to-r from-red-600 via-rose-600 to-rose-500 bg-clip-text text-transparent">{announcement.titleHighlight}</span>
+                    {announcement.titleSuffix}
                   </h2>
                   <p className="text-zinc-400 text-sm md:text-base font-bold max-w-xl">
-                    Explore how organizations are turning AI potential into measurable business impact.
+                    {announcement.description}
                   </p>
                 </div>
               </div>
@@ -40,7 +74,7 @@ export function ImperativesBanner() {
               {/* Newsletter Sub-Form */}
               <div>
                 <span className="block text-xs font-medium text-zinc-400 mb-3">
-                  Stay ahead with our latest Updates
+                  {announcement.formTitle}
                 </span>
                 <form onSubmit={handleSubmit} className="flex max-w-md items-center relative">
                   <div className="absolute left-3.5 text-zinc-500">
@@ -59,7 +93,7 @@ export function ImperativesBanner() {
                     className="absolute right-1.5 p-2 rounded bg-rose-600 hover:bg-rose-500 text-white transition-colors"
                     aria-label="Subscribe"
                   >
-                    <ArrowRight size={14} />
+                    <ArrowUpRight size={14} />
                   </button>
                 </form>
               </div>
@@ -73,22 +107,22 @@ export function ImperativesBanner() {
                 {/* Visual red waves decoration */}
                 <div className="absolute inset-x-0 bottom-0 h-1/2 bg-[linear-gradient(to_top,rgba(220,38,38,0.1),transparent)] [mask-image:linear-gradient(rgba(0,0,0,1),transparent)]" />
 
-                <div className="flex justify-between items-start">
-                  <span className="text-[8px] font-mono text-zinc-500 tracking-widest uppercase">RESEARCH REPORT</span>
+                <div className="flex justify-between items-start relative z-10">
+                  <span className="text-[8px] font-mono text-zinc-500 tracking-widest uppercase">{announcement.reportType}</span>
                   <FileText size={16} className="text-rose-500" />
                 </div>
 
-                <div className="my-auto">
+                <div className="my-auto relative z-10">
                   <h3 className="text-sm font-semibold tracking-wider text-white leading-snug">
-                    AI IMPACT<br />
-                    IMPERATIVES
+                    {announcement.coverTitleLine1}<br />
+                    {announcement.coverTitleLine2}
                   </h3>
                   <div className="h-[2px] w-8 bg-rose-600 mt-2" />
                 </div>
 
-                <div className="flex justify-between items-center text-[8px] font-mono text-zinc-500 mt-4">
-                  <span>Devopstrio</span>
-                  <span className="text-white">2026 EDITION</span>
+                <div className="flex justify-between items-center text-[8px] font-mono text-zinc-500 mt-4 relative z-10">
+                  <span>{announcement.coverBrand}</span>
+                  <span className="text-white">{announcement.coverEdition}</span>
                 </div>
               </div>
             </div>

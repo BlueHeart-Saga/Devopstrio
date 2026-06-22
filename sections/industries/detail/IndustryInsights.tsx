@@ -1,6 +1,8 @@
+"use client";
+
 import React, { useRef, useState, useEffect } from "react";
 import Link from "next/link";
-import { ArrowLeft, ArrowRight, ArrowUpRight } from "lucide-react";
+import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
 import { insightsApi } from "@/lib/insightsApi";
 
@@ -86,7 +88,7 @@ export function IndustryInsights({ insights }: IndustryInsightsProps) {
   // Show only backend insights
   const uniqueInsights: InsightItem[] = [];
   const titlesSeen = new Set<string>();
-  
+
   backendInsights.forEach(item => {
     const titleKey = item.title.toLowerCase().trim();
     if (!titlesSeen.has(titleKey)) {
@@ -111,7 +113,8 @@ export function IndustryInsights({ insights }: IndustryInsightsProps) {
       <div className="absolute top-[30%] left-[-10%] w-[35%] aspect-square bg-[radial-gradient(circle_at_center,rgba(244,63,94,0.015),transparent_70%)] pointer-events-none z-0" />
 
       {/* Hide Scrollbar Styles */}
-      <style dangerouslySetInnerHTML={{__html: `
+      <style dangerouslySetInnerHTML={{
+        __html: `
         .hide-scrollbar::-webkit-scrollbar {
           display: none !important;
         }
@@ -122,7 +125,7 @@ export function IndustryInsights({ insights }: IndustryInsightsProps) {
       `}} />
 
       <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10 text-left">
-        
+
         {/* Section Header with Navigation Buttons */}
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-6 mb-12">
           <Reveal>
@@ -148,7 +151,7 @@ export function IndustryInsights({ insights }: IndustryInsightsProps) {
               aria-label="Scroll right"
               className="w-11 h-11 rounded-full border border-white/5 bg-[#0b0b0c] hover:bg-zinc-900 flex items-center justify-center text-zinc-400 hover:text-white transition-colors duration-300"
             >
-              <ArrowRight size={16} />
+              <ArrowUpRight size={16} />
             </button>
           </Reveal>
         </div>
@@ -167,12 +170,12 @@ export function IndustryInsights({ insights }: IndustryInsightsProps) {
                   href={ins.link}
                   className="group block w-[320px] sm:w-[350px] aspect-[3/4] bg-[#0b0b0c] border border-white/10 rounded-[24px] p-6 hover:border-rose-500/35 hover:shadow-[0_8px_32px_rgba(244,63,94,0.08)] transition-all duration-300 relative overflow-hidden cursor-pointer"
                 >
-                  
+
                   {/* Subtle Inner Glow on Hover */}
                   <div className="absolute inset-0 bg-gradient-to-br from-[#E11D48]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-0" />
 
                   <div className="flex flex-col h-full justify-between relative z-10">
-                    
+
                     <div>
                       {/* Double-bordered Image showcasing topic */}
                       <div className="relative w-full aspect-[16/10] rounded-[16px] border border-white/10 p-0.5 bg-zinc-950 overflow-hidden group-hover:border-rose-500/20 transition-all duration-300 mb-6">

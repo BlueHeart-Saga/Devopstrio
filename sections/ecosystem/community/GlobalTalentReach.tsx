@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { Reveal } from "@/components/ui/Reveal";
-import { MapPin, ArrowRight } from "lucide-react";
+import { MapPin, ArrowUpRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 interface OfficeLocation {
@@ -64,24 +64,23 @@ export function GlobalTalentReach() {
         </Reveal>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start max-w-4xl mx-auto">
-          
+
           {/* Left Buttons Selector */}
           <div className="lg:col-span-5 flex flex-col gap-3">
             {Object.entries(groups).map(([key, group]) => (
               <button
                 key={key}
                 onClick={() => setActiveCountry(key)}
-                className={`flex items-center justify-between p-5 rounded-2xl text-left border transition-all duration-300 ${
-                  activeCountry === key
+                className={`flex items-center justify-between p-5 rounded-2xl text-left border transition-all duration-300 ${activeCountry === key
                     ? "bg-rose-500/10 text-rose-500 border-rose-500/20 shadow-[0_0_15px_rgba(244,63,94,0.15)]"
                     : "bg-zinc-950/45 text-zinc-455 border-zinc-900/80 hover:text-zinc-350 hover:bg-zinc-900/40"
-                }`}
+                  }`}
               >
                 <div className="flex items-center gap-3">
                   <span className="text-xl">{group.flag}</span>
                   <span className="text-xs font-bold text-white uppercase tracking-wider">{group.country}</span>
                 </div>
-                <ArrowRight size={14} className="text-zinc-550" />
+                <ArrowUpRight size={14} className="text-zinc-550" />
               </button>
             ))}
           </div>

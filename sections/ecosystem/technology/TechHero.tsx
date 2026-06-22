@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Reveal } from "@/components/ui/Reveal";
-import { ArrowRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 
 export function TechHero() {
@@ -50,7 +50,7 @@ export function TechHero() {
 
       {/* Outer circular wrapper for absolute scaling on smaller screen sizes */}
       <div className="relative w-full max-w-[700px] h-[700px] flex items-center justify-center scale-90 sm:scale-100 transition-transform select-none">
-        
+
         {/* Decorative orbit boundary rings */}
         <div className="absolute w-[420px] h-[420px] rounded-full border border-zinc-900/35 pointer-events-none" />
         <div className="absolute w-[640px] h-[640px] rounded-full border border-zinc-900/20 pointer-events-none" />
@@ -76,7 +76,7 @@ export function TechHero() {
             >
               Explore Stack
               <div className="w-5 h-5 rounded-full bg-black flex items-center justify-center transition-transform duration-300 hover:scale-105">
-                <ArrowRight className="w-3.5 h-3.5 text-white" />
+                <ArrowUpRight className="w-3.5 h-3.5 text-white" />
               </div>
             </Link>
           </Reveal>

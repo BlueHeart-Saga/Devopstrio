@@ -1,6 +1,5 @@
-"use client";
-
 import React from "react";
+import { Metadata } from "next";
 import { SectionNavbar } from "@/components/ui/SectionNavbar";
 
 // Component imports
@@ -18,6 +17,15 @@ import { WhyChooseDevopstrio } from "@/sections/industries/WhyChooseDevopstrio";
 import { GlobalNetworks } from "@/sections/industries/GlobalNetworks";
 import { RelatedServices } from "@/sections/industries/RelatedServices";
 import { IndustriesCTA } from "@/sections/industries/IndustriesCTA";
+import { BreadcrumbSchema } from "@/components/seo/Schemas";
+
+export const metadata: Metadata = {
+  title: "Industries We Serve",
+  description: "Explore our specialized industrial solutions: Banking & Finance, Healthcare, Retail & E-commerce, Manufacturing, and Government.",
+  alternates: {
+    canonical: "/industries"
+  }
+};
 
 const navSections = [
   { id: "overview", label: "Overview Grid" },
@@ -33,8 +41,15 @@ const navSections = [
 ];
 
 export default function IndustriesPage() {
+  const breadcrumbs = [
+    { name: "Home", item: "/" },
+    { name: "Industries", item: "/industries" }
+  ];
+
   return (
     <main className="min-h-screen bg-black text-white pt-24 font-sans">
+      <BreadcrumbSchema items={breadcrumbs} />
+
       
       {/* 1. Hero */}
       <IndustriesHero 

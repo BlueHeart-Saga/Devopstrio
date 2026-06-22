@@ -77,7 +77,7 @@ export function LearningGrowth() {
             <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
               From application to certification
             </h2>
-            <p className="text-white text-sm leading-relaxed font-semibold max-w-xl mx-auto">
+            <p className="text-zinc-300 text-sm md:text-base leading-relaxed font-medium max-w-xl mx-auto">
               Five simple steps. Get started in days, not months.
             </p>
           </Reveal>
@@ -96,10 +96,10 @@ export function LearningGrowth() {
                   <div className="w-16 h-16 rounded-full bg-zinc-950 border border-white/[0.08] flex items-center justify-center text-white mb-6 font-mono font-bold text-lg shadow-[0_4px_20px_rgba(0,0,0,0.5)]">
                     {item.step}
                   </div>
-                  <h3 className="text-sm font-bold text-white mb-2 leading-snug">
+                  <h3 className="text-base font-bold text-white mb-2 leading-snug">
                     {item.title}
                   </h3>
-                  <p className="text-[11px] text-white leading-relaxed font-semibold">
+                  <p className="text-xs md:text-sm text-zinc-350 font-medium leading-relaxed">
                     {item.desc}
                   </p>
                 </div>
@@ -126,14 +126,14 @@ export function LearningGrowth() {
             <Reveal key={idx} delay={idx * 0.04}>
               <div className="group flex flex-col justify-between h-full bg-[#0d0d0d] border border-white/[0.06] rounded-2xl p-6 hover:border-rose-500/35 hover:-translate-y-1.5 transition-all duration-300 min-h-[160px] text-left">
                 <div>
-                  <h3 className="text-[13px] font-bold text-rose-500 mb-2 leading-snug">
+                  <h3 className="text-sm md:text-base font-bold text-rose-500 mb-2 leading-snug">
                     {domain.title}
                   </h3>
-                  <p className="text-[11px] text-white leading-relaxed font-semibold mb-6">
+                  <p className="text-xs md:text-sm text-zinc-300 font-medium leading-relaxed mb-6">
                     {domain.desc}
                   </p>
                 </div>
-                <span className="text-[10px] font-bold uppercase tracking-wider text-white group-hover:text-rose-400 transition-colors flex items-center gap-1 cursor-pointer">
+                <span className="text-xs font-semibold uppercase tracking-wider text-white group-hover:text-rose-400 transition-colors flex items-center gap-1 cursor-pointer">
                   View Track &rsaquo;
                 </span>
               </div>
@@ -150,7 +150,7 @@ export function LearningGrowth() {
             <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-rose-500 mb-5">
               What you earn when you complete
             </h2>
-            <p className="text-white text-sm leading-relaxed font-semibold max-w-2xl mx-auto">
+            <p className="text-zinc-300 text-sm md:text-base leading-relaxed font-medium max-w-2xl mx-auto">
               Devopstrio is a UK-registered company trusted by Microsoft, Airbnb, BP, GoDaddy, and Heathrow. Your certificate carries real global weight.
             </p>
           </Reveal>
@@ -164,7 +164,7 @@ export function LearningGrowth() {
             {leftEarnings.map((item, idx) => (
               <Reveal key={idx} delay={idx * 0.05} className="flex lg:flex-row-reverse items-center gap-3.5">
                 <span className="w-2.5 h-2.5 rounded-full bg-rose-500 shrink-0 shadow-[0_0_10px_rgba(225,29,72,0.8)]" />
-                <span className="text-xs font-bold text-white leading-snug">
+                <span className="text-sm text-zinc-200 font-medium leading-snug">
                   {item.text}
                 </span>
               </Reveal>
@@ -175,9 +175,9 @@ export function LearningGrowth() {
           <Reveal className="flex justify-center order-1 lg:order-2">
             <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border border-white/[0.08] shadow-[0_20px_50px_rgba(0,0,0,0.6)] bg-zinc-950">
               <img
-                src="/assets/About-page/careers_girl.png"
+                src="/assets/careers/RECOGNITION.png"
                 alt="Devopstrio Certified Candidate"
-                className="w-full h-full object-cover object-top brightness-85"
+                className="w-full h-full object-cover object-center brightness-90"
               />
               {/* Overlay glow */}
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_30%,#000_100%)] pointer-events-none" />
@@ -189,7 +189,7 @@ export function LearningGrowth() {
             {rightEarnings.map((item, idx) => (
               <Reveal key={idx} delay={idx * 0.05} className="flex items-center gap-3.5">
                 <span className="w-2.5 h-2.5 rounded-full bg-rose-500 shrink-0 shadow-[0_0_10px_rgba(225,29,72,0.8)]" />
-                <span className="text-xs font-bold text-white leading-snug">
+                <span className="text-sm text-zinc-200 font-medium leading-snug">
                   {item.text}
                 </span>
               </Reveal>

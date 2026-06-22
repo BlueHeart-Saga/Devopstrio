@@ -28,7 +28,7 @@ export function Hero({ badge, title, subtitle, stats, breadcrumbs, cta, imageSrc
 
       <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center w-full">
-          
+
           {/* Left Column: Content */}
           <div className="lg:col-span-7 flex flex-col items-start text-left justify-center z-20">
             {/* Breadcrumb Navigation */}
@@ -93,7 +93,7 @@ export function Hero({ badge, title, subtitle, stats, breadcrumbs, cta, imageSrc
                     href={cta.href}
                   >
                     {cta.label}
-                    <span className="ml-2">→</span>
+
                   </a>
                 )}
                 <Link
@@ -101,7 +101,7 @@ export function Hero({ badge, title, subtitle, stats, breadcrumbs, cta, imageSrc
                   href="/contact"
                 >
                   Talk to Expert
-                  <span className="ml-2">→</span>
+
                 </Link>
               </div>
             </Reveal>

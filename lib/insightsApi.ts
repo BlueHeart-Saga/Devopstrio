@@ -138,6 +138,25 @@ class InsightsApiService {
     }).catch(() => null);
   }
 
+  async subscribe(email: string, sections: string[] = [], categories: string[] = []) {
+    return this.fetchApi(`/public/subscribe`, {
+      method: "POST",
+      body: JSON.stringify({
+        email,
+        company_id: this.companyId,
+        sections,
+        categories,
+      }),
+      throwError: true,
+    });
+  }
+
+  async getSubscriberPreferences(email: string) {
+    return this.fetchApi(
+      `/public/subscriber-preferences?email=${encodeURIComponent(email)}&company_id=${this.companyId}`,
+    );
+  }
+
   async getFullSiteStructure() {
     try {
       const sectionsRes = await this.getSections();

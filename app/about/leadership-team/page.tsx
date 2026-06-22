@@ -1,13 +1,28 @@
-"use client";
 
 import React from "react";
+import { Metadata } from "next";
+import { BreadcrumbSchema } from "@/components/seo/Schemas";
 import { Leadership } from "@/sections/about/Leadership";
 import { AboutCTA } from "@/sections/about/AboutCTA";
 import { Reveal } from "@/components/ui/Reveal";
 
+
+
+export const metadata: Metadata = {
+  title: "Leadership & Team",
+  description: "Meet the executive leadership and technical directors guiding Devopstrio.",
+  alternates: {
+    canonical: "/about/leadership-team"
+  }
+};
 export default function LeadershipTeamPage() {
   return (
     <main className="min-h-screen bg-black text-white pt-16 font-sans">
+      <BreadcrumbSchema items={[
+        { name: "Home", item: "/" },
+        { name: "About Us", item: "/about/company-overview" },
+        { name: "Leadership & Team", item: "/about/leadership-team" }
+      ]} />
       {/* Page Header */}
       <section className="pt-20 pb-4 text-center relative bg-[#030303]">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(244,63,94,0.05),transparent_50%)] pointer-events-none" />

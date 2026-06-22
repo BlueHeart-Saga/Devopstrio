@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowLeft, ArrowRight, CheckCircle2 } from "lucide-react";
+import { ArrowLeft, ArrowUpRight, CheckCircle2 } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
 
 export interface CapabilityItem {
@@ -102,7 +102,7 @@ export function CapabilityGrid({ serviceSlug, capabilities }: CapabilityGridProp
       <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[radial-gradient(circle_at_bottom_left,rgba(225,29,72,0.04),transparent_70%)] blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
-        
+
         {/* Section Header */}
         <Reveal>
           <div className="text-center max-w-3xl mx-auto mb-14">
@@ -174,7 +174,7 @@ export function CapabilityGrid({ serviceSlug, capabilities }: CapabilityGridProp
                         className="mt-auto inline-flex items-center gap-2.5 bg-zinc-900 hover:bg-rose-600 border border-zinc-800 hover:border-rose-600 text-zinc-300 hover:text-white rounded-lg px-4 py-2.5 text-xs font-semibold uppercase tracking-wider transition-all duration-300 w-fit group/btn"
                       >
                         <span className="w-5 h-5 rounded-sm bg-rose-600 group-hover/btn:bg-white flex items-center justify-center flex-shrink-0 transition-colors duration-300">
-                          <ArrowRight size={11} className="text-white group-hover/btn:text-rose-600 transition-colors duration-300" />
+                          <ArrowUpRight size={11} className="text-white group-hover/btn:text-rose-600 transition-colors duration-300" />
                         </span>
                         Explore Details
                       </Link>
@@ -231,7 +231,7 @@ export function CapabilityGrid({ serviceSlug, capabilities }: CapabilityGridProp
                           className="mt-auto inline-flex items-center gap-2.5 bg-zinc-900 hover:bg-rose-600 border border-zinc-800 hover:border-rose-600 text-zinc-300 hover:text-white rounded-lg px-4 py-2.5 text-xs font-semibold uppercase tracking-wider transition-all duration-300 w-fit group/btn"
                         >
                           <span className="w-5 h-5 rounded-sm bg-rose-600 group-hover/btn:bg-white flex items-center justify-center flex-shrink-0 transition-colors duration-300">
-                            <ArrowRight size={11} className="text-white group-hover/btn:text-rose-600 transition-colors duration-300" />
+                            <ArrowUpRight size={11} className="text-white group-hover/btn:text-rose-600 transition-colors duration-300" />
                           </span>
                           Explore Details
                         </Link>
@@ -259,7 +259,7 @@ export function CapabilityGrid({ serviceSlug, capabilities }: CapabilityGridProp
               className="w-11 h-11 rounded-full border border-zinc-700 hover:border-rose-500 hover:bg-rose-500/10 text-white flex items-center justify-center transition-all duration-300 active:scale-95"
               aria-label="Next capabilities"
             >
-              <ArrowRight size={16} />
+              <ArrowUpRight size={16} />
             </button>
           </div>
         )}

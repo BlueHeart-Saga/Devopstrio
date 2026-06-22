@@ -5,6 +5,9 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Terms of Service | Devopstrio",
   description: "Devopstrio Terms of Service outline the legal terms, client obligations, and governance details for our enterprise technical services.",
+  alternates: {
+    canonical: "/terms-of-service"
+  }
 };
 
 export default function TermsOfServicePage() {

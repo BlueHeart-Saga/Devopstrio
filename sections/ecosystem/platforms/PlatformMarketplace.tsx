@@ -100,7 +100,7 @@ export function PlatformMarketplace() {
                       className="bg-zinc-900/40 border border-zinc-900 rounded-xl p-4 flex items-center justify-between hover:border-rose-500/15 transition-all duration-300"
                     >
                       <span className="text-xs font-bold text-white tracking-wider uppercase">{prod}</span>
-                      <span className="text-[8px] bg-rose-500/10 text-rose-500 border border-rose-500/20 px-2 py-0.5 rounded-full font-mono font-bold">
+                      <span className="inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white transition-all duration-300 hover:shadow-[0_0_25px_rgba(225,29,72,0.35)] hover:-translate-y-0.5">
                         ACTIVE ASSET
                       </span>
                     </div>

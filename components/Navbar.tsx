@@ -29,6 +29,7 @@ const serviceCategories = [
     items: [
       { name: "Cloud Strategy & Consulting", desc: "Tailored architecture blueprints, vendor evaluation, and cloud readiness.", href: "/services/cloud-services/cloud-strategy-consulting" },
       { name: "Cloud Migration", desc: "Re-hosting, re-platforming, and database replication with zero downtime.", href: "/services/cloud-services/cloud-migration" },
+      { name: "Cloud Architecture", desc: "Design and blueprint enterprise-grade cloud environments.", href: "/services/cloud-services/cloud-architecture" },
       { name: "Azure Services", desc: "Landing zones, AKS clusters, and serverless applications on Microsoft Azure.", href: "/services/cloud-services/azure-services" },
       { name: "AWS Services", desc: "Scalable EKS grids, serverless Lambdas, and secure DynamoDB setups on AWS.", href: "/services/cloud-services/aws-services" },
       { name: "Google Cloud Services", desc: "GKE autopilot setups, BigQuery data platforms, and Vertex AI integrations on GCP.", href: "/services/cloud-services/google-cloud-services" },
@@ -248,9 +249,9 @@ const ecosystemCategories = [
     href: "/ecosystem/global-delivery",
     items: [
       { name: "Delivery Overview", desc: "Distributed international offices and hubs", href: "/ecosystem/global-delivery" },
-      { name: "United Kingdom Hub", desc: "Local consulting meeting UK security rules", href: "/ecosystem/global-delivery/united-kingdom" },
-      { name: "India Operations", desc: "SRE support center and database upkeep tasks", href: "/ecosystem/global-delivery/india" },
-      { name: "Europe Hub", desc: "GDPR privacy audits and regional host sites", href: "/ecosystem/global-delivery/europe" },
+      { name: "United Kingdom Hub", desc: "Local consulting meeting UK security rules", href: "/ecosystem/global-delivery/united-kingdom-hub" },
+      { name: "India Operations", desc: "SRE support center and database upkeep tasks", href: "/ecosystem/global-delivery/india-operations" },
+      { name: "Europe Hub", desc: "GDPR privacy audits and regional host sites", href: "/ecosystem/global-delivery/europe-hub" },
       { name: "Follow-the-Sun Support", desc: "Continuous support schedules with zero burnout", href: "/ecosystem/global-delivery/follow-the-sun-support" },
       { name: "Managed Services Center", desc: "Ansible OS patches and automated backups", href: "/ecosystem/global-delivery/managed-services-center" }
     ]

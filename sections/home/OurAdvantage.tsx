@@ -80,7 +80,7 @@ export function OurAdvantage() {
               {card.tags.map((tag, tIdx) => (
                 <span 
                   key={tIdx} 
-                  className="text-[9px] font-bold px-2.5 py-1 bg-white/[0.03] text-zinc-400 rounded-full border border-white/[0.05] group-hover:border-rose-500/20 group-hover:bg-rose-500/[0.02] transition-all duration-300"
+                  className="inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white transition-all duration-300 hover:shadow-[0_0_25px_rgba(225,29,72,0.35)] hover:-translate-y-0.5"
                 >
                   {tag}
                 </span>

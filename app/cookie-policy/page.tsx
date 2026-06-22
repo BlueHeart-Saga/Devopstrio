@@ -5,6 +5,9 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Cookie Policy | Devopstrio",
   description: "Devopstrio Cookie Policy explains how and why we use cookies and related tracking technologies on our site.",
+  alternates: {
+    canonical: "/cookie-policy"
+  }
 };
 
 export default function CookiePolicyPage() {

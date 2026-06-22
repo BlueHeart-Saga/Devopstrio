@@ -2,7 +2,7 @@
 
 import React, { useRef } from "react";
 import Link from "next/link";
-import { ArrowLeft, ArrowRight, ArrowUpRight } from "lucide-react";
+import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
 
 interface CapabilityUseCasesProps {
@@ -154,7 +154,7 @@ export function CapabilityUseCases({ serviceSlug, capabilityTitle }: CapabilityU
       <div className="absolute top-[30%] left-[-10%] w-[35%] aspect-square bg-[radial-gradient(circle_at_center,rgba(244,63,94,0.015),transparent_70%)] pointer-events-none z-0" />
 
       <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
-        
+
         {/* Section Header */}
         <div className="text-center mb-12 max-w-3xl mx-auto">
           <Reveal>
@@ -171,7 +171,8 @@ export function CapabilityUseCases({ serviceSlug, capabilityTitle }: CapabilityU
         </div>
 
         {/* CSS style block to hide scrollbar across all major browsers */}
-        <style dangerouslySetInnerHTML={{__html: `
+        <style dangerouslySetInnerHTML={{
+          __html: `
           .hide-scrollbar::-webkit-scrollbar {
             display: none !important;
           }
@@ -186,7 +187,7 @@ export function CapabilityUseCases({ serviceSlug, capabilityTitle }: CapabilityU
           <div
             ref={scrollContainerRef}
             className="flex gap-6 overflow-x-auto hide-scrollbar pb-8 snap-x snap-mandatory scroll-smooth"
-            style={{ 
+            style={{
               WebkitOverflowScrolling: "touch",
               msOverflowStyle: "none",
               scrollbarWidth: "none"
@@ -218,7 +219,7 @@ export function CapabilityUseCases({ serviceSlug, capabilityTitle }: CapabilityU
                     <h3 className="text-base font-bold text-white mb-2 leading-snug group-hover:text-rose-500 transition-colors">
                       {industry.name}
                     </h3>
-                    
+
                     <p className="text-xs text-white leading-relaxed font-semibold mb-6">
                       {industry.desc}
                     </p>
@@ -268,7 +269,7 @@ export function CapabilityUseCases({ serviceSlug, capabilityTitle }: CapabilityU
             aria-label="Scroll right"
             className="w-12 h-12 rounded-full border border-zinc-800 bg-zinc-950/60 hover:bg-zinc-900 hover:border-white/20 flex items-center justify-center text-zinc-400 hover:text-white transition-all duration-300"
           >
-            <ArrowRight size={18} />
+            <ArrowUpRight size={18} />
           </button>
         </div>
 

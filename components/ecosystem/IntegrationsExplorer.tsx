@@ -6,7 +6,7 @@ import {
   Zap,
   Shield,
   Cpu,
-  ArrowRight,
+  ArrowUpRight,
   Activity,
   Database,
   Monitor,
@@ -380,7 +380,7 @@ const MicrosoftLogo = () => (
 
 const AWSLogo = () => (
   <svg viewBox="0 0 24 24" className="w-5 h-5 flex-shrink-0 fill-[#FF9900]">
-    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm3.29 14.29c-.39.39-1.02.39-1.41 0L12 14.41l-1.88 1.88c-.39.39-1.02.39-1.41 0a.996.996 0 0 1 0-1.41L10.59 13l-1.88-1.88a.996.996 0 1 1 1.41-1.41L12 11.59l1.88-1.88c.39-.39 1.02-.39 1.41 0s.39 1.02 0 1.41L13.41 13l1.88 1.88c.38.39.38 1.03 0 1.41z"/>
+    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm3.29 14.29c-.39.39-1.02.39-1.41 0L12 14.41l-1.88 1.88c-.39.39-1.02.39-1.41 0a.996.996 0 0 1 0-1.41L10.59 13l-1.88-1.88a.996.996 0 1 1 1.41-1.41L12 11.59l1.88-1.88c.39-.39 1.02-.39 1.41 0s.39 1.02 0 1.41L13.41 13l1.88 1.88c.38.39.38 1.03 0 1.41z" />
   </svg>
 );
 
@@ -502,19 +502,17 @@ export const IntegrationsExplorer = () => {
             {categories.map((cat) => (
               <button
                 key={cat.name}
-                className={`w-full flex items-center justify-between text-left py-2 px-3 rounded-lg text-xs font-semibold tracking-wide transition-all duration-200 ${
-                  activeCategory === cat.name
+                className={`w-full flex items-center justify-between text-left py-2 px-3 rounded-lg text-xs font-semibold tracking-wide transition-all duration-200 ${activeCategory === cat.name
                     ? "bg-rose-950/20 text-rose-500 border-l-2 border-rose-500 pl-4 font-bold"
                     : "text-zinc-400 hover:text-white hover:bg-zinc-900/40"
-                }`}
+                  }`}
                 onClick={() => setActiveCategory(cat.name)}
               >
                 <span>{cat.name}</span>
-                <span className={`text-[9px] font-mono px-2 py-0.5 rounded ${
-                  activeCategory === cat.name
+                <span className={`text-[9px] font-mono px-2 py-0.5 rounded ${activeCategory === cat.name
                     ? "bg-rose-950/40 text-rose-400"
                     : "bg-zinc-900 text-zinc-500"
-                }`}>
+                  }`}>
                   {cat.count}
                 </span>
               </button>
@@ -557,7 +555,7 @@ export const IntegrationsExplorer = () => {
                         <span className="text-[9px] text-zinc-500 uppercase tracking-wider font-semibold">
                           {item.category}
                         </span>
-                        <ArrowRight size={11} className="text-zinc-500 group-hover:text-rose-500 group-hover:translate-x-0.5 transition-all" />
+                        <ArrowUpRight size={11} className="text-zinc-500 group-hover:text-rose-500 group-hover:translate-x-0.5 transition-all" />
                       </div>
                     </div>
                   ))}

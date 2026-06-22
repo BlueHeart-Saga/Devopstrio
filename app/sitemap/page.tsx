@@ -75,7 +75,7 @@ const sitemapData: SitemapCategory[] = [
       { name: "R&D Innovation Labs", href: "/ecosystem/innovation-labs", desc: "Prototyping future AI pipelines and Edge computing architectures." },
       { name: "Platforms & Solutions", href: "/ecosystem/platforms-solutions", desc: "Our proprietary open-source tools and infrastructure templates." },
       { name: "Technology Stack", href: "/ecosystem/technology-stack", desc: "An overview of all components, libraries, and runtimes we build with." },
-      { name: "Global Delivery", href: "/ecosystem/global-delivery", desc: "Distributed team nodes ensuring follow-the-sun service reliability." },
+      { name: "Global Delivery Network", href: "/ecosystem/global-delivery", desc: "Distributed team nodes ensuring follow-the-sun service reliability." },
       { name: "Engineering Excellence", href: "/ecosystem/engineering-excellence", desc: "Our rigorous code standards, peer reviews, and SRE principles." },
       { name: "Accelerators & Frameworks", href: "/ecosystem/accelerators-frameworks", desc: "Modular startup code bases that trim weeks off project lifecycles." }
     ]

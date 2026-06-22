@@ -95,7 +95,7 @@ export default function DocumentReaderPage({ params }: ReaderPageProps) {
             </p>
             <Link
               href={`/insights/${categorySlug}/${postId}`}
-              className="px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wider bg-rose-600/10 text-rose-500 hover:bg-rose-600/20 transition-all duration-200"
+              className="inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white transition-all duration-300 hover:shadow-[0_0_25px_rgba(225,29,72,0.35)] hover:-translate-y-0.5"
             >
               Back to Article
             </Link>

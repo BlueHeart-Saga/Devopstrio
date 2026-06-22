@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Reveal } from "@/components/ui/Reveal";
-import { ArrowRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 
 export function EcosystemOverview() {
   return (
@@ -44,7 +44,7 @@ export function EcosystemOverview() {
                 >
                   Explore Architecture Stack
                   <span className="w-9 h-9 rounded-full bg-[#E11D48] flex items-center justify-center transition-transform duration-300 group-hover/link:translate-x-1">
-                    <ArrowRight size={16} />
+                    <ArrowUpRight size={16} />
                   </span>
                 </a>
               </div>

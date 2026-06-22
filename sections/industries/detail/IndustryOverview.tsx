@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { ArrowRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
 
 interface IndustryOverviewProps {
@@ -22,7 +22,7 @@ export function IndustryOverview({
   // Map incoming bgImage/image to the premium illustration from /assets/Industries-page/industriescard/
   const getPremiumIllustration = (imgSrc: string) => {
     const src = imgSrc.toLowerCase();
-    
+
     if (src.includes("finance") || src.includes("banking") || src.includes("bank")) {
       return "/assets/Industries-page/industriescard/Banking and finance.png";
     }
@@ -47,7 +47,7 @@ export function IndustryOverview({
     if (src.includes("telecommunication") || src.includes("telecom") || src.includes("tele")) {
       return "/assets/Industries-page/industriescard/Telecommunications.png";
     }
-    
+
     return "/assets/Home-page/business-overview/overview-lifestyle.png";
   };
 
@@ -58,7 +58,7 @@ export function IndustryOverview({
       <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
         <Reveal>
           <div className="group relative overflow-hidden rounded-[32px] border border-zinc-800/60 bg-zinc-950/30 backdrop-blur-xl">
-            
+
             {/* Background Glow */}
             <div className="absolute inset-0 pointer-events-none">
               <div className="absolute -top-20 -left-20 w-96 h-96 bg-rose-600/10 blur-[120px]" />
@@ -66,13 +66,13 @@ export function IndustryOverview({
             </div>
 
             <div className="relative grid lg:grid-cols-2 gap-0">
-              
+
               {/* LEFT CONTENT: Overview Context & Approach */}
               <div className="flex flex-col justify-center p-8 md:p-10 lg:p-12 text-left">
                 <span className="text-[11px] font-semibold tracking-[0.25em] uppercase text-zinc-500 mb-8 block">
                   Domain Context
                 </span>
-                
+
                 <h2 className="text-xl md:text-2xl xl:text-3xl font-bold leading-tight tracking-tight mb-6 text-white">
                   {overviewHeading}
                 </h2>
@@ -88,7 +88,7 @@ export function IndustryOverview({
                 >
                   Analyze Challenges
                   <span className="w-8 h-8 rounded-full bg-[#E11D48] flex items-center justify-center transition-transform duration-300 group-hover/link:translate-x-1">
-                    <ArrowRight size={14} />
+                    <ArrowUpRight size={14} />
                   </span>
                 </a>
               </div>

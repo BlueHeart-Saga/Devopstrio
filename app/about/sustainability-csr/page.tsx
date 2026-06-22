@@ -1,621 +1,600 @@
+
 "use client";
 
 import React, { useState } from "react";
 import { Reveal } from "@/components/ui/Reveal";
 import { AboutCTA } from "@/sections/about/AboutCTA";
-import { 
-  Globe, Leaf, Cpu, Award, Trees, TrendingDown, 
-  CheckCircle2, ChevronDown, ChevronUp, Check, 
-  ArrowRight, Calculator, Zap, Shield, Sparkles 
+import {
+  Leaf,
+  Cpu,
+  TrendingDown,
+  Trees,
+  Zap,
+  Sparkles,
+  ShieldCheck,
+  Check,
+  Globe,
+  ArrowUpRight,
+  Mail,
+  User,
+  Building,
+  MapPin,
+  ChevronDown
 } from "lucide-react";
 
-export default function SustainabilityCsrPage() {
-  // Cloud Carbon Estimator State
-  const [cloudSpend, setCloudSpend] = useState<number>(25000);
-  
-  // Interactive FAQ State
-  const [activeFaq, setActiveFaq] = useState<number | null>(null);
 
-  // Form Submission State
-  const [formSubmitted, setFormSubmitted] = useState<boolean>(false);
-  const [formData, setFormData] = useState({ name: "", email: "", website: "" });
 
-  // Estimator Calculations
-  const calculatedTrees = Math.round(cloudSpend * 0.1214);
-  const calculatedCarbon = (cloudSpend * 0.0027).toFixed(1);
-  const calculatedWaste = Math.round(cloudSpend * 2.972).toLocaleString();
+export default function CSRPage() {
+  const [cloudBudget, setCloudBudget] = useState(25000);
+  const [auditSubmitted, setAuditSubmitted] = useState(false);
+  const [auditData, setAuditData] = useState({ name: "", email: "", company: "" });
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
 
-  const handleFormSubmit = (e: React.FormEvent) => {
+  // Realistic carbon and energy savings logic
+  const co2Saved = ((cloudBudget * 12 * 0.0005) * 0.45).toFixed(1);
+  const treesPlanted = Math.round(Number(co2Saved) * 45);
+  const coalPrevented = Math.round(Number(co2Saved) * 1102); // ~1102 lbs of coal burned per ton of CO2
+
+  const handleAuditSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setFormSubmitted(true);
-    setTimeout(() => {
-      setFormData({ name: "", email: "", website: "" });
-    }, 3000);
+    if (auditData.name && auditData.email) {
+      setAuditSubmitted(true);
+      // Auto reset for demo purposes
+      setTimeout(() => {
+        setAuditSubmitted(false);
+        setAuditData({ name: "", email: "", company: "" });
+      }, 5000);
+    }
+  };
+
+  const toggleFaq = (index: number) => {
+    setOpenFaq(openFaq === index ? null : index);
   };
 
   const faqData = [
     {
       q: "How does cloud optimization reduce our corporate carbon footprint?",
-      a: "Optimizing cloud resources consolidation means turning off idle servers, utilizing right-sized virtual machines, and implementing auto-scaling policies. By reducing the physical hardware needed at hyperscaler data centers (AWS, GCP, Azure), you directly lower the energy draw, cooling demands, and overall carbon emissions required to support your services."
+      a: "Optimizing cloud assets reduces energy consumption at the underlying physical data centers, which directly prevents greenhouse gas emissions from non-renewable energy grids that power them."
     },
     {
       q: "What does the free green cloud audit include?",
-      a: "Our green cloud audit includes a detailed examination of your cloud infrastructure configuration, CPU utilization averages, and deployment patterns. We deliver a custom impact report highlighting resource inefficiencies, carbon offset opportunities, and an estimated projection of metric tons of carbon (and costs) you could save annually."
+      a: "Our certified systems engineers analyze your hosting telemetry, identify idle VM resource rates, estimate potential carbon cuts, and provide a clear optimization action plan to reduce both waste compute and monthly costs."
     },
     {
       q: "How do you calculate our projected tree plantation offsets?",
-      a: "Our calculations utilize industry standards established by the Greenhouse Gas Protocol and the EPA's Greenhouse Gas Equivalencies Calculator. We map server electricity draw against local grid mix factors to calculate metric tons of CO2. Vetted reforestation data indicates that one mature tree absorbs approximately 48 lbs (22 kg) of CO2 per year, which we translate into equivalent tree offsets."
+      a: "We use standard Greenhouse Gas (GHG) Protocols to convert saved CPU kilowatt-hours to equivalent metric tons of CO₂, then map that directly to verified ecological absorption capacity."
     },
     {
-      q: "Are there any performance trade-offs when migrating to green cloud infrastructures?",
-      a: "No. Green cloud engineering focuses on removing resource waste, improving caching layers, and choosing carbon-conscious regions. In most cases, optimizing your system runtime improves server load response times and increases application performance, all while reducing billing expenses and carbon emissions."
+      q: "Is there any performance cost to running eco-conscious infrastructure?",
+      a: "None at all. By utilizing modern serverless patterns, aggressive autoscaling, and efficient containerization, we actually improve application response times and scale seamlessly to meet demand spikes."
     }
   ];
 
   return (
-    <main className="min-h-screen bg-black text-white pt-16 font-sans select-text">
-      
-      {/* 1. Cinematic Hero Section */}
-      <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden border-b border-zinc-900">
-        {/* Misty Forest Background Image */}
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-1000"
-          style={{ 
-            backgroundImage: "url('/assets/sustainability/misty_pine_forest.png')",
-            filter: "brightness(0.24) contrast(1.1)"
-          }}
-        />
-        {/* Ambient Dark Overlay Gradients */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black pointer-events-none" />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-transparent to-black/80 pointer-events-none" />
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-emerald-500/10 blur-[120px] rounded-full pointer-events-none" />
+    <main className="relative min-h-screen bg-black text-white font-sans overflow-x-hidden selection:bg-emerald-500 selection:text-white">
+      <title>Sustainability & CSR | Devopstrio</title>
+      <meta name="description" content="Our environmental pledge to green cloud hosting and community engineering initiatives." />
+      <link rel="canonical" href="https://devopstrio.co.uk/about/sustainability-csr" />
+      {/* Background Animated Elements */}
+      <div
+        className="absolute inset-0 opacity-[0.03] pointer-events-none z-0"
+        style={{
+          backgroundImage: "linear-gradient(to right, #10b981 1px, transparent 1px), linear-gradient(to bottom, #10b981 1px, transparent 1px)",
+          backgroundSize: "80px 80px",
+          maskImage: "radial-gradient(circle at center, black 30%, transparent 85%)",
+          WebkitMaskImage: "radial-gradient(circle at center, black 30%, transparent 85%)"
+        }}
+      />
+      <div className="absolute top-[-100px] left-[25%] w-[450px] h-[450px] bg-[radial-gradient(circle,rgba(16,185,129,0.08)_0%,transparent_70%)] blur-[60px] pointer-events-none z-0" />
+      <div className="absolute top-[40%] right-[10%] w-[500px] h-[500px] bg-[radial-gradient(circle,rgba(231,158,87,0.06)_0%,transparent_70%)] blur-[80px] pointer-events-none z-0" />
 
-        <div className="max-w-7xl mx-auto w-full px-6 md:px-12 lg:px-16 relative z-10 text-center flex flex-col items-center">
-          <Reveal>
-            <span className="text-[10px] font-mono tracking-[0.25em] text-emerald-400 bg-emerald-500/10 border border-emerald-500/25 px-4 py-1.5 rounded-full uppercase font-bold mb-6 inline-block">
-              // Corporate Social Responsibility
-            </span>
-            <h1 className="text-4xl sm:text-6xl md:text-7xl font-black tracking-tight leading-none mb-6 max-w-4xl text-white">
-              We can save our <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-400 to-emerald-500">
-                Environment.
-              </span>
-            </h1>
-            <p className="text-zinc-400 text-sm sm:text-base md:text-lg font-light max-w-2xl mx-auto leading-relaxed mb-10">
-              Devopstrio combines high-performance cloud co-engineering with carbon-aware runtimes. We help enterprises optimize workloads to reduce billing, lower server loads, and prevent ecological degradation.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
-              <button 
-                onClick={() => {
-                  const estimatorEl = document.getElementById("carbon-estimator");
-                  estimatorEl?.scrollIntoView({ behavior: "smooth", block: "start" });
-                }}
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-emerald-500 hover:bg-emerald-600 text-black font-bold rounded-xl text-xs uppercase tracking-wider transition-all duration-300 shadow-[0_0_20px_rgba(16,185,129,0.3)] hover:scale-[1.02] cursor-pointer"
-              >
-                <Calculator size={14} /> Try Our Tools
-              </button>
-              <button 
-                onClick={() => {
-                  const infoEl = document.getElementById("green-services");
-                  infoEl?.scrollIntoView({ behavior: "smooth", block: "start" });
-                }}
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-zinc-900 hover:bg-zinc-850 border border-zinc-800 text-zinc-300 hover:text-white font-bold rounded-xl text-xs uppercase tracking-wider transition-all duration-300 cursor-pointer"
-              >
-                Our History
-              </button>
-            </div>
-
-            {/* Checkmark sub-bullet indicators */}
-            <div className="flex flex-wrap justify-center gap-6 text-[10px] font-mono tracking-widest text-zinc-500 uppercase">
-              <span className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
-                Collaborative Reforestation
-              </span>
-              <span className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
-                Green Cloud Runtimes
-              </span>
-            </div>
-          </Reveal>
+      {/* BRAND NEW HERO SECTION (SPLIT SCREEN FOREST THEME) */}
+      <section className="relative pt-32 pb-20 lg:py-0 lg:min-h-[90vh] flex items-center border-b border-zinc-900/60 overflow-hidden">
+        {/* Full-bleed background forest container on right */}
+        <div className="absolute inset-0 lg:left-auto lg:right-0 lg:w-[55vw] h-full z-[1] pointer-events-none overflow-hidden opacity-25 lg:opacity-100">
+          <img
+            src="https://images.unsplash.com/photo-1511497584788-876760111969?q=80&w=2000&auto=format&fit=crop"
+            alt="Misty deep green pine forest wilderness"
+            className="w-full h-full object-cover opacity-90 brightness-[0.65] contrast-[1.1] saturate-[0.9]"
+          />
+          {/* Smudge mask to blend left into black */}
+          <div
+            className="absolute inset-0 z-20 hidden lg:block"
+            style={{
+              background: "linear-gradient(90deg, #000000 0%, rgba(0, 0, 0, 0.95) 15%, rgba(0, 0, 0, 0.25) 60%, transparent 100%), linear-gradient(to top, #000000 0%, transparent 20%)"
+            }}
+          />
+          {/* Mobile bottom fade mask */}
+          <div className="absolute inset-0 z-20 lg:hidden" style={{ background: "linear-gradient(to top, #000000 0%, transparent 50%)" }} />
         </div>
-      </section>
 
-      {/* 2. Key Statistics Grid */}
-      <section className="py-12 bg-black relative">
-        <div className="max-w-7xl mx-auto w-full px-6 md:px-12 lg:px-16">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            
-            <Reveal delay={0.05} className="bg-zinc-950/40 border border-zinc-900/60 rounded-2xl p-6 hover:border-emerald-500/20 transition-all duration-300">
-              <span className="block text-4xl md:text-5xl font-black text-white font-mono mb-2">98%</span>
-              <h4 className="text-xs font-bold text-emerald-400 mb-1">Cloud Optimization Efficiency</h4>
-              <p className="text-[11px] text-zinc-500 leading-relaxed">Resource consolidation methodologies reducing redundant cloud instances.</p>
-            </Reveal>
-
-            <Reveal delay={0.1} className="bg-emerald-950/20 border border-emerald-900/30 rounded-2xl p-6 hover:border-emerald-500/30 transition-all duration-300 relative overflow-hidden group">
-              <div className="absolute top-0 right-0 w-24 h-24 bg-emerald-500/[0.02] blur-xl rounded-full" />
-              <span className="block text-4xl md:text-5xl font-black text-emerald-400 font-mono mb-2">565t+</span>
-              <h4 className="text-xs font-bold text-white mb-1">Annual CO2 Saved</h4>
-              <p className="text-[11px] text-zinc-450 leading-relaxed">Estimated greenhouse gases prevented across our client architecture instances.</p>
-            </Reveal>
-
-            <Reveal delay={0.15} className="bg-zinc-950/40 border border-zinc-900/60 rounded-2xl p-6 hover:border-emerald-500/20 transition-all duration-300">
-              <span className="block text-4xl md:text-5xl font-black text-white font-mono mb-2">36k+</span>
-              <h4 className="text-xs font-bold text-emerald-400 mb-1">Trees Planted</h4>
-              <p className="text-[11px] text-zinc-500 leading-relaxed">Through partnerships and vetted reforestation initiatives worldwide.</p>
-            </Reveal>
-
-            <Reveal delay={0.2} className="bg-zinc-950/40 border border-zinc-900/60 rounded-2xl p-6 hover:border-emerald-500/20 transition-all duration-300">
-              <span className="block text-4xl md:text-5xl font-black text-white font-mono mb-2">100%</span>
-              <h4 className="text-xs font-bold text-emerald-400 mb-1">Carbon Neutral Operations</h4>
-              <p className="text-[11px] text-zinc-500 leading-relaxed">Office space, staging nodes, and technical labs fully offset.</p>
-            </Reveal>
-
-          </div>
-        </div>
-      </section>
-
-      {/* 3. Comprehensive Green Cloud Services Section */}
-      <section id="green-services" className="py-24 bg-[#030303] border-t border-zinc-900 relative">
-        <div className="absolute top-1/3 right-10 w-[350px] h-[350px] bg-emerald-500/[0.01] blur-[150px] rounded-full pointer-events-none" />
-        <div className="max-w-7xl mx-auto w-full px-6 md:px-12 lg:px-16">
-          
-          <div className="text-center mb-16">
-            <Reveal>
-              <span className="text-[10px] font-mono tracking-widest text-emerald-500 uppercase block mb-3 font-bold">
-                // Green Operations
-              </span>
-              <h2 className="text-3xl md:text-5xl font-black tracking-tight text-white mb-4">
-                Comprehensive Green Cloud Services
-              </h2>
-              <div className="w-16 h-1 bg-emerald-500 mx-auto rounded-full" />
-            </Reveal>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
-            
-            {/* Left Image Card */}
-            <div className="lg:col-span-4 rounded-3xl overflow-hidden relative group min-h-[300px] lg:min-h-auto border border-zinc-900">
-              <div 
-                className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
-                style={{ backgroundImage: "url('/assets/sustainability/green_team_planting.png')" }}
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
-              <div className="absolute bottom-6 left-6 right-6">
-                <span className="text-[9px] font-mono tracking-widest text-emerald-400 uppercase font-bold block mb-1">Reforestation</span>
-                <h4 className="text-base font-bold text-white leading-tight">Client-Partner Tree Campaigns</h4>
-              </div>
-            </div>
-
-            {/* Middle Content Column */}
-            <div className="lg:col-span-4 flex flex-col justify-between bg-zinc-950/40 border border-zinc-900/60 rounded-3xl p-8 backdrop-blur-sm">
-              <div className="space-y-6">
-                <span className="text-emerald-500"><Leaf size={32} /></span>
-                <p className="text-sm text-zinc-400 leading-relaxed font-light">
-                  Devopstrio is primary in carbon-aware engineering. We believe modern development platforms must scale without harming the environment. We help establish server architectures configured to decrease absolute draw.
-                </p>
-              </div>
-
-              <div className="grid grid-cols-2 gap-4 mt-8">
-                <div className="bg-zinc-900/60 border border-zinc-850 rounded-2xl p-4">
-                  <span className="block text-2xl font-black text-white font-mono mb-1">8+ Years</span>
-                  <span className="block text-[9px] font-mono tracking-widest text-zinc-500 uppercase font-semibold">Of Green Engineering</span>
-                </div>
-                <div className="bg-zinc-900/60 border border-zinc-850 rounded-2xl p-4">
-                  <span className="block text-2xl font-black text-emerald-400 font-mono mb-1">100%</span>
-                  <span className="block text-[9px] font-mono tracking-widest text-zinc-500 uppercase font-semibold">Sustainable Ready</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Right Image Card */}
-            <div className="lg:col-span-4 rounded-3xl overflow-hidden relative group min-h-[300px] lg:min-h-auto border border-zinc-900">
-              <div 
-                className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
-                style={{ backgroundImage: "url('/assets/sustainability/greenhouse_smart_farming.png')" }}
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
-              <div className="absolute bottom-6 left-6 right-6">
-                <span className="text-[9px] font-mono tracking-widest text-emerald-400 uppercase font-bold block mb-1">AgriTech & Innovation</span>
-                <h4 className="text-base font-bold text-white leading-tight">Advanced Hydroponics R&D</h4>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      {/* 4. Explore Our Green Frameworks */}
-      <section className="py-24 bg-black relative border-t border-zinc-900">
-        <div className="max-w-7xl mx-auto w-full px-6 md:px-12 lg:px-16">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            
-            {/* Left Content */}
-            <div className="lg:col-span-5 space-y-6">
+        <div className="max-w-7xl mx-auto w-full px-6 md:px-12 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Left Content Column */}
+            <div className="flex flex-col justify-center">
               <Reveal>
-                <span className="text-[10px] font-mono tracking-widest text-emerald-500 uppercase block font-bold">// Frame Infrastructure</span>
-                <h2 className="text-3xl md:text-5xl font-black tracking-tight text-white mt-3 leading-tight">
-                  Explore Our Green Frameworks
-                </h2>
-                <p className="text-zinc-400 text-sm font-light leading-relaxed mt-4 max-w-md">
-                  We deploy specialized software architectural models that eliminate idle computing states and optimize dynamic auto-scaling schedules.
+                <h1 className="text-5xl md:text-7xl lg:text-[80px] font-bold leading-[1.1] tracking-tight text-white mb-6">
+                  We can save our <br />
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-orange-400">
+                    Environment.
+                  </span>
+                </h1>
+
+                <p className="text-zinc-400 text-sm md:text-base leading-relaxed max-w-lg mb-10 font-medium">
+                  Clean code and zero-emission digital infrastructure are paramount to a sustainable future.
+                  Devopstrio is committed to helping global enterprises architect hyper-efficient, carbon-conscious
+                  cloud ecosystems that optimize both hardware waste and environmental scale.
                 </p>
-                <div className="pt-6">
-                  <div className="w-12 h-12 rounded-full border border-emerald-500/30 flex items-center justify-center text-emerald-400 bg-emerald-500/5 hover:bg-emerald-500 hover:text-black transition-all duration-300 cursor-pointer">
-                    <ArrowRight size={20} />
+
+                {/* Two buttons */}
+                <div className="flex flex-wrap gap-4 mb-12">
+                  <button
+                    onClick={() => document.getElementById("audit-form")?.scrollIntoView({ behavior: "smooth" })}
+                    className="inline-flex items-center justify-center bg-orange-400 hover:bg-white text-black font-bold text-sm px-8 py-4 rounded-xl transition-all duration-300 shadow-[0_10px_20px_rgba(231,158,87,0.2)] hover:shadow-[0_12px_25px_rgba(255,255,255,0.3)] hover:-translate-y-0.5"
+                  >
+                    Request Audit
+                  </button>
+                  <button
+                    onClick={() => document.getElementById("csr-section")?.scrollIntoView({ behavior: "smooth" })}
+                    className="inline-flex items-center justify-center bg-white/5 hover:bg-white/10 border border-white/15 hover:border-white/30 text-white font-bold text-sm px-8 py-4 rounded-xl transition-all duration-300"
+                  >
+                    Our History
+                  </button>
+                </div>
+
+                {/* Coordinates bottom row */}
+                <div className="flex flex-wrap gap-8">
+                  <div className="flex items-center gap-2.5 text-[13px] text-zinc-400 font-medium">
+                    <Mail className="w-4 h-4 text-emerald-500" />
+                    <span>sustainability@devopstrio.com</span>
+                  </div>
+                  <div className="flex items-center gap-2.5 text-[13px] text-zinc-400 font-medium">
+                    <MapPin className="w-4 h-4 text-emerald-500" />
+                    <span>Silicon Valley, California</span>
                   </div>
                 </div>
               </Reveal>
             </div>
+            {/* Empty Right Column spacer */}
+            <div className="hidden lg:block"></div>
+          </div>
+        </div>
+      </section>
 
-            {/* Right Framework Timeline */}
-            <div className="lg:col-span-7 space-y-4">
-              
-              <Reveal delay={0.05} className="bg-zinc-950/40 border border-zinc-900 rounded-2xl p-6 flex gap-6 hover:border-emerald-500/20 transition-all">
-                <span className="w-10 h-10 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center font-mono font-bold flex-shrink-0 text-sm">
-                  01
-                </span>
-                <div>
-                  <h4 className="text-base font-bold text-white mb-2">Zero-Waste & Microservices</h4>
-                  <p className="text-xs text-zinc-450 leading-relaxed">
-                    Container resource allocation, consolidation of test runtimes, and auto-scaling to prevent over-provisioned active nodes.
-                  </p>
-                </div>
+      {/* SECTION 1: TOP FOUR STATS CARDS */}
+      <section className="py-16 relative z-10 border-b border-zinc-900/60 bg-black">
+        <div className="max-w-7xl mx-auto w-full px-6 md:px-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+            <Reveal delay={0.05} className="bg-zinc-950/60 border border-zinc-800/50 rounded-2xl p-8 backdrop-blur-md hover:-translate-y-1 hover:border-emerald-500/30 hover:shadow-[0_15px_35px_rgba(0,0,0,0.4)] transition-all duration-300 flex flex-col gap-3">
+              <h3 className="text-[42px] font-bold text-white leading-none">98%</h3>
+              <h5 className="text-[15px] font-bold text-emerald-500 leading-tight">Cloud Optimization Efficiency</h5>
+              <p className="text-[13px] text-zinc-500 leading-relaxed font-medium">Achieved across all cloud environments and enterprise workloads.</p>
+            </Reveal>
+
+            <Reveal delay={0.1} className="bg-gradient-to-br from-[#047857] to-[#064e3b] border border-emerald-500/30 shadow-[0_15px_30px_rgba(16,185,129,0.15)] rounded-2xl p-8 backdrop-blur-md hover:-translate-y-1 hover:border-emerald-400/60 hover:shadow-[0_18px_40px_rgba(16,185,129,0.25)] transition-all duration-300 flex flex-col gap-3">
+              <h3 className="text-[42px] font-bold text-white leading-none">565t+</h3>
+              <h5 className="text-[15px] font-bold text-white leading-tight">Annual CO₂ Saved</h5>
+              <p className="text-[13px] text-white/75 leading-relaxed font-medium">Prevented through serverless orchestration and green grid scheduling.</p>
+            </Reveal>
+
+            <Reveal delay={0.15} className="bg-zinc-950/60 border border-zinc-800/50 rounded-2xl p-8 backdrop-blur-md hover:-translate-y-1 hover:border-emerald-500/30 hover:shadow-[0_15px_35px_rgba(0,0,0,0.4)] transition-all duration-300 flex flex-col gap-3">
+              <h3 className="text-[42px] font-bold text-white leading-none">36k+</h3>
+              <h5 className="text-[15px] font-bold text-emerald-500 leading-tight">Trees Planted</h5>
+              <p className="text-[13px] text-zinc-500 leading-relaxed font-medium">Through our verified 'One Migration, One Tree' reforestation program.</p>
+            </Reveal>
+
+            <Reveal delay={0.2} className="bg-zinc-950/60 border border-zinc-800/50 rounded-2xl p-8 backdrop-blur-md hover:-translate-y-1 hover:border-emerald-500/30 hover:shadow-[0_15px_35px_rgba(0,0,0,0.4)] transition-all duration-300 flex flex-col gap-3">
+              <h3 className="text-[42px] font-bold text-white leading-none">100%</h3>
+              <h5 className="text-[15px] font-bold text-emerald-500 leading-tight">Offset Operations</h5>
+              <p className="text-[13px] text-zinc-500 leading-relaxed font-medium">Remote-first workforce and fully balanced operational footprints.</p>
+            </Reveal>
+
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 2: COMPREHENSIVE GREEN CLOUD SERVICES */}
+      <section id="csr-section" className="py-24 bg-[#030303] border-b border-zinc-900/60 relative">
+        <div className="max-w-7xl mx-auto w-full px-6 md:px-12 relative z-10">
+
+          <div className="flex flex-col items-center text-center mb-16">
+            <Reveal>
+              <div className="inline-flex items-center gap-2 bg-emerald-500/10 border border-emerald-500/20 text-emerald-500 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest mb-6">
+                <Leaf className="w-3.5 h-3.5 animate-[pulse_3s_infinite]" />
+                Why Choose Us
+              </div>
+              <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white">Comprehensive Green Cloud Services</h2>
+            </Reveal>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-[0.95fr_1.1fr_0.95fr] gap-10 items-center">
+            {/* Left Image */}
+            <Reveal delay={0.1} className="relative h-[380px] rounded-[120px_120px_24px_24px] border border-zinc-800 overflow-hidden shadow-[0_20px_40px_rgba(0,0,0,0.5)] group order-2 lg:order-1 max-w-[480px] lg:max-w-none mx-auto w-full">
+              <img
+                src="https://images.unsplash.com/photo-1573164713988-8665fc963095?q=80&w=1000&auto=format&fit=crop"
+                alt="Green cloud operations team"
+                className="w-full h-full object-cover transition-transform duration-[800ms] group-hover:scale-110"
+              />
+            </Reveal>
+
+            {/* Middle Content */}
+            <div className="flex flex-col gap-8 order-1 lg:order-2 text-center lg:text-left">
+              <Reveal delay={0.15}>
+                <p className="text-[15px] leading-relaxed text-zinc-400 font-medium m-0">
+                  Discover a wide range of high-efficiency green infrastructure designs engineered to reduce digital waste. We take pride in delivering innovative cloud orchestration solutions that help you achieve optimal scaling in your production environments, whether you are a growing startup or a global enterprise.
+                </p>
               </Reveal>
 
-              <Reveal delay={0.1} className="bg-zinc-950/40 border border-zinc-900 rounded-2xl p-6 flex gap-6 hover:border-emerald-500/20 transition-all">
-                <span className="w-10 h-10 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center font-mono font-bold flex-shrink-0 text-sm">
-                  02
-                </span>
-                <div>
-                  <h4 className="text-base font-bold text-white mb-2">Scheduling & Resource Allocation</h4>
-                  <p className="text-xs text-zinc-450 leading-relaxed">
-                    Intelligent workload queuing models scheduling large calculations and AI batch testing at times of local grid surpluses.
-                  </p>
-                </div>
-              </Reveal>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 max-w-[500px] lg:max-w-none mx-auto w-full">
+                <Reveal delay={0.2} className="rounded-2xl p-5 flex flex-col justify-center items-center text-center h-[160px] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_15px_30px_rgba(0,0,0,0.3)] bg-[#047857] text-white border border-emerald-500/20">
+                  <h4 className="text-2xl font-bold mb-2">5+ Years</h4>
+                  <p className="text-[11.5px] font-bold leading-snug opacity-85">Of Experience In Green DevOps</p>
+                </Reveal>
+                <Reveal delay={0.25} className="rounded-2xl p-5 flex flex-col justify-center items-center text-center h-[160px] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_15px_30px_rgba(0,0,0,0.3)] bg-amber-500 text-black border border-amber-500/20">
+                  <h4 className="text-2xl font-bold mb-2">100%</h4>
+                  <p className="text-[11.5px] font-bold leading-snug opacity-85">Carbon Neutral Workloads</p>
+                </Reveal>
+              </div>
+            </div>
 
-              <Reveal delay={0.15} className="bg-zinc-950/40 border border-zinc-900 rounded-2xl p-6 flex gap-6 hover:border-emerald-500/20 transition-all">
-                <span className="w-10 h-10 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center font-mono font-bold flex-shrink-0 text-sm">
-                  03
-                </span>
-                <div>
-                  <h4 className="text-base font-bold text-white mb-2">Carbon-Conscious Workloads</h4>
-                  <p className="text-xs text-zinc-450 leading-relaxed">
-                    Selecting low-intensity cloud regions dynamically, deploying execution pipelines where energy grids are powered by hydro/solar.
-                  </p>
-                </div>
-              </Reveal>
+            {/* Right Image */}
+            <Reveal delay={0.3} className="relative h-[380px] rounded-[24px_24px_120px_120px] border border-zinc-800 overflow-hidden shadow-[0_20px_40px_rgba(0,0,0,0.5)] group order-3 max-w-[480px] lg:max-w-none mx-auto w-full">
+              <img
+                src="https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?q=80&w=1000&auto=format&fit=crop"
+                alt="Sustainable software optimization"
+                className="w-full h-full object-cover transition-transform duration-[800ms] group-hover:scale-110"
+              />
+            </Reveal>
+          </div>
 
+        </div>
+      </section>
+
+      {/* SECTION 3: EXPLORE OUR ECO-FRAMEWORKS */}
+      <section className="py-24 bg-black border-b border-zinc-900/60 relative">
+        <div className="max-w-7xl mx-auto w-full px-6 md:px-12 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.15fr] gap-14 items-center">
+
+            {/* Left Box */}
+            <Reveal delay={0.1} className="relative bg-emerald-500/[0.03] border border-emerald-500/10 rounded-3xl p-10 overflow-hidden backdrop-blur-md transition-all duration-300 hover:border-emerald-500/30 hover:bg-emerald-500/5 group">
+              <div className="absolute top-[-150px] left-[-150px] w-[300px] h-[300px] bg-[radial-gradient(circle,rgba(16,185,129,0.12)_0%,transparent_70%)] blur-[40px] pointer-events-none" />
+
+              <div className="w-[60px] h-[60px] bg-emerald-500/10 border border-emerald-500/20 text-emerald-500 rounded-full flex items-center justify-center mb-8">
+                <Sparkles className="w-6 h-6" />
+              </div>
+
+              <h3 className="text-3xl font-bold leading-snug mb-4">Explore Our Green Frameworks</h3>
+              <p className="text-[14.5px] leading-relaxed text-zinc-400 font-medium mb-10">
+                Discover high-performance green architectures designed to optimize computing waste.
+              </p>
+
+              <div className="w-12 h-12 rounded-full bg-emerald-500 text-black flex items-center justify-center transition-all duration-300 cursor-pointer group-hover:scale-110 group-hover:bg-white">
+                <ArrowUpRight className="w-[18px] h-[18px] stroke-[2.5px]" />
+              </div>
+            </Reveal>
+
+            {/* Right List Box */}
+            <div className="flex flex-col gap-8">
+              {[
+                { num: "1", title: "Serverless & Microservices", desc: "Utilize event-driven models that automatically scale down to zero idle compute capacity." },
+                { num: "2", title: "Autoscaling & Resource Allocation", desc: "Dynamically size VM instances in real-time, eliminating redundant server runtime." },
+                { num: "3", title: "Carbon-Conscious Workloads", desc: "Intelligently schedule high-compute tasks to align with peak renewable energy availability." }
+              ].map((item, idx) => (
+                <Reveal delay={0.15 + (idx * 0.05)} key={idx} className="flex gap-6 items-start transition-all duration-300 group">
+                  <div className="w-12 h-12 rounded-full border border-zinc-700 flex items-center justify-center text-base font-bold text-zinc-300 shrink-0 transition-all duration-300 group-hover:border-emerald-500 group-hover:bg-emerald-500 group-hover:text-black group-hover:shadow-[0_0_15px_rgba(16,185,129,0.3)]">
+                    {item.num}
+                  </div>
+                  <div>
+                    <h4 className="text-lg font-bold text-white mb-2 transition-colors duration-300 group-hover:text-emerald-500">{item.title}</h4>
+                    <p className="text-sm leading-relaxed text-zinc-400 font-medium">{item.desc}</p>
+                  </div>
+                </Reveal>
+              ))}
             </div>
 
           </div>
         </div>
       </section>
 
-      {/* 5. Cloud Carbon Estimator Tool */}
-      <section id="carbon-estimator" className="py-24 bg-[#030303] border-t border-zinc-900 relative">
-        <div className="absolute bottom-0 left-10 w-[400px] h-[400px] bg-emerald-500/[0.015] blur-[160px] rounded-full pointer-events-none" />
-        <div className="max-w-7xl mx-auto w-full px-6 md:px-12 lg:px-16">
-          
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch">
-            
-            {/* Slider Configurator - Left */}
-            <div className="lg:col-span-7 bg-zinc-950/50 border border-zinc-900 rounded-3xl p-8 md:p-10 flex flex-col justify-between">
+      {/* INTERACTIVE CALCULATOR & SIMULATOR SECTION */}
+      <section className="py-24 bg-[#030303] border-b border-zinc-900/60 relative">
+        <div className="max-w-7xl mx-auto w-full px-6 md:px-12 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-[1.05fr_0.95fr] gap-12 items-stretch">
+
+            {/* Calculator Left: Slider controls */}
+            <Reveal delay={0.1} className="bg-zinc-950/60 border border-zinc-800 rounded-3xl p-8 md:p-12 backdrop-blur-md flex flex-col justify-between">
               <div>
-                <span className="text-[10px] font-mono tracking-widest text-emerald-500 uppercase font-bold block mb-3">// Interactive Tool</span>
-                <h3 className="text-2xl md:text-3xl font-black text-white mb-4">Cloud Carbon Estimator</h3>
-                <p className="text-xs text-zinc-400 font-light mb-10 leading-relaxed">
-                  Select your estimated monthly cloud infrastructure spending. Our algorithms will project potential carbon reduction equivalents achieved through Devopstrio consolidation frameworks.
+                <span className="text-[11px] uppercase tracking-[1.5px] text-orange-400 font-bold mb-3 block">Interactive Tool</span>
+                <h2 className="text-3xl md:text-[32px] font-bold mb-4">Cloud Carbon Estimator</h2>
+                <p className="text-sm leading-[1.6] text-zinc-400 font-medium mb-8">
+                  Adjust the slider below to estimate your organization's monthly hosting expenditure and preview the structural environmental advantages of eco-optimized infrastructure.
                 </p>
 
-                {/* Interactive Slider */}
-                <div className="space-y-4 mb-10">
-                  <div className="flex justify-between items-center">
-                    <span className="text-xs font-bold text-zinc-400 font-mono">Monthly Spend</span>
-                    <span className="text-xl font-mono font-black text-emerald-400 bg-emerald-500/5 border border-emerald-500/20 px-4 py-1.5 rounded-xl">
-                      ${cloudSpend.toLocaleString()}
-                    </span>
+                <div className="bg-white/5 border border-white/5 rounded-2xl p-6 mb-8">
+                  <div className="flex justify-between items-center font-bold text-[15px] mb-5">
+                    <span>Monthly Spend</span>
+                    <span className="text-[22px] font-bold text-emerald-500 drop-shadow-[0_0_10px_rgba(16,185,129,0.2)]">${cloudBudget.toLocaleString()}</span>
                   </div>
                   <input
                     type="range"
-                    min="5000"
-                    max="250000"
-                    step="5000"
-                    value={cloudSpend}
-                    onChange={(e) => setCloudSpend(Number(e.target.value))}
-                    className="w-full h-2 bg-zinc-900 rounded-lg appearance-none cursor-pointer accent-emerald-500 focus:outline-none"
+                    min="2000"
+                    max="200000"
+                    step="2000"
+                    value={cloudBudget}
+                    onChange={(e) => setCloudBudget(Number(e.target.value))}
+                    className="w-full appearance-none h-1.5 rounded bg-white/10 outline-none cursor-pointer mb-3 accent-emerald-500"
                   />
-                  <div className="flex justify-between text-[10px] text-zinc-650 font-mono">
-                    <span>$5,000</span>
-                    <span>$125,000</span>
-                    <span>$250,000</span>
+                  <div className="flex justify-between text-[11px] text-zinc-500 font-bold">
+                    <span>$2k</span>
+                    <span>$100k</span>
+                    <span>$200k+</span>
                   </div>
                 </div>
-              </div>
 
-              {/* Bullet Features */}
-              <div className="space-y-3 pt-6 border-t border-zinc-900">
-                <div className="flex items-center gap-2.5 text-xs text-zinc-400">
-                  <CheckCircle2 size={14} className="text-emerald-500" />
-                  <span>Reduce cloud billing costs by up to 30%</span>
-                </div>
-                <div className="flex items-center gap-2.5 text-xs text-zinc-400">
-                  <CheckCircle2 size={14} className="text-emerald-500" />
-                  <span>Generate boardroom-ready ESG carbon reports</span>
-                </div>
-                <div className="flex items-center gap-2.5 text-xs text-zinc-400">
-                  <CheckCircle2 size={14} className="text-emerald-500" />
-                  <span>Align infrastructure footprint with net-zero regulations</span>
-                </div>
+                <ul className="flex flex-col gap-3 m-0 p-0 list-none">
+                  {[
+                    "Up to 50% decrease in waste compute idle times",
+                    "Automatic scaling to zero during off-peak hours",
+                    "Migrated workloads scheduled for green energy grids"
+                  ].map((point, idx) => (
+                    <li key={idx} className="flex gap-3 items-center">
+                      <span className="w-5 h-5 rounded-full bg-emerald-500/10 text-emerald-500 flex items-center justify-center shrink-0">
+                        <Check className="w-3 h-3 stroke-[3.5px]" />
+                      </span>
+                      <p className="text-[13.5px] text-zinc-300 font-medium m-0">{point}</p>
+                    </li>
+                  ))}
+                </ul>
               </div>
-            </div>
+            </Reveal>
 
-            {/* Results Panel - Right */}
-            <div className="lg:col-span-5 bg-gradient-to-br from-zinc-950 to-emerald-950/20 border border-zinc-900 rounded-3xl p-8 md:p-10 flex flex-col justify-between relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-500/[0.02] blur-2xl rounded-full" />
-              
-              <div>
-                <span className="text-[10px] font-mono tracking-widest text-zinc-500 uppercase font-semibold block mb-4">Projected Annual Savings</span>
-                
-                {/* Main Trees Graphic */}
-                <div className="bg-zinc-900/60 border border-zinc-850 rounded-2xl p-6 flex items-start gap-4 mb-6">
-                  <span className="text-3xl text-emerald-500 pt-1"><Trees /></span>
+            {/* Calculator Right: Output Metrics */}
+            <Reveal delay={0.2} className="relative bg-zinc-950/40 border border-zinc-800 rounded-3xl p-8 md:p-12 flex flex-col justify-between overflow-hidden">
+              {/* Internal glow border effect */}
+              <div className="absolute inset-0 rounded-3xl border border-transparent [background:linear-gradient(135deg,rgba(16,185,129,0.15),transparent_70%)_border-box] [-webkit-mask:linear-gradient(#fff_0_0)_padding-box,linear-gradient(#fff_0_0)] [-webkit-mask-composite:xor] mask-composite-exclude pointer-events-none" />
+
+              <div className="absolute top-[-100px] right-[-100px] w-[280px] h-[280px] bg-[radial-gradient(circle,rgba(16,185,129,0.12)_0%,transparent_70%)] blur-[40px] pointer-events-none" />
+
+              <div className="relative z-10">
+                <h3 className="text-xl font-bold mb-6">Projected Annual Savings</h3>
+
+                <div className="bg-gradient-to-br from-[rgba(231,158,87,0.08)] to-[rgba(16,185,129,0.04)] border border-orange-400/15 rounded-2xl p-6 flex flex-col sm:flex-row gap-5 items-center sm:items-start mb-6 text-center sm:text-left">
+                  <div className="w-[54px] h-[54px] rounded-full bg-orange-400/10 text-orange-400 flex items-center justify-center text-2xl shrink-0">
+                    <Trees className="w-6 h-6" />
+                  </div>
                   <div>
-                    <div className="text-2xl font-black text-white font-mono">
-                      ~ {calculatedTrees.toLocaleString()} Trees
+                    <h4 className="text-2xl font-bold text-orange-400 mb-1 leading-tight">🌲 {treesPlanted.toLocaleString()} Trees</h4>
+                    <p className="text-xs leading-[1.4] text-zinc-400 font-medium m-0">Equivalent ecological absorption capacity over a 10-year period.</p>
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-8">
+                  <div className="bg-white/5 border border-white/5 rounded-2xl p-5">
+                    <div className="w-[38px] h-[38px] rounded-lg bg-emerald-500/10 text-emerald-500 flex items-center justify-center mb-3.5">
+                      <Zap className="w-5 h-5" />
                     </div>
-                    <p className="text-[11px] text-zinc-450 leading-relaxed font-light mt-1">
-                      Equivalent to the carbon absorption capacity of a full forest sanctuary saved per year.
-                    </p>
+                    <h5 className="text-xl font-bold mb-1">{co2Saved} Tons</h5>
+                    <p className="text-[11px] text-zinc-500 font-bold m-0 uppercase tracking-wide">Annual CO₂ Saved</p>
                   </div>
-                </div>
-
-                {/* Substats */}
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="bg-zinc-900/40 border border-zinc-900 rounded-2xl p-5">
-                    <span className="block text-2xl font-black text-emerald-400 font-mono mb-1">
-                      {calculatedCarbon} Tons
-                    </span>
-                    <span className="block text-[9px] font-mono tracking-widest text-zinc-500 uppercase">CO2 Emissions prevented</span>
-                  </div>
-                  <div className="bg-zinc-900/40 border border-zinc-900 rounded-2xl p-5">
-                    <span className="block text-2xl font-black text-white font-mono mb-1">
-                      {calculatedWaste} Lbs
-                    </span>
-                    <span className="block text-[9px] font-mono tracking-widest text-zinc-500 uppercase">Solid Waste avoided</span>
+                  <div className="bg-white/5 border border-white/5 rounded-2xl p-5">
+                    <div className="w-[38px] h-[38px] rounded-lg bg-[#522c72]/20 text-[#c23681] flex items-center justify-center mb-3.5">
+                      <TrendingDown className="w-5 h-5" />
+                    </div>
+                    <h5 className="text-xl font-bold mb-1">{coalPrevented.toLocaleString()} lbs</h5>
+                    <p className="text-[11px] text-zinc-500 font-bold m-0 uppercase tracking-wide">Coal Burn Prevented</p>
                   </div>
                 </div>
               </div>
 
-              <div className="text-[10px] text-zinc-600 leading-relaxed font-light mt-8 border-t border-zinc-900/80 pt-4">
-                * Estimations based on EPA greenhouse gas models mapped to aggregate cloud region grid factors. Actual client savings may vary depending on code compilation and load factors.
+              <div className="flex items-center gap-2.5 border-t border-white/10 pt-5 relative z-10">
+                <ShieldCheck className="text-zinc-600 w-4 h-4 shrink-0" />
+                <p className="text-[11px] text-zinc-500 font-medium m-0">Calculations adhere to GHG Protocols and certified carbon offsets.</p>
               </div>
-            </div>
+            </Reveal>
 
           </div>
         </div>
       </section>
 
-      {/* 6. Leaders in Zero-Waste Digital Solutions */}
-      <section className="py-24 bg-black relative border-t border-zinc-900">
-        <div className="max-w-7xl mx-auto w-full px-6 md:px-12 lg:px-16">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-16">
-            <div className="lg:col-span-6">
-              <Reveal>
-                <span className="text-[10px] font-mono tracking-widest text-emerald-500 uppercase block font-bold">// Global Impact</span>
-                <h2 className="text-3xl md:text-5xl font-black tracking-tight text-white mt-3 leading-tight">
-                  We're Leaders in Zero-Waste Digital Solutions
-                </h2>
-              </Reveal>
+      {/* SECTION 4: PRODUCT DETAILS (OUR OPERATIONAL IMPACT) */}
+      <section className="py-24 bg-black border-b border-zinc-900/60 relative">
+        <div className="max-w-7xl mx-auto w-full px-6 md:px-12 relative z-10">
+
+          <Reveal>
+            <div className="flex mb-3">
+              <span className="bg-orange-400/10 border border-orange-400/20 text-orange-400 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest">Our Sustainable Impact</span>
             </div>
-            <div className="lg:col-span-6">
-              <Reveal>
-                <p className="text-zinc-400 text-sm leading-relaxed font-light">
-                  Our developers construct application layers prioritizing low-power processor loops and lightweight memory management. We collaborate with reforestation programs to actively absorb existing greenhouse emissions.
+            <h2 className="text-3xl md:text-[38px] font-bold tracking-tight mb-12">We're Leaders in Zero-Waste Digital Solutions</h2>
+          </Reveal>
+
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.15fr] gap-14 items-center">
+            {/* Left Image Box */}
+            <Reveal delay={0.1} className="relative h-[420px] lg:h-[480px] rounded-3xl border border-zinc-800 overflow-hidden shadow-[0_20px_45px_rgba(0,0,0,0.5)] max-w-[600px] lg:max-w-none mx-auto w-full">
+              <img
+                src="https://images.unsplash.com/photo-1511497584788-876760111969?q=80&w=1000&auto=format&fit=crop"
+                alt="Zero waste technology forest"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute bottom-6 left-6 w-[54px] h-[54px] rounded-full bg-emerald-500 text-black flex items-center justify-center shadow-[0_10px_20px_rgba(16,185,129,0.3)]">
+                <Leaf className="w-[22px] h-[22px] animate-[leafPulse_3s_infinite_ease-in-out]" />
+              </div>
+            </Reveal>
+
+            {/* Right Info Box */}
+            <div className="flex flex-col items-start lg:items-start items-center text-center lg:text-left">
+              <Reveal delay={0.15}>
+                <p className="text-[15.5px] leading-[1.65] text-zinc-400 font-medium m-0 mb-7">
+                  We engineer hyper-efficient cloud ecosystems that merge peak system performance with minimal environmental impact. Our designs guarantee cost reduction alongside carbon compliance.
                 </p>
-                <button 
-                  onClick={() => {
-                    const auditEl = document.getElementById("request-audit");
-                    auditEl?.scrollIntoView({ behavior: "smooth", block: "start" });
-                  }}
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-emerald-500 hover:bg-emerald-600 text-black font-bold rounded-xl text-xs uppercase tracking-wider transition-all mt-6 cursor-pointer"
+
+                <button
+                  onClick={() => document.getElementById("audit-form")?.scrollIntoView({ behavior: "smooth" })}
+                  className="inline-flex items-center justify-center bg-orange-400 hover:bg-white text-black font-bold text-sm px-7 py-3.5 rounded-xl transition-all duration-300 shadow-[0_10px_20px_rgba(231,158,87,0.2)] hover:shadow-[0_12px_25px_rgba(255,255,255,0.3)] hover:-translate-y-0.5 mb-11"
                 >
                   Request Green Audit
                 </button>
               </Reveal>
-            </div>
-          </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
-            
-            {/* Image card on Left */}
-            <div className="lg:col-span-5 rounded-3xl overflow-hidden min-h-[300px] lg:min-h-auto relative border border-zinc-900 group">
-              <div 
-                className="absolute inset-0 bg-cover bg-center transition-transform duration-1000 group-hover:scale-105"
-                style={{ backgroundImage: "url('/assets/sustainability/reforestation_misty_woods.png')" }}
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent" />
-              <div className="absolute bottom-6 left-6 right-6">
-                <span className="text-[9px] font-mono tracking-widest text-emerald-400 uppercase font-bold block mb-1">Carbon Offsets</span>
-                <h4 className="text-base font-bold text-white leading-tight">Vetted Forestry Preservation</h4>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-7 w-full border-t border-zinc-800 pt-10 text-left">
+                {[
+                  { icon: <Cpu className="w-[18px] h-[18px]" />, color: "text-emerald-500", bg: "bg-emerald-500/10", title: "Green Compute Architecture", desc: "Deploy automated resource scaling that slashes monthly hosting expenses by up to 40%." },
+                  { icon: <TrendingDown className="w-[18px] h-[18px]" />, color: "text-rose-500", bg: "bg-rose-500/10", title: "GHG Certified Reporting", desc: "Generate production-grade greenhouse gas carbon emission reports for compliance audits." },
+                  { icon: <Trees className="w-[18px] h-[18px]" />, color: "text-emerald-500", bg: "bg-emerald-500/10", title: "Ecosystem Restoration", desc: "Every automated workload migration actively funds verified reforestation." },
+                  { icon: <Globe className="w-[18px] h-[18px]" />, color: "text-orange-400", bg: "bg-orange-400/10", title: "Sustainable Goals Alignment", desc: "Ensure your technology stack directly aligns with international ESG and SDG frameworks." }
+                ].map((item, idx) => (
+                  <Reveal delay={0.2 + (idx * 0.05)} key={idx} className="flex gap-4 items-start">
+                    <div className={`w-[42px] h-[42px] rounded-full flex items-center justify-center shrink-0 ${item.bg} ${item.color}`}>
+                      {item.icon}
+                    </div>
+                    <div>
+                      <h4 className="text-[14.5px] font-bold text-white mb-1.5">{item.title}</h4>
+                      <p className="text-[12.5px] leading-[1.5] text-zinc-400 font-medium m-0">{item.desc}</p>
+                    </div>
+                  </Reveal>
+                ))}
               </div>
             </div>
-
-            {/* Checklist items on Right */}
-            <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
-              
-              <div className="bg-zinc-950/40 border border-zinc-900 rounded-2xl p-6 hover:border-emerald-500/20 transition-all flex flex-col justify-between">
-                <span className="text-emerald-500 text-2xl mb-4"><Zap /></span>
-                <div>
-                  <h4 className="text-sm font-bold text-white mb-2">Green Computer Certification</h4>
-                  <p className="text-xs text-zinc-500 leading-relaxed font-light">All staging servers run on data centers certified by international green standards.</p>
-                </div>
-              </div>
-
-              <div className="bg-zinc-950/40 border border-zinc-900 rounded-2xl p-6 hover:border-emerald-500/20 transition-all flex flex-col justify-between">
-                <span className="text-emerald-500 text-2xl mb-4"><Shield /></span>
-                <div>
-                  <h4 className="text-sm font-bold text-white mb-2">ESG Certified Planning</h4>
-                  <p className="text-xs text-zinc-500 leading-relaxed font-light">Custom digital strategies developed in strict alignment with corporate ESG boards.</p>
-                </div>
-              </div>
-
-              <div className="bg-zinc-950/40 border border-zinc-900 rounded-2xl p-6 hover:border-emerald-500/20 transition-all flex flex-col justify-between">
-                <span className="text-emerald-500 text-2xl mb-4"><Sparkles /></span>
-                <div>
-                  <h4 className="text-sm font-bold text-white mb-2">Eco-Power Accelerators</h4>
-                  <p className="text-xs text-zinc-500 leading-relaxed font-light">Pre-built software packages designed to compress database reads and CPU draw.</p>
-                </div>
-              </div>
-
-              <div className="bg-zinc-950/40 border border-zinc-900 rounded-2xl p-6 hover:border-emerald-500/20 transition-all flex flex-col justify-between">
-                <span className="text-emerald-500 text-2xl mb-4"><Globe /></span>
-                <div>
-                  <h4 className="text-sm font-bold text-white mb-2">Renewable Grid Alignment</h4>
-                  <p className="text-xs text-zinc-500 leading-relaxed font-light">Workloads routing selectively to server farms operating on 100% solar or hydro grids.</p>
-                </div>
-              </div>
-
-            </div>
-
           </div>
         </div>
       </section>
 
-      {/* 7. Frequently Answered Questions */}
-      <section className="py-24 bg-[#030303] relative border-t border-zinc-900">
-        <div className="max-w-4xl mx-auto w-full px-6 md:px-12 lg:px-16">
-          
-          <div className="text-center mb-16">
+      {/* SECTION 5: FAQ SECTION */}
+      <section className="py-24 bg-[#030303] border-b border-zinc-900/60 relative">
+        <div className="max-w-7xl mx-auto w-full px-6 md:px-12 relative z-10">
+
+          <div className="flex flex-col items-center text-center mb-14">
             <Reveal>
-              <span className="text-[10px] font-mono tracking-widest text-emerald-500 uppercase block font-bold">// FAQ</span>
-              <h2 className="text-3xl md:text-5xl font-black tracking-tight text-white mt-3">
-                Frequently Answered Questions
-              </h2>
+              <span className="inline-flex bg-emerald-500/10 border border-emerald-500/20 text-emerald-500 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest mb-3">FAQ</span>
+              <h2 className="text-3xl md:text-[38px] font-bold tracking-tight text-white">Frequently Answered Questions</h2>
             </Reveal>
           </div>
 
-          <div className="space-y-4">
-            {faqData.map((faq, index) => (
-              <Reveal key={index} delay={index * 0.05}>
-                <div className="bg-zinc-950/40 border border-zinc-900 hover:border-zinc-800 rounded-2xl overflow-hidden transition-all duration-300">
-                  <button
-                    onClick={() => setActiveFaq(activeFaq === index ? null : index)}
-                    className="w-full text-left px-6 py-5 flex items-center justify-between text-white font-bold text-sm"
-                  >
-                    <span>{faq.q}</span>
-                    <span className="text-zinc-500">
-                      {activeFaq === index ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
-                    </span>
-                  </button>
-                  {activeFaq === index && (
-                    <div className="px-6 pb-6 text-xs text-zinc-450 leading-relaxed font-light border-t border-zinc-900/40 pt-4">
-                      {faq.a}
+          <div className="max-w-[800px] mx-auto flex flex-col gap-4">
+            {faqData.map((faq, index) => {
+              const isOpen = openFaq === index;
+              return (
+                <Reveal delay={0.1 + (index * 0.05)} key={index}>
+                  <div className={`bg-zinc-950/60 border ${isOpen ? 'border-emerald-500/30 shadow-[0_10px_25px_rgba(0,0,0,0.3)]' : 'border-zinc-800'} rounded-2xl overflow-hidden transition-all duration-300`}>
+                    <button
+                      className="w-full bg-transparent border-none px-8 py-6 flex justify-between items-center text-white text-base md:text-[16px] font-bold text-left cursor-pointer transition-all duration-300"
+                      onClick={() => toggleFaq(index)}
+                    >
+                      <span className={isOpen ? "text-emerald-500" : ""}>{faq.q}</span>
+                      <ChevronDown className={`w-[18px] h-[18px] shrink-0 ml-4 transition-transform duration-300 ${isOpen ? "rotate-180 text-emerald-500" : "text-zinc-500"}`} />
+                    </button>
+                    <div className={`grid transition-[grid-template-rows] duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] overflow-hidden ${isOpen ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'}`}>
+                      <div className="min-h-0">
+                        <p className="px-8 pb-6 m-0 text-[14.5px] leading-[1.6] text-zinc-400 font-medium">
+                          {faq.a}
+                        </p>
+                      </div>
                     </div>
-                  )}
-                </div>
-              </Reveal>
-            ))}
+                  </div>
+                </Reveal>
+              );
+            })}
           </div>
-
         </div>
       </section>
 
-      {/* 8. Request a Free Green Cloud Audit Form */}
-      <section id="request-audit" className="py-24 bg-black relative border-t border-zinc-900">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-emerald-500/[0.01] blur-[150px] rounded-full pointer-events-none" />
-        <div className="max-w-7xl mx-auto w-full px-6 md:px-12 lg:px-16 relative z-10">
-          
-          <div className="bg-zinc-950/40 border border-zinc-900 rounded-3xl p-8 md:p-12">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-              
-              {/* Form Info - Left */}
-              <div className="lg:col-span-5 space-y-6">
-                <span className="text-[10px] font-mono tracking-widest text-emerald-500 uppercase font-bold block mb-1">// Contact Us</span>
-                <h3 className="text-2xl md:text-3xl font-black text-white leading-tight">Request a Free Green Cloud Audit</h3>
-                <p className="text-xs text-zinc-400 leading-relaxed font-light">
-                  Discover how much your company can save. Our specialists analyze your active staging configurations and outline clear sustainability optimizations.
+      {/* AUDIT CALL TO ACTION FORM */}
+      <section id="audit-form" className="py-20 lg:py-[120px] bg-black relative">
+        <div className="max-w-7xl mx-auto w-full px-6 md:px-12 relative z-10">
+
+          <Reveal>
+            <div className="relative bg-zinc-950/60 border border-zinc-800 rounded-[28px] p-10 md:p-[60px] grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-[60px] items-center backdrop-blur-md overflow-hidden">
+              {/* Inner glow border */}
+              <div className="absolute inset-0 rounded-[28px] border border-transparent [background:linear-gradient(135deg,rgba(16,185,129,0.15),transparent_70%)_border-box] [-webkit-mask:linear-gradient(#fff_0_0)_padding-box,linear-gradient(#fff_0_0)] [-webkit-mask-composite:xor] mask-composite-exclude pointer-events-none" />
+
+              <div className="relative z-10">
+                <h2 className="text-[28px] md:text-[36px] font-bold leading-tight mb-5 tracking-tight">Request a Free Green Cloud Audit</h2>
+                <p className="text-[15px] leading-[1.6] text-zinc-400 font-medium mb-8">
+                  Ready to cut down cloud waste and establish carbon transparency? Our certified systems engineers will run a comprehensive diagnostic on your hosting structure and provide a thorough optimization plan.
                 </p>
-                
-                <div className="space-y-3 pt-4 border-t border-zinc-900">
-                  <div className="flex items-center gap-2 text-xs text-zinc-500">
-                    <CheckCircle2 size={13} className="text-emerald-500" />
-                    <span>Analysis ready in 3 business days</span>
+                <div className="flex flex-col gap-4">
+                  <div className="flex items-center gap-3">
+                    <span className="w-5 h-5 rounded-full bg-emerald-500/15 text-emerald-500 flex items-center justify-center shrink-0">
+                      <Check className="w-3 h-3 stroke-[3.5px]" />
+                    </span>
+                    <span className="text-[14.5px] font-bold text-zinc-200">Analyze idle virtual machine rates</span>
                   </div>
-                  <div className="flex items-center gap-2 text-xs text-zinc-500">
-                    <CheckCircle2 size={13} className="text-emerald-500" />
-                    <span>Detailed projected carbon savings report</span>
+                  <div className="flex items-center gap-3">
+                    <span className="w-5 h-5 rounded-full bg-emerald-500/15 text-emerald-500 flex items-center justify-center shrink-0">
+                      <Check className="w-3 h-3 stroke-[3.5px]" />
+                    </span>
+                    <span className="text-[14.5px] font-bold text-zinc-200">Calculate projected carbon tonnage cuts</span>
                   </div>
                 </div>
               </div>
 
-              {/* Form Input Fields - Right */}
-              <div className="lg:col-span-7">
-                {!formSubmitted ? (
-                  <form onSubmit={handleFormSubmit} className="space-y-4">
-                    <div>
-                      <label className="block text-[10px] font-mono tracking-wider text-zinc-450 uppercase mb-2">Your Name</label>
+              <div className="w-full relative z-10">
+                {!auditSubmitted ? (
+                  <form onSubmit={handleAuditSubmit} className="flex flex-col gap-5">
+                    <div className="relative w-full group">
+                      <User className="absolute left-5 top-1/2 -translate-y-1/2 w-[18px] h-[18px] text-zinc-500 transition-colors group-focus-within:text-emerald-500" />
                       <input
                         type="text"
+                        placeholder="Your Name"
                         required
-                        placeholder="e.g. Sarah Jenkins"
-                        value={formData.name}
-                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                        className="w-full bg-zinc-900/30 border border-zinc-850 focus:border-emerald-500 rounded-xl px-4 py-3 text-xs text-white placeholder-zinc-650 focus:outline-none transition-colors"
+                        value={auditData.name}
+                        onChange={(e) => setAuditData({ ...auditData, name: e.target.value })}
+                        className="w-full bg-white/5 border border-white/10 rounded-xl py-4 pl-[54px] pr-4 text-sm text-white placeholder:text-zinc-500 outline-none transition-all focus:border-emerald-500/50 focus:bg-white/10 focus:shadow-[0_0_15px_rgba(16,185,129,0.15)]"
                       />
                     </div>
-                    <div>
-                      <label className="block text-[10px] font-mono tracking-wider text-zinc-450 uppercase mb-2">Corporate Email</label>
+
+                    <div className="relative w-full group">
+                      <Mail className="absolute left-5 top-1/2 -translate-y-1/2 w-[18px] h-[18px] text-zinc-500 transition-colors group-focus-within:text-emerald-500" />
                       <input
                         type="email"
+                        placeholder="Corporate Email"
                         required
-                        placeholder="sarah@enterprise.com"
-                        value={formData.email}
-                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        className="w-full bg-zinc-900/30 border border-zinc-850 focus:border-emerald-500 rounded-xl px-4 py-3 text-xs text-white placeholder-zinc-650 focus:outline-none transition-colors"
+                        value={auditData.email}
+                        onChange={(e) => setAuditData({ ...auditData, email: e.target.value })}
+                        className="w-full bg-white/5 border border-white/10 rounded-xl py-4 pl-[54px] pr-4 text-sm text-white placeholder:text-zinc-500 outline-none transition-all focus:border-emerald-500/50 focus:bg-white/10 focus:shadow-[0_0_15px_rgba(16,185,129,0.15)]"
                       />
                     </div>
-                    <div>
-                      <label className="block text-[10px] font-mono tracking-wider text-zinc-450 uppercase mb-2">Company Website</label>
+
+                    <div className="relative w-full group">
+                      <Building className="absolute left-5 top-1/2 -translate-y-1/2 w-[18px] h-[18px] text-zinc-500 transition-colors group-focus-within:text-emerald-500" />
                       <input
-                        type="url"
-                        required
-                        placeholder="https://enterprise.com"
-                        value={formData.website}
-                        onChange={(e) => setFormData({ ...formData, website: e.target.value })}
-                        className="w-full bg-zinc-900/30 border border-zinc-850 focus:border-emerald-500 rounded-xl px-4 py-3 text-xs text-white placeholder-zinc-650 focus:outline-none transition-colors"
+                        type="text"
+                        placeholder="Company Name"
+                        value={auditData.company}
+                        onChange={(e) => setAuditData({ ...auditData, company: e.target.value })}
+                        className="w-full bg-white/5 border border-white/10 rounded-xl py-4 pl-[54px] pr-4 text-sm text-white placeholder:text-zinc-500 outline-none transition-all focus:border-emerald-500/50 focus:bg-white/10 focus:shadow-[0_0_15px_rgba(16,185,129,0.15)]"
                       />
                     </div>
-                    
+
                     <button
                       type="submit"
-                      className="w-full inline-flex items-center justify-center gap-2 px-6 py-4 bg-emerald-500 hover:bg-emerald-600 text-black font-bold rounded-xl text-xs uppercase tracking-wider transition-all duration-300 hover:scale-[1.01] cursor-pointer"
+                      className="w-full bg-gradient-to-r from-[#064e3b] via-[#047857] to-[#10b981] border-none text-[15px] font-bold text-black py-[18px] rounded-xl flex items-center justify-center gap-3 transition-all duration-300 shadow-[0_10px_20px_rgba(16,185,129,0.2)] hover:-translate-y-0.5 hover:shadow-[0_12px_25px_rgba(16,185,129,0.35)] hover:bg-white group"
                     >
-                      Submit Request <ArrowRight size={13} />
+                      <span className="group-hover:text-black">Submit Request</span>
+                      <ArrowUpRight className="w-[18px] h-[18px] transition-transform duration-300 group-hover:translate-x-1 group-hover:text-black" />
                     </button>
                   </form>
                 ) : (
-                  <div className="text-center py-8 flex flex-col items-center justify-center gap-4 bg-zinc-900/20 border border-zinc-900 rounded-2xl p-6">
-                    <div className="w-16 h-16 rounded-full bg-emerald-950/40 border border-emerald-500/20 flex items-center justify-center text-emerald-500 animate-bounce">
-                      <Check size={28} className="stroke-[3]" />
+                  <div className="text-center py-10 px-5 bg-white/[0.01] border border-dashed border-white/10 rounded-[20px] flex flex-col items-center animate-[fadeIn_0.5s_ease-out]">
+                    <div className="w-[60px] h-[60px] rounded-full bg-emerald-500/15 text-emerald-500 flex items-center justify-center text-[26px] mb-6 animate-[bounce_2s_infinite]">
+                      <Check className="w-8 h-8 stroke-[3]" />
                     </div>
-                    <h4 className="text-lg font-bold text-white">Audit Request Received!</h4>
-                    <p className="text-zinc-450 text-xs font-light max-w-sm">
-                      Thank you, <span className="font-semibold text-white">{formData.name}</span>. Our sustainability engineers will inspect your website framework and connect with you via <span className="font-semibold text-white">{formData.email}</span> within 72 hours.
+                    <h3 className="text-2xl font-bold mb-3 text-white">Audit Requested!</h3>
+                    <p className="text-[14px] leading-[1.6] text-zinc-400 font-medium max-w-[380px] m-0">
+                      Thank you, <span className="font-bold text-white">{auditData.name}</span>. Our eco-infrastructure experts will analyze your request and reach out within 24 business hours to schedule your green cloud evaluation.
                     </p>
                   </div>
                 )}
               </div>
-
             </div>
-          </div>
+          </Reveal>
 
         </div>
       </section>
 
-      {/* About CTA standard section */}
+      {/* Global CTA Section matching the rest of the site */}
       <AboutCTA />
+
     </main>
   );
 }

@@ -66,11 +66,11 @@ export function PartnershipBenefits() {
               className="bg-zinc-950/35 border border-zinc-900/60 rounded-3xl p-8 hover:border-rose-500/20 transition-all duration-300 relative group overflow-hidden"
             >
               <div className="absolute top-0 right-0 w-[150px] h-[150px] bg-rose-600/[0.01] blur-[60px] rounded-full pointer-events-none" />
-              <div className="w-12 h-12 rounded-2xl bg-zinc-900 border border-zinc-850 flex items-center justify-center mb-6 group-hover:bg-rose-950/20 transition-all duration-300">
+              <div className="flex items-center justify-center w-fit mb-6 text-rose-500">
                 {benefit.icon}
               </div>
-              <h3 className="text-xs font-bold text-white uppercase tracking-wider mb-3.5">{benefit.title}</h3>
-              <p className="text-[11px] text-zinc-400 font-semibold leading-relaxed">
+              <h3 className="text-sm md:text-base font-bold text-white uppercase tracking-wider mb-3.5">{benefit.title}</h3>
+              <p className="text-sm text-zinc-300 font-medium leading-relaxed">
                 {benefit.desc}
               </p>
             </div>

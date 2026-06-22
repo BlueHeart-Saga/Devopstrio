@@ -278,7 +278,7 @@ export default function HiringAdminPage() {
           {!isAdding && !editingId && (
             <button
               onClick={handleAddNew}
-              className="flex items-center gap-2 bg-rose-600 hover:bg-rose-500 text-white px-6 py-3 rounded-lg font-bold text-sm tracking-wide transition-colors"
+              className="gap-2 inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white transition-all duration-300 hover:shadow-[0_0_25px_rgba(225,29,72,0.35)] hover:-translate-y-0.5"
             >
               <Plus size={16} /> Add New Poster
             </button>
@@ -315,7 +315,7 @@ export default function HiringAdminPage() {
                         <div
                           key={idx}
                           onClick={() => handleSelectLocation(loc)}
-                          className="px-4 py-3 hover:bg-zinc-900 cursor-pointer text-sm text-zinc-300 border-b border-zinc-900 last:border-b-0"
+                          className="inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase border border-zinc-850 hover:border-zinc-750 bg-zinc-950/60 hover:bg-zinc-900 text-white transition-all duration-300 hover:-translate-y-0.5"
                         >
                           {loc}
                         </div>

@@ -83,7 +83,7 @@ export function OpenPositions({ onApplyClick }: OpenPositionsProps) {
 
                   <button
                     onClick={() => onApplyClick(job)}
-                    className="w-full inline-flex items-center justify-between border border-zinc-900 group-hover:border-rose-500/20 bg-zinc-950/40 rounded-xl px-4 py-3 text-[10px] font-bold uppercase tracking-wider text-zinc-350 group-hover:text-white transition-colors"
+                    className="w-full inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase border border-zinc-850 hover:border-zinc-750 bg-zinc-950/60 hover:bg-zinc-900 text-white transition-all duration-300 hover:-translate-y-0.5"
                   >
                     <span>View Position &rarr;</span>
                     <span className="w-5 h-5 rounded-full bg-zinc-900 group-hover:bg-rose-950/20 flex items-center justify-center text-zinc-500 group-hover:text-rose-500 transition-colors">

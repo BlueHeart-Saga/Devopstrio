@@ -28,6 +28,12 @@ export const cloudService: ServiceCategory = {
       items: ["Live VM migrations using AWS MGN", "Database replication with active sync using Azure DMS", "Automated cutover playbooks minimizing disruptions"]
     },
     {
+      slug: "cloud-architecture",
+      title: "Cloud Architecture",
+      description: "Design and blueprint enterprise-grade, highly available cloud environments.",
+      items: ["High-availability disaster recovery designs", "Scalable microservices topologies", "Zero-trust network blueprints"]
+    },
+    {
       slug: "aws-services",
       title: "AWS Services",
       description: "Architecting and managing scalable, secure infrastructures on Amazon Web Services.",

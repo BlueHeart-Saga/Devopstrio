@@ -1,13 +1,28 @@
-"use client";
 
 import React from "react";
+import { Metadata } from "next";
+import { BreadcrumbSchema } from "@/components/seo/Schemas";
 import { Testimonials } from "@/sections/home/Testimonials";
 import { AboutCTA } from "@/sections/about/AboutCTA";
 import { Reveal } from "@/components/ui/Reveal";
 
+
+
+export const metadata: Metadata = {
+  title: "Client Testimonials & Success",
+  description: "Read authentic feedback and success stories from our enterprise engineering clients.",
+  alternates: {
+    canonical: "/about/testimonials"
+  }
+};
 export default function TestimonialsPage() {
   return (
     <main className="min-h-screen bg-black text-white pt-16 font-sans">
+      <BreadcrumbSchema items={[
+        { name: "Home", item: "/" },
+        { name: "About Us", item: "/about/company-overview" },
+        { name: "Client Testimonials & Success", item: "/about/testimonials" }
+      ]} />
       {/* Page Header */}
       <section className="pt-20 pb-4 text-center relative bg-[#030303]">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(244,63,94,0.05),transparent_50%)] pointer-events-none" />

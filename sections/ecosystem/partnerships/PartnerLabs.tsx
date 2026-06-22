@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Reveal } from "@/components/ui/Reveal";
-import { ArrowRight, Cpu, Cloud, Database } from "lucide-react";
+import { ArrowUpRight, Cpu, Cloud, Database } from "lucide-react";
 import Link from "next/link";
 
 interface Lab {
@@ -65,17 +65,17 @@ export function PartnerLabs() {
             >
               <div>
                 <div className="flex items-center justify-between mb-6 border-b border-zinc-900/60 pb-4">
-                  <div className="w-10 h-10 rounded-xl bg-zinc-900 border border-zinc-850 flex items-center justify-center text-rose-500 group-hover:bg-rose-950/20 transition-all duration-300">
+                  <div className="text-rose-500 flex items-center justify-center">
                     {lab.icon}
                   </div>
                   <img src={lab.logo} alt={lab.partner} className="h-5 w-auto object-contain" />
                 </div>
 
-                <h3 className="text-xs font-bold text-white uppercase tracking-wider mb-2">{lab.title}</h3>
-                <span className="block text-[9px] font-mono text-zinc-500 uppercase tracking-widest mb-4">
+                <h3 className="text-sm md:text-base font-bold text-white uppercase tracking-wider mb-2">{lab.title}</h3>
+                <span className="block text-xs font-mono text-zinc-450 uppercase tracking-widest mb-4">
                   Powered by {lab.partner}
                 </span>
-                <p className="text-[11px] text-zinc-400 font-semibold leading-relaxed">
+                <p className="text-sm text-zinc-300 font-medium leading-relaxed">
                   {lab.desc}
                 </p>
               </div>
@@ -83,10 +83,10 @@ export function PartnerLabs() {
               <div className="mt-8 pt-4 border-t border-zinc-900/60 flex items-center justify-between">
                 <Link
                   href={lab.url}
-                  className="inline-flex items-center gap-2 text-[10px] font-mono font-bold uppercase tracking-wider text-rose-500 group-hover:text-rose-400 transition-colors"
+                  className="inline-flex items-center gap-2 text-xs font-mono font-semibold uppercase tracking-wider text-rose-500 group-hover:text-rose-400 transition-colors"
                 >
                   Visit Lab
-                  <ArrowRight size={12} className="group-hover:translate-x-1 transition-transform" />
+                  <ArrowUpRight size={12} className="group-hover:translate-x-1 transition-transform" />
                 </Link>
               </div>
             </div>

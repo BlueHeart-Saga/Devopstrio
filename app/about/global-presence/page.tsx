@@ -1,14 +1,29 @@
-"use client";
 
 import React from "react";
+import { Metadata } from "next";
+import { BreadcrumbSchema } from "@/components/seo/Schemas";
 import { GlobalPresence } from "@/sections/home/GlobalPresence";
 import { GlobalLocations } from "@/sections/home/GlobalLocations";
 import { AboutCTA } from "@/sections/about/AboutCTA";
 import { Reveal } from "@/components/ui/Reveal";
 
+
+
+export const metadata: Metadata = {
+  title: "Global Presence",
+  description: "Find our international developer hubs and sales offices across the globe.",
+  alternates: {
+    canonical: "/about/global-presence"
+  }
+};
 export default function GlobalPresencePage() {
   return (
     <main className="min-h-screen bg-black text-white pt-16 font-sans">
+      <BreadcrumbSchema items={[
+        { name: "Home", item: "/" },
+        { name: "About Us", item: "/about/company-overview" },
+        { name: "Global Presence", item: "/about/global-presence" }
+      ]} />
       {/* Page Header */}
       <section className="pt-20 pb-12 text-center relative bg-[#030303]">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(244,63,94,0.05),transparent_50%)] pointer-events-none" />

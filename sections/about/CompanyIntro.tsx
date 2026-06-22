@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Reveal } from "@/components/ui/Reveal";
-import { ArrowUpRight, ArrowRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 
 export function CompanyIntro() {
   return (
@@ -83,9 +83,9 @@ export function CompanyIntro() {
                   <div className="pt-2">
                     <a
                       href="/services"
-                      className="inline-flex items-center gap-2 bg-rose-600 hover:bg-rose-700 text-white px-6 py-3 rounded text-xs md:text-sm font-medium transition-colors shadow-sm"
+                      className="gap-2 inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white transition-all duration-300 hover:shadow-[0_0_25px_rgba(225,29,72,0.35)] hover:-translate-y-0.5"
                     >
-                      Explore Our Services <ArrowRight className="w-4 h-4" />
+                      Explore Our Services <ArrowUpRight className="w-4 h-4" />
                     </a>
                   </div>
                 </div>

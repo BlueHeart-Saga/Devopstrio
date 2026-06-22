@@ -5,6 +5,9 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Privacy Policy | Devopstrio",
   description: "Devopstrio privacy policy outlines our data collection, processing, and protection practices for enterprise cloud and AI services.",
+  alternates: {
+    canonical: "/privacy-policy"
+  }
 };
 
 export default function PrivacyPolicyPage() {

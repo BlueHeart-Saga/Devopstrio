@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { ArrowLeft, ArrowRight, Star, ArrowRight as ArrowRightIcon } from "lucide-react";
+import { ArrowLeft, ArrowUpRight, Star, ArrowUpRight as ArrowUpRightIcon } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
 import { employeeStories } from "./careersData";
 
@@ -38,7 +38,7 @@ export function EmployeeStories() {
       <div className="absolute bottom-[10%] right-0 w-[500px] h-[500px] bg-[radial-gradient(circle_at_center,rgba(244,63,94,0.02),transparent_70%)] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
-        
+
         {/* ── BLOCK 1: Previous Employee Stories Grid ────────────────────── */}
         <Reveal>
           <div className="text-center max-w-3xl mx-auto mb-16">
@@ -65,7 +65,7 @@ export function EmployeeStories() {
                   "
                 </span>
 
-                <p className="text-[12px] text-white leading-relaxed font-semibold mb-8 italic flex-1">
+                <p className="text-sm text-zinc-200 leading-relaxed font-medium mb-8 italic flex-1">
                   {story.story}
                 </p>
 
@@ -75,8 +75,8 @@ export function EmployeeStories() {
                     {story.name.charAt(0)}
                   </div>
                   <div>
-                    <span className="text-xs font-bold text-white block">{story.name}</span>
-                    <span className="text-[10px] text-white font-semibold block mt-0.5">{story.role}</span>
+                    <span className="text-sm font-bold text-white block">{story.name}</span>
+                    <span className="text-xs text-zinc-400 font-medium block mt-0.5">{story.role}</span>
                   </div>
                   {/* Accent bar */}
                   <div className="ml-auto h-[2px] w-8 bg-gradient-to-r from-rose-500/60 to-transparent rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -88,7 +88,7 @@ export function EmployeeStories() {
 
         {/* ── BLOCK 2: What Our Team Is Saying (Reviews) ─────────────────── */}
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_2.5fr] gap-10 lg:gap-14 items-start mb-32 border-t border-zinc-900/60 pt-24">
-          
+
           {/* Left Column: Heading and slider buttons */}
           <div className="flex flex-col text-left">
             <Reveal>
@@ -99,7 +99,7 @@ export function EmployeeStories() {
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-tight mb-8">
                 What Our Team<br />Is Saying
               </h2>
-              
+
               {/* Pagination controls */}
               <div className="flex items-center gap-4">
                 <button className="w-10 h-10 rounded-full border border-white/10 hover:border-rose-500/40 flex items-center justify-center text-white hover:text-rose-400 bg-zinc-950/40 hover:bg-rose-950/10 transition-all duration-300">
@@ -110,7 +110,7 @@ export function EmployeeStories() {
                   <div className="absolute top-0 left-0 w-1/3 h-full bg-rose-500 rounded-full" />
                 </div>
                 <button className="w-10 h-10 rounded-full border border-white/10 hover:border-rose-500/40 flex items-center justify-center text-white hover:text-rose-400 bg-zinc-950/40 hover:bg-rose-950/10 transition-all duration-300">
-                  <ArrowRight size={16} />
+                  <ArrowUpRight size={16} />
                 </button>
               </div>
             </Reveal>
@@ -123,10 +123,10 @@ export function EmployeeStories() {
                 <div className="flex flex-col gap-6 text-left group">
                   {/* Quote bubble card */}
                   <div className="relative bg-[#0d0d0d] border border-white/[0.06] hover:border-rose-500/20 p-6 md:p-8 rounded-[24px] shadow-xl transition-all duration-300 flex flex-col justify-between min-h-[160px] group-hover:-translate-y-1">
-                    <p className="text-white text-xs md:text-sm font-semibold italic leading-relaxed mb-6">
+                    <p className="text-zinc-200 text-sm md:text-base font-medium italic leading-relaxed mb-6">
                       "{t.quote}"
                     </p>
-                    
+
                     {/* Star rating */}
                     <div className="flex gap-1 text-amber-500">
                       {Array.from({ length: 5 }).map((_, i) => (
@@ -137,14 +137,14 @@ export function EmployeeStories() {
 
                   {/* Profile details under the card */}
                   <div className="flex items-center gap-3.5 px-2">
-                    <div className={`w-9 h-9 rounded-full bg-gradient-to-tr ${t.color} flex items-center justify-center text-[10px] font-bold text-white shrink-0 shadow-lg ring-1 ring-white/10`}>
+                    <div className={`w-9 h-9 rounded-full bg-gradient-to-tr ${t.color} flex items-center justify-center text-xs font-bold text-white shrink-0 shadow-lg ring-1 ring-white/10`}>
                       {t.initials}
                     </div>
                     <div>
-                      <span className="text-xs font-bold text-white block">
+                      <span className="text-sm font-bold text-white block">
                         {t.name}
                       </span>
-                      <span className="text-[10px] text-zinc-450 font-semibold block mt-0.5">
+                      <span className="text-xs text-zinc-400 font-medium block mt-0.5">
                         {t.role}
                       </span>
                     </div>
@@ -163,36 +163,50 @@ export function EmployeeStories() {
             <div className="absolute left-[10%] top-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-[radial-gradient(circle_at_center,rgba(244,63,94,0.06),transparent_70%)] pointer-events-none -z-10" />
             <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-rose-500 to-rose-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-t-[32px]" />
 
-            {/* Left Side: Large Portrait Image */}
-            <div className="relative w-64 md:w-80 aspect-[4/5] rounded-[24px] overflow-hidden border border-white/5 shrink-0 bg-zinc-950">
+            {/* Left Side: Large Portrait Image with custom asymmetrical corners */}
+            <div className="relative w-64 md:w-80 aspect-[4/5] rounded-tl-[3rem] rounded-br-[3rem] rounded-tr-xl rounded-bl-xl overflow-hidden border border-white/5 shrink-0 bg-zinc-950">
               <img
-                src="/assets/About-page/careers_girl.png"
+                src="/assets/careers/CTA.png"
                 alt="Student Career Devopstrio"
-                className="w-full h-full object-cover object-top brightness-85 group-hover:scale-103 transition-transform duration-700"
+                className="w-full h-full object-cover object-center brightness-90 group-hover:scale-103 transition-transform duration-700 rounded-[inherit]"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent opacity-60" />
+              <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent opacity-60 rounded-[inherit]" />
             </div>
 
-            {/* Right Side: Copy & Button */}
+            {/* Right Side: Copy, Points List & Button */}
             <div className="flex-1 text-left space-y-6">
-              <span className="inline-block border border-rose-500/30 bg-rose-950/20 px-3.5 py-1 rounded-full text-[9px] font-bold text-rose-400 tracking-wider uppercase">
+              <span className="inline-block border border-rose-500/30 bg-rose-950/20 px-3.5 py-1 rounded-full text-xs font-bold text-rose-400 tracking-wider uppercase">
                 INTERNSHIP
               </span>
-              
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
+
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-tight">
                 <span className="text-rose-500">Students</span>, build a<br />career with purpose
               </h2>
-              
-              <p className="text-white text-sm md:text-base leading-relaxed font-semibold max-w-xl">
-                Our student programs help you make a real impact from day one.
+
+              <p className="text-zinc-300 text-sm md:text-base leading-relaxed font-medium max-w-xl">
+                Our student programs help you make a real impact from day one. Apply today to build skills and unlock possibilities:
               </p>
-              
+
+              {/* Key points for premium look */}
+              <ul className="space-y-3 pt-1">
+                {[
+                  "Work directly on production-grade global infrastructure projects",
+                  "Receive 1-on-1 mentorship from seasoned industry specialists",
+                  "Access dedicated placement assistance and exclusive network referrals",
+                ].map((point, idx) => (
+                  <li key={idx} className="flex items-start gap-2.5 text-zinc-300 text-xs md:text-sm font-medium">
+                    <span className="w-1.5 h-1.5 rounded-full bg-rose-500 mt-2 shrink-0 shadow-[0_0_8px_rgba(244,63,94,0.6)]" />
+                    <span>{point}</span>
+                  </li>
+                ))}
+              </ul>
+
               <button
                 onClick={handleScrollToRoles}
-                className="inline-flex items-center gap-2 px-8 py-3 rounded-full text-xs font-bold uppercase tracking-wider text-white bg-gradient-to-r from-rose-600 to-rose-500 hover:from-rose-500 hover:to-rose-400 transition-all duration-300 shadow-[0_4px_20px_rgba(225,29,72,0.3)] hover:scale-[1.03]"
+                className="inline-flex items-center gap-2 px-8 py-3 rounded-full text-sm font-semibold uppercase tracking-wider text-white bg-gradient-to-r from-rose-600 to-rose-500 hover:from-rose-500 hover:to-rose-400 transition-all duration-300 shadow-[0_4px_20px_rgba(225,29,72,0.3)] hover:scale-[1.03]"
               >
                 <span>Get Started</span>
-                <ArrowRightIcon size={14} />
+                <ArrowUpRightIcon size={14} />
               </button>
             </div>
           </div>

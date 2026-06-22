@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Reveal } from "@/components/ui/Reveal";
-import { BookOpen, FileText, Compass, ExternalLink, ArrowRight } from "lucide-react";
+import { BookOpen, FileText, Compass, ExternalLink, ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 
 interface Publication {
@@ -93,7 +93,7 @@ export function ResearchPublications() {
                   className="inline-flex items-center gap-1 text-[10px] font-mono font-bold uppercase tracking-wider text-rose-500 hover:text-rose-400 transition-colors mt-2"
                 >
                   Read on Insights
-                  <ArrowRight size={12} className="group-hover:translate-x-1 transition-transform" />
+                  <ArrowUpRight size={12} className="group-hover:translate-x-1 transition-transform" />
                 </Link>
               </div>
             </div>

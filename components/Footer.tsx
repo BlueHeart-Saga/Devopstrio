@@ -3,30 +3,74 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
+import CategoryPopup from "@/components/CategoryPopup";
 
 export function Footer() {
   const [email, setEmail] = useState("");
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (email) {
-      alert("Subscribed successfully!");
-      setEmail("");
+      setIsPopupOpen(true);
     }
   };
 
   return (
-    <footer className="w-full bg-[#030303] text-zinc-550 pt-24 pb-12 relative overflow-hidden font-sans border-t border-zinc-900/60">
+    <footer className="w-full bg-[#030303] text-zinc-550 pt-20 pb-12 relative font-sans mt-24">
+      {/* Modern illuminated top border */}
+      <div className="absolute top-0 inset-x-0 flex justify-center">
+        <div className="w-full h-px bg-gradient-to-r from-transparent via-zinc-700/50 to-transparent" />
+        <div className="absolute top-0 w-3/4 md:w-1/2 h-[2px] bg-gradient-to-r from-transparent via-white/30 to-transparent blur-sm" />
+        <div className="absolute top-0 w-1/2 md:w-1/4 h-[1.5px] bg-gradient-to-r from-transparent via-white/80 to-transparent" />
+      </div>
+      
       {/* Background Glows for visual depth */}
-      <div className="absolute bottom-0 right-0 w-[450px] h-[450px] bg-[radial-gradient(circle_at_center,rgba(225,29,72,0.015),transparent_70%)] pointer-events-none z-0" />
-      <div className="absolute top-0 left-[20%] w-[350px] h-[350px] bg-[radial-gradient(circle_at_center,rgba(225,29,72,0.01),transparent_70%)] pointer-events-none z-0" />
+      <div className="absolute bottom-0 right-0 w-[450px] h-[450px] bg-[radial-gradient(circle_at_center,rgba(225,29,72,0.015),transparent_70%)] pointer-events-none z-0 overflow-hidden" />
+      <div className="absolute top-0 left-[20%] w-[350px] h-[350px] bg-[radial-gradient(circle_at_center,rgba(225,29,72,0.01),transparent_70%)] pointer-events-none z-0 overflow-hidden" />
 
       <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16 relative z-10">
         
+        {/* Compact Floating Newsletter Card */}
+        <div className="max-w-5xl mx-auto w-full bg-white rounded-2xl p-6 md:px-10 md:py-8 flex flex-col md:flex-row items-center justify-between gap-8 -mt-28 mb-16 shadow-[0_20px_40px_rgba(0,0,0,0.5)] relative z-20 border border-zinc-200/50">
+          <div className="flex-1 text-center md:text-left">
+            <h3 className="text-xl md:text-2xl font-bold text-black mb-1.5 tracking-tight">Subscribe Newsletter</h3>
+            <p className="text-zinc-500 text-xs md:text-sm font-medium max-w-sm mx-auto md:mx-0">
+              Get the latest insights on enterprise cloud transformations and technical engineering directly to your inbox.
+            </p>
+          </div>
+          <div className="w-full md:w-[400px]">
+            <form onSubmit={handleSubmit} className="flex relative w-full border border-zinc-200 rounded-xl bg-zinc-50 focus-within:border-rose-500 focus-within:shadow-[0_0_15px_rgba(225,29,72,0.15)] transition-all duration-300 p-1 shadow-sm">
+              <input
+                type="email"
+                required
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Enter your email"
+                className="flex-grow bg-transparent px-4 py-2.5 text-xs font-medium text-black focus:outline-none placeholder:text-zinc-400 min-w-0"
+              />
+              <button
+                type="submit"
+                className="inline-flex items-center justify-center px-6 py-2.5 rounded-lg text-xs font-bold tracking-wider uppercase bg-black hover:bg-zinc-800 text-white transition-all duration-300 whitespace-nowrap"
+                aria-label="Subscribe"
+              >
+                Get Started
+              </button>
+            </form>
+          </div>
+        </div>
+
+        {isPopupOpen && (
+          <CategoryPopup 
+            email={email} 
+            closePopup={() => setIsPopupOpen(false)} 
+          />
+        )}
+
         {/* 6-Column Mega Menu */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-x-6 gap-y-12 mb-20">
           
-          {/* Col 1: Brand Intro & Newsletter */}
+          {/* Col 1: Brand Intro */}
           <div className="flex flex-col gap-6">
             <div>
               <Link href="/" className="flex items-center gap-2 mb-4 group inline-flex">
@@ -42,28 +86,6 @@ export function Footer() {
               <p className="text-xs text-zinc-405 font-medium leading-relaxed">
                 Devopstrio is a global technology consulting and co-engineering partner, building compliant, cloud-native enterprise runtimes.
               </p>
-            </div>
-            
-            {/* Newsletter Subscription */}
-            <div>
-              <h4 className="text-[10px] font-bold text-white mb-2 tracking-wider uppercase">Subscribe</h4>
-              <form onSubmit={handleSubmit} className="flex relative w-full border border-white/5 rounded-xl bg-zinc-950/40 focus-within:border-rose-500/40 focus-within:shadow-[0_0_15px_rgba(225,29,72,0.05)] transition-all duration-300 overflow-hidden backdrop-blur-sm">
-                <input
-                  type="email"
-                  required
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Email"
-                  className="flex-grow bg-transparent px-3 py-2.5 text-xs text-white focus:outline-none placeholder:text-zinc-650 min-w-0"
-                />
-                <button
-                  type="submit"
-                  className="px-3 border-l border-white/5 flex items-center justify-center text-zinc-500 hover:text-rose-500 hover:bg-zinc-950 transition-colors"
-                  aria-label="Subscribe"
-                >
-                  <ChevronRight size={14} />
-                </button>
-              </form>
             </div>
           </div>
 
@@ -155,10 +177,10 @@ export function Footer() {
             Copyright © 2026 Devopstrio Limited. All rights reserved.
           </span>
           <div className="flex flex-wrap justify-center gap-6 md:gap-8 text-[10px] font-bold tracking-widest text-zinc-400 uppercase">
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-rose-500 transition-colors">LINKEDIN</a>
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-rose-500 transition-colors">FACEBOOK</a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-rose-500 transition-colors">INSTAGRAM</a>
-            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="hover:text-rose-500 transition-colors">YOUTUBE</a>
+            <a href="https://www.linkedin.com/company/devopstrioglobal/posts/?feedView=all" target="_blank" rel="noopener noreferrer" className="hover:text-rose-500 transition-colors">LINKEDIN</a>
+            <a href="https://www.facebook.com/profile.php?id=61579126233218" target="_blank" rel="noopener noreferrer" className="hover:text-rose-500 transition-colors">FACEBOOK</a>
+            <a href="https://www.instagram.com/devopstrio_offcl/" target="_blank" rel="noopener noreferrer" className="hover:text-rose-500 transition-colors">INSTAGRAM</a>
+            <a href="https://www.youtube.com/@Devopstrioltd" target="_blank" rel="noopener noreferrer" className="hover:text-rose-500 transition-colors">YOUTUBE</a>
           </div>
         </div>
 

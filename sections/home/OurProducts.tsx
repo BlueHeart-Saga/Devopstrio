@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Reveal } from "@/components/ui/Reveal";
-import { ArrowRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import CardSwap, { Card } from "@/components/ui/CardSwap";
 
 const products = [
@@ -74,7 +74,7 @@ const products = [
 
 export function OurProducts() {
   return (
-    <section id="products" className="w-full pt-0 pb-24 md:pb-32 bg-[#030303] text-white relative overflow-hidden">
+    <section id="products" className="w-full pt-24 md:pt-32 pb-24 md:pb-32 bg-[#030303] text-white relative overflow-hidden">
       <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
 
         <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-8">
@@ -103,14 +103,14 @@ export function OurProducts() {
                   className="inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white transition-all duration-300 hover:shadow-[0_0_25px_rgba(225,29,72,0.35)] hover:-translate-y-0.5"
                 >
                   Discuss a project
-                  <span className="ml-2">→</span>
+
                 </a>
                 <a
                   href="/products"
                   className="inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase border border-zinc-850 hover:border-zinc-750 bg-zinc-950/60 hover:bg-zinc-900 text-white transition-all duration-300 hover:-translate-y-0.5"
                 >
                   View all products
-                  <span className="ml-2">→</span>
+
                 </a>
               </div>
             </Reveal>
@@ -155,7 +155,7 @@ export function OurProducts() {
                   {/* Content Container */}
                   <div className="h-[48%] p-5 sm:p-6 flex flex-col bg-[#0a0a0c] border-t border-white/5 relative z-10">
                     <div className="flex items-center mb-3">
-                      <span className="text-[9px] font-bold tracking-wider uppercase text-rose-400 bg-rose-500/10 border border-rose-500/20 px-2.5 py-1 rounded-full">
+                      <span className="inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white transition-all duration-300 hover:shadow-[0_0_25px_rgba(225,29,72,0.35)] hover:-translate-y-0.5">
                         {categoryLabel(prod.category)}
                       </span>
                     </div>
@@ -181,7 +181,7 @@ export function OurProducts() {
                         className="text-xs font-semibold text-rose-500 hover:text-rose-400 flex items-center gap-1 transition-colors whitespace-nowrap"
                       >
                         <span>Visit site</span>
-                        <ArrowRight size={12} className="group-hover:translate-x-0.5 transition-transform" />
+                        <ArrowUpRight size={12} className="group-hover:translate-x-0.5 transition-transform" />
                       </a>
                     </div>
                   </div>

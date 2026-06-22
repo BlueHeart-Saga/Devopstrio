@@ -19,7 +19,8 @@ export const technologiesDomain: EcosystemDomain = {
     { slug: "cloud-native", title: "Cloud Native", description: "Docker container packaging, Kubernetes orchestration, and Terraform IaC." },
     { slug: "devops-toolchain", title: "DevOps Toolchain", description: "CI/CD execution pipelines, automatic tests, and package registries." },
     { slug: "data-engineering", title: "Data Engineering", description: "High-speed streaming pipelines, Spark analytics, and database replicas." },
-    { slug: "cybersecurity", title: "Cybersecurity", description: "Container security scanners, Okta MFA systems, and network rules." }
+    { slug: "cybersecurity", title: "Cybersecurity", description: "Container security scanners, Okta MFA systems, and network rules." },
+    { slug: "software-engineering", title: "Software Engineering", description: "React frontend interfaces, Next.js server routing, and TypeScript strict checks." }
   ],
   benefits: [
     "Clean component-driven frontends built for maximum responsiveness",
@@ -210,6 +211,41 @@ export const technologiesSubpages: Record<string, EcosystemSubpageDetail> = {
     faqs: [
       { q: "What is microsegmentation?", a: "It is a security practice that divides networks into isolated segments, blocking side-to-side traffic unless explicitly authorized." },
       { q: "How do you secure cloud API keys?", a: "We store keys inside HashiCorp Vault and inject them into container memory at startup, leaving no keys in files." }
+    ]
+  },
+  "software-engineering": {
+    slug: "software-engineering",
+    title: "Software Engineering",
+    heroSubtitle: "Deploy Next.js user interfaces, build FastAPI servers, and run strict TypeScript code builds.",
+    challenge: "Monolithic software systems lack modular bounds, making features slow to build and hard to test.",
+    solution: "We build component-driven frontends, deploy clean APIs, and run static linters on commits.",
+    features: [
+      "Next.js server routing setups returning quick page loads",
+      "FastAPI python backends generating auto OpenAPI schemas",
+      "TypeScript strict checks preventing type mismatch errors"
+    ],
+    benefits: [
+      "Modular components enabling quick features development cycles",
+      "Strict data schemas avoiding runtime transaction failures",
+      "Standard golden templates accelerating local developer setup times"
+    ],
+    techStack: [
+      { name: "React / Next.js", desc: "Premium component UI and static routing." },
+      { name: "TypeScript", desc: "Type-safe structural code compilation." },
+      { name: "FastAPI", desc: "High-performance Python API schemas." }
+    ],
+    caseStudy: {
+      title: "SaaS migration for global financial services client.",
+      desc: "Upgraded a legacy PHP portal to a serverless Next.js and TypeScript frontend, scaling to 5 million active users with zero downtime.",
+      metrics: [
+        { value: "5M+", label: "Active platform users" },
+        { value: "99.99%", label: "Uptime SLA maintained" },
+        { value: "3x", label: "Faster page loading times" }
+      ]
+    },
+    faqs: [
+      { q: "Why standardize on Next.js and TypeScript?", a: "Next.js integrates server-side page rendering, styling compilers, and route bundling out of the box, while TypeScript prevents runtime type mismatch errors." },
+      { q: "How is API performance optimized under high loads?", a: "We run asynchronous FastAPI threads, configure connection pooling for PostgreSQL, and use Redis caches for repeating query reads." }
     ]
   }
 };

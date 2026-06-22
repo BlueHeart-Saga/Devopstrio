@@ -1,6 +1,7 @@
-"use client";
 
 import React from "react";
+import { Metadata } from "next";
+import { BreadcrumbSchema } from "@/components/seo/Schemas";
 import { AboutHero } from "@/sections/about/AboutHero";
 import { CompanyIntro } from "@/sections/about/CompanyIntro";
 import { MissionVision } from "@/sections/about/MissionVision";
@@ -8,9 +9,23 @@ import { OurStory } from "@/sections/about/OurStory";
 import { AboutCTA } from "@/sections/about/AboutCTA";
 import { Reveal } from "@/components/ui/Reveal";
 
+
+
+export const metadata: Metadata = {
+  title: "Company Overview",
+  description: "Devopstrio helps enterprises build, modernize and scale mission-critical AI platforms, cloud infrastructure and digital products.",
+  alternates: {
+    canonical: "/about/company-overview"
+  }
+};
 export default function CompanyOverviewPage() {
   return (
     <main className="min-h-screen bg-black text-white pt-16 font-sans">
+      <BreadcrumbSchema items={[
+        { name: "Home", item: "/" },
+        { name: "About Us", item: "/about/company-overview" },
+        { name: "Company Overview", item: "/about/company-overview" }
+      ]} />
       {/* Glow Ambient background */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[radial-gradient(circle_at_center,rgba(225,29,72,0.03),transparent_70%)] pointer-events-none" />
 

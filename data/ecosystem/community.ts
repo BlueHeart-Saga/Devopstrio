@@ -3,23 +3,23 @@ import { EcosystemDomain, EcosystemSubpageDetail } from "./types";
 export const communityDomain: EcosystemDomain = {
   slug: "community-talent-network",
   title: "Community & Talent Network",
-  badge: "People Ecosystem",
-  subtitle: "Sourcing, training, and connecting senior software engineers, SRE architects, and cloud leads globally.",
-  overviewHeading: "High-caliber engineering networks and continuous learning",
-  overviewDesc1: "We run open-source contributions, sponsor developer events, and partner with universities. Our training programs ensure our talent pool stays on top of software trends.",
-  overviewDesc2: "We maintain active communication channels, helping our clients scale their engineering teams quickly with vetted developers.",
+  badge: "Global Talent Ecosystem",
+  subtitle: "Sourcing, training, and connecting world-class software engineers, SRE architects, and cloud specialists.",
+  overviewHeading: "A global ecosystem of top-tier engineering talent and continuous innovation",
+  overviewDesc1: "We are more than just an engineering firm. We are a global community. Through our talent network, we bridge the gap between enterprise technology needs and elite engineering professionals.",
+  overviewDesc2: "From university partnerships to open-source contributions and deep certification tracks, we cultivate the next generation of technological leaders.",
   stats: [
-    { value: "50k+", label: "Developer Community Members" },
-    { value: "500+", label: "Open-Source Contributions" },
-    { value: "12+", label: "University Partners" },
-    { value: "100%", label: "Vetted Engineering Talent" }
+    { value: "50k+", label: "Global Community Members" },
+    { value: "10k+", label: "Vetted Engineers" },
+    { value: "25+", label: "Academic Partnerships" },
+    { value: "500+", label: "Open-Source Projects" }
   ],
   subpages: [
-    { slug: "engineering-community", title: "Engineering Community", description: "Open source contributions, developer events, and training academies." },
-    { slug: "university-programs", title: "University Programs", description: "Mentoring schedules, graduate research programs, and student hackathons." },
-    { slug: "open-source-contributions", title: "Open Source Contributions", description: "Public modules for Terraform, Kubernetes patches, and Helm repositories." },
-    { slug: "talent-network", title: "Talent Network", description: "Vetted candidate databases, skill matching systems, and hiring pipelines." },
-    { slug: "certification-programs", title: "Certification Programs", description: "Cloud training tracks, SRE study groups, and certificate sponsorships." }
+    { slug: "engineering-community", title: "Engineering Community", description: "Global network of architects, developers, and cloud specialists." },
+    { slug: "university-programs", title: "University Programs", description: "Bridging academia and enterprise through research and internships." },
+    { slug: "talent-network", title: "Global Talent Network", description: "Connecting organizations with highly skilled, pre-vetted engineers." },
+    { slug: "open-source-contributions", title: "Open Source Innovation", description: "Contributing reusable technologies to the global developer ecosystem." },
+    { slug: "certification-programs", title: "Certification Programs", description: "Helping engineers validate expertise and advance careers." }
   ],
   benefits: [
     "Rapid team scaling with vetted cloud and database leads",

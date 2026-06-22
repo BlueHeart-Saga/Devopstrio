@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Reveal } from "@/components/ui/Reveal";
-import { ArrowRight, CheckCircle, ExternalLink, ShieldCheck, Cpu, Database, Network } from "lucide-react";
+import { ArrowUpRight, CheckCircle, ExternalLink, ShieldCheck, Cpu, Database, Network } from "lucide-react";
 import Link from "next/link";
 
 interface AllianceDetails {
@@ -130,15 +130,13 @@ export function StrategicAlliances() {
             return (
               <div
                 key={alliance.name}
-                className={`grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center ${
-                  isEven ? "" : "lg:flex-row-reverse"
-                }`}
+                className={`grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center ${isEven ? "" : "lg:flex-row-reverse"
+                  }`}
               >
                 {/* Visual / Logo Column */}
                 <div
-                  className={`lg:col-span-5 flex flex-col justify-center ${
-                    isEven ? "lg:order-1" : "lg:order-2"
-                  }`}
+                  className={`lg:col-span-5 flex flex-col justify-center ${isEven ? "lg:order-1" : "lg:order-2"
+                    }`}
                 >
                   <div className="bg-zinc-950/40 border border-zinc-900/60 p-10 rounded-3xl relative overflow-hidden flex flex-col items-center justify-center min-h-[300px]">
                     <div className="absolute top-0 right-0 w-[200px] h-[200px] bg-rose-600/[0.015] blur-[80px] rounded-full pointer-events-none" />
@@ -150,7 +148,7 @@ export function StrategicAlliances() {
                     <span className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-2">
                       AUTHORIZED PARTNER
                     </span>
-                    <span className="px-3.5 py-1.5 rounded-full bg-rose-500/10 border border-rose-500/20 text-rose-500 text-[10px] font-mono font-bold tracking-wider uppercase">
+                    <span className="inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white transition-all duration-300 hover:shadow-[0_0_25px_rgba(225,29,72,0.35)] hover:-translate-y-0.5">
                       {alliance.badge}
                     </span>
                   </div>
@@ -158,9 +156,8 @@ export function StrategicAlliances() {
 
                 {/* Content Column */}
                 <div
-                  className={`lg:col-span-7 ${
-                    isEven ? "lg:order-2" : "lg:order-1"
-                  }`}
+                  className={`lg:col-span-7 ${isEven ? "lg:order-2" : "lg:order-1"
+                    }`}
                 >
                   <Reveal>
                     <div className="flex items-center gap-3 mb-4">
@@ -169,7 +166,7 @@ export function StrategicAlliances() {
                     </div>
                   </Reveal>
                   <Reveal delay={0.1}>
-                    <p className="text-zinc-400 text-xs md:text-sm font-semibold leading-relaxed mb-6">
+                    <p className="text-zinc-300 text-sm md:text-base font-medium leading-relaxed mb-6">
                       {alliance.desc}
                     </p>
                   </Reveal>
@@ -177,13 +174,13 @@ export function StrategicAlliances() {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
                     {/* Capabilities */}
                     <div>
-                      <span className="block text-[10px] font-mono font-bold text-rose-500 uppercase tracking-wider mb-3.5">
+                      <span className="block text-xs font-mono font-bold text-rose-500 uppercase tracking-wider mb-3.5">
                         CAPABILITIES
                       </span>
                       <ul className="space-y-2.5">
                         {alliance.capabilities.map((cap) => (
-                          <li key={cap} className="flex items-start gap-2.5 text-[11px] text-zinc-400 font-semibold leading-normal">
-                            <CheckCircle size={12} className="text-rose-500 mt-0.5 flex-shrink-0" />
+                          <li key={cap} className="flex items-start gap-2.5 text-xs md:text-sm text-zinc-400 font-medium leading-normal">
+                            <CheckCircle size={14} className="text-rose-500 mt-0.5 flex-shrink-0" />
                             <span>{cap}</span>
                           </li>
                         ))}
@@ -192,12 +189,12 @@ export function StrategicAlliances() {
 
                     {/* Solutions */}
                     <div>
-                      <span className="block text-[10px] font-mono font-bold text-rose-500 uppercase tracking-wider mb-3.5">
+                      <span className="block text-xs font-mono font-bold text-rose-500 uppercase tracking-wider mb-3.5">
                         SOLUTIONS
                       </span>
                       <ul className="space-y-2.5">
                         {alliance.solutions.map((sol) => (
-                          <li key={sol} className="flex items-start gap-2.5 text-[11px] text-zinc-400 font-semibold leading-normal">
+                          <li key={sol} className="flex items-start gap-2.5 text-xs md:text-sm text-zinc-400 font-medium leading-normal">
                             <span className="w-1.5 h-1.5 rounded-full bg-rose-500 mt-1.5 flex-shrink-0" />
                             <span>{sol}</span>
                           </li>
@@ -209,10 +206,10 @@ export function StrategicAlliances() {
                   <Reveal delay={0.2}>
                     <Link
                       href={alliance.ctaLink}
-                      className="inline-flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-rose-500 hover:text-rose-400 transition-colors group"
+                      className="inline-flex items-center gap-2 text-xs md:text-sm font-mono font-semibold uppercase tracking-wider text-rose-500 hover:text-rose-400 transition-colors group"
                     >
                       {alliance.ctaText}
-                      <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+                      <ArrowUpRight size={14} className="group-hover:translate-x-1 transition-transform" />
                     </Link>
                   </Reveal>
                 </div>

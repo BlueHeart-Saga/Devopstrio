@@ -1,6 +1,5 @@
-"use client";
-
-import React, { useState, useEffect } from "react";
+import React from "react";
+import { Metadata } from "next";
 import { BookOpen } from "lucide-react";
 import { insightsApi, TransformedPost } from "@/lib/insightsApi";
 
@@ -10,6 +9,8 @@ import { CategoryList } from "@/sections/insights/CategoryList";
 import { InsightsNavigationCards } from "@/components/insights/InsightsNavigationCards";
 import { FAQ } from "@/components/services/FAQ";
 import { CTA } from "@/components/services/CTA";
+import { NewsletterSubscription } from "@/components/NewsletterSubscription";
+import { BreadcrumbSchema } from "@/components/seo/Schemas";
 
 const INSIGHTS_FAQS = [
   {
@@ -60,44 +61,56 @@ interface CategoryPageProps {
   }>;
 }
 
-export default function CategoryLandingPage({ params }: CategoryPageProps) {
-  const resolvedParams = React.use(params);
-  const categorySlug = resolvedParams.categorySlug;
+export async function generateMetadata({ params }: CategoryPageProps): Promise<Metadata> {
+  const { categorySlug } = await params;
+  
+  let categoryName = categorySlug
+    .split("-")
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
 
-  const [posts, setPosts] = useState<TransformedPost[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [categoryName, setCategoryName] = useState("");
-
-  useEffect(() => {
-    async function loadCategoryData() {
-      try {
-        setLoading(true);
-        const allPosts = await insightsApi.getAllPosts(100);
-        
-        // Filter posts by category
-        const filtered = allPosts.filter(
-          (p) => p.category && p.category.slug === categorySlug
-        );
-        setPosts(filtered);
-
-        if (filtered.length > 0) {
-          setCategoryName(filtered[0].category.name);
-        } else {
-          // Format category slug nicely as fallback name
-          const fallback = categorySlug
-            .split("-")
-            .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-            .join(" ");
-          setCategoryName(fallback);
-        }
-      } catch (err) {
-        console.error("Failed to load category posts:", err);
-      } finally {
-        setLoading(false);
-      }
+  try {
+    const allPosts = await insightsApi.getAllPosts(100);
+    const filtered = allPosts.filter(
+      (p) => p.category && p.category.slug === categorySlug
+    );
+    if (filtered.length > 0) {
+      categoryName = filtered[0].category.name;
     }
-    loadCategoryData();
-  }, [categorySlug]);
+  } catch (e) {}
+
+  return {
+    title: `${categoryName} Publications`,
+    description: `Read technical deep-dives, industry briefs, and case studies about ${categoryName.toLowerCase()} on the Devopstrio portal.`,
+    alternates: {
+      canonical: `/insights/${categorySlug}`
+    }
+  };
+}
+
+export default async function CategoryLandingPage({ params }: CategoryPageProps) {
+  const { categorySlug } = await params;
+
+  let posts: TransformedPost[] = [];
+  let categoryName = "";
+
+  try {
+    const allPosts = await insightsApi.getAllPosts(100);
+    posts = allPosts.filter(
+      (p) => p.category && p.category.slug === categorySlug
+    );
+
+    if (posts.length > 0) {
+      categoryName = posts[0].category.name;
+    } else {
+      categoryName = categorySlug
+        .split("-")
+        .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+        .join(" ");
+    }
+  } catch (err) {
+    console.error("Failed to load category posts:", err);
+  }
 
   // Sort posts: featured first, then by views descending
   const sortedPosts = [...posts].sort((a, b) => {
@@ -113,8 +126,15 @@ export default function CategoryLandingPage({ params }: CategoryPageProps) {
   const listPosts = posts.filter((p) => !featuredPosts.some((f) => f.id === p.id));
   const adjacentPosts = listPosts.length > 0 ? listPosts : posts;
 
+  const breadcrumbs = [
+    { name: "Home", item: "/" },
+    { name: "Insights", item: "/insights" },
+    { name: categoryName, item: `/insights/${categorySlug}` }
+  ];
+
   return (
     <main className="min-h-screen bg-black text-white pb-16">
+      <BreadcrumbSchema items={breadcrumbs} />
       {/* Decorative gradients */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[radial-gradient(circle_at_center,rgba(206,36,83,0.04),transparent_70%)] pointer-events-none" />
 
@@ -123,12 +143,7 @@ export default function CategoryLandingPage({ params }: CategoryPageProps) {
         categorySlug={categorySlug} 
       />
 
-      {loading ? (
-        <div className="flex flex-col items-center justify-center py-20 text-zinc-500">
-          <div className="w-8 h-8 rounded-full border-2 border-zinc-800 border-t-rose-600 animate-spin mb-4" />
-          <span className="text-xs font-mono uppercase tracking-widest">Loading Publications...</span>
-        </div>
-      ) : posts.length === 0 ? (
+      {posts.length === 0 ? (
         <div className="max-w-site mx-auto px-6 text-center py-20 border border-dashed border-zinc-900 rounded-3xl">
           <BookOpen className="mx-auto text-zinc-700 mb-4" size={32} />
           <h3 className="text-sm font-semibold text-zinc-400 mb-1">No publications found</h3>
@@ -149,6 +164,7 @@ export default function CategoryLandingPage({ params }: CategoryPageProps) {
 
       {/* Navigation section for all other insights channels */}
       <InsightsNavigationCards />
+      <NewsletterSubscription className="my-20" />
       <FAQ faqs={INSIGHTS_FAQS} />
       <CTA 
         ctaTitle="Harness our engineering" 
@@ -160,3 +176,4 @@ export default function CategoryLandingPage({ params }: CategoryPageProps) {
     </main>
   );
 }
+

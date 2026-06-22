@@ -19,6 +19,7 @@ export const capabilityRegistry: Record<string, Record<string, RegistryItem>> = 
   "cloud-services": {
     "cloud-strategy-consulting": { title: "Cloud Strategy & Consulting", desc: "Designing tailored cloud architecture blueprints, vendor evaluation, and cloud readiness roadmaps." },
     "cloud-migration": { title: "Cloud Migration", desc: "Re-hosting, re-platforming, and refactoring workloads to public and hybrid clouds with zero downtime." },
+    "cloud-architecture": { title: "Cloud Architecture", desc: "Design and blueprint enterprise-grade, highly available cloud environments." },
     "azure-services": { title: "Azure Services", desc: "Landing zones, AKS clusters, and serverless applications on Microsoft Azure." },
     "aws-services": { title: "AWS Services", desc: "Scalable EKS grids, serverless Lambdas, and secure DynamoDB setups on AWS." },
     "google-cloud-services": { title: "Google Cloud Services", desc: "GKE autopilot setups, BigQuery data platforms, and Vertex AI integrations on GCP." },

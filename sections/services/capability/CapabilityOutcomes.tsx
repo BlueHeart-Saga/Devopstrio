@@ -382,7 +382,7 @@ export function CapabilityOutcomes({ serviceSlug, capabilityTitle }: CapabilityO
                   <div className="flex items-center gap-1.5 flex-wrap">
                     {item.previewSteps.map((step, sIdx) => (
                       <React.Fragment key={sIdx}>
-                        <span className="bg-zinc-900/60 border border-zinc-800 rounded-md px-2 py-0.5 text-[9px] text-zinc-300 font-mono group-hover:text-rose-200 group-hover:border-rose-500/20 transition-all duration-300">
+                        <span className="inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase border border-zinc-850 hover:border-zinc-750 bg-zinc-950/60 hover:bg-zinc-900 text-white transition-all duration-300 hover:-translate-y-0.5">
                           {step}
                         </span>
                         {sIdx < item.previewSteps.length - 1 && (

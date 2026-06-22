@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { Reveal } from "@/components/ui/Reveal";
-import { Cloud, Brain, Database, Shield, Layout, ArrowRight } from "lucide-react";
+import { Cloud, Brain, Database, Shield, Layout, ArrowUpRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 interface CategoryDetail {
@@ -77,11 +77,10 @@ export function PlatformCategories() {
             <button
               key={cat.id}
               onClick={() => setActiveCategory(cat.id)}
-              className={`flex items-center gap-2.5 px-5 py-3 rounded-xl text-xs font-mono font-bold uppercase tracking-wider transition-all duration-300 ${
-                activeCategory === cat.id
+              className={`flex items-center gap-2.5 px-5 py-3 rounded-xl text-xs font-mono font-bold uppercase tracking-wider transition-all duration-300 ${activeCategory === cat.id
                   ? "bg-rose-500/10 text-rose-500 border border-rose-500/20"
                   : "bg-zinc-950/45 text-zinc-500 border border-zinc-900/80 hover:text-zinc-350 hover:bg-zinc-900/40"
-              }`}
+                }`}
             >
               {cat.icon}
               {cat.label}
@@ -123,7 +122,7 @@ export function PlatformCategories() {
                       <span className="text-xs font-bold text-white tracking-wider group-hover:text-rose-500 transition-colors">
                         {item}
                       </span>
-                      <ArrowRight size={12} className="text-zinc-650 group-hover:translate-x-1 group-hover:text-rose-500 transition-all" />
+                      <ArrowUpRight size={12} className="text-zinc-650 group-hover:translate-x-1 group-hover:text-rose-500 transition-all" />
                     </div>
                   ))}
                 </div>

@@ -2,7 +2,7 @@
 
 import React, { useRef } from "react";
 import { Reveal } from "@/components/ui/Reveal";
-import { ArrowLeft, ArrowRight } from "lucide-react";
+import { ArrowLeft, ArrowUpRight } from "lucide-react";
 
 const services = [
   {
@@ -77,7 +77,7 @@ export function AboutServices() {
       <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-blue-900/5 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
-        
+
         {/* Header Block */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <Reveal>
@@ -99,7 +99,7 @@ export function AboutServices() {
 
         {/* Carousel Scroll Container */}
         <div className="relative w-full">
-          <div 
+          <div
             ref={scrollRef}
             className="flex gap-6 md:gap-8 overflow-x-auto scrollbar-none snap-x snap-mandatory pb-10"
             style={{ scrollbarWidth: "none" }}
@@ -136,12 +136,12 @@ export function AboutServices() {
                 </div>
 
                 {/* Footer Action Link */}
-                <a 
-                  href="/contact" 
+                <a
+                  href="/contact"
                   className="inline-flex items-center gap-3 pt-4 border-t border-zinc-800/40 mt-auto group/footer w-full"
                 >
                   <span className="w-8 h-8 rounded-full bg-[#E11D48] text-white flex items-center justify-center transition-transform duration-300 group-hover/footer:translate-x-1">
-                    <ArrowRight size={14} />
+                    <ArrowUpRight size={14} />
                   </span>
                   <span className="text-xs md:text-sm font-bold text-zinc-300 group-hover/footer:text-[#E11D48] transition-colors">
                     Explore {item.name}
@@ -165,7 +165,7 @@ export function AboutServices() {
               className="w-11 h-11 rounded-full border border-zinc-850 bg-zinc-950/20 hover:border-rose-500 hover:text-rose-400 text-zinc-400 flex items-center justify-center transition-all duration-300"
               aria-label="Scroll right"
             >
-              <ArrowRight size={18} />
+              <ArrowUpRight size={18} />
             </button>
           </div>
         </div>

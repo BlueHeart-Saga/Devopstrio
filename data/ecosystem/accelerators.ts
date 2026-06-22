@@ -3,23 +3,23 @@ import { EcosystemDomain, EcosystemSubpageDetail } from "./types";
 export const acceleratorsDomain: EcosystemDomain = {
   slug: "accelerators-frameworks",
   title: "Accelerators & Frameworks",
-  badge: "Reusable IP & Code",
-  subtitle: "Leverage our pre-built codebases, pipeline templates, and deployment scripts to speed up development.",
-  overviewHeading: "Pre-packaged software scripts designed for quick integrations",
-  overviewDesc1: "We build reusable code frameworks, serverless APIs, and automated backup routines. Our packages reduce database setup times from days to minutes.",
-  overviewDesc2: "We distribute our code templates via private registries, helping teams start new projects with compliance controls pre-configured.",
+  badge: "Proprietary Delivery IP",
+  subtitle: "Accelerate digital transformation using Devopstrio's proprietary architecture blueprints, reusable code frameworks, and deployment factories.",
+  overviewHeading: "Enterprise-grade frameworks designed for rapid, secure delivery",
+  overviewDesc1: "We don't start from scratch. Our proprietary accelerators encapsulate years of engineering expertise into highly reusable, battle-tested components.",
+  overviewDesc2: "From cloud landing zones to advanced GenAI orchestration frameworks, our IP drastically reduces time-to-market while guaranteeing architectural excellence and compliance out of the box.",
   stats: [
-    { value: "50+", label: "Reusable Scripts" },
-    { value: "90%", label: "Reduction in setup times" },
-    { value: "100%", label: "IaC Coverage" },
-    { value: "SOC-2", label: "Pre-Audited Quality" }
+    { value: "70%", label: "Faster Time-to-Market" },
+    { value: "50+", label: "Proprietary Frameworks" },
+    { value: "100%", label: "Compliance Ready" },
+    { value: "Zero", label: "Technical Debt Built-in" }
   ],
   subpages: [
-    { slug: "cloud-accelerator", title: "Cloud Accelerator", description: "Terraform landing zones, security policies, and AWS infrastructure." },
-    { slug: "devops-accelerator", title: "DevOps Accelerator", description: "Reusable CI/CD pipeline scripts, container templates, and deployment charts." },
-    { slug: "ai-framework", title: "AI Framework", description: "RAG templates, semantic caching blocks, and model query routers." },
-    { slug: "security-framework", title: "Security Framework", description: "Zero-trust network policy configurations, container scans, and IAM rules." },
-    { slug: "data-framework", title: "Data Framework", description: "Lakehouse table creators, stream aggregators, and warehouse schemas." }
+    { slug: "cloud-accelerator", title: "Cloud Accelerator", description: "Enterprise-ready landing zones and multi-cloud architecture blueprints." },
+    { slug: "devops-accelerator", title: "DevOps Accelerator", description: "Standardized CI/CD, GitOps, and Platform Engineering templates." },
+    { slug: "security-framework", title: "Security Framework", description: "Secure SDLC, Zero Trust architecture, and compliance automation." },
+    { slug: "ai-framework", title: "Enterprise AI Framework", description: "RAG architectures, GenAI orchestration, and semantic search frameworks." },
+    { slug: "data-framework", title: "Data Framework", description: "Enterprise-grade data pipelines, streaming frameworks, and analytics." }
   ],
   benefits: [
     "Drastic reduction in initial codebase build times",

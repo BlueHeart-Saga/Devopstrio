@@ -149,7 +149,7 @@ export function SubDomainsGrid({ title, slug, subpages }: SubDomainsGridProps) {
               <div className="relative z-10 mt-8">
                 <Link
                   href={`/ecosystem/${slug}`}
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full text-xs font-semibold text-white bg-rose-600 hover:bg-rose-700 transition-all duration-300 shadow-[0_4px_15px_rgba(225,29,72,0.25)] hover:shadow-[0_4px_25px_rgba(225,29,72,0.45)] w-fit group/btn"
+                  className="gap-2 w-fit inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white transition-all duration-300 hover:shadow-[0_0_25px_rgba(225,29,72,0.35)] hover:-translate-y-0.5"
                 >
                   Explore Pillar{" "}
                   <ArrowUpRight
@@ -211,7 +211,7 @@ export function SubDomainsGrid({ title, slug, subpages }: SubDomainsGridProps) {
                 <button
                   onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
                   disabled={currentPage === 1}
-                  className="px-4 py-2 rounded-xl text-xs font-semibold border border-zinc-900 bg-zinc-950/40 text-zinc-400 hover:text-white hover:bg-zinc-900/50 hover:border-zinc-800 disabled:opacity-50 disabled:pointer-events-none transition-all duration-300"
+                  className="inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase border border-zinc-850 hover:border-zinc-750 bg-zinc-950/60 hover:bg-zinc-900 text-white transition-all duration-300 hover:-translate-y-0.5"
                 >
                   Previous
                 </button>
@@ -231,7 +231,7 @@ export function SubDomainsGrid({ title, slug, subpages }: SubDomainsGridProps) {
                 <button
                   onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
                   disabled={currentPage === totalPages}
-                  className="px-4 py-2 rounded-xl text-xs font-semibold border border-zinc-900 bg-zinc-950/40 text-zinc-400 hover:text-white hover:bg-zinc-900/50 hover:border-zinc-800 disabled:opacity-50 disabled:pointer-events-none transition-all duration-300"
+                  className="inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase border border-zinc-850 hover:border-zinc-750 bg-zinc-950/60 hover:bg-zinc-900 text-white transition-all duration-300 hover:-translate-y-0.5"
                 >
                   Next
                 </button>

@@ -1,43 +1,46 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
-import { ArrowRight } from "lucide-react";
 
 export function AboutCTA() {
   return (
-    <section className="w-full py-28 md:py-36 bg-black text-white border-t border-zinc-900 relative overflow-hidden">
+    <section id="contact" className="w-full py-28 md:py-40 bg-[#030303] text-white border-t border-zinc-900 relative overflow-hidden">
+      {/* Background Glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-[radial-gradient(ellipse_at_center,rgba(220,38,38,0.04),transparent_60%)] pointer-events-none" />
+
       <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10 text-center">
         <Reveal className="max-w-3xl mx-auto flex flex-col items-center">
 
           <div className="inline-flex items-center gap-2 mb-4">
-
-            <span className="text-[11px] font-semibold tracking-wider uppercase text-rose-500">
+            <span className="text-xs font-semibold tracking-[0.2em] uppercase text-zinc-400">
               Start Your Journey
             </span>
           </div>
 
-          <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-6 text-white">
-            Ready to <span className="text-rose-500">modernise your infrastructure?</span>
+          <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-8">
+            Ready to <span className="text-white font-medium bg-gradient-to-r from-red-600 via-rose-600 to-rose-500 bg-clip-text text-transparent">modernise your infrastructure?</span>
           </h2>
 
-          <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-bold mb-10 max-w-2xl">
+          <p className="text-zinc-400 text-sm md:text-lg leading-relaxed font-bold mb-10 max-w-lg">
             Whether you need a full delivery squad to rebuild a legacy platform, senior architects to guide an AI migration, or a dedicated team to support your operations — we're here to help.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 items-center justify-center">
-            <a
-              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-lg text-xs font-semibold tracking-wider uppercase bg-rose-600 hover:bg-rose-700 text-white transition-all duration-300 shadow-sm"
+          <div className="flex flex-wrap gap-4 justify-center items-center">
+            <Link
               href="/contact"
+              className="gap-2 inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white transition-all duration-300 hover:shadow-[0_0_25px_rgba(225,29,72,0.35)] hover:-translate-y-0.5"
             >
-              Get in Touch <ArrowRight size={14} />
-            </a>
-            <a
-              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-lg text-xs font-semibold tracking-wider uppercase border border-zinc-800 bg-zinc-900 hover:bg-zinc-850 text-zinc-300 hover:text-white transition-all duration-300 shadow-sm"
+              Get in Touch <ArrowUpRight size={14} />
+            </Link>
+            <Link
               href="/contact"
+              className="gap-2 inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase border border-zinc-850 hover:border-zinc-750 bg-zinc-950/60 hover:bg-zinc-900 text-white transition-all duration-300 hover:-translate-y-0.5"
             >
               Speak with an Engineer
-            </a>
+            </Link>
           </div>
 
         </Reveal>

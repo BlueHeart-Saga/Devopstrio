@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useRef } from "react";
-import { ArrowLeft, ArrowRight, ArrowUpRight } from "lucide-react";
+import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
 
 const successStories = [
@@ -86,7 +86,8 @@ export function SuccessStories() {
       <div className="absolute top-[30%] left-[-10%] w-[35%] aspect-square bg-[radial-gradient(circle_at_center,rgba(244,63,94,0.015),transparent_70%)] pointer-events-none z-0" />
 
       {/* Hide Scrollbar Style Block */}
-      <style dangerouslySetInnerHTML={{__html: `
+      <style dangerouslySetInnerHTML={{
+        __html: `
         .hide-scrollbar::-webkit-scrollbar {
           display: none !important;
         }
@@ -97,7 +98,7 @@ export function SuccessStories() {
       `}} />
 
       <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10 text-left">
-        
+
         {/* Section Header with Navigation Arrow Actions */}
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-6 mb-12">
           <Reveal>
@@ -123,7 +124,7 @@ export function SuccessStories() {
               aria-label="Scroll right"
               className="w-11 h-11 rounded-full border border-white/5 bg-[#0b0b0c] hover:bg-zinc-900 flex items-center justify-center text-zinc-400 hover:text-white transition-colors duration-300"
             >
-              <ArrowRight size={16} />
+              <ArrowUpRight size={16} />
             </button>
           </Reveal>
         </div>
@@ -136,12 +137,12 @@ export function SuccessStories() {
           {successStories.map((story, idx) => (
             <Reveal key={idx} delay={idx * 0.05} className="flex-shrink-0 snap-start">
               <div className="group block w-[320px] sm:w-[350px] aspect-[4/3] bg-[#0b0b0c] border border-white/10 rounded-[28px] p-6 hover:border-rose-500/35 hover:shadow-[0_8px_32px_rgba(244,63,94,0.08)] transition-all duration-300 relative overflow-hidden cursor-pointer">
-                
+
                 {/* Subtle Inner Glow on Hover */}
                 <div className="absolute inset-0 bg-gradient-to-br from-[#E11D48]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-0" />
 
                 <div className="flex flex-col h-full justify-between relative z-10">
-                  
+
                   <div>
                     {/* Header: Company & Metric Tag */}
                     <div className="flex justify-between items-center pb-4 border-b border-white/5">

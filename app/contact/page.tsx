@@ -1,5 +1,5 @@
-"use client";
-
+import React from "react";
+import { Metadata } from "next";
 import { ContactHero } from "@/sections/contact/ContactHero";
 import { ContactForm } from "@/sections/contact/ContactForm";
 import { OurLocations } from "@/sections/contact/OurLocations";
@@ -10,10 +10,26 @@ import { FAQ } from "@/sections/contact/FAQ";
 import { ContactCTA } from "@/sections/contact/ContactCTA";
 import { TalkToExpert } from "@/sections/contact/TalkToExpert";
 import { Reveal } from "@/components/ui/Reveal";
+import { BreadcrumbSchema } from "@/components/seo/Schemas";
+
+export const metadata: Metadata = {
+  title: "Contact Our Engineering Teams",
+  description: "Connect with Devopstrio's systems architects and project delivery managers. Speak to our specialists about cloud migrations, AI model setups, or compliance.",
+  alternates: {
+    canonical: "/contact"
+  }
+};
 
 export default function ContactPage() {
+  const breadcrumbs = [
+    { name: "Home", item: "/" },
+    { name: "Contact Us", item: "/contact" }
+  ];
+
   return (
     <main className="min-h-screen bg-black text-white pt-16 font-sans">
+      <BreadcrumbSchema items={breadcrumbs} />
+
       
       {/* Cinematic Hero Title Header */}
       {/* <section className="pt-16 pb-4 md:pb-8 text-center relative bg-[#030303]">

@@ -1,10 +1,20 @@
-"use client";
 
 import React from "react";
+import { Metadata } from "next";
+import { BreadcrumbSchema } from "@/components/seo/Schemas";
 import { Reveal } from "@/components/ui/Reveal";
 import { AboutCTA } from "@/sections/about/AboutCTA";
 import { LifeBuoy, Clock, ShieldAlert, Activity } from "lucide-react";
 
+
+
+export const metadata: Metadata = {
+  title: "Customer Support",
+  description: "Get 24/7 technical support, billing assistance, and customer service from Devopstrio.",
+  alternates: {
+    canonical: "/about/customer-support"
+  }
+};
 export default function CustomerSupportPage() {
   const supportPillars = [
     {
@@ -38,6 +48,11 @@ export default function CustomerSupportPage() {
 
   return (
     <main className="min-h-screen bg-black text-white pt-16 font-sans">
+      <BreadcrumbSchema items={[
+        { name: "Home", item: "/" },
+        { name: "About Us", item: "/about/company-overview" },
+        { name: "Customer Support", item: "/about/customer-support" }
+      ]} />
       {/* Ambient background glow */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[radial-gradient(circle_at_center,rgba(244,63,94,0.03),transparent_70%)] pointer-events-none" />
 
