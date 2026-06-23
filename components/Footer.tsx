@@ -177,11 +177,43 @@ export function Footer() {
           <span className="text-xs text-zinc-500 font-medium tracking-wide">
             Copyright © 2026 Devopstrio Limited. All rights reserved.
           </span>
-          <div className="flex flex-wrap justify-center gap-6 md:gap-8 text-[10px] font-bold tracking-widest text-zinc-400 uppercase">
-            <a href="https://www.linkedin.com/company/devopstrioglobal/posts/?feedView=all" target="_blank" rel="noopener noreferrer" className="hover:text-rose-500 transition-colors">LINKEDIN</a>
-            <a href="https://www.facebook.com/profile.php?id=61579126233218" target="_blank" rel="noopener noreferrer" className="hover:text-rose-500 transition-colors">FACEBOOK</a>
-            <a href="https://www.instagram.com/devopstrio_offcl/" target="_blank" rel="noopener noreferrer" className="hover:text-rose-500 transition-colors">INSTAGRAM</a>
-            <a href="https://www.youtube.com/@Devopstrioltd" target="_blank" rel="noopener noreferrer" className="hover:text-rose-500 transition-colors">YOUTUBE</a>
+          <div className="flex flex-wrap justify-center gap-6 md:gap-8 items-center">
+            <a
+              href="https://www.linkedin.com/company/devopstrioglobal/posts/?feedView=all"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="transition-all duration-200 hover:scale-110"
+              title="LinkedIn"
+            >
+              <img src="/assets/social-icons/linkedin.svg" alt="LinkedIn" className="w-7 h-7 object-contain transition-all duration-200" />
+            </a>
+            <a
+              href="https://www.facebook.com/profile.php?id=61579126233218"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="transition-all duration-200 hover:scale-110"
+              title="Facebook"
+            >
+              <img src="/assets/social-icons/facebook.svg" alt="Facebook" className="w-7 h-7 object-contain transition-all duration-200" />
+            </a>
+            <a
+              href="https://www.instagram.com/devopstrio_offcl/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="transition-all duration-200 hover:scale-110"
+              title="Instagram"
+            >
+              <img src="/assets/social-icons/instagram.svg" alt="Instagram" className="w-7 h-7 object-contain transition-all duration-200" />
+            </a>
+            <a
+              href="https://www.youtube.com/@Devopstrioltd"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="transition-all duration-200 hover:scale-110"
+              title="YouTube"
+            >
+              <img src="/assets/social-icons/youtube.svg" alt="YouTube" className="w-7 h-7 object-contain transition-all duration-200" />
+            </a>
           </div>
         </div>
 
