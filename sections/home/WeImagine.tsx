@@ -30,7 +30,7 @@ export function WeImagine() {
           <div className="relative rounded-2xl overflow-hidden mb-16 h-[260px] md:h-[380px] w-full border border-zinc-800/40">
             {/* Banner image */}
             <img
-              src="/assets/Home-page/innovation/image.png"
+              src="/assets/Home-page/innovation/image1.png"
               alt="Devopstrio Innovation Lab"
               className="absolute inset-0 w-full h-full object-cover"
             />

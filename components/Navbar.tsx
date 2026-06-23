@@ -573,6 +573,55 @@ export function Navbar() {
                     </div>
                   </div>
 
+                  {/* Mega Menu Footer */}
+                  <div className="col-span-full border-t border-zinc-900/60 pt-5 mt-2 flex flex-row justify-between items-center">
+                    <div className="flex items-center gap-2 text-[11px] font-medium text-zinc-500">
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                      <span>Active Delivery: London, UK & Global Centers</span>
+                    </div>
+                    <div className="flex items-center gap-4">
+                      <span className="text-[10px] font-bold tracking-wider uppercase text-zinc-500">Connect With Us</span>
+                      <div className="flex items-center gap-3 border-l border-zinc-800 pl-4">
+                        <a
+                          href="https://www.linkedin.com/company/devopstrioglobal/posts/?feedView=all"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="transition-all duration-200 hover:scale-110"
+                          title="LinkedIn"
+                        >
+                          <img src="/assets/social-icons/linkedin.svg" alt="LinkedIn" className="w-4.5 h-4.5 opacity-60 hover:opacity-100 transition-opacity invert" />
+                        </a>
+                        <a
+                          href="https://www.facebook.com/profile.php?id=61579126233218"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="transition-all duration-200 hover:scale-110"
+                          title="Facebook"
+                        >
+                          <img src="/assets/social-icons/facebook.svg" alt="Facebook" className="w-4.5 h-4.5 opacity-60 hover:opacity-100 transition-opacity invert" />
+                        </a>
+                        <a
+                          href="https://www.instagram.com/devopstrio_offcl/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="transition-all duration-200 hover:scale-110"
+                          title="Instagram"
+                        >
+                          <img src="/assets/social-icons/instagram.svg" alt="Instagram" className="w-4.5 h-4.5 opacity-60 hover:opacity-100 transition-opacity invert" />
+                        </a>
+                        <a
+                          href="https://www.youtube.com/@Devopstrioltd"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="transition-all duration-200 hover:scale-110"
+                          title="YouTube"
+                        >
+                          <img src="/assets/social-icons/youtube.svg" alt="YouTube" className="w-4.5 h-4.5 opacity-60 hover:opacity-100 transition-opacity invert" />
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+
                 </div>
               </div>
             )}
@@ -634,6 +683,55 @@ export function Navbar() {
                           </span>
                         </Link>
                       ))}
+                    </div>
+                  </div>
+
+                  {/* Mega Menu Footer */}
+                  <div className="col-span-full border-t border-zinc-900/60 pt-5 mt-2 flex flex-row justify-between items-center">
+                    <div className="flex items-center gap-2 text-[11px] font-medium text-zinc-500">
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                      <span>Active Delivery: London, UK & Global Centers</span>
+                    </div>
+                    <div className="flex items-center gap-4">
+                      <span className="text-[10px] font-bold tracking-wider uppercase text-zinc-500">Connect With Us</span>
+                      <div className="flex items-center gap-3 border-l border-zinc-800 pl-4">
+                        <a
+                          href="https://www.linkedin.com/company/devopstrioglobal/posts/?feedView=all"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="transition-all duration-200 hover:scale-110"
+                          title="LinkedIn"
+                        >
+                          <img src="/assets/social-icons/linkedin.svg" alt="LinkedIn" className="w-4.5 h-4.5 opacity-60 hover:opacity-100 transition-opacity invert" />
+                        </a>
+                        <a
+                          href="https://www.facebook.com/profile.php?id=61579126233218"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="transition-all duration-200 hover:scale-110"
+                          title="Facebook"
+                        >
+                          <img src="/assets/social-icons/facebook.svg" alt="Facebook" className="w-4.5 h-4.5 opacity-60 hover:opacity-100 transition-opacity invert" />
+                        </a>
+                        <a
+                          href="https://www.instagram.com/devopstrio_offcl/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="transition-all duration-200 hover:scale-110"
+                          title="Instagram"
+                        >
+                          <img src="/assets/social-icons/instagram.svg" alt="Instagram" className="w-4.5 h-4.5 opacity-60 hover:opacity-100 transition-opacity invert" />
+                        </a>
+                        <a
+                          href="https://www.youtube.com/@Devopstrioltd"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="transition-all duration-200 hover:scale-110"
+                          title="YouTube"
+                        >
+                          <img src="/assets/social-icons/youtube.svg" alt="YouTube" className="w-4.5 h-4.5 opacity-60 hover:opacity-100 transition-opacity invert" />
+                        </a>
+                      </div>
                     </div>
                   </div>
 
@@ -720,6 +818,55 @@ export function Navbar() {
                           </span>
                         </Link>
                       ))}
+                    </div>
+                  </div>
+
+                  {/* Mega Menu Footer */}
+                  <div className="col-span-full border-t border-zinc-900/60 pt-5 mt-2 flex flex-row justify-between items-center">
+                    <div className="flex items-center gap-2 text-[11px] font-medium text-zinc-500">
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                      <span>Active Delivery: London, UK & Global Centers</span>
+                    </div>
+                    <div className="flex items-center gap-4">
+                      <span className="text-[10px] font-bold tracking-wider uppercase text-zinc-500">Connect With Us</span>
+                      <div className="flex items-center gap-3 border-l border-zinc-800 pl-4">
+                        <a
+                          href="https://www.linkedin.com/company/devopstrioglobal/posts/?feedView=all"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="transition-all duration-200 hover:scale-110"
+                          title="LinkedIn"
+                        >
+                          <img src="/assets/social-icons/linkedin.svg" alt="LinkedIn" className="w-4.5 h-4.5 opacity-60 hover:opacity-100 transition-opacity invert" />
+                        </a>
+                        <a
+                          href="https://www.facebook.com/profile.php?id=61579126233218"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="transition-all duration-200 hover:scale-110"
+                          title="Facebook"
+                        >
+                          <img src="/assets/social-icons/facebook.svg" alt="Facebook" className="w-4.5 h-4.5 opacity-60 hover:opacity-100 transition-opacity invert" />
+                        </a>
+                        <a
+                          href="https://www.instagram.com/devopstrio_offcl/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="transition-all duration-200 hover:scale-110"
+                          title="Instagram"
+                        >
+                          <img src="/assets/social-icons/instagram.svg" alt="Instagram" className="w-4.5 h-4.5 opacity-60 hover:opacity-100 transition-opacity invert" />
+                        </a>
+                        <a
+                          href="https://www.youtube.com/@Devopstrioltd"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="transition-all duration-200 hover:scale-110"
+                          title="YouTube"
+                        >
+                          <img src="/assets/social-icons/youtube.svg" alt="YouTube" className="w-4.5 h-4.5 opacity-60 hover:opacity-100 transition-opacity invert" />
+                        </a>
+                      </div>
                     </div>
                   </div>
 
@@ -810,6 +957,55 @@ export function Navbar() {
                     </div>
                   </div>
 
+                  {/* Mega Menu Footer */}
+                  <div className="col-span-full border-t border-zinc-900/60 pt-5 mt-2 flex flex-row justify-between items-center">
+                    <div className="flex items-center gap-2 text-[11px] font-medium text-zinc-500">
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                      <span>Active Delivery: London, UK & Global Centers</span>
+                    </div>
+                    <div className="flex items-center gap-4">
+                      <span className="text-[10px] font-bold tracking-wider uppercase text-zinc-500">Connect With Us</span>
+                      <div className="flex items-center gap-3 border-l border-zinc-800 pl-4">
+                        <a
+                          href="https://www.linkedin.com/company/devopstrioglobal/posts/?feedView=all"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="transition-all duration-200 hover:scale-110"
+                          title="LinkedIn"
+                        >
+                          <img src="/assets/social-icons/linkedin.svg" alt="LinkedIn" className="w-4.5 h-4.5 opacity-60 hover:opacity-100 transition-opacity invert" />
+                        </a>
+                        <a
+                          href="https://www.facebook.com/profile.php?id=61579126233218"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="transition-all duration-200 hover:scale-110"
+                          title="Facebook"
+                        >
+                          <img src="/assets/social-icons/facebook.svg" alt="Facebook" className="w-4.5 h-4.5 opacity-60 hover:opacity-100 transition-opacity invert" />
+                        </a>
+                        <a
+                          href="https://www.instagram.com/devopstrio_offcl/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="transition-all duration-200 hover:scale-110"
+                          title="Instagram"
+                        >
+                          <img src="/assets/social-icons/instagram.svg" alt="Instagram" className="w-4.5 h-4.5 opacity-60 hover:opacity-100 transition-opacity invert" />
+                        </a>
+                        <a
+                          href="https://www.youtube.com/@Devopstrioltd"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="transition-all duration-200 hover:scale-110"
+                          title="YouTube"
+                        >
+                          <img src="/assets/social-icons/youtube.svg" alt="YouTube" className="w-4.5 h-4.5 opacity-60 hover:opacity-100 transition-opacity invert" />
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+
                 </div>
               </div>
             )}
@@ -873,6 +1069,55 @@ export function Navbar() {
                           </span>
                         </Link>
                       ))}
+                    </div>
+                  </div>
+
+                  {/* Mega Menu Footer */}
+                  <div className="col-span-full border-t border-zinc-900/60 pt-5 mt-2 flex flex-row justify-between items-center">
+                    <div className="flex items-center gap-2 text-[11px] font-medium text-zinc-500">
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                      <span>Active Delivery: London, UK & Global Centers</span>
+                    </div>
+                    <div className="flex items-center gap-4">
+                      <span className="text-[10px] font-bold tracking-wider uppercase text-zinc-500">Connect With Us</span>
+                      <div className="flex items-center gap-3 border-l border-zinc-800 pl-4">
+                        <a
+                          href="https://www.linkedin.com/company/devopstrioglobal/posts/?feedView=all"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="transition-all duration-200 hover:scale-110"
+                          title="LinkedIn"
+                        >
+                          <img src="/assets/social-icons/linkedin.svg" alt="LinkedIn" className="w-4.5 h-4.5 opacity-60 hover:opacity-100 transition-opacity invert" />
+                        </a>
+                        <a
+                          href="https://www.facebook.com/profile.php?id=61579126233218"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="transition-all duration-200 hover:scale-110"
+                          title="Facebook"
+                        >
+                          <img src="/assets/social-icons/facebook.svg" alt="Facebook" className="w-4.5 h-4.5 opacity-60 hover:opacity-100 transition-opacity invert" />
+                        </a>
+                        <a
+                          href="https://www.instagram.com/devopstrio_offcl/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="transition-all duration-200 hover:scale-110"
+                          title="Instagram"
+                        >
+                          <img src="/assets/social-icons/instagram.svg" alt="Instagram" className="w-4.5 h-4.5 opacity-60 hover:opacity-100 transition-opacity invert" />
+                        </a>
+                        <a
+                          href="https://www.youtube.com/@Devopstrioltd"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="transition-all duration-200 hover:scale-110"
+                          title="YouTube"
+                        >
+                          <img src="/assets/social-icons/youtube.svg" alt="YouTube" className="w-4.5 h-4.5 opacity-60 hover:opacity-100 transition-opacity invert" />
+                        </a>
+                      </div>
                     </div>
                   </div>
 
@@ -1016,6 +1261,22 @@ export function Navbar() {
             >
               Contact Us <ArrowUpRight size={14} />
             </Link>
+
+            {/* Mobile Drawer Social Footer */}
+            <div className="mt-8 flex justify-center gap-6 border-t border-zinc-900 pt-6">
+              <a href="https://www.linkedin.com/company/devopstrioglobal/posts/?feedView=all" target="_blank" rel="noopener noreferrer" className="opacity-60 hover:opacity-100 transition-opacity">
+                <img src="/assets/social-icons/linkedin.svg" alt="LinkedIn" className="w-5 h-5 invert" />
+              </a>
+              <a href="https://www.facebook.com/profile.php?id=61579126233218" target="_blank" rel="noopener noreferrer" className="opacity-60 hover:opacity-100 transition-opacity">
+                <img src="/assets/social-icons/facebook.svg" alt="Facebook" className="w-5 h-5 invert" />
+              </a>
+              <a href="https://www.instagram.com/devopstrio_offcl/" target="_blank" rel="noopener noreferrer" className="opacity-60 hover:opacity-100 transition-opacity">
+                <img src="/assets/social-icons/instagram.svg" alt="Instagram" className="w-5 h-5 invert" />
+              </a>
+              <a href="https://www.youtube.com/@Devopstrioltd" target="_blank" rel="noopener noreferrer" className="opacity-60 hover:opacity-100 transition-opacity">
+                <img src="/assets/social-icons/youtube.svg" alt="YouTube" className="w-5 h-5 invert" />
+              </a>
+            </div>
           </div>
         </div>
       )}
