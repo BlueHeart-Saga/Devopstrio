@@ -51,11 +51,20 @@ jobs:
       - name: Unzip artifact for deployment
         run: unzip -qq release.zip -d ./release
 
+      - name: Set deployment target dynamically based on repository
+        run: |
+          if [ "${{ github.repository }}" = "Devopstrio/Devopstrio" ]; then
+            echo "APP_NAME=devopstrio-prod" >> $GITHUB_ENV
+          else
+            echo "APP_NAME=Devopstrio-global" >> $GITHUB_ENV
+          fi
+        shell: bash
+
       - name: 'Deploy to Azure Web App'
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v3
         with:
-          app-name: 'Devopstrio-global'
+          app-name: ${{ env.APP_NAME }}
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE }}
           package: ./release
