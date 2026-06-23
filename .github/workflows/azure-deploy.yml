@@ -58,6 +58,5 @@ jobs:
         uses: azure/webapps-deploy@v3
         with:
           app-name: 'devopstrio-prod'
-          slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE }}
           package: ./release
