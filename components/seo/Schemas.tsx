@@ -197,3 +197,106 @@ export function ReviewSchema({ reviews = DEFAULT_REVIEWS }: { reviews?: ReviewIt
   }));
   return <JsonLd data={data} />;
 }
+
+// 7. Professional Service Schema
+export function ProfessionalServiceSchema() {
+  const data = {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Devopstrio",
+    "url": "https://devopstrio.co.uk",
+    "logo": "https://devopstrio.co.uk/apple-touch-icon.png",
+    "image": "https://devopstrio.co.uk/apple-touch-icon.png",
+    "description": "Enterprise AI, cloud infrastructure, and product engineering consulting.",
+    "telephone": "+442079460192",
+    "priceRange": "$$$",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "128 City Road",
+      "addressLocality": "London",
+      "postalCode": "EC1V 2NX",
+      "addressCountry": "GB"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/company/devopstrio",
+      "https://github.com/Devopstrio",
+      "https://twitter.com/devopstrio"
+    ]
+  };
+  return <JsonLd data={data} />;
+}
+
+// 8. Local Business Schema
+export function LocalBusinessSchema() {
+  const data = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Devopstrio Head Office",
+    "image": "https://devopstrio.co.uk/apple-touch-icon.png",
+    "@id": "https://devopstrio.co.uk/#local-business",
+    "url": "https://devopstrio.co.uk",
+    "telephone": "+442079460192",
+    "priceRange": "$$$",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "128 City Road",
+      "addressLocality": "London",
+      "postalCode": "EC1V 2NX",
+      "addressCountry": "GB"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 51.5256,
+      "longitude": -0.0875
+    }
+  };
+  return <JsonLd data={data} />;
+}
+
+// 9. Job Posting Schema
+interface JobPostingDetails {
+  title: string;
+  description: string;
+  datePosted: string;
+  validThrough?: string;
+  employmentType?: string;
+  hiringOrganizationName?: string;
+  jobLocationCity: string;
+  jobLocationCountry: string;
+}
+
+export function JobPostingSchema({
+  title,
+  description,
+  datePosted,
+  validThrough = "2027-12-31",
+  employmentType = "FULL_TIME",
+  hiringOrganizationName = "Devopstrio",
+  jobLocationCity,
+  jobLocationCountry
+}: JobPostingDetails) {
+  const data = {
+    "@context": "https://schema.org",
+    "@type": "JobPosting",
+    "title": title,
+    "description": description,
+    "datePosted": datePosted,
+    "validThrough": validThrough,
+    "employmentType": employmentType,
+    "hiringOrganization": {
+      "@type": "Organization",
+      "name": hiringOrganizationName,
+      "sameAs": "https://devopstrio.co.uk",
+      "logo": "https://devopstrio.co.uk/apple-touch-icon.png"
+    },
+    "jobLocation": {
+      "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": jobLocationCity,
+        "addressCountry": jobLocationCountry
+      }
+    }
+  };
+  return <JsonLd data={data} />;
+}

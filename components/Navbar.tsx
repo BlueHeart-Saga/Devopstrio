@@ -177,6 +177,7 @@ const aboutList = [
   { name: "Company Overview", desc: "Our history, mission, core values, and corporate strategy.", href: "/about/company-overview" },
   { name: "Leadership & Team", desc: "Meet the executive board, advisors, and principal architects.", href: "/about/leadership-team" },
   { name: "Life at Devopstrio", desc: "Explore our co-engineering culture, team events, and active careers.", href: "/about/life-at-devopstrio" },
+  { name: "Global Internship", desc: "Attracting students, graduates, and aspiring engineers to launch their technology career.", href: "/about/global-internship" },
   { name: "Global Presence", desc: "Our international delivery centers, office sites, and local operations.", href: "/about/global-presence" },
   { name: "Partnerships & Certifications", desc: "Strategic technology alliances and engineering certification achievements.", href: "/about/partnerships-certifications" },
   { name: "Awards & Recognition", desc: "Industry accolades, technical awards, and compliance standard badges.", href: "/about/awards-recognition" },

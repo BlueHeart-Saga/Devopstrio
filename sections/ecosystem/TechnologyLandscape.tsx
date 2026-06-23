@@ -17,7 +17,7 @@ const landscapes = [
     tools: [
       { name: "OpenAI", logo: "/assets/Tech-icons/openai-logo_svgstack_com_28971780931370.svg" },
       { name: "PyTorch", logo: "/assets/Tech-icons/pytorch-logo_svgstack_com_29131780931154.svg" },
-      { name: "Python", logo: "/assets/Home-page/Techtools/Python.svg" },
+      { name: "Python", logo: "/assets/Home-page/Techtools/python.svg" },
       { name: "Go", logo: "/assets/Home-page/Techtools/GO.svg" },
       { name: "LangChain" },
       { name: "Redis Semantic", logo: "/assets/Tech-icons/redis-logo_svgstack_com_29201780931292.svg" }
@@ -94,7 +94,7 @@ const landscapes = [
     tools: [
       { name: "Go", logo: "/assets/Home-page/Techtools/GO.svg" },
       { name: "Node.js", logo: "/assets/Home-page/Techtools/Node.svg" },
-      { name: "Python", logo: "/assets/Home-page/Techtools/Python.svg" },
+      { name: "Python", logo: "/assets/Home-page/Techtools/python.svg" },
       { name: "Rust", logo: "/assets/Tech-icons/rust-logo_svgstack_com_31291780931285.svg" },
       { name: "gRPC" }
     ]

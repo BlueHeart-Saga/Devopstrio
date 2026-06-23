@@ -21,7 +21,7 @@ const experts: Expert[] = [
   {
     name: "Raghavendra S",
     role: "Global Delivery Manager",
-    avatar: "/assets/About-page/team/membars/Kishore2.jpg",
+    avatar: "/assets/About-page/team/membars/Kishore2.png",
     linkedin: "https://linkedin.com"
   },
   {

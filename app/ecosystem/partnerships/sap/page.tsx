@@ -361,31 +361,26 @@ export default function SAPStrategicAllianceHub() {
         </div>
 
         {/* Decorative Grid */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#080808_1px,transparent_1px),linear-gradient(to_bottom,#080808_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] pointer-events-none z-10" />
+        
 
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-20 flex flex-col items-center text-center">
-
           <Reveal className="mb-4">
             <span className="gap-2 inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white transition-all duration-300 hover:shadow-[0_0_25px_rgba(225,29,72,0.35)] hover:-translate-y-0.5">
               <span className="w-1.5 h-1.5 rounded-full bg-rose-500 animate-pulse" />
               SAP Strategic Alliance
             </span>
           </Reveal>
-
           <Reveal delay={0.1}>
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight text-white max-w-5xl mb-6">
               Building Intelligent Enterprises with <span className="text-rose-500">AI, Data & Applications</span>
             </h1>
           </Reveal>
-
           <Reveal delay={0.2} className="max-w-3xl">
             <p className="text-zinc-400 text-xs md:text-sm lg:text-base leading-relaxed font-bold mb-8">
               Transform finance, supply chain, procurement, HR, manufacturing, and customer operations through SAP Business Suite and SAP BTP.
             </p>
           </Reveal>
-
-          {/* CTA Buttons */}
-          <Reveal delay={0.3} className="flex flex-wrap justify-center gap-4 mb-12">
+          <Reveal delay={0.3} className="flex flex-wrap justify-center gap-4 mb-0">
             <Link
               href="/contact"
               className="inline-flex items-center gap-3 pl-6 pr-3 py-3 bg-white text-black font-semibold text-xs md:text-sm tracking-wider rounded-full hover:bg-zinc-200 transition-all duration-300 shadow-lg shadow-white/5"
@@ -402,34 +397,9 @@ export default function SAPStrategicAllianceHub() {
               Schedule Discovery Workshop
             </a>
           </Reveal>
-
-          {/* Flow Diagram Representation */}
-          <Reveal delay={0.4} className="w-full max-w-2xl bg-zinc-950/60 border border-zinc-900 rounded-3xl p-6 select-none">
-            <div className="flex flex-col md:flex-row items-center justify-between gap-4 font-mono text-xs text-zinc-400 font-bold">
-              <div className="px-4 py-2 bg-zinc-900 rounded-xl border border-zinc-800 flex items-center gap-2">
-                <Sparkles className="w-4 h-4 text-rose-500" />
-                Business AI
-              </div>
-              <ChevronRight className="w-4 h-4 text-rose-500 rotate-90 md:rotate-0" />
-              <div className="px-4 py-2 bg-zinc-900 rounded-xl border border-zinc-800 flex items-center gap-2">
-                <Database className="w-4 h-4 text-rose-500" />
-                Business Data
-              </div>
-              <ChevronRight className="w-4 h-4 text-rose-500 rotate-90 md:rotate-0" />
-              <div className="px-4 py-2 bg-zinc-900 rounded-xl border border-zinc-800 flex items-center gap-2">
-                <Briefcase className="w-4 h-4 text-rose-500" />
-                SAP Applications
-              </div>
-              <ChevronRight className="w-4 h-4 text-rose-500 rotate-90 md:rotate-0" />
-              <div className="gap-2 inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white transition-all duration-300 hover:shadow-[0_0_25px_rgba(225,29,72,0.35)] hover:-translate-y-0.5">
-                <CheckCircle2 className="w-4 h-4" />
-                Outcomes
-              </div>
-            </div>
-          </Reveal>
-
         </div>
       </section>
+
 
       {/* 2. SAP ECOSYSTEM OVERVIEW */}
       <section id="overview" className="w-full py-24 bg-[#030303] border-b border-zinc-900/60 relative">

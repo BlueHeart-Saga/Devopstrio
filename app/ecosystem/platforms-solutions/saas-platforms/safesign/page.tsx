@@ -80,6 +80,7 @@ export default function SafeSignProductPage() {
         </div>
       </section>
 
+
       {/* Capabilities */}
       <section className="w-full py-20 bg-[#030303] border-b border-zinc-900/60">
         <div className="max-w-5xl mx-auto w-full px-12 xl:px-8">

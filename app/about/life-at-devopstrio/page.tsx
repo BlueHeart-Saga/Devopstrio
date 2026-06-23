@@ -1,53 +1,82 @@
-
 import React from "react";
 import { Metadata } from "next";
 import { BreadcrumbSchema } from "@/components/seo/Schemas";
-import { LifeAtDevopstrio } from "@/sections/careers/LifeAtDevopstrio";
-import { EmployeeStories } from "@/sections/careers/EmployeeStories";
-import { AboutCTA } from "@/sections/about/AboutCTA";
-import { Reveal } from "@/components/ui/Reveal";
 
-
+// Life-at-Devopstrio sections
+import { LifeHero } from "@/sections/about/life/LifeHero";
+import { CultureManifesto } from "@/sections/about/life/CultureManifesto";
+import { LifeMomentsGallery } from "@/sections/about/life/LifeMomentsGallery";
+import { EngineeringCulture } from "@/sections/about/life/EngineeringCulture";
+import { JourneyTimeline } from "@/sections/about/life/JourneyTimeline";
+import { EmployeeStoriesSection } from "@/sections/about/life/EmployeeStoriesSection";
+import { LearningGrowth } from "@/sections/about/life/LearningGrowth";
+import { BenefitsWellbeing } from "@/sections/about/life/BenefitsWellbeing";
+import { AwardsRecognition } from "@/sections/about/life/AwardsRecognition";
+import { CommunityImpact } from "@/sections/about/life/CommunityImpact";
+import { OpenPositionsPreview } from "@/sections/about/life/OpenPositionsPreview";
+import { LifeFinalCTA } from "@/sections/about/life/LifeFinalCTA";
 
 export const metadata: Metadata = {
-  title: "Life at Devopstrio",
-  description: "Learn about the collaborative culture, work environment, and team perks at Devopstrio.",
+  title: "Life at Devopstrio | Culture, Careers & Innovation",
+  description:
+    "Discover what it's like to work at Devopstrio — a culture of innovation, ownership, continuous learning, and global collaboration in AI, Cloud, and DevOps.",
   alternates: {
-    canonical: "/about/life-at-devopstrio"
-  }
+    canonical: "/about/life-at-devopstrio",
+  },
+  openGraph: {
+    title: "Life at Devopstrio | Culture, Careers & Innovation",
+    description:
+      "Join a world-class team building AI, Cloud, and DevOps solutions. Explore our culture, career paths, benefits, and open positions.",
+    type: "website",
+  },
 };
+
 export default function LifeAtDevopstrioPage() {
   return (
-    <main className="min-h-screen bg-black text-white pt-16 font-sans">
-      <BreadcrumbSchema items={[
-        { name: "Home", item: "/" },
-        { name: "About Us", item: "/about/company-overview" },
-        { name: "Life at Devopstrio", item: "/about/life-at-devopstrio" }
-      ]} />
-      {/* Page Header */}
-      <section className="pt-20 pb-4 text-center relative bg-[#030303]">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(244,63,94,0.05),transparent_50%)] pointer-events-none" />
-        <div className="max-w-4xl mx-auto px-6 relative z-10">
-          <Reveal>
-            <span className="text-[10px] font-mono tracking-widest text-rose-500 uppercase block mb-3 font-bold">People & Culture</span>
-            <h1 className="text-4xl md:text-6xl font-light tracking-tight mb-4 text-white leading-tight">
-              Life at <span className="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-rose-500">Devopstrio</span>
-            </h1>
-            <p className="text-zinc-400 font-medium max-w-2xl mx-auto text-sm md:text-base leading-relaxed">
-              Explore the culture of continuous learning, open-source co-engineering, and the vibrant life that defines our global team.
-            </p>
-          </Reveal>
-        </div>
-      </section>
+    <main className="min-h-screen bg-black text-white font-sans overflow-x-hidden">
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", item: "/" },
+          { name: "About Us", item: "/about/company-overview" },
+          { name: "Life at Devopstrio", item: "/about/life-at-devopstrio" },
+        ]}
+      />
 
-      {/* Main Content */}
-      <div className="bg-black">
-        <LifeAtDevopstrio />
-        
-        <EmployeeStories />
-        
-        <AboutCTA />
-      </div>
+      {/* 1. Hero */}
+      <LifeHero />
+
+      {/* 2. Culture Manifesto */}
+      <CultureManifesto />
+
+      {/* 3. Life Moments Gallery */}
+      <LifeMomentsGallery />
+
+      {/* 4. Engineering Culture */}
+      <EngineeringCulture />
+
+      {/* 5. Journey Timeline */}
+      <JourneyTimeline />
+
+      {/* 6. Employee Stories */}
+      <EmployeeStoriesSection />
+
+      {/* 7. Learning & Growth */}
+      <LearningGrowth />
+
+      {/* 8. Benefits & Wellbeing */}
+      <BenefitsWellbeing />
+
+      {/* 9. Awards & Recognition */}
+      <AwardsRecognition />
+
+      {/* 10. Community Impact */}
+      <CommunityImpact />
+
+      {/* 11. Open Positions Preview */}
+      <OpenPositionsPreview />
+
+      {/* 12. Final CTA */}
+      <LifeFinalCTA />
     </main>
   );
 }

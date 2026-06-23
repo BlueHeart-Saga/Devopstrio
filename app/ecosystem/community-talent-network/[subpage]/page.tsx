@@ -1,18 +1,34 @@
-"use client";
 
-import React, { use } from "react";
+import React from "react";
 import { notFound } from "next/navigation";
 import { getEcosystemSubpage } from "@/data/ecosystem";
 import { Hero } from "@/components/ecosystem/Hero";
 import { FAQ } from "@/components/ecosystem/FAQ";
 import { CTA } from "@/components/ecosystem/CTA";
 
+
+import type { Metadata } from "next";
+import { generatePageMetadata } from "@/lib/seo-utils";
+
+export async function generateMetadata({ params }: SubpageProps): Promise<Metadata> {
+  const { subpage } = await params;
+  const domain = "community-talent-network";
+  const data = getEcosystemSubpage(domain, subpage);
+  if (!data) return {};
+
+  return generatePageMetadata({
+    title: `${data.title} | Devopstrio`,
+    description: data.heroSubtitle,
+    path: `/ecosystem/${domain}/${subpage}`
+  });
+}
+
 interface SubpageProps {
   params: Promise<{ subpage: string }>;
 }
 
-export default function EcosystemSubpage({ params }: SubpageProps) {
-  const { subpage } = use(params);
+export default async function EcosystemSubpage({ params }: SubpageProps) {
+  const { subpage } = await params;
   const domain = "community-talent-network";
   const data = getEcosystemSubpage(domain, subpage);
 
@@ -121,3 +137,15 @@ export default function EcosystemSubpage({ params }: SubpageProps) {
     </main>
   );
 }
+
+
+import { ecosystemSubpages } from "@/data/ecosystem";
+
+export async function generateStaticParams() {
+  const domain = "community-talent-network";
+  const subpages = ecosystemSubpages[domain] || {};
+  return Object.keys(subpages).map((slug) => ({
+    subpage: slug
+  }));
+}
+

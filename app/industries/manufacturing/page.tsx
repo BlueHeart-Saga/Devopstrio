@@ -40,7 +40,7 @@ const data = {
     title: "Smart factories &",
     highlightedWord: "Industrial Automation",
     subtitle: "Deploying predictive machine maintenance metrics, automated supply chain forecasting filters, and industrial IoT monitoring systems.",
-    bgImage: "/assets/Industries-page/herocard/manufaturing.png"
+    bgImage: "/assets/Industries-page/herocard/Manufaturing.png"
   },
   overview: {
     heading: "Integrated asset tracking and real-time telemetry systems",

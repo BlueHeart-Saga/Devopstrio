@@ -60,7 +60,7 @@ function getTechIconColored(name: string): string {
   if (n.includes("angular")) return "/assets/Home-page/Techtools/Angular.svg";
   if (n.includes("vue")) return "/assets/Home-page/Techtools/Vue.svg";
   if (n.includes("node")) return "/assets/Home-page/Techtools/Node.svg";
-  if (n.includes("python")) return "/assets/Home-page/Techtools/Python.svg";
+  if (n.includes("python")) return "/assets/Home-page/Techtools/python.svg";
   if (n.includes("postgres")) return "/assets/Home-page/Techtools/postgre.svg";
   if (n.includes("mysql")) return "/assets/Home-page/Techtools/MySQL.svg";
   if (n.includes("oracle")) return "/assets/Home-page/Techtools/Oracle.svg";

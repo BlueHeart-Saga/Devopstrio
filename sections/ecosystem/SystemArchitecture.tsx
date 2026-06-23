@@ -9,7 +9,7 @@ const techStack = [
   { name: "Amazon Web Services", path: "/assets/Home-page/Techtools/aws-color.svg" },
   { name: "Google Cloud", path: "/assets/Home-page/Techtools/google-color.svg" },
   { name: "React", path: "/assets/Home-page/Techtools/React.svg" },
-  { name: "Python", path: "/assets/Home-page/Techtools/Python.svg" },
+  { name: "Python", path: "/assets/Home-page/Techtools/python.svg" },
   { name: "Go Lang", path: "/assets/Home-page/Techtools/GO.svg" },
   { name: "Node.js", path: "/assets/Home-page/Techtools/Node.svg" },
   { name: "Next.js", path: "/assets/Home-page/Techtools/next-js-color.svg" },

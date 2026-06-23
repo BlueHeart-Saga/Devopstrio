@@ -1,8 +1,9 @@
 import { MetadataRoute } from "next";
 import { servicesData } from "@/data/services";
 import { capabilityRegistry } from "@/data/services/dynamic-capabilities";
+import { insightsApi } from "@/lib/insightsApi";
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = "https://devopstrio.co.uk";
 
   // 1. Static Pages
@@ -13,10 +14,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/ecosystem",
     "/insights",
     "/contact",
+    "/careers",
     "/sitemap",
     "/about/company-overview",
     "/about/leadership-team",
     "/about/life-at-devopstrio",
+    "/about/global-internship",
     "/about/global-presence",
     "/about/partnerships-certifications",
     "/about/awards-recognition",
@@ -142,11 +145,30 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7
   }));
 
+  // 6. Dynamic Insights Pages (Blogs, Case Studies, etc.)
+  const dynamicPostPages: MetadataRoute.Sitemap = [];
+  try {
+    const posts = await insightsApi.getAllPosts(300);
+    posts.forEach((post) => {
+      if (post.id && post.category?.slug) {
+        dynamicPostPages.push({
+          url: `${baseUrl}/insights/${post.category.slug}/${post.id}`,
+          lastModified: new Date(post.date),
+          changeFrequency: "weekly",
+          priority: 0.6
+        });
+      }
+    });
+  } catch (e) {
+    console.error("Failed to generate dynamic post URLs for sitemap:", e);
+  }
+
   return [
     ...staticPages,
     ...servicePages,
     ...industryPages,
     ...ecosystemPages,
-    ...insightsPages
+    ...insightsPages,
+    ...dynamicPostPages
   ];
 }

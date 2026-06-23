@@ -169,3 +169,14 @@ export default function CapabilityPage({ params }: PageProps) {
     </main>
   );
 }
+
+
+export async function generateStaticParams() {
+  const service = "cloud-services";
+  const serviceData = getServiceByCategory(service);
+  if (!serviceData) return [];
+  return serviceData.capabilities.map((cap) => ({
+    capability: cap.slug
+  }));
+}
+

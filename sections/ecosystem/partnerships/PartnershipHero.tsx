@@ -22,7 +22,7 @@ export function PartnershipHero() {
   const rowMiddle = [
     { name: "Vue", src: "/assets/Home-page/Techtools/Vue.svg" },
     { name: "Go", src: "/assets/Home-page/Techtools/GO.svg" },
-    { name: "Python", src: "/assets/Home-page/Techtools/Python.svg" },
+    { name: "Python", src: "/assets/Home-page/Techtools/python.svg" },
     { name: "Node.js", src: "/assets/Home-page/Techtools/Node.svg" },
     { name: "PostgreSQL", src: "/assets/Home-page/Techtools/postgre.svg" },
     { name: "GitHub", src: "/assets/Tech-icons/github-logo-svg_svgstack_com_28391780931442.svg" },

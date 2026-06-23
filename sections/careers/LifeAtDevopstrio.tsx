@@ -5,22 +5,22 @@ import { Reveal } from "@/components/ui/Reveal";
 
 const leftImages = [
   { 
-    image: "/assets/careers/lifeat-devopstrio/IMAGE.png", 
+    image: "/assets/careers/lifeat-devopstrio/1.png", 
     height: "h-[220px]", 
     radius: "rounded-tl-3xl rounded-br-3xl rounded-tr-xl rounded-bl-xl" 
   },
   { 
-    image: "/assets/careers/lifeat-devopstrio/IMAGE-1.png", 
+    image: "/assets/careers/lifeat-devopstrio/2.png", 
     height: "h-[340px]", 
     radius: "rounded-tl-[3.5rem] rounded-br-[3.5rem] rounded-tr-2xl rounded-bl-2xl" 
   },
   { 
-    image: "/assets/careers/lifeat-devopstrio/IMAGE-2.png", 
+    image: "/assets/careers/lifeat-devopstrio/3.png", 
     height: "h-[240px]", 
     radius: "rounded-3xl" 
   },
   { 
-    image: "/assets/careers/lifeat-devopstrio/IMAGEE7.png", 
+    image: "/assets/careers/lifeat-devopstrio/4.png", 
     height: "h-[300px]", 
     radius: "rounded-tr-[3rem] rounded-bl-[3rem] rounded-tl-2xl rounded-br-2xl" 
   },
@@ -28,22 +28,22 @@ const leftImages = [
 
 const rightImages = [
   { 
-    image: "/assets/careers/lifeat-devopstrio/IMAGE-3.png", 
-    height: "h-[300px]", 
+    image: "/assets/careers/lifeat-devopstrio/5.png", 
+    height: "h-[360px]", 
     radius: "rounded-tr-[2.5rem] rounded-bl-[2.5rem] rounded-tl-xl rounded-br-xl" 
   },
   { 
-    image: "/assets/careers/lifeat-devopstrio/IMAGE-4.png", 
+    image: "/assets/careers/lifeat-devopstrio/6.png", 
     height: "h-[220px]", 
     radius: "rounded-3xl" 
   },
   { 
-    image: "/assets/careers/lifeat-devopstrio/IMAGE-5.png", 
-    height: "h-[360px]", 
+    image: "/assets/careers/lifeat-devopstrio/7.png", 
+    height: "h-[200px]", 
     radius: "rounded-tl-[3.5rem] rounded-br-[3.5rem] rounded-tr-2xl rounded-bl-2xl" 
   },
   { 
-    image: "/assets/careers/lifeat-devopstrio/IMAGE6.png", 
+    image: "/assets/careers/lifeat-devopstrio/8.png", 
     height: "h-[240px]", 
     radius: "rounded-br-[2.5rem] rounded-tl-[2.5rem] rounded-tr-xl rounded-bl-xl" 
   },

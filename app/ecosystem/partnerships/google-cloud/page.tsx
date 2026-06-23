@@ -355,31 +355,26 @@ export default function GoogleCloudStrategicAllianceHub() {
         </div>
 
         {/* Decorative Grid */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#080808_1px,transparent_1px),linear-gradient(to_bottom,#080808_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] pointer-events-none z-10" />
+        
 
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-20 flex flex-col items-center text-center">
-
           <Reveal className="mb-4">
             <span className="gap-2 inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white transition-all duration-300 hover:shadow-[0_0_25px_rgba(225,29,72,0.35)] hover:-translate-y-0.5">
               <span className="w-1.5 h-1.5 rounded-full bg-rose-500 animate-pulse" />
               Google Cloud Strategic Alliance
             </span>
           </Reveal>
-
           <Reveal delay={0.1}>
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight text-white max-w-5xl mb-6">
               Building AI-Powered, <span className="text-rose-500">Data-Driven Platforms</span>
             </h1>
           </Reveal>
-
           <Reveal delay={0.2} className="max-w-3xl">
             <p className="text-zinc-400 text-xs md:text-sm lg:text-base leading-relaxed font-bold mb-8">
               Accelerate digital transformation with Google Cloud, leveraging AI, data analytics, Kubernetes, and cloud-native architectures to drive innovation at scale.
             </p>
           </Reveal>
-
-          {/* CTA Buttons */}
-          <Reveal delay={0.3} className="flex flex-wrap justify-center gap-4 mb-12">
+          <Reveal delay={0.3} className="flex flex-wrap justify-center gap-4 mb-0">
             <Link
               href="/contact"
               className="inline-flex items-center gap-3 pl-6 pr-3 py-3 bg-white text-black font-semibold text-xs md:text-sm tracking-wider rounded-full hover:bg-zinc-200 transition-all duration-300 shadow-lg shadow-white/5"
@@ -396,21 +391,9 @@ export default function GoogleCloudStrategicAllianceHub() {
               Explore Google Cloud Solutions
             </a>
           </Reveal>
-
-          {/* Highlights pills */}
-          <Reveal delay={0.4} className="flex flex-wrap justify-center gap-3 max-w-4xl select-none">
-            {heroHighlights.map((item) => (
-              <span
-                key={item}
-                className="px-4 py-2 rounded-xl bg-zinc-950/60 border border-zinc-900 text-xs text-zinc-400 font-bold"
-              >
-                {item}
-              </span>
-            ))}
-          </Reveal>
-
         </div>
       </section>
+
 
       {/* 2. PARTNERSHIP OVERVIEW */}
       <section id="overview" className="w-full py-24 bg-[#030303] border-b border-zinc-900/60 relative">

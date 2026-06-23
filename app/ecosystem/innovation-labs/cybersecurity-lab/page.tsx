@@ -220,19 +220,27 @@ export default function CybersecurityInnovationLabPage() {
       {/* 1. HERO SECTION */}
       <section className="relative w-full min-h-[90vh] flex flex-col items-center justify-center bg-black overflow-hidden pt-28 pb-20 border-b border-zinc-900/60">
 
-        {/* Background Gradients & Grids */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] bg-[radial-gradient(circle_at_center,rgba(225,29,72,0.03),transparent_60%)] pointer-events-none z-0" />
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#080808_1px,transparent_1px),linear-gradient(to_bottom,#080808_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] pointer-events-none z-0" />
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <img
+            src="/assets/ecosystem/sub-page-hero/ecosystem_Innovation_labs/Cyber.png"
+            alt="Cybersecurity Innovation Lab background"
+            className="w-full h-full object-cover object-center opacity-100 select-none pointer-events-none scale-[1.02]"
+          />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,0,0,0.95)_0%,rgba(0,0,0,0.7)_45%,transparent_75%)] pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent pointer-events-none" />
+        </div>
+
+        {/* Decorative Grid */}
+        
 
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10 flex flex-col items-center text-center">
-
           <Reveal className="mb-4">
             <span className="gap-2 inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white transition-all duration-300 hover:shadow-[0_0_25px_rgba(225,29,72,0.35)] hover:-translate-y-0.5">
               <Shield className="w-3.5 h-3.5" />
               Cybersecurity Innovation Lab
             </span>
           </Reveal>
-
           <Reveal delay={0.1}>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight text-white max-w-5xl mb-6">
               Building Cyber Resilience, Zero Trust Architecture <br />
@@ -241,15 +249,12 @@ export default function CybersecurityInnovationLabPage() {
               </span>
             </h1>
           </Reveal>
-
           <Reveal delay={0.2} className="max-w-3xl">
             <p className="text-zinc-400 text-xs md:text-sm lg:text-base leading-relaxed font-bold mb-10">
               Protecting digital enterprises through zero-trust network models, cloud security guardrails, automated pipeline scanning, and real-time SIEM/SOAR incident operations.
             </p>
           </Reveal>
-
-          {/* CTA Buttons */}
-          <Reveal delay={0.3} className="flex flex-wrap justify-center gap-4 mb-16">
+          <Reveal delay={0.3} className="flex flex-wrap justify-center gap-4 mb-0">
             <Link
               href="/contact"
               className="inline-flex items-center gap-3 pl-6 pr-3 py-3 bg-white text-black font-semibold text-xs md:text-sm tracking-wider rounded-full hover:bg-zinc-200 transition-all duration-300 shadow-lg shadow-white/5"
@@ -266,31 +271,6 @@ export default function CybersecurityInnovationLabPage() {
               Start Security Assessment
             </Link>
           </Reveal>
-
-          {/* Pillars */}
-          <Reveal delay={0.4} className="flex flex-wrap justify-center gap-3 max-w-4xl select-none mb-16">
-            {heroHighlights.map((item) => (
-              <span
-                key={item}
-                className="inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase border border-zinc-850 hover:border-zinc-750 bg-zinc-950/60 hover:bg-zinc-900 text-white transition-all duration-300 hover:-translate-y-0.5"
-              >
-                {item}
-              </span>
-            ))}
-          </Reveal>
-
-          {/* Metrics */}
-          <Reveal delay={0.5} className="w-full max-w-5xl border-t border-zinc-900/60 pt-12">
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 select-none">
-              {heroMetrics.map((metric, idx) => (
-                <div key={idx} className="text-center">
-                  <div className="text-3xl md:text-4xl font-mono font-black text-rose-500 mb-1">{metric.value}</div>
-                  <div className="text-[10px] md:text-xs font-mono text-zinc-400 uppercase tracking-widest font-bold">{metric.label}</div>
-                </div>
-              ))}
-            </div>
-          </Reveal>
-
         </div>
       </section>
 

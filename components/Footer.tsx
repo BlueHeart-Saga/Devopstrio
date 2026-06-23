@@ -159,6 +159,7 @@ export function Footer() {
               <li><Link href="/about/company-overview" className="hover:text-rose-500 transition-colors">Company Overview</Link></li>
               <li><Link href="/about/leadership-team" className="hover:text-rose-500 transition-colors">Leadership & Team</Link></li>
               <li><Link href="/about/life-at-devopstrio" className="hover:text-rose-500 transition-colors">Life at Devopstrio</Link></li>
+              <li><Link href="/about/global-internship" className="hover:text-rose-500 transition-colors">Global Internship</Link></li>
               <li><Link href="/about/global-presence" className="hover:text-rose-500 transition-colors">Global Presence</Link></li>
               <li><Link href="/about/partnerships-certifications" className="hover:text-rose-500 transition-colors">Partnerships & Certifications</Link></li>
               <li><Link href="/about/awards-recognition" className="hover:text-rose-500 transition-colors">Awards & Recognition</Link></li>
@@ -198,6 +199,82 @@ export function Footer() {
           <span>•</span>
           <Link href="/sitemap" className="hover:text-zinc-350 transition-colors">Sitemap</Link>
         </div>
+
+        {/* Collapsible HTML Directory Index for Search Bots & Users (Technical SEO Link Index) */}
+        <details className="mt-8 group border border-zinc-900 rounded-xl bg-zinc-950/20 text-left">
+          <summary className="list-none flex items-center justify-between px-6 py-4 cursor-pointer text-xs font-bold uppercase tracking-widest text-zinc-500 hover:text-rose-500 transition-colors select-none">
+            <span>Explore Site Directory (HTML Index)</span>
+            <span className="transition-transform duration-300 group-open:rotate-180 text-sm">&darr;</span>
+          </summary>
+          <div className="px-6 pb-6 pt-4 border-t border-zinc-900/60 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6 text-[11px] text-zinc-400 font-medium">
+            <div>
+              <h5 className="font-bold text-white mb-2 uppercase text-[9px] tracking-wider text-rose-500/80">AI & Data Innovation</h5>
+              <ul className="flex flex-col gap-1.5">
+                <li><a href="/services/ai-data-innovation/generative-ai-solutions" className="hover:text-white transition-colors">Generative AI Solutions</a></li>
+                <li><a href="/services/ai-data-innovation/ai-agents-automation" className="hover:text-white transition-colors">AI Agents & Automation</a></li>
+                <li><a href="/services/ai-data-innovation/machine-learning-engineering" className="hover:text-white transition-colors">Machine Learning Engineering</a></li>
+                <li><a href="/services/ai-data-innovation/data-engineering" className="hover:text-white transition-colors">Data Engineering</a></li>
+                <li><a href="/services/ai-data-innovation/business-intelligence-analytics" className="hover:text-white transition-colors">BI & Analytics</a></li>
+                <li><a href="/services/ai-data-innovation/predictive-analytics" className="hover:text-white transition-colors">Predictive Analytics</a></li>
+                <li><a href="/services/ai-data-innovation/data-governance" className="hover:text-white transition-colors">Data Governance</a></li>
+                <li><a href="/services/ai-data-innovation/mlops-ai-operations" className="hover:text-white transition-colors">MLOps & AI Operations</a></li>
+              </ul>
+            </div>
+            <div>
+              <h5 className="font-bold text-white mb-2 uppercase text-[9px] tracking-wider text-rose-500/80">Cloud Services</h5>
+              <ul className="flex flex-col gap-1.5">
+                <li><a href="/services/cloud-services/cloud-strategy-consulting" className="hover:text-white transition-colors">Cloud Strategy & Consulting</a></li>
+                <li><a href="/services/cloud-services/cloud-migration" className="hover:text-white transition-colors">Cloud Migration</a></li>
+                <li><a href="/services/cloud-services/cloud-architecture" className="hover:text-white transition-colors">Cloud Architecture</a></li>
+                <li><a href="/services/cloud-services/azure-services" className="hover:text-white transition-colors">Azure Services</a></li>
+                <li><a href="/services/cloud-services/aws-services" className="hover:text-white transition-colors">AWS Services</a></li>
+                <li><a href="/services/cloud-services/google-cloud-services" className="hover:text-white transition-colors">Google Cloud Services</a></li>
+                <li><a href="/services/cloud-services/cloud-security" className="hover:text-white transition-colors">Cloud Security</a></li>
+                <li><a href="/services/cloud-services/cloud-managed-services" className="hover:text-white transition-colors">Cloud Managed Services</a></li>
+                <li><a href="/services/cloud-services/finops-cost-optimization" className="hover:text-white transition-colors">FinOps & Cost Optimization</a></li>
+              </ul>
+            </div>
+            <div>
+              <h5 className="font-bold text-white mb-2 uppercase text-[9px] tracking-wider text-rose-500/80">DevOps & Automation</h5>
+              <ul className="flex flex-col gap-1.5">
+                <li><a href="/services/devops-automation/cicd-implementation" className="hover:text-white transition-colors">CI/CD Implementation</a></li>
+                <li><a href="/services/devops-automation/platform-engineering" className="hover:text-white transition-colors">Platform Engineering</a></li>
+                <li><a href="/services/devops-automation/infrastructure-as-code" className="hover:text-white transition-colors">Infrastructure as Code</a></li>
+                <li><a href="/services/devops-automation/kubernetes-services" className="hover:text-white transition-colors">Kubernetes Services</a></li>
+                <li><a href="/services/devops-automation/devsecops" className="hover:text-white transition-colors">DevSecOps</a></li>
+                <li><a href="/services/devops-automation/site-reliability-engineering" className="hover:text-white transition-colors">SRE</a></li>
+                <li><a href="/services/devops-automation/release-automation" className="hover:text-white transition-colors">Release Automation</a></li>
+                <li><a href="/services/devops-automation/monitoring-observability" className="hover:text-white transition-colors">Monitoring & Observability</a></li>
+              </ul>
+            </div>
+            <div>
+              <h5 className="font-bold text-white mb-2 uppercase text-[9px] tracking-wider text-rose-500/80">Cybersecurity</h5>
+              <ul className="flex flex-col gap-1.5">
+                <li><a href="/services/cybersecurity/security-assessment" className="hover:text-white transition-colors">Security Assessment</a></li>
+                <li><a href="/services/cybersecurity/vulnerability-management" className="hover:text-white transition-colors">Vulnerability Management</a></li>
+                <li><a href="/services/cybersecurity/penetration-testing" className="hover:text-white transition-colors">Penetration Testing</a></li>
+                <li><a href="/services/cybersecurity/security-operations-center" className="hover:text-white transition-colors">Security Operations Center</a></li>
+                <li><a href="/services/cybersecurity/identity-access-management" className="hover:text-white transition-colors">Identity & Access</a></li>
+                <li><a href="/services/cybersecurity/cloud-security" className="hover:text-white transition-colors">Cloud Security</a></li>
+                <li><a href="/services/cybersecurity/compliance-governance" className="hover:text-white transition-colors">Compliance & Governance</a></li>
+                <li><a href="/services/cybersecurity/zero-trust-architecture" className="hover:text-white transition-colors">Zero Trust Architecture</a></li>
+              </ul>
+            </div>
+            <div>
+              <h5 className="font-bold text-white mb-2 uppercase text-[9px] tracking-wider text-rose-500/80">Software Development</h5>
+              <ul className="flex flex-col gap-1.5">
+                <li><a href="/services/software-development/enterprise-app-development" className="hover:text-white transition-colors">Enterprise Application Dev</a></li>
+                <li><a href="/services/software-development/web-app-development" className="hover:text-white transition-colors">Web Application Dev</a></li>
+                <li><a href="/services/software-development/mobile-app-development" className="hover:text-white transition-colors">Mobile Application Dev</a></li>
+                <li><a href="/services/software-development/saas-product-development" className="hover:text-white transition-colors">SaaS Product Dev</a></li>
+                <li><a href="/services/software-development/api-development-integration" className="hover:text-white transition-colors">API Dev & Integration</a></li>
+                <li><a href="/services/software-development/microservices-architecture" className="hover:text-white transition-colors">Microservices Architecture</a></li>
+                <li><a href="/services/software-development/product-engineering" className="hover:text-white transition-colors">Product Engineering</a></li>
+                <li><a href="/services/software-development/application-modernization" className="hover:text-white transition-colors">Application Modernization</a></li>
+              </ul>
+            </div>
+          </div>
+        </details>
 
       </div>
     </footer>

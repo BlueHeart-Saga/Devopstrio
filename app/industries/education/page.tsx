@@ -40,7 +40,7 @@ const data = {
     title: "Virtual classrooms &",
     highlightedWord: "Learning Hubs",
     subtitle: "Developing secure learning management systems (LMS), digital collaboration workspaces, and scalable interactive class portals.",
-    bgImage: "/assets/Industries-page/herocard/education.png"
+    bgImage: "/assets/Industries-page/herocard/Education.png"
   },
   overview: {
     heading: "Secure educational databases and real-time class interfaces",

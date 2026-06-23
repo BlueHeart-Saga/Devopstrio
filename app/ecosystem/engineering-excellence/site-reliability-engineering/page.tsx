@@ -84,9 +84,14 @@ export default function SiteReliabilityEngineeringPage() {
       <div className="absolute inset-0 opacity-[0.015] pointer-events-none z-0" style={{ backgroundImage: "radial-gradient(circle, #fff 1px, transparent 1px)", backgroundSize: "32px 32px" }} />
 
       {/* 1. HERO SECTION */}
-      <section className="relative w-full py-32 bg-[#030303] overflow-hidden border-b border-zinc-900/60 flex items-center justify-center">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] bg-[radial-gradient(circle_at_center,rgba(225,29,72,0.035),transparent_60%)] pointer-events-none" />
-        <div className="max-w-5xl mx-auto w-full px-12 xl:px-8 text-center relative z-10">
+      <section className="relative w-full min-h-screen flex flex-col items-center justify-center bg-black overflow-hidden pt-28 pb-20 border-b border-zinc-900/60">
+        <div className="absolute inset-0 z-0">
+          <img src="/assets/ecosystem/sub-page-hero/ecosystem_Engineering_excellence/site_reliability.png" alt="Site Reliability Engineering background" className="w-full h-full object-cover object-center opacity-100 select-none pointer-events-none scale-[1.02]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,0,0,0.95)_0%,rgba(0,0,0,0.7)_45%,transparent_75%)] pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent pointer-events-none" />
+        </div>
+        
+        <div className="max-w-5xl mx-auto w-full px-12 xl:px-8 text-center relative z-20">
           <Reveal className="mb-4">
             <span className="gap-2 inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white transition-all duration-300 hover:shadow-[0_0_25px_rgba(225,29,72,0.35)] hover:-translate-y-0.5">
               <ActivitySquare className="w-3.5 h-3.5" />
@@ -105,6 +110,18 @@ export default function SiteReliabilityEngineeringPage() {
             <p className="text-zinc-400 text-xs md:text-sm lg:text-base leading-relaxed font-bold">
               We apply software engineering principles to operations, utilizing SLOs, error budgets, and deep observability to guarantee system uptime while maintaining high release velocity.
             </p>
+          </Reveal>
+          
+          <Reveal delay={0.3} className="flex justify-center gap-4">
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-3 pl-6 pr-3 py-3 bg-white text-black font-semibold text-xs md:text-sm tracking-wider rounded-full hover:bg-zinc-200 transition-all duration-300 shadow-[0_0_30px_rgba(255,255,255,0.05)] hover:shadow-[0_0_40px_rgba(225,29,72,0.2)]"
+            >
+              Consult Architects
+              <div className="w-7 h-7 rounded-full bg-black flex items-center justify-center">
+                <ArrowUpRight className="w-3.5 h-3.5 text-white" />
+              </div>
+            </Link>
           </Reveal>
         </div>
       </section>
