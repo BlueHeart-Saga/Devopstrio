@@ -7,51 +7,83 @@ import { ArrowLeft, ArrowUpRight } from "lucide-react";
 const services = [
   {
     num: "01",
-    name: "Cloud & Migration",
-    category: "Modernize",
-    image: "/assets/Home-page/core-services/cloudengineering.png",
-    desc: "Seamless migration of complex enterprise workloads to Azure, AWS, and GCP — with zero downtime, full compliance mapping, and measurable cost reduction from day one.",
-    tags: ["Azure", "AWS", "GCP", "Multi-Cloud"]
-  },
-  {
-    num: "02",
-    name: "AI & Data Science",
-    category: "Intelligence",
-    image: "/assets/Home-page/core-services/AIAutomation.png",
-    desc: "From Generative AI strategy and LLM deployment to predictive analytics, automated data pipelines, and ML model engineering — we turn your raw data into operational intelligence.",
+    name: "AI & Data Innovation",
+    category: "Innovate",
+    image: "/assets/Home-page/core-services/gen/ai-data-innovation.png",
+    desc: "Leverage Generative AI, machine learning, and intelligent automation to modernise business processes and unlock measurable value at scale.",
     tags: ["Gen AI", "ML Models", "Data Engineering"]
   },
   {
+    num: "02",
+    name: "Cloud Services",
+    category: "Migrate",
+    image: "/assets/Home-page/core-services/gen/cloud-services.png",
+    desc: "Move, optimise, and scale confidently on any cloud platform. Design and manage resilient environments across AWS, Azure, and Google Cloud.",
+    tags: ["Azure", "AWS", "GCP", "Cloud Native"]
+  },
+  {
     num: "03",
-    name: "DevOps & Platform",
-    category: "Automation",
-    image: "/assets/Home-page/core-services/Devops.png",
-    desc: "CI/CD pipelines, Infrastructure as Code, Kubernetes orchestration, GitOps, and Site Reliability Engineering — we automate the entire software delivery lifecycle.",
+    name: "DevOps & Automation",
+    category: "Accelerate",
+    image: "/assets/Home-page/core-services/gen/devops-automation.png",
+    desc: "Ship faster with fully automated DevOps and IaC pipelines. CI/CD automation, Kubernetes orchestration, and platform engineering.",
     tags: ["CI/CD", "Kubernetes", "Terraform", "IaC"]
   },
   {
     num: "04",
     name: "Cybersecurity",
-    category: "Protection",
-    image: "/assets/Home-page/core-services/cybersecurity..png",
-    desc: "Zero-trust architectures, penetration testing, SOC operations, threat intelligence, and compliance management — security embedded into every layer, not bolted on after.",
+    category: "Protect",
+    image: "/assets/Home-page/core-services/gen/cybersecurity.png",
+    desc: "Embed security and compliance into every layer. Proactive threat management, SOC services, and zero-trust security frameworks.",
     tags: ["Zero Trust", "SOC", "ISO 27001", "GDPR"]
   },
   {
     num: "05",
-    name: "Product Engineering",
-    category: "Innovation",
-    image: "/assets/Home-page/core-services/software engineering.png",
-    desc: "Web applications, mobile platforms, SaaS architectures, enterprise APIs, and UI/UX design — engineered for performance, built for users, designed to scale.",
+    name: "Software Development",
+    category: "Build",
+    image: "/assets/Home-page/core-services/gen/software-development.png",
+    desc: "Create enterprise-grade software, apps, and SaaS platforms engineered for reliability, high performance, and business impact.",
     tags: ["Web Dev", "Mobile", "SaaS", "API"]
   },
   {
     num: "06",
-    name: "Staff Augmentation",
-    category: "Scale",
-    image: "/assets/Home-page/core-services/enterprisesolution.png",
-    desc: "On-demand access to 525+ certified cloud, AI, DevOps, and security specialists — embedded into your team, operating under your processes, delivering to your standards.",
-    tags: ["ODC", "CMMI Level 5", "Flexible Teams"]
+    name: "Digital Transformation",
+    category: "Transform",
+    image: "/assets/Home-page/core-services/gen/digital-transformation.png",
+    desc: "Modernise business models and legacy systems for the digital age with IT roadmaps, process automation, and intelligent workflows.",
+    tags: ["Modernization", "Workflows", "RPA", "Strategy"]
+  },
+  {
+    num: "07",
+    name: "Data Engineering",
+    category: "Analyze",
+    image: "/assets/Home-page/core-services/gen/data-engineering.png",
+    desc: "Unlock actionable insights with robust enterprise data platforms. Design columnar databases, unified lakehouses, and real-time streaming.",
+    tags: ["Data Lakes", "ETL", "Analytics", "BigQuery"]
+  },
+  {
+    num: "08",
+    name: "Managed Services",
+    category: "Manage",
+    image: "/assets/Home-page/core-services/gen/managed-services.png",
+    desc: "Ensure uninterrupted operations with 24/7 proactive monitoring, SLA bug resolutions, and continuous incident containment.",
+    tags: ["24/7 Support", "SLA", "Cloud Admin", "Monitoring"]
+  },
+  {
+    num: "09",
+    name: "QA & Testing",
+    category: "Ensure",
+    image: "/assets/Home-page/core-services/gen/qa-testing.png",
+    desc: "Deliver flawless digital experiences with automated end-to-end client scripts, performance load testing, and API validation.",
+    tags: ["Automation", "Performance", "Security", "Shift-Left"]
+  },
+  {
+    num: "10",
+    name: "IT Consulting",
+    category: "Consult",
+    image: "/assets/Home-page/core-services/gen/it-consulting.png",
+    desc: "Align technology investments with strategic business objectives via distributed architecture planning and digital roadmaps.",
+    tags: ["Strategy", "Architecture", "Compliance", "Roadmaps"]
   }
 ];
 
@@ -107,46 +139,50 @@ export function AboutServices() {
             {services.map((item) => (
               <div
                 key={item.name}
-                className="snap-start flex-shrink-0 w-[300px] md:w-[380px] rounded-[32px] bg-zinc-950/30 backdrop-blur-xl border border-zinc-800/50 p-6 flex flex-col justify-between shadow-[0_20px_40px_rgba(0,0,0,0.5)] hover:border-zinc-700/60 hover:-translate-y-1 transition-all duration-300 group"
+                className="snap-start flex-shrink-0 w-[300px] md:w-[380px] rounded-[24px] bg-[#0A0A0A] border border-zinc-800/80 p-2.5 flex flex-col justify-between hover:border-zinc-700/80 transition-all duration-300 hover:shadow-[0_8px_30px_rgba(0,0,0,0.4)] group"
               >
-                <div>
+                <div className="flex flex-col flex-1">
                   {/* Top Image */}
-                  <div className="relative w-full aspect-[16/10] rounded-2xl overflow-hidden mb-6 bg-zinc-900 border border-zinc-800/40">
+                  <div className="relative w-full aspect-[2/1] rounded-[16px] overflow-hidden mb-5 bg-zinc-900 border border-zinc-800/50">
                     <img
                       src={item.image}
                       alt={item.name}
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
                     />
                   </div>
 
-                  {/* Category */}
-                  <span className="text-[11px] font-extrabold uppercase tracking-widest text-rose-500 mb-2 block">
-                    {item.category}
-                  </span>
+                  <div className="px-3 flex flex-col flex-1">
+                    {/* Category */}
+                    <span className="text-[10px] font-bold uppercase tracking-widest text-[#E11D48] mb-2 block">
+                      {item.category}
+                    </span>
 
-                  {/* Title */}
-                  <h3 className="text-lg md:text-xl font-extrabold text-white leading-snug mb-3 tracking-tight">
-                    {item.name}
-                  </h3>
+                    {/* Title */}
+                    <h3 className="text-lg md:text-[19px] font-bold text-zinc-100 leading-snug mb-2.5 tracking-tight">
+                      {item.name}
+                    </h3>
 
-                  {/* Description */}
-                  <p className="text-xs md:text-sm text-zinc-400 leading-relaxed mb-6 font-bold">
-                    {item.desc}
-                  </p>
+                    {/* Description */}
+                    <p className="text-[13px] text-zinc-400 leading-relaxed mb-6 flex-1">
+                      {item.desc}
+                    </p>
+                  </div>
                 </div>
 
                 {/* Footer Action Link */}
-                <a
-                  href="/contact"
-                  className="inline-flex items-center gap-3 pt-4 border-t border-zinc-800/40 mt-auto group/footer w-full"
-                >
-                  <span className="w-8 h-8 rounded-full bg-[#E11D48] text-white flex items-center justify-center transition-transform duration-300 group-hover/footer:translate-x-1">
-                    <ArrowUpRight size={14} />
-                  </span>
-                  <span className="text-xs md:text-sm font-bold text-zinc-300 group-hover/footer:text-[#E11D48] transition-colors">
-                    Explore {item.name}
-                  </span>
-                </a>
+                <div className="px-3 pb-2 pt-2 border-t border-zinc-800/40 mt-auto">
+                  <a
+                    href="/contact"
+                    className="inline-flex items-center gap-3 group/footer w-fit transition-all duration-300"
+                  >
+                    <span className="w-8 h-8 rounded-lg bg-zinc-800 group-hover/footer:bg-[#E11D48] text-white flex items-center justify-center transition-colors duration-300 border border-zinc-700 group-hover/footer:border-[#E11D48]">
+                      <ArrowUpRight size={14} />
+                    </span>
+                    <span className="text-xs font-semibold tracking-wide text-zinc-300 group-hover/footer:text-white transition-colors">
+                      Explore {item.name}
+                    </span>
+                  </a>
+                </div>
               </div>
             ))}
           </div>

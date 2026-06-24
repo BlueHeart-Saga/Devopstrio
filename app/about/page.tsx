@@ -17,16 +17,15 @@ import { Reveal } from "@/components/ui/Reveal";
 import { SectionNavbar } from "@/components/ui/SectionNavbar";
 
 const aboutSections = [
-  { id: "overview", label: "Overview" },
-  { id: "mission", label: "Mission & Vision" },
-  { id: "story", label: "Our Story" },
-  { id: "leadership", label: "Leadership" },
-  { id: "services", label: "Services" },
-  { id: "why-choose", label: "Why Us" },
-  { id: "partnership", label: "Partnership" },
-  { id: "workflow", label: "Workflow" },
-  { id: "metrics", label: "Metrics" },
-  { id: "achievements", label: "Achievements" }
+  { id: "identity", label: "Who We Are" },
+  { id: "vision", label: "Vision" },
+  { id: "journey", label: "Our Journey" },
+  { id: "capabilities", label: "What We Do" },
+  { id: "advantage", label: "Why Devopstrio" },
+  { id: "leadership", label: "Leadership & Culture" },
+  { id: "impact", label: "Impact Metrics" },
+  { id: "ecosystem", label: "Partnerships" },
+  { id: "future", label: "The Future" }
 ];
 
 export default function AboutPage() {
@@ -52,52 +51,52 @@ export default function AboutPage() {
         <SectionNavbar sections={aboutSections} />
         <SvgWaveLine variant="smooth" />
 
-        <div id="overview">
+        <div id="identity">
           <CompanyIntro />
         </div>
         {/* <SvgWaveLine variant="dashed" /> */}
 
-        <div id="mission">
-          <MissionVision />
-        </div>
-        {/* <SvgWaveLine variant="particles" /> */}
 
-        <div id="story">
-          <OurStory />
+
+        <div id="vision">
+          <MissionVision />
         </div>
         <SvgWaveLine variant="grid" />
 
-        <div id="leadership">
-          <Leadership />
+        <div id="journey">
+          <OurStory />
         </div>
         <SvgWaveLine variant="liquid" />
 
-        <div id="services">
+        <div id="capabilities">
           <AboutServices />
         </div>
         <SvgWaveLine variant="smooth" />
 
-        <div id="why-choose">
+        <div id="advantage">
           <WhyChoose />
+         
+            <WorkflowModel />
+          
         </div>
         {/* <SvgWaveLine variant="dashed" /> */}
 
-        <div id="partnership">
-          <OurPartnership />
+        <div id="leadership">
+          <Leadership />
         </div>
-        <SvgWaveLine variant="particles" />
+        {/* <SvgWaveLine variant="particles" /> */}
 
-        <div id="workflow">
-          <WorkflowModel />
-        </div>
-        <SvgWaveLine variant="grid" />
-
-        <div id="metrics">
+        <div id="impact">
           <MetricsStats />
         </div>
         <SvgWaveLine variant="liquid" />
 
-        <div id="achievements">
+        <div id="ecosystem">
+          <OurPartnership />
+        </div>
+        <SvgWaveLine variant="grid" />
+
+        <div id="future">
           <Achievements />
         </div>
         <SvgWaveLine variant="smooth" />

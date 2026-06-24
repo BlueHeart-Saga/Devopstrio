@@ -11,59 +11,74 @@ const teamMembers = [
   {
     name: "Sudalairajan",
     role: "Cloud-Native Product Lead",
-    photo: "/assets/About-page/team/membars/Suman_1.png",
+    photoPink: "/assets/About-page/team/pinkteam/Sudalairajan.png",
+    photoGray: "/assets/About-page/team/grayteam/Sudalairajan.png",
     rotate: "-rotate-3",
     zIndex: "z-[1]",
   },
   {
     name: "Sagadevan",
     role: "Machine Learning Engineer",
-    photo: "/assets/About-page/team/membars/sagadevan.png",
+    photoPink: "/assets/About-page/team/pinkteam/Sagadevan.png",
+    photoGray: "/assets/About-page/team/grayteam/Sagadevan.png",
     rotate: "rotate-2",
     zIndex: "z-[2]",
   },
   {
     name: "Subbiah Muthu",
     role: "Deep Learning Specialist",
-    photo: "/assets/About-page/team/membars/subbiah_muthu.png",
+    photoPink: "/assets/About-page/team/pinkteam/Subbiahmuthu.png",
+    photoGray: "/assets/About-page/team/grayteam/Subbiahmuthu.png",
     rotate: "-rotate-1",
     zIndex: "z-[3]",
   },
   {
     name: "Kishore",
     role: "AI Security Engineer",
-    photo: "/assets/About-page/team/membars/Kishore2.png",
+    photoPink: "/assets/About-page/team/pinkteam/Kishore.png",
+    photoGray: "/assets/About-page/team/grayteam/Kishore.png",
     rotate: "rotate-3",
     zIndex: "z-[4]",
   },
   {
     name: "Sermaraja",
     role: "UI/UX Design Manager",
-    photo: "/assets/About-page/team/membars/Serma_2.png",
+    photoPink: "/assets/About-page/team/pinkteam/Sermaraj.png",
+    photoGray: "/assets/About-page/team/grayteam/Sermaraj.png",
     rotate: "-rotate-2",
     zIndex: "z-[5]",
   },
   {
     name: "Thangalakshmi",
     role: "Cognitive Success Lead",
-    photo: "/assets/About-page/team/membars/thangalakshimi_7.png",
+    photoPink: "/assets/About-page/team/pinkteam/Thangalakshmi.png",
+    photoGray: "/assets/About-page/team/grayteam/Thangalakshmi.png",
     rotate: "rotate-1",
     zIndex: "z-[6]",
   },
   {
     name: "Punitha",
     role: "Design Thinking Lead",
-    photo: "/assets/About-page/team/membars/Punitha_2.png",
+    photoPink: "/assets/About-page/team/pinkteam/Punitha.png",
+    photoGray: "/assets/About-page/team/grayteam/Punitha.png",
     rotate: "-rotate-3",
     zIndex: "z-[7]",
   },
   {
     name: "Ooviya",
     role: "SEO & Content Marketing",
-    photo: "/assets/About-page/team/membars/Ooviya_2.png",
+    photoPink: "/assets/About-page/team/pinkteam/Ooviya.png",
+    photoGray: "/assets/About-page/team/grayteam/Ooviya.png",
     rotate: "rotate-2",
     zIndex: "z-[8]",
   },
+];
+
+const eventImages = [
+  "/assets/About-page/events/1.png",
+  "/assets/About-page/events/2.png",
+  "/assets/About-page/events/3.png",
+  "/assets/About-page/events/4.png",
 ];
 
 export function Leadership() {
@@ -89,12 +104,12 @@ export function Leadership() {
           </div>
         </Reveal>
 
-        {/* ── Founder Card ── */}
+        {/* ── Founder Card (Commented Out) ── */}
+        {/*
         <Reveal>
           <div className="relative rounded-2xl overflow-hidden border border-zinc-800/50 bg-zinc-950/30 mb-16 group hover:border-zinc-700/60 transition-all duration-500">
             <div className="grid grid-cols-1 lg:grid-cols-[360px_1fr]">
 
-              {/* Photo */}
               <div className="relative min-h-[320px] lg:min-h-[420px] overflow-hidden bg-zinc-900">
                 <img
                   src="/assets/About-page/leader/Founder.png"
@@ -105,7 +120,6 @@ export function Leadership() {
                 <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/80 to-transparent pointer-events-none lg:hidden" />
               </div>
 
-              {/* Content */}
               <div className="flex flex-col justify-center p-8 md:p-10 lg:p-12 gap-6">
 
                 <div>
@@ -121,7 +135,6 @@ export function Leadership() {
                   A cloud visionary who turns complex infrastructure challenges into elegant, business-driven solutions — trusted by enterprises across three continents.
                 </p>
 
-                {/* Tags */}
                 <div className="flex flex-wrap gap-2">
                   {founderTags.map(tag => (
                     <span key={tag} className="px-3 py-1.5 rounded-full border border-zinc-800 bg-zinc-900/60 text-zinc-400 text-xs font-medium tracking-wide">
@@ -143,6 +156,97 @@ export function Leadership() {
                 </a>
 
               </div>
+            </div>
+          </div>
+        </Reveal>
+        */}
+
+        {/* ── Team Collage Slider (Vibrant Collage) ── */}
+        <Reveal>
+          <div className="relative w-full overflow-hidden mb-12 py-8 bg-[#030303] rounded-3xl shadow-[0_0_50px_rgba(0,0,0,0.8)]">
+            {/* Soft edge fading for smooth carousel effect */}
+            <div className="absolute left-0 top-0 w-24 h-full bg-gradient-to-r from-[#030303] to-transparent z-10 pointer-events-none" />
+            <div className="absolute right-0 top-0 w-24 h-full bg-gradient-to-l from-[#030303] to-transparent z-10 pointer-events-none" />
+            
+            <div className="flex flex-col gap-4 w-full transform -rotate-2 scale-[1.05]">
+              
+              {/* Row 1 (Moving Left) */}
+              <motion.div 
+                className="flex gap-4 w-max will-change-transform"
+                animate={{ x: ["0%", "-50%"] }}
+                transition={{ repeat: Infinity, ease: "linear", duration: 80 }}
+              >
+                {[...Array(2)].map((_, i) => (
+                  <React.Fragment key={`r1-${i}`}>
+                    {teamMembers.map((member, idx) => (
+                      <React.Fragment key={`m1-${idx}`}>
+                        {idx === 2 && (
+                          <div className="w-[220px] h-[130px] rounded-2xl flex items-center justify-center p-4 shrink-0">
+                            <h3 className="text-2xl md:text-3xl font-black text-white leading-tight tracking-tight">From Team to<br/><span className="text-rose-500">Trendsetters</span></h3>
+                          </div>
+                        )}
+                        <div className={`w-[200px] h-[130px] rounded-2xl overflow-hidden shrink-0 relative group shadow-lg ${idx % 2 === 0 ? 'bg-[#facc15]' : 'bg-rose-500'}`}>
+                          <img src={eventImages[idx % 4]} alt="Leadership Event" className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110 drop-shadow-[0_20px_30px_rgba(0,0,0,0.5)]" />
+                        </div>
+                      </React.Fragment>
+                    ))}
+                  </React.Fragment>
+                ))}
+              </motion.div>
+
+              {/* Row 2 (Moving Right) */}
+              <motion.div 
+                className="flex gap-4 w-max will-change-transform"
+                animate={{ x: ["-50%", "0%"] }}
+                transition={{ repeat: Infinity, ease: "linear", duration: 100 }}
+              >
+                {[...Array(2)].map((_, i) => (
+                  <React.Fragment key={`r2-${i}`}>
+                    {[...teamMembers].reverse().map((member, idx) => (
+                      <React.Fragment key={`m2-${idx}`}>
+                        {idx === 3 && (
+                          <div className="w-[260px] h-[130px] rounded-2xl flex items-center justify-center p-4 shrink-0">
+                            <h3 className="text-3xl font-black text-white leading-tight tracking-tight">How Employee<br/><span className="text-zinc-500 text-4xl">Stories</span></h3>
+                          </div>
+                        )}
+                        {idx === 6 && (
+                          <div className="w-[160px] h-[130px] rounded-2xl flex items-center justify-center p-4 shrink-0">
+                            <h3 className="text-2xl md:text-3xl font-black text-white leading-tight tracking-tight">Can<br/><span className="text-rose-500">Humanize</span></h3>
+                          </div>
+                        )}
+                        <div className={`w-[220px] h-[130px] rounded-2xl overflow-hidden shrink-0 relative group shadow-lg ${idx % 2 === 0 ? 'bg-emerald-400' : 'bg-[#facc15]'}`}>
+                          <img src={eventImages[(idx + 1) % 4]} alt="Leadership Meeting" className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110 drop-shadow-[0_20px_30px_rgba(0,0,0,0.5)]" />
+                        </div>
+                      </React.Fragment>
+                    ))}
+                  </React.Fragment>
+                ))}
+              </motion.div>
+
+              {/* Row 3 (Moving Left) */}
+              <motion.div 
+                className="flex gap-4 w-max will-change-transform"
+                animate={{ x: ["0%", "-50%"] }}
+                transition={{ repeat: Infinity, ease: "linear", duration: 90 }}
+              >
+                {[...Array(2)].map((_, i) => (
+                  <React.Fragment key={`r3-${i}`}>
+                    {teamMembers.map((member, idx) => (
+                      <React.Fragment key={`m3-${idx}`}>
+                        {idx === 4 && (
+                          <div className="w-[180px] h-[130px] rounded-2xl flex items-center justify-center p-4 shrink-0">
+                            <h3 className="text-3xl font-black text-white leading-tight tracking-tight">a Brand</h3>
+                          </div>
+                        )}
+                        <div className={`w-[180px] h-[130px] rounded-2xl overflow-hidden shrink-0 relative group shadow-lg ${idx % 3 === 0 ? 'bg-blue-500' : 'bg-[#facc15]'}`}>
+                          <img src={eventImages[(idx + 2) % 4]} alt="Team Milestone" className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110 drop-shadow-[0_20px_30px_rgba(0,0,0,0.5)]" />
+                        </div>
+                      </React.Fragment>
+                    ))}
+                  </React.Fragment>
+                ))}
+              </motion.div>
+
             </div>
           </div>
         </Reveal>
@@ -195,11 +299,18 @@ export function Leadership() {
                       {/* Number in corner */}
                      
 
-                      <img
-                        src={member.photo}
-                        alt={member.name}
-                        className="w-full aspect-[3/4] object-cover object-top grayscale group-hover:grayscale-0 transition-all duration-500 rounded-sm"
-                      />
+                      <div className="relative w-full aspect-[3/4] rounded-sm overflow-hidden bg-zinc-100">
+                        <img
+                          src={member.photoPink}
+                          alt={`${member.name} Pink Theme`}
+                          className="absolute inset-0 w-full h-full object-cover object-top transition-opacity duration-500 group-hover:opacity-0"
+                        />
+                        <img
+                          src={member.photoGray}
+                          alt={`${member.name} Gray Theme`}
+                          className="absolute inset-0 w-full h-full object-cover object-top opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                        />
+                      </div>
                       
                       <div className="mt-3 text-center">
                         <p className="text-zinc-900 text-xs font-bold leading-tight">{member.name}</p>

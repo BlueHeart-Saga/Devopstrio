@@ -1,206 +1,290 @@
 "use client";
 
 import React, { useState } from "react";
-import { ArrowUpRight, CheckCircle2, ChevronDown } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { CheckCircle2, X } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
 
-
-const services = [
-  "Cloud Infrastructure & DevOps",
-  "AI / ML Engineering",
-  "Product Engineering",
-  "Cybersecurity & SecOps",
-  "Data Engineering & Analytics",
-  "Site Reliability Engineering (SRE)",
-  "Enterprise Modernisation",
-  "Managed Services & Support",
-  "Other / Not Sure Yet",
+const devopstrioServices = [
+  "AI & Data Innovation",
+  "Cloud Services",
+  "DevOps & Automation",
+  "Cybersecurity",
+  "Software Development",
+  "Digital Transformation",
+  "Data Engineering",
+  "Managed Services",
+  "QA & Testing",
+  "IT Consulting",
+  "Others"
 ];
-
-const budgets = [
-  "< £10,000",
-  "£10,000 – £50,000",
-  "£50,000 – £150,000",
-  "£150,000 – £500,000",
-  "£500,000+",
-  "Prefer not to say",
-];
-  
-
 
 export function ContactForm() {
+  const [showForm, setShowForm] = useState(false);
   const [form, setForm] = useState({
-    firstName: "",
-    lastName: "",
+    name: "",
     email: "",
-    company: "",
-    service: "",
-    budget: "",
+    phone: "",
     message: "",
   });
+  const [selectedServices, setSelectedServices] = useState<string[]>([]);
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
 
-  const set = (k: keyof typeof form) =>
-    (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) =>
-      setForm(prev => ({ ...prev, [k]: e.target.value }));
+  const toggleService = (s: string) => {
+    setSelectedServices((prev) =>
+      prev.includes(s) ? prev.filter((x) => x !== s) : [...prev, s]
+    );
+  };
+
+  const set = (k: keyof typeof form) => (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => setForm((prev) => ({ ...prev, [k]: e.target.value }));
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!form.firstName || !form.email || !form.service || !form.message) return;
+    if (!form.name || !form.email) return;
     setSubmitting(true);
-    setTimeout(() => { setSubmitting(false); setSubmitted(true); }, 1400);
+    setTimeout(() => {
+      setSubmitting(false);
+      setSubmitted(true);
+    }, 1400);
   };
 
-  // shared classes
-  const inputCls =
-    "w-full bg-white/5 focus:bg-white/8 rounded-xl px-4 py-3 text-sm text-white placeholder-white/25 outline-none transition-all duration-300 font-medium backdrop-blur-sm";
-  const labelCls = "block text-[10px] font-bold tracking-[0.18em] uppercase text-white/40 mb-1.5";
-  const selectCls = `${inputCls} appearance-none cursor-pointer`;
-
   return (
-    <section className="w-full relative min-h-[780px] flex items-center overflow-hidden bg-[#030303]">
+    <section className="w-full min-h-[700px] bg-[#1a1a1c] py-16 md:py-24 flex items-center justify-center font-sans relative overflow-hidden">
+      
+      <div className="w-full max-w-[1100px] mx-auto px-6 relative z-10 [perspective:1500px]">
+        
+        {/* ── Header ─────────────────────────────────────────────────────── */}
+        <Reveal className="mb-14 text-center max-w-3xl mx-auto flex flex-col items-center">
+          <div className="flex items-center justify-center gap-2 mb-3">
+            <span className="text-[10px] font-bold tracking-[0.22em] uppercase text-zinc-500">
+              Start a Conversation
+            </span>
+          </div>
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight leading-tight mb-4 text-white">
+            Ready to scale? <span className="text-rose-500">Let&apos;s build it together.</span>
+          </h2>
+          <p className="text-zinc-400 text-xs md:text-sm font-bold leading-relaxed max-w-xl mx-auto">
+            Our engineering leaders are standing by to review your requirements, scope your vision, and guide your next transformation.
+          </p>
+        </Reveal>
 
-      {/* ── Full-bleed background image ──────────────────────────────── */}
-      <div className="absolute inset-0 z-0">
-        <img
-          src="/assets/Contact-page/contactform/image.png"
-          alt=""
-          className="w-full h-full object-cover object-center opacity-40"
-          aria-hidden
-        />
-        {/* Dark overlay gradient — heavier on left where glass sits */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#030303] via-[#030303]/85 to-[#030303]/30" />
-        {/* Bottom fade */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#030303] via-transparent to-[#030303]/60" />
-        {/* Rose ambient glow */}
-        <div className="absolute top-1/3 left-1/4 w-[500px] h-[500px] bg-[radial-gradient(circle,rgba(244,63,94,0.07),transparent_65%)] pointer-events-none" />
-      </div>
-
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-12 xl:px-8 py-20 md:py-28">
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_0.6fr] gap-10 lg:gap-20 items-start">
-
-          {/* ── LEFT: Glass Form ────────────────────────────────────────── */}
-          <Reveal>
-            {submitted ? (
-              /* Success */
-              <div className="rounded-2xl bg-white/5 border border-white/10 backdrop-blur-xl p-10 flex flex-col items-center text-center shadow-2xl">
-                <div className="w-14 h-14 rounded-full bg-emerald-950/50 border border-emerald-500/30 flex items-center justify-center text-emerald-400 mb-6">
-                  <CheckCircle2 size={26} />
-                </div>
-                <h3 className="text-2xl font-black text-white mb-3">We&apos;ve received your enquiry.</h3>
-                <p className="text-white/50 text-sm font-bold leading-relaxed mb-8 max-w-sm">
-                  A senior Devopstrio engineer will review your brief and reach out within 2 hours during business hours.
-                </p>
-                <button
-                  onClick={() => { setSubmitted(false); setForm({ firstName:"", lastName:"", email:"", company:"", service:"", budget:"", message:"" }); }}
-                  className="inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white transition-all duration-300 hover:shadow-[0_0_25px_rgba(225,29,72,0.35)] hover:-translate-y-0.5"
+        <AnimatePresence mode="wait">
+          {!showForm ? (
+            <motion.div
+              key="banner"
+              initial={{ rotateX: 90, opacity: 0 }}
+              animate={{ rotateX: 0, opacity: 1 }}
+              exit={{ rotateX: -90, opacity: 0 }}
+              transition={{ duration: 0.5, ease: "easeInOut" }}
+              className="w-full bg-[#FAFAFA] rounded-3xl overflow-hidden flex flex-col items-center justify-center min-h-[450px] shadow-2xl relative p-10 md:p-16 text-center transform-gpu"
+            >
+              <h2 className="text-4xl md:text-6xl lg:text-[76px] font-medium text-black tracking-tight mb-6 leading-[1.05]">
+                Fuelling
+                <svg className="inline-block mx-2 md:mx-4 w-10 md:w-16 lg:w-20 h-auto text-rose-500 -mt-3" viewBox="0 0 46 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M2.5 26.5L14.5 14.5L25.5 21.5L43.5 3.5M43.5 3.5H30.5M43.5 3.5V16.5" stroke="currentColor" strokeWidth="5" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+                growth<br/>with every deployment
+              </h2>
+              <p className="text-zinc-500 text-base md:text-lg lg:text-xl font-medium max-w-2xl mb-12">
+                From cloud architecture to AI automation, we craft enterprise solutions that scale your business on autopilot.
+              </p>
+              <div className="flex flex-col sm:flex-row items-center gap-6">
+                <button 
+                  onClick={() => setShowForm(true)}
+                  className="px-8 py-4 bg-[#111] text-white rounded-full text-sm md:text-base font-bold shadow-[0_15px_30px_rgba(0,0,0,0.2)] hover:scale-105 hover:bg-black hover:shadow-[0_20px_40px_rgba(0,0,0,0.3)] transition-all"
                 >
-                  Submit Another Enquiry
+                  Start a conversation
+                </button>
+                <button 
+                  onClick={() => setShowForm(true)}
+                  className="flex items-center gap-2.5 px-6 py-4 text-black text-sm md:text-base font-bold hover:opacity-70 transition-opacity"
+                >
+                  <div className="w-9 h-9 rounded-full border border-black/15 flex items-center justify-center flex-shrink-0">
+                    <svg width="10" height="12" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg" className="ml-0.5">
+                      <path d="M13.2001 7.15174C13.8562 7.53818 13.8562 8.46182 13.2001 8.84826L1.87943 15.5147C1.21175 15.908 0.368307 15.4265 0.368307 14.6664L0.368307 1.33355C0.368307 0.573539 1.21175 0.0919934 1.87943 0.485303L13.2001 7.15174Z" fill="black"/>
+                    </svg>
+                  </div>
+                  Learn more
+                </button>
+              </div>
+            </motion.div>
+          ) : (
+            <motion.div
+              key="form"
+              initial={{ rotateX: 90, opacity: 0 }}
+              animate={{ rotateX: 0, opacity: 1 }}
+              exit={{ rotateX: -90, opacity: 0 }}
+              transition={{ duration: 0.5, ease: "easeInOut" }}
+              className="w-full bg-[#131313] rounded-3xl overflow-hidden flex flex-col lg:flex-row min-h-[600px] shadow-2xl relative transform-gpu"
+            >
+              
+              {/* Close Button Top Right */}
+              <button 
+                onClick={() => setShowForm(false)}
+                className="absolute top-5 right-5 w-9 h-9 rounded-full border border-white/10 flex items-center justify-center text-white/50 hover:text-white hover:bg-white/10 transition-all z-20"
+              >
+                <X size={16} strokeWidth={1.5} />
+              </button>
+
+          {/* LEFT SIDE: Custom Theme Area */}
+          <div className="w-full lg:w-[45%] p-8 md:p-12 flex flex-col justify-between relative overflow-hidden bg-[#050505] text-white">
+            
+            {/* Blurred Glowing Blobs */}
+            <div className="absolute -top-32 -right-32 w-80 h-80 bg-[#ebd0be] rounded-full blur-[100px] opacity-50 pointer-events-none" />
+            <div className="absolute -bottom-32 -left-32 w-96 h-96 bg-[#ebd0be] rounded-full blur-[120px] opacity-40 pointer-events-none" />
+            
+            {/* Top area: Profile + Contact Buttons */}
+            <div className="flex flex-col sm:flex-row justify-between items-start gap-6 z-10 w-full backdrop-blur-sm">
+              {/* Profile Block */}
+              <div className="max-w-[200px]">
+                <div className="w-[64px] h-[64px] rounded-full overflow-hidden mb-4 border-2 border-white/20 shadow-sm bg-white/5">
+                  <img 
+                    src="https://api.dicebear.com/7.x/notionists/svg?seed=Alex&backgroundColor=transparent" 
+                    alt="Alex Coordinator" 
+                    className="w-full h-full object-cover scale-110" 
+                  />
+                </div>
+                <p className="text-xs font-medium text-white/80 leading-relaxed">
+                  <span className="font-semibold text-white block">Alex - Solutions Architect,</span> 
+                  can guide your project's initial steps.
+                </p>
+              </div>
+
+              {/* Pills */}
+              <div className="flex flex-col gap-2 mt-2 sm:mt-0">
+                <div className="px-4 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-md text-[#ebd0be] text-[10px] font-medium tracking-wide shadow-sm">
+                  hello@devopstrio.com
+                </div>
+                <div className="px-4 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-md text-[#ebd0be] text-[10px] font-medium tracking-wide text-center shadow-sm">
+                  Send Message
+                </div>
+              </div>
+            </div>
+
+            {/* Bottom area: Title + Socials */}
+            <div className="z-10 mt-16 lg:mt-0 backdrop-blur-sm">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight text-white mb-10 leading-[1.05]">
+                Every project<br/>starts with a plan.
+              </h2>
+              
+              <div className="flex items-center gap-5">
+                <a href="https://www.linkedin.com/company/devopstrioglobal/posts/?feedView=all" target="_blank" rel="noopener noreferrer" className="transition-transform hover:scale-110" title="LinkedIn">
+                  <img src="/assets/social-icons/linkedin.svg" alt="LinkedIn" className="w-5 h-5 object-contain opacity-80 hover:opacity-100 transition-opacity" />
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=61579126233218" target="_blank" rel="noopener noreferrer" className="transition-transform hover:scale-110" title="Facebook">
+                  <img src="/assets/social-icons/facebook.svg" alt="Facebook" className="w-5 h-5 object-contain opacity-80 hover:opacity-100 transition-opacity" />
+                </a>
+                <a href="https://www.instagram.com/devopstrio_offcl/" target="_blank" rel="noopener noreferrer" className="transition-transform hover:scale-110" title="Instagram">
+                  <img src="/assets/social-icons/instagram.svg" alt="Instagram" className="w-5 h-5 object-contain opacity-80 hover:opacity-100 transition-opacity" />
+                </a>
+                <a href="https://www.youtube.com/@Devopstrioltd" target="_blank" rel="noopener noreferrer" className="transition-transform hover:scale-110" title="YouTube">
+                  <img src="/assets/social-icons/youtube.svg" alt="YouTube" className="w-5 h-5 object-contain opacity-80 hover:opacity-100 transition-opacity" />
+                </a>
+              </div>
+            </div>
+          </div>
+
+
+          {/* RIGHT SIDE: Dark Form Area */}
+          <div className="w-full lg:w-[55%] p-8 md:p-12 lg:p-16 flex flex-col justify-center bg-[#131313]">
+            
+            {submitted ? (
+              <div className="flex flex-col items-center justify-center h-full text-center fade-in">
+                <CheckCircle2 size={56} className="text-[#E11D48] mb-6" />
+                <h3 className="text-3xl font-normal text-white mb-4">Message Received</h3>
+                <p className="text-white/50 mb-10 max-w-sm leading-relaxed">Our architecture team will review your requirements and be in touch shortly to start planning.</p>
+                <button onClick={() => setSubmitted(false)} className="w-full max-w-xs py-3.5 bg-[#E11D48] text-white text-sm font-medium rounded hover:bg-[#BE123C] transition-colors">
+                  Send Another
                 </button>
               </div>
             ) : (
-              /* Form card */
-              <form
-                onSubmit={handleSubmit}
-                className="rounded-2xl bg-black/50 backdrop-blur-xl shadow-[0_0_80px_rgba(0,0,0,0.8)] overflow-hidden"
-              >
-                {/* Card header */}
-                <div className="px-8 pt-8 pb-6">
-                  <div className="flex items-center gap-2 mb-3">
-                    <span className="h-[1px] w-5 bg-rose-500" />
-                    <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-rose-500">
-                      Service Enquiry
-                    </span>
+              <form onSubmit={handleSubmit} className="w-full max-w-[400px] mx-auto lg:ml-6 flex flex-col gap-8">
+                
+                {/* Heading & Services */}
+                <div>
+                  <h3 className="text-3xl md:text-4xl font-normal text-white/40 leading-[1.1] mb-8 tracking-tight">
+                    What services<br/>
+                    <span className="text-white">we can support<br/>you with?</span>
+                  </h3>
+                  
+                  <p className="text-[12px] text-white/60 mb-5 font-medium tracking-wide">I would love to partner with Devopstrio on...</p>
+                  <div className="flex flex-wrap gap-2.5">
+                    {devopstrioServices.map((s) => (
+                      <button
+                        key={s}
+                        type="button"
+                        onClick={() => toggleService(s)}
+                        className={`px-3.5 py-1.5 rounded-md border text-[11px] font-normal transition-all duration-300 ${
+                          selectedServices.includes(s)
+                            ? "bg-[#ebd0be] border-[#ebd0be] text-black"
+                            : "border-white/10 text-white/60 hover:border-white/30 hover:text-white"
+                        }`}
+                      >
+                        {s}
+                      </button>
+                    ))}
                   </div>
-                  <h2 className="text-2xl md:text-3xl font-black text-white leading-snug">
-                    Start a conversation.<br />
-                    <span className="text-white/40 font-bold text-xl md:text-2xl">Tell us what you&apos;re building.</span>
-                  </h2>
                 </div>
 
-                <div className="px-8 py-7 flex flex-col gap-5">
-
-                  {/* Row 1: First + Last Name */}
-                  <div className="grid grid-cols-2 gap-4">
-                    <div>
-                      <label htmlFor="cf-first" className={labelCls}>First Name *</label>
-                      <input id="cf-first" required value={form.firstName} onChange={set("firstName")} placeholder="Sarah" className={inputCls} />
-                    </div>
-                    <div>
-                      <label htmlFor="cf-last" className={labelCls}>Last Name</label>
-                      <input id="cf-last" value={form.lastName} onChange={set("lastName")} placeholder="Johnson" className={inputCls} />
-                    </div>
+                {/* Minimalist Inputs */}
+                <div className="flex flex-col gap-5 mt-2">
+                  <div className="relative border-b border-white/20 pb-2.5 focus-within:border-[#ebd0be] transition-colors">
+                    <input
+                      required
+                      value={form.name}
+                      onChange={set("name")}
+                      placeholder="Your Name"
+                      className="w-full bg-transparent outline-none text-white text-[13px] placeholder-white/30 font-light"
+                    />
                   </div>
-
-                  {/* Row 2: Email + Company */}
-                  <div className="grid grid-cols-2 gap-4">
-                    <div>
-                      <label htmlFor="cf-email" className={labelCls}>Work Email *</label>
-                      <input id="cf-email" required type="email" value={form.email} onChange={set("email")} placeholder="sarah@company.com" className={inputCls} />
-                    </div>
-                    <div>
-                      <label htmlFor="cf-company" className={labelCls}>Company</label>
-                      <input id="cf-company" value={form.company} onChange={set("company")} placeholder="Acme Corp" className={inputCls} />
-                    </div>
+                  <div className="relative border-b border-white/20 pb-2.5 focus-within:border-[#ebd0be] transition-colors">
+                    <input
+                      required
+                      type="email"
+                      value={form.email}
+                      onChange={set("email")}
+                      placeholder="E-mail"
+                      className="w-full bg-transparent outline-none text-white text-[13px] placeholder-white/30 font-light"
+                    />
                   </div>
-
-                  {/* Row 3: Service + Budget */}
-                  <div className="grid grid-cols-2 gap-4">
-                    <div className="relative">
-                      <label htmlFor="cf-service" className={labelCls}>Service Needed *</label>
-                      <select id="cf-service" required value={form.service} onChange={set("service")} className={selectCls}>
-                        <option value="" disabled>Select a service</option>
-                        {services.map(s => <option key={s} value={s}>{s}</option>)}
-                      </select>
-                      <ChevronDown size={13} className="absolute right-4 bottom-3.5 text-white/30 pointer-events-none" />
-                    </div>
-                    <div className="relative">
-                      <label htmlFor="cf-budget" className={labelCls}>Budget Range</label>
-                      <select id="cf-budget" value={form.budget} onChange={set("budget")} className={selectCls}>
-                        <option value="" disabled>Select range</option>
-                        {budgets.map(b => <option key={b} value={b}>{b}</option>)}
-                      </select>
-                      <ChevronDown size={13} className="absolute right-4 bottom-3.5 text-white/30 pointer-events-none" />
-                    </div>
+                  <div className="relative border-b border-white/20 pb-2.5 focus-within:border-[#ebd0be] transition-colors">
+                    <input
+                      value={form.phone}
+                      onChange={set("phone")}
+                      placeholder="Phone"
+                      className="w-full bg-transparent outline-none text-white text-[13px] placeholder-white/30 font-light"
+                    />
                   </div>
-
-                  {/* Row 4: Message */}
-                  <div>
-                    <label htmlFor="cf-message" className={labelCls}>Brief / Message *</label>
-                    <textarea
-                      id="cf-message"
+                  <div className="relative border-b border-white/20 pb-2.5 focus-within:border-[#ebd0be] transition-colors">
+                    <input
                       required
                       value={form.message}
                       onChange={set("message")}
-                      rows={4}
-                      placeholder="Describe your challenge, project scope, timeline, or anything that helps us understand what you need..."
-                      className={`${inputCls} resize-none leading-relaxed`}
+                      placeholder="Message"
+                      className="w-full bg-transparent outline-none text-white text-[13px] placeholder-white/30 font-light"
                     />
                   </div>
-
-                  {/* Submit */}
-                  <button
-                    type="submit"
-                    disabled={submitting}
-                    className="w-full flex items-center justify-center gap-2 py-4 rounded-xl bg-rose-600 hover:bg-rose-500 active:bg-rose-700 text-white text-xs font-bold tracking-widest uppercase transition-all duration-300 hover:shadow-[0_0_30px_rgba(244,63,94,0.35)] hover:-translate-y-0.5 disabled:opacity-50 disabled:pointer-events-none mt-1"
-                  >
-                    {submitting ? "Submitting enquiry..." : "Submit Service Enquiry"}
-                    {!submitting && <ArrowUpRight size={14} />}
-                  </button>
-
-                  <p className="text-center text-white/25 text-[10px] font-bold tracking-wider">
-                    No commitment required · Senior response within 2 hours · 100% confidential
-                  </p>
                 </div>
+
+                {/* Submit Button */}
+                <button
+                  type="submit"
+                  disabled={submitting}
+                  className="w-full py-3.5 mt-2 bg-[#E11D48] hover:bg-[#BE123C] text-white text-[13px] font-medium rounded transition-colors disabled:opacity-50"
+                >
+                  {submitting ? "Sending..." : "Submit"}
+                </button>
+
               </form>
             )}
-          </Reveal>
+          </div>
 
-          {/* ── RIGHT: empty breathing space ──────────── */}
-          <div />
-
-        </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </section>
   );

@@ -11,6 +11,17 @@ import { ContactCTA } from "@/sections/contact/ContactCTA";
 import { TalkToExpert } from "@/sections/contact/TalkToExpert";
 import { Reveal } from "@/components/ui/Reveal";
 import { BreadcrumbSchema } from "@/components/seo/Schemas";
+import { SectionNavbar } from "@/components/ui/SectionNavbar";
+
+const contactSections = [
+  { id: "form", label: "Start a Conversation" },
+  { id: "compliance", label: "Security & Trust" },
+  { id: "presence", label: "Global Presence" },
+  { id: "experts", label: "Talk to Expert" },
+  { id: "why-us", label: "Why Contact Us" },
+  { id: "locations", label: "Locations" },
+  { id: "faq", label: "FAQ" }
+];
 
 export const metadata: Metadata = {
   title: "Contact Our Engineering Teams",
@@ -45,50 +56,65 @@ export default function ContactPage() {
       </section> */}
 
       {/* Structured Contact Sections with High-Level Coded SVG Wave Lines */}
-      <div className="flex flex-col bg-black">
-        <ContactHero />
-        <SvgWaveLine variant="smooth" />
+      <div className="bg-black relative">
+        <div className="relative z-10 bg-black">
+          <ContactHero />
+          <SvgWaveLine variant="smooth" />
+        </div>
         
-        
-        <ContactForm />
-        
-        
-        {/* <SvgWaveLine variant="dashed" /> */}
+        <SectionNavbar sections={contactSections} />
+        <div id="form" className="relative z-10 bg-black">
+          <ContactForm />
+        </div>
         
         {/* Security & Compliance Section Header */}
-        <div className="text-center pt-4 pb-3 max-w-3xl mx-auto">
-          {/* <Reveal>
-            <span className="inline-block px-3 py-1 text-[10px] font-bold tracking-[0.2em] uppercase text-rose-500 border border-rose-500/30 rounded-none bg-black/40 mb-3">
-              Security & Trust
-            </span>
-          </Reveal> */}
-          <Reveal delay={0.1}>
-            <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-white">
-              Enterprise Compliance & Engineering Standards
-            </h2>
-          </Reveal>
+        <div id="compliance" className="relative z-20 bg-black">
+          <div className="text-center pt-12 pb-3 max-w-3xl mx-auto">
+            <Reveal>
+              <span className="inline-block px-3 py-1 text-[10px] font-bold tracking-[0.2em] uppercase text-rose-500 border border-rose-500/30 rounded-none bg-black/40 mb-3">
+                Security & Trust
+              </span>
+            </Reveal>
+            <Reveal delay={0.1}>
+              <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-white">
+                Enterprise Compliance & Engineering Standards
+              </h2>
+            </Reveal>
+          </div>
+          <TrustSignal />
+          <SvgWaveLine variant="liquid" />
         </div>
-        <TrustSignal />
-        {/* <SvgWaveLine variant="particles" /> */}
-        <SvgWaveLine variant="liquid" />
 
-        <GlobalPresence />
+        {/* Layer 1: Global Presence Sticky Window */}
+        <div id="presence" className="sticky top-0 z-0 w-full min-h-screen bg-black overflow-hidden flex items-center">
+          <GlobalPresence />
+        </div>
         
-        <SvgWaveLine variant="grid" />
+        {/* Layer 2: Talk To Expert Sticky Window (slides over Layer 1) */}
+        <div id="experts" className="sticky top-0 z-10 w-full h-[95vh] overflow-hidden shadow-[0_-20px_50px_rgba(0,0,0,1)]">
+          <TalkToExpert />
+        </div>
 
-        <TalkToExpert />
-        
-        <SvgWaveLine variant="liquid" />
-
-        <WhyContactUs />
-        
-        <OurLocations />
-        <SvgWaveLine variant="liquid" />
-        
-        <FAQ />
-        <SvgWaveLine variant="smooth" />
-        
-        <ContactCTA />
+        {/* Final Cover Wrapper: Everything from here down slides over the sticky layers and has a solid black background */}
+        <div className="relative z-20 bg-black pt-8 shadow-[0_-20px_50px_rgba(0,0,0,1)]">
+          <div id="why-us">
+            <WhyContactUs />
+          </div>
+          
+          <div id="locations">
+            <OurLocations />
+          </div>
+          
+          <SvgWaveLine variant="liquid" />
+          
+          <div id="faq">
+            <FAQ />
+          </div>
+          
+          <SvgWaveLine variant="smooth" />
+          
+          <ContactCTA />
+        </div>
       </div>
     </main>
   );

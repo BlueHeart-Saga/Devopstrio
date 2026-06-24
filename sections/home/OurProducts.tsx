@@ -77,7 +77,7 @@ export function OurProducts() {
     <section id="products" className="w-full pt-24 md:pt-32 pb-24 md:pb-32 bg-[#030303] text-white relative overflow-hidden">
       <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
 
-        <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-8">
+        <div className="flex flex-col lg:flex-row items-start gap-16 lg:gap-8">
 
           {/* Left Text Content */}
           <div className="w-full lg:w-5/12 z-20">
@@ -133,29 +133,31 @@ export function OurProducts() {
               maxVisible={4}
             >
               {products.map((prod) => (
-                <Card key={prod.name} className="overflow-hidden flex flex-col group shadow-2xl cursor-pointer pointer-events-auto">
-                  {/* Image Container with Name Overlay */}
-                  <div className="relative h-[52%] w-full overflow-hidden bg-zinc-900">
-                    <img
-                      src={prod.image}
-                      alt={prod.name}
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                      loading="lazy"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0c] via-black/20 to-transparent opacity-95" />
+                <Card key={prod.name} className="overflow-hidden flex flex-col group shadow-[0_8px_30px_rgba(0,0,0,0.3)] cursor-pointer pointer-events-auto bg-[#0A0A0A] border border-zinc-800/80 rounded-[24px]">
+                  {/* Padded Image Container */}
+                  <div className="relative h-[52%] w-full p-2.5 pb-0">
+                    <div className="relative w-full h-full overflow-hidden rounded-[16px] bg-zinc-900 border border-zinc-800/50">
+                      <img
+                        src={prod.image}
+                        alt={prod.name}
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+                        loading="lazy"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-95" />
 
-                    {/* Product Name Overlay */}
-                    <div className="absolute bottom-4 left-5 z-20">
-                      <h3 className="text-2xl font-bold text-white tracking-tight drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
-                        {prod.name}
-                      </h3>
+                      {/* Product Name Overlay */}
+                      <div className="absolute bottom-4 left-4 z-20">
+                        <h3 className="text-2xl font-bold text-white tracking-tight drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
+                          {prod.name}
+                        </h3>
+                      </div>
                     </div>
                   </div>
 
                   {/* Content Container */}
-                  <div className="h-[48%] p-5 sm:p-6 flex flex-col bg-[#0a0a0c] border-t border-white/5 relative z-10">
-                    <div className="flex items-center mb-3">
-                      <span className="inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white transition-all duration-300 hover:shadow-[0_0_25px_rgba(225,29,72,0.35)] hover:-translate-y-0.5">
+                  <div className="h-[48%] p-5 sm:p-6 flex flex-col bg-[#0A0A0A] relative z-10">
+                    <div className="flex items-center mb-4">
+                      <span className="inline-flex items-center justify-center px-3 py-1 rounded-full text-[10px] font-bold tracking-wider uppercase bg-rose-500/10 text-rose-500 border border-rose-500/20">
                         {categoryLabel(prod.category)}
                       </span>
                     </div>

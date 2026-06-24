@@ -31,7 +31,7 @@ export function Insights() {
   const displayPosts = posts.slice(1, 5);
 
   return (
-    <section className="w-full pt-10 md:pt-14 pb-20 md:pb-32 bg-[#030303] text-white relative">
+    <section className="w-full pt-10 md:pt-14 pb-12 md:pb-16 bg-[#030303] text-white relative">
       <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
 
         {/* Header Block with Standardized Eyebrow & Headline */}
@@ -63,39 +63,46 @@ export function Insights() {
         <div className="grid grid-cols-1 lg:grid-cols-[1.6fr_1fr] gap-10 lg:gap-14 items-start">
 
           {/* Left: Featured Post Card */}
-          <Reveal className="w-full">
-            <div className="relative group rounded-[2.5rem] border border-white/[0.06] bg-[#0c0c0c] hover:border-rose-500/20 hover:-translate-y-1 hover:shadow-[0_24px_50px_rgba(0,0,0,0.6)] transition-all duration-500 overflow-hidden flex flex-col h-[520px]">
-              {/* Background Image */}
-              <div className="absolute inset-0 w-full h-full">
+          <Reveal className="w-full h-full">
+            <div className="group rounded-[2.5rem] border border-zinc-800/80 bg-[#0A0A0A] p-2 hover:border-zinc-700 hover:-translate-y-1 hover:shadow-[0_24px_50px_rgba(0,0,0,0.6)] transition-all duration-500 flex flex-col h-full min-h-[520px]">
+              
+              {/* Padded Inset Image */}
+              <div className="relative w-full h-[280px] md:h-[320px] rounded-[2rem] overflow-hidden shrink-0">
                 <img
                   src={latestPost.image ?? undefined}
                   alt={latestPost.title}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-103 brightness-[0.8]"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/25 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
               </div>
 
-              {/* Bottom Content overlay */}
-              <div className="mt-auto relative z-10 p-8 bg-black/40 backdrop-blur-md border-t border-white/10 text-left space-y-4 rounded-b-[2.5rem]">
-                <div>
-                  <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-black/45 border border-white/15 text-xs font-bold text-rose-400 uppercase tracking-wider mb-2">
-                    {/* <span className="w-1.5 h-1.5 rounded-full bg-rose-500 shadow-[0_0_8px_rgba(244,63,94,0.6)]" /> */}
+              {/* Bottom Content Area */}
+              <div className="flex flex-col flex-1 p-4 md:p-6 mt-2 justify-end">
+                <div className="mb-5">
+                  <span className="inline-flex items-center px-3.5 py-1.5 rounded-full bg-rose-500/10 border border-rose-500/20 text-xs font-bold text-rose-400 uppercase tracking-wider">
                     {latestPost.category?.name || "Technology"}
                   </span>
                 </div>
 
-                <h3 className="text-xl md:text-2xl font-bold text-white tracking-tight leading-snug group-hover:text-rose-100 transition-colors">
+                <h3 className="text-xl md:text-3xl font-bold text-white tracking-tight leading-snug group-hover:text-rose-400 transition-colors line-clamp-3 mb-8">
                   <a href={`/insights/${latestPost.category?.slug || "general"}/${latestPost.id}`}>
                     {latestPost.title}
                   </a>
                 </h3>
 
-                <div className="flex items-center gap-2 text-xs font-medium text-zinc-350">
-                  <span>{latestPost.date}</span>
-                  <span>•</span>
-                  <span>{latestPost.readTime} min read</span>
+                <div className="flex items-center justify-between mt-auto pt-6 border-t border-zinc-800/60">
+                  <div className="flex items-center gap-3 text-sm font-medium text-zinc-400">
+                    <span>{latestPost.date}</span>
+                    <span className="w-1 h-1 rounded-full bg-zinc-700" />
+                    <span>{latestPost.readTime} min read</span>
+                  </div>
+                  
+                  <div className="w-10 h-10 shrink-0 rounded-full border border-zinc-700 flex items-center justify-center text-zinc-400 group-hover:bg-rose-500 group-hover:border-rose-500 group-hover:text-white transition-all duration-300">
+                     <ArrowUpRight size={18} />
+                  </div>
                 </div>
               </div>
+
             </div>
           </Reveal>
 
@@ -145,6 +152,17 @@ export function Insights() {
           </div>
 
         </div>
+
+        {/* Premium Single Line Quote */}
+        <Reveal>
+          <div className="mt-10 md:mt-12 pt-6 md:pt-8 border-t border-white/[0.04] text-center w-full">
+            <p className="text-base md:text-lg font-light text-zinc-400 tracking-wide">
+              <span className="text-rose-500 font-serif text-xl leading-none align-middle mr-1">"</span>
+              Knowledge shared is the foundation of digital excellence and <span className="font-medium text-zinc-200">continuous innovation.</span>
+              <span className="text-rose-500 font-serif text-xl leading-none align-middle ml-1">"</span>
+            </p>
+          </div>
+        </Reveal>
 
       </div>
     </section>

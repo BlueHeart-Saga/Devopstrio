@@ -99,7 +99,7 @@ export function HiringSection() {
   const isActive = poster ? poster.status === "active" : false;
 
   return (
-    <section className="w-full py-20 md:py-32 bg-[#030303] text-white  relative overflow-hidden">
+    <section className="w-full py-8 md:py-12 bg-[#030303] text-white  relative overflow-hidden">
       <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
 
         <Reveal className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-12 lg:gap-24 items-center">
@@ -118,19 +118,31 @@ export function HiringSection() {
               We are the best global engineering network, trusted by elite creators to build, scale, and optimize their careers.
             </p>
 
-            {/* Job Search Input Box */}
-            <div className="relative flex items-center bg-zinc-900/60 border border-zinc-850 rounded-full p-2 pl-6 focus-within:border-rose-500/50 transition-all duration-300 w-full max-w-lg mb-8">
+            {/* Job Search Input Form */}
+            <form 
+              onSubmit={(e) => {
+                e.preventDefault();
+                const queryParams = new URLSearchParams();
+                if (searchQuery.trim()) queryParams.set("q", searchQuery.trim());
+                window.location.href = `/jobs${searchQuery.trim() ? `?${queryParams.toString()}` : ''}`;
+              }}
+              className="relative flex items-center bg-[#0A0A0A] border border-zinc-800/80 rounded-full p-2 pl-5 focus-within:border-rose-500/50 focus-within:bg-zinc-900/60 focus-within:shadow-[0_0_25px_rgba(225,29,72,0.1)] transition-all duration-300 w-full max-w-lg mb-8 group"
+            >
+              <Search size={18} className="text-zinc-500 mr-3 group-focus-within:text-rose-500 transition-colors shrink-0" />
               <input
                 type="text"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder="Search your keyword or job..."
-                className="bg-transparent text-sm text-white placeholder-zinc-550 focus:outline-none flex-1 pr-12 font-medium"
+                placeholder="Search by role, keyword, or technology..."
+                className="bg-transparent text-[15px] text-white placeholder-zinc-500 focus:outline-none flex-1 pr-4 font-medium"
               />
-              <button className="absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-rose-600 hover:bg-rose-500 text-white flex items-center justify-center transition-all duration-300 shadow-[0_0_15px_rgba(225,29,72,0.3)]">
-                <Search size={16} />
+              <button 
+                type="submit"
+                className="shrink-0 px-6 h-10 lg:h-12 rounded-full bg-zinc-100 hover:bg-rose-600 text-zinc-950 hover:text-white flex items-center justify-center font-bold text-xs tracking-wider uppercase transition-all duration-300 shadow-[0_0_15px_rgba(255,255,255,0.05)] hover:shadow-[0_0_20px_rgba(225,29,72,0.3)]"
+              >
+                Search
               </button>
-            </div>
+            </form>
 
             {/* Upload Resume Button Card */}
             <div className="mb-10">

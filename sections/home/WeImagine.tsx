@@ -51,100 +51,136 @@ export function WeImagine() {
 
           {/* Card 1: We Imagine */}
           <Reveal delay={0.05}>
-            <div className="relative rounded-xl border border-zinc-800/60 bg-zinc-950/20 hover:bg-zinc-950/40 hover:border-zinc-700/80 p-6 md:p-8 transition-all duration-300 flex flex-col justify-between group h-full shadow-lg">
-              <div>
-
-                <h3 className="text-base md:text-lg font-bold text-white mb-3 tracking-tight group-hover:text-rose-400 transition-colors duration-300">
-                  We Design Intelligent Digital Solutions
-                </h3>
-                <p className="text-zinc-400 text-xs md:text-sm leading-relaxed mb-6 font-semibold">
-                  We architect AI-powered systems, automation frameworks, and data platforms that unlock new revenue streams and drive measurable operational efficiency from day one.
-                </p>
+            <div className="relative rounded-[24px] border border-zinc-800/80 bg-[#0A0A0A] p-6 md:p-8 flex flex-col justify-between group h-full shadow-lg overflow-hidden transition-all duration-500 hover:border-zinc-700 min-h-[380px]">
+              
+              {/* Expanding Image Layer */}
+              <div className="absolute inset-0 z-0 [clip-path:circle(0%_at_100%_100%)] group-hover:[clip-path:circle(150%_at_100%_100%)] transition-all duration-700 ease-in-out pointer-events-none">
+                <img src="/assets/Home-page/we-imagine/gen/we-design-intelligent.png" alt="Design Intelligent Solutions" className="w-full h-full object-cover scale-110 group-hover:scale-100 transition-transform duration-1000 ease-out" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/30" />
               </div>
-              <div className="border-t border-zinc-900 pt-4 mt-auto">
-                <ul className="space-y-2">
-                  {["Multi-Cloud Architecture", "AI-First Design", "Secure Data Platforms"].map((bullet) => (
-                    <li key={bullet} className="flex items-center gap-2 text-[11px] font-bold text-zinc-300">
-                      <span className="w-1.5 h-1.5 rounded-full bg-rose-500/70" />
-                      {bullet}
-                    </li>
-                  ))}
-                </ul>
+
+              {/* Content Layer */}
+              <div className="relative z-10 flex flex-col h-full">
+                <div>
+                  <h3 className="text-xl md:text-2xl font-bold text-white mb-4 tracking-tight transition-transform duration-500 group-hover:-translate-y-1">
+                    We Design Intelligent Digital Solutions
+                  </h3>
+                  <p className="text-zinc-400 text-sm leading-relaxed mb-6 font-medium group-hover:text-zinc-300 transition-colors duration-500">
+                    We architect AI-powered systems, automation frameworks, and data platforms that unlock new revenue streams and drive measurable operational efficiency from day one.
+                  </p>
+                </div>
+                <div className="border-t border-zinc-800/60 group-hover:border-white/20 pt-5 mt-auto transition-colors duration-500">
+                  <ul className="space-y-3">
+                    {["Multi-Cloud Architecture", "AI-First Design", "Secure Data Platforms"].map((bullet) => (
+                      <li key={bullet} className="flex items-center gap-3 text-xs font-bold text-zinc-300 group-hover:text-white transition-colors duration-500">
+                        <span className="w-1.5 h-1.5 rounded-full bg-rose-500 shadow-[0_0_8px_rgba(225,29,72,0.8)]" />
+                        {bullet}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
             </div>
           </Reveal>
 
           {/* Card 2: We Develop */}
           <Reveal delay={0.1}>
-            <div className="relative rounded-xl border border-zinc-800/60 bg-zinc-950/20 hover:bg-zinc-950/40 hover:border-zinc-700/80 p-6 md:p-8 transition-all duration-300 flex flex-col justify-between group h-full shadow-lg">
-              <div>
-
-                <h3 className="text-base md:text-lg font-bold text-white mb-3 tracking-tight group-hover:text-rose-400 transition-colors duration-300">
-                  We Build Software That Performs at Scale
-                </h3>
-                <p className="text-zinc-400 text-xs md:text-sm leading-relaxed mb-6 font-semibold">
-                  We engineer high-performance, enterprise-grade software — accelerating release velocity, hardening security posture, and guaranteeing the scalability your business demands.
-                </p>
+            <div className="relative rounded-[24px] border border-zinc-800/80 bg-[#0A0A0A] p-6 md:p-8 flex flex-col justify-between group h-full shadow-lg overflow-hidden transition-all duration-500 hover:border-zinc-700 min-h-[380px]">
+              
+              {/* Expanding Image Layer */}
+              <div className="absolute inset-0 z-0 [clip-path:circle(0%_at_100%_100%)] group-hover:[clip-path:circle(150%_at_100%_100%)] transition-all duration-700 ease-in-out pointer-events-none">
+                <img src="/assets/Home-page/we-imagine/gen/we-build-software.png" alt="Build Scalable Software" className="w-full h-full object-cover scale-110 group-hover:scale-100 transition-transform duration-1000 ease-out" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/30" />
               </div>
-              <div className="border-t border-zinc-900 pt-4 mt-auto">
-                <ul className="space-y-2">
-                  {["Enterprise Scalability", "Secure Compliant Architecture", "Full Observability"].map((bullet) => (
-                    <li key={bullet} className="flex items-center gap-2 text-[11px] font-bold text-zinc-300">
-                      <span className="w-1.5 h-1.5 rounded-full bg-rose-500/70" />
-                      {bullet}
-                    </li>
-                  ))}
-                </ul>
+
+              {/* Content Layer */}
+              <div className="relative z-10 flex flex-col h-full">
+                <div>
+                  <h3 className="text-xl md:text-2xl font-bold text-white mb-4 tracking-tight transition-transform duration-500 group-hover:-translate-y-1">
+                    We Build Software That Performs at Scale
+                  </h3>
+                  <p className="text-zinc-400 text-sm leading-relaxed mb-6 font-medium group-hover:text-zinc-300 transition-colors duration-500">
+                    We engineer high-performance, enterprise-grade software — accelerating release velocity, hardening security posture, and guaranteeing the scalability your business demands.
+                  </p>
+                </div>
+                <div className="border-t border-zinc-800/60 group-hover:border-white/20 pt-5 mt-auto transition-colors duration-500">
+                  <ul className="space-y-3">
+                    {["Enterprise Scalability", "Secure Architecture", "Full Observability"].map((bullet) => (
+                      <li key={bullet} className="flex items-center gap-3 text-xs font-bold text-zinc-300 group-hover:text-white transition-colors duration-500">
+                        <span className="w-1.5 h-1.5 rounded-full bg-rose-500 shadow-[0_0_8px_rgba(225,29,72,0.8)]" />
+                        {bullet}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
             </div>
           </Reveal>
 
           {/* Card 3: We Modernise */}
           <Reveal delay={0.15}>
-            <div className="relative rounded-xl border border-zinc-800/60 bg-zinc-950/20 hover:bg-zinc-950/40 hover:border-zinc-700/80 p-6 md:p-8 transition-all duration-300 flex flex-col justify-between group h-full shadow-lg">
-              <div>
-
-                <h3 className="text-base md:text-lg font-bold text-white mb-3 tracking-tight group-hover:text-rose-400 transition-colors duration-300">
-                  We Transform Legacy Into Cloud-Native Power
-                </h3>
-                <p className="text-zinc-400 text-xs md:text-sm leading-relaxed mb-6 font-semibold">
-                  We convert brittle legacy systems into agile, cloud-native environments using AI-driven workflows, DevOps automation, and modern architecture — without disrupting your operations.
-                </p>
+            <div className="relative rounded-[24px] border border-zinc-800/80 bg-[#0A0A0A] p-6 md:p-8 flex flex-col justify-between group h-full shadow-lg overflow-hidden transition-all duration-500 hover:border-zinc-700 min-h-[380px]">
+              
+              {/* Expanding Image Layer */}
+              <div className="absolute inset-0 z-0 [clip-path:circle(0%_at_100%_100%)] group-hover:[clip-path:circle(150%_at_100%_100%)] transition-all duration-700 ease-in-out pointer-events-none">
+                <img src="/assets/Home-page/we-imagine/gen/we-transform-legacy.png" alt="Transform Legacy to Cloud" className="w-full h-full object-cover scale-110 group-hover:scale-100 transition-transform duration-1000 ease-out" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/30" />
               </div>
-              <div className="border-t border-zinc-900 pt-4 mt-auto">
-                <ul className="space-y-2">
-                  {["AI-Driven Automation", "Cloud-Native Migration", "Legacy Re-Architecture"].map((bullet) => (
-                    <li key={bullet} className="flex items-center gap-2 text-[11px] font-bold text-zinc-300">
-                      <span className="w-1.5 h-1.5 rounded-full bg-rose-500/70" />
-                      {bullet}
-                    </li>
-                  ))}
-                </ul>
+
+              {/* Content Layer */}
+              <div className="relative z-10 flex flex-col h-full">
+                <div>
+                  <h3 className="text-xl md:text-2xl font-bold text-white mb-4 tracking-tight transition-transform duration-500 group-hover:-translate-y-1">
+                    We Transform Legacy Into Cloud-Native Power
+                  </h3>
+                  <p className="text-zinc-400 text-sm leading-relaxed mb-6 font-medium group-hover:text-zinc-300 transition-colors duration-500">
+                    We convert brittle legacy systems into agile, cloud-native environments using AI-driven workflows and modern architecture — without disrupting operations.
+                  </p>
+                </div>
+                <div className="border-t border-zinc-800/60 group-hover:border-white/20 pt-5 mt-auto transition-colors duration-500">
+                  <ul className="space-y-3">
+                    {["AI-Driven Automation", "Cloud-Native Migration", "Legacy Re-Architecture"].map((bullet) => (
+                      <li key={bullet} className="flex items-center gap-3 text-xs font-bold text-zinc-300 group-hover:text-white transition-colors duration-500">
+                        <span className="w-1.5 h-1.5 rounded-full bg-rose-500 shadow-[0_0_8px_rgba(225,29,72,0.8)]" />
+                        {bullet}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
             </div>
           </Reveal>
 
           {/* Card 4: We Manage */}
           <Reveal delay={0.2}>
-            <div className="relative rounded-xl border border-zinc-800/60 bg-zinc-950/20 hover:bg-zinc-950/40 hover:border-zinc-700/80 p-6 md:p-8 transition-all duration-300 flex flex-col justify-between group h-full shadow-lg">
-              <div>
-
-                <h3 className="text-base md:text-lg font-bold text-white mb-3 tracking-tight group-hover:text-rose-400 transition-colors duration-300">
-                  We Keep Your Operations Running Flawlessly
-                </h3>
-                <p className="text-zinc-400 text-xs md:text-sm leading-relaxed mb-6 font-semibold">
-                  We take full ownership of your platform operations — reducing costs, eliminating downtime, and enabling sustainable growth through proactive monitoring and intelligent optimisation.
-                </p>
+            <div className="relative rounded-[24px] border border-zinc-800/80 bg-[#0A0A0A] p-6 md:p-8 flex flex-col justify-between group h-full shadow-lg overflow-hidden transition-all duration-500 hover:border-zinc-700 min-h-[380px]">
+              
+              {/* Expanding Image Layer */}
+              <div className="absolute inset-0 z-0 [clip-path:circle(0%_at_100%_100%)] group-hover:[clip-path:circle(150%_at_100%_100%)] transition-all duration-700 ease-in-out pointer-events-none">
+                <img src="/assets/Home-page/we-imagine/gen/we-manage-operations.png" alt="Manage Operations" className="w-full h-full object-cover scale-110 group-hover:scale-100 transition-transform duration-1000 ease-out" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/30" />
               </div>
-              <div className="border-t border-zinc-900 pt-4 mt-auto">
-                <ul className="space-y-2">
-                  {["24/7 Proactive Monitoring", "Predictive Maintenance", "Cloud Cost Optimisation"].map((bullet) => (
-                    <li key={bullet} className="flex items-center gap-2 text-[11px] font-bold text-zinc-300">
-                      <span className="w-1.5 h-1.5 rounded-full bg-rose-500/70" />
-                      {bullet}
-                    </li>
-                  ))}
-                </ul>
+
+              {/* Content Layer */}
+              <div className="relative z-10 flex flex-col h-full">
+                <div>
+                  <h3 className="text-xl md:text-2xl font-bold text-white mb-4 tracking-tight transition-transform duration-500 group-hover:-translate-y-1">
+                    We Keep Your Operations Running Flawlessly
+                  </h3>
+                  <p className="text-zinc-400 text-sm leading-relaxed mb-6 font-medium group-hover:text-zinc-300 transition-colors duration-500">
+                    We take full ownership of your platform operations — reducing costs, eliminating downtime, and enabling sustainable growth through proactive monitoring.
+                  </p>
+                </div>
+                <div className="border-t border-zinc-800/60 group-hover:border-white/20 pt-5 mt-auto transition-colors duration-500">
+                  <ul className="space-y-3">
+                    {["24/7 Proactive Monitoring", "Predictive Maintenance", "Cost Optimisation"].map((bullet) => (
+                      <li key={bullet} className="flex items-center gap-3 text-xs font-bold text-zinc-300 group-hover:text-white transition-colors duration-500">
+                        <span className="w-1.5 h-1.5 rounded-full bg-rose-500 shadow-[0_0_8px_rgba(225,29,72,0.8)]" />
+                        {bullet}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
             </div>
           </Reveal>

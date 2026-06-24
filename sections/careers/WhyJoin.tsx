@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Users, Globe, Terminal, Award, Briefcase, Clock, ArrowUpRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
 
 export function WhyJoin() {
@@ -9,32 +9,32 @@ export function WhyJoin() {
     {
       title: "Expert Mentorship",
       desc: "Weekly sessions with senior DevOps and development professionals. Real guidance, feedback, and code reviews from engineers who've worked at global scale.",
-      icon: Users,
+      iconPath: "/assets/careers/icons/icons8-expert-100.png",
     },
     {
       title: "Global Community",
       desc: "Collaborate with peers across India, UK, Singapore, Malaysia and the Middle East. Build an international professional network from day one — no matter where you are.",
-      icon: Globe,
+      iconPath: "/assets/careers/icons/icons8-earth-planet-100.png",
     },
     {
       title: "Real-World Projects",
       desc: "Actual industry-grade assignments in Cloud, DevOps, Development and Digital Marketing. Not toy exercises. Not simulations. Real deliverables you can show to employers.",
-      icon: Terminal,
+      iconPath: "/assets/careers/icons/icons8-crowd-100.png",
     },
     {
       title: "LOR + Certification",
       desc: "Internship Completion Certificate and Letter of Recommendation from a UK-registered global company trusted by Microsoft, Airbnb, BP and GoDaddy.",
-      icon: Award,
+      iconPath: "/assets/careers/icons/icons8-certificate-100.png",
     },
     {
       title: "Job Opportunities",
       desc: "Top performers are considered for Devopstrio employment offer letters and referrals into our global client network. Your internship could be the start of your career.",
-      icon: Briefcase,
+      iconPath: "/assets/careers/icons/icons8-administrator-male-100.png",
     },
     {
       title: "Flexible Schedule",
       desc: "Evening sessions and weekend tasks built around your existing life — college, part-time work, job hunting, or family. 100% remote. Zero commute.",
-      icon: Clock,
+      iconPath: "/assets/careers/icons/icons8-attach-100.png",
     },
   ];
 
@@ -69,14 +69,15 @@ export function WhyJoin() {
         {/* 6 Features Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10 mb-16">
           {features.map((feature, idx) => {
-            const Icon = feature.icon;
             return (
               <Reveal key={idx} delay={idx * 0.05} className="h-full">
                 <div className="group flex flex-col items-center text-center p-4">
-                  {/* Icon circle */}
-                  <div className="w-14 h-14 rounded-2xl bg-zinc-950 border border-white/[0.08] group-hover:border-rose-500/30 flex items-center justify-center text-white mb-6 group-hover:bg-rose-950/10 transition-all duration-300 shadow-[0_4px_20px_rgba(0,0,0,0.4)]">
-                    <Icon size={22} className="text-white group-hover:text-rose-400 transition-colors" />
-                  </div>
+                  {/* Free-floating Icon */}
+                  <img 
+                    src={feature.iconPath} 
+                    alt={feature.title} 
+                    className="w-24 h-24 mb-5 object-contain transition-all duration-300 group-hover:scale-110 group-hover:-translate-y-1 drop-shadow-md group-hover:drop-shadow-[0_4px_12px_rgba(244,63,94,0.3)]" 
+                  />
 
                   {/* Title */}
                   <h3 className="text-base font-bold text-white mb-3 group-hover:text-rose-400 transition-colors duration-300 leading-snug">
@@ -109,13 +110,12 @@ export function WhyJoin() {
 
           {/* Left Visual: Girl with Laptop Mockup */}
           <Reveal className="relative flex justify-center lg:justify-start">
-            <div className="relative w-full max-w-[420px] aspect-[4/5] overflow-hidden group">
+            <div className="relative w-full max-w-[500px] group">
               <img
                 src="/assets/careers/image2.png"
                 alt="Devopstrio Career Success"
-                className="w-full h-full object-cover brightness-[0.8] group-hover:brightness-[0.9] transition-all duration-700 rounded-3xl"
+                className="w-full h-auto object-contain drop-shadow-[0_15px_35px_rgba(0,0,0,0.6)] group-hover:-translate-y-2 transition-transform duration-700"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/20 to-transparent rounded-3xl" />
             </div>
           </Reveal>
 

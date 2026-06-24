@@ -577,11 +577,11 @@ export function Navbar() {
                   <div className="col-span-full border-t border-zinc-900/60 pt-5 mt-2 flex flex-row justify-between items-center">
                     <div className="flex items-center gap-4 text-[11px] font-medium text-zinc-550">
                       <Link 
-                        href="/insights/industry-events" 
+                        href="/about/life-at-devopstrio" 
                         className="hover:text-rose-500 transition-colors flex items-center gap-1.5"
                       >
                         <span className="w-1.5 h-1.5 rounded-full bg-rose-500 animate-pulse" />
-                        <span>Events</span>
+                        <span>Life at Devopstrio</span>
                       </Link>
                       <span className="text-zinc-800">|</span>
                       <div className="flex items-center gap-2">

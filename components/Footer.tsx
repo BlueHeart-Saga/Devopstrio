@@ -1,13 +1,26 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import { ChevronRight } from "lucide-react";
+import { ChevronRight, ArrowUp } from "lucide-react";
 import CategoryPopup from "@/components/CategoryPopup";
 
 export function Footer() {
   const [email, setEmail] = useState("");
   const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const [showScrollTop, setShowScrollTop] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowScrollTop(window.scrollY > 400);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -18,11 +31,13 @@ export function Footer() {
 
   return (
     <footer className="w-full bg-[#030303] text-zinc-550 pt-20 pb-12 relative font-sans mt-24">
-      {/* Modern illuminated top border */}
-      <div className="absolute top-0 inset-x-0 flex justify-center">
-        <div className="w-full h-px bg-gradient-to-r from-transparent via-zinc-700/50 to-transparent" />
-        <div className="absolute top-0 w-3/4 md:w-1/2 h-[2px] bg-gradient-to-r from-transparent via-white/30 to-transparent blur-sm" />
-        <div className="absolute top-0 w-1/2 md:w-1/4 h-[1.5px] bg-gradient-to-r from-transparent via-white/80 to-transparent" />
+      {/* Premium Dual-Line White Top Border */}
+      <div className="absolute top-0 inset-x-0 flex flex-col items-center">
+        <div className="relative w-full flex justify-center opacity-90">
+          <div className="w-full h-[2px] bg-gradient-to-r from-zinc-950 via-white/70 to-zinc-950" />
+          <div className="absolute top-0 w-[60%] h-[2px] bg-gradient-to-r from-transparent via-white to-transparent shadow-[0_0_20px_rgba(255,255,255,0.9)]" />
+        </div>
+        <div className="w-[70%] h-px bg-gradient-to-r from-transparent via-white/20 to-transparent mt-[3px]" />
       </div>
       
       {/* Background Glows for visual depth */}
@@ -219,21 +234,21 @@ export function Footer() {
 
         {/* Legal Links */}
         <div className="flex flex-wrap justify-center md:justify-start gap-x-5 gap-y-2 text-xs text-zinc-500 font-medium">
-          <Link href="/disclaimer" className="hover:text-zinc-350 transition-colors">Disclaimer</Link>
+          <a href="/disclaimer" className="hover:text-zinc-350 transition-colors">Disclaimer</a>
           <span>•</span>
-          <Link href="/privacy-policy" className="hover:text-zinc-350 transition-colors">Privacy Policy</Link>
+          <a href="/privacy-policy" className="hover:text-zinc-350 transition-colors">Privacy Policy</a>
           <span>•</span>
-          <Link href="/terms-of-service" className="hover:text-zinc-350 transition-colors">Terms of Service</Link>
+          <a href="/terms-of-service" className="hover:text-zinc-350 transition-colors">Terms of Service</a>
           <span>•</span>
-          <Link href="/cookie-policy" className="hover:text-zinc-350 transition-colors">Cookie Policy</Link>
+          <a href="/cookie-policy" className="hover:text-zinc-350 transition-colors">Cookie Policy</a>
           <span>•</span>
-          <Link href="/gdpr" className="hover:text-zinc-350 transition-colors">GDPR Compliance</Link>
+          <a href="/gdpr" className="hover:text-zinc-350 transition-colors">GDPR Compliance</a>
           <span>•</span>
-          <Link href="/sitemap" className="hover:text-zinc-350 transition-colors">Sitemap</Link>
+          <a href="/sitemap" className="hover:text-zinc-350 transition-colors">Sitemap</a>
         </div>
 
-        {/* Collapsible HTML Directory Index for Search Bots & Users (Technical SEO Link Index) */}
-        <details className="mt-8 group border border-zinc-900 rounded-xl bg-zinc-950/20 text-left">
+        {/* Collapsible HTML Directory Index for Search Bots & Users (Technical SEO Link Index) - Hidden from UI */}
+        <details className="hidden mt-8 group border border-zinc-900 rounded-xl bg-zinc-950/20 text-left">
           <summary className="list-none flex items-center justify-between px-6 py-4 cursor-pointer text-xs font-bold uppercase tracking-widest text-zinc-500 hover:text-rose-500 transition-colors select-none">
             <span>Explore Site Directory (HTML Index)</span>
             <span className="transition-transform duration-300 group-open:rotate-180 text-sm">&darr;</span>
@@ -309,6 +324,17 @@ export function Footer() {
         </details>
 
       </div>
+
+      {/* Floating Scroll to Top Button */}
+      <button
+        onClick={scrollToTop}
+        className={`fixed bottom-0 right-0 z-50 p-3.5 rounded-tl-[1.5rem] bg-zinc-900/30 backdrop-blur-xl border-t border-l border-white/[0.08] text-zinc-400 hover:text-white hover:bg-zinc-800/50 transition-all duration-500 shadow-[-10px_-10px_30px_rgba(0,0,0,0.5)] ${
+          showScrollTop ? "opacity-100 pointer-events-auto translate-y-0" : "opacity-0 pointer-events-none translate-y-full"
+        }`}
+        aria-label="Scroll to top"
+      >
+        <ArrowUp size={22} strokeWidth={2} className="group-hover:-translate-y-1 transition-transform duration-300" />
+      </button>
     </footer>
   );
 }

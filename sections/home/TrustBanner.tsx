@@ -32,18 +32,18 @@ export function TrustBanner() {
 
       <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
         <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8 lg:gap-12">
-          
+
           {/* Left Side: Premium Enterprise Copy */}
           <div className="flex-shrink-0 max-w-sm">
             <Reveal>
-              <span className="text-[10px] font-bold tracking-[0.25em] uppercase text-rose-500 mb-2 block">
+              <span className="text-[11px] font-semibold tracking-[0.25em] uppercase text-[#E11D48] mb-2 block">
                 ENTERPRISE TRUST
               </span>
             </Reveal>
             <Reveal>
-              <h3 className="text-xl md:text-2xl font-semibold tracking-tight text-zinc-200 leading-tight">
-                Trusted by the world's most <br className="hidden sm:block" />
-                <span className="text-white font-bold bg-gradient-to-r from-white via-zinc-100 to-zinc-400 bg-clip-text text-transparent">
+              <h3 className="text-xl md:text-2xl xl:text-3xl font-bold leading-tight tracking-tight text-white">
+                Trusted by the world's most
+                <span className="block text-[#E11D48] mt-1">
                   innovative enterprises.
                 </span>
               </h3>

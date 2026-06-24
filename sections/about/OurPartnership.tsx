@@ -2,6 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
+import { motion } from "framer-motion";
 import { Reveal } from "@/components/ui/Reveal";
 
 // Curated tech & partner icons from project assets
@@ -37,6 +38,20 @@ const row4 = [
   { name: "OpenAI", path: "/assets/Tech-icons/openai-logo_svgstack_com_28971780931370.svg" },
 ];
 
+const partnerLogos = [
+  { src: "/assets/Home-page/partners/BT.svg", alt: "BT" },
+  { src: "/assets/Home-page/partners/bp-logo.svg", alt: "BP" },
+  { src: "/assets/Home-page/partners/NHS.svg", alt: "NHS" },
+  { src: "/assets/Home-page/partners/Boviet_Solar.png", alt: "Boviet Solar" },
+  { src: "/assets/Home-page/partners/gxo.svg", alt: "GXO" },
+  { src: "/assets/Home-page/partners/ASDA.svg", alt: "ASDA" },
+  { src: "/assets/Home-page/partners/Microsoft.svg", alt: "Microsoft" },
+  { src: "/assets/Home-page/partners/Virgin.svg", alt: "Virgin" },
+  { src: "/assets/Home-page/partners/Costco.svg", alt: "Costco" },
+  { src: "/assets/Home-page/partners/Metrobank.svg", alt: "Metro Bank" }
+];
+const doubledLogos = [...partnerLogos, ...partnerLogos];
+
 const RowMarquee = ({ items, direction }: { items: typeof row1; direction: "left" | "right" }) => {
   // Quadruple base items to guarantee smooth seamless loops on large viewport sizes
   const duplicatedItems = [...items, ...items, ...items, ...items];
@@ -46,15 +61,15 @@ const RowMarquee = ({ items, direction }: { items: typeof row1; direction: "left
         {duplicatedItems.map((logo, idx) => (
           <div
             key={`${logo.name}-${idx}`}
-            className="mx-1.5 md:mx-2 flex-shrink-0 flex items-center justify-center bg-zinc-950/40 border border-zinc-900 rounded-2xl w-14 h-14 md:w-20 md:h-20 hover:border-rose-500/50 hover:bg-zinc-900/40 transition-all duration-300 hover:scale-105 group relative cursor-pointer"
+            className="mx-1.5 md:mx-2 flex-shrink-0 flex items-center justify-center bg-zinc-950/40 border border-zinc-900 rounded-2xl w-14 h-14 md:w-20 md:h-20 hover:bg-white hover:border-white hover:shadow-[0_10px_30px_rgba(255,255,255,0.15)] transition-all duration-500 hover:-translate-y-1 group relative cursor-pointer"
           >
             <div className="flex flex-col items-center justify-center h-full w-full p-2.5 md:p-4">
               <img
                 src={logo.path}
                 alt={logo.name}
-                className="w-6.5 h-6.5 md:w-9 md:h-9 object-contain brightness-0 invert opacity-45 group-hover:opacity-100 group-hover:scale-105 transition-all duration-300"
+                className="w-6.5 h-6.5 md:w-9 md:h-9 object-contain opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300 drop-shadow-sm"
               />
-              <span className="absolute bottom-1 md:bottom-2 text-[8px] text-zinc-500 font-bold uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-1 group-hover:translate-y-0 pointer-events-none">
+              <span className="absolute bottom-1 md:bottom-2 text-[8px] font-black uppercase tracking-widest opacity-0 group-hover:opacity-100 group-hover:text-black transition-all duration-300 translate-y-1 group-hover:translate-y-0 pointer-events-none">
                 {logo.name}
               </span>
             </div>
@@ -155,6 +170,53 @@ export function OurPartnership() {
             </Reveal>
           </div>
 
+        </div>
+      </div>
+
+      {/* Partner Trust Banner */}
+      <div className="w-full border-t border-zinc-900/80 mt-20 pt-12 pb-6 relative z-20 overflow-hidden bg-black/50">
+        <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-96 h-20 bg-rose-500/5 rounded-full blur-[80px] pointer-events-none" />
+        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
+          <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8 lg:gap-12">
+            
+            <div className="flex-shrink-0 max-w-sm">
+              <Reveal>
+                <span className="text-[11px] font-semibold tracking-[0.25em] uppercase text-[#E11D48] mb-2 block">
+                  ENTERPRISE PARTNERS
+                </span>
+              </Reveal>
+              <Reveal>
+                <h3 className="text-xl md:text-2xl font-bold leading-tight tracking-tight text-white">
+                  Trusted by global industry leaders
+                </h3>
+              </Reveal>
+            </div>
+
+            <div className="flex-grow relative overflow-hidden py-2.5 lg:max-w-[70%] xl:max-w-[75%]">
+              <div className="absolute left-0 top-0 bottom-0 w-16 md:w-28 bg-gradient-to-r from-black via-black/40 to-transparent z-10 pointer-events-none" />
+              <div className="absolute right-0 top-0 bottom-0 w-16 md:w-28 bg-gradient-to-l from-black via-black/40 to-transparent z-10 pointer-events-none" />
+
+              <motion.div
+                className="flex gap-16 md:gap-20 items-center whitespace-nowrap"
+                animate={{ x: ["0%", "-50%"] }}
+                transition={{ repeat: Infinity, ease: "linear", duration: 40 }}
+              >
+                {doubledLogos.map((logo, index) => (
+                  <div
+                    key={`${logo.alt}-${index}`}
+                    className="flex-shrink-0 flex items-center justify-center transition-all duration-300 opacity-80 hover:opacity-100 hover:scale-105"
+                  >
+                    <img
+                      src={logo.src}
+                      alt={logo.alt}
+                      className="h-8 md:h-10 lg:h-12 w-auto object-contain"
+                    />
+                  </div>
+                ))}
+              </motion.div>
+            </div>
+
+          </div>
         </div>
       </div>
     </section>

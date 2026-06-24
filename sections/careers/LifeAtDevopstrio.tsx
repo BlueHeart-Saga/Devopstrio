@@ -1,134 +1,214 @@
 "use client";
 
-import React from "react";
-import { Reveal } from "@/components/ui/Reveal";
-
-const leftImages = [
-  { 
-    image: "/assets/careers/lifeat-devopstrio/1.png", 
-    height: "h-[220px]", 
-    radius: "rounded-tl-3xl rounded-br-3xl rounded-tr-xl rounded-bl-xl" 
-  },
-  { 
-    image: "/assets/careers/lifeat-devopstrio/2.png", 
-    height: "h-[340px]", 
-    radius: "rounded-tl-[3.5rem] rounded-br-[3.5rem] rounded-tr-2xl rounded-bl-2xl" 
-  },
-  { 
-    image: "/assets/careers/lifeat-devopstrio/3.png", 
-    height: "h-[240px]", 
-    radius: "rounded-3xl" 
-  },
-  { 
-    image: "/assets/careers/lifeat-devopstrio/4.png", 
-    height: "h-[300px]", 
-    radius: "rounded-tr-[3rem] rounded-bl-[3rem] rounded-tl-2xl rounded-br-2xl" 
-  },
-];
-
-const rightImages = [
-  { 
-    image: "/assets/careers/lifeat-devopstrio/5.png", 
-    height: "h-[360px]", 
-    radius: "rounded-tr-[2.5rem] rounded-bl-[2.5rem] rounded-tl-xl rounded-br-xl" 
-  },
-  { 
-    image: "/assets/careers/lifeat-devopstrio/6.png", 
-    height: "h-[220px]", 
-    radius: "rounded-3xl" 
-  },
-  { 
-    image: "/assets/careers/lifeat-devopstrio/7.png", 
-    height: "h-[200px]", 
-    radius: "rounded-tl-[3.5rem] rounded-br-[3.5rem] rounded-tr-2xl rounded-bl-2xl" 
-  },
-  { 
-    image: "/assets/careers/lifeat-devopstrio/8.png", 
-    height: "h-[240px]", 
-    radius: "rounded-br-[2.5rem] rounded-tl-[2.5rem] rounded-tr-xl rounded-bl-xl" 
-  },
-];
+import React, { useRef, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { X } from "lucide-react";
 
 export function LifeAtDevopstrio() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
   return (
-    <section className="py-24 bg-black border-b border-zinc-900/60 relative overflow-hidden">
-      {/* Top right ambient glow */}
-      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[radial-gradient(circle_at_top_right,rgba(244,63,94,0.05),transparent_70%)] pointer-events-none" />
-
-      <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.6fr] gap-14 lg:gap-20 items-start">
-          
-          {/* Left Panel: Sticky Info */}
-          <div className="lg:sticky lg:top-[100px]">
-            <Reveal>
-              <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
-                LIFE AT DEVOPSTRIO
-              </span>
-              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-6 text-white">
-                People first. <span className="text-rose-500">Innovation always.</span>
-              </h2>
-              <p className="text-zinc-200 text-sm md:text-base leading-relaxed mb-6 font-medium">
-                At Devopstrio, we believe technology is built by people. We foster an inclusive, collaborative culture where curiosity, creativity, and continuous learning drive engineering excellence.
-              </p>
-              <p className="text-zinc-300 text-xs md:text-sm leading-relaxed mb-8 font-medium">
-                Whether contributing to open-source cloud plugins, sharing custom Python libraries in study circles, or resolving peak load alerts — we operate as one team with a shared focus.
-              </p>
-
-              {/* Stats pills */}
-              <div className="flex flex-wrap gap-3">
-                {[
-                  { label: "Countries", value: "12+" },
-                  { label: "Engineers", value: "200+" },
-                  { label: "Culture Score", value: "4.8★" },
-                ].map((stat) => (
-                  <div key={stat.label} className="flex flex-col px-4 py-3 rounded-xl border border-white/[0.06] bg-zinc-950/40 text-left">
-                    <span className="text-xl font-extrabold text-rose-500 leading-none">{stat.value}</span>
-                    <span className="text-xs font-bold uppercase tracking-wider text-zinc-400 mt-1">{stat.label}</span>
-                  </div>
-                ))}
-              </div>
-            </Reveal>
-          </div>
-
-          {/* Right Panel: Collage Grid scrolling naturally with page scroll */}
-          <div className="grid grid-cols-2 gap-4 md:gap-5">
-            {/* Left Collage Column */}
-            <div className="flex flex-col gap-4 md:gap-5">
-              {leftImages.map((img, idx) => (
-                <Reveal key={idx} delay={idx * 0.05}>
-                  <div className={`group bg-[#0d0d0d] border border-white/[0.06] ${img.radius} p-2 hover:border-white/[0.14] hover:-translate-y-1 hover:shadow-[0_20px_50px_rgba(0,0,0,0.6)] transition-all duration-300 overflow-hidden`}>
-                    <div className={`relative w-full ${img.height} rounded-[inherit] overflow-hidden`}>
-                      <img
-                        src={img.image}
-                        alt="Life at Devopstrio Collage Element"
-                        className="w-full h-full object-cover brightness-75 group-hover:brightness-90 group-hover:scale-105 transition-all duration-500 rounded-[inherit]"
-                      />
-                    </div>
-                  </div>
-                </Reveal>
-              ))}
-            </div>
-
-            {/* Right Collage Column */}
-            <div className="flex flex-col gap-4 md:gap-5 mt-10 md:mt-12">
-              {rightImages.map((img, idx) => (
-                <Reveal key={idx} delay={(idx + 4) * 0.05}>
-                  <div className={`group bg-[#0d0d0d] border border-white/[0.06] ${img.radius} p-2 hover:border-white/[0.14] hover:-translate-y-1 hover:shadow-[0_20px_50px_rgba(0,0,0,0.6)] transition-all duration-300 overflow-hidden`}>
-                    <div className={`relative w-full ${img.height} rounded-[inherit] overflow-hidden`}>
-                      <img
-                        src={img.image}
-                        alt="Life at Devopstrio Collage Element"
-                        className="w-full h-full object-cover brightness-75 group-hover:brightness-90 group-hover:scale-105 transition-all duration-500 rounded-[inherit]"
-                      />
-                    </div>
-                  </div>
-                </Reveal>
-              ))}
-            </div>
-          </div>
-
-        </div>
+    <>
+      <section 
+        ref={containerRef}
+      className="relative w-full h-[800px] md:h-[900px] bg-[#f8f9fb] overflow-hidden border-t border-b border-zinc-200"
+    >
+      {/* Dot Grid Background */}
+      <div className="absolute inset-0 bg-[radial-gradient(#d1d5db_1.5px,transparent_1.5px)] [background-size:24px_24px] opacity-70 pointer-events-none" />
+      
+      {/* Center Title */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center z-10 pointer-events-none">
+        <motion.h2 
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-4xl md:text-6xl font-medium text-zinc-900 tracking-tight"
+        >
+          Let's meet
+        </motion.h2>
+        <motion.svg 
+          initial={{ pathLength: 0, opacity: 0 }}
+          whileInView={{ pathLength: 1, opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          viewport={{ once: true }}
+          className="w-48 md:w-64 mt-2 mb-6" viewBox="0 0 200 20" fill="none" xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M5 15C50 5 150 5 195 15" stroke="#ff8da1" strokeWidth="4" strokeLinecap="round" />
+        </motion.svg>
+        <motion.p
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.4 }}
+          className="text-base md:text-xl font-bold uppercase tracking-[0.2em] text-zinc-500"
+        >
+          Life at Devopstrio
+        </motion.p>
       </div>
+
+      {/* --- TOP LEFT QUADRANT --- */}
+      <WhiteCard text="Raghavendra, Global Delivery" className="top-[15%] left-[8%] md:left-[12%]" rotate={-2} />
+      <StickyNote text="Manikandan, Founder & CEO" color="bg-[#ffea79] text-zinc-900" className="top-[18%] left-[20%] md:left-[25%]" rotate={3} />
+      <PhotoCard src="/assets/careers/lifeat-devopstrio/1.png" className="top-[35%] left-[5%] md:left-[15%]" rotate={-4} />
+      <PhotoCard src="/assets/careers/lifeat-devopstrio/4.png" className="top-[60%] left-[8%] md:left-[12%]" rotate={5} />
+      <Cursor name="Matt" color="#ff5975" className="top-[12%] left-[18%]" rotate={-20} />
+      <Cursor name="Emilio" color="#4f46e5" className="top-[45%] left-[22%]" rotate={15} />
+
+      {/* --- BOTTOM LEFT QUADRANT --- */}
+      <Emoji symbol="🔥" className="bottom-[45%] left-[25%]" />
+      <StickyNote text="Kandan, Development" color="bg-[#ffcce5] text-zinc-900" className="bottom-[15%] left-[10%] md:left-[20%]" rotate={-5} />
+      <PhotoCard src="/assets/careers/lifeat-devopstrio/5.png" className="bottom-[5%] left-[25%] md:left-[28%]" rotate={-6} />
+      <Cursor name="Irina" color="#1e1b4b" className="bottom-[28%] left-[32%]" rotate={-10} />
+      <Cursor name="Suzanne" color="#8b5cf6" className="bottom-[10%] left-[5%]" rotate={45} />
+      <Emoji symbol="💥" className="bottom-[35%] left-[8%] text-red-500 scale-150 opacity-60" />
+
+      {/* --- TOP RIGHT QUADRANT --- */}
+      <Cursor name="Olga" color="#0ea5e9" className="top-[8%] right-[35%]" rotate={-15} />
+      <WhiteCard text="Jonas, Cloud Architect" className="top-[18%] right-[32%]" rotate={1} />
+      <StickyNote text="Security & Compliance" color="bg-[#a3e635] text-zinc-900" className="top-[20%] right-[10%] md:right-[15%]" rotate={-3} />
+      <PhotoCard src="/assets/careers/lifeat-devopstrio/2.png" className="top-[40%] right-[30%]" rotate={4} />
+      <PhotoCard src="/assets/careers/lifeat-devopstrio/6.png" className="top-[10%] right-[5%] md:right-[10%]" rotate={-8} />
+      <Cursor name="Catherine" color="#10b981" className="top-[35%] right-[18%]" rotate={30} />
+      <Emoji symbol="👋" className="top-[15%] right-[28%]" />
+
+      {/* --- BOTTOM RIGHT QUADRANT --- */}
+      <StickyNote text="Global Network" color="bg-[#60a5fa] text-white" className="bottom-[15%] right-[15%] md:right-[20%]" rotate={2} />
+      <PhotoCard src="/assets/careers/lifeat-devopstrio/3.png" className="bottom-[8%] right-[40%] md:right-[35%]" rotate={-2} />
+      <PhotoCard src="/assets/careers/lifeat-devopstrio/7.png" className="bottom-[35%] right-[8%] md:right-[12%]" rotate={7} />
+      <PhotoCard src="/assets/careers/lifeat-devopstrio/8.png" className="bottom-[55%] right-[25%] md:right-[30%]" rotate={-3} />
+      <Cursor name="Salman" color="#3b82f6" className="bottom-[22%] right-[30%]" rotate={-30} />
+      <Cursor name="Joanne" color="#64748b" className="bottom-[8%] right-[10%]" rotate={10} />
+      <Emoji symbol="😂" className="bottom-[25%] right-[40%]" />
+      
+      {/* Central-ish Cursors/Items */}
+      <Cursor name="Frederic" color="#f43f5e" className="top-[55%] left-[45%]" rotate={-45} />
+      <Cursor name="Jonas" color="#fda4af" className="top-[45%] right-[45%]" rotate={60} />
+      <WhiteCard text="DevOps Engineers" className="bottom-[30%] left-[42%] bg-[#fbbf24]" rotate={-2} />
+
     </section>
+
+      {/* Lightbox Overlay */}
+      <AnimatePresence>
+        {selectedImage && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setSelectedImage(null)}
+            className="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 p-4 md:p-12 cursor-zoom-out"
+          >
+            <button 
+              onClick={() => setSelectedImage(null)}
+              className="absolute top-6 right-6 text-white/70 hover:text-white bg-white/10 hover:bg-white/20 rounded-full p-2 transition-all z-50"
+            >
+              <X size={24} />
+            </button>
+            <motion.img
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              transition={{ type: "spring", damping: 25, stiffness: 300 }}
+              src={selectedImage}
+              alt="Full size view"
+              className="max-w-full max-h-full object-contain drop-shadow-[0_0_40px_rgba(255,255,255,0.1)] rounded-xl"
+              onClick={(e) => e.stopPropagation()} // Prevent closing when clicking the image itself
+            />
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
   );
+
+  // --- Sub-Components --- //
+
+  function StickyNote({ text, color, className, rotate }: { text: string, color: string, className: string, rotate: number }) {
+    return (
+      <motion.div 
+        initial={{ opacity: 0, scale: 0.5, rotate: 0 }}
+        whileInView={{ opacity: 1, scale: 1, rotate }}
+        viewport={{ once: true }}
+        drag
+        dragConstraints={containerRef}
+        whileDrag={{ scale: 1.1, zIndex: 50, rotate: 0, boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)" }}
+        className={`absolute w-36 h-36 md:w-48 md:h-48 p-4 shadow-md flex items-center justify-center text-center cursor-grab active:cursor-grabbing font-medium text-sm md:text-lg z-10 hover:z-30 transition-shadow ${color} ${className}`}
+      >
+        {text}
+      </motion.div>
+    );
+  }
+
+  function WhiteCard({ text, className, rotate }: { text: string, className: string, rotate: number }) {
+    return (
+      <motion.div 
+        initial={{ opacity: 0, scale: 0.5, rotate: 0 }}
+        whileInView={{ opacity: 1, scale: 1, rotate }}
+        viewport={{ once: true }}
+        drag
+        dragConstraints={containerRef}
+        whileDrag={{ scale: 1.1, zIndex: 50, rotate: 0, boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1)" }}
+        className={`absolute px-4 py-6 bg-white shadow-sm border border-zinc-100 flex items-center justify-center text-center cursor-grab active:cursor-grabbing text-[10px] md:text-xs text-zinc-600 font-medium z-10 hover:z-30 transition-shadow ${className}`}
+      >
+        {text}
+      </motion.div>
+    );
+  }
+
+  function PhotoCard({ src, className, rotate }: { src: string, className: string, rotate: number }) {
+    return (
+      <motion.div
+        initial={{ opacity: 0, scale: 0.5, rotate: 0 }}
+        whileInView={{ opacity: 1, scale: 1, rotate }}
+        viewport={{ once: true }}
+        drag
+        dragConstraints={containerRef}
+        whileDrag={{ scale: 1.1, zIndex: 50, rotate: 0, boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.3)" }}
+        onClick={() => setSelectedImage(src)}
+        className={`absolute p-2 pb-8 md:p-3 md:pb-12 bg-white shadow-lg border border-zinc-200 cursor-grab active:cursor-grabbing z-10 hover:z-30 hover:scale-105 transition-transform duration-300 ${className}`}
+      >
+        <div className="w-24 h-24 md:w-36 md:h-36 bg-zinc-100 overflow-hidden shadow-inner">
+          <img src={src} alt="Team Member" className="w-full h-full object-cover pointer-events-none" />
+        </div>
+      </motion.div>
+    );
+  }
+
+  function Cursor({ name, color, className, rotate = 0 }: { name: string, color: string, className: string, rotate?: number }) {
+    return (
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.3 }}
+        className={`absolute flex flex-col items-start drop-shadow-md z-20 pointer-events-none ${className}`}
+      >
+        <motion.svg 
+          animate={{ rotate: [rotate, rotate - 5, rotate + 5, rotate] }}
+          transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
+          width="24" height="24" viewBox="0 0 24 24" fill={color} xmlns="http://www.w3.org/2000/svg" className="transform"
+        >
+          <path d="M4 2L20 10L13 13L10 20L4 2Z" fill={color} stroke="white" strokeWidth="2" strokeLinejoin="round"/>
+        </motion.svg>
+        <div className={`px-2 py-0.5 rounded-full text-[10px] md:text-xs font-bold text-white shadow-sm mt-1 ml-4 whitespace-nowrap`} style={{ backgroundColor: color }}>
+          {name}
+        </div>
+      </motion.div>
+    );
+  }
+
+  function Emoji({ symbol, className }: { symbol: string, className: string }) {
+    return (
+      <motion.div
+        initial={{ opacity: 0, scale: 0 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true }}
+        drag
+        dragConstraints={containerRef}
+        whileDrag={{ scale: 1.5, zIndex: 50 }}
+        className={`absolute text-3xl md:text-5xl cursor-grab active:cursor-grabbing z-10 ${className}`}
+      >
+        {symbol}
+      </motion.div>
+    );
+  }
 }

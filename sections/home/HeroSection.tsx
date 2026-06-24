@@ -18,39 +18,41 @@ export function HeroSection() {
   const heroY = useTransform(scrollYProgress, [0, 1], [0, 80]);
 
   const slides: Slide[] = [
+    
     {
-      eyebrow: "Elite Global Technology Partner",
+      eyebrow: "Cloud & Infrastructure",
       title: (
         <>
-          The World Runs on
+          Modern Enterprises Depend on
           <br />
-          <span className="text-[#E11D48] whitespace-nowrap">Code.</span>
+          <span className="text-[#E11D48] whitespace-nowrap">Cloud.</span>
           <br />
-          We Make It
+          We Build It
           <br />
-          <span className="text-[#E11D48] whitespace-nowrap">Unstoppable.</span>
+          <span className="text-[#E11D48] whitespace-nowrap">Without Limits.</span>
         </>
       ),
       primaryBtn: { text: "Explore Services", href: "/services" },
       secondaryBtn: { text: "Contact Us", href: "/contact" },
-      image: "/assets/Home-page/homehero/Sagadevan.S.svg"
+      image: "/assets/Home-page/homehero/Punitha.A.svg"
     },
+    
     {
-      eyebrow: "Ecosystem & Strategic Alliances",
+      eyebrow: "Digital Products & Platforms",
       title: (
         <>
-          Innovation Grows Through
+          Great Ideas Deserve
           <br />
-          <span className="text-[#E11D48] whitespace-nowrap">Partnerships.</span>
+          <span className="text-[#E11D48] whitespace-nowrap">Products.</span>
           <br />
-          We Connect the
+          We Turn Them Into
           <br />
-          <span className="text-[#E11D48] whitespace-nowrap">Future.</span>
+          <span className="text-[#E11D48] whitespace-nowrap">Reality.</span>
         </>
       ),
       primaryBtn: { text: "Explore Services", href: "/services" },
       secondaryBtn: { text: "Contact Us", href: "/contact" },
-      image: "/assets/Home-page/homehero/Thangalakshmi.M.svg"
+      image: "/assets/Home-page/homehero/Subbiah_Muthu.M.svg"
     },
     {
       eyebrow: "End-to-End Technology Services",
@@ -86,22 +88,23 @@ export function HeroSection() {
       secondaryBtn: { text: "Contact Us", href: "/contact" },
       image: "/assets/Home-page/homehero/Ooviya.R.svg"
     },
+    
     {
-      eyebrow: "Cloud & Infrastructure",
+      eyebrow: "Ecosystem & Strategic Alliances",
       title: (
         <>
-          Modern Enterprises Depend on
+          Innovation Grows Through
           <br />
-          <span className="text-[#E11D48] whitespace-nowrap">Cloud.</span>
+          <span className="text-[#E11D48] whitespace-nowrap">Partnerships.</span>
           <br />
-          We Build It
+          We Connect the
           <br />
-          <span className="text-[#E11D48] whitespace-nowrap">Without Limits.</span>
+          <span className="text-[#E11D48] whitespace-nowrap">Future.</span>
         </>
       ),
       primaryBtn: { text: "Explore Services", href: "/services" },
       secondaryBtn: { text: "Contact Us", href: "/contact" },
-      image: "/assets/Home-page/homehero/Punitha.A.svg"
+      image: "/assets/Home-page/homehero/Thangalakshmi.M.svg"
     },
     {
       eyebrow: "AI & Data Innovation",
@@ -121,23 +124,6 @@ export function HeroSection() {
       image: "/assets/Home-page/homehero/Sermaraja.V.svg"
     },
     {
-      eyebrow: "Digital Products & Platforms",
-      title: (
-        <>
-          Great Ideas Deserve
-          <br />
-          <span className="text-[#E11D48] whitespace-nowrap">Products.</span>
-          <br />
-          We Turn Them Into
-          <br />
-          <span className="text-[#E11D48] whitespace-nowrap">Reality.</span>
-        </>
-      ),
-      primaryBtn: { text: "Explore Services", href: "/services" },
-      secondaryBtn: { text: "Contact Us", href: "/contact" },
-      image: "/assets/Home-page/homehero/Subbiah_Muthu.M.svg"
-    },
-    {
       eyebrow: "Cybersecurity & Compliance",
       title: (
         <>
@@ -153,6 +139,23 @@ export function HeroSection() {
       primaryBtn: { text: "Explore Services", href: "/services" },
       secondaryBtn: { text: "Contact Us", href: "/contact" },
       image: "/assets/Home-page/homehero/Sudalairajan.A.svg"
+    },
+    {
+      eyebrow: "Elite Global Technology Partner",
+      title: (
+        <>
+          The World Runs on
+          <br />
+          <span className="text-[#E11D48] whitespace-nowrap">Code.</span>
+          <br />
+          We Make It
+          <br />
+          <span className="text-[#E11D48] whitespace-nowrap">Unstoppable.</span>
+        </>
+      ),
+      primaryBtn: { text: "Explore Services", href: "/services" },
+      secondaryBtn: { text: "Contact Us", href: "/contact" },
+      image: "/assets/Home-page/homehero/Sagadevan.S.svg"
     }
   ];
 
@@ -244,6 +247,13 @@ export function HeroSection() {
           {/* Right Column: Person Image & Glow Background */}
           <div className="lg:absolute lg:bottom-0 lg:right-0 xl:right-0 relative flex items-end justify-center lg:justify-end z-10 w-full max-w-[380px] sm:max-w-[460px] lg:max-w-[580px] xl:max-w-[680px] mt-6 lg:mt-0 pb-0 mb-0">
 
+            {/* Preload images to eliminate network delay on slide change */}
+            <div className="hidden" aria-hidden="true">
+              {slides.map((slide, idx) => (
+                <link key={`preload-${idx}`} rel="preload" as="image" href={slide.image} />
+              ))}
+            </div>
+
             {/* Person image */}
             <AnimatePresence mode="wait">
               <motion.div
@@ -269,6 +279,7 @@ export function HeroSection() {
                 <img
                   src={slides[currentSlide].image}
                   alt={slides[currentSlide].eyebrow}
+                  fetchPriority="high"
                   className="w-full h-auto object-contain max-h-[460px] lg:max-h-[750px] xl:max-h-[850px] select-none pb-0 mb-0"
                 />
                 {/* Bottom blending gradient */}
