@@ -163,7 +163,7 @@ export default function CareersPage() {
       <LearningGrowth />
       <PerksBenefits />
       <CareersPresence />
-      <OpenPositions onApplyClick={handleApplyClick} />
+      <OpenPositions />
       <HiringProcess />
       <EmployeeStories />
       <TalentNetwork />
