@@ -1,13 +1,13 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
-import { Linkedin } from "lucide-react";
+import { Linkedin, Github, ArrowRight } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
 
 const leaders = [
   {
     name: "Sagadevan",
-    designation: "Chief Executive Officer",
+    designation: "CEO",
     specialization: "Cloud Architecture · Digital Strategy",
     photoPink: "/assets/About-page/team/pinkteam/Sagadevan.png",
     photoGray: "/assets/About-page/team/grayteam/Sagadevan.png",
@@ -15,7 +15,7 @@ const leaders = [
   },
   {
     name: "Sudalairajan",
-    designation: "Chief Technology Officer",
+    designation: "CTO",
     specialization: "Platform Engineering · AI Innovation",
     photoPink: "/assets/About-page/team/pinkteam/Sudalairajan.png",
     photoGray: "/assets/About-page/team/grayteam/Sudalairajan.png",
@@ -23,7 +23,7 @@ const leaders = [
   },
   {
     name: "Subbiah Muthu",
-    designation: "Chief Operating Officer",
+    designation: "COO",
     specialization: "Global Delivery · Managed Services",
     photoPink: "/assets/About-page/team/pinkteam/Subbiahmuthu.png",
     photoGray: "/assets/About-page/team/grayteam/Subbiahmuthu.png",
@@ -31,7 +31,7 @@ const leaders = [
   },
   {
     name: "Kishore",
-    designation: "VP — Cloud Engineering",
+    designation: "VP — Cloud",
     specialization: "Azure · AWS · GCP Multi-cloud",
     photoPink: "/assets/About-page/team/pinkteam/Kishore.png",
     photoGray: "/assets/About-page/team/grayteam/Kishore.png",
@@ -39,7 +39,7 @@ const leaders = [
   },
   {
     name: "Sermaraja",
-    designation: "VP — Software Engineering",
+    designation: "VP — Software",
     specialization: "Enterprise Applications · SaaS",
     photoPink: "/assets/About-page/team/pinkteam/Sermaraj.png",
     photoGray: "/assets/About-page/team/grayteam/Sermaraj.png",
@@ -47,10 +47,26 @@ const leaders = [
   },
   {
     name: "Thangalakshmi",
-    designation: "VP — Cybersecurity",
+    designation: "VP — Cyber",
     specialization: "DevSecOps · Zero Trust · Compliance",
     photoPink: "/assets/About-page/team/pinkteam/Thangalakshmi.png",
     photoGray: "/assets/About-page/team/grayteam/Thangalakshmi.png",
+    linkedin: "https://www.linkedin.com/company/devopstrioglobal/",
+  },
+  {
+    name: "Punitha",
+    designation: "VP — Design",
+    specialization: "Design Thinking · UI/UX",
+    photoPink: "/assets/About-page/team/pinkteam/Punitha.png",
+    photoGray: "/assets/About-page/team/grayteam/Punitha.png",
+    linkedin: "https://www.linkedin.com/company/devopstrioglobal/",
+  },
+  {
+    name: "Ooviya",
+    designation: "VP — Growth",
+    specialization: "SEO · Digital Marketing",
+    photoPink: "/assets/About-page/team/pinkteam/Ooviya.png",
+    photoGray: "/assets/About-page/team/grayteam/Ooviya.png",
     linkedin: "https://www.linkedin.com/company/devopstrioglobal/",
   },
 ];
@@ -248,87 +264,128 @@ export const ExecutiveLeadership = () => {
           </div>
         </Reveal>
 
-        {/* Polaroid Style Container */}
+        {/* Redesigned Team Cards Container (Mockup-inspired) */}
         <Reveal>
-          <div className="relative rounded-3xl overflow-hidden border border-zinc-800/40 bg-zinc-950/30 p-8 md:p-12 lg:p-16">
+          <div className="relative rounded-3xl overflow-hidden border border-zinc-900 bg-zinc-950/20 p-8 md:p-12 lg:p-14">
 
             {/* Dot grid texture */}
             <div className="absolute inset-0 opacity-[0.03] pointer-events-none"
               style={{ backgroundImage: "radial-gradient(circle, #fff 1px, transparent 1px)", backgroundSize: "24px 24px" }} />
               
             <div className="relative z-10 flex flex-col items-center">
-              {/* Photos container with Background Watermark */}
+              
               <div className="relative w-full z-10">
-                {/* Background watermark text "Our LEADERS" */}
+                {/* Background watermark text "Our TEAM" */}
                 <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none select-none z-0">
                   <span className="font-serif italic font-normal text-rose-500/5 text-[8vw] leading-none lowercase first-letter:uppercase mb-2">
-                    Executive
+                    Our
                   </span>
                   <span className="font-black text-zinc-900/40 text-[15vw] leading-none tracking-tighter uppercase">
-                    LEADERS
+                    TEAM
                   </span>
                 </div>
                 
-                {/* Polaroid Photo Grid (3 columns, 2 rows for the 6 cards) */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto relative z-10">
+                {/* Redesigned grid (3 columns) */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto relative z-10 text-left">
+                  
+                  {/* Card 1: Join the Team (Mockup style) */}
+                  <motion.div
+                    className="flex flex-col justify-between p-8 bg-[#0B0B0D]/80 border border-zinc-900 rounded-[1.75rem] shadow-lg relative overflow-hidden group min-h-[380px]"
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5 }}
+                  >
+                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,23,68,0.03),transparent_50%)] pointer-events-none" />
+                    <div>
+                      <span className="text-[10px] font-bold text-[#FF1744] uppercase tracking-widest block mb-4 font-mono">Join the Team</span>
+                      <h3 className="text-xl md:text-2xl font-bold text-white tracking-tight mb-3">
+                        Want to shape the future of Cloud &amp; AI?
+                      </h3>
+                      <p className="text-zinc-500 text-[11.5px] leading-relaxed">
+                        Join us and build robust, cloud-native systems and cognitive engines that inspire change.
+                      </p>
+                    </div>
+                    <a
+                      href="/contact"
+                      className="inline-flex items-center gap-2 px-5 py-2.5 bg-zinc-900 border border-zinc-800 hover:border-zinc-700 text-white hover:text-[#FF1744] text-xs font-bold rounded-full transition-all w-fit shadow-md active:scale-95 group/btn"
+                    >
+                      Apply Now
+                      <ArrowRight size={14} className="transition-transform duration-300 group-hover/btn:translate-x-1" />
+                    </a>
+                  </motion.div>
+
+                  {/* Leaders Cards */}
                   {leaders.map((leader, idx) => {
-                    // Alternate rotation styles for playful Polaroid effect
-                    const rotations = ["-rotate-2", "rotate-1", "rotate-2", "-rotate-1", "rotate-3", "-rotate-3"];
-                    const rotateClass = rotations[idx % rotations.length];
+                    const isExtra = idx >= 5; // Extra team members that show on scroll
                     
                     return (
                       <motion.div
                         key={idx}
-                        className={`group relative p-3 pb-5 bg-white border border-zinc-200/80 shadow-[0_12px_24px_rgba(0,0,0,0.25)] rounded cursor-pointer ${rotateClass} origin-center transition-all duration-300`}
-                        initial={{ opacity: 0, y: 40 }}
+                        className="bg-[#0B0B0D] border border-zinc-900 rounded-[1.75rem] overflow-hidden group shadow-lg flex flex-col justify-between"
+                        initial={{ opacity: 0, y: isExtra ? 70 : 40 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.55, delay: idx * 0.07, ease: [0.22, 1, 0.36, 1] }}
-                        whileHover={{ 
-                          y: -12, 
-                          scale: 1.05, 
-                          rotate: 0, 
-                          zIndex: 50, 
-                          boxShadow: "0 25px 50px -12px rgba(225,29,72,0.25)", 
-                          transition: { duration: 0.3 } 
+                        viewport={{ once: true, margin: isExtra ? "-80px" : "0px" }}
+                        transition={{ 
+                          duration: 0.7, 
+                          delay: isExtra ? (idx - 5) * 0.15 : idx * 0.08, 
+                          ease: [0.215, 0.61, 0.355, 1] 
                         }}
                       >
-                        {/* LinkedIn float link on hover */}
-                        <a
-                          href={leader.linkedin}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="absolute top-5 right-5 w-8 h-8 rounded-full bg-black/75 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white hover:text-[#0A66C2] hover:bg-white transition-all z-20 opacity-0 group-hover:opacity-100 duration-300"
-                          title="LinkedIn"
-                        >
-                          <Linkedin className="w-3.5 h-3.5" />
-                        </a>
-
-                        <div className="relative w-full aspect-[3/4] rounded-sm overflow-hidden bg-zinc-100">
-                          {/* Pink / default photo */}
+                        {/* Image aspect-ratio matches Annette Black style */}
+                        <div className="relative w-full aspect-[4/5] bg-zinc-950 overflow-hidden">
+                          {/* Default photo */}
                           <img
                             src={leader.photoPink}
-                            alt={`${leader.name} Pink Theme`}
+                            alt={leader.name}
                             className="absolute inset-0 w-full h-full object-cover object-top transition-opacity duration-500 group-hover:opacity-0"
                           />
-                          {/* Gray / hover photo */}
+                          {/* Hover theme photo */}
                           <img
                             src={leader.photoGray}
-                            alt={`${leader.name} Gray Theme`}
+                            alt={leader.name}
                             className="absolute inset-0 w-full h-full object-cover object-top opacity-0 transition-opacity duration-500 group-hover:opacity-100"
                           />
+
+                          {/* Hover Social Overlay slider */}
+                          <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent p-4 flex justify-center gap-4 translate-y-12 group-hover:translate-y-0 transition-transform duration-300 ease-out">
+                            <a
+                              href={leader.linkedin}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="w-8 h-8 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white hover:text-[#FF1744] hover:bg-white transition-all shadow-md"
+                              title="LinkedIn"
+                            >
+                              <Linkedin className="w-3.5 h-3.5" />
+                            </a>
+                            <a
+                              href="https://github.com/devopstrio"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="w-8 h-8 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white hover:text-[#FF1744] hover:bg-white transition-all shadow-md"
+                              title="GitHub"
+                            >
+                              <Github className="w-3.5 h-3.5" />
+                            </a>
+                          </div>
+
                         </div>
-                        
-                        <div className="mt-3 text-center">
-                          <p className="text-zinc-900 text-sm font-bold leading-tight">{leader.name}</p>
-                          <p className="text-rose-600 text-xs font-semibold leading-tight mt-0.5">{leader.designation}</p>
-                          <p className="text-zinc-400 text-[10px] leading-tight font-medium mt-1 font-mono tracking-tighter">
-                            {leader.specialization}
-                          </p>
+
+                        {/* Name & Designation Badge below photo */}
+                        <div className="p-5 flex justify-between items-center bg-[#0B0B0D] relative z-10 border-t border-zinc-900/50">
+                          <div>
+                            <p className="text-white text-sm font-bold tracking-tight mb-0.5">{leader.name}</p>
+                            <p className="text-zinc-550 text-[10px] font-mono leading-none">{leader.specialization.split(" · ")[0]}</p>
+                          </div>
+                          <span className="px-2.5 py-0.5 rounded-full border border-zinc-800 text-[9px] text-zinc-400 font-mono font-semibold uppercase tracking-wider bg-zinc-950/40">
+                            {leader.designation}
+                          </span>
                         </div>
+
                       </motion.div>
                     );
                   })}
+
                 </div>
               </div>
             </div>
