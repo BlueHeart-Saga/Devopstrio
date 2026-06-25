@@ -99,17 +99,20 @@ export const ExecutiveLeadership = () => {
             <div className="flex flex-col gap-6 md:col-span-1">
               
               {/* Card A: Integrations (Tech Stack) */}
-              <div className="bg-zinc-950/40 border border-zinc-900 rounded-[1.75rem] p-6 hover:border-zinc-800 transition-all duration-300 flex flex-col justify-between h-[210px] relative overflow-hidden group shadow-lg">
+              <div className="bg-zinc-950/40 border border-zinc-900 rounded-[1.75rem] p-6 hover:border-zinc-850 transition-all duration-300 flex flex-col justify-between h-[210px] relative overflow-hidden group shadow-lg">
                 <div className="absolute inset-0 bg-gradient-to-br from-white/[0.01] to-transparent pointer-events-none" />
+                {/* Glow following */}
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(225,29,72,0.08),transparent_55%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+                
                 {/* Apps Row */}
-                <div className="flex gap-2">
+                <div className="flex gap-2 relative z-10">
                   {["aws", "azure", "gcp", "k8s"].map((tech, i) => (
                     <div key={i} className="w-8 h-8 rounded-lg bg-zinc-900 border border-zinc-800 flex items-center justify-center text-[10px] font-mono font-bold text-zinc-400 select-none uppercase">
                       {tech}
                     </div>
                   ))}
                 </div>
-                <div className="text-left">
+                <div className="text-left relative z-10">
                   <h4 className="text-sm font-bold text-white mb-1">Integrations</h4>
                   <p className="text-zinc-550 text-[11px] leading-relaxed font-semibold">
                     Automated multi-cloud delivery pipelines across major platforms.
@@ -118,10 +121,13 @@ export const ExecutiveLeadership = () => {
               </div>
 
               {/* Card B: Scale Metric (2500+) */}
-              <div className="bg-zinc-950/40 border border-zinc-900 rounded-[1.75rem] p-6 hover:border-zinc-800 transition-all duration-300 flex flex-col justify-between h-[210px] relative overflow-hidden group shadow-lg">
+              <div className="bg-zinc-950/40 border border-zinc-900 rounded-[1.75rem] p-6 hover:border-zinc-850 transition-all duration-300 flex flex-col justify-between h-[210px] relative overflow-hidden group shadow-lg">
                 <div className="absolute inset-0 bg-gradient-to-br from-white/[0.01] to-transparent pointer-events-none" />
-                <div className="text-3xl font-black text-white tracking-tight text-left">2,500+</div>
-                <div className="text-left">
+                {/* Glow following */}
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(225,29,72,0.08),transparent_55%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+
+                <div className="text-3xl font-black text-white tracking-tight text-left relative z-10">2,500+</div>
+                <div className="text-left relative z-10">
                   <h4 className="text-sm font-bold text-white mb-1">Projects Completed</h4>
                   <p className="text-zinc-550 text-[11px] leading-relaxed font-semibold">
                     Ensuring scale and reliability for enterprise organizations.
@@ -131,28 +137,31 @@ export const ExecutiveLeadership = () => {
 
             </div>
 
-            {/* Column 2: Card C (Center Portrait - Founder) */}
+            {/* Column 2: Card C (Center Portrait - Platform Engineering Microsoft-style) */}
             <div className="md:col-span-1 md:row-span-2">
               <div className="relative rounded-[1.75rem] overflow-hidden border border-zinc-900 bg-zinc-950/60 h-[444px] hover:border-zinc-800 transition-all duration-500 group shadow-lg flex flex-col justify-end">
                 {/* Photo */}
                 <img
-                  src="/assets/About-page/leader/Founder.png"
-                  alt="Manikandan PS"
-                  className="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                  src="/assets/About-page/microsoft_fluent_asset.png"
+                  alt="Platform Engineering"
+                  className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
                 />
                 
                 {/* Hover Grid overlay */}
                 <div className="absolute inset-0 bg-[linear-gradient(to_right,#e11d4808_1px,transparent_1px),linear-gradient(to_bottom,#e11d4808_1px,transparent_1px)] bg-[size:16px_16px] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
+                {/* Glow following */}
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(225,29,72,0.08),transparent_55%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+
                 {/* Gradient bottom cover */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent z-10" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/35 to-transparent z-10" />
 
                 {/* Text */}
                 <div className="p-6 relative z-20 text-left">
-                  <span className="text-[9px] font-bold text-rose-500 uppercase tracking-widest block mb-1">Founder &amp; CEO</span>
-                  <h4 className="text-base font-bold text-white mb-0.5">Manikandan PS</h4>
+                  <span className="text-[9px] font-bold text-rose-500 uppercase tracking-widest block mb-1">PLATFORM ENGINEERING</span>
+                  <h4 className="text-base font-bold text-white mb-0.5">Fluent Cloud Architecture</h4>
                   <p className="text-zinc-400 text-[10px] font-medium leading-relaxed">
-                    Cloud visionary turning complex infrastructure challenges into elegant systems.
+                    Scalable container meshes, serverless automation, and unified observability nodes.
                   </p>
                 </div>
               </div>
@@ -167,22 +176,28 @@ export const ExecutiveLeadership = () => {
                 {/* Card D: SLA percentage */}
                 <div className="bg-rose-950/15 border border-rose-900/30 rounded-[1.75rem] p-6 hover:border-rose-500/30 transition-all duration-300 flex flex-col justify-between h-[210px] relative overflow-hidden group shadow-lg text-left">
                   <div className="absolute -right-6 -top-6 w-24 h-24 bg-rose-500/5 rounded-full blur-xl pointer-events-none" />
-                  <div className="text-3xl font-black text-rose-500 tracking-tight">99.9%</div>
-                  <div>
+                  {/* Glow following */}
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(225,29,72,0.12),transparent_55%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+
+                  <div className="text-3xl font-black text-rose-500 tracking-tight relative z-10">99.9%</div>
+                  <div className="relative z-10">
                     <h4 className="text-sm font-bold text-white mb-1">Service SLA</h4>
-                    <p className="text-zinc-550 text-[11px] font-medium leading-relaxed">
+                    <p className="text-zinc-555 text-[11px] font-medium leading-relaxed">
                       Continuous delivery assurances with automated alerting and failovers.
                     </p>
                   </div>
                 </div>
 
                 {/* Card E: Active pipelines */}
-                <div className="bg-[#0A0A0C] border border-zinc-900 rounded-[1.75rem] p-6 hover:border-zinc-800 transition-all duration-300 flex flex-col justify-between h-[210px] relative overflow-hidden group shadow-lg text-left">
+                <div className="bg-[#0A0A0C] border border-zinc-900 rounded-[1.75rem] p-6 hover:border-zinc-850 transition-all duration-300 flex flex-col justify-between h-[210px] relative overflow-hidden group shadow-lg text-left">
                   <div className="absolute inset-0 bg-gradient-to-br from-white/[0.01] to-transparent pointer-events-none" />
-                  <div className="w-10 h-10 rounded-xl bg-zinc-900 border border-zinc-800 flex items-center justify-center text-rose-500 group-hover:scale-110 transition-transform duration-300">
+                  {/* Glow following */}
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(225,29,72,0.08),transparent_55%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+
+                  <div className="w-10 h-10 rounded-xl bg-zinc-900 border border-zinc-800 flex items-center justify-center text-rose-500 group-hover:scale-110 transition-transform duration-300 relative z-10">
                     <span className="font-mono text-sm font-bold">1.2k</span>
                   </div>
-                  <div>
+                  <div className="relative z-10">
                     <h4 className="text-sm font-bold text-white mb-1">Active Repos</h4>
                     <p className="text-zinc-550 text-[11px] leading-relaxed font-semibold">
                       Managing robust code repositories and microservices clusters.
@@ -193,10 +208,12 @@ export const ExecutiveLeadership = () => {
               </div>
 
               {/* Card F: Wide card (Automation Support with floating avatars) */}
-              <div className="bg-gradient-to-r from-zinc-950/45 via-[#0A0A0C] to-zinc-950/80 border border-zinc-900 rounded-[1.75rem] p-6 hover:border-zinc-800 transition-all duration-300 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6 h-[210px] relative overflow-hidden group shadow-lg text-left">
+              <div className="bg-gradient-to-r from-zinc-950/45 via-[#0A0A0C] to-zinc-950/80 border border-zinc-900 rounded-[1.75rem] p-6 hover:border-zinc-850 transition-all duration-300 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6 h-[210px] relative overflow-hidden group shadow-lg text-left">
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,rgba(225,29,72,0.015),transparent_60%)] pointer-events-none" />
-                
-                <div className="max-w-[240px]">
+                {/* Glow following */}
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(225,29,72,0.08),transparent_55%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+
+                <div className="max-w-[240px] relative z-10">
                   <span className="text-[10px] font-bold text-rose-500 uppercase tracking-widest block mb-2 font-mono">SUPPORT EXCELLENCE</span>
                   <h4 className="text-base font-bold text-white mb-1.5">Human-Centric Engineering</h4>
                   <p className="text-zinc-450 text-[11px] font-medium leading-relaxed">
@@ -205,7 +222,7 @@ export const ExecutiveLeadership = () => {
                 </div>
 
                 {/* Overlapping circular avatars exactly like mockup */}
-                <div className="flex -space-x-3 overflow-hidden select-none py-2 shrink-0">
+                <div className="flex -space-x-3 overflow-hidden select-none py-2 shrink-0 relative z-10">
                   {leaders.slice(0, 5).map((leader, i) => (
                     <div 
                       key={i} 
