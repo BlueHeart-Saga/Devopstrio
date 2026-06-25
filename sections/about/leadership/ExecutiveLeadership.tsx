@@ -284,13 +284,12 @@ export const ExecutiveLeadership = () => {
                     TEAM
                   </span>
                 </div>
-                
                 {/* Redesigned grid (4 columns) */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 max-w-6xl mx-auto relative z-10 text-left">
                   
                   {/* Card 1: Join the Team (Mockup style) */}
                   <motion.div
-                    className="flex flex-col justify-between p-6 bg-[#0B0B0D]/80 border border-zinc-900 rounded-[1.75rem] shadow-lg relative overflow-hidden group h-full"
+                    className="flex flex-col justify-between p-6 bg-[#0B0B0D]/80 border border-zinc-900 rounded-[2rem] shadow-lg relative overflow-hidden group h-full hover:border-zinc-800/80 transition-all duration-300"
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
@@ -302,7 +301,7 @@ export const ExecutiveLeadership = () => {
                       <h3 className="text-lg md:text-xl font-bold text-white tracking-tight mb-2">
                         Want to shape the future of Cloud &amp; AI?
                       </h3>
-                      <p className="text-zinc-500 text-[11px] leading-relaxed mb-6">
+                      <p className="text-zinc-550 text-[11px] leading-relaxed mb-6">
                         Join us and build robust, cloud-native systems and cognitive engines that inspire change.
                       </p>
                     </div>
@@ -322,7 +321,7 @@ export const ExecutiveLeadership = () => {
                     return (
                       <motion.div
                         key={idx}
-                        className="bg-[#0B0B0D] border border-zinc-900 rounded-[1.75rem] overflow-hidden group shadow-lg flex flex-col justify-between h-full"
+                        className="bg-[#0B0B0D] border border-zinc-900 rounded-[2rem] overflow-hidden group shadow-lg flex flex-col justify-between h-full p-3 pb-4 hover:border-zinc-800/80 transition-all duration-300"
                         initial={{ opacity: 0, y: isExtra ? 70 : 40 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, margin: isExtra ? "-80px" : "0px" }}
@@ -332,8 +331,14 @@ export const ExecutiveLeadership = () => {
                           ease: [0.215, 0.61, 0.355, 1] 
                         }}
                       >
-                        {/* Image aspect-ratio matches Annette Black style */}
-                        <div className="relative w-full aspect-[4/5] bg-zinc-950 overflow-hidden">
+                        {/* Image wrapped in click link */}
+                        <a 
+                          href={leader.linkedin} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="relative w-full aspect-[4/5] bg-zinc-950 overflow-hidden rounded-[1.5rem] block"
+                          title="View LinkedIn Profile"
+                        >
                           {/* Default photo */}
                           <img
                             src={leader.photoPink}
@@ -346,33 +351,10 @@ export const ExecutiveLeadership = () => {
                             alt={leader.name}
                             className="absolute inset-0 w-full h-full object-cover object-top opacity-0 transition-opacity duration-500 group-hover:opacity-100"
                           />
-
-                          {/* Hover Social Overlay slider */}
-                          <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent p-4 flex justify-center gap-4 translate-y-12 group-hover:translate-y-0 transition-transform duration-300 ease-out">
-                            <a
-                              href={leader.linkedin}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="w-8 h-8 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white hover:text-[#FF1744] hover:bg-white transition-all shadow-md"
-                              title="LinkedIn"
-                            >
-                              <Linkedin className="w-3.5 h-3.5" />
-                            </a>
-                            <a
-                              href="https://github.com/devopstrio"
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="w-8 h-8 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white hover:text-[#FF1744] hover:bg-white transition-all shadow-md"
-                              title="GitHub"
-                            >
-                              <Github className="w-3.5 h-3.5" />
-                            </a>
-                          </div>
-
-                        </div>
+                        </a>
 
                         {/* Name & Designation Badge below photo */}
-                        <div className="p-5 flex justify-between items-center bg-[#0B0B0D] relative z-10 border-t border-zinc-900/50">
+                        <div className="pt-4 px-2 flex justify-between items-center bg-[#0B0B0D] relative z-10">
                           <div>
                             <p className="text-white text-sm font-bold tracking-tight mb-0.5">{leader.name}</p>
                             <p className="text-zinc-550 text-[10px] font-mono leading-none">{leader.specialization.split(" · ")[0]}</p>
@@ -385,6 +367,73 @@ export const ExecutiveLeadership = () => {
                       </motion.div>
                     );
                   })}
+
+                  {/* Card 10: Standards (Content Card 2) */}
+                  <motion.div
+                    className="flex flex-col justify-between p-6 bg-[#0B0B0D]/80 border border-zinc-900 rounded-[2rem] shadow-lg relative overflow-hidden group h-full hover:border-zinc-800/80 transition-all duration-300"
+                    initial={{ opacity: 0, y: 70 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-80px" }}
+                    transition={{ duration: 0.7, delay: 0.1, ease: [0.215, 0.61, 0.355, 1] }}
+                  >
+                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,23,68,0.02),transparent_50%)] pointer-events-none" />
+                    <div>
+                      <span className="text-[9px] font-bold text-[#FF1744] uppercase tracking-widest block mb-3 font-mono">Standards</span>
+                      <h3 className="text-lg md:text-xl font-bold text-white tracking-tight mb-2">
+                        Professional Credentials
+                      </h3>
+                      <p className="text-zinc-550 text-[11px] leading-relaxed">
+                        Our cloud architects and security engineers are 100% certified across AWS, Azure, GCP, and Kubernetes.
+                      </p>
+                    </div>
+                  </motion.div>
+
+                  {/* Card 11: Global Delivery (Content Card 3) */}
+                  <motion.div
+                    className="flex flex-col justify-between p-6 bg-[#0B0B0D]/80 border border-zinc-900 rounded-[2rem] shadow-lg relative overflow-hidden group h-full hover:border-zinc-800/80 transition-all duration-300"
+                    initial={{ opacity: 0, y: 70 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-80px" }}
+                    transition={{ duration: 0.7, delay: 0.2, ease: [0.215, 0.61, 0.355, 1] }}
+                  >
+                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,23,68,0.02),transparent_50%)] pointer-events-none" />
+                    <div>
+                      <span className="text-[9px] font-bold text-[#FF1744] uppercase tracking-widest block mb-3 font-mono">Operations</span>
+                      <h3 className="text-lg md:text-xl font-bold text-white tracking-tight mb-3">
+                        Distributed Synergy
+                      </h3>
+                      <p className="text-zinc-550 text-[11px] leading-relaxed">
+                        Operating across 4+ global hubs to provide uninterrupted support and co-development services.
+                      </p>
+                    </div>
+                  </motion.div>
+
+                  {/* Card 12: Careers (Content Card 4 - Last Row Right) */}
+                  <motion.div
+                    className="flex flex-col justify-between p-6 bg-[#0B0B0D]/80 border border-zinc-900 rounded-[2rem] shadow-lg relative overflow-hidden group h-full hover:border-zinc-800/80 transition-all duration-300"
+                    initial={{ opacity: 0, y: 70 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-80px" }}
+                    transition={{ duration: 0.7, delay: 0.3, ease: [0.215, 0.61, 0.355, 1] }}
+                  >
+                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,23,68,0.03),transparent_50%)] pointer-events-none" />
+                    <div>
+                      <span className="text-[9px] font-bold text-[#FF1744] uppercase tracking-widest block mb-3 font-mono">Careers</span>
+                      <h3 className="text-lg md:text-xl font-bold text-white tracking-tight mb-2">
+                        Work with Our Experts
+                      </h3>
+                      <p className="text-zinc-550 text-[11px] leading-relaxed mb-6">
+                        Always looking for cloud visionaries, developers, and platform builders to join our journey.
+                      </p>
+                    </div>
+                    <a
+                      href="/contact"
+                      className="inline-flex items-center gap-1.5 px-4 py-2 bg-zinc-900 border border-zinc-800 hover:border-zinc-700 text-white hover:text-[#FF1744] text-[11px] font-bold rounded-full transition-all w-fit shadow-md active:scale-95 group/btn"
+                    >
+                      Join Us
+                      <ArrowRight size={12} className="transition-transform duration-300 group-hover/btn:translate-x-1" />
+                    </a>
+                  </motion.div>
 
                 </div>
               </div>
