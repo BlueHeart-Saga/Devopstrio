@@ -24,6 +24,9 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     ...baseMeta,
     metadataBase: new URL("https://devopstrio.co.uk"),
+    verification: {
+      google: "Ed5NQe2UO9cW6aJ_7mbgYfMkS1Ipat0f9E9q78xyzUM"
+    },
     icons: {
       icon: [
         { url: "/favicon.ico" },
