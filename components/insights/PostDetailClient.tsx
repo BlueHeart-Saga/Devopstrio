@@ -110,39 +110,44 @@ export function PostDetailClient({ post, relatedPosts, categorySlug, postId }: P
         <div className="max-w-7xl mx-auto w-full px-6 md:px-12 lg:px-16">
           <Link
             href={`/insights/${categorySlug}`}
-            className="inline-flex items-center gap-2 text-xs font-mono text-zinc-400 hover:text-rose-500 transition-colors mb-10 group"
+            className="inline-flex items-center gap-2 text-sm font-medium text-zinc-400 hover:text-white transition-colors mb-8 group"
           >
-            <ArrowLeft size={12} className="group-hover:-translate-x-1 transition-transform" /> BACK TO {categorySlug.toUpperCase()}
+            <ArrowLeft size={16} className="group-hover:-translate-x-1 transition-transform" /> Back to {categorySlug.charAt(0).toUpperCase() + categorySlug.slice(1)}
           </Link>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             <article className="lg:col-span-8 space-y-8 text-left">
-              <div className="space-y-4">
-                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-zinc-800 bg-zinc-950 text-[9px] font-bold tracking-[0.15em] uppercase text-rose-500 shadow-sm">
-                  {post.category.name}
-                </span>
-                <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-[1.15] mb-6">
+              <div className="space-y-6 mb-8">
+                <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-[1.15]">
                   {post.title}
                 </h1>
 
-                <div className="flex flex-wrap items-center gap-6 text-[10px] text-zinc-400 font-mono pt-2 border-b border-zinc-900 pb-6 mb-6">
-                  <span className="flex items-center gap-1.5"><Calendar size={11} className="text-rose-500" /> {post.date}</span>
-                  <span className="flex items-center gap-1.5"><Clock size={11} className="text-rose-500" /> {post.readTime} min read</span>
-                  <span className="flex items-center gap-1.5"><Eye size={11} className="text-rose-500" /> {post.views} views</span>
+                <div className="flex flex-wrap items-center gap-4 text-xs md:text-sm text-zinc-400 font-medium pb-8 border-b border-zinc-900/60">
+                  <div className="flex items-center gap-2.5 pr-4 border-r border-zinc-800">
+                    <div className="w-6 h-6 rounded-full bg-rose-600 text-white flex items-center justify-center font-bold text-[10px]">
+                      {post.author.split(" ").map(n => n[0]).join("")}
+                    </div>
+                    <span className="text-zinc-200">{post.author}</span>
+                  </div>
+                  <span>{post.category.name}</span>
+                  <span>•</span>
+                  <span>{post.date}</span>
+                  <span>•</span>
+                  <span>{post.readTime} min read</span>
                 </div>
               </div>
 
               {post.image && (
-                <div className="h-64 md:h-[450px] w-full rounded-[32px] overflow-hidden border border-white/5 bg-zinc-950 shadow-2xl relative">
+                <div className="h-64 md:h-[450px] w-full rounded-3xl overflow-hidden border border-zinc-900 bg-zinc-950 mb-10 relative shadow-2xl">
                   <img src={post.image} alt={post.title} className="w-full h-full object-cover" />
                 </div>
               )}
 
-              <div className="inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white transition-all duration-300 hover:shadow-[0_0_25px_rgba(225,29,72,0.35)] hover:-translate-y-0.5">
-                <p className="text-sm md:text-base text-zinc-350 font-light leading-relaxed italic">
+              {post.excerpt && (
+                <div className="mb-10 text-lg md:text-xl text-zinc-300 font-medium leading-relaxed italic border-l-4 border-rose-500 pl-6 py-2 bg-gradient-to-r from-rose-500/5 to-transparent">
                   {post.excerpt}
-                </p>
-              </div>
+                </div>
+              )}
 
               <div className="space-y-6">
                 {post.rawBlocks && post.rawBlocks.length > 0 ? (
@@ -160,118 +165,67 @@ export function PostDetailClient({ post, relatedPosts, categorySlug, postId }: P
                 )}
               </div>
 
-              <div className="flex items-center gap-4 pt-8 border-t border-zinc-900/60 mt-12">
-                <button
-                  onClick={handleLike}
-                  className={`inline-flex items-center gap-2 px-6 py-3 rounded-xl text-xs font-bold uppercase tracking-wider border transition-all duration-300 ${
-                    liked
-                      ? "bg-rose-600/10 border-rose-500 text-rose-500 shadow-[0_0_20px_rgba(244,63,94,0.15)]"
-                      : "bg-zinc-950/40 border-white/5 text-zinc-400 hover:text-white hover:border-zinc-800"
-                  }`}
-                >
-                  <Heart size={14} className={liked ? "fill-rose-500 text-rose-500" : ""} />
-                  <span>{likesCount} {likesCount === 1 ? "Like" : "Likes"}</span>
-                </button>
-
-                <div className="relative">
-                  <button
-                    onClick={() => setShowShareMenu(!showShareMenu)}
-                    className="gap-2 inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase border border-zinc-850 hover:border-zinc-750 bg-zinc-950/60 hover:bg-zinc-900 text-white transition-all duration-300 hover:-translate-y-0.5"
-                  >
-                    <Share2 size={14} /> Share Article
+              <div className="flex items-center justify-between pt-6 mt-12 border-t border-zinc-900/60 pb-4">
+                <div className="flex items-center gap-6">
+                  <button onClick={handleLike} className={`flex items-center gap-2 text-sm font-medium transition-colors ${liked ? "text-rose-500" : "text-zinc-400 hover:text-white"}`}>
+                    <Heart size={18} className={liked ? "fill-rose-500" : ""} />
+                    <span>{likesCount} Likes</span>
                   </button>
-
-                  <AnimatePresence>
-                    {showShareMenu && (
-                      <motion.div
-                        initial={{ opacity: 0, y: 10, scale: 0.95 }}
-                        animate={{ opacity: 1, y: 0, scale: 1 }}
-                        exit={{ opacity: 0, y: 10, scale: 0.95 }}
-                        className="absolute z-20 left-0 mt-2 w-48 bg-zinc-950 border border-white/5 rounded-2xl p-2.5 shadow-2xl flex flex-col gap-1 backdrop-blur-md"
-                      >
-                        <a
-                          href={shareUrls.linkedin}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="gap-2.5 inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase border border-zinc-850 hover:border-zinc-750 bg-zinc-950/60 hover:bg-zinc-900 text-white transition-all duration-300 hover:-translate-y-0.5 w-full text-center"
-                        >
-                          <Linkedin size={13} className="inline mr-1" /> LinkedIn
-                        </a>
-                        <a
-                          href={shareUrls.twitter}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="gap-2.5 inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase border border-zinc-850 hover:border-zinc-750 bg-zinc-950/60 hover:bg-zinc-900 text-white transition-all duration-300 hover:-translate-y-0.5 w-full text-center"
-                        >
-                          <Twitter size={13} className="inline mr-1" /> Twitter
-                        </a>
-                        <a
-                          href={shareUrls.facebook}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="gap-2.5 inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase border border-zinc-850 hover:border-zinc-750 bg-zinc-950/60 hover:bg-zinc-900 text-white transition-all duration-300 hover:-translate-y-0.5 w-full text-center"
-                        >
-                          <Facebook size={13} className="inline mr-1" /> Facebook
-                        </a>
-                        <button
-                          onClick={handleCopyLink}
-                          className="w-full inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase border border-zinc-850 hover:border-zinc-750 bg-zinc-950/60 hover:bg-zinc-900 text-white transition-all duration-300 hover:-translate-y-0.5"
-                        >
-                          <span className="flex items-center gap-2.5"><Copy size={13} /> Copy Link</span>
-                          {copied && <Check size={12} className="text-green-500 ml-1" />}
-                        </button>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
+                  <button className="flex items-center gap-2 text-sm font-medium text-zinc-400 hover:text-white transition-colors cursor-default">
+                    <Share2 size={18} />
+                    <span>{likesCount * 3 + 12} Shares</span>
+                  </button>
                 </div>
               </div>
             </article>
 
-            <aside className="lg:col-span-4 lg:sticky lg:top-28 space-y-8 text-left">
-              <div className="bg-zinc-950/40 border border-white/5 rounded-3xl p-6 backdrop-blur-md shadow-xl">
-                <h4 className="text-[10px] font-mono tracking-widest text-zinc-400 uppercase mb-4">
-                  Lead Contributor
-                </h4>
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-tr from-[#E11D48] to-rose-400 flex items-center justify-center font-bold text-white text-sm">
-                    {post.author.split(" ").map(n => n[0]).join("")}
-                  </div>
-                  <div>
-                    <h5 className="text-xs font-bold text-zinc-200 leading-none mb-1.5">{post.author}</h5>
-                    <span className="text-[9px] text-zinc-400 font-mono uppercase tracking-wider">Devopstrio Contributor</span>
-                  </div>
+            <aside className="lg:col-span-4 lg:sticky lg:top-32 space-y-12 pl-0 lg:pl-10 lg:border-l border-zinc-900/60">
+              
+              {/* Share To Section */}
+              <div>
+                <h4 className="text-sm font-bold text-white mb-5">Share to</h4>
+                <div className="flex items-center gap-3">
+                  <a href={shareUrls.linkedin} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-zinc-800 flex items-center justify-center text-zinc-400 hover:text-white hover:bg-zinc-900 hover:border-zinc-700 transition-all shadow-sm hover:shadow-md">
+                    <Linkedin size={16} />
+                  </a>
+                  <a href={shareUrls.twitter} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-zinc-800 flex items-center justify-center text-zinc-400 hover:text-white hover:bg-zinc-900 hover:border-zinc-700 transition-all shadow-sm hover:shadow-md">
+                    <Twitter size={16} />
+                  </a>
+                  <a href={shareUrls.facebook} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-zinc-800 flex items-center justify-center text-zinc-400 hover:text-white hover:bg-zinc-900 hover:border-zinc-700 transition-all shadow-sm hover:shadow-md">
+                    <Facebook size={16} />
+                  </a>
+                  <button onClick={handleCopyLink} className="w-10 h-10 rounded-full border border-zinc-800 flex items-center justify-center text-zinc-400 hover:text-white hover:bg-zinc-900 hover:border-zinc-700 transition-all shadow-sm hover:shadow-md relative">
+                    <Copy size={16} />
+                    {copied && <span className="absolute -top-10 bg-zinc-900 border border-zinc-800 text-xs px-2.5 py-1 rounded text-white shadow-xl whitespace-nowrap">Copied!</span>}
+                  </button>
                 </div>
-                <p className="text-[11px] text-zinc-400 leading-relaxed font-light">
-                  Specialist contributor sharing system engineering, automation blueprints, and platform operations guides.
-                </p>
               </div>
 
+              {/* Related Articles Section */}
               {relatedPosts.length > 0 && (
-                <div className="space-y-4">
-                  <h4 className="text-[10px] font-mono tracking-widest text-zinc-450 uppercase">
-                    Related Reading
-                  </h4>
-                  <div className="flex flex-col gap-4">
+                <div>
+                  <h4 className="text-sm font-bold text-white mb-6">Related Articles</h4>
+                  <div className="flex flex-col gap-6">
                     {relatedPosts.map((r) => (
                       <Link
                         key={r.id}
                         href={`/insights/${categorySlug}/${r.id}`}
-                        className="group flex gap-4 p-4 bg-zinc-950/20 border border-white/5 rounded-2xl hover:border-rose-500/25 transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5"
+                        className="group flex gap-4 items-center"
                       >
-                        <div className="w-16 h-16 rounded-xl bg-zinc-950 border border-white/5 overflow-hidden shrink-0">
+                        <div className="w-24 h-16 rounded-xl overflow-hidden shrink-0 bg-zinc-900 relative border border-zinc-800 group-hover:border-zinc-600 transition-colors">
                           {r.image ? (
-                            <img src={r.image} alt={r.title} className="w-full h-full object-cover" />
+                            <img src={r.image} alt={r.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
                           ) : (
                             <div className="w-full h-full bg-gradient-to-tr from-rose-950/20 to-purple-950/10 flex items-center justify-center">
                               <BookOpen size={16} className="text-rose-500/20" />
                             </div>
                           )}
                         </div>
-                        <div className="text-left flex flex-col justify-center">
-                          <h5 className="text-[11px] font-bold text-zinc-300 group-hover:text-rose-500 transition-colors line-clamp-2 leading-snug">
+                        <div className="text-left flex flex-col justify-center flex-1">
+                          <h5 className="text-xs md:text-sm font-semibold text-zinc-300 group-hover:text-rose-500 transition-colors line-clamp-2 leading-snug mb-1.5">
                             {r.title}
                           </h5>
-                          <span className="text-[9px] text-zinc-550 font-mono mt-1">{r.date}</span>
+                          <span className="text-[10px] text-zinc-500 font-medium">{r.category?.name || categorySlug}</span>
                         </div>
                       </Link>
                     ))}
@@ -284,14 +238,18 @@ export function PostDetailClient({ post, relatedPosts, categorySlug, postId }: P
       </section>
 
       <InsightsNavigationCards />
-      <NewsletterSubscription className="my-20" />
-      <FAQ faqs={INSIGHTS_FAQS} />
+      <NewsletterSubscription className="mt-12 mb-8" />
+      <FAQ 
+        faqs={INSIGHTS_FAQS} 
+        className="w-full py-12 bg-black border-b border-zinc-900/60 relative"
+      />
       <CTA 
         ctaTitle="Harness our engineering" 
         ctaHighlight="expertise" 
         ctaDesc="Partner with Devopstrio's world-class platform specialists to build, automate, and scale your digital assets with confidence." 
         ctaBtnText="Connect With Experts" 
         backLink="/insights" 
+        className="w-full py-12 bg-[#030303] text-white border-t border-zinc-900 relative overflow-hidden"
       />
 
       <AnimatePresence>

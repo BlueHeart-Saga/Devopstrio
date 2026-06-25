@@ -6,13 +6,14 @@ import { Reveal } from "@/components/ui/Reveal";
 
 export interface FAQProps {
   faqs: { q: string; a: string }[];
+  className?: string;
 }
 
-export function FAQ({ faqs }: FAQProps) {
+export function FAQ({ faqs, className }: FAQProps) {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   return (
-    <section id="faq" className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
+    <section id="faq" className={className || "w-full py-24 bg-black border-b border-zinc-900/60 relative"}>
       <div className="max-w-3xl mx-auto px-12 xl:px-8">
 
         {/* Section Header */}

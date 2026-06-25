@@ -53,10 +53,15 @@ export function WeImagine() {
           <Reveal delay={0.05}>
             <div className="relative rounded-[24px] border border-zinc-800/80 bg-[#0A0A0A] p-6 md:p-8 flex flex-col justify-between group h-full shadow-lg overflow-hidden transition-all duration-500 hover:border-zinc-700 min-h-[380px]">
               
-              {/* Expanding Image Layer */}
+              {/* Expanding Image Layer with Glassmorphism */}
               <div className="absolute inset-0 z-0 [clip-path:circle(0%_at_100%_100%)] group-hover:[clip-path:circle(150%_at_100%_100%)] transition-all duration-700 ease-in-out pointer-events-none">
-                <img src="/assets/Home-page/we-imagine/gen/we-design-intelligent.png" alt="Design Intelligent Solutions" className="w-full h-full object-cover scale-110 group-hover:scale-100 transition-transform duration-1000 ease-out" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/30" />
+                <img src="/assets/Home-page/we-imagine/gen/we-design-intelligent.png" alt="Design Intelligent Solutions" className="w-full h-full object-cover scale-110 group-hover:scale-100 transition-transform duration-1000 ease-out opacity-80" />
+                
+                {/* Frosted Glass Blur Overlay */}
+                <div className="absolute inset-0 bg-black/40 backdrop-blur-md" />
+                
+                {/* Vignette Gradient for depth and text legibility */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-white/5 border border-white/5 rounded-[24px]" />
               </div>
 
               {/* Content Layer */}
@@ -87,10 +92,15 @@ export function WeImagine() {
           <Reveal delay={0.1}>
             <div className="relative rounded-[24px] border border-zinc-800/80 bg-[#0A0A0A] p-6 md:p-8 flex flex-col justify-between group h-full shadow-lg overflow-hidden transition-all duration-500 hover:border-zinc-700 min-h-[380px]">
               
-              {/* Expanding Image Layer */}
+              {/* Expanding Image Layer with Glassmorphism */}
               <div className="absolute inset-0 z-0 [clip-path:circle(0%_at_100%_100%)] group-hover:[clip-path:circle(150%_at_100%_100%)] transition-all duration-700 ease-in-out pointer-events-none">
-                <img src="/assets/Home-page/we-imagine/gen/we-build-software.png" alt="Build Scalable Software" className="w-full h-full object-cover scale-110 group-hover:scale-100 transition-transform duration-1000 ease-out" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/30" />
+                <img src="/assets/Home-page/we-imagine/gen/we-build-software.png" alt="Build Scalable Software" className="w-full h-full object-cover scale-110 group-hover:scale-100 transition-transform duration-1000 ease-out opacity-80" />
+                
+                {/* Frosted Glass Blur Overlay */}
+                <div className="absolute inset-0 bg-black/40 backdrop-blur-md" />
+                
+                {/* Vignette Gradient for depth and text legibility */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-white/5 border border-white/5 rounded-[24px]" />
               </div>
 
               {/* Content Layer */}
@@ -121,10 +131,15 @@ export function WeImagine() {
           <Reveal delay={0.15}>
             <div className="relative rounded-[24px] border border-zinc-800/80 bg-[#0A0A0A] p-6 md:p-8 flex flex-col justify-between group h-full shadow-lg overflow-hidden transition-all duration-500 hover:border-zinc-700 min-h-[380px]">
               
-              {/* Expanding Image Layer */}
+              {/* Expanding Image Layer with Glassmorphism */}
               <div className="absolute inset-0 z-0 [clip-path:circle(0%_at_100%_100%)] group-hover:[clip-path:circle(150%_at_100%_100%)] transition-all duration-700 ease-in-out pointer-events-none">
-                <img src="/assets/Home-page/we-imagine/gen/we-transform-legacy.png" alt="Transform Legacy to Cloud" className="w-full h-full object-cover scale-110 group-hover:scale-100 transition-transform duration-1000 ease-out" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/30" />
+                <img src="/assets/Home-page/we-imagine/gen/we-transform-legacy.png" alt="Transform Legacy to Cloud" className="w-full h-full object-cover scale-110 group-hover:scale-100 transition-transform duration-1000 ease-out opacity-80" />
+                
+                {/* Frosted Glass Blur Overlay */}
+                <div className="absolute inset-0 bg-black/40 backdrop-blur-md" />
+                
+                {/* Vignette Gradient for depth and text legibility */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-white/5 border border-white/5 rounded-[24px]" />
               </div>
 
               {/* Content Layer */}
@@ -155,10 +170,15 @@ export function WeImagine() {
           <Reveal delay={0.2}>
             <div className="relative rounded-[24px] border border-zinc-800/80 bg-[#0A0A0A] p-6 md:p-8 flex flex-col justify-between group h-full shadow-lg overflow-hidden transition-all duration-500 hover:border-zinc-700 min-h-[380px]">
               
-              {/* Expanding Image Layer */}
+              {/* Expanding Image Layer with Glassmorphism */}
               <div className="absolute inset-0 z-0 [clip-path:circle(0%_at_100%_100%)] group-hover:[clip-path:circle(150%_at_100%_100%)] transition-all duration-700 ease-in-out pointer-events-none">
-                <img src="/assets/Home-page/we-imagine/gen/we-manage-operations.png" alt="Manage Operations" className="w-full h-full object-cover scale-110 group-hover:scale-100 transition-transform duration-1000 ease-out" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/30" />
+                <img src="/assets/Home-page/we-imagine/gen/we-manage-operations.png" alt="Manage Operations" className="w-full h-full object-cover scale-110 group-hover:scale-100 transition-transform duration-1000 ease-out opacity-80" />
+                
+                {/* Frosted Glass Blur Overlay */}
+                <div className="absolute inset-0 bg-black/40 backdrop-blur-md" />
+                
+                {/* Vignette Gradient for depth and text legibility */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-white/5 border border-white/5 rounded-[24px]" />
               </div>
 
               {/* Content Layer */}

@@ -82,8 +82,6 @@ export function PerksBenefits() {
                       alt={ben.name}
                       className="w-full h-full object-cover brightness-75 group-hover:brightness-90 group-hover:scale-105 transition-all duration-500"
                     />
-                    {/* Subtle rose accent top line on hover */}
-                    <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-rose-500 to-rose-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   </div>
                 </div>
 

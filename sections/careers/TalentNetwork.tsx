@@ -29,81 +29,60 @@ export function TalentNetwork() {
         </Reveal>
 
         {/* Premium Form CTA Card */}
+        {/* Premium Inline Form CTA */}
         <Reveal delay={0.1}>
-          <div className="group bg-zinc-950/40 border border-white/[0.08] rounded-[24px] p-8 max-w-lg mx-auto text-left relative shadow-[0_20px_50px_rgba(0,0,0,0.6)] hover:border-rose-500/20 transition-all duration-300">
-            {/* Subtle red gradient top accent line */}
-            <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-rose-500 to-rose-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-t-[24px]" />
+          <div className="bg-[#0a0a0a] border border-zinc-800/80 rounded-2xl md:rounded-full p-2 md:p-2.5 max-w-4xl mx-auto relative shadow-2xl transition-all duration-300 focus-within:border-rose-500/50 focus-within:shadow-[0_0_40px_rgba(225,29,72,0.15)] group">
             
-            <span className="text-[9px] font-mono tracking-widest text-white/50 uppercase block mb-6">
-              TALENT NETWORK PORTAL
-            </span>
-
             <form
               onSubmit={(e) => {
                 e.preventDefault();
                 alert("Thank you! You have joined our Talent Network.");
               }}
-              className="space-y-5"
+              className="flex flex-col md:flex-row items-center gap-2 md:gap-0 w-full"
             >
-              <div className="grid grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-[10px] font-bold tracking-wider text-white uppercase mb-2">
-                    First Name
-                  </label>
-                  <input
-                    type="text"
-                    required
-                    placeholder="John"
-                    className="w-full bg-zinc-900/40 border border-white/10 rounded-xl px-4 py-3 text-xs text-white placeholder-zinc-500 focus:border-rose-500/40 focus:outline-none transition-all duration-300 font-semibold"
-                  />
-                </div>
-                <div>
-                  <label className="block text-[10px] font-bold tracking-wider text-white uppercase mb-2">
-                    Last Name
-                  </label>
-                  <input
-                    type="text"
-                    required
-                    placeholder="Doe"
-                    className="w-full bg-zinc-900/40 border border-white/10 rounded-xl px-4 py-3 text-xs text-white placeholder-zinc-500 focus:border-rose-500/40 focus:outline-none transition-all duration-300 font-semibold"
-                  />
-                </div>
-              </div>
-
-              <div>
-                <label className="block text-[10px] font-bold tracking-wider text-white uppercase mb-2">
-                  Email Address
-                </label>
+              {/* Full Name Input */}
+              <div className="flex-1 flex items-center w-full md:w-auto px-4 py-3 md:py-2 border-b md:border-b-0 md:border-r border-zinc-800">
                 <input
-                  type="email"
+                  type="text"
                   required
-                  placeholder="john.doe@enterprise.com"
-                  className="w-full bg-zinc-900/40 border border-white/10 rounded-xl px-4 py-3 text-xs text-white placeholder-zinc-500 focus:border-rose-500/40 focus:outline-none transition-all duration-300 font-semibold"
+                  placeholder="Full Name"
+                  className="bg-transparent border-none outline-none text-white placeholder:text-zinc-500 w-full text-sm md:text-base font-semibold"
                 />
               </div>
 
-              <div>
-                <label className="block text-[10px] font-bold tracking-wider text-white uppercase mb-2">
-                  Preferred Domain
-                </label>
+              {/* Email Input */}
+              <div className="flex-1 flex items-center w-full md:w-auto px-4 py-3 md:py-2 border-b md:border-b-0 md:border-r border-zinc-800">
+                <input
+                  type="email"
+                  required
+                  placeholder="Email Address"
+                  className="bg-transparent border-none outline-none text-white placeholder:text-zinc-500 w-full text-sm md:text-base font-semibold"
+                />
+              </div>
+
+              {/* Domain Select */}
+              <div className="flex-1 flex items-center w-full md:w-auto px-4 py-3 md:py-2 md:mr-2">
                 <select
-                  className="w-full bg-zinc-900/40 border border-white/10 rounded-xl px-4 py-3 text-xs text-white focus:border-rose-500/40 focus:outline-none transition-all duration-300 font-semibold cursor-pointer"
+                  required
+                  defaultValue=""
+                  className="bg-transparent border-none outline-none text-white w-full text-sm md:text-base font-semibold cursor-pointer focus:ring-0 [&>option]:bg-zinc-900"
                 >
+                  <option value="" disabled>Select Domain</option>
                   <option value="cloud">Cloud Engineering</option>
                   <option value="ai">AI & Data</option>
                   <option value="devops">DevOps & SRE</option>
                   <option value="sec">Cybersecurity</option>
                   <option value="dev">Software Engineering</option>
-                  <option value="consulting">Technology Consulting</option>
                 </select>
               </div>
 
+              {/* Submit Button */}
               <button
                 type="submit"
-                className="w-full inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl text-xs font-bold uppercase tracking-wider text-white bg-gradient-to-r from-rose-600 to-rose-500 hover:from-rose-500 hover:to-rose-400 transition-all duration-300 shadow-[0_4px_20px_rgba(225,29,72,0.25)] hover:scale-[1.01]"
+                className="w-full md:w-auto shrink-0 inline-flex items-center justify-center gap-2 px-8 py-3.5 md:py-4 rounded-xl md:rounded-full text-xs font-bold uppercase tracking-wider text-white bg-rose-600 hover:bg-rose-500 transition-all shadow-[0_0_20px_rgba(225,29,72,0.3)] hover:shadow-[0_0_30px_rgba(225,29,72,0.5)] hover:-translate-y-0.5"
               >
-                <span>Join Talent Network</span>
-                <ArrowUpRight size={14} />
+                <span>Join Network</span>
+                <ArrowUpRight size={16} />
               </button>
             </form>
           </div>

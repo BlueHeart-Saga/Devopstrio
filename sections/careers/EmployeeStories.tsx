@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { ArrowLeft, ArrowUpRight, Star, ArrowUpRight as ArrowUpRightIcon } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
 import { employeeStories } from "./careersData";
@@ -10,18 +10,87 @@ export function EmployeeStories() {
     {
       quote: "Amazing learning experience and supportive team. The UI/UX internship provided me high technical leverage.",
       name: "Ooviya",
-      role: "UI/UX Design Intern • 1 week ago",
+      role: "UI/UX Design Intern",
       initials: "OV",
       color: "from-rose-500 to-indigo-600",
     },
     {
       quote: "The software engineering culture here encourages rapid experimentation, learning, and automated CI/CD releases.",
       name: "Punitha",
-      role: "Backend Software Engineer • 2 weeks ago",
+      role: "Backend Software Engineer",
       initials: "PN",
       color: "from-emerald-500 to-teal-600",
     },
+    {
+      quote: "The infrastructure automation tools we build are top-notch. It's a fantastic environment for mastering cloud architecture.",
+      name: "Alex",
+      role: "DevOps Engineer",
+      initials: "AL",
+      color: "from-blue-500 to-cyan-500",
+    },
+    {
+      quote: "Building highly interactive frontend applications with modern frameworks here is deeply satisfying.",
+      name: "Rahul",
+      role: "Frontend Developer",
+      initials: "RS",
+      color: "from-amber-500 to-orange-600",
+    },
+    {
+      quote: "Having access to massive datasets and cutting-edge GPU clusters empowers our AI models to push boundaries.",
+      name: "Sarah",
+      role: "Data Scientist",
+      initials: "ST",
+      color: "from-purple-500 to-fuchsia-600",
+    },
+    {
+      quote: "We design systems that handle millions of requests gracefully. The engineering challenges are incredibly rewarding.",
+      name: "David",
+      role: "Cloud Architect",
+      initials: "DL",
+      color: "from-sky-400 to-indigo-500",
+    },
+    {
+      quote: "Quality is never an afterthought. We're empowered to build robust test frameworks that ensure flawless deployments.",
+      name: "Maria",
+      role: "QA Automation Engineer",
+      initials: "MG",
+      color: "from-rose-400 to-pink-600",
+    },
+    {
+      quote: "I love how cross-functional teams work in synergy to deliver measurable value to the user while maintaining excellence.",
+      name: "James",
+      role: "Product Manager",
+      initials: "JK",
+      color: "from-emerald-400 to-cyan-500",
+    },
+    {
+      quote: "Our zero-trust architecture makes security a first-class citizen. It’s inspiring to work where data protection is taken so seriously.",
+      name: "Anita",
+      role: "Security Analyst",
+      initials: "AP",
+      color: "from-red-500 to-rose-700",
+    },
+    {
+      quote: "From database optimization to pixel-perfect UIs, you get to touch every part of the stack. The mentorship is unmatched.",
+      name: "Wei",
+      role: "Full Stack Developer",
+      initials: "WC",
+      color: "from-violet-500 to-purple-700",
+    },
   ];
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const handleNext = () => {
+    setCurrentIndex((prev) => (prev + 2 >= testimonials.length ? 0 : prev + 2));
+  };
+
+  const handlePrev = () => {
+    setCurrentIndex((prev) => (prev - 2 < 0 ? Math.max(0, testimonials.length - 2) : prev - 2));
+  };
+
+  const visibleTestimonials = testimonials.slice(currentIndex, currentIndex + 2);
+  const progressPercent = ((currentIndex + 2) / testimonials.length) * 100;
 
   const handleScrollToRoles = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -102,14 +171,23 @@ export function EmployeeStories() {
 
               {/* Pagination controls */}
               <div className="flex items-center gap-4">
-                <button className="w-10 h-10 rounded-full border border-white/10 hover:border-rose-500/40 flex items-center justify-center text-white hover:text-rose-400 bg-zinc-950/40 hover:bg-rose-950/10 transition-all duration-300">
+                <button 
+                  onClick={handlePrev}
+                  className="w-10 h-10 rounded-full border border-white/10 hover:border-rose-500/40 flex items-center justify-center text-white hover:text-rose-400 bg-zinc-950/40 hover:bg-rose-950/10 transition-all duration-300 cursor-pointer"
+                >
                   <ArrowLeft size={16} />
                 </button>
                 {/* Progress line */}
                 <div className="w-24 h-[2px] bg-zinc-800 rounded-full overflow-hidden relative">
-                  <div className="absolute top-0 left-0 w-1/3 h-full bg-rose-500 rounded-full" />
+                  <div 
+                    className="absolute top-0 left-0 h-full bg-rose-500 rounded-full transition-all duration-500" 
+                    style={{ width: `${progressPercent}%` }}
+                  />
                 </div>
-                <button className="w-10 h-10 rounded-full border border-white/10 hover:border-rose-500/40 flex items-center justify-center text-white hover:text-rose-400 bg-zinc-950/40 hover:bg-rose-950/10 transition-all duration-300">
+                <button 
+                  onClick={handleNext}
+                  className="w-10 h-10 rounded-full border border-white/10 hover:border-rose-500/40 flex items-center justify-center text-white hover:text-rose-400 bg-zinc-950/40 hover:bg-rose-950/10 transition-all duration-300 cursor-pointer"
+                >
                   <ArrowUpRight size={16} />
                 </button>
               </div>
@@ -118,8 +196,8 @@ export function EmployeeStories() {
 
           {/* Right Column: Testimonial Cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-            {testimonials.map((t, idx) => (
-              <Reveal key={idx} delay={idx * 0.05}>
+            {visibleTestimonials.map((t, idx) => (
+              <Reveal key={currentIndex + idx} delay={idx * 0.05}>
                 <div className="flex flex-col gap-6 text-left group">
                   {/* Quote bubble card */}
                   <div className="relative bg-[#0d0d0d] border border-white/[0.06] hover:border-rose-500/20 p-6 md:p-8 rounded-[24px] shadow-xl transition-all duration-300 flex flex-col justify-between min-h-[160px] group-hover:-translate-y-1">
@@ -161,7 +239,6 @@ export function EmployeeStories() {
           <div className="relative mt-24 bg-gradient-to-b from-[#090909] to-black border border-white/[0.08] rounded-[32px] overflow-hidden p-8 md:p-12 lg:p-16 flex flex-col md:flex-row items-center gap-10 md:gap-16 shadow-[0_30px_60px_rgba(0,0,0,0.8)] group">
             {/* Ambient glows inside card */}
             <div className="absolute left-[10%] top-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-[radial-gradient(circle_at_center,rgba(244,63,94,0.06),transparent_70%)] pointer-events-none -z-10" />
-            <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-rose-500 to-rose-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-t-[32px]" />
 
             {/* Left Side: Large Portrait Image with custom asymmetrical corners */}
             <div className="relative w-64 md:w-80 aspect-[4/5] rounded-tl-[3rem] rounded-br-[3rem] rounded-tr-xl rounded-bl-xl overflow-hidden border border-white/5 shrink-0 bg-zinc-950">

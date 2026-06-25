@@ -31,18 +31,26 @@ export function LearningGrowth() {
     {
       title: "Cloud Engineering",
       desc: "Master AWS, Azure, and Google Cloud Infrastructure.",
+      img: "/assets/Home-page/we-imagine/gen/we-transform-legacy.png",
+      bullets: ["AWS Architecting", "Azure Solutions", "GCP Fundamentals"]
     },
     {
       title: "AI on Security",
       desc: "Learn AI Security, Cyber Security and Data Security.",
+      img: "/assets/Home-page/we-imagine/gen/we-manage-operations.png",
+      bullets: ["Threat Intelligence", "Zero Trust Architecture", "Data Encryption"]
     },
     {
       title: "AI on Digital Transformation",
       desc: "Learn Digital Transformation, and Cloud Engineering.",
+      img: "/assets/Home-page/we-imagine/gen/we-design-intelligent.png",
+      bullets: ["Process Automation", "Agile Transformation", "Cloud Migration"]
     },
     {
       title: "AI on Automation",
       desc: "Learn AI, Machine Learning, Deep Learning and NLP.",
+      img: "/assets/Home-page/we-imagine/gen/we-build-software.png",
+      bullets: ["Machine Learning", "Deep Learning Models", "NLP Pipelines"]
     },
   ];
 
@@ -74,37 +82,94 @@ export function LearningGrowth() {
             <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
               HOW IT WORKS
             </span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
+            <h2 className="text-3xl md:text-4xl xl:text-5xl font-extrabold tracking-tight leading-tight mb-5 text-white">
               From application to certification
             </h2>
-            <p className="text-zinc-300 text-sm md:text-base leading-relaxed font-medium max-w-xl mx-auto">
-              Five simple steps. Get started in days, not months.
+            <p className="text-zinc-400 text-sm md:text-lg leading-relaxed font-medium max-w-xl mx-auto">
+              Four simple steps to kickstart your career. Get started in days, not months.
             </p>
           </Reveal>
         </div>
 
-        {/* Steps Grid */}
-        <div className="relative mb-32">
-          {/* Horizontal line for desktop connecting the numbers */}
-          <div className="hidden md:block absolute top-8 left-10 right-10 h-[1px] border-t border-dashed border-zinc-800 -z-10" />
-          
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-6">
-            {steps.map((item, idx) => (
-              <Reveal key={idx} delay={idx * 0.05} className="h-full">
-                <div className="flex flex-col items-center text-center px-4">
-                  {/* Step bubble */}
-                  <div className="w-16 h-16 rounded-full bg-zinc-950 border border-white/[0.08] flex items-center justify-center text-white mb-6 font-mono font-bold text-lg shadow-[0_4px_20px_rgba(0,0,0,0.5)]">
-                    {item.step}
+        {/* Premium Infographic Steps Grid */}
+        <div className="relative max-w-5xl mx-auto mb-32 px-4 md:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-x-20 md:gap-y-24">
+            {steps.map((item, idx) => {
+              const styles = [
+                { 
+                  borderColor: "border-rose-500", 
+                  textColor: "text-rose-500", 
+                  numPos: "-top-8 -right-4 md:-top-10 md:-right-6", 
+                  borderRadius: "rounded-[2.5rem] rounded-tr-2xl", 
+                  textAlign: "text-left",
+                  alignItems: "items-start"
+                },
+                { 
+                  borderColor: "border-rose-500", 
+                  textColor: "text-rose-500", 
+                  numPos: "-bottom-8 -left-4 md:-bottom-10 md:-left-6", 
+                  borderRadius: "rounded-[2.5rem] rounded-bl-2xl", 
+                  textAlign: "text-left md:text-right",
+                  alignItems: "items-start md:items-end"
+                },
+                { 
+                  borderColor: "border-rose-500", 
+                  textColor: "text-rose-500", 
+                  numPos: "-top-8 -right-4 md:-top-10 md:-right-6", 
+                  borderRadius: "rounded-[2.5rem] rounded-tr-2xl", 
+                  textAlign: "text-left",
+                  alignItems: "items-start"
+                },
+                { 
+                  borderColor: "border-rose-500", 
+                  textColor: "text-rose-500", 
+                  numPos: "-bottom-8 -left-4 md:-bottom-10 md:-left-6", 
+                  borderRadius: "rounded-[2.5rem] rounded-bl-2xl", 
+                  textAlign: "text-left md:text-right",
+                  alignItems: "items-start md:items-end"
+                },
+              ];
+              
+              const style = styles[idx];
+
+              return (
+                <Reveal key={idx} delay={idx * 0.1}>
+                  <div className={`relative p-8 md:p-10 border-[2px] ${style.borderColor} ${style.borderRadius} bg-black group hover:-translate-y-2 transition-all duration-500 hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)]`}>
+                    
+                    {/* The Giant Cut-out Number */}
+                    <div className={`absolute ${style.numPos} bg-black px-4 z-10 flex items-center justify-center transition-transform duration-500 group-hover:scale-110`}>
+                      <span 
+                        className={`text-[3.5rem] md:text-[4.5rem] font-black leading-none ${style.textColor}`}
+                        style={{
+                          WebkitTextStroke: `2px currentColor`,
+                          WebkitTextFillColor: "transparent",
+                          textShadow: `0 0 20px currentColor`
+                        }}
+                      >
+                        {idx + 1}
+                      </span>
+                    </div>
+
+                    {/* Content */}
+                    <div className={`flex flex-col gap-4 relative z-0 ${style.alignItems} ${style.textAlign}`}>
+                      
+                      {/* Decorative Inner Graphic */}
+                      <div className={`w-10 h-10 rounded-full border-2 ${style.borderColor} flex items-center justify-center mb-1 opacity-80 group-hover:opacity-100 transition-opacity duration-300`}>
+                        <div className={`w-1.5 h-1.5 rounded-full bg-current ${style.textColor} animate-pulse`} />
+                      </div>
+
+                      <h3 className={`text-lg md:text-xl font-extrabold uppercase tracking-wide ${style.textColor}`}>
+                        {item.title}
+                      </h3>
+                      <p className="text-sm md:text-base text-zinc-300 font-medium leading-relaxed max-w-[90%]">
+                        {item.desc}
+                      </p>
+                    </div>
+
                   </div>
-                  <h3 className="text-base font-bold text-white mb-2 leading-snug">
-                    {item.title}
-                  </h3>
-                  <p className="text-xs md:text-sm text-zinc-350 font-medium leading-relaxed">
-                    {item.desc}
-                  </p>
-                </div>
-              </Reveal>
-            ))}
+                </Reveal>
+              );
+            })}
           </div>
         </div>
 
@@ -121,21 +186,46 @@ export function LearningGrowth() {
         </div>
 
         {/* Domain Tracks Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-32">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-32">
           {domains.map((domain, idx) => (
-            <Reveal key={idx} delay={idx * 0.04}>
-              <div className="group flex flex-col justify-between h-full bg-[#0d0d0d] border border-white/[0.06] rounded-2xl p-6 hover:border-rose-500/35 hover:-translate-y-1.5 transition-all duration-300 min-h-[160px] text-left">
-                <div>
-                  <h3 className="text-sm md:text-base font-bold text-rose-500 mb-2 leading-snug">
-                    {domain.title}
-                  </h3>
-                  <p className="text-xs md:text-sm text-zinc-300 font-medium leading-relaxed mb-6">
-                    {domain.desc}
-                  </p>
+            <Reveal key={idx} delay={idx * 0.05}>
+              <div className="relative rounded-[24px] border border-zinc-800/80 bg-[#0A0A0A] p-6 md:p-8 flex flex-col justify-between group h-full shadow-lg overflow-hidden transition-all duration-500 hover:border-zinc-700 min-h-[380px]">
+                
+                {/* Expanding Image Layer with Glassmorphism */}
+                <div className="absolute inset-0 z-0 [clip-path:circle(0%_at_100%_100%)] group-hover:[clip-path:circle(150%_at_100%_100%)] transition-all duration-700 ease-in-out pointer-events-none">
+                  <img src={domain.img} alt={domain.title} className="w-full h-full object-cover scale-110 group-hover:scale-100 transition-transform duration-1000 ease-out opacity-80" />
+                  
+                  {/* Frosted Glass Blur Overlay */}
+                  <div className="absolute inset-0 bg-black/40 backdrop-blur-md" />
+                  
+                  {/* Vignette Gradient for depth and text legibility */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-white/5 border border-white/5 rounded-[24px]" />
                 </div>
-                <span className="text-xs font-semibold uppercase tracking-wider text-white group-hover:text-rose-400 transition-colors flex items-center gap-1 cursor-pointer">
-                  View Track &rsaquo;
-                </span>
+
+                {/* Content Layer */}
+                <div className="relative z-10 flex flex-col h-full text-left">
+                  <div>
+                    <h3 className="text-xl md:text-2xl font-bold text-white mb-4 tracking-tight transition-transform duration-500 group-hover:-translate-y-1">
+                      {domain.title}
+                    </h3>
+                    <p className="text-zinc-400 text-sm leading-relaxed mb-6 font-medium group-hover:text-zinc-300 transition-colors duration-500">
+                      {domain.desc}
+                    </p>
+                  </div>
+                  <div className="border-t border-zinc-800/60 group-hover:border-white/20 pt-5 mt-auto transition-colors duration-500 flex flex-col">
+                    <ul className="space-y-3 mb-8">
+                      {domain.bullets.map((bullet) => (
+                        <li key={bullet} className="flex items-center gap-3 text-xs font-bold text-zinc-300 group-hover:text-white transition-colors duration-500">
+                          <span className="w-1.5 h-1.5 rounded-full bg-rose-500 shadow-[0_0_8px_rgba(225,29,72,0.8)] shrink-0" />
+                          {bullet}
+                        </li>
+                      ))}
+                    </ul>
+                    <span className="text-xs font-bold uppercase tracking-wider text-rose-500 group-hover:text-rose-400 transition-colors flex items-center gap-1 cursor-pointer mt-auto w-fit">
+                      View Track &rsaquo;
+                    </span>
+                  </div>
+                </div>
               </div>
             </Reveal>
           ))}

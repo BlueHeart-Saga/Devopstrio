@@ -1,114 +1,105 @@
 "use client";
 
 import React, { useState } from "react";
-import { MapPin, Clock, ArrowUpRight } from "lucide-react";
+import { Search, MapPin, ArrowRight } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
-import { openPositionsData, categories, Job } from "./careersData";
-import { JobPostingSchema } from "@/components/seo/Schemas";
+import { useRouter } from "next/navigation";
 
-interface OpenPositionsProps {
-  onApplyClick: (job: Job) => void;
-}
+export function OpenPositions() {
+  const router = useRouter();
+  const [keyword, setKeyword] = useState("");
+  const [location, setLocation] = useState("");
 
-export function OpenPositions({ onApplyClick }: OpenPositionsProps) {
-  const [selectedCategory, setSelectedCategory] = useState("All");
-
-  const filteredJobs = selectedCategory === "All"
-    ? openPositionsData
-    : openPositionsData.filter(job => job.category === selectedCategory);
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Navigate to the dedicated jobs page with query params
+    const query = new URLSearchParams();
+    if (keyword) query.set('q', keyword);
+    if (location) query.set('loc', location);
+    
+    router.push(`/careers/jobs?${query.toString()}`);
+  };
 
   return (
-    <section id="open-positions" className="py-24 bg-[#030303] border-b border-zinc-900/60">
-      <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
-        <div className="max-w-3xl text-left mb-16">
-          <Reveal>
-            <div className="flex items-center gap-2 mb-4">
+    <section id="open-positions" className="py-32 bg-[#030303] relative overflow-hidden flex items-center justify-center border-b border-zinc-900/60">
+      {/* Ambient glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-[radial-gradient(circle_at_center,rgba(225,29,72,0.08),transparent_60%)] pointer-events-none" />
 
-              <span className="text-[10px] font-bold tracking-widest uppercase text-rose-500">Active Roles</span>
+      <div className="max-w-5xl mx-auto w-full px-6 relative z-10 text-center">
+        <Reveal>
+          
+          {/* Headline */}
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-tight mb-6">
+            Find your <span className="bg-rose-600 text-white px-5 py-1.5 rounded-xl inline-block transform -rotate-2 shadow-[0_10px_30px_rgba(225,29,72,0.4)] mx-1">dream job</span> at<br className="hidden md:block" />
+            <span className="md:mt-2 inline-block">Devopstrio</span>
+          </h2>
+          
+          <p className="text-zinc-400 text-base md:text-lg max-w-2xl mx-auto mb-12 font-medium">
+            When you're searching for a role, start here to find the perfect team where you can build next-generation enterprise solutions.
+          </p>
+
+          {/* Search Bar Form */}
+          <form 
+            onSubmit={handleSearch} 
+            className="max-w-3xl mx-auto bg-[#0a0a0a] border border-zinc-800/80 p-2 md:p-2.5 rounded-2xl md:rounded-full flex flex-col md:flex-row items-center gap-2 shadow-2xl transition-all duration-300 focus-within:border-rose-500/50 focus-within:shadow-[0_0_40px_rgba(225,29,72,0.15)] relative z-20"
+          >
+            
+            {/* Keyword Input */}
+            <div className="flex-1 flex items-center gap-3 px-4 py-3 md:py-4 w-full md:w-auto border-b md:border-b-0 md:border-r border-zinc-800">
+              <div className="w-8 h-8 rounded-full bg-rose-500/10 flex items-center justify-center shrink-0">
+                <Search size={16} className="text-rose-500" />
+              </div>
+              <input 
+                type="text"
+                placeholder="Job title or keyword"
+                value={keyword}
+                onChange={(e) => setKeyword(e.target.value)}
+                className="bg-transparent border-none outline-none text-white placeholder:text-zinc-500 w-full text-sm md:text-base font-semibold"
+              />
             </div>
-            <h2 className="text-2xl md:text-3xl font-light text-white tracking-tight leading-snug">
-              Explore our current <span className="font-semibold text-rose-500">open positions</span>
-            </h2>
-            <p className="text-zinc-500 text-xs md:text-sm font-light mt-2 max-w-xl">
-              Filter roles by engineering domain and find the right place to build your technology career.
-            </p>
-          </Reveal>
-        </div>
 
-        {/* Category Filter Chips */}
-        <Reveal className="mb-10 flex flex-wrap gap-2 justify-start">
-          {categories.map((cat) => (
-            <button
-              key={cat}
-              onClick={() => setSelectedCategory(cat)}
-              className={`px-4 py-2 rounded-full text-xs font-semibold border transition-all duration-200 ${selectedCategory === cat
-                  ? "bg-rose-600 border-rose-600 text-white"
-                  : "bg-zinc-950/20 border-zinc-900 text-zinc-400 hover:text-white hover:border-zinc-800"
-                }`}
+            {/* Location Input */}
+            <div className="flex-1 flex items-center gap-3 px-4 py-3 md:py-4 w-full md:w-auto">
+              <MapPin size={18} className="text-zinc-500 shrink-0" />
+              <input 
+                type="text"
+                placeholder="Any location"
+                value={location}
+                onChange={(e) => setLocation(e.target.value)}
+                className="bg-transparent border-none outline-none text-white placeholder:text-zinc-500 w-full text-sm md:text-base font-semibold"
+              />
+            </div>
+
+            {/* Submit Button */}
+            <button 
+              type="submit"
+              className="w-full md:w-auto bg-rose-600 hover:bg-rose-500 text-white px-8 py-4 rounded-xl md:rounded-full font-bold text-sm tracking-wide transition-all shadow-[0_0_20px_rgba(225,29,72,0.3)] hover:shadow-[0_0_30px_rgba(225,29,72,0.5)] flex items-center justify-center gap-2 shrink-0 hover:-translate-y-0.5"
             >
-              {cat}
+              Search <ArrowRight size={16} />
             </button>
-          ))}
-        </Reveal>
-
-        {/* Jobs Listing Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredJobs.length > 0 ? (
-            filteredJobs.map((job, idx) => (
-              <React.Fragment key={job.id}>
-                <JobPostingSchema
-                  title={job.title}
-                  description={job.desc}
-                  datePosted="2026-06-22"
-                  jobLocationCity={job.location.split(",")[0].trim()}
-                  jobLocationCountry={job.location.includes("UK") ? "GB" : job.location.includes("US") ? "US" : "IN"}
-                />
-                <Reveal delay={idx * 0.05} className="h-full">
-                  <div className="group h-full bg-zinc-950/20 border border-zinc-900 rounded-3xl p-6 md:p-8 hover:border-rose-500/35 transition-all duration-300 relative overflow-hidden flex flex-col justify-between text-left">
-                    <div className="absolute top-0 right-0 w-24 h-24 bg-[radial-gradient(circle_at_center,rgba(225,29,72,0.015),transparent_75%)] opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
-
-                    <div>
-                      <div className="flex items-center gap-2 mb-4">
-                        <span className="bg-rose-950/30 border border-rose-500/20 text-[9px] font-bold tracking-wide uppercase text-rose-500 px-2 py-0.5 rounded">
-                          {job.category}
-                        </span>
-                        <span className="bg-zinc-900/60 border border-zinc-850 text-[9px] font-bold text-zinc-400 px-2 py-0.5 rounded">
-                          {job.type}
-                        </span>
-                      </div>
-
-                      <h3 className="text-sm font-bold text-white mb-2 leading-tight group-hover:text-rose-500 transition-colors">
-                        {job.title}
-                      </h3>
-
-                      <div className="flex items-center gap-1.5 text-[10px] text-zinc-550 mb-4 font-mono">
-                        <MapPin size={11} className="text-zinc-650" /> {job.location} | <Clock size={11} className="text-zinc-650" /> {job.experience}
-                      </div>
-
-                      <p className="text-[11px] text-zinc-450 leading-relaxed font-light mb-6">
-                        {job.desc}
-                      </p>
-                    </div>
-
-                    <button
-                      onClick={() => onApplyClick(job)}
-                      className="w-full inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase border border-zinc-850 hover:border-zinc-750 bg-zinc-950/60 hover:bg-zinc-900 text-white transition-all duration-300 hover:-translate-y-0.5"
-                    >
-                      <span>View Position &rarr;</span>
-                      <span className="w-5 h-5 rounded-full bg-zinc-900 group-hover:bg-rose-950/20 flex items-center justify-center text-zinc-500 group-hover:text-rose-500 transition-colors">
-                        <ArrowUpRight size={11} className="stroke-[2.5]" />
-                      </span>
-                    </button>
-                  </div>
-                </Reveal>
-              </React.Fragment>
-            ))
-          ) : (
-            <div className="col-span-full py-16 text-center text-zinc-500 text-xs font-light">
-              No active openings in this category. Join our talent network below to get notified of new roles!
+          </form>
+          
+          {/* Popular Tags */}
+          <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 text-xs font-semibold text-zinc-500">
+            <span>Popular searches:</span>
+            <div className="flex gap-2 flex-wrap justify-center">
+              {['Cloud Architect', 'DevOps Engineer', 'AI Specialist'].map(tag => (
+                <button 
+                  key={tag} 
+                  type="button"
+                  onClick={() => {
+                    setKeyword(tag);
+                    document.getElementById('open-positions')?.scrollIntoView({ behavior: 'smooth' });
+                  }}
+                  className="px-4 py-1.5 bg-zinc-900 border border-zinc-800 rounded-full hover:bg-zinc-800 hover:text-white hover:border-zinc-600 transition-all cursor-pointer"
+                >
+                  {tag}
+                </button>
+              ))}
             </div>
-          )}
-        </div>
+          </div>
+
+        </Reveal>
       </div>
     </section>
   );

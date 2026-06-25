@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import { Search, Calendar, Clock, Eye, BookOpen, HelpCircle } from "lucide-react";
+import { Search, Calendar, Clock, Eye, BookOpen, HelpCircle, ChevronRight } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
 import { TransformedPost } from "@/lib/insightsApi";
 
@@ -48,28 +48,48 @@ export function InsightsLibrary({ posts, loading }: InsightsLibraryProps) {
   return (
     <section className="py-16 md:py-24 bg-black">
       <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
-        <div className="flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-6 border-b border-zinc-900/60 pb-8 mb-12">
+        
+        {/* Header Section */}
+        <div className="max-w-3xl mx-auto text-center mb-16 lg:mb-20 pt-8">
+          <Reveal>
+            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block drop-shadow-md">
+              Knowledge Base
+            </span>
+          </Reveal>
+          <Reveal delay={0.1}>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-tight text-white mb-6 drop-shadow-md">
+              Insights & <span className="text-rose-500">Articles</span>
+            </h2>
+          </Reveal>
+          <Reveal delay={0.2}>
+            <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-bold max-w-2xl mx-auto drop-shadow-md">
+              Explore our latest thinking, strategies, and industry perspectives to accelerate your digital transformation.
+            </p>
+          </Reveal>
+        </div>
+
+        <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 pb-8 mb-12">
           
           {/* Categories filters */}
-          <div className="flex flex-wrap items-center gap-2.5">
+          <div className="flex flex-wrap items-center gap-3">
             <button
               onClick={() => { setActiveCategory("all"); setVisibleCount(6); }}
-              className={`px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider transition-all duration-200 border ${
+              className={`px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-widest transition-all duration-300 border ${
                 activeCategory === "all"
-                  ? "border-rose-500 bg-rose-600/5 text-white"
-                  : "border-zinc-900 bg-zinc-950/20 text-zinc-400 hover:text-white hover:border-zinc-800"
+                  ? "border-rose-600 bg-rose-600 text-white shadow-[0_4px_14px_0_rgba(225,29,72,0.39)]"
+                  : "border-zinc-800 bg-[#0a0a0a] text-zinc-400 hover:text-white hover:border-zinc-700 hover:bg-[#111]"
               }`}
             >
-              All Articles
+              All
             </button>
             {categories.map((cat) => (
               <button
                 key={cat.slug}
                 onClick={() => { setActiveCategory(cat.slug); setVisibleCount(6); }}
-                className={`px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider transition-all duration-200 border ${
+                className={`px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-widest transition-all duration-300 border ${
                   activeCategory === cat.slug
-                    ? "border-rose-500 bg-rose-600/5 text-white"
-                    : "border-zinc-900 bg-zinc-950/20 text-zinc-400 hover:text-white hover:border-zinc-800"
+                    ? "border-rose-600 bg-rose-600 text-white shadow-[0_4px_14px_0_rgba(225,29,72,0.39)]"
+                    : "border-zinc-800 bg-[#0a0a0a] text-zinc-400 hover:text-white hover:border-zinc-700 hover:bg-[#111]"
                 }`}
               >
                 {cat.name}
@@ -78,14 +98,14 @@ export function InsightsLibrary({ posts, loading }: InsightsLibraryProps) {
           </div>
 
           {/* Search Input bar */}
-          <div className="relative max-w-sm w-full">
-            <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 text-zinc-550" size={14} />
+          <div className="relative max-w-md w-full">
+            <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-zinc-500" size={16} />
             <input
               type="text"
-              placeholder="Search publications..."
+              placeholder="Search articles..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full bg-zinc-950/30 border border-zinc-900/80 rounded-full pl-10 pr-4 py-2.5 text-xs text-zinc-200 placeholder-zinc-550 focus:outline-none focus:border-rose-500/50 transition-colors"
+              className="w-full bg-[#0a0a0a] border border-zinc-800 rounded-full pl-12 pr-6 py-3.5 text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-rose-500 focus:ring-1 focus:ring-rose-500 transition-all shadow-inner"
             />
           </div>
 
@@ -106,55 +126,63 @@ export function InsightsLibrary({ posts, loading }: InsightsLibraryProps) {
         ) : (
           <div>
             {/* Library Post Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {filteredPosts.slice(0, visibleCount).map((post, idx) => (
-                <Reveal key={post.id} delay={idx * 0.03} className="h-full">
-                  <Link
-                    href={`/insights/${post.category.slug}/${post.id}`}
-                    className="group flex flex-col h-full bg-zinc-950/10 border border-zinc-900/80 rounded-2xl overflow-hidden hover:border-zinc-800 transition-all duration-300 text-left"
-                  >
-                    {/* Image cover placeholder or API visual */}
-                    <div className="h-44 relative bg-zinc-950 overflow-hidden border-b border-zinc-900/60">
-                      {post.image ? (
-                        <img
-                          src={post.image}
-                          alt=""
-                          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+              {filteredPosts.slice(0, visibleCount).map((post, idx) => {
+                const getFallbackImage = (i: number) => {
+                  const images = [
+                    "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&auto=format&fit=crop",
+                    "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&auto=format&fit=crop",
+                    "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&auto=format&fit=crop",
+                    "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&auto=format&fit=crop",
+                    "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=800&auto=format&fit=crop",
+                  ];
+                  return images[i % images.length];
+                };
+                const imageSrc = post.image || getFallbackImage(idx);
+
+                return (
+                  <Reveal key={post.id} delay={idx * 0.05} className="h-full">
+                    <Link
+                      href={`/insights/${post.category.slug}/${post.id}`}
+                      className="flex flex-col bg-[#0a0a0a] border border-zinc-800 rounded-3xl p-3 group cursor-pointer transition-all duration-500 hover:-translate-y-2 hover:border-zinc-600 hover:shadow-[0_20px_40px_rgba(225,29,72,0.08)] text-left h-full"
+                    >
+                      {/* Inset Image */}
+                      <div className="w-full h-48 md:h-56 overflow-hidden rounded-2xl mb-5 bg-zinc-900">
+                        <img 
+                          src={imageSrc} 
+                          alt={post.title} 
+                          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-90 group-hover:opacity-100" 
                         />
-                      ) : (
-                        <div className="absolute inset-0 bg-gradient-to-tr from-[#ce2453]/10 to-[#e79e57]/5 flex items-center justify-center">
-                          <BookOpen size={24} className="text-rose-500/20" />
-                        </div>
-                      )}
-                      <span className="absolute top-4 left-4 px-2 py-0.5 rounded text-[8px] font-bold bg-black/80 border border-zinc-800 text-zinc-400 uppercase tracking-widest">
-                        {post.category.name}
-                      </span>
-                    </div>
-
-                    <div className="p-6 flex flex-col justify-between flex-1">
-                      <div>
-                        <div className="flex items-center gap-4 text-[10px] text-zinc-550 font-mono mb-4">
-                          <span className="flex items-center gap-1"><Calendar size={10} /> {post.date}</span>
-                          <span className="flex items-center gap-1"><Clock size={10} /> {post.readTime} min read</span>
-                        </div>
-
-                        <h3 className="text-xs font-semibold text-zinc-200 group-hover:text-rose-500 transition-colors mb-3 leading-snug">
+                      </div>
+                      
+                      {/* Content Area */}
+                      <div className="px-3 pb-3 flex flex-col flex-1">
+                        <span className="text-[10px] font-bold tracking-widest text-rose-500 uppercase mb-3 block">
+                          {post.category.name}
+                        </span>
+                        
+                        <h3 className="text-white font-bold text-lg md:text-xl leading-snug group-hover:text-rose-400 transition-colors mb-3 line-clamp-2">
                           {post.title}
                         </h3>
-
-                        <p className="text-[11px] text-zinc-450 leading-relaxed font-light mb-6 line-clamp-2">
+                        
+                        <p className="text-zinc-400 text-sm leading-relaxed font-medium line-clamp-3 mb-6 flex-1">
                           {post.excerpt}
                         </p>
+                        
+                        {/* Footer CTA */}
+                        <div className="flex items-center gap-3 mt-auto pt-2">
+                          <div className="w-8 h-8 rounded-lg bg-rose-950 border border-rose-900 group-hover:bg-rose-600 group-hover:border-rose-500 flex items-center justify-center transition-all duration-300 shadow-md">
+                            <ChevronRight size={14} className="text-rose-500 group-hover:text-white transition-colors" />
+                          </div>
+                          <span className="text-xs font-bold text-zinc-300 group-hover:text-rose-400 tracking-wide transition-colors">
+                            Read article
+                          </span>
+                        </div>
                       </div>
-
-                      <div className="border-t border-zinc-900/60 pt-4 mt-auto flex items-center justify-between text-[10px] text-zinc-550">
-                        <span className="font-light">By {post.author}</span>
-                        <span className="flex items-center gap-1 font-mono"><Eye size={10} /> {post.views}</span>
-                      </div>
-                    </div>
-                  </Link>
-                </Reveal>
-              ))}
+                    </Link>
+                  </Reveal>
+                );
+              })}
             </div>
 
             {/* Load More Trigger */}

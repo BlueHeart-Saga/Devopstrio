@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import { ChevronLeft, ChevronRight, Calendar, Clock } from "lucide-react";
+import { ChevronLeft, ChevronRight, Calendar, Clock, ArrowRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Reveal } from "@/components/ui/Reveal";
 import { TransformedPost } from "@/lib/insightsApi";
@@ -34,176 +34,123 @@ export function CategoryFeatured({ posts, categorySlug }: CategoryFeaturedProps)
     setActiveIndex((prev) => (prev + 1) % posts.length);
   };
 
-  const N = posts.length;
+  const post = posts[activeIndex];
+  const getFallbackImage = (i: number) => {
+    const images = [
+      "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&auto=format&fit=crop",
+    ];
+    return images[i % images.length];
+  };
 
   return (
-    <section className="py-12 md:py-16 bg-black overflow-hidden select-none">
-      <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 text-center">
+    <section className="py-12 md:py-16 bg-[#030303] overflow-hidden">
+      <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
         
-        {/* Header Block */}
-        <Reveal>
-          <div className="text-center max-w-3xl mx-auto mb-14">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
-              FEATURED PUBLICATION
-            </span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
-              Featured <span className="text-rose-500">Highlight</span>
+        {/* Header Block matching GIF style */}
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 gap-6">
+          <Reveal>
+            <h2 className="text-lg md:text-xl font-medium text-white tracking-wide">
+              Recent Post ({String(posts.length).padStart(2, '0')})
             </h2>
-            <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
-              Discover our most impactful and popular stories curated just for you.
-            </p>
-          </div>
-        </Reveal>
+          </Reveal>
+
+          {/* Navigation Arrows */}
+          {posts.length > 1 && (
+            <div className="flex items-center gap-3">
+              <button
+                onClick={handlePrev}
+                className="w-10 h-10 rounded-full border border-zinc-800 bg-[#0a0a0a] text-zinc-400 hover:text-white hover:border-zinc-600 flex items-center justify-center transition-colors"
+                aria-label="Previous Slide"
+              >
+                <ChevronLeft size={18} />
+              </button>
+              <button
+                onClick={handleNext}
+                className="w-10 h-10 rounded-full border border-zinc-800 bg-[#0a0a0a] text-zinc-400 hover:text-white hover:border-zinc-600 flex items-center justify-center transition-colors"
+                aria-label="Next Slide"
+              >
+                <ChevronRight size={18} />
+              </button>
+            </div>
+          )}
+        </div>
 
         {/* Carousel Container */}
-        <div className="relative w-full flex items-center justify-center min-h-[380px] sm:min-h-[460px] md:min-h-[500px] py-6 overflow-visible">
-          
-          {/* Navigation Arrow Left */}
-          {N > 1 && (
-            <button
-              onClick={handlePrev}
-              className="absolute left-0 md:left-4 z-40 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white text-zinc-900 shadow-xl hover:bg-zinc-100 active:scale-95 flex items-center justify-center transition-all duration-200 border border-zinc-200/20"
-              aria-label="Previous Slide"
+        <div className="relative w-full min-h-[500px]">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={activeIndex}
+              initial={{ opacity: 0, x: 60 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -60 }}
+              transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+              className="w-full flex flex-col md:flex-row items-center relative"
             >
-              <ChevronLeft size={20} className="stroke-[2.5]" />
-            </button>
-          )}
-
-          {/* Cards Frame */}
-          <div className="relative w-full max-w-[640px] aspect-[4/3] sm:aspect-[16/10] flex items-center justify-center overflow-visible">
-            {posts.map((post, idx) => {
-              // Calculate shortest modular distance for 3D stack wrapping
-              let offset = idx - activeIndex;
-              if (offset < -N / 2) offset += N;
-              if (offset > N / 2) offset -= N;
-
-              const isActive = offset === 0;
-              const isLeft = offset === -1;
-              const isRight = offset === 1;
-
-              // Only render center, left, and right cards for 3D stack
-              const isVisible = isActive || isLeft || isRight;
-
-              if (!isVisible && N > 3) return null;
-
-              // Motion configuration mapping
-              let xPosition = "0%";
-              if (offset === -1) xPosition = "-38%";
-              if (offset === 1) xPosition = "38%";
-              if (offset < -1) xPosition = "-75%";
-              if (offset > 1) xPosition = "75%";
-
-              return (
-                <motion.div
-                  key={post.id}
-                  style={{
-                    originY: 0.5,
-                  }}
-                  animate={{
-                    x: xPosition,
-                    scale: isActive ? 1.0 : 0.82,
-                    opacity: isActive ? 1 : 0.45,
-                    zIndex: isActive ? 30 : 20,
-                    filter: isActive ? "blur(0px)" : "blur(2.5px)",
-                  }}
-                  transition={{
-                    type: "spring",
-                    stiffness: 280,
-                    damping: 28,
-                  }}
-                  className={`absolute w-full h-full rounded-[32px] overflow-hidden border transition-colors duration-300 ${
-                    isActive
-                      ? "border-white/10 shadow-[0_25px_60px_rgba(0,0,0,0.85)] pointer-events-auto cursor-default"
-                      : "border-white/5 shadow-[0_15px_30px_rgba(0,0,0,0.5)] pointer-events-none"
-                  }`}
-                >
-                  {/* Card Background Image */}
-                  <div className="absolute inset-0 bg-zinc-950 z-0">
-                    {post.image ? (
-                      <img
-                        src={post.image}
-                        alt=""
-                        className="w-full h-full object-cover select-none pointer-events-none opacity-90 transition-transform duration-700 hover:scale-[1.02]"
-                      />
-                    ) : (
-                      <div className="w-full h-full bg-gradient-to-tr from-rose-950/20 to-purple-950/20 flex items-center justify-center">
-                        <span className="text-rose-500/20 font-bold uppercase tracking-wider text-[10px]">Devopstrio</span>
-                      </div>
-                    )}
-                    {/* Dark gradient overlay for content contrast */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black via-black/45 to-transparent pointer-events-none z-10" />
+              
+              {/* Left Image Container */}
+              <div className="w-full md:w-[60%] h-[300px] md:h-[480px] rounded-[32px] overflow-hidden relative shadow-2xl z-0">
+                <img 
+                  src={post.image || getFallbackImage(activeIndex)} 
+                  alt={post.title} 
+                  className="w-full h-full object-cover transition-transform duration-[10s] hover:scale-105" 
+                />
+              </div>
+              
+              {/* Right Overlapping Content Card */}
+              <div className="w-full md:w-[45%] p-8 lg:p-12 flex flex-col bg-[#0a0a0a] border border-zinc-800 rounded-[32px] md:-ml-16 z-10 shadow-[0_20px_50px_rgba(0,0,0,0.6)] mt-[-60px] md:mt-0 relative group">
+                
+                {/* Meta Row */}
+                <div className="flex items-center gap-3 text-[11px] text-zinc-400 font-mono mb-6">
+                  <span className="flex items-center gap-1.5 text-zinc-300">
+                    <Calendar size={12} className="text-rose-500" />
+                    {post.date}
+                  </span>
+                  <span className="w-1 h-1 rounded-full bg-zinc-700" />
+                  <span className="flex items-center gap-1.5 text-zinc-300">
+                    <Clock size={12} className="text-rose-500" />
+                    {post.readTime} min read
+                  </span>
+                </div>
+                
+                {/* Title */}
+                <h3 className="text-2xl md:text-3xl lg:text-[32px] font-bold text-white mb-5 leading-[1.2] group-hover:text-rose-500 transition-colors line-clamp-3">
+                  {post.title}
+                </h3>
+                
+                {/* Excerpt */}
+                <p className="text-sm text-zinc-400 leading-relaxed mb-10 line-clamp-4">
+                  {post.excerpt}
+                </p>
+                
+                {/* Footer Row */}
+                <div className="flex items-center justify-between mt-auto">
+                  <div className="flex flex-wrap gap-2">
+                    <span className="px-4 py-1.5 rounded-full border border-zinc-800 text-[10px] font-bold uppercase tracking-wider text-zinc-300 bg-zinc-900/50">
+                      {post.category.name}
+                    </span>
+                    {post.tags && post.tags.slice(0, 2).map((tag, tIdx) => (
+                      <span key={tIdx} className="px-4 py-1.5 rounded-full border border-zinc-800 text-[10px] font-bold uppercase tracking-wider text-zinc-300 bg-zinc-900/50">
+                        {tag}
+                      </span>
+                    ))}
                   </div>
+                  
+                  <Link 
+                    href={`/insights/${categorySlug}/${post.id}`} 
+                    className="w-12 h-12 shrink-0 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center group-hover:bg-rose-600 group-hover:border-rose-500 transition-all duration-300 shadow-lg group-hover:shadow-[0_0_20px_rgba(225,29,72,0.4)]"
+                  >
+                    <ArrowRight size={18} className="text-white group-hover:-rotate-45 transition-transform duration-300" />
+                  </Link>
+                </div>
 
-                  {/* Card Content Overlay */}
-                  <div className="absolute inset-x-0 bottom-0 p-6 sm:p-8 md:p-10 flex flex-col items-start text-left z-20">
-                    
-                    {/* Tags Badges Row */}
-                    <div className="flex flex-wrap items-center gap-2 mb-4">
-                      {/* Primary Category Tag */}
-                      <span className="px-3 py-1 rounded-full text-[9px] font-bold bg-[#E11D48] text-white uppercase tracking-wider shadow-sm">
-                        {post.category.name}
-                      </span>
-                      {/* Secondary Tags */}
-                      {post.tags &&
-                        post.tags.slice(0, 2).map((tag, tIdx) => (
-                          <span
-                            key={tIdx}
-                            className="px-3 py-1 rounded-full text-[9px] font-bold bg-white/10 border border-white/10 text-white uppercase tracking-wider backdrop-blur-sm"
-                          >
-                            {tag}
-                          </span>
-                        ))}
-                    </div>
+              </div>
 
-                    {/* Metadata Row */}
-                    <div className="flex items-center gap-4 text-[10px] text-zinc-300 font-mono mb-4">
-                      <span className="flex items-center gap-1.5">
-                        <Clock size={11} className="text-rose-500" />
-                        {post.readTime} min read
-                      </span>
-                      <span className="flex items-center gap-1.5">
-                        <Calendar size={11} className="text-rose-500" />
-                        {post.date}
-                      </span>
-                    </div>
-
-                    {/* Title */}
-                    <h3 className="text-sm sm:text-base md:text-lg lg:text-xl font-bold text-white mb-6 leading-snug line-clamp-2 drop-shadow-md">
-                      {post.title}
-                    </h3>
-
-                    {/* CTA Button */}
-                    {isActive ? (
-                      <Link
-                        href={`/insights/${categorySlug}/${post.id}`}
-                        className="inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white transition-all duration-300 hover:shadow-[0_0_25px_rgba(225,29,72,0.35)] hover:-translate-y-0.5"
-                      >
-                        Read Article
-                        <span className="ml-1.5">→</span>
-                      </Link>
-                    ) : (
-                      <div className="inline-flex items-center justify-center px-5 py-2.5 rounded-xl text-[10px] sm:text-xs font-bold tracking-wider uppercase bg-white/5 border border-white/10 text-white opacity-40">
-                        Read Article
-                      </div>
-                    )}
-                  </div>
-                </motion.div>
-              );
-            })}
-          </div>
-
-          {/* Navigation Arrow Right */}
-          {N > 1 && (
-            <button
-              onClick={handleNext}
-              className="absolute right-0 md:right-4 z-40 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white text-zinc-900 shadow-xl hover:bg-zinc-100 active:scale-95 flex items-center justify-center transition-all duration-200 border border-zinc-200/20"
-              aria-label="Next Slide"
-            >
-              <ChevronRight size={20} className="stroke-[2.5]" />
-            </button>
-          )}
-
+            </motion.div>
+          </AnimatePresence>
         </div>
+
       </div>
     </section>
   );

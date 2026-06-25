@@ -16,6 +16,18 @@ import { HiringProcess } from "@/sections/careers/HiringProcess";
 import { EmployeeStories } from "@/sections/careers/EmployeeStories";
 import { TalentNetwork } from "@/sections/careers/TalentNetwork";
 import { Job } from "@/sections/careers/careersData";
+import { SectionNavbar } from "@/components/ui/SectionNavbar";
+
+const careersSections = [
+  { id: "overview", label: "Overview" },
+  { id: "why-join", label: "Why Join" },
+  { id: "culture", label: "Culture" },
+  { id: "values", label: "Values" },
+  { id: "growth", label: "Growth" },
+  { id: "open-positions", label: "Roles" },
+  { id: "hiring-process", label: "Hiring" },
+  { id: "talent-network", label: "Network" }
+];
 
 export default function CareersPage() {
   const [activeJob, setActiveJob] = useState<Job | null>(null);
@@ -143,6 +155,7 @@ export default function CareersPage() {
       )}
 
       {/* Structured Careers Components */}
+      <SectionNavbar sections={careersSections} />
       <CareersHero />
       <WhyJoin />
       <LifeAtDevopstrio />

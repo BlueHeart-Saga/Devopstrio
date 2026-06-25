@@ -52,24 +52,18 @@ export function LifeAtDevopstrio() {
       <StickyNote text="Manikandan, Founder & CEO" color="bg-[#ffea79] text-zinc-900" className="top-[18%] left-[20%] md:left-[25%]" rotate={3} />
       <PhotoCard src="/assets/careers/lifeat-devopstrio/1.png" className="top-[35%] left-[5%] md:left-[15%]" rotate={-4} />
       <PhotoCard src="/assets/careers/lifeat-devopstrio/4.png" className="top-[60%] left-[8%] md:left-[12%]" rotate={5} />
-      <Cursor name="Matt" color="#ff5975" className="top-[12%] left-[18%]" rotate={-20} />
-      <Cursor name="Emilio" color="#4f46e5" className="top-[45%] left-[22%]" rotate={15} />
 
       {/* --- BOTTOM LEFT QUADRANT --- */}
       <Emoji symbol="🔥" className="bottom-[45%] left-[25%]" />
       <StickyNote text="Kandan, Development" color="bg-[#ffcce5] text-zinc-900" className="bottom-[15%] left-[10%] md:left-[20%]" rotate={-5} />
       <PhotoCard src="/assets/careers/lifeat-devopstrio/5.png" className="bottom-[5%] left-[25%] md:left-[28%]" rotate={-6} />
-      <Cursor name="Irina" color="#1e1b4b" className="bottom-[28%] left-[32%]" rotate={-10} />
-      <Cursor name="Suzanne" color="#8b5cf6" className="bottom-[10%] left-[5%]" rotate={45} />
       <Emoji symbol="💥" className="bottom-[35%] left-[8%] text-red-500 scale-150 opacity-60" />
 
       {/* --- TOP RIGHT QUADRANT --- */}
-      <Cursor name="Olga" color="#0ea5e9" className="top-[8%] right-[35%]" rotate={-15} />
       <WhiteCard text="Jonas, Cloud Architect" className="top-[18%] right-[32%]" rotate={1} />
       <StickyNote text="Security & Compliance" color="bg-[#a3e635] text-zinc-900" className="top-[20%] right-[10%] md:right-[15%]" rotate={-3} />
       <PhotoCard src="/assets/careers/lifeat-devopstrio/2.png" className="top-[40%] right-[30%]" rotate={4} />
       <PhotoCard src="/assets/careers/lifeat-devopstrio/6.png" className="top-[10%] right-[5%] md:right-[10%]" rotate={-8} />
-      <Cursor name="Catherine" color="#10b981" className="top-[35%] right-[18%]" rotate={30} />
       <Emoji symbol="👋" className="top-[15%] right-[28%]" />
 
       {/* --- BOTTOM RIGHT QUADRANT --- */}
@@ -77,13 +71,9 @@ export function LifeAtDevopstrio() {
       <PhotoCard src="/assets/careers/lifeat-devopstrio/3.png" className="bottom-[8%] right-[40%] md:right-[35%]" rotate={-2} />
       <PhotoCard src="/assets/careers/lifeat-devopstrio/7.png" className="bottom-[35%] right-[8%] md:right-[12%]" rotate={7} />
       <PhotoCard src="/assets/careers/lifeat-devopstrio/8.png" className="bottom-[55%] right-[25%] md:right-[30%]" rotate={-3} />
-      <Cursor name="Salman" color="#3b82f6" className="bottom-[22%] right-[30%]" rotate={-30} />
-      <Cursor name="Joanne" color="#64748b" className="bottom-[8%] right-[10%]" rotate={10} />
       <Emoji symbol="😂" className="bottom-[25%] right-[40%]" />
       
-      {/* Central-ish Cursors/Items */}
-      <Cursor name="Frederic" color="#f43f5e" className="top-[55%] left-[45%]" rotate={-45} />
-      <Cursor name="Jonas" color="#fda4af" className="top-[45%] right-[45%]" rotate={60} />
+      {/* Central-ish Items */}
       <WhiteCard text="DevOps Engineers" className="bottom-[30%] left-[42%] bg-[#fbbf24]" rotate={-2} />
 
     </section>
@@ -168,29 +158,6 @@ export function LifeAtDevopstrio() {
       >
         <div className="w-24 h-24 md:w-36 md:h-36 bg-zinc-100 overflow-hidden shadow-inner">
           <img src={src} alt="Team Member" className="w-full h-full object-cover pointer-events-none" />
-        </div>
-      </motion.div>
-    );
-  }
-
-  function Cursor({ name, color, className, rotate = 0 }: { name: string, color: string, className: string, rotate?: number }) {
-    return (
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ delay: 0.3 }}
-        className={`absolute flex flex-col items-start drop-shadow-md z-20 pointer-events-none ${className}`}
-      >
-        <motion.svg 
-          animate={{ rotate: [rotate, rotate - 5, rotate + 5, rotate] }}
-          transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-          width="24" height="24" viewBox="0 0 24 24" fill={color} xmlns="http://www.w3.org/2000/svg" className="transform"
-        >
-          <path d="M4 2L20 10L13 13L10 20L4 2Z" fill={color} stroke="white" strokeWidth="2" strokeLinejoin="round"/>
-        </motion.svg>
-        <div className={`px-2 py-0.5 rounded-full text-[10px] md:text-xs font-bold text-white shadow-sm mt-1 ml-4 whitespace-nowrap`} style={{ backgroundColor: color }}>
-          {name}
         </div>
       </motion.div>
     );
