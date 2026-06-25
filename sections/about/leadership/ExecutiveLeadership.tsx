@@ -284,8 +284,8 @@ export const ExecutiveLeadership = () => {
                     TEAM
                   </span>
                 </div>
-                {/* Redesigned grid (4 columns) */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 max-w-6xl mx-auto relative z-10 text-left">
+                   {/* Redesigned grid (5 columns) */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5 max-w-7xl mx-auto relative z-10 text-left">
                   
                   {/* Card 1: Join the Team (Mockup style) */}
                   <motion.div
@@ -298,7 +298,7 @@ export const ExecutiveLeadership = () => {
                     <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,23,68,0.03),transparent_50%)] pointer-events-none" />
                     <div>
                       <span className="text-[9px] font-bold text-[#FF1744] uppercase tracking-widest block mb-3 font-mono">Join the Team</span>
-                      <h3 className="text-lg md:text-xl font-bold text-white tracking-tight mb-2">
+                      <h3 className="text-base font-bold text-white tracking-tight mb-2">
                         Want to shape the future of Cloud &amp; AI?
                       </h3>
                       <p className="text-zinc-550 text-[11px] leading-relaxed mb-6">
@@ -316,7 +316,7 @@ export const ExecutiveLeadership = () => {
 
                   {/* Leaders Cards */}
                   {leaders.map((leader, idx) => {
-                    const isExtra = idx >= 3; // Extra team members that show on scroll (beyond Row 1)
+                    const isExtra = idx >= 4; // Extra team members that show on scroll (beyond Row 1)
                     
                     return (
                       <motion.div
@@ -327,7 +327,7 @@ export const ExecutiveLeadership = () => {
                         viewport={{ once: true, margin: isExtra ? "-80px" : "0px" }}
                         transition={{ 
                           duration: 0.7, 
-                          delay: isExtra ? (idx - 3) * 0.12 : idx * 0.08, 
+                          delay: isExtra ? (idx - 4) * 0.12 : idx * 0.08, 
                           ease: [0.215, 0.61, 0.355, 1] 
                         }}
                       >
@@ -368,27 +368,7 @@ export const ExecutiveLeadership = () => {
                     );
                   })}
 
-                  {/* Card 10: Standards (Content Card 2) */}
-                  <motion.div
-                    className="flex flex-col justify-between p-6 bg-[#0B0B0D]/80 border border-zinc-900 rounded-[2rem] shadow-lg relative overflow-hidden group h-full hover:border-zinc-800/80 transition-all duration-300"
-                    initial={{ opacity: 0, y: 70 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, margin: "-80px" }}
-                    transition={{ duration: 0.7, delay: 0.1, ease: [0.215, 0.61, 0.355, 1] }}
-                  >
-                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,23,68,0.02),transparent_50%)] pointer-events-none" />
-                    <div>
-                      <span className="text-[9px] font-bold text-[#FF1744] uppercase tracking-widest block mb-3 font-mono">Standards</span>
-                      <h3 className="text-lg md:text-xl font-bold text-white tracking-tight mb-2">
-                        Professional Credentials
-                      </h3>
-                      <p className="text-zinc-550 text-[11px] leading-relaxed">
-                        Our cloud architects and security engineers are 100% certified across AWS, Azure, GCP, and Kubernetes.
-                      </p>
-                    </div>
-                  </motion.div>
-
-                  {/* Card 11: Global Delivery (Content Card 3) */}
+                  {/* Careers (Content Card - Last Row Right) */}
                   <motion.div
                     className="flex flex-col justify-between p-6 bg-[#0B0B0D]/80 border border-zinc-900 rounded-[2rem] shadow-lg relative overflow-hidden group h-full hover:border-zinc-800/80 transition-all duration-300"
                     initial={{ opacity: 0, y: 70 }}
@@ -396,30 +376,10 @@ export const ExecutiveLeadership = () => {
                     viewport={{ once: true, margin: "-80px" }}
                     transition={{ duration: 0.7, delay: 0.2, ease: [0.215, 0.61, 0.355, 1] }}
                   >
-                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,23,68,0.02),transparent_50%)] pointer-events-none" />
-                    <div>
-                      <span className="text-[9px] font-bold text-[#FF1744] uppercase tracking-widest block mb-3 font-mono">Operations</span>
-                      <h3 className="text-lg md:text-xl font-bold text-white tracking-tight mb-3">
-                        Distributed Synergy
-                      </h3>
-                      <p className="text-zinc-550 text-[11px] leading-relaxed">
-                        Operating across 4+ global hubs to provide uninterrupted support and co-development services.
-                      </p>
-                    </div>
-                  </motion.div>
-
-                  {/* Card 12: Careers (Content Card 4 - Last Row Right) */}
-                  <motion.div
-                    className="flex flex-col justify-between p-6 bg-[#0B0B0D]/80 border border-zinc-900 rounded-[2rem] shadow-lg relative overflow-hidden group h-full hover:border-zinc-800/80 transition-all duration-300"
-                    initial={{ opacity: 0, y: 70 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, margin: "-80px" }}
-                    transition={{ duration: 0.7, delay: 0.3, ease: [0.215, 0.61, 0.355, 1] }}
-                  >
                     <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,23,68,0.03),transparent_50%)] pointer-events-none" />
                     <div>
                       <span className="text-[9px] font-bold text-[#FF1744] uppercase tracking-widest block mb-3 font-mono">Careers</span>
-                      <h3 className="text-lg md:text-xl font-bold text-white tracking-tight mb-2">
+                      <h3 className="text-base font-bold text-white tracking-tight mb-2">
                         Work with Our Experts
                       </h3>
                       <p className="text-zinc-550 text-[11px] leading-relaxed mb-6">
