@@ -82,7 +82,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   // 4. Ecosystem Category Hubs & Subpages (Dynamically Generated)
   const ecosystemPages: MetadataRoute.Sitemap = [];
-  
+
   Object.keys(ecosystemSubpages).forEach((domainSlug) => {
     // Add the main domain page
     ecosystemPages.push({
@@ -102,7 +102,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
           changeFrequency: "weekly",
           priority: 0.7
         });
-        
+
         // Add all subpages of saas-platforms
         const saasSubpages = ["brio", "campix", "homela", "humanex", "prestivo", "safesign"];
         saasSubpages.forEach((slug) => {
