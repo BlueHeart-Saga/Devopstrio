@@ -5,63 +5,59 @@ import { ArrowLeft, ArrowRight, Star } from "lucide-react";
 
 const advisors = [
   {
-    initials: "EA",
     name: "Enterprise Strategy Advisor",
     background: "Former CTO — Global Technology Group",
-    expertise: "Enterprise Strategy · Digital Transformation",
+    expertise: "Enterprise Strategy",
     experience: "20+ Years",
+    photo: "/assets/About-page/advisor_strategy.png",
     color: "rose",
   },
   {
-    initials: "CA",
     name: "Cloud Transformation Advisor",
-    background: "Former VP Engineering — Cloud Platform Firm",
-    expertise: "Cloud Architecture · Multi-cloud Strategy",
+    background: "Former VP Engineering — Cloud Platform",
+    expertise: "Cloud Architecture",
     experience: "18+ Years",
+    photo: "/assets/About-page/advisor_cloud.png",
     color: "violet",
   },
   {
-    initials: "AA",
     name: "AI & Data Advisor",
-    background: "Chief Data Scientist — Fortune 100 Enterprise",
-    expertise: "AI Innovation · Machine Learning · DataOps",
+    background: "Chief Data Scientist — Fortune 100",
+    expertise: "AI & Machine Learning",
     experience: "15+ Years",
+    photo: "/assets/About-page/advisor_ai.png",
     color: "emerald",
   },
   {
-    initials: "SA",
     name: "Cybersecurity Advisor",
     background: "Former CISO — Financial Services Group",
-    expertise: "Cybersecurity Governance · Zero Trust",
+    expertise: "Zero Trust Security",
     experience: "22+ Years",
+    photo: "/assets/About-page/advisor_security.png",
     color: "amber",
   },
 ];
 
-const colorMap: Record<string, { avatar: string; glow: string; border: string; text: string }> = {
+const colorMap: Record<string, { tag: string; glow: string; border: string }> = {
   rose: { 
-    avatar: "from-rose-500/20 via-rose-500/5 to-transparent border-rose-500/30 text-rose-400", 
-    glow: "bg-[radial-gradient(circle_at_top_left,rgba(244,63,94,0.08),transparent_60%)]",
-    border: "hover:border-rose-500/30",
-    text: "text-rose-400"
+    tag: "bg-rose-500/10 border-rose-500/20 text-rose-400", 
+    glow: "bg-[radial-gradient(circle_at_top_left,rgba(244,63,94,0.06),transparent_60%)]",
+    border: "hover:border-rose-500/30"
   },
   violet: { 
-    avatar: "from-violet-500/20 via-violet-500/5 to-transparent border-violet-500/30 text-violet-400", 
-    glow: "bg-[radial-gradient(circle_at_top_left,rgba(139,92,246,0.08),transparent_60%)]",
-    border: "hover:border-violet-500/30",
-    text: "text-violet-400"
+    tag: "bg-violet-500/10 border-violet-500/20 text-violet-400", 
+    glow: "bg-[radial-gradient(circle_at_top_left,rgba(139,92,246,0.06),transparent_60%)]",
+    border: "hover:border-violet-500/30"
   },
   emerald: { 
-    avatar: "from-emerald-500/20 via-emerald-500/5 to-transparent border-emerald-500/30 text-emerald-400", 
-    glow: "bg-[radial-gradient(circle_at_top_left,rgba(16,185,129,0.08),transparent_60%)]",
-    border: "hover:border-emerald-500/30",
-    text: "text-emerald-400"
+    tag: "bg-emerald-500/10 border-emerald-500/20 text-emerald-400", 
+    glow: "bg-[radial-gradient(circle_at_top_left,rgba(16,185,129,0.06),transparent_60%)]",
+    border: "hover:border-emerald-500/30"
   },
   amber: { 
-    avatar: "from-amber-500/20 via-amber-500/5 to-transparent border-amber-500/30 text-amber-400", 
-    glow: "bg-[radial-gradient(circle_at_top_left,rgba(245,158,11,0.08),transparent_60%)]",
-    border: "hover:border-amber-500/30",
-    text: "text-amber-400"
+    tag: "bg-amber-500/10 border-amber-500/20 text-amber-400", 
+    glow: "bg-[radial-gradient(circle_at_top_left,rgba(245,158,11,0.06),transparent_60%)]",
+    border: "hover:border-amber-500/30"
   },
 };
 
@@ -71,7 +67,7 @@ export const AdvisoryBoard = () => {
   const handleScroll = (direction: "left" | "right") => {
     if (scrollRef.current) {
       const { scrollLeft } = scrollRef.current;
-      const scrollAmount = 380; // Approximate card width + gap
+      const scrollAmount = 380; // Card width + gap
       const scrollTo = direction === "left" ? scrollLeft - scrollAmount : scrollLeft + scrollAmount;
       scrollRef.current.scrollTo({ left: scrollTo, behavior: "smooth" });
     }
@@ -79,53 +75,52 @@ export const AdvisoryBoard = () => {
 
   return (
     <section className="py-24 bg-[#030303] border-t border-zinc-900 relative overflow-hidden">
-      {/* Background glow effects */}
+      {/* Ambient background glows */}
       <div className="absolute -left-40 top-1/4 w-96 h-96 rounded-full bg-rose-500/5 blur-[120px] pointer-events-none" />
       <div className="absolute -right-40 bottom-1/4 w-96 h-96 rounded-full bg-violet-500/5 blur-[120px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        {/* Row 1: Header (Mockup inspired layout) */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-12">
+          <div className="lg:col-span-7">
+            <motion.span
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              className="text-[10px] font-mono tracking-widest text-[#FF1744] uppercase font-bold block mb-4"
+            >
+              Governance &amp; Insights
+            </motion.span>
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-3xl md:text-5xl font-bold text-white tracking-tight mb-2 leading-tight"
+            >
+              Global Counsel.<br />
+              <span className="text-[#FF1744]">Strategic Vision.</span>
+            </motion.h2>
+          </div>
           
-          {/* Left Column: Heading & Navigation (lg:col-span-4) */}
-          <div className="lg:col-span-4 flex flex-col justify-between h-full pr-0 lg:pr-8">
-            <div>
-              <motion.span
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-                className="text-[10px] font-mono tracking-widest text-[#FF1744] uppercase font-bold block mb-4"
-              >
-                Governance &amp; Insights
-              </motion.span>
-              
-              <motion.h2
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="text-3xl md:text-5xl font-bold text-white tracking-tight mb-5 leading-tight"
-              >
-                Global Counsel.<br />
-                <span className="text-[#FF1744]">Strategic Vision.</span>
-              </motion.h2>
-              
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.1 }}
-                className="text-zinc-550 text-sm md:text-base leading-relaxed mb-8"
-              >
-                Our advisors bring decades of board-level experience across cloud systems, enterprise architecture, security governance, and cognitive AI computing to steer our technical path.
-              </motion.p>
-            </div>
-
-            {/* Slider Controls (Mockup Style) */}
+          <div className="lg:col-span-5 flex flex-col justify-between h-full pt-2">
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="text-zinc-500 text-sm md:text-base leading-relaxed mb-6"
+            >
+              Our advisors bring decades of board-level experience across cloud systems, enterprise architecture, security governance, and cognitive AI computing to steer our technical path.
+            </motion.p>
+            
+            {/* Navigation Slider Controls */}
             <motion.div
               initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="flex items-center gap-3 mt-4 lg:mt-8"
+              className="flex items-center gap-3"
             >
               <button
                 onClick={() => handleScroll("left")}
@@ -143,67 +138,80 @@ export const AdvisoryBoard = () => {
               </button>
             </motion.div>
           </div>
+        </div>
 
-          {/* Right Column: Horizontal Cards Slider (lg:col-span-8) */}
-          <div className="lg:col-span-8 relative">
-            {/* Fade overlays on edges */}
-            <div className="absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-[#030303] to-transparent z-15 pointer-events-none hidden md:block" />
-            <div className="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-[#030303] to-transparent z-15 pointer-events-none hidden md:block" />
+        {/* Row 2: Widescreen Boardroom Banner Image (Mockup-inspired) */}
+        <motion.div
+          initial={{ opacity: 0, y: 35 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="relative w-full aspect-[21/9] overflow-hidden rounded-[2rem] border border-zinc-900 bg-zinc-950 mb-16 group shadow-[0_0_50px_rgba(0,0,0,0.8)]"
+        >
+          <div className="absolute inset-0 bg-gradient-to-t from-[#030303]/60 via-transparent to-[#030303]/20 z-10 pointer-events-none" />
+          <img
+            src="/assets/About-page/advisory_board_banner.png"
+            alt="Advisory Board Boardroom Collaboration"
+            className="w-full h-full object-cover object-center group-hover:scale-[1.02] transition-transform duration-1000 ease-out"
+          />
+        </motion.div>
 
-            <div
-              ref={scrollRef}
-              className="flex gap-6 overflow-x-auto scrollbar-hide snap-x snap-mandatory py-4 px-1"
-              style={{
-                scrollbarWidth: "none",
-                msOverflowStyle: "none",
-              }}
-            >
-              {advisors.map((advisor, idx) => {
-                const c = colorMap[advisor.color];
-                return (
-                  <motion.div
-                    key={idx}
-                    initial={{ opacity: 0, x: 50 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6, delay: idx * 0.08, ease: [0.215, 0.61, 0.355, 1] }}
-                    className={`w-[300px] md:w-[350px] shrink-0 snap-start bg-[#0B0B0D] border border-zinc-900 ${c.border} rounded-[2rem] p-5 pb-6 flex flex-col justify-between relative overflow-hidden group shadow-xl transition-all duration-300`}
-                  >
-                    {/* Radial glow background */}
-                    <div className={`absolute inset-0 ${c.glow} pointer-events-none opacity-50 group-hover:opacity-100 transition-opacity duration-500`} />
+        {/* Row 3: Horizontal Cards Slider */}
+        <div className="relative">
+          {/* Edge fades */}
+          <div className="absolute left-0 top-0 bottom-0 w-12 bg-gradient-to-r from-[#030303] to-transparent z-15 pointer-events-none hidden md:block" />
+          <div className="absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-[#030303] to-transparent z-15 pointer-events-none hidden md:block" />
 
-                    <div>
-                      {/* Initials Badge */}
-                      <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${c.avatar} border flex items-center justify-center text-lg font-black tracking-wider shadow-inner mb-6 relative overflow-hidden`}>
-                        {advisor.initials}
-                      </div>
+          <div
+            ref={scrollRef}
+            className="flex gap-6 overflow-x-auto scrollbar-hide snap-x snap-mandatory py-4 px-1"
+            style={{
+              scrollbarWidth: "none",
+              msOverflowStyle: "none",
+            }}
+          >
+            {advisors.map((advisor, idx) => {
+              const c = colorMap[advisor.color];
+              return (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, x: 50 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: idx * 0.08, ease: [0.215, 0.61, 0.355, 1] }}
+                  className={`w-[280px] md:w-[320px] shrink-0 snap-start bg-[#0B0B0D] border border-zinc-900 ${c.border} rounded-[2rem] p-3 pb-4 flex flex-col justify-between relative overflow-hidden group shadow-xl transition-all duration-300`}
+                >
+                  {/* Color Glow Overlay */}
+                  <div className={`absolute inset-0 ${c.glow} pointer-events-none opacity-40 group-hover:opacity-100 transition-opacity duration-500`} />
 
-                      {/* Info */}
-                      <h3 className="text-white font-bold text-lg tracking-tight mb-1.5 group-hover:text-[#FF1744] transition-colors duration-300">
-                        {advisor.name}
-                      </h3>
-                      <p className="text-zinc-550 text-[12px] leading-relaxed mb-6 font-medium">
-                        {advisor.background}
-                      </p>
+                  <div>
+                    {/* Concentric Image Wrapper with Padding */}
+                    <div className="relative w-full aspect-[4/5] bg-zinc-950 overflow-hidden rounded-[1.5rem] block">
+                      <img
+                        src={advisor.photo}
+                        alt={advisor.name}
+                        className="absolute inset-0 w-full h-full object-cover object-top filter grayscale contrast-110 group-hover:grayscale-0 transition-all duration-500"
+                      />
                     </div>
 
-                    {/* Metadata Footer */}
-                    <div className="pt-4 border-t border-zinc-900/50 flex justify-between items-center mt-auto">
-                      <div className="flex items-center gap-1.5">
-                        <Star className="w-3.5 h-3.5 text-yellow-500 fill-yellow-500" />
-                        <span className="text-[11px] text-zinc-400 font-mono font-bold tracking-tight">{advisor.experience}</span>
+                    {/* Name & Designation Badge below photo */}
+                    <div className="pt-4 px-2 flex justify-between items-center bg-[#0B0B0D] relative z-10">
+                      <div>
+                        <p className="text-white text-sm font-bold tracking-tight mb-0.5 group-hover:text-[#FF1744] transition-colors duration-300">{advisor.name}</p>
+                        <p className="text-zinc-550 text-[10px] font-mono leading-none">{advisor.background.split(" — ")[0]}</p>
                       </div>
-                      <span className="px-2.5 py-0.5 rounded-full border border-zinc-800 text-[9px] text-zinc-500 font-mono font-semibold uppercase tracking-wider bg-zinc-950/40">
-                        {advisor.expertise.split(" · ")[0]}
+                      <span className={`px-2.5 py-0.5 rounded-full border text-[9px] font-mono font-semibold uppercase tracking-wider bg-zinc-950/40 shrink-0 ${c.tag}`}>
+                        {advisor.experience}
                       </span>
                     </div>
-                  </motion.div>
-                );
-              })}
-            </div>
-          </div>
+                  </div>
 
+                </motion.div>
+              );
+            })}
+          </div>
         </div>
+
       </div>
     </section>
   );

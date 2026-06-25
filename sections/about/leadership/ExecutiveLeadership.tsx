@@ -266,8 +266,26 @@ export const ExecutiveLeadership = () => {
 
         {/* Redesigned Team Cards Container (Mockup-inspired) */}
         <Reveal>
+          {/* Section Header */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-16 max-w-7xl mx-auto relative z-10 text-left">
+            <div className="lg:col-span-7">
+              <span className="text-[10px] font-mono tracking-widest text-[#FF1744] uppercase font-bold block mb-4">
+                Talent &amp; Operations
+              </span>
+              <h2 className="text-3xl md:text-5xl font-bold text-white tracking-tight mb-2 leading-tight">
+                Our Experts.<br />
+                <span className="text-[#FF1744]">Talent Excellence.</span>
+              </h2>
+            </div>
+            <div className="lg:col-span-5 flex flex-col justify-between h-full pt-2">
+              <p className="text-zinc-500 text-sm md:text-base leading-relaxed">
+                Meet the architects, engineers, consultants, and specialists shaping the future of AI, Cloud, DevOps, Cybersecurity, and Digital Transformation.
+              </p>
+            </div>
+          </div>
+
           {/* Redesigned grid (5 columns) */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5 max-w-7xl mx-auto relative z-10 text-left mt-16 md:mt-24">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5 max-w-7xl mx-auto relative z-10 text-left mt-6">
                   
                   {/* Card 1: Join the Team (Mockup style) */}
                   <motion.div
