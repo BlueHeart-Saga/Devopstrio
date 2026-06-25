@@ -266,26 +266,8 @@ export const ExecutiveLeadership = () => {
 
         {/* Redesigned Team Cards Container (Mockup-inspired) */}
         <Reveal>
-          <div className="relative rounded-3xl overflow-hidden border border-zinc-900 bg-zinc-950/20 p-8 md:p-12 lg:p-14">
-
-            {/* Dot grid texture */}
-            <div className="absolute inset-0 opacity-[0.03] pointer-events-none"
-              style={{ backgroundImage: "radial-gradient(circle, #fff 1px, transparent 1px)", backgroundSize: "24px 24px" }} />
-              
-            <div className="relative z-10 flex flex-col items-center">
-              
-              <div className="relative w-full z-10">
-                {/* Background watermark text "Our TEAM" */}
-                <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none select-none z-0">
-                  <span className="font-serif italic font-normal text-rose-500/5 text-[8vw] leading-none lowercase first-letter:uppercase mb-2">
-                    Our
-                  </span>
-                  <span className="font-black text-zinc-900/40 text-[15vw] leading-none tracking-tighter uppercase">
-                    TEAM
-                  </span>
-                </div>
-                   {/* Redesigned grid (5 columns) */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5 max-w-7xl mx-auto relative z-10 text-left">
+          {/* Redesigned grid (5 columns) */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5 max-w-7xl mx-auto relative z-10 text-left mt-16 md:mt-24">
                   
                   {/* Card 1: Join the Team (Mockup style) */}
                   <motion.div
@@ -396,9 +378,6 @@ export const ExecutiveLeadership = () => {
                   </motion.div>
 
                 </div>
-              </div>
-            </div>
-          </div>
         </Reveal>
 
       </div>
