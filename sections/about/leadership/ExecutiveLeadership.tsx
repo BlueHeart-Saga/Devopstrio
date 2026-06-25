@@ -285,12 +285,12 @@ export const ExecutiveLeadership = () => {
                   </span>
                 </div>
                 
-                {/* Redesigned grid (3 columns) */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto relative z-10 text-left">
+                {/* Redesigned grid (4 columns) */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 max-w-6xl mx-auto relative z-10 text-left">
                   
                   {/* Card 1: Join the Team (Mockup style) */}
                   <motion.div
-                    className="flex flex-col justify-between p-8 bg-[#0B0B0D]/80 border border-zinc-900 rounded-[1.75rem] shadow-lg relative overflow-hidden group min-h-[380px]"
+                    className="flex flex-col justify-between p-6 bg-[#0B0B0D]/80 border border-zinc-900 rounded-[1.75rem] shadow-lg relative overflow-hidden group h-full"
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
@@ -298,37 +298,37 @@ export const ExecutiveLeadership = () => {
                   >
                     <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,23,68,0.03),transparent_50%)] pointer-events-none" />
                     <div>
-                      <span className="text-[10px] font-bold text-[#FF1744] uppercase tracking-widest block mb-4 font-mono">Join the Team</span>
-                      <h3 className="text-xl md:text-2xl font-bold text-white tracking-tight mb-3">
+                      <span className="text-[9px] font-bold text-[#FF1744] uppercase tracking-widest block mb-3 font-mono">Join the Team</span>
+                      <h3 className="text-lg md:text-xl font-bold text-white tracking-tight mb-2">
                         Want to shape the future of Cloud &amp; AI?
                       </h3>
-                      <p className="text-zinc-500 text-[11.5px] leading-relaxed">
+                      <p className="text-zinc-500 text-[11px] leading-relaxed mb-6">
                         Join us and build robust, cloud-native systems and cognitive engines that inspire change.
                       </p>
                     </div>
                     <a
                       href="/contact"
-                      className="inline-flex items-center gap-2 px-5 py-2.5 bg-zinc-900 border border-zinc-800 hover:border-zinc-700 text-white hover:text-[#FF1744] text-xs font-bold rounded-full transition-all w-fit shadow-md active:scale-95 group/btn"
+                      className="inline-flex items-center gap-1.5 px-4 py-2 bg-zinc-900 border border-zinc-800 hover:border-zinc-700 text-white hover:text-[#FF1744] text-[11px] font-bold rounded-full transition-all w-fit shadow-md active:scale-95 group/btn"
                     >
                       Apply Now
-                      <ArrowRight size={14} className="transition-transform duration-300 group-hover/btn:translate-x-1" />
+                      <ArrowRight size={12} className="transition-transform duration-300 group-hover/btn:translate-x-1" />
                     </a>
                   </motion.div>
 
                   {/* Leaders Cards */}
                   {leaders.map((leader, idx) => {
-                    const isExtra = idx >= 5; // Extra team members that show on scroll
+                    const isExtra = idx >= 3; // Extra team members that show on scroll (beyond Row 1)
                     
                     return (
                       <motion.div
                         key={idx}
-                        className="bg-[#0B0B0D] border border-zinc-900 rounded-[1.75rem] overflow-hidden group shadow-lg flex flex-col justify-between"
+                        className="bg-[#0B0B0D] border border-zinc-900 rounded-[1.75rem] overflow-hidden group shadow-lg flex flex-col justify-between h-full"
                         initial={{ opacity: 0, y: isExtra ? 70 : 40 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, margin: isExtra ? "-80px" : "0px" }}
                         transition={{ 
                           duration: 0.7, 
-                          delay: isExtra ? (idx - 5) * 0.15 : idx * 0.08, 
+                          delay: isExtra ? (idx - 3) * 0.12 : idx * 0.08, 
                           ease: [0.215, 0.61, 0.355, 1] 
                         }}
                       >
