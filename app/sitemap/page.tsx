@@ -74,10 +74,12 @@ const sitemapData: SitemapCategory[] = [
       { name: "Strategic Partnerships", href: "/ecosystem/partnerships", desc: "Certified co-engineering ties with AWS, GCP, and Azure." },
       { name: "R&D Innovation Labs", href: "/ecosystem/innovation-labs", desc: "Prototyping future AI pipelines and Edge computing architectures." },
       { name: "Platforms & Solutions", href: "/ecosystem/platforms-solutions", desc: "Our proprietary open-source tools and infrastructure templates." },
+      { name: "SaaS Platforms", href: "/ecosystem/platforms-solutions/saas-platforms", desc: "Enterprise SaaS products, digital platforms, and business applications." },
       { name: "Technology Stack", href: "/ecosystem/technology-stack", desc: "An overview of all components, libraries, and runtimes we build with." },
       { name: "Global Delivery Network", href: "/ecosystem/global-delivery", desc: "Distributed team nodes ensuring follow-the-sun service reliability." },
       { name: "Engineering Excellence", href: "/ecosystem/engineering-excellence", desc: "Our rigorous code standards, peer reviews, and SRE principles." },
-      { name: "Accelerators & Frameworks", href: "/ecosystem/accelerators-frameworks", desc: "Modular startup code bases that trim weeks off project lifecycles." }
+      { name: "Accelerators & Frameworks", href: "/ecosystem/accelerators-frameworks", desc: "Modular startup code bases that trim weeks off project lifecycles." },
+      { name: "Community & Talent Network", href: "/ecosystem/community-talent-network", desc: "Open-source projects, university programs, and developer certification tracks." }
     ]
   },
   {
@@ -104,15 +106,19 @@ const sitemapData: SitemapCategory[] = [
     icon: HeartHandshake,
     accentColor: "from-amber-500 to-orange-600",
     items: [
+      { name: "About Us", href: "/about", desc: "Overview of Devopstrio identity, values, and global presence." },
       { name: "Company Overview", href: "/about/company-overview", desc: "Our founding story, mission, and vision statements." },
       { name: "Leadership & Team", href: "/about/leadership-team", desc: "The expert engineering leads directing Devopstrio." },
       { name: "Life at Devopstrio", href: "/about/life-at-devopstrio", desc: "A showcase of our work environment and team perks." },
+      { name: "Global Internship", href: "/about/global-internship", desc: "Launch your technology career with our structured bootcamp program." },
       { name: "Global Presence", href: "/about/global-presence", desc: "Interactive map of our developer hubs and sales offices." },
       { name: "Partnerships & Certifications", href: "/about/partnerships-certifications", desc: "Enterprise certifications that qualify our cloud delivery." },
       { name: "Awards & Recognition", href: "/about/awards-recognition", desc: "Our collection of technical and workplace accolades." },
       { name: "Sustainability & CSR", href: "/about/sustainability-csr", desc: "Our pledge to green hostings and community engineering." },
       { name: "Testimonials & Success", href: "/about/testimonials", desc: "Written and recorded feedback from our enterprise clients." },
       { name: "Customer Support", href: "/about/customer-support", desc: "Access 24/7 portals, open billing questions, or ticket systems." },
+      { name: "Careers", href: "/careers", desc: "Join our global team of principal engineers and SREs." },
+      { name: "Open Positions", href: "/careers/jobs", desc: "Explore active engineering, QA, and consulting roles." },
       { name: "Contact Us", href: "/contact", desc: "Submit details to start your custom engineering assessment." }
     ]
   },
