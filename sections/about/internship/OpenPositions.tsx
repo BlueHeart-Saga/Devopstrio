@@ -74,9 +74,13 @@ export const OpenPositions = () => {
         {/* SECTION 1: Opportunities */}
         <div className="mb-24">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-xs uppercase tracking-widest text-rose-500 font-bold">Open Cohort</span>
-            <h2 className="text-3xl sm:text-5xl font-extrabold text-white mt-3 tracking-tight">Active Opportunities</h2>
-            <p className="text-zinc-405 mt-4 text-sm sm:text-base leading-relaxed">
+            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+              Open Cohort
+            </span>
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-4">
+              Active <span className="text-rose-500">Opportunities</span>
+            </h2>
+            <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-bold max-w-2xl mx-auto">
               Explore our current open internship opportunities. Applications are reviewed on a rolling basis.
             </p>
           </div>
@@ -141,10 +145,10 @@ export const OpenPositions = () => {
         <div className="max-w-4xl mx-auto border-t border-zinc-900 pt-24">
           <div className="text-center mb-16">
             <HelpCircle size={32} className="text-rose-500 mx-auto mb-4" />
-            <h2 className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">
-              Frequently Asked Questions
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-4">
+              Frequently Asked <span className="text-rose-500">Questions</span>
             </h2>
-            <p className="text-zinc-405 mt-2 text-xs sm:text-sm font-medium">
+            <p className="text-zinc-400 mt-2 text-xs sm:text-sm font-bold">
               Got questions about our cohort structure and selection process?
             </p>
           </div>

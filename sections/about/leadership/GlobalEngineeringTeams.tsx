@@ -31,7 +31,7 @@ export const GlobalEngineeringTeams = () => {
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-              className="text-[11px] font-mono tracking-widest text-[#FF1744] uppercase font-bold block mb-3"
+              className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 block mb-4"
             >
               Global Engineering Teams
             </motion.span>
@@ -39,15 +39,9 @@ export const GlobalEngineeringTeams = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight"
+              className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-4"
             >
-              Built by
-              <br />
-              <span className="text-[#FF1744]">Specialists.</span>
-              <br />
-              Driven by
-              <br />
-              Collaboration.
+              Built by <span className="text-rose-500">Specialists</span>. Driven by Collaboration.
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 20 }}

@@ -50,7 +50,7 @@ export const ImpactMetrics = () => {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="text-[11px] font-mono tracking-widest text-[#FF1744] uppercase font-bold block mb-3"
+            className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 block mb-4"
           >
             Impact at Scale
           </motion.span>
@@ -58,9 +58,9 @@ export const ImpactMetrics = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-5xl font-bold text-white"
+            className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-4"
           >
-            Outcomes That <span className="text-[#FF1744]">Speak for Themselves</span>
+            Outcomes That <span className="text-rose-500">Speak for Themselves</span>
           </motion.h2>
         </div>
 
@@ -72,11 +72,11 @@ export const ImpactMetrics = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: idx * 0.08 }}
-              className="relative group bg-zinc-900/40 border border-zinc-800 rounded-2xl p-8 text-center overflow-hidden hover:border-red-500/30 transition-colors"
+              className="relative group bg-zinc-900/40 border border-zinc-800 rounded-2xl p-8 text-center overflow-hidden hover:border-rose-500/30 transition-colors"
             >
-              <div className="absolute inset-0 bg-gradient-to-b from-red-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="absolute inset-0 bg-gradient-to-b from-rose-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               <div className="relative z-10">
-                <div className="text-5xl md:text-6xl font-black text-[#FF1744] mb-3 leading-none tabular-nums">
+                <div className="text-5xl md:text-6xl font-black text-rose-500 mb-3 leading-none tabular-nums">
                   {"static" in m
                     ? m.value
                     : <AnimatedNumber target={m.value as number} suffix={m.suffix} decimal={m.decimal} active={visible} />

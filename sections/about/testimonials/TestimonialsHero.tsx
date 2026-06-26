@@ -23,9 +23,8 @@ export const TestimonialsHero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="inline-flex items-center gap-2 mb-7 px-4 py-1.5 rounded-full border border-red-500/20 bg-red-500/8 text-red-400 text-sm font-medium tracking-wider uppercase"
+          className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-6 block"
         >
-          <TrendingUp className="w-4 h-4" />
           Testimonials &amp; Success Center
         </motion.div>
 
@@ -37,7 +36,7 @@ export const TestimonialsHero = () => {
         >
           Trusted by Enterprises.
           <br />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-red-400 to-[#FF1744]">
+          <span className="text-rose-500">
             Measured by Outcomes.
           </span>
         </motion.h1>
@@ -59,7 +58,7 @@ export const TestimonialsHero = () => {
         >
           <a
             href="#case-studies"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-[#FF1744] hover:bg-red-600 text-white rounded-xl font-semibold transition-all shadow-[0_0_30px_rgba(255,23,68,0.4)] hover:shadow-[0_0_50px_rgba(255,23,68,0.6)]"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-rose-500 hover:bg-rose-600 text-white rounded-xl font-semibold transition-all shadow-[0_0_30px_rgba(244,63,94,0.4)] hover:shadow-[0_0_50px_rgba(244,63,94,0.6)]"
           >
             View Success Stories
             <ArrowRight className="w-4 h-4" />
@@ -81,7 +80,7 @@ export const TestimonialsHero = () => {
         >
           {stats.map((s, idx) => (
             <div key={idx} className="bg-zinc-900/60 backdrop-blur-sm px-8 py-7 text-center">
-              <p className="text-3xl md:text-4xl font-black text-white mb-1 hover:text-[#FF1744] transition-colors cursor-default">{s.value}</p>
+              <p className="text-3xl md:text-4xl font-black text-white mb-1 hover:text-rose-500 transition-colors cursor-default">{s.value}</p>
               <p className="text-sm text-zinc-500 font-medium">{s.label}</p>
             </div>
           ))}

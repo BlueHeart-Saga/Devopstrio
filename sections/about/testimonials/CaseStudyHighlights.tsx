@@ -57,7 +57,7 @@ export const CaseStudyHighlights = () => {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="text-[11px] font-mono tracking-widest text-[#FF1744] uppercase font-bold block mb-3"
+            className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 block mb-4"
           >
             Case Studies
           </motion.span>
@@ -65,9 +65,9 @@ export const CaseStudyHighlights = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-5xl font-bold text-white"
+            className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-4"
           >
-            Case Study <span className="text-[#FF1744]">Highlights</span>
+            Case Study <span className="text-rose-500">Highlights</span>
           </motion.h2>
         </div>
 
@@ -80,10 +80,10 @@ export const CaseStudyHighlights = () => {
                 onClick={() => setActive(idx)}
                 className={`flex items-center gap-3 px-5 py-4 rounded-xl border text-left transition-all duration-300 shrink-0 lg:shrink
                   ${active === idx
-                    ? "bg-red-500/10 border-red-500/40 text-white"
+                    ? "bg-rose-500/10 border-rose-500/40 text-white"
                     : "bg-zinc-900/40 border-zinc-800 text-zinc-400 hover:border-zinc-600 hover:text-white"}`}
               >
-                <span className={`text-xs font-mono px-2.5 py-1 rounded-full border ${active === idx ? "text-red-400 bg-red-500/10 border-red-500/30" : "text-zinc-600 bg-zinc-800 border-zinc-700"}`}>
+                <span className={`text-xs font-mono px-2.5 py-1 rounded-full border ${active === idx ? "text-rose-400 bg-rose-500/10 border-rose-500/30" : "text-zinc-600 bg-zinc-800 border-zinc-700"}`}>
                   0{idx + 1}
                 </span>
                 <span className="font-semibold text-sm">{cs.title}</span>
@@ -125,7 +125,7 @@ export const CaseStudyHighlights = () => {
                   ].map((block, i) => (
                     <div key={i}>
                       <div className="flex items-center gap-2 mb-3">
-                        <block.icon className="w-4 h-4 text-[#FF1744]" />
+                        <block.icon className="w-4 h-4 text-rose-500" />
                         <p className="text-[11px] font-mono text-zinc-500 uppercase tracking-widest">{block.label}</p>
                       </div>
                       <p className="text-zinc-300 text-sm leading-relaxed">{block.text}</p>

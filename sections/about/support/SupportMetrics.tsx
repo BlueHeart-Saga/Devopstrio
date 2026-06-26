@@ -45,7 +45,7 @@ const MetricCard = ({ value, suffix, label, decimal }: typeof metrics[0]) => {
 
   return (
     <div ref={ref} className="text-center group">
-      <div className="text-4xl md:text-5xl font-black text-white mb-2 group-hover:text-[#FF1744] transition-colors duration-300 tabular-nums">
+      <div className="text-4xl md:text-5xl font-black text-white mb-2 group-hover:text-rose-500 transition-colors duration-300 tabular-nums">
         {decimal ? count.toFixed(1) : count}{suffix}
       </div>
       <div className="text-sm text-zinc-500 font-medium">{label}</div>
@@ -64,7 +64,7 @@ export const SupportMetrics = () => {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="text-[11px] font-mono tracking-widest text-[#FF1744] uppercase font-bold block mb-3"
+            className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 block mb-4"
           >
             By The Numbers
           </motion.span>
@@ -72,9 +72,9 @@ export const SupportMetrics = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-5xl font-bold text-white"
+            className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-4"
           >
-            Customer Success <span className="text-[#FF1744]">Metrics</span>
+            Customer Success <span className="text-rose-500">Metrics</span>
           </motion.h2>
         </div>
 

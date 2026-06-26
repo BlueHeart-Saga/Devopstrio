@@ -28,7 +28,7 @@ const pillars = [
 
 export const CultureManifesto = () => {
   return (
-    <section className="py-24 bg-[#0A0A0A] relative overflow-hidden">
+    <section className="py-24 bg-black relative overflow-hidden">
       {/* Decorative background elements */}
       <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-red-500/5 blur-[120px] rounded-full pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-1/4 h-1/4 bg-red-600/5 blur-[100px] rounded-full pointer-events-none" />
@@ -44,14 +44,18 @@ export const CultureManifesto = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <h2 className="text-sm font-mono tracking-widest text-[#FF1744] uppercase mb-4 font-bold">Culture Manifesto</h2>
-              <h3 className="text-4xl md:text-5xl font-bold text-white mb-8">How We Work</h3>
+              <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 block mb-4">
+                Culture Manifesto
+              </span>
+              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-4">
+                How We <span className="text-rose-500">Work</span>
+              </h2>
               
-              <div className="space-y-6 text-2xl font-light text-zinc-300">
+              <div className="space-y-6 text-2xl font-light text-zinc-300 mt-8">
                 <p className="hover:text-white transition-colors cursor-default">We <span className="font-semibold text-white">build</span>.</p>
                 <p className="hover:text-white transition-colors cursor-default">We <span className="font-semibold text-white">innovate</span>.</p>
                 <p className="hover:text-white transition-colors cursor-default">We <span className="font-semibold text-white">learn</span>.</p>
-                <p className="hover:text-white transition-colors cursor-default">We <span className="font-semibold text-[#FF1744]">own outcomes</span>.</p>
+                <p className="hover:text-white transition-colors cursor-default">We <span className="font-semibold text-rose-500">own outcomes</span>.</p>
                 <p className="hover:text-white transition-colors cursor-default">We <span className="font-semibold text-white">grow together</span>.</p>
               </div>
             </motion.div>

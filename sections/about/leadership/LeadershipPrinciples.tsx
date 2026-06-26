@@ -35,7 +35,7 @@ const principles = [
 ];
 
 const colorMap: Record<string, { border: string; icon: string; number: string; glow: string }> = {
-  red:    { border: "border-red-500/30 hover:border-red-500/60",    icon: "text-[#FF1744] bg-red-500/10 border-red-500/20",    number: "text-red-500/20",    glow: "from-red-500/6" },
+  red:    { border: "border-red-500/30 hover:border-red-500/60",    icon: "text-rose-500 bg-red-500/10 border-red-500/20",    number: "text-red-500/20",    glow: "from-red-500/6" },
   blue:   { border: "border-blue-500/30 hover:border-blue-500/60",  icon: "text-blue-400 bg-blue-500/10 border-blue-500/20",   number: "text-blue-500/20",   glow: "from-blue-500/6" },
   orange: { border: "border-orange-500/30 hover:border-orange-500/60", icon: "text-orange-400 bg-orange-500/10 border-orange-500/20", number: "text-orange-500/20", glow: "from-orange-500/6" },
   green:  { border: "border-green-500/30 hover:border-green-500/60", icon: "text-green-400 bg-green-500/10 border-green-500/20",  number: "text-green-500/20",  glow: "from-green-500/6" },
@@ -52,7 +52,7 @@ export const LeadershipPrinciples = () => {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="text-[11px] font-mono tracking-widest text-[#FF1744] uppercase font-bold block mb-3"
+            className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 block mb-4"
           >
             Our Principles
           </motion.span>
@@ -60,9 +60,9 @@ export const LeadershipPrinciples = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-5xl font-bold text-white mb-4"
+            className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-4"
           >
-            Leadership <span className="text-[#FF1744]">Principles</span>
+            Leadership <span className="text-rose-500">Principles</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}

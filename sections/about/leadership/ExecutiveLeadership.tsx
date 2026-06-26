@@ -78,13 +78,12 @@ export const ExecutiveLeadership = () => {
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         
-        {/* Section Header */}
         <div className="text-center mb-16">
           <motion.span
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="text-[11px] font-mono tracking-widest text-[#FF1744] uppercase font-bold block mb-3"
+            className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 block mb-4"
           >
             Executive Leadership
           </motion.span>
@@ -92,10 +91,9 @@ export const ExecutiveLeadership = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-5xl font-bold text-white mb-4"
+            className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-4"
           >
-            Guiding Strategy.{" "}
-            <span className="text-[#FF1744]">Accelerating Growth.</span>
+            Guiding Strategy. <span className="text-rose-500">Accelerating Growth.</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -269,17 +267,23 @@ export const ExecutiveLeadership = () => {
           {/* Section Header */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-16 max-w-7xl mx-auto relative z-10 text-left">
             <div className="lg:col-span-7">
-              <span className="text-[10px] font-mono tracking-widest text-[#FF1744] uppercase font-bold block mb-4">
+              <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 block mb-4">
                 Talent &amp; Operations
               </span>
-              <h2 className="text-3xl md:text-5xl font-bold text-white tracking-tight mb-2 leading-tight">
-                Our Experts.<br />
-                <span className="text-[#FF1744]">Talent Excellence.</span>
+              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-4">
+                Our Experts. <span className="text-rose-500">Talent Excellence.</span>
               </h2>
             </div>
-            <div className="lg:col-span-5 flex flex-col justify-between h-full pt-2">
-              <p className="text-zinc-500 text-sm md:text-base leading-relaxed">
-                Meet the architects, engineers, consultants, and specialists shaping the future of AI, Cloud, DevOps, Cybersecurity, and Digital Transformation.
+            <div className="lg:col-span-5 pt-2">
+              <p className="text-zinc-400 text-sm md:text-base font-normal leading-relaxed max-w-xl">
+                Meet the{" "}
+                <span className="text-white font-semibold hover:text-[#FF1744] transition-colors duration-300">architects</span>,{" "}
+                <span className="text-white font-semibold hover:text-[#FF1744] transition-colors duration-300">engineers</span>,{" "}
+                <span className="text-white font-semibold hover:text-[#FF1744] transition-colors duration-300">consultants</span>, and{" "}
+                <span className="text-white font-semibold hover:text-[#FF1744] transition-colors duration-300">specialists</span> shaping the next wave of enterprise solutions.
+                <span className="block mt-2 text-zinc-500 font-light">
+                  We build and run highly resilient infrastructures across multi-cloud environments, secure software delivery streams, and cognitive intelligence platforms.
+                </span>
               </p>
             </div>
           </div>

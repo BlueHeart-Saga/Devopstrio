@@ -76,7 +76,7 @@ export const SupportServices = () => {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="text-[11px] font-mono tracking-widest text-[#FF1744] uppercase font-bold block mb-3"
+            className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 block mb-4"
           >
             Support Services
           </motion.span>
@@ -84,9 +84,9 @@ export const SupportServices = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-5xl font-bold text-white mb-4"
+            className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-4"
           >
-            How We Support <span className="text-[#FF1744]">Your Business</span>
+            How We Support <span className="text-rose-500">Your Business</span>
           </motion.h2>
         </div>
 
@@ -99,17 +99,17 @@ export const SupportServices = () => {
                 onClick={() => setActive(s.id)}
                 className={`flex items-center gap-4 px-5 py-4 rounded-xl border text-left transition-all duration-300 shrink-0 lg:shrink
                   ${active === s.id
-                    ? "bg-red-500/10 border-red-500/40 text-white"
+                    ? "bg-rose-500/10 border-rose-500/40 text-white"
                     : "bg-zinc-900/40 border-zinc-800 text-zinc-400 hover:border-zinc-600 hover:text-white"}`}
               >
                 <div className={`w-9 h-9 rounded-lg flex items-center justify-center border shrink-0 transition-colors
-                  ${active === s.id ? "bg-red-500/20 border-red-500/30 text-[#FF1744]" : "bg-zinc-800 border-zinc-700 text-zinc-400"}`}
+                  ${active === s.id ? "bg-rose-500/20 border-rose-500/30 text-rose-500" : "bg-zinc-800 border-zinc-700 text-zinc-400"}`}
                 >
                   <s.icon className="w-4 h-4" />
                 </div>
                 <div>
                   <p className="font-semibold text-sm leading-tight">{s.title}</p>
-                  <p className={`text-xs mt-0.5 hidden lg:block ${active === s.id ? "text-red-400/70" : "text-zinc-600"}`}>{s.subtitle}</p>
+                  <p className={`text-xs mt-0.5 hidden lg:block ${active === s.id ? "text-rose-400/70" : "text-zinc-600"}`}>{s.subtitle}</p>
                 </div>
               </button>
             ))}
@@ -128,12 +128,12 @@ export const SupportServices = () => {
                 className="relative z-10"
               >
                 <div className="flex items-center gap-4 mb-8">
-                  <div className="w-14 h-14 rounded-xl bg-red-500/10 border border-red-500/20 flex items-center justify-center">
-                    <current.icon className="w-7 h-7 text-[#FF1744]" />
+                  <div className="w-14 h-14 rounded-xl bg-rose-500/10 border border-rose-500/20 flex items-center justify-center">
+                    <current.icon className="w-7 h-7 text-rose-500" />
                   </div>
                   <div>
                     <h3 className="text-2xl font-bold text-white">{current.title}</h3>
-                    <p className="text-red-400 text-sm font-medium mt-0.5">{current.subtitle}</p>
+                    <p className="text-rose-400 text-sm font-medium mt-0.5">{current.subtitle}</p>
                   </div>
                 </div>
 
@@ -146,7 +146,7 @@ export const SupportServices = () => {
                       transition={{ delay: idx * 0.05 }}
                       className="flex items-center gap-3 px-4 py-3 bg-black/40 border border-zinc-800 rounded-lg group hover:border-zinc-600 transition-colors"
                     >
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#FF1744] shrink-0" />
+                      <span className="w-1.5 h-1.5 rounded-full bg-rose-500 shrink-0" />
                       <span className="text-zinc-300 text-sm">{item}</span>
                     </motion.div>
                   ))}

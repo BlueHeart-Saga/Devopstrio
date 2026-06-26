@@ -57,11 +57,13 @@ export const ApplicationForm = () => {
           <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-rose-500/35 to-transparent" />
           
           <div className="text-center mb-10">
-            <span className="text-xs uppercase tracking-widest text-rose-500 font-bold">Apply Today</span>
-            <h2 className="text-2xl sm:text-4xl font-extrabold text-white mt-2 tracking-tight">
-              Application Portal
+            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+              Apply Today
+            </span>
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-4">
+              Application <span className="text-rose-500">Portal</span>
             </h2>
-            <p className="text-zinc-500 mt-2 text-xs sm:text-sm font-semibold">
+            <p className="text-zinc-400 mt-2 text-xs sm:text-sm font-bold">
               Fill out the form below to initiate your engineering journey.
             </p>
           </div>
@@ -312,10 +314,10 @@ export const ApplicationForm = () => {
         {/* FINAL CTA SECTION (From screenshot!) */}
         <div className="mt-28 border-t border-zinc-900/60 pt-20 flex flex-col items-center text-center">
           
-          <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white mb-4">
-            Start Your Technology Journey
+          <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-4">
+            Start Your Technology <span className="text-rose-500">Journey</span>
           </h2>
-          <p className="text-zinc-405 text-sm sm:text-base max-w-2xl leading-relaxed mb-12 font-medium">
+          <p className="text-zinc-400 text-sm sm:text-base max-w-2xl leading-relaxed mb-12 font-bold">
             Join the next generation of engineers, innovators, and technology leaders at Devopstrio.
           </p>
 

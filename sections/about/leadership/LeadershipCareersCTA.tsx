@@ -1,128 +1,51 @@
 "use client";
+
 import React from "react";
+import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
 import { motion } from "framer-motion";
-import { Rocket, FlaskConical, BookOpen, Cpu, Users2, Heart, ArrowRight } from "lucide-react";
-
-const lifeItems = [
-  { icon: Cpu, label: "Innovation Programs" },
-  { icon: BookOpen, label: "Learning Initiatives" },
-  { icon: FlaskConical, label: "Technical Workshops" },
-  { icon: Rocket, label: "Hackathons" },
-  { icon: Users2, label: "Team Celebrations" },
-  { icon: Heart, label: "Community Engagement" },
-];
-
-const openRoles = [
-  "Software Engineering", "Cloud Engineering",
-  "DevOps & Automation", "AI & Data Innovation",
-  "Cybersecurity", "Consulting",
-];
 
 export const LeadershipCareersCTA = () => {
   return (
-    <section className="py-24 bg-[#050505] border-t border-zinc-900 relative overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_55%_at_50%_50%,rgba(255,23,68,0.08),transparent)]" />
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808006_1px,transparent_1px),linear-gradient(to_bottom,#80808006_1px,transparent_1px)] bg-[size:40px_40px]" />
-      <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-red-500/30 to-transparent" />
+    <section className="w-full py-28 md:py-40 bg-[#030303] text-white border-t border-zinc-900 relative overflow-hidden">
+      {/* Background Glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-[radial-gradient(ellipse_at_center,rgba(220,38,38,0.04),transparent_60%)] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
-        {/* Life at Devopstrio */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-24">
-          <div>
-            <motion.span
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              className="text-[11px] font-mono tracking-widest text-[#FF1744] uppercase font-bold block mb-3"
-            >
-              Life at Devopstrio
-            </motion.span>
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight"
-            >
-              Beyond Technology,
-              <br />
-              <span className="text-[#FF1744]">Our People</span> Drive Culture.
-            </motion.h2>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="text-zinc-400 text-lg leading-relaxed mb-8"
-            >
-              We believe great teams build great products. Our culture is built on continuous learning, innovation, and genuine collaboration.
-            </motion.p>
-            <motion.a
-              href="/about/life-at-devopstrio"
-              whileHover={{ scale: 1.03 }}
-              whileTap={{ scale: 0.97 }}
-              className="inline-flex items-center gap-2 px-6 py-3 bg-zinc-900 border border-zinc-700 hover:border-red-500/40 text-white rounded-xl font-semibold text-sm transition-all"
-            >
-              Explore Life at Devopstrio
-              <ArrowRight className="w-4 h-4" />
-            </motion.a>
-          </div>
-
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
-            {lifeItems.map((item, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.07 }}
-                className="group flex flex-col items-center gap-3 p-5 bg-zinc-900/40 border border-zinc-800 hover:border-red-500/30 rounded-2xl text-center transition-all duration-300"
-              >
-                <div className="w-10 h-10 rounded-xl bg-zinc-800 border border-zinc-700 flex items-center justify-center group-hover:bg-red-500/10 group-hover:border-red-500/20 transition-colors">
-                  <item.icon className="w-5 h-5 text-zinc-400 group-hover:text-[#FF1744] transition-colors" />
-                </div>
-                <span className="text-zinc-400 text-xs font-medium group-hover:text-zinc-300 transition-colors">{item.label}</span>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-
-        {/* Careers CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
+      <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10 text-center">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="relative bg-gradient-to-br from-zinc-900/80 via-zinc-900/50 to-red-500/5 border border-zinc-800 rounded-3xl p-10 md:p-14 overflow-hidden text-center"
+          transition={{ duration: 0.5 }}
+          className="max-w-3xl mx-auto flex flex-col items-center"
         >
-          <div className="absolute top-0 inset-x-0 h-0.5 bg-gradient-to-r from-transparent via-red-500/60 to-transparent" />
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_60%_at_50%_50%,rgba(255,23,68,0.06),transparent)]" />
+          <div className="inline-flex items-center gap-2 mb-4">
+            <span className="text-xs font-semibold tracking-[0.2em] uppercase text-zinc-400">
+              CAREERS AT DEVOPSTRIO
+            </span>
+          </div>
 
-          <div className="relative z-10">
-            <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight">
-              Work with Leaders.
-              <br />
-              <span className="text-[#FF1744]">Build the Future.</span>
-            </h2>
-            <p className="text-zinc-400 text-lg max-w-xl mx-auto mb-10 leading-relaxed">
-              Explore opportunities across engineering, cloud, DevOps, AI, cybersecurity, and consulting.
-            </p>
+          <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-8">
+            Ready to shape the next era of <span className="text-white font-medium bg-gradient-to-r from-red-600 via-rose-600 to-rose-500 bg-clip-text text-transparent">digital transformation</span>?
+          </h2>
 
-            <div className="flex flex-wrap justify-center gap-3 mb-10">
-              {openRoles.map((role, i) => (
-                <span key={i} className="px-4 py-2 bg-zinc-900/60 border border-zinc-800 text-zinc-300 text-sm rounded-lg font-medium hover:border-red-500/30 hover:text-white transition-colors">
-                  {role}
-                </span>
-              ))}
-            </div>
+          <p className="text-zinc-400 text-sm md:text-lg leading-relaxed font-bold mb-10 max-w-xl">
+            We are looking for exceptional engineers, cloud architects, and builders to co-develop high-integrity systems and solve critical infrastructure challenges.
+          </p>
 
-            <motion.a
+          <div className="flex flex-wrap gap-4 justify-center items-center">
+            <Link
               href="/careers"
-              whileHover={{ scale: 1.04 }}
-              whileTap={{ scale: 0.97 }}
-              className="inline-flex items-center gap-3 px-9 py-4 bg-[#FF1744] hover:bg-red-600 text-white rounded-xl font-semibold text-base transition-colors shadow-[0_0_35px_rgba(255,23,68,0.4)] hover:shadow-[0_0_55px_rgba(255,23,68,0.6)]"
+              className="gap-2 inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white transition-all duration-300 hover:shadow-[0_0_25px_rgba(225,29,72,0.35)] hover:-translate-y-0.5"
             >
-              View Open Positions
-              <ArrowRight className="w-5 h-5" />
-            </motion.a>
+              View Open Positions <ArrowUpRight size={14} />
+            </Link>
+            <Link
+              href="/about/life-at-devopstrio"
+              className="gap-2 inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase border border-zinc-850 hover:border-zinc-750 bg-zinc-950/60 hover:bg-zinc-900 text-white transition-all duration-300 hover:-translate-y-0.5"
+            >
+              Explore Culture <ArrowUpRight size={14} />
+            </Link>
           </div>
         </motion.div>
       </div>

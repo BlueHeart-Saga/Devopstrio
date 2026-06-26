@@ -33,7 +33,7 @@ const initiatives = [
 
 export const CommunityImpact = () => {
   return (
-    <section className="py-24 bg-[#0A0A0A] border-t border-zinc-800 relative overflow-hidden">
+    <section className="py-24 bg-black border-t border-zinc-800 relative overflow-hidden">
       <div className="absolute -top-40 -right-40 w-96 h-96 rounded-full bg-red-500/5 blur-[120px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
@@ -44,25 +44,24 @@ export const CommunityImpact = () => {
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-              className="text-[11px] font-mono tracking-widest text-[#FF1744] uppercase font-bold block mb-3"
+              className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 block mb-4"
             >
-              Impact & Community
+              Impact &amp; Community
             </motion.span>
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight"
+              className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-4"
             >
-              Giving <span className="text-[#FF1744]">Back</span><br />
-              to the World
+              Giving <span className="text-rose-500">Back</span> to the World
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-zinc-400 text-lg leading-relaxed"
+              className="text-zinc-400 text-sm md:text-base leading-relaxed font-bold"
             >
               Our mission extends beyond client projects. We invest in the communities around us, leveraging technology as a force for meaningful, lasting change.
             </motion.p>

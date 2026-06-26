@@ -54,17 +54,17 @@ export const AwardsRecognition = () => {
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-              className="text-[11px] font-mono tracking-widest text-[#FF1744] uppercase font-bold block mb-3"
+              className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 block mb-4"
             >
-              Awards & Recognition
+              Awards &amp; Recognition
             </motion.span>
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-3xl md:text-5xl font-bold text-white"
+              className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-4"
             >
-              Celebrating <span className="text-[#FF1744]">Excellence</span>
+              Celebrating <span className="text-rose-500">Excellence</span>
             </motion.h2>
           </div>
           <div className="flex gap-3">
@@ -109,7 +109,7 @@ export const AwardsRecognition = () => {
               <div className="p-10 flex flex-col justify-center">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="w-10 h-10 rounded-lg bg-red-500/10 border border-red-500/20 flex items-center justify-center">
-                    <Trophy className="w-5 h-5 text-[#FF1744]" />
+                    <Trophy className="w-5 h-5 text-rose-500" />
                   </div>
                   <div>
                     <span className="text-zinc-500 text-xs font-mono">{awards[current].year}</span>

@@ -32,11 +32,13 @@ export const MentorshipBenefits = () => {
           
           {/* Mentorship Column */}
           <div className="lg:col-span-6">
-            <span className="text-xs uppercase tracking-widest text-rose-500 font-bold">Mentorship Program</span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-white mt-3 mb-6 tracking-tight">
-              Learn from Industry Experts
+            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+              Mentorship Program
+            </span>
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-4">
+              Learn from <span className="text-rose-500">Industry Experts</span>
             </h2>
-            <p className="text-zinc-400 text-sm sm:text-base leading-relaxed mb-10">
+            <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-bold mb-10">
               You will never work in isolation. Our mentors are embedded inside your delivery workflows to guide your professional trajectory.
             </p>
 
@@ -65,9 +67,11 @@ export const MentorshipBenefits = () => {
           <div className="lg:col-span-6 bg-zinc-950/40 border border-zinc-900 p-8 sm:p-12 rounded-3xl relative overflow-hidden backdrop-blur">
             <div className="absolute top-0 right-0 w-32 h-32 bg-rose-500/5 rounded-full blur-2xl pointer-events-none" />
             
-            <span className="text-xs uppercase tracking-widest text-rose-500 font-bold">What's In It For You</span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-white mt-3 mb-8 tracking-tight">
-              Internship Benefits
+            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+              What's In It For You
+            </span>
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">
+              Internship <span className="text-rose-500">Benefits</span>
             </h2>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">

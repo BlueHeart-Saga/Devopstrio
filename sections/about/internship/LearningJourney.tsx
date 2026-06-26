@@ -1,19 +1,30 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
-import { UserCheck, FileText, Calendar, Compass, ShieldAlert, Award, FileCode, CheckCircle, ChevronDown } from "lucide-react";
+import { UserCheck, FileText, Calendar, Compass, ShieldAlert, Award, FileCode, CheckCircle } from "lucide-react";
+
+const colorMap: Record<string, { border: string; icon: string; number: string; glow: string }> = {
+  rose:    { border: "border-rose-500/30 hover:border-rose-500/60",    icon: "text-rose-500 bg-rose-500/10 border-rose-500/20",    number: "text-rose-500/10",    glow: "from-rose-500/10" },
+  blue:    { border: "border-blue-500/30 hover:border-blue-500/60",    icon: "text-blue-400 bg-blue-500/10 border-blue-500/20",    number: "text-blue-500/10",    glow: "from-blue-500/10" },
+  emerald: { border: "border-emerald-500/30 hover:border-emerald-500/60", icon: "text-emerald-400 bg-emerald-500/10 border-emerald-500/20", number: "text-emerald-500/10", glow: "from-emerald-500/10" },
+  orange:  { border: "border-orange-500/30 hover:border-orange-500/60", icon: "text-orange-400 bg-orange-500/10 border-orange-500/20", number: "text-orange-500/10", glow: "from-orange-500/10" },
+  purple:  { border: "border-purple-500/30 hover:border-purple-500/60", icon: "text-purple-400 bg-purple-500/10 border-purple-500/20", number: "text-purple-500/10", glow: "from-purple-500/10" },
+  cyan:    { border: "border-cyan-500/30 hover:border-cyan-500/60",    icon: "text-cyan-400 bg-cyan-500/10 border-cyan-500/20",    number: "text-cyan-500/10",    glow: "from-cyan-500/10" },
+  indigo:  { border: "border-indigo-500/30 hover:border-indigo-500/60", icon: "text-indigo-400 bg-indigo-500/10 border-indigo-500/20", number: "text-indigo-500/10", glow: "from-indigo-500/10" },
+  pink:    { border: "border-pink-500/30 hover:border-pink-500/60",    icon: "text-pink-400 bg-pink-500/10 border-pink-500/20",    number: "text-pink-500/10",    glow: "from-pink-500/10" },
+};
 
 export const LearningJourney = () => {
   const steps = [
-    { name: "Application", desc: "Submit resume & portfolio", icon: FileText },
-    { name: "Assessment", desc: "Technical skill evaluation", icon: FileCode },
-    { name: "Interview", desc: "Engage with core engineers", icon: Calendar },
-    { name: "Onboarding", desc: "Get set up with tooling & workspace", icon: UserCheck },
-    { name: "Training", desc: "Deep-dives into technology stack", icon: Compass },
-    { name: "Project Assignment", desc: "Match with a real development task", icon: ShieldAlert },
-    { name: "Mentorship", desc: "Weekly code reviews & support", icon: CheckCircle },
-    { name: "Final Evaluation", desc: "Deliver and present your solution", icon: Award },
-    { name: "Certificate", desc: "Receive recommendations & certificate", icon: Award }
+    { name: "Application", desc: "Submit resume & portfolio", icon: FileText, color: "rose" },
+    { name: "Assessment", desc: "Technical skill evaluation", icon: FileCode, color: "blue" },
+    { name: "Interview", desc: "Engage with core engineers", icon: Calendar, color: "emerald" },
+    { name: "Onboarding", desc: "Get set up with tooling & workspace", icon: UserCheck, color: "orange" },
+    { name: "Training", desc: "Deep-dives into technology stack", icon: Compass, color: "purple" },
+    { name: "Project Assignment", desc: "Match with a real development task", icon: ShieldAlert, color: "cyan" },
+    { name: "Mentorship", desc: "Weekly code reviews & support", icon: CheckCircle, color: "indigo" },
+    { name: "Final Evaluation", desc: "Deliver and present your solution", icon: Award, color: "pink" },
+    { name: "Certificate", desc: "Receive recommendations & certificate", icon: Award, color: "rose" }
   ];
 
   return (
@@ -22,59 +33,49 @@ export const LearningJourney = () => {
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-20">
-          <span className="text-xs uppercase tracking-widest text-rose-500 font-bold">The Roadmap</span>
-          <h2 className="text-3xl sm:text-5xl font-extrabold text-white mt-3 tracking-tight">Your Learning Journey</h2>
-          <p className="text-zinc-400 mt-4 text-sm sm:text-base leading-relaxed">
+          <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+            The Roadmap
+          </span>
+          <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-4">
+            Your Learning <span className="text-rose-500">Journey</span>
+          </h2>
+          <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-bold max-w-2xl mx-auto">
             From your initial application to graduating with certified skills, here is what your engineering experience will look like.
           </p>
         </div>
 
-        {/* Roadmap Roadmap Timeline */}
-        <div className="relative max-w-4xl mx-auto">
-          {/* Vertical connecting line */}
-          <div className="absolute left-[30px] md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-rose-500/80 via-rose-500/20 to-zinc-900 -translate-x-1/2" />
+        {/* Grid-based Roadmap Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {steps.map((step, idx) => {
+            const Icon = step.icon;
+            const c = colorMap[step.color];
+            
+            return (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: idx * 0.1 }}
+                className={`group relative bg-zinc-900/40 border ${c.border} rounded-2xl p-8 overflow-hidden transition-all duration-300`}
+              >
+                <div className={`absolute inset-0 bg-gradient-to-br ${c.glow} to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
 
-          <div className="flex flex-col gap-12 md:gap-16">
-            {steps.map((step, idx) => {
-              const Icon = step.icon;
-              const isEven = idx % 2 === 0;
-              return (
-                <motion.div
-                  key={idx}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-100px" }}
-                  transition={{ duration: 0.5, delay: idx * 0.05 }}
-                  className={`flex flex-col md:flex-row items-start md:items-center relative w-full ${
-                    isEven ? "md:flex-row-reverse" : ""
-                  }`}
-                >
-                  {/* Icon Circle */}
-                  <div className="absolute left-[30px] md:left-1/2 top-0 md:top-auto w-12 h-12 rounded-full bg-zinc-950 border-2 border-rose-500/80 shadow-[0_0_15px_rgba(244,63,94,0.3)] flex items-center justify-center text-rose-500 -translate-x-1/2 z-10 transition-transform duration-300 hover:scale-110">
-                    <Icon size={18} />
+                {/* Large number watermark */}
+                <span className={`absolute top-4 right-6 text-[5.5rem] font-black ${c.number} select-none leading-none transition-transform duration-300 group-hover:scale-110`}>
+                  0{idx + 1}
+                </span>
+
+                <div className="relative z-10">
+                  <div className={`w-12 h-12 rounded-xl border flex items-center justify-center mb-6 ${c.icon}`}>
+                    <Icon className="w-5 h-5" />
                   </div>
-
-                  {/* Card Content block */}
-                  <div className={`w-full md:w-[45%] pl-14 md:pl-0 ${isEven ? "md:pr-12 md:text-right" : "md:pl-12 md:text-left"}`}>
-                    <div className="bg-zinc-950/60 border border-zinc-900 hover:border-zinc-800 p-6 rounded-2xl transition-all duration-300 shadow-md hover:shadow-lg relative group">
-                      <span className="text-[10px] font-mono tracking-widest text-rose-500 font-bold uppercase mb-1 block">
-                        Step 0{idx + 1}
-                      </span>
-                      <h3 className="text-lg sm:text-xl font-bold text-white mb-2">{step.name}</h3>
-                      <p className="text-zinc-400 text-xs sm:text-sm leading-relaxed">{step.desc}</p>
-                    </div>
-                  </div>
-
-                  {/* Middle arrows */}
-                  {idx < steps.length - 1 && (
-                    <div className="absolute left-[30px] md:left-1/2 bottom-[-45px] -translate-x-1/2 text-rose-500/60 hidden md:block">
-                      <ChevronDown size={18} className="animate-bounce" />
-                    </div>
-                  )}
-                </motion.div>
-              );
-            })}
-          </div>
+                  <h3 className="text-xl font-bold text-white mb-2">{step.name}</h3>
+                  <p className="text-zinc-400 text-sm leading-relaxed">{step.desc}</p>
+                </div>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>

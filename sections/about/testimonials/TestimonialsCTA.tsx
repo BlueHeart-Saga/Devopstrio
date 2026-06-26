@@ -19,20 +19,15 @@ export const TestimonialsCTA = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <span className="inline-flex items-center gap-2 py-1.5 px-5 rounded-full bg-red-500/10 border border-red-500/20 text-red-400 text-sm font-medium tracking-wider uppercase mb-8">
-            <Rocket className="w-4 h-4" />
+          <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-6 block">
             Your Success Story Starts Here
           </span>
 
-          <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight tracking-tight">
-            Ready to Become Our
-            <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-red-400 to-[#FF1744]">
-              Next Success Story?
-            </span>
+          <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-4">
+            Ready to Become Our <span className="text-rose-500">Next Success Story?</span>
           </h2>
 
-          <p className="text-xl text-zinc-400 max-w-2xl mx-auto mb-12 leading-relaxed">
+          <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-bold max-w-2xl mx-auto mb-12">
             Partner with Devopstrio to modernise platforms, accelerate innovation, and achieve measurable business outcomes that put you ahead of the competition.
           </p>
 
@@ -41,7 +36,7 @@ export const TestimonialsCTA = () => {
               href="/contact"
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.97 }}
-              className="inline-flex items-center gap-3 px-9 py-4 bg-[#FF1744] hover:bg-red-600 text-white rounded-xl font-semibold text-base transition-colors shadow-[0_0_35px_rgba(255,23,68,0.45)] hover:shadow-[0_0_55px_rgba(255,23,68,0.65)]"
+              className="inline-flex items-center gap-3 px-9 py-4 bg-rose-500 hover:bg-rose-600 text-white rounded-xl font-semibold text-base transition-colors shadow-[0_0_35px_rgba(244,63,94,0.45)] hover:shadow-[0_0_55px_rgba(244,63,94,0.65)]"
             >
               Start Your Transformation
               <ArrowRight className="w-5 h-5" />

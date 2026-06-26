@@ -89,7 +89,7 @@ export const ClientTestimonials = () => {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="text-[11px] font-mono tracking-widest text-[#FF1744] uppercase font-bold block mb-3"
+            className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 block mb-4"
           >
             Client Testimonials
           </motion.span>
@@ -97,9 +97,9 @@ export const ClientTestimonials = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-5xl font-bold text-white mb-6"
+            className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-4"
           >
-            Words From Our <span className="text-[#FF1744]">Clients</span>
+            Words From Our <span className="text-rose-500">Clients</span>
           </motion.h2>
 
           {/* Category filters */}
@@ -116,7 +116,7 @@ export const ClientTestimonials = () => {
                 onClick={() => setActive(cat)}
                 className={`px-4 py-1.5 rounded-full text-sm font-medium transition-all duration-300 ${
                   active === cat
-                    ? "bg-[#FF1744] text-white shadow-[0_0_12px_rgba(255,23,68,0.4)]"
+                    ? "bg-rose-500 text-white shadow-[0_0_12px_rgba(244,63,94,0.4)]"
                     : "bg-zinc-900 text-zinc-400 hover:bg-zinc-800 hover:text-white border border-zinc-800"
                 }`}
               >

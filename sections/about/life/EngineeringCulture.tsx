@@ -14,7 +14,7 @@ const engineeringAreas = [
 
 export const EngineeringCulture = () => {
   return (
-    <section className="py-24 bg-[#111111] relative border-y border-zinc-800/50">
+    <section className="py-24 bg-black relative border-y border-zinc-800/50">
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
       
       <div className="max-w-7xl mx-auto px-6 relative z-10">
@@ -23,16 +23,16 @@ export const EngineeringCulture = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-5xl font-bold text-white mb-6"
+            className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-4"
           >
-            Engineering at <span className="text-red-500">Devopstrio</span>
+            Engineering at <span className="text-rose-500">Devopstrio</span>
           </motion.h2>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-zinc-400 text-lg"
+            className="text-zinc-400 text-sm md:text-base leading-relaxed font-bold"
           >
             We are builders at heart. Our engineering culture is defined by technical excellence, robust architectures, and using the right tools to solve the right problems.
           </motion.p>

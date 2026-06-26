@@ -69,7 +69,7 @@ export const GlobalSupportNetwork = () => {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="text-[11px] font-mono tracking-widest text-[#FF1744] uppercase font-bold block mb-3"
+            className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 block mb-4"
           >
             Global Network
           </motion.span>
@@ -77,17 +77,16 @@ export const GlobalSupportNetwork = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-5xl font-bold text-white mb-4"
+            className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-4"
           >
-            Global Delivery &{" "}
-            <span className="text-[#FF1744]">Support Locations</span>
+            Global Delivery &amp; <span className="text-rose-500">Support Locations</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-zinc-400 text-lg max-w-xl mx-auto"
+            className="text-zinc-400 text-sm md:text-base leading-relaxed font-bold max-w-xl mx-auto"
           >
             Follow-the-sun support model with delivery centres across 3 continents.
           </motion.p>
@@ -118,7 +117,7 @@ export const GlobalSupportNetwork = () => {
             <div className="absolute" style={{ top: "25%", left: "35%" }}>
               <span className="relative flex h-4 w-4">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-60" />
-                <span className="relative inline-flex rounded-full h-4 w-4 bg-[#FF1744] shadow-[0_0_12px_rgba(255,23,68,0.8)]" />
+                <span className="relative inline-flex rounded-full h-4 w-4 bg-rose-500 shadow-[0_0_12px_rgba(244,63,94,0.8)]" />
               </span>
             </div>
             {/* US dot */}
@@ -137,7 +136,7 @@ export const GlobalSupportNetwork = () => {
             </div>
           </div>
           <div className="absolute inset-x-0 bottom-4 flex items-center justify-center gap-6 text-xs text-zinc-500">
-            <span className="flex items-center gap-1.5"><span className="w-2 h-2 rounded-full bg-[#FF1744] inline-block" /> Headquarters</span>
+            <span className="flex items-center gap-1.5"><span className="w-2 h-2 rounded-full bg-rose-500 inline-block" /> Headquarters</span>
             <span className="flex items-center gap-1.5"><span className="w-2 h-2 rounded-full bg-zinc-300 inline-block" /> Delivery Centre</span>
           </div>
         </motion.div>

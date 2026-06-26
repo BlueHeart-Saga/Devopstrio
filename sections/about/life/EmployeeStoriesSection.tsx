@@ -29,23 +29,23 @@ const stories = [
 
 export const EmployeeStoriesSection = () => {
   return (
-    <section className="py-24 bg-[#111111] relative">
+    <section className="py-24 bg-black relative">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-5xl font-bold text-white mb-4"
+            className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-4"
           >
-            Meet the People Behind <span className="text-[#FF1744]">Devopstrio</span>
+            Meet the People Behind <span className="text-rose-500">Devopstrio</span>
           </motion.h2>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-zinc-400 text-lg"
+            className="text-zinc-400 text-sm md:text-base leading-relaxed font-bold"
           >
             Real stories of career acceleration and engineering excellence.
           </motion.p>

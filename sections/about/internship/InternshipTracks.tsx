@@ -70,9 +70,13 @@ export const InternshipTracks = () => {
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-xs uppercase tracking-widest text-rose-500 font-bold">Curated Specializations</span>
-          <h2 className="text-3xl sm:text-5xl font-extrabold text-white mt-3 tracking-tight">Internship Tracks</h2>
-          <p className="text-zinc-400 mt-4 text-sm sm:text-base leading-relaxed">
+          <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+            Curated Specializations
+          </span>
+          <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-4">
+            Internship <span className="text-rose-500">Tracks</span>
+          </h2>
+          <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-bold max-w-2xl mx-auto">
             Choose a track aligned with your aspirations. Learn industry-standard workflows, receive structured training, and build production projects.
           </p>
         </div>

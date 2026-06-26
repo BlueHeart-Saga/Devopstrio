@@ -59,7 +59,7 @@ const colorMap: Record<string, { icon: string; metric: string; border: string; h
   orange: { icon: "text-orange-400 bg-orange-500/10 border-orange-500/20", metric: "text-orange-300", border: "border-zinc-800", hover: "hover:border-orange-500/40" },
   violet: { icon: "text-violet-400 bg-violet-500/10 border-violet-500/20", metric: "text-violet-300", border: "border-zinc-800", hover: "hover:border-violet-500/40" },
   green:  { icon: "text-green-400 bg-green-500/10 border-green-500/20",  metric: "text-green-300",  border: "border-zinc-800", hover: "hover:border-green-500/40" },
-  red:    { icon: "text-red-400 bg-red-500/10 border-red-500/20",        metric: "text-[#FF1744]",  border: "border-zinc-800", hover: "hover:border-red-500/40" },
+  red:    { icon: "text-rose-400 bg-rose-500/10 border-rose-500/20",        metric: "text-rose-500",  border: "border-zinc-800", hover: "hover:border-rose-500/40" },
   teal:   { icon: "text-teal-400 bg-teal-500/10 border-teal-500/20",    metric: "text-teal-300",   border: "border-zinc-800", hover: "hover:border-teal-500/40" },
 };
 
@@ -74,7 +74,7 @@ export const SuccessByService = () => {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="text-[11px] font-mono tracking-widest text-[#FF1744] uppercase font-bold block mb-3"
+            className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 block mb-4"
           >
             Service Areas
           </motion.span>
@@ -82,16 +82,16 @@ export const SuccessByService = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-5xl font-bold text-white mb-4"
+            className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-4"
           >
-            Success by <span className="text-[#FF1744]">Service Area</span>
+            Success by <span className="text-rose-500">Service Area</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-zinc-400 text-lg max-w-2xl mx-auto"
+            className="text-zinc-400 text-sm md:text-base leading-relaxed font-bold max-w-2xl mx-auto"
           >
             Consistent, measurable outcomes across every discipline we operate in.
           </motion.p>

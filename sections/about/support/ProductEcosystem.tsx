@@ -32,7 +32,7 @@ export const ProductEcosystem = () => {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="text-[11px] font-mono tracking-widest text-[#FF1744] uppercase font-bold block mb-3"
+            className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 block mb-4"
           >
             Product Ecosystem
           </motion.span>
@@ -40,16 +40,16 @@ export const ProductEcosystem = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-5xl font-bold text-white mb-4"
+            className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-4"
           >
-            Products We <span className="text-[#FF1744]">Support</span>
+            Products We <span className="text-rose-500">Support</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-zinc-400 text-lg max-w-xl mx-auto"
+            className="text-zinc-400 text-sm md:text-base leading-relaxed font-bold max-w-xl mx-auto"
           >
             Full lifecycle support for the entire Devopstrio product portfolio.
           </motion.p>

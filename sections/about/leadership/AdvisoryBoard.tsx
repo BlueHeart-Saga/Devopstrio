@@ -1,7 +1,6 @@
 "use client";
-import React, { useRef } from "react";
+import React from "react";
 import { motion } from "framer-motion";
-import { ArrowLeft, ArrowRight, Star } from "lucide-react";
 
 const advisors = [
   {
@@ -62,16 +61,6 @@ const colorMap: Record<string, { tag: string; glow: string; border: string }> = 
 };
 
 export const AdvisoryBoard = () => {
-  const scrollRef = useRef<HTMLDivElement>(null);
-
-  const handleScroll = (direction: "left" | "right") => {
-    if (scrollRef.current) {
-      const { scrollLeft } = scrollRef.current;
-      const scrollAmount = 380; // Card width + gap
-      const scrollTo = direction === "left" ? scrollLeft - scrollAmount : scrollLeft + scrollAmount;
-      scrollRef.current.scrollTo({ left: scrollTo, behavior: "smooth" });
-    }
-  };
 
   return (
     <section className="py-24 bg-[#030303] border-t border-zinc-900 relative overflow-hidden">
@@ -88,7 +77,7 @@ export const AdvisoryBoard = () => {
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-              className="text-[10px] font-mono tracking-widest text-[#FF1744] uppercase font-bold block mb-4"
+              className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 block mb-4"
             >
               Governance &amp; Insights
             </motion.span>
@@ -96,47 +85,26 @@ export const AdvisoryBoard = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-3xl md:text-5xl font-bold text-white tracking-tight mb-2 leading-tight"
+              className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-4"
             >
-              Global Counsel.<br />
-              <span className="text-[#FF1744]">Strategic Vision.</span>
+              Global Counsel. <span className="text-rose-500">Strategic Vision.</span>
             </motion.h2>
           </div>
           
-          <div className="lg:col-span-5 flex flex-col justify-between h-full pt-2">
+          <div className="lg:col-span-5 pt-2">
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-zinc-500 text-sm md:text-base leading-relaxed mb-6"
+              className="text-zinc-400 text-sm md:text-base leading-relaxed font-bold max-w-2xl"
             >
-              Our advisors bring decades of board-level experience across cloud systems, enterprise architecture, security governance, and cognitive AI computing to steer our technical path.
+              Our advisory board comprises seasoned leaders who bring decades of board-level governance across{" "}
+              <span className="text-white font-semibold hover:text-rose-500 transition-colors duration-300">high-scale cloud platforms</span>,{" "}
+              <span className="text-white font-semibold hover:text-rose-500 transition-colors duration-300">distributed enterprise architecture</span>,{" "}
+              <span className="text-white font-semibold hover:text-rose-500 transition-colors duration-300">zero-trust security governance</span>, and{" "}
+              <span className="text-white font-semibold hover:text-rose-500 transition-colors duration-300">cognitive AI computing systems</span>. Together, they steer our technical roadmap, ensure robust enterprise compliance, and accelerate sustainable digital innovation.
             </motion.p>
-            
-            {/* Navigation Slider Controls */}
-            <motion.div
-              initial={{ opacity: 0, y: 15 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-              className="flex items-center gap-3"
-            >
-              <button
-                onClick={() => handleScroll("left")}
-                className="w-12 h-12 rounded-full bg-zinc-900/80 border border-zinc-800 hover:border-zinc-700 text-white flex items-center justify-center transition-all hover:bg-zinc-800 active:scale-95 shadow-lg"
-                aria-label="Scroll left"
-              >
-                <ArrowLeft size={18} />
-              </button>
-              <button
-                onClick={() => handleScroll("right")}
-                className="w-12 h-12 rounded-full bg-[#FF1744] hover:bg-[#D8113A] text-white flex items-center justify-center transition-all hover:shadow-[0_0_20px_rgba(255,23,68,0.4)] active:scale-95 shadow-lg"
-                aria-label="Scroll right"
-              >
-                <ArrowRight size={18} />
-              </button>
-            </motion.div>
           </div>
         </div>
 
@@ -163,8 +131,7 @@ export const AdvisoryBoard = () => {
           <div className="absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-[#030303] to-transparent z-15 pointer-events-none hidden md:block" />
 
           <div
-            ref={scrollRef}
-            className="flex gap-6 overflow-x-auto scrollbar-hide snap-x snap-mandatory py-4 px-1"
+            className="flex justify-start md:justify-center gap-4 overflow-x-auto scrollbar-hide snap-x snap-mandatory py-4 px-1"
             style={{
               scrollbarWidth: "none",
               msOverflowStyle: "none",
@@ -179,14 +146,14 @@ export const AdvisoryBoard = () => {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: idx * 0.08, ease: [0.215, 0.61, 0.355, 1] }}
-                  className={`w-[280px] md:w-[320px] shrink-0 snap-start bg-[#0B0B0D] border border-zinc-900 ${c.border} rounded-[2rem] p-3 pb-4 flex flex-col justify-between relative overflow-hidden group shadow-xl transition-all duration-300`}
+                  className={`w-[220px] md:w-[260px] shrink-0 snap-start bg-[#0B0B0D]/95 border border-zinc-800/80 ${c.border} rounded-[20px] p-2 pb-3.5 flex flex-col justify-between relative overflow-hidden group shadow-[0_8px_30px_rgb(0,0,0,0.6)] transition-all duration-300`}
                 >
                   {/* Color Glow Overlay */}
                   <div className={`absolute inset-0 ${c.glow} pointer-events-none opacity-40 group-hover:opacity-100 transition-opacity duration-500`} />
 
                   <div>
                     {/* Concentric Image Wrapper with Padding */}
-                    <div className="relative w-full aspect-[4/5] bg-zinc-950 overflow-hidden rounded-[1.5rem] block">
+                    <div className="relative w-full aspect-[4/5] bg-zinc-950 overflow-hidden rounded-[12px] block">
                       <img
                         src={advisor.photo}
                         alt={advisor.name}
@@ -195,12 +162,12 @@ export const AdvisoryBoard = () => {
                     </div>
 
                     {/* Name & Designation Badge below photo */}
-                    <div className="pt-4 px-2 flex justify-between items-center bg-[#0B0B0D] relative z-10">
-                      <div>
-                        <p className="text-white text-sm font-bold tracking-tight mb-0.5 group-hover:text-[#FF1744] transition-colors duration-300">{advisor.name}</p>
-                        <p className="text-zinc-550 text-[10px] font-mono leading-none">{advisor.background.split(" — ")[0]}</p>
+                    <div className="pt-3 px-1 flex justify-between items-start bg-transparent relative z-10">
+                      <div className="pr-1.5">
+                        <p className="text-white text-xs md:text-sm font-bold tracking-tight mb-0.5 group-hover:text-[#FF1744] transition-colors duration-300 leading-tight">{advisor.name}</p>
+                        <p className="text-zinc-550 text-[9px] md:text-[10px] font-mono leading-none">{advisor.background.split(" — ")[0]}</p>
                       </div>
-                      <span className={`px-2.5 py-0.5 rounded-full border text-[9px] font-mono font-semibold uppercase tracking-wider bg-zinc-950/40 shrink-0 ${c.tag}`}>
+                      <span className={`px-2 py-0.5 rounded-full border text-[8px] md:text-[9px] font-mono font-semibold uppercase tracking-wider bg-zinc-950/40 shrink-0 ${c.tag}`}>
                         {advisor.experience}
                       </span>
                     </div>

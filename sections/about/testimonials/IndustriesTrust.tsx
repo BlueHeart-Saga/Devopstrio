@@ -23,7 +23,7 @@ const colorMap: Record<string, string> = {
   yellow: "text-yellow-400 bg-yellow-500/10 border-yellow-500/20 hover:border-yellow-500/50",
   violet: "text-violet-400 bg-violet-500/10 border-violet-500/20 hover:border-violet-500/50",
   teal:   "text-teal-400 bg-teal-500/10 border-teal-500/20 hover:border-teal-500/50",
-  red:    "text-[#FF1744] bg-red-500/10 border-red-500/20 hover:border-red-500/50",
+  red:    "text-rose-500 bg-rose-500/10 border-rose-500/20 hover:border-rose-500/50",
 };
 
 const partners = ["Microsoft", "AWS", "Google Cloud", "Oracle", "ServiceNow"];
@@ -41,7 +41,7 @@ export const IndustriesTrust = () => {
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-              className="text-[11px] font-mono tracking-widest text-[#FF1744] uppercase font-bold block mb-3"
+              className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 block mb-4"
             >
               Industries We Serve
             </motion.span>
@@ -49,9 +49,9 @@ export const IndustriesTrust = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-3xl md:text-5xl font-bold text-white"
+              className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-4"
             >
-              Industries We <span className="text-[#FF1744]">Support</span>
+              Industries We <span className="text-rose-500">Support</span>
             </motion.h2>
           </div>
 
@@ -84,7 +84,7 @@ export const IndustriesTrust = () => {
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-              className="text-[11px] font-mono tracking-widest text-[#FF1744] uppercase font-bold block mb-3"
+              className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 block mb-4"
             >
               Strategic Technology Partnerships
             </motion.span>
@@ -92,9 +92,9 @@ export const IndustriesTrust = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-3xl md:text-4xl font-bold text-white"
+              className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-4"
             >
-              Client Trust & <span className="text-[#FF1744]">Recognition</span>
+              Client Trust &amp; <span className="text-rose-500">Recognition</span>
             </motion.h2>
           </div>
 
@@ -107,7 +107,7 @@ export const IndustriesTrust = () => {
             {partners.map((p, idx) => (
               <div
                 key={idx}
-                className="px-8 py-4 bg-zinc-900/50 border border-zinc-800 rounded-xl text-zinc-300 font-semibold text-sm hover:border-red-500/30 hover:text-white transition-all duration-300"
+                className="px-8 py-4 bg-zinc-900/50 border border-zinc-800 rounded-xl text-zinc-300 font-semibold text-sm hover:border-rose-500/30 hover:text-white transition-all duration-300"
               >
                 {p}
               </div>
@@ -123,7 +123,7 @@ export const IndustriesTrust = () => {
           >
             {["Cloud Certifications", "Security Standards", "Engineering Excellence", "Quality Assurance"].map((cert, idx) => (
               <div key={idx} className="flex items-center gap-3 px-4 py-3 bg-zinc-900/40 border border-zinc-800 rounded-xl">
-                <span className="w-2 h-2 rounded-full bg-[#FF1744] shrink-0" />
+                <span className="w-2 h-2 rounded-full bg-rose-500 shrink-0" />
                 <span className="text-zinc-400 text-sm">{cert}</span>
               </div>
             ))}

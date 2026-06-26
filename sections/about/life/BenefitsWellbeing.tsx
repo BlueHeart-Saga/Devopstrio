@@ -19,7 +19,7 @@ const benefits = [
 
 export const BenefitsWellbeing = () => {
   return (
-    <section className="py-24 bg-[#0A0A0A] relative border-t border-zinc-800">
+    <section className="py-24 bg-black relative border-t border-zinc-800">
       {/* Background grid */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:32px_32px]" />
       
@@ -29,24 +29,24 @@ export const BenefitsWellbeing = () => {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="text-[11px] font-mono tracking-widest text-[#FF1744] uppercase font-bold block mb-3"
+            className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 block mb-4"
           >
-            Benefits & Wellbeing
+            Benefits &amp; Wellbeing
           </motion.span>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-5xl font-bold text-white mb-4"
+            className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-4"
           >
-            Everything You Need to <span className="text-[#FF1744]">Thrive</span>
+            Everything You Need to <span className="text-rose-500">Thrive</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-zinc-400 text-lg max-w-2xl mx-auto"
+            className="text-zinc-400 text-sm md:text-base leading-relaxed font-bold max-w-2xl mx-auto"
           >
             We've designed our benefits package around what actually matters to engineers and technologists.
           </motion.p>
@@ -67,7 +67,7 @@ export const BenefitsWellbeing = () => {
               
               <div className="relative z-10">
                 <div className="w-11 h-11 rounded-xl bg-zinc-900 border border-zinc-800 flex items-center justify-center mb-5 group-hover:bg-red-500/10 group-hover:border-red-500/30 transition-all duration-300">
-                  <benefit.icon className="w-5 h-5 text-zinc-400 group-hover:text-[#FF1744] transition-colors duration-300" />
+                  <benefit.icon className="w-5 h-5 text-zinc-400 group-hover:text-rose-500 transition-colors duration-300" />
                 </div>
                 <h3 className="text-white font-semibold mb-2 group-hover:text-red-400 transition-colors duration-300">
                   {benefit.title}

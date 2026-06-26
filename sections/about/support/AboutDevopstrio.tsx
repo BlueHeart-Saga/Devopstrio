@@ -28,7 +28,7 @@ export const AboutDevopstrio = () => {
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-              className="text-[11px] font-mono tracking-widest text-[#FF1744] uppercase font-bold block mb-3"
+              className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 block mb-4"
             >
               About Devopstrio
             </motion.span>
@@ -36,16 +36,16 @@ export const AboutDevopstrio = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight"
+              className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-4"
             >
-              Devopstrio <span className="text-[#FF1744]">Limited</span>
+              Devopstrio <span className="text-rose-500">Limited</span>
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-zinc-400 text-lg leading-relaxed mb-8"
+              className="text-zinc-400 text-sm md:text-base leading-relaxed font-bold mb-8"
             >
               Founded in 2019 and headquartered in London, Devopstrio is a global technology consulting and engineering company helping enterprises modernise their platforms, accelerate innovation, and build resilient digital ecosystems.
             </motion.p>
@@ -91,7 +91,7 @@ export const AboutDevopstrio = () => {
                   transition={{ duration: 0.4, delay: idx * 0.06 }}
                   className="flex items-center gap-3 px-4 py-3 bg-zinc-900/40 border border-zinc-800 rounded-lg hover:border-red-500/30 transition-colors group"
                 >
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#FF1744] group-hover:shadow-[0_0_6px_rgba(255,23,68,0.8)] transition-shadow shrink-0" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-rose-500 group-hover:shadow-[0_0_6px_rgba(244,63,94,0.8)] transition-shadow shrink-0" />
                   <span className="text-zinc-300 text-sm font-medium">{svc}</span>
                 </motion.div>
               ))}

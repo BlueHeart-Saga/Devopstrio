@@ -85,7 +85,7 @@ export const SupportChannels = () => {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="text-[11px] font-mono tracking-widest text-[#FF1744] uppercase font-bold block mb-3"
+            className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 block mb-4"
           >
             Contact Methods
           </motion.span>
@@ -93,16 +93,16 @@ export const SupportChannels = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-5xl font-bold text-white mb-4"
+            className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-4"
           >
-            Reach Us Anywhere, <span className="text-[#FF1744]">Anytime</span>
+            Reach Us Anywhere, <span className="text-rose-500">Anytime</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-zinc-400 text-lg max-w-xl mx-auto"
+            className="text-zinc-400 text-sm md:text-base leading-relaxed font-bold max-w-xl mx-auto"
           >
             Multiple channels, one mission — getting you expert support as fast as possible.
           </motion.p>
@@ -145,7 +145,7 @@ export const SupportChannels = () => {
                   href={ch.href}
                   target={ch.id === "website" || ch.id === "linkedin" || ch.id === "facebook" || ch.id === "instagram" ? "_blank" : undefined}
                   rel="noopener noreferrer"
-                  className="text-white font-semibold text-base hover:text-[#FF1744] transition-colors break-all"
+                  className="text-white font-semibold text-base hover:text-rose-500 transition-colors break-all"
                 >
                   {ch.value}
                 </a>

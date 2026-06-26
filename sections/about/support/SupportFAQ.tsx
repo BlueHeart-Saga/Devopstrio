@@ -39,7 +39,7 @@ const FAQItem = ({ q, a, index }: { q: string; a: string; index: number }) => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: index * 0.06 }}
-      className={`border rounded-xl overflow-hidden transition-colors duration-300 ${open ? "border-red-500/30 bg-red-500/5" : "border-zinc-800 bg-zinc-900/30 hover:border-zinc-700"}`}
+      className={`border rounded-xl overflow-hidden transition-colors duration-300 ${open ? "border-rose-500/30 bg-rose-500/5" : "border-zinc-800 bg-zinc-900/30 hover:border-zinc-700"}`}
     >
       <button
         onClick={() => setOpen(!open)}
@@ -49,7 +49,7 @@ const FAQItem = ({ q, a, index }: { q: string; a: string; index: number }) => {
           {q}
         </span>
         <ChevronDown
-          className={`w-5 h-5 shrink-0 ml-4 transition-transform duration-300 ${open ? "rotate-180 text-[#FF1744]" : "text-zinc-500"}`}
+          className={`w-5 h-5 shrink-0 ml-4 transition-transform duration-300 ${open ? "rotate-180 text-rose-500" : "text-zinc-500"}`}
         />
       </button>
 
@@ -78,7 +78,7 @@ export const SupportFAQ = () => {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="text-[11px] font-mono tracking-widest text-[#FF1744] uppercase font-bold block mb-3"
+            className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 block mb-4"
           >
             FAQ
           </motion.span>
@@ -86,9 +86,9 @@ export const SupportFAQ = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-5xl font-bold text-white mb-4"
+            className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-4"
           >
-            Frequently Asked <span className="text-[#FF1744]">Questions</span>
+            Frequently Asked <span className="text-rose-500">Questions</span>
           </motion.h2>
         </div>
 

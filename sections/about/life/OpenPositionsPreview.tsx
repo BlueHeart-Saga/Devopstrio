@@ -56,7 +56,7 @@ const positions = [
 
 export const OpenPositionsPreview = () => {
   return (
-    <section id="open-positions" className="py-24 bg-[#111111] border-t border-zinc-800 relative">
+    <section id="open-positions" className="py-24 bg-black border-t border-zinc-800 relative">
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:32px_32px]" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
@@ -66,7 +66,7 @@ export const OpenPositionsPreview = () => {
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-              className="text-[11px] font-mono tracking-widest text-[#FF1744] uppercase font-bold block mb-3"
+              className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 block mb-4"
             >
               Open Positions
             </motion.span>
@@ -74,9 +74,9 @@ export const OpenPositionsPreview = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-3xl md:text-5xl font-bold text-white"
+              className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-4"
             >
-              Join Our <span className="text-[#FF1744]">Team</span>
+              Join Our <span className="text-rose-500">Team</span>
             </motion.h2>
           </div>
           <motion.a

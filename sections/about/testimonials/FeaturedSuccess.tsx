@@ -22,7 +22,7 @@ export const FeaturedSuccess = () => {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="text-[11px] font-mono tracking-widest text-[#FF1744] uppercase font-bold block mb-3"
+            className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 block mb-4"
           >
             Featured Client Success
           </motion.span>
@@ -30,10 +30,9 @@ export const FeaturedSuccess = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-5xl font-bold text-white"
+            className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-4"
           >
-            Transforming Enterprise{" "}
-            <span className="text-[#FF1744]">Cloud Operations</span>
+            Transforming Enterprise <span className="text-rose-500">Cloud Operations</span>
           </motion.h2>
         </div>
 
@@ -45,12 +44,12 @@ export const FeaturedSuccess = () => {
           className="relative bg-gradient-to-br from-zinc-900/80 via-zinc-900/50 to-red-500/5 border border-zinc-800 rounded-3xl overflow-hidden p-8 md:p-14"
         >
           {/* Red top border accent */}
-          <div className="absolute top-0 inset-x-0 h-0.5 bg-gradient-to-r from-transparent via-red-500 to-transparent" />
+          <div className="absolute top-0 inset-x-0 h-0.5 bg-gradient-to-r from-transparent via-rose-500 to-transparent" />
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
             {/* Quote side */}
             <div>
-              <Quote className="w-12 h-12 text-red-500/30 mb-6" />
+              <Quote className="w-12 h-12 text-rose-500/30 mb-6" />
               <p className="text-2xl md:text-3xl text-white font-light leading-relaxed mb-8 italic">
                 "Devopstrio didn't just improve our infrastructure—they transformed how we{" "}
                 <span className="font-semibold text-white not-italic">think about scaling and reliability</span>."
@@ -88,7 +87,7 @@ export const FeaturedSuccess = () => {
                     transition={{ delay: 0.1 + idx * 0.1 }}
                     className="bg-black/60 border border-zinc-800 rounded-2xl p-6 text-center hover:border-red-500/30 transition-colors group"
                   >
-                    <p className="text-4xl font-black text-[#FF1744] mb-1 group-hover:scale-110 transition-transform inline-block">{r.metric}</p>
+                    <p className="text-4xl font-black text-rose-500 mb-1 group-hover:scale-110 transition-transform inline-block">{r.metric}</p>
                     <p className="text-zinc-400 text-sm">{r.label}</p>
                   </motion.div>
                 ))}

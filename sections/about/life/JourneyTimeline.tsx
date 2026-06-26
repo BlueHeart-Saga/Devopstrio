@@ -1,79 +1,103 @@
 "use client";
-import React, { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import React from "react";
+import { motion } from "framer-motion";
 
 const timelineEvents = [
-  { year: "2019", title: "Company Founded", description: "Started with a vision to redefine engineering excellence." },
-  { year: "2020", title: "Cloud Transformation", description: "Launched our cloud native services practice." },
-  { year: "2021", title: "Global Expansion", description: "Opened offices in 3 new countries to support global delivery." },
-  { year: "2022", title: "AI & Data Practice", description: "Established our dedicated AI innovation lab." },
-  { year: "2023", title: "SaaS Portfolio", description: "Launched our first suite of internal SaaS products." },
-  { year: "2024", title: "Engineering Excellence", description: "Introduced our global engineering standards program." },
-  { year: "2025", title: "Tech Ecosystem", description: "Partnered with top tier cloud providers globally." },
-  { year: "2026", title: "Next Phase", description: "Scaling our impact across the Fortune 500." },
+  { year: "2019", title: "Company Founded", description: "Started with a vision to redefine engineering excellence across borders." },
+  { year: "2020", title: "Cloud Transformation", description: "Launched our cloud native services practice, accelerating digital adoption." },
+  { year: "2021", title: "Global Expansion", description: "Opened offices in 3 new countries to support rapid global delivery." },
+  { year: "2022", title: "AI & Data Practice", description: "Established our dedicated AI innovation lab to pioneer machine learning models." },
+  { year: "2023", title: "SaaS Portfolio", description: "Launched our first suite of internal SaaS products for enterprise use." },
+  { year: "2024", title: "Engineering Excellence", description: "Introduced our global engineering standards program to unify code quality." },
+  { year: "2025", title: "Tech Ecosystem", description: "Partnered with top tier cloud providers globally for seamless integrations." },
+  { year: "2026", title: "Next Phase", description: "Scaling our impact across the Fortune 500 with unparalleled agility." },
 ];
 
 export const JourneyTimeline = () => {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start end", "end start"]
-  });
-
-  const xTransform = useTransform(scrollYProgress, [0, 1], ["0%", "-50%"]);
-
   return (
-    <section ref={containerRef} className="py-32 bg-[#0A0A0A] overflow-hidden relative">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,rgba(255,23,68,0.05),transparent_70%)] pointer-events-none" />
+    <section className="py-32 bg-black overflow-hidden relative" id="timeline">
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(220,38,38,0.05),transparent_70%)] pointer-events-none" />
       
-      <div className="max-w-7xl mx-auto px-6 mb-16 relative z-10">
-        <motion.h2 
+      <div className="max-w-7xl mx-auto px-6 mb-24 relative z-10 text-center">
+        <motion.span 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-3xl md:text-5xl font-bold text-white"
+          className="text-[11px] font-semibold tracking-[0.25em] uppercase text-red-600 mb-6 block"
         >
-          Our <span className="text-[#FF1744]">Journey</span>
+          Company History
+        </motion.span>
+        <motion.h2 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, delay: 0.1 }}
+          className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight text-white mb-4 uppercase"
+        >
+          Our <span className="text-red-600 font-light">Journey</span>
         </motion.h2>
       </div>
 
-      <div className="relative pl-6 md:pl-0">
-        {/* Timeline line */}
-        <div className="absolute top-[88px] left-0 w-full h-[2px] bg-zinc-800 hidden md:block">
-          <div className="h-full bg-gradient-to-r from-red-600 via-red-500 to-transparent w-1/3" />
-        </div>
+      <div className="relative max-w-5xl mx-auto px-6 md:px-0">
+        {/* Center vertical spine */}
+        <div className="absolute left-[24px] md:left-1/2 top-0 bottom-0 w-[1px] bg-zinc-800/80 transform md:-translate-x-1/2" />
 
-        <motion.div 
-          style={{ x: xTransform }}
-          className="flex flex-col md:flex-row gap-12 md:gap-24 md:w-max md:px-[10vw]"
-        >
-          {timelineEvents.map((item, idx) => (
-            <motion.div 
-              key={idx}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.5, delay: idx * 0.1 }}
-              className="relative w-full md:w-[300px] flex flex-row md:flex-col items-start gap-6 md:gap-0"
-            >
-              {/* Year marker */}
-              <div className="md:mb-12 flex flex-col items-center relative z-10 shrink-0">
-                <div className="w-16 h-16 rounded-full bg-zinc-900 border-2 border-red-500 flex items-center justify-center text-red-500 font-bold shadow-[0_0_15px_rgba(255,23,68,0.3)]">
-                  {item.year}
+        <div className="flex flex-col gap-20">
+          {timelineEvents.map((item, idx) => {
+            const isEven = idx % 2 === 0;
+
+            return (
+              <motion.div 
+                key={idx} 
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                className={`relative flex flex-col md:flex-row items-center w-full ${isEven ? 'md:flex-row-reverse' : ''}`}
+              >
+                
+                {/* Half width spacer for alternating layout */}
+                <div className="hidden md:block md:w-1/2" />
+
+                {/* Center Node / Dot */}
+                <div className="absolute left-[24px] md:left-1/2 transform -translate-x-1/2 w-[5px] h-[5px] bg-red-600 rounded-full shadow-[0_0_15px_rgba(220,38,38,0.8)] z-10" />
+
+                {/* Content Side */}
+                <div className={`w-full pl-12 md:pl-0 md:w-1/2 flex flex-col relative ${isEven ? 'md:items-start md:pl-16' : 'md:items-end md:pr-16'}`}>
+                  
+                  {/* Horizontal connecting branch */}
+                  <div className={`absolute top-[40px] w-12 h-[1px] bg-zinc-800 hidden md:block ${isEven ? 'left-0' : 'right-0'}`} />
+
+                  {/* Year & Content Box Wrapper */}
+                  <div className={`flex flex-col ${isEven ? 'items-start text-left' : 'md:items-end md:text-right items-start text-left'} w-full md:max-w-[420px]`}>
+                    
+                    {/* The Large Red Year */}
+                    <div className={`flex items-center gap-6 mb-6 ${isEven ? 'flex-row' : 'md:flex-row-reverse flex-row'}`}>
+                      <span className="text-6xl md:text-7xl font-black text-red-600 tracking-tighter leading-none drop-shadow-[0_2px_15px_rgba(220,38,38,0.15)]">
+                        {item.year}
+                      </span>
+                      <div className="h-[1px] bg-zinc-800 w-16 md:w-24 hidden sm:block" />
+                    </div>
+
+                    {/* The Framed Box */}
+                    <div className="border border-zinc-800/80 bg-[#0A0A0A]/80 backdrop-blur-md p-8 hover:border-red-600/30 transition-all duration-500 w-full relative group">
+                      <div className="absolute inset-0 bg-gradient-to-br from-red-600/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                      <h4 className="text-xl md:text-2xl text-zinc-100 font-light uppercase tracking-widest mb-4 relative z-10">
+                        {item.title}
+                      </h4>
+                      <p className="text-zinc-400 text-sm leading-relaxed font-medium relative z-10">
+                        {item.description}
+                      </p>
+                    </div>
+
+                  </div>
                 </div>
-                {/* Vertical line for mobile */}
-                <div className="w-[2px] h-full bg-zinc-800 absolute top-16 md:hidden" />
-              </div>
 
-              {/* Content */}
-              <div className="bg-zinc-900/50 backdrop-blur-sm border border-zinc-800 p-6 rounded-2xl hover:border-red-500/30 transition-colors">
-                <h3 className="text-xl font-bold text-white mb-2">{item.title}</h3>
-                <p className="text-zinc-400 text-sm">{item.description}</p>
-              </div>
-            </motion.div>
-          ))}
-        </motion.div>
+              </motion.div>
+            );
+          })}
+        </div>
       </div>
     </section>
   );
 };
+

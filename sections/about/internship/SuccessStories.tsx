@@ -38,9 +38,13 @@ export const SuccessStories = () => {
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         
         <div className="text-center max-w-3xl mx-auto mb-20">
-          <span className="text-xs uppercase tracking-widest text-rose-500 font-bold">Career Progression</span>
-          <h2 className="text-3xl sm:text-5xl font-extrabold text-white mt-3 tracking-tight">Success Stories</h2>
-          <p className="text-zinc-405 mt-4 text-sm sm:text-base leading-relaxed">
+          <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+            Career Progression
+          </span>
+          <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-4">
+            Success <span className="text-rose-500">Stories</span>
+          </h2>
+          <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-bold max-w-2xl mx-auto">
             Many of our interns transition directly into full-time engineering and consulting careers. Hear from some of our recent graduates.
           </p>
         </div>

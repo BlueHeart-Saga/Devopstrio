@@ -21,18 +21,14 @@ export const SupportHero = () => {
       <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-red-500/40 to-transparent" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10 text-center pt-28 pb-20">
-        <motion.div
+        <motion.span
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="inline-flex items-center gap-2 mb-6 px-4 py-1.5 rounded-full border border-red-500/20 bg-red-500/5 text-red-400 text-sm font-medium tracking-wider uppercase"
+          className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-6 block"
         >
-          <span className="relative flex h-2 w-2">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75" />
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-red-500" />
-          </span>
           Global Customer Support
-        </motion.div>
+        </motion.span>
 
         <motion.h1
           initial={{ opacity: 0, y: 24 }}
@@ -40,11 +36,8 @@ export const SupportHero = () => {
           transition={{ duration: 0.7, delay: 0.1 }}
           className="text-5xl md:text-7xl font-bold text-white mb-6 leading-[1.05] tracking-tight"
         >
-          Enterprise Support for
-          <br />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-red-400 to-[#FF1744]">
-            Cloud, AI & DevOps
-          </span>
+          Enterprise Support for<br />
+          <span className="text-rose-500">Cloud, AI &amp; DevOps</span>
         </motion.h1>
 
         <motion.p
@@ -65,7 +58,7 @@ export const SupportHero = () => {
         >
           <a
             href="#support-request"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-[#FF1744] hover:bg-red-600 text-white rounded-xl font-semibold transition-all shadow-[0_0_30px_rgba(255,23,68,0.4)] hover:shadow-[0_0_50px_rgba(255,23,68,0.6)]"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-rose-500 hover:bg-rose-600 text-white rounded-xl font-semibold transition-all shadow-[0_0_30px_rgba(244,63,94,0.4)] hover:shadow-[0_0_50px_rgba(244,63,94,0.6)]"
           >
             <Headphones className="w-5 h-5" />
             Submit Support Request
@@ -91,7 +84,7 @@ export const SupportHero = () => {
               key={idx}
               className="flex items-center gap-3 px-5 py-4 bg-zinc-900/50 border border-zinc-800 rounded-xl backdrop-blur-sm"
             >
-              <p.icon className="w-5 h-5 text-[#FF1744] shrink-0" />
+              <p.icon className="w-5 h-5 text-rose-500 shrink-0" />
               <span className="text-sm text-zinc-300 font-medium text-left">{p.label}</span>
             </div>
           ))}

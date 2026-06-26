@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, Users2, ArrowDown } from "lucide-react";
+import { ArrowRight, Users2 } from "lucide-react";
 
 const stats = [
   { value: "525+", label: "Experts" },
@@ -96,25 +96,6 @@ export const LeadershipHero = () => {
             ))}
           </motion.div>
         </div>
-      </div>
-
-      {/* Bottom Layout Details (Matching Mockup Reference) */}
-      <div className="absolute bottom-8 left-6 lg:left-12 z-20 hidden sm:block">
-        <span className="text-[10px] font-bold text-zinc-600 tracking-[0.25em] uppercase font-mono">
-          ENTERPRISE EXCELLENCE &amp; CONSULTING
-        </span>
-      </div>
-
-      <div className="absolute bottom-8 right-6 lg:right-12 z-20 flex items-center gap-3 text-zinc-500 select-none hidden sm:flex">
-        <span className="text-[9px] font-black tracking-[0.3em] uppercase font-mono">
-          SCROLL TO EXPLORE
-        </span>
-        <motion.div
-          animate={{ y: [0, 6, 0] }}
-          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-        >
-          <ArrowDown size={14} className="text-zinc-500" />
-        </motion.div>
       </div>
     </section>
   );

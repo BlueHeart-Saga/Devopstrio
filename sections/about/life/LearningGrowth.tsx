@@ -27,16 +27,16 @@ export const LearningGrowth = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-3xl md:text-5xl font-bold text-white mb-6"
+              className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-4"
             >
-              Accelerate Your <span className="text-[#FF1744]">Growth</span>
+              Accelerate Your <span className="text-rose-500">Growth</span>
             </motion.h2>
             <motion.p 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-zinc-400 text-lg mb-10"
+              className="text-zinc-400 text-sm md:text-base leading-relaxed font-bold mb-10"
             >
               We believe in compounding knowledge. Our structured growth pathways ensure you're always learning, always challenged, and always moving forward in your career.
             </motion.p>
