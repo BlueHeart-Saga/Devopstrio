@@ -1,17 +1,8 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
-import { Target, Terminal } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
-
-const carouselCards = [
-  { src: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=600", label: "Cloud Architecture" },
-  { src: "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&q=80&w=600", label: "AI & Machine Learning" },
-  { src: "https://images.unsplash.com/photo-1515187029135-18ee286d815b?auto=format&fit=crop&q=80&w=600", label: "DevOps & SRE" },
-  { src: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&q=80&w=600", label: "Cybersecurity" },
-  { src: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&q=80&w=600", label: "Data Engineering" },
-  { src: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=600", label: "Software Development" },
-];
 
 export const InternshipHero = () => {
   const handleScroll = (id: string) => {
@@ -22,105 +13,116 @@ export const InternshipHero = () => {
   };
 
   return (
-    <section className="relative min-h-[90vh] flex flex-col items-center overflow-hidden bg-black pt-32 pb-24">
+    <section className="relative min-h-[90vh] lg:min-h-[750px] flex flex-col justify-center items-center overflow-hidden bg-black pt-24 pb-12 lg:pb-0">
       {/* Background Gradients */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(225,29,72,0.08),transparent_50%)] pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(225,29,72,0.05),transparent_50%)] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-6 w-full flex flex-col items-center relative z-10">
+      <div className="max-w-7xl w-full mx-auto px-6 sm:px-12 xl:px-8 relative z-10 flex flex-col gap-8 py-8 lg:py-16">
         
-        {/* Top Pill Badge */}
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="mb-8"
+        {/* Top Header Row */}
+        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-6 mb-2">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="max-w-3xl"
+          >
+            <h1 className="text-5xl md:text-7xl lg:text-[5.5rem] font-bold text-white tracking-tighter leading-[0.95] uppercase mb-4">
+              Your Future, <br className="hidden sm:block" />
+              <span className="text-zinc-400">Our Mission</span>
+            </h1>
+            <p className="text-zinc-400 text-lg md:text-xl font-medium tracking-wide">
+              Exceeding Standards In Global Engineering
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+          >
+            <button 
+              onClick={() => handleScroll("apply-form")}
+              className="bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 hover:border-zinc-700 text-white px-8 py-4 rounded-2xl font-bold tracking-wide transition-all duration-300 shadow-xl"
+            >
+              Apply Now
+            </button>
+          </motion.div>
+        </div>
+
+        {/* Middle Wide Image Row */}
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.98 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="w-full relative h-[400px] md:h-[500px] lg:h-[550px] rounded-[2rem] md:rounded-[3rem] overflow-hidden group shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-zinc-800/50"
         >
-          <div className="inline-flex items-center gap-2 py-1.5 px-4 rounded-full bg-white/5 border border-white/10 text-zinc-300 text-xs font-medium shadow-sm">
-            <Target size={14} className="text-rose-500" />
-            <span>Finally, Internships that Actually Convert</span>
+          <Image 
+            src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=2000" 
+            alt="Devopstrio Internship Team"
+            fill
+            className="object-cover transition-transform duration-1000 group-hover:scale-105"
+            unoptimized
+          />
+          {/* Gradients for contrast */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+          
+          {/* Glassmorphism inner floating box */}
+          <div className="absolute bottom-6 left-6 right-6 md:right-auto md:w-[600px] bg-black/40 backdrop-blur-md border border-white/10 rounded-3xl p-6 sm:p-8">
+             <span className="bg-white/90 text-black px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-4 inline-block shadow-sm">
+               Program
+             </span>
+             <h3 className="text-white text-xl sm:text-2xl font-bold mb-3 tracking-tight">
+               Leaders in technology incubation
+             </h3>
+             <p className="text-zinc-300 text-sm sm:text-base leading-relaxed font-medium">
+               Our internship covers cloud architecture, data pipelines, AI models, and real-world software deployments to turn you into a top-tier engineer.
+             </p>
+             
+             {/* Circular Arrow Button */}
+             <div className="absolute right-6 top-1/2 -translate-y-1/2 w-12 h-12 bg-white text-black rounded-full hidden sm:flex items-center justify-center hover:scale-105 transition-transform cursor-pointer">
+               <ArrowUpRight className="w-5 h-5" />
+             </div>
           </div>
         </motion.div>
 
-        {/* Hero Title */}
-        <motion.h1
-          initial={{ opacity: 0, y: 15 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-5xl md:text-7xl lg:text-[5.5rem] font-medium text-center text-white tracking-tight leading-[1.1] max-w-5xl mb-6"
-        >
-          Launch Your <span className="text-rose-500">Technology</span> Career
-        </motion.h1>
-
-        {/* Subtitle */}
-        <motion.p
-          initial={{ opacity: 0, y: 15 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-base md:text-lg text-zinc-400 text-center max-w-2xl leading-relaxed mb-10"
-        >
-          Devopstrio is the premier engineering incubator, creating AI, Cloud, and Data experts that regularly deliver 50% to 500% more impact on real-world projects.
-        </motion.p>
-
-        {/* The Action Button (styled exactly like the image: black background, red left square icon block) */}
-        <motion.div
-          initial={{ opacity: 0, y: 15 }}
+        {/* Bottom Stats Grid */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="mb-24"
+          className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-2"
         >
-          <button
-            onClick={() => handleScroll("apply-form")}
-            className="flex items-center gap-3 p-1.5 pr-6 bg-zinc-900 border border-zinc-800 hover:border-zinc-700 text-white rounded-xl transition-all duration-300 shadow-xl group"
-          >
-            {/* Red icon block inside button */}
-            <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-rose-500 to-red-600 flex items-center justify-center shadow-inner">
-              <Terminal size={18} className="text-white" />
+          {/* Stat 1 */}
+          <div className="bg-zinc-950 border border-zinc-900 rounded-[2rem] p-8 flex justify-between items-end hover:border-zinc-800 transition-colors group">
+            <div>
+               <h4 className="text-5xl font-bold text-white mb-2 tracking-tighter">500+</h4>
+               <p className="text-zinc-500 text-xs font-bold uppercase tracking-widest">Students Trained</p>
             </div>
-            <span className="font-semibold text-sm">Apply for Internship</span>
-          </button>
+            <div className="w-10 h-10 rounded-full bg-zinc-900 text-zinc-400 group-hover:bg-zinc-800 group-hover:text-white transition-colors flex items-center justify-center cursor-pointer">
+               <ArrowUpRight className="w-4 h-4" />
+            </div>
+          </div>
+          
+          {/* Stat 2 */}
+          <div className="bg-zinc-950 border border-zinc-900 rounded-[2rem] p-8 flex justify-between items-end hover:border-zinc-800 transition-colors">
+            <div>
+               <h4 className="text-5xl font-bold text-white mb-2 tracking-tighter">100+</h4>
+               <p className="text-zinc-500 text-xs font-bold uppercase tracking-widest">Real Projects</p>
+            </div>
+            <span className="border border-zinc-800 text-zinc-500 text-[10px] px-3 py-1 rounded-full uppercase font-bold tracking-widest">Global</span>
+          </div>
+
+          {/* Stat 3 (Accent Card) */}
+          <div className="bg-zinc-900 rounded-[2rem] p-8 flex justify-between items-end border border-zinc-800 shadow-[0_0_30px_rgba(0,0,0,0.5)]">
+            <div>
+               <h4 className="text-5xl font-bold text-white mb-2 tracking-tighter">95%</h4>
+               <p className="text-zinc-400 text-xs font-bold uppercase tracking-widest">Placement Rate</p>
+            </div>
+          </div>
         </motion.div>
 
       </div>
-
-      {/* Full-width Carousel of Portrait Cards */}
-      <motion.div 
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.4 }}
-        className="w-full relative z-10 flex gap-4 overflow-hidden px-4 md:px-0 justify-center"
-      >
-        {/* Horizontal scroll container with hidden scrollbar */}
-        <div className="flex gap-4 md:gap-6 w-full max-w-[1600px] mx-auto overflow-x-auto pb-8 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden snap-x snap-mandatory px-4 md:px-8">
-          {carouselCards.map((card, idx) => (
-            <div 
-              key={idx} 
-              className="relative shrink-0 w-[240px] md:w-[280px] aspect-[3/4] rounded-[2rem] overflow-hidden snap-center group cursor-pointer border border-zinc-800 shadow-[0_0_20px_rgba(0,0,0,0.5)] hover:border-zinc-700 transition-colors"
-            >
-              {/* Background Image */}
-              <Image 
-                src={card.src} 
-                alt={card.label} 
-                fill 
-                className="object-cover transition-transform duration-700 group-hover:scale-105"
-                unoptimized
-              />
-              
-              {/* Gradient Overlay for contrast */}
-              <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/60" />
-
-              {/* Top Glass Pill inside Card */}
-              <div className="absolute top-5 inset-x-5 flex justify-center">
-                <div className="inline-flex items-center gap-2 py-2 px-3 rounded-full bg-black/30 backdrop-blur-md border border-white/10 text-white/90 text-[10px] sm:text-xs font-semibold shadow-sm w-full">
-                  <div className="w-5 h-5 shrink-0 rounded-full bg-black/80 flex items-center justify-center">
-                    <Terminal size={10} className="text-rose-500" />
-                  </div>
-                  <span className="truncate">Master {card.label}</span>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </motion.div>
     </section>
   );
 };

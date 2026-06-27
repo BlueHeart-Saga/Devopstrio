@@ -84,7 +84,7 @@ export const WhatInternsWorkOn = () => {
     <section className="relative py-24 bg-black overflow-hidden border-t border-zinc-900">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom,rgba(244,63,94,0.03),transparent_70%)] pointer-events-none" />
 
-      <div className="max-w-[1400px] mx-auto px-6 relative z-10">
+      <div className="max-w-7xl w-full mx-auto px-6 sm:px-12 xl:px-8 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
             Practical Execution
