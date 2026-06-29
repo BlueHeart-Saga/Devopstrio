@@ -3,8 +3,35 @@
     "id": 1,
     "src": "/images/life/team_hero.png",
     "category": "Team Celebrations",
-    "year": "2026",
-    "title": "Office Inauguration"
+    "year": "2026-06-29",
+    "title": "Office Inauguration",
+    "eventName": "office",
+    "images": [
+      {
+        "src": "/uploads/1782716593849-building.png",
+        "tagname": ""
+      },
+      {
+        "src": "/uploads/1782716595180-Screenshot_25-6-2026_145934_www.magnific.com.jpeg",
+        "tagname": ""
+      },
+      {
+        "src": "/uploads/1782716596227-modern-business-center.jpg",
+        "tagname": ""
+      },
+      {
+        "src": "/uploads/1782716597179-business-office-sky-cityscape-tourism.jpg",
+        "tagname": ""
+      },
+      {
+        "src": "/uploads/1782716600666-ChatGPT_Image_Jun_25__2026__02_47_14_PM.png",
+        "tagname": ""
+      },
+      {
+        "src": "/uploads/1782716601477-IMG_20250822_103409_3.jpg",
+        "tagname": ""
+      }
+    ]
   },
   {
     "id": 2,

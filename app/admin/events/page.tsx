@@ -4,23 +4,26 @@ import React, { useState, useEffect, useRef } from "react";
 import { Plus, Pencil, Trash2, Save, X, Image as ImageIcon, Upload } from "lucide-react";
 import Image from "next/image";
 
-type EventItem = {
-  id: number;
+type EventImage = {
   src: string;
-  category: string;
-  year: string;
-  title: string;
+  tagname: string;
 };
 
-const CATEGORIES = ["Team Celebrations", "Hackathons", "Learning Sessions", "Community Impact", "Awards"];
-const YEARS = ["2027", "2026", "2025", "2024", "2023"];
+type EventRecord = {
+  id: number;
+  eventName: string;
+  year: string;
+  images: EventImage[];
+};
+
+const YEARS = ["2027", "2026", "2025", "2024", "2023", "2022"];
 
 export default function EventsAdminPage() {
-  const [items, setItems] = useState<EventItem[]>([]);
+  const [items, setItems] = useState<EventRecord[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
   const [editingId, setEditingId] = useState<number | null>(null);
-  const [formData, setFormData] = useState<Partial<EventItem>>({});
+  const [formData, setFormData] = useState<Partial<EventRecord>>({ images: [] });
 
   const [isAdding, setIsAdding] = useState(false);
   const [isUploading, setIsUploading] = useState(false);
@@ -35,7 +38,22 @@ export default function EventsAdminPage() {
     try {
       const res = await fetch("/api/events");
       const data = await res.json();
-      setItems(data);
+      
+      const normalizedData: EventRecord[] = data.map((item: any) => {
+        if (item.images) return item;
+          let parsedYear = item.year || new Date().toISOString().split('T')[0];
+          if (parsedYear.length === 4) {
+            parsedYear = `${parsedYear}-01-01`; // Normalize legacy "2024" to a valid date input format
+          }
+          return {
+            id: item.id,
+            eventName: item.eventName || item.category || "Untitled Event",
+            year: parsedYear,
+            images: item.src ? [{ src: item.src, tagname: item.title || "" }] : []
+          };
+      });
+      
+      setItems(normalizedData);
     } catch (err) {
       console.error("Failed to fetch events", err);
     } finally {
@@ -48,34 +66,59 @@ export default function EventsAdminPage() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleFileUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (!file) return;
-
-    setIsUploading(true);
-    const data = new FormData();
-    data.append("file", file);
-
-    try {
-      const res = await fetch("/api/upload", {
-        method: "POST",
-        body: data,
-      });
-      const result = await res.json();
-      if (result.success) {
-        setFormData((prev) => ({ ...prev, src: result.url }));
-      } else {
-        alert("Upload failed");
-      }
-    } catch (err) {
-      console.error(err);
-      alert("Upload failed");
-    } finally {
-      setIsUploading(false);
-    }
+  const handleImageTagnameChange = (index: number, value: string) => {
+    setFormData((prev) => {
+      const newImages = [...(prev.images || [])];
+      newImages[index] = { ...newImages[index], tagname: value };
+      return { ...prev, images: newImages };
+    });
   };
 
-  const handleEdit = (item: EventItem) => {
+  const handleRemoveImage = (index: number) => {
+    setFormData((prev) => {
+      const newImages = [...(prev.images || [])];
+      newImages.splice(index, 1);
+      return { ...prev, images: newImages };
+    });
+  };
+
+  const handleFileUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const files = e.target.files;
+    if (!files || files.length === 0) return;
+
+    setIsUploading(true);
+    
+    const newUploadedImages: EventImage[] = [];
+    
+    for (let i = 0; i < files.length; i++) {
+      const file = files[i];
+      const data = new FormData();
+      data.append("file", file);
+
+      try {
+        const res = await fetch("/api/upload", {
+          method: "POST",
+          body: data,
+        });
+        const result = await res.json();
+        if (result.success) {
+          newUploadedImages.push({ src: result.url, tagname: "" });
+        }
+      } catch (err) {
+        console.error(err);
+      }
+    }
+    
+    setFormData((prev) => ({ 
+      ...prev, 
+      images: [...(prev.images || []), ...newUploadedImages] 
+    }));
+    
+    setIsUploading(false);
+    e.target.value = ''; // Reset file input
+  };
+
+  const handleEdit = (item: EventRecord) => {
     setEditingId(item.id);
     setFormData(item);
     setIsAdding(false);
@@ -87,7 +130,7 @@ export default function EventsAdminPage() {
 
   const handleCancel = () => {
     setEditingId(null);
-    setFormData({});
+    setFormData({ images: [] });
     setIsAdding(false);
   };
 
@@ -95,10 +138,9 @@ export default function EventsAdminPage() {
     setIsAdding(true);
     setEditingId(null);
     setFormData({
-      title: "",
-      category: CATEGORIES[0],
-      year: new Date().getFullYear().toString(),
-      src: ""
+      eventName: "",
+      year: new Date().toISOString().split('T')[0],
+      images: []
     });
 
     setTimeout(() => {
@@ -107,23 +149,29 @@ export default function EventsAdminPage() {
   };
 
   const handleSave = async () => {
-    if (!formData.title || !formData.category || !formData.year || !formData.src) {
-      alert("Please fill in all fields including the image.");
+    if (!formData.eventName || !formData.year || !formData.images || formData.images.length === 0) {
+      alert("Please fill in the event name, year, and add at least one image.");
       return;
     }
+
+    const payload = {
+      eventName: formData.eventName,
+      year: formData.year,
+      images: formData.images
+    };
 
     try {
       if (isAdding) {
         await fetch("/api/events", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(formData),
+          body: JSON.stringify(payload),
         });
       } else if (editingId) {
         await fetch(`/api/events/${editingId}`, {
           method: "PUT",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(formData),
+          body: JSON.stringify(payload),
         });
       }
 
@@ -135,7 +183,7 @@ export default function EventsAdminPage() {
   };
 
   const handleDelete = async (id: number) => {
-    if (!confirm("Are you sure you want to delete this event?")) return;
+    if (!confirm("Are you sure you want to delete this entire event and all its images?")) return;
     try {
       await fetch(`/api/events/${id}`, { method: "DELETE" });
       await fetchItems();
@@ -149,47 +197,44 @@ export default function EventsAdminPage() {
   }
 
   const renderPreview = () => {
-    const p = formData as EventItem;
+    const p = formData as EventRecord;
+    
+    if (!p.images || p.images.length === 0) {
+      return (
+        <div className="flex flex-col items-center justify-center w-full max-w-sm aspect-video bg-zinc-950 border border-zinc-900 rounded-2xl text-zinc-600">
+           <ImageIcon size={48} className="mb-2" />
+           <span className="text-xs font-mono uppercase tracking-wider">No Images Uploaded</span>
+        </div>
+      );
+    }
 
     return (
-      <div className="relative aspect-[16/10] w-full max-w-sm rounded-[2rem] overflow-hidden bg-zinc-950 border border-zinc-900 shadow-2xl transition-all duration-500">
-        {/* Year Overlay */}
-        <div className="absolute top-4 left-0 right-0 z-20 text-center pointer-events-none select-none">
-          <span className="text-3xl font-black tracking-widest text-rose-500/85 drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
-            {p.year || "YEAR"}
-          </span>
-        </div>
-
-        {/* Background Image */}
-        {p.src ? (
-          <div className="absolute inset-0 z-0">
+      <div className="w-full max-w-lg grid grid-cols-2 gap-3">
+        {p.images.map((img, idx) => (
+          <div key={idx} className="relative aspect-square w-full rounded-xl overflow-hidden bg-zinc-950 border border-zinc-900 shadow-xl group">
             <Image
-              src={p.src}
-              alt={p.title || "Preview"}
+              src={img.src}
+              alt={img.tagname || "Event Image"}
               fill
               className="object-cover"
-              unoptimized={p.src.startsWith("http") || p.src.startsWith("/")}
+              unoptimized={img.src.startsWith("http") || img.src.startsWith("/")}
             />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-100 pointer-events-none" />
+            
+            <div className="absolute inset-x-0 bottom-0 p-4 flex flex-col justify-end pointer-events-none">
+              <span className="text-rose-500 text-[10px] font-bold tracking-widest uppercase mb-1">
+                {p.eventName || "Event Name"}
+              </span>
+              <h4 className="text-white text-sm font-bold tracking-tight">
+                {img.tagname || "Image Quote/Tag"}
+              </h4>
+            </div>
+            
+            <div className="absolute top-2 right-2 bg-black/50 px-2 py-0.5 rounded text-[10px] font-mono text-zinc-300">
+              {p.year || "YEAR"}
+            </div>
           </div>
-        ) : (
-          <div className="absolute inset-0 z-0 flex flex-col items-center justify-center text-zinc-600 bg-zinc-950">
-            <ImageIcon size={48} className="mb-2" />
-            <span className="text-xs font-mono uppercase tracking-wider">No Image Uploaded</span>
-          </div>
-        )}
-
-        {/* Soft Vignette Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent pointer-events-none z-10" />
-
-        {/* Hover Details Overlay */}
-        <div className="absolute inset-x-0 bottom-0 z-20 p-6 flex flex-col justify-end">
-          <span className="text-rose-500 text-xs font-bold tracking-widest uppercase mb-1">
-            {p.category || "CATEGORY"}
-          </span>
-          <h4 className="text-white text-base font-bold tracking-tight">
-            {p.title || "Event Title"}
-          </h4>
-        </div>
+        ))}
       </div>
     );
   };
@@ -200,7 +245,7 @@ export default function EventsAdminPage() {
         <div className="flex justify-between items-center mb-12">
           <div>
             <h1 className="text-3xl font-bold tracking-tight mb-2">Events Admin</h1>
-            <p className="text-zinc-400">Manage the Life Moments Gallery and events hosted by Devopstrio.</p>
+            <p className="text-zinc-400">Manage dynamically named events and their image galleries.</p>
           </div>
           {!isAdding && !editingId && (
             <button
@@ -217,103 +262,93 @@ export default function EventsAdminPage() {
           <div ref={formRef} className="bg-zinc-900 border border-zinc-800 p-8 rounded-xl mb-12 shadow-2xl scroll-mt-32">
             <h2 className="text-xl font-bold mb-8">{isAdding ? "Create New Event" : "Edit Event"}</h2>
 
-            <div className="grid grid-cols-1 xl:grid-cols-3 gap-12">
-              <div className="xl:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <label className="block text-xs font-bold text-zinc-400 uppercase tracking-widest mb-2">Event Title</label>
-                  <input
-                    type="text"
-                    name="title"
-                    value={formData.title || ""}
-                    onChange={handleInputChange}
-                    className="w-full bg-zinc-950 border border-zinc-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-rose-500"
-                    placeholder="e.g. Office Inauguration"
-                  />
+            <div className="grid grid-cols-1 xl:grid-cols-2 gap-12">
+              <div className="flex flex-col gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <label className="block text-xs font-bold text-zinc-400 uppercase tracking-widest mb-2">Event Name</label>
+                    <input
+                      type="text"
+                      name="eventName"
+                      value={formData.eventName || ""}
+                      onChange={handleInputChange}
+                      className="w-full bg-zinc-950 border border-zinc-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-rose-500"
+                      placeholder="e.g. Innovators Hackathon 2024"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-xs font-bold text-zinc-400 uppercase tracking-widest mb-2">Event Date</label>
+                    <input
+                      type="date"
+                      name="year"
+                      value={formData.year || ""}
+                      onChange={handleInputChange}
+                      className="w-full bg-zinc-950 border border-zinc-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-rose-500 [color-scheme:dark]"
+                    />
+                  </div>
                 </div>
 
                 <div>
-                  <label className="block text-xs font-bold text-zinc-400 uppercase tracking-widest mb-2">Category</label>
-                  <select
-                    name="category"
-                    value={formData.category || ""}
-                    onChange={handleInputChange}
-                    className="w-full bg-zinc-950 border border-zinc-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-rose-500"
-                  >
-                    {CATEGORIES.map((cat) => (
-                      <option key={cat} value={cat}>
-                        {cat}
-                      </option>
-                    ))}
-                  </select>
-                </div>
-
-                <div>
-                  <label className="block text-xs font-bold text-zinc-400 uppercase tracking-widest mb-2">Year</label>
-                  <select
-                    name="year"
-                    value={formData.year || ""}
-                    onChange={handleInputChange}
-                    className="w-full bg-zinc-950 border border-zinc-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-rose-500"
-                  >
-                    {YEARS.map((yr) => (
-                      <option key={yr} value={yr}>
-                        {yr}
-                      </option>
-                    ))}
-                  </select>
-                </div>
-
-                <div className="md:col-span-2">
-                  <label className="block text-xs font-bold text-zinc-400 uppercase tracking-widest mb-2">Event Image</label>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div>
-                      <span className="block text-[10px] text-zinc-500 uppercase tracking-wider mb-2">Upload File</span>
-                      <div className="flex items-center gap-4">
-                        <label className="flex items-center gap-2 bg-zinc-800 hover:bg-zinc-700 text-white px-4 py-2.5 rounded-lg font-bold text-xs tracking-wider uppercase cursor-pointer transition-colors">
-                          <Upload size={14} />
-                          Browse File
-                          <input
-                            type="file"
-                            accept="image/*"
-                            onChange={handleFileUpload}
-                            className="hidden"
-                          />
-                        </label>
-                        {isUploading && <span className="text-rose-500 text-sm font-bold animate-pulse">Uploading...</span>}
-                      </div>
+                  <div className="flex items-center justify-between mb-2">
+                    <label className="block text-xs font-bold text-zinc-400 uppercase tracking-widest">Event Images</label>
+                  </div>
+                  
+                  <div className="bg-zinc-950 border border-zinc-800 rounded-xl p-5">
+                    <div className="flex items-center gap-4 mb-5 pb-5 border-b border-zinc-800">
+                      <label className="flex items-center gap-2 bg-zinc-800 hover:bg-zinc-700 text-white px-5 py-2.5 rounded-lg font-bold text-xs tracking-wider uppercase cursor-pointer transition-colors">
+                        <Upload size={14} />
+                        Upload Images
+                        <input
+                          type="file"
+                          accept="image/*"
+                          multiple
+                          onChange={handleFileUpload}
+                          className="hidden"
+                        />
+                      </label>
+                      {isUploading && <span className="text-rose-500 text-sm font-bold animate-pulse flex items-center gap-2"><ImageIcon size={16} className="animate-bounce" /> Uploading...</span>}
                     </div>
-                    <div>
-                      <span className="block text-[10px] text-zinc-500 uppercase tracking-wider mb-2">Or Paste URL</span>
-                      <input
-                        type="text"
-                        name="src"
-                        value={formData.src || ""}
-                        onChange={handleInputChange}
-                        className="w-full bg-zinc-950 border border-zinc-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-rose-500"
-                        placeholder="https://images.unsplash.com/..."
-                      />
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      {formData.images?.map((img, idx) => (
+                        <div key={idx} className="bg-zinc-900 border border-zinc-800 rounded-lg p-3 flex gap-3 relative group">
+                          <div className="relative w-20 h-20 rounded-md overflow-hidden shrink-0 border border-zinc-700">
+                            <Image
+                              src={img.src}
+                              alt="Preview"
+                              fill
+                              className="object-cover"
+                              unoptimized={img.src.startsWith("http") || img.src.startsWith("/")}
+                            />
+                          </div>
+                          <div className="flex flex-col flex-1 gap-2">
+                            <input
+                              type="text"
+                              value={img.tagname}
+                              onChange={(e) => handleImageTagnameChange(idx, e.target.value)}
+                              className="w-full bg-zinc-950 border border-zinc-800 rounded px-3 py-2 text-xs text-white focus:outline-none focus:border-rose-500"
+                              placeholder="Image quote or tagname..."
+                            />
+                            <button
+                              onClick={() => handleRemoveImage(idx)}
+                              className="self-end text-[10px] uppercase font-bold tracking-wider text-red-500 hover:text-red-400 transition-colors"
+                            >
+                              Remove
+                            </button>
+                          </div>
+                        </div>
+                      ))}
+                      {(!formData.images || formData.images.length === 0) && !isUploading && (
+                        <div className="col-span-full py-8 text-center text-zinc-600 text-xs font-bold uppercase tracking-widest">
+                          No images added yet.
+                        </div>
+                      )}
                     </div>
                   </div>
-                  {formData.src && (
-                    <div className="mt-4 relative w-32 h-20 rounded-lg overflow-hidden border border-zinc-800">
-                      <Image
-                        src={formData.src}
-                        alt="Preview"
-                        fill
-                        className="object-cover"
-                        unoptimized={formData.src.startsWith("http") || formData.src.startsWith("/")}
-                      />
-                      <button
-                        onClick={() => setFormData((prev) => ({ ...prev, src: "" }))}
-                        className="absolute top-1 right-1 bg-black/70 p-1 rounded-full hover:bg-red-600 transition-colors"
-                      >
-                        <X size={14} />
-                      </button>
-                    </div>
-                  )}
                 </div>
 
-                <div className="md:col-span-2 flex gap-4 mt-4">
+                <div className="flex gap-4 mt-2">
                   <button
                     onClick={handleSave}
                     className="flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white px-8 py-3.5 rounded-lg font-bold text-sm tracking-wide transition-colors"
@@ -330,60 +365,74 @@ export default function EventsAdminPage() {
               </div>
 
               {/* Live Preview */}
-              <div className="xl:border-l xl:border-zinc-800 xl:pl-12 flex flex-col items-center">
-                <span className="block text-xs font-bold text-zinc-500 uppercase tracking-widest mb-6 self-start xl:self-center">Live Preview</span>
-                {renderPreview()}
+              <div className="xl:border-l xl:border-zinc-800 xl:pl-12 flex flex-col items-start h-full">
+                <span className="block text-xs font-bold text-zinc-500 uppercase tracking-widest mb-6">Gallery Preview</span>
+                <div className="w-full">
+                  {renderPreview()}
+                </div>
               </div>
             </div>
           </div>
         )}
 
-        {/* List view */}
-        <div className="grid grid-cols-1 gap-4">
+        {/* List view Grouped by Event */}
+        <div className="grid grid-cols-1 gap-8">
           {items.map((item) => (
-            <div key={item.id} className="bg-zinc-900 border border-zinc-800 p-6 rounded-xl flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
-              <div className="flex items-center gap-4">
-                {item.src && (
-                  <div className="relative w-16 h-12 rounded overflow-hidden border border-zinc-800 flex-shrink-0">
-                    <Image
-                      src={item.src}
-                      alt={item.title}
-                      fill
-                      className="object-cover"
-                      unoptimized={item.src.startsWith("http") || item.src.startsWith("/")}
-                    />
-                  </div>
-                )}
+            <div key={item.id} className="bg-zinc-900 border border-zinc-800 p-6 md:p-8 rounded-xl flex flex-col gap-6">
+              
+              <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 border-b border-zinc-800 pb-5">
                 <div>
                   <div className="flex items-center gap-3 mb-1">
                     <span className="px-2 py-0.5 text-[10px] font-mono font-bold uppercase rounded border bg-rose-500/10 text-rose-400 border-rose-500/30">
-                      {item.category}
+                      {item.year}
                     </span>
-                    <span className="text-xs font-mono font-bold text-zinc-500">{item.year}</span>
+                    <span className="text-xs font-bold text-zinc-500 uppercase tracking-widest">{item.images.length} Images</span>
                   </div>
-                  <h3 className="text-xl font-bold text-white">{item.title}</h3>
+                  <h3 className="text-2xl font-bold text-white tracking-tight">{item.eventName}</h3>
+                </div>
+
+                <div className="flex gap-2">
+                  <button
+                    onClick={() => handleEdit(item)}
+                    className="flex items-center justify-center gap-2 bg-zinc-800 hover:bg-zinc-700 text-white px-4 py-2.5 rounded-lg font-bold text-xs tracking-wide transition-colors"
+                  >
+                    <Pencil size={14} /> Edit Event
+                  </button>
+                  <button
+                    onClick={() => handleDelete(item.id)}
+                    className="flex items-center justify-center gap-2 bg-red-950 hover:bg-red-900 text-red-500 border border-red-900/50 px-4 py-2.5 rounded-lg font-bold text-xs tracking-wide transition-colors"
+                  >
+                    <Trash2 size={14} /> Delete Event
+                  </button>
                 </div>
               </div>
 
-              <div className="flex gap-2 w-full md:w-auto">
-                <button
-                  onClick={() => handleEdit(item)}
-                  className="flex-1 md:flex-none flex items-center justify-center gap-2 bg-zinc-800 hover:bg-zinc-700 text-white px-4 py-2.5 rounded-lg font-bold text-xs tracking-wide transition-colors"
-                >
-                  <Pencil size={14} /> Edit
-                </button>
-                <button
-                  onClick={() => handleDelete(item.id)}
-                  className="flex-1 md:flex-none flex items-center justify-center gap-2 bg-red-950 hover:bg-red-900 text-red-500 border border-red-900/50 px-4 py-2.5 rounded-lg font-bold text-xs tracking-wide transition-colors"
-                >
-                  <Trash2 size={14} /> Delete
-                </button>
+              {/* Event Images Grid */}
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+                {item.images.map((img, idx) => (
+                  <div key={idx} className="relative aspect-square rounded-lg overflow-hidden border border-zinc-800 group bg-zinc-950">
+                    <Image
+                      src={img.src}
+                      alt={img.tagname || "Event Image"}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      unoptimized={img.src.startsWith("http") || img.src.startsWith("/")}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent pointer-events-none" />
+                    <div className="absolute inset-x-0 bottom-0 p-3 pointer-events-none">
+                      <p className="text-white text-xs font-semibold leading-tight line-clamp-2">
+                        {img.tagname || "No Tag"}
+                      </p>
+                    </div>
+                  </div>
+                ))}
               </div>
+
             </div>
           ))}
 
           {items.length === 0 && (
-            <div className="text-center py-20 text-zinc-500 font-medium">
+            <div className="text-center py-20 text-zinc-500 font-medium bg-zinc-900/50 border border-zinc-800 rounded-xl">
               No events found. Click 'Add New Event' to create one.
             </div>
           )}

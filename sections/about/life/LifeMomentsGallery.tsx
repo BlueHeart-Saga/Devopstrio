@@ -4,27 +4,20 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 
-const categories = ["All", "Team Celebrations", "Hackathons", "Learning Sessions", "Community Impact", "Awards"];
+type EventImage = {
+  src: string;
+  tagname: string;
+};
 
-const initialImages = [
-  { src: "/images/life/team_hero.png", category: "Team Celebrations", year: "2026", title: "Office Inauguration" },
-  { src: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=800", category: "Learning Sessions", year: "2026", title: "Tech Talk Masterclass" },
-  { src: "/images/life/hackathon.png", category: "Hackathons", year: "2026", title: "Techspira Hackathon" },
-  { src: "/images/life/awards.png", category: "Awards", year: "2025", title: "Annual Excellence Awards" },
-  { src: "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&q=80&w=800", category: "Community Impact", year: "2026", title: "Green Drive CSR" },
-  { src: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800", category: "Team Celebrations", year: "2026", title: "Team Outing & Offsite" },
-  
-  // Additional items loaded when clicking "Load More"
-  { src: "https://images.unsplash.com/photo-1515187029135-18ee286d815b?auto=format&fit=crop&q=80&w=800", category: "Learning Sessions", year: "2026", title: "AI & ML Workshop" },
-  { src: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&q=80&w=800", category: "Hackathons", year: "2026", title: "Innovate Hack" },
-  { src: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&q=80&w=800", category: "Team Celebrations", year: "2025", title: "Christmas & New Year Bash" },
-  { src: "https://images.unsplash.com/photo-1505232458627-539c97b84a6a?auto=format&fit=crop&q=80&w=800", category: "Community Impact", year: "2026", title: "Charity Marathon" },
-  { src: "https://images.unsplash.com/photo-1531538606174-0f90ff5dce83?auto=format&fit=crop&q=80&w=800", category: "Learning Sessions", year: "2026", title: "Cloud Architecture Masterclass" },
-  { src: "https://images.unsplash.com/photo-1516649791333-9a3b83fa670a?auto=format&fit=crop&q=80&w=800", category: "Awards", year: "2025", title: "Customer Success Awards" },
-];
+type EventRecord = {
+  id: number;
+  eventName: string;
+  year: string;
+  images: EventImage[];
+};
 
 export const LifeMomentsGallery = () => {
-  const [images, setImages] = useState<any[]>(initialImages);
+  const [events, setEvents] = useState<EventRecord[]>([]);
   const [activeCategory, setActiveCategory] = useState("All");
   const [visibleCount, setVisibleCount] = useState(6);
 
@@ -34,18 +27,43 @@ export const LifeMomentsGallery = () => {
         const res = await fetch("/api/events");
         const data = await res.json();
         if (Array.isArray(data)) {
-          setImages(data);
+          // Normalize legacy and new data seamlessly
+          const normalizedData: EventRecord[] = data.map((item: any) => {
+            if (item.images) return item;
+            return {
+              id: item.id,
+              eventName: item.eventName || item.category || "Untitled Event",
+              year: item.year || new Date().getFullYear().toString(),
+              images: item.src ? [{ src: item.src, tagname: item.title || "" }] : []
+            };
+          });
+          // Show newest events first
+          setEvents(normalizedData.reverse());
         }
       } catch (err) {
-        console.error("Failed to load events, using fallback", err);
+        console.error("Failed to load events", err);
       }
     };
     fetchEvents();
   }, []);
 
+  // Flatten the events into a single array of images for the beautiful masonry gallery
+  const allImages = events.flatMap(event => 
+    event.images.map((img, index) => ({
+      id: `${event.id}-${index}-${img.src}`,
+      src: img.src,
+      title: img.tagname,
+      category: event.eventName,
+      year: event.year
+    }))
+  );
+
+  // Extract unique categories (event names) dynamically for the filter bar
+  const categories = ["All", ...Array.from(new Set(events.map(e => e.eventName)))];
+
   const filteredImages = activeCategory === "All" 
-    ? images 
-    : images.filter(img => img.category === activeCategory);
+    ? allImages 
+    : allImages.filter(img => img.category === activeCategory);
 
   const displayedImages = filteredImages.slice(0, visibleCount);
   const hasMore = filteredImages.length > visibleCount;
@@ -92,21 +110,23 @@ export const LifeMomentsGallery = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="mt-10 flex justify-center"
           >
-            <div className="inline-flex items-center gap-1.5 p-1.5 bg-zinc-950/40 border border-zinc-900 rounded-full backdrop-blur-md max-w-full overflow-x-auto [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden shadow-2xl">
-              {categories.map((cat) => (
-                <button
-                  key={cat}
-                  onClick={() => handleCategoryChange(cat)}
-                  className={`px-6 py-2.5 rounded-full text-xs sm:text-sm font-semibold whitespace-nowrap transition-all duration-300 ${
-                    activeCategory === cat 
-                    ? "bg-white text-black shadow-lg" 
-                    : "text-zinc-400 hover:text-white hover:bg-zinc-900/50"
-                  }`}
-                >
-                  {cat}
-                </button>
-              ))}
-            </div>
+            {categories.length > 1 && (
+              <div className="inline-flex items-center gap-1.5 p-1.5 bg-zinc-950/40 border border-zinc-900 rounded-full backdrop-blur-md max-w-full overflow-x-auto [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden shadow-2xl">
+                {categories.map((cat) => (
+                  <button
+                    key={cat}
+                    onClick={() => handleCategoryChange(cat)}
+                    className={`px-6 py-2.5 rounded-full text-xs sm:text-sm font-semibold whitespace-nowrap transition-all duration-300 ${
+                      activeCategory === cat 
+                      ? "bg-white text-black shadow-lg" 
+                      : "text-zinc-400 hover:text-white hover:bg-zinc-900/50"
+                    }`}
+                  >
+                    {cat}
+                  </button>
+                ))}
+              </div>
+            )}
           </motion.div>
         </div>
 
@@ -123,17 +143,17 @@ export const LifeMomentsGallery = () => {
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.95, y: 20 }}
                 transition={{ duration: 0.4 }}
-                key={`${item.src}-${idx}`}
+                key={item.id}
                 className="bg-white p-3 rounded-[2rem] border border-zinc-200/10 shadow-[0_10px_30px_rgba(0,0,0,0.2)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)] hover:scale-[1.02] transition-all duration-500 group relative cursor-pointer"
               >
                 <div className="relative aspect-[16/10] w-full rounded-[1.5rem] overflow-hidden bg-zinc-100">
                   {/* Background Image */}
                   <Image 
                     src={item.src} 
-                    alt={item.title} 
+                    alt={item.title || "Event Image"} 
                     fill 
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
-                    unoptimized={item.src.startsWith('http')}
+                    unoptimized={item.src.startsWith('http') || item.src.startsWith("/")}
                   />
                   
                   {/* Premium Hover Overlay */}
@@ -160,6 +180,12 @@ export const LifeMomentsGallery = () => {
             ))}
           </AnimatePresence>
         </motion.div>
+
+        {displayedImages.length === 0 && (
+          <div className="text-center py-24 text-zinc-500 font-medium">
+            No events found. Check the admin dashboard to add events.
+          </div>
+        )}
 
         {/* Load More Button */}
         {hasMore && (
