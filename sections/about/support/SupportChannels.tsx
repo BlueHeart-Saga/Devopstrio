@@ -1,158 +1,134 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import { motion } from "framer-motion";
-import {
-  Mail, Phone, Globe, Linkedin, Facebook, Instagram, Copy, Check
-} from "lucide-react";
-
-const channels = [
-  {
-    id: "email",
-    icon: Mail,
-    label: "Email Support",
-    value: "career@devopstrioglobal.com",
-    href: "mailto:career@devopstrioglobal.com",
-    copyable: true,
-    color: "from-red-500/20 to-transparent",
-    borderHover: "hover:border-red-500/50",
-  },
-  {
-    id: "phone",
-    icon: Phone,
-    label: "Phone Support",
-    value: "+91 461 294 0062",
-    href: "tel:+914612940062",
-    copyable: true,
-    color: "from-blue-500/10 to-transparent",
-    borderHover: "hover:border-blue-500/30",
-  },
-  {
-    id: "website",
-    icon: Globe,
-    label: "Corporate Website",
-    value: "devopstrio.co.uk",
-    href: "https://devopstrio.co.uk/",
-    copyable: false,
-    color: "from-green-500/10 to-transparent",
-    borderHover: "hover:border-green-500/30",
-  },
-  {
-    id: "linkedin",
-    icon: Linkedin,
-    label: "LinkedIn",
-    value: "devopstrioglobal",
-    href: "https://www.linkedin.com/company/devopstrioglobal/",
-    copyable: false,
-    color: "from-sky-500/10 to-transparent",
-    borderHover: "hover:border-sky-500/30",
-  },
-  {
-    id: "facebook",
-    icon: Facebook,
-    label: "Facebook",
-    value: "Devopstrio Official",
-    href: "https://www.facebook.com/61579126233218/",
-    copyable: false,
-    color: "from-indigo-500/10 to-transparent",
-    borderHover: "hover:border-indigo-500/30",
-  },
-  {
-    id: "instagram",
-    icon: Instagram,
-    label: "Instagram",
-    value: "@devopstrio_offcl",
-    href: "https://www.instagram.com/devopstrio_offcl/",
-    copyable: false,
-    color: "from-pink-500/10 to-transparent",
-    borderHover: "hover:border-pink-500/30",
-  },
-];
+import { Phone, Mail, Globe, Instagram, Facebook, Linkedin } from "lucide-react";
+import Image from "next/image";
 
 export const SupportChannels = () => {
-  const [copied, setCopied] = useState<string | null>(null);
-
-  const handleCopy = (id: string, value: string) => {
-    navigator.clipboard.writeText(value);
-    setCopied(id);
-    setTimeout(() => setCopied(null), 2000);
-  };
+  const channels = [
+    { icon: Phone, text: "+91 461 294 0062", href: "tel:+914612940062" },
+    { icon: Mail, text: "CAREER@DEVOPSTRIOGLOBAL.COM", href: "mailto:career@devopstrioglobal.com" },
+    { icon: Globe, text: "DEVOPSTRIO.CO.UK", href: "https://devopstrio.co.uk" },
+    { icon: Linkedin, text: "@DEVOPSTRIOGLOBAL", href: "https://www.linkedin.com/company/devopstrioglobal/" },
+    { icon: Instagram, text: "@DEVOPSTRIO_OFFCL", href: "https://www.instagram.com/devopstrio_offcl/" },
+  ];
 
   return (
-    <section className="py-24 bg-[#050505] border-t border-zinc-900">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-14">
-          <motion.span
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 block mb-4"
-          >
-            Contact Methods
-          </motion.span>
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-4"
-          >
-            Reach Us Anywhere, <span className="text-rose-500">Anytime</span>
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-zinc-400 text-sm md:text-base leading-relaxed font-bold max-w-xl mx-auto"
-          >
-            Multiple channels, one mission — getting you expert support as fast as possible.
-          </motion.p>
-        </div>
+    <section className="py-24 bg-[#050505] border-t border-zinc-900 flex flex-col items-center relative overflow-hidden">
+      <style dangerouslySetInnerHTML={{__html: `
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600&display=swap');
+        .font-script { font-family: 'Dancing Script', cursive; }
+      `}} />
+      
+      {/* Ambient background glow */}
+      <div className="absolute inset-0 flex justify-center items-center pointer-events-none">
+        <div className="w-[800px] h-[800px] bg-rose-500/5 rounded-full blur-[150px]" />
+      </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {channels.map((ch, idx) => (
-            <motion.div
-              key={ch.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: idx * 0.07 }}
-              className={`group relative bg-zinc-900/40 border border-zinc-800 ${ch.borderHover} rounded-2xl p-7 overflow-hidden transition-all duration-300`}
-            >
-              {/* gradient accent */}
-              <div className={`absolute inset-0 bg-gradient-to-br ${ch.color} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
+      {/* Top Header Section */}
+      <div className="text-center mb-20 relative z-10 px-6 w-full max-w-4xl mx-auto">
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-6"
+        >
+          Reach Us Anywhere, <span className="text-rose-500">Anytime</span>
+        </motion.h2>
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.1 }}
+          className="text-zinc-400 text-base md:text-lg leading-relaxed font-medium max-w-2xl mx-auto"
+        >
+          Multiple channels, one mission — getting you expert support as fast as possible.
+        </motion.p>
+      </div>
 
-              <div className="relative z-10">
-                <div className="flex items-start justify-between mb-5">
-                  <div className="w-12 h-12 rounded-xl bg-zinc-800/80 border border-zinc-700 flex items-center justify-center group-hover:border-white/10 transition-colors">
-                    <ch.icon className="w-6 h-6 text-zinc-300 group-hover:text-white transition-colors" />
-                  </div>
+      {/* Two Column Layout */}
+      <div className="w-full max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-8 items-center pb-10 relative z-10">
+        
+        {/* LEFT COLUMN - Contact Information */}
+        <motion.div 
+          initial={{ opacity: 0, x: -40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="flex flex-col items-start text-left w-full"
+        >
+          {/* Business Name */}
+          <h3 className="text-zinc-400 text-[13px] md:text-sm font-bold tracking-[0.3em] uppercase mb-3">
+            Devopstrio Global
+          </h3>
 
-                  {ch.copyable && (
-                    <button
-                      onClick={() => handleCopy(ch.id, ch.value)}
-                      className="w-9 h-9 rounded-lg flex items-center justify-center bg-zinc-800 border border-zinc-700 hover:bg-zinc-700 hover:border-zinc-600 transition-colors"
-                      title="Copy to clipboard"
-                    >
-                      {copied === ch.id
-                        ? <Check className="w-4 h-4 text-green-400" />
-                        : <Copy className="w-4 h-4 text-zinc-400" />}
-                    </button>
-                  )}
+          {/* Cursive Title */}
+          <h2 className="font-script text-6xl md:text-7xl text-white mb-14 tracking-wide drop-shadow-md">
+            Connect with us
+          </h2>
+
+          {/* Contact List */}
+          <div className="w-full max-w-[380px] flex flex-col gap-5 mb-14">
+            {channels.map((ch, idx) => (
+              <motion.a 
+                key={idx}
+                href={ch.href}
+                target={ch.href.startsWith("http") ? "_blank" : undefined}
+                rel="noopener noreferrer"
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2 + (idx * 0.1) }}
+                className="flex items-center group cursor-pointer"
+              >
+                <div className="w-11 h-11 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-400 group-hover:bg-rose-500 group-hover:text-white group-hover:border-rose-400 transition-all duration-300 shrink-0 mr-5 shadow-sm">
+                  <ch.icon className="w-[18px] h-[18px]" />
                 </div>
+                <span className="text-zinc-200 text-xs md:text-[13px] font-bold tracking-[0.15em] group-hover:text-rose-400 transition-colors uppercase">
+                  {ch.text}
+                </span>
+              </motion.a>
+            ))}
+          </div>
 
-                <p className="text-zinc-500 text-xs font-mono tracking-widest uppercase mb-1">{ch.label}</p>
-                <a
-                  href={ch.href}
-                  target={ch.id === "website" || ch.id === "linkedin" || ch.id === "facebook" || ch.id === "instagram" ? "_blank" : undefined}
-                  rel="noopener noreferrer"
-                  className="text-white font-semibold text-base hover:text-rose-500 transition-colors break-all"
-                >
-                  {ch.value}
-                </a>
-              </div>
-            </motion.div>
-          ))}
-        </div>
+          {/* Footer Area with script and QR */}
+          <div className="w-full max-w-[420px] flex flex-row items-end gap-6 mt-2">
+            <h3 className="font-script text-[38px] md:text-[46px] text-zinc-300 leading-none pb-2">
+              Let's keep in touch
+            </h3>
+            <div className="bg-white p-2 rounded-xl shadow-[0_5px_20px_rgba(255,255,255,0.1)] hover:scale-105 transition-transform duration-300 shrink-0">
+              <Image 
+                src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://devopstrio.co.uk&bgcolor=FFF&color=000" 
+                alt="Website QR Code"
+                width={85}
+                height={85}
+                className="rounded-lg object-contain"
+                unoptimized
+              />
+            </div>
+          </div>
+        </motion.div>
+
+        {/* RIGHT COLUMN - Contact Person Image */}
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.9, x: 40 }}
+          whileInView={{ opacity: 1, scale: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          className="relative w-full h-[500px] md:h-[700px] flex items-end justify-center"
+        >
+          {/* Subtle glow behind the person */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] md:w-[450px] md:h-[450px] bg-rose-500/10 rounded-full blur-[100px] -z-10" />
+          
+          <Image 
+            src="/assets/support/support-person.png"
+            alt="Devopstrio Support Professional"
+            fill
+            className="object-contain object-bottom drop-shadow-2xl"
+            unoptimized
+          />
+        </motion.div>
+
       </div>
     </section>
   );

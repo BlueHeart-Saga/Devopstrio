@@ -7,58 +7,42 @@ const services = [
   {
     id: "cloud",
     icon: Cloud,
+    tag1: "Cloud",
+    tag2: "Azure · AWS · GCP",
     title: "Managed Cloud Support",
-    subtitle: "Azure · AWS · GCP",
-    items: [
-      "Azure Support & Architecture",
-      "AWS Infrastructure Management",
-      "Google Cloud Operations",
-      "Cloud Cost Optimisation",
-      "Multi-Cloud Strategy",
-      "Cloud Migration Support",
-    ],
+    subtitle: "Infrastructure Optimisation",
+    description: "Expert managed services ensuring high availability, continuous monitoring, and proactive incident response across all major public cloud environments.",
+    image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=800&auto=format&fit=crop",
   },
   {
     id: "devops",
     icon: GitBranch,
-    title: "DevOps Support",
-    subtitle: "CI/CD · Kubernetes · IaC",
-    items: [
-      "CI/CD Pipeline Troubleshooting",
-      "Kubernetes Cluster Management",
-      "Platform Engineering",
-      "Infrastructure as Code (IaC)",
-      "Release & Deployment Automation",
-      "GitOps & Observability",
-    ],
+    tag1: "DevOps",
+    tag2: "CI/CD · Kubernetes",
+    title: "DevOps Engineering",
+    subtitle: "Platform Automation",
+    description: "Dedicated support for deployment pipelines, Kubernetes clusters, and infrastructure as code to maintain seamless release cycles.",
+    image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=800&auto=format&fit=crop",
   },
   {
     id: "app",
     icon: AppWindow,
+    tag1: "App",
+    tag2: "SaaS · APIs",
     title: "Application Support",
-    subtitle: "SaaS · APIs · Monitoring",
-    items: [
-      "SaaS Platform Support",
-      "Web Application Management",
-      "API Integration Assistance",
-      "Performance Monitoring",
-      "Bug Triage & Resolution",
-      "Frontend & Backend Support",
-    ],
+    subtitle: "Frontend & Backend",
+    description: "Comprehensive troubleshooting and performance monitoring for web applications, enterprise SaaS platforms, and core APIs.",
+    image: "https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=800&auto=format&fit=crop",
   },
   {
     id: "security",
     icon: ShieldCheck,
-    title: "Security Support",
-    subtitle: "Incident · SecOps · Compliance",
-    items: [
-      "Incident Response",
-      "Vulnerability Management",
-      "Security Monitoring",
-      "Compliance Assistance",
-      "DevSecOps Integration",
-      "Zero Trust Architecture",
-    ],
+    tag1: "Security",
+    tag2: "SecOps · Compliance",
+    title: "Security & SecOps",
+    subtitle: "Zero Trust Architecture",
+    description: "Proactive vulnerability management, 24/7 security monitoring, and rapid incident response to keep operations compliant.",
+    image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=800&auto=format&fit=crop",
   },
 ];
 
@@ -67,16 +51,16 @@ export const SupportServices = () => {
   const current = services.find(s => s.id === active)!;
 
   return (
-    <section className="py-24 bg-[#050505] border-t border-zinc-900 relative">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_40%_at_50%_100%,rgba(255,23,68,0.06),transparent)]" />
+    <section className="py-20 bg-[#050505] border-t border-zinc-900 relative">
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_40%_at_50%_100%,rgba(255,23,68,0.06),transparent)] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="text-center mb-14">
+        <div className="text-center mb-10">
           <motion.span
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 block mb-4"
+            className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 block mb-3"
           >
             Support Services
           </motion.span>
@@ -84,76 +68,94 @@ export const SupportServices = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-4"
+            className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-2"
           >
             How We Support <span className="text-rose-500">Your Business</span>
           </motion.h2>
         </div>
 
-        <div className="flex flex-col lg:flex-row gap-8">
-          {/* Tabs */}
-          <div className="flex flex-row lg:flex-col gap-3 lg:w-72 shrink-0 overflow-x-auto lg:overflow-visible pb-2 lg:pb-0">
+        <div className="flex flex-col lg:flex-row gap-6 lg:gap-8 items-start">
+          
+          {/* LEFT: Topics List (Compact) */}
+          <div className="flex flex-row lg:flex-col gap-2.5 lg:w-[260px] xl:w-72 shrink-0 overflow-x-auto lg:overflow-visible pb-2 lg:pb-0 w-full">
             {services.map((s) => (
               <button
                 key={s.id}
                 onClick={() => setActive(s.id)}
-                className={`flex items-center gap-4 px-5 py-4 rounded-xl border text-left transition-all duration-300 shrink-0 lg:shrink
+                className={`flex items-center gap-3 px-4 py-3 rounded-xl border text-left transition-all duration-300 shrink-0 lg:shrink
                   ${active === s.id
-                    ? "bg-rose-500/10 border-rose-500/40 text-white"
-                    : "bg-zinc-900/40 border-zinc-800 text-zinc-400 hover:border-zinc-600 hover:text-white"}`}
+                    ? "bg-rose-500/10 border-rose-500/40 text-white shadow-[0_0_15px_rgba(244,63,94,0.1)]"
+                    : "bg-zinc-900/40 border-zinc-800 text-zinc-400 hover:border-zinc-700 hover:text-white"}`}
               >
-                <div className={`w-9 h-9 rounded-lg flex items-center justify-center border shrink-0 transition-colors
+                <div className={`w-8 h-8 rounded-lg flex items-center justify-center border shrink-0 transition-colors
                   ${active === s.id ? "bg-rose-500/20 border-rose-500/30 text-rose-500" : "bg-zinc-800 border-zinc-700 text-zinc-400"}`}
                 >
                   <s.icon className="w-4 h-4" />
                 </div>
                 <div>
-                  <p className="font-semibold text-sm leading-tight">{s.title}</p>
-                  <p className={`text-xs mt-0.5 hidden lg:block ${active === s.id ? "text-rose-400/70" : "text-zinc-600"}`}>{s.subtitle}</p>
+                  <p className="font-bold text-[13px] leading-tight">{s.title}</p>
                 </div>
               </button>
             ))}
           </div>
 
-          {/* Content panel */}
-          <div className="flex-1 bg-zinc-900/30 border border-zinc-800 rounded-2xl p-8 overflow-hidden relative">
-            <div className="absolute inset-0 bg-gradient-to-br from-red-500/5 to-transparent pointer-events-none" />
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={active}
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -20 }}
-                transition={{ duration: 0.3 }}
-                className="relative z-10"
-              >
-                <div className="flex items-center gap-4 mb-8">
-                  <div className="w-14 h-14 rounded-xl bg-rose-500/10 border border-rose-500/20 flex items-center justify-center">
-                    <current.icon className="w-7 h-7 text-rose-500" />
-                  </div>
-                  <div>
-                    <h3 className="text-2xl font-bold text-white">{current.title}</h3>
-                    <p className="text-rose-400 text-sm font-medium mt-0.5">{current.subtitle}</p>
-                  </div>
-                </div>
+          {/* RIGHT: Rectangular Low Height Image Card */}
+          <div className="flex-1 w-full bg-[#0A0A0A] rounded-[24px] border border-zinc-800 shadow-xl overflow-hidden min-h-[260px] lg:min-h-[280px] flex flex-col sm:flex-row">
+            
+            {/* Image Half */}
+            <div className="w-full sm:w-5/12 lg:w-1/2 relative h-48 sm:h-auto overflow-hidden">
+              <AnimatePresence mode="popLayout">
+                <motion.img
+                  key={active}
+                  initial={{ opacity: 0, scale: 1.05 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.4 }}
+                  src={current.image}
+                  alt={current.title}
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+              </AnimatePresence>
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-[#0A0A0A]/95 hidden sm:block" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] to-transparent sm:hidden" />
+            </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  {current.items.map((item, idx) => (
-                    <motion.div
-                      key={idx}
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: idx * 0.05 }}
-                      className="flex items-center gap-3 px-4 py-3 bg-black/40 border border-zinc-800 rounded-lg group hover:border-zinc-600 transition-colors"
-                    >
-                      <span className="w-1.5 h-1.5 rounded-full bg-rose-500 shrink-0" />
-                      <span className="text-zinc-300 text-sm">{item}</span>
-                    </motion.div>
-                  ))}
-                </div>
-              </motion.div>
-            </AnimatePresence>
+            {/* Content Half */}
+            <div className="w-full sm:w-7/12 lg:w-1/2 p-6 md:p-8 flex flex-col justify-center relative">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={active}
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -10 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <div className="flex items-center gap-3 mb-5">
+                    <div className="w-10 h-10 rounded-xl border border-rose-500/30 bg-rose-950/20 flex items-center justify-center text-rose-500 shrink-0">
+                      <current.icon className="w-4 h-4" />
+                    </div>
+                    <div className="flex flex-col">
+                      <span className="text-[10px] font-bold text-zinc-500 uppercase tracking-widest leading-tight">{current.tag1}</span>
+                      <span className="text-xs font-semibold text-rose-500/80 leading-tight mt-0.5">{current.tag2}</span>
+                    </div>
+                  </div>
+
+                  <h3 className="text-xl md:text-2xl font-bold text-white mb-1.5 leading-tight">
+                    {current.title}
+                  </h3>
+                  <p className="text-rose-500 font-medium text-xs md:text-sm mb-4">
+                    {current.subtitle}
+                  </p>
+                  
+                  <p className="text-zinc-400 text-xs md:text-[13px] leading-relaxed font-medium">
+                    {current.description}
+                  </p>
+                </motion.div>
+              </AnimatePresence>
+            </div>
+            
           </div>
+          
         </div>
       </div>
     </section>

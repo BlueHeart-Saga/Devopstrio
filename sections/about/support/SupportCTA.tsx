@@ -7,20 +7,8 @@ export const SupportCTA = () => {
   return (
     <section
       id="support-request"
-      className="relative py-36 bg-[#050505] border-t border-zinc-900 overflow-hidden"
+      className="relative py-36 bg-black border-t border-zinc-900 overflow-hidden"
     >
-      {/* Layered radial glows */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_60%_at_50%_50%,rgba(255,23,68,0.14),transparent)]" />
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808006_1px,transparent_1px),linear-gradient(to_bottom,#80808006_1px,transparent_1px)] bg-[size:40px_40px]" />
-
-      {/* Glow blobs */}
-      <div className="absolute -left-48 top-1/2 -translate-y-1/2 w-96 h-96 rounded-full bg-red-500/10 blur-[120px]" />
-      <div className="absolute -right-48 top-1/2 -translate-y-1/2 w-96 h-96 rounded-full bg-red-600/10 blur-[120px]" />
-
-      {/* Top/bottom edge lines */}
-      <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-red-500/30 to-transparent" />
-      <div className="absolute bottom-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-zinc-700/40 to-transparent" />
-
       <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}

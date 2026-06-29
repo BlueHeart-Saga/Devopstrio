@@ -1,93 +1,131 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, TrendingUp } from "lucide-react";
+import Image from "next/image";
+import { ArrowRight } from "lucide-react";
 
-const stats = [
-  { value: "2500+", label: "Projects Delivered" },
-  { value: "525+", label: "Technology Experts" },
-  { value: "4+", label: "Countries Served" },
-  { value: "98%", label: "Client Satisfaction" },
+const avatarColumns = [
+  // Col 1 (Far left)
+  { hideOn: "lg", items: [{ type: "empty" }, { type: "image", src: "premium_client_1_1782706422950.png" }, { type: "image", src: "premium_client_2_1782706434209.png" }] },
+  // Col 2
+  { hideOn: "md", items: [{ type: "image", src: "premium_client_3_1782706447158.png" }, { type: "image", src: "premium_client_4_1782706460048.png" }] },
+  // Col 3
+  { hideOn: "none", items: [{ type: "empty" }, { type: "image", src: "premium_client_5_1782706470626.png" }] },
+  // Col 4
+  { hideOn: "none", items: [{ type: "image", src: "premium_client_6_1782706483080.png" }] },
+  // Col 5 (Center)
+  { hideOn: "none", items: [{ type: "empty" }, { type: "image", src: "premium_client_1_1782706422950.png" }] },
+  // Col 6
+  { hideOn: "none", items: [{ type: "image", src: "premium_client_2_1782706434209.png" }] },
+  // Col 7
+  { hideOn: "none", items: [{ type: "empty" }, { type: "image", src: "premium_client_3_1782706447158.png" }] },
+  // Col 8
+  { hideOn: "md", items: [{ type: "image", src: "premium_client_4_1782706460048.png" }, { type: "image", src: "premium_client_5_1782706470626.png", tilt: true }] },
+  // Col 9 (Far right)
+  { hideOn: "lg", items: [{ type: "empty" }, { type: "image", src: "premium_client_6_1782706483080.png" }, { type: "image", src: "premium_client_1_1782706422950.png" }] },
 ];
 
 export const TestimonialsHero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#050505]">
-      {/* Background */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_-10%,rgba(255,23,68,0.14),transparent)]" />
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808007_1px,transparent_1px),linear-gradient(to_bottom,#80808007_1px,transparent_1px)] bg-[size:44px_44px]" />
-      <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-red-500/40 to-transparent" />
+    <section className="relative min-h-[90vh] md:min-h-screen flex flex-col justify-end overflow-hidden bg-black pt-28 pb-24 md:pb-32">
+      
+      {/* Faint vertical dashed lines background full width */}
+      <div className="absolute inset-0 flex justify-evenly pointer-events-none opacity-20">
+        {[...Array(11)].map((_, i) => (
+          <div 
+            key={i} 
+            className="h-full w-px border-r border-dashed border-zinc-700" 
+          />
+        ))}
+      </div>
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10 text-center pt-28 pb-20">
+      {/* Floating Avatar Grid Layer */}
+      <div className="absolute top-24 md:top-32 inset-x-0 px-2 md:px-8 flex justify-center gap-3 md:gap-5 max-w-[1800px] mx-auto opacity-90">
+        {avatarColumns.map((col, i) => {
+          const displayClass = 
+            col.hideOn === "lg" ? "hidden lg:flex" : 
+            col.hideOn === "md" ? "hidden md:flex" : 
+            "flex";
+
+          return (
+            <div 
+              key={i} 
+              className={`flex-1 flex-col gap-3 md:gap-5 ${displayClass}`} 
+            >
+              {col.items.map((item, j) => {
+                if (item.type === "empty") {
+                  return (
+                    <div key={j} className="w-full aspect-square rounded-2xl md:rounded-3xl border border-zinc-800/30 bg-zinc-900/20 shadow-sm opacity-50" />
+                  );
+                }
+
+                return (
+                  <motion.div 
+                    key={j}
+                    initial={{ opacity: 0, y: -20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: 0.1 + (j * 0.2), ease: "easeOut" }}
+                    className={`w-full aspect-square relative rounded-2xl md:rounded-3xl overflow-hidden shadow-[0_8px_30px_rgba(0,0,0,0.8)] border border-zinc-800/50 bg-zinc-900 ${item.tilt ? 'rotate-[-5deg] md:rotate-[-8deg] hover:rotate-0 transition-transform duration-500 hover:scale-105 z-10 drop-shadow-2xl' : 'hover:-translate-y-1 transition-transform duration-500'}`}
+                  >
+                    <Image 
+                      src={`/assets/images/testimonials/${item.src}`} 
+                      alt="Client Portrait" 
+                      fill 
+                      className="object-cover grayscale-[30%] hover:grayscale-0 transition-all duration-500"
+                      sizes="(max-width: 768px) 15vw, 10vw"
+                    />
+                  </motion.div>
+                );
+              })}
+            </div>
+          );
+        })}
+      </div>
+
+      {/* Gradient fade to ensure text readability */}
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/80 to-black z-10 pointer-events-none" />
+
+      {/* Text Content */}
+      <div className="relative z-20 flex flex-col items-center text-center px-6 mt-[35vh] md:mt-[45vh]">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-6 block"
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+          className="px-5 py-2 bg-zinc-900/80 backdrop-blur-md border border-zinc-800 rounded-full text-xs font-semibold tracking-widest uppercase text-zinc-300 mb-8 shadow-xl"
         >
-          Testimonials &amp; Success Center
+          Testimonials
         </motion.div>
 
         <motion.h1
-          initial={{ opacity: 0, y: 24 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.1 }}
-          className="text-5xl md:text-7xl font-bold text-white mb-6 leading-[1.04] tracking-tight"
+          transition={{ duration: 0.7, delay: 0.5 }}
+          className="text-5xl md:text-7xl lg:text-[76px] font-bold text-white tracking-tight mb-8 leading-[1.05] max-w-5xl drop-shadow-2xl"
         >
-          Trusted by Enterprises.
-          <br />
-          <span className="text-rose-500">
-            Measured by Outcomes.
-          </span>
+          Trusted by leaders<br className="hidden md:block"/>
+          <span className="text-zinc-500"> from various industries</span>
         </motion.h1>
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.2 }}
-          className="text-xl text-zinc-400 max-w-3xl mx-auto mb-10 leading-relaxed"
+          transition={{ duration: 0.7, delay: 0.6 }}
+          className="text-lg md:text-xl text-zinc-400 max-w-2xl mb-12 font-medium leading-relaxed"
         >
-          See how organizations partner with Devopstrio to accelerate cloud transformation, modernize platforms, improve operational efficiency, and deliver measurable business results.
+          Learn why professionals trust our solutions to complete their customer journeys.
         </motion.p>
 
-        <motion.div
+        <motion.a
+          href="#case-studies"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.3 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-20"
+          transition={{ duration: 0.7, delay: 0.7 }}
+          className="inline-flex items-center gap-3 px-8 py-4 bg-white hover:bg-zinc-200 text-black rounded-full font-semibold transition-all shadow-[0_10px_30px_rgba(255,255,255,0.1)] hover:shadow-[0_15px_40px_rgba(255,255,255,0.2)] hover:-translate-y-1"
         >
-          <a
-            href="#case-studies"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-rose-500 hover:bg-rose-600 text-white rounded-xl font-semibold transition-all shadow-[0_0_30px_rgba(244,63,94,0.4)] hover:shadow-[0_0_50px_rgba(244,63,94,0.6)]"
-          >
-            View Success Stories
-            <ArrowRight className="w-4 h-4" />
-          </a>
-          <a
-            href="/contact"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-zinc-900/60 hover:bg-zinc-900 text-white rounded-xl font-semibold border border-zinc-800 hover:border-zinc-600 transition-all backdrop-blur-sm"
-          >
-            Talk to an Expert
-          </a>
-        </motion.div>
-
-        {/* Stats bar */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.45 }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-px bg-zinc-800/50 rounded-2xl overflow-hidden border border-zinc-800"
-        >
-          {stats.map((s, idx) => (
-            <div key={idx} className="bg-zinc-900/60 backdrop-blur-sm px-8 py-7 text-center">
-              <p className="text-3xl md:text-4xl font-black text-white mb-1 hover:text-rose-500 transition-colors cursor-default">{s.value}</p>
-              <p className="text-sm text-zinc-500 font-medium">{s.label}</p>
-            </div>
-          ))}
-        </motion.div>
+          Read Success Stories
+          <ArrowRight className="w-4 h-4" />
+        </motion.a>
       </div>
-
-      <div className="absolute bottom-0 inset-x-0 h-40 bg-gradient-to-t from-[#050505] to-transparent pointer-events-none" />
     </section>
   );
 };

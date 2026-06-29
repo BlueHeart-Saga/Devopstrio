@@ -1,142 +1,250 @@
 "use client";
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, Target, Lightbulb, TrendingUp } from "lucide-react";
+import Image from "next/image";
+import { ChevronRight, ChevronLeft } from "lucide-react";
+
+const categories = ["All", "Cloud", "DevOps", "Security", "AI"];
 
 const caseStudies = [
   {
-    tag: "FinOps · Cloud",
-    title: "Cloud Cost Optimisation",
-    challenge: "Escalating multi-cloud operational expenses with no visibility into spend patterns across 3 cloud providers.",
-    solution: "Implemented a FinOps governance framework with automated tagging, rightsizing policies, and real-time cost dashboards.",
-    outcome: "40% reduction in monthly cloud spending within 90 days.",
-    metric: "40%",
-    metricLabel: "cost saved",
-    color: "blue",
+    id: 1,
+    category: "Cloud",
+    title: "Cloud Cost Optimisation for a Global FinOps Leader",
+    image: "/assets/images/testimonials/case_study_finops.png",
+    link: "#"
   },
   {
-    tag: "DevOps · Platform",
-    title: "Platform Modernisation",
-    challenge: "Slow quarterly release cycles, manual deployment processes, and frequent production incidents causing business disruption.",
-    solution: "End-to-end DevOps transformation: GitOps pipelines, Kubernetes migration, and an internal developer platform.",
-    outcome: "3× faster software delivery with 80% reduction in deployment-related incidents.",
-    metric: "3×",
-    metricLabel: "faster delivery",
-    color: "orange",
+    id: 2,
+    category: "DevOps",
+    title: "Platform Modernisation and 3× Faster Delivery",
+    image: "/assets/images/testimonials/case_study_devops.png",
+    link: "#"
   },
   {
-    tag: "Security · Compliance",
-    title: "Security Transformation",
-    challenge: "Complex regulatory compliance requirements (ISO 27001, SOC 2) and growing cloud attack surface.",
-    solution: "DevSecOps implementation, automated compliance scanning, zero-trust network architecture, and continuous monitoring.",
-    outcome: "Achieved full compliance certification and reduced risk exposure significantly.",
-    metric: "100%",
-    metricLabel: "compliance achieved",
-    color: "green",
+    id: 3,
+    category: "Security",
+    title: "Zero-Trust Security Transformation in Healthcare",
+    image: "/assets/images/testimonials/case_study_security.png",
+    link: "#"
   },
+  {
+    id: 4,
+    category: "AI",
+    title: "Unlocking the Value of AI in Retail operations",
+    image: "/assets/images/testimonials/case_study_ai.png",
+    link: "#"
+  },
+  {
+    id: 5,
+    category: "Cloud",
+    title: "Scaling Enterprise Workloads with Azure VMware Solution",
+    image: "/assets/images/testimonials/case_study_microsoft.png",
+    link: "#"
+  },
+  {
+    id: 6,
+    category: "DevOps",
+    title: "Global Infrastructure for High Availability and Scale",
+    image: "/assets/images/testimonials/case_study_airbnb.png",
+    link: "#"
+  },
+  {
+    id: 7,
+    category: "Cloud",
+    title: "Accelerating Digital Delivery by 3× Across Markets",
+    image: "/assets/images/testimonials/case_study_virgin.png",
+    link: "#"
+  },
+  {
+    id: 8,
+    category: "Security",
+    title: "Securing Patient Data While Modernizing Core Services",
+    image: "/assets/images/testimonials/case_study_nhs.png",
+    link: "#"
+  },
+  {
+    id: 9,
+    category: "AI",
+    title: "Optimizing Retail Logistics with Predictive Analytics",
+    image: "/assets/images/testimonials/case_study_asda.png",
+    link: "#"
+  },
+  {
+    id: 10,
+    category: "Cloud",
+    title: "Enhancing Global Distribution with Auto-Scaling Cloud",
+    image: "/assets/images/testimonials/case_study_costco.png",
+    link: "#"
+  },
+  {
+    id: 11,
+    category: "DevOps",
+    title: "Seamless Domain Management and Lightning-Fast Provisioning",
+    image: "/assets/images/testimonials/case_study_godaddy.png",
+    link: "#"
+  },
+  {
+    id: 12,
+    category: "AI",
+    title: "Scaling Hardware Analytics Real-Time with Cloud Intelligence",
+    image: "/assets/images/testimonials/case_study_lenovo.png",
+    link: "#"
+  },
+  {
+    id: 13,
+    category: "DevOps",
+    title: "Accelerating Enterprise Workflow Automation Deployments",
+    image: "/assets/images/testimonials/case_study_servicenow.png",
+    link: "#"
+  }
 ];
 
-const colorMap: Record<string, { accent: string; metric: string; tag: string; border: string }> = {
-  blue:   { accent: "bg-blue-500/10 border-blue-500/20 text-blue-400",   metric: "text-blue-300",   tag: "text-blue-400 bg-blue-500/10 border-blue-500/20",   border: "group-hover:border-blue-500/40" },
-  orange: { accent: "bg-orange-500/10 border-orange-500/20 text-orange-400", metric: "text-orange-300", tag: "text-orange-400 bg-orange-500/10 border-orange-500/20", border: "group-hover:border-orange-500/40" },
-  green:  { accent: "bg-green-500/10 border-green-500/20 text-green-400",  metric: "text-green-300",  tag: "text-green-400 bg-green-500/10 border-green-500/20",  border: "group-hover:border-green-500/40" },
-};
-
 export const CaseStudyHighlights = () => {
-  const [active, setActive] = useState(0);
-  const cs = caseStudies[active];
-  const c = colorMap[cs.color];
+  const [activeCategory, setActiveCategory] = useState("All");
+  const carouselRef = useRef<HTMLDivElement>(null);
+
+  const filteredStudies = caseStudies.filter(
+    (cs) => activeCategory === "All" || cs.category === activeCategory
+  );
+
+  const scrollLeft = () => {
+    if (carouselRef.current) {
+      carouselRef.current.scrollBy({ left: -360, behavior: "smooth" });
+    }
+  };
+
+  const scrollRight = () => {
+    if (carouselRef.current) {
+      carouselRef.current.scrollBy({ left: 360, behavior: "smooth" });
+    }
+  };
 
   return (
-    <section id="case-studies" className="py-24 bg-[#050505] border-t border-zinc-900 relative">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_50%_40%_at_20%_60%,rgba(255,23,68,0.05),transparent)]" />
-
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="text-center mb-14">
-          <motion.span
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 block mb-4"
-          >
-            Case Studies
-          </motion.span>
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-4"
-          >
-            Case Study <span className="text-rose-500">Highlights</span>
-          </motion.h2>
+    <section className="py-24 bg-[#050505] relative overflow-hidden">
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_40%_30%_at_50%_10%,rgba(255,23,68,0.05),transparent)] pointer-events-none" />
+      
+      <div className="max-w-[1400px] mx-auto px-6 relative z-10">
+        
+        {/* Header Section */}
+        <div className="text-center max-w-3xl mx-auto mb-14">
+          <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+            INSIGHTS & NEWS
+          </span>
+          <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
+            Case studies, news, and insights
+          </h2>
+          <p className="text-zinc-400 text-base md:text-lg leading-relaxed mb-6">
+            Explore Devopstrio's perspective and latest updates highlighting our commitment to transformative innovation.
+          </p>
+          <button className="bg-rose-600 hover:bg-rose-500 text-white px-8 py-3 rounded-full font-medium transition-all duration-300 shadow-[0_0_20px_rgba(225,29,72,0.3)] hover:shadow-[0_0_30px_rgba(225,29,72,0.5)]">
+            Visit the insights blog
+          </button>
         </div>
 
-        <div className="flex flex-col lg:flex-row gap-6">
-          {/* Tab list */}
-          <div className="flex flex-row lg:flex-col gap-3 lg:w-72 shrink-0 overflow-x-auto lg:overflow-visible">
-            {caseStudies.map((cs, idx) => (
-              <button
-                key={idx}
-                onClick={() => setActive(idx)}
-                className={`flex items-center gap-3 px-5 py-4 rounded-xl border text-left transition-all duration-300 shrink-0 lg:shrink
-                  ${active === idx
-                    ? "bg-rose-500/10 border-rose-500/40 text-white"
-                    : "bg-zinc-900/40 border-zinc-800 text-zinc-400 hover:border-zinc-600 hover:text-white"}`}
-              >
-                <span className={`text-xs font-mono px-2.5 py-1 rounded-full border ${active === idx ? "text-rose-400 bg-rose-500/10 border-rose-500/30" : "text-zinc-600 bg-zinc-800 border-zinc-700"}`}>
-                  0{idx + 1}
-                </span>
-                <span className="font-semibold text-sm">{cs.title}</span>
-              </button>
-            ))}
-          </div>
+        {/* Filter Pills */}
+        <div className="flex flex-wrap justify-center gap-3 mb-12">
+          {categories.map((cat) => (
+            <button
+              key={cat}
+              onClick={() => setActiveCategory(cat)}
+              className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+                activeCategory === cat
+                  ? "bg-rose-600 text-white"
+                  : "bg-zinc-900 border border-zinc-800 text-zinc-400 hover:text-white hover:bg-zinc-800"
+              }`}
+            >
+              {cat}
+            </button>
+          ))}
+        </div>
 
-          {/* Content */}
-          <div className="flex-1">
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={active}
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -20 }}
-                transition={{ duration: 0.35 }}
-                className={`group bg-zinc-900/40 border border-zinc-800 ${c.border} rounded-2xl overflow-hidden transition-colors duration-300`}
-              >
-                {/* Header */}
-                <div className="p-8 border-b border-zinc-800/60 flex items-center justify-between">
-                  <div>
-                    <span className={`text-xs font-mono px-3 py-1 rounded-full border ${c.tag} mb-3 inline-block`}>
-                      {cs.tag}
-                    </span>
-                    <h3 className="text-2xl font-bold text-white">{cs.title}</h3>
-                  </div>
-                  <div className="text-right shrink-0 ml-6">
-                    <p className={`text-5xl font-black ${c.metric}`}>{cs.metric}</p>
-                    <p className="text-zinc-600 text-xs font-mono mt-1">{cs.metricLabel}</p>
-                  </div>
-                </div>
-
-                {/* Body */}
-                <div className="p-8 grid grid-cols-1 md:grid-cols-3 gap-6">
-                  {[
-                    { icon: Target, label: "Challenge", text: cs.challenge },
-                    { icon: Lightbulb, label: "Solution", text: cs.solution },
-                    { icon: TrendingUp, label: "Outcome", text: cs.outcome },
-                  ].map((block, i) => (
-                    <div key={i}>
-                      <div className="flex items-center gap-2 mb-3">
-                        <block.icon className="w-4 h-4 text-rose-500" />
-                        <p className="text-[11px] font-mono text-zinc-500 uppercase tracking-widest">{block.label}</p>
-                      </div>
-                      <p className="text-zinc-300 text-sm leading-relaxed">{block.text}</p>
+        {/* Carousel container */}
+        <div className="relative">
+          <motion.div 
+            layout
+            ref={carouselRef}
+            className="flex overflow-x-auto gap-4 pb-8 snap-x snap-mandatory"
+            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+          >
+            <AnimatePresence>
+              {filteredStudies.map((study) => (
+                <motion.div
+                  key={study.id}
+                  layout
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.9 }}
+                  transition={{ duration: 0.3 }}
+                  className="min-w-[300px] max-w-[300px] md:min-w-[340px] md:max-w-[340px] shrink-0 snap-start bg-zinc-900/60 border border-zinc-800 rounded-[28px] p-3 flex flex-col h-full shadow-lg group hover:bg-zinc-800/80 transition-all duration-300"
+                >
+                  {/* Image half - inset with padding */}
+                  <div className="relative h-[180px] w-full rounded-[20px] overflow-hidden bg-zinc-950">
+                    <Image
+                      src={study.image}
+                      alt={study.title}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute top-4 left-4 bg-zinc-900/80 backdrop-blur-md px-3 py-1 rounded-full text-[11px] font-semibold tracking-wide text-zinc-300 border border-zinc-700/50 uppercase">
+                      {study.category}
                     </div>
-                  ))}
-                </div>
-              </motion.div>
+                  </div>
+                  
+                  {/* Content half */}
+                  <div className="pt-6 pb-3 px-3 flex flex-col flex-1">
+                    <h3 className="text-lg md:text-[20px] font-semibold text-white leading-snug mb-8 flex-1 group-hover:text-rose-100 transition-colors">
+                      {study.title}
+                    </h3>
+                    
+                    <div className="mt-auto flex items-center gap-3 text-zinc-300 cursor-pointer group/btn">
+                      <div className="w-8 h-8 rounded-full bg-rose-600 flex items-center justify-center text-white group-hover/btn:bg-rose-500 transition-colors duration-300 shadow-md">
+                        <ChevronRight className="w-4 h-4" />
+                      </div>
+                      <span className="text-sm font-medium group-hover/btn:text-white transition-colors">Read the story</span>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
             </AnimatePresence>
-          </div>
+            {filteredStudies.length === 0 && (
+               <div className="text-zinc-500 text-center w-full py-20 font-medium">No stories found for this category.</div>
+            )}
+          </motion.div>
         </div>
+        
+        {/* Navigation Arrows */}
+        {filteredStudies.length > 0 && (
+          <div className="flex gap-3 mt-2 px-2">
+            <button 
+              onClick={scrollLeft}
+              className="w-10 h-10 rounded-full border border-zinc-700 flex items-center justify-center text-zinc-400 hover:text-white hover:border-zinc-500 hover:bg-zinc-800 transition-all duration-300"
+              aria-label="Previous"
+            >
+              <ChevronLeft className="w-5 h-5" />
+            </button>
+            <button 
+              onClick={scrollRight}
+              className="w-10 h-10 rounded-full border border-zinc-700 flex items-center justify-center text-zinc-400 hover:text-white hover:border-zinc-500 hover:bg-zinc-800 transition-all duration-300"
+              aria-label="Next"
+            >
+              <ChevronRight className="w-5 h-5" />
+            </button>
+          </div>
+        )}
       </div>
+      
+      <style dangerouslySetInnerHTML={{__html: `
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        .hide-scrollbar::-webkit-scrollbar {
+          display: none;
+        }
+        /* Hide scrollbar for IE, Edge and Firefox */
+        .hide-scrollbar {
+          -ms-overflow-style: none;  /* IE and Edge */
+          scrollbar-width: none;  /* Firefox */
+        }
+      `}} />
     </section>
   );
 };

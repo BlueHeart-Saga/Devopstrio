@@ -1,98 +1,103 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
-import { Clock, Globe2, Users, ShieldCheck, ArrowRight, Headphones } from "lucide-react";
+import Image from "next/image";
 
-const pillars = [
-  { icon: Clock, label: "24×7 Support Coverage" },
-  { icon: Globe2, label: "Multi-Region Operations" },
-  { icon: Users, label: "Dedicated Success Teams" },
-  { icon: ShieldCheck, label: "Enterprise SLA Management" },
+const floatingIcons = [
+  { name: "tiktok", bg: "bg-[#000000] border border-zinc-700", left: "5%", top: "20%", size: 48, delay: 0.1 }, 
+  { name: "whatsapp", bg: "bg-[#25D366]", left: "8.5%", top: "46.7%", size: 56, delay: 0.2 }, 
+  { name: "discord", bg: "bg-[#5865F2]", left: "18.2%", top: "69.5%", size: 64, delay: 0.3 }, 
+  { name: "youtube", bg: "bg-[#FF0000]", left: "32.8%", top: "84.6%", size: 72, delay: 0.4 }, 
+  
+  { name: "instagram", bg: "bg-gradient-to-tr from-[#f09433] via-[#dc2743] to-[#bc1888]", left: "50%", top: "90%", size: 88, delay: 0.5 }, 
+  
+  { name: "facebook", bg: "bg-[#1877F2]", left: "67.2%", top: "84.6%", size: 72, delay: 0.6 }, 
+  { name: "pinterest", bg: "bg-[#E60023]", left: "81.8%", top: "69.5%", size: 64, delay: 0.7 }, 
+  { name: "reddit", bg: "bg-[#FF4500]", left: "91.5%", top: "46.7%", size: 56, delay: 0.8 }, 
+  { name: "twitter", bg: "bg-[#1DA1F2]", left: "95%", top: "20%", size: 48, delay: 0.9 }, 
 ];
 
 export const SupportHero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#050505]">
-      {/* Background layers */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(255,23,68,0.15),transparent)]" />
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:40px_40px]" />
+    <section className="relative min-h-[90vh] md:min-h-screen flex items-center justify-center overflow-hidden bg-[#050505] pt-24 pb-12">
+      {/* Background ambient lighting */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_60%_at_50%_40%,rgba(255,255,255,0.03),transparent)] pointer-events-none" />
 
-      {/* Top badge strip */}
-      <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-red-500/40 to-transparent" />
+      <div className="w-full max-w-5xl mx-auto relative h-[500px] md:h-[650px] mt-10 md:mt-0">
+        
+        {/* Floating Icons (Elliptical U-Shape Curve) */}
+        {floatingIcons.map((item, idx) => (
+          <motion.div
+            key={idx}
+            initial={{ opacity: 0, scale: 0, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ 
+              type: "spring", 
+              stiffness: 100, 
+              damping: 15, 
+              delay: item.delay 
+            }}
+            style={{ 
+              left: item.left, 
+              top: item.top,
+              width: item.size,
+              height: item.size,
+            }}
+            className={`absolute -translate-x-1/2 -translate-y-1/2 rounded-full flex items-center justify-center text-white shadow-2xl ${item.bg}`}
+          >
+            {/* Inner subtle glow/border */}
+            <div className="absolute inset-0 rounded-full border border-white/20" />
+            <img 
+              src={`https://cdn.simpleicons.org/${item.name}/white`}
+              alt={item.name}
+              style={{ width: item.size * 0.45, height: item.size * 0.45 }}
+              className="drop-shadow-md object-contain"
+            />
+          </motion.div>
+        ))}
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10 text-center pt-28 pb-20">
-        <motion.span
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-6 block"
-        >
-          Global Customer Support
-        </motion.span>
+        {/* Central Text Content */}
+        <div className="absolute top-[8%] md:top-[12%] left-1/2 -translate-x-1/2 w-full max-w-[90%] md:max-w-2xl text-center z-20 flex flex-col items-center pointer-events-none">
+          <motion.span
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="inline-block px-4 py-1.5 mb-6 md:mb-8 rounded-full border border-zinc-700/60 bg-zinc-800/40 text-[10px] md:text-[11px] font-bold tracking-[0.25em] uppercase text-zinc-300 backdrop-blur-md shadow-lg"
+          >
+            Omnichannel Support
+          </motion.span>
 
-        <motion.h1
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.1 }}
-          className="text-5xl md:text-7xl font-bold text-white mb-6 leading-[1.05] tracking-tight"
-        >
-          Enterprise Support for<br />
-          <span className="text-rose-500">Cloud, AI &amp; DevOps</span>
-        </motion.h1>
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="text-4xl md:text-5xl lg:text-[64px] font-bold text-white mb-6 leading-[1.1] tracking-tight"
+          >
+            Route issues to the<br className="hidden md:block" />
+            right place, every time
+          </motion.h1>
 
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.2 }}
-          className="text-xl text-zinc-400 max-w-3xl mx-auto mb-10 leading-relaxed"
-        >
-          Get expert assistance from our engineering and support teams across global delivery centers — built for enterprise reliability.
-        </motion.p>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-base md:text-[19px] text-zinc-400 max-w-[540px] mx-auto mb-10 leading-relaxed font-medium"
+          >
+            Enterprise support ensures every request lands exactly where it should, no matter the platform or device.
+          </motion.p>
 
-        {/* CTA Buttons */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.3 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16"
-        >
-          <a
+          <motion.a
             href="#support-request"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-rose-500 hover:bg-rose-600 text-white rounded-xl font-semibold transition-all shadow-[0_0_30px_rgba(244,63,94,0.4)] hover:shadow-[0_0_50px_rgba(244,63,94,0.6)]"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="inline-flex items-center gap-2 px-8 py-3.5 bg-white hover:bg-zinc-200 text-black rounded-full font-semibold transition-all hover:scale-105 pointer-events-auto shadow-[0_10px_30px_rgba(255,255,255,0.1)]"
           >
-            <Headphones className="w-5 h-5" />
-            Submit Support Request
-          </a>
-          <a
-            href="tel:+914612940062"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-zinc-900/60 hover:bg-zinc-900 text-white rounded-xl font-semibold border border-zinc-800 hover:border-zinc-600 transition-all backdrop-blur-sm"
-          >
-            Contact Support Team
-            <ArrowRight className="w-4 h-4" />
-          </a>
-        </motion.div>
+            Learn more
+          </motion.a>
+        </div>
 
-        {/* Pillars */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.4 }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto"
-        >
-          {pillars.map((p, idx) => (
-            <div
-              key={idx}
-              className="flex items-center gap-3 px-5 py-4 bg-zinc-900/50 border border-zinc-800 rounded-xl backdrop-blur-sm"
-            >
-              <p.icon className="w-5 h-5 text-rose-500 shrink-0" />
-              <span className="text-sm text-zinc-300 font-medium text-left">{p.label}</span>
-            </div>
-          ))}
-        </motion.div>
       </div>
-
-      {/* Bottom fade */}
-      <div className="absolute bottom-0 inset-x-0 h-40 bg-gradient-to-t from-[#050505] to-transparent pointer-events-none" />
     </section>
   );
 };

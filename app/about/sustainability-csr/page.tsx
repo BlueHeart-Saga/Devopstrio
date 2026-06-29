@@ -89,7 +89,7 @@ export default function CSRPage() {
       <div className="absolute top-[40%] right-[10%] w-[500px] h-[500px] bg-[radial-gradient(circle,rgba(231,158,87,0.06)_0%,transparent_70%)] blur-[80px] pointer-events-none z-0" />
 
       {/* BRAND NEW HERO SECTION (SPLIT SCREEN FOREST THEME) */}
-      <section className="relative pt-32 pb-20 lg:py-0 lg:min-h-[90vh] flex items-center border-b border-zinc-900/60 overflow-hidden">
+      <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-24 lg:min-h-[90vh] flex items-center border-b border-zinc-900/60 overflow-hidden">
         {/* Full-bleed background forest container on right */}
         <div className="absolute inset-0 lg:left-auto lg:right-0 lg:w-[55vw] h-full z-[1] pointer-events-none overflow-hidden opacity-25 lg:opacity-100">
           <img

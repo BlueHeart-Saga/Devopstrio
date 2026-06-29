@@ -4,6 +4,7 @@ import { BreadcrumbSchema } from "@/components/seo/Schemas";
 
 import { SupportHero } from "@/sections/about/support/SupportHero";
 import { SupportChannels } from "@/sections/about/support/SupportChannels";
+import { SupportReviews } from "@/sections/about/support/SupportReviews";
 import { GlobalSupportNetwork } from "@/sections/about/support/GlobalSupportNetwork";
 import { SupportServices } from "@/sections/about/support/SupportServices";
 import { SLAMatrix } from "@/sections/about/support/SLAMatrix";
@@ -45,6 +46,9 @@ export default function CustomerSupportPage() {
       {/* 2. Contact Channels */}
       <SupportChannels />
 
+      {/* 2.5 Google Reviews Spotlight */}
+      <SupportReviews />
+
       {/* 3. Global Support Network */}
       <GlobalSupportNetwork />
 
@@ -59,12 +63,13 @@ export default function CustomerSupportPage() {
 
       {/* 7. Customer Success Metrics */}
       <SupportMetrics />
+      {/* 8. About Devopstrio */}
+      <AboutDevopstrio />
 
-      {/* 8. FAQ */}
+      {/* 9. FAQ */}
       <SupportFAQ />
 
-      {/* 9. About Devopstrio */}
-      <AboutDevopstrio />
+      
 
       {/* 10. Final CTA */}
       <SupportCTA />

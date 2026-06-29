@@ -1,33 +1,29 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
-import { FileText, Headphones, Bug, Lightbulb } from "lucide-react";
+import Image from "next/image";
 
-const products = [
-  { name: "Humanex", description: "AI-powered HR intelligence platform", color: "from-violet-500/20 to-transparent", border: "border-violet-500/30" },
-  { name: "Brio", description: "Business automation and workflow engine", color: "from-blue-500/15 to-transparent", border: "border-blue-500/30" },
-  { name: "SafeSign", description: "Digital document signing & verification", color: "from-green-500/15 to-transparent", border: "border-green-500/30" },
-  { name: "Prestivo", description: "Performance analytics and reporting", color: "from-yellow-500/15 to-transparent", border: "border-yellow-500/30" },
-  { name: "Campix", description: "Campaign & marketing operations suite", color: "from-orange-500/15 to-transparent", border: "border-orange-500/30" },
-  { name: "Homela", description: "Property tech and estate management", color: "from-pink-500/15 to-transparent", border: "border-pink-500/30" },
-  { name: "CareSuite", description: "Healthcare operations management", color: "from-teal-500/15 to-transparent", border: "border-teal-500/30" },
-  { name: "Justivon", description: "Legal workflow automation platform", color: "from-red-500/15 to-transparent", border: "border-red-500/30" },
-];
-
-const supportActions = [
-  { icon: FileText, label: "Documentation" },
-  { icon: Headphones, label: "Technical Support" },
-  { icon: Bug, label: "Issue Reporting" },
-  { icon: Lightbulb, label: "Feature Requests" },
+const logos = [
+  { name: "Humanex", src: "/assets/Home-page/our-products/logo/humanex.png" },
+  { name: "Brio", src: "/assets/Home-page/our-products/logo/brio.png" },
+  { name: "SafeSign", src: "/assets/Home-page/our-products/logo/safesign.png" },
+  { name: "Prestivo", src: "/assets/Home-page/our-products/logo/Prestivo.png" },
+  { name: "Campix", src: "/assets/Home-page/our-products/logo/Campix.png" },
+  { name: "Homela", src: "/assets/Home-page/our-products/logo/homela.png" },
+  { name: "CareSuite", src: "/assets/Home-page/our-products/logo/Caresuite.png" },
+  { name: "Justivon", src: "/assets/Home-page/our-products/logo/Justivon.png" },
 ];
 
 export const ProductEcosystem = () => {
   return (
-    <section className="py-24 bg-[#050505] border-t border-zinc-900 relative">
+    <section className="py-24 bg-[#050505] border-t border-zinc-900 relative overflow-hidden">
+      {/* Subtle grid background */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808006_1px,transparent_1px),linear-gradient(to_bottom,#80808006_1px,transparent_1px)] bg-[size:32px_32px]" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="text-center mb-14">
+        
+        {/* Header */}
+        <div className="text-center mb-20">
           <motion.span
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -55,45 +51,28 @@ export const ProductEcosystem = () => {
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-          {products.map((product, idx) => (
+        {/* Logos Grid */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-16 items-center justify-items-center max-w-5xl mx-auto">
+          {logos.map((logo, idx) => (
             <motion.div
               key={idx}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: idx * 0.07 }}
-              className={`group relative bg-zinc-900/40 border ${product.border} hover:border-opacity-70 rounded-2xl p-6 overflow-hidden transition-all duration-300`}
+              transition={{ duration: 0.5, delay: idx * 0.1 }}
+              className="w-36 md:w-44 h-16 md:h-20 relative transition-all duration-300 hover:scale-105 cursor-pointer"
             >
-              <div className={`absolute inset-0 bg-gradient-to-br ${product.color} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
-
-              <div className="relative z-10">
-                {/* Product name badge */}
-                <div className="flex items-center justify-between mb-5">
-                  <div className="w-10 h-10 rounded-lg bg-zinc-800/80 border border-zinc-700 flex items-center justify-center group-hover:bg-white/5 transition-colors">
-                    <span className="text-sm font-black text-white">{product.name.charAt(0)}</span>
-                  </div>
-                  <span className="w-2 h-2 rounded-full bg-green-400 shadow-[0_0_6px_rgba(74,222,128,0.8)]" title="Active support" />
-                </div>
-
-                <h3 className="text-white font-bold text-lg mb-1">{product.name}</h3>
-                <p className="text-zinc-500 text-sm mb-6">{product.description}</p>
-
-                <div className="grid grid-cols-2 gap-2">
-                  {supportActions.map((action, i) => (
-                    <div
-                      key={i}
-                      className="flex items-center gap-1.5 text-xs text-zinc-500 group-hover:text-zinc-400 transition-colors"
-                    >
-                      <action.icon className="w-3.5 h-3.5 shrink-0 text-zinc-600" />
-                      {action.label}
-                    </div>
-                  ))}
-                </div>
-              </div>
+              <Image 
+                src={logo.src} 
+                alt={logo.name} 
+                fill 
+                className="object-contain" 
+                unoptimized
+              />
             </motion.div>
           ))}
         </div>
+        
       </div>
     </section>
   );
