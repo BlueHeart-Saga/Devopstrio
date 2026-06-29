@@ -4,7 +4,16 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 
-const avatarColumns = [
+type AvatarItem = 
+  | { type: "empty" }
+  | { type: "image"; src: string; tilt?: boolean };
+
+type AvatarColumn = {
+  hideOn: "lg" | "md" | "none";
+  items: AvatarItem[];
+};
+
+const avatarColumns: AvatarColumn[] = [
   // Col 1 (Far left)
   { hideOn: "lg", items: [{ type: "empty" }, { type: "image", src: "premium_client_1_1782706422950.png" }, { type: "image", src: "premium_client_2_1782706434209.png" }] },
   // Col 2
