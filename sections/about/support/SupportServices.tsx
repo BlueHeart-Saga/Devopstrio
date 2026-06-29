@@ -12,7 +12,7 @@ const services = [
     title: "Managed Cloud Support",
     subtitle: "Infrastructure Optimisation",
     description: "Expert managed services ensuring high availability, continuous monitoring, and proactive incident response across all major public cloud environments.",
-    image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=800&auto=format&fit=crop",
+    image: "/assets/About-page/overview/customersupport/0d35c8aab4c24170e61d1ea01fc4ee77 1.png",
   },
   {
     id: "devops",
@@ -22,7 +22,7 @@ const services = [
     title: "DevOps Engineering",
     subtitle: "Platform Automation",
     description: "Dedicated support for deployment pipelines, Kubernetes clusters, and infrastructure as code to maintain seamless release cycles.",
-    image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=800&auto=format&fit=crop",
+    image: "/assets/About-page/overview/customersupport/1d57a7791a12aaa4fb18f8fa649970bd 1.png",
   },
   {
     id: "app",
@@ -32,7 +32,7 @@ const services = [
     title: "Application Support",
     subtitle: "Frontend & Backend",
     description: "Comprehensive troubleshooting and performance monitoring for web applications, enterprise SaaS platforms, and core APIs.",
-    image: "https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=800&auto=format&fit=crop",
+    image: "/assets/About-page/overview/customersupport/99acdd4cc45c729c9eae31b4df03ea1b 1.png",
   },
   {
     id: "security",
@@ -42,7 +42,7 @@ const services = [
     title: "Security & SecOps",
     subtitle: "Zero Trust Architecture",
     description: "Proactive vulnerability management, 24/7 security monitoring, and rapid incident response to keep operations compliant.",
-    image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=800&auto=format&fit=crop",
+    image: "/assets/About-page/overview/customersupport/image 6.png",
   },
 ];
 

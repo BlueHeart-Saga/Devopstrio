@@ -4,17 +4,17 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 
 const floatingIcons = [
-  { name: "tiktok", bg: "bg-[#000000] border border-zinc-700", left: "5%", top: "20%", size: 48, delay: 0.1 }, 
-  { name: "whatsapp", bg: "bg-[#25D366]", left: "8.5%", top: "46.7%", size: 56, delay: 0.2 }, 
-  { name: "discord", bg: "bg-[#5865F2]", left: "18.2%", top: "69.5%", size: 64, delay: 0.3 }, 
-  { name: "youtube", bg: "bg-[#FF0000]", left: "32.8%", top: "84.6%", size: 72, delay: 0.4 }, 
+  { name: "globe", img: "globe.png", left: "5%", top: "20%", size: 48, delay: 0.1 }, 
+  { name: "whatsapp", img: "whatsapp.png", left: "8.5%", top: "46.7%", size: 56, delay: 0.2 }, 
+  { name: "email", img: "email.png", left: "18.2%", top: "69.5%", size: 64, delay: 0.3 }, 
+  { name: "youtube", img: "youtube.png", left: "32.8%", top: "84.6%", size: 72, delay: 0.4 }, 
   
-  { name: "instagram", bg: "bg-gradient-to-tr from-[#f09433] via-[#dc2743] to-[#bc1888]", left: "50%", top: "90%", size: 88, delay: 0.5 }, 
+  { name: "instagram", img: "instagram.png", left: "50%", top: "90%", size: 88, delay: 0.5 }, 
   
-  { name: "facebook", bg: "bg-[#1877F2]", left: "67.2%", top: "84.6%", size: 72, delay: 0.6 }, 
-  { name: "pinterest", bg: "bg-[#E60023]", left: "81.8%", top: "69.5%", size: 64, delay: 0.7 }, 
-  { name: "reddit", bg: "bg-[#FF4500]", left: "91.5%", top: "46.7%", size: 56, delay: 0.8 }, 
-  { name: "twitter", bg: "bg-[#1DA1F2]", left: "95%", top: "20%", size: 48, delay: 0.9 }, 
+  { name: "facebook", img: "facebook.png", left: "67.2%", top: "84.6%", size: 72, delay: 0.6 }, 
+  { name: "gmail", img: "gmail.png", left: "81.8%", top: "69.5%", size: 64, delay: 0.7 }, 
+  { name: "comments", img: "comments.png", left: "91.5%", top: "46.7%", size: 56, delay: 0.8 }, 
+  { name: "whats-new", img: "whats-new.png", left: "95%", top: "20%", size: 48, delay: 0.9 }, 
 ];
 
 export const SupportHero = () => {
@@ -43,15 +43,13 @@ export const SupportHero = () => {
               width: item.size,
               height: item.size,
             }}
-            className={`absolute -translate-x-1/2 -translate-y-1/2 rounded-full flex items-center justify-center text-white shadow-2xl ${item.bg}`}
+            className={`absolute -translate-x-1/2 -translate-y-1/2 flex items-center justify-center text-white drop-shadow-2xl`}
           >
-            {/* Inner subtle glow/border */}
-            <div className="absolute inset-0 rounded-full border border-white/20" />
             <img 
-              src={`https://cdn.simpleicons.org/${item.name}/white`}
+              src={`/assets/About-page/support/social/${item.img}`}
               alt={item.name}
-              style={{ width: item.size * 0.45, height: item.size * 0.45 }}
-              className="drop-shadow-md object-contain"
+              style={{ width: '100%', height: '100%' }}
+              className="object-contain"
             />
           </motion.div>
         ))}

@@ -8,21 +8,21 @@ const stories = [
     name: "Sarah Jenkins",
     role: "Software Engineer",
     path: "Intern → Software Engineer",
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=200&h=200",
+    image: "/assets/Home-page/client-reviews/image 169.png",
     quote: "Starting as an intern, I was immediately given real-world problems to solve. The mentorship here didn't just teach me how to code better; it taught me how to engineer solutions that scale. Within two years, I was leading my own microservices architecture."
   },
   {
     name: "David Chen",
     role: "Platform Engineer",
     path: "Developer → Platform Engineer",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=200&h=200",
+    image: "/assets/Home-page/client-reviews/image 170.png",
     quote: "Devopstrio recognized my passion for infrastructure early on. They sponsored my Kubernetes certifications and gave me the autonomy to help build our internal developer platform. The growth trajectory here is limited only by your own ambition."
   },
   {
     name: "Priya Sharma",
     role: "Engineering Team Lead",
     path: "Associate → Team Lead",
-    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=200&h=200",
+    image: "/assets/Home-page/client-reviews/image 171.png",
     quote: "What stands out to me is the culture of ownership. When I proposed a new way to handle our CI/CD pipelines, leadership didn't just listen; they empowered me to build a team and execute the vision. Now I get to help others grow in the same way."
   }
 ];

@@ -13,61 +13,61 @@ export function OurFutureSection() {
       title: "Autonomous Orchestration",
       desc: "Architecting self-healing Kubernetes clusters and AI-driven site reliability engineering agents that predict and resolve incidents before they occur.",
       tag: "SRE Agents",
-      image: "/assets/Home-page/core-services/9.png"
+      image: "/assets/common/09ff7846bc8c9998745688779c09f88d 1.png"
     },
     {
       title: "Sustainable Green Cloud",
       desc: "Optimizing code execution and server workloads to reduce carbon emissions by up to 40% across multi-cloud environments.",
       tag: "Green Ops",
-      image: "/assets/Home-page/core-services/11.png"
+      image: "/assets/common/1b065043b6959827c05a0073c93a4a53 1.png"
     },
     {
       title: "Next-Gen AI Swarms",
       desc: "Deploying multi-model consensus swarms to orchestrate complex corporate workflows and automate entire delivery channels securely.",
       tag: "Swarm Gen",
-      image: "/assets/Home-page/core-services/8.png"
+      image: "/assets/common/260b761ad40c3ad2acba2c6666894539 1.png"
     },
     {
       title: "Cognitive DevOps Agents",
       desc: "Unifying generative code synthesis and automated testing pipelines under multi-agent reasoning loops that self-remediate pull request feedback.",
       tag: "DevOps AI",
-      image: "/assets/Home-page/core-services/6.png"
+      image: "/assets/common/2fe7f9184c515b0c515ce38bc8a25efa 1.png"
     },
     {
       title: "Quantum Cloud Security",
       desc: "Preparing hybrid-cloud computing topologies for post-quantum cryptographic standards and early quantum processing unit co-processors.",
       tag: "Quantum Ops",
-      image: "/assets/Home-page/core-services/7.png"
+      image: "/assets/common/315e4fdc6263bfd240f36297e376576e 1.png"
     },
     {
       title: "Edge AI Swarms",
       desc: "Deploying secure, low-latency intelligence pipelines across distributed edge clusters and custom IoT gateway nodes.",
       tag: "Edge Swarms",
-      image: "/assets/Home-page/core-services/5.png"
+      image: "/assets/common/37b9b888cc479ea7b74d2d9a05c37597 1.png"
     },
     {
       title: "Spatial Computing Mesh",
       desc: "Orchestrating real-time spatial computing telemetry and digital twin models across industrial networks with sub-millisecond edge synchronization.",
       tag: "Spatial IoT",
-      image: "/assets/Home-page/core-services/12.png"
+      image: "/assets/common/45ea830d170d382ade235db479060da7 1.png"
     },
     {
       title: "Generative UI Engines",
       desc: "Dynamic runtime interface synthesis powered by real-time user intent mapping and multi-agent design feedback loops.",
       tag: "UI Gen",
-      image: "/assets/Home-page/core-services/13.png"
+      image: "/assets/common/464d8932bca4d6bb552ff2dcf2f3c5ca 1.png"
     },
     {
       title: "Decentralized Trust Networks",
       desc: "Integrating smart-contract compliance gates and zero-knowledge proofs directly into automated multi-party supply chain delivery channels.",
       tag: "Trust Ops",
-      image: "/assets/Home-page/core-services/14.png"
+      image: "/assets/common/782e79a0bc5e9f58cb9af6a27727ca7b 1.png"
     },
     {
       title: "Neuromorphic Compute Nodes",
       desc: "Prototyping local neuromorphic hardware acceleration layers for next-generation edge device classification and inference tasks.",
       tag: "Brain Ops",
-      image: "/assets/Home-page/core-services/15.png"
+      image: "/assets/common/82090d7be4ef5694954ce77f9cc2e627 1.png"
     }
   ];
 

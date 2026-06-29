@@ -15,28 +15,28 @@ type AvatarColumn = {
 
 const avatarColumns: AvatarColumn[] = [
   // Col 1 (Far left)
-  { hideOn: "lg", items: [{ type: "empty" }, { type: "image", src: "premium_client_1_1782706422950.png" }, { type: "image", src: "premium_client_2_1782706434209.png" }] },
+  { hideOn: "lg", items: [{ type: "empty" }, { type: "image", src: "image 164.png" }, { type: "image", src: "image 165.png" }] },
   // Col 2
-  { hideOn: "md", items: [{ type: "image", src: "premium_client_3_1782706447158.png" }, { type: "image", src: "premium_client_4_1782706460048.png" }] },
+  { hideOn: "md", items: [{ type: "image", src: "image 166.png" }, { type: "image", src: "image 167.png" }] },
   // Col 3
-  { hideOn: "none", items: [{ type: "empty" }, { type: "image", src: "premium_client_5_1782706470626.png" }] },
+  { hideOn: "none", items: [{ type: "empty" }, { type: "image", src: "image 168.png" }] },
   // Col 4
-  { hideOn: "none", items: [{ type: "image", src: "premium_client_6_1782706483080.png" }] },
+  { hideOn: "none", items: [{ type: "image", src: "image 169.png" }] },
   // Col 5 (Center)
-  { hideOn: "none", items: [{ type: "empty" }, { type: "image", src: "premium_client_1_1782706422950.png" }] },
+  { hideOn: "none", items: [{ type: "empty" }, { type: "image", src: "image 170.png" }] },
   // Col 6
-  { hideOn: "none", items: [{ type: "image", src: "premium_client_2_1782706434209.png" }] },
+  { hideOn: "none", items: [{ type: "image", src: "image 171.png" }] },
   // Col 7
-  { hideOn: "none", items: [{ type: "empty" }, { type: "image", src: "premium_client_3_1782706447158.png" }] },
+  { hideOn: "none", items: [{ type: "empty" }, { type: "image", src: "image 172.png" }] },
   // Col 8
-  { hideOn: "md", items: [{ type: "image", src: "premium_client_4_1782706460048.png" }, { type: "image", src: "premium_client_5_1782706470626.png", tilt: true }] },
+  { hideOn: "md", items: [{ type: "image", src: "image 173.png" }, { type: "image", src: "image 174.png", tilt: true }] },
   // Col 9 (Far right)
-  { hideOn: "lg", items: [{ type: "empty" }, { type: "image", src: "premium_client_6_1782706483080.png" }, { type: "image", src: "premium_client_1_1782706422950.png" }] },
+  { hideOn: "lg", items: [{ type: "empty" }, { type: "image", src: "image 175.png" }, { type: "image", src: "image 176.png" }] },
 ];
 
 export const TestimonialsHero = () => {
   return (
-    <section className="relative min-h-[90vh] md:min-h-screen flex flex-col justify-end overflow-hidden bg-black pt-28 pb-24 md:pb-32">
+    <section className="relative min-h-[100dvh] flex flex-col justify-end overflow-hidden bg-black pt-32 pb-20 md:pb-28">
       
       {/* Faint vertical dashed lines background full width */}
       <div className="absolute inset-0 flex justify-evenly pointer-events-none opacity-20">
@@ -49,7 +49,7 @@ export const TestimonialsHero = () => {
       </div>
 
       {/* Floating Avatar Grid Layer */}
-      <div className="absolute top-24 md:top-32 inset-x-0 px-2 md:px-8 flex justify-center gap-3 md:gap-5 max-w-[1800px] mx-auto opacity-90">
+      <div className="absolute top-32 md:top-40 inset-x-0 px-2 md:px-8 flex justify-center gap-3 md:gap-5 max-w-[1800px] mx-auto opacity-90">
         {avatarColumns.map((col, i) => {
           const displayClass = 
             col.hideOn === "lg" ? "hidden lg:flex" : 
@@ -77,7 +77,7 @@ export const TestimonialsHero = () => {
                     className={`w-full aspect-square relative rounded-2xl md:rounded-3xl overflow-hidden shadow-[0_8px_30px_rgba(0,0,0,0.8)] border border-zinc-800/50 bg-zinc-900 ${item.tilt ? 'rotate-[-5deg] md:rotate-[-8deg] hover:rotate-0 transition-transform duration-500 hover:scale-105 z-10 drop-shadow-2xl' : 'hover:-translate-y-1 transition-transform duration-500'}`}
                   >
                     <Image 
-                      src={`/assets/images/testimonials/${item.src}`} 
+                      src={`/assets/Home-page/client-reviews/${item.src}`} 
                       alt="Client Portrait" 
                       fill 
                       className="object-cover grayscale-[30%] hover:grayscale-0 transition-all duration-500"
@@ -95,7 +95,7 @@ export const TestimonialsHero = () => {
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/80 to-black z-10 pointer-events-none" />
 
       {/* Text Content */}
-      <div className="relative z-20 flex flex-col items-center text-center px-6 mt-[35vh] md:mt-[45vh]">
+      <div className="relative z-20 flex flex-col items-center text-center px-6 mt-auto pt-[40vh]">
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}

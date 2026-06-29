@@ -12,7 +12,7 @@ const architects = [
     certs: ["Azure Solutions Architect Expert", "AWS Solutions Architect Professional"],
     focus: "Multi-cloud architecture and cloud native design patterns for enterprise workloads.",
     color: "blue",
-    image: "/assets/About-page/cloud_servers.png",
+    image: "/assets/common/90361fed0bb781d7c86e451995b4dbce 1.png",
   },
   {
     initials: "PD",
@@ -22,7 +22,7 @@ const architects = [
     certs: ["CKA — Kubernetes", "HashiCorp Terraform Associate"],
     focus: "GitOps, internal developer platforms, and CI/CD pipeline automation at scale.",
     color: "orange",
-    image: "/assets/About-page/tech_architecture.png",
+    image: "/assets/common/945ab601f043c558e0a8162da2a1eb4c 1.png",
   },
   {
     initials: "PE",
@@ -32,7 +32,7 @@ const architects = [
     certs: ["Microsoft Azure Developer", "Google Cloud Professional Developer"],
     focus: "Microservices, event-driven architectures, and SaaS platform design.",
     color: "violet",
-    image: "/assets/About-page/global_network.png",
+    image: "/assets/common/9d230407fdcdb1a78debc2abe0ff1925 1.png",
   },
   {
     initials: "PD2",
@@ -42,7 +42,7 @@ const architects = [
     certs: ["Azure Data Engineer Associate", "Databricks Certified Associate"],
     focus: "Lakehouse architectures, real-time streaming pipelines, and BI platform design.",
     color: "green",
-    image: "/assets/About-page/operations_room.png",
+    image: "/assets/common/9d91b93f83e6d4cd494ec13611b3e50e 1.png",
   },
   {
     initials: "PS",
@@ -52,7 +52,7 @@ const architects = [
     certs: ["CISSP", "Azure Security Engineer Associate"],
     focus: "Zero trust network design, DevSecOps integration, and cloud security posture management.",
     color: "teal",
-    image: "/assets/About-page/cyber_security.png",
+    image: "/assets/common/b384eb0438c55e43c61e7595acc29638 1.png",
   },
   {
     initials: "PI",
@@ -62,7 +62,7 @@ const architects = [
     certs: ["Azure AI Engineer Associate", "Google Professional ML Engineer"],
     focus: "LLM infrastructure, MLOps pipelines, and AI-powered platform engineering.",
     color: "red",
-    image: "/assets/About-page/ai_dashboard.png",
+    image: "/assets/common/ddb20908c846f1426649343fea590cb7 1.png",
   },
 ];
 

@@ -58,7 +58,7 @@ export const InternshipHero = () => {
           className="w-full relative h-[400px] md:h-[500px] lg:h-[550px] rounded-[2rem] md:rounded-[3rem] overflow-hidden group shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-zinc-800/50"
         >
           <Image 
-            src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=2000" 
+            src="/assets/About-page/leadership/leadership-banner/2.png" 
             alt="Devopstrio Internship Team"
             fill
             className="object-cover transition-transform duration-1000 group-hover:scale-105"
@@ -79,10 +79,7 @@ export const InternshipHero = () => {
                Our internship covers cloud architecture, data pipelines, AI models, and real-world software deployments to turn you into a top-tier engineer.
              </p>
              
-             {/* Circular Arrow Button */}
-             <div className="absolute right-6 top-1/2 -translate-y-1/2 w-12 h-12 bg-white text-black rounded-full hidden sm:flex items-center justify-center hover:scale-105 transition-transform cursor-pointer">
-               <ArrowUpRight className="w-5 h-5" />
-             </div>
+             
           </div>
         </motion.div>
 

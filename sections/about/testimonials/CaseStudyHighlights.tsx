@@ -11,91 +11,91 @@ const caseStudies = [
     id: 1,
     category: "Cloud",
     title: "Cloud Cost Optimisation for a Global FinOps Leader",
-    image: "/assets/images/testimonials/case_study_finops.png",
+    image: "/assets/common/09ff7846bc8c9998745688779c09f88d 1.png",
     link: "#"
   },
   {
     id: 2,
     category: "DevOps",
     title: "Platform Modernisation and 3× Faster Delivery",
-    image: "/assets/images/testimonials/case_study_devops.png",
+    image: "/assets/common/1b065043b6959827c05a0073c93a4a53 1.png",
     link: "#"
   },
   {
     id: 3,
     category: "Security",
     title: "Zero-Trust Security Transformation in Healthcare",
-    image: "/assets/images/testimonials/case_study_security.png",
+    image: "/assets/common/260b761ad40c3ad2acba2c6666894539 1.png",
     link: "#"
   },
   {
     id: 4,
     category: "AI",
     title: "Unlocking the Value of AI in Retail operations",
-    image: "/assets/images/testimonials/case_study_ai.png",
+    image: "/assets/common/2fe7f9184c515b0c515ce38bc8a25efa 1.png",
     link: "#"
   },
   {
     id: 5,
     category: "Cloud",
     title: "Scaling Enterprise Workloads with Azure VMware Solution",
-    image: "/assets/images/testimonials/case_study_microsoft.png",
+    image: "/assets/common/315e4fdc6263bfd240f36297e376576e 1.png",
     link: "#"
   },
   {
     id: 6,
     category: "DevOps",
     title: "Global Infrastructure for High Availability and Scale",
-    image: "/assets/images/testimonials/case_study_airbnb.png",
+    image: "/assets/common/37b9b888cc479ea7b74d2d9a05c37597 1.png",
     link: "#"
   },
   {
     id: 7,
     category: "Cloud",
     title: "Accelerating Digital Delivery by 3× Across Markets",
-    image: "/assets/images/testimonials/case_study_virgin.png",
+    image: "/assets/common/45ea830d170d382ade235db479060da7 1.png",
     link: "#"
   },
   {
     id: 8,
     category: "Security",
     title: "Securing Patient Data While Modernizing Core Services",
-    image: "/assets/images/testimonials/case_study_nhs.png",
+    image: "/assets/common/464d8932bca4d6bb552ff2dcf2f3c5ca 1.png",
     link: "#"
   },
   {
     id: 9,
     category: "AI",
     title: "Optimizing Retail Logistics with Predictive Analytics",
-    image: "/assets/images/testimonials/case_study_asda.png",
+    image: "/assets/common/782e79a0bc5e9f58cb9af6a27727ca7b 1.png",
     link: "#"
   },
   {
     id: 10,
     category: "Cloud",
     title: "Enhancing Global Distribution with Auto-Scaling Cloud",
-    image: "/assets/images/testimonials/case_study_costco.png",
+    image: "/assets/common/82090d7be4ef5694954ce77f9cc2e627 1.png",
     link: "#"
   },
   {
     id: 11,
     category: "DevOps",
     title: "Seamless Domain Management and Lightning-Fast Provisioning",
-    image: "/assets/images/testimonials/case_study_godaddy.png",
+    image: "/assets/common/90361fed0bb781d7c86e451995b4dbce 1.png",
     link: "#"
   },
   {
     id: 12,
     category: "AI",
     title: "Scaling Hardware Analytics Real-Time with Cloud Intelligence",
-    image: "/assets/images/testimonials/case_study_lenovo.png",
+    image: "/assets/common/945ab601f043c558e0a8162da2a1eb4c 1.png",
     link: "#"
   },
   {
     id: 13,
     category: "DevOps",
     title: "Accelerating Enterprise Workflow Automation Deployments",
-    image: "/assets/images/testimonials/case_study_servicenow.png",
+    image: "/assets/common/9d230407fdcdb1a78debc2abe0ff1925 1.png",
     link: "#"
   }
 ];

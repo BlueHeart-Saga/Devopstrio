@@ -9,7 +9,7 @@ const featuredTestimonial = {
   author: "Samantha Lee",
   role: "Chief Technology Officer",
   initials: "SL",
-  image: "/assets/images/testimonials/testimonial_featured.png"
+  image: "/assets/About-page/overview/image.png"
 };
 
 const testimonials = [

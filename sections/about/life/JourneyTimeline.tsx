@@ -15,15 +15,16 @@ const timelineEvents = [
 
 export const JourneyTimeline = () => {
   return (
-    <section className="py-32 bg-black overflow-hidden relative" id="timeline">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(220,38,38,0.05),transparent_70%)] pointer-events-none" />
+    <section className="py-32 bg-[#050505] overflow-hidden relative" id="timeline">
+      {/* Background ambient light */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(225,29,72,0.05),transparent_70%)] pointer-events-none" />
       
-      <div className="max-w-7xl mx-auto px-6 mb-24 relative z-10 text-center">
+      <div className="max-w-[1400px] mx-auto px-6 mb-8 relative z-10 text-center">
         <motion.span 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-[11px] font-semibold tracking-[0.25em] uppercase text-red-600 mb-6 block"
+          className="text-[11px] font-semibold tracking-[0.25em] uppercase text-rose-500 mb-6 block"
         >
           Company History
         </motion.span>
@@ -34,69 +35,39 @@ export const JourneyTimeline = () => {
           transition={{ delay: 0.1 }}
           className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight text-white mb-4 uppercase"
         >
-          Our <span className="text-red-600 font-light">Journey</span>
+          Our <span className="text-rose-500 font-light">Journey</span>
         </motion.h2>
       </div>
 
-      <div className="relative max-w-5xl mx-auto px-6 md:px-0">
-        {/* Center vertical spine */}
-        <div className="absolute left-[24px] md:left-1/2 top-0 bottom-0 w-[1px] bg-zinc-800/80 transform md:-translate-x-1/2" />
-
-        <div className="flex flex-col gap-20">
-          {timelineEvents.map((item, idx) => {
-            const isEven = idx % 2 === 0;
-
-            return (
-              <motion.div 
-                key={idx} 
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.6, delay: 0.1 }}
-                className={`relative flex flex-col md:flex-row items-center w-full ${isEven ? 'md:flex-row-reverse' : ''}`}
-              >
-                
-                {/* Half width spacer for alternating layout */}
-                <div className="hidden md:block md:w-1/2" />
-
-                {/* Center Node / Dot */}
-                <div className="absolute left-[24px] md:left-1/2 transform -translate-x-1/2 w-[5px] h-[5px] bg-red-600 rounded-full shadow-[0_0_15px_rgba(220,38,38,0.8)] z-10" />
-
-                {/* Content Side */}
-                <div className={`w-full pl-12 md:pl-0 md:w-1/2 flex flex-col relative ${isEven ? 'md:items-start md:pl-16' : 'md:items-end md:pr-16'}`}>
-                  
-                  {/* Horizontal connecting branch */}
-                  <div className={`absolute top-[40px] w-12 h-[1px] bg-zinc-800 hidden md:block ${isEven ? 'left-0' : 'right-0'}`} />
-
-                  {/* Year & Content Box Wrapper */}
-                  <div className={`flex flex-col ${isEven ? 'items-start text-left' : 'md:items-end md:text-right items-start text-left'} w-full md:max-w-[420px]`}>
-                    
-                    {/* The Large Red Year */}
-                    <div className={`flex items-center gap-6 mb-6 ${isEven ? 'flex-row' : 'md:flex-row-reverse flex-row'}`}>
-                      <span className="text-6xl md:text-7xl font-black text-red-600 tracking-tighter leading-none drop-shadow-[0_2px_15px_rgba(220,38,38,0.15)]">
-                        {item.year}
-                      </span>
-                      <div className="h-[1px] bg-zinc-800 w-16 md:w-24 hidden sm:block" />
-                    </div>
-
-                    {/* The Framed Box */}
-                    <div className="border border-zinc-800/80 bg-[#0A0A0A]/80 backdrop-blur-md p-8 hover:border-red-600/30 transition-all duration-500 w-full relative group">
-                      <div className="absolute inset-0 bg-gradient-to-br from-red-600/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                      <h4 className="text-xl md:text-2xl text-zinc-100 font-light uppercase tracking-widest mb-4 relative z-10">
-                        {item.title}
-                      </h4>
-                      <p className="text-zinc-400 text-sm leading-relaxed font-medium relative z-10">
-                        {item.description}
-                      </p>
-                    </div>
-
-                  </div>
-                </div>
-
-              </motion.div>
-            );
-          })}
+      <div className="relative w-full max-w-[100vw] mx-auto mt-10 lg:mt-20">
+        {/* Horizontal scroll container with modern scrollbar */}
+        <div className="flex overflow-x-auto items-center pb-24 pt-10 px-6 md:px-12 gap-8 md:gap-16 [&::-webkit-scrollbar]:h-1.5 [&::-webkit-scrollbar-track]:bg-zinc-900/40 [&::-webkit-scrollbar-track]:rounded-full [&::-webkit-scrollbar-thumb]:bg-zinc-700 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb:hover]:bg-rose-500/80 cursor-grab active:cursor-grabbing">
+          {timelineEvents.map((item, idx) => (
+            <div 
+              key={idx} 
+              className="flex-shrink-0 flex items-center group cursor-pointer"
+            >
+              {/* Large Year Text */}
+              <div className="text-[100px] md:text-[180px] lg:text-[260px] font-black text-zinc-900 transition-colors duration-500 group-hover:text-rose-600 leading-[0.8] tracking-tighter select-none">
+                {item.year}
+              </div>
+              
+              {/* Expandable Content Container */}
+              <div className="flex flex-col justify-center overflow-hidden transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] w-0 opacity-0 group-hover:w-[280px] md:group-hover:w-[350px] group-hover:opacity-100 group-hover:ml-6 md:group-hover:ml-12 border-l border-transparent group-hover:border-zinc-800/80 group-hover:pl-6 md:group-hover:pl-10">
+                <h3 className="text-xl md:text-3xl text-white font-bold mb-4 tracking-tight whitespace-nowrap">
+                  {item.title}
+                </h3>
+                <p className="text-zinc-400 text-sm md:text-[15px] leading-relaxed min-w-[250px]">
+                  {item.description}
+                </p>
+                <div className="w-12 h-[2px] bg-rose-600 mt-6 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-700 delay-300" />
+              </div>
+            </div>
+          ))}
         </div>
+        
+        {/* Subtle scroll hint gradient */}
+        <div className="absolute top-0 bottom-0 right-0 w-32 bg-gradient-to-l from-[#050505] to-transparent pointer-events-none" />
       </div>
     </section>
   );

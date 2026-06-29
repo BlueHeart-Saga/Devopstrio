@@ -14,7 +14,7 @@ const stories = [
       { name: "Azure VMware Solution", icon: <Cloud className="w-4 h-4" /> },
       { name: "Enterprise Cloud", icon: <Server className="w-4 h-4" /> }
     ],
-    image: "/assets/images/testimonials/case_study_microsoft.png",
+    image: "/assets/About-page/overview/partner/microsoft.png",
   },
   {
     id: "airbnb",
@@ -25,7 +25,7 @@ const stories = [
       { name: "Platform Engineering", icon: <Settings className="w-4 h-4" /> },
       { name: "Global Edge", icon: <Cloud className="w-4 h-4" /> }
     ],
-    image: "/assets/images/testimonials/case_study_airbnb.png",
+    image: "/assets/About-page/overview/partner/airhub.png",
   },
   {
     id: "virgin",
@@ -36,7 +36,7 @@ const stories = [
       { name: "DevOps Automation", icon: <Settings className="w-4 h-4" /> },
       { name: "Cloud Migration", icon: <Cloud className="w-4 h-4" /> }
     ],
-    image: "/assets/images/testimonials/case_study_virgin.png",
+    image: "/assets/About-page/overview/partner/virgin.png",
   },
   {
     id: "nhs",
@@ -47,7 +47,7 @@ const stories = [
       { name: "Cybersecurity", icon: <Shield className="w-4 h-4" /> },
       { name: "Managed Ops", icon: <Server className="w-4 h-4" /> }
     ],
-    image: "/assets/images/testimonials/case_study_nhs.png",
+    image: "/assets/About-page/overview/partner/nhs.png",
   },
   {
     id: "asda",
@@ -58,7 +58,7 @@ const stories = [
       { name: "Cloud Analytics", icon: <Cloud className="w-4 h-4" /> },
       { name: "Data Platform", icon: <Server className="w-4 h-4" /> }
     ],
-    image: "/assets/images/testimonials/case_study_asda.png",
+    image: "/assets/About-page/overview/partner/asda.png",
   },
   {
     id: "costco",
@@ -69,7 +69,7 @@ const stories = [
       { name: "Cloud Architecture", icon: <Cloud className="w-4 h-4" /> },
       { name: "Global Edge", icon: <Server className="w-4 h-4" /> }
     ],
-    image: "/assets/images/testimonials/case_study_costco.png",
+    image: "/assets/About-page/overview/partner/cisco.png",
   },
   {
     id: "godaddy",
@@ -80,7 +80,7 @@ const stories = [
       { name: "Platform Engineering", icon: <Settings className="w-4 h-4" /> },
       { name: "Managed Ops", icon: <Shield className="w-4 h-4" /> }
     ],
-    image: "/assets/images/testimonials/case_study_godaddy.png",
+    image: "/assets/About-page/overview/partner/godaddy.png",
   },
   {
     id: "lenovo",
@@ -91,7 +91,7 @@ const stories = [
       { name: "Data Platform", icon: <Server className="w-4 h-4" /> },
       { name: "Cloud Analytics", icon: <Cloud className="w-4 h-4" /> }
     ],
-    image: "/assets/images/testimonials/case_study_lenovo.png",
+    image: "/assets/About-page/overview/partner/lenova.png",
   },
   {
     id: "servicenow",
@@ -102,7 +102,7 @@ const stories = [
       { name: "DevOps Automation", icon: <Settings className="w-4 h-4" /> },
       { name: "Platform Engineering", icon: <Server className="w-4 h-4" /> }
     ],
-    image: "/assets/images/testimonials/case_study_servicenow.png",
+    image: "/assets/About-page/overview/partner/servicenow.png",
   }
 ];
 
@@ -143,7 +143,7 @@ export const FeaturedSuccess = () => {
                     transition={{ duration: 0.4 }}
                   >
                     <div className="mb-6">
-                      <div className="inline-flex h-12 px-4 items-center justify-center bg-white rounded-lg shadow-sm">
+                      <div className="inline-flex h-12 px-4 items-center justify-center bg-zinc-800/40 border border-zinc-700/50 rounded-xl backdrop-blur-md shadow-lg">
                         <Image 
                           src={activeStory.logo} 
                           alt={`${activeStory.id} logo`} 
@@ -212,15 +212,15 @@ export const FeaturedSuccess = () => {
         </div>
 
         {/* Bottom Logo Tabs */}
-        <div className="flex overflow-x-auto bg-white rounded-2xl hide-scrollbar shadow-lg">
+        <div className="flex overflow-x-auto bg-zinc-900/40 backdrop-blur-md border border-zinc-800 rounded-2xl hide-scrollbar shadow-2xl">
           {stories.map((story, idx) => (
             <button
               key={story.id}
               onClick={() => setActiveIndex(idx)}
-              className={`flex-1 min-w-[120px] md:min-w-[140px] h-20 md:h-24 flex items-center justify-center relative transition-all duration-300 border-r border-zinc-100 last:border-r-0 ${
+              className={`flex-1 min-w-[120px] md:min-w-[140px] h-20 md:h-24 flex items-center justify-center relative transition-all duration-300 border-r border-zinc-800/50 last:border-r-0 ${
                 activeIndex === idx 
-                  ? "bg-zinc-50" 
-                  : "hover:bg-zinc-50/60"
+                  ? "bg-white/10" 
+                  : "hover:bg-white/5"
               }`}
             >
               <Image 
@@ -229,7 +229,7 @@ export const FeaturedSuccess = () => {
                 width={90} 
                 height={32} 
                 className={`max-h-8 md:max-h-10 w-auto object-contain transition-all duration-300 px-4 ${
-                  activeIndex === idx ? "opacity-100 scale-105" : "opacity-60 grayscale hover:grayscale-0"
+                  activeIndex === idx ? "opacity-100 scale-105" : "opacity-40 hover:opacity-100"
                 }`}
               />
               {/* Active Tab Indicator */}

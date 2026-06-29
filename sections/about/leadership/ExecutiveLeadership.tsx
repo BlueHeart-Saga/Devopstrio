@@ -237,21 +237,26 @@ export const ExecutiveLeadership = () => {
 
                 {/* Overlapping circular avatars exactly like mockup */}
                 <div className="flex -space-x-3 overflow-hidden select-none py-2 shrink-0 relative z-10">
-                  {leaders.slice(0, 5).map((leader, i) => (
+                  {[
+                    "/assets/Home-page/client-reviews/image 164.png",
+                    "/assets/Home-page/client-reviews/image 165.png",
+                    "/assets/Home-page/client-reviews/image 166.png",
+                    "/assets/Home-page/client-reviews/image 167.png",
+                    "/assets/Home-page/client-reviews/image 168.png"
+                  ].map((src, i) => (
                     <div 
                       key={i} 
                       className="relative w-10 h-10 rounded-full border-2 border-zinc-950 overflow-hidden bg-zinc-900 transition-transform duration-300 hover:scale-115 hover:z-30 cursor-pointer shadow-md"
-                      title={leader.name}
                     >
                       <img
                         className="w-full h-full object-cover object-top"
-                        src={leader.photoPink}
-                        alt={leader.name}
+                        src={src}
+                        alt={`Reviewer ${i + 1}`}
                       />
                     </div>
                   ))}
                   <div className="w-10 h-10 rounded-full border-2 border-zinc-950 bg-zinc-900 flex items-center justify-center text-white text-[10px] font-black tracking-tight shrink-0 select-none">
-                    +1
+                    +12
                   </div>
                 </div>
 

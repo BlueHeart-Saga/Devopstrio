@@ -121,7 +121,7 @@ export const SupportChannels = () => {
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] md:w-[450px] md:h-[450px] bg-rose-500/10 rounded-full blur-[100px] -z-10" />
           
           <Image 
-            src="/assets/support/support-person.png"
+            src="/assets/About-page/support/connect.png"
             alt="Devopstrio Support Professional"
             fill
             className="object-contain object-bottom drop-shadow-2xl"

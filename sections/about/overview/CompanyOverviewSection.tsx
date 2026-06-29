@@ -61,16 +61,13 @@ export function CompanyOverviewSection() {
           {/* Right Column: Office Graphic with Badge Card */}
           <div className="lg:col-span-5 relative flex justify-center items-center w-full">
             <Reveal delay={0.1} className="w-full max-w-[480px] relative">
-              {/* Outer Glow container */}
-              <div className="relative rounded-2xl overflow-hidden border border-zinc-900 bg-zinc-950 p-2 hover:border-zinc-800 transition-all duration-500 shadow-2xl">
-                <div className="aspect-[4/3] rounded-xl overflow-hidden bg-zinc-900 relative">
-                  <img 
-                    src="/assets/About-page/devopstrio_office_meeting.png" 
-                    alt="Devopstrio Co-Engineering Center"
-                    className="w-full h-full object-cover object-center select-none"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none" />
-                </div>
+              {/* Unwrapped Full Image */}
+              <div className="relative w-full">
+                <img 
+                  src="/assets/About-page/overview/about-devopstrio.png" 
+                  alt="Devopstrio Co-Engineering Center"
+                  className="w-full h-auto object-contain select-none rounded-xl shadow-2xl"
+                />
               </div>
 
               {/* Floating "7+ Years" badge */}
