@@ -1249,13 +1249,70 @@ export function Navbar() {
 
         {/* Right Action */}
         <div className="flex items-center gap-3">
-          <Link
-            href="/contact"
-            onMouseEnter={() => setActiveMenu(null)}
-            className="hidden sm:inline-flex nav-contact-btn"
+          <div
+            onMouseEnter={() => setActiveMenu("contact")}
+            className="hidden sm:block relative"
           >
-            Contact Us <ArrowUpRight size={13} />
-          </Link>
+            <Link
+              href="/contact"
+              className="inline-flex nav-contact-btn items-center gap-1.5"
+            >
+              Contact Us <ChevronDown size={14} className={`transition-transform duration-300 ${activeMenu === "contact" ? "rotate-180" : ""}`} />
+            </Link>
+
+            {activeMenu === "contact" && (
+              <div className="absolute right-0 top-full mt-3 w-[260px] pointer-events-auto z-50">
+                <div className="animate-fadeIn bg-[#0a0a0a] border border-zinc-800 rounded-2xl p-2.5 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.95)] relative overflow-hidden flex flex-col gap-1">
+                  {/* Gloss reflection line */}
+                  <div className="absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-zinc-600 to-transparent pointer-events-none" />
+                  
+                  <Link 
+                    href="/contact#contact-form"
+                    onClick={() => {
+                      setActiveMenu(null);
+                      setTimeout(() => window.dispatchEvent(new HashChangeEvent("hashchange")), 100);
+                    }}
+                    className="group flex flex-col p-3 rounded-xl hover:bg-zinc-900 transition-colors"
+                  >
+                    <span className="text-[14px] font-bold text-white group-hover:text-rose-500 transition-colors flex items-center justify-between mb-1">
+                      Connect Us <ArrowUpRight size={15} className="text-zinc-500 group-hover:text-rose-500 transition-colors" />
+                    </span>
+                    <span className="text-[11px] text-zinc-400 font-medium">Reach out to our expert team</span>
+                  </Link>
+
+                  <button 
+                    onClick={() => {
+                      setActiveMenu(null);
+                      window.location.hash = "contact";
+                      setTimeout(() => window.dispatchEvent(new HashChangeEvent("hashchange")), 50);
+                    }}
+                    className="group flex flex-col p-3 rounded-xl hover:bg-zinc-900 transition-colors w-full text-left"
+                  >
+                    <span className="text-[14px] font-bold text-white group-hover:text-rose-500 transition-colors flex items-center justify-between mb-1 w-full">
+                      Quick Quote <ArrowUpRight size={15} className="text-zinc-500 group-hover:text-rose-500 transition-colors" />
+                    </span>
+                    <span className="text-[11px] text-zinc-400 font-medium">Get a tailored estimate</span>
+                  </button>
+                  
+                  <div className="h-[1px] bg-zinc-900/80 my-1 mx-2" />
+                  
+                  <button 
+                    onClick={() => {
+                      setActiveMenu(null);
+                      window.location.hash = "schedule-call";
+                      setTimeout(() => window.dispatchEvent(new HashChangeEvent("hashchange")), 50);
+                    }}
+                    className="group flex flex-col p-3 rounded-xl hover:bg-zinc-900 transition-colors w-full text-left"
+                  >
+                    <span className="text-[14px] font-bold text-white group-hover:text-rose-500 transition-colors flex items-center justify-between mb-1 w-full">
+                      Schedule a Call <ArrowUpRight size={15} className="text-zinc-500 group-hover:text-rose-500 transition-colors" />
+                    </span>
+                    <span className="text-[11px] text-zinc-400 font-medium">Book a meeting instantly</span>
+                  </button>
+                </div>
+              </div>
+            )}
+          </div>
 
           {/* Mobile Menu Toggle */}
           <button

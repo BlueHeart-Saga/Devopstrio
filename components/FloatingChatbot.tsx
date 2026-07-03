@@ -109,12 +109,15 @@ export function FloatingChatbot() {
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0, opacity: 0 }}
             onClick={() => setIsOpen(true)}
-            className="fixed bottom-4 left-4 z-[100] hover:scale-110 transition-transform hover:-translate-y-1"
+            className="fixed bottom-4 left-4 z-[100] hover:scale-110 transition-transform hover:-translate-y-1 group"
           >
+            <div className="absolute left-[70%] top-1/2 -translate-y-1/2 px-4 py-2.5 bg-white text-zinc-950 text-xs sm:text-sm font-semibold rounded-2xl rounded-bl-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none shadow-[0_8px_30px_rgba(0,0,0,0.15)] border border-zinc-100/50 -translate-x-2 group-hover:translate-x-0 z-0">
+              How can we assist you?
+            </div>
             <img 
               src="/assets/bot/icon.png" 
               alt="Chat Bot" 
-              className="w-24 h-24 md:w-28 md:h-28 object-contain drop-shadow-[0_15px_25px_rgba(0,0,0,0.6)]" 
+              className="w-24 h-24 md:w-28 md:h-28 object-contain drop-shadow-[0_15px_25px_rgba(0,0,0,0.6)] relative z-10" 
             />
           </motion.button>
         )}

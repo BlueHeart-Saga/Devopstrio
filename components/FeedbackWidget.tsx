@@ -24,6 +24,16 @@ export function FeedbackWidget() {
     return () => clearTimeout(timer);
   }, []);
 
+  // Auto-hide tooltip after 10 seconds
+  useEffect(() => {
+    if (showTooltip) {
+      const hideTimer = setTimeout(() => {
+        setShowTooltip(false);
+      }, 10000);
+      return () => clearTimeout(hideTimer);
+    }
+  }, [showTooltip]);
+
   // Hide tooltip when widget is opened
   useEffect(() => {
     if (isOpen) {
@@ -139,9 +149,12 @@ export function FeedbackWidget() {
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0, opacity: 0 }}
             onClick={() => setIsOpen(true)}
-            className="fixed bottom-4 right-4 md:bottom-6 md:right-6 z-[100] w-14 h-14 md:w-16 md:h-16 rounded-full bg-rose-600 flex items-center justify-center text-white shadow-[0_10px_25px_rgba(225,29,72,0.4)] hover:bg-rose-500 hover:scale-110 hover:-translate-y-1 transition-all"
+            className="fixed bottom-4 right-4 md:bottom-6 md:right-6 z-[100] w-12 h-12 md:w-14 md:h-14 rounded-full bg-rose-600 flex items-center justify-center text-white shadow-[0_10px_25px_rgba(225,29,72,0.4)] hover:bg-rose-500 hover:scale-110 hover:-translate-y-1 transition-all group"
           >
-            <MessageSquare size={26} />
+            <div className="absolute right-[90%] top-1/2 -translate-y-1/2 mr-2 px-4 py-2.5 bg-white text-zinc-950 text-xs sm:text-sm font-semibold rounded-2xl rounded-br-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none shadow-[0_8px_30px_rgba(0,0,0,0.15)] border border-zinc-100/50 translate-x-2 group-hover:translate-x-0">
+              How can we assist you?
+            </div>
+            <MessageSquare size={22} className="relative z-10" />
           </motion.button>
         )}
       </AnimatePresence>

@@ -154,7 +154,12 @@ export function ContactForm() {
               
               {/* Close Button Top Right */}
               <button 
-                onClick={() => setShowForm(false)}
+                onClick={() => {
+                  setShowForm(false);
+                  if (window.location.hash === '#contact-form') {
+                    history.pushState("", document.title, window.location.pathname + window.location.search);
+                  }
+                }}
                 className="absolute top-5 right-5 w-9 h-9 rounded-full border border-white/10 flex items-center justify-center text-white/50 hover:text-white hover:bg-white/10 transition-all z-20"
               >
                 <X size={16} strokeWidth={1.5} />
