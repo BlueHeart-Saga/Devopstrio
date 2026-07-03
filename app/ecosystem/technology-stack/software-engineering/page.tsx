@@ -109,7 +109,7 @@ export default function SoftwareEngineeringPage() {
             </p>
           </Reveal>
           <Reveal delay={0.2} className="max-w-3xl mx-auto mb-10">
-            <p className="text-zinc-400 text-xs md:text-sm lg:text-base leading-relaxed font-bold">
+            <p className="text-zinc-200 text-sm md:text-base lg:text-lg leading-relaxed font-medium">
               Deploy Next.js user interfaces, build FastAPI servers, design schema validation APIs, implement clean patterns, and run integration tests.
             </p>
           </Reveal>
@@ -146,9 +146,9 @@ export default function SoftwareEngineeringPage() {
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             <div className="lg:col-span-5">
-              <span className="text-[11px] font-mono text-rose-500 uppercase tracking-[0.2em] block mb-4 font-bold">FRONTEND</span>
-              <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight mb-6">Frontend Engineering</h2>
-              <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-medium">
+              <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">FRONTEND</span>
+              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">Frontend Engineering</h2>
+              <p className="text-zinc-300 text-base md:text-lg leading-relaxed font-medium">
                 Deliver responsive user interfaces. Deploy server-rendered Next.js components and enforce type checking using TypeScript.
               </p>
             </div>
@@ -182,9 +182,9 @@ export default function SoftwareEngineeringPage() {
               ))}
             </div>
             <div className="lg:col-span-5 lg:order-1">
-              <span className="text-[11px] font-mono text-rose-500 uppercase tracking-[0.2em] block mb-4 font-bold">BACKEND CORE</span>
-              <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight mb-6">Backend Engineering</h2>
-              <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-medium">
+              <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">BACKEND CORE</span>
+              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">Backend Engineering</h2>
+              <p className="text-zinc-300 text-base md:text-lg leading-relaxed font-medium">
                 Build high-throughput backend APIs. Write asynchronous FastAPI threads and Node.js event integrations.
               </p>
             </div>
@@ -197,9 +197,9 @@ export default function SoftwareEngineeringPage() {
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             <div className="lg:col-span-5">
-              <span className="text-[11px] font-mono text-rose-500 uppercase tracking-[0.2em] block mb-4 font-bold">API SYSTEM</span>
-              <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight mb-6">API Ecosystem</h2>
-              <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-medium">
+              <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">API SYSTEM</span>
+              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">API Ecosystem</h2>
+              <p className="text-zinc-300 text-base md:text-lg leading-relaxed font-medium">
                 Standardize routing interfaces. Coordinate REST schemas, deploy GraphQL query links, and configure internal gRPC calls.
               </p>
             </div>
@@ -233,9 +233,9 @@ export default function SoftwareEngineeringPage() {
               ))}
             </div>
             <div className="lg:col-span-5 lg:order-1">
-              <span className="text-[11px] font-mono text-rose-500 uppercase tracking-[0.2em] block mb-4 font-bold">PATTERNS</span>
-              <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight mb-6">Architecture Patterns</h2>
-              <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-medium">
+              <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">PATTERNS</span>
+              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">Architecture Patterns</h2>
+              <p className="text-zinc-300 text-base md:text-lg leading-relaxed font-medium">
                 Enforce software design hygiene. Utilize Domain-Driven Design (DDD) rules and configure split read-write CQRS pathways.
               </p>
             </div>
@@ -248,9 +248,9 @@ export default function SoftwareEngineeringPage() {
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             <div className="lg:col-span-5">
-              <span className="text-[11px] font-mono text-rose-500 uppercase tracking-[0.2em] block mb-4 font-bold">QUALITY</span>
-              <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight mb-6">Quality Engineering</h2>
-              <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-medium">
+              <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">QUALITY</span>
+              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">Quality Engineering</h2>
+              <p className="text-zinc-300 text-base md:text-lg leading-relaxed font-medium">
                 Verify application stability. Run Jest unit validation checks and integrate automated Cypress UI actions tests.
               </p>
             </div>
@@ -284,9 +284,9 @@ export default function SoftwareEngineeringPage() {
               ))}
             </div>
             <div className="lg:col-span-5 lg:order-1">
-              <span className="text-[11px] font-mono text-rose-500 uppercase tracking-[0.2em] block mb-4 font-bold">DEVELOPER EXPERIENCE</span>
-              <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight mb-6">Engineering Productivity</h2>
-              <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-medium">
+              <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">DEVELOPER EXPERIENCE</span>
+              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">Engineering Productivity</h2>
+              <p className="text-zinc-300 text-base md:text-lg leading-relaxed font-medium">
                 Minimize developer friction. Provide standardized golden path workspaces and automate dependency library audits.
               </p>
             </div>
@@ -298,8 +298,8 @@ export default function SoftwareEngineeringPage() {
       <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60 relative">
         <div className="max-w-4xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="mb-16 text-center">
-            <span className="text-[11px] font-mono text-rose-500 uppercase tracking-[0.2em] block mb-4 font-bold">FAQ</span>
-            <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight">
+            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">FAQ</span>
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">
               Frequently Asked Questions
             </h2>
           </Reveal>
@@ -331,7 +331,7 @@ export default function SoftwareEngineeringPage() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[300px] bg-[radial-gradient(circle_at_center,rgba(225,29,72,0.025),transparent_60%)] pointer-events-none" />
         <div className="max-w-3xl mx-auto px-12 xl:px-8 relative z-10">
           <h2 className="text-3xl md:text-5xl font-black mb-6 tracking-tight">Build Enterprise Software</h2>
-          <p className="text-zinc-400 text-xs md:text-sm font-bold mb-10 max-w-lg mx-auto leading-relaxed">
+          <p className="text-zinc-300 text-sm md:text-base font-medium mb-10 max-w-lg mx-auto leading-relaxed">
             Partner with our engineering team to build scalable software solutions and deploy modern frameworks.
           </p>
           <Link

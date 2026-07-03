@@ -17,7 +17,7 @@ export const LifeHero = () => {
       {/* Cinematic Background Image */}
       <div className="absolute inset-0 z-0 pointer-events-none select-none">
         <img 
-          src="/assets/About-page/life-at-devopstrio/hero.png" 
+          src="/assets/About-page/leadership/hero.png" 
           alt="Life at Devopstrio Team"
           className="w-full h-full object-cover object-center"
         />

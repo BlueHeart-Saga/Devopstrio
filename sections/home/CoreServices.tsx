@@ -142,6 +142,7 @@ export function CoreServices() {
 
   const gap = 24; // gap-6
   const xTranslation = startIndex * (100 / visibleCards);
+  const gapTranslation = startIndex * (gap / visibleCards);
 
   return (
     <section
@@ -175,7 +176,7 @@ export function CoreServices() {
         <div className="relative overflow-hidden w-full pb-4">
           <motion.div
             className="flex gap-6"
-            animate={{ x: `calc(-${xTranslation}% - ${startIndex * gap}px)` }}
+            animate={{ x: `calc(-${xTranslation}% - ${gapTranslation}px)` }}
             transition={{ type: "spring", stiffness: 80, damping: 20 }}
           >
             {services.map((service) => (

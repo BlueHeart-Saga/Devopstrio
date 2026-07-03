@@ -264,7 +264,7 @@ export default function SaaSPlatformsPage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center mb-20">
             <div className="lg:col-span-5">
               <Reveal className="text-left">
-                <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+                <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
                   ECOSYSTEM LAYOUT
                 </span>
                 <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight leading-tight text-white mb-6">
@@ -300,7 +300,7 @@ export default function SaaSPlatformsPage() {
                 <h4 className="text-sm font-bold text-white uppercase tracking-wider mb-3 pb-2 border-b border-zinc-900/60">
                   {cat.name}
                 </h4>
-                <p className="text-xs md:text-sm text-zinc-400 font-bold leading-relaxed">
+                <p className="text-sm md:text-base text-zinc-300 font-medium leading-relaxed">
                   {cat.desc}
                 </p>
               </div>
@@ -314,13 +314,13 @@ export default function SaaSPlatformsPage() {
       <section className="w-full py-24 bg-black border-b border-zinc-900/60">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
           <Reveal className="mb-16 text-center max-w-2xl mx-auto">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
               PLATFORMS
             </span>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">
               Platform <span className="text-rose-500">Portfolio</span>
             </h2>
-            <p className="text-zinc-400 text-xs md:text-sm font-bold">
+            <p className="text-zinc-300 text-sm md:text-base font-medium">
               Explore our proprietary software tools designed for rapid business execution.
             </p>
           </Reveal>
@@ -371,10 +371,10 @@ export default function SaaSPlatformsPage() {
       <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
           <Reveal className="mb-16 text-center max-w-2xl mx-auto">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
               PLATFORM FEATURES
             </span>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">
               Platform <span className="text-rose-500">Capabilities</span>
             </h2>
           </Reveal>
@@ -389,7 +389,7 @@ export default function SaaSPlatformsPage() {
                   0{idx + 1}
                 </div>
                 <h4 className="text-sm md:text-base font-bold text-white mb-2">{item.title}</h4>
-                <p className="text-xs text-zinc-400 font-bold leading-relaxed">{item.desc}</p>
+                <p className="text-sm text-zinc-300 font-medium leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -400,10 +400,10 @@ export default function SaaSPlatformsPage() {
       <section className="w-full py-24 bg-black border-b border-zinc-900/60">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
           <Reveal className="mb-16 text-center max-w-2xl mx-auto">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
               RECOMMENDED PATHWAYS
             </span>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">
               Business <span className="text-rose-500">Solutions</span>
             </h2>
           </Reveal>
@@ -433,7 +433,7 @@ export default function SaaSPlatformsPage() {
 
                 <div className="mt-6 pt-4 border-t border-zinc-900/80">
                   <span className="text-[9px] font-mono text-zinc-600 uppercase tracking-wider block mb-1 font-bold">Business Outcome</span>
-                  <p className="text-xs text-zinc-400 font-bold leading-relaxed">{sol.outcome}</p>
+                  <p className="text-sm text-zinc-300 font-medium leading-relaxed">{sol.outcome}</p>
                 </div>
               </div>
             ))}
@@ -445,10 +445,10 @@ export default function SaaSPlatformsPage() {
       <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60 relative">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
           <Reveal className="mb-16 text-center max-w-2xl mx-auto">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
               BLUEPRINT LAYERS
             </span>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">
               Platform <span className="text-rose-500">Architecture</span>
             </h2>
           </Reveal>
@@ -518,7 +518,7 @@ export default function SaaSPlatformsPage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center mb-16">
             <div className="lg:col-span-5">
               <Reveal className="text-left">
-                <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+                <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
                   METRICS & CASES
                 </span>
                 <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight leading-tight text-white mb-6">
@@ -591,10 +591,10 @@ export default function SaaSPlatformsPage() {
       <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
           <Reveal className="mb-16 text-center max-w-2xl mx-auto">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
               DEVELOPMENT TIMELINE
             </span>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">
               Future Platform <span className="text-rose-500">Roadmap</span>
             </h2>
           </Reveal>
@@ -632,7 +632,7 @@ export default function SaaSPlatformsPage() {
 
             <div className="lg:col-span-5">
               <Reveal className="text-left sticky top-28">
-                <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+                <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
                   PLATFORM QUESTIONS
                 </span>
                 <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight leading-tight text-white mb-5">
@@ -690,7 +690,7 @@ export default function SaaSPlatformsPage() {
         <div className="max-w-3xl mx-auto px-12 xl:px-8 relative z-10 flex flex-col items-center">
 
           <Reveal>
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
               GET STARTED
             </span>
           </Reveal>

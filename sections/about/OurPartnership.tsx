@@ -10,7 +10,7 @@ const row1 = [
   { name: "AWS", path: "/assets/Tech-icons/amazon-aws-logo_svgstack_com_7491780931192.svg" },
   { name: "Google Cloud", path: "/assets/Tech-icons/google-cloud-logo_svgstack_com_28371780931185.svg" },
   { name: "Microsoft", path: "/assets/Home-page/partners/Microsoft.svg" },
-  { name: "ServiceNow", path: "/assets/Home-page/partners/servicenow.svg" },
+  { name: "ServiceNow", path: "/assets/Home-page/partners/servicenow.png" },
   { name: "Cloudflare", path: "/assets/Tech-icons/cloudflare-logo-icon_svgstack_com_28071780931769.svg" },
 ];
 
@@ -84,7 +84,8 @@ export function OurPartnership() {
   return (
     <section className="w-full py-20 lg:py-28 bg-black text-white relative overflow-hidden">
       {/* CSS Keyframes for infinite marquee loops */}
-      <style dangerouslySetInnerHTML={{ __html: `
+      <style dangerouslySetInnerHTML={{
+        __html: `
         @keyframes marquee-left {
           0% { transform: translateX(0); }
           100% { transform: translateX(-25%); }
@@ -111,7 +112,7 @@ export function OurPartnership() {
 
       <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
-          
+
           {/* Left Column: Staggered Marquee Grid */}
           <div className="lg:col-span-7 relative w-full overflow-hidden py-6 bg-zinc-950/10 border border-zinc-900/80 rounded-3xl backdrop-blur-sm">
             {/* Edge Fading Overlays */}
@@ -133,7 +134,7 @@ export function OurPartnership() {
           <div className="lg:col-span-5 flex flex-col justify-center">
             <Reveal>
               <div className="flex items-center gap-2 mb-4">
-                
+
                 <span className="text-[11px] font-semibold tracking-wider uppercase text-rose-500">
                   Integrations & Partners
                 </span>
@@ -178,7 +179,7 @@ export function OurPartnership() {
         <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-96 h-20 bg-rose-500/5 rounded-full blur-[80px] pointer-events-none" />
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
           <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8 lg:gap-12">
-            
+
             <div className="flex-shrink-0 max-w-sm">
               <Reveal>
                 <span className="text-[11px] font-semibold tracking-[0.25em] uppercase text-[#E11D48] mb-2 block">

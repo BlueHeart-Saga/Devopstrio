@@ -110,7 +110,7 @@ export default function CybersecurityPage() {
             </p>
           </Reveal>
           <Reveal delay={0.2} className="max-w-3xl mx-auto mb-10">
-            <p className="text-zinc-400 text-xs md:text-sm lg:text-base leading-relaxed font-bold">
+            <p className="text-zinc-200 text-sm md:text-base lg:text-lg leading-relaxed font-medium">
               Configure security frameworks, deploy identity platforms, verify app code, run cloud posture audits, and automate compliance tracking.
             </p>
           </Reveal>
@@ -147,9 +147,9 @@ export default function CybersecurityPage() {
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             <div className="lg:col-span-5">
-              <span className="text-[11px] font-mono text-rose-500 uppercase tracking-[0.2em] block mb-4 font-bold">ZERO TRUST</span>
-              <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight mb-6">Security Framework</h2>
-              <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-medium">
+              <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">ZERO TRUST</span>
+              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">Security Framework</h2>
+              <p className="text-zinc-300 text-base md:text-lg leading-relaxed font-medium">
                 Enforce packet microsegmentation. Setup Cilium network filters and encrypt pod communication pathways.
               </p>
             </div>
@@ -183,9 +183,9 @@ export default function CybersecurityPage() {
               ))}
             </div>
             <div className="lg:col-span-5 lg:order-1">
-              <span className="text-[11px] font-mono text-rose-500 uppercase tracking-[0.2em] block mb-4 font-bold">DIRECTORY AUTH</span>
-              <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight mb-6">Identity Platform</h2>
-              <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-medium">
+              <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">DIRECTORY AUTH</span>
+              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">Identity Platform</h2>
+              <p className="text-zinc-300 text-base md:text-lg leading-relaxed font-medium">
                 Secure enterprise access points. Integrate Okta SSO profiles and coordinate Azure Entra ID credentials.
               </p>
             </div>
@@ -198,9 +198,9 @@ export default function CybersecurityPage() {
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             <div className="lg:col-span-5">
-              <span className="text-[11px] font-mono text-rose-500 uppercase tracking-[0.2em] block mb-4 font-bold">APPSEC</span>
-              <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight mb-6">Application Security</h2>
-              <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-medium">
+              <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">APPSEC</span>
+              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">Application Security</h2>
+              <p className="text-zinc-300 text-base md:text-lg leading-relaxed font-medium">
                 Analyze code safety parameters. Run SonarQube logic tests and execute Trivy container checks on pull requests automatically.
               </p>
             </div>
@@ -234,9 +234,9 @@ export default function CybersecurityPage() {
               ))}
             </div>
             <div className="lg:col-span-5 lg:order-1">
-              <span className="text-[11px] font-mono text-rose-500 uppercase tracking-[0.2em] block mb-4 font-bold">POSTURE MANAGEMENT</span>
-              <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight mb-6">Cloud Security</h2>
-              <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-medium">
+              <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">POSTURE MANAGEMENT</span>
+              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">Cloud Security</h2>
+              <p className="text-zinc-300 text-base md:text-lg leading-relaxed font-medium">
                 Isolate cloud database networks. Inject credentials dynamically using HashiCorp Vault enclaves, removing static files key folders.
               </p>
             </div>
@@ -249,9 +249,9 @@ export default function CybersecurityPage() {
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             <div className="lg:col-span-5">
-              <span className="text-[11px] font-mono text-rose-500 uppercase tracking-[0.2em] block mb-4 font-bold">COMPLIANCE</span>
-              <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight mb-6">Compliance & Governance</h2>
-              <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-medium">
+              <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">COMPLIANCE</span>
+              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">Compliance & Governance</h2>
+              <p className="text-zinc-300 text-base md:text-lg leading-relaxed font-medium">
                 Pass security audits easily. Align configurations with SOC 2, ISO 27001, and international data privacy targets automatically.
               </p>
             </div>
@@ -285,9 +285,9 @@ export default function CybersecurityPage() {
               ))}
             </div>
             <div className="lg:col-span-5 lg:order-1">
-              <span className="text-[11px] font-mono text-rose-500 uppercase tracking-[0.2em] block mb-4 font-bold">THREAT DEFENSE</span>
-              <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight mb-6">SOC Operations</h2>
-              <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-medium">
+              <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">THREAT DEFENSE</span>
+              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">SOC Operations</h2>
+              <p className="text-zinc-300 text-base md:text-lg leading-relaxed font-medium">
                 Detect anomalies in real-time. Use CrowdStrike and Microsoft Defender to scan workstations and server hosts.
               </p>
             </div>
@@ -299,8 +299,8 @@ export default function CybersecurityPage() {
       <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60 relative">
         <div className="max-w-4xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="mb-16 text-center">
-            <span className="text-[11px] font-mono text-rose-500 uppercase tracking-[0.2em] block mb-4 font-bold">FAQ</span>
-            <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight">
+            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">FAQ</span>
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">
               Frequently Asked Questions
             </h2>
           </Reveal>
@@ -332,7 +332,7 @@ export default function CybersecurityPage() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[300px] bg-[radial-gradient(circle_at_center,rgba(225,29,72,0.025),transparent_60%)] pointer-events-none" />
         <div className="max-w-3xl mx-auto px-12 xl:px-8 relative z-10">
           <h2 className="text-3xl md:text-5xl font-black mb-6 tracking-tight">Secure Your Infrastructure</h2>
-          <p className="text-zinc-400 text-xs md:text-sm font-bold mb-10 max-w-lg mx-auto leading-relaxed">
+          <p className="text-zinc-300 text-sm md:text-base font-medium mb-10 max-w-lg mx-auto leading-relaxed">
             Partner with our security architects to run a vulnerability assessment and configure Zero Trust parameters.
           </p>
           <Link

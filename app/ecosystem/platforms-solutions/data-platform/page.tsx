@@ -98,7 +98,7 @@ export default function DataPlatformPage() {
             </p>
           </Reveal>
           <Reveal delay={0.2} className="max-w-3xl mx-auto mb-10">
-            <p className="text-zinc-400 text-xs md:text-sm lg:text-base leading-relaxed font-bold">
+            <p className="text-zinc-200 text-sm md:text-base lg:text-lg leading-relaxed font-medium">
               Deploy real-time Kafka streams, coordinate Snowflake warehouses, catalogue database schemas, and serve predictions.
             </p>
           </Reveal>
@@ -122,9 +122,9 @@ export default function DataPlatformPage() {
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             <div className="lg:col-span-5">
-              <span className="text-[11px] font-mono text-rose-500 uppercase tracking-[0.2em] block mb-4 font-bold">STREAM CORE</span>
-              <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight mb-6">Real-Time Data Pipelines</h2>
-              <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-medium">
+              <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">STREAM CORE</span>
+              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">Real-Time Data Pipelines</h2>
+              <p className="text-zinc-300 text-base md:text-lg leading-relaxed font-medium">
                 Stream data streams reliably. Process and convert incoming database transactions using real-time Kafka logs.
               </p>
             </div>
@@ -158,9 +158,9 @@ export default function DataPlatformPage() {
               ))}
             </div>
             <div className="lg:col-span-5 lg:order-1">
-              <span className="text-[11px] font-mono text-rose-500 uppercase tracking-[0.2em] block mb-4 font-bold">WAREHOUSE CONFIG</span>
-              <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight mb-6">Cloud Warehouse & Lakehouse</h2>
-              <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-medium">
+              <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">WAREHOUSE CONFIG</span>
+              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">Cloud Warehouse & Lakehouse</h2>
+              <p className="text-zinc-300 text-base md:text-lg leading-relaxed font-medium">
                 Consolidate enterprise database storage. Query metrics, track account histories, and isolate storage groups cleanly.
               </p>
             </div>
@@ -173,9 +173,9 @@ export default function DataPlatformPage() {
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             <div className="lg:col-span-5">
-              <span className="text-[11px] font-mono text-rose-500 uppercase tracking-[0.2em] block mb-4 font-bold">CATALOG RULES</span>
-              <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight mb-6">Data Governance & Metrics</h2>
-              <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-medium">
+              <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">CATALOG RULES</span>
+              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">Data Governance & Metrics</h2>
+              <p className="text-zinc-300 text-base md:text-lg leading-relaxed font-medium">
                 Map database dependencies. Track table lineage, secure sensitive fields, and catalog active database structures in real-time.
               </p>
             </div>
@@ -209,9 +209,9 @@ export default function DataPlatformPage() {
               ))}
             </div>
             <div className="lg:col-span-5 lg:order-1">
-              <span className="text-[11px] font-mono text-rose-500 uppercase tracking-[0.2em] block mb-4 font-bold">ML DEPLOYMENT</span>
-              <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight mb-6">Data Science & ML</h2>
-              <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-medium">
+              <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">ML DEPLOYMENT</span>
+              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">Data Science & ML</h2>
+              <p className="text-zinc-300 text-base md:text-lg leading-relaxed font-medium">
                 Deploy predictive algorithms. Host notebook environments, monitor training metrics, and serve models via secure REST endpoints.
               </p>
             </div>
@@ -223,8 +223,8 @@ export default function DataPlatformPage() {
       <section className="w-full py-28 bg-black border-b border-zinc-900/60 relative">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
           <Reveal className="mb-16 text-center">
-            <span className="text-[11px] font-mono text-rose-500 uppercase tracking-[0.2em] block mb-4 font-bold">DATA STREAM PATHWAY</span>
-            <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight">Platform Data Architecture</h2>
+            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">DATA STREAM PATHWAY</span>
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">Platform Data Architecture</h2>
           </Reveal>
 
           <div className="max-w-3xl mx-auto bg-zinc-950/40 border border-zinc-900/80 rounded-3xl p-8 lg:p-12 relative overflow-hidden font-mono text-xs hover:border-rose-500/20 transition-all duration-500 shadow-2xl">
@@ -258,9 +258,9 @@ export default function DataPlatformPage() {
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             <div className="lg:col-span-5">
-              <span className="text-[11px] font-mono text-rose-500 uppercase tracking-[0.2em] block mb-4 font-bold">REPORT HUB</span>
-              <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight mb-6">Business Intelligence</h2>
-              <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-medium">
+              <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">REPORT HUB</span>
+              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">Business Intelligence</h2>
+              <p className="text-zinc-300 text-base md:text-lg leading-relaxed font-medium">
                 Query Looker configurations, compile PowerBI data logs, and present interactive dashboard charts directly to enterprise teams.
               </p>
             </div>
@@ -282,8 +282,8 @@ export default function DataPlatformPage() {
       <section className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
         <div className="max-w-4xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="mb-16 text-center">
-            <span className="text-[11px] font-mono text-rose-500 uppercase tracking-[0.2em] block mb-4 font-bold">FAQ</span>
-            <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight">
+            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">FAQ</span>
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">
               Frequently Asked Questions
             </h2>
           </Reveal>
@@ -315,7 +315,7 @@ export default function DataPlatformPage() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[300px] bg-[radial-gradient(circle_at_center,rgba(225,29,72,0.025),transparent_60%)] pointer-events-none" />
         <div className="max-w-3xl mx-auto px-12 xl:px-8 relative z-10">
           <h2 className="text-3xl md:text-5xl font-black mb-6 tracking-tight">Deploy Data Infrastructure</h2>
-          <p className="text-zinc-400 text-xs md:text-sm font-bold mb-10 max-w-lg mx-auto leading-relaxed">
+          <p className="text-zinc-300 text-sm md:text-base font-medium mb-10 max-w-lg mx-auto leading-relaxed">
             Connect with our cloud engineers to plan your lakehouse staging.
           </p>
           <Link

@@ -8,42 +8,46 @@ import Image from "next/image";
 export function PartnershipHero() {
 
 
-  // Back row (Furthest, 6 cards)
+  // Back row (Furthest, 8 cards)
   const rowBack = [
-    { name: "AWS", src: "/assets/Home-page/Techtools/aws-color.svg" },
-    { name: "Azure", src: "/assets/Home-page/Techtools/azure-color.svg" },
-    { name: "Google Cloud", src: "/assets/Home-page/Techtools/google-color.svg" },
-    { name: "Oracle", src: "/assets/Home-page/Techtools/Oracle.svg" },
-    { name: "React", src: "/assets/Home-page/Techtools/React.svg" },
-    { name: "GitLab", src: "/assets/Tech-icons/gitlab-logo_svgstack_com_28401780931548.svg" }
+    { name: "IBM Cloud", src: "/assets/Tech_logos/IBM_Cloud.svg" },
+    { name: "Alibaba", src: "/assets/Tech_logos/Alibaba_cloud.svg" },
+    { name: "Nutanix", src: "/assets/Tech_logos/Nutinix.svg" },
+    { name: "Akamai", src: "/assets/Tech_logos/Akamai.svg" },
+    { name: "DigitalOcean", src: "" },
+    { name: "HashiCorp", src: "/assets/Tech_logos/HashiCorp.svg" },
+    { name: "Rancher", src: "" },
+    { name: "OpenShift", src: "" }
   ];
 
-  // Middle row (Intermediate density - 8 cards)
+  // Middle row (Intermediate density - 10 cards)
   const rowMiddle = [
-    { name: "Vue", src: "/assets/Home-page/Techtools/Vue.svg" },
-    { name: "Go", src: "/assets/Home-page/Techtools/GO.svg" },
-    { name: "Python", src: "/assets/Home-page/Techtools/python.svg" },
-    { name: "Node.js", src: "/assets/Home-page/Techtools/Node.svg" },
-    { name: "PostgreSQL", src: "/assets/Home-page/Techtools/postgre.svg" },
-    { name: "GitHub", src: "/assets/Tech-icons/github-logo-svg_svgstack_com_28391780931442.svg" },
-    { name: "Java", src: "/assets/Tech-icons/java-logo_svgstack_com_28601780931218.svg" },
-    { name: "Rust", src: "/assets/Tech-icons/rust-logo_svgstack_com_31291780931285.svg" }
+    { name: "VMware", src: "/assets/Tech_logos/vmware.svg" },
+    { name: "Kubernetes", src: "/assets/Tech_logos/Kubernetes.svg" },
+    { name: "Jenkins", src: "/assets/Tech_logos/Jenkins.svg" },
+    { name: "Datadog", src: "/assets/Tech_logos/Datadog.svg" },
+    { name: "New Relic", src: "/assets/Tech_logos/New_Relic.svg" },
+    { name: "Dynatrace", src: "/assets/Tech_logos/Dynatrace.svg" },
+    { name: "PagerDuty", src: "/assets/Tech_logos/PagerDuty.svg" },
+    { name: "Confluent", src: "/assets/Tech_logos/Confluent.svg" },
+    { name: "Elastic", src: "/assets/Tech_logos/Elastic.svg" },
+    { name: "Cloudera", src: "/assets/Tech_logos/Cloudera.svg" }
   ];
 
   // Front row (Densest, closest - 12 cards)
   const rowFront = [
-    { name: "MySQL", src: "/assets/Home-page/Techtools/MySQL.svg" },
-    { name: "PHP", src: "/assets/Home-page/Techtools/PHP.svg" },
-    { name: "Docker", src: "/assets/Tech-icons/docker-logo_svgstack_com_28191780931128.svg" },
-    { name: "Cloudflare", src: "/assets/Tech-icons/cloudflare-logo-icon_svgstack_com_28071780931769.svg" },
-    { name: "Next.js", src: "/assets/Home-page/Techtools/next-js-color.svg" },
-    { name: "Slack", src: "/assets/Tech-icons/slack-logo_svgstack_com_31371780931112.svg" },
-    { name: "C#", src: "/assets/Tech-icons/csharp-logo_svgstack_com_28121780931651.svg" },
-    { name: "NestJS", src: "/assets/Tech-icons/nestjs-logo_svgstack_com_28861780931513.svg" },
-    { name: "MongoDB", src: "/assets/Tech-icons/mongo-db-logo_svgstack_com_28831780931486.svg" },
-    { name: "GraphQL", src: "/assets/Tech-icons/graphql_svgstack_com_28421780931889.svg" },
-    { name: "TailwindCSS", src: "/assets/Tech-icons/tailwindcss-logo_svgstack_com_31451780931467.svg" },
-    { name: "Jira", src: "/assets/Tech-icons/jira-logo_svgstack_com_28621780931167.svg" }
+    { name: "AWS", src: "/assets/Tech_logos/AWS.svg" },
+    { name: "Azure", src: "/assets/Tech_logos/Microsoft Azure.svg" },
+    { name: "GCP", src: "/assets/Tech_logos/Google_Cloud.svg" },
+    { name: "Oracle", src: "/assets/Tech_logos/Oracle_Cloud.svg" },
+    { name: "Red Hat", src: "/assets/Tech_logos/red_hat.svg" },
+    { name: "Cloudflare", src: "/assets/Tech_logos/Cloud_flaire.svg" },
+    { name: "Docker", src: "/assets/Tech_logos/Docker.svg" },
+    { name: "GitLab", src: "/assets/Tech_logos/GitLab.svg" },
+    { name: "GitHub", src: "/assets/Tech_logos/GitHub.svg" },
+    { name: "Snowflake", src: "/assets/Tech_logos/Snowflake.svg" },
+    { name: "Databricks", src: "/assets/Tech_logos/Databricks.svg" },
+    { name: "MongoDB", src: "/assets/Tech_logos/MongoDB.svg" }
   ];
 
   return (
@@ -61,20 +65,20 @@ export function PartnershipHero() {
         {/* Center Main Heading & Subtitle */}
         <Reveal className="flex flex-col items-center">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 text-rose-500 text-xs font-mono font-bold tracking-wider uppercase mb-6">
-            <Zap size={12} className="animate-pulse" />
-            Alliances & Channels
+            {/* <Zap size={12} className="animate-pulse" /> */}
+            Devopstrio Cloud Ecosystem
           </div>
         </Reveal>
 
         <Reveal delay={0.1} className="max-w-3xl">
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-tight mb-5 text-white text-center">
-            Strategic Technology Partnerships
+            Built on Trusted Cloud Partnerships
           </h1>
         </Reveal>
 
         <Reveal delay={0.2} className="max-w-3xl">
           <p className="text-zinc-300 text-xs md:text-sm lg:text-base leading-relaxed font-normal max-w-3xl text-center mx-auto opacity-95 mb-12">
-            Leveraging world-class alliances across cloud, AI, cybersecurity, enterprise software, and infrastructure ecosystems to deliver scalable business outcomes.
+            We work with leading cloud platforms, DevOps tools, and data technologies to build secure, scalable, and future-ready digital solutions.
           </p>
         </Reveal>
 
@@ -88,43 +92,55 @@ export function PartnershipHero() {
               WebkitBoxReflect: "below 4px linear-gradient(transparent, transparent 60%, rgba(0,0,0,0.18))"
             }}
           >
-            {/* Row 3 (FURTHEST - BACK - 6 Cards) */}
+            {/* Row 3 (FURTHEST - BACK - 8 Cards) */}
             <div className="flex justify-center gap-4 scale-[0.75] opacity-40 blur-[0.4px] translate-y-3">
               {rowBack.map((item) => (
                 <div
                   key={item.name}
-                  className="w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-zinc-950/90 border border-zinc-850 flex items-center justify-center shadow-[0_8px_30px_rgba(0,0,0,0.5)] hover:border-rose-500/20 transition-all duration-300 group relative overflow-hidden"
+                  className="w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-white/5 backdrop-blur-xl border border-white/5 flex items-center justify-center shadow-xl hover:bg-white/10 hover:border-white/10 hover:shadow-[0_8px_30px_rgba(225,29,72,0.15)] transition-all duration-300 group relative overflow-hidden"
                 >
                   <div className="absolute inset-0 bg-gradient-to-tr from-white/[0.01] to-white/[0.04] pointer-events-none" />
-                  <div className="relative w-8 h-8 md:w-10 md:h-10 flex items-center justify-center">
-                    <Image
-                      src={item.src}
-                      alt={item.name}
-                      width={40}
-                      height={40}
-                      className="object-contain"
-                    />
+                  <div className="relative w-full h-full flex items-center justify-center p-2">
+                    {item.src ? (
+                      <Image
+                        src={item.src}
+                        alt={item.name}
+                        width={40}
+                        height={40}
+                        className="object-contain"
+                      />
+                    ) : (
+                      <span className="text-[10px] font-bold text-zinc-300 text-center leading-tight">
+                        {item.name}
+                      </span>
+                    )}
                   </div>
                 </div>
               ))}
             </div>
 
-            {/* Row 2 (MIDDLE - INTERMEDIATE - 8 Cards) */}
+            {/* Row 2 (MIDDLE - INTERMEDIATE - 10 Cards) */}
             <div className="flex justify-center gap-4 scale-[0.88] opacity-70 translate-y-1">
               {rowMiddle.map((item) => (
                 <div
                   key={item.name}
-                  className="w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-zinc-950/90 border border-zinc-850 flex items-center justify-center shadow-[0_8px_30px_rgba(0,0,0,0.5)] hover:border-rose-500/20 transition-all duration-300 group relative overflow-hidden"
+                  className="w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-white/5 backdrop-blur-xl border border-white/5 flex items-center justify-center shadow-xl hover:bg-white/10 hover:border-white/10 hover:shadow-[0_8px_30px_rgba(225,29,72,0.15)] transition-all duration-300 group relative overflow-hidden"
                 >
                   <div className="absolute inset-0 bg-gradient-to-tr from-white/[0.01] to-white/[0.04] pointer-events-none" />
-                  <div className="relative w-8 h-8 md:w-10 md:h-10 flex items-center justify-center">
-                    <Image
-                      src={item.src}
-                      alt={item.name}
-                      width={40}
-                      height={40}
-                      className="object-contain"
-                    />
+                  <div className="relative w-full h-full flex items-center justify-center p-2">
+                    {item.src ? (
+                      <Image
+                        src={item.src}
+                        alt={item.name}
+                        width={40}
+                        height={40}
+                        className="object-contain"
+                      />
+                    ) : (
+                      <span className="text-[10px] font-bold text-zinc-300 text-center leading-tight">
+                        {item.name}
+                      </span>
+                    )}
                   </div>
                 </div>
               ))}
@@ -135,17 +151,23 @@ export function PartnershipHero() {
               {rowFront.map((item) => (
                 <div
                   key={item.name}
-                  className="w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-zinc-950/90 border border-zinc-850 flex items-center justify-center shadow-[0_8px_30px_rgba(0,0,0,0.5)] hover:border-rose-500/20 transition-all duration-300 group relative overflow-hidden"
+                  className="w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-white/5 backdrop-blur-xl border border-white/5 flex items-center justify-center shadow-xl hover:bg-white/10 hover:border-white/10 hover:shadow-[0_8px_30px_rgba(225,29,72,0.15)] transition-all duration-300 group relative overflow-hidden"
                 >
                   <div className="absolute inset-0 bg-gradient-to-tr from-white/[0.01] to-white/[0.04] pointer-events-none" />
-                  <div className="relative w-8 h-8 md:w-10 md:h-10 flex items-center justify-center filter group-hover:drop-shadow-[0_0_8px_rgba(244,63,94,0.3)] transition-all duration-300">
-                    <Image
-                      src={item.src}
-                      alt={item.name}
-                      width={40}
-                      height={40}
-                      className="object-contain"
-                    />
+                  <div className="relative w-full h-full flex items-center justify-center p-2 filter group-hover:drop-shadow-[0_0_8px_rgba(244,63,94,0.3)] transition-all duration-300">
+                    {item.src ? (
+                      <Image
+                        src={item.src}
+                        alt={item.name}
+                        width={40}
+                        height={40}
+                        className="object-contain"
+                      />
+                    ) : (
+                      <span className="text-[10px] font-bold text-zinc-300 text-center leading-tight">
+                        {item.name}
+                      </span>
+                    )}
                   </div>
                 </div>
               ))}
@@ -161,3 +183,4 @@ export function PartnershipHero() {
     </section>
   );
 }
+

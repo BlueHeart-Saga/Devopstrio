@@ -21,7 +21,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/sitemap",
     "/about/company-overview",
     "/about/leadership-team",
-    "/about/life-at-devopstrio",
+    "/about/our-culture-people",
     "/about/global-internship",
     "/about/global-presence",
     "/about/partnerships-certifications",

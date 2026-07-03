@@ -176,7 +176,7 @@ const industriesList = [
 const aboutList = [
   { name: "Company Overview", desc: "Our history, mission, core values, and corporate strategy.", href: "/about/company-overview" },
   { name: "Leadership & Team", desc: "Meet the executive board, advisors, and principal architects.", href: "/about/leadership-team" },
-  { name: "Life at Devopstrio", desc: "Explore our co-engineering culture, team events, and active careers.", href: "/about/life-at-devopstrio" },
+  { name: "Our Culture & People", desc: "Explore our co-engineering culture, team events, and active careers.", href: "/about/our-culture-people" },
   { name: "Global Internship", desc: "Attracting students, graduates, and aspiring engineers to launch their technology career.", href: "/about/global-internship" },
   { name: "Global Presence", desc: "Our international delivery centers, office sites, and local operations.", href: "/about/global-presence" },
   { name: "Partnerships & Certifications", desc: "Strategic technology alliances and engineering certification achievements.", href: "/about/partnerships-certifications" },
@@ -505,13 +505,13 @@ export function Navbar() {
             </Link>
             {activeMenu === "services" && (
               <div className="absolute left-1/2 -translate-x-1/2 top-full mt-3 w-[1200px] max-w-[95vw] pointer-events-auto z-50">
-                <div className="animate-fadeIn bg-black border border-zinc-850 rounded-2xl p-8 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.9)] grid grid-cols-[280px_240px_1fr] gap-8 text-left relative">
+                <div className="animate-fadeIn bg-black border border-zinc-850 rounded-2xl pt-8 px-8 pb-5 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.9)] grid grid-cols-[280px_240px_1fr] gap-x-8 gap-y-3 text-left relative">
 
                   {/* Gloss reflection line */}
                   <div className="absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-zinc-800 to-transparent pointer-events-none" />
 
                   {/* Visual Promo Column (HCLTech Style) */}
-                  <div className="relative overflow-hidden rounded-xl border border-zinc-900 p-5 flex flex-col justify-between min-h-[340px] h-full group bg-white">
+                  <div className="relative overflow-hidden rounded-xl border border-zinc-900 p-5 flex flex-col justify-between min-h-[260px] h-full group bg-white">
                     <img src="/assets/wavebg/navbar/services.png" alt="" className="absolute inset-0 w-full h-full object-cover transition-all duration-700 group-hover:scale-105" />
                     <div className="relative z-10">
                       <span className="text-[9px] font-mono tracking-widest text-red-600 uppercase block mb-3 font-bold">Enterprise Acceleration</span>
@@ -574,14 +574,14 @@ export function Navbar() {
                   </div>
 
                   {/* Mega Menu Footer */}
-                  <div className="col-span-full border-t border-zinc-900/60 pt-5 mt-2 flex flex-row justify-between items-center">
-                    <div className="flex items-center gap-4 text-[11px] font-medium text-zinc-550">
+                  <div className="col-span-full border-t border-zinc-900/60 pt-4 mt-1 flex flex-row justify-between items-center">
+                    <div className="flex items-center gap-4 text-[13px] font-medium text-zinc-400">
                       <Link 
-                        href="/about/life-at-devopstrio" 
+                        href="/insights/industry-events" 
                         className="hover:text-rose-500 transition-colors flex items-center gap-1.5"
                       >
                         <span className="w-1.5 h-1.5 rounded-full bg-rose-500 animate-pulse" />
-                        <span>Life at Devopstrio</span>
+                        <span>Events</span>
                       </Link>
                       <span className="text-zinc-800">|</span>
                       <div className="flex items-center gap-2">
@@ -592,7 +592,7 @@ export function Navbar() {
                         >
                           Email
                         </a>
-                        <span className="text-zinc-800">•</span>
+                        <span className="text-zinc-850">•</span>
                         <a 
                           href="https://wa.me/447473063543" 
                           target="_blank" 
@@ -613,7 +613,7 @@ export function Navbar() {
                           className="transition-all duration-200 hover:scale-110"
                           title="LinkedIn"
                         >
-                          <img src="/assets/social-icons/linkedin.svg" alt="LinkedIn" className="w-7 h-7 object-contain transition-all duration-200" />
+                          <img src="/assets/social-icons/linkedin.svg" alt="LinkedIn" className="w-8 h-8 object-contain transition-all duration-200" />
                         </a>
                         <a
                           href="https://www.facebook.com/profile.php?id=61579126233218"
@@ -622,7 +622,7 @@ export function Navbar() {
                           className="transition-all duration-200 hover:scale-110"
                           title="Facebook"
                         >
-                          <img src="/assets/social-icons/facebook.svg" alt="Facebook" className="w-7 h-7 object-contain transition-all duration-200" />
+                          <img src="/assets/social-icons/facebook.svg" alt="Facebook" className="w-8 h-8 object-contain transition-all duration-200" />
                         </a>
                         <a
                           href="https://www.instagram.com/devopstrio_offcl/"
@@ -631,7 +631,7 @@ export function Navbar() {
                           className="transition-all duration-200 hover:scale-110"
                           title="Instagram"
                         >
-                          <img src="/assets/social-icons/instagram.svg" alt="Instagram" className="w-7 h-7 object-contain transition-all duration-200" />
+                          <img src="/assets/social-icons/instagram.svg" alt="Instagram" className="w-8 h-8 object-contain transition-all duration-200" />
                         </a>
                         <a
                           href="https://www.youtube.com/@Devopstrioltd"
@@ -640,7 +640,7 @@ export function Navbar() {
                           className="transition-all duration-200 hover:scale-110"
                           title="YouTube"
                         >
-                          <img src="/assets/social-icons/youtube.svg" alt="YouTube" className="w-7 h-7 object-contain transition-all duration-200" />
+                          <img src="/assets/social-icons/youtube.svg" alt="YouTube" className="w-8 h-8 object-contain transition-all duration-200" />
                         </a>
                       </div>
                     </div>
@@ -664,13 +664,13 @@ export function Navbar() {
             </Link>
             {activeMenu === "industries" && (
               <div className="absolute left-1/2 -translate-x-1/2 top-full mt-3 w-[1200px] max-w-[95vw] pointer-events-auto z-50">
-                <div className="animate-fadeIn bg-black border border-zinc-850 rounded-2xl p-8 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.9)] grid grid-cols-[280px_1fr] gap-8 text-left relative">
+                <div className="animate-fadeIn bg-black border border-zinc-850 rounded-2xl pt-8 px-8 pb-5 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.9)] grid grid-cols-[280px_1fr] gap-x-8 gap-y-3 text-left relative">
 
                   {/* Gloss reflection line */}
                   <div className="absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-zinc-850 to-transparent pointer-events-none" />
 
                   {/* Left Callout Box */}
-                  <div className="relative overflow-hidden rounded-xl border border-zinc-900 p-5 flex flex-col justify-between min-h-[340px] h-full group bg-white">
+                  <div className="relative overflow-hidden rounded-xl border border-zinc-900 p-5 flex flex-col justify-between min-h-[260px] h-full group bg-white">
                     <img src="/assets/wavebg/navbar/industries.png" alt="" className="absolute inset-0 w-full h-full object-cover transition-all duration-700 group-hover:scale-105" />
                     <div className="relative z-10">
                       <span className="text-[9px] font-mono tracking-widest text-red-600 uppercase block mb-3 font-bold">Sectors</span>
@@ -711,8 +711,8 @@ export function Navbar() {
                   </div>
 
                   {/* Mega Menu Footer */}
-                  <div className="col-span-full border-t border-zinc-900/60 pt-5 mt-2 flex flex-row justify-between items-center">
-                    <div className="flex items-center gap-4 text-[11px] font-medium text-zinc-555">
+                  <div className="col-span-full border-t border-zinc-900/60 pt-4 mt-1 flex flex-row justify-between items-center">
+                    <div className="flex items-center gap-4 text-[13px] font-medium text-zinc-400">
                       <Link 
                         href="/insights/industry-events" 
                         className="hover:text-rose-500 transition-colors flex items-center gap-1.5"
@@ -729,7 +729,7 @@ export function Navbar() {
                         >
                           Email
                         </a>
-                        <span className="text-zinc-800">•</span>
+                        <span className="text-zinc-850">•</span>
                         <a 
                           href="https://wa.me/447473063543" 
                           target="_blank" 
@@ -750,7 +750,7 @@ export function Navbar() {
                           className="transition-all duration-200 hover:scale-110"
                           title="LinkedIn"
                         >
-                          <img src="/assets/social-icons/linkedin.svg" alt="LinkedIn" className="w-7 h-7 object-contain transition-all duration-200" />
+                          <img src="/assets/social-icons/linkedin.svg" alt="LinkedIn" className="w-8 h-8 object-contain transition-all duration-200" />
                         </a>
                         <a
                           href="https://www.facebook.com/profile.php?id=61579126233218"
@@ -759,7 +759,7 @@ export function Navbar() {
                           className="transition-all duration-200 hover:scale-110"
                           title="Facebook"
                         >
-                          <img src="/assets/social-icons/facebook.svg" alt="Facebook" className="w-7 h-7 object-contain transition-all duration-200" />
+                          <img src="/assets/social-icons/facebook.svg" alt="Facebook" className="w-8 h-8 object-contain transition-all duration-200" />
                         </a>
                         <a
                           href="https://www.instagram.com/devopstrio_offcl/"
@@ -768,7 +768,7 @@ export function Navbar() {
                           className="transition-all duration-200 hover:scale-110"
                           title="Instagram"
                         >
-                          <img src="/assets/social-icons/instagram.svg" alt="Instagram" className="w-7 h-7 object-contain transition-all duration-200" />
+                          <img src="/assets/social-icons/instagram.svg" alt="Instagram" className="w-8 h-8 object-contain transition-all duration-200" />
                         </a>
                         <a
                           href="https://www.youtube.com/@Devopstrioltd"
@@ -777,7 +777,7 @@ export function Navbar() {
                           className="transition-all duration-200 hover:scale-110"
                           title="YouTube"
                         >
-                          <img src="/assets/social-icons/youtube.svg" alt="YouTube" className="w-7 h-7 object-contain transition-all duration-200" />
+                          <img src="/assets/social-icons/youtube.svg" alt="YouTube" className="w-8 h-8 object-contain transition-all duration-200" />
                         </a>
                       </div>
                     </div>
@@ -801,13 +801,13 @@ export function Navbar() {
             </Link>
             {activeMenu === "ecosystem" && (
               <div className="absolute left-1/2 -translate-x-1/2 top-full mt-3 w-[1200px] max-w-[95vw] pointer-events-auto z-50">
-                <div className="animate-fadeIn bg-black border border-zinc-850 rounded-2xl p-8 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.9)] grid grid-cols-[280px_240px_1fr] gap-8 text-left relative">
+                <div className="animate-fadeIn bg-black border border-zinc-850 rounded-2xl pt-8 px-8 pb-5 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.9)] grid grid-cols-[280px_240px_1fr] gap-x-8 gap-y-3 text-left relative">
 
                   {/* Gloss reflection line */}
                   <div className="absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-zinc-800 to-transparent pointer-events-none" />
 
                   {/* Visual Promo Column (Services style) */}
-                  <div className="relative overflow-hidden rounded-xl border border-zinc-900 p-5 flex flex-col justify-between min-h-[340px] h-full group bg-white">
+                  <div className="relative overflow-hidden rounded-xl border border-zinc-900 p-5 flex flex-col justify-between min-h-[260px] h-full group bg-white">
                     <img src="/assets/wavebg/navbar/ecosystem.png" alt="" className="absolute inset-0 w-full h-full object-cover transition-all duration-700 group-hover:scale-105" />
                     <div className="relative z-10">
                       <span className="text-[9px] font-mono tracking-widest text-red-600 uppercase block mb-3 font-bold">Ecosystem Infrastructure</span>
@@ -870,8 +870,8 @@ export function Navbar() {
                   </div>
 
                   {/* Mega Menu Footer */}
-                  <div className="col-span-full border-t border-zinc-900/60 pt-5 mt-2 flex flex-row justify-between items-center">
-                    <div className="flex items-center gap-4 text-[11px] font-medium text-zinc-555">
+                  <div className="col-span-full border-t border-zinc-900/60 pt-4 mt-1 flex flex-row justify-between items-center">
+                    <div className="flex items-center gap-4 text-[13px] font-medium text-zinc-400">
                       <Link 
                         href="/insights/industry-events" 
                         className="hover:text-rose-500 transition-colors flex items-center gap-1.5"
@@ -888,7 +888,7 @@ export function Navbar() {
                         >
                           Email
                         </a>
-                        <span className="text-zinc-800">•</span>
+                        <span className="text-zinc-850">•</span>
                         <a 
                           href="https://wa.me/447473063543" 
                           target="_blank" 
@@ -909,7 +909,7 @@ export function Navbar() {
                           className="transition-all duration-200 hover:scale-110"
                           title="LinkedIn"
                         >
-                          <img src="/assets/social-icons/linkedin.svg" alt="LinkedIn" className="w-7 h-7 object-contain transition-all duration-200" />
+                          <img src="/assets/social-icons/linkedin.svg" alt="LinkedIn" className="w-8 h-8 object-contain transition-all duration-200" />
                         </a>
                         <a
                           href="https://www.facebook.com/profile.php?id=61579126233218"
@@ -918,7 +918,7 @@ export function Navbar() {
                           className="transition-all duration-200 hover:scale-110"
                           title="Facebook"
                         >
-                          <img src="/assets/social-icons/facebook.svg" alt="Facebook" className="w-7 h-7 object-contain transition-all duration-200" />
+                          <img src="/assets/social-icons/facebook.svg" alt="Facebook" className="w-8 h-8 object-contain transition-all duration-200" />
                         </a>
                         <a
                           href="https://www.instagram.com/devopstrio_offcl/"
@@ -927,7 +927,7 @@ export function Navbar() {
                           className="transition-all duration-200 hover:scale-110"
                           title="Instagram"
                         >
-                          <img src="/assets/social-icons/instagram.svg" alt="Instagram" className="w-7 h-7 object-contain transition-all duration-200" />
+                          <img src="/assets/social-icons/instagram.svg" alt="Instagram" className="w-8 h-8 object-contain transition-all duration-200" />
                         </a>
                         <a
                           href="https://www.youtube.com/@Devopstrioltd"
@@ -936,7 +936,7 @@ export function Navbar() {
                           className="transition-all duration-200 hover:scale-110"
                           title="YouTube"
                         >
-                          <img src="/assets/social-icons/youtube.svg" alt="YouTube" className="w-7 h-7 object-contain transition-all duration-200" />
+                          <img src="/assets/social-icons/youtube.svg" alt="YouTube" className="w-8 h-8 object-contain transition-all duration-200" />
                         </a>
                       </div>
                     </div>
@@ -960,13 +960,13 @@ export function Navbar() {
             </Link>
             {activeMenu === "insights" && (
               <div className="absolute left-1/2 -translate-x-1/2 top-full mt-3 w-[1200px] max-w-[95vw] pointer-events-auto z-50">
-                <div className="animate-fadeIn bg-black border border-zinc-850 rounded-2xl p-8 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.9)] grid grid-cols-[280px_240px_1fr] gap-8 text-left relative">
+                <div className="animate-fadeIn bg-black border border-zinc-850 rounded-2xl pt-8 px-8 pb-5 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.9)] grid grid-cols-[280px_240px_1fr] gap-x-8 gap-y-3 text-left relative">
 
                   {/* Gloss reflection line */}
                   <div className="absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-zinc-800 to-transparent pointer-events-none" />
 
                   {/* Visual Promo Column (Insights Style) */}
-                  <div className="relative overflow-hidden rounded-xl border border-zinc-900 p-5 flex flex-col justify-between min-h-[340px] h-full group bg-white">
+                  <div className="relative overflow-hidden rounded-xl border border-zinc-900 p-5 flex flex-col justify-between min-h-[260px] h-full group bg-white">
                     <img src="/assets/wavebg/navbar/services.png" alt="" className="absolute inset-0 w-full h-full object-cover transition-all duration-700 group-hover:scale-105" />
                     <div className="relative z-10">
                       <span className="text-[9px] font-mono tracking-widest text-red-600 uppercase block mb-3 font-bold">Thought Leadership</span>
@@ -1030,8 +1030,8 @@ export function Navbar() {
                   </div>
 
                   {/* Mega Menu Footer */}
-                  <div className="col-span-full border-t border-zinc-900/60 pt-5 mt-2 flex flex-row justify-between items-center">
-                    <div className="flex items-center gap-4 text-[11px] font-medium text-zinc-555">
+                  <div className="col-span-full border-t border-zinc-900/60 pt-4 mt-1 flex flex-row justify-between items-center">
+                    <div className="flex items-center gap-4 text-[13px] font-medium text-zinc-400">
                       <Link 
                         href="/insights/industry-events" 
                         className="hover:text-rose-500 transition-colors flex items-center gap-1.5"
@@ -1069,7 +1069,7 @@ export function Navbar() {
                           className="transition-all duration-200 hover:scale-110"
                           title="LinkedIn"
                         >
-                          <img src="/assets/social-icons/linkedin.svg" alt="LinkedIn" className="w-7 h-7 object-contain transition-all duration-200" />
+                          <img src="/assets/social-icons/linkedin.svg" alt="LinkedIn" className="w-8 h-8 object-contain transition-all duration-200" />
                         </a>
                         <a
                           href="https://www.facebook.com/profile.php?id=61579126233218"
@@ -1078,7 +1078,7 @@ export function Navbar() {
                           className="transition-all duration-200 hover:scale-110"
                           title="Facebook"
                         >
-                          <img src="/assets/social-icons/facebook.svg" alt="Facebook" className="w-7 h-7 object-contain transition-all duration-200" />
+                          <img src="/assets/social-icons/facebook.svg" alt="Facebook" className="w-8 h-8 object-contain transition-all duration-200" />
                         </a>
                         <a
                           href="https://www.instagram.com/devopstrio_offcl/"
@@ -1087,7 +1087,7 @@ export function Navbar() {
                           className="transition-all duration-200 hover:scale-110"
                           title="Instagram"
                         >
-                          <img src="/assets/social-icons/instagram.svg" alt="Instagram" className="w-7 h-7 object-contain transition-all duration-200" />
+                          <img src="/assets/social-icons/instagram.svg" alt="Instagram" className="w-8 h-8 object-contain transition-all duration-200" />
                         </a>
                         <a
                           href="https://www.youtube.com/@Devopstrioltd"
@@ -1096,7 +1096,7 @@ export function Navbar() {
                           className="transition-all duration-200 hover:scale-110"
                           title="YouTube"
                         >
-                          <img src="/assets/social-icons/youtube.svg" alt="YouTube" className="w-7 h-7 object-contain transition-all duration-200" />
+                          <img src="/assets/social-icons/youtube.svg" alt="YouTube" className="w-8 h-8 object-contain transition-all duration-200" />
                         </a>
                       </div>
                     </div>
@@ -1122,13 +1122,13 @@ export function Navbar() {
             </Link>
             {activeMenu === "about" && (
               <div className="absolute left-1/2 -translate-x-1/2 top-full mt-3 w-[1200px] max-w-[95vw] pointer-events-auto z-50">
-                <div className="animate-fadeIn bg-black border border-zinc-850 rounded-2xl p-8 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.9)] grid grid-cols-[280px_1fr] gap-8 text-left relative">
+                <div className="animate-fadeIn bg-black border border-zinc-850 rounded-2xl pt-8 px-8 pb-5 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.9)] grid grid-cols-[280px_1fr] gap-x-8 gap-y-3 text-left relative">
 
                   {/* Gloss reflection line */}
                   <div className="absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-zinc-850 to-transparent pointer-events-none" />
 
                   {/* Left Callout Box */}
-                  <div className="relative overflow-hidden rounded-xl border border-zinc-900 p-5 flex flex-col justify-between min-h-[340px] h-full group bg-white">
+                  <div className="relative overflow-hidden rounded-xl border border-zinc-900 p-5 flex flex-col justify-between min-h-[260px] h-full group bg-white">
                     <img src="/assets/wavebg/navbar/industries.png" alt="" className="absolute inset-0 w-full h-full object-cover transition-all duration-700 group-hover:scale-105" />
                     <div className="relative z-10">
                       <span className="text-[9px] font-mono tracking-widest text-red-600 uppercase block mb-3 font-bold">Company Hub</span>
@@ -1169,8 +1169,8 @@ export function Navbar() {
                   </div>
 
                   {/* Mega Menu Footer */}
-                  <div className="col-span-full border-t border-zinc-900/60 pt-5 mt-2 flex flex-row justify-between items-center">
-                    <div className="flex items-center gap-4 text-[11px] font-medium text-zinc-555">
+                  <div className="col-span-full border-t border-zinc-900/60 pt-4 mt-1 flex flex-row justify-between items-center">
+                    <div className="flex items-center gap-4 text-[13px] font-medium text-zinc-400">
                       <Link 
                         href="/insights/industry-events" 
                         className="hover:text-rose-500 transition-colors flex items-center gap-1.5"
@@ -1208,7 +1208,7 @@ export function Navbar() {
                           className="transition-all duration-200 hover:scale-110"
                           title="LinkedIn"
                         >
-                          <img src="/assets/social-icons/linkedin.svg" alt="LinkedIn" className="w-7 h-7 object-contain transition-all duration-200" />
+                          <img src="/assets/social-icons/linkedin.svg" alt="LinkedIn" className="w-8 h-8 object-contain transition-all duration-200" />
                         </a>
                         <a
                           href="https://www.facebook.com/profile.php?id=61579126233218"
@@ -1217,7 +1217,7 @@ export function Navbar() {
                           className="transition-all duration-200 hover:scale-110"
                           title="Facebook"
                         >
-                          <img src="/assets/social-icons/facebook.svg" alt="Facebook" className="w-7 h-7 object-contain transition-all duration-200" />
+                          <img src="/assets/social-icons/facebook.svg" alt="Facebook" className="w-8 h-8 object-contain transition-all duration-200" />
                         </a>
                         <a
                           href="https://www.instagram.com/devopstrio_offcl/"
@@ -1226,7 +1226,7 @@ export function Navbar() {
                           className="transition-all duration-200 hover:scale-110"
                           title="Instagram"
                         >
-                          <img src="/assets/social-icons/instagram.svg" alt="Instagram" className="w-7 h-7 object-contain transition-all duration-200" />
+                          <img src="/assets/social-icons/instagram.svg" alt="Instagram" className="w-8 h-8 object-contain transition-all duration-200" />
                         </a>
                         <a
                           href="https://www.youtube.com/@Devopstrioltd"
@@ -1235,7 +1235,7 @@ export function Navbar() {
                           className="transition-all duration-200 hover:scale-110"
                           title="YouTube"
                         >
-                          <img src="/assets/social-icons/youtube.svg" alt="YouTube" className="w-7 h-7 object-contain transition-all duration-200" />
+                          <img src="/assets/social-icons/youtube.svg" alt="YouTube" className="w-8 h-8 object-contain transition-all duration-200" />
                         </a>
                       </div>
                     </div>
@@ -1385,16 +1385,16 @@ export function Navbar() {
             {/* Mobile Drawer Social Footer */}
             <div className="mt-8 flex justify-center gap-6 border-t border-zinc-900 pt-6">
               <a href="https://www.linkedin.com/company/devopstrioglobal/posts/?feedView=all" target="_blank" rel="noopener noreferrer" className="transition-all duration-200 hover:scale-110">
-                <img src="/assets/social-icons/linkedin.svg" alt="LinkedIn" className="w-7 h-7 object-contain transition-all duration-200" />
+                <img src="/assets/social-icons/linkedin.svg" alt="LinkedIn" className="w-8 h-8 object-contain transition-all duration-200" />
               </a>
               <a href="https://www.facebook.com/profile.php?id=61579126233218" target="_blank" rel="noopener noreferrer" className="transition-all duration-200 hover:scale-110">
-                <img src="/assets/social-icons/facebook.svg" alt="Facebook" className="w-7 h-7 object-contain transition-all duration-200" />
+                <img src="/assets/social-icons/facebook.svg" alt="Facebook" className="w-8 h-8 object-contain transition-all duration-200" />
               </a>
               <a href="https://www.instagram.com/devopstrio_offcl/" target="_blank" rel="noopener noreferrer" className="transition-all duration-200 hover:scale-110">
-                <img src="/assets/social-icons/instagram.svg" alt="Instagram" className="w-7 h-7 object-contain transition-all duration-200" />
+                <img src="/assets/social-icons/instagram.svg" alt="Instagram" className="w-8 h-8 object-contain transition-all duration-200" />
               </a>
               <a href="https://www.youtube.com/@Devopstrioltd" target="_blank" rel="noopener noreferrer" className="transition-all duration-200 hover:scale-110">
-                <img src="/assets/social-icons/youtube.svg" alt="YouTube" className="w-7 h-7 object-contain transition-all duration-200" />
+                <img src="/assets/social-icons/youtube.svg" alt="YouTube" className="w-8 h-8 object-contain transition-all duration-200" />
               </a>
             </div>
           </div>

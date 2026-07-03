@@ -4,6 +4,8 @@ import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { FloatingChatbot } from "@/components/FloatingChatbot";
+import { FeedbackWidget } from "@/components/FeedbackWidget";
+import { CookieConsent } from "@/components/CookieConsent";
 import ClickSpark from "@/components/ui/ClickSpark";
 import Script from "next/script";
 import { OrganizationSchema, ReviewSchema, ProfessionalServiceSchema, LocalBusinessSchema } from "@/components/seo/Schemas";
@@ -89,9 +91,10 @@ export default function RootLayout({
           {children}
           <Footer />
           <FloatingChatbot />
+          <FeedbackWidget />
+          <CookieConsent />
         </ClickSpark>
       </body>
     </html>
   );
 }
-

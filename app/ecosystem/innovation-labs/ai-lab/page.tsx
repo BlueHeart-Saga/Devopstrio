@@ -283,13 +283,13 @@ export default function AIInnovationLabPage() {
       <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60 relative">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
           <Reveal className="mb-16 text-center max-w-2xl mx-auto">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
               RESEARCH DOMAINS
             </span>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">
               AI Research & <span className="text-rose-500">Innovation Areas</span>
             </h2>
-            <p className="text-zinc-400 text-xs md:text-sm font-bold">
+            <p className="text-zinc-300 text-sm md:text-base font-medium">
               Translating advanced artificial intelligence theories into scalable, practical enterprise assets.
             </p>
           </Reveal>
@@ -323,13 +323,13 @@ export default function AIInnovationLabPage() {
 
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
           <Reveal className="mb-16 text-center max-w-2xl mx-auto">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
               TECHNICAL BLUEPRINT
             </span>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">
               AI Platform <span className="text-rose-500">Architecture</span>
             </h2>
-            <p className="text-zinc-400 text-xs md:text-sm font-bold">
+            <p className="text-zinc-300 text-sm md:text-base font-medium">
               A robust, end-to-end ecosystem engineered for safety, speed, and cognitive accuracy.
             </p>
           </Reveal>
@@ -405,7 +405,7 @@ export default function AIInnovationLabPage() {
       <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
           <Reveal className="mb-16 text-left">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
               PRODUCT PORTFOLIO
             </span>
             <h2 className="text-3xl md:text-4xl font-extrabold text-white">
@@ -446,13 +446,13 @@ export default function AIInnovationLabPage() {
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
 
           <Reveal className="mb-16 text-center max-w-2xl mx-auto">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
               APPLICATIONS
             </span>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">
               AI Use Cases & <span className="text-rose-500">Industry Mappings</span>
             </h2>
-            <p className="text-zinc-400 text-xs md:text-sm font-bold">
+            <p className="text-zinc-300 text-sm md:text-base font-medium">
               Unifying operational capabilities with targeted industry solutions.
             </p>
           </Reveal>
@@ -506,10 +506,10 @@ export default function AIInnovationLabPage() {
       <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
           <Reveal className="mb-16 text-center max-w-2xl mx-auto">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
               OUR PROCESS
             </span>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">
               AI Innovation <span className="text-rose-500">Framework</span>
             </h2>
           </Reveal>
@@ -551,10 +551,10 @@ export default function AIInnovationLabPage() {
 
             <div className="lg:col-span-5">
               <Reveal className="text-left">
-                <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+                <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
                   CASE STUDIES & METRICS
                 </span>
-                <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight leading-tight mb-6 text-white">
+                <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">
                   AI Success Stories <span className="text-rose-500">& Impact</span>
                 </h2>
                 <p className="text-zinc-350 text-xs md:text-sm lg:text-base leading-relaxed font-bold mb-8">
@@ -632,7 +632,7 @@ export default function AIInnovationLabPage() {
 
             <div className="lg:col-span-5">
               <Reveal className="text-left sticky top-28">
-                <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+                <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
                   LAB QUESTIONS
                 </span>
                 <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight leading-tight text-white mb-5">
@@ -686,10 +686,10 @@ export default function AIInnovationLabPage() {
       <section className="w-full py-24 bg-black border-b border-zinc-900/60">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
           <Reveal className="mb-16 text-center max-w-2xl mx-auto">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
               EXPLORE OTHER NETWORKS
             </span>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">
               Related Ecosystem <span className="text-rose-500">Connections</span>
             </h2>
           </Reveal>
@@ -706,7 +706,7 @@ export default function AIInnovationLabPage() {
                     {partner.name}
                     <ChevronRight className="w-4 h-4 text-zinc-650 group-hover:translate-x-1 group-hover:text-rose-500 transition-all" />
                   </h4>
-                  <p className="text-xs text-zinc-400 font-bold leading-relaxed">
+                  <p className="text-sm text-zinc-300 font-medium leading-relaxed">
                     {partner.desc}
                   </p>
                 </div>
@@ -724,7 +724,7 @@ export default function AIInnovationLabPage() {
         <div className="max-w-3xl mx-auto px-12 xl:px-8 relative z-10 flex flex-col items-center">
 
           <Reveal>
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
               GET STARTED
             </span>
           </Reveal>

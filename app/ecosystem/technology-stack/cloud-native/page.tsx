@@ -111,7 +111,7 @@ export default function CloudNativePage() {
             </p>
           </Reveal>
           <Reveal delay={0.2} className="max-w-3xl mx-auto mb-10">
-            <p className="text-zinc-400 text-xs md:text-sm lg:text-base leading-relaxed font-bold">
+            <p className="text-zinc-200 text-sm md:text-base lg:text-lg leading-relaxed font-medium">
               Build container strategies, deploy Istio service meshes, configure multi-cloud deployments, and enforce governance rules.
             </p>
           </Reveal>
@@ -148,9 +148,9 @@ export default function CloudNativePage() {
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             <div className="lg:col-span-5">
-              <span className="text-[11px] font-mono text-rose-500 uppercase tracking-[0.2em] block mb-4 font-bold">ARCHITECTURE</span>
-              <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight mb-6">Cloud Architecture</h2>
-              <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-medium">
+              <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">ARCHITECTURE</span>
+              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">Cloud Architecture</h2>
+              <p className="text-zinc-300 text-base md:text-lg leading-relaxed font-medium">
                 Design scalable software boundaries. Map microservice endpoints, isolate networks, and configure global content distribution systems.
               </p>
             </div>
@@ -184,9 +184,9 @@ export default function CloudNativePage() {
               ))}
             </div>
             <div className="lg:col-span-5 lg:order-1">
-              <span className="text-[11px] font-mono text-rose-500 uppercase tracking-[0.2em] block mb-4 font-bold">CONTAINER CLUSTERS</span>
-              <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight mb-6">Kubernetes Platform</h2>
-              <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-medium">
+              <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">CONTAINER CLUSTERS</span>
+              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">Kubernetes Platform</h2>
+              <p className="text-zinc-300 text-base md:text-lg leading-relaxed font-medium">
                 Standardize cluster configurations. Provision managed AKS nodes, establish autoscaling properties, and monitor namespace metrics.
               </p>
             </div>
@@ -199,9 +199,9 @@ export default function CloudNativePage() {
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             <div className="lg:col-span-5">
-              <span className="text-[11px] font-mono text-rose-500 uppercase tracking-[0.2em] block mb-4 font-bold">PACKAGING</span>
-              <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight mb-6">Container Strategy</h2>
-              <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-medium">
+              <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">PACKAGING</span>
+              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">Container Strategy</h2>
+              <p className="text-zinc-300 text-base md:text-lg leading-relaxed font-medium">
                 Package codebase instances cleanly. Maintain Helm version registries, run image vulnerabilities scans, and clean configuration files.
               </p>
             </div>
@@ -235,9 +235,9 @@ export default function CloudNativePage() {
               ))}
             </div>
             <div className="lg:col-span-5 lg:order-1">
-              <span className="text-[11px] font-mono text-rose-500 uppercase tracking-[0.2em] block mb-4 font-bold">SECURE INTERNETWORK</span>
-              <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight mb-6">Service Mesh</h2>
-              <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-medium">
+              <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">SECURE INTERNETWORK</span>
+              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">Service Mesh</h2>
+              <p className="text-zinc-300 text-base md:text-lg leading-relaxed font-medium">
                 Enforce secure service interactions. Use Istio proxies to handle connection routing and configure mutual TLS encrypt pathways automatically.
               </p>
             </div>
@@ -250,9 +250,9 @@ export default function CloudNativePage() {
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             <div className="lg:col-span-5">
-              <span className="text-[11px] font-mono text-rose-500 uppercase tracking-[0.2em] block mb-4 font-bold">HYBRID PROFILES</span>
-              <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight mb-6">Multi Cloud Deployment</h2>
-              <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-medium">
+              <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">HYBRID PROFILES</span>
+              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">Multi Cloud Deployment</h2>
+              <p className="text-zinc-300 text-base md:text-lg leading-relaxed font-medium">
                 Distribute workloads cross-cloud. Securely connect resource groups inside Azure, AWS, and OCI locations using Terraform profiles.
               </p>
             </div>
@@ -285,9 +285,9 @@ export default function CloudNativePage() {
               ))}
             </div>
             <div className="lg:col-span-5 lg:order-1">
-              <span className="text-[11px] font-mono text-rose-500 uppercase tracking-[0.2em] block mb-4 font-bold">COMPLIANCE</span>
-              <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight mb-6">Cloud Governance</h2>
-              <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-medium">
+              <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">COMPLIANCE</span>
+              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">Cloud Governance</h2>
+              <p className="text-zinc-300 text-base md:text-lg leading-relaxed font-medium">
                 Enforce cost limits and resource settings automatically. Track configuration setups and manage IAM namespace permissions.
               </p>
             </div>
@@ -299,8 +299,8 @@ export default function CloudNativePage() {
       <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60 relative">
         <div className="max-w-4xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="mb-16 text-center">
-            <span className="text-[11px] font-mono text-rose-500 uppercase tracking-[0.2em] block mb-4 font-bold">FAQ</span>
-            <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight">
+            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">FAQ</span>
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">
               Frequently Asked Questions
             </h2>
           </Reveal>
@@ -332,7 +332,7 @@ export default function CloudNativePage() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[300px] bg-[radial-gradient(circle_at_center,rgba(225,29,72,0.025),transparent_60%)] pointer-events-none" />
         <div className="max-w-3xl mx-auto px-12 xl:px-8 relative z-10">
           <h2 className="text-3xl md:text-5xl font-black mb-6 tracking-tight">Go Cloud Native</h2>
-          <p className="text-zinc-400 text-xs md:text-sm font-bold mb-10 max-w-lg mx-auto leading-relaxed">
+          <p className="text-zinc-300 text-sm md:text-base font-medium mb-10 max-w-lg mx-auto leading-relaxed">
             Partner with our cloud native engineering unit to provision autoscaling clusters and Istio meshes.
           </p>
           <Link

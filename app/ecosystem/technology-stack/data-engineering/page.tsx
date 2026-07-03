@@ -109,7 +109,7 @@ export default function DataEngineeringPage() {
             </p>
           </Reveal>
           <Reveal delay={0.2} className="max-w-3xl mx-auto mb-10">
-            <p className="text-zinc-400 text-xs md:text-sm lg:text-base leading-relaxed font-bold">
+            <p className="text-zinc-200 text-sm md:text-base lg:text-lg leading-relaxed font-medium">
               Build data architectures, configure streaming platforms, manage warehouses, tune analytics layers, and enforce governance.
             </p>
           </Reveal>
@@ -146,9 +146,9 @@ export default function DataEngineeringPage() {
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             <div className="lg:col-span-5">
-              <span className="text-[11px] font-mono text-rose-500 uppercase tracking-[0.2em] block mb-4 font-bold">TOPOLOGY</span>
-              <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight mb-6">Data Architecture</h2>
-              <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-medium">
+              <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">TOPOLOGY</span>
+              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">Data Architecture</h2>
+              <p className="text-zinc-300 text-base md:text-lg leading-relaxed font-medium">
                 Design reliable database enclaves. Separate write-heavy transactional tables from analytics read-only copies.
               </p>
             </div>
@@ -182,9 +182,9 @@ export default function DataEngineeringPage() {
               ))}
             </div>
             <div className="lg:col-span-5 lg:order-1">
-              <span className="text-[11px] font-mono text-rose-500 uppercase tracking-[0.2em] block mb-4 font-bold">STREAM CORE</span>
-              <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight mb-6">Streaming Platform</h2>
-              <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-medium">
+              <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">STREAM CORE</span>
+              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">Streaming Platform</h2>
+              <p className="text-zinc-300 text-base md:text-lg leading-relaxed font-medium">
                 Process event streams on-the-fly. Run Kafka brokers, deploy Flink transformation scripts, and verify payloads structures.
               </p>
             </div>
@@ -197,9 +197,9 @@ export default function DataEngineeringPage() {
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             <div className="lg:col-span-5">
-              <span className="text-[11px] font-mono text-rose-500 uppercase tracking-[0.2em] block mb-4 font-bold">LAKEHOUSE</span>
-              <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight mb-6">Data Warehouse</h2>
-              <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-medium">
+              <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">LAKEHOUSE</span>
+              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">Data Warehouse</h2>
+              <p className="text-zinc-300 text-base md:text-lg leading-relaxed font-medium">
                 Centralize analytical databases. Query Snowflake enclaves and organize versioned tables using Delta Lake file structures.
               </p>
             </div>
@@ -233,9 +233,9 @@ export default function DataEngineeringPage() {
               ))}
             </div>
             <div className="lg:col-span-5 lg:order-1">
-              <span className="text-[11px] font-mono text-rose-500 uppercase tracking-[0.2em] block mb-4 font-bold">BI CONNECTORS</span>
-              <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight mb-6">Analytics Layer</h2>
-              <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-medium">
+              <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">BI CONNECTORS</span>
+              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">Analytics Layer</h2>
+              <p className="text-zinc-300 text-base md:text-lg leading-relaxed font-medium">
                 Deliver metrics charts fast. Expose ODBC/JDBC database connectors and route queries to read-replicas.
               </p>
             </div>
@@ -248,9 +248,9 @@ export default function DataEngineeringPage() {
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             <div className="lg:col-span-5">
-              <span className="text-[11px] font-mono text-rose-500 uppercase tracking-[0.2em] block mb-4 font-bold">COMPLIANCE</span>
-              <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight mb-6">Data Governance</h2>
-              <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-medium">
+              <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">COMPLIANCE</span>
+              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">Data Governance</h2>
+              <p className="text-zinc-300 text-base md:text-lg leading-relaxed font-medium">
                 Enforce privacy guidelines. Catalog table columns schemas, trace dependencies, and mask personal information fields automatically.
               </p>
             </div>
@@ -284,9 +284,9 @@ export default function DataEngineeringPage() {
               ))}
             </div>
             <div className="lg:col-span-5 lg:order-1">
-              <span className="text-[11px] font-mono text-rose-500 uppercase tracking-[0.2em] block mb-4 font-bold">INTELLIGENT PIPELINES</span>
-              <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight mb-6">AI Integration</h2>
-              <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-medium">
+              <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">INTELLIGENT PIPELINES</span>
+              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">AI Integration</h2>
+              <p className="text-zinc-300 text-base md:text-lg leading-relaxed font-medium">
                 Bridge data tables to machine learning. Deploy features stores and automate pipeline anomaly alert rules.
               </p>
             </div>
@@ -298,8 +298,8 @@ export default function DataEngineeringPage() {
       <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60 relative">
         <div className="max-w-4xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="mb-16 text-center">
-            <span className="text-[11px] font-mono text-rose-500 uppercase tracking-[0.2em] block mb-4 font-bold">FAQ</span>
-            <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight">
+            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">FAQ</span>
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">
               Frequently Asked Questions
             </h2>
           </Reveal>
@@ -331,7 +331,7 @@ export default function DataEngineeringPage() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[300px] bg-[radial-gradient(circle_at_center,rgba(225,29,72,0.025),transparent_60%)] pointer-events-none" />
         <div className="max-w-3xl mx-auto px-12 xl:px-8 relative z-10">
           <h2 className="text-3xl md:text-5xl font-black mb-6 tracking-tight">Deploy Data Pipelines</h2>
-          <p className="text-zinc-400 text-xs md:text-sm font-bold mb-10 max-w-lg mx-auto leading-relaxed">
+          <p className="text-zinc-300 text-sm md:text-base font-medium mb-10 max-w-lg mx-auto leading-relaxed">
             Partner with our data engineering unit to build Kafka streams and Snowflake analytical workspaces.
           </p>
           <Link

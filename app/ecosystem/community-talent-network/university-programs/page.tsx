@@ -96,7 +96,7 @@ export default function UniversityProgramsPage() {
             <p className="text-xl md:text-2xl font-bold text-rose-500 mb-6">
               Bridging academia and enterprise technology.
             </p>
-            <p className="text-zinc-400 text-xs md:text-sm lg:text-base leading-relaxed font-bold">
+            <p className="text-zinc-200 text-sm md:text-base lg:text-lg leading-relaxed font-medium">
               We partner with the world's leading academic institutions to modernize curriculums, fund groundbreaking research, and provide students with direct pathways into elite enterprise engineering careers.
             </p>
           </Reveal>
@@ -119,8 +119,8 @@ export default function UniversityProgramsPage() {
       <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60 relative">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="mb-16 text-center">
-            <span className="text-[11px] font-mono text-rose-500 uppercase tracking-[0.2em] block mb-4 font-bold">COLLABORATION</span>
-            <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight">Academic Partnerships</h2>
+            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">COLLABORATION</span>
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">Academic Partnerships</h2>
           </Reveal>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {academicPartnerships.map((item, idx) => (
@@ -128,8 +128,8 @@ export default function UniversityProgramsPage() {
                 <div className="w-8 h-8 rounded-lg bg-rose-500/10 flex items-center justify-center mb-4">
                   <Network className="w-4 h-4 text-rose-500" />
                 </div>
-                <h4 className="text-sm font-bold text-white mb-2">{item.title}</h4>
-                <p className="text-xs text-zinc-400 font-bold leading-relaxed">{item.desc}</p>
+                <h4 className="text-base font-bold text-white mb-2">{item.title}</h4>
+                <p className="text-sm text-zinc-300 font-medium leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -140,15 +140,15 @@ export default function UniversityProgramsPage() {
       <section className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="mb-16 text-center">
-            <span className="text-[11px] font-mono text-rose-500 uppercase tracking-[0.2em] block mb-4 font-bold">TRAJECTORY</span>
-            <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight">Career Pathways</h2>
+            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">TRAJECTORY</span>
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">Career Pathways</h2>
           </Reveal>
           <div className="flex flex-wrap justify-center items-center gap-4">
             {careerPathways.map((stage, idx) => (
               <React.Fragment key={idx}>
                 <div className="flex flex-col items-center w-[160px] text-center p-6 bg-zinc-950 border border-zinc-800 rounded-xl hover:border-rose-500/40 transition-all duration-300 group">
-                  <h4 className="text-sm font-bold text-rose-500 mb-2">{stage.step}</h4>
-                  <p className="text-[10px] text-zinc-400 font-medium">{stage.desc}</p>
+                  <h4 className="text-base font-bold text-rose-500 mb-2">{stage.step}</h4>
+                  <p className="text-xs text-zinc-300 font-medium">{stage.desc}</p>
                 </div>
                 {idx < careerPathways.length - 1 && (
                   <div className="hidden lg:flex items-center">
@@ -165,8 +165,8 @@ export default function UniversityProgramsPage() {
       <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60 relative">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="mb-16 text-center">
-            <span className="text-[11px] font-mono text-rose-500 uppercase tracking-[0.2em] block mb-4 font-bold">INITIATIVES</span>
-            <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight">Campus Programs</h2>
+            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">INITIATIVES</span>
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">Campus Programs</h2>
           </Reveal>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {programsGrid.map((prog, idx) => (
@@ -188,8 +188,8 @@ export default function UniversityProgramsPage() {
       <section className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="mb-16 text-center">
-            <span className="text-[11px] font-mono text-rose-500 uppercase tracking-[0.2em] block mb-4 font-bold">OUTCOMES</span>
-            <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight">Success Stories</h2>
+            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">OUTCOMES</span>
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">Success Stories</h2>
           </Reveal>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {successStories.map((story, idx) => (
@@ -198,7 +198,7 @@ export default function UniversityProgramsPage() {
                   <Trophy className="w-4 h-4 text-rose-500" />
                 </div>
                 <h4 className="text-sm font-bold text-white mb-3">{story.title}</h4>
-                <p className="text-xs text-zinc-400 font-bold leading-relaxed">{story.desc}</p>
+                <p className="text-sm text-zinc-300 font-medium leading-relaxed">{story.desc}</p>
               </div>
             ))}
           </div>
@@ -209,8 +209,8 @@ export default function UniversityProgramsPage() {
       <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60 relative">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="mb-16 text-center">
-            <span className="text-[11px] font-mono text-rose-500 uppercase tracking-[0.2em] block mb-4 font-bold">IMPACT</span>
-            <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight">Program Reach</h2>
+            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">IMPACT</span>
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">Program Reach</h2>
           </Reveal>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
             {metrics.map((m, idx) => (
@@ -227,8 +227,8 @@ export default function UniversityProgramsPage() {
       <section className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
         <div className="max-w-4xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="mb-16 text-center">
-            <span className="text-[11px] font-mono text-rose-500 uppercase tracking-[0.2em] block mb-4 font-bold">FAQ</span>
-            <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight">
+            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">FAQ</span>
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">
               Frequently Asked Questions
             </h2>
           </Reveal>
@@ -260,7 +260,7 @@ export default function UniversityProgramsPage() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[300px] bg-[radial-gradient(circle_at_center,rgba(225,29,72,0.025),transparent_60%)] pointer-events-none" />
         <div className="max-w-3xl mx-auto px-12 xl:px-8 relative z-10">
           <h2 className="text-3xl md:text-5xl font-black mb-6 tracking-tight">Start Your Career</h2>
-          <p className="text-zinc-400 text-xs md:text-sm font-bold mb-10 max-w-lg mx-auto leading-relaxed">
+          <p className="text-zinc-300 text-sm md:text-base font-medium mb-10 max-w-lg mx-auto leading-relaxed">
             Whether you are seeking a summer internship or a graduate engineering role, take the first step towards building enterprise-grade software.
           </p>
           <Link

@@ -41,28 +41,28 @@ export function PartnerCategories() {
       partners: [
         { 
           name: "Microsoft Azure", 
-          logo: "/assets/Tech-icons/microsoft-azure-logo_svgstack_com_7501780931055.svg", 
+          logo: "/assets/Tech_logos/Microsoft Azure.svg", 
           desc: "Enterprise application clouds, Active Directory IAM, and Office environments.", 
           href: "/ecosystem/partnerships/microsoft", 
           action: "Configure Azure" 
         },
         { 
           name: "Amazon Web Services", 
-          logo: "/assets/Tech-icons/amazon-aws-logo_svgstack_com_7491780931192.svg", 
+          logo: "/assets/Tech_logos/AWS.svg", 
           desc: "Scale compute infrastructure, serverless Lambda services, and S3 data lakes.", 
           href: "/ecosystem/partnerships/aws", 
           action: "Scale compute" 
         },
         { 
           name: "Google Cloud", 
-          logo: "/assets/Tech-icons/google-cloud-logo_svgstack_com_28371780931185.svg", 
+          logo: "/assets/Tech_logos/Google_Cloud.svg", 
           desc: "Kubernetes GKE orchestrations, Vertex AI pipelines, and BigQuery warehouses.", 
           href: "/ecosystem/partnerships/google-cloud", 
           action: "Vertex pipelines" 
         },
         { 
           name: "Oracle Cloud", 
-          logo: "/assets/Tech-icons/oracle-logo_svgstack_com_28991780931429.svg", 
+          logo: "/assets/Tech_logos/Oracle_Cloud.svg", 
           desc: "OCI databases, Enterprise application ERP, and custom transaction processing.", 
           href: "/ecosystem/partnerships/oracle", 
           action: "Deploy OCI" 
@@ -84,21 +84,21 @@ export function PartnerCategories() {
         },
         { 
           name: "Snowflake", 
-          logo: "/assets/Tech-icons/docker-logo_svgstack_com_28191780931128.svg", 
+          logo: "/assets/Tech_logos/Snowflake.svg", 
           desc: "Unified global data cloud sharing analytics dashboards and structured warehouse operations.", 
           href: "/ecosystem/partnerships", 
           action: "Share analytics" 
         },
         { 
           name: "MongoDB", 
-          logo: "/assets/Tech-icons/mongo-db-logo_svgstack_com_28831780931486.svg", 
+          logo: "/assets/Tech_logos/MongoDB.svg", 
           desc: "Flexible document-based databases, vector search integrations, and atlas storage.", 
           href: "/ecosystem/partnerships", 
           action: "Vector search" 
         },
         { 
           name: "Databricks", 
-          logo: "/assets/Tech-icons/python-logo_svgstack_com_29121780931061.svg", 
+          logo: "/assets/Tech_logos/Databricks.svg", 
           desc: "Unified lakehouse engines executing large data streaming runs and ML flows.", 
           href: "/ecosystem/partnerships", 
           action: "Run ML flows" 
@@ -113,14 +113,14 @@ export function PartnerCategories() {
       partners: [
         { 
           name: "SAP", 
-          logo: "/assets/Tech-icons/microsoft-logo_svgstack_com_28801780931272.svg", 
+          logo: "/assets/Tech_logos/sap.svg", 
           desc: "Enterprise resources manager, financial ledger orchestration, and supplier chains.", 
           href: "/ecosystem/partnerships/sap", 
           action: "SAP on Cloud" 
         },
         { 
           name: "ServiceNow", 
-          logo: "/assets/Home-page/Techtools/aws-color.svg", 
+          logo: "/assets/Tech_logos/Service_now.svg", 
           desc: "IT operations automation, HR tickets ticketing, and automated customer desk runs.", 
           href: "/ecosystem/partnerships/servicenow", 
           action: "ServiceNow ITSM" 
@@ -156,14 +156,14 @@ export function PartnerCategories() {
         },
         { 
           name: "Cloudflare", 
-          logo: "/assets/Tech-icons/cloudflare-logo-icon_svgstack_com_28071780931769.svg", 
+          logo: "/assets/Tech_logos/Cloud_flaire.svg", 
           desc: "Global edge CDN networks, Web App Firewalls (WAF), and custom zero-trust corridors.", 
           href: "/ecosystem/partnerships", 
           action: "Edge perimeters" 
         },
         { 
           name: "HashiCorp", 
-          logo: "/assets/Tech-icons/nextjs-logo-icon_svgstack_com_28901780931105.svg", 
+          logo: "/assets/Tech_logos/HashiCorp.svg", 
           desc: "Vault credentials secrets manager, Terraform infrastructure coding, and Consul grids.", 
           href: "/ecosystem/partnerships", 
           action: "Terraform IaC" 
@@ -185,28 +185,28 @@ export function PartnerCategories() {
       partners: [
         { 
           name: "Cisco", 
-          logo: "/assets/Tech-icons/microsoft-azure-logo_svgstack_com_7501780931055.svg", 
+          logo: "/assets/Tech_logos/cisco.svg", 
           desc: "Core enterprise switches, software-defined WAN routers, and Webex systems.", 
           href: "/ecosystem/partnerships/cisco", 
           action: "SD-WAN routing" 
         },
         { 
           name: "Red Hat", 
-          logo: "/assets/Tech-icons/redhat-logo_svgstack_com_29191780931481.svg", 
+          logo: "/assets/Tech_logos/red_hat.svg", 
           desc: "Enterprise Linux servers, OpenShift Kubernetes, and Ansible scripting hubs.", 
           href: "/ecosystem/partnerships", 
           action: "OpenShift grids" 
         },
         { 
           name: "Datadog", 
-          logo: "/assets/Home-page/Techtools/google-color.svg", 
+          logo: "/assets/Tech_logos/Datadog.svg", 
           desc: "Unified SRE monitoring maps, application trace hooks, and server logs alerts.", 
           href: "/ecosystem/partnerships", 
           action: "SRE monitors" 
         },
         { 
           name: "Dynatrace", 
-          logo: "/assets/Home-page/Techtools/Oracle.svg", 
+          logo: "/assets/Tech_logos/Dynatrace.svg", 
           desc: "AI-based system SRE observability dashboards, host metrics alerts, and database traces.", 
           href: "/ecosystem/partnerships", 
           action: "Observability map" 

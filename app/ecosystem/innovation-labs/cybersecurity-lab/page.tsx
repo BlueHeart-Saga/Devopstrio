@@ -278,13 +278,13 @@ export default function CybersecurityInnovationLabPage() {
       <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60 relative">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
           <Reveal className="mb-16 text-center max-w-2xl mx-auto">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
               SECURITY RESEARCH
             </span>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">
               Security Innovation <span className="text-rose-500">Domains</span>
             </h2>
-            <p className="text-zinc-400 text-xs md:text-sm font-bold">
+            <p className="text-zinc-300 text-sm md:text-base font-medium">
               Engineering proactive containment, identity bounds, and threat analysis models.
             </p>
           </Reveal>
@@ -318,13 +318,13 @@ export default function CybersecurityInnovationLabPage() {
 
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
           <Reveal className="mb-16 text-center max-w-2xl mx-auto">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
               ZERO TRUST BLUEPRINT
             </span>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">
               Cybersecurity <span className="text-rose-500">Architecture</span>
             </h2>
-            <p className="text-zinc-400 text-xs md:text-sm font-bold">
+            <p className="text-zinc-300 text-sm md:text-base font-medium">
               Multi-tiered validation model securing resources from identity checkpoint to data repository.
             </p>
           </Reveal>
@@ -400,7 +400,7 @@ export default function CybersecurityInnovationLabPage() {
       <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
           <Reveal className="mb-16 text-left">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
               PORTFOLIO
             </span>
             <h2 className="text-3xl md:text-4xl font-extrabold text-white">
@@ -440,10 +440,10 @@ export default function CybersecurityInnovationLabPage() {
       <section className="w-full py-24 bg-black border-b border-zinc-900/60">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
           <Reveal className="mb-16 text-center max-w-2xl mx-auto">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
               AUTOMATED MONITORING
             </span>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">
               Security Operations & <span className="text-rose-500">Automation</span>
             </h2>
           </Reveal>
@@ -458,7 +458,7 @@ export default function CybersecurityInnovationLabPage() {
                   0{idx + 1}
                 </div>
                 <h4 className="text-sm md:text-base font-bold text-white mb-2">{item.title}</h4>
-                <p className="text-xs text-zinc-400 font-bold leading-relaxed">{item.desc}</p>
+                <p className="text-sm text-zinc-300 font-medium leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -469,10 +469,10 @@ export default function CybersecurityInnovationLabPage() {
       <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
           <Reveal className="mb-16 text-center max-w-2xl mx-auto">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
               REMEDIATION CYCLES
             </span>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">
               Cybersecurity <span className="text-rose-500">Framework</span>
             </h2>
           </Reveal>
@@ -514,10 +514,10 @@ export default function CybersecurityInnovationLabPage() {
 
             <div className="lg:col-span-5">
               <Reveal className="text-left">
-                <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+                <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
                   METRICS & CASES
                 </span>
-                <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight leading-tight mb-6 text-white">
+                <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">
                   Security Lab <span className="text-rose-500">Impact</span>
                 </h2>
                 <p className="text-zinc-350 text-xs md:text-sm lg:text-base leading-relaxed font-bold mb-8">
@@ -589,7 +589,7 @@ export default function CybersecurityInnovationLabPage() {
 
             <div className="lg:col-span-5">
               <Reveal className="text-left sticky top-28">
-                <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+                <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
                   SECURITY QUESTIONS
                 </span>
                 <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight leading-tight text-white mb-5">
@@ -643,10 +643,10 @@ export default function CybersecurityInnovationLabPage() {
       <section className="w-full py-24 bg-black border-b border-zinc-900/60">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
           <Reveal className="mb-16 text-center max-w-2xl mx-auto">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
               EXPLORE OTHER NETWORKS
             </span>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">
               Related Ecosystem <span className="text-rose-500">Connections</span>
             </h2>
           </Reveal>
@@ -663,7 +663,7 @@ export default function CybersecurityInnovationLabPage() {
                     {partner.name}
                     <ChevronRight className="w-4 h-4 text-zinc-650 group-hover:translate-x-1 group-hover:text-rose-500 transition-all" />
                   </h4>
-                  <p className="text-xs text-zinc-400 font-bold leading-relaxed">
+                  <p className="text-sm text-zinc-300 font-medium leading-relaxed">
                     {partner.desc}
                   </p>
                 </div>
@@ -681,7 +681,7 @@ export default function CybersecurityInnovationLabPage() {
         <div className="max-w-3xl mx-auto px-12 xl:px-8 relative z-10 flex flex-col items-center">
 
           <Reveal>
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
               SECURE YOUR INFRASTRUCTURE
             </span>
           </Reveal>

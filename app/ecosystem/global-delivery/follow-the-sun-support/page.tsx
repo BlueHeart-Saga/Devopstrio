@@ -101,7 +101,7 @@ export default function FollowTheSunSupportPage() {
             <p className="text-xl md:text-2xl font-bold text-rose-500 mb-6">
               Continuous Support Schedules with Zero Burnout.
             </p>
-            <p className="text-zinc-400 text-xs md:text-sm lg:text-base leading-relaxed font-bold">
+            <p className="text-zinc-200 text-sm md:text-base lg:text-lg leading-relaxed font-medium">
               Coordinate shift transitions between UK, US, and India hubs to maintain constant service coverage while letting engineers work local daytime hours.
             </p>
           </Reveal>
@@ -124,9 +124,9 @@ export default function FollowTheSunSupportPage() {
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             <div className="lg:col-span-5">
-              <span className="text-[11px] font-mono text-rose-500 uppercase tracking-[0.2em] block mb-4 font-bold">ROTATION</span>
-              <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight mb-6">Operations Model</h2>
-              <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-medium">
+              <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">ROTATION</span>
+              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">Operations Model</h2>
+              <p className="text-zinc-300 text-base md:text-lg leading-relaxed font-medium">
                 Our model maps schedules to coordinate handovers across global offices.
               </p>
             </div>
@@ -146,8 +146,8 @@ export default function FollowTheSunSupportPage() {
       <section className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="mb-16 text-center">
-            <span className="text-[11px] font-mono text-rose-500 uppercase tracking-[0.2em] block mb-4 font-bold">TELEMETRY</span>
-            <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight">Incident Routing</h2>
+            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">TELEMETRY</span>
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">Incident Routing</h2>
           </Reveal>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {routingTech.map((tech, idx) => (
@@ -155,8 +155,8 @@ export default function FollowTheSunSupportPage() {
                 <div className="w-8 h-8 rounded-lg bg-rose-500/10 flex items-center justify-center mb-4">
                   <Shuffle className="w-4 h-4 text-rose-500" />
                 </div>
-                <h4 className="text-sm font-bold text-white mb-2">{tech.name}</h4>
-                <p className="text-xs text-zinc-400 font-bold leading-relaxed">{tech.desc}</p>
+                <h4 className="text-base font-bold text-white mb-2">{tech.name}</h4>
+                <p className="text-sm text-zinc-300 font-medium leading-relaxed">{tech.desc}</p>
               </div>
             ))}
           </div>
@@ -167,8 +167,8 @@ export default function FollowTheSunSupportPage() {
       <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60 relative">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="mb-16 text-center">
-            <span className="text-[11px] font-mono text-rose-500 uppercase tracking-[0.2em] block mb-4 font-bold">PROCEDURES</span>
-            <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight">Shift Handover Lifecycle</h2>
+            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">PROCEDURES</span>
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">Shift Handover Lifecycle</h2>
           </Reveal>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
             {handovers.map((handover, idx) => (
@@ -177,7 +177,7 @@ export default function FollowTheSunSupportPage() {
                   <span className="text-3xl font-black text-rose-500/30 font-mono mb-4 block">{handover.step}</span>
                   <h4 className="text-lg font-bold text-white mb-2">{handover.title}</h4>
                 </div>
-                <p className="text-xs text-zinc-400 font-bold leading-relaxed">{handover.desc}</p>
+                <p className="text-sm text-zinc-300 font-medium leading-relaxed">{handover.desc}</p>
               </div>
             ))}
           </div>
@@ -197,9 +197,9 @@ export default function FollowTheSunSupportPage() {
               ))}
             </div>
             <div className="lg:col-span-5 lg:order-1">
-              <span className="text-[11px] font-mono text-rose-500 uppercase tracking-[0.2em] block mb-4 font-bold">SUSTAINABILITY</span>
-              <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight mb-6">Team Health & Welfare</h2>
-              <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-medium">
+              <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">SUSTAINABILITY</span>
+              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">Team Health & Welfare</h2>
+              <p className="text-zinc-300 text-base md:text-lg leading-relaxed font-medium">
                 Daytime schedules limit cognitive exhaustion, reducing configuration mistakes.
               </p>
             </div>
@@ -211,8 +211,8 @@ export default function FollowTheSunSupportPage() {
       <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60 relative">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="mb-16 text-center">
-            <span className="text-[11px] font-mono text-rose-500 uppercase tracking-[0.2em] block mb-4 font-bold">KPI ACHIEVEMENTS</span>
-            <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight">Performance Metrics</h2>
+            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">KPI ACHIEVEMENTS</span>
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">Performance Metrics</h2>
           </Reveal>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
             {metrics.map((m, idx) => (
@@ -229,8 +229,8 @@ export default function FollowTheSunSupportPage() {
       <section className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
         <div className="max-w-4xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="mb-16 text-center">
-            <span className="text-[11px] font-mono text-rose-500 uppercase tracking-[0.2em] block mb-4 font-bold">FAQ</span>
-            <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight">
+            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">FAQ</span>
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">
               Frequently Asked Questions
             </h2>
           </Reveal>
@@ -262,7 +262,7 @@ export default function FollowTheSunSupportPage() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[300px] bg-[radial-gradient(circle_at_center,rgba(225,29,72,0.025),transparent_60%)] pointer-events-none" />
         <div className="max-w-3xl mx-auto px-12 xl:px-8 relative z-10">
           <h2 className="text-3xl md:text-5xl font-black mb-6 tracking-tight">Design Your Custom SLA</h2>
-          <p className="text-zinc-400 text-xs md:text-sm font-bold mb-10 max-w-lg mx-auto leading-relaxed">
+          <p className="text-zinc-300 text-sm md:text-base font-medium mb-10 max-w-lg mx-auto leading-relaxed">
             Speak with our operations leads to configure timezone handovers and pager alerts.
           </p>
           <Link

@@ -95,7 +95,7 @@ const stories = [
   },
   {
     id: "servicenow",
-    logo: "/assets/Home-page/partners/servicenow.svg",
+    logo: "/assets/Home-page/partners/servicenow.png",
     title: "ServiceNow accelerates enterprise workflow automation",
     description: "With a modernized infrastructure foundation, ServiceNow accelerated their deployment cycles by 3×, enabling faster rollout of critical enterprise workflow features.",
     products: [
@@ -114,7 +114,7 @@ export const FeaturedSuccess = () => {
     <section className="py-16 bg-[#050505] relative overflow-hidden border-t border-zinc-900">
       {/* Background accents */}
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-rose-500/5 rounded-full blur-[100px] pointer-events-none" />
-      
+
       <div className="max-w-6xl mx-auto px-6 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-14">
           <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
@@ -144,24 +144,24 @@ export const FeaturedSuccess = () => {
                   >
                     <div className="mb-6">
                       <div className="inline-flex h-12 px-4 items-center justify-center bg-zinc-800/40 border border-zinc-700/50 rounded-xl backdrop-blur-md shadow-lg">
-                        <Image 
-                          src={activeStory.logo} 
-                          alt={`${activeStory.id} logo`} 
-                          width={100} 
-                          height={32} 
+                        <Image
+                          src={activeStory.logo}
+                          alt={`${activeStory.id} logo`}
+                          width={100}
+                          height={32}
                           className="max-h-7 w-auto object-contain"
                         />
                       </div>
                     </div>
-                    
+
                     <h3 className="text-xl md:text-2xl lg:text-[28px] font-semibold text-white leading-tight mb-4">
                       {activeStory.title}
                     </h3>
-                    
+
                     <p className="text-zinc-400 text-base leading-relaxed mb-8">
                       {activeStory.description}
                     </p>
-                    
+
                     <div className="mb-8 lg:mb-12">
                       <h4 className="text-xs font-semibold text-zinc-500 uppercase tracking-widest mb-3">Products</h4>
                       <div className="flex flex-wrap gap-2">
@@ -217,26 +217,24 @@ export const FeaturedSuccess = () => {
             <button
               key={story.id}
               onClick={() => setActiveIndex(idx)}
-              className={`flex-1 min-w-[120px] md:min-w-[140px] h-20 md:h-24 flex items-center justify-center relative transition-all duration-300 border-r border-zinc-800/50 last:border-r-0 ${
-                activeIndex === idx 
-                  ? "bg-white/10" 
+              className={`flex-1 min-w-[120px] md:min-w-[140px] h-20 md:h-24 flex items-center justify-center relative transition-all duration-300 border-r border-zinc-800/50 last:border-r-0 ${activeIndex === idx
+                  ? "bg-white/10"
                   : "hover:bg-white/5"
-              }`}
-            >
-              <Image 
-                src={story.logo} 
-                alt={`${story.id} logo`} 
-                width={90} 
-                height={32} 
-                className={`max-h-8 md:max-h-10 w-auto object-contain transition-all duration-300 px-4 ${
-                  activeIndex === idx ? "opacity-100 scale-105" : "opacity-40 hover:opacity-100"
                 }`}
+            >
+              <Image
+                src={story.logo}
+                alt={`${story.id} logo`}
+                width={90}
+                height={32}
+                className={`max-h-8 md:max-h-10 w-auto object-contain transition-all duration-300 px-4 ${activeIndex === idx ? "opacity-100 scale-105" : "opacity-40 hover:opacity-100"
+                  }`}
               />
               {/* Active Tab Indicator */}
               {activeIndex === idx && (
-                <motion.div 
+                <motion.div
                   layoutId="activeTabIndicator"
-                  className="absolute bottom-0 left-0 right-0 h-1 bg-rose-500 rounded-t-full shadow-[0_-2px_10px_rgba(244,63,94,0.3)]" 
+                  className="absolute bottom-0 left-0 right-0 h-1 bg-rose-500 rounded-t-full shadow-[0_-2px_10px_rgba(244,63,94,0.3)]"
                 />
               )}
             </button>

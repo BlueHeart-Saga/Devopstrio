@@ -109,7 +109,7 @@ export default function EngineeringCulturePage() {
             <p className="text-xl md:text-2xl font-bold text-rose-500 mb-6">
               Creating an environment where innovation, ownership and continuous learning thrive.
             </p>
-            <p className="text-zinc-400 text-xs md:text-sm lg:text-base leading-relaxed font-bold">
+            <p className="text-zinc-200 text-sm md:text-base lg:text-lg leading-relaxed font-medium">
               We build software differently. Our engineering culture empowers autonomous teams, mandates ruthless automation, and fosters a community of deep technical mastery.
             </p>
           </Reveal>
@@ -132,8 +132,8 @@ export default function EngineeringCulturePage() {
       <section className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="mb-16 text-center">
-            <span className="text-[11px] font-mono text-rose-500 uppercase tracking-[0.2em] block mb-4 font-bold">CORE TENETS</span>
-            <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight">Engineering Principles</h2>
+            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">CORE TENETS</span>
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">Engineering Principles</h2>
           </Reveal>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {principles.map((principle, idx) => (
@@ -141,8 +141,8 @@ export default function EngineeringCulturePage() {
                 <div className="w-8 h-8 rounded-lg bg-rose-500/10 flex items-center justify-center mb-4">
                   <Target className="w-4 h-4 text-rose-500" />
                 </div>
-                <h4 className="text-sm font-bold text-white mb-2">{principle.title}</h4>
-                <p className="text-xs text-zinc-400 font-bold leading-relaxed">{principle.desc}</p>
+                <h4 className="text-base font-bold text-white mb-2">{principle.title}</h4>
+                <p className="text-sm text-zinc-300 font-medium leading-relaxed">{principle.desc}</p>
               </div>
             ))}
           </div>
@@ -153,8 +153,8 @@ export default function EngineeringCulturePage() {
       <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60 relative">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="mb-16 text-center">
-            <span className="text-[11px] font-mono text-rose-500 uppercase tracking-[0.2em] block mb-4 font-bold">BELIEFS</span>
-            <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight">Engineering Values</h2>
+            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">BELIEFS</span>
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">Engineering Values</h2>
           </Reveal>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {values.map((val, idx) => (
@@ -162,7 +162,7 @@ export default function EngineeringCulturePage() {
                 <div>
                   <h4 className="text-lg font-bold text-white mb-2">{val.title}</h4>
                 </div>
-                <p className="text-xs text-zinc-400 font-bold leading-relaxed">{val.desc}</p>
+                <p className="text-sm text-zinc-300 font-medium leading-relaxed">{val.desc}</p>
               </div>
             ))}
           </div>
@@ -174,9 +174,9 @@ export default function EngineeringCulturePage() {
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             <div className="lg:col-span-5">
-              <span className="text-[11px] font-mono text-rose-500 uppercase tracking-[0.2em] block mb-4 font-bold">EXECUTION</span>
-              <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight mb-6">Ways of Working</h2>
-              <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-medium">
+              <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">EXECUTION</span>
+              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">Ways of Working</h2>
+              <p className="text-zinc-300 text-base md:text-lg leading-relaxed font-medium">
                 We organize around products, utilizing agile methodologies to deliver continuous value.
               </p>
             </div>
@@ -196,8 +196,8 @@ export default function EngineeringCulturePage() {
       <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60 relative">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="mb-16 text-center">
-            <span className="text-[11px] font-mono text-rose-500 uppercase tracking-[0.2em] block mb-4 font-bold">DEVELOPMENT</span>
-            <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight">Learning & Growth</h2>
+            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">DEVELOPMENT</span>
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">Learning & Growth</h2>
           </Reveal>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {learningPrograms.map((program, idx) => (
@@ -220,15 +220,15 @@ export default function EngineeringCulturePage() {
             <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6 lg:order-2">
               {communityInitiatives.map((comm, idx) => (
                 <div key={idx} className="p-6 bg-zinc-950/40 border border-zinc-900/80 rounded-xl hover:border-rose-500/30 transition-all duration-300">
-                  <h4 className="text-sm font-bold text-white mb-2">{comm.title}</h4>
-                  <p className="text-xs text-zinc-400 font-bold leading-relaxed">{comm.desc}</p>
+                  <h4 className="text-base font-bold text-white mb-2">{comm.title}</h4>
+                  <p className="text-sm text-zinc-300 font-medium leading-relaxed">{comm.desc}</p>
                 </div>
               ))}
             </div>
             <div className="lg:col-span-5 lg:order-1">
-              <span className="text-[11px] font-mono text-rose-500 uppercase tracking-[0.2em] block mb-4 font-bold">CONNECTION</span>
-              <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight mb-6">Engineering Community</h2>
-              <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-medium">
+              <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">CONNECTION</span>
+              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">Engineering Community</h2>
+              <p className="text-zinc-300 text-base md:text-lg leading-relaxed font-medium">
                 We break down silos by building vibrant internal networks where knowledge flows freely.
               </p>
             </div>
@@ -240,8 +240,8 @@ export default function EngineeringCulturePage() {
       <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60 relative">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="mb-16 text-center">
-            <span className="text-[11px] font-mono text-rose-500 uppercase tracking-[0.2em] block mb-4 font-bold">RESULTS</span>
-            <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight">Engineering Impact Metrics</h2>
+            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">RESULTS</span>
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">Engineering Impact Metrics</h2>
           </Reveal>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
             {metrics.map((m, idx) => (
@@ -258,8 +258,8 @@ export default function EngineeringCulturePage() {
       <section className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
         <div className="max-w-4xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="mb-16 text-center">
-            <span className="text-[11px] font-mono text-rose-500 uppercase tracking-[0.2em] block mb-4 font-bold">FAQ</span>
-            <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight">
+            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">FAQ</span>
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">
               Frequently Asked Questions
             </h2>
           </Reveal>
@@ -291,7 +291,7 @@ export default function EngineeringCulturePage() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[300px] bg-[radial-gradient(circle_at_center,rgba(225,29,72,0.025),transparent_60%)] pointer-events-none" />
         <div className="max-w-3xl mx-auto px-12 xl:px-8 relative z-10">
           <h2 className="text-3xl md:text-5xl font-black mb-6 tracking-tight">Join Our Engineering Team</h2>
-          <p className="text-zinc-400 text-xs md:text-sm font-bold mb-10 max-w-lg mx-auto leading-relaxed">
+          <p className="text-zinc-300 text-sm md:text-base font-medium mb-10 max-w-lg mx-auto leading-relaxed">
             We are always looking for passionate engineers who align with our culture of ownership and excellence.
           </p>
           <Link

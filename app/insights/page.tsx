@@ -65,7 +65,7 @@ export default function InsightsLandingPage() {
     async function loadData() {
       try {
         setLoading(true);
-        const allPosts = await insightsApi.getAllPosts(100);
+        const allPosts = await insightsApi.getAllPosts();
         setPosts(allPosts || []);
       } catch (err) {
         console.error("Failed to load insights publications:", err);

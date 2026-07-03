@@ -66,7 +66,7 @@ export default function LeadershipTeamPage() {
       {/* 9. Awards & Recognition */}
       <AwardsRecognitionLeadership />
 
-      {/* 10. Life at Devopstrio + Careers CTA */}
+      {/* 10. Our Culture & People + Careers CTA */}
       <LeadershipCareersCTA />
     </main>
   );

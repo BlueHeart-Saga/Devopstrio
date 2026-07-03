@@ -279,13 +279,13 @@ export default function DevOpsInnovationLabPage() {
       <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60 relative">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
           <Reveal className="mb-16 text-center max-w-2xl mx-auto">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
               RESEARCH & INNOVATION
             </span>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">
               Platform Engineering <span className="text-rose-500">Domains</span>
             </h2>
-            <p className="text-zinc-400 text-xs md:text-sm font-bold">
+            <p className="text-zinc-300 text-sm md:text-base font-medium">
               Unifying container networks, declarative code registries, and SRE operations.
             </p>
           </Reveal>
@@ -319,13 +319,13 @@ export default function DevOpsInnovationLabPage() {
 
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
           <Reveal className="mb-16 text-center max-w-2xl mx-auto">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
               ARCHITECTURE DESIGN
             </span>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">
               Modern DevOps <span className="text-rose-500">Platform Architecture</span>
             </h2>
-            <p className="text-zinc-400 text-xs md:text-sm font-bold">
+            <p className="text-zinc-300 text-sm md:text-base font-medium">
               Standardized flow paths bridging product developers with secure production clusters.
             </p>
           </Reveal>
@@ -401,7 +401,7 @@ export default function DevOpsInnovationLabPage() {
       <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
           <Reveal className="mb-16 text-left">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
               DIFFERENTIATORS
             </span>
             <h2 className="text-3xl md:text-4xl font-extrabold text-white">
@@ -441,10 +441,10 @@ export default function DevOpsInnovationLabPage() {
       <section className="w-full py-24 bg-black border-b border-zinc-900/60">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
           <Reveal className="mb-16 text-center max-w-2xl mx-auto">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
               INTELLIGENT RUNTIMES
             </span>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">
               Intelligent Operations <span className="text-rose-500">& Automation</span>
             </h2>
           </Reveal>
@@ -459,7 +459,7 @@ export default function DevOpsInnovationLabPage() {
                   0{idx + 1}
                 </div>
                 <h4 className="text-sm md:text-base font-bold text-white mb-2">{item.title}</h4>
-                <p className="text-xs text-zinc-400 font-bold leading-relaxed">{item.desc}</p>
+                <p className="text-sm text-zinc-300 font-medium leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -470,10 +470,10 @@ export default function DevOpsInnovationLabPage() {
       <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
           <Reveal className="mb-16 text-center max-w-2xl mx-auto">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
               RELIABILITY PATHWAYS
             </span>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">
               Delivery & Reliability <span className="text-rose-500">Framework</span>
             </h2>
           </Reveal>
@@ -515,10 +515,10 @@ export default function DevOpsInnovationLabPage() {
 
             <div className="lg:col-span-5">
               <Reveal className="text-left">
-                <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+                <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
                   METRICS & CASES
                 </span>
-                <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight leading-tight mb-6 text-white">
+                <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">
                   DevOps Lab <span className="text-rose-500">Impact</span>
                 </h2>
                 <p className="text-zinc-350 text-xs md:text-sm lg:text-base leading-relaxed font-bold mb-8">
@@ -590,7 +590,7 @@ export default function DevOpsInnovationLabPage() {
 
             <div className="lg:col-span-5">
               <Reveal className="text-left sticky top-28">
-                <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+                <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
                   LAB QUESTIONS
                 </span>
                 <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight leading-tight text-white mb-5">
@@ -644,10 +644,10 @@ export default function DevOpsInnovationLabPage() {
       <section className="w-full py-24 bg-black border-b border-zinc-900/60">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
           <Reveal className="mb-16 text-center max-w-2xl mx-auto">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
               EXPLORE OTHER NETWORKS
             </span>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">
               Related Ecosystem <span className="text-rose-500">Connections</span>
             </h2>
           </Reveal>
@@ -664,7 +664,7 @@ export default function DevOpsInnovationLabPage() {
                     {partner.name}
                     <ChevronRight className="w-4 h-4 text-zinc-650 group-hover:translate-x-1 group-hover:text-rose-500 transition-all" />
                   </h4>
-                  <p className="text-xs text-zinc-400 font-bold leading-relaxed">
+                  <p className="text-sm text-zinc-300 font-medium leading-relaxed">
                     {partner.desc}
                   </p>
                 </div>
@@ -682,7 +682,7 @@ export default function DevOpsInnovationLabPage() {
         <div className="max-w-3xl mx-auto px-12 xl:px-8 relative z-10 flex flex-col items-center">
 
           <Reveal>
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
               GET STARTED
             </span>
           </Reveal>

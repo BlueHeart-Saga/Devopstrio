@@ -25,7 +25,7 @@ const alliances = [
   { name: "Microsoft", path: "/assets/Home-page/partners/Microsoft.svg" },
   { name: "Airbnb", path: "/assets/Home-page/partners/Airbnb.svg" },
   { name: "GoDaddy", path: "/assets/Home-page/partners/godaddy.svg" },
-  { name: "ServiceNow", path: "/assets/Home-page/partners/servicenow.svg" },
+  { name: "ServiceNow", path: "/assets/Home-page/partners/servicenow.png" },
   { name: "NHS Health", path: "/assets/Home-page/partners/NHS.svg" },
   { name: "Costco Wholesale", path: "/assets/Home-page/partners/Costco.svg" },
   { name: "BT Group", path: "/assets/Home-page/partners/BT.svg" },
@@ -83,7 +83,7 @@ export function SystemArchitecture() {
       <div className="absolute top-[20%] left-[-10%] w-[30%] aspect-square bg-[radial-gradient(circle_at_center,rgba(244,63,94,0.03),transparent_70%)] pointer-events-none z-0" />
 
       <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10 flex flex-col items-center">
-        
+
         {/* Top Section: Centered Header & Description */}
         <div className="flex flex-col items-center text-center max-w-3xl mx-auto mb-16">
           <Reveal>
@@ -135,7 +135,7 @@ export function SystemArchitecture() {
               Ecosystem System Layers
             </h3>
           </Reveal>
-          
+
           <div className="flex flex-col gap-3.5 w-full">
             {[
               { title: "Business Outcomes", items: "Growth • Innovation • Efficiency", color: "text-emerald-400 border-emerald-500/20 bg-emerald-500/2" },
@@ -167,7 +167,7 @@ export function SystemArchitecture() {
         <div className="absolute top-0 bottom-0 right-0 w-32 sm:w-64 bg-gradient-to-l from-[#030303] via-[#030303]/80 via-[#030303]/30 to-transparent pointer-events-none z-30" />
 
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 flex flex-col gap-10">
-          
+
           {/* Row 1: Strategic Technology Stack */}
           <div>
             <h4 className="text-xs sm:text-sm font-bold uppercase tracking-[0.2em] text-rose-500 mb-1 text-center">

@@ -36,7 +36,7 @@ export function StrategicAlliances() {
         "Secure Landing Zones (CAF)",
         "Managed Cloud Platform Support"
       ],
-      logo: "/assets/Home-page/Techtools/MSAzure.svg",
+      logo: "/assets/Tech_logos/Microsoft Azure.svg",
       ctaText: "Explore Microsoft Solutions",
       ctaLink: "/ecosystem/partnerships/microsoft",
       icon: <Network size={20} className="text-blue-500" />
@@ -58,7 +58,7 @@ export function StrategicAlliances() {
         "Migration Evaluator Assessments",
         "24x7 SRE Incident Response SLAs"
       ],
-      logo: "/assets/Home-page/Techtools/aws-color.svg",
+      logo: "/assets/Tech_logos/AWS.svg",
       ctaText: "Explore AWS Solutions",
       ctaLink: "/ecosystem/partnerships/aws",
       icon: <Cpu size={20} className="text-orange-500" />
@@ -80,7 +80,7 @@ export function StrategicAlliances() {
         "Google Workspace Security Sweeps",
         "Managed GKE Infrastructure Support"
       ],
-      logo: "/assets/Home-page/Techtools/google-color.svg",
+      logo: "/assets/Tech_logos/Google_Cloud.svg",
       ctaText: "Explore Google Cloud Solutions",
       ctaLink: "/ecosystem/partnerships/gcp",
       icon: <Database size={20} className="text-red-500" />
@@ -102,7 +102,7 @@ export function StrategicAlliances() {
         "Multi-cloud DB System Interconnects",
         "Enterprise ERP Pipeline Automation"
       ],
-      logo: "/assets/Home-page/Techtools/Oracle.svg",
+      logo: "/assets/Tech_logos/Oracle_Cloud.svg",
       ctaText: "Explore Oracle Solutions",
       ctaLink: "/ecosystem/partnerships/oracle",
       icon: <ShieldCheck size={20} className="text-rose-500" />

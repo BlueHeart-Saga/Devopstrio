@@ -127,10 +127,10 @@ export function TechCapabilities() {
               <button
                 key={p.id}
                 onClick={() => setActiveTab(p.id)}
-                className={`flex items-center justify-between p-4.5 rounded-2xl text-left border transition-all duration-300 ${
+                className={`flex items-center justify-between p-5 md:p-6 rounded-2xl text-left border transition-all duration-300 ${
                   activeTab === p.id
                     ? "bg-rose-500/10 text-rose-500 border-rose-500/20 shadow-[0_0_15px_rgba(244,63,94,0.15)]"
-                    : "bg-zinc-950/45 text-zinc-400 border-zinc-900/80 hover:text-zinc-350 hover:bg-zinc-900/40"
+                    : "bg-zinc-950/45 text-zinc-400 border-zinc-900/80 hover:text-zinc-300 hover:bg-zinc-900/40"
                 }`}
               >
                 <div className="flex items-center gap-3">
@@ -140,8 +140,8 @@ export function TechCapabilities() {
                     {p.icon}
                   </div>
                   <div>
-                    <h4 className="text-[11px] font-bold text-white uppercase tracking-wider">{p.name}</h4>
-                    <span className="text-[8px] text-zinc-550 font-mono uppercase font-bold">{p.subtitle}</span>
+                    <h4 className="text-sm md:text-base font-bold text-white uppercase tracking-wider">{p.name}</h4>
+                    <span className="text-xs text-zinc-400 font-mono uppercase font-bold">{p.subtitle}</span>
                   </div>
                 </div>
               </button>
@@ -160,8 +160,8 @@ export function TechCapabilities() {
                 className="bg-zinc-950/40 border border-zinc-900/60 rounded-3xl p-8 backdrop-blur-sm"
               >
                 <div className="border-b border-zinc-900/60 pb-6 mb-8">
-                  <h3 className="text-lg font-bold text-white mb-2">{currentPillar.name}</h3>
-                  <span className="text-xs font-mono font-bold text-rose-500 uppercase tracking-wider">
+                  <h3 className="text-2xl md:text-3xl font-bold text-white mb-3 tracking-tight">{currentPillar.name}</h3>
+                  <span className="text-sm font-mono font-bold text-rose-500 uppercase tracking-wider block">
                     {currentPillar.subtitle}
                   </span>
                 </div>
@@ -169,13 +169,13 @@ export function TechCapabilities() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   {/* Capabilities List */}
                   <div>
-                    <span className="block text-[10px] font-mono font-bold text-rose-500 uppercase tracking-widest mb-4">
+                    <span className="block text-xs font-mono font-bold text-rose-500 uppercase tracking-widest mb-5">
                       CAPABILITIES
                     </span>
-                    <ul className="space-y-3">
+                    <ul className="space-y-4">
                       {currentPillar.capabilities.map((cap) => (
-                        <li key={cap} className="flex items-center gap-2.5 text-xs text-zinc-350 font-semibold">
-                          <span className="w-1.5 h-1.5 rounded-full bg-rose-500 flex-shrink-0" />
+                        <li key={cap} className="flex items-center gap-3 text-sm md:text-base text-zinc-300 font-semibold">
+                          <span className="w-2 h-2 rounded-full bg-rose-500 flex-shrink-0" />
                           <span>{cap}</span>
                         </li>
                       ))}
@@ -184,14 +184,14 @@ export function TechCapabilities() {
 
                   {/* Tools List */}
                   <div>
-                    <span className="block text-[10px] font-mono font-bold text-rose-500 uppercase tracking-widest mb-4">
+                    <span className="block text-xs font-mono font-bold text-rose-500 uppercase tracking-widest mb-5">
                       {currentPillar.toolsLabel}
                     </span>
-                    <div className="flex flex-wrap gap-2.5">
+                    <div className="flex flex-wrap gap-3">
                       {currentPillar.tools.map((tool) => (
                         <span
                           key={tool}
-                          className="px-3 py-1.5 rounded-xl bg-zinc-900 border border-zinc-850 text-[10px] font-mono font-bold text-zinc-300 uppercase tracking-wider"
+                          className="px-4 py-2 rounded-xl bg-zinc-900 border border-zinc-800 text-xs md:text-sm font-mono font-bold text-zinc-200 uppercase tracking-wider"
                         >
                           {tool}
                         </span>

@@ -109,7 +109,7 @@ const sitemapData: SitemapCategory[] = [
       { name: "About Us", href: "/about", desc: "Overview of Devopstrio identity, values, and global presence." },
       { name: "Company Overview", href: "/about/company-overview", desc: "Our founding story, mission, and vision statements." },
       { name: "Leadership & Team", href: "/about/leadership-team", desc: "The expert engineering leads directing Devopstrio." },
-      { name: "Life at Devopstrio", href: "/about/life-at-devopstrio", desc: "A showcase of our work environment and team perks." },
+      { name: "Our Culture & People", href: "/about/our-culture-people", desc: "A showcase of our work environment and team perks." },
       { name: "Global Internship", href: "/about/global-internship", desc: "Launch your technology career with our structured bootcamp program." },
       { name: "Global Presence", href: "/about/global-presence", desc: "Interactive map of our developer hubs and sales offices." },
       { name: "Partnerships & Certifications", href: "/about/partnerships-certifications", desc: "Enterprise certifications that qualify our cloud delivery." },

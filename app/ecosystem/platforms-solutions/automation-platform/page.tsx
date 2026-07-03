@@ -97,7 +97,7 @@ export default function AutomationPlatformPage() {
             </p>
           </Reveal>
           <Reveal delay={0.2} className="max-w-3xl mx-auto mb-10">
-            <p className="text-zinc-400 text-xs md:text-sm lg:text-base leading-relaxed font-bold">
+            <p className="text-zinc-200 text-sm md:text-base lg:text-lg leading-relaxed font-medium">
               Orchestrate multi-system tasks, build HR/IT approval routes, verify webhook parameters, and deploy decision engines.
             </p>
           </Reveal>
@@ -121,9 +121,9 @@ export default function AutomationPlatformPage() {
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             <div className="lg:col-span-5">
-              <span className="text-[11px] font-mono text-rose-500 uppercase tracking-[0.2em] block mb-4 font-bold">ORCHESTRATION CORE</span>
-              <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight mb-6">Workflow Orchestration</h2>
-              <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-medium">
+              <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">ORCHESTRATION CORE</span>
+              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">Workflow Orchestration</h2>
+              <p className="text-zinc-300 text-base md:text-lg leading-relaxed font-medium">
                 Run stateful workflow executions, track retry counters, and route event payloads reliably using robust orchestrators.
               </p>
             </div>
@@ -157,9 +157,9 @@ export default function AutomationPlatformPage() {
               ))}
             </div>
             <div className="lg:col-span-5 lg:order-1">
-              <span className="text-[11px] font-mono text-rose-500 uppercase tracking-[0.2em] block mb-4 font-bold">BUSINESS LOGIC</span>
-              <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight mb-6">Business Automation</h2>
-              <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-medium">
+              <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">BUSINESS LOGIC</span>
+              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">Business Automation</h2>
+              <p className="text-zinc-300 text-base md:text-lg leading-relaxed font-medium">
                 Deploy templates automation routing tasks across divisions. Connect databases and system tools to prevent manual copying work.
               </p>
             </div>
@@ -172,9 +172,9 @@ export default function AutomationPlatformPage() {
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             <div className="lg:col-span-5">
-              <span className="text-[11px] font-mono text-rose-500 uppercase tracking-[0.2em] block mb-4 font-bold">API ROUTERS</span>
-              <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight mb-6">Integration Hub</h2>
-              <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-medium">
+              <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">API ROUTERS</span>
+              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">Integration Hub</h2>
+              <p className="text-zinc-300 text-base md:text-lg leading-relaxed font-medium">
                 Unify service links. Secure external API connections, catalog parameters, and listen to callback signals in one central hub.
               </p>
             </div>
@@ -208,9 +208,9 @@ export default function AutomationPlatformPage() {
               ))}
             </div>
             <div className="lg:col-span-5 lg:order-1">
-              <span className="text-[11px] font-mono text-rose-500 uppercase tracking-[0.2em] block mb-4 font-bold">SLA ANALYTICS</span>
-              <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight mb-6">Process Intelligence</h2>
-              <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-medium">
+              <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">SLA ANALYTICS</span>
+              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">Process Intelligence</h2>
+              <p className="text-zinc-300 text-base md:text-lg leading-relaxed font-medium">
                 Monitor task duration lists, capture bottleneck steps, track operational errors, and chart performance results.
               </p>
             </div>
@@ -223,9 +223,9 @@ export default function AutomationPlatformPage() {
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             <div className="lg:col-span-5">
-              <span className="text-[11px] font-mono text-rose-500 uppercase tracking-[0.2em] block mb-4 font-bold">DECISION AI</span>
-              <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight mb-6">AI Automation</h2>
-              <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-medium">
+              <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">DECISION AI</span>
+              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">AI Automation</h2>
+              <p className="text-zinc-300 text-base md:text-lg leading-relaxed font-medium">
                 Deploy reasoning agents to parse text inputs, solve transactional tasks, and orchestrate workflow routes autonomously.
               </p>
             </div>
@@ -247,8 +247,8 @@ export default function AutomationPlatformPage() {
       <section className="w-full py-28 bg-black border-b border-zinc-900/60 relative">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
           <Reveal className="mb-16 text-center">
-            <span className="text-[11px] font-mono text-rose-500 uppercase tracking-[0.2em] block mb-4 font-bold">BLUEPRINT</span>
-            <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight">Automation Architecture</h2>
+            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">BLUEPRINT</span>
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">Automation Architecture</h2>
           </Reveal>
 
           <div className="max-w-3xl mx-auto bg-zinc-950/40 border border-zinc-900/80 rounded-3xl p-8 lg:p-12 relative overflow-hidden font-mono text-xs hover:border-rose-500/20 transition-all duration-500 shadow-2xl">
@@ -286,8 +286,8 @@ export default function AutomationPlatformPage() {
       <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60 relative">
         <div className="max-w-4xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="mb-16 text-center">
-            <span className="text-[11px] font-mono text-rose-500 uppercase tracking-[0.2em] block mb-4 font-bold">FAQ</span>
-            <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight">
+            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">FAQ</span>
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">
               Frequently Asked Questions
             </h2>
           </Reveal>
@@ -319,7 +319,7 @@ export default function AutomationPlatformPage() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[300px] bg-[radial-gradient(circle_at_center,rgba(225,29,72,0.025),transparent_60%)] pointer-events-none" />
         <div className="max-w-3xl mx-auto px-12 xl:px-8 relative z-10">
           <h2 className="text-3xl md:text-5xl font-black mb-6 tracking-tight">Orchestrate Business Rules</h2>
-          <p className="text-zinc-400 text-xs md:text-sm font-bold mb-10 max-w-lg mx-auto leading-relaxed">
+          <p className="text-zinc-300 text-sm md:text-base font-medium mb-10 max-w-lg mx-auto leading-relaxed">
             Connect with our system engineers to map workflow checkpoints and logic pathways.
           </p>
           <Link

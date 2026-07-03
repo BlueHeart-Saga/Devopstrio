@@ -104,7 +104,7 @@ export default function CustomerExperiencePlatformPage() {
             </p>
           </Reveal>
           <Reveal delay={0.2} className="max-w-3xl mx-auto mb-10">
-            <p className="text-zinc-400 text-xs md:text-sm lg:text-base leading-relaxed font-bold">
+            <p className="text-zinc-200 text-sm md:text-base lg:text-lg leading-relaxed font-medium">
               Unify support channels, embed conversational AI widgets, coordinate ticket queues, analyze customer behavior, and scale NPS ratings.
             </p>
           </Reveal>
@@ -128,9 +128,9 @@ export default function CustomerExperiencePlatformPage() {
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             <div className="lg:col-span-5">
-              <span className="text-[11px] font-mono text-rose-500 uppercase tracking-[0.2em] block mb-4 font-bold">CHANNEL CORE</span>
-              <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight mb-6">Customer Engagement Hub</h2>
-              <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-medium">
+              <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">CHANNEL CORE</span>
+              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">Customer Engagement Hub</h2>
+              <p className="text-zinc-300 text-base md:text-lg leading-relaxed font-medium">
                 Coordinate customer interactions across email, SMS, and web portal channels, sending notifications automatically.
               </p>
             </div>
@@ -164,9 +164,9 @@ export default function CustomerExperiencePlatformPage() {
               ))}
             </div>
             <div className="lg:col-span-5 lg:order-1">
-              <span className="text-[11px] font-mono text-rose-500 uppercase tracking-[0.2em] block mb-4 font-bold">CHATBOT AGENTS</span>
-              <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight mb-6">Conversational AI</h2>
-              <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-medium">
+              <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">CHATBOT AGENTS</span>
+              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">Conversational AI</h2>
+              <p className="text-zinc-300 text-base md:text-lg leading-relaxed font-medium">
                 Deploy conversational assistants to solve user queries, connect to knowledge bases, and resolve billing inquiries.
               </p>
             </div>
@@ -179,9 +179,9 @@ export default function CustomerExperiencePlatformPage() {
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             <div className="lg:col-span-5">
-              <span className="text-[11px] font-mono text-rose-500 uppercase tracking-[0.2em] block mb-4 font-bold">TICKET PIPELINES</span>
-              <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight mb-6">Customer Service Operations</h2>
-              <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-medium">
+              <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">TICKET PIPELINES</span>
+              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">Customer Service Operations</h2>
+              <p className="text-zinc-300 text-base md:text-lg leading-relaxed font-medium">
                 Organize incoming support cases, monitor response timer metrics, and route issues to engineering teams.
               </p>
             </div>
@@ -215,9 +215,9 @@ export default function CustomerExperiencePlatformPage() {
               ))}
             </div>
             <div className="lg:col-span-5 lg:order-1">
-              <span className="text-[11px] font-mono text-rose-500 uppercase tracking-[0.2em] block mb-4 font-bold">USER METRICS</span>
-              <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight mb-6">Customer Intelligence</h2>
-              <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-medium">
+              <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">USER METRICS</span>
+              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">Customer Intelligence</h2>
+              <p className="text-zinc-300 text-base md:text-lg leading-relaxed font-medium">
                 Map typical user journeys, build detailed buyer profiles, and highlight portal features usage statistics.
               </p>
             </div>
@@ -230,9 +230,9 @@ export default function CustomerExperiencePlatformPage() {
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             <div className="lg:col-span-5">
-              <span className="text-[11px] font-mono text-rose-500 uppercase tracking-[0.2em] block mb-4 font-bold">CAMPAIGN METRICS</span>
-              <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight mb-6">Marketing & Engagement</h2>
-              <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-medium">
+              <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">CAMPAIGN METRICS</span>
+              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">Marketing & Engagement</h2>
+              <p className="text-zinc-300 text-base md:text-lg leading-relaxed font-medium">
                 Trigger campaign emails on system signups, segment accounts by monthly spending thresholds, and personalize visual assets.
               </p>
             </div>
@@ -254,8 +254,8 @@ export default function CustomerExperiencePlatformPage() {
       <section className="w-full py-28 bg-black border-b border-zinc-900/60 relative">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
           <Reveal className="mb-16 text-center">
-            <span className="text-[11px] font-mono text-rose-500 uppercase tracking-[0.2em] block mb-4 font-bold">SCORECARDS</span>
-            <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight">Experience Analytics</h2>
+            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">SCORECARDS</span>
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">Experience Analytics</h2>
           </Reveal>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 select-none font-mono text-xs text-center mb-16">
@@ -298,8 +298,8 @@ export default function CustomerExperiencePlatformPage() {
       <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60 relative">
         <div className="max-w-4xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="mb-16 text-center">
-            <span className="text-[11px] font-mono text-rose-500 uppercase tracking-[0.2em] block mb-4 font-bold">FAQ</span>
-            <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight">
+            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">FAQ</span>
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">
               Frequently Asked Questions
             </h2>
           </Reveal>
@@ -331,7 +331,7 @@ export default function CustomerExperiencePlatformPage() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[300px] bg-[radial-gradient(circle_at_center,rgba(225,29,72,0.025),transparent_60%)] pointer-events-none" />
         <div className="max-w-3xl mx-auto px-12 xl:px-8 relative z-10">
           <h2 className="text-3xl md:text-5xl font-black mb-6 tracking-tight">Elevate Customer Journeys</h2>
-          <p className="text-zinc-400 text-xs md:text-sm font-bold mb-10 max-w-lg mx-auto leading-relaxed">
+          <p className="text-zinc-300 text-sm md:text-base font-medium mb-10 max-w-lg mx-auto leading-relaxed">
             Connect with our experience designers to audit your customer workflows and portal layout metrics.
           </p>
           <Link

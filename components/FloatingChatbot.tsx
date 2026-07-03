@@ -16,13 +16,52 @@ export function FloatingChatbot() {
   // Recent Searches State
   const [recentSearches, setRecentSearches] = useState<string[]>([]);
 
+  // Tooltip/Intro State
+  const [showTooltip, setShowTooltip] = useState(false);
+  const [tooltipStep, setTooltipStep] = useState(0);
+
+  useEffect(() => {
+    // 15 seconds delay before showing the first bubble
+    const timer = setTimeout(() => {
+      setShowTooltip(true);
+      setTooltipStep(1);
+    }, 15000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
+    if (showTooltip) {
+      if (tooltipStep === 1) {
+        const t2 = setTimeout(() => setTooltipStep(2), 1000);
+        return () => clearTimeout(t2);
+      } else if (tooltipStep === 2) {
+        const t3 = setTimeout(() => setTooltipStep(3), 1500);
+        return () => clearTimeout(t3);
+      } else if (tooltipStep === 3) {
+        // Automatically hide the entire tooltip stack 8 seconds after the last bubble appears
+        const t4 = setTimeout(() => {
+          setShowTooltip(false);
+        }, 8000);
+        return () => clearTimeout(t4);
+      }
+    }
+  }, [showTooltip, tooltipStep]);
+
+  // Hide tooltip when chatbot is opened
+  useEffect(() => {
+    if (isOpen) {
+      setShowTooltip(false);
+    }
+  }, [isOpen]);
+
   useEffect(() => {
     try {
       const saved = localStorage.getItem("echoRecentSearches");
       if (saved) {
         setRecentSearches(JSON.parse(saved));
       } else {
-        setRecentSearches(["Recommendation for enterprise...", "How should I architect my AWS..."]);
+        setRecentSearches(["Optimize AWS infrastructure best practices", "Modern DevOps & Platform Engineering solutions"]);
       }
     } catch(e) {}
   }, []);
@@ -78,6 +117,63 @@ export function FloatingChatbot() {
               className="w-24 h-24 md:w-28 md:h-28 object-contain drop-shadow-[0_15px_25px_rgba(0,0,0,0.6)]" 
             />
           </motion.button>
+        )}
+      </AnimatePresence>
+
+      {/* Speech Bubble Tooltips */}
+      <AnimatePresence>
+        {!isOpen && showTooltip && (
+          <div className="fixed bottom-28 left-8 z-[101] flex flex-col gap-2 max-w-[280px] items-start select-none">
+            {/* Dismiss Button */}
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                setShowTooltip(false);
+              }}
+              className="self-end p-1.5 rounded-full bg-zinc-950/80 border border-zinc-800 text-zinc-400 hover:text-white transition-colors hover:scale-105 active:scale-95 shadow-lg"
+            >
+              <X size={10} />
+            </button>
+            
+            {/* Clickable Speech Bubble Stack */}
+            <div 
+              onClick={() => setIsOpen(true)}
+              className="flex flex-col gap-2 items-start cursor-pointer hover:opacity-95 transition-opacity"
+            >
+              {tooltipStep >= 1 && (
+                <motion.div
+                  initial={{ opacity: 0, y: 12, scale: 0.9 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                  className="bg-white text-zinc-950 px-4 py-2.5 rounded-2xl rounded-bl-sm text-xs sm:text-sm font-semibold shadow-[0_8px_30px_rgba(0,0,0,0.15)] border border-zinc-100/50"
+                >
+                  Hi! Welcome to Devopstrio.
+                </motion.div>
+              )}
+              
+              {tooltipStep >= 2 && (
+                <motion.div
+                  initial={{ opacity: 0, y: 12, scale: 0.9 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                  className="bg-white text-zinc-950 px-4 py-2.5 rounded-2xl rounded-bl-sm text-xs sm:text-sm font-semibold shadow-[0_8px_30px_rgba(0,0,0,0.15)] border border-zinc-100/50"
+                >
+                  I'm Echo, your cloud & DevOps guide.
+                </motion.div>
+              )}
+              
+              {tooltipStep >= 3 && (
+                <motion.div
+                  initial={{ opacity: 0, y: 12, scale: 0.9 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                  className="bg-white text-zinc-950 px-4 py-2.5 rounded-2xl rounded-bl-sm text-xs sm:text-sm font-semibold shadow-[0_8px_30px_rgba(0,0,0,0.15)] border border-zinc-100/50"
+                >
+                  How can we help accelerate your team today?
+                </motion.div>
+              )}
+            </div>
+          </div>
         )}
       </AnimatePresence>
 

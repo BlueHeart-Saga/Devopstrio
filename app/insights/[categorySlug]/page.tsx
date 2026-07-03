@@ -70,7 +70,7 @@ export async function generateMetadata({ params }: CategoryPageProps): Promise<M
     .join(" ");
 
   try {
-    const allPosts = await insightsApi.getAllPosts(100);
+    const allPosts = await insightsApi.getAllPosts();
     const filtered = allPosts.filter(
       (p) => p.category && p.category.slug === categorySlug
     );
@@ -95,7 +95,7 @@ export default async function CategoryLandingPage({ params }: CategoryPageProps)
   let categoryName = "";
 
   try {
-    const allPosts = await insightsApi.getAllPosts(100);
+    const allPosts = await insightsApi.getAllPosts();
     posts = allPosts.filter(
       (p) => p.category && p.category.slug === categorySlug
     );
@@ -112,19 +112,12 @@ export default async function CategoryLandingPage({ params }: CategoryPageProps)
     console.error("Failed to load category posts:", err);
   }
 
-  // Sort posts: featured first, then by views descending
+  // Sort posts: featured first, then by date descending
   const sortedPosts = [...posts].sort((a, b) => {
     if (a.featured && !b.featured) return -1;
     if (!a.featured && b.featured) return 1;
-    return (b.views || 0) - (a.views || 0);
+    return new Date(b.date).getTime() - new Date(a.date).getTime();
   });
-
-  // Select top posts (up to 5) for featured carousel
-  const featuredPosts = sortedPosts.slice(0, 5);
-
-  // Remaining posts for the list below
-  const listPosts = posts.filter((p) => !featuredPosts.some((f) => f.id === p.id));
-  const adjacentPosts = listPosts.length > 0 ? listPosts : posts;
 
   const breadcrumbs = [
     { name: "Home", item: "/" },
@@ -152,11 +145,11 @@ export default async function CategoryLandingPage({ params }: CategoryPageProps)
       ) : (
         <div className="space-y-12">
           <CategoryFeatured 
-            posts={featuredPosts} 
+            posts={sortedPosts} 
             categorySlug={categorySlug} 
           />
           <CategoryList 
-            posts={adjacentPosts} 
+            posts={sortedPosts} 
             categorySlug={categorySlug} 
           />
         </div>

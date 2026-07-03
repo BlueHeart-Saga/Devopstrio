@@ -41,18 +41,49 @@ export function ContactForm() {
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => setForm((prev) => ({ ...prev, [k]: e.target.value }));
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!form.name || !form.email) return;
     setSubmitting(true);
-    setTimeout(() => {
+    
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          ...form,
+          selectedServices,
+        }),
+      });
+
+      if (response.ok) {
+        setForm({ name: "", email: "", phone: "", message: "" });
+        setSelectedServices([]);
+        setSubmitted(true);
+      } else {
+        alert("Failed to send message. Please try again.");
+      }
+    } catch (error) {
+      console.error(error);
+      alert("An error occurred. Please try again.");
+    } finally {
       setSubmitting(false);
-      setSubmitted(true);
-    }, 1400);
+    }
   };
 
+  React.useEffect(() => {
+    const handleHash = () => {
+      if (window.location.hash === '#contact-form') {
+        setShowForm(true);
+      }
+    };
+    handleHash();
+    window.addEventListener('hashchange', handleHash);
+    return () => window.removeEventListener('hashchange', handleHash);
+  }, []);
+
   return (
-    <section className="w-full min-h-[700px] bg-[#1a1a1c] py-16 md:py-24 flex items-center justify-center font-sans relative overflow-hidden">
+    <section id="contact-form" className="w-full min-h-[700px] bg-[#030303] py-16 md:py-24 flex items-center justify-center font-sans relative overflow-hidden">
       
       <div className="w-full max-w-[1100px] mx-auto px-6 relative z-10 [perspective:1500px]">
         
@@ -79,32 +110,32 @@ export function ContactForm() {
               animate={{ rotateX: 0, opacity: 1 }}
               exit={{ rotateX: -90, opacity: 0 }}
               transition={{ duration: 0.5, ease: "easeInOut" }}
-              className="w-full bg-[#FAFAFA] rounded-3xl overflow-hidden flex flex-col items-center justify-center min-h-[450px] shadow-2xl relative p-10 md:p-16 text-center transform-gpu"
+              className="w-full bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl overflow-hidden flex flex-col items-center justify-center min-h-[450px] shadow-2xl relative p-10 md:p-16 text-center transform-gpu"
             >
-              <h2 className="text-4xl md:text-6xl lg:text-[76px] font-medium text-black tracking-tight mb-6 leading-[1.05]">
+              <h2 className="text-4xl md:text-6xl lg:text-[76px] font-medium text-white tracking-tight mb-6 leading-[1.05]">
                 Fuelling
-                <svg className="inline-block mx-2 md:mx-4 w-10 md:w-16 lg:w-20 h-auto text-rose-500 -mt-3" viewBox="0 0 46 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg className="inline-block mx-2 md:mx-4 w-10 md:w-16 lg:w-20 h-auto text-rose-500 -mt-3 drop-shadow-[0_0_15px_rgba(225,29,72,0.3)]" viewBox="0 0 46 29" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M2.5 26.5L14.5 14.5L25.5 21.5L43.5 3.5M43.5 3.5H30.5M43.5 3.5V16.5" stroke="currentColor" strokeWidth="5" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
                 growth<br/>with every deployment
               </h2>
-              <p className="text-zinc-500 text-base md:text-lg lg:text-xl font-medium max-w-2xl mb-12">
+              <p className="text-zinc-400 text-base md:text-lg lg:text-xl font-medium max-w-2xl mb-12">
                 From cloud architecture to AI automation, we craft enterprise solutions that scale your business on autopilot.
               </p>
               <div className="flex flex-col sm:flex-row items-center gap-6">
                 <button 
                   onClick={() => setShowForm(true)}
-                  className="px-8 py-4 bg-[#111] text-white rounded-full text-sm md:text-base font-bold shadow-[0_15px_30px_rgba(0,0,0,0.2)] hover:scale-105 hover:bg-black hover:shadow-[0_20px_40px_rgba(0,0,0,0.3)] transition-all"
+                  className="px-8 py-4 bg-white text-black rounded-full text-sm md:text-base font-bold shadow-[0_15px_30px_rgba(255,255,255,0.1)] hover:scale-105 hover:bg-zinc-200 hover:shadow-[0_20px_40px_rgba(255,255,255,0.15)] transition-all"
                 >
                   Start a conversation
                 </button>
                 <button 
                   onClick={() => setShowForm(true)}
-                  className="flex items-center gap-2.5 px-6 py-4 text-black text-sm md:text-base font-bold hover:opacity-70 transition-opacity"
+                  className="flex items-center gap-2.5 px-6 py-4 text-white text-sm md:text-base font-bold hover:text-rose-400 transition-colors group"
                 >
-                  <div className="w-9 h-9 rounded-full border border-black/15 flex items-center justify-center flex-shrink-0">
+                  <div className="w-9 h-9 rounded-full border border-white/20 bg-white/5 flex items-center justify-center flex-shrink-0 group-hover:border-rose-500/50 group-hover:bg-rose-500/10 transition-colors">
                     <svg width="10" height="12" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg" className="ml-0.5">
-                      <path d="M13.2001 7.15174C13.8562 7.53818 13.8562 8.46182 13.2001 8.84826L1.87943 15.5147C1.21175 15.908 0.368307 15.4265 0.368307 14.6664L0.368307 1.33355C0.368307 0.573539 1.21175 0.0919934 1.87943 0.485303L13.2001 7.15174Z" fill="black"/>
+                      <path d="M13.2001 7.15174C13.8562 7.53818 13.8562 8.46182 13.2001 8.84826L1.87943 15.5147C1.21175 15.908 0.368307 15.4265 0.368307 14.6664L0.368307 1.33355C0.368307 0.573539 1.21175 0.0919934 1.87943 0.485303L13.2001 7.15174Z" fill="currentColor"/>
                     </svg>
                   </div>
                   Learn more
@@ -118,7 +149,7 @@ export function ContactForm() {
               animate={{ rotateX: 0, opacity: 1 }}
               exit={{ rotateX: -90, opacity: 0 }}
               transition={{ duration: 0.5, ease: "easeInOut" }}
-              className="w-full bg-[#131313] rounded-3xl overflow-hidden flex flex-col lg:flex-row min-h-[600px] shadow-2xl relative transform-gpu"
+              className="w-full bg-[#131313] rounded-3xl overflow-hidden flex flex-col lg:flex-row min-h-[500px] shadow-2xl relative transform-gpu"
             >
               
               {/* Close Button Top Right */}
@@ -165,8 +196,8 @@ export function ContactForm() {
             </div>
 
             {/* Bottom area: Title + Socials */}
-            <div className="z-10 mt-16 lg:mt-0 backdrop-blur-sm">
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight text-white mb-10 leading-[1.05]">
+            <div className="z-10 mt-12 lg:mt-0 backdrop-blur-sm">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight text-white mb-6 leading-[1.05]">
                 Every project<br/>starts with a plan.
               </h2>
               
@@ -189,7 +220,7 @@ export function ContactForm() {
 
 
           {/* RIGHT SIDE: Dark Form Area */}
-          <div className="w-full lg:w-[55%] p-8 md:p-12 lg:p-16 flex flex-col justify-center bg-[#131313]">
+          <div className="w-full lg:w-[55%] p-6 md:p-8 lg:p-10 flex flex-col justify-center bg-[#131313]">
             
             {submitted ? (
               <div className="flex flex-col items-center justify-center h-full text-center fade-in">
@@ -201,16 +232,16 @@ export function ContactForm() {
                 </button>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="w-full max-w-[400px] mx-auto lg:ml-6 flex flex-col gap-8">
+              <form onSubmit={handleSubmit} className="w-full max-w-[400px] mx-auto lg:ml-6 flex flex-col gap-6">
                 
                 {/* Heading & Services */}
                 <div>
-                  <h3 className="text-3xl md:text-4xl font-normal text-white/40 leading-[1.1] mb-8 tracking-tight">
+                  <h3 className="text-3xl md:text-4xl font-normal text-white/40 leading-[1.1] mb-5 tracking-tight">
                     What services<br/>
                     <span className="text-white">we can support<br/>you with?</span>
                   </h3>
                   
-                  <p className="text-[12px] text-white/60 mb-5 font-medium tracking-wide">I would love to partner with Devopstrio on...</p>
+                  <p className="text-[12px] text-white/60 mb-3 font-medium tracking-wide">I would love to partner with Devopstrio on...</p>
                   <div className="flex flex-wrap gap-2.5">
                     {devopstrioServices.map((s) => (
                       <button
@@ -230,8 +261,8 @@ export function ContactForm() {
                 </div>
 
                 {/* Minimalist Inputs */}
-                <div className="flex flex-col gap-5 mt-2">
-                  <div className="relative border-b border-white/20 pb-2.5 focus-within:border-[#ebd0be] transition-colors">
+                <div className="flex flex-col gap-4 mt-1">
+                  <div className="relative border-b border-white/20 pb-2 focus-within:border-[#ebd0be] transition-colors">
                     <input
                       required
                       value={form.name}
@@ -240,7 +271,7 @@ export function ContactForm() {
                       className="w-full bg-transparent outline-none text-white text-[13px] placeholder-white/30 font-light"
                     />
                   </div>
-                  <div className="relative border-b border-white/20 pb-2.5 focus-within:border-[#ebd0be] transition-colors">
+                  <div className="relative border-b border-white/20 pb-2 focus-within:border-[#ebd0be] transition-colors">
                     <input
                       required
                       type="email"
@@ -250,7 +281,7 @@ export function ContactForm() {
                       className="w-full bg-transparent outline-none text-white text-[13px] placeholder-white/30 font-light"
                     />
                   </div>
-                  <div className="relative border-b border-white/20 pb-2.5 focus-within:border-[#ebd0be] transition-colors">
+                  <div className="relative border-b border-white/20 pb-2 focus-within:border-[#ebd0be] transition-colors">
                     <input
                       value={form.phone}
                       onChange={set("phone")}
@@ -258,7 +289,7 @@ export function ContactForm() {
                       className="w-full bg-transparent outline-none text-white text-[13px] placeholder-white/30 font-light"
                     />
                   </div>
-                  <div className="relative border-b border-white/20 pb-2.5 focus-within:border-[#ebd0be] transition-colors">
+                  <div className="relative border-b border-white/20 pb-2 focus-within:border-[#ebd0be] transition-colors">
                     <input
                       required
                       value={form.message}

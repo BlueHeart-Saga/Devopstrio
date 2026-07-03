@@ -108,7 +108,7 @@ export default function EuropeHubPage() {
             <p className="text-xl md:text-2xl font-bold text-rose-500 mb-6">
               GDPR Data Privacy Audits, Regional Cloud Hosting & European Compliance.
             </p>
-            <p className="text-zinc-400 text-xs md:text-sm lg:text-base leading-relaxed font-bold">
+            <p className="text-zinc-200 text-sm md:text-base lg:text-lg leading-relaxed font-medium">
               Maintain data sovereignty, satisfy GDPR data compliance audits, and deploy to European cloud host locations.
             </p>
           </Reveal>
@@ -130,8 +130,8 @@ export default function EuropeHubPage() {
       <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60 relative">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="mb-16 text-center">
-            <span className="text-[11px] font-mono text-rose-500 uppercase tracking-[0.2em] block mb-4 font-bold">INFRASTRUCTURE</span>
-            <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight">European Hosting</h2>
+            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">INFRASTRUCTURE</span>
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">European Hosting</h2>
           </Reveal>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {hostingSites.map((site, idx) => (
@@ -140,7 +140,7 @@ export default function EuropeHubPage() {
                   <span className="text-[9px] font-mono text-rose-500 uppercase font-bold tracking-wider mb-2 block">{site.label}</span>
                   <h4 className="text-lg font-bold text-white mb-2">{site.city}</h4>
                 </div>
-                <p className="text-xs text-zinc-400 font-bold leading-relaxed">{site.desc}</p>
+                <p className="text-sm text-zinc-300 font-medium leading-relaxed">{site.desc}</p>
               </div>
             ))}
           </div>
@@ -151,8 +151,8 @@ export default function EuropeHubPage() {
       <section className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="mb-16 text-center">
-            <span className="text-[11px] font-mono text-rose-500 uppercase tracking-[0.2em] block mb-4 font-bold">REGULATION</span>
-            <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight">Data Compliance</h2>
+            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">REGULATION</span>
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">Data Compliance</h2>
           </Reveal>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {compliancePillars.map((pillar, idx) => (
@@ -160,8 +160,8 @@ export default function EuropeHubPage() {
                 <div className="w-8 h-8 rounded-lg bg-rose-500/10 flex items-center justify-center mb-4">
                   <FileCheck className="w-4 h-4 text-rose-500" />
                 </div>
-                <h4 className="text-sm font-bold text-white mb-2">{pillar.title}</h4>
-                <p className="text-xs text-zinc-400 font-bold leading-relaxed">{pillar.desc}</p>
+                <h4 className="text-base font-bold text-white mb-2">{pillar.title}</h4>
+                <p className="text-sm text-zinc-300 font-medium leading-relaxed">{pillar.desc}</p>
               </div>
             ))}
           </div>
@@ -173,9 +173,9 @@ export default function EuropeHubPage() {
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             <div className="lg:col-span-5">
-              <span className="text-[11px] font-mono text-rose-500 uppercase tracking-[0.2em] block mb-4 font-bold">LOCALIZATION</span>
-              <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight mb-6">Regional Hosting</h2>
-              <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-medium">
+              <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">LOCALIZATION</span>
+              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">Regional Hosting</h2>
+              <p className="text-zinc-300 text-base md:text-lg leading-relaxed font-medium">
                 Optimized endpoints lower ping counts and guarantee that cloud storage stays local.
               </p>
             </div>
@@ -195,8 +195,8 @@ export default function EuropeHubPage() {
       <section className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="mb-16 text-center">
-            <span className="text-[11px] font-mono text-rose-500 uppercase tracking-[0.2em] block mb-4 font-bold">ADVISORY</span>
-            <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight">Consulting Services</h2>
+            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">ADVISORY</span>
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">Consulting Services</h2>
           </Reveal>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {consultingServices.map((c, idx) => (
@@ -204,8 +204,8 @@ export default function EuropeHubPage() {
                 <div className="w-8 h-8 rounded-lg bg-rose-500/10 flex items-center justify-center mb-4">
                   <ShieldCheck className="w-4 h-4 text-rose-500" />
                 </div>
-                <h4 className="text-sm font-bold text-white mb-2">{c.title}</h4>
-                <p className="text-xs text-zinc-400 font-bold leading-relaxed">{c.desc}</p>
+                <h4 className="text-base font-bold text-white mb-2">{c.title}</h4>
+                <p className="text-sm text-zinc-300 font-medium leading-relaxed">{c.desc}</p>
               </div>
             ))}
           </div>
@@ -225,9 +225,9 @@ export default function EuropeHubPage() {
               ))}
             </div>
             <div className="lg:col-span-5 lg:order-1">
-              <span className="text-[11px] font-mono text-rose-500 uppercase tracking-[0.2em] block mb-4 font-bold">SEGREGATION</span>
-              <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight mb-6">Zero-Trust Networking</h2>
-              <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-medium">
+              <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">SEGREGATION</span>
+              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">Zero-Trust Networking</h2>
+              <p className="text-zinc-300 text-base md:text-lg leading-relaxed font-medium">
                 We secure connection pathways, preventing unauthorized cross-border traffic flows.
               </p>
             </div>
@@ -239,8 +239,8 @@ export default function EuropeHubPage() {
       <section className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="mb-16 text-center">
-            <span className="text-[11px] font-mono text-rose-500 uppercase tracking-[0.2em] block mb-4 font-bold">COMPLIANCE STATS</span>
-            <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight">Compliance Metrics</h2>
+            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">COMPLIANCE STATS</span>
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">Compliance Metrics</h2>
           </Reveal>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
             {metrics.map((m, idx) => (
@@ -257,8 +257,8 @@ export default function EuropeHubPage() {
       <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60 relative">
         <div className="max-w-4xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="mb-16 text-center">
-            <span className="text-[11px] font-mono text-rose-500 uppercase tracking-[0.2em] block mb-4 font-bold">FAQ</span>
-            <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight">
+            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">FAQ</span>
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">
               Frequently Asked Questions
             </h2>
           </Reveal>
@@ -290,7 +290,7 @@ export default function EuropeHubPage() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[300px] bg-[radial-gradient(circle_at_center,rgba(225,29,72,0.025),transparent_60%)] pointer-events-none" />
         <div className="max-w-3xl mx-auto px-12 xl:px-8 relative z-10">
           <h2 className="text-3xl md:text-5xl font-black mb-6 tracking-tight">Lock Down Your EU Workloads</h2>
-          <p className="text-zinc-400 text-xs md:text-sm font-bold mb-10 max-w-lg mx-auto leading-relaxed">
+          <p className="text-zinc-300 text-sm md:text-base font-medium mb-10 max-w-lg mx-auto leading-relaxed">
             Partner with our compliance team to design sovereign cloud platforms inside Europe.
           </p>
           <Link

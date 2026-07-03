@@ -108,7 +108,7 @@ export default function UnitedKingdomHubPage() {
             <p className="text-xl md:text-2xl font-bold text-rose-500 mb-6">
               Strategic Consulting, Architecture and Enterprise Transformation Services.
             </p>
-            <p className="text-zinc-400 text-xs md:text-sm lg:text-base leading-relaxed font-bold">
+            <p className="text-zinc-200 text-sm md:text-base lg:text-lg leading-relaxed font-medium">
               Deploy UK solutions architects onshore to design compliant landing zones, audit infrastructure safety, and host executive design workshops.
             </p>
           </Reveal>
@@ -130,8 +130,8 @@ export default function UnitedKingdomHubPage() {
       <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60 relative">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="mb-16 text-center">
-            <span className="text-[11px] font-mono text-rose-500 uppercase tracking-[0.2em] block mb-4 font-bold">OFFICES</span>
-            <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight">UK Presence</h2>
+            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">OFFICES</span>
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">UK Presence</h2>
           </Reveal>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {offices.map((office, idx) => (
@@ -155,9 +155,9 @@ export default function UnitedKingdomHubPage() {
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             <div className="lg:col-span-5">
-              <span className="text-[11px] font-mono text-rose-500 uppercase tracking-[0.2em] block mb-4 font-bold">PRACTICES</span>
-              <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight mb-6">Consulting Services</h2>
-              <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-medium">
+              <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">PRACTICES</span>
+              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">Consulting Services</h2>
+              <p className="text-zinc-300 text-base md:text-lg leading-relaxed font-medium">
                 Our advisors audit legacy software patterns and design target cloud architectures.
               </p>
             </div>
@@ -177,8 +177,8 @@ export default function UnitedKingdomHubPage() {
       <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60 relative">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="mb-16 text-center">
-            <span className="text-[11px] font-mono text-rose-500 uppercase tracking-[0.2em] block mb-4 font-bold">COLLABORATION</span>
-            <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight">Client Experience Centre</h2>
+            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">COLLABORATION</span>
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">Client Experience Centre</h2>
           </Reveal>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {workshops.map((w, idx) => (
@@ -186,8 +186,8 @@ export default function UnitedKingdomHubPage() {
                 <div className="w-8 h-8 rounded-lg bg-rose-500/10 flex items-center justify-center mb-4">
                   <Briefcase className="w-4 h-4 text-rose-500" />
                 </div>
-                <h4 className="text-sm font-bold text-white mb-2">{w.title}</h4>
-                <p className="text-xs text-zinc-400 font-bold leading-relaxed">{w.desc}</p>
+                <h4 className="text-base font-bold text-white mb-2">{w.title}</h4>
+                <p className="text-sm text-zinc-300 font-medium leading-relaxed">{w.desc}</p>
               </div>
             ))}
           </div>
@@ -207,9 +207,9 @@ export default function UnitedKingdomHubPage() {
               ))}
             </div>
             <div className="lg:col-span-5 lg:order-1">
-              <span className="text-[11px] font-mono text-rose-500 uppercase tracking-[0.2em] block mb-4 font-bold">SECTOR ALIGNMENT</span>
-              <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight mb-6">Industry Coverage</h2>
-              <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-medium">
+              <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">SECTOR ALIGNMENT</span>
+              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">Industry Coverage</h2>
+              <p className="text-zinc-300 text-base md:text-lg leading-relaxed font-medium">
                 We align systems design with regulations, keeping databases secure and audits compliant.
               </p>
             </div>
@@ -221,8 +221,8 @@ export default function UnitedKingdomHubPage() {
       <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60 relative">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="mb-16 text-center">
-            <span className="text-[11px] font-mono text-rose-500 uppercase tracking-[0.2em] block mb-4 font-bold">SOVEREIGNTY</span>
-            <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight">Security & Compliance</h2>
+            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">SOVEREIGNTY</span>
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">Security & Compliance</h2>
           </Reveal>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {securityCompliance.map((sc, idx) => (
@@ -230,8 +230,8 @@ export default function UnitedKingdomHubPage() {
                 <div className="w-8 h-8 rounded-lg bg-rose-500/10 flex items-center justify-center mb-4">
                   <ShieldCheck className="w-4 h-4 text-rose-500" />
                 </div>
-                <h4 className="text-sm font-bold text-white mb-2">{sc.title}</h4>
-                <p className="text-xs text-zinc-400 font-bold leading-relaxed">{sc.desc}</p>
+                <h4 className="text-base font-bold text-white mb-2">{sc.title}</h4>
+                <p className="text-sm text-zinc-300 font-medium leading-relaxed">{sc.desc}</p>
               </div>
             ))}
           </div>
@@ -242,8 +242,8 @@ export default function UnitedKingdomHubPage() {
       <section className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="mb-16 text-center">
-            <span className="text-[11px] font-mono text-rose-500 uppercase tracking-[0.2em] block mb-4 font-bold">TRACK RECORD</span>
-            <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight">Success Metrics</h2>
+            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">TRACK RECORD</span>
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">Success Metrics</h2>
           </Reveal>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
             {metrics.map((m, idx) => (
@@ -260,8 +260,8 @@ export default function UnitedKingdomHubPage() {
       <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60 relative">
         <div className="max-w-4xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="mb-16 text-center">
-            <span className="text-[11px] font-mono text-rose-500 uppercase tracking-[0.2em] block mb-4 font-bold">FAQ</span>
-            <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight">
+            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">FAQ</span>
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">
               Frequently Asked Questions
             </h2>
           </Reveal>
@@ -293,7 +293,7 @@ export default function UnitedKingdomHubPage() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[300px] bg-[radial-gradient(circle_at_center,rgba(225,29,72,0.025),transparent_60%)] pointer-events-none" />
         <div className="max-w-3xl mx-auto px-12 xl:px-8 relative z-10">
           <h2 className="text-3xl md:text-5xl font-black mb-6 tracking-tight">Reserve a Design Session</h2>
-          <p className="text-zinc-400 text-xs md:text-sm font-bold mb-10 max-w-lg mx-auto leading-relaxed">
+          <p className="text-zinc-300 text-sm md:text-base font-medium mb-10 max-w-lg mx-auto leading-relaxed">
             Collaborate with our onshore architects at our London Client Experience Centre.
           </p>
           <Link

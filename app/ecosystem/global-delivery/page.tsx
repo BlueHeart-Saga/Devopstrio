@@ -102,7 +102,7 @@ export default function DeliveryOverviewPage() {
             <p className="text-xl md:text-2xl font-bold text-rose-500 mb-6">
               Delivering Enterprise Technology Solutions Across Regions, Time Zones, and Industries.
             </p>
-            <p className="text-zinc-400 text-xs md:text-sm lg:text-base leading-relaxed font-bold">
+            <p className="text-zinc-200 text-sm md:text-base lg:text-lg leading-relaxed font-medium">
               Our distributed framework pairs client-facing consulting offices with robust engineering centres, keeping platform services active around the clock.
             </p>
           </Reveal>
@@ -124,8 +124,8 @@ export default function DeliveryOverviewPage() {
       <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60 relative overflow-hidden">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="mb-16 text-center max-w-3xl mx-auto flex flex-col items-center">
-            <span className="text-[11px] font-mono text-rose-500 uppercase tracking-[0.2em] block mb-4 font-bold">GLOBAL FOOTPRINT</span>
-            <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight">
+            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">GLOBAL FOOTPRINT</span>
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">
               Wherever you build, <span className="text-rose-500">we are already there.</span>
             </h2>
             <p className="text-zinc-400 text-xs md:text-sm font-bold leading-relaxed max-w-xl mx-auto mt-4">
@@ -178,8 +178,8 @@ export default function DeliveryOverviewPage() {
       <section className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="mb-16 text-center">
-            <span className="text-[11px] font-mono text-rose-500 uppercase tracking-[0.2em] block mb-4 font-bold">OPERATIONAL ARCHITECTURE</span>
-            <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight">Our Delivery Model</h2>
+            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">OPERATIONAL ARCHITECTURE</span>
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">Our Delivery Model</h2>
           </Reveal>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {deliveryModels.map((model, idx) => {
@@ -190,7 +190,7 @@ export default function DeliveryOverviewPage() {
                     <IconComp className="w-5 h-5 text-rose-500" />
                   </div>
                   <h3 className="text-lg font-bold text-white mb-3">{model.title}</h3>
-                  <p className="text-zinc-400 text-xs md:text-sm leading-relaxed font-bold">{model.desc}</p>
+                  <p className="text-zinc-300 text-sm md:text-base leading-relaxed font-medium">{model.desc}</p>
                 </div>
               );
             })}
@@ -202,15 +202,15 @@ export default function DeliveryOverviewPage() {
       <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60 relative">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="mb-16 text-center">
-            <span className="text-[11px] font-mono text-rose-500 uppercase tracking-[0.2em] block mb-4 font-bold">METHODOLOGY</span>
-            <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight">Delivery Lifecycle</h2>
+            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">METHODOLOGY</span>
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">Delivery Lifecycle</h2>
           </Reveal>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-4 relative">
             {lifecycleStages.map((stage, idx) => (
               <div key={idx} className="p-6 bg-zinc-950/20 border border-zinc-900/60 rounded-xl relative hover:border-rose-500/20 transition-all duration-300">
                 <div className="absolute top-4 right-4 text-xs font-mono text-rose-500/30 font-bold">0{idx + 1}</div>
-                <h4 className="text-sm font-bold text-white mb-2">{stage.name}</h4>
-                <p className="text-[11px] text-zinc-400 font-bold leading-relaxed">{stage.desc}</p>
+                <h4 className="text-base font-bold text-white mb-2">{stage.name}</h4>
+                <p className="text-sm text-zinc-300 font-medium leading-relaxed">{stage.desc}</p>
               </div>
             ))}
           </div>
@@ -222,9 +222,9 @@ export default function DeliveryOverviewPage() {
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             <div className="lg:col-span-5">
-              <span className="text-[11px] font-mono text-rose-500 uppercase tracking-[0.2em] block mb-4 font-bold">FACILITIES</span>
-              <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight mb-6">Regional Centers</h2>
-              <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-medium">
+              <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">FACILITIES</span>
+              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">Regional Centers</h2>
+              <p className="text-zinc-300 text-base md:text-lg leading-relaxed font-medium">
                 Our global footprint is powered by offices and operational enclaves engineered to deliver enterprise solutions.
               </p>
             </div>
@@ -235,7 +235,7 @@ export default function DeliveryOverviewPage() {
                     <span className="text-[9px] font-mono text-rose-500 uppercase font-bold tracking-wider mb-2 block">{center.type}</span>
                     <h4 className="text-lg font-bold text-white mb-2">{center.city}</h4>
                   </div>
-                  <p className="text-xs text-zinc-400 font-bold leading-relaxed">{center.desc}</p>
+                  <p className="text-sm text-zinc-300 font-medium leading-relaxed">{center.desc}</p>
                 </div>
               ))}
             </div>
@@ -247,8 +247,8 @@ export default function DeliveryOverviewPage() {
       <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60 relative">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="mb-16 text-center">
-            <span className="text-[11px] font-mono text-rose-500 uppercase tracking-[0.2em] block mb-4 font-bold">GOVERNANCE & TRUST</span>
-            <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight">Delivery Governance</h2>
+            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">GOVERNANCE & TRUST</span>
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">Delivery Governance</h2>
           </Reveal>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             {governancePillars.map((pillar, idx) => (
@@ -256,8 +256,8 @@ export default function DeliveryOverviewPage() {
                 <div className="w-8 h-8 rounded-lg bg-rose-500/10 flex items-center justify-center mb-4">
                   <Layers className="w-4 h-4 text-rose-500" />
                 </div>
-                <h4 className="text-sm font-bold text-white mb-2">{pillar.title}</h4>
-                <p className="text-xs text-zinc-400 font-bold leading-relaxed">{pillar.desc}</p>
+                <h4 className="text-base font-bold text-white mb-2">{pillar.title}</h4>
+                <p className="text-sm text-zinc-300 font-medium leading-relaxed">{pillar.desc}</p>
               </div>
             ))}
           </div>
@@ -286,9 +286,9 @@ export default function DeliveryOverviewPage() {
               </div>
             </div>
             <div className="lg:col-span-5 lg:order-1">
-              <span className="text-[11px] font-mono text-rose-500 uppercase tracking-[0.2em] block mb-4 font-bold">ROUND-THE-CLOCK</span>
-              <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight mb-6">Follow-The-Sun Operations</h2>
-              <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-medium">
+              <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">ROUND-THE-CLOCK</span>
+              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">Follow-The-Sun Operations</h2>
+              <p className="text-zinc-300 text-base md:text-lg leading-relaxed font-medium">
                 Keep platform nodes active with continuous shift-based operations coverage across global timezones.
               </p>
             </div>
@@ -300,8 +300,8 @@ export default function DeliveryOverviewPage() {
       <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60 relative">
         <div className="max-w-4xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="mb-16 text-center">
-            <span className="text-[11px] font-mono text-rose-500 uppercase tracking-[0.2em] block mb-4 font-bold">FAQ</span>
-            <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight">
+            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">FAQ</span>
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">
               Frequently Asked Questions
             </h2>
           </Reveal>
@@ -333,7 +333,7 @@ export default function DeliveryOverviewPage() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[300px] bg-[radial-gradient(circle_at_center,rgba(225,29,72,0.025),transparent_60%)] pointer-events-none" />
         <div className="max-w-3xl mx-auto px-12 xl:px-8 relative z-10">
           <h2 className="text-3xl md:text-5xl font-black mb-6 tracking-tight">Ready to Coordinate?</h2>
-          <p className="text-zinc-400 text-xs md:text-sm font-bold mb-10 max-w-lg mx-auto leading-relaxed">
+          <p className="text-zinc-300 text-sm md:text-base font-medium mb-10 max-w-lg mx-auto leading-relaxed">
             Partner with our operations leads to establish your custom global delivery SLA.
           </p>
           <Link

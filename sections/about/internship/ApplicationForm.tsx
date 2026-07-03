@@ -33,10 +33,32 @@ export const ApplicationForm = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    // Simulate API request
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-    setIsSubmitting(false);
-    setIsSuccess(true);
+    
+    try {
+      const data = new FormData();
+      Object.entries(formData).forEach(([key, value]) => {
+        data.append(key, value);
+      });
+      if (file) {
+        data.append('resume', file);
+      }
+      
+      const response = await fetch('/api/internship', {
+        method: 'POST',
+        body: data,
+      });
+
+      if (response.ok) {
+        setIsSuccess(true);
+      } else {
+        alert("Failed to submit application. Please check your network and try again.");
+      }
+    } catch (err) {
+      console.error(err);
+      alert("An error occurred during submission.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleScrollToForm = () => {

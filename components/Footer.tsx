@@ -173,7 +173,7 @@ export function Footer() {
             <ul className="flex flex-col gap-3 text-xs text-zinc-400 font-medium">
               <li><Link href="/about/company-overview" className="hover:text-rose-500 transition-colors">Company Overview</Link></li>
               <li><Link href="/about/leadership-team" className="hover:text-rose-500 transition-colors">Leadership & Team</Link></li>
-              <li><Link href="/about/life-at-devopstrio" className="hover:text-rose-500 transition-colors">Life at Devopstrio</Link></li>
+              <li><Link href="/about/our-culture-people" className="hover:text-rose-500 transition-colors">Our Culture & People</Link></li>
               <li><Link href="/about/global-internship" className="hover:text-rose-500 transition-colors">Global Internship</Link></li>
               <li><Link href="/about/global-presence" className="hover:text-rose-500 transition-colors">Global Presence</Link></li>
               <li><Link href="/about/partnerships-certifications" className="hover:text-rose-500 transition-colors">Partnerships & Certifications</Link></li>

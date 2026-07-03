@@ -28,7 +28,7 @@ const partners: PartnerItem[] = [
   },
   {
     name: "ServiceNow",
-    logo: "/assets/Home-page/partners/servicenow.svg",
+    logo: "/assets/Home-page/partners/servicenow.png",
     title: "Automated Workflow Engine",
     tags: ["ServiceNow", "REST APIs"],
     metric: "40% Faster Ops",
@@ -655,7 +655,8 @@ export function PartnersSection() {
   return (
     <section className="w-full py-24 bg-[#030303] text-white border-t border-zinc-900/50 relative overflow-hidden" id="partners">
       {/* Global CSS for seamless marquee */}
-      <style dangerouslySetInnerHTML={{ __html: `
+      <style dangerouslySetInnerHTML={{
+        __html: `
         @keyframes marqueeLeft {
           0% { transform: translate3d(0, 0, 0); }
           100% { transform: translate3d(-50%, 0, 0); }
@@ -684,7 +685,7 @@ export function PartnersSection() {
       `}} />
 
       <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
-        
+
         {/* Header */}
         <Reveal className="max-w-3xl mb-16 text-center mx-auto">
           <div className="flex items-center justify-center gap-2 mb-4">
@@ -703,7 +704,7 @@ export function PartnersSection() {
 
       {/* Infinite Scroll Container */}
       <div className="relative w-full overflow-hidden flex flex-col gap-6 select-none my-8">
-        
+
         {/* Edge Gradient Overlays */}
         <div className="absolute top-0 bottom-0 left-0 w-24 md:w-48 bg-gradient-to-r from-[#030303] to-transparent z-20 pointer-events-none" />
         <div className="absolute top-0 bottom-0 right-0 w-24 md:w-48 bg-gradient-to-l from-[#030303] to-transparent z-20 pointer-events-none" />
@@ -712,7 +713,7 @@ export function PartnersSection() {
         <div className="w-full overflow-hidden flex">
           <div className="flex gap-6 animate-marquee-left-1 w-max py-1">
             {[...row1, ...row1].map((partner, idx) => (
-              <div 
+              <div
                 key={`${partner.name}-r1-${idx}`}
                 className="w-36 h-20 bg-zinc-950/30 backdrop-blur-md border border-zinc-900/60 rounded-xl flex items-center justify-center p-4 transition-all duration-300 hover:border-rose-500/30 hover:bg-zinc-900/10 hover:-translate-y-1 shadow-[inset_0_1px_1px_rgba(255,255,255,0.08),0_8px_24px_rgba(0,0,0,0.7)] hover:shadow-[inset_0_1px_1px_rgba(255,255,255,0.15),0_12px_32px_rgba(0,0,0,0.8),0_0_20px_rgba(225,29,72,0.06)] relative overflow-hidden flex-shrink-0 group"
               >
@@ -739,7 +740,7 @@ export function PartnersSection() {
         <div className="w-full overflow-hidden flex">
           <div className="flex gap-6 animate-marquee-right-2 w-max py-1">
             {[...row2, ...row2].map((partner, idx) => (
-              <div 
+              <div
                 key={`${partner.name}-r2-${idx}`}
                 className="w-36 h-20 bg-zinc-950/30 backdrop-blur-md border border-zinc-900/60 rounded-xl flex items-center justify-center p-4 transition-all duration-300 hover:border-rose-500/30 hover:bg-zinc-900/10 hover:-translate-y-1 shadow-[inset_0_1px_1px_rgba(255,255,255,0.08),0_8px_24px_rgba(0,0,0,0.7)] hover:shadow-[inset_0_1px_1px_rgba(255,255,255,0.15),0_12px_32px_rgba(0,0,0,0.8),0_0_20px_rgba(225,29,72,0.06)] relative overflow-hidden flex-shrink-0 group"
               >
@@ -766,7 +767,7 @@ export function PartnersSection() {
         <div className="w-full overflow-hidden flex">
           <div className="flex gap-6 animate-marquee-left-3 w-max py-1">
             {[...row3, ...row3].map((partner, idx) => (
-              <div 
+              <div
                 key={`${partner.name}-r3-${idx}`}
                 className="w-36 h-20 bg-zinc-950/30 backdrop-blur-md border border-zinc-900/60 rounded-xl flex items-center justify-center p-4 transition-all duration-300 hover:border-rose-500/30 hover:bg-zinc-900/10 hover:-translate-y-1 shadow-[inset_0_1px_1px_rgba(255,255,255,0.08),0_8px_24px_rgba(0,0,0,0.7)] hover:shadow-[inset_0_1px_1px_rgba(255,255,255,0.15),0_12px_32px_rgba(0,0,0,0.8),0_0_20px_rgba(225,29,72,0.06)] relative overflow-hidden flex-shrink-0 group"
               >

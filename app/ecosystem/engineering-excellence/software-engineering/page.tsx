@@ -117,7 +117,7 @@ export default function SoftwareEngineeringPage() {
             <p className="text-xl md:text-2xl font-bold text-rose-500 mb-6">
               Building Enterprise Applications With Modern Architecture Principles.
             </p>
-            <p className="text-zinc-400 text-xs md:text-sm lg:text-base leading-relaxed font-bold">
+            <p className="text-zinc-200 text-sm md:text-base lg:text-lg leading-relaxed font-medium">
               We engineer scalable platforms using decoupled architectures, Domain-Driven Design, and API-first methodologies to ensure long-term agility and resilience.
             </p>
           </Reveal>
@@ -140,8 +140,8 @@ export default function SoftwareEngineeringPage() {
       <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60 relative">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="mb-16 text-center">
-            <span className="text-[11px] font-mono text-rose-500 uppercase tracking-[0.2em] block mb-4 font-bold">FOUNDATION</span>
-            <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight">Engineering Architecture</h2>
+            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">FOUNDATION</span>
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">Engineering Architecture</h2>
           </Reveal>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {architecture.map((arch, idx) => (
@@ -149,8 +149,8 @@ export default function SoftwareEngineeringPage() {
                 <div className="w-8 h-8 rounded-lg bg-rose-500/10 flex items-center justify-center mb-4">
                   <Blocks className="w-4 h-4 text-rose-500" />
                 </div>
-                <h4 className="text-sm font-bold text-white mb-2">{arch.title}</h4>
-                <p className="text-xs text-zinc-400 font-bold leading-relaxed">{arch.desc}</p>
+                <h4 className="text-base font-bold text-white mb-2">{arch.title}</h4>
+                <p className="text-sm text-zinc-300 font-medium leading-relaxed">{arch.desc}</p>
               </div>
             ))}
           </div>
@@ -162,9 +162,9 @@ export default function SoftwareEngineeringPage() {
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             <div className="lg:col-span-5">
-              <span className="text-[11px] font-mono text-rose-500 uppercase tracking-[0.2em] block mb-4 font-bold">CLIENT SIDE</span>
-              <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight mb-6">Frontend Engineering</h2>
-              <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-medium">
+              <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">CLIENT SIDE</span>
+              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">Frontend Engineering</h2>
+              <p className="text-zinc-300 text-base md:text-lg leading-relaxed font-medium">
                 We build highly interactive, accessible, and performant user interfaces driven by robust design systems.
               </p>
             </div>
@@ -174,8 +174,8 @@ export default function SoftwareEngineeringPage() {
                   <div className="w-8 h-8 rounded-lg bg-rose-500/10 flex items-center justify-center mb-4">
                     <AppWindow className="w-4 h-4 text-rose-500" />
                   </div>
-                  <h4 className="text-sm font-bold text-white mb-2">{item.title}</h4>
-                  <p className="text-xs text-zinc-400 font-bold leading-relaxed">{item.desc}</p>
+                  <h4 className="text-base font-bold text-white mb-2">{item.title}</h4>
+                  <p className="text-sm text-zinc-300 font-medium leading-relaxed">{item.desc}</p>
                 </div>
               ))}
             </div>
@@ -193,15 +193,15 @@ export default function SoftwareEngineeringPage() {
                   <div className="w-8 h-8 rounded-lg bg-rose-500/10 flex items-center justify-center mb-4">
                     <ServerCog className="w-4 h-4 text-rose-500" />
                   </div>
-                  <h4 className="text-sm font-bold text-white mb-2">{item.title}</h4>
-                  <p className="text-xs text-zinc-400 font-bold leading-relaxed">{item.desc}</p>
+                  <h4 className="text-base font-bold text-white mb-2">{item.title}</h4>
+                  <p className="text-sm text-zinc-300 font-medium leading-relaxed">{item.desc}</p>
                 </div>
               ))}
             </div>
             <div className="lg:col-span-5 lg:order-1">
-              <span className="text-[11px] font-mono text-rose-500 uppercase tracking-[0.2em] block mb-4 font-bold">SERVER SIDE</span>
-              <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight mb-6">Backend Engineering</h2>
-              <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-medium">
+              <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">SERVER SIDE</span>
+              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">Backend Engineering</h2>
+              <p className="text-zinc-300 text-base md:text-lg leading-relaxed font-medium">
                 Our backend systems map directly to business logic, ensuring they remain maintainable as complexity scales.
               </p>
             </div>
@@ -213,8 +213,8 @@ export default function SoftwareEngineeringPage() {
       <section className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="mb-16 text-center">
-            <span className="text-[11px] font-mono text-rose-500 uppercase tracking-[0.2em] block mb-4 font-bold">CONNECTIVITY</span>
-            <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight">API Ecosystem</h2>
+            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">CONNECTIVITY</span>
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">API Ecosystem</h2>
           </Reveal>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {apiEcosystem.map((api, idx) => (
@@ -222,8 +222,8 @@ export default function SoftwareEngineeringPage() {
                 <div className="w-8 h-8 rounded-lg bg-rose-500/10 flex items-center justify-center mb-4">
                   <Network className="w-4 h-4 text-rose-500" />
                 </div>
-                <h4 className="text-sm font-bold text-white mb-2">{api.title}</h4>
-                <p className="text-xs text-zinc-400 font-bold leading-relaxed">{api.desc}</p>
+                <h4 className="text-base font-bold text-white mb-2">{api.title}</h4>
+                <p className="text-sm text-zinc-300 font-medium leading-relaxed">{api.desc}</p>
               </div>
             ))}
           </div>
@@ -235,9 +235,9 @@ export default function SoftwareEngineeringPage() {
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             <div className="lg:col-span-5">
-              <span className="text-[11px] font-mono text-rose-500 uppercase tracking-[0.2em] block mb-4 font-bold">STANDARDS</span>
-              <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight mb-6">Architecture Governance</h2>
-              <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-medium">
+              <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">STANDARDS</span>
+              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">Architecture Governance</h2>
+              <p className="text-zinc-300 text-base md:text-lg leading-relaxed font-medium">
                 We enforce technical alignment across teams without stifling individual developer autonomy.
               </p>
             </div>
@@ -257,8 +257,8 @@ export default function SoftwareEngineeringPage() {
       <section className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="mb-16 text-center">
-            <span className="text-[11px] font-mono text-rose-500 uppercase tracking-[0.2em] block mb-4 font-bold">DELIVERY PIPELINE</span>
-            <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight">Software Lifecycle</h2>
+            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">DELIVERY PIPELINE</span>
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">Software Lifecycle</h2>
           </Reveal>
           <div className="flex flex-wrap justify-center gap-4">
             {lifecycle.map((stage, idx) => (
@@ -267,7 +267,7 @@ export default function SoftwareEngineeringPage() {
                   <div className="w-16 h-16 rounded-full bg-zinc-950 border border-zinc-800 flex items-center justify-center mb-4 text-rose-500 font-mono font-bold text-lg">
                     {idx + 1}
                   </div>
-                  <h4 className="text-sm font-bold text-white mb-2">{stage.step}</h4>
+                  <h4 className="text-base font-bold text-white mb-2">{stage.step}</h4>
                   <p className="text-[10px] text-zinc-500 font-medium">{stage.desc}</p>
                 </div>
                 {idx < lifecycle.length - 1 && (
@@ -285,8 +285,8 @@ export default function SoftwareEngineeringPage() {
       <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60 relative">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="mb-16 text-center">
-            <span className="text-[11px] font-mono text-rose-500 uppercase tracking-[0.2em] block mb-4 font-bold">DORA METRICS</span>
-            <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight">Delivery Performance</h2>
+            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">DORA METRICS</span>
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">Delivery Performance</h2>
           </Reveal>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
             {metrics.map((m, idx) => (
@@ -303,8 +303,8 @@ export default function SoftwareEngineeringPage() {
       <section className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
         <div className="max-w-4xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="mb-16 text-center">
-            <span className="text-[11px] font-mono text-rose-500 uppercase tracking-[0.2em] block mb-4 font-bold">FAQ</span>
-            <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight">
+            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">FAQ</span>
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">
               Frequently Asked Questions
             </h2>
           </Reveal>
@@ -336,7 +336,7 @@ export default function SoftwareEngineeringPage() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[300px] bg-[radial-gradient(circle_at_center,rgba(225,29,72,0.025),transparent_60%)] pointer-events-none" />
         <div className="max-w-3xl mx-auto px-12 xl:px-8 relative z-10">
           <h2 className="text-3xl md:text-5xl font-black mb-6 tracking-tight">Build Better Software</h2>
-          <p className="text-zinc-400 text-xs md:text-sm font-bold mb-10 max-w-lg mx-auto leading-relaxed">
+          <p className="text-zinc-300 text-sm md:text-base font-medium mb-10 max-w-lg mx-auto leading-relaxed">
             Partner with our architecture guild to audit your current stack and design a resilient future state.
           </p>
           <Link

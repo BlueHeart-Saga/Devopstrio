@@ -17,14 +17,14 @@ import { OpenPositionsPreview } from "@/sections/about/life/OpenPositionsPreview
 import { LifeFinalCTA } from "@/sections/about/life/LifeFinalCTA";
 
 export const metadata: Metadata = {
-  title: "Life at Devopstrio | Culture, Careers & Innovation",
+  title: "Our Culture & People | Life at Devopstrio",
   description:
     "Discover what it's like to work at Devopstrio — a culture of innovation, ownership, continuous learning, and global collaboration in AI, Cloud, and DevOps.",
   alternates: {
-    canonical: "/about/life-at-devopstrio",
+    canonical: "/about/our-culture-people",
   },
   openGraph: {
-    title: "Life at Devopstrio | Culture, Careers & Innovation",
+    title: "Our Culture & People | Life at Devopstrio",
     description:
       "Join a world-class team building AI, Cloud, and DevOps solutions. Explore our culture, career paths, benefits, and open positions.",
     type: "website",
@@ -38,7 +38,7 @@ export default function LifeAtDevopstrioPage() {
         items={[
           { name: "Home", item: "/" },
           { name: "About Us", item: "/about/company-overview" },
-          { name: "Life at Devopstrio", item: "/about/life-at-devopstrio" },
+          { name: "Our Culture & People", item: "/about/our-culture-people" },
         ]}
       />
 

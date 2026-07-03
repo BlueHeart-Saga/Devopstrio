@@ -155,8 +155,8 @@ export default function CareersPage() {
       )}
 
       {/* Structured Careers Components */}
-      <SectionNavbar sections={careersSections} />
       <CareersHero />
+      <SectionNavbar sections={careersSections} />
       <WhyJoin />
       <LifeAtDevopstrio />
       <CoreValues />

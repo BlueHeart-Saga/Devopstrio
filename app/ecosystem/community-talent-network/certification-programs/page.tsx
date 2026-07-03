@@ -98,7 +98,7 @@ export default function CertificationProgramsPage() {
             <p className="text-xl md:text-2xl font-bold text-rose-500 mb-6">
               Helping engineers validate expertise and advance careers.
             </p>
-            <p className="text-zinc-400 text-xs md:text-sm lg:text-base leading-relaxed font-bold">
+            <p className="text-zinc-200 text-sm md:text-base lg:text-lg leading-relaxed font-medium">
               We don't just hire top talent; we continuously develop them. Join our structured study cohorts, access enterprise-grade sandbox labs, and achieve expert-level cloud certifications with 100% exam sponsorship.
             </p>
           </Reveal>
@@ -122,8 +122,8 @@ export default function CertificationProgramsPage() {
       <section className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="mb-16 text-center">
-            <span className="text-[11px] font-mono text-rose-500 uppercase tracking-[0.2em] block mb-4 font-bold">THE PATHS</span>
-            <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight">Certification Tracks</h2>
+            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">THE PATHS</span>
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">Certification Tracks</h2>
           </Reveal>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {certificationTracks.map((track, idx) => (
@@ -132,7 +132,7 @@ export default function CertificationProgramsPage() {
                   {track.icon}
                 </div>
                 <h4 className="text-sm font-bold text-white mb-3">{track.title}</h4>
-                <p className="text-[11px] text-zinc-400 font-bold leading-relaxed">{track.desc}</p>
+                <p className="text-sm text-zinc-300 font-medium leading-relaxed">{track.desc}</p>
               </div>
             ))}
           </div>
@@ -143,15 +143,15 @@ export default function CertificationProgramsPage() {
       <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60 relative">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="mb-16 text-center">
-            <span className="text-[11px] font-mono text-rose-500 uppercase tracking-[0.2em] block mb-4 font-bold">METHODOLOGY</span>
-            <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight">Learning Pathways</h2>
+            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">METHODOLOGY</span>
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">Learning Pathways</h2>
           </Reveal>
           <div className="flex flex-wrap justify-center items-center gap-4">
             {learningPathways.map((stage, idx) => (
               <React.Fragment key={idx}>
                 <div className="flex flex-col items-center w-[160px] text-center p-6 bg-zinc-950 border border-zinc-800 rounded-xl hover:border-rose-500/40 transition-all duration-300 group">
-                  <h4 className="text-sm font-bold text-rose-500 mb-2">{stage.step}</h4>
-                  <p className="text-[10px] text-zinc-400 font-medium">{stage.desc}</p>
+                  <h4 className="text-base font-bold text-rose-500 mb-2">{stage.step}</h4>
+                  <p className="text-xs text-zinc-300 font-medium">{stage.desc}</p>
                 </div>
                 {idx < learningPathways.length - 1 && (
                   <div className="hidden lg:flex items-center">
@@ -168,8 +168,8 @@ export default function CertificationProgramsPage() {
       <section className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="mb-16 text-center">
-            <span className="text-[11px] font-mono text-rose-500 uppercase tracking-[0.2em] block mb-4 font-bold">SUPPORT</span>
-            <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight">Mentorship & Study Cohorts</h2>
+            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">SUPPORT</span>
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">Mentorship & Study Cohorts</h2>
           </Reveal>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {mentorshipPrograms.map((prog, idx) => (
@@ -189,8 +189,8 @@ export default function CertificationProgramsPage() {
       <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60 relative">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="mb-16 text-center">
-            <span className="text-[11px] font-mono text-rose-500 uppercase tracking-[0.2em] block mb-4 font-bold">OUTCOMES</span>
-            <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight">Certification Success</h2>
+            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">OUTCOMES</span>
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">Certification Success</h2>
           </Reveal>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {successStories.map((story, idx) => (
@@ -199,7 +199,7 @@ export default function CertificationProgramsPage() {
                   <TrendingUp className="w-4 h-4 text-rose-500" />
                 </div>
                 <h4 className="text-sm font-bold text-white mb-3">{story.title}</h4>
-                <p className="text-xs text-zinc-400 font-bold leading-relaxed">{story.desc}</p>
+                <p className="text-sm text-zinc-300 font-medium leading-relaxed">{story.desc}</p>
               </div>
             ))}
           </div>
@@ -210,8 +210,8 @@ export default function CertificationProgramsPage() {
       <section className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="mb-16 text-center">
-            <span className="text-[11px] font-mono text-rose-500 uppercase tracking-[0.2em] block mb-4 font-bold">SCALE</span>
-            <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight">Program Impact</h2>
+            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">SCALE</span>
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">Program Impact</h2>
           </Reveal>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
             {metrics.map((m, idx) => (
@@ -228,8 +228,8 @@ export default function CertificationProgramsPage() {
       <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60 relative">
         <div className="max-w-4xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="mb-16 text-center">
-            <span className="text-[11px] font-mono text-rose-500 uppercase tracking-[0.2em] block mb-4 font-bold">FAQ</span>
-            <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight">
+            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">FAQ</span>
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">
               Frequently Asked Questions
             </h2>
           </Reveal>
@@ -261,7 +261,7 @@ export default function CertificationProgramsPage() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[300px] bg-[radial-gradient(circle_at_center,rgba(225,29,72,0.025),transparent_60%)] pointer-events-none" />
         <div className="max-w-3xl mx-auto px-12 xl:px-8 relative z-10">
           <h2 className="text-3xl md:text-5xl font-black mb-6 tracking-tight">Validate Your Expertise</h2>
-          <p className="text-zinc-400 text-xs md:text-sm font-bold mb-10 max-w-lg mx-auto leading-relaxed">
+          <p className="text-zinc-300 text-sm md:text-base font-medium mb-10 max-w-lg mx-auto leading-relaxed">
             Ready to become a Certified Architect? Join our next study cohort to access sandbox environments, expert mentorship, and fully sponsored exams.
           </p>
           <Link

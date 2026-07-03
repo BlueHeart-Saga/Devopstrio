@@ -61,7 +61,7 @@ export default function HomelaProductPage() {
             </p>
           </Reveal>
           <Reveal delay={0.2} className="max-w-3xl mx-auto mb-10">
-            <p className="text-zinc-400 text-xs md:text-sm lg:text-base leading-relaxed font-bold">
+            <p className="text-zinc-200 text-sm md:text-base lg:text-lg leading-relaxed font-medium">
               Automate leasing workflows, monitor physical assets via IoT telemetry channels, and aggregate regional occupancy analytics.
             </p>
           </Reveal>
@@ -95,7 +95,7 @@ export default function HomelaProductPage() {
                   <CheckCircle2 className="w-4 h-4 text-rose-500" />
                   {feat.title}
                 </h3>
-                <p className="text-xs md:text-sm text-zinc-400 font-bold leading-relaxed">{feat.desc}</p>
+                <p className="text-sm md:text-base text-zinc-300 font-medium leading-relaxed">{feat.desc}</p>
               </div>
             ))}
           </div>
@@ -113,8 +113,8 @@ export default function HomelaProductPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {techStack.map((tech, idx) => (
               <div key={idx} className="bg-zinc-950/40 border border-zinc-900 rounded-xl p-6">
-                <h4 className="text-sm font-bold text-white mb-2">{tech.name}</h4>
-                <p className="text-xs text-zinc-400 font-bold leading-relaxed">{tech.desc}</p>
+                <h4 className="text-base font-bold text-white mb-2">{tech.name}</h4>
+                <p className="text-sm text-zinc-300 font-medium leading-relaxed">{tech.desc}</p>
               </div>
             ))}
           </div>

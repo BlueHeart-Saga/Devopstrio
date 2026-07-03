@@ -75,10 +75,27 @@ const teamMembers = [
 ];
 
 const eventImages = [
-  "/assets/About-page/events/1.png",
-  "/assets/About-page/events/2.png",
-  "/assets/About-page/events/3.png",
-  "/assets/About-page/events/4.png",
+  "/assets/About-page/events/Picture1.png",
+  "/assets/About-page/events/Picture2.png",
+  "/assets/About-page/events/Picture3.png",
+  "/assets/About-page/events/Picture4.png",
+  "/assets/About-page/events/Picture5.png",
+  "/assets/About-page/events/Picture6.png",
+  "/assets/About-page/events/Picture7.png",
+  "/assets/About-page/events/Picture8.png",
+  "/assets/About-page/events/Picture9.png",
+  "/assets/About-page/events/Picture10.png",
+  "/assets/About-page/events/Picture11.png",
+  "/assets/About-page/events/Picture12.png",
+  "/assets/About-page/events/Picture13.png",
+  "/assets/About-page/events/Picture14.png",
+  "/assets/About-page/events/Picture15.png",
+  "/assets/About-page/events/Picture16.png",
+  "/assets/About-page/events/Picture17.png",
+  "/assets/About-page/events/Picture18.png",
+  "/assets/About-page/events/Picture19.png",
+  "/assets/About-page/events/Picture20.png",
+  "/assets/About-page/events/Picture21.png",
 ];
 
 export function Leadership() {
@@ -186,7 +203,7 @@ export function Leadership() {
                           </div>
                         )}
                         <div className={`w-[200px] h-[130px] rounded-2xl overflow-hidden shrink-0 relative group shadow-lg ${idx % 2 === 0 ? 'bg-[#facc15]' : 'bg-rose-500'}`}>
-                          <img src={eventImages[idx % 4]} alt="Leadership Event" className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110 drop-shadow-[0_20px_30px_rgba(0,0,0,0.5)]" />
+                          <img src={eventImages[idx % eventImages.length]} alt="Leadership Event" className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110 drop-shadow-[0_20px_30px_rgba(0,0,0,0.5)]" />
                         </div>
                       </React.Fragment>
                     ))}
@@ -215,7 +232,7 @@ export function Leadership() {
                           </div>
                         )}
                         <div className={`w-[220px] h-[130px] rounded-2xl overflow-hidden shrink-0 relative group shadow-lg ${idx % 2 === 0 ? 'bg-emerald-400' : 'bg-[#facc15]'}`}>
-                          <img src={eventImages[(idx + 1) % 4]} alt="Leadership Meeting" className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110 drop-shadow-[0_20px_30px_rgba(0,0,0,0.5)]" />
+                          <img src={eventImages[(idx + 7) % eventImages.length]} alt="Leadership Meeting" className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110 drop-shadow-[0_20px_30px_rgba(0,0,0,0.5)]" />
                         </div>
                       </React.Fragment>
                     ))}
@@ -239,7 +256,7 @@ export function Leadership() {
                           </div>
                         )}
                         <div className={`w-[180px] h-[130px] rounded-2xl overflow-hidden shrink-0 relative group shadow-lg ${idx % 3 === 0 ? 'bg-blue-500' : 'bg-[#facc15]'}`}>
-                          <img src={eventImages[(idx + 2) % 4]} alt="Team Milestone" className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110 drop-shadow-[0_20px_30px_rgba(0,0,0,0.5)]" />
+                          <img src={eventImages[(idx + 14) % eventImages.length]} alt="Team Milestone" className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110 drop-shadow-[0_20px_30px_rgba(0,0,0,0.5)]" />
                         </div>
                       </React.Fragment>
                     ))}

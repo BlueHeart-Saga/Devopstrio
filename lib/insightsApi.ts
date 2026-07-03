@@ -180,7 +180,7 @@ class InsightsApiService {
                   const contentRes = await this.getContent({
                     section_slug: section.slug,
                     category_slug: category.slug,
-                    limit: 10,
+                    limit: 50,
                   });
 
                   if (!contentRes) {
@@ -212,7 +212,7 @@ class InsightsApiService {
     }
   }
 
-  async getAllPosts(limit = 100): Promise<TransformedPost[]> {
+  async getAllPosts(limit = 50): Promise<TransformedPost[]> {
     try {
       const structure = await this.getFullSiteStructure();
       const allPosts: TransformedPost[] = [];

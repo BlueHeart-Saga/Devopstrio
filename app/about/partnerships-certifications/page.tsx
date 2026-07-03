@@ -17,7 +17,7 @@ const businessPartners = [
   },
   {
     name: "ServiceNow",
-    logo: "/assets/Home-page/partners/servicenow.svg",
+    logo: "/assets/Home-page/partners/servicenow.png",
     location: "Enterprise Workflow Systems",
     desc: "Building digital workflow integrations and IT Service Management (ITSM) automation systems to optimize operational agility and developer velocity.",
   },
@@ -304,7 +304,7 @@ export default function PartnershipsCertificationsPage() {
   // Search & Category states for Tech Tools
   const [techSearch, setTechSearch] = useState("");
   const [selectedTechCategory, setSelectedTechCategory] = useState("All");
-  
+
   const techCategories = useMemo(() => {
     return ["All", ...new Set(techTools.map((t) => t.category))];
   }, []);
@@ -375,41 +375,37 @@ export default function PartnershipsCertificationsPage() {
         <div className="flex flex-wrap justify-center gap-2 p-1.5 bg-zinc-950/80 border border-white/5 rounded-2xl max-w-3xl mx-auto backdrop-blur-xl">
           <button
             onClick={() => setActiveTab("business")}
-            className={`flex-1 min-w-[140px] py-3 px-4 rounded-xl text-xs font-black uppercase tracking-wider transition-all duration-300 ${
-              activeTab === "business"
+            className={`flex-1 min-w-[140px] py-3 px-4 rounded-xl text-xs font-black uppercase tracking-wider transition-all duration-300 ${activeTab === "business"
                 ? "bg-rose-600 text-white shadow-lg shadow-rose-950/40"
                 : "text-zinc-400 hover:text-white"
-            }`}
+              }`}
           >
             Business Partners
           </button>
           <button
             onClick={() => setActiveTab("tech")}
-            className={`flex-1 min-w-[140px] py-3 px-4 rounded-xl text-xs font-black uppercase tracking-wider transition-all duration-300 ${
-              activeTab === "tech"
+            className={`flex-1 min-w-[140px] py-3 px-4 rounded-xl text-xs font-black uppercase tracking-wider transition-all duration-300 ${activeTab === "tech"
                 ? "bg-rose-600 text-white shadow-lg shadow-rose-950/40"
                 : "text-zinc-400 hover:text-white"
-            }`}
+              }`}
           >
             Tech Partners
           </button>
           <button
             onClick={() => setActiveTab("certifications")}
-            className={`flex-1 min-w-[140px] py-3 px-4 rounded-xl text-xs font-black uppercase tracking-wider transition-all duration-300 ${
-              activeTab === "certifications"
+            className={`flex-1 min-w-[140px] py-3 px-4 rounded-xl text-xs font-black uppercase tracking-wider transition-all duration-300 ${activeTab === "certifications"
                 ? "bg-rose-600 text-white shadow-lg shadow-rose-950/40"
                 : "text-zinc-400 hover:text-white"
-            }`}
+              }`}
           >
             Certifications
           </button>
           <button
             onClick={() => setActiveTab("join")}
-            className={`flex-1 min-w-[140px] py-3 px-4 rounded-xl text-xs font-black uppercase tracking-wider transition-all duration-300 ${
-              activeTab === "join"
+            className={`flex-1 min-w-[140px] py-3 px-4 rounded-xl text-xs font-black uppercase tracking-wider transition-all duration-300 ${activeTab === "join"
                 ? "bg-rose-600 text-white shadow-lg shadow-rose-950/40"
                 : "text-zinc-400 hover:text-white"
-            }`}
+              }`}
           >
             Partner With Us
           </button>
@@ -419,7 +415,7 @@ export default function PartnershipsCertificationsPage() {
       {/* Main Dynamic View Panels */}
       <section className="relative z-10 max-w-site mx-auto px-6 md:px-12 lg:px-20 pb-24">
         <AnimatePresence mode="wait">
-          
+
           {/* BUSINESS PARTNERS VIEW */}
           {activeTab === "business" && (
             <motion.div
@@ -530,11 +526,10 @@ export default function PartnershipsCertificationsPage() {
                     <button
                       key={cat}
                       onClick={() => setSelectedTechCategory(cat)}
-                      className={`px-3 py-1.5 rounded-lg text-[9px] font-black uppercase tracking-wider transition-all duration-200 ${
-                        selectedTechCategory === cat
+                      className={`px-3 py-1.5 rounded-lg text-[9px] font-black uppercase tracking-wider transition-all duration-200 ${selectedTechCategory === cat
                           ? "bg-rose-600 text-white font-extrabold"
                           : "text-zinc-400 hover:text-white"
-                      }`}
+                        }`}
                     >
                       {cat}
                     </button>
