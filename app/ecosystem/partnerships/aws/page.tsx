@@ -29,10 +29,12 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import { SectionNavbar } from "@/components/ui/SectionNavbar";
+import { PartnerCertifications } from "@/sections/ecosystem/partnerships/PartnerCertifications";
 
 const awsSections = [
   { id: "overview", label: "Overview" },
   { id: "capabilities", label: "Capabilities" },
+  { id: "certifications", label: "Certifications" },
   { id: "solutions", label: "Solutions" },
   { id: "use-cases", label: "Use Cases" },
   { id: "faq", label: "FAQ" }
@@ -328,7 +330,7 @@ export default function AWSSteategicAllianceHub() {
               </Reveal>
               
               <Reveal delay={0.2}>
-                <p className="text-zinc-400 text-xs sm:text-sm md:text-base leading-relaxed font-semibold max-w-xl mb-8">
+                <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
                   Helping organizations modernize applications, build resilient cloud-native platforms, secure workloads, and accelerate co-innovation with AWS.
                 </p>
               </Reveal>
@@ -452,13 +454,13 @@ export default function AWSSteategicAllianceHub() {
             
             <div className="lg:col-span-5 text-left space-y-6">
               <Reveal>
-                <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
+                <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
                   Joint Acceleration
                 </span>
-                <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">
+                <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
                   Devopstrio AWS<br />Business Group <span className="text-rose-500">(DABG)</span>
                 </h2>
-                <p className="text-zinc-300 text-base md:text-lg leading-relaxed font-medium">
+                <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
                   Accident-proof cloud transformation starts with deep technical alignment. Our joint Business Group combines dedicated cloud architects, proprietary automation accelerators, and flexible AWS migration funding programs to deliver immediate business value.
                 </p>
                 <div className="h-[1px] bg-zinc-900 w-full my-4" />
@@ -496,10 +498,10 @@ export default function AWSSteategicAllianceHub() {
           <div className="max-w-7xl mx-auto w-full px-6 lg:px-12">
             
             <Reveal className="mb-16 text-center max-w-2xl mx-auto">
-              <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
+              <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
                 Capabilities Center
               </span>
-              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">
+              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
                 Enterprise AWS <span className="text-rose-500">Solutions</span>
               </h2>
               <p className="text-zinc-400 text-xs md:text-sm font-semibold">
@@ -544,7 +546,7 @@ export default function AWSSteategicAllianceHub() {
                     <div className="absolute top-0 right-0 w-24 h-24 bg-rose-500/5 rounded-full blur-2xl pointer-events-none" />
                     
                     <div>
-                      <span className="text-[10px] font-mono text-rose-500 uppercase tracking-widest block mb-2 font-bold">
+                      <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
                         Key Metric: {currentCap.metrics}
                       </span>
                       <h3 className="text-xl md:text-2xl font-extrabold text-white mb-2 uppercase tracking-wide">
@@ -586,15 +588,37 @@ export default function AWSSteategicAllianceHub() {
       </div>
 
       {/* 5. JOINT SOLUTIONS & INDUSTRIES */}
+      
+
+        
+      {/* CERTIFICATIONS */}
+      <PartnerCertifications 
+        title="AWS Certifications"
+        certifications={[
+            { image: "/assets/ecosystem/aws-awards/Group 1000008904.png" },
+            { image: "/assets/ecosystem/aws-awards/Group 1000008905.png" },
+            { image: "/assets/ecosystem/aws-awards/Group 1000008906.png" },
+            { image: "/assets/ecosystem/aws-awards/Group 1000008907.png" },
+            { image: "/assets/ecosystem/aws-awards/image 118.png" },
+            { image: "/assets/ecosystem/aws-awards/image 119-Photoroom 1.png" },
+            { image: "/assets/ecosystem/aws-awards/image 119-Photoroom 2.png" },
+            { image: "/assets/ecosystem/aws-awards/image 119-Photoroom 3.png" },
+            { image: "/assets/ecosystem/aws-awards/image 120.png" },
+            { image: "/assets/ecosystem/aws-awards/image 141.png" },
+            { image: "/assets/ecosystem/aws-awards/image 144-Photoroom 1.png" }
+          ]}
+      />
+
+      
       <div id="solutions" className="scroll-mt-24">
         <section className="w-full py-24 bg-black border-b border-zinc-900/60">
           <div className="max-w-7xl mx-auto w-full px-6 lg:px-12">
             
             <Reveal className="mb-12 text-center max-w-2xl mx-auto">
-              <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
+              <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
                 Vertical Solutions
               </span>
-              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">
+              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
                 AWS Across <span className="text-rose-500">Industries</span>
               </h2>
             </Reveal>
@@ -625,19 +649,19 @@ export default function AWSSteategicAllianceHub() {
                   className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 bg-zinc-950/40 border border-zinc-900 rounded-2xl p-8 transition-all duration-500 animate-fadeIn"
                 >
                   <div className="space-y-2 text-left">
-                    <span className="text-[10px] font-mono text-rose-500 uppercase tracking-widest block font-bold">THE CHALLENGE</span>
+                    <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">THE CHALLENGE</span>
                     <h4 className="text-base font-bold text-white font-mono">Business Roadblock</h4>
                     <p className="text-sm md:text-base text-zinc-300 font-medium leading-relaxed">{ind.challenge}</p>
                   </div>
                   
                   <div className="space-y-2 text-left">
-                    <span className="text-[10px] font-mono text-rose-500 uppercase tracking-widest block font-bold">THE SOLUTION</span>
+                    <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">THE SOLUTION</span>
                     <h4 className="text-base font-bold text-white font-mono">Co-Engineered Setup</h4>
                     <p className="text-sm md:text-base text-zinc-300 font-medium leading-relaxed">{ind.solution}</p>
                   </div>
 
                   <div className="space-y-2 text-left">
-                    <span className="text-[10px] font-mono text-rose-500 uppercase tracking-widest block font-bold">THE OUTCOME</span>
+                    <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">THE OUTCOME</span>
                     <h4 className="text-base font-bold text-white font-mono">Measured Metric</h4>
                     <p className="text-xs md:text-sm text-zinc-300 leading-relaxed font-bold">{ind.outcome}</p>
                   </div>
@@ -655,10 +679,10 @@ export default function AWSSteategicAllianceHub() {
           <div className="max-w-7xl mx-auto w-full px-6 lg:px-12">
             
             <Reveal className="mb-16 text-left">
-              <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
+              <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
                 Case Outcomes
               </span>
-              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">
+              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
                 Transformational <span className="text-rose-500">Impact</span>
               </h2>
             </Reveal>
@@ -670,7 +694,7 @@ export default function AWSSteategicAllianceHub() {
                   className="fade-scroll-item p-8 rounded-2xl bg-zinc-950/40 border border-zinc-900 hover:border-rose-500/20 transition-all duration-300 flex flex-col justify-between"
                 >
                   <div>
-                    <span className="text-[10px] font-mono text-rose-500 tracking-wider uppercase font-bold block mb-1">
+                    <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
                       {story.title}
                     </span>
                     <h3 className="text-base md:text-lg font-bold text-white mb-6 uppercase tracking-wide">
@@ -709,13 +733,13 @@ export default function AWSSteategicAllianceHub() {
 
               <div className="lg:col-span-5">
                 <Reveal className="text-left sticky top-28">
-                  <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
+                  <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
                     Questions & answers
                   </span>
-                  <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">
+                  <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
                     Frequently Asked <span className="text-rose-500">Questions</span>
                   </h2>
-                  <p className="text-zinc-300 text-sm md:text-base font-medium max-w-sm">
+                  <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
                     Find detailed explanations regarding our strategic alliance frameworks, operational boundaries, and AWS technical execution.
                   </p>
                 </Reveal>
@@ -726,16 +750,6 @@ export default function AWSSteategicAllianceHub() {
                   {faqs.map((faq, idx) => {
                     const isOpen = openFaqIndex === idx;
                   
-  const certifications = [
-    { name: "AWS Certified Solutions Architect", image: "/assets/ecosystem/aws-awards/Group 1000008904.png" },
-    { name: "AWS Certified Developer Associate", image: "/assets/ecosystem/aws-awards/Group 1000008905.png" },
-    { name: "AWS Certified SysOps Administrator", image: "/assets/ecosystem/aws-awards/Group 1000008906.png" },
-    { name: "AWS Certified Data Engineer", image: "/assets/ecosystem/aws-awards/Group 1000008907.png" },
-    { name: "AWS Certified Security Specialty", image: "/assets/ecosystem/aws-awards/image 118.png" },
-    { name: "AWS Certified Database Specialty", image: "/assets/ecosystem/aws-awards/image 119-Photoroom 1.png" },
-    { name: "AWS Certified Machine Learning", image: "/assets/ecosystem/aws-awards/image 119-Photoroom 2.png" }
-  ];
-
   return (
                       <div
                         key={idx}
@@ -764,14 +778,14 @@ export default function AWSSteategicAllianceHub() {
           </div>
         </section>
 
-        {/* 8. FINAL CTA */}
+{/* 8. FINAL CTA */}
         <section className="relative w-full py-32 bg-[#030303] overflow-hidden text-center">
           {/* Ambient background blur */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-rose-500/[0.02] rounded-full blur-[140px] pointer-events-none" />
 
           <div className="max-w-3xl mx-auto px-6 lg:px-12 relative z-10 flex flex-col items-center">
             <Reveal>
-              <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
+              <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
                 GET STARTED TODAY
               </span>
             </Reveal>

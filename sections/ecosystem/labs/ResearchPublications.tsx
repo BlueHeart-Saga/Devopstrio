@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Reveal } from "@/components/ui/Reveal";
-import { BookOpen, FileText, Compass, ExternalLink, ArrowUpRight } from "lucide-react";
+import { BookOpen, FileText, Compass, ChevronRight } from "lucide-react";
 import Link from "next/link";
 
 interface Publication {
@@ -47,58 +47,82 @@ export function ResearchPublications() {
   ];
 
   return (
-    <section id="publications" className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
+    <section id="publications" className="w-full py-24 md:py-32 bg-[#030303] border-b border-zinc-900/60 relative">
       <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
-        <Reveal className="mb-16 text-left">
-          <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
-            R&D REPOSITORY
-          </span>
-          <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
-            Research & <span className="text-rose-500">Publications</span>
-          </h2>
-          <p className="text-zinc-400 text-sm font-semibold max-w-2xl">
-            In-depth white papers, technical summaries, and architecture diagrams documented by our engineering teams.
-          </p>
+        
+        {/* Main Section Header */}
+        <Reveal>
+          <div className="text-center max-w-2xl mx-auto mb-16">
+            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+              R&D REPOSITORY
+            </span>
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
+              Research & <span className="text-rose-500">Publications</span>
+            </h2>
+            <p className="text-zinc-400 text-sm font-semibold mb-8">
+              Access our in-depth white papers, technical summaries, and architecture blueprints. Learn how our engineering teams benchmark multi-cloud scaling, fortify LLM interfaces, and secure deployments.
+            </p>
+            <button className="px-6 py-2.5 rounded-lg text-xs font-bold text-white bg-rose-600 hover:bg-rose-500 transition-colors shadow-lg hover:shadow-[0_0_20px_rgba(225,29,72,0.4)]">
+              View All Publications
+            </button>
+          </div>
         </Reveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {publications.map((pub) => (
-            <div
-              key={pub.title}
-              className="group flex flex-col justify-between p-8 bg-zinc-950/40 border border-zinc-900 hover:border-rose-500/20 rounded-3xl transition-all duration-300 min-h-[300px]"
-            >
-              <div>
-                <div className="flex items-center justify-between mb-6 border-b border-zinc-900/60 pb-4">
-                  <span className="text-[9px] font-mono text-rose-500 uppercase tracking-widest font-bold">
-                    {pub.category}
-                  </span>
-                  <div className="text-zinc-500 group-hover:text-rose-500 transition-colors">
-                    {pub.icon}
-                  </div>
-                </div>
+        {/* Massive Hero Image Container with Overlay Glass Cards */}
+        <div className="relative w-full rounded-[24px] lg:rounded-[32px] overflow-hidden min-h-[700px] border border-white/5 shadow-2xl">
+          
+          {/* Background Image Layer */}
+          <div className="absolute inset-0 z-0">
+            <img 
+              src="/assets/services/bg-ai.png" 
+              alt="Research and Engineering Collaboration" 
+              className="w-full h-full object-cover opacity-60"
+            />
+            {/* Gradient Overlay to ensure text readability at the bottom */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
+          </div>
 
-                <h3 className="text-xs font-bold text-white uppercase tracking-wider mb-3 leading-normal">{pub.title}</h3>
-                <p className="text-[11px] text-zinc-400 font-semibold leading-relaxed mb-6">
-                  {pub.desc}
-                </p>
-              </div>
-
-              <div className="mt-8 pt-4 border-t border-zinc-900/60 flex flex-col gap-3">
-                <div className="flex items-center justify-between text-[10px] text-zinc-500">
-                  <span className="font-semibold">{pub.author}</span>
-                  <span className="font-mono">{pub.readTime}</span>
-                </div>
-                <Link
-                  href={pub.url}
-                  className="inline-flex items-center gap-1 text-[10px] font-mono font-bold uppercase tracking-wider text-rose-500 hover:text-rose-400 transition-colors mt-2"
+          {/* Bottom Glass Cards Grid */}
+          <div className="absolute bottom-0 left-0 w-full p-4 md:p-8 lg:p-12 z-10">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {publications.map((pub) => (
+                <div
+                  key={pub.title}
+                  className="group flex flex-col justify-between p-8 bg-white/5 backdrop-blur-2xl border border-white/10 hover:border-white/20 rounded-2xl transition-all duration-300 min-h-[300px] shadow-xl hover:bg-white/10"
                 >
-                  Read on Insights
-                  <ArrowUpRight size={12} className="group-hover:translate-x-1 transition-transform" />
-                </Link>
-              </div>
+                  <div>
+                    {/* White Rounded Square Icon Container */}
+                    <div className="w-12 h-12 rounded-2xl bg-white shadow-lg flex items-center justify-center text-rose-600 mb-6 group-hover:scale-105 transition-transform duration-300">
+                      {pub.icon}
+                    </div>
+
+                    <h3 className="text-xl font-bold text-white tracking-tight leading-tight mb-4">
+                      {pub.title}
+                    </h3>
+                    <p className="text-sm text-zinc-300 font-medium leading-relaxed mb-8">
+                      {pub.desc}
+                    </p>
+                  </div>
+
+                  {/* Text Link CTA */}
+                  <Link
+                    href={pub.url}
+                    className="inline-flex items-center gap-2 mt-auto"
+                  >
+                    <div className="w-6 h-6 rounded-full bg-rose-600 flex items-center justify-center text-white group-hover:bg-rose-500 transition-colors">
+                      <ChevronRight size={14} strokeWidth={3} />
+                    </div>
+                    <span className="text-xs font-bold text-rose-400 group-hover:text-rose-300 transition-colors">
+                      Read Technical Report
+                    </span>
+                  </Link>
+                </div>
+              ))}
             </div>
-          ))}
+          </div>
+
         </div>
+
       </div>
     </section>
   );

@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionNavbar } from "@/components/ui/SectionNavbar";
+import { PartnerCertifications } from "@/sections/ecosystem/partnerships/PartnerCertifications";
 import {
   ArrowUpRight,
   ChevronDown,
@@ -27,6 +28,7 @@ const oracleSections = [
   { id: "capabilities", label: "Capabilities" },
   { id: "solutions", label: "Solutions" },
   { id: "architecture", label: "Architecture" },
+  { id: "certifications", label: "Certifications" },
   { id: "use-cases", label: "Use Cases" },
   { id: "technologies", label: "Technologies" },
   { id: "why-oracle", label: "Why Us" },
@@ -393,7 +395,7 @@ export default function OracleStrategicAllianceHub() {
               </Reveal>
               
               <Reveal delay={0.2}>
-                <p className="text-zinc-400 text-xs sm:text-sm md:text-base leading-relaxed font-semibold max-w-xl mb-8">
+                <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
                   Modernize enterprise workloads, data platforms, and mission-critical operations with Oracle technologies across cloud infrastructure, databases, applications, and secure digital transformation.
                 </p>
               </Reveal>
@@ -494,10 +496,10 @@ export default function OracleStrategicAllianceHub() {
             {/* Story Direction Left Side */}
             <div className="lg:col-span-5">
               <Reveal className="text-left">
-                <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
+                <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
                   ALLIANCE OVERVIEW
                 </span>
-                <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold tracking-tight leading-tight text-white mb-6">
+                <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
                   Modernizing Core Enterprise <span className="text-rose-500">Systems with Oracle</span>
                 </h2>
                 <div className="space-y-4 text-zinc-300 text-sm md:text-base font-semibold leading-relaxed">
@@ -539,13 +541,13 @@ export default function OracleStrategicAllianceHub() {
       <section id="capabilities" className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
           <Reveal className="mb-16 text-center max-w-2xl mx-auto">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
+            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
               OUR CAPABILITIES
             </span>
-            <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold tracking-tight leading-tight text-white mb-6">
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
               Our Oracle <span className="text-rose-500">Capabilities</span>
             </h2>
-            <p className="text-zinc-300 text-sm md:text-base font-semibold">
+            <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
               Deep capability profiles tailored to modernize core infrastructure and secure enterprise databases.
             </p>
           </Reveal>
@@ -580,10 +582,10 @@ export default function OracleStrategicAllianceHub() {
       <section id="solutions" className="w-full py-24 bg-[#030303] border-b border-zinc-900/60">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
           <Reveal className="mb-16 text-left">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
+            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
               ORACLE DELIVERABLES
             </span>
-            <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold tracking-tight leading-tight text-white mb-6">
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
               Oracle-Powered Solutions for <span className="text-rose-500">Enterprise Transformation</span>
             </h2>
           </Reveal>
@@ -610,13 +612,13 @@ export default function OracleStrategicAllianceHub() {
         <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,rgba(225,29,72,0.02),transparent_70%)] pointer-events-none" />
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
           <Reveal className="mb-16 text-center max-w-2xl mx-auto">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
+            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
               SYSTEM ARCHITECTURE FLOW
             </span>
-            <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold tracking-tight leading-tight text-white mb-6">
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
               A Reference Architecture for <span className="text-rose-500">Oracle-Powered Delivery</span>
             </h2>
-            <p className="text-zinc-350 text-sm md:text-base font-semibold">
+            <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
               Layered visual representation of Oracle cloud stack workflows from clients to high-speed bare-metal nodes.
             </p>
           </Reveal>
@@ -644,13 +646,34 @@ export default function OracleStrategicAllianceHub() {
       </section>
 
       {/* 6. BUSINESS USE CASES */}
+      
+
+      
+      {/* CERTIFICATIONS */}
+      <PartnerCertifications 
+        title="Oracle Certifications"
+        certifications={[
+            { image: "/assets/ecosystem/ORACLE_Awards/Group 1000008908.png" },
+            { image: "/assets/ecosystem/ORACLE_Awards/Group 1000008909.png" },
+            { image: "/assets/ecosystem/ORACLE_Awards/image 154.png" },
+            { image: "/assets/ecosystem/ORACLE_Awards/image 155.png" },
+            { image: "/assets/ecosystem/ORACLE_Awards/image 156.png" },
+            { image: "/assets/ecosystem/ORACLE_Awards/image 157.png" },
+            { image: "/assets/ecosystem/ORACLE_Awards/image 158.png" },
+            { image: "/assets/ecosystem/ORACLE_Awards/image 159.png" },
+            { image: "/assets/ecosystem/ORACLE_Awards/image 162.png" },
+            { image: "/assets/ecosystem/ORACLE_Awards/image 163.png" }
+          ]}
+      />
+
+      
       <section id="use-cases" className="w-full py-24 bg-[#030303] border-b border-zinc-900/60">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
           <Reveal className="mb-16 text-left">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
+            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
               WORKLOAD APPLICATIONS
             </span>
-            <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold tracking-tight leading-tight text-white mb-6">
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
               Where We Apply the <span className="text-rose-500">Oracle Ecosystem</span>
             </h2>
           </Reveal>
@@ -682,10 +705,10 @@ export default function OracleStrategicAllianceHub() {
       <section id="technologies" className="w-full py-24 bg-black border-b border-zinc-900/60">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
           <Reveal className="mb-16 text-center max-w-2xl mx-auto">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
+            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
               TECHNOLOGY STACK
             </span>
-            <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold tracking-tight leading-tight text-white mb-6">
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
               Oracle Technologies <span className="text-rose-500">Across the Stack</span>
             </h2>
           </Reveal>
@@ -719,10 +742,10 @@ export default function OracleStrategicAllianceHub() {
       <section id="why-oracle" className="w-full py-24 bg-[#030303] border-b border-zinc-900/60">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
           <Reveal className="mb-16 text-center max-w-2xl mx-auto">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
+            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
               ALLIANCE VALUE
             </span>
-            <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold tracking-tight leading-tight text-white mb-6">
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
               Why Organizations Build on Oracle <span className="text-rose-500">with Devopstrio</span>
             </h2>
           </Reveal>
@@ -751,10 +774,10 @@ export default function OracleStrategicAllianceHub() {
             {/* Metric Highlights Left Side */}
             <div className="lg:col-span-5">
               <Reveal className="text-left">
-                <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
+                <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
                   PROVEN METRICS
                 </span>
-                <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold tracking-tight leading-tight text-white mb-6">
+                <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
                   Outcomes Enabled Through <span className="text-rose-500">Oracle Technologies</span>
                 </h2>
               </Reveal>
@@ -802,10 +825,10 @@ export default function OracleStrategicAllianceHub() {
       <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
           <Reveal className="mb-16 text-center max-w-2xl mx-auto">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
+            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
               EXPLORE OTHER NETWORKS
             </span>
-            <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold tracking-tight leading-tight text-white mb-6">
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
               Related Ecosystem <span className="text-rose-500">Pages</span>
             </h2>
           </Reveal>
@@ -839,10 +862,10 @@ export default function OracleStrategicAllianceHub() {
 
             <div className="lg:col-span-5">
               <Reveal className="text-left sticky top-28">
-                <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
+                <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
                   ALLIANCE QUESTIONS
                 </span>
-                <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold tracking-tight leading-tight text-white mb-5">
+                <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
                   Frequently Asked <span className="text-rose-500">Questions</span>
                 </h2>
                 <p className="text-zinc-400 text-xs md:text-sm font-bold max-w-md">
@@ -891,7 +914,7 @@ export default function OracleStrategicAllianceHub() {
         </div>
       </section>
 
-      {/* 12. FINAL CTA */}
+{/* 12. FINAL CTA */}
       <section className="relative w-full py-32 bg-[#030303] overflow-hidden text-center">
         {/* Ambient background blur */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-rose-500/[0.02] rounded-full blur-[140px] pointer-events-none" />
@@ -899,7 +922,7 @@ export default function OracleStrategicAllianceHub() {
         <div className="max-w-3xl mx-auto px-12 xl:px-8 relative z-10 flex flex-col items-center">
 
           <Reveal>
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
+            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
               OCI TRANSFORMATION
             </span>
           </Reveal>

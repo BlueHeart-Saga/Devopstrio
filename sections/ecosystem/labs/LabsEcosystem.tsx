@@ -2,126 +2,155 @@
 
 import React from "react";
 import { Reveal } from "@/components/ui/Reveal";
-import { Brain, Cloud, Terminal, Shield, Database, Cpu, ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, ChevronRight } from "lucide-react";
 import Link from "next/link";
 
-interface LabCard {
+interface LabItem {
   name: string;
-  projectsCount: string;
-  icon: React.ReactNode;
-  focus: string;
   desc: string;
   href: string;
+  action: string;
 }
 
 export function LabsEcosystem() {
-  const labs: LabCard[] = [
+  const labs: LabItem[] = [
     {
       name: "AI Innovation Lab",
-      projectsCount: "20 Active Projects",
-      icon: <Brain size={20} className="text-rose-500" />,
-      focus: "LLM Systems & Agents",
-      desc: "Fine-tuning localized models, multi-agent orchestrations, and semantic vector routing databases.",
-      href: "#showcase"
+      desc: "Stateful agent networks and vector lookups",
+      href: "#ai-lab",
+      action: "Explore AI Lab",
     },
     {
       name: "Cloud Innovation Lab",
-      projectsCount: "15 Active Projects",
-      icon: <Cloud size={20} className="text-rose-500" />,
-      focus: "Green Cloud & Serverless",
-      desc: "Optimizing serverless workloads execution speeds, green cloud carbon auditing, and multicloud frameworks.",
-      href: "#showcase"
+      desc: "Green computing and serverless edge WASM",
+      href: "#cloud-lab",
+      action: "Explore Cloud Lab",
     },
     {
       name: "DevOps Innovation Lab",
-      projectsCount: "18 Active Projects",
-      icon: <Terminal size={20} className="text-rose-500" />,
-      focus: "Platform SRE & GitOps",
-      desc: "Pre-building developer portal dashboards, Kubernetes Karpenter scaling, and SRE tracing pipelines.",
-      href: "#showcase"
+      desc: "Canary rollouts and dynamic pipeline tasks",
+      href: "#devops-lab",
+      action: "Explore DevOps Lab",
     },
     {
       name: "Cybersecurity Lab",
-      projectsCount: "12 Active Projects",
-      icon: <Shield size={20} className="text-rose-500" />,
-      focus: "Zero-Trust Systems",
-      desc: "Developing dynamic HashiCorp Vault secrets rotators and scanning packages for prompt injections.",
-      href: "#showcase"
+      desc: "eBPF security rules and SBOM vulnerability scans",
+      href: "#cyber-lab",
+      action: "Explore Cyber Lab",
     },
     {
       name: "Data & Analytics Lab",
-      projectsCount: "14 Active Projects",
-      icon: <Database size={20} className="text-rose-500" />,
-      focus: "Data Mesh & Lakehouses",
-      desc: "Constructing high-throughput event buses, streaming telemetry parsers, and data mesh schemas.",
-      href: "#showcase"
+      desc: "Flink stream engines and Delta Lake compression",
+      href: "#data-lab",
+      action: "Explore Data Lab",
     },
-    {
-      name: "Future Technologies Lab",
-      projectsCount: "8 Active Projects",
-      icon: <Cpu size={20} className="text-rose-500" />,
-      focus: "Quantum & Edge AI",
-      desc: "Researching post-quantum security algorithms and running cognitive models at localized Edge targets.",
-      href: "#showcase"
-    }
   ];
 
   return (
-    <section id="ecosystem" className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
-      <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
-        <Reveal className="mb-16 text-left">
-          <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
-            R&D CONSTELLATION
-          </span>
-          <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
-            Innovation Labs <span className="text-rose-500">Ecosystem</span>
-          </h2>
-          <p className="text-zinc-400 text-sm font-semibold max-w-2xl">
-            Six highly specialized research centers testing next-generation architectural paradigms to future-proof global enterprises.
-          </p>
+    <section id="ecosystem" className="w-full py-24 bg-[#030303] text-white border-b border-zinc-900 relative">
+      {/* Background radial glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-rose-600/5 rounded-full blur-[120px] pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
+        
+        {/* Header Section */}
+        <Reveal>
+          <div className="text-center max-w-3xl mx-auto mb-14">
+            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+              R&D CONSTELLATION
+            </span>
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
+              Innovation Labs <span className="text-rose-500">Ecosystem</span>
+            </h2>
+            <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
+              Highly specialized research centers testing next-generation architectural paradigms to future-proof global enterprises.
+            </p>
+          </div>
         </Reveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {labs.map((lab) => (
-            <div
-              key={lab.name}
-              className="group flex flex-col justify-between p-8 bg-zinc-950/40 border border-zinc-900 hover:border-rose-500/20 rounded-3xl transition-all duration-300 min-h-[260px]"
-            >
-              <div>
-                <div className="flex items-center justify-between mb-6 border-b border-zinc-900/60 pb-4">
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-xl bg-zinc-900 border border-zinc-850 flex items-center justify-center text-rose-500 group-hover:bg-rose-950/20 transition-all duration-300">
-                      {lab.icon}
-                    </div>
-                    <div>
-                      <h4 className="text-xs font-bold text-white uppercase tracking-wider">{lab.name}</h4>
-                      <span className="text-[9px] font-mono text-zinc-500 uppercase tracking-widest font-semibold block">
-                        {lab.projectsCount}
-                      </span>
-                    </div>
-                  </div>
-                </div>
+        {/* Categories Main Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 items-stretch">
 
-                <span className="block text-[10px] font-mono font-bold text-rose-500 uppercase tracking-wider mb-2">
-                  {lab.focus}
-                </span>
-                <p className="text-[11px] text-zinc-400 font-semibold leading-relaxed">
-                  {lab.desc}
+          {/* Left Tall Card (Col 1, Spans entire height / 2 rows on desktop) */}
+          <Reveal className="lg:col-span-1 h-full">
+            <div className="relative overflow-hidden rounded-3xl border border-white/10 hover:border-rose-500/30 p-8 flex flex-col justify-between h-full min-h-[420px] bg-gradient-to-br from-zinc-950/90 via-[#0a0506]/90 to-[#0f0709]/90 group/tall backdrop-blur-md transition-all duration-500 shadow-[0_8px_32px_0_rgba(0,0,0,0.5)]">
+              {/* Internal decorative glowing meshes */}
+              <div className="absolute -right-10 -top-10 w-48 h-48 bg-rose-600/10 rounded-full blur-3xl pointer-events-none transition-all duration-700 group-hover/tall:scale-110" />
+              <div className="absolute -left-10 -bottom-10 w-48 h-48 bg-orange-600/5 rounded-full blur-3xl pointer-events-none transition-all duration-700 group-hover/tall:scale-110" />
+
+              <img
+                src="/assets/services/bg-ai.png"
+                alt="Abstract Background"
+                className="absolute inset-0 w-full h-full object-cover mix-blend-screen pointer-events-none opacity-30"
+              />
+
+              {/* Card top details */}
+              <div className="relative z-10">
+                <h3 className="text-xl md:text-2xl font-bold text-white tracking-tight leading-tight mb-4 group-hover/tall:text-rose-400 transition-colors">
+                  Future-proofing delivery with advanced R&D
+                </h3>
+                <p className="text-zinc-100 text-xs font-semibold leading-relaxed">
+                  Our labs act as a testing ground for cutting-edge technologies, ensuring that the solutions we deliver are built on validated, scalable frameworks.
                 </p>
               </div>
 
-              <div className="mt-8 pt-4 border-t border-zinc-900/60 flex items-center justify-between">
+              {/* Card bottom button */}
+              <div className="relative z-10 mt-8">
                 <Link
-                  href={lab.href}
-                  className="inline-flex items-center gap-2 text-[10px] font-mono font-bold uppercase tracking-wider text-rose-500 group-hover:text-rose-400 transition-colors"
+                  href="#contact"
+                  className="gap-2 w-fit inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white transition-all duration-300 hover:shadow-[0_0_25px_rgba(225,29,72,0.35)] hover:-translate-y-0.5"
                 >
-                  Explore Lab
-                  <ArrowUpRight size={12} className="group-hover:translate-x-1 transition-transform" />
+                  Partner With Us{" "}
+                  <ArrowUpRight
+                    size={13}
+                    className="transition-transform duration-300 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5"
+                  />
                 </Link>
               </div>
             </div>
-          ))}
+          </Reveal>
+
+          {/* Right Capabilities Grid (Col 2-4) */}
+          <div className="lg:col-span-3 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {labs.map((item, idx) => (
+              <Reveal key={item.name} delay={idx * 0.05} className="h-full">
+                <div className="group/card flex flex-col justify-between bg-zinc-950/30 border border-white/5 hover:border-rose-500/20 hover:bg-zinc-950/60 rounded-2xl p-6 transition-all duration-300 min-h-[220px] h-full relative overflow-hidden backdrop-blur-md shadow-[0_8px_32px_0_rgba(0,0,0,0.37)]">
+
+                  {/* Subtle color highlight glow on hover */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-rose-600/0 via-rose-600/0 to-rose-600/5 opacity-0 group-hover/card:opacity-100 transition-opacity duration-500 pointer-events-none" />
+
+                  {/* Text details */}
+                  <div className="relative z-10">
+                    <h4 className="text-base font-semibold text-rose-500 group-hover:text-rose-400 transition-colors mb-2">
+                      {item.name}
+                    </h4>
+                    <p className="text-[12px] text-zinc-200 font-semibold leading-relaxed mb-6">
+                      {item.desc}
+                    </p>
+                  </div>
+
+                  {/* Link action details */}
+                  <Link
+                    href={item.href}
+                    className="relative z-10 inline-flex items-center gap-2.5 group/link mt-auto w-fit"
+                  >
+                    <span className="w-7 h-7 rounded-full bg-rose-600/10 group-hover/link:bg-rose-600 text-rose-500 group-hover/link:text-white flex items-center justify-center transition-all duration-300">
+                      <ChevronRight
+                        size={12}
+                        className="transition-transform duration-300 group-hover/link:translate-x-0.5"
+                      />
+                    </span>
+                    <span className="text-[12px] font-semibold text-zinc-400 group-hover/link:text-zinc-200 transition-colors">
+                      {item.action}
+                    </span>
+                  </Link>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+
         </div>
+
       </div>
     </section>
   );

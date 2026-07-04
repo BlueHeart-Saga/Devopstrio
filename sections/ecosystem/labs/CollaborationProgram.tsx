@@ -1,89 +1,208 @@
 "use client";
 
-import React from "react";
+import React, { useRef, useState } from "react";
 import { Reveal } from "@/components/ui/Reveal";
-import { ArrowUpRight, Landmark, Rocket, GraduationCap, Link2, Users } from "lucide-react";
+import { ChevronRight, ChevronLeft } from "lucide-react";
 import Link from "next/link";
 
 interface Program {
   title: string;
+  category: string;
+  filter: string;
   desc: string;
-  icon: React.ReactNode;
+  image: string;
+  cta: string;
 }
 
 export function CollaborationProgram() {
+  const [activeFilter, setActiveFilter] = useState("featured");
+  const carouselRef = useRef<HTMLDivElement>(null);
+
   const programs: Program[] = [
     {
-      title: "Enterprise Innovation",
+      title: "Enterprise Innovation Accelerators",
+      category: "Co-Investment",
+      filter: "featured",
       desc: "Co-invest and design custom accelerators tailored to solve specific scaling and automation issues inside your business.",
-      icon: <Landmark size={18} />
+      image: "/assets/services/bg-cloud.png",
+      cta: "Explore Enterprise"
     },
     {
-      title: "Startup Collaboration",
+      title: "Startup Sandbox Collaboration",
+      category: "Early Stage",
+      filter: "featured",
       desc: "For pre-seed software builders seeking engineering reviews, sandbox accounts, and integration pathways to our catalog.",
-      icon: <Rocket size={18} />
+      image: "/assets/services/bg-devops.png",
+      cta: "Join Sandbox"
     },
     {
-      title: "University Partnerships",
+      title: "University & Academic Partnerships",
+      category: "Academic",
+      filter: "academic",
       desc: "Sponsoring student research theses, internship programs, and academic investigation into post-quantum models.",
-      icon: <GraduationCap size={18} />
+      image: "/assets/services/bg-data.png",
+      cta: "View Programs"
     },
     {
-      title: "Technology Alliances",
+      title: "Technology Vendor Alliances",
+      category: "Alliance",
+      filter: "featured",
       desc: "Collaborative testing of upcoming features with AWS, Microsoft Azure, and GCP alpha/beta developer units.",
-      icon: <Link2 size={18} />
+      image: "/assets/services/bg-cybersecurity.png",
+      cta: "Partner With Us"
     },
     {
-      title: "Research Community",
+      title: "Open Source Research Community",
+      category: "Community",
+      filter: "academic",
       desc: "Open-source codebase contributions, monthly tech meetups, and hosting community labs prototyping sessions.",
-      icon: <Users size={18} />
+      image: "/assets/services/bg-ai.png",
+      cta: "Join Community"
     }
   ];
 
+  const filteredPrograms = activeFilter === "all" 
+    ? programs 
+    : programs.filter(p => p.filter === activeFilter);
+
+  const scrollLeft = () => {
+    if (carouselRef.current) {
+      carouselRef.current.scrollBy({ left: -400, behavior: "smooth" });
+    }
+  };
+
+  const scrollRight = () => {
+    if (carouselRef.current) {
+      carouselRef.current.scrollBy({ left: 400, behavior: "smooth" });
+    }
+  };
+
   return (
-    <section id="collaboration" className="w-full py-24 bg-[#030303] border-b border-zinc-900/60 relative">
+    <section id="collaboration" className="w-full py-24 bg-[#030303] border-b border-zinc-900/60 relative overflow-hidden">
       <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
-        <Reveal className="mb-16 text-left">
-          <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+        
+        {/* Header Section */}
+        <Reveal className="mb-10 text-left">
+          <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-zinc-500 mb-4 block">
             PARTICIPATION OPTIONS
           </span>
-          <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
-            Collaboration <span className="text-rose-500">Programs</span>
+          <h2 className="text-xl md:text-3xl xl:text-4xl font-bold tracking-tight leading-tight mb-8 text-white max-w-3xl">
+            Build smarter with insights from technical leaders
           </h2>
-          <p className="text-zinc-400 text-sm font-semibold max-w-2xl">
-            Join Devopstrio Innovation Labs to develop next-gen toolsets, exchange technical assets, and build reliable cloud platforms.
-          </p>
+          
+          {/* Pill Tabs */}
+          <div className="flex flex-wrap items-center gap-3">
+            <button
+              onClick={() => setActiveFilter("featured")}
+              className={`px-5 py-2 rounded-full text-xs font-bold transition-all duration-300 ${
+                activeFilter === "featured"
+                  ? "bg-rose-600 text-white"
+                  : "bg-zinc-900 text-zinc-400 hover:bg-zinc-800 hover:text-white"
+              }`}
+            >
+              Featured
+            </button>
+            <button
+              onClick={() => setActiveFilter("academic")}
+              className={`px-5 py-2 rounded-full text-xs font-bold transition-all duration-300 ${
+                activeFilter === "academic"
+                  ? "bg-rose-600 text-white"
+                  : "bg-zinc-900 text-zinc-400 hover:bg-zinc-800 hover:text-white"
+              }`}
+            >
+              Academic & Community
+            </button>
+            <button
+              onClick={() => setActiveFilter("all")}
+              className={`px-5 py-2 rounded-full text-xs font-bold transition-all duration-300 ${
+                activeFilter === "all"
+                  ? "bg-rose-600 text-white"
+                  : "bg-zinc-900 text-zinc-400 hover:bg-zinc-800 hover:text-white"
+              }`}
+            >
+              View All
+            </button>
+          </div>
         </Reveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
-          {programs.map((prog) => (
+        {/* Carousel Container */}
+        <div 
+          ref={carouselRef}
+          className="flex overflow-x-auto gap-6 pb-12 snap-x snap-mandatory hide-scrollbar"
+          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+        >
+          {filteredPrograms.map((prog) => (
             <div
               key={prog.title}
-              className="group flex flex-col justify-between p-6 bg-zinc-950/40 border border-zinc-900 hover:border-rose-500/20 rounded-2xl transition-all duration-300 min-h-[250px]"
+              className="group min-w-[320px] md:min-w-[400px] w-[320px] md:w-[400px] flex flex-col bg-zinc-950/60 border border-zinc-900 hover:border-zinc-700 rounded-3xl transition-all duration-300 snap-start shrink-0 overflow-hidden"
             >
-              <div>
-                <div className="w-10 h-10 rounded-xl bg-zinc-900 border border-zinc-850 flex items-center justify-center text-rose-500 group-hover:bg-rose-950/20 transition-all duration-300 mb-6">
-                  {prog.icon}
-                </div>
-                <h3 className="text-xs font-bold text-white uppercase tracking-wider mb-3 leading-normal">{prog.title}</h3>
-                <p className="text-[10px] text-zinc-450 font-semibold leading-relaxed">
+              {/* Image Section */}
+              <div className="w-full h-48 md:h-56 overflow-hidden relative">
+                <img 
+                  src={prog.image} 
+                  alt={prog.title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 to-transparent" />
+              </div>
+              
+              {/* Content Section */}
+              <div className="p-8 flex flex-col flex-1 bg-zinc-950/80">
+                <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-rose-500 mb-3 block">
+                  {prog.category}
+                </span>
+                
+                <h3 className="text-lg md:text-xl font-bold text-white tracking-tight leading-snug mb-4 group-hover:text-rose-400 transition-colors">
+                  {prog.title}
+                </h3>
+                
+                <p className="text-sm text-zinc-400 font-medium leading-relaxed mb-8 flex-1">
                   {prog.desc}
                 </p>
-              </div>
 
-              <div className="mt-6 pt-4 border-t border-zinc-900/60">
+                {/* Microsoft-style CTA Button */}
                 <Link
                   href="/contact"
-                  className="inline-flex items-center gap-1.5 text-[9px] font-mono font-bold uppercase tracking-wider text-rose-500 group-hover:text-rose-400 transition-colors"
+                  className="flex items-center gap-4 group/btn"
                 >
-                  Join Program
-                  <ArrowUpRight size={10} className="group-hover:translate-x-1 transition-transform" />
+                  <div className="w-8 h-8 rounded-lg bg-rose-600 flex items-center justify-center text-white group-hover/btn:bg-rose-500 transition-colors shadow-lg">
+                    <ChevronRight size={16} strokeWidth={3} />
+                  </div>
+                  <span className="text-xs font-bold text-rose-500 group-hover/btn:text-rose-400 transition-colors">
+                    {prog.cta}
+                  </span>
                 </Link>
               </div>
             </div>
           ))}
         </div>
+
+        {/* Bottom Navigation Arrows */}
+        <div className="flex items-center gap-4 mt-2">
+          <button 
+            onClick={scrollLeft}
+            className="w-12 h-12 rounded-full border border-zinc-800 flex items-center justify-center text-zinc-400 hover:text-white hover:border-zinc-600 hover:bg-zinc-900 transition-all duration-300 focus:outline-none"
+            aria-label="Scroll left"
+          >
+            <ChevronLeft size={20} />
+          </button>
+          <button 
+            onClick={scrollRight}
+            className="w-12 h-12 rounded-full border border-zinc-800 flex items-center justify-center text-zinc-400 hover:text-white hover:border-zinc-600 hover:bg-zinc-900 transition-all duration-300 focus:outline-none"
+            aria-label="Scroll right"
+          >
+            <ChevronRight size={20} />
+          </button>
+        </div>
+
       </div>
+
+      {/* Global styles to hide scrollbar for this component */}
+      <style dangerouslySetInnerHTML={{__html: `
+        .hide-scrollbar::-webkit-scrollbar {
+          display: none;
+        }
+      `}} />
     </section>
   );
 }

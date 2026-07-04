@@ -8,14 +8,15 @@ import { Reveal } from "@/components/ui/Reveal";
 
 export interface HeroProps {
   badge?: string;
-  title: string;
+  title: string | React.ReactNode;
   subtitle: string;
   stats?: { value: string; label: string }[];
   breadcrumbs: { label: string; href?: string }[];
   bgImage?: string;
+  children?: React.ReactNode;
 }
 
-export function Hero({ badge, title, subtitle, stats, breadcrumbs, bgImage }: HeroProps) {
+export function Hero({ badge, title, subtitle, stats, breadcrumbs, bgImage, children }: HeroProps) {
   return (
     <section className="relative overflow-hidden bg-black text-white min-h-screen flex flex-col justify-between pt-36 pb-20 border-b border-zinc-900/60">
       {/* Background Image */}
@@ -81,6 +82,14 @@ export function Hero({ badge, title, subtitle, stats, breadcrumbs, bgImage }: He
               {subtitle}
             </p>
           </Reveal>
+
+          {children && (
+            <Reveal delay={0.2}>
+              <div className="mt-8 flex flex-wrap justify-center gap-4">
+                {children}
+              </div>
+            </Reveal>
+          )}
         </div>
 
         {/* Metrics Row - Centered alignment at the bottom */}

@@ -432,6 +432,18 @@ export const AwardsList = () => {
     });
   }, [searchQuery, selectedYear]);
 
+  // Load more pagination
+  const [visibleCount, setVisibleCount] = useState(12);
+
+  // Reset pagination when filters change
+  React.useEffect(() => {
+    setVisibleCount(12);
+  }, [searchQuery, selectedYear]);
+
+  const handleLoadMore = () => {
+    setVisibleCount(prev => prev + 12);
+  };
+
   return (
     <section className="w-full py-20 bg-[#030303] text-white relative">
       <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
@@ -440,12 +452,12 @@ export const AwardsList = () => {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 border-b border-zinc-900 pb-8">
           <Reveal>
             <div className="flex items-center gap-2 mb-3">
-              <span className="text-[10px] font-extrabold tracking-widest uppercase text-rose-500">
+              <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500">
                 Official Directory
               </span>
             </div>
-            <h2 className="text-2xl md:text-3xl font-light text-white tracking-tight">
-              Ecosystem <span className="font-extrabold text-rose-500">Accreditation & Awards</span>
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white">
+              Ecosystem <span className="text-rose-500">Accreditation & Awards</span>
             </h2>
           </Reveal>
 
@@ -457,9 +469,9 @@ export const AwardsList = () => {
                 onClick={() => {
                   setSelectedYear(year);
                 }}
-                className={`px-4 py-2 rounded-lg text-[10px] font-black uppercase tracking-wider transition-all duration-200 ${
+                className={`px-4 py-2 rounded-lg text-[10px] font-bold uppercase tracking-wider transition-all duration-200 ${
                   selectedYear === year
-                    ? "bg-rose-600 text-white font-extrabold"
+                    ? "bg-rose-600 text-white"
                     : "text-zinc-400 hover:text-white"
                 }`}
               >
@@ -480,7 +492,7 @@ export const AwardsList = () => {
               onChange={(e) => {
                 setSearchQuery(e.target.value);
               }}
-              className="w-full bg-zinc-950/60 border border-zinc-900 focus:border-rose-500/50 focus:ring-1 focus:ring-rose-500/20 rounded-xl py-3.5 pl-11 pr-4 text-xs font-bold text-white placeholder-zinc-500 transition-all outline-none"
+              className="w-full bg-zinc-950/60 border border-zinc-900 focus:border-rose-500/50 focus:ring-1 focus:ring-rose-500/20 rounded-xl py-3.5 pl-11 pr-4 text-xs font-medium text-white placeholder-zinc-500 transition-all outline-none"
             />
           </div>
         </div>
@@ -491,7 +503,7 @@ export const AwardsList = () => {
           className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
         >
           <AnimatePresence mode="popLayout">
-            {filteredAwards.map((item, idx) => (
+            {filteredAwards.slice(0, visibleCount).map((item, idx) => (
               <motion.div
                 layout
                 initial={{ opacity: 0, y: 20 }}
@@ -524,19 +536,19 @@ export const AwardsList = () => {
                     <span className="inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white transition-all duration-300 hover:shadow-[0_0_25px_rgba(225,29,72,0.35)] hover:-translate-y-0.5">
                       {item.year}
                     </span>
-                    <span className="text-[10px] font-black text-rose-400 uppercase tracking-widest">
+                    <span className="text-[10px] font-bold text-rose-400 uppercase tracking-widest">
                       {item.issuer}
                     </span>
                   </div>
 
                   {/* Award Title */}
-                  <h4 className="text-sm font-extrabold text-white leading-snug tracking-tight mb-2 group-hover:text-rose-400 transition-colors duration-300">
+                  <h4 className="text-sm font-bold text-white leading-snug tracking-tight mb-2 group-hover:text-rose-400 transition-colors duration-300">
                     {item.title}
                   </h4>
                 </div>
 
                 {/* Description - bold, white, high contrast */}
-                <p className="relative z-10 text-[11px] font-extrabold text-zinc-100 leading-relaxed border-t border-white/5 pt-3 mt-3">
+                <p className="relative z-10 text-xs font-medium text-zinc-400 leading-relaxed border-t border-white/5 pt-3 mt-3">
                   {getAwardDescription(item.title, item.issuer, item.year)}
                 </p>
 
@@ -548,9 +560,21 @@ export const AwardsList = () => {
         {filteredAwards.length === 0 && (
           <div className="text-center py-24">
             <Award className="w-10 h-10 text-zinc-850 mx-auto mb-3" />
-            <p className="text-white text-sm font-extrabold">
+            <p className="text-white text-sm font-medium">
               No certificates found matching your search.
             </p>
+          </div>
+        )}
+
+        {/* Load More Button */}
+        {visibleCount < filteredAwards.length && (
+          <div className="flex justify-center mt-12">
+            <button
+              onClick={handleLoadMore}
+              className="px-8 py-3.5 rounded-full border border-zinc-800 bg-zinc-900/50 hover:bg-zinc-800 hover:border-zinc-700 text-white text-xs font-bold uppercase tracking-wider transition-all duration-300 shadow-[0_0_15px_rgba(0,0,0,0.5)]"
+            >
+              Load More
+            </button>
           </div>
         )}
         

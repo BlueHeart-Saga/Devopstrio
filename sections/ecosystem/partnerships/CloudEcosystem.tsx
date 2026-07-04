@@ -56,13 +56,13 @@ export function CloudEcosystem() {
         {/* Section Header */}
         <Reveal>
           <div className="text-center max-w-3xl mx-auto mb-20">
-            <span className="text-[10px] font-black tracking-widest text-rose-500 uppercase block mb-4">
+            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
               Cloud & Technology Ecosystem
             </span>
             <h2 className="text-3xl md:text-5xl font-light tracking-tight leading-tight mb-6 text-white">
               Powered by Leading <span className="font-semibold">Cloud, Platform & Infrastructure</span> Partners
             </h2>
-            <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-medium">
+            <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
               We collaborate with globally recognized cloud providers, infrastructure platforms, DevOps ecosystems, and data technology leaders to design, modernize, secure, and scale enterprise digital platforms.
             </p>
           </div>

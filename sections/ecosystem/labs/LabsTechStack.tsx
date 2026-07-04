@@ -24,14 +24,21 @@ export function LabsTechStack() {
   const categories: TechCategory[] = [
     {
       id: "ai",
-      label: "Artificial Intelligence",
+      label: "AI & Engineering",
       icon: <Brain size={16} />,
       items: [
-        { name: "OpenAI", role: "LLM Endpoints & GPT models", logo: "/assets/Home-page/Techtools/typescript.svg" },
-        { name: "Anthropic", role: "Claude model fine-tunings", logo: "/assets/Home-page/Techtools/python.svg" },
-        { name: "Google Gemini", role: "Multimodal contextual search", logo: "/assets/Home-page/Techtools/google-color.svg" },
-        { name: "LangChain", role: "Agent chaining orchestrations", logo: "/assets/Home-page/Techtools/nextjs.svg" },
-        { name: "LlamaIndex", role: "Vector data connector indexers", logo: "/assets/Home-page/Techtools/docker.svg" }
+        { name: "Python", role: "AI scripting & ML pipelines", logo: "/assets/Home-page/Techtools/python.svg" },
+        { name: "Go", role: "High-performance agent services", logo: "/assets/Home-page/Techtools/GO.svg" },
+        { name: "TypeScript", role: "LangChain orchestration", logo: "/assets/Home-page/Techtools/typescript.svg" },
+        { name: "React", role: "Dynamic copilot interfaces", logo: "/assets/Home-page/Techtools/React.svg" },
+        { name: "Next.js", role: "Edge-rendered intelligence", logo: "/assets/Home-page/Techtools/next-js-color.svg" },
+        { name: "Node.js", role: "Asynchronous data processing", logo: "/assets/Home-page/Techtools/Node.svg" },
+        { name: "C++", role: "Low-level system optimization", logo: "/assets/Home-page/Techtools/Cplusplus.svg" },
+        { name: "Angular", role: "Enterprise web applications", logo: "/assets/Home-page/Techtools/Angular.svg" },
+        { name: "Vue.js", role: "Reactive dashboard UI", logo: "/assets/Home-page/Techtools/Vue.svg" },
+        { name: "Flutter", role: "Cross-platform mobile apps", logo: "/assets/Home-page/Techtools/flutter.svg" },
+        { name: "iOS Swift", role: "Native mobile experiences", logo: "/assets/Home-page/Techtools/iOS.svg" },
+        { name: "Android", role: "Native mobile ecosystems", logo: "/assets/Home-page/Techtools/Android.svg" }
       ]
     },
     {
@@ -39,10 +46,11 @@ export function LabsTechStack() {
       label: "Cloud Infrastructures",
       icon: <Cloud size={16} />,
       items: [
-        { name: "Microsoft Azure", role: "Secure compliant cloud spaces", logo: "/assets/Home-page/Techtools/MSAzure.svg" },
-        { name: "Amazon Web Services", role: "Serverless Lambda & EKS runtimes", logo: "/assets/Home-page/Techtools/aws-color.svg" },
-        { name: "Google Cloud", role: "Vertex AI ML & BigQuery storage", logo: "/assets/Home-page/Techtools/google-color.svg" },
-        { name: "Oracle OCI", role: "Autonomous database clusters", logo: "/assets/Home-page/Techtools/Oracle.svg" }
+        { name: "Amazon Web Services", role: "Serverless Lambda runtimes", logo: "/assets/Home-page/Techtools/aws-color.svg" },
+        { name: "Microsoft Azure", role: "Secure enterprise cloud spaces", logo: "/assets/Home-page/Techtools/MSAzure.svg" },
+        { name: "Google Cloud", role: "Vertex ML & massive scalability", logo: "/assets/Home-page/Techtools/google-color.svg" },
+        { name: "Oracle Cloud", role: "Autonomous cluster operations", logo: "/assets/Home-page/Techtools/Oracle.svg" },
+        { name: "Docker", role: "Containerized environments", logo: "/assets/Home-page/Techtools/docker.svg" }
       ]
     },
     {
@@ -50,10 +58,12 @@ export function LabsTechStack() {
       label: "Platform & DevOps",
       icon: <Terminal size={16} />,
       items: [
-        { name: "Kubernetes", role: "Microservice pod orchestrations", logo: "/assets/Home-page/Techtools/docker.svg" },
-        { name: "HashiCorp Terraform", role: "Declarative IaC configurations", logo: "/assets/Home-page/Techtools/typescript.svg" },
-        { name: "GitHub Actions", role: "Automated CI pipeline triggers", logo: "/assets/Home-page/Techtools/nextjs.svg" },
-        { name: "ArgoCD", role: "Continuous GitOps configurations", logo: "/assets/Home-page/Techtools/python.svg" }
+        { name: "Docker", role: "Microservice containerization", logo: "/assets/Home-page/Techtools/docker.svg" },
+        { name: "Java", role: "Enterprise backend services", logo: "/assets/Home-page/Techtools/java-colored.svg" },
+        { name: "Ruby", role: "Rapid backend prototyping", logo: "/assets/Home-page/Techtools/Ruby.svg" },
+        { name: ".NET Core", role: "Enterprise systems integration", logo: "/assets/Home-page/Techtools/net.svg" },
+        { name: "PHP", role: "Legacy systems modernization", logo: "/assets/Home-page/Techtools/PHP.svg" },
+        { name: "Go", role: "High-concurrency workers", logo: "/assets/Home-page/Techtools/GO.svg" }
       ]
     },
     {
@@ -61,10 +71,11 @@ export function LabsTechStack() {
       label: "Data & Lakehouse",
       icon: <Database size={16} />,
       items: [
-        { name: "Apache Kafka", role: "Real-time telemetry event streams", logo: "/assets/Home-page/Techtools/typescript.svg" },
-        { name: "Databricks", role: "Unified analytics Lakehouses", logo: "/assets/Home-page/Techtools/python.svg" },
-        { name: "Snowflake", role: "Global data share warehouses", logo: "/assets/Home-page/Techtools/docker.svg" },
-        { name: "Apache Spark", role: "Distributed query executors", logo: "/assets/Home-page/Techtools/google-color.svg" }
+        { name: "PostgreSQL", role: "Time-series & vector data", logo: "/assets/Home-page/Techtools/postgre.svg" },
+        { name: "MySQL", role: "Scalable relational databases", logo: "/assets/Home-page/Techtools/MySQL.svg" },
+        { name: "Microsoft SQL", role: "Enterprise data warehouses", logo: "/assets/Home-page/Techtools/MSSQL.svg" },
+        { name: "Oracle DB", role: "Mission-critical record systems", logo: "/assets/Home-page/Techtools/Oracle.svg" },
+        { name: "Python", role: "Data pipelines & ETL jobs", logo: "/assets/Home-page/Techtools/python.svg" }
       ]
     }
   ];
@@ -108,30 +119,33 @@ export function LabsTechStack() {
         <div className="min-h-[250px]">
           <motion.div
             key={activeCategory}
-            initial={{ opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -15 }}
-            transition={{ duration: 0.3 }}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+            initial={{ opacity: 0, scale: 0.98, y: 10 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.98, y: -10 }}
+            transition={{ duration: 0.4 }}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
           >
             {currentCategory.items.map((item) => (
               <div
                 key={item.name}
-                className="group flex flex-col justify-between p-6 bg-zinc-950/40 border border-zinc-900 hover:border-rose-500/20 rounded-2xl transition-all duration-300 min-h-[140px]"
+                className="group relative overflow-hidden flex items-center p-5 bg-white/5 backdrop-blur-xl border border-white/10 hover:bg-white/10 hover:border-white/30 rounded-3xl transition-all duration-500 shadow-[0_8px_32px_0_rgba(255,255,255,0.02)] hover:shadow-[0_12px_40px_0_rgba(255,255,255,0.08)] min-h-[110px]"
               >
-                <div>
-                  <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-1">
+                {/* Subtle white glass gradient flash on hover */}
+                <div className="absolute inset-0 bg-gradient-to-br from-white/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
+                
+                {/* White Container for Real SVG Icons (Ensures perfect visibility) */}
+                <div className="relative z-10 w-14 h-14 bg-white/95 border border-white rounded-2xl flex items-center justify-center p-2.5 mr-5 shrink-0 group-hover:scale-110 shadow-lg transition-all duration-500 overflow-hidden">
+                  <img src={item.logo} alt={item.name} className="w-full h-full object-contain relative z-10 filter drop-shadow-sm group-hover:drop-shadow-md transition-all duration-300" />
+                </div>
+                
+                {/* Text Content */}
+                <div className="relative z-10 flex-1">
+                  <h4 className="text-[14px] font-bold text-white tracking-wide mb-1 drop-shadow-md">
                     {item.name}
                   </h4>
-                  <p className="text-[10px] text-zinc-450 font-semibold leading-relaxed">
+                  <p className="text-[11px] text-zinc-300 font-medium leading-relaxed drop-shadow-sm opacity-90 group-hover:opacity-100 transition-opacity duration-300">
                     {item.role}
                   </p>
-                </div>
-                <div className="mt-4 pt-3 border-t border-zinc-900/60 flex items-center justify-between">
-                  <span className="text-[9px] font-mono text-zinc-500 font-bold uppercase tracking-wider">
-                    VALIDATED
-                  </span>
-                  <span className="w-1.5 h-1.5 rounded-full bg-rose-500" />
                 </div>
               </div>
             ))}

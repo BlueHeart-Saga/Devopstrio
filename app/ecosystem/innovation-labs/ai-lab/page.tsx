@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { Reveal } from "@/components/ui/Reveal";
+import { Hero } from "@/components/services/Hero";
 import {
   ArrowUpRight,
   Brain,
@@ -223,61 +224,41 @@ export default function AIInnovationLabPage() {
     <main className="min-h-screen bg-black text-white pt-16 font-sans overflow-x-hidden selection:bg-rose-500 selection:text-white">
 
       {/* 1. HERO SECTION */}
-      <section className="relative w-full min-h-[90vh] flex flex-col items-center justify-center bg-black overflow-hidden pt-28 pb-20 border-b border-zinc-900/60">
-
-        {/* Background Image */}
-        <div className="absolute inset-0 z-0">
-          <img
-            src="/assets/ecosystem/sub-page-hero/ecosystem_Innovation_labs/AI.png"
-            alt="AI Innovation Lab background"
-            className="w-full h-full object-cover object-center opacity-100 select-none pointer-events-none scale-[1.02]"
-          />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,0,0,0.95)_0%,rgba(0,0,0,0.7)_45%,transparent_75%)] pointer-events-none" />
-          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent pointer-events-none" />
-        </div>
-
-        {/* Decorative Grid */}
-        
-
-        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10 flex flex-col items-center text-center">
-          <Reveal className="mb-4">
-            <span className="gap-2 inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white transition-all duration-300 hover:shadow-[0_0_25px_rgba(225,29,72,0.35)] hover:-translate-y-0.5">
-              <Sparkle className="w-3 h-3 text-rose-500 animate-spin-slow" />
-              AI Innovation Lab
+      <Hero
+        badge="AI Innovation Lab"
+        title={
+          <>
+            Building Enterprise AI Systems, <br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-500 to-rose-700">
+              Autonomous Agents & Intelligent Platforms
             </span>
-          </Reveal>
-          <Reveal delay={0.1}>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight text-white max-w-5xl mb-6">
-              Building Enterprise AI Systems, <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-500 to-rose-700">
-                Autonomous Agents & Intelligent Platforms
-              </span>
-            </h1>
-          </Reveal>
-          <Reveal delay={0.2} className="max-w-3xl">
-            <p className="text-zinc-400 text-xs md:text-sm lg:text-base leading-relaxed font-bold mb-10">
-              Accelerate digital operations with tailored foundation models, secure RAG database systems, and agentic task orchestration. We transform legacy workflows into intelligent autonomous assets.
-            </p>
-          </Reveal>
-          <Reveal delay={0.3} className="flex flex-wrap justify-center gap-4 mb-0">
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-3 pl-6 pr-3 py-3 bg-white text-black font-semibold text-xs md:text-sm tracking-wider rounded-full hover:bg-zinc-200 transition-all duration-300 shadow-lg shadow-white/5"
-            >
-              Start AI Project
-              <div className="w-7 h-7 rounded-full bg-black flex items-center justify-center">
-                <ArrowUpRight className="w-3.5 h-3.5 text-white" />
-              </div>
-            </Link>
-            <Link
-              href="/contact"
-              className="gap-2 inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase border border-zinc-850 hover:border-zinc-750 bg-zinc-950/60 hover:bg-zinc-900 text-white transition-all duration-300 hover:-translate-y-0.5"
-            >
-              Talk To AI Experts
-            </Link>
-          </Reveal>
-        </div>
-      </section>
+          </>
+        }
+        subtitle="Accelerate digital operations with tailored foundation models, secure RAG database systems, and agentic task orchestration. We transform legacy workflows into intelligent autonomous assets."
+        bgImage="/assets/ecosystem/sub-page-hero/ecosystem_Innovation_labs/AI.png"
+        stats={heroMetrics}
+        breadcrumbs={[
+          { label: "ECOSYSTEM", href: "/ecosystem" },
+          { label: "INNOVATION LABS", href: "/ecosystem/innovation-labs" },
+          { label: "AI LAB" },
+        ]}
+      >
+        <Link
+          href="/contact"
+          className="inline-flex items-center gap-3 pl-6 pr-3 py-3 bg-white text-black font-semibold text-xs md:text-sm tracking-wider rounded-full hover:bg-zinc-200 transition-all duration-300 shadow-lg shadow-white/5"
+        >
+          Start AI Project
+          <div className="w-7 h-7 rounded-full bg-black flex items-center justify-center">
+            <ArrowUpRight className="w-3.5 h-3.5 text-white" />
+          </div>
+        </Link>
+        <Link
+          href="/contact"
+          className="gap-2 inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase border border-zinc-850 hover:border-zinc-750 bg-zinc-950/60 hover:bg-zinc-900 text-white transition-all duration-300 hover:-translate-y-0.5"
+        >
+          Talk To AI Experts
+        </Link>
+      </Hero>
 
       {/* 2. AI RESEARCH & INNOVATION AREAS */}
       <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60 relative">

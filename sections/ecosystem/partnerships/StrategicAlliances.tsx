@@ -166,7 +166,7 @@ export function StrategicAlliances() {
                     </div>
                   </Reveal>
                   <Reveal delay={0.1}>
-                    <p className="text-zinc-300 text-sm md:text-base font-medium leading-relaxed mb-6">
+                    <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
                       {alliance.desc}
                     </p>
                   </Reveal>

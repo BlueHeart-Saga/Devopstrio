@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionNavbar } from "@/components/ui/SectionNavbar";
+import { PartnerCertifications } from "@/sections/ecosystem/partnerships/PartnerCertifications";
 import {
   ArrowUpRight,
   CheckCircle2,
@@ -35,6 +36,7 @@ const ciscoSections = [
   { id: "capabilities", label: "Capabilities" },
   { id: "solutions", label: "Solutions" },
   { id: "architecture", label: "Architecture" },
+  { id: "certifications", label: "Certifications" },
   { id: "use-cases", label: "Use Cases" },
   { id: "products", label: "Platform Areas" },
   { id: "why-us", label: "Why Us" },
@@ -338,7 +340,7 @@ export default function CiscoPartnershipPage() {
               </Reveal>
               
               <Reveal delay={0.2}>
-                <p className="text-zinc-400 text-xs sm:text-sm md:text-base leading-relaxed font-semibold max-w-xl mb-8">
+                <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
                   Build secure, resilient, and high-performing enterprise networks with Cisco-powered solutions across connectivity, cybersecurity, collaboration, observability, and modern digital infrastructure.
                 </p>
               </Reveal>
@@ -432,7 +434,7 @@ export default function CiscoPartnershipPage() {
                 <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-sky-500 mb-3 block">
                   ALLIANCE OVERVIEW
                 </span>
-                <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold tracking-tight leading-tight text-white mb-6">
+                <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
                   Enabling Secure Digital Infrastructure <span className="text-sky-500">with Cisco</span>
                 </h2>
                 <div className="space-y-4 text-zinc-300 text-sm md:text-base font-semibold leading-relaxed mb-8">
@@ -470,10 +472,10 @@ export default function CiscoPartnershipPage() {
             <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-sky-500 mb-3 block">
               OUR CAPABILITIES
             </span>
-            <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold tracking-tight leading-tight text-white mb-6">
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
               Our Cisco <span className="text-sky-500">Capabilities</span>
             </h2>
-            <p className="text-zinc-300 text-sm md:text-base font-semibold">
+            <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
               Comprehensive expertise to architect, configure, and manage high-performance network foundations.
             </p>
           </Reveal>
@@ -504,7 +506,7 @@ export default function CiscoPartnershipPage() {
             <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-sky-500 mb-3 block">
               NETWORK SOLUTIONS
             </span>
-            <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold tracking-tight leading-tight text-white mb-6">
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
               Cisco-Powered Solutions for <span className="text-sky-500">Secure, Connected Enterprises</span>
             </h2>
           </Reveal>
@@ -534,7 +536,7 @@ export default function CiscoPartnershipPage() {
             <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-sky-500 mb-3 block">
               NETWORK ARCHITECTURE
             </span>
-            <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold tracking-tight leading-tight text-white mb-6">
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
               A Reference Architecture for <span className="text-sky-500">Secure Enterprise Connectivity</span>
             </h2>
           </Reveal>
@@ -565,13 +567,31 @@ export default function CiscoPartnershipPage() {
       </section>
 
       {/* 6. BUSINESS USE CASES */}
+      
+
+      
+      {/* CERTIFICATIONS */}
+      <PartnerCertifications 
+        title="Cisco Certifications"
+        certifications={[
+            { image: "/assets/ecosystem/Cisco_Awards/image 187.png" },
+            { image: "/assets/ecosystem/Cisco_Awards/image 188.png" },
+            { image: "/assets/ecosystem/Cisco_Awards/image 189.png" },
+            { image: "/assets/ecosystem/Cisco_Awards/image 190.png" },
+            { image: "/assets/ecosystem/Cisco_Awards/image 191.png" },
+            { image: "/assets/ecosystem/Cisco_Awards/image 192.png" },
+            { image: "/assets/ecosystem/Cisco_Awards/image 193.png" }
+          ]}
+      />
+
+      
       <section id="use-cases" className="w-full py-24 bg-[#030303] border-b border-zinc-900/60">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
           <Reveal className="mb-16 text-left">
             <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-sky-500 mb-3 block">
               ENTERPRISE DOMAINS
             </span>
-            <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold tracking-tight leading-tight text-white mb-6">
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
               Where We Apply the <span className="text-sky-500">Cisco Ecosystem</span>
             </h2>
           </Reveal>
@@ -608,7 +628,7 @@ export default function CiscoPartnershipPage() {
             <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-sky-500 mb-3 block">
               PLATFORM PORTFOLIO
             </span>
-            <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold tracking-tight leading-tight text-white mb-6">
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
               Cisco Platforms Across the <span className="text-sky-500">Enterprise Network Stack</span>
             </h2>
           </Reveal>
@@ -645,7 +665,7 @@ export default function CiscoPartnershipPage() {
             <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-sky-500 mb-3 block">
               PARTNERSHIP ADVANTAGES
             </span>
-            <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold tracking-tight leading-tight text-white mb-6">
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
               Why Organizations Build Secure Network Foundations <span className="text-sky-500">with Devopstrio</span>
             </h2>
           </Reveal>
@@ -673,7 +693,7 @@ export default function CiscoPartnershipPage() {
             <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-sky-500 mb-3 block">
               MEASURED VALUE
             </span>
-            <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold tracking-tight leading-tight text-white mb-6">
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
               Business Outcomes Enabled <span className="text-sky-500">Through Cisco</span>
             </h2>
           </Reveal>
@@ -704,7 +724,7 @@ export default function CiscoPartnershipPage() {
             <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-sky-500 mb-3 block">
               EXPLORE OTHER NETWORKS
             </span>
-            <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold tracking-tight leading-tight text-white mb-6">
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
               Related <span className="text-sky-500">Pages</span>
             </h2>
           </Reveal>
@@ -741,7 +761,7 @@ export default function CiscoPartnershipPage() {
                 <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-sky-500 mb-3 block">
                   QUESTIONS & RESPONSES
                 </span>
-                <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold tracking-tight leading-tight text-white mb-5">
+                <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
                   Frequently Asked <span className="text-sky-500">Questions</span>
                 </h2>
                 <p className="text-zinc-400 text-xs md:text-sm font-bold max-w-md">
@@ -790,7 +810,7 @@ export default function CiscoPartnershipPage() {
         </div>
       </section>
 
-      {/* 12. FINAL CTA */}
+{/* 12. FINAL CTA */}
       <section className="relative w-full py-32 bg-[#030303] overflow-hidden text-center">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-sky-500/[0.03] rounded-full blur-[140px] pointer-events-none" />
 

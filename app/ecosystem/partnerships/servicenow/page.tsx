@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionNavbar } from "@/components/ui/SectionNavbar";
+import { PartnerCertifications } from "@/sections/ecosystem/partnerships/PartnerCertifications";
 import {
   ArrowUpRight,
   CheckCircle2,
@@ -29,6 +30,7 @@ const servicenowSections = [
   { id: "capabilities", label: "Capabilities" },
   { id: "solutions", label: "Solutions" },
   { id: "architecture", label: "Architecture" },
+  { id: "certifications", label: "Certifications" },
   { id: "use-cases", label: "Use Cases" },
   { id: "products", label: "Platform Expertise" },
   { id: "why-us", label: "Why Us" },
@@ -321,7 +323,7 @@ export default function ServiceNowPartnershipPage() {
               </Reveal>
               
               <Reveal delay={0.2}>
-                <p className="text-zinc-400 text-xs sm:text-sm md:text-base leading-relaxed font-semibold max-w-xl mb-8">
+                <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
                   Transform IT operations, automate enterprise workflows, and deliver seamless digital experiences through the ServiceNow platform and Devopstrio's implementation expertise.
                 </p>
               </Reveal>
@@ -421,10 +423,10 @@ export default function ServiceNowPartnershipPage() {
             
             <div className="lg:col-span-5">
               <Reveal className="text-left">
-                <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
+                <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
                   ALLIANCE OVERVIEW
                 </span>
-                <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold tracking-tight leading-tight text-white mb-6">
+                <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
                   Modernizing Enterprise Workflows <span className="text-rose-500">with ServiceNow</span>
                 </h2>
                 <div className="space-y-4 text-zinc-300 text-sm md:text-base font-semibold leading-relaxed">
@@ -503,13 +505,13 @@ export default function ServiceNowPartnershipPage() {
       <section id="capabilities" className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
           <Reveal className="mb-16 text-center max-w-2xl mx-auto">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
+            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
               OUR SERVICE CAPABILITIES
             </span>
-            <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold tracking-tight leading-tight text-white mb-6">
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
               Our ServiceNow <span className="text-rose-500">Capabilities</span>
             </h2>
-            <p className="text-zinc-300 text-sm md:text-base font-semibold">
+            <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
               Comprehensive expertise to architect, configure, and manage business-critical ServiceNow workflows.
             </p>
           </Reveal>
@@ -537,10 +539,10 @@ export default function ServiceNowPartnershipPage() {
       <section id="solutions" className="w-full py-24 bg-[#030303] border-b border-zinc-900/60">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
           <Reveal className="mb-16 text-left">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
+            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
               PLATFORM WORKLOADS
             </span>
-            <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold tracking-tight leading-tight text-white mb-6">
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
               Enterprise Solutions Powered by <span className="text-rose-500">ServiceNow</span>
             </h2>
           </Reveal>
@@ -567,13 +569,13 @@ export default function ServiceNowPartnershipPage() {
         <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,rgba(225,29,72,0.02),transparent_70%)] pointer-events-none" />
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
           <Reveal className="mb-16 text-center max-w-2xl mx-auto">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
+            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
               WORKFLOW PIPELINE DESIGN
             </span>
-            <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold tracking-tight leading-tight text-white mb-6">
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
               Enterprise Workflow <span className="text-rose-500">Architecture</span>
             </h2>
-            <p className="text-zinc-350 text-sm md:text-base font-semibold">
+            <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
               Visual layer representation of how requests flow from triggers to automation scripts, ERP databases, and analytics logs.
             </p>
           </Reveal>
@@ -607,13 +609,38 @@ export default function ServiceNowPartnershipPage() {
       </section>
 
       {/* 6. BUSINESS USE CASES */}
+      
+
+      
+      {/* CERTIFICATIONS */}
+      <PartnerCertifications 
+        title="ServiceNow Certifications"
+        certifications={[
+            { image: "/assets/ecosystem/Servicenow_Aards/image 164.png" },
+            { image: "/assets/ecosystem/Servicenow_Aards/image 165.png" },
+            { image: "/assets/ecosystem/Servicenow_Aards/image 166.png" },
+            { image: "/assets/ecosystem/Servicenow_Aards/image 167.png" },
+            { image: "/assets/ecosystem/Servicenow_Aards/image 168.png" },
+            { image: "/assets/ecosystem/Servicenow_Aards/image 169.png" },
+            { image: "/assets/ecosystem/Servicenow_Aards/image 170.png" },
+            { image: "/assets/ecosystem/Servicenow_Aards/image 171.png" },
+            { image: "/assets/ecosystem/Servicenow_Aards/image 172.png" },
+            { image: "/assets/ecosystem/Servicenow_Aards/image 173.png" },
+            { image: "/assets/ecosystem/Servicenow_Aards/image 174.png" },
+            { image: "/assets/ecosystem/Servicenow_Aards/image 175.png" },
+            { image: "/assets/ecosystem/Servicenow_Aards/image 176.png" },
+            { image: "/assets/ecosystem/Servicenow_Aards/image 177.png" }
+          ]}
+      />
+
+      
       <section id="use-cases" className="w-full py-24 bg-[#030303] border-b border-zinc-900/60">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
           <Reveal className="mb-16 text-left">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
+            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
               REAL-WORLD DOMAINS
             </span>
-            <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold tracking-tight leading-tight text-white mb-6">
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
               Transforming Enterprise <span className="text-rose-500">Operations</span>
             </h2>
           </Reveal>
@@ -635,7 +662,7 @@ export default function ServiceNowPartnershipPage() {
                 className="p-8 bg-zinc-950/40 border border-zinc-900 rounded-3xl flex flex-col justify-between hover:border-rose-500/20 transition-all duration-300"
               >
                 <div>
-                  <span className="text-[10px] font-mono text-rose-500 uppercase tracking-widest block mb-1 font-bold">{useCase.domain}</span>
+                  <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">{useCase.domain}</span>
                   <h3 className="text-sm md:text-base font-bold text-white uppercase tracking-wider mb-4 border-b border-zinc-900 pb-3">{useCase.caseName}</h3>
                   <p className="text-xs text-zinc-400 font-bold leading-relaxed">{useCase.desc}</p>
                 </div>
@@ -649,10 +676,10 @@ export default function ServiceNowPartnershipPage() {
       <section id="products" className="w-full py-24 bg-black border-b border-zinc-900/60">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
           <Reveal className="mb-16 text-center max-w-2xl mx-auto">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
+            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
               PLATFORM PORTFOLIO
             </span>
-            <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold tracking-tight leading-tight text-white mb-6">
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
               ServiceNow Platform <span className="text-rose-500">Expertise</span>
             </h2>
           </Reveal>
@@ -686,10 +713,10 @@ export default function ServiceNowPartnershipPage() {
       <section id="why-us" className="w-full py-24 bg-[#030303] border-b border-zinc-900/60">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
           <Reveal className="mb-16 text-center max-w-2xl mx-auto">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
+            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
               PARTNERSHIP ADVANTAGES
             </span>
-            <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold tracking-tight leading-tight text-white mb-6">
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
               Why Organizations Choose Devopstrio for <span className="text-rose-500">ServiceNow</span>
             </h2>
           </Reveal>
@@ -714,10 +741,10 @@ export default function ServiceNowPartnershipPage() {
       <section id="outcomes" className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
           <Reveal className="mb-16 text-center max-w-2xl mx-auto">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
+            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
               MEASURED VALUE
             </span>
-            <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold tracking-tight leading-tight text-white mb-6">
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
               Business Value <span className="text-rose-500">Delivered</span>
             </h2>
           </Reveal>
@@ -745,10 +772,10 @@ export default function ServiceNowPartnershipPage() {
       <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
           <Reveal className="mb-16 text-center max-w-2xl mx-auto">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
+            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
               EXPLORE OTHER NETWORKS
             </span>
-            <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold tracking-tight leading-tight text-white mb-6">
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
               Related Ecosystem <span className="text-rose-500">Connections</span>
             </h2>
           </Reveal>
@@ -782,10 +809,10 @@ export default function ServiceNowPartnershipPage() {
 
             <div className="lg:col-span-5">
               <Reveal className="text-left sticky top-28">
-                <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
+                <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
                   QUESTIONS & RESPONSES
                 </span>
-                <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold tracking-tight leading-tight text-white mb-5">
+                <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
                   Frequently Asked <span className="text-rose-500">Questions</span>
                 </h2>
                 <p className="text-zinc-400 text-xs md:text-sm font-bold max-w-md">
@@ -834,7 +861,7 @@ export default function ServiceNowPartnershipPage() {
         </div>
       </section>
 
-      {/* 12. FINAL CTA */}
+{/* 12. FINAL CTA */}
       <section className="relative w-full py-32 bg-[#030303] overflow-hidden text-center">
         {/* Ambient background blur */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-rose-500/[0.02] rounded-full blur-[140px] pointer-events-none" />
@@ -842,7 +869,7 @@ export default function ServiceNowPartnershipPage() {
         <div className="max-w-3xl mx-auto px-12 xl:px-8 relative z-10 flex flex-col items-center">
 
           <Reveal>
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
+            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
               WORKFLOW TRANSFORMATION
             </span>
           </Reveal>

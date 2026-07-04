@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionNavbar } from "@/components/ui/SectionNavbar";
+import { PartnerCertifications } from "@/sections/ecosystem/partnerships/PartnerCertifications";
 import Link from "next/link";
 import {
   ArrowUpRight,
@@ -41,6 +42,7 @@ const gcpSections = [
   { id: "capabilities", label: "Capabilities" },
   { id: "solutions", label: "Solutions" },
   { id: "architecture", label: "Reference Architecture" },
+  { id: "certifications", label: "Certifications" },
   { id: "use-cases", label: "Use Cases" },
   { id: "technologies", label: "Technology Stack" },
   { id: "why-gcp", label: "Why Devopstrio" },
@@ -363,7 +365,7 @@ export default function GoogleCloudStrategicAllianceHub() {
               </Reveal>
               
               <Reveal delay={0.2}>
-                <p className="text-zinc-400 text-xs sm:text-sm md:text-base leading-relaxed font-semibold max-w-xl mb-8">
+                <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
                   Build intelligent, cloud-native platforms with Google Cloud—combining modern infrastructure, data engineering, AI/ML, Kubernetes, and secure operations to accelerate digital transformation.
                 </p>
               </Reveal>
@@ -461,13 +463,13 @@ export default function GoogleCloudStrategicAllianceHub() {
 
             <div className="lg:col-span-5">
               <Reveal className="text-left">
-                <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
+                <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
                   ALLIANCE VALUE
                 </span>
-                <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold tracking-tight leading-tight text-white mb-6">
+                <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
                   Building Modern Cloud Platforms <span className="text-rose-500">with Google Cloud</span>
                 </h2>
-                <p className="text-zinc-300 text-sm md:text-base leading-relaxed font-medium mb-8">
+                <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
                   Devopstrio combines Google Cloud's leading data, AI, and container engines with our DevOps and systems engineering expertise to help organizations modernize infrastructure, build secure cloud-native products, create real-time analytics platforms, operationalize AI/ML, and improve overall delivery speed and resilience.
                 </p>
                 <div className="h-[1px] bg-zinc-900 w-full mb-8" />
@@ -502,10 +504,10 @@ export default function GoogleCloudStrategicAllianceHub() {
       <section id="capabilities" className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
         <div className="max-w-7xl mx-auto w-full px-6 lg:px-8">
           <Reveal className="mb-16 text-center max-w-2xl mx-auto">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
+            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
               OUR CORE STRENGTHS
             </span>
-            <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold tracking-tight leading-tight text-white mb-6">
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
               Our Google Cloud <span className="text-rose-500">Capabilities</span>
             </h2>
             <p className="text-zinc-350 text-xs md:text-sm font-semibold">
@@ -541,10 +543,10 @@ export default function GoogleCloudStrategicAllianceHub() {
       <section id="solutions" className="w-full py-24 bg-[#030303] border-b border-zinc-900/60">
         <div className="max-w-7xl mx-auto w-full px-6 lg:px-8">
           <Reveal className="mb-16 text-center max-w-2xl mx-auto">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
+            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
               ENTERPRISE DEPLOYMENTS
             </span>
-            <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold tracking-tight leading-tight text-white mb-6">
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
               Google Cloud Solutions <span className="text-rose-500">for Modern Enterprises</span>
             </h2>
           </Reveal>
@@ -572,10 +574,10 @@ export default function GoogleCloudStrategicAllianceHub() {
       <section id="architecture" className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
         <div className="max-w-7xl mx-auto w-full px-6 lg:px-8">
           <Reveal className="mb-16 text-center max-w-2xl mx-auto">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
+            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
               BLUEPRINT DESIGN
             </span>
-            <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold tracking-tight leading-tight text-white mb-6">
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
               A Reference Architecture <span className="text-rose-500">for Google Cloud Delivery</span>
             </h2>
             <p className="text-zinc-400 text-xs md:text-sm font-semibold">
@@ -610,13 +612,38 @@ export default function GoogleCloudStrategicAllianceHub() {
       </section>
 
       {/* 6. BUSINESS USE CASES */}
+      
+
+      
+      {/* CERTIFICATIONS */}
+      <PartnerCertifications 
+        title="Google Cloud Certifications"
+        certifications={[
+            { image: "/assets/ecosystem/GCP-award/image 130.png" },
+            { image: "/assets/ecosystem/GCP-award/image 131.png" },
+            { image: "/assets/ecosystem/GCP-award/image 132.png" },
+            { image: "/assets/ecosystem/GCP-award/image 133.png" },
+            { image: "/assets/ecosystem/GCP-award/image 134.png" },
+            { image: "/assets/ecosystem/GCP-award/image 135.png" },
+            { image: "/assets/ecosystem/GCP-award/image 136.png" },
+            { image: "/assets/ecosystem/GCP-award/image 137.png" },
+            { image: "/assets/ecosystem/GCP-award/image 146.png" },
+            { image: "/assets/ecosystem/GCP-award/image 147.png" },
+            { image: "/assets/ecosystem/GCP-award/image 148.png" },
+            { image: "/assets/ecosystem/GCP-award/image 149.png" },
+            { image: "/assets/ecosystem/GCP-award/image 150.png" },
+            { image: "/assets/ecosystem/GCP-award/image 151.png" }
+          ]}
+      />
+
+      
       <section id="use-cases" className="w-full py-24 bg-[#030303] border-b border-zinc-900/60">
         <div className="max-w-7xl mx-auto w-full px-6 lg:px-8">
           <Reveal className="mb-12 text-center max-w-2xl mx-auto">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
+            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
               REAL-WORLD APPLICATION
             </span>
-            <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold tracking-tight leading-tight text-white mb-6">
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
               Where We Apply <span className="text-rose-500">Google Cloud Ecosystem</span>
             </h2>
           </Reveal>
@@ -803,10 +830,10 @@ export default function GoogleCloudStrategicAllianceHub() {
       <section id="technologies" className="w-full py-24 bg-black border-b border-zinc-900/60">
         <div className="max-w-7xl mx-auto w-full px-6 lg:px-8">
           <Reveal className="mb-16 text-center max-w-2xl mx-auto">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
+            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
               TECHNICAL INTEGRATIONS
             </span>
-            <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold tracking-tight leading-tight text-white mb-6">
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
               Google Cloud Technologies <span className="text-rose-500">Across the Stack</span>
             </h2>
           </Reveal>
@@ -886,10 +913,10 @@ export default function GoogleCloudStrategicAllianceHub() {
       <section id="why-gcp" className="w-full py-24 bg-[#030303] border-b border-zinc-900/60">
         <div className="max-w-7xl mx-auto w-full px-6 lg:px-8">
           <Reveal className="mb-16 text-center max-w-2xl mx-auto">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
+            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
               PARTNERSHIP STRENGTH
             </span>
-            <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold tracking-tight leading-tight text-white mb-6">
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
               Why Organizations Build on Google Cloud <span className="text-rose-500">with Devopstrio</span>
             </h2>
           </Reveal>
@@ -915,10 +942,10 @@ export default function GoogleCloudStrategicAllianceHub() {
       <section id="outcomes" className="w-full py-24 bg-black border-b border-zinc-900/60">
         <div className="max-w-7xl mx-auto w-full px-6 lg:px-8">
           <Reveal className="mb-16 text-center max-w-2xl mx-auto">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
+            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
               MEASURABLE OUTCOMES
             </span>
-            <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold tracking-tight leading-tight text-white mb-6">
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
               Outcomes Enabled <span className="text-rose-500">Through Google Cloud</span>
             </h2>
           </Reveal>
@@ -946,10 +973,10 @@ export default function GoogleCloudStrategicAllianceHub() {
       <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60">
         <div className="max-w-7xl mx-auto w-full px-6 lg:px-8">
           <Reveal className="mb-16 text-center max-w-2xl mx-auto">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
+            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
               EXPLORE OTHER NETWORKS
             </span>
-            <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold tracking-tight leading-tight text-white mb-6">
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
               Related <span className="text-rose-500">Ecosystem Pages</span>
             </h2>
           </Reveal>
@@ -988,10 +1015,10 @@ export default function GoogleCloudStrategicAllianceHub() {
 
             <div className="lg:col-span-5">
               <Reveal className="text-left sticky top-28">
-                <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
+                <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
                   ALLIANCE QUESTIONS
                 </span>
-                <h2 className="text-2xl md:text-3xl xl:text-4xl font-extrabold tracking-tight leading-tight text-white mb-5">
+                <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
                   Frequently Asked <span className="text-rose-500">Questions</span>
                 </h2>
                 <p className="text-zinc-400 text-xs md:text-sm font-bold max-w-md">
@@ -1038,7 +1065,7 @@ export default function GoogleCloudStrategicAllianceHub() {
         </div>
       </section>
 
-      {/* 12. FINAL CTA */}
+{/* 12. FINAL CTA */}
       <section className="relative w-full py-32 bg-[#030303] overflow-hidden text-center">
         {/* Ambient background blur */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-rose-500/[0.02] rounded-full blur-[140px] pointer-events-none" />
@@ -1046,7 +1073,7 @@ export default function GoogleCloudStrategicAllianceHub() {
         <div className="max-w-3xl mx-auto px-6 lg:px-8 relative z-10 flex flex-col items-center">
 
           <Reveal>
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
+            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
               GET STARTED TODAY
             </span>
           </Reveal>

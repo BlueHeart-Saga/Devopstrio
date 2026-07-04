@@ -37,12 +37,14 @@ import {
 import Link from "next/link";
 import Image from "next/image";
 import { SectionNavbar } from "@/components/ui/SectionNavbar";
+import { PartnerCertifications } from "@/sections/ecosystem/partnerships/PartnerCertifications";
 
 const microsoftSections = [
   { id: "overview", label: "Overview" },
   { id: "capabilities", label: "Capabilities" },
   { id: "solutions", label: "Solutions" },
   { id: "architecture", label: "Architecture" },
+  { id: "certifications", label: "Certifications" },
   { id: "use-cases", label: "Use Cases" },
   { id: "tech-stack", label: "Tech Stack" },
   { id: "outcomes", label: "Outcomes" },
@@ -464,7 +466,7 @@ export default function MicrosoftAllianceHub() {
               </Reveal>
               
               <Reveal delay={0.2}>
-                <p className="text-zinc-400 text-xs sm:text-sm md:text-base leading-relaxed font-semibold max-w-xl mb-8">
+                <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
                   Helping organizations modernize infrastructure, accelerate cloud adoption, strengthen security, and build intelligent enterprise platforms with Microsoft technologies.
                 </p>
               </Reveal>
@@ -566,13 +568,13 @@ export default function MicrosoftAllianceHub() {
               {/* Overview Story Text */}
               <div className="lg:col-span-6 flex flex-col items-start text-left">
                 <Reveal>
-                  <span className="text-[10px] font-extrabold tracking-widest uppercase text-rose-500 mb-4 block">
+                  <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
                     PARTNERSHIP OVERVIEW
                   </span>
-                  <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">
+                  <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
                     Building Enterprise Solutions on Microsoft Technologies
                   </h2>
-                  <p className="text-zinc-350 text-sm md:text-base leading-relaxed font-medium mb-6">
+                  <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
                     Through our strategic relationship, Devopstrio brings deep infrastructure, platform, data, and security engineering expertise to help organizations optimize their Microsoft investments.
                   </p>
                   <p className="text-zinc-400 text-sm leading-relaxed font-medium mb-8">
@@ -621,10 +623,10 @@ export default function MicrosoftAllianceHub() {
           <div className="max-w-7xl mx-auto w-full px-6 lg:px-8">
             
             <Reveal className="mb-16 text-center max-w-2xl mx-auto">
-              <span className="text-[10px] font-extrabold tracking-widest uppercase text-rose-500 mb-4 block">
+              <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
                 OUR DEEP CAPABILITIES
               </span>
-              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">
+              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
                 Our Microsoft <span className="text-rose-500">Capabilities</span>
               </h2>
               <p className="text-zinc-400 text-sm font-semibold">
@@ -663,10 +665,10 @@ export default function MicrosoftAllianceHub() {
           <div className="max-w-7xl mx-auto w-full px-6 lg:px-8">
             
             <Reveal className="mb-16 text-left">
-              <span className="text-[10px] font-extrabold tracking-widest uppercase text-rose-500 mb-4 block">
+              <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
                 ENTERPRISE PLATFORMS
               </span>
-              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white">
+              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
                 Microsoft-Powered Solutions for <span className="text-rose-500">Modern Enterprises</span>
               </h2>
             </Reveal>
@@ -705,10 +707,10 @@ export default function MicrosoftAllianceHub() {
           <div className="max-w-7xl mx-auto w-full px-6 lg:px-8">
             
             <Reveal className="mb-16 text-center max-w-2xl mx-auto">
-              <span className="text-[10px] font-extrabold tracking-widest uppercase text-rose-500 mb-4 block">
+              <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
                 SYSTEM ARCHITECTURE
               </span>
-              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">
+              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
                 A Reference Architecture for <span className="text-rose-500">Microsoft-Powered Delivery</span>
               </h2>
               <p className="text-zinc-400 text-sm font-semibold">
@@ -745,15 +747,36 @@ export default function MicrosoftAllianceHub() {
       </div>
 
       {/* 6. BUSINESS USE CASES */}
+      
+
+        
+      {/* CERTIFICATIONS */}
+      <PartnerCertifications 
+        title="Microsoft Certifications"
+        certifications={[
+            { image: "/assets/ecosystem/microsofr-awards/Group 1000008903.png" },
+            { image: "/assets/ecosystem/microsofr-awards/image 123.png" },
+            { image: "/assets/ecosystem/microsofr-awards/image 124.png" },
+            { image: "/assets/ecosystem/microsofr-awards/image 125.png" },
+            { image: "/assets/ecosystem/microsofr-awards/image 126.png" },
+            { image: "/assets/ecosystem/microsofr-awards/image 127.png" },
+            { image: "/assets/ecosystem/microsofr-awards/image 128.png" },
+            { image: "/assets/ecosystem/microsofr-awards/image 129.png" },
+            { image: "/assets/ecosystem/microsofr-awards/image 138.png" },
+            { image: "/assets/ecosystem/microsofr-awards/image 139.png" }
+          ]}
+      />
+
+      
       <div id="use-cases" className="scroll-mt-24">
         <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60">
           <div className="max-w-7xl mx-auto w-full px-6 lg:px-8">
             
             <Reveal className="mb-12 text-center max-w-2xl mx-auto">
-              <span className="text-[10px] font-extrabold tracking-widest uppercase text-rose-500 mb-4 block">
+              <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
                 PRACTICAL USE CASES
               </span>
-              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">
+              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
                 Where We Apply the <span className="text-rose-500">Microsoft Ecosystem</span>
               </h2>
             </Reveal>
@@ -805,10 +828,10 @@ export default function MicrosoftAllianceHub() {
           <div className="max-w-7xl mx-auto w-full px-6 lg:px-8">
             
             <Reveal className="mb-16 text-center max-w-2xl mx-auto">
-              <span className="text-[10px] font-extrabold tracking-widest uppercase text-rose-500 mb-4 block">
+              <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
                 COMPLETE STACK
               </span>
-              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">
+              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
                 Microsoft Technologies Across the <span className="text-rose-500">Stack</span>
               </h2>
             </Reveal>
@@ -834,10 +857,10 @@ export default function MicrosoftAllianceHub() {
 
             {/* Why Microsoft + Devopstrio Grid */}
             <Reveal className="mb-16 text-center max-w-2xl mx-auto">
-              <span className="text-[10px] font-extrabold tracking-widest uppercase text-rose-500 mb-4 block">
+              <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
                 THE DEVOPSTRIO VALUE
               </span>
-              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">
+              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
                 Why Organizations Build on Microsoft with <span className="text-rose-500">Devopstrio</span>
               </h2>
             </Reveal>
@@ -875,13 +898,13 @@ export default function MicrosoftAllianceHub() {
               {/* Outcomes Left */}
               <div className="lg:col-span-5 flex flex-col items-start text-left">
                 <Reveal>
-                  <span className="text-[10px] font-extrabold tracking-widest uppercase text-rose-500 mb-4 block">
+                  <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
                     BUSINESS OUTCOMES
                   </span>
-                  <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">
+                  <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
                     Outcomes Enabled Through the Microsoft <span className="text-rose-500">Ecosystem</span>
                   </h2>
-                  <p className="text-zinc-350 text-sm md:text-base leading-relaxed font-medium">
+                  <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
                     We measure our engineering success by the tangible business results we deliver to our enterprise clients.
                   </p>
                 </Reveal>
@@ -911,10 +934,10 @@ export default function MicrosoftAllianceHub() {
 
             {/* Related Pages */}
             <Reveal className="mb-16 text-center max-w-2xl mx-auto">
-              <span className="text-[10px] font-extrabold tracking-widest uppercase text-rose-500 mb-4 block">
+              <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
                 EXPLORE OUR ALLIANCES
               </span>
-              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">
+              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
                 Related <span className="text-rose-500">Ecosystem</span> Pages
               </h2>
             </Reveal>
@@ -952,10 +975,10 @@ export default function MicrosoftAllianceHub() {
               {/* FAQ Left */}
               <div className="lg:col-span-5 flex flex-col items-start text-left sticky top-28">
                 <Reveal>
-                  <span className="text-[10px] font-extrabold tracking-widest uppercase text-rose-500 mb-4 block">
+                  <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
                     ALLIANCE FAQ
                   </span>
-                  <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-5">
+                  <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
                     Frequently Asked <span className="text-rose-500">Questions</span>
                   </h2>
                   <p className="text-zinc-400 text-sm font-semibold max-w-sm">
@@ -970,16 +993,6 @@ export default function MicrosoftAllianceHub() {
                   {faqs.map((faq, idx) => {
                     const isOpen = openFaqIndex === idx;
                   
-  const certifications = [
-    { name: "Azure Solutions Architect Expert", image: "/assets/ecosystem/microsofr-awards/Group 1000008903.png" },
-    { name: "Azure Developer Associate", image: "/assets/ecosystem/microsofr-awards/image 123.png" },
-    { name: "Azure Administrator Associate", image: "/assets/ecosystem/microsofr-awards/image 124.png" },
-    { name: "Azure Security Engineer", image: "/assets/ecosystem/microsofr-awards/image 125.png" },
-    { name: "Azure Data Engineer Associate", image: "/assets/ecosystem/microsofr-awards/image 126.png" },
-    { name: "DevOps Engineer Expert", image: "/assets/ecosystem/microsofr-awards/image 127.png" },
-    { name: "Microsoft Solutions Partner", image: "/assets/ecosystem/microsofr-awards/image 128.png" }
-  ];
-
   return (
                       <div
                         key={idx}
@@ -1016,26 +1029,26 @@ export default function MicrosoftAllianceHub() {
           </div>
         </section>
 
-        {/* 12. FINAL CTA */}
+{/* 12. FINAL CTA */}
         <section className="relative w-full py-32 bg-[#030303] overflow-hidden text-center">
           {/* Ambient background blur */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-rose-500/[0.02] rounded-full blur-[140px] pointer-events-none" />
 
           <div className="max-w-3xl mx-auto px-6 lg:px-8 relative z-10 flex flex-col items-center">
             <Reveal>
-              <span className="text-[10px] font-extrabold tracking-widest uppercase text-rose-500 mb-4 block">
+              <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
                 GET STARTED TODAY
               </span>
             </Reveal>
 
             <Reveal delay={0.1}>
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-white mb-6">
+              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
                 Looking to Build, Migrate or Modernize on <span className="text-rose-500">Microsoft?</span>
               </h2>
             </Reveal>
 
             <Reveal delay={0.2}>
-              <p className="text-zinc-400 text-sm md:text-base leading-relaxed max-w-xl mb-10">
+              <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
                 Partner with Devopstrio to design secure, scalable, and future-ready Microsoft solutions across cloud, data, AI, DevOps, and enterprise operations.
               </p>
             </Reveal>

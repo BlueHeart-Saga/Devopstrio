@@ -2,63 +2,85 @@
 import React from "react";
 import { Metadata } from "next";
 import { BreadcrumbSchema } from "@/components/seo/Schemas";
+import { AwardsHero } from "@/sections/about/awards-recognition/AwardsHero";
+import { RecognitionIntro } from "@/sections/about/awards-recognition/RecognitionIntro";
+import { RecognitionHighlights } from "@/sections/about/awards-recognition/RecognitionHighlights";
+import { RecognitionTimeline } from "@/sections/about/awards-recognition/RecognitionTimeline";
+import { RecognitionCategories } from "@/sections/about/awards-recognition/RecognitionCategories";
+import { WhyRecognitionMatters } from "@/sections/about/awards-recognition/WhyRecognitionMatters";
+import { PeopleBehindRecognition } from "@/sections/about/awards-recognition/PeopleBehindRecognition";
+import { AwardsCTA } from "@/sections/about/awards-recognition/AwardsCTA";
+import { AllCertifications } from "@/sections/about/partnerships-certifications/AllCertifications";
 import { Achievements } from "@/sections/about/Achievements";
 import { AwardsList } from "@/sections/about/AwardsList";
 import { MetricsStats } from "@/sections/about/MetricsStats";
-import { AboutCTA } from "@/sections/about/AboutCTA";
-import { Reveal } from "@/components/ui/Reveal";
-
-
 
 export const metadata: Metadata = {
-  title: "Awards & Recognition",
-  description: "Explore the industry awards and engineering recognition received by Devopstrio.",
+  title: "Awards, Recognition & Milestones | Devopstrio",
+  description: "Explore the industry awards, engineering milestones, and external recognition received by Devopstrio.",
   alternates: {
     canonical: "/about/awards-recognition"
   }
 };
+
 export default function AwardsRecognitionPage() {
   return (
-    <main className="min-h-screen bg-black text-white pt-16 font-sans">
+    <main className="min-h-screen bg-black text-white font-sans">
       <BreadcrumbSchema items={[
         { name: "Home", item: "/" },
         { name: "About Us", item: "/about/company-overview" },
         { name: "Awards & Recognition", item: "/about/awards-recognition" }
       ]} />
-      {/* Page Header */}
-      <section className="pt-20 pb-4 text-center relative bg-[#030303]">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(244,63,94,0.05),transparent_50%)] pointer-events-none" />
-        <div className="max-w-4xl mx-auto px-6 relative z-10">
-          <Reveal>
-            <span className="text-[10px] font-mono tracking-widest text-rose-500 uppercase block mb-3 font-bold">Awards & Acclaim</span>
-            <h1 className="text-4xl md:text-6xl font-light tracking-tight mb-4 text-white leading-tight">
-              Awards & <span className="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-rose-500">Recognition</span>
-            </h1>
-            <p className="text-zinc-400 font-medium max-w-2xl mx-auto text-sm md:text-base leading-relaxed">
-              Celebrating technical excellence, platform uptime records, and industry accolades across the DevOps and Cloud ecosystems.
-            </p>
-          </Reveal>
-        </div>
-      </section>
-
-      {/* Main Content */}
-
-       <div className="border-t border-zinc-900/60">
-          <AwardsList />
-        </div>
+      
+      {/* 1) Hero Section */}
+      <AwardsHero />
 
 
-      <div className="bg-black flex flex-col gap-12">
-        <Achievements />
-
-       
-        
-        <div className="border-t border-zinc-900/60">
-          <MetricsStats />
-        </div>
-        
-        <AboutCTA />
+       {/* PREVIOUS SECTION: AwardsList (Certifications, Compliance, Industry Validation) */}
+      <div className="bg-black border-t border-zinc-900/60">
+        <AwardsList />
       </div>
+
+     
+
+      {/* Complete Awards Gallery Grid (From Partnerships page) */}
+      {/* <div className="bg-zinc-950 border-t border-zinc-900 pb-12">
+        <AllCertifications />
+      </div> */}
+
+       {/* PREVIOUS SECTION: Achievements (Innovation & Capabilities) */}
+      <div className="bg-black pt-12">
+        <Achievements />
+      </div>
+
+      {/* 2) Intro section — "What recognition means to us" */}
+      <RecognitionIntro />
+
+     
+
+      {/* 3) Awards & Recognition Highlights */}
+      <RecognitionHighlights />
+
+      {/* 4) Recognition Timeline / Journey section */}
+      <RecognitionTimeline />
+
+      {/* 5) Recognition categories section */}
+      <RecognitionCategories />
+
+      {/* 6) "Why this matters to clients and partners" section */}
+      <WhyRecognitionMatters />
+
+      {/* PREVIOUS SECTION: MetricsStats (By the Numbers) */}
+      <div className="bg-black border-t border-zinc-900/60 pb-12">
+        <MetricsStats />
+      </div>
+
+      {/* 7) Culture / people recognition strip */}
+      <PeopleBehindRecognition />
+
+      {/* 8) Final CTA */}
+      <AwardsCTA />
+
     </main>
   );
 }
