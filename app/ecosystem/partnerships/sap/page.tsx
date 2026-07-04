@@ -3,7 +3,6 @@
 import React, { useState, useEffect } from "react";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionNavbar } from "@/components/ui/SectionNavbar";
-import { PartnerCertifications } from "@/sections/ecosystem/partnerships/PartnerCertifications";
 import {
   ArrowUpRight,
   CheckCircle2,
@@ -39,7 +38,6 @@ const sapSections = [
   { id: "process-transformation", label: "Process Transformation" },
   { id: "solutions", label: "Solutions" },
   { id: "industry-transformation", label: "Industry Focus" },
-  { id: "certifications", label: "Certifications" },
   { id: "faq", label: "FAQ" }
 ];
 
@@ -275,6 +273,142 @@ export default function SAPStrategicAllianceHub() {
   ];
 
   // SAP Certifications
+  const certifications = [
+    { name: "SAP Certified Associate - S/4HANA Cloud", image: "/assets/ecosystem/Sap_Awards/image 180.png" },
+    { name: "SAP Certified Technology Associate - SAP HANA", image: "/assets/ecosystem/Sap_Awards/image 181.png" },
+    { name: "SAP Certified Development Associate - SAP BTP", image: "/assets/ecosystem/Sap_Awards/image 183.png" },
+    { name: "SAP Certified Technology Specialist - SAP Activate", image: "/assets/ecosystem/Sap_Awards/image 185.png" },
+    { name: "SAP Certified Integration Associate", image: "/assets/ecosystem/Sap_Awards/image 186.png" },
+    { name: "SAP Gold Partner Competency Award", image: "/assets/ecosystem/Sap_Awards/Group 1000008910.png" },
+    { name: "SAP Cloud Transformation Excellence", image: "/assets/ecosystem/Sap_Awards/image 194-Photoroom 1.png" }
+  ];
+
+  // FAQ Accordion Data
+  const faqs = [
+    {
+      q: "What certified credentials do Devopstrio SAP consultants possess?",
+      a: "Our consultants possess credentials including SAP Certified Associate for S/4HANA Cloud, Technology Associate for SAP HANA, Development Associate for BTP, and Specialist for SAP Activate."
+    },
+    {
+      q: "What is the role of SAP Business Technology Platform (BTP) in a cloud architecture?",
+      a: "SAP BTP is the orchestration and extension layer, allowing enterprises to integrate SAP applications with third-party software, run analytics, and build custom apps without disrupting the core ERP."
+    },
+    {
+      q: "How does Devopstrio help with migrating from legacy ECC to S/4HANA?",
+      a: "We guide you through the migration lifecycle—including custom code remediation, database conversions to SAP HANA, and data quality staging using SAP Activate."
+    },
+    {
+      q: "What is SAP Business AI and how does it optimize operations?",
+      a: "SAP Business AI integrates machine learning and LLMs directly into finance, supply chain, and procurement processes, enabling automated cash applications, demand forecasting, and natural language queries via Joule."
+    },
+    {
+      q: "How do you integrate SAP with other cloud ecosystems like Azure or AWS?",
+      a: "We deploy SAP Integration Suite on BTP, creating REST/SOAP endpoint mappings and event mesh configurations that synchronize inventory and sales data securely across multi-cloud databases."
+    },
+    {
+      q: "What is SAP Signavio and when is it utilized?",
+      a: "SAP Signavio is a process-mining and workflow modeling platform we use to analyze transactions, find bottlenecks, and simulate process efficiency gains before upgrading the core ERP system."
+    },
+    {
+      q: "Can you secure database instances for SAP HANA workloads?",
+      a: "Yes. We configure SAP HANA encryption keys, security roles, LDAP user syncs, audit logs, and secure OCI/Azure network zones to safeguard enterprise database schemas."
+    },
+    {
+      q: "What benefits does SAP Datasphere offer for business analytics?",
+      a: "SAP Datasphere provides a unified data fabric, combining SAP data with external datasets while maintaining business context, semantics, and security rules for real-time dashboard analytics."
+    },
+    {
+      q: "How do you handle custom ABAP code during cloud migrations?",
+      a: "We run automated audit tools to analyze custom code blocks, deprecate obsolete elements, and rewrite necessary modules into clean cloud-compliant extensions using BTP ABAP environments."
+    },
+    {
+      q: "What support does Devopstrio provide after S/4HANA go-live?",
+      a: "We provide 24/7 technical support, system patching, performance monitoring, database tuning, and regular enhancement package updates to ensure continuous system health."
+    }
+  ];
+
+  // 15. Business Value Metrics
+  const impactMetrics = [
+    { value: "35%", label: "Process Efficiency" },
+    { value: "50%", label: "Faster Decisions" },
+    { value: "30%", label: "Cost Reduction" },
+    { value: "99.9%", label: "Platform Availability" },
+    { value: "24x7", label: "Managed Operations" },
+    { value: "Global", label: "Enterprise Delivery" }
+  ];
+
+  // 16. Devopstrio SAP Delivery Framework
+  const deliveryFrameworkSteps = [
+    { phase: "Strategy", desc: "Defining transformation goals, software licensing, and cloud roadmaps." },
+    { phase: "Assessment", desc: "Auditing legacy ERP code files, database sizes, and API configurations." },
+    { phase: "Architecture", desc: "Designing OCI/Azure landing zones, BTP integrations, and database schemas." },
+    { phase: "Migration", desc: "Executing safe S/4HANA migrations with minimal system downtime." },
+    { phase: "Implementation", desc: "Configuring applications, forms, workflows, and security guardrails." },
+    { phase: "Optimization", desc: "Running Signavio process mining tests to resolve transaction lag." },
+    { phase: "Managed Services", desc: "Providing 24/7 help desk, patch rollouts, and database tuning." }
+  ];
+
+  // 17. Customer Success Stories
+  const successStories = [
+    {
+      title: "ERP Modernization",
+      challenge: "A manufacturing client had duplicate inventory listings across aging local databases.",
+      solution: "Consolidated databases onto a single SAP S/4HANA cloud database.",
+      result: "Achieved 100% inventory accuracy, reducing stock write-offs by 25%."
+    },
+    {
+      title: "Supply Chain Optimization",
+      challenge: "Delayed shipment alerts due to manual parts ordering processes.",
+      solution: "Integrated manufacturing lines with SAP SCM and automated procurement pipelines.",
+      result: "30% reduction in parts shortages and faster shipping times."
+    },
+    {
+      title: "Finance Transformation",
+      challenge: "Month-end accounting closures took weeks due to manual spreadsheets.",
+      solution: "Automated billing entries and cash flow sheets using S/4HANA Finance.",
+      result: "Closed monthly books in 3 days, saving hundreds of accounting hours."
+    },
+    {
+      title: "Procurement Excellence",
+      challenge: "Unapproved spend across disconnected purchasing directories.",
+      solution: "Configured SAP Ariba to enforce automated approvals based on manager limits.",
+      result: "Eliminated unapproved spend and saved 15% on supplier procurement."
+    },
+    {
+      title: "Workforce Transformation",
+      challenge: "High onboarding wait times and disconnected employee portal software.",
+      solution: "Deployed SuccessFactors as a unified global payroll and employee platform.",
+      result: "40% faster onboarding and higher overall employee satisfaction."
+    },
+    {
+      title: "AI-Powered Enterprise",
+      challenge: "Customer service teams spent hours searching manuals to fix system issues.",
+      solution: "Deployed Joule assistant tools sync'd with technical manuals databases.",
+      result: "85% faster case resolution rates, improving support quality."
+    }
+  ];
+
+  // 18. Future of the Autonomous Enterprise
+  const autonomousEnterpriseFocus = [
+    { title: "AI Agents", desc: "Self-executing software units designed to perform transactional audits." },
+    { title: "Business AI", desc: "Joule copilot models providing insights inside S/4HANA screens." },
+    { title: "Autonomous Workflows", desc: "Automating purchasing approvals based on past trends." },
+    { title: "Decision Intelligence", desc: "Enforcing cloud and operational policies automatically." },
+    { title: "Predictive Operations", desc: "Anticipating resource requirements to auto-scale databases." },
+    { title: "Self-Optimizing Enterprises", desc: "Applying process mining optimizations to workflows dynamically." }
+  ];
+
+  // 19. Related Partnerships
+  const relatedPartnerships = [
+    { name: "Microsoft Alliance", desc: "Enterprise Azure setups, Fabric data lakes, and security systems.", href: "/ecosystem/partnerships/microsoft" },
+    { name: "AWS Partnership", desc: "Amazon Web Services cloud enablement & DevOps systems.", href: "/ecosystem/partnerships/aws" },
+    { name: "Google Cloud", desc: "Next-gen GCP data warehousing and predictive AI models.", href: "/ecosystem/partnerships/google-cloud" },
+    { name: "Oracle Alliance", desc: "Database modernization and OCI database migrations.", href: "/ecosystem/partnerships/oracle" },
+    { name: "ServiceNow", desc: "IT Service Management and automated workflows.", href: "/ecosystem/partnerships/servicenow" },
+    { name: "Innovation Labs", desc: "Prototyping future workflows and cloud-native solutions.", href: "/ecosystem/labs" },
+    { name: "Technology Stack", desc: "Core software components and deployment strategies.", href: "/ecosystem/platforms" }
+  ];
+
   return (
     <main className="min-h-screen bg-black text-white pt-16 font-sans overflow-x-hidden selection:bg-rose-500 selection:text-white">
 
@@ -620,23 +754,8 @@ export default function SAPStrategicAllianceHub() {
         </div>
       </section>
 
-      
-      {/* CERTIFICATIONS */}
-      <PartnerCertifications 
-        title="SAP Certifications"
-        certifications={[
-            { image: "/assets/ecosystem/Sap_Awards/Group 1000008910.png" },
-            { image: "/assets/ecosystem/Sap_Awards/image 180.png" },
-            { image: "/assets/ecosystem/Sap_Awards/image 181.png" },
-            { image: "/assets/ecosystem/Sap_Awards/image 183.png" },
-            { image: "/assets/ecosystem/Sap_Awards/image 185.png" },
-            { image: "/assets/ecosystem/Sap_Awards/image 186.png" },
-            { image: "/assets/ecosystem/Sap_Awards/image 194-Photoroom 1.png" }
-          ]}
-      />
-
       {/* 8. BUSINESS PROCESS TRANSFORMATION */}
-      <section id="process-transformation" className="w-full py-24 bg-[#030303] border-b border-zinc-900/60">
+      <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
           <Reveal className="mb-16 text-center max-w-2xl mx-auto">
             <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">

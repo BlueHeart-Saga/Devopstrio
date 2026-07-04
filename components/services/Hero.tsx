@@ -24,7 +24,7 @@ export function Hero({ badge, title, subtitle, stats, breadcrumbs, bgImage, chil
         <div className="absolute inset-0 z-0">
           <Image
             src={bgImage}
-            alt={title}
+            alt={typeof title === "string" ? title : badge || "Hero Background"}
             fill
             priority
             sizes="100vw"
