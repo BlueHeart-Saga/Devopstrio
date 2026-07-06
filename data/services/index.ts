@@ -10,6 +10,7 @@ import { managedService, managedCapabilities } from "./managed";
 import { testingService, testingCapabilities } from "./testing";
 import { consultingService, consultingCapabilities } from "./consulting";
 import { getEnrichedServiceFaqs, generateFaqsForCapability } from "./faq-generator";
+import { enrichServiceCategory, enrichCapabilityDetail } from "./premium-enhancer";
 
 export * from "./types";
 
@@ -39,16 +40,18 @@ export const capabilitiesData: Record<string, Record<string, CapabilityDetail>> 
   "it-consulting": consultingCapabilities
 };
 
-// Enrich all servicesData with exactly 10 FAQs
+// Enrich and apply premium copywriting to all servicesData
 Object.entries(servicesData).forEach(([slug, service]) => {
   service.faqs = getEnrichedServiceFaqs(slug);
+  servicesData[slug] = enrichServiceCategory(service);
 });
 
-// Enrich all explicit capabilitiesData with exactly 10 FAQs and 6-phase delivery approach
+// Enrich and apply premium copywriting to all explicit capabilitiesData
 Object.entries(capabilitiesData).forEach(([serviceSlug, capabilities]) => {
   Object.entries(capabilities).forEach(([capSlug, capDetail]) => {
     capDetail.faqs = generateFaqsForCapability(serviceSlug, capDetail.title);
     capDetail.deliveryApproach = generate6PhaseDeliveryApproach(serviceSlug, capDetail.title);
+    capabilities[capSlug] = enrichCapabilityDetail(capDetail, serviceSlug);
   });
 });
 
@@ -56,12 +59,14 @@ import { generateCapabilityDetail, generate6PhaseDeliveryApproach } from "./dyna
 
 
 export function getServiceByCategory(slug: string): ServiceCategory | undefined {
-  return servicesData[slug];
+  const service = servicesData[slug];
+  if (!service) return undefined;
+  return enrichServiceCategory(service);
 }
 
 export function getCapability(serviceSlug: string, capabilitySlug: string): CapabilityDetail | undefined {
   const explicitCap = capabilitiesData[serviceSlug]?.[capabilitySlug];
-  if (explicitCap) return explicitCap;
+  if (explicitCap) return enrichCapabilityDetail(explicitCap, serviceSlug);
 
   const service = servicesData[serviceSlug];
   if (!service) return undefined;
@@ -69,8 +74,9 @@ export function getCapability(serviceSlug: string, capabilitySlug: string): Capa
   const dynamicCap = generateCapabilityDetail(serviceSlug, capabilitySlug, service);
   if (dynamicCap) {
     dynamicCap.faqs = generateFaqsForCapability(serviceSlug, dynamicCap.title);
+    return enrichCapabilityDetail(dynamicCap, serviceSlug);
   }
-  return dynamicCap;
+  return undefined;
 }
 
 

@@ -10,36 +10,62 @@ import {
   Key,
   Terminal,
   Activity,
-  ChevronDown,
   ChevronRight,
   Cpu,
   Layers,
-  CheckCircle2,
+  CheckCircle,
   Eye,
   AlertTriangle,
-  FileCheck
+  FileCheck,
+  Globe
 } from "lucide-react";
 import Link from "next/link";
 
+interface CoreArea {
+  title: string;
+  desc: string;
+  icon: React.ReactNode;
+}
+
+interface TimelineStep {
+  num: string;
+  title: string;
+  desc: string;
+}
+
+interface SolutionBlock {
+  title: string;
+  desc: string;
+}
+
+interface ArchLayer {
+  num: string;
+  name: string;
+  desc: string;
+}
+
+interface IndustryUseCase {
+  name: string;
+  items: string[];
+}
+
+interface Deliverable {
+  title: string;
+}
+
+interface WhyChoose {
+  title: string;
+  desc: string;
+}
+
+interface RelatedLab {
+  name: string;
+  desc: string;
+  href: string;
+}
+
 export default function CybersecurityInnovationLabPage() {
-  // FAQ accordion state
-  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
-
-  const toggleFaq = (index: number) => {
-    setOpenFaqIndex(openFaqIndex === index ? null : index);
-  };
-
-  // Hero highlights
-  const heroHighlights = [
-    "Zero Trust",
-    "Cloud Security",
-    "Security Automation",
-    "Threat Intelligence",
-    "AI-Powered Cyber Defense",
-    "DevSecOps",
-    "Identity & Access Management",
-    "Compliance Automation"
-  ];
+  const [activeTab, setActiveTab] = useState<string>("Cloud & Infrastructure Security");
 
   // Hero metrics
   const heroMetrics = [
@@ -49,187 +75,330 @@ export default function CybersecurityInnovationLabPage() {
     { value: "Zero Trust", label: "Ready" }
   ];
 
-  // Security Innovation Domains
-  const securityDomains = [
+  // 2) Mini overview cards
+  const miniMissionCards = [
     {
-      title: "Zero Trust Architecture",
-      desc: "Designing network boundaries where all access is verified, authenticated, and authorized based on real-time device health.",
-      icon: <Lock className="w-6 h-6 text-rose-500" />
+      title: "Security by Design",
+      desc: "Embedding protection, policy, and governance into systems from the beginning — not after deployment."
     },
     {
-      title: "Cloud Security",
-      desc: "Configuring multi-cloud enclaves, cloud access brokers, network firewalls, and database configuration guardrails.",
-      icon: <Shield className="w-6 h-6 text-rose-500" />
+      title: "Threat Visibility & Detection",
+      desc: "Improving monitoring, alerting, and investigation across cloud, infrastructure, applications, and identities."
     },
     {
-      title: "DevSecOps",
-      desc: "Integrating static code checks (SAST), software composition scans (SCA), and secrets detectors into CI/CD loops.",
-      icon: <Terminal className="w-6 h-6 text-rose-500" />
+      title: "Resilience & Risk Reduction",
+      desc: "Strengthening recovery readiness, operational continuity, and security posture across critical systems."
     },
     {
-      title: "Identity & Access Management",
-      desc: "Establishing granular role privileges, single sign-on parameters, and multi-factor authentication guardrails.",
-      icon: <Key className="w-6 h-6 text-rose-500" />
-    },
-    {
-      title: "Threat Intelligence",
-      desc: "Consuming global indicator feeds to map attacker behaviors and preemptively block network vectors.",
-      icon: <Eye className="w-6 h-6 text-rose-500" />
-    },
-    {
-      title: "AI Security",
-      desc: "Deploying model anomaly detection, training data access restrictions, and model api threat mitigation.",
-      icon: <Cpu className="w-6 h-6 text-rose-500" />
+      title: "Compliance & Governance",
+      desc: "Aligning security controls to industry, regulatory, and internal governance requirements."
     }
   ];
 
-  // Security Solutions Portfolio
-  const solutionsPortfolio = [
+  // 3) Core Areas of Cybersecurity Innovation
+  const innovationAreas: CoreArea[] = [
     {
-      name: "Zero Trust Platform",
-      tagline: "Granular Access Control",
-      desc: "Implementing secure application access gateways and context-aware session checks for all users."
+      title: "Zero Trust Security Architecture",
+      desc: "Design identity-centric, least-privilege, segmented security models that protect users, workloads, devices, and critical systems across modern enterprise environments.",
+      icon: <Lock className="w-5 h-5 text-rose-500" />
     },
     {
-      name: "Cloud Security Platform",
-      tagline: "Posture Management",
-      desc: "Continuous drift checking of cloud resources, misconfiguration alerts, and auto-remediation playbooks."
+      title: "Cloud Security & Posture Management",
+      desc: "Secure cloud environments across Azure, AWS, Google Cloud, and hybrid infrastructure with hardened configurations, policy controls, visibility, and continuous posture improvement.",
+      icon: <Shield className="w-5 h-5 text-rose-500" />
     },
     {
-      name: "DevSecOps Framework",
-      tagline: "Pipeline Compliance",
-      desc: "Container image signing, vulnerability checks, and security gates built into delivery systems."
+      title: "Application Security & DevSecOps",
+      desc: "Embed security testing, secrets management, dependency validation, code scanning, and policy controls into modern software delivery workflows.",
+      icon: <Terminal className="w-5 h-5 text-rose-500" />
     },
     {
-      name: "Security Operations Center",
-      tagline: "24/7 Security Operations",
-      desc: "Deploying SIEM and SOAR engines to gather telemetry, parse events, and isolate compromised servers."
+      title: "Identity & Access Security",
+      desc: "Strengthen authentication, authorization, privileged access, role governance, and identity lifecycle controls across workforce and platform environments.",
+      icon: <Key className="w-5 h-5 text-rose-500" />
     },
     {
-      name: "Identity Management",
-      tagline: "Privileged Access Management",
-      desc: "Just-in-time access configurations, SSH session records, and credential vault rotations."
+      title: "Threat Detection & Security Monitoring",
+      desc: "Build visibility across systems, logs, networks, applications, and cloud environments to support faster detection, triage, and response to suspicious activity.",
+      icon: <Eye className="w-5 h-5 text-rose-500" />
     },
     {
-      name: "Compliance Automation",
-      tagline: "Audit Ready Controls",
-      desc: "Mapping hosting states to SOC2, ISO 27001, HIPAA, and PCI-DSS compliance dashboards."
+      title: "Security Automation & Incident Readiness",
+      desc: "Automate security workflows, enrich alerts, streamline incident response, and improve operational readiness through repeatable playbooks and integrated tooling.",
+      icon: <AlertTriangle className="w-5 h-5 text-rose-500" />
+    },
+    {
+      title: "Data Protection & Governance",
+      desc: "Protect sensitive business and customer data through encryption, access policies, secure storage patterns, classification, and governance controls.",
+      icon: <Layers className="w-5 h-5 text-rose-500" />
+    },
+    {
+      title: "Compliance, Risk & Security Assurance",
+      desc: "Support regulatory alignment, audit readiness, security baselines, control validation, and governance frameworks across enterprise technology estates.",
+      icon: <FileCheck className="w-5 h-5 text-rose-500" />
     }
   ];
 
-  // Security Operations & Automation
-  const securityOps = [
-    { title: "Threat Detection", desc: "Correlating network packet logs and host logs to locate malicious indicators of compromise." },
-    { title: "Incident Response", desc: "Automating responses to isolate servers, block malicious IPs, and alert security handlers." },
-    { title: "Security Automation", desc: "Deploying configuration templates to fix missing firewalls and insecure access rules." },
-    { title: "SIEM Integration", desc: "Aggregating telemetry from multi-cloud subscriptions into Microsoft Sentinel or Splunk lakes." },
-    { title: "Threat Hunting", desc: "Proactively auditing user logs to detect slow privilege escalation attempts." },
-    { title: "Vulnerability Management", desc: "Scheduling automated application package scans, host port reviews, and dependency charts." }
-  ];
-
-  // Security Framework
-  const securityFramework = [
-    { phase: "Identify", title: "Asset Discovery", desc: "Inventorying servers, public APIs, credentials, and data stores." },
-    { phase: "Protect", title: "Guardrail Setup", desc: "Enforcing encryption keys, network block rules, and multi-factor logins." },
-    { phase: "Detect", title: "Continuous Scan", desc: "Deploying anomaly filters, scanning build packages, and auditing logs." },
-    { phase: "Respond", title: "Auto Mitigation", desc: "Isolating containers, revoking credentials, and executing playbooks." }
-  ];
-
-  // Security Impact
-  const impactStats = [
-    { value: "90%", label: "Faster Threat Detection" },
-    { value: "60%", label: "Automated Response" },
-    { value: "24/7", label: "Security Operations" },
-    { value: "Compliance", label: "Enterprise Ready" }
-  ];
-
-  const successStories = [
+  // 4) Lifecycle Framework
+  const lifecycleTimeline: TimelineStep[] = [
     {
-      title: "Cloud Security Modernization",
-      challenge: "A retail client had inconsistent firewalls across multiple AWS regions, triggering security alerts.",
-      solution: "Enforced standardized Terraform Security Hub enclaves and auto-remediation loops.",
-      result: "90% faster threat isolation and 100% compliance alignment across regional enclaves."
+      num: "01",
+      title: "Assess",
+      desc: "Evaluate current security posture, architecture gaps, access risks, cloud exposure, compliance obligations, and operational vulnerabilities."
     },
     {
-      title: "Zero Trust Transformation",
-      challenge: "A finance company suffered from outdated VPN rules, giving contractors excess server access.",
-      solution: "Decompiled network layouts and built context-aware, identity-verified web portals.",
-      result: "Contractor compromise risks reduced to zero and audited user logs for all database queries."
+      num: "02",
+      title: "Model",
+      desc: "Define the target security architecture, trust boundaries, identity model, control framework, and risk priorities."
     },
     {
-      title: "Security Operations Automation",
-      challenge: "A tech startup struggled to monitor alerts 24/7, leading to delayed response on critical breaches.",
-      solution: "Deployed a SOAR pipeline to ingest threat events and trigger automated container isolation.",
-      result: "60% automated incident remediation, reducing average response time from hours to seconds."
+      num: "03",
+      title: "Validate",
+      desc: "Prototype controls, run threat modeling, test security workflows, review integrations, and confirm technical feasibility across environments."
+    },
+    {
+      num: "04",
+      title: "Implement",
+      desc: "Deploy security controls, access governance, monitoring, automation, policy enforcement, and platform protections across the stack."
+    },
+    {
+      num: "05",
+      title: "Monitor",
+      desc: "Enable ongoing logging, alerting, posture monitoring, incident workflows, and operational visibility to detect and respond to threats quickly."
+    },
+    {
+      num: "06",
+      title: "Improve",
+      desc: "Continuously refine controls, close vulnerabilities, strengthen compliance posture, improve detection quality, and adapt to new threats."
     }
   ];
 
-  // FAQs
-  const faqs = [
+  // 5) Solutions Built in the Lab
+  const solutionBlocks: SolutionBlock[] = [
     {
-      q: "What is the primary focus of the Cybersecurity Innovation Lab?",
-      a: "The lab focuses on building enterprise-grade Zero Trust architectures, secure cloud enclaves, DevSecOps pipelines, identity governance, and automated threat hunting playbooks."
+      title: "Zero Trust Security Foundations",
+      desc: "Identity-first access models, segmentation patterns, privileged access controls, and secure user/workload trust boundaries."
     },
     {
-      q: "How do you implement Zero Trust architecture?",
-      a: "We enforce least-privilege access rules, continuous session verification, micro-segmentation, and device health checks across all user connections."
+      title: "Cloud Security Baselines",
+      desc: "Secure landing zone controls, cloud posture management, network protection, workload security, and policy enforcement across cloud environments."
     },
     {
-      q: "What is DevSecOps and how does the lab automate security in CI/CD?",
-      a: "DevSecOps integrates security directly into build pipelines, automating dependency scans, software composition analysis (SCA), secrets detection, and runtime audits."
+      title: "DevSecOps & Secure Delivery Pipelines",
+      desc: "Application security checks, secrets controls, dependency scanning, artifact validation, and policy-as-code integrated into delivery workflows."
     },
     {
-      q: "What cloud security configurations do you support?",
-      a: "We secure workloads on Azure (Microsoft Defender, Sentinel), AWS (Security Hub, GuardDuty), Google Cloud, and Oracle Cloud, building custom Landing Zones."
+      title: "Security Monitoring & Detection Foundations",
+      desc: "Centralized logging, detection logic, alert pipelines, monitoring dashboards, and incident escalation workflows for security operations."
     },
     {
-      q: "How does security orchestration, automation, and response (SOAR) work?",
-      a: "SOAR automates incident responses by using API workflows to block malicious IPs, suspend compromised roles, and isolate containers when threats are detected."
+      title: "Identity & Access Governance Models",
+      desc: "Role design, access review processes, MFA strategy, privileged access workflows, and identity governance foundations."
     },
     {
-      q: "What is threat hunting and intelligence?",
-      a: "It is the proactive search for hidden indicators of compromise (IoCs) within system logs using threat intelligence feeds and anomaly detection scripts."
+      title: "Data Protection & Encryption Controls",
+      desc: "Sensitive data protection, key management integration, secure storage controls, access restrictions, and classification-aware handling."
     },
     {
-      q: "How do you protect containerized workloads (Kubernetes)?",
-      a: "We enforce cluster security boundaries, configure runtime detection engines like Falco, restrict API privileges, and scan images before release."
+      title: "Incident Response & Automation Playbooks",
+      desc: "Automated response actions, alert triage workflows, escalation paths, enrichment logic, and security runbooks."
     },
     {
-      q: "How does the lab support compliance audits?",
-      a: "We deploy real-time monitoring and compliance templates to verify configuration statuses against SOC2, ISO 27001, HIPAA, and PCI-DSS rules."
-    },
-    {
-      q: "What identity and access management (IAM) strategies do you use?",
-      a: "We configure single sign-on (SSO), multi-factor authentication (MFA), role-based privilege parameters, and privileged access management (PAM) pipelines."
-    },
-    {
-      q: "How can we engage with the Cybersecurity Innovation Lab?",
-      a: "You can schedule a Threat Assessment Workshop where our security architects audit your network topology, review access controls, and design a Zero Trust blueprint."
+      title: "Compliance & Audit Readiness Frameworks",
+      desc: "Security controls aligned to governance requirements, audit evidence collection, control mapping, and operational compliance support."
     }
   ];
 
-  // Related connections
-  const relatedConnections = [
-    { name: "DevOps Innovation Lab", desc: "Self-service developer platforms, GitOps configurations, and SRE operations.", href: "/ecosystem/innovation-labs/devops-lab" },
-    { name: "Cloud Innovation Lab", desc: "Cloud-native platform engineering, Landing Zones, and multi-cloud architectures.", href: "/ecosystem/innovation-labs/cloud-lab" },
-    { name: "Cisco Alliance", desc: "Enterprise networks setups, threat defense, and smart routing installations.", href: "/ecosystem/partnerships/cisco" }
+  // 6) Architecture layers
+  const archLayers: ArchLayer[] = [
+    {
+      num: "LAYER 1",
+      name: "Users, Devices & Access Layer",
+      desc: "workforce users • privileged administrators • remote users • devices / endpoints • partner access • MFA / access gateways"
+    },
+    {
+      num: "LAYER 2",
+      name: "Application & Workload Layer",
+      desc: "enterprise applications • APIs • microservices • container workloads • internal tools • business platforms"
+    },
+    {
+      num: "LAYER 3",
+      name: "Cloud, Infrastructure & Network Layer",
+      desc: "cloud workloads • virtual networks • firewalls / segmentation • compute environments • storage and databases • hybrid connectivity"
+    },
+    {
+      num: "LAYER 4",
+      name: "Security Controls & Policy Layer",
+      desc: "IAM / RBAC • secrets management • vulnerability controls • endpoint / workload protection • policy enforcement • encryption and key controls"
+    },
+    {
+      num: "LAYER 5",
+      name: "Monitoring, Detection & Response Layer",
+      desc: "centralized logs • SIEM-style monitoring • alerts • detection rules • threat investigation workflows • incident response orchestration"
+    },
+    {
+      num: "LAYER 6",
+      name: "Governance, Risk & Compliance Layer",
+      desc: "compliance controls • audit evidence • risk reviews • access governance • security baselines • resilience / recovery policies"
+    }
+  ];
+
+  const techChips = [
+    "Azure / AWS / GCP security services",
+    "SIEM / monitoring stack",
+    "IAM / privileged access tooling",
+    "secrets & key management",
+    "container / workload security",
+    "policy-as-code",
+    "vulnerability scanning",
+    "audit / governance tooling"
+  ];
+
+  // 7) Industry / Workload Use Cases
+  const industryUseCases: IndustryUseCase[] = [
+    {
+      name: "Cloud & Infrastructure Security",
+      items: [
+        "secure cloud landing zones",
+        "workload hardening",
+        "hybrid network segmentation",
+        "posture management and misconfiguration reduction"
+      ]
+    },
+    {
+      name: "Application & DevSecOps Security",
+      items: [
+        "secure CI/CD pipelines",
+        "secrets governance",
+        "dependency and artifact validation",
+        "application vulnerability reduction"
+      ]
+    },
+    {
+      name: "Identity & Access Security",
+      items: [
+        "MFA and conditional access strategies",
+        "privileged access governance",
+        "role-based access design",
+        "user lifecycle and access review processes"
+      ]
+    },
+    {
+      name: "Detection & Response",
+      items: [
+        "centralized security monitoring",
+        "threat detection workflows",
+        "incident triage automation",
+        "response playbooks and escalation paths"
+      ]
+    },
+    {
+      name: "Data Protection & Compliance",
+      items: [
+        "encryption strategy",
+        "data access governance",
+        "audit control alignment",
+        "compliance evidence readiness"
+      ]
+    },
+    {
+      name: "Resilience & Risk Reduction",
+      items: [
+        "ransomware readiness support",
+        "security posture improvement",
+        "operational continuity planning",
+        "recovery and control strengthening"
+      ]
+    }
+  ];
+
+  // 8) Outcomes
+  const labDeliverables: Deliverable[] = [
+    { title: "Stronger enterprise security posture" },
+    { title: "Reduced cloud and identity risk exposure" },
+    { title: "Better visibility into threats and suspicious activity" },
+    { title: "Faster incident response readiness" },
+    { title: "More secure application delivery pipelines" },
+    { title: "Improved compliance and audit preparedness" },
+    { title: "Better control over sensitive data and privileged access" },
+    { title: "Greater operational resilience across critical systems" }
+  ];
+
+  const stats = [
+    { value: "faster", label: "security incident triage" },
+    { value: "improved", label: "cloud posture visibility" },
+    { value: "reduced", label: "manual security validation effort" },
+    { value: "stronger", label: "access governance consistency" },
+    { value: "24×7", label: "monitoring readiness support" }
+  ];
+
+  // 9) Why work with us
+  const whyWorkWithUs: WhyChoose[] = [
+    {
+      title: "Security Built into the Architecture, Not Added Later",
+      desc: "We design controls into platforms, applications, delivery workflows, and cloud foundations from the beginning."
+    },
+    {
+      title: "Engineering + Security in One Delivery Model",
+      desc: "Our cybersecurity approach combines cloud, DevOps, platform engineering, and security expertise rather than treating security as a disconnected workstream."
+    },
+    {
+      title: "Practical Security for Real Production Environments",
+      desc: "We focus on controls that are effective, maintainable, and aligned to how modern systems actually operate."
+    },
+    {
+      title: "Identity, Visibility, and Governance at the Core",
+      desc: "We strengthen security through better access models, observability, monitoring, and control governance — not just isolated tooling."
+    },
+    {
+      title: "Ready for Modern Compliance Expectations",
+      desc: "We help organizations align security practices to operational governance, customer trust, and evolving compliance obligations."
+    },
+    {
+      title: "Continuous Security Improvement Beyond Go-Live",
+      desc: "Our lab supports ongoing posture refinement, monitoring maturity, automation improvements, and resilience over time."
+    }
+  ];
+
+  // 10) Related labs
+  const relatedLabs: RelatedLab[] = [
+    {
+      name: "AI Innovation Lab",
+      desc: "R&D and applied innovation for enterprise machine learning.",
+      href: "/ecosystem/innovation-labs/ai-lab"
+    },
+    {
+      name: "Cloud Innovation Lab",
+      desc: "Enterprise landing zones, platform engineering, and hybrid cloud migrations.",
+      href: "/ecosystem/innovation-labs/cloud-lab"
+    },
+    {
+      name: "DevOps Innovation Lab",
+      desc: "Autonomous GitOps pipelines, self-service developer portals, and SRE models.",
+      href: "/ecosystem/innovation-labs/devops-lab"
+    },
+    {
+      name: "Data & Analytics Lab",
+      desc: "Enterprise data lakes, stream processing, and business intelligence models.",
+      href: "/ecosystem/innovation-labs/data-analytics-lab"
+    }
   ];
 
   return (
-    <main className="min-h-screen bg-black text-white pt-16 font-sans overflow-x-hidden selection:bg-rose-500 selection:text-white">
-
+    <main className="min-h-screen bg-black text-white font-sans overflow-x-hidden selection:bg-rose-500 selection:text-white">
+      
       {/* 1. HERO SECTION */}
       <Hero
         badge="Cybersecurity Innovation Lab"
         title={
           <>
-            Building Cyber Resilience, Zero Trust Architecture <br />
+            Where Security Engineering Meets <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-500 to-rose-700">
-              & AI-Powered Security Operations
+              Operational Resilience
             </span>
           </>
         }
-        subtitle="Protecting digital enterprises through zero-trust network models, cloud security guardrails, automated pipeline scanning, and real-time SIEM/SOAR incident operations."
+        subtitle="Defend complex cloud-native architectures through multi-tiered identity validation, continuous container vulnerability assessments, and automated incident response loops."
         bgImage="/assets/ecosystem/sub-page-hero/ecosystem_Innovation_labs/Cyber.png"
         stats={heroMetrics}
         breadcrumbs={[
@@ -238,137 +407,225 @@ export default function CybersecurityInnovationLabPage() {
           { label: "CYBERSECURITY LAB" },
         ]}
       >
-        <Link
-          href="/contact"
-          className="inline-flex items-center gap-3 pl-6 pr-3 py-3 bg-white text-black font-semibold text-xs md:text-sm tracking-wider rounded-full hover:bg-zinc-200 transition-all duration-300 shadow-lg shadow-white/5"
-        >
-          Talk To Security Experts
-          <div className="w-7 h-7 rounded-full bg-black flex items-center justify-center">
-            <ArrowUpRight className="w-3.5 h-3.5 text-white" />
-          </div>
-        </Link>
-        <Link
-          href="/contact"
-          className="gap-2 inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase border border-zinc-850 hover:border-zinc-750 bg-zinc-950/60 hover:bg-zinc-900 text-white transition-all duration-300 hover:-translate-y-0.5"
-        >
-          Start Security Assessment
-        </Link>
+        <div className="flex flex-wrap gap-4 mt-8">
+          <Link
+            href="/contact"
+            className="inline-flex items-center gap-3 pl-6 pr-3 py-3 bg-white text-black font-semibold text-xs md:text-sm tracking-wider rounded-full hover:bg-zinc-200 transition-all duration-300 shadow-lg shadow-white/5"
+          >
+            Book a Security Strategy Session
+            <div className="w-7 h-7 rounded-full bg-black flex items-center justify-center">
+              <ArrowUpRight className="w-3.5 h-3.5 text-white" />
+            </div>
+          </Link>
+          <Link
+            href="/contact"
+            className="gap-2 inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase border border-zinc-850 hover:border-zinc-750 bg-zinc-950/60 hover:bg-zinc-900 text-white transition-all duration-300 hover:-translate-y-0.5"
+          >
+            Talk to Our Security Team
+          </Link>
+        </div>
       </Hero>
 
-      {/* 2. SECURITY INNOVATION DOMAINS */}
-      <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60 relative">
-        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
-          <Reveal className="mb-16 text-center max-w-2xl mx-auto">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
-              SECURITY RESEARCH
+      {/* 2. OVERVIEW / MISSION SECTION */}
+      <section className="w-full py-24 bg-[#020202] border-b border-zinc-900/60 relative overflow-hidden">
+        {/* Glow */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-rose-500/[0.01] rounded-full blur-[120px] pointer-events-none" />
+
+        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            {/* Left side content */}
+            <div className="lg:col-span-6">
+              <Reveal>
+                <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+                  Mission Overview
+                </span>
+                <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
+                  Where Security Engineering <br />
+                  <span className="text-rose-500">Meets Operational Resilience</span>
+                </h2>
+                <p className="text-zinc-400 text-base md:text-lg leading-relaxed mb-6">
+                  The Devopstrio Cybersecurity Innovation Lab is focused on building secure-by-design technology environments that protect modern enterprises from evolving threats. We combine security architecture, DevSecOps, cloud security, identity governance, threat monitoring, and compliance engineering to help organizations move from reactive security controls to proactive, resilient defense strategies.
+                </p>
+              </Reveal>
+            </div>
+
+            {/* Right side - 4 mini cards */}
+            <div className="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {miniMissionCards.map((card, idx) => (
+                <Reveal key={card.title} delay={idx * 0.05}>
+                  <div className="bg-zinc-950/40 border border-white/[0.03] hover:border-rose-500/20 rounded-[20px] p-5 transition-all duration-300 min-h-[140px] flex flex-col justify-between">
+                    <div>
+                      <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-2">
+                        {card.title}
+                      </h4>
+                      <p className="text-xs md:text-sm text-zinc-400 font-semibold leading-relaxed">
+                        {card.desc}
+                      </p>
+                    </div>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* 3. CORE INNOVATION AREAS */}
+      <section className="w-full py-24 bg-black border-b border-zinc-900/60 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
+          <Reveal className="mb-14 text-center max-w-3xl mx-auto">
+            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+              Capabilities
             </span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">
-              Security Innovation <span className="text-rose-500">Domains</span>
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
+              Core Areas of <span className="text-rose-500">Cybersecurity Innovation</span>
             </h2>
-            <p className="text-zinc-300 text-sm md:text-base font-medium">
-              Engineering proactive containment, identity bounds, and threat analysis models.
+            <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
+              The primary capability vectors driving modern Zero Trust architectures, secure pipelines, and compliance assurance.
             </p>
           </Reveal>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {securityDomains.map((domain, idx) => (
-              <div
-                key={idx}
-                className="group flex flex-col justify-between p-8 bg-zinc-950/40 border border-zinc-900 hover:border-rose-500/20 rounded-3xl transition-all duration-300 min-h-[200px]"
-              >
-                <div>
-                  <div className="flex items-center justify-between mb-6 border-b border-zinc-900/60 pb-4">
-                    <h4 className="text-base font-bold text-white uppercase tracking-wider">{domain.title}</h4>
-                    <div className="group-hover:scale-110 transition-transform duration-300">
-                      {domain.icon}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {innovationAreas.map((area, idx) => (
+              <Reveal key={area.title} delay={idx * 0.04} className="h-full">
+                <div className="bg-[#0a0a0a]/60 border border-white/[0.03] hover:border-rose-500/20 rounded-[20px] p-6 transition-all duration-300 flex flex-col justify-between h-full min-h-[220px]">
+                  <div>
+                    <div className="w-9 h-9 rounded-xl bg-rose-500/10 flex items-center justify-center mb-5">
+                      {area.icon}
                     </div>
+                    <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-2.5">
+                      {area.title}
+                    </h4>
+                    <p className="text-xs md:text-sm text-zinc-400 leading-relaxed font-semibold">
+                      {area.desc}
+                    </p>
                   </div>
-                  <p className="text-xs md:text-sm text-zinc-350 font-bold leading-relaxed">
-                    {domain.desc}
-                  </p>
                 </div>
-              </div>
+              </Reveal>
             ))}
           </div>
         </div>
       </section>
 
-      {/* 3. CYBERSECURITY ARCHITECTURE */}
-      <section className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-rose-500/[0.01] rounded-full blur-[140px] pointer-events-none" />
-
-        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
-          <Reveal className="mb-16 text-center max-w-2xl mx-auto">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
-              ZERO TRUST BLUEPRINT
+      {/* 4. LIFECYCLE / OPERATING MODEL */}
+      <section className="w-full py-24 bg-[#020202] border-b border-zinc-900/60 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
+          
+          <Reveal className="mb-14 text-left max-w-3xl">
+            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+              Operating Framework
             </span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">
-              Cybersecurity <span className="text-rose-500">Architecture</span>
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
+              How the Cybersecurity Lab Strengthens <span className="text-rose-500">Enterprise Security</span>
             </h2>
-            <p className="text-zinc-300 text-sm md:text-base font-medium">
-              Multi-tiered validation model securing resources from identity checkpoint to data repository.
+            <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
+              A structured lifecycle process ensuring that trust boundaries and defense mechanisms are modeled, implemented, and monitored.
             </p>
           </Reveal>
 
-          {/* Technical Stack Architecture Diagram */}
-          <div className="max-w-4xl mx-auto bg-zinc-950/40 border border-zinc-900 rounded-3xl p-8 lg:p-12 relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-24 h-24 bg-rose-500/[0.02] rounded-full blur-xl pointer-events-none" />
-
-            <div className="flex flex-col gap-6 relative z-10 font-mono">
-
-              {/* Layer 1 */}
-              <div className="flex flex-col md:flex-row md:items-center justify-between p-5 bg-zinc-950 border border-zinc-900 rounded-2xl gap-4 group hover:border-rose-500/10 transition-all duration-300">
-                <span className="text-xs font-bold text-rose-500 uppercase tracking-widest font-mono">01. Users & Devices</span>
-                <span className="text-xs text-zinc-400 font-bold">Remote Staff, Partners, Contractor Terminals, Mobile Nodes</span>
-              </div>
-
-              <div className="flex justify-center"><ChevronDown className="w-5 h-5 text-zinc-800" /></div>
-
-              {/* Layer 2 */}
-              <div className="flex flex-col md:flex-row md:items-center justify-between p-5 bg-zinc-950 border border-zinc-900 rounded-2xl gap-4 group hover:border-rose-500/10 transition-all duration-300">
-                <span className="text-xs font-bold text-rose-500 uppercase tracking-widest font-mono">02. Identity Layer</span>
-                <span className="text-xs text-zinc-400 font-bold">Single Sign-On, MFA verification, Privileged Access policies</span>
-              </div>
-
-              <div className="flex justify-center"><ChevronDown className="w-5 h-5 text-zinc-800" /></div>
-
-              {/* Layer 3 */}
-              <div className="flex flex-col md:flex-row md:items-center justify-between p-5 bg-zinc-950 border border-zinc-900 rounded-2xl gap-4 group hover:border-rose-500/10 transition-all duration-300">
-                <span className="text-xs font-bold text-rose-500 uppercase tracking-widest font-mono">03. Security Controls</span>
-                <span className="text-xs text-zinc-400 font-bold">Web Application Firewalls (WAF), API access logs, network routers</span>
-              </div>
-
-              <div className="flex justify-center"><ChevronDown className="w-5 h-5 text-zinc-800" /></div>
-
-              {/* Layer 4 */}
-              <div className="flex flex-col md:flex-row md:items-center justify-between p-5 bg-zinc-950 border border-zinc-900 rounded-2xl gap-4 group hover:border-rose-500/10 transition-all duration-300">
-                <span className="text-xs font-bold text-rose-500 uppercase tracking-widest font-mono">04. Applications</span>
-                <span className="text-xs text-zinc-400 font-bold">Microservice APIs, staging databases, static file portals</span>
-              </div>
-
-              <div className="flex justify-center"><ChevronDown className="w-5 h-5 text-zinc-800" /></div>
-
-              {/* Layer 5 */}
-              <div className="flex flex-col md:flex-row md:items-center justify-between p-5 bg-zinc-950 border border-zinc-900 rounded-2xl gap-4 group hover:border-rose-500/10 transition-all duration-300">
-                <span className="text-xs font-bold text-rose-500 uppercase tracking-widest font-mono">05. Cloud Infrastructure</span>
-                <span className="text-xs text-zinc-400 font-bold">Virtual Private Networks, Kubernetes clusters, local hardware</span>
-              </div>
-
-              <div className="flex justify-center"><ChevronDown className="w-5 h-5 text-zinc-800" /></div>
-
-              {/* Layer 6 */}
-              <div className="flex flex-col md:flex-row md:items-center justify-between p-5 bg-zinc-950 border border-zinc-900 rounded-2xl gap-4 group hover:border-rose-500/10 transition-all duration-300">
-                <span className="text-xs font-bold text-rose-500 uppercase tracking-widest font-mono">06. Monitoring & Response</span>
-                <span className="text-xs text-zinc-400 font-bold">SIEM analytics, SOAR playbooks, Threat alerts, isolated boxes</span>
-              </div>
-
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-4">
+            {lifecycleTimeline.map((step, idx) => (
+              <Reveal key={step.num} delay={idx * 0.05} className="h-full">
+                <div className="bg-zinc-950/80 border border-white/[0.03] hover:border-rose-500/20 rounded-2xl p-5 flex flex-col justify-between h-full min-h-[190px] relative group transition-all duration-300">
+                  <div>
+                    <span className="text-2xl font-black text-rose-500/10 font-mono tracking-tighter block mb-4 group-hover:text-rose-500/25 transition-colors">
+                      {step.num}
+                    </span>
+                    <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-2">
+                      {step.title}
+                    </h4>
+                    <p className="text-xs md:text-sm text-zinc-400 leading-relaxed font-semibold">
+                      {step.desc}
+                    </p>
+                  </div>
+                </div>
+              </Reveal>
+            ))}
           </div>
 
-          <div className="flex flex-wrap items-center justify-center gap-3 select-none mt-12">
-            <span className="text-xs font-bold text-zinc-400 mr-2 uppercase tracking-wider">Technology Layer:</span>
-            {["Microsoft Defender", "CrowdStrike", "Palo Alto", "Cisco Security", "Azure Security", "OCI Security"].map((tech) => (
-              <span key={tech} className="px-3.5 py-1.5 bg-zinc-950 border border-zinc-900 text-[10px] font-mono text-zinc-350 rounded-lg font-bold">
+        </div>
+      </section>
+
+      {/* 5. SOLUTIONS BUILT IN THE LAB */}
+      <section className="w-full py-24 bg-black border-b border-zinc-900/60 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
+          <Reveal className="mb-14 text-center max-w-3xl mx-auto">
+            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+              Deliverables
+            </span>
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
+              Security Solutions Built <span className="text-rose-500">Inside the Lab</span>
+            </h2>
+            <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
+              Operational blueprints and platform blueprints engineered to secure enterprise infrastructure.
+            </p>
+          </Reveal>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {solutionBlocks.map((block, idx) => (
+              <Reveal key={block.title} delay={idx * 0.04}>
+                <div className="bg-[#0a0a0a]/60 border border-white/[0.03] hover:border-rose-500/20 rounded-[20px] p-6 transition-all duration-300 min-h-[170px] flex flex-col justify-between">
+                  <div>
+                    <div className="flex items-center justify-between mb-4 border-b border-white/[0.03] pb-3">
+                      <h4 className="text-xs font-bold text-white uppercase tracking-wider">
+                        {block.title}
+                      </h4>
+                      <span className="text-[9px] font-mono text-rose-500 font-bold">READY TO DEPLOY</span>
+                    </div>
+                    <p className="text-xs md:text-sm text-zinc-400 leading-relaxed font-semibold">
+                      {block.desc}
+                    </p>
+                  </div>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 6. REFERENCE ARCHITECTURE */}
+      <section className="w-full py-24 bg-[#020202] border-b border-zinc-900/60 relative overflow-hidden">
+        {/* Glow */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-rose-650/[0.015] rounded-full blur-[130px] pointer-events-none" />
+
+        <div className="max-w-4xl mx-auto w-full px-12 xl:px-8 relative z-10">
+          <Reveal className="mb-14 text-center max-w-3xl mx-auto">
+            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+              Reference Blueprint
+            </span>
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
+              Our Cybersecurity Innovation <span className="text-rose-500">Reference Architecture</span>
+            </h2>
+            <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
+              A comprehensive layered defense model safeguarding users, workloads, networks, and data.
+            </p>
+          </Reveal>
+
+          {/* Layered Diagram */}
+          <div className="flex flex-col gap-4 font-mono">
+            {archLayers.map((layer, idx) => (
+              <Reveal key={layer.num} delay={idx * 0.05}>
+                <div className="bg-zinc-950/60 border border-white/[0.03] rounded-2xl p-5 hover:border-rose-500/20 transition-all duration-300 flex flex-col md:flex-row md:items-center justify-between gap-3">
+                  <div className="flex items-center gap-4">
+                    <div className="w-20 text-[10px] font-bold text-rose-500 uppercase tracking-widest font-mono border-r border-white/10 pr-2">
+                      {layer.num}
+                    </div>
+                    <span className="text-xs font-bold text-white uppercase tracking-wider">{layer.name}</span>
+                  </div>
+                  <span className="text-xs md:text-sm text-zinc-400 font-semibold md:max-w-md text-left md:text-right leading-relaxed">
+                    {layer.desc}
+                  </span>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+
+          {/* Tech Chips */}
+          <div className="flex flex-wrap items-center justify-center gap-2 select-none mt-12">
+            {techChips.map((tech) => (
+              <span key={tech} className="px-3.5 py-2 bg-zinc-950 border border-white/[0.04] text-[10px] font-mono text-zinc-400 rounded-xl font-bold">
                 {tech}
               </span>
             ))}
@@ -377,325 +634,235 @@ export default function CybersecurityInnovationLabPage() {
         </div>
       </section>
 
-      {/* 4. SECURITY SOLUTIONS PORTFOLIO */}
-      <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60">
-        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
-          <Reveal className="mb-16 text-left">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
-              PORTFOLIO
+      {/* 7. USE CASES / SCENARIOS */}
+      <section className="w-full py-24 bg-black border-b border-zinc-900/60 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
+          
+          <Reveal className="mb-14 text-center max-w-3xl mx-auto">
+            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+              Scenarios
             </span>
-            <h2 className="text-3xl md:text-4xl font-extrabold text-white">
-              Security Solutions <span className="text-rose-500">Portfolio</span>
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
+              Security Use Cases We Engineer <span className="text-rose-500">Across the Enterprise</span>
             </h2>
-          </Reveal>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {solutionsPortfolio.map((sol, idx) => (
-              <div
-                key={idx}
-                className="group flex flex-col justify-between p-8 bg-zinc-950/40 border border-zinc-900 hover:border-rose-500/20 rounded-3xl transition-all duration-300"
-              >
-                <div>
-                  <div className="flex items-center justify-between mb-4">
-                    <span className="text-[10px] font-mono text-rose-500 uppercase tracking-widest font-bold">
-                      {sol.tagline}
-                    </span>
-                    <span className="text-xs font-mono text-zinc-700">0{idx + 1}</span>
-                  </div>
-
-                  <h3 className="text-lg md:text-xl font-bold text-white mb-4">
-                    {sol.name}
-                  </h3>
-
-                  <p className="text-xs md:text-sm text-zinc-400 leading-relaxed font-bold">
-                    {sol.desc}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 5. SECURITY OPERATIONS & AUTOMATION */}
-      <section className="w-full py-24 bg-black border-b border-zinc-900/60">
-        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
-          <Reveal className="mb-16 text-center max-w-2xl mx-auto">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
-              AUTOMATED MONITORING
-            </span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">
-              Security Operations & <span className="text-rose-500">Automation</span>
-            </h2>
-          </Reveal>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {securityOps.map((item, idx) => (
-              <div
-                key={idx}
-                className="p-6 bg-zinc-950/40 border border-zinc-900 hover:border-rose-500/20 rounded-2xl transition-all duration-300"
-              >
-                <div className="w-8 h-8 rounded-lg bg-rose-500/5 flex items-center justify-center mb-4 text-rose-500 font-bold font-mono text-xs">
-                  0{idx + 1}
-                </div>
-                <h4 className="text-sm md:text-base font-bold text-white mb-2">{item.title}</h4>
-                <p className="text-sm text-zinc-300 font-medium leading-relaxed">{item.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 6. SECURITY FRAMEWORK */}
-      <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60">
-        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
-          <Reveal className="mb-16 text-center max-w-2xl mx-auto">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
-              REMEDIATION CYCLES
-            </span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">
-              Cybersecurity <span className="text-rose-500">Framework</span>
-            </h2>
-          </Reveal>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative">
-            {securityFramework.map((step, idx) => (
-              <div
-                key={idx}
-                className="flex flex-col bg-zinc-950/40 border border-zinc-900 rounded-2xl p-6 relative group overflow-hidden"
-              >
-                <div className="text-[28px] font-black text-rose-500/15 font-mono tracking-tighter leading-none mb-3">
-                  0{idx + 1}
-                </div>
-                <span className="text-[9px] font-mono text-rose-500 uppercase tracking-widest block mb-1 font-bold">
-                  {step.phase}
-                </span>
-                <h4 className="text-sm font-bold text-white uppercase tracking-wider mb-2">{step.title}</h4>
-                <p className="text-[10px] md:text-xs text-zinc-400 font-bold leading-relaxed">{step.desc}</p>
-              </div>
-            ))}
-          </div>
-
-          <div className="flex flex-wrap items-center justify-center gap-3 select-none mt-12">
-            <span className="text-xs font-bold text-zinc-400 mr-2 uppercase tracking-wider">Methodology:</span>
-            {["Identify", "Protect", "Detect", "Respond"].map((srv) => (
-              <span key={srv} className="px-3.5 py-1.5 bg-zinc-950 border border-zinc-900 text-[10px] font-mono text-zinc-350 rounded-lg font-bold">
-                {srv}
-              </span>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 7. SECURITY IMPACT */}
-      <section className="w-full py-24 bg-black border-b border-zinc-900/60">
-        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
-
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center mb-16">
-
-            <div className="lg:col-span-5">
-              <Reveal className="text-left">
-                <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
-                  METRICS & CASES
-                </span>
-                <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">
-                  Security Lab <span className="text-rose-500">Impact</span>
-                </h2>
-                <p className="text-zinc-350 text-xs md:text-sm lg:text-base leading-relaxed font-bold mb-8">
-                  Lowering detection times and securing cloud configurations automatically without user overhead.
-                </p>
-              </Reveal>
-            </div>
-
-            <div className="lg:col-span-7">
-              <div className="grid grid-cols-2 gap-6 select-none">
-                {impactStats.map((item, idx) => (
-                  <div
-                    key={idx}
-                    className="p-6 bg-zinc-950/50 border border-zinc-900 hover:border-rose-500/20 rounded-2xl transition-all duration-300 text-left group"
-                  >
-                    <div className="text-2xl md:text-3xl font-black text-rose-500 tracking-tighter mb-2 font-mono group-hover:scale-105 transition-transform duration-300 origin-left">
-                      {item.value}
-                    </div>
-                    <div className="text-[9px] md:text-[10px] font-mono text-zinc-400 uppercase tracking-widest leading-snug font-bold">
-                      {item.label}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {successStories.map((story, idx) => (
-              <div
-                key={idx}
-                className="group flex flex-col justify-between p-8 bg-zinc-950/40 border border-zinc-900 hover:border-rose-500/20 rounded-3xl transition-all duration-300"
-              >
-                <div>
-                  <span className="text-[10px] font-mono text-rose-500 tracking-wider uppercase font-bold block mb-1">
-                    Security Case Study
-                  </span>
-                  <h3 className="text-base md:text-lg font-bold text-white mb-6 tracking-wide">
-                    {story.title}
-                  </h3>
-
-                  <div className="space-y-4">
-                    <div>
-                      <span className="text-[9px] font-mono text-rose-500 uppercase tracking-wider block mb-1 font-bold">Challenge</span>
-                      <p className="text-xs text-zinc-350 leading-relaxed font-bold">{story.challenge}</p>
-                    </div>
-                    <div>
-                      <span className="text-[9px] font-mono text-rose-500 uppercase tracking-wider block mb-1 font-bold">Solution</span>
-                      <p className="text-xs text-zinc-350 leading-relaxed font-bold">{story.solution}</p>
-                    </div>
-                    <div className="pt-2 border-t border-zinc-900/80">
-                      <span className="text-[9px] font-mono text-rose-500 uppercase tracking-wider block mb-1 font-bold">Result</span>
-                      <p className="text-xs text-zinc-350 font-bold leading-relaxed">{story.result}</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-
-        </div>
-      </section>
-
-      {/* 8. FAQ SECTION */}
-      <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60">
-        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
-
-            <div className="lg:col-span-5">
-              <Reveal className="text-left sticky top-28">
-                <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
-                  SECURITY QUESTIONS
-                </span>
-                <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight leading-tight text-white mb-5">
-                  Frequently Asked <span className="text-rose-500">Questions</span>
-                </h2>
-                <p className="text-zinc-400 text-xs md:text-sm font-bold max-w-md">
-                  Everything you need to know about our security assessments, DevSecOps pipelines, and threat mitigation models.
-                </p>
-              </Reveal>
-            </div>
-
-            <div className="lg:col-span-7">
-              <div className="flex flex-col gap-4 select-none">
-                {faqs.map((faq, idx) => {
-                  const isOpen = openFaqIndex === idx;
-                  return (
-                    <div
-                      key={idx}
-                      className="bg-zinc-950/50 border border-zinc-900 hover:border-rose-500/10 rounded-2xl overflow-hidden transition-all duration-300"
-                    >
-                      <button
-                        onClick={() => toggleFaq(idx)}
-                        className="w-full p-6 text-left flex items-center justify-between gap-4 font-bold text-sm md:text-base text-white uppercase tracking-wider"
-                      >
-                        {faq.q}
-                        <ChevronDown
-                          className={`w-4 h-4 text-zinc-550 transition-transform duration-300 flex-shrink-0 ${isOpen ? "rotate-180 text-rose-500" : ""
-                            }`}
-                        />
-                      </button>
-
-                      <div
-                        className={`transition-all duration-300 ease-in-out overflow-hidden ${isOpen ? "max-h-[250px] border-t border-zinc-900/60" : "max-h-0"
-                          }`}
-                      >
-                        <p className="p-6 text-xs md:text-sm text-zinc-400 leading-relaxed font-bold">
-                          {faq.a}
-                        </p>
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      {/* RELATED CONNECTIONS */}
-      <section className="w-full py-24 bg-black border-b border-zinc-900/60">
-        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
-          <Reveal className="mb-16 text-center max-w-2xl mx-auto">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
-              EXPLORE OTHER NETWORKS
-            </span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">
-              Related Ecosystem <span className="text-rose-500">Connections</span>
-            </h2>
-          </Reveal>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {relatedConnections.map((partner) => (
-              <Link
-                key={partner.name}
-                href={partner.href}
-                className="group flex flex-col justify-between p-6 bg-zinc-950/40 border border-zinc-900 hover:border-rose-500/20 rounded-2xl transition-all duration-300 min-h-[160px]"
-              >
-                <div>
-                  <h4 className="text-sm md:text-base font-bold text-white uppercase tracking-wider mb-2 flex items-center justify-between">
-                    {partner.name}
-                    <ChevronRight className="w-4 h-4 text-zinc-650 group-hover:translate-x-1 group-hover:text-rose-500 transition-all" />
-                  </h4>
-                  <p className="text-sm text-zinc-300 font-medium leading-relaxed">
-                    {partner.desc}
-                  </p>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 9. CTA SECTION */}
-      <section className="relative w-full py-32 bg-[#030303] overflow-hidden text-center">
-        {/* Ambient background blur */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-rose-500/[0.02] rounded-full blur-[140px] pointer-events-none" />
-
-        <div className="max-w-3xl mx-auto px-12 xl:px-8 relative z-10 flex flex-col items-center">
-
-          <Reveal>
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
-              SECURE YOUR INFRASTRUCTURE
-            </span>
-          </Reveal>
-
-          <Reveal delay={0.1}>
-            <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6">
-              Build a Resilient <span className="text-rose-500">Cybersecurity Strategy</span>
-            </h2>
-          </Reveal>
-
-          <Reveal delay={0.2}>
-            <p className="text-zinc-400 text-xs md:text-sm lg:text-base leading-relaxed max-w-xl mb-10 font-bold">
-              Partner with our Security Innovation Lab to enforce enterprise-grade Zero Trust architecture and secure your cloud deployments.
+            <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
+              Targeted security architectures designed to resolve real-world enterprise threat vectors.
             </p>
           </Reveal>
 
-          <Reveal delay={0.3} className="flex flex-wrap justify-center gap-4">
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-3 pl-6 pr-3 py-3 bg-white text-black font-semibold text-xs md:text-sm tracking-wider rounded-full hover:bg-zinc-200 transition-all duration-300 shadow-lg shadow-white/5"
-            >
-              Talk To Security Experts
-              <div className="w-7 h-7 rounded-full bg-black flex items-center justify-center">
-                <ArrowUpRight className="w-3.5 h-3.5 text-white" />
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start max-w-5xl mx-auto">
+            
+            {/* Left selector sidebar */}
+            <div className="lg:col-span-4 flex flex-row lg:flex-col gap-3 overflow-x-auto lg:overflow-x-visible pb-4 lg:pb-0 scrollbar-none snap-x snap-mandatory">
+              {industryUseCases.map((cat) => (
+                <button
+                  key={cat.name}
+                  onClick={() => setActiveTab(cat.name)}
+                  className={`flex items-center justify-between p-4 rounded-2xl text-left border transition-all duration-300 flex-shrink-0 snap-start w-[140px] lg:w-full ${
+                    activeTab === cat.name
+                      ? "bg-rose-500/10 text-rose-500 border-rose-500/20 shadow-[0_0_20px_rgba(244,63,94,0.1)]"
+                      : "bg-zinc-950/45 text-zinc-400 border-white/[0.03] hover:text-zinc-300 hover:bg-zinc-900/40"
+                  }`}
+                >
+                  <div className="flex items-center gap-3">
+                    <span className="text-[11px] font-bold text-white uppercase tracking-wider">{cat.name}</span>
+                  </div>
+                  <ChevronRight size={14} className="hidden lg:block text-zinc-555" />
+                </button>
+              ))}
+            </div>
+
+            {/* Right Display Card */}
+            <div className="lg:col-span-8">
+              <div className="bg-[#0b0b0b]/60 border border-white/[0.03] rounded-3xl p-6 md:p-8 min-h-[260px] flex flex-col justify-between">
+                <div>
+                  <span className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest block mb-6 border-b border-white/[0.03] pb-2">
+                    ACTIVE USE CASE MAPPING FOR: {activeTab}
+                  </span>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    {(industryUseCases.find((c) => c.name === activeTab)?.items || []).map((item, idx) => (
+                      <Reveal key={item} delay={idx * 0.04} className="h-full">
+                        <div className="group relative rounded-[20px] border border-white/[0.04] bg-zinc-950/80 p-5 hover:border-rose-500/20 hover:shadow-[0_8px_30px_rgba(244,63,94,0.02)] transition-all duration-300 flex flex-col justify-between h-full min-h-[90px]">
+                          <div className="flex items-start gap-3">
+                            <span className="w-1.5 h-1.5 rounded-full bg-rose-500 mt-1.5 flex-shrink-0" />
+                            <span className="text-xs md:text-sm font-bold text-zinc-300 leading-relaxed group-hover:text-white transition-colors duration-300">
+                              {item}
+                            </span>
+                          </div>
+                        </div>
+                      </Reveal>
+                    ))}
+                  </div>
+                </div>
               </div>
-            </Link>
-            <Link
-              href="/contact"
-              className="gap-2 inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase border border-zinc-850 hover:border-zinc-750 bg-zinc-950/60 hover:bg-zinc-900 text-white transition-all duration-300 hover:-translate-y-0.5"
-            >
-              Start Security Assessment
-            </Link>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      {/* 8. INNOVATION OUTCOMES / IMPACT */}
+      <section className="w-full py-24 bg-[#020202] border-b border-zinc-900/60 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
+          
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            {/* Left Header */}
+            <div className="lg:col-span-5">
+              <Reveal>
+                <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+                  Innovation Impact
+                </span>
+                <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
+                  Outcomes the Cybersecurity Lab <br />
+                  <span className="text-rose-500">Helps Deliver</span>
+                </h2>
+                <p className="text-zinc-400 text-base md:text-lg leading-relaxed mb-6">
+                  Key outcomes and metrics demonstrating mature enterprise defense postures.
+                </p>
+
+                {/* Stat-style UI */}
+                <div className="mt-8 flex flex-col gap-4 border-t border-white/[0.04] pt-6">
+                  {stats.map((stat) => (
+                    <div key={stat.label} className="flex items-center gap-3">
+                      <span className="text-xs font-mono font-bold text-rose-500 w-24 flex-shrink-0">
+                        {stat.value}
+                      </span>
+                      <span className="text-[11px] text-zinc-450 uppercase tracking-widest font-semibold">
+                        {stat.label}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </Reveal>
+            </div>
+
+            {/* Right side metrics and value list */}
+            <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {labDeliverables.map((item, idx) => (
+                <Reveal key={item.title} delay={idx * 0.05}>
+                  <div className="bg-zinc-950/80 border border-white/[0.03] rounded-2xl p-5 hover:border-rose-500/10 transition-colors duration-300 flex items-start gap-3">
+                    <CheckCircle className="w-4 h-4 text-emerald-500 mt-0.5 flex-shrink-0" />
+                    <span className="text-xs font-bold text-zinc-300">{item.title}</span>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      {/* 9. WHY DEVOPSTRIO CYBERSECURITY LAB */}
+      <section className="w-full py-24 bg-black border-b border-zinc-900/60 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
+          
+          <Reveal className="mb-14 text-center max-w-3xl mx-auto">
+            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+              Why Devopstrio
+            </span>
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
+              Why Organizations Build Security Resilience with the <span className="text-rose-500">Devopstrio Cybersecurity Lab</span>
+            </h2>
+            <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
+              Our security approach integrates engineering with defense to build robust digital foundations.
+            </p>
           </Reveal>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {whyWorkWithUs.map((item, idx) => (
+              <Reveal key={item.title} delay={idx * 0.04}>
+                <div className="bg-[#0a0a0a]/60 border border-white/[0.03] hover:border-rose-500/20 rounded-[20px] p-6 transition-all duration-300 flex flex-col justify-between min-h-[170px] h-full">
+                  <div>
+                    <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-2.5">
+                      {item.title}
+                    </h4>
+                    <p className="text-xs md:text-sm text-zinc-400 leading-relaxed font-semibold">
+                      {item.desc}
+                    </p>
+                  </div>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+
+        </div>
+      </section>
+
+      {/* 10. RELATED LABS / CTA */}
+      <section className="w-full py-24 bg-[#020202] relative overflow-hidden">
+        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
+          
+          {/* Related Labs Grid */}
+          <div className="mb-24">
+            <Reveal className="mb-14 text-left">
+              <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+                Ecosystem
+              </span>
+              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-5">
+                Explore More <span className="text-rose-500">Innovation Labs</span>
+              </h2>
+            </Reveal>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {relatedLabs.map((lab) => (
+                <Link
+                  key={lab.name}
+                  href={lab.href}
+                  className="group bg-zinc-950/60 border border-white/[0.03] hover:border-rose-500/20 rounded-2xl p-5 transition-all duration-300 flex flex-col justify-between min-h-[160px]"
+                >
+                  <div>
+                    <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-2.5 flex items-center justify-between">
+                      {lab.name}
+                      <ChevronRight size={14} className="text-zinc-650 group-hover:translate-x-1 group-hover:text-rose-500 transition-all" />
+                    </h4>
+                    <p className="text-xs md:text-sm text-zinc-400 leading-relaxed font-semibold">
+                      {lab.desc}
+                    </p>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          {/* Final CTA Block */}
+          <div className="relative rounded-[32px] border border-white/[0.04] bg-zinc-950/50 p-8 md:p-16 text-center overflow-hidden max-w-4xl mx-auto">
+            {/* Glow */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-rose-500/[0.02] rounded-full blur-[100px] pointer-events-none" />
+
+            <div className="relative z-10 flex flex-col items-center max-w-2xl mx-auto">
+              <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+                Security Engineering
+              </span>
+              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-5">
+                Ready to strengthen your security architecture and cyber resilience?
+              </h2>
+              <p className="text-zinc-400 text-base md:text-lg leading-relaxed mb-8">
+                Partner with the Devopstrio Cybersecurity Innovation Lab to design secure cloud foundations, improve detection and response, modernize identity controls, and build resilient digital systems with confidence.
+              </p>
+
+              <div className="flex flex-wrap justify-center gap-4">
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center gap-3 pl-6 pr-3 py-3 bg-white text-black font-semibold text-xs md:text-sm tracking-wider rounded-full hover:bg-zinc-200 transition-all duration-300 shadow-lg shadow-white/5"
+                >
+                  Book a Security Strategy Session
+                  <div className="w-7 h-7 rounded-full bg-black flex items-center justify-center">
+                    <ArrowUpRight className="w-3.5 h-3.5 text-white" />
+                  </div>
+                </Link>
+                <Link
+                  href="/contact"
+                  className="gap-2 inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase border border-zinc-850 hover:border-zinc-750 bg-zinc-950/60 hover:bg-zinc-900 text-white transition-all duration-300 hover:-translate-y-0.5"
+                >
+                  Talk to Our Security Team
+                </Link>
+              </div>
+            </div>
+          </div>
 
         </div>
       </section>

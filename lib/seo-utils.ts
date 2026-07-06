@@ -15,7 +15,7 @@ export function generatePageMetadata({
   keywords,
   ogImage
 }: MetadataInput): Metadata {
-  const baseUrl = "https://devopstrio.co.uk";
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://devopstrio.co.uk";
   
   // Normalize the path so it starts with a leading slash and matches canonical structure
   const cleanPath = path.startsWith("/") ? path : `/${path}`;

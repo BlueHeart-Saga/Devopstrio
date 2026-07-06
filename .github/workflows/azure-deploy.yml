@@ -16,6 +16,12 @@ jobs:
     env:
       NEXT_PUBLIC_API_URL: ${{ secrets.NEXT_PUBLIC_API_URL }}
       NEXT_PUBLIC_COMPANY_ID: ${{ secrets.NEXT_PUBLIC_COMPANY_ID }}
+      NEXT_PUBLIC_PRODUCTION_DOMAIN: ${{ secrets.NEXT_PUBLIC_PRODUCTION_DOMAIN }}
+      NEXT_PUBLIC_SITE_URL: ${{ secrets.NEXT_PUBLIC_SITE_URL }}
+      MONGO_URI: ${{ secrets.MONGO_URI }}
+      AZURE_STORAGE_CONNECTION_STRING: ${{ secrets.AZURE_STORAGE_CONNECTION_STRING }}
+      AZURE_STORAGE_CONTAINER: ${{ secrets.AZURE_STORAGE_CONTAINER }}
+      AZURE_CDN_URL: ${{ secrets.AZURE_CDN_URL }}
 
     steps:
       - uses: actions/checkout@v4

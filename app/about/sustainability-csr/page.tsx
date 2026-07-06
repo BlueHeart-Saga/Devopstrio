@@ -72,9 +72,6 @@ export default function CSRPage() {
 
   return (
     <main className="relative min-h-screen bg-black text-white font-sans overflow-x-hidden selection:bg-emerald-500 selection:text-white">
-      <title>Sustainability & CSR | Devopstrio</title>
-      <meta name="description" content="Our environmental pledge to green cloud hosting and community engineering initiatives." />
-      <link rel="canonical" href="https://devopstrio.co.uk/about/sustainability-csr" />
       {/* Background Animated Elements */}
       <div
         className="absolute inset-0 opacity-[0.03] pointer-events-none z-0"

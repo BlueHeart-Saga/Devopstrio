@@ -2,30 +2,66 @@
 
 import React from "react";
 import { Reveal } from "@/components/ui/Reveal";
-import { Users, Layout, Key, Sparkles, Layers, Database, Server } from "lucide-react";
 
 interface ArchLayer {
   level: string;
   name: string;
   desc: string;
-  icon: React.ReactNode;
+  bgImage: string;
 }
 
 export function PlatformArchitecture() {
   const layers: ArchLayer[] = [
-    { level: "01", name: "Users & Client Access", desc: "Corporate administrators, end-users, and API integrations.", icon: <Users size={16} /> },
-    { level: "02", name: "Web / Mobile Applications", desc: "Frontend React, Next.js, and React Native client layers.", icon: <Layout size={16} /> },
-    { level: "03", name: "API Gateway & Security Layer", desc: "Unified authentication protocols, rate limiting, and SSO route proxies.", icon: <Key size={16} /> },
-    { level: "04", name: "AI Services Engine", desc: "Context vector pipelines, LLM routing nodes, and prompt validations.", icon: <Sparkles size={16} /> },
-    { level: "05", name: "Core Business Services", desc: "SaaS multi-tenant business routines, billing runs, and transaction queues.", icon: <Layers size={16} /> },
-    { level: "06", name: "Database & Storage Layer", desc: "Isolated transactional databases (PostgreSQL) and document search engines (MongoDB).", icon: <Database size={16} /> },
-    { level: "07", name: "Multi-Cloud Infrastructure", desc: "Secure host orchestration nodes across Azure, AWS, and OCI.", icon: <Server size={16} /> }
+    {
+      level: "01",
+      name: "Users & Client Access",
+      desc: "Corporate administrators, end-users, and API integrations.",
+      bgImage: "/assets/common/2fe7f9184c515b0c515ce38bc8a25efa%201.png"
+    },
+    {
+      level: "02",
+      name: "Web / Mobile Applications",
+      desc: "Frontend React, Next.js, and React Native client layers.",
+      bgImage: "/assets/common/315e4fdc6263bfd240f36297e376576e%201.png"
+    },
+    {
+      level: "03",
+      name: "API Gateway & Security Layer",
+      desc: "Unified authentication protocols, rate limiting, and SSO route proxies.",
+      bgImage: "/assets/common/45ea830d170d382ade235db479060da7%201.png"
+    },
+    {
+      level: "04",
+      name: "AI Services Engine",
+      desc: "Context vector pipelines, LLM routing nodes, and prompt validations.",
+      bgImage: "/assets/common/464d8932bca4d6bb552ff2dcf2f3c5ca%201.png"
+    },
+    {
+      level: "05",
+      name: "Core Business Services",
+      desc: "SaaS multi-tenant business routines, billing runs, and transaction queues.",
+      bgImage: "/assets/common/82090d7be4ef5694954ce77f9cc2e627%201.png"
+    },
+    {
+      level: "06",
+      name: "Database & Storage Layer",
+      desc: "Isolated transactional databases (PostgreSQL) and document search engines (MongoDB).",
+      bgImage: "/assets/common/90361fed0bb781d7c86e451995b4dbce%201.png"
+    },
+    {
+      level: "07",
+      name: "Multi-Cloud Infrastructure",
+      desc: "Secure host orchestration nodes across Azure, AWS, and OCI.",
+      bgImage: "/assets/common/945ab601f043c558e0a8162da2a1eb4c%201.png"
+    }
   ];
 
   return (
-    <section id="architecture" className="w-full py-24 bg-[#030303] border-b border-zinc-900/60 relative overflow-hidden">
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-rose-600/[0.015] rounded-full blur-[140px] pointer-events-none" />
-      <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
+    <section id="architecture" className="w-full py-24 bg-[#020202] border-b border-zinc-900/60 relative overflow-hidden">
+      {/* Glow highlight */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-rose-650/[0.015] rounded-full blur-[140px] pointer-events-none" />
+
+      <div className="max-w-6xl mx-auto w-full px-12 xl:px-8 relative z-10">
         <Reveal className="mb-20 text-center max-w-2xl mx-auto">
           <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
             LOGICAL FRAMEWORK
@@ -38,33 +74,41 @@ export function PlatformArchitecture() {
           </p>
         </Reveal>
 
-        {/* Stack flow visualizer */}
-        <div className="max-w-3xl mx-auto flex flex-col gap-4 relative">
-          {/* Vertical connecting line */}
-          <div className="absolute left-10 top-0 bottom-0 w-0.5 bg-zinc-900 z-0" />
-
-          {layers.map((layer) => (
-            <div
+        {/* Premium split-card grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {layers.map((layer, idx) => (
+            <Reveal
               key={layer.level}
-              className="relative flex items-center gap-6 bg-zinc-950/40 border border-zinc-900 hover:border-rose-500/20 rounded-2xl p-5 z-10 transition-all duration-300 group"
+              delay={idx * 0.05}
+              className={`h-full ${layer.level === "07" ? "md:col-span-2 max-w-2xl mx-auto w-full" : ""}`}
             >
-              {/* Level index bullet */}
-              <div className="w-10 h-10 rounded-full bg-zinc-950 border border-zinc-900 flex items-center justify-center text-zinc-550 group-hover:border-rose-500/30 group-hover:text-rose-500 transition-all duration-300 font-mono font-bold text-xs flex-shrink-0 z-10">
-                {layer.level}
-              </div>
-
-              <div className="flex items-center gap-4 w-full">
-                <div className="w-8 h-8 rounded-lg bg-zinc-900 border border-zinc-850 flex items-center justify-center text-rose-500 flex-shrink-0">
-                  {layer.icon}
+              <div className="relative rounded-[24px] overflow-hidden border border-white/[0.04] hover:border-rose-500/25 bg-zinc-950/40 grid grid-cols-12 min-h-[140px] group transition-all duration-500 hover:shadow-[0_12px_40px_rgba(244,63,94,0.04)] h-full">
+                
+                {/* Left sequence side with bg artwork and giant number */}
+                <div className="col-span-4 md:col-span-3 relative overflow-hidden h-full border-r border-white/[0.04] bg-[#080808]">
+                  <img
+                    src={layer.bgImage}
+                    alt={layer.name}
+                    className="absolute inset-0 w-full h-full object-cover opacity-25 group-hover:scale-105 transition-transform duration-700 ease-out"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-tr from-black/80 to-transparent pointer-events-none" />
+                  <span className="absolute inset-0 flex items-center justify-center text-5xl md:text-6xl font-black text-white/10 group-hover:text-rose-500/20 group-hover:scale-105 transition-all duration-500 select-none tracking-tighter font-mono">
+                    {layer.level}
+                  </span>
                 </div>
-                <div>
-                  <h4 className="text-xs font-bold text-white uppercase tracking-wider">{layer.name}</h4>
-                  <p className="text-[10px] text-zinc-450 font-semibold leading-relaxed mt-0.5">
+
+                {/* Right content details side */}
+                <div className="col-span-8 md:col-span-9 p-6 flex flex-col justify-center relative z-10 bg-zinc-950/20">
+                  <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-2 group-hover:text-rose-400 transition-colors duration-300">
+                    {layer.name}
+                  </h4>
+                  <p className="text-[10px] text-zinc-400 leading-relaxed font-semibold">
                     {layer.desc}
                   </p>
                 </div>
+
               </div>
-            </div>
+            </Reveal>
           ))}
         </div>
       </div>

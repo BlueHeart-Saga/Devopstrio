@@ -5,7 +5,7 @@ import { insightsApi } from "@/lib/insightsApi";
 import { ecosystemSubpages } from "@/data/ecosystem";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = "https://devopstrio.co.uk";
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://devopstrio.co.uk";
 
   // 1. Static Pages
   const staticPages: MetadataRoute.Sitemap = [

@@ -29,8 +29,6 @@ const partnershipsSections = [
 export default function PartnershipsCertificationsPage() {
   return (
     <main className="min-h-screen bg-black text-white font-sans overflow-x-hidden">
-      <title>Partnerships & Certifications | Devopstrio</title>
-      <meta name="description" content="Our industry certifications and co-engineering alliances with AWS, Microsoft Azure, Google Cloud, and Oracle." />
       
       <BreadcrumbSchema items={[
         { name: "Home", item: "/" },

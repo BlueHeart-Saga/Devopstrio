@@ -2,29 +2,73 @@
 
 import React from "react";
 import { Reveal } from "@/components/ui/Reveal";
-import { ShieldAlert, Award, Heart, Users2, Landmark, Factory, ShoppingCart, GraduationCap, Laptop, Landmark as GovIcon } from "lucide-react";
+import { Heart, Users2, Landmark, Factory, ShoppingCart, GraduationCap, Laptop, Landmark as GovIcon } from "lucide-react";
 
 interface IndustryItem {
   name: string;
   icon: React.ReactNode;
   desc: string;
+  image: string;
 }
 
 export function IndustriesServed() {
   const industries: IndustryItem[] = [
-    { name: "Healthcare", icon: <Heart size={18} />, desc: "HIPAA-compliant telemedicine platforms and EHR system integrations." },
-    { name: "Recruitment", icon: <Users2 size={18} />, desc: "Enterprise workforce tracking, ATS scoring, and candidate analytics." },
-    { name: "Finance", icon: <Landmark size={18} />, desc: "Secure transaction pipelines, PCI compliance, and multi-gateway routing." },
-    { name: "Manufacturing", icon: <Factory size={18} />, desc: "Industrial IoT dashboards, tracking systems, and supply chains sync." },
-    { name: "Retail & E-Commerce", icon: <ShoppingCart size={18} />, desc: "High-speed multi-tenant inventory networks and custom checkouts." },
-    { name: "Education", icon: <GraduationCap size={18} />, desc: "Remote learning hubs, user onboarding databases, and course managers." },
-    { name: "Technology", icon: <Laptop size={18} />, desc: "Developer self-service portals, API tools, and microservice hosts." },
-    { name: "Government", icon: <GovIcon size={18} />, desc: "Strict secure spaces compliance, portal sites, and auditing trails." }
+    {
+      name: "Healthcare",
+      icon: <Heart size={14} />,
+      desc: "HIPAA-compliant telemedicine platforms and EHR system integrations.",
+      image: "/assets/Home-page/industries/healthcaree.png"
+    },
+    {
+      name: "Recruitment",
+      icon: <Users2 size={14} />,
+      desc: "Enterprise workforce tracking, ATS scoring, and candidate analytics.",
+      image: "/assets/Home-page/industries/telecommunicationn.png"
+    },
+    {
+      name: "Finance",
+      icon: <Landmark size={14} />,
+      desc: "Secure transaction pipelines, PCI compliance, and multi-gateway routing.",
+      image: "/assets/Home-page/industries/bankifinance.png"
+    },
+    {
+      name: "Manufacturing",
+      icon: <Factory size={14} />,
+      desc: "Industrial IoT dashboards, tracking systems, and supply chains sync.",
+      image: "/assets/Home-page/industries/manufacturingg.png"
+    },
+    {
+      name: "Retail & E-Commerce",
+      icon: <ShoppingCart size={14} />,
+      desc: "High-speed multi-tenant inventory networks and custom checkouts.",
+      image: "/assets/Home-page/industries/retailecommerce.png"
+    },
+    {
+      name: "Education",
+      icon: <GraduationCap size={14} />,
+      desc: "Remote learning hubs, user onboarding databases, and course managers.",
+      image: "/assets/Home-page/industries/educationn.png"
+    },
+    {
+      name: "Technology",
+      icon: <Laptop size={14} />,
+      desc: "Developer self-service portals, API tools, and microservice hosts.",
+      image: "/assets/Home-page/industries/mediaentertainment.png"
+    },
+    {
+      name: "Government",
+      icon: <GovIcon size={14} />,
+      desc: "Strict secure spaces compliance, portal sites, and auditing trails.",
+      image: "/assets/Home-page/industries/governmentsector.png"
+    }
   ];
 
   return (
-    <section id="industries" className="w-full py-24 bg-[#030303] border-b border-zinc-900/60 relative">
-      <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
+    <section id="industries" className="w-full py-24 bg-[#020202] border-b border-zinc-900/60 relative overflow-hidden">
+      {/* Glow highlight */}
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[800px] h-[350px] bg-rose-650/[0.015] rounded-full blur-[130px] pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
         <Reveal className="mb-16 text-left">
           <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
             VERTICAL ALIGNMENT
@@ -38,21 +82,34 @@ export function IndustriesServed() {
         </Reveal>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {industries.map((ind) => (
-            <div
-              key={ind.name}
-              className="bg-zinc-950/40 border border-zinc-900/80 rounded-2xl p-6 hover:border-rose-500/10 transition-all duration-300 flex flex-col justify-between min-h-[160px]"
-            >
-              <div>
-                <div className="w-8 h-8 rounded-lg bg-zinc-900 border border-zinc-850 flex items-center justify-center text-rose-500 mb-4">
-                  {ind.icon}
+          {industries.map((ind, idx) => (
+            <Reveal key={ind.name} delay={idx * 0.05} className="h-full">
+              <div className="group flex flex-col bg-zinc-950/60 border border-white/[0.04] hover:border-rose-500/25 rounded-[24px] overflow-hidden transition-all duration-500 hover:shadow-[0_12px_40px_rgba(244,63,94,0.04)] p-3 h-full">
+                
+                {/* Image Wrapper */}
+                <div className="relative w-full aspect-[16/10] overflow-hidden rounded-[18px] bg-zinc-900 border border-white/[0.03] mb-4">
+                  <img
+                    src={ind.image}
+                    alt={ind.name}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+                  />
+                  <div className="absolute top-3 right-3 w-8 h-8 rounded-full bg-black/40 backdrop-blur-md flex items-center justify-center border border-white/10 text-rose-500">
+                    {ind.icon}
+                  </div>
                 </div>
-                <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-2">{ind.name}</h4>
-                <p className="text-[10px] text-zinc-450 font-semibold leading-relaxed">
-                  {ind.desc}
-                </p>
+
+                {/* Details */}
+                <div className="px-3 pb-3 flex flex-col flex-1">
+                  <h3 className="font-bold text-xs uppercase tracking-wider text-white mb-2 group-hover:text-rose-400 transition-colors duration-300">
+                    {ind.name}
+                  </h3>
+                  <p className="text-[11px] text-zinc-400 leading-relaxed font-semibold">
+                    {ind.desc}
+                  </p>
+                </div>
+
               </div>
-            </div>
+            </Reveal>
           ))}
         </div>
       </div>

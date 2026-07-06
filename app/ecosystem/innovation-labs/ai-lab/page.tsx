@@ -11,243 +11,381 @@ import {
   Network,
   Shield,
   Sparkles,
-  ChevronDown,
   ChevronRight,
-  Activity,
   Terminal,
-  CheckCircle2,
-  Search,
-  Briefcase,
-  Users,
-  FileText,
-  Code,
-  Settings,
+  Activity,
   Workflow,
-  Sparkle
+  Search,
+  FileText,
+  TrendingUp,
+  Settings,
+  Eye,
+  Layers,
+  CheckCircle,
+  HelpCircle
 } from "lucide-react";
 import Link from "next/link";
 
+interface CoreArea {
+  title: string;
+  desc: string;
+  icon: React.ReactNode;
+}
+
+interface TimelineStep {
+  num: string;
+  title: string;
+  desc: string;
+}
+
+interface SolutionBlock {
+  title: string;
+  desc: string;
+}
+
+interface ArchLayer {
+  num: string;
+  name: string;
+  desc: string;
+}
+
+interface UseCaseCategory {
+  name: string;
+  items: string[];
+}
+
+interface MetricDeliverable {
+  title: string;
+  desc?: string;
+}
+
+interface WhyItem {
+  title: string;
+  desc: string;
+}
+
+interface LabCard {
+  name: string;
+  desc: string;
+  href: string;
+}
+
 export default function AIInnovationLabPage() {
-  // FAQ accordion state
-  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
+  const [activeTab, setActiveTab] = useState<string>("Finance");
 
-  const toggleFaq = (index: number) => {
-    setOpenFaqIndex(openFaqIndex === index ? null : index);
-  };
-
-  // Hero highlights
-  const heroHighlights = [
-    "Generative AI",
-    "Agentic AI",
-    "Enterprise Search",
-    "Intelligent Automation",
-    "Decision Intelligence"
-  ];
-
-  // Hero metrics
+  // Hero Metrics
   const heroMetrics = [
-    { value: "50+", label: "AI Accelerators" },
-    { value: "10+", label: "Production Solutions" },
-    { value: "100K+", label: "AI Interactions" },
-    { value: "24/7", label: "AI Operations" }
+    { value: "4-8 Wks", label: "Prototype Cycle" },
+    { value: "24/7", label: "Model Monitoring" },
+    { value: "Multi-Model", label: "Deployment Capable" },
+    { value: "Enterprise", label: "Ready Security" }
   ];
 
-  // Research Domains
-  const researchDomains = [
+  // 2. Mission overview - right side mini cards
+  const miniMissionCards = [
     {
-      title: "Generative AI",
-      desc: "Custom tuning foundation models, fine-tuning task-specific parameters, and orchestrating private deployment boundaries.",
-      icon: <Sparkles className="w-6 h-6 text-rose-500" />
+      title: "Applied AI Research",
+      desc: "Exploring practical AI use cases aligned to enterprise needs."
     },
     {
-      title: "Agentic AI",
-      desc: "Developing autonomous system agents that leverage tool APIs, retrieve database facts, and execute multi-step logic cycles.",
-      icon: <Brain className="w-6 h-6 text-rose-500" />
+      title: "Rapid Prototyping",
+      desc: "Turning concepts into working AI proof points quickly."
     },
     {
-      q: "Multi-Agent Systems",
-      title: "Multi-Agent Systems",
-      desc: "Orchestrating cooperative agent networks that distribute complex business procedures into specialized tasks.",
-      icon: <Network className="w-6 h-6 text-rose-500" />
+      title: "Production Deployment",
+      desc: "Moving models, copilots, and agents into secure production systems."
     },
     {
-      title: "Computer Vision",
-      desc: "Training custom classification models, real-time safety tracking grids, and document layout parsing engines.",
-      icon: <Cpu className="w-6 h-6 text-rose-500" />
+      title: "Continuous Optimization",
+      desc: "Monitoring performance, accuracy, and business outcomes over time."
+    }
+  ];
+
+  // 3. Core AI Innovation Areas
+  const innovationAreas: CoreArea[] = [
+    {
+      title: "Generative AI Applications",
+      desc: "LLM-powered assistants, enterprise copilots, content automation, summarization, search augmentation, and knowledge systems.",
+      icon: <Sparkles className="w-5 h-5 text-rose-500" />
+    },
+    {
+      title: "AI Agents & Workflow Automation",
+      desc: "Task-oriented AI agents that interact with systems, trigger workflows, retrieve data, and support operations teams.",
+      icon: <Brain className="w-5 h-5 text-rose-500" />
     },
     {
       title: "Natural Language Processing",
-      desc: "Building context-aware translation tools, sentiment pipelines, entity extractors, and voice-assisted control units.",
-      icon: <Terminal className="w-6 h-6 text-rose-500" />
+      desc: "Text classification, sentiment analysis, semantic search, entity extraction, document understanding, and chatbot intelligence.",
+      icon: <Terminal className="w-5 h-5 text-rose-500" />
     },
     {
-      title: "Predictive Analytics",
-      desc: "Formulating database forecasting algorithms to optimize supply routes, forecast demand, and preempt failures.",
-      icon: <Activity className="w-6 h-6 text-rose-500" />
+      title: "Document Intelligence",
+      desc: "Invoice extraction, contract parsing, policy search, OCR pipelines, enterprise knowledge retrieval, and intelligent document workflows.",
+      icon: <FileText className="w-5 h-5 text-rose-500" />
+    },
+    {
+      title: "Predictive Analytics & Forecasting",
+      desc: "Demand forecasting, anomaly detection, customer scoring, trend prediction, and operational insights from business data.",
+      icon: <TrendingUp className="w-5 h-5 text-rose-500" />
+    },
+    {
+      title: "Computer Vision",
+      desc: "Image analysis, object detection, visual quality checks, ID/document verification, and AI-assisted inspection workflows.",
+      icon: <Eye className="w-5 h-5 text-rose-500" />
+    },
+    {
+      title: "AI Search & Knowledge Systems",
+      desc: "Vector search, RAG pipelines, internal knowledge copilots, document Q&A, and enterprise search experiences.",
+      icon: <Search className="w-5 h-5 text-rose-500" />
+    },
+    {
+      title: "MLOps & Model Lifecycle Engineering",
+      desc: "Model deployment, monitoring, retraining pipelines, evaluation, inference infrastructure, and AI operations at scale.",
+      icon: <Settings className="w-5 h-5 text-rose-500" />
     }
   ];
 
-  // Enterprise Solutions
-  const enterpriseSolutions = [
+  // 4. AI Lab Lifecycle Timeline
+  const lifecycleTimeline: TimelineStep[] = [
     {
-      name: "AIHire",
-      tagline: "AI Recruitment Platform",
-      desc: "Automating resume screening, skill assessments, and hiring interviews with contextual insights."
+      num: "01",
+      title: "Discover",
+      desc: "Identify business problems, data availability, constraints, and AI opportunity areas."
     },
     {
-      name: "Humanex AI",
-      tagline: "HR Intelligence Platform",
-      desc: "Synthesizing employee feedback, training needs, and sentiment indicators into operational reports."
+      num: "02",
+      title: "Frame the Use Case",
+      desc: "Define scope, KPIs, model type, integration requirements, and expected business outcome."
     },
     {
-      name: "Brio AI",
-      tagline: "Creative AI Platform",
-      desc: "Empowering content creators with automated asset generation, draft generation, and copy revisions."
+      num: "03",
+      title: "Prototype",
+      desc: "Build quick proof-of-concepts, validate feasibility, test prompts/models, and compare solution paths."
     },
     {
-      name: "SafeSign AI",
-      tagline: "Document Intelligence",
-      desc: "Auditing compliance requirements and verifying contracts with semantic clauses comparison."
+      num: "04",
+      title: "Engineer",
+      desc: "Develop the data pipelines, APIs, orchestration, UI, and infrastructure required for production readiness."
     },
     {
-      name: "Enterprise Search AI",
-      tagline: "Knowledge Discovery",
-      desc: "Unlocking file repositories using conversational vector query pipelines and instant RAG summarization."
+      num: "05",
+      title: "Deploy",
+      desc: "Launch secure AI services, copilots, automation workflows, or analytics systems into live environments."
     },
     {
-      name: "AI Automation Engine",
-      tagline: "Workflow Intelligence",
-      desc: "Connecting enterprise systems with intelligent trigger-action chains to execute daily business processes."
+      num: "06",
+      title: "Improve",
+      desc: "Track usage, quality, hallucination risks, model drift, and business impact — then iterate continuously."
     }
   ];
 
-  // Industry applications Use cases
-  const useCaseFocusAreas = [
-    { title: "Recruitment Intelligence", desc: "Sourcing talent, checking skill sets, and matching candidate profiles dynamically." },
-    { title: "Document Processing", desc: "Extracting structured keys from invoices, reports, and legacy manuals automatically." },
-    { title: "Customer Support", desc: "Deploying conversational voice and text bots to resolve high-frequency support tickets." },
-    { title: "Knowledge Management", desc: "Connecting enterprise folders into one query interface for instant research access." },
-    { title: "Predictive Analytics", desc: "Training data models to track machinery health, client retention, and market shifts." }
-  ];
-
-  const useCaseIndustries = [
-    { name: "Healthcare", desc: "Automating clinical summaries, analyzing telemetry, and optimizing clinic schedules." },
-    { name: "Banking", desc: "Detecting fraudulent transactions, analyzing risk metrics, and assisting loan reviews." },
-    { name: "Retail", desc: "Generating product descriptions, serving retail recommendations, and managing inventory." },
-    { name: "Manufacturing", desc: "Monitoring assembly lines, tracking material supply, and predicting wear parameters." },
-    { name: "Technology", desc: "Writing test suites, containerizing codebases, and automating software releases." },
-    { name: "Education", desc: "Creating customized study roadmaps, grading tests, and translating academic articles." }
-  ];
-
-  // Delivery Framework
-  const frameworkSteps = [
-    { phase: "Discover", title: "Rapid AI POC", desc: "Identifying business processes, selecting foundational models, and defining criteria." },
-    { phase: "Prototype", title: "MVP Development", desc: "Building core pipelines, testing retrieval accuracy, and establishing clean UX." },
-    { phase: "Validate", title: "Enterprise Deployment", desc: "Refining prompt engineering, setting safety parameters, and auditing system drift." },
-    { phase: "Pilot", title: "Managed AI Operations", desc: "Deploying model instances, configuring usage logs, and scaling access points." }
-  ];
-
-  // Success Stories
-  const successStories = [
+  // 5. Solution Blocks
+  const solutionBlocks: SolutionBlock[] = [
     {
-      title: "AI Hiring Assistant",
-      challenge: "An enterprise partner struggled with thousands of resume profiles, leading to weeks of scheduling delay.",
-      solution: "Deployed AIHire platform to screen qualifications, run initial automated chats, and grade test scores.",
-      result: "75% decrease in candidate screening timeline and a 40% reduction in cost-per-hire metrics."
+      title: "Enterprise AI Copilots",
+      desc: "Internal assistants for employees, operations teams, HR, support, legal, and knowledge workers."
     },
     {
-      title: "Enterprise Search Platform",
-      challenge: "Customer success agents spent hours browsing dense compliance manuals to answer technical tickets.",
-      solution: "Constructed a secure RAG search pipeline connecting local storage files with private LLM workspaces.",
-      result: "Instant answer generation, reducing average agent response times from 15 minutes to under 30 seconds."
+      title: "Document AI Platforms",
+      desc: "OCR, document extraction, policy intelligence, claims processing, contract review, and document search."
     },
     {
-      title: "Document Intelligence System",
-      challenge: "Manual compliance reviews of multi-page legal contracts led to delayed deal sign-offs.",
-      solution: "Implemented SafeSign AI to extract key clauses, run risk reviews, and alert legal teams to anomalies.",
-      result: "60% faster contract processing speeds with 100% detection of critical missing clauses."
+      title: "Conversational AI Systems",
+      desc: "Customer support bots, internal help assistants, knowledge assistants, and AI-enabled service workflows."
+    },
+    {
+      title: "AI-Powered Workflow Automation",
+      desc: "Intelligent task routing, ticket classification, summarization, recommendation engines, and process acceleration."
+    },
+    {
+      title: "Predictive Business Intelligence",
+      desc: "Forecasting, anomaly detection, churn prediction, financial scoring, and operational trend analysis."
+    },
+    {
+      title: "Industry-Specific AI Solutions",
+      desc: "AI use cases tailored to finance, healthcare, telecom, retail, manufacturing, and public sector operations."
     }
   ];
 
-  // FAQs
-  const faqs = [
+  // 6. Enterprise AI Reference Architecture Layers
+  const archLayers: ArchLayer[] = [
     {
-      q: "What foundation models does the AI Innovation Lab support?",
-      a: "We support integrations with industry-leading foundation models including OpenAI GPT-4, Google Gemini, Anthropic Claude, Meta Llama 3, and specialized custom-tuned open-source models."
+      num: "Layer 6",
+      name: "Governance & Operations Layer",
+      desc: "MLOps, model monitoring, observability, access control, security, compliance, human review, audit trails"
     },
     {
-      q: "How do you ensure enterprise data security and privacy?",
-      a: "We deploy model instances inside secure private cloud enclaves (Azure AI, AWS VPC, GCP Vertex) and configure strict data retention policies, ensuring your business data is never used to train public models."
+      num: "Layer 5",
+      name: "Application Layer",
+      desc: "Copilots, chat interfaces, internal dashboards, APIs, automation tools, business apps"
     },
     {
-      q: "What is a RAG (Retrieval-Augmented Generation) pipeline?",
-      a: "RAG combines LLMs with vector database search, allowing the AI to retrieve facts from your private enterprise repositories to generate accurate, context-aware answers without hallucinating."
+      num: "Layer 4",
+      name: "Intelligence Orchestration Layer",
+      desc: "Prompt orchestration, agent logic, retrieval pipelines, memory, workflow triggers, evaluation rules"
     },
     {
-      q: "Can we build custom autonomous AI agents?",
-      a: "Yes. We design and build custom multi-agent networks that can execute complex workflows, connect with tool APIs, query databases, and automate multi-step operational tasks."
+      num: "Layer 3",
+      name: "AI / Model Layer",
+      desc: "LLMs, fine-tuned models, NLP pipelines, vision models, forecasting models, recommendation models"
     },
     {
-      q: "How long does a typical AI Proof of Concept (POC) take?",
-      a: "A rapid AI POC generally takes 3 to 4 weeks under our Innovation Delivery Framework, from initial discovery and data staging to prototype validation."
+      num: "Layer 2",
+      name: "Data Processing Layer",
+      desc: "ETL/ELT, document parsing, chunking, embeddings, feature engineering, OCR, cleaning pipelines"
     },
     {
-      q: "What vector databases do you recommend?",
-      a: "We regularly implement Pinecone, Weaviate, pgvector, and Milvus depending on the scaling, latency, and cloud infrastructure requirements of the project."
-    },
-    {
-      q: "Do you support fine-tuning existing LLMs?",
-      a: "Yes. We fine-tune foundation models using specialized business datasets to align language tone, learn domain-specific terminology, and optimize system task performance."
-    },
-    {
-      q: "How do you manage AI system operations (MLOps)?",
-      a: "We configure automated model testing, usage billing audits, drift detection, and automated scaling parameters using Kubernetes (AKS/GKE/EKS) and cloud registries."
-    },
-    {
-      q: "What is your experience with Agentic AI frameworks?",
-      a: "We deploy production agents using LangChain, CrewAI, AutoGen, and custom lightweight TypeScript orchestrators to manage multi-step reasoning cycles."
-    },
-    {
-      q: "How can we begin collaborating with the AI Innovation Lab?",
-      a: "You can schedule an initial discovery workshop where our team reviews your business workflows, drafts potential architectures, and proposes a tailored MVP plan."
+      num: "Layer 1",
+      name: "Data Sources",
+      desc: "CRM, ERP, PDFs, emails, databases, support tickets, images, logs, business systems, IoT data"
     }
   ];
 
-  // Related connections
-  const relatedConnections = [
-    { name: "Microsoft Alliance", desc: "Azure cloud architectures, Fabric integration, and security systems.", href: "/ecosystem/partnerships/microsoft" },
-    { name: "Google Cloud Strategic Alliance", desc: "AI-Powered, Data-Driven Enterprise Platforms.", href: "/ecosystem/partnerships/google-cloud" },
-    { name: "AWS Strategic Alliance", desc: "Cloud-native modernization, serverless architectures, and Bedrock integrations.", href: "/ecosystem/partnerships/aws" }
+  // Tech chips
+  const techChips = [
+    "Python",
+    "FastAPI",
+    "LangChain / orchestration layer",
+    "Vector databases",
+    "Azure / AWS / GCP",
+    "PostgreSQL / MongoDB",
+    "ML pipelines",
+    "Docker / Kubernetes",
+    "monitoring & logging stack"
+  ];
+
+  // 7. Industry use cases
+  const industryUseCases: UseCaseCategory[] = [
+    {
+      name: "Finance",
+      items: [
+        "Fraud alerts based on pattern shifts",
+        "Document verification & validation",
+        "Credit risk support decision trees",
+        "Financial document summarization"
+      ]
+    },
+    {
+      name: "Healthcare",
+      items: [
+        "Patient record search & clinical summaries",
+        "Medical document processing",
+        "Triage support engines",
+        "Workflow automation for doctor logs"
+      ]
+    },
+    {
+      name: "Retail",
+      items: [
+        "Product recommendations grids",
+        "Customer service copilots",
+        "Demand forecasting metrics",
+        "Catalog enrichment pipelines"
+      ]
+    },
+    {
+      name: "Manufacturing",
+      items: [
+        "Defect detection algorithms",
+        "Maintenance prediction models",
+        "SOP knowledge assistants",
+        "Operational anomaly alerts"
+      ]
+    }
+  ];
+
+  // 8. Deliverables / Value
+  const labDeliverables: MetricDeliverable[] = [
+    { title: "Faster AI experimentation cycles" },
+    { title: "Reduced manual decision-making effort" },
+    { title: "Better document processing accuracy" },
+    { title: "Faster knowledge retrieval across teams" },
+    { title: "Improved operational efficiency" },
+    { title: "Scalable AI deployment readiness" },
+    { title: "Reduced time from prototype to production" },
+    { title: "Continuous learning and optimization" }
+  ];
+
+  // 9. Why work with us
+  const whyWorkWithUs: WhyItem[] = [
+    {
+      title: "Applied, Not Experimental for the Sake of It",
+      desc: "We focus on AI opportunities that can create measurable value, not just demos."
+    },
+    {
+      title: "Engineering + AI in One Team",
+      desc: "Our lab combines AI research, cloud engineering, DevOps, software development, and security expertise."
+    },
+    {
+      title: "Built for Enterprise Integration",
+      desc: "We design AI solutions that connect with real business systems, workflows, and operational environments."
+    },
+    {
+      title: "Responsible Deployment Mindset",
+      desc: "Security, privacy, access control, monitoring, and governance are considered from the beginning."
+    },
+    {
+      title: "From Prototype to Platform",
+      desc: "We don’t stop at a proof-of-concept — we help productionize and scale what works."
+    },
+    {
+      title: "Long-Term Innovation Partner",
+      desc: "We support continuous iteration, optimization, and new AI opportunities as your business evolves."
+    }
+  ];
+
+  // 10. Related labs
+  const relatedLabs: LabCard[] = [
+    {
+      name: "Cloud Innovation Lab",
+      desc: "Architecting zero-trust cloud pipelines, hybrid-mesh setups, and automated scalability patterns.",
+      href: "/ecosystem/innovation-labs/cloud-lab"
+    },
+    {
+      name: "DevOps Innovation Lab",
+      desc: "Pioneering continuous release engines, GitOps architectures, and automated regression frameworks.",
+      href: "/ecosystem/innovation-labs/devops-lab"
+    },
+    {
+      name: "Cybersecurity Lab",
+      desc: "Building Zero Trust directory gateways, threat simulation networks, and compliance grids.",
+      href: "/ecosystem/innovation-labs/cybersecurity-lab"
+    },
+    {
+      name: "Data & Analytics Lab",
+      desc: "Constructing high-throughput data lakes, pipeline analytics indexes, and real-time visualization portals.",
+      href: "/ecosystem/innovation-labs/data-analytics-lab"
+    }
   ];
 
   return (
-    <main className="min-h-screen bg-black text-white pt-16 font-sans overflow-x-hidden selection:bg-rose-500 selection:text-white">
-
+    <main className="min-h-screen bg-black text-white font-sans overflow-x-hidden selection:bg-rose-500 selection:text-white">
+      
       {/* 1. HERO SECTION */}
       <Hero
         badge="AI Innovation Lab"
         title={
           <>
-            Building Enterprise AI Systems, <br />
+            Pioneering Applied R&D <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-500 to-rose-700">
-              Autonomous Agents & Intelligent Platforms
+              For Enterprise Cognitive Systems
             </span>
           </>
         }
-        subtitle="Accelerate digital operations with tailored foundation models, secure RAG database systems, and agentic task orchestration. We transform legacy workflows into intelligent autonomous assets."
+        subtitle="Moving organizations from experimental sandbox prototypes to secure, highly optimized production ecosystems. We design custom agentic architectures, configure private RAG search networks, and audit model drift under enterprise-grade governance profiles."
         bgImage="/assets/ecosystem/sub-page-hero/ecosystem_Innovation_labs/AI.png"
         stats={heroMetrics}
         breadcrumbs={[
           { label: "ECOSYSTEM", href: "/ecosystem" },
           { label: "INNOVATION LABS", href: "/ecosystem/innovation-labs" },
-          { label: "AI LAB" },
+          { label: "AI LAB" }
         ]}
       >
         <Link
           href="/contact"
           className="inline-flex items-center gap-3 pl-6 pr-3 py-3 bg-white text-black font-semibold text-xs md:text-sm tracking-wider rounded-full hover:bg-zinc-200 transition-all duration-300 shadow-lg shadow-white/5"
         >
-          Start AI Project
+          Book An AI Discovery Session
           <div className="w-7 h-7 rounded-full bg-black flex items-center justify-center">
             <ArrowUpRight className="w-3.5 h-3.5 text-white" />
           </div>
@@ -256,124 +394,210 @@ export default function AIInnovationLabPage() {
           href="/contact"
           className="gap-2 inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase border border-zinc-850 hover:border-zinc-750 bg-zinc-950/60 hover:bg-zinc-900 text-white transition-all duration-300 hover:-translate-y-0.5"
         >
-          Talk To AI Experts
+          Talk to Our AI Team
         </Link>
       </Hero>
 
-      {/* 2. AI RESEARCH & INNOVATION AREAS */}
-      <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60 relative">
-        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
-          <Reveal className="mb-16 text-center max-w-2xl mx-auto">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
-              RESEARCH DOMAINS
+      {/* 2. AI LAB OVERVIEW / MISSION */}
+      <section className="w-full py-24 bg-[#020202] border-b border-zinc-900/60 relative overflow-hidden">
+        {/* Glow highlight */}
+        <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[600px] h-[600px] bg-rose-650/[0.01] rounded-full blur-[130px] pointer-events-none" />
+
+        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            {/* Left side content */}
+            <div className="lg:col-span-6">
+              <Reveal>
+                <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+                  Mission Overview
+                </span>
+                <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
+                  Where AI Research Meets <br />
+                  <span className="text-rose-500">Production Engineering</span>
+                </h2>
+                <p className="text-zinc-400 text-base md:text-lg leading-relaxed mb-6">
+                  The Devopstrio AI Innovation Lab is where we explore, validate, and engineer modern AI solutions that solve practical business challenges. We combine applied research, rapid prototyping, data engineering, model development, and production deployment to help organizations move from AI experimentation to real-world impact.
+                </p>
+              </Reveal>
+            </div>
+
+            {/* Right side - 4 mini cards */}
+            <div className="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {miniMissionCards.map((card, idx) => (
+                <Reveal key={card.title} delay={idx * 0.05}>
+                  <div className="bg-zinc-950/40 border border-white/[0.03] hover:border-rose-500/20 rounded-[20px] p-5 transition-all duration-300 min-h-[140px] flex flex-col justify-between">
+                    <div>
+                      <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-2">
+                        {card.title}
+                      </h4>
+                      <p className="text-xs md:text-sm text-zinc-400 font-semibold leading-relaxed">
+                        {card.desc}
+                      </p>
+                    </div>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* 3. WHAT THE AI LAB FOCUSES ON */}
+      <section className="w-full py-24 bg-black border-b border-zinc-900/60 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
+          <Reveal className="mb-14 text-center max-w-3xl mx-auto">
+            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+              Capabilities
             </span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">
-              AI Research & <span className="text-rose-500">Innovation Areas</span>
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
+              Core AI <span className="text-rose-500">Innovation Areas</span>
             </h2>
-            <p className="text-zinc-300 text-sm md:text-base font-medium">
-              Translating advanced artificial intelligence theories into scalable, practical enterprise assets.
+            <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
+              The core technical vectors driven by our research scientists and integration engineers.
             </p>
           </Reveal>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {researchDomains.map((domain, idx) => (
-              <div
-                key={idx}
-                className="group flex flex-col justify-between p-8 bg-zinc-950/40 border border-zinc-900 hover:border-rose-500/20 rounded-3xl transition-all duration-300 min-h-[200px]"
-              >
-                <div>
-                  <div className="flex items-center justify-between mb-6 border-b border-zinc-900/60 pb-4">
-                    <h4 className="text-base font-bold text-white uppercase tracking-wider">{domain.title}</h4>
-                    <div className="group-hover:scale-110 transition-transform duration-300">
-                      {domain.icon}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {innovationAreas.map((area, idx) => (
+                <Reveal key={area.title} delay={idx * 0.04} className="h-full">
+                  <div className="bg-[#0a0a0a]/60 border border-white/[0.03] hover:border-rose-500/20 rounded-[20px] p-6 transition-all duration-300 flex flex-col justify-between h-full min-h-[220px]">
+                    <div>
+                      <div className="w-9 h-9 rounded-xl bg-rose-500/10 flex items-center justify-center mb-5">
+                        {area.icon}
+                      </div>
+                      <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-2.5">
+                        {area.title}
+                      </h4>
+                      <p className="text-xs md:text-sm text-zinc-400 leading-relaxed font-semibold">
+                        {area.desc}
+                      </p>
                     </div>
                   </div>
-                  <p className="text-xs md:text-sm text-zinc-350 font-bold leading-relaxed">
-                    {domain.desc}
-                  </p>
+                </Reveal>
+              ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 4. AI LAB OPERATING MODEL / LIFECYCLE */}
+      <section className="w-full py-24 bg-[#020202] border-b border-zinc-900/60 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
+          
+          <Reveal className="mb-14 text-left max-w-3xl">
+            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+              Operating Framework
+            </span>
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
+              How Our AI Lab Turns Ideas into <span className="text-rose-500">Production Systems</span>
+            </h2>
+            <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
+              A structured lifecycle method prioritizing early validation and rigorous engineering checks.
+            </p>
+          </Reveal>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-4">
+            {lifecycleTimeline.map((step, idx) => (
+              <Reveal key={step.num} delay={idx * 0.05} className="h-full">
+                <div className="bg-zinc-950/80 border border-white/[0.03] hover:border-rose-500/20 rounded-2xl p-5 flex flex-col justify-between h-full min-h-[190px] relative group transition-all duration-300">
+                  <div>
+                    <span className="text-2xl font-black text-rose-500/10 font-mono tracking-tighter block mb-4 group-hover:text-rose-500/25 transition-colors">
+                      {step.num}
+                    </span>
+                    <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-2">
+                      {step.title}
+                    </h4>
+                    <p className="text-xs md:text-sm text-zinc-400 leading-relaxed font-semibold">
+                      {step.desc}
+                    </p>
+                  </div>
                 </div>
-              </div>
+              </Reveal>
+            ))}
+          </div>
+
+        </div>
+      </section>
+
+      {/* 5. AI SOLUTION BLOCKS */}
+      <section className="w-full py-24 bg-black border-b border-zinc-900/60 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
+          <Reveal className="mb-14 text-center max-w-3xl mx-auto">
+            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+              Deliverables
+            </span>
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
+              Solutions Built Inside the <span className="text-rose-500">AI Lab</span>
+            </h2>
+            <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
+              Actual software platforms and functional cognitive integrations designed for real business setups.
+            </p>
+          </Reveal>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {solutionBlocks.map((block, idx) => (
+              <Reveal key={block.title} delay={idx * 0.04}>
+                <div className="bg-[#0a0a0a]/60 border border-white/[0.03] hover:border-rose-500/20 rounded-[20px] p-6 transition-all duration-300 min-h-[160px] flex flex-col justify-between">
+                  <div>
+                    <div className="flex items-center justify-between mb-4 border-b border-white/[0.03] pb-3">
+                      <h4 className="text-xs font-bold text-white uppercase tracking-wider">
+                        {block.title}
+                      </h4>
+                      <span className="text-[9px] font-mono text-rose-500 font-bold">ACTIVE ARCH</span>
+                    </div>
+                    <p className="text-xs md:text-sm text-zinc-400 leading-relaxed font-semibold">
+                      {block.desc}
+                    </p>
+                  </div>
+                </div>
+              </Reveal>
             ))}
           </div>
         </div>
       </section>
 
-      {/* 3. AI PLATFORM ARCHITECTURE */}
-      <section className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-rose-500/[0.01] rounded-full blur-[140px] pointer-events-none" />
+      {/* 6. AI ARCHITECTURE / TECHNOLOGY FOUNDATION */}
+      <section className="w-full py-24 bg-[#020202] border-b border-zinc-900/60 relative overflow-hidden">
+        {/* Glow */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-rose-650/[0.015] rounded-full blur-[130px] pointer-events-none" />
 
-        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
-          <Reveal className="mb-16 text-center max-w-2xl mx-auto">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
-              TECHNICAL BLUEPRINT
+        <div className="max-w-4xl mx-auto w-full px-12 xl:px-8 relative z-10">
+          <Reveal className="mb-14 text-center max-w-3xl mx-auto">
+            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+              Reference Blueprint
             </span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">
-              AI Platform <span className="text-rose-500">Architecture</span>
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
+              Our Enterprise AI <span className="text-rose-500">Reference Architecture</span>
             </h2>
-            <p className="text-zinc-300 text-sm md:text-base font-medium">
-              A robust, end-to-end ecosystem engineered for safety, speed, and cognitive accuracy.
+            <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
+              The layered framework powering secure model alignment and low-latency cognitive outputs.
             </p>
           </Reveal>
 
-          {/* Technical Stack Architecture Diagram */}
-          <div className="max-w-4xl mx-auto bg-zinc-950/40 border border-zinc-900 rounded-3xl p-8 lg:p-12 relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-24 h-24 bg-rose-500/[0.02] rounded-full blur-xl pointer-events-none" />
-
-            <div className="flex flex-col gap-6 relative z-10 font-mono">
-
-              {/* Layer 1 */}
-              <div className="flex flex-col md:flex-row md:items-center justify-between p-5 bg-zinc-950 border border-zinc-900 rounded-2xl gap-4 group hover:border-rose-500/10 transition-all duration-300">
-                <span className="text-xs font-bold text-rose-500 uppercase tracking-widest font-mono">01. Applications</span>
-                <span className="text-xs text-zinc-400 font-bold">Web Interfaces, API Endpoints, SaaS Portals, Mobile Clients</span>
-              </div>
-
-              <div className="flex justify-center"><ChevronDown className="w-5 h-5 text-zinc-800" /></div>
-
-              {/* Layer 2 */}
-              <div className="flex flex-col md:flex-row md:items-center justify-between p-5 bg-zinc-950 border border-zinc-900 rounded-2xl gap-4 group hover:border-rose-500/10 transition-all duration-300">
-                <span className="text-xs font-bold text-rose-500 uppercase tracking-widest font-mono">02. AI Agents</span>
-                <span className="text-xs text-zinc-400 font-bold">Task Routers, Goal Engines, Memory Chains, Prompt Templates</span>
-              </div>
-
-              <div className="flex justify-center"><ChevronDown className="w-5 h-5 text-zinc-800" /></div>
-
-              {/* Layer 3 */}
-              <div className="flex flex-col md:flex-row md:items-center justify-between p-5 bg-zinc-950 border border-zinc-900 rounded-2xl gap-4 group hover:border-rose-500/10 transition-all duration-300">
-                <span className="text-xs font-bold text-rose-500 uppercase tracking-widest font-mono">03. Orchestration Layer</span>
-                <span className="text-xs text-zinc-400 font-bold">LangChain, LlamaIndex, CrewAI, custom async Flow Controllers</span>
-              </div>
-
-              <div className="flex justify-center"><ChevronDown className="w-5 h-5 text-zinc-800" /></div>
-
-              {/* Layer 4 */}
-              <div className="flex flex-col md:flex-row md:items-center justify-between p-5 bg-zinc-950 border border-zinc-900 rounded-2xl gap-4 group hover:border-rose-500/10 transition-all duration-300">
-                <span className="text-xs font-bold text-rose-500 uppercase tracking-widest font-mono">04. Foundation Models</span>
-                <span className="text-xs text-zinc-400 font-bold">OpenAI GPT-4, Google Gemini, Anthropic Claude, Meta Llama 3</span>
-              </div>
-
-              <div className="flex justify-center"><ChevronDown className="w-5 h-5 text-zinc-800" /></div>
-
-              {/* Layer 5 */}
-              <div className="flex flex-col md:flex-row md:items-center justify-between p-5 bg-zinc-950 border border-zinc-900 rounded-2xl gap-4 group hover:border-rose-500/10 transition-all duration-300">
-                <span className="text-xs font-bold text-rose-500 uppercase tracking-widest font-mono">05. Knowledge & Data</span>
-                <span className="text-xs text-zinc-400 font-bold">Vector Database (Pinecone, pgvector), Metadata Syncs, S3/SQL</span>
-              </div>
-
-              <div className="flex justify-center"><ChevronDown className="w-5 h-5 text-zinc-800" /></div>
-
-              {/* Layer 6 */}
-              <div className="flex flex-col md:flex-row md:items-center justify-between p-5 bg-zinc-950 border border-zinc-900 rounded-2xl gap-4 group hover:border-rose-500/10 transition-all duration-300">
-                <span className="text-xs font-bold text-rose-500 uppercase tracking-widest font-mono">06. Cloud Infrastructure</span>
-                <span className="text-xs text-zinc-400 font-bold">Azure AI, GCP Vertex AI, AWS Bedrock, Dedicated GPU Clusters</span>
-              </div>
-
-            </div>
+          {/* Layered Diagram */}
+          <div className="flex flex-col gap-4 font-mono">
+            {archLayers.map((layer, idx) => (
+              <Reveal key={layer.num} delay={idx * 0.05}>
+                <div className="bg-zinc-950/60 border border-white/[0.03] rounded-2xl p-5 hover:border-rose-500/20 transition-all duration-300 flex flex-col md:flex-row md:items-center justify-between gap-3">
+                  <div className="flex items-center gap-4">
+                    <div className="w-16 text-[10px] font-bold text-rose-500 uppercase tracking-widest font-mono border-r border-white/10 pr-2">
+                      {layer.num}
+                    </div>
+                    <span className="text-xs font-bold text-white uppercase tracking-wider">{layer.name}</span>
+                  </div>
+                  <span className="text-xs md:text-sm text-zinc-400 font-semibold md:max-w-md text-left md:text-right leading-relaxed">
+                    {layer.desc}
+                  </span>
+                </div>
+              </Reveal>
+            ))}
           </div>
 
-          <div className="flex flex-wrap items-center justify-center gap-3 select-none mt-12">
-            <span className="text-xs font-bold text-zinc-400 mr-2 uppercase tracking-wider">Integrations Stack:</span>
-            {["OpenAI", "Gemini", "Claude", "Llama", "Vector Database", "FastAPI", "Azure AI"].map((tech) => (
-              <span key={tech} className="px-3.5 py-1.5 bg-zinc-950 border border-zinc-900 text-[10px] font-mono text-zinc-350 rounded-lg font-bold">
+          {/* Tech Chips */}
+          <div className="flex flex-wrap items-center justify-center gap-2 select-none mt-12">
+            {techChips.map((tech) => (
+              <span key={tech} className="px-3.5 py-2 bg-zinc-950 border border-white/[0.04] text-[10px] font-mono text-zinc-400 rounded-xl font-bold">
                 {tech}
               </span>
             ))}
@@ -382,363 +606,221 @@ export default function AIInnovationLabPage() {
         </div>
       </section>
 
-      {/* 4. ENTERPRISE AI SOLUTIONS */}
-      <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60">
-        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
-          <Reveal className="mb-16 text-left">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
-              PRODUCT PORTFOLIO
+      {/* 7. AI USE CASES BY BUSINESS FUNCTION / INDUSTRY */}
+      <section className="w-full py-24 bg-black border-b border-zinc-900/60 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
+          
+          <Reveal className="mb-14 text-center max-w-3xl mx-auto">
+            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+              Vertical Focus
             </span>
-            <h2 className="text-3xl md:text-4xl font-extrabold text-white">
-              Enterprise AI <span className="text-rose-500">Solutions</span>
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
+              AI Use Cases We Explore <span className="text-rose-500">Across the Enterprise</span>
             </h2>
-          </Reveal>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {enterpriseSolutions.map((sol, idx) => (
-              <div
-                key={idx}
-                className="group flex flex-col justify-between p-8 bg-zinc-950/40 border border-zinc-900 hover:border-rose-500/20 rounded-3xl transition-all duration-300"
-              >
-                <div>
-                  <div className="flex items-center justify-between mb-4">
-                    <span className="text-[10px] font-mono text-rose-500 uppercase tracking-widest font-bold">
-                      {sol.tagline}
-                    </span>
-                    <span className="text-xs font-mono text-zinc-700">0{idx + 1}</span>
-                  </div>
-
-                  <h3 className="text-lg md:text-xl font-bold text-white mb-4">
-                    {sol.name}
-                  </h3>
-
-                  <p className="text-xs md:text-sm text-zinc-400 leading-relaxed font-bold">
-                    {sol.desc}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 5. AI USE CASES & INDUSTRY APPLICATIONS */}
-      <section className="w-full py-24 bg-black border-b border-zinc-900/60">
-        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
-
-          <Reveal className="mb-16 text-center max-w-2xl mx-auto">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
-              APPLICATIONS
-            </span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">
-              AI Use Cases & <span className="text-rose-500">Industry Mappings</span>
-            </h2>
-            <p className="text-zinc-300 text-sm md:text-base font-medium">
-              Unifying operational capabilities with targeted industry solutions.
+            <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
+              Targeted implementations mapping cognitive features directly to standard enterprise operational divisions.
             </p>
           </Reveal>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-
-            {/* Column Left: Focus Areas */}
-            <div className="p-8 bg-zinc-950/30 border border-zinc-900/80 rounded-3xl">
-              <span className="text-[10px] font-mono text-rose-500 uppercase tracking-widest block mb-6 font-bold">
-                OPERATIONAL CAPABILITIES
-              </span>
-              <div className="flex flex-col gap-6">
-                {useCaseFocusAreas.map((item, idx) => (
-                  <div key={idx} className="flex gap-4 items-start pb-6 border-b border-zinc-900/40 last:border-0 last:pb-0">
-                    <div className="w-6 h-6 rounded-full bg-rose-500/10 flex items-center justify-center text-rose-500 font-mono text-[10px] font-bold flex-shrink-0">
-                      0{idx + 1}
-                    </div>
-                    <div>
-                      <h4 className="text-sm md:text-base font-bold text-white mb-1">{item.title}</h4>
-                      <p className="text-xs text-zinc-400 leading-relaxed font-bold">{item.desc}</p>
-                    </div>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start max-w-5xl mx-auto">
+            
+            {/* Left selector sidebar */}
+            <div className="lg:col-span-4 flex flex-row lg:flex-col gap-3 overflow-x-auto lg:overflow-x-visible pb-4 lg:pb-0 scrollbar-none snap-x snap-mandatory">
+              {industryUseCases.map((cat) => (
+                <button
+                  key={cat.name}
+                  onClick={() => setActiveTab(cat.name)}
+                  className={`flex items-center justify-between p-4 rounded-2xl text-left border transition-all duration-300 flex-shrink-0 snap-start w-[140px] lg:w-full ${
+                    activeTab === cat.name
+                      ? "bg-rose-500/10 text-rose-500 border-rose-500/20 shadow-[0_0_20px_rgba(244,63,94,0.1)]"
+                      : "bg-zinc-950/45 text-zinc-400 border-white/[0.03] hover:text-zinc-300 hover:bg-zinc-900/40"
+                  }`}
+                >
+                  <div className="flex items-center gap-3">
+                    <span className="text-[11px] font-bold text-white uppercase tracking-wider">{cat.name}</span>
                   </div>
-                ))}
-              </div>
+                  <ChevronRight size={14} className="hidden lg:block text-zinc-550" />
+                </button>
+              ))}
             </div>
 
-            {/* Column Right: Industries */}
-            <div className="p-8 bg-zinc-950/30 border border-zinc-900/80 rounded-3xl">
-              <span className="text-[10px] font-mono text-rose-500 uppercase tracking-widest block mb-6 font-bold">
-                TARGET INDUSTRIES
-              </span>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {useCaseIndustries.map((ind, idx) => (
-                  <div key={idx} className="p-5 bg-zinc-950/50 border border-zinc-900 hover:border-rose-500/10 rounded-2xl transition-colors duration-300">
-                    <h4 className="text-xs md:text-sm font-bold text-white uppercase tracking-wider mb-2 flex items-center gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-rose-500" />
-                      {ind.name}
-                    </h4>
-                    <p className="text-[10px] md:text-xs text-zinc-400 leading-relaxed font-bold">{ind.desc}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-          </div>
-
-        </div>
-      </section>
-
-      {/* 6. INNOVATION DELIVERY FRAMEWORK */}
-      <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60">
-        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
-          <Reveal className="mb-16 text-center max-w-2xl mx-auto">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
-              OUR PROCESS
-            </span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">
-              AI Innovation <span className="text-rose-500">Framework</span>
-            </h2>
-          </Reveal>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative">
-            {frameworkSteps.map((step, idx) => (
-              <div
-                key={idx}
-                className="flex flex-col bg-zinc-950/40 border border-zinc-900 rounded-2xl p-6 relative group overflow-hidden"
-              >
-                <div className="text-[28px] font-black text-rose-500/15 font-mono tracking-tighter leading-none mb-3">
-                  0{idx + 1}
-                </div>
-                <span className="text-[9px] font-mono text-rose-500 uppercase tracking-widest block mb-1 font-bold">
-                  {step.phase}
-                </span>
-                <h4 className="text-sm font-bold text-white uppercase tracking-wider mb-2">{step.title}</h4>
-                <p className="text-[10px] md:text-xs text-zinc-400 font-bold leading-relaxed">{step.desc}</p>
-              </div>
-            ))}
-          </div>
-
-          <div className="flex flex-wrap items-center justify-center gap-3 select-none mt-12">
-            <span className="text-xs font-bold text-zinc-400 mr-2 uppercase tracking-wider">Services:</span>
-            {["Rapid AI POC", "MVP Development", "Enterprise Deployment", "Managed AI Operations"].map((srv) => (
-              <span key={srv} className="px-3.5 py-1.5 bg-zinc-950 border border-zinc-900 text-[10px] font-mono text-zinc-350 rounded-lg font-bold">
-                {srv}
-              </span>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 7. AI SUCCESS STORIES & IMPACT */}
-      <section className="w-full py-24 bg-black border-b border-zinc-900/60">
-        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
-
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center mb-16">
-
-            <div className="lg:col-span-5">
-              <Reveal className="text-left">
-                <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
-                  CASE STUDIES & METRICS
-                </span>
-                <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">
-                  AI Success Stories <span className="text-rose-500">& Impact</span>
-                </h2>
-                <p className="text-zinc-350 text-xs md:text-sm lg:text-base leading-relaxed font-bold mb-8">
-                  Proven, tangible business impact delivered through autonomous agents and intelligent search solutions.
-                </p>
-              </Reveal>
-            </div>
-
-            <div className="lg:col-span-7">
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-6 select-none">
-                {[
-                  { value: "20+", label: "AI Projects" },
-                  { value: "10+", label: "AI Products" },
-                  { value: "100K+", label: "AI Requests" },
-                  { value: "99.9%", label: "Availability" },
-                  { value: "Global", label: "Delivery Support" }
-                ].map((item, idx) => (
-                  <div
-                    key={idx}
-                    className="p-6 bg-zinc-950/50 border border-zinc-900 hover:border-rose-500/20 rounded-2xl transition-all duration-300 text-left group"
-                  >
-                    <div className="text-2xl md:text-3xl font-black text-rose-500 tracking-tighter mb-2 font-mono group-hover:scale-105 transition-transform duration-300 origin-left">
-                      {item.value}
-                    </div>
-                    <div className="text-[9px] md:text-[10px] font-mono text-zinc-400 uppercase tracking-widest leading-snug font-bold">
-                      {item.label}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {successStories.map((story, idx) => (
-              <div
-                key={idx}
-                className="group flex flex-col justify-between p-8 bg-zinc-950/40 border border-zinc-900 hover:border-rose-500/20 rounded-3xl transition-all duration-300"
-              >
+            {/* Right Display Card */}
+            <div className="lg:col-span-8">
+              <div className="bg-[#0b0b0b]/60 border border-white/[0.03] rounded-3xl p-6 md:p-8 min-h-[260px] flex flex-col justify-between">
                 <div>
-                  <span className="text-[10px] font-mono text-rose-500 tracking-wider uppercase font-bold block mb-1">
-                    AI Case Study
+                  <span className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest block mb-6 border-b border-white/[0.03] pb-2">
+                    ACTIVE USE CASE MAPPING FOR: {activeTab}
                   </span>
-                  <h3 className="text-base md:text-lg font-bold text-white mb-6 tracking-wide">
-                    {story.title}
-                  </h3>
 
-                  <div className="space-y-4">
-                    <div>
-                      <span className="text-[9px] font-mono text-rose-500 uppercase tracking-wider block mb-1 font-bold">Challenge</span>
-                      <p className="text-xs text-zinc-350 leading-relaxed font-bold">{story.challenge}</p>
-                    </div>
-                    <div>
-                      <span className="text-[9px] font-mono text-rose-500 uppercase tracking-wider block mb-1 font-bold">Solution</span>
-                      <p className="text-xs text-zinc-350 leading-relaxed font-bold">{story.solution}</p>
-                    </div>
-                    <div className="pt-2 border-t border-zinc-900/80">
-                      <span className="text-[9px] font-mono text-rose-500 uppercase tracking-wider block mb-1 font-bold">Result</span>
-                      <p className="text-xs text-zinc-350 font-bold leading-relaxed">{story.result}</p>
-                    </div>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    {(industryUseCases.find((c) => c.name === activeTab)?.items || []).map((item, idx) => (
+                      <Reveal key={item} delay={idx * 0.04} className="h-full">
+                        <div className="group relative rounded-[20px] border border-white/[0.04] bg-zinc-950/80 p-5 hover:border-rose-500/20 hover:shadow-[0_8px_30px_rgba(244,63,94,0.02)] transition-all duration-300 flex flex-col justify-between h-full min-h-[90px]">
+                          <div className="flex items-start gap-3">
+                            <span className="w-1.5 h-1.5 rounded-full bg-rose-500 mt-1.5 flex-shrink-0" />
+                            <span className="text-xs md:text-sm font-bold text-zinc-300 leading-relaxed group-hover:text-white transition-colors duration-300">
+                              {item}
+                            </span>
+                          </div>
+                        </div>
+                      </Reveal>
+                    ))}
                   </div>
                 </div>
               </div>
-            ))}
+            </div>
+
           </div>
 
         </div>
       </section>
 
-      {/* 8. FAQ SECTION */}
-      <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60">
-        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
-
+      {/* 8. INNOVATION OUTCOMES / LAB IMPACT */}
+      <section className="w-full py-24 bg-[#020202] border-b border-zinc-900/60 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
+          
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            {/* Left Header */}
             <div className="lg:col-span-5">
-              <Reveal className="text-left sticky top-28">
-                <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
-                  LAB QUESTIONS
+              <Reveal>
+                <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+                  Innovation Impact
                 </span>
-                <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight leading-tight text-white mb-5">
-                  Frequently Asked <span className="text-rose-500">Questions</span>
+                <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
+                  What the AI Lab <br />
+                  <span className="text-rose-500">Delivers</span>
                 </h2>
-                <p className="text-zinc-400 text-xs md:text-sm font-bold max-w-md">
-                  Everything you need to know about our AI systems, model architectures, and data safety compliance.
+                <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
+                  Rigorous performance baselines and continuous quality validation to ensure deployment safety and bottom-line value.
                 </p>
               </Reveal>
             </div>
 
-            <div className="lg:col-span-7">
-              <div className="flex flex-col gap-4 select-none">
-                {faqs.map((faq, idx) => {
-                  const isOpen = openFaqIndex === idx;
-                  return (
-                    <div
-                      key={idx}
-                      className="bg-zinc-950/50 border border-zinc-900 hover:border-rose-500/10 rounded-2xl overflow-hidden transition-all duration-300"
-                    >
-                      <button
-                        onClick={() => toggleFaq(idx)}
-                        className="w-full p-6 text-left flex items-center justify-between gap-4 font-bold text-sm md:text-base text-white uppercase tracking-wider"
-                      >
-                        {faq.q}
-                        <ChevronDown
-                          className={`w-4 h-4 text-zinc-550 transition-transform duration-300 flex-shrink-0 ${isOpen ? "rotate-180 text-rose-500" : ""
-                            }`}
-                        />
-                      </button>
-
-                      <div
-                        className={`transition-all duration-300 ease-in-out overflow-hidden ${isOpen ? "max-h-[250px] border-t border-zinc-900/60" : "max-h-0"
-                          }`}
-                      >
-                        <p className="p-6 text-xs md:text-sm text-zinc-400 leading-relaxed font-bold">
-                          {faq.a}
-                        </p>
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
+            {/* Right side metrics and value list */}
+            <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {labDeliverables.map((item, idx) => (
+                <Reveal key={item.title} delay={idx * 0.05}>
+                  <div className="bg-zinc-950/80 border border-white/[0.03] rounded-2xl p-5 hover:border-rose-500/10 transition-colors duration-300 flex items-start gap-3">
+                    <CheckCircle className="w-4 h-4 text-emerald-500 mt-0.5 flex-shrink-0" />
+                    <span className="text-xs font-bold text-zinc-300">{item.title}</span>
+                  </div>
+                </Reveal>
+              ))}
             </div>
 
           </div>
+
         </div>
       </section>
 
-      {/* RELATED CONNECTIONS */}
-      <section className="w-full py-24 bg-black border-b border-zinc-900/60">
-        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
-          <Reveal className="mb-16 text-center max-w-2xl mx-auto">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
-              EXPLORE OTHER NETWORKS
+      {/* 9. WHY DEVOpstrio AI LAB */}
+      <section className="w-full py-24 bg-black border-b border-zinc-900/60 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
+          
+          <Reveal className="mb-14 text-center max-w-3xl mx-auto">
+            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+              Why Devopstrio
             </span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">
-              Related Ecosystem <span className="text-rose-500">Connections</span>
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
+              Why Organizations Work with the <span className="text-rose-500">Devopstrio AI Lab</span>
             </h2>
+            <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
+              We focus on enterprise integrations that generate measurable cost optimizations.
+            </p>
           </Reveal>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {relatedConnections.map((partner) => (
-              <Link
-                key={partner.name}
-                href={partner.href}
-                className="group flex flex-col justify-between p-6 bg-zinc-950/40 border border-zinc-900 hover:border-rose-500/20 rounded-2xl transition-all duration-300 min-h-[160px]"
-              >
-                <div>
-                  <h4 className="text-sm md:text-base font-bold text-white uppercase tracking-wider mb-2 flex items-center justify-between">
-                    {partner.name}
-                    <ChevronRight className="w-4 h-4 text-zinc-650 group-hover:translate-x-1 group-hover:text-rose-500 transition-all" />
-                  </h4>
-                  <p className="text-sm text-zinc-300 font-medium leading-relaxed">
-                    {partner.desc}
-                  </p>
+            {whyWorkWithUs.map((item, idx) => (
+              <Reveal key={item.title} delay={idx * 0.04}>
+                <div className="bg-[#0a0a0a]/60 border border-white/[0.03] hover:border-rose-500/20 rounded-[20px] p-6 transition-all duration-300 flex flex-col justify-between min-h-[170px] h-full">
+                  <div>
+                    <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-2.5">
+                      {item.title}
+                    </h4>
+                    <p className="text-xs md:text-sm text-zinc-400 leading-relaxed font-semibold">
+                      {item.desc}
+                    </p>
+                  </div>
                 </div>
-              </Link>
+              </Reveal>
             ))}
           </div>
+
         </div>
       </section>
 
-      {/* 9. CTA SECTION */}
-      <section className="relative w-full py-32 bg-[#030303] overflow-hidden text-center">
-        {/* Ambient background blur */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-rose-500/[0.02] rounded-full blur-[140px] pointer-events-none" />
+      {/* 10. RELATED LABS / CTA */}
+      <section className="w-full py-24 bg-[#020202] relative overflow-hidden">
+        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
+          
+          {/* Related Labs Grid */}
+          <div className="mb-24">
+            <Reveal className="mb-14 text-left">
+              <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+                Ecosystem
+              </span>
+              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-5">
+                Explore More <span className="text-rose-500">Innovation Labs</span>
+              </h2>
+            </Reveal>
 
-        <div className="max-w-3xl mx-auto px-12 xl:px-8 relative z-10 flex flex-col items-center">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {relatedLabs.map((lab) => (
+                <Link
+                  key={lab.name}
+                  href={lab.href}
+                  className="group bg-zinc-950/60 border border-white/[0.03] hover:border-rose-500/20 rounded-2xl p-5 transition-all duration-300 flex flex-col justify-between min-h-[160px]"
+                >
+                  <div>
+                    <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-2.5 flex items-center justify-between">
+                      {lab.name}
+                      <ChevronRight size={14} className="text-zinc-650 group-hover:translate-x-1 group-hover:text-rose-500 transition-all" />
+                    </h4>
+                    <p className="text-xs md:text-sm text-zinc-400 leading-relaxed font-semibold">
+                      {lab.desc}
+                    </p>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
 
-          <Reveal>
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
-              GET STARTED
-            </span>
-          </Reveal>
+          {/* Final CTA Block */}
+          <div className="relative rounded-[32px] border border-white/[0.04] bg-zinc-950/50 p-8 md:p-16 text-center overflow-hidden max-w-4xl mx-auto">
+            {/* Glow */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-rose-500/[0.02] rounded-full blur-[100px] pointer-events-none" />
 
-          <Reveal delay={0.1}>
-            <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6">
-              Transform Ideas Into <span className="text-rose-500">Intelligent Systems</span>
-            </h2>
-          </Reveal>
+            <div className="relative z-10 flex flex-col items-center max-w-2xl mx-auto">
+              <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+                Applied AI Collaboration
+              </span>
+              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-5">
+                Have an AI idea worth building?
+              </h2>
+              <p className="text-zinc-400 text-base md:text-lg leading-relaxed mb-8">
+                Partner with the Devopstrio AI Innovation Lab to prototype, validate, and deploy AI systems that create real business value.
+              </p>
 
-          <Reveal delay={0.2}>
-            <p className="text-zinc-400 text-xs md:text-sm lg:text-base leading-relaxed max-w-xl mb-10 font-bold">
-              Partner with our AI Innovation Lab to design, build, deploy, and scale cognitive application backends and autonomous workflows.
-            </p>
-          </Reveal>
-
-          <Reveal delay={0.3} className="flex flex-wrap justify-center gap-4">
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-3 pl-6 pr-3 py-3 bg-white text-black font-semibold text-xs md:text-sm tracking-wider rounded-full hover:bg-zinc-200 transition-all duration-300 shadow-lg shadow-white/5"
-            >
-              Start AI Project
-              <div className="w-7 h-7 rounded-full bg-black flex items-center justify-center">
-                <ArrowUpRight className="w-3.5 h-3.5 text-white" />
+              <div className="flex flex-wrap justify-center gap-4">
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center gap-3 pl-6 pr-3 py-3 bg-white text-black font-semibold text-xs md:text-sm tracking-wider rounded-full hover:bg-zinc-200 transition-all duration-300 shadow-lg shadow-white/5"
+                >
+                  Book an AI Discovery Session
+                  <div className="w-7 h-7 rounded-full bg-black flex items-center justify-center">
+                    <ArrowUpRight className="w-3.5 h-3.5 text-white" />
+                  </div>
+                </Link>
+                <Link
+                  href="/contact"
+                  className="gap-2 inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase border border-zinc-850 hover:border-zinc-750 bg-zinc-950/60 hover:bg-zinc-900 text-white transition-all duration-300 hover:-translate-y-0.5"
+                >
+                  Talk to Our AI Team
+                </Link>
               </div>
-            </Link>
-            <Link
-              href="/contact"
-              className="gap-2 inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase border border-zinc-850 hover:border-zinc-750 bg-zinc-950/60 hover:bg-zinc-900 text-white transition-all duration-300 hover:-translate-y-0.5"
-            >
-              Talk To AI Experts
-            </Link>
-          </Reveal>
+            </div>
+          </div>
 
         </div>
       </section>

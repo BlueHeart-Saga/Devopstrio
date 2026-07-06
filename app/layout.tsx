@@ -14,6 +14,7 @@ import { generatePageMetadata, getMetadataFromPath } from "@/lib/seo-utils";
 export async function generateMetadata(): Promise<Metadata> {
   const headersList = await headers();
   const pathname = headersList.get("x-pathname") || "/";
+  const host = headersList.get("host") || "";
   const { title, description, keywords } = getMetadataFromPath(pathname);
 
   const baseMeta = generatePageMetadata({
@@ -23,9 +24,38 @@ export async function generateMetadata(): Promise<Metadata> {
     keywords
   });
 
+  const prodDomain = process.env.NEXT_PUBLIC_PRODUCTION_DOMAIN || "devopstrio.co.uk";
+  const cleanHost = host.split(":")[0].toLowerCase();
+  const isProduction = cleanHost === prodDomain.toLowerCase() || cleanHost === `www.${prodDomain.toLowerCase()}`;
+
+  const robots = isProduction
+    ? {
+        index: true,
+        follow: true,
+        nocache: true,
+        googleBot: {
+          index: true,
+          follow: true,
+          noimageindex: false,
+        }
+      }
+    : {
+        index: false,
+        follow: false,
+        nocache: true,
+        googleBot: {
+          index: false,
+          follow: false,
+          noimageindex: true,
+        }
+      };
+
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://devopstrio.co.uk";
+
   return {
     ...baseMeta,
-    metadataBase: new URL("https://devopstrio.co.uk"),
+    metadataBase: new URL(siteUrl),
+    robots,
     verification: {
       google: "Ed5NQe2UO9cW6aJ_7mbgYfMkS1Ipat0f9E9q78xyzUM"
     },
