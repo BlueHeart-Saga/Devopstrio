@@ -328,7 +328,7 @@ function BlockRenderer({ block, onPreviewDoc }: { block: PostBlock; onPreviewDoc
       );
     case "document":
       const docUrl = data.file_id
-        ? `https://mediahub-backend-docker-hgh6hzgacraqbhb2.southindia-01.azurewebsites.net/api/documents/${data.file_id}`
+        ? `/api/insights-proxy/api/documents/${data.file_id}`
         : data.url || "";
       return (
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between p-6 bg-zinc-950/40 border border-white/5 hover:border-rose-500/25 rounded-2xl my-8 gap-4 backdrop-blur-md shadow-lg transition-all duration-300">

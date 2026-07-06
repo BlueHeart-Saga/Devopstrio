@@ -303,6 +303,8 @@ const ecosystemCategories = [
 
 const ecosystemMobileList = [
   { name: "Ecosystem Overview", href: "/ecosystem" },
+  { name: "Landing Zone", href: "/ecosystem/landing-zone" },
+  { name: "Devopstrio's AI", href: "https://ai.devopstrio.co.uk" },
   { name: "Partnerships", href: "/ecosystem/partnerships" },
   { name: "Innovation Labs", href: "/ecosystem/innovation-labs" },
   { name: "Platforms & Solutions", href: "/ecosystem/platforms-solutions" },
@@ -557,13 +559,13 @@ export function Navbar() {
                   {/* Right panel with active sub-services */}
                   <div className="flex flex-col">
                     <span className="text-xs font-mono tracking-widest text-zinc-500 uppercase block px-2 mb-2">Strategic Capabilities</span>
-                    <div className="grid grid-cols-2 gap-x-6 gap-y-4 max-h-[380px] overflow-y-auto overscroll-contain pr-2 custom-scrollbar">
+                    <div className="grid grid-cols-2 gap-x-6 gap-y-4 min-h-[420px] max-h-[420px] overflow-y-auto overscroll-contain pr-2 custom-scrollbar">
                       {serviceCategories.find(c => c.id === activeCategory)?.items.map((item) => (
                         <Link
                           key={item.name}
                           href={item.href}
                           onClick={() => setActiveMenu(null)}
-                          className="group/subitem block p-2 rounded-lg hover:bg-zinc-900/30 transition-colors"
+                          className="group/subitem block p-2 rounded-lg hover:bg-zinc-900/30 transition-colors min-h-[90px]"
                         >
                           <span className="block text-[15px] font-semibold text-white group-hover/subitem:text-rose-500 transition-colors mb-1">
                             {item.name}
@@ -934,18 +936,35 @@ export function Navbar() {
                         {activeEcoCategory === cat.id && <span className="text-[11px]">&rarr;</span>}
                       </Link>
                     ))}
+                    
+                    {/* External Link: Visit AI Hub */}
+                    <div className="mt-2 pt-2 border-t border-zinc-900/80">
+                      <a
+                        href="https://ai.devopstrio.co.uk"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={() => setActiveMenu(null)}
+                        className="flex items-center justify-between px-3 py-2 rounded-lg text-[14px] font-bold transition-all duration-300 text-left border border-rose-500/20 bg-rose-500/[0.03] text-rose-400 hover:text-white hover:bg-rose-600 hover:border-rose-500 shadow-[0_0_12px_rgba(244,63,94,0.06)] hover:shadow-[0_0_18px_rgba(244,63,94,0.2)] group"
+                      >
+                        <span className="flex items-center gap-2">
+                          
+                          <span>Devopstrio's AI</span>
+                        </span>
+                        <span className="text-[10px] group-hover:translate-x-0.5 transition-transform">&rarr;</span>
+                      </a>
+                    </div>
                   </div>
 
                   {/* Right panel with active sub-items */}
                   <div className="flex flex-col">
                     <span className="text-xs font-mono tracking-widest text-zinc-500 uppercase block px-2 mb-2">Sub-Pages & Links</span>
-                    <div className="grid grid-cols-2 gap-x-6 gap-y-4 max-h-[380px] overflow-y-auto overscroll-contain pr-2 custom-scrollbar">
+                    <div className="grid grid-cols-2 gap-x-6 gap-y-4 min-h-[420px] max-h-[420px] overflow-y-auto overscroll-contain pr-2 custom-scrollbar">
                       {ecosystemCategories.find(c => c.id === activeEcoCategory)?.items.map((item) => (
                         <Link
                           key={item.name}
                           href={item.href}
                           onClick={() => setActiveMenu(null)}
-                          className="group/subitem block p-2 rounded-lg hover:bg-zinc-900/30 transition-colors"
+                          className="group/subitem block p-2 rounded-lg hover:bg-zinc-900/30 transition-colors min-h-[90px]"
                         >
                           <span className="block text-[15px] font-semibold text-white group-hover/subitem:text-rose-500 transition-colors mb-1">
                             {item.name}
@@ -962,10 +981,17 @@ export function Navbar() {
                   <div className="col-span-full border-t border-zinc-900/60 pt-4 mt-1 flex flex-row justify-between items-center">
                     <div className="flex items-center gap-4 text-[13px] font-medium text-zinc-400">
                       <Link 
+                        href="/ecosystem/landing-zone" 
+                        className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300"
+                      >
+                        <span className="w-1.5 h-1.5 rounded-full bg-rose-500 animate-pulse" />
+                        <span>Landing Zone</span>
+                      </Link>
+                      <span className="text-zinc-800">|</span>
+                      <Link 
                         href="/insights/industry-events" 
                         className="hover:text-rose-500 transition-colors flex items-center gap-1.5"
                       >
-                        <span className="w-1.5 h-1.5 rounded-full bg-rose-500 animate-pulse" />
                         <span>Events</span>
                       </Link>
                       <span className="text-zinc-800">|</span>
@@ -1136,13 +1162,13 @@ export function Navbar() {
                   {/* Right panel with active section categories */}
                   <div className="flex flex-col">
                     <span className="text-xs font-mono tracking-widest text-zinc-500 uppercase block px-2 mb-2">Categories</span>
-                    <div className="grid grid-cols-2 gap-x-6 gap-y-4 max-h-[380px] overflow-y-auto overscroll-contain pr-2 custom-scrollbar">
+                    <div className="grid grid-cols-2 gap-x-6 gap-y-4 min-h-[420px] max-h-[420px] overflow-y-auto overscroll-contain pr-2 custom-scrollbar">
                       {insightsSections.find(s => s.slug === activeInsightsSection)?.categories.map((cat) => (
                         <Link
                           key={cat.slug}
                           href={`/insights/${cat.slug}`}
                           onClick={() => setActiveMenu(null)}
-                          className="group/subitem block p-2 rounded-lg hover:bg-zinc-900/30 transition-colors"
+                          className="group/subitem block p-2 rounded-lg hover:bg-zinc-900/30 transition-colors min-h-[90px]"
                         >
                           <span className="block text-[15px] font-semibold text-white group-hover/subitem:text-rose-500 transition-colors mb-1">
                             {cat.name}

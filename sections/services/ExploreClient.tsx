@@ -149,171 +149,86 @@ export function ExploreClient() {
   return (
     <div className="bg-black text-white font-sans overflow-x-hidden">
       {/* SECTION 1 — HERO SECTION */}
-      <section className="relative pt-28 pb-24 md:py-36 bg-[#030303] overflow-hidden border-b border-zinc-900/80">
-        {/* Animated ambient mesh background */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(244,63,94,0.06),transparent_40%),radial-gradient(circle_at_70%_80%,rgba(244,63,94,0.04),transparent_50%)] pointer-events-none" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-gradient-to-br from-rose-500/5 via-transparent to-rose-500/5 rounded-full blur-[140px] pointer-events-none" />
+      <section className="relative w-full min-h-[80vh] flex items-center bg-[#030303] text-white pt-20 pb-16 lg:pt-20 lg:pb-24 overflow-hidden border-b border-zinc-900/80">
+        {/* Background Ambient Glows */}
+        <div className="absolute top-[-10%] right-[-10%] w-[50%] aspect-square bg-[radial-gradient(circle_at_center,rgba(244,63,94,0.06),transparent_70%)] pointer-events-none z-0" />
+        <div className="absolute bottom-[-10%] left-[-10%] w-[50%] aspect-square bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.01),transparent_70%)] pointer-events-none z-0" />
         
         {/* Futuristic grid overlay */}
         <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.015)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.015)_1px,transparent_1px)] bg-[size:32px_32px] opacity-60 pointer-events-none [mask-image:radial-gradient(ellipse_at_center,black_40%,transparent_90%)]" />
 
-        <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center w-full">
             
             {/* Hero Left Content */}
-            <div className="lg:col-span-7 space-y-8 text-left">
+            <div className="lg:col-span-7 flex flex-col items-start text-left justify-center z-20">
               <Reveal>
-                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-rose-500/20 bg-rose-500/5 shadow-[0_0_15px_rgba(225,29,72,0.1)]">
-                  <span className="w-1.5 h-1.5 rounded-full bg-rose-500 animate-ping" />
-                  <span className="text-[10px] sm:text-xs font-bold tracking-[0.2em] uppercase text-rose-500">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-rose-500/20 bg-rose-500/5 mb-6 shadow-[0_0_15px_rgba(225,29,72,0.1)]">
+                  <span className="w-1.5 h-1.5 rounded-full bg-rose-600 animate-pulse" />
+                  <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-rose-500">
                     MASTER SERVICE ECOSYSTEM
                   </span>
                 </div>
               </Reveal>
               
               <Reveal delay={0.1}>
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight leading-[1.08] text-white">
-                  Unified Engineering & <br />
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-500 via-rose-400 to-orange-500">
-                    Transformation Core
-                  </span>
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold tracking-tight leading-[1.12] text-white mb-6">
+                  Unified Engineering &
+                  <br />
+                  <span className="text-[#E11D48] whitespace-nowrap">Transformation Core.</span>
                 </h1>
               </Reveal>
 
               <Reveal delay={0.2}>
-                <p className="text-zinc-400 text-sm md:text-base xl:text-lg leading-relaxed max-w-2xl font-medium">
+                <p className="text-zinc-400 text-xs sm:text-sm md:text-base leading-relaxed font-semibold max-w-xl mb-8">
                   We bridge the gap between complex enterprise strategy and zero-defect execution. Devopstrio delivers 10 core capability pillars, offering multi-region cloud scaling, autonomous cognitive AI workflows, secure platform engineering, and 24/7 global operations.
                 </p>
               </Reveal>
 
               {/* Real-time platform counters */}
-              <Reveal delay={0.3} className="grid grid-cols-3 gap-6 max-w-lg border-y border-zinc-900 py-6">
-                <div>
-                  <p className="text-2xl md:text-3xl font-black text-white tracking-tight">10</p>
-                  <p className="text-[10px] font-bold text-zinc-500 uppercase tracking-widest mt-1">Core Pillars</p>
-                </div>
-                <div className="border-l border-zinc-900 pl-6" />
-                <div>
-                  <p className="text-2xl md:text-3xl font-black text-white tracking-tight">256</p>
-                  <p className="text-[10px] font-bold text-zinc-500 uppercase tracking-widest mt-1">Sub-Services</p>
-                </div>
-                <div className="border-l border-zinc-900 pl-6" />
-                <div>
-                  <p className="text-2xl md:text-3xl font-black text-white tracking-tight">24/7/365</p>
-                  <p className="text-[10px] font-bold text-zinc-500 uppercase tracking-widest mt-1">Global Delivery</p>
+              <Reveal delay={0.3}>
+                <div className="grid grid-cols-3 gap-4 max-w-lg border-y border-zinc-900 py-6 mb-8 w-full">
+                  <div>
+                    <p className="text-2xl md:text-3xl font-bold text-white tracking-tight">10</p>
+                    <p className="text-[10px] font-bold text-zinc-500 uppercase tracking-widest mt-1">Core Pillars</p>
+                  </div>
+                  <div className="border-l border-zinc-900 pl-6">
+                    <p className="text-2xl md:text-3xl font-bold text-white tracking-tight">256</p>
+                    <p className="text-[10px] font-bold text-zinc-500 uppercase tracking-widest mt-1">Sub-Services</p>
+                  </div>
+                  <div className="border-l border-zinc-900 pl-6">
+                    <p className="text-2xl md:text-3xl font-bold text-white tracking-tight">24/7/365</p>
+                    <p className="text-[10px] font-bold text-zinc-500 uppercase tracking-widest mt-1">Global Delivery</p>
+                  </div>
                 </div>
               </Reveal>
 
-              <Reveal delay={0.4} className="pt-2 flex flex-wrap gap-4">
-                <a
-                  href="#core-pillars"
-                  className="px-6 py-4 rounded-lg text-xs font-bold uppercase tracking-wider bg-gradient-to-r from-rose-600 to-red-650 hover:from-rose-500 hover:to-red-600 text-white transition-all duration-300 hover:shadow-[0_0_30px_rgba(225,29,72,0.4)] hover:-translate-y-0.5"
-                >
-                  Explore Core Pillars
-                </a>
-                <Link
-                  href="/contact"
-                  className="px-6 py-4 rounded-lg text-xs font-bold uppercase tracking-wider bg-zinc-950 border border-zinc-800 hover:bg-zinc-900 hover:border-zinc-700 text-white transition-all duration-300 hover:-translate-y-0.5"
-                >
-                  Consult an Architect
-                </Link>
+              <Reveal delay={0.4}>
+                <div className="flex flex-wrap gap-4 items-center justify-start">
+                  <a
+                    className="inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white transition-all duration-300 hover:shadow-[0_0_25px_rgba(225,29,72,0.35)] hover:-translate-y-0.5"
+                    href="#core-pillars"
+                  >
+                    Explore Core Pillars
+                  </a>
+                  <Link
+                    className="inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase border border-zinc-850 hover:border-zinc-750 bg-zinc-950/60 hover:bg-zinc-900 text-white transition-all duration-300 hover:-translate-y-0.5"
+                    href="/contact"
+                  >
+                    Consult an Architect
+                  </Link>
+                </div>
               </Reveal>
             </div>
 
-            {/* Hero Right Visual: High-end interactive futuristic cockpit dashboard */}
-            <div className="lg:col-span-5 relative flex justify-center">
-              <Reveal delay={0.2} className="w-full max-w-[440px]">
-                <div className="relative border border-white/10 rounded-3xl p-8 bg-zinc-950/40 backdrop-blur-md shadow-[0_24px_64px_rgba(0,0,0,0.6)] group overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-tr from-rose-500/5 to-transparent pointer-events-none" />
-                  
-                  {/* Subtle top scanner line animation */}
-                  <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-rose-500 to-transparent animate-pulse" />
-
-                  {/* Header info */}
-                  <div className="flex items-center justify-between mb-6 pb-4 border-b border-zinc-900">
-                    <div className="flex items-center gap-2">
-                      <span className="w-2 h-2 rounded-full bg-rose-500 animate-ping" />
-                      <span className="text-[10px] font-mono font-bold tracking-wider text-zinc-400 uppercase">SYS_CORE_OPERATIONS</span>
-                    </div>
-                    <span className="text-[10px] font-mono text-rose-500/80 font-bold bg-rose-500/10 px-2 py-0.5 rounded">ONLINE</span>
-                  </div>
-
-                  {/* Interactive Nodes list with micro-actions */}
-                  <div className="space-y-4">
-                    <div className="group/node flex items-center justify-between p-3.5 rounded-2xl bg-zinc-900/30 border border-white/5 hover:border-rose-500/30 hover:bg-zinc-950/60 transition-all duration-300">
-                      <div className="flex items-center gap-3.5">
-                        <div className="w-10 h-10 rounded-xl bg-rose-500/10 flex items-center justify-center group-hover/node:bg-rose-500/20 transition-all">
-                          <Cpu className="w-5 h-5 text-rose-500" />
-                        </div>
-                        <div>
-                          <p className="text-xs font-bold text-white group-hover/node:text-rose-400 transition-colors">Cognitive AI Engines</p>
-                          <p className="text-[9px] text-zinc-500 font-mono mt-0.5">AGENTIC WORKFLOWS • MLOPS</p>
-                        </div>
-                      </div>
-                      <div className="w-6 h-6 rounded-full border border-zinc-800 flex items-center justify-center text-zinc-600 group-hover/node:border-rose-500/30 group-hover/node:text-rose-500 transition-all">
-                        <ChevronRight className="w-3.5 h-3.5" />
-                      </div>
-                    </div>
-
-                    <div className="group/node flex items-center justify-between p-3.5 rounded-2xl bg-zinc-900/30 border border-white/5 hover:border-rose-500/30 hover:bg-zinc-950/60 transition-all duration-300">
-                      <div className="flex items-center gap-3.5">
-                        <div className="w-10 h-10 rounded-xl bg-rose-500/10 flex items-center justify-center group-hover/node:bg-rose-500/20 transition-all">
-                          <Layers className="w-5 h-5 text-rose-500" />
-                        </div>
-                        <div>
-                          <p className="text-xs font-bold text-white group-hover/node:text-rose-400 transition-colors">Global Multi-Cloud</p>
-                          <p className="text-[9px] text-zinc-500 font-mono mt-0.5">EKS • HYBRID CORE LANDING</p>
-                        </div>
-                      </div>
-                      <div className="w-6 h-6 rounded-full border border-zinc-800 flex items-center justify-center text-zinc-600 group-hover/node:border-rose-500/30 group-hover/node:text-rose-500 transition-all">
-                        <ChevronRight className="w-3.5 h-3.5" />
-                      </div>
-                    </div>
-
-                    <div className="group/node flex items-center justify-between p-3.5 rounded-2xl bg-zinc-900/30 border border-white/5 hover:border-rose-500/30 hover:bg-zinc-950/60 transition-all duration-300">
-                      <div className="flex items-center gap-3.5">
-                        <div className="w-10 h-10 rounded-xl bg-rose-500/10 flex items-center justify-center group-hover/node:bg-rose-500/20 transition-all">
-                          <Zap className="w-5 h-5 text-rose-500" />
-                        </div>
-                        <div>
-                          <p className="text-xs font-bold text-white group-hover/node:text-rose-400 transition-colors">Secure CI/CD GitOps</p>
-                          <p className="text-[9px] text-zinc-500 font-mono mt-0.5">TERRAFORM • AUTOMATED SRE</p>
-                        </div>
-                      </div>
-                      <div className="w-6 h-6 rounded-full border border-zinc-800 flex items-center justify-center text-zinc-600 group-hover/node:border-rose-500/30 group-hover/node:text-rose-500 transition-all">
-                        <ChevronRight className="w-3.5 h-3.5" />
-                      </div>
-                    </div>
-
-                    <div className="group/node flex items-center justify-between p-3.5 rounded-2xl bg-zinc-900/30 border border-white/5 hover:border-rose-500/30 hover:bg-zinc-950/60 transition-all duration-300">
-                      <div className="flex items-center gap-3.5">
-                        <div className="w-10 h-10 rounded-xl bg-rose-500/10 flex items-center justify-center group-hover/node:bg-rose-500/20 transition-all">
-                          <Shield className="w-5 h-5 text-rose-500" />
-                        </div>
-                        <div>
-                          <p className="text-xs font-bold text-white group-hover/node:text-rose-400 transition-colors">Zero-Trust Posture</p>
-                          <p className="text-[9px] text-zinc-500 font-mono mt-0.5">IAM SECURE • COMPLIANCE GRC</p>
-                        </div>
-                      </div>
-                      <div className="w-6 h-6 rounded-full border border-zinc-800 flex items-center justify-center text-zinc-600 group-hover/node:border-rose-500/30 group-hover/node:text-rose-500 transition-all">
-                        <ChevronRight className="w-3.5 h-3.5" />
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* System stats overlay in bottom dashboard */}
-                  <div className="mt-6 pt-5 border-t border-zinc-900 grid grid-cols-2 gap-4">
-                    <div className="p-3 bg-zinc-900/20 border border-zinc-900 rounded-xl">
-                      <p className="text-[9px] text-zinc-500 font-mono">LATENCY_SLO</p>
-                      <p className="text-sm font-bold text-white mt-0.5">&lt; 90ms</p>
-                    </div>
-                    <div className="p-3 bg-zinc-900/20 border border-zinc-900 rounded-xl">
-                      <p className="text-[9px] text-zinc-500 font-mono">SLI_UPTIME</p>
-                      <p className="text-sm font-bold text-emerald-500 mt-0.5">99.999%</p>
-                    </div>
-                  </div>
-
-                </div>
+            {/* Hero Right Visual: Ecosystem Image */}
+            <div className="lg:col-span-5 flex items-center justify-center lg:justify-end z-10 w-full">
+              <Reveal delay={0.2} className="w-full flex items-center justify-center lg:justify-end">
+                <img
+                  src="/assets/herocard/ecosystempage.png"
+                  alt="Ecosystem Capabilities"
+                  className="w-full max-w-[320px] sm:max-w-[380px] lg:max-w-[480px] h-auto object-contain select-none"
+                />
               </Reveal>
             </div>
             
