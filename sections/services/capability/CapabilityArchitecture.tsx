@@ -7,6 +7,9 @@ import { Reveal } from "@/components/ui/Reveal";
 interface CapabilityArchitectureProps {
   serviceSlug: string;
   capabilityTitle: string;
+  overrideTitle?: string;
+  overrideSubtitle?: string;
+  overrideTopologyTitle?: string;
 }
 
 interface ArchitectureFlow {
@@ -59,77 +62,83 @@ const architectureRegistry: Record<string, ArchitectureFlow> = {
     ]
   },
   "software-development": {
-    title: "Distributed Microservices Pipeline",
+    title: "Modular Software Architecture Flow",
     layers: [
-      { label: "Layer 01: User Experience", node: "React Client Webapps & Native Mobile Apps" },
-      { label: "Layer 02: Application Services", node: "API Gateway Router & Envoy Message Proxy" },
-      { label: "Layer 03: AI & Automation", node: "Asynchronous Message Queues (Apache Kafka / RabbitMQ)" },
-      { label: "Layer 04: Data Platform", node: "Distributed Cache Clusters (Redis) & Relational DBs" },
-      { label: "Layer 05: Cloud & Security", node: "Secure Cloud Compute Containers (Docker / ECS)" }
+      { label: "Layer 01: Content Delivery (Edge CDN)", node: "Fast Server-Side Rendering (SSR)" },
+      { label: "Layer 02: Microservices API Gateway", node: "Reverse Proxy / JSON Validation" },
+      { label: "Layer 03: Decoupled Business Core", node: "Functional Services / Node Actions" },
+      { label: "Layer 04: Distributed Cache Layer", node: "Memory Database / Session Storage" },
+      { label: "Layer 05: High-Write Relational Storage", node: "Postgres DB / Connection Pooling" }
     ]
   },
   "digital-transformation": {
-    title: "Legacy Modernization Ecosystem",
+    title: "Legacy-to-Cloud Transformation Flow",
     layers: [
-      { label: "Layer 01: User Experience", node: "Customer Web Portals & Mobile Booking Apps" },
-      { label: "Layer 02: Application Services", node: "Modern API Adapters & JSON Schema Transformers" },
-      { label: "Layer 03: AI & Automation", node: "Workflow Orchestrations & Notification Senders" },
-      { label: "Layer 04: Data Platform", node: "Operational Data Stores & Legacy Mainframe Databases" },
-      { label: "Layer 05: Cloud & Security", node: "Audited Enterprise Cloud Stacks & Security Gates" }
+      { label: "Layer 01: Legacy System Adapters", node: "On-Premises Data Connectors" },
+      { label: "Layer 02: Secure VPN/ExpressRoute Tunnel", node: "Encrypted Data Transmission" },
+      { label: "Layer 03: Message Queue & ETL Pipeline", node: "Stream Transformation / Validation" },
+      { label: "Layer 04: Cloud Data Lake Storage", node: "Scalable Blob Storage / Data Vaults" },
+      { label: "Layer 05: Modern API Integration Hub", node: "REST / GraphQL Microservices" }
     ]
   },
   "data-engineering": {
-    title: "Streaming Data Lakehouse Pipeline",
+    title: "Real-Time Data Pipeline Flow",
     layers: [
-      { label: "Layer 01: User Experience", node: "Telemetry Events & Real-time IoT Ingestion Routes" },
-      { label: "Layer 02: Application Services", node: "Distributed Stream Processors (Apache Spark / Flink)" },
-      { label: "Layer 03: AI & Automation", node: "Schema Validation Rules & Data Quality Audits" },
-      { label: "Layer 04: Data Platform", node: "Data Lakehouse Storage (Delta Lake, Apache Iceberg)" },
-      { label: "Layer 05: Cloud & Security", node: "Enterprise BI Connectors & Query Security Logs" }
+      { label: "Layer 01: Streaming Event Hub", node: "Apache Kafka / Azure Event Grid" },
+      { label: "Layer 02: Stream Processing Cluster", node: "Apache Spark / Real-Time Compute" },
+      { label: "Layer 03: Unified Schema Catalog", node: "Data Dictionary / Metadata Control" },
+      { label: "Layer 04: Cloud Data Warehouse", node: "Snowflake / Google BigQuery Storage" },
+      { label: "Layer 05: Business Analytics Dashboard", node: "Real-time BI / Analytics Interface" }
     ]
   },
   "managed-services": {
-    title: "Incident Monitoring & Auto-Resolution",
+    title: "24/7 Managed Telemetry Flow",
     layers: [
-      { label: "Layer 01: User Experience", node: "Public Status Dashboards & User Incident Forms" },
-      { label: "Layer 02: Application Services", node: "Service Desk Systems & Incident Router API" },
-      { label: "Layer 03: AI & Automation", node: "Active Resource Monitors & Telemetry Scanners" },
-      { label: "Layer 04: Data Platform", node: "Metric Vault Databases (Prometheus / InfluxDB)" },
-      { label: "Layer 05: Cloud & Security", node: "Auto-Backup Verifications & Cloud Failover Actions" }
+      { label: "Layer 01: Distributed Agent Monitors", node: "Performance Metrics & Log Exporters" },
+      { label: "Layer 02: Centralized SIEM/Telemetry Hub", node: "Datadog / Prometheus Cluster" },
+      { label: "Layer 03: AI Incident Classification", node: "Auto-Severity / Priority Routing" },
+      { label: "Layer 04: Cloud Support Incident Alert", node: "PagerDuty / On-Call Notification" },
+      { label: "Layer 05: Immutable Recovery Vaults", node: "Auto-Backups / Failover Verification" }
     ]
   },
   "qa-testing": {
-    title: "Continuous Quality Gating Grid",
+    title: "Automated QA Verification Flow",
     layers: [
-      { label: "Layer 01: User Experience", node: "QA Engineer Dashboards & CI Build Triggers" },
-      { label: "Layer 02: Application Services", node: "Parallel Playwright Browser Grid Controllers" },
-      { label: "Layer 03: AI & Automation", node: "Visual Layout Regression Checkers & Mock Payload Gen" },
-      { label: "Layer 04: Data Platform", node: "Test Report Databases & Execution logs" },
-      { label: "Layer 05: Cloud & Security", node: "Quality Guardrail Gates Blocking Defect Deployments" }
+      { label: "Layer 01: Test Suite Trigger Event", node: "Git Branch Push / PR Creation" },
+      { label: "Layer 02: Parallel Browser Runners", node: "Cypress / Selenium Virtual Hosts" },
+      { label: "Layer 03: Dynamic API Payload Tests", node: "JSON Request / Response Validations" },
+      { label: "Layer 04: Visual Regression Scans", node: "Snapshot Comparison / Layout Audits" },
+      { label: "Layer 05: Quality Gate Report Output", node: "JUnit Reports / Build Block Checks" }
     ]
   },
   "it-consulting": {
-    title: "IT Enterprise Portfolio Blueprint",
+    title: "Strategic Consulting Roadmap Flow",
     layers: [
-      { label: "Layer 01: User Experience", node: "Management Planning Boards & Strategic Portals" },
-      { label: "Layer 02: Application Services", node: "Vendor Application Auditing Utilities" },
-      { label: "Layer 03: AI & Automation", node: "Capacity Projection Engines & Migration Planners" },
-      { label: "Layer 04: Data Platform", node: "Consolidated Software Asset Catalogs" },
-      { label: "Layer 05: Cloud & Security", node: "Disaster Recovery Playbooks & Business Safety Audits" }
+      { label: "Layer 01: Infrastructure Audit Stage", node: "SaaS & Computing Asset Analysis" },
+      { label: "Layer 02: Cost & Bottleneck Assessment", node: "Underutilized Cloud Resource Report" },
+      { label: "Layer 03: Architecture Strategy Draft", node: "Cloud Transition & Migration Plan" },
+      { label: "Layer 04: Technical Sandbox Testing", node: "PoC Verification / Tool Selection" },
+      { label: "Layer 05: Production Deployment Guide", node: "Milestone Map & Systems Handover" }
     ]
   }
 };
 
 const benefitsList = [
-  { title: "Scalable", desc: "Built for dynamic enterprise growth." },
-  { title: "Secure", desc: "Zero-trust global access protection." },
-  { title: "Automated", desc: "Continuous rapid cloud deployment." },
-  { title: "High Availability", desc: "Always online with zero downtime." },
+  { title: "Zero Latency", desc: "Edge-caching and query optimization." },
+  { title: "SOC-2 Ready", desc: "Data protection and system monitoring." },
+  { title: "99.99% Uptime", desc: "Redundant geo-replicated deployments." },
+  { title: "Auto Scaling", desc: "Adapts dynamically to traffic swings." },
   { title: "Cloud Native", desc: "Optimized for modern cloud stacks." },
   { title: "Future Ready", desc: "Modular, decoupled, and upgradable." }
 ];
 
-export function CapabilityArchitecture({ serviceSlug, capabilityTitle }: CapabilityArchitectureProps) {
+export function CapabilityArchitecture({ 
+  serviceSlug, 
+  capabilityTitle,
+  overrideTitle,
+  overrideSubtitle,
+  overrideTopologyTitle
+}: CapabilityArchitectureProps) {
   const flow = architectureRegistry[serviceSlug] || architectureRegistry["ai-data-innovation"];
 
   return (
@@ -149,7 +158,7 @@ export function CapabilityArchitecture({ serviceSlug, capabilityTitle }: Capabil
                 SYSTEM TOPOLOGY
               </span>
               <h3 className="text-lg font-bold text-white uppercase tracking-wider">
-                {flow.title}
+                {overrideTopologyTitle || flow.title}
               </h3>
             </Reveal>
 
@@ -227,10 +236,10 @@ export function CapabilityArchitecture({ serviceSlug, capabilityTitle }: Capabil
                 </span>
               </div>
               <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white uppercase leading-tight mb-4">
-                Built for Scale, Security &amp; <span className="text-rose-500">Performance</span>
+                {overrideTitle || <>Built for Scale, Security &amp; <span className="text-rose-500">Performance</span></>}
               </h2>
               <p className="text-sm md:text-base font-normal text-zinc-400 leading-relaxed">
-                Our architecture combines modern cloud platforms, AI technologies, secure policy controls, and automation frameworks to deliver enterprise-grade solutions.
+                {overrideSubtitle || "Our architecture combines modern cloud platforms, AI technologies, secure policy controls, and automation frameworks to deliver enterprise-grade solutions."}
               </p>
             </Reveal>
 

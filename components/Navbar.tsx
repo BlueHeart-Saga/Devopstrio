@@ -160,7 +160,10 @@ const serviceCategories = [
   }
 ];
 
-const servicesList = serviceCategories.map(cat => ({ name: cat.name, href: cat.href }));
+const servicesList = [
+  { name: "Explore 256 Services Directory", href: "/services/explore" },
+  ...serviceCategories.map(cat => ({ name: cat.name, href: cat.href }))
+];
 
 const industriesList = [
   { name: "Banking & Finance", desc: "Secure, regulatory-compliant solutions for banking, investing, and digital payments.", href: "/industries/banking-finance" },
@@ -577,10 +580,18 @@ export function Navbar() {
                   <div className="col-span-full border-t border-zinc-900/60 pt-4 mt-1 flex flex-row justify-between items-center">
                     <div className="flex items-center gap-4 text-[13px] font-medium text-zinc-400">
                       <Link 
+                        href="/services/explore" 
+                        className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300"
+                      >
+                        <span className="w-1.5 h-1.5 rounded-full bg-rose-500 animate-pulse" />
+                        <span>Explore Services Directory</span>
+                      </Link>
+                      <span className="text-zinc-800">|</span>
+                      <Link 
                         href="/insights/industry-events" 
                         className="hover:text-rose-500 transition-colors flex items-center gap-1.5"
                       >
-                        <span className="w-1.5 h-1.5 rounded-full bg-rose-500 animate-pulse" />
+                        {/* <span className="w-1.5 h-1.5 rounded-full bg-rose-500 animate-pulse" /> */}
                         <span>Events</span>
                       </Link>
                       <span className="text-zinc-800">|</span>

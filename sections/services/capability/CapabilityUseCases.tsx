@@ -8,6 +8,8 @@ import { Reveal } from "@/components/ui/Reveal";
 interface CapabilityUseCasesProps {
   serviceSlug: string;
   capabilityTitle: string;
+  overrideTitle?: string;
+  overrideSubtitle?: string;
 }
 
 interface IndustryUseCase {
@@ -135,7 +137,12 @@ const industryList: IndustryUseCase[] = [
 
 const defaultBullets = ["Regulatory Compliance Checks", "Secure Data Governance", "Infrastructure Audit Trails"];
 
-export function CapabilityUseCases({ serviceSlug, capabilityTitle }: CapabilityUseCasesProps) {
+export function CapabilityUseCases({ 
+  serviceSlug, 
+  capabilityTitle,
+  overrideTitle,
+  overrideSubtitle
+}: CapabilityUseCasesProps) {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
 
   const scroll = (direction: "left" | "right") => {
@@ -162,10 +169,10 @@ export function CapabilityUseCases({ serviceSlug, capabilityTitle }: CapabilityU
               REAL-WORLD APPLICATIONS
             </span>
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-white uppercase leading-tight mb-4">
-              How Organizations Use {capabilityTitle}
+              {overrideTitle || `How Organizations Use ${capabilityTitle}`}
             </h2>
             <p className="text-sm md:text-base font-normal text-zinc-400 leading-relaxed">
-              Discover how enterprise leaders adapt and deploy this capability across core sectors to automate operations, protect critical infrastructure, and generate business value.
+              {overrideSubtitle || `Discover how enterprise leaders adapt and deploy this capability across core sectors to automate operations, protect critical infrastructure, and generate business value.`}
             </p>
           </Reveal>
         </div>

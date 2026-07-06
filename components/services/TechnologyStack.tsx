@@ -10,6 +10,8 @@ export interface TechItem {
 
 export interface TechnologyStackProps {
   techs: TechItem[];
+  overrideTitle?: string;
+  overrideSubtitle?: string;
 }
 
 function getTechIcon(name: string): string {
@@ -84,7 +86,11 @@ const standardEcosystem = [
   { name: "Java", path: "/assets/Tech-icons/java-logo_svgstack_com_28601780931218.svg", backName: "Android", backPath: "/assets/Tech-icons/green-android-logo_svgstack_com_7441780931950.svg" }
 ];
 
-export function TechnologyStack({ techs }: TechnologyStackProps) {
+export function TechnologyStack({ 
+  techs,
+  overrideTitle,
+  overrideSubtitle
+}: TechnologyStackProps) {
   const [flippedCards, setFlippedCards] = React.useState<Record<number, boolean>>({});
 
   React.useEffect(() => {
@@ -142,10 +148,10 @@ export function TechnologyStack({ techs }: TechnologyStackProps) {
                 INTEGRATION STACK
               </span>
               <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white uppercase">
-                Target tech <span className="text-rose-500">frameworks</span>
+                {overrideTitle || <>Target tech <span className="text-rose-500">frameworks</span></>}
               </h2>
               <p className="text-zinc-100 text-xs md:text-sm font-semibold leading-relaxed mt-4 max-w-sm">
-                We integrate with high-performance tools, libraries, and microservice hosts optimized to handle large transaction volume and zero-latency workloads.
+                {overrideSubtitle || "We integrate with high-performance tools, libraries, and microservice hosts optimized to handle large transaction volume and zero-latency workloads."}
               </p>
             </Reveal>
           </div>

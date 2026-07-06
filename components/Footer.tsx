@@ -98,10 +98,7 @@ export function Footer() {
                   Devopstrio
                 </span>
               </Link>
-              <p className="text-[13.5px] text-zinc-300 font-medium leading-[1.8] mb-8 relative z-10 italic">
-                "Bridging the gap between visionary strategy and engineering excellence. We empower ambitious enterprises to build securely, scale effortlessly, and shape the future of technology."
-              </p>
-              <div className="flex flex-col gap-3">
+              {/* <div className="flex flex-col gap-3">
                 <a href="mailto:info@devopstrio.com" className="inline-flex items-center gap-3 text-[13px] font-semibold text-zinc-300 hover:text-white hover:translate-x-1 transition-all duration-300">
                   <span className="w-8 h-8 rounded-full bg-zinc-900/80 flex items-center justify-center border border-zinc-800">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 17a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9.5C2 7 4 5 6.5 5h11C20 5 22 7 22 9.5V17Z"></path><polyline points="2 7 12 14 22 7"></polyline></svg>
@@ -114,7 +111,7 @@ export function Footer() {
                   </span>
                   +44 747 306 3543
                 </a>
-              </div>
+              </div> */}
             </div>
           </div>
 
@@ -122,6 +119,7 @@ export function Footer() {
           <div>
             <h4 className="text-[11px] font-bold text-white mb-6 tracking-wider uppercase">Core Expertise</h4>
             <ul className="flex flex-col gap-3.5 text-[13px] text-zinc-400 font-semibold tracking-wide">
+              
               <li><Link href="/services/ai-data-innovation" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">AI & Data Innovation</Link></li>
               <li><Link href="/services/cloud-services" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Cloud Services</Link></li>
               <li><Link href="/services/devops-automation" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">DevOps & Automation</Link></li>
@@ -132,6 +130,7 @@ export function Footer() {
               <li><Link href="/services/managed-services" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Managed Services</Link></li>
               <li><Link href="/services/qa-testing" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">QA & Testing</Link></li>
               <li><Link href="/services/it-consulting" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">IT Consulting</Link></li>
+              <li><Link href="/services/explore" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Explore More Services</Link></li>
             </ul>
           </div>
 
@@ -204,18 +203,6 @@ export function Footer() {
         {/* Trust & Certifications Bar */}
         <div className="flex flex-wrap justify-center md:justify-between items-center py-6 border-t border-b border-zinc-900/60 mb-8 gap-y-6 w-full">
           
-          <div className="flex items-center gap-4 px-2">
-            <svg className="w-8 h-8 text-zinc-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.2}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-            </svg>
-            <div className="flex flex-col">
-              <span className="text-[13px] font-semibold text-zinc-200">ISO 27001:2022</span>
-              <span className="text-[11px] text-zinc-500">Certified</span>
-            </div>
-          </div>
-          
-          <div className="h-8 w-px bg-zinc-800/60 hidden md:block" />
-
           <div className="flex items-center gap-4 px-2">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <rect x="2" y="2" width="9" height="9" fill="#F25022"/>

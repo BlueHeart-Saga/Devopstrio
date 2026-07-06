@@ -7,6 +7,12 @@ interface CapabilityOverviewProps {
   title: string;
   subtitle: string;
   image: string;
+  overrideHeading?: string;
+  overrideParagraph1?: string;
+  overrideParagraph2?: string;
+  overrideDeepDiveHeading?: string;
+  overrideDeepDiveParagraph1?: string;
+  overrideDeepDiveParagraph2?: string;
 }
 
 function getCapabilityDefinition(title: string, subtitle: string) {
@@ -121,7 +127,17 @@ function getOverviewImage(title: string, incomingImage: string): string {
   return overviewImages[charSum % overviewImages.length];
 }
 
-export function CapabilityOverview({ title, subtitle, image }: CapabilityOverviewProps) {
+export function CapabilityOverview({ 
+  title, 
+  subtitle, 
+  image, 
+  overrideHeading, 
+  overrideParagraph1, 
+  overrideParagraph2,
+  overrideDeepDiveHeading,
+  overrideDeepDiveParagraph1,
+  overrideDeepDiveParagraph2
+}: CapabilityOverviewProps) {
   const def = getCapabilityDefinition(title, subtitle);
   const displayImage = getOverviewImage(title, image);
 
@@ -148,15 +164,15 @@ export function CapabilityOverview({ title, subtitle, image }: CapabilityOvervie
                 </span>
 
                 <h2 className="text-xl md:text-2xl xl:text-3xl font-bold leading-tight tracking-tight mb-6 text-white uppercase">
-                  Accelerating outcomes for <span className="text-rose-500">{title}</span>
+                  {overrideHeading || <>Accelerating outcomes for <span className="text-rose-500">{title}</span></>}
                 </h2>
 
-                <div className="space-y-4 text-zinc-200 text-xs md:text-sm font-semibold leading-relaxed">
-                  <p className="border-l-2 border-rose-500/50 pl-4">
-                    {subtitle}
+                <div className="space-y-4 text-zinc-200 text-xs md:text-sm font-semibold leading-relaxed text-left">
+                  <p className="border-l-2 border-rose-500/50 pl-4 text-left">
+                    {overrideParagraph1 || subtitle}
                   </p>
-                  <p className="border-l-2 border-white/10 pl-4 text-zinc-400">
-                    We deploy automated environments, rigorous telemetry monitoring, and secure VPC routing parameters to align with industry regulatory requirements.
+                  <p className="border-l-2 border-white/10 pl-4 text-zinc-400 text-left">
+                    {overrideParagraph2 || "We deploy automated environments, rigorous telemetry monitoring, and secure VPC routing parameters to align with industry regulatory requirements."}
                   </p>
                 </div>
               </div>
@@ -188,17 +204,17 @@ export function CapabilityOverview({ title, subtitle, image }: CapabilityOvervie
                 Deep Dive Explanation
               </span>
               <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold leading-tight tracking-tight text-white uppercase">
-                What is <span className="text-rose-500">{title}</span> ?
+                {overrideDeepDiveHeading || <>What is <span className="text-rose-500">{title}</span> ?</>}
               </h3>
             </div>
 
             {/* Centered Professional Paragraph Content */}
             <div className="max-w-6xl mx-auto text-center space-y-6">
               <p className="text-sm md:text-base lg:text-lg font-normal text-zinc-100 leading-relaxed font-sans">
-                {def.paragraph1}
+                {overrideDeepDiveParagraph1 || def.paragraph1}
               </p>
               <p className="text-sm md:text-base lg:text-lg font-normal text-zinc-300 leading-relaxed font-sans">
-                {def.paragraph2}
+                {overrideDeepDiveParagraph2 || def.paragraph2}
               </p>
             </div>
           </Reveal>

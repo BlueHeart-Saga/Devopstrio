@@ -6,6 +6,8 @@ import { Shield, Cpu, TrendingUp, Zap, Activity } from "lucide-react";
 
 interface CapabilityBenefitsProps {
   benefits: string[];
+  overrideTitle?: string;
+  overrideSubtitle?: string;
 }
 
 const icons = [
@@ -24,7 +26,11 @@ const tags = [
   "FINOPS OPTIMIZATION"
 ];
 
-export function CapabilityBenefits({ benefits }: CapabilityBenefitsProps) {
+export function CapabilityBenefits({ 
+  benefits,
+  overrideTitle,
+  overrideSubtitle
+}: CapabilityBenefitsProps) {
   return (
     <section id="benefits" className="w-full py-24 bg-black border-b border-zinc-900/60 relative overflow-hidden">
       {/* Subtle Background Glow to tie in with theme */}
@@ -44,13 +50,13 @@ export function CapabilityBenefits({ benefits }: CapabilityBenefitsProps) {
                   </span>
                 </div>
                 <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-6 text-white uppercase">
-                  Key outcomes &amp; <span className="text-rose-500">technical benefits</span>
+                  {overrideTitle || <>Key outcomes &amp; <span className="text-rose-500">technical benefits</span></>}
                 </h2>
               </Reveal>
 
               <Reveal delay={0.1}>
                 <p className="text-zinc-450 text-xs sm:text-sm leading-relaxed font-semibold max-w-2xl mb-8">
-                  We measure our success by the stability, security, and cost efficiency we deliver. Through automated pipelines, continuous optimization, and strict SOC-2 compliance, our capabilities translate directly into quantified business advantage.
+                  {overrideSubtitle || "We measure our success by the stability, security, and cost efficiency we deliver. Through automated pipelines, continuous optimization, and strict SOC-2 compliance, our capabilities translate directly into quantified business advantage."}
                 </p>
               </Reveal>
             </div>

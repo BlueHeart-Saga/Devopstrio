@@ -27,7 +27,7 @@ export const metadata: Metadata = {
 const servicesSections = [
   { id: "categories", label: "Categories" },
   { id: "capabilities", label: "Capabilities" },
-  // { id: "detailed-services", label: "Services Explorer" },
+  { id: "detailed-services", label: "Capability Directory" },
   { id: "delivery-framework", label: "Framework" },
   { id: "industries", label: "Industries" },
   { id: "why-devopstrio", label: "Why Us" },
@@ -83,9 +83,9 @@ export default function ServicesPage() {
       {/* <SvgWaveLine variant="particles" /> */}
 
       {/* 4. Detailed Services Explorer */}
-      {/* <div id="detailed-services">
+      <div id="detailed-services">
         <DetailedServices />
-      </div> */}
+      </div>
       <SvgWaveLine variant="grid" />
 
       {/* 5. Delivery Framework (Lifecycle) */}

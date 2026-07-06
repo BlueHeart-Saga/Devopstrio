@@ -6,6 +6,8 @@ import { Reveal } from "@/components/ui/Reveal";
 interface CapabilityOutcomesProps {
   serviceSlug: string;
   capabilityTitle: string;
+  overrideTitle?: string;
+  overrideDesc?: string;
 }
 
 interface SolutionItem {
@@ -337,7 +339,12 @@ const solutionsRegistry: Record<string, SolutionItem[]> = {
   ]
 };
 
-export function CapabilityOutcomes({ serviceSlug, capabilityTitle }: CapabilityOutcomesProps) {
+export function CapabilityOutcomes({ 
+  serviceSlug, 
+  capabilityTitle,
+  overrideTitle,
+  overrideDesc
+}: CapabilityOutcomesProps) {
   const solutions = solutionsRegistry[serviceSlug] || solutionsRegistry["ai-data-innovation"];
 
   return (
@@ -350,10 +357,10 @@ export function CapabilityOutcomes({ serviceSlug, capabilityTitle }: CapabilityO
             </span>
           </div>
           <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-4 text-white uppercase">
-            Enterprise-Ready <span className="text-rose-500">{capabilityTitle}</span>
+            {overrideTitle || <>Enterprise-Ready <span className="text-rose-500">{capabilityTitle}</span></>}
           </h2>
           <p className="text-sm md:text-base font-normal text-zinc-350 max-w-3xl leading-relaxed">
-            We design, build, deploy, and optimize custom {capabilityTitle.toLowerCase()} architectures that transform operations, improve productivity, and create measurable business value.
+            {overrideDesc || `We design, build, deploy, and optimize custom ${capabilityTitle.toLowerCase()} architectures that transform operations, improve productivity, and create measurable business value.`}
           </p>
         </Reveal>
 

@@ -7,6 +7,9 @@ import { AlertCircle } from "lucide-react";
 interface CapabilityProblemProps {
   serviceSlug: string;
   capabilityTitle: string;
+  overrideTitle?: string;
+  overrideSubtitle?: string;
+  overridePoints?: string[];
 }
 
 const problemData: Record<string, { title: string; subtitle: string; points: string[]; image: string }> = {
@@ -112,8 +115,17 @@ const problemData: Record<string, { title: string; subtitle: string; points: str
   }
 };
 
-export function CapabilityProblem({ serviceSlug, capabilityTitle }: CapabilityProblemProps) {
+export function CapabilityProblem({ 
+  serviceSlug, 
+  capabilityTitle,
+  overrideTitle,
+  overrideSubtitle,
+  overridePoints
+}: CapabilityProblemProps) {
   const data = problemData[serviceSlug] || problemData["ai-data-innovation"];
+  const displayTitle = overrideTitle || data.title;
+  const displaySubtitle = overrideSubtitle || data.subtitle;
+  const displayPoints = overridePoints || data.points;
 
   return (
     <section id="business-problem" className="w-full bg-[#030303] text-white relative overflow-hidden py-16 border-b border-zinc-900/60">
@@ -135,14 +147,14 @@ export function CapabilityProblem({ serviceSlug, capabilityTitle }: CapabilityPr
           </Reveal>
 
           <Reveal delay={0.05}>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight leading-tight mb-4 text-white uppercase">
-              Solving <span className="text-[#E11D48]">{data.title}</span>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight leading-tight mb-4 text-white uppercase text-center">
+              Solving <span className="text-[#E11D48]">{displayTitle}</span>
             </h2>
           </Reveal>
 
           <Reveal delay={0.1}>
-            <p className="text-zinc-400 text-xs sm:text-sm leading-relaxed font-semibold max-w-xl mx-auto">
-              {data.subtitle}
+            <p className="text-zinc-400 text-xs sm:text-sm leading-relaxed font-semibold max-w-xl mx-auto text-center">
+              {displaySubtitle}
             </p>
           </Reveal>
         </div>
@@ -154,7 +166,7 @@ export function CapabilityProblem({ serviceSlug, capabilityTitle }: CapabilityPr
             {/* The Image */}
             <img
               src={data.image}
-              alt={data.title}
+              alt={displayTitle}
               className="w-full h-auto object-contain brightness-[0.95] contrast-[1.02]"
             />
 
@@ -168,7 +180,7 @@ export function CapabilityProblem({ serviceSlug, capabilityTitle }: CapabilityPr
 
         {/* 3. Problem Points Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6 w-full border-t border-zinc-900/40 pt-10">
-          {data.points.map((point, idx) => (
+          {displayPoints.map((point, idx) => (
             <Reveal key={idx} delay={0.2 + idx * 0.05}>
               <div className="bg-zinc-950/20 border border-zinc-900/60 rounded-xl p-5 hover:border-zinc-800 hover:bg-zinc-900/5 transition-all duration-300 group relative">
                 <div className="absolute top-0 right-0 w-16 h-16 bg-[radial-gradient(circle_at_center,rgba(244,63,94,0.01),transparent_75%)] pointer-events-none" />
@@ -177,7 +189,7 @@ export function CapabilityProblem({ serviceSlug, capabilityTitle }: CapabilityPr
                   <AlertCircle size={12} />
                 </div>
                 
-                <p className="text-xs text-zinc-350 leading-relaxed font-semibold">
+                <p className="text-xs text-zinc-350 leading-relaxed font-semibold text-left">
                   {point}
                 </p>
               </div>
