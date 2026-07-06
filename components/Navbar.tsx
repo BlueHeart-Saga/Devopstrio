@@ -531,7 +531,7 @@ export function Navbar() {
 
                   {/* Middle sidebar with categories */}
                   <div className="flex flex-col border-r border-zinc-900 pr-4 gap-1">
-                    <span className="text-xs font-mono tracking-widest text-zinc-500 uppercase block px-3 mb-2">Practice Areas</span>
+                    <span className="text-xs font-mono tracking-widest text-zinc-500 uppercase block px-3 mb-2">Core Expertise</span>
                     {serviceCategories.map((cat) => (
                       <Link
                         key={cat.id}
@@ -603,6 +603,7 @@ export function Navbar() {
                         </a>
                       </div>
                     </div>
+                    {/* 
                     <div className="flex items-center gap-4">
                       <span className="text-[10px] font-bold tracking-wider uppercase text-zinc-500">Connect With Us</span>
                       <div className="flex items-center gap-3 border-l border-zinc-800 pl-4">
@@ -641,6 +642,44 @@ export function Navbar() {
                           title="YouTube"
                         >
                           <img src="/assets/social-icons/youtube.svg" alt="YouTube" className="w-8 h-8 object-contain transition-all duration-200" />
+                        </a>
+                      </div>
+                    </div>
+                    */}
+                    <div className="flex items-center gap-4">
+                      <span className="text-[10px] font-bold tracking-wider uppercase text-zinc-500">Connect With Us</span>
+                      <div className="flex items-center gap-4 border-l border-zinc-800 pl-4">
+                        <a
+                          href="https://www.linkedin.com/company/devopstrioglobal/posts/?feedView=all"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-[11px] font-bold tracking-widest uppercase text-zinc-400 hover:text-white transition-colors duration-200"
+                        >
+                          LinkedIn
+                        </a>
+                        <a
+                          href="https://www.facebook.com/profile.php?id=61579126233218"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-[11px] font-bold tracking-widest uppercase text-zinc-400 hover:text-white transition-colors duration-200"
+                        >
+                          Facebook
+                        </a>
+                        <a
+                          href="https://www.instagram.com/devopstrio_offcl/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-[11px] font-bold tracking-widest uppercase text-zinc-400 hover:text-white transition-colors duration-200"
+                        >
+                          Instagram
+                        </a>
+                        <a
+                          href="https://www.youtube.com/@Devopstrioltd"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-[11px] font-bold tracking-widest uppercase text-zinc-400 hover:text-white transition-colors duration-200"
+                        >
+                          YouTube
                         </a>
                       </div>
                     </div>
@@ -740,6 +779,7 @@ export function Navbar() {
                         </a>
                       </div>
                     </div>
+                    {/* 
                     <div className="flex items-center gap-4">
                       <span className="text-[10px] font-bold tracking-wider uppercase text-zinc-500">Connect With Us</span>
                       <div className="flex items-center gap-3 border-l border-zinc-800 pl-4">
@@ -778,6 +818,44 @@ export function Navbar() {
                           title="YouTube"
                         >
                           <img src="/assets/social-icons/youtube.svg" alt="YouTube" className="w-8 h-8 object-contain transition-all duration-200" />
+                        </a>
+                      </div>
+                    </div>
+                    */}
+                    <div className="flex items-center gap-4">
+                      <span className="text-[10px] font-bold tracking-wider uppercase text-zinc-500">Connect With Us</span>
+                      <div className="flex items-center gap-4 border-l border-zinc-800 pl-4">
+                        <a
+                          href="https://www.linkedin.com/company/devopstrioglobal/posts/?feedView=all"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-[11px] font-bold tracking-widest uppercase text-zinc-400 hover:text-white transition-colors duration-200"
+                        >
+                          LinkedIn
+                        </a>
+                        <a
+                          href="https://www.facebook.com/profile.php?id=61579126233218"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-[11px] font-bold tracking-widest uppercase text-zinc-400 hover:text-white transition-colors duration-200"
+                        >
+                          Facebook
+                        </a>
+                        <a
+                          href="https://www.instagram.com/devopstrio_offcl/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-[11px] font-bold tracking-widest uppercase text-zinc-400 hover:text-white transition-colors duration-200"
+                        >
+                          Instagram
+                        </a>
+                        <a
+                          href="https://www.youtube.com/@Devopstrioltd"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-[11px] font-bold tracking-widest uppercase text-zinc-400 hover:text-white transition-colors duration-200"
+                        >
+                          YouTube
                         </a>
                       </div>
                     </div>
@@ -899,6 +977,7 @@ export function Navbar() {
                         </a>
                       </div>
                     </div>
+                    {/* 
                     <div className="flex items-center gap-4">
                       <span className="text-[10px] font-bold tracking-wider uppercase text-zinc-500">Connect With Us</span>
                       <div className="flex items-center gap-3 border-l border-zinc-800 pl-4">
@@ -937,6 +1016,44 @@ export function Navbar() {
                           title="YouTube"
                         >
                           <img src="/assets/social-icons/youtube.svg" alt="YouTube" className="w-8 h-8 object-contain transition-all duration-200" />
+                        </a>
+                      </div>
+                    </div>
+                    */}
+                    <div className="flex items-center gap-4">
+                      <span className="text-[10px] font-bold tracking-wider uppercase text-zinc-500">Connect With Us</span>
+                      <div className="flex items-center gap-4 border-l border-zinc-800 pl-4">
+                        <a
+                          href="https://www.linkedin.com/company/devopstrioglobal/posts/?feedView=all"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-[11px] font-bold tracking-widest uppercase text-zinc-400 hover:text-white transition-colors duration-200"
+                        >
+                          LinkedIn
+                        </a>
+                        <a
+                          href="https://www.facebook.com/profile.php?id=61579126233218"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-[11px] font-bold tracking-widest uppercase text-zinc-400 hover:text-white transition-colors duration-200"
+                        >
+                          Facebook
+                        </a>
+                        <a
+                          href="https://www.instagram.com/devopstrio_offcl/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-[11px] font-bold tracking-widest uppercase text-zinc-400 hover:text-white transition-colors duration-200"
+                        >
+                          Instagram
+                        </a>
+                        <a
+                          href="https://www.youtube.com/@Devopstrioltd"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-[11px] font-bold tracking-widest uppercase text-zinc-400 hover:text-white transition-colors duration-200"
+                        >
+                          YouTube
                         </a>
                       </div>
                     </div>
@@ -1059,6 +1176,7 @@ export function Navbar() {
                         </a>
                       </div>
                     </div>
+                    {/* 
                     <div className="flex items-center gap-4">
                       <span className="text-[10px] font-bold tracking-wider uppercase text-zinc-500">Connect With Us</span>
                       <div className="flex items-center gap-3 border-l border-zinc-800 pl-4">
@@ -1097,6 +1215,44 @@ export function Navbar() {
                           title="YouTube"
                         >
                           <img src="/assets/social-icons/youtube.svg" alt="YouTube" className="w-8 h-8 object-contain transition-all duration-200" />
+                        </a>
+                      </div>
+                    </div>
+                    */}
+                    <div className="flex items-center gap-4">
+                      <span className="text-[10px] font-bold tracking-wider uppercase text-zinc-500">Connect With Us</span>
+                      <div className="flex items-center gap-4 border-l border-zinc-800 pl-4">
+                        <a
+                          href="https://www.linkedin.com/company/devopstrioglobal/posts/?feedView=all"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-[11px] font-bold tracking-widest uppercase text-zinc-400 hover:text-white transition-colors duration-200"
+                        >
+                          LinkedIn
+                        </a>
+                        <a
+                          href="https://www.facebook.com/profile.php?id=61579126233218"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-[11px] font-bold tracking-widest uppercase text-zinc-400 hover:text-white transition-colors duration-200"
+                        >
+                          Facebook
+                        </a>
+                        <a
+                          href="https://www.instagram.com/devopstrio_offcl/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-[11px] font-bold tracking-widest uppercase text-zinc-400 hover:text-white transition-colors duration-200"
+                        >
+                          Instagram
+                        </a>
+                        <a
+                          href="https://www.youtube.com/@Devopstrioltd"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-[11px] font-bold tracking-widest uppercase text-zinc-400 hover:text-white transition-colors duration-200"
+                        >
+                          YouTube
                         </a>
                       </div>
                     </div>
@@ -1198,6 +1354,7 @@ export function Navbar() {
                         </a>
                       </div>
                     </div>
+                    {/* 
                     <div className="flex items-center gap-4">
                       <span className="text-[10px] font-bold tracking-wider uppercase text-zinc-500">Connect With Us</span>
                       <div className="flex items-center gap-3 border-l border-zinc-800 pl-4">
@@ -1236,6 +1393,44 @@ export function Navbar() {
                           title="YouTube"
                         >
                           <img src="/assets/social-icons/youtube.svg" alt="YouTube" className="w-8 h-8 object-contain transition-all duration-200" />
+                        </a>
+                      </div>
+                    </div>
+                    */}
+                    <div className="flex items-center gap-4">
+                      <span className="text-[10px] font-bold tracking-wider uppercase text-zinc-500">Connect With Us</span>
+                      <div className="flex items-center gap-4 border-l border-zinc-800 pl-4">
+                        <a
+                          href="https://www.linkedin.com/company/devopstrioglobal/posts/?feedView=all"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-[11px] font-bold tracking-widest uppercase text-zinc-400 hover:text-white transition-colors duration-200"
+                        >
+                          LinkedIn
+                        </a>
+                        <a
+                          href="https://www.facebook.com/profile.php?id=61579126233218"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-[11px] font-bold tracking-widest uppercase text-zinc-400 hover:text-white transition-colors duration-200"
+                        >
+                          Facebook
+                        </a>
+                        <a
+                          href="https://www.instagram.com/devopstrio_offcl/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-[11px] font-bold tracking-widest uppercase text-zinc-400 hover:text-white transition-colors duration-200"
+                        >
+                          Instagram
+                        </a>
+                        <a
+                          href="https://www.youtube.com/@Devopstrioltd"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-[11px] font-bold tracking-widest uppercase text-zinc-400 hover:text-white transition-colors duration-200"
+                        >
+                          YouTube
                         </a>
                       </div>
                     </div>

@@ -30,7 +30,7 @@ export function Footer() {
   };
 
   return (
-    <footer className="w-full bg-[#030303] text-zinc-550 pt-20 pb-12 relative font-sans mt-24">
+    <footer className="w-full bg-[#030303] text-zinc-550 pt-20 pb-4 relative font-sans mt-24">
       {/* Premium Dual-Line White Top Border */}
       <div className="absolute top-0 inset-x-0 flex flex-col items-center">
         <div className="relative w-full flex justify-center opacity-90">
@@ -98,153 +98,228 @@ export function Footer() {
                   Devopstrio
                 </span>
               </Link>
-              <p className="text-xs text-zinc-405 font-medium leading-relaxed">
-                Devopstrio is a global technology consulting and co-engineering partner, building compliant, cloud-native enterprise runtimes.
+              <p className="text-[13.5px] text-zinc-300 font-medium leading-[1.8] mb-8 relative z-10 italic">
+                "Bridging the gap between visionary strategy and engineering excellence. We empower ambitious enterprises to build securely, scale effortlessly, and shape the future of technology."
               </p>
+              <div className="flex flex-col gap-3">
+                <a href="mailto:info@devopstrio.com" className="inline-flex items-center gap-3 text-[13px] font-semibold text-zinc-300 hover:text-white hover:translate-x-1 transition-all duration-300">
+                  <span className="w-8 h-8 rounded-full bg-zinc-900/80 flex items-center justify-center border border-zinc-800">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 17a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9.5C2 7 4 5 6.5 5h11C20 5 22 7 22 9.5V17Z"></path><polyline points="2 7 12 14 22 7"></polyline></svg>
+                  </span>
+                  info@devopstrio.com
+                </a>
+                <a href="https://wa.me/447473063543" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 text-[13px] font-semibold text-zinc-300 hover:text-white hover:translate-x-1 transition-all duration-300">
+                  <span className="w-8 h-8 rounded-full bg-zinc-900/80 flex items-center justify-center border border-zinc-800">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                  </span>
+                  +44 747 306 3543
+                </a>
+              </div>
             </div>
           </div>
 
           {/* Col 2: Services / Practice Areas */}
           <div>
-            <h4 className="text-[11px] font-bold text-white mb-6 tracking-wider uppercase">Practice Areas</h4>
-            <ul className="flex flex-col gap-3 text-xs text-zinc-400 font-medium">
-              <li><Link href="/services/ai-data-innovation" className="hover:text-rose-500 transition-colors">AI & Data Innovation</Link></li>
-              <li><Link href="/services/cloud-services" className="hover:text-rose-500 transition-colors">Cloud Services</Link></li>
-              <li><Link href="/services/devops-automation" className="hover:text-rose-500 transition-colors">DevOps & Automation</Link></li>
-              <li><Link href="/services/cybersecurity" className="hover:text-rose-500 transition-colors">Cybersecurity</Link></li>
-              <li><Link href="/services/software-development" className="hover:text-rose-500 transition-colors">Software Development</Link></li>
-              <li><Link href="/services/digital-transformation" className="hover:text-rose-500 transition-colors">Digital Transformation</Link></li>
-              <li><Link href="/services/data-engineering" className="hover:text-rose-500 transition-colors">Data Engineering</Link></li>
-              <li><Link href="/services/managed-services" className="hover:text-rose-500 transition-colors">Managed Services</Link></li>
-              <li><Link href="/services/qa-testing" className="hover:text-rose-500 transition-colors">QA & Testing</Link></li>
-              <li><Link href="/services/it-consulting" className="hover:text-rose-500 transition-colors">IT Consulting</Link></li>
+            <h4 className="text-[11px] font-bold text-white mb-6 tracking-wider uppercase">Core Expertise</h4>
+            <ul className="flex flex-col gap-3.5 text-[13px] text-zinc-400 font-semibold tracking-wide">
+              <li><Link href="/services/ai-data-innovation" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">AI & Data Innovation</Link></li>
+              <li><Link href="/services/cloud-services" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Cloud Services</Link></li>
+              <li><Link href="/services/devops-automation" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">DevOps & Automation</Link></li>
+              <li><Link href="/services/cybersecurity" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Cybersecurity</Link></li>
+              <li><Link href="/services/software-development" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Software Development</Link></li>
+              <li><Link href="/services/digital-transformation" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Digital Transformation</Link></li>
+              <li><Link href="/services/data-engineering" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Data Engineering</Link></li>
+              <li><Link href="/services/managed-services" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Managed Services</Link></li>
+              <li><Link href="/services/qa-testing" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">QA & Testing</Link></li>
+              <li><Link href="/services/it-consulting" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">IT Consulting</Link></li>
             </ul>
           </div>
 
           {/* Col 3: Industries */}
           <div>
             <h4 className="text-[11px] font-bold text-white mb-6 tracking-wider uppercase">Industries</h4>
-            <ul className="flex flex-col gap-3 text-xs text-zinc-400 font-medium">
-              <li><Link href="/industries/banking-finance" className="hover:text-rose-500 transition-colors">Banking & Finance</Link></li>
-              <li><Link href="/industries/healthcare-life-sciences" className="hover:text-rose-500 transition-colors">Healthcare & Life Sciences</Link></li>
-              <li><Link href="/industries/retail-ecommerce" className="hover:text-rose-500 transition-colors">Retail & E-Commerce</Link></li>
-              <li><Link href="/industries/manufacturing" className="hover:text-rose-500 transition-colors">Manufacturing</Link></li>
-              <li><Link href="/industries/telecommunications" className="hover:text-rose-500 transition-colors">Telecommunications</Link></li>
-              <li><Link href="/industries/media-entertainment" className="hover:text-rose-500 transition-colors">Media & Entertainment</Link></li>
-              <li><Link href="/industries/education" className="hover:text-rose-500 transition-colors">Education</Link></li>
-              <li><Link href="/industries/government-public-sector" className="hover:text-rose-500 transition-colors">Government & Public Sector</Link></li>
+            <ul className="flex flex-col gap-3.5 text-[13px] text-zinc-400 font-semibold tracking-wide">
+              <li><Link href="/industries/banking-finance" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Banking & Finance</Link></li>
+              <li><Link href="/industries/healthcare-life-sciences" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Healthcare & Life Sciences</Link></li>
+              <li><Link href="/industries/retail-ecommerce" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Retail & E-Commerce</Link></li>
+              <li><Link href="/industries/manufacturing" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Manufacturing</Link></li>
+              <li><Link href="/industries/telecommunications" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Telecommunications</Link></li>
+              <li><Link href="/industries/media-entertainment" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Media & Entertainment</Link></li>
+              <li><Link href="/industries/education" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Education</Link></li>
+              <li><Link href="/industries/government-public-sector" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Government & Public Sector</Link></li>
             </ul>
           </div>
 
           {/* Col 4: Ecosystem */}
           <div>
             <h4 className="text-[11px] font-bold text-white mb-6 tracking-wider uppercase">Ecosystem</h4>
-            <ul className="flex flex-col gap-3 text-xs text-zinc-400 font-medium">
-              <li><Link href="/ecosystem/partnerships" className="hover:text-rose-500 transition-colors">Strategic Partnerships</Link></li>
-              <li><Link href="/ecosystem/innovation-labs" className="hover:text-rose-500 transition-colors">R&D Innovation Labs</Link></li>
-              <li><Link href="/ecosystem/platforms-solutions" className="hover:text-rose-500 transition-colors">Platforms & Solutions</Link></li>
-              <li><Link href="/ecosystem/technology-stack" className="hover:text-rose-500 transition-colors">Technology Stack</Link></li>
-              <li><Link href="/ecosystem/global-delivery" className="hover:text-rose-500 transition-colors">Global Delivery</Link></li>
-              <li><Link href="/ecosystem/engineering-excellence" className="hover:text-rose-500 transition-colors">Engineering Excellence</Link></li>
-              <li><Link href="/ecosystem/accelerators-frameworks" className="hover:text-rose-500 transition-colors">Accelerators & Frameworks</Link></li>
+            <ul className="flex flex-col gap-3.5 text-[13px] text-zinc-400 font-semibold tracking-wide">
+              <li><Link href="/ecosystem/partnerships" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Strategic Partnerships</Link></li>
+              <li><Link href="/ecosystem/innovation-labs" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">R&D Innovation Labs</Link></li>
+              <li><Link href="/ecosystem/platforms-solutions" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Platforms & Solutions</Link></li>
+              <li><Link href="/ecosystem/technology-stack" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Technology Stack</Link></li>
+              <li><Link href="/ecosystem/global-delivery" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Global Delivery</Link></li>
+              <li><Link href="/ecosystem/engineering-excellence" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Engineering Excellence</Link></li>
+              <li><Link href="/ecosystem/accelerators-frameworks" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Accelerators & Frameworks</Link></li>
             </ul>
           </div>
 
           {/* Col 5: Insights & Events */}
           <div>
             <h4 className="text-[11px] font-bold text-white mb-6 tracking-wider uppercase">Insights & Events</h4>
-            <ul className="flex flex-col gap-3 text-xs text-zinc-400 font-medium">
-              <li><Link href="/insights" className="hover:text-rose-500 transition-colors font-semibold text-zinc-300">Insights Hub</Link></li>
-              <li><Link href="/insights/blogs" className="hover:text-rose-500 transition-colors">Blogs</Link></li>
-              <li><Link href="/insights/case-studies" className="hover:text-rose-500 transition-colors">Case Studies</Link></li>
-              <li><Link href="/insights/white-paper" className="hover:text-rose-500 transition-colors">White Paper</Link></li>
-              <li><Link href="/insights/awards-milestones" className="hover:text-rose-500 transition-colors">Awards & Milestones</Link></li>
-              <li><Link href="/insights/industry-events" className="hover:text-rose-500 transition-colors">Industry Events</Link></li>
-              <li><Link href="/insights/celebrations" className="hover:text-rose-500 transition-colors">Celebrations</Link></li>
-              <li><Link href="/insights/team-culture" className="hover:text-rose-500 transition-colors">Team Culture</Link></li>
-              <li><Link href="/insights/client-transformations" className="hover:text-rose-500 transition-colors">Client Transformations</Link></li>
-              <li><Link href="/insights/impact-metrics" className="hover:text-rose-500 transition-colors">Impact Metrics</Link></li>
+            <ul className="flex flex-col gap-3.5 text-[13px] text-zinc-400 font-semibold tracking-wide">
+              <li><Link href="/insights" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300 text-zinc-300">Insights Hub</Link></li>
+              <li><Link href="/insights/blogs" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Blogs</Link></li>
+              <li><Link href="/insights/case-studies" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Case Studies</Link></li>
+              <li><Link href="/insights/white-paper" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">White Paper</Link></li>
+              <li><Link href="/insights/awards-milestones" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Awards & Milestones</Link></li>
+              <li><Link href="/insights/industry-events" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Industry Events</Link></li>
+              <li><Link href="/insights/celebrations" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Celebrations</Link></li>
+              <li><Link href="/insights/team-culture" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Team Culture</Link></li>
+              <li><Link href="/insights/client-transformations" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Client Transformations</Link></li>
+              <li><Link href="/insights/impact-metrics" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Impact Metrics</Link></li>
             </ul>
           </div>
 
           {/* Col 6: Company */}
           <div>
             <h4 className="text-[11px] font-bold text-white mb-6 tracking-wider uppercase">Company</h4>
-            <ul className="flex flex-col gap-3 text-xs text-zinc-400 font-medium">
-              <li><Link href="/about/company-overview" className="hover:text-rose-500 transition-colors">Company Overview</Link></li>
-              <li><Link href="/about/leadership-team" className="hover:text-rose-500 transition-colors">Leadership & Team</Link></li>
-              <li><Link href="/about/our-culture-people" className="hover:text-rose-500 transition-colors">Our Culture & People</Link></li>
-              <li><Link href="/about/global-internship" className="hover:text-rose-500 transition-colors">Global Internship</Link></li>
-              <li><Link href="/about/global-presence" className="hover:text-rose-500 transition-colors">Global Presence</Link></li>
-              <li><Link href="/about/partnerships-certifications" className="hover:text-rose-500 transition-colors">Partnerships & Certifications</Link></li>
-              <li><Link href="/about/awards-recognition" className="hover:text-rose-500 transition-colors">Awards & Recognition</Link></li>
-              <li><Link href="/about/sustainability-csr" className="hover:text-rose-500 transition-colors">Sustainability & CSR</Link></li>
-              <li><Link href="/about/testimonials" className="hover:text-rose-500 transition-colors">Testimonials & Success</Link></li>
-              <li><Link href="/about/customer-support" className="hover:text-rose-500 transition-colors">Customer Support</Link></li>
-              <li><Link href="/contact" className="hover:text-rose-500 transition-colors">Contact Us</Link></li>
+            <ul className="flex flex-col gap-3.5 text-[13px] text-zinc-400 font-semibold tracking-wide">
+              <li><Link href="/about/company-overview" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Company Overview</Link></li>
+              <li><Link href="/about/leadership-team" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Leadership & Team</Link></li>
+              <li><Link href="/about/our-culture-people" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Our Culture & People</Link></li>
+              <li><Link href="/about/global-internship" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Global Internship</Link></li>
+              <li><Link href="/about/global-presence" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Global Presence</Link></li>
+              <li><Link href="/about/partnerships-certifications" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Partnerships & Certifications</Link></li>
+              <li><Link href="/about/awards-recognition" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Awards & Recognition</Link></li>
+              <li><Link href="/about/sustainability-csr" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Sustainability & CSR</Link></li>
+              <li><Link href="/about/testimonials" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Testimonials & Success</Link></li>
+              <li><Link href="/about/customer-support" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Customer Support</Link></li>
+              <li><Link href="/contact" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Contact Us</Link></li>
             </ul>
           </div>
 
         </div>
 
-        {/* BOTTOM ROW: Socials & Copyright */}
-        <div className="flex flex-col md:flex-row justify-between items-center py-8 border-t border-b border-zinc-900/60 mb-8 gap-6">
-          <span className="text-xs text-zinc-500 font-medium tracking-wide">
-            Copyright © 2026 Devopstrio Limited. All rights reserved.
-          </span>
+        {/* Trust & Certifications Bar */}
+        <div className="flex flex-wrap justify-center md:justify-between items-center py-6 border-t border-b border-zinc-900/60 mb-8 gap-y-6 w-full">
+          
+          <div className="flex items-center gap-4 px-2">
+            <svg className="w-8 h-8 text-zinc-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+            </svg>
+            <div className="flex flex-col">
+              <span className="text-[13px] font-semibold text-zinc-200">ISO 27001:2022</span>
+              <span className="text-[11px] text-zinc-500">Certified</span>
+            </div>
+          </div>
+          
+          <div className="h-8 w-px bg-zinc-800/60 hidden md:block" />
+
+          <div className="flex items-center gap-4 px-2">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="2" y="2" width="9" height="9" fill="#F25022"/>
+              <rect x="13" y="2" width="9" height="9" fill="#7FBA00"/>
+              <rect x="2" y="13" width="9" height="9" fill="#00A4EF"/>
+              <rect x="13" y="13" width="9" height="9" fill="#FFB900"/>
+            </svg>
+            <div className="flex flex-col">
+              <span className="text-[13px] font-semibold text-zinc-200">Microsoft</span>
+              <span className="text-[11px] text-zinc-500">Solutions Partner</span>
+            </div>
+          </div>
+
+          <div className="h-8 w-px bg-zinc-800/60 hidden md:block" />
+
+          <div className="flex items-center justify-center px-2">
+            <img src="/assets/Tech_logos/AWS.svg" alt="AWS" className="h-7 object-contain brightness-0 invert opacity-90" />
+          </div>
+
+          <div className="h-8 w-px bg-zinc-800/60 hidden md:block" />
+
+          <div className="flex items-center gap-4 px-2">
+            <img src="/assets/Tech_logos/Google_Cloud.svg" alt="Google Cloud" className="w-8 h-8 object-contain" />
+            <div className="flex flex-col">
+              <span className="text-[13px] font-semibold text-zinc-200">Google Cloud</span>
+              <span className="text-[11px] text-zinc-500">Partner</span>
+            </div>
+          </div>
+
+          <div className="h-8 w-px bg-zinc-800/60 hidden md:block" />
+
+          <div className="flex flex-col items-center md:items-start px-2">
+            <span className="text-xl font-bold text-rose-500 tracking-tight leading-none">100%</span>
+            <span className="text-[11px] text-zinc-500 mt-1">Client Satisfaction</span>
+          </div>
+
+          <div className="h-8 w-px bg-zinc-800/60 hidden md:block" />
+
+          <div className="flex flex-col items-center md:items-start px-2">
+            <span className="text-xl font-bold text-rose-500 tracking-tight leading-none">24/7</span>
+            <span className="text-[11px] text-zinc-500 mt-1">Global Support</span>
+          </div>
+          
+        </div>
+
+        {/* BOTTOM ROW: Socials & Legal */}
+        <div className="flex flex-col md:flex-row justify-between items-center mb-8 gap-6 w-full">
+          
+          {/* Legal Links */}
+          <div className="flex flex-wrap justify-center md:justify-start gap-x-5 gap-y-2 text-[10px] font-bold tracking-widest uppercase text-zinc-500">
+            <a href="/disclaimer" className="hover:text-white transition-colors duration-300">Disclaimer</a>
+            <span className="text-zinc-800">•</span>
+            <a href="/privacy-policy" className="hover:text-white transition-colors duration-300">Privacy Policy</a>
+            <span className="text-zinc-800">•</span>
+            <a href="/terms-of-service" className="hover:text-white transition-colors duration-300">Terms of Service</a>
+            <span className="text-zinc-800">•</span>
+            <a href="/cookie-policy" className="hover:text-white transition-colors duration-300">Cookie Policy</a>
+            <span className="text-zinc-800">•</span>
+            <a href="/gdpr" className="hover:text-white transition-colors duration-300">GDPR Compliance</a>
+            <span className="text-zinc-800">•</span>
+            <a href="/sitemap" className="hover:text-white transition-colors duration-300">Sitemap</a>
+          </div>
+
           <div className="flex flex-wrap justify-center gap-6 md:gap-8 items-center">
             <a
               href="https://www.linkedin.com/company/devopstrioglobal/posts/?feedView=all"
               target="_blank"
               rel="noopener noreferrer"
-              className="transition-all duration-200 hover:scale-110"
-              title="LinkedIn"
+              className="text-[12px] font-bold tracking-[0.2em] uppercase text-zinc-400 hover:text-white transition-colors duration-300"
             >
-              <img src="/assets/social-icons/linkedin.svg" alt="LinkedIn" className="w-7 h-7 object-contain transition-all duration-200" />
+              LinkedIn
             </a>
             <a
               href="https://www.facebook.com/profile.php?id=61579126233218"
               target="_blank"
               rel="noopener noreferrer"
-              className="transition-all duration-200 hover:scale-110"
-              title="Facebook"
+              className="text-[12px] font-bold tracking-[0.2em] uppercase text-zinc-400 hover:text-white transition-colors duration-300"
             >
-              <img src="/assets/social-icons/facebook.svg" alt="Facebook" className="w-7 h-7 object-contain transition-all duration-200" />
+              Facebook
             </a>
             <a
               href="https://www.instagram.com/devopstrio_offcl/"
               target="_blank"
               rel="noopener noreferrer"
-              className="transition-all duration-200 hover:scale-110"
-              title="Instagram"
+              className="text-[12px] font-bold tracking-[0.2em] uppercase text-zinc-400 hover:text-white transition-colors duration-300"
             >
-              <img src="/assets/social-icons/instagram.svg" alt="Instagram" className="w-7 h-7 object-contain transition-all duration-200" />
+              Instagram
             </a>
             <a
               href="https://www.youtube.com/@Devopstrioltd"
               target="_blank"
               rel="noopener noreferrer"
-              className="transition-all duration-200 hover:scale-110"
-              title="YouTube"
+              className="text-[12px] font-bold tracking-[0.2em] uppercase text-zinc-400 hover:text-white transition-colors duration-300"
             >
-              <img src="/assets/social-icons/youtube.svg" alt="YouTube" className="w-7 h-7 object-contain transition-all duration-200" />
+              YouTube
             </a>
           </div>
         </div>
 
-        {/* Legal Links */}
-        <div className="flex flex-wrap justify-center md:justify-start gap-x-5 gap-y-2 text-xs text-zinc-500 font-medium">
-          <a href="/disclaimer" className="hover:text-zinc-350 transition-colors">Disclaimer</a>
-          <span>•</span>
-          <a href="/privacy-policy" className="hover:text-zinc-350 transition-colors">Privacy Policy</a>
-          <span>•</span>
-          <a href="/terms-of-service" className="hover:text-zinc-350 transition-colors">Terms of Service</a>
-          <span>•</span>
-          <a href="/cookie-policy" className="hover:text-zinc-350 transition-colors">Cookie Policy</a>
-          <span>•</span>
-          <a href="/gdpr" className="hover:text-zinc-350 transition-colors">GDPR Compliance</a>
-          <span>•</span>
-          <a href="/sitemap" className="hover:text-zinc-350 transition-colors">Sitemap</a>
+        {/* Copyright - Moved to bottom */}
+        <div className="text-center">
+          <span className="text-xs text-zinc-500 font-medium tracking-wide">
+            Copyright © 2026 Devopstrio Limited. All rights reserved.
+          </span>
         </div>
 
         {/* Collapsible HTML Directory Index for Search Bots & Users (Technical SEO Link Index) - Hidden from UI */}
