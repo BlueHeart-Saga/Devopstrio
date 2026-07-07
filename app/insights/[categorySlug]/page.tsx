@@ -96,9 +96,31 @@ export default async function CategoryLandingPage({ params }: CategoryPageProps)
 
   try {
     const allPosts = await insightsApi.getAllPosts();
-    posts = allPosts.filter(
+    let postsList = allPosts.filter(
       (p) => p.category && p.category.slug === categorySlug
     );
+
+    if (categorySlug === "white-paper" || categorySlug === "our-offerings") {
+      postsList = await Promise.all(
+        postsList.map(async (p) => {
+          try {
+            const raw = await insightsApi.getContentById(p.id);
+            const data = raw?.item ?? raw;
+            if (data && data.blocks) {
+              return {
+                ...p,
+                rawBlocks: data.blocks,
+              };
+            }
+          } catch (e) {
+            console.error("Failed to resolve blocks for post:", p.id, e);
+          }
+          return p;
+        })
+      );
+    }
+
+    posts = postsList;
 
     if (posts.length > 0) {
       categoryName = posts[0].category.name;

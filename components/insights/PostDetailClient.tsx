@@ -69,6 +69,7 @@ export function PostDetailClient({ post, relatedPosts, categorySlug, postId }: P
   const [copied, setCopied] = useState(false);
   const [showShareMenu, setShowShareMenu] = useState(false);
   const [previewDocUrl, setPreviewDocUrl] = useState<string | null>(null);
+  const isPdfCategory = categorySlug === "white-paper" || categorySlug === "our-offerings";
 
   useEffect(() => {
     const likedKey = `liked_${postId}`;
@@ -156,6 +157,7 @@ export function PostDetailClient({ post, relatedPosts, categorySlug, postId }: P
                       key={idx}
                       block={block}
                       onPreviewDoc={(url) => setPreviewDocUrl(url)}
+                      isPdfCategory={isPdfCategory}
                     />
                   ))
                 ) : (
@@ -265,18 +267,31 @@ export function PostDetailClient({ post, relatedPosts, categorySlug, postId }: P
                 <BookOpen className="text-rose-500" size={16} />
                 <span className="text-xs font-semibold text-zinc-200">Devopstrio Document Reader</span>
               </div>
-              <button
-                onClick={() => setPreviewDocUrl(null)}
-                className="p-1.5 rounded-lg bg-zinc-900 hover:bg-zinc-850 text-zinc-400 hover:text-white transition-colors"
-              >
-                <X size={16} />
-              </button>
+              
+              <div className="flex items-center gap-3">
+                <button
+                  onClick={() => setPreviewDocUrl(null)}
+                  className={`px-3 py-1.5 border border-rose-500/30 hover:border-rose-500 bg-rose-950/20 hover:bg-rose-600 text-rose-400 hover:text-white transition-all text-[10px] font-bold uppercase tracking-wider ${
+                    isPdfCategory ? "rounded-none" : "rounded-lg"
+                  }`}
+                >
+                  Read Article
+                </button>
+                <button
+                  onClick={() => setPreviewDocUrl(null)}
+                  className="p-1.5 rounded-lg bg-zinc-900 hover:bg-zinc-850 text-zinc-400 hover:text-white transition-colors"
+                >
+                  <X size={16} />
+                </button>
+              </div>
             </div>
 
             <div className="flex-1 bg-zinc-900/50 p-4">
               <iframe
                 src={`${previewDocUrl}#toolbar=0`}
-                className="w-full h-full border border-zinc-850 rounded-xl bg-zinc-950"
+                className={`w-full h-full border border-zinc-850 bg-zinc-950 ${
+                  isPdfCategory ? "rounded-none" : "rounded-xl"
+                }`}
                 title="Document Reader Frame"
               />
             </div>
@@ -287,7 +302,15 @@ export function PostDetailClient({ post, relatedPosts, categorySlug, postId }: P
   );
 }
 
-function BlockRenderer({ block, onPreviewDoc }: { block: PostBlock; onPreviewDoc: (url: string) => void }) {
+function BlockRenderer({
+  block,
+  onPreviewDoc,
+  isPdfCategory,
+}: {
+  block: PostBlock;
+  onPreviewDoc: (url: string) => void;
+  isPdfCategory: boolean;
+}) {
   const { type, data } = block;
   switch (type) {
     case "heading":
@@ -331,20 +354,34 @@ function BlockRenderer({ block, onPreviewDoc }: { block: PostBlock; onPreviewDoc
         ? `/api/insights-proxy/api/documents/${data.file_id}`
         : data.url || "";
       return (
-        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between p-6 bg-zinc-950/40 border border-white/5 hover:border-rose-500/25 rounded-2xl my-8 gap-4 backdrop-blur-md shadow-lg transition-all duration-300">
+        <div
+          className={`flex flex-col sm:flex-row items-start sm:items-center justify-between p-6 bg-zinc-950/40 border border-white/5 hover:border-rose-500/25 my-8 gap-4 backdrop-blur-md shadow-lg transition-all duration-300 ${
+            isPdfCategory ? "rounded-none" : "rounded-2xl"
+          }`}
+        >
           <div className="flex items-center gap-3">
-            <div className="p-3 rounded-xl bg-rose-600/10 text-rose-500 shadow-inner">
+            <div
+              className={`p-3 bg-rose-600/10 text-rose-500 shadow-inner ${
+                isPdfCategory ? "rounded-none" : "rounded-xl"
+              }`}
+            >
               <BookOpen size={22} />
             </div>
             <div className="text-left">
-              <h4 className="text-sm font-semibold text-zinc-200 leading-none mb-1.5">{data.title || "Research Publication"}</h4>
-              <span className="text-[10px] text-zinc-550 font-mono uppercase tracking-wider">PDF Document / Report</span>
+              <h4 className="text-sm font-semibold text-zinc-200 leading-none mb-1.5">
+                {data.title || "Research Publication"}
+              </h4>
+              <span className="text-[10px] text-zinc-550 font-mono uppercase tracking-wider">
+                PDF Document / Report
+              </span>
             </div>
           </div>
           <div className="flex items-center gap-2.5 w-full sm:w-auto">
             <button
               onClick={() => onPreviewDoc(docUrl)}
-              className="flex-1 inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white transition-all duration-300 hover:shadow-[0_0_25px_rgba(225,29,72,0.35)] hover:-translate-y-0.5"
+              className={`flex-1 inline-flex items-center justify-center px-6 py-3.5 text-xs font-bold tracking-wider uppercase bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white transition-all duration-300 hover:shadow-[0_0_25px_rgba(225,29,72,0.35)] hover:-translate-y-0.5 ${
+                isPdfCategory ? "rounded-none" : "rounded-lg"
+              }`}
             >
               Open Reader
             </button>
@@ -353,7 +390,9 @@ function BlockRenderer({ block, onPreviewDoc }: { block: PostBlock; onPreviewDoc
               download
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-1 inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase border border-zinc-850 hover:border-zinc-750 bg-zinc-950/60 hover:bg-zinc-900 text-white transition-all duration-300 hover:-translate-y-0.5"
+              className={`flex-1 inline-flex items-center justify-center px-6 py-3.5 text-xs font-bold tracking-wider uppercase border border-zinc-850 hover:border-zinc-750 bg-zinc-950/60 hover:bg-zinc-900 text-white transition-all duration-300 hover:-translate-y-0.5 ${
+                isPdfCategory ? "rounded-none" : "rounded-lg"
+              }`}
             >
               Download
             </a>

@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { Reveal } from "@/components/ui/Reveal";
+import { Hero } from "@/components/services/Hero";
 import {
   ArrowUpRight,
   ChevronDown,
@@ -67,57 +68,39 @@ export default function FollowTheSunSupportPage() {
   ];
 
   return (
-    <main className="relative min-h-screen bg-black text-white pt-16 font-sans overflow-x-hidden selection:bg-rose-500 selection:text-white">
+    <main className="relative min-h-screen bg-black text-white font-sans overflow-x-hidden selection:bg-rose-500 selection:text-white">
       {/* Background ambient mesh grid */}
       <div className="absolute inset-0 opacity-[0.015] pointer-events-none z-0" style={{ backgroundImage: "radial-gradient(circle, #fff 1px, transparent 1px)", backgroundSize: "32px 32px" }} />
 
       {/* 1. HERO SECTION */}
-      <section className="relative w-full min-h-screen flex flex-col items-center justify-center bg-black overflow-hidden pt-28 pb-20 border-b border-zinc-900/60">
-        {/* Background Image */}
-        <div className="absolute inset-0 z-0">
-          <img
-            src="/assets/ecosystem/sub-page-hero/Ecosystem_Gobal_delivery_network/Follow_the_sun.png"
-            alt="Follow-the-Sun Support background"
-            className="w-full h-full object-cover object-center opacity-100 select-none pointer-events-none scale-[1.02]"
-          />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,0,0,0.95)_0%,rgba(0,0,0,0.7)_45%,transparent_75%)] pointer-events-none" />
-          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent pointer-events-none" />
-        </div>
-        {/* Decorative Grid */}
-        
-        <div className="max-w-5xl mx-auto w-full px-12 xl:px-8 text-center relative z-20">
-          <Reveal className="mb-4">
-            <span className="gap-2 inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white transition-all duration-300 hover:shadow-[0_0_25px_rgba(225,29,72,0.35)] hover:-translate-y-0.5">
-              <Clock className="w-3.5 h-3.5" />
-              24/7 TIMEZONE ROTATIONS
-            </span>
-          </Reveal>
-          <Reveal delay={0.1}>
-            <h1 className="text-4xl md:text-6xl font-black text-white tracking-tight mb-6 leading-none">
+      <Hero
+        badge="24/7 TIMEZONE ROTATIONS"
+        title={
+          <>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-500 to-rose-700">
               Follow-the-Sun Support
-            </h1>
-          </Reveal>
-          <Reveal delay={0.2} className="max-w-3xl mx-auto mb-10">
-            <p className="text-xl md:text-2xl font-bold text-rose-500 mb-6">
-              Continuous Support Schedules with Zero Burnout.
-            </p>
-            <p className="text-zinc-200 text-sm md:text-base lg:text-lg leading-relaxed font-medium">
-              Coordinate shift transitions between UK, US, and India hubs to maintain constant service coverage while letting engineers work local daytime hours.
-            </p>
-          </Reveal>
-          <Reveal delay={0.3} className="flex justify-center gap-4">
-            <Link
+            </span>
+          </>
+        }
+        subtitle="Continuous Support Schedules with Zero Burnout. Coordinate shift transitions between UK, US, and India hubs to maintain constant service coverage while letting engineers work local daytime hours."
+        bgImage="/assets/ecosystem/sub-page-hero/Ecosystem_Gobal_delivery_network/Follow_the_sun.png"
+        stats={metrics}
+        breadcrumbs={[
+          { label: "ECOSYSTEM", href: "/ecosystem" },
+          { label: "GLOBAL DELIVERY", href: "/ecosystem/global-delivery" },
+          { label: "FOLLOW THE SUN SUPPORT" }
+        ]}
+      >
+        <Link
               href="/contact"
-              className="inline-flex items-center gap-3 pl-6 pr-3 py-3 bg-white text-black font-semibold text-xs md:text-sm tracking-wider rounded-full hover:bg-zinc-200 transition-all duration-300 shadow-[0_0_30px_rgba(255,255,255,0.05)] hover:shadow-[0_0_40px_rgba(225,29,72,0.2)]"
+              className="inline-flex items-center gap-3 pl-6 pr-3 py-3 bg-white text-black font-semibold text-xs md:text-sm tracking-wider rounded-full hover:bg-zinc-200 transition-all duration-300 shadow-lg shadow-white/5"
             >
               Design Support SLA
               <div className="w-7 h-7 rounded-full bg-black flex items-center justify-center">
                 <ArrowUpRight className="w-3.5 h-3.5 text-white" />
               </div>
             </Link>
-          </Reveal>
-        </div>
-      </section>
+      </Hero>
 
       {/* 2. OPERATIONS MODEL */}
       <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60 relative">

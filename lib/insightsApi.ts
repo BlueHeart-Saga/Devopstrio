@@ -270,15 +270,15 @@ class InsightsApiService {
       section: section
         ? { name: section.name, slug: section.slug }
         : {
-            name: backendContent.section_name,
-            slug: backendContent.section_slug,
-          },
+          name: backendContent.section_name,
+          slug: backendContent.section_slug,
+        },
       category: category
         ? { name: category.name, slug: category.slug }
         : {
-            name: backendContent.category_name,
-            slug: backendContent.category_slug,
-          },
+          name: backendContent.category_name,
+          slug: backendContent.category_slug,
+        },
       excerpt: backendContent.subtitle || this.extractExcerpt(backendContent.blocks),
       image: backendContent.cover_image_id
         ? `${this.baseUrl}${API_PREFIX}/images/${backendContent.cover_image_id}`

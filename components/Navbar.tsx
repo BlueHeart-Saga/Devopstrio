@@ -526,11 +526,11 @@ export function Navbar() {
                       </p>
                     </div>
                     <Link
-                      href="/contact"
+                      href="/services"
                       onClick={() => setActiveMenu(null)}
                       className="relative z-10 inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-wider text-red-700 hover:text-black transition-colors mt-4"
                     >
-                      Connect with us &rarr;
+                      Explore Our Services &rarr;
                     </Link>
                   </div>
 
