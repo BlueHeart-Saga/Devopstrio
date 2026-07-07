@@ -110,7 +110,7 @@ export function ExcellenceHero() {
   ];
 
   return (
-    <section className="relative w-full min-h-screen flex flex-col items-center justify-between bg-black overflow-hidden pt-28 pb-12 border-b border-zinc-900/60 animate-in fade-in duration-500">
+    <section className="relative w-full min-h-[85vh] flex flex-col items-center justify-between bg-black overflow-hidden pt-24 pb-8 border-b border-zinc-900/60 animate-in fade-in duration-500">
       {/* Background Glows */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(244,63,94,0.05),transparent_50%)] pointer-events-none" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-rose-600/[0.012] rounded-full blur-[140px] pointer-events-none" />
@@ -118,18 +118,18 @@ export function ExcellenceHero() {
       {/* Decorative Tech Grid */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#080808_1px,transparent_1px),linear-gradient(to_bottom,#080808_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10 flex flex-col items-center text-center flex-grow justify-center pt-8">
+      <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10 flex flex-col items-center text-center flex-grow justify-center pt-4">
 
         {/* Center Main Heading with Inline Emblem */}
         <Reveal delay={0.1} className="max-w-4xl">
-          <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight mb-6 text-white text-center">
+          <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight mb-4 text-white text-center">
             Engineering Excellence at Scale
           </h1>
         </Reveal>
 
         {/* Description Centered */}
         <Reveal delay={0.2} className="max-w-3xl">
-          <p className="text-zinc-350 text-xs md:text-sm lg:text-base leading-relaxed font-normal max-w-3xl text-center mx-auto opacity-95 mb-10">
+          <p className="text-zinc-350 text-xs md:text-sm lg:text-base leading-relaxed font-normal max-w-3xl text-center mx-auto opacity-95 mb-6">
             Building resilient, secure, and intelligent digital products through world-class engineering practices, modern architectures, and continuous innovation.
           </p>
         </Reveal>
@@ -148,7 +148,7 @@ export function ExcellenceHero() {
         </Reveal>
 
         {/* Fanned pillars cards rising from the bottom edge (9 Larger Cards Spread) */}
-        <div className="relative w-full max-w-[1000px] h-[340px] md:h-[380px] flex items-end justify-center select-none overflow-visible mt-24">
+        <div className="relative w-full max-w-[1000px] h-[340px] md:h-[380px] flex items-end justify-center select-none overflow-visible mt-12">
           <div className="flex items-end justify-center w-full relative h-full">
             {cards.map((card) => (
               <div

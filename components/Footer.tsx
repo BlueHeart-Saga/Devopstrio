@@ -160,6 +160,7 @@ export function Footer() {
               <li><Link href="/ecosystem/global-delivery" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Global Delivery</Link></li>
               <li><Link href="/ecosystem/engineering-excellence" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Engineering Excellence</Link></li>
               <li><Link href="/ecosystem/accelerators-frameworks" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Accelerators & Frameworks</Link></li>
+              <li><Link href="/ecosystem/landing-zone" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Landing Zone</Link></li>
             </ul>
           </div>
 
@@ -177,6 +178,7 @@ export function Footer() {
               <li><Link href="/insights/team-culture" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Team Culture</Link></li>
               <li><Link href="/insights/client-transformations" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Client Transformations</Link></li>
               <li><Link href="/insights/impact-metrics" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Impact Metrics</Link></li>
+              <li><Link href="/insights/our-offerings" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Our Offerings</Link></li>
             </ul>
           </div>
 

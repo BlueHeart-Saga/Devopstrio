@@ -15,7 +15,6 @@ export function CommunityCTA() {
         <Reveal className="max-w-3xl mx-auto flex flex-col items-center">
 
           <div className="inline-flex items-center gap-2 mb-4">
-            <span className="w-1.5 h-1.5 rounded-full bg-rose-500 animate-ping" />
             <span className="text-xs font-semibold tracking-[0.2em] uppercase text-zinc-400">
               JOIN THE WORKFORCE
             </span>

@@ -16,31 +16,31 @@ export function TechArchitectureFramework() {
     {
       levelName: "Experience Layer",
       desc: "Client interfaces providing responsive visual interactions.",
-      icon: <Layout size={16} />,
+      icon: <Layout size={20} />,
       nodes: ["Web Applications", "Mobile Applications", "Customer Portals"]
     },
     {
       levelName: "Application Layer",
       desc: "API gateways and microservice orchestration loops.",
-      icon: <Cpu size={16} />,
+      icon: <Cpu size={20} />,
       nodes: ["APIs", "Microservices", "Business Services"]
     },
     {
       levelName: "AI & Data Layer",
       desc: "Model inference runs and centralized telemetry storage.",
-      icon: <Database size={16} />,
+      icon: <Database size={20} />,
       nodes: ["AI Models", "Analytics Pipelines", "Data Platforms"]
     },
     {
       levelName: "Cloud Platform Layer",
       desc: "Cloud service hosts executing serverless compute tasks.",
-      icon: <Server size={16} />,
+      icon: <Server size={20} />,
       nodes: ["Microsoft Azure", "Amazon AWS", "Google GCP", "Oracle OCI"]
     },
     {
       levelName: "Infrastructure Layer",
       desc: "Bare-metal container nodes and virtual private networks.",
-      icon: <HardDrive size={16} />,
+      icon: <HardDrive size={20} />,
       nodes: ["Kubernetes", "Container Runtimes", "Network Services"]
     }
   ];
@@ -70,22 +70,23 @@ export function TechArchitectureFramework() {
             >
               {/* Level Left Title */}
               <div className="md:col-span-4 flex items-center gap-4 border-b md:border-b-0 md:border-r border-zinc-900 pb-4 md:pb-0 md:pr-6">
-                <div className="w-9 h-9 rounded-xl bg-zinc-900 border border-zinc-850 flex items-center justify-center text-rose-500 flex-shrink-0">
+                <div className="text-rose-500 flex-shrink-0 flex items-center justify-center">
                   {lvl.icon}
                 </div>
                 <div>
                   <h4 className="text-xs font-bold text-white uppercase tracking-wider">{lvl.levelName}</h4>
-                  <p className="text-[9px] text-zinc-550 font-semibold leading-relaxed mt-0.5">{lvl.desc}</p>
+                  <p className="text-[10px] text-zinc-400 font-semibold leading-relaxed mt-0.5">{lvl.desc}</p>
                 </div>
               </div>
 
               {/* Level Right Nodes */}
-              <div className="md:col-span-8 flex flex-wrap gap-2.5">
+              <div className="md:col-span-8 flex flex-wrap gap-x-6 gap-y-3">
                 {lvl.nodes.map((node) => (
                   <span
                     key={node}
-                    className="px-3.5 py-2 rounded-xl bg-zinc-900/40 border border-zinc-900 text-[10px] font-mono font-bold text-zinc-400 uppercase tracking-wider"
+                    className="text-xs md:text-sm font-sans font-medium text-zinc-300 tracking-wide flex items-center gap-2"
                   >
+                    <span className="w-1.5 h-1.5 rounded-full bg-rose-500/60" />
                     {node}
                   </span>
                 ))}

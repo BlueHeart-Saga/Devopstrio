@@ -45,6 +45,36 @@ export interface TransformedPost {
   rawBlocks?: PostBlock[];
 }
 
+const SECTION_SLUG_MAP: Record<string, string> = {
+  "Insights & Knowledge": "insights-knowledge",
+  "News & Events": "news-events",
+  "Life at Devopstrio": "life-at",
+  "Success Stories": "success-stories"
+};
+
+const CATEGORY_SLUG_MAP: Record<string, string> = {
+  "Blogs": "blogs",
+  "Case Studies": "case-studies",
+  "Our Offerings": "our-offerings",
+  "White Paper": "white-paper",
+  "Awards & Milestones": "awards-milestones",
+  "Industry Events": "industry-events",
+  "Celebrations": "celebrations",
+  "Team Culture": "team-culture",
+  "Client Transformations": "client-transformations",
+  "Impact Metrics": "impact-metrics"
+};
+
+function getSectionSlug(name: string): string {
+  if (!name) return "";
+  return SECTION_SLUG_MAP[name] || name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+}
+
+function getCategorySlug(name: string): string {
+  if (!name) return "";
+  return CATEGORY_SLUG_MAP[name] || name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+}
+
 class InsightsApiService {
   private baseUrl: string;
   private companyId: string;
@@ -212,28 +242,34 @@ class InsightsApiService {
     }
   }
 
-  async getAllPosts(limit = 50): Promise<TransformedPost[]> {
+  async getAllPosts(limit = 1000): Promise<TransformedPost[]> {
     try {
-      const structure = await this.getFullSiteStructure();
-      const allPosts: TransformedPost[] = [];
+      let allPosts: TransformedPost[] = [];
+      let skip = 0;
+      const pageSize = 50; // max allowed by API
+      let hasMore = true;
 
-      structure.forEach((section: any) => {
-        section.categories.forEach((category: any) => {
-          category.posts.forEach((post: any) => {
-            allPosts.push({
-              ...post,
-              section: {
-                slug: section.slug,
-                name: section.name,
-              },
-              category: {
-                slug: category.slug,
-                name: category.name,
-              },
-            });
-          });
+      while (hasMore && allPosts.length < limit) {
+        const queryLimit = Math.min(pageSize, limit - allPosts.length);
+        const contentRes = await this.getContent({
+          skip,
+          limit: queryLimit
         });
-      });
+
+        if (!contentRes || !contentRes.items || contentRes.items.length === 0) {
+          hasMore = false;
+          break;
+        }
+
+        const posts = contentRes.items.map((item: any) => this.transformContent(item));
+        allPosts = allPosts.concat(posts);
+
+        if (contentRes.items.length < queryLimit) {
+          hasMore = false;
+        } else {
+          skip += pageSize;
+        }
+      }
 
       return allPosts
         .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
@@ -264,21 +300,23 @@ class InsightsApiService {
       formattedDate = new Date().toISOString().split("T")[0];
     }
 
+    const sectionName = section?.name || backendContent.section?.name || backendContent.section_name || "";
+    const sectionSlug = section?.slug || backendContent.section?.slug || backendContent.section_slug || getSectionSlug(sectionName);
+
+    const categoryName = category?.name || backendContent.category?.name || backendContent.category_name || "";
+    const categorySlug = category?.slug || backendContent.category?.slug || backendContent.category_slug || getCategorySlug(categoryName);
+
     return {
       id: backendContent.id,
       title: backendContent.title,
-      section: section
-        ? { name: section.name, slug: section.slug }
-        : {
-          name: backendContent.section_name,
-          slug: backendContent.section_slug,
-        },
-      category: category
-        ? { name: category.name, slug: category.slug }
-        : {
-          name: backendContent.category_name,
-          slug: backendContent.category_slug,
-        },
+      section: {
+        name: sectionName,
+        slug: sectionSlug,
+      },
+      category: {
+        name: categoryName,
+        slug: categorySlug,
+      },
       excerpt: backendContent.subtitle || this.extractExcerpt(backendContent.blocks),
       image: backendContent.cover_image_id
         ? `${this.baseUrl}${API_PREFIX}/images/${backendContent.cover_image_id}`

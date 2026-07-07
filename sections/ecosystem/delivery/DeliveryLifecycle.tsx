@@ -21,10 +21,15 @@ export function DeliveryLifecycle() {
   ];
 
   return (
-    <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60 relative overflow-hidden">
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-rose-600/[0.015] rounded-full blur-[140px] pointer-events-none" />
+    <section id="lifecycle" className="w-full py-24 bg-[#030303] border-b border-zinc-900/60 relative overflow-hidden">
+      {/* Ambient glows */}
+      <div className="absolute top-[20%] left-1/4 w-[600px] h-[600px] bg-[radial-gradient(circle_at_center,rgba(244,63,94,0.02),transparent_70%)] pointer-events-none" />
+      <div className="absolute bottom-[10%] right-1/4 w-[600px] h-[600px] bg-[radial-gradient(circle_at_center,rgba(244,63,94,0.02),transparent_70%)] pointer-events-none" />
+
       <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
-        <Reveal className="mb-20 text-center max-w-2xl mx-auto">
+        
+        {/* Header */}
+        <Reveal className="mb-24 text-center max-w-2xl mx-auto">
           <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
             PROCESS MAP
           </span>
@@ -36,30 +41,71 @@ export function DeliveryLifecycle() {
           </p>
         </Reveal>
 
-        {/* Stack flow visualizer */}
-        <div className="max-w-3xl mx-auto flex flex-col gap-4 relative">
-          {/* Vertical connecting line */}
-          <div className="absolute left-10 top-0 bottom-0 w-0.5 bg-zinc-900 z-0" />
+        {/* Infographic Steps Grid */}
+        <div className="relative max-w-5xl mx-auto px-4 md:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-x-20 md:gap-y-24">
+            {stages.map((stage, idx) => {
+              const isEven = idx % 2 === 0;
 
-          {stages.map((stage) => (
-            <div
-              key={stage.step}
-              className="relative flex items-center gap-6 bg-zinc-950/40 border border-zinc-900 hover:border-rose-500/20 rounded-2xl p-5 z-10 transition-all duration-300 group"
-            >
-              {/* Level index bullet */}
-              <div className="w-10 h-10 rounded-full bg-zinc-950 border border-zinc-900 flex items-center justify-center text-zinc-550 group-hover:border-rose-500/30 group-hover:text-rose-500 transition-all duration-300 font-mono font-bold text-xs flex-shrink-0 z-10">
-                {stage.step}
-              </div>
+              const style = {
+                borderColor: "border-rose-500/80",
+                textColor: "text-rose-500",
+                numPos: isEven 
+                  ? "-top-8 -right-4 md:-top-10 md:-right-6" 
+                  : "-bottom-8 -left-4 md:-bottom-10 md:-left-6",
+                borderRadius: isEven 
+                  ? "rounded-[2.5rem] rounded-tr-2xl" 
+                  : "rounded-[2.5rem] rounded-bl-2xl",
+                textAlign: isEven 
+                  ? "text-left" 
+                  : "text-left md:text-right",
+                alignItems: isEven 
+                  ? "items-start" 
+                  : "items-start md:items-end"
+              };
 
-              <div>
-                <h4 className="text-xs font-bold text-white uppercase tracking-wider">{stage.title}</h4>
-                <p className="text-[10px] text-zinc-450 font-semibold leading-relaxed mt-0.5">
-                  {stage.desc}
-                </p>
-              </div>
-            </div>
-          ))}
+              return (
+                <Reveal key={stage.step} delay={idx * 0.05}>
+                  <div className={`relative p-8 md:p-10 border-[2px] ${style.borderColor} ${style.borderRadius} bg-black group hover:-translate-y-2 transition-all duration-500 hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)]`}>
+                    
+                    {/* The Giant Cut-out Number */}
+                    <div className={`absolute ${style.numPos} bg-[#030303] px-4 z-10 flex items-center justify-center transition-transform duration-500 group-hover:scale-110`}>
+                      <span 
+                        className={`text-[3.5rem] md:text-[4rem] font-black leading-none ${style.textColor}`}
+                        style={{
+                          WebkitTextStroke: `2px currentColor`,
+                          WebkitTextFillColor: "transparent",
+                          textShadow: `0 0 18px currentColor`
+                        }}
+                      >
+                        {stage.step}
+                      </span>
+                    </div>
+
+                    {/* Content */}
+                    <div className={`flex flex-col gap-4 relative z-0 ${style.alignItems} ${style.textAlign}`}>
+                      
+                      {/* Decorative Inner Graphic */}
+                      <div className={`w-9 h-9 rounded-full border-2 ${style.borderColor} flex items-center justify-center mb-1 opacity-80 group-hover:opacity-100 transition-opacity duration-300`}>
+                        <div className={`w-1.5 h-1.5 rounded-full bg-current ${style.textColor} animate-pulse`} />
+                      </div>
+
+                      <h3 className={`text-base md:text-lg font-bold uppercase tracking-wider ${style.textColor}`}>
+                        {stage.title}
+                      </h3>
+                      
+                      <p className="text-xs md:text-sm text-zinc-300 font-semibold leading-relaxed max-w-[90%]">
+                        {stage.desc}
+                      </p>
+                    </div>
+
+                  </div>
+                </Reveal>
+              );
+            })}
+          </div>
         </div>
+
       </div>
     </section>
   );
