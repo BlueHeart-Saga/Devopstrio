@@ -6,14 +6,16 @@ import {
   Cpu, Shield, TestTube2, Headphones
 } from "lucide-react";
 
+import Link from "next/link";
+
 const teams = [
-  { icon: Cloud, name: "Cloud Engineers", count: "80+", desc: "Azure, AWS, and GCP certified engineers." },
-  { icon: GitBranch, name: "DevOps Engineers", count: "60+", desc: "Pipeline automation, GitOps, and SRE specialists." },
+  { icon: Cloud, name: "Cloud Engineers", count: "80+", desc: <>Azure, AWS, and GCP certified engineers in our <Link href="/services/cloud-services" className="text-rose-500 hover:underline font-bold">cloud services</Link> division.</> },
+  { icon: GitBranch, name: "DevOps Engineers", count: "60+", desc: <>Pipeline automation, GitOps, and SRE specialists in <Link href="/services/devops-automation" className="text-rose-500 hover:underline font-bold">DevOps automation</Link>.</> },
   { icon: Workflow, name: "Platform Engineers", count: "40+", desc: "Internal developer platform and IDP builders." },
-  { icon: Code2, name: "Software Developers", count: "120+", desc: "Full-stack and backend engineering specialists." },
-  { icon: Database, name: "Data Engineers", count: "50+", desc: "Lakehouse, ETL, and streaming data experts." },
-  { icon: Cpu, name: "AI Specialists", count: "35+", desc: "LLM, MLOps, and AI product engineers." },
-  { icon: Shield, name: "Cybersecurity Experts", count: "30+", desc: "Cloud security, DevSecOps, and compliance." },
+  { icon: Code2, name: "Software Developers", count: "120+", desc:  <>Full-stack and backend engineering specialists under <Link href="/services/software-development" className="text-rose-500 hover:underline font-bold">software development</Link>.</> },
+  { icon: Database, name: "Data Engineers", count: "50+", desc: <>Lakehouse, ETL, and streaming data experts in <Link href="/services/data-engineering" className="text-rose-500 hover:underline font-bold">data engineering</Link>.</> },
+  { icon: Cpu, name: "AI Specialists", count: "35+", desc: <>LLM, MLOps, and AI product engineers in <Link href="/services/ai-data-innovation" className="text-rose-500 hover:underline font-bold">AI & data innovation</Link>.</> },
+  { icon: Shield, name: "Cybersecurity Experts", count: "30+", desc: <>Cloud security, DevSecOps, and compliance with our <Link href="/services/cybersecurity" className="text-rose-500 hover:underline font-bold">cybersecurity</Link> team.</> },
   { icon: TestTube2, name: "QA Engineers", count: "45+", desc: "Automated and performance testing specialists." },
   { icon: Headphones, name: "IT Consultants", count: "65+", desc: "Advisory, architecture, and delivery consultants." },
 ];

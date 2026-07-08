@@ -5,25 +5,31 @@ import Link from "next/link";
 import { Layers, ArrowUpRight } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
 
-const relatedServices = [
+interface RelatedServiceItem {
+  title: string;
+  desc: React.ReactNode;
+  path: string;
+}
+
+const relatedServices: RelatedServiceItem[] = [
   {
     title: "Platform Engineering",
-    desc: "Automate delivery chains, design secure compute pools, and manage multi-region orchestrators.",
+    desc: <>Automate delivery chains, design secure compute pools, and manage <Link href="/services/cloud-services" className="text-rose-500 hover:underline">multi-region orchestrators</Link>.</>,
     path: "/services/devops-automation/platform-engineering"
   },
   {
     title: "DevOps & Release Automation",
-    desc: "Accelerate release pipelines, enforce testing boundaries, and standardise infrastructure templates.",
+    desc: <>Accelerate <Link href="/services/devops-automation" className="text-rose-500 hover:underline">release pipelines</Link>, enforce testing boundaries, and standardise infrastructure templates.</>,
     path: "/services/devops-automation"
   },
   {
     title: "Product Engineering",
-    desc: "Design premium client dashboards, build low-latency server gateways, and construct responsive interfaces.",
+    desc: <>Design premium client dashboards, build low-latency server gateways, and construct <Link href="/about" className="text-rose-500 hover:underline">responsive interfaces</Link>.</>,
     path: "/services/product-engineering"
   },
   {
     title: "Site Reliability Engineering",
-    desc: "Enforce uptime compliance, scale cluster boundaries, and direct automated incident triage loops.",
+    desc: <>Enforce <Link href="/ecosystem/global-delivery" className="text-rose-500 hover:underline">uptime compliance</Link>, scale cluster boundaries, and direct automated incident triage loops.</>,
     path: "/services/devops-automation/site-reliability-engineering"
   }
 ];

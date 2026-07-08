@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Cloud, GitBranch, AppWindow, ShieldCheck } from "lucide-react";
+import Link from "next/link";
 
 const services = [
   {
@@ -11,7 +12,7 @@ const services = [
     tag2: "Azure · AWS · GCP",
     title: "Managed Cloud Support",
     subtitle: "Infrastructure Optimisation",
-    description: "Expert managed services ensuring high availability, continuous monitoring, and proactive incident response across all major public cloud environments.",
+    description: <>Expert managed services ensuring high availability, continuous monitoring, and proactive incident response across all major public cloud environments. Explore our <Link href="/services/cloud-services" className="text-rose-500 hover:underline font-bold">cloud services</Link>.</>,
     image: "/assets/About-page/overview/customersupport/0d35c8aab4c24170e61d1ea01fc4ee77 1.png",
   },
   {
@@ -21,7 +22,7 @@ const services = [
     tag2: "CI/CD · Kubernetes",
     title: "DevOps Engineering",
     subtitle: "Platform Automation",
-    description: "Dedicated support for deployment pipelines, Kubernetes clusters, and infrastructure as code to maintain seamless release cycles.",
+    description: <>Dedicated support for deployment pipelines, Kubernetes clusters, and infrastructure as code to maintain seamless release cycles. Learn about <Link href="/services/devops-automation" className="text-rose-500 hover:underline font-bold">DevOps automation</Link>.</>,
     image: "/assets/About-page/overview/customersupport/1d57a7791a12aaa4fb18f8fa649970bd 1.png",
   },
   {
@@ -31,7 +32,7 @@ const services = [
     tag2: "SaaS · APIs",
     title: "Application Support",
     subtitle: "Frontend & Backend",
-    description: "Comprehensive troubleshooting and performance monitoring for web applications, enterprise SaaS platforms, and core APIs.",
+    description: <>Comprehensive troubleshooting and performance monitoring for web applications, enterprise SaaS platforms, and core APIs built via our <Link href="/services/software-development" className="text-rose-500 hover:underline font-bold">software development</Link> teams.</>,
     image: "/assets/About-page/overview/customersupport/99acdd4cc45c729c9eae31b4df03ea1b 1.png",
   },
   {
@@ -41,7 +42,7 @@ const services = [
     tag2: "SecOps · Compliance",
     title: "Security & SecOps",
     subtitle: "Zero Trust Architecture",
-    description: "Proactive vulnerability management, 24/7 security monitoring, and rapid incident response to keep operations compliant.",
+    description: <>Proactive vulnerability management, 24/7 security monitoring, and rapid incident response to keep operations compliant under our <Link href="/services/cybersecurity" className="text-rose-500 hover:underline font-bold">cybersecurity</Link> architecture.</>,
     image: "/assets/About-page/overview/customersupport/image 6.png",
   },
 ];

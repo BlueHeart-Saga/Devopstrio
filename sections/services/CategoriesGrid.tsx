@@ -256,7 +256,7 @@ export function CategoriesGrid() {
               Powering engineering excellence for <span className="text-rose-500">modern enterprises</span>
             </h2>
             <p className="text-zinc-200 text-base md:text-lg font-semibold leading-relaxed">
-              Explore our core specialized practices designed to modernize legacy architecture, accelerate delivery pipelines, and drive cognitive intelligence.
+              Explore our core specialized practices designed to <Link href="/services/digital-transformation" className="text-rose-500 hover:underline">modernize legacy architecture</Link>, <Link href="/services/devops-automation" className="text-rose-500 hover:underline">accelerate delivery pipelines</Link>, and <Link href="/services/ai-data-innovation" className="text-rose-500 hover:underline">drive cognitive intelligence</Link>.
             </p>
           </div>
         </Reveal>

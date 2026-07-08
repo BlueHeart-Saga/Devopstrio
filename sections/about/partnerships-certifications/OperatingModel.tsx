@@ -3,6 +3,8 @@
 import { Reveal } from "@/components/ui/Reveal";
 import { Users, Crosshair, Target, Activity } from "lucide-react";
 
+import Link from "next/link";
+
 export function OperatingModel() {
   const blocks = [
     {
@@ -18,7 +20,7 @@ export function OperatingModel() {
     {
       icon: <Users className="w-6 h-6 text-[#E11D48]" />,
       title: "Collaborative Delivery",
-      desc: "Cross-functional teams work across strategy, engineering, QA, design, and support to deliver cohesive outcomes."
+      desc: <>Cross-functional teams work across strategy, <Link href="/services/software-development" className="text-rose-500 hover:underline font-bold">engineering</Link>, QA, design, and support to deliver cohesive outcomes.</>
     },
     {
       icon: <Activity className="w-6 h-6 text-[#E11D48]" />,

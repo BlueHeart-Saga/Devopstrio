@@ -4,6 +4,7 @@ import React from "react";
 import { Reveal } from "@/components/ui/Reveal";
 import { motion } from "framer-motion";
 import { CheckCircle2, MapPin, ArrowUpRight } from "lucide-react";
+import Link from "next/link";
 
 const founderTags = ["Multi-Cloud Architect", "15+ Years Experience", "Azure · AWS · GCP"];
 
@@ -116,7 +117,7 @@ export function Leadership() {
               The minds behind every <span className="text-rose-500">breakthrough</span>
             </h2>
             <p className="text-zinc-400 text-base leading-relaxed">
-              Decades of combined experience across cloud, AI, DevOps, and enterprise engineering — drawn from the world's leading technology organisations.
+              Decades of combined experience across <Link href="/services/cloud-services" className="text-rose-500 hover:underline">cloud</Link>, <Link href="/services/ai-data-innovation" className="text-rose-500 hover:underline">AI</Link>, <Link href="/services/devops-automation" className="text-rose-500 hover:underline">DevOps</Link>, and <Link href="/services/software-development" className="text-rose-500 hover:underline">enterprise engineering</Link> — drawn from the world's leading technology organisations.
             </p>
           </div>
         </Reveal>

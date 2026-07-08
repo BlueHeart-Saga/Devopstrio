@@ -63,7 +63,7 @@ export function InsightsLibrary({ posts, loading }: InsightsLibraryProps) {
           </Reveal>
           <Reveal delay={0.2}>
             <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-bold max-w-2xl mx-auto drop-shadow-md">
-              Explore our latest thinking, strategies, and industry perspectives to accelerate your digital transformation.
+              Explore our latest thinking, strategies, and industry perspectives to accelerate your digital transformation. Read about our <Link href="/services" className="text-rose-550 hover:underline">managed services</Link> and <Link href="/about/overview" className="text-rose-550 hover:underline">company overview</Link>.
             </p>
           </Reveal>
         </div>

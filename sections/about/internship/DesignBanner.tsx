@@ -2,6 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 export const DesignBanner = () => {
   const handleScrollToForm = () => {
@@ -65,7 +66,7 @@ export const DesignBanner = () => {
               
               {/* Short paragraph info */}
               <p className="sm:col-span-8 text-[11px] sm:text-xs text-white/80 leading-relaxed font-medium">
-                When the right perspective meets the right enterprise production, better engineers happen. Devopstrio connects your potential and delivers.
+                When the right perspective meets the right enterprise production, better engineers happen. Devopstrio connects your potential and delivers through our dedicated <Link href="/careers" className="text-white hover:underline underline-offset-4 font-bold">careers framework</Link>.
               </p>
 
               {/* High-tech QR Code mockup */}

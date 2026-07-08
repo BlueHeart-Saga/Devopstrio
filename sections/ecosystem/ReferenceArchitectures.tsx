@@ -3,6 +3,8 @@
 import React from "react";
 import { Reveal } from "@/components/ui/Reveal";
 
+import Link from "next/link";
+
 export function ReferenceArchitectures() {
   return (
     <section id="delivery-stacks" className="w-full py-24 bg-black border-b border-zinc-900/60 relative overflow-hidden">
@@ -16,7 +18,7 @@ export function ReferenceArchitectures() {
             Our standard <span className="text-rose-500">delivery stacks</span>
           </h2>
           <p className="text-zinc-200 text-base md:text-lg font-semibold leading-relaxed mt-2 max-w-xl">
-            Pre-validated, robust technical templates designed to spin up secure production infrastructure in minutes.
+            Pre-validated, robust technical templates designed to spin up secure production infrastructure in minutes. Explore our <Link href="/services/cloud-services" className="text-rose-500 hover:underline font-bold">cloud services</Link> and read our <Link href="/about/overview" className="text-rose-500 hover:underline font-bold">company overview</Link>.
           </p>
         </Reveal>
 

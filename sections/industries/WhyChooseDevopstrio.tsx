@@ -3,23 +3,30 @@
 import React from "react";
 import { Award, Clock, ShieldCheck } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
+import Link from "next/link";
+
+interface AdvantageItem {
+  icon: React.ReactNode;
+  title: string;
+  desc: React.ReactNode;
+}
 
 export function WhyChooseDevopstrio() {
-  const advantages = [
+  const advantages: AdvantageItem[] = [
     {
       icon: <Award size={16} />,
       title: "Certified Platform Engineers",
-      desc: "Every lead architect holds principal qualifications in AWS, Azure, GCP, or Kubernetes routing architectures."
+      desc: <>Every lead architect holds principal qualifications in AWS, Azure, GCP, or <Link href="/services/cloud-services" className="text-rose-500 hover:underline">Kubernetes routing</Link> architectures.</>
     },
     {
       icon: <Clock size={16} />,
       title: "Guaranteed Availability SLAs",
-      desc: "Our contracts stipulate exact 99.99% system availability targets backed by automated disaster recovery loops."
+      desc: <>Our contracts stipulate exact 99.99% system availability targets backed by automated <Link href="/services/cloud-services" className="text-rose-500 hover:underline">disaster recovery</Link> loops.</>
     },
     {
       icon: <ShieldCheck size={16} />,
       title: "Continuous Pipeline Auditing",
-      desc: "All platform configuration files are systematically audited against vulnerability CVE databases before production deployment."
+      desc: <>All platform configuration files are systematically audited against vulnerability CVE databases before <Link href="/services/devops-automation" className="text-rose-500 hover:underline">production deployment</Link>.</>
     }
   ];
 

@@ -2,28 +2,29 @@
 
 import React from "react";
 import { Reveal } from "@/components/ui/Reveal";
+import Link from "next/link";
 
 export function BusinessImpact() {
   const impacts = [
     {
       value: "-45%",
       label: "Infrastructure Spend",
-      desc: "Cut idle virtualization billing using auto-scaling grids."
+      desc: <>Cut idle virtualization billing using <Link href="/services/cloud-services" className="text-rose-500 hover:underline">auto-scaling grids</Link>.</>
     },
     {
       value: "4.8x",
       label: "Release Frequency",
-      desc: "Boosted weekly deployments through automated test pipelines."
+      desc: <>Boosted weekly deployments through <Link href="/services/devops-automation" className="text-rose-500 hover:underline">automated test pipelines</Link>.</>
     },
     {
       value: "Zero",
       label: "Configuration Drift",
-      desc: "Enforced 100% git-tracked state synchronization metrics."
+      desc: <>Enforced 100% git-tracked <Link href="/services/devops-automation" className="text-rose-500 hover:underline">state synchronization</Link> metrics.</>
     },
     {
       value: "95%",
       label: "Token Bill Savings",
-      desc: "Optimized LLM queries via semantic output caching."
+      desc: <>Optimized LLM queries via <Link href="/services/ai-data-innovation" className="text-rose-500 hover:underline">semantic output caching</Link>.</>
     }
   ];
 

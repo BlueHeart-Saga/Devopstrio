@@ -39,7 +39,7 @@ export function ServicesHero() {
             {/* Description */}
             <Reveal delay={0.2}>
               <p className="text-zinc-400 text-xs sm:text-sm md:text-base leading-relaxed font-semibold max-w-xl mb-8">
-                From cognitive AI pipelines and global cloud orchestration to zero-trust compliance frameworks, Devopstrio engineers robust solutions for high-velocity enterprise environments.
+                From <Link href="/services/ai-data-innovation" className="text-rose-500 hover:underline">cognitive AI pipelines</Link> and <Link href="/services/cloud-services" className="text-rose-500 hover:underline">global cloud orchestration</Link> to <Link href="/services/cybersecurity" className="text-rose-500 hover:underline">zero-trust compliance frameworks</Link>, Devopstrio engineers robust solutions for high-velocity enterprise environments.
               </p>
             </Reveal>
 

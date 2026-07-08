@@ -3,13 +3,15 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Quote, ArrowRight, Star } from "lucide-react";
 
+import Link from "next/link";
+
 export const SuccessStories = () => {
   const stories = [
     {
       name: "Anita R.",
       before: "Intern",
       after: "Full Stack Dev",
-      quote: "The global mentorship program accelerated my growth. I worked directly on the Brio telemetry dashboard, handling API gateways and databases. Now, as a full-stack engineer, I lead features from scratch.",
+      quote: <>The global mentorship program accelerated my growth. I worked directly on the Brio telemetry dashboard, handling API gateways and databases. Now, as a <Link href="/services/software-development/product-engineering" className="text-[#E11D48] hover:underline font-bold">product engineer</Link>, I lead features from scratch.</>,
       tags: ["React.js", "Node.js", "Next.js"],
       imgGlow: "rgba(236,72,153,0.1)"
     },
@@ -17,7 +19,7 @@ export const SuccessStories = () => {
       name: "Mark T.",
       before: "Intern",
       after: "DevOps Engineer",
-      quote: "Deploying multi-tenant Kubernetes and building CI/CD templates at Devopstrio was an intense learning experience. The trust the team put in me allowed me to master Terraform and secure enterprise pipelines.",
+      quote: <>Deploying multi-tenant Kubernetes and building CI/CD templates at Devopstrio was an intense learning experience. The trust the team put in me allowed me to master Terraform and secure enterprise pipelines via <Link href="/services/devops-automation" className="text-[#E11D48] hover:underline font-bold">DevOps automation</Link>.</>,
       tags: ["Kubernetes", "CI/CD", "Terraform"],
       imgGlow: "rgba(59,130,246,0.1)"
     },
@@ -25,7 +27,7 @@ export const SuccessStories = () => {
       name: "Sarah Johnson",
       before: "Intern",
       after: "Cloud Associate",
-      quote: "Transitioning from university to cloud operations was made seamless by my mentor. Working on AWS landing zones and FinOps cost optimizations helped me clear my AWS practitioner certification within 3 months.",
+      quote: <>Transitioning from university to <Link href="/services/cloud-services" className="text-[#E11D48] hover:underline font-bold">cloud operations</Link> was made seamless by my mentor. Working on AWS landing zones and FinOps cost optimizations helped me clear my AWS practitioner certification within 3 months.</>,
       tags: ["AWS", "FinOps", "Docker"],
       imgGlow: "rgba(16,185,129,0.1)"
     }
@@ -74,7 +76,7 @@ export const SuccessStories = () => {
 
               <div>
                 <p className="text-zinc-300 text-sm sm:text-base leading-relaxed mb-8 italic font-medium">
-                  "{story.quote}"
+                  {story.quote}
                 </p>
               </div>
 

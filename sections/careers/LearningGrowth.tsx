@@ -3,6 +3,8 @@
 import React from "react";
 import { Reveal } from "@/components/ui/Reveal";
 
+import Link from "next/link";
+
 export function LearningGrowth() {
   const steps = [
     {
@@ -86,7 +88,7 @@ export function LearningGrowth() {
               From application to certification
             </h2>
             <p className="text-zinc-400 text-sm md:text-lg leading-relaxed font-medium max-w-xl mx-auto">
-              Four simple steps to kickstart your career. Get started in days, not months.
+              Four simple steps to kickstart your career. Get started in days, not months. Discover our <Link href="/services" className="text-rose-500 hover:underline font-bold">digital services</Link> catalog.
             </p>
           </Reveal>
         </div>
@@ -241,7 +243,7 @@ export function LearningGrowth() {
               What you earn when you complete
             </h2>
             <p className="text-zinc-300 text-sm md:text-base leading-relaxed font-medium max-w-2xl mx-auto">
-              Devopstrio is a UK-registered company trusted by Microsoft, Airbnb, BP, GoDaddy, and Heathrow. Your certificate carries real global weight.
+              Devopstrio is a UK-registered company trusted by Microsoft, Airbnb, BP, GoDaddy, and Heathrow. Your certificate carries real global weight. Check out our <Link href="/about/overview" className="text-rose-500 hover:underline font-bold">company overview</Link> and <Link href="/about/partnerships-certifications" className="text-rose-500 hover:underline font-bold">certifications</Link>.
             </p>
           </Reveal>
         </div>

@@ -3,6 +3,8 @@ import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { insightsApi, TransformedPost } from "@/lib/insightsApi";
 
+import Link from "next/link";
+
 export const SuccessByService = () => {
   const [posts, setPosts] = useState<TransformedPost[]>([]);
   const [loading, setLoading] = useState(true);
@@ -61,9 +63,9 @@ export const SuccessByService = () => {
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-zinc-400 text-base md:text-lg leading-relaxed"
+            className="text-zinc-400 text-base md:text-lg leading-relaxed font-medium"
           >
-            Deep dives and case studies highlighting how we engineer robust, scalable solutions for leading enterprises.
+            Deep dives and case studies highlighting how we engineer robust, scalable solutions for leading enterprises. Learn how our <Link href="/services/cloud-services" className="text-rose-500 hover:underline font-bold">cloud services</Link> and <Link href="/services/software-development" className="text-rose-500 hover:underline font-bold">software engineering</Link> teams drive success.
           </motion.p>
         </div>
 
@@ -176,7 +178,7 @@ export const SuccessByService = () => {
 
         {/* View More Button */}
         <div className="mt-14 flex justify-center">
-          <a
+          <Link
             href="/insights"
             className="inline-flex items-center gap-2 px-8 py-3.5 bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 text-white rounded-full font-semibold transition-all duration-300 shadow-lg group hover:shadow-[0_0_20px_rgba(255,255,255,0.05)] hover:-translate-y-0.5"
           >
@@ -184,7 +186,7 @@ export const SuccessByService = () => {
             <svg className="w-4 h-4 transition-transform group-hover:translate-x-1 text-rose-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
             </svg>
-          </a>
+          </Link>
         </div>
       </div>
     </section>

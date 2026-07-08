@@ -3,6 +3,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { MapPin, Globe, Users } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
+import Link from "next/link";
 
 interface Location {
   name: string;
@@ -175,7 +176,7 @@ export function InteractiveMap({ locations, filters }: InteractiveMapProps) {
               </h1>
               <h3 className="text-xl font-bold text-white mb-2">Offices</h3>
               <p className="text-zinc-400 text-sm leading-relaxed mb-6">
-                Across {uniqueCountries}+ Countries with {totalEmployees}+ Global Workforce
+                Across {uniqueCountries}+ Countries with <Link href="/careers" className="text-[#E11D48] hover:underline">{totalEmployees} Global Workforce</Link>
               </p>
 
               <div className="my-6 py-6 border-y border-zinc-800/60">

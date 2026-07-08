@@ -57,7 +57,7 @@ export function PartnershipsHero() {
             transition={{ duration: 0.7, delay: 0.15 }}
             className="text-sm md:text-base font-medium text-zinc-300 max-w-xl leading-relaxed"
           >
-            Devopstrio's partnerships and certification-driven approach reflect our commitment to quality, accountability, and long-term client success. By aligning with trusted technology platforms, we strengthen the way we deliver solutions across cloud, software, AI, and enterprise transformation.
+            Devopstrio's partnerships and certification-driven approach reflect our commitment to quality, accountability, and long-term client success. By aligning with trusted technology platforms, we strengthen the way we deliver solutions across <Link href="/services/cloud-services" className="text-[#E11D48] hover:underline font-bold">cloud</Link>, <Link href="/services/software-development" className="text-[#E11D48] hover:underline font-bold">software</Link>, <Link href="/services/ai-data-innovation" className="text-[#E11D48] hover:underline font-bold">AI</Link>, and <Link href="/services/digital-transformation" className="text-[#E11D48] hover:underline font-bold">enterprise transformation</Link>.
           </motion.p>
 
           <motion.div

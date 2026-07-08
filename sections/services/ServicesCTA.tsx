@@ -25,7 +25,7 @@ export function ServicesCTA() {
           </h2>
 
           <p className="text-zinc-400 text-sm md:text-lg leading-relaxed font-bold mb-10 max-w-lg">
-            Book a dedicated consultation session with one of our senior solutions architects to review your systems footprint, security audit needs, and resource scaling plans.
+            Book a dedicated consultation session with one of our senior <Link href="/about" className="text-rose-500 hover:underline">solutions architects</Link> to review your systems footprint, <Link href="/services/cybersecurity" className="text-rose-500 hover:underline">security audit</Link> needs, and <Link href="/ecosystem/global-delivery" className="text-rose-500 hover:underline">resource scaling</Link> plans.
           </p>
 
           <div className="flex flex-wrap gap-4 justify-center items-center">

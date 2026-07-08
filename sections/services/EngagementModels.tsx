@@ -89,7 +89,7 @@ export function EngagementModels() {
               Tailored partnerships built for <span className="text-rose-500">long-term value</span>
             </h2>
             <p className="text-zinc-200 text-base md:text-lg font-semibold leading-relaxed">
-              Choose the model that best fits your organizational structure, roadmap velocity, and operational requirements.
+              Choose the model that best fits your <Link href="/about" className="text-rose-500 hover:underline">organizational structure</Link>, <Link href="/services/devops-automation" className="text-rose-500 hover:underline">roadmap velocity</Link>, and operational requirements.
             </p>
           </div>
         </Reveal>

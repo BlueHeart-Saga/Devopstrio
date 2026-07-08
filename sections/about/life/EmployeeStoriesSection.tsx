@@ -2,6 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Quote } from "lucide-react";
+import Link from "next/link";
 
 const stories = [
   {
@@ -9,21 +10,21 @@ const stories = [
     role: "Software Engineer",
     path: "Intern → Software Engineer",
     image: "/assets/Home-page/client-reviews/image 169.png",
-    quote: "Starting as an intern, I was immediately given real-world problems to solve. The mentorship here didn't just teach me how to code better; it taught me how to engineer solutions that scale. Within two years, I was leading my own microservices architecture."
+    quote: <>"Starting as an intern in the <Link href="/about/internship" className="text-rose-500 hover:underline font-bold">internship program</Link>, I was immediately given real-world problems to solve. The mentorship here didn't just teach me how to code better; it taught me how to engineer solutions that scale. Within two years, I was leading my own microservices architecture."</>
   },
   {
     name: "David Chen",
     role: "Platform Engineer",
     path: "Developer → Platform Engineer",
     image: "/assets/Home-page/client-reviews/image 170.png",
-    quote: "Devopstrio recognized my passion for infrastructure early on. They sponsored my Kubernetes certifications and gave me the autonomy to help build our internal developer platform. The growth trajectory here is limited only by your own ambition."
+    quote: <>"Devopstrio recognized my passion for infrastructure early on. They sponsored my Kubernetes certifications and gave me the autonomy to help build our internal developer platform in <Link href="/services/devops-automation" className="text-rose-500 hover:underline font-bold">DevOps automation</Link>. The growth trajectory here is limited only by your own ambition."</>
   },
   {
     name: "Priya Sharma",
     role: "Engineering Team Lead",
     path: "Associate → Team Lead",
     image: "/assets/Home-page/client-reviews/image 171.png",
-    quote: "What stands out to me is the culture of ownership. When I proposed a new way to handle our CI/CD pipelines, leadership didn't just listen; they empowered me to build a team and execute the vision. Now I get to help others grow in the same way."
+    quote: <>"What stands out to me is the culture of ownership. When I proposed a new way to handle our CI/CD pipelines in <Link href="/services/cloud-services" className="text-rose-500 hover:underline font-bold">cloud services</Link>, leadership didn't just listen; they empowered me to build a team and execute the vision. Now I get to help others grow in the same way."</>
   }
 ];
 
@@ -73,7 +74,7 @@ export const EmployeeStoriesSection = () => {
               </div>
 
               <p className="text-zinc-400 leading-relaxed relative z-10 italic">
-                "{story.quote}"
+                {story.quote}
               </p>
             </motion.div>
           ))}

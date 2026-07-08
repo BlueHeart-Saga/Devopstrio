@@ -3,6 +3,7 @@
 import React from "react";
 import { Globe2, Cpu, Shield, Target } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
+import Link from "next/link";
 
 export function WhyChooseDevopstrioSection() {
   const pillars = [
@@ -10,7 +11,7 @@ export function WhyChooseDevopstrioSection() {
       num: "01",
       icon: Globe2,
       title: "Global Scale",
-      desc: "Access elite engineering talent across our UK, European, and Indian delivery hubs, managed under a single flexible partnership model.",
+      desc: <>Access elite engineering talent across our <Link href="/about/global-presence" className="text-[#64C4B2] hover:underline font-bold">UK, European, and Indian delivery hubs</Link>, managed under a single flexible partnership model.</>,
       numColor: "text-[#64C4B2]",
       hoverColor: "group-hover:text-[#64C4B2] group-hover:border-[#64C4B2]/30",
       glowColor: "rgba(100, 196, 178, 0.04)",
@@ -20,7 +21,7 @@ export function WhyChooseDevopstrioSection() {
       num: "02",
       icon: Cpu,
       title: "AI & Cloud Focus",
-      desc: "Deep engineering expertise in GenAI workflows, lakehouse data architectures, and automated infrastructure co-development.",
+      desc: <>Deep engineering expertise in <Link href="/services/ai-data-innovation" className="text-[#9F8EC9] hover:underline font-bold">GenAI workflows</Link>, lakehouse data architectures, and automated <Link href="/services/cloud-services" className="text-[#9F8EC9] hover:underline font-bold">cloud infrastructure</Link> co-development.</>,
       numColor: "text-[#9F8EC9]",
       hoverColor: "group-hover:text-[#9F8EC9] group-hover:border-[#9F8EC9]/30",
       glowColor: "rgba(159, 142, 201, 0.04)",
@@ -30,7 +31,7 @@ export function WhyChooseDevopstrioSection() {
       num: "03",
       icon: Shield,
       title: "Zero-Trust Security",
-      desc: "Compliance guardrails, secure Landing Zones, vulnerability management, and SRE frameworks embedded in every delivery.",
+      desc: <>Compliance guardrails, secure Landing Zones, vulnerability management, and <Link href="/services/cybersecurity" className="text-[#5EA5E0] hover:underline font-bold">cybersecurity solutions</Link> embedded in every delivery.</>,
       numColor: "text-[#5EA5E0]",
       hoverColor: "group-hover:text-[#5EA5E0] group-hover:border-[#5EA5E0]/30",
       glowColor: "rgba(94, 165, 224, 0.04)",

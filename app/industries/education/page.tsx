@@ -3,6 +3,7 @@ import React from "react";
 import { Metadata } from "next";
 import { BreadcrumbSchema, ServiceSchema, FAQSchema } from "@/components/seo/Schemas";
 import { SectionNavbar } from "@/components/ui/SectionNavbar";
+import Link from "next/link";
 
 // Component imports
 import { IndustryHero } from "@/sections/industries/detail/IndustryHero";
@@ -44,95 +45,95 @@ const data = {
   },
   overview: {
     heading: "Secure educational databases and real-time class interfaces",
-    desc1: "We build modern school administration platforms, learning trackers, and live study dashboards. Our codebases manage homework uploads, class scheduler changes, and student record databases safely.",
-    desc2: "Our services connect student portals with teacher dashboards, facilitating grade entry pipelines, secure virtual classrooms, and interactive test scoring engines."
+    desc1: <>We build modern <Link href="/services/software-development/product-engineering" className="text-[#E11D48] hover:underline">school administration platforms</Link>, learning trackers, and live study dashboards. Our codebases manage homework uploads, class scheduler changes, and student record <Link href="/services/cloud-services" className="text-[#E11D48] hover:underline">databases</Link> safely.</>,
+    desc2: <>Our services connect student portals with teacher dashboards, facilitating grade entry <Link href="/services/devops-automation" className="text-[#E11D48] hover:underline">pipelines</Link>, secure virtual classrooms, and interactive test scoring engines.</>
   },
   challenges: [
     {
       title: "Simultaneous Classroom Load Peaks",
-      desc: "Managing severe traffic spikes at the start of school hours when thousands of students join online classes concurrently."
+      desc: <>Managing severe <Link href="/services/devops-automation/site-reliability-engineering" className="text-[#E11D48] hover:underline">traffic spikes</Link> at the start of school hours when thousands of students join online classes concurrently.</>
     },
     {
       title: "FERPA Student Record Privacy",
-      desc: "Securing grades, physical files, and personal communication data against unauthorized lookups."
+      desc: <>Securing grades, physical files, and personal communication data against <Link href="/services/cybersecurity" className="text-[#E11D48] hover:underline">unauthorized lookups</Link>.</>
     },
     {
       title: "Large File Homework Upload Paths",
-      desc: "Providing fast, secure file upload pipelines for student media assignments and research papers."
+      desc: <>Providing fast, secure file <Link href="/services/devops-automation/platform-engineering" className="text-[#E11D48] hover:underline">upload pipelines</Link> for student media assignments and research papers.</>
     }
   ],
   solutions: [
     {
       title: "Auto-Scaling Video Channels",
-      desc: "Setting up WebRTC media servers that scale dynamically depending on current class attendance metrics."
+      desc: <>Setting up WebRTC <Link href="/services/cloud-services" className="text-[#E11D48] hover:underline">media servers</Link> that scale dynamically depending on current class attendance metrics.</>
     },
     {
       title: "Isolated Grade Registries",
-      desc: "Storing student grades in encrypted databases with strict audit logs tracking all administrative edits."
+      desc: <>Storing student grades in <Link href="/services/cybersecurity" className="text-[#E11D48] hover:underline">encrypted databases</Link> with strict audit logs tracking all administrative edits.</>
     },
     {
       title: "Serverless File Ingress Pipelines",
-      desc: "Routing homework files directly to secure Amazon S3 buckets via time-limited pre-signed URL tokens."
+      desc: <>Routing homework files directly to secure <Link href="/services/cloud-services" className="text-[#E11D48] hover:underline">Amazon S3</Link> buckets via time-limited pre-signed URL tokens.</>
     }
   ],
   capabilities: [
     {
       title: "Learning Platforms",
-      desc: "Constructing responsive student hubs hosting quizzes, grades, and calendar agendas."
+      desc: <>Constructing responsive <Link href="/services/software-development/product-engineering" className="text-[#E11D48] hover:underline">student hubs</Link> hosting quizzes, grades, and calendar agendas.</>
     },
     {
       title: "Live Virtual Classes",
-      desc: "Integrating low-latency video feeds and real-time whiteboard drawing states."
+      desc: <>Integrating <Link href="/services/cloud-services" className="text-[#E11D48] hover:underline">low-latency video</Link> feeds and real-time whiteboard drawing states.</>
     },
     {
       title: "Grade Record Safety",
-      desc: "Isolating grade databases inside secure subnets, logging every administrative database edit."
+      desc: <>Isolating grade databases inside <Link href="/services/cybersecurity" className="text-[#E11D48] hover:underline">secure subnets</Link>, logging every administrative database edit.</>
     }
   ],
   useCases: [
     {
       title: "District-Wide LMS Deployment",
-      result: "Supported 120,000 active students concurrently with zero server downtime."
+      result: <>Supported 120,000 active students concurrently with zero <Link href="/services/devops-automation/site-reliability-engineering" className="text-[#E11D48] hover:underline">server downtime</Link>.</>
     },
     {
       title: "Interactive Class Drawing",
-      result: "Synchronized digital whiteboard state across devices under 150ms."
+      result: <>Synchronized <Link href="/services/software-development/product-engineering" className="text-[#E11D48] hover:underline">digital whiteboard</Link> state across devices under 150ms.</>
     }
   ],
   techs: [
     {
       name: "WebRTC Video",
-      desc: "Low-latency browser video connection libraries for live virtual lectures."
+      desc: <>Low-latency browser <Link href="/services/cloud-services" className="text-[#E11D48] hover:underline">video connection</Link> libraries for live virtual lectures.</>
     },
     {
       name: "Node.js / Express",
-      desc: "Fast, modular API endpoints handling quiz submissions and user log checks."
+      desc: <>Fast, modular <Link href="/services/software-development/product-engineering" className="text-[#E11D48] hover:underline">API endpoints</Link> handling quiz submissions and user log checks.</>
     },
     {
       name: "Amazon S3 Encrypted",
-      desc: "Secure cloud storage bucket arrays hosting homework PDF and video files."
+      desc: <>Secure <Link href="/services/cloud-services" className="text-[#E11D48] hover:underline">cloud storage</Link> bucket arrays hosting homework PDF and video files.</>
     }
   ],
   outcomes: [
     {
       value: "99.9%",
       label: "Class Hours Uptime",
-      desc: "Sustained availability during morning load spikes."
+      desc: <>Sustained availability during morning <Link href="/services/devops-automation/site-reliability-engineering" className="text-[#E11D48] hover:underline">load spikes</Link>.</>
     },
     {
       value: "<150ms",
       label: "Whiteboard Sync",
-      desc: "Dynamic draw delays across devices."
+      desc: <>Dynamic draw delays across devices utilizing <Link href="/services/software-development/product-engineering" className="text-[#E11D48] hover:underline">frontend state sync</Link>.</>
     },
     {
       value: "10M+",
       label: "Quizzes Graded",
-      desc: "Automated test submissions scored annually."
+      desc: <>Automated <Link href="/services/software-development/product-engineering" className="text-[#E11D48] hover:underline">test submissions</Link> scored annually.</>
     }
   ],
   caseStudy: {
     title: "Autoscaling virtual classroom setup for state school district.",
-    desc: "We engineered a secure virtual classroom system that connects 120k students. The platform coordinates live video streams, quiz entries, and file sharing under FERPA guidelines with zero lag.",
+    desc: <>We engineered a secure <Link href="/services/software-development/product-engineering" className="text-[#E11D48] hover:underline">virtual classroom system</Link> that connects 120k students. The platform coordinates live video streams, quiz entries, and file sharing under FERPA guidelines with zero lag.</>,
     metrics: [
       { value: "99.9%", label: "Peak Uptime" },
       { value: "<150ms", label: "Sync Delay" },
@@ -147,25 +148,25 @@ const data = {
   compliance: [
     {
       title: "FERPA Compliance Audits",
-      desc: "Enforcing strict access controls on student record databases and masking PII data fields."
+      desc: <>Enforcing strict access controls on student record databases and masking <Link href="/services/cybersecurity" className="text-[#E11D48] hover:underline">PII data fields</Link>.</>
     },
     {
       title: "COPPA Privacy Rules",
-      desc: "Ensuring parental consent checks and data safety filters for minor users."
+      desc: <>Ensuring parental consent checks and <Link href="/services/cybersecurity" className="text-[#E11D48] hover:underline">data safety filters</Link> for minor users.</>
     }
   ],
   whyChoose: [
     {
       title: "Proven Load Scaling",
-      desc: "Our platforms survive real-world school morning rushes without drops."
+      desc: <>Our platforms survive real-world school <Link href="/services/devops-automation/site-reliability-engineering" className="text-[#E11D48] hover:underline">morning rushes</Link> without drops.</>
     },
     {
       title: "HIPAA/FERPA Alignment",
-      desc: "We prioritize user privacy and encrypt PII data fields out-of-the-box."
+      desc: <>We prioritize <Link href="/services/cybersecurity" className="text-[#E11D48] hover:underline">user privacy</Link> and encrypt PII data fields out-of-the-box.</>
     },
     {
       title: "Interactive Features",
-      desc: "Low latency audio/video channels with synchronized whiteboard components."
+      desc: <>Low latency audio/video channels with synchronized <Link href="/services/software-development/product-engineering" className="text-[#E11D48] hover:underline">whiteboard components</Link>.</>
     }
   ],
   relatedServices: [
@@ -189,17 +190,17 @@ const data = {
   cta: {
     ctaTitle: "Build your secure",
     ctaHighlight: "Learning platform",
-    ctaDesc: "Consult with our principal education tech architect to design virtual classroom tools and student grade databases.",
+    ctaDesc: <>Consult with our principal <Link href="/contact" className="text-[#E11D48] hover:underline">education tech architect</Link> to design virtual classroom tools and student grade databases.</>,
     ctaBtnText: "Consult EdTech Architect"
   },
   faqs: [
     {
       q: "How do you secure children's data under COPPA?",
-      a: "We build our apps to never store unauthorized personal info of kids, implementing age-gates and encrypted cookies that clear automatically."
+      a: <>We build our apps to never store unauthorized personal info of kids, implementing age-gates and <Link href="/services/cybersecurity" className="text-[#E11D48] hover:underline">encrypted cookies</Link> that clear automatically.</>
     },
     {
       q: "What video library do you use for virtual classrooms?",
-      a: "We integrate custom WebRTC channels via Twilio or open-source MediaSoup servers depending on budget and participant volume."
+      a: <>We integrate custom <Link href="/services/cloud-services" className="text-[#E11D48] hover:underline">WebRTC channels</Link> via Twilio or open-source MediaSoup servers depending on budget and participant volume.</>
     }
   ]
 };

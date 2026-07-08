@@ -3,11 +3,13 @@
 import { Reveal } from "@/components/ui/Reveal";
 import { ArrowRight } from "lucide-react";
 
+import Link from "next/link";
+
 export function MiniUseCases() {
   const cases = [
     {
       title: "Cloud Modernization Program",
-      desc: "Migrating business-critical workloads to cloud platforms with improved scalability and governance."
+      desc: <>Migrating business-critical workloads to <Link href="/services/cloud-services" className="text-rose-500 hover:underline font-bold">cloud platforms</Link> with improved scalability and governance.</>
     },
     {
       title: "Service Operations Transformation",
@@ -15,7 +17,7 @@ export function MiniUseCases() {
     },
     {
       title: "AI & Data Enablement",
-      desc: "Building data, automation, and intelligence capabilities using modern cloud and engineering ecosystems."
+      desc: <>Building data, automation, and intelligence capabilities using modern cloud and <Link href="/services/ai-data-innovation" className="text-rose-500 hover:underline font-bold">AI engineering ecosystems</Link>.</>
     }
   ];
 

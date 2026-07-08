@@ -3,6 +3,10 @@ import React from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, Rocket } from "lucide-react";
 
+import Link from "next/link";
+
+const MotionLink = motion(Link);
+
 export const TestimonialsCTA = () => {
   return (
     <section className="relative py-36 bg-black border-t border-zinc-900 overflow-hidden">
@@ -28,11 +32,11 @@ export const TestimonialsCTA = () => {
           </h2>
 
           <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-bold max-w-2xl mx-auto mb-12">
-            Partner with Devopstrio to modernise platforms, accelerate innovation, and achieve measurable business outcomes that put you ahead of the competition.
+            Partner with Devopstrio to modernise platforms with our <Link href="/services/cloud-services" className="text-rose-500 hover:underline">cloud services</Link>, accelerate innovation, and achieve measurable business outcomes outlined in our <Link href="/about/overview" className="text-rose-500 hover:underline">company overview</Link>.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <motion.a
+            <MotionLink
               href="/contact"
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.97 }}
@@ -40,15 +44,15 @@ export const TestimonialsCTA = () => {
             >
               Start Your Transformation
               <ArrowRight className="w-5 h-5" />
-            </motion.a>
-            <motion.a
+            </MotionLink>
+            <MotionLink
               href="/contact"
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.97 }}
               className="inline-flex items-center gap-3 px-9 py-4 bg-zinc-900/60 hover:bg-zinc-900 text-white rounded-xl font-semibold text-base transition-colors border border-zinc-800 hover:border-zinc-600 backdrop-blur-sm"
             >
               Contact Our Team
-            </motion.a>
+            </MotionLink>
           </div>
         </motion.div>
       </div>

@@ -53,6 +53,8 @@ const MetricCard = ({ value, suffix, label, decimal }: typeof metrics[0]) => {
   );
 };
 
+import Link from "next/link";
+
 export const SupportMetrics = () => {
   return (
     <section className="py-24 bg-[#0A0A0A] border-t border-zinc-900 relative overflow-hidden">
@@ -76,6 +78,15 @@ export const SupportMetrics = () => {
           >
             Customer Success <span className="text-rose-500">Metrics</span>
           </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="text-zinc-400 text-sm md:text-base leading-relaxed font-bold max-w-xl mx-auto mb-8"
+          >
+            Devopstrio delivers outstanding outcomes across <Link href="/services/cloud-services" className="text-rose-500 hover:underline">cloud services</Link>, <Link href="/services/software-development" className="text-rose-500 hover:underline">software engineering</Link>, and <Link href="/services/managed-services" className="text-rose-500 hover:underline">managed support</Link>.
+          </motion.p>
         </div>
 
         <div className="bg-zinc-900/30 border border-zinc-800 rounded-3xl px-10 py-14">

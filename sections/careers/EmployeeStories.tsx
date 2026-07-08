@@ -5,6 +5,8 @@ import { ArrowLeft, ArrowUpRight, Star, ArrowUpRight as ArrowUpRightIcon } from 
 import { Reveal } from "@/components/ui/Reveal";
 import { employeeStories } from "./careersData";
 
+import Link from "next/link";
+
 export function EmployeeStories() {
   const testimonials = [
     {
@@ -118,7 +120,7 @@ export function EmployeeStories() {
               Meet the people behind <span className="text-rose-500">the innovation</span>
             </h2>
             <p className="text-white text-sm leading-relaxed font-semibold max-w-xl mx-auto">
-              Hear directly from the engineers, designers, and leaders who shape Devopstrio's culture every day.
+              Hear directly from the engineers, designers, and leaders who shape Devopstrio's culture every day. Discover our <Link href="/about/life" className="text-rose-500 hover:underline font-bold">life at Devopstrio</Link> page.
             </p>
           </div>
         </Reveal>
@@ -261,7 +263,7 @@ export function EmployeeStories() {
               </h2>
 
               <p className="text-zinc-300 text-sm md:text-base leading-relaxed font-medium max-w-xl">
-                Our student programs help you make a real impact from day one. Apply today to build skills and unlock possibilities:
+                Our student programs help you make a real impact from day one. Apply today to build skills and unlock possibilities through our dedicated <Link href="/about/internship" className="text-rose-500 hover:underline font-bold">internship program</Link>:
               </p>
 
               {/* Key points for premium look */}

@@ -3,23 +3,24 @@
 import React from "react";
 import { AlertTriangle, Layers, Cpu } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
+import Link from "next/link";
 
 export function ChallengesWeSolve() {
   const industryChallenges = [
     {
       icon: <AlertTriangle size={18} />,
       title: "Strict Compliance Auditing",
-      desc: "Navigating regional data sovereign laws (GDPR, HIPAA, SOC-2) while maintaining high delivery velocity."
+      desc: <>Navigating <Link href="/services/cybersecurity" className="text-rose-500 hover:underline">regional data sovereign laws</Link> (GDPR, HIPAA, SOC-2) while maintaining high delivery velocity.</>
     },
     {
       icon: <Layers size={18} />,
       title: "Legacy Infrastructure Modernization",
-      desc: "Decoupling mainframe architectures into containerized microservices without impacting live production traffic."
+      desc: <>Decoupling mainframe architectures into <Link href="/services/cloud-services" className="text-rose-500 hover:underline">containerized microservices</Link> without impacting live production traffic.</>
     },
     {
       icon: <Cpu size={18} />,
       title: "Data Silo Ingestion",
-      desc: "Aggregating petabytes of unstructured files into clean, low-latency delta lakehouse storage units."
+      desc: <>Aggregating petabytes of unstructured files into clean, low-latency <Link href="/services/ai-data-innovation" className="text-rose-500 hover:underline">delta lakehouse storage units</Link>.</>
     }
   ];
 

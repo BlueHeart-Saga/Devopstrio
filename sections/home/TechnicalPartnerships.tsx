@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { Reveal } from "@/components/ui/Reveal";
+import Link from "next/link";
 
 const techStack = [
   // Cloud & Containers
@@ -125,7 +126,7 @@ export function TechnicalPartnerships() {
                 The Foundation Behind Digital Success
               </h2>
               <p className="text-lg md:text-xl text-zinc-400 leading-relaxed font-light mb-12">
-                Hover over the nodes to explore the integrated tools in our delivery pipeline.
+                Hover over the nodes to explore the integrated tools in our <Link href="/ecosystem/technology-stack" className="text-rose-500 hover:underline">technology stack</Link> and delivery pipeline.
               </p>
 
               <div className="flex flex-col gap-6 relative min-h-[200px] justify-between">

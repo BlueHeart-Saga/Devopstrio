@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
 
 interface Expert {
   id: string;
@@ -11,8 +12,8 @@ interface Expert {
   image: string;
   social: string;
   link: string;
-  headline: string;
-  quote: string;
+  headline: React.ReactNode;
+  quote: React.ReactNode;
 }
 
 const experts: Expert[] = [
@@ -24,7 +25,7 @@ const experts: Expert[] = [
     image: "/assets/Contact-page/expert/pragmatica_man.png",
     social: "Telegram",
     link: "#",
-    headline: "Devopstrio — crafting digital experiences that feel intuitively human.",
+    headline: <span>Devopstrio — crafting digital experiences that feel <Link href="/services/software-development" className="text-rose-500 hover:underline">intuitively human</Link>.</span>,
     quote: "The digital world is dynamically evolving. Everything that enters it is processed, scaled, and takes on new forms and meanings. To be a witness to change is magic!"
   },
   {
@@ -35,8 +36,8 @@ const experts: Expert[] = [
     image: "/assets/Contact-page/expert/expert_woman_1.png",
     social: "LinkedIn",
     link: "#",
-    headline: "Engineering scale  where your cloud ambitions become resilient reality.",
-    quote: "True digital transformation isn't just about moving to the cloud. It's about rethinking your foundational architecture to be agile, secure, and infinitely scalable from day one."
+    headline: <span>Engineering scale where your <Link href="/services/cloud-services" className="text-rose-500 hover:underline">cloud ambitions</Link> become resilient reality.</span>,
+    quote: <span>True <Link href="/services/digital-transformation" className="text-rose-500 hover:underline">digital transformation</Link> isn't just about moving to the cloud. It's about rethinking your foundational architecture to be agile, secure, and infinitely scalable from day one.</span>
   },
   {
     id: "michael",
@@ -46,7 +47,7 @@ const experts: Expert[] = [
     image: "/assets/Contact-page/expert/expert_man_2.png",
     social: "Email",
     link: "#",
-    headline: "Unlocking intelligence  turning complex data into autonomous action.",
+    headline: <span>Unlocking intelligence turning complex data into <Link href="/services/ai-data-innovation" className="text-rose-500 hover:underline">autonomous action</Link>.</span>,
     quote: "Artificial intelligence shouldn't be a black box. We engineer transparent, stateful AI agents that seamlessly integrate into your workflows and drive measurable enterprise growth."
   },
   {
@@ -57,7 +58,7 @@ const experts: Expert[] = [
     image: "/assets/Contact-page/expert/expert_woman_2.png",
     social: "Telegram",
     link: "#",
-    headline: "Securing the future  building zero-trust perimeters for the modern web.",
+    headline: <span>Securing the future building <Link href="/services/cybersecurity" className="text-rose-500 hover:underline">zero-trust perimeters</Link> for the modern web.</span>,
     quote: "Security is no longer a final checklist—it is the bedrock of innovation. We design proactive, resilient systems that protect your data without compromising engineering velocity."
   }
 ];

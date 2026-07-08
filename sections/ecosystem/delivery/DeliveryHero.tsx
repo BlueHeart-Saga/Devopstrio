@@ -27,7 +27,7 @@ export function DeliveryHero() {
 
         <Reveal delay={0.2} className="max-w-3xl">
           <p className="text-zinc-300 text-xs md:text-sm lg:text-base leading-relaxed font-normal max-w-3xl text-center mx-auto opacity-95 mb-10">
-            Devopstrio combines strategic consulting, engineering excellence, cloud operations, and 24×7 delivery capabilities through a globally connected network of innovation hubs.
+            Devopstrio combines strategic <Link href="/services/it-consulting" className="text-rose-500 hover:underline font-bold">IT consulting services</Link>, <Link href="/ecosystem/engineering-excellence" className="text-rose-500 hover:underline font-bold">engineering excellence</Link>, <Link href="/services/cloud-services" className="text-rose-500 hover:underline font-bold">cloud operations</Link>, and 24×7 delivery capabilities.
           </p>
         </Reveal>
 

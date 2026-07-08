@@ -3,6 +3,7 @@
 import React from "react";
 import { PhoneCall, Calendar } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
+import Link from "next/link";
 
 export function GlobalCTA() {
   return (
@@ -15,7 +16,7 @@ export function GlobalCTA() {
           Talk to a Team Built for Global Delivery
         </h2>
         <p className="text-zinc-400 text-sm md:text-base font-medium max-w-xl mx-auto mb-10 leading-relaxed">
-          Whether you need strategic consulting from the UK, engineering scale from India, or regional coordination across North America, Devopstrio is built to support global transformation with local accountability.
+          Whether you need <Link href="/services/it-consulting" className="text-[#E11D48] hover:underline">strategic consulting</Link> from the UK, <Link href="/services" className="text-[#E11D48] hover:underline">engineering scale</Link> from India, or regional coordination across North America, Devopstrio is built to support global <Link href="/services/digital-transformation" className="text-[#E11D48] hover:underline">digital transformation</Link> with <Link href="/contact" className="text-[#E11D48] hover:underline">local accountability</Link>.
         </p>
         <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
           <a

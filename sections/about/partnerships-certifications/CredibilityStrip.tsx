@@ -2,9 +2,11 @@
 
 import { Reveal } from "@/components/ui/Reveal";
 
+import Link from "next/link";
+
 export function CredibilityStrip() {
   const points = [
-    "Multi-platform delivery across cloud, software, and enterprise ecosystems",
+    <>Multi-platform delivery across <Link href="/services/cloud-services" className="text-white hover:underline underline font-bold">cloud</Link>, <Link href="/services/software-development" className="text-white hover:underline underline font-bold">software</Link>, and enterprise ecosystems</>,
     "Cross-functional engineering support across architecture, development, DevOps, QA, and operations",
     "Strong alignment between business requirements and platform implementation",
     "Faster rollout using repeatable delivery frameworks and reusable accelerators",

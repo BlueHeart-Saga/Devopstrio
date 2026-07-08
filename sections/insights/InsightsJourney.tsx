@@ -12,6 +12,8 @@ const milestoneJourney = [
   { year: "2026", title: "Global Delivery Network", desc: "Established follow-the-sun operations across UK, US, and India hubs.", detail: "Serving 100+ global enterprises with zero downtime SLAs." }
 ];
 
+import Link from "next/link";
+
 export function InsightsJourney() {
   const [activeMilestone, setActiveMilestone] = useState<number | null>(null);
 
@@ -29,6 +31,9 @@ export function InsightsJourney() {
           <h2 className="text-2xl md:text-3xl font-light text-white tracking-tight leading-snug">
             Narrating our <span className="font-semibold text-rose-500">milestones</span>
           </h2>
+          <p className="text-zinc-400 text-sm leading-relaxed mt-4 max-w-xl font-semibold">
+            From our inception to our current global presence, we have partnered with enterprises to secure modern infrastructure. Read our <Link href="/about/overview" className="text-rose-500 hover:underline font-bold">company overview</Link> or discover our specialized <Link href="/services/cybersecurity" className="text-rose-500 hover:underline font-bold">cybersecurity</Link> and <Link href="/services/cloud-services" className="text-rose-500 hover:underline font-bold">cloud services</Link>.
+          </p>
         </Reveal>
 
         {/* Timeline slider grid */}

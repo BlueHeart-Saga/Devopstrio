@@ -3,42 +3,50 @@
 import React from "react";
 import { Reveal } from "@/components/ui/Reveal";
 import { Search, PenTool, Terminal, Rocket, Activity, Globe } from "lucide-react";
+import Link from "next/link";
 
-const phases = [
+interface PhaseItem {
+  step: string;
+  name: string;
+  desc: React.ReactNode;
+  icon: React.ComponentType<{ size?: number | string }>;
+}
+
+const phases: PhaseItem[] = [
   {
     step: "01",
     name: "Discover",
-    desc: "Audit existing application codebases, infrastructure configurations, and security bottlenecks.",
+    desc: <>Audit existing application codebases, infrastructure configurations, and <Link href="/services/cybersecurity" className="text-rose-500 hover:underline">security bottlenecks</Link>.</>,
     icon: Search
   },
   {
     step: "02",
     name: "Design",
-    desc: "Strategize and architect secure multi-cloud landing zones, migration blueprints, and decoupling.",
+    desc: <>Strategize and architect secure <Link href="/services/cloud-services" className="text-rose-500 hover:underline">multi-cloud landing zones</Link>, migration blueprints, and system decoupling.</>,
     icon: PenTool
   },
   {
     step: "03",
     name: "Build",
-    desc: "Write reproducible Infrastructure as Code templates and containerized developer portals.",
+    desc: <>Write reproducible <Link href="/services/devops-automation" className="text-rose-500 hover:underline">Infrastructure as Code</Link> templates and containerized developer portals.</>,
     icon: Terminal
   },
   {
     step: "04",
     name: "Deploy",
-    desc: "Configure automated GitOps pipelines and scale orchestrators for zero-downtime releases.",
+    desc: <>Configure automated <Link href="/services/devops-automation" className="text-rose-500 hover:underline">GitOps pipelines</Link> and scale orchestrators for zero-downtime releases.</>,
     icon: Rocket
   },
   {
     step: "05",
     name: "Optimize",
-    desc: "Set up real-time telemetry dashboards, cost optimization tracking, and auto-scaling controls.",
+    desc: <>Set up real-time telemetry dashboards, <Link href="/services/cloud-services" className="text-rose-500 hover:underline">cost optimization</Link> tracking, and auto-scaling controls.</>,
     icon: Activity
   },
   {
     step: "06",
     name: "Scale",
-    desc: "Replicate regional clusters, establish high-availability grids, and secure global endpoints.",
+    desc: <>Replicate regional clusters, establish high-availability grids, and secure <Link href="/ecosystem/global-delivery" className="text-rose-500 hover:underline">global endpoints</Link>.</>,
     icon: Globe
   }
 ];

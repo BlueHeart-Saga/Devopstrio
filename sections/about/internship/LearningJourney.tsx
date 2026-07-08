@@ -3,6 +3,8 @@ import React from "react";
 import { motion } from "framer-motion";
 import { UserCheck, FileText, Calendar, Compass, ShieldAlert, Award, FileCode, CheckCircle } from "lucide-react";
 
+import Link from "next/link";
+
 const colorMap: Record<string, { border: string; icon: string; number: string; glow: string }> = {
   rose:    { border: "border-rose-500/30 hover:border-rose-500/60",    icon: "text-rose-500 bg-rose-500/10 border-rose-500/20",    number: "text-rose-500/10",    glow: "from-rose-500/10" },
   blue:    { border: "border-blue-500/30 hover:border-blue-500/60",    icon: "text-blue-400 bg-blue-500/10 border-blue-500/20",    number: "text-blue-500/10",    glow: "from-blue-500/10" },
@@ -40,7 +42,7 @@ export const LearningJourney = () => {
             Your Learning <span className="text-rose-500">Journey</span>
           </h2>
           <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-bold max-w-2xl mx-auto">
-            From your initial application to graduating with certified skills, here is what your engineering experience will look like.
+            From your initial application to graduating with certified skills, here is what your engineering experience will look like. Explore our general <Link href="/careers" className="text-rose-500 hover:underline">careers framework</Link> for additional paths.
           </p>
         </div>
 

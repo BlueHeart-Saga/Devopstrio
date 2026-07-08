@@ -130,7 +130,7 @@ export function ExcellenceHero() {
         {/* Description Centered */}
         <Reveal delay={0.2} className="max-w-3xl">
           <p className="text-zinc-350 text-xs md:text-sm lg:text-base leading-relaxed font-normal max-w-3xl text-center mx-auto opacity-95 mb-6">
-            Building resilient, secure, and intelligent digital products through world-class engineering practices, modern architectures, and continuous innovation.
+            Building resilient, secure systems using our <Link href="/services/cybersecurity" className="text-rose-500 hover:underline font-bold">cybersecurity solutions</Link>, aligned with modern <Link href="/services/cloud-services/cloud-architecture" className="text-rose-500 hover:underline font-bold">cloud architecture services</Link> and continuous deployment practices.
           </p>
         </Reveal>
 

@@ -3,6 +3,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Play, ArrowLeft, ArrowRight } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
+import Link from "next/link";
 
 export function OurFutureSection() {
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -11,25 +12,25 @@ export function OurFutureSection() {
   const futureFocus = [
     {
       title: "Autonomous Orchestration",
-      desc: "Architecting self-healing Kubernetes clusters and AI-driven site reliability engineering agents that predict and resolve incidents before they occur.",
+      desc: <>Architecting self-healing Kubernetes clusters and AI-driven site reliability engineering agents that predict and resolve incidents. Learn more under our <Link href="/services/devops-automation" className="text-rose-500 hover:underline font-bold">DevOps automation</Link> division.</>,
       tag: "SRE Agents",
       image: "/assets/common/09ff7846bc8c9998745688779c09f88d 1.png"
     },
     {
       title: "Sustainable Green Cloud",
-      desc: "Optimizing code execution and server workloads to reduce carbon emissions by up to 40% across multi-cloud environments.",
+      desc: <>Optimizing code execution and server workloads to reduce carbon emissions by up to 40% across multi-cloud environments as part of <Link href="/services/cloud-services" className="text-rose-500 hover:underline font-bold">cloud services</Link>.</>,
       tag: "Green Ops",
       image: "/assets/common/1b065043b6959827c05a0073c93a4a53 1.png"
     },
     {
       title: "Next-Gen AI Swarms",
-      desc: "Deploying multi-model consensus swarms to orchestrate complex corporate workflows and automate entire delivery channels securely.",
+      desc: <>Deploying multi-model consensus swarms to orchestrate complex corporate workflows under <Link href="/services/ai-data-innovation" className="text-rose-500 hover:underline font-bold">AI & data innovation</Link>.</>,
       tag: "Swarm Gen",
       image: "/assets/common/260b761ad40c3ad2acba2c6666894539 1.png"
     },
     {
       title: "Cognitive DevOps Agents",
-      desc: "Unifying generative code synthesis and automated testing pipelines under multi-agent reasoning loops that self-remediate pull request feedback.",
+      desc:  <>Unifying generative code synthesis and automated testing pipelines under multi-agent reasoning loops. Explore our <Link href="/services/software-development" className="text-rose-500 hover:underline font-bold">software development</Link> options.</>,
       tag: "DevOps AI",
       image: "/assets/common/2fe7f9184c515b0c515ce38bc8a25efa 1.png"
     },

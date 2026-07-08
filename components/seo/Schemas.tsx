@@ -83,10 +83,25 @@ export function ServiceSchema({ name, description, offers }: ServiceDetails) {
   return <JsonLd data={data} />;
 }
 
+// Helper to convert ReactNode to plain text for JSON-LD schema
+function getPlainText(node: React.ReactNode): string {
+  if (!node) return "";
+  if (typeof node === "string" || typeof node === "number") {
+    return String(node);
+  }
+  if (React.isValidElement(node)) {
+    return getPlainText((node as React.ReactElement<any>).props.children);
+  }
+  if (Array.isArray(node)) {
+    return node.map(getPlainText).join("");
+  }
+  return "";
+}
+
 // 4. FAQ Schema
 interface FAQItem {
   q: string;
-  a: string;
+  a: React.ReactNode;
 }
 
 export function FAQSchema({ faqs }: { faqs: FAQItem[] }) {
@@ -98,7 +113,7 @@ export function FAQSchema({ faqs }: { faqs: FAQItem[] }) {
       "name": faq.q,
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": faq.a
+        "text": getPlainText(faq.a)
       }
     }))
   };

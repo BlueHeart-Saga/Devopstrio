@@ -24,8 +24,8 @@ export function EcosystemCTA() {
             Join our strategic <span className="text-white font-medium bg-gradient-to-r from-red-600 via-rose-600 to-rose-500 bg-clip-text text-transparent">alliance network</span>
           </h2>
 
-          <p className="text-zinc-400 text-sm md:text-lg leading-relaxed font-bold mb-10 max-w-lg">
-            Collaborate on new software prototypes, deploy co-engineered accelerators, and integrate architectures.
+          <p className="text-zinc-400 text-sm md:text-lg leading-relaxed font-bold mb-10 max-w-xl">
+            Collaborate on new software prototypes, deploy co-engineered accelerators, and integrate architectures. Explore our <Link href="/services/software-development" className="text-rose-500 hover:underline font-bold">software development</Link> options or read our <Link href="/about/overview" className="text-rose-500 hover:underline font-bold">company overview</Link> to learn how we work.
           </p>
 
           <div className="flex flex-wrap gap-4 justify-center items-center">

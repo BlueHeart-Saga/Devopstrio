@@ -3,6 +3,7 @@ import React from "react";
 import { Metadata } from "next";
 import { BreadcrumbSchema, ServiceSchema, FAQSchema } from "@/components/seo/Schemas";
 import { SectionNavbar } from "@/components/ui/SectionNavbar";
+import Link from "next/link";
 
 // Component imports
 import { IndustryHero } from "@/sections/industries/detail/IndustryHero";
@@ -44,95 +45,95 @@ const data = {
   },
   overview: {
     heading: "Integrated asset tracking and real-time telemetry systems",
-    desc1: "We build manufacturing telemetry databases and supply chain tracking hubs. Our codebases process IoT temperature metrics, predict assembly line halts, and isolate warehouse inventory updates.",
-    desc2: "Our services connect hardware sensors with cloud dashboards, offering real-time plant monitors, automated vendor re-orders, and equipment safety triggers."
+    desc1: <>We build manufacturing telemetry databases and supply chain tracking hubs. Our codebases process IoT temperature metrics, predict assembly line halts, and isolate warehouse inventory updates using our <Link href="/services/software-development/product-engineering" className="text-[#E11D48] hover:underline">product engineering projects</Link>.</>,
+    desc2: <>Our services connect hardware sensors with <Link href="/services/cloud-services" className="text-[#E11D48] hover:underline">cloud dashboards</Link>, offering real-time plant monitors, automated vendor re-orders, and equipment safety triggers.</>
   },
   challenges: [
     {
       title: "IoT Telemetry Packet Drops",
-      desc: "Preventing packet loss and data gaps when factory sensors send millions of telemetry events over unstable local networks."
+      desc: <>Preventing packet loss and data gaps when factory sensors send millions of telemetry events using <Link href="/services/devops-automation/site-reliability-engineering" className="text-[#E11D48] hover:underline">edge buffers</Link>.</>
     },
     {
       title: "Legacy Machine Integration Barriers",
-      desc: "Interfacing modern cloud dashboards with legacy PLCs utilizing non-standard industrial protocols."
+      desc: <>Interfacing modern cloud dashboards with legacy PLCs utilizing non-standard industrial protocols through our <Link href="/services/software-development/product-engineering" className="text-[#E11D48] hover:underline">custom API adapters</Link>.</>
     },
     {
       title: "Supply Chain Coordinate Latency",
-      desc: "Updating inventory counts and shipping locations in real-time across regional warehouse nodes."
+      desc: <>Updating inventory counts and shipping locations in real-time across regional <Link href="/services/cloud-services" className="text-[#E11D48] hover:underline">warehouse nodes</Link>.</>
     }
   ],
   solutions: [
     {
       title: "AMQP Edge Spooling Buffers",
-      desc: "Configuring edge gateways with local AMQP message queues to spool telemetry data during internet drops."
+      desc: <>Configuring edge gateways with local AMQP message queues to spool telemetry data under <Link href="/services/devops-automation/site-reliability-engineering" className="text-[#E11D48] hover:underline">high-availability setups</Link>.</>
     },
     {
       title: "Modbus/OPC-UA API Adapters",
-      desc: "Deploying containerized Go processors at the edge to translate legacy hardware protocols to clean JSON payloads."
+      desc: <>Deploying containerized Go processors at the edge to translate legacy hardware protocols into <Link href="/services/software-development/product-engineering" className="text-[#E11D48] hover:underline">clean JSON payloads</Link>.</>
     },
     {
       title: "Time-Series Stream Aggregators",
-      desc: "Using InfluxDB clusters to compile incoming tracking feeds and calculate routing speeds under 50ms."
+      desc: <>Using InfluxDB clusters to compile incoming tracking feeds and calculate routing speeds under <Link href="/services/cloud-services" className="text-[#E11D48] hover:underline">50ms latency metrics</Link>.</>
     }
   ],
   capabilities: [
     {
       title: "Predictive Maintenance",
-      desc: "Sensors monitoring machine heat and vibration frequency, warning engineers before breakdowns occur."
+      desc: <>Sensors monitoring machine heat and vibration frequency, warning engineers before breakdowns occur via <Link href="/services/devops-automation/site-reliability-engineering" className="text-[#E11D48] hover:underline">predictive alerts</Link>.</>
     },
     {
       title: "Supply Chain Tracking",
-      desc: "Real-time GPS routing grids tracking freight trucks, containers, and inventory levels."
+      desc: <>Real-time GPS routing grids tracking freight trucks, containers, and inventory levels utilizing <Link href="/services/cloud-services" className="text-[#E11D48] hover:underline">IoT tracking pipelines</Link>.</>
     },
     {
       title: "Factory IoT Hubs",
-      desc: "Secure message brokers bridging hardware metrics with cloud databases under low network bandwidth."
+      desc: <>Secure message brokers bridging hardware metrics with cloud databases under <Link href="/services/cybersecurity" className="text-[#E11D48] hover:underline">encrypted data channels</Link>.</>
     }
   ],
   useCases: [
     {
       title: "Assembly Line Monitoring",
-      result: "Reduced automotive assembly line downtime by 38% via time-series temperature alerts."
+      result: <>Reduced automotive assembly line downtime by 38% via time-series temperature alerts integrated with <Link href="/services/devops-automation/site-reliability-engineering" className="text-[#E11D48] hover:underline">SRE tools</Link>.</>
     },
     {
       title: "Auto Parts Re-Ordering",
-      result: "Automated warehouse logistics parts orders directly matching telemetry alerts."
+      result: <>Automated warehouse logistics parts orders directly matching telemetry alerts using <Link href="/services/software-development/product-engineering" className="text-[#E11D48] hover:underline">automated workflows</Link>.</>
     }
   ],
   techs: [
     {
       name: "MQTT / AMQP Brokers",
-      desc: "Low-overhead data brokers routing sensory inputs to cloud collectors."
+      desc: <>Low-overhead data brokers routing sensory inputs to <Link href="/services/cloud-services" className="text-[#E11D48] hover:underline">cloud collectors</Link>.</>
     },
     {
       name: "InfluxDB / TimeSeries",
-      desc: "Optimized databases designed to log billions of hardware coordinate updates."
+      desc: <>Optimized databases designed to log billions of hardware coordinate updates inside <Link href="/services/cloud-services" className="text-[#E11D48] hover:underline">managed database setups</Link>.</>
     },
     {
       name: "Go / Rust microservices",
-      desc: "High-speed data ingestion scripts handling telemetry feeds without memory leaks."
+      desc: <>High-speed data ingestion scripts handling telemetry feeds without memory leaks using <Link href="/services/software-development/product-engineering" className="text-[#E11D48] hover:underline">optimized backend services</Link>.</>
     }
   ],
   outcomes: [
     {
       value: "38%",
       label: "Downtime Reduction",
-      desc: "Fewer assembly line stops."
+      desc: <>Fewer assembly line stops via <Link href="/services/devops-automation/site-reliability-engineering" className="text-[#E11D48] hover:underline">SRE management</Link>.</>
     },
     {
       value: "<50ms",
       label: "Telemetry Latency",
-      desc: "Real-time hardware alerts."
+      desc: <>Real-time hardware alerts using <Link href="/services/cloud-services" className="text-[#E11D48] hover:underline">IoT telemetry</Link>.</>
     },
     {
       value: "100M+",
       label: "Daily events",
-      desc: "Secure telemetry metrics processed daily."
+      desc: <>Secure telemetry metrics processed daily inside <Link href="/services/cybersecurity" className="text-[#E11D48] hover:underline">highly guarded network layers</Link>.</>
     }
   ],
   caseStudy: {
     title: "Real-time IoT maintenance pipeline for automotive assembly plant.",
-    desc: "We engineered a time-series database system that checks temperature and torque metrics across 200 assembly machines. The platform triggers automatic warnings, allowing engineers to fix machines before lines stall.",
+    desc: <>We engineered a time-series database system that checks temperature and torque metrics across 200 assembly machines. The platform triggers automatic warnings, allowing engineers to fix machines before lines stall under <Link href="/services/devops-automation/site-reliability-engineering" className="text-[#E11D48] hover:underline">proactive SRE</Link>.</>,
     metrics: [
       { value: "38%", label: "Downtime Cut" },
       { value: "<50ms", label: "IoT Speed" },
@@ -147,25 +148,25 @@ const data = {
   compliance: [
     {
       title: "ISO 9001 Alignment",
-      desc: "Rigorous version control setups, automated testing pipelines, and roll-back triggers."
+      desc: <>Rigorous version control setups, automated testing <Link href="/services/devops-automation" className="text-[#E11D48] hover:underline">pipelines</Link>, and roll-back triggers.</>
     },
     {
       title: "Isolated Network Schemes",
-      desc: "Private network nodes isolating factory equipment access from public web pages."
+      desc: <>Private network nodes isolating factory equipment access from public web pages under <Link href="/services/cybersecurity" className="text-[#E11D48] hover:underline">strict firewall setups</Link>.</>
     }
   ],
   whyChoose: [
     {
       title: "Edge Computing Expertise",
-      desc: "We deploy high-performance Go/Rust routines directly on factory floor gateways."
+      desc: <>We deploy high-performance Go/Rust routines directly on factory floor gateways using <Link href="/services/software-development/product-engineering" className="text-[#E11D48] hover:underline">native drivers</Link>.</>
     },
     {
       title: "Multi-Protocol Support",
-      desc: "Seamlessly link legacy OPC-UA and Modbus telemetry lines to AWS IoT Core."
+      desc: <>Seamlessly link legacy OPC-UA and Modbus telemetry lines to <Link href="/services/cloud-services" className="text-[#E11D48] hover:underline">AWS IoT Core</Link>.</>
     },
     {
       title: "Robust Offline Caching",
-      desc: "Edge nodes cache telemetry locally, preventing loss when plant networks drop."
+      desc: <>Edge nodes cache telemetry locally, preventing loss when plant networks drop under <Link href="/services/devops-automation/site-reliability-engineering" className="text-[#E11D48] hover:underline">resilient storage models</Link>.</>
     }
   ],
   relatedServices: [
@@ -189,17 +190,17 @@ const data = {
   cta: {
     ctaTitle: "Upgrade your plant",
     ctaHighlight: "IoT infrastructure",
-    ctaDesc: "Consult with our principal industrial solutions architect to review your machinery logs and supply chain data.",
+    ctaDesc: <>Consult with our principal <Link href="/contact" className="text-[#E11D48] hover:underline">industrial solutions architect</Link> to review your machinery logs and supply chain data.</>,
     ctaBtnText: "Request Industrial Audit"
   },
   faqs: [
     {
       q: "Can you connect to older industrial PLCs?",
-      a: "Yes. We use standard IoT gateways and custom translators to bridge older Modbus/OPC-UA industrial controllers with secure cloud APIs."
+      a: <>Yes. We use standard IoT gateways and custom translators to bridge older Modbus/OPC-UA industrial controllers with secure <Link href="/services/cloud-services" className="text-[#E11D48] hover:underline">cloud APIs</Link>.</>
     },
     {
       q: "How do you secure factory floor data?",
-      a: "We run hardware data through private VPN tunnels to virtual clouds, enforcing strict firewall rules that block public internet ingress."
+      a: <>We run hardware data through private VPN tunnels to virtual clouds, enforcing strict <Link href="/services/cybersecurity" className="text-[#E11D48] hover:underline">firewall rules</Link> that block public internet ingress.</>
     }
   ]
 };

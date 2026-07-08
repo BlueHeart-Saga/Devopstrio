@@ -35,6 +35,8 @@ const steps = [
   }
 ];
 
+import Link from "next/link";
+
 export function EcosystemTopology() {
   return (
     <section id="topology" className="w-full py-32 bg-black border-b border-zinc-900/60 relative overflow-hidden">
@@ -51,7 +53,7 @@ export function EcosystemTopology() {
             Connected alliance <span className="text-rose-500">dataflow & layers</span>
           </h2>
           <p className="text-zinc-200 text-base md:text-lg font-semibold leading-relaxed mt-2 max-w-xl">
-            How our technology partners, accelerators, and R&D labs collaborate to deploy workloads.
+            How our technology partners, accelerators, and R&D labs collaborate to deploy workloads. Explore our <Link href="/services/cloud-services" className="text-rose-500 hover:underline font-bold">cloud services</Link> and read our <Link href="/about/overview" className="text-rose-500 hover:underline font-bold">company overview</Link>.
           </p>
         </Reveal>
 

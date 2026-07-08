@@ -3,10 +3,11 @@
 import React from "react";
 import { ArrowUpRight } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
+import Link from "next/link";
 
 interface FocusArea {
   title: string;
-  desc: string;
+  desc: React.ReactNode;
 }
 
 interface IndustryFocusAreasProps {
@@ -16,15 +17,15 @@ interface IndustryFocusAreasProps {
 const defaultExtraFocusAreas: FocusArea[] = [
   {
     title: "Automated GitOps Pipelines",
-    desc: "Building secure, audited continuous delivery pipelines with container integrity scanning and environment drift detection."
+    desc: <>Building secure, audited <Link href="/services/devops-automation" className="text-rose-500 hover:underline">continuous delivery</Link> pipelines with container integrity scanning and environment drift detection.</>
   },
   {
     title: "Cloud Platform Scale",
-    desc: "Constructing multi-region Kubernetes clusters and auto-scaling database nodes under strict SOC-2/HIPAA guidelines."
+    desc: <>Constructing multi-region <Link href="/services/cloud-services" className="text-rose-500 hover:underline">Kubernetes</Link> clusters and auto-scaling database nodes under strict SOC-2/HIPAA guidelines.</>
   },
   {
     title: "24/7 SRE Observability",
-    desc: "Designing distributed telemetry logging, synthetic load runs, and auto-remediation loops to guarantee 99.99% uptime."
+    desc: <>Designing distributed <Link href="/services/devops-automation" className="text-rose-500 hover:underline">telemetry logging</Link>, synthetic load runs, and auto-remediation loops to guarantee 99.99% uptime.</>
   }
 ];
 

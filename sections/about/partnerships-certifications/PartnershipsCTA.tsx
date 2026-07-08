@@ -18,7 +18,7 @@ export function PartnershipsCTA() {
             Looking for a Technology Partner You Can <span className="text-[#E11D48]">Build With Long Term?</span>
           </h2>
           <p className="text-zinc-400 font-medium text-sm md:text-base max-w-3xl mx-auto mb-12 leading-relaxed">
-            Devopstrio combines engineering capability, ecosystem alignment, and delivery discipline to help organizations move forward with greater confidence—across modernization, cloud, AI, software, and managed services initiatives.
+            Devopstrio combines engineering capability, ecosystem alignment, and delivery discipline to help organizations move forward with greater confidence—across <Link href="/services/digital-transformation" className="text-[#E11D48] hover:underline font-bold">modernization</Link>, <Link href="/services/cloud-services" className="text-[#E11D48] hover:underline font-bold">cloud</Link>, <Link href="/services/ai-data-innovation" className="text-[#E11D48] hover:underline font-bold">AI</Link>, <Link href="/services/software-development" className="text-[#E11D48] hover:underline font-bold">software</Link>, and <Link href="/services/managed-services" className="text-[#E11D48] hover:underline font-bold">managed services</Link> initiatives.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4">
             <Link

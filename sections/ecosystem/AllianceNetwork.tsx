@@ -3,6 +3,8 @@
 import React from "react";
 import { Reveal } from "@/components/ui/Reveal";
 
+import Link from "next/link";
+
 const alliances = [
   { name: "AWS", description: "Advanced Consulting Partner", logoText: "AWS", x: 150, y: 100 },
   { name: "Microsoft", description: "Gold Cloud Partner", logoText: "Azure", x: 450, y: 80 },
@@ -34,7 +36,7 @@ export function AllianceNetwork() {
           </Reveal>
           <Reveal>
             <p className="text-zinc-350 text-base md:text-lg font-semibold leading-relaxed mb-8">
-              We collaborate with cloud providers and technology vendors to architect secure, scalable systems. These alliances grant us access to early feature APIs, direct technical support, and product roadmaps.
+              We collaborate with cloud providers and technology vendors to architect secure, scalable systems. These alliances grant us access to early feature APIs, direct technical support, and product roadmaps. Read about our <Link href="/about/partnerships-certifications" className="text-rose-500 hover:underline font-bold">partnerships and certifications</Link> or discover our <Link href="/services/cloud-services" className="text-rose-500 hover:underline font-bold">cloud services</Link>.
             </p>
           </Reveal>
 

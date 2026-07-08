@@ -2,6 +2,7 @@
 
 import React from "react";
 import { Reveal } from "@/components/ui/Reveal";
+import Link from "next/link";
 
 export function CompanyOverviewSection() {
   return (
@@ -28,7 +29,7 @@ export function CompanyOverviewSection() {
                 At Devopstrio, we believe technology should empower businesses to move faster, innovate smarter, and operate with confidence. We partner with organizations to transform ambitious ideas into secure, scalable, and intelligent digital solutions.
               </p>
               <p className="text-zinc-300 text-xs md:text-sm leading-relaxed font-medium">
-                By combining expertise in Artificial Intelligence, Cloud Computing, DevOps, Cybersecurity, Data Engineering, and Enterprise Software Development, we help organizations modernize legacy systems, optimize operations, and build future-ready digital ecosystems.
+                By combining expertise in <Link href="/services/ai-data-innovation" className="text-rose-500 hover:underline font-bold">Artificial Intelligence</Link>, <Link href="/services/cloud-services" className="text-rose-500 hover:underline font-bold">Cloud Computing</Link>, <Link href="/services/devops-automation" className="text-rose-500 hover:underline font-bold">DevOps</Link>, <Link href="/services/cybersecurity" className="text-rose-500 hover:underline font-bold">Cybersecurity</Link>, <Link href="/services/data-engineering" className="text-rose-500 hover:underline font-bold">Data Engineering</Link>, and <Link href="/services/software-development" className="text-rose-500 hover:underline font-bold">Enterprise Software Development</Link>, we help organizations modernize legacy systems, optimize operations, and build future-ready digital ecosystems.
               </p>
               <p className="text-zinc-300 text-xs md:text-sm leading-relaxed font-medium">
                 From strategic consulting and solution architecture to product engineering, automation, cloud operations, and managed services, our multidisciplinary teams deliver technology solutions that drive measurable business outcomes.

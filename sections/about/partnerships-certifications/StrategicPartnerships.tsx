@@ -50,6 +50,8 @@ const partnerCategories = [
   }
 ];
 
+import Link from "next/link";
+
 export function StrategicPartnerships() {
   return (
     <section id="strategic-partners" className="py-24 bg-black text-white relative overflow-hidden z-10">
@@ -64,7 +66,7 @@ export function StrategicPartnerships() {
               <span className="text-[#E11D48]">Strengthen Our Delivery Model</span>
             </h2>
             <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-medium max-w-3xl">
-              Our partnerships help us stay aligned with evolving technologies, enterprise platforms, and modern delivery expectations. These alliances strengthen our ability to support clients across cloud modernization, enterprise systems, digital operations, and innovation-led transformation programs.
+              Our partnerships help us stay aligned with evolving technologies, enterprise platforms, and modern delivery expectations. These alliances strengthen our ability to support clients across <Link href="/services/cloud-services" className="text-[#E11D48] hover:underline font-bold">cloud modernization</Link>, enterprise systems, digital operations, and innovation-led <Link href="/services/digital-transformation" className="text-[#E11D48] hover:underline font-bold">transformation programs</Link>.
             </p>
           </div>
         </Reveal>

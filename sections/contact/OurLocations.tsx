@@ -2,6 +2,7 @@
 
 import React from "react";
 import { Reveal } from "@/components/ui/Reveal";
+import Link from "next/link";
 
 const offices = [
   { 
@@ -64,7 +65,7 @@ export function OurLocations() {
             Visit Our <span className="text-white font-bold bg-gradient-to-r from-red-650 via-rose-600 to-rose-500 bg-clip-text text-transparent">Global Offices</span>.
           </h2>
           <p className="text-zinc-400 text-sm leading-relaxed font-bold max-w-2xl">
-            We&apos;d love to meet you in person. Our global locations and engineering hubs are always open for client visits, workshops, and architecture reviews. Coffee&apos;s on us — always.
+            We&apos;d love to meet you in person. Our <Link href="/ecosystem/global-delivery" className="text-rose-500 hover:underline">global locations</Link> and engineering hubs are always open for client visits, workshops, and <Link href="/services/it-consulting" className="text-rose-500 hover:underline">architecture reviews</Link>. Coffee&apos;s on us — always.
           </p>
         </Reveal>
 

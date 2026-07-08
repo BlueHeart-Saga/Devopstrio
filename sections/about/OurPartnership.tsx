@@ -149,7 +149,7 @@ export function OurPartnership() {
 
             <Reveal delay={0.2}>
               <p className="text-zinc-400 text-sm md:text-base leading-relaxed mb-8">
-                Devopstrio holds advanced authorizations and deep integrations across the world's most respected technology ecosystems. Easily connect your program and orchestrate enterprise workflows with our validated, high-performance developer pipelines.
+                Devopstrio holds advanced authorizations and deep integrations across the world's most respected <Link href="/ecosystem" className="text-rose-500 hover:underline">technology ecosystems</Link>. Easily connect your program and orchestrate enterprise workflows with our validated, high-performance <Link href="/services/devops-automation" className="text-rose-500 hover:underline">developer pipelines</Link>.
               </p>
             </Reveal>
 

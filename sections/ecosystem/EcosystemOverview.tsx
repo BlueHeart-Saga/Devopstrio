@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import { Reveal } from "@/components/ui/Reveal";
 import { ArrowUpRight } from "lucide-react";
 
@@ -35,7 +36,7 @@ export function EcosystemOverview() {
                 </h2>
 
                 <p className="text-zinc-400 text-sm leading-relaxed max-w-xl mb-6 font-semibold">
-                  Devopstrio combines strategic technology partnerships, proprietary platforms, innovation labs, and global delivery capabilities into a unified ecosystem. We partner with the world's leading cloud and technology providers to help organizations build, modernize, and scale with confidence.
+                  Devopstrio combines strategic technology partnerships, proprietary platforms, innovation labs, and global delivery capabilities into a unified ecosystem. We partner with the world's leading cloud and technology providers to help organizations build, modernize, and scale with confidence. Learn more in our <Link href="/about/overview" className="text-rose-500 hover:underline font-bold">company overview</Link> or contact our <Link href="/about/support" className="text-rose-500 hover:underline font-bold">support team</Link>.
                 </p>
 
                 <a

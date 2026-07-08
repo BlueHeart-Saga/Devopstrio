@@ -3,6 +3,7 @@
 import React from "react";
 import { Reveal } from "@/components/ui/Reveal";
 import { Zap, Cloud, Shield, BarChart3, Quote } from "lucide-react";
+import Link from "next/link";
 
 interface Metric {
   value: string;
@@ -123,7 +124,7 @@ export function ImpactSection() {
                   Into <span className="text-rose-500">Impact</span>
                 </h2>
                 <p className="text-zinc-300 text-sm md:text-base leading-relaxed font-medium max-w-xs">
-                  Every solution we deliver is designed to create lasting business value through technology, automation, cloud, AI, and engineering excellence.
+                  Every solution we deliver is designed to create lasting business value through technology, <Link href="/services/devops-automation" className="text-rose-500 hover:underline">automation</Link>, <Link href="/services/cloud-services" className="text-rose-500 hover:underline">cloud</Link>, <Link href="/services/ai-data-innovation" className="text-rose-500 hover:underline">AI</Link>, and <Link href="/services/software-development" className="text-rose-500 hover:underline">engineering excellence</Link>.
                 </p>
               </Reveal>
             </div>

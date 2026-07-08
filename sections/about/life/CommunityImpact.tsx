@@ -3,6 +3,8 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Heart, GraduationCap, MonitorSmartphone, Building2, Leaf } from "lucide-react";
 
+import Link from "next/link";
+
 const initiatives = [
   {
     icon: Heart,
@@ -12,12 +14,12 @@ const initiatives = [
   {
     icon: GraduationCap,
     title: "Education Programs",
-    description: "Scholarships and coding bootcamps for underprivileged youth to build the next generation of engineers."
+    description:  <>Scholarships and coding bootcamps for underprivileged youth to build the next generation of engineers in our <Link href="/about/internship" className="text-rose-500 hover:underline font-bold">internship track</Link>.</>
   },
   {
     icon: MonitorSmartphone,
     title: "Technology Workshops",
-    description: "Free workshops bringing AI and cloud literacy to communities and small businesses that need it most."
+    description:  <>Free workshops bringing <Link href="/services/ai-data-innovation" className="text-rose-500 hover:underline font-bold">AI</Link> and <Link href="/services/cloud-services" className="text-rose-500 hover:underline font-bold">cloud services</Link> literacy to communities and small businesses.</>
   },
   {
     icon: Building2,

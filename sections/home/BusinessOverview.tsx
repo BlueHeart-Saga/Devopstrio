@@ -146,6 +146,7 @@
 import React from "react";
 import { Reveal } from "@/components/ui/Reveal";
 import { ArrowUpRight } from "lucide-react";
+import Link from "next/link";
 
 export function BusinessOverview() {
   return (
@@ -177,17 +178,14 @@ export function BusinessOverview() {
                   </span>
                 </h2>
 
+                <p className="text-zinc-400 text-sm leading-relaxed max-w-xl mb-4">
+                  Devopstrio is an elite global <Link href="/services/it-consulting" className="text-rose-500 hover:underline">technology consulting</Link> and engineering company. We help enterprises modernize legacy systems, accelerate innovation, and scale <Link href="/services/digital-transformation" className="text-rose-500 hover:underline">digital transformation</Link> across multiple cloud platforms.
+                </p>
                 <p className="text-zinc-400 text-sm leading-relaxed max-w-xl mb-6">
-                  Devopstrio is a global technology consulting and engineering
-                  company helping enterprises modernize infrastructure,
-                  accelerate innovation, build intelligent platforms, and scale
-                  digital transformation through Cloud, AI, Data, DevOps,
-                  Cybersecurity, and Product Engineering.
+                  Through custom <Link href="/services/ai-data-innovation" className="text-rose-500 hover:underline">AI innovation</Link>, automated <Link href="/services/devops-automation" className="text-rose-500 hover:underline">DevOps pipelines</Link>, and robust <Link href="/services/cybersecurity" className="text-rose-500 hover:underline">cybersecurity</Link>, we build scalable environments tailored to your specific business requirements.
                 </p>
 
-
-
-                <a
+                <Link
                   href="/services"
                   className="inline-flex items-center gap-2 text-white font-semibold group/link w-fit"
                 >
@@ -195,7 +193,7 @@ export function BusinessOverview() {
                   <span className="w-9 h-9 rounded-full bg-[#E11D48] flex items-center justify-center transition-transform duration-300 group-hover/link:translate-x-1">
                     <ArrowUpRight size={16} />
                   </span>
-                </a>
+                </Link>
               </div>
 
               {/* RIGHT IMAGE */}

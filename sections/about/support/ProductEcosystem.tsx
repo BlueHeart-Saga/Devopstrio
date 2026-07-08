@@ -14,6 +14,8 @@ const logos = [
   { name: "Justivon", src: "/assets/Home-page/our-products/logo/Justivon.png" },
 ];
 
+import Link from "next/link";
+
 export const ProductEcosystem = () => {
   return (
     <section className="py-24 bg-[#050505] border-t border-zinc-900 relative overflow-hidden">
@@ -47,7 +49,7 @@ export const ProductEcosystem = () => {
             transition={{ delay: 0.1 }}
             className="text-zinc-400 text-sm md:text-base leading-relaxed font-bold max-w-xl mx-auto"
           >
-            Full lifecycle support for the entire Devopstrio product portfolio.
+            Full lifecycle support for the entire Devopstrio product portfolio. Explore our <Link href="/ecosystem/our-products" className="text-rose-500 hover:underline">product ecosystem</Link> for detailed specs.
           </motion.p>
         </div>
 

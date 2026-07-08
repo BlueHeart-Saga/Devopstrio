@@ -57,7 +57,7 @@ export function AwardsHero() {
             transition={{ duration: 0.7, delay: 0.15 }}
             className="text-sm md:text-base font-medium text-zinc-300 max-w-xl leading-relaxed"
           >
-            Our awards, recognitions, and professional milestones reflect Devopstrio’s commitment to building meaningful technology solutions, trusted delivery relationships, and a culture of continuous progress. From industry acknowledgements to internal growth milestones, these moments represent the people, partnerships, and performance that shape our journey.
+            Our awards, recognitions, and professional milestones reflect Devopstrio’s commitment to building meaningful <Link href="/services/software-development" className="text-[#E11D48] hover:underline">technology solutions</Link>, trusted delivery relationships, and a culture of continuous progress. From industry acknowledgements to internal growth milestones, these moments represent the people, partnerships, and performance that shape our <Link href="/about" className="text-[#E11D48] hover:underline">corporate journey</Link>.
           </motion.p>
 
           <motion.div

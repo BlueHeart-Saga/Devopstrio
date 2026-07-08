@@ -2,14 +2,15 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Cloud, Cpu, Terminal, Shield, Lock, Code2, Database, Workflow } from "lucide-react";
+import Link from "next/link";
 
 const engineeringAreas = [
-  { icon: Cloud, title: "Cloud Native Development", tools: ["Azure", "AWS", "Google Cloud"] },
-  { icon: Cpu, title: "AI Product Innovation", tools: ["Python", "TensorFlow", "OpenAI"] },
-  { icon: Terminal, title: "DevOps Excellence", tools: ["Kubernetes", "Terraform", "Docker"] },
-  { icon: Workflow, title: "Platform Engineering", tools: ["Backstage", "Crossplane", "ArgoCD"] },
-  { icon: Shield, title: "Cybersecurity", tools: ["Zero Trust", "DevSecOps", "Compliance"] },
-  { icon: Code2, title: "Modern Web Apps", tools: ["React", "Next.js", "FastAPI"] },
+  { icon: Cloud, title: "Cloud Native Development", tools: ["Azure", "AWS", "Google Cloud"], href: "/services/cloud-services" },
+  { icon: Cpu, title: "AI Product Innovation", tools: ["Python", "TensorFlow", "OpenAI"], href: "/services/ai-data-innovation" },
+  { icon: Terminal, title: "DevOps Excellence", tools: ["Kubernetes", "Terraform", "Docker"], href: "/services/devops-automation" },
+  { icon: Workflow, title: "Platform Engineering", tools: ["Backstage", "Crossplane", "ArgoCD"], href: "/services/devops-automation" },
+  { icon: Shield, title: "Cybersecurity", tools: ["Zero Trust", "DevSecOps", "Compliance"], href: "/services/cybersecurity" },
+  { icon: Code2, title: "Modern Web Apps", tools: ["React", "Next.js", "FastAPI"], href: "/services/software-development" },
 ];
 
 export const EngineeringCulture = () => {
@@ -51,7 +52,11 @@ export const EngineeringCulture = () => {
               <div className="w-14 h-14 rounded-xl bg-zinc-900 border border-zinc-800 flex items-center justify-center mb-6 group-hover:bg-red-500/10 group-hover:border-red-500/30 transition-all duration-300">
                 <area.icon className="w-7 h-7 text-zinc-400 group-hover:text-red-500 transition-colors" />
               </div>
-              <h3 className="text-xl font-bold text-white mb-4 group-hover:text-red-400 transition-colors">{area.title}</h3>
+              <h3 className="text-xl font-bold text-white mb-4 group-hover:text-red-400 transition-colors">
+                <Link href={area.href} className="hover:underline">
+                  {area.title}
+                </Link>
+              </h3>
               
               <div className="flex flex-wrap gap-2 mt-auto">
                 {area.tools.map((tool, i) => (

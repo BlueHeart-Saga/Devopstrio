@@ -181,7 +181,7 @@ export function ExploreClient() {
 
               <Reveal delay={0.2}>
                 <p className="text-zinc-400 text-xs sm:text-sm md:text-base leading-relaxed font-semibold max-w-xl mb-8">
-                  We bridge the gap between complex enterprise strategy and zero-defect execution. Devopstrio delivers 10 core capability pillars, offering multi-region cloud scaling, autonomous cognitive AI workflows, secure platform engineering, and 24/7 global operations.
+                  We bridge the gap between complex enterprise strategy and zero-defect execution. Devopstrio delivers 10 core capability pillars, offering <Link href="/services/cloud-services" className="text-rose-500 hover:underline">multi-region cloud scaling</Link>, <Link href="/services/ai-data-innovation" className="text-rose-500 hover:underline">autonomous cognitive AI workflows</Link>, <Link href="/services/devops-automation" className="text-rose-500 hover:underline">secure platform engineering</Link>, and <Link href="/ecosystem/global-delivery" className="text-rose-500 hover:underline">24/7 global operations</Link>.
                 </p>
               </Reveal>
 
@@ -260,7 +260,7 @@ export function ExploreClient() {
                     How We Organize Our Service Lifecycle
                   </h2>
                   <p className="text-zinc-400 text-sm leading-relaxed font-medium drop-shadow-md">
-                    Devopstrio’s service ecosystem is designed to support the full technology lifecycle—from initial advisory and architecture to product engineering, cloud modernization, AI enablement, platform operations, cybersecurity, and managed support. Engage with us for focused delivery in a single domain or for integrated multi-service transformation programs.
+                    Devopstrio’s service ecosystem is designed to support the full technology lifecycle—from initial advisory and architecture to product engineering, <Link href="/services/cloud-services" className="text-rose-500 hover:underline">cloud modernization</Link>, <Link href="/services/ai-data-innovation" className="text-rose-500 hover:underline">AI enablement</Link>, platform operations, <Link href="/services/cybersecurity" className="text-rose-500 hover:underline">cybersecurity</Link>, and managed support. Engage with us for focused delivery in a single domain or for integrated multi-service transformation programs.
                   </p>
                 </div>
                 
@@ -1001,7 +1001,7 @@ export function ExploreClient() {
               </Reveal>
               <Reveal delay={0.2}>
                 <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-medium drop-shadow-md">
-                  Devopstrio bridges the gap between modern cloud complexity and rapid operational engineering. We construct robust configurations built to withstand strict security compliance frameworks.
+                  Devopstrio bridges the gap between <Link href="/services/cloud-services" className="text-rose-500 hover:underline">modern cloud complexity</Link> and <Link href="/services/devops-automation" className="text-rose-500 hover:underline">rapid operational engineering</Link>. We construct robust configurations built to withstand strict <Link href="/services/cybersecurity" className="text-rose-500 hover:underline">security compliance frameworks</Link>.
                 </p>
               </Reveal>
               

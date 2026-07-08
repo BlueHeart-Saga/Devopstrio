@@ -35,10 +35,10 @@ export function Hero({ badge, title, subtitle, stats, breadcrumbs, bgImage, chil
             sizes="100vw"
             className="object-cover object-center opacity-100 select-none pointer-events-none transition-transform duration-1000 scale-[1.02]"
           />
-          {/* Only a dark radial circle in the center behind the text */}
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,0,0,0.94)_0%,rgba(0,0,0,0.72)_50%,transparent_80%)] pointer-events-none" />
+          {/* Subtle dark radial overlay to ensure text readability without obscuring the background image */}
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,0,0,0.4)_0%,rgba(0,0,0,0.15)_60%,transparent_100%)] pointer-events-none" />
           {/* Bottom shadow fade to blend with the black page background */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/10 to-transparent pointer-events-none" />
         </div>
       )}
 

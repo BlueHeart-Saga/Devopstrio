@@ -1,5 +1,6 @@
 import React, { use } from "react";
 import { notFound } from "next/navigation";
+import Link from "next/link";
 import { getServiceByCategory, getCapability } from "@/data/services";
 import { getHeroBgImage } from "@/lib/services-utils";
 import { Hero } from "@/components/services/Hero";
@@ -85,11 +86,39 @@ export default function CapabilityPage({ params }: PageProps) {
   const overrides = isDevSecOps ? {
     overviewHeading: "Building Secure Software with DevSecOps Services in UK",
     overviewParagraph1: "SonarQube SAST analysis and Snyk vulnerability scanning integrated into CI/CD pipelines.",
-    overviewParagraph2: "We implement automated environments, advanced telemetry monitoring, and secure VPC routing configurations to meet industry regulatory requirements.",
+    overviewParagraph2: (
+      <span>
+        We implement automated environments, advanced telemetry monitoring, and secure VPC routing configurations. Secure your container grids and microservices with our{" "}
+        <Link href="/services/cybersecurity" className="text-rose-500 hover:underline font-bold">
+          enterprise cybersecurity threat mitigation protocols
+        </Link>{" "}
+        for compliance.
+      </span>
+    ),
     
     deepDiveHeading: "What are DevSecOps services in UK?",
-    deepDiveParagraph1: "DevSecOps services in UK combine security, development, and operations into a unified approach that helps organizations streamline workflows, reduce security risks, and deliver production-ready applications. By creating secure, automated environments, businesses can align their software delivery with modern compliance standards and industry best practices.",
-    deepDiveParagraph2: "Leveraging advanced security automation and seamless tool integrations, DevSecOps services in UK focus on SonarQube SAST analysis and Snyk vulnerability scanning throughout CI/CD pipelines. This approach provides the foundation teams need to accelerate deployments, improve visibility, and deliver reliable, high-impact business outcomes.",
+    deepDiveParagraph1: (
+      <span>
+        DevSecOps services in UK combine security, development, and operations into a unified approach that helps organizations streamline workflows, reduce security risks, and deliver production-ready applications. Explore how this relates to our{" "}
+        <Link href="/services/cloud-services" className="text-rose-500 hover:underline font-bold">
+          multi-cloud architecture models
+        </Link>{" "}
+        and find templates in our{" "}
+        <Link href="/about/overview" className="text-rose-500 hover:underline font-bold">
+          company overview
+        </Link>{" "}
+        documentation.
+      </span>
+    ),
+    deepDiveParagraph2: (
+      <span>
+        Leveraging advanced security automation and seamless tool integrations, DevSecOps services in UK focus on SonarQube SAST analysis and Snyk vulnerability scanning throughout CI/CD pipelines. This approach provides the foundation teams need to accelerate deployments, improve visibility. Verify these releases automatically using our{" "}
+        <Link href="/services/qa-testing" className="text-rose-500 hover:underline font-bold">
+          QA regression testing tools
+        </Link>{" "}
+        before pushing to production.
+      </span>
+    ),
     
     problemTitle: "Overcoming Delivery Delays with DevSecOps Services in UK",
     problemSubtitle: "How disconnected deployment pipelines create slower release cycles and increase application defects.",

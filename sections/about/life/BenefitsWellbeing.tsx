@@ -6,10 +6,12 @@ import {
   Globe, Rocket, FlaskConical
 } from "lucide-react";
 
+import Link from "next/link";
+
 const benefits = [
-  { icon: Laptop2, title: "Flexible Work Culture", desc: "Hybrid-first setup designed around your productivity peak hours." },
+  { icon: Laptop2, title: "Flexible Work Culture", desc: <>Hybrid-first setup designed around your productivity peak hours. View our <Link href="/careers" className="text-rose-500 hover:underline font-bold">careers portal</Link>.</> },
   { icon: BookOpen, title: "Learning Budget", desc: "Annual budget for books, courses, and conferences of your choice." },
-  { icon: Award, title: "Certification Support", desc: "100% sponsored cloud and tech certifications across major providers." },
+  { icon: Award, title: "Certification Support", desc:  <>100% sponsored cloud and tech certifications across major providers in <Link href="/services/cloud-services" className="text-rose-500 hover:underline font-bold">cloud services</Link>.</> },
   { icon: TrendingUp, title: "Performance Rewards", desc: "Competitive bonuses tied to your impact, not just tenure." },
   { icon: Users2, title: "Team Events", desc: "Regular off-sites, hackathons, and team-building experiences." },
   { icon: Globe, title: "Global Exposure", desc: "Work with clients and teams across multiple continents." },

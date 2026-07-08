@@ -3,11 +3,12 @@
 import React from "react";
 import { ArrowUpRight } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
+import Link from "next/link";
 
 interface IndustryOverviewProps {
   overviewHeading: string;
-  overviewDesc1: string;
-  overviewDesc2: string;
+  overviewDesc1: React.ReactNode;
+  overviewDesc2: React.ReactNode;
   challenges: string[];
   image?: string;
 }

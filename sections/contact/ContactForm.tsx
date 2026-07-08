@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { CheckCircle2, X } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
+import Link from "next/link";
 
 const devopstrioServices = [
   "AI & Data Innovation",
@@ -120,7 +121,7 @@ export function ContactForm() {
                 growth<br/>with every deployment
               </h2>
               <p className="text-zinc-400 text-base md:text-lg lg:text-xl font-medium max-w-2xl mb-12">
-                From cloud architecture to AI automation, we craft enterprise solutions that scale your business on autopilot.
+                From <Link href="/services/cloud-services" className="text-rose-500 hover:underline">cloud architecture</Link> to <Link href="/services/ai-data-innovation" className="text-rose-500 hover:underline">AI automation</Link>, we craft enterprise solutions that scale your business on autopilot.
               </p>
               <div className="flex flex-col sm:flex-row items-center gap-6">
                 <button 

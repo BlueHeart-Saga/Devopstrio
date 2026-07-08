@@ -3,6 +3,8 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Heart, Cpu, Lightbulb, ShieldCheck } from "lucide-react";
 
+import Link from "next/link";
+
 const principles = [
   {
     icon: Heart,
@@ -14,14 +16,14 @@ const principles = [
   {
     icon: Cpu,
     title: "Engineering Excellence",
-    description: "We prioritize quality, scalability, security, and performance in everything we build. Good enough is never our standard.",
+    description: <>We prioritize quality, scalability, security, and performance in everything we build. Good enough is never our standard. Explore our <Link href="/services/software-development" className="text-rose-500 hover:underline font-bold">software development</Link> quality guidelines.</>,
     number: "02",
     color: "blue",
   },
   {
     icon: Lightbulb,
     title: "Innovation Mindset",
-    description: "We continuously explore emerging technologies and modern engineering practices to stay ahead and deliver future-proof solutions.",
+    description: <>We continuously explore emerging technologies and modern engineering practices in <Link href="/services/cloud-services" className="text-rose-500 hover:underline font-bold">cloud services</Link> and platform architecture to deliver future-proof solutions.</>,
     number: "03",
     color: "orange",
   },

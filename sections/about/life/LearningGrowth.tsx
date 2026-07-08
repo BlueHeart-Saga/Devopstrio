@@ -1,12 +1,12 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
-import { ArrowDown } from "lucide-react";
+import Link from "next/link";
 
 const roadmap = [
   { step: "01", title: "Onboarding", desc: "Immersive introduction to our culture, tools, and engineering standards." },
-  { step: "02", title: "Technical Training", desc: "Hands-on labs and workshops with modern cloud and AI technologies." },
-  { step: "03", title: "Certifications", desc: "Fully funded paths for AWS, Azure, GCP, and Kubernetes certifications." },
+  { step: "02", title: "Technical Training", desc: <>Hands-on labs and workshops with modern <Link href="/services/cloud-services" className="text-rose-500 hover:underline font-bold">cloud</Link> and <Link href="/services/ai-data-innovation" className="text-rose-500 hover:underline font-bold">AI technologies</Link>.</> },
+  { step: "03", title: "Certifications", desc: <>Fully funded paths for AWS, Azure, GCP, and Kubernetes certifications in our <Link href="/services/devops-automation" className="text-rose-500 hover:underline font-bold">DevOps automation</Link> programs.</> },
   { step: "04", title: "Project Ownership", desc: "Taking the lead on critical features and architectural decisions." },
   { step: "05", title: "Leadership Development", desc: "Mentorship and training to become the next generation of tech leaders." }
 ];
@@ -36,9 +36,9 @@ export const LearningGrowth = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-zinc-400 text-sm md:text-base leading-relaxed font-bold mb-10"
+              className="text-zinc-450 text-sm md:text-base leading-relaxed font-bold mb-10"
             >
-              We believe in compounding knowledge. Our structured growth pathways ensure you're always learning, always challenged, and always moving forward in your career.
+              We believe in compounding knowledge. Our structured growth pathways ensure you're always learning, always challenged, and always moving forward in your career. Learn more about our <Link href="/about/internship" className="text-rose-500 hover:underline">internship opportunities</Link>.
             </motion.p>
 
             <div className="flex flex-wrap gap-3">

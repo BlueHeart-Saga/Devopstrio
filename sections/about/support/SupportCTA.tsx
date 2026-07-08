@@ -2,6 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, UserCheck } from "lucide-react";
+import Link from "next/link";
 
 export const SupportCTA = () => {
   return (
@@ -25,7 +26,7 @@ export const SupportCTA = () => {
           </h2>
 
           <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-bold max-w-2xl mx-auto mb-12">
-            Resolve issues faster, optimise your cloud platforms, and accelerate business outcomes — with expert engineers available around the clock.
+            Resolve issues faster, optimise your <Link href="/services/cloud-services" className="text-rose-500 hover:underline">cloud platforms</Link>, and accelerate business outcomes — with expert engineers available around the clock. Read more on our <Link href="/about/overview" className="text-rose-500 hover:underline">company overview</Link> page.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">

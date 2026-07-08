@@ -3,19 +3,25 @@
 import React, { useState } from "react";
 import { Plus, Minus } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
+import Link from "next/link";
 
-const faqs = [
+interface FaqItem {
+  q: string;
+  a: React.ReactNode;
+}
+
+const faqs: FaqItem[] = [
   {
     q: "How do you align with regulated compliance frameworks?",
-    a: "Our engineering divisions are trained in specific regulatory architectures. For healthcare systems, we enforce encrypted private subnets and audit logs. For financial ledger transactions, we build strict write-once audits under SOC-2 guidelines."
+    a: <>Our engineering divisions are trained in specific regulatory architectures. For <Link href="/industries/healthcare-life-sciences" className="text-rose-500 hover:underline">healthcare systems</Link>, we enforce encrypted private subnets and audit logs. For <Link href="/industries/banking-finance" className="text-rose-500 hover:underline">financial ledger transactions</Link>, we build strict write-once audits under SOC-2 guidelines.</>
   },
   {
     q: "Do you integrate with legacy mainframe systems?",
-    a: "Yes. We regularly construct secure API broker layers and database adapters to bridge legacy COBOL or AS400 core databases with modern Next.js frontends and cloud microservices."
+    a: <>Yes. We regularly construct secure API broker layers and database adapters to bridge legacy COBOL or AS400 core databases with modern Next.js frontends and <Link href="/services/cloud-services" className="text-rose-500 hover:underline">cloud microservices</Link>.</>
   },
   {
     q: "How are regional project teams structured?",
-    a: "Each client project has a dedicated solution architect, a delivery manager, and senior developers matching your stack. Team sizes can scale dynamically depending on your development sprints."
+    a: <>Each client project has a dedicated solution architect, a delivery manager, and senior developers matching your stack. Team sizes can scale dynamically depending on your development sprints under our <Link href="/ecosystem/global-delivery" className="text-rose-500 hover:underline">global delivery model</Link>.</>
   }
 ];
 

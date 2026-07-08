@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { MapPin, Phone, Mail, Map } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
+import Link from "next/link";
 
 interface Location {
   name: string;
@@ -98,10 +99,10 @@ export function HubSpotlight({ locations }: HubSpotlightProps) {
             Strategically Positioned to Serve Global Clients
           </h2>
           <p className="text-zinc-400 text-sm md:text-base leading-relaxed mb-4">
-            Devopstrio’s delivery footprint is designed to combine strategic oversight, engineering depth, and operational continuity. Our teams collaborate across leadership, delivery, support, and innovation functions to ensure that clients receive responsive service, dependable execution, and access to the expertise required for modern digital transformation.
+            Devopstrio’s delivery footprint is designed to combine strategic oversight, engineering depth, and operational continuity. Our teams collaborate across leadership, delivery, support, and innovation functions to ensure that clients receive responsive service, dependable execution, and access to the expertise required for modern <Link href="/services/digital-transformation" className="text-[#E11D48] hover:underline">digital transformation</Link>.
           </p>
           <p className="text-zinc-400 text-sm md:text-base leading-relaxed">
-            This distributed model allows us to support organizations across multiple industries while maintaining a unified standard of delivery across every engagement.
+            This distributed model allows us to support organizations across multiple <Link href="/industries" className="text-[#E11D48] hover:underline">industries</Link> while maintaining a unified standard of delivery across every engagement.
           </p>
         </Reveal>
       </div>

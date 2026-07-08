@@ -61,6 +61,8 @@ const products = [
   }
 ];
 
+import Link from "next/link";
+
 export function PlatformPortfolio() {
   return (
     <section id="portfolio" className="w-full py-24 bg-black text-white border-b border-zinc-900/60 relative overflow-hidden">
@@ -76,7 +78,7 @@ export function PlatformPortfolio() {
             Proprietary SaaS <span className="text-rose-500">Platforms</span>
           </h2>
           <p className="text-zinc-300 text-base md:text-lg font-semibold leading-relaxed max-w-2xl">
-            We build, incubate, and scale cutting-edge products across key verticals. Each platform serves as a production-grade blueprint for engineering excellence.
+            We build, incubate, and scale cutting-edge products across key verticals. Each platform serves as a production-grade blueprint for engineering excellence. Read our <Link href="/about/overview" className="text-rose-500 hover:underline font-bold">company overview</Link> or view our <Link href="/services" className="text-rose-500 hover:underline font-bold">development services</Link>.
           </p>
         </Reveal>
 

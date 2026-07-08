@@ -5,6 +5,7 @@ import { Reveal } from "@/components/ui/Reveal";
 import { 
   Rocket, Globe2, Cloud, TrendingUp 
 } from "lucide-react";
+import Link from "next/link";
 
 interface AdvantageCardData {
   title: string;
@@ -117,7 +118,7 @@ export function OurAdvantage() {
             Technology Without Limits. <span className="text-rose-500">Built for Growth.</span>
           </h2>
           <p className="text-zinc-400 text-sm md:text-base leading-relaxed max-w-2xl mx-auto font-bold">
-            At DevOpsTrio, we help organizations modernize infrastructure, accelerate innovation, and unlock new growth opportunities through secure, reliable, and scalable digital engineering.
+            At DevOpsTrio, we help organizations <Link href="/services/cloud-services" className="text-rose-500 hover:underline">modernize infrastructure</Link>, <Link href="/services/digital-transformation" className="text-rose-500 hover:underline">accelerate innovation</Link>, and unlock new growth opportunities through secure, reliable, and scalable <Link href="/services/software-development" className="text-rose-500 hover:underline">digital engineering</Link>.
           </p>
         </Reveal>
 

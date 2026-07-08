@@ -75,7 +75,7 @@ export function IndustriesGrid() {
             Specialized solutions for <span className="text-[#E11D48]">global industries</span>
           </h2>
           <p className="text-zinc-400 text-xs md:text-sm font-semibold leading-relaxed mt-4 max-w-xl">
-            Choose an industry to see our specialized software capabilities, case studies, and compliance alignments.
+            Choose an industry to see our <Link href="/services" className="text-rose-500 hover:underline">specialized software capabilities</Link>, case studies, and <Link href="/services/cybersecurity" className="text-rose-500 hover:underline">compliance alignments</Link>.
           </p>
         </Reveal>
 

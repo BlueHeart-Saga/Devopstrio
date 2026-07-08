@@ -4,6 +4,8 @@ import { motion } from "framer-motion";
 import { Phone, Mail, Globe, Instagram, Facebook, Linkedin } from "lucide-react";
 import Image from "next/image";
 
+import Link from "next/link";
+
 export const SupportChannels = () => {
   const channels = [
     { icon: Phone, text: "+91 461 294 0062", href: "tel:+914612940062" },
@@ -24,7 +26,7 @@ export const SupportChannels = () => {
       <div className="absolute inset-0 flex justify-center items-center pointer-events-none">
         <div className="w-[800px] h-[800px] bg-rose-500/5 rounded-full blur-[150px]" />
       </div>
-
+ 
       {/* Top Header Section */}
       <div className="text-center mb-20 relative z-10 px-6 w-full max-w-4xl mx-auto">
         <motion.h2
@@ -42,7 +44,7 @@ export const SupportChannels = () => {
           transition={{ delay: 0.1 }}
           className="text-zinc-400 text-base md:text-lg leading-relaxed font-medium max-w-2xl mx-auto"
         >
-          Multiple channels, one mission — getting you expert support as fast as possible.
+          Multiple channels, one mission — getting you expert support as fast as possible. Check out our <Link href="/services" className="text-rose-500 hover:underline">digital services</Link> or contact support.
         </motion.p>
       </div>
 

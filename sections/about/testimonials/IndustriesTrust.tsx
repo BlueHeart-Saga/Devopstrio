@@ -32,6 +32,8 @@ const certifications = [
   { name: "IBM Gold Partner", image: "/assets/Awards/IBM_Gold_Partner.png" },
 ];
 
+import Link from "next/link";
+
 export const IndustriesTrust = () => {
   return (
     <section className="py-24 bg-[#0A0A0A] border-t border-zinc-900 relative overflow-hidden">
@@ -64,7 +66,7 @@ export const IndustriesTrust = () => {
               transition={{ delay: 0.1 }}
               className="text-zinc-400 text-base md:text-lg leading-relaxed"
             >
-              Delivering tailored technology solutions that address the unique challenges of your specific industry.
+              Delivering tailored technology solutions that address the unique challenges of your specific industry. Check out our <Link href="/services" className="text-rose-500 hover:underline font-bold">digital services</Link> list.
             </motion.p>
           </div>
 
@@ -134,7 +136,7 @@ export const IndustriesTrust = () => {
               viewport={{ once: true }}
               className="text-zinc-400 text-base md:text-lg leading-relaxed"
             >
-              Recognized by industry leaders for delivering excellence in modern software and cloud engineering.
+              Recognized by industry leaders for delivering excellence in modern <Link href="/services/software-development" className="text-rose-500 hover:underline font-bold">software engineering</Link> and <Link href="/services/cloud-services" className="text-rose-500 hover:underline font-bold">cloud engineering</Link> standards. Read our <Link href="/about/awards-recognition" className="text-rose-500 hover:underline font-bold">awards and recognition</Link> page.
             </motion.p>
           </div>
 

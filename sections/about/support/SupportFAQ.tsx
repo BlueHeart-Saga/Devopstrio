@@ -3,34 +3,36 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 
+import Link from "next/link";
+
 const faqs = [
   {
     q: "How do I contact support?",
-    a: "You can reach our support team via email at career@devopstrioglobal.com or call us directly at +91 461 294 0062. Enterprise customers also have access to dedicated Slack channels and priority escalation lines."
+    a: <>You can reach our support team via email at career@devopstrioglobal.com or call us directly at +91 461 294 0062. Enterprise customers also have access to dedicated Slack channels and priority escalation lines.</>
   },
   {
     q: "What are your support hours?",
-    a: "We operate a follow-the-sun support model providing global coverage 24×7. Our delivery centres in the UK, USA, and India coordinate to ensure there is always an engineer available regardless of your timezone."
+    a: <>We operate a follow-the-sun support model providing global coverage 24×7. Our delivery centres in the UK, USA, and India coordinate to ensure there is always an engineer available regardless of your timezone.</>
   },
   {
     q: "Do you provide managed cloud support?",
-    a: "Yes. We provide comprehensive managed support for Azure, AWS, and Google Cloud. This includes infrastructure monitoring, incident response, cost optimisation, and architecture guidance across all major cloud platforms."
+    a: <>Yes. We provide comprehensive managed support for Azure, AWS, and Google Cloud. This includes infrastructure monitoring, incident response, cost optimisation, and architecture guidance across all major cloud platforms under our <Link href="/services/cloud-services" className="text-rose-500 hover:underline font-bold">cloud services</Link>.</>
   },
   {
     q: "Can I request a dedicated support engineer?",
-    a: "Enterprise customers can engage dedicated support engineers and customer success managers through our managed services programme. Contact our sales team to discuss dedicated resource arrangements and custom SLAs."
+    a: <>Enterprise customers can engage dedicated support engineers and customer success managers through our <Link href="/services/managed-services" className="text-rose-500 hover:underline font-bold">managed services</Link> programme. Contact our sales team to discuss dedicated resource arrangements and custom SLAs.</>
   },
   {
     q: "What products does Devopstrio support?",
-    a: "We provide full lifecycle support for our entire product portfolio including Humanex, Brio, SafeSign, Prestivo, Campix, Homela, CareSuite, and Justivon, as well as our cloud and DevOps managed services."
+    a: <>We provide full lifecycle support for our entire product portfolio including Humanex, Brio, SafeSign, Prestivo, Campix, Homela, CareSuite, and Justivon on our <Link href="/ecosystem/our-products" className="text-rose-500 hover:underline font-bold">products page</Link>, as well as our cloud and DevOps managed services.</>
   },
   {
     q: "How are incidents escalated and tracked?",
-    a: "All incidents are tracked via our enterprise ticketing system. Critical incidents (P1) trigger an immediate war-room activation with dedicated engineers. You'll receive real-time updates throughout the resolution process."
+    a: <>All incidents are tracked via our enterprise ticketing system. Critical incidents (P1) trigger an immediate war-room activation with dedicated engineers. You'll receive real-time updates throughout the resolution process.</>
   },
 ];
 
-const FAQItem = ({ q, a, index }: { q: string; a: string; index: number }) => {
+const FAQItem = ({ q, a, index }: { q: string; a: React.ReactNode; index: number }) => {
   const [open, setOpen] = useState(false);
 
   return (

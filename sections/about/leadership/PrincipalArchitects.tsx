@@ -3,6 +3,8 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Cloud, GitBranch, AppWindow, Database, Shield, Cpu } from "lucide-react";
 
+import Link from "next/link";
+
 const architects = [
   {
     initials: "PA",
@@ -10,7 +12,7 @@ const architects = [
     specialization: "Cloud Architecture",
     icon: Cloud,
     certs: ["Azure Solutions Architect Expert", "AWS Solutions Architect Professional"],
-    focus: "Multi-cloud architecture and cloud native design patterns for enterprise workloads.",
+    focus: <>Multi-cloud architecture and cloud native design patterns for enterprise workloads under our <Link href="/services/cloud-services" className="text-blue-400 hover:underline font-bold">cloud services</Link> division.</>,
     color: "blue",
     image: "/assets/common/90361fed0bb781d7c86e451995b4dbce 1.png",
   },
@@ -20,7 +22,7 @@ const architects = [
     specialization: "DevOps & Platform Engineering",
     icon: GitBranch,
     certs: ["CKA — Kubernetes", "HashiCorp Terraform Associate"],
-    focus: "GitOps, internal developer platforms, and CI/CD pipeline automation at scale.",
+    focus: <>GitOps, internal developer platforms, and CI/CD pipeline automation at scale as part of <Link href="/services/devops-automation" className="text-orange-400 hover:underline font-bold">DevOps automation</Link>.</>,
     color: "orange",
     image: "/assets/common/945ab601f043c558e0a8162da2a1eb4c 1.png",
   },
@@ -30,7 +32,7 @@ const architects = [
     specialization: "Enterprise Applications",
     icon: AppWindow,
     certs: ["Microsoft Azure Developer", "Google Cloud Professional Developer"],
-    focus: "Microservices, event-driven architectures, and SaaS platform design.",
+    focus: <>Microservices, event-driven architectures, and SaaS platform design within <Link href="/services/software-development" className="text-violet-450 hover:underline font-bold">software development</Link>.</>,
     color: "violet",
     image: "/assets/common/9d230407fdcdb1a78debc2abe0ff1925 1.png",
   },
@@ -40,7 +42,7 @@ const architects = [
     specialization: "Data Engineering",
     icon: Database,
     certs: ["Azure Data Engineer Associate", "Databricks Certified Associate"],
-    focus: "Lakehouse architectures, real-time streaming pipelines, and BI platform design.",
+    focus: <>Lakehouse architectures, real-time streaming pipelines, and BI platform design under <Link href="/services/data-engineering" className="text-green-455 hover:underline font-bold">data engineering</Link>.</>,
     color: "green",
     image: "/assets/common/9d91b93f83e6d4cd494ec13611b3e50e 1.png",
   },
@@ -50,7 +52,7 @@ const architects = [
     specialization: "Cybersecurity Architecture",
     icon: Shield,
     certs: ["CISSP", "Azure Security Engineer Associate"],
-    focus: "Zero trust network design, DevSecOps integration, and cloud security posture management.",
+    focus: <>Zero trust network design, DevSecOps integration, and cloud security posture management via <Link href="/services/cybersecurity" className="text-teal-400 hover:underline font-bold">cybersecurity</Link>.</>,
     color: "teal",
     image: "/assets/common/b384eb0438c55e43c61e7595acc29638 1.png",
   },
@@ -60,7 +62,7 @@ const architects = [
     specialization: "AI Infrastructure",
     icon: Cpu,
     certs: ["Azure AI Engineer Associate", "Google Professional ML Engineer"],
-    focus: "LLM infrastructure, MLOps pipelines, and AI-powered platform engineering.",
+    focus: <>LLM infrastructure, MLOps pipelines, and AI-powered platform engineering driven by <Link href="/services/ai-data-innovation" className="text-rose-500 hover:underline font-bold">AI & data innovation</Link>.</>,
     color: "red",
     image: "/assets/common/ddb20908c846f1426649343fea590cb7 1.png",
   },

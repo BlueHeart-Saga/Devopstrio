@@ -63,6 +63,8 @@ const locations = [
 
 const defaultVisible = new Set(["london", "tennessee", "bengaluru"]);
 
+import Link from "next/link";
+
 export function CareersPresence() {
   const [active, setActive] = useState<string | null>(null);
 
@@ -83,7 +85,7 @@ export function CareersPresence() {
               One team. <span className="text-rose-500">Worldwide opportunities.</span>
             </h2>
             <p className="text-zinc-400 text-base leading-relaxed">
-              Join a globally distributed team across the UK, US, and India — with hybrid roles, flexible hours, and open positions in every timezone.
+              Join a globally distributed team across the UK, US, and India — with hybrid roles, flexible hours, and open positions in every timezone. Learn more about our <Link href="/about/global-presence" className="text-rose-500 hover:underline font-bold">global presence</Link> and <Link href="/about/overview" className="text-rose-500 hover:underline font-bold">company overview</Link>.
             </p>
           </div>
         </Reveal>

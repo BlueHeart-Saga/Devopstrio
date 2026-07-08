@@ -34,7 +34,7 @@ export function OverviewHero() {
           
           <Reveal delay={0.1}>
             <p className="text-sm md:text-base text-zinc-300 font-medium max-w-xl mb-10 leading-relaxed">
-              Devopstrio is a global technology consulting and engineering company helping organizations modernize, innovate and scale with AI, Cloud, DevOps and Enterprise Engineering.
+              Devopstrio is a global technology consulting and engineering company helping organizations modernize, innovate and scale with <Link href="/services/ai-data-innovation" className="text-[#E11D48] hover:underline font-bold">AI</Link>, <Link href="/services/cloud-services" className="text-[#E11D48] hover:underline font-bold">Cloud</Link>, <Link href="/services/devops-automation" className="text-[#E11D48] hover:underline font-bold">DevOps</Link> and <Link href="/services/software-development" className="text-[#E11D48] hover:underline font-bold">Enterprise Engineering</Link>.
             </p>
           </Reveal>
 

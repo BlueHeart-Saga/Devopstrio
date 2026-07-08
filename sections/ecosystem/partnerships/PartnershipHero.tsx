@@ -4,6 +4,7 @@ import React from "react";
 import { Reveal } from "@/components/ui/Reveal";
 import { Zap, Search } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 export function PartnershipHero() {
 
@@ -77,8 +78,8 @@ export function PartnershipHero() {
         </Reveal>
 
         <Reveal delay={0.2} className="max-w-3xl">
-          <p className="text-zinc-300 text-xs md:text-sm lg:text-base leading-relaxed font-normal max-w-3xl text-center mx-auto opacity-95 mb-12">
-            We work with leading cloud platforms, DevOps tools, and data technologies to build secure, scalable, and future-ready digital solutions.
+          <p className="text-zinc-350 text-xs md:text-sm lg:text-base leading-relaxed font-normal max-w-3xl text-center mx-auto opacity-95 mb-12">
+            We work with leading <Link href="/ecosystem/partnerships" className="text-rose-500 hover:underline font-bold">cloud platform partners</Link> and <Link href="/services/devops-automation" className="text-rose-500 hover:underline font-bold">DevOps services</Link> providers to build secure, scalable, and future-ready digital solutions.
           </p>
         </Reveal>
 

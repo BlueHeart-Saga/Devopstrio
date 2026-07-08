@@ -2,6 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { MapPin, Globe } from "lucide-react";
+import Link from "next/link";
 
 const stats = [
   { value: "3+", label: "Continents" },
@@ -54,7 +55,7 @@ export const GlobalPresenceHero = () => {
             transition={{ duration: 0.7, delay: 0.15 }}
             className="text-sm md:text-base font-medium text-zinc-300 max-w-xl leading-relaxed"
           >
-            With centers across the UK, USA, and India, our follow-the-sun model ensures continuous software integration, database support, and active cloud uptime.
+            With centers across the UK, USA, and India, our follow-the-sun model ensures <Link href="/services/devops-automation" className="text-rose-500 hover:underline">continuous software integration</Link>, database support, and active <Link href="/services/cloud-services" className="text-rose-500 hover:underline">cloud uptime</Link>.
           </motion.p>
 
           <motion.div

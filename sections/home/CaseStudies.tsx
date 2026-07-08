@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Reveal } from "@/components/ui/Reveal";
 import { Zap, ArrowUpRight, ArrowLeft } from "lucide-react";
+import Link from "next/link";
 
 interface CaseStudy {
   tag: string;
@@ -106,7 +107,7 @@ export function CaseStudies() {
             </Reveal>
             <Reveal>
               <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-medium">
-                We partner with organizations to solve complex challenges through AI, cloud engineering, cybersecurity, DevOps, and software development — creating measurable outcomes that drive efficiency, innovation, and long-term growth.
+                We partner with organizations to solve complex challenges through <Link href="/services/ai-data-innovation" className="text-rose-500 hover:underline">AI</Link>, <Link href="/services/cloud-services" className="text-rose-500 hover:underline">cloud engineering</Link>, <Link href="/services/cybersecurity" className="text-rose-500 hover:underline">cybersecurity</Link>, <Link href="/services/devops-automation" className="text-rose-500 hover:underline">DevOps</Link>, and <Link href="/services/software-development" className="text-rose-500 hover:underline">software development</Link> — creating measurable outcomes that drive efficiency, innovation, and long-term growth.
               </p>
             </Reveal>
           </div>
@@ -255,7 +256,7 @@ export function CaseStudies() {
 
             {/* View All Button */}
             <a
-              href="/case-studies"
+              href="/insights/case-studies"
               className="group flex items-center gap-2 text-rose-500 hover:text-rose-400 font-bold transition-all text-xs uppercase tracking-wider"
             >
               Explore All Outcomes

@@ -37,47 +37,47 @@ export interface IndustryPageTemplateProps {
   };
   overview: {
     heading: string;
-    desc1: string;
-    desc2: string;
+    desc1: React.ReactNode;
+    desc2: React.ReactNode;
   };
   challenges: {
     title: string;
-    desc: string;
+    desc: React.ReactNode;
   }[];
   solutions: {
     title: string;
-    desc: string;
+    desc: React.ReactNode;
   }[];
   capabilities: {
     title: string;
-    desc: string;
+    desc: React.ReactNode;
   }[];
   useCases: {
     title: string;
-    result: string;
+    result: React.ReactNode;
   }[];
   techs: {
     name: string;
-    desc: string;
+    desc: React.ReactNode;
   }[];
   outcomes: {
     value: string;
     label: string;
-    desc: string;
+    desc: React.ReactNode;
   }[];
   caseStudy: {
     title: string;
-    desc: string;
+    desc: React.ReactNode;
     metrics: { value: string; label: string }[];
     highlights: string[];
   };
   compliance: {
     title: string;
-    desc: string;
+    desc: React.ReactNode;
   }[];
   whyChoose: {
     title: string;
-    desc: string;
+    desc: React.ReactNode;
   }[];
   relatedServices: {
     title: string;
@@ -85,18 +85,18 @@ export interface IndustryPageTemplateProps {
   }[];
   insights: {
     title: string;
-    desc: string;
+    desc: React.ReactNode;
     link: string;
   }[];
   cta: {
     ctaTitle: string;
     ctaHighlight: string;
-    ctaDesc: string;
+    ctaDesc: React.ReactNode;
     ctaBtnText: string;
   };
   faqs?: {
     q: string;
-    a: string;
+    a: React.ReactNode;
   }[];
 }
 

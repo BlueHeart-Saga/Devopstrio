@@ -4,6 +4,8 @@ import React from "react";
 import { ArrowUpRight } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
 
+import Link from "next/link";
+
 export function TalentNetwork() {
   return (
     <section id="talent-network" className="w-full py-24 bg-black text-white relative overflow-hidden border-b border-zinc-900/60">
@@ -24,7 +26,7 @@ export function TalentNetwork() {
           </h2>
 
           <p className="text-white text-xs md:text-sm font-semibold leading-relaxed max-w-xl mx-auto mb-12">
-            Join a team passionate about innovation, engineering excellence, and creating meaningful impact for organizations worldwide. Submit your resume below to join our talent network database.
+            Join a team passionate about innovation, engineering excellence, and creating meaningful impact for organizations worldwide. Review our <Link href="/services" className="text-rose-500 hover:underline font-bold">services overview</Link> and submit your resume below to join our talent network database.
           </p>
         </Reveal>
 

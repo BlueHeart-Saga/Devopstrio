@@ -5,11 +5,19 @@ import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
 
-const featuredIndustries = [
+interface FeaturedIndustryItem {
+  title: string;
+  subtitle: string;
+  desc: React.ReactNode;
+  metrics: { value: string; label: string }[];
+  slug: string;
+}
+
+const featuredIndustries: FeaturedIndustryItem[] = [
   {
     title: "Banking & Financial Services",
     subtitle: "High-Performance Fintech Systems",
-    desc: "We engineer transaction processing databases handling over 20,000 requests per second. Our developers configure secure VPC partitions, write automated fraud monitoring pipelines, and implement SOC-2 audit logs.",
+    desc: <>We engineer <Link href="/services/cloud-services" className="text-rose-500 hover:underline">transaction processing databases</Link> handling over 20,000 requests per second. Our developers configure secure VPC partitions, write <Link href="/services/devops-automation" className="text-rose-500 hover:underline">automated fraud monitoring pipelines</Link>, and implement <Link href="/services/cybersecurity" className="text-rose-500 hover:underline">SOC-2 audit logs</Link>.</>,
     metrics: [
       { value: "<15ms", label: "Transaction Latency" },
       { value: "SOC-2", label: "Compliance Certified" },
@@ -20,7 +28,7 @@ const featuredIndustries = [
   {
     title: "Healthcare & Medical Technology",
     subtitle: "HIPAA-Aligned Platform Engineering",
-    desc: "Deploying secure patient record structures with full-disk data encryption. We build automated data ingestion channels, model diagnostic assistants, and configure eBPF system call checkers for runtime security.",
+    desc: <>Deploying secure patient record structures with full-disk data encryption. We build <Link href="/services/ai-data-innovation" className="text-rose-500 hover:underline">automated data ingestion channels</Link>, model diagnostic assistants, and configure eBPF system call checkers for <Link href="/services/cybersecurity" className="text-rose-500 hover:underline">runtime security</Link>.</>,
     metrics: [
       { value: "100%", label: "HIPAA Audited" },
       { value: "<500ms", label: "Threat Response" },
@@ -31,7 +39,7 @@ const featuredIndustries = [
   {
     title: "Smart Manufacturing & Logistics",
     subtitle: "Predictive Telemetry & IoT Operations",
-    desc: "Optimizing supply chains with real-time stream aggregation pipelines. Our platform engineers configure IoT gateways, deploy predictive machine failure models, and build low-latency dashboards.",
+    desc: <>Optimizing supply chains with real-time <Link href="/services/ai-data-innovation" className="text-rose-500 hover:underline">stream aggregation pipelines</Link>. Our platform engineers configure IoT gateways, deploy predictive machine failure models, and build low-latency dashboards.</>,
     metrics: [
       { value: "12 Days", label: "Early Failure Warning" },
       { value: "-35%", label: "Maintenance Expenses" },

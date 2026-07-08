@@ -3,10 +3,11 @@
 import React, { useState } from "react";
 import { Plus, Minus } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
+import Link from "next/link";
 
 interface FAQItem {
   q: string;
-  a: string;
+  a: React.ReactNode;
 }
 
 interface IndustryFAQProps {
@@ -16,35 +17,35 @@ interface IndustryFAQProps {
 const defaultExtraFAQs: FAQItem[] = [
   {
     q: "How does Devopstrio manage Infrastructure-as-Code (IaC) drift?",
-    a: "We deploy active GitOps controllers (ArgoCD or Flux) alongside custom Terraform execution agents. When manual changes are made in the cloud console, our monitoring systems trigger immediate drift alerts and reconcile the state back to the Git source of truth."
+    a: <>We deploy active <Link href="/services/devops-automation" className="text-rose-500 hover:underline">GitOps controllers</Link> (ArgoCD or Flux) alongside custom Terraform execution agents. When manual changes are made in the cloud console, our monitoring systems trigger immediate drift alerts and reconcile the state back to the Git source of truth.</>
   },
   {
     q: "What is your typical SLA response time for production incidents?",
-    a: "We offer tiered Support SLAs. For Critical P1 incidents, our 24/7 Site Reliability Engineers guarantee a response and containment plan initiation in under 15 minutes, backed by redundant pager alarms."
+    a: <>We offer tiered Support SLAs. For Critical P1 incidents, our 24/7 <Link href="/services/devops-automation/site-reliability-engineering" className="text-rose-500 hover:underline">Site Reliability Engineers</Link> guarantee a response and containment plan initiation in under 15 minutes, backed by redundant pager alarms.</>
   },
   {
     q: "Do you support migration across different public clouds (e.g. AWS to Azure)?",
-    a: "Yes. We design cloud-agnostic application models using Kubernetes, Docker, and standard Terraform variables, enabling seamless target-destination shifting with minimal adjustments to the core database layer."
+    a: <>Yes. We design cloud-agnostic application models using <Link href="/services/cloud-services" className="text-rose-500 hover:underline">Kubernetes</Link>, Docker, and standard Terraform variables, enabling seamless target-destination shifting with minimal adjustments to the core database layer.</>
   },
   {
     q: "How do you secure secrets and sensitive access keys in pipelines?",
-    a: "We enforce zero-secret code repositories. All database credentials, tokens, and keys are stored in encrypted vaults (HashiCorp Vault, AWS Secrets Manager, or Azure Key Vault) and are dynamically injected into running containers using secure IAM roles."
+    a: <>We enforce zero-secret code repositories. All database credentials, tokens, and keys are stored in encrypted vaults (HashiCorp Vault, AWS Secrets Manager, or Azure Key Vault) and are dynamically injected into running containers using <Link href="/services/cybersecurity" className="text-rose-500 hover:underline">secure IAM roles</Link>.</>
   },
   {
     q: "How do you optimize public cloud spending and cost controls (FinOps)?",
-    a: "We set up automated resource scheduling (shutting down non-production environments after hours), configure Karpenter auto-scaling compute models, and analyze cost graphs to recommend AWS Savings Plans and spot instances."
+    a: <>We set up automated resource scheduling (shutting down non-production environments after hours), configure Karpenter <Link href="/services/cloud-services" className="text-rose-500 hover:underline">auto-scaling compute models</Link>, and analyze cost graphs to recommend AWS Savings Plans and spot instances.</>
   },
   {
     q: "What monitoring tools and dashboards do you configure?",
-    a: "We standardize on open-source OpenTelemetry agents, routing application traces, metrics, and logs to unified visualization layers like Grafana, Datadog, or Elasticsearch, complete with custom threshold alerts."
+    a: <>We standardize on open-source <Link href="/services/devops-automation" className="text-rose-500 hover:underline">OpenTelemetry</Link> agents, routing application traces, metrics, and logs to unified visualization layers like Grafana, Datadog, or Elasticsearch, complete with custom threshold alerts.</>
   },
   {
     q: "How do you guarantee database replication integrity during migrations?",
-    a: "We utilize dual-write application strategies or change data capture (CDC) streaming tools like Debezium, ensuring the destination database is completely in sync with the source database before we switch DNS records."
+    a: <>We utilize dual-write application strategies or change data capture (CDC) streaming tools like Debezium, ensuring the <Link href="/services/cloud-services" className="text-rose-500 hover:underline">destination database</Link> is completely in sync with the source database before we switch DNS records.</>
   },
   {
     q: "Do you assist in third-party security audits (e.g. SOC2, HIPAA)?",
-    a: "Yes. We configure automated compliance check pipelines (using Wiz, Snyk, and SonarQube) that audit code, containers, and live infrastructure against SOC2, ISO27001, PCI-DSS, or HIPAA compliance controls."
+    a: <>Yes. We configure automated compliance check pipelines (using Wiz, Snyk, and SonarQube) that audit code, containers, and live infrastructure against SOC2, ISO27001, PCI-DSS, or HIPAA <Link href="/services/cybersecurity" className="text-rose-500 hover:underline">compliance controls</Link>.</>
   }
 ];
 

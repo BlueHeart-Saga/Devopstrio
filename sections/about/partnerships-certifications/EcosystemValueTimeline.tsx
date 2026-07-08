@@ -2,6 +2,8 @@
 
 import { Reveal } from "@/components/ui/Reveal";
 
+import Link from "next/link";
+
 export function EcosystemValueTimeline() {
   const steps = [
     {
@@ -22,7 +24,7 @@ export function EcosystemValueTimeline() {
     {
       num: "04",
       title: "Continuous Optimization",
-      desc: "Managed services, support, governance, and long-term roadmap evolution."
+      desc: <>Managed services, support, governance, and long-term roadmap evolution. Learn about our <Link href="/services/managed-services" className="text-rose-500 hover:underline font-bold">managed services</Link> packages.</>
     }
   ];
 

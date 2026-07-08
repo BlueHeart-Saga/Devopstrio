@@ -4,6 +4,8 @@ import React, { useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
 
+import Link from "next/link";
+
 export function LifeAtDevopstrio() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
@@ -21,12 +23,12 @@ export function LifeAtDevopstrio() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-[radial-gradient(ellipse_at_center,rgba(225,29,72,0.1),transparent_60%)] pointer-events-none blur-3xl z-0" />
 
         {/* Center Title */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center z-10 pointer-events-none drop-shadow-2xl">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center z-10 drop-shadow-2xl">
           <motion.h2 
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-6xl font-medium text-white tracking-tight text-center"
+            className="text-4xl md:text-6xl font-medium text-white tracking-tight text-center pointer-events-none"
           >
             Let's meet
           </motion.h2>
@@ -35,7 +37,7 @@ export function LifeAtDevopstrio() {
             whileInView={{ pathLength: 1, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
-            className="w-48 md:w-64 mt-2 mb-6 drop-shadow-[0_0_15px_rgba(225,29,72,0.5)]" viewBox="0 0 200 20" fill="none" xmlns="http://www.w3.org/2000/svg"
+            className="w-48 md:w-64 mt-2 mb-6 drop-shadow-[0_0_15px_rgba(225,29,72,0.5)] pointer-events-none" viewBox="0 0 200 20" fill="none" xmlns="http://www.w3.org/2000/svg"
           >
             <path d="M5 15C50 5 150 5 195 15" stroke="#E11D48" strokeWidth="4" strokeLinecap="round" />
           </motion.svg>
@@ -44,9 +46,18 @@ export function LifeAtDevopstrio() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.4 }}
-            className="text-base md:text-xl font-bold uppercase tracking-[0.2em] text-zinc-400"
+            className="text-base md:text-xl font-bold uppercase tracking-[0.2em] text-zinc-400 pointer-events-none"
           >
             Life at Devopstrio
+          </motion.p>
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.5 }}
+            className="text-xs md:text-sm text-zinc-500 font-bold max-w-xs mt-2 text-center pointer-events-auto z-20"
+          >
+            Explore our <Link href="/about/life" className="text-rose-500 hover:underline">culture and life</Link> details or read the <Link href="/about/overview" className="text-rose-500 hover:underline">company overview</Link>.
           </motion.p>
         </div>
 

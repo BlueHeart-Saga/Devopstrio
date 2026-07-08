@@ -26,11 +26,11 @@ export const LeadershipCareersCTA = () => {
           </div>
 
           <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-8">
-            Ready to shape the next era of <span className="text-white font-medium bg-gradient-to-r from-red-600 via-rose-600 to-rose-500 bg-clip-text text-transparent">digital transformation</span>?
+            Ready to shape the next era of <Link href="/services/cloud-services" className="hover:underline font-medium bg-gradient-to-r from-red-600 via-rose-600 to-rose-500 bg-clip-text text-transparent">digital transformation</Link>?
           </h2>
 
           <p className="text-zinc-400 text-sm md:text-lg leading-relaxed font-bold mb-10 max-w-xl">
-            We are looking for exceptional engineers, cloud architects, and builders to co-develop high-integrity systems and solve critical infrastructure challenges.
+            We are looking for exceptional engineers, <Link href="/services/cloud-services" className="text-rose-500 hover:underline">cloud architects</Link>, and builders to co-develop high-integrity systems and solve critical infrastructure challenges under our <Link href="/about/internship" className="text-rose-500 hover:underline">internship program</Link> and career paths.
           </p>
 
           <div className="flex flex-wrap gap-4 justify-center items-center">

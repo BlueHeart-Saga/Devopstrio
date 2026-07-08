@@ -3,67 +3,78 @@
 import React, { useRef } from "react";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
+import Link from "next/link";
 
 const useCases = [
   {
     title: "Dynamic Credit Scoring",
     industry: "Banking",
     result: "92% faster loan approval decision loops.",
-    image: "/assets/Industries-page/usecase/Banking.png"
+    image: "/assets/Industries-page/usecase/Banking.png",
+    path: "/industries/banking-finance"
   },
   {
     title: "Patient Record Auditing",
     industry: "Healthcare",
     result: "Zero security violations across 1,400 pod nodes.",
-    image: "/assets/Industries-page/usecase/Healthcare.png"
+    image: "/assets/Industries-page/usecase/Healthcare.png",
+    path: "/industries/healthcare-life-sciences"
   },
   {
     title: "Checkout Load Scaling",
     industry: "Retail",
     result: "Handled 4.5x traffic peaks during holiday sales.",
-    image: "/assets/Industries-page/usecase/Retail.png"
+    image: "/assets/Industries-page/usecase/Retail.png",
+    path: "/industries/retail-ecommerce"
   },
   {
     title: "IoT Asset Trackers",
     industry: "Logistics",
     result: "Real-time delivery routing updates under 3 seconds.",
-    image: "/assets/Industries-page/usecase/Logistics.png"
+    image: "/assets/Industries-page/usecase/Logistics.png",
+    path: "/industries/manufacturing"
   },
   {
     title: "Mainframe Database Shift",
     industry: "Telecom",
     result: "Migrated 80TB database with zero transaction downtime.",
-    image: "/assets/Industries-page/usecase/Telecom.png"
+    image: "/assets/Industries-page/usecase/Telecom.png",
+    path: "/industries/telecommunications"
   },
   {
     title: "Citizen API Gateway",
     industry: "Public Sector",
     result: "API lookup times reduced from 4.8s to 180ms.",
-    image: "/assets/Industries-page/usecase/Public Sector.png"
+    image: "/assets/Industries-page/usecase/Public Sector.png",
+    path: "/industries/government-public-sector"
   },
   {
     title: "Distributed Media CDN",
     industry: "Media",
     result: "Global load latency reduced to under 45ms.",
-    image: "/assets/Industries-page/usecase/Media.png"
+    image: "/assets/Industries-page/usecase/Media.png",
+    path: "/industries/media-entertainment"
   },
   {
     title: "Classroom Live Workspace",
     industry: "Education",
     result: "Supported 25,000 concurrent streaming classrooms.",
-    image: "/assets/Industries-page/usecase/Education.png"
+    image: "/assets/Industries-page/usecase/Education.png",
+    path: "/industries/education"
   },
   {
     title: "Predictive Device Care",
     industry: "Manufacturing",
     result: "Reduced production machine downtime by 35%.",
-    image: "/assets/Industries-page/usecase/Manufacturing.png"
+    image: "/assets/Industries-page/usecase/Manufacturing.png",
+    path: "/industries/manufacturing"
   },
   {
     title: "Automated Invoicing Gates",
     industry: "Fintech",
     result: "Automated verification for 50,000 daily files.",
-    image: "/assets/Industries-page/usecase/Fintech.png"
+    image: "/assets/Industries-page/usecase/Fintech.png",
+    path: "/industries/banking-finance"
   }
 ];
 
@@ -136,7 +147,10 @@ export function IndustryUseCases() {
         >
           {useCases.map((uc, idx) => (
             <Reveal key={idx} delay={idx * 0.05} className="flex-shrink-0 snap-start">
-              <div className="group block w-[320px] sm:w-[350px] aspect-[3/4] bg-[#0b0b0c] border border-white/10 rounded-[24px] p-6 hover:border-rose-500/35 hover:shadow-[0_8px_32px_rgba(244,63,94,0.08)] transition-all duration-300 relative overflow-hidden cursor-pointer">
+              <Link
+                href={uc.path}
+                className="group block w-[320px] sm:w-[350px] aspect-[3/4] bg-[#0b0b0c] border border-white/10 rounded-[24px] p-6 hover:border-rose-500/35 hover:shadow-[0_8px_32px_rgba(244,63,94,0.08)] transition-all duration-300 relative overflow-hidden cursor-pointer"
+              >
 
                 {/* Subtle Inner Glow on Hover */}
                 <div className="absolute inset-0 bg-gradient-to-br from-[#E11D48]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-0" />
@@ -183,7 +197,7 @@ export function IndustryUseCases() {
 
                 </div>
 
-              </div>
+              </Link>
             </Reveal>
           ))}
         </div>

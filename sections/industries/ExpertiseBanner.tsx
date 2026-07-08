@@ -2,6 +2,7 @@
 
 import React from "react";
 import { Reveal } from "@/components/ui/Reveal";
+import Link from "next/link";
 
 export function ExpertiseBanner() {
   return (
@@ -21,7 +22,7 @@ export function ExpertiseBanner() {
                 Co-engineered compliance & <span className="text-[#E11D48]">security benchmarks</span>
               </h3>
               <p className="text-xs md:text-sm text-zinc-400 leading-relaxed font-semibold">
-                We actively certify all deployments against strict industry policies. Our templates support pre-configured ISO-27001 configurations, HIPAA health isolation parameters, and SOC-2 audit databases.
+                We actively certify all deployments against <Link href="/services/cybersecurity" className="text-rose-500 hover:underline">strict industry policies</Link>. Our templates support pre-configured <Link href="/services/cybersecurity" className="text-rose-500 hover:underline">ISO-27001 configurations</Link>, HIPAA health isolation parameters, and <Link href="/services/cloud-services" className="text-rose-500 hover:underline">SOC-2 audit databases</Link>.
               </p>
             </Reveal>
           </div>

@@ -3,6 +3,8 @@
 import React from "react";
 import { Reveal } from "@/components/ui/Reveal";
 
+import Link from "next/link";
+
 export function InnovationLabs() {
   return (
     <section id="innovation-labs" className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
@@ -16,7 +18,7 @@ export function InnovationLabs() {
             Active R&D <span className="text-rose-500">innovation labs</span>
           </h2>
           <p className="text-zinc-200 text-base md:text-lg font-semibold leading-relaxed mt-2 max-w-xl">
-            Dedicated R&D workspaces prototyping next-gen software systems, autonomous AI agents, and zero-trust networks.
+            Dedicated R&D workspaces prototyping next-gen software systems, autonomous AI agents, and zero-trust networks. Discover our <Link href="/services/software-development" className="text-rose-500 hover:underline font-bold">software development</Link> initiatives or consult our <Link href="/about/overview" className="text-rose-500 hover:underline font-bold">company overview</Link>.
           </p>
         </Reveal>
 

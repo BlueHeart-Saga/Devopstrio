@@ -87,7 +87,7 @@ export function CommunityHero() {
 
         <Reveal delay={0.3} className="max-w-2xl">
           <p className="text-zinc-400 text-xs md:text-sm lg:text-base leading-relaxed font-normal max-w-3xl text-center mx-auto opacity-95 mb-10">
-            Connecting engineers, architects, students, innovators, researchers, and industry leaders through a global ecosystem of learning, collaboration, and career growth.
+            Connecting engineers, architects, and industry leaders through a <Link href="/ecosystem/global-delivery" className="text-rose-500 hover:underline font-bold">global delivery ecosystem</Link> of collaboration, and <Link href="/ecosystem/engineering-excellence" className="text-rose-500 hover:underline font-bold">engineering excellence</Link> career growth.
           </p>
         </Reveal>
 

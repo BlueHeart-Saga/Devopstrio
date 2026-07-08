@@ -3,6 +3,8 @@
 import React from "react";
 import { Reveal } from "@/components/ui/Reveal";
 
+import Link from "next/link";
+
 export function GlobalSupport() {
   return (
     <section id="support" className="w-full py-24 bg-black border-b border-zinc-900/60 relative overflow-hidden">
@@ -28,7 +30,7 @@ export function GlobalSupport() {
 
             <Reveal delay={0.2}>
               <p className="text-zinc-200 text-base md:text-lg font-semibold leading-relaxed mb-8">
-                Our technical support desks span critical time zones (London, India, USA) to ensure continuous monitoring, immediate incident management, and seamless pipeline recoveries at all times.
+                Our technical support desks span critical time zones (London, India, USA) to ensure continuous monitoring, immediate incident management, and seamless pipeline recoveries at all times. Read about our dedicated <Link href="/about/support" className="text-rose-500 hover:underline font-bold">support page</Link> or consult our <Link href="/about/overview" className="text-rose-500 hover:underline font-bold">company overview</Link>.
               </p>
             </Reveal>
 

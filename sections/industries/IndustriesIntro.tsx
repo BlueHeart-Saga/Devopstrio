@@ -2,6 +2,7 @@
 
 import React from "react";
 import { Reveal } from "@/components/ui/Reveal";
+import Link from "next/link";
 
 export function IndustriesIntro() {
   return (
@@ -39,10 +40,10 @@ export function IndustriesIntro() {
             <Reveal delay={0.1}>
               <div className="flex flex-col gap-6 text-zinc-400 text-sm md:text-base leading-relaxed font-semibold">
                 <p className="border-l-2 border-rose-500/20 hover:border-[#E11D48] transition-colors duration-300 pl-4">
-                  Integrating AI models, setting up scalable microservice nodes, and scheduling database queries require special domain context. Financial structures demand strict audit trails; medical systems require encrypted patient privacy; logistics teams need low-latency routing calculations.
+                  Integrating <Link href="/services/ai-data-innovation" className="text-rose-500 hover:underline">AI models</Link>, setting up scalable <Link href="/services/cloud-services" className="text-rose-500 hover:underline">microservice nodes</Link>, and scheduling database queries require special domain context. Financial structures demand strict audit trails; medical systems require encrypted patient privacy; logistics teams need low-latency routing calculations.
                 </p>
                 <p className="border-l-2 border-rose-500/20 hover:border-[#E11D48] transition-colors duration-300 pl-4">
-                  At Devopstrio, our engineering teams are segmented by sector specialization. This structure ensures that your system builders understand your compliance frameworks, operations benchmarks, and security goals from day one.
+                  At Devopstrio, our engineering teams are segmented by sector specialization. This structure ensures that your system builders understand your <Link href="/services/cybersecurity" className="text-rose-500 hover:underline">compliance frameworks</Link>, operations benchmarks, and security goals from day one.
                 </p>
               </div>
             </Reveal>

@@ -3,6 +3,7 @@
 import React, { useRef } from "react";
 import { Reveal } from "@/components/ui/Reveal";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
+import Link from "next/link";
 
 const services = [
   {
@@ -124,7 +125,7 @@ export function AboutServices() {
           </Reveal>
           <Reveal delay={0.2}>
             <p className="text-zinc-400 text-sm md:text-base leading-relaxed max-w-2xl mx-auto font-bold">
-              Enrich employee experiences, reshape business processes, and accelerate innovation with Devopstrio—embedding trusted intelligence into everyday workflows. Move beyond task automation to connect knowledge, improve decisions, and achieve measurable outcomes.
+              Enrich employee experiences, reshape business processes, and <Link href="/services/digital-transformation" className="text-rose-500 hover:underline">accelerate innovation</Link> with Devopstrio—embedding trusted intelligence into everyday workflows. Move beyond <Link href="/services/devops-automation" className="text-rose-500 hover:underline">task automation</Link> to connect knowledge, improve decisions, and achieve measurable outcomes.
             </p>
           </Reveal>
         </div>

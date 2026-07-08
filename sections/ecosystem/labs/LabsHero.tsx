@@ -107,7 +107,7 @@ export function LabsHero() {
 
         <Reveal delay={0.3} className="max-w-2xl">
           <p className="text-zinc-400 text-xs md:text-sm lg:text-base leading-relaxed font-normal max-w-3xl text-center mx-auto opacity-95 mb-10">
-            Devopstrio Innovation Labs accelerate AI, Cloud, DevOps, Cybersecurity, and Data Engineering breakthroughs through continuous research, experimentation, and rapid prototyping.
+            Devopstrio Innovation Labs accelerate <Link href="/services/ai-data-innovation" className="text-rose-500 hover:underline font-bold">artificial intelligence</Link>, <Link href="/services/cloud-services" className="text-rose-500 hover:underline font-bold">cloud services</Link>, <Link href="/services/devops-automation" className="text-rose-500 hover:underline font-bold">DevOps automation</Link>, <Link href="/services/cybersecurity" className="text-rose-500 hover:underline font-bold">enterprise cybersecurity</Link>, and <Link href="/services/data-engineering" className="text-rose-500 hover:underline font-bold">data engineering</Link> breakthroughs.
           </p>
         </Reveal>
 

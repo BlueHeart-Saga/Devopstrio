@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
+import Link from "next/link";
 
 const services = [
   {
@@ -167,7 +168,7 @@ export function CoreServices() {
               Technology at the core of every business breakthrough
             </h2>
             <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
-              End-to-end services across Cloud, AI, DevOps, Security, and Software Engineering — built to deliver measurable outcomes.
+              End-to-end services across <Link href="/services/cloud-services" className="text-rose-500 hover:underline">Cloud</Link>, <Link href="/services/ai-data-innovation" className="text-rose-500 hover:underline">AI</Link>, <Link href="/services/devops-automation" className="text-rose-500 hover:underline">DevOps</Link>, <Link href="/services/cybersecurity" className="text-rose-500 hover:underline">Security</Link>, and <Link href="/services/software-development" className="text-rose-500 hover:underline">Software Engineering</Link> — built to deliver measurable outcomes.
             </p>
           </div>
         </Reveal>

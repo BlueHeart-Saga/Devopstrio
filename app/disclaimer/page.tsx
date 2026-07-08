@@ -1,6 +1,7 @@
 import React from "react";
 import { LegalPageLayout } from "@/components/LegalPageLayout";
 import { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Disclaimer | Devopstrio",
@@ -32,10 +33,10 @@ export default function DisclaimerPage() {
       content: (
         <div className="space-y-4">
           <p>
-            The Site cannot and does not contain specific IT infrastructure architecture, cybersecurity audit, or corporate legal advice. The technical content, code snippets, configuration scripts, and architectural templates provided on our blog, resource page, or insights hub are for educational purposes only.
+            The Site cannot and does not contain specific <Link href="/services/cloud-services" className="text-rose-500 hover:underline font-bold">IT infrastructure architecture</Link>, <Link href="/services/cybersecurity" className="text-rose-500 hover:underline font-bold">cybersecurity audit</Link>, or corporate legal advice. The technical content, code snippets, configuration scripts, and architectural templates provided on our blog, resource page, or insights hub are for educational purposes only.
           </p>
           <p>
-            They do not constitute professional consulting advice and should not be used as a substitute for custom professional evaluations. Before taking any actions based upon such information, we encourage you to consult with the appropriate technical specialists.
+            They do not constitute <Link href="/services/it-consulting" className="text-rose-500 hover:underline font-bold">professional consulting advice</Link> and should not be used as a substitute for custom professional evaluations. Before taking any actions based upon such information, we encourage you to consult with the appropriate technical specialists.
           </p>
           <p>
             The use or reliance of any code samples, architectural layouts, or configuration guides contained on this site is solely at your own risk.
@@ -63,7 +64,7 @@ export default function DisclaimerPage() {
       content: (
         <div className="space-y-4">
           <p>
-            The Site may contain (or you may be sent through the Site) links to other websites or content belonging to or originating from third parties or links to websites and features in banners or other advertising. Such external links are not investigated, monitored, or checked for accuracy, adequacy, validity, reliability, availability, or completeness by us.
+            The Site may contain (or you may be sent through the Site) links to other websites or content belonging to or originating from third parties or links to websites and features in banners or other advertising. Such external links, including those relating to our <Link href="/ecosystem/partnerships" className="text-rose-500 hover:underline font-bold">cloud platform partners</Link>, are not investigated, monitored, or checked for accuracy, adequacy, validity, reliability, availability, or completeness by us.
           </p>
           <p>
             We do not warrant, endorse, guarantee, or assume responsibility for the accuracy or reliability of any information offered by third-party websites linked through the site or any website or feature linked in any banner or other advertising. We will not be a party to or in any way be responsible for monitoring any transaction between you and third-party providers of products or services.

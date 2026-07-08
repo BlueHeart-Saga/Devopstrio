@@ -3,6 +3,7 @@
 import React from "react";
 import { ShieldCheck } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
+import Link from "next/link";
 
 interface IndustryComplianceProps {
   compliances: string[];
@@ -38,7 +39,7 @@ export function IndustryCompliance({ compliances }: IndustryComplianceProps) {
 
             <Reveal delay={0.1}>
               <p className="text-zinc-400 text-sm leading-relaxed font-medium">
-                We develop software models under strict regulatory guidelines, integrating security audits, encrypted registries, and automated vulnerability scanners directly into our builds.
+                We develop software models under strict regulatory guidelines, integrating <Link href="/services/cybersecurity" className="text-rose-500 hover:underline">security audits</Link>, encrypted registries, and <Link href="/services/cybersecurity" className="text-rose-500 hover:underline">automated vulnerability scanners</Link> directly into our builds.
               </p>
             </Reveal>
           </div>

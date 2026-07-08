@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import { Reveal } from "@/components/ui/Reveal";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
+import Link from "next/link";
 
 const milestones = [
   {
@@ -120,7 +121,7 @@ export function OurStory() {
 
                 <div className="space-y-6 text-zinc-400 text-sm leading-relaxed font-bold">
                   <p>
-                    Founded in 2019 with a simple idea — that cloud infrastructure could be smarter, faster, and more human — Devopstrio has grown into a trusted partner for enterprises across four continents.
+                    Founded in 2019 with a simple idea — that <Link href="/services/cloud-services" className="text-rose-500 hover:underline">cloud infrastructure</Link> could be smarter, faster, and more human — Devopstrio has grown into a trusted partner for enterprises across four continents.
                   </p>
                   <p>
                     Devopstrio was born from a clear-eyed frustration: traditional cloud management was too slow for the AI era. Our founders — a team of cloud architects and ML engineers — saw that enterprises were drowning in complexity, held back by brittle infrastructure and disconnected toolchains.
@@ -132,7 +133,7 @@ export function OurStory() {
               <div className="lg:col-span-5 p-6 md:p-10 lg:p-12 flex flex-col justify-between bg-zinc-950/20 border-t lg:border-t-0 lg:border-l border-zinc-900/60">
                 <div className="space-y-6 text-zinc-400 text-sm leading-relaxed font-bold">
                   <p>
-                    We opened our first small office in Bangalore, India, in 2019 — reaching early clients through platforms like Upwork. The work was precise, the delivery exceptional, and the reputation grew quickly. What started as a specialist DevOps team became something far larger: a full-spectrum digital transformation partner.
+                    We opened our first small office in Bangalore, India, in 2019 — reaching early clients through platforms like Upwork. The work was precise, the delivery exceptional, and the reputation grew quickly. What started as a specialist <Link href="/services/devops-automation" className="text-rose-500 hover:underline">DevOps team</Link> became something far larger: a full-spectrum <Link href="/services/digital-transformation" className="text-rose-500 hover:underline">digital transformation</Link> partner.
                   </p>
 
                   <div className="p-5 bg-zinc-950/60 border border-zinc-800/80 rounded-none border-r-4 border-r-rose-600">

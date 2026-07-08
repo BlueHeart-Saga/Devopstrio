@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 
 type EventImage = {
   src: string;
@@ -99,7 +100,7 @@ export const LifeMomentsGallery = () => {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-zinc-400 text-sm sm:text-base font-medium"
           >
-            Discover the latest events hosted by Devopstrio
+            Discover the latest events hosted by Devopstrio. You can also read our <Link href="/insights" className="text-rose-500 hover:underline">insights & updates</Link> or view our <Link href="/careers" className="text-rose-500 hover:underline">open career positions</Link>.
           </motion.p>
           
           {/* Scrollable Filter Pill Bar */}

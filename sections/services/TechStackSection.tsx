@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { Reveal } from "@/components/ui/Reveal";
+import Link from "next/link";
 
 const techStack = [
   {
@@ -262,7 +263,7 @@ export function TechStackSection() {
             OUR ENGINEERING <span className="text-rose-500">TECH STACK</span>
           </h2>
           <p className="text-zinc-200 text-sm md:text-base font-semibold leading-relaxed max-w-2xl mx-auto">
-            We align our technology choices with enterprise security requirements, scalability, and developer experience.
+            We align our technology choices with <Link href="/services/cybersecurity" className="text-rose-500 hover:underline">enterprise security requirements</Link>, <Link href="/services/cloud-services" className="text-rose-500 hover:underline">scalability</Link>, and developer experience.
           </p>
         </Reveal>
 

@@ -2,6 +2,7 @@
 
 import React from "react";
 import { Reveal } from "@/components/ui/Reveal";
+import Link from "next/link";
 
 export function ContactHero() {
   return (
@@ -29,7 +30,7 @@ export function ContactHero() {
             {/* Description */}
             <Reveal delay={0.2}>
               <p className="text-zinc-400 text-xs sm:text-sm md:text-base leading-relaxed font-semibold max-w-xl mb-8">
-                Whether you&apos;re ready to build, migrate, secure, or scale — our senior architects are one message away. No generic pitches. Just honest engineering expertise applied to your exact challenge.
+                Whether you&apos;re ready to <Link href="/services/software-development" className="text-rose-500 hover:underline">build</Link>, <Link href="/services/cloud-services" className="text-rose-500 hover:underline">migrate</Link>, <Link href="/services/cybersecurity" className="text-rose-500 hover:underline">secure</Link>, or <Link href="/services/devops-automation" className="text-rose-500 hover:underline">scale</Link> — our senior architects are one message away. No generic pitches. Just honest engineering expertise applied to your exact challenge.
               </p>
             </Reveal>
 
@@ -37,7 +38,7 @@ export function ContactHero() {
             <Reveal delay={0.3}>
               <div className="border-l-2 border-rose-500 bg-zinc-950/40 px-6 py-4 rounded-r-lg max-w-xl">
                 <p className="text-zinc-300 text-xs md:text-sm font-semibold italic leading-relaxed">
-                  &ldquo;We don&apos;t do discovery calls with salespeople. You speak directly with a senior cloud architect who understands your stack — on day one.&rdquo;
+                  &ldquo;We don&apos;t do discovery calls with salespeople. You speak directly with a <Link href="/about" className="text-rose-500 hover:underline">senior cloud architect</Link> who understands your stack — on day one.&rdquo;
                 </p>
               </div>
             </Reveal>

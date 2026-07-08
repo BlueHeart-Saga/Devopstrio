@@ -2,6 +2,7 @@
 
 import React from "react";
 import { Reveal } from "@/components/ui/Reveal";
+import Link from "next/link";
 
 export function AboutHero() {
   return (
@@ -29,7 +30,7 @@ export function AboutHero() {
             {/* Description */}
             <Reveal delay={0.2}>
               <p className="text-zinc-400 text-xs sm:text-sm md:text-base leading-relaxed font-semibold max-w-xl mb-8">
-                Devopstrio is a UK-based global technology partner helping enterprises accelerate digital transformation through secure, scalable, and intelligent technology solutions. We specialize in developing software solutions through the synergy of skilled professionals and efficient processes.
+                Devopstrio is a UK-based global technology partner helping enterprises accelerate <Link href="/services/digital-transformation" className="text-rose-500 hover:underline">digital transformation</Link> through secure, scalable, and intelligent <Link href="/services" className="text-rose-500 hover:underline">technology solutions</Link>. We specialize in developing <Link href="/services/software-development" className="text-rose-500 hover:underline">software solutions</Link> through the synergy of skilled professionals and efficient processes.
               </p>
             </Reveal>
 

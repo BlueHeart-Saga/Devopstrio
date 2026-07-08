@@ -1638,7 +1638,7 @@ export function DetailedServices({ hideExploreButton = false }: DetailedServices
               Deploy & Orchestrate Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-rose-500">Enterprise Technology Stacks</span>
             </h2>
             <p className="text-zinc-400 text-base md:text-lg leading-relaxed max-w-2xl mx-auto font-light">
-              Explore our extensive practice areas, expert engineering capabilities, and seamless technology integrations. We build, secure, and accelerate your entire digital delivery pipeline with precision.
+              Explore our extensive practice areas, <Link href="/about" className="text-rose-500 hover:underline">expert engineering capabilities</Link>, and seamless technology integrations. We build, secure, and accelerate your entire <Link href="/services/devops-automation" className="text-rose-500 hover:underline">digital delivery pipeline</Link> with precision.
             </p>
           </div>
         </Reveal>

@@ -1,18 +1,19 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const services = [
-  "AI & Data Innovation",
-  "Cloud Engineering",
-  "DevOps & Automation",
-  "Cybersecurity",
-  "Software Development",
-  "Digital Transformation",
-  "Data Engineering",
-  "Managed Services",
-  "QA & Testing",
-  "IT Consulting",
+  { name: "AI & Data Innovation", href: "/services/ai-data-innovation" },
+  { name: "Cloud Engineering", href: "/services/cloud-services" },
+  { name: "DevOps & Automation", href: "/services/devops-automation" },
+  { name: "Cybersecurity", href: "/services/cybersecurity" },
+  { name: "Software Development", href: "/services/software-development" },
+  { name: "Digital Transformation", href: "/services/digital-transformation" },
+  { name: "Data Engineering", href: "/services/data-engineering" },
+  { name: "Managed Services", href: "/services/managed-services" },
+  { name: "QA & Testing", href: "/services/qa-testing" },
+  { name: "IT Consulting", href: "/services/it-consulting" },
 ];
 
 export const AboutDevopstrio = () => {
@@ -47,7 +48,7 @@ export const AboutDevopstrio = () => {
               transition={{ delay: 0.1 }}
               className="text-zinc-400 text-sm md:text-base leading-relaxed font-bold mb-8"
             >
-              Founded in 2019 and headquartered in London, Devopstrio is a global technology consulting and engineering company helping enterprises modernise their platforms, accelerate innovation, and build resilient digital ecosystems.
+              Founded in 2019 and headquartered in London, Devopstrio is a global technology consulting and engineering company helping enterprises modernise their platforms under our <Link href="/about/overview" className="text-rose-500 hover:underline">company overview</Link>, accelerate innovation, and build resilient digital ecosystems.
             </motion.p>
 
             <motion.div
@@ -83,17 +84,22 @@ export const AboutDevopstrio = () => {
             </motion.p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {services.map((svc, idx) => (
-                <motion.div
+                <Link
                   key={idx}
-                  initial={{ opacity: 0, x: 20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: idx * 0.06 }}
-                  className="flex items-center gap-3 px-4 py-3 bg-zinc-900/40 border border-zinc-800 rounded-lg hover:border-red-500/30 transition-colors group"
+                  href={svc.href}
+                  className="block"
                 >
-                  <span className="w-1.5 h-1.5 rounded-full bg-rose-500 group-hover:shadow-[0_0_6px_rgba(244,63,94,0.8)] transition-shadow shrink-0" />
-                  <span className="text-zinc-300 text-sm font-medium">{svc}</span>
-                </motion.div>
+                  <motion.div
+                    initial={{ opacity: 0, x: 20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4, delay: idx * 0.06 }}
+                    className="flex items-center gap-3 px-4 py-3 bg-zinc-900/40 border border-zinc-800 rounded-lg hover:border-red-500/30 transition-colors group"
+                  >
+                    <span className="w-1.5 h-1.5 rounded-full bg-rose-500 group-hover:shadow-[0_0_6px_rgba(244,63,94,0.8)] transition-shadow shrink-0" />
+                    <span className="text-zinc-300 text-sm font-medium group-hover:text-white transition-colors">{svc.name}</span>
+                  </motion.div>
+                </Link>
               ))}
             </div>
           </div>

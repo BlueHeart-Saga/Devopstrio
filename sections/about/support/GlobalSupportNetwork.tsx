@@ -98,6 +98,8 @@ const locations = [
 
 const defaultVisible = new Set(["london", "tennessee", "bengaluru"]);
 
+import Link from "next/link";
+
 export const GlobalSupportNetwork = () => {
   const [active, setActive] = useState<string | null>(null);
 
@@ -132,7 +134,7 @@ export const GlobalSupportNetwork = () => {
             transition={{ delay: 0.1 }}
             className="text-zinc-400 text-sm md:text-base leading-relaxed font-bold max-w-xl mx-auto"
           >
-            Follow-the-sun support model with delivery centres across 3 continents.
+            Follow-the-sun support model with delivery centres across 3 continents. Learn more on our <Link href="/about/global-presence" className="text-rose-500 hover:underline">global presence</Link> page.
           </motion.p>
         </div>
 

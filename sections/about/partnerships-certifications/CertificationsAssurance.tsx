@@ -3,6 +3,8 @@
 import { Reveal } from "@/components/ui/Reveal";
 import { Shield, Settings, Lock, BookOpen } from "lucide-react";
 
+import Link from "next/link";
+
 export function CertificationsAssurance() {
   const cards = [
     {
@@ -39,7 +41,7 @@ export function CertificationsAssurance() {
               Certifications, Standards, and <span className="text-[#E11D48]">Delivery Readiness</span>
             </h2>
             <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-medium max-w-3xl">
-              We continue to strengthen our capabilities through platform-aligned learning, engineering best practices, and delivery standards that improve how we build, deploy, secure, and support digital solutions. Our certification and readiness approach reflects a long-term commitment to technical excellence and responsible delivery.
+              We continue to strengthen our capabilities through platform-aligned learning, engineering best practices, and delivery standards that improve how we build, deploy, secure, and support digital solutions. Our certification and readiness approach reflects a long-term commitment to technical excellence and responsible delivery in <Link href="/services/cloud-services" className="text-[#E11D48] hover:underline font-bold">cloud architectures</Link>, <Link href="/services/devops-automation" className="text-[#E11D48] hover:underline font-bold">DevOps frameworks</Link>, and <Link href="/services/cybersecurity" className="text-[#E11D48] hover:underline font-bold">zero-trust security</Link>.
             </p>
           </div>
         </Reveal>

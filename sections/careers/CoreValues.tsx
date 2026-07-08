@@ -52,6 +52,8 @@ const staggerClasses = [
   "md:translate-y-8 lg:translate-y-16",
 ];
 
+import Link from "next/link";
+
 export function CoreValues() {
   return (
     <section className="w-full pt-24 pb-36 bg-[#030303] border-b border-zinc-900 relative overflow-hidden">
@@ -70,7 +72,7 @@ export function CoreValues() {
               The principles that <span className="text-rose-500">define us</span>
             </h2>
             <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
-              Every decision, product, and partnership at Devopstrio is anchored by a core set of principles our teams live by every day.
+              Every decision, product, and partnership at Devopstrio is anchored by a core set of principles our teams live by every day. Read our <Link href="/about/overview" className="text-rose-500 hover:underline font-bold">company overview</Link> or discover our <Link href="/services" className="text-rose-500 hover:underline font-bold">digital services</Link>.
             </p>
           </div>
         </Reveal>

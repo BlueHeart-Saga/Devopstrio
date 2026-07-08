@@ -37,6 +37,8 @@ const sitemapData: SitemapCategory[] = [
     icon: Cpu,
     accentColor: "from-rose-500 to-red-600",
     items: [
+      { name: "Services Home", href: "/services", desc: "Our core engineering practices and capability divisions." },
+      { name: "Services Explorer", href: "/services/explore", desc: "Detailed search tool covering all 250+ engineering capabilities." },
       { name: "AI & Data Innovation", href: "/services/ai-data-innovation", desc: "Cognitive AI pipelines and enterprise LLM models." },
       { name: "Cloud Services", href: "/services/cloud-services", desc: "Multi-region AKS/EKS container grids & FinOps." },
       { name: "DevOps & Automation", href: "/services/devops-automation", desc: "GitOps, CI/CD automation & platform engineering." },
@@ -71,9 +73,11 @@ const sitemapData: SitemapCategory[] = [
     icon: Network,
     accentColor: "from-emerald-500 to-teal-600",
     items: [
+      { name: "Ecosystem Home", href: "/ecosystem", desc: "Overview of partnerships, innovation labs, and stack components." },
       { name: "Strategic Partnerships", href: "/ecosystem/partnerships", desc: "Certified co-engineering ties with AWS, GCP, and Azure." },
       { name: "R&D Innovation Labs", href: "/ecosystem/innovation-labs", desc: "Prototyping future AI pipelines and Edge computing architectures." },
       { name: "Platforms & Solutions", href: "/ecosystem/platforms-solutions", desc: "Our proprietary open-source tools and infrastructure templates." },
+      { name: "Landing Zone Blueprints", href: "/ecosystem/landing-zone", desc: "Hardened multi-account baselines and cloud security templates." },
       { name: "SaaS Platforms", href: "/ecosystem/platforms-solutions/saas-platforms", desc: "Enterprise SaaS products, digital platforms, and business applications." },
       { name: "Technology Stack", href: "/ecosystem/technology-stack", desc: "An overview of all components, libraries, and runtimes we build with." },
       { name: "Global Delivery Network", href: "/ecosystem/global-delivery", desc: "Distributed team nodes ensuring follow-the-sun service reliability." },
@@ -156,7 +160,7 @@ export default function SitemapPage() {
               Sitemap
             </h1>
             <p className="text-zinc-400 font-medium max-w-xl text-sm md:text-base leading-relaxed">
-              Quickly locate all capability pages, industry regulatory profiles, co-engineering assets, and publications across Devopstrio.
+              Quickly locate all <Link href="/services" className="text-rose-500 hover:underline font-bold">capability pages</Link>, industry regulatory profiles, <Link href="/ecosystem" className="text-rose-500 hover:underline font-bold">co-engineering assets</Link>, and publications across Devopstrio.
             </p>
           </Reveal>
         </div>

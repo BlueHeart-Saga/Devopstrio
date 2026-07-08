@@ -34,6 +34,8 @@ const avatarColumns: AvatarColumn[] = [
   { hideOn: "lg", items: [{ type: "empty" }, { type: "image", src: "image 175.png" }, { type: "image", src: "image 176.png" }] },
 ];
 
+import Link from "next/link";
+
 export const TestimonialsHero = () => {
   return (
     <section className="relative min-h-[100dvh] flex flex-col justify-end overflow-hidden bg-black pt-32 pb-20 md:pb-28">
@@ -121,7 +123,7 @@ export const TestimonialsHero = () => {
           transition={{ duration: 0.7, delay: 0.6 }}
           className="text-lg md:text-xl text-zinc-400 max-w-2xl mb-12 font-medium leading-relaxed"
         >
-          Learn why professionals trust our solutions to complete their customer journeys.
+          Learn why professionals trust our solutions to complete their customer journeys. Discover our <Link href="/services" className="text-white hover:underline font-bold">digital services</Link> and read our <Link href="/about/overview" className="text-white hover:underline font-bold">company overview</Link>.
         </motion.p>
 
         <motion.a

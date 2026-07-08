@@ -25,7 +25,7 @@ export function AboutCTA() {
           </h2>
 
           <p className="text-zinc-400 text-sm md:text-lg leading-relaxed font-bold mb-10 max-w-lg">
-            Whether you need a full delivery squad to rebuild a legacy platform, senior architects to guide an AI migration, or a dedicated team to support your operations — we're here to help.
+            Whether you need a full delivery squad to rebuild a legacy platform, senior architects to guide an <Link href="/services/ai-data-innovation" className="text-rose-500 hover:underline">AI migration</Link>, or a <Link href="/ecosystem/global-delivery" className="text-rose-500 hover:underline">dedicated team</Link> to support your operations — we're here to help.
           </p>
 
           <div className="flex flex-wrap gap-4 justify-center items-center">

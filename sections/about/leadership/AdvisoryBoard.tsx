@@ -60,6 +60,8 @@ const colorMap: Record<string, { tag: string; glow: string; border: string }> = 
   },
 };
 
+import Link from "next/link";
+
 export const AdvisoryBoard = () => {
 
   return (
@@ -100,10 +102,10 @@ export const AdvisoryBoard = () => {
               className="text-zinc-400 text-sm md:text-base leading-relaxed font-bold max-w-2xl"
             >
               Our advisory board comprises seasoned leaders who bring decades of board-level governance across{" "}
-              <span className="text-white font-semibold hover:text-rose-500 transition-colors duration-300">high-scale cloud platforms</span>,{" "}
-              <span className="text-white font-semibold hover:text-rose-500 transition-colors duration-300">distributed enterprise architecture</span>,{" "}
-              <span className="text-white font-semibold hover:text-rose-500 transition-colors duration-300">zero-trust security governance</span>, and{" "}
-              <span className="text-white font-semibold hover:text-rose-500 transition-colors duration-300">cognitive AI computing systems</span>. Together, they steer our technical roadmap, ensure robust enterprise compliance, and accelerate sustainable digital innovation.
+              <Link href="/services/cloud-services" className="text-white font-semibold hover:text-rose-500 transition-colors duration-300 underline underline-offset-4 decoration-rose-500/30">high-scale cloud platforms</Link>,{" "}
+              <Link href="/services/software-development" className="text-white font-semibold hover:text-rose-500 transition-colors duration-300 underline underline-offset-4 decoration-rose-500/30">distributed enterprise architecture</Link>,{" "}
+              <Link href="/services/cybersecurity" className="text-white font-semibold hover:text-rose-500 transition-colors duration-300 underline underline-offset-4 decoration-rose-500/30">zero-trust security governance</Link>, and{" "}
+              <Link href="/services/ai-data-innovation" className="text-white font-semibold hover:text-rose-500 transition-colors duration-300 underline underline-offset-4 decoration-rose-500/30">cognitive AI computing systems</Link>. Together, they steer our technical roadmap, ensure robust enterprise compliance, and accelerate sustainable digital innovation.
             </motion.p>
           </div>
         </div>

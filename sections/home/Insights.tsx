@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import { Reveal } from "@/components/ui/Reveal";
 import { ArrowUpRight } from "lucide-react";
 import { insightsApi, TransformedPost } from "@/lib/insightsApi";
+import Link from "next/link";
 
 export function Insights() {
   const [posts, setPosts] = useState<TransformedPost[]>([]);
@@ -158,7 +159,7 @@ export function Insights() {
           <div className="mt-10 md:mt-12 pt-6 md:pt-8 border-t border-white/[0.04] text-center w-full">
             <p className="text-base md:text-lg font-light text-zinc-400 tracking-wide">
               <span className="text-rose-500 font-serif text-xl leading-none align-middle mr-1">"</span>
-              Knowledge shared is the foundation of digital excellence and <span className="font-medium text-zinc-200">continuous innovation.</span>
+              Knowledge shared is the foundation of <Link href="/about" className="text-zinc-300 hover:text-rose-500 hover:underline">digital excellence</Link> and <Link href="/insights" className="font-medium text-zinc-200 hover:text-rose-500 hover:underline">continuous innovation.</Link>
               <span className="text-rose-500 font-serif text-xl leading-none align-middle ml-1">"</span>
             </p>
           </div>

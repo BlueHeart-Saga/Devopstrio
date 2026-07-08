@@ -3,6 +3,8 @@
 import React from "react";
 import { Reveal } from "@/components/ui/Reveal";
 
+import Link from "next/link";
+
 const metrics = [
   { value: "2,500+", label: "Completed Projects", desc: "Production workloads deployed globally." },
   { value: "200+", label: "Reusable Assets", desc: "Open-source and proprietary infrastructure templates." },
@@ -26,7 +28,7 @@ export function EcosystemMetrics() {
             Ecosystem Scale & <span className="text-rose-500">Credibility</span>
           </h2>
           <p className="text-zinc-300 text-base md:text-lg font-semibold leading-relaxed">
-            Quantifiable indicators demonstrating our capabilities to run enterprise-grade workloads across global systems.
+            Quantifiable indicators demonstrating our capabilities to run enterprise-grade workloads across global systems. Review our <Link href="/services/managed-services" className="text-rose-500 hover:underline font-bold">managed services</Link> and read our client <Link href="/about/testimonials" className="text-rose-500 hover:underline font-bold">testimonials</Link> page.
           </p>
         </Reveal>
 

@@ -106,6 +106,8 @@ const stories = [
   }
 ];
 
+import Link from "next/link";
+
 export const FeaturedSuccess = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const activeStory = stories[activeIndex];
@@ -124,7 +126,7 @@ export const FeaturedSuccess = () => {
             Hear from our <span className="text-rose-500">customers</span>
           </h2>
           <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
-            Real stories of transformation, scale, and resilience powered by our robust enterprise solutions.
+            Real stories of transformation, scale, and resilience powered by our robust enterprise solutions. Explore our <Link href="/services/cloud-services" className="text-rose-500 hover:underline font-bold">cloud services</Link> and <Link href="/services/devops-automation" className="text-rose-500 hover:underline font-bold">DevOps automation</Link> platforms.
           </p>
         </div>
 

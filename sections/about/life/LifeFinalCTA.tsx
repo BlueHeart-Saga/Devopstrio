@@ -2,6 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, MessageSquare } from "lucide-react";
+import Link from "next/link";
 
 export const LifeFinalCTA = () => {
   return (
@@ -28,7 +29,7 @@ export const LifeFinalCTA = () => {
           </h2>
 
           <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-bold max-w-2xl mx-auto mb-12">
-            Join a team passionate about technology, innovation, and delivering real-world impact at scale. Your next career chapter starts here.
+            Join a team passionate about technology, innovation, and delivering real-world impact at scale in <Link href="/services/cloud-services" className="text-rose-500 hover:underline">cloud platforms</Link> and <Link href="/services/devops-automation" className="text-rose-500 hover:underline">DevOps solutions</Link>. Your next career chapter starts here.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">

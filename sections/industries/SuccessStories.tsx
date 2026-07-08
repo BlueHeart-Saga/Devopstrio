@@ -3,66 +3,74 @@
 import React, { useRef } from "react";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
+import Link from "next/link";
 
-const successStories = [
+interface SuccessStoryItem {
+  company: string;
+  achievement: string;
+  desc: React.ReactNode;
+  metric: string;
+}
+
+const successStories: SuccessStoryItem[] = [
   {
     company: "Apex Clearing Bank",
     achievement: "Mainframe Modernization",
-    desc: "Migrated Apex's core transaction ledger to a multi-cloud Kubernetes setup, cutting monthly infrastructure expenditures by 45%.",
+    desc: <>Migrated Apex's core transaction ledger to a multi-cloud <Link href="/services/cloud-services" className="text-rose-500 hover:underline">Kubernetes setup</Link>, cutting monthly infrastructure expenditures by 45%.</>,
     metric: "-45% Costs"
   },
   {
     company: "Novis Diagnostics",
     achievement: "Secure Medical Ingest",
-    desc: "Configured an encrypted patient log ingest channel handling 10 million telemetry signals daily with full HIPAA alignment.",
+    desc: <>Configured an encrypted patient log ingest channel handling 10 million telemetry signals daily with full <Link href="/services/cybersecurity" className="text-rose-500 hover:underline">HIPAA alignment</Link>.</>,
     metric: "10M Signals/Day"
   },
   {
     company: "Horizon Retailers",
     achievement: "Black Friday Scaling",
-    desc: "Automated container scaling thresholds to support 4.5x visitor peaks during high-volume promotional sales events.",
+    desc: <>Automate <Link href="/services/cloud-services" className="text-rose-500 hover:underline">container scaling</Link> thresholds to support 4.5x visitor peaks during high-volume promotional sales events.</>,
     metric: "99.999% Uptime"
   },
   {
     company: "Global Telecom",
     achievement: "Zero-Downtime Migration",
-    desc: "Shifted 85TB of active billing records to a distributed multi-region database structure with zero operational delays.",
+    desc: <>Shifted 85TB of active billing records to a distributed <Link href="/services/cloud-services" className="text-rose-500 hover:underline">multi-region database</Link> structure with zero operational delays.</>,
     metric: "85TB Migrated"
   },
   {
     company: "Aerotech Logistics",
     achievement: "Autonomous Scheduling",
-    desc: "Automated edge logistics routes using distributed broker queues, cutting delivery dispatch times by 30%.",
+    desc: <>Automated edge logistics routes using distributed <Link href="/services/cloud-services" className="text-rose-500 hover:underline">broker queues</Link>, cutting delivery dispatch times by 30%.</>,
     metric: "30% Faster Route"
   },
   {
     company: "EduLearn Portal",
     achievement: "Virtual Class Scaling",
-    desc: "Scaled interactive video streaming servers to handle 200,000 active remote learners simultaneously.",
+    desc: <>Scaled interactive video <Link href="/services/cloud-services" className="text-rose-500 hover:underline">streaming servers</Link> to handle 200,000 active remote learners simultaneously.</>,
     metric: "200K Active Users"
   },
   {
     company: "Public Safety Net",
     achievement: "High-Availability Gateway",
-    desc: "Upgraded citizen data gates to handle high-frequency requests under strict government compliance codes.",
+    desc: <>Upgraded citizen data gates to handle high-frequency requests under strict government <Link href="/services/cybersecurity" className="text-rose-500 hover:underline">compliance codes</Link>.</>,
     metric: "180ms Latency"
   },
   {
     company: "MediaFlow CDN",
     achievement: "Edge Content Cache",
-    desc: "Optimized live video stream delivery networks across 12 edge points, slashing buffering issues by 65%.",
+    desc: <>Optimized live video <Link href="/services/digital-transformation" className="text-rose-500 hover:underline">stream delivery networks</Link> across 12 edge points, slashing buffering issues by 65%.</>,
     metric: "-65% Buffering"
   },
   {
     company: "SmartForge IoT",
     achievement: "Predictive Machine Care",
-    desc: "Configured event-driven alert triggers on 1,250 factory floor machinery systems to automate repair tickets.",
+    desc: <>Configured event-driven <Link href="/services/devops-automation" className="text-rose-500 hover:underline">alert triggers</Link> on 1,250 factory floor machinery systems to automate repair tickets.</>,
     metric: "92% Auto-Detect"
   },
   {
     company: "PaySafe Integrations",
     achievement: "Fraud Filtering Pipeline",
-    desc: "Built an AI-driven transaction checking pipeline that flags suspicious bank ledger anomalies under 12ms.",
+    desc: <>Built an <Link href="/services/ai-data-innovation" className="text-rose-500 hover:underline">AI-driven transaction checking</Link> pipeline that flags suspicious bank ledger anomalies under 12ms.</>,
     metric: "<12ms Check"
   }
 ];

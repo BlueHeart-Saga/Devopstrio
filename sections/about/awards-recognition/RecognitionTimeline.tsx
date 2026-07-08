@@ -2,26 +2,28 @@
 import React from "react";
 import { Reveal } from "@/components/ui/Reveal";
 
+import Link from "next/link";
+
 const timeline = [
   {
     year: "2026",
     title: "Global Scaling & Infrastructure Supremacy",
-    description: "Scaled global website, enhanced ecosystem positioning, and achieved Finalist status for Networking Computing Awards through highly resilient infrastructure."
+    description: <>Scaled global website, enhanced <Link href="/ecosystem/partnerships" className="text-[#E11D48] hover:underline">ecosystem positioning</Link>, and achieved Finalist status for Networking Computing Awards through highly resilient infrastructure.</>
   },
   {
     year: "2025",
     title: "Security & Cloud Maturity",
-    description: "Strengthened our cloud, engineering, and delivery offerings, heavily recognized by the Computing Security Awards for DevSecOps excellence."
+    description: <>Strengthened our cloud, engineering, and delivery offerings, heavily recognized by the Computing Security Awards for <Link href="/services/cybersecurity" className="text-[#E11D48] hover:underline">DevSecOps excellence</Link>.</>
   },
   {
     year: "2024",
     title: "Platform Expansion",
-    description: "Expanded our internal platform and digital service capabilities, building new multi-cloud frameworks that accelerated client outcomes."
+    description: <>Expanded our internal platform and digital service capabilities, building new <Link href="/services/cloud-services" className="text-[#E11D48] hover:underline">multi-cloud frameworks</Link> that accelerated client outcomes.</>
   },
   {
     year: "2022",
     title: "Ecosystem Partnerships",
-    description: "Solidified core technological alliances, earning Dell Gold Partner and Cloud Solution Provider of the Year for unmatched migration speed."
+    description: <>Solidified core technological alliances, earning Dell Gold Partner and Cloud Solution Provider of the Year for unmatched <Link href="/services/cloud-services" className="text-[#E11D48] hover:underline">migration speed</Link>.</>
   }
 ];
 

@@ -3,6 +3,7 @@
 import React from "react";
 import { Reveal } from "@/components/ui/Reveal";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export function MissionVision() {
   return (
@@ -23,7 +24,7 @@ export function MissionVision() {
             
             <Reveal delay={0.1}>
               <p className="text-zinc-100 text-xs md:text-sm font-medium leading-relaxed mb-8">
-                As a leading strategic partner to companies around the world, we have leveraged technology to enable business transformation. We address the entire breadth of business needs, from strategy and design to managing operations. To do this, we draw on deep industry expertise and a command of the fast-evolving fields of cloud, data artificial intelligence, connectivity, software, digital engineering, and platforms.
+                As a leading strategic partner to companies around the world, we have leveraged technology to enable <Link href="/services/digital-transformation" className="text-rose-500 hover:underline">business transformation</Link>. We address the entire breadth of business needs, from strategy and design to managing operations. To do this, we draw on deep industry expertise and a command of the fast-evolving fields of <Link href="/services/cloud-services" className="text-rose-500 hover:underline">cloud</Link>, data <Link href="/services/ai-data-innovation" className="text-rose-500 hover:underline">artificial intelligence</Link>, connectivity, <Link href="/services/software-development" className="text-rose-500 hover:underline">software</Link>, digital engineering, and platforms.
               </p>
             </Reveal>
 
@@ -132,7 +133,7 @@ export function MissionVision() {
 
             <Reveal delay={0.2}>
               <p className="text-zinc-100 text-xs md:text-sm font-semibold leading-relaxed mb-4">
-                To empower enterprises by <span className="text-rose-500 underline decoration-rose-500/50 underline-offset-4 decoration-2">simplifying the complex</span>. We deliver intelligent, AI-driven cloud ecosystems that act as a seamless extension of your team, turning infrastructure into your greatest competitive advantage.
+                To empower enterprises by <span className="text-rose-500 underline decoration-rose-500/50 underline-offset-4 decoration-2">simplifying the complex</span>. We deliver intelligent, AI-driven <Link href="/services/cloud-services" className="text-rose-500 hover:underline">cloud ecosystems</Link> that act as a seamless extension of your team, turning infrastructure into your greatest competitive advantage.
               </p>
             </Reveal>
 
@@ -168,7 +169,7 @@ export function MissionVision() {
 
             <Reveal delay={0.3}>
               <p className="text-zinc-200 text-xs md:text-sm font-medium leading-relaxed">
-                We strive to create <span className="text-rose-500 font-semibold">resilient digital foundations</span> that allow innovation to flourish without limits, where every line of code is a step toward a more efficient, automated, and imaginative world.
+                We strive to create resilient <Link href="/ecosystem/landing-zone" className="text-rose-500 hover:underline">digital foundations</Link> that allow innovation to flourish without limits, where every line of code is a step toward a more efficient, automated, and imaginative world.
               </p>
             </Reveal>
 

@@ -25,7 +25,7 @@ export function IndustriesCTA() {
           </h2>
 
           <p className="text-zinc-400 text-sm md:text-lg leading-relaxed font-bold mb-10 max-w-lg">
-            Book an architectural consult with our domain specialists to review your HIPAA security audits, payment gateways, or real-time IoT setups.
+            Book an architectural consult with our domain specialists to review your <Link href="/services/cybersecurity" className="text-rose-500 hover:underline">HIPAA security audits</Link>, payment gateways, or <Link href="/services/cloud-services" className="text-rose-500 hover:underline">real-time IoT setups</Link>.
           </p>
 
           <div className="flex flex-wrap gap-4 justify-center items-center">

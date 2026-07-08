@@ -3,6 +3,7 @@
 import React from "react";
 import { ArrowUpRight } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
+import Link from "next/link";
 
 export function WeImagine() {
   return (
@@ -40,7 +41,7 @@ export function WeImagine() {
                 Devopstrio Innovation Lab
               </h3>
               <p className="text-zinc-300 text-xs md:text-sm leading-relaxed">
-                The lab for enterprise innovation and next-generation cloud architecture.
+                The lab for <Link href="/ecosystem/innovation-labs" className="text-rose-500 hover:underline">enterprise innovation</Link> and next-generation cloud architecture.
               </p>
             </div>
           </div>
@@ -71,7 +72,7 @@ export function WeImagine() {
                     We Design Intelligent Digital Solutions
                   </h3>
                   <p className="text-zinc-400 text-sm leading-relaxed mb-6 font-medium group-hover:text-zinc-300 transition-colors duration-500">
-                    We architect AI-powered systems, automation frameworks, and data platforms that unlock new revenue streams and drive measurable operational efficiency from day one.
+                    We architect <Link href="/services/ai-data-innovation" className="text-rose-500 hover:underline">AI-powered systems</Link>, automation frameworks, and data platforms that unlock new revenue streams and drive measurable operational efficiency from day one.
                   </p>
                 </div>
                 <div className="border-t border-zinc-800/60 group-hover:border-white/20 pt-5 mt-auto transition-colors duration-500">
@@ -110,7 +111,7 @@ export function WeImagine() {
                     We Build Software That Performs at Scale
                   </h3>
                   <p className="text-zinc-400 text-sm leading-relaxed mb-6 font-medium group-hover:text-zinc-300 transition-colors duration-500">
-                    We engineer high-performance, enterprise-grade software — accelerating release velocity, hardening security posture, and guaranteeing the scalability your business demands.
+                    We engineer high-performance, <Link href="/services/software-development" className="text-rose-500 hover:underline">enterprise-grade software</Link> — accelerating release velocity, hardening security posture, and guaranteeing the scalability your business demands.
                   </p>
                 </div>
                 <div className="border-t border-zinc-800/60 group-hover:border-white/20 pt-5 mt-auto transition-colors duration-500">
@@ -149,7 +150,7 @@ export function WeImagine() {
                     We Transform Legacy Into Cloud-Native Power
                   </h3>
                   <p className="text-zinc-400 text-sm leading-relaxed mb-6 font-medium group-hover:text-zinc-300 transition-colors duration-500">
-                    We convert brittle legacy systems into agile, cloud-native environments using AI-driven workflows and modern architecture — without disrupting operations.
+                    We convert brittle legacy systems into agile, <Link href="/services/cloud-services" className="text-rose-500 hover:underline">cloud-native environments</Link> using AI-driven workflows and modern architecture — without disrupting operations.
                   </p>
                 </div>
                 <div className="border-t border-zinc-800/60 group-hover:border-white/20 pt-5 mt-auto transition-colors duration-500">
@@ -188,7 +189,7 @@ export function WeImagine() {
                     We Keep Your Operations Running Flawlessly
                   </h3>
                   <p className="text-zinc-400 text-sm leading-relaxed mb-6 font-medium group-hover:text-zinc-300 transition-colors duration-500">
-                    We take full ownership of your platform operations — reducing costs, eliminating downtime, and enabling sustainable growth through proactive monitoring.
+                    We take full ownership of your <Link href="/services/managed-services" className="text-rose-500 hover:underline">platform operations</Link> — reducing costs, eliminating downtime, and enabling sustainable growth through proactive monitoring.
                   </p>
                 </div>
                 <div className="border-t border-zinc-800/60 group-hover:border-white/20 pt-5 mt-auto transition-colors duration-500">

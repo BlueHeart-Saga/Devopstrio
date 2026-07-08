@@ -13,42 +13,42 @@ export function OurStoryTimeline() {
       year: "2026",
       shortTitle: "Future Ready",
       title: "Future Ready Systems",
-      formattedDesc: "Co-engineering resilient, secure, and <span class='text-rose-500 border-b border-rose-500/30 pb-0.5'>autonomous platforms</span> that power the next generation of <span class='text-rose-500 border-b border-rose-500/30 pb-0.5'>enterprise automation</span>.",
+      formattedDesc: "Co-engineering resilient, secure, and <a href='/services/devops-automation' class='text-rose-500 border-b border-rose-500/30 pb-0.5 hover:underline'>autonomous platforms</a> that power the next generation of <a href='/services/devops-automation' class='text-rose-500 border-b border-rose-500/30 pb-0.5 hover:underline'>enterprise automation</a>.",
       tags: ["Autonomous", "Future"]
     },
     {
       year: "2025",
       shortTitle: "Global Hub",
       title: "Global Hub Expansion",
-      formattedDesc: "Opened consulting and delivery hubs in the <span class='text-rose-500 border-b border-rose-500/30 pb-0.5'>United Kingdom, Europe, and India</span> to support <span class='text-rose-500 border-b border-rose-500/30 pb-0.5'>round-the-clock</span> enterprise needs.",
+      formattedDesc: "Opened consulting and delivery hubs in the <a href='/about/global-presence' class='text-rose-500 border-b border-rose-500/30 pb-0.5 hover:underline'>United Kingdom, Europe, and India</a> to support <span class='text-rose-500 border-b border-rose-500/30 pb-0.5'>round-the-clock</span> enterprise needs.",
       tags: ["UK", "India", "24/7"]
     },
     {
       year: "2024",
       shortTitle: "AI Innovation",
       title: "AI Innovation Lab Launch",
-      formattedDesc: "Launched a specialized AI lab to build custom <span class='text-rose-500 border-b border-rose-500/30 pb-0.5'>LLM workflows</span>, autonomous agent networks, and <span class='text-rose-500 border-b border-rose-500/30 pb-0.5'>vector search systems</span>.",
+      formattedDesc: "Launched a specialized AI lab to build custom <a href='/services/ai-data-innovation' class='text-rose-500 border-b border-rose-500/30 pb-0.5 hover:underline'>LLM workflows</a>, autonomous agent networks, and <span class='text-rose-500 border-b border-rose-500/30 pb-0.5'>vector search systems</span>.",
       tags: ["GenAI", "Agents"]
     },
     {
       year: "2022",
       shortTitle: "Cloud Partners",
       title: "Cloud Transformation Partnerships",
-      formattedDesc: "Established strategic alliances with <span class='text-rose-500 border-b border-rose-500/30 pb-0.5'>AWS, Microsoft Azure, and Google Cloud</span>, building secure and cost-efficient <span class='text-rose-500 border-b border-rose-500/30 pb-0.5'>landing zones</span>.",
+      formattedDesc: "Established strategic alliances with <a href='/services/cloud-services' class='text-rose-500 border-b border-rose-500/30 pb-0.5 hover:underline'>AWS, Microsoft Azure, and Google Cloud</a>, building secure and cost-efficient <span class='text-rose-500 border-b border-rose-500/30 pb-0.5'>landing zones</span>.",
       tags: ["Hyperscalers", "IaC"]
     },
     {
       year: "2020",
       shortTitle: "Services Scale",
       title: "Engineering Services Expansion",
-      formattedDesc: "Expanded into <span class='text-rose-500 border-b border-rose-500/30 pb-0.5'>software engineering</span> and <span class='text-rose-500 border-b border-rose-500/30 pb-0.5'>application modernization</span>, supporting clients with complete product delivery.",
+      formattedDesc: "Expanded into <a href='/services/software-development' class='text-rose-500 border-b border-rose-500/30 pb-0.5 hover:underline'>software engineering</a> and <span class='text-rose-500 border-b border-rose-500/30 pb-0.5'>application modernization</span>, supporting clients with complete product delivery.",
       tags: ["Full-Stack", "Scale"]
     },
     {
       year: "2019",
       shortTitle: "Founding",
       title: "Company Founded & Vision Set",
-      formattedDesc: "Devopstrio is established with a clear mission: simplify complex <span class='text-rose-500 border-b border-rose-500/30 pb-0.5'>infrastructure automation</span> and help companies adopt <span class='text-rose-500 border-b border-rose-500/30 pb-0.5'>DevOps culture</span>.",
+      formattedDesc: "Devopstrio is established with a clear mission: simplify complex <a href='/services/devops-automation' class='text-rose-500 border-b border-rose-500/30 pb-0.5 hover:underline'>infrastructure automation</a> and help companies adopt <span class='text-rose-500 border-b border-rose-500/30 pb-0.5'>DevOps culture</span>.",
       tags: ["Founding", "Automation"]
     }
   ];

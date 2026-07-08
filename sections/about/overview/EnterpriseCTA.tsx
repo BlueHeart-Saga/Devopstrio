@@ -25,7 +25,7 @@ export function EnterpriseCTA() {
           </h2>
 
           <p className="text-zinc-400 text-sm md:text-lg leading-relaxed font-bold mb-10 max-w-lg">
-            Connect with our principal architects. Let's design state-of-the-art AI applications, optimize cloud infrastructure, and co-develop robust systems.
+            Connect with our <Link href="/about/leadership" className="text-rose-500 hover:underline">principal architects</Link>. Let's design state-of-the-art <Link href="/services/ai-data-innovation" className="text-rose-500 hover:underline">AI applications</Link>, optimize <Link href="/services/cloud-services" className="text-rose-500 hover:underline">cloud infrastructure</Link>, and co-develop robust systems.
           </p>
 
           <div className="flex flex-wrap gap-4 justify-center items-center">

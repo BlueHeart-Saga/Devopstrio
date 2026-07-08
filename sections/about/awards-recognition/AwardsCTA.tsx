@@ -17,7 +17,7 @@ export function AwardsCTA() {
             Build with a Team Focused on <br className="hidden md:block" /><span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-400 to-rose-600">Meaningful Progress</span>
           </h2>
           <p className="text-zinc-400 text-base md:text-lg leading-relaxed mb-10 max-w-2xl mx-auto">
-            Devopstrio continues to grow through strong delivery, continuous capability building, and a commitment to creating value across technology, operations, and digital transformation. If you’re looking for a partner focused on long-term impact, we’d love to start the conversation.
+            Devopstrio continues to grow through strong delivery, continuous capability building, and a commitment to creating value across <a href="/services/cloud-services" className="text-[#E11D48] hover:underline">technology infrastructure</a>, operations, and <a href="/services/digital-transformation" className="text-[#E11D48] hover:underline">digital transformation</a>. If you’re looking for a partner focused on long-term impact, we’d love to <a href="/contact" className="text-[#E11D48] hover:underline">start the conversation</a>.
           </p>
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">

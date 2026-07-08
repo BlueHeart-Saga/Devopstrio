@@ -1,6 +1,7 @@
 import React from "react";
 import { LegalPageLayout } from "@/components/LegalPageLayout";
 import { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Terms of Service | Devopstrio",
@@ -35,7 +36,7 @@ export default function TermsOfServicePage() {
       content: (
         <div className="space-y-4">
           <p>
-            Devopstrio provides high-performance professional consulting, software development, cloud infrastructure planning, and co-engineering services. Our core practices include:
+            Devopstrio provides high-performance <Link href="/services/it-consulting" className="text-rose-500 hover:underline font-bold">professional consulting</Link>, <Link href="/services/software-development" className="text-rose-500 hover:underline font-bold">software development</Link>, <Link href="/services/cloud-services" className="text-rose-500 hover:underline font-bold">cloud infrastructure planning</Link>, and co-engineering services. Our core practices include:
           </p>
           <ul className="list-disc pl-6 space-y-2 text-zinc-400">
             <li><strong className="text-zinc-300">AI & Data Innovation:</strong> Planning, training, and deploying large language models, reinforcement learning networks, and automated data pipelines.</li>
@@ -109,7 +110,7 @@ export default function TermsOfServicePage() {
             <li>Attempting to bypass security barriers, run unauthorized vulnerability scans, or disrupt server performance.</li>
             <li>Using automated crawlers, scrapers, or indexing tools to systematically copy site pages, designs, or proprietary resource guides.</li>
             <li>Impersonating Devopstrio representatives, fabricating contact identities, or submitting fraudulent project applications.</li>
-            <li>Using our delivered systems or code for illegal practices, malware distribution, or in violation of international trade embargoes.</li>
+            <li>Using our delivered systems or code from our <Link href="/ecosystem/platforms-solutions" className="text-rose-500 hover:underline font-bold">platforms and solutions</Link> for illegal practices, malware distribution, or in violation of international trade embargoes.</li>
           </ul>
         </div>
       )

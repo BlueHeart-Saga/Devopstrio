@@ -3,31 +3,39 @@
 import React, { useState } from "react";
 import { Reveal } from "@/components/ui/Reveal";
 import { Plus, Minus, ArrowUpRight } from "lucide-react";
+import Link from "next/link";
 
-const faqItems = [
+interface FAQItem {
+  q: string;
+  a: React.ReactNode;
+  proof?: string;
+  tags?: string[];
+}
+
+const faqItems: FAQItem[] = [
   {
     q: "What makes Devopstrio different from other consultancies?",
-    a: "Most consultancies send you a slide deck and a junior engineer. We send you a senior architect from day one — someone who has actually built the infrastructure they're recommending. Our model is outcome-driven, not time-and-materials. We measure success by what changes in your business — not by how many hours we bill. That's why 98% of our clients re-engage within 12 months.",
+    a: <span>Most consultancies send you a slide deck and a junior engineer. We send you a <Link href="/about" className="text-rose-500 hover:underline">senior architect</Link> from day one — someone who has actually built the infrastructure they're recommending. Our model is outcome-driven, not time-and-materials. We measure success by what changes in your business — not by how many hours we bill. That's why 98% of our clients re-engage within 12 months.</span>,
     proof: "✓ 98% client retention rate · No junior-first engagements"
   },
   {
     q: "How do you price your services?",
-    a: "We don't publish standard rates because every engagement is different — and we refuse to quote without understanding your actual situation first. What we can tell you: our ODC model typically saves clients 15–50% compared to in-house hiring or traditional consultancy rates. Every proposal includes a clear cost-benefit analysis. No hidden fees, no scope creep surprises.",
+    a: <span>We don't publish standard rates because every engagement is different — and we refuse to quote without understanding your actual situation first. What we can tell you: our <Link href="/ecosystem/global-delivery" className="text-rose-500 hover:underline">global delivery model</Link> typically saves clients 15–50% compared to in-house hiring or traditional consultancy rates. Every proposal includes a clear cost-benefit analysis. No hidden fees, no scope creep surprises.</span>,
     tags: ["15–50% Direct Savings", "Fixed-Scope Available", "Transparent Billing"]
   },
   {
     q: "Do you work with startups or only enterprises?",
-    a: "Both — deliberately. We've shipped lean MVPs in 8–12 weeks for early-stage startups, and we've rebuilt legacy monoliths into distributed cloud platforms for Series C+ companies and FTSE 100 organisations. We right-size every engagement. We don't over-engineer an MVP, and we don't under-engineer a growth platform. The architecture scales with you.",
+    a: <span>Both — deliberately. We've shipped lean MVPs in 8–12 weeks for early-stage startups, and we've rebuilt legacy monoliths into distributed <Link href="/services/cloud-services" className="text-rose-500 hover:underline">cloud platforms</Link> for Series C+ companies and FTSE 100 organisations. We right-size every engagement. We don't over-engineer an MVP, and we don't under-engineer a growth platform. The architecture scales with you.</span>,
     proof: "✓ From Seed to FTSE 100 — same quality, right-sized scope"
   },
   {
     q: "How quickly can you start?",
-    a: "Faster than you'd expect. Our standard onboarding runs 5–7 business days from contract signature to first sprint. For urgent engagements — production incidents, security breaches, critical migrations — we've mobilised teams within 48 hours. Discovery call → Proposal → Contract → Team assigned → Sprint 0. That's the full sequence, and we move quickly through every step.",
+    a: <span>Faster than you'd expect. Our standard onboarding runs 5–7 business days from contract signature to first sprint. For urgent engagements — production incidents, security breaches, <Link href="/services/cloud-services" className="text-rose-500 hover:underline">critical migrations</Link> — we've mobilised teams within 48 hours. Discovery call → Proposal → Contract → Team assigned → Sprint 0. That's the full sequence, and we move quickly through every step.</span>,
     tags: ["5–7 Days Standard Onboarding", "48hr Emergency Mobilisation"]
   },
   {
     q: "What certifications do you hold?",
-    a: "Our team holds 18+ active certifications and compliance frameworks — not as wallpaper, but as working credentials on live client engagements: AWS Advanced Tier · Microsoft Partner · Google Cloud Professional · HashiCorp Specialised · Kubernetes Admin · Terraform Associate · ISO 27001 · ISO 42001 · GDPR · HIPAA · SOC 2 · CCPA · ITIL 4 · TOGAF 9 · CMMI Level 5 · Cyber Essentials · VPAT · AI Governance.",
+    a: <span>Our team holds 18+ active certifications and <Link href="/services/cybersecurity" className="text-rose-500 hover:underline">compliance frameworks</Link> — not as wallpaper, but as working credentials on live client engagements: AWS Advanced Tier · Microsoft Partner · Google Cloud Professional · HashiCorp Specialised · Kubernetes Admin · Terraform Associate · ISO 27001 · ISO 42001 · GDPR · HIPAA · SOC 2 · CCPA · ITIL 4 · TOGAF 9 · CMMI Level 5 · Cyber Essentials · VPAT · AI Governance.</span>,
     proof: "✓ 18 active certifications — all renewed, all verified"
   }
 ];

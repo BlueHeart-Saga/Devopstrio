@@ -2,14 +2,16 @@
 import React from "react";
 import { motion } from "framer-motion";
 
+import Link from "next/link";
+
 const timelineEvents = [
   { year: "2019", title: "Company Founded", description: "Started with a vision to redefine engineering excellence across borders." },
-  { year: "2020", title: "Cloud Transformation", description: "Launched our cloud native services practice, accelerating digital adoption." },
-  { year: "2021", title: "Global Expansion", description: "Opened offices in 3 new countries to support rapid global delivery." },
-  { year: "2022", title: "AI & Data Practice", description: "Established our dedicated AI innovation lab to pioneer machine learning models." },
+  { year: "2020", title: "Cloud Transformation", description: <>Launched our cloud native services practice, accelerating digital adoption through <Link href="/services/cloud-services" className="text-rose-500 hover:underline font-bold">cloud services</Link>.</> },
+  { year: "2021", title: "Global Expansion", description:  <>Opened offices in 3 new countries to support rapid global delivery in our <Link href="/about/global-presence" className="text-rose-500 hover:underline font-bold">global delivery model</Link>.</> },
+  { year: "2022", title: "AI & Data Practice", description: <>Established our dedicated lab to pioneer machine learning models in <Link href="/services/ai-data-innovation" className="text-rose-500 hover:underline font-bold">AI & data innovation</Link>.</> },
   { year: "2023", title: "SaaS Portfolio", description: "Launched our first suite of internal SaaS products for enterprise use." },
   { year: "2024", title: "Engineering Excellence", description: "Introduced our global engineering standards program to unify code quality." },
-  { year: "2025", title: "Tech Ecosystem", description: "Partnered with top tier cloud providers globally for seamless integrations." },
+  { year: "2025", title: "Tech Ecosystem", description: <>Partnered with top tier cloud providers globally for seamless integrations. Check out our <Link href="/services/devops-automation" className="text-rose-500 hover:underline font-bold">DevOps solutions</Link>.</> },
   { year: "2026", title: "Next Phase", description: "Scaling our impact across the Fortune 500 with unparalleled agility." },
 ];
 

@@ -3,6 +3,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 export const InternshipHero = () => {
   const handleScroll = (id: string) => {
@@ -76,7 +77,7 @@ export const InternshipHero = () => {
                Leaders in technology incubation
              </h3>
              <p className="text-zinc-300 text-sm sm:text-base leading-relaxed font-medium">
-               Our internship covers cloud architecture, data pipelines, AI models, and real-world software deployments to turn you into a top-tier engineer.
+               Our internship covers <Link href="/services/cloud-services" className="text-[#E11D48] hover:underline">cloud architecture</Link>, <Link href="/services/data-engineering" className="text-[#E11D48] hover:underline">data pipelines</Link>, <Link href="/services/ai-data-innovation" className="text-[#E11D48] hover:underline">AI models</Link>, and real-world <Link href="/services/software-development" className="text-[#E11D48] hover:underline">software deployments</Link> to turn you into a top-tier engineer.
              </p>
              
              

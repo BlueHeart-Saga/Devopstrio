@@ -5,6 +5,8 @@ import { motion } from "framer-motion";
 import { CheckCircle2 } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
 
+import Link from "next/link";
+
 export function BusinessBenefits() {
   const benefitsList = [
     "Stronger time-zone coverage for global teams",
@@ -38,7 +40,7 @@ export function BusinessBenefits() {
 
           <Reveal delay={0.15}>
             <p className="text-zinc-400 text-sm md:text-base leading-relaxed">
-              With strategic leadership, engineering talent, cloud specialists, DevOps experts, and managed operations teams working together across regions, Devopstrio offers the flexibility of a modern distributed technology partner while maintaining the accountability, quality, and responsiveness enterprises expect.
+              With strategic leadership, engineering talent, <Link href="/services/cloud-services" className="text-[#E11D48] hover:underline">cloud specialists</Link>, <Link href="/services/devops-automation" className="text-[#E11D48] hover:underline">DevOps experts</Link>, and <Link href="/services/managed-services" className="text-[#E11D48] hover:underline">managed operations teams</Link> working together across regions, Devopstrio offers the flexibility of a modern distributed technology partner while maintaining the accountability, quality, and responsiveness enterprises expect.
             </p>
           </Reveal>
         </div>

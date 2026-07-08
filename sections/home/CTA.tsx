@@ -3,6 +3,7 @@
 import React from "react";
 import { Reveal } from "@/components/ui/Reveal";
 import { ArrowUpRight } from "lucide-react";
+import Link from "next/link";
 
 export function CTA() {
   return (
@@ -25,16 +26,16 @@ export function CTA() {
           </h2>
 
           <p className="text-zinc-400 text-sm md:text-lg leading-relaxed font-bold mb-10 max-w-lg">
-            Connect directly with an engineering expert. We will audit your cloud estate, review database indices, and design high-integrity system architectures.
+            Connect directly with an <Link href="/about" className="text-rose-500 hover:underline">engineering expert</Link>. We will audit your <Link href="/services/cloud-services" className="text-rose-500 hover:underline">cloud estate</Link>, review database indices, and design high-integrity <Link href="/services/it-consulting" className="text-rose-500 hover:underline">system architectures</Link>.
           </p>
 
           <div className="flex flex-wrap gap-4 justify-center items-center">
-            <a
+            <Link
               className="gap-2 inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white transition-all duration-300 hover:shadow-[0_0_25px_rgba(225,29,72,0.35)] hover:-translate-y-0.5"
               href="/contact"
             >
               Book Consultation <ArrowUpRight size={14} />
-            </a>
+            </Link>
             <a
               className="gap-2 inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase border border-zinc-850 hover:border-zinc-750 bg-zinc-950/60 hover:bg-zinc-900 text-white transition-all duration-300 hover:-translate-y-0.5"
               href="mailto:hello@Devopstrio.com"

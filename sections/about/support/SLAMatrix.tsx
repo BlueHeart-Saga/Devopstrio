@@ -54,6 +54,8 @@ const slas = [
   },
 ];
 
+import Link from "next/link";
+
 export const SLAMatrix = () => {
   return (
     <section className="py-24 bg-[#0A0A0A] border-t border-zinc-900">
@@ -82,7 +84,7 @@ export const SLAMatrix = () => {
             transition={{ delay: 0.1 }}
             className="text-zinc-400 text-sm md:text-base leading-relaxed font-bold max-w-2xl mx-auto"
           >
-            Binding SLA thresholds across all priority levels, backed by our global engineering team.
+            Binding SLA thresholds across all priority levels, backed by our global engineering team. Learn about our <Link href="/services/managed-services" className="text-rose-500 hover:underline">managed services</Link> packages.
           </motion.p>
         </div>
 

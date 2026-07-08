@@ -3,6 +3,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Linkedin, Github, ArrowRight } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
+import Link from "next/link";
 
 const leaders = [
   {
@@ -120,10 +121,10 @@ export const ExecutiveLeadership = () => {
                 
                 {/* Apps Row */}
                 <div className="flex gap-2 relative z-10">
-                  {["aws", "azure", "gcp", "k8s"].map((tech, i) => (
-                    <div key={i} className="w-8 h-8 rounded-lg bg-zinc-900 border border-zinc-800 flex items-center justify-center text-[10px] font-mono font-bold text-zinc-400 select-none uppercase">
-                      {tech}
-                    </div>
+                  {[{ name: "aws", href: "/services/cloud-services" }, { name: "azure", href: "/services/cloud-services" }, { name: "gcp", href: "/services/cloud-services" }, { name: "k8s", href: "/services/devops-automation" }].map((tech, i) => (
+                    <Link key={i} href={tech.href} className="w-8 h-8 rounded-lg bg-zinc-900 border border-zinc-800 flex items-center justify-center text-[10px] font-mono font-bold text-zinc-400 select-none uppercase hover:border-rose-500 hover:text-white transition-all">
+                      {tech.name}
+                    </Link>
                   ))}
                 </div>
                 <div className="text-left relative z-10">
@@ -282,9 +283,9 @@ export const ExecutiveLeadership = () => {
             <div className="lg:col-span-5 pt-2">
               <p className="text-zinc-400 text-sm md:text-base font-normal leading-relaxed max-w-xl">
                 Meet the{" "}
-                <span className="text-white font-semibold hover:text-[#FF1744] transition-colors duration-300">architects</span>,{" "}
-                <span className="text-white font-semibold hover:text-[#FF1744] transition-colors duration-300">engineers</span>,{" "}
-                <span className="text-white font-semibold hover:text-[#FF1744] transition-colors duration-300">consultants</span>, and{" "}
+                <Link href="/careers" className="text-white font-semibold hover:text-[#FF1744] transition-colors duration-300 underline underline-offset-4 decoration-rose-500/30">architects</Link>,{" "}
+                <Link href="/careers" className="text-white font-semibold hover:text-[#FF1744] transition-colors duration-300 underline underline-offset-4 decoration-rose-500/30">engineers</Link>,{" "}
+                <Link href="/services/cloud-services" className="text-white font-semibold hover:text-[#FF1744] transition-colors duration-300 underline underline-offset-4 decoration-rose-500/30">consultants</Link>, and{" "}
                 <span className="text-white font-semibold hover:text-[#FF1744] transition-colors duration-300">specialists</span> shaping the next wave of enterprise solutions.
                 <span className="block mt-2 text-zinc-500 font-light">
                   We build and run highly resilient infrastructures across multi-cloud environments, secure software delivery streams, and cognitive intelligence platforms.

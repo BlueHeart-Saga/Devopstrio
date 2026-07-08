@@ -7,8 +7,8 @@ interface ServiceOverviewProps {
   subtitle: string;
   image: string;
   overviewHeading: string;
-  overviewDesc1: string;
-  overviewDesc2: string;
+  overviewDesc1: React.ReactNode;
+  overviewDesc2: React.ReactNode;
 }
 
 function getOverviewImage(title: string, incomingImage: string): string {

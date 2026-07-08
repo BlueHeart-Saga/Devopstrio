@@ -27,7 +27,7 @@ export function PlatformsHero() {
 
         <Reveal delay={0.2} className="max-w-3xl">
           <p className="text-zinc-300 text-xs md:text-sm lg:text-base leading-relaxed font-normal max-w-3xl text-center mx-auto opacity-95 mb-10">
-            Transform ideas into enterprise-grade SaaS products, AI-powered platforms, cloud-native applications, and digital ecosystems.
+            Transform ideas into enterprise-grade <Link href="/services/software-development" className="text-rose-500 hover:underline font-bold">SaaS products</Link>, <Link href="/services/ai-data-innovation" className="text-rose-500 hover:underline font-bold">AI-powered platforms</Link>, <Link href="/services/cloud-services" className="text-rose-500 hover:underline font-bold">cloud-native applications</Link>, and digital ecosystems.
           </p>
         </Reveal>
 

@@ -10,6 +10,8 @@ const stats = [
   { value: "7+", label: "Years" },
 ];
 
+import Link from "next/link";
+
 export const LeadershipHero = () => {
   return (
     <section className="relative min-h-screen flex items-end justify-start overflow-hidden bg-black text-white pb-24 md:pb-28">
@@ -41,7 +43,7 @@ export const LeadershipHero = () => {
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.1 }}
+            transition={{ duration: 0.7, delay: 0.15 }}
             className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight leading-[1.1] text-white"
           >
             Driving <span className="text-rose-500">Innovation.</span>
@@ -50,10 +52,10 @@ export const LeadershipHero = () => {
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.15 }}
+            transition={{ duration: 0.7, delay: 0.2 }}
             className="text-sm md:text-base font-medium text-zinc-300 max-w-xl leading-relaxed"
           >
-            Meet the experts shaping the future of AI, Cloud, DevOps, and Digital Transformation.
+            Meet the experts shaping the future of <Link href="/services/ai-data-innovation" className="text-rose-500 hover:underline">AI</Link>, <Link href="/services/cloud-services" className="text-rose-500 hover:underline">Cloud</Link>, <Link href="/services/devops-automation" className="text-rose-500 hover:underline">DevOps</Link>, and digital transformation.
           </motion.p>
 
           <motion.div

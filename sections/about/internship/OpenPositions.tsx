@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Briefcase, Calendar, MapPin, Tag, ChevronDown, HelpCircle, ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 export const OpenPositions = () => {
   const positions = [
@@ -81,7 +82,7 @@ export const OpenPositions = () => {
               Active <span className="text-rose-500">Opportunities</span>
             </h2>
             <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-bold max-w-2xl mx-auto">
-              Explore our current open internship opportunities. Applications are reviewed on a rolling basis.
+              Explore our current open internship opportunities. Applications are reviewed on a rolling basis. If you are looking for full-time associate positions, visit our <Link href="/careers" className="text-[#E11D48] hover:underline">careers portal</Link>.
             </p>
           </div>
 

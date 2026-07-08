@@ -23,7 +23,7 @@ export function CapabilitiesSection() {
               Solutions that Drive <span className="text-rose-500">Real Impact</span>
             </h2>
             <p className="text-zinc-400 text-xs md:text-sm leading-relaxed font-medium mt-2 max-w-lg mx-auto">
-              From strategy formulation to architectural execution, we provide end-to-end cloud and AI engineering co-development tailored to your specific organizational targets.
+              From strategy formulation to architectural execution, we provide end-to-end <Link href="/services/cloud-services" className="text-rose-500 hover:underline">cloud</Link> and <Link href="/services/ai-data-innovation" className="text-rose-500 hover:underline">AI engineering</Link> co-development tailored to your specific organizational targets.
             </p>
           </Reveal>
           <Reveal delay={0.1} className="shrink-0 mt-1">

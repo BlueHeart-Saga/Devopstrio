@@ -2,6 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 
 const floatingIcons = [
   { name: "globe", img: "globe.png", left: "5%", top: "20%", size: 48, delay: 0.1 }, 
@@ -81,7 +82,7 @@ export const SupportHero = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-base md:text-[19px] text-zinc-400 max-w-[540px] mx-auto mb-10 leading-relaxed font-medium"
           >
-            Enterprise support ensures every request lands exactly where it should, no matter the platform or device.
+            Enterprise support ensures every request lands exactly where it should, no matter the platform or device. Learn more about our <Link href="/services/managed-services" className="text-white hover:underline font-bold">managed services</Link> model.
           </motion.p>
 
           <motion.a

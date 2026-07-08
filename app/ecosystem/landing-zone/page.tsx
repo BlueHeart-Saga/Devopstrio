@@ -234,12 +234,14 @@ export default function EcosystemLandingZonePage() {
   useEffect(() => {
     async function fetchRepos() {
       setLoading(true);
-      const token = "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";
+      const token = process.env.NEXT_PUBLIC_GITHUB_TOKEN || "";
       const org = "Devopstrio";
       const headers: HeadersInit = {
-        'Accept': 'application/vnd.github.v3+json',
-        'Authorization': `token ${token}`
+        'Accept': 'application/vnd.github.v3+json'
       };
+      if (token) {
+        headers['Authorization'] = `token ${token}`;
+      }
 
       try {
         let allRepos: any[] = [];
@@ -448,7 +450,7 @@ export default function EcosystemLandingZonePage() {
 
             <Reveal delay={0.1}>
               <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-semibold max-w-xl mb-10">
-                Accelerate your cloud architecture with our production-grade landing zones, open-source blueprints, and AI-ready infrastructures. Securely orchestrated, fully parameterized, and ready to deploy.
+                Accelerate your <Link href="/services/cloud-services/cloud-architecture" className="text-rose-500 hover:underline font-bold">cloud architecture services</Link> with our production-grade landing zones, open-source blueprints, and <Link href="/services/ai-data-innovation/generative-ai-solutions" className="text-rose-500 hover:underline font-bold">generative AI solutions</Link> environments. Securely orchestrated, fully parameterized, and ready to deploy.
               </p>
             </Reveal>
 
@@ -510,7 +512,7 @@ export default function EcosystemLandingZonePage() {
             </Reveal>
             <Reveal delay={0.1}>
               <p className="text-zinc-400 text-xs md:text-sm leading-relaxed font-semibold">
-                Select a standardized deployment tier to establish your baseline in minutes. Each model compiles directly to Terraform templates with robust parameters.
+                Select a standardized deployment tier to establish your baseline in minutes. Learn more about our <Link href="/services/devops-automation/devsecops" className="text-rose-500 hover:underline font-bold">DevSecOps services in UK</Link> that compile directly to Terraform templates with robust parameters.
               </p>
             </Reveal>
           </div>
@@ -607,7 +609,7 @@ export default function EcosystemLandingZonePage() {
               </Reveal>
               <Reveal delay={0.1}>
                 <p className="text-zinc-400 text-xs md:text-sm leading-relaxed font-semibold max-w-xl">
-                  Deploy secure Terraform configurations, hardened Kubernetes namespaces, or pre-configured MLOps pipelines right from our directory.
+                  Deploy secure Terraform configurations, hardened Kubernetes namespaces, or pre-configured <Link href="/services/ai-data-innovation/machine-learning-engineering" className="text-rose-500 hover:underline font-bold">machine learning development services</Link> right from our directory.
                 </p>
               </Reveal>
             </div>
@@ -832,7 +834,7 @@ export default function EcosystemLandingZonePage() {
 
           <Reveal delay={0.1}>
             <p className="text-zinc-400 text-xs md:text-sm leading-relaxed font-semibold max-w-2xl mx-auto mb-10">
-              Schedule an architecture discovery session with our principal co-engineers. We will analyze your workloads compliance targets and customize a blueprint path.
+              Schedule an architecture discovery session with our principal co-engineers. We will analyze your workload compliance targets against our <Link href="/services/cybersecurity" className="text-rose-500 hover:underline font-bold">enterprise cybersecurity framework</Link> and customize a blueprint path.
             </p>
           </Reveal>
 

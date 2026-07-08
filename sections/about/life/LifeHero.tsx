@@ -11,6 +11,8 @@ const stats = [
   { value: "95%", label: "Satisfaction" },
 ];
 
+import Link from "next/link";
+
 export const LifeHero = () => {
   return (
     <section className="relative min-h-screen flex items-end justify-start overflow-hidden bg-black text-white pb-24 md:pb-28">
@@ -55,7 +57,7 @@ export const LifeHero = () => {
             transition={{ duration: 0.7, delay: 0.15 }}
             className="text-sm md:text-base font-medium text-zinc-300 max-w-xl leading-relaxed"
           >
-            Building world-class AI, Cloud, Data, and DevOps solutions while creating meaningful careers and lasting impact.
+            Building world-class <Link href="/services/ai-data-innovation" className="text-rose-500 hover:underline">AI</Link>, <Link href="/services/cloud-services" className="text-rose-500 hover:underline">Cloud</Link>, <Link href="/services/data-engineering" className="text-rose-500 hover:underline">Data</Link>, and <Link href="/services/devops-automation" className="text-rose-500 hover:underline">DevOps solutions</Link> while creating meaningful careers and lasting impact.
           </motion.p>
 
           <motion.div

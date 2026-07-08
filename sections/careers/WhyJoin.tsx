@@ -4,6 +4,8 @@ import React from "react";
 import { ArrowUpRight } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
 
+import Link from "next/link";
+
 export function WhyJoin() {
   const features = [
     {
@@ -61,7 +63,7 @@ export function WhyJoin() {
               Everything you need to <span className="text-rose-500">launch your tech career</span>
             </h2>
             <p className="text-zinc-200 text-sm md:text-base leading-relaxed max-w-2xl mx-auto font-medium">
-              Beyond certificates every element is built to develop real industry skills and open real global doors.
+              Beyond certificates every element is built to develop real industry skills and open real global doors. Learn more in our <Link href="/about/overview" className="text-rose-500 hover:underline font-bold">company overview</Link> or view our <Link href="/services" className="text-rose-500 hover:underline font-bold">managed IT services</Link>.
             </p>
           </Reveal>
         </div>
@@ -126,7 +128,7 @@ export function WhyJoin() {
                 Why people choose <span className="text-rose-500">Devopstrio</span>
               </h2>
               <p className="text-zinc-250 text-sm md:text-base mb-10 font-medium max-w-xl">
-                We bridge the gap between education and employment.
+                We bridge the gap between education and employment. Learn more about our <Link href="/about/internship" className="text-rose-500 hover:underline font-bold">internship program</Link> details.
               </p>
             </Reveal>
 

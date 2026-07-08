@@ -2,22 +2,29 @@
 
 import React from "react";
 import { Reveal } from "@/components/ui/Reveal";
+import Link from "next/link";
 
-const metrics = [
+interface MetricItem {
+  num: string;
+  label: string;
+  desc: React.ReactNode;
+}
+
+const metrics: MetricItem[] = [
   {
     num: "99.99%",
     label: "Platform Uptime SLA",
-    desc: "Active SRE monitoring teams managing auto-failovers and node scaling metrics."
+    desc: <><Link href="/ecosystem/global-delivery" className="text-rose-500 hover:underline">Active SRE monitoring teams</Link> managing auto-failovers and node scaling metrics.</>
   },
   {
     num: "<15m",
     label: "Incident Response Time",
-    desc: "P1 production alerts are triaged by senior system reliability engineers immediately."
+    desc: <>P1 production alerts are triaged by <Link href="/services/devops-automation" className="text-rose-500 hover:underline">senior system reliability engineers</Link> immediately.</>
   },
   {
     num: "24/7/365",
     label: "Support Desk Availability",
-    desc: "Global timezone rotation covering all operational shifts."
+    desc: <>Global timezone rotation covering all operational shifts under our <Link href="/ecosystem/global-delivery" className="text-rose-500 hover:underline">managed delivery services</Link>.</>
   }
 ];
 
@@ -51,7 +58,7 @@ export function EngagementSLA() {
 
             <Reveal delay={0.1}>
               <p className="text-zinc-400 text-sm leading-relaxed font-medium">
-                We contractually commit to strict latency boundaries, rapid incident resolution times, and robust database backups.
+                We contractually commit to strict latency boundaries, rapid incident resolution times, and <Link href="/services/cloud-services" className="text-rose-500 hover:underline">robust database backups</Link>.
               </p>
             </Reveal>
           </div>

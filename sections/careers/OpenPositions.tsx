@@ -5,6 +5,8 @@ import { Search, MapPin, ArrowRight } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
 import { useRouter } from "next/navigation";
 
+import Link from "next/link";
+
 export function OpenPositions() {
   const router = useRouter();
   const [keyword, setKeyword] = useState("");
@@ -35,7 +37,7 @@ export function OpenPositions() {
           </h2>
           
           <p className="text-zinc-400 text-base md:text-lg max-w-2xl mx-auto mb-12 font-medium">
-            When you're searching for a role, start here to find the perfect team where you can build next-generation enterprise solutions.
+            When you're searching for a role, start here to find the perfect team where you can build next-generation enterprise solutions. Explore our <Link href="/services" className="text-rose-500 hover:underline font-bold">digital services</Link> and read our <Link href="/about/overview" className="text-rose-500 hover:underline font-bold">company overview</Link>.
           </p>
 
           {/* Search Bar Form */}

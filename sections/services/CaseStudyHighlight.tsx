@@ -2,6 +2,7 @@
 
 import React from "react";
 import { Reveal } from "@/components/ui/Reveal";
+import Link from "next/link";
 
 export function CaseStudyHighlight() {
   return (
@@ -17,7 +18,7 @@ export function CaseStudyHighlight() {
               Discover how business leaders are driving value with <span className="text-rose-500">modern architectures</span>
             </h2>
             <p className="text-zinc-200 text-base md:text-lg font-semibold leading-relaxed">
-              Explore our real-world case studies detailing how leading enterprises partner with Devopstrio to optimize core infrastructure, reduce execution latency, and achieve measurable returns.
+              Explore our real-world case studies detailing how leading enterprises partner with Devopstrio to optimize <Link href="/services/cloud-services" className="text-rose-500 hover:underline">core infrastructure</Link>, reduce <Link href="/services/devops-automation" className="text-rose-500 hover:underline">execution latency</Link>, and achieve measurable returns.
             </p>
           </div>
         </Reveal>

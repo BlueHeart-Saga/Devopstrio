@@ -2,10 +2,11 @@
 
 import React, { useState, useEffect } from "react";
 import { Reveal } from "@/components/ui/Reveal";
+import Link from "next/link";
 
 interface TechItem {
   name: string;
-  desc: string;
+  desc: React.ReactNode;
 }
 
 interface IndustryTechStackProps {
@@ -15,11 +16,11 @@ interface IndustryTechStackProps {
 const extraTechItems: TechItem[] = [
   {
     name: "Docker / Kubernetes",
-    desc: "Containerized application packages and orchestration clusters configured for auto-scaling."
+    desc: <>Containerized application packages and orchestration clusters configured for <Link href="/services/cloud-services" className="text-rose-500 hover:underline">auto-scaling</Link>.</>
   },
   {
     name: "Amazon Web Services (AWS)",
-    desc: "Resilient cloud infrastructure solutions configured under strict security group profiles."
+    desc: <>Resilient cloud infrastructure solutions configured under strict <Link href="/services/cybersecurity" className="text-rose-500 hover:underline">security group profiles</Link>.</>
   }
 ];
 

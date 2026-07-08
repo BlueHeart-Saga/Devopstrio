@@ -4,6 +4,8 @@ import { motion } from "framer-motion";
 import { Star, ThumbsUp, Heart, User } from "lucide-react";
 import Image from "next/image";
 
+import Link from "next/link";
+
 export const SupportReviews = () => {
   return (
     <section className="py-32 bg-[#050505] relative overflow-hidden flex items-center justify-center min-h-[600px] border-t border-zinc-900">
@@ -70,7 +72,7 @@ export const SupportReviews = () => {
 
         {/* Review Text */}
         <p className="text-zinc-300 text-[14px] md:text-base leading-relaxed font-medium mb-5 pr-4">
-          Devopstrio provided phenomenal support. Their engineers migrated our critical legacy infrastructure to the cloud seamlessly without any downtime. Every click landed exactly where it should, saving us countless hours. Highly recommended!
+          Devopstrio provided phenomenal support. Their engineers migrated our critical legacy infrastructure under our <Link href="/services/cloud-services" className="text-rose-500 hover:underline">cloud services</Link> seamlessly without any downtime. Every click landed exactly where it should, saving us countless hours. Highly recommended!
         </p>
 
         {/* Thumbs Up Action */}

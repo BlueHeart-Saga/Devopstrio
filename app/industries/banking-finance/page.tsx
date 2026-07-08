@@ -1,8 +1,8 @@
-
 import React from "react";
 import { Metadata } from "next";
 import { BreadcrumbSchema, ServiceSchema, FAQSchema } from "@/components/seo/Schemas";
 import { SectionNavbar } from "@/components/ui/SectionNavbar";
+import Link from "next/link";
 
 // Component imports
 import { IndustryHero } from "@/sections/industries/detail/IndustryHero";
@@ -44,95 +44,95 @@ const data = {
   },
   overview: {
     heading: "Resilient financial platforms designed for transaction volume and security",
-    desc1: "We construct transaction-safe databases, real-time ledgers, and automated payment gateways. Our architectures isolate critical data, run prompt PII mask filters, and utilize composite indices for lightning-fast reads.",
-    desc2: "We coordinate closely with bank operators and card systems to deploy private API nodes that scale under major transaction volumes while maintaining 100% data audit integrity."
+    desc1: <>We construct transaction-safe <Link href="/services/cloud-services" className="text-[#E11D48] hover:underline">databases</Link>, real-time ledgers, and <Link href="/services/software-development/product-engineering" className="text-[#E11D48] hover:underline">automated payment gateways</Link>. Our architectures isolate critical data, run prompt PII mask filters, and utilize composite indices for lightning-fast reads.</>,
+    desc2: <>We coordinate closely with bank operators and card systems to deploy private <Link href="/services/cloud-services" className="text-[#E11D48] hover:underline">API nodes</Link> that scale under major transaction volumes while maintaining 100% data audit integrity.</>
   },
   challenges: [
     {
       title: "High-Frequency Ledger Lock Prevention",
-      desc: "Preventing transactional deadlocks and account balance deviations when millions of debit/credit executions fire simultaneously."
+      desc: <>Preventing transactional deadlocks and account balance deviations when millions of <Link href="/services/software-development/product-engineering" className="text-[#E11D48] hover:underline">debit/credit executions</Link> fire simultaneously.</>
     },
     {
       title: "Automated Real-Time Fraud Scoring",
-      desc: "Analyzing swipes against historic profiles within milliseconds to block card compromises without rejecting legitimate users."
+      desc: <>Analyzing swipes against historic profiles within milliseconds to block card <Link href="/services/cybersecurity" className="text-[#E11D48] hover:underline">compromises</Link> without rejecting legitimate users.</>
     },
     {
       title: "PII Field Isolation & Tokenization",
-      desc: "Safely encrypting social security numbers, address variables, and bank balances to satisfy strict audit controls."
+      desc: <>Safely encrypting social security numbers, address variables, and bank balances to satisfy strict <Link href="/services/cybersecurity" className="text-[#E11D48] hover:underline">audit controls</Link>.</>
     }
   ],
   solutions: [
     {
       title: "Active-Active Multi-Region Ledgers",
-      desc: "Databases spread across geographic regions with synchronous replication cycles, preventing data loss during datacenter failures."
+      desc: <>Databases spread across geographic regions with <Link href="/services/cloud-services" className="text-[#E11D48] hover:underline">synchronous replication</Link> cycles, preventing data loss during datacenter failures.</>
     },
     {
       title: "Streaming ML Fraud Classifiers",
-      desc: "Integrating Kafka message lines with Python ML inference clusters to screen charges within a tight 35ms response window."
+      desc: <>Integrating Kafka message lines with Python ML <Link href="/services/ai-data-innovation" className="text-[#E11D48] hover:underline">inference clusters</Link> to screen charges within a tight 35ms response window.</>
     },
     {
       title: "Dynamic Encryption Filters",
-      desc: "Using database triggers and application middleware to isolate, decrypt, and tokenise fields as they ingress."
+      desc: <>Using database triggers and <Link href="/services/software-development/product-engineering" className="text-[#E11D48] hover:underline">application middleware</Link> to isolate, decrypt, and tokenise fields as they ingress.</>
     }
   ],
   capabilities: [
     {
       title: "High-Frequency Ledgers",
-      desc: "Building database schemas that process thousands of debit/credit executions per second without table deadlocks."
+      desc: <>Building <Link href="/services/cloud-services" className="text-[#E11D48] hover:underline">database schemas</Link> that process thousands of debit/credit executions per second without table deadlocks.</>
     },
     {
       title: "Real-time Fraud Checks",
-      desc: "AI pipelines that score incoming card swipes against user historical profiles in under 35ms."
+      desc: <>AI pipelines that score incoming card swipes against user historical profiles in under 35ms with our custom <Link href="/services/ai-data-innovation" className="text-[#E11D48] hover:underline">AI pipelines</Link>.</>
     },
     {
       title: "Open Banking APIs",
-      desc: "Standardized secure endpoints facilitating automated credit scoring and bank-to-bank transfers."
+      desc: <>Standardized <Link href="/services/cybersecurity" className="text-[#E11D48] hover:underline">secure endpoints</Link> facilitating automated credit scoring and bank-to-bank transfers.</>
     }
   ],
   useCases: [
     {
       title: "Dynamic Credit Scoring",
-      result: "92% faster loan approval decision loops via real-time customer data aggregation."
+      result: <>92% faster loan approval decision loops via real-time <Link href="/services/ai-data-innovation" className="text-[#E11D48] hover:underline">data aggregation</Link>.</>
     },
     {
       title: "Transaction Ledger Auditing",
-      result: "Zero account balance deviations across 40 million monthly payments."
+      result: <>Zero account balance deviations across 40 million <Link href="/services/software-development/product-engineering" className="text-[#E11D48] hover:underline">monthly payments</Link>.</>
     }
   ],
   techs: [
     {
       name: "PostgreSQL / Aurora",
-      desc: "Relational database write-nodes configured with row-level locks and secondary read pools."
+      desc: <>Relational <Link href="/services/cloud-services" className="text-[#E11D48] hover:underline">database write-nodes</Link> configured with row-level locks and secondary read pools.</>
     },
     {
       name: "Kafka Streaming Pipelines",
-      desc: "Real-time telemetry transport streams feeding fraud classification servers."
+      desc: <>Real-time <Link href="/services/devops-automation/site-reliability-engineering" className="text-[#E11D48] hover:underline">telemetry transport</Link> streams feeding fraud classification servers.</>
     },
     {
       name: "FastAPI / Python",
-      desc: "Lightweight APIs connecting web apps with model processors."
+      desc: <><Link href="/services/software-development/product-engineering" className="text-[#E11D48] hover:underline">Lightweight APIs</Link> connecting web apps with model processors.</>
     }
   ],
   outcomes: [
     {
       value: "35ms",
       label: "Fraud-check Speed",
-      desc: "Average transaction scoring times."
+      desc: <>Average <Link href="/services/ai-data-innovation" className="text-[#E11D48] hover:underline">transaction scoring</Link> times.</>
     },
     {
       value: "10M+",
       label: "Daily Transactions",
-      desc: "Secure transactions completed without latency spikes."
+      desc: <>Secure transactions completed without <Link href="/services/devops-automation/site-reliability-engineering" className="text-[#E11D48] hover:underline">latency spikes</Link>.</>
     },
     {
       value: "99.999%",
       label: "Ledger Uptime",
-      desc: "Target system reliability figures."
+      desc: <>Target system <Link href="/services/devops-automation/site-reliability-engineering" className="text-[#E11D48] hover:underline">reliability figures</Link>.</>
     }
   ],
   caseStudy: {
     title: "Deploying real-time fraud check pipelines for national digital bank.",
-    desc: "We engineered and integrated a Kafka-driven fraud analysis pipeline that evaluates card swipe coordinates and purchase value parameters against custom XGBoost models. The system scores transactions inside a 35ms window, blocking compromises immediately.",
+    desc: <>We engineered and integrated a Kafka-driven fraud analysis pipeline that evaluates card swipe coordinates and purchase value parameters against custom <Link href="/services/ai-data-innovation" className="text-[#E11D48] hover:underline">XGBoost models</Link>. The system scores transactions inside a 35ms window, blocking compromises immediately.</>,
     metrics: [
       { value: "35ms", label: "Fraud Check latency" },
       { value: "10M+", label: "Daily Transactions" },
@@ -147,25 +147,25 @@ const data = {
   compliance: [
     {
       title: "PCI-DSS Level 1 Alignments",
-      desc: "Encrypted storage filters, quarterly vulnerability scans, and strict tokenized credit caches."
+      desc: <>Encrypted storage filters, quarterly <Link href="/services/cybersecurity" className="text-[#E11D48] hover:underline">vulnerability scans</Link>, and strict tokenized credit caches.</>
     },
     {
       title: "SOC-2 Type II Certification",
-      desc: "Strict security control configurations, full developer access tracking, and daily backups."
+      desc: <>Strict <Link href="/services/cybersecurity" className="text-[#E11D48] hover:underline">security control configurations</Link>, full developer access tracking, and daily backups.</>
     }
   ],
   whyChoose: [
     {
       title: "Enterprise Grade Ledgers",
-      desc: "Our database schemas prevent double-spending and ledger drift under high concurrency."
+      desc: <>Our database schemas prevent double-spending and <Link href="/services/devops-automation" className="text-[#E11D48] hover:underline">ledger drift</Link> under high concurrency.</>
     },
     {
       title: "Rigorous Compliance Checks",
-      desc: "All financial modules are pre-audited to satisfy federal financial protection standards."
+      desc: <>All financial <Link href="/services/software-development/product-engineering" className="text-[#E11D48] hover:underline">modules</Link> are pre-audited to satisfy federal financial protection standards.</>
     },
     {
       title: "24/7 Security Responses",
-      desc: "Automated alert relays notify on-call reliability engineers on transaction failures."
+      desc: <>Automated alert relays notify on-call <Link href="/services/devops-automation/site-reliability-engineering" className="text-[#E11D48] hover:underline">reliability engineers</Link> on transaction failures.</>
     }
   ],
   relatedServices: [
@@ -189,17 +189,17 @@ const data = {
   cta: {
     ctaTitle: "Build your secure",
     ctaHighlight: "Fintech ledger",
-    ctaDesc: "Book a dedicated workspace mapping session with our principal fintech solutions architect to design transaction-safe databases.",
+    ctaDesc: <>Book a dedicated workspace mapping session with our principal <Link href="/contact" className="text-[#E11D48] hover:underline">fintech solutions architect</Link> to design transaction-safe databases.</>,
     ctaBtnText: "Consult Fintech Architect"
   },
   faqs: [
     {
       q: "How do you guarantee transaction consistency?",
-      a: "We enforce ACID transactions inside PostgreSQL database engines. We use selective row lock triggers and isolation parameters to prevent double-spending or account balance drifts."
+      a: <>We enforce ACID transactions inside PostgreSQL <Link href="/services/cloud-services" className="text-[#E11D48] hover:underline">database engines</Link>. We use selective row lock triggers and isolation parameters to prevent double-spending or account balance drifts.</>
     },
     {
       q: "What payment gateways do you integrate with?",
-      a: "We build custom handlers for Stripe, Adyen, Apple Pay, and direct bank transfers utilizing secure webhook callbacks."
+      a: <>We build <Link href="/services/software-development/product-engineering" className="text-[#E11D48] hover:underline">custom handlers</Link> for Stripe, Adyen, Apple Pay, and direct bank transfers utilizing secure webhook callbacks.</>
     }
   ]
 };

@@ -71,7 +71,7 @@ export function EcosystemPillars() {
               Core <span className="text-rose-500">ecosystem domains</span>
             </h2>
             <p className="text-zinc-200 text-base md:text-lg font-semibold leading-relaxed">
-              Explore co-engineered software platforms, active innovation labs, and joint technology alliance networks.
+              Explore co-engineered software platforms, active innovation labs, and joint technology alliance networks. Learn more about our <Link href="/services" className="text-rose-500 hover:underline font-bold">managed engineering services</Link> and read our <Link href="/about/overview" className="text-rose-500 hover:underline font-bold">company overview</Link>.
             </p>
           </div>
         </Reveal>

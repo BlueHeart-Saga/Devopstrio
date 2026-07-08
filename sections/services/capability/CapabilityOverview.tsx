@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import { Reveal } from "@/components/ui/Reveal";
 
 interface CapabilityOverviewProps {
@@ -8,100 +9,304 @@ interface CapabilityOverviewProps {
   subtitle: string;
   image: string;
   overrideHeading?: string;
-  overrideParagraph1?: string;
-  overrideParagraph2?: string;
+  overrideParagraph1?: React.ReactNode;
+  overrideParagraph2?: React.ReactNode;
   overrideDeepDiveHeading?: string;
-  overrideDeepDiveParagraph1?: string;
-  overrideDeepDiveParagraph2?: string;
+  overrideDeepDiveParagraph1?: React.ReactNode;
+  overrideDeepDiveParagraph2?: React.ReactNode;
 }
 
-function getCapabilityDefinition(title: string, subtitle: string) {
+function getCapabilityDefinition(title: string, subtitle: string): {
+  heading: string;
+  paragraph1: React.ReactNode;
+  paragraph2: React.ReactNode;
+} {
   const t = title.toLowerCase();
   
   if (t.includes("generative ai") || t.includes("llm") || t.includes("rag")) {
     return {
       heading: "Understanding Generative AI",
-      paragraph1: "Generative AI represents a paradigm shift in how enterprise organizations process information, automate complex decision-making, and interact with data. Unlike traditional systems that rely on hardcoded rules, Generative AI leverages deep learning models trained on massive datasets to understand context, generate human-like text, synthesize insights, and reason through multi-step workflows in real time.",
-      paragraph2: "By deploying secure, Retrieval-Augmented Generation (RAG) pipelines and private fine-tuning engines, we transform raw institutional knowledge into high-value cognitive assets. This capability allows you to build domain-specific virtual experts, automate content generation, and query complex databases using natural language, all while guaranteeing absolute data privacy and compliance."
+      paragraph1: (
+        <span>
+          Generative AI represents a paradigm shift in how enterprise organizations process information, automate complex decision-making, and interact with data. Unlike traditional systems that rely on hardcoded rules, Generative AI leverages deep learning models trained on massive datasets to understand context, generate human-like text, synthesize insights, and reason through multi-step workflows. Discover how this is supported by our{" "}
+          <Link href="/services/data-engineering" className="text-rose-500 hover:underline font-bold">
+            data engineering platforms
+          </Link>{" "}
+          and read our{" "}
+          <Link href="/about/overview" className="text-rose-500 hover:underline font-bold">
+            company overview
+          </Link>{" "}
+          for compliance.
+        </span>
+      ),
+      paragraph2: (
+        <span>
+          By deploying secure, Retrieval-Augmented Generation (RAG) pipelines and private fine-tuning engines, we transform raw institutional knowledge into high-value cognitive assets. This capability allows you to build domain-specific virtual experts, automate content generation, and query databases using natural language, backed by our{" "}
+          <Link href="/services/cloud-services" className="text-rose-500 hover:underline font-bold">
+            cloud architecture frameworks
+          </Link>{" "}
+          for complete privacy and compliance.
+        </span>
+      )
     };
   }
   
   if (t.includes("ai") || t.includes("machine learning") || t.includes("ml") || t.includes("agent")) {
     return {
       heading: `What is ${title}?`,
-      paragraph1: `${title} is the deployment of cognitive intelligence and autonomous workflows directly into enterprise software architecture. It moves organizations past static automation into the realm of self-learning systems that analyze historical telemetry, recognize complex patterns, and execute high-value business processes with minimal human intervention.`,
-      paragraph2: `Using stateful agent networks, custom neural modeling, and low-latency inference pipelines, this capability enables your organization to predict customer behavior, automate repetitive operational loops, and optimize resource allocation. It serves as the intelligent foundation for modern digital-first enterprises.`
+      paragraph1: (
+        <span>
+          {title} is the deployment of cognitive intelligence and autonomous workflows directly into enterprise software architecture. It moves organizations past static automation into the realm of self-learning systems that analyze historical telemetry, recognize complex patterns, and execute high-value business processes with minimal human intervention. Learn more about our core{" "}
+          <Link href="/services/ai-data-innovation" className="text-rose-500 hover:underline font-bold">
+            AI & data innovation
+          </Link>{" "}
+          services.
+        </span>
+      ),
+      paragraph2: (
+        <span>
+          Using stateful agent networks, custom neural modeling, and low-latency inference pipelines, this capability enables your organization to predict customer behavior, automate repetitive operational loops, and optimize resource allocation. We tie these models directly into{" "}
+          <Link href="/services/software-development" className="text-rose-500 hover:underline font-bold">
+            custom software development platforms
+          </Link>{" "}
+          to deliver high-speed enterprise value.
+        </span>
+      )
     };
   }
 
   if (t.includes("cloud") || t.includes("aws") || t.includes("azure") || t.includes("gcp") || t.includes("finops")) {
     return {
       heading: `What is ${title}?`,
-      paragraph1: `${title} is the strategic alignment of computing resources, storage, and networking in highly-available virtualized environments. It empowers enterprises to scale workloads dynamically, secure sensitive workloads within private landing zones, and transition from capital-intensive physical servers to agile, pay-as-you-go cloud architectures.`,
-      paragraph2: `Whether establishing multi-region AKS/EKS container grids, optimizing database queries, or automating cost tracking through FinOps practices, this capability ensures that your infrastructure is highly secure, fully compliant with industry standards, and ready to meet traffic demands of any scale.`
+      paragraph1: (
+        <span>
+          {title} is the strategic alignment of computing resources, storage, and networking in highly-available virtualized environments. It empowers enterprises to scale workloads dynamically, secure sensitive workloads within private landing zones, and transition from capital-intensive physical servers to agile, pay-as-you-go cloud architectures. Explore our{" "}
+          <Link href="/services/devops-automation" className="text-rose-500 hover:underline font-bold">
+            DevOps automation pipelines
+          </Link>{" "}
+          designed to optimize cloud efficiency.
+        </span>
+      ),
+      paragraph2: (
+        <span>
+          Whether establishing multi-region AKS/EKS container grids, optimizing database queries, or automating cost tracking through FinOps practices, this capability ensures that your infrastructure is highly secure, fully compliant with industry standards. Secure your environment using our{" "}
+          <Link href="/services/cybersecurity" className="text-rose-500 hover:underline font-bold">
+            enterprise cybersecurity controls
+          </Link>{" "}
+          for maximum protection.
+        </span>
+      )
     };
   }
 
   if (t.includes("devops") || t.includes("ci/cd") || t.includes("infrastructure as code") || t.includes("kubernetes") || t.includes("sre") || t.includes("platform engineering")) {
     return {
       heading: `What is ${title}?`,
-      paragraph1: `${title} is an engineering methodology that unites software development (Dev) and IT operations (Ops) through automated workflows, shared telemetry, and a culture of continuous collaboration. By treating infrastructure as code (IaC) and automating the build, test, and release cycles, organizations can push updates with speed, reliability, and precision.`,
-      paragraph2: `Through platform engineering portals, GitOps deployment gates, and site reliability metrics, this capability eliminates manual release friction. The result is a self-healing system where code updates are verified and deployed to production with zero downtime and full audit trails.`
+      paragraph1: (
+        <span>
+          {title} is an engineering methodology that unites software development (Dev) and IT operations (Ops) through automated workflows, shared telemetry, and a culture of continuous collaboration. By treating infrastructure as code (IaC) and automating the build, test, and release cycles, organizations push updates with speed. Learn how this integrates with{" "}
+          <Link href="/services/cloud-services" className="text-rose-500 hover:underline font-bold">
+            multi-cloud fabrics
+          </Link>{" "}
+          and read our{" "}
+          <Link href="/about/overview" className="text-rose-500 hover:underline font-bold">
+            company overview
+          </Link>{" "}
+          for details.
+        </span>
+      ),
+      paragraph2: (
+        <span>
+          Through platform engineering portals, GitOps deployment gates, and site reliability metrics, this capability eliminates manual release friction. The result is a self-healing system where code updates are verified and deployed with zero downtime, paired with our{" "}
+          <Link href="/services/qa-testing" className="text-rose-500 hover:underline font-bold">
+            automated QA testing tools
+          </Link>{" "}
+          for release validation.
+        </span>
+      )
     };
   }
 
   if (t.includes("security") || t.includes("vulnerability") || t.includes("penetration") || t.includes("soc") || t.includes("iam") || t.includes("compliance") || t.includes("zero trust")) {
     return {
       heading: `What is ${title}?`,
-      paragraph1: `${title} is the systematic hardening of digital assets, network boundaries, and user identities against malicious actors and data breaches. It establishes a resilient defense posture through continuous vulnerability scans, strict access management, and compliance alignment with international regulations like SOC-2, ISO-27001, and HIPAA.`,
-      paragraph2: `By implementing zero-trust architectures, micro-segmentation, and real-time SIEM event monitoring, this capability ensures that every system entry point is verified, authenticated, and logged. It protects your brand reputation and client trust by turning security from a checkbox into a core operational strength.`
+      paragraph1: (
+        <span>
+          {title} is the systematic hardening of digital assets, network boundaries, and user identities against malicious actors and data breaches. It establishes a resilient defense posture through continuous vulnerability scans, strict access management, and compliance alignment with international regulations like SOC-2, ISO-27001, and HIPAA. Look at our{" "}
+          <Link href="/services/managed-services" className="text-rose-500 hover:underline font-bold">
+            managed security operations
+          </Link>{" "}
+          for 24/7 proactive coverage.
+        </span>
+      ),
+      paragraph2: (
+        <span>
+          By implementing zero-trust architectures, micro-segmentation, and real-time SIEM event monitoring, this capability ensures that every system entry point is verified, authenticated, and logged. It protects your brand reputation by coordinating closely with our{" "}
+          <Link href="/services/cloud-services" className="text-rose-500 hover:underline font-bold">
+            secure cloud environments
+          </Link>{" "}
+          to keep infrastructure hardened.
+        </span>
+      )
     };
   }
 
   if (t.includes("data") || t.includes("lake") || t.includes("warehouse") || t.includes("pipeline") || t.includes("etl") || t.includes("elt")) {
     return {
       heading: `What is ${title}?`,
-      paragraph1: `${title} is the engineering of high-throughput systems that ingest, transform, clean, and store vast amounts of raw business data. It provides the structured foundation for modern analytics by transforming fragmented data streams from APIs, databases, and logs into a single source of truth.`,
-      paragraph2: `By deploying modern data lakehouses, Apache Airflow orchestrators, and automated quality assertions, this capability guarantees that your business intelligence tools and predictive models run on clean, consistent, and low-latency data. It enables real-time decision-making backed by verifiable facts.`
+      paragraph1: (
+        <span>
+          {title} is the engineering of high-throughput systems that ingest, transform, clean, and store vast amounts of raw business data. It provides the structured foundation for modern analytics by transforming fragmented data streams from APIs, databases, and logs into a single source of truth. Check our{" "}
+          <Link href="/services/ai-data-innovation" className="text-rose-500 hover:underline font-bold">
+            cognitive AI models
+          </Link>{" "}
+          that build on clean datasets.
+        </span>
+      ),
+      paragraph2: (
+        <span>
+          By deploying modern data lakehouses, Apache Airflow orchestrators, and automated quality assertions, this capability guarantees that your business intelligence tools and predictive models run on clean data. Discover how our{" "}
+          <Link href="/services/cloud-services" className="text-rose-500 hover:underline font-bold">
+            compute and storage solutions
+          </Link>{" "}
+          deliver the necessary scale.
+        </span>
+      )
     };
   }
 
   if (t.includes("app") || t.includes("web") || t.includes("mobile") || t.includes("saas") || t.includes("api") || t.includes("microservices") || t.includes("software")) {
     return {
       heading: `What is ${title}?`,
-      paragraph1: `${title} is the process of planning, coding, and deploying custom software applications tailored to deliver high-performance user experiences and robust backend performance. It utilizes modern frameworks (such as Next.js, React, and Go) to build scalable, responsive platforms that load in milliseconds.`,
-      paragraph2: `From API integration gateways to decoupled microservice topologies, this capability focuses on engineering modular systems that are easy to maintain, simple to scale, and deeply aligned with your customer needs. It turns custom software into a primary driver of digital revenue and operational efficiency.`
+      paragraph1: (
+        <span>
+          {title} is the process of planning, coding, and deploying custom software applications tailored to deliver high-performance user experiences and robust backend performance. It utilizes modern frameworks to build scalable, responsive platforms. Explore our{" "}
+          <Link href="/services/digital-transformation" className="text-rose-500 hover:underline font-bold">
+            digital transformation services
+          </Link>{" "}
+          and read our{" "}
+          <Link href="/about/overview" className="text-rose-500 hover:underline font-bold">
+            company overview
+          </Link>{" "}
+          for design details.
+        </span>
+      ),
+      paragraph2: (
+        <span>
+          From API integration gateways to decoupled microservice topologies, this capability focuses on engineering modular systems that are easy to maintain and simple to scale. We partner with our{" "}
+          <Link href="/services/qa-testing" className="text-rose-500 hover:underline font-bold">
+            automated QA testing teams
+          </Link>{" "}
+          to eliminate bugs before deployment.
+        </span>
+      )
     };
   }
 
   if (t.includes("transformation") || t.includes("strategy") || t.includes("process") || t.includes("workflow") || t.includes("change")) {
     return {
       heading: `What is ${title}?`,
-      paragraph1: `${title} is the comprehensive modernization of legacy technologies, manual corporate workflows, and operational mindsets to align with the digital age. It goes beyond simple software updates, restructuring how business departments collaborate, share insights, and deliver value to their end customers.`,
-      paragraph2: `By automating manual validation loops, refactoring legacy codebases, and coaching teams in agile Scrum frameworks, this capability ensures your organization remains highly competitive, responsive to market shifts, and capable of rapid engineering innovation.`
+      paragraph1: (
+        <span>
+          {title} is the comprehensive modernization of legacy technologies, manual corporate workflows, and operational mindsets to align with the digital age. It goes beyond simple software updates, restructuring how business departments collaborate. Check out our{" "}
+          <Link href="/services/it-consulting" className="text-rose-500 hover:underline font-bold">
+            IT consulting services
+          </Link>{" "}
+          and see our{" "}
+          <Link href="/about/overview" className="text-rose-500 hover:underline font-bold">
+            company overview
+          </Link>{" "}
+          for transition templates.
+        </span>
+      ),
+      paragraph2: (
+        <span>
+          By automating manual validation loops, refactoring legacy codebases, and coaching teams in agile Scrum frameworks, this capability ensures your organization remains highly competitive. Learn how our{" "}
+          <Link href="/services/software-development" className="text-rose-500 hover:underline font-bold">
+            custom software engineering
+          </Link>{" "}
+          powers modern growth.
+        </span>
+      )
     };
   }
 
   if (t.includes("test") || t.includes("qa") || t.includes("quality") || t.includes("regression")) {
     return {
       heading: `What is ${title}?`,
-      paragraph1: `${title} is the rigorous, automated verification of software applications to ensure they meet strict functional, performance, and security benchmarks before reaching production. By embedding automated testing suites (like Playwright, Cypress, and k6) into development pipelines, we catch bugs and performance drift instantly.`,
-      paragraph2: `This quality engineering practice minimizes release regressions, protects the user experience, and accelerates developer velocity by providing instant feedback. It guarantees that every code release is solid, stable, and ready for your users.`
+      paragraph1: (
+        <span>
+          {title} is the rigorous, automated verification of software applications to ensure they meet strict functional, performance, and security benchmarks before reaching production. By embedding automated testing suites into development pipelines, we catch bugs instantly. Learn about our{" "}
+          <Link href="/services/software-development" className="text-rose-500 hover:underline font-bold">
+            software development services
+          </Link>{" "}
+          and read our{" "}
+          <Link href="/about/overview" className="text-rose-500 hover:underline font-bold">
+            company overview
+          </Link>{" "}
+          to see our approach.
+        </span>
+      ),
+      paragraph2: (
+        <span>
+          This quality engineering practice minimizes release regressions, protects the user experience, and accelerates developer velocity. Explore our{" "}
+          <Link href="/services/devops-automation" className="text-rose-500 hover:underline font-bold">
+            DevOps and GitOps delivery pipelines
+          </Link>{" "}
+          for continuous integration and testing.
+        </span>
+      )
     };
   }
 
   if (t.includes("consult") || t.includes("architecture") || t.includes("roadmap") || t.includes("assessment")) {
     return {
       heading: `What is ${title}?`,
-      paragraph1: `${title} is the advisory and planning practice that defines technical roadmaps, audits current IT capabilities, and blueprints robust enterprise architectures. It bridges the gap between high-level business goals and down-to-earth engineering execution, preventing costly tech debt and alignment failures.`,
-      paragraph2: `By executing stakeholder discovery sprints, choosing ideal technology stacks, and drafting detailed disaster recovery and security runbooks, this capability ensures that your engineering resources are invested wisely and built on stable, future-proof foundations.`
+      paragraph1: (
+        <span>
+          {title} is the advisory and planning practice that defines technical roadmaps, audits current IT capabilities, and blueprints robust enterprise architectures. It bridges the gap between high-level business goals and down-to-earth engineering execution. Read our client{" "}
+          <Link href="/about/testimonials" className="text-rose-500 hover:underline font-bold">
+            testimonials
+          </Link>{" "}
+          and explore our{" "}
+          <Link href="/about/overview" className="text-rose-500 hover:underline font-bold">
+            company overview
+          </Link>{" "}
+          for architectural audits.
+        </span>
+      ),
+      paragraph2: (
+        <span>
+          By executing stakeholder discovery sprints, choosing ideal technology stacks, and drafting detailed disaster recovery and security runbooks, this capability ensures that your resources are invested wisely. Discover our{" "}
+          <Link href="/services/digital-transformation" className="text-rose-500 hover:underline font-bold">
+            digital transformation roadmap strategies
+          </Link>{" "}
+          to modernization.
+        </span>
+      )
     };
   }
 
   return {
     heading: `What is ${title}?`,
-    paragraph1: `${title} is a dedicated operational and engineering capability designed to streamline systems, eliminate tech bottlenecks, and deploy production-grade configurations. By establishing secure, automated environments, this practice helps organizations align their digital platforms with modern industry standards and compliance policies.`,
-    paragraph2: `Leveraging advanced design principles and custom integrations, this capability focuses on ${subtitle.toLowerCase().replace(/\.$/, '')}. It provides the technical scaffolding your teams need to accelerate deployment cycles, enhance observability, and achieve consistent, high-impact business outcomes.`
+    paragraph1: (
+      <span>
+        {title} is a dedicated operational and engineering capability designed to streamline systems, eliminate tech bottlenecks, and deploy production-grade configurations. By establishing secure, automated environments, this practice helps organizations align their digital platforms. Explore our{" "}
+        <Link href="/about/overview" className="text-rose-500 hover:underline font-bold">
+          company overview
+        </Link>{" "}
+        for further info.
+      </span>
+    ),
+    paragraph2: (
+      <span>
+        Leveraging advanced design principles and custom integrations, this capability focuses on {subtitle.toLowerCase().replace(/\.$/, '')}. It provides the technical scaffolding your teams need to accelerate deployment cycles, enhance observability, and achieve consistent, high-impact business outcomes. Check our{" "}
+        <Link href="/services" className="text-rose-500 hover:underline font-bold">
+          full catalog of services
+        </Link>{" "}
+        to see how capabilities align.
+      </span>
+    )
   };
 }
 

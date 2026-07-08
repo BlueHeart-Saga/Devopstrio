@@ -55,7 +55,7 @@ export function FeaturedHighlights({ posts }: FeaturedHighlightsProps) {
             Our Philosophy
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight max-w-4xl mx-auto">
-            At Devopstrio, we move beyond "quick fixes." We believe <span className="text-zinc-500 font-medium">true innovation is found at the intersection of deep engineering, strategic foresight, and sustainable technology.</span>
+            At Devopstrio, we move beyond "quick fixes." We believe <span className="text-zinc-500 font-medium">true innovation is found at the intersection of deep engineering, strategic foresight, and sustainable technology. Explore our <Link href="/services" className="text-rose-500 hover:underline">engineering services</Link> and read our <Link href="/about/overview" className="text-rose-500 hover:underline">company overview</Link>.</span>
           </h2>
         </Reveal>
       </div>

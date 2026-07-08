@@ -3,27 +3,34 @@
 import React from "react";
 import { ShieldCheck, Lock, CheckCircle, FileText } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
+import Link from "next/link";
 
-const certs = [
+interface CertItem {
+  icon: React.ReactNode;
+  title: string;
+  desc: React.ReactNode;
+}
+
+const certs: CertItem[] = [
   {
     icon: <ShieldCheck size={18} />,
     title: "SOC-2 Type II Certification",
-    desc: "Rigorous annual security evaluations on all hosting centers, employee access permissions, and codebase modifications."
+    desc: <>Rigorous annual security evaluations on all hosting centers, employee access permissions, and <Link href="/services/devops-automation" className="text-rose-500 hover:underline">codebase modifications</Link>.</>
   },
   {
     icon: <Lock size={18} />,
     title: "HIPAA & GDPR Standards",
-    desc: "Strict personal data masking algorithms and database security patterns that protect medical files and client credentials."
+    desc: <>Strict personal data masking algorithms and <Link href="/services/cloud-services" className="text-rose-500 hover:underline">database security patterns</Link> that protect medical files and client credentials.</>
   },
   {
     icon: <FileText size={18} />,
     title: "PCI-DSS Level 1 Compliance",
-    desc: "Vulnerability scanning, payment processor isolation, and end-to-end tokenization configurations."
+    desc: <><Link href="/services/cybersecurity" className="text-rose-500 hover:underline">Vulnerability scanning</Link>, payment processor isolation, and end-to-end tokenization configurations.</>
   },
   {
     icon: <CheckCircle size={18} />,
     title: "ISO/IEC 27001 Alignment",
-    desc: "Standardized risk assessment procedures, operational checks, and incident logs."
+    desc: <>Standardized risk assessment procedures, operational checks, and incident logs under <Link href="/services/cybersecurity" className="text-rose-500 hover:underline">security standards</Link>.</>
   }
 ];
 

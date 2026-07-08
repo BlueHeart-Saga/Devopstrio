@@ -23,22 +23,24 @@ const complianceLogos = [
   { name: "FDA Compliant", path: "/assets/About-page/complience-Logos/FDA.png" },
 ];
 
+import Link from "next/link";
+
 const awards = [
   {
     title: "Cloud & Infrastructure Excellence",
-    desc: "Recognised for high-performance multi-cloud architectures across AWS, Azure, and Google Cloud.",
+    desc: <>Recognised for high-performance multi-cloud architectures across AWS, Azure, and Google Cloud in our <Link href="/services/cloud-services" className="text-[#E11D48] hover:underline">cloud services</Link> programs.</>,
     image: "/assets/About-page/awards/dockum.png",
     tag: "CLOUD LEADERSHIP"
   },
   {
     title: "AI & Intelligent Automation",
-    desc: "Awarded for enterprise Generative AI integrations, intelligent agents, and operational workflows.",
+    desc: <>Awarded for enterprise Generative AI integrations, intelligent agents, and operational workflows under <Link href="/services/ai-data-innovation" className="text-[#E11D48] hover:underline">AI & data innovation</Link>.</>,
     image: "/assets/About-page/awards/techmm.png",
     tag: "AI INNOVATION"
   },
   {
     title: "Enterprise Delivery Partnership",
-    desc: "Delivering sustainable cost reduction, reliable support, and scale for FTSE 100 leaders.",
+    desc: <>Delivering sustainable cost reduction, reliable support, and scale for FTSE 100 leaders through <Link href="/services/devops-automation" className="text-[#E11D48] hover:underline">DevOps automation</Link>.</>,
     image: "/assets/About-page/awards/tuckim.png",
     tag: "TRUSTED PARTNER"
   }

@@ -3,10 +3,11 @@
 import React, { useRef } from "react";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
+import Link from "next/link";
 
 interface UseCaseItem {
   title: string;
-  result: string;
+  result: React.ReactNode;
   image?: string;
 }
 
@@ -59,27 +60,27 @@ const getUseCaseImage = (title: string, index: number): string => {
 const defaultExtraUseCases: UseCaseItem[] = [
   {
     title: "Multi-Cloud GitOps Ingress",
-    result: "Unified continuous deployment gates across Azure and AWS, cutting release times by 84%."
+    result: <>Unified <Link href="/services/devops-automation" className="text-rose-500 hover:underline">continuous deployment</Link> gates across Azure and AWS, cutting release times by 84%.</>
   },
   {
     title: "Infrastructure-as-Code Baseline",
-    result: "99.98% drop in environment configuration drift via Terraform standardization audits."
+    result: <>99.98% drop in environment configuration <Link href="/services/devops-automation/platform-engineering" className="text-rose-500 hover:underline">drift</Link> via Terraform standardization audits.</>
   },
   {
     title: "Zero-Trust Access Isolation",
-    result: "Secured credential flows and database access paths under SOC-2 compliance parameters."
+    result: <>Secured credential flows and database access paths under <Link href="/services/cybersecurity" className="text-rose-500 hover:underline">SOC-2 compliance</Link> parameters.</>
   },
   {
     title: "SRE Automation Integration",
-    result: "Automated alert resolution rules that resolved 92% of server-load incidents without human calls."
+    result: <>Automated alert resolution rules that resolved 92% of server-load incidents under <Link href="/services/devops-automation/site-reliability-engineering" className="text-rose-500 hover:underline">SRE automation</Link> parameters.</>
   },
   {
     title: "Distributed Telemetry Logging",
-    result: "Gathered 4TB of daily application logs into unified ElasticSearch systems under 15ms indexing latency."
+    result: <>Gathered 4TB of daily <Link href="/services/devops-automation" className="text-rose-500 hover:underline">application logs</Link> into unified ElasticSearch systems under 15ms indexing latency.</>
   },
   {
     title: "High-Throughput Load Verification",
-    result: "Simulated 500,000 requests per second under peak-period models to discover database lock bugs."
+    result: <>Simulated 500,000 requests per second under <Link href="/services/cloud-services" className="text-rose-500 hover:underline">peak-period models</Link> to discover database lock bugs.</>
   }
 ];
 

@@ -3,6 +3,7 @@ import React from "react";
 import { Metadata } from "next";
 import { BreadcrumbSchema, ServiceSchema, FAQSchema } from "@/components/seo/Schemas";
 import { SectionNavbar } from "@/components/ui/SectionNavbar";
+import Link from "next/link";
 
 // Component imports
 import { IndustryHero } from "@/sections/industries/detail/IndustryHero";
@@ -44,95 +45,95 @@ const data = {
   },
   overview: {
     heading: "Compliant public systems and secure database migration paths",
-    desc1: "We build public-facing information portals, secure citizen record directories, and automated form processing systems. Our architectures utilize strict access rules, isolate data files, and log every system change.",
-    desc2: "Our development teams migrate outdated government servers to secure cloud spaces, reducing operational costs while improving portal access times and data backup safety."
+    desc1: <>We build public-facing <Link href="/services/software-development/product-engineering" className="text-[#E11D48] hover:underline">information portals</Link>, secure citizen record directories, and automated form processing systems. Our architectures utilize strict access rules, isolate data files, and log every system change.</>,
+    desc2: <>Our development teams migrate outdated government servers to secure <Link href="/services/cloud-services" className="text-[#E11D48] hover:underline">cloud spaces</Link>, reducing operational costs while improving portal access times and data backup safety.</>
   },
   challenges: [
     {
       title: "Federal Compliance Locks",
-      desc: "Meeting complex Gov-Cloud mandates, NIST standards, and ensuring all host assets stay inside state borders."
+      desc: <>Meeting complex Gov-Cloud mandates, <Link href="/services/cybersecurity" className="text-[#E11D48] hover:underline">NIST standards</Link>, and ensuring all host assets stay inside state borders.</>
     },
     {
       title: "Legacy Server Data Migration",
-      desc: "Safely shifting decades of citizen records from legacy on-premise hardware to cloud databases without data loss."
+      desc: <>Safely shifting decades of citizen records from legacy on-premise hardware to <Link href="/services/cloud-services" className="text-[#E11D48] hover:underline">cloud databases</Link> without data loss.</>
     },
     {
       title: "High Citizen Volume Traffic Peaks",
-      desc: "Configuring public forms to absorb immense traffic surges during tax seasons or benefit applications."
+      desc: <>Configuring public forms to absorb immense traffic surges during tax seasons or <Link href="/services/devops-automation/site-reliability-engineering" className="text-[#E11D48] hover:underline">benefit applications</Link>.</>
     }
   ],
   solutions: [
     {
       title: "Isolated Gov-Cloud Hosting",
-      desc: "Deploying applications inside AWS GovCloud or Azure Government zones with restricted admin controls."
+      desc: <>Deploying applications inside <Link href="/services/cloud-services" className="text-[#E11D48] hover:underline">AWS GovCloud</Link> or Azure Government zones with restricted admin controls.</>
     },
     {
       title: "Schema Mapping & Validation",
-      desc: "Using script-driven migration pipelines to format, clean, and verify relational records as they migrate."
+      desc: <>Using script-driven <Link href="/services/devops-automation" className="text-[#E11D48] hover:underline">migration pipelines</Link> to format, clean, and verify relational records as they migrate.</>
     },
     {
       title: "Dynamic Load Balancers",
-      desc: "Integrating autoscaling pod groups that dynamically scale out based on current API requests."
+      desc: <>Integrating autoscaling pod groups that dynamically scale out based on current <Link href="/services/devops-automation/site-reliability-engineering" className="text-[#E11D48] hover:underline">API requests</Link>.</>
     }
   ],
   capabilities: [
     {
       title: "Citizen Web Portals",
-      desc: "Building clean, accessible user interfaces where citizens apply for services and renew documents."
+      desc: <>Building clean, accessible user interfaces where citizens apply for services and renew documents under our <Link href="/services/software-development/product-engineering" className="text-[#E11D48] hover:underline">civic engineering projects</Link>.</>
     },
     {
       title: "Secure Cloud Migration",
-      desc: "Moving legacy on-premise mainframe databases to encrypted government cloud subnets."
+      desc: <>Moving legacy on-premise mainframe databases to encrypted government <Link href="/services/cloud-services" className="text-[#E11D48] hover:underline">cloud subnets</Link>.</>
     },
     {
       title: "System Audit Trails",
-      desc: "Deploying secure read-only logs that track every employee edit and data query."
+      desc: <>Deploying secure read-only logs that track every employee edit and data query under <Link href="/services/cybersecurity" className="text-[#E11D48] hover:underline">strict compliance rules</Link>.</>
     }
   ],
   useCases: [
     {
       title: "County Record Modernization",
-      result: "Migrated 4.5 million legal documents to Gov-Cloud with zero loss."
+      result: <>Migrated 4.5 million legal documents to <Link href="/services/cloud-services" className="text-[#E11D48] hover:underline">Gov-Cloud</Link> with zero loss.</>
     },
     {
       title: "Citizen Application Ingress",
-      result: "Reduced form processing cycles from 14 business days down to 8 minutes."
+      result: <>Reduced form processing cycles from 14 business days down to 8 minutes via <Link href="/services/software-development/product-engineering" className="text-[#E11D48] hover:underline">automated workflow processing</Link>.</>
     }
   ],
   techs: [
     {
       name: "AWS GovCloud",
-      desc: "Isolated government cloud zones ensuring local physical host controls."
+      desc: <>Isolated government cloud zones ensuring local physical host controls under <Link href="/services/cloud-services" className="text-[#E11D48] hover:underline">AWS GovCloud</Link>.</>
     },
     {
       name: "Next.js / React",
-      desc: "Highly accessible, lightweight frontends optimized for screen readers and slow connections."
+      desc: <>Highly accessible, lightweight frontends optimized for screen readers and slow connections under <Link href="/services/software-development/product-engineering" className="text-[#E11D48] hover:underline">WCAG guidelines</Link>.</>
     },
     {
       name: "PostgreSQL / Row Security",
-      desc: "Relational databases with row-level security ensuring strict data partition separations."
+      desc: <>Relational databases with row-level security ensuring strict data partition separations under <Link href="/services/cybersecurity" className="text-[#E11D48] hover:underline">row security models</Link>.</>
     }
   ],
   outcomes: [
     {
       value: "100%",
       label: "Audit Pass Rate",
-      desc: "NIST and FedRAMP compliance standard verification status."
+      desc: <>NIST and <Link href="/services/cybersecurity" className="text-[#E11D48] hover:underline">FedRAMP compliance</Link> standard verification status.</>
     },
     {
       value: "65%",
       label: "Load Time Reduction",
-      desc: "Portal load time enhancements."
+      desc: <>Portal load time enhancements utilizing <Link href="/services/devops-automation/site-reliability-engineering" className="text-[#E11D48] hover:underline">Edge CDN routes</Link>.</>
     },
     {
       value: "0",
       label: "Security Violations",
-      desc: "Protected citizen records against data disclosures."
+      desc: <>Protected citizen records against <Link href="/services/cybersecurity" className="text-[#E11D48] hover:underline">data disclosures</Link>.</>
     }
   ],
   caseStudy: {
     title: "Secure mainframe database migration for county records office.",
-    desc: "We migrated 4.5M citizen property documents from outdated office servers to AWS GovCloud. The setup includes automated daily backup scripts and strict access roles, cutting query response times by 80%.",
+    desc: <>We migrated 4.5M citizen property documents from outdated office servers to <Link href="/services/cloud-services" className="text-[#E11D48] hover:underline">AWS GovCloud</Link>. The setup includes automated daily backup scripts and strict access roles, cutting query response times by 80%.</>,
     metrics: [
       { value: "100%", label: "Audit Success" },
       { value: "65%", label: "Speed Boost" },
@@ -147,25 +148,25 @@ const data = {
   compliance: [
     {
       title: "NIST SP 800-53 Standard Compliance",
-      desc: "Enforcing federal information security controls and routine vulnerability checks."
+      desc: <>Enforcing federal information security controls and routine <Link href="/services/cybersecurity" className="text-[#E11D48] hover:underline">vulnerability checks</Link>.</>
     },
     {
       title: "FedRAMP Cloud Alignments",
-      desc: "Setting up cloud architectures inside government-approved AWS GovCloud subnets."
+      desc: <>Setting up cloud architectures inside government-approved <Link href="/services/cloud-services" className="text-[#E11D48] hover:underline">AWS GovCloud subnets</Link>.</>
     }
   ],
   whyChoose: [
     {
       title: "Accessibility Standards First",
-      desc: "Our web platforms strictly follow WCAG guidelines to support all citizens."
+      desc: <>Our web platforms strictly follow <Link href="/services/software-development/product-engineering" className="text-[#E11D48] hover:underline">WCAG guidelines</Link> to support all citizens.</>
     },
     {
       title: "FedRAMP-Aligned Architectures",
-      desc: "We deploy secure partitions matching state and federal cloud security regulations."
+      desc: <>We deploy secure partitions matching state and federal cloud <Link href="/services/cybersecurity" className="text-[#E11D48] hover:underline">security regulations</Link>.</>
     },
     {
       title: "Detailed Audit Logs",
-      desc: "Immutable ledger tracking ensures every transaction and database edit is accounted for."
+      desc: <>Immutable ledger tracking ensures every transaction and database edit is accounted for under <Link href="/services/cybersecurity" className="text-[#E11D48] hover:underline">tamper-proof protocols</Link>.</>
     }
   ],
   relatedServices: [
@@ -189,17 +190,17 @@ const data = {
   cta: {
     ctaTitle: "Modernize your civic",
     ctaHighlight: "Cloud systems",
-    ctaDesc: "Consult with our principal gov-tech solutions architect to evaluate your legacy databases and cloud security.",
+    ctaDesc: <>Consult with our principal <Link href="/contact" className="text-[#E11D48] hover:underline">gov-tech solutions architect</Link> to evaluate your legacy databases and cloud security.</>,
     ctaBtnText: "Consult Gov-Tech Architect"
   },
   faqs: [
     {
       q: "Do you host databases inside federal GovCloud spaces?",
-      a: "Yes. We deploy applications and data inside AWS GovCloud or Microsoft Azure Government environments depending on agency needs."
+      a: <>Yes. We deploy applications and data inside <Link href="/services/cloud-services" className="text-[#E11D48] hover:underline">AWS GovCloud</Link> or Microsoft Azure Government environments depending on agency needs.</>
     },
     {
       q: "How do you ensure web accessibility for disabled citizens?",
-      a: "We develop frontends that strictly adhere to WCAG 2.1 AA standards, utilizing semantic HTML, proper contrast, and keyboard navigation testing."
+      a: <>We develop frontends that strictly adhere to <Link href="/services/software-development/product-engineering" className="text-[#E11D48] hover:underline">WCAG 2.1 AA standards</Link>, utilizing semantic HTML, proper contrast, and keyboard navigation testing.</>
     }
   ]
 };

@@ -3,6 +3,8 @@
 import React from "react";
 import { Reveal } from "@/components/ui/Reveal";
 
+import Link from "next/link";
+
 export function CareersHero() {
   return (
     <section className="relative w-full min-h-[80vh] flex items-center bg-[#030303] text-white pt-20 pb-16 lg:pt-20 lg:pb-24 overflow-hidden">
@@ -29,7 +31,7 @@ export function CareersHero() {
             {/* Description */}
             <Reveal delay={0.2}>
               <p className="text-zinc-400 text-xs sm:text-sm md:text-base leading-relaxed font-semibold max-w-xl mb-8">
-                Join a high-performance global network of system architects, DevOps experts, and AI engineers. We build and secure the modern, regulatory-compliant digital infrastructures powering tomorrow&apos;s enterprises.
+                Join a high-performance global network of system architects, DevOps experts, and AI engineers. We build and secure the modern, regulatory-compliant digital infrastructures powering tomorrow&apos;s enterprises. Learn more about our <Link href="/services/devops-automation" className="text-[#E11D48] hover:underline font-bold">DevOps automation</Link> and <Link href="/about/overview" className="text-[#E11D48] hover:underline font-bold">company overview</Link>.
               </p>
             </Reveal>
 

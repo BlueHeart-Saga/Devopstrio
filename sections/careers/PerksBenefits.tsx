@@ -46,6 +46,8 @@ const benefits = [
   },
 ];
 
+import Link from "next/link";
+
 export function PerksBenefits() {
   return (
     <section className="w-full py-24 bg-[#030303] border-b border-zinc-900 relative overflow-hidden">
@@ -63,7 +65,7 @@ export function PerksBenefits() {
               Benefits built for your <span className="text-rose-500">wellbeing & growth</span>
             </h2>
             <p className="text-zinc-400 text-base leading-relaxed">
-              We go beyond compensation — investing in the health, career, and quality of life of every team member.
+              We go beyond compensation — investing in the health, career, and quality of life of every team member. Discover more about our <Link href="/about/overview" className="text-rose-500 hover:underline font-bold">company overview</Link> and our core values.
             </p>
           </div>
         </Reveal>

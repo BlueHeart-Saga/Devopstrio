@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { Reveal } from "@/components/ui/Reveal";
+import { Hero } from "@/components/services/Hero";
 import {
   ArrowUpRight,
   Layers,
@@ -200,61 +201,45 @@ export default function SaaSPlatformsPage() {
   ];
 
   return (
-    <main className="min-h-screen bg-black text-white pt-16 font-sans overflow-x-hidden selection:bg-rose-500 selection:text-white">
+    <main className="min-h-screen bg-black text-white font-sans overflow-x-hidden selection:bg-rose-500 selection:text-white">
 
       {/* 1. HERO SECTION */}
-      <section className="relative w-full min-h-[90vh] flex flex-col items-center justify-center bg-black overflow-hidden pt-28 pb-20 border-b border-zinc-900/60">
-        {/* Background Image */}
-        <div className="absolute inset-0 z-0">
-          <img
-            src="/assets/ecosystem/sub-page-hero/ecosystem_platforms_solutions/Saas.png"
-            alt="SaaS Platforms background"
-            className="w-full h-full object-cover object-center opacity-100 select-none pointer-events-none scale-[1.02]"
-          />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,0,0,0.95)_0%,rgba(0,0,0,0.7)_45%,transparent_75%)] pointer-events-none" />
-          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent pointer-events-none" />
-        </div>
-        {/* Decorative Grid */}
-        
-
-        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-20 flex flex-col items-center text-center">
-          <Reveal className="mb-4">
-            <span className="gap-2 inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white transition-all duration-300 hover:shadow-[0_0_25px_rgba(225,29,72,0.35)] hover:-translate-y-0.5">
-              <Boxes className="w-3.5 h-3.5" />
-              Enterprise SaaS Ecosystem
+      <Hero
+        badge="Enterprise SaaS Ecosystem"
+        title={
+          <>
+            Enterprise SaaS Platforms <br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-500 to-rose-700">
+              Built for Scale & Growth
             </span>
-          </Reveal>
-          <Reveal delay={0.1}>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight text-white max-w-5xl mb-6">
-              Enterprise SaaS Platforms <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-500 to-rose-700">
-                Built for Scale, Automation & Business Growth
-              </span>
-            </h1>
-          </Reveal>
-          <Reveal delay={0.2} className="max-w-3xl">
-            <p className="text-zinc-400 text-xs md:text-sm lg:text-base leading-relaxed font-bold mb-10">
-              Discover Devopstrio's growing ecosystem of SaaS products, industry solutions, and intelligent business platforms designed to accelerate digital transformation.
-            </p>
-          </Reveal>
-          <Reveal delay={0.4} className="w-full max-w-4xl select-none mb-0">
-            <span className="text-[10px] font-mono text-zinc-550 uppercase tracking-widest block mb-6 font-bold">
-              PROPRIETARY SAAS SOLUTIONS
-            </span>
-            <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12">
-              {platformLogos.map((logo) => (
-                <Link
-                  key={logo.name}
-                  href={logo.href}
-                  className="text-base md:text-lg font-black tracking-widest text-zinc-500 hover:text-rose-500 font-mono transition-colors"
-                >
-                  {logo.name.toUpperCase()}
-                </Link>
-              ))}
-            </div>
-          </Reveal>
+          </>
+        }
+        subtitle="Discover Devopstrio's growing ecosystem of SaaS products, industry solutions, and intelligent business platforms designed to accelerate digital transformation."
+        bgImage="/assets/ecosystem/sub-page-hero/Ecosystem_flatform&solutions/Saas.png"
+        stats={heroMetrics}
+        breadcrumbs={[
+          { label: "ECOSYSTEM", href: "/ecosystem" },
+          { label: "PLATFORMS & SOLUTIONS", href: "/ecosystem/platforms-solutions" },
+          { label: "SAAS PLATFORMS" }
+        ]}
+      >
+        <div className="w-full max-w-4xl select-none mb-0">
+          <span className="text-[10px] font-mono text-zinc-450 uppercase tracking-widest block mb-6 font-bold">
+            PROPRIETARY SAAS SOLUTIONS
+          </span>
+          <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12">
+            {platformLogos.map((logo) => (
+              <Link
+                key={logo.name}
+                href={logo.href}
+                className="text-sm md:text-base font-black tracking-widest text-zinc-400 hover:text-rose-500 font-mono transition-colors"
+              >
+                {logo.name.toUpperCase()}
+              </Link>
+            ))}
+          </div>
         </div>
-      </section>
+      </Hero>
 
 
       {/* 2. SAAS ECOSYSTEM OVERVIEW */}

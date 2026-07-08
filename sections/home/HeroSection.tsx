@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
+import Link from "next/link";
 
 interface Slide {
   eyebrow: string;
@@ -210,23 +211,23 @@ export function HeroSection() {
                   {slides[currentSlide].title}
                 </h1>
 
-                {/* CTA buttons */}
-                <div className="flex flex-wrap gap-4 items-center justify-start mb-8">
-                  <a
-                    className="inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white transition-all duration-300 hover:shadow-[0_0_25px_rgba(225,29,72,0.35)] hover:-translate-y-0.5"
-                    href={slides[currentSlide].primaryBtn.href}
-                  >
-                    {slides[currentSlide].primaryBtn.text}
-
-                  </a>
-                  <a
-                    className="inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase border border-zinc-850 hover:border-zinc-750 bg-zinc-950/60 hover:bg-zinc-900 text-white transition-all duration-300 hover:-translate-y-0.5"
-                    href={slides[currentSlide].secondaryBtn.href}
-                  >
-                    {slides[currentSlide].secondaryBtn.text}
-
-                  </a>
-                </div>
+                 {/* CTA buttons */}
+                 <div className="flex flex-wrap gap-4 items-center justify-start mb-8">
+                   <Link
+                     className="inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white transition-all duration-300 hover:shadow-[0_0_25px_rgba(225,29,72,0.35)] hover:-translate-y-0.5"
+                     href={slides[currentSlide].primaryBtn.href}
+                   >
+                     {slides[currentSlide].primaryBtn.text}
+ 
+                   </Link>
+                   <Link
+                     className="inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase border border-zinc-850 hover:border-zinc-750 bg-zinc-950/60 hover:bg-zinc-900 text-white transition-all duration-300 hover:-translate-y-0.5"
+                     href={slides[currentSlide].secondaryBtn.href}
+                   >
+                     {slides[currentSlide].secondaryBtn.text}
+ 
+                   </Link>
+                 </div>
 
                 {/* Slide Indicators */}
                 <div className="flex gap-2 relative z-20">

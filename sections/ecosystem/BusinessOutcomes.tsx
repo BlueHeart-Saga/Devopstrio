@@ -30,7 +30,7 @@ export function BusinessOutcomes() {
 
             <Reveal delay={0.2}>
               <p className="text-zinc-200 text-base md:text-lg font-semibold leading-relaxed mb-8">
-                By leveraging our integrated ecosystems, enterprises achieve unprecedented efficiency gains, drastically reduced time-to-market, and ironclad security guardrails.
+                By leveraging our integrated ecosystems, enterprises achieve unprecedented efficiency gains, drastically reduced time-to-market, and ironclad security guardrails. Review our <Link href="/about/overview" className="text-rose-500 hover:underline font-bold">company overview</Link> and read our client <Link href="/about/testimonials" className="text-rose-500 hover:underline font-bold">testimonials</Link> to see how we deliver these results.
               </p>
             </Reveal>
 

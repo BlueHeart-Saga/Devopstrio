@@ -2,26 +2,27 @@
 import React from "react";
 import { Reveal } from "@/components/ui/Reveal";
 import { ShieldCheck, ArrowUpRight, Award, Focus } from "lucide-react";
+import Link from "next/link";
 
 const trustPoints = [
   {
     title: "Confidence in Delivery",
-    description: "Recognition reinforces the quality, accountability, and consistency behind how we execute complex migrations and builds.",
+    description: <>Recognition reinforces the quality, accountability, and consistency behind how we execute complex <Link href="/services/cloud-services" className="text-[#E11D48] hover:underline">cloud migrations</Link> and builds.</>,
     icon: <ShieldCheck className="w-5 h-5 text-white" />
   },
   {
     title: "Proof of Momentum",
-    description: "Milestones reflect a company that is actively evolving, investing, and strengthening its technological capabilities.",
+    description: <>Milestones reflect a company that is actively evolving, investing, and strengthening its <Link href="/services/software-development" className="text-[#E11D48] hover:underline">technological capabilities</Link>.</>,
     icon: <ArrowUpRight className="w-5 h-5 text-white" />
   },
   {
     title: "Commitment to Excellence",
-    description: "Awards and acknowledgements highlight the absolute standards we aim to maintain across services, solutions, and support.",
+    description: <>Awards and acknowledgements highlight the absolute standards we aim to maintain across <Link href="/services" className="text-[#E11D48] hover:underline">services</Link>, solutions, and support.</>,
     icon: <Award className="w-5 h-5 text-white" />
   },
   {
     title: "A Stronger Partnership Foundation",
-    description: "Clients and partners benefit from working with a highly regulated team that values credibility, improvement, and long-term relationships.",
+    description: <>Clients and partners benefit from working with a highly regulated team that values credibility, improvement, and long-term <Link href="/contact" className="text-[#E11D48] hover:underline">relationships</Link>.</>,
     icon: <Focus className="w-5 h-5 text-white" />
   }
 ];

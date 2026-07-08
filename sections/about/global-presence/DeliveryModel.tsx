@@ -3,22 +3,23 @@
 import React from "react";
 import { Reveal } from "@/components/ui/Reveal";
 import { Building, Cpu, Globe } from "lucide-react";
+import Link from "next/link";
 
 export function DeliveryModel() {
   const features = [
     {
       title: "Onshore Strategy & Leadership",
-      desc: "Strategy, advisory, and system architecture are driven directly from our London Hub, ensuring absolute project alignment, compliance, and direct local accountability.",
+      desc: <>Strategy, advisory, and system architecture are driven directly from our London Hub, ensuring absolute project alignment, compliance, and direct <Link href="/contact" className="text-[#E11D48] hover:underline">local accountability</Link>.</>,
       icon: <Building className="w-5 h-5 text-rose-500" />
     },
     {
       title: "Distributed Agile Engineering",
-      desc: "Dedicated engineering pods across India (Bengaluru, Chennai, Thoothukudi) execute builds, write automated infrastructure, perform quality assurance, and manage migrations.",
+      desc: <>Dedicated engineering pods across India (Bengaluru, Chennai, Thoothukudi) execute builds, write automated infrastructure, perform quality assurance, and manage <Link href="/services/cloud-services" className="text-[#E11D48] hover:underline">migrations</Link>.</>,
       icon: <Cpu className="w-5 h-5 text-rose-500" />
     },
     {
       title: "Follow-the-Sun Operations",
-      desc: "With operational centers in the United States and India, we provide continuous time-zone coverage, 24/7 managed support, and proactive monitoring services.",
+      desc: <>With operational centers in the United States and India, we provide continuous time-zone coverage, 24/7 <Link href="/services/managed-services" className="text-[#E11D48] hover:underline">managed support</Link>, and proactive monitoring services.</>,
       icon: <Globe className="w-5 h-5 text-rose-500" />
     }
   ];
@@ -40,7 +41,7 @@ export function DeliveryModel() {
               Engineered Locally. Delivered Globally.
             </h2>
             <p className="text-zinc-400 text-sm md:text-base leading-relaxed max-w-3xl font-medium">
-              We combine London-led strategic consulting and architect-level advisory with high-performing global engineering centers. This hybrid model ensures absolute project accountability and direct face-to-face communication, backed by the cost-efficiency, technical depth, and scalability of our distributed delivery network.
+              We combine London-led strategic consulting and architect-level advisory with high-performing global <Link href="/services" className="text-[#E11D48] hover:underline">engineering centers</Link>. This hybrid model ensures absolute project accountability and direct face-to-face communication, backed by the cost-efficiency, technical depth, and scalability of our distributed <Link href="/ecosystem/engineering-excellence" className="text-[#E11D48] hover:underline">delivery network</Link>.
             </p>
           </Reveal>
         </div>

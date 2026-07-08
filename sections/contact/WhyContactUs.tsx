@@ -2,11 +2,16 @@
 
 import React from "react";
 import { Reveal } from "@/components/ui/Reveal";
+import Link from "next/link";
 
 const cards = [
   {
     title: "Direct Architect Consultation",
-    desc: "Bypass sales filters. Connect directly with principal systems architects to review your technical challenges.",
+    desc: (
+      <>
+        Bypass sales filters. Connect directly with principal <Link href="/about" className="text-rose-500 hover:underline">systems architects</Link> to review your technical challenges.
+      </>
+    ),
     side: "left",
   },
   {
@@ -16,12 +21,20 @@ const cards = [
   },
   {
     title: "Flexible Resourcing Models",
-    desc: "Align delivery with custom offshore development centers (ODC), managed pods, or consulting retainers.",
+    desc: (
+      <>
+        Align delivery with custom <Link href="/ecosystem/global-delivery" className="text-rose-500 hover:underline">offshore development centers</Link> (ODC), managed pods, or consulting retainers.
+      </>
+    ),
     side: "right",
   },
   {
     title: "Compliance & Security Built-In",
-    desc: "Access ready-to-deploy multi-cloud patterns aligned with GDPR, ISO 27001, and HIPAA compliance.",
+    desc: (
+      <>
+        Access ready-to-deploy <Link href="/services/cloud-services" className="text-rose-500 hover:underline">multi-cloud patterns</Link> aligned with GDPR, ISO 27001, and HIPAA compliance.
+      </>
+    ),
     side: "right",
   },
 ];
@@ -55,7 +68,7 @@ export function WhyContactUs() {
             Senior-led. <span className="text-rose-500">Not sales-led.</span>
           </h2>
           <p className="text-zinc-500 text-sm font-bold leading-relaxed max-w-xl mx-auto mt-4">
-            Every path leads to the same place — a real engineer, a real plan, a real result.
+            Every path leads to the same place — a real engineer, a real <Link href="/ecosystem/landing-zone" className="text-rose-500 hover:underline">plan</Link>, a real result.
           </p>
         </Reveal>
 

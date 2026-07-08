@@ -8,7 +8,7 @@ import { Reveal } from "@/components/ui/Reveal";
 export interface CTAProps {
   ctaTitle: string;
   ctaHighlight: string;
-  ctaDesc: string;
+  ctaDesc: React.ReactNode;
   ctaBtnText: string;
   backLink?: string;
   className?: string;

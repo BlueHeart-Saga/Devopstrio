@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import { Reveal } from "@/components/ui/Reveal";
 import { ArrowUpRight, MapPin, Briefcase, CalendarDays, ChevronLeft, ChevronRight, X, Search, UploadCloud } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
 
 type Poster = {
   id: number;
@@ -115,7 +116,7 @@ export function HiringSection() {
             </h2>
             
             <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-bold max-w-lg mb-8">
-              We are the best global engineering network, trusted by elite creators to build, scale, and optimize their careers.
+              We are the best <Link href="/ecosystem/global-delivery" className="text-rose-500 hover:underline">global engineering network</Link>, trusted by elite creators to build, scale, and optimize their <Link href="/careers" className="text-rose-500 hover:underline">careers</Link>.
             </p>
 
             {/* Job Search Input Form */}
@@ -124,7 +125,7 @@ export function HiringSection() {
                 e.preventDefault();
                 const queryParams = new URLSearchParams();
                 if (searchQuery.trim()) queryParams.set("q", searchQuery.trim());
-                window.location.href = `/jobs${searchQuery.trim() ? `?${queryParams.toString()}` : ''}`;
+                window.location.href = `/careers/jobs${searchQuery.trim() ? `?${queryParams.toString()}` : ''}`;
               }}
               className="relative flex items-center bg-[#0A0A0A] border border-zinc-800/80 rounded-full p-2 pl-5 focus-within:border-rose-500/50 focus-within:bg-zinc-900/60 focus-within:shadow-[0_0_25px_rgba(225,29,72,0.1)] transition-all duration-300 w-full max-w-lg mb-8 group"
             >
@@ -148,7 +149,7 @@ export function HiringSection() {
             <div className="mb-10">
               <button
                 onClick={() => {
-                  window.location.href = "/global-internship#apply-form";
+                  window.location.href = "/about/global-internship#apply-form";
                 }}
                 className="flex items-center gap-4 text-sm font-bold text-zinc-400 hover:text-white transition-all duration-200 group"
               >
@@ -178,7 +179,7 @@ export function HiringSection() {
               </div>
               <p className="text-xs sm:text-sm text-zinc-400 font-semibold tracking-wide">
                 45K+ Regular Users.{" "}
-                <a href="/global-internship" className="text-rose-500 hover:text-rose-400 font-bold hover:underline transition-colors ml-1">
+                <a href="/about/global-internship" className="text-rose-500 hover:text-rose-400 font-bold hover:underline transition-colors ml-1">
                   View Careers
                 </a>
               </p>

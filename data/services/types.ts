@@ -1,3 +1,5 @@
+import React from "react";
+
 export interface TechItem {
   name: string;
   desc: string;
@@ -47,8 +49,8 @@ export interface ServiceCategory {
   badge: string;
   subtitle: string;
   overviewHeading: string;
-  overviewDesc1: string;
-  overviewDesc2: string;
+  overviewDesc1: React.ReactNode;
+  overviewDesc2: React.ReactNode;
   stats: Metric[];
   capabilities: ServiceCapabilityInfo[];
   outcomes: string[];
@@ -59,6 +61,6 @@ export interface ServiceCategory {
   faqs: FAQItem[];
   ctaTitle: string;
   ctaHighlight: string;
-  ctaDesc: string;
+  ctaDesc: React.ReactNode;
   ctaBtnText: string;
 }

@@ -3,6 +3,8 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Lightbulb, Target, BookOpen, Globe2 } from "lucide-react";
 
+import Link from "next/link";
+
 const pillars = [
   {
     icon: Lightbulb,
@@ -17,12 +19,12 @@ const pillars = [
   {
     icon: BookOpen,
     title: "Continuous Learning",
-    description: "Technology evolves rapidly, and so do we. We invest heavily in your growth with learning budgets, certifications, and dedicated time for upskilling."
+    description:  <>Technology evolves rapidly, and so do we. We invest heavily in your growth with learning budgets, certifications in <Link href="/services/cloud-services" className="text-rose-500 hover:underline font-bold">cloud platforms</Link>, and dedicated time for upskilling.</>
   },
   {
     icon: Globe2,
     title: "Global Collaboration",
-    description: "Great ideas have no borders. We foster a culture where diverse teams across multiple time zones collaborate seamlessly to solve complex problems."
+    description:  <>Great ideas have no borders. We foster a culture where diverse teams across multiple time zones collaborate seamlessly to solve complex problems. Explore our <Link href="/about/global-presence" className="text-rose-500 hover:underline font-bold">global presence</Link>.</>
   }
 ];
 

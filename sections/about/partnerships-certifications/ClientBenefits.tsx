@@ -2,6 +2,8 @@
 
 import { Reveal } from "@/components/ui/Reveal";
 
+import Link from "next/link";
+
 export function ClientBenefits() {
   const points = [
     {
@@ -10,7 +12,7 @@ export function ClientBenefits() {
     },
     {
       title: "Better Delivery Consistency",
-      desc: "Structured engineering processes and certification-led capability building support more dependable execution."
+      desc: <>Structured <Link href="/services/software-development" className="text-[#E11D48] hover:underline font-bold">engineering processes</Link> and certification-led capability building support more dependable execution.</>
     },
     {
       title: "Broader Technology Access",

@@ -65,7 +65,7 @@ export function TechHero() {
 
           <Reveal delay={0.2}>
             <p className="text-zinc-400 text-[10px] md:text-xs leading-relaxed font-normal mb-6 opacity-95">
-              Explore the technologies, frameworks, and cloud platforms driving our enterprise solutions.
+              Explore the <Link href="/ecosystem/technology-stack" className="text-rose-500 hover:underline font-bold">technology stack frameworks</Link> and modern <Link href="/services/cloud-services" className="text-rose-500 hover:underline font-bold">cloud platform services</Link> driving our enterprise solutions.
             </p>
           </Reveal>
 

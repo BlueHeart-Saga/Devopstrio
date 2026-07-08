@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import { Reveal } from "@/components/ui/Reveal";
 import { motion, AnimatePresence } from "framer-motion";
 import { Lightbulb, PenTool, Code2, Rocket, ServerCog, LineChart, Globe } from "lucide-react";
+import Link from "next/link";
 
 const deliveryProcess = [
   { 
@@ -96,7 +97,7 @@ export function WorkflowModel() {
             framework for <span className="text-rose-500">digital execution</span>.
           </h2>
           <p className="text-zinc-400 text-xs md:text-sm leading-relaxed font-semibold">
-            We operate through a 7-phase engineering lifecycle that guarantees alignment between target architecture, deployment security, and long-term operations scalability.
+            We operate through a 7-phase engineering lifecycle that guarantees alignment between <Link href="/services/it-consulting" className="text-rose-500 hover:underline">target architecture</Link>, <Link href="/services/cybersecurity" className="text-rose-500 hover:underline">deployment security</Link>, and long-term operations scalability.
           </p>
         </Reveal>
 

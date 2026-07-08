@@ -3,13 +3,15 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Check, Compass, Code, GraduationCap, Users, ShieldAlert, Award, FileCheck, Layers } from "lucide-react";
 
+import Link from "next/link";
+
 export const MentorshipBenefits = () => {
   const mentoringItems = [
     { title: "Weekly Mentoring", desc: "One-on-one reviews with principal engineers to unblock progress and refine strategies.", icon: Users },
     { title: "Structured Code Reviews", desc: "Get real feedback on coding style, complexity, performance and modular layout structures.", icon: Code },
-    { title: "Career Guidance", desc: "Discuss industry options, prepare your profile, and map paths for modern software careers.", icon: Compass },
+    { title: "Career Guidance", desc: <>Discuss industry options, prepare your profile, and map paths for modern <Link href="/careers" className="text-[#E11D48] hover:underline">software careers</Link>.</>, icon: Compass },
     { title: "Architecture Sessions", desc: "Participate in whiteboarding sessions mapping enterprise systems and database setups.", icon: Layers },
-    { title: "Certification Support", desc: "Prepare and study for cloud certifications (AWS, Azure) with sponsored study loops.", icon: GraduationCap }
+    { title: "Certification Support", desc: <>Prepare and study for <Link href="/ecosystem/partnerships" className="text-[#E11D48] hover:underline">cloud certifications (AWS, Azure)</Link> with sponsored study loops.</>, icon: GraduationCap }
   ];
 
   const benefits = [

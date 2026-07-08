@@ -59,6 +59,8 @@ const locations = [
   }
 ];
 
+import Link from "next/link";
+
 export const GlobalPresence = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -91,7 +93,7 @@ export const GlobalPresence = () => {
             transition={{ delay: 0.1 }}
             className="text-zinc-400 text-sm md:text-base leading-relaxed font-bold max-w-2xl mx-auto"
           >
-            Our global teams collaborate across regions to provide continuous delivery, support, and innovation.
+            Our global teams collaborate across regions to provide continuous delivery, support, and innovation. Learn more about our <Link href="/about/global-presence" className="text-rose-500 hover:underline">global presence and delivery model</Link>.
           </motion.p>
         </div>
 

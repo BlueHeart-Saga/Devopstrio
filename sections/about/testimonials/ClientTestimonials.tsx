@@ -59,6 +59,8 @@ const autoScrollReviews = [
 ];
 const marqueeReviews = [...autoScrollReviews, ...autoScrollReviews];
 
+import Link from "next/link";
+
 export const ClientTestimonials = () => {
   return (
     <section className="py-24 bg-[#050505] relative overflow-hidden">
@@ -79,7 +81,7 @@ export const ClientTestimonials = () => {
               What Our <span className="text-rose-500">Clients Say</span>
             </h2>
             <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
-              Read how our strategic partnerships have driven measurable outcomes for our enterprise clients.
+              Read how our strategic alliances under our <Link href="/about/partnerships-certifications" className="text-rose-500 hover:underline">partnerships and certifications</Link> model have driven measurable outcomes for our enterprise clients.
             </p>
           </div>
 

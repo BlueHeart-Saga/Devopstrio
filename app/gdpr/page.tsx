@@ -1,6 +1,7 @@
 import React from "react";
 import { LegalPageLayout } from "@/components/LegalPageLayout";
 import { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "GDPR Compliance | Devopstrio",
@@ -21,7 +22,7 @@ export default function GDPRPage() {
             The General Data Protection Regulation (GDPR) is a comprehensive data privacy law in the European Union (EU) that regulates how personal data is collected, handled, and protected.
           </p>
           <p>
-            At Devopstrio, we prioritize the trust, security, and privacy of our global client network. We are fully aligned with the requirements of the GDPR. We ensure that all personal data belonging to EU citizens and residents processed by our co-engineering pipelines, cloud orchestration platforms, and consulting teams is handled with the highest standards of confidentiality, integrity, and safety.
+            At Devopstrio, we prioritize the trust, security, and privacy of our global client network. We are fully aligned with the requirements of the GDPR. We ensure that all personal data belonging to EU citizens and residents processed by our <Link href="/services/software-development" className="text-rose-500 hover:underline font-bold">co-engineering pipelines</Link>, <Link href="/services/cloud-services" className="text-rose-500 hover:underline font-bold">cloud orchestration platforms</Link>, and consulting teams is handled with the highest standards of confidentiality, integrity, and safety.
           </p>
         </div>
       )
@@ -87,7 +88,7 @@ export default function GDPRPage() {
           </p>
           <ul className="list-disc pl-6 space-y-2 text-zinc-400">
             <li><strong className="text-zinc-300">As a Data Controller:</strong> We act as a controller for the personal data of our website visitors, newsletter subscribers, job applicants, and client account managers. In these cases, we determine the purposes and means of processing.</li>
-            <li><strong className="text-zinc-300">As a Data Processor:</strong> We act as a processor when rendering engineering, DevOps, and cloud services for our enterprise clients. In this capacity, we process personal data strictly in accordance with the client's documented instructions and the executed Data Processing Agreement (DPA).</li>
+            <li><strong className="text-zinc-300">As a Data Processor:</strong> We act as a processor when rendering engineering, <Link href="/services/devops-automation" className="text-rose-500 hover:underline font-bold">DevOps solutions</Link>, and <Link href="/services/cloud-services" className="text-rose-500 hover:underline font-bold">cloud services</Link> for our enterprise clients. In this capacity, we process personal data strictly in accordance with the client's documented instructions and the executed Data Processing Agreement (DPA).</li>
           </ul>
         </div>
       )
@@ -121,7 +122,7 @@ export default function GDPRPage() {
           <ul className="list-disc pl-6 space-y-1.5 text-zinc-400">
             <li><strong className="text-zinc-300">Data Encryption:</strong> Encryption of all personal data in transit using TLS 1.3 and at rest using AES-256.</li>
             <li><strong className="text-zinc-300">Access Control:</strong> Implementing strictly enforced multi-factor authentication (MFA) and Least-Privilege access profiles.</li>
-            <li><strong className="text-zinc-300">Security Auditing:</strong> Regular vulnerability scanning, internal network pen-testing, and SOC 2 Type II audit alignments.</li>
+            <li><strong className="text-zinc-300">Security Auditing:</strong> Regular vulnerability scanning, internal network pen-testing, and SOC 2 Type II audit alignments under our <Link href="/services/cybersecurity" className="text-rose-500 hover:underline font-bold">cybersecurity services</Link> framework.</li>
             <li><strong className="text-zinc-300">Employee Training:</strong> Mandatory annual security and privacy compliance training for all Devopstrio developers and engineers.</li>
           </ul>
         </div>

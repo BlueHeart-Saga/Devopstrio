@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Send, UploadCloud, CheckCircle, Mail, Phone, BookOpen, Cpu, Linkedin, Globe, User } from "lucide-react";
+import Link from "next/link";
 
 export const ApplicationForm = () => {
   const [formData, setFormData] = useState({
@@ -340,7 +341,7 @@ export const ApplicationForm = () => {
             Start Your Technology <span className="text-rose-500">Journey</span>
           </h2>
           <p className="text-zinc-400 text-sm sm:text-base max-w-2xl leading-relaxed mb-12 font-bold">
-            Join the next generation of engineers, innovators, and technology leaders at Devopstrio.
+            Join the next generation of engineers, innovators, and technology leaders at Devopstrio. You can also view our full-time <Link href="/careers" className="text-[#E11D48] hover:underline">careers</Link> page.
           </p>
 
           <button

@@ -3,6 +3,7 @@
 import React from "react";
 import { Reveal } from "@/components/ui/Reveal";
 import { ArrowUpRight } from "lucide-react";
+import Link from "next/link";
 
 export function BrandStory() {
   return (
@@ -35,10 +36,10 @@ export function BrandStory() {
                     Great technology companies are not defined only by where they are headquartered, but by the value they create, the problems they solve, and the trust they build across markets.
                   </p>
                   <p className="text-zinc-400 text-sm">
-                    At Devopstrio, our journey is shaped by that mindset. We are building a company where strong local engineering talent powers global technology delivery—where businesses can access cloud, AI, software, DevOps, and cybersecurity expertise through a team that is agile, committed, and deeply invested in outcomes.
+                    At Devopstrio, our journey is shaped by that mindset. We are building a company where strong local engineering talent powers global technology delivery—where businesses can access <Link href="/services/cloud-services" className="text-[#E11D48] hover:underline">cloud</Link>, <Link href="/services/ai-data-innovation" className="text-[#E11D48] hover:underline">AI</Link>, <Link href="/services/software-development" className="text-[#E11D48] hover:underline">software development</Link>, <Link href="/services/devops-automation" className="text-[#E11D48] hover:underline">DevOps</Link>, and <Link href="/services/cybersecurity" className="text-[#E11D48] hover:underline">cybersecurity</Link> expertise through a team that is agile, committed, and deeply invested in outcomes.
                   </p>
                   <p className="text-zinc-400 text-sm">
-                    Our teams may work from focused delivery centres, but our thinking, execution, and ambition are global. Every platform we build, every migration we deliver, and every solution we support is designed to help organizations operate with more speed, resilience, intelligence, and scale.
+                    Our teams may work from focused delivery centres, but our thinking, execution, and ambition are global. Every platform we build, every migration we deliver, and every solution we support is designed to help organizations operate with more speed, resilience, intelligence, and scale. We'd love to help you <Link href="/contact" className="text-[#E11D48] hover:underline">get started</Link>.
                   </p>
                 </div>
 

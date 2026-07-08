@@ -1,6 +1,7 @@
 import React from "react";
 import { LegalPageLayout } from "@/components/LegalPageLayout";
 import { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Privacy Policy | Devopstrio",
@@ -18,7 +19,7 @@ export default function PrivacyPolicyPage() {
       content: (
         <div className="space-y-4">
           <p>
-            Welcome to Devopstrio (“we,” “us,” or “our”). Devopstrio is a global technology consulting and co-engineering partner specializing in building compliant, cloud-native enterprise runtimes, artificial intelligence platforms, and secure digital products. We are deeply committed to protecting your privacy and securing any personal data you share with us.
+            Welcome to Devopstrio (“we,” “us,” or “our”). Devopstrio is a global <Link href="/services/it-consulting" className="text-rose-500 hover:underline font-bold">technology consulting</Link> and co-engineering partner specializing in building compliant, <Link href="/services/cloud-services" className="text-rose-500 hover:underline font-bold">cloud-native enterprise runtimes</Link>, <Link href="/services/ai-data-innovation" className="text-rose-500 hover:underline font-bold">artificial intelligence platforms</Link>, and secure digital products. We are deeply committed to protecting your privacy and securing any personal data you share with us.
           </p>
           <p>
             This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website (www.devopstrio.com), engage with our marketing programs, or utilize our consulting and technical engineering services. It also details your rights regarding your personal data under global data protection regulations, including the General Data Protection Regulation (GDPR) and the California Consumer Privacy Act (CCPA).
@@ -70,10 +71,10 @@ export default function PrivacyPolicyPage() {
             We process your personal information only for legitimate business purposes. Specifically, we use your data to:
           </p>
           <ul className="list-disc pl-6 space-y-2 text-zinc-400">
-            <li><strong className="text-zinc-300">Deliver Services:</strong> Execute consulting statements of work, establish secure dev/prod environments, manage cloud migrations, and provide engineering support.</li>
+            <li><strong className="text-zinc-300">Deliver Services:</strong> Execute consulting statements of work, establish secure dev/prod environments, manage cloud migrations via our <Link href="/services/devops-automation" className="text-rose-500 hover:underline font-bold">DevOps workflows</Link>, and provide engineering support.</li>
             <li><strong className="text-zinc-300">Optimize Website Performance:</strong> Analyze usage trends to refine navigation, improve load times, and enhance user experience.</li>
             <li><strong className="text-zinc-300">Marketing & Communication:</strong> Share insights, newsletters, and announcements tailored to your technology preferences (subject to your opt-out rights).</li>
-            <li><strong className="text-zinc-300">Enhance Cybersecurity:</strong> Identify and block unauthorized site access, prevent malware distributions, and monitor system health.</li>
+            <li><strong className="text-zinc-300">Enhance Cybersecurity:</strong> Identify and block unauthorized site access, prevent malware distributions, and monitor system health under our <Link href="/services/cybersecurity" className="text-rose-500 hover:underline font-bold">cybersecurity services</Link>.</li>
             <li><strong className="text-zinc-300">Recruitment:</strong> Review and process career applications, contact references, and schedule technical evaluations.</li>
           </ul>
         </div>
@@ -181,7 +182,7 @@ export default function PrivacyPolicyPage() {
       content: (
         <div className="space-y-4">
           <p>
-            Depending on your local regulations (such as GDPR in Europe or CCPA/CPRA in California), you possess the following rights regarding your personal data:
+            Depending on your local regulations (such as <Link href="/gdpr" className="text-rose-500 hover:underline font-bold">GDPR in Europe</Link> or CCPA/CPRA in California), you possess the following rights regarding your personal data:
           </p>
           <ul className="list-disc pl-6 space-y-2 text-zinc-400">
             <li><strong className="text-zinc-300">Right to Access (DSAR):</strong> Request copies of the personal data we hold about you.</li>

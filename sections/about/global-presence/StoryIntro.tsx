@@ -2,6 +2,7 @@
 
 import React from "react";
 import { Reveal } from "@/components/ui/Reveal";
+import Link from "next/link";
 
 export function StoryIntro() {
   const storyItems = [
@@ -35,7 +36,7 @@ export function StoryIntro() {
 
           <Reveal delay={0.15}>
             <p className="text-zinc-400 text-sm md:text-base leading-relaxed">
-              From cloud transformation and AI engineering to DevOps automation, cybersecurity, and software development, our teams work across time zones and functions to deliver consistent outcomes for clients in the United Kingdom, North America, India, and beyond.
+              From <Link href="/services/cloud-services" className="text-[#E11D48] hover:underline">cloud transformation</Link> and <Link href="/services/ai-data-innovation" className="text-[#E11D48] hover:underline">AI engineering</Link> to <Link href="/services/devops-automation" className="text-[#E11D48] hover:underline">DevOps automation</Link>, <Link href="/services/cybersecurity" className="text-[#E11D48] hover:underline">cybersecurity</Link>, and <Link href="/services/software-development" className="text-[#E11D48] hover:underline">software development</Link>, our teams work across time zones and functions to deliver consistent outcomes for clients in the United Kingdom, North America, India, and beyond.
             </p>
           </Reveal>
 

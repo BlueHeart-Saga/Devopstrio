@@ -1,5 +1,6 @@
 import React, { use } from "react";
 import { notFound } from "next/navigation";
+import Link from "next/link";
 import { getServiceByCategory, getCapability } from "@/data/services";
 import { getHeroBgImage } from "@/lib/services-utils";
 import { Hero } from "@/components/services/Hero";
@@ -100,11 +101,35 @@ export default function CapabilityPage({ params }: PageProps) {
   const overrides = isGenAI ? {
     overviewHeading: "ACCELERATING BUSINESS GROWTH WITH GENERATIVE AI SERVICES IN UK",
     overviewParagraph1: "UK enterprises are redefining how they operate and we're the team making it happen. From intelligent document processing to conversational AI platforms, we build generative AI systems that don't just automate tasks but genuinely transform how your business thinks and acts.",
-    overviewParagraph2: "We engineer production-ready LLM pipelines, private fine-tuning environments, and multi-modal AI interfaces all built to meet UK data residency and compliance standards.",
+    overviewParagraph2: (
+      <span>
+        We engineer production-ready LLM pipelines, private fine-tuning environments, and multi-modal AI interfaces all built to meet UK data residency and compliance standards. Learn more about our{" "}
+        <Link href="/services/data-engineering" className="text-rose-500 hover:underline font-bold">
+          data engineering pipelines
+        </Link>{" "}
+        that clean training datasets.
+      </span>
+    ),
     
     deepDiveHeading: "WHAT IS GENERATIVE AI SERVICES IN UK?",
-    deepDiveParagraph1: "Generative AI is no longer a future concept it's the competitive edge UK businesses are adopting right now. Unlike rule-based automation that breaks the moment conditions change, generative AI systems understand intent, adapt to context, and produce meaningful outputs across text, code, images, and structured data.",
-    deepDiveParagraph2: "For UK enterprises, this means something very specific: the ability to unlock value from internal knowledge, customer interactions, and operational data without sending sensitive information outside your control. Our generative AI services in UK are designed with that reality at the centre.",
+    deepDiveParagraph1: (
+      <span>
+        Generative AI is no longer a future concept it's the competitive edge UK businesses are adopting right now. Unlike rule-based automation that breaks the moment conditions change, generative AI systems understand intent, adapt to context, and produce meaningful outputs across text, code, images, and structured data. Read our{" "}
+        <Link href="/about/overview" className="text-rose-500 hover:underline font-bold">
+          company overview
+        </Link>{" "}
+        to learn about our secure infrastructure models.
+      </span>
+    ),
+    deepDiveParagraph2: (
+      <span>
+        For UK enterprises, this means something very specific: the ability to unlock value from internal knowledge, customer interactions, and operational data without sending sensitive information outside your control. Deploy these secure pipelines using our{" "}
+        <Link href="/services/cloud-services" className="text-rose-500 hover:underline font-bold">
+          high-performance cloud consulting
+        </Link>{" "}
+        architectures.
+      </span>
+    ),
     
     problemTitle: "the Generative AI Services Production Gap",
     problemSubtitle: "Why 85% of enterprise Generative AI Services initiatives fail to scale beyond pilot projects and deliver measurable business impact.",
@@ -133,11 +158,35 @@ export default function CapabilityPage({ params }: PageProps) {
   } : isML ? {
     overviewHeading: "TRUSTED RESULTS THROUGH MACHINE LEARNING DEVELOPMENT SERVICES IN UK",
     overviewParagraph1: "Helping UK businesses build, refine, and scale intelligent models that solve real problems.",
-    overviewParagraph2: "We provide structured environments, precise performance monitoring, and secure cloud infrastructure to deliver machine learning development services in UK that meet both technical demands and regulatory standards.",
+    overviewParagraph2: (
+      <span>
+        We provide structured environments, precise performance monitoring, and secure cloud infrastructure to deliver machine learning development services in UK that meet both technical demands and regulatory standards. Work with our{" "}
+        <Link href="/services/devops-automation" className="text-rose-500 hover:underline font-bold">
+          DevOps integration teams
+        </Link>{" "}
+        for GitOps deployment workflows.
+      </span>
+    ),
     
     deepDiveHeading: "WHAT ARE MACHINE LEARNING DEVELOPMENT SERVICES IN UK?",
-    deepDiveParagraph1: "Machine learning development services in UK refer to the complete process of building data-driven systems that allow software to learn, adapt, and improve over time without being manually reprogrammed. For UK businesses, this means moving beyond rulebased tools into technology that spots patterns, forecasts outcomes, and supports faster, more confident decision-making at every level of the organisation.",
-    deepDiveParagraph2: "Using clean training data, custom model architectures, and low-latency deployment pipelines, our machine learning development services in UK allow your business to anticipate customer needs, reduce manual workload, and make smarter use of existing resources. It is the practical foundation that modern UK companies rely on to compete, grow, and future-proof their operations in an increasingly data-driven market.",
+    deepDiveParagraph1: (
+      <span>
+        Machine learning development services in UK refer to the complete process of building data-driven systems that allow software to learn, adapt, and improve over time without being manually reprogrammed. For UK businesses, this means moving beyond rulebased tools. See our{" "}
+        <Link href="/about/overview" className="text-rose-500 hover:underline font-bold">
+          company overview
+        </Link>{" "}
+        to review our approach.
+      </span>
+    ),
+    deepDiveParagraph2: (
+      <span>
+        Using clean training data, custom model architectures, and low-latency deployment pipelines, our machine learning development services in UK allow your business to anticipate customer needs. Coordinate with our{" "}
+        <Link href="/services/software-development" className="text-rose-500 hover:underline font-bold">
+          custom software development squads
+        </Link>{" "}
+        to design advanced frontends and interfaces.
+      </span>
+    ),
     
     problemTitle: "Closing The Machine Learning Delivery Gap",
     problemSubtitle: "Why 85% of UK enterprise machine learning development services never move past controlled pilot stages into live business systems.",

@@ -2,11 +2,13 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, MapPin, Briefcase } from "lucide-react";
+import Link from "next/link";
 
 const positions = [
   {
     title: "Software Engineer",
     department: "Engineering",
+    deptLink: "/services/software-development",
     location: "Hybrid · India",
     type: "Full-time",
     tags: ["React", "Node.js", "Python"],
@@ -15,6 +17,7 @@ const positions = [
   {
     title: "DevOps Engineer",
     department: "Platform Engineering",
+    deptLink: "/services/devops-automation",
     location: "Hybrid · India / UAE",
     type: "Full-time",
     tags: ["Kubernetes", "Terraform", "CI/CD"],
@@ -23,6 +26,7 @@ const positions = [
   {
     title: "Cloud Architect",
     department: "Cloud Practice",
+    deptLink: "/services/cloud-services",
     location: "Remote · Global",
     type: "Full-time",
     tags: ["Azure", "AWS", "GCP"],
@@ -31,6 +35,7 @@ const positions = [
   {
     title: "AI Engineer",
     department: "AI & Data Innovation",
+    deptLink: "/services/ai-data-innovation",
     location: "Hybrid · India",
     type: "Full-time",
     tags: ["Python", "LLMs", "MLOps"],
@@ -39,6 +44,7 @@ const positions = [
   {
     title: "Data Engineer",
     department: "Data Practice",
+    deptLink: "/services/data-engineering",
     location: "Hybrid · India / UK",
     type: "Full-time",
     tags: ["Spark", "dbt", "Snowflake"],
@@ -47,6 +53,7 @@ const positions = [
   {
     title: "Platform Engineer",
     department: "Platform Engineering",
+    deptLink: "/services/devops-automation",
     location: "Remote · Global",
     type: "Full-time",
     tags: ["Backstage", "ArgoCD", "Golang"],
@@ -79,23 +86,19 @@ export const OpenPositionsPreview = () => {
               Join Our <span className="text-rose-500">Team</span>
             </motion.h2>
           </div>
-          <motion.a
+          <Link
             href="/careers"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
             className="inline-flex items-center gap-2 text-sm font-medium text-zinc-400 hover:text-white transition-colors group"
           >
             View all positions
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-          </motion.a>
+          </Link>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {positions.map((pos, idx) => (
-            <motion.a
+            <motion.div
               key={idx}
-              href={pos.href}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -108,12 +111,20 @@ export const OpenPositionsPreview = () => {
               <div className="relative z-10">
                 <div className="flex items-start justify-between gap-3 mb-3">
                   <h3 className="text-white font-bold text-lg group-hover:text-red-400 transition-colors leading-snug">
-                    {pos.title}
+                    <Link href={pos.href} className="hover:underline">
+                      {pos.title}
+                    </Link>
                   </h3>
-                  <ArrowRight className="w-4 h-4 text-zinc-600 shrink-0 mt-1 group-hover:text-red-500 group-hover:translate-x-1 transition-all" />
+                  <Link href={pos.href}>
+                    <ArrowRight className="w-4 h-4 text-zinc-600 shrink-0 mt-1 group-hover:text-red-500 group-hover:translate-x-1 transition-all" />
+                  </Link>
                 </div>
 
-                <p className="text-zinc-500 text-sm mb-4">{pos.department}</p>
+                <p className="text-zinc-500 text-sm mb-4">
+                  <Link href={pos.deptLink} className="hover:text-rose-500 underline decoration-zinc-800">
+                    {pos.department}
+                  </Link>
+                </p>
 
                 <div className="flex flex-col gap-2 text-sm text-zinc-500 mb-5">
                   <span className="flex items-center gap-2">
@@ -132,7 +143,7 @@ export const OpenPositionsPreview = () => {
                   ))}
                 </div>
               </div>
-            </motion.a>
+            </motion.div>
           ))}
         </div>
       </div>

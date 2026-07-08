@@ -2,6 +2,8 @@
 
 import { Reveal } from "@/components/ui/Reveal";
 
+import Link from "next/link";
+
 export function TrustStatement() {
   return (
     <section className="py-24 bg-[#E11D48] relative z-10 overflow-hidden">
@@ -18,7 +20,7 @@ export function TrustStatement() {
               A Company Built for Long-Term Partnerships
             </h2>
             <p className="text-rose-50 text-sm md:text-base leading-relaxed font-medium">
-              Whether we are supporting modernization, managed services, product engineering, or digital transformation, our approach is shaped by accountability, technical depth, and a commitment to building lasting client relationships. Partnerships and certifications are one part of that foundation—they reinforce the trust, capability, and discipline behind every engagement.
+              Whether we are supporting <Link href="/services/digital-transformation" className="text-white hover:underline underline font-bold">modernization</Link>, <Link href="/services/managed-services" className="text-white hover:underline underline font-bold">managed services</Link>, <Link href="/services/software-development" className="text-white hover:underline underline font-bold">product engineering</Link>, or digital transformation, our approach is shaped by accountability, technical depth, and a commitment to building lasting client relationships. Partnerships and certifications are one part of that foundation—they reinforce the trust, capability, and discipline behind every engagement.
             </p>
           </Reveal>
         </div>

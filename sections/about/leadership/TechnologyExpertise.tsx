@@ -90,6 +90,8 @@ const scrollingDevTools = [
   { name: "Tailwind CSS", iconPath: "/assets/Tech-icons/tailwindcss-logo_svgstack_com_31451780931467.svg" },
 ];
 
+import Link from "next/link";
+
 export const TechnologyExpertise = () => {
   const [active, setActive] = useState("cloud");
   const current = categories.find(c => c.id === active)!;
@@ -150,9 +152,9 @@ export const TechnologyExpertise = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-zinc-500 text-sm md:text-base max-w-xl mx-auto font-medium"
+            className="text-zinc-550 text-sm md:text-base max-w-xl mx-auto font-bold"
           >
-            Hover over any category to view our core toolsets or check out the full automated integrations timeline below.
+            Hover over any category to view our core toolsets or check out our <Link href="/services/cloud-services" className="text-rose-500 hover:underline">cloud services</Link> and <Link href="/services/devops-automation" className="text-rose-500 hover:underline">DevOps automation solutions</Link>.
           </motion.p>
         </div>
 

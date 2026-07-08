@@ -36,7 +36,7 @@ export function EcosystemHero() {
             {/* Description */}
             <Reveal delay={0.2}>
               <p className="text-zinc-200 text-base md:text-lg font-semibold leading-relaxed max-w-xl mb-8">
-                Bringing together cloud providers, innovation labs, proprietary platforms, and engineering excellence to help enterprises innovate faster and scale smarter.
+                Bringing together cloud providers, innovation labs, proprietary platforms, and engineering excellence to help enterprises innovate faster and scale smarter. Explore our <Link href="/services/cloud-services" className="text-[#E11D48] hover:underline font-bold">cloud services</Link> and read our <Link href="/about/overview" className="text-[#E11D48] hover:underline font-bold">company overview</Link>.
               </p>
             </Reveal>
 

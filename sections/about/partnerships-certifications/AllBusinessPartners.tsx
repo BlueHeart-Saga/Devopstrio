@@ -15,6 +15,8 @@ const partners = [
   { name: "BT", category: "Telecommunications", logo: "/assets/Home-page/partners/BT.svg" },
 ];
 
+import Link from "next/link";
+
 export function AllBusinessPartners() {
   return (
     <section className="py-24 bg-black text-white relative overflow-hidden z-10">
@@ -24,9 +26,12 @@ export function AllBusinessPartners() {
             <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-[#E11D48] mb-3 block">
               Business Network
             </span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-4">
               Our Business <span className="text-[#E11D48]">Partners</span>
             </h2>
+            <p className="text-zinc-400 text-xs md:text-sm max-w-2xl leading-relaxed">
+              Devopstrio collaborates with global corporations to engineer secure software. Explore our <Link href="/services" className="text-[#E11D48] hover:underline font-bold">core consulting services</Link> and <Link href="/about/overview" className="text-[#E11D48] hover:underline font-bold">company overview</Link>.
+            </p>
           </div>
         </Reveal>
 

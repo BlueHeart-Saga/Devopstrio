@@ -3,12 +3,13 @@
 import React from "react";
 import { ArrowUpRight } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
+import Link from "next/link";
 
 export interface IndustriesHeroProps {
   breadcrumbCurrent?: string;
   titlePrefix?: string;
   titleHighlight?: string;
-  subtitle?: string;
+  subtitle?: React.ReactNode;
   bgImage?: string;
 }
 
@@ -16,7 +17,11 @@ export function IndustriesHero({
   breadcrumbCurrent = "Industries",
   titlePrefix = "Driving Innovation and Excellence across",
   titleHighlight = "Global Industries",
-  subtitle = "We design, build and scale industrial-grade digital architectures that automate field logistics, optimize resource planning, and enforce extreme telemetry safety standards.",
+  subtitle = (
+    <>
+      We design, build and scale industrial-grade <Link href="/services/digital-transformation" className="text-rose-500 hover:underline">digital architectures</Link> that <Link href="/services/devops-automation" className="text-rose-500 hover:underline">automate field logistics</Link>, optimize resource planning, and enforce extreme <Link href="/services/cloud-services" className="text-rose-500 hover:underline">telemetry safety standards</Link>.
+    </>
+  ),
   bgImage = "/assets/industries_hero_bg.png"
 }: IndustriesHeroProps) {
   return (

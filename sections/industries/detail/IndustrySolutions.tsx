@@ -3,10 +3,11 @@
 import React from "react";
 import { Lightbulb, ArrowUpRight } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
+import Link from "next/link";
 
 interface SolutionItem {
   title: string;
-  desc: string;
+  desc: React.ReactNode;
 }
 
 interface IndustrySolutionsProps {

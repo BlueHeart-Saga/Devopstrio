@@ -3,6 +3,8 @@
 import { Reveal } from "@/components/ui/Reveal";
 import { ShieldCheck, Workflow, Layers } from "lucide-react";
 
+import Link from "next/link";
+
 export function WhyPartnershipsMatter() {
   const cards = [
     {
@@ -35,7 +37,7 @@ export function WhyPartnershipsMatter() {
               <span className="text-[#E11D48]">More Than Delivery</span>
             </h2>
             <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-medium">
-              At Devopstrio, partnerships and certifications are not treated as standalone credentials. They are part of a broader commitment to delivery quality, platform expertise, governance, and continuous improvement. They help us strengthen technical depth, improve implementation confidence, and support clients with solutions grounded in recognized standards and proven ecosystems.
+              At Devopstrio, partnerships and certifications are not treated as standalone credentials. They are part of a broader commitment to delivery quality, platform expertise, governance, and continuous improvement. They help us strengthen technical depth, improve implementation confidence, and support clients with solutions grounded in recognized standards and proven ecosystems. Explore our <Link href="/about/overview" className="text-[#E11D48] hover:underline font-bold">company overview</Link> or learn more about our <Link href="/services" className="text-[#E11D48] hover:underline font-bold">digital services</Link>.
             </p>
           </div>
         </Reveal>

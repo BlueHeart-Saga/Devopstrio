@@ -3,19 +3,25 @@
 import React from "react";
 import { Zap } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
+import Link from "next/link";
 
-const techSolutions = [
+interface TechSolutionItem {
+  title: string;
+  desc: React.ReactNode;
+}
+
+const techSolutions: TechSolutionItem[] = [
   {
     title: "Zero-Trust Mesh Networks",
-    desc: "Enforcing microsegmentation policies at the network kernel level using eBPF and Cilium frameworks."
+    desc: <>Enforcing microsegmentation policies at the network kernel level using eBPF and <Link href="/services/cybersecurity" className="text-rose-500 hover:underline">Cilium frameworks</Link>.</>
   },
   {
     title: "Automated Canary Deployments",
-    desc: "Integrating ArgoCD triggers that gradually shift user traffic and automatically roll back on error spikes."
+    desc: <>Integrating <Link href="/services/devops-automation" className="text-rose-500 hover:underline">ArgoCD triggers</Link> that gradually shift user traffic and automatically roll back on error spikes.</>
   },
   {
     title: "Cognitive Retrieval Engines",
-    desc: "Deploying private vector database indexes connected to LLMs to answer complex client policy queries."
+    desc: <>Deploying private <Link href="/services/ai-data-innovation" className="text-rose-500 hover:underline">vector database</Link> indexes connected to LLMs to answer complex client policy queries.</>
   }
 ];
 

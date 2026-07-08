@@ -4,6 +4,8 @@ import React from "react";
 import { Reveal } from "@/components/ui/Reveal";
 import { Activity } from "lucide-react";
 
+import Link from "next/link";
+
 export function HiringProcess() {
   const steps = [
     {
@@ -64,7 +66,7 @@ export function HiringProcess() {
                 Hiring Process
               </h2>
               <p className="text-base text-zinc-400 leading-relaxed mb-9 max-w-md">
-                Our structured and transparent path is designed to discover your true potential and welcome you into our elite team.
+                Our structured and transparent path is designed to discover your true potential and welcome you into our elite team. Explore our <Link href="/about/overview" className="text-rose-500 hover:underline font-bold">company overview</Link> to understand our core mission.
               </p>
               
               <button

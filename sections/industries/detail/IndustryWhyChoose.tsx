@@ -3,10 +3,11 @@
 import React from "react";
 import { Award, ShieldCheck, Cpu, Workflow, Clock, Sliders, ArrowUpRight } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
+import Link from "next/link";
 
 interface WhyChooseItem {
   title: string;
-  desc: string;
+  desc: React.ReactNode;
 }
 
 interface IndustryWhyChooseProps {
@@ -16,15 +17,15 @@ interface IndustryWhyChooseProps {
 const extraWhyChoose: WhyChooseItem[] = [
   {
     title: "Zero-Downtime Migration Models",
-    desc: "Every cloud refactoring release is backed by rigorous traffic-shadowing checks, preventing database locks and transactional drops."
+    desc: <>Every <Link href="/services/cloud-services" className="text-rose-500 hover:underline">cloud refactoring</Link> release is backed by rigorous traffic-shadowing checks, preventing database locks and transactional drops.</>
   },
   {
     title: "100% Declarative Stacks",
-    desc: "We enforce complete state declarations using Terraform and GitOps controllers, meaning your network, compute, and IAM policies are always auditable."
+    desc: <>We enforce complete state declarations using Terraform and <Link href="/services/devops-automation" className="text-rose-500 hover:underline">GitOps controllers</Link>, meaning your network, compute, and IAM policies are always auditable.</>
   },
   {
     title: "Pre-Configured Telemetry Baselines",
-    desc: "Every repository we launch comes integrated with OpenTelemetry agents, giving you instant dashboards for database queries and CPU usage."
+    desc: <>Every repository we launch comes integrated with <Link href="/services/devops-automation" className="text-rose-500 hover:underline">OpenTelemetry</Link> agents, giving you instant dashboards for database queries and CPU usage.</>
   }
 ];
 

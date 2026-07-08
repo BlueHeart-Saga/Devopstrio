@@ -3,6 +3,7 @@ import React from "react";
 import { Metadata } from "next";
 import { BreadcrumbSchema, ServiceSchema, FAQSchema } from "@/components/seo/Schemas";
 import { SectionNavbar } from "@/components/ui/SectionNavbar";
+import Link from "next/link";
 
 // Component imports
 import { IndustryHero } from "@/sections/industries/detail/IndustryHero";
@@ -44,95 +45,95 @@ const data = {
   },
   overview: {
     heading: "Carrier-grade software architectures for high-throughput networks",
-    desc1: "We build cloud-native network orchestrations, robust OSS/BSS platforms, and high-frequency telecom billing databases. Our services process millions of simultaneous call and data event records without performance lag.",
-    desc2: "Our engineering teams deploy secure API nodes that manage user accounts, coordinate network routing tables, and track 5G telemetry feeds under strict carrier parameters."
+    desc1: <>We build cloud-native network orchestrations, robust OSS/BSS platforms, and high-frequency telecom billing databases under our <Link href="/services/cloud-services" className="text-[#E11D48] hover:underline">cloud services</Link>. Our services process millions of simultaneous call and data event records without performance lag.</>,
+    desc2: <>Our engineering teams deploy secure API nodes that manage user accounts, coordinate network routing tables, and track 5G telemetry feeds under our <Link href="/services/software-development/product-engineering" className="text-[#E11D48] hover:underline">product engineering projects</Link> under strict carrier parameters.</>
   },
   challenges: [
     {
       title: "CDR Database Locking",
-      desc: "Preventing write bottlenecks when millions of Call Detail Records (CDRs) hit logging systems concurrently during peak hours."
+      desc: <>Preventing write bottlenecks when millions of Call Detail Records (CDRs) hit logging systems concurrently during peak hours using <Link href="/services/devops-automation/site-reliability-engineering" className="text-[#E11D48] hover:underline">SRE queue models</Link>.</>
     },
     {
       title: "5G Node Routing Latency",
-      desc: "Routing edge telemetry packages across distributed cell-site nodes without causing transmission latency."
+      desc: <>Routing edge telemetry packages across distributed cell-site nodes without causing transmission latency through <Link href="/services/cloud-services" className="text-[#E11D48] hover:underline">edge-cache routing</Link>.</>
     },
     {
       title: "OSS/BSS Database Sync",
-      desc: "Keeping client billing balances and mobile data plans synchronized across isolated core platforms."
+      desc: <>Keeping client billing balances and mobile data plans synchronized across isolated core platforms under <Link href="/services/software-development/product-engineering" className="text-[#E11D48] hover:underline">data pipelines</Link>.</>
     }
   ],
   solutions: [
     {
       title: "Distributed Cassandra Ledgers",
-      desc: "Deploying multi-region Cassandra databases to write CDR event records with zero single-point failures."
+      desc: <>Deploying multi-region Cassandra databases to write CDR event records with zero single-point failures using <Link href="/services/cloud-services" className="text-[#E11D48] hover:underline">NoSQL clusters</Link>.</>
     },
     {
       title: "Go-Native Edge Routers",
-      desc: "Configuring lightweight compiled Go processors on cell tower gateway units to stream metrics in under 15ms."
+      desc: <>Configuring lightweight compiled Go processors on cell tower gateway units to stream metrics in under 15ms using <Link href="/services/software-development/product-engineering" className="text-[#E11D48] hover:underline">custom microservices</Link>.</>
     },
     {
       title: "Kafka Event Synchronization",
-      desc: "Using Kafka streaming buses to synchronize account balances across billing and usage engines."
+      desc: <>Using Kafka streaming buses to synchronize account balances across billing and usage engines via <Link href="/services/devops-automation" className="text-[#E11D48] hover:underline">event-driven buses</Link>.</>
     }
   ],
   capabilities: [
     {
       title: "Cloud-Native Network",
-      desc: "Architecting Kubernetes cluster environments to manage dynamic service scaling and cell tower metrics."
+      desc: <>Architecting Kubernetes cluster environments to manage dynamic service scaling and cell tower metrics under <Link href="/services/devops-automation/site-reliability-engineering" className="text-[#E11D48] hover:underline">SRE parameters</Link>.</>
     },
     {
       title: "Event Record Billing",
-      desc: "Creating low-latency databases to write and score user data transactions without system lag."
+      desc: <>Creating low-latency databases to write and score user data transactions without system lag via <Link href="/services/cloud-services" className="text-[#E11D48] hover:underline">custom database optimization</Link>.</>
     },
     {
       title: "Edge Telemetry",
-      desc: "Deploying telemetry transport lines collecting real-time bandwidth metrics from cell site routers."
+      desc: <>Deploying telemetry transport lines collecting real-time bandwidth metrics from cell site routers using <Link href="/services/cloud-services" className="text-[#E11D48] hover:underline">IoT setups</Link>.</>
     }
   ],
   useCases: [
     {
       title: "High-Volume CDR Log Ingest",
-      result: "Logged 500 million transaction events daily with zero database lockouts."
+      result: <>Logged 500 million transaction events daily with zero database lockouts using <Link href="/services/devops-automation/site-reliability-engineering" className="text-[#E11D48] hover:underline">Cassandra write brokers</Link>.</>
     },
     {
       title: "5G Telemetry Edge Feeds",
-      result: "Reduced routing coordinate latencies down to under 15ms globally."
+      result: <>Reduced routing coordinate latencies down to under 15ms globally using <Link href="/services/cloud-services" className="text-[#E11D48] hover:underline">AWS edge zones</Link>.</>
     }
   ],
   techs: [
     {
       name: "Kubernetes / EKS",
-      desc: "Dynamic node scaling engines handling traffic spikes across cellular networks."
+      desc: <>Dynamic node scaling engines handling traffic spikes across cellular networks using <Link href="/services/devops-automation/site-reliability-engineering" className="text-[#E11D48] hover:underline">EKS triggers</Link>.</>
     },
     {
       name: "Apache Cassandra",
-      desc: "Distributed databases writing call records with zero single points of failure."
+      desc: <>Distributed databases writing call records with zero single points of failure on <Link href="/services/cloud-services" className="text-[#E11D48] hover:underline">Cassandra grids</Link>.</>
     },
     {
       name: "Go Programming",
-      desc: "Lightweight network microservices compiled for rapid memory execution."
+      desc: <>Lightweight network microservices compiled for rapid memory execution under <Link href="/services/software-development/product-engineering" className="text-[#E11D48] hover:underline">Go patterns</Link>.</>
     }
   ],
   outcomes: [
     {
       value: "<15ms",
       label: "Edge Routing Latency",
-      desc: "Speed of telemetry signal collection."
+      desc: <>Speed of telemetry signal collection optimized by <Link href="/services/devops-automation/site-reliability-engineering" className="text-[#E11D48] hover:underline">SRE parameters</Link>.</>
     },
     {
       value: "500M+",
       label: "CDR Records Daily",
-      desc: "Billing transaction capacity."
+      desc: <>Billing transaction capacity handled under <Link href="/services/cloud-services" className="text-[#E11D48] hover:underline">Cassandra pools</Link>.</>
     },
     {
       value: "99.999%",
       label: "Network Uptime",
-      desc: "Target carrier reliability metrics."
+      desc: <>Target carrier reliability metrics monitored via <Link href="/services/devops-automation/site-reliability-engineering" className="text-[#E11D48] hover:underline">SRE monitors</Link>.</>
     }
   ],
   caseStudy: {
     title: "High-throughput call record engine for national cellular carrier.",
-    desc: "We engineered a distributed database system utilizing Cassandra and Go to log cellular data records (CDRs) in real-time. The platform securely writes 500M daily records, serving billing pipelines without downtime.",
+    desc: <>We engineered a distributed database system utilizing Cassandra and Go to log cellular data records (CDRs) in real-time. The platform securely writes 500M daily records, serving <Link href="/services/cloud-services" className="text-[#E11D48] hover:underline">billing pipelines</Link> without downtime.</>,
     metrics: [
       { value: "<15ms", label: "Edge Speed" },
       { value: "500M+", label: "CDR Records/Day" },
@@ -147,25 +148,25 @@ const data = {
   compliance: [
     {
       title: "GDPR Telecom Mandates",
-      desc: "Tokenizing customer phone locations, masking user call lists, and enforcing automated data retention periods."
+      desc: <>Tokenizing customer phone locations, masking user call lists, and enforcing automated data retention periods under <Link href="/services/cybersecurity" className="text-[#E11D48] hover:underline">telecom regulations</Link>.</>
     },
     {
       title: "ISO 27001 Protections",
-      desc: "Enforcing strict network firewall setups and continuous threat assessment monitoring."
+      desc: <>Enforcing strict network firewall setups and continuous threat assessment monitoring under <Link href="/services/cybersecurity" className="text-[#E11D48] hover:underline">ISO 27001 rules</Link>.</>
     }
   ],
   whyChoose: [
     {
       title: "Carrier-Grade Performance",
-      desc: "We build network backends designed to support high volume mobile traffic peaks."
+      desc: <>We build network backends designed to support high volume mobile traffic peaks under <Link href="/services/devops-automation/site-reliability-engineering" className="text-[#E11D48] hover:underline">SRE load monitors</Link>.</>
     },
     {
       title: "Low-Latency Edge Ingest",
-      desc: "We optimize Go/Rust service components to parse and route telemetry signals under 15ms."
+      desc: <>We optimize Go/Rust service components to parse and route telemetry signals under 15ms with <Link href="/services/software-development/product-engineering" className="text-[#E11D48] hover:underline">native compilation</Link>.</>
     },
     {
       title: "High Data Redundancy",
-      desc: "Cassandra nodes mirror records across datacenters, preventing packet losses."
+      desc: <>Cassandra nodes mirror records across datacenters, preventing packet losses using <Link href="/services/cloud-services" className="text-[#E11D48] hover:underline">multi-region sync</Link>.</>
     }
   ],
   relatedServices: [
@@ -189,17 +190,17 @@ const data = {
   cta: {
     ctaTitle: "Modernize your cellular",
     ctaHighlight: "Network backend",
-    ctaDesc: "Consult with our principal telecom network architect to optimize your billing databases and 5G telemetry logs.",
+    ctaDesc: <>Consult with our principal <Link href="/contact" className="text-[#E11D48] hover:underline">telecom network architect</Link> to optimize your billing databases and 5G telemetry logs.</>,
     ctaBtnText: "Consult Telecom Architect"
   },
   faqs: [
     {
       q: "How do you ensure billing data consistency?",
-      a: "We run distributed databases with strict consistency parameters, writing redundant copies of data across isolated physical zones to prevent packet losses."
+      a: <>We run distributed databases with strict consistency parameters, writing redundant copies of data across isolated physical zones to prevent packet losses under <Link href="/services/cloud-services" className="text-[#E11D48] hover:underline">Cassandra replication settings</Link>.</>
     },
     {
       q: "Do you support 5G network integration?",
-      a: "Yes. We develop cloud-native network functions (CNFs) that coordinate with edge servers to balance data loads dynamically."
+      a: <>Yes. We develop cloud-native network functions (CNFs) that coordinate with edge servers to balance data loads dynamically under <Link href="/services/devops-automation/site-reliability-engineering" className="text-[#E11D48] hover:underline">K8s orchestration rules</Link>.</>
     }
   ]
 };

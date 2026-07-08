@@ -2,23 +2,30 @@
 
 import React from "react";
 import { Reveal } from "@/components/ui/Reveal";
+import Link from "next/link";
+
+interface InnovationItem {
+  tag: string;
+  title: string;
+  desc: React.ReactNode;
+}
 
 export function IndustryInnovation() {
-  const innovations = [
+  const innovations: InnovationItem[] = [
     {
       tag: "AI Lab Application",
       title: "Dynamic Triage Graphs",
-      desc: "Deploying LangGraph email sorting blocks to automate logistics routing tickets."
+      desc: <>Deploying <Link href="/services/ai-data-innovation" className="text-rose-500 hover:underline">LangGraph email sorting blocks</Link> to automate logistics routing tickets.</>
     },
     {
       tag: "Cloud Lab Application",
       title: "Scale-to-Zero Compute",
-      desc: "Integrating event-driven KEDA schedulers to drop standby test environments automatically."
+      desc: <>Integrating event-driven <Link href="/services/cloud-services" className="text-rose-500 hover:underline">KEDA schedulers</Link> to drop standby test environments automatically.</>
     },
     {
       tag: "DevOps Lab Application",
       title: "Canary Auto-Rollbacks",
-      desc: "Wiring telemetry alert policies directly to ArgoCD triggers to undo unstable application updates."
+      desc: <>Wiring telemetry alert policies directly to <Link href="/services/devops-automation" className="text-rose-500 hover:underline">ArgoCD triggers</Link> to undo unstable application updates.</>
     }
   ];
 

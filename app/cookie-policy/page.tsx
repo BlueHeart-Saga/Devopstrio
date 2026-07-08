@@ -1,6 +1,7 @@
 import React from "react";
 import { LegalPageLayout } from "@/components/LegalPageLayout";
 import { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Cookie Policy | Devopstrio",
@@ -21,7 +22,7 @@ export default function CookiePolicyPage() {
             This Cookie Policy explains how Devopstrio (“we,” “us,” or “our”) uses cookies and similar tracking technologies (such as web beacons, pixels, and local storage tags) when you visit our website (www.devopstrio.com) or interact with our client dashboards.
           </p>
           <p>
-            We believe in complete transparency regarding data practices. This policy outlines what cookies are, how and why we employ them, the specific categories of cookies we implement, and the options you have to configure or restrict their deployment.
+            We believe in complete transparency regarding data practices. This policy outlines what cookies are, how and why we employ them, the specific categories of cookies we implement, and the options you have to configure or restrict their deployment. Learn more in our <Link href="/privacy-policy" className="text-rose-500 hover:underline font-bold">Privacy Policy</Link>.
           </p>
         </div>
       )
@@ -58,7 +59,7 @@ export default function CookiePolicyPage() {
           <ul className="list-disc pl-6 space-y-1.5 text-zinc-400">
             <li>Identify you when you visit our Site and help you navigate between pages efficiently.</li>
             <li>Store information about your preferences, allowing us to customize the layout, language settings, and interface theme.</li>
-            <li>Manage secure logins and protect user accounts from fraudulent access or CSRF vulnerability attacks.</li>
+            <li>Manage secure logins under our <Link href="/services/cybersecurity" className="text-rose-500 hover:underline font-bold">cybersecurity services</Link> and protect user accounts from fraudulent access or CSRF vulnerability attacks.</li>
             <li>Analyze the performance, speed, and overall usage of our website and services.</li>
           </ul>
         </div>
@@ -157,7 +158,7 @@ export default function CookiePolicyPage() {
       title: "Policy Updates",
       content: (
         <p>
-          We will update this Cookie Policy from time to time to reflect modifications in our tracking practices or regulatory compliance updates. Any updates will be posted on this page with an adjusted date.
+          We will update this Cookie Policy from time to time to reflect modifications in our tracking practices or <Link href="/gdpr" className="text-rose-500 hover:underline font-bold">GDPR compliance</Link> updates. Any updates will be posted on this page with an adjusted date.
         </p>
       )
     }

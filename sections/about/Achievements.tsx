@@ -3,6 +3,7 @@
 import React from "react";
 import { Reveal } from "@/components/ui/Reveal";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const concreteAchievements = [
   {
@@ -84,7 +85,7 @@ export function Achievements() {
                 Driving technology transformation through <span className="text-rose-500">innovation, expertise, and measurable business impact.</span>
               </h2>
               <p className="text-zinc-400 text-xs md:text-sm leading-relaxed font-semibold">
-                We combine advanced cloud methodologies with modern software engineering to build resilient, secure, and cost-efficient digital ecosystems.
+                We combine advanced <Link href="/services/cloud-services" className="text-rose-500 hover:underline">cloud methodologies</Link> with modern <Link href="/services/software-development" className="text-rose-500 hover:underline">software engineering</Link> to build resilient, secure, and cost-efficient digital ecosystems.
               </p>
             </Reveal>
           </div>

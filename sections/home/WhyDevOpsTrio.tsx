@@ -3,6 +3,7 @@
 import React from "react";
 import { Reveal } from "@/components/ui/Reveal";
 import { CheckCircle2, ArrowUpRight } from "lucide-react";
+import Link from "next/link";
 
 const corePoints = [
   {
@@ -11,7 +12,8 @@ const corePoints = [
     title: "Global Presence, Local Expertise",
     desc: "Access world-class engineering expertise locally with global delivery teams designed to scale seamlessly under flexible engagement models.",
     gradient: "from-rose-950/40 via-purple-950/30 to-zinc-950/80",
-    image: "/assets/Home-page/whychoose/globalpresence.png"
+    image: "/assets/Home-page/whychoose/globalpresence.png",
+    href: "/about"
   },
   {
     num: "02",
@@ -19,7 +21,8 @@ const corePoints = [
     title: "Cloud, Data & AI Excellence",
     desc: "Leverage intelligence-driven automation, GenAI, and cloud platforms (Azure, AWS, GCP) to unlock next-generation product engineering.",
     gradient: "from-blue-950/40 via-indigo-950/30 to-zinc-950/80",
-    image: "/assets/Home-page/whychoose/cloudai.png"
+    image: "/assets/Home-page/whychoose/cloudai.png",
+    href: "/services/ai-data-innovation"
   },
   {
     num: "03",
@@ -27,7 +30,8 @@ const corePoints = [
     title: "Outcome-Driven Transformation",
     desc: "We align every project outcome with direct business value, performance milestones, cost-efficiency metrics, and operational goals.",
     gradient: "from-teal-950/40 via-emerald-950/30 to-zinc-950/80",
-    image: "/assets/Home-page/whychoose/outcome.png"
+    image: "/assets/Home-page/whychoose/outcome.png",
+    href: "/about"
   },
   {
     num: "04",
@@ -35,7 +39,8 @@ const corePoints = [
     title: "End-to-End Technology Delivery",
     desc: "From conceptualization, design, architecture, implementation to managed operations and continuous delivery—all managed under one strategic partner.",
     gradient: "from-emerald-950/40 via-zinc-900/30 to-zinc-950/80",
-    image: "/assets/Home-page/whychoose/technology.png"
+    image: "/assets/Home-page/whychoose/technology.png",
+    href: "/ecosystem/global-delivery"
   },
   {
     num: "05",
@@ -43,7 +48,8 @@ const corePoints = [
     title: "Multi-Cloud Engineering Leadership",
     desc: "Our certified cloud experts build resilient infrastructures on AWS, Azure, Google Cloud, and complex hybrid environments.",
     gradient: "from-indigo-950/40 via-pink-950/30 to-zinc-950/80",
-    image: "/assets/Home-page/whychoose/multicloud.png"
+    image: "/assets/Home-page/whychoose/multicloud.png",
+    href: "/services/cloud-services"
   },
   {
     num: "06",
@@ -51,7 +57,8 @@ const corePoints = [
     title: "Enterprise-Grade Security & Reliability",
     desc: "Zero-trust environments, compliance guardrails, automated threat-detection, and highly reliable Site Reliability Engineering built into every delivery.",
     gradient: "from-violet-950/40 via-fuchsia-950/30 to-zinc-950/80",
-    image: "/assets/Home-page/whychoose/gradesecurity.png"
+    image: "/assets/Home-page/whychoose/gradesecurity.png",
+    href: "/services/cybersecurity"
   },
   {
     num: "07",
@@ -59,7 +66,8 @@ const corePoints = [
     title: "Scalable Global Delivery Model",
     desc: "Scale teams dynamically with elite developers, DevOps engineers, and cloud architects operating under our optimized global framework.",
     gradient: "from-fuchsia-950/40 via-rose-950/30 to-zinc-950/80",
-    image: "/assets/Home-page/whychoose/globaldeliver.png"
+    image: "/assets/Home-page/whychoose/globaldeliver.png",
+    href: "/ecosystem/global-delivery"
   },
   {
     num: "08",
@@ -67,7 +75,8 @@ const corePoints = [
     title: "Long-Term Strategic Partnership",
     desc: "We focus on long-term relationships, strategic consulting, knowledge-sharing, and continuous value creation beyond transactional contracts.",
     gradient: "from-rose-950/40 via-orange-950/30 to-zinc-950/80",
-    image: "/assets/Home-page/whychoose/partnership.png"
+    image: "/assets/Home-page/whychoose/partnership.png",
+    href: "/about"
   }
 ];
 
@@ -202,7 +211,7 @@ export function WhyDevopstrio() {
           </Reveal>
           <Reveal delay={0.2}>
             <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-bold max-w-2xl mx-auto drop-shadow-md">
-              We combine deep technical expertise, industry knowledge, and modern engineering practices to help organizations innovate faster, operate securely, and scale confidently in an increasingly digital world.
+              We combine deep technical expertise, <Link href="/industries" className="text-rose-500 hover:underline">industry knowledge</Link>, and <Link href="/ecosystem/engineering-excellence" className="text-rose-500 hover:underline">modern engineering practices</Link> to help organizations innovate faster, <Link href="/services/cybersecurity" className="text-rose-500 hover:underline">operate securely</Link>, and scale confidently in an increasingly digital world.
             </p>
           </Reveal>
         </div>
@@ -219,7 +228,7 @@ export function WhyDevopstrio() {
                 style={{ top: `${100 + idx * 30}px`, zIndex: idx }}
               >
                 <Reveal delay={0}>
-                  <div className="relative rounded-[24px] border border-zinc-800/80 bg-[#0A0A0A] overflow-hidden flex flex-col aspect-[16/10] group shadow-[0_15px_35px_rgba(0,0,0,0.5)] transition-colors duration-500 hover:border-zinc-700 cursor-pointer">
+                  <Link href={point.href} className="relative rounded-[24px] border border-zinc-800/80 bg-[#0A0A0A] overflow-hidden flex flex-col aspect-[16/10] group shadow-[0_15px_35px_rgba(0,0,0,0.5)] transition-colors duration-500 hover:border-zinc-700 cursor-pointer block">
                     
                     {/* Base Image Layer (Always visible, blurs slightly on hover) */}
                     <div className="absolute inset-0 z-0 transition-all duration-700 ease-in-out group-hover:blur-md group-hover:scale-105">
@@ -258,7 +267,7 @@ export function WhyDevopstrio() {
                       </div>
                     </div>
 
-                  </div>
+                  </Link>
                 </Reveal>
               </div>
             ))}
@@ -273,7 +282,7 @@ export function WhyDevopstrio() {
                 style={{ top: `${100 + idx * 30}px`, zIndex: idx }}
               >
                 <Reveal delay={0}>
-                  <div className="relative rounded-[24px] border border-zinc-800/80 bg-[#0A0A0A] overflow-hidden flex flex-col aspect-[16/10] group shadow-[0_15px_35px_rgba(0,0,0,0.5)] transition-colors duration-500 hover:border-zinc-700 cursor-pointer">
+                  <Link href={point.href} className="relative rounded-[24px] border border-zinc-800/80 bg-[#0A0A0A] overflow-hidden flex flex-col aspect-[16/10] group shadow-[0_15px_35px_rgba(0,0,0,0.5)] transition-colors duration-500 hover:border-zinc-700 cursor-pointer block">
                     
                     {/* Base Image Layer (Always visible, blurs slightly on hover) */}
                     <div className="absolute inset-0 z-0 transition-all duration-700 ease-in-out group-hover:blur-md group-hover:scale-105">
@@ -312,7 +321,7 @@ export function WhyDevopstrio() {
                       </div>
                     </div>
 
-                  </div>
+                  </Link>
                 </Reveal>
               </div>
             ))}
@@ -359,7 +368,7 @@ export function WhyDevopstrio() {
 
           <Reveal className="py-8 border-r-4 border-r-rose-600 pr-8 pl-4 bg-gradient-to-l from-rose-950/10 to-transparent flex items-center h-full">
             <p className="text-base md:text-lg font-light leading-relaxed text-zinc-300">
-              Devopstrio is more than a technology provider—we are a <span className="font-bold text-white">strategic partner</span> helping organizations build secure, scalable, and intelligent digital ecosystems for the future.
+              Devopstrio is more than a technology provider—we are a <Link href="/about" className="font-bold text-rose-500 hover:underline">strategic partner</Link> helping organizations build secure, scalable, and <Link href="/ecosystem" className="font-bold text-rose-500 hover:underline">intelligent digital ecosystems</Link> for the future.
             </p>
           </Reveal>
 

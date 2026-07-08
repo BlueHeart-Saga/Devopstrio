@@ -37,6 +37,8 @@ const certifications = [
   { year: "2013", title: "IBM Platinum Partner", logo: "/assets/Awards/IBM_Platinum_Award_2013.png" },
 ];
 
+import Link from "next/link";
+
 export function AllCertifications() {
   return (
     <section className="py-24 bg-black text-white relative overflow-hidden z-10">
@@ -46,9 +48,12 @@ export function AllCertifications() {
             <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-[#E11D48] mb-3 block">
               Recognitions
             </span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-4">
               Our <span className="text-[#E11D48]">Certifications </span>
             </h2>
+            <p className="text-zinc-400 text-xs md:text-sm max-w-2xl leading-relaxed">
+              Our certifications validate our deep capability in cloud architectures and platform security. Read more about our <Link href="/about/awards-recognition" className="text-[#E11D48] hover:underline font-bold">awards & recognition</Link> or discover how we support <Link href="/services/cybersecurity" className="text-[#E11D48] hover:underline font-bold">cybersecurity framework</Link> implementations.
+            </p>
           </div>
         </Reveal>
 

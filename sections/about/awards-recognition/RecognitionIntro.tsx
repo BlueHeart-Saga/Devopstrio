@@ -2,23 +2,24 @@
 import React from "react";
 import { Reveal } from "@/components/ui/Reveal";
 import { ShieldCheck, Cpu, TrendingUp } from "lucide-react";
+import Link from "next/link";
 
 export function RecognitionIntro() {
   const values = [
     {
       icon: <ShieldCheck className="w-6 h-6 text-rose-500" />,
       title: "Client Impact",
-      description: "Recognition is strongest when it reflects measurable outcomes, trust, and long-term collaboration."
+      description: <>Recognition is strongest when it reflects measurable outcomes, trust, and long-term client <Link href="/contact" className="text-[#E11D48] hover:underline">collaboration</Link>.</>
     },
     {
       icon: <Cpu className="w-6 h-6 text-rose-500" />,
       title: "Engineering Excellence",
-      description: "Our progress is shaped by disciplined delivery, continuous learning, and strong technical execution."
+      description: <>Our progress is shaped by disciplined delivery, continuous learning, and strong technical <Link href="/services/software-development/product-engineering" className="text-[#E11D48] hover:underline">execution models</Link>.</>
     },
     {
       icon: <TrendingUp className="w-6 h-6 text-rose-500" />,
       title: "Sustained Growth",
-      description: "Milestones and recognition also represent the evolution of our people, platforms, partnerships, and global ambition."
+      description: <>Milestones and recognition also represent the evolution of our people, platforms, <Link href="/ecosystem/partnerships" className="text-[#E11D48] hover:underline">partnerships</Link>, and global ambition.</>
     }
   ];
 
@@ -34,7 +35,7 @@ export function RecognitionIntro() {
               Recognition Is a Reflection of Impact, Discipline, and Growth
             </h2>
             <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
-              At Devopstrio, recognition is not viewed as a standalone achievement. It is a reflection of the work we do for clients, the standards we uphold in delivery, and the commitment of our teams across engineering, operations, and innovation. Every milestone, award, and acknowledgement reinforces our belief in building technology partnerships that create lasting value.
+              At Devopstrio, recognition is not viewed as a standalone achievement. It is a reflection of the work we do for clients, the standards we uphold in delivery, and the commitment of our teams across <Link href="/services" className="text-[#E11D48] hover:underline">engineering</Link>, operations, and <Link href="/ecosystem/innovation-labs" className="text-[#E11D48] hover:underline">innovation</Link>. Every milestone, award, and acknowledgement reinforces our belief in building technology partnerships that create lasting value.
             </p>
           </div>
         </Reveal>

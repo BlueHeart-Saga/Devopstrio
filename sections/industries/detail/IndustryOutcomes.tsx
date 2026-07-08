@@ -2,11 +2,12 @@
 
 import React from "react";
 import { Reveal } from "@/components/ui/Reveal";
+import Link from "next/link";
 
 interface OutcomeItem {
   value: string;
   label: string;
-  desc: string;
+  desc: React.ReactNode;
 }
 
 interface IndustryOutcomesProps {

@@ -4,6 +4,7 @@ import React from "react";
 import { Reveal } from "@/components/ui/Reveal";
 import { ArrowUpRight } from "lucide-react";
 import CardSwap, { Card } from "@/components/ui/CardSwap";
+import Link from "next/link";
 
 const products = [
   {
@@ -93,7 +94,7 @@ export function OurProducts() {
             </Reveal>
             <Reveal>
               <p className="text-zinc-400 text-lg md:text-xl leading-relaxed mb-10 max-w-xl">
-                We build and operate a suite of vertical-specific SaaS products designed to transform industries. From PropTech to HealthTech, our platforms represent the cutting-edge of product innovation.
+                We build and operate a suite of vertical-specific <Link href="/ecosystem/platforms-solutions/saas-platforms" className="text-rose-500 hover:underline">SaaS products</Link> designed to transform industries. From PropTech to HealthTech, our platforms represent the cutting-edge of <Link href="/ecosystem/platforms-solutions" className="text-rose-500 hover:underline">product innovation</Link>.
               </p>
             </Reveal>
             <Reveal>
@@ -106,7 +107,7 @@ export function OurProducts() {
 
                 </a>
                 <a
-                  href="/products"
+                  href="/ecosystem/platforms-solutions/saas-platforms"
                   className="inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase border border-zinc-850 hover:border-zinc-750 bg-zinc-950/60 hover:bg-zinc-900 text-white transition-all duration-300 hover:-translate-y-0.5"
                 >
                   View all products

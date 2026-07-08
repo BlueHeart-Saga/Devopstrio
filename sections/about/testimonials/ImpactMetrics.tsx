@@ -30,6 +30,8 @@ function AnimatedNumber({ target, suffix, decimal, active }: {
   return <>{decimal ? count.toFixed(2) : count}{suffix}</>;
 }
 
+import Link from "next/link";
+
 export const ImpactMetrics = () => {
   const [visible, setVisible] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
@@ -62,6 +64,15 @@ export const ImpactMetrics = () => {
           >
             Outcomes That <span className="text-rose-500">Speak for Themselves</span>
           </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="text-zinc-400 text-sm md:text-base leading-relaxed font-bold max-w-xl mx-auto mb-8"
+          >
+            Delivering high impact across all cloud environments. Learn how our <Link href="/services/managed-services" className="text-rose-500 hover:underline">managed support services</Link> and <Link href="/services/cybersecurity" className="text-rose-500 hover:underline">cybersecurity</Link> audits drive savings.
+          </motion.p>
         </div>
 
         <div ref={ref} className="grid grid-cols-2 md:grid-cols-3 gap-5">

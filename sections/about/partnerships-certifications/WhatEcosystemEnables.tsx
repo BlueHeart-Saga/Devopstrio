@@ -3,22 +3,24 @@
 import { Reveal } from "@/components/ui/Reveal";
 import { Cloud, Cog, Brain, Workflow, Lock, Settings } from "lucide-react";
 
+import Link from "next/link";
+
 export function WhatEcosystemEnables() {
   const cards = [
     {
       icon: <Cloud className="w-6 h-6 text-rose-500" />,
       title: "Cloud Migration & Modernization",
-      desc: "Using cloud partner ecosystems, Devopstrio helps organizations migrate legacy systems, modernize workloads, and improve scalability, resilience, and cost control."
+      desc: <>Using cloud partner ecosystems, Devopstrio helps organizations migrate legacy systems, modernize workloads. Learn more about our <Link href="/services/cloud-services" className="text-rose-500 hover:underline font-bold">cloud services</Link>.</>
     },
     {
       icon: <Cog className="w-6 h-6 text-rose-500" />,
       title: "DevOps & Platform Engineering",
-      desc: "Leveraging native tooling to build automated CI/CD pipelines, robust infrastructure-as-code, and continuous delivery systems."
+      desc: <>Leveraging native tooling to build automated CI/CD pipelines, robust infrastructure-as-code, and continuous delivery systems under our <Link href="/services/devops-automation" className="text-rose-500 hover:underline font-bold">DevOps automation</Link> services.</>
     },
     {
       icon: <Brain className="w-6 h-6 text-rose-500" />,
       title: "AI & Data Transformation",
-      desc: "Integrating intelligent data platforms and AI services to unlock analytics, predictive models, and smarter business insights."
+      desc: <>Integrating intelligent data platforms and AI services to unlock analytics, predictive models under our <Link href="/services/ai-data-innovation" className="text-rose-500 hover:underline font-bold">AI & data innovation</Link> model.</>
     },
     {
       icon: <Workflow className="w-6 h-6 text-rose-500" />,
@@ -28,12 +30,12 @@ export function WhatEcosystemEnables() {
     {
       icon: <Lock className="w-6 h-6 text-rose-500" />,
       title: "Cybersecurity & Governance",
-      desc: "Implementing zero-trust architectures and compliance-driven security controls native to top-tier cloud providers."
+      desc: <>Implementing zero-trust architectures and compliance-driven security controls native to top-tier cloud providers. Learn about our <Link href="/services/cybersecurity" className="text-rose-500 hover:underline font-bold">cybersecurity</Link> offerings.</>
     },
     {
       icon: <Settings className="w-6 h-6 text-rose-500" />,
       title: "Managed Services & Continuous Ops",
-      desc: "Providing 24/7 observability, proactive maintenance, and iterative optimizations across all partner ecosystems."
+      desc: <>Providing 24/7 observability, proactive maintenance, and iterative optimizations. Learn about our <Link href="/services/managed-services" className="text-rose-500 hover:underline font-bold">managed services</Link>.</>
     }
   ];
 

@@ -2,6 +2,7 @@
 
 import React from "react";
 import { Reveal } from "@/components/ui/Reveal";
+import Link from "next/link";
 
 const metrics = [
   // Row 1
@@ -38,7 +39,7 @@ export function MetricsStats() {
               The <span className="text-rose-500">results speak for themselves</span> — <span className="font-bold">every time.</span>
             </h2>
             <p className="text-zinc-400 text-xs md:text-sm leading-relaxed font-semibold">
-              These aren't marketing numbers. They're metrics pulled from real client engagements, measured against real business outcomes, and verified by the enterprises we serve.
+              These aren't marketing numbers. They're metrics pulled from <Link href="/insights/case-studies" className="text-rose-500 hover:underline">real client engagements</Link>, measured against real business outcomes, and verified by the enterprises we serve.
             </p>
           </div>
 

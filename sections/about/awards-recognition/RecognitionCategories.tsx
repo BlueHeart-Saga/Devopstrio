@@ -2,26 +2,27 @@
 import React from "react";
 import { Reveal } from "@/components/ui/Reveal";
 import { Handshake, Zap, Users, LineChart } from "lucide-react";
+import Link from "next/link";
 
 const categories = [
   {
     title: "Delivery & Client Trust",
-    description: "Recognition connected to project execution, reliability, and long-term enterprise client partnerships.",
+    description: <>Recognition connected to project execution, reliability, and long-term enterprise client <Link href="/contact" className="text-[#E11D48] hover:underline">partnerships</Link>.</>,
     icon: <Handshake className="w-6 h-6 text-rose-500" />
   },
   {
     title: "Technology & Innovation",
-    description: "Recognition tied to engineering capability, product thinking, automation, cloud, AI, and digital transformation.",
+    description: <>Recognition tied to engineering capability, product thinking, automation, <Link href="/services/cloud-services" className="text-[#E11D48] hover:underline">cloud services</Link>, AI, and <Link href="/services/digital-transformation" className="text-[#E11D48] hover:underline">digital transformation</Link>.</>,
     icon: <Zap className="w-6 h-6 text-rose-500" />
   },
   {
     title: "People & Culture",
-    description: "Recognition related to team growth, talent development, internship initiatives, and culture-building efforts.",
+    description: <>Recognition related to team growth, talent development, internship initiatives, and <Link href="/careers" className="text-[#E11D48] hover:underline">culture-building efforts</Link>.</>,
     icon: <Users className="w-6 h-6 text-rose-500" />
   },
   {
     title: "Growth & Market Presence",
-    description: "Recognition associated with business expansion, ecosystem development, global partnerships, and market visibility.",
+    description: <>Recognition associated with business expansion, ecosystem development, global <Link href="/ecosystem/partnerships" className="text-[#E11D48] hover:underline">partnerships</Link>, and market visibility.</>,
     icon: <LineChart className="w-6 h-6 text-rose-500" />
   }
 ];

@@ -34,7 +34,7 @@ export function PresenceHero() {
           
           <Reveal delay={0.1}>
             <p className="text-sm md:text-base text-zinc-300 font-medium max-w-xl mb-10 leading-relaxed">
-              Devopstrio combines strategic leadership, distributed engineering, and round-the-clock operational support to help organizations across industries modernize, scale, and innovate—wherever they operate.
+              Devopstrio combines strategic leadership, distributed <Link href="/services" className="text-[#E11D48] hover:underline">engineering</Link>, and round-the-clock <Link href="/services/managed-services" className="text-[#E11D48] hover:underline">operational support</Link> to help organizations across <Link href="/industries" className="text-[#E11D48] hover:underline">industries</Link> modernize, scale, and innovate—wherever they operate.
             </p>
           </Reveal>
 

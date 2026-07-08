@@ -3,6 +3,8 @@
 import React from "react";
 import { Reveal } from "@/components/ui/Reveal";
 
+import Link from "next/link";
+
 export function InsightsHero() {
   return (
     <section className="relative w-full min-h-[80vh] flex items-center bg-[#030303] text-white pt-28 pb-16 lg:pt-36 lg:pb-24 overflow-hidden">
@@ -37,7 +39,7 @@ export function InsightsHero() {
             {/* Description */}
             <Reveal delay={0.2}>
               <p className="text-zinc-400 text-xs sm:text-sm md:text-base leading-relaxed font-semibold max-w-xl mb-8">
-                Explore engineering blueprints, security assessments, platform configurations, and corporate growth narratives written by Devopstrio SRE and platform specialists.
+                Explore engineering blueprints, security assessments, platform configurations, and corporate growth narratives written by Devopstrio SRE and platform specialists. Learn about our <Link href="/services/devops-automation" className="text-[#E11D48] hover:underline font-bold">DevOps automation</Link> or read our <Link href="/about/overview" className="text-[#E11D48] hover:underline font-bold">company overview</Link>.
               </p>
             </Reveal>
 

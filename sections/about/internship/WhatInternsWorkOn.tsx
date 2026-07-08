@@ -3,6 +3,8 @@ import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
+import Link from "next/link";
+
 export const WhatInternsWorkOn = () => {
   const projects = [
     {
@@ -72,12 +74,12 @@ export const WhatInternsWorkOn = () => {
   ];
 
   const tasks = [
-    { title: "Build React Components", desc: "Write modern, fully-accessible TSX layouts with Tailwind CSS, supporting responsive rules." },
+    { title: "Build React Components", desc: <>Write modern, fully-accessible TSX layouts with Tailwind CSS, supporting responsive rules for our <Link href="/services/software-development" className="text-rose-500 hover:underline">software development</Link> products.</> },
     { title: "Create APIs", desc: "Design REST & gRPC endpoint paths using Node.js and FastAPI, supporting authentication layers." },
     { title: "Deploy Applications", desc: "Configure multi-account cloud landing platforms, container networks, and CDN routing plans." },
-    { title: "Implement CI/CD", desc: "Build automated testing scripts and deployment pipelines using GitHub Actions and ArgoCD." },
-    { title: "Manage Cloud Infrastructure", desc: "Write reusable Infrastructure-as-Code setups in Terraform targeting AWS, Azure and GCP." },
-    { title: "Develop AI Features", desc: "Fine-tune LLM systems, build semantic cache databases, and create stateful autonomous agents." }
+    { title: "Implement CI/CD", desc: <>Build automated testing scripts and deployment pipelines using GitHub Actions and ArgoCD as part of <Link href="/services/devops-automation" className="text-rose-500 hover:underline">DevOps automation</Link>.</> },
+    { title: "Manage Cloud Infrastructure", desc:  <>Write reusable Infrastructure-as-Code setups in Terraform targeting AWS, Azure and GCP under our <Link href="/services/cloud-services" className="text-rose-500 hover:underline">cloud services</Link> model.</> },
+    { title: "Develop AI Features", desc: <>Fine-tune LLM systems, build semantic cache databases, and create stateful autonomous agents for <Link href="/services/ai-data-innovation" className="text-rose-500 hover:underline">AI & data innovation</Link>.</> }
   ];
 
   return (

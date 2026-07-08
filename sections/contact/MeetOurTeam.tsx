@@ -2,12 +2,45 @@
 
 import React from "react";
 import { Reveal } from "@/components/ui/Reveal";
+import Link from "next/link";
 
 const keyLeaders = [
-  { name: "Marcus Vance", role: "Principal Cloud Architect", expertise: "AWS specialist, managing secure landing zone design." },
-  { name: "Elena Rostova", role: "Director of AI Practice", expertise: "Architecting governed multi-agent and LLM frameworks." },
-  { name: "David Chen", role: "Head of Platform & SRE", expertise: "Specialist in CI/CD pipeline automation and drift control." },
-  { name: "Sarah Jenkins", role: "VP of Cyber Governance", expertise: "Advising on SOC-2, HIPAA, and Zero-Trust network setups." }
+  {
+    name: "Marcus Vance",
+    role: "Principal Cloud Architect",
+    expertise: (
+      <>
+        AWS specialist, managing secure <Link href="/ecosystem/landing-zone" className="text-rose-500 hover:underline">landing zone</Link> design.
+      </>
+    )
+  },
+  {
+    name: "Elena Rostova",
+    role: "Director of AI Practice",
+    expertise: (
+      <>
+        Architecting governed multi-agent and <Link href="/services/ai-data-innovation" className="text-rose-500 hover:underline">LLM frameworks</Link>.
+      </>
+    )
+  },
+  {
+    name: "David Chen",
+    role: "Head of Platform & SRE",
+    expertise: (
+      <>
+        Specialist in <Link href="/services/devops-automation" className="text-rose-500 hover:underline">CI/CD pipeline automation</Link> and drift control.
+      </>
+    )
+  },
+  {
+    name: "Sarah Jenkins",
+    role: "VP of Cyber Governance",
+    expertise: (
+      <>
+        Advising on SOC-2, HIPAA, and <Link href="/services/cybersecurity" className="text-rose-500 hover:underline">Zero-Trust</Link> network setups.
+      </>
+    )
+  }
 ];
 
 export function MeetOurTeam() {

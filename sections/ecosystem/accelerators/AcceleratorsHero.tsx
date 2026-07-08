@@ -55,7 +55,7 @@ export function AcceleratorsHero() {
 
         <Reveal delay={0.2} className="max-w-3xl">
           <p className="text-zinc-350 text-xs md:text-sm lg:text-base leading-relaxed font-normal max-w-3xl text-center mx-auto opacity-95 mb-10">
-            Leverage Devopstrio's proven frameworks, automation accelerators, cloud blueprints, and engineering toolkits to reduce delivery timelines, improve quality, and scale innovation faster.
+            Leverage Devopstrio's proven frameworks, <Link href="/services/devops-automation" className="text-rose-500 hover:underline font-bold">DevOps automation accelerators</Link>, <Link href="/services/cloud-services" className="text-rose-500 hover:underline font-bold">cloud services blueprints</Link>, and engineering toolkits to reduce delivery timelines, improve quality, and scale innovation faster.
           </p>
         </Reveal>
 

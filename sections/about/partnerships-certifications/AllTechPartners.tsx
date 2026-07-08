@@ -63,6 +63,8 @@ const techPartners = [
   }
 ];
 
+import Link from "next/link";
+
 export function AllTechPartners() {
   return (
     <section className="py-24 bg-black text-white relative overflow-hidden z-10">
@@ -72,9 +74,12 @@ export function AllTechPartners() {
             <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-[#E11D48] mb-3 block">
               Technology Stack
             </span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-4">
               Our Tech <span className="text-[#E11D48]">Partners</span>
             </h2>
+            <p className="text-zinc-400 text-xs md:text-sm max-w-2xl leading-relaxed">
+              Our tech stack integrations empower modern engineering architectures. Explore our specialized <Link href="/services/cloud-services" className="text-[#E11D48] hover:underline font-bold">cloud solutions</Link>, <Link href="/services/devops-automation" className="text-[#E11D48] hover:underline font-bold">DevOps pipelines</Link>, and <Link href="/services/ai-data-innovation" className="text-[#E11D48] hover:underline font-bold">AI workflow enablement</Link>.
+            </p>
           </div>
         </Reveal>
 

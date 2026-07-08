@@ -3,6 +3,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
+import Link from "next/link";
 
 interface Metric {
   value: string;
@@ -11,7 +12,7 @@ interface Metric {
 
 interface CaseStudyItem {
   title: string;
-  desc: string;
+  desc: React.ReactNode;
   metrics: Metric[];
   highlights: string[];
   image?: string;
@@ -19,7 +20,7 @@ interface CaseStudyItem {
 
 interface IndustryCaseStudyProps {
   caseStudyTitle: string;
-  caseStudyDesc: string;
+  caseStudyDesc: React.ReactNode;
   metrics: Metric[];
   caseStudyHighlights: string[];
 }
@@ -38,7 +39,7 @@ export function IndustryCaseStudy({
   const defaultSlides: CaseStudyItem[] = [
     {
       title: "Global High-Frequency Ledger Migrations",
-      desc: "Reconstructed banking mainframe ledgers into low-latency distributed databases, serving 45,000 requests per second with high consistency.",
+      desc: <>Reconstructed banking mainframe ledgers into low-latency <Link href="/services/cloud-services" className="text-rose-500 hover:underline">distributed databases</Link>, serving 45,000 requests per second with high consistency.</>,
       metrics: [
         { value: "45K/s", label: "Tx Throughput" },
         { value: "99.999%", label: "System Uptime" },
@@ -53,7 +54,7 @@ export function IndustryCaseStudy({
     },
     {
       title: "Automated SOC-2 Security Audits",
-      desc: "Constructed real-time drift detection agents that scan configurations against compliance rules hourly to secure staging loops.",
+      desc: <>Constructed real-time drift detection agents that scan configurations against <Link href="/services/cybersecurity" className="text-rose-500 hover:underline">compliance rules</Link> hourly to secure <Link href="/services/devops-automation" className="text-rose-500 hover:underline">staging loops</Link>.</>,
       metrics: [
         { value: "100%", label: "SOC-2 Checked" },
         { value: "< 1hr", label: "Drift Alert Time" },
@@ -68,7 +69,7 @@ export function IndustryCaseStudy({
     },
     {
       title: "Multi-Region Disaster Protection",
-      desc: "Deployed cross-continent Kubernetes state synchronization systems to handle severe cloud network cuts and power grids.",
+      desc: <>Deployed cross-continent <Link href="/services/cloud-services" className="text-rose-500 hover:underline">Kubernetes</Link> and <Link href="/services/devops-automation" className="text-rose-500 hover:underline">state synchronization</Link> systems to handle severe cloud network cuts and power grids.</>,
       metrics: [
         { value: "< 5s", label: "Failover Target" },
         { value: "Zero", label: "Data Loss (RPO)" },
@@ -83,7 +84,7 @@ export function IndustryCaseStudy({
     },
     {
       title: "Cloud Cost Optimization Initiative",
-      desc: "Replaced redundant compute pools with serverless scaling and optimized database cache nodes under private VPCs.",
+      desc: <>Replaced redundant compute pools with <Link href="/services/cloud-services" className="text-rose-500 hover:underline">serverless scaling</Link> and optimized database cache nodes under private VPCs.</>,
       metrics: [
         { value: "42%", label: "Hosting Cost Drop" },
         { value: "$1.2M", label: "Annualized Saving" },
@@ -98,7 +99,7 @@ export function IndustryCaseStudy({
     },
     {
       title: "Generative AI Platform Scale",
-      desc: "Constructed GPU clustering pipelines and vector db indexing frameworks to host LLM-driven chat tools.",
+      desc: <>Constructed GPU clustering pipelines and <Link href="/services/ai-data-innovation" className="text-rose-500 hover:underline">vector db indexing</Link> frameworks to host <Link href="/services/ai-data-innovation" className="text-rose-500 hover:underline">LLM-driven chat tools</Link>.</>,
       metrics: [
         { value: "24M", label: "Daily Queries" },
         { value: "35ms", label: "Model Latency" },
@@ -113,7 +114,7 @@ export function IndustryCaseStudy({
     },
     {
       title: "GitOps CD Continuous Deployments",
-      desc: "Implemented unified ArgoCD controllers managing 400 microservices across staging and prod sites.",
+      desc: <>Implemented unified <Link href="/services/devops-automation" className="text-rose-500 hover:underline">ArgoCD controllers</Link> managing 400 <Link href="/services/cloud-services" className="text-rose-500 hover:underline">microservices</Link> across staging and prod sites.</>,
       metrics: [
         { value: "15,000+", label: "Monthly Builds" },
         { value: "4.8m", label: "Deploy Time" },
@@ -128,7 +129,7 @@ export function IndustryCaseStudy({
     },
     {
       title: "24/7 SRE Telemetry & Monitoring",
-      desc: "Configured unified Prometheus and OpenTelemetry agents collecting system health metrics from 12 edge centers.",
+      desc: <>Configured unified Prometheus and <Link href="/services/devops-automation" className="text-rose-500 hover:underline">OpenTelemetry</Link> agents collecting system health metrics from 12 edge centers.</>,
       metrics: [
         { value: "1.2B", label: "Daily Metrics" },
         { value: "< 2s", label: "Alert Notification" },
@@ -143,7 +144,7 @@ export function IndustryCaseStudy({
     },
     {
       title: "Microservices API Mesh Implementation",
-      desc: "Migrated legacy monolith backbones to high-performance Istio service meshes with mutual TLS.",
+      desc: <>Migrated legacy monolith backbones to high-performance <Link href="/services/cloud-services" className="text-rose-500 hover:underline">Istio service meshes</Link> with <Link href="/services/cybersecurity" className="text-rose-500 hover:underline">mutual TLS</Link>.</>,
       metrics: [
         { value: "400+", label: "Connected Nodes" },
         { value: "100%", label: "Encrypted Traffic" },
@@ -158,7 +159,7 @@ export function IndustryCaseStudy({
     },
     {
       title: "Zero-Trust Network Perimeter",
-      desc: "Architected modern boundary defenses using cloud-native firewalls, single sign-on hooks, and network isolation.",
+      desc: <>Architected modern boundary defenses using cloud-native firewalls, single sign-on hooks, and <Link href="/services/cybersecurity" className="text-rose-500 hover:underline">network isolation</Link>.</>,
       metrics: [
         { value: "Zero", label: "Boundary Penetration" },
         { value: "100%", label: "Endpoint Checked" },

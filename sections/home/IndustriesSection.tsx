@@ -4,6 +4,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { ArrowUpRight, Landmark, HeartPulse, ShoppingCart, Factory, Network, MonitorPlay, GraduationCap, Building2, Globe } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
+import Link from "next/link";
 
 const industries = [
   {
@@ -166,7 +167,7 @@ export function IndustriesSection() {
                 We Make Your Industry Journey Seamless
               </h2>
               <p className="text-zinc-400 text-base leading-relaxed mb-10">
-                From finding the perfect compliance strategy to closing operational gaps, we're here to make every step smooth and stress-free across regulated and high-growth sectors.
+                From finding the perfect <Link href="/services/cybersecurity" className="text-rose-500 hover:underline">compliance strategy</Link> to closing <Link href="/services/it-consulting" className="text-rose-500 hover:underline">operational gaps</Link>, we're here to make every step smooth and stress-free across regulated and high-growth sectors.
               </p>
               <a
                 href="/industries"

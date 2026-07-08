@@ -100,6 +100,8 @@ const caseStudies = [
   }
 ];
 
+import Link from "next/link";
+
 export const CaseStudyHighlights = () => {
   const [activeCategory, setActiveCategory] = useState("All");
   const carouselRef = useRef<HTMLDivElement>(null);
@@ -134,12 +136,12 @@ export const CaseStudyHighlights = () => {
           <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
             Case studies, news, and insights
           </h2>
-          <p className="text-zinc-400 text-base md:text-lg leading-relaxed mb-6">
-            Explore Devopstrio's perspective and latest updates highlighting our commitment to transformative innovation.
+          <p className="text-zinc-400 text-base md:text-lg leading-relaxed mb-6 font-medium">
+            Explore Devopstrio's perspective and latest updates highlighting our commitment to transformative innovation. Learn about our <Link href="/services" className="text-rose-500 hover:underline font-bold">digital services</Link> or read our <Link href="/about/overview" className="text-rose-500 hover:underline font-bold">company overview</Link>.
           </p>
-          <button className="bg-rose-600 hover:bg-rose-500 text-white px-8 py-3 rounded-full font-medium transition-all duration-300 shadow-[0_0_20px_rgba(225,29,72,0.3)] hover:shadow-[0_0_30px_rgba(225,29,72,0.5)]">
+          <Link href="/insights" className="inline-block bg-rose-600 hover:bg-rose-500 text-white px-8 py-3 rounded-full font-medium transition-all duration-300 shadow-[0_0_20px_rgba(225,29,72,0.3)] hover:shadow-[0_0_30px_rgba(225,29,72,0.5)]">
             Visit the insights blog
-          </button>
+          </Link>
         </div>
 
         {/* Filter Pills */}

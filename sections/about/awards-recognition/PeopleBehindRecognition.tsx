@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { Reveal } from "@/components/ui/Reveal";
+import Link from "next/link";
 
 export function PeopleBehindRecognition() {
   return (
@@ -38,10 +39,10 @@ export function PeopleBehindRecognition() {
                   Every Milestone Reflects the People Behind the Work
                 </h2>
                 <p className="text-zinc-400 text-base md:text-lg leading-relaxed mb-6">
-                  Behind every recognition, milestone, and achievement is a team of engineers, designers, strategists, support professionals, and collaborators committed to building meaningful outcomes.
+                  Behind every recognition, milestone, and achievement is a team of <Link href="/about" className="text-[#E11D48] hover:underline">engineers, designers, and collaborators</Link> committed to building meaningful outcomes.
                 </p>
                 <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
-                  At Devopstrio, recognition is shared across the teams, ideas, partnerships, and learning culture that make progress possible. It is a collective validation of the talent and dedication that drive our global delivery forward.
+                  At Devopstrio, recognition is shared across the teams, ideas, partnerships, and learning culture that make progress possible. It is a collective validation of the talent and dedication that drive our <Link href="/contact" className="text-[#E11D48] hover:underline">global delivery</Link> forward.
                 </p>
               </div>
             </Reveal>

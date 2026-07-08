@@ -1,5 +1,6 @@
 import React, { use } from "react";
 import { notFound } from "next/navigation";
+import Link from "next/link";
 import { getServiceByCategory, getCapability } from "@/data/services";
 import { getHeroBgImage } from "@/lib/services-utils";
 import { Hero } from "@/components/services/Hero";
@@ -88,11 +89,35 @@ export default function CapabilityPage({ params }: PageProps) {
   const overrides = isCloudArch ? {
     overviewHeading: "DELIVERING RESULTS WITH CLOUD ARCHITECTURE SERVICES",
     overviewParagraph1: "Design and deploy enterprise-grade, highly available cloud environments across the UK.",
-    overviewParagraph2: "We build cloud architecture services in the UK that deploy automated environments, enforce rigorous telemetry monitoring, and establish secure VPC routing — fully aligned with UK GDPR, Cyber Essentials, and industry compliance standards.",
+    overviewParagraph2: (
+      <span>
+        We build cloud architecture services in the UK that deploy automated environments, enforce rigorous{" "}
+        <Link href="/services/managed-services" className="text-rose-500 hover:underline font-bold">
+          telemetry monitoring services
+        </Link>{" "}
+        and establish secure VPC routing — fully aligned with UK GDPR, Cyber Essentials, and industry compliance standards.
+      </span>
+    ),
     
     deepDiveHeading: "WHAT ARE CLOUD ARCHITECTURE SERVICES IN THE UK?",
-    deepDiveParagraph1: "Cloud Architecture Services in the UK refers to the strategic design and deployment of scalable, secure, and highly available computing environments tailored to British enterprise needs. It empowers UK businesses to handle workloads dynamically, protect sensitive data within compliant and move away from capital-heavy on-premise infrastructure.",
-    deepDiveParagraph2: "Whether you need multi-region AKS/EKS container clusters, optimised database configurations, or FinOps-driven cost management across AWS, Azure, or Google Cloud our cloud architecture services in the UK ensure your infrastructure is highly secure, fully compliant with UK regulatory frameworks, and ready to scale with demand at any level.",
+    deepDiveParagraph1: (
+      <span>
+        Cloud Architecture Services in the UK refers to the strategic design and deployment of scalable, secure, and highly available computing environments tailored to British enterprise needs. It empowers UK businesses to handle workloads dynamically, protect sensitive data using{" "}
+        <Link href="/services/cybersecurity" className="text-rose-500 hover:underline font-bold">
+          enterprise cybersecurity frameworks
+        </Link>{" "}
+        and move away from capital-heavy on-premise infrastructure.
+      </span>
+    ),
+    deepDiveParagraph2: (
+      <span>
+        Whether you need multi-region AKS/EKS container clusters, optimised database configurations, or FinOps-driven cost management across AWS, Azure, or Google Cloud our cloud architecture services in the UK ensure your infrastructure is highly secure, fully compliant with UK regulatory frameworks. Discover how our{" "}
+        <Link href="/services/devops-automation" className="text-rose-500 hover:underline font-bold">
+          DevOps automation pipelines
+        </Link>{" "}
+        facilitate this deployment.
+      </span>
+    ),
     
     problemTitle: "Reducing Cloud Costs & Downtime with Cloud Architecture Services in UK",
     problemSubtitle: "How inefficient cloud environments and rigid infrastructure designs reduce performance and increase operational costs.",
@@ -119,11 +144,35 @@ export default function CapabilityPage({ params }: PageProps) {
   } : isAws ? {
     overviewHeading: "Enterprise AWS Cloud Services in UK",
     overviewParagraph1: "Scalable Amazon EKS clusters, serverless AWS Lambda solutions, and secure Amazon DynamoDB deployments built on AWS.",
-    overviewParagraph2: "We deliver automated cloud environments, proactive monitoring, and secure Amazon VPC networking to support compliance, reliability, and business growth across UK enterprises.",
+    overviewParagraph2: (
+      <span>
+        We deliver automated cloud environments, proactive monitoring, and secure Amazon VPC networking to support compliance, reliability, and business growth. Learn about our{" "}
+        <Link href="/services/devops-automation" className="text-rose-500 hover:underline font-bold">
+          DevOps automation capabilities
+        </Link>{" "}
+        on AWS.
+      </span>
+    ),
     
     deepDiveHeading: "What Are AWS Cloud Services?",
-    deepDiveParagraph1: "AWS cloud services in UK enable businesses to leverage scalable computing, secure storage, and intelligent networking through highly available cloud environments. They help organizations modernize infrastructure, protect critical workloads, and replace costly on-premises systems with flexible, pay-as-you-go AWS solutions.",
-    deepDiveParagraph2: "Whether deploying multi-region Amazon EKS clusters, optimizing Amazon RDS databases, or automating cloud cost management with AWS-native FinOps tools, our AWS cloud services in UK deliver secure, compliant, and high-performance infrastructure built to support growing business demands.",
+    deepDiveParagraph1: (
+      <span>
+        AWS cloud services in UK enable businesses to leverage scalable computing, secure storage, and intelligent networking through highly available cloud environments. They help organizations modernize infrastructure and protect critical workloads. Read our{" "}
+        <Link href="/about/overview" className="text-rose-500 hover:underline font-bold">
+          company overview
+        </Link>{" "}
+        to see our track record.
+      </span>
+    ),
+    deepDiveParagraph2: (
+      <span>
+        Whether deploying multi-region Amazon EKS clusters, optimizing Amazon RDS databases, or automating cloud cost management with AWS-native FinOps tools, our AWS cloud services in UK deliver secure, compliant, and high-performance infrastructure built to support growing business demands. Partner with our{" "}
+        <Link href="/services/cybersecurity" className="text-rose-500 hover:underline font-bold">
+          cloud security engineers
+        </Link>{" "}
+        to secure all your AWS workloads.
+      </span>
+    ),
     
     problemTitle: "Reducing AWS cloud Costs & Downtime",
     problemSubtitle: "How inefficient AWS cloud environments increase costs, downtime, and operational risk",
@@ -150,11 +199,35 @@ export default function CapabilityPage({ params }: PageProps) {
   } : isAzure ? {
     overviewHeading: "Accelerating outcomes with Microsoft Azure services in UK",
     overviewParagraph1: "Delivering landing zones, AKS clusters, and serverless applications through Microsoft Azure services in UK to support scalable, cloud-native environments.",
-    overviewParagraph2: "We deploy automated environments, implement rigorous telemetry monitoring, and establish secure VPC routing. Our deployment parameters are configured to align with industry regulatory requirements, helping organizations maintain security and compliance.",
+    overviewParagraph2: (
+      <span>
+        We deploy automated environments, implement rigorous telemetry monitoring, and establish secure VPC routing. Our configurations align with industry regulations. Learn how this complies with our{" "}
+        <Link href="/services/cybersecurity" className="text-rose-500 hover:underline font-bold">
+          security audit protocols
+        </Link>{" "}
+        for Azure environments.
+      </span>
+    ),
     
     deepDiveHeading: "What are Microsoft Azure services in UK?",
-    deepDiveParagraph1: "Microsoft Azure services in UK provide the strategic alignment of computing resources, storage, and networking within highly available virtualized environments. They enable enterprises to scale workloads dynamically, secure sensitive applications through private landing zones, and transition from capital-intensive physical servers to agile, pay-as-you-go cloud architectures.",
-    deepDiveParagraph2: "Whether establishing multi-region AKS container environments, optimizing database performance, or automating cost tracking through FinOps practices, Microsoft Azure services in UK help ensure your infrastructure remains highly secure, fully compliant with industry standards, and prepared to handle traffic demands of any scale.",
+    deepDiveParagraph1: (
+      <span>
+        Microsoft Azure services in UK provide the strategic alignment of computing resources, storage, and networking within highly available virtualized environments. They enable enterprises to scale workloads dynamically and secure sensitive applications. Read about our{" "}
+        <Link href="/services/cloud-services" className="text-rose-500 hover:underline font-bold">
+          central cloud consulting services
+        </Link>{" "}
+        for transition templates.
+      </span>
+    ),
+    deepDiveParagraph2: (
+      <span>
+        Whether establishing multi-region AKS container environments, optimizing database performance, or automating cost tracking through FinOps practices, Microsoft Azure services in UK help ensure your infrastructure remains secure. Integrate our{" "}
+        <Link href="/services/devops-automation" className="text-rose-500 hover:underline font-bold">
+          GitOps deployment frameworks
+        </Link>{" "}
+        for continuous updates.
+      </span>
+    ),
     
     problemTitle: "Solving Cloud Waste & Downtime with Microsoft Azure services in UK",
     problemSubtitle: "Architectures and configurations can impact performance without optimized Microsoft Azure services in UK.",
@@ -181,11 +254,35 @@ export default function CapabilityPage({ params }: PageProps) {
   } : isGcp ? {
     overviewHeading: "Accelerating outcomes with Google Cloud Consulting in UK",
     overviewParagraph1: "GKE Autopilot deployments, BigQuery analytics platforms, and Vertex AI solutions through Google Cloud Consulting services.",
-    overviewParagraph2: "We deliver automated environments, comprehensive telemetry monitoring, and secure VPC network configurations to meet industry regulatory requirements.",
+    overviewParagraph2: (
+      <span>
+        We deliver automated environments, comprehensive telemetry monitoring, and secure VPC network configurations to meet industry regulatory requirements. Explore our{" "}
+        <Link href="/services/cybersecurity" className="text-rose-500 hover:underline font-bold">
+          security policy frameworks
+        </Link>{" "}
+        for cloud governance.
+      </span>
+    ),
     
     deepDiveHeading: "What is Google Cloud Consulting?",
-    deepDiveParagraph1: "Google Cloud Consulting provides the strategic alignment of computing resources, storage, and networking within highly available virtualized environments. It enables enterprises to scale workloads dynamically, secure sensitive workloads through private landing zones, and transition from capital-intensive physical servers to agile, pay-as-you-go cloud architectures.",
-    deepDiveParagraph2: "Whether establishing multi-region GKE container environments, optimizing database performance, or automating cost tracking through FinOps practices, Google Cloud Consulting helps ensure your infrastructure remains highly secure, fully compliant with industry standards, and prepared to handle traffic demands of any scale.",
+    deepDiveParagraph1: (
+      <span>
+        Google Cloud Consulting provides the strategic alignment of computing resources, storage, and networking within highly available virtualized environments. It enables enterprises to scale workloads dynamically and secure sensitive workloads. Compare this with our{" "}
+        <Link href="/services/cloud-services" className="text-rose-500 hover:underline font-bold">
+          main cloud capabilities catalog
+        </Link>{" "}
+        to choose the right partner.
+      </span>
+    ),
+    deepDiveParagraph2: (
+      <span>
+        Whether establishing multi-region GKE container environments, optimizing database performance, or automating cost tracking through FinOps practices, Google Cloud Consulting helps ensure your infrastructure remains highly secure. Discover how our{" "}
+        <Link href="/services/devops-automation" className="text-rose-500 hover:underline font-bold">
+          Kubernetes orchestration pipelines
+        </Link>{" "}
+        are built to support GKE.
+      </span>
+    ),
     
     problemTitle: "Reducing Cloud Waste with Google Cloud Consulting",
     problemSubtitle: "How inefficient cloud architectures and monolithic configurations impact business performance and operational costs.",

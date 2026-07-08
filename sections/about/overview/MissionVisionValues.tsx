@@ -2,6 +2,7 @@
 
 import React from "react";
 import { Reveal } from "@/components/ui/Reveal";
+import Link from "next/link";
 
 export function MissionVisionValues() {
   return (
@@ -52,7 +53,7 @@ export function MissionVisionValues() {
                 Our core values
               </h2>
               <p className="text-zinc-400 text-sm leading-relaxed font-semibold">
-                As a leading strategic partner to companies around the world, we have leveraged technology to enable business transformation. We address the entire breadth of business needs, from strategy and design to managing operations. To do this, we draw on deep industry expertise and a command of the fast-evolving fields of cloud, data artificial intelligence, connectivity, software, digital engineering, and platforms.
+                As a leading strategic partner to companies around the world, we have leveraged technology to enable business transformation. We address the entire breadth of business needs, from strategy and design to managing operations. To do this, we draw on deep industry expertise and a command of the fast-evolving fields of <Link href="/services/cloud-services" className="text-rose-500 hover:underline">cloud</Link>, <Link href="/services/data-engineering" className="text-rose-500 hover:underline">data</Link> <Link href="/services/ai-data-innovation" className="text-rose-500 hover:underline">artificial intelligence</Link>, connectivity, <Link href="/services/software-development" className="text-rose-500 hover:underline">software engineering</Link>, digital engineering, and <Link href="/services/devops-automation" className="text-rose-500 hover:underline">DevOps platforms</Link>.
               </p>
             </Reveal>
 
