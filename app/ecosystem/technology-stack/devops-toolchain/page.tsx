@@ -107,11 +107,18 @@ export default function DevOpsToolchainPage() {
           </>
         }
         subtitle="Build CI/CD pipelines, configure GitOps engines, write infrastructure code, deploy telemetry stacks, and automate policy validations."
-        gradientBlinds={true}
-        gradientBlindsColors={["#6366f1", "#c7d2fe", "#4f46e5", "#3730a3"]}
-        gradientBlindsAngle={30}
-        gradientBlindsCount={16}
-        stats={heroMetrics}
+        dotField={true}
+        dotFieldProps={{
+          dotRadius: 1.5,
+          dotSpacing: 14,
+          bulgeStrength: 67,
+          glowRadius: 160,
+          sparkle: false,
+          waveAmplitude: 0,
+          gradientFrom: "rgba(99, 102, 241, 0.35)",
+          gradientTo: "rgba(79, 70, 229, 0.15)",
+          glowColor: "#0c0a1f",
+        }}
         breadcrumbs={[
           { label: "ECOSYSTEM", href: "/ecosystem" },
           { label: "TECHNOLOGY STACK", href: "/ecosystem/technology-stack" },

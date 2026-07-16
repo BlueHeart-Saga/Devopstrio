@@ -106,7 +106,12 @@ export default function DevOpsPlatformPage() {
         subtitle="Unify developer tools, automate delivery pipelines, provision secure cloud nodes, and monitor services telemetry inside one platform."
         particles={true}
         particleColors={["#ffffff", "#c7d2fe", "#6366f1"]}
-        stats={heroMetrics}
+        particleBaseSize={150}
+        magicRings={true}
+        magicRingsColor="#6366f1"
+        magicRingsColorTwo="#4f46e5"
+        magicRingsRingCount={4}
+        magicRingsSpeed={0.5}
         breadcrumbs={[
           { label: "ECOSYSTEM", href: "/ecosystem" },
           { label: "PLATFORMS & SOLUTIONS", href: "/ecosystem/platforms-solutions" },

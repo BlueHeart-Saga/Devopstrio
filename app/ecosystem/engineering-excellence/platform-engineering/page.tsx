@@ -99,7 +99,6 @@ export default function PlatformEngineeringPage() {
           </>
         }
         subtitle="Accelerating Developer Productivity Through Internal Platforms. We treat the developer as our customer, building self-service Internal Developer Platforms (IDPs) that eliminate friction and reduce operational bottlenecks."
-        stats={metrics}
         breadcrumbs={[
           { label: "ECOSYSTEM", href: "/ecosystem" },
           { label: "ENGINEERING EXCELLENCE", href: "/ecosystem/engineering-excellence" },

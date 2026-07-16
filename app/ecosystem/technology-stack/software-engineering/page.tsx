@@ -106,11 +106,18 @@ export default function SoftwareEngineeringPage() {
           </>
         }
         subtitle="Deploy Next.js user interfaces, build FastAPI servers, design schema validation APIs, implement clean patterns, and run integration tests."
-        gradientBlinds={true}
-        gradientBlindsColors={["#d946ef", "#f5d0fe", "#c084fc", "#8b5cf6"]}
-        gradientBlindsAngle={120}
-        gradientBlindsCount={10}
-        stats={heroMetrics}
+        dotField={true}
+        dotFieldProps={{
+          dotRadius: 1.5,
+          dotSpacing: 14,
+          bulgeStrength: 67,
+          glowRadius: 160,
+          sparkle: false,
+          waveAmplitude: 0,
+          gradientFrom: "rgba(217, 70, 239, 0.35)",
+          gradientTo: "rgba(192, 132, 252, 0.15)",
+          glowColor: "#1a051c",
+        }}
         breadcrumbs={[
           { label: "ECOSYSTEM", href: "/ecosystem" },
           { label: "TECHNOLOGY STACK", href: "/ecosystem/technology-stack" },

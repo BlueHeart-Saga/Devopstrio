@@ -97,8 +97,14 @@ export default function SecurityPlatformPage() {
           </>
         }
         subtitle="Enforce Zero Trust architecture, audit container dependencies, manage database keys dynamically, and analyze live system events."
-        bgImage="/assets/ecosystem/sub-page-hero/Ecosystem_flatform&solutions/Cyber.png"
-        stats={heroMetrics}
+        particles={true}
+        particleColors={["#ffffff", "#fda4af", "#f43f5e"]}
+        particleBaseSize={150}
+        magicRings={true}
+        magicRingsColor="#f43f5e"
+        magicRingsColorTwo="#9f1239"
+        magicRingsRingCount={4}
+        magicRingsSpeed={0.5}
         breadcrumbs={[
           { label: "ECOSYSTEM", href: "/ecosystem" },
           { label: "PLATFORMS & SOLUTIONS", href: "/ecosystem/platforms-solutions" },

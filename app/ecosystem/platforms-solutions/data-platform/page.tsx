@@ -97,7 +97,12 @@ export default function DataPlatformPage() {
         subtitle="Deploy real-time Kafka streams, coordinate Snowflake warehouses, catalogue database schemas, and serve predictions."
         particles={true}
         particleColors={["#ffffff", "#fef08a", "#eab308"]}
-        stats={heroMetrics}
+        particleBaseSize={150}
+        magicRings={true}
+        magicRingsColor="#eab308"
+        magicRingsColorTwo="#ca8a04"
+        magicRingsRingCount={4}
+        magicRingsSpeed={0.5}
         breadcrumbs={[
           { label: "ECOSYSTEM", href: "/ecosystem" },
           { label: "PLATFORMS & SOLUTIONS", href: "/ecosystem/platforms-solutions" },

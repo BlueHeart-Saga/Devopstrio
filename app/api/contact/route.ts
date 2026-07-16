@@ -13,14 +13,19 @@ export async function POST(req: Request) {
       );
     }
 
-    // Configure nodemailer with Hostinger SMTP
+    const smtpServer = process.env.SMTP_SERVER || 'smtp.gmail.com';
+    const smtpPort = Number(process.env.SMTP_PORT) || 587;
+    const smtpUser = process.env.SMTP_USER || 'sagasri143@gmail.com';
+    const smtpPass = process.env.SMTP_PASS || 'jalzxmkgmmnolksa';
+
+    // Configure nodemailer using environment variables
     const transporter = nodemailer.createTransport({
-      host: 'smtp.hostinger.com',
-      port: 465,
-      secure: true,
+      host: smtpServer,
+      port: smtpPort,
+      secure: smtpPort === 465, // true for 465, false for other ports (587 TLS)
       auth: {
-        user: 'Sagadevan.S@devopstrioglobal.com',
-        pass: 'sagadevanapp',
+        user: smtpUser,
+        pass: smtpPass,
       },
     });
 
@@ -40,7 +45,7 @@ export async function POST(req: Request) {
 
     // Send the email
     await transporter.sendMail({
-      from: '"Devopstrio Website" <Sagadevan.S@devopstrioglobal.com>',
+      from: `"Devopstrio Website" <${smtpUser}>`,
       to: 'Sagadevan.S@devopstrioglobal.com',
       replyTo: email,
       subject: `New Contact Request from ${name}`,

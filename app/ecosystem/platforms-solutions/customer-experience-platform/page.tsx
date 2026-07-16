@@ -103,7 +103,12 @@ export default function CustomerExperiencePlatformPage() {
         subtitle="Unify support channels, embed conversational AI widgets, coordinate ticket queues, analyze customer behavior, and scale NPS ratings."
         particles={true}
         particleColors={["#ffffff", "#fbcfe8", "#ec4899"]}
-        stats={heroMetrics}
+        particleBaseSize={150}
+        magicRings={true}
+        magicRingsColor="#ec4899"
+        magicRingsColorTwo="#db2777"
+        magicRingsRingCount={4}
+        magicRingsSpeed={0.5}
         breadcrumbs={[
           { label: "ECOSYSTEM", href: "/ecosystem" },
           { label: "PLATFORMS & SOLUTIONS", href: "/ecosystem/platforms-solutions" },

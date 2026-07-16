@@ -106,11 +106,18 @@ export default function AIPage() {
           </>
         }
         subtitle="Build autonomous agent systems, configure semantic search vector DBs, structure retrieval workflows, and host customized models."
-        gradientBlinds={true}
-        gradientBlindsColors={["#f43f5e", "#fda4af", "#e11d48", "#be123c"]}
-        gradientBlindsAngle={45}
-        gradientBlindsCount={12}
-        stats={heroMetrics}
+        dotField={true}
+        dotFieldProps={{
+          dotRadius: 1.5,
+          dotSpacing: 14,
+          bulgeStrength: 67,
+          glowRadius: 160,
+          sparkle: false,
+          waveAmplitude: 0,
+          gradientFrom: "rgba(244, 63, 94, 0.35)",
+          gradientTo: "rgba(225, 29, 72, 0.15)",
+          glowColor: "#1a050a",
+        }}
         breadcrumbs={[
           { label: "ECOSYSTEM", href: "/ecosystem" },
           { label: "TECHNOLOGY STACK", href: "/ecosystem/technology-stack" },

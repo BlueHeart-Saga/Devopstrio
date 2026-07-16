@@ -92,11 +92,20 @@ export default function UnitedKingdomHubPage() {
           </>
         }
         subtitle="Strategic Consulting, Architecture and Enterprise Transformation Services. Deploy UK solutions architects onshore to design compliant landing zones, audit infrastructure safety, and host executive design workshops."
-        dither={true}
-        ditherWaveColor={[0.8, 0.1, 0.2]}
-        ditherColorNum={4}
-        ditherPixelSize={2}
-        stats={metrics}
+        hyperspeed={true}
+        hyperspeedOptions={{
+          distortion: 'turbulentDistortion',
+          colors: {
+            roadColor: 0x080808,
+            islandColor: 0x0a0a0a,
+            background: 0x000000,
+            shoulderLines: 0xffffff,
+            brokenLines: 0xffffff,
+            leftCars: [0xef4444, 0xdc2626, 0xf87171],
+            rightCars: [0xf43f5e, 0xe11d48, 0xfb7185],
+            sticks: 0xef4444
+          }
+        }}
         breadcrumbs={[
           { label: "ECOSYSTEM", href: "/ecosystem" },
           { label: "GLOBAL DELIVERY", href: "/ecosystem/global-delivery" },

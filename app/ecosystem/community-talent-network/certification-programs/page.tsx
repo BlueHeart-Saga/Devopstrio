@@ -88,7 +88,6 @@ export default function CertificationProgramsPage() {
           </>
         }
         subtitle="Helping engineers validate expertise and advance careers. We don't just hire top talent; we continuously develop them. Join our structured study cohorts, access enterprise-grade sandbox labs, and achieve expert-level cloud certifications with 100% exam sponsorship."
-        stats={metrics}
         breadcrumbs={[
           { label: "ECOSYSTEM", href: "/ecosystem" },
           { label: "COMMUNITY & TALENT NETWORK", href: "/ecosystem/community-talent-network" },

@@ -107,11 +107,18 @@ export default function CybersecurityPage() {
           </>
         }
         subtitle="Configure security frameworks, deploy identity platforms, verify app code, run cloud posture audits, and automate compliance tracking."
-        gradientBlinds={true}
-        gradientBlindsColors={["#f59e0b", "#fef08a", "#d97706", "#b45309"]}
-        gradientBlindsAngle={90}
-        gradientBlindsCount={14}
-        stats={heroMetrics}
+        dotField={true}
+        dotFieldProps={{
+          dotRadius: 1.5,
+          dotSpacing: 14,
+          bulgeStrength: 67,
+          glowRadius: 160,
+          sparkle: false,
+          waveAmplitude: 0,
+          gradientFrom: "rgba(245, 158, 11, 0.35)",
+          gradientTo: "rgba(217, 119, 6, 0.15)",
+          glowColor: "#1a1003",
+        }}
         breadcrumbs={[
           { label: "ECOSYSTEM", href: "/ecosystem" },
           { label: "TECHNOLOGY STACK", href: "/ecosystem/technology-stack" },

@@ -91,11 +91,20 @@ export default function ManagedServicesCenterPage() {
           </>
         }
         subtitle="Outsource System Patching, Automated Backups & Cost Reviews. Delegate routine tasks, enforce OS patch security, and reduce monthly cloud billing waste via managed operations desks."
-        dither={true}
-        ditherWaveColor={[0.6, 0.2, 0.8]}
-        ditherColorNum={5}
-        ditherPixelSize={2}
-        stats={metrics}
+        hyperspeed={true}
+        hyperspeedOptions={{
+          distortion: 'turbulentDistortion',
+          colors: {
+            roadColor: 0x080808,
+            islandColor: 0x0a0a0a,
+            background: 0x000000,
+            shoulderLines: 0xffffff,
+            brokenLines: 0xffffff,
+            leftCars: [0xa855f7, 0x9333ea, 0xc084fc],
+            rightCars: [0xd946ef, 0xc084fc, 0xe879f9],
+            sticks: 0xa855f7
+          }
+        }}
         breadcrumbs={[
           { label: "ECOSYSTEM", href: "/ecosystem" },
           { label: "GLOBAL DELIVERY", href: "/ecosystem/global-delivery" },

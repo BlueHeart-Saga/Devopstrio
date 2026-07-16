@@ -108,11 +108,18 @@ export default function CloudNativePage() {
           </>
         }
         subtitle="Build container strategies, deploy Istio service meshes, configure multi-cloud deployments, and enforce governance rules."
-        gradientBlinds={true}
-        gradientBlindsColors={["#06b6d4", "#a5f3fc", "#0891b2", "#0e7490"]}
-        gradientBlindsAngle={-45}
-        gradientBlindsCount={16}
-        stats={heroMetrics}
+        dotField={true}
+        dotFieldProps={{
+          dotRadius: 1.5,
+          dotSpacing: 14,
+          bulgeStrength: 67,
+          glowRadius: 160,
+          sparkle: false,
+          waveAmplitude: 0,
+          gradientFrom: "rgba(6, 182, 212, 0.35)",
+          gradientTo: "rgba(8, 145, 178, 0.15)",
+          glowColor: "#03171a",
+        }}
         breadcrumbs={[
           { label: "ECOSYSTEM", href: "/ecosystem" },
           { label: "TECHNOLOGY STACK", href: "/ecosystem/technology-stack" },

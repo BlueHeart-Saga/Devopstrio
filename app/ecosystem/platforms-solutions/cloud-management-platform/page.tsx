@@ -101,7 +101,12 @@ export default function CloudManagementPlatformPage() {
         subtitle="Audit global cloud spend, enforce resource tagging standards, isolate networks, and discover cost anomalies in one unified dashboard."
         particles={true}
         particleColors={["#ffffff", "#a5f3fc", "#06b6d4"]}
-        stats={heroMetrics}
+        particleBaseSize={150}
+        magicRings={true}
+        magicRingsColor="#06b6d4"
+        magicRingsColorTwo="#0891b2"
+        magicRingsRingCount={4}
+        magicRingsSpeed={0.5}
         breadcrumbs={[
           { label: "ECOSYSTEM", href: "/ecosystem" },
           { label: "PLATFORMS & SOLUTIONS", href: "/ecosystem/platforms-solutions" },

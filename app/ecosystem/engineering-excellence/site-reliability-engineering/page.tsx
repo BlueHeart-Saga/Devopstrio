@@ -99,7 +99,6 @@ export default function SiteReliabilityEngineeringPage() {
           </>
         }
         subtitle="Ensuring Reliability, Availability and Performance At Scale. We apply software engineering principles to operations, utilizing SLOs, error budgets, and deep observability to guarantee system uptime while maintaining high release velocity."
-        stats={metrics}
         breadcrumbs={[
           { label: "ECOSYSTEM", href: "/ecosystem" },
           { label: "ENGINEERING EXCELLENCE", href: "/ecosystem/engineering-excellence" },

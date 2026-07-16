@@ -99,7 +99,6 @@ export default function DevSecOpsPage() {
           </>
         }
         subtitle="Embedding Security Across The Entire Software Lifecycle. We weave security checks invisibly into developer workflows, automating vulnerability scanning, secrets management, and compliance so you can move fast without breaking security."
-        stats={metrics}
         breadcrumbs={[
           { label: "ECOSYSTEM", href: "/ecosystem" },
           { label: "ENGINEERING EXCELLENCE", href: "/ecosystem/engineering-excellence" },

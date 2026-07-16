@@ -99,7 +99,6 @@ export default function DataFrameworkPage() {
           </>
         }
         subtitle="Enterprise-grade data pipelines and analytics architectures. We deploy highly scalable, fault-tolerant data frameworks that unify batch and streaming workloads, ensuring your analytics and AI models are fueled by clean, real-time data."
-        stats={metrics}
         breadcrumbs={[
           { label: "ECOSYSTEM", href: "/ecosystem" },
           { label: "ACCELERATORS & FRAMEWORKS", href: "/ecosystem/accelerators-frameworks" },

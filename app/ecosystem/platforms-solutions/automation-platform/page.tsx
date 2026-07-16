@@ -96,7 +96,12 @@ export default function AutomationPlatformPage() {
         subtitle="Orchestrate multi-system tasks, build HR/IT approval routes, verify webhook parameters, and deploy decision engines."
         particles={true}
         particleColors={["#ffffff", "#fda4af", "#f43f5e"]}
-        stats={heroMetrics}
+        particleBaseSize={150}
+        magicRings={true}
+        magicRingsColor="#f43f5e"
+        magicRingsColorTwo="#9f1239"
+        magicRingsRingCount={4}
+        magicRingsSpeed={0.5}
         breadcrumbs={[
           { label: "ECOSYSTEM", href: "/ecosystem" },
           { label: "PLATFORMS & SOLUTIONS", href: "/ecosystem/platforms-solutions" },

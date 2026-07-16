@@ -92,7 +92,6 @@ export default function CloudAcceleratorPage() {
           </>
         }
         subtitle="Launch enterprise-ready cloud environments in days instead of months. Bypass the complex engineering required to build secure cloud foundations. Our proprietary Landing Zone frameworks provision fully compliant Azure, AWS, and OCI architectures instantly."
-        stats={metrics}
         breadcrumbs={[
           { label: "ECOSYSTEM", href: "/ecosystem" },
           { label: "ACCELERATORS & FRAMEWORKS", href: "/ecosystem/accelerators-frameworks" },

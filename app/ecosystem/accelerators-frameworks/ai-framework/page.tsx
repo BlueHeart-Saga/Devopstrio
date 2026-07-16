@@ -102,7 +102,6 @@ export default function AIFrameworkPage() {
           </>
         }
         subtitle="Accelerating cognitive systems integration with production-grade orchestration and governance templates. We design custom agentic architectures, configure private RAG search networks, and audit model drift under enterprise-grade governance profiles."
-        stats={metrics}
         breadcrumbs={[
           { label: "ECOSYSTEM", href: "/ecosystem" },
           { label: "ACCELERATORS & FRAMEWORKS", href: "/ecosystem/accelerators-frameworks" },

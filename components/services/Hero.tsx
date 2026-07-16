@@ -14,6 +14,10 @@ const Lightfall = dynamic(() => import("@/components/ui/Lightfall"), { ssr: fals
 const Particles = dynamic(() => import("@/components/ui/Particles"), { ssr: false });
 const GradientBlinds = dynamic(() => import("@/components/ui/GradientBlinds"), { ssr: false });
 const Dither = dynamic(() => import("@/components/ui/Dither"), { ssr: false });
+const ShapeGrid = dynamic(() => import("@/components/ui/ShapeGrid"), { ssr: false });
+const MagicRings = dynamic(() => import("@/components/ui/MagicRings"), { ssr: false });
+const Hyperspeed = dynamic(() => import("@/components/ui/Hyperspeed"), { ssr: false });
+const DotField = dynamic(() => import("@/components/ui/DotField"), { ssr: false });
 
 export interface HeroProps {
   badge?: string;
@@ -49,6 +53,40 @@ export interface HeroProps {
   ditherWaveColor?: [number, number, number];
   ditherColorNum?: number;
   ditherPixelSize?: number;
+  shapeGrid?: boolean;
+  shapeGridSpeed?: number;
+  shapeGridSquareSize?: number;
+  shapeGridDirection?: "diagonal" | "up" | "right" | "down" | "left";
+  shapeGridBorderColor?: string;
+  shapeGridHoverFillColor?: string;
+  shapeGridShape?: "square" | "hexagon" | "circle" | "triangle";
+  shapeGridHoverTrailAmount?: number;
+  magicRings?: boolean;
+  magicRingsColor?: string;
+  magicRingsColorTwo?: string;
+  magicRingsRingCount?: number;
+  magicRingsSpeed?: number;
+  magicRingsAttenuation?: number;
+  magicRingsLineThickness?: number;
+  magicRingsBaseRadius?: number;
+  magicRingsRadiusStep?: number;
+  magicRingsScaleRate?: number;
+  magicRingsOpacity?: number;
+  magicRingsBlur?: number;
+  magicRingsNoiseAmount?: number;
+  magicRingsRotation?: number;
+  magicRingsRingGap?: number;
+  magicRingsFadeIn?: number;
+  magicRingsFadeOut?: number;
+  magicRingsFollowMouse?: boolean;
+  magicRingsMouseInfluence?: number;
+  magicRingsHoverScale?: number;
+  magicRingsParallax?: number;
+  magicRingsClickBurst?: boolean;
+  hyperspeed?: boolean;
+  hyperspeedOptions?: any;
+  dotField?: boolean;
+  dotFieldProps?: any;
   children?: React.ReactNode;
 }
 
@@ -86,6 +124,40 @@ export function Hero({
   ditherWaveColor,
   ditherColorNum,
   ditherPixelSize,
+  shapeGrid,
+  shapeGridSpeed,
+  shapeGridSquareSize,
+  shapeGridDirection,
+  shapeGridBorderColor,
+  shapeGridHoverFillColor,
+  shapeGridShape,
+  shapeGridHoverTrailAmount,
+  magicRings,
+  magicRingsColor,
+  magicRingsColorTwo,
+  magicRingsRingCount,
+  magicRingsSpeed,
+  magicRingsAttenuation,
+  magicRingsLineThickness,
+  magicRingsBaseRadius,
+  magicRingsRadiusStep,
+  magicRingsScaleRate,
+  magicRingsOpacity,
+  magicRingsBlur,
+  magicRingsNoiseAmount,
+  magicRingsRotation,
+  magicRingsRingGap,
+  magicRingsFadeIn,
+  magicRingsFadeOut,
+  magicRingsFollowMouse,
+  magicRingsMouseInfluence,
+  magicRingsHoverScale,
+  magicRingsParallax,
+  magicRingsClickBurst,
+  hyperspeed,
+  hyperspeedOptions,
+  dotField,
+  dotFieldProps,
   children,
 }: HeroProps) {
   return (
@@ -246,8 +318,90 @@ export function Hero({
         </div>
       )}
 
+      {/* ShapeGrid background */}
+      {shapeGrid && (
+        <div className="absolute inset-0 z-0 opacity-40 pointer-events-none">
+          <ShapeGrid
+            speed={shapeGridSpeed !== undefined ? shapeGridSpeed : 0.5}
+            squareSize={shapeGridSquareSize !== undefined ? shapeGridSquareSize : 40}
+            direction={shapeGridDirection || 'right'}
+            borderColor={shapeGridBorderColor || '#1f1f1f'}
+            hoverFillColor={shapeGridHoverFillColor || '#e11d48'}
+            shape={shapeGridShape || 'square'}
+            hoverTrailAmount={shapeGridHoverTrailAmount !== undefined ? shapeGridHoverTrailAmount : 5}
+          />
+          {/* Gradients to blend it nicely into the dark page theme */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/35 to-black/85 pointer-events-none" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_25%,rgba(0,0,0,0.85)_80%)] pointer-events-none" />
+        </div>
+      )}
+
+      {/* MagicRings background */}
+      {magicRings && (
+        <div className="absolute inset-0 z-0 opacity-45 pointer-events-none">
+          <MagicRings
+            color={magicRingsColor || "#fc42ff"}
+            colorTwo={magicRingsColorTwo || "#42fcff"}
+            speed={magicRingsSpeed !== undefined ? magicRingsSpeed : 1}
+            ringCount={magicRingsRingCount !== undefined ? magicRingsRingCount : 6}
+            attenuation={magicRingsAttenuation !== undefined ? magicRingsAttenuation : 10}
+            lineThickness={magicRingsLineThickness !== undefined ? magicRingsLineThickness : 2}
+            baseRadius={magicRingsBaseRadius !== undefined ? magicRingsBaseRadius : 0.35}
+            radiusStep={magicRingsRadiusStep !== undefined ? magicRingsRadiusStep : 0.1}
+            scaleRate={magicRingsScaleRate !== undefined ? magicRingsScaleRate : 0.1}
+            opacity={magicRingsOpacity !== undefined ? magicRingsOpacity : 1}
+            blur={magicRingsBlur !== undefined ? magicRingsBlur : 0}
+            noiseAmount={magicRingsNoiseAmount !== undefined ? magicRingsNoiseAmount : 0.1}
+            rotation={magicRingsRotation !== undefined ? magicRingsRotation : 0}
+            ringGap={magicRingsRingGap !== undefined ? magicRingsRingGap : 1.5}
+            fadeIn={magicRingsFadeIn !== undefined ? magicRingsFadeIn : 0.7}
+            fadeOut={magicRingsFadeOut !== undefined ? magicRingsFadeOut : 0.5}
+            followMouse={magicRingsFollowMouse !== undefined ? magicRingsFollowMouse : false}
+            mouseInfluence={magicRingsMouseInfluence !== undefined ? magicRingsMouseInfluence : 0.2}
+            hoverScale={magicRingsHoverScale !== undefined ? magicRingsHoverScale : 1.2}
+            parallax={magicRingsParallax !== undefined ? magicRingsParallax : 0.05}
+            clickBurst={magicRingsClickBurst !== undefined ? magicRingsClickBurst : false}
+          />
+          {/* Gradients to blend it nicely into the dark page theme */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/35 to-black/85 pointer-events-none" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_25%,rgba(0,0,0,0.85)_80%)] pointer-events-none" />
+        </div>
+      )}
+
+      {/* Hyperspeed background */}
+      {hyperspeed && (
+        <div className="absolute inset-0 z-0 opacity-45 pointer-events-none">
+          <Hyperspeed effectOptions={hyperspeedOptions} />
+          {/* Gradients to blend it nicely into the dark page theme */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/35 to-black/85 pointer-events-none" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_25%,rgba(0,0,0,0.85)_80%)] pointer-events-none" />
+        </div>
+      )}
+
+      {/* DotField background */}
+      {dotField && (
+        <div className="absolute inset-0 z-0 opacity-70 pointer-events-none">
+          <DotField
+            dotRadius={dotFieldProps?.dotRadius}
+            dotSpacing={dotFieldProps?.dotSpacing}
+            cursorRadius={dotFieldProps?.cursorRadius}
+            cursorForce={dotFieldProps?.cursorForce}
+            bulgeOnly={dotFieldProps?.bulgeOnly}
+            bulgeStrength={dotFieldProps?.bulgeStrength}
+            glowRadius={dotFieldProps?.glowRadius}
+            sparkle={dotFieldProps?.sparkle}
+            waveAmplitude={dotFieldProps?.waveAmplitude}
+            gradientFrom={dotFieldProps?.gradientFrom}
+            gradientTo={dotFieldProps?.gradientTo}
+            glowColor={dotFieldProps?.glowColor}
+          />
+          {/* Gradients to blend it nicely into the dark page theme */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/25 to-black/75 pointer-events-none" />
+        </div>
+      )}
+
       {/* Ambient Glows */}
-      {!colorBends && !floatingLines && !prism && !lightfall && !particles && !gradientBlinds && !dither && (
+      {!colorBends && !floatingLines && !prism && !lightfall && !particles && !gradientBlinds && !dither && !shapeGrid && !magicRings && !hyperspeed && !dotField && (
         <>
           <div className="absolute top-0 left-1/4 w-[450px] h-[450px] bg-rose-500/[0.04] rounded-full blur-[110px] pointer-events-none z-[1]" />
           <div className="absolute bottom-0 right-1/4 w-[550px] h-[550px] bg-violet-500/[0.02] rounded-full blur-[130px] pointer-events-none z-[1]" />
@@ -255,7 +409,7 @@ export function Hero({
       )}
 
       {/* Background Image */}
-      {bgImage && !colorBends && !floatingLines && !prism && !lightfall && !particles && !gradientBlinds && !dither && (
+      {bgImage && !colorBends && !floatingLines && !prism && !lightfall && !particles && !gradientBlinds && !dither && !shapeGrid && !magicRings && !hyperspeed && !dotField && (
         <div className="absolute inset-0 z-0">
           <Image
             src={bgImage}

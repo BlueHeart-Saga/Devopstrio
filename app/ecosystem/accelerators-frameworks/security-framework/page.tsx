@@ -91,7 +91,6 @@ export default function SecurityFrameworkPage() {
           </>
         }
         subtitle="Embedding security across architecture, development and operations. Leverage our proprietary security blueprints to implement Zero Trust networks, automate compliance evidence gathering, and secure your software supply chain by default."
-        stats={metrics}
         breadcrumbs={[
           { label: "ECOSYSTEM", href: "/ecosystem" },
           { label: "ACCELERATORS & FRAMEWORKS", href: "/ecosystem/accelerators-frameworks" },

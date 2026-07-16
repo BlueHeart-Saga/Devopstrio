@@ -101,7 +101,7 @@ export function Footer() {
                   className="w-16 h-16 object-contain transition-all duration-500 group-hover:scale-105 filter drop-shadow-[0_0_15px_rgba(255,255,255,0.15)]" 
                 />
                 <div className="flex flex-col">
-                  <span className="text-2xl font-black text-white tracking-tight leading-none">
+                  <span className="text-3xl font-semibold text-white tracking-tight leading-none">
                     Devopstrio
                   </span>
                   <span className="text-[9px] font-bold text-zinc-500 tracking-[0.2em] uppercase mt-2">

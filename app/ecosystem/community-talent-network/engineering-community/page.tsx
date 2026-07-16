@@ -92,7 +92,6 @@ export default function EngineeringCommunityPage() {
           </>
         }
         subtitle="A global network of architects, developers, DevOps engineers, SREs, and cloud specialists. Join tens of thousands of engineering professionals. Collaborate on open-source projects, attend deep-dive technical meetups, and advance your career within specialized tech guilds."
-        stats={metrics}
         breadcrumbs={[
           { label: "ECOSYSTEM", href: "/ecosystem" },
           { label: "COMMUNITY & TALENT NETWORK", href: "/ecosystem/community-talent-network" },

@@ -84,11 +84,20 @@ export default function FollowTheSunSupportPage() {
           </>
         }
         subtitle="Continuous Support Schedules with Zero Burnout. Coordinate shift transitions between UK, US, and India hubs to maintain constant service coverage while letting engineers work local daytime hours."
-        dither={true}
-        ditherWaveColor={[0.9, 0.6, 0.1]}
-        ditherColorNum={5}
-        ditherPixelSize={2}
-        stats={metrics}
+        hyperspeed={true}
+        hyperspeedOptions={{
+          distortion: 'turbulentDistortion',
+          colors: {
+            roadColor: 0x080808,
+            islandColor: 0x0a0a0a,
+            background: 0x000000,
+            shoulderLines: 0xffffff,
+            brokenLines: 0xffffff,
+            leftCars: [0xf97316, 0xe04f10, 0xfb923c],
+            rightCars: [0xeab308, 0xca8a04, 0xfacc15],
+            sticks: 0xf97316
+          }
+        }}
         breadcrumbs={[
           { label: "ECOSYSTEM", href: "/ecosystem" },
           { label: "GLOBAL DELIVERY", href: "/ecosystem/global-delivery" },

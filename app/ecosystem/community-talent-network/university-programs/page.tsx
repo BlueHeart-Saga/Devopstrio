@@ -88,7 +88,6 @@ export default function UniversityProgramsPage() {
           </>
         }
         subtitle="Bridging academia and enterprise technology. We partner with the world's leading academic institutions to modernize curriculums, fund groundbreaking research, and provide students with direct pathways into elite enterprise engineering careers."
-        stats={metrics}
         breadcrumbs={[
           { label: "ECOSYSTEM", href: "/ecosystem" },
           { label: "COMMUNITY & TALENT NETWORK", href: "/ecosystem/community-talent-network" },

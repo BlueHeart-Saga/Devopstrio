@@ -17,7 +17,7 @@ import {
 import Link from "next/link";
 import Image from "next/image";
 
-export default function SafeSignProductPage() {
+export default function JustivonProductPage() {
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
 
   const toggleFaq = (index: number) => {
@@ -25,30 +25,30 @@ export default function SafeSignProductPage() {
   };
 
   const features = [
-    { title: "Compliant eSignatures", desc: "Legally binding signatures meeting US ESIGN Act and European eIDAS regulatory guidelines." },
-    { title: "Document Workflows", desc: "No-code template routers sending documents to multiple signatories in pre-defined sequences." },
-    { title: "Detailed Audit Logs", desc: "Cryptographically sealed reports capturing email OTPs, SMS codes, IP traces, and timestamps." },
-    { title: "Secure Lockers", desc: "AES-256 encrypted file vaulting ensuring signed agreements cannot be intercepted." },
-    { title: "Custom Templates", desc: "Upload and format reusable layout templates, positioning initials and sign fields instantly." },
-    { title: "Cryptographic Seal", desc: "Each finished document is signed with a PKI hash protecting against file modification." }
+    { title: "Legal Case Management", desc: "Track client files, active hearings, and case workflows in a secure, unified workspace." },
+    { title: "Document Summarization", desc: "AI-driven contract inspection, parsing thousands of pages to output key provisions and risks." },
+    { title: "Legal Research Assistant", desc: "Automate citation indexing, legal brief searches, and precedent references." },
+    { title: "Workflow Automation", desc: "Create standardized routing matrices for client onboarding, intake forms, and signatures." },
+    { title: "Time Tracking & Billing", desc: "Accurate logging for billable hours, automated invoices, and secure legal payments." },
+    { title: "Secure Client Vaults", desc: "AES-256 encrypted file lockers for evidence, corporate bylaws, and client records." }
   ];
 
   const benefits = [
-    { value: "75% Faster", label: "Signing Loops", desc: "Collapse signature collection times from days to a matter of minutes." },
-    { value: "100% Secure", label: "Audit Trails", desc: "Maintain fully compliant logs ready for court or auditing checkpoints." },
-    { value: "Zero Paper", label: "Operations Cost", desc: "Save thousands yearly on scanning, mailing, and physical archiving operations." }
+    { value: "50% Faster", label: "Case Preparation", desc: "Retrieve court citations and summarize contract templates in seconds." },
+    { value: "SEC & GDPR", label: "Ready Storage", desc: "Fully audit-ready secure infrastructure with strict compliance safeguards." },
+    { value: "99.9%", label: "Uptime SLA", desc: "Enterprise cloud clusters ensuring active file availability." }
   ];
 
   const techStack = [
-    { name: "React Canvas UI", desc: "Responsive drawing pads capturing smooth hand signatures and custom initials gestures." },
-    { name: "Node.js PDF Engine", desc: "High-performance processing worker drawing text fields, stamps, and metadata seals." },
-    { name: "PostgreSQL Secure Schema", desc: "Granular data tables storing authorization keys, roles, and transaction history." }
+    { name: "Next.js & React", desc: "Sleek frontend supporting responsive case dashboards and real-time document viewer widgets." },
+    { name: "FastAPI & Python", desc: "High-speed backend orchestration powering legal search indices and document summarization." },
+    { name: "PostgreSQL & Elasticsearch", desc: "Robust data store combining structured databases with advanced semantic index engines." }
   ];
 
   const faqs = [
-    { q: "Is SafeSign legally compliant?", a: "Yes, SafeSign complies with the US ESIGN Act, UETA, and European eIDAS regulations, making signatures legally binding." },
-    { q: "Can we use custom signing templates?", a: "Yes, you can upload PDF files, mark variable sign boxes, and save them as reusable templates for your teams." },
-    { q: "Is the data encrypted at rest?", a: "Yes, all documents, certificates, and log history are saved inside database storage encrypted with AES-256." }
+    { q: "Is our client data isolated and secure?", a: "Yes, Justivon supports isolated tenant database schemas, strict role-based access control, and complete document-level logs." },
+    { q: "Can Justivon integrate with SafeSign?", a: "Yes, it integrates out of the box with SafeSign to authorize documents and request client eSignatures directly from the dashboard." },
+    { q: "Does the AI platform provide citations for legal statements?", a: "Yes. Our semantic assistant references your uploaded repository files, matching statements with legal brief sources." }
   ];
 
   return (
@@ -65,22 +65,22 @@ export default function SafeSignProductPage() {
             {/* Left content */}
             <div className="lg:col-span-6 flex flex-col justify-center text-left">
               <Reveal className="mb-4">
-                <span className="gap-2 inline-flex items-center justify-center px-4 py-1.5 rounded-full text-[10px] font-mono font-bold tracking-wider uppercase border border-emerald-500/30 text-emerald-400 bg-emerald-950/15">
+                <span className="gap-2 inline-flex items-center justify-center px-4 py-1.5 rounded-full text-[10px] font-mono font-bold tracking-wider uppercase border border-rose-500/30 text-rose-400 bg-rose-950/15">
                   <FileCheck className="w-3.5 h-3.5" />
                   SaaS Platforms
                 </span>
               </Reveal>
               <Reveal delay={0.1}>
                 <h1 className="text-4xl md:text-6xl font-black text-white mb-4">
-                  SafeSign
+                  Justivon
                 </h1>
-                <p className="text-xl md:text-2xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 to-cyan-550 mb-6">
-                  Digital Signature & Document Platform
+                <p className="text-xl md:text-2xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-rose-500 to-rose-600 mb-6">
+                  Legal Operations Platform
                 </p>
               </Reveal>
               <Reveal delay={0.2} className="mb-8">
                 <p className="text-zinc-350 text-sm md:text-base leading-relaxed font-bold">
-                  Accelerate contract agreements, build automated signing routing templates, and maintain compliant transaction history. Securely seal documents cryptographically.
+                  Designed for law firms and legal departments. Automate contract reviews, track billing metrics, organize case documentation, and streamline intake channels.
                 </p>
               </Reveal>
               <Reveal delay={0.3} className="flex flex-wrap gap-4">
@@ -104,11 +104,11 @@ export default function SafeSignProductPage() {
 
             {/* Right Screen screenshot */}
             <div className="lg:col-span-6">
-              <div className="relative group rounded-3xl border border-zinc-900 bg-zinc-950/40 p-4 hover:border-emerald-500/20 transition-colors">
+              <div className="relative group rounded-3xl border border-zinc-900 bg-zinc-950/40 p-4 hover:border-rose-500/20 transition-colors">
                 <div className="relative aspect-[16/10] overflow-hidden rounded-2xl border border-zinc-900/60">
                   <Image
-                    src="/assets/Home-page/our-products/safesign.png"
-                    alt="SafeSign Application Interface"
+                    src="/assets/Home-page/our-products/justivon.png"
+                    alt="Justivon Application Interface"
                     fill
                     className="object-cover"
                     priority
@@ -126,8 +126,8 @@ export default function SafeSignProductPage() {
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {benefits.map((b, idx) => (
-              <div key={idx} className="p-8 bg-zinc-950/40 border border-zinc-900 rounded-3xl text-center group hover:border-emerald-500/15 transition-all duration-300">
-                <div className="text-3xl md:text-5xl font-black text-emerald-500 mb-2 font-mono group-hover:scale-105 transition-transform duration-300">
+              <div key={idx} className="p-8 bg-zinc-950/40 border border-zinc-900 rounded-3xl text-center group hover:border-rose-500/15 transition-all duration-300">
+                <div className="text-3xl md:text-5xl font-black text-rose-500 mb-2 font-mono group-hover:scale-105 transition-transform duration-300">
                   {b.value}
                 </div>
                 <div className="text-xs font-bold font-mono text-white uppercase tracking-wider mb-3">
@@ -154,11 +154,11 @@ export default function SafeSignProductPage() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {features.map((feat, idx) => (
-              <div key={idx} className="p-8 bg-zinc-950/40 border border-zinc-900 hover:border-emerald-500/10 rounded-3xl transition-colors duration-300 flex flex-col justify-between">
+              <div key={idx} className="p-8 bg-zinc-950/40 border border-zinc-900 hover:border-rose-500/10 rounded-3xl transition-colors duration-300 flex flex-col justify-between">
                 <div>
                   <h3 className="text-base md:text-lg font-bold text-white mb-3 flex items-center gap-3">
-                    <div className="w-5 h-5 rounded-full bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center">
-                      <Check className="w-3 h-3 text-emerald-500" />
+                    <div className="w-5 h-5 rounded-full bg-rose-500/10 border border-rose-500/30 flex items-center justify-center">
+                      <Check className="w-3 h-3 text-rose-500" />
                     </div>
                     {feat.title}
                   </h3>
@@ -184,7 +184,7 @@ export default function SafeSignProductPage() {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {techStack.map((tech, idx) => (
-              <div key={idx} className="bg-zinc-950/40 border border-zinc-900 rounded-3xl p-8 hover:border-emerald-500/10 transition-colors">
+              <div key={idx} className="bg-zinc-950/40 border border-zinc-900 rounded-3xl p-8 hover:border-rose-500/10 transition-colors">
                 <h4 className="text-base font-extrabold text-white mb-3 tracking-wide">{tech.name}</h4>
                 <p className="text-xs md:text-sm text-zinc-450 font-bold leading-relaxed">{tech.desc}</p>
               </div>
@@ -235,9 +235,9 @@ export default function SafeSignProductPage() {
 
       {/* CTA */}
       <section className="w-full py-28 bg-[#030303] text-center relative overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-[radial-gradient(circle_at_center,rgba(16,185,129,0.02),transparent_60%)] pointer-events-none" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-[radial-gradient(circle_at_center,rgba(239,68,68,0.025),transparent_60%)] pointer-events-none" />
         <div className="max-w-3xl mx-auto px-12 xl:px-8 relative z-10">
-          <h2 className="text-3xl md:text-5xl font-black mb-6 tracking-tight">Deploy SafeSign in Your Workspace</h2>
+          <h2 className="text-3xl md:text-5xl font-black mb-6 tracking-tight">Deploy Justivon in Your Workspace</h2>
           <p className="text-zinc-400 text-xs md:text-sm font-bold mb-10 max-w-lg mx-auto leading-relaxed">
             Partner with our solution architects to deploy the platform or request a customized managed environment.
           </p>

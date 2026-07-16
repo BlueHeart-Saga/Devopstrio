@@ -100,7 +100,6 @@ export default function EngineeringCulturePage() {
           </>
         }
         subtitle="Creating an environment where innovation, ownership and continuous learning thrive. We build software differently. Our engineering culture empowers autonomous teams, mandates ruthless automation, and fosters a community of deep technical mastery."
-        stats={metrics}
         breadcrumbs={[
           { label: "ECOSYSTEM", href: "/ecosystem" },
           { label: "ENGINEERING EXCELLENCE", href: "/ecosystem/engineering-excellence" },

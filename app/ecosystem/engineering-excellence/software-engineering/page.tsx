@@ -103,7 +103,6 @@ export default function SoftwareEngineeringPage() {
           </>
         }
         subtitle="Building Enterprise Applications With Modern Architecture Principles. We engineer scalable platforms using decoupled architectures, Domain-Driven Design, and API-first methodologies to ensure long-term agility and resilience."
-        stats={metrics}
         breadcrumbs={[
           { label: "ECOSYSTEM", href: "/ecosystem" },
           { label: "ENGINEERING EXCELLENCE", href: "/ecosystem/engineering-excellence" },

@@ -93,7 +93,6 @@ export default function DevOpsAcceleratorPage() {
           </>
         }
         subtitle="Standardized CI/CD and Platform Engineering Framework. Stop reinventing the wheel for every new project. Use our centralized pipeline templates, GitOps blueprints, and Kubernetes manifests to automate software delivery safely and rapidly."
-        stats={metrics}
         breadcrumbs={[
           { label: "ECOSYSTEM", href: "/ecosystem" },
           { label: "ACCELERATORS & FRAMEWORKS", href: "/ecosystem/accelerators-frameworks" },

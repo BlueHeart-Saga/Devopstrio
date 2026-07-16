@@ -89,7 +89,6 @@ export default function OpenSourcePage() {
           </>
         }
         subtitle="Contributing reusable technologies to the global developer ecosystem. We believe in building in public. By open-sourcing our core infrastructure modules, Kubernetes controllers, and AI wrappers, we aim to accelerate software delivery for engineering teams worldwide."
-        stats={metrics}
         breadcrumbs={[
           { label: "ECOSYSTEM", href: "/ecosystem" },
           { label: "COMMUNITY & TALENT NETWORK", href: "/ecosystem/community-talent-network" },

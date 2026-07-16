@@ -91,11 +91,20 @@ export default function EuropeHubPage() {
           </>
         }
         subtitle="GDPR Data Privacy Audits, Regional Cloud Hosting & European Compliance. Maintain data sovereignty, satisfy GDPR data compliance audits, and deploy to European cloud host locations."
-        dither={true}
-        ditherWaveColor={[0.1, 0.4, 0.9]}
-        ditherColorNum={4}
-        ditherPixelSize={2}
-        stats={metrics}
+        hyperspeed={true}
+        hyperspeedOptions={{
+          distortion: 'turbulentDistortion',
+          colors: {
+            roadColor: 0x080808,
+            islandColor: 0x0a0a0a,
+            background: 0x000000,
+            shoulderLines: 0xffffff,
+            brokenLines: 0xffffff,
+            leftCars: [0x2563eb, 0x1d4ed8, 0x3b82f6],
+            rightCars: [0x6366f1, 0x4f46e5, 0x818cf8],
+            sticks: 0x3b82f6
+          }
+        }}
         breadcrumbs={[
           { label: "ECOSYSTEM", href: "/ecosystem" },
           { label: "GLOBAL DELIVERY", href: "/ecosystem/global-delivery" },

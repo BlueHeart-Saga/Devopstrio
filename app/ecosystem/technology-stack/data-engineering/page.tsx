@@ -106,11 +106,18 @@ export default function DataEngineeringPage() {
           </>
         }
         subtitle="Build data architectures, configure streaming platforms, manage warehouses, tune analytics layers, and enforce governance."
-        gradientBlinds={true}
-        gradientBlindsColors={["#10b981", "#a7f3d0", "#059669", "#047857"]}
-        gradientBlindsAngle={0}
-        gradientBlindsCount={12}
-        stats={heroMetrics}
+        dotField={true}
+        dotFieldProps={{
+          dotRadius: 1.5,
+          dotSpacing: 14,
+          bulgeStrength: 67,
+          glowRadius: 160,
+          sparkle: false,
+          waveAmplitude: 0,
+          gradientFrom: "rgba(16, 185, 129, 0.35)",
+          gradientTo: "rgba(5, 150, 105, 0.15)",
+          glowColor: "#031a10",
+        }}
         breadcrumbs={[
           { label: "ECOSYSTEM", href: "/ecosystem" },
           { label: "TECHNOLOGY STACK", href: "/ecosystem/technology-stack" },

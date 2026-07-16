@@ -90,11 +90,20 @@ export default function IndiaOperationsPage() {
           </>
         }
         subtitle="Scale SRE Execution, Database Upkeep & Infrastructure Automation. Scale platform development, manage automated database maintenance routines, and keep infrastructure responsive via Bengaluru, Chennai, and Thoothukudi operations centers."
-        dither={true}
-        ditherWaveColor={[0.1, 0.8, 0.3]}
-        ditherColorNum={4}
-        ditherPixelSize={3}
-        stats={metrics}
+        hyperspeed={true}
+        hyperspeedOptions={{
+          distortion: 'turbulentDistortion',
+          colors: {
+            roadColor: 0x080808,
+            islandColor: 0x0a0a0a,
+            background: 0x000000,
+            shoulderLines: 0xffffff,
+            brokenLines: 0xffffff,
+            leftCars: [0x10b981, 0x059669, 0x34d399],
+            rightCars: [0x0d9488, 0x0f766e, 0x2dd4bf],
+            sticks: 0x10b981
+          }
+        }}
         breadcrumbs={[
           { label: "ECOSYSTEM", href: "/ecosystem" },
           { label: "GLOBAL DELIVERY", href: "/ecosystem/global-delivery" },

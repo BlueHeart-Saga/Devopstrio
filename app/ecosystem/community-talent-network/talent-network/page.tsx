@@ -102,7 +102,6 @@ export default function TalentNetworkPage() {
           </>
         }
         subtitle="Connecting organizations with highly skilled engineering professionals. Stop settling for generic IT staffing. Scale your engineering capacity instantly with our private network of the top 3% of globally vetted Cloud, DevOps, and AI Architects."
-        stats={metrics}
         breadcrumbs={[
           { label: "ECOSYSTEM", href: "/ecosystem" },
           { label: "COMMUNITY & TALENT NETWORK", href: "/ecosystem/community-talent-network" },
