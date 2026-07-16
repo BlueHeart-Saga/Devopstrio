@@ -33,20 +33,47 @@ const careersSections = [
 export default function CareersPage() {
   const [activeJob, setActiveJob] = useState<Job | null>(null);
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const [formSubmitting, setFormSubmitting] = useState(false);
   const [formData, setFormData] = useState({ name: "", email: "", resume: "", note: "" });
 
   const handleApplyClick = (job: Job) => {
     setActiveJob(job);
     setFormSubmitted(false);
+    setFormSubmitting(false);
     setFormData({ name: "", email: "", resume: "", note: "" });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setFormSubmitted(true);
-    setTimeout(() => {
-      setActiveJob(null);
-    }, 2000);
+    if (!activeJob) return;
+    setFormSubmitting(true);
+
+    try {
+      const response = await fetch("/api/careers/apply", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          ...formData,
+          jobTitle: activeJob.title,
+        }),
+      });
+
+      if (response.ok) {
+        setFormSubmitted(true);
+        setTimeout(() => {
+          setActiveJob(null);
+        }, 2500);
+      } else {
+        alert("Failed to submit application. Please try again.");
+      }
+    } catch (err) {
+      console.error(err);
+      alert("An error occurred. Please try again.");
+    } finally {
+      setFormSubmitting(false);
+    }
   };
 
   return (
@@ -134,9 +161,10 @@ export default function CareersPage() {
 
                   <button
                     type="submit"
-                    className="w-full gap-2 inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white transition-all duration-300 hover:shadow-[0_0_25px_rgba(225,29,72,0.35)] hover:-translate-y-0.5"
+                    disabled={formSubmitting}
+                    className="w-full gap-2 inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white transition-all duration-300 hover:shadow-[0_0_25px_rgba(225,29,72,0.35)] hover:-translate-y-0.5 disabled:opacity-50"
                   >
-                    Submit Application <Send size={13} />
+                    {formSubmitting ? "Submitting..." : "Submit Application"} <Send size={13} />
                   </button>
                 </form>
               </>

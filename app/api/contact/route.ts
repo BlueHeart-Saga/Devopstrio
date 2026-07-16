@@ -3,8 +3,7 @@ import nodemailer from 'nodemailer';
 
 export async function POST(req: Request) {
   try {
-    const body = await req.json();
-    const { name, email, phone, message, selectedServices } = body;
+    const { name, email, phone, message, selectedServices, toEmail } = await req.json();
 
     if (!name || !email) {
       return NextResponse.json(
@@ -46,7 +45,7 @@ export async function POST(req: Request) {
     // Send the email
     await transporter.sendMail({
       from: `"Devopstrio Website" <${smtpUser}>`,
-      to: 'Sagadevan.S@devopstrioglobal.com',
+      to: toEmail || 'info@devopstrioglobal.com',
       replyTo: email,
       subject: `New Contact Request from ${name}`,
       html: htmlContent,
