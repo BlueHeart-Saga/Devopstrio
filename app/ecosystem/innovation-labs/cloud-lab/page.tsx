@@ -70,13 +70,6 @@ interface RelatedLab {
 export default function CloudInnovationLabPage() {
   const [activeTab, setActiveTab] = useState<string>("Platform Modernization");
 
-  // Hero metrics
-  const heroMetrics = [
-    { value: "100+", label: "Cloud Deployments" },
-    { value: "20+", label: "Platform Accelerators" },
-    { value: "99.99%", label: "Availability" },
-    { value: "Multi-Cloud", label: "Expertise" }
-  ];
 
   // 2) Mini overview cards
   const miniMissionCards = [
@@ -395,6 +388,10 @@ export default function CloudInnovationLabPage() {
       {/* 1. HERO SECTION */}
       <Hero
         badge="Cloud Innovation Lab"
+        floatingLines={true}
+        floatingLinesStartColor="#0ea5e9"
+        floatingLinesMidColor="#2563eb"
+        floatingLinesEndColor="#6366f1"
         title={
           <>
             Where Cloud Strategy Becomes <br />
@@ -404,8 +401,6 @@ export default function CloudInnovationLabPage() {
           </>
         }
         subtitle="Accelerate hyper-scale execution through robust landing zones, platform engineering, automated Infrastructure as Code, and production-grade Kubernetes orchestration across public, hybrid, and multi-cloud environments."
-        bgImage="/assets/ecosystem/sub-page-hero/ecosystem_Innovation_labs/cloud.png"
-        stats={heroMetrics}
         breadcrumbs={[
           { label: "ECOSYSTEM", href: "/ecosystem" },
           { label: "INNOVATION LABS", href: "/ecosystem/innovation-labs" },

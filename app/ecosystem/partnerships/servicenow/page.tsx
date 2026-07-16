@@ -7,7 +7,8 @@ import { PartnerCertifications } from "@/sections/ecosystem/partnerships/Partner
 import {
   ArrowUpRight,
   CheckCircle2,
-  ChevronDown,
+  Plus,
+  Minus,
   Shield,
   Briefcase,
   Sparkles,
@@ -803,61 +804,63 @@ export default function ServiceNowPartnershipPage() {
       </section>
 
       {/* 11. FAQ ACCORDION */}
-      <section id="faq" className="w-full py-24 bg-black border-b border-zinc-900/60">
-        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
-
-            <div className="lg:col-span-5">
-              <Reveal className="text-left sticky top-28">
-                <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
-                  QUESTIONS & RESPONSES
-                </span>
-                <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
-                  Frequently Asked <span className="text-rose-500">Questions</span>
-                </h2>
-                <p className="text-zinc-400 text-xs md:text-sm font-bold max-w-md">
-                  Everything you need to know about our ServiceNow workflow automation, modules implementation, and integrations.
-                </p>
-              </Reveal>
+      <section id="faq" className="w-full py-20 md:py-28 bg-[#030303] text-white relative border-b border-zinc-900/60">
+        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
+          <Reveal className="max-w-3xl mb-16">
+            <div className="flex items-center gap-2 mb-4">
+              <span className="text-[10px] font-medium tracking-[0.2em] uppercase text-zinc-400">
+                FAQ
+              </span>
             </div>
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight leading-tight mb-4">
+              Questions we get <span className="text-white font-bold bg-gradient-to-r from-red-655 via-rose-600 to-rose-500 bg-clip-text text-transparent">asked every day</span>.
+            </h2>
+            <p className="text-zinc-400 text-sm leading-relaxed font-bold">
+              Everything you need to know about our ServiceNow workflow automation, modules implementation, and integrations. Can&apos;t find what you&apos;re looking for? Reach out to our team — we respond to every question personally.
+            </p>
+          </Reveal>
 
-            <div className="lg:col-span-7">
-              <div className="flex flex-col gap-4 select-none">
-                {faqs.map((faq, idx) => {
-                  const isOpen = openFaqIndex === idx;
-                  return (
-                    <div
-                      key={idx}
-                      className="bg-zinc-950/50 border border-zinc-900 hover:border-rose-500/10 rounded-2xl overflow-hidden transition-all duration-300"
-                    >
-                      <button
-                        onClick={() => toggleFaq(idx)}
-                        className="w-full p-6 text-left flex items-center justify-between gap-4 font-bold text-sm md:text-base text-white uppercase tracking-wider"
-                      >
-                        {faq.q}
-                        <ChevronDown
-                          className={`w-4 h-4 text-zinc-550 transition-transform duration-300 flex-shrink-0 ${
-                            isOpen ? "rotate-180 text-rose-500" : ""
-                          }`}
-                        />
-                      </button>
-
-                      <div
-                        className={`transition-all duration-300 ease-in-out overflow-hidden ${
-                          isOpen ? "max-h-[250px] border-t border-zinc-900/60" : "max-h-0"
-                        }`}
-                      >
-                        <p className="p-6 text-xs md:text-sm text-zinc-400 leading-relaxed font-bold">
-                          {faq.a}
-                        </p>
-                      </div>
+          {/* Accordion FAQ */}
+          <div className="flex flex-col border-t border-zinc-900 mb-16">
+            {faqs.map((faq, idx) => {
+              const isOpen = openFaqIndex === idx;
+              return (
+                <div key={idx} className="border-b border-zinc-900 py-6">
+                  <button
+                    onClick={() => toggleFaq(idx)}
+                    className="flex justify-between items-center w-full text-left focus:outline-none group"
+                  >
+                    <span className="text-sm md:text-base font-semibold text-zinc-200 group-hover:text-white transition-colors">
+                      {faq.q}
+                    </span>
+                    <div className="text-zinc-550 group-hover:text-rose-500 transition-colors ml-4 flex-shrink-0">
+                      {isOpen ? <Minus size={16} /> : <Plus size={16} />}
                     </div>
-                  );
-                })}
-              </div>
-            </div>
-
+                  </button>
+                  {isOpen && (
+                    <div className="mt-4 text-xs md:text-sm text-zinc-400 leading-relaxed font-bold max-w-3xl animate-fadeIn flex flex-col gap-4">
+                      <p>{faq.a}</p>
+                    </div>
+                  )}
+                </div>
+              );
+            })}
           </div>
+
+          {/* Below FAQ callout */}
+          <Reveal delay={0.2}>
+            <div className="border border-zinc-900 bg-zinc-950/20 p-6 rounded-2xl flex flex-col sm:flex-row justify-between items-center gap-4">
+              <p className="text-zinc-400 text-xs md:text-sm font-bold">
+                Still have questions? Don&apos;t sit with them. Reach out to our team — we respond to every message personally.
+              </p>
+              <a
+                href="mailto:info@devopstrioglobal.com"
+                className="gap-2 inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase border border-zinc-850 hover:border-zinc-750 bg-zinc-950/60 hover:bg-zinc-900 text-white transition-all duration-300 hover:-translate-y-0.5"
+              >
+                Contact Our Engineers <ArrowUpRight size={12} />
+              </a>
+            </div>
+          </Reveal>
         </div>
       </section>
 

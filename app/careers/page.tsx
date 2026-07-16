@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Link from "next/link";
 import { MapPin, Briefcase, X, Send, Check } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
 
@@ -167,6 +168,15 @@ export default function CareersPage() {
       <HiringProcess />
       <EmployeeStories />
       <TalentNetwork />
+
+      {/* Floating Side Badge */}
+      <Link 
+        href="/about/global-internship" 
+        className="fixed right-0 top-[35%] -translate-y-1/2 z-[40] hidden md:flex items-center justify-center bg-[#581326] hover:bg-[#701a32] text-white font-extrabold tracking-[0.2em] text-[11px] py-7 px-3.5 rounded-l-2xl shadow-[0_0_35px_rgba(225,29,72,0.35)] border border-r-0 border-rose-500/20 transition-all duration-300 hover:pl-5 group cursor-pointer"
+        style={{ writingMode: "vertical-rl" }}
+      >
+        EXPLORE OUR GLOBAL INTERNSHIP
+      </Link>
     </main>
   );
 }

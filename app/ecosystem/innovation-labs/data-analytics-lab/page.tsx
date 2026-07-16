@@ -67,13 +67,6 @@ interface RelatedLab {
 export default function DataAnalyticsInnovationLabPage() {
   const [activeTab, setActiveTab] = useState<string>("Executive Performance Reporting");
 
-  // Hero metrics
-  const heroMetrics = [
-    { value: "10M+", label: "Data Records Processed" },
-    { value: "50+", label: "Analytics Dashboards" },
-    { value: "Real-Time", label: "Data Pipelines" },
-    { value: "Enterprise", label: "Data Platforms" }
-  ];
 
   // 2) Mini overview cards
   const miniMissionCards = [
@@ -370,6 +363,10 @@ export default function DataAnalyticsInnovationLabPage() {
       {/* 1. HERO SECTION */}
       <Hero
         badge="Data & Analytics Innovation Lab"
+        floatingLines={true}
+        floatingLinesStartColor="#f43f5e"
+        floatingLinesMidColor="#f59e0b"
+        floatingLinesEndColor="#a855f7"
         title={
           <>
             Building the Data Backbone of <br />
@@ -379,8 +376,6 @@ export default function DataAnalyticsInnovationLabPage() {
           </>
         }
         subtitle="Consolidating fragmented data silos into high-performance, petabyte-scale cloud lakehouses and real-time event streaming pipelines."
-        bgImage="/assets/ecosystem/sub-page-hero/ecosystem_Innovation_labs/data.png"
-        stats={heroMetrics}
         breadcrumbs={[
           { label: "ECOSYSTEM", href: "/ecosystem" },
           { label: "INNOVATION LABS", href: "/ecosystem/innovation-labs" },

@@ -67,13 +67,6 @@ interface RelatedLab {
 export default function CybersecurityInnovationLabPage() {
   const [activeTab, setActiveTab] = useState<string>("Cloud & Infrastructure Security");
 
-  // Hero metrics
-  const heroMetrics = [
-    { value: "24/7", label: "Security Monitoring" },
-    { value: "100+", label: "Security Assessments" },
-    { value: "99.99%", label: "Secure Availability" },
-    { value: "Zero Trust", label: "Ready" }
-  ];
 
   // 2) Mini overview cards
   const miniMissionCards = [
@@ -390,6 +383,10 @@ export default function CybersecurityInnovationLabPage() {
       {/* 1. HERO SECTION */}
       <Hero
         badge="Cybersecurity Innovation Lab"
+        floatingLines={true}
+        floatingLinesStartColor="#10b981"
+        floatingLinesMidColor="#06b6d4"
+        floatingLinesEndColor="#6366f1"
         title={
           <>
             Where Security Engineering Meets <br />
@@ -399,8 +396,6 @@ export default function CybersecurityInnovationLabPage() {
           </>
         }
         subtitle="Defend complex cloud-native architectures through multi-tiered identity validation, continuous container vulnerability assessments, and automated incident response loops."
-        bgImage="/assets/ecosystem/sub-page-hero/ecosystem_Innovation_labs/Cyber.png"
-        stats={heroMetrics}
         breadcrumbs={[
           { label: "ECOSYSTEM", href: "/ecosystem" },
           { label: "INNOVATION LABS", href: "/ecosystem/innovation-labs" },

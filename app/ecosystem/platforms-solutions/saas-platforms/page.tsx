@@ -10,8 +10,10 @@ import {
   Cpu,
   Activity,
   Shield,
-  ChevronDown,
+  Plus,
+  Minus,
   ChevronRight,
+  ChevronDown,
   CheckCircle2,
   Users,
   Briefcase,
@@ -215,7 +217,8 @@ export default function SaaSPlatformsPage() {
           </>
         }
         subtitle="Discover Devopstrio's growing ecosystem of SaaS products, industry solutions, and intelligent business platforms designed to accelerate digital transformation."
-        bgImage="/assets/ecosystem/sub-page-hero/Ecosystem_flatform&solutions/Saas.png"
+        particles={true}
+        particleColors={["#ffffff", "#f5d0fe", "#d946ef"]}
         stats={heroMetrics}
         breadcrumbs={[
           { label: "ECOSYSTEM", href: "/ecosystem" },
@@ -611,58 +614,50 @@ export default function SaaSPlatformsPage() {
       </section>
 
       {/* FAQ SECTION */}
-      <section className="w-full py-24 bg-black border-b border-zinc-900/60">
-        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
+      <section id="faq" className="w-full py-20 md:py-28 bg-[#030303] text-white relative border-b border-zinc-900/60">
+        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
-
             <div className="lg:col-span-5">
               <Reveal className="text-left sticky top-28">
-                <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
-                  PLATFORM QUESTIONS
+                <span className="text-[10px] font-medium tracking-[0.2em] uppercase text-zinc-400 mb-3 block">
+                  FAQ
                 </span>
-                <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight leading-tight text-white mb-5">
-                  Frequently Asked <span className="text-rose-500">Questions</span>
+                <h2 className="text-3xl md:text-4xl font-bold tracking-tight leading-tight mb-4">
+                  Questions we get <span className="text-white font-bold bg-gradient-to-r from-red-655 via-rose-600 to-rose-500 bg-clip-text text-transparent">asked every day</span>.
                 </h2>
-                <p className="text-zinc-400 text-xs md:text-sm font-bold max-w-md">
-                  Everything you need to know about our multi-tenant SaaS architectures, custom additions, and database hosting boundaries.
+                <p className="text-zinc-400 text-sm leading-relaxed font-bold">
+                  Everything you need to know about our multi-tenant SaaS architectures, custom additions, and database hosting boundaries. Can&apos;t find what you&apos;re looking for? Reach out to our team — we respond to every question personally.
                 </p>
               </Reveal>
             </div>
 
             <div className="lg:col-span-7">
-              <div className="flex flex-col gap-4 select-none">
+              <div className="flex flex-col border-t border-zinc-900">
                 {faqs.map((faq, idx) => {
                   const isOpen = openFaqIndex === idx;
                   return (
-                    <div
-                      key={idx}
-                      className="bg-zinc-950/50 border border-zinc-900 hover:border-rose-500/10 rounded-2xl overflow-hidden transition-all duration-300"
-                    >
+                    <div key={idx} className="border-b border-zinc-900 py-6">
                       <button
                         onClick={() => toggleFaq(idx)}
-                        className="w-full p-6 text-left flex items-center justify-between gap-4 font-bold text-sm md:text-base text-white uppercase tracking-wider"
+                        className="flex justify-between items-center w-full text-left focus:outline-none group"
                       >
-                        {faq.q}
-                        <ChevronDown
-                          className={`w-4 h-4 text-zinc-550 transition-transform duration-300 flex-shrink-0 ${isOpen ? "rotate-180 text-rose-500" : ""
-                            }`}
-                        />
+                        <span className="text-sm md:text-base font-semibold text-zinc-200 group-hover:text-white transition-colors">
+                          {faq.q}
+                        </span>
+                        <div className="text-zinc-550 group-hover:text-rose-500 transition-colors ml-4 flex-shrink-0">
+                          {isOpen ? <Minus size={16} /> : <Plus size={16} />}
+                        </div>
                       </button>
-
-                      <div
-                        className={`transition-all duration-300 ease-in-out overflow-hidden ${isOpen ? "max-h-[250px] border-t border-zinc-900/60" : "max-h-0"
-                          }`}
-                      >
-                        <p className="p-6 text-xs md:text-sm text-zinc-400 leading-relaxed font-bold">
-                          {faq.a}
-                        </p>
-                      </div>
+                      {isOpen && (
+                        <div className="mt-4 text-xs md:text-sm text-zinc-400 leading-relaxed font-bold max-w-3xl animate-fadeIn flex flex-col gap-4">
+                          <p>{faq.a}</p>
+                        </div>
+                      )}
                     </div>
                   );
                 })}
               </div>
             </div>
-
           </div>
         </div>
       </section>

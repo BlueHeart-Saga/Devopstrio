@@ -73,13 +73,6 @@ interface LabCard {
 export default function AIInnovationLabPage() {
   const [activeTab, setActiveTab] = useState<string>("Finance");
 
-  // Hero Metrics
-  const heroMetrics = [
-    { value: "4-8 Wks", label: "Prototype Cycle" },
-    { value: "24/7", label: "Model Monitoring" },
-    { value: "Multi-Model", label: "Deployment Capable" },
-    { value: "Enterprise", label: "Ready Security" }
-  ];
 
   // 2. Mission overview - right side mini cards
   const miniMissionCards = [
@@ -364,6 +357,10 @@ export default function AIInnovationLabPage() {
       {/* 1. HERO SECTION */}
       <Hero
         badge="AI Innovation Lab"
+        floatingLines={true}
+        floatingLinesStartColor="#f43f5e"
+        floatingLinesMidColor="#a855f7"
+        floatingLinesEndColor="#3b82f6"
         title={
           <>
             Pioneering Applied R&D <br />
@@ -373,8 +370,6 @@ export default function AIInnovationLabPage() {
           </>
         }
         subtitle="Moving organizations from experimental sandbox prototypes to secure, highly optimized production ecosystems. We design custom agentic architectures, configure private RAG search networks, and audit model drift under enterprise-grade governance profiles."
-        bgImage="/assets/ecosystem/sub-page-hero/ecosystem_Innovation_labs/AI.png"
-        stats={heroMetrics}
         breadcrumbs={[
           { label: "ECOSYSTEM", href: "/ecosystem" },
           { label: "INNOVATION LABS", href: "/ecosystem/innovation-labs" },

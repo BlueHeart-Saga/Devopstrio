@@ -21,7 +21,8 @@ import {
   Boxes,
   Database,
   CloudLightning,
-  ChevronDown,
+  Plus,
+  Minus,
   Search,
   Check,
   ExternalLink,
@@ -759,56 +760,63 @@ export default function EcosystemLandingZonePage() {
       </section>
 
       {/* 5. FAQ SECTION */}
-      <section className="py-24 border-t border-zinc-900/60 bg-zinc-950/10">
-        <div className="max-w-4xl mx-auto px-6 md:px-12 xl:px-8">
-          <div className="text-center mb-16">
-            <Reveal>
-              <span className="text-[10px] font-bold tracking-[0.25em] text-rose-500 uppercase block mb-3">
-                QUESTIONS & ANSWERS
+      <section id="faq" className="w-full py-20 md:py-28 bg-[#030303] text-white relative border-b border-zinc-900/60">
+        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
+          <Reveal className="max-w-3xl mb-16">
+            <div className="flex items-center gap-2 mb-4">
+              <span className="text-[10px] font-medium tracking-[0.2em] uppercase text-zinc-400">
+                FAQ
               </span>
-            </Reveal>
-            <Reveal delay={0.05}>
-              <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-white mb-6">
-                Landing Zone Operations FAQ
-              </h2>
-            </Reveal>
-          </div>
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight leading-tight mb-4">
+              Questions we get <span className="text-white font-bold bg-gradient-to-r from-red-655 via-rose-600 to-rose-500 bg-clip-text text-transparent">asked every day</span>.
+            </h2>
+            <p className="text-zinc-400 text-sm leading-relaxed font-bold">
+              Everything you need to know about our Enterprise Landing Zones, private vector perimeters, and deployment timelines. Can&apos;t find what you&apos;re looking for? Reach out to our team — we respond to every question personally.
+            </p>
+          </Reveal>
 
-          <div className="space-y-4">
-            {faqItems.map((item, idx) => {
+          {/* Accordion FAQ */}
+          <div className="flex flex-col border-t border-zinc-900 mb-16">
+            {faqItems.map((faq, idx) => {
               const isOpen = openAccordion === idx;
               return (
-                <Reveal key={idx} delay={idx * 0.05}>
-                  <div className="border border-zinc-900 bg-zinc-950/20 rounded-xl overflow-hidden transition-all duration-350">
-                    <button
-                      onClick={() => setOpenAccordion(isOpen ? null : idx)}
-                      className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-zinc-950/60 transition-colors"
-                    >
-                      <span className="text-xs md:text-sm font-bold text-zinc-200">
-                        {item.q}
-                      </span>
-                      <ChevronDown
-                        size={16}
-                        className={`text-zinc-500 transition-transform duration-300 ${
-                          isOpen ? "rotate-180 text-rose-500" : ""
-                        }`}
-                      />
-                    </button>
-                    
-                    <div
-                      className={`transition-all duration-350 overflow-hidden ${
-                        isOpen ? "max-h-[300px] border-t border-zinc-900/60" : "max-h-0"
-                      }`}
-                    >
-                      <div className="p-6 text-xs md:text-sm leading-relaxed text-zinc-400 font-semibold bg-zinc-950/40">
-                        {item.a}
-                      </div>
+                <div key={idx} className="border-b border-zinc-900 py-6">
+                  <button
+                    onClick={() => setOpenAccordion(isOpen ? null : idx)}
+                    className="flex justify-between items-center w-full text-left focus:outline-none group"
+                  >
+                    <span className="text-sm md:text-base font-semibold text-zinc-200 group-hover:text-white transition-colors">
+                      {faq.q}
+                    </span>
+                    <div className="text-zinc-550 group-hover:text-rose-500 transition-colors ml-4 flex-shrink-0">
+                      {isOpen ? <Minus size={16} /> : <Plus size={16} />}
                     </div>
-                  </div>
-                </Reveal>
+                  </button>
+                  {isOpen && (
+                    <div className="mt-4 text-xs md:text-sm text-zinc-400 leading-relaxed font-bold max-w-3xl animate-fadeIn flex flex-col gap-4">
+                      <p>{faq.a}</p>
+                    </div>
+                  )}
+                </div>
               );
             })}
           </div>
+
+          {/* Below FAQ callout */}
+          <Reveal delay={0.2}>
+            <div className="border border-zinc-900 bg-zinc-950/20 p-6 rounded-2xl flex flex-col sm:flex-row justify-between items-center gap-4">
+              <p className="text-zinc-400 text-xs md:text-sm font-bold">
+                Still have questions? Don&apos;t sit with them. Reach out to our team — we respond to every message personally.
+              </p>
+              <a
+                href="mailto:info@devopstrioglobal.com"
+                className="gap-2 inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase border border-zinc-850 hover:border-zinc-750 bg-zinc-950/60 hover:bg-zinc-900 text-white transition-all duration-300 hover:-translate-y-0.5"
+              >
+                Contact Our Engineers <ArrowUpRight size={12} />
+              </a>
+            </div>
+          </Reveal>
         </div>
       </section>
 

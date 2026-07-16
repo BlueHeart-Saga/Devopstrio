@@ -938,7 +938,7 @@ export function Navbar() {
                     ))}
                     
                     {/* External Link: Visit AI Hub */}
-                    <div className="mt-2 pt-2 border-t border-zinc-900/80">
+                    {/* <div className="mt-2 pt-2 border-t border-zinc-900/80">
                       <a
                         href="https://ai.devopstrio.co.uk"
                         target="_blank"
@@ -952,7 +952,7 @@ export function Navbar() {
                         </span>
                         <span className="text-[10px] group-hover:translate-x-0.5 transition-transform">&rarr;</span>
                       </a>
-                    </div>
+                    </div> */}
                   </div>
 
                   {/* Right panel with active sub-items */}

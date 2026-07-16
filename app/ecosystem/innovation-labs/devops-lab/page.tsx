@@ -68,13 +68,6 @@ interface RelatedLab {
 export default function DevOpsInnovationLabPage() {
   const [activeTab, setActiveTab] = useState<string>("Delivery Acceleration");
 
-  // Hero metrics
-  const heroMetrics = [
-    { value: "500+", label: "Deployments" },
-    { value: "99.99%", label: "Platform Reliability" },
-    { value: "50+", label: "Automation Assets" },
-    { value: "24/7", label: "Platform Operations" }
-  ];
 
   // 2) Mini overview cards
   const miniMissionCards = [
@@ -394,6 +387,10 @@ export default function DevOpsInnovationLabPage() {
       {/* 1. HERO SECTION */}
       <Hero
         badge="DevOps Innovation Lab"
+        floatingLines={true}
+        floatingLinesStartColor="#f43f5e"
+        floatingLinesMidColor="#ea580c"
+        floatingLinesEndColor="#8b5cf6"
         title={
           <>
             Where Delivery Engineering Becomes <br />
@@ -403,8 +400,6 @@ export default function DevOpsInnovationLabPage() {
           </>
         }
         subtitle="Accelerate code delivery, simplify environment management, and build highly reliable internal platforms utilizing automated pipelines, IaC, Kubernetes orchestration, and Site Reliability Engineering."
-        bgImage="/assets/ecosystem/sub-page-hero/ecosystem_Innovation_labs/devops.png"
-        stats={heroMetrics}
         breadcrumbs={[
           { label: "ECOSYSTEM", href: "/ecosystem" },
           { label: "INNOVATION LABS", href: "/ecosystem/innovation-labs" },

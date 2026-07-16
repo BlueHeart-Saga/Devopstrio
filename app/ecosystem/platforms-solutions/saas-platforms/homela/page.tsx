@@ -4,7 +4,8 @@ import React, { useState } from "react";
 import { Reveal } from "@/components/ui/Reveal";
 import {
   ArrowUpRight,
-  ChevronDown,
+  Plus,
+  Minus,
   CheckCircle2,
   Home,
   Terminal,
@@ -123,27 +124,33 @@ export default function HomelaProductPage() {
 
       {/* FAQs */}
       <section className="w-full py-20 bg-[#030303] border-b border-zinc-900/60">
-        <div className="max-w-5xl mx-auto w-full px-12 xl:px-8">
+        <div className="max-w-3xl mx-auto w-full px-12 xl:px-8">
           <Reveal className="mb-12 text-center">
             <h2 className="text-2xl md:text-3xl font-bold text-white">
               Frequently Asked Questions
             </h2>
           </Reveal>
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col border-t border-zinc-900">
             {faqs.map((faq, idx) => {
               const isOpen = openFaqIndex === idx;
               return (
-                <div key={idx} className="bg-zinc-950/50 border border-zinc-900 rounded-xl overflow-hidden">
+                <div key={idx} className="border-b border-zinc-900 py-5">
                   <button
                     onClick={() => toggleFaq(idx)}
-                    className="w-full p-5 text-left flex items-center justify-between gap-4 font-bold text-sm md:text-base text-white"
+                    className="w-full flex justify-between items-center text-left focus:outline-none group"
                   >
-                    {faq.q}
-                    <ChevronDown className={`w-4 h-4 text-zinc-500 transition-transform ${isOpen ? "rotate-180 text-rose-500" : ""}`} />
+                    <span className="text-sm md:text-base font-bold text-zinc-200 group-hover:text-white transition-colors">
+                      {faq.q}
+                    </span>
+                    <div className="text-zinc-500 group-hover:text-rose-500 transition-colors ml-4 flex-shrink-0">
+                      {isOpen ? <Minus size={16} /> : <Plus size={16} />}
+                    </div>
                   </button>
-                  <div className={`transition-all duration-300 overflow-hidden ${isOpen ? "max-h-[150px] border-t border-zinc-900/60" : "max-h-0"}`}>
-                    <p className="p-5 text-xs md:text-sm text-zinc-400 font-bold leading-relaxed">{faq.a}</p>
-                  </div>
+                  {isOpen && (
+                    <div className="mt-4 text-xs md:text-sm text-zinc-400 font-bold leading-relaxed animate-fadeIn">
+                      <p>{faq.a}</p>
+                    </div>
+                  )}
                 </div>
               );
             })}

@@ -4,7 +4,8 @@ import React, { useState } from "react";
 import { Reveal } from "@/components/ui/Reveal";
 import {
   ArrowUpRight,
-  ChevronDown,
+  Plus,
+  Minus,
   CheckCircle2,
   TrendingUp,
   Terminal,
@@ -47,7 +48,7 @@ export default function CampixProductPage() {
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-[radial-gradient(circle_at_center,rgba(225,29,72,0.02),transparent_60%)] pointer-events-none" />
         <div className="max-w-5xl mx-auto w-full px-12 xl:px-8 text-center relative z-10">
           <Reveal className="mb-4">
-            <span className="gap-2 inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white transition-all duration-300 hover:shadow-[0_0_25px_rgba(225,29,72,0.35)] hover:-translate-y-0.5">
+            <span className="gap-2 inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase bg-gradient-to-r from-red-600 via-rose-600 to-rose-500 text-white transition-all duration-300 hover:shadow-[0_0_25px_rgba(225,29,72,0.35)] hover:-translate-y-0.5">
               <TrendingUp className="w-3.5 h-3.5" />
               SaaS Solutions
             </span>
@@ -123,27 +124,33 @@ export default function CampixProductPage() {
 
       {/* FAQs */}
       <section className="w-full py-20 bg-[#030303] border-b border-zinc-900/60">
-        <div className="max-w-5xl mx-auto w-full px-12 xl:px-8">
+        <div className="max-w-3xl mx-auto w-full px-12 xl:px-8">
           <Reveal className="mb-12 text-center">
             <h2 className="text-2xl md:text-3xl font-bold text-white">
               Frequently Asked Questions
             </h2>
           </Reveal>
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col border-t border-zinc-900">
             {faqs.map((faq, idx) => {
               const isOpen = openFaqIndex === idx;
               return (
-                <div key={idx} className="bg-zinc-950/50 border border-zinc-900 rounded-xl overflow-hidden">
+                <div key={idx} className="border-b border-zinc-900 py-5">
                   <button
                     onClick={() => toggleFaq(idx)}
-                    className="w-full p-5 text-left flex items-center justify-between gap-4 font-bold text-sm md:text-base text-white"
+                    className="w-full flex justify-between items-center text-left focus:outline-none group"
                   >
-                    {faq.q}
-                    <ChevronDown className={`w-4 h-4 text-zinc-500 transition-transform ${isOpen ? "rotate-180 text-rose-500" : ""}`} />
+                    <span className="text-sm md:text-base font-bold text-zinc-200 group-hover:text-white transition-colors">
+                      {faq.q}
+                    </span>
+                    <div className="text-zinc-500 group-hover:text-rose-500 transition-colors ml-4 flex-shrink-0">
+                      {isOpen ? <Minus size={16} /> : <Plus size={16} />}
+                    </div>
                   </button>
-                  <div className={`transition-all duration-300 overflow-hidden ${isOpen ? "max-h-[150px] border-t border-zinc-900/60" : "max-h-0"}`}>
-                    <p className="p-5 text-xs md:text-sm text-zinc-400 font-bold leading-relaxed">{faq.a}</p>
-                  </div>
+                  {isOpen && (
+                    <div className="mt-4 text-xs md:text-sm text-zinc-400 font-bold leading-relaxed animate-fadeIn">
+                      <p>{faq.a}</p>
+                    </div>
+                  )}
                 </div>
               );
             })}
