@@ -73,7 +73,7 @@ const DataPlatformOverview = () => {
         <Reveal>
           <div className="text-center max-w-3xl mx-auto mb-16 flex flex-col items-center">
             <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">GET INSIGHTS</span>
-            <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold tracking-tight leading-tight text-white mb-4 uppercase">
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-4 uppercase">
               Advance your Data Transformation
             </h2>
             <p className="text-zinc-450 text-sm leading-relaxed font-semibold mb-8 max-w-2xl">
@@ -158,7 +158,7 @@ const DataChallenges = () => {
         <Reveal>
           <div className="max-w-3xl mb-16">
             <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">DATA BOTTLENECKS</span>
-            <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold tracking-tight text-white mb-4 uppercase">
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-4 uppercase">
               Comprehensive analytics solutions built for scale
             </h2>
             <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-semibold">
@@ -267,7 +267,7 @@ const DataCapabilities = () => {
         <Reveal>
           <div className="text-center max-w-2xl mx-auto mb-20">
             <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">PLATFORM ENGINE</span>
-            <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold tracking-tight text-white mb-6 uppercase">Core Data Platform Capabilities</h2>
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-6 uppercase">Core Data Platform Capabilities</h2>
           </div>
         </Reveal>
 
@@ -490,7 +490,7 @@ const DataModules = () => {
         <Reveal>
           <div className="text-center max-w-2xl mx-auto mb-20">
             <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">PLATFORM MODULES</span>
-            <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold tracking-tight text-white mb-6 uppercase">Core Platform Modules</h2>
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-6 uppercase">Core Platform Modules</h2>
           </div>
         </Reveal>
 
@@ -613,7 +613,7 @@ const PlatformFeatures = () => {
         <Reveal>
           <div className="text-center max-w-2xl mx-auto mb-20">
             <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">PLATFORM FEATURE GRID</span>
-            <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold tracking-tight text-white mb-6 uppercase">Complete Data Platform Features</h2>
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-6 uppercase">Complete Data Platform Features</h2>
           </div>
         </Reveal>
 
@@ -688,7 +688,7 @@ const DataGovernance = () => {
         <Reveal>
           <div className="text-center max-w-3xl mx-auto mb-20">
             <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">GOVERNANCE & TRUST</span>
-            <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold tracking-tight text-white mb-6 uppercase">
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-6 uppercase">
               Trusted Data Starts with Governance
             </h2>
             <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-semibold">
@@ -772,7 +772,7 @@ const AIAnalyticsIntegration = () => {
             <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
               DATA PIPELINE FLOW
             </span>
-            <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold tracking-tight text-white mb-6 uppercase">
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-6 uppercase">
               Power Business Intelligence & AI
             </h2>
             <p className="text-zinc-400 text-sm leading-relaxed mb-8 font-semibold">
@@ -857,7 +857,7 @@ const TechnologyStack = () => {
         <Reveal>
           <div className="text-center max-w-2xl mx-auto mb-16">
             <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">INTEGRATED STACK</span>
-            <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold tracking-tight text-white mb-6 uppercase">Supported Technologies</h2>
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-6 uppercase">Supported Technologies</h2>
           </div>
         </Reveal>
 
@@ -905,7 +905,7 @@ const BusinessOutcomes = () => {
         <Reveal>
           <div className="text-center max-w-2xl mx-auto mb-20">
             <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">BUSINESS VALUE</span>
-            <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold tracking-tight text-white mb-6 uppercase">Business Outcomes</h2>
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-6 uppercase">Business Outcomes</h2>
           </div>
         </Reveal>
 
@@ -913,7 +913,7 @@ const BusinessOutcomes = () => {
           {outcomes.map((item, idx) => (
             <Reveal key={idx} delay={idx * 0.05}>
               <div className="p-8 bg-zinc-950/40 border border-zinc-900 rounded-[2rem] hover:border-rose-500/20 transition-all duration-300 text-center flex flex-col items-center justify-center min-h-[190px]">
-                <div className="text-3xl md:text-4xl font-extrabold text-rose-500 mb-3 tracking-tight">
+                <div className="text-xl md:text-2xl xl:text-3xl font-extrabold text-rose-500 mb-3 tracking-tight">
                   {item.value}
                 </div>
                 <h4 className="text-sm font-bold text-white mb-2 tracking-tight uppercase tracking-wider">{item.title}</h4>
@@ -949,7 +949,7 @@ const IndustryUseCases = () => {
         <Reveal>
           <div className="max-w-3xl mb-16">
             <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">SECTOR DEPLOYMENTS</span>
-            <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold tracking-tight text-white mb-4 uppercase">
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-4 uppercase">
               Tailored Sector Solutions
             </h2>
             <p className="text-zinc-455 text-sm md:text-base leading-relaxed font-semibold">
@@ -1209,7 +1209,7 @@ const RelatedSolutions = () => {
         <Reveal>
           <div className="text-center max-w-2xl mx-auto mb-16">
             <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">ECOSYSTEM LINKS</span>
-            <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold tracking-tight text-white mb-6 uppercase">Related Solutions</h2>
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-6 uppercase">Related Solutions</h2>
           </div>
         </Reveal>
 
@@ -1261,7 +1261,7 @@ const PlatformFAQ = () => {
       <div className="max-w-7xl mx-auto w-full px-6 xl:px-8 relative z-10">
         <Reveal className="max-w-3xl mb-16">
           <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">FAQ</span>
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight leading-tight mb-4 uppercase">
+          <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-4 uppercase">
             Questions we get <span className="bg-gradient-to-r from-rose-500 to-rose-700 bg-clip-text text-transparent">asked every day</span>
           </h2>
           <p className="text-zinc-400 text-sm leading-relaxed font-bold">
@@ -1311,7 +1311,7 @@ const PlatformCTA = () => {
       <div className="max-w-4xl mx-auto px-6 xl:px-8 relative z-10">
         <Reveal>
           <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">GET STARTED</span>
-          <h2 className="text-3xl md:text-5xl font-black mb-6 tracking-tight uppercase text-white">
+          <h2 className="text-xl md:text-2xl xl:text-3xl font-black mb-6 tracking-tight uppercase text-white">
             Turn Enterprise Data into Competitive Advantage
           </h2>
           <p className="text-zinc-300 text-sm md:text-base font-semibold mb-10 max-w-xl mx-auto leading-relaxed">
