@@ -1,8 +1,11 @@
 "use client";
 
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 import { Reveal } from "@/components/ui/Reveal";
 import { Hero } from "@/components/services/Hero";
+import { FeaturesAccordion } from "@/components/FeaturesAccordion";
+import { OrbitEcosystem } from "@/components/OrbitEcosystem";
 import {
   ArrowUpRight,
   Check,
@@ -24,7 +27,23 @@ import {
   Home,
   GraduationCap,
   Sparkles,
-  Bot
+  Bot,
+  Star,
+  MessageCircle,
+  Repeat,
+  Heart,
+  Cloud,
+  Database,
+  Hexagon,
+  Triangle,
+  Circle,
+  Box,
+  Sun,
+  Moon,
+  Search,
+  Command,
+  Play,
+  CheckCircle2
 } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
@@ -32,7 +51,6 @@ import Image from "next/image";
 export default function SaaSPlatformsPage() {
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
   
-  // Lead Form State
   const [formState, setFormState] = useState({
     name: "",
     email: "",
@@ -40,16 +58,40 @@ export default function SaaSPlatformsPage() {
     platform: "All Platforms",
     message: ""
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const [activeLogoTab, setActiveLogoTab] = useState("All");
 
   const toggleFaq = (index: number) => {
     setOpenFaqIndex(openFaqIndex === index ? null : index);
   };
 
-  const handleFormSubmit = (e: React.FormEvent) => {
+  const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setFormSubmitted(true);
-    // Real forms would send to API endpoints
+    setIsSubmitting(true);
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: formState.name,
+          email: formState.email,
+          message: `Organization: ${formState.org}\nPlatform of Interest: ${formState.platform}\n\nRequirements:\n${formState.message}`,
+          selectedServices: [formState.platform],
+          toEmail: 'info@devopstrioglobal.com',
+        }),
+      });
+      if (response.ok) {
+        setFormSubmitted(true);
+      } else {
+        alert('Failed to submit inquiry. Please try again.');
+      }
+    } catch (err) {
+      console.error(err);
+      alert('An error occurred. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   // Product Grid Data (All 8 Products)
@@ -227,33 +269,99 @@ export default function SaaSPlatformsPage() {
           </>
         }
         subtitle="Industry-specific cloud platforms engineered to automate operations, improve customer experiences, and accelerate digital transformation."
+        shapeGrid={true}
+        shapeGridSpeed={0.5}
+        shapeGridSquareSize={50}
+        shapeGridDirection="diagonal"
+        shapeGridBorderColor="rgba(255, 255, 255, 0.08)"
+        shapeGridHoverFillColor="rgba(225, 29, 72, 0.2)"
+        shapeGridShape="square"
+        shapeGridHoverTrailAmount={3}
         dotField={true}
         dotFieldProps={{
-          dotRadius: 1.5,
-          dotSpacing: 14,
+          dotRadius: 2,
+          dotSpacing: 24,
           bulgeStrength: 67,
-          glowRadius: 160,
-          sparkle: false,
-          waveAmplitude: 0,
-          gradientFrom: "rgba(225, 29, 72, 0.35)",
-          gradientTo: "rgba(239, 68, 68, 0.15)",
-          glowColor: "#1c0508",
+          glowRadius: 200,
+          sparkle: true,
+          waveAmplitude: 10,
+          gradientFrom: "rgba(225, 29, 72, 0.8)",
+          gradientTo: "rgba(239, 68, 68, 0.5)",
+          glowColor: "rgba(225, 29, 72, 0.15)",
         }}
         breadcrumbs={[
           { label: "ECOSYSTEM", href: "/ecosystem" },
           { label: "PLATFORMS & SOLUTIONS", href: "/ecosystem/platforms-solutions" },
           { label: "SAAS PLATFORMS" }
         ]}
-      />
+      >
+        {/* Infinite Scroll Tech Marquee */}
+        <div className="w-screen relative left-1/2 -translate-x-1/2 mt-16 pt-8 border-t border-zinc-800/50 overflow-hidden opacity-75 hover:opacity-100 transition-opacity duration-500">
+          <p className="text-center text-[10px] tracking-[0.2em] uppercase text-zinc-500 font-bold mb-8">
+            Powered by industry-leading cloud architecture
+          </p>
+          
+          {/* Gradient Edge Masks for smooth fade */}
+          <div className="absolute inset-y-0 bottom-0 left-0 w-32 md:w-64 bg-gradient-to-r from-[#0a0a0a] to-transparent z-10 pointer-events-none" />
+          <div className="absolute inset-y-0 bottom-0 right-0 w-32 md:w-64 bg-gradient-to-l from-[#0a0a0a] to-transparent z-10 pointer-events-none" />
+          
+          <motion.div 
+            className="flex flex-nowrap w-max items-center gap-12 sm:gap-24 pr-12 sm:pr-24"
+            animate={{ x: [0, "-50%"] }}
+            transition={{ repeat: Infinity, ease: "linear", duration: 35 }}
+          >
+            {[
+              { name: "AWS", src: "/assets/Tech_logos/AWS.svg" },
+              { name: "Azure", src: "/assets/Tech_logos/Microsoft Azure.svg" },
+              { name: "Google Cloud", src: "/assets/Tech_logos/Google_Cloud.svg" },
+              { name: "Docker", src: "/assets/Tech_logos/Docker.svg" },
+              { name: "Kubernetes", src: "/assets/Tech_logos/Kubernetes.svg" },
+              { name: "React", src: "/assets/Tech-icons/react-icon_svgstack_com_29171780931136.svg" },
+              { name: "NodeJS", src: "/assets/Tech-icons/nodejs-logo_svgstack_com_28911780931118.svg" },
+              { name: "MongoDB", src: "/assets/Tech_logos/MongoDB.svg" },
+              { name: "Elastic", src: "/assets/Tech_logos/Elastic.svg" },
+              { name: "Datadog", src: "/assets/Tech_logos/Datadog.svg" },
+              
+              // Duplicated perfectly for the 50% translation loop
+              { name: "AWS", src: "/assets/Tech_logos/AWS.svg" },
+              { name: "Azure", src: "/assets/Tech_logos/Microsoft Azure.svg" },
+              { name: "Google Cloud", src: "/assets/Tech_logos/Google_Cloud.svg" },
+              { name: "Docker", src: "/assets/Tech_logos/Docker.svg" },
+              { name: "Kubernetes", src: "/assets/Tech_logos/Kubernetes.svg" },
+              { name: "React", src: "/assets/Tech-icons/react-icon_svgstack_com_29171780931136.svg" },
+              { name: "NodeJS", src: "/assets/Tech-icons/nodejs-logo_svgstack_com_28911780931118.svg" },
+              { name: "MongoDB", src: "/assets/Tech_logos/MongoDB.svg" },
+              { name: "Elastic", src: "/assets/Tech_logos/Elastic.svg" },
+              { name: "Datadog", src: "/assets/Tech_logos/Datadog.svg" }
+            ].map((logo, i) => (
+              <div 
+                key={i} 
+                className="flex items-center justify-center shrink-0 w-10 h-10 md:w-12 md:h-12 opacity-60 hover:opacity-100 grayscale hover:grayscale-0 transition-all duration-300 hover:scale-110 cursor-pointer"
+                title={logo.name}
+              >
+                <div className="relative w-full h-full">
+                  <Image 
+                    src={logo.src} 
+                    alt={logo.name} 
+                    fill 
+                    className="object-contain" 
+                    unoptimized 
+                  />
+                </div>
+              </div>
+            ))}
+          </motion.div>
+        </div>
+      </Hero>
 
       {/* 2. PRODUCT ECOSYSTEM DIAGRAM */}
-      <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60">
+      <section className="w-full py-12 bg-[#030303] border-b border-zinc-900/60">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
-          <Reveal className="text-center max-w-2xl mx-auto mb-16">
+          <Reveal className="text-center max-w-2xl mx-auto mb-8">
             <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
               SYSTEM ORCHESTRATION
             </span>
-            <h2 className="text-2xl md:text-4xl font-extrabold text-white mb-6">
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-4">
               Product Ecosystem Diagram
             </h2>
             <p className="text-zinc-400 text-xs md:text-sm font-bold leading-relaxed">
@@ -261,94 +369,33 @@ export default function SaaSPlatformsPage() {
             </p>
           </Reveal>
 
-          {/* ASCII & Graphical Hybrid Node Diagram */}
-          <div className="max-w-4xl mx-auto bg-zinc-950 border border-zinc-900 p-8 rounded-3xl relative overflow-hidden flex flex-col items-center">
-            <div className="absolute inset-0 opacity-[0.015] pointer-events-none" style={{ backgroundImage: "radial-gradient(circle, #fff 1px, transparent 1px)", backgroundSize: "20px 20px" }} />
-            
-            {/* Top Node */}
-            <div className="text-center relative z-10 mb-8 w-full max-w-md">
-              <div className="bg-gradient-to-r from-red-900/30 to-rose-900/30 border border-red-500/30 text-rose-400 px-6 py-4 rounded-2xl inline-block shadow-[0_0_30px_rgba(220,38,38,0.1)]">
-                <span className="text-[10px] font-mono tracking-widest uppercase block mb-1 font-extrabold text-zinc-500">Central Core</span>
-                <span className="text-sm font-black text-white uppercase tracking-widest font-mono">DEVOPSTRIO</span>
-                <span className="text-[9px] block text-zinc-400 font-mono mt-1">Enterprise AI • Cloud • SaaS Engineering</span>
-              </div>
-            </div>
-
-            {/* Tree Branching Lines (SVG) */}
-            <svg className="w-full max-w-3xl h-16 pointer-events-none opacity-25 mb-4 hidden md:block">
-              {/* Lines to Tier 1 */}
-              <line x1="50%" y1="0%" x2="16.6%" y2="100%" stroke="white" strokeWidth="1.5" strokeDasharray="3" />
-              <line x1="50%" y1="0%" x2="50%" y2="100%" stroke="white" strokeWidth="1.5" strokeDasharray="3" />
-              <line x1="50%" y1="0%" x2="83.3%" y2="100%" stroke="white" strokeWidth="1.5" strokeDasharray="3" />
-            </svg>
-
-            {/* Grid representing the nodes */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full relative z-10 text-center mb-8">
-              {/* Left Wing */}
-              <div className="flex flex-col gap-6">
-                <div className="bg-zinc-900/80 border border-zinc-800 p-4 rounded-xl">
-                  <div className="text-xs font-bold text-white font-mono">Humanex</div>
-                  <div className="text-[9px] font-mono text-rose-500 uppercase tracking-widest mt-1 font-bold">HR</div>
-                </div>
-                <div className="flex justify-center text-zinc-700">↓</div>
-                <div className="bg-zinc-900/80 border border-zinc-800 p-4 rounded-xl">
-                  <div className="text-xs font-bold text-white font-mono">SafeSign</div>
-                  <div className="text-[9px] font-mono text-emerald-500 uppercase tracking-widest mt-1 font-bold">eSignature</div>
-                </div>
-              </div>
-
-              {/* Center Wing */}
-              <div className="flex flex-col gap-6">
-                <div className="bg-zinc-900/80 border border-zinc-800 p-4 rounded-xl">
-                  <div className="text-xs font-bold text-white font-mono">CareSuite</div>
-                  <div className="text-[9px] font-mono text-cyan-500 uppercase tracking-widest mt-1 font-bold">Health</div>
-                </div>
-                <div className="flex justify-center text-zinc-700">↓</div>
-                <div className="bg-zinc-900/80 border border-zinc-800 p-4 rounded-xl">
-                  <div className="text-xs font-bold text-white font-mono">Justivon</div>
-                  <div className="text-[9px] font-mono text-indigo-500 uppercase tracking-widest mt-1 font-bold">Legal Ops</div>
-                </div>
-              </div>
-
-              {/* Right Wing */}
-              <div className="flex flex-col gap-6">
-                <div className="bg-zinc-900/80 border border-zinc-800 p-4 rounded-xl">
-                  <div className="text-xs font-bold text-white font-mono">Homela</div>
-                  <div className="text-[9px] font-mono text-amber-500 uppercase tracking-widest mt-1 font-bold">Property</div>
-                </div>
-                <div className="flex justify-center text-zinc-700">↓</div>
-                <div className="bg-zinc-900/80 border border-zinc-800 p-4 rounded-xl">
-                  <div className="text-xs font-bold text-white font-mono">Campix</div>
-                  <div className="text-[9px] font-mono text-purple-500 uppercase tracking-widest mt-1 font-bold">Marketing</div>
-                </div>
-              </div>
-            </div>
-
-            {/* Bottom Connector Flow */}
-            <div className="flex flex-col items-center w-full max-w-sm relative z-10 text-center">
-              <div className="text-zinc-700 mb-6">↓</div>
-              <div className="bg-zinc-900/80 border border-zinc-800 p-4 rounded-xl w-full mb-6">
-                <div className="text-xs font-bold text-white font-mono">Prestivo</div>
-                <div className="text-[9px] font-mono text-blue-500 uppercase tracking-widest mt-1 font-bold">Education</div>
-              </div>
-              <div className="text-zinc-700 mb-6">↓</div>
-              <div className="bg-zinc-900/80 border border-zinc-800 p-4 rounded-xl w-full">
-                <div className="text-xs font-bold text-white font-mono">Brio</div>
-                <div className="text-[9px] font-mono text-fuchsia-500 uppercase tracking-widest mt-1 font-bold">AI Marketing</div>
-              </div>
-            </div>
+          {/* Circular Orbit Node Diagram */}
+          <div>
+            <OrbitEcosystem
+              centerLogo="/assets/logo/logo.png"
+              nodes={[
+                { name: "Campix", logo: "/assets/Home-page/our-products/logo/Campix.png" },
+                { name: "CareSuite", logo: "/assets/Home-page/our-products/logo/Caresuite.png" },
+                { name: "Justivon", logo: "/assets/Home-page/our-products/logo/Justivon.png" },
+                { name: "Prestivo", logo: "/assets/Home-page/our-products/logo/Prestivo.png" },
+                { name: "Brio", logo: "/assets/Home-page/our-products/logo/brio.png" },
+                { name: "Homela", logo: "/assets/Home-page/our-products/logo/homela.png" },
+                { name: "Humanex", logo: "/assets/Home-page/our-products/logo/humanex.png" },
+                { name: "SafeSign", logo: "/assets/Home-page/our-products/logo/safesign.png" }
+              ]}
+            />
           </div>
         </div>
       </section>
 
       {/* 3. PRODUCT GRID */}
-      <section className="w-full py-28 bg-[#0B0B0B] border-b border-zinc-900/60">
+      <section className="w-full py-12 border-b border-zinc-900/60">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
-          <div className="max-w-3xl mb-20">
+          <div className="max-w-3xl mb-8">
             <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
               RECOMMENDED SAAS PORTFOLIO
             </span>
-            <h2 className="text-3xl md:text-5xl font-black tracking-tight text-white mb-6">
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-4">
               Enterprise SaaS Platforms Built for Modern Businesses
             </h2>
             <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-bold">
@@ -356,237 +403,478 @@ export default function SaaSPlatformsPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {products.map((p) => (
-              <div
-                key={p.slug}
-                className="group flex flex-col justify-between p-6 bg-zinc-950/40 border border-zinc-900 hover:border-rose-500/20 rounded-3xl transition-all duration-300"
-              >
-                <div>
-                  <div className="flex items-center justify-between mb-5 border-b border-zinc-900/60 pb-4">
-                    <span className={`px-2.5 py-0.5 text-[9px] font-mono border rounded-full font-bold ${p.badgeColor}`}>
-                      {p.category}
-                    </span>
-                    <span className="text-[9px] text-zinc-600 font-mono">Powered by Devopstrio</span>
-                  </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 px-4 sm:px-0">
+            {products.map((p, i) => (
+                <div
+                  key={p.slug}
+                  className="group h-[420px] [perspective:1000px] hover:z-10 transition-all duration-500"
+                >
+                  <div className="relative w-full h-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+                    
+                    {/* FRONT FACE (Minimalist Design) */}
+                    <div className="absolute inset-0 [backface-visibility:hidden] bg-[#0c0c0c] border border-zinc-800/80 rounded-[2rem] flex flex-col shadow-2xl p-2 gap-2">
+                      {/* Visual Showcase */}
+                      <div className="relative flex-1 w-full rounded-[1.5rem] flex items-center justify-center overflow-hidden bg-zinc-950 border border-zinc-800/50">
+                        {/* Background product screenshot heavily stylized */}
+                        <Image
+                          src={`/assets/Home-page/our-products/${p.slug}.png`}
+                          alt={`${p.name} UI`}
+                          fill
+                          className="object-cover group-hover:scale-105 transition-transform duration-1000"
+                          unoptimized
+                        />
+                        {/* Radial gradient to darken edges */}
+                        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,#0c0c0c_120%)]" />
+                        
+                        {/* Radar/Circle Design Element (mimicking screenshot) */}
+                        <div className="absolute inset-0 flex items-center justify-center opacity-30 pointer-events-none">
+                          <div className="w-64 h-64 rounded-full border border-zinc-700/80 flex items-center justify-center">
+                            <div className="w-40 h-40 rounded-full border border-zinc-700/60 flex items-center justify-center">
+                              <div className="w-16 h-16 rounded-full border border-zinc-700/40" />
+                            </div>
+                          </div>
+                          {/* Crosshairs */}
+                          <div className="absolute w-full h-[1px] bg-zinc-700/60" />
+                          <div className="absolute h-full w-[1px] bg-zinc-700/60" />
+                        </div>
 
-                  <h3 className="text-lg font-extrabold text-white tracking-wide mb-1">{p.name}</h3>
-                  <p className="text-[10px] text-rose-500 font-mono mb-4 uppercase tracking-wider font-bold">
-                    {p.tagline}
-                  </p>
-                  
-                  <p className="text-xs text-zinc-400 font-bold leading-relaxed mb-6">
-                    {p.desc}
-                  </p>
+                        {/* Central Logo */}
+                        <div className="relative z-10 w-16 h-16 rounded-2xl bg-zinc-900/80 backdrop-blur-md border border-zinc-700/80 flex items-center justify-center p-3 shadow-2xl">
+                          <img
+                            src={p.logo}
+                            alt={`${p.name} Logo`}
+                            className="w-full h-full object-contain drop-shadow-md"
+                          />
+                        </div>
+                      </div>
 
-                  <div className="flex flex-wrap gap-1.5 mb-6">
-                    {p.features.map((feat) => (
-                      <span key={feat} className="px-2 py-0.5 bg-black border border-zinc-900 text-[9px] font-mono text-zinc-400 rounded-md font-bold">
-                        ✔ {feat}
-                      </span>
-                    ))}
+                      {/* Bottom Minimalist Bar */}
+                      <div className="flex items-center justify-between px-4 py-3 bg-[#0c0c0c] z-10">
+                        <span className="text-[9px] text-zinc-300 font-mono tracking-widest uppercase font-bold">{p.name}</span>
+                        <span className="text-[9px] text-zinc-600 font-mono tracking-widest uppercase">{p.category.split(' ')[0]}</span>
+                      </div>
+                    </div>
+
+                    {/* BACK FACE (Details & CTAs) */}
+                    <div className="absolute inset-0 [backface-visibility:hidden] [transform:rotateY(180deg)] bg-zinc-950 border border-zinc-800 rounded-[2rem] overflow-hidden flex flex-col p-8 shadow-2xl">
+                      <div className="flex flex-col h-full">
+                        
+                        <div className="flex items-center gap-4 mb-6">
+                          <div className="w-12 h-12 rounded-xl bg-zinc-900 border border-zinc-800 flex items-center justify-center p-2.5 shrink-0">
+                            <img src={p.logo} alt={`${p.name} Logo`} className="w-full h-full object-contain" />
+                          </div>
+                          <div>
+                            <h3 className="text-xl font-bold text-white tracking-tight">{p.name}</h3>
+                            <span className={`px-2 py-0.5 mt-1 inline-block text-[9px] font-mono border rounded-full font-bold leading-none ${p.badgeColor}`}>
+                              {p.category}
+                            </span>
+                          </div>
+                        </div>
+
+                        <p className="text-sm font-bold text-rose-500 mb-4">{p.tagline}</p>
+                        <p className="text-sm text-zinc-400 font-medium leading-relaxed">{p.desc}</p>
+                        
+                        <div className="flex flex-col gap-3 mt-auto pt-6 border-t border-zinc-900">
+                          <Link
+                            href={`/ecosystem/platforms-solutions/saas-platforms/${p.slug}`}
+                            className="w-full py-3 bg-white text-black text-center text-sm font-bold rounded-lg hover:bg-zinc-200 transition-colors flex items-center justify-center gap-1.5"
+                          >
+                            {p.ctaPrimary}
+                            <ArrowUpRight className="w-4 h-4" />
+                          </Link>
+                          <Link
+                            href="#lead-form"
+                            className="w-full py-3 bg-transparent border border-zinc-700 text-zinc-300 text-center text-sm font-bold rounded-lg hover:bg-zinc-800 hover:text-white transition-colors"
+                          >
+                            {p.ctaSecondary}
+                          </Link>
+                        </div>
+                      </div>
+                    </div>
+
                   </div>
                 </div>
-
-                <div className="flex flex-col gap-2 mt-auto pt-4 border-t border-zinc-900/40">
-                  <Link
-                    href={`/ecosystem/platforms-solutions/saas-platforms/${p.slug}`}
-                    className="w-full py-2 bg-white text-black text-center text-xs font-bold rounded-lg hover:bg-zinc-200 transition-colors flex items-center justify-center gap-1.5"
-                  >
-                    {p.ctaPrimary}
-                    <ArrowUpRight className="w-3.5 h-3.5" />
-                  </Link>
-                  <Link
-                    href="#lead-form"
-                    className="w-full py-2 bg-zinc-900 border border-zinc-800 text-zinc-350 text-center text-xs font-bold rounded-lg hover:bg-zinc-850 hover:text-white transition-colors"
-                  >
-                    {p.ctaSecondary}
-                  </Link>
-                  <div className="text-center text-[9px] text-zinc-650 font-mono mt-1">
-                    {p.url}
-                  </div>
-                </div>
-              </div>
-            ))}
+              ))
+            }
           </div>
         </div>
       </section>
 
       {/* 4. INDUSTRY COVERAGE */}
-      <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60">
-        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
-            <div className="lg:col-span-5">
-              <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
-                VERTICAL COVERAGE
-              </span>
-              <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-6">
-                Industry Alignment
+      <section className="w-full py-12 bg-black border-b border-zinc-900/60 overflow-hidden">
+        <div className="max-w-7xl mx-auto w-full px-4 sm:px-8 xl:px-12">
+          
+          {/* Header Row */}
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-8">
+            <div className="max-w-2xl">
+              <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">
+                A season of shipped work.
               </h2>
-              <p className="text-zinc-400 text-sm leading-relaxed font-bold">
-                Our platforms are configured with specific regulatory and operational layers tailored directly to each corresponding industry.
+              <p className="text-zinc-400 text-base md:text-lg font-medium">
+                New identities, platforms, and launch sites — built with the in-house teams who run them now across diverse industries.
               </p>
             </div>
-
-            <div className="lg:col-span-7 bg-zinc-950/30 border border-zinc-900 rounded-3xl p-8 md:p-12">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {industries.map((ind, idx) => (
-                  <Link
-                    key={idx}
-                    href={ind.link}
-                    className="flex items-center justify-between p-4 bg-black border border-zinc-900 rounded-xl hover:border-rose-500/15 transition-all group"
-                  >
-                    <div>
-                      <div className="text-[10px] text-zinc-550 font-mono uppercase tracking-wider font-bold">Sector</div>
-                      <div className="text-xs font-extrabold text-white">{ind.industry}</div>
-                    </div>
-                    <div className="flex items-center gap-1.5 text-xs text-rose-500 font-mono font-bold">
-                      {ind.product}
-                      <ChevronRight className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
-                    </div>
-                  </Link>
-                ))}
-              </div>
+            <div className="flex items-center gap-3 shrink-0">
+              <button onClick={() => document.getElementById('industry-scroll')?.scrollBy({ left: -424, behavior: 'smooth' })} className="w-12 h-12 rounded-full border border-zinc-800 flex items-center justify-center text-zinc-400 hover:text-white hover:bg-zinc-900 transition-colors">
+                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
+              </button>
+              <button onClick={() => document.getElementById('industry-scroll')?.scrollBy({ left: 424, behavior: 'smooth' })} className="w-12 h-12 rounded-full border border-zinc-800 flex items-center justify-center text-zinc-400 hover:text-white hover:bg-zinc-900 transition-colors">
+                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+              </button>
             </div>
           </div>
+
+          {/* Horizontal Scroller */}
+          <div 
+            id="industry-scroll"
+            className="flex overflow-x-auto gap-6 pb-8 snap-x snap-mandatory [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] relative"
+          >
+            {[
+              { title: "Banking & Finance", subtitle: "Secure financial frameworks · 2026", badge: "FinTech", image: "/assets/Home-page/industries/bankifinance.png" },
+              { title: "Healthcare", subtitle: "Clinical operational suites · 2026", badge: "CareSuite", image: "/assets/Home-page/industries/healthcaree.png" },
+              { title: "Education", subtitle: "Collaborative learning hubs · 2026", badge: "Prestivo", image: "/assets/Home-page/industries/educationn.png" },
+              { title: "Government", subtitle: "Public sector automation · 2026", badge: "Civic Systems", image: "/assets/Home-page/industries/governmentsector.png" },
+              { title: "Manufacturing", subtitle: "Supply chain integrations · 2026", badge: "Industry 4.0", image: "/assets/Home-page/industries/manufacturingg.png" },
+              { title: "Media & Ent.", subtitle: "Asset coordination matrix · 2026", badge: "Brio", image: "/assets/Home-page/industries/mediaentertainment.png" },
+              { title: "Telecom", subtitle: "Network lifecycle tooling · 2026", badge: "Telco Stack", image: "/assets/Home-page/industries/telecommunicationn.png" },
+              { title: "Retail", subtitle: "Omnichannel workflows · 2026", badge: "E-Commerce", image: "/assets/Home-page/industries/retailecommerce.png" },
+              { title: "Real Estate", subtitle: "Property asset telemetry · 2026", badge: "Homela", image: "/assets/Home-page/industries/4.png" }
+            ].map((ind, idx) => (
+              <div key={idx} className="min-w-[300px] md:min-w-[400px] snap-start group cursor-pointer bg-[#0c0c0c] border border-zinc-800/80 rounded-[2rem] p-2 hover:border-zinc-700 transition-colors">
+                {/* Visual Box */}
+                <div className="bg-zinc-900 rounded-[1.5rem] border border-zinc-800/50 aspect-[4/3] relative overflow-hidden mb-4 shadow-inner">
+                  
+                  {/* Full Cover Image */}
+                  <Image 
+                    src={ind.image} 
+                    alt={ind.title} 
+                    fill 
+                    className="object-cover transition-transform duration-700 group-hover:scale-105" 
+                    unoptimized 
+                  />
+                  
+                  {/* Gradient Overlay for Text Readability */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none opacity-80" />
+
+                  {/* Top Badge */}
+                  <div className="absolute top-4 left-4 bg-black/60 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/10 z-10">
+                    <span className="text-[9px] font-bold text-white tracking-widest uppercase">{ind.badge}</span>
+                  </div>
+                </div>
+
+                {/* Info Text */}
+                <div className="flex justify-between items-start px-2 pb-2">
+                  <div>
+                    <h3 className="text-xl md:text-2xl font-bold text-white mb-2 tracking-tight group-hover:text-rose-500 transition-colors">{ind.title}</h3>
+                    <p className="text-xs md:text-sm text-zinc-500 font-medium">{ind.subtitle}</p>
+                  </div>
+                  <div className="w-10 h-10 rounded-full border border-zinc-800 flex items-center justify-center text-zinc-400 group-hover:bg-white group-hover:text-black transition-colors shrink-0">
+                    <ArrowUpRight className="w-4 h-4" />
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Bottom Progress UI */}
+          <div className="flex items-center gap-6 mt-8 w-full max-w-sm mx-auto md:mx-0">
+            <div className="flex-1 h-[1px] bg-zinc-800 relative">
+              <div className="absolute left-0 top-0 h-full w-[22%]" style={{ backgroundImage: 'linear-gradient(90deg, #fff, #555)' }} />
+            </div>
+            <div className="text-[10px] font-mono text-zinc-400 font-bold tracking-widest uppercase">02 / 09</div>
+          </div>
+          
         </div>
       </section>
 
       {/* 5. PRODUCT COMPARISON SECTION */}
-      <section className="w-full py-28 bg-[#0B0B0B] border-b border-zinc-900/60">
+      <section className="w-full py-12 bg-black border-b border-zinc-900/60">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
-          <div className="max-w-3xl mb-16">
+          <div className="max-w-3xl mb-8">
             <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
               PLATFORM INDEX
             </span>
-            <h2 className="text-3xl md:text-5xl font-black tracking-tight text-white mb-6">
-              Compare Our Solutions
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-4">
+                Compare Our Solutions
             </h2>
             <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-bold">
               A quick guide to finding the right workspace or transactional system.
             </p>
           </div>
 
-          <div className="overflow-x-auto rounded-3xl border border-zinc-900 bg-zinc-950/20">
-            <table className="w-full text-left border-collapse min-w-[700px]">
-              <thead>
-                <tr className="border-b border-zinc-900 font-mono text-[10px] text-zinc-500 uppercase tracking-widest">
-                  <th className="py-6 px-8">Platform</th>
-                  <th className="py-6 px-6">Best For</th>
-                  <th className="py-6 px-6">Typical Users</th>
-                  <th className="py-6 px-8 text-right">Mirror Domain</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-zinc-900 text-xs md:text-sm">
-                {comparisonData.map((row) => (
-                  <tr key={row.name} className="hover:bg-zinc-950/50 transition-colors">
-                    <td className="py-6 px-8 font-black text-white flex items-center gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-rose-500" />
-                      {row.name}
-                    </td>
-                    <td className="py-6 px-6 text-zinc-300 font-medium">{row.bestFor}</td>
-                    <td className="py-6 px-6 text-zinc-455 font-semibold">{row.users}</td>
-                    <td className="py-6 px-8 text-right font-mono text-zinc-500 text-[10px] hover:text-white transition-colors">
-                      <a href={row.url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1">
-                        {row.url}
-                        <ArrowUpRight className="w-2.5 h-2.5" />
-                      </a>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+          <FeaturesAccordion 
+            features={comparisonData.map(row => {
+              const product = products.find(p => p.name === row.name) || products[0];
+              return {
+                id: row.name.toLowerCase(),
+                title: row.name,
+                description: (
+                  <div className="flex flex-col gap-3 mt-2">
+                    <div className="grid grid-cols-2 gap-4">
+                      <div>
+                        <span className="block text-[10px] uppercase tracking-wider text-zinc-600 mb-1">Target Audience</span>
+                        <span className="text-zinc-300 font-semibold">{product.category}</span>
+                      </div>
+                    </div>
+                    <a href={row.url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 text-rose-500 hover:text-rose-400 font-bold text-sm mt-4 transition-colors">
+                      Visit {row.name} Platform
+                      <ArrowUpRight className="w-4 h-4" />
+                    </a>
+                  </div>
+                ),
+                tagline: product.tagline,
+                desc: product.desc,
+                featuresList: product.features
+              };
+            })}
+          />
         </div>
       </section>
 
       {/* 6. WHY ORGANIZATIONS CHOOSE OUR PLATFORMS */}
-      <section className="w-full py-28 bg-[#030303] border-b border-zinc-900/60">
-        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
-          <div className="text-center max-w-2xl mx-auto mb-20">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
-              ARCHITECTURE MATRIX
-            </span>
-            <h2 className="text-3xl md:text-5xl font-black tracking-tight text-white mb-6">
-              Why Organizations Choose Devopstrio
+      <section className="w-full py-12 bg-black border-b border-zinc-900/60 overflow-hidden">
+        <div className="max-w-7xl mx-auto w-full px-4 sm:px-8 xl:px-12">
+          
+          <div className="max-w-4xl mb-8">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6 leading-tight">
+              Why Organizations Choose Devopstrio.
             </h2>
-            <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-bold">
+            <p className="text-zinc-400 text-lg md:text-xl font-medium">
               Hard engineering and measurable values behind our deployment models.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {valueProps.map((prop, idx) => (
-              <div
-                key={idx}
-                className="p-8 bg-zinc-950/40 border border-zinc-900 hover:border-rose-500/10 rounded-3xl transition-colors duration-300"
-              >
-                <div className="text-xs font-black text-rose-500 uppercase tracking-widest font-mono mb-3">
-                  0{idx + 1}. {prop.title}
+          {/* Aesthetic Filter Bar (Static) */}
+          <div className="flex flex-wrap items-center justify-between border-t border-b border-zinc-900/80 py-4 mb-6 gap-4">
+            <div className="flex items-center gap-2 md:gap-4 overflow-x-auto hide-scrollbar [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+              <span className="text-[10px] font-bold tracking-[0.2em] text-zinc-500 uppercase mr-4">Filter</span>
+              <button className="px-5 py-2 rounded-full bg-white text-black text-xs font-bold shrink-0">All</button>
+              <button className="px-5 py-2 rounded-full bg-zinc-900 text-zinc-400 hover:text-white hover:bg-zinc-800 text-xs font-bold transition-colors shrink-0">Architecture</button>
+              <button className="px-5 py-2 rounded-full bg-zinc-900 text-zinc-400 hover:text-white hover:bg-zinc-800 text-xs font-bold transition-colors shrink-0">Security</button>
+              <button className="px-5 py-2 rounded-full bg-zinc-900 text-zinc-400 hover:text-white hover:bg-zinc-800 text-xs font-bold transition-colors shrink-0">Automation</button>
+            </div>
+            <span className="text-[10px] font-bold tracking-[0.2em] text-zinc-500 uppercase shrink-0">8 Pillars</span>
+          </div>
+
+          {/* Horizontal Scrolling Cards */}
+          <div className="flex overflow-x-auto gap-6 pb-12 snap-x snap-mandatory [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+            {valueProps.map((prop, idx) => {
+              const cardImages = [
+                "/assets/common/09ff7846bc8c9998745688779c09f88d 1.png",
+                "/assets/common/1b065043b6959827c05a0073c93a4a53 1.png",
+                "/assets/common/260b761ad40c3ad2acba2c6666894539 1.png",
+                "/assets/common/2fe7f9184c515b0c515ce38bc8a25efa 1.png",
+                "/assets/common/315e4fdc6263bfd240f36297e376576e 1.png",
+                "/assets/common/37b9b888cc479ea7b74d2d9a05c37597 1.png",
+                "/assets/common/45ea830d170d382ade235db479060da7 1.png",
+                "/assets/common/464d8932bca4d6bb552ff2dcf2f3c5ca 1.png"
+              ];
+              const image = cardImages[idx % cardImages.length];
+              
+              // Dynamic badges matching the aesthetic
+              const category = idx % 2 === 0 ? "Architecture" : "Security";
+              const tag = idx % 3 === 0 ? "Automation" : (idx % 2 === 0 ? "Cloud" : "Product");
+
+              return (
+                <div key={idx} className="min-w-[320px] md:min-w-[420px] snap-start group cursor-pointer bg-[#0c0c0c] border border-zinc-800/80 p-2 rounded-[2rem] shadow-xl hover:border-zinc-700 transition-colors">
+                   <div className="relative aspect-[4/3] rounded-[1.5rem] overflow-hidden mb-4 bg-zinc-900 border border-zinc-800/50">
+                      <Image 
+                        src={image} 
+                        alt={prop.title} 
+                        fill 
+                        className="object-cover transition-transform duration-700 group-hover:scale-105" 
+                        unoptimized 
+                      />
+                      
+                      {/* Inner shadow overlay for depth */}
+                      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/20 to-black/80 pointer-events-none opacity-80" />
+
+                      {/* Pill Badges */}
+                      <div className="absolute bottom-4 left-4 flex gap-2">
+                         <span className="px-3 py-1.5 bg-black/60 backdrop-blur-md rounded-full text-[9px] font-bold text-white uppercase tracking-widest border border-white/10">
+                            {category}
+                         </span>
+                         <span className="px-3 py-1.5 bg-black/60 backdrop-blur-md rounded-full text-[9px] font-bold text-white uppercase tracking-widest border border-white/10">
+                            {tag}
+                         </span>
+                      </div>
+
+                      {/* Hover Arrow top right */}
+                      <div className="absolute top-4 right-4 w-10 h-10 bg-white rounded-full flex items-center justify-center text-black opacity-0 -translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 shadow-2xl">
+                         <ArrowUpRight className="w-4 h-4" />
+                      </div>
+                   </div>
+
+                   <div className="flex justify-between items-start px-2 pb-2">
+                      <div className="max-w-[85%]">
+                         <h3 className="text-xl md:text-2xl font-bold text-white mb-2 group-hover:text-rose-400 transition-colors">{prop.title}</h3>
+                         <p className="text-sm text-zinc-400 font-medium leading-relaxed line-clamp-2">{prop.desc}</p>
+                      </div>
+                      <div className="text-[10px] font-mono text-zinc-600 mt-1.5 tracking-widest">0{idx + 1}</div>
+                   </div>
                 </div>
-                <p className="text-xs md:text-sm text-zinc-400 leading-relaxed font-bold">{prop.desc}</p>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
 
-      {/* 7. CUSTOMER SUCCESS & CASES */}
-      <section className="w-full py-28 bg-[#0B0B0B] border-b border-zinc-900/60">
+      {/* 7. CUSTOMER SUCCESS BENTO GRID */}
+      <section className="w-full py-12 bg-black border-b border-zinc-900/60">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
-          <Reveal className="mb-16 text-center max-w-2xl mx-auto">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
-              PROVEN RESULTS
-            </span>
-            <h2 className="text-2xl md:text-4xl font-extrabold text-white">
-              Customer Success Stories
-            </h2>
-          </Reveal>
-
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {[
-              {
-                title: "Scale Recruiting Lifecycles",
-                platform: "Humanex Impact",
-                challenge: "HR coordinators spent average 3.5 hours screening resume packets for technical fits.",
-                result: "AI screening screens files and ranks matches dynamically, reducing hiring lifecycle durations by 40%."
-              },
-              {
-                title: "Accelerating Legal Signing Pools",
-                platform: "SafeSign Impact",
-                challenge: "Vendor agreements required average 4 mailing loops and 12 days to verify signatures.",
-                result: "eSign templates and SMS pins reduced active signing cycles to 12 minutes with compliant certificates."
-              },
-              {
-                title: "Hospital Scheduling Telemetry",
-                platform: "CareSuite Impact",
-                challenge: "Patient queue routing was calculated on manual sheets, causing 45-minute clinic lobby delays.",
-                result: "Automated timetables and alerts reduced patient wait times in lobbies by 35%."
-              }
-            ].map((story, idx) => (
-              <div
-                key={idx}
-                className="group flex flex-col justify-between p-8 bg-zinc-950/40 border border-zinc-900 hover:border-rose-500/20 rounded-3xl transition-all duration-300"
-              >
-                <div>
-                  <span className="text-[10px] font-mono text-rose-500 tracking-wider uppercase font-bold block mb-1">
-                    {story.platform}
-                  </span>
-                  <h3 className="text-base md:text-lg font-bold text-white mb-6 tracking-wide">
-                    {story.title}
-                  </h3>
-
-                  <div className="space-y-4">
-                    <div>
-                      <span className="text-[9px] font-mono text-zinc-600 uppercase tracking-wider block mb-1 font-bold">Challenge</span>
-                      <p className="text-xs text-zinc-350 leading-relaxed font-bold">{story.challenge}</p>
-                    </div>
-                    <div className="pt-4 border-t border-zinc-900/60">
-                      <span className="text-[9px] font-mono text-rose-500 uppercase tracking-wider block mb-1 font-bold">Result</span>
-                      <p className="text-xs text-zinc-350 font-bold leading-relaxed">{story.result}</p>
-                    </div>
+          
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            {/* Left Large Card */}
+            <div className="lg:col-span-1 bg-[#111111] border border-zinc-800/80 rounded-[2rem] p-8 md:p-10 flex flex-col justify-between">
+              <div>
+                <div className="flex gap-1 mb-8">
+                  {[1, 2, 3, 4, 5].map(i => <Star key={i} className="w-4 h-4 fill-white text-white" />)}
+                </div>
+                <h3 className="text-2xl md:text-3xl font-bold text-white leading-snug tracking-tight mb-8">
+                  "Devopstrio made our team feel ten people larger without adding a single meeting to the calendar."
+                </h3>
+                
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-full bg-zinc-800 overflow-hidden relative">
+                    <Image src="https://i.pravatar.cc/150?u=clara" alt="Clara Weiss" fill className="object-cover" unoptimized />
+                  </div>
+                  <div>
+                    <div className="text-white font-bold text-sm">Clara Weiss</div>
+                    <div className="text-zinc-500 text-xs">Head of Ops, Northstar</div>
                   </div>
                 </div>
+              </div>
+              
+              <div className="mt-16 pt-8 border-t border-zinc-900/60">
+                <div className="text-[10px] font-mono tracking-widest text-zinc-600 uppercase mb-4 font-bold">In Good Company</div>
+                <div className="flex items-center gap-6 text-sm font-semibold text-zinc-400">
+                  <span className="hover:text-white transition-colors cursor-pointer">Northstar</span>
+                  <span className="hover:text-white transition-colors cursor-pointer">Relay</span>
+                  <span className="hover:text-white transition-colors cursor-pointer">Forma</span>
+                  <span className="hover:text-white transition-colors cursor-pointer">Alpenglow</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Right Side Grid of 4 */}
+            <div className="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-6">
+              {[
+                { name: "Mina Hart", handle: "@minahart", date: "Mar 3", text: "The rare product that makes our operating cadence feel lighter without hiding any of the hard parts.", avatar: "https://i.pravatar.cc/150?u=mina" },
+                { name: "Callum Price", handle: "@callumprice", date: "Feb 24", text: "I opened Devopstrio for a launch checklist and ended up moving the whole studio over before Friday.", avatar: "https://i.pravatar.cc/150?u=callum" },
+                { name: "Aya Mensah", handle: "@ayamensah", date: "Feb 18", text: "Clear enough for leadership, flexible enough for the people doing the actual work. That gap is usually where tools fail.", avatar: "https://i.pravatar.cc/150?u=aya" },
+                { name: "Felix Chen", handle: "@felixchen", date: "Feb 11", text: "The first project hub my team did not immediately try to rebuild in a spreadsheet.", avatar: "https://i.pravatar.cc/150?u=felix" }
+              ].map((tweet, i) => (
+                <div key={i} className="bg-[#111111] border border-zinc-800/80 rounded-[2rem] p-6 flex flex-col justify-between hover:border-zinc-700 transition-colors">
+                  <div>
+                    <div className="flex justify-between items-start mb-4">
+                      <div className="flex items-center gap-3">
+                        <div className="w-10 h-10 rounded-full bg-zinc-800 overflow-hidden relative">
+                          <Image src={tweet.avatar} alt={tweet.name} fill className="object-cover" unoptimized />
+                        </div>
+                        <div>
+                          <div className="text-white font-bold text-sm flex items-center gap-1">
+                            {tweet.name}
+                            <CheckCircle2 className="w-3 h-3 text-zinc-500" />
+                          </div>
+                          <div className="text-zinc-500 text-xs">{tweet.handle}</div>
+                        </div>
+                      </div>
+                      <div className="text-zinc-600 text-xs">{tweet.date}</div>
+                    </div>
+                    <p className="text-zinc-300 text-sm leading-relaxed mb-6">
+                      {tweet.text}
+                    </p>
+                  </div>
+                  
+                  <div className="flex items-center gap-6 text-zinc-500 text-xs font-medium">
+                    <span className="flex items-center gap-1.5 hover:text-white transition-colors cursor-pointer"><MessageCircle className="w-3.5 h-3.5" /> {Math.floor(Math.random() * 60) + 10}</span>
+                    <span className="flex items-center gap-1.5 hover:text-white transition-colors cursor-pointer"><Repeat className="w-3.5 h-3.5" /> {Math.floor(Math.random() * 200) + 50}</span>
+                    <span className="flex items-center gap-1.5 hover:text-rose-500 transition-colors cursor-pointer"><Heart className="w-3.5 h-3.5" /> {(Math.random() * 3 + 0.5).toFixed(1)}k</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 8. CLIENT LOGOS & STRENGTHS */}
+      <section className="w-full py-12 bg-black border-b border-zinc-900/60 flex flex-col items-center">
+        <div className="max-w-5xl mx-auto w-full px-12 xl:px-8 text-center">
+          <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white mb-8 leading-tight">
+            Powering over 15,000 teams <br className="hidden md:block"/> building the future.
+          </h2>
+
+          <div className="inline-flex flex-wrap justify-center gap-2 bg-[#111111] border border-zinc-800/80 p-1.5 rounded-[2rem] mb-12 shadow-2xl max-w-4xl">
+            {["All", "Partners", "Technology", "Cloud Providers", "Platforms", "AI Agents"].map((tab) => (
+              <button 
+                key={tab} 
+                onClick={() => setActiveLogoTab(tab)}
+                className={`px-5 py-2 rounded-full text-xs md:text-sm font-semibold transition-all duration-300 ${activeLogoTab === tab ? "bg-zinc-800/80 text-white shadow-lg" : "text-zinc-400 hover:text-white"}`}
+              >
+                {tab}
+              </button>
+            ))}
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-x-8 gap-y-12 items-center justify-items-center opacity-80 min-h-[300px]">
+            {[
+              // Full Partners List
+              { image: "/assets/Home-page/partners/Microsoft.svg", name: "Microsoft", categories: ["Partners", "Cloud Providers"] },
+              { image: "/assets/Home-page/partners/Airbnb.svg", name: "Airbnb", categories: ["Partners"] },
+              { image: "/assets/Home-page/partners/NHS.svg", name: "NHS", categories: ["Partners"] },
+              { image: "/assets/Home-page/partners/servicenow.svg", name: "ServiceNow", categories: ["Partners", "Platforms"] },
+              { image: "/assets/Home-page/partners/Costco.svg", name: "Costco", categories: ["Partners"] },
+              { image: "/assets/Home-page/partners/ASDA.svg", name: "ASDA", categories: ["Partners"] },
+              { image: "/assets/Home-page/partners/BT.svg", name: "BT", categories: ["Partners"] },
+              { image: "/assets/Home-page/partners/Boviet_Solar.png", name: "Boviet Solar", categories: ["Partners"] },
+              { image: "/assets/Home-page/partners/Metrobank.svg", name: "Metrobank", categories: ["Partners"] },
+              { image: "/assets/Home-page/partners/Virgin.svg", name: "Virgin", categories: ["Partners"] },
+              { image: "/assets/Home-page/partners/appian.svg", name: "Appian", categories: ["Partners"] },
+              { image: "/assets/Home-page/partners/bp-logo.svg", name: "BP", categories: ["Partners"] },
+              { image: "/assets/Home-page/partners/godaddy.svg", name: "GoDaddy", categories: ["Partners"] },
+              { image: "/assets/Home-page/partners/gxo.svg", name: "GXO", categories: ["Partners"] },
+              { image: "/assets/Home-page/partners/lenovo.svg", name: "Lenovo", categories: ["Partners"] },
+              { image: "/assets/Home-page/partners/paymentology.svg", name: "Paymentology", categories: ["Partners"] },
+              { image: "/assets/Home-page/partners/topland.svg", name: "Topland", categories: ["Partners"] },
+              
+              // Cloud Providers
+              { image: "/assets/Tech_logos/AWS.svg", name: "AWS", categories: ["Cloud Providers", "Technology"] },
+              { image: "/assets/Tech_logos/Google_Cloud.svg", name: "Google Cloud", categories: ["Cloud Providers", "AI Agents"] },
+              { image: "/assets/Tech_logos/Microsoft Azure.svg", name: "Azure", categories: ["Cloud Providers", "AI Agents"] },
+              { image: "/assets/Tech_logos/IBM_Cloud.svg", name: "IBM Cloud", categories: ["Cloud Providers"] },
+              { image: "/assets/Tech_logos/Oracle_Cloud.svg", name: "Oracle Cloud", categories: ["Cloud Providers"] },
+              
+              // Technology
+              { image: "/assets/Tech_logos/Kubernetes.svg", name: "Kubernetes", categories: ["Technology", "Platforms"] },
+              { image: "/assets/Tech_logos/Docker.svg", name: "Docker", categories: ["Technology", "Platforms"] },
+              { image: "/assets/Home-page/Techtools/python.svg", name: "Python", categories: ["Technology", "AI Agents"] },
+              { image: "/assets/Tech_logos/Snowflake.svg", name: "Snowflake", categories: ["Technology", "Platforms"] },
+              { image: "/assets/Home-page/Techtools/MySQL.svg", name: "MySQL", categories: ["Technology"] },
+              
+              // Platforms
+              { image: "/assets/Tech-icons/github-logo-svg_svgstack_com_28391780931442.svg", name: "GitHub", categories: ["Platforms", "Technology"] },
+              { image: "/assets/Tech-icons/figma-logo_svgstack_com_28291780931376.svg", name: "Figma", categories: ["Platforms"] },
+              { image: "/assets/Tech-icons/slack-logo_svgstack_com_31371780931112.svg", name: "Slack", categories: ["Platforms"] },
+              { image: "/assets/Tech-icons/jira-logo_svgstack_com_28621780931167.svg", name: "Jira", categories: ["Platforms"] },
+              { image: "/assets/Tech_logos/GitLab.svg", name: "GitLab", categories: ["Platforms", "Technology"] },
+              { image: "/assets/Tech-icons/cloudflare-logo-icon_svgstack_com_28071780931769.svg", name: "Cloudflare", categories: ["Platforms", "Technology"] },
+              
+              // AI Agents
+              { image: "/assets/Tech-icons/openai-logo_svgstack_com_28971780931370.svg", name: "OpenAI", categories: ["AI Agents", "Technology"] },
+              { image: "/assets/Tech-icons/github-copilot-logo_svgstack_com_28101780931046.svg", name: "Copilot", categories: ["AI Agents", "Technology"] },
+            ].filter(logo => activeLogoTab === "All" || logo.categories.includes(activeLogoTab)).map((logo, i) => (
+              <div key={i} className="flex flex-col items-center gap-3 text-white cursor-pointer group text-center w-full">
+                <div className="w-12 h-12 relative group-hover:scale-110 transition-transform duration-500">
+                  <Image 
+                    src={logo.image} 
+                    alt={logo.name} 
+                    fill 
+                    className="object-contain" 
+                    unoptimized 
+                  />
+                </div>
+                <span className="font-bold text-xs md:text-sm tracking-tight text-zinc-300 group-hover:text-white transition-colors">{logo.name}</span>
               </div>
             ))}
           </div>
@@ -594,13 +882,13 @@ export default function SaaSPlatformsPage() {
       </section>
 
       {/* 8. SINGLE LEAD FORM ("Talk to Our Product Team") */}
-      <section id="lead-form" className="w-full py-28 bg-[#030303]">
+      <section id="lead-form" className="w-full py-12 bg-[#030303]">
         <div className="max-w-4xl mx-auto px-12 xl:px-8">
-          <div className="text-center mb-16">
+          <div className="text-center mb-8">
             <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
               CONNECT WITH US
             </span>
-            <h2 className="text-2xl md:text-4xl font-extrabold text-white mb-4">
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-4">
               Talk to Our Product Team
             </h2>
             <p className="text-zinc-400 text-xs md:text-sm font-bold max-w-md mx-auto leading-relaxed">
@@ -695,9 +983,10 @@ export default function SaaSPlatformsPage() {
                 <div className="pt-4">
                   <button
                     type="submit"
-                    className="w-full py-4 bg-white text-black font-extrabold text-xs md:text-sm uppercase tracking-wider rounded-xl hover:bg-zinc-200 transition-colors shadow-lg"
+                    disabled={isSubmitting}
+                    className="w-full py-4 bg-white text-black font-extrabold text-xs md:text-sm uppercase tracking-wider rounded-xl hover:bg-zinc-200 transition-colors shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    Submit Inquiry
+                    {isSubmitting ? 'Submitting...' : 'Submit Inquiry'}
                   </button>
                 </div>
               </form>

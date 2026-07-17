@@ -1,43 +1,46 @@
 "use client";
 
 import React, { useRef, useEffect } from 'react';
-import './ShapeGrid.css';
+
+type CanvasStrokeStyle = string | CanvasGradient | CanvasPattern;
+
+interface GridOffset {
+  x: number;
+  y: number;
+}
 
 interface ShapeGridProps {
   direction?: 'diagonal' | 'up' | 'right' | 'down' | 'left';
   speed?: number;
-  borderColor?: string;
+  borderColor?: CanvasStrokeStyle;
   squareSize?: number;
-  hoverFillColor?: string;
+  hoverFillColor?: CanvasStrokeStyle;
   shape?: 'square' | 'hexagon' | 'circle' | 'triangle';
   hoverTrailAmount?: number;
-  className?: string;
 }
 
-export default function ShapeGrid({
-  direction = 'right',
-  speed = 1,
-  borderColor = '#999',
+const ShapeGrid: React.FC<ShapeGridProps> = ({
+  direction = 'diagonal',
+  speed = 0.5,
+  borderColor = '#2F293A',
   squareSize = 40,
   hoverFillColor = '#222',
   shape = 'square',
-  hoverTrailAmount = 0,
-  className = ''
-}: ShapeGridProps) {
-  const canvasRef = useRef<HTMLCanvasElement | null>(null);
+  hoverTrailAmount = 0
+}) => {
+  const canvasRef = useRef<HTMLCanvasElement>(null);
   const requestRef = useRef<number | null>(null);
   const numSquaresX = useRef<number>(0);
   const numSquaresY = useRef<number>(0);
-  const gridOffset = useRef<{ x: number; y: number }>({ x: 0, y: 0 });
-  const hoveredSquare = useRef<{ x: number; y: number } | null>(null);
-  const trailCells = useRef<Array<{ x: number; y: number }>>([]);
+  const gridOffset = useRef<GridOffset>({ x: 0, y: 0 });
+  const hoveredSquareRef = useRef<GridOffset | null>(null);
+  const trailCells = useRef<GridOffset[]>([]);
   const cellOpacities = useRef<Map<string, number>>(new Map());
 
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
-    if (!ctx) return;
 
     const isHex = shape === 'hexagon';
     const isTri = shape === 'triangle';
@@ -55,6 +58,7 @@ export default function ShapeGrid({
     resizeCanvas();
 
     const drawHex = (cx: number, cy: number, size: number) => {
+      if (!ctx) return;
       ctx.beginPath();
       for (let i = 0; i < 6; i++) {
         const angle = (Math.PI / 3) * i;
@@ -67,12 +71,14 @@ export default function ShapeGrid({
     };
 
     const drawCircle = (cx: number, cy: number, size: number) => {
+      if (!ctx) return;
       ctx.beginPath();
       ctx.arc(cx, cy, size / 2, 0, Math.PI * 2);
       ctx.closePath();
     };
 
     const drawTriangle = (cx: number, cy: number, size: number, flip: boolean) => {
+      if (!ctx) return;
       ctx.beginPath();
       if (flip) {
         ctx.moveTo(cx, cy + size / 2);
@@ -87,6 +93,7 @@ export default function ShapeGrid({
     };
 
     const drawGrid = () => {
+      if (!ctx) return;
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
       if (isHex) {
@@ -211,6 +218,7 @@ export default function ShapeGrid({
         Math.sqrt(canvas.width ** 2 + canvas.height ** 2) / 2
       );
       gradient.addColorStop(0, 'rgba(0, 0, 0, 0)');
+      gradient.addColorStop(1, '#120F17');
 
       ctx.fillStyle = gradient;
       ctx.fillRect(0, 0, canvas.width, canvas.height);
@@ -250,8 +258,8 @@ export default function ShapeGrid({
     const updateCellOpacities = () => {
       const targets = new Map<string, number>();
 
-      if (hoveredSquare.current) {
-        targets.set(`${hoveredSquare.current.x},${hoveredSquare.current.y}`, 1);
+      if (hoveredSquareRef.current) {
+        targets.set(`${hoveredSquareRef.current.x},${hoveredSquareRef.current.y}`, 1);
       }
 
       if (hoverTrailAmount > 0) {
@@ -298,15 +306,15 @@ export default function ShapeGrid({
         const row = Math.round((adjustedY - rowOffset) / hexVert);
 
         if (
-          !hoveredSquare.current ||
-          hoveredSquare.current.x !== col ||
-          hoveredSquare.current.y !== row
+          !hoveredSquareRef.current ||
+          hoveredSquareRef.current.x !== col ||
+          hoveredSquareRef.current.y !== row
         ) {
-          if (hoveredSquare.current && hoverTrailAmount > 0) {
-            trailCells.current.unshift({ ...hoveredSquare.current });
+          if (hoveredSquareRef.current && hoverTrailAmount > 0) {
+            trailCells.current.unshift({ ...hoveredSquareRef.current });
             if (trailCells.current.length > hoverTrailAmount) trailCells.current.length = hoverTrailAmount;
           }
-          hoveredSquare.current = { x: col, y: row };
+          hoveredSquareRef.current = { x: col, y: row };
         }
       } else if (isTri) {
         const halfW = squareSize / 2;
@@ -320,15 +328,15 @@ export default function ShapeGrid({
         const row = Math.floor(adjustedY / squareSize);
 
         if (
-          !hoveredSquare.current ||
-          hoveredSquare.current.x !== col ||
-          hoveredSquare.current.y !== row
+          !hoveredSquareRef.current ||
+          hoveredSquareRef.current.x !== col ||
+          hoveredSquareRef.current.y !== row
         ) {
-          if (hoveredSquare.current && hoverTrailAmount > 0) {
-            trailCells.current.unshift({ ...hoveredSquare.current });
+          if (hoveredSquareRef.current && hoverTrailAmount > 0) {
+            trailCells.current.unshift({ ...hoveredSquareRef.current });
             if (trailCells.current.length > hoverTrailAmount) trailCells.current.length = hoverTrailAmount;
           }
-          hoveredSquare.current = { x: col, y: row };
+          hoveredSquareRef.current = { x: col, y: row };
         }
       } else if (shape === 'circle') {
         const offsetX = ((gridOffset.current.x % squareSize) + squareSize) % squareSize;
@@ -341,15 +349,15 @@ export default function ShapeGrid({
         const row = Math.round(adjustedY / squareSize);
 
         if (
-          !hoveredSquare.current ||
-          hoveredSquare.current.x !== col ||
-          hoveredSquare.current.y !== row
+          !hoveredSquareRef.current ||
+          hoveredSquareRef.current.x !== col ||
+          hoveredSquareRef.current.y !== row
         ) {
-          if (hoveredSquare.current && hoverTrailAmount > 0) {
-            trailCells.current.unshift({ ...hoveredSquare.current });
+          if (hoveredSquareRef.current && hoverTrailAmount > 0) {
+            trailCells.current.unshift({ ...hoveredSquareRef.current });
             if (trailCells.current.length > hoverTrailAmount) trailCells.current.length = hoverTrailAmount;
           }
-          hoveredSquare.current = { x: col, y: row };
+          hoveredSquareRef.current = { x: col, y: row };
         }
       } else {
         const offsetX = ((gridOffset.current.x % squareSize) + squareSize) % squareSize;
@@ -362,30 +370,29 @@ export default function ShapeGrid({
         const row = Math.floor(adjustedY / squareSize);
 
         if (
-          !hoveredSquare.current ||
-          hoveredSquare.current.x !== col ||
-          hoveredSquare.current.y !== row
+          !hoveredSquareRef.current ||
+          hoveredSquareRef.current.x !== col ||
+          hoveredSquareRef.current.y !== row
         ) {
-          if (hoveredSquare.current && hoverTrailAmount > 0) {
-            trailCells.current.unshift({ ...hoveredSquare.current });
+          if (hoveredSquareRef.current && hoverTrailAmount > 0) {
+            trailCells.current.unshift({ ...hoveredSquareRef.current });
             if (trailCells.current.length > hoverTrailAmount) trailCells.current.length = hoverTrailAmount;
           }
-          hoveredSquare.current = { x: col, y: row };
+          hoveredSquareRef.current = { x: col, y: row };
         }
       }
     };
 
     const handleMouseLeave = () => {
-      if (hoveredSquare.current && hoverTrailAmount > 0) {
-        trailCells.current.unshift({ ...hoveredSquare.current });
+      if (hoveredSquareRef.current && hoverTrailAmount > 0) {
+        trailCells.current.unshift({ ...hoveredSquareRef.current });
         if (trailCells.current.length > hoverTrailAmount) trailCells.current.length = hoverTrailAmount;
       }
-      hoveredSquare.current = null;
+      hoveredSquareRef.current = null;
     };
 
     canvas.addEventListener('mousemove', handleMouseMove);
     canvas.addEventListener('mouseleave', handleMouseLeave);
-
     requestRef.current = requestAnimationFrame(updateAnimation);
 
     return () => {
@@ -396,5 +403,7 @@ export default function ShapeGrid({
     };
   }, [direction, speed, borderColor, hoverFillColor, squareSize, shape, hoverTrailAmount]);
 
-  return <canvas ref={canvasRef} className={`shapegrid-canvas ${className}`}></canvas>;
-}
+  return <canvas ref={canvasRef} className="w-full h-full border-none block"></canvas>;
+};
+
+export default ShapeGrid;

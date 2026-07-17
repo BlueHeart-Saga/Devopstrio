@@ -5,6 +5,7 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { FloatingChatbot } from "@/components/FloatingChatbot";
 import { FeedbackWidget } from "@/components/FeedbackWidget";
+import { StickyContactWidget } from "@/components/StickyContactWidget";
 import { CookieConsent } from "@/components/CookieConsent";
 import ClickSpark from "@/components/ui/ClickSpark";
 import Script from "next/script";
@@ -73,11 +74,14 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const headersList = await headers();
+  const pathname = headersList.get("x-pathname") || "/";
+
   return (
     <html lang="en" className="dark">
       <body>
@@ -117,12 +121,17 @@ export default function RootLayout({
           sparkCount={8}
           duration={500}
         >
-          <Navbar />
+          {!pathname.startsWith("/marketing") && <Navbar />}
           {children}
-          <Footer />
-          <FloatingChatbot />
-          <FeedbackWidget />
-          <CookieConsent />
+          {!pathname.startsWith("/marketing") && (
+            <>
+              <Footer />
+              <FloatingChatbot />
+              <FeedbackWidget />
+              <StickyContactWidget />
+              <CookieConsent />
+            </>
+          )}
         </ClickSpark>
       </body>
     </html>

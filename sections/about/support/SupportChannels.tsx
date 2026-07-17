@@ -8,8 +8,8 @@ import Link from "next/link";
 
 export const SupportChannels = () => {
   const channels = [
-    { icon: Phone, text: "+91 461 294 0062", href: "tel:+914612940062" },
-    { icon: Mail, text: "CAREER@DEVOPSTRIOGLOBAL.COM", href: "mailto:career@devopstrioglobal.com" },
+    { icon: Phone, text: "044-7471 482903", href: "tel:+447471482903" },
+    { icon: Mail, text: "INFO@DEVOPSTRIOGLOBAL.COM", href: "mailto:info@devopstrioglobal.com" },
     { icon: Globe, text: "DEVOPSTRIO.CO.UK", href: "https://devopstrio.co.uk" },
     { icon: Linkedin, text: "@DEVOPSTRIOGLOBAL", href: "https://www.linkedin.com/company/devopstrioglobal/" },
     { icon: Instagram, text: "@DEVOPSTRIO_OFFCL", href: "https://www.instagram.com/devopstrio_offcl/" },

@@ -320,7 +320,7 @@ export function Navbar() {
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const [activeCategory, setActiveCategory] = useState("ai-data-innovation");
   const [activeEcoCategory, setActiveEcoCategory] = useState("partnerships");
-  
+
   interface SectionCategory {
     slug: string;
     name: string;
@@ -581,16 +581,16 @@ export function Navbar() {
                   {/* Mega Menu Footer */}
                   <div className="col-span-full border-t border-zinc-900/60 pt-4 mt-1 flex flex-row justify-between items-center">
                     <div className="flex items-center gap-4 text-[13px] font-medium text-zinc-400">
-                      <Link 
-                        href="/services/explore" 
+                      <Link
+                        href="/services/explore"
                         className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300"
                       >
                         <span className="w-1.5 h-1.5 rounded-full bg-rose-500 animate-pulse" />
                         <span>Explore Services Directory</span>
                       </Link>
                       <span className="text-zinc-800">|</span>
-                      <Link 
-                        href="/insights/industry-events" 
+                      <Link
+                        href="/insights/industry-events"
                         className="hover:text-rose-500 transition-colors flex items-center gap-1.5"
                       >
                         {/* <span className="w-1.5 h-1.5 rounded-full bg-rose-500 animate-pulse" /> */}
@@ -599,17 +599,17 @@ export function Navbar() {
                       <span className="text-zinc-800">|</span>
                       <div className="flex items-center gap-2">
                         <span className="text-zinc-500">Chat now:</span>
-                        <a 
-                          href="mailto:info@devopstrio.com" 
+                        <a
+                          href="mailto:info@devopstrio.com"
                           className="hover:text-rose-500 transition-colors text-zinc-400"
                         >
                           Email
                         </a>
                         <span className="text-zinc-850">•</span>
-                        <a 
-                          href="https://wa.me/447473063543" 
-                          target="_blank" 
-                          rel="noopener noreferrer" 
+                        <a
+                          href="https://wa.me/447473063543"
+                          target="_blank"
+                          rel="noopener noreferrer"
                           className="hover:text-rose-500 transition-colors text-zinc-400"
                         >
                           WhatsApp
@@ -765,8 +765,8 @@ export function Navbar() {
                   {/* Mega Menu Footer */}
                   <div className="col-span-full border-t border-zinc-900/60 pt-4 mt-1 flex flex-row justify-between items-center">
                     <div className="flex items-center gap-4 text-[13px] font-medium text-zinc-400">
-                      <Link 
-                        href="/insights/industry-events" 
+                      <Link
+                        href="/insights/industry-events"
                         className="hover:text-rose-500 transition-colors flex items-center gap-1.5"
                       >
                         <span className="w-1.5 h-1.5 rounded-full bg-rose-500 animate-pulse" />
@@ -775,17 +775,17 @@ export function Navbar() {
                       <span className="text-zinc-800">|</span>
                       <div className="flex items-center gap-2">
                         <span className="text-zinc-500">Chat now:</span>
-                        <a 
-                          href="mailto:info@devopstrio.com" 
+                        <a
+                          href="mailto:info@devopstrio.com"
                           className="hover:text-rose-500 transition-colors text-zinc-400"
                         >
                           Email
                         </a>
                         <span className="text-zinc-850">•</span>
-                        <a 
-                          href="https://wa.me/447473063543" 
-                          target="_blank" 
-                          rel="noopener noreferrer" 
+                        <a
+                          href="https://wa.me/447473063543"
+                          target="_blank"
+                          rel="noopener noreferrer"
                           className="hover:text-rose-500 transition-colors text-zinc-400"
                         >
                           WhatsApp
@@ -936,7 +936,7 @@ export function Navbar() {
                         {activeEcoCategory === cat.id && <span className="text-[11px]">&rarr;</span>}
                       </Link>
                     ))}
-                    
+
                     {/* External Link: Visit AI Hub */}
                     {/* <div className="mt-2 pt-2 border-t border-zinc-900/80">
                       <a
@@ -980,16 +980,16 @@ export function Navbar() {
                   {/* Mega Menu Footer */}
                   <div className="col-span-full border-t border-zinc-900/60 pt-4 mt-1 flex flex-row justify-between items-center">
                     <div className="flex items-center gap-4 text-[13px] font-medium text-zinc-400">
-                      <Link 
-                        href="/ecosystem/landing-zone" 
+                      <Link
+                        href="/ecosystem/landing-zone"
                         className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300"
                       >
                         <span className="w-1.5 h-1.5 rounded-full bg-rose-500 animate-pulse" />
                         <span>Landing Zone</span>
                       </Link>
                       <span className="text-zinc-800">|</span>
-                      <Link 
-                        href="/insights/industry-events" 
+                      <Link
+                        href="/insights/industry-events"
                         className="hover:text-rose-500 transition-colors flex items-center gap-1.5"
                       >
                         <span>Events</span>
@@ -997,17 +997,17 @@ export function Navbar() {
                       <span className="text-zinc-800">|</span>
                       <div className="flex items-center gap-2">
                         <span className="text-zinc-500">Chat now:</span>
-                        <a 
-                          href="mailto:info@devopstrio.com" 
+                        <a
+                          href="mailto:info@devopstrio.com"
                           className="hover:text-rose-500 transition-colors text-zinc-400"
                         >
                           Email
                         </a>
                         <span className="text-zinc-850">•</span>
-                        <a 
-                          href="https://wa.me/447473063543" 
-                          target="_blank" 
-                          rel="noopener noreferrer" 
+                        <a
+                          href="https://wa.me/447473063543"
+                          target="_blank"
+                          rel="noopener noreferrer"
                           className="hover:text-rose-500 transition-colors text-zinc-400"
                         >
                           WhatsApp
@@ -1186,8 +1186,8 @@ export function Navbar() {
                   {/* Mega Menu Footer */}
                   <div className="col-span-full border-t border-zinc-900/60 pt-4 mt-1 flex flex-row justify-between items-center">
                     <div className="flex items-center gap-4 text-[13px] font-medium text-zinc-400">
-                      <Link 
-                        href="/insights/industry-events" 
+                      <Link
+                        href="/insights/industry-events"
                         className="hover:text-rose-500 transition-colors flex items-center gap-1.5"
                       >
                         <span className="w-1.5 h-1.5 rounded-full bg-rose-500 animate-pulse" />
@@ -1196,17 +1196,17 @@ export function Navbar() {
                       <span className="text-zinc-800">|</span>
                       <div className="flex items-center gap-2">
                         <span className="text-zinc-500">Chat now:</span>
-                        <a 
-                          href="mailto:info@devopstrio.com" 
+                        <a
+                          href="mailto:info@devopstrio.com"
                           className="hover:text-rose-500 transition-colors text-zinc-400"
                         >
                           Email
                         </a>
                         <span className="text-zinc-800">•</span>
-                        <a 
-                          href="https://wa.me/447473063543" 
-                          target="_blank" 
-                          rel="noopener noreferrer" 
+                        <a
+                          href="https://wa.me/447473063543"
+                          target="_blank"
+                          rel="noopener noreferrer"
                           className="hover:text-rose-500 transition-colors text-zinc-400"
                         >
                           WhatsApp
@@ -1364,8 +1364,8 @@ export function Navbar() {
                   {/* Mega Menu Footer */}
                   <div className="col-span-full border-t border-zinc-900/60 pt-4 mt-1 flex flex-row justify-between items-center">
                     <div className="flex items-center gap-4 text-[13px] font-medium text-zinc-400">
-                      <Link 
-                        href="/insights/industry-events" 
+                      <Link
+                        href="/insights/industry-events"
                         className="hover:text-rose-500 transition-colors flex items-center gap-1.5"
                       >
                         <span className="w-1.5 h-1.5 rounded-full bg-rose-500 animate-pulse" />
@@ -1374,17 +1374,17 @@ export function Navbar() {
                       <span className="text-zinc-800">|</span>
                       <div className="flex items-center gap-2">
                         <span className="text-zinc-500">Chat now:</span>
-                        <a 
-                          href="mailto:info@devopstrio.com" 
+                        <a
+                          href="mailto:info@devopstrio.com"
                           className="hover:text-rose-500 transition-colors text-zinc-400"
                         >
                           Email
                         </a>
                         <span className="text-zinc-800">•</span>
-                        <a 
-                          href="https://wa.me/447473063543" 
-                          target="_blank" 
-                          rel="noopener noreferrer" 
+                        <a
+                          href="https://wa.me/447473063543"
+                          target="_blank"
+                          rel="noopener noreferrer"
                           className="hover:text-rose-500 transition-colors text-zinc-400"
                         >
                           WhatsApp
@@ -1497,8 +1497,8 @@ export function Navbar() {
                 <div className="animate-fadeIn bg-[#0a0a0a] border border-zinc-800 rounded-2xl p-2.5 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.95)] relative overflow-hidden flex flex-col gap-1">
                   {/* Gloss reflection line */}
                   <div className="absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-zinc-600 to-transparent pointer-events-none" />
-                  
-                  <Link 
+
+                  <Link
                     href="/contact#contact-form"
                     onClick={() => {
                       setActiveMenu(null);
@@ -1512,7 +1512,7 @@ export function Navbar() {
                     <span className="text-[11px] text-zinc-400 font-medium">Reach out to our expert team</span>
                   </Link>
 
-                  <button 
+                  <button
                     onClick={() => {
                       setActiveMenu(null);
                       window.location.hash = "contact";
@@ -1525,10 +1525,10 @@ export function Navbar() {
                     </span>
                     <span className="text-[11px] text-zinc-400 font-medium">Get a tailored estimate</span>
                   </button>
-                  
+
                   <div className="h-[1px] bg-zinc-900/80 my-1 mx-2" />
-                  
-                  <button 
+
+                  <button
                     onClick={() => {
                       setActiveMenu(null);
                       window.location.hash = "schedule-call";

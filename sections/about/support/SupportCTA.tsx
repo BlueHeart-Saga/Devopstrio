@@ -31,7 +31,7 @@ export const SupportCTA = () => {
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <motion.a
-              href="mailto:career@devopstrioglobal.com"
+              href="mailto:info@devopstrioglobal.com"
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.97 }}
               className="inline-flex items-center gap-3 px-9 py-4 bg-rose-500 hover:bg-rose-600 text-white rounded-xl font-semibold text-base transition-colors shadow-[0_0_35px_rgba(244,63,94,0.45)] hover:shadow-[0_0_55px_rgba(244,63,94,0.65)]"
@@ -41,7 +41,7 @@ export const SupportCTA = () => {
             </motion.a>
 
             <motion.a
-              href="tel:+914612940062"
+              href="tel:+447471482903"
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.97 }}
               className="inline-flex items-center gap-3 px-9 py-4 bg-zinc-900/60 hover:bg-zinc-900 text-white rounded-xl font-semibold text-base transition-colors border border-zinc-800 hover:border-zinc-600 backdrop-blur-sm"

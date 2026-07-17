@@ -110,12 +110,26 @@ export function Footer() {
                 </div>
               </Link>
               
+              {/* Contact Info (Head Office) */}
+              <div className="my-4 text-xs text-zinc-400 font-semibold tracking-wide flex flex-col gap-2.5 border-t border-zinc-900 pt-5">
+                <span className="text-[10px] font-bold text-white uppercase tracking-wider block">Head Office</span>
+                <span className="text-zinc-500 font-medium leading-relaxed block">
+                  128 City Road, London, EC1V 2NX
+                </span>
+                <a href="tel:0447471482903" className="hover:text-rose-500 transition-colors flex items-center gap-2 text-zinc-400">
+                  <span>📞</span> <span className="font-bold text-white hover:text-rose-500 transition-colors">044-7471 482903</span>
+                </a>
+                <a href="mailto:info@devopstrio.com" className="hover:text-rose-500 transition-colors flex items-center gap-2 text-zinc-400">
+                  <span>✉</span> <span className="font-bold">info@devopstrio.com</span>
+                </a>
+              </div>
+              
               {/* Corporate Location Box */}
               <div className="p-3 rounded-2xl flex flex-col gap-2 max-w-[240px]">
-                <div>
+                {/* <div>
                   <h5 className="text-[11px] font-bold text-white mb-1 uppercase tracking-wider">Verify Profile</h5>
                   <p className="text-[10px] text-zinc-400 font-semibold leading-relaxed">Scan to view our verified profile</p>
-                </div>
+                </div> */}
                 
                 {/* QR Code Image */}
                 <div className="w-24 h-24 bg-white p-2 rounded-xl flex items-center justify-center self-start shadow-[0_4px_12px_rgba(0,0,0,0.5)] overflow-hidden">

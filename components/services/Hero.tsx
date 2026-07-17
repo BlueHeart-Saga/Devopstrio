@@ -320,7 +320,7 @@ export function Hero({
 
       {/* ShapeGrid background */}
       {shapeGrid && (
-        <div className="absolute inset-0 z-0 opacity-40 pointer-events-none">
+        <div className="absolute inset-0 z-0 opacity-100 pointer-events-none">
           <ShapeGrid
             speed={shapeGridSpeed !== undefined ? shapeGridSpeed : 0.5}
             squareSize={shapeGridSquareSize !== undefined ? shapeGridSquareSize : 40}
@@ -331,8 +331,8 @@ export function Hero({
             hoverTrailAmount={shapeGridHoverTrailAmount !== undefined ? shapeGridHoverTrailAmount : 5}
           />
           {/* Gradients to blend it nicely into the dark page theme */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/35 to-black/85 pointer-events-none" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_25%,rgba(0,0,0,0.85)_80%)] pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent pointer-events-none" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_40%,rgba(0,0,0,0.85)_100%)] pointer-events-none" />
         </div>
       )}
 
@@ -380,7 +380,7 @@ export function Hero({
 
       {/* DotField background */}
       {dotField && (
-        <div className="absolute inset-0 z-0 opacity-70 pointer-events-none">
+        <div className="absolute inset-0 z-0 opacity-100 pointer-events-none">
           <DotField
             dotRadius={dotFieldProps?.dotRadius}
             dotSpacing={dotFieldProps?.dotSpacing}
@@ -396,7 +396,7 @@ export function Hero({
             glowColor={dotFieldProps?.glowColor}
           />
           {/* Gradients to blend it nicely into the dark page theme */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/25 to-black/75 pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent pointer-events-none" />
         </div>
       )}
 
