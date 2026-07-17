@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { Reveal } from "@/components/ui/Reveal";
 import { Hero } from "@/components/services/Hero";
+import LightRays from "@/components/ui/LightRays";
 import {
   ArrowUpRight,
   Plus,
@@ -98,19 +99,19 @@ export default function CloudNativePage() {
 
       {/* 1. HERO SECTION */}
       <Hero
-        badge="Cloud Native Unit"
+        badge="Cloud-Native Architecture"
         title={
           <>
-            Cloud <br />
+            Architecting Limitless <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-500 to-rose-700">
-              Native
+              Cloud Scale
             </span>
           </>
         }
-        subtitle="Build container strategies, deploy Istio service meshes, configure multi-cloud deployments, and enforce governance rules."
+        subtitle="Architect borderless scalability. We design resilient microservices, deploy ultra-secure service meshes, and orchestrate seamless multi-cloud environments that power global enterprises."
         dotField={true}
         dotFieldProps={{
-          dotRadius: 1.5,
+          dotRadius: 3,
           dotSpacing: 14,
           bulgeStrength: 67,
           glowRadius: 160,

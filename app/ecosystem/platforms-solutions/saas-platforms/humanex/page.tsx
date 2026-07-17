@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { Reveal } from "@/components/ui/Reveal";
 import {
+
   ArrowUpRight,
   Plus,
   Minus,
@@ -31,6 +32,9 @@ import {
   Eye,
   Settings,
   X
+,
+  Star,
+  Quote
 } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
@@ -378,35 +382,43 @@ export default function HumanexProductPage() {
       {/* 4. HOW IT WORKS (STEP BY STEP) */}
       <section className="w-full py-24 bg-black border-b border-zinc-900/60">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
-          <Reveal className="text-center max-w-2xl mx-auto mb-20">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
-              OPERATIONAL WORKFLOW
-            </span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-4">
-              How Humanex Works
-            </h2>
-            <p className="text-zinc-400 text-xs md:text-sm font-bold leading-relaxed">
-              A clean 6-step journey from applicant sourcing to automated offboarding processes.
-            </p>
-          </Reveal>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
+            
+            {/* Left Side: Copy and CTA */}
+            <div className="sticky top-32">
+              <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-white mb-6">
+                How it works
+              </h2>
+              <p className="text-zinc-400 text-base md:text-lg leading-relaxed mb-10 max-w-md">
+                Get up and running in minutes. No steep learning curve, no complex setup — just a clear path from zero to productive.
+              </p>
+              
+              <button className="px-8 py-3 bg-white text-black text-xs font-bold uppercase tracking-[0.2em] rounded-full hover:bg-zinc-200 transition-colors mb-8 shadow-lg shadow-white/10">
+                GET STARTED
+              </button>
+              
+              <p className="text-sm text-zinc-500 font-medium">
+                Need a custom plan for large teams? <Link href="/contact" className="text-white hover:underline">Contact us</Link>.
+              </p>
+            </div>
 
-          <div className="relative">
-            {/* Horizontal line for desktop stepper */}
-            <div className="absolute top-1/2 left-0 right-0 h-px bg-zinc-900 -translate-y-1/2 z-0 hidden lg:block" />
-
-            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-6 relative z-10">
-              {steps.map((st, idx) => (
-                <div key={idx} className="bg-zinc-950/60 border border-zinc-900/80 rounded-2xl p-5 flex flex-col justify-between hover:border-rose-500/10 transition-colors">
+            {/* Right Side: Vertical Steps */}
+            <div className="flex flex-col gap-12">
+              {steps.map((step, idx) => (
+                <div key={idx} className="flex gap-6 md:gap-8 items-start group">
+                  <div className="w-10 h-10 md:w-12 md:h-12 shrink-0 rounded-full bg-white text-black font-bold flex items-center justify-center text-lg mt-1 group-hover:scale-110 transition-transform shadow-lg shadow-white/5">
+                    {idx + 1}
+                  </div>
                   <div>
-                    <div className="w-9 h-9 rounded-xl bg-rose-500/10 border border-rose-500/20 flex items-center justify-center text-rose-400 mb-4 shadow-inner shrink-0">
-                      <st.icon className="w-4 h-4" />
-                    </div>
-                    <h3 className="text-xs font-bold text-white mb-2 tracking-wide">{st.title}</h3>
-                    <p className="text-[10px] text-zinc-400 leading-relaxed font-semibold">{st.desc}</p>
+                    <h3 className="text-lg md:text-xl font-bold text-white mb-2">{step.title}</h3>
+                    <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-medium">
+                      {step.desc}
+                    </p>
                   </div>
                 </div>
               ))}
             </div>
+
           </div>
         </div>
       </section>
@@ -668,168 +680,296 @@ export default function HumanexProductPage() {
         </div>
       </section>
 
-      {/* 10. BUSINESS BENEFITS */}
-      <section className="w-full py-24 bg-black border-b border-zinc-900/60">
-        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
-          <Reveal className="text-center max-w-2xl mx-auto mb-20">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
+      {/* 10. BUSINESS BENEFITS (PREMIUM) */}
+      <section className="relative w-full py-24 md:py-32 bg-[#030303] border-b border-zinc-900/60 overflow-hidden">
+        {/* Subtle background glow */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-[1px] bg-gradient-to-r from-transparent via-rose-500/50 to-transparent opacity-50" />
+        
+        <div className="max-w-7xl mx-auto w-full px-4 sm:px-8 xl:px-12 relative z-10">
+          <Reveal className="text-center max-w-3xl mx-auto mb-24">
+            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
               INVESTMENT RETURN
             </span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-4">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-6">
               Measurable Business Benefits
             </h2>
-            <p className="text-zinc-400 text-xs md:text-sm font-bold leading-relaxed">
+            <p className="text-zinc-400 text-base md:text-lg font-medium leading-relaxed">
               Why transitioning operations to Humanex saves administrative capital.
             </p>
           </Reveal>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          <div className="flex flex-wrap justify-center gap-6 lg:gap-8">
             {[
               { title: "Accelerated Sourcing Pipelines", desc: "Our AI resume matching collapse applicant screen-to-offer loops from weeks to days." },
               { title: "Minimize Manual Entries", desc: "Centralized database sync eliminates paper onboarding packets and redundant calculations." },
               { title: "Accurate Payroll Runs", desc: "Dynamic tax grids and direct bank integrations minimize ledger mistakes." }
             ].map((ben, idx) => (
-              <div key={idx} className="p-8 bg-zinc-950/40 border border-zinc-900 hover:border-rose-500/10 rounded-3xl transition-all duration-300">
-                <div className="text-rose-455 text-sm font-bold font-mono mb-3">0{idx + 1}.</div>
-                <h4 className="text-base font-bold text-white mb-3 tracking-wide">{ben.title}</h4>
-                <p className="text-xs md:text-sm text-zinc-450 leading-relaxed font-semibold">{ben.desc}</p>
+              <div 
+                key={idx} 
+                className="group relative flex-1 min-w-[280px] max-w-[400px] p-8 md:p-10 bg-[#0a0a0a] border border-zinc-800/80 rounded-[2rem] overflow-hidden hover:bg-zinc-900/50 transition-colors duration-500 shadow-lg hover:shadow-2xl hover:shadow-rose-500/10"
+              >
+                {/* Background Huge Number */}
+                <div className="absolute -right-4 -bottom-8 text-8xl md:text-[120px] font-black text-zinc-800/20 group-hover:text-rose-500/10 transition-colors duration-500 pointer-events-none select-none">
+                  0{idx + 1}
+                </div>
+                
+                {/* Top Accent Line */}
+                <div className="absolute top-0 left-8 right-8 h-[2px] bg-gradient-to-r from-rose-500/0 via-rose-500/50 to-rose-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+                <div className="relative z-10">
+                  <div className="w-12 h-12 rounded-2xl bg-rose-500/10 border border-rose-500/20 flex items-center justify-center text-rose-400 mb-8 group-hover:scale-110 transition-transform duration-500">
+                    <span className="font-mono font-bold text-lg">0{idx + 1}</span>
+                  </div>
+                  <h4 className="text-lg md:text-xl font-bold text-white mb-4 tracking-tight group-hover:text-rose-400 transition-colors duration-300">
+                    {ben.title}
+                  </h4>
+                  <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-medium group-hover:text-zinc-300 transition-colors duration-300">
+                    {ben.desc}
+                  </p>
+                </div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* 11. WHY HUMANEX, CUSTOMIZATION & INTEGRATION */}
-      <section className="w-full py-24 bg-black border-b border-zinc-900/60">
+      {/* 11. WHY HUMANEX, CUSTOMIZATION & INTEGRATION (PREMIUM) */}
+      <section className="w-full py-32 bg-black border-b border-zinc-900/60 overflow-hidden">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-            {/* Customization Details */}
-            <div>
-              <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-400 mb-3 block">
-                EXTENSIBILITY
-              </span>
-              <h3 className="text-xl md:text-2xl font-bold text-white mb-6">
-                Customization &amp; Personalization
-              </h3>
-              <p className="text-zinc-400 text-xs md:text-sm leading-relaxed font-bold mb-8">
-                Setup custom branding and onboarding routes. Enforce regional rules, specialized department layouts, and notification structures easily.
-              </p>
-              
-              <ul className="space-y-4">
-                {[
+          <div className="flex flex-col lg:flex-row gap-16 lg:gap-12 items-start">
+            
+            {/* Left Column: Text & List */}
+            <div className="lg:w-5/12 flex flex-col items-start text-left lg:sticky lg:top-32">
+              <Reveal>
+                <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-400 mb-4 block">
+                  EXTENSIBILITY
+                </span>
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-tight mb-6 text-white">
+                  Customization &amp; Personalization
+                </h2>
+                <p className="text-zinc-400 text-base md:text-lg leading-relaxed font-medium mb-10">
+                  Setup custom branding and onboarding routes. Enforce regional rules, specialized department layouts, and notification structures easily.
+                </p>
+                
+                <ul className="space-y-6">
+                  {[
                   "Branded Workspace Panels: Adapt colors, logs, and headers.",
                   "Custom Onboarding Checklist: Map routes sequentially per role.",
                   "Regional Tax Grids: Tailor calculators by state or region."
                 ].map((txt, idx) => (
-                  <li key={idx} className="flex items-center gap-3 text-xs md:text-sm text-zinc-355 font-bold">
-                    <Check className="w-4 h-4 text-rose-400 shrink-0" />
-                    <span>{txt}</span>
-                  </li>
-                ))}
-              </ul>
+                    <li key={idx} className="flex items-start gap-4 text-sm md:text-base text-zinc-300 font-bold">
+                      <div className="w-6 h-6 rounded-full bg-rose-500/10 border border-rose-500/30 flex items-center justify-center shrink-0 mt-0.5 shadow-lg shadow-rose-500/20">
+                        <Check className="w-3.5 h-3.5 text-rose-400" />
+                      </div>
+                      <span className="leading-relaxed">{txt}</span>
+                    </li>
+                  ))}
+                </ul>
+              </Reveal>
             </div>
 
-            {/* Integrations Grid */}
-            <div>
-              <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
-                CONNECTIVITY
-              </span>
-              <h3 className="text-xl md:text-2xl font-bold text-white mb-6">
-                Supported Integrations
-              </h3>
+            {/* Right Column: 3D Flip Cards Grid */}
+            <div className="lg:w-7/12 w-full">
+              <Reveal className="mb-6">
+                <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-400 mb-2 block">
+                  CONNECTIVITY
+                </span>
+                <h3 className="text-xl md:text-2xl font-bold text-white">
+                  Enterprise Ecosystem Connectors
+                </h3>
+              </Reveal>
+
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {integrations.map((int, idx) => (
-                  <div key={idx} className="p-5 bg-zinc-950/40 border border-zinc-900 rounded-2xl hover:border-zinc-800 transition-colors">
-                    <h4 className="text-xs font-bold text-white mb-2 tracking-wide">{int.title}</h4>
-                    <p className="text-[10px] text-zinc-450 leading-relaxed font-semibold">{int.desc}</p>
-                  </div>
-                ))}
+                {integrations.map((int, i) => {
+                  const icons = [UserPlus, Activity, Briefcase, Globe];
+                  const images = [
+                    "/assets/common/1b065043b6959827c05a0073c93a4a53 1.png",
+                    "/assets/common/260b761ad40c3ad2acba2c6666894539 1.png",
+                    "/assets/common/315e4fdc6263bfd240f36297e376576e 1.png",
+                    "/assets/common/37b9b888cc479ea7b74d2d9a05c37597 1.png"
+                  ];
+                  const Icon = icons[i % 4];
+                  return (
+                    <Reveal key={i} delay={i * 0.1}>
+                      <div className="group relative h-[260px] md:h-[280px] [perspective:1000px] cursor-pointer">
+                        <div className="absolute inset-0 w-full h-full transition-all duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+                          
+                          {/* Front Face */}
+                          <div className="absolute inset-0 w-full h-full flex flex-col justify-start bg-black border border-zinc-800/80 hover:border-zinc-700 rounded-2xl p-6 shadow-sm [backface-visibility:hidden] transition-colors">
+                            <div className="w-12 h-12 mb-5 rounded-xl bg-zinc-900 border border-zinc-800 flex items-center justify-center text-rose-400">
+                              <Icon size={24} strokeWidth={1.5} />
+                            </div>
+                            <h3 className="font-bold text-lg text-zinc-100 mb-3">
+                              {int.title}
+                            </h3>
+                            <p className="text-sm text-zinc-400 leading-relaxed flex-1 font-medium">
+                              {int.desc}
+                            </p>
+                            <div className="inline-flex items-center gap-2 text-xs font-bold text-rose-500 mt-auto opacity-70 group-hover:opacity-100 transition-opacity">
+                              View Integration <ArrowUpRight size={14} className="transition-transform group-hover:translate-x-1" />
+                            </div>
+                          </div>
+
+                          {/* Back Face */}
+                          <div className="absolute inset-0 w-full h-full flex flex-col rounded-2xl overflow-hidden [backface-visibility:hidden] [transform:rotateY(180deg)] border border-rose-500/30">
+                            <img src={images[i % 4]} alt={int.title} className="w-full h-full object-cover opacity-80" />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/60 to-black/10 flex flex-col justify-end p-6">
+                              <div className="w-10 h-10 mb-4 rounded-full bg-rose-500/20 backdrop-blur-md border border-rose-500/40 flex items-center justify-center text-rose-400">
+                                <Icon size={18} strokeWidth={2} />
+                              </div>
+                              <h3 className="font-bold text-lg text-white mb-2">{int.title}</h3>
+                              <div className="inline-flex items-center gap-2 text-xs font-bold text-rose-400">
+                                Explore Capabilities <ArrowUpRight size={14} />
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </Reveal>
+                  );
+                })}
               </div>
             </div>
+
           </div>
         </div>
       </section>
-
-      {/* 12. SECURITY & DATA PRIVACY */}
-      <section className="w-full py-24 bg-black border-b border-zinc-900/60">
-        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
-            <div className="lg:col-span-5">
-              <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-400 mb-3 block">
+\n\n{/* 12. SECURITY & DATA PRIVACY (PREMIUM) */}
+      <section className="relative w-full py-24 bg-black text-white overflow-hidden border-b border-zinc-900/60">
+        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
+          <div className="mb-16 text-center max-w-3xl mx-auto">
+            <Reveal>
+              <span className="text-[11px] font-bold tracking-[0.25em] uppercase text-rose-400 mb-4 block">
                 COMPLIANCE &amp; ARCHITECTURE
               </span>
+            </Reveal>
+            <Reveal>
               <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-6">
                 Security &amp; Data Isolation
               </h2>
+            </Reveal>
+            <Reveal>
               <p className="text-zinc-400 text-sm leading-relaxed font-bold">
                 Employee profiles contain highly sensitive files. Humanex enforces zero-compromise security layers and directory isolation.
               </p>
-            </div>
+            </Reveal>
+          </div>
 
-            <div className="lg:col-span-7 bg-zinc-950/30 border border-zinc-900 rounded-3xl p-8 md:p-12">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                {[
-                  { icon: Lock, title: "SAML SSO Integrations", desc: "Authenticate employee access using Okta, Azure AD, or corporate catalogs." },
-                  { icon: Upload, title: "Secure Upload Portals", desc: "Upload employee contracts, scans, and IDs with automatic isolation checkups." },
-                  { icon: ShieldCheck, title: "Granular Role Settings (RBAC)", desc: "Enforce strict boundaries between managers, payroll admins, and employees." },
-                  { icon: Activity, title: "Encrypted Audit Records", desc: "Every profile review, salary adjustment, or document check is logged." }
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
+            {[
+                  { icon: Lock, title: "SAML SSO Integrations", desc: "Authenticate employee access using Okta, Azure AD, or corporate catalogs." , image: "/assets/common/09ff7846bc8c9998745688779c09f88d 1.png" },
+                  { icon: Upload, title: "Secure Upload Portals", desc: "Upload employee contracts, scans, and IDs with automatic isolation checkups." , image: "/assets/common/1b065043b6959827c05a0073c93a4a53 1.png" },
+                  { icon: ShieldCheck, title: "Granular Role Settings (RBAC)", desc: "Enforce strict boundaries between managers, payroll admins, and employees." , image: "/assets/common/260b761ad40c3ad2acba2c6666894539 1.png" },
+                  { icon: Activity, title: "Encrypted Audit Records", desc: "Every profile review, salary adjustment, or document check is logged." , image: "/assets/common/2fe7f9184c515b0c515ce38bc8a25efa 1.png" }
                 ].map((sec, idx) => (
-                  <div key={idx} className="flex gap-4">
-                    <div className="w-9 h-9 rounded-xl bg-rose-500/10 border border-rose-500/20 flex items-center justify-center text-rose-400 shrink-0">
-                      <sec.icon className="w-4 h-4" />
+              <Reveal key={idx} delay={idx * 0.05}>
+                <div className="relative rounded-[24px] border border-zinc-800/80 bg-black p-6 md:p-8 flex flex-col justify-between group h-full shadow-lg overflow-hidden transition-all duration-500 hover:border-rose-500/50 min-h-[380px]">
+                  
+                  {/* Expanding Image Layer with Glassmorphism */}
+                  <div className="absolute inset-0 z-0 [clip-path:circle(0%_at_100%_100%)] group-hover:[clip-path:circle(150%_at_100%_100%)] transition-all duration-700 ease-in-out pointer-events-none">
+                    <img src={sec.image || '/assets/common/09ff7846bc8c9998745688779c09f88d 1.png'} alt={sec.title} className="w-full h-full object-cover scale-110 group-hover:scale-100 transition-transform duration-1000 ease-out opacity-40" />
+                    <div className="absolute inset-0 bg-rose-950/40 backdrop-blur-md" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-rose-900/10 border border-rose-500/10 rounded-[24px]" />
+                  </div>
+
+                  {/* Content Layer */}
+                  <div className="relative z-10 flex flex-col h-full">
+                    <div className="w-12 h-12 rounded-xl bg-rose-500/10 border border-rose-500/30 flex items-center justify-center text-rose-400 shrink-0 mb-6 group-hover:scale-110 transition-transform duration-500">
+                      <sec.icon className="w-6 h-6" />
                     </div>
                     <div>
-                      <h4 className="text-xs font-bold text-white mb-1.5 tracking-wide">{sec.title}</h4>
-                      <p className="text-[10px] text-zinc-455 leading-relaxed font-semibold">{sec.desc}</p>
+                      <h3 className="text-lg md:text-xl font-bold text-white mb-4 tracking-tight transition-transform duration-500 group-hover:-translate-y-1">
+                        {sec.title}
+                      </h3>
+                      <p className="text-zinc-400 text-xs md:text-sm leading-relaxed mb-6 font-medium group-hover:text-zinc-300 transition-colors duration-500">
+                        {sec.desc}
+                      </p>
                     </div>
                   </div>
-                ))}
-              </div>
-            </div>
+                </div>
+              </Reveal>
+            ))}
           </div>
         </div>
       </section>
+\n\n
 
-      {/* 13. CLIENT TESTIMONIALS */}
-      <section className="w-full py-24 bg-black border-b border-zinc-900/60">
-        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
-          <Reveal className="text-center max-w-2xl mx-auto mb-16">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
+      {/* 13. CLIENT TESTIMONIALS (PREMIUM) */}
+      <section className="w-full py-24 md:py-32 bg-[#030303] border-b border-zinc-900/60 relative overflow-hidden">
+        {/* Decorative background glow */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-rose-500/10 blur-[120px] rounded-full pointer-events-none" />
+        
+        <div className="max-w-7xl mx-auto w-full px-4 sm:px-8 xl:px-12 relative z-10">
+          <Reveal className="text-center max-w-3xl mx-auto mb-20">
+            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
               CLIENT TESTIMONIALS
             </span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-4">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-6">
               Trusted by HR Leaders
             </h2>
-            <p className="text-zinc-400 text-xs md:text-sm font-bold leading-relaxed">
+            <p className="text-zinc-400 text-base md:text-lg font-medium leading-relaxed">
               Read how people managers accelerate onboarding using Humanex.
             </p>
           </Reveal>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto">
             {[
               {
                 quote: "Humanex resume parser saved our recruitment team over 20 hours a week. The automated onboarding triggers make hiring a breeze.",
                 author: "Danielle Vance",
-                role: "Director of HR, TechNova Solutions"
+                role: "Director of HR, TechNova Solutions",
+                avatar: "https://i.pravatar.cc/150?u=director"
               },
               {
                 quote: "Running payroll for our remote engineering team was a massive chore. Humanex tax calculators run local payroll coordinates instantly.",
                 author: "Michael Ross",
-                role: "VP of People, Global Scale Group"
+                role: "VP of People, Global Scale Group",
+                avatar: "https://i.pravatar.cc/150?u=vpofpeop"
               },
               {
                 quote: "SAML SSO was critical for our corporate security standards. Humanex integrated with Azure AD in less than an hour.",
                 author: "Sarah Jenkins",
-                role: "IT Security lead, Prime Logistics"
+                role: "IT Security lead, Prime Logistics",
+                avatar: "https://i.pravatar.cc/150?u=itsecuri"
               }
             ].map((t, idx) => (
-              <div key={idx} className="p-8 bg-zinc-950/40 border border-zinc-900 rounded-3xl flex flex-col justify-between">
-                <p className="text-zinc-350 text-xs md:text-sm leading-relaxed italic mb-8">
-                  "{t.quote}"
-                </p>
-                <div>
-                  <div className="text-xs font-bold text-white">{t.author}</div>
-                  <div className="text-[10px] text-zinc-500 font-mono mt-1">{t.role}</div>
+              <div 
+                key={idx} 
+                className={`p-8 md:p-10 bg-[#0c0c0c] border border-zinc-800/80 rounded-[2rem] flex flex-col justify-between relative group hover:border-rose-500/50 hover:bg-zinc-900/50 transition-all duration-500 shadow-xl hover:shadow-2xl hover:shadow-rose-500/10 ${idx === 1 ? 'md:-translate-y-6' : ''}`}
+              >
+                {/* Large Quotation Icon Background */}
+                <div className="absolute top-6 right-6 text-zinc-800/30 group-hover:text-rose-500/10 transition-colors pointer-events-none">
+                  <Quote size={80} />
+                </div>
+
+                <div className="relative z-10">
+                  <div className="flex gap-1.5 mb-8">
+                    {[1, 2, 3, 4, 5].map(i => (
+                      <Star key={i} className="w-4 h-4 fill-rose-500 text-rose-500" />
+                    ))}
+                  </div>
+                  
+                  <p className="text-zinc-300 text-base md:text-lg leading-relaxed font-medium mb-12">
+                    "{t.quote}"
+                  </p>
+                </div>
+
+                <div className="flex items-center gap-4 relative z-10 mt-auto pt-6 border-t border-zinc-800/50 group-hover:border-zinc-700 transition-colors">
+                  <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-zinc-800 group-hover:border-rose-500/30 transition-colors">
+                    <Image 
+                      src={t.avatar || 'https://i.pravatar.cc/150?u=fallback'} 
+                      alt={t.author} 
+                      width={48} 
+                      height={48} 
+                      className="w-full h-full object-cover" 
+                      unoptimized 
+                    />
+                  </div>
+                  <div>
+                    <div className="text-sm font-bold text-white tracking-wide">{t.author}</div>
+                    <div className="text-[10px] text-rose-400 font-mono tracking-widest uppercase mt-1">{t.role}</div>
+                  </div>
                 </div>
               </div>
             ))}

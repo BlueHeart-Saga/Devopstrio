@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { Reveal } from "@/components/ui/Reveal";
 import { Hero } from "@/components/services/Hero";
+import LightRays from "@/components/ui/LightRays";
 import {
   ArrowUpRight,
   Plus,
@@ -96,19 +97,19 @@ export default function SoftwareEngineeringPage() {
 
       {/* 1. HERO SECTION */}
       <Hero
-        badge="Software Engineering Unit"
+        badge="Product & Platform Engineering"
         title={
           <>
-            Software <br />
+            Crafting Digital <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-500 to-rose-700">
-              Engineering
+              Masterpieces
             </span>
           </>
         }
-        subtitle="Deploy Next.js user interfaces, build FastAPI servers, design schema validation APIs, implement clean patterns, and run integration tests."
+        subtitle="Crafting flawless digital experiences. We architect stunning Next.js interfaces, lightning-fast backend APIs, and meticulously tested microservices that scale effortlessly."
         dotField={true}
         dotFieldProps={{
-          dotRadius: 1.5,
+          dotRadius: 3,
           dotSpacing: 14,
           bulgeStrength: 67,
           glowRadius: 160,

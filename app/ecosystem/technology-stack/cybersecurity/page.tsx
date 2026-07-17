@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { Reveal } from "@/components/ui/Reveal";
 import { Hero } from "@/components/services/Hero";
+import LightRays from "@/components/ui/LightRays";
 import {
   ArrowUpRight,
   Plus,
@@ -97,19 +98,19 @@ export default function CybersecurityPage() {
 
       {/* 1. HERO SECTION */}
       <Hero
-        badge="Cybersecurity Unit"
+        badge="Enterprise Security & Trust"
         title={
           <>
-            Cybersecurity <br />
+            Forging Unbreakable <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-500 to-rose-700">
-              Operations
+              Digital Trust
             </span>
           </>
         }
-        subtitle="Configure security frameworks, deploy identity platforms, verify app code, run cloud posture audits, and automate compliance tracking."
+        subtitle="Fortify your digital frontiers. We implement military-grade security frameworks, intelligent identity platforms, and automated compliance protocols to keep your enterprise impenetrable."
         dotField={true}
         dotFieldProps={{
-          dotRadius: 1.5,
+          dotRadius: 3,
           dotSpacing: 14,
           bulgeStrength: 67,
           glowRadius: 160,

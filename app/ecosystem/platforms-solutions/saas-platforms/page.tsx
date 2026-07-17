@@ -549,7 +549,7 @@ export default function SaaSPlatformsPage() {
               { title: "Retail", subtitle: "Omnichannel workflows · 2026", badge: "Humanex", logo: "/assets/Home-page/our-products/logo/humanex.png", image: "/assets/Home-page/industries/retailecommerce.png" },
               { title: "Real Estate", subtitle: "Property asset telemetry · 2026", badge: "Homela", logo: "/assets/Home-page/our-products/logo/homela.png", image: "/assets/Home-page/industries/4.png" }
             ].map((ind, idx) => (
-              <div key={idx} className="min-w-[300px] md:min-w-[400px] snap-start group cursor-pointer bg-[#0c0c0c] border border-zinc-800/80 rounded-[2rem] p-2 hover:border-zinc-700 transition-colors">
+              <div key={idx} className="min-w-[280px] md:min-w-[340px] snap-start group cursor-pointer bg-[#0c0c0c] border border-zinc-800/80 rounded-[2rem] p-2 hover:border-zinc-700 transition-colors">
                 {/* Visual Box */}
                 <div className="bg-zinc-900 rounded-[1.5rem] border border-zinc-800/50 aspect-[4/3] relative overflow-hidden mb-4 shadow-inner">
                   
@@ -566,11 +566,11 @@ export default function SaaSPlatformsPage() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none opacity-80" />
 
                   {/* Top Badge (Logo) */}
-                  <div className="absolute top-4 left-4 bg-black/60 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/10 z-10 flex items-center justify-center min-h-[28px]">
+                  <div className="absolute top-4 left-4 bg-black/70 backdrop-blur-md px-4 py-2 rounded-full border border-white/10 z-10 flex items-center justify-center min-h-[36px]">
                     {ind.logo ? (
-                      <Image src={ind.logo} alt={ind.badge} width={80} height={20} className="h-3 w-auto object-contain opacity-90 group-hover:opacity-100 transition-opacity" unoptimized />
+                      <Image src={ind.logo} alt={ind.badge} width={100} height={28} className="h-5 w-auto object-contain opacity-90 group-hover:opacity-100 transition-opacity" unoptimized />
                     ) : (
-                      <span className="text-[9px] font-bold text-white tracking-widest uppercase">{ind.badge}</span>
+                      <span className="text-[10px] font-bold text-white tracking-widest uppercase">{ind.badge}</span>
                     )}
                   </div>
                 </div>
@@ -581,8 +581,8 @@ export default function SaaSPlatformsPage() {
                     <h3 className="text-xl md:text-2xl font-bold text-white mb-2 tracking-tight group-hover:text-rose-500 transition-colors">{ind.title}</h3>
                     <p className="text-xs md:text-sm text-zinc-500 font-medium">{ind.subtitle}</p>
                   </div>
-                  <div className="w-10 h-10 rounded-full border border-zinc-800 flex items-center justify-center text-zinc-400 group-hover:bg-white group-hover:text-black transition-colors shrink-0">
-                    <ArrowUpRight className="w-4 h-4" />
+                  <div className="w-12 h-12 rounded-full border border-zinc-800 flex items-center justify-center text-zinc-400 group-hover:bg-white group-hover:text-black transition-colors shrink-0">
+                    <ArrowUpRight className="w-5 h-5" />
                   </div>
                 </div>
               </div>

@@ -781,22 +781,25 @@ export default function SafeSignProductPage() {
         </div>
       </section>
 
-      {/* 10. BUSINESS BENEFITS */}
-      <section className="w-full py-24 bg-black border-b border-zinc-900/60">
-        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
-          <Reveal className="text-center max-w-2xl mx-auto mb-20">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
+      {/* 10. BUSINESS BENEFITS (PREMIUM) */}
+      <section className="relative w-full py-24 md:py-32 bg-[#030303] border-b border-zinc-900/60 overflow-hidden">
+        {/* Subtle background glow */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-[1px] bg-gradient-to-r from-transparent via-emerald-500/50 to-transparent opacity-50" />
+        
+        <div className="max-w-7xl mx-auto w-full px-4 sm:px-8 xl:px-12 relative z-10">
+          <Reveal className="text-center max-w-3xl mx-auto mb-24">
+            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-emerald-500 mb-4 block">
               ROI & EFFICIENCY
             </span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-4">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-6">
               Transforming Time into Capital
             </h2>
-            <p className="text-zinc-400 text-xs md:text-sm font-bold leading-relaxed">
+            <p className="text-zinc-400 text-base md:text-lg font-medium leading-relaxed">
               Eliminate friction and accelerate revenue with automated signing workflows that pay for themselves.
             </p>
           </Reveal>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+          <div className="flex flex-wrap justify-center gap-6 lg:gap-8">
             {[
               { title: "Eliminate Friction", desc: "Eradicate manual printing, scanning, and endless physical checklists from your workflow." },
               { title: "Intelligent Routing", desc: "Deploy dynamic sequences that automatically chase signatories based on smart deadlines." },
@@ -804,10 +807,29 @@ export default function SafeSignProductPage() {
               { title: "Unified Vault", desc: "Consolidate every NDA and contract inside a hyper-secure, globally indexed database." },
               { title: "Velocity Closing", desc: "Shrink the deal lifecycle from weeks of waiting to mere minutes of action." }
             ].map((ben, idx) => (
-              <div key={idx} className="p-6 bg-zinc-950/40 border border-zinc-900 hover:border-emerald-500/10 rounded-2xl transition-all duration-300">
-                <div className="text-emerald-500 text-sm font-bold font-mono mb-2">0{idx + 1}.</div>
-                <h4 className="text-xs font-bold text-white mb-2 tracking-wide">{ben.title}</h4>
-                <p className="text-[10px] text-zinc-400 leading-relaxed font-semibold">{ben.desc}</p>
+              <div 
+                key={idx} 
+                className="group relative flex-1 min-w-[280px] max-w-[400px] p-8 md:p-10 bg-[#0a0a0a] border border-zinc-800/80 rounded-[2rem] overflow-hidden hover:bg-zinc-900/50 transition-colors duration-500 shadow-lg hover:shadow-2xl hover:shadow-emerald-500/10"
+              >
+                {/* Background Huge Number */}
+                <div className="absolute -right-4 -bottom-8 text-8xl md:text-[120px] font-black text-zinc-800/20 group-hover:text-emerald-500/10 transition-colors duration-500 pointer-events-none select-none">
+                  0{idx + 1}
+                </div>
+                
+                {/* Top Accent Line */}
+                <div className="absolute top-0 left-8 right-8 h-[2px] bg-gradient-to-r from-emerald-500/0 via-emerald-500/50 to-emerald-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+                <div className="relative z-10">
+                  <div className="w-12 h-12 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 mb-8 group-hover:scale-110 transition-transform duration-500">
+                    <span className="font-mono font-bold text-lg">0{idx + 1}</span>
+                  </div>
+                  <h4 className="text-lg md:text-xl font-bold text-white mb-4 tracking-tight group-hover:text-emerald-400 transition-colors duration-300">
+                    {ben.title}
+                  </h4>
+                  <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-medium group-hover:text-zinc-300 transition-colors duration-300">
+                    {ben.desc}
+                  </p>
+                </div>
               </div>
             ))}
           </div>

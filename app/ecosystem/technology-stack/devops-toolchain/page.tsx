@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { Reveal } from "@/components/ui/Reveal";
 import { Hero } from "@/components/services/Hero";
+import LightRays from "@/components/ui/LightRays";
 import {
   ArrowUpRight,
   Plus,
@@ -97,19 +98,19 @@ export default function DevOpsToolchainPage() {
 
       {/* 1. HERO SECTION */}
       <Hero
-        badge="DevOps Engineering Unit"
+        badge="Continuous Delivery & Automation"
         title={
           <>
-            DevOps <br />
+            Accelerating Infinite <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-500 to-rose-700">
-              Toolchain
+              Deployment Velocity
             </span>
           </>
         }
-        subtitle="Build CI/CD pipelines, configure GitOps engines, write infrastructure code, deploy telemetry stacks, and automate policy validations."
+        subtitle="Accelerate your software delivery lifecycle. We engineer frictionless CI/CD pipelines, robust GitOps engines, and comprehensive observability stacks for ultimate operational agility."
         dotField={true}
         dotFieldProps={{
-          dotRadius: 1.5,
+          dotRadius: 3,
           dotSpacing: 14,
           bulgeStrength: 67,
           glowRadius: 160,

@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { Reveal } from "@/components/ui/Reveal";
 import { Hero } from "@/components/services/Hero";
+import LightRays from "@/components/ui/LightRays";
 import {
   ArrowUpRight,
   Plus,
@@ -96,19 +97,19 @@ export default function DataEngineeringPage() {
 
       {/* 1. HERO SECTION */}
       <Hero
-        badge="Data Engineering Unit"
+        badge="Data Intelligence Platform"
         title={
           <>
-            Data <br />
+            Engineering Intelligent <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-500 to-rose-700">
-              Engineering
+              Data Ecosystems
             </span>
           </>
         }
-        subtitle="Build data architectures, configure streaming platforms, manage warehouses, tune analytics layers, and enforce governance."
+        subtitle="Transform raw data into strategic assets. We build hyper-scalable architectures, real-time streaming pipelines, and unified lakehouses that drive intelligent, data-led decisions."
         dotField={true}
         dotFieldProps={{
-          dotRadius: 1.5,
+          dotRadius: 3,
           dotSpacing: 14,
           bulgeStrength: 67,
           glowRadius: 160,

@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { Reveal } from "@/components/ui/Reveal";
+import { motion, AnimatePresence } from "framer-motion";
 import { Hero } from "@/components/services/Hero";
 import {
   ArrowUpRight,
@@ -22,9 +23,19 @@ import {
   Eye,
   Layers,
   CheckCircle,
-  HelpCircle
+  HelpCircle,
+  Cloud
 } from "lucide-react";
 import Link from "next/link";
+
+const colorMap: Record<string, { border: string; icon: string; number: string; glow: string }> = {
+  rose:    { border: "border-rose-500/30 hover:border-rose-500/60",    icon: "text-rose-500 bg-rose-500/10 border-rose-500/20",    number: "text-rose-500/10",    glow: "from-rose-500/10" },
+  blue:    { border: "border-blue-500/30 hover:border-blue-500/60",    icon: "text-blue-400 bg-blue-500/10 border-blue-500/20",    number: "text-blue-500/10",    glow: "from-blue-500/10" },
+  emerald: { border: "border-emerald-500/30 hover:border-emerald-500/60", icon: "text-emerald-400 bg-emerald-500/10 border-emerald-500/20", number: "text-emerald-500/10", glow: "from-emerald-500/10" },
+  orange:  { border: "border-orange-500/30 hover:border-orange-500/60", icon: "text-orange-400 bg-orange-500/10 border-orange-500/20", number: "text-orange-500/10", glow: "from-orange-500/10" },
+  purple:  { border: "border-purple-500/30 hover:border-purple-500/60", icon: "text-purple-400 bg-purple-500/10 border-purple-500/20", number: "text-purple-500/10", glow: "from-purple-500/10" },
+  cyan:    { border: "border-cyan-500/30 hover:border-cyan-500/60",    icon: "text-cyan-400 bg-cyan-500/10 border-cyan-500/20",    number: "text-cyan-500/10",    glow: "from-cyan-500/10" }
+};
 
 interface CoreArea {
   title: string;
@@ -41,6 +52,8 @@ interface TimelineStep {
 interface SolutionBlock {
   title: string;
   desc: string;
+  image: string;
+  bullets: string[];
 }
 
 interface ArchLayer {
@@ -176,27 +189,39 @@ export default function AIInnovationLabPage() {
   const solutionBlocks: SolutionBlock[] = [
     {
       title: "Enterprise AI Copilots",
-      desc: "Internal assistants for employees, operations teams, HR, support, legal, and knowledge workers."
+      desc: "Internal assistants for employees, operations teams, HR, support, legal, and knowledge workers.",
+      image: "/assets/Home-page/we-imagine/gen/we-design-intelligent.png",
+      bullets: ["Custom LLMs", "Secure Agent Workflows", "Enterprise Search"]
     },
     {
       title: "Document AI Platforms",
-      desc: "OCR, document extraction, policy intelligence, claims processing, contract review, and document search."
+      desc: "OCR, document extraction, policy intelligence, claims processing, contract review, and document search.",
+      image: "/assets/Home-page/we-imagine/gen/we-transform-legacy.png",
+      bullets: ["Intelligent Extraction", "Vector Indexing", "Automated Compliance"]
     },
     {
       title: "Conversational AI Systems",
-      desc: "Customer support bots, internal help assistants, knowledge assistants, and AI-enabled service workflows."
+      desc: "Customer support bots, internal help assistants, knowledge assistants, and AI-enabled service workflows.",
+      image: "/assets/Home-page/we-imagine/gen/we-manage-operations.png",
+      bullets: ["24/7 Automation", "Multilingual Support", "Contextual Memory"]
     },
     {
       title: "AI-Powered Workflow Automation",
-      desc: "Intelligent task routing, ticket classification, summarization, recommendation engines, and process acceleration."
+      desc: "Intelligent task routing, ticket classification, summarization, recommendation engines, and process acceleration.",
+      image: "/assets/Home-page/we-imagine/gen/we-build-software.png",
+      bullets: ["Task Orchestration", "Predictive Routing", "Data Synthesis"]
     },
     {
       title: "Predictive Business Intelligence",
-      desc: "Forecasting, anomaly detection, churn prediction, financial scoring, and operational trend analysis."
+      desc: "Forecasting, anomaly detection, churn prediction, financial scoring, and operational trend analysis.",
+      image: "/assets/Home-page/we-imagine/gen/we-design-intelligent.png",
+      bullets: ["Real-time Analytics", "Risk Modeling", "Market Forecasting"]
     },
     {
       title: "Industry-Specific AI Solutions",
-      desc: "AI use cases tailored to finance, healthcare, telecom, retail, manufacturing, and public sector operations."
+      desc: "AI use cases tailored to finance, healthcare, telecom, retail, manufacturing, and public sector operations.",
+      image: "/assets/Home-page/we-imagine/gen/we-transform-legacy.png",
+      bullets: ["Regulatory Compliance", "Custom Taxonomies", "Domain-Specific Models"]
     }
   ];
 
@@ -492,24 +517,36 @@ export default function AIInnovationLabPage() {
             </p>
           </Reveal>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-4">
-            {lifecycleTimeline.map((step, idx) => (
-              <Reveal key={step.num} delay={idx * 0.05} className="h-full">
-                <div className="bg-zinc-950/80 border border-white/[0.03] hover:border-rose-500/20 rounded-2xl p-5 flex flex-col justify-between h-full min-h-[190px] relative group transition-all duration-300">
-                  <div>
-                    <span className="text-2xl font-black text-rose-500/10 font-mono tracking-tighter block mb-4 group-hover:text-rose-500/25 transition-colors">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {lifecycleTimeline.map((step, idx) => {
+              const icons = [Search, Layers, Terminal, Workflow, Cloud, Settings];
+              const colors = ["rose", "blue", "emerald", "orange", "purple", "cyan"];
+              const Icon = icons[idx];
+              const c = colorMap[colors[idx]];
+              
+              return (
+                <Reveal key={step.num} delay={idx * 0.05} className="h-full">
+                  <div
+                    className={`group relative h-full bg-zinc-900/40 border ${c.border} rounded-2xl p-8 overflow-hidden transition-all duration-300 flex flex-col`}
+                  >
+                    <div className={`absolute inset-0 bg-gradient-to-br ${c.glow} to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none`} />
+
+                    {/* Large number watermark */}
+                    <span className={`absolute top-4 right-6 text-[5.5rem] font-black ${c.number} select-none leading-none transition-transform duration-300 group-hover:scale-110`}>
                       {step.num}
                     </span>
-                    <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-2">
-                      {step.title}
-                    </h4>
-                    <p className="text-xs md:text-sm text-zinc-400 leading-relaxed font-semibold">
-                      {step.desc}
-                    </p>
+
+                    <div className="relative z-10 flex flex-col flex-1">
+                      <div className={`w-12 h-12 rounded-xl border flex items-center justify-center mb-6 ${c.icon}`}>
+                        <Icon className="w-5 h-5" />
+                      </div>
+                      <h3 className="text-xl font-bold text-white mb-3 uppercase tracking-wide">{step.title}</h3>
+                      <p className="text-zinc-400 text-sm leading-relaxed font-medium">{step.desc}</p>
+                    </div>
                   </div>
-                </div>
-              </Reveal>
-            ))}
+                </Reveal>
+              );
+            })}
           </div>
 
         </div>
@@ -530,20 +567,46 @@ export default function AIInnovationLabPage() {
             </p>
           </Reveal>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             {solutionBlocks.map((block, idx) => (
-              <Reveal key={block.title} delay={idx * 0.04}>
-                <div className="bg-[#0a0a0a]/60 border border-white/[0.03] hover:border-rose-500/20 rounded-[20px] p-6 transition-all duration-300 min-h-[160px] flex flex-col justify-between">
-                  <div>
-                    <div className="flex items-center justify-between mb-4 border-b border-white/[0.03] pb-3">
-                      <h4 className="text-xs font-bold text-white uppercase tracking-wider">
-                        {block.title}
-                      </h4>
-                      <span className="text-[9px] font-mono text-rose-500 font-bold">ACTIVE ARCH</span>
+              <Reveal key={block.title} delay={idx * 0.04} className="h-full">
+                <div className="bg-zinc-900/50 backdrop-blur-sm border border-zinc-800 rounded-3xl p-8 hover:bg-zinc-900/80 hover:border-rose-500/30 transition-all duration-300 relative group h-full flex flex-col overflow-hidden shadow-lg">
+                  
+                  {/* Subtle Top-Right Image Integration (like the avatar in EmployeeStories, but as a faded background accent) */}
+                  <div className="absolute top-0 right-0 w-40 h-40 opacity-10 group-hover:opacity-30 transition-opacity duration-700 [clip-path:circle(100%_at_100%_0%)]">
+                    <img src={block.image} alt={block.title} className="w-full h-full object-cover" />
+                    <div className="absolute inset-0 bg-gradient-to-bl from-transparent to-zinc-900/50" />
+                  </div>
+
+                  <div className="absolute inset-0 bg-gradient-to-br from-white/[0.02] to-transparent pointer-events-none rounded-3xl" />
+                  
+                  <div className="relative z-10 flex flex-col h-full">
+                    <div className="mb-6">
+                      <span className="px-3 py-1 bg-zinc-950/80 border border-zinc-800 text-rose-500/80 text-[10px] font-mono font-bold tracking-widest rounded-full uppercase shadow-sm">
+                        Ready to Deploy
+                      </span>
                     </div>
-                    <p className="text-xs md:text-sm text-zinc-400 leading-relaxed font-semibold">
+
+                    <h3 className="text-xl font-bold text-white mb-4 tracking-tight group-hover:text-rose-50 transition-colors">
+                      {block.title}
+                    </h3>
+                    
+                    <div className="h-[1px] w-12 bg-rose-500/20 mb-4 group-hover:w-full transition-all duration-500" />
+                    
+                    <p className="text-zinc-400 text-sm leading-relaxed mb-8 font-medium group-hover:text-zinc-300 transition-colors flex-grow">
                       {block.desc}
                     </p>
+                    
+                    <div className="mt-auto pt-5 border-t border-zinc-800/60 group-hover:border-zinc-700 transition-colors duration-500">
+                      <ul className="space-y-3">
+                        {block.bullets.map((bullet) => (
+                          <li key={bullet} className="flex items-start gap-3 text-xs font-bold text-zinc-300 group-hover:text-white transition-colors duration-500">
+                            <span className="w-1.5 h-1.5 rounded-full bg-rose-500 shadow-[0_0_8px_rgba(225,29,72,0.8)] mt-1 shrink-0" />
+                            <span className="leading-tight">{bullet}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   </div>
                 </div>
               </Reveal>
@@ -571,22 +634,84 @@ export default function AIInnovationLabPage() {
           </Reveal>
 
           {/* Layered Diagram */}
-          <div className="flex flex-col gap-4 font-mono">
-            {archLayers.map((layer, idx) => (
-              <Reveal key={layer.num} delay={idx * 0.05}>
-                <div className="bg-zinc-950/60 border border-white/[0.03] rounded-2xl p-5 hover:border-rose-500/20 transition-all duration-300 flex flex-col md:flex-row md:items-center justify-between gap-3">
-                  <div className="flex items-center gap-4">
-                    <div className="w-16 text-[10px] font-bold text-rose-500 uppercase tracking-widest font-mono border-r border-white/10 pr-2">
-                      {layer.num}
+          <div className="relative max-w-5xl mx-auto mb-16 px-4 md:px-8 mt-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-x-20 md:gap-y-24">
+              {archLayers.map((layer, idx) => {
+                const styles = [
+                  { 
+                    borderColor: "border-rose-500", 
+                    textColor: "text-rose-500", 
+                    numPos: "-top-8 -right-4 md:-top-10 md:-right-6", 
+                    borderRadius: "rounded-[2.5rem] rounded-tr-2xl", 
+                    textAlign: "text-left",
+                    alignItems: "items-start"
+                  },
+                  { 
+                    borderColor: "border-rose-500", 
+                    textColor: "text-rose-500", 
+                    numPos: "-bottom-8 -left-4 md:-bottom-10 md:-left-6", 
+                    borderRadius: "rounded-[2.5rem] rounded-bl-2xl", 
+                    textAlign: "text-left md:text-right",
+                    alignItems: "items-start md:items-end"
+                  },
+                  { 
+                    borderColor: "border-rose-500", 
+                    textColor: "text-rose-500", 
+                    numPos: "-top-8 -right-4 md:-top-10 md:-right-6", 
+                    borderRadius: "rounded-[2.5rem] rounded-tr-2xl", 
+                    textAlign: "text-left",
+                    alignItems: "items-start"
+                  },
+                  { 
+                    borderColor: "border-rose-500", 
+                    textColor: "text-rose-500", 
+                    numPos: "-bottom-8 -left-4 md:-bottom-10 md:-left-6", 
+                    borderRadius: "rounded-[2.5rem] rounded-bl-2xl", 
+                    textAlign: "text-left md:text-right",
+                    alignItems: "items-start md:items-end"
+                  },
+                ];
+                
+                const style = styles[idx % styles.length];
+
+                return (
+                  <Reveal key={layer.num} delay={idx * 0.1}>
+                    <div className={`relative p-8 md:p-10 border-[2px] ${style.borderColor} ${style.borderRadius} bg-black group hover:-translate-y-2 transition-all duration-500 hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)] h-full flex flex-col`}>
+                      
+                      {/* The Giant Cut-out Number */}
+                      <div className={`absolute ${style.numPos} bg-black px-4 z-10 flex items-center justify-center transition-transform duration-500 group-hover:scale-110`}>
+                        <span 
+                          className={`text-[3.5rem] md:text-[4.5rem] font-black leading-none ${style.textColor}`}
+                          style={{
+                            WebkitTextStroke: `2px currentColor`,
+                            WebkitTextFillColor: "transparent",
+                            textShadow: `0 0 20px currentColor`
+                          }}
+                        >
+                          {layer.num.replace('Layer ', '')}
+                        </span>
+                      </div>
+
+                      {/* Content */}
+                      <div className={`flex flex-col gap-4 relative z-0 ${style.alignItems} ${style.textAlign} flex-grow`}>
+                        
+                        {/* Decorative Inner Graphic */}
+                        <div className={`w-10 h-10 rounded-full border-2 ${style.borderColor} flex items-center justify-center mb-1 opacity-80 group-hover:opacity-100 transition-opacity duration-300 shrink-0`}>
+                          <div className={`w-1.5 h-1.5 rounded-full bg-current ${style.textColor} animate-pulse`} />
+                        </div>
+
+                        <h3 className={`text-lg md:text-xl font-extrabold uppercase tracking-wide ${style.textColor}`}>
+                          {layer.name}
+                        </h3>
+                        <p className="text-sm md:text-base text-zinc-300 font-medium leading-relaxed max-w-[90%]">
+                          {layer.desc}
+                        </p>
+                      </div>
                     </div>
-                    <span className="text-xs font-bold text-white uppercase tracking-wider">{layer.name}</span>
-                  </div>
-                  <span className="text-xs md:text-sm text-zinc-400 font-semibold md:max-w-md text-left md:text-right leading-relaxed">
-                    {layer.desc}
-                  </span>
-                </div>
-              </Reveal>
-            ))}
+                  </Reveal>
+                );
+              })}
+            </div>
           </div>
 
           {/* Tech Chips */}
@@ -602,71 +727,92 @@ export default function AIInnovationLabPage() {
       </section>
 
       {/* 7. AI USE CASES BY BUSINESS FUNCTION / INDUSTRY */}
-      <section className="w-full py-24 bg-black border-b border-zinc-900/60 relative overflow-hidden">
+      <section className="w-full py-24 bg-[#030303] text-white relative overflow-hidden">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
-          
-          <Reveal className="mb-14 text-center max-w-3xl mx-auto">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
-              Vertical Focus
-            </span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
-              AI Use Cases We Explore <span className="text-rose-500">Across the Enterprise</span>
-            </h2>
-            <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
-              Targeted implementations mapping cognitive features directly to standard enterprise operational divisions.
-            </p>
-          </Reveal>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start max-w-5xl mx-auto">
+          <div className="flex flex-col lg:flex-row gap-16 lg:gap-12 items-start">
             
-            {/* Left selector sidebar */}
-            <div className="lg:col-span-4 flex flex-row lg:flex-col gap-3 overflow-x-auto lg:overflow-x-visible pb-4 lg:pb-0 scrollbar-none snap-x snap-mandatory">
-              {industryUseCases.map((cat) => (
-                <button
-                  key={cat.name}
-                  onClick={() => setActiveTab(cat.name)}
-                  className={`flex items-center justify-between p-4 rounded-2xl text-left border transition-all duration-300 flex-shrink-0 snap-start w-[140px] lg:w-full ${
-                    activeTab === cat.name
-                      ? "bg-rose-500/10 text-rose-500 border-rose-500/20 shadow-[0_0_20px_rgba(244,63,94,0.1)]"
-                      : "bg-zinc-950/45 text-zinc-400 border-white/[0.03] hover:text-zinc-300 hover:bg-zinc-900/40"
-                  }`}
-                >
-                  <div className="flex items-center gap-3">
-                    <span className="text-[11px] font-bold text-white uppercase tracking-wider">{cat.name}</span>
+            {/* Left Column: Text & Sticky Nav */}
+            <div className="lg:w-1/3 flex flex-col items-start text-left lg:sticky lg:top-32">
+              <Reveal>
+                <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+                  Vertical Focus
+                </span>
+                <h2 className="text-4xl md:text-5xl font-bold tracking-tight leading-tight mb-6 text-white">
+                  AI Use Cases We Explore
+                </h2>
+                <p className="text-zinc-400 text-base leading-relaxed mb-10">
+                  Targeted implementations mapping cognitive features directly to standard enterprise operational divisions.
+                </p>
+
+                {/* Tab Selector */}
+                <div className="flex flex-col gap-3 w-full">
+                  {industryUseCases.map((cat) => (
+                    <button
+                      key={cat.name}
+                      onClick={() => setActiveTab(cat.name)}
+                      className={`flex items-center justify-between p-4 rounded-xl text-left border transition-all duration-300 w-full ${
+                        activeTab === cat.name
+                          ? "bg-rose-500/10 text-white border-rose-500/30 shadow-[0_0_20px_rgba(244,63,94,0.15)]"
+                          : "bg-[#0A0A0A] text-zinc-400 border-zinc-800/80 hover:text-zinc-200 hover:border-zinc-700/80"
+                      }`}
+                    >
+                      <div className="flex items-center gap-3">
+                        <span className="text-[12px] font-bold uppercase tracking-wider">{cat.name}</span>
+                      </div>
+                      <ChevronRight size={14} className={activeTab === cat.name ? "text-rose-500" : "text-zinc-600"} />
+                    </button>
+                  ))}
+                </div>
+              </Reveal>
+            </div>
+
+            {/* Right Column: Grid */}
+            <div className="lg:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {(industryUseCases.find((c) => c.name === activeTab)?.items || []).map((item, idx) => (
+                <Reveal key={item} delay={idx * 0.05} className="h-full">
+                  <div className="group relative h-[240px] sm:h-[260px] cursor-default [perspective:1000px]">
+                    <div className="absolute inset-0 w-full h-full transition-all duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+                      
+                      {/* Front Face */}
+                      <div className="absolute inset-0 w-full h-full flex flex-col justify-start bg-[#0A0A0A] border border-zinc-800/80 rounded-2xl p-6 shadow-sm [backface-visibility:hidden]">
+                        <div className="w-10 h-10 mb-4 rounded-lg bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-300 group-hover:text-rose-500 transition-colors">
+                          <Activity size={20} strokeWidth={1.5} />
+                        </div>
+                        <h3 className="font-bold text-[15px] text-zinc-100 mb-2 leading-relaxed">
+                          {item}
+                        </h3>
+                        <p className="text-[13px] text-zinc-500 leading-relaxed flex-1 line-clamp-2">
+                          Enterprise-grade deployment ready for {activeTab.toLowerCase()} workflows.
+                        </p>
+                        <div className="inline-flex items-center gap-2 text-xs font-semibold text-zinc-300 mt-auto opacity-70 transition-opacity">
+                          View Details <ArrowUpRight size={12} className="transition-transform group-hover:translate-x-1" />
+                        </div>
+                      </div>
+
+                      {/* Back Face */}
+                      <div className="absolute inset-0 w-full h-full flex flex-col rounded-2xl overflow-hidden [backface-visibility:hidden] [transform:rotateY(180deg)] border border-rose-500/50 bg-zinc-950">
+                        <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_center,rgba(244,63,94,0.4)_0%,transparent_100%)]" />
+                        
+                        <div className="absolute inset-0 flex flex-col justify-end p-6">
+                           <div className="w-10 h-10 mb-4 rounded-full bg-rose-500/20 flex items-center justify-center text-rose-500">
+                             <Sparkles size={16} />
+                           </div>
+                           <h3 className="font-bold text-[15px] text-white mb-2 leading-relaxed">{item}</h3>
+                           <p className="text-[12px] text-zinc-400 mb-4">Leverage cognitive intelligence to optimize {activeTab.toLowerCase()} operational metrics.</p>
+                           <div className="inline-flex items-center gap-2 text-xs font-semibold text-rose-400 cursor-pointer">
+                             Explore Implementation <ArrowUpRight size={12} />
+                           </div>
+                        </div>
+                      </div>
+
+                    </div>
                   </div>
-                  <ChevronRight size={14} className="hidden lg:block text-zinc-550" />
-                </button>
+                </Reveal>
               ))}
             </div>
 
-            {/* Right Display Card */}
-            <div className="lg:col-span-8">
-              <div className="bg-[#0b0b0b]/60 border border-white/[0.03] rounded-3xl p-6 md:p-8 min-h-[260px] flex flex-col justify-between">
-                <div>
-                  <span className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest block mb-6 border-b border-white/[0.03] pb-2">
-                    ACTIVE USE CASE MAPPING FOR: {activeTab}
-                  </span>
-
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    {(industryUseCases.find((c) => c.name === activeTab)?.items || []).map((item, idx) => (
-                      <Reveal key={item} delay={idx * 0.04} className="h-full">
-                        <div className="group relative rounded-[20px] border border-white/[0.04] bg-zinc-950/80 p-5 hover:border-rose-500/20 hover:shadow-[0_8px_30px_rgba(244,63,94,0.02)] transition-all duration-300 flex flex-col justify-between h-full min-h-[90px]">
-                          <div className="flex items-start gap-3">
-                            <span className="w-1.5 h-1.5 rounded-full bg-rose-500 mt-1.5 flex-shrink-0" />
-                            <span className="text-xs md:text-sm font-bold text-zinc-300 leading-relaxed group-hover:text-white transition-colors duration-300">
-                              {item}
-                            </span>
-                          </div>
-                        </div>
-                      </Reveal>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
-
           </div>
-
         </div>
       </section>
 
@@ -686,22 +832,51 @@ export default function AIInnovationLabPage() {
                   What the AI Lab <br />
                   <span className="text-rose-500">Delivers</span>
                 </h2>
-                <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
+                <p className="text-zinc-400 text-base md:text-lg leading-relaxed mb-6">
                   Rigorous performance baselines and continuous quality validation to ensure deployment safety and bottom-line value.
                 </p>
+
+                {/* Manifesto-style Stats */}
+                <div className="space-y-6 text-xl md:text-2xl font-light text-zinc-300 mt-10 pt-6 border-t border-white/[0.04]">
+                  <p className="hover:text-white transition-colors cursor-default flex items-center gap-4">
+                    <span className="font-semibold text-rose-500">Faster</span>
+                    <span className="font-medium text-white">AI iteration cycles</span>
+                  </p>
+                  <p className="hover:text-white transition-colors cursor-default flex items-center gap-4">
+                    <span className="font-semibold text-rose-500">Higher</span>
+                    <span className="font-medium text-white">inference accuracy</span>
+                  </p>
+                  <p className="hover:text-white transition-colors cursor-default flex items-center gap-4">
+                    <span className="font-semibold text-rose-500">Lower</span>
+                    <span className="font-medium text-white">compute overhead</span>
+                  </p>
+                </div>
               </Reveal>
             </div>
 
             {/* Right side metrics and value list */}
-            <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {labDeliverables.map((item, idx) => (
-                <Reveal key={item.title} delay={idx * 0.05}>
-                  <div className="bg-zinc-950/80 border border-white/[0.03] rounded-2xl p-5 hover:border-rose-500/10 transition-colors duration-300 flex items-start gap-3">
-                    <CheckCircle className="w-4 h-4 text-emerald-500 mt-0.5 flex-shrink-0" />
-                    <span className="text-xs font-bold text-zinc-300">{item.title}</span>
-                  </div>
-                </Reveal>
-              ))}
+            <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6">
+              {labDeliverables.map((item, idx) => {
+                const icons = [Activity, Workflow, Shield, Cpu, Database, Search, Layers, Brain];
+                const Icon = icons[idx % icons.length];
+                return (
+                  <Reveal key={item.title} delay={idx * 0.05} className="h-full">
+                    <div className="group relative bg-zinc-900/50 backdrop-blur-sm border border-zinc-800 rounded-2xl p-6 hover:bg-zinc-900 hover:border-rose-500/30 transition-all duration-300 h-full flex flex-col">
+                      {/* Hover gradient effect */}
+                      <div className="absolute inset-0 bg-gradient-to-br from-rose-500/5 to-transparent opacity-0 group-hover:opacity-100 rounded-2xl transition-opacity duration-300 pointer-events-none" />
+                      
+                      <div className="relative z-10 flex flex-col h-full">
+                        <div className="w-10 h-10 rounded-lg bg-zinc-800/80 flex items-center justify-center mb-5 group-hover:bg-rose-500/20 group-hover:text-rose-500 transition-colors duration-300 border border-zinc-700 group-hover:border-rose-500/30 text-zinc-400 shadow-inner shrink-0">
+                          <Icon size={18} />
+                        </div>
+                        <h4 className="text-sm font-bold text-white group-hover:text-rose-500 transition-colors duration-300 leading-snug">
+                          {item.title}
+                        </h4>
+                      </div>
+                    </div>
+                  </Reveal>
+                );
+              })}
             </div>
 
           </div>
@@ -711,37 +886,66 @@ export default function AIInnovationLabPage() {
 
       {/* 9. WHY DEVOpstrio AI LAB */}
       <section className="w-full py-24 bg-black border-b border-zinc-900/60 relative overflow-hidden">
-        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
-          
-          <Reveal className="mb-14 text-center max-w-3xl mx-auto">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
-              Why Devopstrio
-            </span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
-              Why Organizations Work with the <span className="text-rose-500">Devopstrio AI Lab</span>
-            </h2>
-            <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
-              We focus on enterprise integrations that generate measurable cost optimizations.
-            </p>
-          </Reveal>
+        <div className="max-w-7xl mx-auto w-full px-6 lg:px-12 xl:px-8 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+            
+            {/* Left: Heading & Stats */}
+            <div className="sticky top-32">
+              <Reveal>
+                <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 block mb-4">
+                  Why Devopstrio
+                </span>
+                <h2 className="text-xl md:text-2xl xl:text-4xl font-bold tracking-tight leading-tight text-white mb-6">
+                  Why Organizations Work with the <span className="text-rose-500">Devopstrio AI Lab</span>
+                </h2>
+                <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-medium mb-10">
+                  We focus on enterprise integrations that generate measurable cost optimizations. Our innovation labs deliver measurable outcomes through engineered precision.
+                </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {whyWorkWithUs.map((item, idx) => (
-              <Reveal key={item.title} delay={idx * 0.04}>
-                <div className="bg-[#0a0a0a]/60 border border-white/[0.03] hover:border-rose-500/20 rounded-[20px] p-6 transition-all duration-300 flex flex-col justify-between min-h-[170px] h-full">
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 pt-10 border-t border-zinc-800/50">
                   <div>
-                    <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-2.5">
-                      {item.title}
-                    </h4>
-                    <p className="text-xs md:text-sm text-zinc-400 leading-relaxed font-semibold">
-                      {item.desc}
-                    </p>
+                    <p className="text-3xl font-black text-white tracking-tight">250+</p>
+                    <p className="text-zinc-500 text-xs font-semibold uppercase tracking-wider mt-2">Enterprises</p>
+                  </div>
+                  <div>
+                    <p className="text-3xl font-black text-white tracking-tight">99.9%</p>
+                    <p className="text-zinc-500 text-xs font-semibold uppercase tracking-wider mt-2">Uptime SLAs</p>
+                  </div>
+                  <div>
+                    <p className="text-3xl font-black text-white tracking-tight">24/7</p>
+                    <p className="text-zinc-500 text-xs font-semibold uppercase tracking-wider mt-2">Global Support</p>
                   </div>
                 </div>
               </Reveal>
-            ))}
-          </div>
+            </div>
 
+            {/* Right: Initiative cards */}
+            <div className="space-y-4">
+              {whyWorkWithUs.map((item, idx) => {
+                const icons = [CheckCircle, Cloud, Search, Workflow, Settings, Activity, Database, Terminal, Shield, Network, Cpu, Layers];
+                const Icon = icons[idx % icons.length];
+                return (
+                  <motion.div
+                    key={item.title}
+                    initial={{ opacity: 0, x: 20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4, delay: idx * 0.08 }}
+                    className="flex gap-5 items-start bg-zinc-950/40 border border-white/[0.03] rounded-2xl p-6 hover:border-rose-500/30 transition-all duration-300 group hover:bg-zinc-900/40"
+                  >
+                    <div className="w-12 h-12 rounded-xl bg-zinc-900 border border-zinc-800 flex items-center justify-center shrink-0 group-hover:bg-rose-500/10 group-hover:border-rose-500/20 transition-colors">
+                      <Icon className="w-5 h-5 text-zinc-400 group-hover:text-rose-400 transition-colors" />
+                    </div>
+                    <div>
+                      <h3 className="text-white font-bold tracking-wide text-sm md:text-base mb-1.5">{item.title}</h3>
+                      <p className="text-zinc-400 text-sm leading-relaxed font-medium">{item.desc}</p>
+                    </div>
+                  </motion.div>
+                );
+              })}
+            </div>
+
+          </div>
         </div>
       </section>
 

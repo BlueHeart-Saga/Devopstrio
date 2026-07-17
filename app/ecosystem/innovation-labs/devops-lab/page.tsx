@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { Reveal } from "@/components/ui/Reveal";
+import { motion, AnimatePresence } from "framer-motion";
 import { Hero } from "@/components/services/Hero";
 import {
   ArrowUpRight,
@@ -18,9 +19,22 @@ import {
   Lock,
   Search,
   Sparkles,
-  Globe
+  Globe,
+  Cloud,
+  Database,
+  Network,
+  Zap
 } from "lucide-react";
 import Link from "next/link";
+
+const colorMap: Record<string, { border: string; icon: string; number: string; glow: string }> = {
+  rose:    { border: "border-rose-500/30 hover:border-rose-500/60",    icon: "text-rose-500 bg-rose-500/10 border-rose-500/20",    number: "text-rose-500/10",    glow: "from-rose-500/10" },
+  blue:    { border: "border-blue-500/30 hover:border-blue-500/60",    icon: "text-blue-400 bg-blue-500/10 border-blue-500/20",    number: "text-blue-500/10",    glow: "from-blue-500/10" },
+  emerald: { border: "border-emerald-500/30 hover:border-emerald-500/60", icon: "text-emerald-400 bg-emerald-500/10 border-emerald-500/20", number: "text-emerald-500/10", glow: "from-emerald-500/10" },
+  orange:  { border: "border-orange-500/30 hover:border-orange-500/60", icon: "text-orange-400 bg-orange-500/10 border-orange-500/20", number: "text-orange-500/10", glow: "from-orange-500/10" },
+  purple:  { border: "border-purple-500/30 hover:border-purple-500/60", icon: "text-purple-400 bg-purple-500/10 border-purple-500/20", number: "text-purple-500/10", glow: "from-purple-500/10" },
+  cyan:    { border: "border-cyan-500/30 hover:border-cyan-500/60",    icon: "text-cyan-400 bg-cyan-500/10 border-cyan-500/20",    number: "text-cyan-500/10",    glow: "from-cyan-500/10" }
+};
 
 interface CoreArea {
   title: string;
@@ -524,24 +538,36 @@ export default function DevOpsInnovationLabPage() {
             </p>
           </Reveal>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-4">
-            {lifecycleTimeline.map((step, idx) => (
-              <Reveal key={step.num} delay={idx * 0.05} className="h-full">
-                <div className="bg-zinc-950/80 border border-white/[0.03] hover:border-rose-500/20 rounded-2xl p-5 flex flex-col justify-between h-full min-h-[190px] relative group transition-all duration-300">
-                  <div>
-                    <span className="text-2xl font-black text-rose-500/10 font-mono tracking-tighter block mb-4 group-hover:text-rose-500/25 transition-colors">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {lifecycleTimeline.map((step, idx) => {
+              const icons = [Search, Layers, Terminal, Workflow, Cloud, Settings];
+              const colors = ["rose", "blue", "emerald", "orange", "purple", "cyan"];
+              const Icon = icons[idx];
+              const c = colorMap[colors[idx]];
+              
+              return (
+                <Reveal key={step.num} delay={idx * 0.05} className="h-full">
+                  <div
+                    className={`group relative h-full bg-zinc-900/40 border ${c.border} rounded-2xl p-8 overflow-hidden transition-all duration-300 flex flex-col`}
+                  >
+                    <div className={`absolute inset-0 bg-gradient-to-br ${c.glow} to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none`} />
+
+                    {/* Large number watermark */}
+                    <span className={`absolute top-4 right-6 text-[5.5rem] font-black ${c.number} select-none leading-none transition-transform duration-300 group-hover:scale-110`}>
                       {step.num}
                     </span>
-                    <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-2">
-                      {step.title}
-                    </h4>
-                    <p className="text-xs md:text-sm text-zinc-400 leading-relaxed font-semibold">
-                      {step.desc}
-                    </p>
+
+                    <div className="relative z-10 flex flex-col flex-1">
+                      <div className={`w-12 h-12 rounded-xl border flex items-center justify-center mb-6 ${c.icon}`}>
+                        <Icon className="w-5 h-5" />
+                      </div>
+                      <h3 className="text-xl font-bold text-white mb-3 uppercase tracking-wide">{step.title}</h3>
+                      <p className="text-zinc-400 text-sm leading-relaxed font-medium">{step.desc}</p>
+                    </div>
                   </div>
-                </div>
-              </Reveal>
-            ))}
+                </Reveal>
+              );
+            })}
           </div>
 
         </div>
@@ -562,24 +588,37 @@ export default function DevOpsInnovationLabPage() {
             </p>
           </Reveal>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {solutionBlocks.map((block, idx) => (
-              <Reveal key={block.title} delay={idx * 0.04}>
-                <div className="bg-[#0a0a0a]/60 border border-white/[0.03] hover:border-rose-500/20 rounded-[20px] p-6 transition-all duration-300 min-h-[170px] flex flex-col justify-between">
-                  <div>
-                    <div className="flex items-center justify-between mb-4 border-b border-white/[0.03] pb-3">
-                      <h4 className="text-xs font-bold text-white uppercase tracking-wider">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+            {solutionBlocks.map((block, idx) => {
+              const icons = [Cloud, Search, Database, Shield, Cpu, Activity, Workflow, CheckCircle];
+              const Icon = icons[idx % icons.length];
+              return (
+                <Reveal key={block.title} delay={idx * 0.04} className="h-full">
+                  <div className="bg-zinc-900/50 backdrop-blur-sm border border-zinc-800 rounded-3xl p-8 hover:bg-zinc-900/80 hover:border-rose-500/30 transition-all duration-500 relative group h-full flex flex-col justify-between shadow-lg">
+                    
+                    {/* Glassmorphic Sheen & Quote-like Icon */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-white/[0.02] to-transparent pointer-events-none rounded-3xl" />
+                    <Icon className="absolute top-8 right-8 text-zinc-800/40 w-12 h-12 group-hover:text-rose-500/20 transition-colors duration-500" strokeWidth={1} />
+                    
+                    <div className="relative z-10">
+                      <div className="mb-6">
+                        <span className="px-3 py-1 bg-zinc-950/80 border border-zinc-800 text-rose-500/80 text-[10px] font-mono font-bold tracking-widest rounded-full uppercase shadow-sm">
+                          Ready to Deploy
+                        </span>
+                      </div>
+                      
+                      <h4 className="text-base md:text-lg font-bold text-white tracking-wide leading-tight mb-4 pr-12 group-hover:text-rose-50 transition-colors">
                         {block.title}
                       </h4>
-                      <span className="text-[9px] font-mono text-rose-500 font-bold">READY TO DEPLOY</span>
+                      <div className="h-[1px] w-12 bg-rose-500/20 mb-4 group-hover:w-full transition-all duration-500" />
+                      <p className="text-sm text-zinc-400 leading-relaxed font-medium group-hover:text-zinc-300 transition-colors">
+                        {block.desc}
+                      </p>
                     </div>
-                    <p className="text-xs md:text-sm text-zinc-400 leading-relaxed font-semibold">
-                      {block.desc}
-                    </p>
                   </div>
-                </div>
-              </Reveal>
-            ))}
+                </Reveal>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -589,47 +628,70 @@ export default function DevOpsInnovationLabPage() {
         {/* Glow */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-rose-650/[0.015] rounded-full blur-[130px] pointer-events-none" />
 
-        <div className="max-w-4xl mx-auto w-full px-12 xl:px-8 relative z-10">
-          <Reveal className="mb-14 text-center max-w-3xl mx-auto">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
-              Reference Blueprint
-            </span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
-              Our DevOps Innovation <span className="text-rose-500">Reference Architecture</span>
-            </h2>
-            <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
-              A comprehensive delivery pipeline blueprint bridging development and operational environments securely.
-            </p>
-          </Reveal>
+        <div className="max-w-7xl mx-auto px-6 lg:px-12 xl:px-8 relative z-10">
+          <div className="flex flex-col lg:flex-row gap-16 items-start">
+            
+            {/* Left: Heading & Context */}
+            <div className="lg:w-1/2 sticky top-24">
+              <Reveal>
+                <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+                  Reference Blueprint
+                </span>
+                <h2 className="text-xl md:text-2xl xl:text-4xl font-bold tracking-tight leading-tight text-white mb-4">
+                  Our DevOps Innovation <span className="text-rose-500">Reference Architecture</span>
+                </h2>
+                <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-medium mb-10">
+                  A comprehensive delivery pipeline blueprint bridging development and operational environments securely.
+                </p>
 
-          {/* Layered Diagram */}
-          <div className="flex flex-col gap-4 font-mono">
-            {archLayers.map((layer, idx) => (
-              <Reveal key={layer.num} delay={idx * 0.05}>
-                <div className="bg-zinc-950/60 border border-white/[0.03] rounded-2xl p-5 hover:border-rose-500/20 transition-all duration-300 flex flex-col md:flex-row md:items-center justify-between gap-3">
-                  <div className="flex items-center gap-4">
-                    <div className="w-20 text-[10px] font-bold text-rose-500 uppercase tracking-widest font-mono border-r border-white/10 pr-2">
-                      {layer.num}
-                    </div>
-                    <span className="text-xs font-bold text-white uppercase tracking-wider">{layer.name}</span>
-                  </div>
-                  <span className="text-xs md:text-sm text-zinc-400 font-semibold md:max-w-md text-left md:text-right leading-relaxed">
-                    {layer.desc}
-                  </span>
+                <div className="flex flex-wrap gap-3">
+                  {techChips.map((tech, idx) => (
+                    <motion.span
+                      key={idx}
+                      initial={{ opacity: 0, scale: 0.9 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: 0.2 + (idx * 0.05) }}
+                      className="px-4 py-2 rounded-full bg-zinc-950 border border-zinc-800 text-zinc-300 text-xs font-bold hover:border-rose-500/50 hover:text-rose-400 transition-colors cursor-default"
+                    >
+                      {tech}
+                    </motion.span>
+                  ))}
                 </div>
               </Reveal>
-            ))}
-          </div>
+            </div>
 
-          {/* Tech Chips */}
-          <div className="flex flex-wrap items-center justify-center gap-2 select-none mt-12">
-            {techChips.map((tech) => (
-              <span key={tech} className="px-3.5 py-2 bg-zinc-950 border border-white/[0.04] text-[10px] font-mono text-zinc-400 rounded-xl font-bold">
-                {tech}
-              </span>
-            ))}
-          </div>
+            {/* Right: Architecture Steps */}
+            <div className="lg:w-1/2 w-full mt-10 lg:mt-0">
+              <div className="space-y-6 relative">
+                {/* Vertical Connector Line */}
+                <div className="absolute left-[27px] top-4 bottom-4 w-[2px] bg-zinc-900/80" />
+                
+                {archLayers.map((layer, idx) => {
+                  const stepNumber = (idx + 1).toString().padStart(2, "0");
+                  return (
+                    <motion.div
+                      key={layer.num}
+                      initial={{ opacity: 0, x: 20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true, margin: "-50px" }}
+                      transition={{ duration: 0.5, delay: idx * 0.1 }}
+                      className="flex gap-6 relative group"
+                    >
+                      <div className="w-14 h-14 rounded-full bg-black border-2 border-zinc-800 flex items-center justify-center text-zinc-500 font-bold shrink-0 relative z-10 group-hover:border-rose-500/50 group-hover:text-rose-400 transition-colors shadow-lg">
+                        {stepNumber}
+                      </div>
+                      <div className="pt-3 pb-8">
+                        <h3 className="text-lg md:text-xl font-bold text-white mb-2">{layer.name}</h3>
+                        <p className="text-zinc-400 text-sm md:text-base font-medium leading-relaxed">{layer.desc}</p>
+                      </div>
+                    </motion.div>
+                  );
+                })}
+              </div>
+            </div>
 
+          </div>
         </div>
       </section>
 
@@ -649,54 +711,113 @@ export default function DevOpsInnovationLabPage() {
             </p>
           </Reveal>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start max-w-5xl mx-auto">
-            
-            {/* Left selector sidebar */}
-            <div className="lg:col-span-4 flex flex-row lg:flex-col gap-3 overflow-x-auto lg:overflow-x-visible pb-4 lg:pb-0 scrollbar-none snap-x snap-mandatory">
-              {industryUseCases.map((cat) => (
-                <button
-                  key={cat.name}
-                  onClick={() => setActiveTab(cat.name)}
-                  className={`flex items-center justify-between p-4 rounded-2xl text-left border transition-all duration-300 flex-shrink-0 snap-start w-[140px] lg:w-full ${
-                    activeTab === cat.name
-                      ? "bg-rose-500/10 text-rose-500 border-rose-500/20 shadow-[0_0_20px_rgba(244,63,94,0.1)]"
-                      : "bg-zinc-950/45 text-zinc-400 border-white/[0.03] hover:text-zinc-300 hover:bg-zinc-900/40"
-                  }`}
-                >
-                  <div className="flex items-center gap-3">
-                    <span className="text-[11px] font-bold text-white uppercase tracking-wider">{cat.name}</span>
-                  </div>
-                  <ChevronRight size={14} className="hidden lg:block text-zinc-555" />
-                </button>
-              ))}
+          <div className="flex flex-col lg:flex-row gap-6 lg:gap-8 items-start">
+            {/* LEFT: Topics List (Compact) */}
+            <div className="flex flex-row lg:flex-col gap-2.5 lg:w-[280px] xl:w-[320px] shrink-0 overflow-x-auto lg:overflow-visible pb-2 lg:pb-0 w-full snap-x snap-mandatory scrollbar-none">
+              {industryUseCases.map((cat, idx) => {
+                const icons = [Cloud, Workflow, Activity, Shield, Settings, Cpu, Database, Terminal, Network, Layers, Zap, Sparkles];
+                const Icon = icons[idx % icons.length];
+                
+                return (
+                  <button
+                    key={cat.name}
+                    onClick={() => setActiveTab(cat.name)}
+                    className={`flex items-center gap-3 px-4 py-4 rounded-xl border text-left transition-all duration-300 shrink-0 lg:shrink-0 snap-start
+                      ${activeTab === cat.name
+                        ? "bg-rose-500/10 border-rose-500/40 text-white shadow-[0_0_15px_rgba(244,63,94,0.1)] w-[240px] lg:w-full"
+                        : "bg-zinc-900/40 border-zinc-800 text-zinc-400 hover:border-zinc-700 hover:text-white w-[240px] lg:w-full"}`}
+                  >
+                    <div className={`w-10 h-10 rounded-lg flex items-center justify-center border shrink-0 transition-colors
+                      ${activeTab === cat.name ? "bg-rose-500/20 border-rose-500/30 text-rose-500" : "bg-zinc-800 border-zinc-700 text-zinc-400"}`}
+                    >
+                      <Icon className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <p className="font-bold text-xs leading-tight tracking-wide uppercase">{cat.name}</p>
+                    </div>
+                  </button>
+                );
+              })}
             </div>
 
-            {/* Right Display Card */}
-            <div className="lg:col-span-8">
-              <div className="bg-[#0b0b0b]/60 border border-white/[0.03] rounded-3xl p-6 md:p-8 min-h-[260px] flex flex-col justify-between">
-                <div>
-                  <span className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest block mb-6 border-b border-white/[0.03] pb-2">
-                    ACTIVE USE CASE MAPPING FOR: {activeTab}
-                  </span>
+            {/* RIGHT: Rectangular Low Height Image Card */}
+            <div className="flex-1 w-full bg-[#0A0A0A] rounded-[24px] border border-zinc-800 shadow-xl overflow-hidden min-h-[360px] lg:min-h-[400px] flex flex-col sm:flex-row">
+              
+              {/* Abstract Visual Half */}
+              <div className="w-full sm:w-5/12 lg:w-5/12 relative h-48 sm:h-auto overflow-hidden bg-zinc-950 flex items-center justify-center">
+                <AnimatePresence mode="popLayout">
+                  {industryUseCases.map((cat, idx) => {
+                    if (cat.name !== activeTab) return null;
+                    const icons = [Cloud, Workflow, Activity, Shield, Settings, Cpu, Database, Terminal, Network, Layers, Zap, Sparkles];
+                    const Icon = icons[idx % icons.length];
+                    
+                    return (
+                      <motion.div
+                        key={cat.name + "-visual"}
+                        initial={{ opacity: 0, scale: 1.05 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ duration: 0.4 }}
+                        className="absolute inset-0 flex flex-col items-center justify-center"
+                      >
+                        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_50%,rgba(244,63,94,0.15),transparent)]" />
+                        <Icon className="w-32 h-32 text-rose-500/10 drop-shadow-2xl relative z-10" strokeWidth={1} />
+                        <div className="absolute bottom-0 w-full h-full bg-gradient-to-t from-[#0A0A0A] to-transparent sm:hidden z-20" />
+                        <div className="absolute right-0 w-full h-full bg-gradient-to-l from-[#0A0A0A] to-transparent hidden sm:block z-20" />
+                      </motion.div>
+                    );
+                  })}
+                </AnimatePresence>
+              </div>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    {(industryUseCases.find((c) => c.name === activeTab)?.items || []).map((item, idx) => (
-                      <Reveal key={item} delay={idx * 0.04} className="h-full">
-                        <div className="group relative rounded-[20px] border border-white/[0.04] bg-zinc-950/80 p-5 hover:border-rose-500/20 hover:shadow-[0_8px_30px_rgba(244,63,94,0.02)] transition-all duration-300 flex flex-col justify-between h-full min-h-[90px]">
-                          <div className="flex items-start gap-3">
-                            <span className="w-1.5 h-1.5 rounded-full bg-rose-500 mt-1.5 flex-shrink-0" />
-                            <span className="text-xs md:text-sm font-bold text-zinc-300 leading-relaxed group-hover:text-white transition-colors duration-300">
-                              {item}
-                            </span>
+              {/* Content Half */}
+              <div className="w-full sm:w-7/12 lg:w-7/12 p-8 md:p-12 flex flex-col justify-center relative z-30">
+                <AnimatePresence mode="wait">
+                  {industryUseCases.map((cat, idx) => {
+                    if (cat.name !== activeTab) return null;
+                    const icons = [Cloud, Workflow, Activity, Shield, Settings, Cpu, Database, Terminal, Network, Layers, Zap, Sparkles];
+                    const Icon = icons[idx % icons.length];
+                    
+                    return (
+                      <motion.div
+                        key={cat.name + "-content"}
+                        initial={{ opacity: 0, x: 20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        exit={{ opacity: 0, x: -10 }}
+                        transition={{ duration: 0.3 }}
+                      >
+                        <div className="flex items-center gap-3 mb-6">
+                          <div className="w-12 h-12 rounded-xl border border-rose-500/30 bg-rose-950/20 flex items-center justify-center text-rose-500 shrink-0">
+                            <Icon className="w-5 h-5" />
+                          </div>
+                          <div className="flex flex-col">
+                            <span className="text-[10px] font-bold text-zinc-500 uppercase tracking-widest leading-tight">Implementation Scenario</span>
+                            <span className="text-xs font-semibold text-rose-500/80 leading-tight mt-1">{cat.name}</span>
                           </div>
                         </div>
-                      </Reveal>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
 
+                        <h3 className="text-xl md:text-2xl font-bold text-white mb-2 leading-tight">
+                          {cat.name} Solutions
+                        </h3>
+                        
+                        <div className="mt-6 flex flex-col gap-4">
+                           {cat.items.map(item => (
+                             <div key={item} className="flex items-start gap-3">
+                               <span className="w-1.5 h-1.5 rounded-full bg-rose-500 mt-1.5 flex-shrink-0" />
+                               <span className="text-sm font-semibold text-zinc-300 leading-relaxed capitalize">
+                                 {item}
+                               </span>
+                             </div>
+                           ))}
+                        </div>
+                      </motion.div>
+                    );
+                  })}
+                </AnimatePresence>
+              </div>
+              
+            </div>
+            
           </div>
 
         </div>
@@ -722,32 +843,41 @@ export default function DevOpsInnovationLabPage() {
                   Quantifiable improvements in release cycles, operational stability, and developer velocity.
                 </p>
 
-                {/* Stat-style UI */}
-                <div className="mt-8 flex flex-col gap-4 border-t border-white/[0.04] pt-6">
+                {/* Manifesto-style Stats */}
+                <div className="space-y-6 text-xl md:text-2xl font-light text-zinc-300 mt-10 pt-6 border-t border-white/[0.04]">
                   {stats.map((stat) => (
-                    <div key={stat.label} className="flex items-center gap-3">
-                      <span className="text-xs font-mono font-bold text-rose-500 w-24 flex-shrink-0">
-                        {stat.value}
-                      </span>
-                      <span className="text-[11px] text-zinc-450 uppercase tracking-widest font-semibold">
-                        {stat.label}
-                      </span>
-                    </div>
+                    <p key={stat.label} className="hover:text-white transition-colors cursor-default flex items-center gap-4">
+                      <span className="font-semibold text-rose-500">{stat.value}</span>
+                      <span className="font-medium text-white">{stat.label}</span>
+                    </p>
                   ))}
                 </div>
               </Reveal>
             </div>
 
             {/* Right side metrics and value list */}
-            <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {labDeliverables.map((item, idx) => (
-                <Reveal key={item.title} delay={idx * 0.05}>
-                  <div className="bg-zinc-950/80 border border-white/[0.03] rounded-2xl p-5 hover:border-rose-500/10 transition-colors duration-300 flex items-start gap-3">
-                    <CheckCircle className="w-4 h-4 text-emerald-500 mt-0.5 flex-shrink-0" />
-                    <span className="text-xs font-bold text-zinc-300">{item.title}</span>
-                  </div>
-                </Reveal>
-              ))}
+            <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6">
+              {labDeliverables.map((item, idx) => {
+                const icons = [Activity, Workflow, Shield, Cpu, Database, Search, Layers, Cloud];
+                const Icon = icons[idx % icons.length];
+                return (
+                  <Reveal key={item.title} delay={idx * 0.05} className="h-full">
+                    <div className="group relative bg-zinc-900/50 backdrop-blur-sm border border-zinc-800 rounded-2xl p-6 hover:bg-zinc-900 hover:border-rose-500/30 transition-all duration-300 h-full flex flex-col">
+                      {/* Hover gradient effect */}
+                      <div className="absolute inset-0 bg-gradient-to-br from-rose-500/5 to-transparent opacity-0 group-hover:opacity-100 rounded-2xl transition-opacity duration-300 pointer-events-none" />
+                      
+                      <div className="relative z-10 flex flex-col h-full">
+                        <div className="w-10 h-10 rounded-lg bg-zinc-800/80 flex items-center justify-center mb-5 group-hover:bg-rose-500/20 group-hover:text-rose-500 transition-colors duration-300 border border-zinc-700 group-hover:border-rose-500/30 text-zinc-400 shadow-inner shrink-0">
+                          <Icon size={18} />
+                        </div>
+                        <h4 className="text-sm font-bold text-white group-hover:text-rose-500 transition-colors duration-300 leading-snug">
+                          {item.title}
+                        </h4>
+                      </div>
+                    </div>
+                  </Reveal>
+                );
+              })}
             </div>
 
           </div>
@@ -757,37 +887,66 @@ export default function DevOpsInnovationLabPage() {
 
       {/* 9. WHY DEVOPSTRIO DEVOPS LAB */}
       <section className="w-full py-24 bg-black border-b border-zinc-900/60 relative overflow-hidden">
-        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
-          
-          <Reveal className="mb-14 text-center max-w-3xl mx-auto">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
-              Why Devopstrio
-            </span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
-              Why Organizations Build Delivery Excellence with the <span className="text-rose-500">Devopstrio DevOps Lab</span>
-            </h2>
-            <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
-              We focus on reusable platforms, engineering standards, and scalable operating models that reduce long-term complexity.
-            </p>
-          </Reveal>
+        <div className="max-w-7xl mx-auto w-full px-6 lg:px-12 xl:px-8 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+            
+            {/* Left: Heading & Stats */}
+            <div className="sticky top-32">
+              <Reveal>
+                <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 block mb-4">
+                  Why Devopstrio
+                </span>
+                <h2 className="text-xl md:text-2xl xl:text-4xl font-bold tracking-tight leading-tight text-white mb-6">
+                  Why Organizations Build Delivery Excellence with the <span className="text-rose-500">Devopstrio DevOps Lab</span>
+                </h2>
+                <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-medium mb-10">
+                  We focus on reusable platforms, engineering standards, and scalable operating models that reduce long-term complexity. Our innovation labs deliver measurable outcomes through engineered precision.
+                </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {whyWorkWithUs.map((item, idx) => (
-              <Reveal key={item.title} delay={idx * 0.04}>
-                <div className="bg-[#0a0a0a]/60 border border-white/[0.03] hover:border-rose-500/20 rounded-[20px] p-6 transition-all duration-300 flex flex-col justify-between min-h-[170px] h-full">
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 pt-10 border-t border-zinc-800/50">
                   <div>
-                    <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-2.5">
-                      {item.title}
-                    </h4>
-                    <p className="text-xs md:text-sm text-zinc-400 leading-relaxed font-semibold">
-                      {item.desc}
-                    </p>
+                    <p className="text-3xl font-black text-white tracking-tight">250+</p>
+                    <p className="text-zinc-500 text-xs font-semibold uppercase tracking-wider mt-2">Enterprises</p>
+                  </div>
+                  <div>
+                    <p className="text-3xl font-black text-white tracking-tight">99.9%</p>
+                    <p className="text-zinc-500 text-xs font-semibold uppercase tracking-wider mt-2">Uptime SLAs</p>
+                  </div>
+                  <div>
+                    <p className="text-3xl font-black text-white tracking-tight">24/7</p>
+                    <p className="text-zinc-500 text-xs font-semibold uppercase tracking-wider mt-2">Global Support</p>
                   </div>
                 </div>
               </Reveal>
-            ))}
-          </div>
+            </div>
 
+            {/* Right: Initiative cards */}
+            <div className="space-y-4">
+              {whyWorkWithUs.map((item, idx) => {
+                const icons = [CheckCircle, Cloud, Search, Workflow, Settings, Activity, Database, Terminal, Shield, Network, Cpu, Layers];
+                const Icon = icons[idx % icons.length];
+                return (
+                  <motion.div
+                    key={item.title}
+                    initial={{ opacity: 0, x: 20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4, delay: idx * 0.08 }}
+                    className="flex gap-5 items-start bg-zinc-950/40 border border-white/[0.03] rounded-2xl p-6 hover:border-rose-500/30 transition-all duration-300 group hover:bg-zinc-900/40"
+                  >
+                    <div className="w-12 h-12 rounded-xl bg-zinc-900 border border-zinc-800 flex items-center justify-center shrink-0 group-hover:bg-rose-500/10 group-hover:border-rose-500/20 transition-colors">
+                      <Icon className="w-5 h-5 text-zinc-400 group-hover:text-rose-400 transition-colors" />
+                    </div>
+                    <div>
+                      <h3 className="text-white font-bold tracking-wide text-sm md:text-base mb-1.5">{item.title}</h3>
+                      <p className="text-zinc-400 text-sm leading-relaxed font-medium">{item.desc}</p>
+                    </div>
+                  </motion.div>
+                );
+              })}
+            </div>
+
+          </div>
         </div>
       </section>
 

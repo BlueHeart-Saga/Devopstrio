@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { Reveal } from "@/components/ui/Reveal";
 import { Hero } from "@/components/services/Hero";
+import LightRays from "@/components/ui/LightRays";
 import {
   ArrowUpRight,
   Plus,
@@ -96,19 +97,19 @@ export default function AIPage() {
 
       {/* 1. HERO SECTION */}
       <Hero
-        badge="Artificial Intelligence Unit"
+        badge="Next-Generation AI Solutions"
         title={
           <>
-            Artificial <br />
+            Pioneering Cognitive <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-500 to-rose-700">
-              Intelligence
+              Frontiers
             </span>
           </>
         }
-        subtitle="Build autonomous agent systems, configure semantic search vector DBs, structure retrieval workflows, and host customized models."
+        subtitle="Unleash the power of cognitive computing. We engineer autonomous agent ecosystems, high-performance semantic search, and state-of-the-art generative models to transform your business operations."
         dotField={true}
         dotFieldProps={{
-          dotRadius: 1.5,
+          dotRadius: 3,
           dotSpacing: 14,
           bulgeStrength: 67,
           glowRadius: 160,
