@@ -61,6 +61,7 @@ export default function SaaSPlatformsPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [activeLogoTab, setActiveLogoTab] = useState("All");
+  const [activeProductSlug, setActiveProductSlug] = useState("homela");
 
   const toggleFaq = (index: number) => {
     setOpenFaqIndex(openFaqIndex === index ? null : index);
@@ -388,115 +389,123 @@ export default function SaaSPlatformsPage() {
         </div>
       </section>
 
-      {/* 3. PRODUCT GRID */}
-      <section className="w-full py-12 border-b border-zinc-900/60">
-        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
-          <div className="max-w-3xl mb-8">
+      {/* 3. PREMIUM SAAS PORTFOLIO CAROUSEL */}
+      <section className="w-full py-16 md:py-24 border-b border-zinc-900/60 bg-[#030303] relative overflow-hidden">
+        <div className="max-w-7xl mx-auto w-full px-4 sm:px-8 xl:px-12 relative z-10">
+          
+          <div className="max-w-3xl mb-12">
             <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
               RECOMMENDED SAAS PORTFOLIO
             </span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-4">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-6">
               Enterprise SaaS Platforms Built for Modern Businesses
             </h2>
-            <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-bold">
-              Explore our comprehensive portfolio. Click to discover key capabilities, view live mirrors, and assess deployment parameters.
+            <p className="text-zinc-400 text-base md:text-lg leading-relaxed font-medium">
+              Explore our comprehensive portfolio. Select a platform below to discover key capabilities, live mirrors, and deployment parameters.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 px-4 sm:px-0">
-            {products.map((p, i) => (
-                <div
-                  key={p.slug}
-                  className="group h-[420px] [perspective:1000px] hover:z-10 transition-all duration-500"
-                >
-                  <div className="relative w-full h-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
-                    
-                    {/* FRONT FACE (Minimalist Design) */}
-                    <div className="absolute inset-0 [backface-visibility:hidden] bg-[#0c0c0c] border border-zinc-800/80 rounded-[2rem] flex flex-col shadow-2xl p-2 gap-2">
-                      {/* Visual Showcase */}
-                      <div className="relative flex-1 w-full rounded-[1.5rem] flex items-center justify-center overflow-hidden bg-zinc-950 border border-zinc-800/50">
-                        {/* Background product screenshot heavily stylized */}
-                        <Image
-                          src={`/assets/Home-page/our-products/${p.slug}.png`}
-                          alt={`${p.name} UI`}
-                          fill
-                          className="object-cover group-hover:scale-105 transition-transform duration-1000"
-                          unoptimized
-                        />
-                        {/* Radial gradient to darken edges */}
-                        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,#0c0c0c_120%)]" />
-                        
-                        {/* Radar/Circle Design Element (mimicking screenshot) */}
-                        <div className="absolute inset-0 flex items-center justify-center opacity-30 pointer-events-none">
-                          <div className="w-64 h-64 rounded-full border border-zinc-700/80 flex items-center justify-center">
-                            <div className="w-40 h-40 rounded-full border border-zinc-700/60 flex items-center justify-center">
-                              <div className="w-16 h-16 rounded-full border border-zinc-700/40" />
-                            </div>
-                          </div>
-                          {/* Crosshairs */}
-                          <div className="absolute w-full h-[1px] bg-zinc-700/60" />
-                          <div className="absolute h-full w-[1px] bg-zinc-700/60" />
-                        </div>
+          {/* Main Showcase Card */}
+          {products.filter(p => p.slug === activeProductSlug).map((activeProduct) => (
+            <div key={activeProduct.slug} className="bg-[#0c0c0c] border border-zinc-800/80 rounded-[2rem] overflow-hidden shadow-2xl flex flex-col lg:flex-row mb-8 animate-in fade-in zoom-in-95 duration-500">
+              
+              {/* Left Content Half */}
+              <div className="w-full lg:w-1/2 p-8 md:p-12 lg:p-16 flex flex-col justify-center relative">
+                {/* Subtle background glow */}
+                <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-rose-900/10 via-transparent to-transparent pointer-events-none" />
 
-                        {/* Central Logo */}
-                        <div className="relative z-10 w-16 h-16 rounded-2xl bg-zinc-900/80 backdrop-blur-md border border-zinc-700/80 flex items-center justify-center p-3 shadow-2xl">
-                          <img
-                            src={p.logo}
-                            alt={`${p.name} Logo`}
-                            className="w-full h-full object-contain drop-shadow-md"
-                          />
-                        </div>
-                      </div>
-
-                      {/* Bottom Minimalist Bar */}
-                      <div className="flex items-center justify-between px-4 py-3 bg-[#0c0c0c] z-10">
-                        <span className="text-[9px] text-zinc-300 font-mono tracking-widest uppercase font-bold">{p.name}</span>
-                        <span className="text-[9px] text-zinc-600 font-mono tracking-widest uppercase">{p.category.split(' ')[0]}</span>
-                      </div>
-                    </div>
-
-                    {/* BACK FACE (Details & CTAs) */}
-                    <div className="absolute inset-0 [backface-visibility:hidden] [transform:rotateY(180deg)] bg-zinc-950 border border-zinc-800 rounded-[2rem] overflow-hidden flex flex-col p-8 shadow-2xl">
-                      <div className="flex flex-col h-full">
-                        
-                        <div className="flex items-center gap-4 mb-6">
-                          <div className="w-12 h-12 rounded-xl bg-zinc-900 border border-zinc-800 flex items-center justify-center p-2.5 shrink-0">
-                            <img src={p.logo} alt={`${p.name} Logo`} className="w-full h-full object-contain" />
-                          </div>
-                          <div>
-                            <h3 className="text-xl font-bold text-white tracking-tight">{p.name}</h3>
-                            <span className={`px-2 py-0.5 mt-1 inline-block text-[9px] font-mono border rounded-full font-bold leading-none ${p.badgeColor}`}>
-                              {p.category}
-                            </span>
-                          </div>
-                        </div>
-
-                        <p className="text-sm font-bold text-rose-500 mb-4">{p.tagline}</p>
-                        <p className="text-sm text-zinc-400 font-medium leading-relaxed">{p.desc}</p>
-                        
-                        <div className="flex flex-col gap-3 mt-auto pt-6 border-t border-zinc-900">
-                          <Link
-                            href={`/ecosystem/platforms-solutions/saas-platforms/${p.slug}`}
-                            className="w-full py-3 bg-white text-black text-center text-sm font-bold rounded-lg hover:bg-zinc-200 transition-colors flex items-center justify-center gap-1.5"
-                          >
-                            {p.ctaPrimary}
-                            <ArrowUpRight className="w-4 h-4" />
-                          </Link>
-                          <Link
-                            href="#contact-form"
-                            className="w-full py-3 bg-transparent border border-zinc-700 text-zinc-300 text-center text-sm font-bold rounded-lg hover:bg-zinc-800 hover:text-white transition-colors"
-                          >
-                            {p.ctaSecondary}
-                          </Link>
-                        </div>
-                      </div>
-                    </div>
-
+                {/* Logo & Category */}
+                <div className="flex items-center gap-4 mb-8 relative z-10">
+                  <div className="w-16 h-16 rounded-2xl bg-zinc-950 border border-zinc-800/80 flex items-center justify-center p-3 shadow-inner">
+                    <img src={activeProduct.logo} alt={`${activeProduct.name} Logo`} className="w-full h-full object-contain drop-shadow-md" />
                   </div>
                 </div>
-              ))
-            }
+
+                <h3 className="text-3xl md:text-4xl font-bold text-white tracking-tight mb-6 leading-snug relative z-10">
+                  {activeProduct.name} redefines {activeProduct.category.toLowerCase()} with {activeProduct.tagline.toLowerCase()}.
+                </h3>
+                
+                <p className="text-zinc-400 text-base md:text-lg font-medium leading-relaxed mb-10 relative z-10">
+                  {activeProduct.desc}
+                </p>
+
+                {/* Features (Products equivalent) */}
+                <div className="mb-10 relative z-10">
+                  <h4 className="text-xs font-bold uppercase tracking-widest text-zinc-500 mb-5">Core Capabilities</h4>
+                  <div className="flex flex-wrap gap-4">
+                    {activeProduct.features.map((feat, idx) => (
+                      <div key={idx} className="flex items-center gap-2.5 bg-zinc-900/50 border border-zinc-800 px-4 py-2 rounded-full">
+                        <div className="w-5 h-5 rounded-full bg-rose-500/20 border border-rose-500/30 flex items-center justify-center shrink-0">
+                          <Check className="w-3 h-3 text-rose-500" />
+                        </div>
+                        <span className="text-sm font-semibold text-zinc-300">{feat}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* CTA */}
+                <div className="mt-auto relative z-10">
+                  <Link
+                    href={`/ecosystem/platforms-solutions/saas-platforms/${activeProduct.slug}`}
+                    className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-rose-600 to-rose-500 hover:from-rose-500 hover:to-rose-400 text-white px-8 py-4 rounded-xl font-bold text-sm tracking-wide transition-all shadow-[0_0_20px_rgba(225,29,72,0.3)] hover:shadow-[0_0_25px_rgba(225,29,72,0.5)] hover:-translate-y-0.5"
+                  >
+                    View Platform
+                    <ArrowUpRight className="w-4 h-4" />
+                  </Link>
+                </div>
+              </div>
+
+              {/* Right Image Half */}
+              <div className="w-full lg:w-1/2 relative min-h-[300px] sm:min-h-[400px] lg:min-h-full bg-zinc-950 border-l border-zinc-800/80 p-2">
+                <div className="relative w-full h-full rounded-[1.5rem] overflow-hidden border border-zinc-800/50">
+                  <Image
+                    src={`/assets/Home-page/our-products/${activeProduct.slug}.png`}
+                    alt={`${activeProduct.name} Interface`}
+                    fill
+                    className="object-cover object-left-top scale-105 transition-transform duration-1000 group-hover:scale-100"
+                    unoptimized
+                  />
+                  {/* Glassmorphic inner shadow blending */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-zinc-950/80 via-transparent to-transparent pointer-events-none" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/80 via-transparent to-transparent pointer-events-none" />
+                </div>
+              </div>
+            </div>
+          ))}
+
+          {/* Logo Tabs Bar */}
+          <div className="bg-[#0c0c0c] border border-zinc-800/80 rounded-2xl p-2 flex overflow-x-auto hide-scrollbar [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+            <div className="flex w-max min-w-full">
+              {products.map((p) => {
+                const isActive = activeProductSlug === p.slug;
+                return (
+                  <button
+                    key={p.slug}
+                    onClick={() => setActiveProductSlug(p.slug)}
+                    className={`flex-1 min-w-[160px] md:min-w-0 flex flex-col items-center justify-center p-4 border-b-2 transition-all duration-300 relative group ${
+                      isActive 
+                        ? "border-rose-500 bg-zinc-900/60 rounded-xl" 
+                        : "border-transparent hover:bg-zinc-900/40 rounded-xl opacity-50 hover:opacity-100"
+                    }`}
+                  >
+                    <div className="h-8 md:h-10 flex items-center justify-center mb-2">
+                      <img 
+                        src={p.logo} 
+                        alt={p.name} 
+                        className={`max-h-full w-auto object-contain transition-all duration-300 ${isActive ? "scale-110 drop-shadow-md" : "grayscale group-hover:grayscale-0"}`} 
+                      />
+                    </div>
+                    {/* Optional text label for clarity */}
+                    <span className={`text-[10px] font-bold uppercase tracking-widest transition-colors ${isActive ? "text-white" : "text-zinc-600"}`}>
+                      {p.name}
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
           </div>
+
         </div>
       </section>
 

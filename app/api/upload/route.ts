@@ -13,7 +13,8 @@ let mongoClient: MongoClient | null = null;
 
 async function getDatabase() {
   if (!mongoClient) {
-    mongoClient = new MongoClient(MONGO_URI);
+    // Add serverSelectionTimeoutMS to fail fast if the database is unreachable
+    mongoClient = new MongoClient(MONGO_URI, { serverSelectionTimeoutMS: 3000 });
     await mongoClient.connect();
   }
   return mongoClient.db(DB_NAME);
@@ -47,25 +48,31 @@ export async function POST(req: NextRequest) {
     // Calculate MD5 Hash for deduplication
     const hash = crypto.createHash("md5").update(buffer).digest("hex");
 
-    const db = await getDatabase();
-    const collection = db.collection(collectionName);
+    let db;
+    let collection;
+    try {
+      db = await getDatabase();
+      collection = db.collection(collectionName);
 
-    // Check if the exact same file is already uploaded for this company
-    const existingFile = await collection.findOne({
-      company_id: companyId,
-      hash: hash,
-      is_deleted: { $ne: true }
-    });
-
-    if (existingFile) {
-      return NextResponse.json({
-        success: true,
-        file_id: existingFile._id.toString(),
-        url: existingFile.url,
-        filename: existingFile.original_filename,
-        size: existingFile.size,
-        exists: true
+      // Check if the exact same file is already uploaded for this company
+      const existingFile = await collection.findOne({
+        company_id: companyId,
+        hash: hash,
+        is_deleted: { $ne: true }
       });
+
+      if (existingFile) {
+        return NextResponse.json({
+          success: true,
+          file_id: existingFile._id.toString(),
+          url: existingFile.url,
+          filename: existingFile.original_filename,
+          size: existingFile.size,
+          exists: true
+        });
+      }
+    } catch (dbError) {
+      console.warn("MongoDB check failed, skipping deduplication:", dbError);
     }
 
     // Generate unique blob name: uploads/uuid.extension
@@ -116,7 +123,13 @@ export async function POST(req: NextRequest) {
       metadataDoc.updated_at = new Date();
     }
 
-    await collection.insertOne(metadataDoc);
+    if (collection) {
+      try {
+        await collection.insertOne(metadataDoc);
+      } catch (insertError) {
+        console.warn("Failed to insert metadata into MongoDB:", insertError);
+      }
+    }
 
     return NextResponse.json({
       success: true,
