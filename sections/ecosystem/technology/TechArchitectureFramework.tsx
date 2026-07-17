@@ -74,8 +74,8 @@ export function TechArchitectureFramework() {
                   {lvl.icon}
                 </div>
                 <div>
-                  <h4 className="text-xs font-bold text-white uppercase tracking-wider">{lvl.levelName}</h4>
-                  <p className="text-[10px] text-zinc-400 font-semibold leading-relaxed mt-0.5">{lvl.desc}</p>
+                  <h4 className="text-sm md:text-base font-bold text-white uppercase tracking-wider mb-1">{lvl.levelName}</h4>
+                  <p className="text-xs md:text-sm text-zinc-300 font-medium leading-relaxed">{lvl.desc}</p>
                 </div>
               </div>
 
@@ -84,9 +84,9 @@ export function TechArchitectureFramework() {
                 {lvl.nodes.map((node) => (
                   <span
                     key={node}
-                    className="text-xs md:text-sm font-sans font-medium text-zinc-300 tracking-wide flex items-center gap-2"
+                    className="text-sm md:text-base font-sans font-medium text-zinc-200 tracking-wide flex items-center gap-2"
                   >
-                    <span className="w-1.5 h-1.5 rounded-full bg-rose-500/60" />
+                    <span className="w-2 h-2 rounded-full bg-rose-500/80 shadow-[0_0_8px_rgba(244,63,94,0.6)]" />
                     {node}
                   </span>
                 ))}

@@ -12,19 +12,19 @@ export function TechCTA() {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-[radial-gradient(ellipse_at_center,rgba(220,38,38,0.04),transparent_60%)] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10 text-center">
-        <Reveal className="max-w-3xl mx-auto flex flex-col items-center">
+        <Reveal className="max-w-4xl mx-auto flex flex-col items-center">
 
-          <div className="inline-flex items-center gap-2 mb-4">
-            <span className="text-xs font-semibold tracking-[0.2em] uppercase text-zinc-400">
+          <div className="inline-flex items-center gap-2 mb-6">
+            <span className="text-xs md:text-sm font-bold tracking-[0.2em] uppercase text-zinc-400">
               CONSULTING SERVICES
             </span>
           </div>
 
-          <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-8">
-            Technology That Powers <span className="text-white font-medium bg-gradient-to-r from-red-600 via-rose-600 to-rose-500 bg-clip-text text-transparent">Transformation</span>
+          <h2 className="text-3xl md:text-4xl xl:text-5xl font-extrabold tracking-tight leading-tight mb-8">
+            Technology That Powers <span className="text-white font-black bg-gradient-to-r from-red-600 via-rose-600 to-rose-500 bg-clip-text text-transparent">Transformation</span>
           </h2>
 
-          <p className="text-zinc-400 text-sm md:text-lg leading-relaxed font-bold mb-10 max-w-lg">
+          <p className="text-zinc-400 text-base md:text-xl leading-relaxed font-medium mb-10 max-w-2xl">
             Build scalable, secure, and intelligent digital platforms with Devopstrio's technology ecosystem.
           </p>
 

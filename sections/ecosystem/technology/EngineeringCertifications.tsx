@@ -108,11 +108,11 @@ export function EngineeringCertifications() {
                     />
                   </div>
                   <div className="text-left">
-                    <span className="text-[9px] font-bold text-rose-500 uppercase tracking-widest block mb-1">
+                    <span className="text-[10px] md:text-xs font-bold text-rose-500 uppercase tracking-widest block mb-2">
                       {cert.category}
                     </span>
-                    <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-2">{cert.name}</h4>
-                    <p className="text-[10px] text-zinc-450 font-semibold leading-relaxed">
+                    <h4 className="text-sm md:text-base font-bold text-white uppercase tracking-wider mb-2">{cert.name}</h4>
+                    <p className="text-xs md:text-sm text-zinc-300 font-medium leading-relaxed">
                       {cert.desc}
                     </p>
                   </div>
@@ -135,8 +135,8 @@ export function EngineeringCertifications() {
                     />
                   </div>
                   <div className="text-left">
-                    <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-2">{cert.title}</h4>
-                    <p className="text-[10px] text-zinc-450 font-semibold leading-relaxed">
+                    <h4 className="text-sm md:text-base font-bold text-white uppercase tracking-wider mb-2">{cert.title}</h4>
+                    <p className="text-xs md:text-sm text-zinc-300 font-medium leading-relaxed">
                       {cert.desc}
                     </p>
                   </div>
@@ -159,8 +159,8 @@ export function EngineeringCertifications() {
                     />
                   </div>
                   <div className="text-left">
-                    <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-2">{cert.title}</h4>
-                    <p className="text-[10px] text-zinc-450 font-semibold leading-relaxed">
+                    <h4 className="text-sm md:text-base font-bold text-white uppercase tracking-wider mb-2">{cert.title}</h4>
+                    <p className="text-xs md:text-sm text-zinc-300 font-medium leading-relaxed">
                       {cert.desc}
                     </p>
                   </div>

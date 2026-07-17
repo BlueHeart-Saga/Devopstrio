@@ -11,49 +11,49 @@ interface EcosystemDomain {
 
 export function TechEcosystemOverview() {
   const domains: EcosystemDomain[] = [
-    { 
-      name: "Artificial Intelligence", 
-      desc: "Building intelligent systems using neural networks, agents, and predictive engines.", 
+    {
+      name: "Artificial Intelligence",
+      desc: "Building intelligent systems using neural networks, agents, and predictive engines.",
       image: "/assets/common/945ab601f043c558e0a8162da2a1eb4c%201.png"
     },
-    { 
-      name: "Cloud Native", 
-      desc: "Constructing modern infrastructure at scale with serverless and Kubernetes.", 
+    {
+      name: "Cloud Native",
+      desc: "Constructing modern infrastructure at scale with serverless and Kubernetes.",
       image: "/assets/common/9d230407fdcdb1a78debc2abe0ff1925%201.png"
     },
-    { 
-      name: "Software Engineering", 
-      desc: "Developing highly responsive frontend and enterprise-grade backend systems.", 
+    {
+      name: "Software Engineering",
+      desc: "Developing highly responsive frontend and enterprise-grade backend systems.",
       image: "/assets/common/9d91b93f83e6d4cd494ec13611b3e50e%201.png"
     },
-    { 
-      name: "Data Engineering", 
-      desc: "Setting up real-time telemetry streams, data lakehouses, and governance grids.", 
+    {
+      name: "Data Engineering",
+      desc: "Setting up real-time telemetry streams, data lakehouses, and governance grids.",
       image: "/assets/common/b384eb0438c55e43c61e7595acc29638%201.png"
     },
-    { 
-      name: "DevOps Toolchain", 
-      desc: "Continuous delivery configurations using GitOps pipelines and declarative IaC.", 
+    {
+      name: "DevOps Toolchain",
+      desc: "Continuous delivery configurations using GitOps pipelines and declarative IaC.",
       image: "/assets/common/ddb20908c846f1426649343fea590cb7%201.png"
     },
-    { 
-      name: "Cybersecurity", 
-      desc: "Zero-trust identity routing, security validation pipelines, and scanning services.", 
+    {
+      name: "Cybersecurity",
+      desc: "Zero-trust identity routing, security validation pipelines, and scanning services.",
       image: "/assets/common/e76e125035885aab9c9070ce85df239e%201.png"
     },
-    { 
-      name: "Platform Engineering", 
-      desc: "Boosting developer onboarding speeds through unified self-service portal dashboards.", 
+    {
+      name: "Platform Engineering",
+      desc: "Boosting developer onboarding speeds through unified self-service portal dashboards.",
       image: "/assets/common/e8fc628d320e4551e0527b648a0db21b%201.png"
     },
-    { 
-      name: "Quality Engineering", 
-      desc: "Continuous quality verification using Playwright, Cypress, and performance load scripts.", 
+    {
+      name: "Quality Engineering",
+      desc: "Continuous quality verification using Playwright, Cypress, and performance load scripts.",
       image: "/assets/common/ed602acdfd41667c71b96f247eca6d4e%201.png"
     },
-    { 
-      name: "Emerging Technologies", 
-      desc: "Researching post-quantum cryptography algorithms, digital twins, and edge networks.", 
+    {
+      name: "Emerging Technologies",
+      desc: "Researching post-quantum cryptography algorithms, digital twins, and edge networks.",
       image: "/assets/common/f03cc521fb070dfae9d87768b791ff70%201.png"
     }
   ];
@@ -61,7 +61,7 @@ export function TechEcosystemOverview() {
   return (
     <section id="overview" className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
       <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
-        
+
         {/* Header Section */}
         <Reveal className="mb-16 text-center max-w-2xl mx-auto">
           <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
@@ -80,7 +80,7 @@ export function TechEcosystemOverview() {
           {domains.map((dom, idx) => (
             <Reveal key={dom.name} delay={idx * 0.04}>
               <div className="group relative rounded-[20px] border border-white/5 bg-zinc-950/30 p-6 flex flex-col justify-between h-full min-h-[190px] overflow-hidden transition-all duration-300 hover:border-rose-500/20 hover:bg-zinc-950/60 backdrop-blur-md shadow-[0_8px_32px_0_rgba(0,0,0,0.37)]">
-                
+
                 {/* Subtle color highlight glow on hover */}
                 <div className="absolute inset-0 bg-gradient-to-br from-rose-600/0 via-rose-600/0 to-rose-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
@@ -95,16 +95,16 @@ export function TechEcosystemOverview() {
                     {/* <span className="text-[9px] font-mono text-rose-500 tracking-wider uppercase font-bold block mb-3">
                       PILLAR {(idx + 1).toString().padStart(2, "0")}
                     </span> */}
-                    <h3 className="text-base font-bold text-white mb-2 group-hover:text-rose-400 transition-colors">
+                    <h3 className="text-xl md:text-2xl font-bold text-white mb-3 group-hover:text-rose-400 transition-colors">
                       {dom.name}
                     </h3>
-                    <p className="text-xs text-zinc-400 font-semibold leading-relaxed">
+                    <p className="text-sm md:text-base text-zinc-300 font-medium leading-relaxed">
                       {dom.desc}
                     </p>
                   </div>
 
                   <div className="mt-6 pt-3 border-t border-white/[0.04] flex items-center justify-between">
-                    <span className="text-[9px] font-mono text-zinc-500 font-bold uppercase tracking-wider">
+                    <span className="text-[10px] md:text-xs font-mono text-zinc-500 font-bold uppercase tracking-widest">
                       VERIFIED PILLAR
                     </span>
                     <span className="w-1.5 h-1.5 rounded-full bg-rose-500 shadow-[0_0_8px_rgba(244,63,94,0.8)]" />

@@ -120,8 +120,9 @@ export default function Home() {
         <OurAdvantage />
       </div>
       <div id="partnerships">
-        <TechnicalPartnerships />
         <PartnersSection />
+        <TechnicalPartnerships />
+        
       </div>
       <div id="networks">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">

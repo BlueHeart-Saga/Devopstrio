@@ -320,13 +320,13 @@ export function TechCapabilities() {
 
                     {/* Text details */}
                     <div>
-                      <span className="text-[9px] font-mono text-rose-500 tracking-wider uppercase font-bold block mb-3">
+                      <span className="text-[10px] md:text-xs font-mono text-rose-500 tracking-widest uppercase font-bold block mb-3">
                         CORE CAPABILITY
                       </span>
-                      <h4 className="text-base font-bold text-white mb-2 group-hover/card:text-rose-400 transition-colors">
+                      <h4 className="text-lg md:text-xl font-bold text-white mb-3 group-hover/card:text-rose-400 transition-colors">
                         {item.name}
                       </h4>
-                      <p className="text-xs text-zinc-400 font-semibold leading-relaxed">
+                      <p className="text-sm md:text-base text-zinc-300 font-medium leading-relaxed">
                         {item.desc}
                       </p>
                     </div>

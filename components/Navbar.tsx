@@ -161,8 +161,8 @@ const serviceCategories = [
 ];
 
 const servicesList = [
-  { name: "Explore 256 Services Directory", href: "/services/explore" },
-  ...serviceCategories.map(cat => ({ name: cat.name, href: cat.href }))
+  ...serviceCategories.map(cat => ({ name: cat.name, href: cat.href })),
+  { name: "Explore Services Directory", href: "/services/explore" }
 ];
 
 const industriesList = [
@@ -495,7 +495,7 @@ export function Navbar() {
         </Link>
 
         {/* Center Links (Improved Link Text Sizes to text-sm) */}
-        <nav aria-label="Primary navigation" className="hidden lg:flex items-center gap-7">
+        <nav aria-label="Primary navigation" className="hidden lg:flex items-center gap-2 xl:gap-5 2xl:gap-7">
 
           {/* Services Dropdown */}
           <div
@@ -504,13 +504,13 @@ export function Navbar() {
             <Link
               href="/services"
               onClick={() => setActiveMenu(null)}
-              className="flex items-center gap-1.5 px-3 py-1.5 text-[17px] font-medium tracking-[0.3px] text-white hover:text-rose-500 transition-colors"
+              className="flex items-center gap-1 xl:gap-1.5 px-2 xl:px-3 py-1.5 text-[14px] xl:text-[15px] 2xl:text-[17px] font-medium tracking-[0.3px] text-white hover:text-rose-500 transition-colors"
             >
               Services <ChevronDown size={14} className={`transition-transform duration-300 ${activeMenu === "services" ? "rotate-180" : ""}`} />
             </Link>
             {activeMenu === "services" && (
               <div className="absolute left-1/2 -translate-x-1/2 top-full mt-3 w-[1200px] max-w-[95vw] pointer-events-auto z-50">
-                <div className="animate-fadeIn bg-black border border-zinc-850 rounded-2xl pt-8 px-8 pb-5 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.9)] grid grid-cols-[280px_240px_1fr] gap-x-8 gap-y-3 text-left relative">
+                <div className="animate-fadeIn bg-black border border-zinc-850 rounded-2xl pt-8 px-8 pb-5 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.9)] grid grid-cols-[220px_200px_1fr] xl:grid-cols-[280px_240px_1fr] gap-x-4 xl:gap-x-8 gap-y-3 text-left relative">
 
                   {/* Gloss reflection line */}
                   <div className="absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-zinc-800 to-transparent pointer-events-none" />
@@ -559,22 +559,24 @@ export function Navbar() {
                   {/* Right panel with active sub-services */}
                   <div className="flex flex-col">
                     <span className="text-xs font-mono tracking-widest text-zinc-500 uppercase block px-2 mb-2">Strategic Capabilities</span>
-                    <div className="grid grid-cols-2 gap-x-6 gap-y-4 min-h-[420px] max-h-[420px] overflow-y-auto overscroll-contain pr-2 custom-scrollbar">
-                      {serviceCategories.find(c => c.id === activeCategory)?.items.map((item) => (
-                        <Link
-                          key={item.name}
-                          href={item.href}
-                          onClick={() => setActiveMenu(null)}
-                          className="group/subitem block p-2 rounded-lg hover:bg-zinc-900/30 transition-colors min-h-[90px]"
-                        >
-                          <span className="block text-[15px] font-semibold text-white group-hover/subitem:text-rose-500 transition-colors mb-1">
-                            {item.name}
-                          </span>
-                          <span className="block text-[13px] text-zinc-400 font-medium leading-relaxed">
-                            {item.desc}
-                          </span>
-                        </Link>
-                      ))}
+                    <div className="max-h-[420px] overflow-y-auto overscroll-contain pr-2 custom-scrollbar">
+                      <div className="grid grid-cols-2 gap-x-4 gap-y-1">
+                        {serviceCategories.find(c => c.id === activeCategory)?.items.map((item) => (
+                          <Link
+                            key={item.name}
+                            href={item.href}
+                            onClick={() => setActiveMenu(null)}
+                            className="group/subitem block p-2 rounded-lg hover:bg-zinc-900/30 transition-colors"
+                          >
+                            <span className="block text-[15px] font-semibold text-white group-hover/subitem:text-rose-500 transition-colors mb-1">
+                              {item.name}
+                            </span>
+                            <span className="block text-[13px] text-zinc-400 font-medium leading-relaxed">
+                              {item.desc}
+                            </span>
+                          </Link>
+                        ))}
+                      </div>
                     </div>
                   </div>
 
@@ -710,13 +712,13 @@ export function Navbar() {
             <Link
               href="/industries"
               onClick={() => setActiveMenu(null)}
-              className="flex items-center gap-1.5 px-3 py-1.5 text-[17px] font-medium tracking-[0.3px] text-white hover:text-rose-500 transition-colors"
+              className="flex items-center gap-1 xl:gap-1.5 px-2 xl:px-3 py-1.5 text-[14px] xl:text-[15px] 2xl:text-[17px] font-medium tracking-[0.3px] text-white hover:text-rose-500 transition-colors"
             >
               Industries <ChevronDown size={14} className={`transition-transform duration-300 ${activeMenu === "industries" ? "rotate-180" : ""}`} />
             </Link>
             {activeMenu === "industries" && (
               <div className="absolute left-1/2 -translate-x-1/2 top-full mt-3 w-[1200px] max-w-[95vw] pointer-events-auto z-50">
-                <div className="animate-fadeIn bg-black border border-zinc-850 rounded-2xl pt-8 px-8 pb-5 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.9)] grid grid-cols-[280px_1fr] gap-x-8 gap-y-3 text-left relative">
+                <div className="animate-fadeIn bg-black border border-zinc-850 rounded-2xl pt-8 px-8 pb-5 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.9)] grid grid-cols-[220px_1fr] xl:grid-cols-[280px_1fr] gap-x-4 xl:gap-x-8 gap-y-3 text-left relative">
 
                   {/* Gloss reflection line */}
                   <div className="absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-zinc-850 to-transparent pointer-events-none" />
@@ -743,22 +745,24 @@ export function Navbar() {
                   {/* Right industries list grid */}
                   <div>
                     <span className="text-xs font-mono tracking-widest text-zinc-500 uppercase block mb-4">Target Sectors</span>
-                    <div className="grid grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-4 max-h-[380px] overflow-y-auto overscroll-contain pr-2 custom-scrollbar">
-                      {industriesList.map((ind) => (
-                        <Link
-                          key={ind.name}
-                          href={ind.href}
-                          onClick={() => setActiveMenu(null)}
-                          className="group/ind block p-2 rounded-lg hover:bg-zinc-900/30 transition-colors"
-                        >
-                          <span className="block text-[15px] font-semibold text-white group-hover/ind:text-rose-500 transition-colors mb-1">
-                            {ind.name}
-                          </span>
-                          <span className="block text-[13px] text-zinc-400 font-medium leading-relaxed">
-                            {ind.desc}
-                          </span>
-                        </Link>
-                      ))}
+                    <div className="max-h-[380px] overflow-y-auto overscroll-contain pr-2 custom-scrollbar">
+                      <div className="grid grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-1">
+                        {industriesList.map((ind) => (
+                          <Link
+                            key={ind.name}
+                            href={ind.href}
+                            onClick={() => setActiveMenu(null)}
+                            className="group/ind block p-2 rounded-lg hover:bg-zinc-900/30 transition-colors"
+                          >
+                            <span className="block text-[15px] font-semibold text-white group-hover/ind:text-rose-500 transition-colors mb-1">
+                              {ind.name}
+                            </span>
+                            <span className="block text-[13px] text-zinc-400 font-medium leading-relaxed">
+                              {ind.desc}
+                            </span>
+                          </Link>
+                        ))}
+                      </div>
                     </div>
                   </div>
 
@@ -886,13 +890,13 @@ export function Navbar() {
             <Link
               href="/ecosystem"
               onClick={() => setActiveMenu(null)}
-              className="flex items-center gap-1.5 px-3 py-1.5 text-[17px] font-medium tracking-[0.3px] text-white hover:text-rose-500 transition-colors"
+              className="flex items-center gap-1 xl:gap-1.5 px-2 xl:px-3 py-1.5 text-[14px] xl:text-[15px] 2xl:text-[17px] font-medium tracking-[0.3px] text-white hover:text-rose-500 transition-colors"
             >
               Ecosystem <ChevronDown size={14} className={`transition-transform duration-300 ${activeMenu === "ecosystem" ? "rotate-180" : ""}`} />
             </Link>
             {activeMenu === "ecosystem" && (
               <div className="absolute left-1/2 -translate-x-1/2 top-full mt-3 w-[1200px] max-w-[95vw] pointer-events-auto z-50">
-                <div className="animate-fadeIn bg-black border border-zinc-850 rounded-2xl pt-8 px-8 pb-5 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.9)] grid grid-cols-[280px_240px_1fr] gap-x-8 gap-y-3 text-left relative">
+                <div className="animate-fadeIn bg-black border border-zinc-850 rounded-2xl pt-8 px-8 pb-5 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.9)] grid grid-cols-[220px_200px_1fr] xl:grid-cols-[280px_240px_1fr] gap-x-4 xl:gap-x-8 gap-y-3 text-left relative">
 
                   {/* Gloss reflection line */}
                   <div className="absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-zinc-800 to-transparent pointer-events-none" />
@@ -958,22 +962,24 @@ export function Navbar() {
                   {/* Right panel with active sub-items */}
                   <div className="flex flex-col">
                     <span className="text-xs font-mono tracking-widest text-zinc-500 uppercase block px-2 mb-2">Sub-Pages & Links</span>
-                    <div className="grid grid-cols-2 gap-x-6 gap-y-4 min-h-[420px] max-h-[420px] overflow-y-auto overscroll-contain pr-2 custom-scrollbar">
-                      {ecosystemCategories.find(c => c.id === activeEcoCategory)?.items.map((item) => (
-                        <Link
-                          key={item.name}
-                          href={item.href}
-                          onClick={() => setActiveMenu(null)}
-                          className="group/subitem block p-2 rounded-lg hover:bg-zinc-900/30 transition-colors min-h-[90px]"
-                        >
-                          <span className="block text-[15px] font-semibold text-white group-hover/subitem:text-rose-500 transition-colors mb-1">
-                            {item.name}
-                          </span>
-                          <span className="block text-[13px] text-zinc-400 font-medium leading-relaxed">
-                            {item.desc}
-                          </span>
-                        </Link>
-                      ))}
+                    <div className="max-h-[420px] overflow-y-auto overscroll-contain pr-2 custom-scrollbar">
+                      <div className="grid grid-cols-2 gap-x-4 gap-y-1">
+                        {ecosystemCategories.find(c => c.id === activeEcoCategory)?.items.map((item) => (
+                          <Link
+                            key={item.name}
+                            href={item.href}
+                            onClick={() => setActiveMenu(null)}
+                            className="group/subitem block p-2 rounded-lg hover:bg-zinc-900/30 transition-colors"
+                          >
+                            <span className="block text-[15px] font-semibold text-white group-hover/subitem:text-rose-500 transition-colors mb-1">
+                              {item.name}
+                            </span>
+                            <span className="block text-[13px] text-zinc-400 font-medium leading-relaxed">
+                              {item.desc}
+                            </span>
+                          </Link>
+                        ))}
+                      </div>
                     </div>
                   </div>
 
@@ -1108,13 +1114,13 @@ export function Navbar() {
             <Link
               href="/insights"
               onClick={() => setActiveMenu(null)}
-              className="flex items-center gap-1.5 px-3 py-1.5 text-[17px] font-medium tracking-[0.3px] text-white hover:text-rose-500 transition-colors"
+              className="flex items-center gap-1 xl:gap-1.5 px-2 xl:px-3 py-1.5 text-[14px] xl:text-[15px] 2xl:text-[17px] font-medium tracking-[0.3px] text-white hover:text-rose-500 transition-colors"
             >
               Insights <ChevronDown size={14} className={`transition-transform duration-300 ${activeMenu === "insights" ? "rotate-180" : ""}`} />
             </Link>
             {activeMenu === "insights" && (
               <div className="absolute left-1/2 -translate-x-1/2 top-full mt-3 w-[1200px] max-w-[95vw] pointer-events-auto z-50">
-                <div className="animate-fadeIn bg-black border border-zinc-850 rounded-2xl pt-8 px-8 pb-5 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.9)] grid grid-cols-[280px_240px_1fr] gap-x-8 gap-y-3 text-left relative">
+                <div className="animate-fadeIn bg-black border border-zinc-850 rounded-2xl pt-8 px-8 pb-5 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.9)] grid grid-cols-[220px_200px_1fr] xl:grid-cols-[280px_240px_1fr] gap-x-4 xl:gap-x-8 gap-y-3 text-left relative">
 
                   {/* Gloss reflection line */}
                   <div className="absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-zinc-800 to-transparent pointer-events-none" />
@@ -1162,24 +1168,26 @@ export function Navbar() {
                   {/* Right panel with active section categories */}
                   <div className="flex flex-col">
                     <span className="text-xs font-mono tracking-widest text-zinc-500 uppercase block px-2 mb-2">Categories</span>
-                    <div className="grid grid-cols-2 gap-x-6 gap-y-4 min-h-[420px] max-h-[420px] overflow-y-auto overscroll-contain pr-2 custom-scrollbar">
-                      {insightsSections.find(s => s.slug === activeInsightsSection)?.categories.map((cat) => (
-                        <Link
-                          key={cat.slug}
-                          href={`/insights/${cat.slug}`}
-                          onClick={() => setActiveMenu(null)}
-                          className="group/subitem block p-2 rounded-lg hover:bg-zinc-900/30 transition-colors min-h-[90px]"
-                        >
-                          <span className="block text-[15px] font-semibold text-white group-hover/subitem:text-rose-500 transition-colors mb-1">
-                            {cat.name}
-                          </span>
-                          {cat.desc && (
-                            <span className="block text-[13px] text-zinc-400 font-medium leading-relaxed">
-                              {cat.desc}
+                    <div className="max-h-[420px] overflow-y-auto overscroll-contain pr-2 custom-scrollbar">
+                      <div className="grid grid-cols-2 gap-x-4 gap-y-1">
+                        {insightsSections.find(s => s.slug === activeInsightsSection)?.categories.map((cat) => (
+                          <Link
+                            key={cat.slug}
+                            href={`/insights/${cat.slug}`}
+                            onClick={() => setActiveMenu(null)}
+                            className="group/subitem block p-2 rounded-lg hover:bg-zinc-900/30 transition-colors"
+                          >
+                            <span className="block text-[15px] font-semibold text-white group-hover/subitem:text-rose-500 transition-colors mb-1">
+                              {cat.name}
                             </span>
-                          )}
-                        </Link>
-                      ))}
+                            {cat.desc && (
+                              <span className="block text-[13px] text-zinc-400 font-medium leading-relaxed">
+                                {cat.desc}
+                              </span>
+                            )}
+                          </Link>
+                        ))}
+                      </div>
                     </div>
                   </div>
 
@@ -1299,7 +1307,7 @@ export function Navbar() {
               </div>
             )}
           </div>
-          <Link href="/careers" onMouseEnter={() => setActiveMenu(null)} className="px-3 py-1.5 text-[17px] font-medium tracking-[0.3px] text-white hover:text-rose-500 transition-colors">
+          <Link href="/careers" onMouseEnter={() => setActiveMenu(null)} className="px-2 xl:px-3 py-1.5 text-[14px] xl:text-[15px] 2xl:text-[17px] font-medium tracking-[0.3px] text-white hover:text-rose-500 transition-colors">
             Careers
           </Link>
           {/* About Dropdown */}
@@ -1309,13 +1317,13 @@ export function Navbar() {
             <Link
               href="/about"
               onClick={() => setActiveMenu(null)}
-              className="flex items-center gap-1.5 px-3 py-1.5 text-[17px] font-medium tracking-[0.3px] text-white hover:text-rose-500 transition-colors"
+              className="flex items-center gap-1 xl:gap-1.5 px-2 xl:px-3 py-1.5 text-[14px] xl:text-[15px] 2xl:text-[17px] font-medium tracking-[0.3px] text-white hover:text-rose-500 transition-colors"
             >
               About <ChevronDown size={14} className={`transition-transform duration-300 ${activeMenu === "about" ? "rotate-180" : ""}`} />
             </Link>
             {activeMenu === "about" && (
               <div className="absolute left-1/2 -translate-x-1/2 top-full mt-3 w-[1200px] max-w-[95vw] pointer-events-auto z-50">
-                <div className="animate-fadeIn bg-black border border-zinc-850 rounded-2xl pt-8 px-8 pb-5 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.9)] grid grid-cols-[280px_1fr] gap-x-8 gap-y-3 text-left relative">
+                <div className="animate-fadeIn bg-black border border-zinc-850 rounded-2xl pt-8 px-8 pb-5 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.9)] grid grid-cols-[220px_1fr] xl:grid-cols-[280px_1fr] gap-x-4 xl:gap-x-8 gap-y-3 text-left relative">
 
                   {/* Gloss reflection line */}
                   <div className="absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-zinc-850 to-transparent pointer-events-none" />
@@ -1342,22 +1350,24 @@ export function Navbar() {
                   {/* Right about list grid */}
                   <div>
                     <span className="text-xs font-mono tracking-widest text-zinc-500 uppercase block mb-4">Corporate Directory</span>
-                    <div className="grid grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-4 max-h-[380px] overflow-y-auto overscroll-contain pr-2 custom-scrollbar">
-                      {aboutList.map((item) => (
-                        <Link
-                          key={item.name}
-                          href={item.href}
-                          onClick={() => setActiveMenu(null)}
-                          className="group/about block p-2 rounded-lg hover:bg-zinc-900/30 transition-colors"
-                        >
-                          <span className="block text-[15px] font-semibold text-white group-hover/about:text-rose-500 transition-colors mb-1">
-                            {item.name}
-                          </span>
-                          <span className="block text-[13px] text-zinc-450 font-medium leading-relaxed">
-                            {item.desc}
-                          </span>
-                        </Link>
-                      ))}
+                    <div className="max-h-[380px] overflow-y-auto overscroll-contain pr-2 custom-scrollbar">
+                      <div className="grid grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-1">
+                        {aboutList.map((item) => (
+                          <Link
+                            key={item.name}
+                            href={item.href}
+                            onClick={() => setActiveMenu(null)}
+                            className="group/about block p-2 rounded-lg hover:bg-zinc-900/30 transition-colors"
+                          >
+                            <span className="block text-[15px] font-semibold text-white group-hover/about:text-rose-500 transition-colors mb-1">
+                              {item.name}
+                            </span>
+                            <span className="block text-[13px] text-zinc-450 font-medium leading-relaxed">
+                              {item.desc}
+                            </span>
+                          </Link>
+                        ))}
+                      </div>
                     </div>
                   </div>
 
@@ -1480,7 +1490,7 @@ export function Navbar() {
         </nav>
 
         {/* Right Action */}
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-1.5 xl:gap-3">
           <div
             onMouseEnter={() => setActiveMenu("contact")}
             className="hidden sm:block relative"

@@ -648,44 +648,28 @@ const categories = [
 ];
 
 export function PartnersSection() {
-  const row1 = partners.slice(0, 14);
-  const row2 = partners.slice(14, 28);
-  const row3 = partners.slice(28);
+  const [page, setPage] = useState(0);
+  const itemsPerPage = 15;
+  const maxPage = Math.ceil(partners.length / itemsPerPage) - 1;
+
+
+
+  const displayedPartners = partners.slice(page * itemsPerPage, (page + 1) * itemsPerPage);
 
   return (
     <section className="w-full py-24 bg-[#030303] text-white border-t border-zinc-900/50 relative overflow-hidden" id="partners">
-      {/* Global CSS for seamless marquee */}
       <style dangerouslySetInnerHTML={{
         __html: `
-        @keyframes marqueeLeft {
-          0% { transform: translate3d(0, 0, 0); }
-          100% { transform: translate3d(-50%, 0, 0); }
+        @keyframes customFade {
+          from { opacity: 0; transform: translateY(5px); }
+          to { opacity: 1; transform: translateY(0); }
         }
-        @keyframes marqueeRight {
-          0% { transform: translate3d(-50%, 0, 0); }
-          100% { transform: translate3d(0, 0, 0); }
-        }
-        .animate-marquee-left-1 {
-          animation: marqueeLeft 48s linear infinite;
-          will-change: transform;
-        }
-        .animate-marquee-right-2 {
-          animation: marqueeRight 54s linear infinite;
-          will-change: transform;
-        }
-        .animate-marquee-left-3 {
-          animation: marqueeLeft 42s linear infinite;
-          will-change: transform;
-        }
-        .animate-marquee-left-1:hover,
-        .animate-marquee-right-2:hover,
-        .animate-marquee-left-3:hover {
-          animation-play-state: paused;
+        .animate-custom-fade {
+          animation: customFade 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
       `}} />
 
       <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
-
         {/* Header */}
         <Reveal className="max-w-3xl mb-16 text-center mx-auto">
           <div className="flex items-center justify-center gap-2 mb-4">
@@ -702,100 +686,49 @@ export function PartnersSection() {
         </Reveal>
       </div>
 
-      {/* Infinite Scroll Container */}
-      <div className="relative w-full overflow-hidden flex flex-col gap-6 select-none my-8">
-
-        {/* Edge Gradient Overlays */}
-        <div className="absolute top-0 bottom-0 left-0 w-24 md:w-48 bg-gradient-to-r from-[#030303] to-transparent z-20 pointer-events-none" />
-        <div className="absolute top-0 bottom-0 right-0 w-24 md:w-48 bg-gradient-to-l from-[#030303] to-transparent z-20 pointer-events-none" />
-
-        {/* Row 1: Left */}
-        <div className="w-full overflow-hidden flex">
-          <div className="flex gap-6 animate-marquee-left-1 w-max py-1">
-            {[...row1, ...row1].map((partner, idx) => (
-              <div
-                key={`${partner.name}-r1-${idx}`}
-                className="w-36 h-20 bg-zinc-950/30 backdrop-blur-md border border-zinc-900/60 rounded-xl flex items-center justify-center p-4 transition-all duration-300 hover:border-rose-500/30 hover:bg-zinc-900/10 hover:-translate-y-1 shadow-[inset_0_1px_1px_rgba(255,255,255,0.08),0_8px_24px_rgba(0,0,0,0.7)] hover:shadow-[inset_0_1px_1px_rgba(255,255,255,0.15),0_12px_32px_rgba(0,0,0,0.8),0_0_20px_rgba(225,29,72,0.06)] relative overflow-hidden flex-shrink-0 group"
-              >
-                <div className="absolute inset-0 bg-gradient-to-br from-rose-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                <div className="relative z-10 flex items-center justify-center w-full h-full p-1">
-                  {partner.render ? (
-                    <div className="h-8 flex items-center justify-center w-full text-white transition-colors duration-300 scale-75 sm:scale-90">
-                      {partner.render()}
-                    </div>
-                  ) : (
-                    <img
-                      src={partner.logo}
-                      alt={`${partner.name} logo`}
-                      className="h-8 w-auto object-contain max-w-[100px] select-none"
-                    />
-                  )}
-                </div>
+      {/* Partner Grid Container */}
+      <div className="relative max-w-[1400px] mx-auto w-full px-6 sm:px-12 pb-4 select-none mt-8">
+        <div key={page} className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 sm:gap-4 animate-custom-fade">
+          {displayedPartners.map((partner, idx) => (
+            <div
+              key={`${partner.name}-${idx}`}
+              className="w-full aspect-[3/2] bg-white/5 backdrop-blur-sm border border-white/5 rounded-xl flex items-center justify-center p-4 sm:p-6 transition-all duration-300 hover:bg-white/10 hover:border-white/10 relative overflow-hidden group shadow-sm hover:shadow-[0_8px_30px_rgba(0,0,0,0.4)]"
+            >
+              <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="relative z-10 flex items-center justify-center w-full h-full p-2">
+                {partner.render ? (
+                  <div className="w-full flex items-center justify-center text-white transition-all duration-500 group-hover:scale-110">
+                    {partner.render()}
+                  </div>
+                ) : (
+                  <img
+                    src={partner.logo}
+                    alt={`${partner.name} logo`}
+                    className="w-auto h-auto max-w-[92%] max-h-[85%] object-contain select-none transition-all duration-500 group-hover:scale-110"
+                  />
+                )}
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
-
-        {/* Row 2: Right */}
-        <div className="w-full overflow-hidden flex">
-          <div className="flex gap-6 animate-marquee-right-2 w-max py-1">
-            {[...row2, ...row2].map((partner, idx) => (
-              <div
-                key={`${partner.name}-r2-${idx}`}
-                className="w-36 h-20 bg-zinc-950/30 backdrop-blur-md border border-zinc-900/60 rounded-xl flex items-center justify-center p-4 transition-all duration-300 hover:border-rose-500/30 hover:bg-zinc-900/10 hover:-translate-y-1 shadow-[inset_0_1px_1px_rgba(255,255,255,0.08),0_8px_24px_rgba(0,0,0,0.7)] hover:shadow-[inset_0_1px_1px_rgba(255,255,255,0.15),0_12px_32px_rgba(0,0,0,0.8),0_0_20px_rgba(225,29,72,0.06)] relative overflow-hidden flex-shrink-0 group"
-              >
-                <div className="absolute inset-0 bg-gradient-to-br from-rose-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                <div className="relative z-10 flex items-center justify-center w-full h-full p-1">
-                  {partner.render ? (
-                    <div className="h-8 flex items-center justify-center w-full text-white transition-colors duration-300 scale-75 sm:scale-90">
-                      {partner.render()}
-                    </div>
-                  ) : (
-                    <img
-                      src={partner.logo}
-                      alt={`${partner.name} logo`}
-                      className="h-8 w-auto object-contain max-w-[100px] select-none"
-                    />
-                  )}
-                </div>
-              </div>
-            ))}
-          </div>
+        
+        {/* Pagination Dots (Optional visually, helps user know there are pages) */}
+        <div className="flex justify-center gap-2 mt-6">
+          {Array.from({ length: maxPage + 1 }).map((_, i) => (
+            <button
+              key={i}
+              onClick={() => setPage(i)}
+              className={`w-2 h-2 rounded-full transition-all duration-300 ${i === page ? "bg-rose-500 w-6" : "bg-zinc-700 hover:bg-zinc-500"}`}
+              aria-label={`Go to page ${i + 1}`}
+            />
+          ))}
         </div>
-
-        {/* Row 3: Left */}
-        <div className="w-full overflow-hidden flex">
-          <div className="flex gap-6 animate-marquee-left-3 w-max py-1">
-            {[...row3, ...row3].map((partner, idx) => (
-              <div
-                key={`${partner.name}-r3-${idx}`}
-                className="w-36 h-20 bg-zinc-950/30 backdrop-blur-md border border-zinc-900/60 rounded-xl flex items-center justify-center p-4 transition-all duration-300 hover:border-rose-500/30 hover:bg-zinc-900/10 hover:-translate-y-1 shadow-[inset_0_1px_1px_rgba(255,255,255,0.08),0_8px_24px_rgba(0,0,0,0.7)] hover:shadow-[inset_0_1px_1px_rgba(255,255,255,0.15),0_12px_32px_rgba(0,0,0,0.8),0_0_20px_rgba(225,29,72,0.06)] relative overflow-hidden flex-shrink-0 group"
-              >
-                <div className="absolute inset-0 bg-gradient-to-br from-rose-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                <div className="relative z-10 flex items-center justify-center w-full h-full p-1">
-                  {partner.render ? (
-                    <div className="h-8 flex items-center justify-center w-full text-white transition-colors duration-300 scale-75 sm:scale-90">
-                      {partner.render()}
-                    </div>
-                  ) : (
-                    <img
-                      src={partner.logo}
-                      alt={`${partner.name} logo`}
-                      className="h-8 w-auto object-contain max-w-[100px] select-none"
-                    />
-                  )}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
       </div>
 
       <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
         {/* Quote Footer */}
         <Reveal>
-          <div className="mt-16 text-center max-w-2xl mx-auto border-t border-zinc-900/60 pt-10">
+          <div className="mt-8 text-center max-w-2xl mx-auto border-t border-zinc-900/60 pt-8">
             <p className="text-zinc-400 text-sm md:text-base leading-relaxed italic">
               "We've created lasting relationships with our clients. Our success is our client's success."
             </p>
