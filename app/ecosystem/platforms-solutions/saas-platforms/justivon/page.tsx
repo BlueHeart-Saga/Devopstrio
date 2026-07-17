@@ -16,6 +16,7 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+import { ContactForm } from "@/sections/contact/ContactForm";
 
 export default function JustivonProductPage() {
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
@@ -52,12 +53,12 @@ export default function JustivonProductPage() {
   ];
 
   return (
-    <main className="min-h-screen bg-[#0B0B0B] text-white pt-24 font-sans overflow-x-hidden selection:bg-rose-500 selection:text-white">
+    <main className="min-h-screen bg-black text-white pt-24 font-sans overflow-x-hidden selection:bg-rose-500 selection:text-white">
       {/* Background ambient mesh grid */}
       <div className="absolute inset-0 opacity-[0.015] pointer-events-none z-0" style={{ backgroundImage: "radial-gradient(circle, #fff 1px, transparent 1px)", backgroundSize: "32px 32px" }} />
 
       {/* Hero Section */}
-      <section className="relative w-full py-20 bg-[#0B0B0B] border-b border-zinc-900/60 overflow-hidden">
+      <section className="relative w-full py-20 bg-black border-b border-zinc-900/60 overflow-hidden">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-[radial-gradient(circle_at_center,rgba(239,68,68,0.02),transparent_60%)] pointer-events-none" />
         
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
@@ -122,7 +123,7 @@ export default function JustivonProductPage() {
       </section>
 
       {/* Core Benefits Metrics */}
-      <section className="w-full py-20 bg-[#030303] border-b border-zinc-900/60">
+      <section className="w-full py-20 bg-black border-b border-zinc-900/60">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {benefits.map((b, idx) => (
@@ -141,7 +142,7 @@ export default function JustivonProductPage() {
       </section>
 
       {/* Platform Features Section */}
-      <section className="w-full py-24 bg-[#0B0B0B] border-b border-zinc-900/60">
+      <section className="w-full py-24 bg-black border-b border-zinc-900/60">
         <div className="max-w-5xl mx-auto w-full px-12 xl:px-8">
           <Reveal className="mb-16 text-center">
             <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
@@ -171,7 +172,7 @@ export default function JustivonProductPage() {
       </section>
 
       {/* Technology Stack */}
-      <section className="w-full py-20 bg-[#030303] border-b border-zinc-900/60">
+      <section className="w-full py-20 bg-black border-b border-zinc-900/60">
         <div className="max-w-5xl mx-auto w-full px-12 xl:px-8">
           <Reveal className="mb-16 text-center">
             <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
@@ -194,7 +195,7 @@ export default function JustivonProductPage() {
       </section>
 
       {/* FAQs */}
-      <section className="w-full py-20 bg-[#0B0B0B] border-b border-zinc-900/60">
+      <section className="w-full py-20 bg-black border-b border-zinc-900/60">
         <div className="max-w-3xl mx-auto w-full px-12 xl:px-8">
           <Reveal className="mb-16 text-center">
             <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-zinc-400 mb-3 block">
@@ -233,23 +234,26 @@ export default function JustivonProductPage() {
         </div>
       </section>
 
+      {/* Contact Form */}
+      <ContactForm />
+
       {/* CTA */}
-      <section className="w-full py-28 bg-[#030303] text-center relative overflow-hidden">
+      <section className="w-full py-28 bg-black text-center relative overflow-hidden">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-[radial-gradient(circle_at_center,rgba(239,68,68,0.025),transparent_60%)] pointer-events-none" />
         <div className="max-w-3xl mx-auto px-12 xl:px-8 relative z-10">
           <h2 className="text-3xl md:text-5xl font-black mb-6 tracking-tight">Deploy Justivon in Your Workspace</h2>
           <p className="text-zinc-400 text-xs md:text-sm font-bold mb-10 max-w-lg mx-auto leading-relaxed">
             Partner with our solution architects to deploy the platform or request a customized managed environment.
           </p>
-          <Link
-            href="/contact"
+          <a
+            href="#contact-form"
             className="inline-flex items-center gap-3 pl-6 pr-3 py-3 bg-white text-black font-semibold text-xs md:text-sm tracking-wider rounded-full hover:bg-zinc-200 transition-all duration-300"
           >
             Consult Product Architects
             <div className="w-7 h-7 rounded-full bg-black flex items-center justify-center">
               <ArrowUpRight className="w-3.5 h-3.5 text-white" />
             </div>
-          </Link>
+          </a>
         </div>
       </section>
     </main>

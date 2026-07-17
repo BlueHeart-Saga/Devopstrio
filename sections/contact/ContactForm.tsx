@@ -185,7 +185,7 @@ export function ContactForm() {
                       />
                     </div>
                     <p className="text-xs font-medium text-white/80 leading-relaxed">
-                      <span className="font-semibold text-white block">Alex - Solutions Architect,</span>
+                      <span className="font-semibold text-white block">Solutions Architect,</span>
                       can guide your project's initial steps.
                     </p>
                   </div>

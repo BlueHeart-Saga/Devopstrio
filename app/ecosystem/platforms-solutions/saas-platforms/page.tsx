@@ -483,7 +483,7 @@ export default function SaaSPlatformsPage() {
                             <ArrowUpRight className="w-4 h-4" />
                           </Link>
                           <Link
-                            href="#lead-form"
+                            href="#contact-form"
                             className="w-full py-3 bg-transparent border border-zinc-700 text-zinc-300 text-center text-sm font-bold rounded-lg hover:bg-zinc-800 hover:text-white transition-colors"
                           >
                             {p.ctaSecondary}
@@ -530,15 +530,15 @@ export default function SaaSPlatformsPage() {
             className="flex overflow-x-auto gap-6 pb-8 snap-x snap-mandatory [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] relative"
           >
             {[
-              { title: "Banking & Finance", subtitle: "Secure financial frameworks · 2026", badge: "FinTech", image: "/assets/Home-page/industries/bankifinance.png" },
-              { title: "Healthcare", subtitle: "Clinical operational suites · 2026", badge: "CareSuite", image: "/assets/Home-page/industries/healthcaree.png" },
-              { title: "Education", subtitle: "Collaborative learning hubs · 2026", badge: "Prestivo", image: "/assets/Home-page/industries/educationn.png" },
-              { title: "Government", subtitle: "Public sector automation · 2026", badge: "Civic Systems", image: "/assets/Home-page/industries/governmentsector.png" },
-              { title: "Manufacturing", subtitle: "Supply chain integrations · 2026", badge: "Industry 4.0", image: "/assets/Home-page/industries/manufacturingg.png" },
-              { title: "Media & Ent.", subtitle: "Asset coordination matrix · 2026", badge: "Brio", image: "/assets/Home-page/industries/mediaentertainment.png" },
-              { title: "Telecom", subtitle: "Network lifecycle tooling · 2026", badge: "Telco Stack", image: "/assets/Home-page/industries/telecommunicationn.png" },
-              { title: "Retail", subtitle: "Omnichannel workflows · 2026", badge: "E-Commerce", image: "/assets/Home-page/industries/retailecommerce.png" },
-              { title: "Real Estate", subtitle: "Property asset telemetry · 2026", badge: "Homela", image: "/assets/Home-page/industries/4.png" }
+              { title: "Banking & Finance", subtitle: "Secure financial frameworks · 2026", badge: "Brio", logo: "/assets/Home-page/our-products/logo/brio.png", image: "/assets/Home-page/industries/bankifinance.png" },
+              { title: "Healthcare", subtitle: "Clinical operational suites · 2026", badge: "CareSuite", logo: "/assets/Home-page/our-products/logo/Caresuite.png", image: "/assets/Home-page/industries/healthcaree.png" },
+              { title: "Education", subtitle: "Collaborative learning hubs · 2026", badge: "Prestivo", logo: "/assets/Home-page/our-products/logo/Prestivo.png", image: "/assets/Home-page/industries/educationn.png" },
+              { title: "Government", subtitle: "Public sector automation · 2026", badge: "Justivon", logo: "/assets/Home-page/our-products/logo/Justivon.png", image: "/assets/Home-page/industries/governmentsector.png" },
+              { title: "Manufacturing", subtitle: "Supply chain integrations · 2026", badge: "Humanex", logo: "/assets/Home-page/our-products/logo/humanex.png", image: "/assets/Home-page/industries/manufacturingg.png" },
+              { title: "Media & Ent.", subtitle: "Asset coordination matrix · 2026", badge: "Campix", logo: "/assets/Home-page/our-products/logo/Campix.png", image: "/assets/Home-page/industries/mediaentertainment.png" },
+              { title: "Telecom", subtitle: "Network lifecycle tooling · 2026", badge: "SafeSign", logo: "/assets/Home-page/our-products/logo/safesign.png", image: "/assets/Home-page/industries/telecommunicationn.png" },
+              { title: "Retail", subtitle: "Omnichannel workflows · 2026", badge: "Humanex", logo: "/assets/Home-page/our-products/logo/humanex.png", image: "/assets/Home-page/industries/retailecommerce.png" },
+              { title: "Real Estate", subtitle: "Property asset telemetry · 2026", badge: "Homela", logo: "/assets/Home-page/our-products/logo/homela.png", image: "/assets/Home-page/industries/4.png" }
             ].map((ind, idx) => (
               <div key={idx} className="min-w-[300px] md:min-w-[400px] snap-start group cursor-pointer bg-[#0c0c0c] border border-zinc-800/80 rounded-[2rem] p-2 hover:border-zinc-700 transition-colors">
                 {/* Visual Box */}
@@ -556,9 +556,13 @@ export default function SaaSPlatformsPage() {
                   {/* Gradient Overlay for Text Readability */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none opacity-80" />
 
-                  {/* Top Badge */}
-                  <div className="absolute top-4 left-4 bg-black/60 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/10 z-10">
-                    <span className="text-[9px] font-bold text-white tracking-widest uppercase">{ind.badge}</span>
+                  {/* Top Badge (Logo) */}
+                  <div className="absolute top-4 left-4 bg-black/60 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/10 z-10 flex items-center justify-center min-h-[28px]">
+                    {ind.logo ? (
+                      <Image src={ind.logo} alt={ind.badge} width={80} height={20} className="h-3 w-auto object-contain opacity-90 group-hover:opacity-100 transition-opacity" unoptimized />
+                    ) : (
+                      <span className="text-[9px] font-bold text-white tracking-widest uppercase">{ind.badge}</span>
+                    )}
                   </div>
                 </div>
 

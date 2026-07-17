@@ -16,19 +16,17 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+import { ContactForm } from "@/sections/contact/ContactForm";
 
 export default function PrestivoProductPage() {
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
-  const [demoSubmitted, setDemoSubmitted] = useState(false);
+  
 
   const toggleFaq = (index: number) => {
     setOpenFaqIndex(openFaqIndex === index ? null : index);
   };
 
-  const handleDemoSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setDemoSubmitted(true);
-  };
+
 
   const features = [
     { title: "Course Management Modules", desc: "Empower schools and training centers with structured course templates and dynamic grading parameters." },
@@ -54,9 +52,9 @@ export default function PrestivoProductPage() {
   ];
 
   return (
-    <main className="min-h-screen bg-[#0B0B0B] text-white pt-24 font-sans overflow-x-hidden selection:bg-rose-500 selection:text-white">
+    <main className="min-h-screen bg-black text-white pt-24 font-sans overflow-x-hidden selection:bg-rose-500 selection:text-white">
       {/* Hero Section */}
-      <section className="relative w-full py-20 bg-[#0B0B0B] border-b border-zinc-900/60 overflow-hidden">
+      <section className="relative w-full py-20 bg-black border-b border-zinc-900/60 overflow-hidden">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.02),transparent_60%)] pointer-events-none" />
         
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
@@ -87,7 +85,7 @@ export default function PrestivoProductPage() {
               </Reveal>
               <Reveal delay={0.3} className="flex flex-wrap gap-4">
                 <a
-                  href="#demo-form"
+                  href="#contact-form"
                   className="inline-flex items-center gap-3 pl-6 pr-3 py-3 bg-white text-black font-semibold text-xs md:text-sm tracking-wider rounded-full hover:bg-zinc-200 transition-all duration-300 shadow-lg"
                 >
                   Learn More
@@ -124,7 +122,7 @@ export default function PrestivoProductPage() {
       </section>
 
       {/* Business Problem & Solution Overview */}
-      <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60">
+      <section className="w-full py-24 bg-black border-b border-zinc-900/60">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             <div>
@@ -154,7 +152,7 @@ export default function PrestivoProductPage() {
       </section>
 
       {/* Key Features */}
-      <section className="w-full py-24 bg-[#0B0B0B] border-b border-zinc-900/60">
+      <section className="w-full py-24 bg-black border-b border-zinc-900/60">
         <div className="max-w-5xl mx-auto w-full px-12 xl:px-8">
           <Reveal className="mb-16 text-center">
             <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-blue-500 mb-3 block">
@@ -182,7 +180,7 @@ export default function PrestivoProductPage() {
       </section>
 
       {/* Industry Use Cases */}
-      <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60">
+      <section className="w-full py-24 bg-black border-b border-zinc-900/60">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
           <Reveal className="mb-16 text-center">
             <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-blue-500 mb-3 block">
@@ -205,7 +203,7 @@ export default function PrestivoProductPage() {
       </section>
 
       {/* Integrations & Compliance */}
-      <section className="w-full py-24 bg-[#0B0B0B] border-b border-zinc-900/60">
+      <section className="w-full py-24 bg-black border-b border-zinc-900/60">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
@@ -242,7 +240,7 @@ export default function PrestivoProductPage() {
       </section>
 
       {/* Pricing / Testimonial */}
-      <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60">
+      <section className="w-full py-24 bg-black border-b border-zinc-900/60">
         <div className="max-w-4xl mx-auto px-12 xl:px-8 text-center">
           <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-blue-500 mb-3 block">
             PRICING MODEL
@@ -264,7 +262,7 @@ export default function PrestivoProductPage() {
       </section>
 
       {/* FAQs */}
-      <section className="w-full py-20 bg-[#0B0B0B] border-b border-zinc-900/60">
+      <section className="w-full py-20 bg-black border-b border-zinc-900/60">
         <div className="max-w-3xl mx-auto w-full px-12 xl:px-8">
           <Reveal className="mb-16 text-center">
             <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-zinc-400 mb-3 block">
@@ -304,36 +302,7 @@ export default function PrestivoProductPage() {
       </section>
 
       {/* Demo Request Form */}
-      <section id="demo-form" className="w-full py-28 bg-[#030303] text-center relative overflow-hidden">
-        <div className="max-w-3xl mx-auto px-12 xl:px-8 relative z-10">
-          <h2 className="text-3xl md:text-5xl font-black mb-6 tracking-tight">Request a Live Prestivo Demo</h2>
-          <p className="text-zinc-400 text-xs md:text-sm font-bold mb-10 max-w-lg mx-auto leading-relaxed">
-            Partner with our solution architects to deploy the platform or request a customized managed environment.
-          </p>
-          
-          {demoSubmitted ? (
-            <div className="p-8 bg-zinc-950 border border-zinc-900 rounded-2xl max-w-md mx-auto text-center">
-              <Check className="w-8 h-8 text-blue-500 mx-auto mb-4" />
-              <h4 className="text-base font-bold text-white mb-2">Request Received</h4>
-              <p className="text-xs text-zinc-400">We will contact you shortly to schedule your live walkthrough.</p>
-            </div>
-          ) : (
-            <form onSubmit={handleDemoSubmit} className="bg-zinc-950 border border-zinc-900 p-8 rounded-3xl text-left max-w-lg mx-auto space-y-4">
-              <div>
-                <label className="block text-[9px] font-mono text-zinc-500 uppercase tracking-wider mb-1 font-bold">Your Name</label>
-                <input required type="text" className="w-full bg-black border border-zinc-900 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none" placeholder="Name" />
-              </div>
-              <div>
-                <label className="block text-[9px] font-mono text-zinc-500 uppercase tracking-wider mb-1 font-bold">Email Address</label>
-                <input required type="email" className="w-full bg-black border border-zinc-900 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none" placeholder="email@company.com" />
-              </div>
-              <button type="submit" className="w-full py-3 bg-white text-black font-extrabold text-xs uppercase tracking-wider rounded-xl hover:bg-zinc-200 transition-colors">
-                Book a Live Demo
-              </button>
-            </form>
-          )}
-        </div>
-      </section>
+      <ContactForm />
     </main>
   );
 }

@@ -175,12 +175,12 @@ export default function CareSuiteProductPage() {
   ];
 
   return (
-    <main className="min-h-screen bg-[#0B0B0B] text-white pt-24 font-sans overflow-x-hidden selection:bg-rose-500 selection:text-white">
+    <main className="min-h-screen bg-black text-white pt-24 font-sans overflow-x-hidden selection:bg-rose-500 selection:text-white">
       {/* Background ambient mesh grid */}
       <div className="absolute inset-0 opacity-[0.015] pointer-events-none z-0" style={{ backgroundImage: "radial-gradient(circle, #fff 1px, transparent 1px)", backgroundSize: "32px 32px" }} />
 
       {/* 1. HERO SECTION */}
-      <section className="relative w-full py-24 bg-[#0B0B0B] border-b border-zinc-900/60 overflow-hidden">
+      <section className="relative w-full py-24 bg-black border-b border-zinc-900/60 overflow-hidden">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-[radial-gradient(circle_at_center,rgba(6,182,212,0.03),transparent_60%)] pointer-events-none" />
         
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
@@ -255,7 +255,7 @@ export default function CareSuiteProductPage() {
       </section>
 
       {/* 2. THE BUSINESS PROBLEM SECTION */}
-      <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60">
+      <section className="w-full py-24 bg-black border-b border-zinc-900/60">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
           <Reveal className="text-center max-w-2xl mx-auto mb-16">
             <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
@@ -330,7 +330,7 @@ export default function CareSuiteProductPage() {
       </section>
 
       {/* 3. ABOUT CARESUITE SECTION */}
-      <section className="w-full py-24 bg-[#0B0B0B] border-b border-zinc-900/60">
+      <section className="w-full py-24 bg-black border-b border-zinc-900/60">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
             <div className="lg:col-span-6">
@@ -375,7 +375,7 @@ export default function CareSuiteProductPage() {
       </section>
 
       {/* 4. HOW IT WORKS (STEP BY STEP) */}
-      <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60">
+      <section className="w-full py-24 bg-black border-b border-zinc-900/60">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
           <Reveal className="text-center max-w-2xl mx-auto mb-20">
             <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
@@ -411,7 +411,7 @@ export default function CareSuiteProductPage() {
       </section>
 
       {/* 5. KEY FEATURES */}
-      <section className="w-full py-24 bg-[#0B0B0B] border-b border-zinc-900/60">
+      <section className="w-full py-24 bg-black border-b border-zinc-900/60">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
           <Reveal className="mb-20 text-center">
             <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
@@ -444,7 +444,7 @@ export default function CareSuiteProductPage() {
       </section>
 
       {/* 6. AI CAPABILITIES */}
-      <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60">
+      <section className="w-full py-24 bg-black border-b border-zinc-900/60">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
           <Reveal className="text-center max-w-2xl mx-auto mb-20">
             <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-cyan-400 mb-3 block">
@@ -475,7 +475,7 @@ export default function CareSuiteProductPage() {
       </section>
 
       {/* 7. PRODUCT SCREENSHOTS & DEMO VIDEO */}
-      <section className="w-full py-24 bg-[#0B0B0B] border-b border-zinc-900/60">
+      <section className="w-full py-24 bg-black border-b border-zinc-900/60">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
           <Reveal className="text-center max-w-2xl mx-auto mb-20">
             <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
@@ -540,7 +540,7 @@ export default function CareSuiteProductPage() {
       </section>
 
       {/* 8. BUSINESS USE CASES */}
-      <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60">
+      <section className="w-full py-24 bg-black border-b border-zinc-900/60">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
           <Reveal className="text-center max-w-2xl mx-auto mb-20">
             <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
@@ -569,7 +569,7 @@ export default function CareSuiteProductPage() {
       </section>
 
       {/* 9. SOLUTIONS BY TEAM OR INDUSTRY */}
-      <section className="w-full py-24 bg-[#0B0B0B] border-b border-zinc-900/60">
+      <section className="w-full py-24 bg-black border-b border-zinc-900/60">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
           <Reveal className="text-center max-w-2xl mx-auto mb-16">
             <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
@@ -668,7 +668,7 @@ export default function CareSuiteProductPage() {
       </section>
 
       {/* 10. BUSINESS BENEFITS */}
-      <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60">
+      <section className="w-full py-24 bg-black border-b border-zinc-900/60">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
           <Reveal className="text-center max-w-2xl mx-auto mb-20">
             <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
@@ -699,7 +699,7 @@ export default function CareSuiteProductPage() {
       </section>
 
       {/* 11. WHY CARESUITE, CUSTOMIZATION & INTEGRATION */}
-      <section className="w-full py-24 bg-[#0B0B0B] border-b border-zinc-900/60">
+      <section className="w-full py-24 bg-black border-b border-zinc-900/60">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             {/* Customization Details */}
@@ -750,7 +750,7 @@ export default function CareSuiteProductPage() {
       </section>
 
       {/* 12. SECURITY & DATA PRIVACY */}
-      <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60">
+      <section className="w-full py-24 bg-black border-b border-zinc-900/60">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
             <div className="lg:col-span-5">
@@ -790,7 +790,7 @@ export default function CareSuiteProductPage() {
       </section>
 
       {/* 13. CLIENT TESTIMONIALS */}
-      <section className="w-full py-24 bg-[#0B0B0B] border-b border-zinc-900/60">
+      <section className="w-full py-24 bg-black border-b border-zinc-900/60">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
           <Reveal className="text-center max-w-2xl mx-auto mb-16">
             <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
@@ -837,7 +837,7 @@ export default function CareSuiteProductPage() {
       </section>
 
       {/* 14. FAQS */}
-      <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60">
+      <section className="w-full py-24 bg-black border-b border-zinc-900/60">
         <div className="max-w-3xl mx-auto w-full px-12 xl:px-8">
           <Reveal className="mb-16 text-center">
             <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-zinc-400 mb-3 block">
@@ -877,7 +877,7 @@ export default function CareSuiteProductPage() {
       </section>
 
       {/* 15. BOOK A DEMO FORM SECTION */}
-      <section id="book-demo" className="w-full py-24 bg-[#0B0B0B] border-b border-zinc-900/60">
+      <section id="book-demo" className="w-full py-24 bg-black border-b border-zinc-900/60">
         <div className="max-w-4xl mx-auto px-12 xl:px-8">
           <div className="text-center mb-16">
             <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
@@ -1030,7 +1030,7 @@ export default function CareSuiteProductPage() {
       </section>
 
       {/* 16. FINAL CTA & CONTACT SECTION */}
-      <section className="w-full py-28 bg-[#030303] text-center relative overflow-hidden">
+      <section className="w-full py-28 bg-black text-center relative overflow-hidden">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-[radial-gradient(circle_at_center,rgba(6,182,212,0.02),transparent_60%)] pointer-events-none" />
         <div className="max-w-3xl mx-auto px-12 xl:px-8 relative z-10">
           <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-6">

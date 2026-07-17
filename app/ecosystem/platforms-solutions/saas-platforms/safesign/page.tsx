@@ -37,6 +37,7 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+import { ContactForm } from "@/sections/contact/ContactForm";
 import { CurvedCarousel } from "@/components/CurvedCarousel";
 
 export default function SafeSignProductPage() {
@@ -47,49 +48,15 @@ export default function SafeSignProductPage() {
   const [isVideoOpen, setIsVideoOpen] = useState(false);
 
   // Book a Demo Form State
-  const [formState, setFormState] = useState({
-    name: "",
-    email: "",
-    company: "",
-    phone: "",
-    industry: "IT & SaaS",
-    useCase: "NDA Signing",
-    message: ""
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [formSubmitted, setFormSubmitted] = useState(false);
+  
+  
+  
 
   const toggleFaq = (index: number) => {
     setOpenFaqIndex(openFaqIndex === index ? null : index);
   };
 
-  const handleFormSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name: formState.name,
-          email: formState.email,
-          message: `Company: ${formState.company}\nPhone: ${formState.phone}\nIndustry: ${formState.industry}\nPrimary Use Case: ${formState.useCase}\n\nRequirements:\n${formState.message}`,
-          selectedServices: ["SafeSign Demo Request"],
-          toEmail: "info@devopstrioglobal.com"
-        })
-      });
-      if (response.ok) {
-        setFormSubmitted(true);
-      } else {
-        alert("Failed to submit demo request. Please try again.");
-      }
-    } catch (err) {
-      console.error(err);
-      alert("An error occurred. Please try again.");
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
+  
 
   const steps = [
     { icon: Upload, title: "1. Upload Document", desc: "Drag and drop any PDF, DOCX, or text file into the secure portal." },
@@ -196,12 +163,12 @@ export default function SafeSignProductPage() {
   ];
 
   return (
-    <main className="min-h-screen bg-[#0B0B0B] text-white pt-24 font-sans overflow-x-hidden selection:bg-rose-500 selection:text-white">
+    <main className="min-h-screen bg-black text-white pt-24 font-sans overflow-x-hidden selection:bg-rose-500 selection:text-white">
       {/* Background ambient mesh grid */}
       <div className="absolute inset-0 opacity-[0.015] pointer-events-none z-0" style={{ backgroundImage: "radial-gradient(circle, #fff 1px, transparent 1px)", backgroundSize: "32px 32px" }} />
 
       {/* 1. HERO SECTION */}
-      <section className="relative w-full min-h-[75vh] md:min-h-[85vh] pt-8 pb-12 bg-[#0B0B0B] border-b border-zinc-900/60 overflow-hidden flex flex-col justify-center items-center text-center">
+      <section className="relative w-full min-h-[75vh] md:min-h-[85vh] pt-8 pb-12 bg-black border-b border-zinc-900/60 overflow-hidden flex flex-col justify-center items-center text-center">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-[radial-gradient(circle_at_center,rgba(16,185,129,0.04),transparent_60%)] pointer-events-none" />
         
         <div className="max-w-4xl mx-auto w-full px-12 xl:px-8 relative z-10 flex flex-col items-center">
@@ -226,7 +193,7 @@ export default function SafeSignProductPage() {
 
           <Reveal delay={0.3}>
             <a
-              href="#book-demo"
+              href="#contact-form"
               className="inline-flex items-center gap-3 pl-8 pr-4 py-3.5 bg-white text-black font-bold text-xs md:text-sm tracking-wider rounded-full hover:bg-zinc-200 hover:scale-105 active:scale-95 transition-all duration-300 shadow-[0_0_20px_rgba(255,255,255,0.1)]"
             >
               Get Started
@@ -257,7 +224,7 @@ export default function SafeSignProductPage() {
       </section>
 
       {/* 2. THE BUSINESS PROBLEM SECTION */}
-      <section className="w-full py-32 bg-[#0a0a0a] border-b border-zinc-900/60">
+      <section className="w-full py-32 bg-black border-b border-zinc-900/60">
         <div className="max-w-7xl mx-auto w-full px-8 xl:px-12">
           
           <div className="flex flex-col lg:flex-row justify-between items-start gap-12 mb-20">
@@ -273,7 +240,7 @@ export default function SafeSignProductPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* Card 1 */}
-            <div className="bg-[#111111] border border-zinc-800/80 rounded-3xl p-8 flex flex-col justify-between group hover:border-emerald-500/30 transition-colors h-[380px]">
+            <div className="bg-zinc-950 border border-zinc-800/80 rounded-3xl p-8 flex flex-col justify-between group hover:border-emerald-500/30 transition-colors h-[380px]">
               <div className="flex justify-between items-start mb-8">
                 <div className="w-10 h-10 rounded-xl bg-zinc-900 flex items-center justify-center text-zinc-400 group-hover:text-emerald-400 transition-colors">
                   <Layers className="w-5 h-5" />
@@ -294,7 +261,7 @@ export default function SafeSignProductPage() {
             </div>
 
             {/* Card 2 */}
-            <div className="bg-[#111111] border border-zinc-800/80 rounded-3xl p-8 flex flex-col justify-between group hover:border-emerald-500/30 transition-colors h-[380px]">
+            <div className="bg-zinc-950 border border-zinc-800/80 rounded-3xl p-8 flex flex-col justify-between group hover:border-emerald-500/30 transition-colors h-[380px]">
               <div className="flex justify-between items-start mb-8">
                 <div className="w-10 h-10 rounded-xl bg-zinc-900 flex items-center justify-center text-zinc-400 group-hover:text-emerald-400 transition-colors">
                   <Zap className="w-5 h-5" />
@@ -315,7 +282,7 @@ export default function SafeSignProductPage() {
             </div>
 
             {/* Card 3 */}
-            <div className="bg-[#111111] border border-zinc-800/80 rounded-3xl p-8 flex flex-col justify-between group hover:border-emerald-500/30 transition-colors h-[380px]">
+            <div className="bg-zinc-950 border border-zinc-800/80 rounded-3xl p-8 flex flex-col justify-between group hover:border-emerald-500/30 transition-colors h-[380px]">
               <div className="flex justify-between items-start mb-8">
                 <div className="w-10 h-10 rounded-xl bg-zinc-900 flex items-center justify-center text-zinc-400 group-hover:text-emerald-400 transition-colors">
                   <ShieldCheck className="w-5 h-5" />
@@ -340,7 +307,7 @@ export default function SafeSignProductPage() {
       </section>
 
       {/* 3. ABOUT SAFESIGN SECTION */}
-      <section className="w-full py-32 bg-[#030303] text-white relative overflow-hidden border-b border-zinc-900/60">
+      <section className="w-full py-32 bg-black text-white relative overflow-hidden border-b border-zinc-900/60">
         <div className="max-w-7xl mx-auto w-full px-8 xl:px-12">
           <Reveal>
             <div className="group relative overflow-hidden rounded-[32px] border border-zinc-800/60 bg-zinc-950/30 backdrop-blur-xl shadow-2xl">
@@ -400,7 +367,7 @@ export default function SafeSignProductPage() {
       </section>
 
       {/* 4. HOW IT WORKS (STEP BY STEP) */}
-      <section className="w-full py-24 bg-[#0a0a0a] border-b border-zinc-900/60">
+      <section className="w-full py-24 bg-black border-b border-zinc-900/60">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
             
@@ -451,7 +418,7 @@ export default function SafeSignProductPage() {
       </section>
 
       {/* 5. TEAMS CAPABILITIES SECTION (Tabbed Layout) */}
-      <section className="w-full py-32 bg-[#0B0B0B] border-b border-zinc-900/60">
+      <section className="w-full py-32 bg-black border-b border-zinc-900/60">
         <div className="max-w-7xl mx-auto w-full px-8 xl:px-12">
           
           <Reveal className="text-center mb-20">
@@ -478,7 +445,7 @@ export default function SafeSignProductPage() {
                   className={`flex flex-col items-center justify-center p-8 rounded-3xl border transition-all duration-300 h-40 ${
                     isActive 
                       ? "bg-zinc-900/90 border-zinc-700 text-white shadow-2xl scale-[1.02]" 
-                      : "bg-[#111111] border-zinc-800/60 text-zinc-500 hover:bg-zinc-900/40 hover:text-zinc-300"
+                      : "bg-zinc-950 border-zinc-800/60 text-zinc-500 hover:bg-zinc-900/40 hover:text-zinc-300"
                   }`}
                 >
                   <Icon className={`w-8 h-8 mb-4 transition-colors ${isActive ? "text-emerald-400" : "text-zinc-600"}`} />
@@ -528,7 +495,7 @@ export default function SafeSignProductPage() {
       </section>
 
       {/* 6. AI CAPABILITIES */}
-      <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60">
+      <section className="w-full py-24 bg-black border-b border-zinc-900/60">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
           <Reveal className="text-center max-w-2xl mx-auto mb-20">
             <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-emerald-400 mb-3 block">
@@ -559,7 +526,7 @@ export default function SafeSignProductPage() {
       </section>
 
       {/* 7. PRODUCT SCREENSHOTS & DEMO VIDEO */}
-      <section className="w-full py-24 bg-[#0B0B0B] border-b border-zinc-900/60">
+      <section className="w-full py-24 bg-black border-b border-zinc-900/60">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
           <Reveal className="text-center max-w-2xl mx-auto mb-20">
             <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
@@ -624,7 +591,7 @@ export default function SafeSignProductPage() {
       </section>
 
       {/* 8. BUSINESS USE CASES */}
-      <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60">
+      <section className="w-full py-24 bg-black border-b border-zinc-900/60">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
           <Reveal className="text-center max-w-2xl mx-auto mb-20">
             <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
@@ -653,7 +620,7 @@ export default function SafeSignProductPage() {
       </section>
 
       {/* 9. POWERFUL FEATURES (Replaced Solutions section) */}
-      <section className="w-full py-32 bg-[#0B0B0B] border-b border-zinc-900/60">
+      <section className="w-full py-32 bg-black border-b border-zinc-900/60">
         <div className="max-w-7xl mx-auto w-full px-8 xl:px-12">
           
           {/* Header */}
@@ -725,7 +692,7 @@ export default function SafeSignProductPage() {
             </div>
 
             {/* Right Side: Active Tab Detail Card */}
-            <div className="lg:col-span-7 bg-[#111113] border border-zinc-800/80 rounded-[2.5rem] p-10 md:p-14 h-full flex flex-col justify-center">
+            <div className="lg:col-span-7 bg-zinc-950 border border-zinc-800/80 rounded-[2.5rem] p-10 md:p-14 h-full flex flex-col justify-center">
               {(() => {
                 const activeData = [
                   {
@@ -815,7 +782,7 @@ export default function SafeSignProductPage() {
       </section>
 
       {/* 10. BUSINESS BENEFITS */}
-      <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60">
+      <section className="w-full py-24 bg-black border-b border-zinc-900/60">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
           <Reveal className="text-center max-w-2xl mx-auto mb-20">
             <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
@@ -848,98 +815,189 @@ export default function SafeSignProductPage() {
       </section>
 
       {/* 11. WHY SAFESIGN, CUSTOMIZATION & INTEGRATION */}
-      <section className="w-full py-24 bg-[#0B0B0B] border-b border-zinc-900/60">
+      <section className="w-full py-32 bg-black border-b border-zinc-900/60 overflow-hidden">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-            {/* Customization Details */}
-            <div>
-              <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-emerald-400 mb-3 block">
-                BRAND ARCHITECTURE
-              </span>
-              <h3 className="text-xl md:text-2xl font-bold text-white mb-6">
-                Your Identity, Pixel-Perfect
-              </h3>
-              <p className="text-zinc-400 text-xs md:text-sm leading-relaxed font-bold mb-8">
-                Command the entire signing experience. Embed your corporate identity deeply into every touchpoint, from custom domain routing to branded email notifications and robust role-based access controls.
-              </p>
-              
-              <ul className="space-y-4">
-                {[
-                  "White-Label Consoles: Deploy seamless signing portals that mirror your exact brand language.",
-                  "Smart Triggers: Program dynamic SMTP alerts, SMS nudges, and webhook payloads.",
-                  "Role-Based Access Control: Architect granular permission layers for enterprise-wide security."
-                ].map((txt, idx) => (
-                  <li key={idx} className="flex items-start gap-3 text-xs md:text-sm text-zinc-350 font-bold">
-                    <Check className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
-                    <span>{txt}</span>
-                  </li>
-                ))}
-              </ul>
+          <div className="flex flex-col lg:flex-row gap-16 lg:gap-12 items-start">
+            
+            {/* Left Column: Text & List */}
+            <div className="lg:w-5/12 flex flex-col items-start text-left lg:sticky lg:top-32">
+              <Reveal>
+                <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-emerald-400 mb-4 block">
+                  BRAND ARCHITECTURE
+                </span>
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-tight mb-6 text-white">
+                  Your Identity, Pixel-Perfect
+                </h2>
+                <p className="text-zinc-400 text-base md:text-lg leading-relaxed font-medium mb-10">
+                  Command the entire signing experience. Embed your corporate identity deeply into every touchpoint, from custom domain routing to branded email notifications and robust role-based access controls.
+                </p>
+                
+                <ul className="space-y-6">
+                  {[
+                    "White-Label Consoles: Deploy seamless signing portals that mirror your exact brand language.",
+                    "Smart Triggers: Program dynamic SMTP alerts, SMS nudges, and webhook payloads.",
+                    "Role-Based Access Control: Architect granular permission layers for enterprise-wide security."
+                  ].map((txt, idx) => (
+                    <li key={idx} className="flex items-start gap-4 text-sm md:text-base text-zinc-300 font-bold">
+                      <div className="w-6 h-6 rounded-full bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center shrink-0 mt-0.5 shadow-[0_0_10px_rgba(16,185,129,0.2)]">
+                        <Check className="w-3.5 h-3.5 text-emerald-400" />
+                      </div>
+                      <span className="leading-relaxed">{txt}</span>
+                    </li>
+                  ))}
+                </ul>
+              </Reveal>
             </div>
 
-            {/* Integrations Grid */}
-            <div>
-              <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
-                CONNECTIVITY
-              </span>
-              <h3 className="text-xl md:text-2xl font-bold text-white mb-6">
-                Enterprise Ecosystem Connectors
-              </h3>
+            {/* Right Column: 3D Flip Cards Grid */}
+            <div className="lg:w-7/12 w-full">
+              <Reveal className="mb-6">
+                <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-emerald-400 mb-2 block">
+                  CONNECTIVITY
+                </span>
+                <h3 className="text-xl md:text-2xl font-bold text-white">
+                  Enterprise Ecosystem Connectors
+                </h3>
+              </Reveal>
+
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {integrationDetails.map((int, idx) => (
-                  <div key={idx} className="p-5 bg-zinc-950/40 border border-zinc-900 rounded-2xl hover:border-zinc-800 transition-colors">
-                    <h4 className="text-xs font-bold text-white mb-2 tracking-wide">{int.title}</h4>
-                    <p className="text-[10px] text-zinc-450 leading-relaxed font-semibold">{int.desc}</p>
-                  </div>
-                ))}
+                {integrationDetails.map((int, i) => {
+                  const icons = [UserPlus, Activity, Briefcase, Globe];
+                  const images = [
+                    "/assets/common/1b065043b6959827c05a0073c93a4a53 1.png",
+                    "/assets/common/260b761ad40c3ad2acba2c6666894539 1.png",
+                    "/assets/common/315e4fdc6263bfd240f36297e376576e 1.png",
+                    "/assets/common/37b9b888cc479ea7b74d2d9a05c37597 1.png"
+                  ];
+                  const Icon = icons[i];
+                  return (
+                    <Reveal key={i} delay={i * 0.1}>
+                      <div className="group relative h-[260px] md:h-[280px] [perspective:1000px] cursor-pointer">
+                        <div className="absolute inset-0 w-full h-full transition-all duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+                          
+                          {/* Front Face */}
+                          <div className="absolute inset-0 w-full h-full flex flex-col justify-start bg-black border border-zinc-800/80 hover:border-zinc-700 rounded-2xl p-6 shadow-sm [backface-visibility:hidden] transition-colors">
+                            <div className="w-12 h-12 mb-5 rounded-xl bg-zinc-900 border border-zinc-800 flex items-center justify-center text-emerald-400">
+                              <Icon size={24} strokeWidth={1.5} />
+                            </div>
+                            <h3 className="font-bold text-lg text-zinc-100 mb-3">
+                              {int.title}
+                            </h3>
+                            <p className="text-sm text-zinc-400 leading-relaxed flex-1 font-medium">
+                              {int.desc}
+                            </p>
+                            <div className="inline-flex items-center gap-2 text-xs font-bold text-emerald-500 mt-auto opacity-70 group-hover:opacity-100 transition-opacity">
+                              View Integration <ArrowUpRight size={14} className="transition-transform group-hover:translate-x-1" />
+                            </div>
+                          </div>
+
+                          {/* Back Face */}
+                          <div className="absolute inset-0 w-full h-full flex flex-col rounded-2xl overflow-hidden [backface-visibility:hidden] [transform:rotateY(180deg)] border border-emerald-500/30">
+                            <img src={images[i]} alt={int.title} className="w-full h-full object-cover opacity-80" />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/60 to-black/10 flex flex-col justify-end p-6">
+                              <div className="w-10 h-10 mb-4 rounded-full bg-emerald-500/20 backdrop-blur-md border border-emerald-500/40 flex items-center justify-center text-emerald-400">
+                                <Icon size={18} strokeWidth={2} />
+                              </div>
+                              <h3 className="font-bold text-lg text-white mb-2">{int.title}</h3>
+                              <div className="inline-flex items-center gap-2 text-xs font-bold text-emerald-400">
+                                Explore Capabilities <ArrowUpRight size={14} />
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </Reveal>
+                  );
+                })}
               </div>
             </div>
+
           </div>
         </div>
       </section>
 
       {/* 12. SECURITY & DATA PRIVACY */}
-      <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60">
-        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
-            <div className="lg:col-span-5">
-              <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-emerald-400 mb-3 block">
+      <section className="relative w-full py-24 bg-black text-white overflow-hidden border-b border-zinc-900/60">
+        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
+          <div className="mb-16 text-center max-w-3xl mx-auto">
+            <Reveal>
+              <span className="text-[11px] font-bold tracking-[0.25em] uppercase text-emerald-400 mb-4 block">
                 SECURITY FOUNDATION
               </span>
+            </Reveal>
+            <Reveal>
               <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-6">
-                Zero-Trust Architecture & Governance
+                Zero-Trust Architecture & <span className="text-emerald-400">Governance</span>
               </h2>
+            </Reveal>
+            <Reveal>
               <p className="text-zinc-400 text-sm leading-relaxed font-bold">
                 Contracts represent your most sensitive corporate intelligence. SafeSign surrounds your data with military-grade encryption layers and impenetrable isolation boundaries.
               </p>
-            </div>
+            </Reveal>
+          </div>
 
-            <div className="lg:col-span-7 bg-zinc-950/30 border border-zinc-900 rounded-3xl p-8 md:p-12">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                {[
-                  { icon: Lock, title: "AES-256 Vault Encryption", desc: "Data and metadata are strictly isolated within hardened databases managed by automated KMS rotations." },
-                  { icon: ShieldCheck, title: "Global Compliance Matrices", desc: "Engineered to exceed eIDAS Advanced criteria and stringent US ESIGN Act certification standards." },
-                  { icon: Globe, title: "Data Sovereignty Routing", desc: "Maintain absolute control by deploying storage nodes directly into your regional Azure or AWS clusters." },
-                  { icon: Activity, title: "Cryptographic Integrity Seals", desc: "Final PDF binaries are locked with SHA-256 hashes, instantly invalidating any unauthorized post-execution edits." }
-                ].map((sec, idx) => (
-                  <div key={idx} className="flex gap-4">
-                    <div className="w-9 h-9 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 shrink-0">
-                      <sec.icon className="w-4 h-4" />
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
+            {[
+              { 
+                icon: Lock, 
+                title: "AES-256 Vault Encryption", 
+                desc: "Data and metadata are strictly isolated within hardened databases managed by automated KMS rotations.",
+                image: "/assets/common/09ff7846bc8c9998745688779c09f88d 1.png"
+              },
+              { 
+                icon: ShieldCheck, 
+                title: "Global Compliance Matrices", 
+                desc: "Engineered to exceed eIDAS Advanced criteria and stringent US ESIGN Act certification standards.",
+                image: "/assets/common/1b065043b6959827c05a0073c93a4a53 1.png"
+              },
+              { 
+                icon: Globe, 
+                title: "Data Sovereignty Routing", 
+                desc: "Maintain absolute control by deploying storage nodes directly into your regional Azure or AWS clusters.",
+                image: "/assets/common/260b761ad40c3ad2acba2c6666894539 1.png"
+              },
+              { 
+                icon: Activity, 
+                title: "Cryptographic Integrity Seals", 
+                desc: "Final PDF binaries are locked with SHA-256 hashes, instantly invalidating any unauthorized post-execution edits.",
+                image: "/assets/common/2fe7f9184c515b0c515ce38bc8a25efa 1.png"
+              }
+            ].map((sec, idx) => (
+              <Reveal key={idx} delay={idx * 0.05}>
+                <div className="relative rounded-[24px] border border-zinc-800/80 bg-black p-6 md:p-8 flex flex-col justify-between group h-full shadow-lg overflow-hidden transition-all duration-500 hover:border-emerald-500/50 min-h-[380px]">
+                  
+                  {/* Expanding Image Layer with Glassmorphism */}
+                  <div className="absolute inset-0 z-0 [clip-path:circle(0%_at_100%_100%)] group-hover:[clip-path:circle(150%_at_100%_100%)] transition-all duration-700 ease-in-out pointer-events-none">
+                    <img src={sec.image} alt={sec.title} className="w-full h-full object-cover scale-110 group-hover:scale-100 transition-transform duration-1000 ease-out opacity-40" />
+                    <div className="absolute inset-0 bg-emerald-950/40 backdrop-blur-md" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-emerald-900/10 border border-emerald-500/10 rounded-[24px]" />
+                  </div>
+
+                  {/* Content Layer */}
+                  <div className="relative z-10 flex flex-col h-full">
+                    <div className="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 shrink-0 mb-6 group-hover:scale-110 transition-transform duration-500">
+                      <sec.icon className="w-6 h-6" />
                     </div>
                     <div>
-                      <h4 className="text-xs font-bold text-white mb-1.5 tracking-wide">{sec.title}</h4>
-                      <p className="text-[10px] text-zinc-450 leading-relaxed font-semibold">{sec.desc}</p>
+                      <h3 className="text-lg md:text-xl font-bold text-white mb-4 tracking-tight transition-transform duration-500 group-hover:-translate-y-1">
+                        {sec.title}
+                      </h3>
+                      <p className="text-zinc-400 text-xs md:text-sm leading-relaxed mb-6 font-medium group-hover:text-zinc-300 transition-colors duration-500">
+                        {sec.desc}
+                      </p>
                     </div>
                   </div>
-                ))}
-              </div>
-            </div>
+                </div>
+              </Reveal>
+            ))}
           </div>
         </div>
       </section>
 
       {/* 13. CLIENT TESTIMONIALS */}
-      <section className="w-full py-24 bg-[#0B0B0B] border-b border-zinc-900/60">
+      <section className="w-full py-24 bg-black border-b border-zinc-900/60">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
           <Reveal className="text-center max-w-2xl mx-auto mb-16">
             <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
@@ -986,7 +1044,7 @@ export default function SafeSignProductPage() {
       </section>
 
       {/* 14. FAQS */}
-      <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60">
+      <section className="w-full py-24 bg-black border-b border-zinc-900/60">
         <div className="max-w-3xl mx-auto w-full px-12 xl:px-8">
           <Reveal className="mb-16 text-center">
             <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-zinc-400 mb-3 block">
@@ -1026,167 +1084,10 @@ export default function SafeSignProductPage() {
       </section>
 
       {/* 15. BOOK A DEMO FORM SECTION */}
-      <section id="book-demo" className="w-full py-24 bg-[#0B0B0B] border-b border-zinc-900/60">
-        <div className="max-w-4xl mx-auto px-12 xl:px-8">
-          <div className="text-center mb-16">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
-              DEPLOYMENT INITIATION
-            </span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-4">
-              Architect Your Signing Infrastructure
-            </h2>
-            <p className="text-zinc-400 text-xs md:text-sm font-bold max-w-md mx-auto leading-relaxed">
-              Schedule a strategic consultation with our solutions architects to map your bespoke integration pathways.
-            </p>
-            <p className="text-zinc-500 text-xs font-bold mt-4">
-              Require immediate executive escalation? Connect directly:{" "}
-              <a href="tel:0447471482903" className="text-rose-500 hover:text-rose-400 font-extrabold transition-colors">
-                044-7471 482903
-              </a>
-            </p>
-          </div>
-
-          <div className="bg-zinc-950 border border-zinc-900 p-8 md:p-12 rounded-3xl relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-[200px] h-[200px] bg-emerald-500/[0.015] rounded-full blur-xl pointer-events-none" />
-            
-            {formSubmitted ? (
-              <div className="text-center py-12 flex flex-col items-center">
-                <div className="w-12 h-12 rounded-full bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 mb-6">
-                  <Check className="w-6 h-6" />
-                </div>
-                <h3 className="text-xl font-bold text-white mb-2">Request Received</h3>
-                <p className="text-xs md:text-sm text-zinc-400 font-bold max-w-sm">
-                  Thank you! Our solutions engineers will contact you at your business email to schedule a live demo.
-                </p>
-              </div>
-            ) : (
-              <form onSubmit={handleFormSubmit} className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label className="block text-[10px] font-mono text-zinc-500 uppercase tracking-wider mb-2 font-bold flex items-center gap-1.5">
-                      <User className="w-3.5 h-3.5 text-zinc-500" /> Your Name
-                    </label>
-                    <input
-                      type="text"
-                      required
-                      value={formState.name}
-                      onChange={(e) => setFormState({ ...formState, name: e.target.value })}
-                      className="w-full bg-black border border-zinc-900 focus:border-emerald-500/50 rounded-xl px-4 py-3 text-xs md:text-sm text-white focus:outline-none transition-colors"
-                      placeholder="Jane Doe"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-[10px] font-mono text-zinc-500 uppercase tracking-wider mb-2 font-bold flex items-center gap-1.5">
-                      <Mail className="w-3.5 h-3.5 text-zinc-500" /> Business Email
-                    </label>
-                    <input
-                      type="email"
-                      required
-                      value={formState.email}
-                      onChange={(e) => setFormState({ ...formState, email: e.target.value })}
-                      className="w-full bg-black border border-zinc-900 focus:border-emerald-500/50 rounded-xl px-4 py-3 text-xs md:text-sm text-white focus:outline-none transition-colors"
-                      placeholder="jane@company.com"
-                    />
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label className="block text-[10px] font-mono text-zinc-500 uppercase tracking-wider mb-2 font-bold flex items-center gap-1.5">
-                      <Building className="w-3.5 h-3.5 text-zinc-500" /> Company Name
-                    </label>
-                    <input
-                      type="text"
-                      required
-                      value={formState.company}
-                      onChange={(e) => setFormState({ ...formState, company: e.target.value })}
-                      className="w-full bg-black border border-zinc-900 focus:border-emerald-500/50 rounded-xl px-4 py-3 text-xs md:text-sm text-white focus:outline-none transition-colors"
-                      placeholder="Acme Corp"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-[10px] font-mono text-zinc-500 uppercase tracking-wider mb-2 font-bold flex items-center gap-1.5">
-                      <Phone className="w-3.5 h-3.5 text-zinc-500" /> Phone Number
-                    </label>
-                    <input
-                      type="text"
-                      required
-                      value={formState.phone}
-                      onChange={(e) => setFormState({ ...formState, phone: e.target.value })}
-                      className="w-full bg-black border border-zinc-900 focus:border-emerald-500/50 rounded-xl px-4 py-3 text-xs md:text-sm text-white focus:outline-none transition-colors"
-                      placeholder="+44 7471 482903"
-                    />
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label className="block text-[10px] font-mono text-zinc-500 uppercase tracking-wider mb-2 font-bold flex items-center gap-1.5">
-                      <Globe className="w-3.5 h-3.5 text-zinc-500" /> Industry Sector
-                    </label>
-                    <select
-                      value={formState.industry}
-                      onChange={(e) => setFormState({ ...formState, industry: e.target.value })}
-                      className="w-full bg-black border border-zinc-900 focus:border-emerald-500/50 rounded-xl px-4 py-3 text-xs md:text-sm text-white focus:outline-none transition-colors appearance-none font-bold"
-                    >
-                      <option value="IT & SaaS">IT & SaaS</option>
-                      <option value="HR & Recruitment">HR & Recruitment</option>
-                      <option value="Agencies">Agencies</option>
-                      <option value="Consulting">Consulting</option>
-                      <option value="Real Estate">Real Estate</option>
-                      <option value="Legal">Legal</option>
-                      <option value="SMEs">SMEs</option>
-                    </select>
-                  </div>
-                  <div>
-                    <label className="block text-[10px] font-mono text-zinc-500 uppercase tracking-wider mb-2 font-bold flex items-center gap-1.5">
-                      <Briefcase className="w-3.5 h-3.5 text-zinc-500" /> Primary Use Case
-                    </label>
-                    <select
-                      value={formState.useCase}
-                      onChange={(e) => setFormState({ ...formState, useCase: e.target.value })}
-                      className="w-full bg-black border border-zinc-900 focus:border-emerald-500/50 rounded-xl px-4 py-3 text-xs md:text-sm text-white focus:outline-none transition-colors appearance-none font-bold"
-                    >
-                      <option value="NDA Signing">NDA Signing</option>
-                      <option value="Offer Letters">Offer Letters</option>
-                      <option value="Employee Onboarding">Employee Onboarding</option>
-                      <option value="Client Agreements">Client Agreements</option>
-                      <option value="Sales Contracts">Sales Contracts</option>
-                      <option value="Vendor Agreements">Vendor Agreements</option>
-                      <option value="Approval Workflows">Approval Workflows</option>
-                    </select>
-                  </div>
-                </div>
-
-                <div>
-                  <label className="block text-[10px] font-mono text-zinc-500 uppercase tracking-wider mb-2 font-bold">Message / Additional Requirements</label>
-                  <textarea
-                    rows={4}
-                    required
-                    value={formState.message}
-                    onChange={(e) => setFormState({ ...formState, message: e.target.value })}
-                    className="w-full bg-black border border-zinc-900 focus:border-emerald-500/50 rounded-xl px-4 py-3 text-xs md:text-sm text-white focus:outline-none transition-colors resize-none"
-                    placeholder="Describe your current contract challenges or volume of signatures..."
-                  />
-                </div>
-
-                <div className="pt-4">
-                  <button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="w-full py-4 bg-white text-black font-extrabold text-xs md:text-sm uppercase tracking-wider rounded-xl hover:bg-zinc-200 transition-colors shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
-                  >
-                    {isSubmitting ? "Submitting Request..." : "Request SafeSign Demo"}
-                  </button>
-                </div>
-              </form>
-            )}
-          </div>
-        </div>
-      </section>
+      <ContactForm />
 
       {/* 16. FINAL CTA & CONTACT SECTION */}
-      <section className="w-full py-28 bg-[#030303] text-center relative overflow-hidden">
+      <section className="w-full py-28 bg-black text-center relative overflow-hidden">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-[radial-gradient(circle_at_center,rgba(16,185,129,0.02),transparent_60%)] pointer-events-none" />
         <div className="max-w-3xl mx-auto px-12 xl:px-8 relative z-10">
           <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-6">
@@ -1196,7 +1097,7 @@ export default function SafeSignProductPage() {
             Connect with our product specialist team at <a href="mailto:info@devopstrioglobal.com" className="text-rose-500 hover:underline">info@devopstrioglobal.com</a> or call sales at <a href="tel:+447471482903" className="text-rose-500 hover:underline">044-7471 482903</a>.
           </p>
           <a
-            href="#book-demo"
+            href="#contact-form"
             className="inline-flex items-center gap-3 pl-6 pr-3 py-3 bg-white text-black font-semibold text-xs md:text-sm tracking-wider rounded-full hover:bg-zinc-200 transition-all duration-300"
           >
             Book a SafeSign Demo

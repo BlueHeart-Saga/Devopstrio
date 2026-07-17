@@ -9,6 +9,7 @@ import {
   CheckCircle2,
   Share2
 } from "lucide-react";
+import { ContactForm } from "@/sections/contact/ContactForm";
 
 const commonImages = [
   "/assets/common/09ff7846bc8c9998745688779c09f88d 1.png",
@@ -60,10 +61,12 @@ const productsData = {
   }
 };
 
-export default function ProductMarketingPage({ params }: { params: { slug: string } }) {
+export default async function ProductMarketingPage({ params }: { params: Promise<{ slug: string }> }) {
+  const resolvedParams = await params;
+  const slug = resolvedParams.slug;
   // @ts-ignore
-  const product = productsData[params.slug] || {
-    name: params.slug.charAt(0).toUpperCase() + params.slug.slice(1),
+  const product = productsData[slug] || {
+    name: slug.charAt(0).toUpperCase() + slug.slice(1),
     tagline: "Enterprise Solution",
     description: "Advanced platform designed for modern enterprise workflows.",
     image: commonImages[0],
@@ -206,6 +209,8 @@ export default function ProductMarketingPage({ params }: { params: { slug: strin
           </div>
         </div>
       </div>
+
+      <ContactForm />
     </div>
   );
 }
