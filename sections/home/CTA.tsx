@@ -38,7 +38,7 @@ export function CTA() {
             </Link>
             <a
               className="gap-2 inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase border border-zinc-850 hover:border-zinc-750 bg-zinc-950/60 hover:bg-zinc-900 text-white transition-all duration-300 hover:-translate-y-0.5"
-              href="mailto:info@devopstrioglobal.com"
+              href={`mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL}`}
             >
               Contact Experts <ArrowUpRight size={14} />
             </a>

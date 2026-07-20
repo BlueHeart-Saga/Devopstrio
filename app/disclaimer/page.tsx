@@ -132,7 +132,7 @@ export default function DisclaimerPage() {
           </p>
           <div className="bg-zinc-950/60 border border-zinc-900 rounded-2xl p-6 text-xs space-y-1.5">
             <p className="font-bold text-white text-sm">Devopstrio Legal Department</p>
-            <p className="text-zinc-400">Email: <a href="mailto:legal@devopstrio.com" className="text-rose-500 hover:underline">legal@devopstrio.com</a></p>
+            <p className="text-zinc-400">Email: <a href={`mailto:${process.env.NEXT_PUBLIC_LEGAL_EMAIL}`} className="text-rose-500 hover:underline">{process.env.NEXT_PUBLIC_LEGAL_EMAIL}</a></p>
             <p className="text-zinc-400">Address: Devopstrio Limited, One World Trade Center, Floor 85, New York, NY 10007, USA</p>
           </div>
         </div>

@@ -7,71 +7,130 @@ import {
   ArrowUpRight,
   Plus,
   Minus,
-  MapPin,
+  CheckCircle2,
   Cpu,
-  HardDrive,
+  ShieldCheck,
+  Building2,
+  Globe,
+  Settings,
+  Briefcase,
+  Layers,
   Activity,
-  Database,
-  Terminal,
+  Code2,
+  Network,
+  Rocket,
   Zap,
-  Clock
+  BarChart3,
+  Bot,
+  Database
 } from "lucide-react";
 import Link from "next/link";
 
-export default function IndiaOperationsPage() {
+export default function IndiaEngineeringCenterPage() {
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
 
   const toggleFaq = (index: number) => {
     setOpenFaqIndex(openFaqIndex === index ? null : index);
   };
 
-  const offices = [
-    { city: "Bengaluru", details: "Embassy Golf Links Business Park, Bengaluru, Karnataka-560071", label: "Corporate Office" },
-    { city: "Chennai", details: "Ground Floor, Primus Building, SIDCO Industrial Estate, Guindy, Chennai 600032", label: "Operations Center" },
-    { city: "Thoothukudi", details: "4/ 367, Rajeev Colony, Pasuvanthanai 628718 Thoothukudi, Tamilnadu", label: "Operations Center" }
+  const engineeringExcellence = [
+    { title: "Software Engineering", icon: <Code2 className="w-5 h-5" /> },
+    { title: "Cloud Architecture", icon: <Globe className="w-5 h-5" /> },
+    { title: "AI & Machine Learning", icon: <Cpu className="w-5 h-5" /> },
+    { title: "DevOps Automation", icon: <Zap className="w-5 h-5" /> },
+    { title: "Cybersecurity", icon: <ShieldCheck className="w-5 h-5" /> },
+    { title: "Data Engineering", icon: <Database className="w-5 h-5" /> },
+    { title: "Platform Engineering", icon: <Layers className="w-5 h-5" /> },
+    { title: "Digital Transformation", icon: <Rocket className="w-5 h-5" /> }
   ];
 
-  const capabilities = [
-    { title: "Software Engineering", desc: "Constructing modular REST APIs, frontend components, and backend database integrations." },
-    { title: "DevOps Pipelines", desc: "Building CI/CD factory routines using GitHub Actions, GitLab CI, and Jenkins runners." },
-    { title: "Cloud Infrastructure", desc: "Deploying high-performance Kubernetes clusters and VPC configurations." }
+  const deliveryCapabilities = [
+    { title: "Enterprise Software Development", desc: "Modern web, mobile, SaaS, and enterprise applications." },
+    { title: "Cloud Engineering", desc: "Azure, AWS, Google Cloud, and hybrid infrastructure." },
+    { title: "Artificial Intelligence", desc: "Generative AI, automation, intelligent applications, and AI copilots." },
+    { title: "DevOps & Platform Engineering", desc: "CI/CD, Infrastructure as Code, Kubernetes, GitOps, and automation." },
+    { title: "Data Engineering", desc: "Data platforms, analytics, integration, and AI-ready data pipelines." },
+    { title: "Managed Services", desc: "Monitoring, maintenance, optimization, and operational support." }
   ];
 
-  const sreSupport = [
-    "24/7/365 active monitoring on cloud node networks",
-    "Continuous alert triage filtering noise from critical incidents",
-    "15-minute response SLAs to resolve P1 service blockers"
+  const lifecycleStages = [
+    "Discover", "Design", "Develop", "Test", "Secure", "Deploy", "Operate", "Optimize"
   ];
 
-  const databaseUpkeep = [
-    "Index optimization reclaiming disk storage and boosting query speeds",
-    "Daily automated backup restoration checks verifying snapshot integrity",
-    "Query execution tuning rewriting complex joins and schemas"
+  const innovationRD = [
+    "AI Research",
+    "Cloud Innovation",
+    "Automation Frameworks",
+    "Internal Accelerators",
+    "Product Engineering",
+    "Proof of Concepts",
+    "Emerging Technologies",
+    "Engineering Best Practices"
   ];
 
-  const automationTools = [
-    { title: "Terraform Orchestration", desc: "Defining Infrastructure as Code templates for AWS and Azure clouds." },
-    { title: "GitOps Workflows", desc: "Synchronizing live cluster states with code branches using ArgoCD." },
-    { title: "Ansible Patching", desc: "Automating OS patches and application package upgrades." }
+  const techExpertise = {
+    cloud: ["Microsoft Azure", "AWS", "Google Cloud", "Oracle Cloud"],
+    ai: ["OpenAI", "Azure AI", "LangChain", "Vector Databases"],
+    development: ["React", "Next.js", "Python", "FastAPI", ".NET", "Node.js"],
+    devops: ["Docker", "Kubernetes", "Terraform", "GitHub Actions", "Azure DevOps"],
+    data: ["PostgreSQL", "MongoDB", "Kafka", "Spark", "Databricks"]
+  };
+
+  const globalDeliveryModelStages = [
+    "Client Requirements", "Solution Design", "Engineering Team", "QA & Security", "Deployment", "24×7 Support", "Continuous Improvement"
   ];
 
-  const metrics = [
-    { value: "350+", label: "Certified Engineers" },
-    { value: "99.99%", label: "Uptime Maintenance SLA" },
-    { value: "<15m", label: "Incident Response SLA" }
+  const qualitySecurity = [
+    "Secure Development",
+    "Code Reviews",
+    "Automated Testing",
+    "DevSecOps",
+    "Cloud Security",
+    "Data Protection",
+    "Monitoring",
+    "Continuous Improvement"
+  ];
+
+  const talentCulture = [
+    "Continuous Learning",
+    "Technical Excellence",
+    "Innovation Culture",
+    "Agile Collaboration",
+    "Knowledge Sharing",
+    "Mentorship",
+    "Certification Programs",
+    "Engineering Communities"
+  ];
+
+  const outcomes = [
+    { label: "Engineering Support", value: "24×7" },
+    { label: "Solution Delivery", value: "Rapid" },
+    { label: "Architecture", value: "Cloud-Ready" },
+    { label: "Innovation", value: "AI-Driven" },
+    { label: "Enterprise Platforms", value: "Scalable" },
+    { label: "Technology Partnership", value: "Long-Term" }
+  ];
+
+  const whyDevopstrio = [
+    { title: "Skilled Engineering Teams" },
+    { title: "Cloud-Native Expertise" },
+    { title: "AI-First Innovation" },
+    { title: "Modern Development Practices" },
+    { title: "Security by Design" },
+    { title: "Agile Delivery" },
+    { title: "Global Collaboration" },
+    { title: "Continuous Improvement" }
   ];
 
   const faqs = [
-    { q: "Where are your India hubs located?", a: "We operate SRE and engineering hubs in Bengaluru, Chennai, and Thoothukudi." },
-    { q: "What is the size of your engineering team in India?", a: "Our India centers host over 350 certified DevOps and software engineers." },
-    { q: "Do your SRE teams operate on public holidays?", a: "Yes, our Operations Centers run 24/7/365, including weekends and all holidays." },
-    { q: "Which database platforms do you support?", a: "We manage PostgreSQL, MySQL, MongoDB, Redis, and Oracle Database deployments." },
-    { q: "How do you automate server patching?", a: "We write Ansible playbooks that patch OS vulnerabilities on a regular, pre-scheduled basis." },
-    { q: "What cloud platforms do your engineers manage?", a: "Our engineers are certified in AWS, Microsoft Azure, and Oracle Cloud Infrastructure (OCI)." },
-    { q: "How do you coordinate incident handovers with western offices?", a: "We conduct live video handover syncs at shift ends and maintain unified Jira tracking boards." },
-    { q: "What is your average response time for critical alerts?", a: "We guarantee a response time of less than 15 minutes for critical P1 incidents." },
-    { q: "Do you offer application support services?", a: "Yes, our team manages application-level monitoring, bug fixes, and minor feature updates." },
-    { q: "How do we get started with your India SRE team?", a: "Click the 'Connect With SRE Leads' button to request a consultation with our operations leads." }
+    { q: "What services are delivered from the India Engineering Center?", a: "We deliver full-cycle software development, cloud engineering, AI solutions, DevOps automation, and 24x7 managed support from our India center." },
+    { q: "Do your teams work with global clients?", a: "Yes, our India-based engineers work daily with enterprises across the US, UK, and Europe in a seamless follow-the-sun delivery model." },
+    { q: "Which technologies do you specialize in?", a: "We have deep expertise in cloud platforms (AWS, Azure, GCP), modern development (React, Next.js, Node.js, Python), and AI/Data engineering." },
+    { q: "Do you provide dedicated engineering teams?", a: "Absolutely. We build dedicated offshore and nearshore engineering pods tailored to your specific project needs and technology stack." },
+    { q: "How do you manage quality assurance?", a: "We employ strict code reviews, automated testing (unit, integration, E2E), and CI/CD pipelines to ensure enterprise-grade code quality." },
+    { q: "Do you offer managed services?", a: "Yes, our India operations hub provides continuous 24x7 monitoring, maintenance, and cloud optimization for mission-critical systems." },
+    { q: "How do you ensure secure software delivery?", a: "We implement DevSecOps practices, shifting security left with continuous vulnerability scanning and adherence to zero-trust architectures." },
+    { q: "How can we engage with Devopstrio?", a: "Reach out via our contact page to schedule a discovery session and discuss how our engineering center can accelerate your roadmap." }
   ];
 
   return (
@@ -81,15 +140,16 @@ export default function IndiaOperationsPage() {
 
       {/* 1. HERO SECTION */}
       <Hero
-        badge="SRE & ENGINEERING HQ"
+        badge="GLOBAL DELIVERY NETWORK"
         title={
           <>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-500 to-rose-700">
-              India Operations
+            India Engineering <br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-amber-700">
+              Center
             </span>
           </>
         }
-        subtitle="Scale SRE Execution, Database Upkeep & Infrastructure Automation. Scale platform development, manage automated database maintenance routines, and keep infrastructure responsive via Bengaluru, Chennai, and Thoothukudi operations centers."
+        subtitle="Building world-class software, AI solutions, cloud platforms, and enterprise technologies that power digital transformation for organizations across the globe."
         hyperspeed={true}
         hyperspeedOptions={{
           distortion: 'turbulentDistortion',
@@ -99,9 +159,9 @@ export default function IndiaOperationsPage() {
             background: 0x000000,
             shoulderLines: 0xffffff,
             brokenLines: 0xffffff,
-            leftCars: [0x10b981, 0x059669, 0x34d399],
-            rightCars: [0x0d9488, 0x0f766e, 0x2dd4bf],
-            sticks: 0x10b981
+            leftCars: [0xf97316, 0xc2410c, 0xfbd38d],
+            rightCars: [0xf59e0b, 0xb45309, 0xfde68a],
+            sticks: 0xf97316
           }
         }}
         breadcrumbs={[
@@ -110,78 +170,206 @@ export default function IndiaOperationsPage() {
           { label: "INDIA OPERATIONS" }
         ]}
       >
-        <Link
-              href="/contact"
-              className="inline-flex items-center gap-3 pl-6 pr-3 py-3 bg-white text-black font-semibold text-xs md:text-sm tracking-wider rounded-full hover:bg-zinc-200 transition-all duration-300 shadow-lg shadow-white/5"
-            >
-              Connect With SRE Leads
-              <div className="w-7 h-7 rounded-full bg-black flex items-center justify-center">
-                <ArrowUpRight className="w-3.5 h-3.5 text-white" />
-              </div>
-            </Link>
+        <div className="flex flex-wrap items-center justify-center gap-4 mt-8 mb-8">
+          <Link
+            href="/contact"
+            className="inline-flex items-center gap-3 pl-6 pr-3 py-3 bg-white text-black font-semibold text-xs md:text-sm tracking-wider rounded-full hover:bg-zinc-200 transition-all duration-300 shadow-lg shadow-white/5"
+          >
+            Connect with Our Team
+            <div className="w-7 h-7 rounded-full bg-black flex items-center justify-center">
+              <ArrowUpRight className="w-3.5 h-3.5 text-white" />
+            </div>
+          </Link>
+          <Link
+            href="/services/explore"
+            className="inline-flex items-center gap-3 px-6 py-3 bg-transparent border border-zinc-700 text-white font-semibold text-xs md:text-sm tracking-wider rounded-full hover:bg-zinc-900 transition-all duration-300"
+          >
+            Explore Engineering Services
+          </Link>
+        </div>
+
+        <div className="flex flex-wrap items-center justify-center gap-3 lg:gap-6 mt-12 max-w-4xl mx-auto">
+          {["Software Engineering", "AI Innovation", "Cloud Engineering", "DevOps Automation", "24×7 Support", "Global Delivery"].map((highlight, idx) => (
+            <span key={idx} className="text-[10px] md:text-xs font-bold tracking-widest uppercase text-zinc-400 bg-zinc-900/50 px-4 py-2 rounded-full border border-zinc-800 backdrop-blur-sm shadow-[0_0_15px_rgba(255,255,255,0.03)] hover:border-rose-500/50 hover:text-white transition-colors duration-300 cursor-default">
+              {highlight}
+            </span>
+          ))}
+        </div>
       </Hero>
 
-      {/* 2. INDIAN CENTERS */}
+      {/* 2. OVERVIEW */}
+      <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60 relative">
+        <div className="max-w-4xl mx-auto w-full px-12 xl:px-8 relative z-10 text-center">
+          <Reveal>
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight leading-tight text-white mb-6">
+              Where Innovation Meets Engineering Excellence
+            </h2>
+            <p className="text-zinc-400 text-base md:text-lg leading-relaxed font-medium">
+              Our India Engineering Center serves as the foundation of Devopstrio&apos;s global delivery model. From enterprise software development and AI innovation to cloud engineering, DevOps automation, and managed services, our teams collaborate with clients worldwide to deliver secure, scalable, and future-ready digital solutions.
+            </p>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* 3. ENGINEERING EXCELLENCE */}
+      <section className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
+        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
+          <Reveal className="mb-16 text-center">
+            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">CORE DOMAINS</span>
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">Building Technology That Creates Business Value</h2>
+          </Reveal>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {engineeringExcellence.map((item, idx) => (
+              <div key={idx} className="p-6 bg-zinc-950/40 border border-zinc-900/80 rounded-2xl hover:border-rose-500/30 transition-all duration-300 flex flex-col items-center text-center group">
+                <div className="w-12 h-12 rounded-xl bg-rose-500/10 flex items-center justify-center mb-4 text-rose-500 group-hover:scale-110 transition-transform duration-300">
+                  {item.icon}
+                </div>
+                <h4 className="text-sm font-bold text-white">{item.title}</h4>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 4. CORE DELIVERY CAPABILITIES */}
       <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60 relative">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="mb-16 text-center">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">REGIONAL OFFICES</span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">Indian Centers</h2>
+            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">EXPERTISE</span>
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-6">Core Delivery Capabilities</h2>
           </Reveal>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {offices.map((office, idx) => (
-              <div key={idx} className="p-8 bg-zinc-950/40 border border-zinc-900/80 rounded-2xl hover:border-rose-500/30 transition-all duration-300 flex flex-col justify-between min-h-[160px]">
-                <div>
-                  <div className="flex items-center gap-2 mb-4">
-                    <MapPin className="w-4 h-4 text-rose-500" />
-                    <span className="text-xs font-mono text-rose-500 uppercase tracking-wide font-bold">{office.label}</span>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {deliveryCapabilities.map((cap, idx) => (
+              <div key={idx} className="p-8 bg-zinc-950/40 border border-zinc-900/80 rounded-2xl hover:bg-zinc-900/80 transition-all duration-300">
+                <h4 className="text-lg font-bold text-white mb-3 flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-rose-500 shrink-0" />
+                  {cap.title}
+                </h4>
+                <p className="text-sm text-zinc-400 font-medium leading-relaxed pl-4">{cap.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 5. SOFTWARE DEVELOPMENT LIFECYCLE */}
+      <section className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
+        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
+          <Reveal className="mb-16 text-center">
+            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">METHODOLOGY</span>
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">Software Development Lifecycle</h2>
+          </Reveal>
+          <div className="flex flex-col md:flex-row flex-wrap justify-center items-center gap-4 md:gap-6">
+            {lifecycleStages.map((stage, idx) => (
+              <React.Fragment key={idx}>
+                <div className="relative group w-full md:w-auto">
+                  <div className="px-6 py-4 bg-zinc-950/60 backdrop-blur-md border border-zinc-800/80 rounded-2xl text-center hover:border-orange-500/50 hover:-translate-y-1 transition-all duration-300 shadow-[0_8px_30px_rgb(0,0,0,0.4)]">
+                    <div className="text-orange-500 text-[10px] font-bold tracking-[0.2em] mb-1 font-mono group-hover:text-orange-400">0{idx + 1} //</div>
+                    <div className="text-sm font-bold text-white tracking-wide">{stage}</div>
                   </div>
-                  <h4 className="text-xl font-bold text-white mb-2">{office.city}</h4>
                 </div>
-                <p className="text-sm text-zinc-400 font-bold leading-relaxed">{office.details}</p>
-              </div>
+                {idx < lifecycleStages.length - 1 && (
+                  <ArrowUpRight className="w-5 h-5 text-zinc-700 rotate-45 hidden md:block" />
+                )}
+              </React.Fragment>
             ))}
           </div>
         </div>
       </section>
 
-      {/* 3. ENGINEERING CAPABILITIES */}
+      {/* 6. INNOVATION & R&D & 7. TECHNOLOGY EXPERTISE */}
+      <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60 relative">
+        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-20">
+          {/* Innovation & R&D */}
+          <div>
+            <Reveal className="mb-10">
+              <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">FUTURE READY</span>
+              <h2 className="text-2xl font-bold tracking-tight text-white mb-4">Driving Continuous Innovation</h2>
+            </Reveal>
+            <div className="grid grid-cols-2 gap-4">
+              {innovationRD.map((area, idx) => (
+                <div key={idx} className="flex items-center gap-3 p-3 rounded-lg border border-zinc-800/50 bg-zinc-900/20">
+                  <CheckCircle2 className="w-4 h-4 text-rose-500 shrink-0" />
+                  <span className="text-sm font-bold text-zinc-300">{area}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+          
+          {/* Tech Expertise Grid Condensed */}
+          <div>
+            <Reveal className="mb-10">
+              <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">STACK</span>
+              <h2 className="text-2xl font-bold tracking-tight text-white mb-4">Technology Expertise</h2>
+            </Reveal>
+            <div className="grid grid-cols-2 gap-x-6 gap-y-8">
+              <div>
+                <h3 className="text-[11px] font-mono text-zinc-500 uppercase tracking-widest mb-3 font-bold border-b border-zinc-800 pb-2">Cloud & DevOps</h3>
+                <div className="flex flex-wrap gap-2">
+                  {[...techExpertise.cloud, ...techExpertise.devops].slice(0, 8).map((tech, idx) => (
+                    <span key={idx} className="text-xs text-zinc-300 bg-zinc-900/50 border border-zinc-800 px-2 py-1 rounded">{tech}</span>
+                  ))}
+                </div>
+              </div>
+              <div>
+                <h3 className="text-[11px] font-mono text-zinc-500 uppercase tracking-widest mb-3 font-bold border-b border-zinc-800 pb-2">AI, Data & Dev</h3>
+                <div className="flex flex-wrap gap-2">
+                  {[...techExpertise.ai, ...techExpertise.development, ...techExpertise.data].slice(0, 10).map((tech, idx) => (
+                    <span key={idx} className="text-xs text-zinc-300 bg-zinc-900/50 border border-zinc-800 px-2 py-1 rounded">{tech}</span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 8. GLOBAL DELIVERY MODEL */}
       <section className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="mb-16 text-center">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">CAPABILITIES</span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">Engineering Capabilities</h2>
+            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">COLLABORATION</span>
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">Supporting Clients Around the World</h2>
           </Reveal>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {capabilities.map((cap, idx) => (
-              <div key={idx} className="p-6 bg-zinc-950/40 border border-zinc-900/80 rounded-xl hover:border-rose-500/30 transition-all duration-300">
-                <div className="w-8 h-8 rounded-lg bg-rose-500/10 flex items-center justify-center mb-4">
-                  <Cpu className="w-4 h-4 text-rose-500" />
-                </div>
-                <h4 className="text-base font-bold text-white mb-2">{cap.title}</h4>
-                <p className="text-sm text-zinc-300 font-medium leading-relaxed">{cap.desc}</p>
+          <div className="flex flex-col md:flex-row justify-between items-center relative gap-6 md:gap-0">
+            <div className="absolute top-1/2 left-0 w-full h-[1px] bg-zinc-800 hidden md:block -z-10" />
+            {globalDeliveryModelStages.map((stage, idx) => (
+              <div key={idx} className="relative flex flex-col items-center group w-full text-center">
+                <div className="w-4 h-4 rounded-full bg-zinc-900 border-2 border-rose-500 mb-4 z-10 shadow-[0_0_15px_rgba(225,29,72,0.5)]" />
+                <h4 className="text-xs lg:text-sm font-bold text-white mb-2 max-w-[100px]">{stage}</h4>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* 4. SRE SUPPORT CENTER */}
+      {/* 9. QUALITY & SECURITY & 10. TALENT CULTURE */}
       <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60 relative">
-        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-            <div className="lg:col-span-5">
-              <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">OPERATIONS</span>
-              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">SRE Support Center</h2>
-              <p className="text-zinc-300 text-base md:text-lg leading-relaxed font-medium">
-                Our SRE desks keep enterprise systems fully operational across timezones.
-              </p>
+        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-20">
+          <div>
+            <Reveal className="mb-10">
+              <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">ASSURANCE</span>
+              <h2 className="text-2xl font-bold tracking-tight text-white mb-4">Quality & Security</h2>
+            </Reveal>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {qualitySecurity.map((item, idx) => (
+                <div key={idx} className="flex items-center gap-3 p-3 rounded-lg border border-zinc-800/50 bg-zinc-900/20">
+                  <ShieldCheck className="w-4 h-4 text-rose-500 shrink-0" />
+                  <span className="text-sm font-bold text-zinc-300">{item}</span>
+                </div>
+              ))}
             </div>
-            <div className="lg:col-span-7 flex flex-col gap-4">
-              {sreSupport.map((item, idx) => (
-                <div key={idx} className="p-5 bg-zinc-950/30 border border-zinc-900/80 rounded-xl flex items-start gap-4 hover:border-rose-500/20 transition-all duration-300">
-                  <span className="w-1.5 h-1.5 rounded-full bg-rose-500 mt-2 shrink-0" />
-                  <p className="text-xs md:text-sm text-zinc-300 font-bold leading-relaxed">{item}</p>
+          </div>
+          <div>
+            <Reveal className="mb-10">
+              <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">PEOPLE</span>
+              <h2 className="text-2xl font-bold tracking-tight text-white mb-4">Building Great Technology Starts with Great People</h2>
+            </Reveal>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {talentCulture.map((item, idx) => (
+                <div key={idx} className="flex items-center gap-3 p-3 rounded-lg border border-zinc-800/50 bg-zinc-900/20">
+                  <CheckCircle2 className="w-4 h-4 text-rose-500 shrink-0" />
+                  <span className="text-sm font-bold text-zinc-300">{item}</span>
                 </div>
               ))}
             </div>
@@ -189,70 +377,44 @@ export default function IndiaOperationsPage() {
         </div>
       </section>
 
-      {/* 5. DATABASE UPKEEP */}
+      {/* 11. BUSINESS OUTCOMES */}
       <section className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-            <div className="lg:col-span-7 flex flex-col gap-4 lg:order-2">
-              {databaseUpkeep.map((item, idx) => (
-                <div key={idx} className="p-5 bg-zinc-950/30 border border-zinc-900/80 rounded-xl flex items-start gap-4 hover:border-rose-500/20 transition-all duration-300">
-                  <span className="w-1.5 h-1.5 rounded-full bg-rose-500 mt-2 shrink-0" />
-                  <p className="text-xs md:text-sm text-zinc-300 font-bold leading-relaxed">{item}</p>
-                </div>
-              ))}
-            </div>
-            <div className="lg:col-span-5 lg:order-1">
-              <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">MAINTENANCE</span>
-              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">Database Upkeep</h2>
-              <p className="text-zinc-300 text-base md:text-lg leading-relaxed font-medium">
-                We manage backups, rebuild indexes, and optimize query runs.
-              </p>
-            </div>
+          <Reveal className="mb-16 text-center">
+            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">VALUE DELIVERED</span>
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">Business Outcomes</h2>
+          </Reveal>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 text-center">
+            {outcomes.map((metric, idx) => (
+              <div key={idx} className="p-6 rounded-2xl border border-zinc-900 bg-zinc-950/30 flex flex-col justify-center items-center shadow-[0_0_20px_rgba(0,0,0,0.4)]">
+                <span className="text-2xl lg:text-3xl font-black text-white mb-2 tracking-tighter">{metric.value}</span>
+                <span className="text-[10px] lg:text-xs uppercase font-bold text-rose-500">{metric.label}</span>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* 6. INFRASTRUCTURE AUTOMATION */}
+      {/* 12. WHY DEVOPSTRIO INDIA */}
       <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60 relative">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="mb-16 text-center">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">AUTOMATION</span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">Infrastructure Automation</h2>
+            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">DIFFERENTIATOR</span>
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">Why Devopstrio India</h2>
           </Reveal>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {automationTools.map((tool, idx) => (
-              <div key={idx} className="p-6 bg-zinc-950/40 border border-zinc-900/80 rounded-xl hover:border-rose-500/30 transition-all duration-300">
-                <div className="w-8 h-8 rounded-lg bg-rose-500/10 flex items-center justify-center mb-4">
-                  <Terminal className="w-4 h-4 text-rose-500" />
-                </div>
-                <h4 className="text-base font-bold text-white mb-2">{tool.title}</h4>
-                <p className="text-sm text-zinc-300 font-medium leading-relaxed">{tool.desc}</p>
-              </div>
+          <div className="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto">
+            {whyDevopstrio.map((item, idx) => (
+              <span key={idx} className="px-6 py-3 rounded-full border border-zinc-800 bg-zinc-950/50 text-sm font-bold text-zinc-300 hover:text-white hover:border-rose-500 transition-colors flex items-center gap-2">
+                <CheckCircle2 className="w-4 h-4 text-rose-500" />
+                {item.title}
+              </span>
             ))}
           </div>
         </div>
       </section>
 
-      {/* 7. SCALE METRICS */}
-      <section className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
-        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
-          <Reveal className="mb-16 text-center">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">PERFORMANCE</span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">Scale Metrics</h2>
-          </Reveal>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-            {metrics.map((m, idx) => (
-              <div key={idx} className="p-8 bg-zinc-950/20 border border-zinc-900/60 rounded-xl hover:border-rose-500/20 transition-all duration-300 flex flex-col justify-center items-center">
-                <span className="text-4xl font-black text-white tracking-tight mb-2">{m.value}</span>
-                <span className="text-[10px] font-mono text-rose-500 uppercase tracking-widest font-bold">{m.label}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* FAQs */}
-      <section id="faq" className="w-full py-20 md:py-28 bg-[#030303] text-white relative border-b border-zinc-900/60">
+      {/* 13. FAQs */}
+      <section id="faq" className="w-full py-20 md:py-28 bg-black text-white relative border-b border-zinc-900/60">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="max-w-3xl mb-16">
             <div className="flex items-center gap-2 mb-4">
@@ -264,7 +426,7 @@ export default function IndiaOperationsPage() {
               Questions we get <span className="text-white font-bold bg-gradient-to-r from-red-655 via-rose-600 to-rose-500 bg-clip-text text-transparent">asked every day</span>.
             </h2>
             <p className="text-zinc-400 text-sm leading-relaxed font-bold">
-              Everything you need to know about our India Operations. Can&apos;t find what you&apos;re looking for? Reach out to our team — we respond to every question personally.
+              Everything you need to know about our India Engineering Center.
             </p>
           </Reveal>
 
@@ -294,42 +456,35 @@ export default function IndiaOperationsPage() {
               );
             })}
           </div>
-
-          {/* Below FAQ callout */}
-          <Reveal delay={0.2}>
-            <div className="border border-zinc-900 bg-zinc-950/20 p-6 rounded-2xl flex flex-col sm:flex-row justify-between items-center gap-4">
-              <p className="text-zinc-400 text-xs md:text-sm font-bold">
-                Still have questions? Don&apos;t sit with them. Reach out to our team — we respond to every message personally.
-              </p>
-              <a
-                href="mailto:info@devopstrioglobal.com"
-                className="gap-2 inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase border border-zinc-850 hover:border-zinc-750 bg-zinc-950/60 hover:bg-zinc-900 text-white transition-all duration-300 hover:-translate-y-0.5"
-              >
-                Contact Our Engineers <ArrowUpRight size={12} />
-              </a>
-            </div>
-          </Reveal>
         </div>
       </section>
 
-      {/* 8. CTA SECTION */}
-      <section className="w-full py-32 bg-black text-center relative overflow-hidden">
+      {/* 14. CTA SECTION */}
+      <section className="w-full py-32 bg-[#030303] text-center relative overflow-hidden">
         <div className="absolute inset-0 opacity-[0.015] pointer-events-none" style={{ backgroundImage: "radial-gradient(circle, #fff 1px, transparent 1px)", backgroundSize: "32px 32px" }} />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[300px] bg-[radial-gradient(circle_at_center,rgba(225,29,72,0.025),transparent_60%)] pointer-events-none" />
         <div className="max-w-3xl mx-auto px-12 xl:px-8 relative z-10">
-          <h2 className="text-3xl md:text-5xl font-black mb-6 tracking-tight">Upgrade Your SRE Operations</h2>
+          <h2 className="text-3xl md:text-5xl font-light mb-6 tracking-tight">Build the Future with Devopstrio Engineering</h2>
           <p className="text-zinc-300 text-sm md:text-base font-medium mb-10 max-w-lg mx-auto leading-relaxed">
-            Deploy certified engineers to automate patching, monitor clusters, and resolve incidents.
+            Partner with our India Engineering Center to accelerate software development, cloud transformation, AI innovation, and enterprise modernization through world-class engineering expertise.
           </p>
-          <Link
-            href="/contact"
-            className="inline-flex items-center gap-3 pl-6 pr-3 py-3 bg-white text-black font-semibold text-xs md:text-sm tracking-wider rounded-full hover:bg-zinc-200 transition-all duration-300 shadow-[0_0_30px_rgba(255,255,255,0.05)] hover:shadow-[0_0_40px_rgba(225,29,72,0.2)]"
-          >
-            Connect With SRE Leads
-            <div className="w-7 h-7 rounded-full bg-black flex items-center justify-center">
-              <ArrowUpRight className="w-3.5 h-3.5 text-white" />
-            </div>
-          </Link>
+          <div className="flex flex-wrap items-center justify-center gap-4">
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-3 pl-6 pr-3 py-3 bg-white text-black font-semibold text-xs md:text-sm tracking-wider rounded-full hover:bg-zinc-200 transition-all duration-300 shadow-[0_0_30px_rgba(255,255,255,0.05)] hover:shadow-[0_0_40px_rgba(225,29,72,0.2)]"
+            >
+              Contact Our Team
+              <div className="w-7 h-7 rounded-full bg-black flex items-center justify-center">
+                <ArrowUpRight className="w-3.5 h-3.5 text-white" />
+              </div>
+            </Link>
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-3 px-6 py-3 bg-transparent border border-zinc-700 text-white font-semibold text-xs md:text-sm tracking-wider rounded-full hover:bg-zinc-900 transition-all duration-300"
+            >
+              Start Your Project
+            </Link>
+          </div>
         </div>
       </section>
 

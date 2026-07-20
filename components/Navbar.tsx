@@ -254,10 +254,12 @@ const ecosystemCategories = [
     items: [
       { name: "Delivery Overview", desc: "Distributed international offices and hubs", href: "/ecosystem/global-delivery" },
       { name: "United Kingdom Hub", desc: "Local consulting meeting UK security rules", href: "/ecosystem/global-delivery/united-kingdom-hub" },
+      { name: "United States Operations", desc: "US-based consulting and enterprise solutions", href: "/ecosystem/global-delivery/united-states-operations" },
       { name: "India Operations", desc: "SRE support center and database upkeep tasks", href: "/ecosystem/global-delivery/india-operations" },
       { name: "Europe Hub", desc: "GDPR privacy audits and regional host sites", href: "/ecosystem/global-delivery/europe-hub" },
       { name: "Follow-the-Sun Support", desc: "Continuous support schedules with zero burnout", href: "/ecosystem/global-delivery/follow-the-sun-support" },
-      { name: "Managed Services Center", desc: "Ansible OS patches and automated backups", href: "/ecosystem/global-delivery/managed-services-center" }
+      { name: "Managed Services Center", desc: "Ansible OS patches and automated backups", href: "/ecosystem/global-delivery/managed-services-center" },
+      { name: "Global Delivery Model", desc: "Scalable global engineering resource distribution", href: "/ecosystem/global-delivery/global-delivery-model" }
     ]
   },
   {
@@ -268,9 +270,11 @@ const ecosystemCategories = [
       { name: "Engineering Culture", desc: "Decoupled software architecture guidelines", href: "/ecosystem/engineering-excellence" },
       { name: "Software Engineering", desc: "Clean domains and decoupled APIs templates", href: "/ecosystem/engineering-excellence/software-engineering" },
       { name: "Platform Engineering", desc: "Developer portal templates accelerating onboard", href: "/ecosystem/engineering-excellence/platform-engineering" },
-      { name: "Site Reliability Engineering", desc: "OpenTelemetry tracing and SLO alert rules", href: "/ecosystem/engineering-excellence/site-reliability-engineering" },
+      { name: "Solution Architecture", desc: "Designing scalable, secure, and future-ready architectures", href: "/ecosystem/engineering-excellence/solution-architecture" },
       { name: "DevSecOps", desc: "Continuous Trivy scanner blocks inside pipelines", href: "/ecosystem/engineering-excellence/devsecops" },
-      { name: "Quality Engineering", desc: "Playwright browser tests and k6 load tests", href: "/ecosystem/engineering-excellence/quality-engineering" }
+      { name: "Site Reliability Engineering", desc: "OpenTelemetry tracing and SLO alert rules", href: "/ecosystem/engineering-excellence/site-reliability-engineering" },
+      { name: "Quality Engineering", desc: "Playwright browser tests and k6 load tests", href: "/ecosystem/engineering-excellence/quality-engineering" },
+      { name: "Engineering Operations", desc: "Optimizing engineering processes, delivery, and governance", href: "/ecosystem/engineering-excellence/engineering-operations" }
     ]
   },
   {
@@ -279,6 +283,7 @@ const ecosystemCategories = [
     href: "/ecosystem/accelerators-frameworks",
     items: [
       { name: "Accelerators Overview", desc: "Declarative scripts and custom repositories", href: "/ecosystem/accelerators-frameworks" },
+      { name: "Landing Zone Portal", desc: "Enterprise Cloud Landing Zones & Terraform IaC modules", href: "/ecosystem/accelerators-frameworks/landing-zone" },
       { name: "Cloud Accelerator", desc: "Terraform cloud landing zones in minutes", href: "/ecosystem/accelerators-frameworks/cloud-accelerator" },
       { name: "DevOps Accelerator", desc: "GitHub Actions caching and Helm chart modules", href: "/ecosystem/accelerators-frameworks/devops-accelerator" },
       { name: "AI Framework", desc: "FastAPI and vector lookup search layouts", href: "/ecosystem/accelerators-frameworks/ai-framework" },
@@ -303,7 +308,7 @@ const ecosystemCategories = [
 
 const ecosystemMobileList = [
   { name: "Ecosystem Overview", href: "/ecosystem" },
-  { name: "Landing Zone", href: "/ecosystem/landing-zone" },
+  { name: "Landing Zone Portal", href: "/ecosystem/accelerators-frameworks/landing-zone" },
   { name: "Devopstrio's AI", href: "https://ai.devopstrio.co.uk" },
   { name: "Partnerships", href: "/ecosystem/partnerships" },
   { name: "Innovation Labs", href: "/ecosystem/innovation-labs" },
@@ -602,7 +607,7 @@ export function Navbar() {
                       <div className="flex items-center gap-2">
                         <span className="text-zinc-500">Chat now:</span>
                         <a
-                          href="mailto:info@devopstrio.com"
+                          href={`mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL}`}
                           className="hover:text-rose-500 transition-colors text-zinc-400"
                         >
                           Email
@@ -780,7 +785,7 @@ export function Navbar() {
                       <div className="flex items-center gap-2">
                         <span className="text-zinc-500">Chat now:</span>
                         <a
-                          href="mailto:info@devopstrio.com"
+                          href={`mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL}`}
                           className="hover:text-rose-500 transition-colors text-zinc-400"
                         >
                           Email
@@ -1004,7 +1009,7 @@ export function Navbar() {
                       <div className="flex items-center gap-2">
                         <span className="text-zinc-500">Chat now:</span>
                         <a
-                          href="mailto:info@devopstrio.com"
+                          href={`mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL}`}
                           className="hover:text-rose-500 transition-colors text-zinc-400"
                         >
                           Email
@@ -1205,7 +1210,7 @@ export function Navbar() {
                       <div className="flex items-center gap-2">
                         <span className="text-zinc-500">Chat now:</span>
                         <a
-                          href="mailto:info@devopstrio.com"
+                          href={`mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL}`}
                           className="hover:text-rose-500 transition-colors text-zinc-400"
                         >
                           Email
@@ -1385,7 +1390,7 @@ export function Navbar() {
                       <div className="flex items-center gap-2">
                         <span className="text-zinc-500">Chat now:</span>
                         <a
-                          href="mailto:info@devopstrio.com"
+                          href={`mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL}`}
                           className="hover:text-rose-500 transition-colors text-zinc-400"
                         >
                           Email

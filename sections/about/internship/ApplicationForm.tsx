@@ -375,7 +375,7 @@ export const ApplicationForm = () => {
 
             {/* Email link */}
             <a
-              href="mailto:internship@devopstrioglobal.com"
+              href={`mailto:${process.env.NEXT_PUBLIC_INTERNSHIP_EMAIL}`}
               className="text-base sm:text-lg font-bold text-white hover:text-rose-500 transition-colors tracking-tight font-mono"
             >
               internship@devopstrioglobal.com

@@ -1,7 +1,7 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
-import { Reveal } from "@/components/ui/Reveal";
+import React, { useState } from "react";
+import Link from "next/link";
 import {
   Server,
   Cpu,
@@ -9,7 +9,6 @@ import {
   Layers,
   GitBranch,
   Star,
-  ArrowUpRight,
   Activity,
   Terminal,
   Settings,
@@ -21,547 +20,380 @@ import {
   Boxes,
   Database,
   CloudLightning,
-  Plus,
-  Minus,
   Search,
   Check,
   ExternalLink,
   Code,
   Github,
-  GitFork
+  GitFork,
+  Cloud,
+  FileCode,
+  Workflow,
+  Eye,
+  Sliders,
+  HardDrive,
+  Key,
+  Flame,
+  X,
+  Play,
+  FileText,
+  HelpCircle,
+  Plus,
+  Minus,
+  Download,
+  ArrowUpRight
 } from "lucide-react";
-import Link from "next/link";
+import { Reveal } from "@/components/ui/Reveal";
 
-interface Blueprint {
+// --- Types ---
+interface RepoItem {
+  id: string;
   name: string;
   desc: string;
-  tech: string;
+  language: string;
+  framework: string;
+  version: string;
+  status: string;
   stars: number;
-  forks: number;
-  url: string;
-  pushedAt: string;
-  categories: string[];
+  rating: string;
+  lastUpdated: string;
+  tags: string[];
+  cloud: "Azure" | "AWS" | "Google Cloud" | "Oracle Cloud" | "Multi-Cloud";
+  category: "Landing Zone" | "Terraform" | "Networking" | "Security" | "Monitoring";
+  features: string[];
+  codeSnippet: string;
+  docsContent: string;
 }
 
-// Map GitHub org topics and name fragments to categories
-function mapTopicsToCategories(repo: any) {
-  const topics = (repo.topics || []).map((t: any) => t.toLowerCase());
-  const name = repo.name.toLowerCase();
-  const cats = new Set<string>();
+export default function EnterpriseLandingZonePage() {
+  const [activeFilter, setActiveFilter] = useState<string>("All");
+  const [selectedRepoModal, setSelectedRepoModal] = useState<RepoItem | null>(null);
+  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
+  const [demoModalOpen, setDemoModalOpen] = useState<boolean>(false);
+  const [demoSubmitted, setDemoSubmitted] = useState<boolean>(false);
 
-  const matches = (topicList: string[], nameFragments: string[] = []) =>
-    topics.some((t: any) => topicList.includes(t)) || nameFragments.some((f: string) => name.includes(f));
+  // --- KPI Stats ---
+  const kpis = [
+    { value: "99.9%", label: "Availability Standard" },
+    { value: "100%", label: "IaC Automation" },
+    { value: "4", label: "Multi-Cloud Platforms" },
+    { value: "50+", label: "Terraform Modules" }
+  ];
 
-  if (matches(['landing-zone','caf','governance','subscription'], ['landingzone','landing-zone'])) cats.add('landing-zone');
-  if (matches(['ai','openai','llm','rag','genai','fabric','databricks','ml','mlops'], ['ai','data','llm','rag','genai','mlflow','lakehouse'])) cats.add('ai');
-  if (matches(['security','zero-trust','defender','iam','compliance','siem','devsecops'], ['security','trust','zero-trust','compliance','siem','vault','privileged'])) cats.add('security');
-  if (matches(['vdi','avd','w365','desktop','fslogix'], ['avd','vdi','w365','windows-365'])) cats.add('vdi');
-  if (matches(['fintech','healthcare','telecom','retail','industry','bank','government'], ['lz','financial','healthcare','insurance','automotive'])) cats.add('industry');
-  if (matches(['devops','terraform','bicep','actions','cicd','yaml','gitops','ansible','kubernetes','docker'], ['devops','tf-','terraform','bicep','platform','k8s','helm','gitops'])) cats.add('devops');
-
-  if (cats.size === 0) cats.add('devops');
-  return Array.from(cats);
-}
-
-// 1. Holographic Cyber Network Mesh Component for the Hero Avatar
-const HolographicGrid = () => {
-  return (
-    <div className="relative w-full h-[320px] md:h-[450px] flex items-center justify-center overflow-hidden">
-      {/* Background radial glows */}
-      <div className="absolute inset-0 bg-gradient-to-r from-rose-500/10 via-violet-600/10 to-transparent blur-3xl rounded-full animate-pulse pointer-events-none" />
-      <div className="absolute w-[200px] h-[200px] bg-rose-600/5 rounded-full blur-[80px] top-1/4 left-1/4 pointer-events-none" />
-
-      {/* Grid Canvas */}
-      <svg className="w-full h-full opacity-70" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <linearGradient id="grid-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#E11D48" stopOpacity="0.4" />
-            <stop offset="50%" stopColor="#8B5CF6" stopOpacity="0.2" />
-            <stop offset="100%" stopColor="#E11D48" stopOpacity="0" />
-          </linearGradient>
-          <radialGradient id="node-glow" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stopColor="#E11D48" stopOpacity="1" />
-            <stop offset="100%" stopColor="#E11D48" stopOpacity="0" />
-          </radialGradient>
-        </defs>
-
-        {/* 3D perspective lines */}
-        {[...Array(15)].map((_, i) => (
-          <line
-            key={`h-${i}`}
-            x1="0"
-            y1={i * 28}
-            x2="400"
-            y2={i * 28}
-            stroke="url(#grid-grad)"
-            strokeWidth="0.5"
-            className="animate-pulse"
-            style={{ animationDelay: `${i * 150}ms`, animationDuration: '4s' }}
-          />
-        ))}
-        {[...Array(15)].map((_, i) => (
-          <line
-            key={`v-${i}`}
-            x1={i * 28}
-            y1="0"
-            x2={i * 28}
-            y2="400"
-            stroke="url(#grid-grad)"
-            strokeWidth="0.5"
-            className="animate-pulse"
-            style={{ animationDelay: `${i * 200}ms`, animationDuration: '4s' }}
-          />
-        ))}
-
-        {/* Diagonal wireframe connections */}
-        <path
-          d="M 120 120 L 200 170 L 280 120 L 240 240 L 160 240 L 120 120 Z M 200 170 L 200 290 M 120 120 L 160 240 M 280 120 L 240 240"
-          stroke="#8B5CF6"
-          strokeWidth="1"
-          strokeDasharray="4 2"
-          className="opacity-60"
-        />
-
-        {/* Outer orbital rings */}
-        <circle cx="200" cy="180" r="90" stroke="#E11D48" strokeWidth="0.5" strokeDasharray="6 4" className="animate-spin" style={{ animationDuration: '40s' }} />
-        <circle cx="200" cy="180" r="130" stroke="#8B5CF6" strokeWidth="0.5" strokeDasharray="3 6" className="animate-spin" style={{ animationDuration: '60s', animationDirection: 'reverse' }} />
-
-        {/* Holographic face wireframe representation */}
-        <path
-          d="M 160 140 C 160 90, 240 90, 240 140 C 240 190, 220 210, 220 230 C 220 240, 210 250, 200 250 C 190 250, 180 240, 180 230 C 180 210, 160 190, 160 140 Z"
-          stroke="#E11D48"
-          strokeWidth="1.5"
-          className="animate-pulse"
-          style={{ animationDuration: '2.5s' }}
-        />
-        <path
-          d="M 190 250 L 190 290 L 160 320 M 210 250 L 210 290 L 240 320"
-          stroke="#E11D48"
-          strokeWidth="1"
-          className="opacity-75"
-        />
-        
-        {/* Pulsating system nodes */}
-        <circle cx="120" cy="120" r="4.5" fill="#E11D48" className="animate-ping" style={{ animationDuration: '2s' }} />
-        <circle cx="120" cy="120" r="3" fill="#E11D48" />
-
-        <circle cx="200" cy="170" r="4.5" fill="#8B5CF6" className="animate-ping" style={{ animationDuration: '3s' }} />
-        <circle cx="200" cy="170" r="3" fill="#8B5CF6" />
-
-        <circle cx="280" cy="120" r="4.5" fill="#E11D48" className="animate-ping" style={{ animationDuration: '2.2s' }} />
-        <circle cx="280" cy="120" r="3" fill="#E11D48" />
-
-        <circle cx="240" cy="240" r="4.5" fill="#8B5CF6" className="animate-ping" style={{ animationDuration: '2.8s' }} />
-        <circle cx="240" cy="240" r="3" fill="#8B5CF6" />
-
-        <circle cx="160" cy="240" r="4.5" fill="#E11D48" className="animate-ping" style={{ animationDuration: '2.4s' }} />
-        <circle cx="160" cy="240" r="3" fill="#E11D48" />
-
-        <circle cx="200" cy="290" r="4.5" fill="#E11D48" className="animate-ping" style={{ animationDuration: '2.6s' }} />
-        <circle cx="200" cy="290" r="3" fill="#E11D48" />
-      </svg>
-
-      {/* Floating particles */}
-      <div className="absolute top-16 left-16 w-1.5 h-1.5 bg-rose-500 rounded-full animate-bounce" style={{ animationDuration: '2.8s' }} />
-      <div className="absolute bottom-16 right-16 w-1.5 h-1.5 bg-violet-500 rounded-full animate-bounce" style={{ animationDuration: '3.6s' }} />
-      <div className="absolute top-1/2 right-12 w-1 h-1 bg-white rounded-full animate-pulse" />
-    </div>
-  );
-};
-
-export default function EcosystemLandingZonePage() {
-  const [activeTab, setActiveTab] = useState("All");
-  const [searchQuery, setSearchQuery] = useState("");
-  const [openAccordion, setOpenAccordion] = useState<number | null>(null);
-
-  const [blueprints, setBlueprints] = useState<Blueprint[]>([]);
-  const [loading, setLoading] = useState(true);
-
-  // Fallback static blueprints in case of API issues
-  const fallbackBlueprints: Blueprint[] = [
+  // --- Repository Database ---
+  const repositories: RepoItem[] = [
     {
-      name: "terraform-aws-landing-zone",
-      desc: "Hardened multi-account landing zone blueprint based on AWS Control Tower, core hub-and-spoke Shared VPC, and security logging.",
-      tech: "HCL",
-      stars: 148,
-      forks: 38,
-      url: "https://github.com/Devopstrio/terraform-aws-landing-zone",
-      pushedAt: new Date().toISOString(),
-      categories: ["landing-zone", "devops"]
+      id: "repo-azure-lz",
+      name: "Azure Enterprise Landing Zone",
+      desc: "Production-ready Azure CAF Enterprise Landing Zone topology using Terraform. Includes Hub-and-Spoke VNet, Log Analytics, Azure Firewall, Azure Defender, and Privileged Identity Management.",
+      language: "HCL / Terraform",
+      framework: "Azure CAF",
+      version: "v2.4",
+      status: "🟢 Active",
+      stars: 342,
+      rating: "★★★★★",
+      lastUpdated: "2 days ago",
+      tags: ["Azure", "Terraform", "Networking", "Security", "Monitoring"],
+      cloud: "Azure",
+      category: "Landing Zone",
+      features: ["Documentation", "Modules", "Examples", "Pipelines", "Releases"],
+      codeSnippet: `module "enterprise_landing_zone" {
+  source  = "Devopstrio/caf-landing-zone/azurerm"
+  version = "2.4.0"
+
+  root_parent_id   = var.root_management_group_id
+  root_id          = "devopstrio"
+  root_name        = "Devopstrio Global Enterprise"
+  deploy_core_landing_zones = true
+  
+  security_contact_email = "security@devopstrio.com"
+  log_analytics_retention_days = 90
+}`,
+      docsContent: "Comprehensive deployment guide for Azure Cloud Adoption Framework (CAF) Enterprise Landing Zones. Covers management group hierarchy, subscription vending machine, central log analytics workspace, and Azure Firewall policy automation."
     },
     {
-      name: "terraform-gcp-landing-zone",
-      desc: "Enterprise GCP base landing zone featuring resource folder hierarchy, Shared VPC subnets, and Cloud Identity Access Control.",
-      tech: "HCL",
-      stars: 112,
-      forks: 29,
-      url: "https://github.com/Devopstrio/terraform-gcp-landing-zone",
-      pushedAt: new Date().toISOString(),
-      categories: ["landing-zone", "devops"]
+      id: "repo-aws-lz",
+      name: "AWS Enterprise Landing Zone",
+      desc: "Hardened multi-account AWS landing zone blueprint leveraging Control Tower, AWS Organizations, Transit Gateway, and GuardDuty centralization.",
+      language: "HCL / Terraform",
+      framework: "AWS Control Tower",
+      version: "v1.8",
+      status: "🟢 Active",
+      stars: 289,
+      rating: "★★★★☆",
+      lastUpdated: "5 days ago",
+      tags: ["AWS", "Terraform", "Networking", "Security"],
+      cloud: "AWS",
+      category: "Landing Zone",
+      features: ["Documentation", "Modules", "Examples", "Pipelines", "Releases"],
+      codeSnippet: `module "aws_landing_zone" {
+  source  = "Devopstrio/control-tower-lz/aws"
+  version = "1.8.2"
+
+  organization_unit_name = "Core-Workloads"
+  sso_admin_group        = "CloudArchitects"
+  enable_guardduty       = true
+  enable_security_hub    = true
+  transit_gateway_asn    = 64512
+}`,
+      docsContent: "AWS Control Tower custom Landing Zone engine with automated Account Factory setup, IAM Identity Center (AWS SSO) integration, and Centralized Logging S3 buckets."
     },
     {
-      name: "kubernetes-hardened-eks",
-      desc: "Production-ready EKS configuration featuring Cilium eBPF network policies, IRSA role mapping, and sealed-secret injections.",
-      tech: "Go / Shell",
-      stars: 245,
-      forks: 56,
-      url: "https://github.com/Devopstrio/kubernetes-hardened-eks",
-      pushedAt: new Date().toISOString(),
-      categories: ["kubernetes", "devops"]
+      id: "repo-gcp-lz",
+      name: "Google Cloud Landing Zone",
+      desc: "Standardized GCP organization hierarchy with Shared VPC networks, Cloud IAM roles, Cloud Armor policies, and Vertex AI private VPC perimeters.",
+      language: "HCL / Terraform",
+      framework: "GCP Foundations",
+      version: "v2.1",
+      status: "🟢 Active",
+      stars: 215,
+      rating: "★★★★★",
+      lastUpdated: "3 days ago",
+      tags: ["Google Cloud", "Terraform", "Networking", "Security"],
+      cloud: "Google Cloud",
+      category: "Landing Zone",
+      features: ["Documentation", "Modules", "Examples", "Pipelines", "Releases"],
+      codeSnippet: `module "gcp_landing_zone" {
+  source  = "Devopstrio/foundations/google"
+  version = "2.1.0"
+
+  org_id          = "1234567890"
+  billing_account = "012345-6789AB-CDEF01"
+  shared_vpc_host_project = "devopstrio-vpc-host"
+  enable_vertex_ai_perimeter = true
+}`,
+      docsContent: "GCP Cloud Foundation Fabric module supporting multi-folder landing zone hierarchy, Shared VPC subnets, Organization Policy constraints, and VPC Service Controls."
     },
     {
-      name: "security-cilium-mesh",
-      desc: "High-performance network security engine powered by eBPF. Enables transparent encryption, Hubble metrics, and L7 policies.",
-      tech: "Go",
-      stars: 204,
-      forks: 39,
-      url: "https://github.com/Devopstrio/security-cilium-mesh",
-      pushedAt: new Date().toISOString(),
-      categories: ["security", "kubernetes"]
+      id: "repo-oracle-lz",
+      name: "Oracle Cloud Landing Zone",
+      desc: "Enterprise OCI Compartment structure, VCN peering, Identity Domain policies, and Cloud Guard baseline security guardrails.",
+      language: "HCL / Terraform",
+      framework: "OCI CIS Foundations",
+      version: "v1.5",
+      status: "🟢 Active",
+      stars: 168,
+      rating: "★★★★☆",
+      lastUpdated: "1 week ago",
+      tags: ["Oracle Cloud", "Terraform", "Networking", "Security"],
+      cloud: "Oracle Cloud",
+      category: "Landing Zone",
+      features: ["Documentation", "Modules", "Examples", "Pipelines", "Releases"],
+      codeSnippet: `module "oci_landing_zone" {
+  source  = "Devopstrio/cis-landing-zone/oci"
+  version = "1.5.0"
+
+  tenancy_ocid     = var.tenancy_ocid
+  compartment_name = "Devopstrio-Production-LZ"
+  enable_cloud_guard = true
+}`,
+      docsContent: "OCI Enterprise Landing Zone conforming to CIS Oracle Cloud Infrastructure Foundations Benchmark. Automates compartment structure, VCN hub, and security zones."
     },
     {
-      name: "ai-rag-private-network",
-      desc: "Secure private database perimeters for GenAI/LLM pipelines. Configures isolated PgVector and GPU network boundaries.",
-      tech: "Python",
-      stars: 276,
-      forks: 74,
-      url: "https://github.com/Devopstrio/ai-rag-private-network",
-      pushedAt: new Date().toISOString(),
-      categories: ["ai", "devops"]
+      id: "repo-networking",
+      name: "Hub-and-Spoke Networking Module",
+      desc: "Cross-cloud Virtual Network and Transit Gateway orchestration module with automated BGP peering, Network Security Groups, and Cloud Firewalls.",
+      language: "HCL / Terraform",
+      framework: "Terraform Module",
+      version: "v1.3",
+      status: "🟢 Active",
+      stars: 194,
+      rating: "★★★★★",
+      lastUpdated: "Yesterday",
+      tags: ["Terraform", "Networking", "Azure", "AWS"],
+      cloud: "Multi-Cloud",
+      category: "Networking",
+      features: ["Documentation", "Modules", "Examples", "Pipelines", "Releases"],
+      codeSnippet: `module "hub_spoke_network" {
+  source  = "Devopstrio/hub-spoke/network"
+  version = "1.3.0"
+
+  hub_vnet_cidr   = "10.0.0.0/16"
+  spoke_vnets     = ["10.1.0.0/16", "10.2.0.0/16"]
+  enable_azure_firewall = true
+}`,
+      docsContent: "Reusable network architecture module provisioning Hub VNets/VPCs, Azure ExpressRoute / AWS DirectConnect gateway attachments, and central egress firewalls."
+    },
+    {
+      id: "repo-security",
+      name: "Zero Trust Security Baseline Module",
+      desc: "Automated SIEM logging, Privileged Access Management, Defender for Cloud policies, and HashiCorp Vault key vault integrations.",
+      language: "HCL / Terraform",
+      framework: "Zero Trust",
+      version: "v2.1",
+      status: "🟢 Active",
+      stars: 278,
+      rating: "★★★★★",
+      lastUpdated: "3 days ago",
+      tags: ["Security", "Terraform", "Azure", "AWS"],
+      cloud: "Multi-Cloud",
+      category: "Security",
+      features: ["Documentation", "Modules", "Examples", "Pipelines", "Releases"],
+      codeSnippet: `module "security_baseline" {
+  source  = "Devopstrio/security-baseline/tf"
+  version = "2.1.0"
+
+  enable_sentinel_siem = true
+  enable_key_vault_hsm = true
+  enforce_mfa_policies = true
+}`,
+      docsContent: "Enterprise security baseline module deploying Azure Sentinel SIEM / AWS SecurityHub, Key Vault HSMs, RBAC policies, and automated compliance auditing."
     }
   ];
 
-  // Fetch GitHub repos dynamically
-  useEffect(() => {
-    async function fetchRepos() {
-      setLoading(true);
-      const token = process.env.NEXT_PUBLIC_GITHUB_TOKEN || "";
-      const org = "Devopstrio";
-      const headers: HeadersInit = {
-        'Accept': 'application/vnd.github.v3+json'
-      };
-      if (token) {
-        headers['Authorization'] = `token ${token}`;
-      }
-
-      try {
-        let allRepos: any[] = [];
-        let page = 1;
-
-        while (page <= 10) {
-          const res = await fetch(
-            `https://api.github.com/orgs/${org}/repos?per_page=100&page=${page}&sort=pushed&type=public`,
-            { headers }
-          );
-
-          if (!res.ok) throw new Error(`GitHub API error: ${res.status}`);
-
-          const batch = await res.json();
-          if (!batch.length) break;
-
-          allRepos = allRepos.concat(batch.filter((r: any) => !r.fork && !r.archived));
-          page++;
-        }
-
-        if (allRepos.length > 0) {
-          const mapped: Blueprint[] = allRepos.map(r => ({
-            name: r.name,
-            desc: r.description || "Enterprise acceleration blueprint by Devopstrio.",
-            tech: r.language || "Documentation",
-            stars: r.stargazers_count || 0,
-            forks: r.forks_count || 0,
-            url: r.html_url,
-            pushedAt: r.pushed_at,
-            categories: mapTopicsToCategories(r)
-          }));
-          setBlueprints(mapped);
-        } else {
-          setBlueprints(fallbackBlueprints);
-        }
-      } catch (err) {
-        console.warn("Using fallback blueprints due to API issue:", err);
-        setBlueprints(fallbackBlueprints);
-      } finally {
-        setLoading(false);
-      }
-    }
-    fetchRepos();
-  }, []);
-
-  // Cloud Architecture Tiers mapping the row of cards under Hero
-  const architectureTiers = [
-    {
-      title: "Developer Sandbox",
-      subtitle: "Best for prototyping & exploration",
-      price: "Open Source",
-      accent: "border-zinc-800 hover:border-zinc-700 bg-zinc-950/20",
-      buttonText: "Download Code",
-      isPopular: false,
-      features: [
-        "Single Cloud Account / Sandbox Setup",
-        "Standard public network egress",
-        "Default VPC configurations",
-        "Pre-configured IAM basic profiles",
-        "GitHub actions deployment recipes"
-      ]
-    },
-    {
-      title: "Standard Landing Zone",
-      subtitle: "Best for growing growth startup bases",
-      price: "Enterprise Core",
-      accent: "border-rose-500 bg-rose-500/[0.02] shadow-[0_0_30px_rgba(244,63,94,0.1)]",
-      buttonText: "Deploy Baseline Blueprint",
-      isPopular: true,
-      features: [
-        "3 Cloud Accounts (Dev, Staging, Prod)",
-        "Unified Identity Integration (AWS SSO / Okta)",
-        "Hub-and-Spoke Shared VPC Networks",
-        "Central Log Archive & Audit Trails",
-        "Standard compliance guardrails"
-      ]
-    },
-    {
-      title: "Enterprise Platform",
-      subtitle: "Best for scale and global operations",
-      price: "Enterprise Scale",
-      accent: "border-zinc-800 hover:border-zinc-700 bg-zinc-950/20",
-      buttonText: "Request Architecture Specs",
-      isPopular: false,
-      features: [
-        "Multi-Account Organizations Structure",
-        "SAML/OIDC identity with SSO providers",
-        "Transit Gateway & secure corporate VPNs",
-        "HashiCorp Vault secret injection layers",
-        "Automated drift detection & remediation"
-      ]
-    },
-    {
-      title: "Sovereign / AI Ready",
-      subtitle: "Best for strictly regulated & GPU workloads",
-      price: "Custom Secure",
-      accent: "border-zinc-800 hover:border-zinc-700 bg-zinc-950/20",
-      buttonText: "Consult Platform Architect",
-      isPopular: false,
-      features: [
-        "Hardened NVIDIA GPU nodes configuration",
-        "Private local vector database zones",
-        "Data Residency rules compliance",
-        "Zero-Trust container meshes (Cilium)",
-        "Dedicated Devopstrio co-engineering"
-      ]
-    }
-  ];
-
-  const faqItems = [
-    {
-      q: "What is an Enterprise Landing Zone?",
-      a: "An Enterprise Landing Zone is a pre-configured framework that defines a secure, compliant multi-account environment in the cloud. It provides foundational configurations for network topologies, identity management, logging, security guardrails, and financial budgeting to ensure that application teams can deploy workloads quickly and safely."
-    },
-    {
-      q: "How does the AI Landing Zone differ from standard landing zones?",
-      a: "Standard landing zones focus on general cloud administration. Our AI Landing Zone includes specialized infrastructure patterns to run Generative AI and LLM architectures. This includes private data perimeters to prevent company data leakage to external models, optimized GPU scaling configurations, and vector database baselines."
-    },
-    {
-      q: "Is everything managed using Infrastructure as Code (IaC)?",
-      a: "Yes. 100% of our Landing Zone blueprints are written in modern Terraform / OpenTofu and Helm templates. This guarantees that your environment is fully reproducible, version-controlled, and free of manual drift."
-    },
-    {
-      q: "How long does a standard deployment take?",
-      a: "Leveraging our pre-engineered blueprints, we can spin up a fully-customized multi-cloud landing zone within 4 to 6 weeks, which is significantly faster than traditional consulting timelines (often taking 6-9 months)."
-    }
-  ];
-
-  const techIcons = [
-    "AWS", "Google Cloud", "Azure", "Terraform", "Kubernetes",
-    "ArgoCD", "Cilium", "HashiCorp Vault", "Docker", "GitHub Actions",
-    "Databricks", "Snowflake", "Okta", "Prometheus", "Grafana"
-  ];
-
-  const tabs = ["All", "Landing Zone", "AI & Data", "Security", "VDI", "Industry", "DevOps"];
-
-  // Filtered blueprints logic based on Active Tab and Search Query
-  const filteredBlueprints = blueprints.filter((bp) => {
-    const matchesTab =
-      activeTab === "All" ||
-      (activeTab === "Landing Zone" && bp.categories.includes("landing-zone")) ||
-      (activeTab === "AI & Data" && bp.categories.includes("ai")) ||
-      (activeTab === "Security" && bp.categories.includes("security")) ||
-      (activeTab === "VDI" && bp.categories.includes("vdi")) ||
-      (activeTab === "Industry" && bp.categories.includes("industry")) ||
-      (activeTab === "DevOps" && bp.categories.includes("devops"));
-
-    const matchesSearch =
-      bp.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      bp.desc.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      bp.tech.toLowerCase().includes(searchQuery.toLowerCase());
-
-    return matchesTab && matchesSearch;
+  // Filtering Logic
+  const filteredRepos = repositories.filter((repo) => {
+    if (activeFilter === "All") return true;
+    return repo.tags.includes(activeFilter) || repo.cloud === activeFilter || repo.category === activeFilter;
   });
 
-  const getCategoryColor = (cat: string) => {
-    switch (cat) {
-      case 'landing-zone': return "bg-amber-500/10 text-amber-400 border-amber-500/20";
-      case 'ai': return "bg-rose-500/10 text-rose-450 border-rose-500/20";
-      case 'security': return "bg-emerald-500/10 text-emerald-400 border-emerald-500/20";
-      case 'vdi': return "bg-sky-500/10 text-sky-400 border-sky-500/20";
-      case 'industry': return "bg-blue-500/10 text-blue-400 border-blue-500/20";
-      case 'devops': return "bg-purple-500/10 text-purple-400 border-purple-500/20";
-      default: return "bg-zinc-900 text-zinc-400 border-zinc-800";
-    }
-  };
-
-  const formatPushedDate = (dateStr: string) => {
-    try {
-      return new Date(dateStr).toLocaleDateString('en-GB', { month: 'short', year: 'numeric' });
-    } catch (e) {
-      return "Recent";
-    }
-  };
-
   return (
-    <main className="min-h-screen bg-black text-white pt-24 font-sans selection:bg-rose-600 selection:text-white">
+    <main className="min-h-screen bg-[#030303] text-white pt-20 font-sans selection:bg-rose-600 selection:text-white">
       
       {/* 1. HERO SECTION */}
-      <section className="relative overflow-hidden py-12 md:py-24">
-        {/* Glow Effects */}
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-rose-600/[0.03] rounded-full blur-[130px] pointer-events-none" />
-        <div className="absolute top-1/2 right-10 w-[400px] h-[400px] bg-violet-600/[0.02] rounded-full blur-[100px] pointer-events-none" />
+      <section className="relative w-full min-h-[80vh] flex items-center bg-[#030303] text-white pt-20 pb-16 lg:pt-20 lg:pb-24 overflow-hidden border-b border-zinc-900/80">
+        {/* Background Ambient Glows */}
+        <div className="absolute top-[-10%] right-[-10%] w-[50%] aspect-square bg-[radial-gradient(circle_at_center,rgba(244,63,94,0.06),transparent_70%)] pointer-events-none z-0" />
+        <div className="absolute bottom-[-10%] left-[-10%] w-[50%] aspect-square bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.01),transparent_70%)] pointer-events-none z-0" />
 
-        <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-8 grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-12 items-center relative z-10">
-          
-          {/* Left Column: Title, Subtitle, Search bar */}
-          <div className="text-left">
-            <Reveal>
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-rose-500/20 bg-rose-500/[0.04] mb-6">
-                <span className="w-1.5 h-1.5 rounded-full bg-rose-500 animate-pulse" />
-                <span className="text-[10px] font-mono tracking-widest text-rose-400 uppercase font-bold">
-                  BUILD PLATFORM
+        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center w-full">
+
+            {/* Left Column: Text Content */}
+            <div className="lg:col-span-7 flex flex-col items-start text-left justify-center z-20">
+
+              <Reveal delay={0.05}>
+                <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+                  ENTERPRISE ACCELERATION
                 </span>
-              </div>
-            </Reveal>
+              </Reveal>
 
-            <Reveal delay={0.05}>
-              <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-white leading-tight mb-6">
-                What would you like to <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-500 via-rose-400 to-violet-500">
-                  build today?
-                </span>
-              </h1>
-            </Reveal>
+              {/* Heading */}
+              <Reveal delay={0.1}>
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold tracking-tight leading-[1.12] text-white mb-6">
+                  Enterprise Cloud <br />
+                  <span className="text-[#E11D48]">Landing Zones.</span>
+                </h1>
+              </Reveal>
 
-            <Reveal delay={0.1}>
-              <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-semibold max-w-xl mb-10">
-                Accelerate your <Link href="/services/cloud-services/cloud-architecture" className="text-rose-500 hover:underline font-bold">cloud architecture services</Link> with our production-grade landing zones, open-source blueprints, and <Link href="/services/ai-data-innovation/generative-ai-solutions" className="text-rose-500 hover:underline font-bold">generative AI solutions</Link> environments. Securely orchestrated, fully parameterized, and ready to deploy.
-              </p>
-            </Reveal>
+              {/* Description */}
+              <Reveal delay={0.2}>
+                <p className="text-zinc-400 text-xs sm:text-sm md:text-base leading-relaxed font-semibold max-w-xl mb-6">
+                  Accelerate cloud adoption with secure, scalable, and automated landing zones built using Infrastructure as Code (Terraform / Bicep) and enterprise-grade governance across Azure, AWS, GCP, and Oracle Cloud.
+                </p>
+              </Reveal>
 
-            {/* Interactive Search Console inside Hero */}
-            <Reveal delay={0.15}>
-              <div className="max-w-xl relative flex items-center bg-zinc-950/80 border border-zinc-850 rounded-xl p-1.5 focus-within:border-rose-500/40 transition-colors shadow-2xl">
-                <Search className="w-4 h-4 text-zinc-500 ml-3.5 flex-shrink-0" />
-                <input
-                  type="text"
-                  placeholder="Search 50+ enterprise blueprints (e.g. AWS Shared VPC)..."
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  className="bg-transparent border-0 outline-0 text-xs md:text-sm text-white placeholder-zinc-500 w-full px-3 py-2.5 font-semibold"
+              {/* Cloud Highlights Badges */}
+              <Reveal delay={0.25}>
+                <div className="flex flex-wrap items-center gap-2 mb-8">
+                  {[
+                    { name: "Azure Landing Zone", color: "bg-[#E11D48]" },
+                    { name: "AWS Landing Zone", color: "bg-[#E11D48]" },
+                    { name: "Google Cloud", color: "bg-[#E11D48]" },
+                    { name: "Oracle Cloud", color: "bg-[#E11D48]" },
+                    { name: "Terraform", color: "bg-zinc-800" },
+                    { name: "GitHub Actions", color: "bg-zinc-800" }
+                  ].map((item, idx) => (
+                    <span
+                      key={idx}
+                      className={`inline-flex items-center justify-center px-3 py-1.5 rounded text-[10px] md:text-xs font-black tracking-[0.1em] uppercase ${item.color} text-white shadow-[0_4px_15px_rgba(225,29,72,0.25)] hover:scale-105 transition-all duration-300`}
+                    >
+                      {item.name}
+                    </span>
+                  ))}
+                </div>
+              </Reveal>
+
+              {/* CTA Buttons */}
+              <Reveal delay={0.3}>
+                <div className="flex flex-wrap gap-4 items-center justify-start">
+                  <button
+                    onClick={() => {
+                      const el = document.getElementById("git-showcase");
+                      if (el) el.scrollIntoView({ behavior: "smooth" });
+                    }}
+                    className="inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white transition-all duration-300 hover:shadow-[0_0_25px_rgba(225,29,72,0.35)] hover:-translate-y-0.5"
+                  >
+                    <Github className="w-4 h-4 mr-2" /> Explore Repositories
+                  </button>
+                  <button
+                    onClick={() => setDemoModalOpen(true)}
+                    className="inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase border border-zinc-850 hover:border-zinc-750 bg-zinc-950/60 hover:bg-zinc-900 text-white transition-all duration-300 hover:-translate-y-0.5 cursor-pointer"
+                  >
+                    <Download className="w-4 h-4 text-rose-500 mr-2" /> Request Demo & Spec
+                  </button>
+                </div>
+              </Reveal>
+            </div>
+
+            {/* Right Column: Hero Image */}
+            <div className="lg:col-span-5 flex items-center justify-center lg:justify-end z-10 w-full">
+              <Reveal delay={0.2} className="w-full flex items-center justify-center lg:justify-end">
+                <img
+                  src="/assets/herocard/Landingzone.png"
+                  alt="Enterprise Cloud Landing Zone Architecture"
+                  className="w-full max-w-[320px] sm:max-w-[380px] lg:max-w-[480px] h-auto object-contain select-none shadow-2xl rounded-2xl"
                 />
-                <button 
-                  onClick={() => {
-                    const el = document.getElementById("catalog-grid");
-                    if (el) el.scrollIntoView({ behavior: "smooth" });
-                  }}
-                  className="px-4 py-2 rounded-lg bg-rose-600 hover:bg-rose-500 text-white text-xs font-bold transition-all duration-300 shadow-[0_0_15px_rgba(244,63,94,0.25)] whitespace-nowrap"
-                >
-                  Find Blueprint
-                </button>
-              </div>
-              <div className="flex items-center gap-2 mt-4 text-[10px] md:text-xs text-zinc-500 font-semibold pl-2">
-                <span>Popular:</span>
-                <button onClick={() => setSearchQuery("AWS")} className="text-zinc-400 hover:text-rose-400 transition-colors">AWS Control Tower</button>
-                <span>•</span>
-                <button onClick={() => setSearchQuery("Cilium")} className="text-zinc-400 hover:text-rose-400 transition-colors">Cilium eBPF</button>
-                <span>•</span>
-                <button onClick={() => setSearchQuery("RAG")} className="text-zinc-400 hover:text-rose-400 transition-colors">Private RAG</button>
-              </div>
-            </Reveal>
-          </div>
+              </Reveal>
+            </div>
 
-          {/* Right Column: Holographic Cyber Portrait Mesh */}
-          <div className="hidden lg:block relative">
-            <Reveal delay={0.2}>
-              <HolographicGrid />
-            </Reveal>
           </div>
-
         </div>
       </section>
 
-      {/* 2. CHOOSE YOUR CLOUD ARCHITECTURE (TIERS) */}
-      <section className="py-20 border-t border-zinc-900/60 bg-zinc-950/10">
-        <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <Reveal>
-              <span className="text-[10px] font-bold tracking-[0.25em] text-rose-500 uppercase block mb-3">
-                DEPLOYMENT MODELS
+      {/* KPI STATS STRIP (Home Page Style) */}
+      <section className="w-full py-12 bg-[#030303] border-b border-zinc-900/80 relative">
+        <div className="max-w-7xl mx-auto px-12 xl:px-8">
+          <Reveal className="w-full">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6 max-w-5xl mx-auto">
+              {kpis.map((kpi, idx) => (
+                <div key={idx} className="flex flex-col items-center justify-center text-center px-2">
+                  <span className="text-3xl md:text-4xl xl:text-5xl font-black text-rose-500 tracking-tight mb-2 drop-shadow-[0_0_15px_rgba(225,29,72,0.4)] select-none">
+                    {kpi.value}
+                  </span>
+                  <span className="text-zinc-300 text-xs md:text-sm font-bold uppercase tracking-[0.2em]">
+                    {kpi.label}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* 2. WHAT IS A LANDING ZONE? */}
+      <section className="py-20 bg-[#030303] border-b border-zinc-900/80">
+        <div className="max-w-7xl mx-auto px-12 xl:px-8">
+          <Reveal>
+            <div className="text-center max-w-3xl mx-auto mb-16">
+              <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+                FOUNDATIONAL OVERVIEW
               </span>
-            </Reveal>
-            <Reveal delay={0.05}>
-              <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white mb-6">
-                Choose Your Cloud Architecture
+              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white leading-tight mb-4">
+                What is a Cloud Landing Zone?
               </h2>
-            </Reveal>
-            <Reveal delay={0.1}>
-              <p className="text-zinc-400 text-xs md:text-sm leading-relaxed font-semibold">
-                Select a standardized deployment tier to establish your baseline in minutes. Learn more about our <Link href="/services/devops-automation/devsecops" className="text-rose-500 hover:underline font-bold">DevSecOps services in UK</Link> that compile directly to Terraform templates with robust parameters.
+              <p className="text-zinc-400 text-base md:text-lg leading-relaxed font-semibold">
+                A Landing Zone is an environment for provisioning workloads, pre-configured with security, network, identity, and compliance guardrails.
               </p>
-            </Reveal>
-          </div>
+            </div>
+          </Reveal>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {architectureTiers.map((tier, idx) => (
+            {[
+              { title: "Secure Cloud Foundation", icon: Shield, desc: "Isolated accounts, subscriptions, and security perimeters for production and dev workloads." },
+              { title: "Standardized Architecture", icon: Boxes, desc: "Repeatable hub-and-spoke topology across Azure, AWS, GCP, and Oracle Cloud." },
+              { title: "Identity & Access Control", icon: Lock, desc: "Centralized Azure AD / Okta / AWS SSO integration with strict RBAC rules." },
+              { title: "Network Orchestration", icon: Server, desc: "Automated Virtual Networks, Subnets, Firewalls, ExpressRoute, and Transit Gateways." },
+              { title: "Governance & Policies", icon: Sliders, desc: "Continuous policy enforcement, automated drift detection, and SOC2/HIPAA compliance." },
+              { title: "Automated Security", icon: Flame, desc: "SIEM log analytics, Key Vault secret isolation, Defender for Cloud, and Sentinel." },
+              { title: "IaC Automation", icon: Code, desc: "100% Infrastructure as Code with Terraform modules and automated CI/CD pipelines." },
+              { title: "Central Operations", icon: Activity, desc: "Unified monitoring, cost optimization, log archiving, and incident management." }
+            ].map((item, idx) => (
               <Reveal key={idx} delay={idx * 0.05}>
-                <div className={`border rounded-xl p-6 transition-all duration-500 group relative flex flex-col justify-between h-full ${tier.accent}`}>
-                  {tier.isPopular && (
-                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-rose-600 text-[9px] font-bold tracking-widest text-white uppercase shadow-lg shadow-rose-600/20">
-                      Most Popular
-                    </div>
-                  )}
-
-                  <div>
-                    <h3 className="text-lg font-bold text-white mb-1 group-hover:text-rose-400 transition-colors">
-                      {tier.title}
-                    </h3>
-                    <p className="text-[11px] text-zinc-500 font-semibold mb-4 leading-normal">
-                      {tier.subtitle}
-                    </p>
-
-                    <div className="border-y border-zinc-900/80 py-3 mb-6">
-                      <span className="text-lg font-mono font-bold text-rose-455">
-                        {tier.price}
-                      </span>
-                    </div>
-
-                    <ul className="space-y-3 mb-8">
-                      {tier.features.map((feat, fIdx) => (
-                        <li key={fIdx} className="flex items-start gap-2 text-[11px] text-zinc-400 font-semibold">
-                          <CheckCircle2 size={13} className="text-rose-500/70 flex-shrink-0 mt-0.5" />
-                          <span>{feat}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  <Link
-                    href="/contact"
-                    className={`w-full py-2.5 rounded-lg text-center text-xs font-bold transition-all duration-300 ${
-                      tier.isPopular 
-                        ? "bg-rose-600 hover:bg-rose-500 text-white shadow-lg shadow-rose-600/10" 
-                        : "border border-zinc-800 hover:border-rose-500/40 text-zinc-300 hover:text-white"
-                    }`}
-                  >
-                    {tier.buttonText}
-                  </Link>
+                <div className="flex flex-col bg-[#0A0A0A] rounded-[24px] p-6 border border-zinc-800/80 hover:border-zinc-700/80 transition-all duration-300 hover:shadow-[0_8px_30px_rgba(0,0,0,0.4)] group h-full">
+                  <item.icon className="w-8 h-8 text-rose-500 mb-4 group-hover:scale-110 transition-transform duration-300" />
+                  <h3 className="text-zinc-100 text-base font-bold mb-2">{item.title}</h3>
+                  <p className="text-zinc-400 text-xs leading-relaxed font-medium">{item.desc}</p>
                 </div>
               </Reveal>
             ))}
@@ -569,233 +401,527 @@ export default function EcosystemLandingZonePage() {
         </div>
       </section>
 
-      {/* 3. TECHNOLOGY ALLIANCE STRIP */}
-      <section className="border-y border-zinc-900/60 bg-zinc-950/40 py-6 overflow-hidden relative">
-        <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none" />
-        <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none" />
-        
-        <div className="flex select-none overflow-hidden gap-12 w-full">
-          <div className="flex gap-16 min-w-full justify-around items-center animate-marquee whitespace-nowrap">
-            {techIcons.concat(techIcons).map((icon, idx) => (
-              <span
-                key={idx}
-                className="text-zinc-650 hover:text-rose-500/70 transition-colors duration-300 font-mono text-[10px] md:text-xs tracking-wider font-bold uppercase flex items-center gap-2"
-              >
-                <Sparkles size={9} className="text-rose-500/30" />
-                {icon}
+      {/* 3. LANDING ZONE ARCHITECTURE DIAGRAM */}
+      <section className="py-20 bg-[#030303] border-b border-zinc-900/80">
+        <div className="max-w-7xl mx-auto px-12 xl:px-8">
+          <Reveal>
+            <div className="text-center max-w-3xl mx-auto mb-16">
+              <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+                HIGH-LEVEL WORKFLOW
               </span>
+              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white leading-tight mb-4">
+                Landing Zone Architecture Pipeline
+              </h2>
+              <p className="text-zinc-400 text-base md:text-lg leading-relaxed font-semibold">
+                End-to-end automated pipeline from developer commit to multi-cloud landing zone deployment.
+              </p>
+            </div>
+          </Reveal>
+
+          <div className="p-8 rounded-[24px] bg-[#0A0A0A] border border-zinc-800/80 shadow-2xl relative overflow-hidden">
+            <div className="flex flex-col lg:flex-row items-center justify-between gap-6 relative z-10">
+              {[
+                { title: "Developer", icon: Terminal, badge: "IaC Commit" },
+                { title: "GitHub", icon: Github, badge: "Repo Sync" },
+                { title: "GitHub Actions", icon: Workflow, badge: "CI/CD Pipeline" },
+                { title: "Terraform", icon: Code, badge: "Plan & Apply" },
+                { title: "Cloud Landing Zone", icon: Cloud, badge: "Live Deployment" }
+              ].map((step, idx) => (
+                <React.Fragment key={idx}>
+                  <div className="flex flex-col items-center text-center p-5 rounded-[18px] bg-black border border-zinc-800 w-full lg:w-48 group hover:border-rose-500/50 transition-all">
+                    <div className="w-12 h-12 rounded-xl bg-rose-600/10 text-rose-500 border border-rose-500/20 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+                      <step.icon className="w-6 h-6" />
+                    </div>
+                    <span className="text-[10px] font-mono text-rose-400 font-bold mb-1 uppercase tracking-widest">{step.badge}</span>
+                    <h4 className="text-sm font-bold text-white">{step.title}</h4>
+                  </div>
+
+                  {idx < 4 && (
+                    <div className="hidden lg:flex items-center text-rose-500">
+                      <ArrowRight className="w-6 h-6 animate-pulse" />
+                    </div>
+                  )}
+                </React.Fragment>
+              ))}
+            </div>
+
+            {/* Sub Pillars */}
+            <div className="grid grid-cols-2 md:grid-cols-5 gap-3 mt-10 pt-8 border-t border-zinc-800/80 text-center">
+              {["Networking", "Security", "Identity", "Monitoring", "Logging"].map((sub, i) => (
+                <div key={i} className="p-3 rounded-xl bg-black border border-zinc-800 text-xs font-mono font-bold text-zinc-300 flex items-center justify-center gap-1.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-rose-500" />
+                  {sub}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 4. SUPPORTED CLOUDS */}
+      <section className="py-20 bg-[#030303] border-b border-zinc-900/80">
+        <div className="max-w-7xl mx-auto px-12 xl:px-8">
+          <Reveal>
+            <div className="text-center max-w-3xl mx-auto mb-16">
+              <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+                MULTI-CLOUD SUPPORT
+              </span>
+              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white leading-tight mb-4">
+                Supported Cloud Platforms
+              </h2>
+              <p className="text-zinc-400 text-base md:text-lg leading-relaxed font-semibold">
+                Pre-built landing zones tailored for all major hyper-scale cloud providers.
+              </p>
+            </div>
+          </Reveal>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              { name: "Azure Landing Zone", desc: "Microsoft Cloud Adoption Framework (CAF) with Subscription Vending & Policy Guardrails.", badge: "Azure" },
+              { name: "AWS Landing Zone", desc: "AWS Control Tower multi-account architecture with Organization Units & GuardDuty.", badge: "AWS" },
+              { name: "Google Cloud Landing Zone", desc: "GCP Foundations Fabric with Shared VPC networks & VPC Service Controls.", badge: "Google Cloud" },
+              { name: "Oracle Cloud Landing Zone", desc: "OCI CIS Foundations Benchmark with Compartment hierarchy & Cloud Guard.", badge: "Oracle Cloud" }
+            ].map((cloud, idx) => (
+              <Reveal key={idx} delay={idx * 0.05}>
+                <div className="flex flex-col bg-[#0A0A0A] rounded-[24px] p-6 border border-zinc-800/80 hover:border-rose-500/50 transition-all duration-300 hover:shadow-[0_8px_30px_rgba(0,0,0,0.4)] group h-full justify-between">
+                  <div className="space-y-3">
+                    <span className="inline-flex items-center px-3 py-1 rounded text-[10px] font-black uppercase tracking-widest bg-[#E11D48] text-white">
+                      {cloud.badge}
+                    </span>
+                    <h3 className="text-lg font-bold text-white group-hover:text-rose-400 transition-colors">{cloud.name}</h3>
+                    <p className="text-xs text-zinc-400 leading-relaxed font-medium">{cloud.desc}</p>
+                  </div>
+                  <button
+                    onClick={() => {
+                      const el = document.getElementById("git-showcase");
+                      if (el) el.scrollIntoView({ behavior: "smooth" });
+                    }}
+                    className="mt-6 inline-flex items-center gap-1.5 text-xs font-bold text-rose-500 hover:text-rose-400 transition-colors uppercase tracking-wider"
+                  >
+                    View Blueprint <ArrowUpRight className="w-3.5 h-3.5" />
+                  </button>
+                </div>
+              </Reveal>
             ))}
           </div>
         </div>
       </section>
 
-      {/* 4. HUGE COMPONENT LIBRARY GRID / GITHUB BLUEPRINTS */}
-      <section id="catalog-grid" className="py-24 relative">
-        <div className="absolute top-1/3 left-10 w-[500px] h-[500px] bg-rose-500/[0.01] rounded-full blur-[140px] pointer-events-none" />
+      {/* 5. CORE COMPONENTS GRID */}
+      <section className="py-20 bg-[#030303] border-b border-zinc-900/80">
+        <div className="max-w-7xl mx-auto px-12 xl:px-8">
+          <Reveal>
+            <div className="text-center max-w-3xl mx-auto mb-16">
+              <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+                BUILDING BLOCKS
+              </span>
+              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white leading-tight mb-4">
+                Core Landing Zone Components
+              </h2>
+              <p className="text-zinc-400 text-base md:text-lg leading-relaxed font-semibold">
+                12 essential foundation blocks built into every enterprise deployment.
+              </p>
+            </div>
+          </Reveal>
 
-        <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-8">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            {[
+              "Identity & Access", "Hub & Spoke Networking", "Resource Groups & OUs", "Policy Enforcement",
+              "IAM & Role Mapping", "Security Center & Defender", "Centralized Monitoring", "Log Analytics Archive",
+              "Backup & DR Vaults", "Cost & FinOps Controls", "Compliance Governance", "CI/CD Pipeline Automation"
+            ].map((comp, idx) => (
+              <div key={idx} className="p-4 rounded-[16px] bg-[#0A0A0A] border border-zinc-800/80 flex items-center gap-3 hover:border-rose-500/40 transition-colors">
+                <CheckCircle2 className="w-4 h-4 text-rose-500 flex-shrink-0" />
+                <span className="text-xs font-bold text-zinc-200">{comp}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 8. GIT REPOSITORY SHOWCASE ⭐ & DASHBOARD */}
+      <section id="git-showcase" className="py-24 bg-[#030303] border-b border-zinc-900/80">
+        <div className="max-w-7xl mx-auto px-12 xl:px-8 space-y-12">
           
-          {/* Section Header */}
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
-            <div>
-              <Reveal>
-                <span className="text-[10px] font-bold tracking-[0.25em] text-rose-500 uppercase block mb-3">
-                  BLUEPRINTS DIRECTORY
-                </span>
-              </Reveal>
-              <Reveal delay={0.05}>
-                <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white mb-4">
-                  Browse GitHub Infrastructure Modules
-                </h2>
-              </Reveal>
-              <Reveal delay={0.1}>
-                <p className="text-zinc-400 text-xs md:text-sm leading-relaxed font-semibold max-w-xl">
-                  Deploy secure Terraform configurations, hardened Kubernetes namespaces, or pre-configured <Link href="/services/ai-data-innovation/machine-learning-engineering" className="text-rose-500 hover:underline font-bold">machine learning development services</Link> right from our directory.
-                </p>
-              </Reveal>
+          <Reveal>
+            <div className="text-center max-w-3xl mx-auto space-y-3">
+              <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+                GIT REPOSITORY SHOWCASE & DASHBOARD
+              </span>
+              <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white leading-tight">
+                Enterprise Repository Directory
+              </h2>
+              <p className="text-zinc-400 text-base leading-relaxed font-semibold">
+                Browse production-ready GitHub repositories, Terraform modules, and deployment automation pipelines.
+              </p>
             </div>
+          </Reveal>
 
-            <Reveal delay={0.15}>
-              <a
-                href="https://github.com/Devopstrio"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-6 md:mt-0 px-5 py-2.5 rounded-lg border border-zinc-800 hover:border-rose-500/50 hover:bg-rose-500/[0.02] text-zinc-300 hover:text-white font-bold text-xs tracking-wide transition-all duration-300 flex items-center gap-2"
+          {/* Filter Chips */}
+          <div className="flex flex-wrap justify-center gap-2.5">
+            {["All", "Azure", "AWS", "Google Cloud", "Oracle Cloud", "Terraform", "Networking", "Security", "Monitoring"].map((filter) => (
+              <button
+                key={filter}
+                onClick={() => setActiveFilter(filter)}
+                className={`px-4 py-2 rounded-xl text-xs font-bold tracking-wider uppercase transition-all duration-300 ${
+                  activeFilter === filter
+                    ? "bg-[#E11D48] text-white shadow-[0_4px_15px_rgba(225,29,72,0.35)]"
+                    : "bg-[#0A0A0A] text-zinc-400 hover:text-white border border-zinc-800/80"
+                }`}
               >
-                <GitBranch size={13} className="text-rose-500" />
-                <span>Visit org on GitHub</span>
-              </a>
-            </Reveal>
+                {filter}
+              </button>
+            ))}
           </div>
 
-          {/* Filtering Tabs & Search Summary */}
-          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-zinc-900 pb-6 mb-8">
-            <div className="flex flex-wrap gap-2">
-              {tabs.map((tab) => (
-                <button
-                  key={tab}
-                  onClick={() => setActiveTab(tab)}
-                  className={`px-4 py-1.5 rounded-lg text-xs font-bold transition-all duration-200 ${
-                    activeTab === tab
-                      ? "bg-zinc-900 text-rose-500 border border-rose-500/20"
-                      : "text-zinc-450 hover:text-white hover:bg-zinc-900/30"
-                  }`}
-                >
-                  {tab}
-                </button>
-              ))}
-            </div>
-
-            <div className="text-[11px] text-zinc-500 font-mono font-bold">
-              Showing {filteredBlueprints.length} of {blueprints.length} Blueprints
-            </div>
-          </div>
-
-          {/* Dynamic Sync Live Badge */}
-          {!loading && blueprints.length > 0 && (
-            <div className="mb-6 flex justify-start">
-              <span className="inline-flex items-center gap-2 font-mono text-[10px] font-bold text-emerald-400 bg-emerald-500/[0.06] border border-emerald-500/20 rounded-full px-3 py-1 shadow-sm animate-pulse">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
-                Live · {blueprints.length} repositories loaded from GitHub
+          {/* Repository Dashboard Table */}
+          <div className="rounded-[24px] border border-zinc-800/80 bg-[#0A0A0A] overflow-hidden shadow-2xl">
+            <div className="px-6 py-4 border-b border-zinc-800/80 bg-black flex justify-between items-center">
+              <h3 className="text-xs font-bold text-white uppercase tracking-wider flex items-center gap-2">
+                <Github className="w-4 h-4 text-rose-500" />
+                Repository Directory Table
+              </h3>
+              <span className="text-xs font-mono text-zinc-400 font-semibold">
+                Showing {filteredRepos.length} Repositories
               </span>
             </div>
-          )}
 
-          {/* Catalog Grid */}
-          {loading ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {[...Array(6)].map((_, i) => (
-                <div key={i} className="bg-zinc-950/20 border border-zinc-900 rounded-xl p-6 animate-pulse h-48" />
-              ))}
+            <div className="overflow-x-auto">
+              <table className="w-full text-left text-xs text-zinc-300">
+                <thead className="bg-zinc-950 text-zinc-400 uppercase font-mono text-[10px] tracking-wider border-b border-zinc-800/80">
+                  <tr>
+                    <th className="px-6 py-3.5">Repository</th>
+                    <th className="px-6 py-3.5">Language</th>
+                    <th className="px-6 py-3.5">Version</th>
+                    <th className="px-6 py-3.5">Status</th>
+                    <th className="px-6 py-3.5">Last Update</th>
+                    <th className="px-6 py-3.5 text-right">Actions</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-zinc-900">
+                  {filteredRepos.map((repo) => (
+                    <tr key={repo.id} className="hover:bg-black/50 transition-colors">
+                      <td className="px-6 py-4 font-bold text-white flex items-center gap-2">
+                        <Terminal className="w-4 h-4 text-rose-500" />
+                        {repo.name}
+                      </td>
+                      <td className="px-6 py-4 font-mono text-rose-400">{repo.language}</td>
+                      <td className="px-6 py-4 font-mono text-zinc-300">{repo.version}</td>
+                      <td className="px-6 py-4 font-bold text-emerald-400">{repo.status}</td>
+                      <td className="px-6 py-4 text-zinc-400">{repo.lastUpdated}</td>
+                      <td className="px-6 py-4 text-right">
+                        <button
+                          onClick={() => setSelectedRepoModal(repo)}
+                          className="px-3 py-1.5 rounded-lg bg-rose-600/20 hover:bg-rose-600 text-rose-400 hover:text-white font-bold text-xs transition-colors border border-rose-500/30 flex items-center gap-1.5 ml-auto"
+                        >
+                          <BookOpen className="w-3.5 h-3.5" /> View Docs & Setup
+                        </button>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
-          ) : filteredBlueprints.length === 0 ? (
-            <div className="text-center py-20 border border-zinc-900/80 rounded-xl bg-zinc-950/10">
-              <Terminal className="w-8 h-8 text-zinc-700 mx-auto mb-4" />
-              <p className="text-xs text-zinc-500 font-bold">No blueprints match your filter criteria.</p>
-              <button 
-                onClick={() => { setSearchQuery(""); setActiveTab("All"); }}
-                className="mt-4 text-xs font-bold text-rose-500 hover:underline"
+          </div>
+
+          {/* GitHub Repository Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pt-4">
+            {filteredRepos.map((repo) => (
+              <div
+                key={repo.id}
+                className="p-6 rounded-[24px] bg-[#0A0A0A] border border-zinc-800/80 hover:border-rose-500/50 transition-all flex flex-col justify-between space-y-6 group shadow-xl"
               >
-                Reset all filters
-              </button>
-            </div>
-          ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {filteredBlueprints.map((bp, index) => (
-                <Reveal key={bp.name} delay={index * 0.03}>
-                  <div className="bg-zinc-950/40 border border-zinc-900/85 hover:border-rose-500/30 hover:bg-zinc-950/80 rounded-xl p-6 transition-all duration-500 group relative flex flex-col justify-between h-full">
-                    {/* Visual Hover Glow line */}
-                    <div className="absolute -inset-px bg-gradient-to-br from-rose-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none rounded-xl" />
-                    
+                <div className="space-y-4">
+                  <div className="flex justify-between items-start">
                     <div>
-                      {/* Top Row: Provider badge, Status version */}
-                      <div className="flex items-center justify-between mb-4">
-                        <div className="flex flex-wrap gap-1">
-                          {bp.categories.map(cat => (
-                            <span key={cat} className={`text-[8px] font-bold font-mono uppercase tracking-wider px-2 py-0.5 rounded border ${getCategoryColor(cat)}`}>
-                              {cat.replace(/-/g, ' ')}
-                            </span>
-                          ))}
-                        </div>
-
-                        <div className="flex items-center gap-2">
-                          <span className="text-[10px] text-zinc-500 font-mono font-bold">
-                            {formatPushedDate(bp.pushedAt)}
-                          </span>
-                        </div>
-                      </div>
-
-                      {/* Code Repo Title */}
-                      <h3 className="text-sm md:text-base font-bold text-white font-mono group-hover:text-rose-450 transition-colors mb-3 flex items-center gap-1.5">
-                        <Terminal size={14} className="text-rose-500/60" />
-                        <span>{bp.name}</span>
+                      <span className="inline-flex items-center px-2.5 py-0.5 rounded text-[10px] font-black uppercase tracking-widest bg-[#E11D48] text-white">
+                        {repo.cloud} &bull; {repo.category}
+                      </span>
+                      <h3 className="text-lg font-bold text-white mt-2 group-hover:text-rose-400 transition-colors">
+                        {repo.name}
                       </h3>
-
-                      {/* Description */}
-                      <p className="text-zinc-400 text-xs leading-relaxed mb-6 font-semibold opacity-90">
-                        {bp.desc}
-                      </p>
                     </div>
-
-                    {/* Bottom stats & links */}
-                    <div className="border-t border-zinc-900/60 pt-4 mt-auto flex items-center justify-between text-[11px] font-mono font-semibold">
-                      <div className="flex items-center gap-3 text-zinc-500">
-                        <span className="flex items-center gap-1">
-                          <Star size={11} className="text-amber-500" />
-                          {bp.stars}
-                        </span>
-                        <span className="flex items-center gap-1">
-                          <GitFork size={11} />
-                          {bp.forks}
-                        </span>
-                      </div>
-
-                      <div className="flex items-center gap-4">
-                        <a
-                          href={bp.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-zinc-400 hover:text-rose-400 transition-colors flex items-center gap-1"
-                        >
-                          <span>Code</span>
-                          <ExternalLink size={10} />
-                        </a>
-
-                        <Link
-                          href="/contact"
-                          className="text-white group-hover:text-rose-500 transition-colors flex items-center gap-0.5"
-                        >
-                          <span>Deploy</span>
-                          <ArrowUpRight size={10} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-                        </Link>
-                      </div>
-                    </div>
+                    <span className="text-amber-400 text-xs tracking-widest font-mono">
+                      {repo.rating}
+                    </span>
                   </div>
-                </Reveal>
-              ))}
-            </div>
-          )}
+
+                  <p className="text-xs text-zinc-400 leading-relaxed font-medium">
+                    {repo.desc}
+                  </p>
+
+                  <div className="pt-2 border-t border-zinc-850 flex flex-wrap gap-2 text-[10px] font-mono text-zinc-400">
+                    {repo.features.map((feat, i) => (
+                      <span key={i} className="text-emerald-400 font-bold flex items-center gap-1">
+                        ✔ {feat}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="pt-4 border-t border-zinc-850 flex items-center justify-between">
+                  <span className="text-xs font-mono text-zinc-500 flex items-center gap-1">
+                    <Star className="w-3.5 h-3.5 text-amber-400 fill-amber-400" /> {repo.stars}
+                  </span>
+
+                  <button
+                    onClick={() => setSelectedRepoModal(repo)}
+                    className="px-4 py-2 rounded-xl bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white font-bold text-xs flex items-center gap-1.5 transition-all shadow-lg"
+                  >
+                    <span>View Repository</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
 
         </div>
       </section>
 
-      {/* 5. FAQ SECTION */}
-      <section id="faq" className="w-full py-20 md:py-28 bg-[#030303] text-white relative border-b border-zinc-900/60">
-        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
-          <Reveal className="max-w-3xl mb-16">
-            <div className="flex items-center gap-2 mb-4">
-              <span className="text-[10px] font-medium tracking-[0.2em] uppercase text-zinc-400">
-                FAQ
+      {/* 9. DEPLOYMENT WORKFLOW */}
+      <section className="py-20 bg-[#030303] border-b border-zinc-900/80">
+        <div className="max-w-7xl mx-auto px-12 xl:px-8">
+          <Reveal>
+            <div className="text-center max-w-3xl mx-auto mb-16">
+              <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+                DEPLOYMENT PROCESS
               </span>
+              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white leading-tight mb-4">
+                6-Step Deployment Workflow
+              </h2>
+              <p className="text-zinc-400 text-base md:text-lg leading-relaxed font-semibold">
+                From code clone to automated multi-cloud environment creation.
+              </p>
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight leading-tight mb-4">
-              Questions we get <span className="text-white font-bold bg-gradient-to-r from-red-655 via-rose-600 to-rose-500 bg-clip-text text-transparent">asked every day</span>.
-            </h2>
-            <p className="text-zinc-400 text-sm leading-relaxed font-bold">
-              Everything you need to know about our Enterprise Landing Zones, private vector perimeters, and deployment timelines. Can&apos;t find what you&apos;re looking for? Reach out to our team — we respond to every question personally.
-            </p>
           </Reveal>
 
-          {/* Accordion FAQ */}
-          <div className="flex flex-col border-t border-zinc-900 mb-16">
-            {faqItems.map((faq, idx) => {
-              const isOpen = openAccordion === idx;
-              return (
-                <div key={idx} className="border-b border-zinc-900 py-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-4">
+            {[
+              { step: "01", title: "Clone Repo", desc: "Clone target landing zone blueprint repo." },
+              { step: "02", title: "Config Vars", desc: "Define parameters in terraform.tfvars." },
+              { step: "03", title: "GitHub Actions", desc: "Trigger automated PR check pipeline." },
+              { step: "04", title: "Terraform Plan", desc: "Review speculative execution plan." },
+              { step: "05", title: "Terraform Apply", desc: "Provision infrastructure with state lock." },
+              { step: "06", title: "LZ Live", desc: "Landing zone active & compliant." }
+            ].map((wf, idx) => (
+              <div key={idx} className="p-5 rounded-[20px] bg-[#0A0A0A] border border-zinc-800/80 space-y-2 text-center relative hover:border-rose-500/40 transition-colors">
+                <span className="text-xs font-mono font-extrabold text-rose-500 bg-rose-600/10 px-2.5 py-0.5 rounded border border-rose-500/20">
+                  Step {wf.step}
+                </span>
+                <h4 className="text-sm font-bold text-white pt-2">{wf.title}</h4>
+                <p className="text-[11px] text-zinc-400 font-medium">{wf.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 10. INFRASTRUCTURE MODULES */}
+      <section className="py-20 bg-[#030303] border-b border-zinc-900/80">
+        <div className="max-w-7xl mx-auto px-12 xl:px-8">
+          <Reveal>
+            <div className="text-center max-w-3xl mx-auto mb-16">
+              <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+                REUSABLE TERRAFORM MODULES
+              </span>
+              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white leading-tight mb-4">
+                Infrastructure Modules
+              </h2>
+              <p className="text-zinc-400 text-base md:text-lg leading-relaxed font-semibold">
+                Modular, version-controlled Infrastructure as Code blocks.
+              </p>
+            </div>
+          </Reveal>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              { name: "VNet Module", desc: "Automated subnets, NAT Gateways & NSG rules." },
+              { name: "Storage Module", desc: "Encrypted Blob/S3 storage with private endpoints." },
+              { name: "Key Vault Module", desc: "HSM secret isolation, RBAC & auto-rotation." },
+              { name: "Firewall Module", desc: "Central egress rule enforcement & threat intelligence." },
+              { name: "AKS Module", desc: "Hardened Kubernetes, Cilium eBPF & OIDC IRSA." },
+              { name: "VM Module", desc: "Hardened OS images, automated patching & SSH key vault." },
+              { name: "SQL Module", desc: "HA PostgreSQL/MySQL with failover replicas." },
+              { name: "Monitoring Module", desc: "Log Analytics workspaces & pre-built alert rules." }
+            ].map((mod, idx) => (
+              <Reveal key={idx} delay={idx * 0.05}>
+                <div className="p-6 rounded-[24px] bg-[#0A0A0A] border border-zinc-800/80 hover:border-rose-500/50 transition-all duration-300 hover:shadow-[0_8px_30px_rgba(0,0,0,0.4)] space-y-3 group h-full">
+                  <div className="w-10 h-10 rounded-xl bg-rose-600/10 text-rose-500 border border-rose-500/20 flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <Code className="w-5 h-5" />
+                  </div>
+                  <h3 className="text-base font-bold text-white group-hover:text-rose-400 transition-colors">{mod.name}</h3>
+                  <p className="text-xs text-zinc-400 leading-relaxed font-medium">{mod.desc}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 11. AUTOMATION & IAC */}
+      <section className="py-20 bg-[#030303] border-b border-zinc-900/80">
+        <div className="max-w-7xl mx-auto px-12 xl:px-8">
+          <Reveal>
+            <div className="text-center max-w-3xl mx-auto mb-16">
+              <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+                ORCHESTRATION TOOLING
+              </span>
+              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white leading-tight mb-4">
+                Automation & IaC Engine
+              </h2>
+              <p className="text-zinc-400 text-base md:text-lg leading-relaxed font-semibold">
+                Compatible with industry standard DevOps tools.
+              </p>
+            </div>
+          </Reveal>
+
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+            {["GitHub Actions", "Azure DevOps", "Terraform / OpenTofu", "Ansible", "Bicep", "ARM Templates"].map((tool, idx) => (
+              <div key={idx} className="p-5 rounded-[20px] bg-[#0A0A0A] border border-zinc-800/80 text-center font-bold text-xs text-white hover:border-rose-500/40 transition-colors">
+                <Workflow className="w-6 h-6 text-rose-500 mx-auto mb-2" />
+                {tool}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 12. SECURITY & GOVERNANCE */}
+      <section className="py-20 bg-[#030303] border-b border-zinc-900/80">
+        <div className="max-w-7xl mx-auto px-12 xl:px-8">
+          <Reveal>
+            <div className="text-center max-w-3xl mx-auto mb-16">
+              <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+                ZERO TRUST SECURITY
+              </span>
+              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white leading-tight mb-4">
+                Security & Governance
+              </h2>
+              <p className="text-zinc-400 text-base md:text-lg leading-relaxed font-semibold">
+                Continuous policy auditing and automated threat mitigation.
+              </p>
+            </div>
+          </Reveal>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {["Azure Policy / AWS SCP", "Defender for Cloud", "IAM & Entra ID", "RBAC Least Privilege", "Key Vault HSM", "Sentinel SIEM", "Audit Logging", "SOC2 / HIPAA Compliance"].map((sec, idx) => (
+              <div key={idx} className="p-4 rounded-[16px] bg-[#0A0A0A] border border-zinc-800/80 flex items-center gap-3 hover:border-rose-500/40 transition-colors">
+                <Shield className="w-4 h-4 text-rose-500 flex-shrink-0" />
+                <span className="text-xs font-bold text-zinc-200">{sec}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 13. MONITORING & OPERATIONS */}
+      <section className="py-20 bg-[#030303] border-b border-zinc-900/80">
+        <div className="max-w-7xl mx-auto px-12 xl:px-8">
+          <Reveal>
+            <div className="text-center max-w-3xl mx-auto mb-16">
+              <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+                REAL-TIME OBSERVABILITY
+              </span>
+              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white leading-tight mb-4">
+                Monitoring & Operations
+              </h2>
+              <p className="text-zinc-400 text-base md:text-lg leading-relaxed font-semibold">
+                Comprehensive metrics, logging archives, and automated alerts.
+              </p>
+            </div>
+          </Reveal>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+            {["Azure Monitor", "Log Analytics", "Grafana Dashboards", "Prometheus Metrics", "Automated Alerts", "Operational Insights"].map((mon, idx) => (
+              <div key={idx} className="p-4 rounded-[20px] bg-[#0A0A0A] border border-zinc-800/80 text-center font-bold text-xs text-zinc-200 hover:border-rose-500/40 transition-colors">
+                <Activity className="w-5 h-5 text-rose-500 mx-auto mb-2" />
+                {mon}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 14. DOCUMENTATION */}
+      <section className="py-20 bg-[#030303] border-b border-zinc-900/80">
+        <div className="max-w-7xl mx-auto px-12 xl:px-8">
+          <Reveal>
+            <div className="text-center max-w-3xl mx-auto mb-16">
+              <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+                KNOWLEDGE BASE
+              </span>
+              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white leading-tight mb-4">
+                Architecture Documentation
+              </h2>
+              <p className="text-zinc-400 text-base md:text-lg leading-relaxed font-semibold">
+                Complete engineering guides for setup and maintenance.
+              </p>
+            </div>
+          </Reveal>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              { name: "Deployment Guide", desc: "Step-by-step setup instructions for Terraform & CI/CD." },
+              { name: "Architecture Guide", desc: "Deep dive into hub-and-spoke topologies & account trees." },
+              { name: "Security Guide", desc: "RBAC, Key Vault, and compliance policy enforcement." },
+              { name: "Network Guide", desc: "VNet peering, ExpressRoute, VPN, and Firewall routes." },
+              { name: "Operations Guide", desc: "Day-2 operational tasks, monitoring alerts, and backups." },
+              { name: "Troubleshooting Guide", desc: "Common terraform apply fixes and diagnostic steps." }
+            ].map((doc, idx) => (
+              <Reveal key={idx} delay={idx * 0.05}>
+                <div className="p-6 rounded-[24px] bg-[#0A0A0A] border border-zinc-800/80 space-y-3 hover:border-rose-500/50 transition-all duration-300 hover:shadow-[0_8px_30px_rgba(0,0,0,0.4)] group h-full flex flex-col justify-between">
+                  <div className="space-y-3">
+                    <BookOpen className="w-6 h-6 text-rose-500 group-hover:scale-110 transition-transform duration-300" />
+                    <h3 className="text-base font-bold text-white group-hover:text-rose-400 transition-colors">{doc.name}</h3>
+                    <p className="text-xs text-zinc-400 leading-relaxed font-medium">{doc.desc}</p>
+                  </div>
                   <button
-                    onClick={() => setOpenAccordion(isOpen ? null : idx)}
-                    className="flex justify-between items-center w-full text-left focus:outline-none group"
+                    onClick={() => setDemoModalOpen(true)}
+                    className="inline-flex items-center gap-1 text-xs font-bold text-rose-500 hover:text-rose-400 transition-colors uppercase tracking-wider pt-2"
                   >
-                    <span className="text-sm md:text-base font-semibold text-zinc-200 group-hover:text-white transition-colors">
-                      {faq.q}
-                    </span>
-                    <div className="text-zinc-550 group-hover:text-rose-500 transition-colors ml-4 flex-shrink-0">
-                      {isOpen ? <Minus size={16} /> : <Plus size={16} />}
-                    </div>
+                    Read Guide <ArrowUpRight className="w-3.5 h-3.5" />
+                  </button>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 15. FAQ */}
+      <section className="py-20 bg-[#030303] border-b border-zinc-900/80">
+        <div className="max-w-4xl mx-auto px-6 md:px-12 xl:px-8 space-y-12">
+          
+          <div className="text-center space-y-3">
+            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+              FREQUENTLY ASKED QUESTIONS
+            </span>
+            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white">Landing Zone FAQ</h2>
+          </div>
+
+          <div className="space-y-4">
+            {[
+              { q: "What is a Landing Zone?", a: "A Landing Zone is an environment for provisioning workloads, pre-configured with security, network, identity, and compliance guardrails." },
+              { q: "Which cloud providers do you support?", a: "We support Microsoft Azure, Amazon Web Services (AWS), Google Cloud Platform (GCP), and Oracle Cloud Infrastructure (OCI)." },
+              { q: "Do you use Terraform?", a: "Yes, 100% of our landing zone blueprints are written using modular, enterprise-grade Terraform and OpenTofu." },
+              { q: "Can I customize modules?", a: "Absolutly. Every module accepts parameterized inputs for CIDR blocks, region targets, compliance policies, and naming conventions." },
+              { q: "Do you support GitHub Actions?", a: "Yes, pre-configured GitHub Actions workflows for speculative terraform plan and automated terraform apply are included." },
+              { q: "Is documentation included?", a: "Yes, comprehensive deployment guides, architecture diagrams, and operational playbooks are provided with all repositories." }
+            ].map((faq, i) => {
+              const isOpen = openFaqIndex === i;
+              return (
+                <div key={i} className="rounded-[18px] bg-[#0A0A0A] border border-zinc-800/80 overflow-hidden">
+                  <button
+                    onClick={() => setOpenFaqIndex(isOpen ? null : i)}
+                    className="w-full p-5 text-left flex justify-between items-center text-sm font-bold text-white hover:text-rose-400 transition-colors"
+                  >
+                    <span>{faq.q}</span>
+                    {isOpen ? <Minus className="w-4 h-4 text-rose-500" /> : <Plus className="w-4 h-4 text-zinc-500" />}
                   </button>
                   {isOpen && (
-                    <div className="mt-4 text-xs md:text-sm text-zinc-400 leading-relaxed font-bold max-w-3xl animate-fadeIn flex flex-col gap-4">
-                      <p>{faq.a}</p>
+                    <div className="px-5 pb-5 text-xs text-zinc-300 leading-relaxed border-t border-zinc-800/80 pt-3 font-medium">
+                      {faq.a}
                     </div>
                   )}
                 </div>
@@ -803,68 +929,195 @@ export default function EcosystemLandingZonePage() {
             })}
           </div>
 
-          {/* Below FAQ callout */}
-          <Reveal delay={0.2}>
-            <div className="border border-zinc-900 bg-zinc-950/20 p-6 rounded-2xl flex flex-col sm:flex-row justify-between items-center gap-4">
-              <p className="text-zinc-400 text-xs md:text-sm font-bold">
-                Still have questions? Don&apos;t sit with them. Reach out to our team — we respond to every message personally.
-              </p>
-              <a
-                href="mailto:info@devopstrioglobal.com"
-                className="gap-2 inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase border border-zinc-850 hover:border-zinc-750 bg-zinc-950/60 hover:bg-zinc-900 text-white transition-all duration-300 hover:-translate-y-0.5"
-              >
-                Contact Our Engineers <ArrowUpRight size={12} />
-              </a>
-            </div>
-          </Reveal>
         </div>
       </section>
 
-      {/* 6. CALL TO ACTION */}
-      <section className="py-24 border-t border-zinc-900/60 bg-gradient-to-b from-zinc-950/20 to-black relative overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-rose-500/[0.03] rounded-full blur-[130px] pointer-events-none" />
-        
-        <div className="max-w-4xl mx-auto text-center px-6 md:px-12 xl:px-8 relative z-10">
-          <Reveal>
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-rose-500/10 bg-rose-500/[0.03] mb-6">
-              <Lock className="w-3.5 h-3.5 text-rose-500" />
-              <span className="text-[10px] font-bold font-mono tracking-wider uppercase text-rose-500">
-                Secure & Compliant Baseline
+      {/* 15. CTA SECTION */}
+      <section className="py-24 relative overflow-hidden bg-[#030303]">
+        <div className="absolute inset-0 bg-radial-glow pointer-events-none" />
+        <div className="max-w-5xl mx-auto px-6 text-center space-y-8 relative z-10">
+          <h2 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight">
+            Build Your Enterprise Landing Zone
+          </h2>
+          <p className="text-base text-zinc-300 max-w-2xl mx-auto leading-relaxed font-semibold">
+            Partner with Devopstrio to spin up secure, compliant multi-cloud landing zones with Infrastructure as Code in days.
+          </p>
+          <div className="flex flex-wrap justify-center gap-4 pt-4">
+            <button
+              onClick={() => setDemoModalOpen(true)}
+              className="inline-flex items-center justify-center px-8 py-4 rounded-lg text-xs font-bold tracking-wider uppercase bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white transition-all duration-300 hover:shadow-[0_0_25px_rgba(225,29,72,0.35)] hover:-translate-y-0.5"
+            >
+              <Sparkles className="w-4 h-4 mr-2" /> Request Demo
+            </button>
+            <button
+              onClick={() => setDemoModalOpen(true)}
+              className="inline-flex items-center justify-center px-8 py-4 rounded-lg text-xs font-bold tracking-wider uppercase border border-zinc-850 hover:border-zinc-750 bg-zinc-950/60 hover:bg-zinc-900 text-white transition-all duration-300 hover:-translate-y-0.5 cursor-pointer"
+            >
+              <Download className="w-4 h-4 text-rose-500 mr-2" /> Download Architecture PDF
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* REPOSITORY DETAIL MODAL */}
+      {selectedRepoModal && (
+        <div className="fixed inset-0 z-50 bg-black/85 backdrop-blur-md flex items-center justify-center p-4">
+          <div className="bg-[#0A0A0A] border border-rose-500/30 rounded-[28px] max-w-3xl w-full p-6 space-y-6 relative shadow-2xl overflow-y-auto max-h-[90vh] animate-in fade-in zoom-in-95">
+            <button
+              onClick={() => setSelectedRepoModal(null)}
+              className="absolute top-5 right-5 p-2 rounded-full bg-zinc-900 text-zinc-400 hover:text-white"
+            >
+              <X className="w-5 h-5" />
+            </button>
+
+            <div className="space-y-2">
+              <span className="inline-flex items-center px-2.5 py-0.5 rounded text-[10px] font-black uppercase tracking-widest bg-[#E11D48] text-white">
+                {selectedRepoModal.cloud} &bull; {selectedRepoModal.category}
               </span>
+              <h3 className="text-2xl font-extrabold text-white pt-1">{selectedRepoModal.name}</h3>
+              <p className="text-xs text-zinc-300 leading-relaxed font-medium">{selectedRepoModal.desc}</p>
             </div>
-          </Reveal>
 
-          <Reveal delay={0.05}>
-            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white mb-6">
-              Ready to Establish a Production-Grade Foundation?
-            </h2>
-          </Reveal>
+            {/* Code Snippet Box */}
+            <div className="space-y-2">
+              <span className="text-xs font-mono font-bold text-zinc-400">Terraform Code Example ({selectedRepoModal.version}):</span>
+              <pre className="p-4 rounded-[16px] bg-black border border-zinc-800 text-xs font-mono text-rose-300 overflow-x-auto">
+                <code>{selectedRepoModal.codeSnippet}</code>
+              </pre>
+            </div>
 
-          <Reveal delay={0.1}>
-            <p className="text-zinc-400 text-xs md:text-sm leading-relaxed font-semibold max-w-2xl mx-auto mb-10">
-              Schedule an architecture discovery session with our principal co-engineers. We will analyze your workload compliance targets against our <Link href="/services/cybersecurity" className="text-rose-500 hover:underline font-bold">enterprise cybersecurity framework</Link> and customize a blueprint path.
-            </p>
-          </Reveal>
+            {/* Documentation Info */}
+            <div className="p-4 rounded-[16px] bg-black border border-zinc-800 space-y-2">
+              <h4 className="text-xs font-bold text-white flex items-center gap-1.5">
+                <BookOpen className="w-4 h-4 text-rose-500" /> Documentation & Setup Overview
+              </h4>
+              <p className="text-xs text-zinc-400 leading-relaxed font-medium">{selectedRepoModal.docsContent}</p>
+            </div>
 
-          <Reveal delay={0.15}>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Link
-                href="/contact"
-                className="px-6 py-3 rounded-lg bg-rose-600 hover:bg-rose-500 text-white font-medium text-xs md:text-sm tracking-wide transition-all duration-300 shadow-[0_0_20px_rgba(244,63,94,0.3)] hover:scale-[1.02]"
+            <div className="flex items-center justify-end gap-3 pt-2">
+              <button
+                onClick={() => setSelectedRepoModal(null)}
+                className="px-5 py-2.5 rounded-xl bg-zinc-900 hover:bg-zinc-800 text-zinc-300 font-bold text-xs"
               >
-                Schedule Discovery Call
-              </Link>
-              
+                Close Window
+              </button>
               <a
-                href="mailto:info@devopstrio.com"
-                className="px-6 py-3 rounded-lg border border-zinc-800 hover:border-rose-500/50 hover:bg-rose-500/[0.02] text-zinc-300 hover:text-white font-medium text-xs md:text-sm tracking-wide transition-all duration-300"
+                href="https://github.com/Devopstrio"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-6 py-2.5 rounded-xl bg-[#E11D48] hover:bg-rose-500 text-white font-bold text-xs flex items-center gap-2 shadow-lg"
               >
-                Contact Sales Engineering
+                <Github className="w-4 h-4" /> Open on GitHub
               </a>
             </div>
-          </Reveal>
+          </div>
         </div>
-      </section>
+      )}
+
+      {/* REQUEST DEMO MODAL */}
+      {demoModalOpen && (
+        <div className="fixed inset-0 z-50 bg-black/85 backdrop-blur-md flex items-center justify-center p-4">
+          <div className="bg-[#0A0A0A] border border-rose-500/30 rounded-[28px] max-w-lg w-full p-6 space-y-6 relative shadow-2xl">
+            <button
+              onClick={() => {
+                setDemoModalOpen(false);
+                setDemoSubmitted(false);
+              }}
+              className="absolute top-5 right-5 p-2 rounded-full bg-zinc-900 text-zinc-400 hover:text-white"
+            >
+              <X className="w-5 h-5" />
+            </button>
+
+            {demoSubmitted ? (
+              <div className="py-8 text-center space-y-4">
+                <div className="w-14 h-14 bg-rose-600/20 text-rose-500 border border-rose-500/30 rounded-full flex items-center justify-center mx-auto">
+                  <CheckCircle2 className="w-8 h-8" />
+                </div>
+                <h3 className="text-xl font-bold text-white">Demo Request Received!</h3>
+                <p className="text-xs text-zinc-300 max-w-sm mx-auto font-medium">
+                  Our Cloud Architecture team will contact you within 24 hours with custom Terraform Landing Zone blueprints and architecture specifications.
+                </p>
+                <button
+                  onClick={() => {
+                    setDemoModalOpen(false);
+                    setDemoSubmitted(false);
+                  }}
+                  className="px-6 py-2.5 rounded-xl bg-[#E11D48] text-white text-xs font-bold"
+                >
+                  Close Window
+                </button>
+              </div>
+            ) : (
+              <form
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  setDemoSubmitted(true);
+                }}
+                className="space-y-4"
+              >
+                <div>
+                  <h3 className="text-xl font-bold text-white flex items-center gap-2">
+                    <Sparkles className="w-5 h-5 text-rose-500" />
+                    Request Landing Zone Demo
+                  </h3>
+                  <p className="text-xs text-zinc-400 mt-1 font-medium">
+                    Provide your details to receive specialized architecture specs and live Terraform demo setup.
+                  </p>
+                </div>
+
+                <div className="space-y-3 text-xs">
+                  <div>
+                    <label className="block text-zinc-300 font-semibold mb-1">Your Full Name *</label>
+                    <input
+                      type="text"
+                      required
+                      placeholder="e.g. Alex Rivera"
+                      className="w-full bg-black border border-zinc-800 rounded-xl px-3.5 py-2.5 text-white focus:border-rose-500 focus:outline-none"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-zinc-300 font-semibold mb-1">Work Email *</label>
+                    <input
+                      type="email"
+                      required
+                      placeholder="name@company.com"
+                      className="w-full bg-black border border-zinc-800 rounded-xl px-3.5 py-2.5 text-white focus:border-rose-500 focus:outline-none"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-zinc-300 font-semibold mb-1">Target Cloud Platform</label>
+                    <select className="w-full bg-black border border-zinc-800 rounded-xl px-3.5 py-2.5 text-white focus:border-rose-500 focus:outline-none">
+                      <option>Microsoft Azure Landing Zone</option>
+                      <option>AWS Landing Zone (Control Tower)</option>
+                      <option>Google Cloud Foundation Fabric</option>
+                      <option>Oracle Cloud Infrastructure LZ</option>
+                      <option>Multi-Cloud Hybrid Architecture</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div className="pt-2 flex justify-end gap-3">
+                  <button
+                    type="button"
+                    onClick={() => setDemoModalOpen(false)}
+                    className="px-4 py-2 rounded-xl bg-zinc-900 text-zinc-300 text-xs font-semibold"
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    type="submit"
+                    className="px-5 py-2 rounded-xl bg-[#E11D48] hover:bg-rose-500 text-white text-xs font-bold flex items-center gap-1.5"
+                  >
+                    <Sparkles className="w-3.5 h-3.5" /> Submit Request
+                  </button>
+                </div>
+              </form>
+            )}
+          </div>
+        </div>
+      )}
 
     </main>
   );

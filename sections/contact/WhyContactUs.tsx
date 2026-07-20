@@ -40,7 +40,7 @@ const cards = [
 ];
 
 const channels = [
-  { label: "Email Us", colorClass: "text-rose-500 hover:text-rose-400", href: "mailto:info@devopstrioglobal.com" },
+  { label: "Email Us", colorClass: "text-rose-500 hover:text-rose-400", href: `mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL}` },
   { label: "Call Us", colorClass: "text-sky-500 hover:text-sky-400", href: "tel:0447471482903" },
   { label: "WhatsApp", colorClass: "text-[#25D366] hover:text-[#12ec6e]", href: "https://wa.me/447471482903" },
 ];

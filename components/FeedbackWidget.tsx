@@ -80,7 +80,7 @@ export function FeedbackWidget() {
           phone: '',
           selectedServices: ["SCHEDULE_CALL"],
           message: `Requested call on ${scheduleDate} at ${scheduleTime}. Additional context: ${feedback}`,
-          toEmail: 'info@devopstrioglobal.com',
+          toEmail: process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'info@devopstrioglobal.com',
         })
       });
 
@@ -120,7 +120,7 @@ export function FeedbackWidget() {
           phone: '',
           selectedServices: [activeTab.toUpperCase()],
           message: feedback.trim(),
-          toEmail: 'info@devopstrioglobal.com',
+          toEmail: process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'info@devopstrioglobal.com',
         })
       });
 

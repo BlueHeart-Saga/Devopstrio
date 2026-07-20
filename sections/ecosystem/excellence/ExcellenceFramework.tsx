@@ -49,14 +49,14 @@ export function ExcellenceFramework() {
       image: "/assets/Home-page/we-imagine/gen/we-transform-legacy.png"
     },
     {
-      id: "sre",
-      name: "Site Reliability Engineering",
-      subtitle: "Reliability By Design",
-      pointsTitle: "Focus Areas & Metrics",
-      points: ["Observability & Logging", "Incident Response Control", "Capacity Planning", "Disaster Recovery", "SLA & SLO Monitoring", "MTTR Optimization"],
-      subInfoTitle: "Tools",
-      subInfo: ["Grafana", "Prometheus", "OpenTelemetry", "Azure Monitor"],
-      image: "/assets/Home-page/we-imagine/gen/we-manage-operations.png"
+      id: "architecture",
+      name: "Solution Architecture",
+      subtitle: "Designing Scalable Enterprise Systems",
+      pointsTitle: "Focus Areas",
+      points: ["Enterprise Architecture", "Cloud Architecture", "Microservices", "API Strategy", "Event-Driven Systems", "Solution Blueprints"],
+      subInfoTitle: "Strategy & Design",
+      subInfo: ["Architecture Reviews", "Scalability Planning", "ADRs", "Design Patterns"],
+      image: "/assets/Home-page/we-imagine/gen/we-design-intelligent.png"
     },
     {
       id: "devsecops",
@@ -69,6 +69,16 @@ export function ExcellenceFramework() {
       image: "/assets/Home-page/we-imagine/gen/we-design-intelligent.png"
     },
     {
+      id: "sre",
+      name: "Site Reliability Engineering",
+      subtitle: "Reliability By Design",
+      pointsTitle: "Focus Areas & Metrics",
+      points: ["Observability & Logging", "Incident Response Control", "Capacity Planning", "Disaster Recovery", "SLA & SLO Monitoring", "MTTR Optimization"],
+      subInfoTitle: "Tools",
+      subInfo: ["Grafana", "Prometheus", "OpenTelemetry", "Azure Monitor"],
+      image: "/assets/Home-page/we-imagine/gen/we-manage-operations.png"
+    },
+    {
       id: "quality",
       name: "Quality Engineering",
       subtitle: "Delivering Confidence Through Automation",
@@ -79,34 +89,14 @@ export function ExcellenceFramework() {
       image: "/assets/Home-page/we-imagine/gen/we-build-software.png"
     },
     {
-      id: "governance",
-      name: "Architecture Governance",
-      subtitle: "Enterprise Architecture Standards",
-      pointsTitle: "Focus Areas",
-      points: ["Cloud Architecture reviews", "Security Architecture alignments", "Data Architecture blueprints", "Solution Design templates", "Technical review boards", "Platform optimizations"],
-      subInfoTitle: "Governance Pipeline",
-      subInfo: ["Design", "Review", "Approval", "Implementation", "Optimization"],
+      id: "operations",
+      name: "Engineering Operations",
+      subtitle: "Optimizing Delivery and Governance",
+      pointsTitle: "Capabilities",
+      points: ["Engineering Governance", "SDLC Management", "Release Management", "CI/CD Operations", "Developer Productivity", "Agile Delivery"],
+      subInfoTitle: "Metrics & Processes",
+      subInfo: ["DORA Metrics", "Continuous Improvement", "Release Optimization", "SPACE Framework"],
       image: "/assets/Home-page/we-imagine/gen/we-transform-legacy.png"
-    },
-    {
-      id: "delivery",
-      name: "Delivery Excellence",
-      subtitle: "Consistent Delivery Outcomes",
-      pointsTitle: "Methodologies",
-      points: ["Agile Delivery frameworks", "Scrum sprints loops", "Kanban tracking boards", "SAFe scaled structures", "DevOps orchestration", "Agile KPI analytics"],
-      subInfoTitle: "Core Capabilities",
-      subInfo: ["Sprint Planning", "Release Management", "Risk Management", "Continuous Improvement"],
-      image: "/assets/Home-page/we-imagine/gen/we-manage-operations.png"
-    },
-    {
-      id: "innovation",
-      name: "Continuous Innovation",
-      subtitle: "Future Innovation Programs",
-      pointsTitle: "Focus Areas",
-      points: ["Architecture reviews", "Engineering labs research", "Internal accelerators", "Reusable code libraries", "Platform blueprint designs", "AI-assisted coding environments"],
-      subInfoTitle: "Programs",
-      subInfo: ["Technology guilds", "Learning platforms", "Hackathons", "Guild research pipelines"],
-      image: "/assets/Home-page/we-imagine/gen/we-design-intelligent.png"
     }
   ];
 

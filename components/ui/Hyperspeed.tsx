@@ -500,6 +500,12 @@ const Hyperspeed = ({ effectOptions = {} }: HyperspeedProps) => {
       }
 
       initPasses() {
+        const gl = this.renderer.getContext();
+        if (!gl || !gl.getContextAttributes()) {
+          console.warn("WebGL context not available or lost. Skipping post-processing.");
+          return;
+        }
+        
         this.renderPass = new RenderPass(this.scene, this.camera);
         this.bloomPass = new EffectPass(
           this.camera,

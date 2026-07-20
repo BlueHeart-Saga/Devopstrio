@@ -193,7 +193,7 @@ export function ContactForm() {
                   {/* Pills */}
                   <div className="flex flex-col gap-2 mt-2 sm:mt-0">
                     <div className="px-4 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-md text-[#ebd0be] text-[10px] font-medium tracking-wide shadow-sm text-center">
-                      info@devopstrioglobal.com
+                      {process.env.NEXT_PUBLIC_CONTACT_EMAIL}
                     </div>
                     <a
                       href="tel:0447471482903"

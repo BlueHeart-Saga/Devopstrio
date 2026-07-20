@@ -73,7 +73,7 @@ export default function GDPRPage() {
             </div>
           </div>
           <p className="pt-2">
-            To submit a Data Subject Access Request (DSAR), please contact our DPO at <a href="mailto:dpo@devopstrio.com" className="text-rose-500 hover:underline">dpo@devopstrio.com</a>. We will respond to your request within 30 days.
+            To submit a Data Subject Access Request (DSAR), please contact our DPO at <a href={`mailto:${process.env.NEXT_PUBLIC_DPO_EMAIL}`} className="text-rose-500 hover:underline">{process.env.NEXT_PUBLIC_DPO_EMAIL}</a>. We will respond to your request within 30 days.
           </p>
         </div>
       )
@@ -192,7 +192,7 @@ export default function GDPRPage() {
           <div className="bg-zinc-950/60 border border-zinc-900 rounded-2xl p-6 text-xs space-y-1.5">
             <p className="font-bold text-white text-sm">Devopstrio Data Protection Officer</p>
             <p className="text-zinc-400">Attention: Legal & Trust Department</p>
-            <p className="text-zinc-400">Email: <a href="mailto:dpo@devopstrio.com" className="text-rose-500 hover:underline">dpo@devopstrio.com</a></p>
+            <p className="text-zinc-400">Email: <a href={`mailto:${process.env.NEXT_PUBLIC_DPO_EMAIL}`} className="text-rose-500 hover:underline">{process.env.NEXT_PUBLIC_DPO_EMAIL}</a></p>
             <p className="text-zinc-400">Address: Devopstrio Limited, One World Trade Center, Floor 85, New York, NY 10007, USA</p>
           </div>
         </div>

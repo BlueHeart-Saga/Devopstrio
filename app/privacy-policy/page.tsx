@@ -192,7 +192,7 @@ export default function PrivacyPolicyPage() {
             <li><strong className="text-zinc-300">Right to Data Portability:</strong> Request that your data be provided in a structured, machine-readable format for transfer to another service provider.</li>
           </ul>
           <p className="pt-2">
-            To exercise any of these rights, please send an email request to our Data Protection Officer at <a href="mailto:privacy@devopstrio.com" className="text-rose-500 hover:underline">privacy@devopstrio.com</a>.
+            To exercise any of these rights, please send an email request to our Data Protection Officer at <a href={`mailto:${process.env.NEXT_PUBLIC_PRIVACY_EMAIL}`} className="text-rose-500 hover:underline">{process.env.NEXT_PUBLIC_PRIVACY_EMAIL}</a>.
           </p>
         </div>
       )
@@ -225,7 +225,7 @@ export default function PrivacyPolicyPage() {
           </p>
           <div className="bg-zinc-950/60 border border-zinc-900 rounded-2xl p-6 text-xs space-y-2">
             <p className="font-bold text-white text-sm">Devopstrio Trust, Risk, & Compliance Department</p>
-            <p className="text-zinc-400">Email: <a href="mailto:trust@devopstrio.com" className="text-rose-500 hover:underline">trust@devopstrio.com</a></p>
+            <p className="text-zinc-400">Email: <a href={`mailto:${process.env.NEXT_PUBLIC_TRUST_EMAIL}`} className="text-rose-500 hover:underline">{process.env.NEXT_PUBLIC_TRUST_EMAIL}</a></p>
             <p className="text-zinc-400">Address: Devopstrio Limited, One World Trade Center, Floor 85, New York, NY 10007, USA</p>
           </div>
         </div>
