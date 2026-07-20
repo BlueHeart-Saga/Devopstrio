@@ -9,6 +9,9 @@ export function FeedbackWidget() {
   const [activeTab, setActiveTab] = useState("contact");
   const [feedback, setFeedback] = useState("");
   const [email, setEmail] = useState("");
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [company, setCompany] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
 
@@ -75,11 +78,12 @@ export function FeedbackWidget() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          name: email.split('@')[0],
+          name: name.trim() || email.split('@')[0],
           email: email.trim(),
-          phone: '',
+          phone: phone.trim(),
+          company: company.trim(),
           selectedServices: ["SCHEDULE_CALL"],
-          message: `Requested call on ${scheduleDate} at ${scheduleTime}. Additional context: ${feedback}`,
+          message: `Requested call on ${scheduleDate} at ${scheduleTime}.${company ? ` Company: ${company}.` : ''} Additional context: ${feedback}`,
           toEmail: process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'info@devopstrioglobal.com',
         })
       });
@@ -89,6 +93,9 @@ export function FeedbackWidget() {
       setSubmitted(true);
       setFeedback("");
       setEmail("");
+      setName("");
+      setPhone("");
+      setCompany("");
       setScheduleDate("");
       setScheduleTime("");
 
@@ -110,15 +117,18 @@ export function FeedbackWidget() {
 
     setLoading(true);
 
+    const serviceType = activeTab === "contact" ? "QUICK_CONTACT" : "FEEDBACK";
+
     try {
       const response = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          name: email ? email.split('@')[0] : 'Anonymous',
+          name: name.trim() || (email ? email.split('@')[0] : 'Anonymous Contact'),
           email: email.trim() || 'anonymous@devopstrioglobal.com',
-          phone: '',
-          selectedServices: [activeTab.toUpperCase()],
+          phone: phone.trim(),
+          company: company.trim(),
+          selectedServices: [serviceType],
           message: feedback.trim(),
           toEmail: process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'info@devopstrioglobal.com',
         })
@@ -129,6 +139,9 @@ export function FeedbackWidget() {
       setSubmitted(true);
       setFeedback("");
       setEmail("");
+      setName("");
+      setPhone("");
+      setCompany("");
 
       setTimeout(() => {
         setSubmitted(false);
@@ -287,92 +300,143 @@ export function FeedbackWidget() {
                   </div>
                 ) : activeTab === "schedule" ? (
                   <form onSubmit={handleScheduleSubmit} className="flex flex-col gap-4 p-6 h-full overflow-y-auto">
-                    <div className="flex flex-col gap-2">
-                      <label className="text-sm font-bold text-zinc-300">Select Date</label>
-                      <input
-                        type="date"
-                        value={scheduleDate}
-                        onChange={(e) => setScheduleDate(e.target.value)}
-                        required
-                        className="w-full bg-black/40 backdrop-blur-sm border border-white/10 rounded-xl px-5 py-3.5 text-sm text-white focus:outline-none focus:border-rose-500 transition-colors shadow-inner cursor-pointer"
-                        style={{ colorScheme: 'dark' }}
-                      />
-                    </div>
-                    
-                    <div className="flex flex-col gap-2">
-                      <label className="text-sm font-bold text-zinc-300">Select Time</label>
-                      <input
-                        type="time"
-                        value={scheduleTime}
-                        onChange={(e) => setScheduleTime(e.target.value)}
-                        required
-                        className="w-full bg-black/40 backdrop-blur-sm border border-white/10 rounded-xl px-5 py-3.5 text-sm text-white focus:outline-none focus:border-rose-500 transition-colors shadow-inner cursor-pointer"
-                        style={{ colorScheme: 'dark' }}
-                      />
-                    </div>
-
-                    <div className="flex flex-col gap-2">
-                      <label className="text-sm font-bold text-zinc-300">Your Email</label>
-                      <input
-                        type="email"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        required
-                        placeholder="john@example.com"
-                        className="w-full bg-black/40 backdrop-blur-sm border border-white/10 rounded-xl px-5 py-3.5 text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-rose-500 transition-colors shadow-inner"
-                      />
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                      <div className="flex flex-col gap-1.5">
+                        <label className="text-xs font-bold text-zinc-300">Full Name</label>
+                        <input
+                          type="text"
+                          value={name}
+                          onChange={(e) => setName(e.target.value)}
+                          placeholder="e.g. Sarah Jenkins"
+                          className="w-full bg-black/40 backdrop-blur-sm border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-rose-500 transition-colors"
+                        />
+                      </div>
+                      <div className="flex flex-col gap-1.5">
+                        <label className="text-xs font-bold text-zinc-300">Work Email *</label>
+                        <input
+                          type="email"
+                          value={email}
+                          onChange={(e) => setEmail(e.target.value)}
+                          required
+                          placeholder="sarah@company.com"
+                          className="w-full bg-black/40 backdrop-blur-sm border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-rose-500 transition-colors"
+                        />
+                      </div>
                     </div>
 
-                    <div className="flex flex-col gap-2">
-                      <label className="text-sm font-bold text-zinc-300">Topic (Optional)</label>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                      <div className="flex flex-col gap-1.5">
+                        <label className="text-xs font-bold text-zinc-300">Company / Organization</label>
+                        <input
+                          type="text"
+                          value={company}
+                          onChange={(e) => setCompany(e.target.value)}
+                          placeholder="e.g. Acme Corp"
+                          className="w-full bg-black/40 backdrop-blur-sm border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-rose-500 transition-colors"
+                        />
+                      </div>
+                      <div className="flex flex-col gap-1.5">
+                        <label className="text-xs font-bold text-zinc-300">Phone Number</label>
+                        <input
+                          type="tel"
+                          value={phone}
+                          onChange={(e) => setPhone(e.target.value)}
+                          placeholder="+44 7000 000000"
+                          className="w-full bg-black/40 backdrop-blur-sm border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-rose-500 transition-colors"
+                        />
+                      </div>
+                    </div>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                      <div className="flex flex-col gap-1.5">
+                        <label className="text-xs font-bold text-zinc-300">Preferred Date *</label>
+                        <input
+                          type="date"
+                          value={scheduleDate}
+                          onChange={(e) => setScheduleDate(e.target.value)}
+                          required
+                          className="w-full bg-black/40 backdrop-blur-sm border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-rose-500 transition-colors cursor-pointer"
+                          style={{ colorScheme: 'dark' }}
+                        />
+                      </div>
+                      <div className="flex flex-col gap-1.5">
+                        <label className="text-xs font-bold text-zinc-300">Preferred Time *</label>
+                        <input
+                          type="time"
+                          value={scheduleTime}
+                          onChange={(e) => setScheduleTime(e.target.value)}
+                          required
+                          className="w-full bg-black/40 backdrop-blur-sm border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-rose-500 transition-colors cursor-pointer"
+                          style={{ colorScheme: 'dark' }}
+                        />
+                      </div>
+                    </div>
+
+                    <div className="flex flex-col gap-1.5">
+                      <label className="text-xs font-bold text-zinc-300">Meeting Objectives / Notes</label>
                       <textarea
                         value={feedback}
                         onChange={(e) => setFeedback(e.target.value)}
-                        placeholder="What would you like to discuss?"
-                        className="w-full bg-black/40 backdrop-blur-sm border border-white/10 rounded-2xl px-5 py-4 text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-rose-500 min-h-[80px] resize-none transition-colors shadow-inner"
+                        placeholder="Tell us brief details about your cloud, DevOps, or consulting requirements..."
+                        className="w-full bg-black/40 backdrop-blur-sm border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-rose-500 min-h-[75px] resize-none transition-colors"
                       />
                     </div>
 
                     <button 
                       type="submit"
                       disabled={loading || !email.trim() || !scheduleDate || !scheduleTime}
-                      className="w-full py-4 mt-auto bg-gradient-to-r from-rose-600 to-rose-500 hover:from-rose-500 hover:to-rose-400 text-white text-sm font-bold rounded-xl transition-all disabled:opacity-50 flex items-center justify-center gap-2 shadow-[0_5px_15px_rgba(225,29,72,0.3)]"
+                      className="w-full py-3.5 mt-auto bg-gradient-to-r from-rose-600 to-rose-500 hover:from-rose-500 hover:to-rose-400 text-white text-sm font-bold rounded-xl transition-all disabled:opacity-50 flex items-center justify-center gap-2 shadow-[0_5px_15px_rgba(225,29,72,0.3)]"
                     >
-                      {loading ? "Scheduling..." : "Schedule Call"}
+                      {loading ? "Scheduling Call..." : "Confirm & Schedule Call"}
                       {!loading && <Send size={16} />}
                     </button>
                   </form>
                 ) : (
-                  <form onSubmit={handleSubmit} className="flex flex-col gap-5 p-6 h-full overflow-y-auto">
-                    <div className="flex flex-col gap-2">
-                      <label className="text-sm font-bold text-zinc-300">
-                        {activeTab === "contact" ? "How can we assist you?" : "Share your thoughts"}
+                  <form onSubmit={handleSubmit} className="flex flex-col gap-4 p-6 h-full overflow-y-auto">
+                    <div className="flex flex-col gap-1.5">
+                      <label className="text-xs font-bold text-zinc-300">
+                        Full Name {activeTab === 'feedback' && '(Optional)'}
                       </label>
-                      <textarea
-                        value={feedback}
-                        onChange={(e) => setFeedback(e.target.value)}
-                        placeholder={activeTab === "contact" ? "Describe your inquiry..." : "Tell us what you think..."}
-                        className="w-full bg-black/40 backdrop-blur-sm border border-white/10 rounded-2xl px-5 py-4 text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-rose-500 min-h-[140px] resize-none transition-colors shadow-inner"
-                        required
+                      <input
+                        type="text"
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                        placeholder="e.g. Alex Morgan"
+                        className="w-full bg-black/40 backdrop-blur-sm border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-rose-500 transition-colors"
                       />
                     </div>
 
-                    <div className="flex flex-col gap-2">
-                      <label className="text-sm font-bold text-zinc-300">Email Address {activeTab === 'feedback' && '(Optional)'}</label>
+                    <div className="flex flex-col gap-1.5">
+                      <label className="text-xs font-bold text-zinc-300">
+                        Email Address {activeTab === 'feedback' && '(Optional)'}
+                      </label>
                       <input
                         type="email"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         required={activeTab === "contact"}
-                        placeholder="john@example.com"
-                        className="w-full bg-black/40 backdrop-blur-sm border border-white/10 rounded-xl px-5 py-3.5 text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-rose-500 transition-colors shadow-inner"
+                        placeholder="alex@company.com"
+                        className="w-full bg-black/40 backdrop-blur-sm border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-rose-500 transition-colors"
+                      />
+                    </div>
+
+                    <div className="flex flex-col gap-1.5">
+                      <label className="text-xs font-bold text-zinc-300">
+                        {activeTab === "contact" ? "How can we assist you? *" : "Share your thoughts *"}
+                      </label>
+                      <textarea
+                        value={feedback}
+                        onChange={(e) => setFeedback(e.target.value)}
+                        placeholder={activeTab === "contact" ? "Describe your inquiry in detail..." : "Tell us what you think..."}
+                        className="w-full bg-black/40 backdrop-blur-sm border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-rose-500 min-h-[110px] resize-none transition-colors"
+                        required
                       />
                     </div>
 
                     <button 
                       type="submit"
                       disabled={loading || !feedback.trim()}
-                      className="w-full py-4 mt-auto bg-gradient-to-r from-rose-600 to-rose-500 hover:from-rose-500 hover:to-rose-400 text-white text-sm font-bold rounded-xl transition-all disabled:opacity-50 flex items-center justify-center gap-2 shadow-[0_5px_15px_rgba(225,29,72,0.3)]"
+                      className="w-full py-3.5 mt-auto bg-gradient-to-r from-rose-600 to-rose-500 hover:from-rose-500 hover:to-rose-400 text-white text-sm font-bold rounded-xl transition-all disabled:opacity-50 flex items-center justify-center gap-2 shadow-[0_5px_15px_rgba(225,29,72,0.3)]"
                     >
                       {loading ? "Sending..." : "Send Message"}
                       {!loading && <Send size={16} />}

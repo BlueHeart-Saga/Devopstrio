@@ -100,7 +100,7 @@ export function Footer() {
                 alt="Devopstrio logo"
                 className="w-16 h-16 object-contain transition-all duration-500 group-hover:scale-105 filter drop-shadow-[0_0_15px_rgba(255,255,255,0.15)]"
               />
-              <div className="flex flex-col items-center">
+              <div className="flex flex-col items-start">
                 <span className="text-3xl font-semibold text-white tracking-tight leading-none">
                   Devopstrio
                 </span>
@@ -111,21 +111,22 @@ export function Footer() {
             </Link>
 
             {/* Contact Info (Head Office) */}
-            <div className="text-xs text-zinc-400 font-semibold tracking-wide flex flex-col items-center gap-1.5 border-t border-zinc-900 pt-4 pb-2 w-full">
+            <div className="text-xs text-zinc-400 font-semibold tracking-wide flex flex-col items-start text-left gap-1.5 border-t border-zinc-900 pt-4 pb-2 w-full">
               <span className="text-[10px] font-bold text-white uppercase tracking-wider block">Head Office</span>
-              <span className="text-zinc-500 font-medium leading-relaxed block">
+              <span className="text-zinc-500 font-medium leading-relaxed block text-left">
                 128 City Road, London, EC1V 2NX
               </span>
               <a href="tel:0447471482903" className="hover:text-rose-500 transition-colors flex items-center gap-2 text-zinc-400">
                 <span>📞</span> <span className="font-bold text-white hover:text-rose-500 transition-colors">044-7471 482903</span>
               </a>
               <a href={`mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL}`} className="hover:text-rose-500 transition-colors flex items-center gap-2 text-zinc-400">
-                <span>✉</span> <span className="font-bold">{process.env.NEXT_PUBLIC_CONTACT_EMAIL}</span>
+                {/* <span>✉</span> */}
+                 <span className="font-bold">{process.env.NEXT_PUBLIC_CONTACT_EMAIL}</span>
               </a>
             </div>
 
             {/* Corporate Location Box */}
-            <div className="rounded-2xl flex flex-col items-center justify-center w-full max-w-[240px]">
+            <div className="rounded-2xl flex flex-col items-start justify-start w-full max-w-[240px]">
               {/* QR Code Image */}
               <div className="w-24 h-24 bg-white p-1 rounded-xl flex items-center justify-center shadow-[0_4px_12px_rgba(0,0,0,0.5)] overflow-hidden">
                 <img
@@ -137,7 +138,7 @@ export function Footer() {
 
               {/* Verify Profile Button */}
               <div className="flex flex-col gap-2 mt-4 w-full">
-                <span className="text-[9px] text-zinc-500 font-bold uppercase tracking-wider text-center">or click below</span>
+                <span className="text-[9px] text-zinc-500 font-bold uppercase tracking-wider text-left">or click below</span>
                 <button
                   onClick={() => setIsLocationOpen(true)}
                   className="flex items-center justify-center gap-2 bg-white hover:bg-zinc-100 text-black py-2.5 rounded-xl text-xs font-bold transition-all duration-300 shadow-sm w-full"
@@ -148,7 +149,7 @@ export function Footer() {
                     <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z" fill="#FBBC05" />
                     <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z" fill="#EA4335" />
                   </svg>
-                  <span>Verify Location</span>
+                  <span>Open Office Location</span>
                 </button>
               </div>
             </div>
