@@ -35,7 +35,24 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/cookie-policy",
     "/gdpr",
     "/services/explore",
-    "/ecosystem/landing-zone"
+    "/ecosystem/landing-zone",
+    "/marketing",
+    "/marketing/products",
+    "/marketing/services",
+    "/marketing/services/ai-data-innovation",
+    "/marketing/services/cloud-services",
+    "/marketing/services/devops-automation",
+    "/marketing/industries",
+    "/marketing/industries/banking-finance",
+    "/marketing/industries/healthcare",
+    "/marketing/case-studies",
+    "/marketing/whitepapers",
+    "/marketing/company",
+    "/marketing/company/company-profile",
+    "/marketing/company/corporate-presentation",
+    "/marketing/company/brand-guidelines",
+    "/marketing/platforms",
+    "/marketing/technology"
   ].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date(),
@@ -106,7 +123,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         });
 
         // Add all subpages of saas-platforms
-        const saasSubpages = ["brio", "campix", "homela", "humanex", "prestivo", "safesign"];
+        const saasSubpages = ["brio", "campix", "caresuite", "homela", "humanex", "justivon", "prestivo", "safesign"];
         saasSubpages.forEach((slug) => {
           ecosystemPages.push({
             url: `${baseUrl}/ecosystem/platforms-solutions/saas-platforms/${slug}`,

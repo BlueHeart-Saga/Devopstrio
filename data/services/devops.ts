@@ -91,46 +91,50 @@ export const devopsCapabilities: Record<string, CapabilityDetail> = {
   "kubernetes-services": {
     slug: "kubernetes-services",
     title: "Kubernetes Services",
-    heroSubtitle: "Deploy, secure, and manage production-grade Kubernetes clusters utilizing GitOps delivery pipelines.",
-    challenge: "Enterprise Kubernetes setups suffer from configuration drift, poor network isolation policies, excessive cloud resource bills, and manual deployment errors.",
-    solution: "We build declarative Kubernetes clusters utilizing Terraform, configure automated resource controllers, enforce security policies, and deploy GitOps pipelines.",
+    metaTitle: "Managed Kubernetes Services in UK | Enterprise Kubernetes Experts",
+    metaDescription: "Optimize your cloud infrastructure with our Kubernetes Services in UK. We deliver secure Kubernetes deployments, GitOps automation, monitoring, scaling, and production-ready cluster management.",
+    heroSubtitle: "Build, secure, and optimize production-ready Kubernetes environments with expert Kubernetes Services in UK, backed by proven cloud-native deployment practices.",
+    challenge: "Enterprise Kubernetes environments struggle with configuration drift, unoptimized infrastructure, complex networking policies, and manual deployment bottlenecks that increase operational risk.",
+    solution: "Our Kubernetes Services in UK helped organizations successfully deploy, secure, and optimize production-grade Kubernetes environments tailored to their business needs. We implemented GitOps-driven deployment workflows, streamlined container orchestration, improved application performance, and delivered more efficient infrastructure management.",
     features: [
-      "Declarative cluster configurations with auto-scaling rules",
-      "GitOps continuous delivery utilizing ArgoCD and Helm",
-      "Network isolation policies and secure container access"
+      "Successfully deployed production-ready Kubernetes clusters",
+      "Strengthened security with continuous monitoring and granular access controls",
+      "Optimized infrastructure for high performance, auto-scaling, and operational resilience",
+      "Automated GitOps continuous delivery workflows utilizing ArgoCD and Helm"
     ],
     benefits: [
-      "Zero cluster configuration drift",
-      "Auto-scaling matching capacity to traffic spikes",
-      "Drastic reduction in cluster infrastructure bills"
+      "Reduced operational complexity and minimized application downtime",
+      "Accelerated application delivery with future-ready cloud-native platforms",
+      "Resilient cluster management and continuous telemetry monitoring",
+      "Consistent compliance adherence and long-term operational stability"
     ],
     deliveryApproach: [
-      "Design Blueprint: Planning pod counts, subnets, and node pools.",
-      "Cluster Deployment: Deploying EKS or AKS via Terraform.",
-      "GitOps Integration: Connecting ArgoCD to application repositories."
+      "Assessment & Architecture Blueprint: Planning node pools, subnets, and cluster security parameters.",
+      "Cluster Provisioning: Deploying EKS, AKS, or GKE clusters utilizing automated Terraform modules.",
+      "GitOps & Telemetry Integration: Connecting ArgoCD pipelines, Prometheus monitoring, and Grafana dashboards."
     ],
     techStack: [
-      { name: "Kubernetes / Helm", desc: "Core container orchestration and packaging." },
-      { name: "ArgoCD", desc: "Continuous delivery GitOps operator." },
-      { name: "Prometheus / Grafana", desc: "Telemetry monitoring dashboards." }
+      { name: "Kubernetes / Helm", desc: "Core container orchestration, packaging, and ingress management." },
+      { name: "ArgoCD", desc: "GitOps operator for automated continuous delivery." },
+      { name: "Prometheus / Grafana", desc: "Real-time cluster telemetry monitoring and alerting." }
     ],
     caseStudy: {
-      title: "Sustaining flash sale traffic spikes for global apparel brand.",
-      desc: "We deployed auto-scaling Kubernetes clusters with ArgoCD pipelines, managing 200 microservice nodes under heavy checkout spikes without lag.",
+      title: "Delivering Results with Kubernetes Services in UK",
+      desc: "Proven Kubernetes solutions that delivered secure, scalable, and reliable outcomes for our clients across production enterprise workloads.",
       metrics: [
-        { value: "99.99%", label: "Uptime during flash sales" },
-        { value: "200+", label: "Microservice nodes scaling" },
-        { value: "0", label: "Manual deployment failures" }
+        { value: "99.99%", label: "Cluster Uptime & Availability" },
+        { value: "70%", label: "Reduction in Operational Complexity" },
+        { value: "0", label: "Unplanned Outages" }
       ]
     },
     faqs: [
       {
-        q: "Do you support on-premise Kubernetes setups?",
-        a: "Yes. We configure bare-metal clusters and hybrid Kubernetes engines using Rancher or OpenShift."
+        q: "What benefits do Kubernetes Services in UK provide?",
+        a: "Our Kubernetes Services in UK deliver automated deployments, resilient cluster management, continuous monitoring, and secure infrastructure built on cloud-native best practices."
       },
       {
-        q: "How do you secure container communications?",
-        a: "We deploy service meshes like Istio or Linkerd to enforce mutual TLS encryption between container pods."
+        q: "Do you support multi-cloud and hybrid Kubernetes environments?",
+        a: "Yes, we architect and manage production clusters across AWS (EKS), Azure (AKS), Google Cloud (GKE), and hybrid on-premise environments using Rancher and OpenShift."
       }
     ]
   }

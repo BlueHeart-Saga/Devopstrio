@@ -41,6 +41,8 @@ export interface CapabilityDetail {
   techStack: TechItem[];
   caseStudy: CaseStudy;
   faqs: FAQItem[];
+  metaTitle?: string;
+  metaDescription?: string;
 }
 
 export interface ServiceCategory {

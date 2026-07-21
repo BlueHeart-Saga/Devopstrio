@@ -58,12 +58,15 @@ export async function generateMetadata({ params }: PageProps) {
     };
   }
 
+  const title = data.metaTitle || `${data.title} | Devopstrio`;
+  const description = data.metaDescription || data.heroSubtitle;
+
   return {
-    title: `${data.title} | Devopstrio`,
-    description: data.heroSubtitle,
+    title,
+    description,
     openGraph: {
-      title: `${data.title} | Devopstrio`,
-      description: data.heroSubtitle
+      title,
+      description
     },
     alternates: {
       canonical: `/services/${service}/${capability}`

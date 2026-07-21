@@ -13,7 +13,9 @@ import {
   ArrowUpRight,
   TrendingUp,
   MapPin,
-  HeartHandshake
+  HeartHandshake,
+  Layers,
+  FileText
 } from "lucide-react";
 
 interface SitemapItem {
@@ -52,6 +54,23 @@ const sitemapData: SitemapCategory[] = [
     ]
   },
   {
+    title: "SaaS Platforms & Products",
+    description: "Our suite of proprietary multi-tenant SaaS products and turn-key business platforms.",
+    icon: Layers,
+    accentColor: "from-cyan-500 to-blue-600",
+    items: [
+      { name: "SaaS Platforms Hub", href: "/ecosystem/platforms-solutions/saas-platforms", desc: "Overview of enterprise SaaS products and platforms." },
+      { name: "SafeSign Platform", href: "/ecosystem/platforms-solutions/saas-platforms/safesign", desc: "Zero-trust digital signature & AI document workflow suite." },
+      { name: "Brio Marketing", href: "/ecosystem/platforms-solutions/saas-platforms/brio", desc: "AI-powered creator campaign and influencer marketing hub." },
+      { name: "Campix Operations", href: "/ecosystem/platforms-solutions/saas-platforms/campix", desc: "Enterprise campaign automation & multi-channel management." },
+      { name: "CareSuite Health", href: "/ecosystem/platforms-solutions/saas-platforms/caresuite", desc: "HIPAA-compliant patient telemetry and health management." },
+      { name: "HomeLa Real Estate", href: "/ecosystem/platforms-solutions/saas-platforms/homela", desc: "Smart real estate portal and property ecosystem grid." },
+      { name: "HumanEx HR Tech", href: "/ecosystem/platforms-solutions/saas-platforms/humanex", desc: "Next-gen HR management, payroll and workforce analytics." },
+      { name: "Justivon Legal", href: "/ecosystem/platforms-solutions/saas-platforms/justivon", desc: "Legal-tech document intelligence and contract management." },
+      { name: "Prestivo Fintech", href: "/ecosystem/platforms-solutions/saas-platforms/prestivo", desc: "Micro-lending platform and automated credit evaluation grid." }
+    ]
+  },
+  {
     title: "Industries",
     description: "Tailored digital environments built to satisfy strict vertical regulatory standards.",
     icon: Building2,
@@ -84,6 +103,21 @@ const sitemapData: SitemapCategory[] = [
       { name: "Engineering Excellence", href: "/ecosystem/engineering-excellence", desc: "Our rigorous code standards, peer reviews, and SRE principles." },
       { name: "Accelerators & Frameworks", href: "/ecosystem/accelerators-frameworks", desc: "Modular startup code bases that trim weeks off project lifecycles." },
       { name: "Community & Talent Network", href: "/ecosystem/community-talent-network", desc: "Open-source projects, university programs, and developer certification tracks." }
+    ]
+  },
+  {
+    title: "Marketing & Collateral",
+    description: "Public presentation decks, corporate specs, and brand assets for clients.",
+    icon: FileText,
+    accentColor: "from-fuchsia-500 to-pink-600",
+    items: [
+      { name: "Marketing Resource Portal", href: "/marketing", desc: "Centralized marketing portal for corporate presentations and decks." },
+      { name: "Corporate Presentation", href: "/marketing/company/corporate-presentation", desc: "Interactive enterprise slide deck and corporate capabilities." },
+      { name: "Company Profile", href: "/marketing/company/company-profile", desc: "Devopstrio corporate overview, background, and stats." },
+      { name: "Brand Guidelines", href: "/marketing/company/brand-guidelines", desc: "Official logo assets, color palettes, and typography rules." },
+      { name: "Product Data Sheets", href: "/marketing/products", desc: "Collateral sheets for all Devopstrio SaaS products." },
+      { name: "Services Marketing", href: "/marketing/services", desc: "Executive summaries for core engineering practice areas." },
+      { name: "Industry Collateral", href: "/marketing/industries", desc: "Vertical-focused solution decks for Banking and Healthcare." }
     ]
   },
   {

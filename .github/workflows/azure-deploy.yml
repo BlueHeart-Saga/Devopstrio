@@ -26,6 +26,13 @@ jobs:
       SMTP_PORT: ${{ secrets.SMTP_PORT }}
       SMTP_USER: ${{ secrets.SMTP_USER }}
       SMTP_PASS: ${{ secrets.SMTP_PASS }}
+      NEXT_PUBLIC_CONTACT_EMAIL: ${{ secrets.NEXT_PUBLIC_CONTACT_EMAIL }}
+      NEXT_PUBLIC_SUPPORT_EMAIL: ${{ secrets.NEXT_PUBLIC_SUPPORT_EMAIL }}
+      NEXT_PUBLIC_PRIVACY_EMAIL: ${{ secrets.NEXT_PUBLIC_PRIVACY_EMAIL }}
+      NEXT_PUBLIC_TRUST_EMAIL: ${{ secrets.NEXT_PUBLIC_TRUST_EMAIL }}
+      NEXT_PUBLIC_DPO_EMAIL: ${{ secrets.NEXT_PUBLIC_DPO_EMAIL }}
+      NEXT_PUBLIC_LEGAL_EMAIL: ${{ secrets.NEXT_PUBLIC_LEGAL_EMAIL }}
+      NEXT_PUBLIC_INTERNSHIP_EMAIL: ${{ secrets.NEXT_PUBLIC_INTERNSHIP_EMAIL }}
 
     steps:
       - uses: actions/checkout@v4

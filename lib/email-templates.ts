@@ -174,16 +174,25 @@ function renderBaseTemplate({ title, badgeText, tableRows, messageTitle, message
 
 // 1. Contact Form Template
 export function generateContactEmailHtml(data: { name: string; email: string; phone?: string; company?: string; services?: string; message?: string }) {
+  const tableRows: Array<{ label: string; value: string; isLink?: boolean; linkUrl?: string }> = [
+    { label: 'Full Name', value: data.name },
+    { label: 'Email Address', value: data.email, isLink: true, linkUrl: `mailto:${data.email}` },
+  ];
+
+  if (data.phone && data.phone.trim()) {
+    tableRows.push({ label: 'Phone Number', value: data.phone, isLink: true, linkUrl: `tel:${data.phone}` });
+  }
+  if (data.company && data.company.trim()) {
+    tableRows.push({ label: 'Company / Org', value: data.company });
+  }
+  if (data.services && data.services.trim()) {
+    tableRows.push({ label: 'Services Interested', value: data.services });
+  }
+
   return renderBaseTemplate({
     title: 'New Contact Inquiry',
     badgeText: 'Contact Portal',
-    tableRows: [
-      { label: 'Full Name', value: data.name },
-      { label: 'Email Address', value: data.email, isLink: true, linkUrl: `mailto:${data.email}` },
-      { label: 'Phone Number', value: data.phone || 'Not provided' },
-      { label: 'Company / Org', value: data.company || 'Not provided' },
-      { label: 'Services Interested', value: data.services || 'General Inquiry' },
-    ],
+    tableRows,
     messageTitle: 'Message Details',
     messageContent: data.message || 'No additional details provided.',
   });
@@ -191,20 +200,20 @@ export function generateContactEmailHtml(data: { name: string; email: string; ph
 
 // 2. Careers Contact / Job Application Template
 export function generateCareerEmailHtml(data: { name: string; email: string; jobTitle: string; resume?: string; note?: string }) {
+  const tableRows: Array<{ label: string; value: string; isLink?: boolean; linkUrl?: string }> = [
+    { label: 'Position Applied', value: data.jobTitle },
+    { label: 'Applicant Name', value: data.name },
+    { label: 'Email Address', value: data.email, isLink: true, linkUrl: `mailto:${data.email}` },
+  ];
+
+  if (data.resume && data.resume.trim()) {
+    tableRows.push({ label: 'Resume / Portfolio', value: 'View Link', isLink: true, linkUrl: data.resume });
+  }
+
   return renderBaseTemplate({
     title: 'New Job Application',
     badgeText: 'Careers Portal',
-    tableRows: [
-      { label: 'Position Applied', value: data.jobTitle },
-      { label: 'Applicant Name', value: data.name },
-      { label: 'Email Address', value: data.email, isLink: true, linkUrl: `mailto:${data.email}` },
-      {
-        label: 'Resume / Portfolio',
-        value: data.resume ? 'View Link' : 'Not provided',
-        isLink: !!data.resume,
-        linkUrl: data.resume,
-      },
-    ],
+    tableRows,
     messageTitle: 'Cover Note',
     messageContent: data.note || 'No cover note attached.',
   });
@@ -223,37 +232,58 @@ export function generateInternshipEmailHtml(data: {
   portfolio?: string;
   hasAttachment?: boolean;
 }) {
+  const tableRows: Array<{ label: string; value: string; isLink?: boolean; linkUrl?: string }> = [
+    { label: 'Applicant Name', value: data.fullName },
+    { label: 'Email Address', value: data.email, isLink: true, linkUrl: `mailto:${data.email}` },
+  ];
+
+  if (data.phone && data.phone.trim()) {
+    tableRows.push({ label: 'Phone Number', value: data.phone, isLink: true, linkUrl: `tel:${data.phone}` });
+  }
+  tableRows.push(
+    { label: 'College / University', value: data.college },
+    { label: 'Degree Program', value: data.degree },
+    { label: 'Graduation Year', value: data.gradYear },
+    { label: 'Core Skills', value: data.skills }
+  );
+
+  if (data.linkedin && data.linkedin.trim()) {
+    tableRows.push({ label: 'LinkedIn Profile', value: 'View Profile', isLink: true, linkUrl: data.linkedin });
+  }
+  if (data.portfolio && data.portfolio.trim()) {
+    tableRows.push({ label: 'Portfolio / GitHub', value: 'View Portfolio', isLink: true, linkUrl: data.portfolio });
+  }
+  tableRows.push({ label: 'CV Attachment', value: data.hasAttachment ? 'Attached to Email' : 'Not attached' });
+
   return renderBaseTemplate({
     title: 'New Internship Application',
     badgeText: 'Talent Network',
-    tableRows: [
-      { label: 'Applicant Name', value: data.fullName },
-      { label: 'Email Address', value: data.email, isLink: true, linkUrl: `mailto:${data.email}` },
-      { label: 'Phone Number', value: data.phone || 'Not provided' },
-      { label: 'College / University', value: data.college },
-      { label: 'Degree Program', value: data.degree },
-      { label: 'Graduation Year', value: data.gradYear },
-      { label: 'Core Skills', value: data.skills },
-      { label: 'LinkedIn Profile', value: data.linkedin ? 'View Profile' : 'Not provided', isLink: !!data.linkedin, linkUrl: data.linkedin },
-      { label: 'Portfolio / GitHub', value: data.portfolio ? 'View Portfolio' : 'Not provided', isLink: !!data.portfolio, linkUrl: data.portfolio },
-      { label: 'CV Attachment', value: data.hasAttachment ? 'Attached to Email' : 'Not attached' },
-    ],
+    tableRows,
   });
 }
 
 // 4. Schedule Call / Meeting Request Template
 export function generateScheduleCallEmailHtml(data: { name: string; email: string; phone?: string; company?: string; scheduleDate: string; scheduleTime: string; topic?: string }) {
+  const tableRows: Array<{ label: string; value: string; isLink?: boolean; linkUrl?: string }> = [
+    { label: 'Requester Name', value: data.name },
+    { label: 'Work Email', value: data.email, isLink: true, linkUrl: `mailto:${data.email}` },
+  ];
+
+  if (data.phone && data.phone.trim()) {
+    tableRows.push({ label: 'Phone Number', value: data.phone, isLink: true, linkUrl: `tel:${data.phone}` });
+  }
+  if (data.company && data.company.trim()) {
+    tableRows.push({ label: 'Company / Org', value: data.company });
+  }
+  tableRows.push(
+    { label: 'Requested Date', value: data.scheduleDate },
+    { label: 'Requested Time', value: data.scheduleTime }
+  );
+
   return renderBaseTemplate({
     title: 'New Meeting Schedule Request',
     badgeText: 'Schedule Call',
-    tableRows: [
-      { label: 'Requester Name', value: data.name },
-      { label: 'Work Email', value: data.email, isLink: true, linkUrl: `mailto:${data.email}` },
-      { label: 'Phone Number', value: data.phone || 'Not provided' },
-      { label: 'Company / Org', value: data.company || 'Not provided' },
-      { label: 'Requested Date', value: data.scheduleDate },
-      { label: 'Requested Time', value: data.scheduleTime },
-    ],
+    tableRows,
     messageTitle: 'Meeting Discussion Topic',
     messageContent: data.topic || 'No topic details provided.',
   });
