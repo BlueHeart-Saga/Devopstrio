@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import Image from "next/image";
 import { Reveal } from "@/components/ui/Reveal";
 import { ArrowUpRight } from "lucide-react";
 import { insightsApi, TransformedPost } from "@/lib/insightsApi";
@@ -69,11 +70,15 @@ export function Insights() {
               
               {/* Padded Inset Image */}
               <div className="relative w-full h-[280px] md:h-[320px] rounded-[2rem] overflow-hidden shrink-0">
-                <img
-                  src={latestPost.image ?? undefined}
-                  alt={latestPost.title}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
+                {latestPost.image ? (
+                  <Image
+                    src={latestPost.image}
+                    alt={latestPost.title}
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 600px"
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                ) : null}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
               </div>
 
@@ -125,13 +130,16 @@ export function Insights() {
                       href={insightHref}
                       className="flex gap-4 items-center group/item p-2 rounded-2xl hover:bg-zinc-900/20 transition-all duration-300"
                     >
-                      {/* Left: Square/Rounded Image */}
-                      <div className="w-20 h-20 rounded-2xl overflow-hidden shrink-0 border border-white/[0.06] bg-zinc-950">
-                        <img
-                          src={insight.image ?? undefined}
-                          alt={insight.title}
-                          className="w-full h-full object-cover brightness-90 group-hover/item:scale-105 transition-transform duration-500"
-                        />
+                      <div className="w-20 h-20 rounded-2xl overflow-hidden shrink-0 border border-white/[0.06] bg-zinc-950 relative">
+                        {insight.image ? (
+                          <Image
+                            src={insight.image}
+                            alt={insight.title}
+                            fill
+                            sizes="80px"
+                            className="object-cover brightness-90 group-hover/item:scale-105 transition-transform duration-500"
+                          />
+                        ) : null}
                       </div>
 
                       {/* Right: Title and Date */}

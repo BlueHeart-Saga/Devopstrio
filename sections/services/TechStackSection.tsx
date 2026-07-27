@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
 import { Reveal } from "@/components/ui/Reveal";
 import Link from "next/link";
 
@@ -202,9 +203,11 @@ function MarqueeRow({ items, reverse = false }: { items: typeof techStack[0]["te
             className="flex items-center gap-4 bg-zinc-950/30 border border-white/10 rounded-2xl p-4 min-w-[250px] hover:border-rose-500/20 hover:bg-zinc-900/10 transition-all duration-300 group shadow-sm"
           >
             <div className="w-10 h-10 rounded-xl bg-zinc-900/60 flex items-center justify-center p-2 border border-white/5">
-              <img
+              <Image
                 src={tech.icon}
                 alt={tech.name}
+                width={24}
+                height={24}
                 className="w-6 h-6 object-contain opacity-100 group-hover:scale-105 transition-all duration-300"
               />
             </div>

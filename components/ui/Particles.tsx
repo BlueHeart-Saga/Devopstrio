@@ -201,11 +201,13 @@ export default function Particles({
 
     const particles = new Mesh(gl, { mode: gl.POINTS, geometry, program });
 
-    let animationFrameId: number;
+    let animationFrameId: number | null = null;
+    let isVisible = true;
     let lastTime = performance.now();
     let elapsed = 0;
 
     const update = (t: number) => {
+      if (!isVisible) return;
       animationFrameId = requestAnimationFrame(update);
       const delta = t - lastTime;
       lastTime = t;
@@ -230,14 +232,36 @@ export default function Particles({
       renderer.render({ scene: particles, camera });
     };
 
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        const currentlyVisible = entry.isIntersecting;
+        if (currentlyVisible && !isVisible) {
+          isVisible = true;
+          lastTime = performance.now();
+          animationFrameId = requestAnimationFrame(update);
+        } else if (!currentlyVisible && isVisible) {
+          isVisible = false;
+          if (animationFrameId) {
+            cancelAnimationFrame(animationFrameId);
+            animationFrameId = null;
+          }
+        }
+      },
+      { threshold: 0.05 }
+    );
+
+    observer.observe(container);
     animationFrameId = requestAnimationFrame(update);
 
     return () => {
+      observer.disconnect();
       window.removeEventListener("resize", resize);
       if (moveParticlesOnHover) {
         container.removeEventListener("mousemove", handleMouseMove);
       }
-      cancelAnimationFrame(animationFrameId);
+      if (animationFrameId) {
+        cancelAnimationFrame(animationFrameId);
+      }
       if (container.contains(gl.canvas)) {
         container.removeChild(gl.canvas);
       }

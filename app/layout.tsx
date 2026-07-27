@@ -1,87 +1,46 @@
 import type { Metadata } from "next";
-import { headers } from "next/headers";
-import "./globals.css";
-import { Navbar } from "@/components/Navbar";
-import { Footer } from "@/components/Footer";
-import { FloatingChatbot } from "@/components/FloatingChatbot";
-import { FeedbackWidget } from "@/components/FeedbackWidget";
-import { StickyContactWidget } from "@/components/StickyContactWidget";
-import { CookieConsent } from "@/components/CookieConsent";
-import ClickSpark from "@/components/ui/ClickSpark";
 import Script from "next/script";
+import "./globals.css";
+import { LayoutNavbarWrapper } from "@/components/providers/LayoutNavbarWrapper";
 import { OrganizationSchema, ReviewSchema, ProfessionalServiceSchema, LocalBusinessSchema } from "@/components/seo/Schemas";
-import { generatePageMetadata, getMetadataFromPath } from "@/lib/seo-utils";
 
-export async function generateMetadata(): Promise<Metadata> {
-  const headersList = await headers();
-  const pathname = headersList.get("x-pathname") || "/";
-  const host = headersList.get("host") || "";
-  const { title, description, keywords } = getMetadataFromPath(pathname);
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://devopstrio.co.uk";
 
-  const baseMeta = generatePageMetadata({
-    title,
-    description,
-    path: pathname,
-    keywords
-  });
-
-  const prodDomain = process.env.NEXT_PUBLIC_PRODUCTION_DOMAIN || "devopstrio.co.uk";
-  const cleanHost = host.split(":")[0].toLowerCase();
-  const isProduction = cleanHost === prodDomain.toLowerCase() || cleanHost === `www.${prodDomain.toLowerCase()}`;
-
-  const robots = isProduction
-    ? {
-        index: true,
-        follow: true,
-        nocache: true,
-        googleBot: {
-          index: true,
-          follow: true,
-          noimageindex: false,
-        }
-      }
-    : {
-        index: false,
-        follow: false,
-        nocache: true,
-        googleBot: {
-          index: false,
-          follow: false,
-          noimageindex: true,
-        }
-      };
-
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://devopstrio.co.uk";
-
-  return {
-    ...baseMeta,
-    metadataBase: new URL(siteUrl),
-    robots,
-    verification: {
-      google: "Ed5NQe2UO9cW6aJ_7mbgYfMkS1Ipat0f9E9q78xyzUM"
+export const metadata: Metadata = {
+  title: "Enterprise AI Consulting, Cloud & Product Engineering Services | Devopstrio",
+  description: "Devopstrio delivers professional consulting, cloud-native architecture, SRE automation, cybersecurity, and production-grade generative AI engineering for global enterprises.",
+  metadataBase: new URL(siteUrl),
+  robots: {
+    index: true,
+    follow: true,
+    nocache: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      noimageindex: false,
     },
-    icons: {
-      icon: [
-        { url: "/favicon.ico" },
-        { url: "/favicon-96x96.png", sizes: "96x96", type: "image/png" },
-        { url: "/favicon.svg", type: "image/svg+xml" }
-      ],
-      apple: [
-        { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }
-      ]
-    },
-    manifest: "/manifest.json"
-  };
-}
+  },
+  verification: {
+    google: "Ed5NQe2UO9cW6aJ_7mbgYfMkS1Ipat0f9E9q78xyzUM",
+  },
+  icons: {
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/favicon-96x96.png", sizes: "96x96", type: "image/png" },
+      { url: "/favicon.svg", type: "image/svg+xml" },
+    ],
+    apple: [
+      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+  },
+  manifest: "/manifest.json",
+};
 
-export default async function RootLayout({
-  children
+export default function RootLayout({
+  children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const headersList = await headers();
-  const pathname = headersList.get("x-pathname") || "/";
-
   return (
     <html lang="en" className="dark">
       <body>
@@ -114,25 +73,7 @@ export default async function RootLayout({
         <ReviewSchema />
         <ProfessionalServiceSchema />
         <LocalBusinessSchema />
-        <ClickSpark
-          sparkColor="#ff2d55"
-          sparkSize={12}
-          sparkRadius={20}
-          sparkCount={8}
-          duration={500}
-        >
-          {!pathname.startsWith("/marketing") && <Navbar />}
-          {children}
-          {!pathname.startsWith("/marketing") && (
-            <>
-              <Footer />
-              <FloatingChatbot />
-              <FeedbackWidget />
-              <StickyContactWidget />
-              <CookieConsent />
-            </>
-          )}
-        </ClickSpark>
+        <LayoutNavbarWrapper>{children}</LayoutNavbarWrapper>
       </body>
     </html>
   );

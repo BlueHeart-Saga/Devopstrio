@@ -265,9 +265,9 @@ export function IndustriesSection() {
         </div>
 
         {/* --- BOTTOM SECTION: Stats Bar --- */}
-        <Reveal>
+        {/* <Reveal>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4 bg-[#0A0A0A] border border-zinc-800/80 rounded-[24px] p-8 md:p-12 mt-4 relative overflow-hidden">
-            {/* Ambient inner glow */}
+           
             <div className="absolute inset-0 bg-gradient-to-r from-rose-500/5 via-transparent to-rose-500/5 pointer-events-none" />
             
             <div className="flex flex-col items-center text-center gap-3 border-zinc-800/50 sm:border-r relative z-10">
@@ -299,7 +299,7 @@ export function IndustriesSection() {
                <p className="text-[10px] text-zinc-400 font-bold uppercase tracking-widest">Years Experience</p>
             </div>
           </div>
-        </Reveal>
+        </Reveal> */}
 
       </div>
     </section>

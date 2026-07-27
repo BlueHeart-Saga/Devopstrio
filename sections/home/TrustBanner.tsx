@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { Reveal } from "@/components/ui/Reveal";
 
@@ -70,11 +71,12 @@ export function TrustBanner() {
                   key={idx}
                   className="flex-shrink-0 flex items-center justify-center opacity-85 hover:opacity-100 hover:scale-105 transition-all duration-300"
                 >
-                  <img
+                  <Image
                     src={logo.src}
                     alt={logo.alt}
+                    width={120}
+                    height={32}
                     className="max-h-6 md:max-h-7 w-auto object-contain select-none"
-                    loading="lazy"
                   />
                 </div>
               ))}

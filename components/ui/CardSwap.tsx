@@ -112,6 +112,11 @@ const CardSwap: React.FC<CardSwapProps> = ({
   const container = useRef<HTMLDivElement>(null);
   const isHoveringRef = useRef(false);
 
+  // Sync order array if child count changes
+  if (order.current.length !== childArr.length || order.current.some(i => i >= childArr.length)) {
+    order.current = Array.from({ length: childArr.length }, (_, i) => i);
+  }
+
   const swap = useCallback(() => {
     // If a swap is already active, force complete it to allow immediate next swap
     if (tlRef.current?.isActive()) {
@@ -120,7 +125,7 @@ const CardSwap: React.FC<CardSwapProps> = ({
     if (order.current.length < 2) return;
 
     const [front, ...rest] = order.current;
-    const elFront = refs[front].current;
+    const elFront = refs[front]?.current;
     if (!elFront) return;
     const tl = gsap.timeline();
     tlRef.current = tl;
@@ -133,7 +138,7 @@ const CardSwap: React.FC<CardSwapProps> = ({
 
     tl.addLabel('promote', `-=${config.durDrop * config.promoteOverlap}`);
     rest.forEach((idx, i) => {
-      const el = refs[idx].current;
+      const el = refs[idx]?.current;
       if (!el) return;
       const slot = makeSlot(i, cardDistance, verticalDistance, refs.length);
       tl.set(el, { zIndex: slot.zIndex }, 'promote');
@@ -175,7 +180,7 @@ const CardSwap: React.FC<CardSwapProps> = ({
     tl.call(() => {
       order.current = [...rest, front];
     });
-  }, [refs, cardDistance, verticalDistance, maxVisible, skewAmount, config]);
+  }, [refs, cardDistance, verticalDistance, maxVisible, config]);
 
   const resetInterval = useCallback(() => {
     if (intervalRef.current) window.clearInterval(intervalRef.current);
@@ -186,8 +191,10 @@ const CardSwap: React.FC<CardSwapProps> = ({
   useEffect(() => {
     const total = refs.length;
     refs.forEach((r, i) => {
-      placeNow(r.current!, makeSlot(i, cardDistance, verticalDistance, total), skewAmount);
-      gsap.set(r.current!, { opacity: i < maxVisible ? 1 : 0 });
+      if (r.current) {
+        placeNow(r.current, makeSlot(i, cardDistance, verticalDistance, total), skewAmount);
+        gsap.set(r.current, { opacity: i < maxVisible ? 1 : 0 });
+      }
     });
 
     // Start auto cycle

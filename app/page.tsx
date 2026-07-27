@@ -1,30 +1,23 @@
-"use client";
-
-import { useEffect } from "react";
+import dynamic from "next/dynamic";
 import { HeroSection } from "@/sections/home/HeroSection";
 import { TrustBanner } from "@/sections/home/TrustBanner";
-import { AIStudioShowcase } from "@/sections/home/AIStudioShowcase";
 import { ImperativesBanner } from "@/sections/home/ImperativesBanner";
 import { BusinessOverview } from "@/sections/home/BusinessOverview";
-import { Testimonials } from "@/sections/home/Testimonials";
-import { ExecutiveTestimonials } from "@/sections/home/ExecutiveTestimonials";
 import { CoreServices } from "@/sections/home/CoreServices";
 import { ServicesOverviewPillars } from "@/sections/home/ServicesOverviewPillars";
 import { IndustriesSection } from "@/sections/home/IndustriesSection";
 import { CaseStudies } from "@/sections/home/CaseStudies";
-import { ImpactSection } from "@/sections/home/ImpactSection";
-import { WeImagine } from "@/sections/home/WeImagine";
-import { WhyDevopstrio } from "@/sections/home/WhyDevOpsTrio";
-import { OurAdvantage } from "@/sections/home/OurAdvantage";
-import { TechnicalPartnerships } from "@/sections/home/TechnicalPartnerships";
-import { DeliveryWorkflow } from "@/sections/home/DeliveryWorkflow";
-import { OurProducts } from "@/sections/home/OurProducts";
-import { PartnersSection } from "@/sections/home/PartnersSection";
-import { GlobalPresence } from "@/sections/home/GlobalPresence";
-import { Insights } from "@/sections/home/Insights";
 import { CTA } from "@/sections/home/CTA";
-
 import { SectionNavbar } from "@/components/ui/SectionNavbar";
+import { SmoothScrollProvider } from "@/components/providers/SmoothScrollProvider";
+
+// Dynamic import heavy sections for code-splitting and faster FCP/LCP
+const AIStudioShowcase = dynamic(() => import("@/sections/home/AIStudioShowcase").then((mod) => mod.AIStudioShowcase));
+const WeImagine = dynamic(() => import("@/sections/home/WeImagine").then((mod) => mod.WeImagine));
+const OurProducts = dynamic(() => import("@/sections/home/OurProducts").then((mod) => mod.OurProducts));
+const ExecutiveTestimonials = dynamic(() => import("@/sections/home/ExecutiveTestimonials").then((mod) => mod.ExecutiveTestimonials));
+const PartnersSection = dynamic(() => import("@/sections/home/PartnersSection").then((mod) => mod.PartnersSection));
+const Insights = dynamic(() => import("@/sections/home/Insights").then((mod) => mod.Insights));
 
 const homeSections = [
   { id: "overview", label: "Overview" },
@@ -33,114 +26,48 @@ const homeSections = [
   { id: "industries", label: "Industries" },
   { id: "innovation", label: "Innovation" },
   { id: "impact", label: "Impact" },
-  { id: "why-Devopstrio", label: "Why Devopstrio" },
   { id: "partnerships", label: "Partnerships" },
-  { id: "networks", label: "Networks" },
   { id: "insights", label: "Insights" }
 ];
 
 export default function Home() {
-  useEffect(() => {
-    let lenis: { raf: (time: number) => void; destroy: () => void } | null = null;
-    let raf = 0;
-    let cleanupTriggers = () => { };
-    let alive = true;
-
-    const startMotion = async () => {
-      const [{ default: Lenis }, { default: gsap }, { ScrollTrigger }] = await Promise.all([
-        import("lenis"),
-        import("gsap"),
-        import("gsap/ScrollTrigger")
-      ]);
-
-      if (!alive) return;
-
-      lenis = new Lenis({ lerp: 0.08, wheelMultiplier: 0.85 });
-      const loop = (time: number) => {
-        lenis?.raf(time);
-        raf = requestAnimationFrame(loop);
-      };
-      raf = requestAnimationFrame(loop);
-
-      gsap.registerPlugin(ScrollTrigger);
-      gsap.utils.toArray<HTMLElement>(".process-step").forEach((step, index) => {
-        gsap.fromTo(
-          step,
-          { opacity: 0.3 },
-          {
-            opacity: 1,
-            scrollTrigger: {
-              trigger: step,
-              start: "top 78%",
-              end: "top 42%",
-              scrub: true
-            },
-            delay: index * 0.02
-          }
-        );
-      });
-
-      cleanupTriggers = () => ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-    };
-
-    startMotion();
-
-    return () => {
-      alive = false;
-      cancelAnimationFrame(raf);
-      lenis?.destroy();
-      cleanupTriggers();
-    };
-  }, []);
-
   return (
-    <main>
-      <HeroSection />
-      <TrustBanner />
-      <SectionNavbar sections={homeSections} />
-      
-      <div id="overview">
-        <BusinessOverview />
+    <SmoothScrollProvider>
+      <main>
+        <HeroSection />
+        <TrustBanner />
+        <SectionNavbar sections={homeSections} />
         
-      </div>
-      <div id="ai-studio">
-        <AIStudioShowcase />
-      </div>
-      <div id="capabilities">
-        <ServicesOverviewPillars />
-        <CoreServices />
-      </div>
-      <div id="industries">
-        <IndustriesSection />
-      </div>
-      <div id="innovation">
-        <WeImagine />
-        <OurProducts />
-      </div>
-      <div id="impact">
-        {/* <ImpactSection /> */}
-        <CaseStudies />
-        <ExecutiveTestimonials />
-      </div>
-      <div id="why-Devopstrio">
-        <WhyDevopstrio />
-        <OurAdvantage />
-      </div>
-      <div id="partnerships">
-        <PartnersSection />
-        <TechnicalPartnerships />
-        
-      </div>
-      <div id="networks">
-        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
-          <GlobalPresence />
+        <div id="overview">
+          <BusinessOverview />
         </div>
-      </div>
-      <div id="insights">
-        <Insights />
-      </div>
-      <ImperativesBanner />
-      <CTA />
-    </main>
+        <div id="ai-studio">
+          <AIStudioShowcase />
+        </div>
+        <div id="capabilities">
+          <ServicesOverviewPillars />
+          <CoreServices />
+        </div>
+        <div id="industries">
+          <IndustriesSection />
+        </div>
+        <div id="innovation">
+          <WeImagine />
+          <OurProducts />
+        </div>
+        <div id="impact">
+          <CaseStudies />
+          <ExecutiveTestimonials />
+        </div>
+        <div id="partnerships">
+          <PartnersSection />
+        </div>
+        <div id="insights">
+          <Insights />
+        </div>
+        <ImperativesBanner />
+        <CTA />
+      </main>
+    </SmoothScrollProvider>
   );
 }

@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { Reveal } from "@/components/ui/Reveal";
 import { CheckCircle2, ArrowUpRight } from "lucide-react";
 import Link from "next/link";
@@ -141,10 +142,12 @@ export function WhyDevopstrio() {
               idx === activeIndex ? "opacity-90 scale-100 z-10" : "opacity-0 scale-105 z-0 pointer-events-none"
             }`}
           >
-            <img
+            <Image
               src={point.image}
               alt={point.title}
-              className="w-full h-full object-cover object-center"
+              fill
+              sizes="(max-width: 1024px) 100vw, 600px"
+              className="object-cover object-center"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/30 to-transparent" />
             <div className={`absolute inset-0 bg-gradient-to-br ${point.gradient} opacity-25 mix-blend-color-dodge`} />
@@ -232,7 +235,7 @@ export function WhyDevopstrio() {
 
                     {/* Base Image Layer (Always visible, blurs slightly on hover) */}
                     <div className="absolute inset-0 z-0 transition-all duration-700 ease-in-out group-hover:blur-md group-hover:scale-105">
-                      <img src={point.image} alt={point.title} className="w-full h-full object-cover" />
+                      <Image src={point.image} alt={point.title} fill sizes="(max-width: 768px) 100vw, 400px" className="object-cover" />
                       <div className={`absolute inset-0 bg-gradient-to-br ${point.gradient} opacity-20 mix-blend-overlay`} />
                       <div className="absolute inset-0 bg-black/30 group-hover:bg-black/60 transition-colors duration-700" />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-80" />
@@ -286,7 +289,7 @@ export function WhyDevopstrio() {
 
                     {/* Base Image Layer (Always visible, blurs slightly on hover) */}
                     <div className="absolute inset-0 z-0 transition-all duration-700 ease-in-out group-hover:blur-md group-hover:scale-105">
-                      <img src={point.image} alt={point.title} className="w-full h-full object-cover" />
+                      <Image src={point.image} alt={point.title} fill sizes="(max-width: 768px) 100vw, 400px" className="object-cover" />
                       <div className={`absolute inset-0 bg-gradient-to-br ${point.gradient} opacity-20 mix-blend-overlay`} />
                       <div className="absolute inset-0 bg-black/30 group-hover:bg-black/60 transition-colors duration-700" />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-80" />
@@ -331,7 +334,7 @@ export function WhyDevopstrio() {
 
         {/* Checklist & Closing Statement Block */}
 
-        <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-12 lg:gap-20 items-start pt-12 border-t border-zinc-900/60">
+        {/* <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-12 lg:gap-20 items-start pt-12 border-t border-zinc-900/60">
 
           <Reveal>
             <div className="border border-zinc-850 bg-[#0A0A0A] rounded-3xl p-6 md:p-8 shadow-2xl relative flex flex-col justify-between group cursor-pointer transition-colors duration-500 hover:border-zinc-700">
@@ -342,10 +345,10 @@ export function WhyDevopstrio() {
                 Why Organizations Choose <span className="font-bold text-rose-500 transition-all duration-500 group-hover:text-rose-400 group-hover:drop-shadow-[0_0_15px_rgba(225,29,72,0.6)]">Devopstrio</span>
               </h3>
 
-              {/* The Points Box with isolated Hover Image Effect */}
+              
               <div className="relative -mx-6 -mb-6 md:-mx-8 md:-mb-8 pt-5 px-6 pb-5 md:pt-6 md:px-8 md:pb-6 rounded-b-3xl overflow-hidden border-t border-zinc-800/60 transition-colors duration-500 group-hover:border-zinc-700 mt-auto bg-zinc-950/20">
 
-                {/* Expanding Image Layer (Frosted Glass Effect) */}
+                
                 <div className="absolute inset-0 z-0 [clip-path:circle(0%_at_100%_100%)] group-hover:[clip-path:circle(150%_at_100%_100%)] transition-all duration-700 ease-in-out pointer-events-none">
                   <img src="/assets/Home-page/whychoose/partnership-cover.png" alt="Why Devopstrio" className="w-full h-full object-cover scale-110 group-hover:scale-100 transition-transform duration-1000 ease-out" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-black/20 backdrop-blur-md" />
@@ -372,7 +375,7 @@ export function WhyDevopstrio() {
             </p>
           </Reveal>
 
-        </div>
+        </div> */}
 
 
       </div>

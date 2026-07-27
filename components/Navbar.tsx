@@ -1,7 +1,37 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import { ArrowUpRight, Menu, X, ChevronDown } from "lucide-react";
+import {
+  ArrowUpRight,
+  Menu,
+  X,
+  ChevronDown,
+  Brain,
+  Cloud,
+  Infinity as InfinityIcon,
+  ShieldCheck,
+  Code2,
+  Share2,
+  Database,
+  Settings,
+  SearchCheck,
+  Users,
+  Sparkles,
+  Bot,
+  Cpu,
+  BarChart3,
+  LineChart,
+  ShieldAlert,
+  Layers,
+  Activity,
+  Lock,
+  Globe,
+  Smartphone,
+  Webhook,
+  Boxes,
+  Workflow,
+  CheckSquare
+} from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { insightsApi } from "@/lib/insightsApi";
@@ -320,6 +350,47 @@ const ecosystemMobileList = [
   { name: "Community & Talent Network", href: "/ecosystem/community-talent-network" }
 ];
 
+const getCategoryIcon = (catId: string, isActive: boolean) => {
+  const iconClass = `w-4 h-4 transition-colors ${isActive ? "text-red-500" : "text-zinc-400 group-hover:text-white"}`;
+  switch (catId) {
+    case "ai-data-innovation": return <Brain className={iconClass} />;
+    case "cloud-services": return <Cloud className={iconClass} />;
+    case "devops-automation": return <InfinityIcon className={iconClass} />;
+    case "cybersecurity": return <ShieldCheck className={iconClass} />;
+    case "software-development": return <Code2 className={iconClass} />;
+    case "digital-transformation": return <Share2 className={iconClass} />;
+    case "data-engineering": return <Database className={iconClass} />;
+    case "managed-services": return <Settings className={iconClass} />;
+    case "qa-testing": return <SearchCheck className={iconClass} />;
+    case "it-consulting": return <Users className={iconClass} />;
+    default: return <Sparkles className={iconClass} />;
+  }
+};
+
+const getServiceSubItemIcon = (name: string) => {
+  const n = name.toLowerCase();
+  if (n.includes("generative ai") || n.includes("llm")) return <Sparkles className="w-4 h-4 text-red-500" />;
+  if (n.includes("agent") || n.includes("bot")) return <Bot className="w-4 h-4 text-red-500" />;
+  if (n.includes("machine learning") || n.includes("ml")) return <Cpu className="w-4 h-4 text-red-500" />;
+  if (n.includes("business intelligence") || n.includes("bi") || n.includes("analytics")) return <BarChart3 className="w-4 h-4 text-red-500" />;
+  if (n.includes("predictive")) return <LineChart className="w-4 h-4 text-red-500" />;
+  if (n.includes("governance") || n.includes("audit")) return <ShieldAlert className="w-4 h-4 text-red-500" />;
+  if (n.includes("mlops") || n.includes("devops") || n.includes("ci/cd")) return <InfinityIcon className="w-4 h-4 text-red-500" />;
+  if (n.includes("data") || n.includes("warehouse") || n.includes("lake")) return <Database className="w-4 h-4 text-red-500" />;
+  if (n.includes("cloud") || n.includes("azure") || n.includes("aws") || n.includes("gcp")) return <Cloud className="w-4 h-4 text-red-500" />;
+  if (n.includes("security") || n.includes("threat") || n.includes("soc") || n.includes("zero trust")) return <ShieldCheck className="w-4 h-4 text-red-500" />;
+  if (n.includes("pen") || n.includes("vulnerability") || n.includes("access")) return <Lock className="w-4 h-4 text-red-500" />;
+  if (n.includes("kubernetes") || n.includes("docker") || n.includes("infrastructure")) return <Layers className="w-4 h-4 text-red-500" />;
+  if (n.includes("monitoring") || n.includes("sre") || n.includes("observability")) return <Activity className="w-4 h-4 text-red-500" />;
+  if (n.includes("web")) return <Globe className="w-4 h-4 text-red-500" />;
+  if (n.includes("mobile")) return <Smartphone className="w-4 h-4 text-red-500" />;
+  if (n.includes("api") || n.includes("microservices")) return <Webhook className="w-4 h-4 text-red-500" />;
+  if (n.includes("saas") || n.includes("app")) return <Boxes className="w-4 h-4 text-red-500" />;
+  if (n.includes("test") || n.includes("qa") || n.includes("automation")) return <CheckSquare className="w-4 h-4 text-red-500" />;
+  if (n.includes("workflow") || n.includes("process") || n.includes("digital")) return <Workflow className="w-4 h-4 text-red-500" />;
+  return <Sparkles className="w-4 h-4 text-red-500" />;
+};
+
 export function Navbar() {
   const pathname = usePathname();
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
@@ -568,45 +639,52 @@ export function Navbar() {
                   </div>
 
                     {/* Middle sidebar with categories */}
-                    <div className="flex flex-col border-r border-zinc-900 pr-4 gap-1">
-                      <span className="text-xs font-mono tracking-widest text-zinc-500 uppercase block px-3 mb-2">Core Expertise</span>
-                      {serviceCategories.map((cat) => (
-                        <Link
-                          key={cat.id}
-                          href={cat.href}
-                          onMouseEnter={() => setActiveCategory(cat.id)}
-                          onClick={() => {
-                            setActiveMenu(null);
-                          }}
-                          className={`flex items-center justify-between px-3 py-2 rounded-lg text-[15px] font-semibold transition-all duration-200 text-left ${activeCategory === cat.id
-                            ? "bg-zinc-900 text-rose-500"
-                            : "text-zinc-300 hover:text-white hover:bg-zinc-900/30"
+                    <div className="flex flex-col border-r border-zinc-900 pr-4 gap-1.5">
+                      <span className="text-xs font-mono tracking-widest text-zinc-500 uppercase block px-3 mb-2 font-bold">CORE EXPERTISE</span>
+                      {serviceCategories.map((cat) => {
+                        const isActive = activeCategory === cat.id;
+                        return (
+                          <Link
+                            key={cat.id}
+                            href={cat.href}
+                            onMouseEnter={() => setActiveCategory(cat.id)}
+                            onClick={() => {
+                              setActiveMenu(null);
+                            }}
+                            className={`group flex items-center justify-between px-3.5 py-2.5 rounded-xl text-[14px] font-semibold transition-all duration-200 text-left ${
+                              isActive
+                                ? "bg-[#141418] text-red-500 border border-zinc-800/80 shadow-md"
+                                : "text-zinc-300 hover:text-white hover:bg-zinc-900/40"
                             }`}
-                        >
-                          <span>{cat.name}</span>
-                          {activeCategory === cat.id && <span className="text-[11px]">&rarr;</span>}
-                        </Link>
-                      ))}
+                          >
+                            <div className="flex items-center gap-3">
+                              {getCategoryIcon(cat.id, isActive)}
+                              <span>{cat.name}</span>
+                            </div>
+                            {isActive && <span className="text-red-500 text-xs font-bold">&rarr;</span>}
+                          </Link>
+                        );
+                      })}
                     </div>
 
                     {/* Right panel with active sub-services */}
                     <div className="flex flex-col">
-                      <span className="text-xs font-mono tracking-widest text-zinc-500 uppercase block px-2 mb-2">Strategic Capabilities</span>
+                      <span className="text-xs font-mono tracking-widest text-zinc-500 uppercase block px-2 mb-2 font-bold">STRATEGIC CAPABILITIES</span>
                       <div className="max-h-[420px] overflow-y-auto overscroll-contain pr-2 custom-scrollbar">
-                        <div className="grid grid-cols-2 gap-x-4 gap-y-1">
+                        <div className="grid grid-cols-2 gap-x-6 gap-y-1">
                           {serviceCategories.find(c => c.id === activeCategory)?.items.map((item) => (
                             <Link
                               key={item.name}
                               href={item.href}
                               onClick={() => setActiveMenu(null)}
-                              className="group/subitem block p-2 rounded-lg hover:bg-zinc-900/30 transition-colors"
+                              className="group/subitem flex items-center gap-3 p-2.5 rounded-xl hover:bg-zinc-900/40 transition-colors"
                             >
-                              <span className="block text-[15px] font-semibold text-white group-hover/subitem:text-rose-500 transition-colors mb-1">
+                              <div className="shrink-0 transition-transform duration-200 group-hover/subitem:scale-110">
+                                {getServiceSubItemIcon(item.name)}
+                              </div>
+                              <span className="text-[14px] font-semibold text-white group-hover/subitem:text-rose-400 transition-colors leading-snug">
                                 {item.name}
                               </span>
-                              {/* <span className="block text-[13px] text-zinc-400 font-medium leading-relaxed">
-                              {item.desc}
-                            </span> */}
                             </Link>
                           ))}
                         </div>
@@ -1229,7 +1307,7 @@ export function Navbar() {
                     {/* Middle sidebar with dynamic sections */}
                     <div className="flex flex-col border-r border-zinc-900 pr-4 gap-1">
                       <span className="text-xs font-mono tracking-widest text-zinc-500 uppercase block px-3 mb-2">Insights Hubs</span>
-                      {insightsSections.map((sec) => (
+                      {insightsSections.map((sec: InsightsSection) => (
                         <button
                           key={sec.slug}
                           onMouseEnter={() => setActiveInsightsSection(sec.slug)}
@@ -1252,7 +1330,7 @@ export function Navbar() {
                       <span className="text-xs font-mono tracking-widest text-zinc-500 uppercase block px-2 mb-2">Categories</span>
                       <div className="max-h-[420px] overflow-y-auto overscroll-contain pr-2 custom-scrollbar">
                         <div className="grid grid-cols-2 gap-x-4 gap-y-1">
-                          {insightsSections.find(s => s.slug === activeInsightsSection)?.categories.map((cat) => (
+                          {insightsSections.find((s: InsightsSection) => s.slug === activeInsightsSection)?.categories.map((cat: SectionCategory) => (
                             <Link
                               key={cat.slug}
                               href={`/insights/${cat.slug}`}
@@ -1727,7 +1805,7 @@ export function Navbar() {
                   >
                     Insights Hub
                   </Link>
-                  {insightsSections.flatMap(s => s.categories).map((item) => (
+                  {insightsSections.flatMap((s: InsightsSection) => s.categories).map((item: SectionCategory) => (
                     <Link
                       key={item.slug}
                       href={`/insights/${item.slug}`}

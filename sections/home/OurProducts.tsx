@@ -1,22 +1,23 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { Reveal } from "@/components/ui/Reveal";
 import { ArrowUpRight } from "lucide-react";
 import CardSwap, { Card } from "@/components/ui/CardSwap";
 import Link from "next/link";
 
 const products = [
-  {
-    name: "Devopstrio AI Studio",
-    category: "Artificial Intelligence · Enterprise AI Workspace",
-    desc: "Enterprise AI workspace for Chat, Image Generation, Document Intelligence, AI Agents, and Business Automation.",
-    features: ["AI Chat", "Image Generation", "Document AI", "AI Agents", "Automation"],
-    tags: ["AI Workspace", "Multi-LLM", "Automation"],
-    image: "/assets/Home-page/our-products/ai-studio.webp",
-    link: "https://devopstrioaiservices-e6dnggh5gxehh9d0.southindia-01.azurewebsites.net",
-    cta: "Launch Platform"
-  },
+  // {
+  //   name: "Devopstrio AI Studio",
+  //   category: "Artificial Intelligence · Enterprise AI Workspace",
+  //   desc: "Enterprise AI workspace for Chat, Image Generation, Document Intelligence, AI Agents, and Business Automation.",
+  //   features: ["AI Chat", "Image Generation", "Document AI", "AI Agents", "Automation"],
+  //   tags: ["AI Workspace", "Multi-LLM", "Automation"],
+  //   image: "/assets/Home-page/our-products/ai-studio.webp",
+  //   link: "https://devopstrioaiservices-e6dnggh5gxehh9d0.southindia-01.azurewebsites.net",
+  //   cta: "Launch Platform"
+  // },
   {
     name: "Homela",
     category: "PropTech · Real Estate",
@@ -148,11 +149,12 @@ export function OurProducts() {
                   {/* Padded Image Container */}
                   <div className="relative h-[48%] w-full p-2.5 pb-0">
                     <div className="relative w-full h-full overflow-hidden rounded-[16px] bg-zinc-900 border border-zinc-800/50">
-                      <img
+                      <Image
                         src={prod.image}
                         alt={prod.name}
-                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
-                        loading="lazy"
+                        fill
+                        sizes="(max-width: 768px) 100vw, 400px"
+                        className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-95" />
 

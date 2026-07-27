@@ -1,6 +1,5 @@
-"use client";
-
 import React from "react";
+import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
 import Link from "next/link";
@@ -30,13 +29,15 @@ export function WeImagine() {
         <Reveal>
           <div className="relative rounded-2xl overflow-hidden mb-16 h-[260px] md:h-[380px] w-full border border-zinc-800/40">
             {/* Banner image */}
-            <img
+            <Image
               src="/assets/Home-page/innovation/image1.png"
               alt="Devopstrio Innovation Lab"
-              className="absolute inset-0 w-full h-full object-cover"
+              fill
+              sizes="(max-width: 1280px) 100vw, 1280px"
+              className="object-cover"
             />
             {/* Dark glassmorphic card overlay */}
-            <div className="absolute bottom-6 left-6 md:bottom-10 md:left-10 bg-black/40 backdrop-blur-md border border-white/10 p-6 md:p-8 rounded-xl max-w-sm md:max-w-md shadow-2xl">
+            <div className="absolute bottom-6 left-6 md:bottom-10 md:left-10 bg-black/40 backdrop-blur-md border border-white/10 p-6 md:p-8 rounded-xl max-w-sm md:max-w-md shadow-2xl z-10">
               <h3 className="text-xl md:text-2xl font-bold text-white mb-2 tracking-tight">
                 Devopstrio Innovation Lab
               </h3>
@@ -56,7 +57,7 @@ export function WeImagine() {
               
               {/* Expanding Image Layer with Glassmorphism */}
               <div className="absolute inset-0 z-0 [clip-path:circle(0%_at_100%_100%)] group-hover:[clip-path:circle(150%_at_100%_100%)] transition-all duration-700 ease-in-out pointer-events-none">
-                <img src="/assets/Home-page/we-imagine/gen/we-design-intelligent.png" alt="Design Intelligent Solutions" className="w-full h-full object-cover scale-110 group-hover:scale-100 transition-transform duration-1000 ease-out opacity-80" />
+                <Image src="/assets/Home-page/we-imagine/gen/we-design-intelligent.png" alt="Design Intelligent Solutions" fill sizes="(max-width: 768px) 100vw, 320px" className="object-cover scale-110 group-hover:scale-100 transition-transform duration-1000 ease-out opacity-80" />
                 
                 {/* Frosted Glass Blur Overlay */}
                 <div className="absolute inset-0 bg-black/40 backdrop-blur-md" />
@@ -95,7 +96,7 @@ export function WeImagine() {
               
               {/* Expanding Image Layer with Glassmorphism */}
               <div className="absolute inset-0 z-0 [clip-path:circle(0%_at_100%_100%)] group-hover:[clip-path:circle(150%_at_100%_100%)] transition-all duration-700 ease-in-out pointer-events-none">
-                <img src="/assets/Home-page/we-imagine/gen/we-build-software.png" alt="Build Scalable Software" className="w-full h-full object-cover scale-110 group-hover:scale-100 transition-transform duration-1000 ease-out opacity-80" />
+                <Image src="/assets/Home-page/we-imagine/gen/we-build-software.png" alt="Build Scalable Software" fill sizes="(max-width: 768px) 100vw, 320px" className="object-cover scale-110 group-hover:scale-100 transition-transform duration-1000 ease-out opacity-80" />
                 
                 {/* Frosted Glass Blur Overlay */}
                 <div className="absolute inset-0 bg-black/40 backdrop-blur-md" />
@@ -134,7 +135,7 @@ export function WeImagine() {
               
               {/* Expanding Image Layer with Glassmorphism */}
               <div className="absolute inset-0 z-0 [clip-path:circle(0%_at_100%_100%)] group-hover:[clip-path:circle(150%_at_100%_100%)] transition-all duration-700 ease-in-out pointer-events-none">
-                <img src="/assets/Home-page/we-imagine/gen/we-transform-legacy.png" alt="Transform Legacy to Cloud" className="w-full h-full object-cover scale-110 group-hover:scale-100 transition-transform duration-1000 ease-out opacity-80" />
+                <Image src="/assets/Home-page/we-imagine/gen/we-transform-legacy.png" alt="Transform Legacy to Cloud" fill sizes="(max-width: 768px) 100vw, 320px" className="object-cover scale-110 group-hover:scale-100 transition-transform duration-1000 ease-out opacity-80" />
                 
                 {/* Frosted Glass Blur Overlay */}
                 <div className="absolute inset-0 bg-black/40 backdrop-blur-md" />
@@ -173,7 +174,7 @@ export function WeImagine() {
               
               {/* Expanding Image Layer with Glassmorphism */}
               <div className="absolute inset-0 z-0 [clip-path:circle(0%_at_100%_100%)] group-hover:[clip-path:circle(150%_at_100%_100%)] transition-all duration-700 ease-in-out pointer-events-none">
-                <img src="/assets/Home-page/we-imagine/gen/we-manage-operations.png" alt="Manage Operations" className="w-full h-full object-cover scale-110 group-hover:scale-100 transition-transform duration-1000 ease-out opacity-80" />
+                <Image src="/assets/Home-page/we-imagine/gen/we-manage-operations.png" alt="Manage Operations" fill sizes="(max-width: 768px) 100vw, 320px" className="object-cover scale-110 group-hover:scale-100 transition-transform duration-1000 ease-out opacity-80" />
                 
                 {/* Frosted Glass Blur Overlay */}
                 <div className="absolute inset-0 bg-black/40 backdrop-blur-md" />

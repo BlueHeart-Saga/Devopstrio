@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import Image from "next/image";
 import { Reveal } from "@/components/ui/Reveal";
 
 interface PartnerItem {
@@ -701,9 +702,11 @@ export function PartnersSection() {
                     {partner.render()}
                   </div>
                 ) : (
-                  <img
-                    src={partner.logo}
+                  <Image
+                    src={partner.logo!}
                     alt={`${partner.name} logo`}
+                    width={160}
+                    height={48}
                     className="w-auto h-auto max-w-[92%] max-h-[85%] object-contain select-none transition-all duration-500 group-hover:scale-110"
                   />
                 )}

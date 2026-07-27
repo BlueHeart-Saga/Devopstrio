@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
-import Link from "next/link";
+import Image from "next/image";
 
 interface Slide {
   eyebrow: string;
@@ -285,10 +285,12 @@ export function HeroSection() {
                 }}
                 className="relative z-10 w-full max-w-[420px] sm:max-w-[500px] lg:max-w-[580px] xl:max-w-[680px] flex items-end justify-center lg:justify-end pb-0 mb-0"
               >
-                <img
+                <Image
                   src={slides[currentSlide].image}
                   alt={slides[currentSlide].eyebrow}
-                  fetchPriority="high"
+                  priority
+                  width={680}
+                  height={850}
                   className="w-full h-auto object-contain max-h-[460px] lg:max-h-[750px] xl:max-h-[850px] select-none pb-0 mb-0"
                 />
                 {/* Bottom blending gradient */}
