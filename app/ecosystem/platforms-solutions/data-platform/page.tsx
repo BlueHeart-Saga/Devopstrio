@@ -39,7 +39,7 @@ const DataPlatformOverview = () => {
   return (
     <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60 relative">
       <div className="max-w-7xl mx-auto w-full px-6 xl:px-8">
-        
+
         {/* Top Featured Wide Card */}
         <Reveal>
           <div className="w-full bg-zinc-950/80 border border-zinc-900 rounded-[2.5rem] p-8 md:p-12 mb-20 flex flex-col-reverse lg:flex-row items-center justify-between gap-8 hover:border-zinc-800 transition-all duration-300 shadow-[0_8px_32px_0_rgba(0,0,0,0.5)]">
@@ -153,7 +153,7 @@ const DataChallenges = () => {
     <section className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[radial-gradient(circle_at_center,rgba(225,29,72,0.015),transparent_70%)] blur-3xl pointer-events-none" />
       <div className="max-w-7xl mx-auto w-full px-6 xl:px-8">
-        
+
         {/* Section Header */}
         <Reveal>
           <div className="max-w-3xl mb-16">
@@ -169,7 +169,7 @@ const DataChallenges = () => {
 
         {/* Layout Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
-          
+
           {/* Left Tall Card */}
           <div className="lg:col-span-4 h-full min-h-[420px]">
             <Reveal className="h-full">
@@ -416,16 +416,16 @@ const DataArchitecture = () => {
             return (
               <Reveal key={idx} delay={idx * 0.05 + 0.05}>
                 <div className="group relative rounded-[2rem] p-8 bg-[#0A0A0C]/55 border border-zinc-900/90 hover:border-zinc-800 transition-all duration-500 hover:-translate-y-1.5 flex flex-col justify-between min-h-[340px] text-center overflow-hidden hover:shadow-[0_20px_40px_rgba(0,0,0,0.7)]">
-                  
+
                   {/* Subtle color-matching radial glow background on card hover */}
                   <div className="absolute -inset-px rounded-[2rem] transition-opacity duration-500 opacity-0 group-hover:opacity-100 pointer-events-none z-0"
-                       style={{
-                         background: `radial-gradient(circle at 50% 100%, ${p.glowColor}, transparent 65%)`,
-                         border: `1px solid ${p.borderColor}`
-                       }} />
+                    style={{
+                      background: `radial-gradient(circle at 50% 100%, ${p.glowColor}, transparent 65%)`,
+                      border: `1px solid ${p.borderColor}`
+                    }} />
 
                   <div className="relative z-10 flex flex-col items-center justify-between h-full w-full">
-                    
+
                     {/* Top Portion: Infographic Slit & Number */}
                     <div className="w-full flex flex-col items-center">
                       <div className="relative w-full h-20 overflow-hidden flex items-end justify-center">
@@ -436,7 +436,7 @@ const DataArchitecture = () => {
                         {/* Shadow overlay to give pocket slit depth */}
                         <div className="absolute inset-x-0 bottom-0 h-4 bg-gradient-to-t from-[#0A0A0C] via-[#0A0A0C]/40 to-transparent pointer-events-none opacity-20" />
                       </div>
-                      
+
                       {/* Pocket Slit Horizontal Line */}
                       <div className="w-full h-px bg-zinc-850 relative">
                         <div className="absolute inset-x-0 bottom-0 h-3 bg-gradient-to-t from-[#0A0A0C] to-transparent -translate-y-full opacity-90" />
@@ -446,7 +446,7 @@ const DataArchitecture = () => {
                       <h3 className="text-sm font-bold uppercase tracking-wider text-white mt-7 mb-3 transition-colors duration-300">
                         {p.title}
                       </h3>
-                      
+
                       {/* Description */}
                       <p className="text-[11px] text-zinc-400 font-semibold leading-relaxed max-w-[230px]">
                         {p.desc}
@@ -535,7 +535,7 @@ const DataPipelineWorkflow = () => {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-rose-600/5 rounded-full blur-[140px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto w-full px-6 xl:px-8 relative z-10">
-        
+
         {/* Header Section */}
         <Reveal>
           <div className="text-center max-w-3xl mx-auto mb-20">
@@ -555,7 +555,7 @@ const DataPipelineWorkflow = () => {
             return (
               <Reveal key={step.step} delay={idx * 0.05}>
                 <div className="relative overflow-hidden bg-zinc-950/45 border border-zinc-900 rounded-[2rem] p-8 min-h-[240px] h-full flex flex-col justify-between hover:border-zinc-800 hover:bg-zinc-900/10 transition-all duration-300 shadow-[0_8px_32px_0_rgba(0,0,0,0.5)]">
-                  
+
                   <div>
                     {/* Header: Large Styled Number & Icon */}
                     <div className="flex items-start justify-between mb-6">
@@ -683,7 +683,7 @@ const DataGovernance = () => {
   return (
     <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60 relative">
       <div className="max-w-7xl mx-auto w-full px-6 xl:px-8">
-        
+
         {/* Header */}
         <Reveal>
           <div className="text-center max-w-3xl mx-auto mb-20">
@@ -765,7 +765,7 @@ const AIAnalyticsIntegration = () => {
     <section className="w-full py-24 bg-black border-b border-zinc-900/60 relative overflow-hidden">
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-[radial-gradient(circle_at_center,rgba(225,29,72,0.02),transparent_75%)] pointer-events-none" />
       <div className="max-w-7xl mx-auto w-full px-6 xl:px-8 grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
-        
+
         {/* Left Side */}
         <div className="lg:col-span-5 text-left">
           <Reveal>
@@ -791,13 +791,13 @@ const AIAnalyticsIntegration = () => {
         <div className="lg:col-span-7 w-full relative">
           <Reveal delay={0.1}>
             <div className="relative pl-8 md:pl-12 flex flex-col gap-6">
-              
+
               {/* Central vertical timeline track */}
               <div className="absolute left-[23px] top-6 bottom-6 w-px bg-gradient-to-b from-rose-500 via-[#9F8EC9] to-[#2DD4BF] opacity-40 pointer-events-none" />
 
               {steps.map((item, idx) => (
                 <div key={idx} className="group relative flex items-start gap-6 w-full">
-                  
+
                   {/* Glowing Node Icon Circle */}
                   <div className="relative z-10 flex-shrink-0 w-12 h-12 rounded-full border border-zinc-800 bg-[#0A0A0C] flex items-center justify-center font-mono font-bold text-xs text-zinc-400 group-hover:text-white group-hover:border-rose-500 transition-all duration-500 group-hover:scale-105 group-hover:shadow-[0_0_15px_rgba(225,29,72,0.1)]">
                     {`0${idx + 1}`}
@@ -805,10 +805,10 @@ const AIAnalyticsIntegration = () => {
 
                   {/* Card Details Box */}
                   <div className={`flex-grow p-5 bg-zinc-950/45 border border-zinc-900 rounded-[1.5rem] transition-all duration-500 ${item.border} flex flex-col md:flex-row md:items-center justify-between gap-4 group-hover:shadow-[0_8px_24px_rgba(0,0,0,0.6)]`}>
-                    
+
                     {/* Shadow overlay glowing on card hover */}
                     <div className="absolute -inset-px rounded-[1.5rem] transition-opacity duration-500 opacity-0 group-hover:opacity-100 pointer-events-none z-0"
-                         style={{ background: `radial-gradient(circle at 10% 50%, ${item.glow}, transparent 55%)` }} />
+                      style={{ background: `radial-gradient(circle at 10% 50%, ${item.glow}, transparent 55%)` }} />
 
                     <div className="relative z-10">
                       <h4 className="text-sm font-bold text-white mb-1.5 tracking-tight group-hover:text-white transition-colors duration-300">
@@ -874,7 +874,7 @@ const TechnologyStack = () => {
                   />
                 </div>
                 {/* Title */}
-                <span className="text-[10px] font-extrabold text-zinc-400 group-hover:text-white transition-colors duration-300 uppercase tracking-widest leading-none">
+                <span className="text-[10px] font-bold text-zinc-400 group-hover:text-white transition-colors duration-300 uppercase tracking-widest leading-none">
                   {item.name}
                 </span>
               </div>
@@ -913,7 +913,7 @@ const BusinessOutcomes = () => {
           {outcomes.map((item, idx) => (
             <Reveal key={idx} delay={idx * 0.05}>
               <div className="p-8 bg-zinc-950/40 border border-zinc-900 rounded-[2rem] hover:border-rose-500/20 transition-all duration-300 text-center flex flex-col items-center justify-center min-h-[190px]">
-                <div className="text-xl md:text-2xl xl:text-3xl font-extrabold text-rose-500 mb-3 tracking-tight">
+                <div className="text-xl md:text-2xl xl:text-3xl font-bold text-rose-500 mb-3 tracking-tight">
                   {item.value}
                 </div>
                 <h4 className="text-sm font-bold text-white mb-2 tracking-tight uppercase tracking-wider">{item.title}</h4>
@@ -1150,16 +1150,16 @@ const WhyChooseDataPlatform = () => {
             return (
               <Reveal key={idx} delay={idx * 0.05 + 0.05}>
                 <div className="group relative rounded-[2rem] p-8 bg-[#0A0A0C]/55 border border-zinc-900/90 hover:border-zinc-800 transition-all duration-500 hover:-translate-y-1.5 flex flex-col justify-between min-h-[260px] text-center overflow-hidden hover:shadow-[0_20px_40px_rgba(0,0,0,0.7)]">
-                  
+
                   {/* Subtle color-matching radial glow background on card hover */}
                   <div className="absolute -inset-px rounded-[2rem] transition-opacity duration-500 opacity-0 group-hover:opacity-100 pointer-events-none z-0"
-                       style={{
-                         background: `radial-gradient(circle at 50% 100%, ${p.glowColor}, transparent 65%)`,
-                         border: `1px solid ${p.borderColor}`
-                       }} />
+                    style={{
+                      background: `radial-gradient(circle at 50% 100%, ${p.glowColor}, transparent 65%)`,
+                      border: `1px solid ${p.borderColor}`
+                    }} />
 
                   <div className="relative z-10 flex flex-col items-center justify-center h-full w-full">
-                    
+
                     <div className="w-full flex flex-col items-center">
                       {/* Icon Badge at Top */}
                       <div className={`w-12 h-12 rounded-2xl bg-zinc-900 border border-zinc-850 flex items-center justify-center text-zinc-400 ${p.hoverColor} transition-all duration-500 group-hover:scale-105`}>
@@ -1170,7 +1170,7 @@ const WhyChooseDataPlatform = () => {
                       <h3 className="text-sm font-bold uppercase tracking-wider text-white mt-6 mb-3 transition-colors duration-300">
                         {p.title}
                       </h3>
-                      
+
                       {/* Description */}
                       <p className="text-[11px] text-zinc-400 font-semibold leading-relaxed max-w-[220px]">
                         {p.desc}

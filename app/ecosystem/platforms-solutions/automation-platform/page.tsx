@@ -28,7 +28,7 @@ const AutomationOverview = () => {
   return (
     <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60 relative">
       <div className="max-w-7xl mx-auto w-full px-6 xl:px-8">
-        
+
         <Reveal>
           <div className="text-center max-w-3xl mx-auto mb-16 flex flex-col items-center">
             <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">AUTOMATE EVERYTHING</span>
@@ -87,7 +87,7 @@ const AutomationChallenges = () => {
     <section className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[radial-gradient(circle_at_center,rgba(225,29,72,0.015),transparent_70%)] blur-3xl pointer-events-none" />
       <div className="max-w-7xl mx-auto w-full px-6 xl:px-8">
-        
+
         <Reveal>
           <div className="text-center max-w-3xl mx-auto mb-16">
             <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">BOTTLENECKS</span>
@@ -198,7 +198,7 @@ const AutomationArchitecture = () => {
 
         <div className="flex flex-col items-center justify-center relative">
           <div className="absolute top-0 bottom-0 left-1/2 -translate-x-1/2 w-px bg-gradient-to-b from-zinc-800 via-rose-500/50 to-emerald-500/50" />
-          
+
           {steps.map((step, idx) => (
             <Reveal key={idx} delay={idx * 0.1}>
               <div className="relative z-10 flex flex-col items-center mb-8 group">
@@ -290,7 +290,7 @@ const AutomationLifecycle = () => {
         <div className="relative flex flex-col lg:flex-row items-center justify-between gap-4 lg:gap-0 mt-12">
           {/* Horizontal line for desktop */}
           <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-px bg-zinc-800 -translate-y-1/2 z-0" />
-          
+
           {steps.map((step, idx) => (
             <Reveal key={idx} delay={idx * 0.1} className="w-full lg:w-auto relative z-10 flex flex-col items-center group">
               <div className="w-16 h-16 rounded-full bg-zinc-950 border-2 border-zinc-800 flex items-center justify-center text-zinc-500 group-hover:border-rose-500 group-hover:text-rose-500 group-hover:bg-rose-500/10 transition-all duration-300 shadow-[0_4px_20px_rgba(0,0,0,0.5)]">
@@ -349,7 +349,7 @@ const AIAutomation = () => {
     <section className="w-full py-24 bg-black border-b border-zinc-900/60 relative overflow-hidden">
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-[radial-gradient(circle_at_center,rgba(225,29,72,0.02),transparent_75%)] pointer-events-none" />
       <div className="max-w-7xl mx-auto w-full px-6 xl:px-8 grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
-        
+
         {/* Left Side */}
         <div className="lg:col-span-5 text-left">
           <Reveal>
@@ -370,7 +370,7 @@ const AIAutomation = () => {
           <Reveal delay={0.1}>
             <div className="flex flex-col gap-4 relative pl-8">
               <div className="absolute left-[20px] top-4 bottom-4 w-px bg-rose-500/30" />
-              
+
               {["Events", "AI Engine", "Decision Logic", "Workflow", "Automation", "Business Results"].map((step, i) => (
                 <div key={i} className="flex items-center gap-6">
                   <div className="w-3 h-3 rounded-full bg-rose-500 flex-shrink-0 absolute left-[15px]" />
@@ -468,7 +468,7 @@ const TechnologyStack = () => {
                   />
                 </div>
                 {/* Title */}
-                <span className="text-[10px] font-extrabold text-zinc-400 group-hover:text-white transition-colors duration-300 uppercase tracking-widest leading-none">
+                <span className="text-[10px] font-bold text-zinc-400 group-hover:text-white transition-colors duration-300 uppercase tracking-widest leading-none">
                   {item.name}
                 </span>
               </div>

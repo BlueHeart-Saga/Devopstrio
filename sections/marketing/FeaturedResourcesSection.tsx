@@ -65,7 +65,7 @@ export function FeaturedResourcesSection({
                 </span>
               </div>
 
-              <h3 className="text-2xl sm:text-3xl font-extrabold text-white leading-tight">
+              <h3 className="text-2xl sm:text-3xl font-bold text-white leading-tight">
                 {item.title}
               </h3>
 
@@ -117,9 +117,8 @@ export function FeaturedResourcesSection({
           <button
             key={idx}
             onClick={() => setActiveCarouselIndex(idx)}
-            className={`h-2 rounded-full transition-all ${
-              idx === activeCarouselIndex ? "w-8 bg-rose-600" : "w-2 bg-zinc-800 hover:bg-zinc-700"
-            }`}
+            className={`h-2 rounded-full transition-all ${idx === activeCarouselIndex ? "w-8 bg-rose-600" : "w-2 bg-zinc-800 hover:bg-zinc-700"
+              }`}
           />
         ))}
       </div>

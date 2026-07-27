@@ -23,7 +23,7 @@ export function TechPartnerEcosystem() {
           <span className="text-xs md:text-sm font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
             ALLIANCES NETWORK
           </span>
-          <h2 className="text-3xl md:text-4xl xl:text-5xl font-extrabold tracking-tight leading-tight mb-6 text-white">
+          <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold tracking-tight leading-tight mb-6 text-white">
             Technology Partner <span className="text-rose-500">Ecosystem</span>
           </h2>
           <p className="text-zinc-400 text-base md:text-lg font-medium leading-relaxed">
@@ -41,9 +41,8 @@ export function TechPartnerEcosystem() {
                 <img
                   src={p.logo}
                   alt={`${p.name} logo`}
-                  className={`max-w-full max-h-full object-contain transition-all duration-300 ${
-                    p.darkLogo ? "invert brightness-200" : "brightness-100 group-hover:brightness-110"
-                  }`}
+                  className={`max-w-full max-h-full object-contain transition-all duration-300 ${p.darkLogo ? "invert brightness-200" : "brightness-100 group-hover:brightness-110"
+                    }`}
                 />
               </div>
               <div>

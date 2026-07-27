@@ -30,7 +30,7 @@ export function OurFutureSection() {
     },
     {
       title: "Cognitive DevOps Agents",
-      desc:  <>Unifying generative code synthesis and automated testing pipelines under multi-agent reasoning loops. Explore our <Link href="/services/software-development" className="text-rose-500 hover:underline font-bold">software development</Link> options.</>,
+      desc: <>Unifying generative code synthesis and automated testing pipelines under multi-agent reasoning loops. Explore our <Link href="/services/software-development" className="text-rose-500 hover:underline font-bold">software development</Link> options.</>,
       tag: "DevOps AI",
       image: "/assets/common/2fe7f9184c515b0c515ce38bc8a25efa 1.png"
     },
@@ -101,7 +101,8 @@ export function OurFutureSection() {
   return (
     <section className="py-28 bg-[#030303] text-white relative overflow-hidden">
       {/* Dynamic inline styles for responsive card sizing & scrollbar hiding */}
-      <style dangerouslySetInnerHTML={{ __html: `
+      <style dangerouslySetInnerHTML={{
+        __html: `
         .future-track {
           --card-w: 290px;
           --card-gap: 20px;
@@ -123,7 +124,7 @@ export function OurFutureSection() {
 
       {/* Grid lines background */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#1f1f1f_1px,transparent_1px),linear-gradient(to_bottom,#1f1f1f_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_at_center,black_30%,transparent_70%)] opacity-[0.06]" />
-      
+
       {/* Concentric circles (Radar Waves) matching the image */}
       <div className="absolute right-[-15%] top-1/2 -translate-y-1/2 w-[700px] h-[700px] pointer-events-none opacity-40 z-0">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[250px] h-[250px] border border-zinc-800/25 rounded-full" />
@@ -137,20 +138,20 @@ export function OurFutureSection() {
 
       <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
         <div className="flex flex-col lg:flex-row gap-12 items-start justify-between">
-          
+
           {/* Left Core Content: Title, Desc, and Navigation Controls */}
           <div className="w-full lg:w-[350px] text-left shrink-0">
             <Reveal>
               <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
                 OUR FUTURE
               </span>
-              <h2 className="text-xl md:text-2xl xl:text-3xl font-extrabold tracking-tight leading-tight text-white mb-6">
+              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">
                 Engineering <br />the Next Epoch
               </h2>
               <p className="text-zinc-400 text-xs md:text-sm leading-relaxed font-semibold mb-6">
                 We don't adapt to changes; we build them. Our R&D teams are actively prototyping autonomous workflows and next-generation cloud infrastructure to prepare our global enterprise partners for the decade ahead.
               </p>
-              
+
               {/* Play Document / Action trigger & Navigation Arrows */}
               <div className="mt-8 flex flex-col sm:flex-row sm:items-center gap-6">
                 <button className="group/play flex items-center gap-3 text-xs font-bold uppercase tracking-wider text-zinc-300 hover:text-white transition-colors duration-300 shrink-0">
@@ -159,17 +160,17 @@ export function OurFutureSection() {
                   </div>
                   <span className="font-mono text-[9px] tracking-widest">Vision Presentation</span>
                 </button>
-                
+
                 <div className="flex items-center gap-3">
-                  <button 
-                    onClick={() => scroll("left")} 
+                  <button
+                    onClick={() => scroll("left")}
                     className="w-9 h-9 rounded-full border border-zinc-800 hover:border-zinc-700 bg-zinc-950/40 flex items-center justify-center text-zinc-400 hover:text-white hover:shadow-[0_0_15px_rgba(225,29,72,0.1)] hover:-translate-y-0.5 transition-all duration-300"
                     aria-label="Scroll Left"
                   >
                     <ArrowLeft size={14} />
                   </button>
-                  <button 
-                    onClick={() => scroll("right")} 
+                  <button
+                    onClick={() => scroll("right")}
                     className="w-9 h-9 rounded-full border border-zinc-800 hover:border-zinc-700 bg-zinc-950/40 flex items-center justify-center text-zinc-400 hover:text-white hover:shadow-[0_0_15px_rgba(225,29,72,0.1)] hover:-translate-y-0.5 transition-all duration-300"
                     aria-label="Scroll Right"
                   >
@@ -182,7 +183,7 @@ export function OurFutureSection() {
 
           {/* Smooth Scroll Slider Container */}
           <div className="w-full lg:w-[calc(100%-390px)] overflow-hidden relative py-4">
-            <div 
+            <div
               ref={scrollRef}
               onMouseEnter={() => setIsHovered(true)}
               onMouseLeave={() => setIsHovered(false)}
@@ -191,16 +192,16 @@ export function OurFutureSection() {
             >
               {futureFocus.map((focus, idx) => (
                 <Reveal key={idx} delay={idx * 0.05} className="shrink-0 snap-start snap-always">
-                  <div 
+                  <div
                     className="relative rounded-[1.75rem] overflow-hidden border border-zinc-900 bg-[#0A0A0C] w-[var(--card-w)] h-[240px] md:h-[280px] select-none group transition-all duration-500 hover:border-rose-500/20 hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(225,29,72,0.1)]"
                   >
                     {/* Default Bright Background Image */}
-                    <img 
-                      src={focus.image} 
-                      alt={focus.title} 
-                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out z-0 group-hover:scale-105" 
+                    <img
+                      src={focus.image}
+                      alt={focus.title}
+                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out z-0 group-hover:scale-105"
                     />
-                    
+
                     {/* Default Subtle Gradient Overlay (Ensures text contrast) */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent z-10" />
 

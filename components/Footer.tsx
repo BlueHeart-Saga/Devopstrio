@@ -128,7 +128,7 @@ export function Footer() {
             {/* Corporate Location Box */}
             <div className="rounded-2xl flex flex-col items-start justify-start w-full max-w-[240px]">
               {/* QR Code Image */}
-              <div className="w-24 h-24 bg-white p-1 rounded-xl flex items-center justify-center shadow-[0_4px_12px_rgba(0,0,0,0.5)] overflow-hidden">
+              <div className="w-24 h-24 mx-auto bg-white p-1 flex items-center justify-center shadow-[0_4px_12px_rgba(0,0,0,0.5)] overflow-hidden">
                 <img
                   src="/assets/scan/Scan-me.png"
                   alt="Scan to verify corporate profile"
@@ -138,7 +138,6 @@ export function Footer() {
 
               {/* Verify Profile Button */}
               <div className="flex flex-col gap-2 mt-4 w-full">
-                <span className="text-[9px] text-zinc-500 font-bold uppercase tracking-wider text-left">or click below</span>
                 <button
                   onClick={() => setIsLocationOpen(true)}
                   className="flex items-center justify-center gap-2 bg-white hover:bg-zinc-100 text-black py-2.5 rounded-xl text-xs font-bold transition-all duration-300 shadow-sm w-full"

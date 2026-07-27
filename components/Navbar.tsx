@@ -309,7 +309,7 @@ const ecosystemCategories = [
 const ecosystemMobileList = [
   { name: "Ecosystem Overview", href: "/ecosystem" },
   { name: "Landing Zone Portal", href: "/ecosystem/accelerators-frameworks/landing-zone" },
-  { name: "Devopstrio's AI", href: "https://ai.devopstrio.co.uk" },
+  { name: "Devopstrio's AI", href: "https://devopstrioaiservices-e6dnggh5gxehh9d0.southindia-01.azurewebsites.net" },
   { name: "Partnerships", href: "/ecosystem/partnerships" },
   { name: "Innovation Labs", href: "/ecosystem/innovation-labs" },
   { name: "Platforms & Solutions", href: "/ecosystem/platforms-solutions" },
@@ -477,331 +477,181 @@ export function Navbar() {
   }, []);
 
   return (
-    <div ref={navRef} className="fixed inset-x-0 top-0 z-50 flex justify-center px-4 py-4 pointer-events-none">
-      <header
-        className={`w-full max-w-7xl relative rounded-full border transition-all duration-350 ${isVisible
-          ? "translate-y-0 opacity-100 pointer-events-auto"
-          : "-translate-y-24 opacity-0 pointer-events-none"
-          } ${scrolled
-            ? "border-zinc-800 bg-[#030303]/95 backdrop-blur-md shadow-[0_20px_40px_rgba(0,0,0,0.6)] py-4 px-8"
-            : "border-zinc-900/50 bg-[#030303]/60 backdrop-blur-sm py-4 px-8"
-          } text-white flex items-center justify-between`}
+    <>
+      {/* Blurred Backdrop Overlay when dropdown is open */}
+      <div
+        onClick={() => setActiveMenu(null)}
+        className={`fixed inset-0 z-40 bg-black/60 backdrop-blur-md transition-all duration-300 ${activeMenu ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+          }`}
+      />
+
+      <div
+        ref={navRef}
+        onMouseLeave={() => setActiveMenu(null)}
+        className="fixed inset-x-0 top-0 z-50 flex justify-center px-4 py-4 pointer-events-none"
       >
-        {/* Brand Logo & Name (Improved Logo Size) */}
-        <Link href="/" className="flex items-center gap-1.5 group" onMouseEnter={() => setActiveMenu(null)}>
-          <img
-            src="/assets/logo/logo.png"
-            alt="Devopstrio logo"
-            className="w-12 h-12 transition-transform duration-300 group-hover:scale-105 object-contain"
-          />
-          <span className="text-xl sm:text-2xl font-bold tracking-tight text-white font-sans">
-            Devopstrio
-          </span>
-        </Link>
+        <header
+          className={`w-full max-w-7xl relative rounded-full border transition-all duration-350 ${isVisible
+            ? "translate-y-0 opacity-100 pointer-events-auto"
+            : "-translate-y-24 opacity-0 pointer-events-none"
+            } ${scrolled
+              ? "border-zinc-800 bg-[#030303]/95 backdrop-blur-md shadow-[0_20px_40px_rgba(0,0,0,0.6)] py-4 px-8"
+              : "border-zinc-900/50 bg-[#030303]/60 backdrop-blur-sm py-4 px-8"
+            } text-white flex items-center justify-between`}
+        >
+          {/* Brand Logo & Name (Improved Logo Size) */}
+          <Link href="/" className="flex items-center gap-1.5 group" onMouseEnter={() => setActiveMenu(null)}>
+            <img
+              src="/assets/logo/logo.png"
+              alt="Devopstrio logo"
+              className="w-12 h-12 transition-transform duration-300 group-hover:scale-105 object-contain"
+            />
+            <span className="text-xl sm:text-2xl font-bold tracking-tight text-white font-sans">
+              Devopstrio
+            </span>
+          </Link>
 
-        {/* Center Links (Improved Link Text Sizes to text-sm) */}
-        <nav aria-label="Primary navigation" className="hidden lg:flex items-center gap-2 xl:gap-5 2xl:gap-7">
+          {/* Center Links (Improved Link Text Sizes to text-sm) */}
+          <nav aria-label="Primary navigation" className="hidden lg:flex items-center gap-2 xl:gap-5 2xl:gap-7">
 
-          {/* Services Dropdown */}
-          <div
-            onMouseEnter={() => setActiveMenu("services")}
-          >
-            <Link
-              href="/services"
-              onClick={() => setActiveMenu(null)}
-              className="flex items-center gap-1 xl:gap-1.5 px-2 xl:px-3 py-1.5 text-[14px] xl:text-[15px] 2xl:text-[17px] font-medium tracking-[0.3px] text-white hover:text-rose-500 transition-colors"
+            {/* Services Dropdown */}
+            <div
+              onMouseEnter={() => setActiveMenu("services")}
             >
-              Services <ChevronDown size={14} className={`transition-transform duration-300 ${activeMenu === "services" ? "rotate-180" : ""}`} />
-            </Link>
-            {activeMenu === "services" && (
-              <div className="absolute left-1/2 -translate-x-1/2 top-full mt-3 w-[1200px] max-w-[95vw] pointer-events-auto z-50">
-                <div className="animate-fadeIn bg-black border border-zinc-850 rounded-2xl pt-8 px-8 pb-5 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.9)] grid grid-cols-[220px_200px_1fr] xl:grid-cols-[280px_240px_1fr] gap-x-4 xl:gap-x-8 gap-y-3 text-left relative">
+              <Link
+                href="/services"
+                onClick={() => setActiveMenu(null)}
+                className="flex items-center gap-1 xl:gap-1.5 px-2 xl:px-3 py-1.5 text-[14px] xl:text-[15px] 2xl:text-[17px] font-medium tracking-[0.3px] text-white hover:text-rose-500 transition-colors"
+              >
+                Services <ChevronDown size={14} className={`transition-transform duration-300 ${activeMenu === "services" ? "rotate-180" : ""}`} />
+              </Link>
+              {activeMenu === "services" && (
+                <div className="absolute left-1/2 -translate-x-1/2 top-full mt-3 w-[1200px] max-w-[95vw] pointer-events-auto z-50">
+                  <div className="animate-fadeIn bg-black border border-zinc-900 rounded-2xl pt-8 px-8 pb-5 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.9)] grid grid-cols-[220px_200px_1fr] xl:grid-cols-[280px_240px_1fr] gap-x-4 xl:gap-x-8 gap-y-3 text-left relative">
 
-                  {/* Gloss reflection line */}
-                  <div className="absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-zinc-800 to-transparent pointer-events-none" />
+                    {/* Gloss reflection line */}
+                    <div className="absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-zinc-800 to-transparent pointer-events-none" />
 
-                  {/* Visual Promo Column (HCLTech Style) */}
-                  <div className="relative overflow-hidden rounded-xl border border-zinc-900 p-5 flex flex-col justify-between min-h-[260px] h-full group bg-white">
-                    <img src="/assets/wavebg/navbar/services.png" alt="" className="absolute inset-0 w-full h-full object-cover transition-all duration-700 group-hover:scale-105" />
+                    {/* Visual Promo Column (Services Interactive Blur & Expand) */}
+                  <div className="relative overflow-hidden rounded-2xl border border-zinc-800/90 p-6 flex flex-col justify-between min-h-[320px] h-full group bg-[#09090C] shadow-2xl transition-all duration-500 hover:border-red-500/50 cursor-pointer">
+                    <img
+                      src="/assets/wavebg/navbar/servicesdrop.jpeg"
+                      alt="Enterprise Acceleration"
+                      className="absolute inset-0 w-full h-full object-cover opacity-95 group-hover:opacity-70 group-hover:blur-md scale-100 group-hover:scale-105 transition-all duration-700 ease-out pointer-events-none"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent group-hover:bg-black/75 transition-all duration-500 pointer-events-none" />
+
                     <div className="relative z-10">
-                      <span className="text-[9px] font-mono tracking-widest text-red-600 uppercase block mb-3 font-bold">Enterprise Acceleration</span>
-                      <h4 className="text-sm font-bold leading-snug text-red-600 mb-2">Powering Next-Gen Solutions</h4>
-                      <p className="text-[10px] text-black font-bold leading-relaxed">
-                        We design custom roadmaps and build robust frameworks tailored to satisfy strict compliance and high scalability standards.
-                      </p>
+                      <h4 className="text-xl font-bold leading-snug text-white tracking-tight mb-2 font-sans drop-shadow-md">
+                        Powering <span className="text-red-500">Next-Gen</span> Solutions
+                      </h4>
+                      <div className="w-10 h-[3px] bg-red-600 rounded-full my-3" />
+                      
+                      {/* Description Text: Hidden initially, expands on hover */}
+                      <div className="transition-all duration-500 ease-out max-h-0 opacity-0 group-hover:max-h-[140px] group-hover:opacity-100 overflow-hidden">
+                        <p className="text-[11px] text-zinc-200 font-medium leading-relaxed pt-1">
+                          We design custom roadmaps and build robust frameworks tailored to satisfy strict compliance and high scalability standards.
+                        </p>
+                      </div>
                     </div>
+
                     <Link
                       href="/services"
                       onClick={() => setActiveMenu(null)}
-                      className="relative z-10 inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-wider text-red-700 hover:text-black transition-colors mt-4"
+                      className="relative z-10 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-white group-hover:text-rose-400 transition-colors mt-6 group/cta"
                     >
-                      Explore Our Services &rarr;
+                      <span>EXPLORE OUR SERVICES</span>
+                      <span className="text-rose-500 text-sm group-hover/cta:translate-x-1 transition-transform">
+                        &rarr;
+                      </span>
                     </Link>
                   </div>
 
-                  {/* Middle sidebar with categories */}
-                  <div className="flex flex-col border-r border-zinc-900 pr-4 gap-1">
-                    <span className="text-xs font-mono tracking-widest text-zinc-500 uppercase block px-3 mb-2">Core Expertise</span>
-                    {serviceCategories.map((cat) => (
-                      <Link
-                        key={cat.id}
-                        href={cat.href}
-                        onMouseEnter={() => setActiveCategory(cat.id)}
-                        onClick={() => {
-                          setActiveMenu(null);
-                        }}
-                        className={`flex items-center justify-between px-3 py-2 rounded-lg text-[15px] font-semibold transition-all duration-200 text-left ${activeCategory === cat.id
-                          ? "bg-zinc-900 text-rose-500"
-                          : "text-zinc-300 hover:text-white hover:bg-zinc-900/30"
-                          }`}
-                      >
-                        <span>{cat.name}</span>
-                        {activeCategory === cat.id && <span className="text-[11px]">&rarr;</span>}
-                      </Link>
-                    ))}
-                  </div>
+                    {/* Middle sidebar with categories */}
+                    <div className="flex flex-col border-r border-zinc-900 pr-4 gap-1">
+                      <span className="text-xs font-mono tracking-widest text-zinc-500 uppercase block px-3 mb-2">Core Expertise</span>
+                      {serviceCategories.map((cat) => (
+                        <Link
+                          key={cat.id}
+                          href={cat.href}
+                          onMouseEnter={() => setActiveCategory(cat.id)}
+                          onClick={() => {
+                            setActiveMenu(null);
+                          }}
+                          className={`flex items-center justify-between px-3 py-2 rounded-lg text-[15px] font-semibold transition-all duration-200 text-left ${activeCategory === cat.id
+                            ? "bg-zinc-900 text-rose-500"
+                            : "text-zinc-300 hover:text-white hover:bg-zinc-900/30"
+                            }`}
+                        >
+                          <span>{cat.name}</span>
+                          {activeCategory === cat.id && <span className="text-[11px]">&rarr;</span>}
+                        </Link>
+                      ))}
+                    </div>
 
-                  {/* Right panel with active sub-services */}
-                  <div className="flex flex-col">
-                    <span className="text-xs font-mono tracking-widest text-zinc-500 uppercase block px-2 mb-2">Strategic Capabilities</span>
-                    <div className="max-h-[420px] overflow-y-auto overscroll-contain pr-2 custom-scrollbar">
-                      <div className="grid grid-cols-2 gap-x-4 gap-y-1">
-                        {serviceCategories.find(c => c.id === activeCategory)?.items.map((item) => (
-                          <Link
-                            key={item.name}
-                            href={item.href}
-                            onClick={() => setActiveMenu(null)}
-                            className="group/subitem block p-2 rounded-lg hover:bg-zinc-900/30 transition-colors"
-                          >
-                            <span className="block text-[15px] font-semibold text-white group-hover/subitem:text-rose-500 transition-colors mb-1">
-                              {item.name}
-                            </span>
-                            <span className="block text-[13px] text-zinc-400 font-medium leading-relaxed">
+                    {/* Right panel with active sub-services */}
+                    <div className="flex flex-col">
+                      <span className="text-xs font-mono tracking-widest text-zinc-500 uppercase block px-2 mb-2">Strategic Capabilities</span>
+                      <div className="max-h-[420px] overflow-y-auto overscroll-contain pr-2 custom-scrollbar">
+                        <div className="grid grid-cols-2 gap-x-4 gap-y-1">
+                          {serviceCategories.find(c => c.id === activeCategory)?.items.map((item) => (
+                            <Link
+                              key={item.name}
+                              href={item.href}
+                              onClick={() => setActiveMenu(null)}
+                              className="group/subitem block p-2 rounded-lg hover:bg-zinc-900/30 transition-colors"
+                            >
+                              <span className="block text-[15px] font-semibold text-white group-hover/subitem:text-rose-500 transition-colors mb-1">
+                                {item.name}
+                              </span>
+                              {/* <span className="block text-[13px] text-zinc-400 font-medium leading-relaxed">
                               {item.desc}
-                            </span>
-                          </Link>
-                        ))}
+                            </span> */}
+                            </Link>
+                          ))}
+                        </div>
                       </div>
                     </div>
-                  </div>
 
-                  {/* Mega Menu Footer */}
-                  <div className="col-span-full border-t border-zinc-900/60 pt-4 mt-1 flex flex-row justify-between items-center">
-                    <div className="flex items-center gap-4 text-[13px] font-medium text-zinc-400">
-                      <Link
-                        href="/services/explore"
-                        className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300"
-                      >
-                        <span className="w-1.5 h-1.5 rounded-full bg-rose-500 animate-pulse" />
-                        <span>Explore Services Directory</span>
-                      </Link>
-                      <span className="text-zinc-800">|</span>
-                      <Link
-                        href="/insights/industry-events"
-                        className="hover:text-rose-500 transition-colors flex items-center gap-1.5"
-                      >
-                        {/* <span className="w-1.5 h-1.5 rounded-full bg-rose-500 animate-pulse" /> */}
-                        <span>Events</span>
-                      </Link>
-                      <span className="text-zinc-800">|</span>
-                      <div className="flex items-center gap-2">
-                        <span className="text-zinc-500">Chat now:</span>
-                        <a
-                          href={`mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL}`}
-                          className="hover:text-rose-500 transition-colors text-zinc-400"
+                    {/* Mega Menu Footer */}
+                    <div className="col-span-full border-t border-zinc-900/60 pt-4 mt-1 flex flex-row justify-between items-center">
+                      <div className="flex items-center gap-4 text-[13px] font-medium text-zinc-400">
+                        <Link
+                          href="/services/explore"
+                          className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300"
                         >
-                          Email
-                        </a>
-                        <span className="text-zinc-850">•</span>
-                        <a
-                          href="https://wa.me/447473063543"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="hover:text-rose-500 transition-colors text-zinc-400"
+                          <span className="w-1.5 h-1.5 rounded-full bg-rose-500 animate-pulse" />
+                          <span>Explore Services Directory</span>
+                        </Link>
+                        <span className="text-zinc-800">|</span>
+                        <Link
+                          href="/insights/industry-events"
+                          className="hover:text-rose-500 transition-colors flex items-center gap-1.5"
                         >
-                          WhatsApp
-                        </a>
-                      </div>
-                    </div>
-                    {/* 
-                    <div className="flex items-center gap-4">
-                      <span className="text-[10px] font-bold tracking-wider uppercase text-zinc-500">Connect With Us</span>
-                      <div className="flex items-center gap-3 border-l border-zinc-800 pl-4">
-                        <a
-                          href="https://www.linkedin.com/company/devopstrioglobal/posts/?feedView=all"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="transition-all duration-200 hover:scale-110"
-                          title="LinkedIn"
-                        >
-                          <img src="/assets/social-icons/linkedin.svg" alt="LinkedIn" className="w-8 h-8 object-contain transition-all duration-200" />
-                        </a>
-                        <a
-                          href="https://www.facebook.com/profile.php?id=61579126233218"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="transition-all duration-200 hover:scale-110"
-                          title="Facebook"
-                        >
-                          <img src="/assets/social-icons/facebook.svg" alt="Facebook" className="w-8 h-8 object-contain transition-all duration-200" />
-                        </a>
-                        <a
-                          href="https://www.instagram.com/devopstrio_offcl/"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="transition-all duration-200 hover:scale-110"
-                          title="Instagram"
-                        >
-                          <img src="/assets/social-icons/instagram.svg" alt="Instagram" className="w-8 h-8 object-contain transition-all duration-200" />
-                        </a>
-                        <a
-                          href="https://www.youtube.com/@Devopstrioltd"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="transition-all duration-200 hover:scale-110"
-                          title="YouTube"
-                        >
-                          <img src="/assets/social-icons/youtube.svg" alt="YouTube" className="w-8 h-8 object-contain transition-all duration-200" />
-                        </a>
-                      </div>
-                    </div>
-                    */}
-                    <div className="flex items-center gap-4">
-                      <span className="text-[10px] font-bold tracking-wider uppercase text-zinc-500">Connect With Us</span>
-                      <div className="flex items-center gap-4 border-l border-zinc-800 pl-4">
-                        <a
-                          href="https://www.linkedin.com/company/devopstrioglobal/posts/?feedView=all"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-[11px] font-bold tracking-widest uppercase text-zinc-400 hover:text-white transition-colors duration-200"
-                        >
-                          LinkedIn
-                        </a>
-                        <a
-                          href="https://www.facebook.com/profile.php?id=61579126233218"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-[11px] font-bold tracking-widest uppercase text-zinc-400 hover:text-white transition-colors duration-200"
-                        >
-                          Facebook
-                        </a>
-                        <a
-                          href="https://www.instagram.com/devopstrio_offcl/"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-[11px] font-bold tracking-widest uppercase text-zinc-400 hover:text-white transition-colors duration-200"
-                        >
-                          Instagram
-                        </a>
-                        <a
-                          href="https://www.youtube.com/@Devopstrioltd"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-[11px] font-bold tracking-widest uppercase text-zinc-400 hover:text-white transition-colors duration-200"
-                        >
-                          YouTube
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-
-                </div>
-              </div>
-            )}
-          </div>
-
-          {/* Industries Dropdown */}
-          <div
-            onMouseEnter={() => setActiveMenu("industries")}
-          >
-            <Link
-              href="/industries"
-              onClick={() => setActiveMenu(null)}
-              className="flex items-center gap-1 xl:gap-1.5 px-2 xl:px-3 py-1.5 text-[14px] xl:text-[15px] 2xl:text-[17px] font-medium tracking-[0.3px] text-white hover:text-rose-500 transition-colors"
-            >
-              Industries <ChevronDown size={14} className={`transition-transform duration-300 ${activeMenu === "industries" ? "rotate-180" : ""}`} />
-            </Link>
-            {activeMenu === "industries" && (
-              <div className="absolute left-1/2 -translate-x-1/2 top-full mt-3 w-[1200px] max-w-[95vw] pointer-events-auto z-50">
-                <div className="animate-fadeIn bg-black border border-zinc-850 rounded-2xl pt-8 px-8 pb-5 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.9)] grid grid-cols-[220px_1fr] xl:grid-cols-[280px_1fr] gap-x-4 xl:gap-x-8 gap-y-3 text-left relative">
-
-                  {/* Gloss reflection line */}
-                  <div className="absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-zinc-850 to-transparent pointer-events-none" />
-
-                  {/* Left Callout Box */}
-                  <div className="relative overflow-hidden rounded-xl border border-zinc-900 p-5 flex flex-col justify-between min-h-[260px] h-full group bg-white">
-                    <img src="/assets/wavebg/navbar/industries.png" alt="" className="absolute inset-0 w-full h-full object-cover transition-all duration-700 group-hover:scale-105" />
-                    <div className="relative z-10">
-                      <span className="text-[9px] font-mono tracking-widest text-red-600 uppercase block mb-3 font-bold">Sectors</span>
-                      <h4 className="text-sm font-bold leading-snug text-red-600 mb-2">Compliance First</h4>
-                      <p className="text-[10px] text-black font-bold leading-relaxed">
-                        Deploying regulatory-safe software runtimes across international sectors.
-                      </p>
-                    </div>
-                    <Link
-                      href="/industries"
-                      onClick={() => setActiveMenu(null)}
-                      className="relative z-10 inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-wider text-red-700 hover:text-black transition-colors mt-4"
-                    >
-                      All Domains &rarr;
-                    </Link>
-                  </div>
-
-                  {/* Right industries list grid */}
-                  <div>
-                    <span className="text-xs font-mono tracking-widest text-zinc-500 uppercase block mb-4">Target Sectors</span>
-                    <div className="max-h-[380px] overflow-y-auto overscroll-contain pr-2 custom-scrollbar">
-                      <div className="grid grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-1">
-                        {industriesList.map((ind) => (
-                          <Link
-                            key={ind.name}
-                            href={ind.href}
-                            onClick={() => setActiveMenu(null)}
-                            className="group/ind block p-2 rounded-lg hover:bg-zinc-900/30 transition-colors"
+                          {/* <span className="w-1.5 h-1.5 rounded-full bg-rose-500 animate-pulse" /> */}
+                          <span>Events</span>
+                        </Link>
+                        <span className="text-zinc-800">|</span>
+                        <div className="flex items-center gap-2">
+                          <span className="text-zinc-500">Chat now:</span>
+                          <a
+                            href={`mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL}`}
+                            className="hover:text-rose-500 transition-colors text-zinc-400"
                           >
-                            <span className="block text-[15px] font-semibold text-white group-hover/ind:text-rose-500 transition-colors mb-1">
-                              {ind.name}
-                            </span>
-                            <span className="block text-[13px] text-zinc-400 font-medium leading-relaxed">
-                              {ind.desc}
-                            </span>
-                          </Link>
-                        ))}
+                            Email
+                          </a>
+                          <span className="text-zinc-800">•</span>
+                          <a
+                            href="https://wa.me/447473063543"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="hover:text-rose-500 transition-colors text-zinc-400"
+                          >
+                            WhatsApp
+                          </a>
+                        </div>
                       </div>
-                    </div>
-                  </div>
-
-                  {/* Mega Menu Footer */}
-                  <div className="col-span-full border-t border-zinc-900/60 pt-4 mt-1 flex flex-row justify-between items-center">
-                    <div className="flex items-center gap-4 text-[13px] font-medium text-zinc-400">
-                      <Link
-                        href="/insights/industry-events"
-                        className="hover:text-rose-500 transition-colors flex items-center gap-1.5"
-                      >
-                        <span className="w-1.5 h-1.5 rounded-full bg-rose-500 animate-pulse" />
-                        <span>Events</span>
-                      </Link>
-                      <span className="text-zinc-800">|</span>
-                      <div className="flex items-center gap-2">
-                        <span className="text-zinc-500">Chat now:</span>
-                        <a
-                          href={`mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL}`}
-                          className="hover:text-rose-500 transition-colors text-zinc-400"
-                        >
-                          Email
-                        </a>
-                        <span className="text-zinc-850">•</span>
-                        <a
-                          href="https://wa.me/447473063543"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="hover:text-rose-500 transition-colors text-zinc-400"
-                        >
-                          WhatsApp
-                        </a>
-                      </div>
-                    </div>
-                    {/* 
+                      {/* 
                     <div className="flex items-center gap-4">
                       <span className="text-[10px] font-bold tracking-wider uppercase text-zinc-500">Connect With Us</span>
                       <div className="flex items-center gap-3 border-l border-zinc-800 pl-4">
@@ -844,188 +694,158 @@ export function Navbar() {
                       </div>
                     </div>
                     */}
-                    <div className="flex items-center gap-4">
-                      <span className="text-[10px] font-bold tracking-wider uppercase text-zinc-500">Connect With Us</span>
-                      <div className="flex items-center gap-4 border-l border-zinc-800 pl-4">
-                        <a
-                          href="https://www.linkedin.com/company/devopstrioglobal/posts/?feedView=all"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-[11px] font-bold tracking-widest uppercase text-zinc-400 hover:text-white transition-colors duration-200"
-                        >
-                          LinkedIn
-                        </a>
-                        <a
-                          href="https://www.facebook.com/profile.php?id=61579126233218"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-[11px] font-bold tracking-widest uppercase text-zinc-400 hover:text-white transition-colors duration-200"
-                        >
-                          Facebook
-                        </a>
-                        <a
-                          href="https://www.instagram.com/devopstrio_offcl/"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-[11px] font-bold tracking-widest uppercase text-zinc-400 hover:text-white transition-colors duration-200"
-                        >
-                          Instagram
-                        </a>
-                        <a
-                          href="https://www.youtube.com/@Devopstrioltd"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-[11px] font-bold tracking-widest uppercase text-zinc-400 hover:text-white transition-colors duration-200"
-                        >
-                          YouTube
-                        </a>
+                      <div className="flex items-center gap-4">
+                        <span className="text-[10px] font-bold tracking-wider uppercase text-zinc-500">Connect With Us</span>
+                        <div className="flex items-center gap-4 border-l border-zinc-800 pl-4">
+                          <a
+                            href="https://www.linkedin.com/company/devopstrioglobal/posts/?feedView=all"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-[11px] font-bold tracking-widest uppercase text-zinc-400 hover:text-white transition-colors duration-200"
+                          >
+                            LinkedIn
+                          </a>
+                          <a
+                            href="https://www.facebook.com/profile.php?id=61579126233218"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-[11px] font-bold tracking-widest uppercase text-zinc-400 hover:text-white transition-colors duration-200"
+                          >
+                            Facebook
+                          </a>
+                          <a
+                            href="https://www.instagram.com/devopstrio_offcl/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-[11px] font-bold tracking-widest uppercase text-zinc-400 hover:text-white transition-colors duration-200"
+                          >
+                            Instagram
+                          </a>
+                          <a
+                            href="https://www.youtube.com/@Devopstrioltd"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-[11px] font-bold tracking-widest uppercase text-zinc-400 hover:text-white transition-colors duration-200"
+                          >
+                            YouTube
+                          </a>
+                        </div>
                       </div>
                     </div>
-                  </div>
 
+                  </div>
                 </div>
-              </div>
-            )}
-          </div>
+              )}
+            </div>
 
-          {/* Ecosystem Dropdown */}
-          <div
-            onMouseEnter={() => setActiveMenu("ecosystem")}
-          >
-            <Link
-              href="/ecosystem"
-              onClick={() => setActiveMenu(null)}
-              className="flex items-center gap-1 xl:gap-1.5 px-2 xl:px-3 py-1.5 text-[14px] xl:text-[15px] 2xl:text-[17px] font-medium tracking-[0.3px] text-white hover:text-rose-500 transition-colors"
+            {/* Industries Dropdown */}
+            <div
+              onMouseEnter={() => setActiveMenu("industries")}
             >
-              Ecosystem <ChevronDown size={14} className={`transition-transform duration-300 ${activeMenu === "ecosystem" ? "rotate-180" : ""}`} />
-            </Link>
-            {activeMenu === "ecosystem" && (
-              <div className="absolute left-1/2 -translate-x-1/2 top-full mt-3 w-[1200px] max-w-[95vw] pointer-events-auto z-50">
-                <div className="animate-fadeIn bg-black border border-zinc-850 rounded-2xl pt-8 px-8 pb-5 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.9)] grid grid-cols-[220px_200px_1fr] xl:grid-cols-[280px_240px_1fr] gap-x-4 xl:gap-x-8 gap-y-3 text-left relative">
+              <Link
+                href="/industries"
+                onClick={() => setActiveMenu(null)}
+                className="flex items-center gap-1 xl:gap-1.5 px-2 xl:px-3 py-1.5 text-[14px] xl:text-[15px] 2xl:text-[17px] font-medium tracking-[0.3px] text-white hover:text-rose-500 transition-colors"
+              >
+                Industries <ChevronDown size={14} className={`transition-transform duration-300 ${activeMenu === "industries" ? "rotate-180" : ""}`} />
+              </Link>
+              {activeMenu === "industries" && (
+                <div className="absolute left-1/2 -translate-x-1/2 top-full mt-3 w-[1200px] max-w-[95vw] pointer-events-auto z-50">
+                  <div className="animate-fadeIn bg-black border border-zinc-900 rounded-2xl pt-8 px-8 pb-5 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.9)] grid grid-cols-[220px_1fr] xl:grid-cols-[280px_1fr] gap-x-4 xl:gap-x-8 gap-y-3 text-left relative">
 
-                  {/* Gloss reflection line */}
-                  <div className="absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-zinc-800 to-transparent pointer-events-none" />
+                    {/* Gloss reflection line */}
+                    <div className="absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-zinc-900 to-transparent pointer-events-none" />
 
-                  {/* Visual Promo Column (Services style) */}
-                  <div className="relative overflow-hidden rounded-xl border border-zinc-900 p-5 flex flex-col justify-between min-h-[260px] h-full group bg-white">
-                    <img src="/assets/wavebg/navbar/ecosystem.png" alt="" className="absolute inset-0 w-full h-full object-cover transition-all duration-700 group-hover:scale-105" />
-                    <div className="relative z-10">
-                      <span className="text-[9px] font-mono tracking-widest text-red-600 uppercase block mb-3 font-bold">Ecosystem Infrastructure</span>
-                      <h4 className="text-sm font-bold leading-snug text-red-600 mb-2">Everything You Need to Scale</h4>
-                      <p className="text-[10px] text-black font-bold leading-relaxed">
-                        Explore our world-class technology alliances, research innovation labs, and custom platforms built to transform your enterprise.
-                      </p>
-                    </div>
-                    <Link
-                      href="/ecosystem"
-                      onClick={() => setActiveMenu(null)}
-                      className="relative z-10 inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-wider text-red-700 hover:text-black transition-colors mt-4"
-                    >
-                      Explore Ecosystem &rarr;
-                    </Link>
-                  </div>
+                    {/* Left Callout Box (Industries Interactive Blur & Expand) */}
+                    <div className="relative overflow-hidden rounded-2xl border border-zinc-800/90 p-6 flex flex-col justify-between min-h-[320px] h-full group bg-[#09090C] shadow-2xl transition-all duration-500 hover:border-red-500/50 cursor-pointer">
+                      <img
+                        src="/assets/wavebg/navbar/industriesdrop.png"
+                        alt="Compliance First"
+                        className="absolute inset-0 w-full h-full object-cover opacity-95 group-hover:opacity-70 group-hover:blur-md scale-100 group-hover:scale-105 transition-all duration-700 ease-out pointer-events-none"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent group-hover:bg-black/75 transition-all duration-500 pointer-events-none" />
 
-                  {/* Middle sidebar with categories */}
-                  <div className="flex flex-col border-r border-zinc-900 pr-4 gap-1">
-                    <span className="text-xs font-mono tracking-widest text-zinc-500 uppercase block px-3 mb-2">Ecosystem Pillars</span>
-                    {ecosystemCategories.map((cat) => (
+                      <div className="relative z-10">
+                        <h4 className="text-xl font-bold leading-snug text-white tracking-tight mb-2 font-sans drop-shadow-md">
+                          Compliance <span className="text-red-500">First</span> Solutions
+                        </h4>
+                        <div className="w-10 h-[3px] bg-red-600 rounded-full my-3" />
+                        
+                        {/* Description Text: Hidden initially, expands on hover */}
+                        <div className="transition-all duration-500 ease-out max-h-0 opacity-0 group-hover:max-h-[140px] group-hover:opacity-100 overflow-hidden">
+                          <p className="text-[11px] text-zinc-200 font-medium leading-relaxed pt-1">
+                            Deploying regulatory-safe software runtimes and enterprise digital platforms across international sectors.
+                          </p>
+                        </div>
+                      </div>
+
                       <Link
-                        key={cat.id}
-                        href={cat.href}
-                        onMouseEnter={() => setActiveEcoCategory(cat.id)}
-                        onClick={() => {
-                          setActiveMenu(null);
-                        }}
-                        className={`flex items-center justify-between px-3 py-2 rounded-lg text-[15px] font-semibold transition-all duration-200 text-left ${activeEcoCategory === cat.id
-                          ? "bg-zinc-900 text-rose-500"
-                          : "text-zinc-300 hover:text-white hover:bg-zinc-900/30"
-                          }`}
-                      >
-                        <span>{cat.name}</span>
-                        {activeEcoCategory === cat.id && <span className="text-[11px]">&rarr;</span>}
-                      </Link>
-                    ))}
-
-                    {/* External Link: Visit AI Hub */}
-                    {/* <div className="mt-2 pt-2 border-t border-zinc-900/80">
-                      <a
-                        href="https://ai.devopstrio.co.uk"
-                        target="_blank"
-                        rel="noopener noreferrer"
+                        href="/industries"
                         onClick={() => setActiveMenu(null)}
-                        className="flex items-center justify-between px-3 py-2 rounded-lg text-[14px] font-bold transition-all duration-300 text-left border border-rose-500/20 bg-rose-500/[0.03] text-rose-400 hover:text-white hover:bg-rose-600 hover:border-rose-500 shadow-[0_0_12px_rgba(244,63,94,0.06)] hover:shadow-[0_0_18px_rgba(244,63,94,0.2)] group"
+                        className="relative z-10 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-white group-hover:text-rose-400 transition-colors mt-6 group/cta"
                       >
-                        <span className="flex items-center gap-2">
-                          
-                          <span>Devopstrio's AI</span>
+                        <span>EXPLORE ALL DOMAINS</span>
+                        <span className="text-rose-500 text-sm group-hover/cta:translate-x-1 transition-transform">
+                          &rarr;
                         </span>
-                        <span className="text-[10px] group-hover:translate-x-0.5 transition-transform">&rarr;</span>
-                      </a>
-                    </div> */}
-                  </div>
+                      </Link>
+                    </div>
 
-                  {/* Right panel with active sub-items */}
-                  <div className="flex flex-col">
-                    <span className="text-xs font-mono tracking-widest text-zinc-500 uppercase block px-2 mb-2">Sub-Pages & Links</span>
-                    <div className="max-h-[420px] overflow-y-auto overscroll-contain pr-2 custom-scrollbar">
-                      <div className="grid grid-cols-2 gap-x-4 gap-y-1">
-                        {ecosystemCategories.find(c => c.id === activeEcoCategory)?.items.map((item) => (
-                          <Link
-                            key={item.name}
-                            href={item.href}
-                            onClick={() => setActiveMenu(null)}
-                            className="group/subitem block p-2 rounded-lg hover:bg-zinc-900/30 transition-colors"
+                    {/* Right industries list grid */}
+                    <div>
+                      <span className="text-xs font-mono tracking-widest text-zinc-500 uppercase block mb-4">Target Sectors</span>
+                      <div className="max-h-[380px] overflow-y-auto overscroll-contain pr-2 custom-scrollbar">
+                        <div className="grid grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-1">
+                          {industriesList.map((ind) => (
+                            <Link
+                              key={ind.name}
+                              href={ind.href}
+                              onClick={() => setActiveMenu(null)}
+                              className="group/ind block p-2 rounded-lg hover:bg-zinc-900/30 transition-colors"
+                            >
+                              <span className="block text-[15px] font-semibold text-white group-hover/ind:text-rose-500 transition-colors mb-1">
+                                {ind.name}
+                              </span>
+                              <span className="block text-[13px] text-zinc-400 font-medium leading-relaxed">
+                                {ind.desc}
+                              </span>
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Mega Menu Footer */}
+                    <div className="col-span-full border-t border-zinc-900/60 pt-4 mt-1 flex flex-row justify-between items-center">
+                      <div className="flex items-center gap-4 text-[13px] font-medium text-zinc-400">
+                        <Link
+                          href="/insights/industry-events"
+                          className="hover:text-rose-500 transition-colors flex items-center gap-1.5"
+                        >
+                          <span className="w-1.5 h-1.5 rounded-full bg-rose-500 animate-pulse" />
+                          <span>Events</span>
+                        </Link>
+                        <span className="text-zinc-800">|</span>
+                        <div className="flex items-center gap-2">
+                          <span className="text-zinc-500">Chat now:</span>
+                          <a
+                            href={`mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL}`}
+                            className="hover:text-rose-500 transition-colors text-zinc-400"
                           >
-                            <span className="block text-[15px] font-semibold text-white group-hover/subitem:text-rose-500 transition-colors mb-1">
-                              {item.name}
-                            </span>
-                            <span className="block text-[13px] text-zinc-400 font-medium leading-relaxed">
-                              {item.desc}
-                            </span>
-                          </Link>
-                        ))}
+                            Email
+                          </a>
+                          <span className="text-zinc-800">•</span>
+                          <a
+                            href="https://wa.me/447473063543"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="hover:text-rose-500 transition-colors text-zinc-400"
+                          >
+                            WhatsApp
+                          </a>
+                        </div>
                       </div>
-                    </div>
-                  </div>
-
-                  {/* Mega Menu Footer */}
-                  <div className="col-span-full border-t border-zinc-900/60 pt-4 mt-1 flex flex-row justify-between items-center">
-                    <div className="flex items-center gap-4 text-[13px] font-medium text-zinc-400">
-                      <Link
-                        href="/ecosystem/landing-zone"
-                        className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300"
-                      >
-                        <span className="w-1.5 h-1.5 rounded-full bg-rose-500 animate-pulse" />
-                        <span>Landing Zone</span>
-                      </Link>
-                      <span className="text-zinc-800">|</span>
-                      <Link
-                        href="/insights/industry-events"
-                        className="hover:text-rose-500 transition-colors flex items-center gap-1.5"
-                      >
-                        <span>Events</span>
-                      </Link>
-                      <span className="text-zinc-800">|</span>
-                      <div className="flex items-center gap-2">
-                        <span className="text-zinc-500">Chat now:</span>
-                        <a
-                          href={`mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL}`}
-                          className="hover:text-rose-500 transition-colors text-zinc-400"
-                        >
-                          Email
-                        </a>
-                        <span className="text-zinc-850">•</span>
-                        <a
-                          href="https://wa.me/447473063543"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="hover:text-rose-500 transition-colors text-zinc-400"
-                        >
-                          WhatsApp
-                        </a>
-                      </div>
-                    </div>
-                    {/* 
+                      {/* 
                     <div className="flex items-center gap-4">
                       <span className="text-[10px] font-bold tracking-wider uppercase text-zinc-500">Connect With Us</span>
                       <div className="flex items-center gap-3 border-l border-zinc-800 pl-4">
@@ -1068,345 +888,422 @@ export function Navbar() {
                       </div>
                     </div>
                     */}
+                      <div className="flex items-center gap-4">
+                        <span className="text-[10px] font-bold tracking-wider uppercase text-zinc-500">Connect With Us</span>
+                        <div className="flex items-center gap-4 border-l border-zinc-800 pl-4">
+                          <a
+                            href="https://www.linkedin.com/company/devopstrioglobal/posts/?feedView=all"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-[11px] font-bold tracking-widest uppercase text-zinc-400 hover:text-white transition-colors duration-200"
+                          >
+                            LinkedIn
+                          </a>
+                          <a
+                            href="https://www.facebook.com/profile.php?id=61579126233218"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-[11px] font-bold tracking-widest uppercase text-zinc-400 hover:text-white transition-colors duration-200"
+                          >
+                            Facebook
+                          </a>
+                          <a
+                            href="https://www.instagram.com/devopstrio_offcl/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-[11px] font-bold tracking-widest uppercase text-zinc-400 hover:text-white transition-colors duration-200"
+                          >
+                            Instagram
+                          </a>
+                          <a
+                            href="https://www.youtube.com/@Devopstrioltd"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-[11px] font-bold tracking-widest uppercase text-zinc-400 hover:text-white transition-colors duration-200"
+                          >
+                            YouTube
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {/* Ecosystem Dropdown */}
+            <div
+              onMouseEnter={() => setActiveMenu("ecosystem")}
+            >
+              <Link
+                href="/ecosystem"
+                onClick={() => setActiveMenu(null)}
+                className="flex items-center gap-1 xl:gap-1.5 px-2 xl:px-3 py-1.5 text-[14px] xl:text-[15px] 2xl:text-[17px] font-medium tracking-[0.3px] text-white hover:text-rose-500 transition-colors"
+              >
+                Ecosystem <ChevronDown size={14} className={`transition-transform duration-300 ${activeMenu === "ecosystem" ? "rotate-180" : ""}`} />
+              </Link>
+              {activeMenu === "ecosystem" && (
+                <div className="absolute left-1/2 -translate-x-1/2 top-full mt-3 w-[1200px] max-w-[95vw] pointer-events-auto z-50">
+                  <div className="animate-fadeIn bg-black border border-zinc-900 rounded-2xl pt-8 px-8 pb-5 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.9)] grid grid-cols-[220px_200px_1fr] xl:grid-cols-[280px_240px_1fr] gap-x-4 xl:gap-x-8 gap-y-3 text-left relative">
+
+                    {/* Gloss reflection line */}
+                    <div className="absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-zinc-800 to-transparent pointer-events-none" />
+
+                    {/* Visual Promo Column (Ecosystem Interactive Blur & Expand) */}
+                    <div className="relative overflow-hidden rounded-2xl border border-zinc-800/90 p-6 flex flex-col justify-between min-h-[320px] h-full group bg-[#09090C] shadow-2xl transition-all duration-500 hover:border-red-500/50 cursor-pointer">
+                      <img
+                        src="/assets/wavebg/navbar/ecosystemdrop.png"
+                        alt="Ecosystem Infrastructure"
+                        className="absolute inset-0 w-full h-full object-cover opacity-95 group-hover:opacity-70 group-hover:blur-md scale-100 group-hover:scale-105 transition-all duration-700 ease-out pointer-events-none"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent group-hover:bg-black/75 transition-all duration-500 pointer-events-none" />
+
+                      <div className="relative z-10">
+                        <h4 className="text-xl font-bold leading-snug text-white tracking-tight mb-2 font-sans drop-shadow-md">
+                          Everything You Need to <span className="text-red-500">Scale</span>
+                        </h4>
+                        <div className="w-10 h-[3px] bg-red-600 rounded-full my-3" />
+                        
+                        {/* Description Text: Hidden initially, expands on hover */}
+                        <div className="transition-all duration-500 ease-out max-h-0 opacity-0 group-hover:max-h-[140px] group-hover:opacity-100 overflow-hidden">
+                          <p className="text-[11px] text-zinc-200 font-medium leading-relaxed pt-1">
+                            Explore our world-class technology alliances, research innovation labs, and custom platforms built to transform your enterprise.
+                          </p>
+                        </div>
+                      </div>
+
+                      <Link
+                        href="/ecosystem"
+                        onClick={() => setActiveMenu(null)}
+                        className="relative z-10 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-white group-hover:text-rose-400 transition-colors mt-6 group/cta"
+                      >
+                        <span>EXPLORE ECOSYSTEM</span>
+                        <span className="text-rose-500 text-sm group-hover/cta:translate-x-1 transition-transform">
+                          &rarr;
+                        </span>
+                      </Link>
+                    </div>
+
+                    {/* Middle sidebar with categories */}
+                    <div className="flex flex-col border-r border-zinc-900 pr-4 gap-1">
+                      <span className="text-xs font-mono tracking-widest text-zinc-500 uppercase block px-3 mb-2">Ecosystem Pillars</span>
+                      {ecosystemCategories.map((cat) => (
+                        <Link
+                          key={cat.id}
+                          href={cat.href}
+                          onMouseEnter={() => setActiveEcoCategory(cat.id)}
+                          onClick={() => {
+                            setActiveMenu(null);
+                          }}
+                          className={`flex items-center justify-between px-3 py-2 rounded-lg text-[15px] font-semibold transition-all duration-200 text-left ${activeEcoCategory === cat.id
+                            ? "bg-zinc-900 text-rose-500"
+                            : "text-zinc-300 hover:text-white hover:bg-zinc-900/30"
+                            }`}
+                        >
+                          <span>{cat.name}</span>
+                          {activeEcoCategory === cat.id && <span className="text-[11px]">&rarr;</span>}
+                        </Link>
+                      ))}
+
+                      {/* External Link: Visit AI Hub */}
+                      <div className="mt-2 pt-2 border-t border-zinc-900/80">
+                        <a
+                          // href="https://devopstrioaiservices-e6dnggh5gxehh9d0.southindia-01.azurewebsites.net"
+                          href="https://devopstrioaiservices-e6dnggh5gxehh9d0.southindia-01.azurewebsites.net"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          onClick={() => setActiveMenu(null)}
+                          className="flex items-center justify-between px-3 py-2 rounded-lg text-[14px] font-bold transition-all duration-300 text-left border border-rose-500/20 bg-rose-500/[0.03] text-rose-400 hover:text-white hover:bg-rose-600 hover:border-rose-500 shadow-[0_0_12px_rgba(244,63,94,0.06)] hover:shadow-[0_0_18px_rgba(244,63,94,0.2)] group"
+                        >
+                          <span className="flex items-center gap-2">
+
+                            <span>Devopstrio's AI</span>
+                          </span>
+                          <span className="text-[10px] group-hover:translate-x-0.5 transition-transform">&rarr;</span>
+                        </a>
+                      </div>
+                    </div>
+
+                    {/* Right panel with active sub-items */}
+                    <div className="flex flex-col">
+                      <span className="text-xs font-mono tracking-widest text-zinc-500 uppercase block px-2 mb-2">Sub-Pages & Links</span>
+                      <div className="max-h-[420px] overflow-y-auto overscroll-contain pr-2 custom-scrollbar">
+                        <div className="grid grid-cols-2 gap-x-4 gap-y-1">
+                          {ecosystemCategories.find(c => c.id === activeEcoCategory)?.items.map((item) => (
+                            <Link
+                              key={item.name}
+                              href={item.href}
+                              onClick={() => setActiveMenu(null)}
+                              className="group/subitem block p-2 rounded-lg hover:bg-zinc-900/30 transition-colors"
+                            >
+                              <span className="block text-[15px] font-semibold text-white group-hover/subitem:text-rose-500 transition-colors mb-1">
+                                {item.name}
+                              </span>
+                              {/* <span className="block text-[13px] text-zinc-400 font-medium leading-relaxed">
+                              {item.desc}
+                            </span> */}
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Mega Menu Footer */}
+                    <div className="col-span-full border-t border-zinc-900/60 pt-4 mt-1 flex flex-row justify-between items-center">
+                      <div className="flex items-center gap-4 text-[13px] font-medium text-zinc-400">
+                        <Link
+                          href="/ecosystem/landing-zone"
+                          className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300"
+                        >
+                          <span className="w-1.5 h-1.5 rounded-full bg-rose-500 animate-pulse" />
+                          <span>Landing Zone</span>
+                        </Link>
+                        <span className="text-zinc-800">|</span>
+                        <Link
+                          href="/insights/industry-events"
+                          className="hover:text-rose-500 transition-colors flex items-center gap-1.5"
+                        >
+                          <span>Events</span>
+                        </Link>
+                        <span className="text-zinc-800">|</span>
+                        <div className="flex items-center gap-2">
+                          <span className="text-zinc-500">Chat now:</span>
+                          <a
+                            href={`mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL}`}
+                            className="hover:text-rose-500 transition-colors text-zinc-400"
+                          >
+                            Email
+                          </a>
+                          <span className="text-zinc-800">•</span>
+                          <a
+                            href="https://wa.me/447473063543"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="hover:text-rose-500 transition-colors text-zinc-400"
+                          >
+                            WhatsApp
+                          </a>
+                        </div>
+                      </div>
+                      {/* 
                     <div className="flex items-center gap-4">
                       <span className="text-[10px] font-bold tracking-wider uppercase text-zinc-500">Connect With Us</span>
-                      <div className="flex items-center gap-4 border-l border-zinc-800 pl-4">
+                      <div className="flex items-center gap-3 border-l border-zinc-800 pl-4">
                         <a
                           href="https://www.linkedin.com/company/devopstrioglobal/posts/?feedView=all"
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-[11px] font-bold tracking-widest uppercase text-zinc-400 hover:text-white transition-colors duration-200"
+                          className="transition-all duration-200 hover:scale-110"
+                          title="LinkedIn"
                         >
-                          LinkedIn
+                          <img src="/assets/social-icons/linkedin.svg" alt="LinkedIn" className="w-8 h-8 object-contain transition-all duration-200" />
                         </a>
                         <a
                           href="https://www.facebook.com/profile.php?id=61579126233218"
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-[11px] font-bold tracking-widest uppercase text-zinc-400 hover:text-white transition-colors duration-200"
+                          className="transition-all duration-200 hover:scale-110"
+                          title="Facebook"
                         >
-                          Facebook
+                          <img src="/assets/social-icons/facebook.svg" alt="Facebook" className="w-8 h-8 object-contain transition-all duration-200" />
                         </a>
                         <a
                           href="https://www.instagram.com/devopstrio_offcl/"
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-[11px] font-bold tracking-widest uppercase text-zinc-400 hover:text-white transition-colors duration-200"
+                          className="transition-all duration-200 hover:scale-110"
+                          title="Instagram"
                         >
-                          Instagram
+                          <img src="/assets/social-icons/instagram.svg" alt="Instagram" className="w-8 h-8 object-contain transition-all duration-200" />
                         </a>
                         <a
                           href="https://www.youtube.com/@Devopstrioltd"
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-[11px] font-bold tracking-widest uppercase text-zinc-400 hover:text-white transition-colors duration-200"
+                          className="transition-all duration-200 hover:scale-110"
+                          title="YouTube"
                         >
-                          YouTube
+                          <img src="/assets/social-icons/youtube.svg" alt="YouTube" className="w-8 h-8 object-contain transition-all duration-200" />
                         </a>
                       </div>
                     </div>
-                  </div>
-
-                </div>
-              </div>
-            )}
-          </div>
-
-          {/* Insights Dropdown */}
-          <div
-            onMouseEnter={() => setActiveMenu("insights")}
-          >
-            <Link
-              href="/insights"
-              onClick={() => setActiveMenu(null)}
-              className="flex items-center gap-1 xl:gap-1.5 px-2 xl:px-3 py-1.5 text-[14px] xl:text-[15px] 2xl:text-[17px] font-medium tracking-[0.3px] text-white hover:text-rose-500 transition-colors"
-            >
-              Insights <ChevronDown size={14} className={`transition-transform duration-300 ${activeMenu === "insights" ? "rotate-180" : ""}`} />
-            </Link>
-            {activeMenu === "insights" && (
-              <div className="absolute left-1/2 -translate-x-1/2 top-full mt-3 w-[1200px] max-w-[95vw] pointer-events-auto z-50">
-                <div className="animate-fadeIn bg-black border border-zinc-850 rounded-2xl pt-8 px-8 pb-5 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.9)] grid grid-cols-[220px_200px_1fr] xl:grid-cols-[280px_240px_1fr] gap-x-4 xl:gap-x-8 gap-y-3 text-left relative">
-
-                  {/* Gloss reflection line */}
-                  <div className="absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-zinc-800 to-transparent pointer-events-none" />
-
-                  {/* Visual Promo Column (Insights Style) */}
-                  <div className="relative overflow-hidden rounded-xl border border-zinc-900 p-5 flex flex-col justify-between min-h-[260px] h-full group bg-white">
-                    <img src="/assets/wavebg/navbar/services.png" alt="" className="absolute inset-0 w-full h-full object-cover transition-all duration-700 group-hover:scale-105" />
-                    <div className="relative z-10">
-                      <span className="text-[9px] font-mono tracking-widest text-red-600 uppercase block mb-3 font-bold">Thought Leadership</span>
-                      <h4 className="text-sm font-bold leading-snug text-red-600 mb-2">Devopstrio Insights</h4>
-                      <p className="text-[10px] text-black font-bold leading-relaxed">
-                        Read deep-dive articles, SRE blueprints, and research papers from our global engineering teams.
-                      </p>
-                    </div>
-                    <Link
-                      href="/insights"
-                      onClick={() => setActiveMenu(null)}
-                      className="relative z-10 inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-wider text-red-700 hover:text-black transition-colors mt-4"
-                    >
-                      All Publications &rarr;
-                    </Link>
-                  </div>
-
-                  {/* Middle sidebar with dynamic sections */}
-                  <div className="flex flex-col border-r border-zinc-900 pr-4 gap-1">
-                    <span className="text-xs font-mono tracking-widest text-zinc-500 uppercase block px-3 mb-2">Insights Hubs</span>
-                    {insightsSections.map((sec) => (
-                      <button
-                        key={sec.slug}
-                        onMouseEnter={() => setActiveInsightsSection(sec.slug)}
-                        onClick={() => {
-                          setActiveMenu(null);
-                        }}
-                        className={`flex items-center justify-between px-3 py-2 rounded-lg text-[15px] font-semibold transition-all duration-200 text-left ${activeInsightsSection === sec.slug
-                          ? "bg-zinc-900 text-rose-500"
-                          : "text-zinc-300 hover:text-white hover:bg-zinc-900/30"
-                          }`}
-                      >
-                        <span>{sec.name}</span>
-                        {activeInsightsSection === sec.slug && <span className="text-[11px]">&rarr;</span>}
-                      </button>
-                    ))}
-                  </div>
-
-                  {/* Right panel with active section categories */}
-                  <div className="flex flex-col">
-                    <span className="text-xs font-mono tracking-widest text-zinc-500 uppercase block px-2 mb-2">Categories</span>
-                    <div className="max-h-[420px] overflow-y-auto overscroll-contain pr-2 custom-scrollbar">
-                      <div className="grid grid-cols-2 gap-x-4 gap-y-1">
-                        {insightsSections.find(s => s.slug === activeInsightsSection)?.categories.map((cat) => (
-                          <Link
-                            key={cat.slug}
-                            href={`/insights/${cat.slug}`}
-                            onClick={() => setActiveMenu(null)}
-                            className="group/subitem block p-2 rounded-lg hover:bg-zinc-900/30 transition-colors"
+                    */}
+                      <div className="flex items-center gap-4">
+                        <span className="text-[10px] font-bold tracking-wider uppercase text-zinc-500">Connect With Us</span>
+                        <div className="flex items-center gap-4 border-l border-zinc-800 pl-4">
+                          <a
+                            href="https://www.linkedin.com/company/devopstrioglobal/posts/?feedView=all"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-[11px] font-bold tracking-widest uppercase text-zinc-400 hover:text-white transition-colors duration-200"
                           >
-                            <span className="block text-[15px] font-semibold text-white group-hover/subitem:text-rose-500 transition-colors mb-1">
-                              {cat.name}
-                            </span>
-                            {cat.desc && (
+                            LinkedIn
+                          </a>
+                          <a
+                            href="https://www.facebook.com/profile.php?id=61579126233218"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-[11px] font-bold tracking-widest uppercase text-zinc-400 hover:text-white transition-colors duration-200"
+                          >
+                            Facebook
+                          </a>
+                          <a
+                            href="https://www.instagram.com/devopstrio_offcl/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-[11px] font-bold tracking-widest uppercase text-zinc-400 hover:text-white transition-colors duration-200"
+                          >
+                            Instagram
+                          </a>
+                          <a
+                            href="https://www.youtube.com/@Devopstrioltd"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-[11px] font-bold tracking-widest uppercase text-zinc-400 hover:text-white transition-colors duration-200"
+                          >
+                            YouTube
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {/* Insights Dropdown */}
+            <div
+              onMouseEnter={() => setActiveMenu("insights")}
+            >
+              <Link
+                href="/insights"
+                onClick={() => setActiveMenu(null)}
+                className="flex items-center gap-1 xl:gap-1.5 px-2 xl:px-3 py-1.5 text-[14px] xl:text-[15px] 2xl:text-[17px] font-medium tracking-[0.3px] text-white hover:text-rose-500 transition-colors"
+              >
+                Insights <ChevronDown size={14} className={`transition-transform duration-300 ${activeMenu === "insights" ? "rotate-180" : ""}`} />
+              </Link>
+              {activeMenu === "insights" && (
+                <div className="absolute left-1/2 -translate-x-1/2 top-full mt-3 w-[1200px] max-w-[95vw] pointer-events-auto z-50">
+                  <div className="animate-fadeIn bg-black border border-zinc-900 rounded-2xl pt-8 px-8 pb-5 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.9)] grid grid-cols-[220px_200px_1fr] xl:grid-cols-[280px_240px_1fr] gap-x-4 xl:gap-x-8 gap-y-3 text-left relative">
+
+                    {/* Gloss reflection line */}
+                    <div className="absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-zinc-800 to-transparent pointer-events-none" />
+
+                    {/* Visual Promo Column (Insights Interactive Blur & Expand) */}
+                    <div className="relative overflow-hidden rounded-2xl border border-zinc-800/90 p-6 flex flex-col justify-between min-h-[320px] h-full group bg-[#09090C] shadow-2xl transition-all duration-500 hover:border-red-500/50 cursor-pointer">
+                      <img
+                        src="/assets/wavebg/navbar/insightsdrop.png"
+                        alt="Thought Leadership"
+                        className="absolute inset-0 w-full h-full object-cover opacity-95 group-hover:opacity-70 group-hover:blur-md scale-100 group-hover:scale-105 transition-all duration-700 ease-out pointer-events-none"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent group-hover:bg-black/75 transition-all duration-500 pointer-events-none" />
+
+                      <div className="relative z-10">
+                        <h4 className="text-xl font-bold leading-snug text-white tracking-tight mb-2 font-sans drop-shadow-md">
+                          Devopstrio <span className="text-red-500">Insights</span>
+                        </h4>
+                        <div className="w-10 h-[3px] bg-red-600 rounded-full my-3" />
+                        
+                        {/* Description Text: Hidden initially, expands on hover */}
+                        <div className="transition-all duration-500 ease-out max-h-0 opacity-0 group-hover:max-h-[140px] group-hover:opacity-100 overflow-hidden">
+                          <p className="text-[11px] text-zinc-200 font-medium leading-relaxed pt-1">
+                            Read deep-dive articles, SRE blueprints, and research papers from our global engineering teams.
+                          </p>
+                        </div>
+                      </div>
+
+                      <Link
+                        href="/insights"
+                        onClick={() => setActiveMenu(null)}
+                        className="relative z-10 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-white group-hover:text-rose-400 transition-colors mt-6 group/cta"
+                      >
+                        <span>ALL PUBLICATIONS</span>
+                        <span className="text-rose-500 text-sm group-hover/cta:translate-x-1 transition-transform">
+                          &rarr;
+                        </span>
+                      </Link>
+                    </div>
+
+                    {/* Middle sidebar with dynamic sections */}
+                    <div className="flex flex-col border-r border-zinc-900 pr-4 gap-1">
+                      <span className="text-xs font-mono tracking-widest text-zinc-500 uppercase block px-3 mb-2">Insights Hubs</span>
+                      {insightsSections.map((sec) => (
+                        <button
+                          key={sec.slug}
+                          onMouseEnter={() => setActiveInsightsSection(sec.slug)}
+                          onClick={() => {
+                            setActiveMenu(null);
+                          }}
+                          className={`flex items-center justify-between px-3 py-2 rounded-lg text-[15px] font-semibold transition-all duration-200 text-left ${activeInsightsSection === sec.slug
+                            ? "bg-zinc-900 text-rose-500"
+                            : "text-zinc-300 hover:text-white hover:bg-zinc-900/30"
+                            }`}
+                        >
+                          <span>{sec.name}</span>
+                          {activeInsightsSection === sec.slug && <span className="text-[11px]">&rarr;</span>}
+                        </button>
+                      ))}
+                    </div>
+
+                    {/* Right panel with active section categories */}
+                    <div className="flex flex-col">
+                      <span className="text-xs font-mono tracking-widest text-zinc-500 uppercase block px-2 mb-2">Categories</span>
+                      <div className="max-h-[420px] overflow-y-auto overscroll-contain pr-2 custom-scrollbar">
+                        <div className="grid grid-cols-2 gap-x-4 gap-y-1">
+                          {insightsSections.find(s => s.slug === activeInsightsSection)?.categories.map((cat) => (
+                            <Link
+                              key={cat.slug}
+                              href={`/insights/${cat.slug}`}
+                              onClick={() => setActiveMenu(null)}
+                              className="group/subitem block p-2 rounded-lg hover:bg-zinc-900/30 transition-colors"
+                            >
+                              <span className="block text-[15px] font-semibold text-white group-hover/subitem:text-rose-500 transition-colors mb-1">
+                                {cat.name}
+                              </span>
+                              {/* {cat.desc && (
                               <span className="block text-[13px] text-zinc-400 font-medium leading-relaxed">
                                 {cat.desc}
                               </span>
-                            )}
-                          </Link>
-                        ))}
+                            )} */}
+                            </Link>
+                          ))}
+                        </div>
                       </div>
                     </div>
-                  </div>
 
-                  {/* Mega Menu Footer */}
-                  <div className="col-span-full border-t border-zinc-900/60 pt-4 mt-1 flex flex-row justify-between items-center">
-                    <div className="flex items-center gap-4 text-[13px] font-medium text-zinc-400">
-                      <Link
-                        href="/insights/industry-events"
-                        className="hover:text-rose-500 transition-colors flex items-center gap-1.5"
-                      >
-                        <span className="w-1.5 h-1.5 rounded-full bg-rose-500 animate-pulse" />
-                        <span>Events</span>
-                      </Link>
-                      <span className="text-zinc-800">|</span>
-                      <div className="flex items-center gap-2">
-                        <span className="text-zinc-500">Chat now:</span>
-                        <a
-                          href={`mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL}`}
-                          className="hover:text-rose-500 transition-colors text-zinc-400"
+                    {/* Mega Menu Footer */}
+                    <div className="col-span-full border-t border-zinc-900/60 pt-4 mt-1 flex flex-row justify-between items-center">
+                      <div className="flex items-center gap-4 text-[13px] font-medium text-zinc-400">
+                        <Link
+                          href="/insights/industry-events"
+                          className="hover:text-rose-500 transition-colors flex items-center gap-1.5"
                         >
-                          Email
-                        </a>
-                        <span className="text-zinc-800">•</span>
-                        <a
-                          href="https://wa.me/447473063543"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="hover:text-rose-500 transition-colors text-zinc-400"
-                        >
-                          WhatsApp
-                        </a>
-                      </div>
-                    </div>
-                    {/* 
-                    <div className="flex items-center gap-4">
-                      <span className="text-[10px] font-bold tracking-wider uppercase text-zinc-500">Connect With Us</span>
-                      <div className="flex items-center gap-3 border-l border-zinc-800 pl-4">
-                        <a
-                          href="https://www.linkedin.com/company/devopstrioglobal/posts/?feedView=all"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="transition-all duration-200 hover:scale-110"
-                          title="LinkedIn"
-                        >
-                          <img src="/assets/social-icons/linkedin.svg" alt="LinkedIn" className="w-8 h-8 object-contain transition-all duration-200" />
-                        </a>
-                        <a
-                          href="https://www.facebook.com/profile.php?id=61579126233218"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="transition-all duration-200 hover:scale-110"
-                          title="Facebook"
-                        >
-                          <img src="/assets/social-icons/facebook.svg" alt="Facebook" className="w-8 h-8 object-contain transition-all duration-200" />
-                        </a>
-                        <a
-                          href="https://www.instagram.com/devopstrio_offcl/"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="transition-all duration-200 hover:scale-110"
-                          title="Instagram"
-                        >
-                          <img src="/assets/social-icons/instagram.svg" alt="Instagram" className="w-8 h-8 object-contain transition-all duration-200" />
-                        </a>
-                        <a
-                          href="https://www.youtube.com/@Devopstrioltd"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="transition-all duration-200 hover:scale-110"
-                          title="YouTube"
-                        >
-                          <img src="/assets/social-icons/youtube.svg" alt="YouTube" className="w-8 h-8 object-contain transition-all duration-200" />
-                        </a>
-                      </div>
-                    </div>
-                    */}
-                    <div className="flex items-center gap-4">
-                      <span className="text-[10px] font-bold tracking-wider uppercase text-zinc-500">Connect With Us</span>
-                      <div className="flex items-center gap-4 border-l border-zinc-800 pl-4">
-                        <a
-                          href="https://www.linkedin.com/company/devopstrioglobal/posts/?feedView=all"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-[11px] font-bold tracking-widest uppercase text-zinc-400 hover:text-white transition-colors duration-200"
-                        >
-                          LinkedIn
-                        </a>
-                        <a
-                          href="https://www.facebook.com/profile.php?id=61579126233218"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-[11px] font-bold tracking-widest uppercase text-zinc-400 hover:text-white transition-colors duration-200"
-                        >
-                          Facebook
-                        </a>
-                        <a
-                          href="https://www.instagram.com/devopstrio_offcl/"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-[11px] font-bold tracking-widest uppercase text-zinc-400 hover:text-white transition-colors duration-200"
-                        >
-                          Instagram
-                        </a>
-                        <a
-                          href="https://www.youtube.com/@Devopstrioltd"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-[11px] font-bold tracking-widest uppercase text-zinc-400 hover:text-white transition-colors duration-200"
-                        >
-                          YouTube
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-
-                </div>
-              </div>
-            )}
-          </div>
-          <Link href="/careers" onMouseEnter={() => setActiveMenu(null)} className="px-2 xl:px-3 py-1.5 text-[14px] xl:text-[15px] 2xl:text-[17px] font-medium tracking-[0.3px] text-white hover:text-rose-500 transition-colors">
-            Careers
-          </Link>
-          {/* About Dropdown */}
-          <div
-            onMouseEnter={() => setActiveMenu("about")}
-          >
-            <Link
-              href="/about"
-              onClick={() => setActiveMenu(null)}
-              className="flex items-center gap-1 xl:gap-1.5 px-2 xl:px-3 py-1.5 text-[14px] xl:text-[15px] 2xl:text-[17px] font-medium tracking-[0.3px] text-white hover:text-rose-500 transition-colors"
-            >
-              About <ChevronDown size={14} className={`transition-transform duration-300 ${activeMenu === "about" ? "rotate-180" : ""}`} />
-            </Link>
-            {activeMenu === "about" && (
-              <div className="absolute left-1/2 -translate-x-1/2 top-full mt-3 w-[1200px] max-w-[95vw] pointer-events-auto z-50">
-                <div className="animate-fadeIn bg-black border border-zinc-850 rounded-2xl pt-8 px-8 pb-5 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.9)] grid grid-cols-[220px_1fr] xl:grid-cols-[280px_1fr] gap-x-4 xl:gap-x-8 gap-y-3 text-left relative">
-
-                  {/* Gloss reflection line */}
-                  <div className="absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-zinc-850 to-transparent pointer-events-none" />
-
-                  {/* Left Callout Box */}
-                  <div className="relative overflow-hidden rounded-xl border border-zinc-900 p-5 flex flex-col justify-between min-h-[260px] h-full group bg-white">
-                    <img src="/assets/wavebg/navbar/industries.png" alt="" className="absolute inset-0 w-full h-full object-cover transition-all duration-700 group-hover:scale-105" />
-                    <div className="relative z-10">
-                      <span className="text-[9px] font-mono tracking-widest text-red-600 uppercase block mb-3 font-bold">Company Hub</span>
-                      <h4 className="text-sm font-bold leading-snug text-red-600 mb-2">Our Foundation</h4>
-                      <p className="text-[10px] text-black font-bold leading-relaxed">
-                        Learn about our values, engineering philosophy, and the team driving global enterprise scaling.
-                      </p>
-                    </div>
-                    <Link
-                      href="/about"
-                      onClick={() => setActiveMenu(null)}
-                      className="relative z-10 inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-wider text-red-700 hover:text-black transition-colors mt-4"
-                    >
-                      About Overview &rarr;
-                    </Link>
-                  </div>
-
-                  {/* Right about list grid */}
-                  <div>
-                    <span className="text-xs font-mono tracking-widest text-zinc-500 uppercase block mb-4">Corporate Directory</span>
-                    <div className="max-h-[380px] overflow-y-auto overscroll-contain pr-2 custom-scrollbar">
-                      <div className="grid grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-1">
-                        {aboutList.map((item) => (
-                          <Link
-                            key={item.name}
-                            href={item.href}
-                            onClick={() => setActiveMenu(null)}
-                            className="group/about block p-2 rounded-lg hover:bg-zinc-900/30 transition-colors"
+                          <span className="w-1.5 h-1.5 rounded-full bg-rose-500 animate-pulse" />
+                          <span>Events</span>
+                        </Link>
+                        <span className="text-zinc-800">|</span>
+                        <div className="flex items-center gap-2">
+                          <span className="text-zinc-500">Chat now:</span>
+                          <a
+                            href={`mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL}`}
+                            className="hover:text-rose-500 transition-colors text-zinc-400"
                           >
-                            <span className="block text-[15px] font-semibold text-white group-hover/about:text-rose-500 transition-colors mb-1">
-                              {item.name}
-                            </span>
-                            <span className="block text-[13px] text-zinc-450 font-medium leading-relaxed">
-                              {item.desc}
-                            </span>
-                          </Link>
-                        ))}
+                            Email
+                          </a>
+                          <span className="text-zinc-800">•</span>
+                          <a
+                            href="https://wa.me/447473063543"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="hover:text-rose-500 transition-colors text-zinc-400"
+                          >
+                            WhatsApp
+                          </a>
+                        </div>
                       </div>
-                    </div>
-                  </div>
-
-                  {/* Mega Menu Footer */}
-                  <div className="col-span-full border-t border-zinc-900/60 pt-4 mt-1 flex flex-row justify-between items-center">
-                    <div className="flex items-center gap-4 text-[13px] font-medium text-zinc-400">
-                      <Link
-                        href="/insights/industry-events"
-                        className="hover:text-rose-500 transition-colors flex items-center gap-1.5"
-                      >
-                        <span className="w-1.5 h-1.5 rounded-full bg-rose-500 animate-pulse" />
-                        <span>Events</span>
-                      </Link>
-                      <span className="text-zinc-800">|</span>
-                      <div className="flex items-center gap-2">
-                        <span className="text-zinc-500">Chat now:</span>
-                        <a
-                          href={`mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL}`}
-                          className="hover:text-rose-500 transition-colors text-zinc-400"
-                        >
-                          Email
-                        </a>
-                        <span className="text-zinc-800">•</span>
-                        <a
-                          href="https://wa.me/447473063543"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="hover:text-rose-500 transition-colors text-zinc-400"
-                        >
-                          WhatsApp
-                        </a>
-                      </div>
-                    </div>
-                    {/* 
+                      {/* 
                     <div className="flex items-center gap-4">
                       <span className="text-[10px] font-bold tracking-wider uppercase text-zinc-500">Connect With Us</span>
                       <div className="flex items-center gap-3 border-l border-zinc-800 pl-4">
@@ -1449,261 +1346,458 @@ export function Navbar() {
                       </div>
                     </div>
                     */}
-                    <div className="flex items-center gap-4">
-                      <span className="text-[10px] font-bold tracking-wider uppercase text-zinc-500">Connect With Us</span>
-                      <div className="flex items-center gap-4 border-l border-zinc-800 pl-4">
-                        <a
-                          href="https://www.linkedin.com/company/devopstrioglobal/posts/?feedView=all"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-[11px] font-bold tracking-widest uppercase text-zinc-400 hover:text-white transition-colors duration-200"
-                        >
-                          LinkedIn
-                        </a>
-                        <a
-                          href="https://www.facebook.com/profile.php?id=61579126233218"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-[11px] font-bold tracking-widest uppercase text-zinc-400 hover:text-white transition-colors duration-200"
-                        >
-                          Facebook
-                        </a>
-                        <a
-                          href="https://www.instagram.com/devopstrio_offcl/"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-[11px] font-bold tracking-widest uppercase text-zinc-400 hover:text-white transition-colors duration-200"
-                        >
-                          Instagram
-                        </a>
-                        <a
-                          href="https://www.youtube.com/@Devopstrioltd"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-[11px] font-bold tracking-widest uppercase text-zinc-400 hover:text-white transition-colors duration-200"
-                        >
-                          YouTube
-                        </a>
+                      <div className="flex items-center gap-4">
+                        <span className="text-[10px] font-bold tracking-wider uppercase text-zinc-500">Connect With Us</span>
+                        <div className="flex items-center gap-4 border-l border-zinc-800 pl-4">
+                          <a
+                            href="https://www.linkedin.com/company/devopstrioglobal/posts/?feedView=all"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-[11px] font-bold tracking-widest uppercase text-zinc-400 hover:text-white transition-colors duration-200"
+                          >
+                            LinkedIn
+                          </a>
+                          <a
+                            href="https://www.facebook.com/profile.php?id=61579126233218"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-[11px] font-bold tracking-widest uppercase text-zinc-400 hover:text-white transition-colors duration-200"
+                          >
+                            Facebook
+                          </a>
+                          <a
+                            href="https://www.instagram.com/devopstrio_offcl/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-[11px] font-bold tracking-widest uppercase text-zinc-400 hover:text-white transition-colors duration-200"
+                          >
+                            Instagram
+                          </a>
+                          <a
+                            href="https://www.youtube.com/@Devopstrioltd"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-[11px] font-bold tracking-widest uppercase text-zinc-400 hover:text-white transition-colors duration-200"
+                          >
+                            YouTube
+                          </a>
+                        </div>
                       </div>
                     </div>
+
                   </div>
-
                 </div>
-              </div>
-            )}
-          </div>
-        </nav>
-
-        {/* Right Action */}
-        <div className="flex items-center gap-1.5 xl:gap-3">
-          <div
-            onMouseEnter={() => setActiveMenu("contact")}
-            className="hidden sm:block relative"
-          >
-            <Link
-              href="/contact"
-              className="inline-flex nav-contact-btn items-center gap-1.5"
-            >
-              Contact Us <ChevronDown size={14} className={`transition-transform duration-300 ${activeMenu === "contact" ? "rotate-180" : ""}`} />
-            </Link>
-
-            {activeMenu === "contact" && (
-              <div className="absolute right-0 top-full mt-3 w-[260px] pointer-events-auto z-50">
-                <div className="animate-fadeIn bg-[#0a0a0a] border border-zinc-800 rounded-2xl p-2.5 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.95)] relative overflow-hidden flex flex-col gap-1">
-                  {/* Gloss reflection line */}
-                  <div className="absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-zinc-600 to-transparent pointer-events-none" />
-
-                  <Link
-                    href="/contact#contact-form"
-                    onClick={() => {
-                      setActiveMenu(null);
-                      setTimeout(() => window.dispatchEvent(new HashChangeEvent("hashchange")), 100);
-                    }}
-                    className="group flex flex-col p-3 rounded-xl hover:bg-zinc-900 transition-colors"
-                  >
-                    <span className="text-[14px] font-bold text-white group-hover:text-rose-500 transition-colors flex items-center justify-between mb-1">
-                      Connect Us <ArrowUpRight size={15} className="text-zinc-500 group-hover:text-rose-500 transition-colors" />
-                    </span>
-                    <span className="text-[11px] text-zinc-400 font-medium">Reach out to our expert team</span>
-                  </Link>
-
-                  <button
-                    onClick={() => {
-                      setActiveMenu(null);
-                      window.location.hash = "contact";
-                      setTimeout(() => window.dispatchEvent(new HashChangeEvent("hashchange")), 50);
-                    }}
-                    className="group flex flex-col p-3 rounded-xl hover:bg-zinc-900 transition-colors w-full text-left"
-                  >
-                    <span className="text-[14px] font-bold text-white group-hover:text-rose-500 transition-colors flex items-center justify-between mb-1 w-full">
-                      Quick Quote <ArrowUpRight size={15} className="text-zinc-500 group-hover:text-rose-500 transition-colors" />
-                    </span>
-                    <span className="text-[11px] text-zinc-400 font-medium">Get a tailored estimate</span>
-                  </button>
-
-                  <div className="h-[1px] bg-zinc-900/80 my-1 mx-2" />
-
-                  <button
-                    onClick={() => {
-                      setActiveMenu(null);
-                      window.location.hash = "schedule-call";
-                      setTimeout(() => window.dispatchEvent(new HashChangeEvent("hashchange")), 50);
-                    }}
-                    className="group flex flex-col p-3 rounded-xl hover:bg-zinc-900 transition-colors w-full text-left"
-                  >
-                    <span className="text-[14px] font-bold text-white group-hover:text-rose-500 transition-colors flex items-center justify-between mb-1 w-full">
-                      Schedule a Call <ArrowUpRight size={15} className="text-zinc-500 group-hover:text-rose-500 transition-colors" />
-                    </span>
-                    <span className="text-[11px] text-zinc-400 font-medium">Book a meeting instantly</span>
-                  </button>
-                </div>
-              </div>
-            )}
-          </div>
-
-          {/* Mobile Menu Toggle */}
-          <button
-            onClick={() => setMobileOpen(!mobileOpen)}
-            className="lg:hidden p-2 text-zinc-400 hover:text-white transition-colors"
-            aria-label="Toggle menu"
-          >
-            {mobileOpen ? <X size={18} /> : <Menu size={18} />}
-          </button>
-        </div>
-      </header>
-
-      {/* Mobile Drawer */}
-      {mobileOpen && (
-        <div className="fixed inset-0 top-[72px] z-40 bg-[#000000]/98 backdrop-blur-lg flex flex-col p-6 border-t border-zinc-900 pointer-events-auto animate-fadeIn lg:hidden">
-          <div className="flex flex-col gap-6 overflow-y-auto overscroll-contain pb-8">
-            <div>
-              <span className="text-[10px] uppercase tracking-wider text-zinc-500 block mb-3 font-mono">Services</span>
-              <div className="flex flex-col gap-3 pl-2">
-                {servicesList.map((item) => (
-                  <Link
-                    key={item.name}
-                    href={item.href}
-                    onClick={() => setMobileOpen(false)}
-                    className="text-xs text-zinc-300 hover:text-rose-500 transition-colors"
-                  >
-                    {item.name}
-                  </Link>
-                ))}
-              </div>
+              )}
             </div>
-
-            <div>
-              <span className="text-[10px] uppercase tracking-wider text-zinc-500 block mb-3 font-mono">Industries</span>
-              <div className="flex flex-col gap-3 pl-2">
-                {industriesList.map((item) => (
-                  <Link
-                    key={item.name}
-                    href={item.href}
-                    onClick={() => setMobileOpen(false)}
-                    className="text-xs text-zinc-300 hover:text-rose-500 transition-colors"
-                  >
-                    {item.name}
-                  </Link>
-                ))}
-              </div>
-            </div>
-
-            <div>
-              <span className="text-[10px] uppercase tracking-wider text-zinc-500 block mb-3 font-mono">Ecosystem</span>
-              <div className="flex flex-col gap-3 pl-2">
-                {ecosystemMobileList.map((item) => (
-                  <Link
-                    key={item.name}
-                    href={item.href}
-                    onClick={() => setMobileOpen(false)}
-                    className="text-xs text-zinc-300 hover:text-rose-500 transition-colors"
-                  >
-                    {item.name}
-                  </Link>
-                ))}
-              </div>
-            </div>
-
-            <div>
-              <span className="text-[10px] uppercase tracking-wider text-zinc-500 block mb-3 font-mono">Insights</span>
-              <div className="flex flex-col gap-3 pl-2">
-                <Link
-                  href="/insights"
-                  onClick={() => setMobileOpen(false)}
-                  className="text-xs text-zinc-300 hover:text-rose-500 font-bold transition-colors"
-                >
-                  Insights Hub
-                </Link>
-                {insightsSections.flatMap(s => s.categories).map((item) => (
-                  <Link
-                    key={item.slug}
-                    href={`/insights/${item.slug}`}
-                    onClick={() => setMobileOpen(false)}
-                    className="text-xs text-zinc-300 hover:text-rose-500 transition-colors"
-                  >
-                    {item.name}
-                  </Link>
-                ))}
-              </div>
-            </div>
-
-            <div className="h-[1px] bg-zinc-900 my-2" />
-
-            <Link
-              href="/#careers"
-              onClick={() => setMobileOpen(false)}
-              className="text-sm font-semibold text-zinc-200 hover:text-white"
-            >
+            <Link href="/careers" onMouseEnter={() => setActiveMenu(null)} className="px-2 xl:px-3 py-1.5 text-[14px] xl:text-[15px] 2xl:text-[17px] font-medium tracking-[0.3px] text-white hover:text-rose-500 transition-colors">
               Careers
             </Link>
-            <div>
-              <span className="text-[10px] uppercase tracking-wider text-zinc-500 block mb-3 font-mono">About</span>
-              <div className="flex flex-col gap-3 pl-2">
-                <Link
-                  href="/about"
-                  onClick={() => setMobileOpen(false)}
-                  className="text-xs text-zinc-300 hover:text-rose-500 font-bold transition-colors"
-                >
-                  About Overview
-                </Link>
-                {aboutList.map((item) => (
+            {/* About Dropdown */}
+            <div
+              onMouseEnter={() => setActiveMenu("about")}
+            >
+              <Link
+                href="/about"
+                onClick={() => setActiveMenu(null)}
+                className="flex items-center gap-1 xl:gap-1.5 px-2 xl:px-3 py-1.5 text-[14px] xl:text-[15px] 2xl:text-[17px] font-medium tracking-[0.3px] text-white hover:text-rose-500 transition-colors"
+              >
+                About <ChevronDown size={14} className={`transition-transform duration-300 ${activeMenu === "about" ? "rotate-180" : ""}`} />
+              </Link>
+              {activeMenu === "about" && (
+                <div className="absolute left-1/2 -translate-x-1/2 top-full mt-3 w-[1200px] max-w-[95vw] pointer-events-auto z-50">
+                  <div className="animate-fadeIn bg-black border border-zinc-900 rounded-2xl pt-8 px-8 pb-5 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.9)] grid grid-cols-[220px_1fr] xl:grid-cols-[280px_1fr] gap-x-4 xl:gap-x-8 gap-y-3 text-left relative">
+
+                    {/* Gloss reflection line */}
+                    <div className="absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-zinc-900 to-transparent pointer-events-none" />
+
+                    {/* Left Callout Box (About Interactive Blur & Expand) */}
+                    <div className="relative overflow-hidden rounded-2xl border border-zinc-800/90 p-6 flex flex-col justify-between min-h-[320px] h-full group bg-[#09090C] shadow-2xl transition-all duration-500 hover:border-red-500/50 cursor-pointer">
+                      <img
+                        src="/assets/wavebg/navbar/aboutdrop.png"
+                        alt="Our Foundation"
+                        className="absolute inset-0 w-full h-full object-cover opacity-95 group-hover:opacity-70 group-hover:blur-md scale-100 group-hover:scale-105 transition-all duration-700 ease-out pointer-events-none"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent group-hover:bg-black/75 transition-all duration-500 pointer-events-none" />
+
+                      <div className="relative z-10">
+                        <h4 className="text-xl font-bold leading-snug text-white tracking-tight mb-2 font-sans drop-shadow-md">
+                          Our <span className="text-red-500">Engineering</span> Foundation
+                        </h4>
+                        <div className="w-10 h-[3px] bg-red-600 rounded-full my-3" />
+                        
+                        {/* Description Text: Hidden initially, expands on hover */}
+                        <div className="transition-all duration-500 ease-out max-h-0 opacity-0 group-hover:max-h-[140px] group-hover:opacity-100 overflow-hidden">
+                          <p className="text-[11px] text-zinc-200 font-medium leading-relaxed pt-1">
+                            Learn about our values, engineering philosophy, global presence, and the leadership team driving enterprise innovation.
+                          </p>
+                        </div>
+                      </div>
+
+                      <Link
+                        href="/about"
+                        onClick={() => setActiveMenu(null)}
+                        className="relative z-10 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-white group-hover:text-rose-400 transition-colors mt-6 group/cta"
+                      >
+                        <span>ABOUT OVERVIEW</span>
+                        <span className="text-rose-500 text-sm group-hover/cta:translate-x-1 transition-transform">
+                          &rarr;
+                        </span>
+                      </Link>
+                    </div>
+
+                    {/* Right about list grid */}
+                    <div>
+                      <span className="text-xs font-mono tracking-widest text-zinc-500 uppercase block mb-4">Corporate Directory</span>
+                      <div className="max-h-[380px] overflow-y-auto overscroll-contain pr-2 custom-scrollbar">
+                        <div className="grid grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-1">
+                          {aboutList.map((item) => (
+                            <Link
+                              key={item.name}
+                              href={item.href}
+                              onClick={() => setActiveMenu(null)}
+                              className="group/about block p-2 rounded-lg hover:bg-zinc-900/30 transition-colors"
+                            >
+                              <span className="block text-[15px] font-semibold text-white group-hover/about:text-rose-500 transition-colors mb-1">
+                                {item.name}
+                              </span>
+                              <span className="block text-[13px] text-zinc-400 font-medium leading-relaxed">
+                                {item.desc}
+                              </span>
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Mega Menu Footer */}
+                    <div className="col-span-full border-t border-zinc-900/60 pt-4 mt-1 flex flex-row justify-between items-center">
+                      <div className="flex items-center gap-4 text-[13px] font-medium text-zinc-400">
+                        <Link
+                          href="/insights/industry-events"
+                          className="hover:text-rose-500 transition-colors flex items-center gap-1.5"
+                        >
+                          <span className="w-1.5 h-1.5 rounded-full bg-rose-500 animate-pulse" />
+                          <span>Events</span>
+                        </Link>
+                        <span className="text-zinc-800">|</span>
+                        <div className="flex items-center gap-2">
+                          <span className="text-zinc-500">Chat now:</span>
+                          <a
+                            href={`mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL}`}
+                            className="hover:text-rose-500 transition-colors text-zinc-400"
+                          >
+                            Email
+                          </a>
+                          <span className="text-zinc-800">•</span>
+                          <a
+                            href="https://wa.me/447473063543"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="hover:text-rose-500 transition-colors text-zinc-400"
+                          >
+                            WhatsApp
+                          </a>
+                        </div>
+                      </div>
+                      {/* 
+                    <div className="flex items-center gap-4">
+                      <span className="text-[10px] font-bold tracking-wider uppercase text-zinc-500">Connect With Us</span>
+                      <div className="flex items-center gap-3 border-l border-zinc-800 pl-4">
+                        <a
+                          href="https://www.linkedin.com/company/devopstrioglobal/posts/?feedView=all"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="transition-all duration-200 hover:scale-110"
+                          title="LinkedIn"
+                        >
+                          <img src="/assets/social-icons/linkedin.svg" alt="LinkedIn" className="w-8 h-8 object-contain transition-all duration-200" />
+                        </a>
+                        <a
+                          href="https://www.facebook.com/profile.php?id=61579126233218"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="transition-all duration-200 hover:scale-110"
+                          title="Facebook"
+                        >
+                          <img src="/assets/social-icons/facebook.svg" alt="Facebook" className="w-8 h-8 object-contain transition-all duration-200" />
+                        </a>
+                        <a
+                          href="https://www.instagram.com/devopstrio_offcl/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="transition-all duration-200 hover:scale-110"
+                          title="Instagram"
+                        >
+                          <img src="/assets/social-icons/instagram.svg" alt="Instagram" className="w-8 h-8 object-contain transition-all duration-200" />
+                        </a>
+                        <a
+                          href="https://www.youtube.com/@Devopstrioltd"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="transition-all duration-200 hover:scale-110"
+                          title="YouTube"
+                        >
+                          <img src="/assets/social-icons/youtube.svg" alt="YouTube" className="w-8 h-8 object-contain transition-all duration-200" />
+                        </a>
+                      </div>
+                    </div>
+                    */}
+                      <div className="flex items-center gap-4">
+                        <span className="text-[10px] font-bold tracking-wider uppercase text-zinc-500">Connect With Us</span>
+                        <div className="flex items-center gap-4 border-l border-zinc-800 pl-4">
+                          <a
+                            href="https://www.linkedin.com/company/devopstrioglobal/posts/?feedView=all"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-[11px] font-bold tracking-widest uppercase text-zinc-400 hover:text-white transition-colors duration-200"
+                          >
+                            LinkedIn
+                          </a>
+                          <a
+                            href="https://www.facebook.com/profile.php?id=61579126233218"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-[11px] font-bold tracking-widest uppercase text-zinc-400 hover:text-white transition-colors duration-200"
+                          >
+                            Facebook
+                          </a>
+                          <a
+                            href="https://www.instagram.com/devopstrio_offcl/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-[11px] font-bold tracking-widest uppercase text-zinc-400 hover:text-white transition-colors duration-200"
+                          >
+                            Instagram
+                          </a>
+                          <a
+                            href="https://www.youtube.com/@Devopstrioltd"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-[11px] font-bold tracking-widest uppercase text-zinc-400 hover:text-white transition-colors duration-200"
+                          >
+                            YouTube
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              )}
+            </div>
+          </nav>
+
+          {/* Right Action */}
+          <div className="flex items-center gap-1.5 xl:gap-3">
+            <div
+              onMouseEnter={() => setActiveMenu("contact")}
+              className="hidden sm:block relative"
+            >
+              <Link
+                href="/contact"
+                className="inline-flex nav-contact-btn items-center gap-1.5"
+              >
+                Contact Us <ChevronDown size={14} className={`transition-transform duration-300 ${activeMenu === "contact" ? "rotate-180" : ""}`} />
+              </Link>
+
+              {activeMenu === "contact" && (
+                <div className="absolute right-0 top-full mt-3 w-[260px] pointer-events-auto z-50">
+                  <div className="animate-fadeIn bg-[#0a0a0a] border border-zinc-800 rounded-2xl p-2.5 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.95)] relative overflow-hidden flex flex-col gap-1">
+                    {/* Gloss reflection line */}
+                    <div className="absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-zinc-600 to-transparent pointer-events-none" />
+
+                    <Link
+                      href="/contact#contact-form"
+                      onClick={() => {
+                        setActiveMenu(null);
+                        setTimeout(() => window.dispatchEvent(new HashChangeEvent("hashchange")), 100);
+                      }}
+                      className="group flex flex-col p-3 rounded-xl hover:bg-zinc-900 transition-colors"
+                    >
+                      <span className="text-[14px] font-bold text-white group-hover:text-rose-500 transition-colors flex items-center justify-between mb-1">
+                        Connect Us <ArrowUpRight size={15} className="text-zinc-500 group-hover:text-rose-500 transition-colors" />
+                      </span>
+                      <span className="text-[11px] text-zinc-400 font-medium">Reach out to our expert team</span>
+                    </Link>
+
+                    <button
+                      onClick={() => {
+                        setActiveMenu(null);
+                        window.location.hash = "contact";
+                        setTimeout(() => window.dispatchEvent(new HashChangeEvent("hashchange")), 50);
+                      }}
+                      className="group flex flex-col p-3 rounded-xl hover:bg-zinc-900 transition-colors w-full text-left"
+                    >
+                      <span className="text-[14px] font-bold text-white group-hover:text-rose-500 transition-colors flex items-center justify-between mb-1 w-full">
+                        Quick Quote <ArrowUpRight size={15} className="text-zinc-500 group-hover:text-rose-500 transition-colors" />
+                      </span>
+                      <span className="text-[11px] text-zinc-400 font-medium">Get a tailored estimate</span>
+                    </button>
+
+                    <div className="h-[1px] bg-zinc-900/80 my-1 mx-2" />
+
+                    <button
+                      onClick={() => {
+                        setActiveMenu(null);
+                        window.location.hash = "schedule-call";
+                        setTimeout(() => window.dispatchEvent(new HashChangeEvent("hashchange")), 50);
+                      }}
+                      className="group flex flex-col p-3 rounded-xl hover:bg-zinc-900 transition-colors w-full text-left"
+                    >
+                      <span className="text-[14px] font-bold text-white group-hover:text-rose-500 transition-colors flex items-center justify-between mb-1 w-full">
+                        Schedule a Call <ArrowUpRight size={15} className="text-zinc-500 group-hover:text-rose-500 transition-colors" />
+                      </span>
+                      <span className="text-[11px] text-zinc-400 font-medium">Book a meeting instantly</span>
+                    </button>
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {/* Mobile Menu Toggle */}
+            <button
+              onClick={() => setMobileOpen(!mobileOpen)}
+              className="lg:hidden p-2 text-zinc-400 hover:text-white transition-colors"
+              aria-label="Toggle menu"
+            >
+              {mobileOpen ? <X size={18} /> : <Menu size={18} />}
+            </button>
+          </div>
+        </header>
+
+        {/* Mobile Drawer */}
+        {mobileOpen && (
+          <div className="fixed inset-0 top-[72px] z-40 bg-[#000000]/98 backdrop-blur-lg flex flex-col p-6 border-t border-zinc-900 pointer-events-auto animate-fadeIn lg:hidden">
+            <div className="flex flex-col gap-6 overflow-y-auto overscroll-contain pb-8">
+              <div>
+                <span className="text-[10px] uppercase tracking-wider text-zinc-500 block mb-3 font-mono">Services</span>
+                <div className="flex flex-col gap-3 pl-2">
+                  {servicesList.map((item) => (
+                    <Link
+                      key={item.name}
+                      href={item.href}
+                      onClick={() => setMobileOpen(false)}
+                      className="text-xs text-zinc-300 hover:text-rose-500 transition-colors"
+                    >
+                      {item.name}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+
+              <div>
+                <span className="text-[10px] uppercase tracking-wider text-zinc-500 block mb-3 font-mono">Industries</span>
+                <div className="flex flex-col gap-3 pl-2">
+                  {industriesList.map((item) => (
+                    <Link
+                      key={item.name}
+                      href={item.href}
+                      onClick={() => setMobileOpen(false)}
+                      className="text-xs text-zinc-300 hover:text-rose-500 transition-colors"
+                    >
+                      {item.name}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+
+              <div>
+                <span className="text-[10px] uppercase tracking-wider text-zinc-500 block mb-3 font-mono">Ecosystem</span>
+                <div className="flex flex-col gap-3 pl-2">
+                  {ecosystemMobileList.map((item) => (
+                    <Link
+                      key={item.name}
+                      href={item.href}
+                      onClick={() => setMobileOpen(false)}
+                      className="text-xs text-zinc-300 hover:text-rose-500 transition-colors"
+                    >
+                      {item.name}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+
+              <div>
+                <span className="text-[10px] uppercase tracking-wider text-zinc-500 block mb-3 font-mono">Insights</span>
+                <div className="flex flex-col gap-3 pl-2">
                   <Link
-                    key={item.name}
-                    href={item.href}
+                    href="/insights"
                     onClick={() => setMobileOpen(false)}
-                    className="text-xs text-zinc-300 hover:text-rose-500 transition-colors"
+                    className="text-xs text-zinc-300 hover:text-rose-500 font-bold transition-colors"
                   >
-                    {item.name}
+                    Insights Hub
                   </Link>
-                ))}
+                  {insightsSections.flatMap(s => s.categories).map((item) => (
+                    <Link
+                      key={item.slug}
+                      href={`/insights/${item.slug}`}
+                      onClick={() => setMobileOpen(false)}
+                      className="text-xs text-zinc-300 hover:text-rose-500 transition-colors"
+                    >
+                      {item.name}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+
+              <div className="h-[1px] bg-zinc-900 my-2" />
+
+              <Link
+                href="/#careers"
+                onClick={() => setMobileOpen(false)}
+                className="text-sm font-semibold text-zinc-200 hover:text-white"
+              >
+                Careers
+              </Link>
+              <div>
+                <span className="text-[10px] uppercase tracking-wider text-zinc-500 block mb-3 font-mono">About</span>
+                <div className="flex flex-col gap-3 pl-2">
+                  <Link
+                    href="/about"
+                    onClick={() => setMobileOpen(false)}
+                    className="text-xs text-zinc-300 hover:text-rose-500 font-bold transition-colors"
+                  >
+                    About Overview
+                  </Link>
+                  {aboutList.map((item) => (
+                    <Link
+                      key={item.name}
+                      href={item.href}
+                      onClick={() => setMobileOpen(false)}
+                      className="text-xs text-zinc-300 hover:text-rose-500 transition-colors"
+                    >
+                      {item.name}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+              <Link
+                href="/contact"
+                onClick={() => setMobileOpen(false)}
+                className="mt-4 flex items-center justify-center nav-contact-btn w-full"
+              >
+                Contact Us <ArrowUpRight size={14} />
+              </Link>
+
+              {/* Mobile Drawer Social Footer */}
+              <div className="mt-8 flex justify-center gap-6 border-t border-zinc-900 pt-6">
+                <a href="https://www.linkedin.com/company/devopstrioglobal/posts/?feedView=all" target="_blank" rel="noopener noreferrer" className="transition-all duration-200 hover:scale-110">
+                  <img src="/assets/social-icons/linkedin.svg" alt="LinkedIn" className="w-8 h-8 object-contain transition-all duration-200" />
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=61579126233218" target="_blank" rel="noopener noreferrer" className="transition-all duration-200 hover:scale-110">
+                  <img src="/assets/social-icons/facebook.svg" alt="Facebook" className="w-8 h-8 object-contain transition-all duration-200" />
+                </a>
+                <a href="https://www.instagram.com/devopstrio_offcl/" target="_blank" rel="noopener noreferrer" className="transition-all duration-200 hover:scale-110">
+                  <img src="/assets/social-icons/instagram.svg" alt="Instagram" className="w-8 h-8 object-contain transition-all duration-200" />
+                </a>
+                <a href="https://www.youtube.com/@Devopstrioltd" target="_blank" rel="noopener noreferrer" className="transition-all duration-200 hover:scale-110">
+                  <img src="/assets/social-icons/youtube.svg" alt="YouTube" className="w-8 h-8 object-contain transition-all duration-200" />
+                </a>
               </div>
             </div>
-            <Link
-              href="/contact"
-              onClick={() => setMobileOpen(false)}
-              className="mt-4 flex items-center justify-center nav-contact-btn w-full"
-            >
-              Contact Us <ArrowUpRight size={14} />
-            </Link>
-
-            {/* Mobile Drawer Social Footer */}
-            <div className="mt-8 flex justify-center gap-6 border-t border-zinc-900 pt-6">
-              <a href="https://www.linkedin.com/company/devopstrioglobal/posts/?feedView=all" target="_blank" rel="noopener noreferrer" className="transition-all duration-200 hover:scale-110">
-                <img src="/assets/social-icons/linkedin.svg" alt="LinkedIn" className="w-8 h-8 object-contain transition-all duration-200" />
-              </a>
-              <a href="https://www.facebook.com/profile.php?id=61579126233218" target="_blank" rel="noopener noreferrer" className="transition-all duration-200 hover:scale-110">
-                <img src="/assets/social-icons/facebook.svg" alt="Facebook" className="w-8 h-8 object-contain transition-all duration-200" />
-              </a>
-              <a href="https://www.instagram.com/devopstrio_offcl/" target="_blank" rel="noopener noreferrer" className="transition-all duration-200 hover:scale-110">
-                <img src="/assets/social-icons/instagram.svg" alt="Instagram" className="w-8 h-8 object-contain transition-all duration-200" />
-              </a>
-              <a href="https://www.youtube.com/@Devopstrioltd" target="_blank" rel="noopener noreferrer" className="transition-all duration-200 hover:scale-110">
-                <img src="/assets/social-icons/youtube.svg" alt="YouTube" className="w-8 h-8 object-contain transition-all duration-200" />
-              </a>
-            </div>
           </div>
-        </div>
-      )}
-    </div>
+        )}
+      </div>
+    </>
   );
 }

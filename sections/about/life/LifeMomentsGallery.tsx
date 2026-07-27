@@ -11,7 +11,7 @@ type EventImage = {
 };
 
 type EventRecord = {
-  id: number;
+  id: string;
   eventName: string;
   year: string;
   images: EventImage[];
@@ -30,9 +30,10 @@ export const LifeMomentsGallery = () => {
         if (Array.isArray(data)) {
           // Normalize legacy and new data seamlessly
           const normalizedData: EventRecord[] = data.map((item: any) => {
-            if (item.images) return item;
+            const id = String(item.id);
+            if (item.images) return { ...item, id };
             return {
-              id: item.id,
+              id,
               eventName: item.eventName || item.category || "Untitled Event",
               year: item.year || new Date().getFullYear().toString(),
               images: item.src ? [{ src: item.src, tagname: item.title || "" }] : []

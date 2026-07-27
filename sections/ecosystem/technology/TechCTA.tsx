@@ -20,7 +20,7 @@ export function TechCTA() {
             </span>
           </div>
 
-          <h2 className="text-3xl md:text-4xl xl:text-5xl font-extrabold tracking-tight leading-tight mb-8">
+          <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold tracking-tight leading-tight mb-8">
             Technology That Powers <span className="text-white font-black bg-gradient-to-r from-red-600 via-rose-600 to-rose-500 bg-clip-text text-transparent">Transformation</span>
           </h2>
 

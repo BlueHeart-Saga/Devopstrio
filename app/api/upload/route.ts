@@ -1,23 +1,16 @@
 import { NextRequest, NextResponse } from "next/server";
 import { BlobServiceClient } from "@azure/storage-blob";
-import { MongoClient, ObjectId } from "mongodb";
+import { ObjectId } from "mongodb";
 import { v4 as uuidv4 } from "uuid";
 import crypto from "crypto";
+import { connectToDatabase } from "@/lib/mongodb";
 
 const AZURE_CONNECTION_STRING = process.env.AZURE_STORAGE_CONNECTION_STRING || "";
 const AZURE_CONTAINER = process.env.AZURE_STORAGE_CONTAINER || "media";
-const MONGO_URI = process.env.MONGO_URI || "";
-const DB_NAME = process.env.DB_NAME || "podcast";
-
-let mongoClient: MongoClient | null = null;
 
 async function getDatabase() {
-  if (!mongoClient) {
-    // Add serverSelectionTimeoutMS to fail fast if the database is unreachable
-    mongoClient = new MongoClient(MONGO_URI, { serverSelectionTimeoutMS: 3000 });
-    await mongoClient.connect();
-  }
-  return mongoClient.db(DB_NAME);
+  const { db } = await connectToDatabase();
+  return db;
 }
 
 export async function POST(req: NextRequest) {

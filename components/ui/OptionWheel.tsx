@@ -185,7 +185,7 @@ export const OptionWheel = ({
     const audio = audioRef.current;
     audio.volume = Math.min(Math.max(soundVolume, 0), 1);
     audio.currentTime = 0;
-    audio.play()?.catch(() => {});
+    audio.play()?.catch(() => { });
   }, []);
 
   const applyTarget = useCallback(
@@ -306,9 +306,8 @@ export const OptionWheel = ({
       role="listbox"
       tabIndex={0}
       aria-label="Option wheel"
-      className={`relative h-full w-full select-none overflow-hidden outline-none [touch-action:none] ${
-        isDragging ? "cursor-grabbing" : "cursor-grab"
-      }${className ? ` ${className}` : ""}`}
+      className={`relative h-full w-full select-none overflow-hidden outline-none [touch-action:none] ${isDragging ? "cursor-grabbing" : "cursor-grab"
+        }${className ? ` ${className}` : ""}`}
       style={
         {
           "--ow-text-color": textColor,
@@ -331,9 +330,8 @@ export const OptionWheel = ({
           }}
           role="option"
           aria-selected={selectedIndex === index}
-          className={`absolute top-1/2 cursor-pointer whitespace-nowrap leading-none transition-colors duration-200 will-change-[transform,opacity,filter] [font-size:var(--ow-font-size)] [color:color-mix(in_srgb,var(--ow-active-color)_calc(var(--ow-p,0)*100%),var(--ow-text-color))] ${
-            side === "right" ? "right-[var(--ow-inset)] origin-right" : "left-[var(--ow-inset)] origin-left"
-          } ${selectedIndex === index ? "font-extrabold text-white scale-105" : "font-medium text-zinc-400 hover:text-rose-400"}`}
+          className={`absolute top-1/2 cursor-pointer whitespace-nowrap leading-none transition-colors duration-200 will-change-[transform,opacity,filter] [font-size:var(--ow-font-size)] [color:color-mix(in_srgb,var(--ow-active-color)_calc(var(--ow-p,0)*100%),var(--ow-text-color))] ${side === "right" ? "right-[var(--ow-inset)] origin-right" : "left-[var(--ow-inset)] origin-left"
+            } ${selectedIndex === index ? "font-bold text-white scale-105" : "font-medium text-zinc-400 hover:text-rose-400"}`}
           onClick={() => handleItemClick(index)}
           onMouseEnter={() => handleItemHover(index)}
         >

@@ -29,12 +29,12 @@ import {
 import Link from "next/link";
 
 const colorMap: Record<string, { border: string; icon: string; number: string; glow: string }> = {
-  rose:    { border: "border-rose-500/30 hover:border-rose-500/60",    icon: "text-rose-500 bg-rose-500/10 border-rose-500/20",    number: "text-rose-500/10",    glow: "from-rose-500/10" },
-  blue:    { border: "border-blue-500/30 hover:border-blue-500/60",    icon: "text-blue-400 bg-blue-500/10 border-blue-500/20",    number: "text-blue-500/10",    glow: "from-blue-500/10" },
+  rose: { border: "border-rose-500/30 hover:border-rose-500/60", icon: "text-rose-500 bg-rose-500/10 border-rose-500/20", number: "text-rose-500/10", glow: "from-rose-500/10" },
+  blue: { border: "border-blue-500/30 hover:border-blue-500/60", icon: "text-blue-400 bg-blue-500/10 border-blue-500/20", number: "text-blue-500/10", glow: "from-blue-500/10" },
   emerald: { border: "border-emerald-500/30 hover:border-emerald-500/60", icon: "text-emerald-400 bg-emerald-500/10 border-emerald-500/20", number: "text-emerald-500/10", glow: "from-emerald-500/10" },
-  orange:  { border: "border-orange-500/30 hover:border-orange-500/60", icon: "text-orange-400 bg-orange-500/10 border-orange-500/20", number: "text-orange-500/10", glow: "from-orange-500/10" },
-  purple:  { border: "border-purple-500/30 hover:border-purple-500/60", icon: "text-purple-400 bg-purple-500/10 border-purple-500/20", number: "text-purple-500/10", glow: "from-purple-500/10" },
-  cyan:    { border: "border-cyan-500/30 hover:border-cyan-500/60",    icon: "text-cyan-400 bg-cyan-500/10 border-cyan-500/20",    number: "text-cyan-500/10",    glow: "from-cyan-500/10" }
+  orange: { border: "border-orange-500/30 hover:border-orange-500/60", icon: "text-orange-400 bg-orange-500/10 border-orange-500/20", number: "text-orange-500/10", glow: "from-orange-500/10" },
+  purple: { border: "border-purple-500/30 hover:border-purple-500/60", icon: "text-purple-400 bg-purple-500/10 border-purple-500/20", number: "text-purple-500/10", glow: "from-purple-500/10" },
+  cyan: { border: "border-cyan-500/30 hover:border-cyan-500/60", icon: "text-cyan-400 bg-cyan-500/10 border-cyan-500/20", number: "text-cyan-500/10", glow: "from-cyan-500/10" }
 };
 
 interface CoreArea {
@@ -378,7 +378,7 @@ export default function AIInnovationLabPage() {
 
   return (
     <main className="min-h-screen bg-black text-white font-sans overflow-x-hidden selection:bg-rose-500 selection:text-white">
-      
+
       {/* 1. HERO SECTION */}
       <Hero
         badge="AI Innovation Lab"
@@ -425,7 +425,7 @@ export default function AIInnovationLabPage() {
 
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            
+
             {/* Left side content */}
             <div className="lg:col-span-6">
               <Reveal>
@@ -481,22 +481,22 @@ export default function AIInnovationLabPage() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {innovationAreas.map((area, idx) => (
-                <Reveal key={area.title} delay={idx * 0.04} className="h-full">
-                  <div className="bg-[#0a0a0a]/60 border border-white/[0.03] hover:border-rose-500/20 rounded-[20px] p-6 transition-all duration-300 flex flex-col justify-between h-full min-h-[220px]">
-                    <div>
-                      <div className="w-9 h-9 rounded-xl bg-rose-500/10 flex items-center justify-center mb-5">
-                        {area.icon}
-                      </div>
-                      <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-2.5">
-                        {area.title}
-                      </h4>
-                      <p className="text-xs md:text-sm text-zinc-400 leading-relaxed font-semibold">
-                        {area.desc}
-                      </p>
+              <Reveal key={area.title} delay={idx * 0.04} className="h-full">
+                <div className="bg-[#0a0a0a]/60 border border-white/[0.03] hover:border-rose-500/20 rounded-[20px] p-6 transition-all duration-300 flex flex-col justify-between h-full min-h-[220px]">
+                  <div>
+                    <div className="w-9 h-9 rounded-xl bg-rose-500/10 flex items-center justify-center mb-5">
+                      {area.icon}
                     </div>
+                    <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-2.5">
+                      {area.title}
+                    </h4>
+                    <p className="text-xs md:text-sm text-zinc-400 leading-relaxed font-semibold">
+                      {area.desc}
+                    </p>
                   </div>
-                </Reveal>
-              ))}
+                </div>
+              </Reveal>
+            ))}
           </div>
         </div>
       </section>
@@ -504,7 +504,7 @@ export default function AIInnovationLabPage() {
       {/* 4. AI LAB OPERATING MODEL / LIFECYCLE */}
       <section className="w-full py-24 bg-[#020202] border-b border-zinc-900/60 relative overflow-hidden">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
-          
+
           <Reveal className="mb-14 text-left max-w-3xl">
             <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
               Operating Framework
@@ -523,7 +523,7 @@ export default function AIInnovationLabPage() {
               const colors = ["rose", "blue", "emerald", "orange", "purple", "cyan"];
               const Icon = icons[idx];
               const c = colorMap[colors[idx]];
-              
+
               return (
                 <Reveal key={step.num} delay={idx * 0.05} className="h-full">
                   <div
@@ -571,7 +571,7 @@ export default function AIInnovationLabPage() {
             {solutionBlocks.map((block, idx) => (
               <Reveal key={block.title} delay={idx * 0.04} className="h-full">
                 <div className="bg-zinc-900/50 backdrop-blur-sm border border-zinc-800 rounded-3xl p-8 hover:bg-zinc-900/80 hover:border-rose-500/30 transition-all duration-300 relative group h-full flex flex-col overflow-hidden shadow-lg">
-                  
+
                   {/* Subtle Top-Right Image Integration (like the avatar in EmployeeStories, but as a faded background accent) */}
                   <div className="absolute top-0 right-0 w-40 h-40 opacity-10 group-hover:opacity-30 transition-opacity duration-700 [clip-path:circle(100%_at_100%_0%)]">
                     <img src={block.image} alt={block.title} className="w-full h-full object-cover" />
@@ -579,7 +579,7 @@ export default function AIInnovationLabPage() {
                   </div>
 
                   <div className="absolute inset-0 bg-gradient-to-br from-white/[0.02] to-transparent pointer-events-none rounded-3xl" />
-                  
+
                   <div className="relative z-10 flex flex-col h-full">
                     <div className="mb-6">
                       <span className="px-3 py-1 bg-zinc-950/80 border border-zinc-800 text-rose-500/80 text-[10px] font-mono font-bold tracking-widest rounded-full uppercase shadow-sm">
@@ -590,13 +590,13 @@ export default function AIInnovationLabPage() {
                     <h3 className="text-xl font-bold text-white mb-4 tracking-tight group-hover:text-rose-50 transition-colors">
                       {block.title}
                     </h3>
-                    
+
                     <div className="h-[1px] w-12 bg-rose-500/20 mb-4 group-hover:w-full transition-all duration-500" />
-                    
+
                     <p className="text-zinc-400 text-sm leading-relaxed mb-8 font-medium group-hover:text-zinc-300 transition-colors flex-grow">
                       {block.desc}
                     </p>
-                    
+
                     <div className="mt-auto pt-5 border-t border-zinc-800/60 group-hover:border-zinc-700 transition-colors duration-500">
                       <ul className="space-y-3">
                         {block.bullets.map((bullet) => (
@@ -638,49 +638,49 @@ export default function AIInnovationLabPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-x-20 md:gap-y-24">
               {archLayers.map((layer, idx) => {
                 const styles = [
-                  { 
-                    borderColor: "border-rose-500", 
-                    textColor: "text-rose-500", 
-                    numPos: "-top-8 -right-4 md:-top-10 md:-right-6", 
-                    borderRadius: "rounded-[2.5rem] rounded-tr-2xl", 
+                  {
+                    borderColor: "border-rose-500",
+                    textColor: "text-rose-500",
+                    numPos: "-top-8 -right-4 md:-top-10 md:-right-6",
+                    borderRadius: "rounded-[2.5rem] rounded-tr-2xl",
                     textAlign: "text-left",
                     alignItems: "items-start"
                   },
-                  { 
-                    borderColor: "border-rose-500", 
-                    textColor: "text-rose-500", 
-                    numPos: "-bottom-8 -left-4 md:-bottom-10 md:-left-6", 
-                    borderRadius: "rounded-[2.5rem] rounded-bl-2xl", 
+                  {
+                    borderColor: "border-rose-500",
+                    textColor: "text-rose-500",
+                    numPos: "-bottom-8 -left-4 md:-bottom-10 md:-left-6",
+                    borderRadius: "rounded-[2.5rem] rounded-bl-2xl",
                     textAlign: "text-left md:text-right",
                     alignItems: "items-start md:items-end"
                   },
-                  { 
-                    borderColor: "border-rose-500", 
-                    textColor: "text-rose-500", 
-                    numPos: "-top-8 -right-4 md:-top-10 md:-right-6", 
-                    borderRadius: "rounded-[2.5rem] rounded-tr-2xl", 
+                  {
+                    borderColor: "border-rose-500",
+                    textColor: "text-rose-500",
+                    numPos: "-top-8 -right-4 md:-top-10 md:-right-6",
+                    borderRadius: "rounded-[2.5rem] rounded-tr-2xl",
                     textAlign: "text-left",
                     alignItems: "items-start"
                   },
-                  { 
-                    borderColor: "border-rose-500", 
-                    textColor: "text-rose-500", 
-                    numPos: "-bottom-8 -left-4 md:-bottom-10 md:-left-6", 
-                    borderRadius: "rounded-[2.5rem] rounded-bl-2xl", 
+                  {
+                    borderColor: "border-rose-500",
+                    textColor: "text-rose-500",
+                    numPos: "-bottom-8 -left-4 md:-bottom-10 md:-left-6",
+                    borderRadius: "rounded-[2.5rem] rounded-bl-2xl",
                     textAlign: "text-left md:text-right",
                     alignItems: "items-start md:items-end"
                   },
                 ];
-                
+
                 const style = styles[idx % styles.length];
 
                 return (
                   <Reveal key={layer.num} delay={idx * 0.1}>
                     <div className={`relative p-8 md:p-10 border-[2px] ${style.borderColor} ${style.borderRadius} bg-black group hover:-translate-y-2 transition-all duration-500 hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)] h-full flex flex-col`}>
-                      
+
                       {/* The Giant Cut-out Number */}
                       <div className={`absolute ${style.numPos} bg-black px-4 z-10 flex items-center justify-center transition-transform duration-500 group-hover:scale-110`}>
-                        <span 
+                        <span
                           className={`text-[3.5rem] md:text-[4.5rem] font-black leading-none ${style.textColor}`}
                           style={{
                             WebkitTextStroke: `2px currentColor`,
@@ -694,13 +694,13 @@ export default function AIInnovationLabPage() {
 
                       {/* Content */}
                       <div className={`flex flex-col gap-4 relative z-0 ${style.alignItems} ${style.textAlign} flex-grow`}>
-                        
+
                         {/* Decorative Inner Graphic */}
                         <div className={`w-10 h-10 rounded-full border-2 ${style.borderColor} flex items-center justify-center mb-1 opacity-80 group-hover:opacity-100 transition-opacity duration-300 shrink-0`}>
                           <div className={`w-1.5 h-1.5 rounded-full bg-current ${style.textColor} animate-pulse`} />
                         </div>
 
-                        <h3 className={`text-lg md:text-xl font-extrabold uppercase tracking-wide ${style.textColor}`}>
+                        <h3 className={`text-lg md:text-xl font-bold uppercase tracking-wide ${style.textColor}`}>
                           {layer.name}
                         </h3>
                         <p className="text-sm md:text-base text-zinc-300 font-medium leading-relaxed max-w-[90%]">
@@ -731,7 +731,7 @@ export default function AIInnovationLabPage() {
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
 
           <div className="flex flex-col lg:flex-row gap-16 lg:gap-12 items-start">
-            
+
             {/* Left Column: Text & Sticky Nav */}
             <div className="lg:w-1/3 flex flex-col items-start text-left lg:sticky lg:top-32">
               <Reveal>
@@ -751,11 +751,10 @@ export default function AIInnovationLabPage() {
                     <button
                       key={cat.name}
                       onClick={() => setActiveTab(cat.name)}
-                      className={`flex items-center justify-between p-4 rounded-xl text-left border transition-all duration-300 w-full ${
-                        activeTab === cat.name
+                      className={`flex items-center justify-between p-4 rounded-xl text-left border transition-all duration-300 w-full ${activeTab === cat.name
                           ? "bg-rose-500/10 text-white border-rose-500/30 shadow-[0_0_20px_rgba(244,63,94,0.15)]"
                           : "bg-[#0A0A0A] text-zinc-400 border-zinc-800/80 hover:text-zinc-200 hover:border-zinc-700/80"
-                      }`}
+                        }`}
                     >
                       <div className="flex items-center gap-3">
                         <span className="text-[12px] font-bold uppercase tracking-wider">{cat.name}</span>
@@ -773,7 +772,7 @@ export default function AIInnovationLabPage() {
                 <Reveal key={item} delay={idx * 0.05} className="h-full">
                   <div className="group relative h-[240px] sm:h-[260px] cursor-default [perspective:1000px]">
                     <div className="absolute inset-0 w-full h-full transition-all duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
-                      
+
                       {/* Front Face */}
                       <div className="absolute inset-0 w-full h-full flex flex-col justify-start bg-[#0A0A0A] border border-zinc-800/80 rounded-2xl p-6 shadow-sm [backface-visibility:hidden]">
                         <div className="w-10 h-10 mb-4 rounded-lg bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-300 group-hover:text-rose-500 transition-colors">
@@ -793,16 +792,16 @@ export default function AIInnovationLabPage() {
                       {/* Back Face */}
                       <div className="absolute inset-0 w-full h-full flex flex-col rounded-2xl overflow-hidden [backface-visibility:hidden] [transform:rotateY(180deg)] border border-rose-500/50 bg-zinc-950">
                         <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_center,rgba(244,63,94,0.4)_0%,transparent_100%)]" />
-                        
+
                         <div className="absolute inset-0 flex flex-col justify-end p-6">
-                           <div className="w-10 h-10 mb-4 rounded-full bg-rose-500/20 flex items-center justify-center text-rose-500">
-                             <Sparkles size={16} />
-                           </div>
-                           <h3 className="font-bold text-[15px] text-white mb-2 leading-relaxed">{item}</h3>
-                           <p className="text-[12px] text-zinc-400 mb-4">Leverage cognitive intelligence to optimize {activeTab.toLowerCase()} operational metrics.</p>
-                           <div className="inline-flex items-center gap-2 text-xs font-semibold text-rose-400 cursor-pointer">
-                             Explore Implementation <ArrowUpRight size={12} />
-                           </div>
+                          <div className="w-10 h-10 mb-4 rounded-full bg-rose-500/20 flex items-center justify-center text-rose-500">
+                            <Sparkles size={16} />
+                          </div>
+                          <h3 className="font-bold text-[15px] text-white mb-2 leading-relaxed">{item}</h3>
+                          <p className="text-[12px] text-zinc-400 mb-4">Leverage cognitive intelligence to optimize {activeTab.toLowerCase()} operational metrics.</p>
+                          <div className="inline-flex items-center gap-2 text-xs font-semibold text-rose-400 cursor-pointer">
+                            Explore Implementation <ArrowUpRight size={12} />
+                          </div>
                         </div>
                       </div>
 
@@ -819,9 +818,9 @@ export default function AIInnovationLabPage() {
       {/* 8. INNOVATION OUTCOMES / LAB IMPACT */}
       <section className="w-full py-24 bg-[#020202] border-b border-zinc-900/60 relative overflow-hidden">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
-          
+
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            
+
             {/* Left Header */}
             <div className="lg:col-span-5">
               <Reveal>
@@ -864,7 +863,7 @@ export default function AIInnovationLabPage() {
                     <div className="group relative bg-zinc-900/50 backdrop-blur-sm border border-zinc-800 rounded-2xl p-6 hover:bg-zinc-900 hover:border-rose-500/30 transition-all duration-300 h-full flex flex-col">
                       {/* Hover gradient effect */}
                       <div className="absolute inset-0 bg-gradient-to-br from-rose-500/5 to-transparent opacity-0 group-hover:opacity-100 rounded-2xl transition-opacity duration-300 pointer-events-none" />
-                      
+
                       <div className="relative z-10 flex flex-col h-full">
                         <div className="w-10 h-10 rounded-lg bg-zinc-800/80 flex items-center justify-center mb-5 group-hover:bg-rose-500/20 group-hover:text-rose-500 transition-colors duration-300 border border-zinc-700 group-hover:border-rose-500/30 text-zinc-400 shadow-inner shrink-0">
                           <Icon size={18} />
@@ -888,7 +887,7 @@ export default function AIInnovationLabPage() {
       <section className="w-full py-24 bg-black border-b border-zinc-900/60 relative overflow-hidden">
         <div className="max-w-7xl mx-auto w-full px-6 lg:px-12 xl:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-            
+
             {/* Left: Heading & Stats */}
             <div className="sticky top-32">
               <Reveal>
@@ -952,7 +951,7 @@ export default function AIInnovationLabPage() {
       {/* 10. RELATED LABS / CTA */}
       <section className="w-full py-24 bg-[#020202] relative overflow-hidden">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
-          
+
           {/* Related Labs Grid */}
           <div className="mb-24">
             <Reveal className="mb-14 text-left">

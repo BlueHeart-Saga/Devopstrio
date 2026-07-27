@@ -19,7 +19,7 @@ export function HeroSection() {
   const heroY = useTransform(scrollYProgress, [0, 1], [0, 80]);
 
   const slides: Slide[] = [
-    
+
     {
       eyebrow: "Cloud & Infrastructure",
       title: (
@@ -37,7 +37,7 @@ export function HeroSection() {
       secondaryBtn: { text: "Contact Us", href: "/contact" },
       image: "/assets/Home-page/homehero/Punitha.A.svg"
     },
-    
+
     {
       eyebrow: "Digital Products & Platforms",
       title: (
@@ -89,7 +89,7 @@ export function HeroSection() {
       secondaryBtn: { text: "Contact Us", href: "/contact" },
       image: "/assets/Home-page/homehero/Ooviya.R.svg"
     },
-    
+
     {
       eyebrow: "Ecosystem & Strategic Alliances",
       title: (
@@ -173,7 +173,7 @@ export function HeroSection() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center w-full">
 
           {/* Left Column: Text content */}
-          <div className="lg:col-span-8 lg:pr-12 flex flex-col items-start text-left justify-center relative z-20 py-8 lg:py-16">
+          <div className="lg:col-span-8 lg:pr-12 pl-2 sm:pl-6 md:pl-10 lg:pl-14 xl:pl-14 flex flex-col items-start text-left justify-center relative z-20 py-8 lg:py-16">
             <AnimatePresence mode="wait">
               <motion.div
                 key={currentSlide}
@@ -199,35 +199,43 @@ export function HeroSection() {
                 className="flex flex-col items-start text-left w-full"
               >
                 {/* Eyebrow */}
-                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-zinc-800/80 bg-zinc-950/40 mb-6">
-                  {/* <span className="w-1.5 h-1.5 rounded-full bg-red-600 animate-pulse" /> */}
+                {/* <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-zinc-800/80 bg-zinc-950/40 mb-6">
+                  <span className="w-1.5 h-1.5 rounded-full bg-red-600 animate-pulse" />
                   <span className="text-[10px] sm:text-xs font-semibold tracking-[0.2em] uppercase text-zinc-400">
                     {slides[currentSlide].eyebrow}
                   </span>
-                </div>
+                </div> */}
 
                 {/* Heading */}
                 <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold tracking-tight leading-[1.12] text-white mb-8">
                   {slides[currentSlide].title}
                 </h1>
 
-                 {/* CTA buttons */}
-                 <div className="flex flex-wrap gap-4 items-center justify-start mb-8">
-                   <Link
-                     className="inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white transition-all duration-300 hover:shadow-[0_0_25px_rgba(225,29,72,0.35)] hover:-translate-y-0.5"
-                     href={slides[currentSlide].primaryBtn.href}
+                {/* CTA buttons */}
+                <div className="flex flex-wrap gap-4 items-center justify-start mb-8">
+                  <Link
+                    className="inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white transition-all duration-300 hover:shadow-[0_0_25px_rgba(225,29,72,0.35)] hover:-translate-y-0.5"
+                    href={slides[currentSlide].primaryBtn.href}
+                  >
+                    {slides[currentSlide].primaryBtn.text}
+
+                  </Link>
+                  <Link
+                    className="inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase border border-zinc-850 hover:border-zinc-750 bg-zinc-950/60 hover:bg-zinc-900 text-white transition-all duration-300 hover:-translate-y-0.5"
+                    href={slides[currentSlide].secondaryBtn.href}
+                  >
+                    {slides[currentSlide].secondaryBtn.text}
+
+                  </Link>
+                  {/* <a
+                     href="https://devopstrioaiservices-e6dnggh5gxehh9d0.southindia-01.azurewebsites.net"
+                     target="_blank"
+                     rel="noopener noreferrer"
+                     className="inline-flex items-center justify-center rounded-xl bg-red-600 px-6 py-3.5 text-white hover:bg-red-700 font-bold text-xs tracking-wider uppercase transition-all duration-300 hover:shadow-[0_0_25px_rgba(225,29,72,0.4)] hover:-translate-y-0.5"
                    >
-                     {slides[currentSlide].primaryBtn.text}
- 
-                   </Link>
-                   <Link
-                     className="inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase border border-zinc-850 hover:border-zinc-750 bg-zinc-950/60 hover:bg-zinc-900 text-white transition-all duration-300 hover:-translate-y-0.5"
-                     href={slides[currentSlide].secondaryBtn.href}
-                   >
-                     {slides[currentSlide].secondaryBtn.text}
- 
-                   </Link>
-                 </div>
+                     🚀 Launch AI Studio
+                   </a> */}
+                </div>
 
                 {/* Slide Indicators */}
                 <div className="flex gap-2 relative z-20">

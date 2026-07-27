@@ -46,7 +46,7 @@ const channels = [
 ];
 
 export function WhyContactUs() {
-  const leftCards  = cards.filter(c => c.side === "left");
+  const leftCards = cards.filter(c => c.side === "left");
   const rightCards = cards.filter(c => c.side === "right");
 
   return (
@@ -133,7 +133,7 @@ export function WhyContactUs() {
                 href={href}
                 target={href.startsWith("http") ? "_blank" : "_self"}
                 rel="noopener noreferrer"
-                className={`group text-xs md:text-sm font-extrabold tracking-[0.18em] uppercase transition-all duration-300 ${colorClass}`}
+                className={`group text-xs md:text-sm font-bold tracking-[0.18em] uppercase transition-all duration-300 ${colorClass}`}
               >
                 <span className="border-b-2 border-transparent group-hover:border-current transition-all pb-1">{label}</span>
               </a>

@@ -415,7 +415,7 @@ export default function SAPStrategicAllianceHub() {
 
       {/* 1. HERO SECTION WITH CALM BLUE/CYAN SAP WAVE DESIGN */}
       <section className="relative w-full min-h-[95vh] flex flex-col items-center justify-center bg-black overflow-hidden pt-28 pb-20 border-b border-zinc-900/60">
-        
+
         {/* Concentric Wave Elements in SAP Blue/Cyan Theme */}
         <div className="absolute right-[-10%] md:right-[-5%] top-1/2 -translate-y-1/2 w-[85%] md:w-[65%] h-[130%] z-0 pointer-events-none select-none overflow-hidden flex items-center justify-end">
           <div className="relative w-full h-full flex items-center justify-end">
@@ -423,10 +423,10 @@ export default function SAPStrategicAllianceHub() {
             <div className="absolute w-[170%] h-[135%] right-[-40%] rounded-[110px] md:rounded-[230px] border border-cyan-500/10 rotate-[-28deg] pointer-events-none" />
             <div className="absolute w-[140%] h-[110%] right-[-30%] rounded-[100px] md:rounded-[200px] border border-blue-500/15 rotate-[-28deg] pointer-events-none" />
             <div className="absolute w-[110%] h-[85%] right-[-20%] rounded-[90px] md:rounded-[170px] border border-cyan-600/15 rotate-[-28deg] pointer-events-none" />
-            
+
             <div className="absolute w-[80%] h-[60%] right-[-10%] rounded-[80px] md:rounded-[140px] border border-blue-500/20 rotate-[-28deg] pointer-events-none" />
             <div className="absolute w-[50%] h-[35%] right-[0%] rounded-[70px] md:rounded-[110px] border border-cyan-500/25 rotate-[-28deg] pointer-events-none" />
-            
+
             <div className="absolute right-[5%] w-[180px] h-[90px] bg-gradient-to-r from-blue-600/15 via-cyan-600/10 to-teal-500/5 rounded-full blur-[50px] opacity-40 animate-pulse" />
           </div>
         </div>
@@ -441,7 +441,7 @@ export default function SAPStrategicAllianceHub() {
 
         <div className="max-w-7xl mx-auto w-full px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            
+
             {/* Hero Left Content */}
             <div className="lg:col-span-7 flex flex-col items-start text-left">
               <Reveal className="mb-6">
@@ -451,13 +451,13 @@ export default function SAPStrategicAllianceHub() {
                   </span>
                 </div>
               </Reveal>
-              
+
               <Reveal delay={0.1}>
                 <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold tracking-tight leading-[1.12] text-white mb-6">
                   SAP Enterprise <span className="text-[#3b82f6] whitespace-nowrap">Ecosystem</span>
                 </h1>
               </Reveal>
-              
+
               <Reveal delay={0.2}>
                 <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
                   Transform finance, supply chain, procurement, HR, manufacturing, and customer operations through SAP Business Suite and SAP BTP.
@@ -480,7 +480,7 @@ export default function SAPStrategicAllianceHub() {
                   ))}
                 </div>
               </Reveal>
-              
+
               {/* CTAs */}
               <Reveal delay={0.4} className="flex flex-wrap gap-4">
                 <Link
@@ -501,7 +501,7 @@ export default function SAPStrategicAllianceHub() {
             {/* Hero Right Visual (Logo Integration) */}
             <div className="lg:col-span-5 relative flex items-center justify-center select-none z-10">
               <div className="relative w-full max-w-[420px] aspect-square flex items-center justify-center">
-                
+
                 {/* Connecting glowing line and animation */}
                 <div className="absolute inset-x-12 h-[2px] bg-gradient-to-r from-blue-500/25 via-cyan-500/30 to-blue-500/25 z-0 pointer-events-none">
                   {/* Energy Pulse */}
@@ -509,7 +509,7 @@ export default function SAPStrategicAllianceHub() {
                 </div>
 
                 <div className="flex items-center justify-between w-full relative z-10 px-4">
-                  
+
                   {/* Devopstrio Logo Card */}
                   <div className="relative group/logo w-[120px] h-[120px] sm:w-[130px] sm:h-[130px] rounded-3xl bg-[#09090b]/80 border border-zinc-800 hover:border-blue-500/30 flex items-center justify-center p-5 shadow-2xl backdrop-blur-md transition-all duration-500 hover:-translate-y-1">
                     <div className="absolute inset-0 bg-gradient-to-br from-blue-500/[0.03] to-transparent rounded-3xl opacity-0 group-hover/logo:opacity-100 transition-opacity" />
@@ -594,7 +594,7 @@ export default function SAPStrategicAllianceHub() {
             <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
               BUSINESS DEPARTMENTS
             </span>
-            <h2 className="text-3xl md:text-4xl font-extrabold text-white">
+            <h2 className="text-3xl md:text-4xl font-bold text-white">
               Enterprise Business <span className="text-rose-500">Domains</span>
             </h2>
           </Reveal>
@@ -833,8 +833,8 @@ export default function SAPStrategicAllianceHub() {
                 key={ind.name}
                 onClick={() => setActiveIndustry(ind.name)}
                 className={`px-5 py-2.5 rounded-full text-xs font-semibold tracking-wider transition-all duration-300 border ${activeIndustry === ind.name
-                    ? "bg-rose-600 text-white border-rose-600 shadow-md shadow-rose-600/10"
-                    : "bg-zinc-950 text-zinc-400 border-zinc-900 hover:text-white"
+                  ? "bg-rose-600 text-white border-rose-600 shadow-md shadow-rose-600/10"
+                  : "bg-zinc-950 text-zinc-400 border-zinc-900 hover:text-white"
                   }`}
               >
                 {ind.name}
@@ -1119,7 +1119,7 @@ export default function SAPStrategicAllianceHub() {
             <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
               OUTCOMES achieved
             </span>
-            <h2 className="text-3xl md:text-4xl font-extrabold text-white">
+            <h2 className="text-3xl md:text-4xl font-bold text-white">
               Customer Success <span className="text-rose-500">Stories</span>
             </h2>
           </Reveal>

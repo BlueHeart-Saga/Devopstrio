@@ -54,7 +54,7 @@ export const AwardsRecognitionLeadership = () => {
       <div className="absolute -right-40 bottom-1/3 w-[500px] h-[500px] rounded-full bg-blue-500/2 blur-[130px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10 flex flex-col gap-24">
-        
+
         {/* Row 1: Our Certifications Marquee */}
         <div>
           <div className="text-center mb-10">
@@ -71,7 +71,7 @@ export const AwardsRecognitionLeadership = () => {
             <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-[#030303] to-transparent z-15 pointer-events-none" />
             <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-[#030303] to-transparent z-15 pointer-events-none" />
 
-            <motion.div 
+            <motion.div
               className="flex flex-nowrap gap-6 items-center w-max whitespace-nowrap"
               animate={{ x: ["0%", "-50%"] }}
               transition={{
@@ -112,7 +112,7 @@ export const AwardsRecognitionLeadership = () => {
             <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-[#030303] to-transparent z-15 pointer-events-none" />
             <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-[#030303] to-transparent z-15 pointer-events-none" />
 
-            <motion.div 
+            <motion.div
               className="flex flex-nowrap gap-6 items-center w-max whitespace-nowrap"
               animate={{ x: ["-50%", "0%"] }}
               transition={{
@@ -168,7 +168,7 @@ export const AwardsRecognitionLeadership = () => {
                   <p className="text-rose-500 font-bold text-[9px] uppercase tracking-wider mb-1.5">
                     {award.tag}
                   </p>
-                  <p className="text-white font-extrabold text-base mb-1">
+                  <p className="text-white font-bold text-base mb-1">
                     {award.title}
                   </p>
                   <p className="text-zinc-400 text-xs leading-relaxed font-semibold">

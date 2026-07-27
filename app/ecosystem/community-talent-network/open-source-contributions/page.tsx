@@ -51,7 +51,7 @@ export default function OpenSourcePage() {
 
   return (
     <main className="relative min-h-screen bg-[#030303] text-white font-sans overflow-x-hidden selection:bg-rose-600 selection:text-white">
-      
+
       {/* 1. HERO SECTION (Using Standard Devopstrio Hero Component) */}
       <Hero
         badge="COMMUNITY & TALENT NETWORK"
@@ -105,7 +105,7 @@ export default function OpenSourcePage() {
               { val: "50+", label: "Countries Represented" }
             ].map((stat, idx) => (
               <div key={idx} className="p-6 rounded-2xl bg-[#0A0A0A] border border-zinc-800/80 text-center hover:border-rose-500/40 transition-colors">
-                <span className="text-3xl md:text-4xl font-extrabold text-white tracking-tight mb-1 block">
+                <span className="text-3xl md:text-4xl font-bold text-white tracking-tight mb-1 block">
                   {stat.val}
                 </span>
                 <span className="text-[10px] font-bold uppercase tracking-wider text-rose-400">
@@ -121,7 +121,7 @@ export default function OpenSourcePage() {
       <section className="py-24 bg-[#030303] border-b border-zinc-900/80">
         <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            
+
             {/* Left Large Engineering Image */}
             <div className="lg:col-span-6 relative">
               <div className="relative rounded-[24px] overflow-hidden border border-zinc-800 shadow-2xl bg-zinc-900 group">
@@ -182,7 +182,7 @@ export default function OpenSourcePage() {
       {/* 3. CONTRIBUTION IMPACT (Large KPI Section) */}
       <section className="py-24 bg-[#030303] border-b border-zinc-900/80">
         <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-8 space-y-12">
-          
+
           <Reveal>
             <div className="text-center max-w-3xl mx-auto space-y-3">
               <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 block">
@@ -224,7 +224,7 @@ export default function OpenSourcePage() {
       {/* 4. FEATURED OPEN SOURCE PROJECTS */}
       <section className="py-24 bg-[#030303] border-b border-zinc-900/80">
         <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-8 space-y-12">
-          
+
           <Reveal>
             <div className="text-center max-w-3xl mx-auto space-y-3">
               <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 block">
@@ -310,7 +310,7 @@ export default function OpenSourcePage() {
       {/* 5. ENGINEERING FRAMEWORKS (Grid) */}
       <section className="py-24 bg-[#030303] border-b border-zinc-900/80">
         <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-8 space-y-12">
-          
+
           <Reveal>
             <div className="text-center max-w-3xl mx-auto space-y-3">
               <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 block">
@@ -343,7 +343,7 @@ export default function OpenSourcePage() {
       {/* 6. GITHUB REPOSITORY SHOWCASE ⭐ (GitHub-Style Cards) */}
       <section className="py-24 bg-[#030303] border-b border-zinc-900/80">
         <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-8 space-y-12">
-          
+
           <Reveal>
             <div className="text-center max-w-3xl mx-auto space-y-3">
               <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 block flex items-center justify-center gap-2">
@@ -478,7 +478,7 @@ export default function OpenSourcePage() {
       {/* 7. TECHNOLOGY CATEGORIES (Colorful Category Cards) */}
       <section className="py-24 bg-[#030303] border-b border-zinc-900/80">
         <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-8 space-y-12">
-          
+
           <Reveal>
             <div className="text-center max-w-3xl mx-auto space-y-3">
               <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 block">
@@ -520,7 +520,7 @@ export default function OpenSourcePage() {
       {/* 8. COMMUNITY CONTRIBUTIONS WORKFLOW (Timeline) */}
       <section className="py-24 bg-[#030303] border-b border-zinc-900/80">
         <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-8 space-y-12">
-          
+
           <Reveal>
             <div className="text-center max-w-3xl mx-auto space-y-3">
               <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 block">
@@ -569,7 +569,7 @@ export default function OpenSourcePage() {
       {/* 9. PROJECT LIFECYCLE (Large Diagram / Steps) */}
       <section className="py-24 bg-[#030303] border-b border-zinc-900/80">
         <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-8 space-y-12">
-          
+
           <Reveal>
             <div className="text-center max-w-3xl mx-auto space-y-3">
               <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 block">
@@ -602,7 +602,7 @@ export default function OpenSourcePage() {
       {/* 10. DEVELOPER CONTRIBUTION GUIDE (Step-by-Step Cards) */}
       <section className="py-24 bg-[#030303] border-b border-zinc-900/80">
         <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-8 space-y-12">
-          
+
           <Reveal>
             <div className="text-center max-w-3xl mx-auto space-y-3">
               <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 block">
@@ -638,7 +638,7 @@ export default function OpenSourcePage() {
       {/* 11. ENGINEERING STANDARDS (Cards Grid) */}
       <section className="py-24 bg-[#030303] border-b border-zinc-900/80">
         <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-8 space-y-12">
-          
+
           <Reveal>
             <div className="text-center max-w-3xl mx-auto space-y-3">
               <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 block">
@@ -671,7 +671,7 @@ export default function OpenSourcePage() {
       {/* 12. LATEST RELEASES (Timeline) */}
       <section className="py-24 bg-[#030303] border-b border-zinc-900/80">
         <div className="max-w-5xl mx-auto px-6 md:px-12 xl:px-8 space-y-12">
-          
+
           <Reveal>
             <div className="text-center space-y-3">
               <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 block">
@@ -707,7 +707,7 @@ export default function OpenSourcePage() {
       {/* 13. PARTNER COMMUNITIES (Logo Wall) */}
       <section className="py-20 bg-[#030303] border-b border-zinc-900/80">
         <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-8 space-y-10">
-          
+
           <div className="text-center space-y-2">
             <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-zinc-400 block">
               ECOSYSTEM FOUNDATIONS & COLLABORATORS
@@ -732,7 +732,7 @@ export default function OpenSourcePage() {
       {/* 14. SUCCESS STORIES */}
       <section className="py-24 bg-[#030303] border-b border-zinc-900/80">
         <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-8 space-y-12">
-          
+
           <Reveal>
             <div className="text-center max-w-3xl mx-auto space-y-3">
               <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 block">
@@ -796,7 +796,7 @@ export default function OpenSourcePage() {
       {/* 15. FAQ SECTION (Matching Accordion Standard) */}
       <section id="faq" className="py-20 md:py-28 bg-[#030303] text-white border-b border-zinc-900/80 relative">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
-          
+
           <Reveal className="max-w-3xl mb-16">
             <div className="flex items-center gap-2 mb-4">
               <span className="text-[10px] font-medium tracking-[0.2em] uppercase text-zinc-400">
@@ -871,11 +871,11 @@ export default function OpenSourcePage() {
                       {isOpen ? <Minus size={16} /> : <Plus size={16} />}
                     </div>
                   </button>
-                  
+
                   {isOpen && (
                     <div className="mt-4 text-xs md:text-sm text-zinc-400 leading-relaxed font-medium max-w-3xl animate-in fade-in duration-200 flex flex-col gap-4">
                       <p>{item.a}</p>
-                      
+
                       {item.proof && (
                         <span className="text-[10px] text-emerald-400 font-semibold tracking-wide font-mono">
                           {item.proof}
@@ -885,7 +885,7 @@ export default function OpenSourcePage() {
                       {item.tags && (
                         <div className="flex flex-wrap gap-2 pt-1">
                           {item.tags.map((tag) => (
-                            <span 
+                            <span
                               key={tag}
                               className="px-2.5 py-1 rounded bg-zinc-900 text-zinc-400 border border-zinc-800 text-[10px] font-mono font-medium tracking-wide"
                             >
@@ -907,7 +907,7 @@ export default function OpenSourcePage() {
               <p className="text-zinc-400 text-xs md:text-sm font-semibold">
                 Have specific questions about repo maintainership or bug bounties? Reach out to our open-source maintainers.
               </p>
-              <button 
+              <button
                 onClick={() => setContributorModalOpen(true)}
                 className="gap-2 inline-flex items-center justify-center px-6 py-3 rounded-lg text-xs font-bold tracking-wider uppercase border border-zinc-800 hover:border-zinc-700 bg-zinc-900 hover:bg-zinc-800 text-white transition-all duration-300 hover:-translate-y-0.5 cursor-pointer flex-shrink-0"
               >
@@ -923,7 +923,7 @@ export default function OpenSourcePage() {
       <section className="py-28 relative overflow-hidden bg-[#030303]">
         <div className="absolute inset-0 bg-radial-glow pointer-events-none" />
         <div className="max-w-5xl mx-auto px-6 text-center space-y-8 relative z-10">
-          <h2 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight">
+          <h2 className="text-4xl md:text-5xl font-bold text-white tracking-tight">
             Build the Future with Open Source
           </h2>
           <p className="text-base text-zinc-300 max-w-2xl mx-auto leading-relaxed font-semibold">

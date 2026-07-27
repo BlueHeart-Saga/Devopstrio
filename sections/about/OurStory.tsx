@@ -196,8 +196,8 @@ export function OurStory() {
                     key={event.year}
                     onClick={() => setActiveIdx(idx)}
                     className={`absolute w-20 h-10 flex items-center justify-center rounded-full transition-all duration-700 focus:outline-none ${isActive
-                        ? "text-[#ebd0be] scale-125 font-black z-20 text-xl md:text-2xl drop-shadow-[0_0_15px_rgba(235,208,190,0.5)]"
-                        : "text-zinc-600 hover:text-[#ebd0be]/70 scale-95 font-medium z-10 text-xs md:text-sm"
+                      ? "text-[#ebd0be] scale-125 font-black z-20 text-xl md:text-2xl drop-shadow-[0_0_15px_rgba(235,208,190,0.5)]"
+                      : "text-zinc-600 hover:text-[#ebd0be]/70 scale-95 font-medium z-10 text-xs md:text-sm"
                       }`}
                     style={{
                       left: `${x}%`,
@@ -230,7 +230,7 @@ export function OurStory() {
                 </span>
 
                 {/* Event Title */}
-                <h4 className="text-2xl md:text-3xl xl:text-4xl font-extrabold text-white mb-4 tracking-tight leading-tight">
+                <h4 className="text-2xl md:text-3xl xl:text-4xl font-bold text-white mb-4 tracking-tight leading-tight">
                   {activeEvent.title}
                 </h4>
 

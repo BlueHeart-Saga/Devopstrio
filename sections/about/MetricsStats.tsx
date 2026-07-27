@@ -61,7 +61,7 @@ export function MetricsStats() {
               className="bg-zinc-950/30 border border-zinc-900 p-6 rounded-none flex flex-col justify-between hover:border-rose-600/30 hover:bg-zinc-950/60 transition-all duration-500 relative group"
             >
               <div>
-                <span className="text-2xl md:text-3xl font-extrabold text-white group-hover:text-rose-500 transition-colors duration-300 font-mono tracking-tight block mb-2">
+                <span className="text-2xl md:text-3xl font-bold text-white group-hover:text-rose-500 transition-colors duration-300 font-mono tracking-tight block mb-2">
                   {item.value}
                 </span>
                 <strong className="text-[10px] font-bold text-zinc-400 group-hover:text-zinc-200 block mb-1.5 uppercase tracking-widest">

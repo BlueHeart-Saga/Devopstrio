@@ -8,7 +8,7 @@ export default function AIDataInnovationServicePage() {
   return (
     <div className="min-h-screen bg-[#050505] text-white pt-24 pb-16">
       <div className="max-w-4xl mx-auto px-6 lg:px-8 space-y-8">
-        
+
         <Link href="/marketing/services" className="inline-flex items-center gap-2 text-xs font-semibold text-rose-500 hover:text-rose-400">
           <ArrowLeft className="w-4 h-4" /> Back to Service Brochures
         </Link>
@@ -21,8 +21,8 @@ export default function AIDataInnovationServicePage() {
             <span className="text-xs text-neutral-400">Updated July 2026</span>
           </div>
 
-          <h1 className="text-3xl sm:text-4xl font-extrabold text-white">AI & Data Innovation Capabilities</h1>
-          
+          <h1 className="text-3xl sm:text-4xl font-bold text-white">AI & Data Innovation Capabilities</h1>
+
           <p className="text-neutral-300 text-sm leading-relaxed">
             Detailed capability sheet covering Devopstrio end-to-end AI offerings: Generative AI, Retrieval-Augmented Generation (RAG), custom LLM fine-tuning, computer vision, vector database implementation, and enterprise MLOps pipelines.
           </p>

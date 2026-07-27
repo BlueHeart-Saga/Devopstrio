@@ -8,7 +8,7 @@ export default function BankingFinanceIndustryPage() {
   return (
     <div className="min-h-screen bg-[#050505] text-white pt-24 pb-16">
       <div className="max-w-4xl mx-auto px-6 lg:px-8 space-y-8">
-        
+
         <Link href="/marketing/industries" className="inline-flex items-center gap-2 text-xs font-semibold text-rose-500 hover:text-rose-400">
           <ArrowLeft className="w-4 h-4" /> Back to Industry Solution Sheets
         </Link>
@@ -21,8 +21,8 @@ export default function BankingFinanceIndustryPage() {
             <span className="text-xs text-neutral-400">Banking & Fintech</span>
           </div>
 
-          <h1 className="text-3xl sm:text-4xl font-extrabold text-white">Banking & Financial Services Solutions</h1>
-          
+          <h1 className="text-3xl sm:text-4xl font-bold text-white">Banking & Financial Services Solutions</h1>
+
           <p className="text-neutral-300 text-sm leading-relaxed">
             Detailed solution guide for tier-1 banks, payment providers, and fintech institutions. Covers core banking cloud migration, zero-downtime microservices transformation, PCI-DSS compliance, and real-time AI transaction risk analysis.
           </p>

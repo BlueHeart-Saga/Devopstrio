@@ -20,7 +20,7 @@ import { ContactForm } from "@/sections/contact/ContactForm";
 
 export default function PrestivoProductPage() {
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
-  
+
 
   const toggleFaq = (index: number) => {
     setOpenFaqIndex(openFaqIndex === index ? null : index);
@@ -56,7 +56,7 @@ export default function PrestivoProductPage() {
       {/* Hero Section */}
       <section className="relative w-full py-20 bg-black border-b border-zinc-900/60 overflow-hidden">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.02),transparent_60%)] pointer-events-none" />
-        
+
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             {/* Left Content */}
@@ -71,7 +71,7 @@ export default function PrestivoProductPage() {
                 <h1 className="text-4xl md:text-6xl font-black text-white mb-4">
                   Prestivo
                 </h1>
-                <p className="text-xl md:text-2xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-indigo-550 mb-6">
+                <p className="text-xl md:text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-indigo-550 mb-6">
                   Learning Management Platform
                 </p>
               </Reveal>
@@ -129,7 +129,7 @@ export default function PrestivoProductPage() {
               <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-blue-500 mb-3 block">
                 THE CHALLENGE
               </span>
-              <h2 className="text-2xl md:text-3xl font-extrabold text-white mb-6">
+              <h2 className="text-2xl md:text-3xl font-bold text-white mb-6">
                 Fragmented Education Workspaces
               </h2>
               <p className="text-zinc-400 text-xs md:text-sm font-bold leading-relaxed">
@@ -140,7 +140,7 @@ export default function PrestivoProductPage() {
               <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-blue-500 mb-3 block">
                 THE SOLUTION
               </span>
-              <h2 className="text-2xl md:text-3xl font-extrabold text-white mb-6">
+              <h2 className="text-2xl md:text-3xl font-bold text-white mb-6">
                 Unified Learning Management
               </h2>
               <p className="text-zinc-455 text-xs md:text-sm font-bold leading-relaxed">
@@ -158,11 +158,11 @@ export default function PrestivoProductPage() {
             <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-blue-500 mb-3 block">
               CAPABILITIES
             </span>
-            <h2 className="text-2xl md:text-4xl font-extrabold text-white">
+            <h2 className="text-2xl md:text-4xl font-bold text-white">
               Platform Features
             </h2>
           </Reveal>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {features.map((feat, idx) => (
               <div key={idx} className="p-8 bg-zinc-950/40 border border-zinc-900 hover:border-blue-500/10 rounded-3xl transition-colors duration-300">
@@ -186,11 +186,11 @@ export default function PrestivoProductPage() {
             <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-blue-500 mb-3 block">
               SECTOR FIT
             </span>
-            <h2 className="text-2xl md:text-3xl font-extrabold text-white">
+            <h2 className="text-2xl md:text-3xl font-bold text-white">
               Industry Use Cases
             </h2>
           </Reveal>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {useCases.map((uc, idx) => (
               <div key={idx} className="p-8 bg-zinc-950/40 border border-zinc-900 rounded-3xl hover:border-blue-500/10 transition-colors">
@@ -210,7 +210,7 @@ export default function PrestivoProductPage() {
               <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-blue-500 mb-3 block">
                 INTEGRATED STACK
               </span>
-              <h2 className="text-2xl md:text-3xl font-extrabold text-white mb-6">
+              <h2 className="text-2xl md:text-3xl font-bold text-white mb-6">
                 Connected Systems
               </h2>
               <p className="text-zinc-400 text-xs md:text-sm font-bold leading-relaxed mb-8">
@@ -228,7 +228,7 @@ export default function PrestivoProductPage() {
               <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-blue-500 mb-3 block">
                 SECURITY & PRIVACY
               </span>
-              <h2 className="text-2xl md:text-3xl font-extrabold text-white mb-6">
+              <h2 className="text-2xl md:text-3xl font-bold text-white mb-6">
                 COPPA & FERPA Compliant
               </h2>
               <p className="text-zinc-455 text-xs md:text-sm font-bold leading-relaxed">
@@ -245,7 +245,7 @@ export default function PrestivoProductPage() {
           <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-blue-500 mb-3 block">
             PRICING MODEL
           </span>
-          <h2 className="text-2xl md:text-4xl font-extrabold text-white mb-6">
+          <h2 className="text-2xl md:text-4xl font-bold text-white mb-6">
             Bespoke Enterprise Pricing
           </h2>
           <p className="text-zinc-400 text-xs md:text-sm font-bold mb-12 max-w-md mx-auto">
@@ -256,7 +256,7 @@ export default function PrestivoProductPage() {
             <p className="text-xs md:text-sm text-zinc-300 italic mb-4 font-medium">
               &quot;Prestivo transformed our lesson workflows. We centralized module planning, task logs, and course certificates generation onto one responsive system.&quot;
             </p>
-            <div className="text-xs font-extrabold text-white font-mono">— Dean of Digital Curriculum, Regional Academy</div>
+            <div className="text-xs font-bold text-white font-mono">— Dean of Digital Curriculum, Regional Academy</div>
           </div>
         </div>
       </section>
@@ -268,11 +268,11 @@ export default function PrestivoProductPage() {
             <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-zinc-400 mb-3 block">
               QUESTIONS & ANSWERS
             </span>
-            <h2 className="text-2xl md:text-3xl font-extrabold text-white">
+            <h2 className="text-2xl md:text-3xl font-bold text-white">
               Frequently Asked Questions
             </h2>
           </Reveal>
-          
+
           <div className="flex flex-col border-t border-zinc-900">
             {faqs.map((faq, idx) => {
               const isOpen = openFaqIndex === idx;

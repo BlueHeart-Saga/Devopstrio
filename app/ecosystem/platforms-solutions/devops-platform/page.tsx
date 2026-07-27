@@ -150,9 +150,9 @@ export default function DevOpsPlatformPage() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-rose-500/5 blur-[120px] rounded-full pointer-events-none" />
 
         <div className="max-w-7xl mx-auto w-full px-6 xl:px-8 relative z-10">
-          
+
           <div className="flex flex-col items-center justify-center text-center">
-            
+
             {/* Top Badge */}
             <Reveal>
               <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-zinc-900/50 border border-zinc-800 mb-12 shadow-lg">
@@ -165,10 +165,10 @@ export default function DevOpsPlatformPage() {
             <Reveal delay={0.1}>
               <div className="flex justify-center items-end -space-x-4 mb-10 relative z-10">
                 {[
-                  "https://i.pravatar.cc/150?img=11", 
-                  "https://i.pravatar.cc/150?img=32", 
-                  "https://i.pravatar.cc/150?img=68", 
-                  "https://i.pravatar.cc/150?img=47", 
+                  "https://i.pravatar.cc/150?img=11",
+                  "https://i.pravatar.cc/150?img=32",
+                  "https://i.pravatar.cc/150?img=68",
+                  "https://i.pravatar.cc/150?img=47",
                   "https://i.pravatar.cc/150?img=59"
                 ].map((src, i) => (
                   <div key={i} className={`rounded-full border-4 border-[#030303] bg-zinc-800 flex items-center justify-center overflow-hidden shadow-2xl transition-transform hover:-translate-y-2 duration-300
@@ -187,7 +187,7 @@ export default function DevOpsPlatformPage() {
               <p className="max-w-2xl mx-auto text-zinc-400 text-lg md:text-xl leading-relaxed mb-10">
                 Devopstrio empowers 5,000+ engineering teams to <span className="text-rose-400 font-semibold">reduce cognitive load</span>, deploy <span className="text-rose-400 font-semibold">repository templates</span>, and configure environments — <span className="text-rose-400 font-semibold">without manual tickets</span>.
               </p>
-              
+
               <Link href="/contact" className="inline-flex items-center justify-center px-8 py-4 bg-rose-600 hover:bg-rose-500 text-white font-bold rounded-lg transition-colors shadow-[0_0_20px_rgba(52,211,153,0.2)]">
                 Request a demo
               </Link>
@@ -203,7 +203,7 @@ export default function DevOpsPlatformPage() {
                 <div className="flex items-center gap-3">
                   <div className="text-zinc-300 font-bold">4.8 <span className="text-zinc-500 font-normal text-sm">on Capterra</span></div>
                   <div className="w-6 h-6 rounded bg-zinc-900 border border-zinc-800 flex items-center justify-center text-xs text-white">
-                    <svg className="w-3 h-3 fill-current" viewBox="0 0 24 24"><path d="M12 2L2 22h20L12 2zm0 4.5l6.5 13h-13L12 6.5z"/></svg>
+                    <svg className="w-3 h-3 fill-current" viewBox="0 0 24 24"><path d="M12 2L2 22h20L12 2zm0 4.5l6.5 13h-13L12 6.5z" /></svg>
                   </div>
                 </div>
               </div>
@@ -263,13 +263,13 @@ export default function DevOpsPlatformPage() {
             <div className="mt-32 border-t border-zinc-900/50 pt-12 pb-6">
               <p className="text-center text-[10px] font-bold tracking-widest text-zinc-600 uppercase mb-8">Powering the World's Best Engineering Teams</p>
               <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-50 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-700">
-                <span className="text-lg md:text-xl font-bold text-zinc-300 flex items-center gap-2"><Globe className="w-6 h-6"/> Webflow</span>
-                <span className="text-lg md:text-xl font-bold text-zinc-300 flex items-center gap-2"><Terminal className="w-6 h-6"/> Discord</span>
+                <span className="text-lg md:text-xl font-bold text-zinc-300 flex items-center gap-2"><Globe className="w-6 h-6" /> Webflow</span>
+                <span className="text-lg md:text-xl font-bold text-zinc-300 flex items-center gap-2"><Terminal className="w-6 h-6" /> Discord</span>
                 <span className="text-lg md:text-xl font-bold text-zinc-300 flex items-center gap-2"><span className="text-2xl text-rose-500 tracking-tighter">duolingo</span></span>
-                <span className="text-lg md:text-xl font-bold text-zinc-300 flex items-center gap-2"><Cpu className="w-6 h-6"/> asana</span>
+                <span className="text-lg md:text-xl font-bold text-zinc-300 flex items-center gap-2"><Cpu className="w-6 h-6" /> asana</span>
                 <span className="text-lg md:text-xl font-bold text-zinc-300 flex items-center gap-2 font-serif">LinkedIn</span>
                 <span className="text-lg md:text-xl font-bold text-zinc-300 flex items-center gap-2">indeed</span>
-                <span className="text-lg md:text-xl font-bold text-zinc-300 flex items-center gap-2"><Workflow className="w-6 h-6"/> zoom</span>
+                <span className="text-lg md:text-xl font-bold text-zinc-300 flex items-center gap-2"><Workflow className="w-6 h-6" /> zoom</span>
               </div>
             </div>
           </Reveal>
@@ -284,11 +284,11 @@ export default function DevOpsPlatformPage() {
         <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.03),transparent_70%)] blur-3xl pointer-events-none" />
 
         <div className="max-w-7xl mx-auto w-full px-6 xl:px-8 relative z-10">
-          
+
           <div className="text-center max-w-3xl mx-auto mb-20">
             <Reveal>
               <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">PIPELINE RUNNERS</span>
-              <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-white mb-6">
+              <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-white mb-6">
                 CI/CD <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-400 to-rose-500">Pipelines</span>
               </h2>
               <p className="text-zinc-400 text-lg leading-relaxed">
@@ -300,12 +300,12 @@ export default function DevOpsPlatformPage() {
           {/* Flowchart Diagram */}
           <div className="w-full overflow-x-auto pb-12 pt-8 hide-scrollbar">
             <div className="min-w-[900px] max-w-5xl mx-auto flex flex-col items-center gap-16 relative">
-              
+
               {/* Row 1: Continuous Integration */}
               <div className="w-full relative mt-4">
                 {/* Connecting Line */}
                 <div className="absolute top-1/2 left-16 right-16 h-0.5 bg-gradient-to-r from-rose-500/20 to-rose-500/50 border-t-2 border-dashed border-rose-500/50 -z-10" />
-                
+
                 <h3 className="absolute -top-12 left-1/2 -translate-x-1/2 text-rose-400 font-bold tracking-widest uppercase text-sm bg-[#050505] px-4">Continuous Integration</h3>
 
                 <div className="flex justify-between items-center w-full">
@@ -336,7 +336,7 @@ export default function DevOpsPlatformPage() {
                   ))}
                 </div>
               </div>
-              
+
               <div className="w-12 h-12 rounded-full border-2 border-dashed border-zinc-700 flex items-center justify-center text-zinc-500 bg-[#050505] z-10">
                 <ArrowDown className="w-5 h-5" />
               </div>
@@ -344,7 +344,7 @@ export default function DevOpsPlatformPage() {
               {/* Row 2: Continuous Delivery */}
               <div className="w-full relative mt-4">
                 <div className="absolute top-1/2 left-16 right-16 h-0.5 bg-gradient-to-r from-rose-500/20 to-rose-500/50 border-t-2 border-dashed border-rose-500/50 -z-10" />
-                
+
                 <h3 className="absolute -top-12 left-1/2 -translate-x-1/2 text-rose-400 font-bold tracking-widest uppercase text-sm bg-[#050505] px-4">Continuous Delivery</h3>
 
                 <div className="flex justify-between items-center w-full">
@@ -398,7 +398,7 @@ export default function DevOpsPlatformPage() {
       {/* TOOLCHAIN INTEGRATION (Data Ingestion Grid) */}
       <section className="w-full py-24 bg-black border-b border-zinc-900/60 relative overflow-hidden">
         <div className="max-w-7xl mx-auto w-full px-6 xl:px-8 relative z-10 flex flex-col items-center">
-          
+
           <div className="bg-[#050505] border border-zinc-800/80 rounded-[2rem] p-8 md:p-16 shadow-2xl relative overflow-hidden w-full max-w-4xl">
             {/* Background Grid Pattern */}
             <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-[0.03] mix-blend-overlay pointer-events-none" />
@@ -442,11 +442,11 @@ export default function DevOpsPlatformPage() {
                 <div className="bg-[#0a0a0a]/90 backdrop-blur-md border border-zinc-700/80 rounded-2xl p-4 flex flex-col items-center gap-4 relative z-20 shadow-[0_0_50px_rgba(168,85,247,0.15)]">
                   {/* Small mini icons inside destination */}
                   <div className="flex items-center gap-3 opacity-50">
-                     <img src="/assets/Tech_logos/AWS.svg" className="w-4 h-4 md:w-5 md:h-5 object-contain grayscale" alt="AWS" />
-                     <img src="/assets/Tech_logos/GitHub.svg" className="w-4 h-4 md:w-5 md:h-5 object-contain grayscale" alt="GitHub" />
-                     <img src="/assets/Tech_logos/Docker.svg" className="w-4 h-4 md:w-5 md:h-5 object-contain grayscale" alt="Docker" />
-                     <img src="/assets/Tech_logos/Datadog.svg" className="w-4 h-4 md:w-5 md:h-5 object-contain grayscale" alt="Datadog" />
-                     <img src="/assets/Tech_logos/Service_now.svg" className="w-4 h-4 md:w-5 md:h-5 object-contain grayscale" alt="ServiceNow" />
+                    <img src="/assets/Tech_logos/AWS.svg" className="w-4 h-4 md:w-5 md:h-5 object-contain grayscale" alt="AWS" />
+                    <img src="/assets/Tech_logos/GitHub.svg" className="w-4 h-4 md:w-5 md:h-5 object-contain grayscale" alt="GitHub" />
+                    <img src="/assets/Tech_logos/Docker.svg" className="w-4 h-4 md:w-5 md:h-5 object-contain grayscale" alt="Docker" />
+                    <img src="/assets/Tech_logos/Datadog.svg" className="w-4 h-4 md:w-5 md:h-5 object-contain grayscale" alt="Datadog" />
+                    <img src="/assets/Tech_logos/Service_now.svg" className="w-4 h-4 md:w-5 md:h-5 object-contain grayscale" alt="ServiceNow" />
                   </div>
                   <div className="w-full flex items-center gap-4 bg-zinc-900/80 p-3 rounded-[1rem] border border-zinc-800">
                     <div className="w-12 h-12 rounded-xl bg-rose-600 flex items-center justify-center shrink-0 shadow-[0_0_20px_rgba(168,85,247,0.4)]">
@@ -467,9 +467,9 @@ export default function DevOpsPlatformPage() {
       <section className="w-full py-32 bg-[#030303] border-b border-zinc-900/60 relative overflow-hidden">
         {/* Ambient background */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[radial-gradient(circle_at_center,rgba(225,29,72,0.03),transparent_60%)] blur-3xl pointer-events-none" />
-        
+
         <div className="max-w-7xl mx-auto w-full px-6 xl:px-8 relative z-10">
-          
+
           <div className="text-center max-w-3xl mx-auto mb-20">
             <Reveal>
               <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">PLATFORM ECOSYSTEM</span>
@@ -481,13 +481,13 @@ export default function DevOpsPlatformPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 relative">
-            
+
             {/* Card 1: Developer Tools */}
             <Reveal delay={0.1}>
               <div className="group relative w-full p-8 md:p-12 bg-[#0a0a0a] rounded-[24px] border border-zinc-800/80 hover:border-rose-500/40 transition-all duration-500 overflow-hidden h-full flex flex-col justify-between shadow-[0_0_0_rgba(0,0,0,0)] hover:shadow-[0_20px_40px_rgba(225,29,72,0.05)]">
                 <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-[0.03] mix-blend-overlay pointer-events-none" />
                 <div className="absolute top-0 right-0 w-64 h-64 bg-[radial-gradient(circle_at_top_right,rgba(225,29,72,0.08),transparent_70%)] rounded-full blur-[40px] group-hover:opacity-100 opacity-50 transition-opacity duration-500" />
-                
+
                 <div className="relative z-10">
                   <div className="w-14 h-14 rounded-[14px] bg-zinc-950 border border-zinc-800 flex items-center justify-center mb-8 group-hover:scale-110 group-hover:border-rose-500/40 group-hover:bg-rose-500/5 transition-all duration-500 shadow-xl">
                     <Terminal className="w-6 h-6 text-rose-500" />
@@ -505,7 +505,7 @@ export default function DevOpsPlatformPage() {
               <div className="group relative w-full p-8 md:p-12 bg-[#0a0a0a] rounded-[24px] border border-zinc-800/80 hover:border-rose-500/40 transition-all duration-500 overflow-hidden h-full flex flex-col justify-between shadow-[0_0_0_rgba(0,0,0,0)] hover:shadow-[0_20px_40px_rgba(225,29,72,0.05)]">
                 <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-[0.03] mix-blend-overlay pointer-events-none" />
                 <div className="absolute top-0 left-0 w-64 h-64 bg-[radial-gradient(circle_at_top_left,rgba(225,29,72,0.08),transparent_70%)] rounded-full blur-[40px] group-hover:opacity-100 opacity-50 transition-opacity duration-500" />
-                
+
                 <div className="relative z-10">
                   <div className="w-14 h-14 rounded-[14px] bg-zinc-950 border border-zinc-800 flex items-center justify-center mb-8 group-hover:scale-110 group-hover:border-rose-500/40 group-hover:bg-rose-500/5 transition-all duration-500 shadow-xl">
                     <Workflow className="w-6 h-6 text-rose-500" />
@@ -523,7 +523,7 @@ export default function DevOpsPlatformPage() {
               <div className="group relative w-full p-8 md:p-12 bg-[#0a0a0a] rounded-[24px] border border-zinc-800/80 hover:border-rose-500/40 transition-all duration-500 overflow-hidden h-full flex flex-col justify-between shadow-[0_0_0_rgba(0,0,0,0)] hover:shadow-[0_20px_40px_rgba(225,29,72,0.05)]">
                 <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-[0.03] mix-blend-overlay pointer-events-none" />
                 <div className="absolute bottom-0 right-0 w-64 h-64 bg-[radial-gradient(circle_at_bottom_right,rgba(225,29,72,0.08),transparent_70%)] rounded-full blur-[40px] group-hover:opacity-100 opacity-50 transition-opacity duration-500" />
-                
+
                 <div className="relative z-10">
                   <div className="w-14 h-14 rounded-[14px] bg-zinc-950 border border-zinc-800 flex items-center justify-center mb-8 group-hover:scale-110 group-hover:border-rose-500/40 group-hover:bg-rose-500/5 transition-all duration-500 shadow-xl">
                     <Cloud className="w-6 h-6 text-rose-500" />
@@ -541,7 +541,7 @@ export default function DevOpsPlatformPage() {
               <div className="group relative w-full p-8 md:p-12 bg-[#0a0a0a] rounded-[24px] border border-zinc-800/80 hover:border-rose-500/40 transition-all duration-500 overflow-hidden h-full flex flex-col justify-between shadow-[0_0_0_rgba(0,0,0,0)] hover:shadow-[0_20px_40px_rgba(225,29,72,0.05)]">
                 <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-[0.03] mix-blend-overlay pointer-events-none" />
                 <div className="absolute bottom-0 left-0 w-64 h-64 bg-[radial-gradient(circle_at_bottom_left,rgba(225,29,72,0.08),transparent_70%)] rounded-full blur-[40px] group-hover:opacity-100 opacity-50 transition-opacity duration-500" />
-                
+
                 <div className="relative z-10">
                   <div className="w-14 h-14 rounded-[14px] bg-zinc-950 border border-zinc-800 flex items-center justify-center mb-8 group-hover:scale-110 group-hover:border-rose-500/40 group-hover:bg-rose-500/5 transition-all duration-500 shadow-xl">
                     <Activity className="w-6 h-6 text-rose-500" />
@@ -565,7 +565,7 @@ export default function DevOpsPlatformPage() {
         <div className="absolute inset-0" style={{ backgroundImage: 'radial-gradient(#3f3f46 1px, transparent 1px)', backgroundSize: '32px 32px', opacity: 0.15 }} />
 
         <div className="max-w-7xl mx-auto w-full px-6 xl:px-8 relative z-10 flex flex-col items-center">
-          
+
           {/* Header */}
           <Reveal className="mb-20 text-center flex flex-col items-center">
             <h2 className="text-xl md:text-2xl xl:text-3xl font-bold text-white mb-6 tracking-tight">Unified Observability Orchestration</h2>
@@ -576,7 +576,7 @@ export default function DevOpsPlatformPage() {
 
           {/* Flow Diagram */}
           <div className="relative w-full max-w-4xl flex flex-col items-center pb-8 mt-4 mx-auto">
-            
+
             {/* Top Nodes */}
             <div className="flex justify-between w-full max-w-3xl relative z-20 px-4 md:px-0">
               {[
@@ -605,7 +605,7 @@ export default function DevOpsPlatformPage() {
                 <path d="M 59 0 C 59 80, 50 60, 50 100" stroke="url(#roseGradient)" strokeWidth="0.4" fill="none" className="opacity-70" />
                 <path d="M 77 0 C 77 70, 50 50, 50 100" stroke="url(#roseGradient)" strokeWidth="0.4" fill="none" className="opacity-70" />
                 <path d="M 95 0 C 95 60, 50 40, 50 100" stroke="url(#roseGradient)" strokeWidth="0.4" fill="none" className="opacity-70" />
-                
+
                 <defs>
                   <linearGradient id="roseGradient" x1="0%" y1="0%" x2="0%" y2="100%">
                     <stop offset="0%" stopColor="#3f3f46" stopOpacity="0.4" />
@@ -619,14 +619,14 @@ export default function DevOpsPlatformPage() {
             {/* Central Hub (Checkerboard) */}
             <Reveal delay={0.6} className="relative z-20 -mt-8 md:-mt-12">
               <div className="w-[68px] h-[68px] md:w-[88px] md:h-[88px] rounded-[1.2rem] bg-[#0a0a0a] border border-rose-500/40 shadow-[0_0_40px_rgba(244,63,94,0.4)] flex items-center justify-center p-1.5 md:p-2 relative group cursor-pointer overflow-hidden">
-                 {/* Internal magenta checkerboard effect */}
-                 <div className="w-full h-full rounded-[0.8rem] bg-[#050505] flex flex-wrap content-center justify-center gap-[2px] md:gap-[3px] p-2 relative z-10 group-hover:scale-105 transition-transform duration-500">
-                   {Array.from({ length: 9 }).map((_, i) => (
-                     <div key={i} className={`w-[12px] h-[12px] md:w-[18px] md:h-[18px] rounded-[3px] ${i % 2 === 0 ? 'bg-rose-500' : 'bg-rose-950/30 group-hover:bg-rose-900/40'} transition-colors duration-500`} />
-                   ))}
-                 </div>
-                 {/* Hover Glow Behind Checkerboard */}
-                 <div className="absolute inset-0 bg-rose-500/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                {/* Internal magenta checkerboard effect */}
+                <div className="w-full h-full rounded-[0.8rem] bg-[#050505] flex flex-wrap content-center justify-center gap-[2px] md:gap-[3px] p-2 relative z-10 group-hover:scale-105 transition-transform duration-500">
+                  {Array.from({ length: 9 }).map((_, i) => (
+                    <div key={i} className={`w-[12px] h-[12px] md:w-[18px] md:h-[18px] rounded-[3px] ${i % 2 === 0 ? 'bg-rose-500' : 'bg-rose-950/30 group-hover:bg-rose-900/40'} transition-colors duration-500`} />
+                  ))}
+                </div>
+                {/* Hover Glow Behind Checkerboard */}
+                <div className="absolute inset-0 bg-rose-500/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               </div>
             </Reveal>
 
@@ -634,32 +634,32 @@ export default function DevOpsPlatformPage() {
 
           {/* Original Features Below */}
           <div className="w-full max-w-6xl mx-auto mt-20 pt-16 border-t border-zinc-900/80">
-             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-                {obsFeatures.map((feat, idx) => (
-                  <Reveal key={idx} delay={idx * 0.1}>
-                    <div className="relative rounded-[24px] border border-zinc-800/80 bg-[#0A0A0A] p-6 md:p-8 flex flex-col group min-h-[220px] shadow-lg overflow-hidden transition-all duration-500 hover:border-zinc-700/80 hover:shadow-[0_15px_30px_rgba(225,29,72,0.08)]">
-                      
-                      {/* Expanding Hover Layer with Glassmorphism */}
-                      <div className="absolute inset-0 z-0 [clip-path:circle(0%_at_100%_100%)] group-hover:[clip-path:circle(150%_at_100%_100%)] transition-all duration-700 ease-in-out pointer-events-none">
-                        <div className="absolute inset-0 bg-gradient-to-tl from-rose-600/20 via-rose-900/10 to-transparent" />
-                        <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-[0.05] mix-blend-overlay" />
-                        <div className="absolute inset-0 bg-black/20 backdrop-blur-[2px]" />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent border border-white/5 rounded-[24px]" />
-                      </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+              {obsFeatures.map((feat, idx) => (
+                <Reveal key={idx} delay={idx * 0.1}>
+                  <div className="relative rounded-[24px] border border-zinc-800/80 bg-[#0A0A0A] p-6 md:p-8 flex flex-col group min-h-[220px] shadow-lg overflow-hidden transition-all duration-500 hover:border-zinc-700/80 hover:shadow-[0_15px_30px_rgba(225,29,72,0.08)]">
 
-                      {/* Content Layer */}
-                      <div className="relative z-10 flex flex-col h-full">
-                        <div className="w-12 h-12 rounded-[14px] bg-zinc-950 border border-zinc-800 flex items-center justify-center shrink-0 mb-6 group-hover:bg-rose-500/20 group-hover:border-rose-500/40 group-hover:-translate-y-1 transition-all duration-500 shadow-xl">
-                          <Activity className="w-5 h-5 text-rose-500" />
-                        </div>
-                        <p className="text-[15px] md:text-base text-zinc-300 font-semibold leading-relaxed group-hover:text-white transition-colors duration-500 mt-auto">
-                          {feat}
-                        </p>
-                      </div>
+                    {/* Expanding Hover Layer with Glassmorphism */}
+                    <div className="absolute inset-0 z-0 [clip-path:circle(0%_at_100%_100%)] group-hover:[clip-path:circle(150%_at_100%_100%)] transition-all duration-700 ease-in-out pointer-events-none">
+                      <div className="absolute inset-0 bg-gradient-to-tl from-rose-600/20 via-rose-900/10 to-transparent" />
+                      <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-[0.05] mix-blend-overlay" />
+                      <div className="absolute inset-0 bg-black/20 backdrop-blur-[2px]" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent border border-white/5 rounded-[24px]" />
                     </div>
-                  </Reveal>
-                ))}
-             </div>
+
+                    {/* Content Layer */}
+                    <div className="relative z-10 flex flex-col h-full">
+                      <div className="w-12 h-12 rounded-[14px] bg-zinc-950 border border-zinc-800 flex items-center justify-center shrink-0 mb-6 group-hover:bg-rose-500/20 group-hover:border-rose-500/40 group-hover:-translate-y-1 transition-all duration-500 shadow-xl">
+                        <Activity className="w-5 h-5 text-rose-500" />
+                      </div>
+                      <p className="text-[15px] md:text-base text-zinc-300 font-semibold leading-relaxed group-hover:text-white transition-colors duration-500 mt-auto">
+                        {feat}
+                      </p>
+                    </div>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
           </div>
 
         </div>
@@ -671,10 +671,10 @@ export default function DevOpsPlatformPage() {
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808007_1px,transparent_1px),linear-gradient(to_bottom,#80808007_1px,transparent_1px)] bg-[size:36px_36px]" />
         {/* Ambient background glows */}
         <div className="absolute -left-40 bottom-1/4 w-[500px] h-[500px] rounded-full bg-rose-500/5 blur-[120px] pointer-events-none" />
-        
+
         <div className="max-w-7xl mx-auto w-full px-6 xl:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-            
+
             <div className="lg:col-span-5 relative z-20">
               <Reveal>
                 <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">GOVERNANCE & SEC</span>
@@ -682,7 +682,7 @@ export default function DevOpsPlatformPage() {
                 <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
                   Inject policy verification templates, manage configuration values inside vault boundaries, and audit pipeline steps automatically across the entire software supply chain.
                 </p>
-                
+
                 <div className="mt-10 flex items-center gap-4">
                   <div className="flex -space-x-3">
                     {['bg-zinc-800', 'bg-zinc-700', 'bg-zinc-600'].map((bg, i) => (
@@ -700,17 +700,17 @@ export default function DevOpsPlatformPage() {
               {secFeatures.map((feat, idx) => (
                 <Reveal key={idx} delay={idx * 0.1}>
                   <div className="group relative w-full h-[260px] rounded-[1.5rem] overflow-hidden border border-zinc-900 bg-[#0A0A0C] hover:border-rose-500/40 hover:shadow-[0_20px_40px_rgba(225,29,72,0.08)] select-none transition-all duration-500 hover:-translate-y-1">
-                    
+
                     {/* Noise & Glow */}
                     <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-[0.03] mix-blend-overlay pointer-events-none" />
                     <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(225,29,72,0.06),transparent_60%)] pointer-events-none opacity-40 group-hover:opacity-100 transition-opacity duration-500 z-0" />
-                    
+
                     {/* Premium Glassic Blur Overlay on Hover (Sweeps from bottom-right) */}
                     <div className="absolute inset-0 bg-black/40 backdrop-blur-[4px] transition-all duration-700 ease-in-out z-10 pointer-events-none [clip-path:circle(0%_at_100%_100%)] group-hover:[clip-path:circle(150%_at_100%_100%)]" />
 
                     {/* Content Container */}
                     <div className="absolute inset-0 p-6 flex flex-col justify-between z-20">
-                      
+
                       {/* Top Row: Icon */}
                       <div className="flex justify-start items-center transform transition-transform duration-500 group-hover:-translate-y-1">
                         <div className="w-12 h-12 rounded-[14px] border border-zinc-800 bg-zinc-950 flex items-center justify-center group-hover:bg-rose-500/10 group-hover:border-rose-500/30 transition-colors duration-500 shadow-lg">
@@ -723,7 +723,7 @@ export default function DevOpsPlatformPage() {
                         <p className="text-white text-[15px] font-bold leading-relaxed mb-1 transition-colors duration-300">
                           {feat}
                         </p>
-                        
+
                         {/* Hidden Pill - slides up and fades in on hover */}
                         <div className="max-h-0 opacity-0 overflow-hidden group-hover:max-h-12 group-hover:opacity-100 transition-all duration-500 ease-in-out mt-3">
                           <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md border border-rose-500/30 bg-rose-500/10 text-rose-500 text-[10px] font-mono tracking-widest uppercase shadow-sm">
@@ -738,7 +738,7 @@ export default function DevOpsPlatformPage() {
                 </Reveal>
               ))}
             </div>
-            
+
           </div>
         </div>
       </section>
@@ -758,9 +758,9 @@ export default function DevOpsPlatformPage() {
           <div className="relative w-full max-w-5xl mx-auto py-8 px-4 md:px-0">
             {/* Center Backbone Timeline */}
             <div className="absolute left-8 md:left-1/2 md:-translate-x-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-rose-500 via-rose-500 to-rose-500 rounded-full opacity-40 shadow-[0_0_20px_rgba(168,85,247,0.5)] z-0" />
-            
+
             <div className="flex flex-col gap-16 md:gap-24 relative z-10">
-              
+
               {/* Layer 1: Developers */}
               <Reveal delay={0.1}>
                 <div className="relative flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-0 group">
@@ -796,9 +796,9 @@ export default function DevOpsPlatformPage() {
                   </div>
                   <div className="hidden md:flex w-1/2 pr-16 justify-end items-center">
                     <div className="flex gap-2">
-                        {['Catalog', 'Templates', 'TechDocs'].map(t => (
-                          <span key={t} className="px-3 py-1.5 bg-rose-500/10 border border-rose-500/20 text-rose-400 rounded-lg text-xs font-medium group-hover:bg-rose-500/20 transition-colors">{t}</span>
-                        ))}
+                      {['Catalog', 'Templates', 'TechDocs'].map(t => (
+                        <span key={t} className="px-3 py-1.5 bg-rose-500/10 border border-rose-500/20 text-rose-400 rounded-lg text-xs font-medium group-hover:bg-rose-500/20 transition-colors">{t}</span>
+                      ))}
                     </div>
                   </div>
                 </div>
@@ -817,8 +817,8 @@ export default function DevOpsPlatformPage() {
                   </div>
                   <div className="hidden md:flex w-1/2 pl-16 items-center">
                     <div className="px-5 py-3 rounded-xl bg-rose-500/10 border border-rose-500/20 flex items-center gap-3 group-hover:bg-rose-500/20 transition-colors">
-                        <CheckCircle2 className="w-5 h-5 text-rose-400" />
-                        <span className="text-sm text-zinc-200 font-medium">Build passing (1m 24s)</span>
+                      <CheckCircle2 className="w-5 h-5 text-rose-400" />
+                      <span className="text-sm text-zinc-200 font-medium">Build passing (1m 24s)</span>
                     </div>
                   </div>
                 </div>
@@ -837,10 +837,10 @@ export default function DevOpsPlatformPage() {
                   </div>
                   <div className="hidden md:flex w-1/2 pr-16 justify-end items-center">
                     <div className="flex flex-col gap-2.5 w-48 bg-zinc-950/80 p-4 rounded-xl border border-zinc-800 group-hover:border-rose-500/30 transition-colors">
-                        <div className="flex items-center justify-between text-[10px] font-mono text-zinc-500 mb-1"><span>CLUSTER-01</span><span className="text-rose-500">SYNCED</span></div>
-                        <div className="h-1.5 w-full bg-rose-500/10 rounded-full overflow-hidden"><div className="h-full bg-rose-500 w-full opacity-70 group-hover:animate-pulse" /></div>
-                        <div className="h-1.5 w-full bg-rose-500/10 rounded-full overflow-hidden"><div className="h-full bg-rose-500 w-[80%] opacity-70 group-hover:animate-pulse" /></div>
-                        <div className="h-1.5 w-full bg-rose-500/10 rounded-full overflow-hidden"><div className="h-full bg-rose-500 w-[95%] opacity-70 group-hover:animate-pulse" /></div>
+                      <div className="flex items-center justify-between text-[10px] font-mono text-zinc-500 mb-1"><span>CLUSTER-01</span><span className="text-rose-500">SYNCED</span></div>
+                      <div className="h-1.5 w-full bg-rose-500/10 rounded-full overflow-hidden"><div className="h-full bg-rose-500 w-full opacity-70 group-hover:animate-pulse" /></div>
+                      <div className="h-1.5 w-full bg-rose-500/10 rounded-full overflow-hidden"><div className="h-full bg-rose-500 w-[80%] opacity-70 group-hover:animate-pulse" /></div>
+                      <div className="h-1.5 w-full bg-rose-500/10 rounded-full overflow-hidden"><div className="h-full bg-rose-500 w-[95%] opacity-70 group-hover:animate-pulse" /></div>
                     </div>
                   </div>
                 </div>
@@ -859,9 +859,9 @@ export default function DevOpsPlatformPage() {
                   </div>
                   <div className="hidden md:flex w-1/2 pl-16 items-center">
                     <div className="flex gap-4 opacity-50 grayscale group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500 bg-zinc-950 border border-zinc-900 p-3 rounded-2xl">
-                        <img src="/assets/Tech_logos/AWS.svg" className="w-8 h-8 object-contain" alt="AWS" />
-                        <img src="/assets/Tech_logos/Microsoft Azure.svg" className="w-8 h-8 object-contain" alt="Azure" />
-                        <img src="/assets/Tech_logos/Google_Cloud.svg" className="w-8 h-8 object-contain" alt="GCP" />
+                      <img src="/assets/Tech_logos/AWS.svg" className="w-8 h-8 object-contain" alt="AWS" />
+                      <img src="/assets/Tech_logos/Microsoft Azure.svg" className="w-8 h-8 object-contain" alt="Azure" />
+                      <img src="/assets/Tech_logos/Google_Cloud.svg" className="w-8 h-8 object-contain" alt="GCP" />
                     </div>
                   </div>
                 </div>

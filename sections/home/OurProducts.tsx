@@ -8,6 +8,16 @@ import Link from "next/link";
 
 const products = [
   {
+    name: "Devopstrio AI Studio",
+    category: "Artificial Intelligence · Enterprise AI Workspace",
+    desc: "Enterprise AI workspace for Chat, Image Generation, Document Intelligence, AI Agents, and Business Automation.",
+    features: ["AI Chat", "Image Generation", "Document AI", "AI Agents", "Automation"],
+    tags: ["AI Workspace", "Multi-LLM", "Automation"],
+    image: "/assets/Home-page/our-products/ai-studio.webp",
+    link: "https://devopstrioaiservices-e6dnggh5gxehh9d0.southindia-01.azurewebsites.net",
+    cta: "Launch Platform"
+  },
+  {
     name: "Homela",
     category: "PropTech · Real Estate",
     desc: "AI-powered property management SaaS that connects landlords, tenants, and agents on a unified platform with smart lease tracking and payment automation.",
@@ -94,7 +104,7 @@ export function OurProducts() {
             </Reveal>
             <Reveal>
               <p className="text-zinc-400 text-lg md:text-xl leading-relaxed mb-10 max-w-xl">
-                We build and operate a suite of vertical-specific <Link href="/ecosystem/platforms-solutions/saas-platforms" className="text-rose-500 hover:underline">SaaS products</Link> designed to transform industries. From PropTech to HealthTech, our platforms represent the cutting-edge of <Link href="/ecosystem/platforms-solutions" className="text-rose-500 hover:underline">product innovation</Link>.
+                We build and operate a suite of vertical-specific <Link href="/ecosystem/platforms-solutions/saas-platforms" className="text-rose-500 hover:underline">SaaS products</Link> designed to transform industries. From Artificial Intelligence to PropTech and HealthTech, our platforms represent the cutting-edge of product innovation.
               </p>
             </Reveal>
             <Reveal>
@@ -124,7 +134,7 @@ export function OurProducts() {
 
             <CardSwap
               width={380}
-              height={500}
+              height={520}
               cardDistance={36}
               verticalDistance={40}
               delay={4000}
@@ -136,7 +146,7 @@ export function OurProducts() {
               {products.map((prod) => (
                 <Card key={prod.name} className="overflow-hidden flex flex-col group shadow-[0_8px_30px_rgba(0,0,0,0.3)] cursor-pointer pointer-events-auto bg-[#0A0A0A] border border-zinc-800/80 rounded-[24px]">
                   {/* Padded Image Container */}
-                  <div className="relative h-[52%] w-full p-2.5 pb-0">
+                  <div className="relative h-[48%] w-full p-2.5 pb-0">
                     <div className="relative w-full h-full overflow-hidden rounded-[16px] bg-zinc-900 border border-zinc-800/50">
                       <img
                         src={prod.image}
@@ -147,8 +157,8 @@ export function OurProducts() {
                       <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-95" />
 
                       {/* Product Name Overlay */}
-                      <div className="absolute bottom-4 left-4 z-20">
-                        <h3 className="text-2xl font-bold text-white tracking-tight drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
+                      <div className="absolute bottom-3 left-4 z-20">
+                        <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
                           {prod.name}
                         </h3>
                       </div>
@@ -156,19 +166,30 @@ export function OurProducts() {
                   </div>
 
                   {/* Content Container */}
-                  <div className="h-[48%] p-5 sm:p-6 flex flex-col bg-[#0A0A0A] relative z-10">
-                    <div className="flex items-center mb-4">
-                      <span className="inline-flex items-center justify-center px-3 py-1 rounded-full text-[10px] font-bold tracking-wider uppercase bg-rose-500/10 text-rose-500 border border-rose-500/20">
+                  <div className="h-[52%] p-4 sm:p-5 flex flex-col bg-[#0A0A0A] relative z-10">
+                    <div className="flex items-center mb-2">
+                      <span className="inline-flex items-center justify-center px-3 py-0.5 rounded-full text-[10px] font-bold tracking-wider uppercase bg-rose-500/10 text-rose-500 border border-rose-500/20">
                         {categoryLabel(prod.category)}
                       </span>
                     </div>
 
-                    <p className="text-zinc-400 text-xs sm:text-sm leading-relaxed mb-4 line-clamp-3">
+                    <p className="text-zinc-400 text-xs sm:text-sm leading-relaxed mb-3 line-clamp-2">
                       {prod.desc}
                     </p>
 
-                    <div className="mt-auto flex items-center justify-between gap-4">
-                      <div className="flex gap-1.5 flex-wrap">
+                    {prod.features && prod.features.length > 0 && (
+                      <div className="grid grid-cols-2 gap-x-2 gap-y-1 mb-3 bg-zinc-950/80 p-2 rounded-lg border border-zinc-800/60">
+                        {prod.features.map((feat) => (
+                          <div key={feat} className="flex items-center gap-1.5 text-[11px] font-semibold text-zinc-200">
+                            <span className="text-rose-500 font-bold">✓</span>
+                            <span>{feat}</span>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+
+                    <div className="mt-auto flex items-center justify-between gap-3">
+                      <div className="flex gap-1 flex-wrap">
                         {prod.tags.map(tag => (
                           <span key={tag} className="text-[10px] font-medium bg-zinc-900 border border-zinc-800 text-zinc-300 px-2 py-0.5 rounded">
                             {tag}
@@ -181,10 +202,10 @@ export function OurProducts() {
                         target="_blank"
                         rel="noopener noreferrer"
                         onClick={(e) => e.stopPropagation()}
-                        className="text-xs font-semibold text-rose-500 hover:text-rose-400 flex items-center gap-1 transition-colors whitespace-nowrap"
+                        className="text-xs font-bold text-white bg-rose-600 hover:bg-rose-500 px-3.5 py-1.5 rounded-lg flex items-center gap-1 transition-all shadow-[0_0_14px_rgba(225,29,72,0.4)] whitespace-nowrap"
                       >
-                        <span>Visit site</span>
-                        <ArrowUpRight size={12} className="group-hover:translate-x-0.5 transition-transform" />
+                        <span>{prod.cta || "Visit site"}</span>
+                        <ArrowUpRight size={13} className="group-hover:translate-x-0.5 transition-transform" />
                       </a>
                     </div>
                   </div>

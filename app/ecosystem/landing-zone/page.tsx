@@ -428,7 +428,7 @@ export default function EnterpriseLandingZonePage() {
 
   return (
     <main className="min-h-screen bg-[#030303] text-white pt-20 font-sans selection:bg-rose-600 selection:text-white">
-      
+
       {/* 1. HERO SECTION */}
       <section className="relative w-full min-h-[80vh] flex items-center bg-[#030303] text-white pt-20 pb-16 lg:pt-20 lg:pb-24 overflow-hidden border-b border-zinc-900/80">
         {/* Background Ambient Glows */}
@@ -721,7 +721,7 @@ export default function EnterpriseLandingZonePage() {
       {/* 8. GIT REPOSITORY SHOWCASE ⭐ & DASHBOARD WITH PAGINATION & PREMIUM CARDS */}
       <section id="git-showcase" className="py-24 bg-[#030303] border-b border-zinc-900/80">
         <div className="max-w-7xl mx-auto px-12 xl:px-8 space-y-12">
-          
+
           <Reveal>
             <div className="text-center max-w-3xl mx-auto space-y-3">
               <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block flex items-center justify-center gap-2">
@@ -733,7 +733,7 @@ export default function EnterpriseLandingZonePage() {
               <p className="text-zinc-400 text-base leading-relaxed font-semibold">
                 Real-time synchronized GitHub repositories, Terraform modules, and cloud governance frameworks from the Devopstrio engineering portal.
               </p>
-              
+
               {/* Live Sync Badge */}
               <div className="pt-2 flex items-center justify-center gap-3">
                 <span className="inline-flex items-center gap-2 text-xs font-mono text-emerald-400 bg-emerald-500/10 border border-emerald-500/30 px-4 py-1.5 rounded-full shadow-lg">
@@ -761,11 +761,10 @@ export default function EnterpriseLandingZonePage() {
               <button
                 key={filter}
                 onClick={() => handleFilterClick(filter)}
-                className={`px-4 py-2 rounded-xl text-xs font-bold tracking-wider uppercase transition-all duration-300 cursor-pointer ${
-                  activeFilter === filter
+                className={`px-4 py-2 rounded-xl text-xs font-bold tracking-wider uppercase transition-all duration-300 cursor-pointer ${activeFilter === filter
                     ? "bg-[#E11D48] text-white shadow-[0_4px_20px_rgba(225,29,72,0.4)] scale-105"
                     : "bg-[#0A0A0A] text-zinc-400 hover:text-white border border-zinc-800/80 hover:border-zinc-700"
-                }`}
+                  }`}
               >
                 {filter}
               </button>
@@ -788,11 +787,10 @@ export default function EnterpriseLandingZonePage() {
                     setPageSize(num);
                     setCurrentPage(1);
                   }}
-                  className={`px-3 py-1 rounded-lg text-xs font-mono font-bold transition-all cursor-pointer ${
-                    pageSize === num
+                  className={`px-3 py-1 rounded-lg text-xs font-mono font-bold transition-all cursor-pointer ${pageSize === num
                       ? "bg-rose-600 text-white shadow-md"
                       : "bg-black text-zinc-400 border border-zinc-800 hover:text-white"
-                  }`}
+                    }`}
                 >
                   {num}
                 </button>
@@ -890,11 +888,10 @@ export default function EnterpriseLandingZonePage() {
                 <button
                   disabled={currentPage === 1}
                   onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
-                  className={`px-3.5 py-2 rounded-xl text-xs font-bold font-mono flex items-center gap-1 transition-all cursor-pointer ${
-                    currentPage === 1
+                  className={`px-3.5 py-2 rounded-xl text-xs font-bold font-mono flex items-center gap-1 transition-all cursor-pointer ${currentPage === 1
                       ? "opacity-40 cursor-not-allowed bg-zinc-900 text-zinc-600"
                       : "bg-zinc-900 hover:bg-zinc-800 text-zinc-200 border border-zinc-800 hover:border-rose-500/50"
-                  }`}
+                    }`}
                 >
                   <ChevronLeft className="w-4 h-4" /> Previous
                 </button>
@@ -904,11 +901,10 @@ export default function EnterpriseLandingZonePage() {
                     <button
                       key={page}
                       onClick={() => setCurrentPage(page)}
-                      className={`w-8 h-8 rounded-lg text-xs font-mono font-bold transition-all cursor-pointer ${
-                        currentPage === page
+                      className={`w-8 h-8 rounded-lg text-xs font-mono font-bold transition-all cursor-pointer ${currentPage === page
                           ? "bg-rose-600 text-white shadow-lg shadow-rose-600/30 scale-105"
                           : "bg-zinc-950 text-zinc-400 hover:text-white border border-zinc-800 hover:border-zinc-700"
-                      }`}
+                        }`}
                     >
                       {page}
                     </button>
@@ -918,11 +914,10 @@ export default function EnterpriseLandingZonePage() {
                 <button
                   disabled={currentPage === totalPages}
                   onClick={() => setCurrentPage((prev) => Math.min(prev + 1, totalPages))}
-                  className={`px-3.5 py-2 rounded-xl text-xs font-bold font-mono flex items-center gap-1 transition-all cursor-pointer ${
-                    currentPage === totalPages
+                  className={`px-3.5 py-2 rounded-xl text-xs font-bold font-mono flex items-center gap-1 transition-all cursor-pointer ${currentPage === totalPages
                       ? "opacity-40 cursor-not-allowed bg-zinc-900 text-zinc-600"
                       : "bg-zinc-900 hover:bg-zinc-800 text-zinc-200 border border-zinc-800 hover:border-rose-500/50"
-                  }`}
+                    }`}
                 >
                   Next <ChevronRight className="w-4 h-4" />
                 </button>
@@ -1026,7 +1021,7 @@ export default function EnterpriseLandingZonePage() {
               { step: "06", title: "LZ Live", desc: "Landing zone active & compliant." }
             ].map((wf, idx) => (
               <div key={idx} className="p-5 rounded-[20px] bg-[#0A0A0A] border border-zinc-800/80 space-y-2 text-center relative hover:border-rose-500/40 transition-colors">
-                <span className="text-xs font-mono font-extrabold text-rose-500 bg-rose-600/10 px-2.5 py-0.5 rounded border border-rose-500/20">
+                <span className="text-xs font-mono font-bold text-rose-500 bg-rose-600/10 px-2.5 py-0.5 rounded border border-rose-500/20">
                   Step {wf.step}
                 </span>
                 <h4 className="text-sm font-bold text-white pt-2">{wf.title}</h4>
@@ -1212,7 +1207,7 @@ export default function EnterpriseLandingZonePage() {
       {/* 15. FAQ SECTION */}
       <section className="py-20 md:py-28 bg-[#030303] text-white border-b border-zinc-900/80 relative">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
-          
+
           <Reveal className="max-w-3xl mb-16">
             <div className="flex items-center gap-2 mb-4">
               <span className="text-[10px] font-medium tracking-[0.2em] uppercase text-zinc-400">
@@ -1281,11 +1276,11 @@ export default function EnterpriseLandingZonePage() {
                       {isOpen ? <Minus size={16} /> : <Plus size={16} />}
                     </div>
                   </button>
-                  
+
                   {isOpen && (
                     <div className="mt-4 text-xs md:text-sm text-zinc-400 leading-relaxed font-medium max-w-3xl animate-in fade-in duration-200 flex flex-col gap-4">
                       <p>{item.a}</p>
-                      
+
                       {item.proof && (
                         <span className="text-[10px] text-emerald-400 font-semibold tracking-wide font-mono">
                           {item.proof}
@@ -1295,7 +1290,7 @@ export default function EnterpriseLandingZonePage() {
                       {item.tags && (
                         <div className="flex flex-wrap gap-2 pt-1">
                           {item.tags.map((tag) => (
-                            <span 
+                            <span
                               key={tag}
                               className="px-2.5 py-1 rounded bg-zinc-900 text-zinc-400 border border-zinc-800 text-[10px] font-mono font-medium tracking-wide"
                             >
@@ -1317,7 +1312,7 @@ export default function EnterpriseLandingZonePage() {
               <p className="text-zinc-400 text-xs md:text-sm font-semibold">
                 Still have questions? Don&apos;t sit with them. Reach out to our cloud architects — we respond to every message personally.
               </p>
-              <button 
+              <button
                 onClick={() => setDemoModalOpen(true)}
                 className="gap-2 inline-flex items-center justify-center px-6 py-3 rounded-lg text-xs font-bold tracking-wider uppercase border border-zinc-800 hover:border-zinc-700 bg-zinc-900 hover:bg-zinc-800 text-white transition-all duration-300 hover:-translate-y-0.5 cursor-pointer flex-shrink-0"
               >
@@ -1333,7 +1328,7 @@ export default function EnterpriseLandingZonePage() {
       <section className="py-24 relative overflow-hidden bg-[#030303]">
         <div className="absolute inset-0 bg-radial-glow pointer-events-none" />
         <div className="max-w-5xl mx-auto px-6 text-center space-y-8 relative z-10">
-          <h2 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight">
+          <h2 className="text-4xl md:text-5xl font-bold text-white tracking-tight">
             Build Your Enterprise Landing Zone
           </h2>
           <p className="text-base text-zinc-300 max-w-2xl mx-auto leading-relaxed font-semibold">
@@ -1371,7 +1366,7 @@ export default function EnterpriseLandingZonePage() {
               <span className="inline-flex items-center px-2.5 py-0.5 rounded text-[10px] font-black uppercase tracking-widest bg-[#E11D48] text-white">
                 {selectedRepoModal.cloud} &bull; {selectedRepoModal.category}
               </span>
-              <h3 className="text-2xl font-extrabold text-white pt-1">{selectedRepoModal.name}</h3>
+              <h3 className="text-2xl font-bold text-white pt-1">{selectedRepoModal.name}</h3>
               <p className="text-xs text-zinc-300 leading-relaxed font-medium">{selectedRepoModal.desc}</p>
             </div>
 

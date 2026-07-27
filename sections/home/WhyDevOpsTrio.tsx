@@ -177,7 +177,7 @@ export function WhyDevopstrio() {
       </div>
 
       <div className="min-h-[140px] flex flex-col justify-start">
-        <h3 className="text-lg md:text-xl font-extrabold text-white mb-3 tracking-tight">
+        <h3 className="text-lg md:text-xl font-bold text-white mb-3 tracking-tight">
           {activePoint.title}
         </h3>
         <p className="text-zinc-400 text-xs md:text-sm leading-relaxed font-bold max-w-lg">
@@ -196,7 +196,7 @@ export function WhyDevopstrio() {
         style={{ backgroundImage: "radial-gradient(circle, #fff 1px, transparent 1px)", backgroundSize: "32px 32px" }} />
 
       <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
-        
+
         {/* Top Header Block */}
         <div className="max-w-3xl mx-auto text-center mb-16 lg:mb-20">
           <Reveal>
@@ -218,18 +218,18 @@ export function WhyDevopstrio() {
 
         {/* Interactive Sticky Hover Grid */}
         <div className="flex flex-col md:flex-row gap-6 lg:gap-8 items-start mb-20 relative">
-          
+
           {/* Left Column */}
           <div className="flex-1 flex flex-col gap-6 lg:gap-8 w-full">
             {corePoints.filter((_, i) => i % 2 === 0).map((point, idx) => (
-              <div 
-                key={point.num} 
-                className="sticky w-full" 
+              <div
+                key={point.num}
+                className="sticky w-full"
                 style={{ top: `${100 + idx * 30}px`, zIndex: idx }}
               >
                 <Reveal delay={0}>
                   <Link href={point.href} className="relative rounded-[24px] border border-zinc-800/80 bg-[#0A0A0A] overflow-hidden flex flex-col aspect-[16/10] group shadow-[0_15px_35px_rgba(0,0,0,0.5)] transition-colors duration-500 hover:border-zinc-700 cursor-pointer block">
-                    
+
                     {/* Base Image Layer (Always visible, blurs slightly on hover) */}
                     <div className="absolute inset-0 z-0 transition-all duration-700 ease-in-out group-hover:blur-md group-hover:scale-105">
                       <img src={point.image} alt={point.title} className="w-full h-full object-cover" />
@@ -250,7 +250,7 @@ export function WhyDevopstrio() {
                         <h3 className="text-xl font-bold text-white mb-4 tracking-tight drop-shadow-md">
                           {point.title}
                         </h3>
-                        
+
                         <div className="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-all duration-500 ease-in-out">
                           <div className="overflow-hidden">
                             <p className="text-zinc-200 text-[13px] leading-relaxed font-medium line-clamp-4 drop-shadow-md mb-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
@@ -258,7 +258,7 @@ export function WhyDevopstrio() {
                             </p>
                             <div className="flex justify-end opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-200">
                               <div className="w-8 h-8 rounded-full bg-rose-500 border border-rose-500 flex items-center justify-center text-white drop-shadow-md">
-                                 <ArrowUpRight size={14} />
+                                <ArrowUpRight size={14} />
                               </div>
                             </div>
                           </div>
@@ -276,14 +276,14 @@ export function WhyDevopstrio() {
           {/* Right Column (Staggered start) */}
           <div className="flex-1 flex flex-col gap-6 lg:gap-8 w-full md:mt-24">
             {corePoints.filter((_, i) => i % 2 !== 0).map((point, idx) => (
-              <div 
-                key={point.num} 
-                className="sticky w-full" 
+              <div
+                key={point.num}
+                className="sticky w-full"
                 style={{ top: `${100 + idx * 30}px`, zIndex: idx }}
               >
                 <Reveal delay={0}>
                   <Link href={point.href} className="relative rounded-[24px] border border-zinc-800/80 bg-[#0A0A0A] overflow-hidden flex flex-col aspect-[16/10] group shadow-[0_15px_35px_rgba(0,0,0,0.5)] transition-colors duration-500 hover:border-zinc-700 cursor-pointer block">
-                    
+
                     {/* Base Image Layer (Always visible, blurs slightly on hover) */}
                     <div className="absolute inset-0 z-0 transition-all duration-700 ease-in-out group-hover:blur-md group-hover:scale-105">
                       <img src={point.image} alt={point.title} className="w-full h-full object-cover" />
@@ -304,7 +304,7 @@ export function WhyDevopstrio() {
                         <h3 className="text-xl font-bold text-white mb-4 tracking-tight drop-shadow-md">
                           {point.title}
                         </h3>
-                        
+
                         <div className="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-all duration-500 ease-in-out">
                           <div className="overflow-hidden">
                             <p className="text-zinc-200 text-[13px] leading-relaxed font-medium line-clamp-4 drop-shadow-md mb-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
@@ -312,7 +312,7 @@ export function WhyDevopstrio() {
                             </p>
                             <div className="flex justify-end opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-200">
                               <div className="w-8 h-8 rounded-full bg-rose-500 border border-rose-500 flex items-center justify-center text-white drop-shadow-md">
-                                 <ArrowUpRight size={14} />
+                                <ArrowUpRight size={14} />
                               </div>
                             </div>
                           </div>
@@ -330,12 +330,12 @@ export function WhyDevopstrio() {
         </div>
 
         {/* Checklist & Closing Statement Block */}
-        
+
         <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-12 lg:gap-20 items-start pt-12 border-t border-zinc-900/60">
-          
+
           <Reveal>
             <div className="border border-zinc-850 bg-[#0A0A0A] rounded-3xl p-6 md:p-8 shadow-2xl relative flex flex-col justify-between group cursor-pointer transition-colors duration-500 hover:border-zinc-700">
-              
+
               <div className="absolute -top-32 -right-32 w-96 h-96 bg-[radial-gradient(circle_at_center,rgba(225,29,72,0.03),transparent_70%)] blur-3xl pointer-events-none transition-opacity duration-700 group-hover:opacity-0" />
 
               <h3 className="text-xl md:text-2xl font-bold text-white mb-5 relative z-10 transition-all duration-500 group-hover:-translate-y-1 group-hover:drop-shadow-[0_0_15px_rgba(255,255,255,0.2)]">
@@ -344,7 +344,7 @@ export function WhyDevopstrio() {
 
               {/* The Points Box with isolated Hover Image Effect */}
               <div className="relative -mx-6 -mb-6 md:-mx-8 md:-mb-8 pt-5 px-6 pb-5 md:pt-6 md:px-8 md:pb-6 rounded-b-3xl overflow-hidden border-t border-zinc-800/60 transition-colors duration-500 group-hover:border-zinc-700 mt-auto bg-zinc-950/20">
-                
+
                 {/* Expanding Image Layer (Frosted Glass Effect) */}
                 <div className="absolute inset-0 z-0 [clip-path:circle(0%_at_100%_100%)] group-hover:[clip-path:circle(150%_at_100%_100%)] transition-all duration-700 ease-in-out pointer-events-none">
                   <img src="/assets/Home-page/whychoose/partnership-cover.png" alt="Why Devopstrio" className="w-full h-full object-cover scale-110 group-hover:scale-100 transition-transform duration-1000 ease-out" />
@@ -373,7 +373,7 @@ export function WhyDevopstrio() {
           </Reveal>
 
         </div>
-       
+
 
       </div>
     </section>

@@ -36,7 +36,7 @@ export function GlobalMetrics() {
               transition={{ duration: 0.5, delay: idx * 0.05 }}
               className="p-5 rounded-2xl bg-zinc-950/40 border border-white/5 shadow-sm hover:border-rose-500/20 transition-all cursor-default"
             >
-              <h3 className="text-3xl font-extrabold text-white mb-2">{metric.val}</h3>
+              <h3 className="text-3xl font-bold text-white mb-2">{metric.val}</h3>
               <p className="text-[9px] uppercase font-mono tracking-widest text-zinc-500 font-bold leading-normal">{metric.label}</p>
             </motion.div>
           ))}

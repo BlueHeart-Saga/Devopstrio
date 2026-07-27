@@ -154,11 +154,10 @@ export const LineSidebar = ({
   );
 
   const tickClass = showMarker
-    ? `after:absolute after:left-[calc(-1*var(--marker-length)-var(--marker-gap))] after:top-[calc(100%+var(--item-gap)/2)] after:h-px after:opacity-40 after:content-[''] last:after:content-none after:[background-color:var(--marker-color)] after:[width:calc(var(--marker-length)*var(--tick-scale))] ${
-        scaleTick
-          ? "after:origin-left after:[transform:translateY(-50%)_scaleX(calc(0.7+var(--effect,0)*0.6))]"
-          : 'after:-translate-y-1/2'
-      }`
+    ? `after:absolute after:left-[calc(-1*var(--marker-length)-var(--marker-gap))] after:top-[calc(100%+var(--item-gap)/2)] after:h-px after:opacity-40 after:content-[''] last:after:content-none after:[background-color:var(--marker-color)] after:[width:calc(var(--marker-length)*var(--tick-scale))] ${scaleTick
+      ? "after:origin-left after:[transform:translateY(-50%)_scaleX(calc(0.7+var(--effect,0)*0.6))]"
+      : 'after:-translate-y-1/2'
+    }`
     : '';
 
   return (
@@ -201,14 +200,12 @@ export const LineSidebar = ({
               {showMarker && (
                 <span
                   aria-hidden="true"
-                  className={`absolute left-[calc(-1*var(--marker-length)-var(--marker-gap))] top-1/2 h-px w-[length:var(--marker-length)] origin-left transition-all duration-300 [background-color:color-mix(in_srgb,var(--accent-color)_calc(var(--effect,0)*100%),var(--marker-color))] [transform:translateY(-50%)_scaleX(calc(0.7+var(--effect,0)*0.5))] ${
-                    isActive ? 'shadow-[0_0_8px_rgba(244,63,94,0.8)] h-[2px]' : ''
-                  }`}
+                  className={`absolute left-[calc(-1*var(--marker-length)-var(--marker-gap))] top-1/2 h-px w-[length:var(--marker-length)] origin-left transition-all duration-300 [background-color:color-mix(in_srgb,var(--accent-color)_calc(var(--effect,0)*100%),var(--marker-color))] [transform:translateY(-50%)_scaleX(calc(0.7+var(--effect,0)*0.5))] ${isActive ? 'shadow-[0_0_8px_rgba(244,63,94,0.8)] h-[2px]' : ''
+                    }`}
                 />
               )}
-              <span className={`relative inline-flex items-baseline leading-[1.2] font-semibold tracking-wide transition-all duration-300 [color:color-mix(in_srgb,var(--accent-color)_calc(var(--effect,0)*100%),var(--text-color))] [font-size:var(--font-size)] [transform:translateX(calc(var(--effect,0)*var(--max-shift)))] ${
-                isActive ? 'text-rose-500 font-extrabold scale-[1.03]' : ''
-              }`}>
+              <span className={`relative inline-flex items-baseline leading-[1.2] font-semibold tracking-wide transition-all duration-300 [color:color-mix(in_srgb,var(--accent-color)_calc(var(--effect,0)*100%),var(--text-color))] [font-size:var(--font-size)] [transform:translateX(calc(var(--effect,0)*var(--max-shift)))] ${isActive ? 'text-rose-500 font-bold scale-[1.03]' : ''
+                }`}>
                 {showIndex && (
                   <span className="mr-[0.6rem] font-mono text-[0.85em] [opacity:calc(0.55+var(--effect,0)*0.45)]">
                     {String(index + 1).padStart(2, '0')}

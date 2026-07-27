@@ -54,7 +54,7 @@ export function FeaturedHighlights({ posts }: FeaturedHighlightsProps) {
           <span className="text-[10px] font-mono tracking-widest text-zinc-500 uppercase block mb-4 font-bold border border-zinc-800 rounded-full px-3 py-1 w-max mx-auto bg-zinc-950">
             Our Philosophy
           </span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-6 leading-tight max-w-3xl mx-auto">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight max-w-3xl mx-auto">
             At Devopstrio, we move beyond "quick fixes."
           </h2>
           <p className="text-base md:text-lg lg:text-xl text-zinc-400 font-medium leading-relaxed max-w-3xl mx-auto">
@@ -76,27 +76,27 @@ export function FeaturedHighlights({ posts }: FeaturedHighlightsProps) {
               >
                 {/* Inset Image */}
                 <div className="w-full h-48 md:h-52 overflow-hidden rounded-2xl mb-5">
-                  <img 
-                    src={imageSrc} 
-                    alt={post.title} 
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-90 group-hover:opacity-100" 
+                  <img
+                    src={imageSrc}
+                    alt={post.title}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-90 group-hover:opacity-100"
                   />
                 </div>
-                
+
                 {/* Content Area */}
                 <div className="px-3 pb-3 flex flex-col flex-1">
                   <span className="text-[10px] font-bold tracking-widest text-rose-500 uppercase mb-3 block">
                     {post.category.name}
                   </span>
-                  
+
                   <h3 className="text-white font-bold text-lg md:text-xl leading-snug group-hover:text-rose-400 transition-colors mb-3 line-clamp-2">
                     {post.title}
                   </h3>
-                  
+
                   <p className="text-zinc-400 text-xs md:text-sm leading-relaxed font-medium line-clamp-3 mb-6 flex-1">
                     {post.excerpt}
                   </p>
-                  
+
                   {/* Footer CTA */}
                   <div className="flex items-center gap-3 mt-auto pt-2">
                     <div className="w-8 h-8 rounded-lg bg-rose-950 border border-rose-900 group-hover:bg-rose-600 group-hover:border-rose-500 flex items-center justify-center transition-all duration-300 shadow-md">
@@ -114,11 +114,11 @@ export function FeaturedHighlights({ posts }: FeaturedHighlightsProps) {
 
         {/* View All Button */}
         <div className="flex justify-center mt-4">
-          <Link 
-            href="/insights" 
+          <Link
+            href="/insights"
             className="inline-flex items-center gap-3 px-6 py-3 rounded-full text-xs font-bold tracking-wider uppercase bg-zinc-900 border border-zinc-800 text-white hover:bg-zinc-800 transition-colors hover:border-rose-500/50"
           >
-            Explore all insights <div className="w-5 h-5 rounded-full bg-rose-600 flex items-center justify-center"><ArrowRight size={12} className="text-white"/></div>
+            Explore all insights <div className="w-5 h-5 rounded-full bg-rose-600 flex items-center justify-center"><ArrowRight size={12} className="text-white" /></div>
           </Link>
         </div>
       </div>
@@ -126,24 +126,24 @@ export function FeaturedHighlights({ posts }: FeaturedHighlightsProps) {
       {/* Main Big Card */}
       <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 mt-20">
         <Reveal delay={0.2}>
-          <Link 
+          <Link
             href={`/insights/${mainPost.category.slug}/${mainPost.id}`}
             className="group relative w-full rounded-[40px] overflow-hidden bg-zinc-950 border border-zinc-800 flex flex-col md:block shadow-2xl transition-all duration-700 hover:shadow-[0_30px_60px_rgba(225,29,72,0.15)] hover:border-zinc-700"
           >
-            
+
             {/* Left Content Inset Card */}
             <div className="relative w-full md:w-[60%] p-8 md:p-12 lg:p-14 flex flex-col justify-center bg-[#0a0a0a] transition-all duration-700 ease-in-out group-hover:bg-transparent group-hover:backdrop-blur-none z-10 min-h-[350px] md:min-h-[400px] rounded-[40px] md:rounded-none md:rounded-r-[60px] group-hover:md:rounded-r-none border-b md:border-b-0 md:border-r border-zinc-800/80 group-hover:border-transparent">
-              
+
               {/* Text Wrapper (Fades out on hover but keeps layout space) */}
               <div className="flex flex-col transition-all duration-700 ease-in-out group-hover:opacity-0 group-hover:-translate-y-8 group-hover:pointer-events-none">
                 <span className="inline-block px-3 py-1 rounded bg-zinc-900 border border-zinc-800 text-[10px] font-bold tracking-widest text-zinc-400 uppercase w-max mb-8">
                   Featured Highlight
                 </span>
-                
+
                 <h2 className="text-3xl md:text-4xl lg:text-[42px] font-bold text-white mb-6 leading-[1.1] tracking-tight">
                   {mainPost.title}
                 </h2>
-                
+
                 <div className="space-y-6 mb-10">
                   <div className="border-l-2 border-rose-500 pl-4">
                     <h4 className="text-sm font-bold text-white mb-1">Strategic Depth</h4>
@@ -157,23 +157,23 @@ export function FeaturedHighlights({ posts }: FeaturedHighlightsProps) {
               </div>
 
               <div className="inline-flex items-center gap-3 px-8 py-4 rounded-full text-xs font-bold tracking-wider uppercase bg-white text-black group-hover:bg-rose-600 group-hover:text-white transition-all duration-500 w-max shadow-lg group-hover:shadow-[0_0_20px_rgba(225,29,72,0.4)]">
-                Read Full Article <div className="w-6 h-6 rounded-full bg-black flex items-center justify-center"><ArrowUpRight size={14} className="text-white"/></div>
+                Read Full Article <div className="w-6 h-6 rounded-full bg-black flex items-center justify-center"><ArrowUpRight size={14} className="text-white" /></div>
               </div>
             </div>
 
             {/* Right Image (Expands on Hover) */}
             <div className="relative md:absolute right-0 top-0 bottom-0 w-full md:w-[50%] h-[300px] md:h-auto z-0 transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:md:w-full">
-              <img 
-                src={(mainPost as any).image || getFallbackImage(0)} 
-                alt={mainPost.title} 
-                className="w-full h-full object-cover object-center mix-blend-luminosity group-hover:mix-blend-normal transition-all duration-1000 scale-105 group-hover:scale-100 opacity-80 group-hover:opacity-100" 
+              <img
+                src={(mainPost as any).image || getFallbackImage(0)}
+                alt={mainPost.title}
+                className="w-full h-full object-cover object-center mix-blend-luminosity group-hover:mix-blend-normal transition-all duration-1000 scale-105 group-hover:scale-100 opacity-80 group-hover:opacity-100"
               />
               {/* Dark gradient to blend the edge into the left card (fades out on hover) */}
               <div className="absolute inset-0 bg-gradient-to-r from-[#0a0a0a] via-[#0a0a0a]/50 to-transparent opacity-100 group-hover:opacity-0 transition-opacity duration-700 hidden md:block w-48" />
               {/* Subtle dark overlay to ensure text is always readable when expanded */}
               <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
             </div>
-            
+
           </Link>
         </Reveal>
       </div>

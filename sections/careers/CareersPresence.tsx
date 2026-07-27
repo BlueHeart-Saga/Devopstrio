@@ -120,34 +120,30 @@ export function CareersPresence() {
                   >
                     {/* Pulse ring */}
                     <span
-                      className={`absolute rounded-full transition-all duration-300 ${
-                        isActive
+                      className={`absolute rounded-full transition-all duration-300 ${isActive
                           ? "animate-ping bg-rose-500/30 scale-150"
                           : "bg-rose-500/15 scale-125"
-                      }`}
+                        }`}
                       style={{ width: 7, height: 7, top: -1, left: -1 }}
                     />
                     {/* Core dot */}
                     <span
-                      className={`block rounded-full border transition-all duration-200 ${
-                        isActive
+                      className={`block rounded-full border transition-all duration-200 ${isActive
                           ? "bg-white border-rose-500 w-2.5 h-2.5 shadow-[0_0_8px_rgba(244,63,94,0.8)]"
                           : "bg-rose-500 border-rose-400/60 w-1.5 h-1.5 shadow-[0_0_5px_rgba(244,63,94,0.6)]"
-                      }`}
+                        }`}
                     />
 
                     {/* Label pill */}
                     <div
-                      className={`absolute bottom-full mb-2 left-1/2 -translate-x-1/2 transition-all duration-200 whitespace-nowrap ${
-                        showLabel ? "opacity-100 translate-y-0" : "opacity-0 translate-y-1 pointer-events-none"
-                      }`}
+                      className={`absolute bottom-full mb-2 left-1/2 -translate-x-1/2 transition-all duration-200 whitespace-nowrap ${showLabel ? "opacity-100 translate-y-0" : "opacity-0 translate-y-1 pointer-events-none"
+                        }`}
                     >
                       <div
-                        className={`flex items-center gap-1 px-2 py-1 rounded-md border shadow-lg text-[9px] font-bold backdrop-blur-sm ${
-                          isActive
+                        className={`flex items-center gap-1 px-2 py-1 rounded-md border shadow-lg text-[9px] font-bold backdrop-blur-sm ${isActive
                             ? "bg-zinc-900/95 border-rose-800/60 text-white"
                             : "bg-zinc-950/90 border-zinc-800/80 text-zinc-200"
-                        }`}
+                          }`}
                       >
                         <span className="text-xs leading-none">{loc.flag}</span>
                         <span>{loc.city}</span>
@@ -169,7 +165,7 @@ export function CareersPresence() {
                             {loc.role}
                           </div>
                           {loc.hiring && (
-                            <span className="text-[8px] font-extrabold text-emerald-400 uppercase tracking-wider bg-emerald-500/10 border border-emerald-500/20 px-1.5 py-0.5 rounded-full">
+                            <span className="text-[8px] font-bold text-emerald-400 uppercase tracking-wider bg-emerald-500/10 border border-emerald-500/20 px-1.5 py-0.5 rounded-full">
                               Now Hiring
                             </span>
                           )}
@@ -205,11 +201,10 @@ export function CareersPresence() {
                   key={loc.id}
                   onMouseEnter={() => setActive(loc.id)}
                   onMouseLeave={() => setActive(null)}
-                  className={`text-left p-4 rounded-xl border transition-all duration-250 group ${
-                    isActive
+                  className={`text-left p-4 rounded-xl border transition-all duration-250 group ${isActive
                       ? "border-rose-900/70 bg-rose-950/15"
                       : "border-white/[0.06] bg-zinc-950/40 hover:border-zinc-800"
-                  }`}
+                    }`}
                 >
                   <div className="text-lg mb-2 leading-none">{loc.flag}</div>
                   <div className={`text-[12px] font-bold leading-none mb-1 transition-colors ${isActive ? "text-white" : "text-zinc-300 group-hover:text-white"}`}>
@@ -219,7 +214,7 @@ export function CareersPresence() {
                     {loc.label}
                   </div>
                   {loc.hiring && (
-                    <span className="text-[8px] font-extrabold text-emerald-400 uppercase tracking-wider">
+                    <span className="text-[8px] font-bold text-emerald-400 uppercase tracking-wider">
                       Now Hiring
                     </span>
                   )}
@@ -242,7 +237,7 @@ export function CareersPresence() {
                 key={stat.label}
                 className="flex flex-col items-center justify-center py-5 rounded-xl border border-white/[0.06] bg-zinc-950/40 text-center"
               >
-                <span className="text-2xl font-extrabold text-rose-500 leading-none mb-1">{stat.value}</span>
+                <span className="text-2xl font-bold text-rose-500 leading-none mb-1">{stat.value}</span>
                 <span className="text-[9px] font-bold text-zinc-500 uppercase tracking-widest">{stat.label}</span>
               </div>
             ))}

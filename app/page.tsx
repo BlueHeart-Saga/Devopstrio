@@ -3,10 +3,13 @@
 import { useEffect } from "react";
 import { HeroSection } from "@/sections/home/HeroSection";
 import { TrustBanner } from "@/sections/home/TrustBanner";
+import { AIStudioShowcase } from "@/sections/home/AIStudioShowcase";
 import { ImperativesBanner } from "@/sections/home/ImperativesBanner";
 import { BusinessOverview } from "@/sections/home/BusinessOverview";
 import { Testimonials } from "@/sections/home/Testimonials";
+import { ExecutiveTestimonials } from "@/sections/home/ExecutiveTestimonials";
 import { CoreServices } from "@/sections/home/CoreServices";
+import { ServicesOverviewPillars } from "@/sections/home/ServicesOverviewPillars";
 import { IndustriesSection } from "@/sections/home/IndustriesSection";
 import { CaseStudies } from "@/sections/home/CaseStudies";
 import { ImpactSection } from "@/sections/home/ImpactSection";
@@ -19,13 +22,13 @@ import { OurProducts } from "@/sections/home/OurProducts";
 import { PartnersSection } from "@/sections/home/PartnersSection";
 import { GlobalPresence } from "@/sections/home/GlobalPresence";
 import { Insights } from "@/sections/home/Insights";
-import { HiringSection } from "@/sections/home/HiringSection";
 import { CTA } from "@/sections/home/CTA";
 
 import { SectionNavbar } from "@/components/ui/SectionNavbar";
 
 const homeSections = [
   { id: "overview", label: "Overview" },
+  { id: "ai-studio", label: "AI Studio" },
   { id: "capabilities", label: "Capabilities" },
   { id: "industries", label: "Industries" },
   { id: "innovation", label: "Innovation" },
@@ -33,8 +36,7 @@ const homeSections = [
   { id: "why-Devopstrio", label: "Why Devopstrio" },
   { id: "partnerships", label: "Partnerships" },
   { id: "networks", label: "Networks" },
-  { id: "insights", label: "Insights" },
-  { id: "careers", label: "Careers" }
+  { id: "insights", label: "Insights" }
 ];
 
 export default function Home() {
@@ -96,11 +98,16 @@ export default function Home() {
       <HeroSection />
       <TrustBanner />
       <SectionNavbar sections={homeSections} />
+      
       <div id="overview">
         <BusinessOverview />
         
       </div>
+      <div id="ai-studio">
+        <AIStudioShowcase />
+      </div>
       <div id="capabilities">
+        <ServicesOverviewPillars />
         <CoreServices />
       </div>
       <div id="industries">
@@ -113,7 +120,7 @@ export default function Home() {
       <div id="impact">
         {/* <ImpactSection /> */}
         <CaseStudies />
-        {/* <Testimonials /> */}
+        <ExecutiveTestimonials />
       </div>
       <div id="why-Devopstrio">
         <WhyDevopstrio />
@@ -131,9 +138,6 @@ export default function Home() {
       </div>
       <div id="insights">
         <Insights />
-      </div>
-      <div id="careers">
-        <HiringSection />
       </div>
       <ImperativesBanner />
       <CTA />

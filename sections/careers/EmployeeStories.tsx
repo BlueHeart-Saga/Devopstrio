@@ -167,13 +167,13 @@ export function EmployeeStories() {
               <span className="text-6xl font-serif text-rose-500 leading-none select-none block mb-4">
                 “ “
               </span>
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-tight mb-8">
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white tracking-tight leading-tight mb-8">
                 What Our Team<br />Is Saying
               </h2>
 
               {/* Pagination controls */}
               <div className="flex items-center gap-4">
-                <button 
+                <button
                   onClick={handlePrev}
                   className="w-10 h-10 rounded-full border border-white/10 hover:border-rose-500/40 flex items-center justify-center text-white hover:text-rose-400 bg-zinc-950/40 hover:bg-rose-950/10 transition-all duration-300 cursor-pointer"
                 >
@@ -181,12 +181,12 @@ export function EmployeeStories() {
                 </button>
                 {/* Progress line */}
                 <div className="w-24 h-[2px] bg-zinc-800 rounded-full overflow-hidden relative">
-                  <div 
-                    className="absolute top-0 left-0 h-full bg-rose-500 rounded-full transition-all duration-500" 
+                  <div
+                    className="absolute top-0 left-0 h-full bg-rose-500 rounded-full transition-all duration-500"
                     style={{ width: `${progressPercent}%` }}
                   />
                 </div>
-                <button 
+                <button
                   onClick={handleNext}
                   className="w-10 h-10 rounded-full border border-white/10 hover:border-rose-500/40 flex items-center justify-center text-white hover:text-rose-400 bg-zinc-950/40 hover:bg-rose-950/10 transition-all duration-300 cursor-pointer"
                 >
@@ -258,7 +258,7 @@ export function EmployeeStories() {
                 INTERNSHIP
               </span>
 
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-tight">
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white tracking-tight leading-tight">
                 <span className="text-rose-500">Students</span>, build a<br />career with purpose
               </h2>
 

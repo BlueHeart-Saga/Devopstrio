@@ -118,7 +118,7 @@ export function ImpactSection() {
                 <span className="text-[10px] font-black tracking-[0.25em] text-rose-500 uppercase block mb-4">
                   ENTERPRISE VALUE CREATION
                 </span>
-                <h2 className="text-4xl lg:text-5xl font-extrabold tracking-tight text-white mb-6 leading-[1.15]">
+                <h2 className="text-4xl lg:text-5xl font-bold tracking-tight text-white mb-6 leading-[1.15]">
                   Transforming <br />
                   Innovation <br />
                   Into <span className="text-rose-500">Impact</span>

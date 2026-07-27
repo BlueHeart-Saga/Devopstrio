@@ -281,10 +281,10 @@ export default function AWSSteategicAllianceHub() {
 
   return (
     <main className="min-h-screen bg-black text-white pt-16 font-sans overflow-x-hidden selection:bg-rose-500 selection:text-white">
-      
+
       {/* 1. HERO SECTION WITH CALM AWS WAVE DESIGN & PITCH BLACK BACKGROUND */}
       <section className="relative w-full min-h-[95vh] flex flex-col items-center justify-center bg-black overflow-hidden pt-28 pb-20 border-b border-zinc-900/60">
-        
+
         {/* Concentric Wave Elements in AWS Amber/Orange/Yellow Colors */}
         <div className="absolute right-[-10%] md:right-[-5%] top-1/2 -translate-y-1/2 w-[85%] md:w-[65%] h-[130%] z-0 pointer-events-none select-none overflow-hidden flex items-center justify-end">
           <div className="relative w-full h-full flex items-center justify-end">
@@ -293,11 +293,11 @@ export default function AWSSteategicAllianceHub() {
             <div className="absolute w-[170%] h-[135%] right-[-40%] rounded-[110px] md:rounded-[230px] border border-orange-500/15 rotate-[-28deg] pointer-events-none" />
             <div className="absolute w-[140%] h-[110%] right-[-30%] rounded-[100px] md:rounded-[200px] border border-amber-500/15 rotate-[-28deg] pointer-events-none" />
             <div className="absolute w-[110%] h-[85%] right-[-20%] rounded-[90px] md:rounded-[170px] border border-amber-500/20 rotate-[-28deg] pointer-events-none" />
-            
+
             {/* Inner Waves */}
             <div className="absolute w-[80%] h-[60%] right-[-10%] rounded-[80px] md:rounded-[140px] border border-yellow-500/20 rotate-[-28deg] pointer-events-none" />
             <div className="absolute w-[50%] h-[35%] right-[0%] rounded-[70px] md:rounded-[110px] border border-yellow-500/25 rotate-[-28deg] pointer-events-none" />
-            
+
             {/* Core Glow */}
             <div className="absolute right-[5%] w-[180px] h-[90px] bg-gradient-to-r from-orange-655/15 via-amber-600/10 to-yellow-500/15 rounded-full blur-[50px] opacity-40 animate-pulse" />
           </div>
@@ -313,7 +313,7 @@ export default function AWSSteategicAllianceHub() {
 
         <div className="max-w-7xl mx-auto w-full px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            
+
             {/* Hero Left Content */}
             <div className="lg:col-span-7 flex flex-col items-start text-left">
               <Reveal className="mb-6">
@@ -323,13 +323,13 @@ export default function AWSSteategicAllianceHub() {
                   </span>
                 </div>
               </Reveal>
-              
+
               <Reveal delay={0.1}>
                 <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold tracking-tight leading-[1.12] text-white mb-6">
                   AWS <span className="text-[#E11D48] whitespace-nowrap">Ecosystem</span>
                 </h1>
               </Reveal>
-              
+
               <Reveal delay={0.2}>
                 <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
                   Helping organizations modernize applications, build resilient cloud-native platforms, secure workloads, and accelerate co-innovation with AWS.
@@ -352,7 +352,7 @@ export default function AWSSteategicAllianceHub() {
                   ))}
                 </div>
               </Reveal>
-              
+
               {/* CTAs */}
               <Reveal delay={0.4} className="flex flex-wrap gap-4">
                 <Link
@@ -373,7 +373,7 @@ export default function AWSSteategicAllianceHub() {
             {/* Hero Right Visual (Logo Integration) */}
             <div className="lg:col-span-5 relative flex items-center justify-center select-none z-10">
               <div className="relative w-full max-w-[420px] aspect-square flex items-center justify-center">
-                
+
                 {/* Connecting glowing line and animation */}
                 <div className="absolute inset-x-12 h-[2px] bg-gradient-to-r from-rose-500/25 via-amber-500/30 to-orange-500/25 z-0 pointer-events-none">
                   {/* Energy Pulse */}
@@ -381,7 +381,7 @@ export default function AWSSteategicAllianceHub() {
                 </div>
 
                 <div className="flex items-center justify-between w-full relative z-10 px-4">
-                  
+
                   {/* Devopstrio Logo Card */}
                   <div className="relative group/logo w-[120px] h-[120px] sm:w-[130px] sm:h-[130px] rounded-3xl bg-[#09090b]/80 border border-zinc-800 hover:border-rose-500/30 flex items-center justify-center p-5 shadow-2xl backdrop-blur-md transition-all duration-500 hover:-translate-y-1">
                     <div className="absolute inset-0 bg-gradient-to-br from-rose-500/[0.03] to-transparent rounded-3xl opacity-0 group-hover/logo:opacity-100 transition-opacity" />
@@ -435,7 +435,7 @@ export default function AWSSteategicAllianceHub() {
                   className="p-6 md:p-8 bg-zinc-950/40 border border-zinc-900 rounded-2xl hover:border-rose-500/20 transition-all duration-300 relative overflow-hidden group"
                 >
                   <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-rose-500/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                  <div className="text-3xl md:text-4xl font-extrabold text-rose-500 tracking-tighter mb-1.5 font-mono group-hover:scale-105 transition-transform duration-300 origin-left">
+                  <div className="text-3xl md:text-4xl font-bold text-rose-500 tracking-tighter mb-1.5 font-mono group-hover:scale-105 transition-transform duration-300 origin-left">
                     {stat.value}
                   </div>
                   <div className="text-[10px] md:text-xs font-semibold text-zinc-400 uppercase tracking-widest">
@@ -452,7 +452,7 @@ export default function AWSSteategicAllianceHub() {
       <section className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
         <div className="max-w-7xl mx-auto w-full px-6 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
-            
+
             <div className="lg:col-span-5 text-left space-y-6">
               <Reveal>
                 <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
@@ -497,7 +497,7 @@ export default function AWSSteategicAllianceHub() {
       <div id="capabilities" className="scroll-mt-24">
         <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60 relative">
           <div className="max-w-7xl mx-auto w-full px-6 lg:px-12">
-            
+
             <Reveal className="mb-16 text-center max-w-2xl mx-auto">
               <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
                 Capabilities Center
@@ -511,18 +511,17 @@ export default function AWSSteategicAllianceHub() {
             </Reveal>
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch">
-              
+
               {/* Left Column: Tab Selectors */}
               <div className="lg:col-span-4 flex flex-col gap-2">
                 {capabilities.map((cap) => (
                   <button
                     key={cap.id}
                     onClick={() => setActiveCapability(cap.id)}
-                    className={`w-full p-5 rounded-xl border text-left transition-all duration-300 flex items-center justify-between gap-4 ${
-                      activeCapability === cap.id
+                    className={`w-full p-5 rounded-xl border text-left transition-all duration-300 flex items-center justify-between gap-4 ${activeCapability === cap.id
                         ? "bg-rose-500/10 border-rose-500 text-white shadow-md"
                         : "bg-zinc-950/40 border-zinc-900 text-zinc-400 hover:text-white hover:border-zinc-800"
-                    }`}
+                      }`}
                   >
                     <div className="flex items-center gap-3">
                       {cap.icon}
@@ -545,18 +544,18 @@ export default function AWSSteategicAllianceHub() {
                     className="p-8 rounded-2xl bg-zinc-950/40 border border-white/5 flex flex-col justify-between h-full space-y-6 relative overflow-hidden"
                   >
                     <div className="absolute top-0 right-0 w-24 h-24 bg-rose-500/5 rounded-full blur-2xl pointer-events-none" />
-                    
+
                     <div>
                       <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
                         Key Metric: {currentCap.metrics}
                       </span>
-                      <h3 className="text-xl md:text-2xl font-extrabold text-white mb-2 uppercase tracking-wide">
+                      <h3 className="text-xl md:text-2xl font-bold text-white mb-2 uppercase tracking-wide">
                         {currentCap.title}
                       </h3>
                       <p className="text-zinc-400 text-xs md:text-sm font-medium leading-relaxed mb-6">
                         {currentCap.subtitle}
                       </p>
-                      
+
                       <div className="h-[1px] bg-zinc-900 w-full mb-6" />
 
                       <h5 className="text-[10px] font-mono uppercase tracking-widest text-zinc-550 mb-3 block">Deliverables</h5>
@@ -589,32 +588,32 @@ export default function AWSSteategicAllianceHub() {
       </div>
 
       {/* 5. JOINT SOLUTIONS & INDUSTRIES */}
-      
 
-        
+
+
       {/* CERTIFICATIONS */}
-      <PartnerCertifications 
+      <PartnerCertifications
         title="AWS Certifications"
         certifications={[
-            { image: "/assets/ecosystem/aws-awards/Group 1000008904.png" },
-            { image: "/assets/ecosystem/aws-awards/Group 1000008905.png" },
-            { image: "/assets/ecosystem/aws-awards/Group 1000008906.png" },
-            { image: "/assets/ecosystem/aws-awards/Group 1000008907.png" },
-            { image: "/assets/ecosystem/aws-awards/image 118.png" },
-            { image: "/assets/ecosystem/aws-awards/image 119-Photoroom 1.png" },
-            { image: "/assets/ecosystem/aws-awards/image 119-Photoroom 2.png" },
-            { image: "/assets/ecosystem/aws-awards/image 119-Photoroom 3.png" },
-            { image: "/assets/ecosystem/aws-awards/image 120.png" },
-            { image: "/assets/ecosystem/aws-awards/image 141.png" },
-            { image: "/assets/ecosystem/aws-awards/image 144-Photoroom 1.png" }
-          ]}
+          { image: "/assets/ecosystem/aws-awards/Group 1000008904.png" },
+          { image: "/assets/ecosystem/aws-awards/Group 1000008905.png" },
+          { image: "/assets/ecosystem/aws-awards/Group 1000008906.png" },
+          { image: "/assets/ecosystem/aws-awards/Group 1000008907.png" },
+          { image: "/assets/ecosystem/aws-awards/image 118.png" },
+          { image: "/assets/ecosystem/aws-awards/image 119-Photoroom 1.png" },
+          { image: "/assets/ecosystem/aws-awards/image 119-Photoroom 2.png" },
+          { image: "/assets/ecosystem/aws-awards/image 119-Photoroom 3.png" },
+          { image: "/assets/ecosystem/aws-awards/image 120.png" },
+          { image: "/assets/ecosystem/aws-awards/image 141.png" },
+          { image: "/assets/ecosystem/aws-awards/image 144-Photoroom 1.png" }
+        ]}
       />
 
-      
+
       <div id="solutions" className="scroll-mt-24">
         <section className="w-full py-24 bg-black border-b border-zinc-900/60">
           <div className="max-w-7xl mx-auto w-full px-6 lg:px-12">
-            
+
             <Reveal className="mb-12 text-center max-w-2xl mx-auto">
               <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
                 Vertical Solutions
@@ -630,11 +629,10 @@ export default function AWSSteategicAllianceHub() {
                 <button
                   key={ind.name}
                   onClick={() => setActiveIndustry(ind.name)}
-                  className={`px-4 py-2 rounded-full text-xs font-bold tracking-wider uppercase transition-all duration-300 border ${
-                    activeIndustry === ind.name
+                  className={`px-4 py-2 rounded-full text-xs font-bold tracking-wider uppercase transition-all duration-300 border ${activeIndustry === ind.name
                       ? "bg-rose-500 text-white border-rose-500 shadow-md shadow-rose-500/10"
                       : "bg-zinc-950 text-zinc-400 border-zinc-900 hover:text-white"
-                  }`}
+                    }`}
                 >
                   {ind.name}
                 </button>
@@ -654,7 +652,7 @@ export default function AWSSteategicAllianceHub() {
                     <h4 className="text-base font-bold text-white font-mono">Business Roadblock</h4>
                     <p className="text-sm md:text-base text-zinc-300 font-medium leading-relaxed">{ind.challenge}</p>
                   </div>
-                  
+
                   <div className="space-y-2 text-left">
                     <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">THE SOLUTION</span>
                     <h4 className="text-base font-bold text-white font-mono">Co-Engineered Setup</h4>
@@ -678,7 +676,7 @@ export default function AWSSteategicAllianceHub() {
       <div id="use-cases" className="scroll-mt-24">
         <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60">
           <div className="max-w-7xl mx-auto w-full px-6 lg:px-12">
-            
+
             <Reveal className="mb-16 text-left">
               <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
                 Case Outcomes
@@ -787,43 +785,43 @@ export default function AWSSteategicAllianceHub() {
         </div>
       </section>
 
-{/* 8. FINAL CTA */}
-        <section className="relative w-full py-32 bg-[#030303] overflow-hidden text-center">
-          {/* Ambient background blur */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-rose-500/[0.02] rounded-full blur-[140px] pointer-events-none" />
+      {/* 8. FINAL CTA */}
+      <section className="relative w-full py-32 bg-[#030303] overflow-hidden text-center">
+        {/* Ambient background blur */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-rose-500/[0.02] rounded-full blur-[140px] pointer-events-none" />
 
-          <div className="max-w-3xl mx-auto px-6 lg:px-12 relative z-10 flex flex-col items-center">
-            <Reveal>
-              <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
-                GET STARTED TODAY
-              </span>
-            </Reveal>
+        <div className="max-w-3xl mx-auto px-6 lg:px-12 relative z-10 flex flex-col items-center">
+          <Reveal>
+            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+              GET STARTED TODAY
+            </span>
+          </Reveal>
 
-            <Reveal delay={0.1}>
-              <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6 uppercase">
-                Ready to Accelerate on <span className="text-rose-500">AWS?</span>
-              </h2>
-            </Reveal>
+          <Reveal delay={0.1}>
+            <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6 uppercase">
+              Ready to Accelerate on <span className="text-rose-500">AWS?</span>
+            </h2>
+          </Reveal>
 
-            <Reveal delay={0.2}>
-              <p className="text-zinc-400 text-xs md:text-sm lg:text-base leading-relaxed max-w-xl mb-10 font-medium">
-                Connect with our dedicated AWS cloud-native consultants to evaluate your application portfolios, setup landing zones, or run predictive analytics models.
-              </p>
-            </Reveal>
+          <Reveal delay={0.2}>
+            <p className="text-zinc-400 text-xs md:text-sm lg:text-base leading-relaxed max-w-xl mb-10 font-medium">
+              Connect with our dedicated AWS cloud-native consultants to evaluate your application portfolios, setup landing zones, or run predictive analytics models.
+            </p>
+          </Reveal>
 
-            <Reveal delay={0.3} className="flex flex-wrap justify-center gap-4">
-              <Link
-                href="/contact"
-                className="inline-flex items-center gap-3.5 pl-6 pr-3.5 py-3.5 bg-white text-black font-bold text-xs tracking-wider uppercase rounded-full hover:bg-zinc-200 transition-all duration-300 shadow-lg shadow-white/5"
-              >
-                Schedule AWS Consultation
-                <div className="w-7 h-7 rounded-full bg-black flex items-center justify-center">
-                  <ArrowUpRight className="w-3.5 h-3.5 text-white" />
-                </div>
-              </Link>
-            </Reveal>
-          </div>
-        </section>
-      </main>
+          <Reveal delay={0.3} className="flex flex-wrap justify-center gap-4">
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-3.5 pl-6 pr-3.5 py-3.5 bg-white text-black font-bold text-xs tracking-wider uppercase rounded-full hover:bg-zinc-200 transition-all duration-300 shadow-lg shadow-white/5"
+            >
+              Schedule AWS Consultation
+              <div className="w-7 h-7 rounded-full bg-black flex items-center justify-center">
+                <ArrowUpRight className="w-3.5 h-3.5 text-white" />
+              </div>
+            </Link>
+          </Reveal>
+        </div>
+      </section>
+    </main>
   );
 }

@@ -12,7 +12,7 @@ export function MissionVisionValues() {
       <div className="absolute bottom-1/3 left-1/4 w-[500px] h-[500px] bg-[radial-gradient(circle_at_center,rgba(225,29,72,0.02),transparent_70%)] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10 space-y-24">
-        
+
         {/* 1. Top Specialization Banner */}
         <Reveal>
           <div className="relative rounded-3xl p-8 md:p-10 bg-zinc-950/60 border border-zinc-900 flex flex-col lg:flex-row items-center justify-between gap-8 shadow-xl">
@@ -21,7 +21,7 @@ export function MissionVisionValues() {
                 We specialize in developing software solutions through the synergy of skilled professionals and efficient processes.
               </p>
             </div>
-            
+
             {/* Trust Badges */}
             <div className="flex flex-wrap items-center gap-8 shrink-0">
               {/* IAOP Badge */}
@@ -29,7 +29,7 @@ export function MissionVisionValues() {
                 <span className="text-zinc-500 text-xs font-mono tracking-widest uppercase">Member of</span>
                 <span className="text-white font-black text-sm tracking-widest font-sans">IAOP</span>
               </div>
-              
+
               {/* Clutch Review Badge */}
               <div className="text-left">
                 <div className="text-[10px] font-bold text-rose-500 uppercase tracking-widest mb-1">4.9 ON CLUTCH</div>
@@ -49,7 +49,7 @@ export function MissionVisionValues() {
           {/* Left Text */}
           <div className="lg:col-span-7 text-left space-y-8">
             <Reveal>
-              <h2 className="text-3xl md:text-5xl font-extrabold text-white tracking-tight leading-none mb-4">
+              <h2 className="text-3xl md:text-5xl font-bold text-white tracking-tight leading-none mb-4">
                 Our core values
               </h2>
               <p className="text-zinc-400 text-sm leading-relaxed font-semibold">
@@ -84,8 +84,8 @@ export function MissionVisionValues() {
           <div className="lg:col-span-5 relative flex justify-center">
             <Reveal delay={0.1} className="w-full max-w-[420px]">
               <div className="rounded-[2rem] overflow-hidden border border-zinc-900/60 bg-zinc-950 p-2 shadow-2xl">
-                <img 
-                  src="/assets/About-page/mission/core-value.png" 
+                <img
+                  src="/assets/About-page/mission/core-value.png"
                   alt="Our Core Values"
                   className="w-full aspect-square object-cover rounded-[1.5rem]"
                 />
@@ -100,8 +100,8 @@ export function MissionVisionValues() {
           <div className="lg:col-span-5 relative flex justify-center order-2 lg:order-1">
             <Reveal delay={0.1} className="w-full max-w-[420px]">
               <div className="rounded-[2rem] overflow-hidden border border-zinc-900/60 bg-zinc-950 p-2 shadow-2xl">
-                <img 
-                  src="/assets/About-page/mission/mission.png" 
+                <img
+                  src="/assets/About-page/mission/mission.png"
                   alt="Our Mission"
                   className="w-full aspect-square object-cover rounded-[1.5rem]"
                 />
@@ -113,7 +113,7 @@ export function MissionVisionValues() {
           <div className="lg:col-span-7 text-left space-y-6 order-1 lg:order-2">
             <Reveal>
               <span className="text-[11px] font-bold tracking-[0.25em] uppercase text-rose-500 block mb-2 font-mono">OUR PURPOSE</span>
-              <h2 className="text-3xl md:text-5xl font-extrabold text-white tracking-tight leading-none mb-4 flex items-center gap-1">
+              <h2 className="text-3xl md:text-5xl font-bold text-white tracking-tight leading-none mb-4 flex items-center gap-1">
                 OUR MISSION<span className="text-rose-500">.</span>
               </h2>
               <p className="text-zinc-300 text-sm md:text-base leading-relaxed font-semibold mb-4">
@@ -132,7 +132,7 @@ export function MissionVisionValues() {
           <div className="lg:col-span-7 text-left space-y-6">
             <Reveal>
               <span className="text-[11px] font-bold tracking-[0.25em] uppercase text-rose-500 block mb-2 font-mono">OUR FUTURE</span>
-              <h2 className="text-3xl md:text-5xl font-extrabold text-white tracking-tight leading-none mb-4 flex items-center gap-1">
+              <h2 className="text-3xl md:text-5xl font-bold text-white tracking-tight leading-none mb-4 flex items-center gap-1">
                 OUR VISION<span className="text-rose-500">.</span>
               </h2>
               <p className="text-zinc-300 text-sm md:text-base leading-relaxed font-semibold mb-4">
@@ -148,8 +148,8 @@ export function MissionVisionValues() {
           <div className="lg:col-span-5 relative flex justify-center">
             <Reveal delay={0.1} className="w-full max-w-[420px]">
               <div className="rounded-[2rem] overflow-hidden border border-zinc-900/60 bg-zinc-950 p-2 shadow-2xl">
-                <img 
-                  src="/assets/About-page/mission/vision.png" 
+                <img
+                  src="/assets/About-page/mission/vision.png"
                   alt="Our Vision"
                   className="w-full aspect-square object-cover rounded-[1.5rem]"
                 />

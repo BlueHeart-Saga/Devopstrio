@@ -5,6 +5,7 @@ import { Reveal } from "@/components/ui/Reveal";
 import { ArrowUpRight, Users, Code } from "lucide-react";
 
 const products = [
+ 
   {
     name: "Humanex",
     industry: "HRTech · People Ops",

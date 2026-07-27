@@ -10,7 +10,7 @@ type EventImage = {
 };
 
 type EventRecord = {
-  id: number;
+  id: string;
   eventName: string;
   year: string;
   images: EventImage[];
@@ -22,7 +22,7 @@ export default function EventsAdminPage() {
   const [items, setItems] = useState<EventRecord[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
-  const [editingId, setEditingId] = useState<number | null>(null);
+  const [editingId, setEditingId] = useState<string | null>(null);
   const [formData, setFormData] = useState<Partial<EventRecord>>({ images: [] });
 
   const [isAdding, setIsAdding] = useState(false);
@@ -40,13 +40,14 @@ export default function EventsAdminPage() {
       const data = await res.json();
       
       const normalizedData: EventRecord[] = data.map((item: any) => {
-        if (item.images) return item;
+        const id = String(item.id);
+        if (item.images) return { ...item, id };
           let parsedYear = item.year || new Date().toISOString().split('T')[0];
           if (parsedYear.length === 4) {
             parsedYear = `${parsedYear}-01-01`; // Normalize legacy "2024" to a valid date input format
           }
           return {
-            id: item.id,
+            id,
             eventName: item.eventName || item.category || "Untitled Event",
             year: parsedYear,
             images: item.src ? [{ src: item.src, tagname: item.title || "" }] : []
@@ -182,7 +183,7 @@ export default function EventsAdminPage() {
     }
   };
 
-  const handleDelete = async (id: number) => {
+  const handleDelete = async (id: string) => {
     if (!confirm("Are you sure you want to delete this entire event and all its images?")) return;
     try {
       await fetch(`/api/events/${id}`, { method: "DELETE" });

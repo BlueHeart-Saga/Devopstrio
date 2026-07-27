@@ -28,9 +28,9 @@ export function PartnershipsHero() {
             Strategic Alliances & Delivery Assurance
           </span>
           <h1 className="text-4xl md:text-6xl font-light tracking-tight mb-6 text-white leading-tight max-w-4xl">
-            Partnerships, Certifications, and Trust Infrastructure for <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-rose-500">Enterprise Delivery</span>
+            Partnerships, Certifications, and Trust Infrastructure for <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-rose-500">Enterprise Delivery</span>
           </h1>
-          <p className="text-zinc-300 font-extrabold max-w-2xl text-sm md:text-base leading-relaxed mb-10">
+          <p className="text-zinc-300 font-bold max-w-2xl text-sm md:text-base leading-relaxed mb-10">
             Devopstrio works with leading technology ecosystems, delivery frameworks, and quality standards to help organizations modernize with confidence. Our partnerships, engineering practices, and certification-driven approach strengthen how we design, build, secure, and scale digital platforms.
           </p>
 
@@ -59,7 +59,7 @@ export function PartnershipsHero() {
               className="flex flex-col"
             >
               <span className="text-3xl md:text-4xl font-black text-white mb-2">{stat.value}</span>
-              <span className="text-[10px] md:text-xs font-extrabold text-zinc-400 uppercase tracking-wider">{stat.label}</span>
+              <span className="text-[10px] md:text-xs font-bold text-zinc-400 uppercase tracking-wider">{stat.label}</span>
             </motion.div>
           ))}
         </div>
@@ -100,9 +100,9 @@ export function WhyPartnershipsMatter() {
         <Reveal>
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-3xl md:text-5xl font-light text-white mb-6">
-              Built on Trusted Ecosystems. <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-rose-500">Governed by Delivery Standards.</span>
+              Built on Trusted Ecosystems. <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-rose-500">Governed by Delivery Standards.</span>
             </h2>
-            <p className="text-zinc-400 font-extrabold text-sm md:text-base leading-relaxed">
+            <p className="text-zinc-400 font-bold text-sm md:text-base leading-relaxed">
               Our partnerships and certifications are not just affiliations—they help improve delivery quality, platform expertise, security posture, interoperability, and implementation speed.
             </p>
           </div>
@@ -116,7 +116,7 @@ export function WhyPartnershipsMatter() {
                   {card.icon}
                 </div>
                 <h3 className="text-lg font-black text-white mb-3">{card.title}</h3>
-                <p className="text-zinc-400 font-extrabold text-sm leading-relaxed">
+                <p className="text-zinc-400 font-bold text-sm leading-relaxed">
                   {card.desc}
                 </p>
               </div>
@@ -198,7 +198,7 @@ export function StrategicPartnerships() {
         <Reveal>
           <div className="mb-16">
             <h2 className="text-3xl md:text-5xl font-light text-white mb-6">
-              Strategic <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-rose-500">Technology Partnerships</span>
+              Strategic <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-rose-500">Technology Partnerships</span>
             </h2>
           </div>
         </Reveal>
@@ -209,7 +209,7 @@ export function StrategicPartnerships() {
               <Reveal>
                 <div className="mb-10 max-w-3xl">
                   <h3 className="text-2xl font-black text-white mb-4">{cat.title}</h3>
-                  <p className="text-zinc-400 font-extrabold text-sm">{cat.desc}</p>
+                  <p className="text-zinc-400 font-bold text-sm">{cat.desc}</p>
                 </div>
               </Reveal>
 
@@ -227,9 +227,9 @@ export function StrategicPartnerships() {
                           />
                         </div>
                         <div>
-                          <h4 className="text-xl font-extrabold text-white mb-1 group-hover:text-rose-400 transition-colors">{partner.name}</h4>
+                          <h4 className="text-xl font-bold text-white mb-1 group-hover:text-rose-400 transition-colors">{partner.name}</h4>
                           <span className="text-[10px] font-black text-rose-500 uppercase tracking-widest block mb-4">{partner.cap}</span>
-                          <p className="text-xs font-extrabold text-zinc-300 leading-relaxed">
+                          <p className="text-xs font-bold text-zinc-300 leading-relaxed">
                             <strong className="text-white block mb-1">What we deliver:</strong>
                             {partner.value}
                           </p>
@@ -294,7 +294,7 @@ export function WhatEcosystemEnables() {
         <Reveal>
           <div className="mb-16">
             <h2 className="text-3xl md:text-5xl font-light text-white mb-6">
-              What Our <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-rose-500">Ecosystem Enables</span>
+              What Our <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-rose-500">Ecosystem Enables</span>
             </h2>
           </div>
         </Reveal>
@@ -307,7 +307,7 @@ export function WhatEcosystemEnables() {
                   {card.icon}
                 </div>
                 <h3 className="text-lg font-black text-white mb-3">{card.title}</h3>
-                <p className="text-zinc-400 font-extrabold text-sm leading-relaxed">
+                <p className="text-zinc-400 font-bold text-sm leading-relaxed">
                   {card.desc}
                 </p>
               </div>
@@ -342,7 +342,7 @@ export function CertificationsAssurance() {
         <Reveal>
           <div className="mb-16 max-w-4xl">
             <h2 className="text-3xl md:text-5xl font-light text-white mb-6">
-              Engineering Standards, Platform Expertise, and <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-rose-500">Delivery Readiness</span>
+              Engineering Standards, Platform Expertise, and <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-rose-500">Delivery Readiness</span>
             </h2>
           </div>
         </Reveal>
@@ -364,7 +364,7 @@ export function CertificationsAssurance() {
                   <div className="w-6 h-6 rounded-full bg-rose-500/10 flex items-center justify-center shrink-0 mt-0.5">
                     <CheckCircle2 className="w-4 h-4 text-rose-500" />
                   </div>
-                  <span className="text-sm font-extrabold text-zinc-300 leading-relaxed">{benefit}</span>
+                  <span className="text-sm font-bold text-zinc-300 leading-relaxed">{benefit}</span>
                 </li>
               ))}
             </ul>
@@ -411,7 +411,7 @@ export function EcosystemValueTimeline() {
         <Reveal>
           <div className="mb-16">
             <h2 className="text-3xl md:text-5xl font-light text-white mb-6 text-center">
-              How We Build <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-rose-500">Long-Term Ecosystem Value</span>
+              How We Build <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-rose-500">Long-Term Ecosystem Value</span>
             </h2>
           </div>
         </Reveal>
@@ -429,7 +429,7 @@ export function EcosystemValueTimeline() {
                     <div className="absolute inset-2 rounded-full border border-dashed border-rose-500/30 animate-[spin_10s_linear_infinite]" />
                   </div>
                   <h3 className="text-lg font-black text-white mb-3">{step.title}</h3>
-                  <p className="text-zinc-400 font-extrabold text-xs leading-relaxed max-w-[240px]">
+                  <p className="text-zinc-400 font-bold text-xs leading-relaxed max-w-[240px]">
                     {step.desc}
                   </p>
                 </div>
@@ -518,7 +518,7 @@ export function MiniUseCases() {
         <Reveal>
           <div className="mb-16">
             <h2 className="text-3xl md:text-5xl font-light text-white mb-6 text-center">
-              Where Ecosystem Partnerships <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-rose-500">Create Impact</span>
+              Where Ecosystem Partnerships <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-rose-500">Create Impact</span>
             </h2>
           </div>
         </Reveal>
@@ -529,7 +529,7 @@ export function MiniUseCases() {
               <div className="p-8 rounded-[24px] border border-white/5 bg-zinc-950/60 hover:border-rose-500/30 transition-all group flex flex-col justify-between h-full">
                 <div>
                   <h3 className="text-xl font-black text-white mb-4 group-hover:text-rose-400 transition-colors">{useCase.title}</h3>
-                  <p className="text-zinc-400 font-extrabold text-sm leading-relaxed">
+                  <p className="text-zinc-400 font-bold text-sm leading-relaxed">
                     {useCase.desc}
                   </p>
                 </div>
@@ -558,9 +558,9 @@ export function PartnershipsCTA() {
       <div className="max-w-4xl mx-auto px-6 text-center">
         <Reveal>
           <h2 className="text-3xl md:text-5xl font-light text-white mb-6 leading-tight">
-            Looking for a Technology Partner with the Right <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-rose-500">Ecosystem Alignment?</span>
+            Looking for a Technology Partner with the Right <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-rose-500">Ecosystem Alignment?</span>
           </h2>
-          <p className="text-zinc-400 font-extrabold text-base md:text-lg max-w-3xl mx-auto mb-12 leading-relaxed">
+          <p className="text-zinc-400 font-bold text-base md:text-lg max-w-3xl mx-auto mb-12 leading-relaxed">
             Whether you're planning a cloud transformation, enterprise platform rollout, modernization initiative, or managed services program, Devopstrio brings the engineering capability and partner-aligned delivery model to help you move with confidence.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">

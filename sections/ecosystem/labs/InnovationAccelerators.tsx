@@ -109,11 +109,10 @@ export function InnovationAccelerators() {
                 <button
                   key={acc.id}
                   onClick={() => setActiveTab(acc.id)}
-                  className={`px-4 md:px-6 py-2.5 rounded-full text-[11px] md:text-xs font-bold transition-all duration-300 whitespace-nowrap ${
-                    isActive
+                  className={`px-4 md:px-6 py-2.5 rounded-full text-[11px] md:text-xs font-bold transition-all duration-300 whitespace-nowrap ${isActive
                       ? "bg-rose-600 text-white shadow-[0_0_15px_rgba(225,29,72,0.3)]"
                       : "bg-transparent text-zinc-500 hover:bg-zinc-900 hover:text-zinc-300"
-                  }`}
+                    }`}
                 >
                   {acc.tab}
                 </button>
@@ -125,7 +124,7 @@ export function InnovationAccelerators() {
         {/* Main Split Showcase Container */}
         <div className="bg-zinc-950/40 backdrop-blur-3xl rounded-[24px] lg:rounded-[32px] overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.8)] border border-zinc-800/50">
           <div className="flex flex-col lg:flex-row h-full min-h-[500px]">
-            
+
             {/* Left Image Pane */}
             <div className="w-full lg:w-1/2 relative min-h-[350px] lg:min-h-full overflow-hidden bg-black border-r border-zinc-900/50">
               <AnimatePresence mode="wait">
@@ -155,11 +154,11 @@ export function InnovationAccelerators() {
                   <span className="text-[10px] font-bold tracking-[0.25em] uppercase text-rose-500 mb-4 block drop-shadow-md">
                     {currentAsset.tab}
                   </span>
-                  
-                  <h3 className="text-3xl md:text-4xl font-extrabold text-white tracking-tight leading-[1.1] mb-6">
+
+                  <h3 className="text-3xl md:text-4xl font-bold text-white tracking-tight leading-[1.1] mb-6">
                     {currentAsset.title}
                   </h3>
-                  
+
                   <p className="text-zinc-400 text-sm md:text-base leading-relaxed mb-10 max-w-lg">
                     {currentAsset.desc}
                   </p>

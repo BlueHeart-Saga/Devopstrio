@@ -15,7 +15,7 @@ export default function CaseStudiesMarketingPage() {
   return (
     <div className="min-h-screen bg-[#050505] text-white pt-24 pb-16">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 space-y-10">
-        
+
         <Link href="/marketing" className="inline-flex items-center gap-2 text-xs font-semibold text-rose-500 hover:text-rose-400">
           <ArrowLeft className="w-4 h-4" /> Back to Marketing Hub
         </Link>
@@ -24,7 +24,7 @@ export default function CaseStudiesMarketingPage() {
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-500/10 border border-rose-500/30 text-rose-400 text-xs font-bold uppercase mb-3">
             <BookOpen className="w-3.5 h-3.5" /> Client Success Stories
           </div>
-          <h1 className="text-4xl font-extrabold text-white">Enterprise Case Studies</h1>
+          <h1 className="text-4xl font-bold text-white">Enterprise Case Studies</h1>
           <p className="text-neutral-400 text-sm mt-2 max-w-2xl">
             Real-world enterprise case studies documenting ROI metrics, client transformation, and architectural solutions.
           </p>

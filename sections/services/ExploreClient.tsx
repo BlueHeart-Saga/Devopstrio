@@ -153,13 +153,13 @@ export function ExploreClient() {
         {/* Background Ambient Glows */}
         <div className="absolute top-[-10%] right-[-10%] w-[50%] aspect-square bg-[radial-gradient(circle_at_center,rgba(244,63,94,0.06),transparent_70%)] pointer-events-none z-0" />
         <div className="absolute bottom-[-10%] left-[-10%] w-[50%] aspect-square bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.01),transparent_70%)] pointer-events-none z-0" />
-        
+
         {/* Futuristic grid overlay */}
         <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.015)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.015)_1px,transparent_1px)] bg-[size:32px_32px] opacity-60 pointer-events-none [mask-image:radial-gradient(ellipse_at_center,black_40%,transparent_90%)]" />
 
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center w-full">
-            
+
             {/* Hero Left Content */}
             <div className="lg:col-span-7 flex flex-col items-start text-left justify-center z-20">
               <Reveal>
@@ -170,7 +170,7 @@ export function ExploreClient() {
                   </span>
                 </div>
               </Reveal>
-              
+
               <Reveal delay={0.1}>
                 <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold tracking-tight leading-[1.12] text-white mb-6">
                   Unified Engineering &
@@ -231,7 +231,7 @@ export function ExploreClient() {
                 />
               </Reveal>
             </div>
-            
+
           </div>
         </div>
       </section>
@@ -241,7 +241,7 @@ export function ExploreClient() {
         <div className="max-w-7xl mx-auto px-12 xl:px-8">
           <Reveal>
             <div className="group relative overflow-hidden rounded-[32px] border border-zinc-800/60 bg-zinc-950/30 backdrop-blur-xl p-8 md:p-12 lg:p-14">
-              
+
               {/* Background Glow */}
               <div className="absolute inset-0 pointer-events-none">
                 <div className="absolute -top-20 -left-20 w-[400px] h-[400px] bg-rose-600/10 blur-[120px] transition-all duration-1000 group-hover:bg-rose-600/15" />
@@ -263,7 +263,7 @@ export function ExploreClient() {
                     Devopstrio’s service ecosystem is designed to support the full technology lifecycle—from initial advisory and architecture to product engineering, <Link href="/services/cloud-services" className="text-rose-500 hover:underline">cloud modernization</Link>, <Link href="/services/ai-data-innovation" className="text-rose-500 hover:underline">AI enablement</Link>, platform operations, <Link href="/services/cybersecurity" className="text-rose-500 hover:underline">cybersecurity</Link>, and managed support. Engage with us for focused delivery in a single domain or for integrated multi-service transformation programs.
                   </p>
                 </div>
-                
+
                 {/* Right side steps column */}
                 <div className="lg:col-span-7 overflow-x-auto pb-4 scrollbar-hide">
                   <div className="flex gap-4 min-w-[700px] md:min-w-0 md:grid md:grid-cols-3 md:gap-5">
@@ -275,8 +275,8 @@ export function ExploreClient() {
                       { step: "05", name: "Secure", desc: "Zero-Trust Hardening & SOC Audits" },
                       { step: "06", name: "Operate", desc: "24/7 Monitoring & Optimization" }
                     ].map((item, idx) => (
-                      <div 
-                        key={idx} 
+                      <div
+                        key={idx}
                         className="flex-1 bg-zinc-950/60 border border-zinc-900/60 rounded-2xl p-5 hover:border-rose-500/40 hover:bg-zinc-950/80 transition-all duration-300 relative group/step shadow-lg hover:shadow-[0_8px_30px_rgba(0,0,0,0.5)]"
                       >
                         <span className="text-xs font-mono font-bold text-rose-500/40 group-hover/step:text-rose-500 transition-colors block mb-2">{item.step}</span>
@@ -296,7 +296,7 @@ export function ExploreClient() {
       <section id="core-pillars" className="py-24 bg-[#020202] border-b border-zinc-900 relative">
         <div className="absolute top-1/3 left-1/4 w-[400px] h-[400px] bg-rose-600/5 rounded-full blur-[100px] pointer-events-none" />
         <div className="max-w-7xl mx-auto px-6 md:px-12">
-          
+
           <div className="text-center max-w-3xl mx-auto mb-14">
             <Reveal>
               <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block drop-shadow-md">
@@ -323,7 +323,7 @@ export function ExploreClient() {
                   className="group cursor-pointer flex flex-col justify-between p-6 bg-zinc-950/40 border border-zinc-900 hover:border-rose-500/40 rounded-2xl h-full min-h-[250px] transition-all duration-300 hover:bg-zinc-900/10 hover:shadow-[0_8px_32px_0_rgba(244,63,94,0.05)] hover:-translate-y-1 relative overflow-hidden"
                 >
                   <div className="absolute -right-6 -bottom-6 w-24 h-24 bg-rose-600/5 rounded-full blur-2xl group-hover:scale-125 transition-all duration-500" />
-                  
+
                   <div className="space-y-4">
                     <div className="w-11 h-11 rounded-xl bg-rose-600/10 flex items-center justify-center group-hover:bg-rose-600 group-hover:text-white transition-all duration-300">
                       {getCategoryIcon(cat.iconName, "w-5 h-5 text-rose-500 group-hover:text-white transition-colors")}
@@ -361,7 +361,7 @@ export function ExploreClient() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-rose-600/5 rounded-full blur-[120px] pointer-events-none" />
 
         <div className="max-w-7xl mx-auto w-full px-6 md:px-12 relative z-10">
-          
+
           <div className="text-center max-w-3xl mx-auto mb-14">
             <Reveal>
               <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block drop-shadow-md">
@@ -386,11 +386,10 @@ export function ExploreClient() {
               <button
                 key={cat.id}
                 onClick={() => setActiveCatalogTab(cat.id)}
-                className={`px-5 py-2.5 rounded-full text-xs font-semibold whitespace-nowrap transition-all duration-300 border ${
-                  activeCatalogTab === cat.id
+                className={`px-5 py-2.5 rounded-full text-xs font-semibold whitespace-nowrap transition-all duration-300 border ${activeCatalogTab === cat.id
                     ? "bg-rose-600 border-rose-600 text-white shadow-[0_4px_20px_rgba(225,29,72,0.35)]"
                     : "bg-zinc-950/40 border-zinc-900 text-zinc-400 hover:text-white hover:bg-zinc-900/50 hover:border-zinc-800"
-                }`}
+                  }`}
               >
                 {cat.title}
               </button>
@@ -481,7 +480,7 @@ export function ExploreClient() {
       <section className="py-24 bg-black border-b border-zinc-900 relative">
         <div className="absolute top-1/2 right-1/4 w-[350px] h-[350px] bg-rose-600/5 rounded-full blur-[100px] pointer-events-none" />
         <div className="max-w-6xl mx-auto px-6 md:px-12">
-          
+
           <div className="text-center max-w-3xl mx-auto mb-12">
             <Reveal>
               <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block drop-shadow-md">
@@ -520,7 +519,7 @@ export function ExploreClient() {
                 </button>
               )}
             </div>
-            
+
             {/* Quick search keywords */}
             <div className="mt-3 flex flex-wrap gap-2 justify-center">
               <span className="text-[10px] text-zinc-500 font-bold uppercase py-0.5">Popular:</span>
@@ -544,7 +543,7 @@ export function ExploreClient() {
                   <span className="text-[11px] font-bold text-zinc-400 uppercase tracking-widest">{searchResults.length} matches found</span>
                   <button onClick={() => setSearchQuery("")} className="text-xs text-rose-500 hover:underline flex items-center gap-1">Clear Search</button>
                 </div>
-                
+
                 {searchResults.length > 0 ? (
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                     {searchResults.map((s, idx) => (
@@ -552,7 +551,7 @@ export function ExploreClient() {
                         <span className="text-[9px] font-mono font-bold tracking-wider uppercase text-rose-500 bg-rose-500/10 px-2 py-0.5 rounded">
                           {s.categoryTitle}
                         </span>
-                        <h4 className="text-xs font-extrabold text-white mt-2 mb-1">{s.name}</h4>
+                        <h4 className="text-xs font-bold text-white mt-2 mb-1">{s.name}</h4>
                         <p className="text-[10px] text-zinc-500 font-bold">{s.groupTitle}</p>
                       </div>
                     ))}
@@ -573,7 +572,7 @@ export function ExploreClient() {
                         <div className="w-6 h-6 rounded bg-rose-500/10 flex items-center justify-center">
                           {getCategoryIcon(cat.iconName, "w-3 h-3 text-rose-500")}
                         </div>
-                        <h4 className="text-xs font-extrabold text-white uppercase tracking-wider">{cat.title}</h4>
+                        <h4 className="text-xs font-bold text-white uppercase tracking-wider">{cat.title}</h4>
                       </div>
                       <div className="flex flex-wrap gap-1.5">
                         {cat.groups[0]?.services.concat(cat.groups[1]?.services || []).slice(0, 6).map((srv, idx) => (
@@ -588,7 +587,7 @@ export function ExploreClient() {
                     </div>
                   ))}
                 </div>
-                
+
                 <div className="text-center border-t border-zinc-900/80 pt-6">
                   <button
                     onClick={() => {
@@ -611,7 +610,7 @@ export function ExploreClient() {
       <section className="py-24 bg-[#020202] border-b border-zinc-900 relative">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(244,63,94,0.02),transparent_50%)] pointer-events-none" />
         <div className="max-w-7xl mx-auto px-6 md:px-12">
-          
+
           <div className="text-center max-w-3xl mx-auto mb-14">
             <Reveal>
               <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block drop-shadow-md">
@@ -639,11 +638,10 @@ export function ExploreClient() {
                   <button
                     key={obj.id}
                     onClick={() => setActiveObjectiveTab(obj.id)}
-                    className={`w-full text-left p-4 rounded-xl flex items-center justify-between border transition-all duration-300 ${
-                      isActive
+                    className={`w-full text-left p-4 rounded-xl flex items-center justify-between border transition-all duration-300 ${isActive
                         ? "bg-zinc-950 border-rose-500/60 text-white shadow-[0_4px_20px_rgba(225,29,72,0.05)]"
                         : "bg-zinc-950/20 border-zinc-900/60 text-zinc-400 hover:text-white hover:bg-zinc-950/50"
-                    }`}
+                      }`}
                   >
                     <div className="space-y-1">
                       <span className="text-xs font-bold">{obj.title}</span>
@@ -695,7 +693,7 @@ export function ExploreClient() {
       {/* SECTION 8 — BROWSE BY INDUSTRY */}
       <section className="py-24 bg-black border-b border-zinc-900">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
-          
+
           <div className="text-center max-w-3xl mx-auto mb-14">
             <Reveal>
               <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block drop-shadow-md">
@@ -727,7 +725,7 @@ export function ExploreClient() {
                       <strong className="text-zinc-500">Challenges:</strong> {ind.challenges}
                     </p>
                   </div>
-                  
+
                   <div className="space-y-1.5 pt-2">
                     <p className="text-[10px] font-bold text-zinc-400 uppercase tracking-wider">Recommended Services:</p>
                     <ul className="space-y-1">
@@ -759,7 +757,7 @@ export function ExploreClient() {
       {/* SECTION 9 — BROWSE BY TECHNOLOGY STACK */}
       <section className="py-24 bg-[#020202] border-b border-zinc-900">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
-          
+
           <div className="text-center max-w-3xl mx-auto mb-14">
             <Reveal>
               <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block drop-shadow-md">
@@ -781,7 +779,7 @@ export function ExploreClient() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {techStackCategories.map((cat, idx) => (
               <div key={idx} className="space-y-4 bg-zinc-950/20 border border-zinc-900/60 rounded-2xl p-6">
-                <h3 className="text-xs font-extrabold text-rose-500 uppercase tracking-wider pb-2 border-b border-zinc-900">{cat.name}</h3>
+                <h3 className="text-xs font-bold text-rose-500 uppercase tracking-wider pb-2 border-b border-zinc-900">{cat.name}</h3>
                 <div className="space-y-3">
                   {cat.technologies.map((tech, tIdx) => (
                     <div key={tIdx} className="flex items-center justify-between p-2 rounded-lg bg-zinc-900/40 hover:bg-zinc-900/80 transition-colors">
@@ -803,7 +801,7 @@ export function ExploreClient() {
       {/* SECTION 10 — ENGAGEMENT MODELS */}
       <section className="py-24 bg-black border-b border-zinc-900">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
-          
+
           <div className="text-center max-w-3xl mx-auto mb-14">
             <Reveal>
               <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block drop-shadow-md">
@@ -831,7 +829,7 @@ export function ExploreClient() {
                     <h3 className="text-sm font-bold text-white pt-2 group-hover:text-rose-400 transition-colors">{model.title}</h3>
                   </div>
                   <p className="text-[11px] text-zinc-400 font-semibold leading-relaxed">{model.description}</p>
-                  
+
                   <ul className="space-y-2 pt-2">
                     {model.features.map((feat, fIdx) => (
                       <li key={fIdx} className="text-[10px] text-zinc-300 font-semibold flex items-start gap-2">
@@ -841,7 +839,7 @@ export function ExploreClient() {
                     ))}
                   </ul>
                 </div>
-                
+
                 <div className="pt-6 border-t border-zinc-900 mt-6">
                   <Link
                     href="/contact"
@@ -860,7 +858,7 @@ export function ExploreClient() {
       {/* SECTION 11 — FEATURED TRANSFORMATION PACKAGES */}
       <section className="py-24 bg-[#020202] border-b border-zinc-900">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
-          
+
           <div className="text-center max-w-3xl mx-auto mb-14">
             <Reveal>
               <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block drop-shadow-md">
@@ -888,7 +886,7 @@ export function ExploreClient() {
                     <h3 className="text-base md:text-lg font-bold text-white group-hover:text-rose-400 transition-colors">{pkg.title}</h3>
                   </div>
                   <p className="text-xs font-semibold text-zinc-400 leading-relaxed">{pkg.description}</p>
-                  
+
                   <div className="flex flex-wrap gap-1.5 pt-2">
                     {pkg.services.map((srv, sIdx) => (
                       <span key={sIdx} className="px-2.5 py-1 rounded bg-zinc-900 border border-zinc-900 text-[10px] font-semibold text-zinc-300">
@@ -923,7 +921,7 @@ export function ExploreClient() {
       <section className="py-24 bg-black border-b border-zinc-900 relative">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,rgba(244,63,94,0.02),transparent_50%)] pointer-events-none" />
         <div className="max-w-7xl mx-auto px-6 md:px-12">
-          
+
           <div className="text-center max-w-3xl mx-auto mb-14">
             <Reveal>
               <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block drop-shadow-md">
@@ -947,7 +945,7 @@ export function ExploreClient() {
               <div key={idx} className="bg-zinc-950/40 border border-zinc-900 rounded-3xl p-6 md:p-8 flex flex-col justify-between group">
                 <div className="space-y-4">
                   <div className="flex items-center justify-between border-b border-zinc-900 pb-4">
-                    <span className="text-xs font-extrabold text-white">{cs.client}</span>
+                    <span className="text-xs font-bold text-white">{cs.client}</span>
                     <span className="text-[10px] font-mono text-zinc-500 font-bold uppercase">Enterprise Case</span>
                   </div>
 
@@ -974,7 +972,7 @@ export function ExploreClient() {
                 <div className="pt-6 border-t border-zinc-900 mt-6 grid grid-cols-2 gap-4">
                   {cs.metrics.map((m, mIdx) => (
                     <div key={mIdx} className="text-center p-2.5 bg-zinc-900/40 rounded-xl border border-zinc-900">
-                      <p className="text-base font-extrabold text-rose-500">{m.value}</p>
+                      <p className="text-base font-bold text-rose-500">{m.value}</p>
                       <p className="text-[9px] font-bold text-zinc-400 uppercase tracking-widest mt-0.5">{m.label}</p>
                     </div>
                   ))}
@@ -1004,7 +1002,7 @@ export function ExploreClient() {
                   Devopstrio bridges the gap between <Link href="/services/cloud-services" className="text-rose-500 hover:underline">modern cloud complexity</Link> and <Link href="/services/devops-automation" className="text-rose-500 hover:underline">rapid operational engineering</Link>. We construct robust configurations built to withstand strict <Link href="/services/cybersecurity" className="text-rose-500 hover:underline">security compliance frameworks</Link>.
                 </p>
               </Reveal>
-              
+
               <div className="space-y-4">
                 <div className="flex items-start gap-3">
                   <div className="w-5 h-5 rounded bg-rose-500/10 flex items-center justify-center mt-1">
@@ -1030,28 +1028,28 @@ export function ExploreClient() {
 
             <div className="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="bg-zinc-950/40 border border-zinc-900 rounded-2xl p-6">
-                <h3 className="text-xs font-extrabold text-white uppercase tracking-wider mb-2">Integrated Teams</h3>
+                <h3 className="text-xs font-bold text-white uppercase tracking-wider mb-2">Integrated Teams</h3>
                 <p className="text-[11px] text-zinc-400 font-semibold leading-relaxed">
                   Eliminate multiple vendor hand-offs. We coordinate cloud, AI engineering, QA automation, and operations under a single team.
                 </p>
               </div>
 
               <div className="bg-zinc-950/40 border border-zinc-900 rounded-2xl p-6">
-                <h3 className="text-xs font-extrabold text-white uppercase tracking-wider mb-2">No Placeholders Policy</h3>
+                <h3 className="text-xs font-bold text-white uppercase tracking-wider mb-2">No Placeholders Policy</h3>
                 <p className="text-[11px] text-zinc-400 font-semibold leading-relaxed">
                   Every capability listing features fully functional configurations, real-world case references, and battle-tested scripts.
                 </p>
               </div>
 
               <div className="bg-zinc-950/40 border border-zinc-900 rounded-2xl p-6">
-                <h3 className="text-xs font-extrabold text-white uppercase tracking-wider mb-2">SLA-Backed Containment</h3>
+                <h3 className="text-xs font-bold text-white uppercase tracking-wider mb-2">SLA-Backed Containment</h3>
                 <p className="text-[11px] text-zinc-400 font-semibold leading-relaxed">
                   Our managed ops framework supports active 24/7 logging with 15-minute response triggers for production incident containment.
                 </p>
               </div>
 
               <div className="bg-zinc-950/40 border border-zinc-900 rounded-2xl p-6">
-                <h3 className="text-xs font-extrabold text-white uppercase tracking-wider mb-2">Global Scale</h3>
+                <h3 className="text-xs font-bold text-white uppercase tracking-wider mb-2">Global Scale</h3>
                 <p className="text-[11px] text-zinc-400 font-semibold leading-relaxed">
                   We deploy multi-region container grids (AKS, EKS) designed for high concurrency, global load balancing, and failure failovers.
                 </p>
@@ -1064,7 +1062,7 @@ export function ExploreClient() {
       {/* SECTION 14 — FAQ / SERVICE DISCOVERY QUESTIONS */}
       <section className="py-24 bg-black border-b border-zinc-900">
         <div className="max-w-4xl mx-auto px-6 md:px-12">
-          
+
           <div className="text-center max-w-3xl mx-auto mb-14">
             <Reveal>
               <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block drop-shadow-md">
@@ -1112,14 +1110,14 @@ export function ExploreClient() {
       <section className="relative py-28 bg-[#020202] text-center overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(244,63,94,0.06),transparent_60%)] pointer-events-none" />
         <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-rose-600/5 rounded-full blur-[100px] pointer-events-none" />
-        
+
         <div className="max-w-4xl mx-auto px-6 relative z-10 space-y-6">
           <Reveal>
             <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-bold tracking-wider uppercase bg-rose-500/10 text-rose-500 border border-rose-500/20">
               BUILD WITH DEVOPSTRIO
             </span>
           </Reveal>
-          
+
           <Reveal>
             <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6 drop-shadow-md">
               Let's Build the Right Transformation Path for Your Business

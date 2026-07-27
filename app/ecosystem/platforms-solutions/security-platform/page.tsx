@@ -299,7 +299,7 @@ const ThreatWorkflow = () => {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-rose-600/5 rounded-full blur-[140px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
-        
+
         {/* Header Section */}
         <Reveal>
           <div className="text-center max-w-3xl mx-auto mb-20">
@@ -319,7 +319,7 @@ const ThreatWorkflow = () => {
             return (
               <Reveal key={step.step} delay={idx * 0.05}>
                 <div className={`relative overflow-hidden bg-zinc-950/35 border border-white/10 rounded-3xl p-8 min-h-[260px] h-full flex flex-col justify-between backdrop-blur-md shadow-[0_8px_32px_0_rgba(0,0,0,0.4)] hover:bg-zinc-900/10 transition-all duration-300 ${staggerClasses[idx] || ""}`}>
-                  
+
                   <div>
                     {/* Header: Large Styled Number & Icon */}
                     <div className="flex items-start justify-between mb-6">
@@ -577,16 +577,16 @@ const AISecurity = () => {
             return (
               <Reveal key={idx} delay={idx * 0.05 + 0.05}>
                 <div className="group relative rounded-[2rem] p-8 bg-[#0A0A0C]/55 border border-zinc-900/90 hover:border-zinc-800 transition-all duration-500 hover:-translate-y-1.5 flex flex-col justify-between min-h-[340px] text-center overflow-hidden hover:shadow-[0_20px_40px_rgba(0,0,0,0.7)]">
-                  
+
                   {/* Subtle color-matching radial glow background on card hover */}
                   <div className="absolute -inset-px rounded-[2rem] transition-opacity duration-500 opacity-0 group-hover:opacity-100 pointer-events-none z-0"
-                       style={{
-                         background: `radial-gradient(circle at 50% 100%, ${p.glowColor}, transparent 65%)`,
-                         border: `1px solid ${p.borderColor}`
-                       }} />
+                    style={{
+                      background: `radial-gradient(circle at 50% 100%, ${p.glowColor}, transparent 65%)`,
+                      border: `1px solid ${p.borderColor}`
+                    }} />
 
                   <div className="relative z-10 flex flex-col items-center justify-between h-full w-full">
-                    
+
                     {/* Top Portion: Infographic Slit & Number */}
                     <div className="w-full flex flex-col items-center">
                       <div className="relative w-full h-20 overflow-hidden flex items-end justify-center">
@@ -597,7 +597,7 @@ const AISecurity = () => {
                         {/* Shadow overlay to give pocket slit depth */}
                         <div className="absolute inset-x-0 bottom-0 h-4 bg-gradient-to-t from-[#0A0A0C] via-[#0A0A0C]/40 to-transparent pointer-events-none opacity-20" />
                       </div>
-                      
+
                       {/* Pocket Slit Horizontal Line */}
                       <div className="w-full h-px bg-zinc-850 relative">
                         <div className="absolute inset-x-0 bottom-0 h-3 bg-gradient-to-t from-[#0A0A0C] to-transparent -translate-y-full opacity-90" />
@@ -607,7 +607,7 @@ const AISecurity = () => {
                       <h3 className="text-sm font-bold uppercase tracking-wider text-white mt-7 mb-3 transition-colors duration-300">
                         {p.title}
                       </h3>
-                      
+
                       {/* Description */}
                       <p className="text-[11px] text-zinc-400 font-semibold leading-relaxed max-w-[210px]">
                         {p.desc}
@@ -658,7 +658,7 @@ const BusinessOutcomes = () => {
             <Reveal key={idx} delay={idx * 0.05}>
               <div className="p-6 bg-zinc-950/20 border border-zinc-900 rounded-2xl flex flex-col justify-between min-h-[160px] hover:border-zinc-800 transition-all duration-300">
                 <div>
-                  <div className="text-3xl font-extrabold text-white mb-2">{item.value}</div>
+                  <div className="text-3xl font-bold text-white mb-2">{item.value}</div>
                   <h3 className="text-sm md:text-base font-bold text-rose-500 mb-2 tracking-tight">{item.title}</h3>
                 </div>
                 <p className="text-xs text-zinc-400 leading-relaxed font-bold">{item.desc}</p>
@@ -930,7 +930,7 @@ const SecurityCTA = () => {
     <section className="w-full py-32 bg-black text-center relative overflow-hidden">
       <div className="absolute inset-0 opacity-[0.015] pointer-events-none" style={{ backgroundImage: "radial-gradient(circle, #fff 1px, transparent 1px)", backgroundSize: "32px 32px" }} />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[300px] bg-[radial-gradient(circle_at_center,rgba(225,29,72,0.025),transparent_60%)] pointer-events-none" />
-      
+
       <div className="max-w-3xl mx-auto px-6 relative z-10">
         <Reveal>
           <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">GET STARTED</span>

@@ -21,7 +21,7 @@ export function ServiceMetrics({ stats }: ServiceMetricsProps) {
       <div className="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-[50%] aspect-square bg-[radial-gradient(circle_at_center,rgba(244,63,94,0.01),transparent_70%)] pointer-events-none z-0" />
 
       <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10 text-center">
-        
+
         {/* Header Section */}
         <Reveal className="mb-16 w-full flex flex-col items-center text-center">
           <div className="inline-flex items-center justify-center gap-2 px-3 py-1 rounded-full mb-4">
@@ -45,7 +45,7 @@ export function ServiceMetrics({ stats }: ServiceMetricsProps) {
                 {/* Subtle hover background accent */}
                 <div className="absolute top-0 right-0 w-24 h-24 bg-[radial-gradient(circle_at_center,rgba(244,63,94,0.02),transparent_70%)] opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
 
-                <span className="block text-4xl md:text-5xl font-extrabold font-mono text-rose-500 mb-3 group-hover:scale-[1.03] transition-transform duration-300 origin-center">
+                <span className="block text-4xl md:text-5xl font-bold font-mono text-rose-500 mb-3 group-hover:scale-[1.03] transition-transform duration-300 origin-center">
                   {stat.value}
                 </span>
                 <span className="block text-[10px] md:text-[11px] font-mono tracking-widest text-zinc-450 uppercase font-semibold">

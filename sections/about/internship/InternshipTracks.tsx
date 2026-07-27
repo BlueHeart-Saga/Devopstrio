@@ -92,11 +92,10 @@ export const InternshipTracks = () => {
               <button
                 key={track.id}
                 onClick={() => setActiveTab(track.id)}
-                className={`flex items-center gap-2.5 px-5 py-3.5 rounded-xl text-sm font-semibold transition-all duration-300 ${
-                  isActive
+                className={`flex items-center gap-2.5 px-5 py-3.5 rounded-xl text-sm font-semibold transition-all duration-300 ${isActive
                     ? "bg-zinc-900 text-white shadow-[0_4px_20px_rgba(0,0,0,0.4)] border border-zinc-800"
                     : "text-zinc-405 hover:text-white hover:bg-zinc-900/30"
-                }`}
+                  }`}
               >
                 <Icon size={16} className={isActive ? track.accent : "text-zinc-500"} />
                 {track.title}
@@ -132,7 +131,7 @@ export const InternshipTracks = () => {
                       <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${track.color} flex items-center justify-center text-white mb-6 shadow-lg`}>
                         <Icon size={28} />
                       </div>
-                      <h3 className="text-2xl sm:text-3xl font-extrabold text-white mb-4 tracking-tight">
+                      <h3 className="text-2xl sm:text-3xl font-bold text-white mb-4 tracking-tight">
                         {track.title}
                       </h3>
                       <p className="text-zinc-400 text-sm sm:text-base leading-relaxed mb-6 font-medium">

@@ -36,7 +36,7 @@ import {
   MapPin,
   Heart,
   FileCheck
-,
+  ,
   Star,
   Quote
 } from "lucide-react";
@@ -191,7 +191,7 @@ export default function HomelaProductPage() {
       {/* 1. HERO SECTION */}
       <section className="relative w-full py-24 bg-black border-b border-zinc-900/60 overflow-hidden">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-[radial-gradient(circle_at_center,rgba(245,158,11,0.03),transparent_60%)] pointer-events-none" />
-        
+
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             {/* Left Content */}
@@ -202,12 +202,12 @@ export default function HomelaProductPage() {
                   Featured PropTech Platform
                 </span>
               </Reveal>
-              
+
               <Reveal delay={0.1}>
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-2 leading-tight tracking-tight">
                   Homela
                 </h1>
-                <p className="text-xl md:text-2xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-400 mb-6">
+                <p className="text-xl md:text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-400 mb-6">
                   Property Operations &amp; Real Estate Platform
                 </p>
               </Reveal>
@@ -284,7 +284,7 @@ export default function HomelaProductPage() {
               <div className="absolute top-6 right-6 text-red-500/80 bg-red-950/20 border border-red-500/20 rounded-full px-3 py-1 text-[9px] font-mono font-bold uppercase tracking-wider">
                 Outdated Method
               </div>
-              <h3 className="text-base font-extrabold text-white mb-6 flex items-center gap-2">
+              <h3 className="text-base font-bold text-white mb-6 flex items-center gap-2">
                 <AlertTriangle className="w-5 h-5 text-red-500" /> Scattered Listings &amp; Leads
               </h3>
               <ul className="space-y-4 text-xs md:text-sm text-zinc-400 font-bold leading-relaxed">
@@ -312,7 +312,7 @@ export default function HomelaProductPage() {
               <div className="absolute top-6 right-6 text-amber-400 bg-amber-950/30 border border-amber-500/20 rounded-full px-3 py-1 text-[9px] font-mono font-bold uppercase tracking-wider">
                 Homela Flow
               </div>
-              <h3 className="text-base font-extrabold text-white mb-6 flex items-center gap-2">
+              <h3 className="text-base font-bold text-white mb-6 flex items-center gap-2">
                 <ShieldCheck className="w-5 h-5 text-amber-400" /> Unified Operations
               </h3>
               <ul className="space-y-4 text-xs md:text-sm text-zinc-350 font-bold leading-relaxed">
@@ -359,7 +359,7 @@ export default function HomelaProductPage() {
 
             <div className="lg:col-span-6 bg-zinc-950/30 border border-zinc-900 rounded-3xl p-8 md:p-12 relative overflow-hidden">
               <div className="absolute -right-20 -bottom-20 w-[300px] h-[300px] bg-amber-500/[0.01] rounded-full blur-3xl pointer-events-none" />
-              <h3 className="text-base font-extrabold text-white mb-6">Core Operational Statistics</h3>
+              <h3 className="text-base font-bold text-white mb-6">Core Operational Statistics</h3>
               <div className="grid grid-cols-2 gap-6">
                 <div className="p-4 bg-black border border-zinc-900 rounded-xl">
                   <div className="text-2xl font-black text-amber-400 font-mono">3x</div>
@@ -387,7 +387,7 @@ export default function HomelaProductPage() {
       <section className="w-full py-24 bg-black border-b border-zinc-900/60">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
-            
+
             {/* Left Side: Copy and CTA */}
             <div className="sticky top-32">
               <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-white mb-6">
@@ -396,11 +396,11 @@ export default function HomelaProductPage() {
               <p className="text-zinc-400 text-base md:text-lg leading-relaxed mb-10 max-w-md">
                 Get up and running in minutes. No steep learning curve, no complex setup — just a clear path from zero to productive.
               </p>
-              
+
               <button className="px-8 py-3 bg-white text-black text-xs font-bold uppercase tracking-[0.2em] rounded-full hover:bg-zinc-200 transition-colors mb-8 shadow-lg shadow-white/10">
                 GET STARTED
               </button>
-              
+
               <p className="text-sm text-zinc-500 font-medium">
                 Need a custom plan for large teams? <Link href="/contact" className="text-white hover:underline">Contact us</Link>.
               </p>
@@ -441,7 +441,7 @@ export default function HomelaProductPage() {
               Everything required to showcase properties, manage pipelines, and schedule visits.
             </p>
           </Reveal>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {features.map((feat, idx) => (
               <div key={idx} className="p-8 bg-zinc-950/40 border border-zinc-900 hover:border-amber-500/15 rounded-3xl transition-all duration-300 flex flex-col justify-between">
@@ -482,7 +482,7 @@ export default function HomelaProductPage() {
                   <div className="w-10 h-10 rounded-2xl bg-amber-500/10 border border-amber-500/25 flex items-center justify-center text-amber-400 mb-6 shadow-inner group-hover:scale-105 transition-transform duration-300">
                     <Cpu className="w-5 h-5" />
                   </div>
-                  <h3 className="text-base font-extrabold text-white mb-4 tracking-wide">{ai.title}</h3>
+                  <h3 className="text-base font-bold text-white mb-4 tracking-wide">{ai.title}</h3>
                   <p className="text-xs md:text-sm text-zinc-400 leading-relaxed font-bold">{ai.desc}</p>
                 </div>
               </div>
@@ -574,7 +574,7 @@ export default function HomelaProductPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {useCases.map((uc, idx) => (
               <div key={idx} className="p-8 bg-zinc-950/20 border border-zinc-900 rounded-3xl hover:border-zinc-800 transition-colors">
-                <h3 className="text-sm md:text-base font-extrabold text-white mb-3 flex items-center gap-2">
+                <h3 className="text-sm md:text-base font-bold text-white mb-3 flex items-center gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-amber-500" />
                   {uc.title}
                 </h3>
@@ -688,7 +688,7 @@ export default function HomelaProductPage() {
       <section className="relative w-full py-24 md:py-32 bg-[#030303] border-b border-zinc-900/60 overflow-hidden">
         {/* Subtle background glow */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-[1px] bg-gradient-to-r from-transparent via-amber-500/50 to-transparent opacity-50" />
-        
+
         <div className="max-w-7xl mx-auto w-full px-4 sm:px-8 xl:px-12 relative z-10">
           <Reveal className="text-center max-w-3xl mx-auto mb-24">
             <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-amber-500 mb-4 block">
@@ -708,15 +708,15 @@ export default function HomelaProductPage() {
               { title: "Better Lead Conversion", desc: " 중앙 qualified routing assigns buyer inquiries to the best regional agent instantly." },
               { title: "Centralized Listings Catalog", desc: "Manage all specifications, files, layouts, and status parameters inside a single database." }
             ].map((ben, idx) => (
-              <div 
-                key={idx} 
+              <div
+                key={idx}
                 className="group relative flex-1 min-w-[280px] max-w-[400px] p-8 md:p-10 bg-[#0a0a0a] border border-zinc-800/80 rounded-[2rem] overflow-hidden hover:bg-zinc-900/50 transition-colors duration-500 shadow-lg hover:shadow-2xl hover:shadow-amber-500/10"
               >
                 {/* Background Huge Number */}
                 <div className="absolute -right-4 -bottom-8 text-8xl md:text-[120px] font-black text-zinc-800/20 group-hover:text-amber-500/10 transition-colors duration-500 pointer-events-none select-none">
                   0{idx + 1}
                 </div>
-                
+
                 {/* Top Accent Line */}
                 <div className="absolute top-0 left-8 right-8 h-[2px] bg-gradient-to-r from-amber-500/0 via-amber-500/50 to-amber-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
@@ -741,7 +741,7 @@ export default function HomelaProductPage() {
       <section className="w-full py-32 bg-black border-b border-zinc-900/60 overflow-hidden">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
           <div className="flex flex-col lg:flex-row gap-16 lg:gap-12 items-start">
-            
+
             {/* Left Column: Text & List */}
             <div className="lg:w-5/12 flex flex-col items-start text-left lg:sticky lg:top-32">
               <Reveal>
@@ -754,13 +754,13 @@ export default function HomelaProductPage() {
                 <p className="text-zinc-400 text-base md:text-lg leading-relaxed font-medium mb-10">
                   Adapt the platform dashboard to match your agency branding. Setup custom layout categories, parameters, regional rules, and notification flows.
                 </p>
-                
+
                 <ul className="space-y-6">
                   {[
-                  "Branded Property Feeds: Setup custom colors, logo catalogs, and headers.",
-                  "Custom Property Categories: Define parameters for lease types.",
-                  "Regional Language Support: Translate listings and notifications."
-                ].map((txt, idx) => (
+                    "Branded Property Feeds: Setup custom colors, logo catalogs, and headers.",
+                    "Custom Property Categories: Define parameters for lease types.",
+                    "Regional Language Support: Translate listings and notifications."
+                  ].map((txt, idx) => (
                     <li key={idx} className="flex items-start gap-4 text-sm md:text-base text-zinc-300 font-bold">
                       <div className="w-6 h-6 rounded-full bg-amber-500/10 border border-amber-500/30 flex items-center justify-center shrink-0 mt-0.5 shadow-lg shadow-amber-500/20">
                         <Check className="w-3.5 h-3.5 text-amber-400" />
@@ -797,7 +797,7 @@ export default function HomelaProductPage() {
                     <Reveal key={i} delay={i * 0.1}>
                       <div className="group relative h-[260px] md:h-[280px] [perspective:1000px] cursor-pointer">
                         <div className="absolute inset-0 w-full h-full transition-all duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
-                          
+
                           {/* Front Face */}
                           <div className="absolute inset-0 w-full h-full flex flex-col justify-start bg-black border border-zinc-800/80 hover:border-zinc-700 rounded-2xl p-6 shadow-sm [backface-visibility:hidden] transition-colors">
                             <div className="w-12 h-12 mb-5 rounded-xl bg-zinc-900 border border-zinc-800 flex items-center justify-center text-amber-400">
@@ -839,7 +839,7 @@ export default function HomelaProductPage() {
           </div>
         </div>
       </section>
-\n\n{/* 12. SECURITY & DATA PRIVACY (PREMIUM) */}
+      \n\n{/* 12. SECURITY & DATA PRIVACY (PREMIUM) */}
       <section className="relative w-full py-24 bg-black text-white overflow-hidden border-b border-zinc-900/60">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <div className="mb-16 text-center max-w-3xl mx-auto">
@@ -862,14 +862,14 @@ export default function HomelaProductPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
             {[
-                  { icon: Lock, title: "User Authentication", desc: "Protect client profiles and bank payouts with secure MFA." , image: "/assets/common/09ff7846bc8c9998745688779c09f88d 1.png" },
-                  { icon: Upload, title: "Secure File Uploads", desc: "Upload tenancy agreements and property documents with automated malware checks." , image: "/assets/common/1b065043b6959827c05a0073c93a4a53 1.png" },
-                  { icon: ShieldCheck, title: "Role Permissions", desc: "Grant custom access boundaries to agents, owners, and tenants." , image: "/assets/common/260b761ad40c3ad2acba2c6666894539 1.png" },
-                  { icon: Activity, title: "Encrypted Ledgers", desc: "All lease terms and payment log histories are secured with AES-256." , image: "/assets/common/2fe7f9184c515b0c515ce38bc8a25efa 1.png" }
-                ].map((sec, idx) => (
+              { icon: Lock, title: "User Authentication", desc: "Protect client profiles and bank payouts with secure MFA.", image: "/assets/common/09ff7846bc8c9998745688779c09f88d 1.png" },
+              { icon: Upload, title: "Secure File Uploads", desc: "Upload tenancy agreements and property documents with automated malware checks.", image: "/assets/common/1b065043b6959827c05a0073c93a4a53 1.png" },
+              { icon: ShieldCheck, title: "Role Permissions", desc: "Grant custom access boundaries to agents, owners, and tenants.", image: "/assets/common/260b761ad40c3ad2acba2c6666894539 1.png" },
+              { icon: Activity, title: "Encrypted Ledgers", desc: "All lease terms and payment log histories are secured with AES-256.", image: "/assets/common/2fe7f9184c515b0c515ce38bc8a25efa 1.png" }
+            ].map((sec, idx) => (
               <Reveal key={idx} delay={idx * 0.05}>
                 <div className="relative rounded-[24px] border border-zinc-800/80 bg-black p-6 md:p-8 flex flex-col justify-between group h-full shadow-lg overflow-hidden transition-all duration-500 hover:border-amber-500/50 min-h-[380px]">
-                  
+
                   {/* Expanding Image Layer with Glassmorphism */}
                   <div className="absolute inset-0 z-0 [clip-path:circle(0%_at_100%_100%)] group-hover:[clip-path:circle(150%_at_100%_100%)] transition-all duration-700 ease-in-out pointer-events-none">
                     <img src={sec.image || '/assets/common/09ff7846bc8c9998745688779c09f88d 1.png'} alt={sec.title} className="w-full h-full object-cover scale-110 group-hover:scale-100 transition-transform duration-1000 ease-out opacity-40" />
@@ -897,13 +897,13 @@ export default function HomelaProductPage() {
           </div>
         </div>
       </section>
-\n\n
+      \n\n
 
       {/* 13. CLIENT TESTIMONIALS (PREMIUM) */}
       <section className="w-full py-24 md:py-32 bg-[#030303] border-b border-zinc-900/60 relative overflow-hidden">
         {/* Decorative background glow */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-amber-500/10 blur-[120px] rounded-full pointer-events-none" />
-        
+
         <div className="max-w-7xl mx-auto w-full px-4 sm:px-8 xl:px-12 relative z-10">
           <Reveal className="text-center max-w-3xl mx-auto mb-20">
             <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-amber-500 mb-4 block">
@@ -938,8 +938,8 @@ export default function HomelaProductPage() {
                 avatar: "https://i.pravatar.cc/150?u=generalm"
               }
             ].map((t, idx) => (
-              <div 
-                key={idx} 
+              <div
+                key={idx}
                 className={`p-8 md:p-10 bg-[#0c0c0c] border border-zinc-800/80 rounded-[2rem] flex flex-col justify-between relative group hover:border-amber-500/50 hover:bg-zinc-900/50 transition-all duration-500 shadow-xl hover:shadow-2xl hover:shadow-amber-500/10 ${idx === 1 ? 'md:-translate-y-6' : ''}`}
               >
                 {/* Large Quotation Icon Background */}
@@ -953,7 +953,7 @@ export default function HomelaProductPage() {
                       <Star key={i} className="w-4 h-4 fill-amber-500 text-amber-500" />
                     ))}
                   </div>
-                  
+
                   <p className="text-zinc-300 text-base md:text-lg leading-relaxed font-medium mb-12">
                     "{t.quote}"
                   </p>
@@ -961,13 +961,13 @@ export default function HomelaProductPage() {
 
                 <div className="flex items-center gap-4 relative z-10 mt-auto pt-6 border-t border-zinc-800/50 group-hover:border-zinc-700 transition-colors">
                   <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-zinc-800 group-hover:border-amber-500/30 transition-colors">
-                    <Image 
-                      src={t.avatar || 'https://i.pravatar.cc/150?u=fallback'} 
-                      alt={t.author} 
-                      width={48} 
-                      height={48} 
-                      className="w-full h-full object-cover" 
-                      unoptimized 
+                    <Image
+                      src={t.avatar || 'https://i.pravatar.cc/150?u=fallback'}
+                      alt={t.author}
+                      width={48}
+                      height={48}
+                      className="w-full h-full object-cover"
+                      unoptimized
                     />
                   </div>
                   <div>
@@ -992,7 +992,7 @@ export default function HomelaProductPage() {
               Frequently Asked Questions
             </h2>
           </Reveal>
-          
+
           <div className="flex flex-col border-t border-zinc-900">
             {faqs.map((faq, idx) => {
               const isOpen = openFaqIndex === idx;
@@ -1036,7 +1036,7 @@ export default function HomelaProductPage() {
             </p>
             <p className="text-zinc-500 text-xs font-bold mt-4">
               Prefer speaking with an expert? Call us directly at{" "}
-              <a href="tel:0447471482903" className="text-rose-500 hover:text-rose-400 font-extrabold transition-colors">
+              <a href="tel:0447471482903" className="text-rose-500 hover:text-rose-400 font-bold transition-colors">
                 044-7471 482903
               </a>
             </p>
@@ -1044,7 +1044,7 @@ export default function HomelaProductPage() {
 
           <div className="bg-zinc-950 border border-zinc-900 p-8 md:p-12 rounded-3xl relative overflow-hidden">
             <div className="absolute top-0 right-0 w-[200px] h-[200px] bg-amber-500/[0.015] rounded-full blur-xl pointer-events-none" />
-            
+
             {formSubmitted ? (
               <div className="text-center py-12 flex flex-col items-center">
                 <div className="w-12 h-12 rounded-full bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 mb-6">
@@ -1165,7 +1165,7 @@ export default function HomelaProductPage() {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full py-4 bg-white text-black font-extrabold text-xs md:text-sm uppercase tracking-wider rounded-xl hover:bg-zinc-200 transition-colors shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="w-full py-4 bg-white text-black font-bold text-xs md:text-sm uppercase tracking-wider rounded-xl hover:bg-zinc-200 transition-colors shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     {isSubmitting ? "Submitting Request..." : "Request Homela Demo"}
                   </button>
@@ -1209,7 +1209,7 @@ export default function HomelaProductPage() {
             >
               <X className="w-4 h-4" />
             </button>
-            
+
             {/* Video content overlay */}
             <div className="text-center p-8 z-10 max-w-md">
               <div className="w-12 h-12 rounded-full bg-amber-500/10 border border-emerald-500/30 flex items-center justify-center text-amber-400 mx-auto mb-4">

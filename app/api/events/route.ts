@@ -1,48 +1,49 @@
 import { NextResponse } from "next/server";
-import fs from "fs/promises";
-import path from "path";
+import { connectToDatabase } from "@/lib/mongodb";
 
 export const dynamic = 'force-dynamic';
 
-const dataFilePath = path.join(process.cwd(), "data", "events.json");
-
-async function getEvents() {
-  try {
-    const file = await fs.readFile(dataFilePath, "utf8");
-    return JSON.parse(file);
-  } catch (err) {
-    return [];
-  }
-}
-
 export async function GET() {
-  const items = await getEvents();
-  return NextResponse.json(items);
+  try {
+    const { db } = await connectToDatabase();
+    const items = await db.collection("events").find().toArray();
+    
+    const formattedItems = items.map(item => ({
+      id: item._id.toString(),
+      eventName: item.eventName,
+      year: item.year,
+      images: item.images || []
+    }));
+    
+    return NextResponse.json(formattedItems);
+  } catch (error) {
+    console.error("Failed to fetch events from database:", error);
+    return NextResponse.json({ error: "Failed to fetch events" }, { status: 500 });
+  }
 }
 
 export async function POST(req: Request) {
   try {
     const body = await req.json();
-    const items = await getEvents();
-    
-    // Ensure the data directory exists
-    try {
-      await fs.access(path.join(process.cwd(), "data"));
-    } catch {
-      await fs.mkdir(path.join(process.cwd(), "data"), { recursive: true });
-    }
+    const { db } = await connectToDatabase();
     
     const newItem = {
-      id: Date.now(),
-      ...body
+      eventName: body.eventName,
+      year: body.year,
+      images: body.images || [],
+      created_at: new Date()
     };
     
-    items.push(newItem);
-    await fs.writeFile(dataFilePath, JSON.stringify(items, null, 2));
+    const result = await db.collection("events").insertOne(newItem);
     
-    return NextResponse.json(newItem, { status: 201 });
+    const createdItem = {
+      id: result.insertedId.toString(),
+      ...newItem
+    };
+    
+    return NextResponse.json(createdItem, { status: 201 });
   } catch (error) {
-    console.error("Failed to add event:", error);
+    console.error("Failed to add event to database:", error);
     return NextResponse.json({ error: "Failed to add event" }, { status: 500 });
   }
 }

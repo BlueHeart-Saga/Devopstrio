@@ -50,7 +50,7 @@ import Image from "next/image";
 
 export default function SaaSPlatformsPage() {
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
-  
+
   const [formState, setFormState] = useState({
     name: "",
     email: "",
@@ -264,7 +264,7 @@ export default function SaaSPlatformsPage() {
         title={
           <>
             Enterprise SaaS Platforms <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-rose-500 to-rose-600 font-extrabold">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-rose-500 to-rose-600 font-bold">
               Built for Modern Businesses
             </span>
           </>
@@ -301,12 +301,12 @@ export default function SaaSPlatformsPage() {
           <p className="text-center text-[10px] tracking-[0.2em] uppercase text-zinc-500 font-bold mb-8">
             Powered by industry-leading cloud architecture
           </p>
-          
+
           {/* Gradient Edge Masks for smooth fade */}
           <div className="absolute inset-y-0 bottom-0 left-0 w-32 md:w-64 bg-gradient-to-r from-[#0a0a0a] to-transparent z-10 pointer-events-none" />
           <div className="absolute inset-y-0 bottom-0 right-0 w-32 md:w-64 bg-gradient-to-l from-[#0a0a0a] to-transparent z-10 pointer-events-none" />
-          
-          <motion.div 
+
+          <motion.div
             className="flex flex-nowrap w-max items-center gap-12 sm:gap-24 pr-12 sm:pr-24"
             animate={{ x: [0, "-50%"] }}
             transition={{ repeat: Infinity, ease: "linear", duration: 35 }}
@@ -322,7 +322,7 @@ export default function SaaSPlatformsPage() {
               { name: "MongoDB", src: "/assets/Tech_logos/MongoDB.svg" },
               { name: "Elastic", src: "/assets/Tech_logos/Elastic.svg" },
               { name: "Datadog", src: "/assets/Tech_logos/Datadog.svg" },
-              
+
               // Duplicated perfectly for the 50% translation loop
               { name: "AWS", src: "/assets/Tech_logos/AWS.svg" },
               { name: "Azure", src: "/assets/Tech_logos/Microsoft Azure.svg" },
@@ -335,18 +335,18 @@ export default function SaaSPlatformsPage() {
               { name: "Elastic", src: "/assets/Tech_logos/Elastic.svg" },
               { name: "Datadog", src: "/assets/Tech_logos/Datadog.svg" }
             ].map((logo, i) => (
-              <div 
-                key={i} 
+              <div
+                key={i}
                 className="flex items-center justify-center shrink-0 w-10 h-10 md:w-12 md:h-12 opacity-60 hover:opacity-100 grayscale hover:grayscale-0 transition-all duration-300 hover:scale-110 cursor-pointer"
                 title={logo.name}
               >
                 <div className="relative w-full h-full">
-                  <Image 
-                    src={logo.src} 
-                    alt={logo.name} 
-                    fill 
-                    className="object-contain" 
-                    unoptimized 
+                  <Image
+                    src={logo.src}
+                    alt={logo.name}
+                    fill
+                    className="object-contain"
+                    unoptimized
                   />
                 </div>
               </div>
@@ -392,7 +392,7 @@ export default function SaaSPlatformsPage() {
       {/* 3. PREMIUM SAAS PORTFOLIO CAROUSEL */}
       <section className="w-full py-16 md:py-24 border-b border-zinc-900/60 bg-[#030303] relative overflow-hidden">
         <div className="max-w-7xl mx-auto w-full px-4 sm:px-8 xl:px-12 relative z-10">
-          
+
           <div className="max-w-3xl mb-12">
             <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
               RECOMMENDED SAAS PORTFOLIO
@@ -408,7 +408,7 @@ export default function SaaSPlatformsPage() {
           {/* Main Showcase Card */}
           {products.filter(p => p.slug === activeProductSlug).map((activeProduct) => (
             <div key={activeProduct.slug} className="bg-[#0c0c0c] border border-zinc-800/80 rounded-[2rem] overflow-hidden shadow-2xl flex flex-col lg:flex-row mb-8 animate-in fade-in zoom-in-95 duration-500">
-              
+
               {/* Left Content Half */}
               <div className="w-full lg:w-1/2 p-8 md:p-12 lg:p-16 flex flex-col justify-center relative">
                 {/* Subtle background glow */}
@@ -424,7 +424,7 @@ export default function SaaSPlatformsPage() {
                 <h3 className="text-3xl md:text-4xl font-bold text-white tracking-tight mb-6 leading-snug relative z-10">
                   {activeProduct.name} redefines {activeProduct.category.toLowerCase()} with {activeProduct.tagline.toLowerCase()}.
                 </h3>
-                
+
                 <p className="text-zinc-400 text-base md:text-lg font-medium leading-relaxed mb-10 relative z-10">
                   {activeProduct.desc}
                 </p>
@@ -483,17 +483,16 @@ export default function SaaSPlatformsPage() {
                   <button
                     key={p.slug}
                     onClick={() => setActiveProductSlug(p.slug)}
-                    className={`flex-1 min-w-[160px] md:min-w-0 flex flex-col items-center justify-center p-4 border-b-2 transition-all duration-300 relative group ${
-                      isActive 
-                        ? "border-rose-500 bg-zinc-900/60 rounded-xl" 
+                    className={`flex-1 min-w-[160px] md:min-w-0 flex flex-col items-center justify-center p-4 border-b-2 transition-all duration-300 relative group ${isActive
+                        ? "border-rose-500 bg-zinc-900/60 rounded-xl"
                         : "border-transparent hover:bg-zinc-900/40 rounded-xl opacity-50 hover:opacity-100"
-                    }`}
+                      }`}
                   >
                     <div className="h-8 md:h-10 flex items-center justify-center mb-2">
-                      <img 
-                        src={p.logo} 
-                        alt={p.name} 
-                        className={`max-h-full w-auto object-contain transition-all duration-300 ${isActive ? "scale-110 drop-shadow-md" : "grayscale group-hover:grayscale-0"}`} 
+                      <img
+                        src={p.logo}
+                        alt={p.name}
+                        className={`max-h-full w-auto object-contain transition-all duration-300 ${isActive ? "scale-110 drop-shadow-md" : "grayscale group-hover:grayscale-0"}`}
                       />
                     </div>
                     {/* Optional text label for clarity */}
@@ -512,7 +511,7 @@ export default function SaaSPlatformsPage() {
       {/* 4. INDUSTRY COVERAGE */}
       <section className="w-full py-12 bg-black border-b border-zinc-900/60 overflow-hidden">
         <div className="max-w-7xl mx-auto w-full px-4 sm:px-8 xl:px-12">
-          
+
           {/* Header Row */}
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-8">
             <div className="max-w-2xl">
@@ -534,7 +533,7 @@ export default function SaaSPlatformsPage() {
           </div>
 
           {/* Horizontal Scroller */}
-          <div 
+          <div
             id="industry-scroll"
             className="flex overflow-x-auto gap-6 pb-8 snap-x snap-mandatory [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] relative"
           >
@@ -552,16 +551,16 @@ export default function SaaSPlatformsPage() {
               <div key={idx} className="min-w-[280px] md:min-w-[340px] snap-start group cursor-pointer bg-[#0c0c0c] border border-zinc-800/80 rounded-[2rem] p-2 hover:border-zinc-700 transition-colors">
                 {/* Visual Box */}
                 <div className="bg-zinc-900 rounded-[1.5rem] border border-zinc-800/50 aspect-[4/3] relative overflow-hidden mb-4 shadow-inner">
-                  
+
                   {/* Full Cover Image */}
-                  <Image 
-                    src={ind.image} 
-                    alt={ind.title} 
-                    fill 
-                    className="object-cover transition-transform duration-700 group-hover:scale-105" 
-                    unoptimized 
+                  <Image
+                    src={ind.image}
+                    alt={ind.title}
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    unoptimized
                   />
-                  
+
                   {/* Gradient Overlay for Text Readability */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none opacity-80" />
 
@@ -596,7 +595,7 @@ export default function SaaSPlatformsPage() {
             </div>
             <div className="text-[10px] font-mono text-zinc-400 font-bold tracking-widest uppercase">02 / 09</div>
           </div>
-          
+
         </div>
       </section>
 
@@ -608,14 +607,14 @@ export default function SaaSPlatformsPage() {
               PLATFORM INDEX
             </span>
             <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-4">
-                Compare Our Solutions
+              Compare Our Solutions
             </h2>
             <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-bold">
               A quick guide to finding the right workspace or transactional system.
             </p>
           </div>
 
-          <FeaturesAccordion 
+          <FeaturesAccordion
             features={comparisonData.map(row => {
               const product = products.find(p => p.name === row.name) || products[0];
               return {
@@ -647,7 +646,7 @@ export default function SaaSPlatformsPage() {
       {/* 6. WHY ORGANIZATIONS CHOOSE OUR PLATFORMS */}
       <section className="w-full py-12 bg-black border-b border-zinc-900/60 overflow-hidden">
         <div className="max-w-7xl mx-auto w-full px-4 sm:px-8 xl:px-12">
-          
+
           <div className="max-w-4xl mb-8">
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6 leading-tight">
               Why Organizations Choose Devopstrio.
@@ -683,48 +682,48 @@ export default function SaaSPlatformsPage() {
                 "/assets/common/464d8932bca4d6bb552ff2dcf2f3c5ca 1.png"
               ];
               const image = cardImages[idx % cardImages.length];
-              
+
               // Dynamic badges matching the aesthetic
               const category = idx % 2 === 0 ? "Architecture" : "Security";
               const tag = idx % 3 === 0 ? "Automation" : (idx % 2 === 0 ? "Cloud" : "Product");
 
               return (
                 <div key={idx} className="min-w-[320px] md:min-w-[420px] snap-start group cursor-pointer bg-[#0c0c0c] border border-zinc-800/80 p-2 rounded-[2rem] shadow-xl hover:border-zinc-700 transition-colors">
-                   <div className="relative aspect-[4/3] rounded-[1.5rem] overflow-hidden mb-4 bg-zinc-900 border border-zinc-800/50">
-                      <Image 
-                        src={image} 
-                        alt={prop.title} 
-                        fill 
-                        className="object-cover transition-transform duration-700 group-hover:scale-105" 
-                        unoptimized 
-                      />
-                      
-                      {/* Inner shadow overlay for depth */}
-                      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/20 to-black/80 pointer-events-none opacity-80" />
+                  <div className="relative aspect-[4/3] rounded-[1.5rem] overflow-hidden mb-4 bg-zinc-900 border border-zinc-800/50">
+                    <Image
+                      src={image}
+                      alt={prop.title}
+                      fill
+                      className="object-cover transition-transform duration-700 group-hover:scale-105"
+                      unoptimized
+                    />
 
-                      {/* Pill Badges */}
-                      <div className="absolute bottom-4 left-4 flex gap-2">
-                         <span className="px-3 py-1.5 bg-black/60 backdrop-blur-md rounded-full text-[9px] font-bold text-white uppercase tracking-widest border border-white/10">
-                            {category}
-                         </span>
-                         <span className="px-3 py-1.5 bg-black/60 backdrop-blur-md rounded-full text-[9px] font-bold text-white uppercase tracking-widest border border-white/10">
-                            {tag}
-                         </span>
-                      </div>
+                    {/* Inner shadow overlay for depth */}
+                    <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/20 to-black/80 pointer-events-none opacity-80" />
 
-                      {/* Hover Arrow top right */}
-                      <div className="absolute top-4 right-4 w-10 h-10 bg-white rounded-full flex items-center justify-center text-black opacity-0 -translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 shadow-2xl">
-                         <ArrowUpRight className="w-4 h-4" />
-                      </div>
-                   </div>
+                    {/* Pill Badges */}
+                    <div className="absolute bottom-4 left-4 flex gap-2">
+                      <span className="px-3 py-1.5 bg-black/60 backdrop-blur-md rounded-full text-[9px] font-bold text-white uppercase tracking-widest border border-white/10">
+                        {category}
+                      </span>
+                      <span className="px-3 py-1.5 bg-black/60 backdrop-blur-md rounded-full text-[9px] font-bold text-white uppercase tracking-widest border border-white/10">
+                        {tag}
+                      </span>
+                    </div>
 
-                   <div className="flex justify-between items-start px-2 pb-2">
-                      <div className="max-w-[85%]">
-                         <h3 className="text-xl md:text-2xl font-bold text-white mb-2 group-hover:text-rose-400 transition-colors">{prop.title}</h3>
-                         <p className="text-sm text-zinc-400 font-medium leading-relaxed line-clamp-2">{prop.desc}</p>
-                      </div>
-                      <div className="text-[10px] font-mono text-zinc-600 mt-1.5 tracking-widest">0{idx + 1}</div>
-                   </div>
+                    {/* Hover Arrow top right */}
+                    <div className="absolute top-4 right-4 w-10 h-10 bg-white rounded-full flex items-center justify-center text-black opacity-0 -translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 shadow-2xl">
+                      <ArrowUpRight className="w-4 h-4" />
+                    </div>
+                  </div>
+
+                  <div className="flex justify-between items-start px-2 pb-2">
+                    <div className="max-w-[85%]">
+                      <h3 className="text-xl md:text-2xl font-bold text-white mb-2 group-hover:text-rose-400 transition-colors">{prop.title}</h3>
+                      <p className="text-sm text-zinc-400 font-medium leading-relaxed line-clamp-2">{prop.desc}</p>
+                    </div>
+                    <div className="text-[10px] font-mono text-zinc-600 mt-1.5 tracking-widest">0{idx + 1}</div>
+                  </div>
                 </div>
               );
             })}
@@ -735,7 +734,7 @@ export default function SaaSPlatformsPage() {
       {/* 7. CUSTOMER SUCCESS BENTO GRID */}
       <section className="w-full py-12 bg-black border-b border-zinc-900/60">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
-          
+
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             {/* Left Large Card */}
             <div className="lg:col-span-1 bg-[#111111] border border-zinc-800/80 rounded-[2rem] p-8 md:p-10 flex flex-col justify-between">
@@ -746,7 +745,7 @@ export default function SaaSPlatformsPage() {
                 <h3 className="text-2xl md:text-3xl font-bold text-white leading-snug tracking-tight mb-8">
                   "Devopstrio made our team feel ten people larger without adding a single meeting to the calendar."
                 </h3>
-                
+
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 rounded-full bg-zinc-800 overflow-hidden relative">
                     <Image src="https://i.pravatar.cc/150?u=clara" alt="Clara Weiss" fill className="object-cover" unoptimized />
@@ -757,7 +756,7 @@ export default function SaaSPlatformsPage() {
                   </div>
                 </div>
               </div>
-              
+
               <div className="mt-16 pt-8 border-t border-zinc-900/60">
                 <div className="text-[10px] font-mono tracking-widest text-zinc-600 uppercase mb-4 font-bold">In Good Company</div>
                 <div className="flex items-center gap-6 text-sm font-semibold text-zinc-400">
@@ -798,7 +797,7 @@ export default function SaaSPlatformsPage() {
                       {tweet.text}
                     </p>
                   </div>
-                  
+
                   <div className="flex items-center gap-6 text-zinc-500 text-xs font-medium">
                     <span className="flex items-center gap-1.5 hover:text-white transition-colors cursor-pointer"><MessageCircle className="w-3.5 h-3.5" /> {Math.floor(Math.random() * 60) + 10}</span>
                     <span className="flex items-center gap-1.5 hover:text-white transition-colors cursor-pointer"><Repeat className="w-3.5 h-3.5" /> {Math.floor(Math.random() * 200) + 50}</span>
@@ -815,13 +814,13 @@ export default function SaaSPlatformsPage() {
       <section className="w-full py-12 bg-black border-b border-zinc-900/60 flex flex-col items-center">
         <div className="max-w-5xl mx-auto w-full px-12 xl:px-8 text-center">
           <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white mb-8 leading-tight">
-            Powering over 15,000 teams <br className="hidden md:block"/> building the future.
+            Powering over 15,000 teams <br className="hidden md:block" /> building the future.
           </h2>
 
           <div className="inline-flex flex-wrap justify-center gap-2 bg-[#111111] border border-zinc-800/80 p-1.5 rounded-[2rem] mb-12 shadow-2xl max-w-4xl">
             {["All", "Partners", "Technology", "Cloud Providers", "Platforms", "AI Agents"].map((tab) => (
-              <button 
-                key={tab} 
+              <button
+                key={tab}
                 onClick={() => setActiveLogoTab(tab)}
                 className={`px-5 py-2 rounded-full text-xs md:text-sm font-semibold transition-all duration-300 ${activeLogoTab === tab ? "bg-zinc-800/80 text-white shadow-lg" : "text-zinc-400 hover:text-white"}`}
               >
@@ -850,21 +849,21 @@ export default function SaaSPlatformsPage() {
               { image: "/assets/Home-page/partners/lenovo.svg", name: "Lenovo", categories: ["Partners"] },
               { image: "/assets/Home-page/partners/paymentology.svg", name: "Paymentology", categories: ["Partners"] },
               { image: "/assets/Home-page/partners/topland.svg", name: "Topland", categories: ["Partners"] },
-              
+
               // Cloud Providers
               { image: "/assets/Tech_logos/AWS.svg", name: "AWS", categories: ["Cloud Providers", "Technology"] },
               { image: "/assets/Tech_logos/Google_Cloud.svg", name: "Google Cloud", categories: ["Cloud Providers", "AI Agents"] },
               { image: "/assets/Tech_logos/Microsoft Azure.svg", name: "Azure", categories: ["Cloud Providers", "AI Agents"] },
               { image: "/assets/Tech_logos/IBM_Cloud.svg", name: "IBM Cloud", categories: ["Cloud Providers"] },
               { image: "/assets/Tech_logos/Oracle_Cloud.svg", name: "Oracle Cloud", categories: ["Cloud Providers"] },
-              
+
               // Technology
               { image: "/assets/Tech_logos/Kubernetes.svg", name: "Kubernetes", categories: ["Technology", "Platforms"] },
               { image: "/assets/Tech_logos/Docker.svg", name: "Docker", categories: ["Technology", "Platforms"] },
               { image: "/assets/Home-page/Techtools/python.svg", name: "Python", categories: ["Technology", "AI Agents"] },
               { image: "/assets/Tech_logos/Snowflake.svg", name: "Snowflake", categories: ["Technology", "Platforms"] },
               { image: "/assets/Home-page/Techtools/MySQL.svg", name: "MySQL", categories: ["Technology"] },
-              
+
               // Platforms
               { image: "/assets/Tech-icons/github-logo-svg_svgstack_com_28391780931442.svg", name: "GitHub", categories: ["Platforms", "Technology"] },
               { image: "/assets/Tech-icons/figma-logo_svgstack_com_28291780931376.svg", name: "Figma", categories: ["Platforms"] },
@@ -872,19 +871,19 @@ export default function SaaSPlatformsPage() {
               { image: "/assets/Tech-icons/jira-logo_svgstack_com_28621780931167.svg", name: "Jira", categories: ["Platforms"] },
               { image: "/assets/Tech_logos/GitLab.svg", name: "GitLab", categories: ["Platforms", "Technology"] },
               { image: "/assets/Tech-icons/cloudflare-logo-icon_svgstack_com_28071780931769.svg", name: "Cloudflare", categories: ["Platforms", "Technology"] },
-              
+
               // AI Agents
               { image: "/assets/Tech-icons/openai-logo_svgstack_com_28971780931370.svg", name: "OpenAI", categories: ["AI Agents", "Technology"] },
               { image: "/assets/Tech-icons/github-copilot-logo_svgstack_com_28101780931046.svg", name: "Copilot", categories: ["AI Agents", "Technology"] },
             ].filter(logo => activeLogoTab === "All" || logo.categories.includes(activeLogoTab)).map((logo, i) => (
               <div key={i} className="flex flex-col items-center gap-3 text-white cursor-pointer group text-center w-full">
                 <div className="w-12 h-12 relative group-hover:scale-110 transition-transform duration-500">
-                  <Image 
-                    src={logo.image} 
-                    alt={logo.name} 
-                    fill 
-                    className="object-contain" 
-                    unoptimized 
+                  <Image
+                    src={logo.image}
+                    alt={logo.name}
+                    fill
+                    className="object-contain"
+                    unoptimized
                   />
                 </div>
                 <span className="font-bold text-xs md:text-sm tracking-tight text-zinc-300 group-hover:text-white transition-colors">{logo.name}</span>
@@ -911,7 +910,7 @@ export default function SaaSPlatformsPage() {
 
           <div className="bg-zinc-950 border border-zinc-900 p-8 md:p-12 rounded-3xl relative overflow-hidden">
             <div className="absolute top-0 right-0 w-[200px] h-[200px] bg-rose-500/[0.015] rounded-full blur-xl pointer-events-none" />
-            
+
             {formSubmitted ? (
               <div className="text-center py-12 flex flex-col items-center">
                 <div className="w-12 h-12 rounded-full bg-rose-500/10 border border-rose-500/30 flex items-center justify-center text-rose-500 mb-6">
@@ -997,7 +996,7 @@ export default function SaaSPlatformsPage() {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full py-4 bg-white text-black font-extrabold text-xs md:text-sm uppercase tracking-wider rounded-xl hover:bg-zinc-200 transition-colors shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="w-full py-4 bg-white text-black font-bold text-xs md:text-sm uppercase tracking-wider rounded-xl hover:bg-zinc-200 transition-colors shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     {isSubmitting ? 'Submitting...' : 'Submit Inquiry'}
                   </button>

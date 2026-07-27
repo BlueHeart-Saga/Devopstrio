@@ -113,11 +113,10 @@ export function HubSpotlight({ locations }: HubSpotlightProps) {
           <button
             key={office.id}
             onClick={() => setActiveTab(office.id)}
-            className={`px-4 py-2.5 text-xs md:text-sm font-semibold rounded-lg transition-all duration-300 ${
-              activeTab === office.id
+            className={`px-4 py-2.5 text-xs md:text-sm font-semibold rounded-lg transition-all duration-300 ${activeTab === office.id
                 ? "bg-rose-500 text-white shadow-md shadow-rose-500/20"
                 : "bg-zinc-950/60 border border-zinc-900 text-zinc-400 hover:text-white hover:bg-zinc-900/60"
-            }`}
+              }`}
           >
             {office.city} ({office.type})
           </button>
@@ -126,18 +125,18 @@ export function HubSpotlight({ locations }: HubSpotlightProps) {
 
       {/* Main Grid: Info + Map */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch">
-        
+
         {/* Left: Location details Card */}
         <div className="lg:col-span-5 flex flex-col justify-between p-8 rounded-2xl bg-zinc-950/40 border border-white/5 relative overflow-hidden h-full">
           {/* Accent vertical line */}
           <div className="absolute top-0 left-0 w-1.5 h-full bg-rose-500" />
-          
+
           <div className="space-y-6">
             <div>
               <span className="text-[10px] font-mono tracking-[0.25em] uppercase text-rose-500 block mb-2">
                 Office Information
               </span>
-              <h3 className="text-xl md:text-2xl font-extrabold text-white tracking-tight uppercase">
+              <h3 className="text-xl md:text-2xl font-bold text-white tracking-tight uppercase">
                 {currentOffice.officeName}
               </h3>
               <span className="inline-block mt-2 text-[9px] font-mono tracking-widest uppercase bg-rose-500/10 border border-rose-500/20 text-rose-400 px-2.5 py-0.5 rounded">
@@ -204,7 +203,7 @@ export function HubSpotlight({ locations }: HubSpotlightProps) {
             title={`${currentOffice.officeName} Map`}
           />
         </div>
-        
+
       </div>
     </section>
   );

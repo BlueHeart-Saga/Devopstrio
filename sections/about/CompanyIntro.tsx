@@ -19,7 +19,7 @@ export function CompanyIntro() {
         {/* ========================================================================= */}
         <div className="text-center max-w-4xl mx-auto mb-10 md:mb-12">
           <Reveal>
-            <span className="inline-block px-3.5 py-1.5 text-rose-500 rounded-full text-[10px] font-extrabold tracking-widest uppercase mb-6">
+            <span className="inline-block px-3.5 py-1.5 text-rose-500 rounded-full text-[10px] font-bold tracking-widest uppercase mb-6">
               Company Overview
             </span>
           </Reveal>

@@ -30,7 +30,7 @@ const CustomerExperienceOverview = () => {
   return (
     <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60 relative">
       <div className="max-w-7xl mx-auto w-full px-6 xl:px-8">
-        
+
         <Reveal>
           <div className="text-center max-w-3xl mx-auto mb-16 flex flex-col items-center">
             <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">EXCEPTIONAL EXPERIENCES</span>
@@ -200,7 +200,7 @@ const CustomerArchitecture = () => {
 
         <div className="flex flex-col items-center justify-center relative">
           <div className="absolute top-0 bottom-0 left-1/2 -translate-x-1/2 w-px bg-gradient-to-b from-zinc-800 via-rose-500/50 to-emerald-500/50" />
-          
+
           {steps.map((step, idx) => (
             <Reveal key={idx} delay={idx * 0.1}>
               <div className="relative z-10 flex flex-col items-center mb-8 group">
@@ -291,7 +291,7 @@ const CustomerJourney = () => {
 
         <div className="relative flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-0 mt-12 w-full overflow-x-auto pb-8">
           <div className="hidden lg:block absolute top-[40px] left-[40px] right-[40px] h-px bg-zinc-800 z-0" />
-          
+
           {steps.map((step, idx) => (
             <Reveal key={idx} delay={idx * 0.1} className="w-full lg:w-auto relative z-10 flex flex-col items-center group flex-shrink-0 min-w-[120px]">
               <div className="w-20 h-20 rounded-full bg-zinc-950 border border-zinc-800 flex items-center justify-center text-zinc-500 group-hover:border-rose-500 group-hover:text-rose-500 group-hover:bg-rose-500/10 transition-all duration-300 shadow-[0_4px_20px_rgba(0,0,0,0.5)]">
@@ -353,7 +353,7 @@ const AIPersonalization = () => {
     <section className="w-full py-24 bg-black border-b border-zinc-900/60 relative overflow-hidden">
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-[radial-gradient(circle_at_center,rgba(225,29,72,0.02),transparent_75%)] pointer-events-none" />
       <div className="max-w-7xl mx-auto w-full px-6 xl:px-8 grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
-        
+
         {/* Left Side */}
         <div className="lg:col-span-5 text-left">
           <Reveal>
@@ -374,7 +374,7 @@ const AIPersonalization = () => {
           <Reveal delay={0.1}>
             <div className="flex flex-col gap-4 relative pl-8">
               <div className="absolute left-[20px] top-4 bottom-4 w-px bg-rose-500/30" />
-              
+
               {["Customer Activity", "AI Engine", "Behavior Analysis", "Recommendations", "Personalized Experience", "Business Insights"].map((step, i) => (
                 <div key={i} className="flex items-center gap-6">
                   <div className="w-3 h-3 rounded-full bg-rose-500 flex-shrink-0 absolute left-[15px]" />
@@ -475,7 +475,7 @@ const TechnologyStack = () => {
                     className="w-5 h-5 object-contain opacity-80 group-hover:opacity-100 transition-all duration-350 filter brightness-110 drop-shadow-[0_0_10px_rgba(255,255,255,0.15)] group-hover:drop-shadow-[0_0_15px_rgba(255,255,255,0.25)]"
                   />
                 </div>
-                <span className="text-[9px] font-extrabold text-zinc-400 group-hover:text-white transition-colors duration-300 uppercase tracking-widest leading-none">
+                <span className="text-[9px] font-bold text-zinc-400 group-hover:text-white transition-colors duration-300 uppercase tracking-widest leading-none">
                   {item.name}
                 </span>
               </div>

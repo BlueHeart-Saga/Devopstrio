@@ -60,7 +60,7 @@ export default function JustivonProductPage() {
       {/* Hero Section */}
       <section className="relative w-full py-20 bg-black border-b border-zinc-900/60 overflow-hidden">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-[radial-gradient(circle_at_center,rgba(239,68,68,0.02),transparent_60%)] pointer-events-none" />
-        
+
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             {/* Left content */}
@@ -75,7 +75,7 @@ export default function JustivonProductPage() {
                 <h1 className="text-4xl md:text-6xl font-black text-white mb-4">
                   Justivon
                 </h1>
-                <p className="text-xl md:text-2xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-rose-500 to-rose-600 mb-6">
+                <p className="text-xl md:text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-rose-500 to-rose-600 mb-6">
                   Legal Operations Platform
                 </p>
               </Reveal>
@@ -148,11 +148,11 @@ export default function JustivonProductPage() {
             <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
               CAPABILITIES
             </span>
-            <h2 className="text-2xl md:text-4xl font-extrabold text-white">
+            <h2 className="text-2xl md:text-4xl font-bold text-white">
               Platform Features
             </h2>
           </Reveal>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {features.map((feat, idx) => (
               <div key={idx} className="p-8 bg-zinc-950/40 border border-zinc-900 hover:border-rose-500/10 rounded-3xl transition-colors duration-300 flex flex-col justify-between">
@@ -178,15 +178,15 @@ export default function JustivonProductPage() {
             <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
               ENGINEERING LAYERS
             </span>
-            <h2 className="text-2xl md:text-3xl font-extrabold text-white">
+            <h2 className="text-2xl md:text-3xl font-bold text-white">
               Technology Stack
             </h2>
           </Reveal>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {techStack.map((tech, idx) => (
               <div key={idx} className="bg-zinc-950/40 border border-zinc-900 rounded-3xl p-8 hover:border-rose-500/10 transition-colors">
-                <h4 className="text-base font-extrabold text-white mb-3 tracking-wide">{tech.name}</h4>
+                <h4 className="text-base font-bold text-white mb-3 tracking-wide">{tech.name}</h4>
                 <p className="text-xs md:text-sm text-zinc-450 font-bold leading-relaxed">{tech.desc}</p>
               </div>
             ))}
@@ -201,11 +201,11 @@ export default function JustivonProductPage() {
             <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-zinc-400 mb-3 block">
               QUESTIONS & ANSWERS
             </span>
-            <h2 className="text-2xl md:text-3xl font-extrabold text-white">
+            <h2 className="text-2xl md:text-3xl font-bold text-white">
               Frequently Asked Questions
             </h2>
           </Reveal>
-          
+
           <div className="flex flex-col border-t border-zinc-900">
             {faqs.map((faq, idx) => {
               const isOpen = openFaqIndex === idx;

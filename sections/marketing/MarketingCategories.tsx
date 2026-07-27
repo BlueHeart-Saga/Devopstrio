@@ -47,11 +47,11 @@ export function MarketingCategories({ categories, onSelectCategory }: MarketingC
 
   return (
     <section id="categories-sec" className="scroll-mt-36 space-y-6">
-      
+
       {/* Section Header */}
       <div className="flex items-center justify-between">
         <div>
-          <h2 className="text-2xl font-extrabold text-white tracking-tight flex items-center gap-2">
+          <h2 className="text-2xl font-bold text-white tracking-tight flex items-center gap-2">
             <Layers className="w-6 h-6 text-rose-500" />
             Resource Categories
           </h2>
@@ -63,12 +63,12 @@ export function MarketingCategories({ categories, onSelectCategory }: MarketingC
 
       {/* Open Layout with LineSidebar on Left */}
       <div className="w-full relative min-h-[420px]">
-        
+
         {/* Ambient Radial Background Glow */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle_at_center,rgba(225,29,72,0.06),transparent_75%)] pointer-events-none" />
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
-          
+
           {/* Left Side: LineSidebar (lg:col-span-5) */}
           <div className="lg:col-span-5 w-full py-4 pl-2">
             <LineSidebar
@@ -97,7 +97,7 @@ export function MarketingCategories({ categories, onSelectCategory }: MarketingC
 
           {/* Right Side: Image & Category Details Showcase (lg:col-span-7) */}
           <div className="lg:col-span-7 flex flex-col md:flex-row gap-6 items-stretch py-2">
-            
+
             {/* Image Preview Container */}
             <div className="w-full md:w-1/2 relative min-h-[260px] rounded-3xl overflow-hidden shadow-2xl bg-zinc-950 group border border-white/10">
               <img
@@ -106,9 +106,9 @@ export function MarketingCategories({ categories, onSelectCategory }: MarketingC
                 className="w-full h-full object-cover object-center transition-all duration-700 hover:scale-105 filter brightness-95 contrast-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none" />
-              
+
               <div className="absolute bottom-4 left-4 right-4 flex justify-between items-center z-10">
-                <span className="px-3 py-1 rounded-full text-xs font-extrabold bg-rose-600/90 text-white uppercase tracking-wider shadow-lg">
+                <span className="px-3 py-1 rounded-full text-xs font-bold bg-rose-600/90 text-white uppercase tracking-wider shadow-lg">
                   {activeCategory?.count || "Resource Pack"}
                 </span>
               </div>
@@ -121,7 +121,7 @@ export function MarketingCategories({ categories, onSelectCategory }: MarketingC
                   <span className="font-mono text-sm font-bold text-rose-500">
                     [ #0{selectedIndex + 1} ]
                   </span>
-                  <span className="text-[11px] uppercase font-extrabold text-zinc-400 tracking-widest">
+                  <span className="text-[11px] uppercase font-bold text-zinc-400 tracking-widest">
                     Category Overview
                   </span>
                 </div>

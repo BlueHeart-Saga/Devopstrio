@@ -8,7 +8,7 @@ export default function CloudServicesPage() {
   return (
     <div className="min-h-screen bg-[#050505] text-white pt-24 pb-16">
       <div className="max-w-4xl mx-auto px-6 lg:px-8 space-y-8">
-        
+
         <Link href="/marketing/services" className="inline-flex items-center gap-2 text-xs font-semibold text-rose-500 hover:text-rose-400">
           <ArrowLeft className="w-4 h-4" /> Back to Service Brochures
         </Link>
@@ -21,8 +21,8 @@ export default function CloudServicesPage() {
             <span className="text-xs text-neutral-400">Azure, AWS & GCP</span>
           </div>
 
-          <h1 className="text-3xl sm:text-4xl font-extrabold text-white">Cloud Services & Multi-Cloud Infrastructure</h1>
-          
+          <h1 className="text-3xl sm:text-4xl font-bold text-white">Cloud Services & Multi-Cloud Infrastructure</h1>
+
           <p className="text-neutral-300 text-sm leading-relaxed">
             Complete architectural guide and brochure for Devopstrio cloud transformation services: 6-R migration strategy, multi-cloud management, cloud FinOps cost governance, serverless systems, and cloud security compliance.
           </p>

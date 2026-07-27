@@ -17,7 +17,7 @@ export default function PlatformsMarketingPage() {
   return (
     <div className="min-h-screen bg-[#050505] text-white pt-24 pb-16">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 space-y-10">
-        
+
         <Link href="/marketing" className="inline-flex items-center gap-2 text-xs font-semibold text-rose-500 hover:text-rose-400">
           <ArrowLeft className="w-4 h-4" /> Back to Marketing Hub
         </Link>
@@ -26,7 +26,7 @@ export default function PlatformsMarketingPage() {
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-500/10 border border-rose-500/30 text-rose-400 text-xs font-bold uppercase mb-3">
             <Rocket className="w-3.5 h-3.5" /> Proprietary SaaS Platforms
           </div>
-          <h1 className="text-4xl font-extrabold text-white">Platform Datasheets & Product Kits</h1>
+          <h1 className="text-4xl font-bold text-white">Platform Datasheets & Product Kits</h1>
           <p className="text-neutral-400 text-sm mt-2 max-w-2xl">
             Explore product collateral, architectural datasheets, and feature blueprints for Devopstrio SaaS platforms.
           </p>

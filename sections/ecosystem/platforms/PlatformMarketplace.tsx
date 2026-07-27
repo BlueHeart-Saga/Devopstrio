@@ -124,10 +124,10 @@ export function PlatformMarketplace() {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-rose-650/[0.015] rounded-full blur-[140px] pointer-events-none" />
 
       <div className="max-w-6xl mx-auto w-full px-12 xl:px-8 relative z-10">
-        
+
         {/* Header Section */}
         <div className="mb-12 text-left max-w-3xl">
-          <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-white mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">
             Code that's changing the game
           </h2>
           <p className="text-zinc-400 text-sm font-semibold leading-relaxed">
@@ -224,18 +224,16 @@ export function PlatformMarketplace() {
               <button
                 key={item.id}
                 onClick={() => setSelectedCategory(item.id)}
-                className={`flex items-center justify-center p-6 border-r border-white/[0.03] last:border-r-0 hover:bg-white/[0.015] transition-all duration-300 relative ${
-                  isActive ? "bg-white/[0.01]" : ""
-                }`}
+                className={`flex items-center justify-center p-6 border-r border-white/[0.03] last:border-r-0 hover:bg-white/[0.015] transition-all duration-300 relative ${isActive ? "bg-white/[0.01]" : ""
+                  }`}
               >
                 {/* Logo wrapper */}
                 <div className="flex items-center justify-center bg-white rounded-lg p-2.5 max-w-[120px] w-full aspect-[3/1] shadow-sm">
                   <img
                     src={item.logoPath}
                     alt={item.name}
-                    className={`h-5 object-contain filter transition-all duration-300 ${
-                      isActive ? "grayscale-0 opacity-100 scale-105" : "grayscale opacity-40 hover:opacity-75"
-                    }`}
+                    className={`h-5 object-contain filter transition-all duration-300 ${isActive ? "grayscale-0 opacity-100 scale-105" : "grayscale opacity-40 hover:opacity-75"
+                      }`}
                   />
                 </div>
                 {/* Underline accent */}

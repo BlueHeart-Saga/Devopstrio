@@ -8,7 +8,7 @@ export default function CompanyProfileResourcePage() {
   return (
     <div className="min-h-screen bg-[#050505] text-white pt-24 pb-16">
       <div className="max-w-4xl mx-auto px-6 lg:px-8 space-y-8">
-        
+
         <Link href="/marketing/company" className="inline-flex items-center gap-2 text-xs font-semibold text-rose-500 hover:text-rose-400">
           <ArrowLeft className="w-4 h-4" /> Back to Company Resources
         </Link>
@@ -23,8 +23,8 @@ export default function CompanyProfileResourcePage() {
             </span>
           </div>
 
-          <h1 className="text-3xl sm:text-4xl font-extrabold text-white">Devopstrio Corporate Profile 2026</h1>
-          
+          <h1 className="text-3xl sm:text-4xl font-bold text-white">Devopstrio Corporate Profile 2026</h1>
+
           <p className="text-neutral-300 text-sm leading-relaxed">
             The official 2026 corporate overview of Devopstrio. This document details our global technology delivery centers, CMMI Level 5 engineering standards, enterprise client portfolio, and end-to-end cloud, AI, and DevOps offerings.
           </p>

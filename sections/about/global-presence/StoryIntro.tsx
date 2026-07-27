@@ -27,7 +27,7 @@ export function StoryIntro() {
               <span className="text-rose-500">Built on Local Strength</span>
             </h2>
           </Reveal>
-          
+
           <Reveal delay={0.1}>
             <p className="text-zinc-400 text-sm md:text-base leading-relaxed">
               Devopstrio was built on a simple belief: world-class technology services do not need to come from one place to create global impact. By combining strong local engineering capabilities with a globally aligned delivery model, we help businesses across regions access the expertise, agility, and support they need to move faster.
@@ -51,7 +51,7 @@ export function StoryIntro() {
         <div className="lg:col-span-6 border-t border-zinc-800 divide-y divide-zinc-800 bg-[#080808]/90 relative overflow-hidden rounded-xl border border-zinc-900">
           {/* Subtle grid lines in background */}
           <div className="absolute inset-0 bg-[linear-gradient(to_right,#1f1f1f15_1px,transparent_1px),linear-gradient(to_bottom,#1f1f1f15_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none" />
-          
+
           {storyItems.map((item, idx) => (
             <div
               key={idx}
@@ -59,18 +59,18 @@ export function StoryIntro() {
             >
               {/* Solid White Hover Background Bar */}
               <div className="absolute inset-0 bg-white translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out z-0" />
-              
+
               {/* Content Area */}
               <div className="relative z-10 flex items-center justify-between gap-4 pointer-events-none">
                 <div className="flex items-baseline gap-3">
                   {/* <span className="text-[11px] font-mono tracking-widest text-rose-500 group-hover:text-rose-600 transition-colors duration-300 font-bold">
                     0{idx + 1}
                   </span> */}
-                  <h4 className="text-2xl md:text-3xl lg:text-4xl font-extrabold tracking-tighter text-white group-hover:text-black transition-colors duration-300 uppercase">
+                  <h4 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tighter text-white group-hover:text-black transition-colors duration-300 uppercase">
                     {item.city}
                   </h4>
                 </div>
-                
+
                 <div className="flex flex-col items-end text-right">
                   <span className="text-[9px] uppercase font-mono tracking-widest bg-zinc-900 border border-zinc-800 text-zinc-400 px-2 py-0.5 rounded group-hover:bg-zinc-200 group-hover:border-zinc-300 group-hover:text-zinc-900 transition-colors duration-300 mb-1 font-bold">
                     {item.badge}

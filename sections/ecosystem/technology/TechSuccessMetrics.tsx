@@ -24,7 +24,7 @@ export function TechSuccessMetrics() {
           <span className="text-xs md:text-sm font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
             VERIFIED OUTCOMES
           </span>
-          <h2 className="text-3xl md:text-4xl xl:text-5xl font-extrabold tracking-tight leading-tight mb-6 text-white">
+          <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold tracking-tight leading-tight mb-6 text-white">
             Success <span className="text-rose-500">Metrics</span>
           </h2>
           <p className="text-zinc-400 text-base md:text-lg font-medium leading-relaxed">

@@ -8,7 +8,7 @@ export default function BrandGuidelinesPage() {
   return (
     <div className="min-h-screen bg-[#050505] text-white pt-24 pb-16">
       <div className="max-w-4xl mx-auto px-6 lg:px-8 space-y-8">
-        
+
         <Link href="/marketing/company" className="inline-flex items-center gap-2 text-xs font-semibold text-rose-500 hover:text-rose-400">
           <ArrowLeft className="w-4 h-4" /> Back to Company Resources
         </Link>
@@ -21,8 +21,8 @@ export default function BrandGuidelinesPage() {
             <span className="text-xs text-neutral-400">Version 3.2</span>
           </div>
 
-          <h1 className="text-3xl sm:text-4xl font-extrabold text-white">Devopstrio Brand Guidelines & Identity Kit</h1>
-          
+          <h1 className="text-3xl sm:text-4xl font-bold text-white">Devopstrio Brand Guidelines & Identity Kit</h1>
+
           <p className="text-neutral-300 text-sm leading-relaxed">
             Official Devopstrio brand kit for marketing teams, partners, and media publishers. Includes high-resolution vector logos, typography specifications, primary and secondary color palettes, icon sets, and presentation slide templates.
           </p>

@@ -34,7 +34,7 @@ export const ApplicationForm = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     try {
       const data = new FormData();
       Object.entries(formData).forEach(([key, value]) => {
@@ -43,7 +43,7 @@ export const ApplicationForm = () => {
       if (file) {
         data.append('resume', file);
       }
-      
+
       const response = await fetch('/api/internship', {
         method: 'POST',
         body: data,
@@ -74,11 +74,11 @@ export const ApplicationForm = () => {
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,rgba(225,29,72,0.06),transparent_60%)] pointer-events-none" />
 
       <div className="max-w-4xl mx-auto px-6 relative z-10">
-        
+
         {/* Form Container Card */}
         <div className="bg-zinc-950 border border-zinc-900 rounded-3xl p-8 sm:p-12 shadow-[0_20px_50px_rgba(0,0,0,0.7)] backdrop-blur relative">
           <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-rose-500/35 to-transparent" />
-          
+
           <div className="text-center mb-10">
             <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
               Apply Today
@@ -101,10 +101,10 @@ export const ApplicationForm = () => {
                 exit={{ opacity: 0 }}
                 className="space-y-6"
               >
-                
+
                 {/* 2-Column Inputs */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                  
+
                   {/* Full Name */}
                   <div className="flex flex-col gap-1.5">
                     <label className="text-xs font-bold text-zinc-400 uppercase tracking-wider flex items-center gap-1.5">
@@ -222,7 +222,7 @@ export const ApplicationForm = () => {
 
                 {/* Social Profiles */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                  
+
                   {/* LinkedIn */}
                   <div className="flex flex-col gap-1.5">
                     <label className="text-xs font-bold text-zinc-400 uppercase tracking-wider flex items-center gap-1.5">
@@ -304,7 +304,7 @@ export const ApplicationForm = () => {
                 <div className="w-16 h-16 rounded-full bg-rose-500/10 text-rose-500 border border-rose-500/25 flex items-center justify-center mb-6">
                   <CheckCircle size={32} className="stroke-[2.5px]" />
                 </div>
-                <h3 className="text-2xl font-extrabold text-white mb-3">Application Received!</h3>
+                <h3 className="text-2xl font-bold text-white mb-3">Application Received!</h3>
                 <p className="text-zinc-400 text-sm max-w-md leading-relaxed font-medium">
                   Thank you for applying to the Devopstrio Global Engineering Internship Program. Our reviewing committee will audit your skills and get in touch via email.
                 </p>
@@ -336,7 +336,7 @@ export const ApplicationForm = () => {
 
         {/* FINAL CTA SECTION (From screenshot!) */}
         <div className="mt-28 border-t border-zinc-900/60 pt-20 flex flex-col items-center text-center">
-          
+
           <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-4">
             Start Your Technology <span className="text-rose-500">Journey</span>
           </h2>
@@ -354,14 +354,14 @@ export const ApplicationForm = () => {
 
           {/* SIGNATURE SIGN-OFF BLOCK FROM DESIGN SCREENSHOT */}
           <div className="mt-24 pt-8 w-full border-t border-zinc-950 flex flex-col items-center justify-center">
-            
+
             {/* DEVOPSTRIO INTERN Logo Header */}
             <div className="flex items-center gap-2.5 mb-6">
-              <span className="text-sm font-extrabold tracking-[0.25em] text-white uppercase font-sans">
+              <span className="text-sm font-bold tracking-[0.25em] text-white uppercase font-sans">
                 DEVOPSTRIO
               </span>
               <span className="w-1.5 h-1.5 bg-rose-500 rounded-full" />
-              <span className="text-sm font-extrabold tracking-[0.25em] text-rose-500 uppercase font-sans relative">
+              <span className="text-sm font-bold tracking-[0.25em] text-rose-500 uppercase font-sans relative">
                 INTERN
                 {/* underline line */}
                 <div className="absolute left-0 bottom-[-6px] w-full h-[1px] bg-zinc-800" />
