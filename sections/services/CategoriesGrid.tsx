@@ -184,16 +184,16 @@ const richServiceCategories: ServiceCategory[] = [
 ];
 
 const bgWaves: Record<string, string> = {
-  "ai-data-innovation": "/assets/services/bg-ai.png",
-  "cloud-services": "/assets/services/bg-cloud.png",
-  "devops-automation": "/assets/services/bg-devops.png",
-  "cybersecurity": "/assets/services/bg-cybersecurity.png",
-  "software-development": "/assets/services/bg-software.png",
-  "digital-transformation": "/assets/services/bg-transformation.png",
-  "data-engineering": "/assets/services/bg-data.png",
-  "managed-services": "/assets/services/bg-managed.png",
-  "qa-testing": "/assets/services/bg-testing.png",
-  "it-consulting": "/assets/services/bg-consulting.png",
+  "ai-data-innovation": "/assets/Services_grid/ai-data-innovation.png",
+  "cloud-services": "/assets/Services_grid/cloud-services.png",
+  "devops-automation": "/assets/Services_grid/devops-automation.png",
+  "cybersecurity": "/assets/Services_grid/cybersecurity.png",
+  "software-development": "/assets/Services_grid/software-development.png",
+  "digital-transformation": "/assets/Services_grid/digital-transformation.png",
+  "data-engineering": "/assets/Services_grid/data-engineering.png",
+  "managed-services": "/assets/Services_grid/managed-services.png",
+  "qa-testing": "/assets/Services_grid/qa-testing.png",
+  "it-consulting": "/assets/Services_grid/it-consulting.png",
 };
 
 export function CategoriesGrid() {
@@ -288,16 +288,19 @@ export function CategoriesGrid() {
               <div className="absolute -right-10 -top-10 w-48 h-48 bg-rose-600/10 rounded-full blur-3xl pointer-events-none transition-all duration-700 group-hover/tall:scale-110" />
               <div className="absolute -left-10 -bottom-10 w-48 h-48 bg-orange-600/5 rounded-full blur-3xl pointer-events-none transition-all duration-700 group-hover/tall:scale-110" />
 
-              {/* Dynamic Abstract Smoky Wave Backgrounds with Crossfade */}
+              {/* Dynamic Generated Design Category Backgrounds with Crossfade */}
               {richServiceCategories.map((cat) => (
                 <img
                   key={cat.id}
                   src={bgWaves[cat.id]}
-                  alt=""
-                  className={`absolute inset-0 w-full h-full object-cover mix-blend-screen pointer-events-none transition-opacity duration-700 ease-in-out ${activeTab === cat.id ? "opacity-35" : "opacity-0"
+                  alt={cat.name}
+                  className={`absolute inset-0 w-full h-full object-cover pointer-events-none transition-all duration-700 ease-in-out group-hover/tall:scale-105 ${activeTab === cat.id ? "opacity-50 scale-100" : "opacity-0 scale-105"
                     }`}
                 />
               ))}
+
+              {/* Dark Gradient Overlay for High Contrast & Text Legibility */}
+              <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/75 to-zinc-950/30 pointer-events-none z-[1]" />
 
               {/* Card top details */}
               <div className="relative z-10">
