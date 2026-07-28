@@ -21,7 +21,7 @@ const Insights = dynamic(() => import("@/sections/home/Insights").then((mod) => 
 
 const homeSections = [
   { id: "overview", label: "Overview" },
-  { id: "ai-studio", label: "AI Studio" },
+  // { id: "ai-studio", label: "AI Studio" },
   { id: "capabilities", label: "Capabilities" },
   { id: "industries", label: "Industries" },
   { id: "innovation", label: "Innovation" },
@@ -41,12 +41,13 @@ export default function Home() {
         <div id="overview">
           <BusinessOverview />
         </div>
-        <div id="ai-studio">
-          <AIStudioShowcase />
-        </div>
+        
         <div id="capabilities">
           <ServicesOverviewPillars />
           <CoreServices />
+        </div>
+        <div id="ai-studio">
+          <AIStudioShowcase />
         </div>
         <div id="industries">
           <IndustriesSection />
