@@ -109,15 +109,15 @@ export function ServicesOverviewPillars() {
 
                     {/* Subtitle */}
                     <p
-                      className={`text-xs md:text-sm font-semibold tracking-wide transition-all duration-500 mb-6 ${
-                        isHovered ? "text-rose-400 opacity-100" : "text-rose-500/80"
+                      className={`text-sm md:text-base font-semibold tracking-wide transition-all duration-500 mb-6 ${
+                        isHovered ? "text-rose-400 opacity-100" : "text-rose-500/90"
                       }`}
                     >
                       {pillar.subtitle}
                     </p>
 
                     {/* Relative Container to maintain height & prevent layout shifts */}
-                    <div className="relative min-h-[220px]">
+                    <div className="relative min-h-[250px]">
                       
                       {/* 1) DEFAULT STATE CONTENT: Description Paragraph */}
                       <div
@@ -127,7 +127,7 @@ export function ServicesOverviewPillars() {
                             : "opacity-100 translate-y-0"
                         }`}
                       >
-                        <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-normal">
+                        <p className="text-zinc-100 text-base md:text-[17px] leading-relaxed font-normal">
                           {pillar.description}
                         </p>
                       </div>
@@ -145,7 +145,7 @@ export function ServicesOverviewPillars() {
                             <Link
                               key={service.name}
                               href={service.href}
-                              className="group/item flex items-center justify-between py-3 border-b border-zinc-800/60 hover:border-rose-500/30 transition-all duration-300 text-xs md:text-sm font-medium text-zinc-300 hover:text-white"
+                              className="group/item flex items-center justify-between py-3.5 border-b border-zinc-800/60 hover:border-rose-500/40 transition-all duration-300 text-sm md:text-base font-medium text-white hover:text-rose-400"
                               style={{
                                 transitionDelay: isHovered ? `${sIdx * 30}ms` : '0ms'
                               }}
@@ -153,7 +153,7 @@ export function ServicesOverviewPillars() {
                               <span className="group-hover/item:translate-x-1.5 group-hover/item:text-rose-400 transition-all duration-300">
                                 {service.name}
                               </span>
-                              <ChevronRight className="w-4 h-4 text-zinc-500 group-hover/item:text-red-500 group-hover/item:translate-x-1 transition-all duration-300" />
+                              <ChevronRight className="w-4.5 h-4.5 text-zinc-400 group-hover/item:text-red-500 group-hover/item:translate-x-1 transition-all duration-300" />
                             </Link>
                           ))}
                         </div>
@@ -173,7 +173,7 @@ export function ServicesOverviewPillars() {
                         href={pillar.ctaHref}
                         className="inline-flex items-center justify-between w-full pt-4 border-t border-zinc-800/80 group/all"
                       >
-                        <span className="text-sm font-bold text-red-500 group-hover/all:text-rose-400 transition-colors">
+                        <span className="text-base font-bold text-red-500 group-hover/all:text-rose-400 transition-colors">
                           Explore all services
                         </span>
                         <div className="w-9 h-9 rounded-full border border-red-500/40 bg-red-500/10 flex items-center justify-center text-red-500 group-hover/all:bg-red-600 group-hover/all:text-white group-hover/all:border-red-600 group-hover/all:scale-110 transition-all duration-300 shadow-[0_0_20px_rgba(225,29,72,0.35)]">

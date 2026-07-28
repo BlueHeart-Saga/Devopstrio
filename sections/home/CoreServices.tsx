@@ -167,8 +167,8 @@ export function CoreServices() {
             <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
               Technology at the core of every business breakthrough
             </h2>
-            <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
-              End-to-end services across <Link href="/services/cloud-services" className="text-rose-500 hover:underline">Cloud</Link>, <Link href="/services/ai-data-innovation" className="text-rose-500 hover:underline">AI</Link>, <Link href="/services/devops-automation" className="text-rose-500 hover:underline">DevOps</Link>, <Link href="/services/cybersecurity" className="text-rose-500 hover:underline">Security</Link>, and <Link href="/services/software-development" className="text-rose-500 hover:underline">Software Engineering</Link> — built to deliver measurable outcomes.
+            <p className="text-zinc-100 text-base md:text-lg leading-relaxed">
+              End-to-end services across <Link href="/services/cloud-services" className="text-rose-500 hover:underline font-medium">Cloud</Link>, <Link href="/services/ai-data-innovation" className="text-rose-500 hover:underline font-medium">AI</Link>, <Link href="/services/devops-automation" className="text-rose-500 hover:underline font-medium">DevOps</Link>, <Link href="/services/cybersecurity" className="text-rose-500 hover:underline font-medium">Security</Link>, and <Link href="/services/software-development" className="text-rose-500 hover:underline font-medium">Software Engineering</Link> — built to deliver measurable outcomes.
             </p>
           </div>
         </Reveal>
@@ -183,7 +183,7 @@ export function CoreServices() {
             {services.map((service) => (
               <div
                 key={service.id}
-                className="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] flex-shrink-0 group flex flex-col bg-[#0A0A0A] rounded-[24px] p-2.5 border border-zinc-800/80 hover:border-zinc-700/80 transition-all duration-300 hover:shadow-[0_8px_30px_rgba(0,0,0,0.4)]"
+                className="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] flex-shrink-0 group flex flex-col bg-[#0A0A0A] rounded-[24px] p-3 border border-zinc-800/80 hover:border-zinc-700/80 transition-all duration-300 hover:shadow-[0_8px_30px_rgba(0,0,0,0.4)]"
               >
                 {/* Cover Image */}
                 <div className="relative w-full aspect-[2/1] overflow-hidden rounded-[16px] bg-zinc-900 border border-zinc-800/50">
@@ -199,23 +199,25 @@ export function CoreServices() {
                   <span className="text-[#E11D48] text-xs font-semibold uppercase tracking-widest">
                     {service.tag}
                   </span>
-                  <h3 className="text-zinc-100 text-base md:text-lg font-semibold leading-snug">
+                  <h3 className="text-white text-lg md:text-xl font-bold leading-snug">
                     {service.title}
                   </h3>
-                  <p className="text-zinc-300 text-sm md:text-base leading-relaxed flex-1 mt-1 font-normal">
+                  <p className="text-zinc-100 text-base md:text-[17px] leading-relaxed flex-1 mt-1 font-normal">
                     {service.desc}
                   </p>
 
-                  {/* CTA */}
-                  <a
+                  {/* CTA - Modern Transparent Glassy Premium Link Button */}
+                  <Link
                     href={service.href}
-                    className="mt-4 inline-flex items-center gap-3 text-zinc-300 hover:text-white text-sm font-semibold tracking-wide transition-all duration-300 w-fit group/btn"
+                    className="mt-4 pt-3.5 border-t border-zinc-800/80 hover:border-rose-500/30 inline-flex items-center justify-between w-full text-white hover:text-rose-400 text-sm md:text-base font-bold tracking-wide transition-all duration-300 group/btn"
                   >
-                    <span className="w-8 h-8 rounded-lg bg-zinc-800 group-hover/btn:bg-[#E11D48] flex items-center justify-center flex-shrink-0 transition-colors duration-300 border border-zinc-700 group-hover/btn:border-[#E11D48]">
-                      <ArrowUpRight size={14} className="text-white" />
+                    <span className="group-hover/btn:translate-x-1 transition-transform duration-300">
+                      {service.cta}
                     </span>
-                    {service.cta}
-                  </a>
+                    <span className="w-8.5 h-8.5 rounded-full bg-rose-500/10 border border-rose-500/30 group-hover/btn:bg-rose-600 group-hover/btn:border-rose-600 flex items-center justify-center text-rose-500 group-hover/btn:text-white transition-all duration-300 shadow-[0_0_15px_rgba(225,29,72,0.2)] group-hover/btn:shadow-[0_0_20px_rgba(225,29,72,0.6)]">
+                      <ArrowUpRight size={15} />
+                    </span>
+                  </Link>
                 </div>
               </div>
             ))}
@@ -238,12 +240,12 @@ export function CoreServices() {
           >
             <ArrowUpRight size={16} />
           </button>
-          <a
+          <Link
             href="/services"
-            className="ml-4 text-sm font-semibold text-zinc-400 hover:text-rose-400 transition-colors uppercase tracking-wider flex items-center gap-1.5"
+            className="ml-4 text-base font-semibold text-rose-500 hover:text-rose-400 transition-colors uppercase tracking-wider flex items-center gap-1.5"
           >
-            All capabilities <ArrowUpRight size={14} />
-          </a>
+            All capabilities <ArrowUpRight size={16} />
+          </Link>
         </div>
 
       </div>

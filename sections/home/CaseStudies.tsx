@@ -106,7 +106,7 @@ export function CaseStudies() {
               </h2>
             </Reveal>
             <Reveal>
-              <p className="text-zinc-300 text-sm md:text-base leading-relaxed font-normal">
+              <p className="text-zinc-100 text-base md:text-[17px] leading-relaxed font-normal">
                 We partner with organizations to solve complex challenges through <Link href="/services/ai-data-innovation" className="text-rose-500 hover:underline font-medium">AI</Link>, <Link href="/services/cloud-services" className="text-rose-500 hover:underline font-medium">cloud engineering</Link>, <Link href="/services/cybersecurity" className="text-rose-500 hover:underline font-medium">cybersecurity</Link>, <Link href="/services/devops-automation" className="text-rose-500 hover:underline font-medium">DevOps</Link>, and <Link href="/services/software-development" className="text-rose-500 hover:underline font-medium">software development</Link> — creating measurable outcomes that drive efficiency, innovation, and long-term growth.
               </p>
             </Reveal>
@@ -121,27 +121,27 @@ export function CaseStudies() {
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-y-6 gap-x-4 relative z-10">
               <div className="flex flex-col gap-1">
                 <span className="text-2xl lg:text-3xl font-light text-white">2500<span className="text-rose-500 font-bold">+</span></span>
-                <span className="text-xs font-medium text-zinc-400 uppercase tracking-widest mt-0.5">Projects</span>
+                <span className="text-xs md:text-sm font-semibold text-zinc-300 uppercase tracking-widest mt-0.5">Projects</span>
               </div>
               <div className="flex flex-col gap-1">
                 <span className="text-2xl lg:text-3xl font-light text-white">525<span className="text-rose-500 font-bold">+</span></span>
-                <span className="text-xs font-medium text-zinc-400 uppercase tracking-widest mt-0.5">Experts</span>
+                <span className="text-xs md:text-sm font-semibold text-zinc-300 uppercase tracking-widest mt-0.5">Experts</span>
               </div>
               <div className="flex flex-col gap-1">
                 <span className="text-2xl lg:text-3xl font-light text-white">25<span className="text-rose-500 font-bold">+</span></span>
-                <span className="text-xs font-medium text-zinc-400 uppercase tracking-widest mt-0.5">Domains</span>
+                <span className="text-xs md:text-sm font-semibold text-zinc-300 uppercase tracking-widest mt-0.5">Domains</span>
               </div>
               <div className="flex flex-col gap-1">
                 <span className="text-2xl lg:text-3xl font-light text-white">8<span className="text-rose-500 font-bold">+</span></span>
-                <span className="text-xs font-medium text-zinc-400 uppercase tracking-widest mt-0.5">Partners</span>
+                <span className="text-xs md:text-sm font-semibold text-zinc-300 uppercase tracking-widest mt-0.5">Partners</span>
               </div>
               <div className="flex flex-col gap-1">
                 <span className="text-2xl lg:text-3xl font-light text-white">7<span className="text-rose-500 font-bold">+</span></span>
-                <span className="text-xs font-medium text-zinc-400 uppercase tracking-widest mt-0.5">Years</span>
+                <span className="text-xs md:text-sm font-semibold text-zinc-300 uppercase tracking-widest mt-0.5">Years</span>
               </div>
               <div className="flex flex-col gap-1">
                 <span className="text-2xl lg:text-3xl font-light text-white">4<span className="text-rose-500 font-bold">+</span></span>
-                <span className="text-xs font-medium text-zinc-400 uppercase tracking-widest mt-0.5">Countries</span>
+                <span className="text-xs md:text-sm font-semibold text-zinc-300 uppercase tracking-widest mt-0.5">Countries</span>
               </div>
             </div>
           </Reveal>
@@ -199,16 +199,16 @@ export function CaseStudies() {
                 {/* Challenge -> Strategy -> Solution */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm border-y border-zinc-900/60 py-6">
                   <div>
-                    <span className="block font-semibold text-zinc-300 mb-1.5 uppercase text-xs tracking-wider font-mono">Challenge</span>
-                    <p className="leading-relaxed text-zinc-300 font-normal text-sm md:text-base">{caseStudies[activeIndex].challenge}</p>
+                    <span className="block font-semibold text-rose-400 mb-1.5 uppercase text-xs md:text-sm tracking-wider font-mono">Challenge</span>
+                    <p className="leading-relaxed text-zinc-100 font-normal text-base md:text-[17px]">{caseStudies[activeIndex].challenge}</p>
                   </div>
                   <div>
-                    <span className="block font-semibold text-zinc-300 mb-1.5 uppercase text-xs tracking-wider font-mono">Strategy</span>
-                    <p className="leading-relaxed text-zinc-300 font-normal text-sm md:text-base">{caseStudies[activeIndex].strategy}</p>
+                    <span className="block font-semibold text-rose-400 mb-1.5 uppercase text-xs md:text-sm tracking-wider font-mono">Strategy</span>
+                    <p className="leading-relaxed text-zinc-100 font-normal text-base md:text-[17px]">{caseStudies[activeIndex].strategy}</p>
                   </div>
                   <div>
-                    <span className="block font-semibold text-zinc-300 mb-1.5 uppercase text-xs tracking-wider font-mono">Solution</span>
-                    <p className="leading-relaxed text-zinc-300 font-normal text-sm md:text-base">{caseStudies[activeIndex].solution}</p>
+                    <span className="block font-semibold text-rose-400 mb-1.5 uppercase text-xs md:text-sm tracking-wider font-mono">Solution</span>
+                    <p className="leading-relaxed text-zinc-100 font-normal text-base md:text-[17px]">{caseStudies[activeIndex].solution}</p>
                   </div>
                 </div>
 
@@ -216,11 +216,11 @@ export function CaseStudies() {
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mt-2">
                   {/* Technologies */}
                   <div className="flex flex-wrap gap-2 items-center">
-                    <span className="text-[10px] font-mono text-zinc-500 mr-2 uppercase tracking-wider">Core Tech:</span>
+                    <span className="text-[10px] sm:text-xs font-mono text-zinc-400 mr-2 uppercase tracking-wider">Core Tech:</span>
                     {caseStudies[activeIndex].technologies.map((tech) => (
                       <span
                         key={tech}
-                        className="px-2.5 py-0.5 bg-zinc-900/60 border border-zinc-800/80 rounded text-xs text-zinc-300"
+                        className="px-3 py-1 bg-zinc-900/80 border border-zinc-800 rounded text-xs md:text-sm text-zinc-100 font-medium"
                       >
                         {tech}
                       </span>
@@ -228,8 +228,8 @@ export function CaseStudies() {
                   </div>
 
                   {/* Result Indicator Badge */}
-                  <div className="gap-2 inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white transition-all duration-300 hover:shadow-[0_0_25px_rgba(225,29,72,0.35)] hover:-translate-y-0.5">
-                    <Zap size={12} className="animate-pulse" />
+                  <div className="gap-2 inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs md:text-sm font-bold tracking-wider uppercase bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white transition-all duration-300 hover:shadow-[0_0_25px_rgba(225,29,72,0.35)] hover:-translate-y-0.5">
+                    <Zap size={14} className="animate-pulse" />
                     <span>{caseStudies[activeIndex].result}</span>
                   </div>
                 </div>
@@ -257,10 +257,10 @@ export function CaseStudies() {
             {/* View All Button */}
             <a
               href="/insights/case-studies"
-              className="group flex items-center gap-2 text-rose-500 hover:text-rose-400 font-bold transition-all text-xs uppercase tracking-wider"
+              className="group flex items-center gap-2 text-rose-500 hover:text-rose-400 font-bold transition-all text-sm uppercase tracking-wider"
             >
               Explore All Outcomes
-              <ArrowUpRight size={14} className="transform group-hover:translate-x-1 transition-transform duration-300" />
+              <ArrowUpRight size={16} className="transform group-hover:translate-x-1 transition-transform duration-300" />
             </a>
           </div>
 

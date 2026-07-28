@@ -4,27 +4,28 @@ import React, { useState } from "react";
 import { Reveal } from "@/components/ui/Reveal";
 import { ArrowUpRight, Plus, Minus, Sparkles } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
 
 const aiDifferenceItems = [
   {
     id: "philosophy",
-    title: "Our AI Philosophy",
+    title: "Strategic GenAI & Enterprise AI Philosophy",
     description:
-      "We believe AI is not just an add-on layer, but a foundational engineering paradigm. We integrate generative copilots, agentic automation, and self-learning pipelines directly into your core SDLC and enterprise architecture.",
+      "We believe AI is a core operational transformation engine. We design custom generative copilots, agentic automation frameworks, and enterprise LLM architectures tailored to your unique industry requirements, security standards, and growth goals.",
     image: "/assets/Home-page/ai-native/philosophy.png"
   },
   {
     id: "system",
-    title: "Our Engineering System",
+    title: "Autonomous AI Systems & MLOps Engineering",
     description:
-      "Our proprietary AI engineering system automates code reviews, regression testing, cloud provisioning, and security compliance. Ship production features up to 50% faster with absolute zero technical debt.",
+      "Our battle-tested AI engineering framework automates intelligent code generation, continuous model evaluation, automated data pipelines, and zero-trust security compliance — accelerating time-to-value by up to 50% with enterprise reliability.",
     image: "/assets/Home-page/ai-native/engineering.png"
   },
   {
     id: "measurement",
-    title: "Our Measurement Platform",
+    title: "Measurable Business ROI & AI Governance",
     description:
-      "We measure every engagement across three dimensions: milestone delivery, build quality, and long-term scalability. Through continuous, real-time tracking, we proactively optimize performance before challenges ever impact your timeline - so you always know exactly where your investment stands.",
+      "We measure every AI deployment across velocity, accuracy, security, and long-term scalability. With continuous real-time telemetry and strict AI governance, we guarantee transparent business impact and sustainable operational excellence.",
     image: "/assets/Home-page/ai-native/measurement.png"
   }
 ];
@@ -33,89 +34,84 @@ const azureUrl = "https://devopstrioaiservices-e6dnggh5gxehh9d0.southindia-01.az
 
 const aiTransformationCards = [
   {
-    title: "AI in SDLC",
-    subtitle: "AI Chat & Code Copilots",
-    description: "Embed specialized LLMs across development pipelines for rapid prototyping, context lookup, and automated code reviews.",
+    title: "Generative AI & Copilots",
+    subtitle: "Custom Enterprise LLMs",
+    description: "Architect bespoke GenAI engines, domain-tuned copilot assistants, and semantic RAG systems for intelligent workplace productivity.",
     image: "/assets/Home-page/ai-studio/ai-sdlc.png",
-    link: azureUrl,
-    badge: "Copilot AI"
+    link: "/services/ai-data-innovation",
+    badge: "GenAI & LLMs"
   },
   {
-    title: "Agentic Back Office",
+    title: "Agentic Automation",
     subtitle: "Autonomous Digital Agents",
-    description: "Deploy goal-oriented autonomous AI agents to execute multi-step business workflows, API calls, and operations.",
+    description: "Deploy goal-driven autonomous AI agents that execute complex multi-step enterprise workflows, API orchestrations, and back-office operations.",
     image: "/assets/Home-page/ai-studio/agentic-office.png",
-    link: azureUrl,
-    badge: "Smart Agents"
+    link: "/services/ai-data-innovation",
+    badge: "AI Agents"
   },
   {
-    title: "AI in Managed Services",
-    subtitle: "Document & Workflow AI",
-    description: "Automated OCR, contract intelligence, PDF parsing, and predictive telemetry for enterprise cloud operations.",
+    title: "Document & Workflow AI",
+    subtitle: "Intelligent Process Automation",
+    description: "Transform unstructured contracts, financial PDFs, and medical records into actionable insights with multi-modal Document AI and predictive telemetry.",
     image: "/assets/Home-page/ai-studio/ai-managed-services.png",
-    link: azureUrl,
-    badge: "DocAI & SRE"
+    link: "/services/ai-data-innovation",
+    badge: "DocAI & Analytics"
   },
   {
-    title: "AI Lab",
-    subtitle: "Enterprise AI Studio R&D",
-    description: "Multi-modal image synthesis, fine-tuned domain models, vector search, and rapid AI solution prototyping.",
+    title: "Enterprise AI R&D Studio",
+    subtitle: "Custom ML & Vision Engineering",
+    description: "End-to-end Machine Learning model training, computer vision synthesis, vector search platforms, and rapid enterprise AI solution prototyping.",
     image: "/assets/Home-page/ai-studio/ai-lab.png",
     link: azureUrl,
-    badge: "GenAI Studio"
+    badge: "AI Lab & MLOps"
   }
 ];
 
 export function AIStudioShowcase() {
   const primaryUrl = "https://devopstrioaiservices-e6dnggh5gxehh9d0.southindia-01.azurewebsites.net";
-  const [openDifferenceId, setOpenDifferenceId] = useState<string>("measurement");
+  const [openDifferenceId, setOpenDifferenceId] = useState<string>("philosophy");
 
   return (
     <section className="w-full pt-0 pb-16 md:pb-24 bg-[#030303] text-white relative overflow-hidden border-b border-zinc-900">
 
-      {/* Background Ambient Curved Light Halo (Matching ServicesOverviewPillars style) */}
+      {/* Background Ambient Curved Light Halo */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[95vw] max-w-[1250px] h-[400px] md:h-[550px] bg-gradient-to-r from-red-600/10 via-rose-500/15 to-red-600/10 rounded-[100%] blur-[140px] pointer-events-none opacity-80" />
 
       <div className="max-w-7xl mx-auto w-full px-6 sm:px-8 relative z-10">
 
-        {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6">
-          <div>
-            <Reveal>
-              <span className="text-[11px] font-bold tracking-[0.25em] uppercase text-rose-500 mb-3 block font-mono">
-                ENTERPRISE AI PLATFORM
-              </span>
-            </Reveal>
-            <Reveal>
-              <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold tracking-tight text-white mb-3 font-sans">
-                Devopstrio <span className="text-rose-500">AI Studio</span>
-              </h2>
-            </Reveal>
-            <Reveal>
-              <p className="text-zinc-400 text-sm md:text-base max-w-2xl leading-relaxed">
-                Empower your workforce with an integrated workspace for Chat, Image Generation, Document Intelligence, AI Agents, and Business Automation.
-              </p>
-            </Reveal>
-          </div>
-
+        {/* Section Header - Centered & Impressive Enterprise Copy */}
+        <div className="text-center max-w-4xl mx-auto mb-14">
           <Reveal>
-            <div className="flex flex-wrap gap-3">
+            <span className="text-[11px] font-bold tracking-[0.25em] uppercase text-rose-500 mb-3 block font-mono">
+              PIONEERING ARTIFICIAL INTELLIGENCE
+            </span>
+          </Reveal>
+          <Reveal>
+            <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold tracking-tight text-white mb-4 font-sans leading-tight">
+              Shaping the Future with <span className="text-rose-500">Enterprise AI Innovation</span>
+            </h2>
+          </Reveal>
+          <Reveal>
+            <p className="text-zinc-100 text-base md:text-lg lg:text-xl max-w-3xl mx-auto leading-relaxed font-normal mb-8">
+              From visionary GenAI strategies and autonomous digital agents to custom neural engineering and bulletproof AI governance — we empower global enterprises to innovate faster, elevate human potential, and achieve extraordinary business outcomes.
+            </p>
+          </Reveal>
+          <Reveal>
+            <div className="flex flex-wrap items-center justify-center gap-3">
+              <Link
+                href="/services/ai-data-innovation"
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white font-bold text-xs tracking-wider uppercase transition-all duration-300 hover:shadow-[0_0_30px_rgba(225,29,72,0.45)] hover:-translate-y-0.5"
+              >
+                <span>Explore AI Services</span>
+                <ArrowUpRight className="w-4 h-4" />
+              </Link>
               <a
                 href={azureUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white font-bold text-xs tracking-wider uppercase transition-all duration-300 hover:shadow-[0_0_30px_rgba(225,29,72,0.45)] hover:-translate-y-0.5"
-              >
-                <span>🚀 Launch AI Platform</span>
-                <ArrowUpRight className="w-4 h-4" />
-              </a>
-              <a
-                href={primaryUrl}
-                target="_blank"
-                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl border border-zinc-800 hover:border-zinc-700 bg-zinc-950/80 hover:bg-zinc-900 text-zinc-200 font-semibold text-xs tracking-wider uppercase transition-all duration-300 hover:-translate-y-0.5"
               >
-                <span>AI Studio Hub</span>
+                <span>Launch AI Studio Hub</span>
                 <ArrowUpRight className="w-4 h-4 text-zinc-400" />
               </a>
             </div>
@@ -127,7 +123,7 @@ export function AIStudioShowcase() {
           <div className="relative rounded-2xl border border-zinc-800/80 bg-zinc-950/40 backdrop-blur-md p-8 md:p-12 mb-16 overflow-hidden shadow-2xl">
 
             <h3 className="text-2xl md:text-3xl font-bold tracking-tight text-white mb-8 font-sans">
-              Our <span className="text-rose-500">AI-Native Difference</span>
+              Our Enterprise <span className="text-rose-500">AI Engineering Excellence</span>
             </h3>
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
@@ -160,7 +156,7 @@ export function AIStudioShowcase() {
                             transition={{ duration: 0.35, ease: "easeInOut" }}
                             className="overflow-hidden"
                           >
-                            <p className="text-zinc-300 text-sm md:text-base leading-relaxed pt-4 pb-2 font-normal">
+                            <p className="text-zinc-100 text-base md:text-[17px] leading-relaxed pt-4 pb-2 font-normal">
                               {item.description}
                             </p>
                           </motion.div>
@@ -196,78 +192,82 @@ export function AIStudioShowcase() {
         <div className="mb-0">
           <Reveal>
             <h3 className="text-xl md:text-3xl font-bold tracking-tight text-white mb-8">
-              Four ways we transform <span className="text-rose-500">organizations with AI</span>
+              Comprehensive <span className="text-rose-500">AI Services For Enterprises</span>
             </h3>
           </Reveal>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {aiTransformationCards.map((card, idx) => (
-              <Reveal key={card.title} delay={idx * 0.08}>
-                <a
+              <Reveal key={card.title} delay={idx * 0.08} className="h-full">
+                <Link
                   href={card.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="relative rounded-2xl overflow-hidden border border-zinc-800/80 bg-zinc-950/40 backdrop-blur-md group h-[380px] shadow-xl hover:border-rose-500/60 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] block cursor-pointer flex flex-col justify-between"
+                  className="relative group flex flex-col justify-between bg-[#0A0A0A] rounded-[24px] p-3 border border-zinc-800/80 hover:border-rose-500/60 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] overflow-hidden shadow-xl hover:shadow-[0_15px_45px_rgba(0,0,0,0.8)] h-full cursor-pointer"
                 >
-                  {/* Hover-only Full Screen Expanded Background Image with Light Studio Glass Overlay */}
-                  <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  {/* Hover-only Full Screen Expanded Background Image with Glass Overlay */}
+                  <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-[24px]">
                     <img
                       src={card.image}
                       alt={card.title}
                       className="w-full h-full object-cover scale-100 group-hover:scale-110 transition-transform duration-700 ease-out"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#F5F2EB]/95 via-[#F5F2EB]/85 to-[#FAF8F5]/75" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/80 to-black/60 backdrop-blur-xs" />
                   </div>
 
                   {/* Content Wrapper */}
-                  <div className="relative z-10 flex flex-col justify-between h-full p-6">
-
-                    {/* Top Portion: Title, Badge & Subtitle */}
+                  <div className="relative z-10 flex flex-col justify-between h-full">
                     <div>
-                      <div className="flex items-center justify-between mb-3">
-                        <span className="text-xs font-semibold tracking-wider uppercase px-2.5 py-1 rounded-full bg-zinc-900/90 border border-zinc-800 text-zinc-300 group-hover:bg-[#EAE7E0] group-hover:text-black group-hover:border-zinc-300 transition-colors">
+                      {/* Uniform Top Cover Image Frame (Fades gracefully on hover to reveal expanded full card image) */}
+                      <div className="relative w-full aspect-[16/10] overflow-hidden rounded-[16px] bg-zinc-900 border border-zinc-800/60 mb-4 group/img transition-all duration-500 group-hover:opacity-0 group-hover:scale-95">
+                        <img
+                          src={card.image}
+                          alt={card.title}
+                          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.05]"
+                        />
+                        {/* Gradient Overlay */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
+
+                        {/* Top Badges Overlaid on Image */}
+                        <div className="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-black/60 backdrop-blur-md border border-white/10 text-[10px] font-bold text-white uppercase tracking-wider">
                           {card.badge}
-                        </span>
-                        <div className="w-7 h-7 rounded-full bg-black/50 border border-zinc-800 flex items-center justify-center text-zinc-400 group-hover:text-black group-hover:border-zinc-300 group-hover:bg-white transition-all">
-                          <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                        </div>
+                        <div className="absolute top-3 right-3 w-7 h-7 rounded-full bg-black/60 backdrop-blur-md border border-white/10 flex items-center justify-center text-white">
+                          <ArrowUpRight className="w-3.5 h-3.5" />
                         </div>
                       </div>
 
-                      <h4 className="text-xl font-bold text-white mb-1 group-hover:text-black transition-colors tracking-tight font-sans">
-                        {card.title}
-                      </h4>
+                      {/* Card Body - Transitions smoothly upward on hover */}
+                      <div className="px-2 flex flex-col gap-1.5 transition-transform duration-500 group-hover:-translate-y-20">
+                        {/* Badge shown on hover */}
+                        <div className="hidden group-hover:flex items-center justify-between mb-1">
+                          <span className="text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-md bg-rose-500/20 border border-rose-500/30 text-rose-400">
+                            {card.badge}
+                          </span>
+                          <div className="w-7 h-7 rounded-full bg-rose-600 flex items-center justify-center text-white shadow-md">
+                            <ArrowUpRight className="w-3.5 h-3.5" />
+                          </div>
+                        </div>
 
-                      <p className="text-sm font-medium text-rose-500/90 mb-2 group-hover:text-red-600 transition-colors">
-                        {card.subtitle}
-                      </p>
-
-                      <p className="text-zinc-300 text-sm md:text-base font-normal leading-relaxed group-hover:text-zinc-800 transition-colors line-clamp-2 group-hover:line-clamp-none">
-                        {card.description}
-                      </p>
+                        <span className="text-[#E11D48] text-xs font-semibold uppercase tracking-widest group-hover:text-rose-400 transition-colors">
+                          {card.subtitle}
+                        </span>
+                        <h4 className="text-white text-lg md:text-xl font-bold leading-snug tracking-tight font-sans">
+                          {card.title}
+                        </h4>
+                        <p className="text-zinc-100 text-sm md:text-base leading-relaxed font-normal line-clamp-3 group-hover:line-clamp-none transition-all mt-1">
+                          {card.description}
+                        </p>
+                      </div>
                     </div>
 
-                    {/* Initial State: Edge-to-Edge Bottom 3D Graphic Image Frame */}
-                    <div className="relative -mx-6 -mb-6 w-[calc(100%+3rem)] h-[195px] rounded-b-[15px] rounded-t-none overflow-hidden border-t border-zinc-800/60 bg-zinc-950 group-hover:opacity-0 group-hover:scale-95 transition-all duration-300">
-                      <img
-                        src={card.image}
-                        alt={card.title}
-                        className="w-full h-full object-cover transition-transform duration-500"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
-                    </div>
-
-                    {/* Hover State: Bottom Action Footer */}
-                    <div className="absolute bottom-6 left-6 right-6 pt-3 border-t border-zinc-800/80 group-hover:border-zinc-400/60 opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-between">
-                      <span className="text-xs font-semibold uppercase tracking-wider text-white group-hover:text-black transition-colors">
-                        Launch Capability
+                    {/* Bottom Action Link Footer */}
+                    <div className="px-2 pt-4 mt-5 border-t border-zinc-800/80 group-hover:border-rose-500/40 flex items-center justify-between transition-colors">
+                      <span className="text-xs font-bold uppercase tracking-wider text-rose-500 group-hover:text-rose-400">
+                        Explore Capability
                       </span>
-                      <span className="text-xs text-red-500 font-bold group-hover:text-red-600 group-hover:translate-x-1 transition-transform">
-                        →
-                      </span>
+                      <ArrowUpRight className="w-4 h-4 text-rose-500 group-hover:text-rose-400 group-hover:translate-x-1 group-hover:-translate-y-0.5 transition-transform" />
                     </div>
-
                   </div>
-                </a>
+                </Link>
               </Reveal>
             ))}
           </div>
@@ -277,3 +277,4 @@ export function AIStudioShowcase() {
     </section>
   );
 }
+
