@@ -7,7 +7,18 @@ import { ArrowUpRight } from "lucide-react";
 import CardSwap, { Card } from "@/components/ui/CardSwap";
 import Link from "next/link";
 
-const products = [
+interface Product {
+  name: string;
+  category: string;
+  desc: string;
+  features?: string[];
+  tags: string[];
+  image: string;
+  link: string;
+  cta?: string;
+}
+
+const products: Product[] = [
   // {
   //   name: "Devopstrio AI Studio",
   //   category: "Artificial Intelligence · Enterprise AI Workspace",
