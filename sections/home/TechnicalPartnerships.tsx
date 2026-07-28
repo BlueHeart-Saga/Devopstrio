@@ -118,15 +118,15 @@ export function TechnicalPartnerships() {
           {/* Left Content */}
           <Reveal>
             <div className="flex flex-col justify-center w-full lg:max-w-[90%] xl:max-w-[85%]">
-              <span className="text-[11px] font-bold tracking-[0.25em] uppercase text-rose-500 block mb-4">
+              <span className="text-xs font-semibold tracking-[0.25em] uppercase text-rose-500 block mb-4">
                 TECHNOLOGY ECOSYSTEM
               </span>
               <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-[1.12] text-white mb-6">
                 Strategic <span className="text-[#E11D48]">Technology</span> <span className="text-[#E11D48]">Partnerships</span> <br className="hidden md:block" />
                 The Foundation Behind Digital Success
               </h2>
-              <p className="text-lg md:text-xl text-zinc-400 leading-relaxed font-light mb-12">
-                Hover over the nodes to explore the integrated tools in our <Link href="/ecosystem/technology-stack" className="text-rose-500 hover:underline">technology stack</Link> and delivery pipeline.
+              <p className="text-lg md:text-xl text-zinc-300 leading-relaxed font-normal mb-12">
+                Hover over the nodes to explore the integrated tools in our <Link href="/ecosystem/technology-stack" className="text-rose-500 hover:underline font-medium">technology stack</Link> and delivery pipeline.
               </p>
 
               <div className="flex flex-col gap-6 relative min-h-[200px] justify-between">
@@ -134,7 +134,7 @@ export function TechnicalPartnerships() {
 
                 <div key={`${currentTechIndex}-${page}`} className="animate-fadeIn">
                   <div className="pl-6 mb-4">
-                    <span className="text-rose-500 text-xs font-bold tracking-widest block mb-1 uppercase">
+                    <span className="text-rose-500 text-xs font-semibold tracking-widest block mb-1 uppercase">
                       {hoveredData.category}
                     </span>
                     <h4 className="text-white font-bold text-2xl mb-2">
@@ -143,14 +143,14 @@ export function TechnicalPartnerships() {
                   </div>
 
                   <div className="pl-6">
-                    <h5 className="text-zinc-500 font-bold text-[10px] uppercase tracking-wider mb-1">Production Capability</h5>
-                    <p className="text-sm text-zinc-400 font-bold leading-relaxed">{hoveredData.desc}</p>
+                    <h5 className="text-zinc-400 font-semibold text-xs uppercase tracking-wider mb-1">Production Capability</h5>
+                    <p className="text-base text-zinc-300 font-normal leading-relaxed">{hoveredData.desc}</p>
                   </div>
                 </div>
 
                 <div className="pl-6 pt-4">
                   <div className="h-[2px] w-12 bg-rose-500 mb-3"></div>
-                  <div className="text-rose-500 text-[10px] font-black tracking-widest uppercase animate-pulse">
+                  <div className="text-rose-500 text-xs font-semibold tracking-widest uppercase animate-pulse">
                     {isHoveredState ? `Inspecting: ${hoveredData.name}` : `Auto-cycling stack (Page ${page + 1}/2)`}
                   </div>
                 </div>

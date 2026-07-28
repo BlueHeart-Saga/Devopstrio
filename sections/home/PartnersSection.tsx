@@ -681,7 +681,7 @@ export function PartnersSection() {
           <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-4 text-white">
             Some of Our <span className="font-bold text-rose-500">Clients</span>
           </h2>
-          <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-light max-w-2xl mx-auto">
+          <p className="text-zinc-300 text-base md:text-lg leading-relaxed font-normal max-w-2xl mx-auto">
             The following are just a few of our regular clients and strategic partners worldwide.
           </p>
         </Reveal>
@@ -732,7 +732,7 @@ export function PartnersSection() {
         {/* Quote Footer */}
         <Reveal>
           <div className="mt-8 text-center max-w-2xl mx-auto border-t border-zinc-900/60 pt-8">
-            <p className="text-zinc-400 text-sm md:text-base leading-relaxed italic">
+            <p className="text-zinc-300 text-base md:text-lg leading-relaxed italic font-normal">
               "We've created lasting relationships with our clients. Our success is our client's success."
             </p>
           </div>

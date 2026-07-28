@@ -13,8 +13,8 @@ export function PeopleBehindRecognition() {
             <Reveal>
               <div className="relative rounded-3xl overflow-hidden border border-zinc-800 shadow-2xl h-[400px] lg:h-[500px]">
                 <img 
-                  src="/assets/About-page/microsoft_fluent_asset.png" 
-                  alt="Team Collaboration" 
+                  src="/assets/About-page/card/About_awards.png" 
+                  alt="Team Collaboration & Awards Recognition" 
                   className="w-full h-full object-cover grayscale-[50%] hover:grayscale-0 transition-all duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />

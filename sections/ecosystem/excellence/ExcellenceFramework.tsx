@@ -26,7 +26,7 @@ export function ExcellenceFramework() {
       points: ["Ownership Mindset", "Continuous Learning", "Technical Leadership", "Knowledge Sharing", "Innovation Programs", "Engineering Communities"],
       subInfoTitle: "Culture Programs",
       subInfo: ["Internal Hackathons", "Technical Guilds", "Architecture Reviews", "Learning Platforms"],
-      image: "/assets/Home-page/we-imagine/gen/we-design-intelligent.png"
+      image: "/assets/ecosystem/grid/engineering-excellence page_categories Grid/Generated Design.png"
     },
     {
       id: "software",
@@ -36,7 +36,7 @@ export function ExcellenceFramework() {
       points: ["Full Stack Development", "API Engineering", "Microservices Design", "Event-Driven Systems", "Enterprise Applications", "Platform Integration"],
       subInfoTitle: "Technology Focus",
       subInfo: ["React", "Next.js", "Node.js", "Python", "FastAPI", ".NET"],
-      image: "/assets/Home-page/we-imagine/gen/we-build-software.png"
+      image: "/assets/ecosystem/grid/engineering-excellence page_categories Grid/Generated Design-1.png"
     },
     {
       id: "platform",
@@ -46,7 +46,7 @@ export function ExcellenceFramework() {
       points: ["Internal Developer Platforms", "Self-Service Environments", "Golden Path Templates", "Developer Experience", "Infrastructure Bootstrapping", "Developer Portals"],
       subInfoTitle: "Tooling Stack & Benefits",
       subInfo: ["Kubernetes", "Backstage", "Terraform", "ArgoCD", "Faster Delivery", "Standardized Deployments"],
-      image: "/assets/Home-page/we-imagine/gen/we-transform-legacy.png"
+      image: "/assets/ecosystem/grid/engineering-excellence page_categories Grid/Generated Design-2.png"
     },
     {
       id: "architecture",
@@ -56,7 +56,7 @@ export function ExcellenceFramework() {
       points: ["Enterprise Architecture", "Cloud Architecture", "Microservices", "API Strategy", "Event-Driven Systems", "Solution Blueprints"],
       subInfoTitle: "Strategy & Design",
       subInfo: ["Architecture Reviews", "Scalability Planning", "ADRs", "Design Patterns"],
-      image: "/assets/Home-page/we-imagine/gen/we-design-intelligent.png"
+      image: "/assets/ecosystem/grid/engineering-excellence page_categories Grid/Generated Design-3.png"
     },
     {
       id: "devsecops",
@@ -66,7 +66,7 @@ export function ExcellenceFramework() {
       points: ["Secure SDLC validation", "Infrastructure Security", "Compliance Automation", "Vulnerability Management", "Security Monitoring", "Least-Privilege Setup"],
       subInfoTitle: "Tools & Practices",
       subInfo: ["SAST / DAST scans", "Trivy container scan", "Snyk code audit", "SonarQube gate", "Zero Trust design"],
-      image: "/assets/Home-page/we-imagine/gen/we-design-intelligent.png"
+      image: "/assets/ecosystem/grid/engineering-excellence page_categories Grid/Generated Design-4.png"
     },
     {
       id: "sre",
@@ -76,7 +76,7 @@ export function ExcellenceFramework() {
       points: ["Observability & Logging", "Incident Response Control", "Capacity Planning", "Disaster Recovery", "SLA & SLO Monitoring", "MTTR Optimization"],
       subInfoTitle: "Tools",
       subInfo: ["Grafana", "Prometheus", "OpenTelemetry", "Azure Monitor"],
-      image: "/assets/Home-page/we-imagine/gen/we-manage-operations.png"
+      image: "/assets/ecosystem/grid/engineering-excellence page_categories Grid/Generated Design-5.png"
     },
     {
       id: "quality",
@@ -86,7 +86,7 @@ export function ExcellenceFramework() {
       points: ["Test Automation", "API Contract Validation", "Performance Load Testing", "Security Verification", "Accessibility Checking", "UAT Frameworks"],
       subInfoTitle: "Tools & Metrics",
       subInfo: ["Playwright", "Cypress", "Postman", "k6 load runner", "Test coverage SLA", "Release Quality verification"],
-      image: "/assets/Home-page/we-imagine/gen/we-build-software.png"
+      image: "/assets/ecosystem/grid/engineering-excellence page_categories Grid/Generated Design-6.png"
     },
     {
       id: "operations",
@@ -96,7 +96,7 @@ export function ExcellenceFramework() {
       points: ["Engineering Governance", "SDLC Management", "Release Management", "CI/CD Operations", "Developer Productivity", "Agile Delivery"],
       subInfoTitle: "Metrics & Processes",
       subInfo: ["DORA Metrics", "Continuous Improvement", "Release Optimization", "SPACE Framework"],
-      image: "/assets/Home-page/we-imagine/gen/we-transform-legacy.png"
+      image: "/assets/ecosystem/grid/engineering-excellence page_categories Grid/Generated Design-7.png"
     }
   ];
 

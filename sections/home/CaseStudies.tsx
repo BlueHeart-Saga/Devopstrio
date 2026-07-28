@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Reveal } from "@/components/ui/Reveal";
-import { Zap, ArrowUpRight, ArrowLeft } from "lucide-react";
+import { Zap, ArrowUpRight, ArrowLeft, ArrowRight } from "lucide-react";
 import Link from "next/link";
 
 interface CaseStudy {
@@ -26,7 +26,7 @@ const caseStudies: CaseStudy[] = [
     solution: "Delivered a trigger-based remediation platform for digital onboarding, entity resolution, and adverse media intelligence.",
     technologies: ["AI Copilot", "Graph Databases", "Machine Learning", "Kubernetes"],
     result: "Real-time threat detection across Banks & FinTechs",
-    image: "/assets/Home-page/case-studies/COMPOSABLE%20KYC%20%26%20AML.png"
+    image: "/assets/Home-page/case-studies/COMPOSABLE-KYC-AML.png"
   },
   {
     tag: "HEALTHCARE CYBERSECURITY",
@@ -106,8 +106,8 @@ export function CaseStudies() {
               </h2>
             </Reveal>
             <Reveal>
-              <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-medium">
-                We partner with organizations to solve complex challenges through <Link href="/services/ai-data-innovation" className="text-rose-500 hover:underline">AI</Link>, <Link href="/services/cloud-services" className="text-rose-500 hover:underline">cloud engineering</Link>, <Link href="/services/cybersecurity" className="text-rose-500 hover:underline">cybersecurity</Link>, <Link href="/services/devops-automation" className="text-rose-500 hover:underline">DevOps</Link>, and <Link href="/services/software-development" className="text-rose-500 hover:underline">software development</Link> — creating measurable outcomes that drive efficiency, innovation, and long-term growth.
+              <p className="text-zinc-300 text-sm md:text-base leading-relaxed font-normal">
+                We partner with organizations to solve complex challenges through <Link href="/services/ai-data-innovation" className="text-rose-500 hover:underline font-medium">AI</Link>, <Link href="/services/cloud-services" className="text-rose-500 hover:underline font-medium">cloud engineering</Link>, <Link href="/services/cybersecurity" className="text-rose-500 hover:underline font-medium">cybersecurity</Link>, <Link href="/services/devops-automation" className="text-rose-500 hover:underline font-medium">DevOps</Link>, and <Link href="/services/software-development" className="text-rose-500 hover:underline font-medium">software development</Link> — creating measurable outcomes that drive efficiency, innovation, and long-term growth.
               </p>
             </Reveal>
           </div>
@@ -121,27 +121,27 @@ export function CaseStudies() {
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-y-6 gap-x-4 relative z-10">
               <div className="flex flex-col gap-1">
                 <span className="text-2xl lg:text-3xl font-light text-white">2500<span className="text-rose-500 font-bold">+</span></span>
-                <span className="text-[10px] font-bold text-zinc-500 uppercase tracking-widest mt-0.5">Projects</span>
+                <span className="text-xs font-medium text-zinc-400 uppercase tracking-widest mt-0.5">Projects</span>
               </div>
               <div className="flex flex-col gap-1">
                 <span className="text-2xl lg:text-3xl font-light text-white">525<span className="text-rose-500 font-bold">+</span></span>
-                <span className="text-[10px] font-bold text-zinc-500 uppercase tracking-widest mt-0.5">Experts</span>
+                <span className="text-xs font-medium text-zinc-400 uppercase tracking-widest mt-0.5">Experts</span>
               </div>
               <div className="flex flex-col gap-1">
                 <span className="text-2xl lg:text-3xl font-light text-white">25<span className="text-rose-500 font-bold">+</span></span>
-                <span className="text-[10px] font-bold text-zinc-500 uppercase tracking-widest mt-0.5">Domains</span>
+                <span className="text-xs font-medium text-zinc-400 uppercase tracking-widest mt-0.5">Domains</span>
               </div>
               <div className="flex flex-col gap-1">
                 <span className="text-2xl lg:text-3xl font-light text-white">8<span className="text-rose-500 font-bold">+</span></span>
-                <span className="text-[10px] font-bold text-zinc-500 uppercase tracking-widest mt-0.5">Partners</span>
+                <span className="text-xs font-medium text-zinc-400 uppercase tracking-widest mt-0.5">Partners</span>
               </div>
               <div className="flex flex-col gap-1">
                 <span className="text-2xl lg:text-3xl font-light text-white">7<span className="text-rose-500 font-bold">+</span></span>
-                <span className="text-[10px] font-bold text-zinc-500 uppercase tracking-widest mt-0.5">Years</span>
+                <span className="text-xs font-medium text-zinc-400 uppercase tracking-widest mt-0.5">Years</span>
               </div>
               <div className="flex flex-col gap-1">
                 <span className="text-2xl lg:text-3xl font-light text-white">4<span className="text-rose-500 font-bold">+</span></span>
-                <span className="text-[10px] font-bold text-zinc-500 uppercase tracking-widest mt-0.5">Countries</span>
+                <span className="text-xs font-medium text-zinc-400 uppercase tracking-widest mt-0.5">Countries</span>
               </div>
             </div>
           </Reveal>
@@ -182,12 +182,12 @@ export function CaseStudies() {
                       onClick={(e) => { e.stopPropagation(); handleNext(); }}
                       className="w-10 h-10 rounded-full bg-black/60 backdrop-blur-md border border-white/10 flex items-center justify-center text-white hover:bg-rose-600 hover:border-rose-500 transition-all shadow-xl transform translate-x-2 group-hover:translate-x-0"
                     >
-                      <ArrowUpRight size={18} />
+                      <ArrowRight size={18} />
                     </button>
                   </div>
 
                   <div className="relative z-20">
-                    <span className="text-xs font-mono tracking-widest text-rose-400 block mb-3 drop-shadow-sm uppercase">
+                    <span className="text-xs font-mono tracking-widest text-rose-400 block mb-3 drop-shadow-sm uppercase font-semibold">
                       {caseStudies[activeIndex].tag}
                     </span>
                     <h3 className="text-xl md:text-2xl font-bold text-white leading-snug drop-shadow-md">
@@ -199,16 +199,16 @@ export function CaseStudies() {
                 {/* Challenge -> Strategy -> Solution */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm border-y border-zinc-900/60 py-6">
                   <div>
-                    <span className="block font-semibold text-zinc-300 mb-1.5 uppercase text-[10px] tracking-wider font-mono">Challenge</span>
-                    <p className="leading-relaxed text-zinc-400 font-medium">{caseStudies[activeIndex].challenge}</p>
+                    <span className="block font-semibold text-zinc-300 mb-1.5 uppercase text-xs tracking-wider font-mono">Challenge</span>
+                    <p className="leading-relaxed text-zinc-300 font-normal text-sm md:text-base">{caseStudies[activeIndex].challenge}</p>
                   </div>
                   <div>
-                    <span className="block font-semibold text-zinc-300 mb-1.5 uppercase text-[10px] tracking-wider font-mono">Strategy</span>
-                    <p className="leading-relaxed text-zinc-400 font-medium">{caseStudies[activeIndex].strategy}</p>
+                    <span className="block font-semibold text-zinc-300 mb-1.5 uppercase text-xs tracking-wider font-mono">Strategy</span>
+                    <p className="leading-relaxed text-zinc-300 font-normal text-sm md:text-base">{caseStudies[activeIndex].strategy}</p>
                   </div>
                   <div>
-                    <span className="block font-semibold text-zinc-300 mb-1.5 uppercase text-[10px] tracking-wider font-mono">Solution</span>
-                    <p className="leading-relaxed text-zinc-400 font-medium">{caseStudies[activeIndex].solution}</p>
+                    <span className="block font-semibold text-zinc-300 mb-1.5 uppercase text-xs tracking-wider font-mono">Solution</span>
+                    <p className="leading-relaxed text-zinc-300 font-normal text-sm md:text-base">{caseStudies[activeIndex].solution}</p>
                   </div>
                 </div>
 

@@ -8,33 +8,33 @@ import Link from "next/link";
 export function CommunityHero() {
   const avatars = [
     // Center Focus (Large, sharp)
-    { id: 1, x: 0, y: 0, size: 76, filter: "none", src: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=120&auto=format&fit=crop&q=80" },
+    { id: 1, x: 0, y: 0, size: 76, filter: "none", src: "/assets/ecosystem/community-talent-network_hero people/image 276.png" },
 
     // Ring 1 (Radius 52px, slightly smaller, very minor blur)
-    { id: 2, x: 0, y: -52, size: 56, filter: "blur(0.4px)", src: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop&q=80" },
-    { id: 3, x: 52, y: 0, size: 56, filter: "blur(0.4px)", src: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&auto=format&fit=crop&q=80" },
-    { id: 4, x: 0, y: 52, size: 56, filter: "blur(0.4px)", src: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&auto=format&fit=crop&q=80" },
-    { id: 5, x: -52, y: 0, size: 56, filter: "blur(0.4px)", src: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&auto=format&fit=crop&q=80" },
+    { id: 2, x: 0, y: -52, size: 56, filter: "blur(0.4px)", src: "/assets/ecosystem/community-talent-network_hero people/image 277.png" },
+    { id: 3, x: 52, y: 0, size: 56, filter: "blur(0.4px)", src: "/assets/ecosystem/community-talent-network_hero people/image 278.png" },
+    { id: 4, x: 0, y: 52, size: 56, filter: "blur(0.4px)", src: "/assets/ecosystem/community-talent-network_hero people/image 279.png" },
+    { id: 5, x: -52, y: 0, size: 56, filter: "blur(0.4px)", src: "/assets/ecosystem/community-talent-network_hero people/image 280.png" },
 
     // Ring 2 (Radius 104px, medium size, medium blur)
-    { id: 6, x: -73, y: -73, size: 44, filter: "blur(1.2px)", src: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&auto=format&fit=crop&q=80" },
-    { id: 7, x: 73, y: -73, size: 44, filter: "blur(1.2px)", src: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&auto=format&fit=crop&q=80" },
-    { id: 8, x: 73, y: 73, size: 44, filter: "blur(1.2px)", src: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=100&auto=format&fit=crop&q=80" },
-    { id: 9, x: -73, y: 73, size: 44, filter: "blur(1.2px)", src: "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=100&auto=format&fit=crop&q=80" },
-    { id: 10, x: 0, y: -104, size: 44, filter: "blur(1.2px)", src: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=100&auto=format&fit=crop&q=80" },
-    { id: 11, x: 104, y: 0, size: 44, filter: "blur(1.2px)", src: "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?w=100&auto=format&fit=crop&q=80" },
-    { id: 12, x: 0, y: 104, size: 44, filter: "blur(1.2px)", src: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=100&auto=format&fit=crop&q=80" },
-    { id: 13, x: -104, y: 0, size: 44, filter: "blur(1.2px)", src: "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=100&auto=format&fit=crop&q=80" },
+    { id: 6, x: -73, y: -73, size: 44, filter: "blur(1.2px)", src: "/assets/ecosystem/community-talent-network_hero people/image 281.png" },
+    { id: 7, x: 73, y: -73, size: 44, filter: "blur(1.2px)", src: "/assets/ecosystem/community-talent-network_hero people/image 282.png" },
+    { id: 8, x: 73, y: 73, size: 44, filter: "blur(1.2px)", src: "/assets/ecosystem/community-talent-network_hero people/image 283.png" },
+    { id: 9, x: -73, y: 73, size: 44, filter: "blur(1.2px)", src: "/assets/ecosystem/community-talent-network_hero people/image 284.png" },
+    { id: 10, x: 0, y: -104, size: 44, filter: "blur(1.2px)", src: "/assets/ecosystem/community-talent-network_hero people/image 285.png" },
+    { id: 11, x: 104, y: 0, size: 44, filter: "blur(1.2px)", src: "/assets/ecosystem/community-talent-network_hero people/image 286.png" },
+    { id: 12, x: 0, y: 104, size: 44, filter: "blur(1.2px)", src: "/assets/ecosystem/community-talent-network_hero people/image 287.png" },
+    { id: 13, x: -104, y: 0, size: 44, filter: "blur(1.2px)", src: "/assets/ecosystem/community-talent-network_hero people/image 276.png" },
 
     // Ring 3 (Radius 150px, smallest size, highest blur)
-    { id: 14, x: -106, y: -106, size: 34, filter: "blur(2.5px)", src: "https://images.unsplash.com/photo-1544717305-2782549b5136?w=100&auto=format&fit=crop&q=80" },
-    { id: 15, x: 106, y: -106, size: 34, filter: "blur(2.5px)", src: "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=100&auto=format&fit=crop&q=80" },
-    { id: 16, x: 106, y: 106, size: 34, filter: "blur(2.5px)", src: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=100&auto=format&fit=crop&q=80" },
-    { id: 17, x: -106, y: 106, size: 34, filter: "blur(2.5px)", src: "https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?w=100&auto=format&fit=crop&q=80" },
-    { id: 18, x: -150, y: 0, size: 34, filter: "blur(2.5px)", src: "https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?w=100&auto=format&fit=crop&q=80" },
-    { id: 19, x: 150, y: 0, size: 34, filter: "blur(2.5px)", src: "https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?w=100&auto=format&fit=crop&q=80" },
-    { id: 20, x: 0, y: -150, size: 34, filter: "blur(2.5px)", src: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=100&auto=format&fit=crop&q=80" },
-    { id: 21, x: 0, y: 150, size: 34, filter: "blur(2.5px)", src: "https://images.unsplash.com/photo-1463453091185-61582044d556?w=100&auto=format&fit=crop&q=80" },
+    { id: 14, x: -106, y: -106, size: 34, filter: "blur(2.5px)", src: "/assets/ecosystem/community-talent-network_hero people/image 277.png" },
+    { id: 15, x: 106, y: -106, size: 34, filter: "blur(2.5px)", src: "/assets/ecosystem/community-talent-network_hero people/image 278.png" },
+    { id: 16, x: 106, y: 106, size: 34, filter: "blur(2.5px)", src: "/assets/ecosystem/community-talent-network_hero people/image 279.png" },
+    { id: 17, x: -106, y: 106, size: 34, filter: "blur(2.5px)", src: "/assets/ecosystem/community-talent-network_hero people/image 280.png" },
+    { id: 18, x: -150, y: 0, size: 34, filter: "blur(2.5px)", src: "/assets/ecosystem/community-talent-network_hero people/image 281.png" },
+    { id: 19, x: 150, y: 0, size: 34, filter: "blur(2.5px)", src: "/assets/ecosystem/community-talent-network_hero people/image 282.png" },
+    { id: 20, x: 0, y: -150, size: 34, filter: "blur(2.5px)", src: "/assets/ecosystem/community-talent-network_hero people/image 283.png" },
+    { id: 21, x: 0, y: 150, size: 34, filter: "blur(2.5px)", src: "/assets/ecosystem/community-talent-network_hero people/image 284.png" },
   ];
 
   return (

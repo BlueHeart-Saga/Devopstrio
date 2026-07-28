@@ -10,6 +10,7 @@ interface LabItem {
   desc: string;
   href: string;
   action: string;
+  image: string;
 }
 
 export function LabsEcosystem() {
@@ -19,30 +20,35 @@ export function LabsEcosystem() {
       desc: "Stateful agent networks and vector lookups",
       href: "#ai-lab",
       action: "Explore AI Lab",
+      image: "/assets/ecosystem/grid/ecosystem_innovation-labs page_grid_5/Generated Design.png",
     },
     {
       name: "Cloud Innovation Lab",
       desc: "Green computing and serverless edge WASM",
       href: "#cloud-lab",
       action: "Explore Cloud Lab",
+      image: "/assets/ecosystem/grid/ecosystem_innovation-labs page_grid_5/Generated Design-1.png",
     },
     {
       name: "DevOps Innovation Lab",
       desc: "Canary rollouts and dynamic pipeline tasks",
       href: "#devops-lab",
       action: "Explore DevOps Lab",
+      image: "/assets/ecosystem/grid/ecosystem_innovation-labs page_grid_5/Generated Design-2.png",
     },
     {
       name: "Cybersecurity Lab",
       desc: "eBPF security rules and SBOM vulnerability scans",
       href: "#cyber-lab",
       action: "Explore Cyber Lab",
+      image: "/assets/ecosystem/grid/ecosystem_innovation-labs page_grid_5/Generated Design-3.png",
     },
     {
       name: "Data & Analytics Lab",
       desc: "Flink stream engines and Delta Lake compression",
       href: "#data-lab",
       action: "Explore Data Lab",
+      image: "/assets/ecosystem/grid/ecosystem_innovation-labs page_grid_5/Generated Design-4.png",
     },
   ];
 
@@ -79,7 +85,7 @@ export function LabsEcosystem() {
               <div className="absolute -left-10 -bottom-10 w-48 h-48 bg-orange-600/5 rounded-full blur-3xl pointer-events-none transition-all duration-700 group-hover/tall:scale-110" />
 
               <img
-                src="/assets/services/bg-ai.png"
+                src="/assets/ecosystem/grid/ecosystem_innovation-labs page_grid_5/Generated Design.png"
                 alt="Abstract Background"
                 className="absolute inset-0 w-full h-full object-cover mix-blend-screen pointer-events-none opacity-30"
               />
@@ -115,6 +121,13 @@ export function LabsEcosystem() {
             {labs.map((item, idx) => (
               <Reveal key={item.name} delay={idx * 0.05} className="h-full">
                 <div className="group/card flex flex-col justify-between bg-zinc-950/30 border border-white/5 hover:border-rose-500/20 hover:bg-zinc-950/60 rounded-2xl p-6 transition-all duration-300 min-h-[220px] h-full relative overflow-hidden backdrop-blur-md shadow-[0_8px_32px_0_rgba(0,0,0,0.37)]">
+
+                  {/* Background graphic image */}
+                  <img
+                    src={item.image}
+                    alt=""
+                    className="absolute inset-0 w-full h-full object-cover mix-blend-screen pointer-events-none opacity-25 group-hover/card:opacity-40 transition-opacity duration-500"
+                  />
 
                   {/* Subtle color highlight glow on hover */}
                   <div className="absolute inset-0 bg-gradient-to-br from-rose-600/0 via-rose-600/0 to-rose-600/5 opacity-0 group-hover/card:opacity-100 transition-opacity duration-500 pointer-events-none" />

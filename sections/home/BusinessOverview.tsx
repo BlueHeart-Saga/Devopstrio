@@ -167,7 +167,7 @@ export function BusinessOverview() {
               {/* LEFT CONTENT */}
               <div className="flex flex-col justify-center p-6 md:p-10 lg:p-12">
 
-                <span className="text-[11px] font-semibold tracking-[0.25em] uppercase text-zinc-500 mb-8">
+                <span className="text-xs font-semibold tracking-[0.25em] uppercase text-zinc-400 mb-8">
                   Business Overview
                 </span>
 
@@ -178,11 +178,11 @@ export function BusinessOverview() {
                   </span>
                 </h2>
 
-                <p className="text-zinc-400 text-sm leading-relaxed max-w-xl mb-4">
-                  Devopstrio is an elite global <Link href="/services/it-consulting" className="text-rose-500 hover:underline">technology consulting</Link> and engineering company. We help enterprises modernize legacy systems, accelerate innovation, and scale <Link href="/services/digital-transformation" className="text-rose-500 hover:underline">digital transformation</Link> across multiple cloud platforms.
+                <p className="text-zinc-300 text-sm md:text-base leading-relaxed max-w-xl mb-4 font-normal">
+                  Devopstrio is an elite global <Link href="/services/it-consulting" className="text-rose-500 hover:underline font-medium">technology consulting</Link> and engineering company. We help enterprises modernize legacy systems, accelerate innovation, and scale <Link href="/services/digital-transformation" className="text-rose-500 hover:underline font-medium">digital transformation</Link> across multiple cloud platforms.
                 </p>
-                <p className="text-zinc-400 text-sm leading-relaxed max-w-xl mb-6">
-                  Through custom <Link href="/services/ai-data-innovation" className="text-rose-500 hover:underline">AI innovation</Link>, automated <Link href="/services/devops-automation" className="text-rose-500 hover:underline">DevOps pipelines</Link>, and robust <Link href="/services/cybersecurity" className="text-rose-500 hover:underline">cybersecurity</Link>, we build scalable environments tailored to your specific business requirements.
+                <p className="text-zinc-300 text-sm md:text-base leading-relaxed max-w-xl mb-6 font-normal">
+                  Through custom <Link href="/services/ai-data-innovation" className="text-rose-500 hover:underline font-medium">AI innovation</Link>, automated <Link href="/services/devops-automation" className="text-rose-500 hover:underline font-medium">DevOps pipelines</Link>, and robust <Link href="/services/cybersecurity" className="text-rose-500 hover:underline font-medium">cybersecurity</Link>, we build scalable environments tailored to your specific business requirements.
                 </p>
 
                 <Link

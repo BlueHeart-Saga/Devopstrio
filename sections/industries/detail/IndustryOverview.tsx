@@ -20,33 +20,33 @@ export function IndustryOverview({
   challenges,
   image
 }: IndustryOverviewProps) {
-  // Map incoming bgImage/image to the premium illustration from /assets/Industries-page/industriescard/
+  // Map incoming bgImage/image to the premium illustration from /assets/Industries-page/industries/
   const getPremiumIllustration = (imgSrc: string) => {
     const src = imgSrc.toLowerCase();
 
     if (src.includes("finance") || src.includes("banking") || src.includes("bank")) {
-      return "/assets/Industries-page/industriescard/Banking and finance.png";
+      return "/assets/Industries-page/industries/Banking & Finance.png";
     }
     if (src.includes("education")) {
-      return "/assets/Industries-page/industriescard/Education.png";
+      return "/assets/Industries-page/industries/Education.png";
     }
     if (src.includes("public") || src.includes("government") || src.includes("govt")) {
-      return "/assets/Industries-page/industriescard/Government & Public Sector.png";
+      return "/assets/Industries-page/industries/Government & Public Sector.png";
     }
     if (src.includes("healthcare") || src.includes("health") || src.includes("life")) {
-      return "/assets/Industries-page/industriescard/Healthcare & Life Sciences.png";
+      return "/assets/Industries-page/industries/Healthcare & Life Sciences.png";
     }
     if (src.includes("manufactur") || src.includes("manuf")) {
-      return "/assets/Industries-page/industriescard/Manufacturing.png";
+      return "/assets/Industries-page/industries/Manufacturing.png";
     }
     if (src.includes("media") || src.includes("entertainment")) {
-      return "/assets/Industries-page/industriescard/Media & Entertainment.png";
+      return "/assets/Industries-page/industries/Media & Entertainment.png";
     }
     if (src.includes("retail") || src.includes("commerce") || src.includes("retails")) {
-      return "/assets/Industries-page/industriescard/Retail & E-Commerce.png";
+      return "/assets/Industries-page/industries/Retail & E-Commerce.png";
     }
     if (src.includes("telecommunication") || src.includes("telecom") || src.includes("tele")) {
-      return "/assets/Industries-page/industriescard/Telecommunications.png";
+      return "/assets/Industries-page/industries/Telecommunications.png";
     }
 
     return "/assets/Home-page/business-overview/overview-lifestyle.png";

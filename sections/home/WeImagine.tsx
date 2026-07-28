@@ -14,7 +14,7 @@ export function WeImagine() {
         {/* Main Section Header */}
         <div className="mb-12">
           <Reveal>
-            <span className="text-[11px] font-bold tracking-[0.25em] uppercase text-rose-500 mb-4 block">
+            <span className="text-xs font-semibold tracking-[0.25em] uppercase text-rose-500 mb-4 block">
               OUR INNOVATIONS
             </span>
           </Reveal>
@@ -30,7 +30,7 @@ export function WeImagine() {
           <div className="relative rounded-2xl overflow-hidden mb-16 h-[260px] md:h-[380px] w-full border border-zinc-800/40">
             {/* Banner image */}
             <Image
-              src="/assets/Home-page/innovation/image1.png"
+              src="/assets/Home-page/innovation/image2.png"
               alt="Devopstrio Innovation Lab"
               fill
               sizes="(max-width: 1280px) 100vw, 1280px"
@@ -41,8 +41,8 @@ export function WeImagine() {
               <h3 className="text-xl md:text-2xl font-bold text-white mb-2 tracking-tight">
                 Devopstrio Innovation Lab
               </h3>
-              <p className="text-zinc-300 text-xs md:text-sm leading-relaxed">
-                The lab for <Link href="/ecosystem/innovation-labs" className="text-rose-500 hover:underline">enterprise innovation</Link> and next-generation cloud architecture.
+              <p className="text-zinc-200 text-sm md:text-base font-normal leading-relaxed">
+                The lab for <Link href="/ecosystem/innovation-labs" className="text-rose-500 hover:underline font-medium">enterprise innovation</Link> and next-generation cloud architecture.
               </p>
             </div>
           </div>
@@ -72,14 +72,14 @@ export function WeImagine() {
                   <h3 className="text-xl md:text-2xl font-bold text-white mb-4 tracking-tight transition-transform duration-500 group-hover:-translate-y-1">
                     We Design Intelligent Digital Solutions
                   </h3>
-                  <p className="text-zinc-400 text-sm leading-relaxed mb-6 font-medium group-hover:text-zinc-300 transition-colors duration-500">
-                    We architect <Link href="/services/ai-data-innovation" className="text-rose-500 hover:underline">AI-powered systems</Link>, automation frameworks, and data platforms that unlock new revenue streams and drive measurable operational efficiency from day one.
+                  <p className="text-zinc-300 text-sm md:text-base leading-relaxed mb-6 font-normal group-hover:text-zinc-200 transition-colors duration-500">
+                    We architect <Link href="/services/ai-data-innovation" className="text-rose-500 hover:underline font-medium">AI-powered systems</Link>, automation frameworks, and data platforms that unlock new revenue streams and drive measurable operational efficiency from day one.
                   </p>
                 </div>
                 <div className="border-t border-zinc-800/60 group-hover:border-white/20 pt-5 mt-auto transition-colors duration-500">
                   <ul className="space-y-3">
                     {["Multi-Cloud Architecture", "AI-First Design", "Secure Data Platforms"].map((bullet) => (
-                      <li key={bullet} className="flex items-center gap-3 text-xs font-bold text-zinc-300 group-hover:text-white transition-colors duration-500">
+                      <li key={bullet} className="flex items-center gap-3 text-sm font-medium text-zinc-300 group-hover:text-white transition-colors duration-500">
                         <span className="w-1.5 h-1.5 rounded-full bg-rose-500 shadow-[0_0_8px_rgba(225,29,72,0.8)]" />
                         {bullet}
                       </li>
@@ -111,14 +111,14 @@ export function WeImagine() {
                   <h3 className="text-xl md:text-2xl font-bold text-white mb-4 tracking-tight transition-transform duration-500 group-hover:-translate-y-1">
                     We Build Software That Performs at Scale
                   </h3>
-                  <p className="text-zinc-400 text-sm leading-relaxed mb-6 font-medium group-hover:text-zinc-300 transition-colors duration-500">
-                    We engineer high-performance, <Link href="/services/software-development" className="text-rose-500 hover:underline">enterprise-grade software</Link> — accelerating release velocity, hardening security posture, and guaranteeing the scalability your business demands.
+                  <p className="text-zinc-300 text-sm md:text-base leading-relaxed mb-6 font-normal group-hover:text-zinc-200 transition-colors duration-500">
+                    We engineer high-performance, <Link href="/services/software-development" className="text-rose-500 hover:underline font-medium">enterprise-grade software</Link> — accelerating release velocity, hardening security posture, and guaranteeing the scalability your business demands.
                   </p>
                 </div>
                 <div className="border-t border-zinc-800/60 group-hover:border-white/20 pt-5 mt-auto transition-colors duration-500">
                   <ul className="space-y-3">
                     {["Enterprise Scalability", "Secure Architecture", "Full Observability"].map((bullet) => (
-                      <li key={bullet} className="flex items-center gap-3 text-xs font-bold text-zinc-300 group-hover:text-white transition-colors duration-500">
+                      <li key={bullet} className="flex items-center gap-3 text-sm font-medium text-zinc-300 group-hover:text-white transition-colors duration-500">
                         <span className="w-1.5 h-1.5 rounded-full bg-rose-500 shadow-[0_0_8px_rgba(225,29,72,0.8)]" />
                         {bullet}
                       </li>
@@ -150,14 +150,14 @@ export function WeImagine() {
                   <h3 className="text-xl md:text-2xl font-bold text-white mb-4 tracking-tight transition-transform duration-500 group-hover:-translate-y-1">
                     We Transform Legacy Into Cloud-Native Power
                   </h3>
-                  <p className="text-zinc-400 text-sm leading-relaxed mb-6 font-medium group-hover:text-zinc-300 transition-colors duration-500">
-                    We convert brittle legacy systems into agile, <Link href="/services/cloud-services" className="text-rose-500 hover:underline">cloud-native environments</Link> using AI-driven workflows and modern architecture — without disrupting operations.
+                  <p className="text-zinc-300 text-sm md:text-base leading-relaxed mb-6 font-normal group-hover:text-zinc-200 transition-colors duration-500">
+                    We convert brittle legacy systems into agile, <Link href="/services/cloud-services" className="text-rose-500 hover:underline font-medium">cloud-native environments</Link> using AI-driven workflows and modern architecture — without disrupting operations.
                   </p>
                 </div>
                 <div className="border-t border-zinc-800/60 group-hover:border-white/20 pt-5 mt-auto transition-colors duration-500">
                   <ul className="space-y-3">
                     {["AI-Driven Automation", "Cloud-Native Migration", "Legacy Re-Architecture"].map((bullet) => (
-                      <li key={bullet} className="flex items-center gap-3 text-xs font-bold text-zinc-300 group-hover:text-white transition-colors duration-500">
+                      <li key={bullet} className="flex items-center gap-3 text-sm font-medium text-zinc-300 group-hover:text-white transition-colors duration-500">
                         <span className="w-1.5 h-1.5 rounded-full bg-rose-500 shadow-[0_0_8px_rgba(225,29,72,0.8)]" />
                         {bullet}
                       </li>
@@ -189,14 +189,14 @@ export function WeImagine() {
                   <h3 className="text-xl md:text-2xl font-bold text-white mb-4 tracking-tight transition-transform duration-500 group-hover:-translate-y-1">
                     We Keep Your Operations Running Flawlessly
                   </h3>
-                  <p className="text-zinc-400 text-sm leading-relaxed mb-6 font-medium group-hover:text-zinc-300 transition-colors duration-500">
-                    We take full ownership of your <Link href="/services/managed-services" className="text-rose-500 hover:underline">platform operations</Link> — reducing costs, eliminating downtime, and enabling sustainable growth through proactive monitoring.
+                  <p className="text-zinc-300 text-sm md:text-base leading-relaxed mb-6 font-normal group-hover:text-zinc-200 transition-colors duration-500">
+                    We take full ownership of your <Link href="/services/managed-services" className="text-rose-500 hover:underline font-medium">platform operations</Link> — reducing costs, eliminating downtime, and enabling sustainable growth through proactive monitoring.
                   </p>
                 </div>
                 <div className="border-t border-zinc-800/60 group-hover:border-white/20 pt-5 mt-auto transition-colors duration-500">
                   <ul className="space-y-3">
                     {["24/7 Proactive Monitoring", "Predictive Maintenance", "Cost Optimisation"].map((bullet) => (
-                      <li key={bullet} className="flex items-center gap-3 text-xs font-bold text-zinc-300 group-hover:text-white transition-colors duration-500">
+                      <li key={bullet} className="flex items-center gap-3 text-sm font-medium text-zinc-300 group-hover:text-white transition-colors duration-500">
                         <span className="w-1.5 h-1.5 rounded-full bg-rose-500 shadow-[0_0_8px_rgba(225,29,72,0.8)]" />
                         {bullet}
                       </li>

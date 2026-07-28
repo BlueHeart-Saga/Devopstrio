@@ -141,12 +141,12 @@ export function IndustriesSection() {
                 {/* Details */}
                 <div className="px-3 pb-3 flex flex-col flex-1">
                    <h3 className="font-bold text-lg text-zinc-100 mb-1">{ind.name}</h3>
-                   <p className="text-[13px] text-zinc-400 leading-relaxed mb-4 line-clamp-2">{ind.desc}</p>
+                   <p className="text-sm text-zinc-300 font-normal leading-relaxed mb-4 line-clamp-2">{ind.desc}</p>
                    
-                   <div className="flex items-center gap-4 mt-auto pt-4 border-t border-zinc-800/50 text-[11px] text-zinc-500 font-bold uppercase tracking-wider">
+                   <div className="flex items-center gap-4 mt-auto pt-4 border-t border-zinc-800/50 text-xs text-zinc-400 font-medium uppercase tracking-wider">
                       <div className="flex items-center gap-1.5"><Globe size={13} /> Global</div>
                       <div className="flex items-center gap-1.5"><Landmark size={13} /> Regulated</div>
-                      <div className="flex items-center gap-1.5 ml-auto text-rose-500">Explore</div>
+                      <div className="flex items-center gap-1.5 ml-auto text-rose-500 font-semibold">Explore</div>
                    </div>
                 </div>
               </motion.a>
@@ -160,14 +160,14 @@ export function IndustriesSection() {
           {/* Left Column: Text & CTA */}
           <div className="lg:w-1/3 flex flex-col items-start text-left lg:sticky lg:top-32">
             <Reveal>
-              <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+              <span className="text-xs font-semibold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
                 OUR EXPERTISE
               </span>
               <h2 className="text-4xl md:text-5xl font-bold tracking-tight leading-tight mb-6 text-white">
                 We Make Your Industry Journey Seamless
               </h2>
-              <p className="text-zinc-400 text-base leading-relaxed mb-10">
-                From finding the perfect <Link href="/services/cybersecurity" className="text-rose-500 hover:underline">compliance strategy</Link> to closing <Link href="/services/it-consulting" className="text-rose-500 hover:underline">operational gaps</Link>, we're here to make every step smooth and stress-free across regulated and high-growth sectors.
+              <p className="text-zinc-300 text-base leading-relaxed mb-10 font-normal">
+                From finding the perfect <Link href="/services/cybersecurity" className="text-rose-500 hover:underline font-medium">compliance strategy</Link> to closing <Link href="/services/it-consulting" className="text-rose-500 hover:underline font-medium">operational gaps</Link>, we're here to make every step smooth and stress-free across regulated and high-growth sectors.
               </p>
               <a
                 href="/industries"
@@ -209,10 +209,10 @@ export function IndustriesSection() {
                         <div className="w-10 h-10 mb-4 rounded-lg bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-300">
                           <ind.icon size={20} strokeWidth={1.5} />
                         </div>
-                        <h3 className="font-bold text-[15px] text-zinc-100 mb-2">
+                        <h3 className="font-bold text-base text-zinc-100 mb-2">
                           {ind.name}
                         </h3>
-                        <p className="text-[13px] text-zinc-400 leading-relaxed flex-1 line-clamp-3">
+                        <p className="text-sm text-zinc-300 font-normal leading-relaxed flex-1 line-clamp-3">
                           {ind.desc}
                         </p>
                         <div className="inline-flex items-center gap-2 text-xs font-semibold text-zinc-300 mt-auto opacity-70 transition-opacity">

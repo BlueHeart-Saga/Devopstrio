@@ -11,32 +11,32 @@ export function WhyJoin() {
     {
       title: "Expert Mentorship",
       desc: "Weekly sessions with senior DevOps and development professionals. Real guidance, feedback, and code reviews from engineers who've worked at global scale.",
-      iconPath: "/assets/careers/icons/icons8-expert-100.png",
+      iconPath: "/assets/careers/icons/Expert Mentorship.svg",
     },
     {
       title: "Global Community",
       desc: "Collaborate with peers across India, UK, Singapore, Malaysia and the Middle East. Build an international professional network from day one — no matter where you are.",
-      iconPath: "/assets/careers/icons/icons8-earth-planet-100.png",
+      iconPath: "/assets/careers/icons/Global Community.svg",
     },
     {
       title: "Real-World Projects",
       desc: "Actual industry-grade assignments in Cloud, DevOps, Development and Digital Marketing. Not toy exercises. Not simulations. Real deliverables you can show to employers.",
-      iconPath: "/assets/careers/icons/icons8-crowd-100.png",
+      iconPath: "/assets/careers/icons/Real-World Projects.svg",
     },
     {
       title: "LOR + Certification",
       desc: "Internship Completion Certificate and Letter of Recommendation from a UK-registered global company trusted by Microsoft, Airbnb, BP and GoDaddy.",
-      iconPath: "/assets/careers/icons/icons8-certificate-100.png",
+      iconPath: "/assets/careers/icons/LOR + Certification.svg",
     },
     {
       title: "Job Opportunities",
       desc: "Top performers are considered for Devopstrio employment offer letters and referrals into our global client network. Your internship could be the start of your career.",
-      iconPath: "/assets/careers/icons/icons8-administrator-male-100.png",
+      iconPath: "/assets/careers/icons/Job Opportunities.svg",
     },
     {
       title: "Flexible Schedule",
       desc: "Evening sessions and weekend tasks built around your existing life — college, part-time work, job hunting, or family. 100% remote. Zero commute.",
-      iconPath: "/assets/careers/icons/icons8-attach-100.png",
+      iconPath: "/assets/careers/icons/Flexible Schedule.svg",
     },
   ];
 

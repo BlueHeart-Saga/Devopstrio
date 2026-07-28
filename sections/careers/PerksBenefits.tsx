@@ -7,42 +7,42 @@ const benefits = [
   {
     name: "Health & Wellness",
     desc: "Comprehensive medical cover and mental health support for you and your family.",
-    image: "/assets/Industries-page/industriescard/Healthcare & Life Sciences.png",
+    image: "/assets/careers/careers_industries/Healthcare & Life Sciences.png",
   },
   {
     name: "Learning Budget",
     desc: "Sponsored cloud certifications, study guides, and global conference access.",
-    image: "/assets/Industries-page/industriescard/Education.png",
+    image: "/assets/careers/careers_industries/Education.png",
   },
   {
     name: "Hybrid Working",
     desc: "Flexible schedules blending home office and modern premium workspaces.",
-    image: "/assets/Industries-page/industriescard/Government & Public Sector.png",
+    image: "/assets/careers/careers_industries/Government & Public Sector.png",
   },
   {
     name: "Global Mobility",
     desc: "Opportunities to work across our UK, US, and India office locations.",
-    image: "/assets/Industries-page/industriescard/Telecommunications.png",
+    image: "/assets/careers/careers_industries/Telecommunications.png",
   },
   {
     name: "Flexible Leave",
     desc: "Generous time off to rest, recharge, travel, and enjoy life fully.",
-    image: "/assets/Industries-page/industriescard/Media & Entertainment.png",
+    image: "/assets/careers/careers_industries/Media & Entertainment.png",
   },
   {
     name: "Recognition Programs",
     desc: "Performance rewards, spot bonuses, and team achievement milestones.",
-    image: "/assets/Industries-page/industriescard/Manufacturing.png",
+    image: "/assets/careers/careers_industries/Manufacturing.png",
   },
   {
     name: "Competitive Salary",
     desc: "Premium payouts, annual bonuses, stock options, and equity grants.",
-    image: "/assets/Industries-page/industriescard/Banking and finance.png",
+    image: "/assets/careers/careers_industries/Banking & Finance.png",
   },
   {
     name: "Career Advancement",
     desc: "Structured progression tracks, architecture mentoring, and leadership paths.",
-    image: "/assets/Industries-page/industriescard/Retail & E-Commerce.png",
+    image: "/assets/careers/careers_industries/Retail & E-Commerce.png",
   },
 ];
 

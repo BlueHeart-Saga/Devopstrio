@@ -203,7 +203,7 @@ export function WhyDevopstrio() {
         {/* Top Header Block */}
         <div className="max-w-3xl mx-auto text-center mb-16 lg:mb-20">
           <Reveal>
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block drop-shadow-md">
+            <span className="text-xs font-semibold tracking-[0.3em] uppercase text-rose-500 mb-4 block drop-shadow-md">
               Why Devopstrio
             </span>
           </Reveal>
@@ -213,8 +213,8 @@ export function WhyDevopstrio() {
             </h2>
           </Reveal>
           <Reveal delay={0.2}>
-            <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-bold max-w-2xl mx-auto drop-shadow-md">
-              We combine deep technical expertise, <Link href="/industries" className="text-rose-500 hover:underline">industry knowledge</Link>, and <Link href="/ecosystem/engineering-excellence" className="text-rose-500 hover:underline">modern engineering practices</Link> to help organizations innovate faster, <Link href="/services/cybersecurity" className="text-rose-500 hover:underline">operate securely</Link>, and scale confidently in an increasingly digital world.
+            <p className="text-zinc-300 text-sm md:text-base leading-relaxed font-normal max-w-2xl mx-auto drop-shadow-md">
+              We combine deep technical expertise, <Link href="/industries" className="text-rose-500 hover:underline font-medium">industry knowledge</Link>, and <Link href="/ecosystem/engineering-excellence" className="text-rose-500 hover:underline font-medium">modern engineering practices</Link> to help organizations innovate faster, <Link href="/services/cybersecurity" className="text-rose-500 hover:underline font-medium">operate securely</Link>, and scale confidently in an increasingly digital world.
             </p>
           </Reveal>
         </div>
@@ -247,7 +247,7 @@ export function WhyDevopstrio() {
                     {/* Content */}
                     <div className="relative z-20 p-8 flex flex-col h-full pointer-events-none justify-end">
                       <div className="transition-all duration-500 ease-in-out translate-y-8 group-hover:translate-y-0">
-                        <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-rose-500 mb-4 block drop-shadow-md">
+                        <span className="text-xs font-semibold tracking-[0.2em] uppercase text-rose-500 mb-4 block drop-shadow-md">
                           REASON {point.num}
                         </span>
                         <h3 className="text-xl font-bold text-white mb-4 tracking-tight drop-shadow-md">
@@ -301,7 +301,7 @@ export function WhyDevopstrio() {
                     {/* Content */}
                     <div className="relative z-20 p-8 flex flex-col h-full pointer-events-none justify-end">
                       <div className="transition-all duration-500 ease-in-out translate-y-8 group-hover:translate-y-0">
-                        <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-rose-500 mb-4 block drop-shadow-md">
+                        <span className="text-xs font-semibold tracking-[0.2em] uppercase text-rose-500 mb-4 block drop-shadow-md">
                           REASON {point.num}
                         </span>
                         <h3 className="text-xl font-bold text-white mb-4 tracking-tight drop-shadow-md">

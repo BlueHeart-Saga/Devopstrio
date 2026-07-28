@@ -19,7 +19,7 @@ export function ResearchDomains() {
       id: "ai",
       title: "Artificial Intelligence",
       desc: "Architecting intelligent agents, fine-tuned foundational models, and safe cognitive workflows.",
-      image: "/assets/services/bg-ai.png",
+      image: "/assets/ecosystem/innovation-labs page_metrica card_4/Image (Artificial Intelligence).png",
       topics: [
         "LLM Engineering & PEFT Tuning",
         "Autonomous Multi-Agent Systems",
@@ -31,7 +31,7 @@ export function ResearchDomains() {
       id: "cloud",
       title: "Cloud Native Systems",
       desc: "Designing scalable Kubernetes environments, zero-downtime serverless platforms, and edge compute.",
-      image: "/assets/services/bg-cloud.png",
+      image: "/assets/ecosystem/innovation-labs page_metrica card_4/cloud.png",
       topics: [
         "Kubernetes Carpenter Optimization",
         "Internal Developer Portals (IDPs)",
@@ -43,7 +43,7 @@ export function ResearchDomains() {
       id: "cyber",
       title: "Cybersecurity & Trust",
       desc: "Implementing zero-trust perimeters, post-quantum cryptography, and autonomous threat defense.",
-      image: "/assets/services/bg-cybersecurity.png",
+      image: "/assets/ecosystem/innovation-labs page_metrica card_4/cyber.png",
       topics: [
         "Zero Trust Microsegmentation",
         "Generative AI Prompt Firewalls",
@@ -55,7 +55,7 @@ export function ResearchDomains() {
       id: "data",
       title: "Modern Data Platform",
       desc: "Building high-performance data mesh architectures and real-time streaming pipelines.",
-      image: "/assets/services/bg-data.png",
+      image: "/assets/ecosystem/innovation-labs page_metrica card_4/data platform.png",
       topics: [
         "Enterprise Data Mesh Architectures",
         "Unified Lakehouse Storage Engines",

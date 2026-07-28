@@ -58,7 +58,7 @@ export function BrandStory() {
               <div className="p-2.5 md:p-3.5 flex items-stretch bg-zinc-950/20 border-t lg:border-t-0 lg:border-l border-zinc-900/60">
                 <div className="relative w-full min-h-[320px] lg:min-h-0 rounded-2xl overflow-hidden border border-zinc-800/80 shadow-2xl group/img flex-grow">
                   <img
-                    src="/assets/About-page/global-presence-story.png"
+                    src="/assets/About-page/leadership/leadership-banner/a2b4fbec739fc52f4066a756fef6f9d7 1.png"
                     alt="Devopstrio Global Collaboration"
                     className="w-full h-full object-cover transition-transform duration-700 group-hover/img:scale-[1.02]"
                   />

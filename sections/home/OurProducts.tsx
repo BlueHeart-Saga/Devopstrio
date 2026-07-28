@@ -181,19 +181,19 @@ export function OurProducts() {
                   {/* Content Container */}
                   <div className="h-[52%] p-4 sm:p-5 flex flex-col bg-[#0A0A0A] relative z-10">
                     <div className="flex items-center mb-2">
-                      <span className="inline-flex items-center justify-center px-3 py-0.5 rounded-full text-[10px] font-bold tracking-wider uppercase bg-rose-500/10 text-rose-500 border border-rose-500/20">
+                      <span className="inline-flex items-center justify-center px-3 py-0.5 rounded-full text-xs font-semibold tracking-wider uppercase bg-rose-500/10 text-rose-500 border border-rose-500/20">
                         {categoryLabel(prod.category)}
                       </span>
                     </div>
 
-                    <p className="text-zinc-400 text-xs sm:text-sm leading-relaxed mb-3 line-clamp-2">
+                    <p className="text-zinc-300 text-sm sm:text-base leading-relaxed mb-3 line-clamp-2 font-normal">
                       {prod.desc}
                     </p>
 
                     {prod.features && prod.features.length > 0 && (
                       <div className="grid grid-cols-2 gap-x-2 gap-y-1 mb-3 bg-zinc-950/80 p-2 rounded-lg border border-zinc-800/60">
                         {prod.features.map((feat) => (
-                          <div key={feat} className="flex items-center gap-1.5 text-[11px] font-semibold text-zinc-200">
+                          <div key={feat} className="flex items-center gap-1.5 text-xs font-medium text-zinc-200">
                             <span className="text-rose-500 font-bold">✓</span>
                             <span>{feat}</span>
                           </div>
@@ -204,7 +204,7 @@ export function OurProducts() {
                     <div className="mt-auto flex items-center justify-between gap-3">
                       <div className="flex gap-1 flex-wrap">
                         {prod.tags.map(tag => (
-                          <span key={tag} className="text-[10px] font-medium bg-zinc-900 border border-zinc-800 text-zinc-300 px-2 py-0.5 rounded">
+                          <span key={tag} className="text-xs font-medium bg-zinc-900 border border-zinc-800 text-zinc-300 px-2 py-0.5 rounded">
                             {tag}
                           </span>
                         ))}

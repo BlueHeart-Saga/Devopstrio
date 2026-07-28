@@ -22,11 +22,11 @@ interface Category {
 }
 
 const bgWaves: Record<string, string> = {
-  cloud: "/assets/ecosystem/bg-cloud.png",
-  "ai-data": "/assets/ecosystem/bg-ai.png",
-  enterprise: "/assets/ecosystem/bg-software.png",
-  security: "/assets/ecosystem/bg-cybersecurity.png",
-  infra: "/assets/ecosystem/bg-managed.png",
+  cloud: "/assets/ecosystem/grid/grid-p/Generated Design.png",
+  "ai-data": "/assets/ecosystem/grid/grid-p/Generated Design-1.png",
+  enterprise: "/assets/ecosystem/grid/grid-p/Generated Design-2.png",
+  security: "/assets/ecosystem/grid/grid-p/Generated Design-3.png",
+  infra: "/assets/ecosystem/grid/grid-p/Generated Design-4.png",
 };
 
 export function PartnerCategories() {

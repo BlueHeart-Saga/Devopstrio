@@ -14,6 +14,14 @@ interface CategoryDetail {
   examples: string[];
 }
 
+const categoryBgImages: Record<string, string> = {
+  saas: "/assets/ecosystem/grid/platforms-solutions page\u00a0_grid_5/Generated Design.png",
+  ai: "/assets/ecosystem/grid/platforms-solutions page\u00a0_grid_5/Generated Design-1.png",
+  cloud: "/assets/ecosystem/grid/platforms-solutions page\u00a0_grid_5/Generated Design-2.png",
+  data: "/assets/ecosystem/grid/platforms-solutions page\u00a0_grid_5/Generated Design-3.png",
+  security: "/assets/ecosystem/grid/platforms-solutions page\u00a0_grid_5/Generated Design-4.png",
+};
+
 export function PlatformCategories() {
   const [activeCategory, setActiveCategory] = useState("saas");
 
@@ -105,6 +113,18 @@ export function PlatformCategories() {
               {/* Internal decorative glowing meshes */}
               <div className="absolute -right-10 -top-10 w-48 h-48 bg-rose-600/10 rounded-full blur-3xl pointer-events-none" />
               <div className="absolute -left-10 -bottom-10 w-48 h-48 bg-violet-650/5 rounded-full blur-3xl pointer-events-none" />
+
+              {/* Dynamic Abstract Background Image for Left Card */}
+              {categories.map((cat) => (
+                <img
+                  key={cat.id}
+                  src={categoryBgImages[cat.id]}
+                  alt=""
+                  className={`absolute inset-0 w-full h-full object-cover mix-blend-screen pointer-events-none transition-opacity duration-700 ease-in-out ${
+                    activeCategory === cat.id ? "opacity-35" : "opacity-0"
+                  }`}
+                />
+              ))}
 
               {/* Card top details */}
               <div className="relative z-10">

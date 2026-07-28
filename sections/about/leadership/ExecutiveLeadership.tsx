@@ -1,27 +1,21 @@
 "use client";
-import React from "react";
-import { motion } from "framer-motion";
-import { Linkedin, Github, ArrowRight } from "lucide-react";
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Linkedin, Github, ArrowRight, ChevronDown } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
 import Link from "next/link";
 
-const leaders = [
-  {
-    name: "Sagadevan",
-    designation: "CEO",
-    specialization: "Cloud Architecture · Digital Strategy",
-    photoPink: "/assets/Team_Pictures/sahadevan[pink].png",
-    photoGray: "/assets/Team_Pictures/sahadevan[ash].png",
-    linkedin: "https://www.linkedin.com/company/devopstrioglobal/",
-  },
-  {
-    name: "Sudalairajan",
-    designation: "CTO",
-    specialization: "Platform Engineering · AI Innovation",
-    photoPink: "/assets/Team_Pictures/Sudalai[pink].png",
-    photoGray: "/assets/Team_Pictures/Sudalai[ash].png",
-    linkedin: "https://www.linkedin.com/company/devopstrioglobal/",
-  },
+interface Leader {
+  name: string;
+  designation: string;
+  specialization: string;
+  photoPink: string;
+  photoGray: string;
+  linkedin: string;
+}
+
+const leaders: Leader[] = [
+ 
   {
     name: "Subbiah Muthu",
     designation: "COO",
@@ -70,9 +64,71 @@ const leaders = [
     photoGray: "/assets/Team_Pictures/Ooviya[ash].png",
     linkedin: "https://www.linkedin.com/company/devopstrioglobal/",
   },
+   {
+    name: "Sagadevan",
+    designation: "CEO",
+    specialization: "Cloud Architecture · Digital Strategy",
+    photoPink: "/assets/Team_Pictures/sahadevan[pink].png",
+    photoGray: "/assets/Team_Pictures/sahadevan[ash].png",
+    linkedin: "https://www.linkedin.com/company/devopstrioglobal/",
+  },
+  {
+    name: "Sudalairajan",
+    designation: "CTO",
+    specialization: "Platform Engineering · AI Innovation",
+    photoPink: "/assets/Team_Pictures/Sudalai[pink].png",
+    photoGray: "/assets/Team_Pictures/Sudalai[ash].png",
+    linkedin: "https://www.linkedin.com/company/devopstrioglobal/",
+  },
+];
+
+const interns: Leader[] = [
+  {
+    name: "Ananthalakshmi",
+    designation: "Software Intern",
+    specialization: "Software Engineering · Frontend Development",
+    photoPink: "/assets/New Interns Image for devopstrio Site _for Inside the website use/Ananthalakshmi pink without text.png",
+    photoGray: "/assets/New Interns Image for devopstrio Site _for Inside the website use/Ananthalakshmi ash without text.png",
+    linkedin: "https://www.linkedin.com/company/devopstrioglobal/",
+  },
+  {
+    name: "Hamsavarthiny P",
+    designation: "DevOps Intern",
+    specialization: "Cloud Automation · CI/CD Pipelines",
+    photoPink: "/assets/New Interns Image for devopstrio Site _for Inside the website use/Hamsavarthiny.P pink without text.png",
+    photoGray: "/assets/New Interns Image for devopstrio Site _for Inside the website use/Hamsavarthiny.P ash without text.png",
+    linkedin: "https://www.linkedin.com/company/devopstrioglobal/",
+  },
+  {
+    name: "Saravanakumar S",
+    designation: "Cloud Intern",
+    specialization: "Infrastructure · Multi-Cloud Architecture",
+    photoPink: "/assets/New Interns Image for devopstrio Site _for Inside the website use/Saravanakumar.s pink without text.png",
+    photoGray: "/assets/New Interns Image for devopstrio Site _for Inside the website use/Saravanakumar.s ash without text.png",
+    linkedin: "https://www.linkedin.com/company/devopstrioglobal/",
+  },
+  {
+    name: "Suryaprakash S",
+    designation: "AI/ML Intern",
+    specialization: "GenAI Systems · Semantic Data Routers",
+    photoPink: "/assets/New Interns Image for devopstrio Site _for Inside the website use/Suryaprakash s pink without text.png",
+    photoGray: "/assets/New Interns Image for devopstrio Site _for Inside the website use/Suryaprakash s ash without text.png",
+    linkedin: "https://www.linkedin.com/company/devopstrioglobal/",
+  },
+  {
+    name: "Umamaheswari R",
+    designation: "Full Stack Intern",
+    specialization: "Web Applications · Microservices API",
+    photoPink: "/assets/New Interns Image for devopstrio Site _for Inside the website use/Umamaheswari R pink without text.png",
+    photoGray: "/assets/New Interns Image for devopstrio Site _for Inside the website use/Umamaheswari R ash without text.png",
+    linkedin: "https://www.linkedin.com/company/devopstrioglobal/",
+  },
 ];
 
 export const ExecutiveLeadership = () => {
+  const [showMore, setShowMore] = useState(false);
+  const displayedLeaders = showMore ? [...leaders, ...interns] : leaders;
+
   return (
     <section id="executive-leadership" className="py-24 bg-[#050505] border-t border-zinc-900 relative overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_40%_at_80%_20%,rgba(255,23,68,0.06),transparent)]" />
@@ -157,7 +213,7 @@ export const ExecutiveLeadership = () => {
               <div className="relative rounded-[1.75rem] overflow-hidden border border-zinc-900 bg-zinc-950/60 h-[444px] hover:border-zinc-800 transition-all duration-500 group shadow-lg flex flex-col justify-end">
                 {/* Photo */}
                 <img
-                  src="/assets/About-page/microsoft_fluent_asset.png"
+                  src="/assets/About-page/card/about inside leadership-team_Grid_card.png"
                   alt="Platform Engineering"
                   className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
                 />
@@ -236,7 +292,7 @@ export const ExecutiveLeadership = () => {
                   </p>
                 </div>
 
-                {/* Overlapping circular avatars exactly like mockup */}
+                {/* Overlapping circular avatars */}
                 <div className="flex -space-x-3 overflow-hidden select-none py-2 shrink-0 relative z-10">
                   {[
                     "/assets/Home-page/client-reviews/image 164.png",
@@ -294,10 +350,10 @@ export const ExecutiveLeadership = () => {
             </div>
           </div>
 
-          {/* Redesigned grid (5 columns) */}
+          {/* Redesigned grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5 max-w-7xl mx-auto relative z-10 text-left mt-6">
                   
-                  {/* Card 1: Join the Team (Mockup style) */}
+                  {/* Card 1: Join the Team */}
                   <motion.div
                     className="flex flex-col justify-between p-6 bg-[#0B0B0D]/80 border border-zinc-900 rounded-[2rem] shadow-lg relative overflow-hidden group h-full hover:border-zinc-800/80 transition-all duration-300"
                     initial={{ opacity: 0, y: 30 }}
@@ -306,38 +362,44 @@ export const ExecutiveLeadership = () => {
                     transition={{ duration: 0.5 }}
                   >
                     <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,23,68,0.03),transparent_50%)] pointer-events-none" />
-                    <div>
+                    <img
+                      src="/assets/About-page/card/about inside leadership-team_Grid_card.png"
+                      alt="Leadership Grid Graphic"
+                      className="absolute inset-0 w-full h-full object-cover opacity-30 mix-blend-screen pointer-events-none transition-opacity duration-500 group-hover:opacity-50"
+                    />
+                    <div className="relative z-10">
                       <span className="text-[9px] font-bold text-[#FF1744] uppercase tracking-widest block mb-3 font-mono">Join the Team</span>
                       <h3 className="text-base font-bold text-white tracking-tight mb-2">
                         Want to shape the future of Cloud &amp; AI?
                       </h3>
-                      <p className="text-zinc-550 text-[11px] leading-relaxed mb-6">
+                      <p className="text-zinc-400 text-[11px] leading-relaxed mb-6 font-medium">
                         Join us and build robust, cloud-native systems and cognitive engines that inspire change.
                       </p>
                     </div>
                     <a
                       href="/contact"
-                      className="inline-flex items-center gap-1.5 px-4 py-2 bg-zinc-900 border border-zinc-800 hover:border-zinc-700 text-white hover:text-[#FF1744] text-[11px] font-bold rounded-full transition-all w-fit shadow-md active:scale-95 group/btn"
+                      className="inline-flex items-center gap-1.5 px-4 py-2 bg-zinc-900 border border-zinc-800 hover:border-zinc-700 text-white hover:text-[#FF1744] text-[11px] font-bold rounded-full transition-all w-fit shadow-md active:scale-95 group/btn relative z-10"
                     >
                       Apply Now
                       <ArrowRight size={12} className="transition-transform duration-300 group-hover/btn:translate-x-1" />
                     </a>
                   </motion.div>
 
-                  {/* Leaders Cards */}
-                  {leaders.map((leader, idx) => {
-                    const isExtra = idx >= 4; // Extra team members that show on scroll (beyond Row 1)
+                  {/* Leaders & Intern Cards */}
+                  <AnimatePresence>
+                  {displayedLeaders.map((leader, idx) => {
+                    const isExtra = idx >= 4; 
                     
                     return (
                       <motion.div
-                        key={idx}
+                        key={leader.name}
                         className="bg-[#0B0B0D] border border-zinc-900 rounded-[2rem] overflow-hidden group shadow-lg flex flex-col justify-between h-full p-3 pb-4 hover:border-zinc-800/80 transition-all duration-300"
-                        initial={{ opacity: 0, y: isExtra ? 70 : 40 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true, margin: isExtra ? "-80px" : "0px" }}
+                        initial={{ opacity: 0, y: isExtra ? 50 : 30 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
                         transition={{ 
-                          duration: 0.7, 
-                          delay: isExtra ? (idx - 4) * 0.12 : idx * 0.08, 
+                          duration: 0.5, 
+                          delay: isExtra ? (idx - 4) * 0.08 : idx * 0.06, 
                           ease: [0.215, 0.61, 0.355, 1] 
                         }}
                       >
@@ -377,35 +439,51 @@ export const ExecutiveLeadership = () => {
                       </motion.div>
                     );
                   })}
+                  </AnimatePresence>
 
-                  {/* Careers (Content Card - Last Row Right) */}
+                  {/* Careers (Content Card) */}
                   <motion.div
                     className="flex flex-col justify-between p-6 bg-[#0B0B0D]/80 border border-zinc-900 rounded-[2rem] shadow-lg relative overflow-hidden group h-full hover:border-zinc-800/80 transition-all duration-300"
-                    initial={{ opacity: 0, y: 70 }}
+                    initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, margin: "-80px" }}
-                    transition={{ duration: 0.7, delay: 0.2, ease: [0.215, 0.61, 0.355, 1] }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.1 }}
                   >
                     <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,23,68,0.03),transparent_50%)] pointer-events-none" />
-                    <div>
+                    <img
+                      src="/assets/About-page/card/about inside leadership-team_Grid_card.png"
+                      alt="Leadership Grid Graphic"
+                      className="absolute inset-0 w-full h-full object-cover opacity-30 mix-blend-screen pointer-events-none transition-opacity duration-500 group-hover:opacity-50"
+                    />
+                    <div className="relative z-10">
                       <span className="text-[9px] font-bold text-[#FF1744] uppercase tracking-widest block mb-3 font-mono">Careers</span>
                       <h3 className="text-base font-bold text-white tracking-tight mb-2">
                         Work with Our Experts
                       </h3>
-                      <p className="text-zinc-550 text-[11px] leading-relaxed mb-6">
+                      <p className="text-zinc-400 text-[11px] leading-relaxed mb-6 font-medium">
                         Always looking for cloud visionaries, developers, and platform builders to join our journey.
                       </p>
                     </div>
                     <a
                       href="/contact"
-                      className="inline-flex items-center gap-1.5 px-4 py-2 bg-zinc-900 border border-zinc-800 hover:border-zinc-700 text-white hover:text-[#FF1744] text-[11px] font-bold rounded-full transition-all w-fit shadow-md active:scale-95 group/btn"
+                      className="inline-flex items-center gap-1.5 px-4 py-2 bg-zinc-900 border border-zinc-800 hover:border-zinc-700 text-white hover:text-[#FF1744] text-[11px] font-bold rounded-full transition-all w-fit shadow-md active:scale-95 group/btn relative z-10"
                     >
                       Join Us
                       <ArrowRight size={12} className="transition-transform duration-300 group-hover/btn:translate-x-1" />
                     </a>
                   </motion.div>
-
                 </div>
+
+          {/* View More / Show Less Dropdown Button */}
+          <div className="flex justify-center mt-10 relative z-10">
+            <button
+              onClick={() => setShowMore(!showMore)}
+              className="inline-flex items-center gap-2.5 px-7 py-3.5 bg-zinc-950 border border-zinc-800 hover:border-rose-500/40 text-white hover:text-rose-400 text-xs font-bold rounded-full transition-all duration-300 shadow-xl group cursor-pointer hover:shadow-[0_0_25px_rgba(225,29,72,0.2)]"
+            >
+              <span>{showMore ? "Show Less Team Members" : "View More Team Members"}</span>
+              <ChevronDown size={14} className={`transition-transform duration-300 ${showMore ? "rotate-180 text-rose-500" : ""}`} />
+            </button>
+          </div>
         </Reveal>
 
       </div>

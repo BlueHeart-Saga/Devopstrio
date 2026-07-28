@@ -14,47 +14,47 @@ export function TechEcosystemOverview() {
     {
       name: "Artificial Intelligence",
       desc: "Building intelligent systems using neural networks, agents, and predictive engines.",
-      image: "/assets/common/945ab601f043c558e0a8162da2a1eb4c%201.png"
+      image: "/assets/ecosystem/grid/technology-stack page_categories Grid/Generated Design.png"
     },
     {
       name: "Cloud Native",
       desc: "Constructing modern infrastructure at scale with serverless and Kubernetes.",
-      image: "/assets/common/9d230407fdcdb1a78debc2abe0ff1925%201.png"
+      image: "/assets/ecosystem/grid/technology-stack page_categories Grid/Generated Design-1.png"
     },
     {
       name: "Software Engineering",
       desc: "Developing highly responsive frontend and enterprise-grade backend systems.",
-      image: "/assets/common/9d91b93f83e6d4cd494ec13611b3e50e%201.png"
+      image: "/assets/ecosystem/grid/technology-stack page_categories Grid/Generated Design-2.png"
     },
     {
       name: "Data Engineering",
       desc: "Setting up real-time telemetry streams, data lakehouses, and governance grids.",
-      image: "/assets/common/b384eb0438c55e43c61e7595acc29638%201.png"
+      image: "/assets/ecosystem/grid/technology-stack page_categories Grid/Generated Design-3.png"
     },
     {
       name: "DevOps Toolchain",
       desc: "Continuous delivery configurations using GitOps pipelines and declarative IaC.",
-      image: "/assets/common/ddb20908c846f1426649343fea590cb7%201.png"
+      image: "/assets/ecosystem/grid/technology-stack page_categories Grid/Generated Design-4.png"
     },
     {
       name: "Cybersecurity",
       desc: "Zero-trust identity routing, security validation pipelines, and scanning services.",
-      image: "/assets/common/e76e125035885aab9c9070ce85df239e%201.png"
+      image: "/assets/ecosystem/grid/technology-stack page_categories Grid/Generated Design-5.png"
     },
     {
       name: "Platform Engineering",
       desc: "Boosting developer onboarding speeds through unified self-service portal dashboards.",
-      image: "/assets/common/e8fc628d320e4551e0527b648a0db21b%201.png"
+      image: "/assets/ecosystem/grid/technology-stack page_categories Grid/Generated Design-6.png"
     },
     {
       name: "Quality Engineering",
       desc: "Continuous quality verification using Playwright, Cypress, and performance load scripts.",
-      image: "/assets/common/ed602acdfd41667c71b96f247eca6d4e%201.png"
+      image: "/assets/ecosystem/grid/technology-stack page_categories Grid/Generated Design-7.png"
     },
     {
       name: "Emerging Technologies",
       desc: "Researching post-quantum cryptography algorithms, digital twins, and edge networks.",
-      image: "/assets/common/f03cc521fb070dfae9d87768b791ff70%201.png"
+      image: "/assets/ecosystem/grid/technology-stack page_categories Grid/Generated Design-8.png"
     }
   ];
 
@@ -84,9 +84,9 @@ export function TechEcosystemOverview() {
                 {/* Subtle color highlight glow on hover */}
                 <div className="absolute inset-0 bg-gradient-to-br from-rose-600/0 via-rose-600/0 to-rose-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
-                {/* Background image reveal with high blur/opacity on hover */}
-                <div className="absolute inset-0 z-0 opacity-0 group-hover:opacity-15 transition-opacity duration-700 pointer-events-none overflow-hidden">
-                  <img src={dom.image} alt="" className="w-full h-full object-cover scale-115 group-hover:scale-100 transition-transform duration-1000" />
+                {/* Background image reveal with mix-blend-screen */}
+                <div className="absolute inset-0 z-0 opacity-20 group-hover:opacity-40 transition-opacity duration-700 pointer-events-none overflow-hidden mix-blend-screen">
+                  <img src={dom.image} alt="" className="w-full h-full object-cover scale-110 group-hover:scale-100 transition-transform duration-1000" />
                 </div>
 
                 {/* Content */}

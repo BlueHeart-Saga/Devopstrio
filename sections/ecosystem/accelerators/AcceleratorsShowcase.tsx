@@ -86,7 +86,7 @@ export function AcceleratorsShowcase() {
             {/* Right Banner Image */}
             <div className="lg:col-span-7 relative h-[240px] md:h-[360px] rounded-[20px] overflow-hidden border border-zinc-800/40">
               <img
-                src="/assets/common/ddb20908c846f1426649343fea590cb7 1.png"
+                src="/assets/ecosystem/card/Enterprise-Accelerators-Frameworks.png"
                 alt="Devopstrio Cloud Accelerators"
                 className="w-full h-full object-cover transition-transform duration-[1.5s] group-hover:scale-102 filter brightness-[0.8] group-hover:brightness-[0.9]"
               />

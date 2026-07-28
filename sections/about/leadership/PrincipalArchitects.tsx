@@ -14,7 +14,7 @@ const architects = [
     certs: ["Azure Solutions Architect Expert", "AWS Solutions Architect Professional"],
     focus: <>Multi-cloud architecture and cloud native design patterns for enterprise workloads under our <Link href="/services/cloud-services" className="text-blue-400 hover:underline font-bold">cloud services</Link> division.</>,
     color: "blue",
-    image: "/assets/common/90361fed0bb781d7c86e451995b4dbce 1.png",
+    image: "/assets/About-page/leadership/about inside leadership-team_Principle architect section/Image (Principal Cloud Architect).png",
   },
   {
     initials: "PD",
@@ -24,7 +24,7 @@ const architects = [
     certs: ["CKA — Kubernetes", "HashiCorp Terraform Associate"],
     focus: <>GitOps, internal developer platforms, and CI/CD pipeline automation at scale as part of <Link href="/services/devops-automation" className="text-orange-400 hover:underline font-bold">DevOps automation</Link>.</>,
     color: "orange",
-    image: "/assets/common/945ab601f043c558e0a8162da2a1eb4c 1.png",
+    image: "/assets/About-page/leadership/about inside leadership-team_Principle architect section/Image (Principal Cloud Architect)-1.png",
   },
   {
     initials: "PE",
@@ -34,7 +34,7 @@ const architects = [
     certs: ["Microsoft Azure Developer", "Google Cloud Professional Developer"],
     focus: <>Microservices, event-driven architectures, and SaaS platform design within <Link href="/services/software-development" className="text-violet-450 hover:underline font-bold">software development</Link>.</>,
     color: "violet",
-    image: "/assets/common/9d230407fdcdb1a78debc2abe0ff1925 1.png",
+    image: "/assets/About-page/leadership/about inside leadership-team_Principle architect section/Image (Principal Cloud Architect)-2.png",
   },
   {
     initials: "PD2",
@@ -44,7 +44,7 @@ const architects = [
     certs: ["Azure Data Engineer Associate", "Databricks Certified Associate"],
     focus: <>Lakehouse architectures, real-time streaming pipelines, and BI platform design under <Link href="/services/data-engineering" className="text-green-455 hover:underline font-bold">data engineering</Link>.</>,
     color: "green",
-    image: "/assets/common/9d91b93f83e6d4cd494ec13611b3e50e 1.png",
+    image: "/assets/About-page/leadership/about inside leadership-team_Principle architect section/Image (Principal Cloud Architect)-3.png",
   },
   {
     initials: "PS",
@@ -54,7 +54,7 @@ const architects = [
     certs: ["CISSP", "Azure Security Engineer Associate"],
     focus: <>Zero trust network design, DevSecOps integration, and cloud security posture management via <Link href="/services/cybersecurity" className="text-teal-400 hover:underline font-bold">cybersecurity</Link>.</>,
     color: "teal",
-    image: "/assets/common/b384eb0438c55e43c61e7595acc29638 1.png",
+    image: "/assets/About-page/leadership/about inside leadership-team_Principle architect section/Image (Principal Cloud Architect)-4.png",
   },
   {
     initials: "PI",
@@ -64,7 +64,7 @@ const architects = [
     certs: ["Azure AI Engineer Associate", "Google Professional ML Engineer"],
     focus: <>LLM infrastructure, MLOps pipelines, and AI-powered platform engineering driven by <Link href="/services/ai-data-innovation" className="text-rose-500 hover:underline font-bold">AI & data innovation</Link>.</>,
     color: "red",
-    image: "/assets/common/ddb20908c846f1426649343fea590cb7 1.png",
+    image: "/assets/About-page/leadership/about inside leadership-team_Principle architect section/Image (Principal Cloud Architect)-5.png",
   },
 ];
 

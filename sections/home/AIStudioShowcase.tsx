@@ -71,7 +71,7 @@ export function AIStudioShowcase() {
   const [openDifferenceId, setOpenDifferenceId] = useState<string>("measurement");
 
   return (
-    <section className="w-full pt-20 md:pt-32 pb-16 md:pb-24 bg-[#030303] text-white relative overflow-hidden border-b border-zinc-900">
+    <section className="w-full pt-0 pb-16 md:pb-24 bg-[#030303] text-white relative overflow-hidden border-b border-zinc-900">
 
       {/* Background Ambient Curved Light Halo (Matching ServicesOverviewPillars style) */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[95vw] max-w-[1250px] h-[400px] md:h-[550px] bg-gradient-to-r from-red-600/10 via-rose-500/15 to-red-600/10 rounded-[100%] blur-[140px] pointer-events-none opacity-80" />
@@ -79,7 +79,7 @@ export function AIStudioShowcase() {
       <div className="max-w-7xl mx-auto w-full px-6 sm:px-8 relative z-10">
 
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6">
           <div>
             <Reveal>
               <span className="text-[11px] font-bold tracking-[0.25em] uppercase text-rose-500 mb-3 block font-mono">
@@ -160,7 +160,7 @@ export function AIStudioShowcase() {
                             transition={{ duration: 0.35, ease: "easeInOut" }}
                             className="overflow-hidden"
                           >
-                            <p className="text-zinc-400 text-xs sm:text-sm md:text-base leading-relaxed pt-4 pb-2 font-normal">
+                            <p className="text-zinc-300 text-sm md:text-base leading-relaxed pt-4 pb-2 font-normal">
                               {item.description}
                             </p>
                           </motion.div>
@@ -195,7 +195,7 @@ export function AIStudioShowcase() {
         {/* 4 Transformation Cards Grid */}
         <div className="mb-0">
           <Reveal>
-            <h3 className="text-xl md:text-2xl font-bold tracking-tight text-white mb-8">
+            <h3 className="text-xl md:text-3xl font-bold tracking-tight text-white mb-8">
               Four ways we transform <span className="text-rose-500">organizations with AI</span>
             </h3>
           </Reveal>
@@ -225,7 +225,7 @@ export function AIStudioShowcase() {
                     {/* Top Portion: Title, Badge & Subtitle */}
                     <div>
                       <div className="flex items-center justify-between mb-3">
-                        <span className="text-[10px] font-bold tracking-wider uppercase px-2.5 py-1 rounded-full bg-zinc-900/90 border border-zinc-800 text-zinc-300 group-hover:bg-[#EAE7E0] group-hover:text-black group-hover:border-zinc-300 transition-colors">
+                        <span className="text-xs font-semibold tracking-wider uppercase px-2.5 py-1 rounded-full bg-zinc-900/90 border border-zinc-800 text-zinc-300 group-hover:bg-[#EAE7E0] group-hover:text-black group-hover:border-zinc-300 transition-colors">
                           {card.badge}
                         </span>
                         <div className="w-7 h-7 rounded-full bg-black/50 border border-zinc-800 flex items-center justify-center text-zinc-400 group-hover:text-black group-hover:border-zinc-300 group-hover:bg-white transition-all">
@@ -237,11 +237,11 @@ export function AIStudioShowcase() {
                         {card.title}
                       </h4>
 
-                      <p className="text-xs font-semibold text-rose-500/90 mb-2 group-hover:text-red-600 transition-colors">
+                      <p className="text-sm font-medium text-rose-500/90 mb-2 group-hover:text-red-600 transition-colors">
                         {card.subtitle}
                       </p>
 
-                      <p className="text-zinc-400 text-xs leading-relaxed group-hover:text-zinc-800 transition-colors line-clamp-2">
+                      <p className="text-zinc-300 text-sm md:text-base font-normal leading-relaxed group-hover:text-zinc-800 transition-colors line-clamp-2 group-hover:line-clamp-none">
                         {card.description}
                       </p>
                     </div>
@@ -258,7 +258,7 @@ export function AIStudioShowcase() {
 
                     {/* Hover State: Bottom Action Footer */}
                     <div className="absolute bottom-6 left-6 right-6 pt-3 border-t border-zinc-800/80 group-hover:border-zinc-400/60 opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-between">
-                      <span className="text-[11px] font-bold uppercase tracking-wider text-white group-hover:text-black transition-colors">
+                      <span className="text-xs font-semibold uppercase tracking-wider text-white group-hover:text-black transition-colors">
                         Launch Capability
                       </span>
                       <span className="text-xs text-red-500 font-bold group-hover:text-red-600 group-hover:translate-x-1 transition-transform">

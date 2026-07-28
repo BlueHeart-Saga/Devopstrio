@@ -592,9 +592,9 @@ export function Navbar() {
               <Link
                 href="/services"
                 onClick={() => setActiveMenu(null)}
-                className="flex items-center gap-1 xl:gap-1.5 px-2 xl:px-3 py-1.5 text-[14px] xl:text-[15px] 2xl:text-[17px] font-medium tracking-[0.3px] text-white hover:text-rose-500 transition-colors"
+                className="flex items-center gap-1 xl:gap-1.5 px-2 xl:px-3 py-1.5 text-base xl:text-[17px] 2xl:text-[19px] font-semibold tracking-[0.3px] text-white hover:text-rose-500 transition-colors"
               >
-                Services <ChevronDown size={14} className={`transition-transform duration-300 ${activeMenu === "services" ? "rotate-180" : ""}`} />
+                Services <ChevronDown size={15} className={`transition-transform duration-300 ${activeMenu === "services" ? "rotate-180" : ""}`} />
               </Link>
               {activeMenu === "services" && (
                 <div className="absolute left-1/2 -translate-x-1/2 top-full mt-3 w-[1200px] max-w-[95vw] pointer-events-auto z-50">
@@ -621,7 +621,7 @@ export function Navbar() {
                       {/* Description Text: Hidden initially, expands on hover */}
                       <div className="transition-all duration-500 ease-out max-h-0 opacity-0 group-hover:max-h-[140px] group-hover:opacity-100 overflow-hidden">
                         <p className="text-[11px] text-zinc-200 font-medium leading-relaxed pt-1">
-                          We design custom roadmaps and build robust frameworks tailored to satisfy strict compliance and high scalability standards.
+                          Enterprise multi-cloud architecture, AI systems, automated DevOps, and security operations tailored for global scale.
                         </p>
                       </div>
                     </div>
@@ -631,7 +631,7 @@ export function Navbar() {
                       onClick={() => setActiveMenu(null)}
                       className="relative z-10 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-white group-hover:text-rose-400 transition-colors mt-6 group/cta"
                     >
-                      <span>EXPLORE OUR SERVICES</span>
+                      <span>EXPLORE SERVICES</span>
                       <span className="text-rose-500 text-sm group-hover/cta:translate-x-1 transition-transform">
                         &rarr;
                       </span>
@@ -640,7 +640,7 @@ export function Navbar() {
 
                     {/* Middle sidebar with categories */}
                     <div className="flex flex-col border-r border-zinc-900 pr-4 gap-1.5">
-                      <span className="text-xs font-mono tracking-widest text-zinc-500 uppercase block px-3 mb-2 font-bold">CORE EXPERTISE</span>
+                      <span className="text-xs font-mono tracking-widest text-zinc-400 uppercase block px-3 mb-2 font-semibold">CORE EXPERTISE</span>
                       {serviceCategories.map((cat) => {
                         const isActive = activeCategory === cat.id;
                         return (
@@ -651,17 +651,17 @@ export function Navbar() {
                             onClick={() => {
                               setActiveMenu(null);
                             }}
-                            className={`group flex items-center justify-between px-3.5 py-2.5 rounded-xl text-[14px] font-semibold transition-all duration-200 text-left ${
+                            className={`group flex items-center justify-between px-3.5 py-2.5 rounded-xl text-base font-semibold transition-all duration-200 outline-none text-left ${
                               isActive
-                                ? "bg-[#141418] text-red-500 border border-zinc-800/80 shadow-md"
-                                : "text-zinc-300 hover:text-white hover:bg-zinc-900/40"
+                                ? "bg-zinc-900/90 text-rose-500"
+                                : "text-zinc-300 hover:text-white hover:bg-zinc-900/50"
                             }`}
                           >
                             <div className="flex items-center gap-3">
                               {getCategoryIcon(cat.id, isActive)}
-                              <span>{cat.name}</span>
+                              <span className="transition-transform duration-200 group-hover:translate-x-1">{cat.name}</span>
                             </div>
-                            {isActive && <span className="text-red-500 text-xs font-bold">&rarr;</span>}
+                            {isActive && <span className="text-rose-500 text-sm font-bold">&rarr;</span>}
                           </Link>
                         );
                       })}
@@ -669,7 +669,7 @@ export function Navbar() {
 
                     {/* Right panel with active sub-services */}
                     <div className="flex flex-col">
-                      <span className="text-xs font-mono tracking-widest text-zinc-500 uppercase block px-2 mb-2 font-bold">STRATEGIC CAPABILITIES</span>
+                      <span className="text-xs font-mono tracking-widest text-zinc-400 uppercase block px-2 mb-2 font-semibold">STRATEGIC CAPABILITIES</span>
                       <div className="max-h-[420px] overflow-y-auto overscroll-contain pr-2 custom-scrollbar">
                         <div className="grid grid-cols-2 gap-x-6 gap-y-1">
                           {serviceCategories.find(c => c.id === activeCategory)?.items.map((item) => (
@@ -677,12 +677,9 @@ export function Navbar() {
                               key={item.name}
                               href={item.href}
                               onClick={() => setActiveMenu(null)}
-                              className="group/subitem flex items-center gap-3 p-2.5 rounded-xl hover:bg-zinc-900/40 transition-colors"
+                              className="group/subitem flex items-center p-2.5 rounded-xl hover:bg-zinc-900/40 transition-colors"
                             >
-                              <div className="shrink-0 transition-transform duration-200 group-hover/subitem:scale-110">
-                                {getServiceSubItemIcon(item.name)}
-                              </div>
-                              <span className="text-[14px] font-semibold text-white group-hover/subitem:text-rose-400 transition-colors leading-snug">
+                              <span className="text-base font-semibold text-white group-hover/subitem:text-rose-400 transition-colors leading-snug">
                                 {item.name}
                               </span>
                             </Link>
@@ -693,7 +690,7 @@ export function Navbar() {
 
                     {/* Mega Menu Footer */}
                     <div className="col-span-full border-t border-zinc-900/60 pt-4 mt-1 flex flex-row justify-between items-center">
-                      <div className="flex items-center gap-4 text-[13px] font-medium text-zinc-400">
+                      <div className="flex items-center gap-4 text-sm sm:text-base font-medium text-zinc-300">
                         <Link
                           href="/services/explore"
                           className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300"
@@ -706,15 +703,14 @@ export function Navbar() {
                           href="/insights/industry-events"
                           className="hover:text-rose-500 transition-colors flex items-center gap-1.5"
                         >
-                          {/* <span className="w-1.5 h-1.5 rounded-full bg-rose-500 animate-pulse" /> */}
                           <span>Events</span>
                         </Link>
                         <span className="text-zinc-800">|</span>
                         <div className="flex items-center gap-2">
-                          <span className="text-zinc-500">Chat now:</span>
+                          <span className="text-zinc-400">Chat now:</span>
                           <a
                             href={`mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL}`}
-                            className="hover:text-rose-500 transition-colors text-zinc-400"
+                            className="hover:text-rose-500 transition-colors text-zinc-200 font-semibold"
                           >
                             Email
                           </a>
@@ -723,63 +719,20 @@ export function Navbar() {
                             href="https://wa.me/447473063543"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="hover:text-rose-500 transition-colors text-zinc-400"
+                            className="hover:text-rose-500 transition-colors text-zinc-200 font-semibold"
                           >
                             WhatsApp
                           </a>
                         </div>
                       </div>
-                      {/* 
-                    <div className="flex items-center gap-4">
-                      <span className="text-[10px] font-bold tracking-wider uppercase text-zinc-500">Connect With Us</span>
-                      <div className="flex items-center gap-3 border-l border-zinc-800 pl-4">
-                        <a
-                          href="https://www.linkedin.com/company/devopstrioglobal/posts/?feedView=all"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="transition-all duration-200 hover:scale-110"
-                          title="LinkedIn"
-                        >
-                          <img src="/assets/social-icons/linkedin.svg" alt="LinkedIn" className="w-8 h-8 object-contain transition-all duration-200" />
-                        </a>
-                        <a
-                          href="https://www.facebook.com/profile.php?id=61579126233218"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="transition-all duration-200 hover:scale-110"
-                          title="Facebook"
-                        >
-                          <img src="/assets/social-icons/facebook.svg" alt="Facebook" className="w-8 h-8 object-contain transition-all duration-200" />
-                        </a>
-                        <a
-                          href="https://www.instagram.com/devopstrio_offcl/"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="transition-all duration-200 hover:scale-110"
-                          title="Instagram"
-                        >
-                          <img src="/assets/social-icons/instagram.svg" alt="Instagram" className="w-8 h-8 object-contain transition-all duration-200" />
-                        </a>
-                        <a
-                          href="https://www.youtube.com/@Devopstrioltd"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="transition-all duration-200 hover:scale-110"
-                          title="YouTube"
-                        >
-                          <img src="/assets/social-icons/youtube.svg" alt="YouTube" className="w-8 h-8 object-contain transition-all duration-200" />
-                        </a>
-                      </div>
-                    </div>
-                    */}
                       <div className="flex items-center gap-4">
-                        <span className="text-[10px] font-bold tracking-wider uppercase text-zinc-500">Connect With Us</span>
+                        <span className="text-xs font-semibold tracking-wider uppercase text-zinc-400">Connect With Us</span>
                         <div className="flex items-center gap-4 border-l border-zinc-800 pl-4">
                           <a
                             href="https://www.linkedin.com/company/devopstrioglobal/posts/?feedView=all"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-[11px] font-bold tracking-widest uppercase text-zinc-400 hover:text-white transition-colors duration-200"
+                            className="text-xs sm:text-sm font-semibold tracking-wider text-zinc-300 hover:text-white transition-colors duration-200"
                           >
                             LinkedIn
                           </a>
@@ -787,7 +740,7 @@ export function Navbar() {
                             href="https://www.facebook.com/profile.php?id=61579126233218"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-[11px] font-bold tracking-widest uppercase text-zinc-400 hover:text-white transition-colors duration-200"
+                            className="text-xs sm:text-sm font-semibold tracking-wider text-zinc-300 hover:text-white transition-colors duration-200"
                           >
                             Facebook
                           </a>
@@ -795,7 +748,7 @@ export function Navbar() {
                             href="https://www.instagram.com/devopstrio_offcl/"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-[11px] font-bold tracking-widest uppercase text-zinc-400 hover:text-white transition-colors duration-200"
+                            className="text-xs sm:text-sm font-semibold tracking-wider text-zinc-300 hover:text-white transition-colors duration-200"
                           >
                             Instagram
                           </a>
@@ -803,7 +756,7 @@ export function Navbar() {
                             href="https://www.youtube.com/@Devopstrioltd"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-[11px] font-bold tracking-widest uppercase text-zinc-400 hover:text-white transition-colors duration-200"
+                            className="text-xs sm:text-sm font-semibold tracking-wider text-zinc-300 hover:text-white transition-colors duration-200"
                           >
                             YouTube
                           </a>
@@ -823,9 +776,9 @@ export function Navbar() {
               <Link
                 href="/industries"
                 onClick={() => setActiveMenu(null)}
-                className="flex items-center gap-1 xl:gap-1.5 px-2 xl:px-3 py-1.5 text-[14px] xl:text-[15px] 2xl:text-[17px] font-medium tracking-[0.3px] text-white hover:text-rose-500 transition-colors"
+                className="flex items-center gap-1 xl:gap-1.5 px-2 xl:px-3 py-1.5 text-base xl:text-[17px] 2xl:text-[19px] font-semibold tracking-[0.3px] text-white hover:text-rose-500 transition-colors"
               >
-                Industries <ChevronDown size={14} className={`transition-transform duration-300 ${activeMenu === "industries" ? "rotate-180" : ""}`} />
+                Industries <ChevronDown size={15} className={`transition-transform duration-300 ${activeMenu === "industries" ? "rotate-180" : ""}`} />
               </Link>
               {activeMenu === "industries" && (
                 <div className="absolute left-1/2 -translate-x-1/2 top-full mt-3 w-[1200px] max-w-[95vw] pointer-events-auto z-50">
@@ -895,20 +848,20 @@ export function Navbar() {
 
                     {/* Mega Menu Footer */}
                     <div className="col-span-full border-t border-zinc-900/60 pt-4 mt-1 flex flex-row justify-between items-center">
-                      <div className="flex items-center gap-4 text-[13px] font-medium text-zinc-400">
+                      <div className="flex items-center gap-4 text-sm sm:text-base font-medium text-zinc-300">
                         <Link
                           href="/insights/industry-events"
-                          className="hover:text-rose-500 transition-colors flex items-center gap-1.5"
+                          className="hover:text-rose-500 transition-colors flex items-center gap-1.5 font-semibold"
                         >
                           <span className="w-1.5 h-1.5 rounded-full bg-rose-500 animate-pulse" />
                           <span>Events</span>
                         </Link>
                         <span className="text-zinc-800">|</span>
                         <div className="flex items-center gap-2">
-                          <span className="text-zinc-500">Chat now:</span>
+                          <span className="text-zinc-400">Chat now:</span>
                           <a
                             href={`mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL}`}
-                            className="hover:text-rose-500 transition-colors text-zinc-400"
+                            className="hover:text-rose-500 transition-colors text-zinc-200 font-semibold"
                           >
                             Email
                           </a>
@@ -917,63 +870,21 @@ export function Navbar() {
                             href="https://wa.me/447473063543"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="hover:text-rose-500 transition-colors text-zinc-400"
+                            className="hover:text-rose-500 transition-colors text-zinc-200 font-semibold"
                           >
                             WhatsApp
                           </a>
                         </div>
                       </div>
-                      {/* 
-                    <div className="flex items-center gap-4">
-                      <span className="text-[10px] font-bold tracking-wider uppercase text-zinc-500">Connect With Us</span>
-                      <div className="flex items-center gap-3 border-l border-zinc-800 pl-4">
-                        <a
-                          href="https://www.linkedin.com/company/devopstrioglobal/posts/?feedView=all"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="transition-all duration-200 hover:scale-110"
-                          title="LinkedIn"
-                        >
-                          <img src="/assets/social-icons/linkedin.svg" alt="LinkedIn" className="w-8 h-8 object-contain transition-all duration-200" />
-                        </a>
-                        <a
-                          href="https://www.facebook.com/profile.php?id=61579126233218"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="transition-all duration-200 hover:scale-110"
-                          title="Facebook"
-                        >
-                          <img src="/assets/social-icons/facebook.svg" alt="Facebook" className="w-8 h-8 object-contain transition-all duration-200" />
-                        </a>
-                        <a
-                          href="https://www.instagram.com/devopstrio_offcl/"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="transition-all duration-200 hover:scale-110"
-                          title="Instagram"
-                        >
-                          <img src="/assets/social-icons/instagram.svg" alt="Instagram" className="w-8 h-8 object-contain transition-all duration-200" />
-                        </a>
-                        <a
-                          href="https://www.youtube.com/@Devopstrioltd"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="transition-all duration-200 hover:scale-110"
-                          title="YouTube"
-                        >
-                          <img src="/assets/social-icons/youtube.svg" alt="YouTube" className="w-8 h-8 object-contain transition-all duration-200" />
-                        </a>
-                      </div>
-                    </div>
-                    */}
+
                       <div className="flex items-center gap-4">
-                        <span className="text-[10px] font-bold tracking-wider uppercase text-zinc-500">Connect With Us</span>
+                        <span className="text-xs font-semibold tracking-wider uppercase text-zinc-400">Connect With Us</span>
                         <div className="flex items-center gap-4 border-l border-zinc-800 pl-4">
                           <a
                             href="https://www.linkedin.com/company/devopstrioglobal/posts/?feedView=all"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-[11px] font-bold tracking-widest uppercase text-zinc-400 hover:text-white transition-colors duration-200"
+                            className="text-xs sm:text-sm font-semibold tracking-wider text-zinc-300 hover:text-white transition-colors duration-200"
                           >
                             LinkedIn
                           </a>
@@ -981,7 +892,7 @@ export function Navbar() {
                             href="https://www.facebook.com/profile.php?id=61579126233218"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-[11px] font-bold tracking-widest uppercase text-zinc-400 hover:text-white transition-colors duration-200"
+                            className="text-xs sm:text-sm font-semibold tracking-wider text-zinc-300 hover:text-white transition-colors duration-200"
                           >
                             Facebook
                           </a>
@@ -989,7 +900,7 @@ export function Navbar() {
                             href="https://www.instagram.com/devopstrio_offcl/"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-[11px] font-bold tracking-widest uppercase text-zinc-400 hover:text-white transition-colors duration-200"
+                            className="text-xs sm:text-sm font-semibold tracking-wider text-zinc-300 hover:text-white transition-colors duration-200"
                           >
                             Instagram
                           </a>
@@ -997,7 +908,7 @@ export function Navbar() {
                             href="https://www.youtube.com/@Devopstrioltd"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-[11px] font-bold tracking-widest uppercase text-zinc-400 hover:text-white transition-colors duration-200"
+                            className="text-xs sm:text-sm font-semibold tracking-wider text-zinc-300 hover:text-white transition-colors duration-200"
                           >
                             YouTube
                           </a>
@@ -1017,9 +928,9 @@ export function Navbar() {
               <Link
                 href="/ecosystem"
                 onClick={() => setActiveMenu(null)}
-                className="flex items-center gap-1 xl:gap-1.5 px-2 xl:px-3 py-1.5 text-[14px] xl:text-[15px] 2xl:text-[17px] font-medium tracking-[0.3px] text-white hover:text-rose-500 transition-colors"
+                className="flex items-center gap-1 xl:gap-1.5 px-2 xl:px-3 py-1.5 text-base xl:text-[17px] 2xl:text-[19px] font-semibold tracking-[0.3px] text-white hover:text-rose-500 transition-colors"
               >
-                Ecosystem <ChevronDown size={14} className={`transition-transform duration-300 ${activeMenu === "ecosystem" ? "rotate-180" : ""}`} />
+                Ecosystem <ChevronDown size={15} className={`transition-transform duration-300 ${activeMenu === "ecosystem" ? "rotate-180" : ""}`} />
               </Link>
               {activeMenu === "ecosystem" && (
                 <div className="absolute left-1/2 -translate-x-1/2 top-full mt-3 w-[1200px] max-w-[95vw] pointer-events-auto z-50">
@@ -1258,9 +1169,9 @@ export function Navbar() {
               <Link
                 href="/insights"
                 onClick={() => setActiveMenu(null)}
-                className="flex items-center gap-1 xl:gap-1.5 px-2 xl:px-3 py-1.5 text-[14px] xl:text-[15px] 2xl:text-[17px] font-medium tracking-[0.3px] text-white hover:text-rose-500 transition-colors"
+                className="flex items-center gap-1 xl:gap-1.5 px-2 xl:px-3 py-1.5 text-base xl:text-[17px] 2xl:text-[19px] font-semibold tracking-[0.3px] text-white hover:text-rose-500 transition-colors"
               >
-                Insights <ChevronDown size={14} className={`transition-transform duration-300 ${activeMenu === "insights" ? "rotate-180" : ""}`} />
+                Insights <ChevronDown size={15} className={`transition-transform duration-300 ${activeMenu === "insights" ? "rotate-180" : ""}`} />
               </Link>
               {activeMenu === "insights" && (
                 <div className="absolute left-1/2 -translate-x-1/2 top-full mt-3 w-[1200px] max-w-[95vw] pointer-events-auto z-50">
@@ -1467,7 +1378,7 @@ export function Navbar() {
                 </div>
               )}
             </div>
-            <Link href="/careers" onMouseEnter={() => setActiveMenu(null)} className="px-2 xl:px-3 py-1.5 text-[14px] xl:text-[15px] 2xl:text-[17px] font-medium tracking-[0.3px] text-white hover:text-rose-500 transition-colors">
+            <Link href="/careers" onMouseEnter={() => setActiveMenu(null)} className="px-2 xl:px-3 py-1.5 text-base xl:text-[17px] 2xl:text-[19px] font-semibold tracking-[0.3px] text-white hover:text-rose-500 transition-colors">
               Careers
             </Link>
             {/* About Dropdown */}
@@ -1477,9 +1388,9 @@ export function Navbar() {
               <Link
                 href="/about"
                 onClick={() => setActiveMenu(null)}
-                className="flex items-center gap-1 xl:gap-1.5 px-2 xl:px-3 py-1.5 text-[14px] xl:text-[15px] 2xl:text-[17px] font-medium tracking-[0.3px] text-white hover:text-rose-500 transition-colors"
+                className="flex items-center gap-1 xl:gap-1.5 px-2 xl:px-3 py-1.5 text-base xl:text-[17px] 2xl:text-[19px] font-semibold tracking-[0.3px] text-white hover:text-rose-500 transition-colors"
               >
-                About <ChevronDown size={14} className={`transition-transform duration-300 ${activeMenu === "about" ? "rotate-180" : ""}`} />
+                About <ChevronDown size={15} className={`transition-transform duration-300 ${activeMenu === "about" ? "rotate-180" : ""}`} />
               </Link>
               {activeMenu === "about" && (
                 <div className="absolute left-1/2 -translate-x-1/2 top-full mt-3 w-[1200px] max-w-[95vw] pointer-events-auto z-50">
@@ -1745,17 +1656,17 @@ export function Navbar() {
 
         {/* Mobile Drawer */}
         {mobileOpen && (
-          <div className="fixed inset-0 top-[72px] z-40 bg-[#000000]/98 backdrop-blur-lg flex flex-col p-6 border-t border-zinc-900 pointer-events-auto animate-fadeIn lg:hidden">
+          <div className="fixed inset-0 top-[72px] z-40 bg-[#000000]/98 backdrop-blur-lg flex flex-col p-6 sm:p-8 border-t border-zinc-900 pointer-events-auto animate-fadeIn lg:hidden">
             <div className="flex flex-col gap-6 overflow-y-auto overscroll-contain pb-8">
               <div>
-                <span className="text-[10px] uppercase tracking-wider text-zinc-500 block mb-3 font-mono">Services</span>
-                <div className="flex flex-col gap-3 pl-2">
+                <span className="text-xs uppercase tracking-widest text-rose-500 block mb-3 font-mono font-semibold">Services</span>
+                <div className="flex flex-col gap-2 pl-2">
                   {servicesList.map((item) => (
                     <Link
                       key={item.name}
                       href={item.href}
                       onClick={() => setMobileOpen(false)}
-                      className="text-xs text-zinc-300 hover:text-rose-500 transition-colors"
+                      className="text-sm sm:text-base text-zinc-200 hover:text-rose-400 font-medium transition-all py-1"
                     >
                       {item.name}
                     </Link>
@@ -1764,14 +1675,14 @@ export function Navbar() {
               </div>
 
               <div>
-                <span className="text-[10px] uppercase tracking-wider text-zinc-500 block mb-3 font-mono">Industries</span>
-                <div className="flex flex-col gap-3 pl-2">
+                <span className="text-xs uppercase tracking-widest text-rose-500 block mb-3 font-mono font-semibold">Industries</span>
+                <div className="flex flex-col gap-2 pl-2">
                   {industriesList.map((item) => (
                     <Link
                       key={item.name}
                       href={item.href}
                       onClick={() => setMobileOpen(false)}
-                      className="text-xs text-zinc-300 hover:text-rose-500 transition-colors"
+                      className="text-sm sm:text-base text-zinc-200 hover:text-rose-400 font-medium transition-all py-1"
                     >
                       {item.name}
                     </Link>
@@ -1780,14 +1691,14 @@ export function Navbar() {
               </div>
 
               <div>
-                <span className="text-[10px] uppercase tracking-wider text-zinc-500 block mb-3 font-mono">Ecosystem</span>
-                <div className="flex flex-col gap-3 pl-2">
+                <span className="text-xs uppercase tracking-widest text-rose-500 block mb-3 font-mono font-semibold">Ecosystem</span>
+                <div className="flex flex-col gap-2 pl-2">
                   {ecosystemMobileList.map((item) => (
                     <Link
                       key={item.name}
                       href={item.href}
                       onClick={() => setMobileOpen(false)}
-                      className="text-xs text-zinc-300 hover:text-rose-500 transition-colors"
+                      className="text-sm sm:text-base text-zinc-200 hover:text-rose-400 font-medium transition-all py-1"
                     >
                       {item.name}
                     </Link>
@@ -1796,12 +1707,12 @@ export function Navbar() {
               </div>
 
               <div>
-                <span className="text-[10px] uppercase tracking-wider text-zinc-500 block mb-3 font-mono">Insights</span>
-                <div className="flex flex-col gap-3 pl-2">
+                <span className="text-xs uppercase tracking-widest text-rose-500 block mb-3 font-mono font-semibold">Insights</span>
+                <div className="flex flex-col gap-2 pl-2">
                   <Link
                     href="/insights"
                     onClick={() => setMobileOpen(false)}
-                    className="text-xs text-zinc-300 hover:text-rose-500 font-bold transition-colors"
+                    className="text-sm sm:text-base text-white hover:text-rose-400 font-semibold transition-all py-1"
                   >
                     Insights Hub
                   </Link>
@@ -1810,7 +1721,7 @@ export function Navbar() {
                       key={item.slug}
                       href={`/insights/${item.slug}`}
                       onClick={() => setMobileOpen(false)}
-                      className="text-xs text-zinc-300 hover:text-rose-500 transition-colors"
+                      className="text-sm sm:text-base text-zinc-200 hover:text-rose-400 font-medium transition-all py-1"
                     >
                       {item.name}
                     </Link>
@@ -1823,17 +1734,17 @@ export function Navbar() {
               <Link
                 href="/#careers"
                 onClick={() => setMobileOpen(false)}
-                className="text-sm font-semibold text-zinc-200 hover:text-white"
+                className="text-base font-semibold text-zinc-100 hover:text-rose-400 py-1"
               >
                 Careers
               </Link>
               <div>
-                <span className="text-[10px] uppercase tracking-wider text-zinc-500 block mb-3 font-mono">About</span>
-                <div className="flex flex-col gap-3 pl-2">
+                <span className="text-xs uppercase tracking-widest text-rose-500 block mb-3 font-mono font-semibold">About</span>
+                <div className="flex flex-col gap-2 pl-2">
                   <Link
                     href="/about"
                     onClick={() => setMobileOpen(false)}
-                    className="text-xs text-zinc-300 hover:text-rose-500 font-bold transition-colors"
+                    className="text-sm sm:text-base text-white hover:text-rose-400 font-semibold transition-all py-1"
                   >
                     About Overview
                   </Link>
@@ -1842,7 +1753,7 @@ export function Navbar() {
                       key={item.name}
                       href={item.href}
                       onClick={() => setMobileOpen(false)}
-                      className="text-xs text-zinc-300 hover:text-rose-500 transition-colors"
+                      className="text-sm sm:text-base text-zinc-200 hover:text-rose-400 font-medium transition-all py-1"
                     >
                       {item.name}
                     </Link>
@@ -1852,9 +1763,9 @@ export function Navbar() {
               <Link
                 href="/contact"
                 onClick={() => setMobileOpen(false)}
-                className="mt-4 flex items-center justify-center nav-contact-btn w-full"
+                className="mt-4 flex items-center justify-center nav-contact-btn w-full text-base font-bold py-3"
               >
-                Contact Us <ArrowUpRight size={14} />
+                Contact Us <ArrowUpRight size={16} />
               </Link>
 
               {/* Mobile Drawer Social Footer */}

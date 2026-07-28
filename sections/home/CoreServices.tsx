@@ -196,20 +196,20 @@ export function CoreServices() {
 
                 {/* Card Body */}
                 <div className="flex flex-col flex-1 px-4 pt-5 pb-3 gap-2.5">
-                  <span className="text-[#E11D48] text-[10px] font-bold uppercase tracking-widest">
+                  <span className="text-[#E11D48] text-xs font-semibold uppercase tracking-widest">
                     {service.tag}
                   </span>
-                  <h3 className="text-zinc-100 text-[15px] md:text-base font-bold leading-snug">
+                  <h3 className="text-zinc-100 text-base md:text-lg font-semibold leading-snug">
                     {service.title}
                   </h3>
-                  <p className="text-zinc-400 text-[13px] leading-relaxed flex-1 mt-1">
+                  <p className="text-zinc-300 text-sm md:text-base leading-relaxed flex-1 mt-1 font-normal">
                     {service.desc}
                   </p>
 
                   {/* CTA */}
                   <a
                     href={service.href}
-                    className="mt-4 inline-flex items-center gap-3 text-zinc-300 hover:text-white text-xs font-semibold tracking-wide transition-all duration-300 w-fit group/btn"
+                    className="mt-4 inline-flex items-center gap-3 text-zinc-300 hover:text-white text-sm font-semibold tracking-wide transition-all duration-300 w-fit group/btn"
                   >
                     <span className="w-8 h-8 rounded-lg bg-zinc-800 group-hover/btn:bg-[#E11D48] flex items-center justify-center flex-shrink-0 transition-colors duration-300 border border-zinc-700 group-hover/btn:border-[#E11D48]">
                       <ArrowUpRight size={14} className="text-white" />

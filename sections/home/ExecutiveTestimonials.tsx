@@ -144,7 +144,7 @@ export function ExecutiveTestimonials() {
               </h2>
             </Reveal>
             <Reveal>
-              <p className="text-zinc-400 text-sm md:text-base max-w-xl leading-relaxed">
+              <p className="text-zinc-300 text-base md:text-lg max-w-xl leading-relaxed font-normal">
                 Read real-world testimonials from CTOs, CISOs, and VPs of Engineering across global industries.
               </p>
             </Reveal>
@@ -183,10 +183,10 @@ export function ExecutiveTestimonials() {
               <button
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
-                className={`px-4 py-2 rounded-xl text-xs font-semibold whitespace-nowrap transition-all ${
+                className={`px-4.5 py-2.5 rounded-xl text-sm font-medium whitespace-nowrap transition-all ${
                   activeCategory === cat
                     ? "bg-red-600 text-white shadow-[0_0_15px_rgba(225,29,72,0.4)]"
-                    : "bg-zinc-950 border border-zinc-800/80 text-zinc-400 hover:text-white hover:border-zinc-700"
+                    : "bg-zinc-950 border border-zinc-800/80 text-zinc-300 hover:text-white hover:border-zinc-700"
                 }`}
               >
                 {cat} {cat === "All" ? `(100)` : ""}
@@ -262,7 +262,7 @@ export function ExecutiveTestimonials() {
 
         {/* Footer Navigation Bar (Index Counter & Arrows) */}
         <div className="mt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="text-xs font-mono text-zinc-400">
+          <div className="text-sm font-mono text-zinc-300">
             Testimonial <span className="text-red-500 font-bold">{currentIndex + 1}</span> of <span className="text-white font-bold">{filteredTestimonials.length}</span> ({activeCategory})
           </div>
 

@@ -11,7 +11,7 @@ export function PresenceHero() {
       {/* Background Image */}
       <div className="absolute inset-0 z-0 pointer-events-none select-none">
         <img 
-          src="/assets/About-page/global-presence-hero.png" 
+          src="/assets/About-page/hero/Build locally delivering globally.png" 
           alt="Devopstrio Global Footprint"
           className="w-full h-full object-cover object-center"
         />

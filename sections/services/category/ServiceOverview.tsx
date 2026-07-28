@@ -11,26 +11,81 @@ interface ServiceOverviewProps {
   overviewDesc2: React.ReactNode;
 }
 
-function getOverviewImage(title: string, incomingImage: string): string {
-  const overviewImages = [
-    "/assets/Services-Page/overview/ai1.png",
-    "/assets/Services-Page/overview/ai2.png",
-    "/assets/Services-Page/overview/ai3.png",
-    "/assets/Services-Page/overview/ai4.png",
-    "/assets/Services-Page/overview/ai5.png",
-    "/assets/Services-Page/overview/ai6.png",
-    "/assets/Services-Page/overview/ai7.png",
-    "/assets/Services-Page/overview/ai8.png",
-    "/assets/Services-Page/overview/ai9.png",
-    "/assets/Services-Page/overview/ai10.png"
-  ];
-  
-  let charSum = 0;
-  for (let i = 0; i < title.length; i++) {
-    charSum += title.charCodeAt(i);
+function getOverviewImage(title: string, incomingImage?: string): string {
+  if (incomingImage && incomingImage.includes("/assets/Services-Page/Capability Overview section images/")) {
+    return incomingImage;
   }
-  
-  return overviewImages[charSum % overviewImages.length];
+
+  const overviewImages = [
+    "/assets/Services-Page/Capability Overview section images/reorder/Frame 107.png",
+    "/assets/Services-Page/Capability Overview section images/reorder/Frame 108.png",
+    "/assets/Services-Page/Capability Overview section images/reorder/Frame 110.png",
+    "/assets/Services-Page/Capability Overview section images/reorder/Frame 111.png",
+    "/assets/Services-Page/Capability Overview section images/reorder/Frame 112.png",
+    "/assets/Services-Page/Capability Overview section images/reorder/Frame 113.png",
+    "/assets/Services-Page/Capability Overview section images/reorder/Frame 114.png",
+    "/assets/Services-Page/Capability Overview section images/reorder/Frame 115.png",
+    "/assets/Services-Page/Capability Overview section images/reorder/Frame 116.png",
+    "/assets/Services-Page/Capability Overview section images/reorder/Frame 117.png",
+    "/assets/Services-Page/Capability Overview section images/reorder/Frame 118.png",
+    "/assets/Services-Page/Capability Overview section images/reorder/Frame 119.png",
+    "/assets/Services-Page/Capability Overview section images/reorder/Frame 120.png",
+    "/assets/Services-Page/Capability Overview section images/reorder/Frame 121.png",
+    "/assets/Services-Page/Capability Overview section images/reorder/Frame 303.png",
+    "/assets/Services-Page/Capability Overview section images/reorder/Frame 304.png",
+    "/assets/Services-Page/Capability Overview section images/reorder/Frame 305.png",
+    "/assets/Services-Page/Capability Overview section images/reorder/Frame 306.png",
+    "/assets/Services-Page/Capability Overview section images/reorder/Frame 307.png",
+    "/assets/Services-Page/Capability Overview section images/reorder/Frame 308.png",
+    "/assets/Services-Page/Capability Overview section images/reorder/Frame 309.png",
+    "/assets/Services-Page/Capability Overview section images/reorder/Frame 310.png",
+    "/assets/Services-Page/Capability Overview section images/reorder/Frame 311.png",
+    "/assets/Services-Page/Capability Overview section images/reorder/Frame 312.png",
+    "/assets/Services-Page/Capability Overview section images/reorder/Frame 313.png",
+    "/assets/Services-Page/Capability Overview section images/reorder/Frame 314.png",
+    "/assets/Services-Page/Capability Overview section images/reorder/Frame 315.png",
+    "/assets/Services-Page/Capability Overview section images/reorder/Frame 316.png",
+    "/assets/Services-Page/Capability Overview section images/reorder/Frame 317.png",
+    "/assets/Services-Page/Capability Overview section images/reorder/Frame 318.png",
+    "/assets/Services-Page/Capability Overview section images/reorder/Frame 319.png",
+    "/assets/Services-Page/Capability Overview section images/reorder/Frame 329.png",
+    "/assets/Services-Page/Capability Overview section images/reorder/Frame 331.png",
+    "/assets/Services-Page/Capability Overview section images/reorder/Frame 332.png",
+    "/assets/Services-Page/Capability Overview section images/reorder/Frame 333.png",
+    "/assets/Services-Page/Capability Overview section images/reorder/Frame 334.png",
+    "/assets/Services-Page/Capability Overview section images/reorder/Frame 335.png",
+    "/assets/Services-Page/Capability Overview section images/reorder/Frame 336.png",
+    "/assets/Services-Page/Capability Overview section images/reorder/Frame 337.png",
+    "/assets/Services-Page/Capability Overview section images/reorder/Frame 338.png",
+    "/assets/Services-Page/Capability Overview section images/reorder/Frame 339.png",
+    "/assets/Services-Page/Capability Overview section images/reorder/Frame 340.png",
+    "/assets/Services-Page/Capability Overview section images/reorder/Frame 341.png",
+    "/assets/Services-Page/Capability Overview section images/reorder/Frame 355.png",
+    "/assets/Services-Page/Capability Overview section images/reorder/Frame 356.png",
+    "/assets/Services-Page/Capability Overview section images/reorder/Frame 357.png",
+    "/assets/Services-Page/Capability Overview section images/reorder/Frame 358.png",
+    "/assets/Services-Page/Capability Overview section images/reorder/Frame 359.png",
+    "/assets/Services-Page/Capability Overview section images/reorder/Frame 360.png",
+    "/assets/Services-Page/Capability Overview section images/reorder/Frame 361.png",
+    "/assets/Services-Page/Capability Overview section images/reorder/Frame 362.png",
+    "/assets/Services-Page/Capability Overview section images/reorder/Frame 363.png",
+    "/assets/Services-Page/Capability Overview section images/reorder/Frame 364.png",
+    "/assets/Services-Page/Capability Overview section images/reorder/Frame 365.png",
+    "/assets/Services-Page/Capability Overview section images/reorder/Frame 366.png",
+    "/assets/Services-Page/Capability Overview section images/reorder/Frame 367.png",
+    "/assets/Services-Page/Capability Overview section images/reorder/Frame 420.png",
+    "/assets/Services-Page/Capability Overview section images/reorder/Frame 434.png",
+    "/assets/Services-Page/Capability Overview section images/reorder/Frame 435.png",
+    "/assets/Services-Page/Capability Overview section images/reorder/Frame 436.png"
+  ];
+
+  let hash = 5381;
+  const str = (title || "") + (incomingImage || "");
+  for (let i = 0; i < str.length; i++) {
+    hash = ((hash << 5) + hash) + str.charCodeAt(i);
+  }
+
+  return overviewImages[Math.abs(hash) % overviewImages.length];
 }
 
 export function ServiceOverview({

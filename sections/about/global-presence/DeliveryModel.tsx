@@ -54,7 +54,7 @@ export function DeliveryModel() {
             <Reveal>
               <div className="relative w-full aspect-[4/3] rounded-[24px] overflow-hidden border border-zinc-800/80 bg-zinc-950/20 shadow-2xl group/img">
                 <img
-                  src="/assets/About-page/delivery-model-visual.png"
+                  src="/assets/About-page/leadership/leadership-banner/Global Operations Engine.png"
                   alt="Devopstrio Delivery Architecture"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover/img:scale-[1.02]"
                 />

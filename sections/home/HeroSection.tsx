@@ -158,6 +158,91 @@ export function HeroSection() {
       primaryBtn: { text: "Explore Services", href: "/services" },
       secondaryBtn: { text: "Contact Us", href: "/contact" },
       image: "/assets/Home-page/homehero/Sagadevan.S.svg"
+    },
+    {
+      eyebrow: "Software & Quality Engineering",
+      title: (
+        <>
+          Software Excellence Demands
+          <br />
+          <span className="text-[#E11D48] whitespace-nowrap">Precision.</span>
+          <br />
+          We Engineer It
+          <br />
+          <span className="text-[#E11D48] whitespace-nowrap">Flawlessly.</span>
+        </>
+      ),
+      primaryBtn: { text: "Explore Services", href: "/services" },
+      secondaryBtn: { text: "Contact Us", href: "/contact" },
+      image: "/assets/Home-page/homehero/Ananthalakshmi.svg"
+    },
+    {
+      eyebrow: "Platform & Cloud Operations",
+      title: (
+        <>
+          High-Performance Systems Require
+          <br />
+          <span className="text-[#E11D48] whitespace-nowrap">Reliability.</span>
+          <br />
+          We Scale Them
+          <br />
+          <span className="text-[#E11D48] whitespace-nowrap">Seamlessly.</span>
+        </>
+      ),
+      primaryBtn: { text: "Explore Services", href: "/services" },
+      secondaryBtn: { text: "Contact Us", href: "/contact" },
+      image: "/assets/Home-page/homehero/Hamsavarthiny.P.svg"
+    },
+    {
+      eyebrow: "Enterprise Application Delivery",
+      title: (
+        <>
+          Scalable Applications Drive
+          <br />
+          <span className="text-[#E11D48] whitespace-nowrap">Growth.</span>
+          <br />
+          We Deliver Them
+          <br />
+          <span className="text-[#E11D48] whitespace-nowrap">At Speed.</span>
+        </>
+      ),
+      primaryBtn: { text: "Explore Services", href: "/services" },
+      secondaryBtn: { text: "Contact Us", href: "/contact" },
+      image: "/assets/Home-page/homehero/Saravanakumar.s.svg"
+    },
+    {
+      eyebrow: "Modern DevOps & Automation",
+      title: (
+        <>
+          Continuous Delivery Acceleration Needs
+          <br />
+          <span className="text-[#E11D48] whitespace-nowrap">Automation.</span>
+          <br />
+          We Power It
+          <br />
+          <span className="text-[#E11D48] whitespace-nowrap">Everywhere.</span>
+        </>
+      ),
+      primaryBtn: { text: "Explore Services", href: "/services" },
+      secondaryBtn: { text: "Contact Us", href: "/contact" },
+      image: "/assets/Home-page/homehero/Suryaprakash s.svg"
+    },
+    {
+      eyebrow: "Data & Cloud Infrastructure",
+      title: (
+        <>
+          Enterprise Transformation Thrives
+          <br />
+          <span className="text-[#E11D48] whitespace-nowrap">Innovation.</span>
+          <br />
+          We Build The
+          <br />
+          <span className="text-[#E11D48] whitespace-nowrap">Future.</span>
+        </>
+      ),
+      primaryBtn: { text: "Explore Services", href: "/services" },
+      secondaryBtn: { text: "Contact Us", href: "/contact" },
+      image: "/assets/Home-page/homehero/Umamaheswari R.svg"
     }
   ];
 

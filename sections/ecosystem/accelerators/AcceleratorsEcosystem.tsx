@@ -24,7 +24,7 @@ export function AcceleratorsEcosystem() {
       capabilities: ["Azure Landing Zones", "AWS Landing Zones", "OCI Foundation Templates", "Multi-Cloud Governance", "Network Blueprints", "DNS Provisioning"],
       examplesTitle: "Benefits",
       examples: ["Faster Provisioning", "Security Built-In", "Compliance Ready"],
-      image: "/assets/common/1b065043b6959827c05a0073c93a4a53 1.png"
+      image: "/assets/ecosystem/grid/accelerators-frameworks _Grid/Generated Design.png"
     },
     {
       id: "devops",
@@ -33,7 +33,7 @@ export function AcceleratorsEcosystem() {
       capabilities: ["CI/CD Templates", "GitHub Actions Libraries", "Azure DevOps Pipelines", "Kubernetes Templates", "Terraform Modules", "Helm Charts"],
       examplesTitle: "Examples",
       examples: ["One-Click Deployment", "Automated Environment Creation", "GitOps Workflows"],
-      image: "/assets/common/260b761ad40c3ad2acba2c6666894539 1.png"
+      image: "/assets/ecosystem/grid/accelerators-frameworks _Grid/Generated Design-1.png"
     },
     {
       id: "ai",
@@ -42,7 +42,7 @@ export function AcceleratorsEcosystem() {
       capabilities: ["AI Agent Frameworks", "RAG Architecture", "Prompt Engineering Toolkit", "AI Search Framework", "Knowledge Assistants", "Inference Cache Layers"],
       examplesTitle: "Examples",
       examples: ["Recruitment AI", "Customer Support AI", "Content Intelligence", "AI Analytics"],
-      image: "/assets/common/2fe7f9184c515b0c515ce38bc8a25efa 1.png"
+      image: "/assets/ecosystem/grid/accelerators-frameworks _Grid/Generated Design-2.png"
     },
     {
       id: "security",
@@ -51,7 +51,7 @@ export function AcceleratorsEcosystem() {
       capabilities: ["Secure Landing Zones", "IAM Templates", "DevSecOps Pipelines", "Compliance Automation", "WAF Policy Templates", "Vulnerability Rules"],
       examplesTitle: "Frameworks",
       examples: ["ISO-Aligned Controls", "GDPR Ready Templates", "Security Baselines"],
-      image: "/assets/common/315e4fdc6263bfd240f36297e376576e 1.png"
+      image: "/assets/ecosystem/grid/accelerators-frameworks _Grid/Generated Design-3.png"
     },
     {
       id: "data",
@@ -60,7 +60,7 @@ export function AcceleratorsEcosystem() {
       capabilities: ["Data Lake Frameworks", "Analytics Blueprints", "Streaming Pipelines", "Data Governance Templates", "Spark Tuning Configurations", "Data Catalog Blueprints"],
       examplesTitle: "Platforms",
       examples: ["Snowflake", "Databricks", "PostgreSQL", "BigQuery"],
-      image: "/assets/common/37b9b888cc479ea7b74d2d9a05c37597 1.png"
+      image: "/assets/ecosystem/grid/accelerators-frameworks _Grid/Generated Design-4.png"
     },
     {
       id: "saas",
@@ -69,7 +69,7 @@ export function AcceleratorsEcosystem() {
       capabilities: ["Multi-Tenant Architecture", "Authentication Framework", "Subscription Management", "Billing Integration", "Role-Based Access Control", "Admin Dashboard Framework"],
       examplesTitle: "Examples",
       examples: ["Humanex", "Brio", "SafeSign", "Campix"],
-      image: "/assets/common/45ea830d170d382ade235db479060da7 1.png"
+      image: "/assets/ecosystem/grid/accelerators-frameworks _Grid/Generated Design-5.png"
     },
     {
       id: "blueprints",
@@ -78,7 +78,7 @@ export function AcceleratorsEcosystem() {
       capabilities: ["HR Platforms blueprint", "Recruitment Platforms blueprints", "Healthcare Platforms layouts", "Learning Platforms schemas", "Financial Platforms models", "CRM Operations layouts"],
       examplesTitle: "Blueprint Includes",
       examples: ["Architecture specs", "Security boundaries", "API routing templates", "Deployment Models"],
-      image: "/assets/common/464d8932bca4d6bb552ff2dcf2f3c5ca 1.png"
+      image: "/assets/ecosystem/grid/accelerators-frameworks _Grid/Generated Design-6.png"
     },
     {
       id: "templates",
@@ -87,7 +87,7 @@ export function AcceleratorsEcosystem() {
       capabilities: ["Customer Portal layouts", "Employee Portal blueprints", "Vendor Portal modules", "Knowledge Portal networks", "Service Desk widgets", "Executive Dashboards"],
       examplesTitle: "Benefits",
       examples: ["Instant onboarding", "Audited security", "Pre-designed theme hooks"],
-      image: "/assets/common/782e79a0bc5e9f58cb9af6a27727ca7b 1.png"
+      image: "/assets/ecosystem/grid/accelerators-frameworks _Grid/Generated Design-7.png"
     },
     {
       id: "delivery",
@@ -96,7 +96,7 @@ export function AcceleratorsEcosystem() {
       capabilities: ["Architecture templates", "Sprint coordination kits", "QA automation scripts", "Monitoring dashboards", "Deployment playbooks", "SLA tracking charts"],
       examplesTitle: "Benefits",
       examples: ["Reduced design bottlenecks", "Clean delivery audits", "Zero manual deployments"],
-      image: "/assets/common/82090d7be4ef5694954ce77f9cc2e627 1.png"
+      image: "/assets/ecosystem/grid/accelerators-frameworks _Grid/Generated Design-8.png"
     }
   ];
 

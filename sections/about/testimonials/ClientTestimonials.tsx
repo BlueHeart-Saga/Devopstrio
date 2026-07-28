@@ -18,44 +18,48 @@ const testimonials = [
     author: "Ali Raza",
     role: "VP of Infrastructure",
     initials: "AR",
+    image: "/assets/Home-page/client-reviews/image 164.png",
   },
   {
     quote: "The holistic approach to platform engineering made a real difference in our deployment frequency. I feel calmer and much more in control of our release cycles now.",
     author: "Hina Malik",
     role: "Head of Engineering",
     initials: "HM",
+    image: "/assets/Home-page/client-reviews/image 165.png",
   },
   {
     quote: "I struggled with multi-cloud cost visibility for years, but within a few weeks of their FinOps implementation, our cloud spend was optimized noticeably.",
     author: "John Snow",
     role: "Cloud Operations Lead",
     initials: "JS",
+    image: "/assets/Home-page/client-reviews/image 166.png",
   },
   {
     quote: "Within weeks, I noticed a significant improvement in our security posture. The personalized DevSecOps approach made all the difference for our compliance goals.",
     author: "Kathie Corl",
     role: "Security Director",
     initials: "KC",
+    image: "/assets/Home-page/client-reviews/image 167.png",
   },
 ];
 
 // 25+ Reviews for the Marquee
 const autoScrollReviews = [
-  { id: 1, text: "The cloud migration process was seamless. Their team handled everything professionally, minimizing our downtime to zero. I never experienced such good performance.", name: "Sarah Jenkins", time: "1 week ago", initials: "SJ" },
-  { id: 2, text: "Excellent DevOps consultation. We went from chaotic monthly releases to smooth daily deployments. Highly recommended. They respond in a timely manner.", name: "Michael Chen", time: "2 weeks ago", initials: "MC" },
-  { id: 3, text: "They helped us implement a robust FinOps culture. We've saved over 30% on our AWS bill in just two months. Customer service is excellent.", name: "David O.", time: "1 month ago", initials: "DO" },
-  { id: 4, text: "Fantastic team to work with. The platform engineering solutions provided were top-tier and highly scalable. Very polite and prompt.", name: "Elena Rodriguez", time: "3 weeks ago", initials: "ER" },
-  { id: 5, text: "Our security posture has never been better. The DevSecOps integration was flawless. We are incredibly satisfied with the customization.", name: "James T.", time: "2 months ago", initials: "JT" },
-  { id: 6, text: "Responsive, knowledgeable, and reliable. They truly understand enterprise cloud architecture.", name: "Anita S.", time: "1 week ago", initials: "AS" },
-  { id: 7, text: "We partnered with them for our AI data pipeline. The performance improvements have been game-changing. I feel much more in control.", name: "Robert K.", time: "4 days ago", initials: "RK" },
-  { id: 8, text: "My buying experience is so nice, and received me very politely. Riding experience is also very good. Very good performance.", name: "Karan P.", time: "1 week ago", initials: "KP" },
-  { id: 9, text: "I love the customer service. They respond in a timely manner with loads of information about best practices and maintenance.", name: "Catherine", time: "10 days ago", initials: "C" },
-  { id: 10, text: "Product quality is incredible. They looked over all the options with us, and we are incredibly satisfied. We went over all the details.", name: "Peter W.", time: "2 weeks ago", initials: "PW" },
-  { id: 11, text: "The kubernetes transition was smooth. Their engineers are top-notch and always available.", name: "Lisa M.", time: "1 month ago", initials: "LM" },
-  { id: 12, text: "Helped us pass our SOC2 compliance with their rigorous infrastructure audits and automation.", name: "Tom H.", time: "3 weeks ago", initials: "TH" },
-  { id: 13, text: "Outstanding support during our migration to Azure. The follow-the-sun model really works.", name: "Nina V.", time: "2 months ago", initials: "NV" },
-  { id: 14, text: "A truly transformative partnership. Our engineering velocity increased by 3x. The personalized approach made all the difference.", name: "Greg F.", time: "1 week ago", initials: "GF" },
-  { id: 15, text: "Best tech consultants we've ever hired. Transparent pricing and clear deliverables.", name: "Alicia W.", time: "5 days ago", initials: "AW" }
+  { id: 1, text: "The cloud migration process was seamless. Their team handled everything professionally, minimizing our downtime to zero. I never experienced such good performance.", name: "Sarah Jenkins", time: "1 week ago", initials: "SJ", image: "/assets/Home-page/client-reviews/image 164.png" },
+  { id: 2, text: "Excellent DevOps consultation. We went from chaotic monthly releases to smooth daily deployments. Highly recommended. They respond in a timely manner.", name: "Michael Chen", time: "2 weeks ago", initials: "MC", image: "/assets/Home-page/client-reviews/image 165.png" },
+  { id: 3, text: "They helped us implement a robust FinOps culture. We've saved over 30% on our AWS bill in just two months. Customer service is excellent.", name: "David O.", time: "1 month ago", initials: "DO", image: "/assets/Home-page/client-reviews/image 166.png" },
+  { id: 4, text: "Fantastic team to work with. The platform engineering solutions provided were top-tier and highly scalable. Very polite and prompt.", name: "Elena Rodriguez", time: "3 weeks ago", initials: "ER", image: "/assets/Home-page/client-reviews/image 167.png" },
+  { id: 5, text: "Our security posture has never been better. The DevSecOps integration was flawless. We are incredibly satisfied with the customization.", name: "James T.", time: "2 months ago", initials: "JT", image: "/assets/Home-page/client-reviews/image 168.png" },
+  { id: 6, text: "Responsive, knowledgeable, and reliable. They truly understand enterprise cloud architecture.", name: "Anita S.", time: "1 week ago", initials: "AS", image: "/assets/Home-page/client-reviews/image 169.png" },
+  { id: 7, text: "We partnered with them for our AI data pipeline. The performance improvements have been game-changing. I feel much more in control.", name: "Robert K.", time: "4 days ago", initials: "RK", image: "/assets/Home-page/client-reviews/image 170.png" },
+  { id: 8, text: "My buying experience is so nice, and received me very politely. Riding experience is also very good. Very good performance.", name: "Karan P.", time: "1 week ago", initials: "KP", image: "/assets/Home-page/client-reviews/image 171.png" },
+  { id: 9, text: "I love the customer service. They respond in a timely manner with loads of information about best practices and maintenance.", name: "Catherine", time: "10 days ago", initials: "C", image: "/assets/Home-page/client-reviews/image 172.png" },
+  { id: 10, text: "Product quality is incredible. They looked over all the options with us, and we are incredibly satisfied. We went over all the details.", name: "Peter W.", time: "2 weeks ago", initials: "PW", image: "/assets/Home-page/client-reviews/image 173.png" },
+  { id: 11, text: "The kubernetes transition was smooth. Their engineers are top-notch and always available.", name: "Lisa M.", time: "1 month ago", initials: "LM", image: "/assets/Home-page/client-reviews/image 174.png" },
+  { id: 12, text: "Helped us pass our SOC2 compliance with their rigorous infrastructure audits and automation.", name: "Tom H.", time: "3 weeks ago", initials: "TH", image: "/assets/Home-page/client-reviews/image 175.png" },
+  { id: 13, text: "Outstanding support during our migration to Azure. The follow-the-sun model really works.", name: "Nina V.", time: "2 months ago", initials: "NV", image: "/assets/Home-page/client-reviews/image 176.png" },
+  { id: 14, text: "A truly transformative partnership. Our engineering velocity increased by 3x. The personalized approach made all the difference.", name: "Greg F.", time: "1 week ago", initials: "GF", image: "/assets/Home-page/client-reviews/image 177.png" },
+  { id: 15, text: "Best tech consultants we've ever hired. Transparent pricing and clear deliverables.", name: "Alicia W.", time: "5 days ago", initials: "AW", image: "/assets/Home-page/client-reviews/image 178.png" }
 ];
 const marqueeReviews = [...autoScrollReviews, ...autoScrollReviews];
 
@@ -138,8 +142,12 @@ export const ClientTestimonials = () => {
                   </div>
                   
                   <div className="flex items-center gap-3">
-                    <div className="w-9 h-9 rounded-full bg-zinc-800 border border-zinc-700 flex items-center justify-center text-xs font-bold text-zinc-300 shrink-0">
-                      {t.initials}
+                    <div className="w-9 h-9 rounded-full overflow-hidden bg-zinc-800 border border-zinc-700 flex items-center justify-center text-xs font-bold text-zinc-300 shrink-0">
+                      {t.image ? (
+                        <img src={t.image} alt={t.author} className="w-full h-full object-cover object-top" />
+                      ) : (
+                        t.initials
+                      )}
                     </div>
                     <div>
                       <p className="text-white text-sm font-medium">{t.author}</p>
@@ -218,8 +226,12 @@ export const ClientTestimonials = () => {
                   </div>
                   
                   <div className="flex items-center gap-3 px-2">
-                    <div className="w-10 h-10 rounded-full bg-zinc-800 flex items-center justify-center text-xs font-bold text-white shrink-0 shadow-lg">
-                      {review.initials}
+                    <div className="w-10 h-10 rounded-full overflow-hidden bg-zinc-800 flex items-center justify-center text-xs font-bold text-white shrink-0 shadow-lg border border-zinc-700">
+                      {review.image ? (
+                        <img src={review.image} alt={review.name} className="w-full h-full object-cover object-top" />
+                      ) : (
+                        review.initials
+                      )}
                     </div>
                     <div>
                       <p className="text-white text-sm font-medium">{review.name}</p>

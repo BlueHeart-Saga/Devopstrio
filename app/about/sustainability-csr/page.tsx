@@ -209,7 +209,7 @@ export default function CSRPage() {
             {/* Left Image */}
             <Reveal delay={0.1} className="relative h-[380px] rounded-[120px_120px_24px_24px] border border-zinc-800 overflow-hidden shadow-[0_20px_40px_rgba(0,0,0,0.5)] group order-2 lg:order-1 max-w-[480px] lg:max-w-none mx-auto w-full">
               <img
-                src="https://images.unsplash.com/photo-1573164713988-8665fc963095?q=80&w=1000&auto=format&fit=crop"
+                src="/assets/About-page/csr/Why Choose Us-left.png"
                 alt="Green cloud operations team"
                 className="w-full h-full object-cover transition-transform duration-[800ms] group-hover:scale-110"
               />
@@ -238,7 +238,7 @@ export default function CSRPage() {
             {/* Right Image */}
             <Reveal delay={0.3} className="relative h-[380px] rounded-[24px_24px_120px_120px] border border-zinc-800 overflow-hidden shadow-[0_20px_40px_rgba(0,0,0,0.5)] group order-3 max-w-[480px] lg:max-w-none mx-auto w-full">
               <img
-                src="https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?q=80&w=1000&auto=format&fit=crop"
+                src="/assets/About-page/csr/Why Choose Us-right.png"
                 alt="Sustainable software optimization"
                 className="w-full h-full object-cover transition-transform duration-[800ms] group-hover:scale-110"
               />
@@ -409,7 +409,7 @@ export default function CSRPage() {
             {/* Left Image Box */}
             <Reveal delay={0.1} className="relative h-[420px] lg:h-[480px] rounded-3xl border border-zinc-800 overflow-hidden shadow-[0_20px_45px_rgba(0,0,0,0.5)] max-w-[600px] lg:max-w-none mx-auto w-full">
               <img
-                src="https://images.unsplash.com/photo-1511497584788-876760111969?q=80&w=1000&auto=format&fit=crop"
+                src="/assets/About-page/csr/Zero waste technology forest.png"
                 alt="Zero waste technology forest"
                 className="w-full h-full object-cover"
               />

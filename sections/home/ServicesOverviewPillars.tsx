@@ -60,7 +60,7 @@ export function ServicesOverviewPillars() {
   const [activeHoverId, setActiveHoverId] = useState<string | null>(null);
 
   return (
-    <section className="w-full pt-20 md:pt-32 pb-8 md:pb-12 bg-[#030303] text-white relative overflow-hidden">
+    <section className="w-full py-0 bg-[#030303] text-white relative overflow-hidden">
       
       {/* Background Ambient Curved Light Halo */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[95vw] max-w-[1250px] h-[400px] md:h-[550px] bg-gradient-to-r from-red-600/10 via-rose-500/15 to-red-600/10 rounded-[100%] blur-[140px] pointer-events-none opacity-80" />
@@ -68,7 +68,7 @@ export function ServicesOverviewPillars() {
       <div className="max-w-7xl mx-auto w-full px-6 sm:px-8 relative z-10">
         
         {/* Top Tagline */}
-        <div className="mb-16 max-w-xl">
+        <div className="mb-4 max-w-xl">
           <Reveal>
             <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold tracking-tight text-white leading-snug font-sans">
               We engineer every stage <br className="hidden sm:inline" />

@@ -33,6 +33,18 @@ interface PillarDetails {
   tools: string[];
 }
 
+const pillarBgImages: Record<string, string> = {
+  ai: "/assets/ecosystem/grid/technology-stack page_categories Grid/Generated Design.png",
+  cloud: "/assets/ecosystem/grid/technology-stack page_categories Grid/Generated Design-1.png",
+  software: "/assets/ecosystem/grid/technology-stack page_categories Grid/Generated Design-2.png",
+  data: "/assets/ecosystem/grid/technology-stack page_categories Grid/Generated Design-3.png",
+  devops: "/assets/ecosystem/grid/technology-stack page_categories Grid/Generated Design-4.png",
+  security: "/assets/ecosystem/grid/technology-stack page_categories Grid/Generated Design-5.png",
+  platform: "/assets/ecosystem/grid/technology-stack page_categories Grid/Generated Design-6.png",
+  quality: "/assets/ecosystem/grid/technology-stack page_categories Grid/Generated Design-7.png",
+  emerging: "/assets/ecosystem/grid/technology-stack page_categories Grid/Generated Design-8.png",
+};
+
 export function TechCapabilities() {
   const [activeTab, setActiveTab] = useState("ai");
 
@@ -253,6 +265,18 @@ export function TechCapabilities() {
               {/* Internal decorative glowing meshes */}
               <div className="absolute -right-10 -top-10 w-48 h-48 bg-rose-600/10 rounded-full blur-3xl pointer-events-none transition-all duration-700 group-hover/tall:scale-110" />
               <div className="absolute -left-10 -bottom-10 w-48 h-48 bg-orange-600/5 rounded-full blur-3xl pointer-events-none transition-all duration-700 group-hover/tall:scale-110" />
+
+              {/* Dynamic Abstract Background Image for Left Card */}
+              {pillars.map((p) => (
+                <img
+                  key={p.id}
+                  src={pillarBgImages[p.id]}
+                  alt=""
+                  className={`absolute inset-0 w-full h-full object-cover mix-blend-screen pointer-events-none transition-opacity duration-700 ease-in-out ${
+                    activeTab === p.id ? "opacity-35" : "opacity-0"
+                  }`}
+                />
+              ))}
 
               {/* Card top details */}
               <div className="relative z-10">
