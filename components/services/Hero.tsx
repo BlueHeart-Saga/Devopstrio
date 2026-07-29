@@ -18,6 +18,8 @@ const ShapeGrid = dynamic(() => import("@/components/ui/ShapeGrid"), { ssr: fals
 const MagicRings = dynamic(() => import("@/components/ui/MagicRings"), { ssr: false });
 const Hyperspeed = dynamic(() => import("@/components/ui/Hyperspeed"), { ssr: false });
 const DotField = dynamic(() => import("@/components/ui/DotField"), { ssr: false });
+const DotGrid = dynamic(() => import("@/components/ui/DotGrid"), { ssr: false });
+const Iridescence = dynamic(() => import("@/components/ui/Iridescence"), { ssr: false });
 
 export interface HeroProps {
   badge?: string;
@@ -87,7 +89,50 @@ export interface HeroProps {
   hyperspeedOptions?: any;
   dotField?: boolean;
   dotFieldProps?: any;
+  dotGrid?: boolean;
+  dotGridProps?: any;
+  iridescence?: boolean;
+  iridescenceColor?: [number, number, number];
+  iridescenceSpeed?: number;
+  iridescenceAmplitude?: number;
+  iridescenceMouseReact?: boolean;
   children?: React.ReactNode;
+}
+
+function getServiceIridescenceColor(
+  title?: string | React.ReactNode,
+  breadcrumbs?: { label: string }[]
+): [number, number, number] {
+  const str = `${typeof title === "string" ? title : ""} ${breadcrumbs?.map((b) => b.label).join(" ") || ""}`.toLowerCase();
+
+  if (str.includes("ai") || str.includes("genai") || str.includes("llm") || str.includes("qa")) {
+    return [0.88, 0.11, 0.28]; // Rose Red
+  }
+  if (str.includes("cloud") || str.includes("aws") || str.includes("azure")) {
+    return [0.01, 0.52, 0.78]; // Sky Blue
+  }
+  if (str.includes("devops") || str.includes("automation") || str.includes("gitops")) {
+    return [0.58, 0.20, 0.92]; // Vibrant Purple
+  }
+  if (str.includes("cyber") || str.includes("security") || str.includes("zero trust")) {
+    return [0.02, 0.59, 0.41]; // Emerald Green
+  }
+  if (str.includes("data engineering") || str.includes("analytics") || str.includes("snowflake")) {
+    return [0.85, 0.47, 0.02]; // Amber Gold
+  }
+  if (str.includes("digital") || str.includes("transformation")) {
+    return [0.15, 0.39, 0.92]; // Royal Blue
+  }
+  if (str.includes("software") || str.includes("engineering") || str.includes("full-stack")) {
+    return [0.02, 0.71, 0.83]; // Electric Cyan
+  }
+  if (str.includes("managed") || str.includes("it")) {
+    return [0.39, 0.40, 0.95]; // Deep Indigo
+  }
+  if (str.includes("consulting") || str.includes("advisory")) {
+    return [0.91, 0.34, 0.05]; // Sunset Orange
+  }
+  return [0.88, 0.11, 0.28]; // Default Rose
 }
 
 export function Hero({
@@ -158,10 +203,19 @@ export function Hero({
   hyperspeedOptions,
   dotField,
   dotFieldProps,
+  dotGrid,
+  dotGridProps,
+  iridescence,
+  iridescenceColor,
+  iridescenceSpeed,
+  iridescenceAmplitude,
+  iridescenceMouseReact,
   children,
 }: HeroProps) {
+  const activeIridescenceColor = iridescenceColor || getServiceIridescenceColor(title, breadcrumbs);
+
   return (
-    <section className="relative overflow-hidden bg-black text-white min-h-screen flex flex-col justify-between pt-24 pb-12 md:pt-28 md:pb-16 border-b border-zinc-900/60">
+    <section className="relative overflow-hidden bg-black text-white min-h-[480px] lg:min-h-[520px] flex flex-col justify-between pt-24 pb-8 md:pt-24 md:pb-10 border-b border-zinc-900/60">
       
       {/* Background Shader Component */}
       {colorBends && (
@@ -181,7 +235,6 @@ export function Hero({
             bandWidth={6}
             transparent
           />
-          {/* Gradients to blend it nicely into the dark page theme */}
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-black/80 pointer-events-none" />
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_20%,rgba(0,0,0,0.85)_80%)] pointer-events-none" />
         </div>
@@ -204,7 +257,6 @@ export function Hero({
             parallax={true}
             animationSpeed={1}
           />
-          {/* Gradients to blend it nicely into the dark page theme */}
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-black/80 pointer-events-none" />
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_30%,rgba(0,0,0,0.85)_80%)] pointer-events-none" />
         </div>
@@ -224,7 +276,6 @@ export function Hero({
             noise={0.5}
             glow={1}
           />
-          {/* Gradients to blend it nicely into the dark page theme */}
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/35 to-black/85 pointer-events-none" />
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_25%,rgba(0,0,0,0.85)_80%)] pointer-events-none" />
         </div>
@@ -250,7 +301,6 @@ export function Hero({
             mouseStrength={1}
             mouseRadius={0.6}
           />
-          {/* Gradients to blend it nicely into the dark page theme */}
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/35 to-black/85 pointer-events-none" />
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_25%,rgba(0,0,0,0.85)_80%)] pointer-events-none" />
         </div>
@@ -269,7 +319,6 @@ export function Hero({
             alphaParticles={false}
             disableRotation={false}
           />
-          {/* Gradients to blend it nicely into the dark page theme */}
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/35 to-black/85 pointer-events-none" />
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_25%,rgba(0,0,0,0.85)_80%)] pointer-events-none" />
         </div>
@@ -292,7 +341,6 @@ export function Hero({
             shineDirection="left"
             mixBlendMode="lighten"
           />
-          {/* Gradients to blend it nicely into the dark page theme */}
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/35 to-black/85 pointer-events-none" />
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_25%,rgba(0,0,0,0.85)_80%)] pointer-events-none" />
         </div>
@@ -312,7 +360,6 @@ export function Hero({
             waveFrequency={3}
             waveSpeed={0.05}
           />
-          {/* Gradients to blend it nicely into the dark page theme */}
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/35 to-black/85 pointer-events-none" />
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_25%,rgba(0,0,0,0.85)_80%)] pointer-events-none" />
         </div>
@@ -330,7 +377,6 @@ export function Hero({
             shape={shapeGridShape || 'square'}
             hoverTrailAmount={shapeGridHoverTrailAmount !== undefined ? shapeGridHoverTrailAmount : 5}
           />
-          {/* Gradients to blend it nicely into the dark page theme */}
           <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent pointer-events-none" />
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_40%,rgba(0,0,0,0.85)_100%)] pointer-events-none" />
         </div>
@@ -362,7 +408,6 @@ export function Hero({
             parallax={magicRingsParallax !== undefined ? magicRingsParallax : 0.05}
             clickBurst={magicRingsClickBurst !== undefined ? magicRingsClickBurst : false}
           />
-          {/* Gradients to blend it nicely into the dark page theme */}
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/35 to-black/85 pointer-events-none" />
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_25%,rgba(0,0,0,0.85)_80%)] pointer-events-none" />
         </div>
@@ -372,7 +417,6 @@ export function Hero({
       {hyperspeed && (
         <div className="absolute inset-0 z-0 opacity-45 pointer-events-none">
           <Hyperspeed effectOptions={hyperspeedOptions} />
-          {/* Gradients to blend it nicely into the dark page theme */}
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/35 to-black/85 pointer-events-none" />
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_25%,rgba(0,0,0,0.85)_80%)] pointer-events-none" />
         </div>
@@ -395,20 +439,53 @@ export function Hero({
             gradientTo={dotFieldProps?.gradientTo}
             glowColor={dotFieldProps?.glowColor}
           />
-          {/* Gradients to blend it nicely into the dark page theme */}
           <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent pointer-events-none" />
         </div>
       )}
 
+      {/* DotGrid background */}
+      {dotGrid && (
+        <div className="absolute inset-0 z-0 opacity-90 pointer-events-none">
+          <DotGrid
+            dotSize={dotGridProps?.dotSize || 8}
+            gap={dotGridProps?.gap || 20}
+            baseColor={dotGridProps?.baseColor || "#e11d48"}
+            activeColor={dotGridProps?.activeColor || "#fb7185"}
+            proximity={dotGridProps?.proximity || 140}
+            shockRadius={dotGridProps?.shockRadius || 250}
+            shockStrength={dotGridProps?.shockStrength || 5}
+            resistance={dotGridProps?.resistance || 750}
+            returnDuration={dotGridProps?.returnDuration || 1.5}
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-black/60 pointer-events-none" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_30%,rgba(0,0,0,0.75)_85%)] pointer-events-none" />
+        </div>
+      )}
+
+      {/* Iridescence background (default shader for service pages) */}
+      {(iridescence || (!colorBends && !floatingLines && !prism && !lightfall && !particles && !gradientBlinds && !dither && !shapeGrid && !magicRings && !hyperspeed && !dotField && !dotGrid)) && (
+        <div className="absolute inset-0 z-0 opacity-85 pointer-events-none overflow-hidden">
+          <Iridescence
+            color={activeIridescenceColor}
+            speed={iridescenceSpeed !== undefined ? iridescenceSpeed : 0.9}
+            amplitude={iridescenceAmplitude !== undefined ? iridescenceAmplitude : 0.15}
+            mouseReact={iridescenceMouseReact !== undefined ? iridescenceMouseReact : true}
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/25 to-black/60 pointer-events-none" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,0,0,0.2)_0%,rgba(0,0,0,0.75)_80%)] pointer-events-none" />
+        </div>
+      )}
+
       {/* Ambient Glows */}
-      {!colorBends && !floatingLines && !prism && !lightfall && !particles && !gradientBlinds && !dither && !shapeGrid && !magicRings && !hyperspeed && !dotField && (
+      {!colorBends && !floatingLines && !prism && !lightfall && !particles && !gradientBlinds && !dither && !shapeGrid && !magicRings && !hyperspeed && !dotField && !dotGrid && !iridescence && (
         <>
-          <div className="absolute top-0 left-1/4 w-[450px] h-[450px] bg-rose-500/[0.04] rounded-full blur-[110px] pointer-events-none z-[1]" />
-          <div className="absolute bottom-0 right-1/4 w-[550px] h-[550px] bg-violet-500/[0.02] rounded-full blur-[130px] pointer-events-none z-[1]" />
+          <div className="absolute top-0 left-1/4 w-[450px] h-[450px] bg-rose-500/[0.06] rounded-full blur-[110px] pointer-events-none z-[1]" />
+          <div className="absolute bottom-0 right-1/4 w-[550px] h-[550px] bg-violet-500/[0.04] rounded-full blur-[130px] pointer-events-none z-[1]" />
         </>
       )}
 
-      {/* Background Image */}
+      {/* Background Image (Hidden/Commented to show bright animations) */}
+      {/*
       {bgImage && !colorBends && !floatingLines && !prism && !lightfall && !particles && !gradientBlinds && !dither && !shapeGrid && !magicRings && !hyperspeed && !dotField && (
         <div className="absolute inset-0 z-0">
           <Image
@@ -419,16 +496,15 @@ export function Hero({
             sizes="100vw"
             className="object-cover object-center opacity-100 select-none pointer-events-none transition-transform duration-1000 scale-[1.02]"
           />
-          {/* Subtle dark radial overlay to ensure text readability without obscuring the background image */}
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,0,0,0.4)_0%,rgba(0,0,0,0.15)_60%,transparent_100%)] pointer-events-none" />
-          {/* Bottom shadow fade to blend with the black page background */}
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/10 to-transparent pointer-events-none" />
         </div>
       )}
+      */}
 
-      <div className="max-w-7xl mx-auto relative z-10 w-full px-12 xl:px-8 flex-grow flex flex-col justify-between">
+      <div className="max-w-7xl mx-auto relative z-10 w-full px-6 md:px-12 xl:px-8 flex-grow flex flex-col justify-between">
         {/* Breadcrumb Navigation - Pinned to the top of the content container */}
-        <nav className="flex items-center justify-start gap-2.5 text-[9px] md:text-[10px] font-bold tracking-[0.15em] text-zinc-400 mb-6 overflow-x-auto whitespace-nowrap py-1">
+        <nav className="flex items-center justify-start gap-2.5 text-[9px] md:text-[10px] font-bold tracking-[0.15em] text-zinc-400 mb-3 overflow-x-auto whitespace-nowrap py-1">
           {breadcrumbs.map((crumb, idx) => {
             const isLast = idx === breadcrumbs.length - 1;
             return (
@@ -446,33 +522,23 @@ export function Hero({
           })}
         </nav>
 
-        {/* Headline block - Centered my-auto */}
-        <div className="max-w-4xl mx-auto text-center flex flex-col items-center justify-center my-auto py-8">
-          {badge && (
-            <Reveal>
-              <div className="flex items-center justify-center mb-6">
-                <span className="text-[10px] font-bold tracking-[0.25em] uppercase text-rose-500">
-                  {badge}
-                </span>
-              </div>
-            </Reveal>
-          )}
-
+        {/* Headline block - Centered with tight vertical gaps */}
+        <div className="max-w-4xl mx-auto text-center flex flex-col items-center justify-center my-auto py-3 md:py-4">
           <Reveal delay={0.05}>
-            <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.15] mb-6 text-white text-center drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]">
+            <h1 className="text-3xl md:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.18] mb-4 text-white text-center drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]">
               {title}
             </h1>
           </Reveal>
 
           <Reveal delay={0.1}>
-            <p className="text-zinc-400 text-xs md:text-sm lg:text-base leading-relaxed font-semibold max-w-3xl text-center mx-auto opacity-90">
+            <p className="text-zinc-400 text-xs md:text-sm lg:text-base leading-relaxed font-normal max-w-3xl text-center mx-auto opacity-90">
               {subtitle}
             </p>
           </Reveal>
 
           {children && (
-            <Reveal delay={0.2}>
-              <div className="mt-8 flex flex-wrap justify-center gap-4">
+            <Reveal delay={0.15}>
+              <div className="mt-6 flex flex-wrap justify-center gap-4">
                 {children}
               </div>
             </Reveal>

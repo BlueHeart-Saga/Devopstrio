@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -91,6 +91,42 @@ export default function MarketingPage() {
     resourceNeeded: "Custom Enterprise Pitch Deck",
     comments: "",
   });
+
+  const [dbResources, setDbResources] = useState<ResourceItem[]>([]);
+
+  useEffect(() => {
+    const fetchBackendResources = async () => {
+      try {
+        const res = await fetch("/api/marketing-resources");
+        if (!res.ok) return;
+        const data = await res.json();
+        if (Array.isArray(data)) {
+          const mapped: ResourceItem[] = data
+            .filter((item: any) => item.status === "published" || !item.status)
+            .map((item: any) => ({
+              id: item.id,
+              title: item.title,
+              type: (item.type || "PDF") as any,
+              category: item.category,
+              size: item.fileSize || "File",
+              updated: item.updated_at
+                ? new Date(item.updated_at).toLocaleDateString("en-US", { month: "short", year: "numeric" })
+                : "Recent",
+              description: item.description,
+              downloads: item.downloads || 0,
+              badge: item.badge || (item.featured ? "FEATURED" : undefined),
+              image: item.thumbnailUrl || undefined,
+              link: item.fileUrl || undefined,
+            }));
+          setDbResources(mapped);
+        }
+      } catch (err) {
+        console.error("Error fetching backend resources:", err);
+      }
+    };
+    fetchBackendResources();
+  }, []);
+
 
   const categories = [
     {
@@ -284,18 +320,46 @@ export default function MarketingPage() {
     { id: "v-6", title: "Kubernetes Enterprise Multi-Region Cluster Architecture", type: "Video", category: "Videos", size: "40 mins", updated: "July 2026", description: "Architectural deep-dive into multi-region disaster recovery, service mesh, and GitOps synchronization.", downloads: 3100 },
   ];
 
-  const allResources: ResourceItem[] = [
-    ...featuredResources,
-    ...companyDocs,
-    ...serviceBrochures,
-    ...industryBrochures,
-    ...platformProducts,
-    ...techResources,
-    ...caseStudies,
-    ...whitepapers,
-    ...presentations,
-    ...videos,
-  ];
+  // Merge DB resources into sections
+  const getCategoryList = (catKeywords: string[], staticList: ResourceItem[]) => {
+    const dbMatches = dbResources.filter(r => 
+      catKeywords.some(kw => r.category?.toLowerCase().includes(kw.toLowerCase()))
+    );
+    return [...dbMatches, ...staticList];
+  };
+
+  const activeCompanyDocs = getCategoryList(["company"], companyDocs);
+  const activeServiceBrochures = getCategoryList(["service"], serviceBrochures);
+  const activeIndustryBrochures = getCategoryList(["industry", "solution"], industryBrochures);
+  const activePlatformProducts = getCategoryList(["platform", "saas"], platformProducts);
+  const activeTechResources = getCategoryList(["technology", "stack", "blueprint"], techResources);
+  const activeCaseStudies = getCategoryList(["case"], caseStudies);
+  const activeWhitepapers = getCategoryList(["whitepaper", "report"], whitepapers);
+  const activePresentations = getCategoryList(["presentation", "deck"], presentations);
+  const activeVideos = getCategoryList(["video", "webinar"], videos);
+
+  const activeFeatured = [
+    ...dbResources.filter(r => r.badge || r.category?.includes("Featured") || r.category?.includes("Release")),
+    ...featuredResources
+  ].slice(0, 6);
+
+  const allResources: ResourceItem[] = Array.from(
+    new Map(
+      [
+        ...dbResources,
+        ...activeFeatured,
+        ...activeCompanyDocs,
+        ...activeServiceBrochures,
+        ...activeIndustryBrochures,
+        ...activePlatformProducts,
+        ...activeTechResources,
+        ...activeCaseStudies,
+        ...activeWhitepapers,
+        ...activePresentations,
+        ...activeVideos,
+      ].map(item => [item.id || item.title, item])
+    ).values()
+  );
 
   const filteredResources = allResources.filter((item) => {
     const matchesSearch =
@@ -309,10 +373,30 @@ export default function MarketingPage() {
     return matchesSearch && matchesType;
   });
 
-  const handleDownload = (item: ResourceItem, e?: React.MouseEvent) => {
+  const handleDownload = async (item: ResourceItem, e?: React.MouseEvent) => {
     if (e) e.stopPropagation();
     setToastMessage(`Downloading "${item.title}" (${item.size})...`);
     setTimeout(() => setToastMessage(null), 4000);
+
+    // If actual file URL exists, trigger download
+    if (item.link) {
+      const a = document.createElement("a");
+      a.href = item.link;
+      a.target = "_blank";
+      a.download = item.title;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+    }
+
+    // Increment backend download counter if MongoDB ID
+    if (item.id && item.id.length > 15) {
+      try {
+        await fetch(`/api/marketing-resources/${item.id}`, { method: "PATCH" });
+      } catch (err) {
+        console.error("Failed to update download count", err);
+      }
+    }
   };
 
   const handleShareLink = (item: ResourceItem) => {
@@ -394,7 +478,7 @@ export default function MarketingPage() {
 
         {/* Section 2: Featured Resources Carousel */}
         <FeaturedResourcesSection
-          resources={featuredResources}
+          resources={activeFeatured}
           getTypeBadge={getTypeBadge}
           onPreview={(item) => setPreviewItem(item)}
           onDownload={handleDownload}
@@ -402,7 +486,7 @@ export default function MarketingPage() {
 
         {/* Section 3: Company Documents */}
         <CompanyDocumentsSection
-          documents={companyDocs}
+          documents={activeCompanyDocs}
           getTypeBadge={getTypeBadge}
           onPreview={(item) => setPreviewItem(item)}
           onDownload={handleDownload}
@@ -410,7 +494,7 @@ export default function MarketingPage() {
 
         {/* Section 4: Service Brochures */}
         <ServiceBrochuresSection
-          services={serviceBrochures}
+          services={activeServiceBrochures}
           getTypeBadge={getTypeBadge}
           onPreview={(item) => setPreviewItem(item)}
           onDownload={handleDownload}
@@ -418,7 +502,7 @@ export default function MarketingPage() {
 
         {/* Section 5: Industry Brochures */}
         <IndustryBrochuresSection
-          industries={industryBrochures}
+          industries={activeIndustryBrochures}
           getTypeBadge={getTypeBadge}
           onPreview={(item) => setPreviewItem(item)}
           onDownload={handleDownload}
@@ -426,7 +510,7 @@ export default function MarketingPage() {
 
         {/* Section 6: Platform Products */}
         <PlatformProductsSection
-          platforms={platformProducts}
+          platforms={activePlatformProducts}
           getTypeBadge={getTypeBadge}
           onPreview={(item) => setPreviewItem(item)}
           onDownload={handleDownload}
@@ -434,7 +518,7 @@ export default function MarketingPage() {
 
         {/* Section 7: Technology Resources */}
         <TechnologyResourcesSection
-          techResources={techResources}
+          techResources={activeTechResources}
           getTypeBadge={getTypeBadge}
           onPreview={(item) => setPreviewItem(item)}
           onDownload={handleDownload}
@@ -442,7 +526,7 @@ export default function MarketingPage() {
 
         {/* Section 8: Case Studies */}
         <CaseStudiesSection
-          caseStudies={caseStudies}
+          caseStudies={activeCaseStudies}
           getTypeBadge={getTypeBadge}
           onPreview={(item) => setPreviewItem(item)}
           onDownload={handleDownload}
@@ -450,7 +534,7 @@ export default function MarketingPage() {
 
         {/* Section 9: Whitepapers */}
         <WhitepapersSection
-          whitepapers={whitepapers}
+          whitepapers={activeWhitepapers}
           getTypeBadge={getTypeBadge}
           onPreview={(item) => setPreviewItem(item)}
           onDownload={handleDownload}
@@ -458,7 +542,7 @@ export default function MarketingPage() {
 
         {/* Section 10: Presentations */}
         <PresentationsSection
-          presentations={presentations}
+          presentations={activePresentations}
           getTypeBadge={getTypeBadge}
           onPreview={(item) => setPreviewItem(item)}
           onDownload={handleDownload}
@@ -466,7 +550,7 @@ export default function MarketingPage() {
 
         {/* Section 11: Videos & Webinars */}
         <VideosSection
-          videos={videos}
+          videos={activeVideos}
           getTypeBadge={getTypeBadge}
           onPreview={(item) => setPreviewItem(item)}
         />

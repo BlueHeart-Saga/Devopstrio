@@ -4,7 +4,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { Plus, Pencil, Trash2, Save, X, MapPin, Briefcase, CalendarDays } from "lucide-react";
 
 type Poster = {
-  id: number;
+  id: string;
   role: string;
   location: string;
   type: string;
@@ -28,7 +28,7 @@ export default function HiringAdminPage() {
   const [posters, setPosters] = useState<Poster[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
-  const [editingId, setEditingId] = useState<number | null>(null);
+  const [editingId, setEditingId] = useState<string | null>(null);
   const [formData, setFormData] = useState<Partial<Poster>>({});
 
   const [isAdding, setIsAdding] = useState(false);
@@ -181,7 +181,7 @@ export default function HiringAdminPage() {
     }
   };
 
-  const handleDelete = async (id: number) => {
+  const handleDelete = async (id: string) => {
     if (!confirm("Are you sure you want to delete this poster?")) return;
     try {
       await fetch(`/api/hiring-posters/${id}`, { method: "DELETE" });

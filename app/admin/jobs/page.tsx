@@ -5,7 +5,7 @@ import { Plus, Pencil, Trash2, Save, X, MapPin, Briefcase, Clock } from "lucide-
 import { categories } from "@/sections/careers/careersData";
 
 type JobEntry = {
-  id: number;
+  id: string;
   title: string;
   category: string;
   location: string;
@@ -19,7 +19,7 @@ export default function JobsAdminPage() {
   const [jobs, setJobs] = useState<JobEntry[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
-  const [editingId, setEditingId] = useState<number | null>(null);
+  const [editingId, setEditingId] = useState<string | null>(null);
   const [formData, setFormData] = useState<Partial<JobEntry>>({});
 
   const [isAdding, setIsAdding] = useState(false);
@@ -103,7 +103,7 @@ export default function JobsAdminPage() {
     }
   };
 
-  const handleDelete = async (id: number) => {
+  const handleDelete = async (id: string) => {
     if (!confirm("Are you sure you want to delete this job posting?")) return;
     try {
       await fetch(`/api/jobs/${id}`, { method: "DELETE" });

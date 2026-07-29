@@ -1,38 +1,57 @@
 import { NextResponse } from "next/server";
-import fs from "fs/promises";
-import path from "path";
+import { connectToDatabase } from "@/lib/mongodb";
 
-const dataFilePath = path.join(process.cwd(), "data", "hiringPosters.json");
-
-async function getPosters() {
-  try {
-    const file = await fs.readFile(dataFilePath, "utf8");
-    return JSON.parse(file);
-  } catch (err) {
-    return [];
-  }
-}
+export const dynamic = "force-dynamic";
 
 export async function GET() {
-  const posters = await getPosters();
-  return NextResponse.json(posters);
+  try {
+    const { db } = await connectToDatabase();
+    const posters = await db.collection("hiring_posters").find().sort({ created_at: -1 }).toArray();
+
+    const formatted = posters.map((p) => ({
+      id: p._id.toString(),
+      role: p.role,
+      location: p.location,
+      type: p.type,
+      status: p.status,
+      req: p.req,
+      accent: p.accent,
+      date: p.date,
+      image: p.image || "",
+    }));
+
+    return NextResponse.json(formatted);
+  } catch (error) {
+    console.error("Failed to fetch hiring posters:", error);
+    return NextResponse.json({ error: "Failed to fetch hiring posters" }, { status: 500 });
+  }
 }
 
 export async function POST(req: Request) {
   try {
     const body = await req.json();
-    const posters = await getPosters();
-    
+    const { db } = await connectToDatabase();
+
     const newPoster = {
-      id: Date.now(),
-      ...body
+      role: body.role || "",
+      location: body.location || "",
+      type: body.type || "Full-Time",
+      status: body.status || "active",
+      req: body.req || "",
+      accent: body.accent || "from-rose-500 to-red-600",
+      date: body.date || "",
+      image: body.image || "",
+      created_at: new Date(),
     };
-    
-    posters.push(newPoster);
-    await fs.writeFile(dataFilePath, JSON.stringify(posters, null, 2));
-    
-    return NextResponse.json(newPoster, { status: 201 });
+
+    const result = await db.collection("hiring_posters").insertOne(newPoster);
+
+    return NextResponse.json(
+      { id: result.insertedId.toString(), ...newPoster },
+      { status: 201 }
+    );
   } catch (error) {
-    return NextResponse.json({ error: "Failed to add poster" }, { status: 500 });
+    console.error("Failed to create hiring poster:", error);
+    return NextResponse.json({ error: "Failed to create hiring poster" }, { status: 500 });
   }
 }

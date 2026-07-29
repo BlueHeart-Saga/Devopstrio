@@ -1,45 +1,55 @@
 import { NextResponse } from "next/server";
-import fs from "fs/promises";
-import path from "path";
+import { connectToDatabase } from "@/lib/mongodb";
 
-const dataFilePath = path.join(process.cwd(), "data", "jobs.json");
-
-async function getJobs() {
-  try {
-    const file = await fs.readFile(dataFilePath, "utf8");
-    return JSON.parse(file);
-  } catch (err) {
-    return [];
-  }
-}
+export const dynamic = "force-dynamic";
 
 export async function GET() {
-  const jobs = await getJobs();
-  return NextResponse.json(jobs);
+  try {
+    const { db } = await connectToDatabase();
+    const jobs = await db.collection("jobs").find().sort({ created_at: -1 }).toArray();
+
+    const formatted = jobs.map((j) => ({
+      id: j._id.toString(),
+      title: j.title,
+      category: j.category,
+      location: j.location,
+      type: j.type,
+      experience: j.experience,
+      desc: j.desc,
+      status: j.status,
+    }));
+
+    return NextResponse.json(formatted);
+  } catch (error) {
+    console.error("Failed to fetch jobs:", error);
+    return NextResponse.json({ error: "Failed to fetch jobs" }, { status: 500 });
+  }
 }
 
 export async function POST(req: Request) {
   try {
     const body = await req.json();
-    const jobs = await getJobs();
-    
-    // Ensure the data directory exists
-    try {
-      await fs.access(path.join(process.cwd(), "data"));
-    } catch {
-      await fs.mkdir(path.join(process.cwd(), "data"), { recursive: true });
-    }
-    
+    const { db } = await connectToDatabase();
+
     const newJob = {
-      id: Date.now(),
-      ...body
+      title: body.title || "",
+      category: body.category || "",
+      location: body.location || "",
+      type: body.type || "Full-Time",
+      experience: body.experience || "Intermediate (3-5 Years)",
+      desc: body.desc || "",
+      status: body.status || "active",
+      created_at: new Date(),
     };
-    
-    jobs.push(newJob);
-    await fs.writeFile(dataFilePath, JSON.stringify(jobs, null, 2));
-    
-    return NextResponse.json(newJob, { status: 201 });
+
+    const result = await db.collection("jobs").insertOne(newJob);
+
+    return NextResponse.json(
+      { id: result.insertedId.toString(), ...newJob },
+      { status: 201 }
+    );
   } catch (error) {
-    return NextResponse.json({ error: "Failed to add job" }, { status: 500 });
+    console.error("Failed to create job:", error);
+    return NextResponse.json({ error: "Failed to create job" }, { status: 500 });
   }
 }

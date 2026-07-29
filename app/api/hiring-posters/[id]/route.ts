@@ -1,50 +1,75 @@
 import { NextResponse } from "next/server";
-import fs from "fs/promises";
-import path from "path";
+import { ObjectId } from "mongodb";
+import { connectToDatabase } from "@/lib/mongodb";
 
-const dataFilePath = path.join(process.cwd(), "data", "hiringPosters.json");
+export const dynamic = "force-dynamic";
 
-async function getPosters() {
+export async function PUT(
+  req: Request,
+  { params }: { params: Promise<{ id: string }> }
+) {
   try {
-    const file = await fs.readFile(dataFilePath, "utf8");
-    return JSON.parse(file);
-  } catch (err) {
-    return [];
-  }
-}
-
-export async function PUT(req: Request, { params }: { params: Promise<{ id: string }> }) {
-  try {
-    const resolvedParams = await params;
-    const id = parseInt(resolvedParams.id);
+    const { id } = await params;
     const body = await req.json();
-    const posters = await getPosters();
-    
-    const index = posters.findIndex((p: any) => p.id === id);
-    if (index === -1) {
+    const { db } = await connectToDatabase();
+
+    // Validate ObjectId
+    if (!ObjectId.isValid(id)) {
+      return NextResponse.json({ error: "Invalid poster ID" }, { status: 400 });
+    }
+
+    const { id: _ignored, _id, created_at, ...updateFields } = body;
+
+    const result = await db.collection("hiring_posters").findOneAndUpdate(
+      { _id: new ObjectId(id) },
+      { $set: { ...updateFields, updated_at: new Date() } },
+      { returnDocument: "after" }
+    );
+
+    if (!result) {
       return NextResponse.json({ error: "Poster not found" }, { status: 404 });
     }
-    
-    posters[index] = { ...posters[index], ...body };
-    await fs.writeFile(dataFilePath, JSON.stringify(posters, null, 2));
-    
-    return NextResponse.json(posters[index]);
+
+    return NextResponse.json({
+      id: result._id.toString(),
+      role: result.role,
+      location: result.location,
+      type: result.type,
+      status: result.status,
+      req: result.req,
+      accent: result.accent,
+      date: result.date,
+      image: result.image || "",
+    });
   } catch (error) {
-    return NextResponse.json({ error: "Failed to update poster" }, { status: 500 });
+    console.error("Failed to update hiring poster:", error);
+    return NextResponse.json({ error: "Failed to update hiring poster" }, { status: 500 });
   }
 }
 
-export async function DELETE(req: Request, { params }: { params: Promise<{ id: string }> }) {
+export async function DELETE(
+  req: Request,
+  { params }: { params: Promise<{ id: string }> }
+) {
   try {
-    const resolvedParams = await params;
-    const id = parseInt(resolvedParams.id);
-    let posters = await getPosters();
-    
-    posters = posters.filter((p: any) => p.id !== id);
-    await fs.writeFile(dataFilePath, JSON.stringify(posters, null, 2));
-    
+    const { id } = await params;
+    const { db } = await connectToDatabase();
+
+    if (!ObjectId.isValid(id)) {
+      return NextResponse.json({ error: "Invalid poster ID" }, { status: 400 });
+    }
+
+    const result = await db
+      .collection("hiring_posters")
+      .deleteOne({ _id: new ObjectId(id) });
+
+    if (result.deletedCount === 0) {
+      return NextResponse.json({ error: "Poster not found" }, { status: 404 });
+    }
+
     return NextResponse.json({ success: true });
   } catch (error) {
-    return NextResponse.json({ error: "Failed to delete poster" }, { status: 500 });
+    console.error("Failed to delete hiring poster:", error);
+    return NextResponse.json({ error: "Failed to delete hiring poster" }, { status: 500 });
   }
 }
