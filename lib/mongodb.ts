@@ -1,4 +1,12 @@
 import { MongoClient, MongoClientOptions } from "mongodb";
+import dns from "dns";
+
+// Set public DNS servers to resolve Azure Cosmos DB mongodb+srv SRV records reliably
+try {
+  dns.setServers(["8.8.8.8", "1.1.1.1", "8.8.4.4"]);
+} catch (e) {
+  // Ignore in environments that disallow custom DNS configuration
+}
 
 const MONGO_URI = process.env.MONGO_URI || "";
 const DB_NAME = process.env.DB_NAME || "podcast";
