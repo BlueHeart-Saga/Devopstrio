@@ -10,8 +10,19 @@ import { CTA } from "@/components/ecosystem/CTA";
 import type { Metadata } from "next";
 import { generatePageMetadata } from "@/lib/seo-utils";
 
+const DEDICATED_SUBPAGES = [
+  "saas-platforms",
+  "automation-platform",
+  "cloud-management-platform",
+  "customer-experience-platform",
+  "data-platform",
+  "devops-platform",
+  "security-platform",
+];
+
 export async function generateMetadata({ params }: SubpageProps): Promise<Metadata> {
   const { subpage } = await params;
+  if (DEDICATED_SUBPAGES.includes(subpage)) return {};
   const domain = "platforms-solutions";
   const data = getEcosystemSubpage(domain, subpage);
   if (!data) return {};
@@ -29,6 +40,9 @@ interface SubpageProps {
 
 export default async function EcosystemSubpage({ params }: SubpageProps) {
   const { subpage } = await params;
+  if (DEDICATED_SUBPAGES.includes(subpage)) {
+    notFound();
+  }
   const domain = "platforms-solutions";
   const data = getEcosystemSubpage(domain, subpage);
 
@@ -138,14 +152,15 @@ export default async function EcosystemSubpage({ params }: SubpageProps) {
   );
 }
 
-
 import { ecosystemSubpages } from "@/data/ecosystem";
 
 export async function generateStaticParams() {
   const domain = "platforms-solutions";
   const subpages = ecosystemSubpages[domain] || {};
-  return Object.keys(subpages).map((slug) => ({
-    subpage: slug
-  }));
+  return Object.keys(subpages)
+    .filter((slug) => !DEDICATED_SUBPAGES.includes(slug))
+    .map((slug) => ({
+      subpage: slug
+    }));
 }
 
