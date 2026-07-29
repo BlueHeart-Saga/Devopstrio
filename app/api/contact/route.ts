@@ -94,36 +94,39 @@ export async function POST(req: Request) {
       });
     }
 
-    // 1. Send Admin Notification Email
-    await transporter.sendMail({
-      from: `"Devopstrio Website" <${smtpUser}>`,
-      to: toEmail || process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'info@devopstrioglobal.com',
-      replyTo: email,
-      subject: emailSubject,
-      html: htmlContent,
+    // 1 & 2. Send Admin Notification & Automatic Thank You Auto-Reply Concurrently
+    const thankYouHtml = generateThankYouEmailHtml({
+      name,
+      formType: thankYouFormType,
+      referenceDetails: [
+        { label: 'Form Category', value: thankYouFormType },
+        { label: 'Submitted Email', value: email },
+        ...(phone ? [{ label: 'Contact Phone', value: phone }] : []),
+      ],
     });
 
-    // 2. Send Automatic Thank You Confirmation Email to Submitter
-    try {
-      const thankYouHtml = generateThankYouEmailHtml({
-        name,
-        formType: thankYouFormType,
-        referenceDetails: [
-          { label: 'Form Category', value: thankYouFormType },
-          { label: 'Submitted Email', value: email },
-          ...(phone ? [{ label: 'Contact Phone', value: phone }] : []),
-        ],
-      });
-
-      await transporter.sendMail({
-        from: `"Devopstrio Team" <${smtpUser}>`,
+    const results = await Promise.allSettled([
+      transporter.sendMail({
+        from: `"Devopstrio Website" <${smtpUser}>`,
+        to: toEmail || process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'info@devopstrioglobal.com',
+        replyTo: email,
+        subject: emailSubject,
+        html: htmlContent,
+      }),
+      transporter.sendMail({
+        from: `"Devopstrio Ltd" <${smtpUser}>`,
         to: email,
+        replyTo: 'info@devopstrioglobal.com',
         subject: `Thank you for contacting Devopstrio - Confirmation`,
         html: thankYouHtml,
-      });
-    } catch (autoReplyError) {
-      console.warn('Failed to send thank-you auto-reply email:', autoReplyError);
-    }
+      }),
+    ]);
+
+    results.forEach((res, idx) => {
+      if (res.status === 'rejected') {
+        console.warn(`Email dispatch #${idx + 1} issue:`, res.reason);
+      }
+    });
 
     return NextResponse.json(
       { success: true, message: 'Email sent successfully' },

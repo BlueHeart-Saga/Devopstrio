@@ -61,37 +61,40 @@ export async function POST(req: Request) {
       });
     }
 
-    // 1. Send Admin Notification Email
-    await transporter.sendMail({
-      from: `"Devopstrio Internship" <${smtpUser}>`,
-      to: process.env.NEXT_PUBLIC_INTERNSHIP_EMAIL || 'internship@devopstrioglobal.com',
-      replyTo: email,
-      subject: `Internship Application: ${fullName}`,
-      html: htmlContent,
-      attachments: attachments,
+    // 1 & 2. Send Admin Notification & Automatic Thank You Auto-Reply Concurrently
+    const thankYouHtml = generateThankYouEmailHtml({
+      name: fullName,
+      formType: 'Internship Application',
+      referenceDetails: [
+        { label: 'Applicant Name', value: fullName },
+        { label: 'College / University', value: college || 'Provided' },
+        { label: 'Degree Program', value: degree || 'Provided' },
+      ],
     });
 
-    // 2. Send Automatic Thank You Confirmation Email to Applicant
-    try {
-      const thankYouHtml = generateThankYouEmailHtml({
-        name: fullName,
-        formType: 'Internship Application',
-        referenceDetails: [
-          { label: 'Applicant Name', value: fullName },
-          { label: 'College / University', value: college || 'Provided' },
-          { label: 'Degree Program', value: degree || 'Provided' },
-        ],
-      });
-
-      await transporter.sendMail({
-        from: `"Devopstrio Careers & Talent" <${smtpUser}>`,
+    const results = await Promise.allSettled([
+      transporter.sendMail({
+        from: `"Devopstrio Internship" <${smtpUser}>`,
+        to: process.env.NEXT_PUBLIC_INTERNSHIP_EMAIL || 'internship@devopstrioglobal.com',
+        replyTo: email,
+        subject: `Internship Application: ${fullName}`,
+        html: htmlContent,
+        attachments: attachments,
+      }),
+      transporter.sendMail({
+        from: `"Devopstrio Talent" <${smtpUser}>`,
         to: email,
+        replyTo: 'internship@devopstrioglobal.com',
         subject: `Thank you for applying to Devopstrio Internship Program`,
         html: thankYouHtml,
-      });
-    } catch (autoReplyError) {
-      console.warn('Failed to send internship thank-you auto-reply email:', autoReplyError);
-    }
+      }),
+    ]);
+
+    results.forEach((res, idx) => {
+      if (res.status === 'rejected') {
+        console.warn(`Internship email dispatch #${idx + 1} issue:`, res.reason);
+      }
+    });
 
     return NextResponse.json(
       { success: true, message: 'Application sent successfully' },

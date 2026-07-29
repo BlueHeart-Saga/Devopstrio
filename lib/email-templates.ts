@@ -4,7 +4,8 @@
  */
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://devopstrio.co.uk';
-const LOGO_URL = `${SITE_URL}/logo.png`;
+const TOP_BANNER_URL = `${SITE_URL}/topbanner.png`;
+const PARTNERS_URL = `${SITE_URL}/partners.png`;
 
 interface BaseEmailProps {
   title: string;
@@ -19,13 +20,13 @@ function renderBaseTemplate({ title, badgeText, tableRows, messageTitle, message
     .map(
       (row, idx) => `
       <tr style="background-color: ${idx % 2 === 0 ? '#ffffff' : '#fcfcfd'};">
-        <td style="padding: 12px 18px; border-bottom: 1px solid #eaecf0; width: 35%; font-[family-name:sans-serif]; font-size: 13px; font-weight: 600; color: #475467; text-transform: uppercase; letter-spacing: 0.4px;">
+        <td style="padding: 12px 18px; border-bottom: 1px solid #eaecf0; width: 35%; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 13px; font-weight: 600; color: #475467; text-transform: uppercase; letter-spacing: 0.4px;">
           ${row.label}
         </td>
-        <td style="padding: 12px 18px; border-bottom: 1px solid #eaecf0; font-[family-name:sans-serif]; font-size: 14px; font-weight: 500; color: #101828;">
+        <td style="padding: 12px 18px; border-bottom: 1px solid #eaecf0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 14px; font-weight: 500; color: #101828;">
           ${
             row.isLink && row.linkUrl
-              ? `<a href="${row.linkUrl}" style="color: #0f172a; text-decoration: underline; font-weight: 600;">${row.value}</a>`
+              ? `<a href="${row.linkUrl}" style="color: #e11d48; text-decoration: none; font-weight: 600;">${row.value}</a>`
               : row.value || '<span style="color: #98a2b3; font-style: italic;">Not provided</span>'
           }
         </td>
@@ -42,36 +43,23 @@ function renderBaseTemplate({ title, badgeText, tableRows, messageTitle, message
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>${title}</title>
 </head>
-<body style="margin: 0; padding: 0; background-color: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased;">
-  <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color: #ffffff; padding: 32px 16px;">
+<body style="margin: 0; padding: 0; background-color: #f4f4f5; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased;">
+  <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color: #f4f4f5; padding: 32px 16px;">
     <tr>
       <td align="center">
-        <table width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width: 640px; background-color: #ffffff; border: 1px solid #e4e4e7; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.03);">
+        <table width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width: 640px; background-color: #ffffff; border: 1px solid #e4e4e7; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);">
           
-          <!-- Header Banner -->
+          <!-- Top Header Banner Image -->
           <tr>
-            <td style="background: linear-gradient(110deg, #4c1d95 0%, #2e1065 40%, #4c1d95 70%, #9d174d 85%, #e11d48 92%, #f97316 96%, #facc15 100%); padding: 24px 32px; border-bottom: 4px solid #e11d48;">
-              <table width="100%" cellpadding="0" cellspacing="0" border="0">
-                <tr>
-                  <td align="left" style="vertical-align: middle;">
-                    <img src="${LOGO_URL}" alt="Devopstrio" style="height: 38px; max-height: 42px; width: auto; display: block; border: 0;" />
-                  </td>
-                  <td align="right" style="vertical-align: middle;">
-                    <div style="color: #ffffff; font-size: 13px; font-weight: 700; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.35; text-align: right; letter-spacing: 0.5px; text-shadow: 0 1px 3px rgba(0,0,0,0.5);">
-                      Innovate.<br/>
-                      Deliver.<br/>
-                      Impact.
-                    </div>
-                  </td>
-                </tr>
-              </table>
+            <td style="padding: 0; background-color: #ffffff; text-align: center; border-bottom: 3px solid #e11d48;">
+              <img src="${TOP_BANNER_URL}" alt="Devopstrio Banner" style="width: 100%; max-width: 640px; height: auto; display: block; margin: 0 auto; border: 0;" />
             </td>
           </tr>
 
-          <!-- Banner -->
+          <!-- Banner Title -->
           <tr>
             <td style="padding: 24px 36px 16px 36px; background-color: #ffffff; border-bottom: 1px solid #f4f4f5;">
-              <div style="display: inline-block; padding: 4px 10px; background-color: #f4f4f5; border: 1px solid #e4e4e7; border-radius: 6px; font-size: 11px; font-weight: 700; color: #3f3f46; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px;">
+              <div style="display: inline-block; padding: 4px 12px; background-color: #fef2f2; border: 1px solid #fecdd3; border-radius: 6px; font-size: 11px; font-weight: 700; color: #e11d48; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px;">
                 ${badgeText}
               </div>
               <h1 style="margin: 0; font-size: 20px; font-weight: 700; color: #09090b; letter-spacing: -0.3px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
@@ -107,42 +95,52 @@ function renderBaseTemplate({ title, badgeText, tableRows, messageTitle, message
             </td>
           </tr>
 
+          <!-- Collaborating Partners Section -->
+          <tr>
+            <td style="padding: 28px 24px 20px 24px; background-color: #ffffff; text-align: center; border-top: 1px solid #f4f4f5;">
+              <div style="font-size: 13px; font-weight: 700; color: #e11d48; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 14px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
+                COMPANIES THAT ALREADY COLLABORATE WITH US
+              </div>
+              <img src="${PARTNERS_URL}" alt="Collaborating Partners & Clients" style="width: 92%; max-width: 520px; height: auto; display: block; margin: 0 auto; border: 0;" />
+            </td>
+          </tr>
+
           <!-- Footer -->
           <tr>
-            <td style="background-color: #ffffff; padding: 32px 24px 0 24px; text-align: center; border-top: 1px solid #e5e7eb;">
+            <td style="background-color: #ffffff; padding: 24px 0 0 0; text-align: center; border-top: 1px solid #e5e7eb;">
               
-              <!-- Legal Links -->
+              <!-- Legal Links (clean without borders) -->
               <div style="margin-bottom: 10px; font-size: 13px; font-weight: 500; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
-                <a href="${SITE_URL}/privacy-policy" style="color: #111827; text-decoration: underline; margin: 0 8px;">Privacy Policy</a>
-                <a href="${SITE_URL}/terms" style="color: #111827; text-decoration: underline; margin: 0 8px;">Terms of Service</a>
-                <a href="${SITE_URL}/cookies" style="color: #111827; text-decoration: underline; margin: 0 8px;">Cookie Policy</a>
+                <a href="${SITE_URL}/privacy-policy" style="color: #374151; text-decoration: none; margin: 0 8px;">Privacy Policy</a>
+                <a href="${SITE_URL}/terms" style="color: #374151; text-decoration: none; margin: 0 8px;">Terms of Service</a>
+                <a href="${SITE_URL}/cookies" style="color: #374151; text-decoration: none; margin: 0 8px;">Cookie Policy</a>
               </div>
               <div style="margin-bottom: 24px; font-size: 13px; font-weight: 500; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
-                <a href="${SITE_URL}/gdpr" style="color: #111827; text-decoration: underline; margin: 0 8px;">GDPR Compliance</a>
-                <a href="${SITE_URL}/disclaimer" style="color: #111827; text-decoration: underline; margin: 0 8px;">Disclaimer</a>
+                <a href="${SITE_URL}/gdpr" style="color: #374151; text-decoration: none; margin: 0 8px;">GDPR Compliance</a>
+                <a href="${SITE_URL}/disclaimer" style="color: #374151; text-decoration: none; margin: 0 8px;">Disclaimer</a>
               </div>
 
-              <!-- Social Media Buttons -->
+              <!-- Social Media Buttons (Circular, borderless design) -->
               <div style="margin-bottom: 24px; text-align: center;">
                 <table align="center" cellpadding="0" cellspacing="0" border="0" style="margin: 0 auto;">
                   <tr>
-                    <td style="padding: 0 6px;">
-                      <a href="https://www.linkedin.com/company/devopstrioglobal/posts/?feedView=all" target="_blank" rel="noopener noreferrer" style="display: block; width: 38px; height: 38px; border-radius: 12px; border: 1.5px solid #e11d48; text-align: center; line-height: 34px; text-decoration: none;">
+                    <td style="padding: 0 8px;">
+                      <a href="https://www.linkedin.com/company/devopstrioglobal/posts/?feedView=all" target="_blank" rel="noopener noreferrer" style="display: block; width: 40px; height: 40px; border-radius: 50%; background-color: #fef2f2; text-align: center; line-height: 40px; text-decoration: none;">
                         <img src="${SITE_URL}/assets/social-icons/linkedin.svg" alt="LinkedIn" width="20" height="20" style="vertical-align: middle; border: 0;" />
                       </a>
                     </td>
-                    <td style="padding: 0 6px;">
-                      <a href="https://www.facebook.com/profile.php?id=61579126233218" target="_blank" rel="noopener noreferrer" style="display: block; width: 38px; height: 38px; border-radius: 12px; border: 1.5px solid #e11d48; text-align: center; line-height: 34px; text-decoration: none;">
+                    <td style="padding: 0 8px;">
+                      <a href="https://www.facebook.com/profile.php?id=61579126233218" target="_blank" rel="noopener noreferrer" style="display: block; width: 40px; height: 40px; border-radius: 50%; background-color: #fef2f2; text-align: center; line-height: 40px; text-decoration: none;">
                         <img src="${SITE_URL}/assets/social-icons/facebook.svg" alt="Facebook" width="20" height="20" style="vertical-align: middle; border: 0;" />
                       </a>
                     </td>
-                    <td style="padding: 0 6px;">
-                      <a href="https://www.instagram.com/devopstrio_offcl/" target="_blank" rel="noopener noreferrer" style="display: block; width: 38px; height: 38px; border-radius: 12px; border: 1.5px solid #e11d48; text-align: center; line-height: 34px; text-decoration: none;">
+                    <td style="padding: 0 8px;">
+                      <a href="https://www.instagram.com/devopstrio_offcl/" target="_blank" rel="noopener noreferrer" style="display: block; width: 40px; height: 40px; border-radius: 50%; background-color: #fef2f2; text-align: center; line-height: 40px; text-decoration: none;">
                         <img src="${SITE_URL}/assets/social-icons/instagram.svg" alt="Instagram" width="20" height="20" style="vertical-align: middle; border: 0;" />
                       </a>
                     </td>
-                    <td style="padding: 0 6px;">
-                      <a href="https://www.youtube.com/@Devopstrioltd" target="_blank" rel="noopener noreferrer" style="display: block; width: 38px; height: 38px; border-radius: 12px; border: 1.5px solid #e11d48; text-align: center; line-height: 34px; text-decoration: none;">
+                    <td style="padding: 0 8px;">
+                      <a href="https://www.youtube.com/@Devopstrioltd" target="_blank" rel="noopener noreferrer" style="display: block; width: 40px; height: 40px; border-radius: 50%; background-color: #fef2f2; text-align: center; line-height: 40px; text-decoration: none;">
                         <img src="${SITE_URL}/assets/social-icons/youtube.svg" alt="YouTube" width="20" height="20" style="vertical-align: middle; border: 0;" />
                       </a>
                     </td>
@@ -154,12 +152,12 @@ function renderBaseTemplate({ title, badgeText, tableRows, messageTitle, message
               <p style="margin: 0 0 6px 0; font-size: 13px; font-weight: 600; color: #111827; line-height: 1.5; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
                 Copyright 2026 Devopstrio Ltd. All rights reserved.
               </p>
-              <p style="margin: 0 0 24px 0; font-size: 13px; color: #374151; line-height: 1.5; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
+              <p style="margin: 0 0 24px 0; font-size: 13px; color: #4b5563; line-height: 1.5; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
                 We are located at 128, City Road, London, EC1V 2NX<br/>United Kingdom
               </p>
 
-              <!-- Bottom Gradient Bar -->
-              <div style="height: 10px; width: 100%; background: linear-gradient(90deg, #581c87 0%, #9d174d 40%, #e11d48 70%, #f97316 100%);"></div>
+              <!-- Bottom Gradient Bar (Full Width across container) -->
+              <div style="height: 14px; width: 100%; margin: 0; padding: 0; background: linear-gradient(90deg, #581c87 0%, #9d174d 40%, #e11d48 70%, #f97316 100%);"></div>
             </td>
           </tr>
 
@@ -355,29 +353,16 @@ export function generateThankYouEmailHtml({ name, formType, referenceDetails }: 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Thank You for Contacting Devopstrio</title>
 </head>
-<body style="margin: 0; padding: 0; background-color: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
-  <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color: #ffffff; padding: 32px 16px;">
+<body style="margin: 0; padding: 0; background-color: #f4f4f5; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+  <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color: #f4f4f5; padding: 32px 16px;">
     <tr>
       <td align="center">
-        <table width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width: 640px; background-color: #ffffff; border: 1px solid #e4e4e7; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.03);">
+        <table width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width: 640px; background-color: #ffffff; border: 1px solid #e4e4e7; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);">
           
-          <!-- Header Banner -->
+          <!-- Top Header Banner Image -->
           <tr>
-            <td style="background: linear-gradient(110deg, #4c1d95 0%, #2e1065 40%, #4c1d95 70%, #9d174d 85%, #e11d48 92%, #f97316 96%, #facc15 100%); padding: 24px 32px; border-bottom: 4px solid #e11d48;">
-              <table width="100%" cellpadding="0" cellspacing="0" border="0">
-                <tr>
-                  <td align="left" style="vertical-align: middle;">
-                    <img src="${LOGO_URL}" alt="Devopstrio" style="height: 38px; max-height: 42px; width: auto; display: block; border: 0;" />
-                  </td>
-                  <td align="right" style="vertical-align: middle;">
-                    <div style="color: #ffffff; font-size: 13px; font-weight: 700; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.35; text-align: right; letter-spacing: 0.5px; text-shadow: 0 1px 3px rgba(0,0,0,0.5);">
-                      Innovate.<br/>
-                      Deliver.<br/>
-                      Impact.
-                    </div>
-                  </td>
-                </tr>
-              </table>
+            <td style="padding: 0; background-color: #ffffff; text-align: center; border-bottom: 3px solid #e11d48;">
+              <img src="${TOP_BANNER_URL}" alt="Devopstrio Banner" style="width: 100%; max-width: 640px; height: auto; display: block; margin: 0 auto; border: 0;" />
             </td>
           </tr>
 
@@ -428,37 +413,51 @@ export function generateThankYouEmailHtml({ name, formType, referenceDetails }: 
             </td>
           </tr>
 
+          <!-- Collaborating Partners Section -->
+          <tr>
+            <td style="padding: 28px 24px 20px 24px; background-color: #ffffff; text-align: center; border-top: 1px solid #f4f4f5;">
+              <div style="font-size: 13px; font-weight: 700; color: #e11d48; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 14px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
+                COMPANIES THAT ALREADY COLLABORATE WITH US
+              </div>
+              <img src="${PARTNERS_URL}" alt="Collaborating Partners & Clients" style="width: 92%; max-width: 520px; height: auto; display: block; margin: 0 auto; border: 0;" />
+            </td>
+          </tr>
+
           <!-- Footer -->
           <tr>
-            <td style="background-color: #ffffff; padding: 24px 24px 0 24px; text-align: center; border-top: 1px solid #e5e7eb;">
-              <!-- Legal Links -->
+            <td style="background-color: #ffffff; padding: 24px 0 0 0; text-align: center; border-top: 1px solid #e5e7eb;">
+              <!-- Legal Links (clean without borders) -->
               <div style="margin-bottom: 10px; font-size: 12px; font-weight: 500;">
-                <a href="${SITE_URL}/privacy-policy" style="color: #111827; text-decoration: underline; margin: 0 8px;">Privacy Policy</a>
-                <a href="${SITE_URL}/terms" style="color: #111827; text-decoration: underline; margin: 0 8px;">Terms of Service</a>
-                <a href="${SITE_URL}/cookies" style="color: #111827; text-decoration: underline; margin: 0 8px;">Cookie Policy</a>
+                <a href="${SITE_URL}/privacy-policy" style="color: #374151; text-decoration: none; margin: 0 8px;">Privacy Policy</a>
+                <a href="${SITE_URL}/terms" style="color: #374151; text-decoration: none; margin: 0 8px;">Terms of Service</a>
+                <a href="${SITE_URL}/cookies" style="color: #374151; text-decoration: none; margin: 0 8px;">Cookie Policy</a>
+              </div>
+              <div style="margin-bottom: 20px; font-size: 12px; font-weight: 500;">
+                <a href="${SITE_URL}/gdpr" style="color: #374151; text-decoration: none; margin: 0 8px;">GDPR Compliance</a>
+                <a href="${SITE_URL}/disclaimer" style="color: #374151; text-decoration: none; margin: 0 8px;">Disclaimer</a>
               </div>
 
-              <!-- Social Media Buttons -->
+              <!-- Social Media Buttons (Circular, borderless design) -->
               <div style="margin-bottom: 20px; text-align: center;">
                 <table align="center" cellpadding="0" cellspacing="0" border="0" style="margin: 0 auto;">
                   <tr>
-                    <td style="padding: 0 6px;">
-                      <a href="https://www.linkedin.com/company/devopstrioglobal/posts/?feedView=all" target="_blank" rel="noopener noreferrer" style="display: block; width: 34px; height: 34px; border-radius: 10px; border: 1.5px solid #e11d48; text-align: center; line-height: 30px; text-decoration: none;">
+                    <td style="padding: 0 8px;">
+                      <a href="https://www.linkedin.com/company/devopstrioglobal/posts/?feedView=all" target="_blank" rel="noopener noreferrer" style="display: block; width: 38px; height: 38px; border-radius: 50%; background-color: #fef2f2; text-align: center; line-height: 38px; text-decoration: none;">
                         <img src="${SITE_URL}/assets/social-icons/linkedin.svg" alt="LinkedIn" width="18" height="18" style="vertical-align: middle; border: 0;" />
                       </a>
                     </td>
-                    <td style="padding: 0 6px;">
-                      <a href="https://www.facebook.com/profile.php?id=61579126233218" target="_blank" rel="noopener noreferrer" style="display: block; width: 34px; height: 34px; border-radius: 10px; border: 1.5px solid #e11d48; text-align: center; line-height: 30px; text-decoration: none;">
+                    <td style="padding: 0 8px;">
+                      <a href="https://www.facebook.com/profile.php?id=61579126233218" target="_blank" rel="noopener noreferrer" style="display: block; width: 38px; height: 38px; border-radius: 50%; background-color: #fef2f2; text-align: center; line-height: 38px; text-decoration: none;">
                         <img src="${SITE_URL}/assets/social-icons/facebook.svg" alt="Facebook" width="18" height="18" style="vertical-align: middle; border: 0;" />
                       </a>
                     </td>
-                    <td style="padding: 0 6px;">
-                      <a href="https://www.instagram.com/devopstrio_offcl/" target="_blank" rel="noopener noreferrer" style="display: block; width: 34px; height: 34px; border-radius: 10px; border: 1.5px solid #e11d48; text-align: center; line-height: 30px; text-decoration: none;">
+                    <td style="padding: 0 8px;">
+                      <a href="https://www.instagram.com/devopstrio_offcl/" target="_blank" rel="noopener noreferrer" style="display: block; width: 38px; height: 38px; border-radius: 50%; background-color: #fef2f2; text-align: center; line-height: 38px; text-decoration: none;">
                         <img src="${SITE_URL}/assets/social-icons/instagram.svg" alt="Instagram" width="18" height="18" style="vertical-align: middle; border: 0;" />
                       </a>
                     </td>
-                    <td style="padding: 0 6px;">
-                      <a href="https://www.youtube.com/@Devopstrioltd" target="_blank" rel="noopener noreferrer" style="display: block; width: 34px; height: 34px; border-radius: 10px; border: 1.5px solid #e11d48; text-align: center; line-height: 30px; text-decoration: none;">
+                    <td style="padding: 0 8px;">
+                      <a href="https://www.youtube.com/@Devopstrioltd" target="_blank" rel="noopener noreferrer" style="display: block; width: 38px; height: 38px; border-radius: 50%; background-color: #fef2f2; text-align: center; line-height: 38px; text-decoration: none;">
                         <img src="${SITE_URL}/assets/social-icons/youtube.svg" alt="YouTube" width="18" height="18" style="vertical-align: middle; border: 0;" />
                       </a>
                     </td>
@@ -473,8 +472,8 @@ export function generateThankYouEmailHtml({ name, formType, referenceDetails }: 
                 128, City Road, London, EC1V 2NX, United Kingdom
               </p>
 
-              <!-- Bottom Gradient Bar -->
-              <div style="height: 8px; width: 100%; background: linear-gradient(90deg, #581c87 0%, #9d174d 40%, #e11d48 70%, #f97316 100%);"></div>
+              <!-- Bottom Gradient Bar (Full Width across container) -->
+              <div style="height: 12px; width: 100%; margin: 0; padding: 0; background: linear-gradient(90deg, #581c87 0%, #9d174d 40%, #e11d48 70%, #f97316 100%);"></div>
             </td>
           </tr>
 

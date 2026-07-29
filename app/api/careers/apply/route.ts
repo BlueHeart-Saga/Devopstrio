@@ -37,35 +37,38 @@ export async function POST(req: Request) {
       note,
     });
 
-    // 1. Send Admin Notification Email
-    await transporter.sendMail({
-      from: `"Devopstrio Careers" <${smtpUser}>`,
-      to: process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'info@devopstrioglobal.com',
-      replyTo: email,
-      subject: `Job Application for ${jobTitle}: ${name}`,
-      html: htmlContent,
+    // 1 & 2. Send Admin Notification & Automatic Thank You Auto-Reply Concurrently
+    const thankYouHtml = generateThankYouEmailHtml({
+      name,
+      formType: 'Job Application',
+      referenceDetails: [
+        { label: 'Position Applied', value: jobTitle },
+        { label: 'Applicant Name', value: name },
+      ],
     });
 
-    // 2. Send Automatic Thank You Confirmation Email to Applicant
-    try {
-      const thankYouHtml = generateThankYouEmailHtml({
-        name,
-        formType: 'Job Application',
-        referenceDetails: [
-          { label: 'Position Applied', value: jobTitle },
-          { label: 'Applicant Name', value: name },
-        ],
-      });
-
-      await transporter.sendMail({
+    const results = await Promise.allSettled([
+      transporter.sendMail({
+        from: `"Devopstrio Careers" <${smtpUser}>`,
+        to: process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'info@devopstrioglobal.com',
+        replyTo: email,
+        subject: `Job Application for ${jobTitle}: ${name}`,
+        html: htmlContent,
+      }),
+      transporter.sendMail({
         from: `"Devopstrio Careers" <${smtpUser}>`,
         to: email,
+        replyTo: 'info@devopstrioglobal.com',
         subject: `Application Confirmation: ${jobTitle} at Devopstrio`,
         html: thankYouHtml,
-      });
-    } catch (autoReplyError) {
-      console.warn('Failed to send job application thank-you auto-reply email:', autoReplyError);
-    }
+      }),
+    ]);
+
+    results.forEach((res, idx) => {
+      if (res.status === 'rejected') {
+        console.warn(`Career email dispatch #${idx + 1} issue:`, res.reason);
+      }
+    });
 
     return NextResponse.json(
       { success: true, message: 'Application sent successfully' },
