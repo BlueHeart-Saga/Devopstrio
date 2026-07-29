@@ -401,14 +401,22 @@ export function generateThankYouEmailHtml({ name, formType, referenceDetails }: 
                 </div>
               ` : ''}
 
-              <!-- Direct Action Buttons -->
-              <div style="padding-top: 10px; margin-bottom: 10px;">
-                <a href="${SITE_URL}/services" style="display: inline-block; padding: 12px 24px; background: linear-gradient(90deg, #e11d48 0%, #be123c 100%); color: #ffffff; text-decoration: none; font-size: 13px; font-weight: 700; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; margin-right: 10px; margin-bottom: 8px;">
-                  Explore Our Services &rarr;
-                </a>
-                <a href="${SITE_URL}/about" style="display: inline-block; padding: 12px 24px; background-color: #f4f4f5; color: #18181b; text-decoration: none; font-size: 13px; font-weight: 700; border-radius: 8px; border: 1px solid #e4e4e7; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;">
-                  Learn About Devopstrio
-                </a>
+              <!-- Direct Action Buttons (Centered, Premium Styled) -->
+              <div style="padding-top: 14px; margin-bottom: 24px; text-align: center;">
+                <table align="center" cellpadding="0" cellspacing="0" border="0" style="margin: 0 auto;">
+                  <tr>
+                    <td align="center" style="padding: 6px;">
+                      <a href="${SITE_URL}/services" target="_blank" style="display: inline-block; padding: 14px 28px; background: linear-gradient(135deg, #e11d48 0%, #be123c 60%, #9f1239 100%); color: #ffffff; text-decoration: none; font-size: 13px; font-weight: 700; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; border-radius: 50px; text-transform: uppercase; letter-spacing: 0.8px; box-shadow: 0 4px 14px rgba(225, 29, 72, 0.35);">
+                        Explore Our Services &rarr;
+                      </a>
+                    </td>
+                    <td align="center" style="padding: 6px;">
+                      <a href="${SITE_URL}/about" target="_blank" style="display: inline-block; padding: 14px 28px; background-color: #09090b; color: #ffffff; text-decoration: none; font-size: 13px; font-weight: 700; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; border-radius: 50px; border: 1px solid #27272a; text-transform: uppercase; letter-spacing: 0.8px; box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);">
+                        Learn About Devopstrio
+                      </a>
+                    </td>
+                  </tr>
+                </table>
               </div>
             </td>
           </tr>
