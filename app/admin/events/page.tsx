@@ -37,21 +37,26 @@ export default function EventsAdminPage() {
   const fetchItems = async () => {
     try {
       const res = await fetch(`/api/events?t=${Date.now()}`);
+      if (!res.ok) {
+        console.error("Server returned error status:", res.status);
+        return;
+      }
       const data = await res.json();
+      const list = Array.isArray(data) ? data : (data?.events || data?.data || []);
       
-      const normalizedData: EventRecord[] = data.map((item: any) => {
-        const id = String(item.id);
+      const normalizedData: EventRecord[] = list.map((item: any) => {
+        const id = String(item.id || item._id || "");
         if (item.images) return { ...item, id };
-          let parsedYear = item.year || new Date().toISOString().split('T')[0];
-          if (parsedYear.length === 4) {
-            parsedYear = `${parsedYear}-01-01`; // Normalize legacy "2024" to a valid date input format
-          }
-          return {
-            id,
-            eventName: item.eventName || item.category || "Untitled Event",
-            year: parsedYear,
-            images: item.src ? [{ src: item.src, tagname: item.title || "" }] : []
-          };
+        let parsedYear = item.year || new Date().toISOString().split('T')[0];
+        if (parsedYear.length === 4) {
+          parsedYear = `${parsedYear}-01-01`; // Normalize legacy "2024" to a valid date input format
+        }
+        return {
+          id,
+          eventName: item.eventName || item.category || "Untitled Event",
+          year: parsedYear,
+          images: item.src ? [{ src: item.src, tagname: item.title || "" }] : []
+        };
       });
       
       setItems(normalizedData);
