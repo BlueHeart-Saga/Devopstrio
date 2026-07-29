@@ -1,5 +1,4 @@
-import { MongoClient } from "mongodb";
-import dns from "dns";
+import { MongoClient, MongoClientOptions } from "mongodb";
 
 const MONGO_URI = process.env.MONGO_URI || "";
 const DB_NAME = process.env.DB_NAME || "podcast";
@@ -8,84 +7,51 @@ if (!MONGO_URI) {
   throw new Error("Please define the MONGO_URI environment variable inside .env");
 }
 
-// Resolves a mongodb+srv:// URI into a direct mongodb:// URI using public DNS resolvers
-async function resolveDirectUri(srvUri: string): Promise<string> {
-  if (!srvUri.startsWith("mongodb+srv://")) {
-    return srvUri;
-  }
+// Serverless-safe MongoDB connection options
+// - No custom DNS resolution (crashes in Vercel/Edge)
+// - Short timeouts for cold-start serverless environments
+// - TLS enabled by default for Atlas / Cosmos DB srv URIs
+const clientOptions: MongoClientOptions = {
+  serverSelectionTimeoutMS: 10000,   // 10s - allows time on cold start
+  connectTimeoutMS: 10000,
+  socketTimeoutMS: 30000,
+  maxPoolSize: 10,
+  minPoolSize: 0,
+  maxIdleTimeMS: 30000,
+  // For Azure Cosmos DB with mongodb+srv:// URIs, the driver
+  // handles SRV resolution internally without the Node dns module.
+  tls: MONGO_URI.startsWith("mongodb+srv://") ? true : undefined,
+  retryWrites: false,   // Cosmos DB does not support retryWrites
+};
 
-  const match = srvUri.match(/^mongodb\+srv:\/\/([^:]+):([^@]+)@([^/?#]+)(.*)$/);
-  if (!match) {
-    return srvUri;
-  }
-
-  const [, username, password, host, rest] = match;
-  const srvDomain = `_mongodb._tcp.${host}`;
-
-  const resolver = new dns.Resolver();
-  try {
-    resolver.setServers(["8.8.8.8", "8.8.4.4", "1.1.1.1"]);
-  } catch (dnsErr) {
-    console.warn("MongoDB client resolver: failed to set custom DNS servers:", dnsErr);
-  }
-
-  return new Promise((resolve) => {
-    resolver.resolveSrv(srvDomain, (err, addresses) => {
-      if (err || !addresses || addresses.length === 0) {
-        console.warn("MongoDB client resolver: DNS SRV resolution failed, falling back to original SRV URI:", err);
-        resolve(srvUri);
-        return;
-      }
-
-      const primary = addresses[0];
-      let directUri = `mongodb://${username}:${password}@${primary.name}:${primary.port}${rest || ""}`;
-
-      // Ensure required parameters for direct SSL/TLS connections (e.g. to Azure Cosmos DB)
-      const urlHasQuery = directUri.includes("?");
-      const separator = urlHasQuery ? "&" : "?";
-
-      if (!directUri.includes("tls=")) {
-        directUri += `${separator}tls=true`;
-      }
-      if (!directUri.includes("authMechanism=")) {
-        const sep = directUri.includes("?") ? "&" : "?";
-        directUri += `${sep}authMechanism=SCRAM-SHA-256`;
-      }
-      if (!directUri.includes("retrywrites=")) {
-        const sep = directUri.includes("?") ? "&" : "?";
-        directUri += `${sep}retrywrites=false`;
-      }
-
-      resolve(directUri);
-    });
-  });
+declare global {
+  // eslint-disable-next-line no-var
+  var _mongoClientPromise: Promise<MongoClient> | undefined;
 }
-
-const globalWithMongo = global as any;
 
 let clientPromise: Promise<MongoClient>;
 
-async function initClient(): Promise<MongoClient> {
-  const uri = await resolveDirectUri(MONGO_URI);
-  console.log("MongoDB initClient - Connection URI resolved to:", uri.replace(/:[^@]+@/, ":****@"));
-  const client = new MongoClient(uri, { serverSelectionTimeoutMS: 5000 });
+function createClientPromise(): Promise<MongoClient> {
+  const client = new MongoClient(MONGO_URI, clientOptions);
   return client.connect();
 }
 
 if (process.env.NODE_ENV === "development") {
-  if (!globalWithMongo._mongoClientPromise) {
-    globalWithMongo._mongoClientPromise = initClient();
+  // In development, reuse the global promise across HMR reloads
+  if (!global._mongoClientPromise) {
+    global._mongoClientPromise = createClientPromise();
   }
-  clientPromise = globalWithMongo._mongoClientPromise;
+  clientPromise = global._mongoClientPromise;
 } else {
-  clientPromise = initClient();
+  // In production (serverless), create a new connection per instance.
+  // The MongoClient pool handles re-use within the same warm instance.
+  clientPromise = createClientPromise();
 }
 
 export async function connectToDatabase() {
-  console.log("MongoDB connectToDatabase requested...");
-  const connectedClient = await clientPromise;
-  const db = connectedClient.db(DB_NAME);
-  return { client: connectedClient, db };
+  const client = await clientPromise;
+  const db = client.db(DB_NAME);
+  return { client, db };
 }
 
 export default clientPromise;

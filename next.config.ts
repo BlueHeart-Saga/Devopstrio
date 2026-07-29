@@ -18,23 +18,27 @@ const weImagineImages = [
 const ourSrc = "C:\\Users\\mani\\.gemini\\antigravity\\brain\\28b3bb03-4f36-4e1f-a274-983615f4fd03\\media__1780996390314.jpg";
 const ourDest = path.resolve(__dirname, "public", "assets", "Home-page", "innovation-bg.jpg");
 
-try {
-  if (fs.existsSync(srcFile)) {
-    fs.copyFileSync(srcFile, destFile);
-  }
-  if (fs.existsSync(ourSrc)) {
-    fs.copyFileSync(ourSrc, ourDest);
-  }
-  weImagineImages.forEach((item) => {
-    const fullSrc = path.join("C:\\Users\\mani\\.gemini\\antigravity\\brain\\8b832e29-763b-42c6-807d-39e2476e2aeb", item.src);
-    const fullDest = path.resolve(__dirname, "public", "assets", "Home-page", item.dest);
-    if (fs.existsSync(fullSrc)) {
-      fs.copyFileSync(fullSrc, fullDest);
+// Only copy local dev assets on the developer's machine (not in production builds)
+if (process.env.NODE_ENV !== "production") {
+  try {
+    if (fs.existsSync(srcFile)) {
+      fs.copyFileSync(srcFile, destFile);
     }
-  });
-} catch (e) {
-  console.error("FAILED TO COPY IMAGES:", e);
+    if (fs.existsSync(ourSrc)) {
+      fs.copyFileSync(ourSrc, ourDest);
+    }
+    weImagineImages.forEach((item) => {
+      const fullSrc = path.join("C:\\Users\\mani\\.gemini\\antigravity\\brain\\8b832e29-763b-42c6-807d-39e2476e2aeb", item.src);
+      const fullDest = path.resolve(__dirname, "public", "assets", "Home-page", item.dest);
+      if (fs.existsSync(fullSrc)) {
+        fs.copyFileSync(fullSrc, fullDest);
+      }
+    });
+  } catch (e) {
+    console.warn("Skipped local asset copy (dev-only):", e);
+  }
 }
+
 
 const nextConfig: NextConfig = {
   compress: true,

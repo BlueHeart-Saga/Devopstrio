@@ -391,11 +391,196 @@ const getServiceSubItemIcon = (name: string) => {
   return <Sparkles className="w-4 h-4 text-red-500" />;
 };
 
+const businessDomains = [
+  {
+    id: "innovate",
+    name: "INNOVATE",
+    subtitle: "AI, Data & Transformation",
+    icon: Brain,
+    serviceIds: ["ai-data-innovation", "digital-transformation", "data-engineering", "it-consulting"]
+  },
+  {
+    id: "build",
+    name: "BUILD",
+    subtitle: "Software, Cloud & DevOps",
+    icon: Code2,
+    serviceIds: ["software-development", "cloud-services", "devops-automation"]
+  },
+  {
+    id: "optimize",
+    name: "OPTIMIZE",
+    subtitle: "Security, Operations & QA",
+    icon: ShieldCheck,
+    serviceIds: ["cybersecurity", "managed-services", "qa-testing"]
+  }
+];
+
+const serviceDetailsMap: Record<string, {
+  id: string;
+  name: string;
+  href: string;
+  desc: string;
+  capabilities: { name: string; href: string }[];
+}> = {
+  "ai-data-innovation": {
+    id: "ai-data-innovation",
+    name: "AI & Data Innovation",
+    href: "/services/ai-data-innovation",
+    desc: "Enterprise LLMs, AI agents, deep learning models, RAG, and streaming data lakehouses.",
+    capabilities: [
+      { name: "Generative AI Solutions", href: "/services/ai-data-innovation/generative-ai-solutions" },
+      { name: "AI Agents & Automation", href: "/services/ai-data-innovation/ai-agents-automation" },
+      { name: "Machine Learning Engineering", href: "/services/ai-data-innovation/machine-learning-engineering" },
+      { name: "MLOps & AI Operations", href: "/services/ai-data-innovation/mlops-ai-operations" },
+      { name: "LLM Integration", href: "/services/ai-data-innovation/llm-integration" },
+      { name: "Computer Vision", href: "/services/ai-data-innovation/computer-vision" },
+      { name: "Natural Language Processing", href: "/services/ai-data-innovation/natural-language-processing" },
+      { name: "Predictive Analytics", href: "/services/ai-data-innovation/predictive-analytics" },
+      { name: "Business Intelligence", href: "/services/ai-data-innovation/business-intelligence" },
+      { name: "Data Governance", href: "/services/ai-data-innovation/data-governance" }
+    ]
+  },
+  "digital-transformation": {
+    id: "digital-transformation",
+    name: "Digital Transformation",
+    href: "/services/digital-transformation",
+    desc: "IT strategy, legacy mainframe refactoring, intelligent workflows, and business change coaching.",
+    capabilities: [
+      { name: "Process Automation", href: "/services/digital-transformation/process-automation" },
+      { name: "Intelligent Workflows", href: "/services/digital-transformation/intelligent-workflows" },
+      { name: "Enterprise Modernization", href: "/services/digital-transformation/enterprise-modernization" },
+      { name: "Legacy Modernization", href: "/services/digital-transformation/legacy-modernization" },
+      { name: "Business Transformation", href: "/services/digital-transformation/business-transformation" },
+      { name: "Change Management", href: "/services/digital-transformation/change-management" }
+    ]
+  },
+  "data-engineering": {
+    id: "data-engineering",
+    name: "Data Engineering",
+    href: "/services/data-engineering",
+    desc: "Snowflake data warehouses, Iceberg lakehouses, Airflow ETL pipelines, and streaming analytics.",
+    capabilities: [
+      { name: "Data Platform Development", href: "/services/data-engineering/data-platform-development" },
+      { name: "Data Warehousing", href: "/services/data-engineering/data-warehousing" },
+      { name: "Data Lakes & Lakehouse", href: "/services/data-engineering/data-lakes-lakehouse" },
+      { name: "ETL/ELT Pipelines", href: "/services/data-engineering/etl-elt-pipelines" },
+      { name: "Real-Time Data Processing", href: "/services/data-engineering/real-time-data-processing" },
+      { name: "Data Governance", href: "/services/data-engineering/data-quality-management" }
+    ]
+  },
+  "it-consulting": {
+    id: "it-consulting",
+    name: "IT Consulting",
+    href: "/services/it-consulting",
+    desc: "Architecture blueprints, public cloud budgeting, AI readiness, and tech roadmap planning.",
+    capabilities: [
+      { name: "Technology Consulting", href: "/services/it-consulting/technology-consulting" },
+      { name: "Enterprise Architecture", href: "/services/it-consulting/enterprise-architecture" },
+      { name: "Cloud Consulting", href: "/services/it-consulting/cloud-consulting" },
+      { name: "AI Consulting", href: "/services/it-consulting/ai-consulting" },
+      { name: "Cybersecurity Consulting", href: "/services/it-consulting/cybersecurity-consulting" },
+      { name: "IT Strategy & Roadmap", href: "/services/it-consulting/it-strategy-roadmap" }
+    ]
+  },
+  "software-development": {
+    id: "software-development",
+    name: "Software Development",
+    href: "/services/software-development",
+    desc: "React/Next.js web portals, Flutter mobile apps, multi-tenant SaaS, and gRPC APIs.",
+    capabilities: [
+      { name: "Enterprise App Development", href: "/services/software-development/enterprise-app-development" },
+      { name: "Web App Development", href: "/services/software-development/web-app-development" },
+      { name: "Mobile App Development", href: "/services/software-development/mobile-app-development" },
+      { name: "SaaS Product Development", href: "/services/software-development/saas-product-development" },
+      { name: "API Development & Integration", href: "/services/software-development/api-development-integration" },
+      { name: "Microservices Architecture", href: "/services/software-development/microservices-architecture" }
+    ]
+  },
+  "cloud-services": {
+    id: "cloud-services",
+    name: "Cloud Services",
+    href: "/services/cloud-services",
+    desc: "Azure landing zones, AWS EKS grids, GCP BigQuery pipelines, FinOps, and cloud security.",
+    capabilities: [
+      { name: "Azure Services", href: "/services/cloud-services/azure-services" },
+      { name: "AWS Services", href: "/services/cloud-services/aws-services" },
+      { name: "Google Cloud (GCP)", href: "/services/cloud-services/google-cloud-services" },
+      { name: "Cloud Migration", href: "/services/cloud-services/cloud-migration" },
+      { name: "Cloud Architecture", href: "/services/cloud-services/cloud-architecture" },
+      { name: "FinOps & Cost Optimization", href: "/services/cloud-services/finops-cost-optimization" },
+      { name: "Cloud Security", href: "/services/cloud-services/cloud-security" }
+    ]
+  },
+  "devops-automation": {
+    id: "devops-automation",
+    name: "DevOps & Automation",
+    href: "/services/devops-automation",
+    desc: "Terraform IaC, Kubernetes clusters, DevSecOps scanning, and SRE observability.",
+    capabilities: [
+      { name: "CI/CD Implementation", href: "/services/devops-automation/cicd-implementation" },
+      { name: "Platform Engineering", href: "/services/devops-automation/platform-engineering" },
+      { name: "Infrastructure as Code (IaC)", href: "/services/devops-automation/infrastructure-as-code" },
+      { name: "Kubernetes Services", href: "/services/devops-automation/kubernetes-services" },
+      { name: "DevSecOps", href: "/services/devops-automation/devsecops" },
+      { name: "Site Reliability Engineering (SRE)", href: "/services/devops-automation/site-reliability-engineering" }
+    ]
+  },
+  "cybersecurity": {
+    id: "cybersecurity",
+    name: "Cybersecurity",
+    href: "/services/cybersecurity",
+    desc: "24/7 SOC monitoring, penetration testing, Okta IAM, Zero Trust, and SOC2 compliance.",
+    capabilities: [
+      { name: "Security Assessment", href: "/services/cybersecurity/security-assessment" },
+      { name: "Vulnerability Management", href: "/services/cybersecurity/vulnerability-management" },
+      { name: "Penetration Testing", href: "/services/cybersecurity/penetration-testing" },
+      { name: "SOC Operations", href: "/services/cybersecurity/security-operations-center" },
+      { name: "Identity & Access Management", href: "/services/cybersecurity/identity-access-management" },
+      { name: "Zero Trust Architecture", href: "/services/cybersecurity/zero-trust-architecture" }
+    ]
+  },
+  "managed-services": {
+    id: "managed-services",
+    name: "Managed Services",
+    href: "/services/managed-services",
+    desc: "24/7 cloud upkeep, managed DevOps, application SLA support, and database DBA.",
+    capabilities: [
+      { name: "Managed Cloud Services", href: "/services/managed-services/managed-cloud" },
+      { name: "Managed DevOps Services", href: "/services/managed-services/managed-devops" },
+      { name: "Managed Security Operations", href: "/services/managed-services/managed-security" },
+      { name: "Application Support (SLA)", href: "/services/managed-services/application-support" },
+      { name: "Infrastructure Management", href: "/services/managed-services/infrastructure-management" },
+      { name: "Incident Management", href: "/services/managed-services/monitoring-incident-management" }
+    ]
+  },
+  "qa-testing": {
+    id: "qa-testing",
+    name: "QA & Testing",
+    href: "/services/qa-testing",
+    desc: "Playwright automation, k6 load testing, API Newman pipelines, and Mobile Appium farms.",
+    capabilities: [
+      { name: "Test Automation", href: "/services/qa-testing/test-automation" },
+      { name: "Performance Testing", href: "/services/qa-testing/performance-testing" },
+      { name: "Security Testing", href: "/services/qa-testing/security-testing" },
+      { name: "API Testing", href: "/services/qa-testing/api-testing" },
+      { name: "Mobile App Testing", href: "/services/qa-testing/mobile-app-testing" },
+      { name: "Quality Engineering", href: "/services/qa-testing/quality-engineering" }
+    ]
+  }
+};
+
 export function Navbar() {
   const pathname = usePathname();
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const [activeCategory, setActiveCategory] = useState("ai-data-innovation");
   const [activeEcoCategory, setActiveEcoCategory] = useState("partnerships");
+
+  // Executive 4-Column Services Navigation States
+  const [activeDomain, setActiveDomain] = useState<string>("innovate");
+  const [activeServiceId, setActiveServiceId] = useState<string>("ai-data-innovation");
+
+  const currentDomainObj = businessDomains.find((d) => d.id === activeDomain);
+  const currentServiceObj = serviceDetailsMap[activeServiceId] || serviceDetailsMap["ai-data-innovation"];
 
   interface SectionCategory {
     slug: string;
@@ -482,6 +667,8 @@ export function Navbar() {
     setIsVisible(true);
     setMobileOpen(false);
     setActiveMenu(null);
+    setActiveDomain("innovate");
+    setActiveServiceId("ai-data-innovation");
   }, [pathname]);
 
   useEffect(() => {
@@ -597,95 +784,162 @@ export function Navbar() {
                 Services <ChevronDown size={15} className={`transition-transform duration-300 ${activeMenu === "services" ? "rotate-180" : ""}`} />
               </Link>
               {activeMenu === "services" && (
-                <div className="absolute left-1/2 -translate-x-1/2 top-full mt-3 w-[1200px] max-w-[95vw] pointer-events-auto z-50">
-                  <div className="animate-fadeIn bg-black border border-zinc-900 rounded-2xl pt-8 px-8 pb-5 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.9)] grid grid-cols-[220px_200px_1fr] xl:grid-cols-[280px_240px_1fr] gap-x-4 xl:gap-x-8 gap-y-3 text-left relative">
+                <div className="absolute left-1/2 -translate-x-1/2 top-full mt-3 w-[1240px] max-w-[95vw] pointer-events-auto z-50">
+                  <div className="animate-fadeIn bg-black border border-zinc-900 rounded-2xl pt-7 px-7 pb-5 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.9)] grid grid-cols-[220px_190px_230px_1fr] gap-x-5 text-left relative">
 
                     {/* Gloss reflection line */}
                     <div className="absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-zinc-800 to-transparent pointer-events-none" />
 
-                    {/* Visual Promo Column (Services Interactive Blur & Expand) */}
-                  <div className="relative overflow-hidden rounded-2xl border border-zinc-800/90 p-6 flex flex-col justify-between min-h-[320px] h-full group bg-[#09090C] shadow-2xl transition-all duration-500 hover:border-red-500/50 cursor-pointer">
-                    <img
-                      src="/assets/wavebg/navbar/servicesdrop.jpeg"
-                      alt="Enterprise Acceleration"
-                      className="absolute inset-0 w-full h-full object-cover opacity-95 group-hover:opacity-70 group-hover:blur-md scale-100 group-hover:scale-105 transition-all duration-700 ease-out pointer-events-none"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent group-hover:bg-black/75 transition-all duration-500 pointer-events-none" />
+                    {/* Column 1: Visual Promo Card */}
+                    <div className="relative overflow-hidden rounded-2xl border border-zinc-800/90 p-5 flex flex-col justify-between min-h-[340px] h-full group bg-[#09090C] shadow-2xl transition-all duration-500 hover:border-red-500/50 cursor-pointer">
+                      <img
+                        src="/assets/wavebg/navbar/servicesdrop.jpeg"
+                        alt="Enterprise Acceleration"
+                        className="absolute inset-0 w-full h-full object-cover opacity-95 group-hover:opacity-70 group-hover:blur-md scale-100 group-hover:scale-105 transition-all duration-700 ease-out pointer-events-none"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent group-hover:bg-black/80 transition-all duration-500 pointer-events-none" />
 
-                    <div className="relative z-10">
-                      <h4 className="text-xl font-bold leading-snug text-white tracking-tight mb-2 font-sans drop-shadow-md">
-                        Powering <span className="text-red-500">Next-Gen</span> Solutions
-                      </h4>
-                      <div className="w-10 h-[3px] bg-red-600 rounded-full my-3" />
-                      
-                      {/* Description Text: Hidden initially, expands on hover */}
-                      <div className="transition-all duration-500 ease-out max-h-0 opacity-0 group-hover:max-h-[140px] group-hover:opacity-100 overflow-hidden">
-                        <p className="text-[11px] text-zinc-200 font-medium leading-relaxed pt-1">
-                          Enterprise multi-cloud architecture, AI systems, automated DevOps, and security operations tailored for global scale.
-                        </p>
+                      <div className="relative z-10">
+                        <h4 className="text-lg font-bold leading-snug text-white tracking-tight mb-2 font-sans drop-shadow-md">
+                          Powering <span className="text-red-500">Next-Gen</span> Solutions
+                        </h4>
+                        <div className="w-10 h-[3px] bg-red-600 rounded-full my-2.5" />
+
+                        {/* Description Text: Hidden initially, expands on hover */}
+                        <div className="transition-all duration-500 ease-out max-h-0 opacity-0 group-hover:max-h-[140px] group-hover:opacity-100 overflow-hidden">
+                          <p className="text-[11px] text-zinc-200 font-medium leading-relaxed pt-1">
+                            Enterprise multi-cloud architecture, AI systems, automated DevOps, and security operations tailored for global scale.
+                          </p>
+                        </div>
                       </div>
+
+                      <Link
+                        href="/services"
+                        onClick={() => setActiveMenu(null)}
+                        className="relative z-10 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-white group-hover:text-rose-400 transition-colors mt-6 group/cta"
+                      >
+                        <span>EXPLORE SERVICES</span>
+                        <span className="text-rose-500 text-sm group-hover/cta:translate-x-1 transition-transform">
+                          &rarr;
+                        </span>
+                      </Link>
                     </div>
 
-                    <Link
-                      href="/services"
-                      onClick={() => setActiveMenu(null)}
-                      className="relative z-10 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-white group-hover:text-rose-400 transition-colors mt-6 group/cta"
-                    >
-                      <span>EXPLORE SERVICES</span>
-                      <span className="text-rose-500 text-sm group-hover/cta:translate-x-1 transition-transform">
-                        &rarr;
-                      </span>
-                    </Link>
-                  </div>
+                    {/* Column 2: WHAT WE DO (3 Executive Pillars: INNOVATE, BUILD, OPTIMIZE) */}
+                    <div className="flex flex-col border-r border-zinc-900 pr-4 gap-2">
+                      {businessDomains.map((domain) => {
+                        const isActive = activeDomain === domain.id;
+                        const IconComp = domain.icon;
 
-                    {/* Middle sidebar with categories */}
-                    <div className="flex flex-col border-r border-zinc-900 pr-4 gap-1.5">
-                      <span className="text-xs font-mono tracking-widest text-zinc-400 uppercase block px-3 mb-2 font-semibold">CORE EXPERTISE</span>
-                      {serviceCategories.map((cat) => {
-                        const isActive = activeCategory === cat.id;
                         return (
-                          <Link
-                            key={cat.id}
-                            href={cat.href}
-                            onMouseEnter={() => setActiveCategory(cat.id)}
-                            onClick={() => {
-                              setActiveMenu(null);
+                          <div
+                            key={domain.id}
+                            onMouseEnter={() => {
+                              setActiveDomain(domain.id);
+                              if (domain.serviceIds.length > 0) {
+                                setActiveServiceId(domain.serviceIds[0]);
+                              }
                             }}
-                            className={`group flex items-center justify-between px-3.5 py-2.5 rounded-xl text-base font-semibold transition-all duration-200 outline-none text-left ${
+                            className={`group cursor-pointer p-3 rounded-xl transition-all duration-200 border text-left ${
                               isActive
-                                ? "bg-zinc-900/90 text-rose-500"
-                                : "text-zinc-300 hover:text-white hover:bg-zinc-900/50"
+                                ? "bg-zinc-900/90 border-rose-500/40 text-white shadow-md"
+                                : "bg-transparent border-transparent text-zinc-400 hover:text-white hover:bg-zinc-900/40"
                             }`}
                           >
-                            <div className="flex items-center gap-3">
-                              {getCategoryIcon(cat.id, isActive)}
-                              <span className="transition-transform duration-200 group-hover:translate-x-1">{cat.name}</span>
+                            <div className="flex items-center justify-between mb-0.5">
+                              <div className="flex items-center gap-2">
+                                <IconComp className={`w-4 h-4 ${isActive ? "text-rose-500" : "text-zinc-400 group-hover:text-white"}`} />
+                                <span className={`text-xs font-bold tracking-wider uppercase font-sans ${isActive ? "text-rose-500" : "text-zinc-200 group-hover:text-white"}`}>
+                                  {domain.name}
+                                </span>
+                              </div>
+                              {isActive && <span className="text-rose-500 text-xs font-bold">&rarr;</span>}
                             </div>
-                            {isActive && <span className="text-rose-500 text-sm font-bold">&rarr;</span>}
-                          </Link>
+                            <p className="text-[10px] text-zinc-400 group-hover:text-zinc-300 font-normal pl-6 leading-tight">
+                              {domain.subtitle}
+                            </p>
+                          </div>
                         );
                       })}
                     </div>
 
-                    {/* Right panel with active sub-services */}
-                    <div className="flex flex-col">
-                      <span className="text-xs font-mono tracking-widest text-zinc-400 uppercase block px-2 mb-2 font-semibold">STRATEGIC CAPABILITIES</span>
-                      <div className="max-h-[420px] overflow-y-auto overscroll-contain pr-2 custom-scrollbar">
-                        <div className="grid grid-cols-2 gap-x-6 gap-y-1">
-                          {serviceCategories.find(c => c.id === activeCategory)?.items.map((item) => (
+                    {/* Column 3: SOLUTIONS (Core Services under Active Pillar) */}
+                    <div className="flex flex-col border-r border-zinc-900/80 pr-4 gap-1.5">
+                      <span className="text-xs font-mono tracking-widest text-zinc-400 uppercase block px-1 mb-1 font-semibold">
+                        SOLUTIONS
+                      </span>
+                      <div className="flex flex-col gap-1">
+                        {currentDomainObj?.serviceIds.map((srvId) => {
+                          const srv = serviceDetailsMap[srvId];
+                          if (!srv) return null;
+                          const isSrvActive = activeServiceId === srv.id;
+
+                          return (
                             <Link
-                              key={item.name}
-                              href={item.href}
+                              key={srv.id}
+                              href={srv.href}
+                              onMouseEnter={() => setActiveServiceId(srv.id)}
                               onClick={() => setActiveMenu(null)}
-                              className="group/subitem flex items-center p-2.5 rounded-xl hover:bg-zinc-900/40 transition-colors"
+                              className={`group/srv flex items-center justify-between px-3 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 border ${
+                                isSrvActive
+                                  ? "bg-zinc-900 text-rose-400 border-rose-500/30 shadow-sm"
+                                  : "text-zinc-300 hover:text-white hover:bg-zinc-900/50 border-transparent"
+                              }`}
                             >
-                              <span className="text-base font-semibold text-white group-hover/subitem:text-rose-400 transition-colors leading-snug">
-                                {item.name}
-                              </span>
+                              <span className="line-clamp-1">{srv.name}</span>
+                              {isSrvActive && <ArrowUpRight className="w-3.5 h-3.5 text-rose-500 shrink-0" />}
                             </Link>
-                          ))}
-                        </div>
+                          );
+                        })}
                       </div>
+                    </div>
+
+                    {/* Column 4: KEY OFFERINGS (Dedicated Right-Most Column) */}
+                    <div className="flex flex-col pl-1">
+                      <div className="flex items-center justify-between mb-2.5 px-1">
+                        <span className="text-xs sm:text-sm font-mono tracking-widest text-rose-500/90 font-bold uppercase block">
+                          KEY OFFERINGS
+                        </span>
+                        {currentServiceObj && (
+                          <span className="text-xs text-white font-bold uppercase tracking-wider truncate max-w-[200px] bg-zinc-900/80 px-2.5 py-0.5 rounded-md border border-zinc-800">
+                            {currentServiceObj.name}
+                          </span>
+                        )}
+                      </div>
+
+                      {currentServiceObj && (
+                        <div className="bg-zinc-950/90 rounded-2xl p-5 border border-zinc-800/80 flex flex-col justify-between h-full min-h-[270px] shadow-lg animate-fadeIn">
+                          <div className="flex flex-col gap-2 max-h-[280px] overflow-y-auto pr-1 custom-scrollbar">
+                            {currentServiceObj.capabilities.map((cap) => (
+                              <Link
+                                key={cap.name}
+                                href={cap.href}
+                                onClick={() => setActiveMenu(null)}
+                                className="group/cap flex items-center justify-between py-2.5 px-3.5 rounded-xl bg-zinc-900/50 hover:bg-gradient-to-r hover:from-rose-950/40 hover:to-zinc-900 border border-zinc-800/60 hover:border-rose-500/50 hover:shadow-[0_0_15px_rgba(225,29,72,0.2)] transition-all duration-300"
+                              >
+                                <div className="flex items-center gap-3">
+                                  <span className="w-2 h-2 rounded-full bg-gradient-to-r from-rose-500 to-red-500 group-hover/cap:scale-125 shadow-[0_0_10px_rgba(225,29,72,0.8)] transition-transform shrink-0" />
+                                  <span className="text-sm font-semibold text-zinc-100 group-hover/cap:text-rose-400 group-hover/cap:translate-x-1 transition-all duration-200">
+                                    {cap.name}
+                                  </span>
+                                </div>
+                                <ArrowUpRight className="w-4 h-4 text-zinc-500 group-hover/cap:text-rose-400 group-hover/cap:translate-x-0.5 group-hover/cap:-translate-y-0.5 transition-all duration-200 shrink-0" />
+                              </Link>
+                            ))}
+                          </div>
+
+                          <div className="pt-3.5 mt-3 border-t border-zinc-900 flex items-center justify-between">
+                            <Link
+                              href={currentServiceObj.href}
+                              onClick={() => setActiveMenu(null)}
+                              className="text-xs font-bold text-rose-400 hover:text-rose-300 flex items-center gap-1.5 uppercase tracking-wider transition-colors group/foot"
+                            >
+                              <span>Explore All {currentServiceObj.name} Capabilities</span>
+                              <ArrowUpRight className="w-4 h-4 group-hover/foot:translate-x-0.5 group-hover/foot:-translate-y-0.5 transition-transform" />
+                            </Link>
+                          </div>
+                        </div>
+                      )}
                     </div>
 
                     {/* Mega Menu Footer */}
@@ -707,58 +961,29 @@ export function Navbar() {
                         </Link>
                         <span className="text-zinc-800">|</span>
                         <div className="flex items-center gap-2">
-                          <span className="text-zinc-400">Chat now:</span>
-                          <a
-                            href={`mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL}`}
-                            className="hover:text-rose-500 transition-colors text-zinc-200 font-semibold"
-                          >
-                            Email
+                          <span className="text-zinc-400 text-xs font-medium">Chat now:</span>
+                          <a href={`mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL}`} className="transition-all duration-200 hover:scale-110 hover:opacity-100 opacity-70" title="Email Us">
+                            <img src="/assets/social-icons/gmail.png" alt="Email" className="w-7 h-7 object-contain" />
                           </a>
-                          <span className="text-zinc-800">•</span>
-                          <a
-                            href="https://wa.me/447473063543"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="hover:text-rose-500 transition-colors text-zinc-200 font-semibold"
-                          >
-                            WhatsApp
+                          <a href="https://wa.me/447473063543" target="_blank" rel="noopener noreferrer" className="transition-all duration-200 hover:scale-110 hover:opacity-100 opacity-70" title="WhatsApp">
+                            <img src="/assets/social-icons/apple.png" alt="WhatsApp" className="w-7 h-7 object-contain" />
                           </a>
                         </div>
                       </div>
                       <div className="flex items-center gap-4">
                         <span className="text-xs font-semibold tracking-wider uppercase text-zinc-400">Connect With Us</span>
-                        <div className="flex items-center gap-4 border-l border-zinc-800 pl-4">
-                          <a
-                            href="https://www.linkedin.com/company/devopstrioglobal/posts/?feedView=all"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-xs sm:text-sm font-semibold tracking-wider text-zinc-300 hover:text-white transition-colors duration-200"
-                          >
-                            LinkedIn
+                        <div className="flex items-center gap-3 border-l border-zinc-800 pl-4">
+                          <a href="https://www.linkedin.com/company/devopstrioglobal/posts/?feedView=all" target="_blank" rel="noopener noreferrer" className="transition-all duration-200 hover:scale-110 hover:opacity-100 opacity-70" title="LinkedIn">
+                            <img src="/assets/social-icons/linkedin.svg" alt="LinkedIn" className="w-7 h-7 object-contain" />
                           </a>
-                          <a
-                            href="https://www.facebook.com/profile.php?id=61579126233218"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-xs sm:text-sm font-semibold tracking-wider text-zinc-300 hover:text-white transition-colors duration-200"
-                          >
-                            Facebook
+                          <a href="https://www.facebook.com/profile.php?id=61579126233218" target="_blank" rel="noopener noreferrer" className="transition-all duration-200 hover:scale-110 hover:opacity-100 opacity-70" title="Facebook">
+                            <img src="/assets/social-icons/facebook.svg" alt="Facebook" className="w-7 h-7 object-contain" />
                           </a>
-                          <a
-                            href="https://www.instagram.com/devopstrio_offcl/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-xs sm:text-sm font-semibold tracking-wider text-zinc-300 hover:text-white transition-colors duration-200"
-                          >
-                            Instagram
+                          <a href="https://www.instagram.com/devopstrio_offcl/" target="_blank" rel="noopener noreferrer" className="transition-all duration-200 hover:scale-110 hover:opacity-100 opacity-70" title="Instagram">
+                            <img src="/assets/social-icons/instagram.svg" alt="Instagram" className="w-7 h-7 object-contain" />
                           </a>
-                          <a
-                            href="https://www.youtube.com/@Devopstrioltd"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-xs sm:text-sm font-semibold tracking-wider text-zinc-300 hover:text-white transition-colors duration-200"
-                          >
-                            YouTube
+                          <a href="https://www.youtube.com/@Devopstrioltd" target="_blank" rel="noopener noreferrer" className="transition-all duration-200 hover:scale-110 hover:opacity-100 opacity-70" title="YouTube">
+                            <img src="/assets/social-icons/youtube.svg" alt="YouTube" className="w-7 h-7 object-contain" />
                           </a>
                         </div>
                       </div>
@@ -858,21 +1083,12 @@ export function Navbar() {
                         </Link>
                         <span className="text-zinc-800">|</span>
                         <div className="flex items-center gap-2">
-                          <span className="text-zinc-400">Chat now:</span>
-                          <a
-                            href={`mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL}`}
-                            className="hover:text-rose-500 transition-colors text-zinc-200 font-semibold"
-                          >
-                            Email
+                          <span className="text-zinc-400 text-xs font-medium">Chat now:</span>
+                          <a href={`mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL}`} className="transition-all duration-200 hover:scale-110 hover:opacity-100 opacity-70" title="Email Us">
+                            <img src="/assets/social-icons/gmail.png" alt="Email" className="w-7 h-7 object-contain" />
                           </a>
-                          <span className="text-zinc-800">•</span>
-                          <a
-                            href="https://wa.me/447473063543"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="hover:text-rose-500 transition-colors text-zinc-200 font-semibold"
-                          >
-                            WhatsApp
+                          <a href="https://wa.me/447473063543" target="_blank" rel="noopener noreferrer" className="transition-all duration-200 hover:scale-110 hover:opacity-100 opacity-70" title="WhatsApp">
+                            <img src="/assets/social-icons/apple.png" alt="WhatsApp" className="w-7 h-7 object-contain" />
                           </a>
                         </div>
                       </div>
@@ -1057,21 +1273,12 @@ export function Navbar() {
                         </Link>
                         <span className="text-zinc-800">|</span>
                         <div className="flex items-center gap-2">
-                          <span className="text-zinc-500">Chat now:</span>
-                          <a
-                            href={`mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL}`}
-                            className="hover:text-rose-500 transition-colors text-zinc-400"
-                          >
-                            Email
+                          <span className="text-zinc-500 text-xs font-medium">Chat now:</span>
+                          <a href={`mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL}`} className="transition-all duration-200 hover:scale-110 hover:opacity-100 opacity-70" title="Email Us">
+                            <img src="/assets/social-icons/gmail.png" alt="Email" className="w-7 h-7 object-contain" />
                           </a>
-                          <span className="text-zinc-800">•</span>
-                          <a
-                            href="https://wa.me/447473063543"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="hover:text-rose-500 transition-colors text-zinc-400"
-                          >
-                            WhatsApp
+                          <a href="https://wa.me/447473063543" target="_blank" rel="noopener noreferrer" className="transition-all duration-200 hover:scale-110 hover:opacity-100 opacity-70" title="WhatsApp">
+                            <img src="/assets/social-icons/apple.png" alt="WhatsApp" className="w-7 h-7 object-contain" />
                           </a>
                         </div>
                       </div>
@@ -1274,21 +1481,12 @@ export function Navbar() {
                         </Link>
                         <span className="text-zinc-800">|</span>
                         <div className="flex items-center gap-2">
-                          <span className="text-zinc-500">Chat now:</span>
-                          <a
-                            href={`mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL}`}
-                            className="hover:text-rose-500 transition-colors text-zinc-400"
-                          >
-                            Email
+                          <span className="text-zinc-500 text-xs font-medium">Chat now:</span>
+                          <a href={`mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL}`} className="transition-all duration-200 hover:scale-110 hover:opacity-100 opacity-70" title="Email Us">
+                            <img src="/assets/social-icons/gmail.png" alt="Email" className="w-7 h-7 object-contain" />
                           </a>
-                          <span className="text-zinc-800">•</span>
-                          <a
-                            href="https://wa.me/447473063543"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="hover:text-rose-500 transition-colors text-zinc-400"
-                          >
-                            WhatsApp
+                          <a href="https://wa.me/447473063543" target="_blank" rel="noopener noreferrer" className="transition-all duration-200 hover:scale-110 hover:opacity-100 opacity-70" title="WhatsApp">
+                            <img src="/assets/social-icons/apple.png" alt="WhatsApp" className="w-7 h-7 object-contain" />
                           </a>
                         </div>
                       </div>
@@ -1337,38 +1535,18 @@ export function Navbar() {
                     */}
                       <div className="flex items-center gap-4">
                         <span className="text-[10px] font-bold tracking-wider uppercase text-zinc-500">Connect With Us</span>
-                        <div className="flex items-center gap-4 border-l border-zinc-800 pl-4">
-                          <a
-                            href="https://www.linkedin.com/company/devopstrioglobal/posts/?feedView=all"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-[11px] font-bold tracking-widest uppercase text-zinc-400 hover:text-white transition-colors duration-200"
-                          >
-                            LinkedIn
+                        <div className="flex items-center gap-3 border-l border-zinc-800 pl-4">
+                          <a href="https://www.linkedin.com/company/devopstrioglobal/posts/?feedView=all" target="_blank" rel="noopener noreferrer" className="transition-all duration-200 hover:scale-110 hover:opacity-100 opacity-70" title="LinkedIn">
+                            <img src="/assets/social-icons/linkedin.svg" alt="LinkedIn" className="w-7 h-7 object-contain" />
                           </a>
-                          <a
-                            href="https://www.facebook.com/profile.php?id=61579126233218"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-[11px] font-bold tracking-widest uppercase text-zinc-400 hover:text-white transition-colors duration-200"
-                          >
-                            Facebook
+                          <a href="https://www.facebook.com/profile.php?id=61579126233218" target="_blank" rel="noopener noreferrer" className="transition-all duration-200 hover:scale-110 hover:opacity-100 opacity-70" title="Facebook">
+                            <img src="/assets/social-icons/facebook.svg" alt="Facebook" className="w-7 h-7 object-contain" />
                           </a>
-                          <a
-                            href="https://www.instagram.com/devopstrio_offcl/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-[11px] font-bold tracking-widest uppercase text-zinc-400 hover:text-white transition-colors duration-200"
-                          >
-                            Instagram
+                          <a href="https://www.instagram.com/devopstrio_offcl/" target="_blank" rel="noopener noreferrer" className="transition-all duration-200 hover:scale-110 hover:opacity-100 opacity-70" title="Instagram">
+                            <img src="/assets/social-icons/instagram.svg" alt="Instagram" className="w-7 h-7 object-contain" />
                           </a>
-                          <a
-                            href="https://www.youtube.com/@Devopstrioltd"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-[11px] font-bold tracking-widest uppercase text-zinc-400 hover:text-white transition-colors duration-200"
-                          >
-                            YouTube
+                          <a href="https://www.youtube.com/@Devopstrioltd" target="_blank" rel="noopener noreferrer" className="transition-all duration-200 hover:scale-110 hover:opacity-100 opacity-70" title="YouTube">
+                            <img src="/assets/social-icons/youtube.svg" alt="YouTube" className="w-7 h-7 object-contain" />
                           </a>
                         </div>
                       </div>
@@ -1470,21 +1648,12 @@ export function Navbar() {
                         </Link>
                         <span className="text-zinc-800">|</span>
                         <div className="flex items-center gap-2">
-                          <span className="text-zinc-500">Chat now:</span>
-                          <a
-                            href={`mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL}`}
-                            className="hover:text-rose-500 transition-colors text-zinc-400"
-                          >
-                            Email
+                          <span className="text-zinc-500 text-xs font-medium">Chat now:</span>
+                          <a href={`mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL}`} className="transition-all duration-200 hover:scale-110 hover:opacity-100 opacity-70" title="Email Us">
+                            <img src="/assets/social-icons/gmail.png" alt="Email" className="w-7 h-7 object-contain" />
                           </a>
-                          <span className="text-zinc-800">•</span>
-                          <a
-                            href="https://wa.me/447473063543"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="hover:text-rose-500 transition-colors text-zinc-400"
-                          >
-                            WhatsApp
+                          <a href="https://wa.me/447473063543" target="_blank" rel="noopener noreferrer" className="transition-all duration-200 hover:scale-110 hover:opacity-100 opacity-70" title="WhatsApp">
+                            <img src="/assets/social-icons/apple.png" alt="WhatsApp" className="w-7 h-7 object-contain" />
                           </a>
                         </div>
                       </div>
@@ -1533,38 +1702,18 @@ export function Navbar() {
                     */}
                       <div className="flex items-center gap-4">
                         <span className="text-[10px] font-bold tracking-wider uppercase text-zinc-500">Connect With Us</span>
-                        <div className="flex items-center gap-4 border-l border-zinc-800 pl-4">
-                          <a
-                            href="https://www.linkedin.com/company/devopstrioglobal/posts/?feedView=all"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-[11px] font-bold tracking-widest uppercase text-zinc-400 hover:text-white transition-colors duration-200"
-                          >
-                            LinkedIn
+                        <div className="flex items-center gap-3 border-l border-zinc-800 pl-4">
+                          <a href="https://www.linkedin.com/company/devopstrioglobal/posts/?feedView=all" target="_blank" rel="noopener noreferrer" className="transition-all duration-200 hover:scale-110 hover:opacity-100 opacity-70" title="LinkedIn">
+                            <img src="/assets/social-icons/linkedin.svg" alt="LinkedIn" className="w-7 h-7 object-contain" />
                           </a>
-                          <a
-                            href="https://www.facebook.com/profile.php?id=61579126233218"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-[11px] font-bold tracking-widest uppercase text-zinc-400 hover:text-white transition-colors duration-200"
-                          >
-                            Facebook
+                          <a href="https://www.facebook.com/profile.php?id=61579126233218" target="_blank" rel="noopener noreferrer" className="transition-all duration-200 hover:scale-110 hover:opacity-100 opacity-70" title="Facebook">
+                            <img src="/assets/social-icons/facebook.svg" alt="Facebook" className="w-7 h-7 object-contain" />
                           </a>
-                          <a
-                            href="https://www.instagram.com/devopstrio_offcl/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-[11px] font-bold tracking-widest uppercase text-zinc-400 hover:text-white transition-colors duration-200"
-                          >
-                            Instagram
+                          <a href="https://www.instagram.com/devopstrio_offcl/" target="_blank" rel="noopener noreferrer" className="transition-all duration-200 hover:scale-110 hover:opacity-100 opacity-70" title="Instagram">
+                            <img src="/assets/social-icons/instagram.svg" alt="Instagram" className="w-7 h-7 object-contain" />
                           </a>
-                          <a
-                            href="https://www.youtube.com/@Devopstrioltd"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-[11px] font-bold tracking-widest uppercase text-zinc-400 hover:text-white transition-colors duration-200"
-                          >
-                            YouTube
+                          <a href="https://www.youtube.com/@Devopstrioltd" target="_blank" rel="noopener noreferrer" className="transition-all duration-200 hover:scale-110 hover:opacity-100 opacity-70" title="YouTube">
+                            <img src="/assets/social-icons/youtube.svg" alt="YouTube" className="w-7 h-7 object-contain" />
                           </a>
                         </div>
                       </div>

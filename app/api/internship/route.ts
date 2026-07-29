@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
-import { generateInternshipEmailHtml } from '@/lib/email-templates';
+import { generateInternshipEmailHtml, generateThankYouEmailHtml } from '@/lib/email-templates';
 
 export async function POST(req: Request) {
   try {
@@ -61,6 +61,7 @@ export async function POST(req: Request) {
       });
     }
 
+    // 1. Send Admin Notification Email
     await transporter.sendMail({
       from: `"Devopstrio Internship" <${smtpUser}>`,
       to: process.env.NEXT_PUBLIC_INTERNSHIP_EMAIL || 'internship@devopstrioglobal.com',
@@ -69,6 +70,28 @@ export async function POST(req: Request) {
       html: htmlContent,
       attachments: attachments,
     });
+
+    // 2. Send Automatic Thank You Confirmation Email to Applicant
+    try {
+      const thankYouHtml = generateThankYouEmailHtml({
+        name: fullName,
+        formType: 'Internship Application',
+        referenceDetails: [
+          { label: 'Applicant Name', value: fullName },
+          { label: 'College / University', value: college || 'Provided' },
+          { label: 'Degree Program', value: degree || 'Provided' },
+        ],
+      });
+
+      await transporter.sendMail({
+        from: `"Devopstrio Careers & Talent" <${smtpUser}>`,
+        to: email,
+        subject: `Thank you for applying to Devopstrio Internship Program`,
+        html: thankYouHtml,
+      });
+    } catch (autoReplyError) {
+      console.warn('Failed to send internship thank-you auto-reply email:', autoReplyError);
+    }
 
     return NextResponse.json(
       { success: true, message: 'Application sent successfully' },

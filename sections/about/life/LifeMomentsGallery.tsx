@@ -184,8 +184,12 @@ export const LifeMomentsGallery = () => {
         </motion.div>
 
         {displayedImages.length === 0 && (
-          <div className="text-center py-24 text-zinc-500 font-medium">
-            No events found. Check the admin dashboard to add events.
+          <div className="text-center py-24 flex flex-col items-center gap-4">
+            <div className="text-5xl mb-2">✨</div>
+            <p className="text-white text-xl font-semibold tracking-tight">Our story is still being written.</p>
+            <p className="text-zinc-400 text-sm font-medium max-w-sm leading-relaxed">
+              Exciting moments, milestones, and memories are on their way. Stay tuned — the best is yet to come.
+            </p>
           </div>
         )}
 

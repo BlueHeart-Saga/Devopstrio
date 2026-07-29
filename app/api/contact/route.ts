@@ -5,6 +5,8 @@ import {
   generateScheduleCallEmailHtml,
   generateQuickContactEmailHtml,
   generateFeedbackEmailHtml,
+  generateThankYouEmailHtml,
+  ThankYouEmailProps,
 } from '@/lib/email-templates';
 
 export async function POST(req: Request) {
@@ -44,6 +46,7 @@ export async function POST(req: Request) {
 
     let htmlContent = '';
     let emailSubject = `New Contact Request from ${name}`;
+    let thankYouFormType: ThankYouEmailProps['formType'] = 'Contact Inquiry';
 
     if (isSchedule) {
       // Extract date, time, and company if embedded in message text
@@ -64,6 +67,7 @@ export async function POST(req: Request) {
         topic: message,
       });
       emailSubject = `Meeting Schedule Request: ${name}`;
+      thankYouFormType = 'Meeting Schedule';
     } else if (isFeedback) {
       htmlContent = generateFeedbackEmailHtml({
         name,
@@ -71,6 +75,7 @@ export async function POST(req: Request) {
         feedback: message || '',
       });
       emailSubject = `Customer Feedback Submission: ${name}`;
+      thankYouFormType = 'Feedback';
     } else if (isQuickContact) {
       htmlContent = generateQuickContactEmailHtml({
         name,
@@ -78,6 +83,7 @@ export async function POST(req: Request) {
         message: message || '',
       });
       emailSubject = `Quick Support Inquiry: ${name}`;
+      thankYouFormType = 'General Inquiry';
     } else {
       htmlContent = generateContactEmailHtml({
         name,
@@ -88,7 +94,7 @@ export async function POST(req: Request) {
       });
     }
 
-    // Send the email
+    // 1. Send Admin Notification Email
     await transporter.sendMail({
       from: `"Devopstrio Website" <${smtpUser}>`,
       to: toEmail || process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'info@devopstrioglobal.com',
@@ -96,6 +102,28 @@ export async function POST(req: Request) {
       subject: emailSubject,
       html: htmlContent,
     });
+
+    // 2. Send Automatic Thank You Confirmation Email to Submitter
+    try {
+      const thankYouHtml = generateThankYouEmailHtml({
+        name,
+        formType: thankYouFormType,
+        referenceDetails: [
+          { label: 'Form Category', value: thankYouFormType },
+          { label: 'Submitted Email', value: email },
+          ...(phone ? [{ label: 'Contact Phone', value: phone }] : []),
+        ],
+      });
+
+      await transporter.sendMail({
+        from: `"Devopstrio Team" <${smtpUser}>`,
+        to: email,
+        subject: `Thank you for contacting Devopstrio - Confirmation`,
+        html: thankYouHtml,
+      });
+    } catch (autoReplyError) {
+      console.warn('Failed to send thank-you auto-reply email:', autoReplyError);
+    }
 
     return NextResponse.json(
       { success: true, message: 'Email sent successfully' },

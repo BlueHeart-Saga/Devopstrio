@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
-import { generateCareerEmailHtml } from '@/lib/email-templates';
+import { generateCareerEmailHtml, generateThankYouEmailHtml } from '@/lib/email-templates';
 
 export async function POST(req: Request) {
   try {
@@ -37,6 +37,7 @@ export async function POST(req: Request) {
       note,
     });
 
+    // 1. Send Admin Notification Email
     await transporter.sendMail({
       from: `"Devopstrio Careers" <${smtpUser}>`,
       to: process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'info@devopstrioglobal.com',
@@ -44,6 +45,27 @@ export async function POST(req: Request) {
       subject: `Job Application for ${jobTitle}: ${name}`,
       html: htmlContent,
     });
+
+    // 2. Send Automatic Thank You Confirmation Email to Applicant
+    try {
+      const thankYouHtml = generateThankYouEmailHtml({
+        name,
+        formType: 'Job Application',
+        referenceDetails: [
+          { label: 'Position Applied', value: jobTitle },
+          { label: 'Applicant Name', value: name },
+        ],
+      });
+
+      await transporter.sendMail({
+        from: `"Devopstrio Careers" <${smtpUser}>`,
+        to: email,
+        subject: `Application Confirmation: ${jobTitle} at Devopstrio`,
+        html: thankYouHtml,
+      });
+    } catch (autoReplyError) {
+      console.warn('Failed to send job application thank-you auto-reply email:', autoReplyError);
+    }
 
     return NextResponse.json(
       { success: true, message: 'Application sent successfully' },
