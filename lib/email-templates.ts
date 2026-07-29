@@ -379,7 +379,7 @@ export function generateThankYouEmailHtml({ name, formType, referenceDetails }: 
                 ${customMessage}
               </p>
 
-              <div style="background-color: #fafafa; border: 1px solid #f4f4f5; border-left: 4px solid #e11d48; border-radius: 8px; padding: 16px 20px; margin-bottom: 24px;">
+              <div style="background-color: #fafafa; border: 1px solid #f4f4f5; border-left: 4px solid #e11d48; border-radius: 4px; padding: 16px 20px; margin-bottom: 24px;">
                 <p style="margin: 0 0 4px 0; font-size: 13px; font-weight: 700; color: #09090b;">
                   What Happens Next?
                 </p>
