@@ -6,7 +6,7 @@ import { BlobServiceClient } from "@azure/storage-blob";
 export const dynamic = 'force-dynamic';
 
 const AZURE_CONNECTION_STRING = process.env.AZURE_STORAGE_CONNECTION_STRING || "";
-const AZURE_CONTAINER = process.env.AZURE_STORAGE_CONTAINER || "media";
+const AZURE_CONTAINER = process.env.AZURE_STORAGE_CONTAINER || "devopstrio";
 
 // Helper to check if an image URL is used by other events
 async function isImageUrlUsedElsewhere(db: any, url: string, excludeEventId: ObjectId | string | number) {

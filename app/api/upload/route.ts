@@ -6,7 +6,7 @@ import crypto from "crypto";
 import { connectToDatabase } from "@/lib/mongodb";
 
 const AZURE_CONNECTION_STRING = process.env.AZURE_STORAGE_CONNECTION_STRING || "";
-const AZURE_CONTAINER = process.env.AZURE_STORAGE_CONTAINER || "media";
+const AZURE_CONTAINER = process.env.AZURE_STORAGE_CONTAINER || "devopstrio";
 
 async function getDatabase() {
   const { db } = await connectToDatabase();
