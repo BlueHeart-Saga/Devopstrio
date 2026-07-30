@@ -3,6 +3,7 @@ import { Metadata } from "next";
 import { ContactHero } from "@/sections/contact/ContactHero";
 import { ContactForm } from "@/sections/contact/ContactForm";
 import { DepartmentContacts } from "@/sections/contact/DepartmentContacts";
+import { WriteMessageForm } from "@/sections/contact/WriteMessageForm";
 import { OurLocations } from "@/sections/contact/OurLocations";
 import { GlobalPresence } from "@/sections/contact/GlobalPresence";
 import { WhyContactUs } from "@/sections/contact/WhyContactUs";
@@ -63,9 +64,14 @@ export default function ContactPage() {
           {/* <SvgWaveLine variant="smooth" /> */}
         </div>
         
-        {/* <SectionNavbar sections={contactSections} /> */}
-        <div id="form" className="relative z-10 bg-black">
+        {/* <div id="form" className="relative z-10 bg-black">
           <ContactForm />
+        </div> */}
+
+        <div id="contact-form" className="relative z-10 bg-black scroll-mt-20">
+          <div id="write-message">
+            <WriteMessageForm />
+          </div>
         </div>
 
         <div id="departments" className="relative z-10 bg-black">

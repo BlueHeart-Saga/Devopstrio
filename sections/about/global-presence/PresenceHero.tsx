@@ -48,7 +48,7 @@ export function PresenceHero() {
                 <ArrowRight size={14} />
               </Link>
               <Link
-                href="/contact"
+                href="/contact#contact-form"
                 className="inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase border border-zinc-500 hover:border-white bg-transparent hover:bg-white/5 text-white transition-all duration-300 hover:-translate-y-0.5 gap-2"
               >
                 <span>Talk to an Expert</span>

@@ -43,13 +43,13 @@ export function EngineeringStory() {
           
           <Reveal delay={0.1}>
             <p className="text-zinc-300 text-sm md:text-base leading-relaxed font-medium">
-              Our strength comes from building deep technical capabilities close to where our teams operate, while aligning every engagement to the expectations of global businesses. This means clients gain the benefit of dedicated engineering delivery, modern <Link href="/services/cloud-services" className="text-[#E11D48] hover:underline">cloud expertise</Link>, agile collaboration, and cost-efficient execution—without compromising on quality, governance, or long-term <Link href="/contact" className="text-[#E11D48] hover:underline">partnership</Link>.
+              Our strength comes from building deep technical capabilities close to where our teams operate, while aligning every engagement to the expectations of global businesses. This means clients gain the benefit of dedicated engineering delivery, modern <Link href="/services/cloud-services" className="text-[#E11D48] hover:underline">cloud expertise</Link>, agile collaboration, and cost-efficient execution—without compromising on quality, governance, or long-term <Link href="/contact#contact-form" className="text-[#E11D48] hover:underline">partnership</Link>.
             </p>
           </Reveal>
 
           <Reveal delay={0.15}>
             <p className="text-zinc-400 text-sm leading-relaxed">
-              Whether supporting a fast-growing startup, a mid-sized business, or a large <Link href="/services/digital-transformation" className="text-[#E11D48] hover:underline">enterprise transformation</Link> initiative, Devopstrio brings together the right people, processes, and platforms to deliver across borders with confidence. Feel free to <Link href="/contact" className="text-[#E11D48] hover:underline">reach out</Link> to our team.
+              Whether supporting a fast-growing startup, a mid-sized business, or a large <Link href="/services/digital-transformation" className="text-[#E11D48] hover:underline">enterprise transformation</Link> initiative, Devopstrio brings together the right people, processes, and platforms to deliver across borders with confidence. Feel free to <Link href="/contact#contact-form" className="text-[#E11D48] hover:underline">reach out</Link> to our team.
             </p>
           </Reveal>
         </div>

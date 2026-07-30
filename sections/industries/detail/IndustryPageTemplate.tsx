@@ -590,7 +590,7 @@ export function IndustryPageTemplate({
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link
-                href="/contact"
+                href="/contact#contact-form"
                 className="gap-2 inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white transition-all duration-300 hover:shadow-[0_0_25px_rgba(225,29,72,0.35)] hover:-translate-y-0.5"
               >
                 {cta.ctaBtnText} <ArrowUpRight size={14} className="stroke-[2.5]" />

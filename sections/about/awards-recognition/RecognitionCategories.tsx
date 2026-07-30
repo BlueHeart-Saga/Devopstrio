@@ -7,7 +7,7 @@ import Link from "next/link";
 const categories = [
   {
     title: "Delivery & Client Trust",
-    description: <>Recognition connected to project execution, reliability, and long-term enterprise client <Link href="/contact" className="text-[#E11D48] hover:underline">partnerships</Link>.</>,
+    description: <>Recognition connected to project execution, reliability, and long-term enterprise client <Link href="/contact#contact-form" className="text-[#E11D48] hover:underline">partnerships</Link>.</>,
     icon: <Handshake className="w-6 h-6 text-rose-500" />
   },
   {

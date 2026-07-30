@@ -53,7 +53,7 @@ export function DevSecOpsHeroOverview() {
       >
         <div className="flex flex-wrap items-center gap-4">
           <Link
-            href="/contact"
+            href="/contact#contact-form"
             className="inline-flex items-center gap-3 pl-6 pr-3 py-3 bg-white text-black font-semibold text-xs md:text-sm tracking-wider rounded-full hover:bg-zinc-200 transition-all duration-300 shadow-lg shadow-white/5"
           >
             Book a Security Assessment
@@ -62,7 +62,7 @@ export function DevSecOpsHeroOverview() {
             </div>
           </Link>
           <Link
-            href="/contact"
+            href="/contact#contact-form"
             className="inline-flex items-center gap-3 pl-6 pr-3 py-3 bg-transparent border border-white/20 text-white font-semibold text-xs md:text-sm tracking-wider rounded-full hover:bg-white/5 transition-all duration-300"
           >
             Talk to Our DevSecOps Team

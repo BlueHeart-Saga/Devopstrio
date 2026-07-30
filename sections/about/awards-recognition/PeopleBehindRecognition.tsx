@@ -42,7 +42,7 @@ export function PeopleBehindRecognition() {
                   Behind every recognition, milestone, and achievement is a team of <Link href="/about" className="text-[#E11D48] hover:underline">engineers, designers, and collaborators</Link> committed to building meaningful outcomes.
                 </p>
                 <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
-                  At Devopstrio, recognition is shared across the teams, ideas, partnerships, and learning culture that make progress possible. It is a collective validation of the talent and dedication that drive our <Link href="/contact" className="text-[#E11D48] hover:underline">global delivery</Link> forward.
+                  At Devopstrio, recognition is shared across the teams, ideas, partnerships, and learning culture that make progress possible. It is a collective validation of the talent and dedication that drive our <Link href="/contact#contact-form" className="text-[#E11D48] hover:underline">global delivery</Link> forward.
                 </p>
               </div>
             </Reveal>

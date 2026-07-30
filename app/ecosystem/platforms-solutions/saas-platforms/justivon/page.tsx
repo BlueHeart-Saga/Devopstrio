@@ -86,7 +86,7 @@ export default function JustivonProductPage() {
               </Reveal>
               <Reveal delay={0.3} className="flex flex-wrap gap-4">
                 <Link
-                  href="/contact"
+                  href="/contact#contact-form"
                   className="inline-flex items-center gap-3 pl-6 pr-3 py-3 bg-white text-black font-semibold text-xs md:text-sm tracking-wider rounded-full hover:bg-zinc-200 transition-all duration-300 shadow-lg"
                 >
                   Book Demo
@@ -95,7 +95,7 @@ export default function JustivonProductPage() {
                   </div>
                 </Link>
                 <Link
-                  href="/contact"
+                  href="/contact#contact-form"
                   className="gap-2 inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase border border-zinc-800 hover:border-zinc-700 bg-zinc-950/60 hover:bg-zinc-900 text-white transition-all duration-300"
                 >
                   Start Free Trial

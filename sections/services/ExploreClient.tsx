@@ -213,7 +213,7 @@ export function ExploreClient() {
                   </a>
                   <Link
                     className="inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase border border-zinc-850 hover:border-zinc-750 bg-zinc-950/60 hover:bg-zinc-900 text-white transition-all duration-300 hover:-translate-y-0.5"
-                    href="/contact"
+                    href="/contact#contact-form"
                   >
                     Consult an Architect
                   </Link>
@@ -678,7 +678,7 @@ export function ExploreClient() {
               <div className="pt-6 border-t border-zinc-900/60 mt-8 flex flex-wrap items-center justify-between gap-4">
                 <span className="text-[10px] font-semibold text-zinc-500">Align your technical workflows with clear business outcomes.</span>
                 <Link
-                  href="/contact"
+                  href="/contact#contact-form"
                   className="px-4 py-2.5 rounded-lg text-xs font-bold uppercase tracking-wider bg-rose-600 hover:bg-rose-500 text-white transition-colors inline-flex items-center gap-1.5"
                 >
                   Scope Engagement <ArrowRight className="w-3.5 h-3.5" />
@@ -842,7 +842,7 @@ export function ExploreClient() {
 
                 <div className="pt-6 border-t border-zinc-900 mt-6">
                   <Link
-                    href="/contact"
+                    href="/contact#contact-form"
                     className="w-full text-center py-2 rounded-lg text-[10px] font-bold uppercase tracking-wider bg-zinc-900 hover:bg-zinc-800 text-white border border-zinc-800 transition-colors inline-block"
                   >
                     Select Model
@@ -904,7 +904,7 @@ export function ExploreClient() {
                 <div className="pt-6 border-t border-zinc-900/60 mt-6 flex items-center justify-between">
                   <span className="text-[10px] text-zinc-500 font-semibold">Includes 90-day stabilization & runbooks.</span>
                   <Link
-                    href="/contact"
+                    href="/contact#contact-form"
                     className="text-xs font-bold text-rose-500 hover:text-rose-400 inline-flex items-center gap-1 group-hover:translate-x-0.5 transition-transform"
                   >
                     Inquire Package <ChevronRight className="w-4 h-4" />
@@ -1132,13 +1132,13 @@ export function ExploreClient() {
 
           <Reveal className="pt-4 flex flex-wrap gap-4 justify-center">
             <Link
-              href="/contact"
+              href="/contact#contact-form"
               className="px-8 py-4 rounded-lg text-xs font-bold uppercase tracking-wider bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white transition-all duration-300 hover:shadow-[0_0_30px_rgba(225,29,72,0.4)] hover:-translate-y-0.5"
             >
               Book a Consultation
             </Link>
             <Link
-              href="/contact"
+              href="/contact#contact-form"
               className="px-8 py-4 rounded-lg text-xs font-bold uppercase tracking-wider bg-zinc-900 border border-zinc-800 hover:bg-zinc-800 hover:border-zinc-700 text-white transition-all duration-300 hover:-translate-y-0.5"
             >
               Talk to a Service Specialist

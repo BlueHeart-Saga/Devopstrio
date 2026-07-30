@@ -167,7 +167,7 @@ export default function EuropeDeliveryHubPage() {
       >
         <div className="flex flex-wrap items-center justify-center gap-4 mt-8 mb-8">
           <Link
-            href="/contact"
+            href="/contact#contact-form"
             className="inline-flex items-center gap-3 pl-6 pr-3 py-3 bg-white text-black font-semibold text-xs md:text-sm tracking-wider rounded-full hover:bg-zinc-200 transition-all duration-300 shadow-lg shadow-white/5"
           >
             Contact Our Team
@@ -486,7 +486,7 @@ export default function EuropeDeliveryHubPage() {
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4">
             <Link
-              href="/contact"
+              href="/contact#contact-form"
               className="inline-flex items-center gap-3 pl-6 pr-3 py-3 bg-white text-black font-semibold text-xs md:text-sm tracking-wider rounded-full hover:bg-zinc-200 transition-all duration-300 shadow-[0_0_30px_rgba(255,255,255,0.05)] hover:shadow-[0_0_40px_rgba(225,29,72,0.2)]"
             >
               Talk to an Expert
@@ -495,7 +495,7 @@ export default function EuropeDeliveryHubPage() {
               </div>
             </Link>
             <Link
-              href="/contact"
+              href="/contact#contact-form"
               className="inline-flex items-center gap-3 px-6 py-3 bg-transparent border border-zinc-700 text-white font-semibold text-xs md:text-sm tracking-wider rounded-full hover:bg-zinc-900 transition-all duration-300"
             >
               Start Your Digital Transformation

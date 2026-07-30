@@ -190,7 +190,7 @@ const data = {
   cta: {
     ctaTitle: "Build your secure",
     ctaHighlight: "Healthcare portal",
-    ctaDesc: <>Book a developer demand session with our principal <Link href="/contact" className="text-[#E11D48] hover:underline">healthcare systems engineer</Link> to discuss compliance audits.</>,
+    ctaDesc: <>Book a developer demand session with our principal <Link href="/contact#contact-form" className="text-[#E11D48] hover:underline">healthcare systems engineer</Link> to discuss compliance audits.</>,
     ctaBtnText: "Consult Healthcare Engineer"
   },
   faqs: [

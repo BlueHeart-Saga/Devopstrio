@@ -337,7 +337,7 @@ export default function SafeSignProductPage() {
                   </p>
 
                   <Link
-                    href="/contact"
+                    href="/contact#contact-form"
                     className="inline-flex items-center gap-3 text-white font-bold text-xs tracking-widest uppercase group/link w-fit"
                   >
                     Deploy SafeSign
@@ -385,7 +385,7 @@ export default function SafeSignProductPage() {
               </button>
 
               <p className="text-sm text-zinc-500 font-medium">
-                Need a custom plan for large teams? <Link href="/contact" className="text-white hover:underline">Contact us</Link>.
+                Need a custom plan for large teams? <Link href="/contact#contact-form" className="text-white hover:underline">Contact us</Link>.
               </p>
             </div>
 

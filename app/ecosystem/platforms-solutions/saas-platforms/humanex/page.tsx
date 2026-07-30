@@ -398,7 +398,7 @@ export default function HumanexProductPage() {
               </button>
 
               <p className="text-sm text-zinc-500 font-medium">
-                Need a custom plan for large teams? <Link href="/contact" className="text-white hover:underline">Contact us</Link>.
+                Need a custom plan for large teams? <Link href="/contact#contact-form" className="text-white hover:underline">Contact us</Link>.
               </p>
             </div>
 

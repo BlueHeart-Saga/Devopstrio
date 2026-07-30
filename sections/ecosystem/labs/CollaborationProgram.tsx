@@ -162,7 +162,7 @@ export function CollaborationProgram() {
 
                 {/* Microsoft-style CTA Button */}
                 <Link
-                  href="/contact"
+                  href="/contact#contact-form"
                   className="flex items-center gap-4 group/btn"
                 >
                   <div className="w-8 h-8 rounded-lg bg-rose-600 flex items-center justify-center text-white group-hover/btn:bg-rose-500 transition-colors shadow-lg">

@@ -22,7 +22,7 @@ export function PartnershipsCTA() {
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4">
             <Link
-              href="/contact"
+              href="/contact#contact-form"
               className="inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase bg-[#E11D48] hover:bg-rose-600 text-white transition-all duration-300 hover:shadow-[0_0_20px_rgba(225,29,72,0.3)] hover:-translate-y-0.5 gap-2"
             >
               <span>Talk to Our Team</span>

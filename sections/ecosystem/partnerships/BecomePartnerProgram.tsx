@@ -93,7 +93,7 @@ export function BecomePartnerProgram() {
 
                   <div className="mt-8 pt-4 border-t border-zinc-800/60 group-hover:border-white/20 transition-colors duration-500">
                     <Link
-                      href="/contact"
+                      href="/contact#contact-form"
                       className="inline-flex items-center gap-1.5 text-xs font-mono font-semibold uppercase tracking-wider text-rose-500 group-hover:text-white transition-colors"
                     >
                       Apply Track

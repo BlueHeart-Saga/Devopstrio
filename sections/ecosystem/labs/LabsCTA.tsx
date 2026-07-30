@@ -36,7 +36,7 @@ export function LabsCTA() {
               Explore Research <ArrowUpRight size={14} />
             </Link>
             <Link
-              href="/contact"
+              href="/contact#contact-form"
               className="gap-2 inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase border border-zinc-850 hover:border-zinc-750 bg-zinc-950/60 hover:bg-zinc-900 text-white transition-all duration-300 hover:-translate-y-0.5"
             >
               <Mail size={14} className="text-rose-500 mr-1" /> Talk to Innovation Team

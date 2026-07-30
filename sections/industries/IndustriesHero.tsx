@@ -73,7 +73,7 @@ export function IndustriesHero({
           {/* CTA Connect Button */}
           <Reveal delay={0.3}>
             <a 
-              href="/contact" 
+              href="/contact#contact-form" 
               className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full text-xs font-bold uppercase tracking-wider text-white bg-[#E11D48] hover:bg-rose-700 transition-all duration-300 hover:shadow-[0_8px_32px_rgba(244,63,94,0.2)]"
             >
               Connect with us <ArrowUpRight size={14} className="stroke-[2.5]" />

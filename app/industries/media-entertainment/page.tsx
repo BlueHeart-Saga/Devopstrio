@@ -190,7 +190,7 @@ const data = {
   cta: {
     ctaTitle: "Scale your video",
     ctaHighlight: "Streaming network",
-    ctaDesc: <>Consult with our principal <Link href="/contact" className="text-[#E11D48] hover:underline">media solutions architect</Link> to optimize your transcoding setups and CDN delivery paths.</>,
+    ctaDesc: <>Consult with our principal <Link href="/contact#contact-form" className="text-[#E11D48] hover:underline">media solutions architect</Link> to optimize your transcoding setups and CDN delivery paths.</>,
     ctaBtnText: "Consult Media Architect"
   },
   faqs: [

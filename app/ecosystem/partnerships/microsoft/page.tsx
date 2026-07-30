@@ -492,7 +492,7 @@ export default function MicrosoftAllianceHub() {
               {/* CTAs */}
               <Reveal delay={0.4} className="flex flex-wrap gap-4">
                 <Link
-                  href="/contact"
+                  href="/contact#contact-form"
                   className="inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white transition-all duration-300 hover:shadow-[0_0_25px_rgba(225,29,72,0.35)] hover:-translate-y-0.5"
                 >
                   Talk to a Microsoft Expert
@@ -582,7 +582,7 @@ export default function MicrosoftAllianceHub() {
                     Whether you are migrating core databases, refactoring services to Azure Kubernetes Service, implementing zero-trust identity policies with Entra ID, or deploying private Azure OpenAI frameworks, we configure secure, scalable, and audit-ready architectures.
                   </p>
                   <Link
-                    href="/contact"
+                    href="/contact#contact-form"
                     className="group inline-flex items-center gap-2 text-rose-500 font-bold text-xs md:text-sm tracking-wider uppercase hover:text-rose-455 transition-colors"
                   >
                     Consult Our Microsoft Engineers
@@ -1054,7 +1054,7 @@ export default function MicrosoftAllianceHub() {
 
             <Reveal delay={0.3} className="flex flex-wrap justify-center gap-4">
               <Link
-                href="/contact"
+                href="/contact#contact-form"
                 className="inline-flex items-center gap-3 pl-6 pr-3 py-3 bg-white text-black font-semibold text-xs md:text-sm tracking-wider rounded-full hover:bg-zinc-200 transition-all duration-300 shadow-lg shadow-white/5"
               >
                 Talk to a Microsoft Expert
@@ -1063,7 +1063,7 @@ export default function MicrosoftAllianceHub() {
                 </div>
               </Link>
               <Link
-                href="/contact"
+                href="/contact#contact-form"
                 className="inline-flex items-center justify-center px-6 py-3.5 rounded-full text-xs font-bold tracking-wider uppercase border border-zinc-800 hover:border-zinc-750 bg-zinc-950/60 hover:bg-zinc-900 text-white transition-all duration-300"
               >
                 Start Your Azure Journey

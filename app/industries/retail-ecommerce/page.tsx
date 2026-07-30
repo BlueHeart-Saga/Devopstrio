@@ -190,7 +190,7 @@ const data = {
   cta: {
     ctaTitle: "Launch your scalable",
     ctaHighlight: "E-Commerce engine",
-    ctaDesc: <>Consult with our principal <Link href="/contact" className="text-[#E11D48] hover:underline">e-commerce solution architect</Link> to design a high-conversion checkout pipeline.</>,
+    ctaDesc: <>Consult with our principal <Link href="/contact#contact-form" className="text-[#E11D48] hover:underline">e-commerce solution architect</Link> to design a high-conversion checkout pipeline.</>,
     ctaBtnText: "Consult E-Commerce Architect"
   },
   faqs: [

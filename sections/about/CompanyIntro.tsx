@@ -100,7 +100,7 @@ export function CompanyIntro() {
         <Reveal delay={0.4}>
           <div className="flex justify-center">
             <a
-              href="/contact"
+              href="/contact#contact-form"
               className="inline-flex items-center gap-2 text-zinc-400 hover:text-rose-500 font-bold text-sm tracking-wider uppercase transition-colors group"
             >
               Connect with our architects

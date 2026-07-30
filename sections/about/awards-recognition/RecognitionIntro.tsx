@@ -9,7 +9,7 @@ export function RecognitionIntro() {
     {
       icon: <ShieldCheck className="w-6 h-6 text-rose-500" />,
       title: "Client Impact",
-      description: <>Recognition is strongest when it reflects measurable outcomes, trust, and long-term client <Link href="/contact" className="text-[#E11D48] hover:underline">collaboration</Link>.</>
+      description: <>Recognition is strongest when it reflects measurable outcomes, trust, and long-term client <Link href="/contact#contact-form" className="text-[#E11D48] hover:underline">collaboration</Link>.</>
     },
     {
       icon: <Cpu className="w-6 h-6 text-rose-500" />,

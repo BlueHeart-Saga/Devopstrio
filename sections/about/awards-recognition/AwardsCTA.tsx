@@ -17,12 +17,12 @@ export function AwardsCTA() {
             Build with a Team Focused on <br className="hidden md:block" /><span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-400 to-rose-600">Meaningful Progress</span>
           </h2>
           <p className="text-zinc-400 text-base md:text-lg leading-relaxed mb-10 max-w-2xl mx-auto">
-            Devopstrio continues to grow through strong delivery, continuous capability building, and a commitment to creating value across <a href="/services/cloud-services" className="text-[#E11D48] hover:underline">technology infrastructure</a>, operations, and <a href="/services/digital-transformation" className="text-[#E11D48] hover:underline">digital transformation</a>. If you’re looking for a partner focused on long-term impact, we’d love to <a href="/contact" className="text-[#E11D48] hover:underline">start the conversation</a>.
+            Devopstrio continues to grow through strong delivery, continuous capability building, and a commitment to creating value across <a href="/services/cloud-services" className="text-[#E11D48] hover:underline">technology infrastructure</a>, operations, and <a href="/services/digital-transformation" className="text-[#E11D48] hover:underline">digital transformation</a>. If you’re looking for a partner focused on long-term impact, we’d love to <a href="/contact#contact-form" className="text-[#E11D48] hover:underline">start the conversation</a>.
           </p>
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
-              href="/contact"
+              href="/contact#contact-form"
               className="px-8 py-4 bg-white text-black font-bold text-sm rounded-full hover:bg-zinc-200 transition-all flex items-center gap-2 group w-full sm:w-auto justify-center shadow-lg"
             >
               Talk to Our Team

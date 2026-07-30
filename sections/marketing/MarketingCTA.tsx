@@ -26,7 +26,7 @@ export function MarketingCTA({ onRequestCustom }: { onRequestCustom: () => void 
           </button>
 
           <Link
-            href="/contact"
+            href="/contact#contact-form"
             className="px-6 py-3.5 rounded-xl bg-zinc-900 hover:bg-zinc-800 text-white border border-zinc-800 font-bold text-xs uppercase tracking-wider transition-all flex items-center gap-2"
           >
             <Handshake className="w-4 h-4 text-rose-500" /> Contact Sales Team

@@ -484,7 +484,7 @@ export default function SAPStrategicAllianceHub() {
               {/* CTAs */}
               <Reveal delay={0.4} className="flex flex-wrap gap-4">
                 <Link
-                  href="/contact"
+                  href="/contact#contact-form"
                   className="inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-500 hover:to-cyan-500 text-white transition-all duration-300 hover:shadow-[0_0_25px_rgba(59,130,246,0.35)] hover:-translate-y-0.5"
                 >
                   Talk to SAP Experts
@@ -1310,7 +1310,7 @@ export default function SAPStrategicAllianceHub() {
 
           <Reveal delay={0.3} className="flex flex-wrap justify-center gap-4">
             <Link
-              href="/contact"
+              href="/contact#contact-form"
               className="inline-flex items-center gap-3 pl-6 pr-3 py-3 bg-white text-black font-semibold text-xs md:text-sm tracking-wider rounded-full hover:bg-zinc-200 transition-all duration-300 shadow-lg shadow-white/5"
             >
               Talk to SAP Experts
@@ -1319,7 +1319,7 @@ export default function SAPStrategicAllianceHub() {
               </div>
             </Link>
             <Link
-              href="/contact"
+              href="/contact#contact-form"
               className="gap-2 inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase border border-zinc-850 hover:border-zinc-750 bg-zinc-950/60 hover:bg-zinc-900 text-white transition-all duration-300 hover:-translate-y-0.5"
             >
               Schedule Discovery Workshop

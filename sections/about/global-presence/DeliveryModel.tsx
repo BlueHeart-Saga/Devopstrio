@@ -9,7 +9,7 @@ export function DeliveryModel() {
   const features = [
     {
       title: "Onshore Strategy & Leadership",
-      desc: <>Strategy, advisory, and system architecture are driven directly from our London Hub, ensuring absolute project alignment, compliance, and direct <Link href="/contact" className="text-[#E11D48] hover:underline">local accountability</Link>.</>,
+      desc: <>Strategy, advisory, and system architecture are driven directly from our London Hub, ensuring absolute project alignment, compliance, and direct <Link href="/contact#contact-form" className="text-[#E11D48] hover:underline">local accountability</Link>.</>,
       icon: <Building className="w-5 h-5 text-rose-500" />
     },
     {

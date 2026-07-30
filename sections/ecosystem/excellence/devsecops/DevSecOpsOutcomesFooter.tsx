@@ -184,7 +184,7 @@ export function DevSecOpsOutcomesFooter() {
           </p>
           <div className="flex flex-wrap justify-center items-center gap-4">
             <Link
-              href="/contact"
+              href="/contact#contact-form"
               className="inline-flex items-center gap-3 pl-6 pr-3 py-3 bg-white text-black font-semibold text-xs md:text-sm tracking-wider rounded-full hover:bg-zinc-200 transition-all duration-300 shadow-[0_0_30px_rgba(255,255,255,0.05)] hover:shadow-[0_0_40px_rgba(239,68,68,0.2)]"
             >
               Schedule a Security Consultation
@@ -193,7 +193,7 @@ export function DevSecOpsOutcomesFooter() {
               </div>
             </Link>
             <Link
-              href="/contact"
+              href="/contact#contact-form"
               className="inline-flex items-center gap-3 pl-6 pr-3 py-3 bg-transparent border border-white/20 text-white font-semibold text-xs md:text-sm tracking-wider rounded-full hover:bg-white/5 transition-all duration-300"
             >
               Explore DevSecOps Services

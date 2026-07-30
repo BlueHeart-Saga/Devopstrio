@@ -190,7 +190,7 @@ const data = {
   cta: {
     ctaTitle: "Modernize your cellular",
     ctaHighlight: "Network backend",
-    ctaDesc: <>Consult with our principal <Link href="/contact" className="text-[#E11D48] hover:underline">telecom network architect</Link> to optimize your billing databases and 5G telemetry logs.</>,
+    ctaDesc: <>Consult with our principal <Link href="/contact#contact-form" className="text-[#E11D48] hover:underline">telecom network architect</Link> to optimize your billing databases and 5G telemetry logs.</>,
     ctaBtnText: "Consult Telecom Architect"
   },
   faqs: [

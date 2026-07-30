@@ -189,7 +189,7 @@ const data = {
   cta: {
     ctaTitle: "Build your secure",
     ctaHighlight: "Fintech ledger",
-    ctaDesc: <>Book a dedicated workspace mapping session with our principal <Link href="/contact" className="text-[#E11D48] hover:underline">fintech solutions architect</Link> to design transaction-safe databases.</>,
+    ctaDesc: <>Book a dedicated workspace mapping session with our principal <Link href="/contact#contact-form" className="text-[#E11D48] hover:underline">fintech solutions architect</Link> to design transaction-safe databases.</>,
     ctaBtnText: "Consult Fintech Architect"
   },
   faqs: [

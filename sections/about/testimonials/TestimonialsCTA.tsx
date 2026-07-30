@@ -37,7 +37,7 @@ export const TestimonialsCTA = () => {
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <MotionLink
-              href="/contact"
+              href="/contact#contact-form"
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.97 }}
               className="inline-flex items-center gap-3 px-9 py-4 bg-white hover:bg-zinc-200 text-black rounded-xl font-semibold text-base transition-colors shadow-[0_0_35px_rgba(255,255,255,0.15)] hover:shadow-[0_0_55px_rgba(255,255,255,0.25)]"
@@ -46,7 +46,7 @@ export const TestimonialsCTA = () => {
               <ArrowRight className="w-5 h-5" />
             </MotionLink>
             <MotionLink
-              href="/contact"
+              href="/contact#contact-form"
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.97 }}
               className="inline-flex items-center gap-3 px-9 py-4 bg-zinc-900/60 hover:bg-zinc-900 text-white rounded-xl font-semibold text-base transition-colors border border-zinc-800 hover:border-zinc-600 backdrop-blur-sm"

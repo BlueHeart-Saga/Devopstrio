@@ -44,7 +44,7 @@ export const LifeFinalCTA = () => {
             </motion.a>
 
             <motion.a
-              href="/contact"
+              href="/contact#contact-form"
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.97 }}
               className="inline-flex items-center gap-3 px-8 py-4 bg-zinc-900/60 hover:bg-zinc-900 text-white rounded-xl font-semibold text-base transition-colors border border-zinc-800 hover:border-zinc-700 backdrop-blur-sm"

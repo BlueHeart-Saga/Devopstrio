@@ -35,7 +35,7 @@ export function HeroSection() {
         </>
       ),
       primaryBtn: { text: "Explore Services", href: "/services" },
-      secondaryBtn: { text: "Contact Us", href: "/contact" },
+      secondaryBtn: { text: "Contact Us", href: "/contact#contact-form" },
       image: "/assets/Home-page/homehero/Punitha.A.svg"
     },
 
@@ -53,7 +53,7 @@ export function HeroSection() {
         </>
       ),
       primaryBtn: { text: "Explore Services", href: "/services" },
-      secondaryBtn: { text: "Contact Us", href: "/contact" },
+      secondaryBtn: { text: "Contact Us", href: "/contact#contact-form" },
       image: "/assets/Home-page/homehero/Subbiah_Muthu.M.svg"
     },
     {
@@ -70,7 +70,7 @@ export function HeroSection() {
         </>
       ),
       primaryBtn: { text: "Explore Services", href: "/services" },
-      secondaryBtn: { text: "Contact Us", href: "/contact" },
+      secondaryBtn: { text: "Contact Us", href: "/contact#contact-form" },
       image: "/assets/Home-page/homehero/Kishore.P.svg"
     },
     {
@@ -87,7 +87,7 @@ export function HeroSection() {
         </>
       ),
       primaryBtn: { text: "Explore Services", href: "/services" },
-      secondaryBtn: { text: "Contact Us", href: "/contact" },
+      secondaryBtn: { text: "Contact Us", href: "/contact#contact-form" },
       image: "/assets/Home-page/homehero/Ooviya.R.svg"
     },
 
@@ -105,7 +105,7 @@ export function HeroSection() {
         </>
       ),
       primaryBtn: { text: "Explore Services", href: "/services" },
-      secondaryBtn: { text: "Contact Us", href: "/contact" },
+      secondaryBtn: { text: "Contact Us", href: "/contact#contact-form" },
       image: "/assets/Home-page/homehero/Thangalakshmi.M.svg"
     },
     {
@@ -122,7 +122,7 @@ export function HeroSection() {
         </>
       ),
       primaryBtn: { text: "Explore Services", href: "/services" },
-      secondaryBtn: { text: "Contact Us", href: "/contact" },
+      secondaryBtn: { text: "Contact Us", href: "/contact#contact-form" },
       image: "/assets/Home-page/homehero/Sermaraja.V.svg"
     },
     {
@@ -139,7 +139,7 @@ export function HeroSection() {
         </>
       ),
       primaryBtn: { text: "Explore Services", href: "/services" },
-      secondaryBtn: { text: "Contact Us", href: "/contact" },
+      secondaryBtn: { text: "Contact Us", href: "/contact#contact-form" },
       image: "/assets/Home-page/homehero/Sudalairajan.A.svg"
     },
     {
@@ -156,7 +156,7 @@ export function HeroSection() {
         </>
       ),
       primaryBtn: { text: "Explore Services", href: "/services" },
-      secondaryBtn: { text: "Contact Us", href: "/contact" },
+      secondaryBtn: { text: "Contact Us", href: "/contact#contact-form" },
       image: "/assets/Home-page/homehero/Sagadevan.S.svg"
     },
     {
@@ -173,7 +173,7 @@ export function HeroSection() {
         </>
       ),
       primaryBtn: { text: "Explore Services", href: "/services" },
-      secondaryBtn: { text: "Contact Us", href: "/contact" },
+      secondaryBtn: { text: "Contact Us", href: "/contact#contact-form" },
       image: "/assets/Home-page/homehero/Ananthalakshmi.svg"
     },
     {
@@ -190,7 +190,7 @@ export function HeroSection() {
         </>
       ),
       primaryBtn: { text: "Explore Services", href: "/services" },
-      secondaryBtn: { text: "Contact Us", href: "/contact" },
+      secondaryBtn: { text: "Contact Us", href: "/contact#contact-form" },
       image: "/assets/Home-page/homehero/Hamsavarthiny.P.svg"
     },
     {
@@ -207,7 +207,7 @@ export function HeroSection() {
         </>
       ),
       primaryBtn: { text: "Explore Services", href: "/services" },
-      secondaryBtn: { text: "Contact Us", href: "/contact" },
+      secondaryBtn: { text: "Contact Us", href: "/contact#contact-form" },
       image: "/assets/Home-page/homehero/Saravanakumar.s.svg"
     },
     {
@@ -224,7 +224,7 @@ export function HeroSection() {
         </>
       ),
       primaryBtn: { text: "Explore Services", href: "/services" },
-      secondaryBtn: { text: "Contact Us", href: "/contact" },
+      secondaryBtn: { text: "Contact Us", href: "/contact#contact-form" },
       image: "/assets/Home-page/homehero/Suryaprakash s.svg"
     },
     {
@@ -241,7 +241,7 @@ export function HeroSection() {
         </>
       ),
       primaryBtn: { text: "Explore Services", href: "/services" },
-      secondaryBtn: { text: "Contact Us", href: "/contact" },
+      secondaryBtn: { text: "Contact Us", href: "/contact#contact-form" },
       image: "/assets/Home-page/homehero/Umamaheswari R.svg"
     }
   ];

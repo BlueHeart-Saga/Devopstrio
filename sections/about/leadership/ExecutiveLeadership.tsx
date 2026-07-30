@@ -377,7 +377,7 @@ export const ExecutiveLeadership = () => {
                       </p>
                     </div>
                     <a
-                      href="/contact"
+                      href="/contact#contact-form"
                       className="inline-flex items-center gap-1.5 px-4 py-2 bg-zinc-900 border border-zinc-800 hover:border-zinc-700 text-white hover:text-[#FF1744] text-[11px] font-bold rounded-full transition-all w-fit shadow-md active:scale-95 group/btn relative z-10"
                     >
                       Apply Now
@@ -465,7 +465,7 @@ export const ExecutiveLeadership = () => {
                       </p>
                     </div>
                     <a
-                      href="/contact"
+                      href="/contact#contact-form"
                       className="inline-flex items-center gap-1.5 px-4 py-2 bg-zinc-900 border border-zinc-800 hover:border-zinc-700 text-white hover:text-[#FF1744] text-[11px] font-bold rounded-full transition-all w-fit shadow-md active:scale-95 group/btn relative z-10"
                     >
                       Join Us

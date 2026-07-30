@@ -52,7 +52,7 @@ const DataPlatformOverview = () => {
                 Scale intelligence across your organization, embedding trusted data into how work gets done, decisions are made, and outcomes are delivered.
               </p>
               <Link
-                href="/contact"
+                href="/contact#contact-form"
                 className="px-6 py-3 rounded-full text-xs font-bold tracking-wider uppercase bg-white text-black hover:bg-zinc-200 transition-all duration-300 shadow-md shadow-white/5"
               >
                 Find out how
@@ -80,7 +80,7 @@ const DataPlatformOverview = () => {
               Move from data fragmentation to business impact with expert platforms and guidance.
             </p>
             <Link
-              href="/contact"
+              href="/contact#contact-form"
               className="px-6 py-3 rounded-full text-xs font-bold tracking-wider uppercase border border-zinc-850 hover:border-zinc-800 bg-zinc-900/40 text-white hover:bg-zinc-900/80 transition-all duration-300"
             >
               Explore platform details
@@ -118,7 +118,7 @@ const DataPlatformOverview = () => {
                 {/* Arrow Link Button at Bottom */}
                 <div className="px-6 md:px-8 pb-8 pt-2">
                   <Link
-                    href="/contact"
+                    href="/contact#contact-form"
                     className="inline-flex items-center gap-3 text-xs font-bold tracking-wider uppercase text-zinc-300 hover:text-white transition-colors duration-300 group/link"
                   >
                     <div className="w-6 h-6 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-400 group-hover/link:text-rose-500 group-hover/link:bg-rose-500/10 transition-colors">
@@ -195,7 +195,7 @@ const DataChallenges = () => {
                       Save engineering overhead by replacing custom ingestion scripts and manual spreadsheets with an automated, fully governed source of truth.
                     </p>
                     <Link
-                      href="/contact"
+                      href="/contact#contact-form"
                       className="px-5 py-3 rounded-full text-xs font-bold tracking-wider uppercase bg-white text-black hover:bg-zinc-200 transition-all duration-300 shadow-md shadow-white/5"
                     >
                       Find out how
@@ -229,7 +229,7 @@ const DataChallenges = () => {
 
                       {/* Link at bottom */}
                       <div className="mt-5">
-                        <Link href="/contact" className="text-xs font-bold text-rose-500 hover:text-rose-400 inline-flex items-center gap-1.5 transition-all">
+                        <Link href="/contact#contact-form" className="text-xs font-bold text-rose-500 hover:text-rose-400 inline-flex items-center gap-1.5 transition-all">
                           Learn more <ChevronRight className="w-3 h-3 animate-pulse" />
                         </Link>
                       </div>
@@ -779,7 +779,7 @@ const AIAnalyticsIntegration = () => {
               The platform prepares clean, governed, and scalable datasets that support business intelligence dashboards, machine learning models, predictive analytics, and Generative AI initiatives.
             </p>
             <Link
-              href="/contact"
+              href="/contact#contact-form"
               className="px-6 py-3 rounded-full text-xs font-bold tracking-wider uppercase bg-white text-black hover:bg-zinc-200 transition-all duration-300 shadow-md shadow-white/5"
             >
               Analyze Your Pipeline
@@ -985,7 +985,7 @@ const IndustryUseCases = () => {
                       Deploy custom data integration pipelines and zero trust compliance profiles tailored for unique sector environments.
                     </p>
                     <Link
-                      href="/contact"
+                      href="/contact#contact-form"
                       className="px-5 py-3 rounded-full text-xs font-bold tracking-wider uppercase bg-white text-black hover:bg-zinc-200 transition-all duration-300 shadow-md shadow-white/5"
                     >
                       Secure Your Sector
@@ -1019,7 +1019,7 @@ const IndustryUseCases = () => {
 
                       {/* Link at bottom */}
                       <div className="mt-5">
-                        <Link href="/contact" className="text-xs font-semibold text-rose-500 hover:text-rose-400 hover:underline inline-flex items-center gap-1.5 transition-all">
+                        <Link href="/contact#contact-form" className="text-xs font-semibold text-rose-500 hover:text-rose-400 hover:underline inline-flex items-center gap-1.5 transition-all">
                           Learn more <ChevronRight className="w-3 h-3" />
                         </Link>
                       </div>
@@ -1322,7 +1322,7 @@ const PlatformCTA = () => {
         <Reveal delay={0.1}>
           <div className="flex flex-wrap justify-center gap-4">
             <Link
-              href="/contact"
+              href="/contact#contact-form"
               className="inline-flex items-center gap-3 pl-6 pr-3 py-3.5 bg-white text-black font-semibold text-xs md:text-sm tracking-wider rounded-full hover:bg-zinc-200 transition-all duration-300 shadow-[0_0_30px_rgba(255,255,255,0.05)]"
             >
               Schedule a Platform Demo
@@ -1331,7 +1331,7 @@ const PlatformCTA = () => {
               </div>
             </Link>
             <Link
-              href="/contact"
+              href="/contact#contact-form"
               className="px-6 py-4 rounded-full text-xs md:text-sm font-bold tracking-wider uppercase border border-zinc-800 hover:border-zinc-700 bg-zinc-950/60 hover:bg-zinc-900 text-white transition-all duration-300"
             >
               Speak with a Data Expert
@@ -1380,7 +1380,7 @@ export default function DataPlatformPage() {
       >
         <div className="flex flex-wrap justify-center gap-4">
           <Link
-            href="/contact"
+            href="/contact#contact-form"
             className="inline-flex items-center gap-3 pl-6 pr-3 py-3 bg-white text-black font-semibold text-xs md:text-sm tracking-wider rounded-full hover:bg-zinc-200 transition-all duration-300 shadow-lg shadow-white/5"
           >
             Request Platform Demo
@@ -1389,7 +1389,7 @@ export default function DataPlatformPage() {
             </div>
           </Link>
           <Link
-            href="/contact"
+            href="/contact#contact-form"
             className="px-6 py-4 rounded-full text-xs md:text-sm font-bold tracking-wider uppercase border border-zinc-800 hover:border-zinc-700 bg-zinc-950/60 hover:bg-zinc-900 text-white transition-all duration-300"
           >
             Talk to a Data Expert

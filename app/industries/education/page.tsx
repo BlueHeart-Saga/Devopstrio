@@ -190,7 +190,7 @@ const data = {
   cta: {
     ctaTitle: "Build your secure",
     ctaHighlight: "Learning platform",
-    ctaDesc: <>Consult with our principal <Link href="/contact" className="text-[#E11D48] hover:underline">education tech architect</Link> to design virtual classroom tools and student grade databases.</>,
+    ctaDesc: <>Consult with our principal <Link href="/contact#contact-form" className="text-[#E11D48] hover:underline">education tech architect</Link> to design virtual classroom tools and student grade databases.</>,
     ctaBtnText: "Consult EdTech Architect"
   },
   faqs: [

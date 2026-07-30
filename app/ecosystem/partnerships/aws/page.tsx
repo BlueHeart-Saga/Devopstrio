@@ -356,7 +356,7 @@ export default function AWSSteategicAllianceHub() {
               {/* CTAs */}
               <Reveal delay={0.4} className="flex flex-wrap gap-4">
                 <Link
-                  href="/contact"
+                  href="/contact#contact-form"
                   className="inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white transition-all duration-300 hover:shadow-[0_0_25px_rgba(225,29,72,0.35)] hover:-translate-y-0.5"
                 >
                   Talk to an AWS Expert
@@ -811,7 +811,7 @@ export default function AWSSteategicAllianceHub() {
 
           <Reveal delay={0.3} className="flex flex-wrap justify-center gap-4">
             <Link
-              href="/contact"
+              href="/contact#contact-form"
               className="inline-flex items-center gap-3.5 pl-6 pr-3.5 py-3.5 bg-white text-black font-bold text-xs tracking-wider uppercase rounded-full hover:bg-zinc-200 transition-all duration-300 shadow-lg shadow-white/5"
             >
               Schedule AWS Consultation

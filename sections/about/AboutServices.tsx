@@ -173,7 +173,7 @@ export function AboutServices() {
                 {/* Footer Action Link */}
                 <div className="px-3 pb-2 pt-2 border-t border-zinc-800/40 mt-auto">
                   <a
-                    href="/contact"
+                    href="/contact#contact-form"
                     className="inline-flex items-center gap-3 group/footer w-fit transition-all duration-300"
                   >
                     <span className="w-8 h-8 rounded-lg bg-zinc-800 group-hover/footer:bg-[#E11D48] text-white flex items-center justify-center transition-colors duration-300 border border-zinc-700 group-hover/footer:border-[#E11D48]">

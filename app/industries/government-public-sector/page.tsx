@@ -190,7 +190,7 @@ const data = {
   cta: {
     ctaTitle: "Modernize your civic",
     ctaHighlight: "Cloud systems",
-    ctaDesc: <>Consult with our principal <Link href="/contact" className="text-[#E11D48] hover:underline">gov-tech solutions architect</Link> to evaluate your legacy databases and cloud security.</>,
+    ctaDesc: <>Consult with our principal <Link href="/contact#contact-form" className="text-[#E11D48] hover:underline">gov-tech solutions architect</Link> to evaluate your legacy databases and cloud security.</>,
     ctaBtnText: "Consult Gov-Tech Architect"
   },
   faqs: [

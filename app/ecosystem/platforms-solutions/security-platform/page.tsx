@@ -727,7 +727,7 @@ const IndustryUseCases = () => {
                       Deploy custom playbooks and zero trust compliance profiles tailored for unique sector environments.
                     </p>
                     <Link
-                      href="/contact"
+                      href="/contact#contact-form"
                       className="px-5 py-3 rounded-full text-xs font-bold tracking-wider uppercase bg-white text-black hover:bg-zinc-200 transition-all duration-300 shadow-md shadow-white/5"
                     >
                       Secure Your Sector
@@ -761,7 +761,7 @@ const IndustryUseCases = () => {
 
                       {/* Link at bottom */}
                       <div className="mt-5">
-                        <Link href="/contact" className="text-xs font-semibold text-rose-500 hover:text-rose-400 hover:underline inline-flex items-center gap-1.5 transition-all">
+                        <Link href="/contact#contact-form" className="text-xs font-semibold text-rose-500 hover:text-rose-400 hover:underline inline-flex items-center gap-1.5 transition-all">
                           Learn more <ChevronRight className="w-3 h-3" />
                         </Link>
                       </div>
@@ -848,7 +848,7 @@ const RelatedSolutions = () => {
               <div className="p-6 bg-zinc-950/40 border border-zinc-900 rounded-2xl flex flex-col justify-between min-h-[170px] hover:border-zinc-800 transition-all duration-300">
                 <h3 className="text-base font-bold text-white mb-2 tracking-tight">{item.title}</h3>
                 <p className="text-xs text-zinc-400 leading-relaxed font-bold mb-4">{item.desc}</p>
-                <Link href="/contact" className="text-xs text-rose-500 font-bold hover:underline flex items-center gap-1">
+                <Link href="/contact#contact-form" className="text-xs text-rose-500 font-bold hover:underline flex items-center gap-1">
                   Learn More <ArrowUpRight size={12} />
                 </Link>
               </div>
@@ -943,7 +943,7 @@ const SecurityCTA = () => {
         <Reveal delay={0.1}>
           <div className="flex flex-wrap justify-center gap-4">
             <Link
-              href="/contact"
+              href="/contact#contact-form"
               className="inline-flex items-center gap-3 pl-6 pr-3 py-3 bg-white text-black font-semibold text-xs md:text-sm tracking-wider rounded-full hover:bg-zinc-200 transition-all duration-300 shadow-[0_0_30px_rgba(255,255,255,0.05)]"
             >
               Schedule a Security Assessment
@@ -952,7 +952,7 @@ const SecurityCTA = () => {
               </div>
             </Link>
             <Link
-              href="/contact"
+              href="/contact#contact-form"
               className="px-6 py-3.5 rounded-full text-xs md:text-sm font-bold tracking-wider uppercase border border-zinc-800 hover:border-zinc-700 bg-zinc-950/60 hover:bg-zinc-900 text-white transition-all duration-300"
             >
               Talk to Our Security Team
@@ -997,7 +997,7 @@ export default function SecurityPlatformPage() {
       >
         <div className="flex flex-wrap justify-center gap-4">
           <Link
-            href="/contact"
+            href="/contact#contact-form"
             className="inline-flex items-center gap-3 pl-6 pr-3 py-3 bg-white text-black font-semibold text-xs md:text-sm tracking-wider rounded-full hover:bg-zinc-200 transition-all duration-300 shadow-lg shadow-white/5"
           >
             Request Security Assessment
@@ -1006,7 +1006,7 @@ export default function SecurityPlatformPage() {
             </div>
           </Link>
           <Link
-            href="/contact"
+            href="/contact#contact-form"
             className="px-6 py-4 rounded-full text-xs md:text-sm font-bold tracking-wider uppercase border border-zinc-800 hover:border-zinc-700 bg-zinc-950/60 hover:bg-zinc-900 text-white transition-all duration-300"
           >
             Talk to a Security Expert

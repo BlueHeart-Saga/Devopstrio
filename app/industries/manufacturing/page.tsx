@@ -190,7 +190,7 @@ const data = {
   cta: {
     ctaTitle: "Upgrade your plant",
     ctaHighlight: "IoT infrastructure",
-    ctaDesc: <>Consult with our principal <Link href="/contact" className="text-[#E11D48] hover:underline">industrial solutions architect</Link> to review your machinery logs and supply chain data.</>,
+    ctaDesc: <>Consult with our principal <Link href="/contact#contact-form" className="text-[#E11D48] hover:underline">industrial solutions architect</Link> to review your machinery logs and supply chain data.</>,
     ctaBtnText: "Request Industrial Audit"
   },
   faqs: [

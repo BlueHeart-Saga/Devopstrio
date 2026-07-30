@@ -20,7 +20,7 @@ export function DepartmentContacts() {
   };
 
   return (
-    <section id="department-contacts" className="w-full py-16 md:py-24 bg-[#030303] text-white relative overflow-hidden font-sans">
+    <section id="department-contacts" className="w-full py-8 md:py-12 bg-[#030303] text-white relative overflow-hidden font-sans">
       
       {/* Background ambient lighting */}
       <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-rose-950/10 rounded-full blur-[140px] pointer-events-none" />
@@ -74,7 +74,7 @@ export function DepartmentContacts() {
                 <div className="w-12 h-12 rounded-2xl bg-rose-500/10 border border-rose-500/20 flex items-center justify-center text-rose-500 mb-6 group-hover:scale-110 transition-transform">
                   <Phone size={22} />
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-2">📞 Call Us Directly</h3>
+                <h3 className="text-2xl font-bold text-white mb-2">Call Us Directly</h3>
                 <p className="text-xs text-zinc-400 font-bold mb-6">
                   Speak directly with our engineering and consulting offices in the UK and India.
                 </p>
@@ -116,7 +116,7 @@ export function DepartmentContacts() {
                 <div className="w-12 h-12 rounded-2xl bg-rose-500/10 border border-rose-500/20 flex items-center justify-center text-rose-500 mb-6 group-hover:scale-110 transition-transform">
                   <Mail size={22} />
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-2">✉️ Email Us</h3>
+                <h3 className="text-2xl font-bold text-white mb-2">Email Us</h3>
                 <p className="text-xs text-zinc-400 font-bold mb-6">
                   Official email channels for general, HR, careers, legal, and support inquiries.
                 </p>

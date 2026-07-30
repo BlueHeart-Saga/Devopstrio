@@ -133,7 +133,7 @@ export default function DevOpsPlatformPage() {
         ]}
       >
         <Link
-          href="/contact"
+          href="/contact#contact-form"
           className="inline-flex items-center gap-3 pl-6 pr-3 py-3 bg-white text-black font-semibold text-xs md:text-sm tracking-wider rounded-full hover:bg-zinc-200 transition-all duration-300 shadow-lg shadow-white/5"
         >
           Talk To Platform Engineers
@@ -188,7 +188,7 @@ export default function DevOpsPlatformPage() {
                 Devopstrio empowers 5,000+ engineering teams to <span className="text-rose-400 font-semibold">reduce cognitive load</span>, deploy <span className="text-rose-400 font-semibold">repository templates</span>, and configure environments — <span className="text-rose-400 font-semibold">without manual tickets</span>.
               </p>
 
-              <Link href="/contact" className="inline-flex items-center justify-center px-8 py-4 bg-rose-600 hover:bg-rose-500 text-white font-bold rounded-lg transition-colors shadow-[0_0_20px_rgba(52,211,153,0.2)]">
+              <Link href="/contact#contact-form" className="inline-flex items-center justify-center px-8 py-4 bg-rose-600 hover:bg-rose-500 text-white font-bold rounded-lg transition-colors shadow-[0_0_20px_rgba(52,211,153,0.2)]">
                 Request a demo
               </Link>
             </Reveal>
@@ -943,7 +943,7 @@ export default function DevOpsPlatformPage() {
             Connect with our system engineers to build unified Golden Paths.
           </p>
           <Link
-            href="/contact"
+            href="/contact#contact-form"
             className="inline-flex items-center gap-3 pl-6 pr-3 py-3 bg-white text-black font-semibold text-xs md:text-sm tracking-wider rounded-full hover:bg-zinc-200 transition-all duration-300 shadow-[0_0_30px_rgba(255,255,255,0.05)] hover:shadow-[0_0_40px_rgba(225,29,72,0.2)]"
           >
             Talk To Platform Engineers

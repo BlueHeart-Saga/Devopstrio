@@ -166,7 +166,7 @@ export function Leadership() {
                 </blockquote>
 
                 <a
-                  href="/contact"
+                  href="/contact#contact-form"
                   className="inline-flex items-center gap-2 text-sm font-semibold text-white hover:text-rose-400 transition-colors w-fit group/link"
                 >
                   Connect with Manikandan

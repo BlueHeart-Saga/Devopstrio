@@ -126,7 +126,7 @@ export default function SoftwareEngineeringPage() {
         ]}
       >
         <Link
-          href="/contact"
+          href="/contact#contact-form"
           className="inline-flex items-center gap-3 pl-6 pr-3 py-3 bg-white text-black font-semibold text-xs md:text-sm tracking-wider rounded-full hover:bg-zinc-200 transition-all duration-300 shadow-lg shadow-white/5"
         >
           Consult Software Architects
@@ -374,7 +374,7 @@ export default function SoftwareEngineeringPage() {
             Partner with our engineering team to build scalable software solutions and deploy modern frameworks.
           </p>
           <Link
-            href="/contact"
+            href="/contact#contact-form"
             className="inline-flex items-center gap-3 pl-6 pr-3 py-3 bg-white text-black font-semibold text-xs md:text-sm tracking-wider rounded-full hover:bg-zinc-200 transition-all duration-300 shadow-[0_0_30px_rgba(255,255,255,0.05)] hover:shadow-[0_0_40px_rgba(225,29,72,0.2)]"
           >
             Consult Software Architects

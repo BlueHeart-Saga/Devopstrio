@@ -22,7 +22,7 @@ const trustPoints = [
   },
   {
     title: "A Stronger Partnership Foundation",
-    description: <>Clients and partners benefit from working with a highly regulated team that values credibility, improvement, and long-term <Link href="/contact" className="text-[#E11D48] hover:underline">relationships</Link>.</>,
+    description: <>Clients and partners benefit from working with a highly regulated team that values credibility, improvement, and long-term <Link href="/contact#contact-form" className="text-[#E11D48] hover:underline">relationships</Link>.</>,
     icon: <Focus className="w-5 h-5 text-white" />
   }
 ];
