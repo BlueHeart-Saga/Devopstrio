@@ -246,7 +246,7 @@ export default function JustivonProductPage() {
             Partner with our solution architects to deploy the platform or request a customized managed environment.
           </p>
           <a
-            href="#contact-form"
+            href="/contact#contact-form"
             className="inline-flex items-center gap-3 pl-6 pr-3 py-3 bg-white text-black font-semibold text-xs md:text-sm tracking-wider rounded-full hover:bg-zinc-200 transition-all duration-300"
           >
             Consult Product Architects

@@ -1,10 +1,9 @@
 "use client";
 
 import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { CheckCircle2, X } from "lucide-react";
+import { motion } from "framer-motion";
+import { CheckCircle2 } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
-import Link from "next/link";
 
 const devopstrioServices = [
   "AI & Data Innovation",
@@ -21,7 +20,6 @@ const devopstrioServices = [
 ];
 
 export function ContactForm() {
-  const [showForm, setShowForm] = useState(false);
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -72,24 +70,13 @@ export function ContactForm() {
     }
   };
 
-  React.useEffect(() => {
-    const handleHash = () => {
-      if (window.location.hash === '#contact-form') {
-        setShowForm(true);
-      }
-    };
-    handleHash();
-    window.addEventListener('hashchange', handleHash);
-    return () => window.removeEventListener('hashchange', handleHash);
-  }, []);
-
   return (
-    <section id="contact-form" className="w-full min-h-[700px] bg-[#030303] py-16 md:py-24 flex items-center justify-center font-sans relative overflow-hidden">
+    <section id="contact-form" className="w-full bg-[#030303] pt-4 pb-12 md:pt-2 md:pb-16 flex items-center justify-center font-sans relative overflow-hidden">
 
       <div className="w-full max-w-[1100px] mx-auto px-6 relative z-10 [perspective:1500px]">
 
         {/* ── Header ─────────────────────────────────────────────────────── */}
-        <Reveal className="mb-14 text-center max-w-3xl mx-auto flex flex-col items-center">
+        <Reveal className="mb-6 md:mb-8 text-center max-w-3xl mx-auto flex flex-col items-center">
           <div className="flex items-center justify-center gap-2 mb-3">
             <span className="text-[10px] font-bold tracking-[0.22em] uppercase text-zinc-500">
               Start a Conversation
@@ -103,68 +90,32 @@ export function ContactForm() {
           </p>
         </Reveal>
 
-        <AnimatePresence mode="wait">
-          {!showForm ? (
-            <motion.div
-              key="banner"
-              initial={{ rotateX: 90, opacity: 0 }}
-              animate={{ rotateX: 0, opacity: 1 }}
-              exit={{ rotateX: -90, opacity: 0 }}
-              transition={{ duration: 0.5, ease: "easeInOut" }}
-              className="w-full bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl overflow-hidden flex flex-col items-center justify-center min-h-[450px] shadow-2xl relative p-10 md:p-16 text-center transform-gpu"
-            >
-              <h2 className="text-4xl md:text-6xl lg:text-[76px] font-medium text-white tracking-tight mb-6 leading-[1.05]">
-                Fuelling
-                <svg className="inline-block mx-2 md:mx-4 w-10 md:w-16 lg:w-20 h-auto text-rose-500 -mt-3 drop-shadow-[0_0_15px_rgba(225,29,72,0.3)]" viewBox="0 0 46 29" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M2.5 26.5L14.5 14.5L25.5 21.5L43.5 3.5M43.5 3.5H30.5M43.5 3.5V16.5" stroke="currentColor" strokeWidth="5" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-                growth<br />with every deployment
-              </h2>
-              <p className="text-zinc-400 text-base md:text-lg lg:text-xl font-medium max-w-2xl mb-12">
-                From <Link href="/services/cloud-services" className="text-rose-500 hover:underline">cloud architecture</Link> to <Link href="/services/ai-data-innovation" className="text-rose-500 hover:underline">AI automation</Link>, we craft enterprise solutions that scale your business on autopilot.
-              </p>
-              <div className="flex flex-col sm:flex-row items-center gap-6">
-                <button
-                  onClick={() => setShowForm(true)}
-                  className="px-8 py-4 bg-white text-black rounded-full text-sm md:text-base font-bold shadow-[0_15px_30px_rgba(255,255,255,0.1)] hover:scale-105 hover:bg-zinc-200 hover:shadow-[0_20px_40px_rgba(255,255,255,0.15)] transition-all"
-                >
-                  Start a conversation
-                </button>
-                <button
-                  onClick={() => setShowForm(true)}
-                  className="flex items-center gap-2.5 px-6 py-4 text-white text-sm md:text-base font-bold hover:text-rose-400 transition-colors group"
-                >
-                  <div className="w-9 h-9 rounded-full border border-white/20 bg-white/5 flex items-center justify-center flex-shrink-0 group-hover:border-rose-500/50 group-hover:bg-rose-500/10 transition-colors">
-                    <svg width="10" height="12" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg" className="ml-0.5">
-                      <path d="M13.2001 7.15174C13.8562 7.53818 13.8562 8.46182 13.2001 8.84826L1.87943 15.5147C1.21175 15.908 0.368307 15.4265 0.368307 14.6664L0.368307 1.33355C0.368307 0.573539 1.21175 0.0919934 1.87943 0.485303L13.2001 7.15174Z" fill="currentColor" />
-                    </svg>
-                  </div>
-                  Learn more
-                </button>
-              </div>
-            </motion.div>
-          ) : (
-            <motion.div
-              key="form"
-              initial={{ rotateX: 90, opacity: 0 }}
-              animate={{ rotateX: 0, opacity: 1 }}
-              exit={{ rotateX: -90, opacity: 0 }}
-              transition={{ duration: 0.5, ease: "easeInOut" }}
-              className="w-full bg-[#131313] rounded-3xl overflow-hidden flex flex-col lg:flex-row min-h-[500px] shadow-2xl relative transform-gpu"
-            >
+        {/* ── Initial Card (Commented Out) ──────────────────────────────────
+        <div className="w-full bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl overflow-hidden flex flex-col items-center justify-center min-h-[450px] shadow-2xl relative p-10 md:p-16 text-center transform-gpu">
+          <h2 className="text-4xl md:text-6xl lg:text-[76px] font-medium text-white tracking-tight mb-6 leading-[1.05]">
+            Fuelling growth with every deployment
+          </h2>
+          <p className="text-zinc-400 text-base md:text-lg lg:text-xl font-medium max-w-2xl mb-12">
+            From cloud architecture to AI automation, we craft enterprise solutions that scale your business on autopilot.
+          </p>
+          <div className="flex flex-col sm:flex-row items-center gap-6">
+            <button className="px-8 py-4 bg-white text-black rounded-full text-sm md:text-base font-bold">
+              Start a conversation
+            </button>
+            <button className="flex items-center gap-2.5 px-6 py-4 text-white text-sm md:text-base font-bold">
+              Learn more
+            </button>
+          </div>
+        </div>
+        ─────────────────────────────────────────────────────────────────── */}
 
-              {/* Close Button Top Right */}
-              <button
-                onClick={() => {
-                  setShowForm(false);
-                  if (window.location.hash === '#contact-form') {
-                    history.pushState("", document.title, window.location.pathname + window.location.search);
-                  }
-                }}
-                className="absolute top-5 right-5 w-9 h-9 rounded-full border border-white/10 flex items-center justify-center text-white/50 hover:text-white hover:bg-white/10 transition-all z-20"
-              >
-                <X size={16} strokeWidth={1.5} />
-              </button>
+        <motion.div
+          key="form"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, ease: "easeInOut" }}
+          className="w-full bg-[#131313] rounded-3xl overflow-hidden flex flex-col lg:flex-row min-h-[500px] shadow-2xl relative transform-gpu"
+        >
 
               {/* LEFT SIDE: Custom Theme Area */}
               <div className="w-full lg:w-[45%] p-8 md:p-12 flex flex-col justify-between relative overflow-hidden bg-[#050505] text-white">
@@ -322,8 +273,6 @@ export function ContactForm() {
               </div>
 
             </motion.div>
-          )}
-        </AnimatePresence>
       </div>
     </section>
   );

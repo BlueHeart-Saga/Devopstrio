@@ -103,7 +103,7 @@ export function LabsEcosystem() {
               {/* Card bottom button */}
               <div className="relative z-10 mt-8">
                 <Link
-                  href="#contact"
+                  href="/contact#contact-form"
                   className="gap-2 w-fit inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white transition-all duration-300 hover:shadow-[0_0_25px_rgba(225,29,72,0.35)] hover:-translate-y-0.5"
                 >
                   Partner With Us{" "}

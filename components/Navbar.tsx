@@ -217,7 +217,7 @@ const aboutList = [
   { name: "Sustainability & CSR", desc: "Environmental footprint optimization, green computing, and social impact.", href: "/about/sustainability-csr" },
   { name: "Testimonials & Success", desc: "Read client reviews, project feedback, and real-world impact metrics.", href: "/about/testimonials" },
   { name: "Customer Support", desc: "Global support desk, SLA ticketing, and cloud monitoring services.", href: "/about/customer-support" },
-  { name: "Contact Us", desc: "Connect with our consulting offices and engineering boards.", href: "/contact" }
+  { name: "Contact Us", desc: "Connect with our consulting offices and engineering boards.", href: "/contact#contact-form" }
 ];
 
 const ecosystemCategories = [
@@ -1732,7 +1732,7 @@ export function Navbar() {
               className="hidden sm:block relative"
             >
               <Link
-                href="/contact"
+                href="/contact#contact-form"
                 className="inline-flex nav-contact-btn items-center gap-1.5"
               >
                 Contact Us <ChevronDown size={14} className={`transition-transform duration-300 ${activeMenu === "contact" ? "rotate-180" : ""}`} />
@@ -1910,7 +1910,7 @@ export function Navbar() {
                 </div>
               </div>
               <Link
-                href="/contact"
+                href="/contact#contact-form"
                 onClick={() => setMobileOpen(false)}
                 className="mt-4 flex items-center justify-center nav-contact-btn w-full text-base font-bold py-3"
               >

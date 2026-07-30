@@ -193,7 +193,7 @@ export default function SafeSignProductPage() {
 
           <Reveal delay={0.3}>
             <a
-              href="#contact-form"
+              href="/contact#contact-form"
               className="inline-flex items-center gap-3 pl-8 pr-4 py-3.5 bg-white text-black font-bold text-xs md:text-sm tracking-wider rounded-full hover:bg-zinc-200 hover:scale-105 active:scale-95 transition-all duration-300 shadow-[0_0_20px_rgba(255,255,255,0.1)]"
             >
               Get Started
@@ -1117,7 +1117,7 @@ export default function SafeSignProductPage() {
             Connect with our product specialist team at <a href={`mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL}`} className="text-rose-500 hover:underline">{process.env.NEXT_PUBLIC_CONTACT_EMAIL}</a> or call sales at <a href="tel:+447471482903" className="text-rose-500 hover:underline">044-7471 482903</a>.
           </p>
           <a
-            href="#contact-form"
+            href="/contact#contact-form"
             className="inline-flex items-center gap-3 pl-6 pr-3 py-3 bg-white text-black font-semibold text-xs md:text-sm tracking-wider rounded-full hover:bg-zinc-200 transition-all duration-300"
           >
             Book a SafeSign Demo

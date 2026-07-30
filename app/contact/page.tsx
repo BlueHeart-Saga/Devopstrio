@@ -2,6 +2,7 @@ import React from "react";
 import { Metadata } from "next";
 import { ContactHero } from "@/sections/contact/ContactHero";
 import { ContactForm } from "@/sections/contact/ContactForm";
+import { DepartmentContacts } from "@/sections/contact/DepartmentContacts";
 import { OurLocations } from "@/sections/contact/OurLocations";
 import { GlobalPresence } from "@/sections/contact/GlobalPresence";
 import { WhyContactUs } from "@/sections/contact/WhyContactUs";
@@ -15,12 +16,12 @@ import { SectionNavbar } from "@/components/ui/SectionNavbar";
 
 const contactSections = [
   { id: "form", label: "Start a Conversation" },
-  { id: "compliance", label: "Security & Trust" },
   { id: "presence", label: "Global Presence" },
-  { id: "experts", label: "Talk to Expert" },
-  { id: "why-us", label: "Why Contact Us" },
+  // { id: "experts", label: "Talk to Expert" },
+  // { id: "why-us", label: "Why Contact Us" },
   { id: "locations", label: "Locations" },
-  { id: "faq", label: "FAQ" }
+  { id: "faq", label: "FAQ" },
+  { id: "compliance", label: "Security & Trust" }
 ];
 
 export const metadata: Metadata = {
@@ -59,30 +60,16 @@ export default function ContactPage() {
       <div className="bg-black relative">
         <div className="relative z-10 bg-black">
           <ContactHero />
-          <SvgWaveLine variant="smooth" />
+          {/* <SvgWaveLine variant="smooth" /> */}
         </div>
         
-        <SectionNavbar sections={contactSections} />
+        {/* <SectionNavbar sections={contactSections} /> */}
         <div id="form" className="relative z-10 bg-black">
           <ContactForm />
         </div>
-        
-        {/* Security & Compliance Section Header */}
-        <div id="compliance" className="relative z-20 bg-black">
-          <div className="text-center pt-12 pb-3 max-w-3xl mx-auto">
-            <Reveal>
-              <span className="inline-block px-3 py-1 text-[10px] font-bold tracking-[0.2em] uppercase text-rose-500 border border-rose-500/30 rounded-none bg-black/40 mb-3">
-                Security & Trust
-              </span>
-            </Reveal>
-            <Reveal delay={0.1}>
-              <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-white">
-                Enterprise Compliance & Engineering Standards
-              </h2>
-            </Reveal>
-          </div>
-          <TrustSignal />
-          <SvgWaveLine variant="liquid" />
+
+        <div id="departments" className="relative z-10 bg-black">
+          <DepartmentContacts />
         </div>
 
         {/* Layer 1: Global Presence Sticky Window */}
@@ -90,16 +77,16 @@ export default function ContactPage() {
           <GlobalPresence />
         </div>
         
-        {/* Layer 2: Talk To Expert Sticky Window (slides over Layer 1) */}
-        <div id="experts" className="sticky top-0 z-10 w-full h-[95vh] overflow-hidden shadow-[0_-20px_50px_rgba(0,0,0,1)]">
+        {/* Layer 2: Talk To Expert Sticky Window (Commented Out) */}
+        {/* <div id="experts" className="sticky top-0 z-10 w-full h-[95vh] overflow-hidden shadow-[0_-20px_50px_rgba(0,0,0,1)]">
           <TalkToExpert />
-        </div>
+        </div> */}
 
         {/* Final Cover Wrapper: Everything from here down slides over the sticky layers and has a solid black background */}
         <div className="relative z-20 bg-black pt-8 shadow-[0_-20px_50px_rgba(0,0,0,1)]">
-          <div id="why-us">
+          {/* <div id="why-us">
             <WhyContactUs />
-          </div>
+          </div> */}
           
           <div id="locations">
             <OurLocations />
@@ -111,7 +98,26 @@ export default function ContactPage() {
             <FAQ />
           </div>
           
-          <SvgWaveLine variant="smooth" />
+          {/* <SvgWaveLine variant="smooth" /> */}
+
+          {/* Security & Compliance Section Header */}
+          <div id="compliance" className="relative z-20 bg-black py-4">
+            <div className="text-center pt-8 pb-3 max-w-3xl mx-auto">
+              <Reveal>
+                <span className="inline-block px-3 py-1 text-[10px] font-bold tracking-[0.2em] uppercase text-rose-500 border border-rose-500/30 rounded-none bg-black/40 mb-3">
+                  Security & Trust
+                </span>
+              </Reveal>
+              <Reveal delay={0.1}>
+                <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-white">
+                  Enterprise Compliance & Engineering Standards
+                </h2>
+              </Reveal>
+            </div>
+            <TrustSignal />
+          </div>
+
+          {/* <SvgWaveLine variant="liquid" /> */}
           
           <ContactCTA />
         </div>

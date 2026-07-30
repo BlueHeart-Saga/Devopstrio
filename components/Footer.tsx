@@ -235,7 +235,7 @@ export function Footer() {
               <li><Link href="/about/sustainability-csr" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Sustainability & CSR</Link></li>
               <li><Link href="/about/testimonials" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Testimonials & Success</Link></li>
               <li><Link href="/about/customer-support" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Customer Support</Link></li>
-              <li><Link href="/contact" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Contact Us</Link></li>
+              <li><Link href="/contact#contact-form" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Contact Us</Link></li>
             </ul>
           </div>
 
