@@ -41,7 +41,7 @@ export const SupportCTA = () => {
             </motion.a>
 
             <motion.a
-              href="tel:+447471482903"
+              href="tel:+447586879046"
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.97 }}
               className="inline-flex items-center gap-3 px-9 py-4 bg-zinc-900/60 hover:bg-zinc-900 text-white rounded-xl font-semibold text-base transition-colors border border-zinc-800 hover:border-zinc-600 backdrop-blur-sm"

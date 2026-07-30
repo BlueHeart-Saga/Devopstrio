@@ -116,8 +116,8 @@ export function Footer() {
               <span className="text-zinc-500 font-medium leading-relaxed block text-left">
                 128 City Road, London, EC1V 2NX
               </span>
-              <a href="tel:0447471482903" className="hover:text-rose-500 transition-colors flex items-center gap-2 text-zinc-400">
-                <span>📞</span> <span className="font-bold text-white hover:text-rose-500 transition-colors">044-7471 482903</span>
+              <a href="tel:04612940062" className="hover:text-rose-500 transition-colors flex items-center gap-2 text-zinc-400">
+                <span>📞</span> <span className="font-bold text-white hover:text-rose-500 transition-colors">0461 2940062 / +44 7586 879046</span>
               </a>
               <a href={`mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL}`} className="hover:text-rose-500 transition-colors flex items-center gap-2 text-zinc-400">
                 {/* <span>✉</span> */}

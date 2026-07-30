@@ -1031,8 +1031,8 @@ export default function BrioProductPage() {
             </p>
             <p className="text-zinc-500 text-xs font-bold mt-4">
               Prefer speaking with an expert? Call us directly at{" "}
-              <a href="tel:0447471482903" className="text-rose-500 hover:text-rose-400 font-bold transition-colors">
-                044-7471 482903
+              <a href="tel:04612940062" className="text-rose-500 hover:text-rose-400 font-bold transition-colors">
+                0461 2940062 / +44 7586 879046
               </a>
             </p>
           </div>
@@ -1105,7 +1105,7 @@ export default function BrioProductPage() {
                       value={formState.phone}
                       onChange={(e) => setFormState({ ...formState, phone: e.target.value })}
                       className="w-full bg-black border border-zinc-900 focus:border-fuchsia-500/50 rounded-xl px-4 py-3 text-xs md:text-sm text-white focus:outline-none transition-colors"
-                      placeholder="+44 7471 482903"
+                      placeholder="+44 7586 879046"
                     />
                   </div>
                 </div>
@@ -1177,7 +1177,7 @@ export default function BrioProductPage() {
             Ready to simplify your payment operations?
           </h2>
           <p className="text-zinc-400 text-xs md:text-sm font-bold mb-10 max-w-lg mx-auto leading-relaxed">
-            Connect with our product specialist team at <a href={`mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL}`} className="text-rose-500 hover:underline">{process.env.NEXT_PUBLIC_CONTACT_EMAIL}</a> or call sales at <a href="tel:+447471482903" className="text-rose-500 hover:underline">044-7471 482903</a>.
+            Connect with our product specialist team at <a href={`mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL}`} className="text-rose-500 hover:underline">{process.env.NEXT_PUBLIC_CONTACT_EMAIL}</a> or call sales at <a href="tel:+447586879046" className="text-rose-500 hover:underline">0461 2940062</a>.
           </p>
           <a
             href="#book-demo"

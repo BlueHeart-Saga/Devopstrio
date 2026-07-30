@@ -34,7 +34,7 @@ export function StickyContactWidget() {
 
             {/* Call Sales */}
             <a
-              href="tel:0447471482903"
+              href="tel:+447586879046"
               className="flex items-center gap-3 p-2.5 rounded-xl bg-white/5 border border-white/5 hover:border-rose-500/30 hover:bg-rose-500/5 transition-all group"
             >
               <div className="w-8 h-8 rounded-lg bg-rose-500/10 border border-rose-500/20 flex items-center justify-center text-rose-500 group-hover:scale-105 transition-transform">
@@ -42,13 +42,13 @@ export function StickyContactWidget() {
               </div>
               <div className="flex flex-col">
                 <span className="text-xs font-bold text-white group-hover:text-rose-500 transition-colors">Call Direct</span>
-                <span className="text-[10px] text-zinc-400 font-semibold mt-0.5">044-7471 482903</span>
+                <span className="text-[10px] text-zinc-400 font-semibold mt-0.5">+44 7586 879046</span>
               </div>
             </a>
 
             {/* WhatsApp */}
             <a
-              href="https://wa.me/447471482903"
+              href="https://wa.me/447586879046"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-3 p-2.5 rounded-xl bg-white/5 border border-white/5 hover:border-emerald-500/30 hover:bg-emerald-500/5 transition-all group"

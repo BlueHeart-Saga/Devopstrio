@@ -147,10 +147,10 @@ export function ContactForm() {
                       {process.env.NEXT_PUBLIC_CONTACT_EMAIL}
                     </div>
                     <a
-                      href="tel:0447471482903"
+                      href="tel:04612940062"
                       className="px-4 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-md text-[#ebd0be] text-[10px] font-medium tracking-wide text-center shadow-sm hover:bg-white/10 hover:border-[#ebd0be]/30 hover:text-white transition-all"
                     >
-                      📞 044-7471 482903
+                      📞 0461 2940062 / +44 7586 879046
                     </a>
                   </div>
                 </div>
