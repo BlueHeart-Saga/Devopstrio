@@ -8,7 +8,7 @@ import Link from "next/link";
 const faqs = [
   {
     q: "How do I contact support?",
-    a: <>You can reach our support team via email at info@devopstrioglobal.com or call us directly at 0461 2940062 or +44 7586 879046. Enterprise customers also have access to dedicated Slack channels and priority escalation lines.</>
+    a: <>You can reach our support team via email at info@devopstrioglobal.com or call us directly at 0461 2940062 or +44 1784 640216. Enterprise customers also have access to dedicated Slack channels and priority escalation lines.</>
   },
   {
     q: "What are your support hours?",

@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Reveal } from "@/components/ui/Reveal";
-import { Activity } from "lucide-react";
+import { Activity, ArrowRight } from "lucide-react";
 
 import Link from "next/link";
 
@@ -49,7 +49,7 @@ export function HiringProcess() {
   };
 
   return (
-    <section className="py-24 bg-black border-b border-zinc-900/60 relative overflow-x-clip">
+    <section id="hiring-process" className="py-24 bg-black border-b border-zinc-900/60 relative overflow-x-clip">
       {/* Background ambient glows */}
       <div className="absolute top-[20%] left-1/4 w-[600px] h-[500px] bg-[radial-gradient(circle_at_center,rgba(244,63,94,0.03),transparent_70%)] pointer-events-none" />
 
@@ -71,9 +71,12 @@ export function HiringProcess() {
 
               <button
                 onClick={handleScrollToRoles}
-                className="px-8 py-3.5 rounded-full text-[0.95rem] font-bold text-white bg-rose-500 hover:-translate-y-1 hover:shadow-[0_15px_40px_rgba(244,63,94,0.4)] transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] shadow-[0_10px_30px_rgba(244,63,94,0.3)] border-none"
+                className="inline-flex items-center bg-[#0B0F17] hover:bg-rose-600 text-white text-xs sm:text-sm font-bold tracking-wide transition-all duration-300 shadow-xl border border-zinc-800 hover:border-rose-500 rounded-none group"
               >
-                View Open Roles
+                <span className="px-6 py-3.5">View Open Roles</span>
+                <span className="border-l border-zinc-800 group-hover:border-rose-500 px-4 py-3.5 flex items-center justify-center bg-black/40 group-hover:bg-rose-700/40 transition-colors">
+                  <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform text-rose-500 group-hover:text-white" />
+                </span>
               </button>
             </Reveal>
           </div>

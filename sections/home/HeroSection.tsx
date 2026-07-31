@@ -21,6 +21,59 @@ export function HeroSection() {
 
   const slides: Slide[] = [
 
+    
+    {
+      eyebrow: "Modern DevOps & Automation",
+      title: (
+        <>
+          Continuous Delivery Acceleration Needs
+          <br />
+          <span className="text-[#E11D48] whitespace-nowrap">Automation.</span>
+          <br />
+          We Power It
+          <br />
+          <span className="text-[#E11D48] whitespace-nowrap">Everywhere.</span>
+        </>
+      ),
+      primaryBtn: { text: "Explore Services", href: "/services" },
+      secondaryBtn: { text: "Contact Us", href: "/contact#contact-form" },
+      image: "/assets/Home-page/homehero/Suryaprakash s.svg"
+    },
+    
+    {
+      eyebrow: "Software & Quality Engineering",
+      title: (
+        <>
+          Software Excellence Demands
+          <br />
+          <span className="text-[#E11D48] whitespace-nowrap">Precision.</span>
+          <br />
+          We Engineer It
+          <br />
+          <span className="text-[#E11D48] whitespace-nowrap">Flawlessly.</span>
+        </>
+      ),
+      primaryBtn: { text: "Explore Services", href: "/services" },
+      secondaryBtn: { text: "Contact Us", href: "/contact#contact-form" },
+      image: "/assets/Home-page/homehero/Ananthalakshmi.svg"
+    },
+    {
+      eyebrow: "Data & Cloud Infrastructure",
+      title: (
+        <>
+          Enterprise Transformation Thrives
+          <br />
+          <span className="text-[#E11D48] whitespace-nowrap">Innovation.</span>
+          <br />
+          We Build The
+          <br />
+          <span className="text-[#E11D48] whitespace-nowrap">Future.</span>
+        </>
+      ),
+      primaryBtn: { text: "Explore Services", href: "/services" },
+      secondaryBtn: { text: "Contact Us", href: "/contact#contact-form" },
+      image: "/assets/Home-page/homehero/Umamaheswari R.svg"
+    },
     {
       eyebrow: "Cloud & Infrastructure",
       title: (
@@ -125,23 +178,23 @@ export function HeroSection() {
       secondaryBtn: { text: "Contact Us", href: "/contact#contact-form" },
       image: "/assets/Home-page/homehero/Sermaraja.V.svg"
     },
-    {
-      eyebrow: "Cybersecurity & Compliance",
-      title: (
-        <>
-          Trust Is Built Through
-          <br />
-          <span className="text-[#E11D48] whitespace-nowrap">Security.</span>
-          <br />
-          We Protect What
-          <br />
-          <span className="text-[#E11D48] whitespace-nowrap">Matters.</span>
-        </>
-      ),
-      primaryBtn: { text: "Explore Services", href: "/services" },
-      secondaryBtn: { text: "Contact Us", href: "/contact#contact-form" },
-      image: "/assets/Home-page/homehero/Sudalairajan.A.svg"
-    },
+    // {
+    //   eyebrow: "Cybersecurity & Compliance",
+    //   title: (
+    //     <>
+    //       Trust Is Built Through
+    //       <br />
+    //       <span className="text-[#E11D48] whitespace-nowrap">Security.</span>
+    //       <br />
+    //       We Protect What
+    //       <br />
+    //       <span className="text-[#E11D48] whitespace-nowrap">Matters.</span>
+    //     </>
+    //   ),
+    //   primaryBtn: { text: "Explore Services", href: "/services" },
+    //   secondaryBtn: { text: "Contact Us", href: "/contact#contact-form" },
+    //   image: "/assets/Home-page/homehero/Sudalairajan.A.svg"
+    // },
     {
       eyebrow: "Elite Global Technology Partner",
       title: (
@@ -158,23 +211,6 @@ export function HeroSection() {
       primaryBtn: { text: "Explore Services", href: "/services" },
       secondaryBtn: { text: "Contact Us", href: "/contact#contact-form" },
       image: "/assets/Home-page/homehero/Sagadevan.S.svg"
-    },
-    {
-      eyebrow: "Software & Quality Engineering",
-      title: (
-        <>
-          Software Excellence Demands
-          <br />
-          <span className="text-[#E11D48] whitespace-nowrap">Precision.</span>
-          <br />
-          We Engineer It
-          <br />
-          <span className="text-[#E11D48] whitespace-nowrap">Flawlessly.</span>
-        </>
-      ),
-      primaryBtn: { text: "Explore Services", href: "/services" },
-      secondaryBtn: { text: "Contact Us", href: "/contact#contact-form" },
-      image: "/assets/Home-page/homehero/Ananthalakshmi.svg"
     },
     {
       eyebrow: "Platform & Cloud Operations",
@@ -209,40 +245,6 @@ export function HeroSection() {
       primaryBtn: { text: "Explore Services", href: "/services" },
       secondaryBtn: { text: "Contact Us", href: "/contact#contact-form" },
       image: "/assets/Home-page/homehero/Saravanakumar.s.svg"
-    },
-    {
-      eyebrow: "Modern DevOps & Automation",
-      title: (
-        <>
-          Continuous Delivery Acceleration Needs
-          <br />
-          <span className="text-[#E11D48] whitespace-nowrap">Automation.</span>
-          <br />
-          We Power It
-          <br />
-          <span className="text-[#E11D48] whitespace-nowrap">Everywhere.</span>
-        </>
-      ),
-      primaryBtn: { text: "Explore Services", href: "/services" },
-      secondaryBtn: { text: "Contact Us", href: "/contact#contact-form" },
-      image: "/assets/Home-page/homehero/Suryaprakash s.svg"
-    },
-    {
-      eyebrow: "Data & Cloud Infrastructure",
-      title: (
-        <>
-          Enterprise Transformation Thrives
-          <br />
-          <span className="text-[#E11D48] whitespace-nowrap">Innovation.</span>
-          <br />
-          We Build The
-          <br />
-          <span className="text-[#E11D48] whitespace-nowrap">Future.</span>
-        </>
-      ),
-      primaryBtn: { text: "Explore Services", href: "/services" },
-      secondaryBtn: { text: "Contact Us", href: "/contact#contact-form" },
-      image: "/assets/Home-page/homehero/Umamaheswari R.svg"
     }
   ];
 

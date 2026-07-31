@@ -24,7 +24,7 @@ export function StickyContactWidget() {
               <span className="text-[10px] font-bold text-zinc-500 uppercase tracking-widest">
                 Contact Sales
               </span>
-              <button 
+              <button
                 onClick={() => setIsOpen(false)}
                 className="text-zinc-500 hover:text-white transition-colors"
               >
@@ -34,7 +34,7 @@ export function StickyContactWidget() {
 
             {/* Call Sales */}
             <a
-              href="tel:+447586879046"
+              href="tel:+441784640216"
               className="flex items-center gap-3 p-2.5 rounded-xl bg-white/5 border border-white/5 hover:border-rose-500/30 hover:bg-rose-500/5 transition-all group"
             >
               <div className="w-8 h-8 rounded-lg bg-rose-500/10 border border-rose-500/20 flex items-center justify-center text-rose-500 group-hover:scale-105 transition-transform">
@@ -42,13 +42,13 @@ export function StickyContactWidget() {
               </div>
               <div className="flex flex-col">
                 <span className="text-xs font-bold text-white group-hover:text-rose-500 transition-colors">Call Direct</span>
-                <span className="text-[10px] text-zinc-400 font-semibold mt-0.5">+44 7586 879046</span>
+                <span className="text-[10px] text-zinc-400 font-semibold mt-0.5">+441784640216</span>
               </div>
             </a>
 
             {/* WhatsApp */}
             <a
-              href="https://wa.me/447586879046"
+              href="https://wa.me/447471482903"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-3 p-2.5 rounded-xl bg-white/5 border border-white/5 hover:border-emerald-500/30 hover:bg-emerald-500/5 transition-all group"
@@ -82,11 +82,10 @@ export function StickyContactWidget() {
 
       <motion.button
         onClick={() => setIsOpen(!isOpen)}
-        className={`w-12 h-12 rounded-full flex items-center justify-center text-white shadow-lg transition-all hover:scale-110 active:scale-95 border group relative ${
-          isOpen
+        className={`w-12 h-12 rounded-full flex items-center justify-center text-white shadow-lg transition-all hover:scale-110 active:scale-95 border group relative ${isOpen
             ? "bg-zinc-900 border-zinc-800"
             : "bg-gradient-to-r from-rose-600 to-rose-500 hover:from-rose-500 hover:to-rose-400 border-rose-500/20 shadow-[0_10px_20px_rgba(225,29,72,0.25)]"
-        }`}
+          }`}
       >
         {!isOpen && (
           <div className="absolute right-[110%] top-1/2 -translate-y-1/2 mr-2 px-4 py-2.5 bg-white text-zinc-950 text-xs sm:text-sm font-semibold rounded-2xl rounded-br-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none shadow-[0_8px_30px_rgba(0,0,0,0.15)] border border-zinc-100/50 translate-x-2 group-hover:translate-x-0">

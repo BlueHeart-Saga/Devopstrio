@@ -13,6 +13,7 @@ export function LifeAtDevopstrio() {
   return (
     <>
       <section 
+        id="culture"
         ref={containerRef}
         className="relative w-full h-[800px] md:h-[900px] bg-[#030303] overflow-hidden border-t border-b border-zinc-900"
       >

@@ -1,104 +1,146 @@
 "use client";
 
-import React from "react";
+import React, { useRef } from "react";
 import { Reveal } from "@/components/ui/Reveal";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const benefits = [
   {
     name: "Health & Wellness",
+    tag: "WE CARE ABOUT YOU",
     desc: "Comprehensive medical cover and mental health support for you and your family.",
     image: "/assets/careers/careers_industries/Healthcare & Life Sciences.png",
   },
   {
-    name: "Learning Budget",
+    name: "Learning & Certification",
+    tag: "CONTINUOUS GROWTH",
     desc: "Sponsored cloud certifications, study guides, and global conference access.",
     image: "/assets/careers/careers_industries/Education.png",
   },
   {
-    name: "Hybrid Working",
+    name: "Hybrid & Remote Work",
+    tag: "FLEXIBLE LIFE",
     desc: "Flexible schedules blending home office and modern premium workspaces.",
     image: "/assets/careers/careers_industries/Government & Public Sector.png",
   },
   {
-    name: "Global Mobility",
-    desc: "Opportunities to work across our UK, US, and India office locations.",
+    name: "Global Opportunities",
+    tag: "INTERNATIONAL NETWORK",
+    desc: "Opportunities to work across our UK, US, Singapore and India office locations.",
     image: "/assets/careers/careers_industries/Telecommunications.png",
   },
   {
-    name: "Flexible Leave",
-    desc: "Generous time off to rest, recharge, travel, and enjoy life fully.",
+    name: "Generous Leave Policy",
+    tag: "WORK-LIFE BALANCE",
+    desc: "Generous time off to rest, recharge, travel, and enjoy life fully with your loved ones.",
     image: "/assets/careers/careers_industries/Media & Entertainment.png",
   },
   {
-    name: "Recognition Programs",
-    desc: "Performance rewards, spot bonuses, and team achievement milestones.",
+    name: "Performance Rewards",
+    tag: "RECOGNITION",
+    desc: "Performance spot bonuses, annual payouts, and team achievement milestones.",
     image: "/assets/careers/careers_industries/Manufacturing.png",
   },
   {
-    name: "Competitive Salary",
-    desc: "Premium payouts, annual bonuses, stock options, and equity grants.",
+    name: "Competitive Payouts",
+    tag: "COMPENSATION",
+    desc: "Premium industry payouts, annual bonuses, equity options, and referral incentives.",
     image: "/assets/careers/careers_industries/Banking & Finance.png",
   },
   {
-    name: "Career Advancement",
-    desc: "Structured progression tracks, architecture mentoring, and leadership paths.",
+    name: "Career Progression",
+    tag: "ADVANCEMENT",
+    desc: "Structured promotion tracks, architecture mentoring, and executive leadership paths.",
     image: "/assets/careers/careers_industries/Retail & E-Commerce.png",
   },
 ];
 
-import Link from "next/link";
-
 export function PerksBenefits() {
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+
+  const scrollLeft = () => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollBy({ left: -380, behavior: "smooth" });
+    }
+  };
+
+  const scrollRight = () => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollBy({ left: 380, behavior: "smooth" });
+    }
+  };
+
   return (
-    <section className="w-full py-24 bg-[#030303] border-b border-zinc-900 relative overflow-hidden">
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[600px] bg-rose-600/[0.04] rounded-full blur-[180px] pointer-events-none" />
+    <section id="perks" className="w-full pt-6 sm:pt-8 pb-8 sm:pb-4 bg-[#030303] text-white border-b border-zinc-900/80 relative overflow-hidden">
+      
+      {/* Background Glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[600px] bg-rose-600/[0.03] rounded-full blur-[180px] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
+      <div className="max-w-7xl mx-auto w-full px-6 sm:px-8 lg:px-12 relative z-10">
 
-        {/* Section Header */}
-        <Reveal>
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
-              PERKS & REWARDS
-            </span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white uppercase">
-              Benefits built for your <span className="text-rose-500">wellbeing & growth</span>
-            </h2>
-            <p className="text-zinc-400 text-base leading-relaxed">
-              We go beyond compensation — investing in the health, career, and quality of life of every team member. Discover more about our <Link href="/about/overview" className="text-rose-500 hover:underline font-bold">company overview</Link> and our core values.
-            </p>
-          </div>
-        </Reveal>
+        {/* Section Header & Square Navigation Buttons */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+          <Reveal>
+            <div className="max-w-2xl text-left">
+              {/* <span className="text-[11px] font-mono font-bold tracking-[0.25em] uppercase text-rose-500 mb-3 block">
+                PERKS & REWARDS
+              </span> */}
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight leading-tight text-white uppercase font-sans">
+                Benefits built for your <span className="text-rose-500">wellbeing & growth</span>
+              </h2>
+            </div>
+          </Reveal>
 
-        {/* Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          {/* Navigation Buttons (Matching User Screenshot UI) */}
+          <Reveal delay={0.1}>
+            <div className="flex items-center gap-2.5 self-end md:self-auto">
+              <button
+                onClick={scrollLeft}
+                aria-label="Scroll left"
+                className="w-11 h-11 bg-[#e2e8f0] text-zinc-500 flex items-center justify-center transition-all duration-300 hover:bg-zinc-300 active:scale-95 shadow-sm"
+              >
+                <ChevronLeft size={20} className="stroke-[2]" />
+              </button>
+              <button
+                onClick={scrollRight}
+                aria-label="Scroll right"
+                className="w-11 h-11 bg-white text-zinc-900 border-2 border-zinc-900 flex items-center justify-center transition-all duration-300 hover:bg-zinc-100 active:scale-95 shadow-sm"
+              >
+                <ChevronRight size={20} className="stroke-[2]" />
+              </button>
+            </div>
+          </Reveal>
+        </div>
+
+        {/* Single Row Scrollable Cards Container (Hidden Scrollbar + Navigation Arrow Control) */}
+        <div
+          ref={scrollContainerRef}
+          className="flex gap-8 overflow-x-auto scrollbar-none snap-x snap-mandatory pt-4 pb-20 -mx-6 px-6 sm:-mx-8 sm:px-8 lg:-mx-12 lg:px-12 scroll-smooth [ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+        >
           {benefits.map((ben, idx) => (
-            <Reveal key={idx} delay={idx * 0.04}>
-              <div className="group flex flex-col h-full bg-[#0d0d0d] border border-white/[0.06] rounded-2xl overflow-hidden hover:border-white/[0.14] hover:-translate-y-1.5 hover:shadow-[0_20px_50px_rgba(0,0,0,0.6)] transition-all duration-300">
-
-                {/* Image — 8px padding inset, inner rounded corners */}
-                <div className="p-2">
-                  <div className="relative w-full h-44 rounded-xl overflow-hidden">
-                    <img
-                      src={ben.image}
-                      alt={ben.name}
-                      className="w-full h-full object-cover brightness-75 group-hover:brightness-90 group-hover:scale-105 transition-all duration-500"
-                    />
-                  </div>
-                </div>
-
-                {/* Text content */}
-                <div className="px-4 pt-3 pb-5 flex flex-col gap-1.5">
-                  <h4 className="text-[13px] font-bold text-white group-hover:text-rose-400 transition-colors duration-300 leading-snug">
-                    {ben.name}
-                  </h4>
-                  <p className="text-[11px] text-zinc-400 leading-relaxed font-light">
-                    {ben.desc}
-                  </p>
-                </div>
-
+            <div
+              key={idx}
+              className="w-[290px] sm:w-[340px] md:w-[380px] shrink-0 group snap-start"
+            >
+              {/* Image Box Container */}
+              <div className="w-full h-[320px] sm:h-[360px] rounded-2xl overflow-hidden relative shadow-xl bg-zinc-950 border border-zinc-800/80">
+                <img
+                  src={ben.image}
+                  alt={ben.name}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 filter brightness-95 group-hover:brightness-100"
+                />
               </div>
-            </Reveal>
+
+              {/* 50% Inside / 50% Outside Floating White Card Overlay */}
+              <div className="mx-3.5 -mt-16 sm:-mt-20 relative z-20 bg-white text-zinc-900 border border-zinc-200/90 rounded-xl p-5 shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+                <h3 className="text-lg sm:text-xl font-bold text-zinc-900 mb-1.5 tracking-tight font-sans">
+                  {ben.name}
+                </h3>
+                <p className="text-xs sm:text-sm text-zinc-600 leading-relaxed font-medium">
+                  {ben.desc}
+                </p>
+              </div>
+            </div>
           ))}
         </div>
 

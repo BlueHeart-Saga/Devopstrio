@@ -254,57 +254,272 @@ export function EmployeeStories() {
 
         </div>
 
+        {/* ── BLOCK 3: Feel-Good Words Masonry Wall (Exact Reference Replica) ─── */}
+        <div className="border-t border-zinc-900/60 pt-24 mb-32">
+          <Reveal>
+            <div className="text-center max-w-3xl mx-auto mb-16">
+              {/* <span className="text-[11px] font-mono font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+                GLOBAL COMMUNITY FEEDBACK
+              </span> */}
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight leading-tight mb-4 text-white font-sans uppercase">
+                Feel-Good Words <span className="text-rose-500">From Our Team</span>
+              </h2>
+              <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-medium">
+                Hear directly from our engineers, designers, and strategic leads across the globe.
+              </p>
+            </div>
+          </Reveal>
+
+          {/* Grid Layout mimicking the reference layout */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 items-start max-w-6xl mx-auto text-zinc-900">
+            
+            {/* ── COLUMN 1 (Left: 4 Cols) ─────────────────────────────── */}
+            <div className="lg:col-span-4 flex flex-col gap-8">
+              
+              {/* Card 1A: Quote mark top-left + Right Avatar */}
+              <Reveal delay={0.05}>
+                <div className="bg-white text-zinc-900 p-6 rounded-2xl shadow-2xl relative flex items-center justify-between gap-4">
+                  <div className="flex-1 text-left">
+                    <span className="text-3xl font-serif text-rose-600 block mb-1 font-bold leading-none">“</span>
+                    <p className="text-xs text-zinc-700 leading-relaxed font-medium mb-3">
+                      "Devopstrio gives us complete engineering freedom to automate multi-cloud infrastructure and accelerate enterprise continuous delivery pipelines flawlessly."
+                    </p>
+                    <span className="text-xs font-bold text-zinc-900 block">Suryaprakash S</span>
+                    <span className="text-[10px] text-zinc-500 font-medium block">Lead DevOps Engineer • @Devopstrio</span>
+                  </div>
+                  <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-white shadow-md shrink-0 bg-zinc-100">
+                    <img src="/assets/Home-page/homehero/Suryaprakash s.svg" alt="Suryaprakash" className="w-full h-full object-cover" />
+                  </div>
+                </div>
+              </Reveal>
+
+              {/* Card 1B: Paragraph + Bottom Right Avatar */}
+              <Reveal delay={0.1}>
+                <div className="bg-white text-zinc-900 p-6 rounded-2xl shadow-2xl relative text-left">
+                  <p className="text-xs text-zinc-700 leading-relaxed font-medium mb-6">
+                    "The supportive culture of precision and rapid experimentation here empowers us to build production-ready software solutions with confidence every single day."
+                  </p>
+                  <div className="flex items-center justify-between pt-2">
+                    <div>
+                      <span className="text-xs font-bold text-zinc-900 block">Ananthalakshmi</span>
+                      <span className="text-[10px] text-rose-600 font-semibold block">Software Engineering Lead</span>
+                    </div>
+                    <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-white shadow-md shrink-0 bg-zinc-100">
+                      <img src="/assets/Home-page/homehero/Ananthalakshmi.svg" alt="Ananthalakshmi" className="w-full h-full object-cover" />
+                    </div>
+                  </div>
+                </div>
+              </Reveal>
+
+              {/* Card 1C: Wide Card + Bottom Speech Avatars */}
+              <Reveal delay={0.15}>
+                <div className="bg-white text-zinc-900 p-6 rounded-2xl shadow-2xl text-center relative">
+                  <h3 className="text-sm font-bold text-zinc-900 mb-2">I was very impressed!</h3>
+                  <p className="text-xs text-zinc-600 leading-relaxed font-medium mb-3">
+                    "The scale of cloud architectures and high-performance data platforms we design here is world class. Truly a great place to grow your technical leverage."
+                  </p>
+                  <span className="text-[11px] font-bold text-zinc-800 block mb-4">Umamaheswari R — Data & Cloud Architect</span>
+                  
+                  {/* Floating speech bubble avatars sticking out below */}
+                  <div className="flex justify-center items-center gap-2 -mb-10 pt-2">
+                    <div className="w-9 h-9 rounded-full border-2 border-white shadow-md overflow-hidden bg-zinc-200">
+                      <img src="/assets/careers/careers_testimonial people/Rahul.png" alt="Team 1" className="w-full h-full object-cover" />
+                    </div>
+                    <div className="w-11 h-11 rounded-full border-2 border-white shadow-lg overflow-hidden bg-zinc-200">
+                      <img src="/assets/careers/careers_testimonial people/Maria.png" alt="Team 2" className="w-full h-full object-cover" />
+                    </div>
+                    <div className="w-9 h-9 rounded-full border-2 border-white shadow-md overflow-hidden bg-zinc-200">
+                      <img src="/assets/careers/careers_testimonial people/Ooviya.png" alt="Team 3" className="w-full h-full object-cover" />
+                    </div>
+                  </div>
+                </div>
+              </Reveal>
+
+            </div>
+
+            {/* ── COLUMN 2 (Middle Left: 3 Cols) ──────────────────────── */}
+            <div className="lg:col-span-3 flex flex-col gap-8">
+              
+              {/* Card 2A: Top Avatar Cutout + Stars + Bottom Quote Badge */}
+              <Reveal delay={0.1}>
+                <div className="bg-white text-zinc-900 p-6 pt-10 rounded-2xl shadow-2xl text-center relative mt-4">
+                  {/* Top Avatar Notch */}
+                  <div className="absolute -top-7 left-1/2 -translate-x-1/2 w-16 h-16 rounded-full border-4 border-white shadow-xl overflow-hidden bg-zinc-100">
+                    <img src="/assets/careers/careers_testimonial people/Ooviya.png" alt="Ooviya" className="w-full h-full object-cover" />
+                  </div>
+                  <div className="flex justify-center gap-1 text-amber-400 mb-2 mt-2">
+                    {Array.from({ length: 5 }).map((_, i) => (
+                      <Star key={i} size={14} fill="currentColor" />
+                    ))}
+                  </div>
+                  <h3 className="text-sm font-bold text-zinc-900 mb-2">I really appreciate!!</h3>
+                  <p className="text-xs text-zinc-600 leading-relaxed font-medium mb-6">
+                    "Designing intuitive digital experiences for enterprise users alongside brilliant software engineers makes every single day rewarding!"
+                  </p>
+                  <div className="text-left pb-2">
+                    <span className="text-xs font-bold text-zinc-900 block">Ooviya</span>
+                    <span className="text-[10px] text-rose-600 font-semibold block">UI/UX Design Specialist</span>
+                  </div>
+
+                  {/* Black Quote Badge hanging off bottom right */}
+                  <div className="absolute -bottom-4 -right-2 bg-zinc-900 text-white w-10 h-10 rounded-xl shadow-xl flex items-center justify-center font-serif text-2xl font-bold">
+                    ”
+                  </div>
+                </div>
+              </Reveal>
+
+              {/* Card 2B: Speech Pointer Card */}
+              <Reveal delay={0.2}>
+                <div className="bg-white text-zinc-900 p-6 pt-8 rounded-2xl shadow-2xl text-center relative mt-4">
+                  <div className="w-12 h-12 rounded-full overflow-hidden mx-auto -mt-12 border-2 border-white shadow-lg mb-3 bg-zinc-100">
+                    <img src="/assets/careers/careers_testimonial people/Punitha.png" alt="Punitha" className="w-full h-full object-cover" />
+                  </div>
+                  <div className="flex justify-center gap-1 text-amber-400 mb-3">
+                    {Array.from({ length: 5 }).map((_, i) => (
+                      <Star key={i} size={12} fill="currentColor" />
+                    ))}
+                  </div>
+                  <p className="text-xs text-zinc-600 leading-relaxed font-medium italic mb-4">
+                    "Building high-throughput microservices in a zero-silo, collaborative team atmosphere is the best milestone of my tech career."
+                  </p>
+                  <span className="text-xs font-bold text-zinc-900 block italic font-serif">Punitha — Backend Engineer</span>
+
+                  {/* Bottom Speech Triangle Pointer */}
+                  <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 w-0 h-0 border-l-[10px] border-l-transparent border-r-[10px] border-r-transparent border-t-[10px] border-t-white" />
+                </div>
+              </Reveal>
+
+            </div>
+
+            {/* ── COLUMN 3 (Middle Right: 2.5 Cols) ────────────────────── */}
+            <div className="lg:col-span-2 flex flex-col gap-8">
+              
+              {/* Card 3A: Tall Photo Card */}
+              <Reveal delay={0.15}>
+                <div className="bg-white text-zinc-900 p-4 rounded-2xl shadow-2xl text-left">
+                  <div className="w-full h-56 rounded-xl overflow-hidden mb-4 bg-zinc-100">
+                    <img src="/assets/Home-page/homehero/Saravanakumar.s.svg" alt="Saravanakumar" className="w-full h-full object-cover" />
+                  </div>
+                  <p className="text-xs text-zinc-700 leading-relaxed font-medium mb-3">
+                    From global client missions to 1-on-1 mentorship, Devopstrio invests deeply in every engineer's potential.
+                  </p>
+                  <span className="text-xs font-bold text-zinc-900 block italic font-serif">Saravanakumar S</span>
+                </div>
+              </Reveal>
+
+            </div>
+
+            {/* ── COLUMN 4 (Right: 3 Cols) ────────────────────────────── */}
+            <div className="lg:col-span-3 flex flex-col gap-8">
+              
+              {/* Card 4A: Top Avatar Notch + Good Job */}
+              <Reveal delay={0.1}>
+                <div className="bg-white text-zinc-900 p-6 pt-10 rounded-2xl shadow-2xl text-center relative mt-4">
+                  <div className="absolute -top-7 left-1/2 -translate-x-1/2 w-16 h-16 rounded-full border-4 border-white shadow-xl overflow-hidden bg-zinc-100">
+                    <img src="/assets/Home-page/homehero/Sermaraja.V.svg" alt="Sermaraja" className="w-full h-full object-cover" />
+                  </div>
+                  <h3 className="text-sm font-bold text-zinc-900 mb-1 mt-1">Good Job!</h3>
+                  <div className="flex justify-center gap-1 text-amber-400 mb-3">
+                    {Array.from({ length: 5 }).map((_, i) => (
+                      <Star key={i} size={12} fill="currentColor" />
+                    ))}
+                  </div>
+                  <p className="text-xs text-zinc-600 leading-relaxed font-medium">
+                    Our 24/7 Site Reliability Engineering teams operate with total trust, rapid feedback loops, and sponsored cloud certification pathways.
+                  </p>
+                  <span className="text-[11px] font-bold text-zinc-800 block mt-3">Sermaraja V — SRE Lead</span>
+                </div>
+              </Reveal>
+
+              {/* Card 4B: Split Photo Left / Text Right */}
+              <Reveal delay={0.2}>
+                <div className="bg-white text-zinc-900 p-4 rounded-2xl shadow-2xl flex flex-col sm:flex-row items-center gap-4 text-left">
+                  <div className="w-full sm:w-28 h-28 rounded-xl overflow-hidden shrink-0 bg-zinc-100">
+                    <img src="/assets/careers/careers_testimonial people/Anita.png" alt="Sudalairajan" className="w-full h-full object-cover" />
+                  </div>
+                  <div className="flex-1">
+                    <span className="text-xs font-bold text-zinc-900 block mb-1 font-serif">“ Security & zero-trust engineering are embedded in all we build. ”</span>
+                    <p className="text-[11px] text-zinc-600 leading-tight mb-2">
+                      We protect enterprise landing zones while enabling fast-moving deployments.
+                    </p>
+                    <span className="text-[11px] font-bold text-rose-600 block">Sudalairajan A • Security Lead</span>
+                  </div>
+                </div>
+              </Reveal>
+
+              {/* Card 4C: Text Left / Round Avatar Right */}
+              <Reveal delay={0.25}>
+                <div className="bg-white text-zinc-900 p-5 rounded-2xl shadow-2xl flex items-center justify-between gap-4 text-left">
+                  <div className="flex-1">
+                    <p className="text-xs text-zinc-600 leading-relaxed font-medium mb-3">
+                      "Empowering engineering teams with continuous learning, clear promotion tracks, and international project exposure is our daily commitment."
+                    </p>
+                    <span className="text-xs font-bold text-zinc-900 block">Sagadevan S</span>
+                    <span className="text-[10px] text-rose-600 font-semibold block">Global Technology Lead</span>
+                  </div>
+                  <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-white shadow-md shrink-0 bg-zinc-100">
+                    <img src="/assets/Home-page/homehero/Sagadevan.S.svg" alt="Sagadevan" className="w-full h-full object-cover" />
+                  </div>
+                </div>
+              </Reveal>
+
+            </div>
+
+          </div>
+        </div>
+
         {/* ── BLOCK 3: Student Career CTA Banner ─────────────────────── */}
         <Reveal>
-          <div className="relative mt-24 bg-gradient-to-b from-[#090909] to-black border border-white/[0.08] rounded-[32px] overflow-hidden p-8 md:p-12 lg:p-16 flex flex-col md:flex-row items-center gap-10 md:gap-16 shadow-[0_30px_60px_rgba(0,0,0,0.8)] group">
+          <div className="relative mt-24 bg-gradient-to-b from-[#090909] to-black border border-white/[0.08] rounded-[32px] p-6 sm:p-8 md:p-10 flex flex-col md:flex-row items-center gap-8 md:gap-12 shadow-[0_30px_60px_rgba(0,0,0,0.8)] group overflow-visible">
             {/* Ambient glows inside card */}
             <div className="absolute left-[10%] top-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-[radial-gradient(circle_at_center,rgba(244,63,94,0.06),transparent_70%)] pointer-events-none -z-10" />
 
-            {/* Left Side: Large Portrait Image with custom asymmetrical corners */}
-            <div className="relative w-64 md:w-80 aspect-[4/5] rounded-tl-[3rem] rounded-br-[3rem] rounded-tr-xl rounded-bl-xl overflow-hidden border border-white/5 shrink-0 bg-zinc-950">
+            {/* Left Side: Student Boy Image popping half outside top of box */}
+            <div className="relative w-56 sm:w-64 md:w-72 lg:w-80 shrink-0 self-end -mt-16 sm:-mt-20 md:-mt-24 lg:-mt-28 -mb-6 md:-mb-10 z-20 pointer-events-none">
               <img
                 src="/assets/careers/CTA.png"
                 alt="Student Career Devopstrio"
-                className="w-full h-full object-cover object-center brightness-90 group-hover:scale-103 transition-transform duration-700 rounded-[inherit]"
+                className="w-full h-auto object-contain drop-shadow-[0_20px_40px_rgba(0,0,0,0.9)] group-hover:scale-[1.02] transition-transform duration-700"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent opacity-60 rounded-[inherit]" />
             </div>
 
             {/* Right Side: Copy, Points List & Button */}
-            <div className="flex-1 text-left space-y-6">
-              <span className="inline-block border border-rose-500/30 bg-rose-950/20 px-3.5 py-1 rounded-full text-xs font-bold text-rose-400 tracking-wider uppercase">
+            <div className="flex-1 text-left space-y-4 relative z-10 py-2">
+              <span className="inline-block border border-rose-500/30 bg-rose-950/20 px-3.5 py-1 rounded-full text-[11px] font-mono font-bold text-rose-400 tracking-wider uppercase">
                 INTERNSHIP
               </span>
 
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white tracking-tight leading-tight">
-                <span className="text-rose-500">Students</span>, build a<br />career with purpose
+                <span className="text-rose-500">Students</span>, build a<br className="hidden sm:block" /> career with purpose
               </h2>
 
-              <p className="text-zinc-300 text-sm md:text-base leading-relaxed font-medium max-w-xl">
+              <p className="text-zinc-300 text-xs sm:text-sm leading-relaxed font-medium max-w-xl">
                 Our student programs help you make a real impact from day one. Apply today to build skills and unlock possibilities through our dedicated <Link href="/about/internship" className="text-rose-500 hover:underline font-bold">internship program</Link>:
               </p>
 
               {/* Key points for premium look */}
-              <ul className="space-y-3 pt-1">
+              <ul className="space-y-2.5 pt-1">
                 {[
                   "Work directly on production-grade global infrastructure projects",
                   "Receive 1-on-1 mentorship from seasoned industry specialists",
                   "Access dedicated placement assistance and exclusive network referrals",
                 ].map((point, idx) => (
-                  <li key={idx} className="flex items-start gap-2.5 text-zinc-300 text-xs md:text-sm font-medium">
-                    <span className="w-1.5 h-1.5 rounded-full bg-rose-500 mt-2 shrink-0 shadow-[0_0_8px_rgba(244,63,94,0.6)]" />
+                  <li key={idx} className="flex items-start gap-2.5 text-zinc-300 text-xs sm:text-sm font-medium">
+                    <span className="w-1.5 h-1.5 rounded-full bg-rose-500 mt-1.5 shrink-0 shadow-[0_0_8px_rgba(244,63,94,0.6)]" />
                     <span>{point}</span>
                   </li>
                 ))}
               </ul>
 
-              <button
-                onClick={handleScrollToRoles}
-                className="inline-flex items-center gap-2 px-8 py-3 rounded-full text-sm font-semibold uppercase tracking-wider text-white bg-gradient-to-r from-rose-600 to-rose-500 hover:from-rose-500 hover:to-rose-400 transition-all duration-300 shadow-[0_4px_20px_rgba(225,29,72,0.3)] hover:scale-[1.03]"
-              >
-                <span>Get Started</span>
-                <ArrowUpRightIcon size={14} />
-              </button>
+              <div className="pt-2">
+                <button
+                  onClick={handleScrollToRoles}
+                  className="inline-flex items-center gap-2 px-8 py-3 rounded-full text-xs font-bold uppercase tracking-wider text-white bg-gradient-to-r from-rose-600 to-rose-500 hover:from-rose-500 hover:to-rose-400 transition-all duration-300 shadow-[0_4px_20px_rgba(225,29,72,0.3)] hover:scale-[1.03]"
+                >
+                  <span>Get Started</span>
+                  <ArrowUpRightIcon size={14} />
+                </button>
+              </div>
             </div>
           </div>
         </Reveal>

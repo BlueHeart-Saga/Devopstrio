@@ -18,16 +18,84 @@ export interface CapabilityGridProps {
   capabilities: CapabilityItem[];
 }
 
-function getCapabilityCardImage(index: number): string {
-  const capImages = [
-    "/assets/Services-Page/core-services/GenerativeAISolutions.png",
-    "/assets/Services-Page/core-services/AIAgentsAutomation.png",
-    "/assets/Services-Page/core-services/MLOps&AIOperations.png",
-    "/assets/Services-Page/core-services/MachineLearningEngineering.png",
-    "/assets/Services-Page/core-services/image.png",
-    "/assets/Services-Page/core-services/image2.png"
-  ];
-  return capImages[index % capImages.length];
+const ALL_CAPABILITY_CARD_IMAGES = [
+  "/assets/Services-Page/core-services/GenerativeAISolutions.png",
+  "/assets/Services-Page/core-services/AIAgentsAutomation.png",
+  "/assets/Services-Page/core-services/MLOps&AIOperations.png",
+  "/assets/Services-Page/core-services/MachineLearningEngineering.png",
+  "/assets/Services-Page/core-services/image.png",
+  "/assets/Services-Page/core-services/image2.png",
+  "/assets/Services-Page/Capability Overview section images/reorder/Frame 107.png",
+  "/assets/Services-Page/Capability Overview section images/reorder/Frame 108.png",
+  "/assets/Services-Page/Capability Overview section images/reorder/Frame 110.png",
+  "/assets/Services-Page/Capability Overview section images/reorder/Frame 111.png",
+  "/assets/Services-Page/Capability Overview section images/reorder/Frame 112.png",
+  "/assets/Services-Page/Capability Overview section images/reorder/Frame 113.png",
+  "/assets/Services-Page/Capability Overview section images/reorder/Frame 114.png",
+  "/assets/Services-Page/Capability Overview section images/reorder/Frame 115.png",
+  "/assets/Services-Page/Capability Overview section images/reorder/Frame 116.png",
+  "/assets/Services-Page/Capability Overview section images/reorder/Frame 117.png",
+  "/assets/Services-Page/Capability Overview section images/reorder/Frame 118.png",
+  "/assets/Services-Page/Capability Overview section images/reorder/Frame 119.png",
+  "/assets/Services-Page/Capability Overview section images/reorder/Frame 120.png",
+  "/assets/Services-Page/Capability Overview section images/reorder/Frame 121.png",
+  "/assets/Services-Page/Capability Overview section images/reorder/Frame 303.png",
+  "/assets/Services-Page/Capability Overview section images/reorder/Frame 304.png",
+  "/assets/Services-Page/Capability Overview section images/reorder/Frame 305.png",
+  "/assets/Services-Page/Capability Overview section images/reorder/Frame 306.png",
+  "/assets/Services-Page/Capability Overview section images/reorder/Frame 307.png",
+  "/assets/Services-Page/Capability Overview section images/reorder/Frame 308.png",
+  "/assets/Services-Page/Capability Overview section images/reorder/Frame 309.png",
+  "/assets/Services-Page/Capability Overview section images/reorder/Frame 310.png",
+  "/assets/Services-Page/Capability Overview section images/reorder/Frame 311.png",
+  "/assets/Services-Page/Capability Overview section images/reorder/Frame 312.png",
+  "/assets/Services-Page/Capability Overview section images/reorder/Frame 313.png",
+  "/assets/Services-Page/Capability Overview section images/reorder/Frame 314.png",
+  "/assets/Services-Page/Capability Overview section images/reorder/Frame 315.png",
+  "/assets/Services-Page/Capability Overview section images/reorder/Frame 316.png",
+  "/assets/Services-Page/Capability Overview section images/reorder/Frame 317.png",
+  "/assets/Services-Page/Capability Overview section images/reorder/Frame 318.png",
+  "/assets/Services-Page/Capability Overview section images/reorder/Frame 319.png",
+  "/assets/Services-Page/Capability Overview section images/reorder/Frame 329.png",
+  "/assets/Services-Page/Capability Overview section images/reorder/Frame 331.png",
+  "/assets/Services-Page/Capability Overview section images/reorder/Frame 332.png",
+  "/assets/Services-Page/Capability Overview section images/reorder/Frame 333.png",
+  "/assets/Services-Page/Capability Overview section images/reorder/Frame 334.png",
+  "/assets/Services-Page/Capability Overview section images/reorder/Frame 335.png",
+  "/assets/Services-Page/Capability Overview section images/reorder/Frame 336.png",
+  "/assets/Services-Page/Capability Overview section images/reorder/Frame 337.png",
+  "/assets/Services-Page/Capability Overview section images/reorder/Frame 338.png",
+  "/assets/Services-Page/Capability Overview section images/reorder/Frame 339.png",
+  "/assets/Services-Page/Capability Overview section images/reorder/Frame 340.png",
+  "/assets/Services-Page/Capability Overview section images/reorder/Frame 341.png",
+  "/assets/Services-Page/Capability Overview section images/reorder/Frame 355.png",
+  "/assets/Services-Page/Capability Overview section images/reorder/Frame 356.png",
+  "/assets/Services-Page/Capability Overview section images/reorder/Frame 357.png",
+  "/assets/Services-Page/Capability Overview section images/reorder/Frame 358.png",
+  "/assets/Services-Page/Capability Overview section images/reorder/Frame 359.png",
+  "/assets/Services-Page/Capability Overview section images/reorder/Frame 360.png",
+  "/assets/Services-Page/Capability Overview section images/reorder/Frame 361.png",
+  "/assets/Services-Page/Capability Overview section images/reorder/Frame 362.png",
+  "/assets/Services-Page/Capability Overview section images/reorder/Frame 363.png",
+  "/assets/Services-Page/Capability Overview section images/reorder/Frame 364.png",
+  "/assets/Services-Page/Capability Overview section images/reorder/Frame 365.png",
+  "/assets/Services-Page/Capability Overview section images/reorder/Frame 366.png",
+  "/assets/Services-Page/Capability Overview section images/reorder/Frame 367.png",
+  "/assets/Services-Page/Capability Overview section images/reorder/Frame 420.png",
+  "/assets/Services-Page/Capability Overview section images/reorder/Frame 434.png",
+  "/assets/Services-Page/Capability Overview section images/reorder/Frame 435.png",
+  "/assets/Services-Page/Capability Overview section images/reorder/Frame 436.png"
+];
+
+function getCapabilityCardImage(serviceSlug: string, capSlug: string, index: number): string {
+  let hash = 0;
+  const str = serviceSlug + capSlug;
+  for (let i = 0; i < str.length; i++) {
+    hash = (hash << 5) - hash + str.charCodeAt(i);
+    hash |= 0;
+  }
+  const uniqueIdx = Math.abs(hash + index * 7) % ALL_CAPABILITY_CARD_IMAGES.length;
+  return ALL_CAPABILITY_CARD_IMAGES[uniqueIdx];
 }
 
 export function CapabilityGrid({ serviceSlug, capabilities }: CapabilityGridProps) {
@@ -129,7 +197,7 @@ export function CapabilityGrid({ serviceSlug, capabilities }: CapabilityGridProp
               {displayCapabilities.map((cap, idx) => {
                 const originalSlug = cap.slug.split("-dup-")[0];
                 const href = `/services/${serviceSlug}/${originalSlug}`;
-                const bgImage = getCapabilityCardImage(idx);
+                const bgImage = getCapabilityCardImage(serviceSlug, originalSlug, idx);
                 return (
                   <div
                     key={cap.slug}
@@ -188,7 +256,7 @@ export function CapabilityGrid({ serviceSlug, capabilities }: CapabilityGridProp
               {displayCapabilities.map((cap, idx) => {
                 const originalSlug = cap.slug.split("-dup-")[0];
                 const href = `/services/${serviceSlug}/${originalSlug}`;
-                const bgImage = getCapabilityCardImage(idx);
+                const bgImage = getCapabilityCardImage(serviceSlug, originalSlug, idx);
                 return (
                   <Reveal key={cap.slug} delay={idx * 0.05}>
                     <div className="group h-full flex flex-col bg-zinc-950 border border-zinc-800/60 rounded-2xl overflow-hidden hover:border-rose-500/30 transition-all duration-300 hover:shadow-[0_0_40px_rgba(225,29,72,0.07)]">

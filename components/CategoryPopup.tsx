@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useCallback } from "react";
+import { createPortal } from "react-dom";
 import Swal from "sweetalert2";
 import { insightsApi as api } from "@/lib/insightsApi";
 import { X, Check } from "lucide-react";
@@ -14,6 +15,7 @@ const CategoryPopup: React.FC<CategoryPopupProps> = ({ email, closePopup }) => {
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
   const [loading, setLoading] = useState(false);
   const [dataLoading, setDataLoading] = useState(true);
+  const [mounted, setMounted] = useState(false);
 
   const showAlert = (message: string, type: any) => {
     Swal.fire({
@@ -75,7 +77,13 @@ const CategoryPopup: React.FC<CategoryPopupProps> = ({ email, closePopup }) => {
   }, [email]);
 
   useEffect(() => {
+    setMounted(true);
     loadSections();
+    // Lock body scroll when popup opens so background is completely frozen & hidden
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = "unset";
+    };
   }, [loadSections]);
 
   const toggleCategory = (slug: string) => {
@@ -156,7 +164,9 @@ const CategoryPopup: React.FC<CategoryPopupProps> = ({ email, closePopup }) => {
     }
   };
 
-  return (
+  if (!mounted) return null;
+
+  return createPortal(
     <div className="cat-popup-overlay" onClick={closePopup}>
       <div className="cat-popup-box" onClick={(e) => e.stopPropagation()}>
         <button className="cat-popup-close" onClick={closePopup}>
@@ -234,7 +244,8 @@ const CategoryPopup: React.FC<CategoryPopupProps> = ({ email, closePopup }) => {
           </button>
         </div>
       </div>
-    </div>
+    </div>,
+    document.body
   );
 };
 

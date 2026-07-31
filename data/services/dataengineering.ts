@@ -22,7 +22,7 @@ export const dataengineeringService: ServiceCategory = {
       items: ["Optimized dimensional database schemas", "Data partition and clustering rules", "Secure role-based column access policies"]
     },
     {
-      slug: "real-time-processing",
+      slug: "real-time-data-processing",
       title: "Real-Time Processing",
       description: "Constructing low-latency streaming pipelines using Apache Kafka and Spark Streaming.",
       items: ["Real-time event capture lines", "In-memory database aggregation scripts", "Automated anomaly alert triggers"]

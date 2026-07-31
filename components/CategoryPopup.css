@@ -2,14 +2,15 @@
 .cat-popup-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.85);
-  backdrop-filter: blur(8px);
+  background: rgba(3, 3, 3, 0.97);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 9999;
+  z-index: 9999999;
   padding: 2rem;
-  animation: fadeIn 0.4s ease-out;
+  animation: fadeIn 0.3s ease-out;
 }
 
 @keyframes fadeIn {
@@ -78,7 +79,7 @@
 
 .cat-popup-header h3 {
   font-size: 1.8rem;
-  font-weight: 800;
+  font-weight: 600;
   color: #fff;
   margin-bottom: 0.75rem;
 }
@@ -188,8 +189,8 @@
 }
 
 .cat-popup-item.active {
-  background: rgba(206, 36, 83, 0.1);
-  border-color: #ce2453;
+  background: rgba(225, 29, 72, 0.12);
+  border-color: #E11D48;
 }
 
 .cat-popup-item input {
@@ -210,8 +211,8 @@
 }
 
 .cat-popup-item.active .cat-checkbox-custom {
-  background: #ce2453;
-  border-color: #ce2453;
+  background: #E11D48;
+  border-color: #E11D48;
   transform: scale(1.1);
 }
 
@@ -253,19 +254,20 @@
 .cat-btn-submit {
   flex: 2;
   padding: 1rem;
-  background: linear-gradient(90deg, #ce2453, #e79e57);
+  background: #E11D48;
   border: none;
   color: #fff;
   border-radius: 0.75rem;
   font-weight: 700;
   cursor: pointer;
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  box-shadow: 0 10px 20px rgba(206, 36, 83, 0.3);
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 20px rgba(225, 29, 72, 0.3);
 }
 
 .cat-btn-submit:hover:not(:disabled) {
-  transform: translateY(-3px);
-  box-shadow: 0 15px 30px rgba(206, 36, 83, 0.4);
+  background: #be123c;
+  transform: translateY(-2px);
+  box-shadow: 0 15px 30px rgba(225, 29, 72, 0.45);
 }
 
 .cat-btn-submit:disabled {

@@ -26,9 +26,8 @@ export default function AcceleratorsFrameworksPage() {
   }
 
   const subSections = [
-    { id: "overview", label: "Ecosystem" },
+    { id: "overview", label: "Accelerators" },
     { id: "why-accelerators", label: "Value Model" },
-    { id: "framework", label: "Framework Ecosystem" },
     { id: "showcase", label: "Showcase" },
     { id: "metrics", label: "Delivery Impact" },
     { id: "success-stories", label: "Success Stories" },
@@ -46,39 +45,45 @@ export default function AcceleratorsFrameworksPage() {
       {/* Sticky Section Navbar */}
       <SectionNavbar sections={subSections} />
 
-      {/* 02. Why Accelerators Matter */}
-      <div id="why-accelerators">
+      {/* 02. Accelerators Ecosystem */}
+      <div id="overview" className="scroll-mt-20">
+        <AcceleratorsEcosystem />
+      </div>
+
+      {/* 03. Why Accelerators Matter */}
+      <div id="why-accelerators" className="scroll-mt-20">
         <WhyAcceleratorsMatter />
       </div>
 
-      {/* 03. Accelerators Ecosystem (Cloud, DevOps, AI, Security, Data, SaaS, Platform, Enterprise, Delivery) */}
-      <AcceleratorsEcosystem />
-
       {/* 04. Accelerators Showcase */}
-      <div id="showcase">
+      <div id="showcase" className="scroll-mt-20">
         <AcceleratorsShowcase />
       </div>
 
       {/* 05. Delivery Impact statistics */}
-      <DeliveryImpact />
+      <div id="metrics" className="scroll-mt-20">
+        <DeliveryImpact />
+      </div>
 
       {/* 06. Success Stories */}
-      <div id="success-stories">
+      <div id="success-stories" className="scroll-mt-20">
         <AcceleratorSuccessStories />
       </div>
 
       {/* 07. Accelerator Lifecycle */}
-      <div id="lifecycle">
+      <div id="lifecycle" className="scroll-mt-20">
         <AcceleratorLifecycle />
       </div>
 
       {/* 08. Integration Across Ecosystem */}
-      <div id="integration">
+      <div id="integration" className="scroll-mt-20">
         <EcosystemIntegration />
       </div>
 
       {/* FAQ */}
-      <FAQ faqs={data.faqs} />
+      <div id="faq" className="scroll-mt-20">
+        <FAQ faqs={data.faqs} />
+      </div>
 
       {/* 09. CTA Section */}
       <AcceleratorsCTA />

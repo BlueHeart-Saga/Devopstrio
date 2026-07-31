@@ -42,7 +42,7 @@ const cards = [
 const channels = [
   { label: "Email Us", colorClass: "text-rose-500 hover:text-rose-400", href: `mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL}` },
   { label: "Call Us", colorClass: "text-sky-500 hover:text-sky-400", href: "tel:04612940062" },
-  { label: "WhatsApp", colorClass: "text-[#25D366] hover:text-[#12ec6e]", href: "https://wa.me/447586879046" },
+  { label: "WhatsApp", colorClass: "text-[#25D366] hover:text-[#12ec6e]", href: "https://wa.me/447471482903" },
 ];
 
 export function WhyContactUs() {

@@ -1,11 +1,12 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { MapPin, Briefcase, X, Send, Check } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
 
 import { CareersHero } from "@/sections/careers/CareersHero";
+import { CareersIntroBanner } from "@/sections/careers/CareersIntroBanner";
 import { WhyJoin } from "@/sections/careers/WhyJoin";
 import { LifeAtDevopstrio } from "@/sections/careers/LifeAtDevopstrio";
 import { CoreValues } from "@/sections/careers/CoreValues";
@@ -19,22 +20,31 @@ import { TalentNetwork } from "@/sections/careers/TalentNetwork";
 import { Job } from "@/sections/careers/careersData";
 import { SectionNavbar } from "@/components/ui/SectionNavbar";
 
-const careersSections = [
-  { id: "overview", label: "Overview" },
-  { id: "why-join", label: "Why Join" },
-  { id: "culture", label: "Culture" },
-  { id: "values", label: "Values" },
-  { id: "growth", label: "Growth" },
-  { id: "open-positions", label: "Roles" },
-  { id: "hiring-process", label: "Hiring" },
-  { id: "talent-network", label: "Network" }
-];
-
 export default function CareersPage() {
   const [activeJob, setActiveJob] = useState<Job | null>(null);
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [formSubmitting, setFormSubmitting] = useState(false);
   const [formData, setFormData] = useState({ name: "", email: "", resume: "", note: "" });
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const hash = window.location.hash;
+      if (hash) {
+        const id = hash.replace("#", "");
+        const el = document.getElementById(id);
+        if (el) {
+          setTimeout(() => {
+            const elementPosition = el.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.scrollY - 100;
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: "smooth"
+            });
+          }, 300);
+        }
+      }
+    }
+  }, []);
 
   const handleApplyClick = (job: Job) => {
     setActiveJob(job);
@@ -185,7 +195,7 @@ export default function CareersPage() {
 
       {/* Structured Careers Components */}
       <CareersHero />
-      <SectionNavbar sections={careersSections} />
+      <CareersIntroBanner />
       <WhyJoin />
       <LifeAtDevopstrio />
       <CoreValues />
@@ -197,10 +207,10 @@ export default function CareersPage() {
       <EmployeeStories />
       <TalentNetwork />
 
-      {/* Floating Side Badge */}
+      {/* Floating Side Badge (Increased Length) */}
       <Link
         href="/about/global-internship"
-        className="fixed right-0 top-[35%] -translate-y-1/2 z-[40] hidden md:flex items-center justify-center bg-[#581326] hover:bg-[#701a32] text-white font-bold tracking-[0.2em] text-[11px] py-7 px-3.5 rounded-l-2xl shadow-[0_0_35px_rgba(225,29,72,0.35)] border border-r-0 border-rose-500/20 transition-all duration-300 hover:pl-5 group cursor-pointer"
+        className="fixed right-0 top-[40%] -translate-y-1/2 z-[40] hidden md:flex items-center justify-center bg-[#581326] hover:bg-[#701a32] text-white font-bold tracking-[0.25em] text-[11px] py-14 px-4 rounded-l-2xl shadow-[0_0_35px_rgba(225,29,72,0.4)] border border-r-0 border-rose-500/30 transition-all duration-300 hover:pl-6 group cursor-pointer"
         style={{ writingMode: "vertical-rl" }}
       >
         EXPLORE OUR GLOBAL INTERNSHIP

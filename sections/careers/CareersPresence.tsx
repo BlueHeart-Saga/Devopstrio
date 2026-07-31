@@ -192,7 +192,7 @@ export function CareersPresence() {
         </Reveal>
 
         {/* Office quick cards */}
-        <Reveal delay={0.2}>
+        {/* <Reveal delay={0.2}>
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 mt-6">
             {locations.map((loc) => {
               const isActive = active === loc.id;
@@ -222,10 +222,10 @@ export function CareersPresence() {
               );
             })}
           </div>
-        </Reveal>
+        </Reveal> */}
 
         {/* Stats row */}
-        <Reveal delay={0.3}>
+        {/* <Reveal delay={0.3}>
           <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
               { value: "5", label: "Global Offices" },
@@ -242,7 +242,7 @@ export function CareersPresence() {
               </div>
             ))}
           </div>
-        </Reveal>
+        </Reveal> */}
 
       </div>
     </section>

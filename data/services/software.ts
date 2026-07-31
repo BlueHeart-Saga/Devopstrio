@@ -22,7 +22,7 @@ export const softwareService: ServiceCategory = {
       items: ["Server-side rendered web dashboards", "State management systems", "Responsive mobile-first pages"]
     },
     {
-      slug: "microservices",
+      slug: "microservices-architecture",
       title: "Microservices & API Development",
       description: "Developing scalable, stateless backend services and secure API gateways.",
       items: ["High-speed Go and Rust backend scripts", "GraphQL and REST API endpoints", "Message queue database integrations"]

@@ -113,15 +113,24 @@ export function Footer() {
             {/* Contact Info (Head Office) */}
             <div className="text-xs text-zinc-400 font-semibold tracking-wide flex flex-col items-start text-left gap-1.5 border-t border-zinc-900 pt-4 pb-2 w-full">
               <span className="text-[10px] font-bold text-white uppercase tracking-wider block">Head Office</span>
-              <span className="text-zinc-500 font-medium leading-relaxed block text-left">
+              <span className="text-zinc-500 font-medium leading-relaxed block text-left mb-1">
                 128 City Road, London, EC1V 2NX
               </span>
-              <a href="tel:04612940062" className="hover:text-rose-500 transition-colors flex items-center gap-2 text-zinc-400">
-                <span>📞</span> <span className="font-bold text-white hover:text-rose-500 transition-colors">0461 2940062 / +44 7586 879046</span>
-              </a>
-              <a href={`mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL}`} className="hover:text-rose-500 transition-colors flex items-center gap-2 text-zinc-400">
-                {/* <span>✉</span> */}
-                 <span className="font-bold">{process.env.NEXT_PUBLIC_CONTACT_EMAIL}</span>
+
+              <div className="flex flex-col gap-1 text-[11px]">
+                <a href="tel:+441784640216" className="hover:text-rose-500 transition-colors flex items-center gap-2 text-zinc-300">
+                  <span className="font-bold text-rose-500">UK:</span> <span className="font-semibold text-white hover:text-rose-500 transition-colors">+44 1784 640216</span>
+                </a>
+                <a href="tel:04612940062" className="hover:text-rose-500 transition-colors flex items-center gap-2 text-zinc-300">
+                  <span className="font-bold text-rose-500">IN:</span> <span className="font-semibold text-white hover:text-rose-500 transition-colors">0461 2940062</span>
+                </a>
+                <a href="https://wa.me/447471482903" target="_blank" rel="noopener noreferrer" className="hover:text-emerald-400 transition-colors flex items-center gap-2 text-zinc-300">
+                  <span className="font-bold text-emerald-400">WhatsApp:</span> <span className="font-semibold text-white hover:text-emerald-400 transition-colors">+44 7471 482903</span>
+                </a>
+              </div>
+
+              <a href={`mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL}`} className="hover:text-rose-500 transition-colors flex items-center gap-2 text-zinc-400 mt-1">
+                <span className="font-bold text-white hover:text-rose-500">{process.env.NEXT_PUBLIC_CONTACT_EMAIL}</span>
               </a>
             </div>
 

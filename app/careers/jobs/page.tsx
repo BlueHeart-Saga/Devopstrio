@@ -2,7 +2,7 @@
 
 import React, { useState, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
-import { Search, MapPin, Clock, Briefcase, X, Send, Check, Heart, Sparkles, SlidersHorizontal } from "lucide-react";
+import { Search, MapPin, Clock, Briefcase, X, Send, Check, Heart, Sparkles, SlidersHorizontal, FileText } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
 import { openPositionsData, categories, Job } from "@/sections/careers/careersData";
 import { JobPostingSchema } from "@/components/seo/Schemas";
@@ -267,14 +267,27 @@ function JobsBoardContent() {
                         {job.desc}
                       </p>
 
-                      {/* Footer: Salary + Time */}
-                      <div className="flex items-center justify-between border-t border-zinc-800/80 pt-4 mt-auto">
+                      {/* Footer: Salary + View JD PDF */}
+                      <div className="flex items-center justify-between border-t border-zinc-800/80 pt-4 mt-auto relative z-20">
                         <span className="text-sm font-bold text-white">
                           $120k<span className="text-zinc-500 font-medium text-xs">/yr</span>
                         </span>
-                        <span className="flex items-center gap-1.5 text-xs text-zinc-500 font-medium">
-                          <Clock size={12} /> Posted {Math.floor(Math.random() * 10 + 1)} days ago
-                        </span>
+
+                        {job.jdUrl ? (
+                          <a
+                            href={job.jdUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            onClick={(e) => e.stopPropagation()}
+                            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-rose-600/20 text-rose-400 border border-rose-500/40 hover:bg-rose-600 hover:text-white transition-all text-xs font-bold shadow-md z-30"
+                          >
+                            <FileText size={13} /> View JD (PDF)
+                          </a>
+                        ) : (
+                          <span className="flex items-center gap-1.5 text-xs text-zinc-500 font-medium">
+                            <Clock size={12} /> Posted {Math.floor(Math.random() * 10 + 1)} days ago
+                          </span>
+                        )}
                       </div>
 
                       {/* Invisible Full-Card Click Target */}
@@ -319,11 +332,24 @@ function JobsBoardContent() {
               <>
                 <span className="text-[10px] font-mono tracking-widest text-rose-500 uppercase block mb-2 font-bold">Apply Position</span>
                 <h3 className="text-xl font-bold text-white mb-2 leading-tight">{activeJob.title}</h3>
-                <p className="text-zinc-500 text-xs mb-6 flex items-center gap-2 font-medium border-b border-zinc-800/60 pb-6">
+                <p className="text-zinc-500 text-xs mb-4 flex items-center gap-2 font-medium border-b border-zinc-800/60 pb-4">
                   <span className="flex items-center gap-1.5"><MapPin size={12} className="text-rose-500" /> {activeJob.location}</span>
                   <span className="text-zinc-700">|</span>
                   <span className="flex items-center gap-1.5"><Briefcase size={12} className="text-zinc-500" /> {activeJob.type}</span>
                 </p>
+
+                {activeJob.jdUrl && (
+                  <div className="mb-6">
+                    <a
+                      href={activeJob.jdUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-rose-600/20 text-rose-400 border border-rose-500/40 hover:bg-rose-600 hover:text-white transition-all text-xs font-bold shadow-lg"
+                    >
+                      <FileText size={14} /> Download / View Official JD PDF
+                    </a>
+                  </div>
+                )}
 
                 <form onSubmit={handleSubmit} className="space-y-4 text-left">
                   <div>

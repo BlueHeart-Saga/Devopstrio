@@ -36,9 +36,9 @@ export function OpenPositions() {
             <span className="md:mt-2 inline-block">Devopstrio</span>
           </h2>
           
-          <p className="text-zinc-400 text-base md:text-lg max-w-2xl mx-auto mb-12 font-medium">
+          {/* <p className="text-zinc-400 text-base md:text-lg max-w-2xl mx-auto mb-12 font-medium">
             When you're searching for a role, start here to find the perfect team where you can build next-generation enterprise solutions. Explore our <Link href="/services" className="text-rose-500 hover:underline font-bold">digital services</Link> and read our <Link href="/about/overview" className="text-rose-500 hover:underline font-bold">company overview</Link>.
-          </p>
+          </p> */}
 
           {/* Search Bar Form */}
           <form 

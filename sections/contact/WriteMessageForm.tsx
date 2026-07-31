@@ -52,6 +52,27 @@ export function WriteMessageForm() {
   const [submitted, setSubmitted] = useState(false);
   const [showCategoryPopup, setShowCategoryPopup] = useState(false);
 
+  // Auto-scroll to #contact-form or #write-message if hash is present in URL
+  useEffect(() => {
+    const handleHashScroll = () => {
+      if (typeof window !== "undefined" && window.location.hash) {
+        const hash = window.location.hash.substring(1);
+        if (hash === "contact-form" || hash === "write-message" || hash === "form") {
+          const el = document.getElementById(hash) || document.getElementById("contact-form") || document.getElementById("write-message");
+          if (el) {
+            setTimeout(() => {
+              el.scrollIntoView({ behavior: "smooth", block: "start" });
+            }, 150);
+          }
+        }
+      }
+    };
+
+    handleHashScroll();
+    window.addEventListener("hashchange", handleHashScroll);
+    return () => window.removeEventListener("hashchange", handleHashScroll);
+  }, []);
+
   // Auto-detect country code from client IP location
   useEffect(() => {
     fetch("https://ipapi.co/json/")
@@ -76,7 +97,25 @@ export function WriteMessageForm() {
     setIsSubmitting(true);
 
     try {
-      // If newsletter or marketing consent is checked, subscribe email
+      // 1. Send email notification & thank you auto-reply via /api/contact Mail API
+      const contactResponse = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: `${formData.firstName} ${formData.lastName}`.trim(),
+          email: formData.email,
+          phone: `${formData.countryPrefix} ${formData.phone}`.trim(),
+          company: formData.country ? `Country: ${formData.country}` : "",
+          message: formData.message,
+          selectedServices: formData.service ? [formData.service] : [],
+        }),
+      });
+
+      if (!contactResponse.ok) {
+        console.warn("Contact API status:", contactResponse.status);
+      }
+
+      // 2. If newsletter or marketing consent is checked, subscribe email
       if (formData.newsletter || formData.marketingConsent) {
         await insightsApi.subscribe(formData.email, [], ["general"]).catch((err) => {
           console.warn("Newsletter subscription warning:", err);
@@ -110,9 +149,9 @@ export function WriteMessageForm() {
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight leading-tight mb-3 text-white">
             Connect with our <span className="text-rose-500">team worldwide.</span>
           </h2>
-          <p className="text-zinc-400 text-xs md:text-sm font-bold leading-relaxed max-w-xl mx-auto">
+          {/* <p className="text-zinc-400 text-xs md:text-sm font-bold leading-relaxed max-w-xl mx-auto">
             Fill out the details below to route your query directly to our global engineering leads.
-          </p>
+          </p> */}
         </Reveal>
 
         {/* Open Unboxed Form Layout */}
@@ -251,7 +290,7 @@ export function WriteMessageForm() {
                       <input
                         type="tel"
                         required
-                        placeholder="7586 879046"
+                        placeholder="1784 640216"
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                         className="w-full bg-transparent py-3 text-sm md:text-base text-white placeholder-zinc-500 focus:outline-none transition-all font-semibold font-mono"

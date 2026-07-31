@@ -6,9 +6,30 @@ export interface Job {
   type: string;
   experience: string;
   desc: string;
+  jdUrl?: string;
 }
 
 export const openPositionsData: Job[] = [
+  {
+    id: "marketing-seo-analytics",
+    title: "Marketing & SEO Analytics Specialist",
+    category: "Sales & Marketing",
+    location: "Chennai, India / Hybrid",
+    type: "Full-Time",
+    experience: "2+ Years",
+    desc: "Develop and execute data-driven SEO, content optimization, and digital marketing analytics strategies to boost global online reach.",
+    jdUrl: "/Marketing_and_SEO_Analytics_JD.pdf"
+  },
+  {
+    id: "business-development-executive",
+    title: "Business Development Executive",
+    category: "Sales & Marketing",
+    location: "Chennai, India / Hybrid",
+    type: "Full-Time",
+    experience: "3+ Years",
+    desc: "Drive key enterprise relationships, cloud solution sales, and strategic client acquisition for Devopstrio global engagements.",
+    jdUrl: "/Business_Development_Executive_JD.pdf"
+  },
   {
     id: "sre-azure-arch",
     title: "Senior Azure Cloud Architect",

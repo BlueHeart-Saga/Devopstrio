@@ -34,7 +34,7 @@ export const cybersecurityService: ServiceCategory = {
       items: ["Advanced security controls & Identity management", "Continuous compliance monitoring", "Automated threat detection & risk reduction"]
     },
     {
-      slug: "security-operations-centre",
+      slug: "security-operations-center",
       title: "Security Operations Centre",
       description: "24/7 threat monitoring, incident detection, and rapid response in the UK.",
       items: ["Continuous threat intelligence & monitoring", "SIEM log aggregation & alert management", "Automated incident investigation & compliance reporting"]

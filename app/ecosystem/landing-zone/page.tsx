@@ -81,6 +81,96 @@ export default function EnterpriseLandingZonePage() {
   const [reposLoading, setReposLoading] = useState<boolean>(true);
   const [liveRepoCount, setLiveRepoCount] = useState<number>(0);
   const [liveRepos, setLiveRepos] = useState<RepoItem[]>([]);
+  const [modalMode, setModalMode] = useState<"demo" | "pdf">("demo");
+  const [demoFormData, setDemoFormData] = useState({
+    fullName: "",
+    email: "",
+    phone: "",
+    company: "",
+    cloudPlatform: "Microsoft Azure Landing Zone"
+  });
+  const [isSubmittingDemo, setIsSubmittingDemo] = useState<boolean>(false);
+
+  const handleDemoSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmittingDemo(true);
+
+    try {
+      await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: demoFormData.fullName,
+          email: demoFormData.email,
+          phone: demoFormData.phone || "N/A",
+          company: demoFormData.company || "Enterprise Client",
+          message: `Request Type: ${modalMode === "pdf" ? "Download Architecture PDF Spec" : "Landing Zone Demo Request"}\nTarget Platform: ${demoFormData.cloudPlatform}\nSource: /ecosystem/landing-zone`,
+          selectedServices: ["Cloud Services", "Landing Zone Architecture"]
+        })
+      });
+    } catch (err) {
+      console.error("Failed to submit landing zone request", err);
+    } finally {
+      setIsSubmittingDemo(false);
+      setDemoSubmitted(true);
+
+      if (modalMode === "pdf") {
+        downloadLandingZoneSpecPdf(demoFormData.cloudPlatform, demoFormData.fullName);
+      }
+    }
+  };
+
+  function downloadLandingZoneSpecPdf(cloud: string, name: string) {
+    const docContent = `
+================================================================================
+DEVOPSTRIO ENTERPRISE LANDING ZONE ARCHITECTURE SPECIFICATION
+================================================================================
+Requested By: ${name || 'Valued Client'}
+Target Platform: ${cloud}
+Generated Date: ${new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })}
+Document ID: SPEC-LZ-${Math.floor(100000 + Math.random() * 900000)}
+================================================================================
+
+1. EXECUTIVE ARCHITECTURE BLUEPRINT
+--------------------------------------------------------------------------------
+Devopstrio Enterprise Landing Zones provide a pre-hardened, multi-subscription baseline 
+architected for ISO 27001, SOC 2 Type II, HIPAA, and GDPR compliance.
+
+2. CORE INFRASTRUCTURE COMPONENTS
+--------------------------------------------------------------------------------
+- Network Topology: Hub-and-Spoke VNet / VPC with Next-Gen Cloud Firewall inspection.
+- Identity & Access: Privileged Identity Management (PIM), RBAC, JIT elevation loops.
+- Compliance Guardrails: Open Policy Agent (OPA) / Azure Policy / AWS Guardrails.
+- Telemetry & SIEM: Centralized Log Analytics workspace with 365-day security audit logs.
+
+3. REPOSITORY & IAAC SPECIFICATIONS
+--------------------------------------------------------------------------------
+- Language: HCL / Terraform >= 1.5.0
+- Continuous Integration: GitHub Actions & GitLab CI with SonarQube & Trivy gates.
+
+4. DIRECT CONSULTING & EMERGENCY SUPPORT
+--------------------------------------------------------------------------------
+Our Senior Cloud Architects will contact you shortly to review your infrastructure specs.
+
+Direct Contacts:
+- Email: info@devopstrioglobal.com
+- UK Phone: +44 1784 640216
+- India Phone: 0461 2940062
+- WhatsApp Support: +44 7471 482903
+- Web: https://devopstrio.co.uk
+================================================================================
+    `;
+
+    const blob = new Blob([docContent], { type: "text/plain;charset=utf-8" });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = `Devopstrio_${cloud.replace(/\s+/g, "_")}_Architecture_Spec.txt`;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
+  }
 
   // Pagination State
   const [currentPage, setCurrentPage] = useState<number>(1);
@@ -1336,13 +1426,21 @@ export default function EnterpriseLandingZonePage() {
           </p>
           <div className="flex flex-wrap justify-center gap-4 pt-4">
             <button
-              onClick={() => setDemoModalOpen(true)}
+              onClick={() => {
+                setModalMode("demo");
+                setDemoModalOpen(true);
+                setDemoSubmitted(false);
+              }}
               className="inline-flex items-center justify-center px-8 py-4 rounded-lg text-xs font-bold tracking-wider uppercase bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white transition-all duration-300 hover:shadow-[0_0_25px_rgba(225,29,72,0.35)] hover:-translate-y-0.5 cursor-pointer"
             >
               <Sparkles className="w-4 h-4 mr-2" /> Request Demo
             </button>
             <button
-              onClick={() => setDemoModalOpen(true)}
+              onClick={() => {
+                setModalMode("pdf");
+                setDemoModalOpen(true);
+                setDemoSubmitted(false);
+              }}
               className="inline-flex items-center justify-center px-8 py-4 rounded-lg text-xs font-bold tracking-wider uppercase border border-zinc-850 hover:border-zinc-750 bg-zinc-950/60 hover:bg-zinc-900 text-white transition-all duration-300 hover:-translate-y-0.5 cursor-pointer"
             >
               <Download className="w-4 h-4 text-rose-500 mr-2" /> Download Architecture PDF
@@ -1406,7 +1504,7 @@ export default function EnterpriseLandingZonePage() {
         </div>
       )}
 
-      {/* REQUEST DEMO MODAL */}
+      {/* REQUEST DEMO & PDF DOWNLOAD MODAL */}
       {demoModalOpen && (
         <div className="fixed inset-0 z-50 bg-black/85 backdrop-blur-md flex items-center justify-center p-4">
           <div className="bg-[#0A0A0A] border border-rose-500/30 rounded-[28px] max-w-lg w-full p-6 space-y-6 relative shadow-2xl">
@@ -1425,9 +1523,13 @@ export default function EnterpriseLandingZonePage() {
                 <div className="w-14 h-14 bg-rose-600/20 text-rose-500 border border-rose-500/30 rounded-full flex items-center justify-center mx-auto">
                   <CheckCircle2 className="w-8 h-8" />
                 </div>
-                <h3 className="text-xl font-bold text-white">Demo Request Received!</h3>
+                <h3 className="text-xl font-bold text-white">
+                  {modalMode === "pdf" ? "Architecture PDF Request Dispatched!" : "Demo Request Received!"}
+                </h3>
                 <p className="text-xs text-zinc-300 max-w-sm mx-auto font-medium">
-                  Our Cloud Architecture team will contact you within 24 hours with custom Terraform Landing Zone blueprints and architecture specifications.
+                  {modalMode === "pdf"
+                    ? "Your Landing Zone architecture specification document has been generated and downloaded. Our Cloud Architects will also follow up via email."
+                    : "Our Cloud Architecture team will contact you within 24 hours with custom Terraform Landing Zone blueprints and live demo access."}
                 </p>
                 <button
                   onClick={() => {
@@ -1440,20 +1542,20 @@ export default function EnterpriseLandingZonePage() {
                 </button>
               </div>
             ) : (
-              <form
-                onSubmit={(e) => {
-                  e.preventDefault();
-                  setDemoSubmitted(true);
-                }}
-                className="space-y-4"
-              >
+              <form onSubmit={handleDemoSubmit} className="space-y-4">
                 <div>
                   <h3 className="text-xl font-bold text-white flex items-center gap-2">
-                    <Sparkles className="w-5 h-5 text-rose-500" />
-                    Request Landing Zone Demo
+                    {modalMode === "pdf" ? (
+                      <Download className="w-5 h-5 text-rose-500" />
+                    ) : (
+                      <Sparkles className="w-5 h-5 text-rose-500" />
+                    )}
+                    {modalMode === "pdf" ? "Download Architecture PDF" : "Request Landing Zone Demo"}
                   </h3>
                   <p className="text-xs text-zinc-400 mt-1 font-medium">
-                    Provide your details to receive specialized architecture specs and live Terraform demo setup.
+                    {modalMode === "pdf"
+                      ? "Enter your details to receive instant architecture specs and Terraform Landing Zone documentation."
+                      : "Provide your details to receive specialized architecture specs and live Terraform demo setup."}
                   </p>
                 </div>
 
@@ -1464,6 +1566,8 @@ export default function EnterpriseLandingZonePage() {
                       type="text"
                       required
                       placeholder="e.g. Alex Rivera"
+                      value={demoFormData.fullName}
+                      onChange={(e) => setDemoFormData({ ...demoFormData, fullName: e.target.value })}
                       className="w-full bg-black border border-zinc-800 rounded-xl px-3.5 py-2.5 text-white focus:border-rose-500 focus:outline-none"
                     />
                   </div>
@@ -1474,18 +1578,24 @@ export default function EnterpriseLandingZonePage() {
                       type="email"
                       required
                       placeholder="name@company.com"
+                      value={demoFormData.email}
+                      onChange={(e) => setDemoFormData({ ...demoFormData, email: e.target.value })}
                       className="w-full bg-black border border-zinc-800 rounded-xl px-3.5 py-2.5 text-white focus:border-rose-500 focus:outline-none"
                     />
                   </div>
 
                   <div>
                     <label className="block text-zinc-300 font-semibold mb-1">Target Cloud Platform</label>
-                    <select className="w-full bg-black border border-zinc-800 rounded-xl px-3.5 py-2.5 text-white focus:border-rose-500 focus:outline-none">
-                      <option>Microsoft Azure Landing Zone</option>
-                      <option>AWS Landing Zone (Control Tower)</option>
-                      <option>Google Cloud Foundation Fabric</option>
-                      <option>Oracle Cloud Infrastructure LZ</option>
-                      <option>Multi-Cloud Hybrid Architecture</option>
+                    <select
+                      value={demoFormData.cloudPlatform}
+                      onChange={(e) => setDemoFormData({ ...demoFormData, cloudPlatform: e.target.value })}
+                      className="w-full bg-black border border-zinc-800 rounded-xl px-3.5 py-2.5 text-white focus:border-rose-500 focus:outline-none"
+                    >
+                      <option value="Microsoft Azure Landing Zone">Microsoft Azure Landing Zone</option>
+                      <option value="AWS Landing Zone (Control Tower)">AWS Landing Zone (Control Tower)</option>
+                      <option value="Google Cloud Foundation Fabric">Google Cloud Foundation Fabric</option>
+                      <option value="Oracle Cloud Infrastructure LZ">Oracle Cloud Infrastructure LZ</option>
+                      <option value="Multi-Cloud Hybrid Architecture">Multi-Cloud Hybrid Architecture</option>
                     </select>
                   </div>
                 </div>
@@ -1500,9 +1610,19 @@ export default function EnterpriseLandingZonePage() {
                   </button>
                   <button
                     type="submit"
-                    className="px-5 py-2 rounded-xl bg-[#E11D48] hover:bg-rose-500 text-white text-xs font-bold flex items-center gap-1.5 cursor-pointer"
+                    disabled={isSubmittingDemo}
+                    className="px-5 py-2 rounded-xl bg-[#E11D48] hover:bg-rose-500 text-white text-xs font-bold flex items-center gap-1.5 cursor-pointer disabled:opacity-50"
                   >
-                    <Sparkles className="w-3.5 h-3.5" /> Submit Request
+                    {modalMode === "pdf" ? (
+                      <Download className="w-3.5 h-3.5" />
+                    ) : (
+                      <Sparkles className="w-3.5 h-3.5" />
+                    )}
+                    {isSubmittingDemo
+                      ? "Submitting Request..."
+                      : modalMode === "pdf"
+                      ? "Submit & Download PDF"
+                      : "Submit Request"}
                   </button>
                 </div>
               </form>

@@ -22,7 +22,7 @@ export const managedService: ServiceCategory = {
       items: ["Continuous security patching schedules", "Automated system backup routines", "Cloud resource usage optimization"]
     },
     {
-      slug: "infra-management",
+      slug: "infrastructure-management",
       title: "Infrastructure Management",
       description: "Monitoring network firewalls, storage volumes, and server cluster operations.",
       items: ["Server cluster load monitoring", "Firewall security rule assessments", "DNS server routing updates"]

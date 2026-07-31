@@ -1114,7 +1114,7 @@ export default function SafeSignProductPage() {
             Ready to simplify your document workflow?
           </h2>
           <p className="text-zinc-400 text-xs md:text-sm font-bold mb-10 max-w-lg mx-auto leading-relaxed">
-            Connect with our product specialist team at <a href={`mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL}`} className="text-rose-500 hover:underline">{process.env.NEXT_PUBLIC_CONTACT_EMAIL}</a> or call sales at <a href="tel:+447586879046" className="text-rose-500 hover:underline">0461 2940062</a>.
+            Connect with our product specialist team at <a href={`mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL}`} className="text-rose-500 hover:underline">{process.env.NEXT_PUBLIC_CONTACT_EMAIL}</a> or call sales at <a href="tel:+441784640216" className="text-rose-500 hover:underline">0461 2940062</a>.
           </p>
           <a
             href="/contact#contact-form"
