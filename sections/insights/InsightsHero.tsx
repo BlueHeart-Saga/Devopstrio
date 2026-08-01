@@ -12,14 +12,14 @@ export function InsightsHero() {
 
           {/* Left Column: Text content */}
           <div className="lg:col-span-7 flex flex-col items-start text-left justify-center relative z-20">
-            <Reveal>
+            {/* <Reveal>
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-zinc-800/80 bg-zinc-950/40 mb-6">
                 <span className="w-1.5 h-1.5 rounded-full bg-rose-500 animate-pulse" />
                 <span className="text-[10px] sm:text-xs font-semibold tracking-[0.2em] uppercase text-zinc-400">
                   Devopstrio THOUGHT LEADERSHIP
                 </span>
               </div>
-            </Reveal>
+            </Reveal> */}
 
             <Reveal delay={0.1}>
               <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight leading-[1.12] text-white mb-6">

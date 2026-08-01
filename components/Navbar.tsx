@@ -432,11 +432,9 @@ const serviceDetailsMap: Record<string, {
       { name: "AI Agents & Automation", href: "/services/ai-data-innovation/ai-agents-automation" },
       { name: "Machine Learning Engineering", href: "/services/ai-data-innovation/machine-learning-engineering" },
       { name: "MLOps & AI Operations", href: "/services/ai-data-innovation/mlops-ai-operations" },
-      { name: "LLM Integration", href: "/services/ai-data-innovation/llm-integration" },
-      { name: "Computer Vision", href: "/services/ai-data-innovation/computer-vision" },
-      { name: "Natural Language Processing", href: "/services/ai-data-innovation/natural-language-processing" },
+      { name: "Data Engineering", href: "/services/ai-data-innovation/data-engineering" },
       { name: "Predictive Analytics", href: "/services/ai-data-innovation/predictive-analytics" },
-      { name: "Business Intelligence", href: "/services/ai-data-innovation/business-intelligence" },
+      { name: "Business Intelligence & Analytics", href: "/services/ai-data-innovation/business-intelligence-analytics" },
       { name: "Data Governance", href: "/services/ai-data-innovation/data-governance" }
     ]
   },
@@ -607,7 +605,7 @@ export function Navbar() {
       slug: "resources",
       name: "Knowledge Center",
       categories: [
-        { slug: "white-papers", name: "White Papers", desc: "Deep-dives into architecture and compliance planning" },
+        { slug: "white-paper", name: "White Papers", desc: "Deep-dives into architecture and compliance planning" },
         { slug: "newsletters", name: "Newsletters", desc: "Weekly summaries on SRE and dev tools" }
       ]
     }
@@ -801,7 +799,7 @@ export function Navbar() {
 
                       <div className="relative z-10">
                         <h4 className="text-xl font-bold leading-snug text-white tracking-tight mb-2 font-sans drop-shadow-md">
-                          Core <span className="text-red-500">Services</span>
+                          Powering Next-Gen Solutions <span className="text-red-500">Services</span>
                         </h4>
                         <div className="w-10 h-[3px] bg-red-600 rounded-full my-3" />
                         
@@ -1128,17 +1126,18 @@ export function Navbar() {
                       <div className="grid grid-cols-2 gap-x-8">
                         
                         {/* Column 1 */}
-                        <div className="flex flex-col gap-2">
+                        <div className="flex flex-col gap-1.5">
                           {[
-                            { name: "Technology Stack", desc: "AI, Cloud, DevOps & Security Stack", href: "/ecosystem/technology-stack" },
-                            { name: "Platforms & Solutions", desc: "Enterprise Azure & AWS Frameworks", href: "/ecosystem/platforms" },
-                            { name: "Accelerators & Frameworks", desc: "Pre-built Landing Zones & Blueprints", href: "/ecosystem/accelerators-frameworks" }
+                            { name: "Partnerships", desc: "Hyperscaler & Strategic Tech Vendors", href: "/ecosystem/partnerships" },
+                            { name: "Innovation Labs", desc: "R&D Innovation & Emerging Tech", href: "/ecosystem/innovation-labs" },
+                            { name: "Platforms & Solutions", desc: "Enterprise Azure & AWS Frameworks", href: "/ecosystem/platforms-solutions" },
+                            { name: "Technology Stack", desc: "AI, Cloud, DevOps & Security Stack", href: "/ecosystem/technology-stack" }
                           ].map((item) => (
                             <Link
                               key={item.name}
                               href={item.href}
                               onClick={() => setActiveMenu(null)}
-                              className="group/eco block py-2.5 px-3 rounded-lg hover:bg-zinc-900/40 transition-colors"
+                              className="group/eco block py-2 px-3 rounded-lg hover:bg-zinc-900/40 transition-colors"
                             >
                               <span className="block text-[15px] font-semibold text-zinc-200 group-hover/eco:text-rose-500 transition-colors mb-0.5">
                                 {item.name}
@@ -1151,17 +1150,18 @@ export function Navbar() {
                         </div>
 
                         {/* Column 2 (Divided by vertical line) */}
-                        <div className="flex flex-col gap-2 border-l border-zinc-800/80 pl-8">
+                        <div className="flex flex-col gap-1.5 border-l border-zinc-800/80 pl-8">
                           {[
-                            { name: "Center of Excellence", desc: "Best Practices & Architecture Standards", href: "/ecosystem/center-of-excellence" },
-                            { name: "Devopstrio Labs", desc: "R&D Innovation & Emerging Tech", href: "/ecosystem/labs" },
-                            { name: "Partnerships & Alliances", desc: "Hyperscaler & Strategic Tech Vendors", href: "/ecosystem/partnerships-alliances" }
+                            { name: "Global Delivery Network", desc: "Distributed International Hubs", href: "/ecosystem/global-delivery" },
+                            { name: "Engineering Excellence", desc: "Best Practices & Architecture Standards", href: "/ecosystem/engineering-excellence" },
+                            { name: "Accelerators & Frameworks", desc: "Pre-built Landing Zones & Blueprints", href: "/ecosystem/accelerators-frameworks" },
+                            { name: "Community & Talent Network", desc: "Global Talent Ecosystem & Academies", href: "/ecosystem/community-talent-network" }
                           ].map((item) => (
                             <Link
                               key={item.name}
                               href={item.href}
                               onClick={() => setActiveMenu(null)}
-                              className="group/eco block py-2.5 px-3 rounded-lg hover:bg-zinc-900/40 transition-colors"
+                              className="group/eco block py-2 px-3 rounded-lg hover:bg-zinc-900/40 transition-colors"
                             >
                               <span className="block text-[15px] font-semibold text-zinc-200 group-hover/eco:text-rose-500 transition-colors mb-0.5">
                                 {item.name}
@@ -1734,7 +1734,7 @@ export function Navbar() {
               <div className="h-[1px] bg-zinc-900 my-2" />
 
               <Link
-                href="/#careers"
+                href="/careers"
                 onClick={() => setMobileOpen(false)}
                 className="text-base font-semibold text-zinc-100 hover:text-rose-400 py-1"
               >

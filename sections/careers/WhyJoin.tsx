@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { ArrowUpRight, ChevronRight } from "lucide-react";
+import { ArrowUpRight, ChevronRight, ArrowRight, GraduationCap, Rocket, TrendingUp, Cpu, Users, Heart } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
 import Link from "next/link";
 
@@ -57,33 +57,39 @@ export function WhyJoin() {
   const features = [
     {
       title: "Learning & Development",
-      desc: "Continue growing with mentorship, technical training, certifications, and hands-on learning.",
-      iconPath: "/assets/careers/icons/Expert Mentorship.svg",
+      desc: "Access continuous learning programs, mentorship from experts, and resources that help you stay ahead.",
+      icon: GraduationCap,
+      bgImage: "/assets/careers/why_join/cap_107.png",
     },
     {
       title: "Real-World Projects",
-      desc: "Work on enterprise-grade solutions in AI, Cloud, DevOps, Cybersecurity, and Software Development.",
-      iconPath: "/assets/careers/icons/Real-World Projects.svg",
+      desc: "Work on challenging, real-world projects that solve meaningful problems and create real impact.",
+      icon: Rocket,
+      bgImage: "/assets/careers/why_join/cap_108.png",
     },
     {
       title: "Career Growth",
-      desc: "Advance your career through performance-based promotions, leadership opportunities, and continuous skill development.",
-      iconPath: "/assets/careers/icons/Job Opportunities.svg",
+      desc: "Clear career paths, regular feedback, and performance-driven growth opportunities.",
+      icon: TrendingUp,
+      bgImage: "/assets/careers/why_join/cap_110.png",
     },
     {
       title: "Modern Technologies",
-      desc: "Gain experience with the latest tools and technologies including Azure, AWS, React, Next.js, Python, Docker, Kubernetes, and AI.",
-      iconPath: "/assets/careers/icons/LOR + Certification.svg",
+      desc: "Work with cutting-edge technologies like AI, Cloud, DevOps, Data, and more to future-proof your skills.",
+      icon: Cpu,
+      bgImage: "/assets/careers/why_join/cap_111.png",
     },
     {
       title: "Collaborative Culture",
-      desc: "Be part of a supportive team that values innovation, teamwork, knowledge sharing, and diversity.",
-      iconPath: "/assets/careers/icons/Global Community.svg",
+      desc: "Be part of a supportive, inclusive, and innovative culture where ideas are valued and teamwork drives success.",
+      icon: Users,
+      bgImage: "/assets/careers/why_join/cap_112.png",
     },
     {
       title: "Work-Life Balance",
-      desc: "Enjoy a healthy work environment with flexible work practices, employee well-being, and a culture that supports personal and professional growth.",
-      iconPath: "/assets/careers/icons/Flexible Schedule.svg",
+      desc: "We believe in balance and well-being with flexible work options and a people-first approach.",
+      icon: Heart,
+      bgImage: "/assets/careers/why_join/cap_113.png",
     },
   ];
 
@@ -151,9 +157,6 @@ export function WhyJoin() {
                           />
                           <span>{item.label}</span>
                         </span>
-                        {/* {isActive && (
-                          <span className="w-1.5 h-1.5 rounded-full bg-rose-600" />
-                        )} */}
                       </a>
                     );
                   })}
@@ -166,27 +169,45 @@ export function WhyJoin() {
         </div>
 
         {/* 6 Features Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-16">
           {features.map((feature, idx) => {
+            const Icon = feature.icon;
             return (
               <Reveal key={idx} delay={idx * 0.05} className="h-full">
-                <div className="group flex flex-col items-center text-center p-4">
-                  {/* Free-floating Icon */}
-                  <img
-                    src={feature.iconPath}
-                    alt={feature.title}
-                    className="w-24 h-24 mb-5 object-contain transition-all duration-300 group-hover:scale-110 group-hover:-translate-y-1 drop-shadow-md group-hover:drop-shadow-[0_4px_12px_rgba(244,63,94,0.3)]"
-                  />
+                <div className="group relative flex flex-col justify-end p-6 sm:p-7 min-h-[260px] md:min-h-[285px] rounded-2xl overflow-hidden border border-zinc-800/80 bg-zinc-950/80 hover:border-rose-500/50 transition-all duration-300 shadow-xl hover:shadow-rose-950/30">
+                  {/* Background Image with Bottom Half Gradient */}
+                  <div className="absolute inset-0 z-0 overflow-hidden">
+                    <img
+                      src={feature.bgImage}
+                      alt={feature.title}
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                    {/* Gradient overlay: full image visible top, dark gradient bottom */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black via-black/75 to-transparent transition-opacity duration-300" />
+                  </div>
 
-                  {/* Title */}
-                  <h3 className="text-base font-bold text-white mb-3 group-hover:text-rose-400 transition-colors duration-300 leading-snug">
-                    {feature.title}
-                  </h3>
+                  {/* Bottom Content: Icon, Title & Button */}
+                  <div className="relative z-10 w-full flex flex-col justify-end">
+                    {/* Circular Icon Container */}
+                    <div className="w-11 h-11 rounded-full bg-black/75 border border-zinc-700/80 flex items-center justify-center text-rose-500 mb-3.5 shadow-inner backdrop-blur-md group-hover:border-rose-500/60 group-hover:text-rose-400 group-hover:scale-105 transition-all duration-300">
+                      <Icon size={20} className="stroke-[2]" />
+                    </div>
 
-                  {/* Desc */}
-                  {/* <p className="text-xs md:text-sm text-zinc-350 font-medium leading-relaxed">
-                    {feature.desc}
-                  </p> */}
+                    {/* Title & Arrow Button Row */}
+                    <div className="flex items-center justify-between gap-3 w-full">
+                      <h3 className="text-base sm:text-lg font-bold text-white leading-snug group-hover:text-rose-400 transition-colors duration-300">
+                        {feature.title}
+                      </h3>
+
+                      <button
+                        onClick={handleScrollToRoles}
+                        aria-label={feature.title}
+                        className="w-9 h-9 rounded-lg bg-rose-600 hover:bg-rose-500 text-white flex items-center justify-center shrink-0 transition-all duration-300 shadow-[0_4px_12px_rgba(225,29,72,0.4)] group-hover:scale-110"
+                      >
+                        <ArrowRight size={16} />
+                      </button>
+                    </div>
+                  </div>
                 </div>
               </Reveal>
             );
@@ -197,9 +218,10 @@ export function WhyJoin() {
         <Reveal className="flex justify-center mb-32">
           <button
             onClick={handleScrollToRoles}
-            className="px-8 py-3 rounded-full text-sm font-semibold uppercase tracking-wider text-white bg-gradient-to-r from-rose-600 to-rose-500 hover:from-rose-500 hover:to-rose-400 transition-all duration-300 shadow-[0_4px_20px_rgba(225,29,72,0.3)] hover:scale-[1.03]"
+            className="px-8 py-3.5 rounded-full text-sm font-bold uppercase tracking-wider text-white bg-rose-600 hover:bg-rose-500 transition-all duration-300 shadow-[0_4px_20px_rgba(225,29,72,0.4)] hover:scale-[1.03] flex items-center gap-2 group"
           >
-            Apply Now
+            <span>Apply Now</span>
+            <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
           </button>
         </Reveal>
 

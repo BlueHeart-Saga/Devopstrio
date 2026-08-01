@@ -149,7 +149,7 @@ export function CategoryHero({ categoryName, categorySlug }: CategoryHeroProps) 
   const config = getCategoryConfig(categorySlug);
 
   return (
-    <section className="relative overflow-hidden bg-black text-white min-h-screen flex flex-col justify-between pt-36 pb-20 border-b border-zinc-900/60">
+    <section className="relative overflow-hidden bg-black text-white pt-28 pb-12 border-b border-zinc-900/60">
       {/* Background Image */}
       {config.image && (
         <div className="absolute inset-0 z-0">
@@ -168,9 +168,9 @@ export function CategoryHero({ categoryName, categorySlug }: CategoryHeroProps) 
         </div>
       )}
 
-      <div className="max-w-7xl mx-auto relative z-10 w-full px-12 xl:px-8 flex-grow flex flex-col justify-between">
-        {/* Breadcrumb Navigation - Pinned to the top of the content container */}
-        <nav className="flex items-center justify-start gap-2.5 text-[9px] md:text-[10px] font-medium tracking-[0.12em] text-zinc-400 mb-6 overflow-x-auto whitespace-nowrap py-1">
+      <div className="max-w-7xl mx-auto relative z-10 w-full px-12 xl:px-8">
+        {/* Breadcrumb Navigation */}
+        <nav className="flex items-center justify-start gap-2.5 text-[9px] md:text-[10px] font-medium tracking-[0.12em] text-zinc-400 mb-4 overflow-x-auto whitespace-nowrap py-1">
           <Link href="/insights" className="hover:text-white transition-colors text-zinc-400">
             INSIGHTS HUB
           </Link>
@@ -178,10 +178,10 @@ export function CategoryHero({ categoryName, categorySlug }: CategoryHeroProps) 
           <span className="text-rose-500 font-semibold">{categoryName.toUpperCase()}</span>
         </nav>
 
-        {/* Headline block - Centered my-auto */}
-        <div className="max-w-4xl mx-auto text-center flex flex-col items-center justify-center my-auto py-8">
+        {/* Headline block */}
+        <div className="max-w-4xl mx-auto text-center flex flex-col items-center justify-center py-4">
           <Reveal>
-            <div className="flex items-center justify-center gap-2.5 mb-5">
+            <div className="flex items-center justify-center gap-2.5 mb-3">
               <span className="h-[1px] w-8 bg-gradient-to-r from-transparent to-rose-600"></span>
               <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-rose-500">
                 Category Archive
@@ -191,7 +191,7 @@ export function CategoryHero({ categoryName, categorySlug }: CategoryHeroProps) 
           </Reveal>
 
           <Reveal delay={0.05}>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-tight mb-5 text-white text-center">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-tight mb-4 text-white text-center">
               {config.titlePrefix} <span className="text-[#E11D48]">{categoryName}</span>
             </h1>
           </Reveal>
@@ -202,9 +202,6 @@ export function CategoryHero({ categoryName, categorySlug }: CategoryHeroProps) 
             </p>
           </Reveal>
         </div>
-        
-        {/* Empty bottom element to align layout flow like Hero.tsx */}
-        <div className="h-4" />
       </div>
     </section>
   );

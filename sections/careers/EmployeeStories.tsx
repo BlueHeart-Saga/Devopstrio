@@ -288,7 +288,7 @@ export function EmployeeStories() {
                     <span className="text-[10px] text-zinc-500 font-medium block">Lead DevOps Engineer • @Devopstrio</span>
                   </div>
                   <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-white shadow-md shrink-0 bg-zinc-100">
-                    <img src="/assets/Home-page/homehero/Suryaprakash s.svg" alt="Suryaprakash" className="w-full h-full object-cover" />
+                    <img src="/assets/Home-page/client-reviews/client_164.png" alt="Suryaprakash" className="w-full h-full object-cover" />
                   </div>
                 </div>
               </Reveal>
@@ -305,7 +305,7 @@ export function EmployeeStories() {
                       <span className="text-[10px] text-rose-600 font-semibold block">Software Engineering Lead</span>
                     </div>
                     <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-white shadow-md shrink-0 bg-zinc-100">
-                      <img src="/assets/Home-page/homehero/Ananthalakshmi.svg" alt="Ananthalakshmi" className="w-full h-full object-cover" />
+                      <img src="/assets/Home-page/client-reviews/client_165.png" alt="Ananthalakshmi" className="w-full h-full object-cover" />
                     </div>
                   </div>
                 </div>
@@ -323,13 +323,13 @@ export function EmployeeStories() {
                   {/* Floating speech bubble avatars sticking out below */}
                   <div className="flex justify-center items-center gap-2 -mb-10 pt-2">
                     <div className="w-9 h-9 rounded-full border-2 border-white shadow-md overflow-hidden bg-zinc-200">
-                      <img src="/assets/careers/careers_testimonial people/Rahul.png" alt="Team 1" className="w-full h-full object-cover" />
+                      <img src="/assets/Home-page/client-reviews/client_166.png" alt="Team 1" className="w-full h-full object-cover" />
                     </div>
                     <div className="w-11 h-11 rounded-full border-2 border-white shadow-lg overflow-hidden bg-zinc-200">
-                      <img src="/assets/careers/careers_testimonial people/Maria.png" alt="Team 2" className="w-full h-full object-cover" />
+                      <img src="/assets/Home-page/client-reviews/client_167.png" alt="Team 2" className="w-full h-full object-cover" />
                     </div>
                     <div className="w-9 h-9 rounded-full border-2 border-white shadow-md overflow-hidden bg-zinc-200">
-                      <img src="/assets/careers/careers_testimonial people/Ooviya.png" alt="Team 3" className="w-full h-full object-cover" />
+                      <img src="/assets/Home-page/client-reviews/client_168.png" alt="Team 3" className="w-full h-full object-cover" />
                     </div>
                   </div>
                 </div>
@@ -345,7 +345,7 @@ export function EmployeeStories() {
                 <div className="bg-white text-zinc-900 p-6 pt-10 rounded-2xl shadow-2xl text-center relative mt-4">
                   {/* Top Avatar Notch */}
                   <div className="absolute -top-7 left-1/2 -translate-x-1/2 w-16 h-16 rounded-full border-4 border-white shadow-xl overflow-hidden bg-zinc-100">
-                    <img src="/assets/careers/careers_testimonial people/Ooviya.png" alt="Ooviya" className="w-full h-full object-cover" />
+                    <img src="/assets/Home-page/client-reviews/client_169.png" alt="Ooviya" className="w-full h-full object-cover" />
                   </div>
                   <div className="flex justify-center gap-1 text-amber-400 mb-2 mt-2">
                     {Array.from({ length: 5 }).map((_, i) => (
@@ -372,7 +372,7 @@ export function EmployeeStories() {
               <Reveal delay={0.2}>
                 <div className="bg-white text-zinc-900 p-6 pt-8 rounded-2xl shadow-2xl text-center relative mt-4">
                   <div className="w-12 h-12 rounded-full overflow-hidden mx-auto -mt-12 border-2 border-white shadow-lg mb-3 bg-zinc-100">
-                    <img src="/assets/careers/careers_testimonial people/Punitha.png" alt="Punitha" className="w-full h-full object-cover" />
+                    <img src="/assets/Home-page/client-reviews/client_170.png" alt="Punitha" className="w-full h-full object-cover" />
                   </div>
                   <div className="flex justify-center gap-1 text-amber-400 mb-3">
                     {Array.from({ length: 5 }).map((_, i) => (
@@ -398,7 +398,7 @@ export function EmployeeStories() {
               <Reveal delay={0.15}>
                 <div className="bg-white text-zinc-900 p-4 rounded-2xl shadow-2xl text-left">
                   <div className="w-full h-56 rounded-xl overflow-hidden mb-4 bg-zinc-100">
-                    <img src="/assets/Home-page/homehero/Saravanakumar.s.svg" alt="Saravanakumar" className="w-full h-full object-cover" />
+                    <img src="/assets/Home-page/client-reviews/client_171.png" alt="Saravanakumar" className="w-full h-full object-cover" />
                   </div>
                   <p className="text-xs text-zinc-700 leading-relaxed font-medium mb-3">
                     From global client missions to 1-on-1 mentorship, Devopstrio invests deeply in every engineer's potential.
@@ -416,7 +416,7 @@ export function EmployeeStories() {
               <Reveal delay={0.1}>
                 <div className="bg-white text-zinc-900 p-6 pt-10 rounded-2xl shadow-2xl text-center relative mt-4">
                   <div className="absolute -top-7 left-1/2 -translate-x-1/2 w-16 h-16 rounded-full border-4 border-white shadow-xl overflow-hidden bg-zinc-100">
-                    <img src="/assets/Home-page/homehero/Sermaraja.V.svg" alt="Sermaraja" className="w-full h-full object-cover" />
+                    <img src="/assets/Home-page/client-reviews/client_172.png" alt="Sermaraja" className="w-full h-full object-cover" />
                   </div>
                   <h3 className="text-sm font-bold text-zinc-900 mb-1 mt-1">Good Job!</h3>
                   <div className="flex justify-center gap-1 text-amber-400 mb-3">
@@ -435,7 +435,7 @@ export function EmployeeStories() {
               <Reveal delay={0.2}>
                 <div className="bg-white text-zinc-900 p-4 rounded-2xl shadow-2xl flex flex-col sm:flex-row items-center gap-4 text-left">
                   <div className="w-full sm:w-28 h-28 rounded-xl overflow-hidden shrink-0 bg-zinc-100">
-                    <img src="/assets/careers/careers_testimonial people/Anita.png" alt="Sudalairajan" className="w-full h-full object-cover" />
+                    <img src="/assets/Home-page/client-reviews/client_173.png" alt="Sudalairajan" className="w-full h-full object-cover" />
                   </div>
                   <div className="flex-1">
                     <span className="text-xs font-bold text-zinc-900 block mb-1 font-serif">“ Security & zero-trust engineering are embedded in all we build. ”</span>
@@ -458,7 +458,7 @@ export function EmployeeStories() {
                     <span className="text-[10px] text-rose-600 font-semibold block">Global Technology Lead</span>
                   </div>
                   <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-white shadow-md shrink-0 bg-zinc-100">
-                    <img src="/assets/Home-page/homehero/Sagadevan.S.svg" alt="Sagadevan" className="w-full h-full object-cover" />
+                    <img src="/assets/Home-page/client-reviews/client_174.png" alt="Sagadevan" className="w-full h-full object-cover" />
                   </div>
                 </div>
               </Reveal>
