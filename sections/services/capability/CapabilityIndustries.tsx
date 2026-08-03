@@ -102,7 +102,7 @@ export function CapabilityIndustries({ industries }: CapabilityIndustriesProps) 
         {/* Section Header */}
         <Reveal className="mb-16 text-center">
           <div className="flex items-center justify-center gap-2 mb-4">
-            <span className="text-[10px] font-bold tracking-widest uppercase text-rose-500">
+            <span className="text-xs md:text-sm font-extrabold tracking-[0.25em] uppercase text-rose-500 font-mono">
               Sectors Served
             </span>
           </div>

@@ -167,9 +167,9 @@ export function CoreServices() {
             <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
               Technology at the core of every business breakthrough
             </h2>
-            <p className="text-zinc-100 text-base md:text-lg leading-relaxed">
+            {/* <p className="text-zinc-100 text-base md:text-lg leading-relaxed">
               End-to-end services across <Link href="/services/cloud-services" className="text-rose-500 hover:underline font-medium">Cloud</Link>, <Link href="/services/ai-data-innovation" className="text-rose-500 hover:underline font-medium">AI</Link>, <Link href="/services/devops-automation" className="text-rose-500 hover:underline font-medium">DevOps</Link>, <Link href="/services/cybersecurity" className="text-rose-500 hover:underline font-medium">Security</Link>, and <Link href="/services/software-development" className="text-rose-500 hover:underline font-medium">Software Engineering</Link> — built to deliver measurable outcomes.
-            </p>
+            </p> */}
           </div>
         </Reveal>
 
@@ -202,9 +202,9 @@ export function CoreServices() {
                   <h3 className="text-white text-lg md:text-xl font-bold leading-snug">
                     {service.title}
                   </h3>
-                  <p className="text-zinc-100 text-base md:text-[17px] leading-relaxed flex-1 mt-1 font-normal">
+                  {/* <p className="text-zinc-100 text-base md:text-[17px] leading-relaxed flex-1 mt-1 font-normal">
                     {service.desc}
-                  </p>
+                  </p> */}
 
                   {/* CTA - Modern Transparent Glassy Premium Link Button */}
                   <Link

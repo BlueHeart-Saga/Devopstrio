@@ -153,7 +153,7 @@ export function ExecutiveTestimonials() {
           {/* Controls: Search & Auto-Play */}
           <Reveal>
             <div className="flex flex-wrap items-center gap-3">
-              <div className="relative">
+              {/* <div className="relative">
                 <Search className="w-4 h-4 text-zinc-500 absolute left-3 top-1/2 -translate-y-1/2" />
                 <input
                   type="text"
@@ -162,7 +162,7 @@ export function ExecutiveTestimonials() {
                   onChange={(e) => setSearchQuery(e.target.value)}
                   className="bg-zinc-950 border border-zinc-800 rounded-xl pl-9 pr-4 py-2 text-xs text-white placeholder:text-zinc-500 focus:outline-none focus:border-red-500 transition-colors w-48 sm:w-60"
                 />
-              </div>
+              </div> */}
 
               <button
                 onClick={() => setIsPlaying(!isPlaying)}
@@ -177,7 +177,7 @@ export function ExecutiveTestimonials() {
         </div>
 
         {/* Category Pills Filter Bar */}
-        <Reveal>
+        {/* <Reveal>
           <div className="flex gap-2 overflow-x-auto pb-4 mb-10 custom-scrollbar">
             {categories.map((cat) => (
               <button
@@ -193,7 +193,7 @@ export function ExecutiveTestimonials() {
               </button>
             ))}
           </div>
-        </Reveal>
+        </Reveal> */}
 
         {/* Testimonial Card (Exact 1:1 Banner Layout matching User UI Screenshot) */}
         {filteredTestimonials.length > 0 ? (
@@ -262,9 +262,9 @@ export function ExecutiveTestimonials() {
 
         {/* Footer Navigation Bar (Index Counter & Arrows) */}
         <div className="mt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="text-sm font-mono text-zinc-300">
+          {/* <div className="text-sm font-mono text-zinc-300">
             Testimonial <span className="text-red-500 font-bold">{currentIndex + 1}</span> of <span className="text-white font-bold">{filteredTestimonials.length}</span> ({activeCategory})
-          </div>
+          </div> */}
 
           <div className="flex items-center gap-3">
             <button

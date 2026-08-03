@@ -119,7 +119,7 @@ export function SectionNavbar({ sections = defaultSections }: { sections?: { id:
                   key={section.id}
                   href={`#${section.id}`}
                   onClick={(e) => handleLinkClick(e, section.id)}
-                  className={`relative py-1 text-xs font-semibold tracking-wide uppercase transition-colors whitespace-nowrap flex-shrink-0 ${isActive ? "text-white" : "text-zinc-400 hover:text-zinc-200"
+                  className={`relative py-1 text-sm md:text-[15px] font-semibold tracking-wide uppercase transition-colors whitespace-nowrap flex-shrink-0 ${isActive ? "text-white" : "text-zinc-400 hover:text-zinc-200"
                     }`}
                 >
                   {section.label}

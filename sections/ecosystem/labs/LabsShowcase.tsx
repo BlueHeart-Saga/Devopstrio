@@ -23,7 +23,7 @@ export function LabsShowcase() {
       id: "ai",
       name: "AI Innovation Lab",
       icon: <Brain size={20} />,
-      image: "/assets/services/bg-ai.png",
+      image: "/assets/ecosystem/innovation-labs page Showcase _Card/AI.png",
       quote: "\"Accelerating enterprise workflows through autonomous agents and safe cognitive automation frameworks.\"",
       projects: [
         { stat: "Hiring Agent", label: "Autonomous resume matching engine." },
@@ -36,7 +36,7 @@ export function LabsShowcase() {
       id: "cloud",
       name: "Cloud Innovation Lab",
       icon: <Cloud size={20} />,
-      image: "/assets/services/bg-cloud.png",
+      image: "/assets/ecosystem/innovation-labs page Showcase _Card/Cloud.png",
       quote: "\"Driving zero-downtime scalability and sustainable green hosting across distributed multicloud architectures.\"",
       projects: [
         { stat: "FinOps Auditor", label: "Automated idle node scale-down." },
@@ -49,7 +49,7 @@ export function LabsShowcase() {
       id: "devops",
       name: "DevOps Innovation Lab",
       icon: <Terminal size={20} />,
-      image: "/assets/services/bg-devops.png",
+      image: "/assets/ecosystem/innovation-labs page Showcase _Card/Devops.png",
       quote: "\"Standardizing developer portals and self-healing pipelines to drastically reduce code-to-production lead times.\"",
       projects: [
         { stat: "Portal Dashboard", label: "Unified Backstage scaffold." },
@@ -62,7 +62,7 @@ export function LabsShowcase() {
       id: "cyber",
       name: "Cybersecurity Lab",
       icon: <Shield size={20} />,
-      image: "/assets/services/bg-cybersecurity.png",
+      image: "/assets/ecosystem/innovation-labs page Showcase _Card/cyber.png",
       quote: "\"Pioneering zero-trust environments with dynamic secret rotation and continuous compliance auditing.\"",
       projects: [
         { stat: "Secrets Rotator", label: "Dynamic cluster key rotation." },
@@ -75,7 +75,7 @@ export function LabsShowcase() {
       id: "data",
       name: "Data & Analytics Lab",
       icon: <Database size={20} />,
-      image: "/assets/services/bg-data.png",
+      image: "/assets/ecosystem/innovation-labs page Showcase _Card/Data.png",
       quote: "\"Constructing ultra-low latency telemetry streaming architectures and unified analytical lakehouses.\"",
       projects: [
         { stat: "Stream Parser", label: "Kafka-driven metrics ingestion." },
@@ -186,10 +186,10 @@ export function LabsShowcase() {
                   transition={{ duration: 0.5 }}
                   src={currentLab.image}
                   alt={currentLab.name}
-                  className="absolute inset-0 w-full h-full object-cover opacity-60 transition-transform duration-1000 hover:scale-105"
+                  className="absolute inset-0 w-full h-full object-cover opacity-85 transition-transform duration-1000 hover:scale-105"
                 />
               </AnimatePresence>
-              <div className="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-r from-[#050505] via-[#050505]/40 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-r from-[#050505] via-[#050505]/30 to-transparent" />
             </div>
 
           </div>

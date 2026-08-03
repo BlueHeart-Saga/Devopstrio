@@ -154,7 +154,7 @@ export function CapabilityArchitecture({
           {/* Left Column: Alternate Zigzag Architecture Flow Diagram */}
           <div className="lg:col-span-6 w-full flex flex-col justify-start relative">
             <Reveal className="mb-12">
-              <span className="text-[10px] font-mono tracking-widest text-rose-500 uppercase font-bold block mb-2">
+              <span className="text-xs md:text-sm font-extrabold tracking-[0.25em] uppercase text-rose-500 font-mono block mb-2">
                 SYSTEM TOPOLOGY
               </span>
               <h3 className="text-lg font-bold text-white uppercase tracking-wider">
@@ -231,7 +231,7 @@ export function CapabilityArchitecture({
           <div className="lg:col-span-6 flex flex-col justify-start text-left lg:sticky lg:top-28">
             <Reveal className="mb-12">
               <div className="flex items-center gap-2 mb-4">
-                <span className="text-[10px] font-bold tracking-[0.25em] uppercase text-rose-500">
+                <span className="text-xs md:text-sm font-extrabold tracking-[0.25em] uppercase text-rose-500 font-mono">
                   SOLUTION ARCHITECTURE
                 </span>
               </div>

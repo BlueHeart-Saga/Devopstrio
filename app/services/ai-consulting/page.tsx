@@ -1,0 +1,132 @@
+import React from "react";
+import { notFound } from "next/navigation";
+import { getServiceByCategory, servicesData } from "@/data/services";
+import { getHeroBgImage } from "@/lib/services-utils";
+import { Hero } from "@/components/services/Hero";
+import { SectionNavbar } from "@/components/ui/SectionNavbar";
+import { ServiceOverview } from "@/sections/services/category/ServiceOverview";
+import { CapabilityGrid } from "@/components/services/CapabilityGrid";
+import { Challenges } from "@/components/services/Challenges";
+import { TimelineProcess } from "@/components/services/TimelineProcess";
+import { TechnologyStack } from "@/components/services/TechnologyStack";
+import { IndustryCards } from "@/components/services/IndustryCards";
+import { WhyDevopstrio } from "@/sections/home/WhyDevOpsTrio";
+import { ServiceMetrics } from "@/sections/services/category/ServiceMetrics";
+import { ServiceRelated } from "@/sections/services/category/ServiceRelated";
+import { FAQ } from "@/components/services/FAQ";
+import { BreadcrumbSchema, ServiceSchema, FAQSchema } from "@/components/seo/Schemas";
+import { CTA } from "@/components/services/CTA";
+
+export async function generateMetadata() {
+  const service = "ai-consulting";
+  const data = getServiceByCategory(service);
+  if (!data) return {};
+
+  return {
+    title: `${data.title} | Devopstrio`,
+    description: data.subtitle,
+    openGraph: {
+      title: `${data.title} | Devopstrio`,
+      description: data.subtitle
+    },
+    alternates: {
+      canonical: `/services/${service}`
+    }
+  };
+}
+
+export default async function ServiceCategoryPage() {
+  const service = "ai-consulting";
+  const data = getServiceByCategory(service);
+
+  if (!data) {
+    notFound();
+  }
+
+  const breadcrumbs = [
+    { label: "Home", href: "/" },
+    { label: "Services", href: "/services" },
+    { label: data.title }
+  ];
+
+  const subSections = [
+    { id: "overview", label: "Overview" },
+    { id: "capabilities", label: "Capabilities" },
+    { id: "challenges", label: "Challenges" },
+    { id: "process", label: "Process" },
+    { id: "technology", label: "Technology" },
+    { id: "industries", label: "Industries" },
+    { id: "why-devopstrio", label: "Why Us" },
+    { id: "metrics", label: "Metrics" },
+    { id: "related-services", label: "Related Services" },
+    { id: "faq", label: "FAQ" }
+  ];
+
+  const allServices = Object.values(servicesData);
+  const relatedServices = allServices
+    .filter((s) => s.slug !== data.slug)
+    .slice(0, 3);
+
+  return (
+    <main className="min-h-screen bg-black text-white font-sans">
+      <BreadcrumbSchema items={[
+        { name: "Home", item: "/" },
+        { name: "Services", item: "/services" },
+        { name: data.title, item: `/services/${service}` }
+      ]} />
+      <ServiceSchema name={data.title} description={data.subtitle} offers={data.capabilities.map(c => c.title)} />
+      {data.faqs && <FAQSchema faqs={data.faqs} />}
+
+      <Hero
+        badge={data.badge}
+        title={data.title}
+        subtitle={data.subtitle}
+        stats={undefined}
+        breadcrumbs={breadcrumbs}
+        bgImage={getHeroBgImage(service)}
+      />
+
+      <SectionNavbar sections={subSections} />
+
+      <ServiceOverview
+        title={data.title}
+        subtitle={data.subtitle}
+        image={getHeroBgImage(service)}
+        overviewHeading={data.overviewHeading}
+        overviewDesc1={data.overviewDesc1}
+        overviewDesc2={data.overviewDesc2}
+      />
+
+      <CapabilityGrid serviceSlug={data.slug} capabilities={data.capabilities} />
+
+      <Challenges serviceSlug={data.slug} capabilities={data.capabilities} />
+
+      <TimelineProcess serviceSlug={data.slug} steps={data.deliveryFramework} />
+
+      <div id="technology">
+        <TechnologyStack techs={data.techStack} />
+      </div>
+
+      <div id="industries">
+        <IndustryCards industries={data.industries} />
+      </div>
+
+      <div id="why-devopstrio">
+        <WhyDevopstrio />
+      </div>
+
+      <ServiceMetrics stats={data.stats || []} />
+
+      <ServiceRelated relatedServices={relatedServices} />
+
+      <FAQ faqs={data.faqs} />
+
+      <CTA
+        ctaTitle={data.ctaTitle}
+        ctaHighlight={data.ctaHighlight}
+        ctaDesc={data.ctaDesc}
+        ctaBtnText={data.ctaBtnText}
+      />
+    </main>
+  );
+}

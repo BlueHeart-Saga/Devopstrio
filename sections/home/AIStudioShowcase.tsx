@@ -12,21 +12,21 @@ const aiDifferenceItems = [
     title: "Strategic GenAI & Enterprise AI Philosophy",
     description:
       "We believe AI is a core operational transformation engine. We design custom generative copilots, agentic automation frameworks, and enterprise LLM architectures tailored to your unique industry requirements, security standards, and growth goals.",
-    image: "/assets/Home-page/ai-native/philosophy.png"
+    image: "/assets/Services-Page/Our Enterprise AI Engineering Excellence/Strategic GenAI & Enterprise AI Philosophy.png"
   },
   {
     id: "system",
     title: "Autonomous AI Systems & MLOps Engineering",
     description:
       "Our battle-tested AI engineering framework automates intelligent code generation, continuous model evaluation, automated data pipelines, and zero-trust security compliance — accelerating time-to-value by up to 50% with enterprise reliability.",
-    image: "/assets/Home-page/ai-native/engineering.png"
+    image: "/assets/Services-Page/Our Enterprise AI Engineering Excellence/Autonomous AI Systems & MLOps Engineering.png"
   },
   {
     id: "measurement",
     title: "Measurable Business ROI & AI Governance",
     description:
       "We measure every AI deployment across velocity, accuracy, security, and long-term scalability. With continuous real-time telemetry and strict AI governance, we guarantee transparent business impact and sustainable operational excellence.",
-    image: "/assets/Home-page/ai-native/measurement.png"
+    image: "/assets/Services-Page/Our Enterprise AI Engineering Excellence/Measurable Business ROI & AI Governance.png"
   }
 ];
 
@@ -37,7 +37,8 @@ const aiTransformationCards = [
     title: "Generative AI & Copilots",
     subtitle: "Custom Enterprise LLMs",
     description: "Architect bespoke GenAI engines, domain-tuned copilot assistants, and semantic RAG systems for intelligent workplace productivity.",
-    image: "/assets/Home-page/ai-studio/ai-sdlc.png",
+    image: "/assets/Services-Page/Comprehensive AI Services For Enterprises/Generative AI & Copilots.png",
+    hoverImage: "/assets/Services-Page/Comprehensive AI Services For Enterprises_Hover/Generative AI & Copilots.png",
     link: "/services/ai-data-innovation",
     badge: "GenAI & LLMs"
   },
@@ -45,7 +46,8 @@ const aiTransformationCards = [
     title: "Agentic Automation",
     subtitle: "Autonomous Digital Agents",
     description: "Deploy goal-driven autonomous AI agents that execute complex multi-step enterprise workflows, API orchestrations, and back-office operations.",
-    image: "/assets/Home-page/ai-studio/agentic-office.png",
+    image: "/assets/Services-Page/Comprehensive AI Services For Enterprises/Agentic Automation.png",
+    hoverImage: "/assets/Services-Page/Comprehensive AI Services For Enterprises_Hover/Agentic Automation.png",
     link: "/services/ai-data-innovation",
     badge: "AI Agents"
   },
@@ -53,7 +55,8 @@ const aiTransformationCards = [
     title: "Document & Workflow AI",
     subtitle: "Intelligent Process Automation",
     description: "Transform unstructured contracts, financial PDFs, and medical records into actionable insights with multi-modal Document AI and predictive telemetry.",
-    image: "/assets/Home-page/ai-studio/ai-managed-services.png",
+    image: "/assets/Services-Page/Comprehensive AI Services For Enterprises/Document & Workflow AI.png",
+    hoverImage: "/assets/Services-Page/Comprehensive AI Services For Enterprises_Hover/Document & Workflow AI.png",
     link: "/services/ai-data-innovation",
     badge: "DocAI & Analytics"
   },
@@ -61,7 +64,8 @@ const aiTransformationCards = [
     title: "Enterprise AI R&D Studio",
     subtitle: "Custom ML & Vision Engineering",
     description: "End-to-end Machine Learning model training, computer vision synthesis, vector search platforms, and rapid enterprise AI solution prototyping.",
-    image: "/assets/Home-page/ai-studio/ai-lab.png",
+    image: "/assets/Services-Page/Comprehensive AI Services For Enterprises/Enterprise AI R&D Studio.png",
+    hoverImage: "/assets/Services-Page/Comprehensive AI Services For Enterprises_Hover/Enterprise AI R&D Studio.png",
     link: azureUrl,
     badge: "AI Lab & MLOps"
   }
@@ -81,22 +85,22 @@ export function AIStudioShowcase() {
 
         {/* Section Header - Centered & Impressive Enterprise Copy */}
         <div className="text-center max-w-4xl mx-auto mb-14">
-          <Reveal>
+          {/* <Reveal>
             <span className="text-[11px] font-bold tracking-[0.25em] uppercase text-rose-500 mb-3 block font-mono">
               PIONEERING ARTIFICIAL INTELLIGENCE
             </span>
-          </Reveal>
+          </Reveal> */}
           <Reveal>
             <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold tracking-tight text-white mb-4 font-sans leading-tight">
               Shaping the Future with <span className="text-rose-500">Enterprise AI Innovation</span>
             </h2>
           </Reveal>
-          <Reveal>
+          {/* <Reveal>
             <p className="text-zinc-100 text-base md:text-lg lg:text-xl max-w-3xl mx-auto leading-relaxed font-normal mb-8">
               From visionary GenAI strategies and autonomous digital agents to custom neural engineering and bulletproof AI governance — we empower global enterprises to innovate faster, elevate human potential, and achieve extraordinary business outcomes.
             </p>
-          </Reveal>
-          <Reveal>
+          </Reveal> */}
+          {/* <Reveal>
             <div className="flex flex-wrap items-center justify-center gap-3">
               <Link
                 href="/services/ai-data-innovation"
@@ -115,7 +119,7 @@ export function AIStudioShowcase() {
                 <ArrowUpRight className="w-4 h-4 text-zinc-400" />
               </a>
             </div>
-          </Reveal>
+          </Reveal> */}
         </div>
 
         {/* Feature Banner: Our AI-Native Difference Accordion Card */}
@@ -206,7 +210,7 @@ export function AIStudioShowcase() {
                   {/* Hover-only Full Screen Expanded Background Image with Glass Overlay */}
                   <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-[24px]">
                     <img
-                      src={card.image}
+                      src={card.hoverImage || card.image}
                       alt={card.title}
                       className="w-full h-full object-cover scale-100 group-hover:scale-110 transition-transform duration-700 ease-out"
                     />
@@ -236,9 +240,9 @@ export function AIStudioShowcase() {
                       </div>
 
                       {/* Card Body - Transitions smoothly upward on hover */}
-                      <div className="px-2 flex flex-col gap-1.5 transition-transform duration-500 group-hover:-translate-y-20">
+                      <div className="px-2 flex flex-col gap-1.5 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] transform group-hover:-translate-y-24">
                         {/* Badge shown on hover */}
-                        <div className="hidden group-hover:flex items-center justify-between mb-1">
+                        <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-between mb-1">
                           <span className="text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-md bg-rose-500/20 border border-rose-500/30 text-rose-400">
                             {card.badge}
                           </span>
@@ -253,9 +257,13 @@ export function AIStudioShowcase() {
                         <h4 className="text-white text-lg md:text-xl font-bold leading-snug tracking-tight font-sans">
                           {card.title}
                         </h4>
-                        <p className="text-zinc-100 text-sm md:text-base leading-relaxed font-normal line-clamp-3 group-hover:line-clamp-none transition-all mt-1">
-                          {card.description}
-                        </p>
+                        
+                        {/* Hover-only Description Text - Smooth cubic-bezier reveal */}
+                        <div className="max-h-0 opacity-0 group-hover:max-h-[300px] group-hover:opacity-100 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] overflow-hidden mt-1">
+                          <p className="text-zinc-200 text-sm md:text-[15px] leading-relaxed font-normal pt-1">
+                            {card.description}
+                          </p>
+                        </div>
                       </div>
                     </div>
 

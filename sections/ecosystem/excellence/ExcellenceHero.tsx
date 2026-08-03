@@ -1,187 +1,237 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { Reveal } from "@/components/ui/Reveal";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Sparkles } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 export function ExcellenceHero() {
+  const [hoveredId, setHoveredId] = useState<number | null>(null);
+
   const cards = [
     {
       id: 1,
       title: "SRE & Reliability",
       category: "OPERATIONS",
-      desc: "99.95% availability frameworks, chaos testing, and follow-the-sun support.",
-      accent: "text-rose-500 border-rose-500/20 bg-rose-500/10",
+      bgColor: "bg-rose-950/80 border-rose-500/40",
+      glowColor: "rgba(244, 63, 94, 0.4)",
+      img: "/assets/ecosystem/engineering-excellence-hero/1.png",
       style: {
-        transform: "rotateZ(-20deg) translateY(90px) translateX(-240px)",
-        zIndex: 10
+        transform: "translateX(-440px) translateY(90px) scale(0.92)",
+        baseZIndex: 10
       }
     },
     {
       id: 2,
       title: "Cloud-Native Design",
       category: "INFRASTRUCTURE",
-      desc: "Multi-cloud templates, serverless design patterns, and cost optimization.",
-      accent: "text-amber-500 border-amber-500/20 bg-amber-500/10",
+      bgColor: "bg-amber-950/80 border-amber-500/40",
+      glowColor: "rgba(245, 158, 11, 0.4)",
+      img: "/assets/ecosystem/engineering-excellence-hero/2.png",
       style: {
-        transform: "rotateZ(-15deg) translateY(55px) translateX(-180px)",
-        zIndex: 15
+        transform: "translateX(-330px) translateY(65px) scale(0.94)",
+        baseZIndex: 15
       }
     },
     {
       id: 3,
       title: "DevSecOps & Security",
       category: "SECURITY",
-      desc: "Shift-left vulnerability scanning, IAM policies, and compliance guardrails.",
-      accent: "text-fuchsia-500 border-fuchsia-500/20 bg-fuchsia-500/10",
+      bgColor: "bg-fuchsia-950/80 border-fuchsia-500/40",
+      glowColor: "rgba(217, 70, 239, 0.4)",
+      img: "/assets/ecosystem/engineering-excellence-hero/3.png",
       style: {
-        transform: "rotateZ(-10deg) translateY(30px) translateX(-120px)",
-        zIndex: 20
+        transform: "translateX(-220px) translateY(40px) scale(0.96)",
+        baseZIndex: 20
       }
     },
     {
       id: 4,
       title: "Quality Engineering",
       category: "AUTOMATION",
-      desc: "Automated regression pipelines, shadow testing, and API verification.",
-      accent: "text-violet-500 border-violet-500/20 bg-violet-500/10",
+      bgColor: "bg-violet-950/80 border-violet-500/40",
+      glowColor: "rgba(139, 92, 246, 0.4)",
+      img: "/assets/ecosystem/engineering-excellence-hero/4.png",
       style: {
-        transform: "rotateZ(-5deg) translateY(12px) translateX(-60px)",
-        zIndex: 25
+        transform: "translateX(-110px) translateY(18px) scale(0.98)",
+        baseZIndex: 25
       }
     },
     {
       id: 5,
       title: "Platform Engineering",
       category: "DEVELOPER XP",
-      desc: "Internal developer portals, golden paths, and automated bootstrapping.",
-      accent: "text-emerald-500 border-emerald-500/25 bg-emerald-500/10",
+      highlight: true,
+      bgColor: "bg-emerald-950/90 border-rose-500/80",
+      glowColor: "rgba(244, 63, 94, 0.55)",
+      img: "/assets/ecosystem/engineering-excellence-hero/Main.png",
       style: {
-        transform: "rotateZ(0deg) translateY(5px) translateX(0px)",
-        zIndex: 30
-      },
-      highlight: true
+        transform: "translateX(0px) translateY(-10px) scale(1.05)",
+        baseZIndex: 35
+      }
     },
     {
       id: 6,
       title: "Observability Stacks",
       category: "MONITORING",
-      desc: "OpenTelemetry integration, distributed tracing, and anomaly detection.",
-      accent: "text-sky-500 border-sky-500/20 bg-sky-500/10",
+      bgColor: "bg-sky-950/80 border-sky-500/40",
+      glowColor: "rgba(14, 165, 233, 0.4)",
+      img: "/assets/ecosystem/engineering-excellence-hero/4.png",
       style: {
-        transform: "rotateZ(5deg) translateY(12px) translateX(60px)",
-        zIndex: 25
+        transform: "translateX(110px) translateY(18px) scale(0.98)",
+        baseZIndex: 25
       }
     },
     {
       id: 7,
       title: "Cloud FinOps",
       category: "FINANCIALS",
-      desc: "Real-time cost dashboards, automated resource rightsizing, and savings plans.",
-      accent: "text-lime-500 border-lime-500/20 bg-lime-500/10",
+      bgColor: "bg-lime-950/80 border-lime-500/40",
+      glowColor: "rgba(132, 204, 22, 0.4)",
+      img: "/assets/ecosystem/engineering-excellence-hero/3.png",
       style: {
-        transform: "rotateZ(10deg) translateY(30px) translateX(120px)",
-        zIndex: 20
+        transform: "translateX(220px) translateY(40px) scale(0.96)",
+        baseZIndex: 20
       }
     },
     {
       id: 8,
       title: "Chaos Engineering",
       category: "RESILIENCY",
-      desc: "Simulated failures, network latency injection, and dependency degradation tests.",
-      accent: "text-orange-500 border-orange-500/20 bg-orange-500/10",
+      bgColor: "bg-orange-950/80 border-orange-500/40",
+      glowColor: "rgba(249, 115, 22, 0.4)",
+      img: "/assets/ecosystem/engineering-excellence-hero/2.png",
       style: {
-        transform: "rotateZ(15deg) translateY(55px) translateX(180px)",
-        zIndex: 15
+        transform: "translateX(330px) translateY(65px) scale(0.94)",
+        baseZIndex: 15
       }
     },
     {
       id: 9,
-      title: "Security & Governance",
+      title: "Security Governance",
       category: "COMPLIANCE",
-      desc: "Policy-as-code pipelines, SOC2 compliance frameworks, and auditable trails.",
-      accent: "text-purple-500 border-purple-500/20 bg-purple-500/10",
+      bgColor: "bg-purple-950/80 border-purple-500/40",
+      glowColor: "rgba(168, 85, 247, 0.4)",
+      img: "/assets/ecosystem/engineering-excellence-hero/1.png",
       style: {
-        transform: "rotateZ(20deg) translateY(90px) translateX(240px)",
-        zIndex: 10
+        transform: "translateX(440px) translateY(90px) scale(0.92)",
+        baseZIndex: 10
       }
     }
   ];
 
   return (
-    <section className="relative w-full min-h-[85vh] flex flex-col items-center justify-between bg-black overflow-hidden pt-24 pb-8 border-b border-zinc-900/60 animate-in fade-in duration-500">
-      {/* Background Glows */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(244,63,94,0.05),transparent_50%)] pointer-events-none" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-rose-600/[0.012] rounded-full blur-[140px] pointer-events-none" />
+    <section className="relative w-full min-h-[85vh] flex flex-col items-center justify-between bg-black overflow-hidden pt-20 pb-8 border-b border-zinc-900/60 animate-in fade-in duration-500">
+      {/* Ambient Radial Background Glows */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(244,63,94,0.06),transparent_50%)] pointer-events-none z-1" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[850px] bg-rose-600/[0.015] rounded-full blur-[140px] pointer-events-none z-1" />
 
-      {/* Decorative Tech Grid */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#080808_1px,transparent_1px),linear-gradient(to_bottom,#080808_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] pointer-events-none" />
+      <div className="max-w-7xl mx-auto w-full px-6 xl:px-8 relative z-10 flex flex-col items-center text-center flex-grow justify-center pt-4">
 
-      <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10 flex flex-col items-center text-center flex-grow justify-center pt-4">
+        {/* Center Top Pill */}
+        
 
-        {/* Center Main Heading with Inline Emblem */}
+        {/* Main Heading */}
         <Reveal delay={0.1} className="max-w-4xl">
           <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight mb-4 text-white text-center">
             Engineering Excellence at Scale
           </h1>
         </Reveal>
 
-        {/* Description Centered */}
+        {/* Subtitle Description */}
         <Reveal delay={0.2} className="max-w-3xl">
-          <p className="text-zinc-350 text-xs md:text-sm lg:text-base leading-relaxed font-normal max-w-3xl text-center mx-auto opacity-95 mb-6">
+          <p className="text-zinc-400 text-xs md:text-sm lg:text-base leading-relaxed font-normal max-w-3xl text-center mx-auto opacity-95 mb-6">
             Building resilient, secure systems using our <Link href="/services/cybersecurity" className="text-rose-500 hover:underline font-bold">cybersecurity solutions</Link>, aligned with modern <Link href="/services/cloud-services/cloud-architecture" className="text-rose-500 hover:underline font-bold">cloud architecture services</Link> and continuous deployment practices.
           </p>
         </Reveal>
 
-        {/* Exploration Pill Button */}
-        <Reveal delay={0.3}>
+        {/* Exploration Pill Buttons */}
+        <Reveal delay={0.25} className="flex items-center justify-center gap-3">
           <Link
             href="#framework"
-            className="inline-flex items-center gap-3.5 pl-6 pr-2 py-2 bg-white text-black font-semibold text-xs tracking-wider rounded-full hover:bg-zinc-200 transition-all duration-300 shadow-lg shadow-white/5"
+            className="inline-flex items-center gap-3 pl-6 pr-2.5 py-2 bg-white text-black font-semibold text-xs tracking-wider rounded-full hover:bg-zinc-200 transition-all duration-300 shadow-xl shadow-white/10 hover:shadow-rose-500/20"
           >
-            Explore Standards
-            <div className="w-7 h-7 rounded-full bg-black flex items-center justify-center transition-transform duration-300 hover:scale-105">
+            <span>Explore Standards</span>
+            <div className="w-6.5 h-6.5 rounded-full bg-black flex items-center justify-center transition-transform duration-300 hover:scale-105">
               <ArrowUpRight className="w-3.5 h-3.5 text-white" />
             </div>
           </Link>
         </Reveal>
 
-        {/* Fanned pillars cards rising from the bottom edge (9 Larger Cards Spread) */}
-        <div className="relative w-full max-w-[1000px] h-[340px] md:h-[380px] flex items-end justify-center select-none overflow-visible mt-12">
+        {/* Stepped Arch Card Deck Alignment (Matching Reference Image) */}
+        <div className="relative w-full max-w-[1350px] h-[360px] md:h-[420px] flex items-end justify-center select-none overflow-visible mt-12 pb-2 px-2">
           <div className="flex items-end justify-center w-full relative h-full">
-            {cards.map((card) => (
-              <div
-                key={card.id}
-                className={`absolute w-38 h-[220px] md:w-52 md:h-[280px] rounded-2xl p-5 bg-[#0a0a0c] border flex flex-col justify-between transition-all duration-500 hover:scale-[1.1] hover:-translate-y-8 hover:z-50 cursor-pointer ${card.highlight
-                  ? "border-rose-500/30 shadow-[0_20px_40px_rgba(244,63,94,0.1)]"
-                  : "border-zinc-850 hover:border-zinc-700"
+            {cards.map((card) => {
+              const isHovered = hoveredId === card.id;
+              return (
+                <div
+                  key={card.id}
+                  onMouseEnter={() => setHoveredId(card.id)}
+                  onMouseLeave={() => setHoveredId(null)}
+                  className={`group absolute w-[170px] h-[260px] md:w-[230px] md:h-[340px] rounded-t-[2.2rem] rounded-b-2xl flex flex-col justify-between transition-all duration-500 hover:scale-[1.12] hover:-translate-y-12 cursor-pointer overflow-hidden backdrop-blur-2xl border ${
+                    card.highlight
+                      ? "border-rose-500/80 shadow-[0_20px_50px_rgba(244,63,94,0.45)] bg-zinc-950"
+                      : isHovered
+                      ? "border-rose-400/80 shadow-[0_25px_60px_rgba(244,63,94,0.35)] bg-zinc-950"
+                      : `${card.bgColor} shadow-[0_12px_35px_rgba(0,0,0,0.8)]`
                   }`}
-                style={card.style}
-              >
-                {/* Header info */}
-                <div className="text-left">
-                  <div className={`inline-block px-2 py-0.5 rounded text-[8px] md:text-[9px] font-mono font-bold tracking-wider border mb-3 ${card.accent}`}>
-                    {card.category}
-                  </div>
-                  <h3 className="text-[11px] md:text-[13px] font-black tracking-tight leading-snug text-white">
-                    {card.title}
-                  </h3>
-                </div>
+                  style={{
+                    transform: card.style.transform,
+                    zIndex: isHovered ? 100 : card.style.baseZIndex,
+                    boxShadow: isHovered ? `0 30px 70px ${card.glowColor}` : undefined
+                  }}
+                >
+                  {/* Top Glass Reflection Arc */}
+                  <div className="absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-transparent via-white/50 to-transparent z-20 pointer-events-none" />
 
-                {/* Card description */}
-                <p className="text-[9px] md:text-[10px] leading-relaxed text-zinc-400 font-normal text-left">
-                  {card.desc}
-                </p>
-              </div>
-            ))}
+                  {/* Card Background Image & Rich Overlay */}
+                  {card.img && (
+                    <div className="absolute inset-0 pointer-events-none z-0">
+                      <Image
+                        src={card.img}
+                        alt={card.title}
+                        fill
+                        sizes="230px"
+                        className={`object-cover object-center transition-all duration-700 ${
+                          card.highlight || isHovered
+                            ? "brightness-110 contrast-105 opacity-95 group-hover:scale-105"
+                            : "brightness-85 contrast-100 opacity-75 group-hover:brightness-110 group-hover:opacity-100 group-hover:scale-105"
+                        }`}
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-black/10 group-hover:from-black/90 group-hover:via-black/30 group-hover:to-transparent transition-all duration-500 pointer-events-none" />
+                    </div>
+                  )}
+
+                  {/* Category Pill Tag at Top */}
+                  {/* <div className="p-3.5 flex items-center justify-between relative z-10 w-full">
+                    <span className="px-2.5 py-0.5 rounded-full text-[9px] font-mono font-bold tracking-widest uppercase border border-white/20 text-white/90 bg-black/50 backdrop-blur-md shadow-sm">
+                      {card.category}
+                    </span>
+                  </div> */}
+
+                  {/* Bottom Content Title */}
+                  <div className="p-4 text-left relative z-10 mt-auto flex flex-col gap-1">
+                    <div className="flex items-center gap-2">
+                      {/* <div className={`w-1.5 h-1.5 rounded-full transition-transform duration-300 ${card.highlight ? "bg-rose-500 animate-pulse scale-125" : "bg-zinc-300 group-hover:bg-rose-400 group-hover:scale-125"}`} /> */}
+                      <h3 className="text-xs md:text-sm lg:text-[15px] font-bold tracking-tight leading-snug text-white drop-shadow-md group-hover:text-rose-300 transition-colors">
+                        {card.title}
+                      </h3>
+                    </div>
+                  </div>
+
+                  {/* Hover Sheen Light Effect */}
+                  <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out pointer-events-none z-10" />
+                </div>
+              );
+            })}
           </div>
         </div>
 
       </div>
 
-      {/* Bottom black blur fade overlay */}
-      <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-black via-black/90 to-transparent pointer-events-none z-20" />
+      {/* Bottom fade overlay */}
+      <div className="absolute bottom-0 left-0 right-0 h-10 bg-gradient-to-t from-black to-transparent pointer-events-none z-20" />
     </section>
   );
 }

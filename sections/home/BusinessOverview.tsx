@@ -51,7 +51,7 @@ export function BusinessOverview() {
                   across multiple cloud platforms.
                 </p>
 
-                <p className="text-zinc-300 text-xs sm:text-sm md:text-base leading-relaxed max-w-xl mb-5 font-normal">
+                {/* <p className="text-zinc-300 text-xs sm:text-sm md:text-base leading-relaxed max-w-xl mb-5 font-normal">
                   Through custom{" "}
                   <Link
                     href="/services/ai-data-innovation"
@@ -74,7 +74,7 @@ export function BusinessOverview() {
                     cybersecurity
                   </Link>
                   , we build scalable environments tailored to your specific business requirements.
-                </p>
+                </p> */}
 
                 <Link
                   href="/services"

@@ -134,19 +134,24 @@ export function IndustriesSection() {
                   <div className="absolute top-3 right-3 w-8 h-8 rounded-full bg-black/40 backdrop-blur-md flex items-center justify-center border border-white/10">
                      <ind.icon size={14} className="text-white" />
                   </div>
-                  <div className="absolute top-3 left-3 px-3 py-1.5 rounded-full bg-black/40 backdrop-blur-md border border-white/10 text-[10px] font-bold text-white uppercase tracking-wider">
+                  {/* <div className="absolute top-3 left-3 px-3 py-1.5 rounded-full bg-black/40 backdrop-blur-md border border-white/10 text-[10px] font-bold text-white uppercase tracking-wider">
                      {ind.tag}
-                  </div>
+                  </div> */}
                 </div>
                 {/* Details */}
-                <div className="px-3 pb-3 flex flex-col flex-1">
-                   <h3 className="font-bold text-lg md:text-xl text-white mb-1">{ind.name}</h3>
-                   <p className="text-base text-zinc-100 font-normal leading-relaxed mb-4 line-clamp-2">{ind.desc}</p>
+                <div className="px-3 pb-3 flex flex-col flex-1 justify-between">
+                   <div>
+                     <h3 className="font-bold text-lg md:text-xl text-white mb-1 group-hover:text-rose-400 transition-colors">{ind.name}</h3>
+                     {/* Description Smooth Reveal on Hover */}
+                     <div className="max-h-0 opacity-0 group-hover:max-h-[200px] group-hover:opacity-100 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] overflow-hidden">
+                       <p className="text-sm md:text-[15px] text-zinc-200 font-normal leading-relaxed pt-1.5 pb-2">{ind.desc}</p>
+                     </div>
+                   </div>
                    
                    <div className="flex items-center gap-4 mt-auto pt-4 border-t border-zinc-800/50 text-xs text-zinc-300 font-medium uppercase tracking-wider">
                       <div className="flex items-center gap-1.5"><Globe size={13} /> Global</div>
                       <div className="flex items-center gap-1.5"><Landmark size={13} /> Regulated</div>
-                      <div className="flex items-center gap-1.5 ml-auto text-rose-500 font-semibold">Explore</div>
+                      <div className="flex items-center gap-1.5 ml-auto text-rose-500 font-semibold group-hover:translate-x-1 transition-transform">Explore</div>
                    </div>
                 </div>
               </motion.a>

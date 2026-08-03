@@ -352,7 +352,7 @@ export function CapabilityOutcomes({
       <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 text-left">
         <Reveal className="mb-16">
           <div className="flex items-center gap-2 mb-4">
-            <span className="text-[10px] font-bold tracking-widest uppercase text-rose-500">
+            <span className="text-xs md:text-sm font-extrabold tracking-[0.25em] uppercase text-rose-500 font-mono">
               OUR SOLUTIONS
             </span>
           </div>

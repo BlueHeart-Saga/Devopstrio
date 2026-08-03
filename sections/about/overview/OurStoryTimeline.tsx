@@ -93,7 +93,7 @@ export function OurStoryTimeline() {
         {/* Header */}
         <div className="text-center mb-16">
           <Reveal>
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
+            <span className="text-xs md:text-sm font-extrabold tracking-[0.25em] uppercase text-rose-500 mb-3 block font-mono">
               OUR STORY
             </span>
             <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white max-w-2xl mx-auto">
@@ -205,7 +205,7 @@ export function OurStoryTimeline() {
           {/* Navigation Controls & Tags */}
           <Reveal delay={0.15} className="flex flex-col sm:flex-row sm:items-center justify-between gap-6 pt-8 border-t border-zinc-900 mt-10">
             {/* Pill Tags */}
-            <div className="flex flex-wrap gap-2">
+            {/* <div className="flex flex-wrap gap-2">
               {milestones[activeIdx].tags.map((tag, tIdx) => (
                 <span
                   key={tIdx}
@@ -214,7 +214,7 @@ export function OurStoryTimeline() {
                   {tag}
                 </span>
               ))}
-            </div>
+            </div> */}
 
             {/* Prev/Next arrows & Play/Pause */}
             <div className="flex items-center gap-3 shrink-0">

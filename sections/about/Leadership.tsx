@@ -9,13 +9,37 @@ import Link from "next/link";
 const founderTags = ["Multi-Cloud Architect", "15+ Years Experience", "Azure · AWS · GCP"];
 
 const teamMembers = [
+  // {
+  //   name: "Sudalairajan",
+  //   role: "Cloud-Native Product Lead",
+  //   photoPink: "/assets/About-page/team/pinkteam/Sudalairajan.png",
+  //   photoGray: "/assets/About-page/team/grayteam/Sudalairajan.png",
+  //   rotate: "-rotate-3",
+  //   zIndex: "z-[1]",
+  // },
   {
-    name: "Sudalairajan",
-    role: "Cloud-Native Product Lead",
-    photoPink: "/assets/About-page/team/pinkteam/Sudalairajan.png",
-    photoGray: "/assets/About-page/team/grayteam/Sudalairajan.png",
-    rotate: "-rotate-3",
-    zIndex: "z-[1]",
+    name: "Suryaprakash S",
+    role: "Cloud Solutions Engineer",
+    photoPink: "/assets/About-page/team/pinkteam/Suryaprakash s pink with text.png",
+    photoGray: "/assets/About-page/team/grayteam/Suryaprakash s ash with text.png",
+    rotate: "-rotate-2",
+    zIndex: "z-[9]",
+  },
+   {
+    name: "Hamsavarthiny P",
+    role: "DevOps & Automation Lead",
+    photoPink: "/assets/About-page/team/pinkteam/Hamsavarthiny.P pink with text.png",
+    photoGray: "/assets/About-page/team/grayteam/Hamsavarthiny.P ash with text.png",
+    rotate: "-rotate-1",
+    zIndex: "z-[11]",
+  },
+  {
+    name: "Ananthalakshmi",
+    role: "Senior Software Architect",
+    photoPink: "/assets/About-page/team/pinkteam/Ananthalakshmi pink with text.png",
+    photoGray: "/assets/About-page/team/grayteam/Ananthalakshmi ash with text.png",
+    rotate: "rotate-2",
+    zIndex: "z-[12]",
   },
   {
     name: "Sagadevan",
@@ -72,6 +96,24 @@ const teamMembers = [
     photoGray: "/assets/About-page/team/grayteam/Ooviya.png",
     rotate: "rotate-2",
     zIndex: "z-[8]",
+  },
+  
+  {
+    name: "Saravanakumar S",
+    role: "Platform Infrastructure Lead",
+    photoPink: "/assets/About-page/team/pinkteam/Saravanakumar.s pink with text.png",
+    photoGray: "/assets/About-page/team/grayteam/Saravanakumar.s ash with text.png",
+    rotate: "rotate-3",
+    zIndex: "z-[10]",
+  },
+ 
+  {
+    name: "Umamaheswari R",
+    role: "AI & Data Engineering Lead",
+    photoPink: "/assets/About-page/team/pinkteam/Umamaheswari R pink with text.png",
+    photoGray: "/assets/About-page/team/grayteam/Umamaheswari R ash with text.png",
+    rotate: "-rotate-3",
+    zIndex: "z-[13]",
   },
 ];
 
@@ -302,7 +344,7 @@ export function Leadership() {
                   </span>
                 </div>
                 
-                {/* Centered Photo Grid (4 columns, 2 rows for the 8 cards) */}
+                {/* Centered Photo Grid (4 cards per row) */}
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto relative z-10">
                   {teamMembers.map((member, idx) => (
                     <motion.div

@@ -58,7 +58,7 @@ export function WhyChooseDevopstrioSection() {
         {/* Header */}
         <div className="max-w-xl mb-16">
           <Reveal>
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
+            <span className="text-xs md:text-sm font-extrabold tracking-[0.25em] uppercase text-rose-500 mb-3 block font-mono">
               OUR ADVANTAGE
             </span>
             <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white">
@@ -75,8 +75,8 @@ export function WhyChooseDevopstrioSection() {
           {pillars.map((p, idx) => {
             const Icon = p.icon;
             return (
-              <Reveal key={idx} delay={idx * 0.05 + 0.05}>
-                <div className="group relative rounded-[2rem] p-8 bg-[#0A0A0C]/55 border border-zinc-900/90 hover:border-zinc-800 transition-all duration-500 hover:-translate-y-1.5 flex flex-col justify-between min-h-[340px] text-center overflow-hidden hover:shadow-[0_20px_40px_rgba(0,0,0,0.7)]">
+              <Reveal key={idx} delay={idx * 0.05 + 0.05} className="h-full">
+                <div className="group relative rounded-[2rem] p-8 bg-[#0A0A0C]/55 border border-zinc-900/90 hover:border-zinc-800 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-1.5 flex flex-col justify-between min-h-[220px] text-center overflow-hidden hover:shadow-[0_20px_40px_rgba(0,0,0,0.7)] cursor-pointer">
                   
                   {/* Subtle color-matching radial glow background on card hover */}
                   <div className="absolute -inset-px rounded-[2rem] transition-opacity duration-500 opacity-0 group-hover:opacity-100 pointer-events-none z-0"
@@ -104,14 +104,16 @@ export function WhyChooseDevopstrioSection() {
                       </div>
 
                       {/* Title */}
-                      <h3 className="text-sm font-bold uppercase tracking-wider text-white mt-7 mb-3 transition-colors duration-300">
+                      <h3 className="text-base font-bold uppercase tracking-wider text-white mt-6 mb-2 transition-colors duration-300">
                         {p.title}
                       </h3>
                       
-                      {/* Description */}
-                      <p className="text-[11px] text-zinc-400 font-semibold leading-relaxed max-w-[210px]">
-                        {p.desc}
-                      </p>
+                      {/* Description Reveal on Hover & Improved Size */}
+                      <div className="max-h-0 opacity-0 group-hover:max-h-[220px] group-hover:opacity-100 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] overflow-hidden">
+                        <p className="text-xs md:text-sm text-zinc-300 font-medium leading-relaxed max-w-[230px] pt-1">
+                          {p.desc}
+                        </p>
+                      </div>
                     </div>
 
                     {/* Bottom Portion: Icon */}

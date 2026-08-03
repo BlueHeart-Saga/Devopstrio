@@ -2,7 +2,6 @@
 
 import React from "react";
 import { Reveal } from "@/components/ui/Reveal";
-import Link from "next/link";
 
 export function CompanyOverviewSection() {
   return (
@@ -12,10 +11,10 @@ export function CompanyOverviewSection() {
       <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           
-          {/* Left Column: Text & Stats */}
+          {/* Left Column: Brief Story Intro & Stats */}
           <div className="lg:col-span-7 text-left space-y-8">
             <Reveal>
-              <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
+              <span className="text-xs md:text-sm font-extrabold tracking-[0.25em] uppercase text-rose-500 mb-3 block font-mono">
                 ABOUT DEVOPSTRIO
               </span>
               <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">
@@ -24,62 +23,57 @@ export function CompanyOverviewSection() {
               </h2>
             </Reveal>
 
-            <Reveal delay={0.05} className="space-y-4">
-              <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-medium">
-                At Devopstrio, we believe technology should empower businesses to move faster, innovate smarter, and operate with confidence. We partner with organizations to transform ambitious ideas into secure, scalable, and intelligent digital solutions.
-              </p>
-              <p className="text-zinc-300 text-xs md:text-sm leading-relaxed font-medium">
-                By combining expertise in <Link href="/services/ai-data-innovation" className="text-rose-500 hover:underline font-bold">Artificial Intelligence</Link>, <Link href="/services/cloud-services" className="text-rose-500 hover:underline font-bold">Cloud Computing</Link>, <Link href="/services/devops-automation" className="text-rose-500 hover:underline font-bold">DevOps</Link>, <Link href="/services/cybersecurity" className="text-rose-500 hover:underline font-bold">Cybersecurity</Link>, <Link href="/services/data-engineering" className="text-rose-500 hover:underline font-bold">Data Engineering</Link>, and <Link href="/services/software-development" className="text-rose-500 hover:underline font-bold">Enterprise Software Development</Link>, we help organizations modernize legacy systems, optimize operations, and build future-ready digital ecosystems.
-              </p>
-              <p className="text-zinc-300 text-xs md:text-sm leading-relaxed font-medium">
-                From strategic consulting and solution architecture to product engineering, automation, cloud operations, and managed services, our multidisciplinary teams deliver technology solutions that drive measurable business outcomes.
+            {/* Brief & Punchy Story Intro */}
+            <Reveal delay={0.05}>
+              <p className="text-zinc-300 text-sm md:text-base leading-relaxed font-medium">
+                Devopstrio was founded with a single purpose: to empower businesses by turning complex technology into simple, scalable, and high-impact digital solutions. Today, we partner with enterprise leaders worldwide to accelerate innovation across AI, Cloud, DevOps, and modern software engineering.
               </p>
             </Reveal>
 
             {/* Stats list */}
-            <Reveal delay={0.1}>
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 pt-8 border-t border-zinc-900 mt-10">
+            <Reveal delay={0.15}>
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 pt-6 border-t border-zinc-900 mt-8">
                 <div>
-                  <div className="text-3xl font-black text-white tracking-tight mb-1">2,500+</div>
-                  <div className="text-[10px] text-zinc-500 font-bold uppercase tracking-wider">projects delivered</div>
+                  <div className="text-2xl sm:text-3xl font-black text-white tracking-tight mb-1">2,500+</div>
+                  <div className="text-xs font-bold text-zinc-500 uppercase tracking-wider font-mono">projects delivered</div>
                 </div>
                 <div>
-                  <div className="text-3xl font-black text-white tracking-tight mb-1">525+</div>
-                  <div className="text-[10px] text-zinc-500 font-bold uppercase tracking-wider">technology experts</div>
+                  <div className="text-2xl sm:text-3xl font-black text-white tracking-tight mb-1">525+</div>
+                  <div className="text-xs font-bold text-zinc-500 uppercase tracking-wider font-mono">technology experts</div>
                 </div>
                 <div>
-                  <div className="text-3xl font-black text-white tracking-tight mb-1">7+</div>
-                  <div className="text-[10px] text-zinc-500 font-bold uppercase tracking-wider">years experience</div>
+                  <div className="text-2xl sm:text-3xl font-black text-white tracking-tight mb-1">7+</div>
+                  <div className="text-xs font-bold text-zinc-500 uppercase tracking-wider font-mono">years experience</div>
                 </div>
                 <div>
-                  <div className="text-3xl font-black text-white tracking-tight mb-1">4+</div>
-                  <div className="text-[10px] text-zinc-500 font-bold uppercase tracking-wider">global regions</div>
+                  <div className="text-2xl sm:text-3xl font-black text-white tracking-tight mb-1">4+</div>
+                  <div className="text-xs font-bold text-zinc-500 uppercase tracking-wider font-mono">global regions</div>
                 </div>
               </div>
             </Reveal>
           </div>
 
           {/* Right Column: Office Graphic with Badge Card */}
-          <div className="lg:col-span-5 relative flex justify-center items-center w-full">
+          <div className="lg:col-span-5 relative flex justify-center items-center w-full sticky top-28">
             <Reveal delay={0.1} className="w-full max-w-[480px] relative">
-              {/* Unwrapped Full Image */}
-              <div className="relative w-full">
+              {/* Unwrapped Full Image (Commented Out) */}
+              {/* <div className="relative w-full">
                 <img 
                   src="/assets/About-page/overview/about-devopstrio.png" 
                   alt="Devopstrio Co-Engineering Center"
                   className="w-full h-auto object-contain select-none rounded-xl shadow-2xl"
                 />
-              </div>
+              </div> */}
 
               {/* Floating "7+ Years" badge */}
               <div className="absolute -bottom-6 -right-2 md:-right-6 p-5 max-w-[210px] bg-zinc-950/90 backdrop-blur-md border border-zinc-800 rounded-2xl shadow-[0_15px_30px_rgba(0,0,0,0.7)] text-left z-20">
                 <div className="text-3xl font-black text-rose-500 tracking-tight leading-none mb-1">
                   7+
                 </div>
-                <div className="text-[10px] font-bold text-white uppercase tracking-[0.2em] mb-1.5">
+                <div className="text-[10px] font-bold text-white uppercase tracking-[0.2em] mb-1.5 font-mono">
                   YEARS OF EXPERIENCE
                 </div>
-                <p className="text-xs text-zinc-450 font-medium leading-relaxed">
+                <p className="text-xs text-zinc-300 font-medium leading-relaxed">
                   Delivering value and building lasting enterprise partnerships worldwide.
                 </p>
               </div>

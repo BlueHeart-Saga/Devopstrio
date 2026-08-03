@@ -187,7 +187,7 @@ export function EcosystemPillars() {
             {/* Blending gradients to merge the image edges smoothly into the background theme */}
             <div className="absolute inset-0 bg-gradient-to-t from-[#030303] via-transparent to-transparent pointer-events-none z-10" />
             <img
-              src="/assets/ecosystem/domains/ecosysytem. 1.png"
+              src="/assets/ecosystem/domains/Ecosystem_main_page_poster.png"
               alt="Ecosystem Alliance Map"
               className="w-full h-auto object-contain select-none pointer-events-none z-0"
             />

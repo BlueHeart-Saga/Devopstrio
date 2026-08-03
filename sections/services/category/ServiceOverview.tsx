@@ -17,6 +17,16 @@ function getOverviewImage(title: string, incomingImage?: string): string {
   }
 
   const overviewImages = [
+    "/assets/Services-Page/CAPABILITIES-Core Practice Specializations/Frame 368.png",
+    "/assets/Services-Page/CAPABILITIES-Core Practice Specializations/Frame 369.png",
+    "/assets/Services-Page/CAPABILITIES-Core Practice Specializations/Frame 370.png",
+    "/assets/Services-Page/CAPABILITIES-Core Practice Specializations/Frame 371.png",
+    "/assets/Services-Page/CAPABILITIES-Core Practice Specializations/Frame 372.png",
+    "/assets/Services-Page/CAPABILITIES-Core Practice Specializations/Frame 373.png",
+    "/assets/Services-Page/CAPABILITIES-Core Practice Specializations/Frame 374.png",
+    "/assets/Services-Page/CAPABILITIES-Core Practice Specializations/Frame 375.png",
+    "/assets/Services-Page/CAPABILITIES-Core Practice Specializations/Frame 376.png",
+    "/assets/Services-Page/CAPABILITIES-Core Practice Specializations/Frame 377.png",
     "/assets/Services-Page/Capability Overview section images/reorder/Frame 107.png",
     "/assets/Services-Page/Capability Overview section images/reorder/Frame 108.png",
     "/assets/Services-Page/Capability Overview section images/reorder/Frame 110.png",
@@ -157,7 +167,7 @@ export function ServiceOverview({
           <Reveal delay={0.15}>
             {/* Center Main Heading */}
             <div className="text-center mb-8">
-              <span className="text-[10px] font-semibold tracking-[0.25em] uppercase text-rose-500 block mb-3">
+              <span className="text-xs md:text-sm font-extrabold tracking-[0.25em] uppercase text-rose-500 block mb-3 font-mono">
                 Deep Dive Explanation
               </span>
               <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold leading-tight tracking-tight text-white uppercase">

@@ -460,7 +460,7 @@ export function CapabilityOverview({
           <Reveal delay={0.15}>
             {/* Center Main Heading */}
             <div className="text-center mb-8">
-              <span className="text-[10px] font-semibold tracking-[0.25em] uppercase text-rose-500 block mb-3">
+              <span className="text-xs md:text-sm font-extrabold tracking-[0.25em] uppercase text-rose-500 block mb-3 font-mono">
                 Deep Dive Explanation
               </span>
               <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold leading-tight tracking-tight text-white uppercase">

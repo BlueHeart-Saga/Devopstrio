@@ -9,6 +9,8 @@ import { dataengineeringService, dataengineeringCapabilities } from "./dataengin
 import { managedService, managedCapabilities } from "./managed";
 import { testingService, testingCapabilities } from "./testing";
 import { consultingService, consultingCapabilities } from "./consulting";
+import { aiConsultingService, aiConsultingCapabilities } from "./aiconsulting";
+import { aiModernizationService, aiModernizationCapabilities } from "./aimodernization";
 import { getEnrichedServiceFaqs, generateFaqsForCapability } from "./faq-generator";
 import { enrichServiceCategory, enrichCapabilityDetail } from "./premium-enhancer";
 
@@ -16,6 +18,8 @@ export * from "./types";
 
 export const servicesData: Record<string, ServiceCategory> = {
   "ai-data-innovation": aiDataService,
+  "ai-consulting": aiConsultingService,
+  "ai-modernization": aiModernizationService,
   "cloud-services": cloudService,
   "devops-automation": devopsService,
   "cybersecurity": cybersecurityService,
@@ -29,6 +33,8 @@ export const servicesData: Record<string, ServiceCategory> = {
 
 export const capabilitiesData: Record<string, Record<string, CapabilityDetail>> = {
   "ai-data-innovation": aiDataCapabilities,
+  "ai-consulting": aiConsultingCapabilities,
+  "ai-modernization": aiModernizationCapabilities,
   "cloud-services": cloudCapabilities,
   "devops-automation": devopsCapabilities,
   "cybersecurity": cybersecurityCapabilities,

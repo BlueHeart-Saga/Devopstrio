@@ -108,8 +108,8 @@ export function OurStory() {
 
               {/* LEFT CONTENT */}
               <div className="lg:col-span-7 flex flex-col justify-center p-6 md:p-10 lg:p-12">
-                <span className="text-[11px] font-semibold tracking-[0.25em] uppercase text-rose-500 mb-6 block">
-                  Our Story
+                <span className="text-xs md:text-sm font-extrabold tracking-[0.25em] uppercase text-rose-500 mb-4 block font-mono">
+                  OUR STORY
                 </span>
 
                 <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold leading-tight tracking-tight mb-6">

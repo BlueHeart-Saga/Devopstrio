@@ -23,22 +23,22 @@ export function OverviewHero() {
       <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10 w-full text-left">
         <div className="max-w-3xl">
           <Reveal delay={0.05}>
-            <span className="text-[10px] sm:text-xs font-bold tracking-[0.2em] uppercase text-[#E11D48] mb-4 block">
+            {/* <span className="text-[10px] sm:text-xs font-bold tracking-[0.2em] uppercase text-[#E11D48] mb-4 block">
               ENGINEERING THE FUTURE
-            </span>
+            </span> */}
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1] text-white mb-6">
               Building Solutions.<br />
               Delivering Impact<span className="text-[#E11D48]">.</span>
             </h1>
           </Reveal>
           
-          <Reveal delay={0.1}>
+          {/* <Reveal delay={0.1}>
             <p className="text-sm md:text-base text-zinc-300 font-medium max-w-xl mb-10 leading-relaxed">
               Devopstrio is a global technology consulting and engineering company helping organizations modernize, innovate and scale with <Link href="/services/ai-data-innovation" className="text-[#E11D48] hover:underline font-bold">AI</Link>, <Link href="/services/cloud-services" className="text-[#E11D48] hover:underline font-bold">Cloud</Link>, <Link href="/services/devops-automation" className="text-[#E11D48] hover:underline font-bold">DevOps</Link> and <Link href="/services/software-development" className="text-[#E11D48] hover:underline font-bold">Enterprise Engineering</Link>.
             </p>
-          </Reveal>
+          </Reveal> */}
 
-          <Reveal delay={0.15}>
+          {/* <Reveal delay={0.15}>
             <div className="flex flex-wrap gap-4 items-center justify-start mb-16">
               <Link
                 href="/services"
@@ -55,9 +55,9 @@ export function OverviewHero() {
                 <ArrowRight size={14} />
               </Link>
             </div>
-          </Reveal>
+          </Reveal> */}
 
-          <Reveal delay={0.2}>
+          {/* <Reveal delay={0.2}>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-4 mb-16 max-w-2xl">
               <div className="border-l border-zinc-700/60 pl-4">
                 <Users size={22} className="text-[#E11D48] mb-3 opacity-90" strokeWidth={1.5} />
@@ -80,7 +80,7 @@ export function OverviewHero() {
                 <div className="text-[10px] text-zinc-400 uppercase tracking-widest font-semibold leading-relaxed">Delivery<br/>Model</div>
               </div>
             </div>
-          </Reveal>
+          </Reveal> */}
 
           <Reveal delay={0.25}>
             <div className="text-xs text-zinc-400 mb-5 font-medium">Trusted by innovative companies worldwide</div>

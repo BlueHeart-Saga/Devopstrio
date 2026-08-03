@@ -19,6 +19,16 @@ export interface CapabilityGridProps {
 }
 
 const ALL_CAPABILITY_CARD_IMAGES = [
+  "/assets/Services-Page/CAPABILITIES-Core Practice Specializations/Frame 368.png",
+  "/assets/Services-Page/CAPABILITIES-Core Practice Specializations/Frame 369.png",
+  "/assets/Services-Page/CAPABILITIES-Core Practice Specializations/Frame 370.png",
+  "/assets/Services-Page/CAPABILITIES-Core Practice Specializations/Frame 371.png",
+  "/assets/Services-Page/CAPABILITIES-Core Practice Specializations/Frame 372.png",
+  "/assets/Services-Page/CAPABILITIES-Core Practice Specializations/Frame 373.png",
+  "/assets/Services-Page/CAPABILITIES-Core Practice Specializations/Frame 374.png",
+  "/assets/Services-Page/CAPABILITIES-Core Practice Specializations/Frame 375.png",
+  "/assets/Services-Page/CAPABILITIES-Core Practice Specializations/Frame 376.png",
+  "/assets/Services-Page/CAPABILITIES-Core Practice Specializations/Frame 377.png",
   "/assets/Services-Page/core-services/GenerativeAISolutions.png",
   "/assets/Services-Page/core-services/AIAgentsAutomation.png",
   "/assets/Services-Page/core-services/MLOps&AIOperations.png",

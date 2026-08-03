@@ -165,7 +165,7 @@ export function CapabilityUseCases({
         {/* Section Header */}
         <div className="text-center mb-12 max-w-3xl mx-auto">
           <Reveal>
-            <span className="text-[10px] font-bold tracking-[0.25em] uppercase text-rose-500 block mb-3">
+            <span className="text-xs md:text-sm font-extrabold tracking-[0.25em] uppercase text-rose-500 block mb-3 font-mono">
               REAL-WORLD APPLICATIONS
             </span>
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-white uppercase leading-tight mb-4">

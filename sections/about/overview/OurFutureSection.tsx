@@ -142,14 +142,14 @@ export function OurFutureSection() {
           {/* Left Core Content: Title, Desc, and Navigation Controls */}
           <div className="w-full lg:w-[350px] text-left shrink-0">
             <Reveal>
-              <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
+              <span className="text-xs md:text-sm font-extrabold tracking-[0.25em] uppercase text-rose-500 mb-3 block font-mono">
                 OUR FUTURE
               </span>
               <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">
-                Engineering <br />the Next Epoch
+                Building What's Next
               </h2>
-              <p className="text-zinc-400 text-xs md:text-sm leading-relaxed font-semibold mb-6">
-                We don't adapt to changes; we build them. Our R&D teams are actively prototyping autonomous workflows and next-generation cloud infrastructure to prepare our global enterprise partners for the decade ahead.
+              <p className="text-zinc-400 text-xs md:text-sm leading-relaxed font-medium mb-6">
+                We are investing in AI, cloud, and modern engineering to create intelligent solutions that help businesses innovate, adapt, and grow with confidence.
               </p>
 
               {/* Play Document / Action trigger & Navigation Arrows */}
@@ -158,7 +158,7 @@ export function OurFutureSection() {
                   <div className="w-9 h-9 rounded-full border border-zinc-800 flex items-center justify-center bg-zinc-950 group-hover/play:border-rose-500/50 group-hover/play:bg-rose-950/20 transition-all duration-500">
                     <Play size={10} className="text-zinc-400 group-hover/play:text-rose-400 group-hover/play:scale-110 transition-all duration-300 fill-zinc-400 group-hover/play:fill-rose-400" />
                   </div>
-                  <span className="font-mono text-[9px] tracking-widest">Vision Presentation</span>
+                  {/* <span className="font-mono text-[9px] tracking-widest">Vision Presentation</span> */}
                 </button>
 
                 <div className="flex items-center gap-3">
@@ -209,16 +209,20 @@ export function OurFutureSection() {
                     <div className="absolute inset-0 bg-black/40 backdrop-blur-[8px] transition-all duration-700 ease-in-out z-20 pointer-events-none [clip-path:circle(0%_at_100%_100%)] group-hover:[clip-path:circle(150%_at_100%_100%)]" />
 
                     {/* Text content details */}
-                    <div className="absolute bottom-0 inset-x-0 p-6 z-30 text-left pt-12 transform transition-transform duration-500 group-hover:-translate-y-1">
-                      <span className="inline-block px-2 py-0.5 rounded text-[8px] font-black tracking-wider uppercase bg-rose-950/60 text-rose-400 border border-rose-500/10 font-mono mb-2">
+                    <div className="absolute bottom-0 inset-x-0 p-6 z-30 text-left pt-12">
+                      <span className="inline-block px-2.5 py-1 rounded text-[9px] font-bold tracking-widest uppercase bg-rose-950/60 text-rose-400 border border-rose-500/20 font-mono mb-2">
                         {focus.tag}
                       </span>
-                      <h3 className="text-sm font-bold text-white mb-2 transition-colors duration-300 group-hover:text-rose-400">
+                      <h3 className="text-base md:text-lg font-bold text-white mb-1 transition-colors duration-300 group-hover:text-rose-400">
                         {focus.title}
                       </h3>
-                      <p className="text-[10px] text-zinc-400 font-semibold leading-relaxed line-clamp-2 group-hover:line-clamp-none transition-all duration-500 group-hover:text-zinc-200">
-                        {focus.desc}
-                      </p>
+                      
+                      {/* Description Reveal on Hover */}
+                      <div className="max-h-0 opacity-0 group-hover:max-h-[220px] group-hover:opacity-100 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] overflow-hidden">
+                        <p className="text-xs md:text-sm text-zinc-300 font-medium leading-relaxed pt-1">
+                          {focus.desc}
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </Reveal>

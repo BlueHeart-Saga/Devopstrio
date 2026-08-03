@@ -6,6 +6,8 @@ import { SectionNavbar } from "@/components/ui/SectionNavbar";
 
 // Import Section Components
 import { OverviewHero } from "@/sections/about/overview/OverviewHero";
+// import { OurStorySection } from "@/sections/about/overview/OurStorySection";
+
 import { CompanyOverviewSection } from "@/sections/about/overview/CompanyOverviewSection";
 import { MissionVisionValues } from "@/sections/about/overview/MissionVisionValues";
 import { OurStoryTimeline } from "@/sections/about/overview/OurStoryTimeline";
@@ -46,12 +48,16 @@ export default function CompanyOverviewPage() {
       {/* Section Navbar */}
       <SectionNavbar sections={overviewSections} />
 
+      
       {/* Divider */}
       <SvgWaveLine variant="smooth" />
 
       {/* 2. Company Story */}
       <div id="story">
         <CompanyOverviewSection />
+       
+      {/* <OurStorySection /> */}
+
       </div>
 
       {/* Divider */}
@@ -103,7 +109,7 @@ export default function CompanyOverviewPage() {
       </div>
 
       {/* Divider */}
-      <SvgWaveLine variant="liquid" />
+      {/* <SvgWaveLine variant="liquid" /> */}
 
       {/* 9. Call to Action */}
       <EnterpriseCTA />

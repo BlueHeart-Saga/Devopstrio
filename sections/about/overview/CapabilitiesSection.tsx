@@ -1,333 +1,239 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ArrowLeft, ArrowUpRight, Play, Pause } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
 
 export function CapabilitiesSection() {
-  return (
-    <section className="py-12 bg-[#030303] relative overflow-hidden pt-14">
-      {/* Background glow effects */}
-      <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-[radial-gradient(circle_at_center,rgba(225,29,72,0.02),transparent_70%)] pointer-events-none" />
-      <div className="absolute bottom-1/4 right-1/4 w-[600px] h-[600px] bg-[radial-gradient(circle_at_center,rgba(220,38,38,0.01),transparent_70%)] pointer-events-none" />
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [isHovered, setIsHovered] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(true);
 
-      <div className="max-w-6xl mx-auto px-6 relative z-10 text-left">
-        {/* Section Header */}
-        <div className="flex flex-col items-center justify-center mb-8 gap-3 text-center">
-          <Reveal className="max-w-xl flex flex-col items-center">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-2 block">
+  const services = [
+    {
+      tag: "Innovate",
+      title: "AI & Data Innovation",
+      desc: "Leverage Generative AI, machine learning, and intelligent automation to modernise business processes and unlock measurable value at scale.",
+      link: "/services/ai-data-innovation",
+      image: "/assets/Home-page/core-services/1.png"
+    },
+    {
+      tag: "Migrate",
+      title: "Cloud Services",
+      desc: "Design and manage resilient cloud environments across AWS, Azure, and Google Cloud — built for performance, compliance, and cost efficiency.",
+      link: "/services/cloud-services",
+      image: "/assets/Home-page/core-services/2.png"
+    },
+    {
+      tag: "Accelerate",
+      title: "DevOps & Automation",
+      desc: "CI/CD automation, Kubernetes orchestration, Terraform, and platform engineering practices that eliminate friction and accelerate delivery.",
+      link: "/services/devops-automation",
+      image: "/assets/Home-page/core-services/3.png"
+    },
+    {
+      tag: "Protect",
+      title: "Cybersecurity",
+      desc: "Embed security and compliance into every layer of your stack. Proactive threat management, SOC services, and zero-trust security frameworks.",
+      link: "/services/cybersecurity",
+      image: "/assets/Home-page/core-services/4.png"
+    },
+    {
+      tag: "Build",
+      title: "Software Development",
+      desc: "Create enterprise-grade software, apps, and SaaS platforms. Engineered for reliability, API ecosystems, and business impact.",
+      link: "/services/software-development",
+      image: "/assets/Home-page/core-services/5.png"
+    },
+    {
+      tag: "Transform",
+      title: "Digital Transformation",
+      desc: "Modernise business models and legacy systems. IT roadmaps, cloud readiness audits, process automation, and intelligent workflows.",
+      link: "/services/digital-transformation",
+      image: "/assets/Home-page/core-services/6.png"
+    },
+    {
+      tag: "Analyze",
+      title: "Data Engineering",
+      desc: "Unlock actionable insights with robust data platforms. Design columnar databases, unified lakehouses, and real-time streaming pipelines.",
+      link: "/services/data-engineering",
+      image: "/assets/Home-page/core-services/7.png"
+    },
+    {
+      tag: "Manage",
+      title: "Managed Services",
+      desc: "Ensure uninterrupted operations with 24/7 proactive monitoring. Multi-account cloud administration, SLA bug resolutions, and incident containment.",
+      link: "/services/managed-services",
+      image: "/assets/Home-page/core-services/8.png"
+    },
+    {
+      tag: "Ensure",
+      title: "QA & Testing",
+      desc: "Deliver flawless digital experiences with quality engineering. Automated end-to-end client scripts, load testing, and shift-left methodologies.",
+      link: "/services/qa-testing",
+      image: "/assets/Home-page/core-services/9.png"
+    },
+    {
+      tag: "Consult",
+      title: "IT Consulting",
+      desc: "Align technology investments with strategic business objectives. Cost-benefit analyses, compliance alignment, and digital roadmaps.",
+      link: "/services/it-consulting",
+      image: "/assets/Home-page/core-services/10.png"
+    }
+  ];
+
+  // Auto-play horizontal scroll
+  useEffect(() => {
+    if (isHovered || !isPlaying) return;
+
+    const interval = setInterval(() => {
+      if (scrollRef.current) {
+        const container = scrollRef.current;
+        const cardWidth = window.innerWidth < 768 ? 300 + 24 : 370 + 24;
+        if (container.scrollLeft + container.clientWidth >= container.scrollWidth - 10) {
+          container.scrollTo({ left: 0, behavior: "smooth" });
+        } else {
+          container.scrollBy({ left: cardWidth, behavior: "smooth" });
+        }
+      }
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, [isHovered, isPlaying]);
+
+  const scroll = (direction: "left" | "right") => {
+    if (scrollRef.current) {
+      const cardWidth = window.innerWidth < 768 ? 300 + 24 : 370 + 24;
+      const scrollAmount = direction === "left" ? -cardWidth : cardWidth;
+      scrollRef.current.scrollBy({ left: scrollAmount, behavior: "smooth" });
+    }
+  };
+
+  return (
+    <section className="py-16 md:py-24 bg-[#030303] text-white relative overflow-hidden">
+      {/* Dynamic inline styles for responsive card sizing & scrollbar hiding */}
+      <style dangerouslySetInnerHTML={{
+        __html: `
+        .capabilities-track {
+          --card-w: 300px;
+        }
+        @media (min-width: 768px) {
+          .capabilities-track {
+            --card-w: 370px;
+          }
+        }
+        .no-scrollbar::-webkit-scrollbar {
+          display: none;
+        }
+        .no-scrollbar {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+        }
+      `}} />
+
+      {/* Ambient glows */}
+      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[radial-gradient(circle_at_top_right,rgba(220,38,38,0.05),transparent_70%)] blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[radial-gradient(circle_at_bottom_left,rgba(225,29,72,0.04),transparent_70%)] blur-3xl pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
+        
+        {/* Section Header with Title & Navigation Controls */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6 text-left">
+          <Reveal className="max-w-xl">
+            <span className="text-xs md:text-sm font-extrabold tracking-[0.25em] uppercase text-rose-500 mb-2 block font-mono">
               WHAT WE DO
             </span>
-            <h2 className="text-lg md:text-xl xl:text-2xl font-bold tracking-tight leading-tight text-white">
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white">
               Solutions that Drive <span className="text-rose-500">Real Impact</span>
             </h2>
-            <p className="text-zinc-400 text-xs md:text-sm leading-relaxed font-medium mt-2 max-w-lg mx-auto">
-              From strategy formulation to architectural execution, we provide end-to-end <Link href="/services/cloud-services" className="text-rose-500 hover:underline">cloud</Link> and <Link href="/services/ai-data-innovation" className="text-rose-500 hover:underline">AI engineering</Link> co-development tailored to your specific organizational targets.
-            </p>
           </Reveal>
-          <Reveal delay={0.1} className="shrink-0 mt-1">
-            <Link href="/services" className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-rose-500 hover:text-rose-400 transition-colors">
-              <span>Explore All Services</span>
+
+          {/* Right Navigation Controls */}
+          <Reveal delay={0.1} className="flex items-center gap-4 shrink-0">
+            <Link href="/services" className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-rose-500 hover:text-rose-400 transition-colors mr-2">
+              <span>Explore All</span>
               <ArrowRight size={14} />
             </Link>
+
+            <div className="flex items-center gap-2">
+              <button
+                onClick={() => setIsPlaying(!isPlaying)}
+                className="w-9 h-9 rounded-full border border-zinc-800 bg-zinc-950/80 hover:border-zinc-700 hover:bg-zinc-900 flex items-center justify-center text-zinc-400 hover:text-white transition-all"
+                aria-label={isPlaying ? "Pause autoplay" : "Start autoplay"}
+              >
+                {isPlaying ? <Pause size={13} /> : <Play size={13} />}
+              </button>
+              <button
+                onClick={() => scroll("left")}
+                className="w-9 h-9 rounded-full border border-zinc-800 bg-zinc-950/80 hover:border-zinc-700 hover:bg-zinc-900 flex items-center justify-center text-zinc-400 hover:text-white transition-all"
+                aria-label="Scroll Left"
+              >
+                <ArrowLeft size={14} />
+              </button>
+              <button
+                onClick={() => scroll("right")}
+                className="w-9 h-9 rounded-full border border-zinc-800 bg-zinc-950/80 hover:border-zinc-700 hover:bg-zinc-900 flex items-center justify-center text-zinc-400 hover:text-white transition-all"
+                aria-label="Scroll Right"
+              >
+                <ArrowRight size={14} />
+              </button>
+            </div>
           </Reveal>
         </div>
 
-        {/* 5-Row Bento Grid */}
-        <div className="flex flex-col gap-6">
-          
-          {/* Row 1: AI & Data Innovation (Large) + Cloud Services (Small) */}
-          <div className="flex flex-col lg:flex-row gap-6 items-stretch">
-            {/* Large Card: AI & Data Innovation */}
-            <Reveal delay={0.05} className="w-full lg:w-2/3 h-full flex">
-              <div className="bg-gradient-to-br from-rose-950/20 via-[#0C0C0E] to-zinc-950/90 border border-zinc-800/80 hover:border-rose-500/30 rounded-[1.75rem] p-3 flex flex-col md:flex-row gap-5 h-full min-h-[300px] w-full items-stretch transition-all duration-500 hover:shadow-[0_20px_50px_rgba(225,29,72,0.1)] group relative overflow-hidden">
+        {/* Horizontal CapabilityGrid-Style Card Carousel */}
+        <div
+          ref={scrollRef}
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+          className="capabilities-track no-scrollbar flex overflow-x-auto snap-x snap-mandatory scroll-smooth pb-8 gap-6 cursor-grab active:cursor-grabbing"
+        >
+          {services.map((item, idx) => (
+            <Reveal key={idx} delay={idx * 0.04} className="shrink-0 snap-start snap-always">
+              <div className="w-[var(--card-w)] h-[410px] md:h-[430px] flex-shrink-0 group flex flex-col bg-zinc-950 border border-zinc-800/60 rounded-2xl overflow-hidden hover:border-rose-500/30 transition-all duration-300 hover:shadow-[0_0_40px_rgba(225,29,72,0.08)] text-left select-none cursor-pointer">
                 
-                {/* Expanding Image Layer (Bottom-Right to cover full box) */}
-                <div className="absolute inset-0 z-0 [clip-path:circle(0%_at_100%_100%)] group-hover:[clip-path:circle(150%_at_100%_100%)] transition-all duration-700 ease-in-out pointer-events-none rounded-[1.75rem] overflow-hidden">
-                  <img src="/assets/Home-page/core-services/1.png" alt="AI & Data Innovation background" className="w-full h-full object-cover scale-110 group-hover:scale-100 transition-transform duration-1000 ease-out" />
-                  <div className="absolute inset-0 bg-black/40 backdrop-blur-[6px]" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-white/5" />
+                {/* Cover Image */}
+                <div className="relative w-full aspect-[16/9] overflow-hidden bg-zinc-900">
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/80 via-zinc-950/20 to-transparent" />
                 </div>
 
-                {/* Left Image (fades out on hover) */}
-                <div className="w-full md:w-[48%] relative rounded-[1.25rem] overflow-hidden min-h-[180px] md:min-h-full transition-all duration-500 group-hover:opacity-0 group-hover:scale-95 z-10">
-                  <img src="/assets/Home-page/core-services/1.png" alt="AI & Data Innovation" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-                </div>
+                {/* Card Body */}
+                <div className="flex flex-col flex-1 p-6 gap-3 text-left">
+                  <span className="text-rose-500 text-xs md:text-sm font-extrabold uppercase tracking-widest font-mono">
+                    {item.tag}
+                  </span>
 
-                {/* Right Text Content */}
-                <div className="w-full md:w-[52%] p-4 md:p-6 md:pl-2 flex flex-col justify-center text-left relative z-10">
-                  <span className="text-[#E11D48] text-[10px] font-bold uppercase tracking-widest mb-2 block font-mono font-bold">Innovate</span>
-                  <h3 className="text-xl font-bold text-white mb-2 leading-snug group-hover:text-rose-400 transition-colors duration-500">AI & Data Innovation</h3>
-                  <p className="text-xs text-zinc-400 font-semibold leading-relaxed mb-6 group-hover:text-zinc-200 transition-colors duration-500">
-                    Leverage Generative AI, machine learning, and intelligent automation to modernise business processes and unlock measurable value at scale.
+                  <h3 className="text-white text-base md:text-[18px] font-bold leading-snug group-hover:text-rose-400 transition-colors">
+                    {item.title}
+                  </h3>
+
+                  <p className="text-zinc-400 text-xs md:text-sm leading-relaxed font-medium mb-2">
+                    {item.desc}
                   </p>
-                  <Link href="/services/ai-data-innovation" className="inline-flex items-center justify-center px-5 py-2.5 rounded-full text-[11px] font-bold uppercase tracking-wider bg-zinc-900 border border-zinc-800 hover:border-rose-500 text-white transition-all w-fit">
-                    Learn More
-                  </Link>
-                </div>
-              </div>
-            </Reveal>
 
-            {/* Small Card: Cloud Services */}
-            <Reveal delay={0.1} className="w-full lg:w-1/3 h-full flex">
-              <div className="bg-[#0A0A0C] border border-zinc-900 hover:border-rose-500/20 rounded-[1.75rem] p-6 md:p-8 flex flex-col justify-center items-center text-center h-full min-h-[300px] w-full transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_15px_30px_rgba(0,0,0,0.4)] group relative overflow-hidden">
-                
-                {/* Expanding Image Layer (Bottom-Right to cover full box) */}
-                <div className="absolute inset-0 z-0 [clip-path:circle(0%_at_100%_100%)] group-hover:[clip-path:circle(150%_at_100%_100%)] transition-all duration-700 ease-in-out pointer-events-none rounded-[1.75rem] overflow-hidden">
-                  <img src="/assets/Home-page/core-services/2.png" alt="Cloud Services background" className="w-full h-full object-cover scale-110 group-hover:scale-100 transition-transform duration-1000 ease-out" />
-                  <div className="absolute inset-0 bg-black/40 backdrop-blur-[6px]" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-white/5" />
-                </div>
-
-                {/* Content */}
-                <div className="relative z-10 flex flex-col items-center justify-center">
-                  <span className="text-[#E11D48] text-[10px] font-bold uppercase tracking-widest mb-3 block font-mono font-bold">Migrate</span>
-                  <h3 className="text-lg font-bold text-white mb-3 group-hover:text-rose-400 transition-colors duration-500">Cloud Services</h3>
-                  <p className="text-xs text-zinc-400 font-semibold leading-relaxed mb-6 max-w-[280px] group-hover:text-zinc-200 transition-colors duration-500">
-                    Design and manage resilient cloud environments across AWS, Azure, and Google Cloud — built for performance, compliance, and cost efficiency.
-                  </p>
-                  <Link href="/services/cloud-services" className="inline-flex items-center justify-center px-5 py-2.5 rounded-full text-[11px] font-bold uppercase tracking-wider border border-zinc-900 hover:border-rose-500 text-white transition-all group-hover:bg-zinc-900">
-                    Explore
-                  </Link>
-                </div>
-              </div>
-            </Reveal>
-          </div>
-
-          {/* Row 2: DevOps & Automation (Small) + Cybersecurity (Large) */}
-          <div className="flex flex-col-reverse lg:flex-row gap-6 items-stretch">
-            {/* Small Card: DevOps & Automation */}
-            <Reveal delay={0.1} className="w-full lg:w-1/3 h-full flex">
-              <div className="bg-[#0A0A0C] border border-zinc-900 hover:border-rose-500/20 rounded-[1.75rem] p-6 md:p-8 flex flex-col justify-center items-center text-center h-full min-h-[300px] w-full transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_15px_30px_rgba(0,0,0,0.4)] group relative overflow-hidden">
-                
-                {/* Expanding Image Layer (Bottom-Right to cover full box) */}
-                <div className="absolute inset-0 z-0 [clip-path:circle(0%_at_100%_100%)] group-hover:[clip-path:circle(150%_at_100%_100%)] transition-all duration-700 ease-in-out pointer-events-none rounded-[1.75rem] overflow-hidden">
-                  <img src="/assets/Home-page/core-services/3.png" alt="DevOps & Automation background" className="w-full h-full object-cover scale-110 group-hover:scale-100 transition-transform duration-1000 ease-out" />
-                  <div className="absolute inset-0 bg-black/40 backdrop-blur-[6px]" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-white/5" />
-                </div>
-
-                {/* Content */}
-                <div className="relative z-10 flex flex-col items-center justify-center">
-                  <span className="text-[#E11D48] text-[10px] font-bold uppercase tracking-widest mb-3 block font-mono font-bold">Accelerate</span>
-                  <h3 className="text-lg font-bold text-white mb-3 group-hover:text-rose-400 transition-colors duration-500">DevOps & Automation</h3>
-                  <p className="text-xs text-zinc-400 font-semibold leading-relaxed mb-6 max-w-[280px] group-hover:text-zinc-200 transition-colors duration-500">
-                    CI/CD automation, Kubernetes orchestration, Terraform, and platform engineering practices that eliminate friction and accelerate delivery.
-                  </p>
-                  <Link href="/services/devops-automation" className="inline-flex items-center justify-center px-5 py-2.5 rounded-full text-[11px] font-bold uppercase tracking-wider border border-zinc-900 hover:border-rose-500 text-white transition-all group-hover:bg-zinc-900">
-                    Explore
-                  </Link>
-                </div>
-              </div>
-            </Reveal>
-
-            {/* Large Card: Cybersecurity */}
-            <Reveal delay={0.15} className="w-full lg:w-2/3 h-full flex">
-              <div className="bg-gradient-to-br from-blue-950/20 via-[#0C0C0E] to-zinc-950/90 border border-zinc-800/80 hover:border-blue-500/30 rounded-[1.75rem] p-3 flex flex-col md:flex-row gap-5 h-full min-h-[300px] w-full items-stretch transition-all duration-500 hover:shadow-[0_20px_50px_rgba(59,130,246,0.1)] group relative overflow-hidden">
-                
-                {/* Expanding Image Layer (Bottom-Right to cover full box) */}
-                <div className="absolute inset-0 z-0 [clip-path:circle(0%_at_100%_100%)] group-hover:[clip-path:circle(150%_at_100%_100%)] transition-all duration-700 ease-in-out pointer-events-none rounded-[1.75rem] overflow-hidden">
-                  <img src="/assets/Home-page/core-services/4.png" alt="Cybersecurity background" className="w-full h-full object-cover scale-110 group-hover:scale-100 transition-transform duration-1000 ease-out" />
-                  <div className="absolute inset-0 bg-black/40 backdrop-blur-[6px]" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-white/5" />
-                </div>
-
-                {/* Text Content */}
-                <div className="w-full md:w-[52%] p-4 md:p-6 flex flex-col justify-center text-left order-2 md:order-1 relative z-10">
-                  <span className="text-[#E11D48] text-[10px] font-bold uppercase tracking-widest mb-2 block font-mono font-bold">Protect</span>
-                  <h3 className="text-xl font-bold text-white mb-2 leading-snug group-hover:text-blue-400 transition-colors duration-500">Cybersecurity</h3>
-                  <p className="text-xs text-zinc-400 font-semibold leading-relaxed mb-6 group-hover:text-zinc-200 transition-colors duration-500">
-                    Embed security and compliance into every layer of your stack. Proactive threat management, SOC services, and zero-trust security frameworks.
-                  </p>
-                  <Link href="/services/cybersecurity" className="inline-flex items-center justify-center px-5 py-2.5 rounded-full text-[11px] font-bold uppercase tracking-wider bg-zinc-900 border border-zinc-800 hover:border-blue-500 text-white transition-all w-fit">
-                    Learn More
+                  {/* CapabilityGrid-Style CTA Button */}
+                  <Link
+                    href={item.link}
+                    className="mt-auto inline-flex items-center gap-2.5 bg-zinc-900 hover:bg-rose-600 border border-zinc-800 hover:border-rose-600 text-zinc-300 hover:text-white rounded-lg px-4 py-2.5 text-xs font-semibold uppercase tracking-wider transition-all duration-300 w-fit group/btn"
+                  >
+                    <span className="w-5 h-5 rounded-sm bg-rose-600 group-hover/btn:bg-white flex items-center justify-center flex-shrink-0 transition-colors duration-300">
+                      <ArrowUpRight size={11} className="text-white group-hover/btn:text-rose-600 transition-colors duration-300" />
+                    </span>
+                    <span>Explore Details</span>
                   </Link>
                 </div>
 
-                {/* Right Image (fades out on hover) */}
-                <div className="w-full md:w-[48%] relative rounded-[1.25rem] overflow-hidden min-h-[180px] md:min-h-full order-1 md:order-2 transition-all duration-500 group-hover:opacity-0 group-hover:scale-95 z-10">
-                  <img src="/assets/Home-page/core-services/4.png" alt="Cybersecurity" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-                </div>
               </div>
             </Reveal>
-          </div>
-
-          {/* Row 3: Software Development (Large) + Digital Transformation (Small) */}
-          <div className="flex flex-col lg:flex-row gap-6 items-stretch">
-            {/* Large Card: Software Development */}
-            <Reveal delay={0.15} className="w-full lg:w-2/3 h-full flex">
-              <div className="bg-gradient-to-br from-violet-950/20 via-[#0C0C0E] to-zinc-950/90 border border-zinc-800/80 hover:border-purple-500/30 rounded-[1.75rem] p-3 flex flex-col md:flex-row gap-5 h-full min-h-[300px] w-full items-stretch transition-all duration-500 hover:shadow-[0_20px_50px_rgba(168,85,247,0.1)] group relative overflow-hidden">
-                
-                {/* Expanding Image Layer (Bottom-Right to cover full box) */}
-                <div className="absolute inset-0 z-0 [clip-path:circle(0%_at_100%_100%)] group-hover:[clip-path:circle(150%_at_100%_100%)] transition-all duration-700 ease-in-out pointer-events-none rounded-[1.75rem] overflow-hidden">
-                  <img src="/assets/Home-page/core-services/5.png" alt="Software Development background" className="w-full h-full object-cover scale-110 group-hover:scale-100 transition-transform duration-1000 ease-out" />
-                  <div className="absolute inset-0 bg-black/40 backdrop-blur-[6px]" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-white/5" />
-                </div>
-
-                {/* Left Image (fades out on hover) */}
-                <div className="w-full md:w-[48%] relative rounded-[1.25rem] overflow-hidden min-h-[180px] md:min-h-full transition-all duration-500 group-hover:opacity-0 group-hover:scale-95 z-10">
-                  <img src="/assets/Home-page/core-services/5.png" alt="Software Development" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-                </div>
-
-                {/* Right Text Content */}
-                <div className="w-full md:w-[52%] p-4 md:p-6 md:pl-2 flex flex-col justify-center text-left relative z-10">
-                  <span className="text-[#E11D48] text-[10px] font-bold uppercase tracking-widest mb-2 block font-mono font-bold">Build</span>
-                  <h3 className="text-xl font-bold text-white mb-2 leading-snug group-hover:text-purple-400 transition-colors duration-500">Software Development</h3>
-                  <p className="text-xs text-zinc-400 font-semibold leading-relaxed mb-6 group-hover:text-zinc-200 transition-colors duration-500">
-                    Create enterprise-grade software, apps, and SaaS platforms. Engineered for reliability, API ecosystems, and business impact.
-                  </p>
-                  <Link href="/services/software-development" className="inline-flex items-center justify-center px-5 py-2.5 rounded-full text-[11px] font-bold uppercase tracking-wider bg-zinc-900 border border-zinc-800 hover:border-purple-500 text-white transition-all w-fit">
-                    Learn More
-                  </Link>
-                </div>
-              </div>
-            </Reveal>
-
-            {/* Small Card: Digital Transformation */}
-            <Reveal delay={0.2} className="w-full lg:w-1/3 h-full flex">
-              <div className="bg-[#0A0A0C] border border-zinc-900 hover:border-rose-500/20 rounded-[1.75rem] p-6 md:p-8 flex flex-col justify-center items-center text-center h-full min-h-[300px] w-full transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_15px_30px_rgba(0,0,0,0.4)] group relative overflow-hidden">
-                
-                {/* Expanding Image Layer (Bottom-Right to cover full box) */}
-                <div className="absolute inset-0 z-0 [clip-path:circle(0%_at_100%_100%)] group-hover:[clip-path:circle(150%_at_100%_100%)] transition-all duration-700 ease-in-out pointer-events-none rounded-[1.75rem] overflow-hidden">
-                  <img src="/assets/Home-page/core-services/6.png" alt="Digital Transformation background" className="w-full h-full object-cover scale-110 group-hover:scale-100 transition-transform duration-1000 ease-out" />
-                  <div className="absolute inset-0 bg-black/40 backdrop-blur-[6px]" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-white/5" />
-                </div>
-
-                {/* Content */}
-                <div className="relative z-10 flex flex-col items-center justify-center">
-                  <span className="text-[#E11D48] text-[10px] font-bold uppercase tracking-widest mb-3 block font-mono font-bold">Transform</span>
-                  <h3 className="text-lg font-bold text-white mb-3 group-hover:text-rose-400 transition-colors duration-500">Digital Transformation</h3>
-                  <p className="text-xs text-zinc-400 font-semibold leading-relaxed mb-6 max-w-[280px] group-hover:text-zinc-200 transition-colors duration-500">
-                    Modernise business models and legacy systems. IT roadmaps, cloud readiness audits, process automation, and intelligent workflows.
-                  </p>
-                  <Link href="/services/digital-transformation" className="inline-flex items-center justify-center px-5 py-2.5 rounded-full text-[11px] font-bold uppercase tracking-wider border border-zinc-900 hover:border-rose-500 text-white transition-all group-hover:bg-zinc-900">
-                    Explore
-                  </Link>
-                </div>
-              </div>
-            </Reveal>
-          </div>
-
-          {/* Row 4: Data Engineering (Small) + Managed Services (Large) */}
-          <div className="flex flex-col-reverse lg:flex-row gap-6 items-stretch">
-            {/* Small Card: Data Engineering */}
-            <Reveal delay={0.2} className="w-full lg:w-1/3 h-full flex">
-              <div className="bg-[#0A0A0C] border border-zinc-900 hover:border-rose-500/20 rounded-[1.75rem] p-6 md:p-8 flex flex-col justify-center items-center text-center h-full min-h-[300px] w-full transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_15px_30px_rgba(0,0,0,0.4)] group relative overflow-hidden">
-                
-                {/* Expanding Image Layer (Bottom-Right to cover full box) */}
-                <div className="absolute inset-0 z-0 [clip-path:circle(0%_at_100%_100%)] group-hover:[clip-path:circle(150%_at_100%_100%)] transition-all duration-700 ease-in-out pointer-events-none rounded-[1.75rem] overflow-hidden">
-                  <img src="/assets/Home-page/core-services/7.png" alt="Data Engineering background" className="w-full h-full object-cover scale-110 group-hover:scale-100 transition-transform duration-1000 ease-out" />
-                  <div className="absolute inset-0 bg-black/40 backdrop-blur-[6px]" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-white/5" />
-                </div>
-
-                {/* Content */}
-                <div className="relative z-10 flex flex-col items-center justify-center">
-                  <span className="text-[#E11D48] text-[10px] font-bold uppercase tracking-widest mb-3 block font-mono font-bold">Analyze</span>
-                  <h3 className="text-lg font-bold text-white mb-3 group-hover:text-rose-400 transition-colors duration-500">Data Engineering</h3>
-                  <p className="text-xs text-zinc-400 font-semibold leading-relaxed mb-6 max-w-[280px] group-hover:text-zinc-200 transition-colors duration-500">
-                    Unlock actionable insights with robust data platforms. Design columnar databases, unified lakehouses, and real-time streaming pipelines.
-                  </p>
-                  <Link href="/services/data-engineering" className="inline-flex items-center justify-center px-5 py-2.5 rounded-full text-[11px] font-bold uppercase tracking-wider border border-zinc-900 hover:border-rose-500 text-white transition-all group-hover:bg-zinc-900">
-                    Explore
-                  </Link>
-                </div>
-              </div>
-            </Reveal>
-
-            {/* Large Card: Managed Services */}
-            <Reveal delay={0.25} className="w-full lg:w-2/3 h-full flex">
-              <div className="bg-gradient-to-br from-teal-950/20 via-[#0C0C0E] to-zinc-950/90 border border-zinc-800/80 hover:border-teal-500/30 rounded-[1.75rem] p-3 flex flex-col md:flex-row gap-5 h-full min-h-[300px] w-full items-stretch transition-all duration-500 hover:shadow-[0_20px_50px_rgba(20,184,166,0.1)] group relative overflow-hidden">
-                
-                {/* Expanding Image Layer (Bottom-Right to cover full box) */}
-                <div className="absolute inset-0 z-0 [clip-path:circle(0%_at_100%_100%)] group-hover:[clip-path:circle(150%_at_100%_100%)] transition-all duration-700 ease-in-out pointer-events-none rounded-[1.75rem] overflow-hidden">
-                  <img src="/assets/Home-page/core-services/8.png" alt="Managed Services background" className="w-full h-full object-cover scale-110 group-hover:scale-100 transition-transform duration-1000 ease-out" />
-                  <div className="absolute inset-0 bg-black/40 backdrop-blur-[6px]" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-white/5" />
-                </div>
-
-                {/* Text Content */}
-                <div className="w-full md:w-[52%] p-4 md:p-6 flex flex-col justify-center text-left order-2 md:order-1 relative z-10">
-                  <span className="text-[#E11D48] text-[10px] font-bold uppercase tracking-widest mb-2 block font-mono font-bold">Manage</span>
-                  <h3 className="text-xl font-bold text-white mb-2 leading-snug group-hover:text-teal-400 transition-colors duration-500">Managed Services</h3>
-                  <p className="text-xs text-zinc-400 font-semibold leading-relaxed mb-6 group-hover:text-zinc-200 transition-colors duration-500">
-                    Ensure uninterrupted operations with 24/7 proactive monitoring. Multi-account cloud administration, SLA bug resolutions, and incident containment.
-                  </p>
-                  <Link href="/services/managed-services" className="inline-flex items-center justify-center px-5 py-2.5 rounded-full text-[11px] font-bold uppercase tracking-wider bg-zinc-900 border border-zinc-800 hover:border-teal-500 text-white transition-all w-fit">
-                    Learn More
-                  </Link>
-                </div>
-
-                {/* Right Image (fades out on hover) */}
-                <div className="w-full md:w-[48%] relative rounded-[1.25rem] overflow-hidden min-h-[180px] md:min-h-full order-1 md:order-2 transition-all duration-500 group-hover:opacity-0 group-hover:scale-95 z-10">
-                  <img src="/assets/Home-page/core-services/8.png" alt="Managed Services" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-                </div>
-              </div>
-            </Reveal>
-          </div>
-
-          {/* Row 5: QA & Testing (Large) + IT Consulting (Small) */}
-          <div className="flex flex-col lg:flex-row gap-6 items-stretch">
-            {/* Large Card: QA & Testing */}
-            <Reveal delay={0.25} className="w-full lg:w-2/3 h-full flex">
-              <div className="bg-gradient-to-br from-rose-950/20 via-[#0C0C0E] to-zinc-950/90 border border-zinc-800/80 hover:border-rose-500/30 rounded-[1.75rem] p-3 flex flex-col md:flex-row gap-5 h-full min-h-[300px] w-full items-stretch transition-all duration-500 hover:shadow-[0_20px_50px_rgba(225,29,72,0.1)] group relative overflow-hidden">
-                
-                {/* Expanding Image Layer (Bottom-Right to cover full box) */}
-                <div className="absolute inset-0 z-0 [clip-path:circle(0%_at_100%_100%)] group-hover:[clip-path:circle(150%_at_100%_100%)] transition-all duration-700 ease-in-out pointer-events-none rounded-[1.75rem] overflow-hidden">
-                  <img src="/assets/Home-page/core-services/9.png" alt="QA & Testing background" className="w-full h-full object-cover scale-110 group-hover:scale-100 transition-transform duration-1000 ease-out" />
-                  <div className="absolute inset-0 bg-black/40 backdrop-blur-[6px]" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-white/5" />
-                </div>
-
-                {/* Left Image (fades out on hover) */}
-                <div className="w-full md:w-[48%] relative rounded-[1.25rem] overflow-hidden min-h-[180px] md:min-h-full transition-all duration-500 group-hover:opacity-0 group-hover:scale-95 z-10">
-                  <img src="/assets/Home-page/core-services/9.png" alt="QA & Testing" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-                </div>
-
-                {/* Right Text Content */}
-                <div className="w-full md:w-[52%] p-4 md:p-6 md:pl-2 flex flex-col justify-center text-left relative z-10">
-                  <span className="text-[#E11D48] text-[10px] font-bold uppercase tracking-widest mb-2 block font-mono font-bold">Ensure</span>
-                  <h3 className="text-xl font-bold text-white mb-2 leading-snug group-hover:text-rose-400 transition-colors duration-500">QA & Testing</h3>
-                  <p className="text-xs text-zinc-400 font-semibold leading-relaxed mb-6 group-hover:text-zinc-200 transition-colors duration-500">
-                    Deliver flawless digital experiences with quality engineering. Automated end-to-end client scripts, load testing, and shift-left methodologies.
-                  </p>
-                  <Link href="/services/qa-testing" className="inline-flex items-center justify-center px-5 py-2.5 rounded-full text-[11px] font-bold uppercase tracking-wider bg-zinc-900 border border-zinc-800 hover:border-rose-500 text-white transition-all w-fit">
-                    Learn More
-                  </Link>
-                </div>
-              </div>
-            </Reveal>
-
-            {/* Small Card: IT Consulting */}
-            <Reveal delay={0.3} className="w-full lg:w-1/3 h-full flex">
-              <div className="bg-[#0A0A0C] border border-zinc-900 hover:border-rose-500/20 rounded-[1.75rem] p-6 md:p-8 flex flex-col justify-center items-center text-center h-full min-h-[300px] w-full transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_15px_30px_rgba(0,0,0,0.4)] group relative overflow-hidden">
-                
-                {/* Expanding Image Layer (Bottom-Right to cover full box) */}
-                <div className="absolute inset-0 z-0 [clip-path:circle(0%_at_100%_100%)] group-hover:[clip-path:circle(150%_at_100%_100%)] transition-all duration-700 ease-in-out pointer-events-none rounded-[1.75rem] overflow-hidden">
-                  <img src="/assets/Home-page/core-services/10.png" alt="IT Consulting background" className="w-full h-full object-cover scale-110 group-hover:scale-100 transition-transform duration-1000 ease-out" />
-                  <div className="absolute inset-0 bg-black/40 backdrop-blur-[6px]" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-white/5" />
-                </div>
-
-                {/* Content */}
-                <div className="relative z-10 flex flex-col items-center justify-center">
-                  <span className="text-[#E11D48] text-[10px] font-bold uppercase tracking-widest mb-3 block font-mono font-bold">Consult</span>
-                  <h3 className="text-lg font-bold text-white mb-3 group-hover:text-rose-400 transition-colors duration-500">IT Consulting</h3>
-                  <p className="text-xs text-zinc-400 font-semibold leading-relaxed mb-6 max-w-[280px] group-hover:text-zinc-200 transition-colors duration-500">
-                    Align technology investments with strategic business objectives. Cost-benefit analyses, compliance alignment, and digital roadmaps.
-                  </p>
-                  <Link href="/services/it-consulting" className="inline-flex items-center justify-center px-5 py-2.5 rounded-full text-[11px] font-bold uppercase tracking-wider border border-zinc-900 hover:border-rose-500 text-white transition-all group-hover:bg-zinc-900">
-                    Explore
-                  </Link>
-                </div>
-              </div>
-            </Reveal>
-          </div>
-
+          ))}
         </div>
+
       </div>
     </section>
   );
