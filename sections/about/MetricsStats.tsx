@@ -38,9 +38,9 @@ export function MetricsStats() {
             <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-4">
               The <span className="text-rose-500">results speak for themselves</span> — <span className="font-bold">every time.</span>
             </h2>
-            <p className="text-zinc-400 text-xs md:text-sm leading-relaxed font-semibold">
+            {/* <p className="text-zinc-400 text-xs md:text-sm leading-relaxed font-semibold">
               These aren't marketing numbers. They're metrics pulled from <Link href="/insights/case-studies" className="text-rose-500 hover:underline">real client engagements</Link>, measured against real business outcomes, and verified by the enterprises we serve.
-            </p>
+            </p> */}
           </div>
 
           <div className="p-5 bg-zinc-950/60 border border-zinc-800/80 rounded-none border-r-4 border-r-rose-600">
@@ -67,9 +67,9 @@ export function MetricsStats() {
                 <strong className="text-[10px] font-bold text-zinc-400 group-hover:text-zinc-200 block mb-1.5 uppercase tracking-widest">
                   {item.label}
                 </strong>
-                <p className="text-[10.5px] text-zinc-500 leading-relaxed font-semibold">
+                {/* <p className="text-[10.5px] text-zinc-500 leading-relaxed font-semibold">
                   {item.desc}
-                </p>
+                </p> */}
               </div>
             </Reveal>
           ))}

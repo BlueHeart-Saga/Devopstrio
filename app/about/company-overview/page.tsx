@@ -16,6 +16,7 @@ import { WhyChooseDevopstrioSection } from "@/sections/about/overview/WhyChooseD
 import { OurFutureSection } from "@/sections/about/overview/OurFutureSection";
 import { HiringSection } from "@/sections/home/HiringSection";
 import { EnterpriseCTA } from "@/sections/about/overview/EnterpriseCTA";
+import { OurStory } from "@/sections/about/OurStory";
 
 const overviewSections = [
   { id: "hero", label: "Overview" },
@@ -73,7 +74,8 @@ export default function CompanyOverviewPage() {
 
       {/* 4. Our Journey */}
       <div id="journey">
-        <OurStoryTimeline />
+        {/* <OurStoryTimeline /> */}
+          <OurStory />
       </div>
 
       {/* Divider */}

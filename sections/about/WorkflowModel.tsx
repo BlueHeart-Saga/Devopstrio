@@ -96,9 +96,9 @@ export function WorkflowModel() {
             A structured, repeatable <br />
             framework for <span className="text-rose-500">digital execution</span>.
           </h2>
-          <p className="text-zinc-400 text-xs md:text-sm leading-relaxed font-semibold">
+          {/* <p className="text-zinc-400 text-xs md:text-sm leading-relaxed font-semibold">
             We operate through a 7-phase engineering lifecycle that guarantees alignment between <Link href="/services/it-consulting" className="text-rose-500 hover:underline">target architecture</Link>, <Link href="/services/cybersecurity" className="text-rose-500 hover:underline">deployment security</Link>, and long-term operations scalability.
-          </p>
+          </p> */}
         </Reveal>
 
         {/* Desktop Connected Timeline Path */}

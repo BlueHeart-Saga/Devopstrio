@@ -84,9 +84,9 @@ export function Achievements() {
               <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">
                 Driving technology transformation through <span className="text-rose-500">innovation, expertise, and measurable business impact.</span>
               </h2>
-              <p className="text-zinc-400 text-xs md:text-sm leading-relaxed font-semibold">
+              {/* <p className="text-zinc-400 text-xs md:text-sm leading-relaxed font-semibold">
                 We combine advanced <Link href="/services/cloud-services" className="text-rose-500 hover:underline">cloud methodologies</Link> with modern <Link href="/services/software-development" className="text-rose-500 hover:underline">software engineering</Link> to build resilient, secure, and cost-efficient digital ecosystems.
-              </p>
+              </p> */}
             </Reveal>
           </div>
 

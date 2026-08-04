@@ -123,11 +123,11 @@ export function AboutServices() {
               AI &amp; Cloud in the flow of work—built for scale and trust
             </h2>
           </Reveal>
-          <Reveal delay={0.2}>
+          {/* <Reveal delay={0.2}>
             <p className="text-zinc-400 text-sm md:text-base leading-relaxed max-w-2xl mx-auto font-bold">
               Enrich employee experiences, reshape business processes, and <Link href="/services/digital-transformation" className="text-rose-500 hover:underline">accelerate innovation</Link> with Devopstrio—embedding trusted intelligence into everyday workflows. Move beyond <Link href="/services/devops-automation" className="text-rose-500 hover:underline">task automation</Link> to connect knowledge, improve decisions, and achieve measurable outcomes.
             </p>
-          </Reveal>
+          </Reveal> */}
         </div>
 
         {/* Carousel Scroll Container */}

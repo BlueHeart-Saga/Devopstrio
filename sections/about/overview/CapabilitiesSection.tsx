@@ -213,7 +213,7 @@ export function CapabilitiesSection() {
                     {item.title}
                   </h3>
 
-                  <p className="text-zinc-400 text-xs md:text-sm leading-relaxed font-medium mb-2">
+                  <p className="text-zinc-400 text-xs md:text-sm leading-relaxed font-medium overflow-hidden max-h-0 opacity-0 group-hover:max-h-40 group-hover:opacity-100 transition-all duration-500 ease-in-out mb-0 group-hover:mb-2">
                     {item.desc}
                   </p>
 

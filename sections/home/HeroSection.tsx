@@ -26,7 +26,7 @@ export function HeroSection() {
       eyebrow: "Modern DevOps & Automation",
       title: (
         <>
-          Continuous Delivery Acceleration Needs
+          Modern DevOps Demands
           <br />
           <span className="text-[#E11D48] whitespace-nowrap">Automation.</span>
           <br />
@@ -61,7 +61,7 @@ export function HeroSection() {
       eyebrow: "Data & Cloud Infrastructure",
       title: (
         <>
-          Enterprise Transformation Thrives
+          Enterprise Growth Requires
           <br />
           <span className="text-[#E11D48] whitespace-nowrap">Innovation.</span>
           <br />
@@ -78,13 +78,13 @@ export function HeroSection() {
       eyebrow: "Cloud & Infrastructure",
       title: (
         <>
-          Modern Enterprises Depend on
+          Modern Cloud Demands
           <br />
-          <span className="text-[#E11D48] whitespace-nowrap">Cloud.</span>
+          <span className="text-[#E11D48] whitespace-nowrap">Scalability.</span>
           <br />
           We Build It
           <br />
-          <span className="text-[#E11D48] whitespace-nowrap">Without Limits.</span>
+          <span className="text-[#E11D48] whitespace-nowrap">Seamlessly.</span>
         </>
       ),
       primaryBtn: { text: "Explore Services", href: "/services" },
@@ -216,7 +216,7 @@ export function HeroSection() {
       eyebrow: "Platform & Cloud Operations",
       title: (
         <>
-          High-Performance Systems Require
+          High-Scale Systems Need
           <br />
           <span className="text-[#E11D48] whitespace-nowrap">Reliability.</span>
           <br />
@@ -239,7 +239,7 @@ export function HeroSection() {
           <br />
           We Deliver Them
           <br />
-          <span className="text-[#E11D48] whitespace-nowrap">At Speed.</span>
+          <span className="text-[#E11D48] whitespace-nowrap">Fast.</span>
         </>
       ),
       primaryBtn: { text: "Explore Services", href: "/services" },

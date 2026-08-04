@@ -158,9 +158,9 @@ export function Leadership() {
             <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-4">
               The minds behind every <span className="text-rose-500">breakthrough</span>
             </h2>
-            <p className="text-zinc-400 text-base leading-relaxed">
+            {/* <p className="text-zinc-400 text-base leading-relaxed">
               Decades of combined experience across <Link href="/services/cloud-services" className="text-rose-500 hover:underline">cloud</Link>, <Link href="/services/ai-data-innovation" className="text-rose-500 hover:underline">AI</Link>, <Link href="/services/devops-automation" className="text-rose-500 hover:underline">DevOps</Link>, and <Link href="/services/software-development" className="text-rose-500 hover:underline">enterprise engineering</Link> — drawn from the world's leading technology organisations.
-            </p>
+            </p> */}
           </div>
         </Reveal>
 
@@ -327,9 +327,9 @@ export function Leadership() {
                 <h3 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-4">
                   Meet Our <span className="text-rose-500">Team</span>
                 </h3>
-                <p className="text-zinc-400 text-sm md:text-base leading-relaxed">
+                {/* <p className="text-zinc-400 text-sm md:text-base leading-relaxed">
                   A collision of different minds on a single mission — to build technology that leaves the world better than we found it.
-                </p>
+                </p> */}
               </div>
 
               {/* Photos container with Background Watermark */}

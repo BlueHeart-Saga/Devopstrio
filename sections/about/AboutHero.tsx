@@ -28,14 +28,14 @@ export function AboutHero() {
             </Reveal>
 
             {/* Description */}
-            <Reveal delay={0.2}>
+            {/* <Reveal delay={0.2}>
               <p className="text-zinc-400 text-xs sm:text-sm md:text-base leading-relaxed font-semibold max-w-xl mb-8">
                 Devopstrio is a UK-based global technology partner helping enterprises accelerate <Link href="/services/digital-transformation" className="text-rose-500 hover:underline">digital transformation</Link> through secure, scalable, and intelligent <Link href="/services" className="text-rose-500 hover:underline">technology solutions</Link>. We specialize in developing <Link href="/services/software-development" className="text-rose-500 hover:underline">software solutions</Link> through the synergy of skilled professionals and efficient processes.
               </p>
-            </Reveal>
+            </Reveal> */}
 
             {/* CTA Buttons */}
-            <Reveal delay={0.3}>
+            {/* <Reveal delay={0.3}>
               <div className="flex flex-wrap gap-4 items-center justify-start">
                 <a
                   className="inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white transition-all duration-300 hover:shadow-[0_0_25px_rgba(225,29,72,0.35)] hover:-translate-y-0.5"
@@ -52,7 +52,7 @@ export function AboutHero() {
 
                 </a>
               </div>
-            </Reveal>
+            </Reveal> */}
           </div>
 
           {/* Right Column: Globe Image */}

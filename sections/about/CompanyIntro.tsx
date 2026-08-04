@@ -29,11 +29,11 @@ export function CompanyIntro() {
               <span className="text-rose-500">digital foundations</span> that scale global innovation.
             </h2>
           </Reveal>
-          <Reveal delay={0.2}>
+          {/* <Reveal delay={0.2}>
             <p className="text-zinc-400 text-base md:text-lg leading-relaxed font-medium max-w-3xl mx-auto">
               Devopstrio is a London-headquartered global technology company specialising in <Link href="/services/cloud-services" className="text-rose-500 hover:underline">Cloud</Link>, <Link href="/services/ai-data-innovation" className="text-rose-500 hover:underline">AI</Link>, <Link href="/services/devops-automation" className="text-rose-500 hover:underline">DevOps</Link>, and <Link href="/services/software-development" className="text-rose-500 hover:underline">Enterprise Software</Link>. We partner with forward-thinking enterprises to modernise infrastructure, unlock new value, and accelerate digital success — quietly, precisely, and at scale.
             </p>
-          </Reveal>
+          </Reveal> */}
         </div>
 
         {/* ========================================================================= */}

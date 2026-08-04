@@ -148,9 +148,9 @@ export function OurFutureSection() {
               <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">
                 Building What's Next
               </h2>
-              <p className="text-zinc-400 text-xs md:text-sm leading-relaxed font-medium mb-6">
+              {/* <p className="text-zinc-400 text-xs md:text-sm leading-relaxed font-medium mb-6">
                 We are investing in AI, cloud, and modern engineering to create intelligent solutions that help businesses innovate, adapt, and grow with confidence.
-              </p>
+              </p> */}
 
               {/* Play Document / Action trigger & Navigation Arrows */}
               <div className="mt-8 flex flex-col sm:flex-row sm:items-center gap-6">
@@ -210,9 +210,9 @@ export function OurFutureSection() {
 
                     {/* Text content details */}
                     <div className="absolute bottom-0 inset-x-0 p-6 z-30 text-left pt-12">
-                      <span className="inline-block px-2.5 py-1 rounded text-[9px] font-bold tracking-widest uppercase bg-rose-950/60 text-rose-400 border border-rose-500/20 font-mono mb-2">
+                      {/* <span className="inline-block px-2.5 py-1 rounded text-[9px] font-bold tracking-widest uppercase bg-rose-950/60 text-rose-400 border border-rose-500/20 font-mono mb-2">
                         {focus.tag}
-                      </span>
+                      </span> */}
                       <h3 className="text-base md:text-lg font-bold text-white mb-1 transition-colors duration-300 group-hover:text-rose-400">
                         {focus.title}
                       </h3>

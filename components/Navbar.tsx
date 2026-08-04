@@ -857,7 +857,6 @@ export function Navbar() {
 
       <div
         ref={navRef}
-        onMouseLeave={() => setActiveMenu(null)}
         className="fixed inset-x-0 top-0 z-50 flex justify-center px-4 py-4 pointer-events-none"
       >
         <header
