@@ -208,8 +208,8 @@ export function WhyDevopstrio() {
             </span>
           </Reveal>
           <Reveal delay={0.1}>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-4 drop-shadow-md">
-              Engineering Innovation. <span className="block md:inline">Delivering <span className="text-rose-500">Business Outcomes.</span></span>
+            <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight text-white mb-4">
+              Engineering Innovation. Delivering Business Outcomes.
             </h2>
           </Reveal>
           <Reveal delay={0.2}>

@@ -27,11 +27,11 @@ export function CareersHero() {
             </Reveal>
 
             {/* Description */}
-            <Reveal delay={0.2}>
+            {/* <Reveal delay={0.2}>
               <p className="text-zinc-400 text-xs sm:text-sm md:text-base leading-relaxed font-semibold max-w-xl mb-8">
                 Join a high-performance global network of system architects, DevOps experts, and AI engineers. We build and secure the modern, regulatory-compliant digital infrastructures powering tomorrow&apos;s enterprises. Learn more about our <Link href="/services/devops-automation" className="text-[#E11D48] hover:underline font-bold">DevOps automation</Link> and <Link href="/about/overview" className="text-[#E11D48] hover:underline font-bold">company overview</Link>.
               </p>
-            </Reveal>
+            </Reveal> */}
 
             {/* Quote Block */}
             <Reveal delay={0.3}>

@@ -103,10 +103,10 @@ export function IndustriesSection() {
           <Reveal>
             <div className="flex flex-col md:flex-row justify-between items-end mb-8 gap-4">
               <div>
-                <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
+                {/* <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
                   FEATURED EXPERTISE
-                </span>
-                <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white">
+                </span> */}
+                <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight text-white">
                   Handpicked Sectors For You
                 </h2>
               </div>
@@ -168,7 +168,7 @@ export function IndustriesSection() {
               <span className="text-xs font-semibold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
                 OUR EXPERTISE
               </span>
-              <h2 className="text-4xl md:text-5xl font-bold tracking-tight leading-tight mb-6 text-white">
+              <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight mb-6 text-white">
                 We Make Your Industry Journey Seamless
               </h2>
               <p className="text-zinc-100 text-base md:text-lg leading-relaxed mb-10 font-normal">

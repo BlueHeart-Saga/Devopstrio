@@ -678,8 +678,8 @@ export function PartnersSection() {
               OUR CLIENTS & PARTNERS
             </span>
           </div>
-          <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-4 text-white">
-            Some of Our <span className="font-bold text-rose-500">Clients</span>
+          <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight mb-4 text-white">
+            Some of Our Clients
           </h2>
           <p className="text-zinc-300 text-base md:text-lg leading-relaxed font-normal max-w-2xl mx-auto">
             The following are just a few of our regular clients and strategic partners worldwide.

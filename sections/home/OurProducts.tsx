@@ -110,8 +110,8 @@ export function OurProducts() {
               </span>
             </Reveal>
             <Reveal>
-              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-4">
-                Next-gen SaaS <span className="text-rose-500">Platforms</span>
+              <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight text-white mb-4">
+                Next-gen SaaS Platforms
               </h2>
             </Reveal>
             <Reveal>

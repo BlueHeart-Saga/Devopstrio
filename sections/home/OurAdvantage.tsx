@@ -114,8 +114,8 @@ export function OurAdvantage() {
           <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
             The Devopstrio Advantage
           </span>
-          <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white leading-tight mb-4">
-            Technology Without Limits. <span className="text-rose-500">Built for Growth.</span>
+          <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight text-white leading-tight mb-4">
+            Technology Without Limits. Built for Growth.
           </h2>
           <p className="text-zinc-400 text-sm md:text-base leading-relaxed max-w-2xl mx-auto font-bold">
             At DevOpsTrio, we help organizations <Link href="/services/cloud-services" className="text-rose-500 hover:underline">modernize infrastructure</Link>, <Link href="/services/digital-transformation" className="text-rose-500 hover:underline">accelerate innovation</Link>, and unlock new growth opportunities through secure, reliable, and scalable <Link href="/services/software-development" className="text-rose-500 hover:underline">digital engineering</Link>.

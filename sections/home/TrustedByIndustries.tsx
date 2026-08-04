@@ -44,8 +44,8 @@ export function TrustedByIndustries() {
               INDUSTRIES WE SERVE
             </span>
           </div>
-          <h2 className="text-xl md:text-2xl font-bold tracking-tight text-zinc-300">
-            Tailored engineering capabilities built for <span className="text-white font-medium">highly regulated sectors</span>.
+          <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight text-white">
+            Tailored engineering capabilities built for highly regulated sectors.
           </h2>
         </Reveal>
 

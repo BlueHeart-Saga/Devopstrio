@@ -118,10 +118,8 @@ export function ImpactSection() {
                 <span className="text-[10px] font-black tracking-[0.25em] text-rose-500 uppercase block mb-4">
                   ENTERPRISE VALUE CREATION
                 </span>
-                <h2 className="text-4xl lg:text-5xl font-bold tracking-tight text-white mb-6 leading-[1.15]">
-                  Transforming <br />
-                  Innovation <br />
-                  Into <span className="text-rose-500">Impact</span>
+                <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight text-white mb-6 leading-tight">
+                  Transforming Innovation Into Impact
                 </h2>
                 <p className="text-zinc-300 text-sm md:text-base leading-relaxed font-medium max-w-xs">
                   Every solution we deliver is designed to create lasting business value through technology, <Link href="/services/devops-automation" className="text-rose-500 hover:underline">automation</Link>, <Link href="/services/cloud-services" className="text-rose-500 hover:underline">cloud</Link>, <Link href="/services/ai-data-innovation" className="text-rose-500 hover:underline">AI</Link>, and <Link href="/services/software-development" className="text-rose-500 hover:underline">engineering excellence</Link>.

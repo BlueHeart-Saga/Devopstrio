@@ -63,7 +63,23 @@ const rawTestimonials: Testimonial[] = Array.from({ length: 100 }, (_, i) => {
     { quote: "Devopstrio AI Studio enabled our team to automate document parsing and invoice workflows instantly.", author: "Sophia Martinez", role: "Head of AI", company: "InnovateTech", category: "AI & Data Science" },
     { quote: "Latency dropped by 60% after Devopstrio's SRE team optimized our Database indexing and caching.", author: "Daniel Foster", role: "Director of SRE", company: "Quantum Systems", category: "Cloud & DevOps" },
     { quote: "Serverless AWS Lambda migration cut our cloud bill by $120K annually while handling 3x traffic spikes.", author: "Olivia Bennett", role: "VP of Cloud Ops", company: "Acumen Tech", category: "Cloud & DevOps" },
-    { quote: "HIPAA-compliant telehealth platform built with absolute security standards and WebRTC video integration.", author: "Dr. Arthur Pendelton", role: "Chief Medical Officer", company: "CareSuite Systems", category: "Healthcare & Life Sciences" }
+    { quote: "HIPAA-compliant telehealth platform built with absolute security standards and WebRTC video integration.", author: "Dr. Arthur Pendelton", role: "Chief Medical Officer", company: "CareSuite Systems", category: "Healthcare & Life Sciences" },
+    { quote: "Our payment processing time dropped under 50ms globally after Devopstrio restructured our global DB replications.", author: "Alexander Sterling", role: "VP of Payments", company: "Vanguard Pay", category: "FinTech & Banking" },
+    { quote: "The NLP pipeline designed by their engineering team automates 80% of our clinical triage notes sorting.", author: "Clara Vance", role: "Director of Clinical AI", company: "Helix Health", category: "Healthcare & Life Sciences" },
+    { quote: "Devopstrio's cloud governance framework reduced resource sprawl and aligned our spending exactly to usage cycles.", author: "Jonathan Wu", role: "Director of FinOps", company: "Symphony Cloud", category: "Cloud & DevOps" },
+    { quote: "The ML model lifecycle management platform built on Vertex AI cut our validation iteration rounds in half.", author: "Deepak Nair", role: "Head of Machine Learning", company: "Kognitive Tech", category: "AI & Data Science" },
+    { quote: "Deploying updates used to take weekends. With their custom GitHub Actions automation, it takes 8 minutes.", author: "Hanna Linna", role: "DevOps Lead", company: "Veritas Solutions", category: "Enterprise SaaS" },
+    { quote: "Devopstrio modernised our legacy ERP. Integrations with Shopify and SAP operate flawlessly under extreme loads.", author: "Victor Dupont", role: "Chief Supply Officer", company: "Apex Logistics", category: "Retail & Logistics" },
+    { quote: "Our real-time trade execution engine compliance auditing was automated without adding code latency.", author: "Sarah Bernardi", role: "Head of Risk Assurance", company: "Lombard Securities", category: "FinTech & Banking" },
+    { quote: "They deployed an air-gapped Kubernetes system matching strict federal security parameters on time.", author: "Col. Randall Vance", role: "Director of Security Systems", company: "GovDefense Systems", category: "Cloud & DevOps" },
+    { quote: "Devopstrio structured our multitenant Postgres cluster to guarantee hardware isolation for premium enterprises.", author: "Nate Kowalski", role: "Chief Architect", company: "CloudScale SaaS", category: "Enterprise SaaS" },
+    { quote: "We scaled our microservices on ECS effortlessly during Black Friday peak. Not a single error logged.", author: "Rachel Greene", role: "VP of E-Commerce", company: "Threads Global", category: "Retail & Logistics" },
+    { quote: "From training data pipelines to live model deployments, their data platform has been robust and cost-effective.", author: "Dr. Kenji Tanaka", role: "VP of Core Research", company: "NeoCognition", category: "AI & Data Science" },
+    { quote: "Implemented robust end-to-end telemetry and observability that made finding production bugs trivial.", author: "Simone de Beau", role: "VP of Site Reliability", company: "Système SA", category: "Cloud & DevOps" },
+    { quote: "Our EHR integration timelines were cut from months to weeks using Devopstrio's FHIR compliant API templates.", author: "Elena Rostova", role: "Integration Architect", company: "PulseMed Group", category: "Healthcare & Life Sciences" },
+    { quote: "We automated database schema migrations safely across 40 distinct clusters with zero customer downtime.", author: "George Fletcher", role: "VP of Infrastructure", company: "AlphaTech SaaS", category: "Enterprise SaaS" },
+    { quote: "Their predictive analytics engine accurately forecast customer demand to optimize our entire supply chain inventory.", author: "Mei-Ling Zhou", role: "Director of Analytics", company: "Horizon Retail", category: "Retail & Logistics" },
+    { quote: "The zero-trust remote access architecture securely handles developer configurations across 14 global offices.", author: "Charles Dunhill", role: "CISO", company: "Standard Assurance", category: "FinTech & Banking" }
   ];
 
   const template = quotesData[i % quotesData.length];
@@ -72,10 +88,12 @@ const rawTestimonials: Testimonial[] = Array.from({ length: 100 }, (_, i) => {
 
   return {
     id: i + 1,
-    quote: i < quotesData.length ? template.quote : `Devopstrio delivered exceptional digital engineering result #${i + 1}. Their expertise in ${cat} transformed our technology platform.`,
-    author: i < quotesData.length ? template.author : `Executive Client ${i + 1}`,
-    role: i < quotesData.length ? template.role : "Technology Leader",
-    company: i < quotesData.length ? template.company : `Enterprise ${cat.split(' ')[0]} Corp`,
+    quote: i < quotesData.length 
+      ? template.quote 
+      : `Devopstrio provided exemplary strategic engineering delivery for our #project-${i + 1} milestone. The implementation of modern cloud integrations helped us exceed targeted roadmap timelines securely.`,
+    author: i < quotesData.length ? template.author : `Client Partner #${i + 1}`,
+    role: i < quotesData.length ? template.role : "VP of Technology",
+    company: i < quotesData.length ? template.company : `Enterprise Systems #${i + 1}`,
     category: cat,
     image: clientImages[imageIndex]
   };
@@ -139,15 +157,15 @@ export function ExecutiveTestimonials() {
               </div>
             </Reveal> */}
             <Reveal>
-              <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold tracking-tight text-white mb-3">
-                Trusted by 100+ Enterprise <span className="text-rose-500">Technology Leaders</span>
+              <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight text-white mb-3">
+                Voices of Our Clients
               </h2>
             </Reveal>
-            <Reveal>
+            {/* <Reveal>
               <p className="text-zinc-300 text-base md:text-lg max-w-xl leading-relaxed font-normal">
-                Read real-world testimonials from CTOs, CISOs, and VPs of Engineering across global industries.
+                Discover how organizations transform challenges into measurable business success with Devopstrio.
               </p>
-            </Reveal>
+            </Reveal> */}
           </div>
 
           {/* Controls: Search & Auto-Play */}

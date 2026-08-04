@@ -36,11 +36,11 @@ export function TrustBanner() {
 
           {/* Left Side: Premium Enterprise Copy */}
           <div className="flex-shrink-0 max-w-sm">
-            <Reveal>
+            {/* <Reveal>
               <span className="text-[11px] font-semibold tracking-[0.25em] uppercase text-[#E11D48] mb-2 block">
                 ENTERPRISE TRUST
               </span>
-            </Reveal>
+            </Reveal> */}
             <Reveal>
               <h3 className="text-xl md:text-2xl xl:text-3xl font-bold leading-tight tracking-tight text-white">
                 Trusted by the world's most

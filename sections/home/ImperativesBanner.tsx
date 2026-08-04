@@ -60,10 +60,8 @@ export function ImperativesBanner() {
             <div className="flex-1 z-10">
               <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-8 pb-8 border-b border-zinc-900">
                 <div>
-                  <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-white mb-2 leading-tight">
-                    {announcement.titlePrefix} 
-                    <span className="text-white font-medium bg-gradient-to-r from-red-600 via-rose-600 to-rose-500 bg-clip-text text-transparent">{announcement.titleHighlight}</span>
-                    {announcement.titleSuffix}
+                  <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight text-white mb-2 leading-tight">
+                    {announcement.titlePrefix}{announcement.titleHighlight}{announcement.titleSuffix}
                   </h2>
                   <p className="text-zinc-400 text-sm md:text-base font-bold max-w-xl">
                     {announcement.description}

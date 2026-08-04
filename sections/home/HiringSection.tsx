@@ -111,8 +111,8 @@ export function HiringSection() {
               CAREERS
             </span>
             
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
-              Find your <span className="text-white font-medium bg-gradient-to-r from-red-600 via-rose-600 to-rose-500 bg-clip-text text-transparent">dream job</span> &amp; make <span className="text-white font-medium bg-gradient-to-r from-red-600 via-rose-600 to-rose-500 bg-clip-text text-transparent">your goal</span>.
+            <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight mb-5 text-white">
+              Find your dream job &amp; make your goal.
             </h2>
             
             <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-bold max-w-lg mb-8">

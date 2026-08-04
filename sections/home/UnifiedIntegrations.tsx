@@ -534,8 +534,8 @@ export function UnifiedIntegrations() {
           <span className="mb-6 inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white transition-all duration-300 hover:shadow-[0_0_25px_rgba(225,29,72,0.35)] hover:-translate-y-0.5">
             PRODUCT ECOSYSTEM
           </span>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] text-white mb-6">
-            A unified suite of <span className="text-white font-medium bg-gradient-to-r from-red-650 via-rose-600 to-rose-500 bg-clip-text text-transparent block md:inline">proprietary products</span>
+          <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight text-white mb-6">
+            A unified suite of proprietary products
           </h2>
           <p className="text-zinc-400 text-sm md:text-base leading-relaxed max-w-2xl mx-auto font-normal">
             Devopstrio designs and builds industry-leading products to streamline cloud, security, compliance, operations, and workforce management.

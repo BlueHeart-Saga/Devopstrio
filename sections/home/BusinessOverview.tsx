@@ -26,11 +26,8 @@ export function BusinessOverview() {
                   </span>
                 </div>
 
-                <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold leading-tight tracking-tight mb-3">
-                  Transforming Businesses Through
-                  <span className="block text-[#E11D48] mt-0.5">
-                    Cloud, AI &amp; Digital Innovation
-                  </span>
+                <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold leading-tight tracking-tight mb-3 text-white">
+                  Transforming Businesses Through Cloud, AI &amp; Digital Innovation
                 </h2>
 
                 <p className="text-zinc-300 text-xs sm:text-sm md:text-base leading-relaxed max-w-xl mb-3 font-normal">

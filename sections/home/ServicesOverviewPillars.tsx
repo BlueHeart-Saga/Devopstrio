@@ -7,50 +7,50 @@ import Link from "next/link";
 
 const pillars = [
   {
-    id: "build",
-    title: "Build",
+    id: "innovate",
+    title: "Innovate",
+    subtitle: "AI Consulting & Strategy",
+    description:
+      "We embed cognitive architecture into the heart of your business, from strategy to sandbox. Identify gaps, engineer roadmaps, and define clear business ROI metrics.",
+    mainLink: "/services/ai-data-innovation",
+    services: [
+      { name: "Generative AI Solutions", href: "/services/ai-data-innovation/generative-ai-solutions" },
+      { name: "AI Agents & Automation", href: "/services/ai-data-innovation/ai-agents-automation" },
+      { name: "Digital Transformation Strategy", href: "/services/digital-transformation/digital-strategy" },
+      { name: "Custom Enterprise Platforms", href: "/services/software-development/product-engineering" },
+      { name: "Compliance & Governance Strategy", href: "/services/cybersecurity/zero-trust-architecture" }
+    ],
+    ctaHref: "/services/ai-data-innovation"
+  },
+  {
+    id: "delivery",
+    title: "Delivery",
     subtitle: "Software & Platform Engineering",
     description:
-      "We reimagine enterprise software delivery with AI embedded across every stage. Up to 50% faster, governed from day one, and engineered to evolve with your business.",
+      "We reimagine enterprise application and cloud delivery with automated deployment pipelines. Build custom products and modern infrastructures engineered to scale.",
     mainLink: "/services/software-development",
     services: [
       { name: "Product Engineering", href: "/services/software-development/product-engineering" },
       { name: "Application Modernization", href: "/services/software-development/application-modernization" },
       { name: "DevOps & Platform Engineering", href: "/services/devops-automation/platform-engineering" },
-      { name: "Infrastructure as Code", href: "/services/devops-automation/infrastructure-as-code" },
+      { name: "Data Engineering & Lakehouses", href: "/services/data-engineering/data-warehousing" },
       { name: "QA & Test Automation", href: "/services/qa-testing/test-automation" }
     ],
     ctaHref: "/services"
   },
   {
-    id: "think",
-    title: "Think",
-    subtitle: "AI and Data Solutions",
+    id: "impact",
+    title: "Impact",
+    subtitle: "Managed IT Operations & SRE",
     description:
-      "We embed AI into the heart of your business, from strategy to production. Faster decisions, smarter operations, and enterprise-wide impact that can be measured.",
-    mainLink: "/services/ai-data-innovation",
-    services: [
-      { name: "Generative AI Solutions", href: "/services/ai-data-innovation/generative-ai-solutions" },
-      { name: "AI Agents & Automation", href: "/services/ai-data-innovation/ai-agents-automation" },
-      { name: "Data Engineering & Lakehouses", href: "/services/data-engineering/data-warehousing" },
-      { name: "Machine Learning Engineering", href: "/services/ai-data-innovation/machine-learning-engineering" },
-      { name: "Digital Transformation Strategy", href: "/services/digital-transformation/digital-strategy" }
-    ],
-    ctaHref: "/services/ai-data-innovation"
-  },
-  {
-    id: "run",
-    title: "Run",
-    subtitle: "Managed IT Operations & Security",
-    description:
-      "Enterprise-grade managed services that combine AI, automation, and expert engineering to keep your critical systems secure, resilient, and continuously improving.",
+      "Enterprise-grade managed services that combine SRE, cybersecurity validation, and cloud optimization to keep systems secure, highly resilient, and cost-effective.",
     mainLink: "/services/managed-services",
     services: [
       { name: "24/7 Managed Cloud Services", href: "/services/managed-services/managed-cloud" },
-      { name: "Cybersecurity & SOC Operations", href: "/services/cybersecurity/security-operations-center" },
       { name: "Site Reliability Engineering (SRE)", href: "/services/devops-automation/site-reliability-engineering" },
+      { name: "Cybersecurity & SOC Operations", href: "/services/cybersecurity/security-operations-center" },
       { name: "FinOps & Cost Optimization", href: "/services/cloud-services/finops-cost-optimization" },
-      { name: "Zero Trust Security Architecture", href: "/services/cybersecurity/zero-trust-architecture" }
+      { name: "Infrastructure as Code", href: "/services/devops-automation/infrastructure-as-code" }
     ],
     ctaHref: "/services/managed-services"
   }
@@ -68,11 +68,10 @@ export function ServicesOverviewPillars() {
       <div className="max-w-7xl mx-auto w-full px-6 sm:px-8 relative z-10">
         
         {/* Top Tagline */}
-        <div className="mb-6 max-w-xl">
+        <div className="text-center max-w-4xl mx-auto mb-14">
           <Reveal>
-            <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold tracking-tight text-white leading-snug font-sans">
-              We engineer every stage <br className="hidden sm:inline" />
-              of your <span className="text-rose-500">AI transformation</span>
+            <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight text-white mb-4 font-sans leading-tight">
+              We engineer every stage of your AI transformation
             </h2>
           </Reveal>
         </div>

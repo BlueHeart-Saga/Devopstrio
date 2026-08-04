@@ -147,7 +147,7 @@ export function CoreServices() {
 
   return (
     <section
-      className="w-full pt-14 md:pt-20 pb-16 md:pb-24 bg-[#030303] text-white relative overflow-hidden"
+      className="w-full pt-14 md:pt-20 pb-4 md:pb-12 bg-[#030303] text-white relative overflow-hidden"
       id="capabilities"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
@@ -161,11 +161,11 @@ export function CoreServices() {
         {/* Section Header */}
         <Reveal>
           <div className="text-center max-w-3xl mx-auto mb-14">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+            {/* <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
               CAPABILITIES
-            </span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
-              Technology at the core of every business breakthrough
+            </span> */}
+            <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight mb-5 text-white">
+              Technology <span className="text-rose-500">delivery</span> at the core of every business breakthrough
             </h2>
             {/* <p className="text-zinc-100 text-base md:text-lg leading-relaxed">
               End-to-end services across <Link href="/services/cloud-services" className="text-rose-500 hover:underline font-medium">Cloud</Link>, <Link href="/services/ai-data-innovation" className="text-rose-500 hover:underline font-medium">AI</Link>, <Link href="/services/devops-automation" className="text-rose-500 hover:underline font-medium">DevOps</Link>, <Link href="/services/cybersecurity" className="text-rose-500 hover:underline font-medium">Security</Link>, and <Link href="/services/software-development" className="text-rose-500 hover:underline font-medium">Software Engineering</Link> — built to deliver measurable outcomes.
@@ -196,10 +196,10 @@ export function CoreServices() {
 
                 {/* Card Body */}
                 <div className="flex flex-col flex-1 px-4 pt-5 pb-3 gap-2.5">
-                  <span className="text-[#E11D48] text-xs font-semibold uppercase tracking-widest">
+                  <span className="text-rose-400 text-xs font-semibold uppercase tracking-widest">
                     {service.tag}
                   </span>
-                  <h3 className="text-white text-lg md:text-xl font-bold leading-snug">
+                  <h3 className="text-white text-lg md:text-xl font-semibold leading-snug">
                     {service.title}
                   </h3>
                   {/* <p className="text-zinc-100 text-base md:text-[17px] leading-relaxed flex-1 mt-1 font-normal">
@@ -209,7 +209,7 @@ export function CoreServices() {
                   {/* CTA - Modern Transparent Glassy Premium Link Button */}
                   <Link
                     href={service.href}
-                    className="mt-4 pt-3.5 border-t border-zinc-800/80 hover:border-rose-500/30 inline-flex items-center justify-between w-full text-white hover:text-rose-400 text-sm md:text-base font-bold tracking-wide transition-all duration-300 group/btn"
+                    className="mt-4 pt-3.5 border-t border-zinc-800/80 hover:border-rose-500/30 inline-flex items-center justify-between w-full text-white hover:text-rose-400 text-sm md:text-base font-semibold tracking-wide transition-all duration-300 group/btn"
                   >
                     <span className="group-hover/btn:translate-x-1 transition-transform duration-300">
                       {service.cta}

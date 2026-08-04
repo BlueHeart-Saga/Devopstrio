@@ -101,15 +101,15 @@ export function CaseStudies() {
               </span>
             </Reveal>
             <Reveal>
-              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-6">
-                Technology Investments That Deliver <span className="text-rose-500">Business Value</span>
+              <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight text-white mb-6">
+                Technology Investments That Deliver Business Value
               </h2>
             </Reveal>
-            <Reveal>
+            {/* <Reveal>
               <p className="text-zinc-100 text-base md:text-[17px] leading-relaxed font-normal">
                 We partner with organizations to solve complex challenges through <Link href="/services/ai-data-innovation" className="text-rose-500 hover:underline font-medium">AI</Link>, <Link href="/services/cloud-services" className="text-rose-500 hover:underline font-medium">cloud engineering</Link>, <Link href="/services/cybersecurity" className="text-rose-500 hover:underline font-medium">cybersecurity</Link>, <Link href="/services/devops-automation" className="text-rose-500 hover:underline font-medium">DevOps</Link>, and <Link href="/services/software-development" className="text-rose-500 hover:underline font-medium">software development</Link> — creating measurable outcomes that drive efficiency, innovation, and long-term growth.
               </p>
-            </Reveal>
+            </Reveal> */}
           </div>
 
           {/* High-Level Enterprise Metrics (UI Box) */}
@@ -215,7 +215,7 @@ export function CaseStudies() {
                 {/* Bottom details row: Technologies & Results */}
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mt-2">
                   {/* Technologies */}
-                  <div className="flex flex-wrap gap-2 items-center">
+                  {/* <div className="flex flex-wrap gap-2 items-center">
                     <span className="text-[10px] sm:text-xs font-mono text-zinc-400 mr-2 uppercase tracking-wider">Core Tech:</span>
                     {caseStudies[activeIndex].technologies.map((tech) => (
                       <span
@@ -225,7 +225,7 @@ export function CaseStudies() {
                         {tech}
                       </span>
                     ))}
-                  </div>
+                  </div> */}
 
                   {/* Result Indicator Badge */}
                   <div className="gap-2 inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs md:text-sm font-bold tracking-wider uppercase bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white transition-all duration-300 hover:shadow-[0_0_25px_rgba(225,29,72,0.35)] hover:-translate-y-0.5">

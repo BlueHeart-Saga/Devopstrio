@@ -1,74 +1,71 @@
 import dynamic from "next/dynamic";
 import { HeroSection } from "@/sections/home/HeroSection";
-import { TrustBanner } from "@/sections/home/TrustBanner";
-import { ImperativesBanner } from "@/sections/home/ImperativesBanner";
-import { BusinessOverview } from "@/sections/home/BusinessOverview";
 import { CoreServices } from "@/sections/home/CoreServices";
 import { ServicesOverviewPillars } from "@/sections/home/ServicesOverviewPillars";
-import { IndustriesSection } from "@/sections/home/IndustriesSection";
+import { IndustryExpertise } from "@/sections/home/IndustryExpertise";
 import { CaseStudies } from "@/sections/home/CaseStudies";
-import { CTA } from "@/sections/home/CTA";
-import { SectionNavbar } from "@/components/ui/SectionNavbar";
-import { SmoothScrollProvider } from "@/components/providers/SmoothScrollProvider";
 
-// Dynamic import heavy sections for code-splitting and faster FCP/LCP
+// Dynamic imports for heavier sections
 const AIStudioShowcase = dynamic(() => import("@/sections/home/AIStudioShowcase").then((mod) => mod.AIStudioShowcase));
-const WeImagine = dynamic(() => import("@/sections/home/WeImagine").then((mod) => mod.WeImagine));
-const OurProducts = dynamic(() => import("@/sections/home/OurProducts").then((mod) => mod.OurProducts));
 const ExecutiveTestimonials = dynamic(() => import("@/sections/home/ExecutiveTestimonials").then((mod) => mod.ExecutiveTestimonials));
 const PartnersSection = dynamic(() => import("@/sections/home/PartnersSection").then((mod) => mod.PartnersSection));
 const Insights = dynamic(() => import("@/sections/home/Insights").then((mod) => mod.Insights));
+const ImperativesBanner = dynamic(() => import("@/sections/home/ImperativesBanner").then((mod) => mod.ImperativesBanner));
 
-const homeSections = [
-  { id: "overview", label: "Overview" },
-  // { id: "ai-studio", label: "AI Studio" },
-  { id: "capabilities", label: "Capabilities" },
-  { id: "industries", label: "Industries" },
-  { id: "innovation", label: "Innovation" },
-  { id: "impact", label: "Impact" },
-  { id: "partnerships", label: "Partnerships" },
-  { id: "insights", label: "Insights" }
-];
+// Commented-out imports (available to re-enable)
+import { TrustBanner } from "@/sections/home/TrustBanner";
+// import { IndustriesSection } from "@/sections/home/IndustriesSection";
+// import { BusinessOverview } from "@/sections/home/BusinessOverview";
+// import { BusinessOverview } from "@/sections/home/BusinessOverview";
+// import { CTA } from "@/sections/home/CTA";
+// import { SectionNavbar } from "@/components/ui/SectionNavbar";
+// import { SmoothScrollProvider } from "@/components/providers/SmoothScrollProvider";
+// const WeImagine = dynamic(() => import("@/sections/home/WeImagine").then((mod) => mod.WeImagine));
+// const OurProducts = dynamic(() => import("@/sections/home/OurProducts").then((mod) => mod.OurProducts));
 
 export default function Home() {
   return (
-    <SmoothScrollProvider>
-      <main>
-        <HeroSection />
-        <TrustBanner />
-        <SectionNavbar sections={homeSections} />
-        
-        <div id="overview">
-          <BusinessOverview />
-        </div>
-        
-        <div id="capabilities">
-          <ServicesOverviewPillars />
-          <CoreServices />
-        </div>
-        <div id="ai-studio">
-          <AIStudioShowcase />
-        </div>
-        <div id="industries">
-          <IndustriesSection />
-        </div>
-        <div id="innovation">
-          <WeImagine />
-          <OurProducts />
-        </div>
-        <div id="impact">
-          <CaseStudies />
-          <ExecutiveTestimonials />
-        </div>
-        <div id="partnerships">
-          <PartnersSection />
-        </div>
-        <div id="insights">
-          <Insights />
-        </div>
-        <ImperativesBanner />
-        <CTA />
-      </main>
-    </SmoothScrollProvider>
+    <main>
+      {/* 1. Hero */}
+      <HeroSection />
+
+      {/* 2. Services Overview Pillars */}
+      <ServicesOverviewPillars />
+
+      
+      
+
+      {/* 4. AI Studio Showcase */}
+      <AIStudioShowcase />
+
+
+      {/* 3. Trusted Partners */}
+      <TrustBanner />
+
+      {/* 5. Core Services */}
+      <CoreServices />
+
+      {/* 6. Industries */}
+      <IndustryExpertise />
+
+      {/* 7. Testimonials */}
+      <ExecutiveTestimonials />
+
+      {/* 8. Case Studies */}
+      {/* <CaseStudies /> */}
+
+      {/* 9. Insights */}
+      <Insights />
+
+      {/* 10. Announcement Banner */}
+      <ImperativesBanner />
+
+      {/* Commented-out sections */}
+      {/* <PartnersSection /> */}
+      {/* <BusinessOverview /> */}
+      {/* <WeImagine /> */}
+      {/* <OurProducts /> */}
+      {/* <CTA /> */}
+    </main>
   );
 }

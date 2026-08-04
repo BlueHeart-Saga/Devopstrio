@@ -121,9 +121,8 @@ export function TechnicalPartnerships() {
               <span className="text-xs font-semibold tracking-[0.25em] uppercase text-rose-500 block mb-4">
                 TECHNOLOGY ECOSYSTEM
               </span>
-              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-[1.12] text-white mb-6">
-                Strategic <span className="text-[#E11D48]">Technology</span> <span className="text-[#E11D48]">Partnerships</span> <br className="hidden md:block" />
-                The Foundation Behind Digital Success
+              <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight text-white mb-6">
+                Strategic Technology Partnerships — The Foundation Behind Digital Success
               </h2>
               <p className="text-lg md:text-xl text-zinc-300 leading-relaxed font-normal mb-12">
                 Hover over the nodes to explore the integrated tools in our <Link href="/ecosystem/technology-stack" className="text-rose-500 hover:underline font-medium">technology stack</Link> and delivery pipeline.

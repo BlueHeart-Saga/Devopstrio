@@ -39,13 +39,13 @@ export function Insights() {
         {/* Header Block with Standardized Eyebrow & Headline */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 pb-6 border-b border-zinc-900/60">
           <div>
-            <Reveal>
-              <span className="text-[11px] font-bold tracking-[0.25em] uppercase text-rose-500 mb-3 block">
+            {/* <Reveal>
+              <span className="text-[11px] font-semibold tracking-[0.25em] uppercase text-rose-500 mb-3 block">
                 NEWS &amp; INSIGHTS
               </span>
-            </Reveal>
+            </Reveal> */}
             <Reveal>
-              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white">
+              <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight text-white">
                 Latest Highlights &amp; Insights
               </h2>
             </Reveal>
@@ -53,7 +53,7 @@ export function Insights() {
           <Reveal>
             <a
               href="/insights"
-              className="inline-flex items-center gap-1.5 text-xs font-bold tracking-wider uppercase text-rose-500 hover:text-rose-400 transition-colors mt-4 md:mt-0 group"
+              className="inline-flex items-center gap-1.5 text-xs font-semibold tracking-wider uppercase text-rose-500 hover:text-rose-400 transition-colors mt-4 md:mt-0 group"
             >
               View all insights
               <ArrowUpRight size={14} className="transform group-hover:translate-x-0.5 transition-transform duration-300" />
@@ -85,12 +85,12 @@ export function Insights() {
               {/* Bottom Content Area */}
               <div className="flex flex-col flex-1 p-4 md:p-6 mt-2 justify-end">
                 <div className="mb-5">
-                  <span className="inline-flex items-center px-3.5 py-1.5 rounded-full bg-rose-500/10 border border-rose-500/20 text-xs font-bold text-rose-400 uppercase tracking-wider">
+                  <span className="inline-flex items-center px-3.5 py-1.5 rounded-full bg-rose-500/10 border border-rose-500/20 text-xs font-semibold text-rose-400 uppercase tracking-wider">
                     {latestPost.category?.name || "Technology"}
                   </span>
                 </div>
 
-                <h3 className="text-xl md:text-3xl font-bold text-white tracking-tight leading-snug group-hover:text-rose-400 transition-colors line-clamp-3 mb-8">
+                <h3 className="text-xl md:text-3xl font-semibold text-white tracking-tight leading-snug group-hover:text-rose-400 transition-colors line-clamp-3 mb-8">
                   <a href={`/insights/${latestPost.category?.slug || "general"}/${latestPost.id}`}>
                     {latestPost.title}
                   </a>
@@ -115,7 +115,7 @@ export function Insights() {
           {/* Right: "Latest post" list */}
           <div className="flex flex-col gap-6 text-left">
             <Reveal>
-              <h3 className="text-lg font-bold text-white tracking-tight mb-2">
+              <h3 className="text-lg font-semibold text-white tracking-tight mb-2">
                 Latest post
               </h3>
             </Reveal>
@@ -144,7 +144,7 @@ export function Insights() {
 
                       {/* Right: Title and Date */}
                       <div className="flex-1 min-w-0 space-y-2">
-                        <h4 className="text-sm md:text-base font-bold text-zinc-200 group-hover/item:text-rose-400 transition-colors leading-snug line-clamp-2">
+                        <h4 className="text-sm md:text-base font-semibold text-zinc-200 group-hover/item:text-rose-400 transition-colors leading-snug line-clamp-2">
                           {insight.title}
                         </h4>
                         <div className="flex items-center gap-2 text-xs font-medium text-zinc-400">
