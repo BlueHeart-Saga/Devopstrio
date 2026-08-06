@@ -39,14 +39,16 @@ export default function Home() {
       <AIStudioShowcase />
 
 
-      {/* 3. Trusted Partners */}
-      <TrustBanner />
+     
 
       {/* 5. Core Services */}
       <CoreServices />
 
       {/* 6. Industries */}
       <IndustryExpertise />
+
+       {/* 3. Trusted Partners */}
+      <TrustBanner />
 
       {/* 7. Testimonials */}
       <ExecutiveTestimonials />

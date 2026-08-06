@@ -257,15 +257,15 @@ export function HeroSection() {
   }, [slides.length]);
 
   return (
-    <section ref={heroRef} className="relative w-full h-[95vh] min-h-[600px] lg:min-h-[750px] xl:min-h-[850px] max-h-[950px] flex items-center justify-center bg-[#030303] text-white pt-24 pb-12 lg:pb-0 overflow-hidden">
+    <section ref={heroRef} className="relative w-full h-[95vh] min-h-[600px] lg:min-h-[750px] xl:min-h-[850px] max-h-[950px] flex items-center justify-center bg-[#030303] text-white pt-16 pb-12 lg:pb-0 overflow-hidden">
       <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center w-full">
 
-          {/* Left Column: Text content */}
-          <div className="lg:col-span-8 lg:pr-12 pl-2 sm:pl-6 md:pl-10 lg:pl-14 xl:pl-14 flex flex-col items-start text-left justify-center relative z-20 py-8 lg:py-16">
+          {/* Left Column: Text content - constrained to max 50% width on large screens */}
+          <div className="lg:col-span-6 lg:pr-6 pl-2 sm:pl-6 md:pl-10 lg:pl-14 xl:pl-14 flex flex-col items-start text-left justify-center relative z-20 py-4 lg:py-8">
 
             {/* Fixed-height title area so all slides stay at same vertical level */}
-            <div className="relative w-full min-h-[280px] sm:min-h-[320px] md:min-h-[360px] lg:min-h-[380px] xl:min-h-[420px] flex items-center">
+            <div className="relative w-full min-h-[220px] sm:min-h-[250px] md:min-h-[290px] lg:min-h-[310px] xl:min-h-[350px] flex items-center">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={currentSlide}
@@ -344,8 +344,8 @@ export function HeroSection() {
             </div>
           </div>
 
-          {/* Right Column: Person Image & Glow Background */}
-          <div className="lg:absolute lg:bottom-0 lg:right-0 xl:right-0 relative flex items-end justify-center z-10 w-full max-w-[380px] sm:max-w-[460px] lg:max-w-[580px] xl:max-w-[680px] mt-6 lg:mt-0 pb-0 mb-0">
+          {/* Right Column: Person Image & Glow Background centered vertically */}
+          <div className="lg:absolute lg:top-1/2 lg:-translate-y-1/2 lg:right-0 xl:right-0 relative flex items-center justify-center z-10 w-full max-w-[380px] sm:max-w-[460px] lg:max-w-[580px] xl:max-w-[680px] mt-6 lg:mt-0 pb-0 mb-0">
 
             {/* Preload images to eliminate network delay on slide change */}
             <div className="hidden" aria-hidden="true">

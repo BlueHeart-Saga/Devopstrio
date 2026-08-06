@@ -120,8 +120,8 @@ export function Achievements() {
             <span className="text-[10px] font-bold tracking-[0.25em] uppercase text-rose-500 mb-3 block">
               Validation
             </span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white">
-              Our <span className="text-rose-500">Certifications</span>
+            <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight text-white">
+              Our Certifications
             </h2>
           </Reveal>
 
@@ -162,8 +162,8 @@ export function Achievements() {
             <span className="text-[10px] font-bold tracking-[0.25em] uppercase text-rose-500 mb-3 block">
               Security & Trust
             </span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white">
-              Compliance <span className="text-rose-500">Frameworks</span>
+            <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight text-white">
+              Compliance Frameworks
             </h2>
           </Reveal>
 

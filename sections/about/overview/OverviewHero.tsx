@@ -26,9 +26,9 @@ export function OverviewHero() {
             {/* <span className="text-[10px] sm:text-xs font-bold tracking-[0.2em] uppercase text-[#E11D48] mb-4 block">
               ENGINEERING THE FUTURE
             </span> */}
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1] text-white mb-6">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold tracking-tight leading-[1.1] text-white mb-6">
               Building Solutions.<br />
-              Delivering Impact<span className="text-[#E11D48]">.</span>
+              Delivering <span className="text-rose-500">Impact</span>.
             </h1>
           </Reveal>
           

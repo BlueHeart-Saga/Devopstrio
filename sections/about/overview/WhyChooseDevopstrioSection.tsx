@@ -56,12 +56,12 @@ export function WhyChooseDevopstrioSection() {
 
       <div className="max-w-6xl mx-auto px-6 relative z-10 text-left">
         {/* Header */}
-        <div className="max-w-xl mb-16">
+        <div className="w-full mb-16">
           <Reveal>
             <span className="text-xs md:text-sm font-extrabold tracking-[0.25em] uppercase text-rose-500 mb-3 block font-mono">
               OUR ADVANTAGE
             </span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white">
+            <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight text-white">
               Why Partner with Devopstrio?
             </h2>
             <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-medium mt-3">

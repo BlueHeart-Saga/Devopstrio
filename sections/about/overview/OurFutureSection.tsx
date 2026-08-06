@@ -145,7 +145,7 @@ export function OurFutureSection() {
               <span className="text-xs md:text-sm font-extrabold tracking-[0.25em] uppercase text-rose-500 mb-3 block font-mono">
                 OUR FUTURE
               </span>
-              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">
+              <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight text-white mb-6">
                 Building What's Next
               </h2>
               {/* <p className="text-zinc-400 text-xs md:text-sm leading-relaxed font-medium mb-6">

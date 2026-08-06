@@ -230,7 +230,7 @@ export function OurStory() {
                 </span>
 
                 {/* Event Title */}
-                <h4 className="text-2xl md:text-3xl xl:text-4xl font-bold text-white mb-4 tracking-tight leading-tight">
+                <h4 className="text-2xl md:text-3xl xl:text-4xl font-semibold text-white mb-4 tracking-tight leading-tight">
                   {activeEvent.title}
                 </h4>
 

@@ -24,9 +24,8 @@ export function CompanyIntro() {
             </span>
           </Reveal>
           <Reveal delay={0.1}>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-4">
-              We build the intelligent <br />
-              <span className="text-rose-500">digital foundations</span> that scale global innovation.
+            <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight text-white mb-4">
+              We build the intelligent digital foundations that scale global innovation.
             </h2>
           </Reveal>
           {/* <Reveal delay={0.2}>

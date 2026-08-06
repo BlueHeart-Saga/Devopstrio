@@ -90,7 +90,7 @@ export function IndustryExpertise() {
                 <button
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
-                  className={`text-sm font-semibold transition-all duration-300 relative pb-3 cursor-pointer shrink-0 ${
+                  className={`text-sm md:text-[15px] font-semibold transition-all duration-300 relative pb-3 cursor-pointer shrink-0 ${
                     isActive ? "text-rose-500 font-bold" : "text-zinc-400 hover:text-white"
                   }`}
                 >

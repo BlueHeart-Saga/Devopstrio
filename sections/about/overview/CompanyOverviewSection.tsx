@@ -17,9 +17,8 @@ export function CompanyOverviewSection() {
               <span className="text-xs md:text-sm font-extrabold tracking-[0.25em] uppercase text-rose-500 mb-3 block font-mono">
                 ABOUT DEVOPSTRIO
               </span>
-              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">
-                Engineering Digital Transformation <br />
-                <span className="text-rose-500">Through Innovation</span>
+              <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight text-white mb-6">
+                Engineering Digital Transformation Through Innovation
               </h2>
             </Reveal>
 

@@ -144,8 +144,8 @@ export function CapabilitiesSection() {
             <span className="text-xs md:text-sm font-extrabold tracking-[0.25em] uppercase text-rose-500 mb-2 block font-mono">
               WHAT WE DO
             </span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white">
-              Solutions that Drive <span className="text-rose-500">Real Impact</span>
+            <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight text-white">
+              Solutions that Drive Real Impact
             </h2>
           </Reveal>
 

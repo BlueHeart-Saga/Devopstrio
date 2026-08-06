@@ -17,7 +17,7 @@ export function MissionVisionValues() {
         <Reveal>
           <div className="relative rounded-3xl p-8 md:p-10 bg-zinc-950/60 border border-zinc-900 flex flex-col lg:flex-row items-center justify-between gap-8 shadow-xl">
             <div className="max-w-2xl text-left">
-              <span className="text-xs md:text-sm font-extrabold tracking-[0.25em] uppercase text-rose-500 block mb-2 font-mono">ABOUT DEVOPSTRIO</span>
+              {/* <span className="text-xs md:text-sm font-extrabold tracking-[0.25em] uppercase text-rose-500 block mb-2 font-mono">ABOUT DEVOPSTRIO</span> */}
               <p className="text-lg md:text-xl font-bold tracking-tight text-zinc-100 leading-relaxed">
                 We specialize in developing software solutions through the synergy of skilled professionals and efficient processes.
               </p>

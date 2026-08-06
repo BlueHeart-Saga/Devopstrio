@@ -155,8 +155,8 @@ export function Leadership() {
             <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
               Leadership
             </span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-4">
-              The minds behind every <span className="text-rose-500">breakthrough</span>
+            <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight text-white mb-4">
+              The minds behind every breakthrough
             </h2>
             {/* <p className="text-zinc-400 text-base leading-relaxed">
               Decades of combined experience across <Link href="/services/cloud-services" className="text-rose-500 hover:underline">cloud</Link>, <Link href="/services/ai-data-innovation" className="text-rose-500 hover:underline">AI</Link>, <Link href="/services/devops-automation" className="text-rose-500 hover:underline">DevOps</Link>, and <Link href="/services/software-development" className="text-rose-500 hover:underline">enterprise engineering</Link> — drawn from the world's leading technology organisations.
