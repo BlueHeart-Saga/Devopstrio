@@ -102,7 +102,7 @@ export function ServicesOverviewPillars() {
                   >
                     <div className="mb-2 flex items-baseline justify-between">
                       <Link href={pillar.mainLink} className="group/title block">
-                        <h3 className="text-4xl md:text-5xl xl:text-6xl font-bold tracking-tight text-red-500 group-hover/title:text-rose-400 font-sans transition-colors duration-300">
+                        <h3 className="text-4xl md:text-5xl xl:text-6xl font-bold tracking-tight text-rose-500 group-hover/title:text-rose-400 font-sans transition-colors duration-300">
                           {pillar.title}
                         </h3>
                       </Link>
@@ -142,7 +142,7 @@ export function ServicesOverviewPillars() {
                           <span className="group-hover/item:translate-x-1.5 group-hover/item:text-rose-400 transition-all duration-300">
                             {service.name}
                           </span>
-                          <ChevronRight className="w-4.5 h-4.5 text-zinc-400 group-hover/item:text-red-500 group-hover/item:translate-x-1 transition-all duration-300" />
+                          <ChevronRight className="w-4.5 h-4.5 text-zinc-400 group-hover/item:text-rose-500 group-hover/item:translate-x-1 transition-all duration-300" />
                         </Link>
                       ))}
                     </div>
@@ -153,10 +153,10 @@ export function ServicesOverviewPillars() {
                         href={pillar.ctaHref}
                         className="inline-flex items-center justify-between w-full pt-3 border-t border-zinc-800/80 group/all"
                       >
-                        <span className="text-sm md:text-base font-bold text-red-500 group-hover/all:text-rose-400 transition-colors">
+                        <span className="text-sm md:text-base font-bold text-rose-500 group-hover/all:text-rose-400 transition-colors">
                           Explore all services
                         </span>
-                        <div className="w-8 h-8 rounded-full border border-red-500/40 bg-red-500/10 flex items-center justify-center text-red-500 group-hover/all:bg-red-600 group-hover/all:text-white group-hover/all:border-red-600 group-hover/all:scale-110 transition-all duration-300 shadow-[0_0_20px_rgba(225,29,72,0.35)]">
+                        <div className="w-8 h-8 rounded-full border border-rose-500/40 bg-rose-500/10 flex items-center justify-center text-rose-500 group-hover/all:bg-rose-600 group-hover/all:text-white group-hover/all:border-rose-600 group-hover/all:scale-110 transition-all duration-300 shadow-[0_0_20px_rgba(225,29,72,0.35)]">
                           <ArrowRight className="w-4 h-4" />
                         </div>
                       </Link>

@@ -20,18 +20,19 @@ export function HeroSection() {
   const heroY = useTransform(scrollYProgress, [0, 1], [0, 80]);
 
   const slides: Slide[] = [
-
     {
       eyebrow: "Cloud & Infrastructure",
       title: (
         <>
-          Modern Cloud Demands
+          Enterprise Cloud
+          <br />
+          Demands
           <br />
           <span className="text-[#E11D48] whitespace-nowrap">Scalability.</span>
           <br />
-          We Build It
+          We Deliver
           <br />
-          <span className="text-[#E11D48] whitespace-nowrap">Seamlessly.</span>
+          <span className="text-[#E11D48] whitespace-nowrap">Confidence.</span>
         </>
       ),
       primaryBtn: { text: "Explore Services", href: "/services" },
@@ -42,13 +43,15 @@ export function HeroSection() {
       eyebrow: "Industry-Focused Expertise",
       title: (
         <>
-          Every Industry Demands
+          Industry Solutions
           <br />
-          <span className="text-[#E11D48] whitespace-nowrap">Change.</span>
+          Demand
           <br />
-          We Deliver the
+          <span className="text-[#E11D48] whitespace-nowrap">Expertise.</span>
           <br />
-          <span className="text-[#E11D48] whitespace-nowrap">Advantage.</span>
+          We Deliver
+          <br />
+          <span className="text-[#E11D48] whitespace-nowrap">Results.</span>
         </>
       ),
       primaryBtn: { text: "Explore Services", href: "/services" },
@@ -59,13 +62,15 @@ export function HeroSection() {
       eyebrow: "Elite Global Technology Partner",
       title: (
         <>
-          The World Runs on
+          Global Technology
           <br />
-          <span className="text-[#E11D48] whitespace-nowrap">Code.</span>
+          Drives
           <br />
-          We Make It
+          <span className="text-[#E11D48] whitespace-nowrap">Innovation.</span>
           <br />
-          <span className="text-[#E11D48] whitespace-nowrap">Unstoppable.</span>
+          We Enable
+          <br />
+          <span className="text-[#E11D48] whitespace-nowrap">Success.</span>
         </>
       ),
       primaryBtn: { text: "Explore Services", href: "/services" },
@@ -76,31 +81,34 @@ export function HeroSection() {
       eyebrow: "Modern DevOps & Automation",
       title: (
         <>
-          Modern DevOps Demands
+          DevOps Excellence
+          <br />
+          Requires
           <br />
           <span className="text-[#E11D48] whitespace-nowrap">Automation.</span>
           <br />
-          We Power It
+          We Deliver
           <br />
-          <span className="text-[#E11D48] whitespace-nowrap">Everywhere.</span>
+          <span className="text-[#E11D48] whitespace-nowrap">Speed.</span>
         </>
       ),
       primaryBtn: { text: "Explore Services", href: "/services" },
       secondaryBtn: { text: "Contact Us", href: "/contact#contact-form" },
       image: "/assets/Home-page/homehero/Suryaprakash s.svg"
     },
-
     {
       eyebrow: "Software & Quality Engineering",
       title: (
         <>
-          Software Excellence Demands
+          Software Excellence
+          <br />
+          Requires
           <br />
           <span className="text-[#E11D48] whitespace-nowrap">Precision.</span>
           <br />
-          We Engineer It
+          We Deliver
           <br />
-          <span className="text-[#E11D48] whitespace-nowrap">Flawlessly.</span>
+          <span className="text-[#E11D48] whitespace-nowrap">Quality.</span>
         </>
       ),
       primaryBtn: { text: "Explore Services", href: "/services" },
@@ -111,31 +119,34 @@ export function HeroSection() {
       eyebrow: "Data & Cloud Infrastructure",
       title: (
         <>
-          Enterprise Growth Requires
+          Enterprise Growth
+          <br />
+          Requires
+          <br />
+          <span className="text-[#E11D48] whitespace-nowrap">Intelligence.</span>
+          <br />
+          We Deliver
           <br />
           <span className="text-[#E11D48] whitespace-nowrap">Innovation.</span>
-          <br />
-          We Build The
-          <br />
-          <span className="text-[#E11D48] whitespace-nowrap">Future.</span>
         </>
       ),
       primaryBtn: { text: "Explore Services", href: "/services" },
       secondaryBtn: { text: "Contact Us", href: "/contact#contact-form" },
       image: "/assets/Home-page/homehero/Umamaheswari R.svg"
     },
-
     {
       eyebrow: "Digital Products & Platforms",
       title: (
         <>
-          Great Ideas Deserve
+          Digital Products
           <br />
-          <span className="text-[#E11D48] whitespace-nowrap">Products.</span>
+          Create
           <br />
-          We Turn Them Into
+          <span className="text-[#E11D48] whitespace-nowrap">Impact.</span>
           <br />
-          <span className="text-[#E11D48] whitespace-nowrap">Reality.</span>
+          We Deliver
+          <br />
+          <span className="text-[#E11D48] whitespace-nowrap">Value.</span>
         </>
       ),
       primaryBtn: { text: "Explore Services", href: "/services" },
@@ -146,32 +157,34 @@ export function HeroSection() {
       eyebrow: "End-to-End Technology Services",
       title: (
         <>
-          Great Businesses Run on
+          Business Technology
           <br />
-          <span className="text-[#E11D48] whitespace-nowrap">Technology.</span>
+          Powers
           <br />
-          We Make It
+          <span className="text-[#E11D48] whitespace-nowrap">Growth.</span>
           <br />
-          <span className="text-[#E11D48] whitespace-nowrap">Perform.</span>
+          We Deliver
+          <br />
+          <span className="text-[#E11D48] whitespace-nowrap">Excellence.</span>
         </>
       ),
       primaryBtn: { text: "Explore Services", href: "/services" },
       secondaryBtn: { text: "Contact Us", href: "/contact#contact-form" },
       image: "/assets/Home-page/homehero/Kishore.P.svg"
     },
-
-
     {
       eyebrow: "Ecosystem & Strategic Alliances",
       title: (
         <>
-          Innovation Grows Through
+          Strategic Partnerships
           <br />
-          <span className="text-[#E11D48] whitespace-nowrap">Partnerships.</span>
+          Create
           <br />
-          We Connect the
+          <span className="text-[#E11D48] whitespace-nowrap">Innovation.</span>
           <br />
-          <span className="text-[#E11D48] whitespace-nowrap">Future.</span>
+          We Build
+          <br />
+          <span className="text-[#E11D48] whitespace-nowrap">Together.</span>
         </>
       ),
       primaryBtn: { text: "Explore Services", href: "/services" },
@@ -182,48 +195,34 @@ export function HeroSection() {
       eyebrow: "AI & Data Innovation",
       title: (
         <>
-          Data Creates the Next
+          Artificial Intelligence
           <br />
-          <span className="text-[#E11D48] whitespace-nowrap">Breakthrough.</span>
+          Creates
           <br />
-          We Make It
+          <span className="text-[#E11D48] whitespace-nowrap">Insights.</span>
           <br />
-          <span className="text-[#E11D48] whitespace-nowrap">Intelligent.</span>
+          We Deliver
+          <br />
+          <span className="text-[#E11D48] whitespace-nowrap">Transformation.</span>
         </>
       ),
       primaryBtn: { text: "Explore Services", href: "/services" },
       secondaryBtn: { text: "Contact Us", href: "/contact#contact-form" },
       image: "/assets/Home-page/homehero/Sermaraja.V.svg"
     },
-    // {
-    //   eyebrow: "Cybersecurity & Compliance",
-    //   title: (
-    //     <>
-    //       Trust Is Built Through
-    //       <br />
-    //       <span className="text-[#E11D48] whitespace-nowrap">Security.</span>
-    //       <br />
-    //       We Protect What
-    //       <br />
-    //       <span className="text-[#E11D48] whitespace-nowrap">Matters.</span>
-    //     </>
-    //   ),
-    //   primaryBtn: { text: "Explore Services", href: "/services" },
-    //   secondaryBtn: { text: "Contact Us", href: "/contact#contact-form" },
-    //   image: "/assets/Home-page/homehero/Sudalairajan.A.svg"
-    // },
-
     {
       eyebrow: "Platform & Cloud Operations",
       title: (
         <>
-          High-Scale Systems Need
+          Platform Operations
+          <br />
+          Require
           <br />
           <span className="text-[#E11D48] whitespace-nowrap">Reliability.</span>
           <br />
-          We Scale Them
+          We Deliver
           <br />
-          <span className="text-[#E11D48] whitespace-nowrap">Seamlessly.</span>
+          <span className="text-[#E11D48] whitespace-nowrap">Performance.</span>
         </>
       ),
       primaryBtn: { text: "Explore Services", href: "/services" },
@@ -234,13 +233,15 @@ export function HeroSection() {
       eyebrow: "Enterprise Application Delivery",
       title: (
         <>
-          Scalable Applications Drive
+          Application Delivery
+          <br />
+          Accelerates
+          <br />
+          <span className="text-[#E11D48] whitespace-nowrap">Business.</span>
+          <br />
+          We Deliver
           <br />
           <span className="text-[#E11D48] whitespace-nowrap">Growth.</span>
-          <br />
-          We Deliver Them
-          <br />
-          <span className="text-[#E11D48] whitespace-nowrap">Fast.</span>
         </>
       ),
       primaryBtn: { text: "Explore Services", href: "/services" },
@@ -265,7 +266,7 @@ export function HeroSection() {
           <div className="lg:col-span-6 lg:pr-6 pl-2 sm:pl-6 md:pl-10 lg:pl-14 xl:pl-14 flex flex-col items-start text-left justify-center relative z-20 py-4 lg:py-8">
 
             {/* Fixed-height title area so all slides stay at same vertical level */}
-            <div className="relative w-full min-h-[220px] sm:min-h-[250px] md:min-h-[290px] lg:min-h-[310px] xl:min-h-[350px] flex items-center">
+            <div className="relative w-full min-h-[300px] sm:min-h-[340px] md:min-h-[380px] lg:min-h-[400px] xl:min-h-[440px] flex items-center">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={currentSlide}

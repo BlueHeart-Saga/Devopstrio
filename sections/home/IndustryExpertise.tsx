@@ -69,7 +69,7 @@ export function IndustryExpertise() {
   const activeData = industryTabs.find((tab) => tab.id === activeTab) || industryTabs[0];
 
   return (
-    <section className="w-full pt-16 pb-16 md:pb-24 bg-[#030303] text-white relative overflow-hidden border-b border-zinc-900">
+    <section className="w-full py-8 bg-[#030303] text-white relative overflow-hidden">
       <div className="max-w-7xl mx-auto w-full px-6 sm:px-8 relative z-10">
         
         {/* Section Title */}

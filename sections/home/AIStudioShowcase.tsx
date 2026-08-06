@@ -325,7 +325,7 @@ export function AIStudioShowcase() {
               href={aiWebsiteUrl} 
               target="_blank" 
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-8 py-3.5 border border-rose-500/30 bg-zinc-950/80 hover:bg-rose-600 hover:border-rose-600 text-white text-xs font-semibold tracking-wider uppercase transition-all duration-300 shadow-[0_4px_20px_rgba(0,0,0,0.4)]"
+              className="inline-flex items-center gap-2 px-8 py-3.5 border border-rose-500/30 bg-zinc-950/80 hover:bg-rose-600 hover:border-rose-600 text-white text-xs font-semibold tracking-wider uppercase transition-all duration-300 shadow-[0_4px_20px_rgba(0,0,0,0.4)] rounded-[24px]"
             >
               <span>Launch Enterprise Studio</span>
               <ArrowUpRight className="w-4 h-4" />

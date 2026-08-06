@@ -140,7 +140,7 @@ export function ExecutiveTestimonials() {
   const currentT = filteredTestimonials[currentIndex] || rawTestimonials[0];
 
   return (
-    <section id="testimonials" className="w-full pt-20 md:pt-32 pb-24 md:pb-36 bg-[#030303] text-white relative overflow-hidden border-b border-zinc-900">
+    <section id="testimonials" className="w-full py-8 bg-[#030303] text-white relative overflow-hidden">
       
       {/* Background Ambient Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] max-w-[1000px] h-[400px] bg-red-600/10 rounded-full blur-[140px] pointer-events-none" />

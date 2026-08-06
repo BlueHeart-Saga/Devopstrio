@@ -29,6 +29,9 @@ export default function Home() {
       {/* 1. Hero */}
       <HeroSection />
 
+       {/* 3. Trusted Partners */}
+      {/* <TrustBanner /> */}
+
       {/* 2. Services Overview Pillars */}
       <ServicesOverviewPillars />
 
@@ -36,7 +39,7 @@ export default function Home() {
       
 
       {/* 4. AI Studio Showcase */}
-      <AIStudioShowcase />
+      {/* <AIStudioShowcase /> */}
 
 
      
@@ -47,8 +50,7 @@ export default function Home() {
       {/* 6. Industries */}
       <IndustryExpertise />
 
-       {/* 3. Trusted Partners */}
-      <TrustBanner />
+      
 
       {/* 7. Testimonials */}
       <ExecutiveTestimonials />
@@ -57,13 +59,14 @@ export default function Home() {
       {/* <CaseStudies /> */}
 
       {/* 9. Insights */}
-      <Insights />
+      {/* <Insights /> */}
+      <PartnersSection />
 
       {/* 10. Announcement Banner */}
       <ImperativesBanner />
 
       {/* Commented-out sections */}
-      {/* <PartnersSection /> */}
+      
       {/* <BusinessOverview /> */}
       {/* <WeImagine /> */}
       {/* <OurProducts /> */}

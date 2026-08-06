@@ -12,7 +12,7 @@ const services = [
     tag: "Innovate",
     title: "Transform operations with AI-driven intelligence and data.",
     desc: "Leverage Generative AI, machine learning, and intelligent automation to modernise business processes and unlock measurable value at scale.",
-    bgImage: "/assets/Home-page/core-services/1.png",
+    bgImage: "/assets/Home-page/Servicescard/Innovate.png",
     href: "/services/ai-data-innovation",
     cta: "AI & Data Innovation"
   },
@@ -21,7 +21,7 @@ const services = [
     tag: "Migrate",
     title: "Move, optimise, and scale confidently on any cloud platform.",
     desc: "Design and manage resilient cloud environments across AWS, Azure, and Google Cloud — built for performance, compliance, and cost efficiency.",
-    bgImage: "/assets/Home-page/core-services/2.png",
+    bgImage: "/assets/Home-page/Servicescard/Migrate.png",
     href: "/services/cloud-services",
     cta: "Cloud Services"
   },
@@ -30,7 +30,7 @@ const services = [
     tag: "Accelerate",
     title: "Ship faster with fully automated DevOps and IaC pipelines.",
     desc: "CI/CD automation, Kubernetes orchestration, Terraform, and platform engineering practices that eliminate friction and accelerate delivery.",
-    bgImage: "/assets/Home-page/core-services/3.png",
+    bgImage: "/assets/Home-page/Servicescard/Accelerate.png",
     href: "/services/devops-automation",
     cta: "DevOps & Automation"
   },
@@ -39,7 +39,7 @@ const services = [
     tag: "Protect",
     title: "Embed security and compliance into every layer of your stack.",
     desc: "Proactive threat management, SOC services, vulnerability assessments, and zero-trust security frameworks for regulated industries.",
-    bgImage: "/assets/Home-page/core-services/4.png",
+    bgImage: "/assets/Home-page/Servicescard/Protect.png",
     href: "/services/cybersecurity",
     cta: "Cybersecurity"
   },
@@ -48,7 +48,7 @@ const services = [
     tag: "Build",
     title: "Create enterprise-grade software, apps, and SaaS platforms.",
     desc: "From complex web applications and mobile products to API ecosystems and SaaS platforms — engineered for reliability and business impact.",
-    bgImage: "/assets/Home-page/core-services/5.png",
+    bgImage: "/assets/Home-page/Servicescard/Built.png",
     href: "/services/software-development",
     cta: "Software Development"
   },
@@ -57,7 +57,7 @@ const services = [
     tag: "Transform",
     title: "Modernise business models and legacy systems for the digital age.",
     desc: "IT roadmaps, cloud readiness audits, process automation, and intelligent workflows to future-proof your enterprise architecture.",
-    bgImage: "/assets/Home-page/core-services/6.png",
+    bgImage: "/assets/Home-page/Servicescard/Transform.png",
     href: "/services/digital-transformation",
     cta: "Digital Transformation"
   },
@@ -66,7 +66,7 @@ const services = [
     tag: "Analyze",
     title: "Unlock actionable insights with robust enterprise data platforms.",
     desc: "Design columnar databases, unified lakehouses, real-time streaming pipelines, and ETL/ELT workflows using modern data stacks.",
-    bgImage: "/assets/Home-page/core-services/7.png",
+    bgImage: "/assets/Home-page/Servicescard/Analyze.png",
     href: "/services/data-engineering",
     cta: "Data Engineering"
   },
@@ -75,7 +75,7 @@ const services = [
     tag: "Manage",
     title: "Ensure uninterrupted operations with 24/7 proactive monitoring.",
     desc: "Multi-account cloud administration, SLA bug resolutions, infrastructure management, and continuous incident containment.",
-    bgImage: "/assets/Home-page/core-services/8.png",
+    bgImage: "/assets/Home-page/Servicescard/Manage.png",
     href: "/services/managed-services",
     cta: "Managed Services"
   },
@@ -84,7 +84,7 @@ const services = [
     tag: "Ensure",
     title: "Deliver flawless digital experiences with quality engineering.",
     desc: "Automated end-to-end client scripts, performance load testing, API validation, and shift-left methodologies for zero defect escapes.",
-    bgImage: "/assets/Home-page/core-services/9.png",
+    bgImage: "/assets/Home-page/Servicescard/Ensure.png",
     href: "/services/qa-testing",
     cta: "QA & Testing"
   },
@@ -93,7 +93,7 @@ const services = [
     tag: "Consult",
     title: "Align technology investments with strategic business objectives.",
     desc: "Cost-benefit analyses, distributed architecture planning, compliance alignment, and long-term digital transformation roadmaps.",
-    bgImage: "/assets/Home-page/core-services/10.png",
+    bgImage: "/assets/Home-page/Servicescard/Consult.png",
     href: "/services/it-consulting",
     cta: "IT Consulting"
   }
@@ -147,7 +147,7 @@ export function CoreServices() {
 
   return (
     <section
-      className="w-full pt-14 md:pt-20 pb-4 md:pb-12 bg-[#030303] text-white relative overflow-hidden"
+      className="w-full py-8 bg-[#030303] text-white relative overflow-hidden"
       id="capabilities"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
@@ -160,7 +160,7 @@ export function CoreServices() {
 
         {/* Section Header */}
         <Reveal>
-          <div className="text-center max-w-3xl mx-auto mb-14">
+          <div className="text-center max-w-3xl mx-auto mb-8">
             {/* <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
               CAPABILITIES
             </span> */}
