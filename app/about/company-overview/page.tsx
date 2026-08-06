@@ -6,27 +6,18 @@ import { SectionNavbar } from "@/components/ui/SectionNavbar";
 
 // Import Section Components
 import { OverviewHero } from "@/sections/about/overview/OverviewHero";
-// import { OurStorySection } from "@/sections/about/overview/OurStorySection";
-
+import { CompanyOverviewPillars } from "@/sections/about/overview/CompanyOverviewPillars";
 import { CompanyOverviewSection } from "@/sections/about/overview/CompanyOverviewSection";
+import { OurPeopleSection } from "@/sections/about/overview/OurPeopleSection";
 import { MissionVisionValues } from "@/sections/about/overview/MissionVisionValues";
-import { OurStoryTimeline } from "@/sections/about/overview/OurStoryTimeline";
-import { CapabilitiesSection } from "@/sections/about/overview/CapabilitiesSection";
-import { WhyChooseDevopstrioSection } from "@/sections/about/overview/WhyChooseDevopstrioSection";
 import { OurFutureSection } from "@/sections/about/overview/OurFutureSection";
-import { HiringSection } from "@/sections/home/HiringSection";
 import { EnterpriseCTA } from "@/sections/about/overview/EnterpriseCTA";
-import { OurStory } from "@/sections/about/OurStory";
 
 const overviewSections = [
   { id: "hero", label: "Overview" },
-  { id: "story", label: "Our Story" },
-  { id: "vision", label: "Mission & Values" },
-  { id: "journey", label: "Journey" },
-  { id: "capabilities", label: "What We Do" },
-  { id: "advantage", label: "Why Devopstrio" },
-  { id: "future", label: "Future R&D" },
-  { id: "careers", label: "Careers" },
+  { id: "people", label: "Our People" },
+  { id: "values", label: "Our Values" },
+  { id: "future", label: "Our Future" },
 ];
 
 export default function CompanyOverviewPage() {
@@ -41,7 +32,7 @@ export default function CompanyOverviewPage() {
       {/* Glow Ambient background */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[radial-gradient(circle_at_center,rgba(225,29,72,0.03),transparent_70%)] pointer-events-none" />
 
-      {/* 1. Hero */}
+      {/* 1. Overview Section */}
       <div id="hero">
         <OverviewHero />
       </div>
@@ -49,71 +40,26 @@ export default function CompanyOverviewPage() {
       {/* Section Navbar */}
       <SectionNavbar sections={overviewSections} />
 
-      
-      {/* Divider */}
-      <SvgWaveLine variant="smooth" />
+      {/* Overview Content */}
+      <CompanyOverviewPillars />
+      <CompanyOverviewSection />
 
-      {/* 2. Company Story */}
-      <div id="story">
-        <CompanyOverviewSection />
-       
-      {/* <OurStorySection /> */}
-
+      {/* 2. Our People Section */}
+      <div id="people">
+        <OurPeopleSection />
       </div>
 
-      {/* Divider */}
-      <SvgWaveLine variant="liquid" />
-
-      {/* 3. Mission • Vision • Core Values */}
-      <div id="vision">
+      {/* 3. Our Values Section */}
+      <div id="values">
         <MissionVisionValues />
       </div>
 
-      {/* Divider */}
-      <SvgWaveLine variant="smooth" />
-
-      {/* 4. Our Journey */}
-      <div id="journey">
-        {/* <OurStoryTimeline /> */}
-          <OurStory />
-      </div>
-
-      {/* Divider */}
-      <SvgWaveLine variant="liquid" />
-
-      {/* 5. Our Services */}
-      <div id="capabilities">
-        <CapabilitiesSection />
-      </div>
-
-      {/* Divider */}
-      <SvgWaveLine variant="smooth" />
-
-      {/* 6. Why Choose Devopstrio */}
-      <div id="advantage">
-        <WhyChooseDevopstrioSection />
-      </div>
-
-      {/* Divider */}
-      <SvgWaveLine variant="liquid" />
-
-      {/* 7. Our Future */}
+      {/* 4. Our Future Section */}
       <div id="future">
         <OurFutureSection />
       </div>
 
-      {/* Divider */}
-      <SvgWaveLine variant="smooth" />
-
-      {/* 8. Careers & Open Roles */}
-      <div id="careers">
-        <HiringSection />
-      </div>
-
-      {/* Divider */}
-      {/* <SvgWaveLine variant="liquid" /> */}
-
-      {/* 9. Call to Action */}
+      {/* 5. Enterprise Call to Action */}
       <EnterpriseCTA />
     </main>
   );

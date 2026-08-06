@@ -250,59 +250,13 @@ export function Footer() {
 
         </div>
 
-        {/* Trust & Certifications Bar */}
-        <div className="flex flex-wrap justify-center md:justify-between items-center py-6 border-t border-b border-zinc-900/60 mb-8 gap-y-6 w-full">
 
-          <div className="flex items-center gap-4 px-2">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="2" y="2" width="9" height="9" fill="#F25022" />
-              <rect x="13" y="2" width="9" height="9" fill="#7FBA00" />
-              <rect x="2" y="13" width="9" height="9" fill="#00A4EF" />
-              <rect x="13" y="13" width="9" height="9" fill="#FFB900" />
-            </svg>
-            <div className="flex flex-col">
-              <span className="text-[13px] font-semibold text-zinc-200">Microsoft</span>
-              <span className="text-[11px] text-zinc-500">Solutions Partner</span>
-            </div>
-          </div>
-
-          <div className="h-8 w-px bg-zinc-800/60 hidden md:block" />
-
-          <div className="flex items-center justify-center px-2">
-            <img src="/assets/Tech_logos/AWS.svg" alt="AWS" className="h-7 object-contain brightness-0 invert opacity-90" />
-          </div>
-
-          <div className="h-8 w-px bg-zinc-800/60 hidden md:block" />
-
-          <div className="flex items-center gap-4 px-2">
-            <img src="/assets/Tech_logos/Google_Cloud.svg" alt="Google Cloud" className="w-8 h-8 object-contain" />
-            <div className="flex flex-col">
-              <span className="text-[13px] font-semibold text-zinc-200">Google Cloud</span>
-              <span className="text-[11px] text-zinc-500">Partner</span>
-            </div>
-          </div>
-
-          <div className="h-8 w-px bg-zinc-800/60 hidden md:block" />
-
-          <div className="flex flex-col items-center md:items-start px-2">
-            <span className="text-xl font-bold text-rose-500 tracking-tight leading-none">100%</span>
-            <span className="text-[11px] text-zinc-500 mt-1">Client Satisfaction</span>
-          </div>
-
-          <div className="h-8 w-px bg-zinc-800/60 hidden md:block" />
-
-          <div className="flex flex-col items-center md:items-start px-2">
-            <span className="text-xl font-bold text-rose-500 tracking-tight leading-none">24/7</span>
-            <span className="text-[11px] text-zinc-500 mt-1">Global Support</span>
-          </div>
-
-        </div>
 
         {/* BOTTOM ROW: Socials & Legal */}
         <div className="flex flex-col md:flex-row justify-between items-center mb-8 gap-6 w-full">
 
           {/* Legal Links */}
-          <div className="flex flex-wrap justify-center md:justify-start gap-x-5 gap-y-2 text-[10px] font-bold tracking-widest uppercase text-zinc-500">
+          <div className="flex flex-wrap justify-center md:justify-start gap-x-5 gap-y-2 text-xs md:text-sm font-semibold tracking-wide text-zinc-400">
             <a href="/disclaimer" className="hover:text-white transition-colors duration-300">Disclaimer</a>
             <span className="text-zinc-800">•</span>
             <a href="/privacy-policy" className="hover:text-white transition-colors duration-300">Privacy Policy</a>

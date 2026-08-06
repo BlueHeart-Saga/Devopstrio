@@ -147,7 +147,7 @@ export function CoreServices() {
 
   return (
     <section
-      className="w-full py-8 bg-[#030303] text-white relative overflow-hidden"
+      className="w-full py-8 bg-[#030303] text-white relative"
       id="capabilities"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
@@ -160,12 +160,57 @@ export function CoreServices() {
 
         {/* Section Header */}
         <Reveal>
-          <div className="text-center max-w-3xl mx-auto mb-8">
-            {/* <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
-              CAPABILITIES
-            </span> */}
-            <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight mb-5 text-white">
-              Technology <span className="text-rose-500">delivery</span> at the core of every business breakthrough
+          <div className="text-center max-w-3xl mx-auto mb-8 flex flex-col items-center">
+            {/* Top-to-bottom straight arrow PNG (cleanly spaced above header) */}
+            <div className="mb-2 sm:mb-3 flex justify-center pointer-events-none select-none">
+              <img
+                src="/assets/components/streight-toptobuttm.png"
+                alt="Top to bottom arrow"
+                className="w-16 sm:w-20 md:w-24 lg:w-28 h-auto object-contain filter drop-shadow-[0_0_20px_rgba(244,63,94,0.5)]"
+              />
+            </div>
+
+            <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-[1.35] mb-5 text-white">
+              Technology{" "}
+              <span className="relative inline-block px-2.5 py-0.5 mx-1">
+                <span className="relative z-10 text-white font-bold">delivery</span>
+                {/* Brand Rose hand-drawn oval circle loop */}
+                <svg
+                  className="absolute -inset-x-3.5 -inset-y-2 w-[calc(100%+28px)] h-[calc(100%+16px)] text-rose-500 pointer-events-none"
+                  viewBox="0 0 220 60"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12 30 C30 8, 195 5, 208 28 C218 42, 160 54, 70 55 C18 56, 5 45, 18 26"
+                    stroke="currentColor"
+                    strokeWidth="3.2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="opacity-95 filter drop-shadow-[0_0_10px_rgba(244,63,94,0.7)]"
+                  />
+                </svg>
+              </span>{" "}
+              at the core of every business{" "}
+              <span className="relative inline-block px-1 mx-1">
+                <span className="text-white font-bold relative z-10">breakthrough</span>
+                {/* Brand Rose hand-drawn stroke underline */}
+                <svg
+                  className="absolute -bottom-2.5 left-0 w-full h-3.5 text-rose-500 pointer-events-none overflow-visible"
+                  viewBox="0 0 220 14"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M 2 7 Q 55 4, 110 6 T 217 5"
+                    stroke="currentColor"
+                    strokeWidth="3"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="opacity-95 filter drop-shadow-[0_0_8px_rgba(244,63,94,0.7)]"
+                  />
+                </svg>
+              </span>
             </h2>
             {/* <p className="text-zinc-100 text-base md:text-lg leading-relaxed">
               End-to-end services across <Link href="/services/cloud-services" className="text-rose-500 hover:underline font-medium">Cloud</Link>, <Link href="/services/ai-data-innovation" className="text-rose-500 hover:underline font-medium">AI</Link>, <Link href="/services/devops-automation" className="text-rose-500 hover:underline font-medium">DevOps</Link>, <Link href="/services/cybersecurity" className="text-rose-500 hover:underline font-medium">Security</Link>, and <Link href="/services/software-development" className="text-rose-500 hover:underline font-medium">Software Engineering</Link> — built to deliver measurable outcomes.

@@ -11,7 +11,7 @@ export function OverviewHero() {
       {/* Background Image */}
       <div className="absolute inset-0 z-0 pointer-events-none select-none">
         <img 
-          src="/assets/About-page/building/building.png" 
+          src="/assets/About-page/building/building2.png" 
           alt="Devopstrio Building"
           className="w-full h-full object-cover object-center"
         />
@@ -21,14 +21,14 @@ export function OverviewHero() {
       </div>
       
       <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10 w-full text-left">
-        <div className="max-w-3xl">
+        <div className="max-w-xl lg:w-1/2">
           <Reveal delay={0.05}>
             {/* <span className="text-[10px] sm:text-xs font-bold tracking-[0.2em] uppercase text-[#E11D48] mb-4 block">
               ENGINEERING THE FUTURE
             </span> */}
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold tracking-tight leading-[1.1] text-white mb-6">
-              Building Solutions.<br />
-              Delivering <span className="text-rose-500">Impact</span>.
+              Building Innovation.<br />
+              Together for <span className="text-rose-500">Tomorrow.</span>
             </h1>
           </Reveal>
           
@@ -82,7 +82,7 @@ export function OverviewHero() {
             </div>
           </Reveal> */}
 
-          <Reveal delay={0.25}>
+          {/* <Reveal delay={0.25}>
             <div className="text-xs text-zinc-400 mb-5 font-medium">Trusted by innovative companies worldwide</div>
             <div className="flex flex-wrap items-center gap-x-8 gap-y-4 opacity-60 hover:opacity-100 transition-opacity duration-500">
               <div className="flex items-center gap-2 font-semibold text-lg tracking-tight"><div className="grid grid-cols-2 gap-[2px]"><div className="w-2.5 h-2.5 bg-[#00A4EF]"/><div className="w-2.5 h-2.5 bg-[#7FBA00]"/><div className="w-2.5 h-2.5 bg-[#F25022]"/><div className="w-2.5 h-2.5 bg-[#FFB900]"/></div>Microsoft</div>
@@ -91,7 +91,7 @@ export function OverviewHero() {
               <div className="font-bold text-lg tracking-widest flex items-center text-red-600">ORACLE</div>
               <div className="font-bold text-lg tracking-tight flex items-center">servicenow</div>
             </div>
-          </Reveal>
+          </Reveal> */}
         </div>
       </div>
     </section>

@@ -5,7 +5,7 @@ import { Reveal } from "@/components/ui/Reveal";
 
 export function CompanyOverviewSection() {
   return (
-    <section className="py-24 bg-black text-white relative overflow-hidden">
+    <section className="pt-12 pb-0 bg-black text-white relative overflow-hidden">
       <div className="absolute bottom-1/4 right-1/4 w-[600px] h-[600px] bg-[radial-gradient(circle_at_center,rgba(225,29,72,0.03),transparent_75%)] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
@@ -17,9 +17,9 @@ export function CompanyOverviewSection() {
               <span className="text-xs md:text-sm font-extrabold tracking-[0.25em] uppercase text-rose-500 mb-3 block font-mono">
                 ABOUT DEVOPSTRIO
               </span>
-              <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight text-white mb-6">
+              {/* <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight text-white mb-6">
                 Engineering Digital Transformation Through Innovation
-              </h2>
+              </h2> */}
             </Reveal>
 
             {/* Brief & Punchy Story Intro */}
@@ -52,17 +52,17 @@ export function CompanyOverviewSection() {
             </Reveal>
           </div>
 
-          {/* Right Column: Office Graphic with Badge Card */}
+          {/* Right Column: Support Image & Badge */}
           <div className="lg:col-span-5 relative flex justify-center items-center w-full sticky top-28">
             <Reveal delay={0.1} className="w-full max-w-[480px] relative">
-              {/* Unwrapped Full Image (Commented Out) */}
-              {/* <div className="relative w-full">
+              <div className="relative w-full rounded-2xl overflow-hidden border border-zinc-800/80 shadow-[0_20px_50px_rgba(0,0,0,0.8)] group">
                 <img 
-                  src="/assets/About-page/overview/about-devopstrio.png" 
-                  alt="Devopstrio Co-Engineering Center"
-                  className="w-full h-auto object-contain select-none rounded-xl shadow-2xl"
+                  src="/assets/About-page/overview/Support_image.png" 
+                  alt="Devopstrio Support & Engineering"
+                  className="w-full h-auto object-cover select-none rounded-2xl transition-transform duration-700 group-hover:scale-105"
                 />
-              </div> */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
+              </div>
 
               {/* Floating "7+ Years" badge */}
               <div className="absolute -bottom-6 -right-2 md:-right-6 p-5 max-w-[210px] bg-zinc-950/90 backdrop-blur-md border border-zinc-800 rounded-2xl shadow-[0_15px_30px_rgba(0,0,0,0.7)] text-left z-20">

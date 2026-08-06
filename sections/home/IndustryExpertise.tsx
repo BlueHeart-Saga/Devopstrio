@@ -69,14 +69,27 @@ export function IndustryExpertise() {
   const activeData = industryTabs.find((tab) => tab.id === activeTab) || industryTabs[0];
 
   return (
-    <section className="w-full py-8 bg-[#030303] text-white relative overflow-hidden">
+    <section className="w-full py-8 bg-[#030303] text-white relative">
       <div className="max-w-7xl mx-auto w-full px-6 sm:px-8 relative z-10">
         
         {/* Section Title */}
-        <div className="text-center max-w-4xl mx-auto mb-10">
+        <div className="text-center max-w-4xl mx-auto mb-10 relative">
+          {/* Left-to-right arrow PNG pointing to header */}
+          <div className="absolute -top-6 sm:-top-8 md:-top-10 -left-6 sm:-left-10 md:-left-14 lg:-left-20 z-20 pointer-events-none select-none">
+            <img
+              src="/assets/components/lefttoright.png"
+              alt="Left to right arrow"
+              className="w-12 sm:w-16 md:w-20 h-auto object-contain filter drop-shadow-[0_0_15px_rgba(244,63,94,0.4)]"
+            />
+          </div>
+
           <Reveal>
             <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight text-white mb-4 leading-tight">
-              Experts who understand your industry <span className="text-rose-500">impact</span> from the inside
+              Experts who understand your industry{" "}
+              <span className="inline-block bg-rose-500 text-black font-extrabold px-3 py-0.5 mx-1.5 rounded-xs transform -rotate-3 shadow-[0_4px_20px_rgba(225,29,72,0.45)] align-middle">
+                impact
+              </span>{" "}
+              from the inside
             </h2>
           </Reveal>
         </div>
@@ -127,8 +140,11 @@ export function IndustryExpertise() {
               <div className="absolute inset-0 bg-black/15 pointer-events-none" />
             </div>
 
-            {/* Foreground Detail Box - Hanging out of the parent bottom edge */}
-            <div className="relative z-10 max-w-sm md:max-w-md ml-6 sm:ml-12 mt-20 -mb-20 bg-gradient-to-b from-[#b91c1c] to-[#7f1d1d] border border-rose-500/30 rounded-2xl p-8 md:p-10 shadow-[0_25px_50px_rgba(0,0,0,0.7)] flex flex-col justify-between min-h-[300px] md:min-h-[340px]">
+            {/* Foreground Detail Box - Solid Plain Red Brand Card */}
+            <div className="relative z-10 max-w-sm md:max-w-md ml-6 sm:ml-12 mt-20 -mb-20 bg-rose-600 border border-rose-500 rounded-2xl p-8 md:p-10 shadow-[0_25px_50px_rgba(0,0,0,0.7),0_0_30px_rgba(225,29,72,0.4)] flex flex-col justify-between min-h-[300px] md:min-h-[340px] group overflow-hidden transition-all duration-500 hover:shadow-[0_25px_60px_rgba(0,0,0,0.8),0_0_40px_rgba(225,29,72,0.6)]">
+              {/* Glass Slide Sheen Light Sweep on Hover */}
+              <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out bg-gradient-to-r from-transparent via-white/30 to-transparent pointer-events-none z-20" />
+
               <div>
                 <h3 className="text-xl md:text-2xl font-bold tracking-tight text-white mb-4">
                   {activeData.title}
@@ -141,10 +157,10 @@ export function IndustryExpertise() {
               <div>
                 <a 
                   href="/industries" 
-                  className="text-xs font-bold text-white hover:text-rose-200 uppercase tracking-wider flex items-center gap-1.5 mt-8 group/btn w-fit"
+                  className="text-xs font-bold text-white hover:text-rose-100 uppercase tracking-wider flex items-center gap-1.5 mt-8 group/btn w-fit relative z-30"
                 >
                   <span>Learn more</span>
-                  <ArrowUpRight size={14} className="transform group-hover/btn:translate-x-1 group-hover/btn:-translate-y-0.5 transition-transform" />
+                  <ArrowUpRight size={14} className="transform group-hover/btn:translate-x-1 group-hover/btn:-translate-y-0.5 transition-transform text-white" />
                 </a>
               </div>
             </div>

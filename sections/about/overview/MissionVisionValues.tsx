@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export function MissionVisionValues() {
   return (
-    <section className="py-24 bg-[#030303] text-white relative overflow-hidden">
+    <section className="py-8 bg-[#030303] text-white relative overflow-hidden">
       {/* Background ambient glow */}
       <div className="absolute top-1/3 right-1/4 w-[500px] h-[500px] bg-[radial-gradient(circle_at_center,rgba(225,29,72,0.02),transparent_70%)] pointer-events-none" />
       <div className="absolute bottom-1/3 left-1/4 w-[500px] h-[500px] bg-[radial-gradient(circle_at_center,rgba(225,29,72,0.02),transparent_70%)] pointer-events-none" />
@@ -45,139 +45,155 @@ export function MissionVisionValues() {
           </div>
         </Reveal>
 
-        {/* 2. Our Core Values Section */}
+        {/* 2. Mission, Vision & Values Single Row Cards */}
         <Reveal>
-          <div className="group relative rounded-3xl p-8 md:p-10 border border-zinc-900/80 hover:border-zinc-700/60 bg-zinc-950/40 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] shadow-xl cursor-pointer">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-              {/* Left Text */}
-              <div className="lg:col-span-7 text-left space-y-4">
-                {/* Initially Visible Title */}
-                <h2 className="text-3xl md:text-5xl font-bold text-white tracking-tight leading-none group-hover:text-rose-400 transition-colors">
-                  Our core values<span className="text-rose-500">.</span>
-                </h2>
+          <div className="relative w-full">
+            {/* Header */}
+            <div className="text-center max-w-2xl mx-auto mb-12">
+              <span className="inline-flex items-center gap-2 px-4 py-1.5 text-rose-400 text-xs sm:text-sm font-mono font-bold tracking-[0.25em] uppercase mb-4 ">
+                {/* <span className="w-1.5 h-1.5 rounded-full bg-rose-500 animate-pulse" /> */}
+                FOUNDATION OF DEVOPSTRIO
+              </span>
+              <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight text-white">
+                Mission, Vision &amp; <span className="text-rose-500">Values</span>
+              </h2>
+            </div>
 
-                {/* Tag + Description & Stats Smooth Reveal on Hover */}
-                <div className="max-h-0 opacity-0 group-hover:max-h-[600px] group-hover:opacity-100 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] overflow-hidden space-y-5 pt-1">
-                  <span className="text-xs md:text-sm font-extrabold tracking-[0.25em] uppercase text-rose-500 block font-mono">OUR FOUNDATION</span>
-                  
-                  <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-semibold">
-                    As a leading strategic partner to companies around the world, we have leveraged technology to enable business transformation. We address the entire breadth of business needs, from strategy and design to managing operations. To do this, we draw on deep industry expertise and a command of the fast-evolving fields of <Link href="/services/cloud-services" className="text-rose-500 hover:underline">cloud</Link>, <Link href="/services/data-engineering" className="text-rose-500 hover:underline">data</Link>, <Link href="/services/ai-data-innovation" className="text-rose-500 hover:underline">artificial intelligence</Link>, connectivity, <Link href="/services/software-development" className="text-rose-500 hover:underline">software engineering</Link>, digital engineering, and <Link href="/services/devops-automation" className="text-rose-500 hover:underline">DevOps platforms</Link>.
-                  </p>
-
-                  {/* Stats list */}
-                  <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-4 border-t border-zinc-900">
-                    <div>
-                      <div className="text-3xl font-black text-rose-400 tracking-tight mb-1">3,500+</div>
-                      <div className="text-[10px] text-zinc-500 font-bold uppercase tracking-wider">in-house experts</div>
-                    </div>
-                    <div>
-                      <div className="text-3xl font-black text-rose-400 tracking-tight mb-1">20</div>
-                      <div className="text-[10px] text-zinc-500 font-bold uppercase tracking-wider">office locations</div>
-                    </div>
-                    <div>
-                      <div className="text-3xl font-black text-rose-400 tracking-tight mb-1">2,000+</div>
-                      <div className="text-[10px] text-zinc-500 font-bold uppercase tracking-wider">global clients</div>
-                    </div>
-                    <div>
-                      <div className="text-3xl font-black text-rose-400 tracking-tight mb-1">19</div>
-                      <div className="text-[10px] text-zinc-500 font-bold uppercase tracking-wider">years of experience</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Right Image */}
-              <div className="lg:col-span-5 relative flex justify-center">
-                <div className="w-full max-w-[420px]">
-                  <div className="rounded-[2rem] overflow-hidden border border-zinc-900/60 bg-zinc-950 p-2 shadow-2xl">
+            {/* Single Row 3-Card Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+              
+              {/* Card 1: Core Values */}
+              <div className="group relative rounded-3xl p-5 lg:p-6 bg-zinc-950/70 border border-zinc-900 hover:border-rose-500/50 transition-all duration-500 flex flex-col justify-between shadow-xl cursor-pointer hover:shadow-[0_20px_50px_rgba(225,29,72,0.15)] min-h-[360px] overflow-hidden">
+                <div>
+                  <div className="w-full aspect-[16/10] rounded-2xl overflow-hidden mb-4 border border-zinc-900 bg-zinc-900">
                     <img
                       src="/assets/About-page/mission/core-value.png"
                       alt="Our Core Values"
-                      className="w-full aspect-square object-cover rounded-[1.5rem] group-hover:scale-102 transition-transform duration-700"
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                     />
+                  </div>
+
+                  <h3 className="text-2xl font-bold text-white tracking-tight mb-1 group-hover:text-rose-400 transition-colors">
+                    Core Values
+                  </h3>
+                  <span className="text-xs sm:text-sm font-mono font-bold tracking-[0.2em] text-rose-500 uppercase block mb-2">
+                    OUR FOUNDATION
+                  </span>
+                </div>
+
+                <div className="pt-3 border-t border-zinc-900 text-xs font-semibold text-zinc-400 flex justify-between">
+                  <span>3,500+ Experts</span>
+                  <span className="text-rose-500 font-bold">2,000+ Clients</span>
+                </div>
+
+                {/* Glassmorphism Backdrop Blur Overlay on Hover */}
+                <div className="absolute inset-0 p-6 bg-black/80 backdrop-blur-md flex flex-col justify-between opacity-0 group-hover:opacity-100 transition-all duration-500 ease-out z-20 pointer-events-none group-hover:pointer-events-auto border border-rose-500/40 rounded-3xl">
+                  <div className="flex flex-col justify-center h-full text-center space-y-2">
+                    <h3 className="text-2xl md:text-3xl font-bold text-white tracking-tight">
+                      Core Values
+                    </h3>
+                    <span className="text-xs sm:text-sm font-mono font-bold tracking-[0.25em] text-rose-400 uppercase">
+                      OUR FOUNDATION
+                    </span>
+                    <p className="text-zinc-200 text-xs sm:text-sm leading-relaxed font-medium pt-2">
+                      Leveraging technology to enable business transformation from strategy and design to cloud, AI, and DevOps.
+                    </p>
+                  </div>
+                  <div className="pt-3 border-t border-zinc-800 text-xs font-semibold text-zinc-300 flex justify-between">
+                    <span>3,500+ Experts</span>
+                    <span className="text-rose-500 font-bold">2,000+ Clients</span>
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </Reveal>
 
-        {/* 3. Our Mission Section */}
-        <Reveal>
-          <div className="group relative rounded-3xl p-8 md:p-10 border border-zinc-900/80 hover:border-zinc-700/60 bg-zinc-950/40 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] shadow-xl cursor-pointer">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-              {/* Left Image */}
-              <div className="lg:col-span-5 relative flex justify-center order-2 lg:order-1">
-                <div className="w-full max-w-[420px]">
-                  <div className="rounded-[2rem] overflow-hidden border border-zinc-900/60 bg-zinc-950 p-2 shadow-2xl">
+              {/* Card 2: Mission */}
+              <div className="group relative rounded-3xl p-5 lg:p-6 bg-zinc-950/70 border border-zinc-900 hover:border-rose-500/50 transition-all duration-500 flex flex-col justify-between shadow-xl cursor-pointer hover:shadow-[0_20px_50px_rgba(225,29,72,0.15)] min-h-[360px] overflow-hidden">
+                <div>
+                  <div className="w-full aspect-[16/10] rounded-2xl overflow-hidden mb-4 border border-zinc-900 bg-zinc-900">
                     <img
                       src="/assets/About-page/mission/mission.png"
                       alt="Our Mission"
-                      className="w-full aspect-square object-cover rounded-[1.5rem] group-hover:scale-102 transition-transform duration-700"
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                     />
+                  </div>
+
+                  <h3 className="text-2xl font-bold text-white tracking-tight mb-1 group-hover:text-rose-400 transition-colors">
+                    Our Mission
+                  </h3>
+                  <span className="text-xs sm:text-sm font-mono font-bold tracking-[0.2em] text-rose-500 uppercase block mb-2">
+                    OUR PURPOSE
+                  </span>
+                </div>
+
+                <div className="pt-3 border-t border-zinc-900 text-xs font-semibold text-zinc-400 flex justify-between">
+                  <span>AI Ecosystems</span>
+                  <span className="text-rose-500 font-bold">Competitive Advantage</span>
+                </div>
+
+                {/* Glassmorphism Backdrop Blur Overlay on Hover */}
+                <div className="absolute inset-0 p-6 bg-black/80 backdrop-blur-md flex flex-col justify-between opacity-0 group-hover:opacity-100 transition-all duration-500 ease-out z-20 pointer-events-none group-hover:pointer-events-auto border border-rose-500/40 rounded-3xl">
+                  <div className="flex flex-col justify-center h-full text-center space-y-2">
+                    <h3 className="text-2xl md:text-3xl font-bold text-white tracking-tight">
+                      Our Mission
+                    </h3>
+                    <span className="text-xs sm:text-sm font-mono font-bold tracking-[0.25em] text-rose-400 uppercase">
+                      OUR PURPOSE
+                    </span>
+                    <p className="text-zinc-200 text-xs sm:text-sm leading-relaxed font-medium pt-2">
+                      To empower enterprises by simplifying complex technology into intelligent, AI-driven cloud ecosystems.
+                    </p>
+                  </div>
+                  <div className="pt-3 border-t border-zinc-800 text-xs font-semibold text-zinc-300 flex justify-between">
+                    <span>AI Ecosystems</span>
+                    <span className="text-rose-500 font-bold">Competitive Advantage</span>
                   </div>
                 </div>
               </div>
 
-              {/* Right Text */}
-              <div className="lg:col-span-7 text-left space-y-4 order-1 lg:order-2">
-                {/* Initially Visible Title */}
-                <h2 className="text-3xl md:text-5xl font-bold text-white tracking-tight leading-none group-hover:text-rose-400 transition-colors">
-                  OUR MISSION<span className="text-rose-500">.</span>
-                </h2>
-
-                {/* Tag + Description Smooth Reveal on Hover */}
-                <div className="max-h-0 opacity-0 group-hover:max-h-[500px] group-hover:opacity-100 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] overflow-hidden space-y-4 pt-1">
-                  <span className="text-xs md:text-sm font-extrabold tracking-[0.25em] uppercase text-rose-500 block font-mono">OUR PURPOSE</span>
-
-                  <p className="text-zinc-300 text-sm md:text-base leading-relaxed font-semibold">
-                    To empower enterprises by <span className="text-rose-500 font-bold">simplifying the complex</span>. We deliver intelligent, <span className="text-rose-500 font-bold">AI-driven cloud ecosystems</span> that act as a seamless extension of your team, turning infrastructure into your <span className="text-white font-bold">greatest competitive advantage</span>.
-                  </p>
-                  <p className="text-zinc-400 text-sm leading-relaxed font-semibold border-t border-zinc-900 pt-3">
-                    We deliver engineering <span className="text-rose-500 font-bold">excellence</span> by providing tools that are as intuitive as they are powerful.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </Reveal>
-
-        {/* 4. Our Vision Section */}
-        <Reveal>
-          <div className="group relative rounded-3xl p-8 md:p-10 border border-zinc-900/80 hover:border-zinc-700/60 bg-zinc-950/40 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] shadow-xl cursor-pointer">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-              {/* Left Text */}
-              <div className="lg:col-span-7 text-left space-y-4">
-                {/* Initially Visible Title */}
-                <h2 className="text-3xl md:text-5xl font-bold text-white tracking-tight leading-none group-hover:text-rose-400 transition-colors">
-                  OUR VISION<span className="text-rose-500">.</span>
-                </h2>
-
-                {/* Tag + Description Smooth Reveal on Hover */}
-                <div className="max-h-0 opacity-0 group-hover:max-h-[500px] group-hover:opacity-100 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] overflow-hidden space-y-4 pt-1">
-                  <span className="text-xs md:text-sm font-extrabold tracking-[0.25em] uppercase text-rose-500 block font-mono">OUR FUTURE</span>
-
-                  <p className="text-zinc-300 text-sm md:text-base leading-relaxed font-semibold">
-                    To architect a future where software never fails. We envision a world powered by the <span className="text-rose-500 font-bold">perfect synergy of AI intelligence</span> and human creativity.
-                  </p>
-                  <p className="text-zinc-400 text-sm leading-relaxed font-semibold border-t border-zinc-900 pt-3">
-                    We strive to create <span className="text-rose-500 font-bold">resilient digital foundations</span> that allow innovation to flourish without limits, where every line of code is a step toward a more efficient, automated, and imaginative world.
-                  </p>
-                </div>
-              </div>
-
-              {/* Right Image */}
-              <div className="lg:col-span-5 relative flex justify-center">
-                <div className="w-full max-w-[420px]">
-                  <div className="rounded-[2rem] overflow-hidden border border-zinc-900/60 bg-zinc-950 p-2 shadow-2xl">
+              {/* Card 3: Vision */}
+              <div className="group relative rounded-3xl p-5 lg:p-6 bg-zinc-950/70 border border-zinc-900 hover:border-rose-500/50 transition-all duration-500 flex flex-col justify-between shadow-xl cursor-pointer hover:shadow-[0_20px_50px_rgba(225,29,72,0.15)] min-h-[360px] overflow-hidden">
+                <div>
+                  <div className="w-full aspect-[16/10] rounded-2xl overflow-hidden mb-4 border border-zinc-900 bg-zinc-900">
                     <img
                       src="/assets/About-page/mission/vision.png"
                       alt="Our Vision"
-                      className="w-full aspect-square object-cover rounded-[1.5rem] group-hover:scale-102 transition-transform duration-700"
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                     />
+                  </div>
+
+                  <h3 className="text-2xl font-bold text-white tracking-tight mb-1 group-hover:text-rose-400 transition-colors">
+                    Our Vision
+                  </h3>
+                  <span className="text-xs sm:text-sm font-mono font-bold tracking-[0.2em] text-rose-500 uppercase block mb-2">
+                    OUR FUTURE
+                  </span>
+                </div>
+
+                <div className="pt-3 border-t border-zinc-900 text-xs font-semibold text-zinc-400 flex justify-between">
+                  <span>Resilient Foundations</span>
+                  <span className="text-rose-500 font-bold">Zero-Failure Tech</span>
+                </div>
+
+                {/* Glassmorphism Backdrop Blur Overlay on Hover */}
+                <div className="absolute inset-0 p-6 bg-black/80 backdrop-blur-md flex flex-col justify-between opacity-0 group-hover:opacity-100 transition-all duration-500 ease-out z-20 pointer-events-none group-hover:pointer-events-auto border border-rose-500/40 rounded-3xl">
+                  <div className="flex flex-col justify-center h-full text-center space-y-2">
+                    <h3 className="text-2xl md:text-3xl font-bold text-white tracking-tight">
+                      Our Vision
+                    </h3>
+                    <span className="text-xs sm:text-sm font-mono font-bold tracking-[0.25em] text-rose-400 uppercase">
+                      OUR FUTURE
+                    </span>
+                    <p className="text-zinc-200 text-xs sm:text-sm leading-relaxed font-medium pt-2">
+                      Architecting a future where software never fails, through the synergy of AI intelligence and human creativity.
+                    </p>
+                  </div>
+                  <div className="pt-3 border-t border-zinc-800 text-xs font-semibold text-zinc-300 flex justify-between">
+                    <span>Resilient Foundations</span>
+                    <span className="text-rose-500 font-bold">Zero-Failure Tech</span>
                   </div>
                 </div>
               </div>
+
             </div>
           </div>
         </Reveal>

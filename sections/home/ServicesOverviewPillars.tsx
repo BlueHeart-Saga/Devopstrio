@@ -60,7 +60,9 @@ export function ServicesOverviewPillars() {
   const [activeHoverId, setActiveHoverId] = useState<string | null>(null);
 
   return (
-    <section className="w-full py-0 bg-[#030303] text-white relative overflow-hidden">
+    <section className="w-full py-0 bg-[#030303] text-white relative">
+      
+
       
       {/* Background Ambient Curved Light Halo */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[95vw] max-w-[1250px] h-[400px] md:h-[550px] bg-gradient-to-r from-red-600/10 via-rose-500/15 to-red-600/10 rounded-[100%] blur-[140px] pointer-events-none opacity-80" />
@@ -70,9 +72,37 @@ export function ServicesOverviewPillars() {
         {/* Top Tagline */}
         <div className="text-center max-w-4xl mx-auto mb-14">
           <Reveal>
-            <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight text-white mb-4 font-sans leading-tight">
-              We engineer every stage of your AI transformation
-            </h2>
+            <div className="relative inline-block w-full">
+             
+
+              <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight text-white mb-4 font-sans leading-[1.45]">
+                We engineer{" "}
+                <span className="bg-rose-500 text-white font-semibold px-4 py-1 mx-1.5 rounded-xl inline-block">
+                  every stage
+                </span>{" "}
+                of your{" "}
+                <span className="relative inline-block text-white px-1 mx-1 whitespace-nowrap">
+                  <span className="text-white font-semibold relative z-10">AI transformation</span>
+                  {/* Continuous red pen sketch loop underline with steeper angled cross slope */}
+                  <svg
+                    className="absolute -bottom-5 -left-2 w-[calc(100%+20px)] h-8 text-rose-500 pointer-events-none overflow-visible z-0"
+                    viewBox="0 0 300 32"
+                    preserveAspectRatio="none"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M 0 19 C 60 14, 160 7, 294 4 C 300 4, 298 12, 288 12 L 12 19 C 4 19, 8 26, 25 26 L 80 26"
+                      stroke="currentColor"
+                      strokeWidth="2.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="opacity-95 filter drop-shadow-[0_0_8px_rgba(244,63,94,0.7)]"
+                    />
+                  </svg>
+                </span>
+              </h2>
+            </div>
           </Reveal>
         </div>
 

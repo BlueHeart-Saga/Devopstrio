@@ -69,13 +69,13 @@ const partners: PartnerItem[] = [
 
 export function PartnersSection() {
   const [page, setPage] = useState(0);
-  const itemsPerPage = 16;
+  const itemsPerPage = 12;
   const maxPage = Math.ceil(partners.length / itemsPerPage) - 1;
 
   const displayedPartners = partners.slice(page * itemsPerPage, (page + 1) * itemsPerPage);
 
   return (
-    <section className="w-full py-12 md:py-16 bg-[#030303] text-white relative overflow-hidden" id="partners">
+    <section className="w-full py-12 md:py-16 bg-[#030303] text-white relative" id="partners">
       <style dangerouslySetInnerHTML={{
         __html: `
         @keyframes customFade {
@@ -90,12 +90,20 @@ export function PartnersSection() {
       <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
         {/* Header */}
         <Reveal className="max-w-3xl mb-12 text-center mx-auto">
-          <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight mb-4 text-white">
+          <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight mb-4 text-white relative inline-block">
+            {/* Connecting side arrow starting right at left side of "Some of Our Clients" */}
+            <div className="absolute -top-2 sm:-top-4 md:-top-6 -left-20 sm:-left-28 md:-left-36 lg:-left-40 z-30 pointer-events-none select-none">
+              <img
+                src="/assets/components/top-to-buttom-side%20-Arrowmid.png"
+                alt="Connecting section arrow"
+                className="w-16 sm:w-20 md:w-24 lg:w-28 h-auto object-contain filter drop-shadow-[0_0_20px_rgba(225,29,72,0.4)] transform -rotate-[-30deg]"
+              />
+            </div>
             Some of Our Clients
           </h2>
-          <p className="text-zinc-300 text-base md:text-lg leading-relaxed font-normal max-w-2xl mx-auto">
+          {/* <p className="text-zinc-300 text-base md:text-lg leading-relaxed font-normal max-w-2xl mx-auto">
             The following are just a few of our regular clients and strategic partners worldwide.
-          </p>
+          </p> */}
         </Reveal>
       </div>
 

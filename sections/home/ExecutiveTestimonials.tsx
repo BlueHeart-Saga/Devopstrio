@@ -157,8 +157,35 @@ export function ExecutiveTestimonials() {
               </div>
             </Reveal> */}
             <Reveal>
-              <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight text-white mb-3">
-                Voices of Our Clients
+              <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight text-white mb-3 relative inline-block">
+                {/* Curved Down Arrow PNG (matching reference image) */}
+                <div className="absolute -top-10 -left-6 sm:-left-10 z-20 pointer-events-none select-none">
+                  <img
+                    src="/assets/components/Carrow-right.png"
+                    alt="Curved down arrow"
+                    className="w-10 sm:w-14 h-auto object-contain filter drop-shadow-[0_0_15px_rgba(244,63,94,0.4)]"
+                  />
+                </div>
+
+                Voices of Our{" "}
+                <span className="relative inline-block text-white px-1">
+                  <span className="relative z-10 text-white font-semibold">Clients</span>
+                  {/* Double Rose Pencil Underline Stroke (matching reference image) */}
+                  <svg
+                    className="absolute -bottom-3 left-0 w-full h-4 text-rose-500 pointer-events-none overflow-visible z-0"
+                    viewBox="0 0 150 16"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M 0 5 L 148 5 M 4 12 L 144 12"
+                      stroke="currentColor"
+                      strokeWidth="3"
+                      strokeLinecap="round"
+                      className="opacity-95 filter drop-shadow-[0_0_8px_rgba(244,63,94,0.7)]"
+                    />
+                  </svg>
+                </span>
               </h2>
             </Reveal>
             {/* <Reveal>
@@ -169,9 +196,9 @@ export function ExecutiveTestimonials() {
           </div>
 
           {/* Controls: Search & Auto-Play */}
-          <Reveal>
+          {/* <Reveal>
             <div className="flex flex-wrap items-center gap-3">
-              {/* <div className="relative">
+              <div className="relative">
                 <Search className="w-4 h-4 text-zinc-500 absolute left-3 top-1/2 -translate-y-1/2" />
                 <input
                   type="text"
@@ -180,7 +207,7 @@ export function ExecutiveTestimonials() {
                   onChange={(e) => setSearchQuery(e.target.value)}
                   className="bg-zinc-950 border border-zinc-800 rounded-xl pl-9 pr-4 py-2 text-xs text-white placeholder:text-zinc-500 focus:outline-none focus:border-red-500 transition-colors w-48 sm:w-60"
                 />
-              </div> */}
+              </div>
 
               <button
                 onClick={() => setIsPlaying(!isPlaying)}
@@ -191,7 +218,7 @@ export function ExecutiveTestimonials() {
                 <span>{isPlaying ? "Autoplay On" : "Autoplay Off"}</span>
               </button>
             </div>
-          </Reveal>
+          </Reveal> */}
         </div>
 
         {/* Category Pills Filter Bar */}
