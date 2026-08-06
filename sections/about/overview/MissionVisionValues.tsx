@@ -49,13 +49,41 @@ export function MissionVisionValues() {
         <Reveal>
           <div className="relative w-full">
             {/* Header */}
-            <div className="text-center max-w-2xl mx-auto mb-12">
-              <span className="inline-flex items-center gap-2 px-4 py-1.5 text-rose-400 text-xs sm:text-sm font-mono font-bold tracking-[0.25em] uppercase mb-4 ">
-                {/* <span className="w-1.5 h-1.5 rounded-full bg-rose-500 animate-pulse" /> */}
+            <div className="text-center max-w-2xl mx-auto mb-12 relative">
+              {/* Left-to-right arrow PNG pointing to header */}
+              <div className="absolute -top-6 sm:-top-8 md:-top-10 -left-6 sm:-left-10 md:-left-14 lg:-left-20 z-20 pointer-events-none select-none">
+                <img
+                  src="/assets/components/lefttoright.png"
+                  alt="Left to right arrow"
+                  className="w-12 sm:w-16 md:w-20 h-auto object-contain filter drop-shadow-[0_0_15px_rgba(244,63,94,0.4)]"
+                />
+              </div>
+
+              <span className="inline-flex items-center gap-2 px-4 py-1.5 text-rose-400 text-xs sm:text-sm font-mono font-bold tracking-[0.25em] uppercase mb-4">
                 FOUNDATION OF DEVOPSTRIO
               </span>
-              <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight text-white">
-                Mission, Vision &amp; <span className="text-rose-500">Values</span>
+              <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight text-white leading-[1.45]">
+                Mission, Vision &amp;{" "}
+                <span className="relative inline-block text-white px-1 mx-1 whitespace-nowrap">
+                  <span className="text-white font-semibold relative z-10">Core Values</span>
+                  {/* Continuous red pen sketch loop underline */}
+                  <svg
+                    className="absolute -bottom-5 -left-2 w-[calc(100%+20px)] h-8 text-rose-500 pointer-events-none overflow-visible z-0"
+                    viewBox="0 0 300 32"
+                    preserveAspectRatio="none"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M 0 19 C 60 14, 160 7, 294 4 C 300 4, 298 12, 288 12 L 12 19 C 4 19, 8 26, 25 26 L 80 26"
+                      stroke="currentColor"
+                      strokeWidth="2.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="opacity-95 filter drop-shadow-[0_0_8px_rgba(244,63,94,0.7)]"
+                    />
+                  </svg>
+                </span>
               </h2>
             </div>
 
@@ -81,10 +109,6 @@ export function MissionVisionValues() {
                   </span>
                 </div>
 
-                <div className="pt-3 border-t border-zinc-900 text-xs font-semibold text-zinc-400 flex justify-between">
-                  <span>3,500+ Experts</span>
-                  <span className="text-rose-500 font-bold">2,000+ Clients</span>
-                </div>
 
                 {/* Glassmorphism Backdrop Blur Overlay on Hover */}
                 <div className="absolute inset-0 p-6 bg-black/80 backdrop-blur-md flex flex-col justify-between opacity-0 group-hover:opacity-100 transition-all duration-500 ease-out z-20 pointer-events-none group-hover:pointer-events-auto border border-rose-500/40 rounded-3xl">
@@ -125,10 +149,6 @@ export function MissionVisionValues() {
                   </span>
                 </div>
 
-                <div className="pt-3 border-t border-zinc-900 text-xs font-semibold text-zinc-400 flex justify-between">
-                  <span>AI Ecosystems</span>
-                  <span className="text-rose-500 font-bold">Competitive Advantage</span>
-                </div>
 
                 {/* Glassmorphism Backdrop Blur Overlay on Hover */}
                 <div className="absolute inset-0 p-6 bg-black/80 backdrop-blur-md flex flex-col justify-between opacity-0 group-hover:opacity-100 transition-all duration-500 ease-out z-20 pointer-events-none group-hover:pointer-events-auto border border-rose-500/40 rounded-3xl">
@@ -169,10 +189,6 @@ export function MissionVisionValues() {
                   </span>
                 </div>
 
-                <div className="pt-3 border-t border-zinc-900 text-xs font-semibold text-zinc-400 flex justify-between">
-                  <span>Resilient Foundations</span>
-                  <span className="text-rose-500 font-bold">Zero-Failure Tech</span>
-                </div>
 
                 {/* Glassmorphism Backdrop Blur Overlay on Hover */}
                 <div className="absolute inset-0 p-6 bg-black/80 backdrop-blur-md flex flex-col justify-between opacity-0 group-hover:opacity-100 transition-all duration-500 ease-out z-20 pointer-events-none group-hover:pointer-events-auto border border-rose-500/40 rounded-3xl">

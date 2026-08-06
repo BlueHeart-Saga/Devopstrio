@@ -137,100 +137,85 @@ export function OurFutureSection() {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-[radial-gradient(circle_at_center,rgba(225,29,72,0.015),transparent_75%)] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
-        <div className="flex flex-col lg:flex-row gap-12 items-start justify-between">
+        
+        {/* Apple-style Centered Dual-Tone Header */}
+        <div className="text-center max-w-3xl mx-auto mb-16 relative">
+          <Reveal>
+           
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight text-white leading-tight">
+              Building What's Next.<br />
+              <span className="bg-rose-500 text-white font-semibold px-4 py-1 mr-2 rounded-xl inline-block">
+                Our Future
+              </span>{" "}
+              Vision.
+            </h2>
+          </Reveal>
+        </div>
 
-          {/* Left Core Content: Title, Desc, and Navigation Controls */}
-          <div className="w-full lg:w-[350px] text-left shrink-0">
-            <Reveal>
-              <span className="text-xs md:text-sm font-extrabold tracking-[0.25em] uppercase text-rose-500 mb-3 block font-mono">
-                OUR FUTURE
-              </span>
-              <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight text-white mb-6">
-                Building What's Next
-              </h2>
-              {/* <p className="text-zinc-400 text-xs md:text-sm leading-relaxed font-medium mb-6">
-                We are investing in AI, cloud, and modern engineering to create intelligent solutions that help businesses innovate, adapt, and grow with confidence.
-              </p> */}
-
-              {/* Play Document / Action trigger & Navigation Arrows */}
-              <div className="mt-8 flex flex-col sm:flex-row sm:items-center gap-6">
-                <button className="group/play flex items-center gap-3 text-xs font-bold uppercase tracking-wider text-zinc-300 hover:text-white transition-colors duration-300 shrink-0">
-                  <div className="w-9 h-9 rounded-full border border-zinc-800 flex items-center justify-center bg-zinc-950 group-hover/play:border-rose-500/50 group-hover/play:bg-rose-950/20 transition-all duration-500">
-                    <Play size={10} className="text-zinc-400 group-hover/play:text-rose-400 group-hover/play:scale-110 transition-all duration-300 fill-zinc-400 group-hover/play:fill-rose-400" />
-                  </div>
-                  {/* <span className="font-mono text-[9px] tracking-widest">Vision Presentation</span> */}
-                </button>
-
-                <div className="flex items-center gap-3">
-                  <button
-                    onClick={() => scroll("left")}
-                    className="w-9 h-9 rounded-full border border-zinc-800 hover:border-zinc-700 bg-zinc-950/40 flex items-center justify-center text-zinc-400 hover:text-white hover:shadow-[0_0_15px_rgba(225,29,72,0.1)] hover:-translate-y-0.5 transition-all duration-300"
-                    aria-label="Scroll Left"
-                  >
-                    <ArrowLeft size={14} />
-                  </button>
-                  <button
-                    onClick={() => scroll("right")}
-                    className="w-9 h-9 rounded-full border border-zinc-800 hover:border-zinc-700 bg-zinc-950/40 flex items-center justify-center text-zinc-400 hover:text-white hover:shadow-[0_0_15px_rgba(225,29,72,0.1)] hover:-translate-y-0.5 transition-all duration-300"
-                    aria-label="Scroll Right"
-                  >
-                    <ArrowRight size={14} />
-                  </button>
-                </div>
-              </div>
-            </Reveal>
-          </div>
-
-          {/* Smooth Scroll Slider Container */}
-          <div className="w-full lg:w-[calc(100%-390px)] overflow-hidden relative py-4">
-            <div
-              ref={scrollRef}
-              onMouseEnter={() => setIsHovered(true)}
-              onMouseLeave={() => setIsHovered(false)}
-              className="future-track no-scrollbar flex overflow-x-auto snap-x snap-mandatory scroll-smooth pb-6 cursor-grab active:cursor-grabbing"
-              style={{ gap: "var(--card-gap)" }}
+        {/* Top Controls for Carousel */}
+        <div className="flex justify-end mb-6">
+          <div className="flex items-center gap-3">
+            <button
+              onClick={() => scroll("left")}
+              className="w-10 h-10 rounded-full border border-zinc-800 hover:border-rose-500 bg-zinc-950/80 flex items-center justify-center text-zinc-400 hover:text-white hover:shadow-[0_0_15px_rgba(225,29,72,0.2)] transition-all duration-300"
+              aria-label="Scroll Left"
             >
-              {futureFocus.map((focus, idx) => (
-                <Reveal key={idx} delay={idx * 0.05} className="shrink-0 snap-start snap-always">
-                  <div
-                    className="relative rounded-[1.75rem] overflow-hidden border border-zinc-900 bg-[#0A0A0C] w-[var(--card-w)] h-[240px] md:h-[280px] select-none group transition-all duration-500 hover:border-rose-500/20 hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(225,29,72,0.1)]"
-                  >
-                    {/* Default Bright Background Image */}
+              <ArrowLeft size={16} />
+            </button>
+            <button
+              onClick={() => scroll("right")}
+              className="w-10 h-10 rounded-full border border-zinc-800 hover:border-rose-500 bg-zinc-950/80 flex items-center justify-center text-zinc-400 hover:text-white hover:shadow-[0_0_15px_rgba(225,29,72,0.2)] transition-all duration-300"
+              aria-label="Scroll Right"
+            >
+              <ArrowRight size={16} />
+            </button>
+          </div>
+        </div>
+
+        {/* Apple-Style Cards Horizontal Carousel Slider */}
+        <div className="w-full overflow-hidden relative pb-8">
+          <div
+            ref={scrollRef}
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+            className="future-track no-scrollbar flex overflow-x-auto snap-x snap-mandatory scroll-smooth pb-6 cursor-grab active:cursor-grabbing"
+            style={{ gap: "var(--card-gap)" }}
+          >
+            {futureFocus.map((focus, idx) => (
+              <Reveal key={idx} delay={idx * 0.04} className="shrink-0 snap-start snap-always">
+                <div
+                  className="group relative rounded-[2rem] p-5 sm:p-6 bg-zinc-950/70 border border-zinc-900 hover:border-rose-500/50 transition-all duration-500 flex flex-col justify-between w-[var(--card-w)] h-[380px] md:h-[420px] select-none shadow-2xl overflow-hidden hover:shadow-[0_25px_60px_rgba(0,0,0,0.8)] hover:-translate-y-1.5"
+                >
+                  {/* Top Thumbnail Box */}
+                  <div className="relative w-full aspect-[16/10] rounded-2xl overflow-hidden mb-4 bg-zinc-900 border border-zinc-800/80 shrink-0">
                     <img
                       src={focus.image}
-                      alt={focus.title}
-                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out z-0 group-hover:scale-105"
+                      alt={typeof focus.title === 'string' ? focus.title : 'Future Focus'}
+                      className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                     />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
+                  </div>
 
-                    {/* Default Subtle Gradient Overlay (Ensures text contrast) */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent z-10" />
-
-                    {/* Premium Glassic Blur Overlay on Hover (Sweeps from bottom-right) */}
-                    <div className="absolute inset-0 bg-black/40 backdrop-blur-[8px] transition-all duration-700 ease-in-out z-20 pointer-events-none [clip-path:circle(0%_at_100%_100%)] group-hover:[clip-path:circle(150%_at_100%_100%)]" />
-
-                    {/* Text content details */}
-                    <div className="absolute bottom-0 inset-x-0 p-6 z-30 text-left pt-12">
-                      {/* <span className="inline-block px-2.5 py-1 rounded text-[9px] font-bold tracking-widest uppercase bg-rose-950/60 text-rose-400 border border-rose-500/20 font-mono mb-2">
+                  {/* Text Content Area */}
+                  <div className="flex-1 flex flex-col justify-between text-left">
+                    <div>
+                      <span className="text-[10px] font-mono font-bold tracking-widest uppercase text-rose-500 block mb-1">
                         {focus.tag}
-                      </span> */}
-                      <h3 className="text-base md:text-lg font-bold text-white mb-1 transition-colors duration-300 group-hover:text-rose-400">
+                      </span>
+                      <h3 className="text-lg md:text-xl font-bold text-white tracking-tight mb-2 group-hover:text-rose-400 transition-colors">
                         {focus.title}
                       </h3>
-                      
-                      {/* Description Reveal on Hover */}
-                      <div className="max-h-0 opacity-0 group-hover:max-h-[220px] group-hover:opacity-100 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] overflow-hidden">
-                        <p className="text-xs md:text-sm text-zinc-300 font-medium leading-relaxed pt-1">
-                          {focus.desc}
-                        </p>
-                      </div>
+                      <p className="text-zinc-400 text-xs sm:text-sm leading-relaxed font-medium line-clamp-3">
+                        {focus.desc}
+                      </p>
                     </div>
                   </div>
-                </Reveal>
-              ))}
-            </div>
+                </div>
+              </Reveal>
+            ))}
           </div>
-
         </div>
+
       </div>
     </section>
   );
