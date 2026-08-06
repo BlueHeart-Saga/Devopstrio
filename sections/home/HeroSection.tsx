@@ -24,7 +24,7 @@ export function HeroSection() {
       eyebrow: "Cloud & Infrastructure",
       title: (
         <>
-          Enterprise Cloud
+          <span className="whitespace-nowrap">Enterprise Cloud</span>
           <br />
           Demands
           <br />
@@ -43,15 +43,15 @@ export function HeroSection() {
       eyebrow: "Industry-Focused Expertise",
       title: (
         <>
-          Industry Solutions
+          <span className="whitespace-nowrap">Industry Expertise</span>
           <br />
-          Demand
+          Demands
           <br />
-          <span className="text-[#E11D48] whitespace-nowrap">Expertise.</span>
+          <span className="text-[#E11D48] whitespace-nowrap">Results.</span>
           <br />
           We Deliver
           <br />
-          <span className="text-[#E11D48] whitespace-nowrap">Results.</span>
+          <span className="text-[#E11D48] whitespace-nowrap">Advantage.</span>
         </>
       ),
       primaryBtn: { text: "Explore Services", href: "/services" },
@@ -62,7 +62,7 @@ export function HeroSection() {
       eyebrow: "Elite Global Technology Partner",
       title: (
         <>
-          Global Technology
+          <span className="whitespace-nowrap">Global Technology</span>
           <br />
           Drives
           <br />
@@ -81,7 +81,7 @@ export function HeroSection() {
       eyebrow: "Modern DevOps & Automation",
       title: (
         <>
-          DevOps Excellence
+          <span className="whitespace-nowrap">DevOps Excellence</span>
           <br />
           Requires
           <br />
@@ -100,7 +100,7 @@ export function HeroSection() {
       eyebrow: "Software & Quality Engineering",
       title: (
         <>
-          Software Excellence
+          <span className="whitespace-nowrap">Software Excellence</span>
           <br />
           Requires
           <br />
@@ -119,7 +119,7 @@ export function HeroSection() {
       eyebrow: "Data & Cloud Infrastructure",
       title: (
         <>
-          Enterprise Growth
+          <span className="whitespace-nowrap">Enterprise Growth</span>
           <br />
           Requires
           <br />
@@ -138,7 +138,7 @@ export function HeroSection() {
       eyebrow: "Digital Products & Platforms",
       title: (
         <>
-          Digital Products
+          <span className="whitespace-nowrap">Digital Products</span>
           <br />
           Create
           <br />
@@ -157,7 +157,7 @@ export function HeroSection() {
       eyebrow: "End-to-End Technology Services",
       title: (
         <>
-          Business Technology
+          <span className="whitespace-nowrap">Technology Excellence</span>
           <br />
           Powers
           <br />
@@ -165,7 +165,7 @@ export function HeroSection() {
           <br />
           We Deliver
           <br />
-          <span className="text-[#E11D48] whitespace-nowrap">Excellence.</span>
+          <span className="text-[#E11D48] whitespace-nowrap">Performance.</span>
         </>
       ),
       primaryBtn: { text: "Explore Services", href: "/services" },
@@ -176,7 +176,7 @@ export function HeroSection() {
       eyebrow: "Ecosystem & Strategic Alliances",
       title: (
         <>
-          Strategic Partnerships
+          <span className="whitespace-nowrap">Strategic Alliances</span>
           <br />
           Create
           <br />
@@ -195,7 +195,7 @@ export function HeroSection() {
       eyebrow: "AI & Data Innovation",
       title: (
         <>
-          Artificial Intelligence
+          <span className="whitespace-nowrap">AI Innovation</span>
           <br />
           Creates
           <br />
@@ -214,15 +214,15 @@ export function HeroSection() {
       eyebrow: "Platform & Cloud Operations",
       title: (
         <>
-          Platform Operations
+          <span className="whitespace-nowrap">Platform Reliability</span>
           <br />
-          Require
-          <br />
-          <span className="text-[#E11D48] whitespace-nowrap">Reliability.</span>
-          <br />
-          We Deliver
+          Requires
           <br />
           <span className="text-[#E11D48] whitespace-nowrap">Performance.</span>
+          <br />
+          We Scale
+          <br />
+          <span className="text-[#E11D48] whitespace-nowrap">Seamlessly.</span>
         </>
       ),
       primaryBtn: { text: "Explore Services", href: "/services" },
@@ -233,7 +233,7 @@ export function HeroSection() {
       eyebrow: "Enterprise Application Delivery",
       title: (
         <>
-          Application Delivery
+          <span className="whitespace-nowrap">Application Engineering</span>
           <br />
           Accelerates
           <br />
@@ -300,7 +300,7 @@ export function HeroSection() {
                   </div> */}
 
                   {/* Heading — same font size and line-height for every slide */}
-                  <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-semibold tracking-tight leading-[1.12] text-white">
+                  <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-semibold tracking-tight leading-[1.12] text-white max-w-[620px]">
                     {slides[currentSlide].title}
                   </h1>
                 </motion.div>
