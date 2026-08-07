@@ -5,6 +5,7 @@ import { ContactForm } from "@/sections/contact/ContactForm";
 import { DepartmentContacts } from "@/sections/contact/DepartmentContacts";
 import { WriteMessageForm } from "@/sections/contact/WriteMessageForm";
 import { OurLocations } from "@/sections/contact/OurLocations";
+import { TransformMetricsSection } from "@/sections/contact/TransformMetricsSection";
 import { GlobalPresence } from "@/sections/contact/GlobalPresence";
 import { WhyContactUs } from "@/sections/contact/WhyContactUs";
 import { TrustSignal } from "@/sections/contact/TrustSignal";
@@ -78,8 +79,8 @@ export default function ContactPage() {
           <DepartmentContacts />
         </div>
 
-        {/* Layer 1: Global Presence Sticky Window */}
-        <div id="presence" className="sticky top-0 z-0 w-full min-h-screen bg-black overflow-hidden flex items-center">
+        {/* Layer 1: Global Presence */}
+        <div id="presence" className="relative z-10 w-full bg-black">
           <GlobalPresence />
         </div>
         
@@ -96,6 +97,10 @@ export default function ContactPage() {
           
           <div id="locations">
             <OurLocations />
+          </div>
+
+          <div id="metrics">
+            <TransformMetricsSection />
           </div>
           
           <SvgWaveLine variant="liquid" />

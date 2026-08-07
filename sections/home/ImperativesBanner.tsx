@@ -48,10 +48,10 @@ export function ImperativesBanner() {
   if (!announcement) return null; // Don't render the banner if there's no active announcement
 
   return (
-    <section className="w-full py-12 bg-[#030303] text-white relative ">
-      <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
+    <section className="w-full py-12 bg-[#030303] text-white relative overflow-hidden">
+      <div className="max-w-7xl mx-auto w-full px-4 sm:px-8 xl:px-8">
         <Reveal>
-          <div className="relative w-full rounded-2xl border border-zinc-800 bg-zinc-950/40 p-8 lg:p-12 overflow-hidden shadow-2xl flex flex-col lg:flex-row items-center justify-between gap-10">
+          <div className="relative w-full rounded-2xl border border-zinc-800 bg-zinc-950/40 p-5 sm:p-8 lg:p-12 overflow-hidden shadow-2xl flex flex-col lg:flex-row items-center justify-between gap-10">
             {/* Background Red Mesh waves / glow */}
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(220,38,38,0.04),transparent_50%)] pointer-events-none" />
             <div className="absolute -top-40 -right-40 w-96 h-96 bg-[radial-gradient(circle_at_center,rgba(225,29,72,0.03),transparent_70%)] blur-3xl pointer-events-none" />

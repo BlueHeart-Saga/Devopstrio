@@ -141,17 +141,22 @@ export function WriteMessageForm() {
 
         {/* Section Header */}
         <Reveal className="mb-8 md:mb-10 text-center max-w-3xl mx-auto flex flex-col items-center">
-          <div className="flex items-center justify-center gap-2 mb-3">
-            <span className="text-[10px] font-bold tracking-[0.22em] uppercase text-zinc-500">
-              Global Engineering Inquiry
-            </span>
+          {/* Top-to-bottom straight arrow PNG (Matching CoreServices.tsx) */}
+          <div className="mb-2 sm:mb-3 flex justify-center pointer-events-none select-none">
+            <img
+              src="/assets/components/streight-toptobuttm.png"
+              alt="Top to bottom arrow"
+              className="w-16 sm:w-20 md:w-24 lg:w-28 h-auto object-contain filter drop-shadow-[0_0_20px_rgba(244,63,94,0.5)]"
+            />
           </div>
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight leading-tight mb-3 text-white">
-            Connect with our <span className="text-rose-500">team worldwide.</span>
+
+          <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold tracking-tight leading-[1.35] mb-3 text-white">
+            Connect &amp;{" "}
+            <span className="bg-rose-500 text-white font-semibold px-4 py-1 mx-1 rounded-xl inline-block">
+              Consult
+            </span>{" "}
+            with our <span className="text-rose-500 font-semibold">team</span>
           </h2>
-          {/* <p className="text-zinc-400 text-xs md:text-sm font-bold leading-relaxed max-w-xl mx-auto">
-            Fill out the details below to route your query directly to our global engineering leads.
-          </p> */}
         </Reveal>
 
         {/* Open Unboxed Form Layout */}

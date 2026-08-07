@@ -73,25 +73,40 @@ export function GlobalPresence() {
   const [active, setActive] = useState<string | null>(null);
 
   return (
-    <section className="w-full py-10 md:py-12 bg-[#030303] text-white relative overflow-hidden">
+    <section className="w-full pt-6 pb-2 md:pt-8 md:pb-4 bg-[#030303] text-white relative overflow-hidden">
       {/* Subtle top glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[200px] bg-[radial-gradient(ellipse_at_top,rgba(244,63,94,0.04),transparent_70%)] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
 
         {/* ── Header ─────────────────────────────────────────────────────── */}
-        <Reveal className="mb-12 text-center max-w-3xl mx-auto flex flex-col items-center">
-          <div className="flex items-center justify-center gap-2 mb-3">
-            <span className="text-[10px] font-bold tracking-[0.22em] uppercase text-zinc-500">
-              Global Presence
-            </span>
+        <Reveal className="mb-12 text-center max-w-3xl mx-auto flex flex-col items-center relative">
+          <div className="flex items-center justify-center gap-4 mb-3 relative w-full">
+            {/* Carrow-right.png arrow on the left side pointing to header */}
+            <div className="absolute left-0 sm:left-4 md:-left-12 lg:-left-16 top-1/2 -translate-y-1/2 pointer-events-none select-none hidden sm:block">
+              <img
+                src="/assets/components/Carrow-right.png"
+                alt="Arrow indicator"
+                className="w-12 sm:w-16 md:w-20 lg:w-24 h-auto object-contain filter drop-shadow-[0_0_15px_rgba(244,63,94,0.4)]"
+              />
+            </div>
+
+            {/* <span className="text-xs font-mono font-semibold tracking-[0.25em] uppercase text-rose-500">
+              GLOBAL PRESENCE
+            </span> */}
           </div>
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight leading-tight mb-4">
-            Wherever you build. <span className="text-rose-500">We&apos;re already there.</span>
+
+          <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold tracking-tight leading-[1.35] mb-4 text-white">
+            Wherever you build &amp;{" "}
+            <span className="bg-rose-500 text-white font-semibold px-4 py-1 mx-1 rounded-xl inline-block">
+              Collaborate
+            </span>
+            , <span className="text-rose-500 font-semibold">we&apos;re already there.</span>
           </h2>
-          <p className="text-zinc-400 text-xs md:text-sm font-bold leading-relaxed max-w-xl mx-auto">
+
+          {/* <p className="text-zinc-400 text-xs md:text-sm font-semibold leading-relaxed max-w-xl mx-auto">
             Six offices. Four countries. 525+ professionals — strategically positioned to serve global enterprises 24/7.
-          </p>
+          </p> */}
         </Reveal>
 
         {/* ── Map Card ───────────────────────────────────────────────────── */}
@@ -177,7 +192,7 @@ export function GlobalPresence() {
             </div>
 
             {/* ── Legend bar ─────────────────────────────────────────────── */}
-            <div className="flex items-center justify-center gap-6 py-2.5 mt-2">
+            {/* <div className="flex items-center justify-center gap-6 py-2.5 mt-2">
               <div className="flex items-center gap-1.5">
                 <span className="w-1.5 h-1.5 rounded-full bg-rose-500 shadow-[0_0_5px_rgba(244,63,94,0.7)]" />
                 <span className="text-[9px] font-bold text-zinc-600 uppercase tracking-widest">Office Location</span>
@@ -186,12 +201,12 @@ export function GlobalPresence() {
                 <span className="w-1.5 h-1.5 rounded-full bg-zinc-700" />
                 <span className="text-[9px] font-bold text-zinc-600 uppercase tracking-widest">Hover to explore</span>
               </div>
-            </div>
+            </div> */}
           </div>
         </Reveal>
 
         {/* ── Office quick cards ──────────────────────────────────────────── */}
-        <Reveal delay={0.2}>
+        {/* <Reveal delay={0.2}>
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2 mt-3">
             {locations.map(loc => {
               const isActive = active === loc.id;
@@ -217,7 +232,7 @@ export function GlobalPresence() {
               );
             })}
           </div>
-        </Reveal>
+        </Reveal> */}
 
         {/* ── Stats bar ──────────────────────────────────────────────────── */}
         {/* <Reveal delay={0.3}>

@@ -54,14 +54,14 @@ export function FAQ() {
         <Reveal className="max-w-3xl mb-16">
           <div className="flex items-center gap-2 mb-4">
             
-            <span className="text-[10px] font-medium tracking-[0.2em] uppercase text-zinc-400">
+            {/* <span className="text-[10px] font-medium tracking-[0.2em] uppercase text-zinc-400">
               KNOWLEDGE BASE
-            </span>
+            </span> */}
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight leading-tight mb-4">
-            Questions we get <span className="text-white font-bold bg-gradient-to-r from-red-655 via-rose-600 to-rose-500 bg-clip-text text-transparent">asked every day</span>.
+          <h2 className="text-3xl md:text-4xl font-semibold tracking-tight leading-tight mb-4">
+            Questions we get <span className="text-white font-semibold bg-gradient-to-r from-red-655 via-rose-600 to-rose-500 bg-clip-text text-transparent">asked every day</span>.
           </h2>
-          <p className="text-zinc-400 text-sm leading-relaxed font-bold">
+          <p className="text-zinc-300 text-base sm:text-lg md:text-xl font-semibold leading-relaxed">
             Everything you need to know before we start working together. Can&apos;t find what you&apos;re looking for? Our team responds to every question — usually within the hour.
           </p>
         </Reveal>
@@ -79,20 +79,20 @@ export function FAQ() {
                   onClick={() => toggle(idx)}
                   className="flex justify-between items-center w-full text-left focus:outline-none group"
                 >
-                  <span className="text-sm md:text-base font-semibold text-zinc-200 group-hover:text-white transition-colors">
+                  <span className="text-base sm:text-lg md:text-xl font-semibold text-zinc-200 group-hover:text-white transition-colors">
                     {item.q}
                   </span>
-                  <div className="text-zinc-550 group-hover:text-rose-500 transition-colors ml-4 flex-shrink-0">
-                    {isOpen ? <Minus size={16} /> : <Plus size={16} />}
+                  <div className="text-zinc-400 group-hover:text-rose-500 transition-colors ml-4 flex-shrink-0">
+                    {isOpen ? <Minus size={20} /> : <Plus size={20} />}
                   </div>
                 </button>
                 
                 {isOpen && (
-                  <div className="mt-4 text-xs md:text-sm text-zinc-450 leading-relaxed font-bold max-w-3xl animate-fadeIn flex flex-col gap-4">
+                  <div className="mt-4 text-sm sm:text-base md:text-lg text-zinc-300 leading-relaxed font-semibold max-w-4xl animate-fadeIn flex flex-col gap-4">
                     <p>{item.a}</p>
                     
                     {item.proof && (
-                      <span className="text-[10px] text-emerald-500 font-semibold tracking-wide">
+                      <span className="text-xs sm:text-sm text-emerald-400 font-semibold tracking-wide">
                         {item.proof}
                       </span>
                     )}
@@ -102,7 +102,7 @@ export function FAQ() {
                         {item.tags.map((tag) => (
                           <span 
                             key={tag}
-                            className="px-2.5 py-1 rounded bg-zinc-900 text-zinc-400 border border-zinc-850 text-[9px] font-medium tracking-wide"
+                            className="px-3 py-1.5 rounded-lg bg-zinc-900 text-zinc-300 border border-zinc-800 text-xs sm:text-sm font-semibold tracking-wide"
                           >
                             {tag}
                           </span>

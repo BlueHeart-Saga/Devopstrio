@@ -34,7 +34,7 @@ export function ContactCTA() {
             Let&apos;s <span className="text-white font-medium bg-gradient-to-r from-red-600 via-rose-600 to-rose-500 bg-clip-text text-transparent">fix it.</span>
           </h2>
 
-          <p className="text-zinc-400 text-sm md:text-lg leading-relaxed font-bold mb-10 max-w-lg">
+          <p className="text-zinc-300 text-base md:text-lg leading-relaxed font-semibold mb-10 max-w-3xl">
             Slow <Link href="/services/devops-automation" className="text-rose-500 hover:underline">deployments</Link>. Runaway <Link href="/services/cloud-services" className="text-rose-500 hover:underline">cloud costs</Link>. Security <Link href="/services/cybersecurity" className="text-rose-500 hover:underline">gaps</Link>. These aren&apos;t inevitable — they&apos;re solvable. We&apos;ve done it 100+ times. We&apos;ll do it for you too.
           </p>
 

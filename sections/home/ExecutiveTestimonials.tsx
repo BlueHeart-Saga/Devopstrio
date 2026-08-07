@@ -159,7 +159,7 @@ export function ExecutiveTestimonials() {
             <Reveal>
               <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight text-white mb-3 relative inline-block">
                 {/* Curved Down Arrow PNG (matching reference image) */}
-                <div className="absolute -top-10 -left-6 sm:-left-10 z-20 pointer-events-none select-none">
+                <div className="absolute -top-10 left-0 sm:-left-10 z-20 pointer-events-none select-none">
                   <img
                     src="/assets/components/Carrow-right.png"
                     alt="Curved down arrow"

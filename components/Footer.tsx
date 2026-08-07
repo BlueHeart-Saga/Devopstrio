@@ -32,9 +32,9 @@ export function Footer() {
   };
 
   return (
-    <footer className="w-full bg-[#030303] text-zinc-550 pt-20 pb-4 relative font-sans mt-24">
+    <footer className="w-full bg-[#030303] text-zinc-550 pt-20 sm:pt-24 pb-4 relative font-sans mt-24 sm:mt-32">
       {/* Premium Dual-Line White Top Border */}
-      <div className="absolute top-0 inset-x-0 flex flex-col items-center">
+      <div className="absolute top-0 inset-x-0 flex flex-col items-center z-10 pointer-events-none">
         <div className="relative w-full flex justify-center opacity-90">
           <div className="w-full h-[2px] bg-gradient-to-r from-zinc-950 via-white/70 to-zinc-950" />
           <div className="absolute top-0 w-[60%] h-[2px] bg-gradient-to-r from-transparent via-white to-transparent shadow-[0_0_20px_rgba(255,255,255,0.9)]" />
@@ -46,29 +46,29 @@ export function Footer() {
       <div className="absolute bottom-0 right-0 w-[450px] h-[450px] bg-[radial-gradient(circle_at_center,rgba(225,29,72,0.015),transparent_70%)] pointer-events-none z-0 overflow-hidden" />
       <div className="absolute top-0 left-[20%] w-[350px] h-[350px] bg-[radial-gradient(circle_at_center,rgba(225,29,72,0.01),transparent_70%)] pointer-events-none z-0 overflow-hidden" />
 
-      <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16 relative z-10">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 md:px-12 lg:px-16 relative z-10">
 
-        {/* Compact Floating Newsletter Card */}
-        <div className="max-w-5xl mx-auto w-full bg-white rounded-2xl p-6 md:px-10 md:py-8 flex flex-col md:flex-row items-center justify-between gap-8 -mt-28 mb-16 shadow-[0_20px_40px_rgba(0,0,0,0.5)] relative z-20 border border-zinc-200/50">
+        {/* Floating Newsletter Card (Half outside top border / Half inside footer) */}
+        <div className="max-w-5xl mx-auto w-full bg-white rounded-2xl p-6 sm:p-8 md:px-10 md:py-8 flex flex-col md:flex-row items-center justify-between gap-6 sm:gap-8 -mt-20 sm:-mt-24 md:-mt-28 mb-12 sm:mb-16 shadow-[0_25px_50px_rgba(0,0,0,0.6)] relative z-20 border border-zinc-200/50">
           <div className="flex-1 text-center md:text-left">
-            <h3 className="text-xl md:text-2xl font-bold text-black mb-1.5 tracking-tight">Subscribe Newsletter</h3>
-            <p className="text-zinc-500 text-xs md:text-sm font-medium max-w-sm mx-auto md:mx-0">
+            <h3 className="text-xl sm:text-2xl font-bold text-black mb-2 tracking-tight leading-tight">Subscribe Newsletter</h3>
+            <p className="text-zinc-600 text-xs sm:text-sm font-medium max-w-md mx-auto md:mx-0 leading-relaxed">
               Get the latest insights on enterprise cloud transformations and technical engineering directly to your inbox.
             </p>
           </div>
-          <div className="w-full md:w-[400px]">
-            <form onSubmit={handleSubmit} className="flex relative w-full border border-zinc-200 rounded-xl bg-zinc-50 focus-within:border-rose-500 focus-within:shadow-[0_0_15px_rgba(225,29,72,0.15)] transition-all duration-300 p-1 shadow-sm">
+          <div className="w-full md:w-[400px] shrink-0">
+            <form onSubmit={handleSubmit} className="flex relative w-full border border-zinc-200 rounded-xl bg-zinc-50 focus-within:border-rose-500 focus-within:shadow-[0_0_15px_rgba(225,29,72,0.15)] transition-all duration-300 p-1.5 shadow-sm">
               <input
                 type="email"
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="Enter your email"
-                className="flex-grow bg-transparent px-4 py-2.5 text-xs font-medium text-black focus:outline-none placeholder:text-zinc-400 min-w-0"
+                placeholder="Enter your email address"
+                className="flex-grow bg-transparent px-3.5 py-2.5 text-xs sm:text-sm font-medium text-black focus:outline-none placeholder:text-zinc-400 min-w-0"
               />
               <button
                 type="submit"
-                className="inline-flex items-center justify-center px-6 py-2.5 rounded-lg text-xs font-bold tracking-wider uppercase bg-black hover:bg-zinc-800 text-white transition-all duration-300 whitespace-nowrap"
+                className="inline-flex items-center justify-center px-5 sm:px-6 py-2.5 rounded-lg text-xs sm:text-sm font-bold tracking-wider uppercase bg-black hover:bg-zinc-800 text-white transition-all duration-300 whitespace-nowrap cursor-pointer shadow-md"
                 aria-label="Subscribe"
               >
                 Get Started

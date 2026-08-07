@@ -331,7 +331,7 @@ const aboutList = [
   { name: "Sustainability & CSR", desc: "Environmental footprint optimization, green computing, and social impact.", href: "/about/sustainability-csr" },
   { name: "Testimonials & Success", desc: "Read client reviews, project feedback, and real-world impact metrics.", href: "/about/testimonials" },
   { name: "Customer Support", desc: "Global support desk, SLA ticketing, and cloud monitoring services.", href: "/about/customer-support" },
-  { name: "Contact Us", desc: "Connect with our consulting offices and engineering boards.", href: "/contact#contact-form" }
+  // { name: "Contact Us", desc: "Connect with our consulting offices and engineering boards.", href: "/contact#contact-form" }
 ];
 
 const ecosystemCategories = [
@@ -857,15 +857,15 @@ export function Navbar() {
 
       <div
         ref={navRef}
-        className="fixed inset-x-0 top-0 z-50 flex justify-center px-4 py-4 pointer-events-none"
+        className="fixed inset-x-0 top-0 z-50 flex justify-center px-2.5 sm:px-4 py-2 sm:py-4 pointer-events-none"
       >
         <header
           className={`w-full max-w-7xl relative rounded-full border transition-all duration-350 ${isVisible
             ? "translate-y-0 opacity-100 pointer-events-auto"
             : "-translate-y-24 opacity-0 pointer-events-none"
             } ${scrolled
-              ? "border-zinc-800 bg-[#030303]/95 backdrop-blur-md shadow-[0_20px_40px_rgba(0,0,0,0.6)] py-4 px-8"
-              : "border-zinc-900/50 bg-[#030303]/60 backdrop-blur-sm py-4 px-8"
+              ? "border-zinc-800 bg-[#030303]/95 backdrop-blur-md shadow-[0_20px_40px_rgba(0,0,0,0.6)] py-2.5 sm:py-4 px-4 sm:px-8"
+              : "border-zinc-900/50 bg-[#030303]/60 backdrop-blur-sm py-2.5 sm:py-4 px-4 sm:px-8"
             } text-white flex items-center justify-between`}
         >
           {/* Brand Logo & Name (Improved Logo Size) */}
@@ -1007,7 +1007,7 @@ export function Navbar() {
                           href="/insights/industry-events"
                           className="hover:text-rose-500 transition-colors flex items-center gap-1.5 font-semibold"
                         >
-                          <span className="w-1.5 h-1.5 rounded-full bg-rose-500 animate-pulse" />
+                         
                           <span>Events</span>
                         </Link>
                         <span className="text-zinc-800">|</span>
@@ -1109,7 +1109,7 @@ export function Navbar() {
                           href="/insights/industry-events"
                           className="hover:text-rose-500 transition-colors flex items-center gap-1.5 font-semibold"
                         >
-                          <span className="w-1.5 h-1.5 rounded-full bg-rose-500 animate-pulse" />
+                         
                           <span>Events</span>
                         </Link>
                         <span className="text-zinc-800">|</span>
@@ -1259,7 +1259,7 @@ export function Navbar() {
                           href="/insights/industry-events"
                           className="hover:text-rose-500 transition-colors flex items-center gap-1.5 font-semibold"
                         >
-                          <span className="w-1.5 h-1.5 rounded-full bg-rose-500 animate-pulse" />
+                         
                           <span>Events</span>
                         </Link>
                         <span className="text-zinc-800">|</span>
@@ -1384,7 +1384,7 @@ export function Navbar() {
                           href="/insights/industry-events"
                           className="hover:text-rose-500 transition-colors flex items-center gap-1.5"
                         >
-                          <span className="w-1.5 h-1.5 rounded-full bg-rose-500 animate-pulse" />
+                         
                           <span>Events</span>
                         </Link>
                         <span className="text-zinc-800">|</span>
@@ -1530,7 +1530,7 @@ export function Navbar() {
                           href="/insights/industry-events"
                           className="hover:text-rose-500 transition-colors flex items-center gap-1.5"
                         >
-                          <span className="w-1.5 h-1.5 rounded-full bg-rose-500 animate-pulse" />
+                         
                           <span>Events</span>
                         </Link>
                         <span className="text-zinc-800">|</span>
@@ -1746,13 +1746,6 @@ export function Navbar() {
 
               <div className="h-[1px] bg-zinc-900 my-2" />
 
-              <Link
-                href="/careers"
-                onClick={() => setMobileOpen(false)}
-                className="text-base font-semibold text-zinc-100 hover:text-rose-400 py-1"
-              >
-                Careers
-              </Link>
               <div>
                 <span className="text-xs uppercase tracking-widest text-rose-500 block mb-3 font-mono font-semibold">About</span>
                 <div className="flex flex-col gap-2 pl-2">
@@ -1775,28 +1768,56 @@ export function Navbar() {
                   ))}
                 </div>
               </div>
+
+              
+              <Link
+                href="/careers"
+                onClick={() => setMobileOpen(false)}
+                className="text-base font-semibold text-zinc-100 hover:text-rose-400 py-1"
+              >
+                Careers
+              </Link>
               <Link
                 href="/contact#contact-form"
                 onClick={() => setMobileOpen(false)}
-                className="mt-4 flex items-center justify-center nav-contact-btn w-full text-base font-bold py-3"
+                className="mt-6 flex items-center justify-center gap-2.5 w-full text-sm sm:text-base font-bold tracking-wider uppercase text-white bg-gradient-to-r from-rose-600 via-rose-500 to-red-600 hover:from-rose-500 hover:to-red-500 rounded-xl py-3.5 px-6 shadow-[0_0_25px_rgba(244,63,94,0.45)] hover:shadow-[0_0_35px_rgba(244,63,94,0.65)] border border-rose-400/30 transition-all duration-300 active:scale-[0.98] group/btn"
               >
-                Contact Us <ArrowUpRight size={16} />
+                <span>Contact Us</span>
+                <ArrowUpRight size={18} className="transform group-hover/btn:translate-x-1 group-hover/btn:-translate-y-0.5 transition-transform" />
               </Link>
 
-              {/* Mobile Drawer Social Footer */}
-              <div className="mt-8 flex justify-center gap-6 border-t border-zinc-900 pt-6">
-                <a href="https://www.linkedin.com/company/devopstrioglobal/posts/?feedView=all" target="_blank" rel="noopener noreferrer" className="transition-all duration-200 hover:scale-110">
-                  <img src="/assets/social-icons/linkedin.svg" alt="LinkedIn" className="w-8 h-8 object-contain transition-all duration-200" />
-                </a>
-                <a href="https://www.facebook.com/profile.php?id=61579126233218" target="_blank" rel="noopener noreferrer" className="transition-all duration-200 hover:scale-110">
-                  <img src="/assets/social-icons/facebook.svg" alt="Facebook" className="w-8 h-8 object-contain transition-all duration-200" />
-                </a>
-                <a href="https://www.instagram.com/devopstrio_offcl/" target="_blank" rel="noopener noreferrer" className="transition-all duration-200 hover:scale-110">
-                  <img src="/assets/social-icons/instagram.svg" alt="Instagram" className="w-8 h-8 object-contain transition-all duration-200" />
-                </a>
-                <a href="https://www.youtube.com/@Devopstrioltd" target="_blank" rel="noopener noreferrer" className="transition-all duration-200 hover:scale-110">
-                  <img src="/assets/social-icons/youtube.svg" alt="YouTube" className="w-8 h-8 object-contain transition-all duration-200" />
-                </a>
+              {/* Mobile Drawer Social Footer (Matching Mega Menu Footer) */}
+              <div className="mt-8 flex flex-col items-center gap-3 border-t border-zinc-900 pt-6">
+                <span className="text-xs font-semibold tracking-wider uppercase text-zinc-400">Connect With Us</span>
+                <div className="flex items-center gap-5 pt-1">
+                  <a
+                    href="https://www.linkedin.com/company/devopstrioglobal/posts/?feedView=all"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-10 h-10 rounded-full border border-zinc-800 bg-zinc-950 flex items-center justify-center text-zinc-400 hover:text-white hover:border-rose-500/50 hover:shadow-[0_0_15px_rgba(244,63,94,0.3)] transition-all duration-300"
+                    title="LinkedIn"
+                  >
+                    <LinkedInIcon className="w-5 h-5" />
+                  </a>
+                  <a
+                    href="https://www.facebook.com/profile.php?id=61579126233218"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-10 h-10 rounded-full border border-zinc-800 bg-zinc-950 flex items-center justify-center text-zinc-400 hover:text-white hover:border-rose-500/50 hover:shadow-[0_0_15px_rgba(244,63,94,0.3)] transition-all duration-300"
+                    title="Facebook"
+                  >
+                    <FacebookIcon className="w-5 h-5" />
+                  </a>
+                  <a
+                    href="https://www.instagram.com/devopstrio_offcl/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-10 h-10 rounded-full border border-zinc-800 bg-zinc-950 flex items-center justify-center text-zinc-400 hover:text-white hover:border-rose-500/50 hover:shadow-[0_0_15px_rgba(244,63,94,0.3)] transition-all duration-300"
+                    title="Instagram"
+                  >
+                    <InstagramIcon className="w-5 h-5" />
+                  </a>
+                </div>
               </div>
             </div>
           </div>

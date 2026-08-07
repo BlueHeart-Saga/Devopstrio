@@ -31,9 +31,9 @@ export function DepartmentContacts() {
         {/* ── Previous Header Design (Pill Badge + Section Title) ───────── */}
         <Reveal className="mb-12 text-center max-w-3xl mx-auto flex flex-col items-center">
           <div className="flex items-center justify-center gap-2 mb-3">
-            <span className="text-[10px] font-bold tracking-[0.22em] uppercase text-zinc-500">
+            {/* <span className="text-[10px] font-bold tracking-[0.22em] uppercase text-zinc-500">
               Departmental Contact Directory
-            </span>
+            </span> */}
           </div>
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight leading-tight text-white">
             Direct Access to Our <span className="text-rose-500">Specialized Teams.</span>

@@ -60,7 +60,7 @@ export function ServicesOverviewPillars() {
   const [activeHoverId, setActiveHoverId] = useState<string | null>(null);
 
   return (
-    <section className="w-full py-0 bg-[#030303] text-white relative">
+    <section className="w-full py-0 bg-[#030303] text-white relative overflow-hidden">
       
 
       
@@ -83,21 +83,30 @@ export function ServicesOverviewPillars() {
                 of your{" "}
                 <span className="relative inline-block text-white px-1 mx-1 whitespace-nowrap">
                   <span className="text-white font-semibold relative z-10">AI transformation</span>
-                  {/* Continuous red pen sketch loop underline with steeper angled cross slope */}
+                  {/* Modern Pencil Art Hand-Sketched Underline */}
                   <svg
-                    className="absolute -bottom-5 -left-2 w-[calc(100%+20px)] h-8 text-rose-500 pointer-events-none overflow-visible z-0"
-                    viewBox="0 0 300 32"
+                    className="absolute -bottom-4 left-0 w-full h-5 text-rose-500 pointer-events-none overflow-visible z-0"
+                    viewBox="0 0 250 20"
                     preserveAspectRatio="none"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
                   >
+                    {/* Primary artistic pencil stroke */}
                     <path
-                      d="M 0 19 C 60 14, 160 7, 294 4 C 300 4, 298 12, 288 12 L 12 19 C 4 19, 8 26, 25 26 L 80 26"
+                      d="M 3 14 C 50 6, 130 17, 245 9"
                       stroke="currentColor"
-                      strokeWidth="2.5"
+                      strokeWidth="3.2"
                       strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="opacity-95 filter drop-shadow-[0_0_8px_rgba(244,63,94,0.7)]"
+                      className="opacity-90 filter drop-shadow-[0_0_10px_rgba(244,63,94,0.6)]"
+                    />
+                    {/* Secondary graphite texture pencil stroke overlay */}
+                    <path
+                      d="M 12 17 C 75 11, 165 18, 238 12"
+                      stroke="currentColor"
+                      strokeWidth="1.8"
+                      strokeLinecap="round"
+                      strokeDasharray="6 3 14 4"
+                      className="opacity-75 filter drop-shadow-[0_0_5px_rgba(244,63,94,0.4)]"
                     />
                   </svg>
                 </span>
@@ -132,7 +141,7 @@ export function ServicesOverviewPillars() {
                   >
                     <div className="mb-2 flex items-baseline justify-between">
                       <Link href={pillar.mainLink} className="group/title block">
-                        <h3 className="text-4xl md:text-5xl xl:text-6xl font-bold tracking-tight text-rose-500 group-hover/title:text-rose-400 font-sans transition-colors duration-300">
+                        <h3 className="text-4xl md:text-5xl xl:text-6xl font-semibold tracking-tight text-rose-500 group-hover/title:text-rose-400 font-sans transition-colors duration-300">
                           {pillar.title}
                         </h3>
                       </Link>

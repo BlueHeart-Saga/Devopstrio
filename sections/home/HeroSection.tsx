@@ -260,15 +260,15 @@ export function HeroSection() {
   }, [slides.length]);
 
   return (
-    <section ref={heroRef} className="relative w-full h-[95vh] min-h-[600px] lg:min-h-[750px] xl:min-h-[850px] max-h-[950px] flex items-center justify-center bg-[#030303] text-white pt-16 pb-12 lg:pb-0 overflow-hidden">
-      <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center w-full">
+    <section ref={heroRef} className="relative w-full min-h-[520px] lg:h-[95vh] lg:min-h-[750px] xl:min-h-[850px] max-h-[950px] flex items-center justify-center bg-[#030303] text-white pt-20 sm:pt-24 lg:pt-16 pb-8 lg:pb-0 overflow-hidden">
+      <div className="max-w-7xl mx-auto w-full px-4 sm:px-8 xl:px-8 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-12 lg:gap-8 items-center w-full">
 
           {/* Left Column: Text content - constrained to max 50% width on large screens */}
-          <div className="lg:col-span-6 lg:pr-6 pl-2 sm:pl-6 md:pl-10 lg:pl-14 xl:pl-14 flex flex-col items-start text-left justify-center relative z-20 py-4 lg:py-8">
+          <div className="lg:col-span-6 lg:pr-6 pl-1 sm:pl-6 md:pl-10 lg:pl-14 xl:pl-14 flex flex-col items-start text-left justify-center relative z-20 py-2 sm:py-4 lg:py-8">
 
             {/* Fixed-height title area so all slides stay at same vertical level */}
-            <div className="relative w-full min-h-[300px] sm:min-h-[340px] md:min-h-[380px] lg:min-h-[400px] xl:min-h-[440px] flex items-center">
+            <div className="relative w-full min-h-[220px] sm:min-h-[300px] md:min-h-[360px] lg:min-h-[400px] xl:min-h-[440px] flex items-center">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={currentSlide}
@@ -293,48 +293,16 @@ export function HeroSection() {
                   }}
                   className="absolute inset-0 flex flex-col items-start text-left w-full justify-center"
                 >
-                  {/* Eyebrow */}
-                  {/* <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-zinc-800/80 bg-zinc-950/40 mb-6">
-                    <span className="w-1.5 h-1.5 rounded-full bg-red-600 animate-pulse" />
-                    <span className="text-[10px] sm:text-xs font-semibold tracking-[0.2em] uppercase text-zinc-400">
-                      {slides[currentSlide].eyebrow}
-                    </span>
-                  </div> */}
-
                   {/* Heading — same font size and line-height for every slide */}
-                  <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-semibold tracking-tight leading-[1.12] text-white max-w-[620px]">
+                  <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-semibold tracking-tight leading-[1.15] sm:leading-[1.12] text-white max-w-[620px]">
                     {slides[currentSlide].title}
                   </h1>
                 </motion.div>
               </AnimatePresence>
             </div>
 
-            {/* CTA buttons */}
-            {/* <div className="flex flex-wrap gap-4 items-center justify-start mb-8">
-              <Link
-                className="inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white transition-all duration-300 hover:shadow-[0_0_25px_rgba(225,29,72,0.35)] hover:-translate-y-0.5"
-                href={slides[currentSlide].primaryBtn.href}
-              >
-                {slides[currentSlide].primaryBtn.text}
-              </Link>
-              <Link
-                className="inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase border border-zinc-850 hover:border-zinc-750 bg-zinc-950/60 hover:bg-zinc-900 text-white transition-all duration-300 hover:-translate-y-0.5"
-                href={slides[currentSlide].secondaryBtn.href}
-              >
-                {slides[currentSlide].secondaryBtn.text}
-              </Link>
-              <a
-                 href="https://devopstrioaiservices-e6dnggh5gxehh9d0.southindia-01.azurewebsites.net"
-                 target="_blank"
-                 rel="noopener noreferrer"
-                 className="inline-flex items-center justify-center rounded-xl bg-red-600 px-6 py-3.5 text-white hover:bg-red-700 font-bold text-xs tracking-wider uppercase transition-all duration-300 hover:shadow-[0_0_25px_rgba(225,29,72,0.4)] hover:-translate-y-0.5"
-               >
-                 🚀 Launch AI Studio
-               </a>
-            </div> */}
-
-            {/* Slide Indicators — always pinned below the fixed title area */}
-            <div className="flex gap-2 relative z-20 mt-6">
+            {/* Slide Indicators — hidden on mobile screens */}
+            <div className="hidden sm:flex gap-2 relative z-20 mt-4 sm:mt-6">
               {slides.map((_, idx) => (
                 <button
                   key={idx}
@@ -348,7 +316,7 @@ export function HeroSection() {
           </div>
 
           {/* Right Column: Person Image & Glow Background centered vertically */}
-          <div className="lg:absolute lg:top-1/2 lg:-translate-y-1/2 lg:right-0 xl:right-0 relative flex items-center justify-center z-10 w-full max-w-[380px] sm:max-w-[460px] lg:max-w-[580px] xl:max-w-[680px] mt-6 lg:mt-0 pb-0 mb-0">
+          <div className="lg:absolute lg:top-1/2 lg:-translate-y-1/2 lg:right-0 xl:right-0 relative flex items-center justify-center z-10 w-full max-w-[320px] sm:max-w-[460px] lg:max-w-[580px] xl:max-w-[680px] mt-2 lg:mt-0 pb-0 mb-0 mx-auto">
 
             {/* Preload images to eliminate network delay on slide change */}
             <div className="hidden" aria-hidden="true">
@@ -377,7 +345,7 @@ export function HeroSection() {
                   duration: 0.65,
                   ease: [0.22, 1, 0.36, 1]
                 }}
-                className="relative z-10 w-full max-w-[420px] sm:max-w-[500px] lg:max-w-[580px] xl:max-w-[680px] flex items-end justify-center pb-0 mb-0"
+                className="relative z-10 w-full max-w-[340px] sm:max-w-[500px] lg:max-w-[580px] xl:max-w-[680px] flex items-end justify-center pb-0 mb-0"
               >
                 <Image
                   src={slides[currentSlide].image}
@@ -385,7 +353,7 @@ export function HeroSection() {
                   priority
                   width={680}
                   height={850}
-                  className="w-full h-auto object-contain max-h-[460px] lg:max-h-[750px] xl:max-h-[850px] select-none pb-0 mb-0"
+                  className="w-full h-auto object-contain max-h-[300px] sm:max-h-[460px] lg:max-h-[750px] xl:max-h-[850px] select-none pb-0 mb-0"
                 />
                 {/* Bottom blending gradient */}
                 <div className="absolute bottom-[-1px] left-0 right-0 h-36 bg-gradient-to-t from-[#030303] via-[#030303]/90 to-transparent pointer-events-none z-20" />

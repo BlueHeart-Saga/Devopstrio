@@ -30,7 +30,7 @@ export const LeadershipHero = () => {
       {/* Content Container (Bottom Left-aligned) */}
       <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-20 w-full text-left">
         <div className="max-w-2xl space-y-5">
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
@@ -38,7 +38,7 @@ export const LeadershipHero = () => {
           >
             <Users2 className="w-3.5 h-3.5" />
             Leadership &amp; Talent
-          </motion.div>
+          </motion.div> */}
 
           <motion.h1
             initial={{ opacity: 0, y: 20 }}

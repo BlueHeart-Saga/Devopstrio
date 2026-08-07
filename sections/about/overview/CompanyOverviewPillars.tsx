@@ -18,7 +18,7 @@ const overviewPillars: OverviewPillar[] = [
   {
     id: "people",
     title: "Our People",
-    subtitle: "The People Behind Every Solution",
+    subtitle: "People Behind Every Solution",
     mainLink: "/about/company-overview",
     ctaText: "Discover Our Team",
     items: [

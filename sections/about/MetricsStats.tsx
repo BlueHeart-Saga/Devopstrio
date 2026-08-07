@@ -31,9 +31,9 @@ export function MetricsStats() {
         <Reveal className="grid grid-cols-1 lg:grid-cols-[1.15fr_0.85fr] gap-8 lg:gap-16 items-center mb-16">
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-rose-500">
+              {/* <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-rose-500">
                 By the Numbers
-              </span>
+              </span> */}
             </div>
             <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-4">
               The <span className="text-rose-500">results speak for themselves</span> — <span className="font-bold">every time.</span>

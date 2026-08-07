@@ -18,11 +18,11 @@ export function CompanyIntro() {
         {/* Headline & Paragraph                                                      */}
         {/* ========================================================================= */}
         <div className="text-center max-w-4xl mx-auto mb-10 md:mb-12">
-          <Reveal>
+          {/* <Reveal>
             <span className="inline-block px-3.5 py-1.5 text-rose-500 rounded-full text-[10px] font-bold tracking-widest uppercase mb-6">
               Company Overview
             </span>
-          </Reveal>
+          </Reveal> */}
           <Reveal delay={0.1}>
             <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight text-white mb-4">
               We build the intelligent digital foundations that scale global innovation.

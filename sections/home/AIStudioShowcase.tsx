@@ -80,46 +80,54 @@ export function AIStudioShowcase() {
       id: "solutions",
       title: "AI Solutions",
       description: "Custom enterprise solutions built on top-tier cognitive stacks, incorporating semantic retrieval systems and customized LLMs.",
+      image: "/assets/Home-page/Servicescard/AI/Ai solutions.png",
       link: `${aiWebsiteUrl}/#solutions`
     },
     {
       id: "services",
       title: "AI Services",
       description: "End-to-end consulting, continuous modernization, custom model training, and integration pipelines built for modern businesses.",
+      image: "/assets/Home-page/Servicescard/AI/AI Services.png",
       link: `${aiWebsiteUrl}/#services`
     },
     {
       id: "agents",
       title: "AI Agents",
       description: "Deploy autonomous digital agents trained for IT support operations, sales pipeline execution, finance auditing, and HR operations.",
+      image: "/assets/Home-page/Servicescard/AI/AI Agents.png",
       link: `${aiWebsiteUrl}/#agents`
     },
     {
       id: "industry",
       title: "AI by Industry",
       description: "Engineered frameworks optimized specifically for Healthcare workflows, Banking security compliance, and Smart Retail recommendations.",
+      image: "/assets/Home-page/Servicescard/AI/AI by industry.png",
       link: `${aiWebsiteUrl}/#industries`
     },
     {
       id: "ecosystem",
       title: "AI Technology Ecosystem",
       description: "Harness standard-setting integrations with OpenAI, Anthropic, LangChain, vector datastores, and cloud environments.",
+      image: "/assets/Home-page/Servicescard/AI/AI Technology eco system.png",
       link: `${aiWebsiteUrl}/#ecosystem`
     },
     {
       id: "governance",
       title: "AI Governance",
       description: "Establish model explainability benchmarks, human-in-the-loop oversight workflows, and zero-trust security audits.",
+      image: "/assets/Home-page/Servicescard/AI/AI Covernance.png",
       link: `${aiWebsiteUrl}/#governance`
     },
-    
     {
       id: "platforms",
       title: "AI Platforms & Products",
       description: "Activate AIHire matching platforms, cognitive search indexers, and automated academic document evaluation studios.",
+      image: "/assets/Home-page/Servicescard/AI/AI Platforms & Products.png",
       link: `${aiWebsiteUrl}/#platforms`
     }
   ];
+
+  const activeCategoryItem = categories.find((c) => c.id === activeCategory) || categories[0];
 
   return (
     <section className="w-full pt-16 pb-16 md:pb-24 bg-[#030303] text-white relative overflow-hidden border-b border-zinc-900">
@@ -135,16 +143,14 @@ export function AIStudioShowcase() {
               Shaping the Future with Enterprise AI <span className="text-rose-500">Innovation</span>
             </h2>
           </Reveal>
-         
-          
         </div>
 
-        {/* Original Accordion Layout with updated directory content */}
+        {/* Accordion Layout */}
         <Reveal>
           <div className="relative rounded-2xl border border-zinc-800/80 bg-zinc-950/40 backdrop-blur-md p-4 md:p-6 mb-16 overflow-hidden shadow-2xl">
             <div className="grid grid-cols-1 lg:grid-cols-10 gap-6 lg:gap-8 items-stretch">
               
-              {/* Accordion Left Side (30% Width Ratio) */}
+              {/* Accordion Left Side */}
               <div className="lg:col-span-3 flex flex-col divide-y divide-zinc-800/80 border-t border-b border-zinc-800/80">
                 {categories.map((item) => {
                   const isOpen = activeCategory === item.id;
@@ -152,8 +158,9 @@ export function AIStudioShowcase() {
                   return (
                     <div 
                       key={item.id} 
-                      className="py-2 transition-colors"
+                      className="py-2 transition-colors cursor-pointer"
                       onMouseEnter={() => setActiveCategory(item.id)}
+                      onClick={() => setActiveCategory(item.id)}
                     >
                       <div className="w-full flex items-center justify-between text-left group">
                         <a 
@@ -186,24 +193,22 @@ export function AIStudioShowcase() {
                 })}
               </div>
 
-              {/* Right Panel (70% Width Ratio): Dynamic Image Display matching active accordion category */}
+              {/* Right Panel: Dynamic Image Display matching active category */}
               <div className="lg:col-span-7 flex flex-col justify-stretch">
-                <div className="rounded-2xl border border-zinc-800/80 bg-zinc-950/40 backdrop-blur-md overflow-hidden shadow-2xl h-full min-h-[160px] md:min-h-[220px] flex items-center justify-center relative group/img">
-                  {/* Category Image Map */}
-                  <img 
-                    src={
-                      activeCategory === "agents" 
-                        ? "/assets/ecosystem/innovation-labs page_metrica card_4/Agentic Automation.png"
-                        : activeCategory === "platforms"
-                        ? "/assets/ecosystem/innovation-labs page_metrica card_4/Enterprise AI R&D Studio.png"
-                        : activeCategory === "solutions" || activeCategory === "services"
-                        ? "/assets/ecosystem/innovation-labs page_metrica card_4/Generative AI & Copilots.png"
-                        : "/assets/ecosystem/innovation-labs page_metrica card_4/Document & Workflow AI.png"
-                    } 
-                    alt="Enterprise AI Feature Preview" 
-                    className="absolute inset-0 w-full h-full object-cover transition-all duration-700 ease-in-out transform group-hover/img:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none" />
+                <div className="rounded-2xl border border-zinc-800/80 bg-zinc-950/40 backdrop-blur-md overflow-hidden shadow-2xl h-full min-h-[260px] md:min-h-[380px] flex items-center justify-center relative group/img">
+                  <AnimatePresence mode="wait">
+                    <motion.img 
+                      key={activeCategoryItem.id}
+                      src={activeCategoryItem.image} 
+                      alt={activeCategoryItem.title} 
+                      initial={{ opacity: 0, scale: 1.02 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      exit={{ opacity: 0, scale: 1.02 }}
+                      transition={{ duration: 0.4 }}
+                      className="absolute inset-0 w-full h-full object-cover pointer-events-none brightness-95"
+                    />
+                  </AnimatePresence>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
                 </div>
               </div>
 

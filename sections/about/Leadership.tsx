@@ -384,6 +384,32 @@ export function Leadership() {
           </div>
         </Reveal>
 
+        {/* ── Team Values Banner Section ── */}
+        <Reveal>
+          <div className="relative w-full mt-20 mb-12">
+            {/* Top Team Photo Banner */}
+            <div className="relative w-full h-[320px] sm:h-[420px] md:h-[500px] overflow-hidden shadow-2xl">
+              <img
+                src="/assets/About-page/overview/team.png"
+                alt="Devopstrio Global Team"
+                className="w-full h-full object-cover object-center select-none"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20 pointer-events-none" />
+            </div>
+
+            {/* Floating Overlapping White Card (Matching Reference Image) */}
+            <div className="max-w-4xl mx-auto w-full -mt-24 sm:-mt-32 relative z-20 px-4">
+              <div className="bg-white rounded-2xl sm:rounded-3xl p-8 sm:p-12 md:p-14 text-center shadow-[0_25px_60px_rgba(0,0,0,0.6)] border border-zinc-200/80 transition-all duration-300 hover:shadow-[0_30px_70px_rgba(0,0,0,0.7)]">
+                <h3 className="text-2xl sm:text-4xl md:text-5xl font-bold text-zinc-950 tracking-tight leading-tight max-w-2xl mx-auto">
+                  The core values and principles that drive us
+                </h3>
+                
+                {/* Red accent line indicator */}
+                <div className="w-12 h-1 bg-rose-600 rounded-full mx-auto mt-6 sm:mt-8" />
+              </div>
+            </div>
+          </div>
+        </Reveal>
 
       </div>
     </section>

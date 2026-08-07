@@ -11,56 +11,64 @@ const industryTabs = [
     name: "Banking & Finance",
     title: "Banking & Finance",
     description: "Achieve your business goals faster with secure custom solutions, from mobile banking apps and payment systems to fraud detection tools. Serve customers better and meet strict regulatory requirements.",
-    image: "/assets/Industries-page/slider/Bank and finance.png"
+    image: "/assets/Industries-page/slider/Bank and finance.png",
+    mobileImage: "/assets/Industries-page/industries/Banking & Finance.png"
   },
   {
     id: "healthcare",
     name: "Healthcare & Life Sciences",
     title: "Healthcare & Life Sciences",
     description: "Enable high-performance clinical data pipeline processing, secure HIPAA-compliant telehealth applications, and multi-cloud collaboration spaces.",
-    image: "/assets/Industries-page/slider/Healthcare & Life Sciences.png"
+    image: "/assets/Industries-page/slider/Healthcare & Life Sciences.png",
+    mobileImage: "/assets/Industries-page/industries/Healthcare & Life Sciences.png"
   },
   {
     id: "retail",
     name: "Retail & E-Commerce",
     title: "Retail & E-Commerce",
     description: "Deploy omnichannel commerce recommendation engines, high-speed product checkout paths, and dynamic warehouse inventory syncs.",
-    image: "/assets/Industries-page/slider/Retail & E-Commerce.png"
+    image: "/assets/Industries-page/slider/Retail & E-Commerce.png",
+    mobileImage: "/assets/Industries-page/industries/Retail & E-Commerce.png"
   },
   {
     id: "manufacturing",
     name: "Manufacturing",
     title: "Manufacturing & Industry 4.0",
     description: "Connect factory-floor IoT sensory networks, orchestrate predictive maintenance logs, and establish cloud-first supply chain monitoring.",
-    image: "/assets/Industries-page/slider/Manufacturing.png"
+    image: "/assets/Industries-page/slider/Manufacturing.png",
+    mobileImage: "/assets/Industries-page/industries/Manufacturing.png"
   },
   {
     id: "telecom",
     name: "Telecommunications",
     title: "Telecommunications",
     description: "Orchestrate high-density OSS/BSS platforms, scalable 5G network integration nodes, and real-time telecom analytics clusters.",
-    image: "/assets/Industries-page/slider/Telecommunication.png"
+    image: "/assets/Industries-page/slider/Telecommunication.png",
+    mobileImage: "/assets/Industries-page/industries/Telecommunications.png"
   },
   {
     id: "media",
     name: "Media & Entertainment",
     title: "Media & Entertainment",
     description: "Deliver high-bandwidth VOD streaming architectures, intelligent asset distribution pipelines, and real-time digital rendering lobbies.",
-    image: "/assets/Industries-page/slider/Media & Entertainment.png"
+    image: "/assets/Industries-page/slider/Media & Entertainment.png",
+    mobileImage: "/assets/Industries-page/industries/Media & Entertainment.png"
   },
   {
     id: "education",
     name: "Education",
     title: "Education & EdTech",
     description: "Deploy collaborative learning management ecosystems, remote interactive classrooms, and secure academic credential validation nodes.",
-    image: "/assets/Industries-page/slider/Education.png"
+    image: "/assets/Industries-page/slider/Education.png",
+    mobileImage: "/assets/Industries-page/industries/Education.png"
   },
   {
     id: "government",
     name: "Government & Public Sector",
     title: "Government & Public Sector",
     description: "Modernize national security portals, establish cloud migration frameworks, and meet strict federal regulatory and database security compliance.",
-    image: "/assets/Industries-page/slider/Government & Public Sector.png"
+    image: "/assets/Industries-page/slider/Government & Public Sector.png",
+    mobileImage: "/assets/Industries-page/industries/Government & Public Sector.png"
   }
 ];
 
@@ -69,13 +77,13 @@ export function IndustryExpertise() {
   const activeData = industryTabs.find((tab) => tab.id === activeTab) || industryTabs[0];
 
   return (
-    <section className="w-full py-8 bg-[#030303] text-white relative">
+    <section className="w-full py-8 bg-[#030303] text-white relative overflow-hidden">
       <div className="max-w-7xl mx-auto w-full px-6 sm:px-8 relative z-10">
         
         {/* Section Title */}
         <div className="text-center max-w-4xl mx-auto mb-10 relative">
           {/* Left-to-right arrow PNG pointing to header */}
-          <div className="absolute -top-6 sm:-top-8 md:-top-10 -left-6 sm:-left-10 md:-left-14 lg:-left-20 z-20 pointer-events-none select-none">
+          <div className="absolute -top-6 sm:-top-8 md:-top-10 left-0 sm:-left-10 md:-left-14 lg:-left-20 z-20 pointer-events-none select-none">
             <img
               src="/assets/components/lefttoright.png"
               alt="Left to right arrow"
@@ -122,9 +130,51 @@ export function IndustryExpertise() {
 
         {/* Showcase Banner Display area */}
         <Reveal>
-          <div className="relative w-full rounded-2xl bg-zinc-950 border border-zinc-800/80 shadow-[0_20px_50px_rgba(0,0,0,0.8)] min-h-[340px] md:min-h-[400px] flex items-center mb-28">
-            {/* Background banner image container to keep image bounded */}
-            <div className="absolute inset-0 rounded-2xl overflow-hidden">
+          {/* Mobile View: Clean Rectangular Stacked Card Layout (< md) */}
+          <div className="block md:hidden relative w-full rounded-3xl bg-zinc-950 border border-zinc-900 shadow-[0_20px_60px_rgba(0,0,0,0.8)] overflow-hidden mb-16">
+            {/* Mobile Rectangular Banner Image Container */}
+            <div className="relative w-full aspect-[16/10] overflow-hidden bg-zinc-900">
+              <AnimatePresence mode="wait">
+                <motion.img
+                  key={activeData.id}
+                  src={activeData.mobileImage || activeData.image}
+                  alt={activeData.name}
+                  initial={{ opacity: 0, scale: 1.02 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 1.02 }}
+                  transition={{ duration: 0.4 }}
+                  className="w-full h-full object-cover pointer-events-none brightness-95"
+                />
+              </AnimatePresence>
+            </div>
+
+            {/* Mobile Solid Rose Content Card */}
+            <div className="relative z-10 w-full bg-rose-600 p-6 flex flex-col justify-between min-h-[220px] shadow-2xl">
+              <div>
+                <h3 className="text-xl font-bold tracking-tight text-white mb-2.5">
+                  {activeData.title}
+                </h3>
+                <p className="text-white text-xs font-medium leading-relaxed opacity-95">
+                  {activeData.description}
+                </p>
+              </div>
+              
+              <div className="pt-4">
+                <a 
+                  href="/industries" 
+                  className="text-xs font-bold text-white hover:text-rose-100 uppercase tracking-wider inline-flex items-center gap-2 group/btn w-fit relative z-30"
+                >
+                  <span>Learn more</span>
+                  <ArrowUpRight size={16} className="transform group-hover/btn:translate-x-1 group-hover/btn:-translate-y-0.5 transition-transform text-white" />
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* Desktop / Laptop View: Floating Overlapping Red Card extending half outside bottom (>= md) */}
+          <div className="hidden md:flex relative w-full rounded-3xl bg-zinc-950 border border-zinc-800/80 shadow-[0_20px_50px_rgba(0,0,0,0.8)] min-h-[340px] lg:min-h-[400px] flex items-center mb-28">
+            {/* Background Full Banner Image Container */}
+            <div className="absolute inset-0 rounded-3xl overflow-hidden">
               <AnimatePresence mode="wait">
                 <motion.img
                   key={activeData.id}
@@ -140,16 +190,16 @@ export function IndustryExpertise() {
               <div className="absolute inset-0 bg-black/15 pointer-events-none" />
             </div>
 
-            {/* Foreground Detail Box - Solid Plain Red Brand Card */}
-            <div className="relative z-10 max-w-sm md:max-w-md ml-6 sm:ml-12 mt-20 -mb-20 bg-rose-600 border border-rose-500 rounded-2xl p-8 md:p-10 shadow-[0_25px_50px_rgba(0,0,0,0.7),0_0_30px_rgba(225,29,72,0.4)] flex flex-col justify-between min-h-[300px] md:min-h-[340px] group overflow-hidden transition-all duration-500 hover:shadow-[0_25px_60px_rgba(0,0,0,0.8),0_0_40px_rgba(225,29,72,0.6)]">
+            {/* Floating Red Detail Card on Left extending half outside bottom */}
+            <div className="relative z-10 max-w-sm lg:max-w-md ml-8 lg:ml-14 mt-20 -mb-20 bg-rose-600 border border-rose-500 rounded-2xl p-8 lg:p-10 shadow-[0_25px_50px_rgba(0,0,0,0.7),0_0_30px_rgba(225,29,72,0.4)] flex flex-col justify-between min-h-[300px] lg:min-h-[340px] group overflow-hidden transition-all duration-500 hover:shadow-[0_25px_60px_rgba(0,0,0,0.8),0_0_40px_rgba(225,29,72,0.6)]">
               {/* Glass Slide Sheen Light Sweep on Hover */}
               <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out bg-gradient-to-r from-transparent via-white/30 to-transparent pointer-events-none z-20" />
 
               <div>
-                <h3 className="text-xl md:text-2xl font-bold tracking-tight text-white mb-4">
+                <h3 className="text-xl lg:text-2xl font-bold tracking-tight text-white mb-4">
                   {activeData.title}
                 </h3>
-                <p className="text-white text-xs md:text-sm font-medium leading-relaxed opacity-95">
+                <p className="text-white text-xs lg:text-sm font-medium leading-relaxed opacity-95">
                   {activeData.description}
                 </p>
               </div>

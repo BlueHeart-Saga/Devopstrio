@@ -75,7 +75,7 @@ export function PartnersSection() {
   const displayedPartners = partners.slice(page * itemsPerPage, (page + 1) * itemsPerPage);
 
   return (
-    <section className="w-full py-12 md:py-16 bg-[#030303] text-white relative" id="partners">
+    <section className="w-full py-12 md:py-16 bg-[#030303] text-white relative overflow-hidden" id="partners">
       <style dangerouslySetInnerHTML={{
         __html: `
         @keyframes customFade {
@@ -87,16 +87,16 @@ export function PartnersSection() {
         }
       `}} />
 
-      <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
+      <div className="max-w-7xl mx-auto w-full px-4 sm:px-8 xl:px-8 relative z-10">
         {/* Header */}
         <Reveal className="max-w-3xl mb-12 text-center mx-auto">
           <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight mb-4 text-white relative inline-block">
             {/* Connecting side arrow starting right at left side of "Some of Our Clients" */}
-            <div className="absolute -top-2 sm:-top-4 md:-top-6 -left-20 sm:-left-28 md:-left-36 lg:-left-40 z-30 pointer-events-none select-none">
+            <div className="absolute -top-2 sm:-top-4 md:-top-6 -left-4 sm:-left-28 md:-left-36 lg:-left-40 z-30 pointer-events-none select-none">
               <img
                 src="/assets/components/top-to-buttom-side%20-Arrowmid.png"
                 alt="Connecting section arrow"
-                className="w-16 sm:w-20 md:w-24 lg:w-28 h-auto object-contain filter drop-shadow-[0_0_20px_rgba(225,29,72,0.4)] transform -rotate-[-30deg]"
+                className="w-12 sm:w-20 md:w-24 lg:w-28 h-auto object-contain filter drop-shadow-[0_0_20px_rgba(225,29,72,0.4)] transform -rotate-[-30deg]"
               />
             </div>
             Some of Our Clients

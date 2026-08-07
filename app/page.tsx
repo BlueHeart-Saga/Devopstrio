@@ -26,7 +26,7 @@ import { TrustBanner } from "@/sections/home/TrustBanner";
 
 export default function Home() {
   return (
-    <main>
+    <main className="w-full overflow-x-hidden relative">
       {/* 1. Hero */}
       <HeroSection />
 

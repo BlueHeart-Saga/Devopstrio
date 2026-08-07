@@ -14,42 +14,39 @@ export function CompanyOverviewSection() {
           {/* Left Column: Brief Story Intro & Stats */}
           <div className="lg:col-span-7 text-left space-y-8">
             <Reveal>
-              <span className="text-xs md:text-sm font-extrabold tracking-[0.25em] uppercase text-rose-500 mb-3 block font-mono">
+              <span className="text-sm sm:text-base font-extrabold tracking-[0.25em] uppercase text-rose-500 mb-3 block font-mono">
                 ABOUT DEVOPSTRIO
               </span>
-              {/* <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight text-white mb-6">
-                Engineering Digital Transformation Through Innovation
-              </h2> */}
             </Reveal>
 
             {/* Brief & Punchy Story Intro */}
             <Reveal delay={0.05}>
-              <p className="text-zinc-300 text-sm md:text-base leading-relaxed font-medium">
+              <p className="text-zinc-200 text-base sm:text-lg md:text-xl leading-relaxed font-medium">
                 Devopstrio was founded with a single purpose: to empower businesses by turning complex technology into simple, scalable, and high-impact digital solutions. Today, we partner with enterprise leaders worldwide to accelerate innovation across AI, Cloud, DevOps, and modern software engineering.
               </p>
             </Reveal>
 
             {/* Stats list */}
-            <Reveal delay={0.15}>
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 pt-6 border-t border-zinc-900 mt-8">
+            {/* <Reveal delay={0.15}>
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 pt-8 border-t border-zinc-900 mt-10">
                 <div>
-                  <div className="text-2xl sm:text-3xl font-black text-white tracking-tight mb-1">2,500+</div>
-                  <div className="text-xs font-bold text-zinc-500 uppercase tracking-wider font-mono">projects delivered</div>
+                  <div className="text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight mb-1.5">2,500+</div>
+                  <div className="text-xs sm:text-sm font-bold text-zinc-400 uppercase tracking-wider font-mono">projects delivered</div>
                 </div>
                 <div>
-                  <div className="text-2xl sm:text-3xl font-black text-white tracking-tight mb-1">525+</div>
-                  <div className="text-xs font-bold text-zinc-500 uppercase tracking-wider font-mono">technology experts</div>
+                  <div className="text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight mb-1.5">525+</div>
+                  <div className="text-xs sm:text-sm font-bold text-zinc-400 uppercase tracking-wider font-mono">technology experts</div>
                 </div>
                 <div>
-                  <div className="text-2xl sm:text-3xl font-black text-white tracking-tight mb-1">7+</div>
-                  <div className="text-xs font-bold text-zinc-500 uppercase tracking-wider font-mono">years experience</div>
+                  <div className="text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight mb-1.5">7+</div>
+                  <div className="text-xs sm:text-sm font-bold text-zinc-400 uppercase tracking-wider font-mono">years experience</div>
                 </div>
                 <div>
-                  <div className="text-2xl sm:text-3xl font-black text-white tracking-tight mb-1">4+</div>
-                  <div className="text-xs font-bold text-zinc-500 uppercase tracking-wider font-mono">global regions</div>
+                  <div className="text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight mb-1.5">4+</div>
+                  <div className="text-xs sm:text-sm font-bold text-zinc-400 uppercase tracking-wider font-mono">global regions</div>
                 </div>
               </div>
-            </Reveal>
+            </Reveal> */}
           </div>
 
           {/* Right Column: Support Image & Badge */}
@@ -65,14 +62,14 @@ export function CompanyOverviewSection() {
               </div>
 
               {/* Floating "7+ Years" badge */}
-              <div className="absolute -bottom-6 -right-2 md:-right-6 p-5 max-w-[210px] bg-zinc-950/90 backdrop-blur-md border border-zinc-800 rounded-2xl shadow-[0_15px_30px_rgba(0,0,0,0.7)] text-left z-20">
-                <div className="text-3xl font-black text-rose-500 tracking-tight leading-none mb-1">
+              <div className="absolute -bottom-6 -right-2 md:-right-6 p-6 max-w-[240px] bg-zinc-950/95 backdrop-blur-md border border-zinc-800 rounded-2xl shadow-[0_15px_30px_rgba(0,0,0,0.7)] text-left z-20">
+                <div className="text-4xl font-black text-rose-500 tracking-tight leading-none mb-1.5">
                   7+
                 </div>
-                <div className="text-[10px] font-bold text-white uppercase tracking-[0.2em] mb-1.5 font-mono">
+                <div className="text-xs font-bold text-white uppercase tracking-[0.2em] mb-2 font-mono">
                   YEARS OF EXPERIENCE
                 </div>
-                <p className="text-xs text-zinc-300 font-medium leading-relaxed">
+                <p className="text-xs sm:text-sm text-zinc-300 font-medium leading-relaxed">
                   Delivering value and building lasting enterprise partnerships worldwide.
                 </p>
               </div>

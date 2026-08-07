@@ -147,7 +147,7 @@ export function CoreServices() {
 
   return (
     <section
-      className="w-full py-8 bg-[#030303] text-white relative"
+      className="w-full py-8 bg-[#030303] text-white relative overflow-hidden"
       id="capabilities"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
@@ -156,7 +156,7 @@ export function CoreServices() {
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[radial-gradient(circle_at_top_right,rgba(220,38,38,0.05),transparent_70%)] blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[radial-gradient(circle_at_bottom_left,rgba(225,29,72,0.04),transparent_70%)] blur-3xl pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
+      <div className="max-w-7xl mx-auto w-full px-4 sm:px-8 xl:px-8 relative z-10">
 
         {/* Section Header */}
         <Reveal>
