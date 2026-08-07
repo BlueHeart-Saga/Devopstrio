@@ -81,12 +81,23 @@ export function PerksBenefits() {
         {/* Section Header & Square Navigation Buttons */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
           <Reveal>
-            <div className="max-w-2xl text-left">
-              {/* <span className="text-[11px] font-mono font-bold tracking-[0.25em] uppercase text-rose-500 mb-3 block">
-                PERKS & REWARDS
-              </span> */}
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight leading-tight text-white uppercase font-sans">
-                Benefits built for your <span className="text-rose-500">wellbeing & growth</span>
+            <div className="max-w-2xl text-left relative">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight leading-tight text-white font-sans">
+                Benefits built for your wellbeing {" "}
+                <span className="relative inline-block">
+                  {/* Arrow image placed directly near Grow word */}
+                  <div className="absolute -top-10 -left-20 pointer-events-none select-none hidden sm:block">
+                    <img
+                      src="/assets/components/lefttoright.png"
+                      alt="Arrow indicator"
+                      className="w-12 sm:w-14 h-auto object-contain filter drop-shadow-[0_0_15px_rgba(244,63,94,0.4)]"
+                    />
+                  </div>
+
+                  <span className="bg-rose-500 text-white font-semibold px-4 py-1 mr-1 rounded-xl inline-block">
+                    Grow.
+                  </span>
+                </span>
               </h2>
             </div>
           </Reveal>

@@ -29,12 +29,24 @@ export function OpenPositions() {
 
       <div className="max-w-5xl mx-auto w-full px-6 relative z-10 text-center">
         <Reveal>
-          
-          {/* Headline */}
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-tight mb-6">
-            Find your <span className="bg-rose-600 text-white px-5 py-1.5 rounded-xl inline-block transform -rotate-2 shadow-[0_10px_30px_rgba(225,29,72,0.4)] mx-1">dream job</span> at<br className="hidden md:block" />
-            <span className="md:mt-2 inline-block">Devopstrio</span>
-          </h2>
+          <div className="relative mb-6">
+            {/* Top-to-bottom arrow PNG */}
+            <div className="flex justify-center mb-3 pointer-events-none select-none">
+              <img
+                src="/assets/components/streight-toptobuttm.png"
+                alt="Arrow indicator"
+                className="w-8 sm:w-10 h-auto object-contain filter drop-shadow-[0_0_12px_rgba(244,63,94,0.4)]"
+              />
+            </div>
+
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold text-white tracking-tight leading-tight">
+              Find your{" "}
+              <span className="bg-rose-500 text-white font-semibold px-4 sm:px-6 py-1 sm:py-1.5 rounded-xl inline-block mx-1">
+                dream job
+              </span>{" "}
+              at Devopstrio.
+            </h2>
+          </div>
           
           {/* <p className="text-zinc-400 text-base md:text-lg max-w-2xl mx-auto mb-12 font-medium">
             When you're searching for a role, start here to find the perfect team where you can build next-generation enterprise solutions. Explore our <Link href="/services" className="text-rose-500 hover:underline font-bold">digital services</Link> and read our <Link href="/about/overview" className="text-rose-500 hover:underline font-bold">company overview</Link>.

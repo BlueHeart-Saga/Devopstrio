@@ -6,6 +6,7 @@ import { MapPin, Briefcase, X, Send, Check } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
 
 import { CareersHero } from "@/sections/careers/CareersHero";
+import { Careers3Pillars } from "@/sections/careers/Careers3Pillars";
 import { CareersIntroBanner } from "@/sections/careers/CareersIntroBanner";
 import { WhyJoin } from "@/sections/careers/WhyJoin";
 import { LifeAtDevopstrio } from "@/sections/careers/LifeAtDevopstrio";
@@ -195,6 +196,7 @@ export default function CareersPage() {
 
       {/* Structured Careers Components */}
       <CareersHero />
+      <Careers3Pillars />
       <CareersIntroBanner />
       <WhyJoin />
       <LifeAtDevopstrio />

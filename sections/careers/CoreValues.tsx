@@ -55,39 +55,26 @@ export function CoreValues() {
       <div className="max-w-7xl mx-auto w-full px-6 sm:px-8 lg:px-12 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           
-          {/* Left Column: Sticky Title & Description (Previous Header Text Style Restored) */}
-          <div className="lg:col-span-5 flex flex-col items-start text-left lg:sticky lg:top-28">
-            <Reveal>
-              <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
-                CORE VALUES
-              </span>
-            </Reveal>
-
+          {/* Left Column: Sticky Title & Description (Stays Fixed while right side scrolls) */}
+          <div className="lg:col-span-5 flex flex-col items-start text-left lg:sticky lg:top-32 self-start z-20">
             <Reveal delay={0.1}>
-              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white uppercase font-sans">
-                The principles that <span className="text-rose-500">define us</span>
+              <h2 className="text-2xl md:text-3xl xl:text-4xl font-semibold tracking-tight leading-tight text-white font-sans mb-5">
+                The principles that <span className="text-rose-500">define us.</span>
               </h2>
             </Reveal>
 
             <Reveal delay={0.2}>
-              <p className="text-zinc-400 text-base md:text-lg leading-relaxed font-medium mb-8">
-                Every decision, product, and partnership at Devopstrio is anchored by a core set of principles our teams live by every day. Read our <Link href="/about/overview" className="text-rose-500 hover:underline font-bold">company overview</Link> or discover our <Link href="/services" className="text-rose-500 hover:underline font-bold">digital services</Link>.
+              <p className="text-zinc-300 text-base md:text-lg leading-relaxed font-semibold mb-8">
+                Every decision, product, and partnership at Devopstrio is anchored by a core set of principles our teams live by every day. Read our <Link href="/about/overview" className="text-rose-500 hover:underline font-semibold">company overview</Link> or discover our <Link href="/services" className="text-rose-500 hover:underline font-semibold">digital services</Link>.
               </p>
             </Reveal>
           </div>
 
-          {/* Right Column: One-by-One Sticky Stacking Cards (Simple Plain Box - No Icons) */}
-          <div className="lg:col-span-7 flex flex-col gap-5 sm:gap-6 w-full relative pb-16">
-            {cultureValues.map((val, idx) => {
+          {/* Right Column: Scrollable Cards (Original Design Preserved) */}
+          <div className="lg:col-span-7 flex flex-col gap-5 sm:gap-6 w-full">
+            {cultureValues.map((val) => {
               return (
-                <div
-                  key={val.step}
-                  className="sticky transition-all duration-300"
-                  style={{
-                    top: `${100 + idx * 28}px`,
-                    zIndex: 10 + idx,
-                  }}
-                >
+                <div key={val.step} className="w-full">
                   <div className="bg-[#090C15] hover:bg-[#0E1322] border border-zinc-800/80 hover:border-zinc-700 rounded-xl p-6 sm:p-7 shadow-lg backdrop-blur-xl transition-all duration-300">
                     <h3 className="text-lg sm:text-xl font-bold text-white mb-2.5 font-sans">
                       {val.title}

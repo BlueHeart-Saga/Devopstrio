@@ -114,11 +114,11 @@ export default function ContactPage() {
           {/* Security & Compliance Section Header */}
           <div id="compliance" className="relative z-20 bg-black py-4">
             <div className="text-center pt-8 pb-3 max-w-3xl mx-auto">
-              <Reveal>
+              {/* <Reveal>
                 <span className="inline-block px-3 py-1 text-[10px] font-bold tracking-[0.2em] uppercase text-rose-500 border border-rose-500/30 rounded-none bg-black/40 mb-3">
                   Security & Trust
                 </span>
-              </Reveal>
+              </Reveal> */}
               <Reveal delay={0.1}>
                 <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-white">
                   Enterprise Compliance & Engineering Standards

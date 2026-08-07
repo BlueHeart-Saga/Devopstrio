@@ -15,15 +15,23 @@ export function TalentNetwork() {
 
       <div className="max-w-4xl mx-auto px-12 xl:px-8 text-center relative z-10">
         <Reveal>
-          <div className="flex items-center justify-center gap-2 mb-4">
-            <span className="text-[10px] font-bold tracking-widest uppercase text-rose-500">
-              JOIN US
-            </span>
-          </div>
+          <div className="relative mb-6">
+            {/* Top-to-bottom arrow PNG */}
+            <div className="flex justify-center mb-3 pointer-events-none select-none">
+              <img
+                src="/assets/components/streight-toptobuttm.png"
+                alt="Arrow indicator"
+                className="w-8 sm:w-10 h-auto object-contain filter drop-shadow-[0_0_12px_rgba(244,63,94,0.4)]"
+              />
+            </div>
 
-          <h2 className="text-3xl md:text-5xl font-bold text-white tracking-tight leading-tight mb-6">
-            Ready to build <span className="text-rose-500">what's next?</span>
-          </h2>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-white tracking-tight leading-tight">
+              Ready to build{" "}
+              <span className="bg-rose-500 text-white font-semibold px-4 py-1 mx-1 rounded-xl inline-block">
+                what&apos;s next?
+              </span>
+            </h2>
+          </div>
 
           <p className="text-white text-xs md:text-sm font-semibold leading-relaxed max-w-xl mx-auto mb-12">
             Join a team passionate about innovation, engineering excellence, and creating meaningful impact for organizations worldwide. Review our <Link href="/services" className="text-rose-500 hover:underline font-bold">services overview</Link> and submit your resume below to join our talent network database.

@@ -122,15 +122,24 @@ export function EmployeeStories() {
 
         {/* ── BLOCK 1: Previous Employee Stories Grid ────────────────────── */}
         <Reveal>
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
-              TESTIMONIALS
-            </span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
-              Meet the people behind <span className="text-rose-500">the innovation</span>
+          <div className="text-center max-w-3xl mx-auto mb-16 relative">
+            {/* Top-to-bottom arrow PNG */}
+            <div className="flex justify-center mb-3 pointer-events-none select-none">
+              <img
+                src="/assets/components/streight-toptobuttm.png"
+                alt="Arrow indicator"
+                className="w-8 sm:w-10 h-auto object-contain filter drop-shadow-[0_0_12px_rgba(244,63,94,0.4)]"
+              />
+            </div>
+
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold tracking-tight leading-tight mb-4 text-white">
+              Meet the people behind{" "}
+              <span className="bg-rose-500 text-white font-semibold px-4 py-1 mx-1 rounded-xl inline-block">
+                the innovation.
+              </span>
             </h2>
             <p className="text-white text-sm leading-relaxed font-semibold max-w-xl mx-auto">
-              Hear directly from the engineers, designers, and leaders who shape Devopstrio's culture every day. Discover our <Link href="/about/life" className="text-rose-500 hover:underline font-bold">life at Devopstrio</Link> page.
+              Hear directly from the engineers, designers, and leaders who shape Devopstrio&apos;s culture every day. Discover our <Link href="/about/life" className="text-rose-500 hover:underline font-bold">life at Devopstrio</Link> page.
             </p>
           </div>
         </Reveal>

@@ -42,7 +42,7 @@ export function LifeAtDevopstrio() {
           >
             <path d="M5 15C50 5 150 5 195 15" stroke="#E11D48" strokeWidth="4" strokeLinecap="round" />
           </motion.svg>
-          <motion.p
+          {/* <motion.p
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -50,8 +50,8 @@ export function LifeAtDevopstrio() {
             className="text-base md:text-xl font-bold uppercase tracking-[0.2em] text-zinc-400 pointer-events-none"
           >
             Life at Devopstrio
-          </motion.p>
-          <motion.p
+          </motion.p> */}
+          {/* <motion.p
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -59,7 +59,7 @@ export function LifeAtDevopstrio() {
             className="text-xs md:text-sm text-zinc-500 font-bold max-w-xs mt-2 text-center pointer-events-auto z-20"
           >
             Explore our <Link href="/about/life" className="text-rose-500 hover:underline">culture and life</Link> details or read the <Link href="/about/overview" className="text-rose-500 hover:underline">company overview</Link>.
-          </motion.p>
+          </motion.p> */}
         </div>
 
         {/* --- SCATTERED IMAGES --- */}

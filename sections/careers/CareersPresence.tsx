@@ -77,14 +77,23 @@ export function CareersPresence() {
 
         {/* Section Header */}
         <Reveal>
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
-              GLOBAL PRESENCE
-            </span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white uppercase">
-              One team. <span className="text-rose-500">Worldwide opportunities.</span>
+          <div className="text-center max-w-3xl mx-auto mb-12 relative flex flex-col items-center">
+            {/* Arrow image */}
+            <div className="absolute left-0 sm:left-4 md:-left-12 top-1/2 -translate-y-1/2 pointer-events-none select-none hidden sm:block">
+              <img
+                src="/assets/components/Carrow-right.png"
+                alt="Arrow indicator"
+                className="w-12 sm:w-16 h-auto object-contain filter drop-shadow-[0_0_15px_rgba(244,63,94,0.4)]"
+              />
+            </div>
+
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold tracking-tight leading-tight mb-4 text-white">
+              One team.{" "}
+              <span className="bg-rose-500 text-white font-semibold px-4 py-1 mx-1 rounded-xl inline-block">
+                Worldwide opportunities.
+              </span>
             </h2>
-            <p className="text-zinc-400 text-base leading-relaxed">
+            <p className="text-zinc-300 text-base leading-relaxed font-semibold">
               Join a globally distributed team across the UK, US, and India — with hybrid roles, flexible hours, and open positions in every timezone. Learn more about our <Link href="/about/global-presence" className="text-rose-500 hover:underline font-bold">global presence</Link> and <Link href="/about/overview" className="text-rose-500 hover:underline font-bold">company overview</Link>.
             </p>
           </div>
@@ -121,16 +130,16 @@ export function CareersPresence() {
                     {/* Pulse ring */}
                     <span
                       className={`absolute rounded-full transition-all duration-300 ${isActive
-                          ? "animate-ping bg-rose-500/30 scale-150"
-                          : "bg-rose-500/15 scale-125"
+                        ? "animate-ping bg-rose-500/30 scale-150"
+                        : "bg-rose-500/15 scale-125"
                         }`}
                       style={{ width: 7, height: 7, top: -1, left: -1 }}
                     />
                     {/* Core dot */}
                     <span
                       className={`block rounded-full border transition-all duration-200 ${isActive
-                          ? "bg-white border-rose-500 w-2.5 h-2.5 shadow-[0_0_8px_rgba(244,63,94,0.8)]"
-                          : "bg-rose-500 border-rose-400/60 w-1.5 h-1.5 shadow-[0_0_5px_rgba(244,63,94,0.6)]"
+                        ? "bg-white border-rose-500 w-2.5 h-2.5 shadow-[0_0_8px_rgba(244,63,94,0.8)]"
+                        : "bg-rose-500 border-rose-400/60 w-1.5 h-1.5 shadow-[0_0_5px_rgba(244,63,94,0.6)]"
                         }`}
                     />
 
@@ -141,8 +150,8 @@ export function CareersPresence() {
                     >
                       <div
                         className={`flex items-center gap-1 px-2 py-1 rounded-md border shadow-lg text-[9px] font-bold backdrop-blur-sm ${isActive
-                            ? "bg-zinc-900/95 border-rose-800/60 text-white"
-                            : "bg-zinc-950/90 border-zinc-800/80 text-zinc-200"
+                          ? "bg-zinc-900/95 border-rose-800/60 text-white"
+                          : "bg-zinc-950/90 border-zinc-800/80 text-zinc-200"
                           }`}
                       >
                         <span className="text-xs leading-none">{loc.flag}</span>

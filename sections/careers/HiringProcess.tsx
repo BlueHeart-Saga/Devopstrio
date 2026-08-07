@@ -59,13 +59,24 @@ export function HiringProcess() {
           {/* Left Column: Sticky Description & Header */}
           <div className="lg:sticky lg:top-[120px] pr-0 lg:pr-5">
             <Reveal>
-              <span className="text-[12px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 flex items-center gap-2">
-                <Activity size={14} /> ROADMAP
-              </span>
-              <h2 className="text-3xl lg:text-4xl font-bold text-white tracking-tight leading-tight my-4">
-                Hiring Process
-              </h2>
-              <p className="text-base text-zinc-400 leading-relaxed mb-9 max-w-md">
+              <div className="relative my-4">
+                {/* Arrow image */}
+                <div className="absolute -top-7 -left-8 pointer-events-none select-none hidden sm:block">
+                  <img
+                    src="/assets/components/lefttoright.png"
+                    alt="Arrow indicator"
+                    className="w-12 sm:w-14 h-auto object-contain filter drop-shadow-[0_0_15px_rgba(244,63,94,0.4)]"
+                  />
+                </div>
+
+                <h2 className="text-3xl lg:text-4xl font-semibold text-white tracking-tight leading-tight">
+                  Our Transparent{" "}
+                  <span className="bg-rose-500 text-white font-semibold px-4 py-1 mx-1 rounded-xl inline-block">
+                    Hiring Process.
+                  </span>
+                </h2>
+              </div>
+              <p className="text-base text-zinc-300 font-semibold leading-relaxed mb-9 max-w-md">
                 Our structured and transparent path is designed to discover your true potential and welcome you into our elite team. Explore our <Link href="/about/overview" className="text-rose-500 hover:underline font-bold">company overview</Link> to understand our core mission.
               </p>
 

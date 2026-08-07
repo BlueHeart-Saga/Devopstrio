@@ -19,10 +19,9 @@ export function CareersHero() {
             
             {/* Heading */}
             <Reveal delay={0.1}>
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold tracking-tight leading-[1.12] text-white mb-6">
-                Empowering Talent.
-                <br />
-                <span className="text-[#E11D48] whitespace-nowrap">Co-Engineering Future.</span>
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-semibold tracking-tight leading-[1.12] text-white mb-6">
+                Empowering Talent. <br />
+                <span className=" whitespace-nowrap">Co-Engineering Future.</span>
               </h1>
             </Reveal>
 
@@ -35,8 +34,8 @@ export function CareersHero() {
 
             {/* Quote Block */}
             <Reveal delay={0.3}>
-              <div className="border-l-2 border-rose-500 bg-zinc-950/60 border border-zinc-800/80 px-6 py-4 rounded-r-xl max-w-xl shadow-lg">
-                <p className="text-zinc-300 text-xs md:text-sm font-semibold italic leading-relaxed">
+              <div className="border-l-4 border-rose-500 bg-zinc-950/60 border border-zinc-800/80 px-6 py-5 rounded-r-xl max-w-2xl shadow-lg">
+                <p className="text-zinc-200 text-base sm:text-lg md:text-xl font-semibold italic leading-relaxed">
                   &ldquo;We don&apos;t just write code; we architect systems. We empower our engineers with absolute ownership, flexible schedules, and direct client synergy.&rdquo;
                 </p>
               </div>

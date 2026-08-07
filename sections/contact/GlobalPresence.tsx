@@ -12,7 +12,7 @@ const locations = [
     flag: "🇬🇧",
     // % from left, % from top of the map container
     // London: ~0°W, 51.5°N on equirectangular map
-    x: 47.4,
+    x: 47.2,
     y: 37.1,
   },
   {
@@ -21,7 +21,7 @@ const locations = [
     label: "Client Experience Centre",
     role: "Enterprise Meetings",
     flag: "🇬🇧",
-    x: 48,
+    x: 47.3,
     y: 38.3,
   },
   {
@@ -31,7 +31,7 @@ const locations = [
     role: "EST Timezone Coverage",
     flag: "🇺🇸",
     // Nashville TN: ~86.8°W, 36.2°N
-    x: 33.6,
+    x: 27.6,
     y: 46.6,
   },
   {
@@ -41,8 +41,8 @@ const locations = [
     role: "300+ Specialists",
     flag: "🇮🇳",
     // Bengaluru: ~77.6°E, 12.9°N — southern India
-    x: 61.1,
-    y: 58.4,
+    x: 65.2,
+    y: 56.4,
   },
   {
     id: "chennai",
@@ -51,8 +51,9 @@ const locations = [
     role: "24/7 Monitoring",
     flag: "🇮🇳",
     // Chennai: ~80.3°E, 13°N
-    x: 61.7,
-    y: 58.5,
+    x: 65.9,
+    y: 57,
+    labelPosition: "right",
   },
   {
     id: "thoothukudi",
@@ -61,27 +62,28 @@ const locations = [
     role: "Rapid Delivery Team",
     flag: "🇮🇳",
     // Thoothukudi: ~78.1°E, 8.8°N
-    x: 61.5,
-    y: 60,
+    x: 65.7,
+    y: 58,
+    labelPosition: "bottom",
   },
 ];
 
 // Which pins show their label pill by default (others only on hover)
-const defaultVisible = new Set(["london", "tennessee", "bengaluru"]);
+const defaultVisible = new Set(["london", "tennessee", "bengaluru", "chennai", "thoothukudi"]);
 
 export function GlobalPresence() {
   const [active, setActive] = useState<string | null>(null);
 
   return (
-    <section className="w-full pt-6 pb-2 md:pt-8 md:pb-4 bg-[#030303] text-white relative overflow-hidden">
+    <section className="w-full pt-2 pb-2 md:pt-4 md:pb-4 bg-[#030303] text-white relative overflow-hidden">
       {/* Subtle top glow */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[200px] bg-[radial-gradient(ellipse_at_top,rgba(244,63,94,0.04),transparent_70%)] pointer-events-none" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[250px] bg-[radial-gradient(ellipse_at_top,rgba(244,63,94,0.06),transparent_70%)] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
+      <div className="max-w-7xl mx-auto w-full px-6 sm:px-8 xl:px-8 relative z-10">
 
         {/* ── Header ─────────────────────────────────────────────────────── */}
-        <Reveal className="mb-12 text-center max-w-3xl mx-auto flex flex-col items-center relative">
-          <div className="flex items-center justify-center gap-4 mb-3 relative w-full">
+        <Reveal className="mb-2 text-center max-w-3xl mx-auto flex flex-col items-center relative">
+          <div className="flex items-center justify-center gap-4 mb-2 relative w-full">
             {/* Carrow-right.png arrow on the left side pointing to header */}
             <div className="absolute left-0 sm:left-4 md:-left-12 lg:-left-16 top-1/2 -translate-y-1/2 pointer-events-none select-none hidden sm:block">
               <img
@@ -96,35 +98,31 @@ export function GlobalPresence() {
             </span> */}
           </div>
 
-          <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold tracking-tight leading-[1.35] mb-4 text-white">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold tracking-tight leading-[1.35] mb-2 text-white">
             Wherever you build &amp;{" "}
             <span className="bg-rose-500 text-white font-semibold px-4 py-1 mx-1 rounded-xl inline-block">
               Collaborate
             </span>
             , <span className="text-rose-500 font-semibold">we&apos;re already there.</span>
           </h2>
-
-          {/* <p className="text-zinc-400 text-xs md:text-sm font-semibold leading-relaxed max-w-xl mx-auto">
-            Six offices. Four countries. 525+ professionals — strategically positioned to serve global enterprises 24/7.
-          </p> */}
         </Reveal>
 
-        {/* ── Map Card ───────────────────────────────────────────────────── */}
+        {/* ── Map Card (Edge-to-edge, No Image Padding & No Hover Zoom) ──── */}
         <Reveal delay={0.1}>
-          <div className="relative w-full">
+          <div className="relative w-full overflow-hidden shadow-2xl">
 
-            {/* Map image background */}
-            <div className="relative w-full" style={{ paddingBottom: "38%" }}>
+            {/* Map image background with edge-to-edge display */}
+            <div className="relative w-full h-[380px] sm:h-[500px] md:h-[600px] lg:h-[680px] overflow-hidden">
               <img
                 src="/assets/Contact-page/map/image1.png"
                 alt="World map showing Devopstrio office locations"
-                className="absolute inset-0 w-full h-full object-contain opacity-60"
+                className="w-full h-full object-cover sm:object-contain opacity-90"
                 draggable={false}
               />
 
-              {/* Dark vignette overlay at edges */}
-              <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_40%,#030303_100%)] pointer-events-none" />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#030303] via-transparent to-transparent pointer-events-none" />
+              {/* Ambient radial lighting */}
+              <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_50%,#030303_95%)] pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#030303]/90 via-transparent to-[#030303]/40 pointer-events-none" />
 
               {/* ── Location Pins ────────────────────────────────────────── */}
               {locations.map(loc => {
@@ -134,55 +132,91 @@ export function GlobalPresence() {
                 return (
                   <div
                     key={loc.id}
-                    className="absolute -translate-x-1/2 -translate-y-1/2 group cursor-pointer z-10"
+                    className="absolute -translate-x-1/2 -translate-y-1/2 group cursor-pointer z-20"
                     style={{ left: `${loc.x}%`, top: `${loc.y}%` }}
                     onMouseEnter={() => setActive(loc.id)}
                     onMouseLeave={() => setActive(null)}
                   >
-                    {/* Outer pulse ring */}
-                    <span
-                      className={`absolute inset-0 rounded-full transition-all duration-300 ${
-                        isActive
-                          ? "animate-ping bg-rose-500/30 scale-150"
-                          : "bg-rose-500/15 scale-125"
-                      }`}
-                      style={{ width: 7, height: 7, top: -1, left: -1 }}
-                    />
-
-                    {/* Core dot */}
-                    <span
-                      className={`block rounded-full border transition-all duration-200 ${
-                        isActive
-                          ? "bg-white border-rose-500 w-2.5 h-2.5 shadow-[0_0_8px_rgba(244,63,94,0.8)]"
-                          : "bg-rose-500 border-rose-400/60 w-1.5 h-1.5 shadow-[0_0_5px_rgba(244,63,94,0.6)]"
-                      }`}
-                    />
-
-                    {/* Label pill — shown on hover or for default-visible pins */}
-                    <div
-                      className={`absolute bottom-full mb-2 left-1/2 -translate-x-1/2 transition-all duration-200 whitespace-nowrap ${
-                        showLabel ? "opacity-100 translate-y-0" : "opacity-0 translate-y-1 pointer-events-none"
-                      }`}
-                    >
-                      <div className={`flex items-center gap-1 px-2 py-1 rounded-md border shadow-lg text-[9px] font-bold backdrop-blur-sm transition-colors ${
-                        isActive
-                          ? "bg-zinc-900/95 border-rose-800/60 text-white"
-                          : "bg-zinc-950/90 border-zinc-800/80 text-zinc-200"
-                      }`}>
-                        <span className="text-xs leading-none">{loc.flag}</span>
-                        <span>{loc.city}</span>
-                      </div>
-                      {/* Arrow */}
-                      <div className="w-1.5 h-1.5 bg-zinc-900/95 border-r border-b border-zinc-800/80 rotate-45 mx-auto -mt-[3px]" />
+                    {/* Location Pin PNG Icon */}
+                    <div className="relative flex items-center justify-center">
+                      <img
+                        src="/assets/components/location-pin.png"
+                        alt={`${loc.city} location pin`}
+                        className={`relative z-10 transition-all duration-300 filter drop-shadow-[0_0_10px_rgba(244,63,94,0.7)] ${
+                          isActive
+                            ? "w-7 h-7 sm:w-8 sm:h-8 scale-110"
+                            : "w-5 h-5 sm:w-6 sm:h-6 opacity-90 group-hover:opacity-100 group-hover:scale-110"
+                        }`}
+                      />
                     </div>
 
-                    {/* Expanded detail card on hover */}
+                    {/* Label Pill */}
+                    {loc.labelPosition === "right" ? (
+                      <div
+                        className={`absolute left-full top-1/2 -translate-y-1/2 ml-2 transition-all duration-300 whitespace-nowrap z-30 flex items-center ${
+                          showLabel ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-2 pointer-events-none"
+                        }`}
+                      >
+                        {/* Arrow pointing LEFT */}
+                        <div className={`w-2 h-2 rotate-45 -mr-[4px] z-10 border-l border-b ${
+                          isActive ? "bg-zinc-900/95 border-rose-500" : "bg-zinc-950/90 border-zinc-800"
+                        }`} />
+                        <div className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg border shadow-2xl text-xs font-semibold backdrop-blur-md transition-all duration-300 ${
+                          isActive
+                            ? "bg-zinc-900/95 border-rose-500 text-white scale-105 shadow-[0_0_20px_rgba(244,63,94,0.3)]"
+                            : "bg-zinc-950/90 border-zinc-800 text-zinc-200"
+                        }`}>
+                          <span className="text-sm leading-none">{loc.flag}</span>
+                          <span>{loc.city}</span>
+                        </div>
+                      </div>
+                    ) : loc.labelPosition === "bottom" ? (
+                      <div
+                        className={`absolute top-full mt-2 left-1/2 -translate-x-1/2 transition-all duration-300 whitespace-nowrap z-30 ${
+                          showLabel ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-2 pointer-events-none"
+                        }`}
+                      >
+                        {/* Arrow pointing UP */}
+                        <div className={`w-2 h-2 rotate-45 mx-auto -mb-[4px] border-l border-t ${
+                          isActive ? "bg-zinc-900/95 border-rose-500" : "bg-zinc-950/90 border-zinc-800"
+                        }`} />
+                        <div className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg border shadow-2xl text-xs font-semibold backdrop-blur-md transition-all duration-300 ${
+                          isActive
+                            ? "bg-zinc-900/95 border-rose-500 text-white scale-105 shadow-[0_0_20px_rgba(244,63,94,0.3)]"
+                            : "bg-zinc-950/90 border-zinc-800 text-zinc-200"
+                        }`}>
+                          <span className="text-sm leading-none">{loc.flag}</span>
+                          <span>{loc.city}</span>
+                        </div>
+                      </div>
+                    ) : (
+                      <div
+                        className={`absolute bottom-full mb-2.5 left-1/2 -translate-x-1/2 transition-all duration-300 whitespace-nowrap z-30 ${
+                          showLabel ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2 pointer-events-none"
+                        }`}
+                      >
+                        <div className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg border shadow-2xl text-xs font-semibold backdrop-blur-md transition-all duration-300 ${
+                          isActive
+                            ? "bg-zinc-900/95 border-rose-500 text-white scale-105 shadow-[0_0_20px_rgba(244,63,94,0.3)]"
+                            : "bg-zinc-950/90 border-zinc-800 text-zinc-200"
+                        }`}>
+                          <span className="text-sm leading-none">{loc.flag}</span>
+                          <span>{loc.city}</span>
+                        </div>
+                        {/* Arrow pointing DOWN */}
+                        <div className={`w-2 h-2 rotate-45 mx-auto -mt-[4px] border-r border-b ${
+                          isActive ? "bg-zinc-900/95 border-rose-500" : "bg-zinc-950/90 border-zinc-800"
+                        }`} />
+                      </div>
+                    )}
+
+                    {/* Expanded Detail Card on Hover */}
                     {isActive && (
-                      <div className="absolute top-full mt-3 left-1/2 -translate-x-1/2 z-20 animate-fadeIn">
-                        <div className="bg-zinc-950/95 border border-zinc-800 rounded-lg p-2 shadow-xl text-left min-w-[130px] backdrop-blur-md">
-                          <div className="text-[8px] font-bold text-rose-500 uppercase tracking-widest mb-0.5">{loc.label}</div>
-                          <div className="text-[10px] font-bold text-white leading-none mb-0.5">{loc.city}</div>
-                          <div className="text-[9px] text-zinc-500 font-bold">{loc.role}</div>
+                      <div className={`absolute ${loc.labelPosition === "bottom" ? "bottom-full mb-10" : "top-full mt-3"} left-1/2 -translate-x-1/2 z-40 animate-fadeIn`}>
+                        <div className="bg-zinc-950/95 border border-rose-500/40 rounded-xl p-3 shadow-2xl text-left min-w-[150px] backdrop-blur-md">
+                          <div className="text-[9px] font-semibold text-rose-500 uppercase tracking-widest mb-1">{loc.label}</div>
+                          <div className="text-xs font-bold text-white leading-none mb-1">{loc.city}</div>
+                          <div className="text-[10px] text-zinc-400 font-semibold">{loc.role}</div>
                         </div>
                       </div>
                     )}
