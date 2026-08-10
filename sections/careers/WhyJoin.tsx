@@ -102,7 +102,7 @@ export function WhyJoin() {
   };
 
   return (
-    <section id="why-join" className="py-24 bg-black border-b border-zinc-900/60 relative overflow-visible">
+    <section id="why-join" className="pt-16 pb-6 sm:pt-20 sm:pb-8 bg-black border-b border-zinc-900/60 relative overflow-visible">
       {/* Ambient background glows */}
       <div className="absolute top-[10%] left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-[radial-gradient(circle_at_center,rgba(244,63,94,0.03),transparent_70%)] pointer-events-none" />
       <div className="absolute bottom-[10%] left-1/4 w-[600px] h-[400px] bg-[radial-gradient(circle_at_center,rgba(244,63,94,0.02),transparent_70%)] pointer-events-none" />
@@ -152,51 +152,10 @@ export function WhyJoin() {
             </Reveal>
           </div>
 
-          {/* Old Floating Navigation Card Code (Commented Out)
-          <div className="lg:col-span-5 flex justify-start lg:justify-end w-full relative z-40 -mt-28 sm:-mt-40 lg:-mt-64 xl:-mt-72">
-            <Reveal delay={0.2} className="w-full max-w-[310px]">
-              <div className="w-full bg-white text-zinc-900 border border-zinc-200/90 rounded-lg p-5 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.5)]">
-
-                <div className="flex items-center justify-between pb-3 mb-3 border-b border-zinc-200">
-                  <h3 className="text-xs font-bold uppercase tracking-wider text-zinc-900">
-                    In this Section
-                  </h3>
-                </div>
-
-                <nav className="flex flex-col gap-1 text-xs font-sans">
-                  {careersNavigationItems.map((item) => {
-                    const isActive = activeSection === item.id;
-                    return (
-                      <a
-                        key={item.id}
-                        href={`#${item.id}`}
-                        onClick={(e) => scrollToSection(e, item.id)}
-                        className={`flex items-center justify-between py-1.5 px-2.5 rounded transition-colors font-medium ${isActive
-                            ? "bg-rose-50 text-rose-600 font-bold border-l-4 border-rose-600"
-                            : "text-zinc-600 hover:text-zinc-950 hover:bg-zinc-100"
-                          }`}
-                      >
-                        <span className="flex items-center gap-2">
-                          <ChevronRight
-                            size={13}
-                            className={isActive ? "text-rose-600 stroke-[2.5]" : "text-zinc-400"}
-                          />
-                          <span>{item.label}</span>
-                        </span>
-                      </a>
-                    );
-                  })}
-                </nav>
-
-              </div>
-            </Reveal>
-          </div>
-          */}
-
         </div>
 
         {/* Family Quote Sub-Banner (Big & Centered) */}
-        <Reveal className="my-16 sm:my-20 text-center">
+        <Reveal className="mt-8 mb-4 text-center">
           <div className="max-w-5xl mx-auto px-4">
             <h3 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold text-white tracking-tight leading-tight italic">
               <span className="whitespace-nowrap">&ldquo;We&apos;re more than just a workplace.</span><br />

@@ -124,13 +124,13 @@ export function EmployeeStories() {
         <Reveal>
           <div className="text-center max-w-3xl mx-auto mb-16 relative">
             {/* Top-to-bottom arrow PNG */}
-            <div className="flex justify-center mb-3 pointer-events-none select-none">
+            {/* <div className="flex justify-center mb-3 pointer-events-none select-none">
               <img
                 src="/assets/components/streight-toptobuttm.png"
                 alt="Arrow indicator"
                 className="w-8 sm:w-10 h-auto object-contain filter drop-shadow-[0_0_12px_rgba(244,63,94,0.4)]"
               />
-            </div>
+            </div> */}
 
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold tracking-tight leading-tight mb-4 text-white">
               Meet the people behind{" "}
@@ -138,9 +138,9 @@ export function EmployeeStories() {
                 the innovation.
               </span>
             </h2>
-            <p className="text-white text-sm leading-relaxed font-semibold max-w-xl mx-auto">
+            {/* <p className="text-white text-sm leading-relaxed font-semibold max-w-xl mx-auto">
               Hear directly from the engineers, designers, and leaders who shape Devopstrio&apos;s culture every day. Discover our <Link href="/about/life" className="text-rose-500 hover:underline font-bold">life at Devopstrio</Link> page.
-            </p>
+            </p> */}
           </div>
         </Reveal>
 
@@ -155,13 +155,13 @@ export function EmployeeStories() {
                   "
                 </span>
 
-                <p className="text-sm text-zinc-200 leading-relaxed font-medium mb-8 italic flex-1">
+                <p className="text-base sm:text-lg text-zinc-100 leading-relaxed font-semibold mb-8 italic flex-1">
                   {story.story}
                 </p>
 
                 {/* Author row */}
                 <div className="flex items-center gap-4 pt-5 border-t border-white/5">
-                  <div className={`w-10 h-10 rounded-full ${story.photoBg} flex items-center justify-center text-xs font-bold text-white shadow-lg ring-2 ring-white/5 group-hover:ring-rose-500/20 transition-all overflow-hidden`}>
+                  <div className={`w-11 h-11 rounded-full ${story.photoBg} flex items-center justify-center text-xs font-bold text-white shadow-lg ring-2 ring-white/5 group-hover:ring-rose-500/20 transition-all overflow-hidden`}>
                     {(story as any).image ? (
                       <img src={(story as any).image} alt={story.name} className="w-full h-full object-cover" />
                     ) : (
@@ -169,8 +169,8 @@ export function EmployeeStories() {
                     )}
                   </div>
                   <div>
-                    <span className="text-sm font-bold text-white block">{story.name}</span>
-                    <span className="text-xs text-zinc-400 font-medium block mt-0.5">{story.role}</span>
+                    <span className="text-base sm:text-lg font-bold text-white block">{story.name}</span>
+                    <span className="text-sm text-zinc-300 font-semibold block mt-0.5">{story.role}</span>
                   </div>
                   {/* Accent bar */}
                   <div className="ml-auto h-[2px] w-8 bg-gradient-to-r from-rose-500/60 to-transparent rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -190,7 +190,7 @@ export function EmployeeStories() {
               <span className="text-6xl font-serif text-rose-500 leading-none select-none block mb-4">
                 “ “
               </span>
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white tracking-tight leading-tight mb-8">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-white tracking-tight leading-tight mb-8 font-sans">
                 What Our Team<br />Is Saying
               </h2>
 
@@ -198,9 +198,9 @@ export function EmployeeStories() {
               <div className="flex items-center gap-4">
                 <button
                   onClick={handlePrev}
-                  className="w-10 h-10 rounded-full border border-white/10 hover:border-rose-500/40 flex items-center justify-center text-white hover:text-rose-400 bg-zinc-950/40 hover:bg-rose-950/10 transition-all duration-300 cursor-pointer"
+                  className="w-11 h-11 rounded-full border border-white/10 hover:border-rose-500/40 flex items-center justify-center text-white hover:text-rose-400 bg-zinc-950/40 hover:bg-rose-950/10 transition-all duration-300 cursor-pointer"
                 >
-                  <ArrowLeft size={16} />
+                  <ArrowLeft size={18} />
                 </button>
                 {/* Progress line */}
                 <div className="w-24 h-[2px] bg-zinc-800 rounded-full overflow-hidden relative">
@@ -211,9 +211,9 @@ export function EmployeeStories() {
                 </div>
                 <button
                   onClick={handleNext}
-                  className="w-10 h-10 rounded-full border border-white/10 hover:border-rose-500/40 flex items-center justify-center text-white hover:text-rose-400 bg-zinc-950/40 hover:bg-rose-950/10 transition-all duration-300 cursor-pointer"
+                  className="w-11 h-11 rounded-full border border-white/10 hover:border-rose-500/40 flex items-center justify-center text-white hover:text-rose-400 bg-zinc-950/40 hover:bg-rose-950/10 transition-all duration-300 cursor-pointer"
                 >
-                  <ArrowUpRight size={16} />
+                  <ArrowUpRight size={18} />
                 </button>
               </div>
             </Reveal>
@@ -225,22 +225,22 @@ export function EmployeeStories() {
               <Reveal key={currentIndex + idx} delay={idx * 0.05}>
                 <div className="flex flex-col gap-6 text-left group">
                   {/* Quote bubble card */}
-                  <div className="relative bg-[#0d0d0d] border border-white/[0.06] hover:border-rose-500/20 p-6 md:p-8 rounded-[24px] shadow-xl transition-all duration-300 flex flex-col justify-between min-h-[160px] group-hover:-translate-y-1">
-                    <p className="text-zinc-200 text-sm md:text-base font-medium italic leading-relaxed mb-6">
+                  <div className="relative bg-[#0d0d0d] border border-white/[0.06] hover:border-rose-500/20 p-6 md:p-8 rounded-[24px] shadow-xl transition-all duration-300 flex flex-col justify-between min-h-[170px] group-hover:-translate-y-1">
+                    <p className="text-zinc-100 text-base md:text-lg font-semibold italic leading-relaxed mb-6">
                       "{t.quote}"
                     </p>
 
                     {/* Star rating */}
                     <div className="flex gap-1 text-amber-500">
                       {Array.from({ length: 5 }).map((_, i) => (
-                        <Star key={i} size={12} fill="currentColor" />
+                        <Star key={i} size={14} fill="currentColor" />
                       ))}
                     </div>
                   </div>
 
                   {/* Profile details under the card */}
                   <div className="flex items-center gap-3.5 px-2">
-                    <div className={`w-9 h-9 rounded-full bg-gradient-to-tr ${t.color} flex items-center justify-center text-xs font-bold text-white shrink-0 shadow-lg ring-1 ring-white/10 overflow-hidden`}>
+                    <div className={`w-11 h-11 rounded-full bg-gradient-to-tr ${t.color} flex items-center justify-center text-xs font-bold text-white shrink-0 shadow-lg ring-1 ring-white/10 overflow-hidden`}>
                       {t.image ? (
                         <img src={t.image} alt={t.name} className="w-full h-full object-cover" />
                       ) : (
@@ -248,10 +248,10 @@ export function EmployeeStories() {
                       )}
                     </div>
                     <div>
-                      <span className="text-sm font-bold text-white block">
+                      <span className="text-base sm:text-lg font-bold text-white block">
                         {t.name}
                       </span>
-                      <span className="text-xs text-zinc-400 font-medium block mt-0.5">
+                      <span className="text-sm text-zinc-300 font-semibold block mt-0.5">
                         {t.role}
                       </span>
                     </div>
@@ -273,9 +273,9 @@ export function EmployeeStories() {
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight leading-tight mb-4 text-white font-sans uppercase">
                 Feel-Good Words <span className="text-rose-500">From Our Team</span>
               </h2>
-              <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-medium">
+              {/* <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-medium">
                 Hear directly from our engineers, designers, and strategic leads across the globe.
-              </p>
+              </p> */}
             </div>
           </Reveal>
 
@@ -290,11 +290,11 @@ export function EmployeeStories() {
                 <div className="bg-white text-zinc-900 p-6 rounded-2xl shadow-2xl relative flex items-center justify-between gap-4">
                   <div className="flex-1 text-left">
                     <span className="text-3xl font-serif text-rose-600 block mb-1 font-bold leading-none">“</span>
-                    <p className="text-xs text-zinc-700 leading-relaxed font-medium mb-3">
+                    <p className="text-sm sm:text-base text-zinc-800 leading-relaxed font-semibold mb-3">
                       "Devopstrio gives us complete engineering freedom to automate multi-cloud infrastructure and accelerate enterprise continuous delivery pipelines flawlessly."
                     </p>
-                    <span className="text-xs font-bold text-zinc-900 block">Suryaprakash S</span>
-                    <span className="text-[10px] text-zinc-500 font-medium block">Lead DevOps Engineer • @Devopstrio</span>
+                    <span className="text-sm sm:text-base font-bold text-zinc-900 block">Suryaprakash S</span>
+                    <span className="text-xs sm:text-sm text-rose-600 font-semibold block">Lead DevOps Engineer • @Devopstrio</span>
                   </div>
                   <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-white shadow-md shrink-0 bg-zinc-100">
                     <img src="/assets/Home-page/client-reviews/client_164.png" alt="Suryaprakash" className="w-full h-full object-cover" />
@@ -305,13 +305,13 @@ export function EmployeeStories() {
               {/* Card 1B: Paragraph + Bottom Right Avatar */}
               <Reveal delay={0.1}>
                 <div className="bg-white text-zinc-900 p-6 rounded-2xl shadow-2xl relative text-left">
-                  <p className="text-xs text-zinc-700 leading-relaxed font-medium mb-6">
+                  <p className="text-sm sm:text-base text-zinc-800 leading-relaxed font-semibold mb-6">
                     "The supportive culture of precision and rapid experimentation here empowers us to build production-ready software solutions with confidence every single day."
                   </p>
                   <div className="flex items-center justify-between pt-2">
                     <div>
-                      <span className="text-xs font-bold text-zinc-900 block">Ananthalakshmi</span>
-                      <span className="text-[10px] text-rose-600 font-semibold block">Software Engineering Lead</span>
+                      <span className="text-sm sm:text-base font-bold text-zinc-900 block">Ananthalakshmi</span>
+                      <span className="text-xs sm:text-sm text-rose-600 font-semibold block">Software Engineering Lead</span>
                     </div>
                     <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-white shadow-md shrink-0 bg-zinc-100">
                       <img src="/assets/Home-page/client-reviews/client_165.png" alt="Ananthalakshmi" className="w-full h-full object-cover" />
@@ -323,11 +323,11 @@ export function EmployeeStories() {
               {/* Card 1C: Wide Card + Bottom Speech Avatars */}
               <Reveal delay={0.15}>
                 <div className="bg-white text-zinc-900 p-6 rounded-2xl shadow-2xl text-center relative">
-                  <h3 className="text-sm font-bold text-zinc-900 mb-2">I was very impressed!</h3>
-                  <p className="text-xs text-zinc-600 leading-relaxed font-medium mb-3">
+                  <h3 className="text-base sm:text-lg font-bold text-zinc-900 mb-2">I was very impressed!</h3>
+                  <p className="text-sm sm:text-base text-zinc-800 leading-relaxed font-semibold mb-3">
                     "The scale of cloud architectures and high-performance data platforms we design here is world class. Truly a great place to grow your technical leverage."
                   </p>
-                  <span className="text-[11px] font-bold text-zinc-800 block mb-4">Umamaheswari R — Data & Cloud Architect</span>
+                  <span className="text-xs sm:text-sm font-bold text-zinc-900 block mb-4">Umamaheswari R — Data & Cloud Architect</span>
                   
                   {/* Floating speech bubble avatars sticking out below */}
                   <div className="flex justify-center items-center gap-2 -mb-10 pt-2">
@@ -361,13 +361,13 @@ export function EmployeeStories() {
                       <Star key={i} size={14} fill="currentColor" />
                     ))}
                   </div>
-                  <h3 className="text-sm font-bold text-zinc-900 mb-2">I really appreciate!!</h3>
-                  <p className="text-xs text-zinc-600 leading-relaxed font-medium mb-6">
+                  <h3 className="text-base sm:text-lg font-bold text-zinc-900 mb-2">I really appreciate!!</h3>
+                  <p className="text-sm sm:text-base text-zinc-800 leading-relaxed font-semibold mb-6">
                     "Designing intuitive digital experiences for enterprise users alongside brilliant software engineers makes every single day rewarding!"
                   </p>
                   <div className="text-left pb-2">
-                    <span className="text-xs font-bold text-zinc-900 block">Ooviya</span>
-                    <span className="text-[10px] text-rose-600 font-semibold block">UI/UX Design Specialist</span>
+                    <span className="text-sm sm:text-base font-bold text-zinc-900 block">Ooviya</span>
+                    <span className="text-xs sm:text-sm text-rose-600 font-semibold block">UI/UX Design Specialist</span>
                   </div>
 
                   {/* Black Quote Badge hanging off bottom right */}
@@ -388,10 +388,10 @@ export function EmployeeStories() {
                       <Star key={i} size={12} fill="currentColor" />
                     ))}
                   </div>
-                  <p className="text-xs text-zinc-600 leading-relaxed font-medium italic mb-4">
+                  <p className="text-sm sm:text-base text-zinc-800 leading-relaxed font-semibold italic mb-4">
                     "Building high-throughput microservices in a zero-silo, collaborative team atmosphere is the best milestone of my tech career."
                   </p>
-                  <span className="text-xs font-bold text-zinc-900 block italic font-serif">Punitha — Backend Engineer</span>
+                  <span className="text-xs sm:text-sm font-bold text-zinc-900 block">Punitha — Backend Engineer</span>
 
                   {/* Bottom Speech Triangle Pointer */}
                   <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 w-0 h-0 border-l-[10px] border-l-transparent border-r-[10px] border-r-transparent border-t-[10px] border-t-white" />
@@ -409,10 +409,10 @@ export function EmployeeStories() {
                   <div className="w-full h-56 rounded-xl overflow-hidden mb-4 bg-zinc-100">
                     <img src="/assets/Home-page/client-reviews/client_171.png" alt="Saravanakumar" className="w-full h-full object-cover" />
                   </div>
-                  <p className="text-xs text-zinc-700 leading-relaxed font-medium mb-3">
+                  <p className="text-sm sm:text-base text-zinc-800 leading-relaxed font-semibold mb-3">
                     From global client missions to 1-on-1 mentorship, Devopstrio invests deeply in every engineer's potential.
                   </p>
-                  <span className="text-xs font-bold text-zinc-900 block italic font-serif">Saravanakumar S</span>
+                  <span className="text-sm sm:text-base font-bold text-zinc-900 block">Saravanakumar S</span>
                 </div>
               </Reveal>
 
@@ -427,16 +427,16 @@ export function EmployeeStories() {
                   <div className="absolute -top-7 left-1/2 -translate-x-1/2 w-16 h-16 rounded-full border-4 border-white shadow-xl overflow-hidden bg-zinc-100">
                     <img src="/assets/Home-page/client-reviews/client_172.png" alt="Sermaraja" className="w-full h-full object-cover" />
                   </div>
-                  <h3 className="text-sm font-bold text-zinc-900 mb-1 mt-1">Good Job!</h3>
+                  <h3 className="text-base sm:text-lg font-bold text-zinc-900 mb-1 mt-1">Good Job!</h3>
                   <div className="flex justify-center gap-1 text-amber-400 mb-3">
                     {Array.from({ length: 5 }).map((_, i) => (
                       <Star key={i} size={12} fill="currentColor" />
                     ))}
                   </div>
-                  <p className="text-xs text-zinc-600 leading-relaxed font-medium">
+                  <p className="text-sm sm:text-base text-zinc-800 leading-relaxed font-semibold mb-3">
                     Our 24/7 Site Reliability Engineering teams operate with total trust, rapid feedback loops, and sponsored cloud certification pathways.
                   </p>
-                  <span className="text-[11px] font-bold text-zinc-800 block mt-3">Sermaraja V — SRE Lead</span>
+                  <span className="text-xs sm:text-sm font-bold text-zinc-900 block mt-3">Sermaraja V — SRE Lead</span>
                 </div>
               </Reveal>
 
@@ -447,11 +447,11 @@ export function EmployeeStories() {
                     <img src="/assets/Home-page/client-reviews/client_173.png" alt="Sudalairajan" className="w-full h-full object-cover" />
                   </div>
                   <div className="flex-1">
-                    <span className="text-xs font-bold text-zinc-900 block mb-1 font-serif">“ Security & zero-trust engineering are embedded in all we build. ”</span>
-                    <p className="text-[11px] text-zinc-600 leading-tight mb-2">
+                    <span className="text-sm sm:text-base font-bold text-zinc-900 block mb-1.5 font-sans">“ Security & zero-trust engineering are embedded in all we build. ”</span>
+                    <p className="text-xs sm:text-sm text-zinc-700 font-semibold leading-relaxed mb-2">
                       We protect enterprise landing zones while enabling fast-moving deployments.
                     </p>
-                    <span className="text-[11px] font-bold text-rose-600 block">Sudalairajan A • Security Lead</span>
+                    <span className="text-xs sm:text-sm font-bold text-rose-600 block">Sudalairajan A • Security Lead</span>
                   </div>
                 </div>
               </Reveal>
@@ -460,11 +460,11 @@ export function EmployeeStories() {
               <Reveal delay={0.25}>
                 <div className="bg-white text-zinc-900 p-5 rounded-2xl shadow-2xl flex items-center justify-between gap-4 text-left">
                   <div className="flex-1">
-                    <p className="text-xs text-zinc-600 leading-relaxed font-medium mb-3">
+                    <p className="text-sm sm:text-base text-zinc-800 leading-relaxed font-semibold mb-3">
                       "Empowering engineering teams with continuous learning, clear promotion tracks, and international project exposure is our daily commitment."
                     </p>
-                    <span className="text-xs font-bold text-zinc-900 block">Sagadevan S</span>
-                    <span className="text-[10px] text-rose-600 font-semibold block">Global Technology Lead</span>
+                    <span className="text-sm sm:text-base font-bold text-zinc-900 block">Sagadevan S</span>
+                    <span className="text-xs sm:text-sm text-rose-600 font-semibold block">Global Technology Lead</span>
                   </div>
                   <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-white shadow-md shrink-0 bg-zinc-100">
                     <img src="/assets/Home-page/client-reviews/client_174.png" alt="Sagadevan" className="w-full h-full object-cover" />
@@ -494,15 +494,15 @@ export function EmployeeStories() {
 
             {/* Right Side: Copy, Points List & Button */}
             <div className="flex-1 text-left space-y-4 relative z-10 py-2">
-              <span className="inline-block border border-rose-500/30 bg-rose-950/20 px-3.5 py-1 rounded-full text-[11px] font-mono font-bold text-rose-400 tracking-wider uppercase">
+              {/* <span className="inline-block border border-rose-500/30 bg-rose-950/20 px-3.5 py-1 rounded-full text-xs font-mono font-bold text-rose-400 tracking-wider uppercase">
                 INTERNSHIP
-              </span>
+              </span> */}
 
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white tracking-tight leading-tight">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-white tracking-tight leading-tight font-sans">
                 <span className="text-rose-500">Students</span>, build a<br className="hidden sm:block" /> career with purpose
               </h2>
 
-              <p className="text-zinc-300 text-xs sm:text-sm leading-relaxed font-medium max-w-xl">
+              <p className="text-zinc-200 text-base sm:text-lg leading-relaxed font-semibold max-w-2xl">
                 Our student programs help you make a real impact from day one. Apply today to build skills and unlock possibilities through our dedicated <Link href="/about/internship" className="text-rose-500 hover:underline font-bold">internship program</Link>:
               </p>
 
@@ -513,8 +513,8 @@ export function EmployeeStories() {
                   "Receive 1-on-1 mentorship from seasoned industry specialists",
                   "Access dedicated placement assistance and exclusive network referrals",
                 ].map((point, idx) => (
-                  <li key={idx} className="flex items-start gap-2.5 text-zinc-300 text-xs sm:text-sm font-medium">
-                    <span className="w-1.5 h-1.5 rounded-full bg-rose-500 mt-1.5 shrink-0 shadow-[0_0_8px_rgba(244,63,94,0.6)]" />
+                  <li key={idx} className="flex items-start gap-2.5 text-zinc-200 text-sm sm:text-base font-semibold">
+                    <span className="w-2 h-2 rounded-full bg-rose-500 mt-2 shrink-0 shadow-[0_0_8px_rgba(244,63,94,0.6)]" />
                     <span>{point}</span>
                   </li>
                 ))}
@@ -523,10 +523,10 @@ export function EmployeeStories() {
               <div className="pt-2">
                 <button
                   onClick={handleScrollToRoles}
-                  className="inline-flex items-center gap-2 px-8 py-3 rounded-full text-xs font-bold uppercase tracking-wider text-white bg-gradient-to-r from-rose-600 to-rose-500 hover:from-rose-500 hover:to-rose-400 transition-all duration-300 shadow-[0_4px_20px_rgba(225,29,72,0.3)] hover:scale-[1.03]"
+                  className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full text-xs sm:text-sm font-bold uppercase tracking-wider text-white bg-gradient-to-r from-rose-600 to-rose-500 hover:from-rose-500 hover:to-rose-400 transition-all duration-300 shadow-[0_4px_20px_rgba(225,29,72,0.3)] hover:scale-[1.03]"
                 >
                   <span>Get Started</span>
-                  <ArrowUpRightIcon size={14} />
+                  <ArrowUpRightIcon size={16} />
                 </button>
               </div>
             </div>

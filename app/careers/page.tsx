@@ -201,13 +201,14 @@ export default function CareersPage() {
       <WhyJoin />
       <LifeAtDevopstrio />
       <CoreValues />
-      <LearningGrowth />
+     
       <PerksBenefits />
       <CareersPresence />
       <OpenPositions />
       <HiringProcess />
+       {/* <LearningGrowth /> */}
       <EmployeeStories />
-      <TalentNetwork />
+      {/* <TalentNetwork /> */}
 
       {/* Floating Side Badge (Increased Length) */}
       <Link

@@ -17,13 +17,13 @@ export function TalentNetwork() {
         <Reveal>
           <div className="relative mb-6">
             {/* Top-to-bottom arrow PNG */}
-            <div className="flex justify-center mb-3 pointer-events-none select-none">
+            {/* <div className="flex justify-center mb-3 pointer-events-none select-none">
               <img
                 src="/assets/components/streight-toptobuttm.png"
                 alt="Arrow indicator"
                 className="w-8 sm:w-10 h-auto object-contain filter drop-shadow-[0_0_12px_rgba(244,63,94,0.4)]"
               />
-            </div>
+            </div> */}
 
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-white tracking-tight leading-tight">
               Ready to build{" "}
@@ -33,9 +33,9 @@ export function TalentNetwork() {
             </h2>
           </div>
 
-          <p className="text-white text-xs md:text-sm font-semibold leading-relaxed max-w-xl mx-auto mb-12">
+          {/* <p className="text-white text-xs md:text-sm font-semibold leading-relaxed max-w-xl mx-auto mb-12">
             Join a team passionate about innovation, engineering excellence, and creating meaningful impact for organizations worldwide. Review our <Link href="/services" className="text-rose-500 hover:underline font-bold">services overview</Link> and submit your resume below to join our talent network database.
-          </p>
+          </p> */}
         </Reveal>
 
         {/* Premium Form CTA Card */}
