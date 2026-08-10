@@ -2,10 +2,337 @@
 
 import React, { useState } from "react";
 import { Reveal } from "@/components/ui/Reveal";
-import { ArrowUpRight, Plus, Minus, Sparkles, Bot, LayoutGrid, Cpu, Building2 } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
-import Link from "next/link";
+import { motion } from "framer-motion";
+import {
+  Sparkles,
+  Cpu,
+  Bot,
+  Layers,
+  Network,
+  ShieldCheck,
+  Command,
+  ArrowUpRight,
+  ChevronLeft,
+  ChevronRight
+} from "lucide-react";
 
+const aiWebsiteUrl = "https://ai.devopstrio.co.uk";
+
+const aiServicesList = [
+  {
+    id: "solutions",
+    title: "AI Solutions",
+    subtitle: "Cognitive Enterprise Stacks",
+    description: "Custom enterprise solutions built on top-tier cognitive stacks, incorporating semantic retrieval systems and customized LLMs.",
+    image: "/assets/Home-page/Servicescard/AI/Ai solutions.png",
+    link: `${aiWebsiteUrl}/#solutions`,
+    icon: Sparkles,
+    gradient: "from-rose-950/30 via-[#0d0d11]/90 to-[#030303]",
+    border: "border-rose-500/40",
+    glow: "shadow-[0_0_35px_rgba(244,63,94,0.12)]",
+    iconBg: "bg-rose-500/10 border-rose-500/30 text-rose-400",
+    btnHover: "hover:border-rose-400 hover:bg-rose-500 hover:text-white",
+    meshGlow: "bg-rose-500/15"
+  },
+  {
+    id: "services",
+    title: "AI Services",
+    subtitle: "Modernization & Model Training",
+    description: "End-to-end consulting, continuous modernization, custom model training, and integration pipelines built for modern businesses.",
+    image: "/assets/Home-page/Servicescard/AI/AI Services.png",
+    link: `${aiWebsiteUrl}/#services`,
+    icon: Cpu,
+    gradient: "from-rose-950/30 via-[#0d0d11]/90 to-[#030303]",
+    border: "border-rose-500/40",
+    glow: "shadow-[0_0_35px_rgba(244,63,94,0.12)]",
+    iconBg: "bg-rose-500/10 border-rose-500/30 text-rose-400",
+    btnHover: "hover:border-rose-400 hover:bg-rose-500 hover:text-white",
+    meshGlow: "bg-rose-500/15"
+  },
+  {
+    id: "agents",
+    title: "AI Agents",
+    subtitle: "Autonomous Digital Workforce",
+    description: "Deploy autonomous digital agents trained for IT support operations, sales pipeline execution, finance auditing, and HR operations.",
+    image: "/assets/Home-page/Servicescard/AI/AI Agents.png",
+    link: `${aiWebsiteUrl}/#agents`,
+    icon: Bot,
+    gradient: "from-rose-950/30 via-[#0d0d11]/90 to-[#030303]",
+    border: "border-rose-500/40",
+    glow: "shadow-[0_0_35px_rgba(244,63,94,0.12)]",
+    iconBg: "bg-rose-500/10 border-rose-500/30 text-rose-400",
+    btnHover: "hover:border-rose-400 hover:bg-rose-500 hover:text-white",
+    meshGlow: "bg-rose-500/15"
+  },
+  {
+    id: "industry",
+    title: "AI by Industry",
+    subtitle: "Sector-Specific Engineering",
+    description: "Engineered frameworks optimized specifically for Healthcare workflows, Banking security compliance, and Smart Retail recommendations.",
+    image: "/assets/Home-page/Servicescard/AI/AI by industry.png",
+    link: `${aiWebsiteUrl}/#industries`,
+    icon: Layers,
+    gradient: "from-rose-950/30 via-[#0d0d11]/90 to-[#030303]",
+    border: "border-rose-500/40",
+    glow: "shadow-[0_0_35px_rgba(244,63,94,0.12)]",
+    iconBg: "bg-rose-500/10 border-rose-500/30 text-rose-400",
+    btnHover: "hover:border-rose-400 hover:bg-rose-500 hover:text-white",
+    meshGlow: "bg-rose-500/15"
+  },
+  {
+    id: "ecosystem",
+    title: "AI Technology Ecosystem",
+    subtitle: "Leading-Edge Stack Integrations",
+    description: "Harness standard-setting integrations with OpenAI, Anthropic, LangChain, vector datastores, and cloud environments.",
+    image: "/assets/Home-page/Servicescard/AI/AI Technology eco system.png",
+    link: `${aiWebsiteUrl}/#ecosystem`,
+    icon: Network,
+    gradient: "from-rose-950/30 via-[#0d0d11]/90 to-[#030303]",
+    border: "border-rose-500/40",
+    glow: "shadow-[0_0_35px_rgba(244,63,94,0.12)]",
+    iconBg: "bg-rose-500/10 border-rose-500/30 text-rose-400",
+    btnHover: "hover:border-rose-400 hover:bg-rose-500 hover:text-white",
+    meshGlow: "bg-rose-500/15"
+  },
+  {
+    id: "governance",
+    title: "AI Governance",
+    subtitle: "Zero-Trust Security & Audit",
+    description: "Establish model explainability benchmarks, human-in-the-loop oversight workflows, and zero-trust security audits.",
+    image: "/assets/Home-page/Servicescard/AI/AI Covernance.png",
+    link: `${aiWebsiteUrl}/#governance`,
+    icon: ShieldCheck,
+    gradient: "from-rose-950/30 via-[#0d0d11]/90 to-[#030303]",
+    border: "border-rose-500/40",
+    glow: "shadow-[0_0_35px_rgba(244,63,94,0.12)]",
+    iconBg: "bg-rose-500/10 border-rose-500/30 text-rose-400",
+    btnHover: "hover:border-rose-400 hover:bg-rose-500 hover:text-white",
+    meshGlow: "bg-rose-500/15"
+  },
+  {
+    id: "platforms",
+    title: "AI Platforms & Products",
+    subtitle: "Intelligent Search & Matching",
+    description: "Activate AIHire matching platforms, cognitive search indexers, and automated academic document evaluation studios.",
+    image: "/assets/Home-page/Servicescard/AI/AI Platforms & Products.png",
+    link: `${aiWebsiteUrl}/#platforms`,
+    icon: Command,
+    gradient: "from-rose-950/30 via-[#0d0d11]/90 to-[#030303]",
+    border: "border-rose-500/40",
+    glow: "shadow-[0_0_35px_rgba(244,63,94,0.12)]",
+    iconBg: "bg-rose-500/10 border-rose-500/30 text-rose-400",
+    btnHover: "hover:border-rose-400 hover:bg-rose-500 hover:text-white",
+    meshGlow: "bg-rose-500/15"
+  }
+];
+
+export function AIStudioShowcase() {
+  const [activeId, setActiveId] = useState<string>("agents");
+
+  const handleNext = () => {
+    const currentIndex = aiServicesList.findIndex((s) => s.id === activeId);
+    const nextIndex = (currentIndex + 1) % aiServicesList.length;
+    setActiveId(aiServicesList[nextIndex].id);
+  };
+
+  const handlePrev = () => {
+    const currentIndex = aiServicesList.findIndex((s) => s.id === activeId);
+    const prevIndex = (currentIndex - 1 + aiServicesList.length) % aiServicesList.length;
+    setActiveId(aiServicesList[prevIndex].id);
+  };
+
+  return (
+    <section className="w-full pt-16 pb-6 md:pt-20 md:pb-8 bg-[#030303] text-white relative overflow-hidden" id="ai-studio">
+      <div className="max-w-7xl mx-auto w-full px-6 sm:px-8 relative z-10">
+        
+        {/* Section Header */}
+        <div className="text-center max-w-4xl mx-auto mb-8 sm:mb-10">
+          <Reveal>
+            <div className="relative inline-block">
+              {/* Arrow image on the left side (White color filter) */}
+              <div className="absolute -top-8 sm:-top-10 md:-top-12 -left-12 sm:-left-20 md:-left-28 z-20 pointer-events-none select-none">
+                <img
+                  src="/assets/components/left-right.png"
+                  alt="Left-Right Arrow indicator"
+                  className="w-12 sm:w-16 md:w-20 h-auto object-contain filter brightness-0 invert opacity-75 drop-shadow-[0_0_10px_rgba(255,255,255,0.25)]"
+                />
+              </div>
+
+              <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight text-white mb-4 font-sans leading-tight">
+                Shaping the Future with Enterprise{" "}
+                <span className="relative inline-flex items-center justify-center px-4 py-1 mx-1.5">
+                  <span className="text-white font-bold relative z-10">AI</span>
+                  {/* Brand Rose hand-drawn oval circle loop encircling AI cleanly outside */}
+                  <svg
+                    className="absolute -inset-x-4 -inset-y-2.5 w-[calc(100%+32px)] h-[calc(100%+20px)] text-rose-500 pointer-events-none overflow-visible"
+                    viewBox="0 0 100 45"
+                    preserveAspectRatio="none"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M 8 22.5 C 8 8, 92 8, 92 22.5 C 92 37, 8 37, 8 22.5 C 8 15, 35 9, 68 9"
+                      stroke="currentColor"
+                      strokeWidth="2.8"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="opacity-95 filter drop-shadow-[0_0_10px_rgba(244,63,94,0.7)]"
+                    />
+                  </svg>
+                </span>{" "}
+                <span className="relative inline-block px-1">
+                  <span className="text-rose-500 font-semibold">Innovation</span>
+                  {/* Brand Rose hand-drawn single stroke underline */}
+                  <svg
+                    className="absolute -bottom-2 left-0 w-full h-3 text-rose-500 pointer-events-none overflow-visible"
+                    viewBox="0 0 220 12"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M 5 6 Q 110 3, 215 7"
+                      stroke="currentColor"
+                      strokeWidth="4"
+                      strokeLinecap="round"
+                      className="opacity-95 filter drop-shadow-[0_0_10px_rgba(244,63,94,0.7)]"
+                    />
+                  </svg>
+                </span>
+              </h2>
+            </div>
+          </Reveal>
+        </div>
+
+        {/* Fey.com-Style Expanding Vertical Card Accordion Array */}
+        <Reveal>
+          <div className="flex flex-col lg:flex-row items-stretch justify-center gap-3 sm:gap-4 h-auto lg:h-[500px] xl:h-[540px] w-full max-w-7xl mx-auto select-none">
+            {aiServicesList.map((service) => {
+              const isActive = activeId === service.id;
+              const Icon = service.icon;
+
+              return (
+                <motion.div
+                  key={service.id}
+                  layout
+                  onClick={() => setActiveId(service.id)}
+                  onMouseEnter={() => setActiveId(service.id)}
+                  transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+                  className={`relative rounded-2xl overflow-hidden cursor-pointer group flex flex-col justify-between transition-all duration-500 ${
+                    isActive
+                      ? `lg:flex-[3.5] bg-gradient-to-b ${service.gradient} ${service.glow} p-6 sm:p-8 min-h-[360px] lg:min-h-0`
+                      : "lg:flex-1 bg-[#08080a]/90 hover:bg-[#0d0d10] p-4 sm:p-5 min-h-[70px] lg:min-h-0"
+                  }`}
+                >
+                  {/* Microsoft Fluent Ambient Mesh Light Glow & Image Layer (Active state only) */}
+                  {isActive && (
+                    <>
+                      {/* Ambient Mesh Glow Orbs */}
+                      <div className={`absolute -top-16 -right-16 w-72 h-72 rounded-full blur-3xl opacity-50 pointer-events-none ${service.meshGlow}`} />
+                      <div className={`absolute -bottom-20 -left-20 w-64 h-64 rounded-full blur-3xl opacity-30 pointer-events-none ${service.meshGlow}`} />
+
+                      {/* Image Backdrop */}
+                      <div
+                        className="absolute inset-0 bg-cover bg-center opacity-25 filter blur-sm pointer-events-none transition-all duration-700"
+                        style={{ backgroundImage: `url(${service.image})` }}
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#030408] via-[#030408]/80 to-transparent pointer-events-none" />
+                    </>
+                  )}
+
+                  {/* ── EXPANDED CARD LAYOUT (ACTIVE) ── */}
+                  {isActive ? (
+                    <motion.div
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.4, delay: 0.1 }}
+                      className="relative z-10 flex flex-col justify-between h-full w-full"
+                    >
+                      {/* Top Header */}
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center gap-3">
+                          <div className="w-10 h-10 flex items-center justify-center text-rose-500">
+                            <Icon size={22} />
+                          </div>
+                          <div>
+                            <h3 className="text-xl sm:text-2xl font-semibold text-white tracking-tight">
+                              {service.title}
+                            </h3>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Bottom Description & CTA Link */}
+                      <div className="mt-8 lg:mt-auto pt-6">
+                        <p className="text-zinc-200 text-sm sm:text-base leading-relaxed max-w-lg mb-6 font-normal drop-shadow-sm">
+                          {service.description}
+                        </p>
+
+                        <a
+                          href={service.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={`inline-flex items-center gap-2 text-xs sm:text-sm font-medium text-white bg-zinc-900/90 ${service.btnHover} px-5 py-2.5 rounded-lg transition-all duration-300 shadow-xl group/btn`}
+                        >
+                          <span>Explore {service.title}</span>
+                          <ArrowUpRight size={16} className="group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
+                        </a>
+                      </div>
+                    </motion.div>
+                  ) : (
+                    /* ── COLLAPSED CARD LAYOUT (INACTIVE) ── */
+                    <div className="h-full flex flex-row lg:flex-col items-center justify-between z-10 py-1 px-2 lg:py-4">
+                      {/* Icon */}
+                      <div className="w-8 h-8 flex items-center justify-center text-zinc-400 group-hover:text-white transition-colors">
+                        <Icon size={18} />
+                      </div>
+
+                      {/* Vertical Rotated Title on Desktop */}
+                      <span className="hidden lg:block text-xs sm:text-sm font-medium tracking-wide text-zinc-400 group-hover:text-white transition-colors [writing-mode:vertical-rl] rotate-180 py-4">
+                        {service.title}
+                      </span>
+
+                      {/* Horizontal Title on Mobile */}
+                      <span className="lg:hidden text-xs font-medium text-zinc-400 group-hover:text-white transition-colors">
+                        {service.title}
+                      </span>
+                    </div>
+                  )}
+                </motion.div>
+              );
+            })}
+          </div>
+        </Reveal>
+
+        {/* Navigation Controls below the Accordion */}
+        <div className="flex items-center justify-center gap-4 mt-4 sm:mt-6 z-20">
+          <button
+            onClick={handlePrev}
+            className="w-10 h-10 rounded-full bg-zinc-900 flex items-center justify-center hover:bg-zinc-800 hover:text-white transition-colors cursor-pointer text-zinc-400"
+            aria-label="Previous card"
+          >
+            <ChevronLeft size={18} />
+          </button>
+          
+          <button
+            onClick={handleNext}
+            className="w-10 h-10 rounded-full bg-zinc-900 flex items-center justify-center hover:bg-zinc-800 hover:text-white transition-colors cursor-pointer text-zinc-400"
+            aria-label="Next card"
+          >
+            <ChevronRight size={18} />
+          </button>
+        </div>
+
+      </div>
+    </section>
+  );
+}
+
+/*
+// ─────────────────────────────────────────────────────────────────────────────
+// PREVIOUS AI STUDIO SHOWCASE IMPLEMENTATION (COMMENTED OUT AS REQUESTED)
+// ─────────────────────────────────────────────────────────────────────────────
+
+/*
 const aiDifferenceItems = [
   {
     id: "philosophy",
@@ -71,7 +398,7 @@ const aiTransformationCards = [
   }
 ];
 
-export function AIStudioShowcase() {
+export function OldAIStudioShowcase() {
   const aiWebsiteUrl = "https://ai.devopstrio.co.uk";
   const [activeCategory, setActiveCategory] = useState<string>("solutions");
 
@@ -131,12 +458,7 @@ export function AIStudioShowcase() {
 
   return (
     <section className="w-full pt-16 pb-16 md:pb-24 bg-[#030303] text-white relative overflow-hidden border-b border-zinc-900">
-      {/* Background Ambient Curved Light Halo */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[95vw] max-w-[1250px] h-[400px] md:h-[550px] bg-gradient-to-r from-red-600/10 via-rose-500/15 to-red-600/10 rounded-[100%] blur-[140px] pointer-events-none opacity-80" />
-
       <div className="max-w-7xl mx-auto w-full px-6 sm:px-8 relative z-10">
-        
-        {/* Section Header */}
         <div className="text-center max-w-4xl mx-auto mb-14">
           <Reveal>
             <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight text-white mb-4 font-sans leading-tight">
@@ -144,204 +466,8 @@ export function AIStudioShowcase() {
             </h2>
           </Reveal>
         </div>
-
-        {/* Accordion Layout */}
-        <Reveal>
-          <div className="relative rounded-2xl border border-zinc-800/80 bg-zinc-950/40 backdrop-blur-md p-4 md:p-6 mb-16 overflow-hidden shadow-2xl">
-            <div className="grid grid-cols-1 lg:grid-cols-10 gap-6 lg:gap-8 items-stretch">
-              
-              {/* Accordion Left Side */}
-              <div className="lg:col-span-3 flex flex-col divide-y divide-zinc-800/80 border-t border-b border-zinc-800/80">
-                {categories.map((item) => {
-                  const isOpen = activeCategory === item.id;
-
-                  return (
-                    <div 
-                      key={item.id} 
-                      className="py-2 transition-colors cursor-pointer"
-                      onMouseEnter={() => setActiveCategory(item.id)}
-                      onClick={() => setActiveCategory(item.id)}
-                    >
-                      <div className="w-full flex items-center justify-between text-left group">
-                        <a 
-                          href={item.link} 
-                          target="_blank" 
-                          rel="noopener noreferrer"
-                          className={`text-lg md:text-xl font-semibold tracking-tight transition-colors ${isOpen ? "text-rose-500" : "text-zinc-300 group-hover:text-rose-500"}`}
-                        >
-                          {item.title}
-                        </a>
-                      </div>
-
-                      <AnimatePresence>
-                        {isOpen && (
-                          <motion.div
-                            initial={{ height: 0, opacity: 0 }}
-                            animate={{ height: "auto", opacity: 1 }}
-                            exit={{ height: 0, opacity: 0 }}
-                            transition={{ duration: 0.35, ease: "easeInOut" }}
-                            className="overflow-hidden"
-                          >
-                            <p className="text-sm md:text-[15px] font-semibold text-zinc-100 pt-2 pb-1.5 leading-relaxed">
-                              {item.description}
-                            </p>
-                          </motion.div>
-                        )}
-                      </AnimatePresence>
-                    </div>
-                  );
-                })}
-              </div>
-
-              {/* Right Panel: Dynamic Image Display matching active category */}
-              <div className="lg:col-span-7 flex flex-col justify-stretch">
-                <div className="rounded-2xl border border-zinc-800/80 bg-zinc-950/40 backdrop-blur-md overflow-hidden shadow-2xl h-full min-h-[260px] md:min-h-[380px] flex items-center justify-center relative group/img">
-                  <AnimatePresence mode="wait">
-                    <motion.img 
-                      key={activeCategoryItem.id}
-                      src={activeCategoryItem.image} 
-                      alt={activeCategoryItem.title} 
-                      initial={{ opacity: 0, scale: 1.02 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      exit={{ opacity: 0, scale: 1.02 }}
-                      transition={{ duration: 0.4 }}
-                      className="absolute inset-0 w-full h-full object-cover pointer-events-none brightness-95"
-                    />
-                  </AnimatePresence>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </Reveal>
-
-        {/* In the Spotlight Cards Section */}
-        <div className="mb-8">
-          <Reveal>
-            <div className="mb-8">
-              <h3 className="text-2xl md:text-3xl font-semibold tracking-tight text-white">
-                In the spotlight
-              </h3>
-            </div>
-          </Reveal>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-            {/* Card 1 - Transform with AI (Red) */}
-            <Reveal delay={0.05}>
-              <div className="rounded-2xl bg-zinc-900/40 p-6 flex flex-col justify-between h-[250px] transition-all duration-300 relative overflow-hidden group">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-[#F25022]/10 blur-3xl rounded-full pointer-events-none" />
-                <div>
-                  <Bot className="w-8 h-8 text-[#F25022] mb-4 opacity-90" />
-                  <h4 className="text-white text-lg font-semibold leading-snug mb-3">
-                    Transform with AI
-                  </h4>
-                  <p className="text-zinc-400 text-xs md:text-sm leading-relaxed line-clamp-3 font-medium">
-                    Deploy autonomous digital agents and generative frameworks to accelerate performance and redefine core customer journeys.
-                  </p>
-                </div>
-                <a 
-                  href={`${aiWebsiteUrl}/#agents`}
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-xs font-bold text-[#F25022] hover:text-[#ff7853] uppercase tracking-wider flex items-center gap-1 mt-4 group/btn"
-                >
-                  Learn More <span className="transform group-hover/btn:translate-x-1 transition-transform">&gt;</span>
-                </a>
-              </div>
-            </Reveal>
-
-            {/* Card 2 - Modernize Your Cloud (Green) */}
-            <Reveal delay={0.1}>
-              <div className="rounded-2xl bg-zinc-900/40 p-6 flex flex-col justify-between h-[250px] transition-all duration-300 relative overflow-hidden group">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-[#7FBA00]/10 blur-3xl rounded-full pointer-events-none" />
-                <div>
-                  <LayoutGrid className="w-8 h-8 text-[#7FBA00] mb-4 opacity-90" />
-                  <h4 className="text-white text-lg font-semibold leading-snug mb-3">
-                    Modernize Your Cloud
-                  </h4>
-                  <p className="text-zinc-400 text-xs md:text-sm leading-relaxed line-clamp-3 font-medium">
-                    Migrate legacy systems into elastic serverless architectures to reduce operational overhead.
-                  </p>
-                </div>
-                <a 
-                  href={`${aiWebsiteUrl}/#platforms`}
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-xs font-bold text-[#7FBA00] hover:text-[#a0e41b] uppercase tracking-wider flex items-center gap-1 mt-4 group/btn"
-                >
-                  Learn More <span className="transform group-hover/btn:translate-x-1 transition-transform">&gt;</span>
-                </a>
-              </div>
-            </Reveal>
-
-            {/* Card 3 - Build Digital Products (Blue) */}
-            <Reveal delay={0.15}>
-              <div className="rounded-2xl bg-zinc-900/40 p-6 flex flex-col justify-between h-[250px] transition-all duration-300 relative overflow-hidden group">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-[#00A4EF]/10 blur-3xl rounded-full pointer-events-none" />
-                <div>
-                  <Cpu className="w-8 h-8 text-[#00A4EF] mb-4 opacity-90" />
-                  <h4 className="text-white text-lg font-semibold leading-snug mb-3">
-                    Build Digital Products
-                  </h4>
-                  <p className="text-zinc-400 text-xs md:text-sm leading-relaxed line-clamp-3 font-medium">
-                    Create beautiful, cloud-native applications backed by cognitive intelligence search channels.
-                  </p>
-                </div>
-                <a 
-                  href={`${aiWebsiteUrl}/#capabilities`}
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-xs font-bold text-[#00A4EF] hover:text-[#4cc1ff] uppercase tracking-wider flex items-center gap-1 mt-4 group/btn"
-                >
-                  Learn More <span className="transform group-hover/btn:translate-x-1 transition-transform">&gt;</span>
-                </a>
-              </div>
-            </Reveal>
-
-            {/* Card 4 - Secure Your Enterprise (Yellow/Orange) */}
-            <Reveal delay={0.2}>
-              <div className="rounded-2xl bg-zinc-900/40 p-6 flex flex-col justify-between h-[250px] transition-all duration-300 relative overflow-hidden group">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-[#FFB900]/10 blur-3xl rounded-full pointer-events-none" />
-                <div>
-                  <Building2 className="w-8 h-8 text-[#FFB900] mb-4 opacity-90" />
-                  <h4 className="text-white text-lg font-semibold leading-snug mb-3">
-                    Secure Your Enterprise
-                  </h4>
-                  <p className="text-zinc-400 text-xs md:text-sm leading-relaxed line-clamp-3 font-medium">
-                    Implement automated security guardrails and deep compliance models tailored for regulated industries.
-                  </p>
-                </div>
-                <a 
-                  href={`${aiWebsiteUrl}/#industries`}
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-xs font-bold text-[#FFB900] hover:text-[#ffd154] uppercase tracking-wider flex items-center gap-1 mt-4 group/btn"
-                >
-                  Learn More <span className="transform group-hover/btn:translate-x-1 transition-transform">&gt;</span>
-                </a>
-              </div>
-            </Reveal>
-          </div>
-
-          {/* Action Button Centered below Spotlight Grid */}
-          <Reveal className="w-full flex justify-center mt-4">
-            <a 
-              href={aiWebsiteUrl} 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-8 py-3.5 border border-rose-500/30 bg-zinc-950/80 hover:bg-rose-600 hover:border-rose-600 text-white text-xs font-semibold tracking-wider uppercase transition-all duration-300 shadow-[0_4px_20px_rgba(0,0,0,0.4)] rounded-[24px]"
-            >
-              <span>Launch Enterprise Studio</span>
-              <ArrowUpRight className="w-4 h-4" />
-            </a>
-          </Reveal>
-        </div>
-
-       
-
       </div>
     </section>
   );
 }
-
+*/

@@ -40,7 +40,7 @@ export default function Home() {
       
 
       {/* 4. AI Studio Showcase */}
-      {/* <AIStudioShowcase /> */}
+      <AIStudioShowcase />
 
 
      
