@@ -1,16 +1,9 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Reveal } from "@/components/ui/Reveal";
 import { motion } from "framer-motion";
 import {
-  Sparkles,
-  Cpu,
-  Bot,
-  Layers,
-  Network,
-  ShieldCheck,
-  Command,
   ArrowUpRight,
   ChevronLeft,
   ChevronRight
@@ -26,7 +19,7 @@ const aiServicesList = [
     description: "Custom enterprise solutions built on top-tier cognitive stacks, incorporating semantic retrieval systems and customized LLMs.",
     image: "/assets/Home-page/Servicescard/AI/Ai solutions.png",
     link: `${aiWebsiteUrl}/#solutions`,
-    icon: Sparkles,
+    icon: "/assets/icons/material.png",
     gradient: "from-rose-950/30 via-[#0d0d11]/90 to-[#030303]",
     border: "border-rose-500/40",
     glow: "shadow-[0_0_35px_rgba(244,63,94,0.12)]",
@@ -41,7 +34,7 @@ const aiServicesList = [
     description: "End-to-end consulting, continuous modernization, custom model training, and integration pipelines built for modern businesses.",
     image: "/assets/Home-page/Servicescard/AI/AI Services.png",
     link: `${aiWebsiteUrl}/#services`,
-    icon: Cpu,
+    icon: "/assets/icons/nature.png",
     gradient: "from-rose-950/30 via-[#0d0d11]/90 to-[#030303]",
     border: "border-rose-500/40",
     glow: "shadow-[0_0_35px_rgba(244,63,94,0.12)]",
@@ -56,7 +49,7 @@ const aiServicesList = [
     description: "Deploy autonomous digital agents trained for IT support operations, sales pipeline execution, finance auditing, and HR operations.",
     image: "/assets/Home-page/Servicescard/AI/AI Agents.png",
     link: `${aiWebsiteUrl}/#agents`,
-    icon: Bot,
+    icon: "/assets/icons/research.png",
     gradient: "from-rose-950/30 via-[#0d0d11]/90 to-[#030303]",
     border: "border-rose-500/40",
     glow: "shadow-[0_0_35px_rgba(244,63,94,0.12)]",
@@ -71,7 +64,7 @@ const aiServicesList = [
     description: "Engineered frameworks optimized specifically for Healthcare workflows, Banking security compliance, and Smart Retail recommendations.",
     image: "/assets/Home-page/Servicescard/AI/AI by industry.png",
     link: `${aiWebsiteUrl}/#industries`,
-    icon: Layers,
+    icon: "/assets/icons/sum.png",
     gradient: "from-rose-950/30 via-[#0d0d11]/90 to-[#030303]",
     border: "border-rose-500/40",
     glow: "shadow-[0_0_35px_rgba(244,63,94,0.12)]",
@@ -86,7 +79,7 @@ const aiServicesList = [
     description: "Harness standard-setting integrations with OpenAI, Anthropic, LangChain, vector datastores, and cloud environments.",
     image: "/assets/Home-page/Servicescard/AI/AI Technology eco system.png",
     link: `${aiWebsiteUrl}/#ecosystem`,
-    icon: Network,
+    icon: "/assets/icons/nigritude.png",
     gradient: "from-rose-950/30 via-[#0d0d11]/90 to-[#030303]",
     border: "border-rose-500/40",
     glow: "shadow-[0_0_35px_rgba(244,63,94,0.12)]",
@@ -101,7 +94,7 @@ const aiServicesList = [
     description: "Establish model explainability benchmarks, human-in-the-loop oversight workflows, and zero-trust security audits.",
     image: "/assets/Home-page/Servicescard/AI/AI Covernance.png",
     link: `${aiWebsiteUrl}/#governance`,
-    icon: ShieldCheck,
+    icon: "/assets/icons/tanned-hide.png",
     gradient: "from-rose-950/30 via-[#0d0d11]/90 to-[#030303]",
     border: "border-rose-500/40",
     glow: "shadow-[0_0_35px_rgba(244,63,94,0.12)]",
@@ -116,7 +109,7 @@ const aiServicesList = [
     description: "Activate AIHire matching platforms, cognitive search indexers, and automated academic document evaluation studios.",
     image: "/assets/Home-page/Servicescard/AI/AI Platforms & Products.png",
     link: `${aiWebsiteUrl}/#platforms`,
-    icon: Command,
+    icon: "/assets/icons/material (1).png",
     gradient: "from-rose-950/30 via-[#0d0d11]/90 to-[#030303]",
     border: "border-rose-500/40",
     glow: "shadow-[0_0_35px_rgba(244,63,94,0.12)]",
@@ -128,6 +121,22 @@ const aiServicesList = [
 
 export function AIStudioShowcase() {
   const [activeId, setActiveId] = useState<string>("agents");
+  const [isPaused, setIsPaused] = useState<boolean>(false);
+
+  // Auto-play timer for smooth card expansion one-by-one
+  useEffect(() => {
+    if (isPaused) return;
+
+    const interval = setInterval(() => {
+      setActiveId((prevId) => {
+        const currentIndex = aiServicesList.findIndex((s) => s.id === prevId);
+        const nextIndex = (currentIndex + 1) % aiServicesList.length;
+        return aiServicesList[nextIndex].id;
+      });
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, [isPaused]);
 
   const handleNext = () => {
     const currentIndex = aiServicesList.findIndex((s) => s.id === activeId);
@@ -150,36 +159,16 @@ export function AIStudioShowcase() {
           <Reveal>
             <div className="relative inline-block">
               {/* Arrow image on the left side (White color filter) */}
-              <div className="absolute -top-8 sm:-top-10 md:-top-12 -left-12 sm:-left-20 md:-left-28 z-20 pointer-events-none select-none">
+              <div className="absolute -top-6 sm:-top-8 md:-top-9 -left-6 sm:-left-10 md:-left-14 z-20 pointer-events-none select-none">
                 <img
                   src="/assets/components/left-right.png"
                   alt="Left-Right Arrow indicator"
-                  className="w-12 sm:w-16 md:w-20 h-auto object-contain filter brightness-0 invert opacity-75 drop-shadow-[0_0_10px_rgba(255,255,255,0.25)]"
+                  className="w-8 sm:w-11 md:w-14 h-auto object-contain filter brightness-0 invert opacity-75 drop-shadow-[0_0_10px_rgba(255,255,255,0.25)]"
                 />
               </div>
 
               <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight text-white mb-4 font-sans leading-tight">
-                Shaping the Future with Enterprise{" "}
-                <span className="relative inline-flex items-center justify-center px-4 py-1 mx-1.5">
-                  <span className="text-white font-bold relative z-10">AI</span>
-                  {/* Brand Rose hand-drawn oval circle loop encircling AI cleanly outside */}
-                  <svg
-                    className="absolute -inset-x-4 -inset-y-2.5 w-[calc(100%+32px)] h-[calc(100%+20px)] text-rose-500 pointer-events-none overflow-visible"
-                    viewBox="0 0 100 45"
-                    preserveAspectRatio="none"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M 8 22.5 C 8 8, 92 8, 92 22.5 C 92 37, 8 37, 8 22.5 C 8 15, 35 9, 68 9"
-                      stroke="currentColor"
-                      strokeWidth="2.8"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="opacity-95 filter drop-shadow-[0_0_10px_rgba(244,63,94,0.7)]"
-                    />
-                  </svg>
-                </span>{" "}
+                Shaping the Future with Enterprise AI{" "}
                 <span className="relative inline-block px-1">
                   <span className="text-rose-500 font-semibold">Innovation</span>
                   {/* Brand Rose hand-drawn single stroke underline */}
@@ -205,10 +194,13 @@ export function AIStudioShowcase() {
 
         {/* Fey.com-Style Expanding Vertical Card Accordion Array */}
         <Reveal>
-          <div className="flex flex-col lg:flex-row items-stretch justify-center gap-3 sm:gap-4 h-auto lg:h-[500px] xl:h-[540px] w-full max-w-7xl mx-auto select-none">
+          <div
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
+            className="flex flex-col lg:flex-row items-stretch justify-center gap-3 sm:gap-4 h-auto lg:h-[500px] xl:h-[540px] w-full max-w-7xl mx-auto select-none"
+          >
             {aiServicesList.map((service) => {
               const isActive = activeId === service.id;
-              const Icon = service.icon;
 
               return (
                 <motion.div
@@ -249,9 +241,13 @@ export function AIStudioShowcase() {
                     >
                       {/* Top Header */}
                       <div className="flex items-center justify-between">
-                        <div className="flex items-center gap-3">
-                          <div className="w-10 h-10 flex items-center justify-center text-rose-500">
-                            <Icon size={22} />
+                        <div className="flex items-center gap-3.5">
+                          <div className="w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center p-1">
+                            <img
+                              src={service.icon}
+                              alt={`${service.title} icon`}
+                              className="w-full h-full object-contain filter drop-shadow-[0_0_12px_rgba(244,63,94,0.35)] transition-transform duration-300 group-hover:scale-105"
+                            />
                           </div>
                           <div>
                             <h3 className="text-xl sm:text-2xl font-semibold text-white tracking-tight">
@@ -282,17 +278,21 @@ export function AIStudioShowcase() {
                     /* ── COLLAPSED CARD LAYOUT (INACTIVE) ── */
                     <div className="h-full flex flex-row lg:flex-col items-center justify-between z-10 py-1 px-2 lg:py-4">
                       {/* Icon */}
-                      <div className="w-8 h-8 flex items-center justify-center text-zinc-400 group-hover:text-white transition-colors">
-                        <Icon size={18} />
+                      <div className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center p-1">
+                        <img
+                          src={service.icon}
+                          alt={`${service.title} icon`}
+                          className="w-full h-full object-contain filter drop-shadow-[0_0_8px_rgba(255,255,255,0.2)] opacity-85 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300"
+                        />
                       </div>
 
                       {/* Vertical Rotated Title on Desktop */}
-                      <span className="hidden lg:block text-xs sm:text-sm font-medium tracking-wide text-zinc-400 group-hover:text-white transition-colors [writing-mode:vertical-rl] rotate-180 py-4">
+                      <span className="hidden lg:block text-base sm:text-lg md:text-xl font-semibold tracking-wide text-zinc-300 group-hover:text-white transition-colors [writing-mode:vertical-rl] rotate-180 py-4">
                         {service.title}
                       </span>
 
                       {/* Horizontal Title on Mobile */}
-                      <span className="lg:hidden text-xs font-medium text-zinc-400 group-hover:text-white transition-colors">
+                      <span className="lg:hidden text-sm sm:text-base font-semibold text-zinc-300 group-hover:text-white transition-colors">
                         {service.title}
                       </span>
                     </div>
