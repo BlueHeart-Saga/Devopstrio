@@ -7,7 +7,7 @@ import { Reveal } from "@/components/ui/Reveal";
 
 export function EnterpriseCTA() {
   return (
-    <section className="w-full py-28 md:py-40 bg-[#030303] text-white border-t border-zinc-900 relative overflow-hidden">
+    <section className="w-full py-10 md:py-16 bg-[#030303] text-white border-t border-zinc-900 relative overflow-hidden">
       {/* Background Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-[radial-gradient(ellipse_at_center,rgba(220,38,38,0.04),transparent_60%)] pointer-events-none" />
 

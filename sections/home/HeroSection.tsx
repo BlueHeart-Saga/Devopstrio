@@ -11,6 +11,8 @@ interface Slide {
   primaryBtn: { text: string; href: string };
   secondaryBtn: { text: string; href: string };
   image: string;
+  name: string;
+  signatureImage: string;
 }
 
 export function HeroSection() {
@@ -37,10 +39,10 @@ export function HeroSection() {
       ),
       primaryBtn: { text: "Explore Services", href: "/services" },
       secondaryBtn: { text: "Contact Us", href: "/contact#contact-form" },
-      image: "/assets/Home-page/homehero/updated_hero/Punitha.svg"
+      image: "/assets/Home-page/homehero/updated_hero/Punitha.svg",
+      name: "Punitha",
+      signatureImage: "/assets/sign/Punitha.png"
     },
-   
-   
     {
       eyebrow: "Software & Quality Engineering",
       title: (
@@ -58,7 +60,9 @@ export function HeroSection() {
       ),
       primaryBtn: { text: "Explore Services", href: "/services" },
       secondaryBtn: { text: "Contact Us", href: "/contact#contact-form" },
-      image: "/assets/Home-page/homehero/Ananthalakshmi.svg"
+      image: "/assets/Home-page/homehero/Ananthalakshmi.svg",
+      name: "Ananthalakshmi",
+      signatureImage: "/assets/sign/ananthalakshmi.png"
     },
     {
       eyebrow: "Data & Cloud Infrastructure",
@@ -77,7 +81,9 @@ export function HeroSection() {
       ),
       primaryBtn: { text: "Explore Services", href: "/services" },
       secondaryBtn: { text: "Contact Us", href: "/contact#contact-form" },
-      image: "/assets/Home-page/homehero/Umamaheswari R.svg"
+      image: "/assets/Home-page/homehero/Umamaheswari R.svg",
+      name: "Umamaheswari R",
+      signatureImage: "/assets/sign/uma.png"
     },
     {
       eyebrow: "Digital Products & Platforms",
@@ -96,7 +102,9 @@ export function HeroSection() {
       ),
       primaryBtn: { text: "Explore Services", href: "/services" },
       secondaryBtn: { text: "Contact Us", href: "/contact#contact-form" },
-      image: "/assets/Home-page/homehero/updated_hero/Subbiah Muthu.M.svg"
+      image: "/assets/Home-page/homehero/updated_hero/Subbiah Muthu.M.svg",
+      name: "Subbiah Muthu M",
+      signatureImage: "/assets/sign/subbiah.png"
     },
     {
       eyebrow: "End-to-End Technology Services",
@@ -115,7 +123,9 @@ export function HeroSection() {
       ),
       primaryBtn: { text: "Explore Services", href: "/services" },
       secondaryBtn: { text: "Contact Us", href: "/contact#contact-form" },
-      image: "/assets/Home-page/homehero/updated_hero/Kishore.svg"
+      image: "/assets/Home-page/homehero/updated_hero/Kishore.svg",
+      name: "Kishore",
+      signatureImage: "/assets/sign/kishore.png"
     },
     {
       eyebrow: "Ecosystem & Strategic Alliances",
@@ -134,7 +144,9 @@ export function HeroSection() {
       ),
       primaryBtn: { text: "Explore Services", href: "/services" },
       secondaryBtn: { text: "Contact Us", href: "/contact#contact-form" },
-      image: "/assets/Home-page/homehero/updated_hero/Thanga Lakshmi.svg"
+      image: "/assets/Home-page/homehero/updated_hero/Thanga Lakshmi.svg",
+      name: "Thanga Lakshmi",
+      signatureImage: "/assets/sign/thangalakshmi.png"
     },
     {
       eyebrow: "AI & Data Innovation",
@@ -153,7 +165,9 @@ export function HeroSection() {
       ),
       primaryBtn: { text: "Explore Services", href: "/services" },
       secondaryBtn: { text: "Contact Us", href: "/contact#contact-form" },
-      image: "/assets/Home-page/homehero/updated_hero/Sermaraj.svg"
+      image: "/assets/Home-page/homehero/updated_hero/Sermaraj.svg",
+      name: "Sermaraj",
+      signatureImage: "/assets/sign/serma.png"
     },
     {
       eyebrow: "Platform & Cloud Operations",
@@ -172,9 +186,11 @@ export function HeroSection() {
       ),
       primaryBtn: { text: "Explore Services", href: "/services" },
       secondaryBtn: { text: "Contact Us", href: "/contact#contact-form" },
-      image: "/assets/Home-page/homehero/Hamsavarthiny.P.svg"
+      image: "/assets/Home-page/homehero/Hamsavarthiny.P.svg",
+      name: "Hamsavarthiny P",
+      signatureImage: "/assets/sign/hamsa.png"
     },
-     {
+    {
       eyebrow: "Elite Global Technology Partner",
       title: (
         <>
@@ -191,7 +207,9 @@ export function HeroSection() {
       ),
       primaryBtn: { text: "Explore Services", href: "/services" },
       secondaryBtn: { text: "Contact Us", href: "/contact#contact-form" },
-      image: "/assets/Home-page/homehero/updated_hero/Sahadevan1.svg"
+      image: "/assets/Home-page/homehero/updated_hero/Sahadevan1.svg",
+      name: "Sagadevan",
+      signatureImage: "/assets/sign/saga.png"
     },
     {
       eyebrow: "Modern DevOps & Automation",
@@ -210,9 +228,11 @@ export function HeroSection() {
       ),
       primaryBtn: { text: "Explore Services", href: "/services" },
       secondaryBtn: { text: "Contact Us", href: "/contact#contact-form" },
-      image: "/assets/Home-page/homehero/Suryaprakash s.svg"
+      image: "/assets/Home-page/homehero/Suryaprakash s.svg",
+      name: "Suryaprakash S",
+      signatureImage: "/assets/sign/surya.png"
     },
-     {
+    {
       eyebrow: "Industry-Focused Expertise",
       title: (
         <>
@@ -229,7 +249,9 @@ export function HeroSection() {
       ),
       primaryBtn: { text: "Explore Services", href: "/services" },
       secondaryBtn: { text: "Contact Us", href: "/contact#contact-form" },
-      image: "/assets/Home-page/homehero/updated_hero/Oviya.svg"
+      image: "/assets/Home-page/homehero/updated_hero/Oviya.svg",
+      name: "Oviya",
+      signatureImage: "/assets/sign/oviya.png"
     },
     {
       eyebrow: "Enterprise Application Delivery",
@@ -248,7 +270,9 @@ export function HeroSection() {
       ),
       primaryBtn: { text: "Explore Services", href: "/services" },
       secondaryBtn: { text: "Contact Us", href: "/contact#contact-form" },
-      image: "/assets/Home-page/homehero/Saravanakumar.s.svg"
+      image: "/assets/Home-page/homehero/Saravanakumar.s.svg",
+      name: "Saravanakumar S",
+      signatureImage: "/assets/sign/saravana.png"
     }
   ];
 
@@ -355,6 +379,21 @@ export function HeroSection() {
                   height={850}
                   className="w-full h-auto object-contain max-h-[300px] sm:max-h-[460px] lg:max-h-[750px] xl:max-h-[850px] select-none pb-0 mb-0"
                 />
+
+                {/* Authentic Handwritten Signature Image (Original PNG shifted right & higher up) */}
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.9, rotate: -6 }}
+                  animate={{ opacity: 1, scale: 1, rotate: -4 }}
+                  transition={{ duration: 0.5, delay: 0.2 }}
+                  className="absolute bottom-8 sm:bottom-12 md:bottom-16 lg:bottom-20 right-4 sm:right-10 md:right-16 lg:right-20 z-30 flex flex-col items-start select-none pointer-events-none"
+                >
+                  <img
+                    src={slides[currentSlide].signatureImage}
+                    alt={`${slides[currentSlide].name} signature`}
+                    className="w-36 sm:w-48 md:w-56 lg:w-64 h-auto object-contain drop-shadow-[0_4px_16px_rgba(0,0,0,0.6)]"
+                  />
+                </motion.div>
+
                 {/* Bottom blending gradient */}
                 <div className="absolute bottom-[-1px] left-0 right-0 h-36 bg-gradient-to-t from-[#030303] via-[#030303]/90 to-transparent pointer-events-none z-20" />
               </motion.div>

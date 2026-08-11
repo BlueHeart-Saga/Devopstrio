@@ -89,8 +89,8 @@ export function CompanyOverviewPillars() {
                     isHovered ? "bg-[#030303] shadow-[0_20px_50px_rgba(0,0,0,0.95)] z-20" : "bg-transparent"
                   }`}
                 >
-                  {/* Background Image Reveal - ONLY on the hovered card (aligned across 3 columns) */}
-                  <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+                  {/* Background Image Reveal (Commented out per user request) */}
+                  {/* <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
                     <img
                       src="/assets/About-page/card/singlecardto3.png"
                       alt={pillar.title}
@@ -103,30 +103,21 @@ export function CompanyOverviewPillars() {
                         isHovered ? "opacity-90 scale-105 filter brightness-105" : "opacity-0 scale-100"
                       }`}
                     />
-                    {/* Gradient Overlay for Text Contrast */}
                     <div
                       className={`absolute inset-0 bg-gradient-to-t from-black/95 via-black/60 to-black/40 transition-opacity duration-700 ${
                         isHovered ? "opacity-100" : "opacity-0"
                       }`}
                     />
-                  </div>
+                  </div> */}
 
-                  {/* Content Words (Centered by default, smoothly glides UP towards top on hover) */}
-                  <div
-                    className={`relative z-10 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
-                      isHovered ? "-translate-y-28 md:-translate-y-36" : "translate-y-0"
-                    }`}
-                  >
-                    <h3 className="text-4xl md:text-5xl xl:text-6xl font-bold tracking-tight text-rose-500 mb-4 font-sans transition-colors duration-300">
+                  {/* Content Words (Centered static text) */}
+                  <div className="relative z-10">
+                    <h3 className="text-4xl md:text-5xl xl:text-6xl font-bold tracking-tight text-rose-500 mb-4 font-sans">
                       {pillar.title}
                     </h3>
 
                     {/* Subtitle */}
-                    <p
-                      className={`text-lg md:text-xl font-semibold tracking-wide leading-relaxed transition-all duration-500 ${
-                        isHovered ? "text-white opacity-100" : "text-zinc-300 opacity-90"
-                      }`}
-                    >
+                    <p className="text-lg md:text-xl font-semibold tracking-wide leading-relaxed text-zinc-300">
                       {pillar.subtitle}
                     </p>
                   </div>

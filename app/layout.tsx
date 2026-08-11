@@ -42,8 +42,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark overflow-x-hidden">
-      <body className="overflow-x-hidden w-full max-w-[100vw] relative bg-[#030303] text-white">
+    <html lang="en" className="dark overflow-x-clip">
+      <body className="overflow-x-clip w-full max-w-[100vw] relative bg-[#030303] text-white">
         {/* Google Analytics 4 (GA4) */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-NGV5DC74RW"

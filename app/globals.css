@@ -60,13 +60,16 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(225, 29, 72, 0.5); /* rose-600 muted */
+  background: rgba(225, 29, 72, 0.5);
+  /* rose-600 muted */
   border-radius: 10px;
-  border: 2px solid #050505; /* creates a padded effect */
+  border: 2px solid #050505;
+  /* creates a padded effect */
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(225, 29, 72, 0.9); /* rose-600 bright */
+  background: rgba(225, 29, 72, 0.9);
+  /* rose-600 bright */
 }
 
 ::-webkit-scrollbar-corner {
@@ -104,18 +107,24 @@ body {
   justify-content: center;
   gap: 6px;
   padding: 8px 20px;
-  border: 1px solid #e11d48; /* rose-600 */
-  border-radius: 9999px; /* rounded-full */
+  border: 1px solid #e11d48;
+  /* rose-600 */
+  border-radius: 9999px;
+  /* rounded-full */
   transition: all 0.25s ease-in-out;
   position: relative;
   overflow: hidden;
-  font-size: 12px; /* matches text-xs */
-  font-weight: 600; /* matches font-semibold */
-  letter-spacing: 0.025em; /* matches tracking-wide */
+  font-size: 12px;
+  /* matches text-xs */
+  font-weight: 600;
+  /* matches font-semibold */
+  letter-spacing: 0.025em;
+  /* matches tracking-wide */
   cursor: pointer;
   color: #ffffff;
   z-index: 1;
-  background-color: rgba(225, 29, 72, 0.05); /* rose-600/5 */
+  background-color: rgba(225, 29, 72, 0.05);
+  /* rose-600/5 */
 }
 
 .nav-contact-btn:before {
@@ -126,7 +135,8 @@ body {
   top: 100%;
   width: 140%;
   height: 180%;
-  background-color: rgba(225, 29, 72, 0.2); /* rose-600 with opacity */
+  background-color: rgba(225, 29, 72, 0.2);
+  /* rose-600 with opacity */
   border-radius: 50%;
   display: block;
   transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
@@ -141,7 +151,8 @@ body {
   top: 180%;
   width: 160%;
   height: 190%;
-  background-color: #e11d48; /* rose-600 */
+  background-color: #e11d48;
+  /* rose-600 */
   border-radius: 50%;
   display: block;
   transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
@@ -173,6 +184,8 @@ body {
 
 /* Hide scrollbar for IE, Edge and Firefox */
 .scrollbar-hide {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
 }

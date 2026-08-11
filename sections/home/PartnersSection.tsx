@@ -92,7 +92,7 @@ export function PartnersSection() {
         {/* Header */}
         <Reveal className="max-w-3xl mb-12 text-center mx-auto">
           <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight mb-4 text-white relative inline-block">
-            {/* Connecting side arrow starting right at left side of "Some of Our Clients" */}
+            {/* Connecting side arrow starting right at left side of "Partnering for Innovation" */}
             <div className="absolute -top-2 sm:-top-4 md:-top-6 -left-4 sm:-left-28 md:-left-36 lg:-left-40 z-30 pointer-events-none select-none">
               <img
                 src="/assets/components/top-to-buttom-side%20-Arrowmid.png"
@@ -100,7 +100,7 @@ export function PartnersSection() {
                 className="w-12 sm:w-20 md:w-24 lg:w-28 h-auto object-contain filter drop-shadow-[0_0_20px_rgba(225,29,72,0.4)] transform -rotate-[-30deg]"
               />
             </div>
-            Some of Our Clients
+            Partnering for <span className="text-rose-500 font-semibold">Innovation</span>
           </h2>
           {/* <p className="text-zinc-300 text-base md:text-lg leading-relaxed font-normal max-w-2xl mx-auto">
             The following are just a few of our regular clients and strategic partners worldwide.
@@ -114,15 +114,15 @@ export function PartnersSection() {
           {displayedPartners.map((partner, idx) => (
             <div
               key={`${partner.name}-${idx}`}
-              className="w-full h-28 sm:h-32 md:h-36 border-r border-b border-zinc-800/80 bg-[#030303] flex items-center justify-center p-6 transition-all duration-300 hover:bg-zinc-950/80 relative overflow-hidden group"
+              className="w-full h-28 sm:h-32 md:h-36 border-r border-b border-zinc-800/80 bg-[#030303] flex items-center justify-center p-3 sm:p-4 transition-all duration-300 hover:bg-zinc-950/80 relative overflow-hidden group"
             >
-              <div className="relative z-10 flex items-center justify-center w-full h-full p-2">
+              <div className="relative z-10 flex items-center justify-center w-full h-full p-1">
                 <Image
                   src={partner.logo}
                   alt={`${partner.name} logo`}
-                  width={160}
-                  height={48}
-                  className="w-auto h-auto max-w-[80%] max-h-[70%] object-contain select-none transition-all duration-300 group-hover:scale-110"
+                  width={220}
+                  height={90}
+                  className="w-auto h-auto max-w-[92%] max-h-[85%] object-contain select-none transition-all duration-300 group-hover:scale-110"
                 />
               </div>
             </div>

@@ -1,93 +1,88 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Reveal } from "@/components/ui/Reveal";
 import { motion } from "framer-motion";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 
 const teamMembers = [
   {
     name: "Suryaprakash S",
     role: "Cloud Solutions Engineer",
-    photoPink: "/assets/About-page/team/pinkteam/Suryaprakash s pink with text.png",
-    photoGray: "/assets/About-page/team/grayteam/Suryaprakash s ash with text.png",
+    photo: "/assets/About-page/team/MeetOurTeam/Suriya.png",
     rotate: "-rotate-2",
   },
   {
     name: "Hamsavarthiny P",
     role: "DevOps & Automation Lead",
-    photoPink: "/assets/About-page/team/pinkteam/Hamsavarthiny.P pink with text.png",
-    photoGray: "/assets/About-page/team/grayteam/Hamsavarthiny.P ash with text.png",
+    photo: "/assets/About-page/team/MeetOurTeam/Humza.png",
     rotate: "-rotate-1",
   },
   {
     name: "Ananthalakshmi",
     role: "Senior Software Architect",
-    photoPink: "/assets/About-page/team/pinkteam/Ananthalakshmi pink with text.png",
-    photoGray: "/assets/About-page/team/grayteam/Ananthalakshmi ash with text.png",
+    photo: "/assets/About-page/team/MeetOurTeam/Anantha%20Lakshmi.png",
     rotate: "rotate-2",
   },
   {
     name: "Sagadevan",
     role: "Machine Learning Engineer",
-    photoPink: "/assets/About-page/team/pinkteam/Sagadevan.png",
-    photoGray: "/assets/About-page/team/grayteam/Sagadevan.png",
+    photo: "/assets/About-page/team/MeetOurTeam/Sagadevan.png",
     rotate: "rotate-2",
   },
   {
     name: "Subbiah Muthu",
     role: "Deep Learning Specialist",
-    photoPink: "/assets/About-page/team/pinkteam/Subbiahmuthu.png",
-    photoGray: "/assets/About-page/team/grayteam/Subbiahmuthu.png",
+    photo: "/assets/About-page/team/MeetOurTeam/Subbiah.png",
     rotate: "-rotate-1",
   },
   {
     name: "Kishore",
     role: "AI Security Engineer",
-    photoPink: "/assets/About-page/team/pinkteam/Kishore.png",
-    photoGray: "/assets/About-page/team/grayteam/Kishore.png",
+    photo: "/assets/About-page/team/MeetOurTeam/Kishore.png",
     rotate: "rotate-3",
   },
   {
     name: "Sermaraja",
     role: "UI/UX Design Manager",
-    photoPink: "/assets/About-page/team/pinkteam/Sermaraj.png",
-    photoGray: "/assets/About-page/team/grayteam/Sermaraj.png",
+    photo: "/assets/About-page/team/MeetOurTeam/serma%20raja.png",
     rotate: "-rotate-2",
   },
   {
     name: "Thangalakshmi",
     role: "Cognitive Success Lead",
-    photoPink: "/assets/About-page/team/pinkteam/Thangalakshmi.png",
-    photoGray: "/assets/About-page/team/grayteam/Thangalakshmi.png",
+    photo: "/assets/About-page/team/MeetOurTeam/Thanga%20laxmi.png",
     rotate: "rotate-1",
   },
   {
     name: "Punitha",
     role: "Design Thinking Lead",
-    photoPink: "/assets/About-page/team/pinkteam/Punitha.png",
-    photoGray: "/assets/About-page/team/grayteam/Punitha.png",
+    photo: "/assets/About-page/team/MeetOurTeam/Punitha.png",
     rotate: "-rotate-3",
   },
   {
     name: "Ooviya",
     role: "SEO & Content Marketing",
-    photoPink: "/assets/About-page/team/pinkteam/Ooviya.png",
-    photoGray: "/assets/About-page/team/grayteam/Ooviya.png",
+    photo: "/assets/About-page/team/MeetOurTeam/Oviya.png",
     rotate: "rotate-2",
   },
   {
     name: "Saravanakumar S",
     role: "Platform Infrastructure Lead",
-    photoPink: "/assets/About-page/team/pinkteam/Saravanakumar.s pink with text.png",
-    photoGray: "/assets/About-page/team/grayteam/Saravanakumar.s ash with text.png",
+    photo: "/assets/About-page/team/MeetOurTeam/Saravana%20Kumar.png",
     rotate: "rotate-3",
   },
   {
     name: "Umamaheswari R",
     role: "AI & Data Engineering Lead",
-    photoPink: "/assets/About-page/team/pinkteam/Umamaheswari R pink with text.png",
-    photoGray: "/assets/About-page/team/grayteam/Umamaheswari R ash with text.png",
+    photo: "/assets/About-page/team/MeetOurTeam/Uma.png",
     rotate: "-rotate-3",
+  },
+  {
+    name: "Mareeswaran",
+    role: "Full Stack Engineer",
+    photo: "/assets/About-page/team/MeetOurTeam/Mareeswaran.png",
+    rotate: "rotate-1",
   },
 ];
 
@@ -116,8 +111,20 @@ const eventImages = [
 ];
 
 export function OurPeopleSection() {
+  const teamScrollRef = useRef<HTMLDivElement>(null);
+
+  const scrollTeam = (direction: "left" | "right") => {
+    if (teamScrollRef.current) {
+      const scrollAmount = teamScrollRef.current.clientWidth;
+      teamScrollRef.current.scrollBy({
+        left: direction === "left" ? -scrollAmount : scrollAmount,
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
-    <section className="w-full py-20 bg-[#030303] text-white relative overflow-hidden" id="our-people">
+    <section className="w-full pt-14 sm:pt-20 pb-6 sm:pb-8 bg-[#030303] text-white relative overflow-hidden" id="our-people">
       {/* Ambient Glow */}
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[radial-gradient(circle_at_top_right,rgba(220,38,38,0.05),transparent_70%)] blur-3xl pointer-events-none" />
 
@@ -265,7 +272,7 @@ export function OurPeopleSection() {
 
         {/* ── Our People Polaroid Cards Container ── */}
         <Reveal>
-          <div className="relative rounded-3xl overflow-hidden border border-zinc-800/40 bg-zinc-950/30 p-8 md:p-12 lg:p-16">
+          <div className="relative w-full">
 
             {/* Dot grid texture */}
             <div
@@ -302,38 +309,54 @@ export function OurPeopleSection() {
                   </span>
                 </div>
 
-                {/* Single Row Horizontal Scroll Slot Container */}
-                <div className="w-full overflow-x-auto pb-8 pt-4 scrollbar-none [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden relative z-10">
-                  <div className="flex gap-6 min-w-max px-4">
+                {/* 4 Cards Per View Sliding Carousel Container */}
+                <div className="w-full overflow-hidden relative pb-4 pt-4 z-10">
+                  <div
+                    ref={teamScrollRef}
+                    className="no-scrollbar flex gap-6 overflow-x-auto snap-x snap-mandatory scroll-smooth pb-6 cursor-grab active:cursor-grabbing"
+                    style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+                  >
                     {teamMembers.map((member, idx) => (
-                      <motion.div
+                      <div
                         key={member.name}
-                        className={`group relative w-[210px] shrink-0 p-3 pb-5 bg-white border border-zinc-200/80 shadow-[0_12px_24px_rgba(0,0,0,0.25)] rounded cursor-pointer ${member.rotate} origin-center transition-all duration-300`}
-                        initial={{ opacity: 0, y: 40 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.55, delay: idx * 0.05, ease: [0.22, 1, 0.36, 1] }}
-                        whileHover={{ y: -12, scale: 1.05, rotate: 0, zIndex: 50, boxShadow: "0 25px 50px -12px rgba(225,29,72,0.25)", transition: { duration: 0.3 } }}
+                        className="w-[calc(100%-16px)] sm:w-[calc(50%-12px)] md:w-[calc(33.333%-16px)] lg:w-[calc(25%-18px)] shrink-0 snap-start snap-always"
                       >
-                        <div className="relative w-full aspect-[3/4] rounded-sm overflow-hidden bg-zinc-100">
-                          <img
-                            src={member.photoPink}
-                            alt={`${member.name} Pink Theme`}
-                            className="absolute inset-0 w-full h-full object-cover object-top transition-opacity duration-500 group-hover:opacity-0"
-                          />
-                          <img
-                            src={member.photoGray}
-                            alt={`${member.name} Gray Theme`}
-                            className="absolute inset-0 w-full h-full object-cover object-top opacity-0 transition-opacity duration-500 group-hover:opacity-100"
-                          />
-                        </div>
-
-                        <div className="mt-3 text-center">
-                          <p className="text-zinc-900 text-xs font-bold leading-tight">{member.name}</p>
-                          <p className="text-rose-600 text-[10px] leading-tight font-medium mt-0.5">{member.role}</p>
-                        </div>
-                      </motion.div>
+                        <motion.div
+                          className={`group relative w-full p-3.5 pb-6 bg-white border border-zinc-200/80 shadow-[0_14px_30px_rgba(0,0,0,0.3)] rounded cursor-pointer ${member.rotate} origin-center transition-all duration-300`}
+                          initial={{ opacity: 0, y: 35 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          viewport={{ once: true }}
+                          transition={{ duration: 0.5, delay: (idx % 4) * 0.06 }}
+                          whileHover={{ y: -12, scale: 1.04, rotate: 0, zIndex: 50, boxShadow: "0 25px 50px -12px rgba(225,29,72,0.25)" }}
+                        >
+                          <div className="relative w-full aspect-[3/4] rounded-sm overflow-hidden bg-zinc-100">
+                            <img
+                              src={member.photo}
+                              alt={member.name}
+                              className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                            />
+                          </div>
+                        </motion.div>
+                      </div>
                     ))}
+                  </div>
+
+                  {/* Carousel Navigation Arrow Controls */}
+                  <div className="flex items-center justify-center gap-4 mt-4 sm:mt-6 relative z-20">
+                    <button
+                      onClick={() => scrollTeam("left")}
+                      className="w-11 h-11 rounded-full border border-zinc-700 hover:border-rose-500 hover:bg-rose-500/10 text-white flex items-center justify-center transition-all duration-300 active:scale-95 cursor-pointer shadow-[0_0_15px_rgba(0,0,0,0.5)]"
+                      aria-label="Previous Team Members"
+                    >
+                      <ArrowLeft size={18} />
+                    </button>
+                    <button
+                      onClick={() => scrollTeam("right")}
+                      className="w-11 h-11 rounded-full border border-zinc-700 hover:border-rose-500 hover:bg-rose-500/10 text-white flex items-center justify-center transition-all duration-300 active:scale-95 cursor-pointer shadow-[0_0_15px_rgba(0,0,0,0.5)]"
+                      aria-label="Next Team Members"
+                    >
+                      <ArrowRight size={18} />
+                    </button>
                   </div>
                 </div>
               </div>

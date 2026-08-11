@@ -19,7 +19,7 @@ const aiServicesList = [
     description: "Custom enterprise solutions built on top-tier cognitive stacks, incorporating semantic retrieval systems and customized LLMs.",
     image: "/assets/Home-page/Servicescard/AI/Ai solutions.png",
     link: `${aiWebsiteUrl}/#solutions`,
-    icon: "/assets/icons/material.png",
+    icon: "/assets/Home-page/AI Services Gif/AI_Solutions.gif",
     gradient: "from-rose-950/30 via-[#0d0d11]/90 to-[#030303]",
     border: "border-rose-500/40",
     glow: "shadow-[0_0_35px_rgba(244,63,94,0.12)]",
@@ -34,7 +34,7 @@ const aiServicesList = [
     description: "End-to-end consulting, continuous modernization, custom model training, and integration pipelines built for modern businesses.",
     image: "/assets/Home-page/Servicescard/AI/AI Services.png",
     link: `${aiWebsiteUrl}/#services`,
-    icon: "/assets/icons/nature.png",
+    icon: "/assets/Home-page/AI Services Gif/Services.gif",
     gradient: "from-rose-950/30 via-[#0d0d11]/90 to-[#030303]",
     border: "border-rose-500/40",
     glow: "shadow-[0_0_35px_rgba(244,63,94,0.12)]",
@@ -49,7 +49,7 @@ const aiServicesList = [
     description: "Deploy autonomous digital agents trained for IT support operations, sales pipeline execution, finance auditing, and HR operations.",
     image: "/assets/Home-page/Servicescard/AI/AI Agents.png",
     link: `${aiWebsiteUrl}/#agents`,
-    icon: "/assets/icons/research.png",
+    icon: "/assets/Home-page/AI Services Gif/AI-Agent.gif",
     gradient: "from-rose-950/30 via-[#0d0d11]/90 to-[#030303]",
     border: "border-rose-500/40",
     glow: "shadow-[0_0_35px_rgba(244,63,94,0.12)]",
@@ -64,7 +64,7 @@ const aiServicesList = [
     description: "Engineered frameworks optimized specifically for Healthcare workflows, Banking security compliance, and Smart Retail recommendations.",
     image: "/assets/Home-page/Servicescard/AI/AI by industry.png",
     link: `${aiWebsiteUrl}/#industries`,
-    icon: "/assets/icons/sum.png",
+    icon: "/assets/Home-page/AI Services Gif/Industry.gif",
     gradient: "from-rose-950/30 via-[#0d0d11]/90 to-[#030303]",
     border: "border-rose-500/40",
     glow: "shadow-[0_0_35px_rgba(244,63,94,0.12)]",
@@ -79,7 +79,7 @@ const aiServicesList = [
     description: "Harness standard-setting integrations with OpenAI, Anthropic, LangChain, vector datastores, and cloud environments.",
     image: "/assets/Home-page/Servicescard/AI/AI Technology eco system.png",
     link: `${aiWebsiteUrl}/#ecosystem`,
-    icon: "/assets/icons/nigritude.png",
+    icon: "/assets/Home-page/AI Services Gif/AI technology ecosystem.gif",
     gradient: "from-rose-950/30 via-[#0d0d11]/90 to-[#030303]",
     border: "border-rose-500/40",
     glow: "shadow-[0_0_35px_rgba(244,63,94,0.12)]",
@@ -94,7 +94,7 @@ const aiServicesList = [
     description: "Establish model explainability benchmarks, human-in-the-loop oversight workflows, and zero-trust security audits.",
     image: "/assets/Home-page/Servicescard/AI/AI Covernance.png",
     link: `${aiWebsiteUrl}/#governance`,
-    icon: "/assets/icons/tanned-hide.png",
+    icon: "/assets/Home-page/AI Services Gif/AI Security governance.gif",
     gradient: "from-rose-950/30 via-[#0d0d11]/90 to-[#030303]",
     border: "border-rose-500/40",
     glow: "shadow-[0_0_35px_rgba(244,63,94,0.12)]",
@@ -109,7 +109,7 @@ const aiServicesList = [
     description: "Activate AIHire matching platforms, cognitive search indexers, and automated academic document evaluation studios.",
     image: "/assets/Home-page/Servicescard/AI/AI Platforms & Products.png",
     link: `${aiWebsiteUrl}/#platforms`,
-    icon: "/assets/icons/material (1).png",
+    icon: "/assets/Home-page/AI Services Gif/AI products.gif",
     gradient: "from-rose-950/30 via-[#0d0d11]/90 to-[#030303]",
     border: "border-rose-500/40",
     glow: "shadow-[0_0_35px_rgba(244,63,94,0.12)]",
@@ -167,25 +167,29 @@ export function AIStudioShowcase() {
                 />
               </div>
 
-              <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight text-white mb-4 font-sans leading-tight">
-                Shaping the Future with Enterprise AI{" "}
-                <span className="relative inline-block px-1">
-                  <span className="text-rose-500 font-semibold">Innovation</span>
-                  {/* Brand Rose hand-drawn single stroke underline */}
+              <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight text-white mb-6 font-sans leading-relaxed flex flex-wrap items-center justify-center gap-x-3">
+                <span>Shaping the Future with</span>{" "}
+                <span className="relative inline-block px-1.5 mx-1">
+                  <span className="text-white font-semibold relative z-10">Enterprise AI</span>
+                  {/* Brand Rose hand-drawn stroke underline */}
                   <svg
-                    className="absolute -bottom-2 left-0 w-full h-3 text-rose-500 pointer-events-none overflow-visible"
-                    viewBox="0 0 220 12"
+                    className="absolute -bottom-3 left-0 w-full h-4 text-rose-500 pointer-events-none overflow-visible z-0"
+                    viewBox="0 0 240 16"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
-                      d="M 5 6 Q 110 3, 215 7"
+                      d="M 2 8 Q 60 4, 120 7 T 238 6"
                       stroke="currentColor"
-                      strokeWidth="4"
+                      strokeWidth="3.5"
                       strokeLinecap="round"
-                      className="opacity-95 filter drop-shadow-[0_0_10px_rgba(244,63,94,0.7)]"
+                      strokeLinejoin="round"
+                      className="opacity-95 filter drop-shadow-[0_0_10px_rgba(244,63,94,0.75)]"
                     />
                   </svg>
+                </span>{" "}
+                <span className="bg-rose-500 text-white font-semibold px-4 py-1 mx-1.5 mt-2 sm:mt-2.5 rounded-xl inline-block align-middle">
+                  INNOVATION
                 </span>
               </h2>
             </div>
@@ -242,11 +246,12 @@ export function AIStudioShowcase() {
                       {/* Top Header */}
                       <div className="flex items-center justify-between">
                         <div className="flex items-center gap-3.5">
-                          <div className="w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center p-1">
+                          {/* Floating Animated GIF Icon (Full Colorful when Active) */}
+                          <div className="w-10 h-10 sm:w-12 sm:h-12 shrink-0 flex items-center justify-center">
                             <img
                               src={service.icon}
                               alt={`${service.title} icon`}
-                              className="w-full h-full object-contain filter drop-shadow-[0_0_12px_rgba(244,63,94,0.35)] transition-transform duration-300 group-hover:scale-105"
+                              className="w-full h-full object-contain filter-none drop-shadow-[0_0_16px_rgba(244,63,94,0.8)] transition-transform duration-300 group-hover:scale-110"
                             />
                           </div>
                           <div>
@@ -277,12 +282,12 @@ export function AIStudioShowcase() {
                   ) : (
                     /* ── COLLAPSED CARD LAYOUT (INACTIVE) ── */
                     <div className="h-full flex flex-row lg:flex-col items-center justify-between z-10 py-1 px-2 lg:py-4">
-                      {/* Icon */}
-                      <div className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center p-1">
+                      {/* Floating Animated GIF Icon (Monochrome when inactive, Colorful on hover) */}
+                      <div className="w-9 h-9 sm:w-11 sm:h-11 shrink-0 flex items-center justify-center">
                         <img
                           src={service.icon}
                           alt={`${service.title} icon`}
-                          className="w-full h-full object-contain filter drop-shadow-[0_0_8px_rgba(255,255,255,0.2)] opacity-85 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300"
+                          className="w-full h-full object-contain filter brightness-0 invert opacity-75 group-hover:filter-none group-hover:opacity-100 group-hover:drop-shadow-[0_0_14px_rgba(244,63,94,0.85)] group-hover:scale-110 transition-all duration-300"
                         />
                       </div>
 

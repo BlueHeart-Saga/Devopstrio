@@ -50,9 +50,9 @@ export default function CompanyOverviewPage() {
       </div>
 
       {/* 3. Our Values Section */}
-      <div id="values">
+      {/* <div id="values">
         <MissionVisionValues />
-      </div>
+      </div> */}
 
       {/* 4. Our Future Section */}
       <div id="future">

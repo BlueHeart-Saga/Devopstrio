@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
-import { Play, ArrowLeft, ArrowRight } from "lucide-react";
+import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
 import Link from "next/link";
 
@@ -13,62 +13,72 @@ export function OurFutureSection() {
     {
       title: "Autonomous Orchestration",
       desc: <>Architecting self-healing Kubernetes clusters and AI-driven site reliability engineering agents that predict and resolve incidents. Learn more under our <Link href="/services/devops-automation" className="text-rose-500 hover:underline font-bold">DevOps automation</Link> division.</>,
-      tag: "SRE Agents",
-      image: "/assets/common/09ff7846bc8c9998745688779c09f88d 1.png"
+      tag: "DevOps",
+      image: "/assets/About-page/overview/future/devops.png",
+      href: "/services/devops-automation"
     },
     {
       title: "Sustainable Green Cloud",
       desc: <>Optimizing code execution and server workloads to reduce carbon emissions by up to 40% across multi-cloud environments as part of <Link href="/services/cloud-services" className="text-rose-500 hover:underline font-bold">cloud services</Link>.</>,
-      tag: "Green Ops",
-      image: "/assets/common/1b065043b6959827c05a0073c93a4a53 1.png"
+      tag: "Cloud Ops",
+      image: "/assets/About-page/overview/future/Cloud.png",
+      href: "/services/cloud-services"
     },
     {
       title: "Next-Gen AI Swarms",
       desc: <>Deploying multi-model consensus swarms to orchestrate complex corporate workflows under <Link href="/services/ai-data-innovation" className="text-rose-500 hover:underline font-bold">AI & data innovation</Link>.</>,
-      tag: "Swarm Gen",
-      image: "/assets/common/260b761ad40c3ad2acba2c6666894539 1.png"
+      tag: "AI Innovation",
+      image: "/assets/About-page/overview/future/AI & Data Innovation.png",
+      href: "/services/ai-data-innovation"
     },
     {
-      title: "Cognitive DevOps Agents",
+      title: "Cognitive Software Development",
       desc: <>Unifying generative code synthesis and automated testing pipelines under multi-agent reasoning loops. Explore our <Link href="/services/software-development" className="text-rose-500 hover:underline font-bold">software development</Link> options.</>,
-      tag: "DevOps AI",
-      image: "/assets/common/2fe7f9184c515b0c515ce38bc8a25efa 1.png"
+      tag: "Software",
+      image: "/assets/About-page/overview/future/software development.png",
+      href: "/services/software-development"
     },
     {
-      title: "Quantum Cloud Security",
-      desc: "Preparing hybrid-cloud computing topologies for post-quantum cryptographic standards and early quantum processing unit co-processors.",
-      tag: "Quantum Ops",
-      image: "/assets/common/315e4fdc6263bfd240f36297e376576e 1.png"
+      title: "Quantum & Zero-Trust Cybersecurity",
+      desc: "Preparing hybrid-cloud computing topologies for post-quantum cryptographic standards and zero-trust security architecture.",
+      tag: "Security",
+      image: "/assets/About-page/overview/future/Cybersecurity.png",
+      href: "/services/cybersecurity"
     },
     {
-      title: "Edge AI Swarms",
-      desc: "Deploying secure, low-latency intelligence pipelines across distributed edge clusters and custom IoT gateway nodes.",
-      tag: "Edge Swarms",
-      image: "/assets/common/37b9b888cc479ea7b74d2d9a05c37597 1.png"
+      title: "Advanced Data Analytics",
+      desc: "Deploying secure, real-time intelligence pipelines, telemetry analytics, and data warehouse synchronization.",
+      tag: "Analytics",
+      image: "/assets/About-page/overview/future/data analytics.png",
+      href: "/services/data-engineering"
     },
     {
-      title: "Spatial Computing Mesh",
-      desc: "Orchestrating real-time spatial computing telemetry and digital twin models across industrial networks with sub-millisecond edge synchronization.",
-      tag: "Spatial IoT",
-      image: "/assets/common/45ea830d170d382ade235db479060da7 1.png"
+      title: "Digital Transformation Mesh",
+      desc: "Orchestrating end-to-end digital transformation, industrial automation, and enterprise legacy modernization.",
+      tag: "Digital Mesh",
+      image: "/assets/About-page/overview/future/digital transformation.png",
+      href: "/services/digital-transformation"
     },
     {
-      title: "Generative UI Engines",
-      desc: "Dynamic runtime interface synthesis powered by real-time user intent mapping and multi-agent design feedback loops.",
-      tag: "UI Gen",
-      image: "/assets/common/464d8932bca4d6bb552ff2dcf2f3c5ca 1.png"
+      title: "Strategic Technology Consulting",
+      desc: "Providing high-impact architecture strategy, technology roadmap design, and enterprise advisory.",
+      tag: "Consulting",
+      image: "/assets/About-page/overview/future/Consult.png",
+      href: "/services/it-consulting"
     },
     {
-      title: "Decentralized Trust Networks",
-      desc: "Integrating smart-contract compliance gates and zero-knowledge proofs directly into automated multi-party supply chain delivery channels.",
-      tag: "Trust Ops",
-      image: "/assets/common/782e79a0bc5e9f58cb9af6a27727ca7b 1.png"
+      title: "Next-Gen Managed Operations",
+      desc: "24/7 intelligent infrastructure monitoring, automated incident resolution, and proactive operations management.",
+      tag: "Managed Ops",
+      image: "/assets/About-page/overview/future/Managed services.png",
+      href: "/services/managed-services"
     },
     {
-      title: "Neuromorphic Compute Nodes",
-      desc: "Prototyping local neuromorphic hardware acceleration layers for next-generation edge device classification and inference tasks.",
-      tag: "Brain Ops",
-      image: "/assets/common/82090d7be4ef5694954ce77f9cc2e627 1.png"
+      title: "Enterprise Systems Management",
+      desc: "Unified cloud control plane management, proactive capacity planning, and automated SRE operations.",
+      tag: "Enterprise",
+      image: "/assets/About-page/overview/future/Managed services-1.png",
+      href: "/services/managed-services"
     }
   ];
 
@@ -78,38 +88,38 @@ export function OurFutureSection() {
     const interval = setInterval(() => {
       if (scrollRef.current) {
         const container = scrollRef.current;
-        const cardWidth = window.innerWidth < 768 ? 290 + 20 : 360 + 28;
+        const cardWidth = window.innerWidth < 768 ? 310 + 24 : 390 + 28;
         if (container.scrollLeft + container.clientWidth >= container.scrollWidth - 10) {
           container.scrollTo({ left: 0, behavior: "smooth" });
         } else {
           container.scrollBy({ left: cardWidth, behavior: "smooth" });
         }
       }
-    }, 4000);
+    }, 4500);
 
     return () => clearInterval(interval);
   }, [isHovered]);
 
   const scroll = (direction: "left" | "right") => {
     if (scrollRef.current) {
-      const cardWidth = window.innerWidth < 768 ? 290 + 20 : 360 + 28;
+      const cardWidth = window.innerWidth < 768 ? 310 + 24 : 390 + 28;
       const scrollAmount = direction === "left" ? -cardWidth : cardWidth;
       scrollRef.current.scrollBy({ left: scrollAmount, behavior: "smooth" });
     }
   };
 
   return (
-    <section className="py-28 bg-[#030303] text-white relative overflow-hidden">
+    <section className="pt-8 sm:pt-12 pb-16 sm:pb-20 bg-[#030303] text-white relative overflow-hidden">
       {/* Dynamic inline styles for responsive card sizing & scrollbar hiding */}
       <style dangerouslySetInnerHTML={{
         __html: `
         .future-track {
-          --card-w: 290px;
-          --card-gap: 20px;
+          --card-w: 310px;
+          --card-gap: 24px;
         }
         @media (min-width: 768px) {
           .future-track {
-            --card-w: 360px;
+            --card-w: 390px;
             --card-gap: 28px;
           }
         }
@@ -125,7 +135,7 @@ export function OurFutureSection() {
       {/* Grid lines background */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#1f1f1f_1px,transparent_1px),linear-gradient(to_bottom,#1f1f1f_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_at_center,black_30%,transparent_70%)] opacity-[0.06]" />
 
-      {/* Concentric circles (Radar Waves) matching the image */}
+      {/* Concentric circles (Radar Waves) */}
       <div className="absolute right-[-15%] top-1/2 -translate-y-1/2 w-[700px] h-[700px] pointer-events-none opacity-40 z-0">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[250px] h-[250px] border border-zinc-800/25 rounded-full" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[450px] h-[450px] border border-zinc-800/15 rounded-full" />
@@ -136,15 +146,14 @@ export function OurFutureSection() {
       {/* Glowing red accent orb */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-[radial-gradient(circle_at_center,rgba(225,29,72,0.015),transparent_75%)] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-8 xl:px-8 relative z-10">
         
-        {/* Apple-style Centered Dual-Tone Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16 relative">
+        {/* Section Header */}
+        <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-10 relative">
           <Reveal>
-           
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight text-white leading-tight">
               Building What's Next.<br />
-              <span className="bg-rose-500 text-white font-semibold px-4 py-1 mr-2 rounded-xl inline-block">
+              <span className="bg-rose-500 text-white font-semibold px-4 py-1 mr-2 rounded-xl inline-block mt-2">
                 Our Future
               </span>{" "}
               Vision.
@@ -152,28 +161,8 @@ export function OurFutureSection() {
           </Reveal>
         </div>
 
-        {/* Top Controls for Carousel */}
-        <div className="flex justify-end mb-6">
-          <div className="flex items-center gap-3">
-            <button
-              onClick={() => scroll("left")}
-              className="w-10 h-10 rounded-full border border-zinc-800 hover:border-rose-500 bg-zinc-950/80 flex items-center justify-center text-zinc-400 hover:text-white hover:shadow-[0_0_15px_rgba(225,29,72,0.2)] transition-all duration-300"
-              aria-label="Scroll Left"
-            >
-              <ArrowLeft size={16} />
-            </button>
-            <button
-              onClick={() => scroll("right")}
-              className="w-10 h-10 rounded-full border border-zinc-800 hover:border-rose-500 bg-zinc-950/80 flex items-center justify-center text-zinc-400 hover:text-white hover:shadow-[0_0_15px_rgba(225,29,72,0.2)] transition-all duration-300"
-              aria-label="Scroll Right"
-            >
-              <ArrowRight size={16} />
-            </button>
-          </div>
-        </div>
-
-        {/* Apple-Style Cards Horizontal Carousel Slider */}
-        <div className="w-full overflow-hidden relative pb-8">
+        {/* Carousel Viewport */}
+        <div className="w-full overflow-hidden relative pb-4">
           <div
             ref={scrollRef}
             onMouseEnter={() => setIsHovered(true)}
@@ -183,40 +172,68 @@ export function OurFutureSection() {
           >
             {futureFocus.map((focus, idx) => (
               <Reveal key={idx} delay={idx * 0.04} className="shrink-0 snap-start snap-always">
-                <div
-                  className="group relative rounded-[2rem] p-5 sm:p-6 bg-zinc-950/70 border border-zinc-900 hover:border-rose-500/50 transition-all duration-500 flex flex-col justify-between w-[var(--card-w)] h-[380px] md:h-[420px] select-none shadow-2xl overflow-hidden hover:shadow-[0_25px_60px_rgba(0,0,0,0.8)] hover:-translate-y-1.5"
-                >
-                  {/* Top Thumbnail Box */}
-                  <div className="relative w-full aspect-[16/10] rounded-2xl overflow-hidden mb-4 bg-zinc-900 border border-zinc-800/80 shrink-0">
+                <div className="w-[var(--card-w)] flex-shrink-0 group flex flex-col bg-[#0A0A0A] rounded-[24px] p-3 border border-zinc-800/80 hover:border-zinc-700/80 transition-all duration-300 hover:shadow-[0_8px_30px_rgba(0,0,0,0.4)] h-[310px]">
+                  
+                  {/* Cover Image */}
+                  <div className="relative w-full aspect-[2/1] overflow-hidden rounded-[16px] bg-zinc-900 border border-zinc-800/50">
                     <img
                       src={focus.image}
                       alt={typeof focus.title === 'string' ? focus.title : 'Future Focus'}
-                      className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
                   </div>
 
-                  {/* Text Content Area */}
-                  <div className="flex-1 flex flex-col justify-between text-left">
+                  {/* Card Body */}
+                  <div className="flex flex-col flex-1 px-4 pt-4 pb-3 justify-between">
                     <div>
-                      <span className="text-[10px] font-mono font-bold tracking-widest uppercase text-rose-500 block mb-1">
+                      <span className="text-rose-400 text-xs font-semibold uppercase tracking-widest block mb-1">
                         {focus.tag}
                       </span>
-                      <h3 className="text-lg md:text-xl font-bold text-white tracking-tight mb-2 group-hover:text-rose-400 transition-colors">
+                      <h3 className="text-white text-base md:text-lg font-semibold leading-snug">
                         {focus.title}
                       </h3>
-                      <p className="text-zinc-400 text-xs sm:text-sm leading-relaxed font-medium line-clamp-3">
-                        {focus.desc}
-                      </p>
                     </div>
+
+                    {/* CTA - Glassy Premium Link Button matching CoreServices.tsx */}
+                    <Link
+                      href={focus.href}
+                      className="mt-4 pt-3.5 border-t border-zinc-800/80 hover:border-rose-500/30 inline-flex items-center justify-between w-full text-white hover:text-rose-400 text-sm font-semibold tracking-wide transition-all duration-300 group/btn"
+                    >
+                      <span className="group-hover/btn:translate-x-1 transition-transform duration-300">
+                        Explore Focus
+                      </span>
+                      <span className="w-8.5 h-8.5 rounded-full bg-rose-500/10 border border-rose-500/30 group-hover/btn:bg-rose-600 group-hover/btn:border-rose-600 flex items-center justify-center text-rose-500 group-hover/btn:text-white transition-all duration-300 shadow-[0_0_15px_rgba(225,29,72,0.2)] group-hover/btn:shadow-[0_0_20px_rgba(225,29,72,0.6)]">
+                        <ArrowUpRight size={15} />
+                      </span>
+                    </Link>
                   </div>
+
                 </div>
               </Reveal>
             ))}
           </div>
         </div>
 
+        {/* Navigation Controls matching CoreServices.tsx */}
+        <div className="flex items-center gap-3 mt-8">
+          <button
+            onClick={() => scroll("left")}
+            className="w-11 h-11 rounded-full border border-zinc-700 hover:border-rose-500 hover:bg-rose-500/10 text-white flex items-center justify-center transition-all duration-300 active:scale-95 cursor-pointer"
+            aria-label="Previous future focus"
+          >
+            <ArrowLeft size={16} />
+          </button>
+          <button
+            onClick={() => scroll("right")}
+            className="w-11 h-11 rounded-full border border-zinc-700 hover:border-rose-500 hover:bg-rose-500/10 text-white flex items-center justify-center transition-all duration-300 active:scale-95 cursor-pointer"
+            aria-label="Next future focus"
+          >
+            <ArrowUpRight size={16} />
+          </button>
+        </div>
+
       </div>
     </section>
   );
 }
+
