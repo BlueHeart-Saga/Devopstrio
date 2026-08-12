@@ -7,23 +7,23 @@ import { motion } from "framer-motion";
 
 export const LeadershipCareersCTA = () => {
   return (
-    <section className="w-full py-28 md:py-40 bg-[#030303] text-white border-t border-zinc-900 relative overflow-hidden">
+    <section id="careers-cta" className="w-full py-28 md:py-40 bg-[#030303] text-white border-t border-zinc-900 relative overflow-hidden">
       {/* Background Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-[radial-gradient(ellipse_at_center,rgba(220,38,38,0.04),transparent_60%)] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10 text-center">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
           className="max-w-3xl mx-auto flex flex-col items-center"
         >
-          <div className="inline-flex items-center gap-2 mb-4">
+          {/* <div className="inline-flex items-center gap-2 mb-4">
             <span className="text-xs font-semibold tracking-[0.2em] uppercase text-zinc-400">
               CAREERS AT DEVOPSTRIO
             </span>
-          </div>
+          </div> */}
 
           <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-8">
             Ready to shape the next era of <Link href="/services/cloud-services" className="hover:underline font-medium bg-gradient-to-r from-red-600 via-rose-600 to-rose-500 bg-clip-text text-transparent">digital transformation</Link>?

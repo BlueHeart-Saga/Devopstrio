@@ -77,13 +77,7 @@ const teamMembers = [
     role: "AI & Data Engineering Lead",
     photo: "/assets/About-page/team/MeetOurTeam/Uma.png",
     rotate: "-rotate-3",
-  },
-  {
-    name: "Mareeswaran",
-    role: "Full Stack Engineer",
-    photo: "/assets/About-page/team/MeetOurTeam/Mareeswaran.png",
-    rotate: "rotate-1",
-  },
+  }
 ];
 
 const eventImages = [

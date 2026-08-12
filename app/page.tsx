@@ -8,6 +8,7 @@ import { CaseStudies } from "@/sections/home/CaseStudies";
 // Dynamic imports for heavier sections
 const AIStudioShowcase = dynamic(() => import("@/sections/home/AIStudioShowcase").then((mod) => mod.AIStudioShowcase));
 const ExecutiveTestimonials = dynamic(() => import("@/sections/home/ExecutiveTestimonials").then((mod) => mod.ExecutiveTestimonials));
+const FounderQuoteSection = dynamic(() => import("@/sections/home/FounderQuoteSection").then((mod) => mod.FounderQuoteSection));
 const CommunityJoinSection = dynamic(() => import("@/sections/home/CommunityJoinSection").then((mod) => mod.CommunityJoinSection));
 const PartnersSection = dynamic(() => import("@/sections/home/PartnersSection").then((mod) => mod.PartnersSection));
 const Insights = dynamic(() => import("@/sections/home/Insights").then((mod) => mod.Insights));
@@ -54,12 +55,15 @@ export default function Home() {
       
 
       {/* 7. Testimonials */}
-      <ExecutiveTestimonials />
+      {/* <ExecutiveTestimonials /> */}
 
-      {/* 8. Community & Client Mosaic Wall */}
-      {/* <CommunityJoinSection /> */}
+      {/* 7.5. Community & Client Mosaic Wall */}
+      <CommunityJoinSection />
 
-      {/* 9. Partners */}
+      {/* 7.6. Founder & CEO Vision Quote */}
+      <FounderQuoteSection />
+
+      {/* 8. Partners */}
       <PartnersSection />
 
       {/* 10. Announcement Banner */}

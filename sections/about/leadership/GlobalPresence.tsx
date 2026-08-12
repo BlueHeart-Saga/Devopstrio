@@ -65,36 +65,23 @@ export const GlobalPresence = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <section className="py-24 bg-[#050505] border-t border-zinc-900 relative overflow-hidden">
+    <section id="global-presence" className="py-24 bg-[#050505] border-t border-zinc-900 relative overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_50%_40%_at_80%_60%,rgba(255,23,68,0.06),transparent)]" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="text-center mb-14">
-          <motion.span
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 block mb-4"
-          >
-            Global Presence
-          </motion.span>
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-4"
-          >
-            Globally <span className="text-rose-500">Distributed</span>
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-zinc-400 text-sm md:text-base leading-relaxed font-bold max-w-2xl mx-auto"
-          >
-            Our global teams collaborate across regions to provide continuous delivery, support, and innovation. Learn more about our <Link href="/about/global-presence" className="text-rose-500 hover:underline">global presence and delivery model</Link>.
-          </motion.p>
+        <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-14 relative">
+          {/* Curved Arrow PNG on Right Side */}
+          <div className="absolute -top-6 right-2 sm:right-10 z-20 pointer-events-none select-none">
+            <img
+              src="/assets/components/Carrow-right.png"
+              alt="Curved arrow"
+              className="w-14 sm:w-20 h-auto object-contain filter drop-shadow-[0_0_15px_rgba(244,63,94,0.4)] scale-x-[-1]"
+            />
+          </div>
+
+          <h2 className="text-3xl sm:text-5xl md:text-6xl font-semibold tracking-tight text-white leading-tight">
+            Global <span className="bg-rose-500 text-white font-semibold px-4 py-1 rounded-xl inline-block">Presence.</span>
+          </h2>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">

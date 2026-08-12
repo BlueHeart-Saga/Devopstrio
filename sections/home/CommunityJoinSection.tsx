@@ -1,9 +1,9 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
-import { Reveal } from "@/components/ui/Reveal";
+import { motion, AnimatePresence } from "framer-motion";
+import { Star, Quote } from "lucide-react";
 
 const clientPhotos = [
   "/assets/Home-page/client-reviews/image%20164.png",
@@ -22,11 +22,48 @@ const clientPhotos = [
   "/assets/Home-page/client-reviews/image%20177.png",
   "/assets/Home-page/client-reviews/image%20178.png",
   "/assets/Home-page/client-reviews/image%20180.png",
-  "/assets/Home-page/client-reviews/image%20181.png"
+  "/assets/Home-page/client-reviews/image%20181.png",
 ];
 
-// Grid mosaic tile types to create an organic, artistic layout like the reference image
-type TileType = "photo" | "square" | "circle" | "teardrop1" | "teardrop2" | "rose-block";
+const clientReviews = [
+  { name: "Elena Rostova", role: "VP of Engineering • FinScale", quote: "Devopstrio scaled our Kubernetes clusters to handle 10x traffic with zero downtime." },
+  { name: "David Chen", role: "CTO • CloudMatrix", quote: "Their DevOps automation reduced our deployment cycle from days to under 15 minutes." },
+  { name: "Marcus Vance", role: "Director of Cloud Ops • HealthTech", quote: "Outstanding multi-cloud architecture and unmatched 24/7 reliability." },
+  { name: "Sophie Taylor", role: "Head of Infrastructure • NexaPay", quote: "Transformed our legacy stack into high-velocity microservices seamlessly." },
+  { name: "Sarah Jenkins", role: "Chief Architect • DataPulse", quote: "The AI & MLOps pipelines revolutionized our real-time predictive analytics." },
+  { name: "Liam O'Connor", role: "VP of Technology • RetailWave", quote: "Zero-trust security fabric implemented flawlessly across 4 global regions." },
+  { name: "Aria Montgomery", role: "Engineering Lead • SaaSify", quote: "Internal developer platforms saved our engineering pods 100+ hours a week." },
+  { name: "Kevin Patel", role: "Head of DevOps • LogisticsPro", quote: "GitOps workflows and automated quality gates eliminated production bugs." },
+  { name: "Amara Nwosu", role: "VP of Digital • ApexBank", quote: "Seamless enterprise cloud migration with automated FinOps cost optimization." },
+  { name: "Julian Rossi", role: "Lead Architect • SmartGrid", quote: "Resilient lakehouse architecture processing 50M+ events per hour effortlessly." },
+  { name: "Chloe Dupont", role: "CTO • BioGen Labs", quote: "Unparalleled engineering talent and enterprise rigor from day one." },
+  { name: "Alexander Wright", role: "Director of SRE • PayFlow", quote: "Chaos engineering and resilience drills made our systems virtually bulletproof." },
+  { name: "Hannah Schmidt", role: "Head of Cloud • AutoDrive AI", quote: "Autonomous agentic AI swarms integrated directly into our core platform." },
+  { name: "Tariq Mansoor", role: "VP Engineering • SecureCloud", quote: "Exceptional DevSecOps tooling and continuous compliance automation." },
+  { name: "Jessica Lee", role: "Product Director • Streamline", quote: "Delivered our critical platform milestone 2 months ahead of schedule." },
+  { name: "Noah Campbell", role: "VP Technology • OmniChannel", quote: "True partners who treat our system scalability and velocity as their own." },
+  { name: "Rachel Adams", role: "Head of Infrastructure • CloudScale", quote: "Highest quality engineering team we have ever collaborated with." },
+];
+
+// Grid mosaic tile types with rich corner variations matching the reference design
+type TileType =
+  | "photo"
+  | "gray-sq"
+  | "gray-cut-tr"
+  | "gray-cut-bl"
+  | "gray-cut-tl"
+  | "gray-cut-br"
+  | "gray-arch-l"
+  | "gray-arch-r"
+  | "circle"
+  | "plum-sq"
+  | "plum-petal-tl"
+  | "plum-petal-tr"
+  | "plum-cut-tr"
+  | "plum-cut-tl"
+  | "plum-cut-br"
+  | "plum-cut-bl"
+  | "plum-circle";
 
 interface MosaicTile {
   type: TileType;
@@ -34,239 +71,356 @@ interface MosaicTile {
 }
 
 const gridTiles: MosaicTile[] = [
-  // Row 1
-  { type: "square" },
-  { type: "photo", photoIdx: 0 },
-  { type: "teardrop1" },
+  // Row 1 (20 tiles)
+  { type: "gray-sq" },
+  { type: "gray-cut-tr" },
+  { type: "plum-petal-tl" },
   { type: "circle" },
+  { type: "photo", photoIdx: 0 },
+  { type: "plum-cut-tl" },
+  { type: "gray-arch-l" },
   { type: "photo", photoIdx: 1 },
+  { type: "circle" },
+  { type: "gray-cut-bl" },
+  { type: "plum-petal-tr" },
+  { type: "gray-sq" },
+  { type: "plum-cut-br" },
+  { type: "circle" },
   { type: "photo", photoIdx: 2 },
-  { type: "square" },
+  { type: "plum-sq" },
+  { type: "gray-cut-tl" },
+  { type: "plum-circle" },
+  { type: "gray-sq" },
+  { type: "plum-petal-tr" },
+
+  // Row 2 (20 tiles)
+  { type: "gray-cut-tl" },
+  { type: "plum-sq" },
   { type: "photo", photoIdx: 3 },
   { type: "circle" },
-  { type: "square" },
-  { type: "teardrop2" },
-  
-  // Row 2
-  { type: "square" },
-  { type: "teardrop2" },
-  { type: "rose-block" },
+  { type: "gray-sq" },
+  { type: "plum-petal-tl" },
   { type: "photo", photoIdx: 4 },
-  { type: "square" },
-  { type: "circle" },
+  { type: "plum-circle" },
+  { type: "gray-arch-r" },
   { type: "photo", photoIdx: 5 },
+  { type: "plum-cut-tr" },
+  { type: "gray-cut-br" },
   { type: "photo", photoIdx: 6 },
-  { type: "square" },
-  { type: "teardrop1" },
-  { type: "rose-block" },
-
-  // Row 3
-  { type: "rose-block" },
-  { type: "square" },
-  { type: "photo", photoIdx: 7 },
-  { type: "square" },
-  { type: "photo", photoIdx: 8 },
   { type: "circle" },
-  { type: "square" },
+  { type: "gray-sq" },
+  { type: "plum-petal-tr" },
+  { type: "photo", photoIdx: 7 },
+  { type: "circle" },
+  { type: "plum-cut-tl" },
+  { type: "gray-arch-r" },
+
+  // Row 3 (20 tiles)
+  { type: "photo", photoIdx: 8 },
+  { type: "gray-arch-l" },
+  { type: "circle" },
+  { type: "plum-petal-tr" },
   { type: "photo", photoIdx: 9 },
+  { type: "gray-cut-tr" },
   { type: "circle" },
   { type: "photo", photoIdx: 10 },
-  { type: "square" },
-
-  // Row 4
-  { type: "square" },
+  { type: "plum-sq" },
+  { type: "gray-sq" },
   { type: "photo", photoIdx: 11 },
-  { type: "photo", photoIdx: 12 },
+  { type: "plum-petal-tl" },
   { type: "circle" },
-  { type: "square" },
-  { type: "rose-block" },
+  { type: "photo", photoIdx: 12 },
+  { type: "gray-cut-tl" },
+  { type: "plum-circle" },
   { type: "photo", photoIdx: 13 },
-  { type: "teardrop2" },
-  { type: "photo", photoIdx: 14 },
-  { type: "square" },
+  { type: "gray-sq" },
+  { type: "plum-cut-br" },
   { type: "circle" },
 
-  // Row 5
+  // Row 4 (20 tiles)
+  { type: "plum-petal-tl" },
+  { type: "circle" },
+  { type: "photo", photoIdx: 14 },
+  { type: "gray-cut-bl" },
+  { type: "plum-sq" },
+  { type: "circle" },
   { type: "photo", photoIdx: 15 },
-  { type: "teardrop1" },
+  { type: "gray-arch-l" },
+  { type: "plum-petal-tr" },
   { type: "photo", photoIdx: 16 },
+  { type: "gray-sq" },
+  { type: "plum-cut-bl" },
+  { type: "circle" },
   { type: "photo", photoIdx: 0 },
-  { type: "square" },
+  { type: "plum-circle" },
+  { type: "gray-cut-tr" },
+  { type: "photo", photoIdx: 1 },
+  { type: "circle" },
+  { type: "plum-petal-tl" },
+  { type: "gray-sq" },
+
+  // Row 5 (20 tiles)
+  { type: "gray-sq" },
+  { type: "plum-cut-tl" },
+  { type: "circle" },
+  { type: "photo", photoIdx: 2 },
+  { type: "gray-cut-tr" },
+  { type: "plum-sq" },
+  { type: "circle" },
+  { type: "photo", photoIdx: 3 },
+  { type: "gray-arch-r" },
+  { type: "plum-petal-tl" },
+  { type: "photo", photoIdx: 4 },
+  { type: "circle" },
+  { type: "gray-sq" },
+  { type: "plum-cut-tr" },
+  { type: "photo", photoIdx: 5 },
+  { type: "plum-circle" },
+  { type: "gray-cut-bl" },
+  { type: "photo", photoIdx: 6 },
+  { type: "gray-sq" },
+  { type: "plum-petal-tr" },
+
+  // Row 6 (20 tiles)
+  { type: "gray-cut-br" },
+  { type: "photo", photoIdx: 7 },
+  { type: "plum-sq" },
+  { type: "gray-arch-l" },
+  { type: "photo", photoIdx: 8 },
+  { type: "circle" },
+  { type: "plum-petal-tr" },
+  { type: "photo", photoIdx: 9 },
+  { type: "gray-cut-tl" },
+  { type: "circle" },
+  { type: "photo", photoIdx: 10 },
+  { type: "plum-circle" },
+  { type: "gray-sq" },
+  { type: "photo", photoIdx: 11 },
+  { type: "plum-petal-tl" },
+  { type: "circle" },
+  { type: "photo", photoIdx: 12 },
+  { type: "gray-cut-tr" },
+  { type: "plum-sq" },
+  { type: "circle" },
+
+  // Row 7 (20 tiles)
+  { type: "photo", photoIdx: 13 },
+  { type: "gray-sq" },
+  { type: "plum-petal-tl" },
+  { type: "circle" },
+  { type: "photo", photoIdx: 14 },
+  { type: "plum-cut-br" },
+  { type: "gray-arch-r" },
+  { type: "photo", photoIdx: 15 },
+  { type: "circle" },
+  { type: "gray-cut-bl" },
+  { type: "plum-sq" },
+  { type: "photo", photoIdx: 16 },
+  { type: "plum-circle" },
+  { type: "gray-sq" },
+  { type: "photo", photoIdx: 0 },
+  { type: "plum-petal-tr" },
   { type: "circle" },
   { type: "photo", photoIdx: 1 },
-  { type: "teardrop1" },
+  { type: "gray-cut-tl" },
+  { type: "plum-sq" },
+
+  // Row 8 (20 tiles)
+  { type: "gray-sq" },
+  { type: "plum-cut-bl" },
+  { type: "circle" },
+  { type: "gray-cut-tr" },
+  { type: "plum-sq" },
   { type: "photo", photoIdx: 2 },
-  { type: "square" },
-  { type: "rose-block" },
+  { type: "circle" },
+  { type: "gray-sq" },
+  { type: "plum-petal-tl" },
+  { type: "circle" },
+  { type: "photo", photoIdx: 3 },
+  { type: "plum-cut-tr" },
+  { type: "gray-arch-l" },
+  { type: "circle" },
+  { type: "photo", photoIdx: 4 },
+  { type: "plum-sq" },
+  { type: "gray-cut-br" },
+  { type: "circle" },
+  { type: "plum-petal-tr" },
+  { type: "gray-sq" },
 ];
 
 export function CommunityJoinSection() {
+  const [hoveredIdx, setHoveredIdx] = useState<number | null>(null);
+
+  const getTileShapeClass = (type: TileType) => {
+    switch (type) {
+      case "circle":
+      case "plum-circle":
+        return "rounded-full";
+      case "plum-petal-tl":
+        return "rounded-tl-[16px] sm:rounded-tl-[22px] rounded-br-[16px] sm:rounded-br-[22px] rounded-tr-none rounded-bl-none";
+      case "plum-petal-tr":
+        return "rounded-tr-[16px] sm:rounded-tr-[22px] rounded-bl-[16px] sm:rounded-bl-[22px] rounded-tl-none rounded-br-none";
+      case "plum-cut-tr":
+        return "rounded-tr-[16px] sm:rounded-tr-[22px] rounded-tl-none rounded-br-none rounded-bl-none";
+      case "plum-cut-tl":
+        return "rounded-tl-[16px] sm:rounded-tl-[22px] rounded-tr-none rounded-br-none rounded-bl-none";
+      case "plum-cut-br":
+        return "rounded-br-[16px] sm:rounded-br-[22px] rounded-tl-none rounded-tr-none rounded-bl-none";
+      case "plum-cut-bl":
+        return "rounded-bl-[16px] sm:rounded-bl-[22px] rounded-tl-none rounded-tr-none rounded-bl-none";
+      case "gray-cut-tr":
+        return "rounded-md sm:rounded-lg rounded-tr-none";
+      case "gray-cut-bl":
+        return "rounded-md sm:rounded-lg rounded-bl-none";
+      case "gray-cut-tl":
+        return "rounded-md sm:rounded-lg rounded-tl-none";
+      case "gray-cut-br":
+        return "rounded-md sm:rounded-lg rounded-br-none";
+      case "gray-arch-l":
+        return "rounded-l-full rounded-r-none";
+      case "gray-arch-r":
+        return "rounded-r-full rounded-l-none";
+      case "plum-sq":
+      case "gray-sq":
+      case "photo":
+      default:
+        return "rounded-md sm:rounded-lg";
+    }
+  };
+
+  const getTileColorClass = (type: TileType) => {
+    if (type.startsWith("plum") || type.startsWith("rose")) {
+      return "bg-[#E11D48] border border-rose-400/50 shadow-[0_0_12px_rgba(225,29,72,0.35)]";
+    }
+    if (type === "circle") {
+      return "bg-zinc-800/80 border border-zinc-700/40";
+    }
+    return "bg-zinc-800/70 border border-zinc-700/30";
+  };
+
   return (
-    <section className="w-full py-16 md:py-24 bg-[#030303] text-white relative overflow-hidden">
-      {/* Decorative top-left curly arrow */}
-      <svg
-        className="absolute top-8 left-10 w-20 h-20 text-zinc-700 pointer-events-none hidden md:block"
-        viewBox="0 0 100 100"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M 30 10 C 60 0, 80 40, 50 50 C 30 60, 20 20, 50 25 C 70 30, 85 60, 80 85"
-          stroke="currentColor"
-          strokeWidth="2.5"
-          strokeLinecap="round"
-          fill="none"
-        />
-        <path
-          d="M 70 75 L 80 85 L 90 75"
-          stroke="currentColor"
-          strokeWidth="2.5"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-      </svg>
+    <section className="w-full py-10 sm:py-14 md:py-18 bg-black text-white relative overflow-hidden select-none">
+      {/* Background ambient lighting */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[450px] bg-rose-600/5 rounded-full blur-[140px] pointer-events-none" />
 
-      {/* Decorative bottom-right curly arrow */}
-      <svg
-        className="absolute bottom-8 right-10 w-24 h-24 text-zinc-700 pointer-events-none hidden md:block rotate-12"
-        viewBox="0 0 100 100"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M 20 80 C 10 50, 40 20, 60 40 C 75 55, 45 75, 35 50 C 30 30, 60 10, 85 20"
-          stroke="currentColor"
-          strokeWidth="2.5"
-          strokeLinecap="round"
-          fill="none"
+      {/* Decorative top-left arrow image (Matching Reference Style) */}
+      <div className="absolute top-10 sm:top-14 md:top-16 left-4 sm:left-8 z-20 pointer-events-none select-none">
+        <img
+          src="/assets/components/top-to-buttom-side -Arrowmid.png"
+          alt="Top connector arrow"
+          className="w-12 sm:w-16 md:w-20 h-auto object-contain opacity-75 filter drop-shadow-[0_0_12px_rgba(244,63,94,0.35)]"
         />
-        <path
-          d="M 75 12 L 85 20 L 80 32"
-          stroke="currentColor"
-          strokeWidth="2.5"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-      </svg>
+      </div>
 
-      <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 relative z-10">
+      <div className="max-w-6xl xl:max-w-7xl mx-auto w-full px-3 sm:px-6 relative z-10">
         
-        {/* Outer Container with relative position for floating overlay */}
-        <div className="relative w-full py-8 md:py-12 flex items-center justify-center">
+        {/* Section Header (Left Aligned) */}
+        <div className="text-left max-w-3xl mb-8 sm:mb-12 relative z-10">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-white leading-tight font-sans">
+            Our customers speak
+          </h2>
+        </div>
 
-          {/* Background Grid Mosaic Wall */}
-          <div className="w-full grid grid-cols-5 sm:grid-cols-8 md:grid-cols-11 gap-2.5 sm:gap-3.5 opacity-80 select-none pointer-events-none">
+        {/* Outer Rounded Stadium / Oval Container for Compact Mosaic Wall */}
+        <div className="relative w-full py-2 sm:py-4 flex items-center justify-center min-h-[320px] sm:min-h-[400px] md:min-h-[460px]">
+
+          {/* Background Strict 8-Row x 20-Column Grid (Non-Wrapping, Smooth Stadium Silhouette) */}
+          <div className="w-full grid grid-cols-[repeat(20,minmax(0,1fr))] gap-1 sm:gap-1.5 md:gap-2 opacity-80 sm:opacity-90 rounded-[32px] sm:rounded-[50px] md:rounded-[64px] overflow-hidden p-2.5 sm:p-3 border border-zinc-800/40 bg-zinc-950/40 backdrop-blur-sm">
             {gridTiles.map((tile, i) => {
               if (tile.type === "photo" && tile.photoIdx !== undefined) {
                 const photoSrc = clientPhotos[tile.photoIdx % clientPhotos.length];
+                const review = clientReviews[tile.photoIdx % clientReviews.length];
+                const isHovered = hoveredIdx === tile.photoIdx;
+
                 return (
                   <div
                     key={i}
-                    className="w-full aspect-square rounded-2xl overflow-hidden bg-zinc-900/80 border border-white/10 relative shadow-md"
+                    onMouseEnter={() => setHoveredIdx(tile.photoIdx!)}
+                    onMouseLeave={() => setHoveredIdx(null)}
+                    className={`w-full aspect-square rounded-sm sm:rounded-md md:rounded-lg overflow-hidden bg-zinc-900 border relative cursor-pointer transition-all duration-300 ${
+                      isHovered
+                        ? "scale-125 border-rose-500 ring-2 ring-rose-500/60 shadow-[0_0_20px_rgba(244,63,94,0.7)] z-40"
+                        : "border-zinc-800 hover:border-zinc-700 z-10"
+                    }`}
                   >
                     <Image
                       src={photoSrc}
-                      alt="Client headshot"
+                      alt={review.name}
                       fill
-                      className="object-cover filter grayscale contrast-125 hover:grayscale-0 transition-all duration-500"
+                      className={`object-cover transition-all duration-300 ${isHovered ? "contrast-110" : ""}`}
                     />
                   </div>
                 );
               }
 
-              if (tile.type === "circle") {
-                return (
-                  <div
-                    key={i}
-                    className="w-full aspect-square rounded-full bg-zinc-800/40 border border-white/5"
-                  />
-                );
-              }
+              const shapeClass = getTileShapeClass(tile.type);
+              const colorClass = getTileColorClass(tile.type);
 
-              if (tile.type === "teardrop1") {
-                return (
-                  <div
-                    key={i}
-                    className="w-full aspect-square rounded-tl-3xl rounded-br-3xl bg-zinc-900/60 border border-white/5"
-                  />
-                );
-              }
-
-              if (tile.type === "teardrop2") {
-                return (
-                  <div
-                    key={i}
-                    className="w-full aspect-square rounded-tr-3xl rounded-bl-3xl bg-rose-950/30 border border-rose-500/20"
-                  />
-                );
-              }
-
-              if (tile.type === "rose-block") {
-                return (
-                  <div
-                    key={i}
-                    className="w-full aspect-square rounded-2xl bg-gradient-to-br from-rose-900/50 to-red-950/40 border border-rose-500/30"
-                  />
-                );
-              }
-
-              // Default square
               return (
                 <div
                   key={i}
-                  className="w-full aspect-square rounded-2xl bg-zinc-900/30 border border-white/5"
+                  className={`w-full aspect-square ${shapeClass} ${colorClass} pointer-events-none transition-all duration-300`}
                 />
               );
             })}
           </div>
 
-          {/* Floating Center Overlay Card */}
-          <div className="absolute inset-0 flex items-center justify-center p-4 z-20 pointer-events-auto">
-            <Reveal>
-              <div className="bg-white text-black max-w-2xl w-full rounded-3xl p-8 sm:p-12 md:p-14 text-center shadow-[0_25px_70px_rgba(0,0,0,0.85)] border border-white/20 relative overflow-hidden">
-                
-                {/* Hand-drawn accent note above title */}
-                <div className="inline-flex items-center gap-1.5 mb-2 relative">
-                  <span className="font-serif italic text-rose-600 text-sm sm:text-base font-semibold transform -rotate-6 block">
-                    ~ trusted worldwide ~
-                  </span>
-                  <svg
-                    className="w-6 h-6 text-rose-500 -ml-1 transform rotate-12"
-                    viewBox="0 0 40 40"
-                    fill="none"
+          {/* Centered Floating Stadium Oval Pill Capsule Badge */}
+          <div className="absolute inset-0 flex items-center justify-center p-3 sm:p-4 z-20 pointer-events-none">
+            <motion.div
+              layout
+              className="bg-white text-zinc-950 max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl w-full rounded-full sm:rounded-[56px] px-6 sm:px-10 md:px-12 py-5 sm:py-7 md:py-8 text-center shadow-[0_25px_70px_rgba(0,0,0,0.9)] border border-zinc-200 relative pointer-events-auto min-h-[100px] sm:min-h-[130px] md:min-h-[140px] flex items-center justify-center overflow-hidden"
+            >
+              <AnimatePresence mode="wait">
+                {hoveredIdx === null ? (
+                  /* Default Headline */
+                  <motion.div
+                    key="default-headline"
+                    initial={{ opacity: 0, y: 5 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -5 }}
+                    transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
+                    className="w-full"
                   >
-                    <path
-                      d="M 10 10 Q 25 5, 30 25 M 30 25 L 22 20 M 30 25 L 25 32"
-                      stroke="currentColor"
-                      strokeWidth="2.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </div>
-
-                {/* Main Headline */}
-                <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-zinc-950 leading-tight mb-4 font-sans">
-                  Join 100+ enterprise clients
-                </h2>
-
-                {/* Subtitle */}
-                {/* <p className="text-zinc-600 text-base sm:text-lg font-medium leading-relaxed max-w-lg mx-auto mb-8">
-                  who transform their cloud architecture, DevOps automation, and AI capabilities with Devopstrio
-                </p> */}
-
-                {/* CTA Button */}
-                {/* <div className="flex justify-center">
-                  <Link
-                    href="/contact#contact-form"
-                    className="inline-flex items-center justify-center px-8 py-4 rounded-xl text-sm font-bold tracking-wider uppercase bg-black hover:bg-rose-600 text-white transition-all duration-300 shadow-[0_10px_30px_rgba(0,0,0,0.3)] hover:scale-105"
+                    <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-[36px] font-bold tracking-tight text-[#0F172A] leading-tight font-sans">
+                      Loved by Teams Everywhere
+                    </h2>
+                  </motion.div>
+                ) : (
+                  /* Hovered Client Review */
+                  <motion.div
+                    key={`review-${hoveredIdx}`}
+                    initial={{ opacity: 0, scale: 0.96, y: 5 }}
+                    animate={{ opacity: 1, scale: 1, y: 0 }}
+                    exit={{ opacity: 0, scale: 0.96, y: -5 }}
+                    transition={{ duration: 0.22, ease: [0.16, 1, 0.3, 1] }}
+                    className="space-y-1 sm:space-y-1.5 max-w-lg mx-auto w-full px-2"
                   >
-                    Schedule a Consultation
-                  </Link>
-                </div> */}
+                    {/* Top 5 Gold Stars */}
+                    <div className="flex items-center justify-center gap-0.5 text-amber-500">
+                      {[...Array(5)].map((_, starIdx) => (
+                        <Star key={starIdx} size={13} className="fill-amber-400" />
+                      ))}
+                    </div>
 
-              </div>
-            </Reveal>
+                    {/* Quote statement */}
+                    <p className="text-xs sm:text-sm md:text-base font-medium text-zinc-900 leading-snug font-sans italic line-clamp-2">
+                      &ldquo;{clientReviews[hoveredIdx % clientReviews.length].quote}&rdquo;
+                    </p>
+
+                    {/* Author Details */}
+                    <div>
+                      <p className="text-xs sm:text-sm font-bold text-zinc-950 font-sans tracking-tight">
+                        {clientReviews[hoveredIdx % clientReviews.length].name}
+                      </p>
+                      <p className="text-[10px] sm:text-xs text-rose-600 font-semibold font-mono">
+                        {clientReviews[hoveredIdx % clientReviews.length].role}
+                      </p>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </motion.div>
           </div>
 
         </div>
@@ -275,3 +429,4 @@ export function CommunityJoinSection() {
     </section>
   );
 }
+

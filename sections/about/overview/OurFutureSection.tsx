@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
-import { ArrowLeft, ArrowUpRight } from "lucide-react";
+import { ArrowLeft, ArrowRight, ArrowUpRight } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
 import Link from "next/link";
 
@@ -11,74 +11,74 @@ export function OurFutureSection() {
 
   const futureFocus = [
     {
-      title: "Autonomous Orchestration",
-      desc: <>Architecting self-healing Kubernetes clusters and AI-driven site reliability engineering agents that predict and resolve incidents. Learn more under our <Link href="/services/devops-automation" className="text-rose-500 hover:underline font-bold">DevOps automation</Link> division.</>,
+      title: "Autonomous DevOps & GitOps",
+      desc: <>Architecting self-healing Kubernetes clusters and AI-driven site reliability engineering agents under our <Link href="/services/devops-automation" className="text-rose-500 hover:underline font-bold">DevOps automation</Link> division.</>,
       tag: "DevOps",
       image: "/assets/About-page/overview/future/devops.png",
       href: "/services/devops-automation"
     },
     {
-      title: "Sustainable Green Cloud",
-      desc: <>Optimizing code execution and server workloads to reduce carbon emissions by up to 40% across multi-cloud environments as part of <Link href="/services/cloud-services" className="text-rose-500 hover:underline font-bold">cloud services</Link>.</>,
+      title: "Sustainable Multi-Cloud",
+      desc: <>Optimizing code execution and server workloads to reduce costs and carbon footprints across multi-cloud platforms in <Link href="/services/cloud-services" className="text-rose-500 hover:underline font-bold">cloud services</Link>.</>,
       tag: "Cloud Ops",
-      image: "/assets/About-page/overview/future/Cloud.png",
+      image: "/assets/About-page/overview/future/cloud.png",
       href: "/services/cloud-services"
     },
     {
-      title: "Next-Gen AI Swarms",
-      desc: <>Deploying multi-model consensus swarms to orchestrate complex corporate workflows under <Link href="/services/ai-data-innovation" className="text-rose-500 hover:underline font-bold">AI & data innovation</Link>.</>,
+      title: "Cognitive AI & Autonomous Agents",
+      desc: <>Deploying multi-model consensus swarms, LLMs, and agentic workflows under our <Link href="/services/ai-data-innovation" className="text-rose-500 hover:underline font-bold">AI & data innovation</Link> wing.</>,
       tag: "AI Innovation",
       image: "/assets/About-page/overview/future/AI & Data Innovation.png",
       href: "/services/ai-data-innovation"
     },
     {
-      title: "Cognitive Software Development",
-      desc: <>Unifying generative code synthesis and automated testing pipelines under multi-agent reasoning loops. Explore our <Link href="/services/software-development" className="text-rose-500 hover:underline font-bold">software development</Link> options.</>,
+      title: "Next-Gen Software Engineering",
+      desc: <>Unifying cloud-native microservices, modern distributed backends, and full-stack systems under <Link href="/services/software-development" className="text-rose-500 hover:underline font-bold">software development</Link>.</>,
       tag: "Software",
       image: "/assets/About-page/overview/future/software development.png",
       href: "/services/software-development"
     },
     {
-      title: "Quantum & Zero-Trust Cybersecurity",
-      desc: "Preparing hybrid-cloud computing topologies for post-quantum cryptographic standards and zero-trust security architecture.",
+      title: "Quantum & Zero-Trust Security",
+      desc: <>Preparing hybrid-cloud computing topologies for zero-trust security and continuous defense with our <Link href="/services/cybersecurity" className="text-rose-500 hover:underline font-bold">cybersecurity</Link> team.</>,
       tag: "Security",
-      image: "/assets/About-page/overview/future/Cybersecurity.png",
+      image: "/assets/About-page/overview/future/Cyber security.png",
       href: "/services/cybersecurity"
     },
     {
-      title: "Advanced Data Analytics",
-      desc: "Deploying secure, real-time intelligence pipelines, telemetry analytics, and data warehouse synchronization.",
-      tag: "Analytics",
-      image: "/assets/About-page/overview/future/data analytics.png",
+      title: "Unified Lakehouse & Analytics",
+      desc: <>Deploying secure, real-time intelligence pipelines, streaming telemetry, and lakehouse storage under <Link href="/services/data-engineering" className="text-rose-500 hover:underline font-bold">data engineering</Link>.</>,
+      tag: "Data Engineering",
+      image: "/assets/About-page/overview/future/Data engineering.png",
       href: "/services/data-engineering"
     },
     {
       title: "Digital Transformation Mesh",
-      desc: "Orchestrating end-to-end digital transformation, industrial automation, and enterprise legacy modernization.",
-      tag: "Digital Mesh",
-      image: "/assets/About-page/overview/future/digital transformation.png",
+      desc: <>Orchestrating end-to-end digital transformation, industrial automation, and enterprise legacy modernization in <Link href="/services/digital-transformation" className="text-rose-500 hover:underline font-bold">digital transformation</Link>.</>,
+      tag: "Transformation",
+      image: "/assets/About-page/overview/future/Digital transformation.png",
       href: "/services/digital-transformation"
     },
     {
-      title: "Strategic Technology Consulting",
-      desc: "Providing high-impact architecture strategy, technology roadmap design, and enterprise advisory.",
+      title: "Strategic Technology Advisory",
+      desc: <>Providing high-impact architecture strategy, technology roadmap design, and enterprise cloud advisory in <Link href="/services/it-consulting" className="text-rose-500 hover:underline font-bold">IT consulting</Link>.</>,
       tag: "Consulting",
-      image: "/assets/About-page/overview/future/Consult.png",
+      image: "/assets/About-page/overview/future/IT Consulting.png",
       href: "/services/it-consulting"
     },
     {
-      title: "Next-Gen Managed Operations",
-      desc: "24/7 intelligent infrastructure monitoring, automated incident resolution, and proactive operations management.",
+      title: "24/7 Intelligent SRE Operations",
+      desc: <>Intelligent round-the-clock infrastructure monitoring, automated incident triage, and SLA assurances in <Link href="/services/managed-services" className="text-rose-500 hover:underline font-bold">managed services</Link>.</>,
       tag: "Managed Ops",
-      image: "/assets/About-page/overview/future/Managed services.png",
+      image: "/assets/About-page/overview/future/managed services.png",
       href: "/services/managed-services"
     },
     {
-      title: "Enterprise Systems Management",
-      desc: "Unified cloud control plane management, proactive capacity planning, and automated SRE operations.",
-      tag: "Enterprise",
-      image: "/assets/About-page/overview/future/Managed services-1.png",
-      href: "/services/managed-services"
+      title: "Automated & Performance QA",
+      desc: <>Continuous end-to-end QA pipelines, chaos testing, security scanning, and reliability verification under our <Link href="/services/qa-testing" className="text-rose-500 hover:underline font-bold">QA & testing</Link> practices.</>,
+      tag: "QA Testing",
+      image: "/assets/About-page/overview/future/q a testing.png",
+      href: "/services/qa-testing"
     }
   ];
 
@@ -228,7 +228,7 @@ export function OurFutureSection() {
             className="w-11 h-11 rounded-full border border-zinc-700 hover:border-rose-500 hover:bg-rose-500/10 text-white flex items-center justify-center transition-all duration-300 active:scale-95 cursor-pointer"
             aria-label="Next future focus"
           >
-            <ArrowUpRight size={16} />
+            <ArrowRight size={16} />
           </button>
         </div>
 

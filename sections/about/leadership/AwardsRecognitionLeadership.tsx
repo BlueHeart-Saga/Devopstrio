@@ -48,21 +48,21 @@ const awards = [
 
 export const AwardsRecognitionLeadership = () => {
   return (
-    <section className="py-28 bg-[#030303] border-t border-zinc-900/60 relative overflow-hidden">
+    <section id="awards" className="py-28 bg-[#030303] border-t border-zinc-900/60 relative overflow-hidden">
       {/* Background ambient glows */}
       <div className="absolute -left-40 top-1/3 w-[500px] h-[500px] rounded-full bg-[#FF1744]/2.5 blur-[130px] pointer-events-none" />
       <div className="absolute -right-40 bottom-1/3 w-[500px] h-[500px] rounded-full bg-blue-500/2 blur-[130px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10 flex flex-col gap-24">
 
-        {/* Row 1: Our Certifications Marquee */}
+        {/* Row 1: Certifications Marquee */}
         <div>
           <div className="text-center mb-10">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 block mb-4">
+            <span className="text-xs sm:text-sm font-semibold tracking-[0.25em] uppercase text-rose-500 block mb-3">
               Validation
             </span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-4">
-              Our <span className="text-rose-500">Certifications</span>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight leading-tight text-white mb-4">
+              Our <span className="text-rose-500 font-semibold">Certifications</span>
             </h2>
           </div>
 
@@ -99,11 +99,11 @@ export const AwardsRecognitionLeadership = () => {
         {/* Row 2: Compliance Frameworks Marquee */}
         <div>
           <div className="text-center mb-10">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 block mb-4">
+            <span className="text-xs sm:text-sm font-semibold tracking-[0.25em] uppercase text-rose-500 block mb-3">
               Security &amp; Trust
             </span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-4">
-              Compliance <span className="text-rose-500">Frameworks</span>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight leading-tight text-white mb-4">
+              Compliance <span className="text-rose-500 font-semibold">Frameworks</span>
             </h2>
           </div>
 
@@ -140,10 +140,10 @@ export const AwardsRecognitionLeadership = () => {
         {/* Row 3: Awards & Recognition Grid */}
         <div>
           <div className="text-center mb-12">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 block mb-4">
+            <span className="text-xs sm:text-sm font-semibold tracking-[0.25em] uppercase text-rose-500 block mb-3">
               Awards &amp; Recognition
             </span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white max-w-3xl mx-auto mb-4">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight text-white max-w-4xl mx-auto mb-4">
               Industry validation for outstanding engineering outcomes
             </h2>
           </div>
@@ -171,9 +171,9 @@ export const AwardsRecognitionLeadership = () => {
                   <p className="text-white font-bold text-base mb-1">
                     {award.title}
                   </p>
-                  <p className="text-zinc-400 text-xs leading-relaxed font-semibold">
+                  {/* <p className="text-zinc-400 text-xs leading-relaxed font-semibold">
                     {award.desc}
-                  </p>
+                  </p> */}
                 </div>
               </div>
             ))}

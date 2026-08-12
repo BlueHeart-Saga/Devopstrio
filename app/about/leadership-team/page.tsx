@@ -1,14 +1,15 @@
 import React from "react";
 import { Metadata } from "next";
 import { BreadcrumbSchema } from "@/components/seo/Schemas";
+import { SectionNavbar } from "@/components/ui/SectionNavbar";
 
 import { LeadershipHero } from "@/sections/about/leadership/LeadershipHero";
+import { LeadershipPrinciples } from "@/sections/about/leadership/LeadershipPrinciples";
+import { Leadership3Pillars } from "@/sections/about/leadership/Leadership3Pillars";
 import { ExecutiveLeadership } from "@/sections/about/leadership/ExecutiveLeadership";
-import { AdvisoryBoard } from "@/sections/about/leadership/AdvisoryBoard";
 import { PrincipalArchitects } from "@/sections/about/leadership/PrincipalArchitects";
 import { GlobalEngineeringTeams } from "@/sections/about/leadership/GlobalEngineeringTeams";
-import { LeadershipPrinciples } from "@/sections/about/leadership/LeadershipPrinciples";
-import { TechnologyExpertise } from "@/sections/about/leadership/TechnologyExpertise";
+import { LeadershipDeliver } from "@/sections/about/leadership/LeadershipDeliver";
 import { GlobalPresence } from "@/sections/about/leadership/GlobalPresence";
 import { AwardsRecognitionLeadership } from "@/sections/about/leadership/AwardsRecognitionLeadership";
 import { LeadershipCareersCTA } from "@/sections/about/leadership/LeadershipCareersCTA";
@@ -28,9 +29,19 @@ export const metadata: Metadata = {
   },
 };
 
+const leadershipSections = [
+  { id: "hero", label: "Vision & Story" },
+  { id: "principles", label: "Leadership Principles" },
+  { id: "pillars", label: "Strategic Pillars" },
+  { id: "executive-leadership", label: "Inspire: Executive Leaders" },
+  { id: "global-teams", label: "Empower: Global Engineering" },
+  { id: "leadership-deliver", label: "Deliver: Solutions & Impact" },
+  { id: "awards", label: "Certifications & Awards" },
+];
+
 export default function LeadershipTeamPage() {
   return (
-    <main className="min-h-screen bg-[#050505] text-white font-sans overflow-x-hidden">
+    <main className="min-h-screen bg-black text-white font-sans">
       <BreadcrumbSchema
         items={[
           { name: "Home", item: "/" },
@@ -39,35 +50,40 @@ export default function LeadershipTeamPage() {
         ]}
       />
 
-      {/* 1. Hero */}
+      {/* 1. Vision & Story Hero (Sticky 5-Chapter Scroll Sequence) */}
       <LeadershipHero />
 
-      {/* 2. Executive Leadership */}
-      <ExecutiveLeadership />
+      {/* Section Sticky Navigator */}
+      {/* <SectionNavbar sections={leadershipSections} /> */}
 
-      {/* 3. Advisory Board */}
-      <AdvisoryBoard />
-
-      {/* 4. Principal Architects */}
-      <PrincipalArchitects />
-
-      {/* 5. Global Engineering Teams */}
-      <GlobalEngineeringTeams />
-
-      {/* 6. Leadership Principles */}
+      {/* 2. 8 Timeless Leadership Principles (Editorial Deck) */}
       <LeadershipPrinciples />
 
-      {/* 7. Technology Expertise */}
-      <TechnologyExpertise />
+      {/* 3. 3 Strategic Pillars (Inspire, Empower, Deliver) */}
+      <Leadership3Pillars />
 
-      {/* 8. Global Presence */}
-      <GlobalPresence />
+      {/* 4. PILLAR 01: INSPIRE — Executive Leadership & Senior Team */}
+      <ExecutiveLeadership />
 
-      {/* 9. Awards & Recognition */}
+      {/* Optional: Principal Architects & Specialists */}
+      {/* <PrincipalArchitects /> */}
+
+      {/* 5. PILLAR 02: EMPOWER — Global Engineering Teams (525+ Specialists) */}
+      <GlobalEngineeringTeams />
+
+      {/* 6. PILLAR 03: DELIVER — Leaders Who Deliver. Solutions That Matter. */}
+      <LeadershipDeliver />
+
+      {/* Optional: Global Presence (Worldwide Locations) */}
+      {/* <GlobalPresence /> */}
+
+      {/* 7. Awards, Accreditations & Certifications */}
       <AwardsRecognitionLeadership />
 
-      {/* 10. Our Culture & People + Careers CTA */}
+      {/* 8. Our Culture & People + Careers CTA */}
       <LeadershipCareersCTA />
     </main>
   );
 }
+
+

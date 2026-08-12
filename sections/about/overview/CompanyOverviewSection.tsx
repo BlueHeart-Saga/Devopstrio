@@ -129,12 +129,17 @@ export function CompanyOverviewSection() {
                     <Link href="/ecosystem/global-delivery" className="text-rose-500 hover:underline">delivery pipelines</Link>,
                     and secure scale to accelerate business transformation at global scale.
                   </p>
-                  <div className="pt-2">
+                  <div className="pt-3 pl-1">
                     <a
                       href="/services"
-                      className="gap-2 inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white transition-all duration-300 hover:shadow-[0_0_25px_rgba(225,29,72,0.35)] hover:-translate-y-0.5"
+                      className="btn-tactile group"
                     >
-                      Explore Our Services <ArrowUpRight className="w-4 h-4" />
+                      <div>
+                        <span>
+                          Explore Our Services
+                          <ArrowUpRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                        </span>
+                      </div>
                     </a>
                   </div>
                 </div>
@@ -167,11 +172,11 @@ export function CompanyOverviewSection() {
 
           {/* Top: Who We Are */}
           <Reveal>
-            <div className="max-w-3xl space-y-6">
-              <h3 className="text-3xl sm:text-4xl font-normal text-white tracking-tight">
+            <div className="max-w-4xl lg:max-w-5xl space-y-6">
+              <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight">
                 Who We Are
               </h3>
-              <p className="text-zinc-300 text-base sm:text-lg leading-relaxed font-normal">
+              <p className="text-zinc-300 text-lg sm:text-xl lg:text-2xl leading-relaxed font-normal">
                 We have been called the industry&apos;s &lsquo;best-kept secret&rsquo;. But to those in the know we have delivered complex, high-stakes, business critical digital services for over 7 years. What began as a focused engineering startup has grown into a global force, carrying out responsible AI-enabled digital transformation projects around the world.
               </p>
             </div>
@@ -184,15 +189,15 @@ export function CompanyOverviewSection() {
           <Reveal delay={0.08}>
             <div className="grid grid-cols-1 lg:grid-cols-12">
               <div className="lg:col-start-3 lg:col-span-10 space-y-8">
-                <h3 className="text-3xl sm:text-4xl font-bold text-white tracking-tight">
+                <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight">
                   What We Do
                 </h3>
-                <ul className="space-y-5">
+                <ul className="space-y-6 lg:space-y-7">
                   {whatWeDo.map((item, i) => (
                     <li key={i} className="flex items-start gap-4">
                       {/* Filled square bullet matching reference */}
-                      <span className="mt-2.5 w-1.5 h-1.5 rounded-none bg-rose-500 shrink-0" />
-                      <span className="text-zinc-300 text-base sm:text-lg leading-relaxed">
+                      <span className="mt-3 w-2 h-2 rounded-none bg-rose-500 shrink-0" />
+                      <span className="text-zinc-300 text-lg sm:text-xl lg:text-2xl leading-relaxed">
                         {item.prefix}
                         {item.highlight && (
                           <span className="text-white font-medium underline underline-offset-4 decoration-rose-500/70 hover:text-rose-400 transition-colors">

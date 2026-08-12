@@ -72,42 +72,20 @@ export const AdvisoryBoard = () => {
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         
-        {/* Row 1: Header (Mockup inspired layout) */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-12">
-          <div className="lg:col-span-7">
-            <motion.span
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 block mb-4"
-            >
-              Governance &amp; Insights
-            </motion.span>
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-4"
-            >
-              Global Counsel. <span className="text-rose-500">Strategic Vision.</span>
-            </motion.h2>
+        {/* Row 1: Header */}
+        <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-14 relative">
+          {/* Curved Arrow PNG on Right Side */}
+          <div className="absolute -top-6 right-2 sm:right-10 z-20 pointer-events-none select-none">
+            <img
+              src="/assets/components/Carrow-right.png"
+              alt="Curved arrow"
+              className="w-14 sm:w-20 h-auto object-contain filter drop-shadow-[0_0_15px_rgba(244,63,94,0.4)] scale-x-[-1]"
+            />
           </div>
-          
-          <div className="lg:col-span-5 pt-2">
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="text-zinc-400 text-sm md:text-base leading-relaxed font-bold max-w-2xl"
-            >
-              Our advisory board comprises seasoned leaders who bring decades of board-level governance across{" "}
-              <Link href="/services/cloud-services" className="text-white font-semibold hover:text-rose-500 transition-colors duration-300 underline underline-offset-4 decoration-rose-500/30">high-scale cloud platforms</Link>,{" "}
-              <Link href="/services/software-development" className="text-white font-semibold hover:text-rose-500 transition-colors duration-300 underline underline-offset-4 decoration-rose-500/30">distributed enterprise architecture</Link>,{" "}
-              <Link href="/services/cybersecurity" className="text-white font-semibold hover:text-rose-500 transition-colors duration-300 underline underline-offset-4 decoration-rose-500/30">zero-trust security governance</Link>, and{" "}
-              <Link href="/services/ai-data-innovation" className="text-white font-semibold hover:text-rose-500 transition-colors duration-300 underline underline-offset-4 decoration-rose-500/30">cognitive AI computing systems</Link>. Together, they steer our technical roadmap, ensure robust enterprise compliance, and accelerate sustainable digital innovation.
-            </motion.p>
-          </div>
+
+          <h2 className="text-3xl sm:text-5xl md:text-6xl font-semibold tracking-tight text-white leading-tight">
+            Advisory <span className="bg-rose-500 text-white font-semibold px-4 py-1 rounded-xl inline-block">Board.</span>
+          </h2>
         </div>
 
         {/* Row 2: Widescreen Boardroom Banner Image (Mockup-inspired) */}
