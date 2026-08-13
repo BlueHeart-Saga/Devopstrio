@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useCallback } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, Variants } from "framer-motion";
 import Image from "next/image";
 import { X, ChevronLeft, ChevronRight, Calendar } from "lucide-react";
 
@@ -26,7 +26,7 @@ type FlattenedMoment = {
 };
 
 // 3D Book / Paper-Turn Animation Variants
-const bookPageVariants = {
+const bookPageVariants: Variants = {
   enter: (direction: number) => ({
     transformOrigin: direction > 0 ? "left center" : "right center",
     rotateY: direction > 0 ? 80 : -80,
@@ -42,7 +42,7 @@ const bookPageVariants = {
     x: 0,
     transition: {
       duration: 0.5,
-      ease: [0.16, 1, 0.3, 1],
+      ease: [0.16, 1, 0.3, 1] as const,
     },
   },
   exit: (direction: number) => ({
@@ -53,7 +53,7 @@ const bookPageVariants = {
     x: direction > 0 ? -120 : 120,
     transition: {
       duration: 0.4,
-      ease: [0.16, 1, 0.3, 1],
+      ease: [0.16, 1, 0.3, 1] as const,
     },
   }),
 };
