@@ -20,15 +20,15 @@ export const LifeFinalCTA = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-6 block">
+          {/* <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-6 block">
             Build the Future With Us
-          </span>
+          </span> */}
 
-          <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight leading-tight text-white mb-6">
             Ready to Engineer <span className="text-rose-500">What's Next?</span>
           </h2>
 
-          <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-bold max-w-2xl mx-auto mb-12">
+          <p className="text-zinc-300 text-base sm:text-lg md:text-xl leading-relaxed font-semibold max-w-2xl mx-auto mb-12">
             Join a team passionate about technology, innovation, and delivering real-world impact at scale in <Link href="/services/cloud-services" className="text-rose-500 hover:underline">cloud platforms</Link> and <Link href="/services/devops-automation" className="text-rose-500 hover:underline">DevOps solutions</Link>. Your next career chapter starts here.
           </p>
 

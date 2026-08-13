@@ -21,62 +21,49 @@ const benefits = [
 
 export const BenefitsWellbeing = () => {
   return (
-    <section className="py-24 bg-black relative border-t border-zinc-800">
+    <section className="py-24 sm:py-32 bg-black relative border-t border-zinc-900">
       {/* Background grid */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:32px_32px]" />
       
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="text-center mb-16">
-          <motion.span
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 block mb-4"
-          >
-            Benefits &amp; Wellbeing
-          </motion.span>
+      <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
+        <div className="text-center mb-16 sm:mb-20">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-4"
+            transition={{ duration: 0.6 }}
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight leading-tight text-white mb-4"
           >
             Everything You Need to <span className="text-rose-500">Thrive</span>
           </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-zinc-400 text-sm md:text-base leading-relaxed font-bold max-w-2xl mx-auto"
-          >
-            We've designed our benefits package around what actually matters to engineers and technologists.
-          </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {benefits.map((benefit, idx) => (
             <motion.div
               key={idx}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: idx * 0.07 }}
-              className="group relative bg-black/60 backdrop-blur-sm border border-zinc-800 rounded-2xl p-6 overflow-hidden hover:border-red-500/40 transition-all duration-300 cursor-default"
+              transition={{ duration: 0.4, delay: idx * 0.05 }}
+              className="group relative bg-zinc-950/70 backdrop-blur-sm border border-zinc-800/80 rounded-3xl p-7 sm:p-8 overflow-hidden hover:border-rose-500/50 hover:bg-zinc-900/80 transition-all duration-500 cursor-default flex flex-col justify-start min-h-[200px] shadow-xl"
             >
-              {/* hover glow */}
-              <div className="absolute inset-0 bg-gradient-to-br from-red-500/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl" />
+              {/* Hover glow */}
+              <div className="absolute inset-0 bg-gradient-to-br from-rose-500/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl" />
               
               <div className="relative z-10">
-                <div className="w-11 h-11 rounded-xl bg-zinc-900 border border-zinc-800 flex items-center justify-center mb-5 group-hover:bg-red-500/10 group-hover:border-red-500/30 transition-all duration-300">
-                  <benefit.icon className="w-5 h-5 text-zinc-400 group-hover:text-rose-500 transition-colors duration-300" />
+                <div className="w-14 h-14 rounded-2xl bg-zinc-900 border border-zinc-800 flex items-center justify-center mb-5 group-hover:bg-rose-500/10 group-hover:border-rose-500/40 transition-all duration-300 shadow-md">
+                  <benefit.icon className="w-7 h-7 text-zinc-300 group-hover:text-rose-500 transition-colors duration-300" />
                 </div>
-                <h3 className="text-white font-semibold mb-2 group-hover:text-red-400 transition-colors duration-300">
+                <h3 className="text-white font-semibold text-xl sm:text-2xl mb-1 group-hover:mb-3 tracking-tight group-hover:text-rose-400 transition-all duration-300">
                   {benefit.title}
                 </h3>
-                <p className="text-zinc-500 text-sm leading-relaxed group-hover:text-zinc-400 transition-colors duration-300">
-                  {benefit.desc}
-                </p>
+                {/* Description shows only on hover with smooth expansion */}
+                <div className="overflow-hidden max-h-0 opacity-0 group-hover:max-h-48 group-hover:opacity-100 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]">
+                  <p className="text-zinc-300 text-sm sm:text-base leading-relaxed font-semibold pt-1">
+                    {benefit.desc}
+                  </p>
+                </div>
               </div>
             </motion.div>
           ))}

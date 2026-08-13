@@ -30,28 +30,31 @@ const stories = [
 
 export const EmployeeStoriesSection = () => {
   return (
-    <section className="py-24 bg-black relative">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-16">
+    <section className="py-24 sm:py-32 bg-black relative border-t border-zinc-900">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12">
+        {/* Section Header */}
+        <div className="text-center mb-16 sm:mb-20">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-4"
+            transition={{ duration: 0.6 }}
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight text-white mb-4"
           >
             Meet the People Behind <span className="text-rose-500">Devopstrio</span>
           </motion.h2>
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
+          {/* <motion.p 
+            initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-zinc-400 text-sm md:text-base leading-relaxed font-bold"
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="text-zinc-400 text-base sm:text-lg font-normal max-w-xl mx-auto"
           >
-            Real stories of career acceleration and engineering excellence.
-          </motion.p>
+            Real stories of career acceleration, bold ownership, and engineering excellence.
+          </motion.p> */}
         </div>
 
+        {/* Stories Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {stories.map((story, idx) => (
             <motion.div
@@ -60,22 +63,30 @@ export const EmployeeStoriesSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
-              className="bg-zinc-900/50 border border-zinc-800 rounded-3xl p-8 hover:bg-zinc-900 transition-colors relative group"
+              className="bg-zinc-900/40 border border-zinc-800/80 rounded-3xl p-8 sm:p-9 hover:bg-zinc-900/90 hover:border-rose-500/40 transition-all duration-500 relative group flex flex-col justify-between shadow-xl"
             >
-              <Quote className="absolute top-8 right-8 text-zinc-800 w-12 h-12 group-hover:text-red-500/20 transition-colors" />
+              <Quote className="absolute top-8 right-8 text-zinc-800/60 w-12 h-12 group-hover:text-rose-500/20 transition-colors" />
               
-              <div className="flex items-center gap-4 mb-6">
-                <img src={story.image} alt={story.name} className="w-16 h-16 rounded-full object-cover border-2 border-zinc-800" />
-                <div>
-                  <h4 className="text-white font-bold text-lg">{story.name}</h4>
-                  <div className="text-red-400 text-sm font-medium mb-1">{story.role}</div>
-                  <div className="text-zinc-500 text-xs font-mono">{story.path}</div>
+              <div>
+                {/* Employee Bio Header */}
+                <div className="flex items-center gap-4 mb-7">
+                  <img
+                    src={story.image}
+                    alt={story.name}
+                    className="w-16 h-16 rounded-2xl object-cover border-2 border-zinc-800 group-hover:border-rose-500/50 transition-colors shrink-0 shadow-md"
+                  />
+                  <div>
+                    <h4 className="text-white font-semibold text-xl tracking-tight leading-tight">{story.name}</h4>
+                    <div className="text-rose-400 text-sm font-semibold mb-1">{story.role}</div>
+                    <div className="text-zinc-400 text-xs font-mono px-2.5 py-0.5 bg-zinc-950/80 rounded-full border border-zinc-800 inline-block">{story.path}</div>
+                  </div>
                 </div>
-              </div>
 
-              <p className="text-zinc-400 leading-relaxed relative z-10 italic">
-                {story.quote}
-              </p>
+                {/* Quote Body */}
+                <p className="text-zinc-300 text-base sm:text-lg leading-relaxed relative z-10 font-semibold italic">
+                  {story.quote}
+                </p>
+              </div>
             </motion.div>
           ))}
         </div>

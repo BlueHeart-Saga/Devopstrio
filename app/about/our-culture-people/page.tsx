@@ -33,7 +33,7 @@ export const metadata: Metadata = {
 
 export default function LifeAtDevopstrioPage() {
   return (
-    <main className="min-h-screen bg-black text-white font-sans overflow-x-hidden">
+    <main className="min-h-screen bg-black text-white font-sans">
       <BreadcrumbSchema
         items={[
           { name: "Home", item: "/" },
@@ -45,17 +45,22 @@ export default function LifeAtDevopstrioPage() {
       {/* 1. Hero */}
       <LifeHero />
 
-      {/* 2. Culture Manifesto */}
-      <CultureManifesto />
 
+      
       {/* 3. Life Moments Gallery */}
       <LifeMomentsGallery />
 
+
+    
+
       {/* 4. Engineering Culture */}
-      <EngineeringCulture />
+      {/* <EngineeringCulture /> */}
 
       {/* 5. Journey Timeline */}
       <JourneyTimeline />
+
+        {/* 2. Culture Manifesto */}
+      <CultureManifesto />
 
       {/* 6. Employee Stories */}
       <EmployeeStoriesSection />
@@ -70,10 +75,10 @@ export default function LifeAtDevopstrioPage() {
       <AwardsRecognition />
 
       {/* 10. Community Impact */}
-      <CommunityImpact />
+      {/* <CommunityImpact /> */}
 
       {/* 11. Open Positions Preview */}
-      <OpenPositionsPreview />
+      {/* <OpenPositionsPreview /> */}
 
       {/* 12. Final CTA */}
       <LifeFinalCTA />

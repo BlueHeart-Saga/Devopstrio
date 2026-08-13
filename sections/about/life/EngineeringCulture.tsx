@@ -28,7 +28,7 @@ export const EngineeringCulture = () => {
           >
             Engineering at <span className="text-rose-500">Devopstrio</span>
           </motion.h2>
-          <motion.p 
+          {/* <motion.p 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -36,7 +36,7 @@ export const EngineeringCulture = () => {
             className="text-zinc-400 text-sm md:text-base leading-relaxed font-bold"
           >
             We are builders at heart. Our engineering culture is defined by technical excellence, robust architectures, and using the right tools to solve the right problems.
-          </motion.p>
+          </motion.p> */}
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

@@ -1,85 +1,163 @@
 "use client";
-import React from "react";
-import { motion } from "framer-motion";
-import Link from "next/link";
+import React, { useState, useEffect, useRef } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const roadmap = [
-  { step: "01", title: "Onboarding", desc: "Immersive introduction to our culture, tools, and engineering standards." },
-  { step: "02", title: "Technical Training", desc: <>Hands-on labs and workshops with modern <Link href="/services/cloud-services" className="text-rose-500 hover:underline font-bold">cloud</Link> and <Link href="/services/ai-data-innovation" className="text-rose-500 hover:underline font-bold">AI technologies</Link>.</> },
-  { step: "03", title: "Certifications", desc: <>Fully funded paths for AWS, Azure, GCP, and Kubernetes certifications in our <Link href="/services/devops-automation" className="text-rose-500 hover:underline font-bold">DevOps automation</Link> programs.</> },
-  { step: "04", title: "Project Ownership", desc: "Taking the lead on critical features and architectural decisions." },
-  { step: "05", title: "Leadership Development", desc: "Mentorship and training to become the next generation of tech leaders." }
-];
-
-const highlights = [
-  "Azure Certifications", "AWS Certifications", "Cloud Labs", 
-  "AI Workshops", "Internal Mentorship", "Hackathons"
+  {
+    title: "Immersive Onboarding",
+    desc: "A comprehensive introduction to our engineering culture, modern developer toolchains, and global delivery standards.",
+  },
+  {
+    title: "Technical Training & Labs",
+    desc: "Hands-on sandbox labs and deep-dive workshops with leading cloud architectures and cutting-edge AI technologies.",
+  },
+  {
+    title: "Funded Certifications",
+    desc: "100% sponsored certification paths across AWS, Microsoft Azure, Google Cloud, and CNCF Kubernetes.",
+  },
+  {
+    title: "Project & System Ownership",
+    desc: "Empowering engineers early on to own critical system components, drive technical design reviews, and ship to production.",
+  },
+  {
+    title: "Architecture & Innovation Labs",
+    desc: "Pioneering new solutions in our internal AI and Cloud labs, prototyping emerging tools, and evaluating modern frameworks.",
+  },
+  {
+    title: "Leadership & Mentorship",
+    desc: "Structured coaching pathways to transition from individual contributor to engineering team lead and technical mentor.",
+  },
+  {
+    title: "Global Cross-Border Delivery",
+    desc: "Direct collaboration with enterprise Fortune 500 executives and multidisciplinary teams across 4 continents.",
+  },
+  {
+    title: "Thought Leadership & Strategy",
+    desc: "Publishing high-impact research, speaking at international technology summits, and guiding company-wide architectural strategy.",
+  },
 ];
 
 export const LearningGrowth = () => {
+  const [activeIdx, setActiveIdx] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
+  const [isInView, setIsInView] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
+
+  // Intersection observer to only auto-advance when section is visible
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsInView(entry.isIntersecting);
+      },
+      { threshold: 0.15 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  // Auto-advance interval
+  useEffect(() => {
+    if (isHovered || !isInView) return;
+    const timer = setInterval(() => {
+      setActiveIdx((prev) => (prev + 1) % roadmap.length);
+    }, 3800);
+    return () => clearInterval(timer);
+  }, [isHovered, isInView]);
+
   return (
-    <section className="py-24 bg-black relative border-t border-zinc-800">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="flex flex-col lg:flex-row gap-16 items-start">
+    <section
+      ref={sectionRef}
+      className="py-24 sm:py-32 bg-black relative border-t border-zinc-800/80"
+    >
+      <div className="max-w-7xl mx-auto px-6 lg:px-12">
+        <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-start">
           
-          <div className="lg:w-1/2 sticky top-24">
+          {/* Left Column: Sticky Heading & Full Image (No border, uncropped) */}
+          <div className="w-full lg:w-1/2 flex flex-col space-y-8 lg:sticky lg:top-28 self-start">
             <motion.h2 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-4"
+              transition={{ duration: 0.6 }}
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.12] text-white"
             >
               Accelerate Your <span className="text-rose-500">Growth</span>
             </motion.h2>
-            <motion.p 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="text-zinc-450 text-sm md:text-base leading-relaxed font-bold mb-10"
-            >
-              We believe in compounding knowledge. Our structured growth pathways ensure you're always learning, always challenged, and always moving forward in your career. Learn more about our <Link href="/about/internship" className="text-rose-500 hover:underline">internship opportunities</Link>.
-            </motion.p>
 
-            <div className="flex flex-wrap gap-3">
-              {highlights.map((item, idx) => (
-                <motion.span
-                  key={idx}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.2 + (idx * 0.05) }}
-                  className="px-4 py-2 rounded-full bg-zinc-900 border border-zinc-800 text-zinc-300 text-sm font-medium hover:border-red-500/50 hover:text-red-400 transition-colors"
-                >
-                  {item}
-                </motion.span>
-              ))}
-            </div>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.98, y: 20 }}
+              whileInView={{ opacity: 1, scale: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7 }}
+              className="w-full"
+            >
+              <img
+                src="/assets/About-page/life-at-devopstrio/tirtle.png"
+                alt="Accelerate Your Growth at Devopstrio"
+                className="w-full h-auto object-contain rounded-2xl"
+              />
+            </motion.div>
           </div>
 
-          <div className="lg:w-1/2 w-full">
-            <div className="space-y-6 relative">
-              <div className="absolute left-[27px] top-4 bottom-4 w-[2px] bg-zinc-800" />
-              
-              {roadmap.map((item, idx) => (
-                <motion.div
+          {/* Right Column: Auto-changing & Hover-expandable Titles List */}
+          <div 
+            className="w-full lg:w-1/2 flex flex-col space-y-3 sm:space-y-4 pt-2"
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+          >
+            {roadmap.map((item, idx) => {
+              const isActive = idx === activeIdx;
+
+              return (
+                <div
                   key={idx}
-                  initial={{ opacity: 0, x: 20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true, margin: "-50px" }}
-                  transition={{ duration: 0.5, delay: idx * 0.1 }}
-                  className="flex gap-6 relative"
+                  onMouseEnter={() => setActiveIdx(idx)}
+                  className={`group cursor-pointer rounded-2xl p-4 sm:p-5 transition-all duration-500 border ${
+                    isActive
+                      ? "bg-zinc-900/50 border-zinc-800/90 shadow-lg"
+                      : "bg-transparent border-transparent hover:bg-zinc-900/20"
+                  }`}
                 >
-                  <div className="w-14 h-14 rounded-full bg-black border-2 border-zinc-800 flex items-center justify-center text-zinc-500 font-bold shrink-0 relative z-10 group-hover:border-red-500 transition-colors">
-                    {item.step}
+                  <div className="flex items-center gap-4">
+                    <span
+                      className={`rounded-full shrink-0 transition-all duration-500 ${
+                        isActive
+                          ? "w-3 h-3 bg-rose-500 shadow-[0_0_12px_rgba(244,63,94,0.8)] scale-110"
+                          : "w-2.5 h-2.5 bg-zinc-700 group-hover:bg-rose-400"
+                      }`}
+                    />
+                    <h3
+                      className={`text-xl sm:text-2xl md:text-[28px] font-semibold tracking-tight leading-snug transition-colors duration-300 ${
+                        isActive ? "text-white font-bold" : "text-zinc-400 group-hover:text-zinc-200"
+                      }`}
+                    >
+                      {item.title}
+                    </h3>
                   </div>
-                  <div className="pt-3 pb-8">
-                    <h3 className="text-xl font-bold text-white mb-2">{item.title}</h3>
-                    <p className="text-zinc-400">{item.desc}</p>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
+
+                  {/* Expandable Description */}
+                  <AnimatePresence initial={false}>
+                    {isActive && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+                        className="overflow-hidden pl-7 sm:pl-7"
+                      >
+                        <p className="pt-3 text-zinc-300 text-sm sm:text-base md:text-[17px] leading-relaxed font-normal">
+                          {item.desc}
+                        </p>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              );
+            })}
           </div>
 
         </div>
@@ -87,3 +165,5 @@ export const LearningGrowth = () => {
     </section>
   );
 };
+
+
