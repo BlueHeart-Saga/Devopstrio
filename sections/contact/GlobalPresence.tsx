@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { Reveal } from "@/components/ui/Reveal";
+import { ArrowUpRight } from "lucide-react";
 
 const locations = [
   {
@@ -10,19 +11,19 @@ const locations = [
     label: "Global HQ",
     role: "Strategy & Leadership",
     flag: "🇬🇧",
-    // % from left, % from top of the map container
-    // London: ~0°W, 51.5°N on equirectangular map
     x: 47.2,
     y: 37.1,
+    mapUrl: "https://www.google.com/maps/place/Devopstrio+ltd/@51.5245288,-0.1367657,14z/data=!3m1!5s0x4875cee4157f1139:0xd249cf37df391616!4m10!1m2!2m1!1sdevopstrio+ltd+uk!3m6!1s0x48760b08b17623d1:0x6617df320c1480ed!8m2!3d51.5272553!4d-0.0887416!15sChFkZXZvcHN0cmlvIGx0ZCB1a5IBEHNvZnR3YXJlX2NvbXBhbnngAQA!16s%2Fg%2F11s90s3cf8",
   },
   {
     id: "london-w1",
     city: "London W1",
-    label: "Client Experience Centre",
-    role: "Enterprise Meetings",
+    label: "Support Office",
+    role: "Connecting Global Expertise. Supporting Innovation. Delivering Excellence.",
     flag: "🇬🇧",
     x: 47.3,
     y: 38.3,
+    mapUrl: "https://www.google.com/maps/place/Devopstrio+Ltd/@51.5217329,-0.1816995,14z/data=!3m1!5s0x48761b2a2ad5bccd:0x14f0e4cbfee2283a!4m10!1m2!2m1!1sdevopstrio+ltd+uk!3m6!1s0x48761bf02b1933c7:0x47453e7d1b549278!8m2!3d51.5217329!4d-0.1435907!15sChFkZXZvcHN0cmlvIGx0ZCB1a5IBHWNvbXB1dGVyX3N1cHBvcnRfYW5kX3NlcnZpY2Vz4AEA!16s%2Fg%2F11zcnb2t_d",
   },
   {
     id: "tennessee",
@@ -30,41 +31,41 @@ const locations = [
     label: "North America Ops",
     role: "EST Timezone Coverage",
     flag: "🇺🇸",
-    // Nashville TN: ~86.8°W, 36.2°N
     x: 27.6,
     y: 46.6,
+    mapUrl: "https://maps.google.com/?q=522+Aventura+Dr,+Mt+Juliet,+TN+37122",
   },
   {
     id: "bengaluru",
     city: "Bengaluru",
-    label: "Engineering Centre",
-    role: "300+ Specialists",
+    label: "Corporate Office",
+    role: "Leading Strategy. Accelerating Technology. Enabling Global Growth.",
     flag: "🇮🇳",
-    // Bengaluru: ~77.6°E, 12.9°N — southern India
     x: 65.2,
     y: 56.4,
+    mapUrl: "https://www.google.com/maps/place/Devopstrio+Pvt+Ltd/@11.2597005,71.6100439,6.11z/data=!4m10!1m2!2m1!1sDevopstrio+Pbangalore!3m6!1s0x3bae152b54eca867:0x980925bb507a328c!8m2!3d12.9513154!4d77.6464534!15sChVEZXZvcHN0cmlvIFBiYW5nYWxvcmVaFyIVZGV2b3BzdHJpbyBwYmFuZ2Fsb3JlkgEdY29tcHV0ZXJfc3VwcG9ydF9hbmRfc2VydmljZXPgAQA!16s%2Fg%2F11mdtl382s",
   },
   {
     id: "chennai",
     city: "Chennai",
-    label: "Cloud & SecOps Hub",
-    role: "24/7 Monitoring",
+    label: "Technology & Operations Center",
+    role: "24/7 Cloud Architecture & Security Operations",
     flag: "🇮🇳",
-    // Chennai: ~80.3°E, 13°N
     x: 65.9,
     y: 57,
     labelPosition: "right",
+    mapUrl: "https://www.google.com/maps/place/Devopstrio+Pvt+Ltd/@13.0095316,80.2063518,17z/data=!3m1!4b1!4m6!3m5!1s0x3a5267f2a761f2c5:0x795e4dac8df70296!8m2!3d13.0095264!4d80.2089267!16s%2Fg%2F11nq0wrf8p",
   },
   {
     id: "thoothukudi",
     city: "Thoothukudi",
-    label: "DevOps & Automation",
-    role: "Rapid Delivery Team",
+    label: "Innovation Hub",
+    role: "Empowering Talent. Accelerating Innovation. Creating Global Impact.",
     flag: "🇮🇳",
-    // Thoothukudi: ~78.1°E, 8.8°N
     x: 65.7,
     y: 58,
     labelPosition: "bottom",
+    mapUrl: "https://www.google.com/maps/place/Devopstrio/@9.0039123,77.9576017,17z/data=!3m1!4b1!4m6!3m5!1s0x3b01557677b55437:0xdccfaa15cbbc87ca!8m2!3d9.0039123!4d77.9601766!16s%2Fg%2F11xw9tzf_k",
   },
 ];
 
@@ -92,10 +93,6 @@ export function GlobalPresence() {
                 className="w-12 sm:w-16 md:w-20 lg:w-24 h-auto object-contain filter drop-shadow-[0_0_15px_rgba(244,63,94,0.4)]"
               />
             </div>
-
-            {/* <span className="text-xs font-mono font-semibold tracking-[0.25em] uppercase text-rose-500">
-              GLOBAL PRESENCE
-            </span> */}
           </div>
 
           <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold tracking-tight leading-[1.35] mb-2 text-white">
@@ -130,12 +127,16 @@ export function GlobalPresence() {
                 const showLabel = isActive || defaultVisible.has(loc.id);
 
                 return (
-                  <div
+                  <a
                     key={loc.id}
-                    className="absolute -translate-x-1/2 -translate-y-1/2 group cursor-pointer z-20"
+                    href={loc.mapUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="absolute -translate-x-1/2 -translate-y-1/2 group cursor-pointer z-20 focus:outline-none"
                     style={{ left: `${loc.x}%`, top: `${loc.y}%` }}
                     onMouseEnter={() => setActive(loc.id)}
                     onMouseLeave={() => setActive(null)}
+                    title={`Open ${loc.city} office on Google Maps`}
                   >
                     {/* Location Pin PNG Icon */}
                     <div className="relative flex items-center justify-center">
@@ -213,29 +214,21 @@ export function GlobalPresence() {
                     {/* Expanded Detail Card on Hover */}
                     {isActive && (
                       <div className={`absolute ${loc.labelPosition === "bottom" ? "bottom-full mb-10" : "top-full mt-3"} left-1/2 -translate-x-1/2 z-40 animate-fadeIn`}>
-                        <div className="bg-zinc-950/95 border border-rose-500/40 rounded-xl p-3 shadow-2xl text-left min-w-[150px] backdrop-blur-md">
+                        <div className="bg-zinc-950/95 border border-rose-500/40 rounded-xl p-3.5 shadow-2xl text-left min-w-[170px] backdrop-blur-md">
                           <div className="text-[9px] font-semibold text-rose-500 uppercase tracking-widest mb-1">{loc.label}</div>
                           <div className="text-xs font-bold text-white leading-none mb-1">{loc.city}</div>
-                          <div className="text-[10px] text-zinc-400 font-semibold">{loc.role}</div>
+                          <div className="text-[10px] text-zinc-400 font-semibold mb-2">{loc.role}</div>
+                          <div className="pt-2 border-t border-zinc-800/80 flex items-center justify-between text-[10px] text-rose-400 font-semibold group-hover:underline">
+                            <span>Open on Maps</span>
+                            <ArrowUpRight size={11} />
+                          </div>
                         </div>
                       </div>
                     )}
-                  </div>
+                  </a>
                 );
               })}
             </div>
-
-            {/* ── Legend bar ─────────────────────────────────────────────── */}
-            {/* <div className="flex items-center justify-center gap-6 py-2.5 mt-2">
-              <div className="flex items-center gap-1.5">
-                <span className="w-1.5 h-1.5 rounded-full bg-rose-500 shadow-[0_0_5px_rgba(244,63,94,0.7)]" />
-                <span className="text-[9px] font-bold text-zinc-600 uppercase tracking-widest">Office Location</span>
-              </div>
-              <div className="flex items-center gap-1.5">
-                <span className="w-1.5 h-1.5 rounded-full bg-zinc-700" />
-                <span className="text-[9px] font-bold text-zinc-600 uppercase tracking-widest">Hover to explore</span>
-              </div>
-            </div> */}
           </div>
         </Reveal>
 

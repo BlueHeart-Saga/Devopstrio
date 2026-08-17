@@ -16,6 +16,7 @@ const locationSlides = [
         London <span className="text-rose-500">(Head Office)</span>
       </>
     ),
+    tagline: "Strategic Leadership. Enterprise Governance. Global Partnerships.",
   },
   {
     id: "bengaluru-corporate-office",
@@ -30,6 +31,7 @@ const locationSlides = [
         Bengaluru <span className="text-rose-500">(Corporate Office)</span>
       </>
     ),
+    tagline: "Leading Strategy. Accelerating Technology. Enabling Global Growth.",
   },
   {
     id: "thoothukudi-innovation-hub",
@@ -44,6 +46,7 @@ const locationSlides = [
         Thoothukudi <span className="text-rose-500">(Innovation Hub)</span>
       </>
     ),
+    tagline: "Empowering Talent. Accelerating Innovation. Creating Global Impact.",
   },
   {
     id: "tennessee-sub-regional",
@@ -58,23 +61,23 @@ const locationSlides = [
         Tennessee <span className="text-rose-500">(Sub-Regional Office)</span>
       </>
     ),
+    tagline: "North America Operations & Real-Time Client Collaboration.",
   },
-  
   {
     id: "chennai-operations-center",
     city: "Chennai",
-    type: "Operations Center",
+    type: "Technology & Operations Center",
     country: "India",
     address: "Ground Floor, Primus Building, Door No. SP – 7A, Guindy Industrial Estate, SIDCO Industrial Estate, Chennai 600032",
     src: "/assets/About-page/building/chennai.png",
-    alt: "Devopstrio Chennai Operations Center",
+    alt: "Devopstrio Chennai Technology & Operations Center",
     heading: (
       <>
-        Chennai <span className="text-rose-500">(Operations Center)</span>
+        Chennai <span className="text-rose-500">(Technology & Operations Center)</span>
       </>
     ),
+    tagline: "24/7 Cloud Architecture & Security Operations.",
   },
-  
   {
     id: "london-support-office",
     city: "London",
@@ -88,6 +91,7 @@ const locationSlides = [
         London <span className="text-rose-500">(Support Office)</span>
       </>
     ),
+    tagline: "Connecting Global Expertise. Supporting Innovation. Delivering Excellence.",
   },
 ];
 
@@ -194,7 +198,7 @@ export function PresenceHero() {
                     </div> */}
 
                     <h1
-                      className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-semibold tracking-tight leading-tight text-white select-text max-w-4xl mb-2"
+                      className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-semibold tracking-tight leading-tight text-white select-text max-w-5xl mb-2"
                       style={{
                         textShadow:
                           "0 4px 30px rgba(0, 0, 0, 0.95), 0 2px 10px rgba(0, 0, 0, 0.9), 0 0 50px rgba(0, 0, 0, 0.75)",
@@ -202,6 +206,17 @@ export function PresenceHero() {
                     >
                       {slide.heading}
                     </h1>
+
+                    {slide.tagline && (
+                      <p 
+                        className="text-sm sm:text-base md:text-lg text-rose-400 font-medium tracking-wide mb-2 select-text max-w-2xl"
+                        style={{
+                          textShadow: "0 2px 15px rgba(0, 0, 0, 0.9)",
+                        }}
+                      >
+                        {slide.tagline}
+                      </p>
+                    )}
 
                     <p className="text-xs sm:text-sm text-zinc-300/85 font-mono max-w-xl">
                       {slide.address}

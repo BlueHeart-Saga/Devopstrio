@@ -26,6 +26,7 @@ const officeLocations = [
     id: "london-hq",
     city: "London",
     officeName: "London (Head Office)",
+    tagline: "Strategic Leadership. Enterprise Governance. Global Partnerships.",
     address: "128 City Road, London, United Kingdom, EC1V 2NX",
     type: "Head Office",
     tel: "+44 (0) 20 7183 0123",
@@ -35,7 +36,8 @@ const officeLocations = [
   {
     id: "tennessee-office",
     city: "Tennessee",
-    officeName: "Tennessee Office",
+    officeName: "Tennessee (Sub-Regional Office)",
+    tagline: "North America Operations & Real-Time Client Collaboration.",
     address: "522 Aventura Dr, Mt Juliet, Tennessee, 37122 United States",
     type: "Sub-Regional Office",
     tel: "+1 (615) 555-0199",
@@ -45,7 +47,8 @@ const officeLocations = [
   {
     id: "bengaluru-office",
     city: "Bengaluru",
-    officeName: "Bengaluru Office",
+    officeName: "Bengaluru (Corporate Office)",
+    tagline: "Leading Strategy. Accelerating Technology. Enabling Global Growth.",
     address: "Embassy Golf Links Business Park, Bengaluru, Karnataka-560071, India",
     type: "Corporate Office",
     tel: "+91 80 4123 4567",
@@ -55,7 +58,8 @@ const officeLocations = [
   {
     id: "london-support",
     city: "London",
-    officeName: "London Office (Support Office)",
+    officeName: "London (Support Office)",
+    tagline: "Connecting Global Expertise. Supporting Innovation. Delivering Excellence.",
     address: "167-169 Great Portland Street, 5th Floor, London, W1W 5PF",
     type: "Support Office",
     tel: "+44 (0) 20 7183 0124",
@@ -65,9 +69,10 @@ const officeLocations = [
   {
     id: "chennai-office",
     city: "Chennai",
-    officeName: "Chennai Office",
+    officeName: "Chennai (Technology & Operations Center)",
+    tagline: "24/7 Cloud Architecture & Security Operations.",
     address: "Ground Floor, Primus Building, Door No. SP – 7A, Guindy Industrial Estate, SIDCO Industrial Estate, Chennai 600032",
-    type: "Operations Center",
+    type: "Technology & Operations Center",
     tel: "+91 44 6123 4567",
     email: "chennai.ops@devopstrio.com",
     mapQuery: "Primus Building, Door No. SP - 7A, Guindy Industrial Estate, Chennai 600032, India",
@@ -75,9 +80,10 @@ const officeLocations = [
   {
     id: "thoothukudi-office",
     city: "Thoothukudi",
-    officeName: "Thoothukudi Office",
+    officeName: "Thoothukudi (Innovation Hub)",
+    tagline: "Empowering Talent. Accelerating Innovation. Creating Global Impact.",
     address: "4/ 367, Rajeev Colony, Pasuvanthanai, 628718 Thoothukudi, Tamilnadu, IN",
-    type: "Operations Center",
+    type: "Innovation Hub",
     tel: "+91 461 234 5678",
     email: "thoothukudi.ops@devopstrio.com",
     mapQuery: "Pasuvanthanai, Tamilnadu, India",
@@ -90,23 +96,6 @@ export function HubSpotlight({ locations }: HubSpotlightProps) {
 
   return (
     <section className="py-24 md:py-32 relative max-w-7xl mx-auto px-6 lg:px-12">
-      {/* <div className="mb-14 text-left max-w-3xl">
-        <Reveal>
-          <span className="text-3xl sm:text-sm font-semibold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
-            Our Footprint
-          </span>
-          <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight text-white mb-6 font-sans">
-            Strategically Positioned to Serve Global Clients
-          </h2>
-          <p className="text-zinc-300 text-base md:text-lg leading-relaxed font-medium mb-4">
-            Devopstrio’s delivery footprint is designed to combine strategic oversight, engineering depth, and operational continuity. Our teams collaborate across leadership, delivery, support, and innovation functions to ensure that clients receive responsive service, dependable execution, and access to the expertise required for modern <Link href="/services/digital-transformation" className="text-[#E11D48] hover:underline">digital transformation</Link>.
-          </p>
-          <p className="text-zinc-300 text-base md:text-lg leading-relaxed font-medium">
-            This distributed model allows us to support organizations across multiple <Link href="/industries" className="text-[#E11D48] hover:underline">industries</Link> while maintaining a unified standard of delivery across every engagement.
-          </p>
-        </Reveal>
-      </div> */}
-
       {/* Tabs Menu */}
       <div className="flex flex-wrap gap-2.5 md:gap-3 mb-10 border-b border-zinc-900 pb-6">
         {officeLocations.map((office) => (
@@ -133,15 +122,14 @@ export function HubSpotlight({ locations }: HubSpotlightProps) {
 
           <div className="space-y-6">
             <div>
-              {/* <span className="text-xs font-mono tracking-[0.25em] uppercase text-rose-500 block mb-2 font-semibold">
-                Office Information
-              </span> */}
               <h3 className="text-2xl md:text-3xl font-semibold text-white tracking-tight">
                 {currentOffice.officeName}
               </h3>
-              {/* <span className="inline-block mt-2 text-xs font-mono tracking-widest uppercase bg-rose-500/10 border border-rose-500/20 text-rose-400 px-3 py-1 rounded-full font-semibold">
-                {currentOffice.type}
-              </span> */}
+              {currentOffice.tagline && (
+                <p className="text-xs sm:text-sm text-rose-400 font-medium mt-1 leading-relaxed">
+                  {currentOffice.tagline}
+                </p>
+              )}
             </div>
 
             <div className="space-y-5 border-t border-zinc-900 pt-6">

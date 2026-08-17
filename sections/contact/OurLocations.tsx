@@ -12,7 +12,7 @@ const offices = [
     details: "128 City Road, London, United Kingdom\nEC1V 2NX", 
     image: "/assets/locations/london.png",
     gradient: "from-rose-500 to-red-500",
-    mapUrl: "https://maps.google.com/?q=128+City+Road,+London,+EC1V+2NX"
+    mapUrl: "https://www.google.com/maps/place/Devopstrio+ltd/@51.5245288,-0.1367657,14z/data=!3m1!5s0x4875cee4157f1139:0xd249cf37df391616!4m10!1m2!2m1!1sdevopstrio+ltd+uk!3m6!1s0x48760b08b17623d1:0x6617df320c1480ed!8m2!3d51.5272553!4d-0.0887416!15sChFkZXZvcHN0cmlvIGx0ZCB1a5IBEHNvZnR3YXJlX2NvbXBhbnngAQA!16s%2Fg%2F11s90s3cf8"
   },
   { 
     city: "Tennessee", 
@@ -28,7 +28,7 @@ const offices = [
     details: "Embassy Golf Links Business Park,\nBengaluru, Karnataka-560071, India",
     image: "/assets/locations/Bengaluru.png",
     gradient: "from-zinc-400 to-zinc-200",
-    mapUrl: "https://maps.google.com/?q=Embassy+Golf+Links+Business+Park,+Bengaluru,+Karnataka+560071"
+    mapUrl: "https://www.google.com/maps/place/Devopstrio+Pvt+Ltd/@11.2597005,71.6100439,6.11z/data=!4m10!1m2!2m1!1sDevopstrio+Pbangalore!3m6!1s0x3bae152b54eca867:0x980925bb507a328c!8m2!3d12.9513154!4d77.6464534!15sChVEZXZvcHN0cmlvIFBiYW5nYWxvcmVaFyIVZGV2b3BzdHJpbyBwYmFuZ2Fsb3JlkgEdY29tcHV0ZXJfc3VwcG9ydF9hbmRfc2VydmljZXPgAQA!16s%2Fg%2F11mdtl382s"
   },
   { 
     city: "London", 
@@ -36,15 +36,15 @@ const offices = [
     details: "167-169 Great Portland Street, 5th Floor,\nLondon, W1W 5PF",
     image: "/assets/locations/london.png",
     gradient: "from-rose-600 to-red-700",
-    mapUrl: "https://maps.google.com/?q=167-169+Great+Portland+Street,+London,+W1W+5PF"
+    mapUrl: "https://www.google.com/maps/place/Devopstrio+Ltd/@51.5217329,-0.1816995,14z/data=!3m1!5s0x48761b2a2ad5bccd:0x14f0e4cbfee2283a!4m10!1m2!2m1!1sdevopstrio+ltd+uk!3m6!1s0x48761bf02b1933c7:0x47453e7d1b549278!8m2!3d51.5217329!4d-0.1435907!15sChFkZXZvcHN0cmlvIGx0ZCB1a5IBHWNvbXB1dGVyX3N1cHBvcnRfYW5kX3NlcnZpY2Vz4AEA!16s%2Fg%2F11zcnb2t_d"
   },
   { 
     city: "Chennai", 
-    region: "(Operations Center)", 
+    region: "(Technology & Operations Center)", 
     details: "Ground Floor, Primus Building, Door No.\nSP – 7A, Guindy Industrial Estate, SIDCO\nIndustrial Estate, Chennai 600032",
     image: "/assets/locations/chennai.png",
     gradient: "from-orange-600 to-amber-500",
-    mapUrl: "https://maps.google.com/?q=Primus+Building,+Guindy+Industrial+Estate,+Chennai+600032"
+    mapUrl: "https://www.google.com/maps/place/Devopstrio+Pvt+Ltd/@13.0095316,80.2063518,17z/data=!3m1!4b1!4m6!3m5!1s0x3a5267f2a761f2c5:0x795e4dac8df70296!8m2!3d13.0095264!4d80.2089267!16s%2Fg%2F11nq0wrf8p"
   },
   { 
     city: "Thoothukudi", 
@@ -52,7 +52,7 @@ const offices = [
     details: "4/ 367, Rajeev Colony, Pasuvanthanai\n628718 Thoothukudi, Tamilnadu, IN",
     image: "/assets/locations/Thoothukudi.png",
     gradient: "from-red-600 to-orange-500",
-    mapUrl: "https://maps.google.com/?q=Pasuvanthanai,+Thoothukudi+628718"
+    mapUrl: "https://www.google.com/maps/place/Devopstrio/@9.0039123,77.9576017,17z/data=!3m1!4b1!4m6!3m5!1s0x3b01557677b55437:0xdccfaa15cbbc87ca!8m2!3d9.0039123!4d77.9601766!16s%2Fg%2F11xw9tzf_k"
   }
 ];
 

@@ -35,7 +35,7 @@ const locations = [
     country: "UK",
     region: "Europe",
     type: "Global HQ / Client Experience Centre",
-    role: "Executive leadership, enterprise consulting, strategic engagements, and client governance.",
+    role: "Connecting Global Expertise. Supporting Innovation. Delivering Excellence.",
     employees: "200+",
     top: 27.68,
     left: 46.9,
@@ -56,18 +56,18 @@ const locations = [
     name: "Bengaluru",
     country: "India",
     region: "India",
-    type: "Engineering Centre",
-    role: "Platform engineering, software development, cloud architecture, and technical delivery.",
+    type: "Corporate Office",
+    role: "Leading Strategy. Accelerating Technology. Enabling Global Growth.",
     employees: "150+",
     top: 51.1,
     left: 68.35,
-    tag: "Engineering"
+    tag: "Corporate"
   },
   {
     name: "Chennai",
     country: "India",
     region: "India",
-    type: "Cloud & SecOps Hub",
+    type: "Technology & Operations Center",
     role: "Managed cloud operations, DevSecOps, infrastructure monitoring, and security-aligned delivery.",
     employees: "75+",
     top: 50.9,
@@ -78,12 +78,12 @@ const locations = [
     name: "Thoothukudi",
     country: "India",
     region: "India",
-    type: "DevOps & Automation Delivery",
-    role: "DevOps execution, QA coordination, support operations, and engineering acceleration.",
+    type: "Innovation Hub",
+    role: "Empowering Talent. Accelerating Innovation. Creating Global Impact.",
     employees: "150+",
     top: 52.99,
     left: 68.53,
-    tag: "Delivery"
+    tag: "Innovation"
   },
 ];
 
