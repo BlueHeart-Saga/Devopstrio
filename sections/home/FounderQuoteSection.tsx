@@ -4,22 +4,13 @@ import { motion } from "framer-motion";
 
 export const FounderQuoteSection = () => {
   return (
-    <section className="bg-black relative text-white py-20 sm:py-24 lg:py-28">
-      {/* Top Connector Arrow placed to bridge previous component and this section */}
-      <div className="absolute -top-5 sm:-top-8 md:-top-10 lg:-top-12 right-[8%] sm:right-[12%] md:right-[16%] lg:right-[20%] xl:right-[22%] z-30 pointer-events-none select-none rotate-[-20deg]">
-        <img
-          src="/assets/components/streight-toptobuttm.png"
-          alt="Connecting arrow"
-          className="w-16 sm:w-20 md:w-24 lg:w-28 h-auto object-contain filter drop-shadow-[0_0_15px_rgba(244,63,94,0.4)]"
-        />
-      </div>
-
+    <section className="bg-black relative text-white py-6 sm:py-8 md:py-10">
       {/* Background ambient lighting */}
       <div className="absolute top-1/2 left-10 -translate-y-1/2 w-[550px] h-[550px] bg-rose-600/10 rounded-full blur-[160px] pointer-events-none" />
       <div className="absolute top-10 right-1/4 w-[400px] h-[400px] bg-purple-600/5 rounded-full blur-[140px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center min-h-[480px] lg:min-h-[560px]">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-center">
 
           {/* Left Column: Premium Feel-Good Quote with Stylized Quote Icon */}
           <motion.div
@@ -27,10 +18,10 @@ export const FounderQuoteSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:col-span-7 xl:col-span-7 z-10 py-6 space-y-7 sm:space-y-9"
+            className="lg:col-span-7 xl:col-span-7 z-10 py-2 space-y-5 sm:space-y-6"
           >
             {/* Dual-Tone Stylized Quote Icon (Ref: Uploaded Image Style) */}
-            <div className="relative w-16 h-14 sm:w-20 sm:h-16 select-none pointer-events-none">
+            <div className="relative w-14 h-12 sm:w-16 sm:h-14 select-none pointer-events-none">
               <svg
                 viewBox="0 0 90 70"
                 className="w-full h-full filter drop-shadow-[0_4px_16px_rgba(244,63,94,0.4)]"
@@ -51,7 +42,7 @@ export const FounderQuoteSection = () => {
             </div>
 
             {/* Simple Feel-Good Quote Statement with Enhanced Line-Height & Letter Spacing */}
-            <blockquote className="text-2xl sm:text-3xl md:text-4xl lg:text-[40px] xl:text-[45px] font-semibold text-white leading-[1.42] sm:leading-[1.48] lg:leading-[1.46] xl:leading-[1.42] tracking-[-0.015em] font-sans max-w-xl xl:max-w-2xl">
+            <blockquote className="text-2xl sm:text-3xl md:text-4xl lg:text-[38px] xl:text-[42px] font-semibold text-white leading-[1.38] sm:leading-[1.42] lg:leading-[1.4] tracking-[-0.015em] font-sans max-w-xl xl:max-w-2xl">
               “Great engineering is simple:{" "}
               <span className="text-rose-500 font-semibold drop-shadow-[0_0_20px_rgba(244,63,94,0.35)]">
                 Build with heart
@@ -66,7 +57,7 @@ export const FounderQuoteSection = () => {
             whileInView={{ opacity: 1, scale: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
-            className="lg:col-span-5 xl:col-span-5 flex items-end justify-center lg:justify-end relative w-full h-full min-h-[380px] sm:min-h-[460px] lg:min-h-[580px] pointer-events-none select-none"
+            className="lg:col-span-5 xl:col-span-5 flex items-end justify-center lg:justify-end relative w-full h-full pointer-events-none select-none"
           >
             {/* Ambient halo behind portrait */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 sm:w-96 h-72 sm:h-96 rounded-full bg-rose-500/10 blur-[100px] pointer-events-none" />
@@ -75,7 +66,7 @@ export const FounderQuoteSection = () => {
             <img
               src="/assets/About-page/leader/Mani sir sketch_3.png"
               alt="Manikandan PS - Founder & CEO"
-              className="relative z-10 w-full max-w-[360px] sm:max-w-[440px] lg:max-w-[520px] xl:max-w-[580px] h-auto object-contain object-bottom filter contrast-105 drop-shadow-[0_25px_50px_rgba(0,0,0,0.9)]"
+              className="relative z-10 w-full max-w-[320px] sm:max-w-[400px] lg:max-w-[460px] xl:max-w-[500px] h-auto object-contain object-bottom filter contrast-105 drop-shadow-[0_25px_50px_rgba(0,0,0,0.9)]"
             />
           </motion.div>
 

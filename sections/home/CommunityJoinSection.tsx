@@ -1,9 +1,9 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { Star, Quote } from "lucide-react";
+import { Star } from "lucide-react";
 
 const clientPhotos = [
   "/assets/Home-page/client-reviews/image%20164.png",
@@ -250,6 +250,22 @@ const gridTiles: MosaicTile[] = [
 
 export function CommunityJoinSection() {
   const [hoveredIdx, setHoveredIdx] = useState<number | null>(null);
+  const [activeIdx, setActiveIdx] = useState<number>(0);
+  const [isPaused, setIsPaused] = useState<boolean>(false);
+
+  // Auto-advance reviews one by one every 3.5 seconds when not hovered or paused
+  useEffect(() => {
+    if (isPaused || hoveredIdx !== null) return;
+
+    const interval = setInterval(() => {
+      setActiveIdx((prev) => (prev + 1) % clientReviews.length);
+    }, 3500);
+
+    return () => clearInterval(interval);
+  }, [isPaused, hoveredIdx]);
+
+  const displayIdx = hoveredIdx !== null ? hoveredIdx : activeIdx;
+  const currentReview = clientReviews[displayIdx % clientReviews.length];
 
   const getTileShapeClass = (type: TileType) => {
     switch (type) {
@@ -330,6 +346,7 @@ export function CommunityJoinSection() {
               if (tile.type === "photo" && tile.photoIdx !== undefined) {
                 const photoSrc = clientPhotos[tile.photoIdx % clientPhotos.length];
                 const review = clientReviews[tile.photoIdx % clientReviews.length];
+                const isSelected = displayIdx % clientReviews.length === tile.photoIdx % clientReviews.length;
                 const isHovered = hoveredIdx === tile.photoIdx;
 
                 return (
@@ -337,17 +354,23 @@ export function CommunityJoinSection() {
                     key={i}
                     onMouseEnter={() => setHoveredIdx(tile.photoIdx!)}
                     onMouseLeave={() => setHoveredIdx(null)}
+                    onClick={() => {
+                      setActiveIdx(tile.photoIdx!);
+                      setHoveredIdx(tile.photoIdx!);
+                    }}
                     className={`w-full aspect-square rounded-sm sm:rounded-md md:rounded-lg overflow-hidden bg-zinc-900 border relative cursor-pointer transition-all duration-300 ${
-                      isHovered
-                        ? "scale-125 border-rose-500 ring-2 ring-rose-500/60 shadow-[0_0_20px_rgba(244,63,94,0.7)] z-40"
-                        : "border-zinc-800 hover:border-zinc-700 z-10"
+                      isHovered || isSelected
+                        ? "scale-115 sm:scale-125 border-rose-500 ring-2 ring-rose-500/70 shadow-[0_0_20px_rgba(244,63,94,0.75)] z-40 opacity-100"
+                        : "border-zinc-800 hover:border-zinc-700 z-10 opacity-75 hover:opacity-100"
                     }`}
                   >
                     <Image
                       src={photoSrc}
                       alt={review.name}
                       fill
-                      className={`object-cover transition-all duration-300 ${isHovered ? "contrast-110" : ""}`}
+                      className={`object-cover transition-all duration-300 ${
+                        isHovered || isSelected ? "contrast-115 brightness-105" : ""
+                      }`}
                     />
                   </div>
                 );
@@ -366,59 +389,46 @@ export function CommunityJoinSection() {
           </div>
 
           {/* Centered Floating Stadium Oval Pill Capsule Badge */}
-          <div className="absolute inset-0 flex items-center justify-center p-3 sm:p-4 z-20 pointer-events-none">
+          <div 
+            className="absolute inset-0 flex items-center justify-center p-3 sm:p-4 z-20 pointer-events-none"
+          >
             <motion.div
               layout
-              className="bg-white text-zinc-950 max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl w-full rounded-full sm:rounded-[56px] px-6 sm:px-10 md:px-12 py-5 sm:py-7 md:py-8 text-center shadow-[0_25px_70px_rgba(0,0,0,0.9)] border border-zinc-200 relative pointer-events-auto min-h-[100px] sm:min-h-[130px] md:min-h-[140px] flex items-center justify-center overflow-hidden"
+              onMouseEnter={() => setIsPaused(true)}
+              onMouseLeave={() => setIsPaused(false)}
+              className="bg-white text-zinc-950 max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl w-full rounded-full sm:rounded-[56px] px-6 sm:px-10 md:px-12 py-5 sm:py-7 md:py-8 text-center shadow-[0_25px_70px_rgba(0,0,0,0.9)] border border-zinc-200 relative pointer-events-auto min-h-[110px] sm:min-h-[135px] md:min-h-[145px] flex items-center justify-center overflow-hidden transition-all duration-300"
             >
               <AnimatePresence mode="wait">
-                {hoveredIdx === null ? (
-                  /* Default Headline */
-                  <motion.div
-                    key="default-headline"
-                    initial={{ opacity: 0, y: 5 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -5 }}
-                    transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
-                    className="w-full"
-                  >
-                    <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-[36px] font-bold tracking-tight text-[#0F172A] leading-tight font-sans">
-                      Loved by Teams Everywhere
-                    </h2>
-                  </motion.div>
-                ) : (
-                  /* Hovered Client Review */
-                  <motion.div
-                    key={`review-${hoveredIdx}`}
-                    initial={{ opacity: 0, scale: 0.96, y: 5 }}
-                    animate={{ opacity: 1, scale: 1, y: 0 }}
-                    exit={{ opacity: 0, scale: 0.96, y: -5 }}
-                    transition={{ duration: 0.22, ease: [0.16, 1, 0.3, 1] }}
-                    className="space-y-1 sm:space-y-1.5 max-w-lg mx-auto w-full px-2"
-                  >
-                    {/* Top 5 Gold Stars */}
-                    <div className="flex items-center justify-center gap-0.5 text-amber-500">
-                      {[...Array(5)].map((_, starIdx) => (
-                        <Star key={starIdx} size={13} className="fill-amber-400" />
-                      ))}
-                    </div>
+                <motion.div
+                  key={`review-${displayIdx}`}
+                  initial={{ opacity: 0, scale: 0.96, y: 6 }}
+                  animate={{ opacity: 1, scale: 1, y: 0 }}
+                  exit={{ opacity: 0, scale: 0.96, y: -6 }}
+                  transition={{ duration: 0.28, ease: [0.16, 1, 0.3, 1] }}
+                  className="space-y-1 sm:space-y-1.5 max-w-lg mx-auto w-full px-2"
+                >
+                  {/* Top 5 Gold Stars */}
+                  <div className="flex items-center justify-center gap-0.5 text-amber-500">
+                    {[...Array(5)].map((_, starIdx) => (
+                      <Star key={starIdx} size={13} className="fill-amber-400 text-amber-400" />
+                    ))}
+                  </div>
 
-                    {/* Quote statement */}
-                    <p className="text-xs sm:text-sm md:text-base font-medium text-zinc-900 leading-snug font-sans italic line-clamp-2">
-                      &ldquo;{clientReviews[hoveredIdx % clientReviews.length].quote}&rdquo;
+                  {/* Quote statement */}
+                  <p className="text-xs sm:text-sm md:text-base font-medium text-zinc-900 leading-snug font-sans italic line-clamp-2">
+                    &ldquo;{currentReview.quote}&rdquo;
+                  </p>
+
+                  {/* Author Details */}
+                  <div>
+                    <p className="text-xs sm:text-sm font-bold text-zinc-950 font-sans tracking-tight">
+                      {currentReview.name}
                     </p>
-
-                    {/* Author Details */}
-                    <div>
-                      <p className="text-xs sm:text-sm font-bold text-zinc-950 font-sans tracking-tight">
-                        {clientReviews[hoveredIdx % clientReviews.length].name}
-                      </p>
-                      <p className="text-[10px] sm:text-xs text-rose-600 font-semibold font-mono">
-                        {clientReviews[hoveredIdx % clientReviews.length].role}
-                      </p>
-                    </div>
-                  </motion.div>
-                )}
+                    {/* <p className="text-[10px] sm:text-xs text-rose-600 font-semibold font-mono">
+                      {currentReview.role}
+                    </p> */}
+                  </div>
+                </motion.div>
               </AnimatePresence>
             </motion.div>
           </div>
