@@ -32,23 +32,23 @@ export function EngineeringStory() {
         {/* Left Column: Story copy */}
         <div className="lg:col-span-7 text-left space-y-6">
           <Reveal>
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
+            <span className="text-xs sm:text-sm font-semibold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
               Core Story
             </span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">
+            <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight text-white mb-6 font-sans">
               Rooted in Engineering.<br />
               <span className="text-rose-500">Designed for Global Impact.</span>
             </h2>
           </Reveal>
           
           <Reveal delay={0.1}>
-            <p className="text-zinc-300 text-sm md:text-base leading-relaxed font-medium">
+            <p className="text-zinc-300 text-base md:text-lg leading-relaxed font-medium">
               Our strength comes from building deep technical capabilities close to where our teams operate, while aligning every engagement to the expectations of global businesses. This means clients gain the benefit of dedicated engineering delivery, modern <Link href="/services/cloud-services" className="text-[#E11D48] hover:underline">cloud expertise</Link>, agile collaboration, and cost-efficient execution—without compromising on quality, governance, or long-term <Link href="/contact#contact-form" className="text-[#E11D48] hover:underline">partnership</Link>.
             </p>
           </Reveal>
 
           <Reveal delay={0.15}>
-            <p className="text-zinc-400 text-sm leading-relaxed">
+            <p className="text-zinc-300 text-base md:text-lg leading-relaxed font-medium">
               Whether supporting a fast-growing startup, a mid-sized business, or a large <Link href="/services/digital-transformation" className="text-[#E11D48] hover:underline">enterprise transformation</Link> initiative, Devopstrio brings together the right people, processes, and platforms to deliver across borders with confidence. Feel free to <Link href="/contact#contact-form" className="text-[#E11D48] hover:underline">reach out</Link> to our team.
             </p>
           </Reveal>
@@ -61,12 +61,12 @@ export function EngineeringStory() {
               key={idx}
               className="p-6 rounded-2xl bg-zinc-950/50 border border-zinc-900 flex items-start gap-4 hover:border-rose-500/10 transition-colors"
             >
-              <div className="w-10 h-10 rounded-xl bg-rose-500/10 border border-rose-500/20 flex items-center justify-center shrink-0">
+              <div className="w-12 h-12 rounded-xl bg-rose-500/10 border border-rose-500/20 flex items-center justify-center shrink-0">
                 {h.icon}
               </div>
               <div className="text-left">
-                <h4 className="text-sm font-bold text-white uppercase tracking-wider">{h.title}</h4>
-                <p className="text-xs text-zinc-450 leading-relaxed mt-1 font-medium">{h.desc}</p>
+                <h4 className="text-base md:text-lg font-semibold text-white tracking-wide">{h.title}</h4>
+                <p className="text-sm text-zinc-300 leading-relaxed mt-1.5 font-medium">{h.desc}</p>
               </div>
             </div>
           ))}

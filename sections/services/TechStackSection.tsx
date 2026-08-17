@@ -259,11 +259,11 @@ export function TechStackSection() {
 
         {/* Top Header Panel */}
         <Reveal className="max-w-3xl mx-auto mb-6">
-          <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-2 block">
+          <span className="text-xs sm:text-sm font-semibold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
             TECHNOLOGY ECOSYSTEM
           </span>
-          <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-3 text-white uppercase">
-            OUR ENGINEERING <span className="text-rose-500">TECH STACK</span>
+          <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight mb-4 text-white font-sans">
+            Our Engineering <span className="text-rose-500 font-semibold">Tech Stack</span>
           </h2>
           <p className="text-zinc-200 text-sm md:text-base font-semibold leading-relaxed max-w-2xl mx-auto">
             We align our technology choices with <Link href="/services/cybersecurity" className="text-rose-500 hover:underline">enterprise security requirements</Link>, <Link href="/services/cloud-services" className="text-rose-500 hover:underline">scalability</Link>, and developer experience.

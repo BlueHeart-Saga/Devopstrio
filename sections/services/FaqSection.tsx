@@ -65,16 +65,16 @@ export function FaqSection() {
   };
 
   return (
-    <section className="w-full py-24 bg-[#030303] text-white border-b border-zinc-900">
+    <section className="w-full py-24 bg-[#030303] text-white">
       <div className="max-w-4xl mx-auto px-12 xl:px-8">
 
         <Reveal>
           <div className="text-center max-w-3xl mx-auto mb-14">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+            <span className="text-xs sm:text-sm font-semibold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
               FREQUENTLY ASKED QUESTIONS
             </span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white uppercase">
-              Common service <span className="text-rose-500">inquiries</span>
+            <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight mb-5 text-white font-sans">
+              Common Service <span className="text-rose-500 font-semibold">Inquiries</span>
             </h2>
           </div>
         </Reveal>
@@ -85,26 +85,26 @@ export function FaqSection() {
             return (
               <Reveal key={idx} delay={idx * 0.03} className="w-full">
                 <div className={`rounded-2xl overflow-hidden transition-all duration-300 border backdrop-blur-sm shadow-[0_4px_16px_rgba(0,0,0,0.25)] ${
-                  isOpen ? "bg-zinc-950/50 border-white/10 hover:border-rose-500/20" : "bg-transparent border-white/5 hover:border-rose-500/20 hover:bg-zinc-950/30"
+                  isOpen ? "bg-zinc-950/60 border-white/15 hover:border-rose-500/30" : "bg-transparent border-white/10 hover:border-rose-500/25 hover:bg-zinc-950/40"
                 }`}>
                   <button
                     onClick={() => toggle(idx)}
-                    className="w-full flex items-center justify-between p-6 text-left"
+                    className="w-full flex items-center justify-between p-6 sm:p-7 text-left cursor-pointer group"
                   >
-                    <span className="text-xs md:text-sm font-bold text-white tracking-wide">
+                    <span className="text-base sm:text-lg md:text-xl font-semibold text-white tracking-tight group-hover:text-rose-400 transition-colors font-sans">
                       {faq.q}
                     </span>
-                    <span className="text-zinc-500 hover:text-white transition-colors flex-shrink-0 ml-4">
-                      {isOpen ? <Minus size={14} className="text-rose-500" /> : <Plus size={14} />}
+                    <span className="w-8 h-8 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-400 group-hover:text-white group-hover:border-rose-500/30 transition-all flex-shrink-0 ml-4">
+                      {isOpen ? <Minus size={16} className="text-rose-500" /> : <Plus size={16} />}
                     </span>
                   </button>
 
                   <div
                     className={`transition-all duration-350 ease-in-out ${
-                      isOpen ? "max-h-[300px] border-t border-white/5 p-6 pt-4" : "max-h-0 overflow-hidden"
+                      isOpen ? "max-h-[500px] border-t border-white/10 p-6 sm:p-7 pt-5" : "max-h-0 overflow-hidden"
                     }`}
                   >
-                    <p className="text-xs md:text-sm text-zinc-200 leading-relaxed font-semibold">
+                    <p className="text-sm sm:text-base md:text-lg text-zinc-300 leading-relaxed font-normal">
                       {faq.a}
                     </p>
                   </div>

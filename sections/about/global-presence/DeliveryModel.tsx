@@ -34,58 +34,56 @@ export function DeliveryModel() {
         {/* Header Block */}
         <div className="max-w-4xl mb-20 text-left">
           <Reveal>
-            <span className="inline-flex items-center px-3 py-1 rounded-full bg-rose-500/10 border border-rose-500/20 text-rose-400 text-[10px] font-bold tracking-widest uppercase mb-4">
+            <span className="inline-flex items-center px-4 py-1.5 rounded-full bg-rose-500/10 border border-rose-500/20 text-rose-400 text-xs sm:text-sm font-semibold tracking-widest uppercase mb-4">
               Global Operations Engine
             </span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">
+            <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight text-white mb-6 font-sans">
               Engineered Locally. Delivered Globally.
             </h2>
-            <p className="text-zinc-400 text-sm md:text-base leading-relaxed max-w-3xl font-medium">
-              We combine London-led strategic consulting and architect-level advisory with high-performing global <Link href="/services" className="text-[#E11D48] hover:underline">engineering centers</Link>. This hybrid model ensures absolute project accountability and direct face-to-face communication, backed by the cost-efficiency, technical depth, and scalability of our distributed <Link href="/ecosystem/engineering-excellence" className="text-[#E11D48] hover:underline">delivery network</Link>.
+            <p className="text-zinc-300 text-base md:text-lg leading-relaxed max-w-3xl font-medium">
+              We combine London-led strategic consulting and architect-level advisory with high-performing global <Link href="/services" className="text-[#E11D48] hover:underline font-semibold">engineering centers</Link>. This hybrid model ensures absolute project accountability and direct face-to-face communication, backed by the cost-efficiency, technical depth, and scalability of our distributed <Link href="/ecosystem/engineering-excellence" className="text-[#E11D48] hover:underline font-semibold">delivery network</Link>.
             </p>
           </Reveal>
         </div>
 
-        {/* Content Columns */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-          
-          {/* Left Column: Premium Graphic */}
-          <div className="lg:col-span-5 relative">
-            <Reveal>
-              <div className="relative w-full aspect-[4/3] rounded-[24px] overflow-hidden border border-zinc-800/80 bg-zinc-950/20 shadow-2xl group/img">
-                <img
-                  src="/assets/About-page/leadership/leadership-banner/Global Operations Engine.png"
-                  alt="Devopstrio Delivery Architecture"
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover/img:scale-[1.02]"
-                />
-                {/* Subtle gradient overlay */}
-                <div className="absolute inset-0 bg-gradient-to-tr from-black/60 via-transparent to-transparent pointer-events-none" />
+        {/* Full-Width Image Banner with 360 Surround Shadow & Ambient Glow */}
+        <div className="w-full relative">
+          {/* Surround Ambient Glow Halo */}
+          <div className="absolute -inset-4 sm:-inset-8 bg-gradient-to-r from-rose-600/15 via-rose-500/10 to-rose-600/15 rounded-[40px] blur-3xl opacity-80 pointer-events-none" />
+
+          <Reveal>
+            <div className="relative w-full rounded-2xl md:rounded-3xl overflow-hidden bg-black shadow-[0_0_50px_rgba(244,63,94,0.18),0_0_100px_rgba(225,29,72,0.12),0_30px_90px_rgba(0,0,0,0.95)] group/img">
+              <img
+                src="/assets/About-page/leadership/leadership-banner/Global Operations Engine.png"
+                alt="Devopstrio Delivery Architecture"
+                className="w-full h-auto object-contain md:object-cover transition-transform duration-700 group-hover/img:scale-[1.01]"
+              />
+              {/* Subtle gradient overlay */}
+              <div className="absolute inset-0 bg-gradient-to-tr from-black/25 via-transparent to-transparent pointer-events-none" />
+            </div>
+          </Reveal>
+        </div>
+
+        {/* Right Column: Three Pillars List (Commented out) */}
+        {/* <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12 text-left">
+          {features.map((item, idx) => (
+            <Reveal key={idx} delay={idx * 0.1}>
+              <div className="flex items-start gap-5 group">
+                <div className="w-12 h-12 rounded-xl bg-rose-500/10 border border-rose-500/20 flex items-center justify-center text-rose-500 shrink-0 group-hover:bg-rose-500/20 group-hover:text-rose-400 transition-colors">
+                  {item.icon}
+                </div>
+                <div className="flex flex-col">
+                  <h3 className="text-lg md:text-xl font-semibold text-white mb-2 tracking-tight group-hover:text-rose-500 transition-colors">
+                    {item.title}
+                  </h3>
+                  <p className="text-zinc-300 text-sm md:text-base leading-relaxed">
+                    {item.desc}
+                  </p>
+                </div>
               </div>
             </Reveal>
-          </div>
-
-          {/* Right Column: Three Pillars List */}
-          <div className="lg:col-span-7 space-y-8 text-left">
-            {features.map((item, idx) => (
-              <Reveal key={idx} delay={idx * 0.1}>
-                <div className="flex items-start gap-5 group">
-                  <div className="w-12 h-12 rounded-xl bg-rose-500/10 border border-rose-500/20 flex items-center justify-center text-rose-500 shrink-0 group-hover:bg-rose-500/20 group-hover:text-rose-400 transition-colors">
-                    {item.icon}
-                  </div>
-                  <div className="flex flex-col">
-                    <h3 className="text-base md:text-lg font-bold text-white mb-2 tracking-tight group-hover:text-rose-500 transition-colors">
-                      {item.title}
-                    </h3>
-                    <p className="text-zinc-400 text-xs sm:text-sm leading-relaxed">
-                      {item.desc}
-                    </p>
-                  </div>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-
-        </div>
+          ))}
+        </div> */}
 
       </div>
     </section>

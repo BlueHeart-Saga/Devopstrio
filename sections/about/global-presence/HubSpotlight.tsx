@@ -90,32 +90,32 @@ export function HubSpotlight({ locations }: HubSpotlightProps) {
 
   return (
     <section className="py-24 md:py-32 relative max-w-7xl mx-auto px-6 lg:px-12">
-      <div className="mb-12 text-left max-w-3xl">
+      {/* <div className="mb-14 text-left max-w-3xl">
         <Reveal>
-          <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
+          <span className="text-3xl sm:text-sm font-semibold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
             Our Footprint
           </span>
-          <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">
+          <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight text-white mb-6 font-sans">
             Strategically Positioned to Serve Global Clients
           </h2>
-          <p className="text-zinc-400 text-sm md:text-base leading-relaxed mb-4">
+          <p className="text-zinc-300 text-base md:text-lg leading-relaxed font-medium mb-4">
             Devopstrio’s delivery footprint is designed to combine strategic oversight, engineering depth, and operational continuity. Our teams collaborate across leadership, delivery, support, and innovation functions to ensure that clients receive responsive service, dependable execution, and access to the expertise required for modern <Link href="/services/digital-transformation" className="text-[#E11D48] hover:underline">digital transformation</Link>.
           </p>
-          <p className="text-zinc-400 text-sm md:text-base leading-relaxed">
+          <p className="text-zinc-300 text-base md:text-lg leading-relaxed font-medium">
             This distributed model allows us to support organizations across multiple <Link href="/industries" className="text-[#E11D48] hover:underline">industries</Link> while maintaining a unified standard of delivery across every engagement.
           </p>
         </Reveal>
-      </div>
+      </div> */}
 
       {/* Tabs Menu */}
-      <div className="flex flex-wrap gap-2 md:gap-3 mb-10 border-b border-zinc-900 pb-6">
+      <div className="flex flex-wrap gap-2.5 md:gap-3 mb-10 border-b border-zinc-900 pb-6">
         {officeLocations.map((office) => (
           <button
             key={office.id}
             onClick={() => setActiveTab(office.id)}
-            className={`px-4 py-2.5 text-xs md:text-sm font-semibold rounded-lg transition-all duration-300 ${activeTab === office.id
-                ? "bg-rose-500 text-white shadow-md shadow-rose-500/20"
-                : "bg-zinc-950/60 border border-zinc-900 text-zinc-400 hover:text-white hover:bg-zinc-900/60"
+            className={`px-5 py-3 text-xs sm:text-sm md:text-base font-semibold rounded-xl transition-all duration-300 cursor-pointer ${activeTab === office.id
+                ? "bg-rose-500 text-white shadow-lg shadow-rose-500/25"
+                : "bg-zinc-950/60 border border-zinc-800 text-zinc-400 hover:text-white hover:bg-zinc-900/80"
               }`}
           >
             {office.city} ({office.type})
@@ -127,21 +127,21 @@ export function HubSpotlight({ locations }: HubSpotlightProps) {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch">
 
         {/* Left: Location details Card */}
-        <div className="lg:col-span-5 flex flex-col justify-between p-8 rounded-2xl bg-zinc-950/40 border border-white/5 relative overflow-hidden h-full">
+        <div className="lg:col-span-5 flex flex-col justify-between p-8 md:p-10 rounded-2xl bg-zinc-950/40 border border-white/5 relative overflow-hidden h-full">
           {/* Accent vertical line */}
           <div className="absolute top-0 left-0 w-1.5 h-full bg-rose-500" />
 
           <div className="space-y-6">
             <div>
-              <span className="text-[10px] font-mono tracking-[0.25em] uppercase text-rose-500 block mb-2">
+              {/* <span className="text-xs font-mono tracking-[0.25em] uppercase text-rose-500 block mb-2 font-semibold">
                 Office Information
-              </span>
-              <h3 className="text-xl md:text-2xl font-bold text-white tracking-tight uppercase">
+              </span> */}
+              <h3 className="text-2xl md:text-3xl font-semibold text-white tracking-tight">
                 {currentOffice.officeName}
               </h3>
-              <span className="inline-block mt-2 text-[9px] font-mono tracking-widest uppercase bg-rose-500/10 border border-rose-500/20 text-rose-400 px-2.5 py-0.5 rounded">
+              {/* <span className="inline-block mt-2 text-xs font-mono tracking-widest uppercase bg-rose-500/10 border border-rose-500/20 text-rose-400 px-3 py-1 rounded-full font-semibold">
                 {currentOffice.type}
-              </span>
+              </span> */}
             </div>
 
             <div className="space-y-5 border-t border-zinc-900 pt-6">

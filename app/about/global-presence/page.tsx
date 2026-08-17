@@ -91,7 +91,7 @@ const filters = ["All", "India", "Europe", "North America"];
 
 export default function GlobalPresencePage() {
   return (
-    <main className="min-h-screen bg-black text-white font-sans overflow-x-hidden relative">
+    <main className="min-h-screen bg-black text-white font-sans relative">
       <BreadcrumbSchema items={[
         { name: "Home", item: "/" },
         { name: "About Us", item: "/about/company-overview" },
@@ -107,7 +107,7 @@ export default function GlobalPresencePage() {
       </div>
 
       {/* Section Navbar */}
-      <SectionNavbar sections={globalPresenceSections} />
+      {/* <SectionNavbar sections={globalPresenceSections} /> */}
 
       {/* Divider */}
       {/* <SvgWaveLine variant="smooth" /> */}
@@ -129,9 +129,9 @@ export default function GlobalPresencePage() {
       {/* <SvgWaveLine variant="particles" /> */}
 
       {/* Engineering Story */}
-      <div id="engineering-story">
+      {/* <div id="engineering-story">
         <EngineeringStory />
-      </div>
+      </div> */}
 
       {/* Divider */}
       <SvgWaveLine variant="liquid" />
@@ -158,20 +158,20 @@ export default function GlobalPresencePage() {
       </div>
 
       {/* Divider */}
-      <SvgWaveLine variant="smooth" />
+      {/* <SvgWaveLine variant="smooth" /> */}
 
       {/* 6. Why It Matters to Clients */}
-      <div id="benefits">
+      {/* <div id="benefits">
         <BusinessBenefits />
-      </div>
+      </div> */}
 
       {/* Divider */}
-      <SvgWaveLine variant="liquid" />
+      {/* <SvgWaveLine variant="liquid" /> */}
 
       {/* 7. Global Operations by the Numbers */}
-      <div id="numbers">
+      {/* <div id="numbers">
         <GlobalMetrics />
-      </div>
+      </div> */}
 
       {/* Divider */}
       <SvgWaveLine variant="smooth" />

@@ -1,100 +1,230 @@
 "use client";
 
-import React from "react";
-import Link from "next/link";
-import { ArrowRight, Globe, Building2, Users, Clock } from "lucide-react";
-import { Reveal } from "@/components/ui/Reveal";
+import React, { useState, useEffect, useRef } from "react";
+
+const locationSlides = [
+  {
+    id: "london-head-office",
+    city: "London",
+    type: "Head Office",
+    country: "United Kingdom",
+    address: "128 City Road, London, United Kingdom EC1V 2NX",
+    src: "/assets/About-page/building/london.png",
+    alt: "Devopstrio London Head Office",
+    heading: (
+      <>
+        London <span className="text-rose-500">(Head Office)</span>
+      </>
+    ),
+  },
+  {
+    id: "bengaluru-corporate-office",
+    city: "Bengaluru",
+    type: "Corporate Office",
+    country: "India",
+    address: "Embassy Golf Links Business Park, Bengaluru, Karnataka-560071, India",
+    src: "/assets/About-page/building/buildingtopangle.png",
+    alt: "Devopstrio Bengaluru Corporate Office",
+    heading: (
+      <>
+        Bengaluru <span className="text-rose-500">(Corporate Office)</span>
+      </>
+    ),
+  },
+  {
+    id: "thoothukudi-innovation-hub",
+    city: "Thoothukudi",
+    type: "Innovation Hub",
+    country: "India",
+    address: "4/ 367, Rajeev Colony, Pasuvanthanai, 628718 Thoothukudi, Tamilnadu, IN",
+    src: "/assets/About-page/building/india.png",
+    alt: "Devopstrio Thoothukudi Innovation Hub",
+    heading: (
+      <>
+        Thoothukudi <span className="text-rose-500">(Innovation Hub)</span>
+      </>
+    ),
+  },
+  {
+    id: "tennessee-sub-regional",
+    city: "Tennessee",
+    type: "Sub-Regional Office",
+    country: "United States",
+    address: "522 Aventura Dr, Mt Juliet, Tennessee 37122 United States",
+    src: "/assets/About-page/building/USA.png",
+    alt: "Devopstrio Tennessee Sub-Regional Office",
+    heading: (
+      <>
+        Tennessee <span className="text-rose-500">(Sub-Regional Office)</span>
+      </>
+    ),
+  },
+  
+  {
+    id: "chennai-operations-center",
+    city: "Chennai",
+    type: "Operations Center",
+    country: "India",
+    address: "Ground Floor, Primus Building, Door No. SP – 7A, Guindy Industrial Estate, SIDCO Industrial Estate, Chennai 600032",
+    src: "/assets/About-page/building/chennai.png",
+    alt: "Devopstrio Chennai Operations Center",
+    heading: (
+      <>
+        Chennai <span className="text-rose-500">(Operations Center)</span>
+      </>
+    ),
+  },
+  
+  {
+    id: "london-support-office",
+    city: "London",
+    type: "Support Office",
+    country: "United Kingdom",
+    address: "167-169 Great Portland Street, 5th Floor, London, W1W 5PF",
+    src: "/assets/About-page/building/officeroom.png",
+    alt: "Devopstrio London Support Office",
+    heading: (
+      <>
+        London <span className="text-rose-500">(Support Office)</span>
+      </>
+    ),
+  },
+];
 
 export function PresenceHero() {
+  const [scrollProgress, setScrollProgress] = useState(0);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    let rafId: number;
+
+    const handleScroll = () => {
+      if (!containerRef.current) return;
+      const rect = containerRef.current.getBoundingClientRect();
+      const totalScrollableHeight = rect.height - window.innerHeight;
+      if (totalScrollableHeight <= 0) return;
+
+      const progress = Math.min(
+        Math.max(-rect.top / totalScrollableHeight, 0),
+        1
+      );
+
+      rafId = requestAnimationFrame(() => {
+        setScrollProgress(progress);
+      });
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      cancelAnimationFrame(rafId);
+    };
+  }, []);
+
+  // Compute slide-up translation for 6 location slides based on scroll progress
+  const getSlideY = (idx: number) => {
+    if (idx === 0) return 0;
+    
+    // Smooth calibrated entry & exit intervals for 6 slides
+    const enterStart = 0.12 + (idx - 1) * 0.15;
+    const enterEnd = enterStart + 0.14;
+
+    if (scrollProgress <= enterStart) return 100;
+    if (scrollProgress >= enterEnd) return 0;
+    return ((enterEnd - scrollProgress) / (enterEnd - enterStart)) * 100;
+  };
+
+  const activeIndex =
+    scrollProgress < 0.19
+      ? 0
+      : scrollProgress < 0.34
+      ? 1
+      : scrollProgress < 0.49
+      ? 2
+      : scrollProgress < 0.64
+      ? 3
+      : scrollProgress < 0.79
+      ? 4
+      : 5;
+
   return (
-    <section className="relative min-h-screen flex items-center justify-start pt-40 pb-20 overflow-hidden bg-black text-white">
-      {/* Background Image */}
-      <div className="absolute inset-0 z-0 pointer-events-none select-none">
-        <img 
-          src="/assets/About-page/hero/Build locally delivering globally.png" 
-          alt="Devopstrio Global Footprint"
-          className="w-full h-full object-cover object-center"
-        />
-        {/* Soft top-bottom gradient to blend with layout boundaries and left gradient for text readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-transparent z-5" />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black z-5" />
-      </div>
-      
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10 w-full text-left">
-        <div className="max-w-3xl">
-          <Reveal delay={0.05}>
-            <span className="text-[10px] sm:text-xs font-bold tracking-[0.25em] uppercase text-[#E11D48] mb-4 block">
-              Global Scale, Local Accountability
-            </span>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1] text-white mb-6">
-              Built Locally.<br />
-              Delivering Globally<span className="text-[#E11D48]">.</span>
-            </h1>
-          </Reveal>
-          
-          <Reveal delay={0.1}>
-            <p className="text-sm md:text-base text-zinc-300 font-medium max-w-xl mb-10 leading-relaxed">
-              Devopstrio combines strategic leadership, distributed <Link href="/services" className="text-[#E11D48] hover:underline">engineering</Link>, and round-the-clock <Link href="/services/managed-services" className="text-[#E11D48] hover:underline">operational support</Link> to help organizations across <Link href="/industries" className="text-[#E11D48] hover:underline">industries</Link> modernize, scale, and innovate—wherever they operate.
-            </p>
-          </Reveal>
+    <section ref={containerRef} className="relative w-full h-[600vh] bg-black text-white font-sans">
+      {/* Sticky Full-Viewport Stage */}
+      <div className="sticky top-0 h-screen w-full flex flex-col items-center justify-start overflow-hidden select-none">
+        
+        {/* Layered Scroll-Controlled Background Images + Synchronized Headings */}
+        <div className="absolute inset-0 z-0 overflow-hidden">
+          {locationSlides.map((slide, idx) => {
+            const slideY = getSlideY(idx);
+            const zIndex = (idx + 1) * 10;
 
-          <Reveal delay={0.15}>
-            <div className="flex flex-wrap gap-4 items-center justify-start mb-16">
-              <Link
-                href="#map"
-                className="inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase bg-[#E11D48] hover:bg-rose-600 text-white transition-all duration-300 hover:shadow-[0_0_20px_rgba(225,29,72,0.3)] hover:-translate-y-0.5 gap-2"
+            return (
+              <div
+                key={slide.id}
+                className="absolute inset-0 overflow-hidden"
+                style={{
+                  transform: `translateY(${slideY}%)`,
+                  zIndex,
+                  willChange: "transform",
+                  boxShadow: idx > 0 && slideY < 99 && slideY > 0 ? "0 -35px 70px rgba(0,0,0,0.95)" : "none",
+                }}
               >
-                <span>View Footprint Map</span>
-                <ArrowRight size={14} />
-              </Link>
-              <Link
-                href="/contact#contact-form"
-                className="inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase border border-zinc-500 hover:border-white bg-transparent hover:bg-white/5 text-white transition-all duration-300 hover:-translate-y-0.5 gap-2"
-              >
-                <span>Talk to an Expert</span>
-                <ArrowRight size={14} />
-              </Link>
-            </div>
-          </Reveal>
+                {/* Background Image */}
+                <img
+                  src={slide.src}
+                  alt={slide.alt}
+                  className="w-full h-full object-cover object-center scale-[1.02]"
+                />
 
-          {/* Highlights Row with Left Borders */}
-          <Reveal delay={0.2}>
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-4 mb-16 max-w-2xl">
-              <div className="border-l border-zinc-700/60 pl-4">
-                <Building2 size={22} className="text-[#E11D48] mb-3 opacity-90" strokeWidth={1.5} />
-                <div className="text-2xl sm:text-3xl font-bold text-white mb-1.5">6</div>
-                <div className="text-[10px] text-zinc-400 uppercase tracking-widest font-semibold leading-relaxed">Global<br/>Offices</div>
-              </div>
-              <div className="border-l border-zinc-700/60 pl-4">
-                <Globe size={22} className="text-[#E11D48] mb-3 opacity-90" strokeWidth={1.5} />
-                <div className="text-2xl sm:text-3xl font-bold text-white mb-1.5">3+</div>
-                <div className="text-[10px] text-zinc-400 uppercase tracking-widest font-semibold leading-relaxed">Countries<br/>Represented</div>
-              </div>
-              <div className="border-l border-zinc-700/60 pl-4">
-                <Users size={22} className="text-[#E11D48] mb-3 opacity-90" strokeWidth={1.5} />
-                <div className="text-2xl sm:text-3xl font-bold text-white mb-1.5">525+</div>
-                <div className="text-[10px] text-zinc-400 uppercase tracking-widest font-semibold leading-relaxed">Technology<br/>Experts</div>
-              </div>
-              <div className="border-l border-zinc-700/60 pl-4">
-                <Clock size={22} className="text-[#E11D48] mb-3 opacity-90" strokeWidth={1.5} />
-                <div className="text-2xl sm:text-3xl font-bold text-white mb-1.5">24/7</div>
-                <div className="text-[10px] text-zinc-400 uppercase tracking-widest font-semibold leading-relaxed">Managed Support<br/>& Delivery</div>
-              </div>
-            </div>
-          </Reveal>
+                {/* Top Fade for smooth navbar blend and clean text contrast */}
+                <div className="absolute inset-x-0 top-0 h-56 sm:h-72 md:h-80 bg-gradient-to-b from-black/85 via-black/45 to-transparent z-10 pointer-events-none" />
 
-          {/* Trusted Partners Banner */}
-          {/* <Reveal delay={0.25}>
-            <div className="text-xs text-zinc-400 mb-5 font-medium">Supporting Enterprise Infrastructure Worldwide</div>
-            <div className="flex flex-wrap items-center gap-x-8 gap-y-4 opacity-60 hover:opacity-100 transition-opacity duration-500">
-              <div className="flex items-center gap-2 font-semibold text-lg tracking-tight"><div className="grid grid-cols-2 gap-[2px]"><div className="w-2.5 h-2.5 bg-[#00A4EF]"/><div className="w-2.5 h-2.5 bg-[#7FBA00]"/><div className="w-2.5 h-2.5 bg-[#F25022]"/><div className="w-2.5 h-2.5 bg-[#FFB900]"/></div>Microsoft</div>
-              <div className="font-bold text-xl tracking-tighter flex items-center">aws</div>
-              <div className="font-medium text-lg tracking-tight flex items-center">Google Cloud</div>
-              <div className="font-bold text-lg tracking-widest flex items-center text-red-600">ORACLE</div>
-              <div className="font-bold text-lg tracking-tight flex items-center">servicenow</div>
-            </div>
-          </Reveal> */}
+                {/* Deep Bottom Black Shadow */}
+                <div className="absolute inset-x-0 bottom-0 h-64 sm:h-80 md:h-[28rem] bg-gradient-to-t from-black via-black/85 via-40% to-transparent z-10 pointer-events-none" />
+                <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black to-transparent z-10 pointer-events-none" />
+
+                {/* Slide Heading - Bottom Left Positioned */}
+                <div className="absolute inset-x-0 bottom-10 sm:bottom-14 lg:bottom-16 z-20 px-6 sm:px-8 lg:px-12 pointer-events-none">
+                  <div className="max-w-7xl mx-auto w-full text-left">
+                    {/* <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black/50 border border-white/15 backdrop-blur-md text-xs font-mono text-zinc-300 mb-3">
+                      <span className="w-1.5 h-1.5 rounded-full bg-rose-500" />
+                      {slide.country} • {slide.type}
+                    </div> */}
+
+                    <h1
+                      className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-semibold tracking-tight leading-tight text-white select-text max-w-4xl mb-2"
+                      style={{
+                        textShadow:
+                          "0 4px 30px rgba(0, 0, 0, 0.95), 0 2px 10px rgba(0, 0, 0, 0.9), 0 0 50px rgba(0, 0, 0, 0.75)",
+                      }}
+                    >
+                      {slide.heading}
+                    </h1>
+
+                    <p className="text-xs sm:text-sm text-zinc-300/85 font-mono max-w-xl">
+                      {slide.address}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
         </div>
+
+        {/* Scroll Image Step Indicators */}
+        <div className="absolute bottom-8 right-6 sm:right-12 z-50 flex items-center gap-2 bg-black/60 backdrop-blur-md px-3.5 py-2 rounded-full border border-white/10 select-none pointer-events-none">
+          {locationSlides.map((loc, i) => (
+            <div
+              key={loc.id}
+              className={`h-1.5 rounded-full transition-all duration-500 ${
+                activeIndex === i ? "w-6 bg-rose-500 shadow-[0_0_10px_rgba(244,63,94,0.6)]" : "w-1.5 bg-white/30"
+              }`}
+            />
+          ))}
+        </div>
+
       </div>
     </section>
   );

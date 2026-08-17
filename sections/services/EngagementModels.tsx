@@ -74,7 +74,7 @@ export function EngagementModels() {
   }, [activeIdx]); // Resetting the interval on change ensures manual clicks reset the timer
 
   return (
-    <section className="w-full py-24 bg-[#080808] text-white border-b border-zinc-900 relative" id="engagement-models">
+    <section className="w-full py-24 bg-[#080808] text-white relative" id="engagement-models">
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[radial-gradient(circle_at_top_right,rgba(220,38,38,0.02),transparent_70%)] blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
@@ -82,11 +82,11 @@ export function EngagementModels() {
         {/* Header Block */}
         <Reveal>
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+            <span className="text-xs sm:text-sm font-semibold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
               ENGAGEMENT MODELS
             </span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white uppercase">
-              Tailored partnerships built for <span className="text-rose-500">long-term value</span>
+            <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight mb-5 text-white font-sans">
+              Tailored Partnerships Built for <span className="text-rose-500 font-semibold">Long-Term Value</span>
             </h2>
             <p className="text-zinc-200 text-base md:text-lg font-semibold leading-relaxed">
               Choose the model that best fits your <Link href="/about" className="text-rose-500 hover:underline">organizational structure</Link>, <Link href="/services/devops-automation" className="text-rose-500 hover:underline">roadmap velocity</Link>, and operational requirements.

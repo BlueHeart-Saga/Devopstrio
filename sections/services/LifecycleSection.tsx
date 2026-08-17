@@ -62,7 +62,7 @@ export function LifecycleSection() {
   ];
 
   return (
-    <section className="w-full pt-24 pb-36 bg-[#030303] text-white border-b border-zinc-900 relative" id="delivery-framework">
+    <section className="w-full pt-24 pb-36 bg-[#030303] text-white relative" id="delivery-framework">
       {/* Background glowing mesh */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-rose-600/5 rounded-full blur-[140px] pointer-events-none" />
 
@@ -71,11 +71,11 @@ export function LifecycleSection() {
         {/* Header Section */}
         <Reveal>
           <div className="text-center max-w-3xl mx-auto mb-20">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+            {/* <span className="text-xs sm:text-sm font-semibold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
               ENGAGEMENT LIFECYCLE
-            </span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white uppercase">
-              THE DEVOPSTRIO <span className="text-rose-500">DELIVERY MODEL</span>
+            </span> */}
+            <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight mb-5 text-white font-sans">
+              The Devopstrio <span className="text-rose-500 font-semibold">Delivery Framework</span>
             </h2>
             <p className="text-zinc-200 text-base md:text-lg font-semibold leading-relaxed">
               From initial consultation to operational optimization, we ensure full clarity, security alignment, and milestone check-ins.

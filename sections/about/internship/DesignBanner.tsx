@@ -21,7 +21,7 @@ export const DesignBanner = () => {
 
           {/* LEFT COLUMN: Large Typography */}
           <div className="lg:col-span-7 p-8 sm:p-12 md:p-16 flex flex-col justify-center">
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.08] text-white">
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.08] text-white">
               Engineering mastery <br />
               is your <br />
               edge. <span className="text-zinc-700">Devopstrio <br className="hidden sm:inline" />

@@ -1618,7 +1618,7 @@ export function DetailedServices({ hideExploreButton = false }: DetailedServices
   }, []);
 
   return (
-    <section className="w-full py-24 bg-black text-white border-b border-zinc-900 relative" id="detailed-services">
+    <section className="w-full py-24 bg-black text-white relative" id="detailed-services">
       {/* Mesh grid background */}
       <div 
         className="absolute inset-0 opacity-[0.01] pointer-events-none"
@@ -1631,15 +1631,15 @@ export function DetailedServices({ hideExploreButton = false }: DetailedServices
         
         <Reveal>
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+            {/* <span className="text-xs sm:text-sm font-semibold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
               ENTERPRISE INTEGRATION SERVICES
-            </span>
-            <h2 className="text-3xl md:text-5xl font-bold tracking-tight leading-tight mb-5 text-white">
-              Deploy & Orchestrate Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-rose-500">Enterprise Technology Stacks</span>
+            </span> */}
+            <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight mb-5 text-white font-sans">
+              Deploy & Orchestrate Your <span className="text-rose-500 font-semibold">Enterprise Technology Stacks</span>
             </h2>
-            <p className="text-zinc-400 text-base md:text-lg leading-relaxed max-w-2xl mx-auto font-light">
+            {/* <p className="text-zinc-300 text-base md:text-lg leading-relaxed max-w-2xl mx-auto font-medium">
               Explore our extensive practice areas, <Link href="/about" className="text-rose-500 hover:underline">expert engineering capabilities</Link>, and seamless technology integrations. We build, secure, and accelerate your entire <Link href="/services/devops-automation" className="text-rose-500 hover:underline">digital delivery pipeline</Link> with precision.
-            </p>
+            </p> */}
           </div>
         </Reveal>
 
@@ -1653,39 +1653,39 @@ export function DetailedServices({ hideExploreButton = false }: DetailedServices
               <input
                 type="text"
                 placeholder="Search integrations & services..."
-                className="w-full bg-zinc-950/50 border border-zinc-800 focus:border-rose-500 focus:ring-1 focus:ring-rose-500 text-zinc-100 placeholder-zinc-505 pl-12 pr-4 py-3.5 rounded-2xl text-sm transition-all duration-300 outline-none"
+                className="w-full bg-zinc-950/50 border border-zinc-800 focus:border-rose-500 focus:ring-1 focus:ring-rose-500 text-zinc-100 placeholder-zinc-500 pl-12 pr-4 py-3.5 rounded-2xl text-sm sm:text-base transition-all duration-300 outline-none"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
               />
             </div>
             
-            <div className="text-xs text-zinc-500 font-mono">
+            {/* <div className="text-xs text-zinc-500 font-mono">
               Active Enterprise Tool Integrations
-            </div>
+            </div> */}
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] min-h-[600px] lg:h-[750px]">
             {/* SIDEBAR */}
             <aside className="border-r border-zinc-900/80 bg-zinc-950/10 p-4 overflow-y-auto lg:h-full custom-scrollbar">
-              <div className="px-4 py-2 text-[10px] font-bold text-zinc-500 uppercase tracking-widest mb-4">
+              <div className="px-4 py-2 text-xs font-semibold text-zinc-400 uppercase tracking-widest mb-4">
                 Categories
               </div>
-              <nav className="flex flex-row lg:flex-col overflow-x-auto lg:overflow-visible gap-1 pb-4 lg:pb-0 scrollbar-thin">
+              <nav className="flex flex-row lg:flex-col overflow-x-auto lg:overflow-visible gap-1.5 pb-4 lg:pb-0 scrollbar-thin">
                 {categories.map((cat) => (
                   <button
                     key={cat.name}
-                    className={`flex items-center justify-between px-4 py-3 rounded-xl text-xs font-medium transition-all duration-200 text-left flex-shrink-0 lg:flex-shrink w-auto lg:w-full ${
+                    className={`flex items-center justify-between px-4 py-3 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 text-left flex-shrink-0 lg:flex-shrink w-auto lg:w-full cursor-pointer ${
                       activeCategory === cat.name
-                        ? "bg-rose-500/10 text-rose-500 font-semibold border border-rose-500/20"
-                        : "text-zinc-400 hover:text-zinc-200 hover:bg-zinc-900/30 border border-transparent"
+                        ? "bg-rose-500/15 text-rose-400 font-semibold border border-rose-500/30"
+                        : "text-zinc-400 hover:text-zinc-200 hover:bg-zinc-900/40 border border-transparent"
                     }`}
                     onClick={() => setActiveCategory(cat.name)}
                   >
                     <span>{cat.name}</span>
-                    <span className={`ml-2 text-[10px] font-mono px-2 py-0.5 rounded-full ${
+                    <span className={`ml-2 text-xs font-mono px-2.5 py-0.5 rounded-full ${
                       activeCategory === cat.name 
-                        ? "bg-rose-500/20 text-rose-400" 
-                        : "bg-zinc-900 text-zinc-500"
+                        ? "bg-rose-500/20 text-rose-400 font-semibold" 
+                        : "bg-zinc-900 text-zinc-400"
                     }`}>
                       {cat.count}
                     </span>
@@ -1700,7 +1700,7 @@ export function DetailedServices({ hideExploreButton = false }: DetailedServices
               {/* Popular Integrations Section */}
               {activeCategory === "All" && searchQuery === "" && (
                 <div className="mb-10">
-                  <h3 className="text-sm font-bold text-zinc-400 uppercase tracking-wider mb-6 flex items-center gap-2">
+                  <h3 className="text-base md:text-lg font-semibold text-zinc-200 uppercase tracking-wider mb-6 flex items-center gap-2 font-sans">
                     <FiZap className="text-rose-500" /> Popular Integrations & Services
                   </h3>
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -1714,18 +1714,18 @@ export function DetailedServices({ hideExploreButton = false }: DetailedServices
                             {item.icon}
                           </div>
                           <div>
-                            <h4 className="text-sm font-bold text-zinc-100 group-hover:text-white transition-colors">
+                            <h4 className="text-base md:text-lg font-semibold text-zinc-100 group-hover:text-white transition-colors">
                               {item.name}
                             </h4>
-                            <span className="text-[10px] font-mono text-zinc-500 uppercase tracking-wider block mt-0.5">
+                            <span className="text-xs font-mono text-zinc-400 uppercase tracking-wider block mt-0.5">
                               {item.category}
                             </span>
                           </div>
                         </div>
-                        <p className="text-xs text-zinc-400 leading-relaxed font-light mb-4">
+                        <p className="text-sm text-zinc-300 leading-relaxed font-normal mb-4">
                           {item.desc}
                         </p>
-                        <span className="absolute top-4 right-4 bg-rose-500/10 text-rose-400 text-[9px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider">
+                        <span className="absolute top-4 right-4 bg-rose-500/10 text-rose-400 text-xs font-semibold px-2.5 py-0.5 rounded-full uppercase tracking-wider">
                           Popular
                         </span>
                       </div>
@@ -1747,8 +1747,8 @@ export function DetailedServices({ hideExploreButton = false }: DetailedServices
 
                       return (
                         <div key={cat.name} className="border-t border-zinc-900/80 pt-8 first:border-0 first:pt-0">
-                          <h3 className="text-sm font-bold text-zinc-300 uppercase tracking-wider mb-6 flex items-center gap-2">
-                            <FiGrid className="text-zinc-500" /> {cat.name}
+                          <h3 className="text-base md:text-lg font-semibold text-zinc-200 uppercase tracking-wider mb-6 flex items-center gap-2 font-sans">
+                            <FiGrid className="text-rose-500" /> {cat.name}
                           </h3>
                           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                             {catIntegrations.map((item, idx) => (
@@ -1756,28 +1756,28 @@ export function DetailedServices({ hideExploreButton = false }: DetailedServices
                                 key={idx}
                                 className="group bg-[#080808]/80 hover:bg-zinc-950/80 border border-zinc-900/60 hover:border-zinc-800/80 rounded-2xl p-5 transition-all duration-300 flex items-start gap-4 cursor-default"
                               >
-                                <div className="w-10 h-10 bg-zinc-900 border border-zinc-800 group-hover:border-rose-500/30 text-zinc-300 group-hover:text-rose-500 rounded-lg flex items-center justify-center text-lg flex-shrink-0 transition-all duration-300">
+                                <div className="w-11 h-11 bg-zinc-900 border border-zinc-800 group-hover:border-rose-500/30 text-zinc-300 group-hover:text-rose-500 rounded-xl flex items-center justify-center text-lg flex-shrink-0 transition-all duration-300">
                                   {item.icon}
                                 </div>
                                 <div className="flex-1 min-w-0">
                                   <div className="flex items-center justify-between gap-2 mb-2">
-                                    <h4 className="text-sm font-bold text-zinc-200 group-hover:text-white transition-colors truncate">
+                                    <h4 className="text-base font-semibold text-zinc-100 group-hover:text-white transition-colors truncate">
                                       {item.name}
                                     </h4>
                                     <div className="flex items-center gap-1 flex-shrink-0">
                                       {item.isNew && (
-                                        <span className="bg-emerald-500/10 text-emerald-400 text-[8px] font-bold px-1.5 py-0.5 rounded uppercase">
+                                        <span className="bg-emerald-500/10 text-emerald-400 text-[9px] font-semibold px-2 py-0.5 rounded uppercase">
                                           New
                                         </span>
                                       )}
                                       {item.ai && (
-                                        <span className="bg-violet-500/10 text-violet-400 text-[8px] font-bold px-1.5 py-0.5 rounded uppercase">
+                                        <span className="bg-violet-500/10 text-violet-400 text-[9px] font-semibold px-2 py-0.5 rounded uppercase">
                                           AI
                                         </span>
                                       )}
                                     </div>
                                   </div>
-                                  <p className="text-[11px] text-zinc-400 leading-relaxed font-light">
+                                  <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed font-normal">
                                     {item.desc}
                                   </p>
                                 </div>
@@ -1790,7 +1790,7 @@ export function DetailedServices({ hideExploreButton = false }: DetailedServices
                 </div>
               ) : (
                 <div>
-                  <h3 className="text-sm font-bold text-zinc-300 uppercase tracking-wider mb-6 flex items-center gap-2">
+                  <h3 className="text-base md:text-lg font-semibold text-zinc-200 uppercase tracking-wider mb-6 flex items-center gap-2 font-sans">
                     <FiGrid className="text-rose-500" /> {activeCategory} Demos & Capabilities
                   </h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -1801,39 +1801,39 @@ export function DetailedServices({ hideExploreButton = false }: DetailedServices
                       >
                         <div>
                           <div className="flex items-start justify-between gap-2 mb-4">
-                            <div className="w-10 h-10 bg-zinc-900 border border-zinc-800 group-hover:border-rose-500/30 text-zinc-300 group-hover:text-rose-500 rounded-lg flex items-center justify-center text-lg transition-all duration-300">
+                            <div className="w-11 h-11 bg-zinc-900 border border-zinc-800 group-hover:border-rose-500/30 text-zinc-300 group-hover:text-rose-500 rounded-xl flex items-center justify-center text-lg transition-all duration-300">
                               {item.icon}
                             </div>
                             <div className="flex items-center gap-1">
                               {item.isNew && (
-                                <span className="bg-emerald-500/10 text-emerald-400 text-[8px] font-bold px-1.5 py-0.5 rounded uppercase">
+                                <span className="bg-emerald-500/10 text-emerald-400 text-[9px] font-semibold px-2 py-0.5 rounded uppercase">
                                   New
                                 </span>
                               )}
                               {item.trending && (
-                                <span className="bg-rose-500/10 text-rose-400 text-[8px] font-bold px-1.5 py-0.5 rounded uppercase">
+                                <span className="bg-rose-500/10 text-rose-400 text-[9px] font-semibold px-2 py-0.5 rounded uppercase">
                                   Popular
                                 </span>
                               )}
                               {item.ai && (
-                                <span className="bg-violet-500/10 text-violet-400 text-[8px] font-bold px-1.5 py-0.5 rounded uppercase">
+                                <span className="bg-violet-500/10 text-violet-400 text-[9px] font-semibold px-2 py-0.5 rounded uppercase">
                                   AI
                                 </span>
                               )}
                             </div>
                           </div>
-                          <h4 className="text-sm font-bold text-zinc-200 group-hover:text-white mb-2 transition-colors">
+                          <h4 className="text-base font-semibold text-zinc-100 group-hover:text-white mb-2 transition-colors">
                             {item.name}
                           </h4>
-                          <p className="text-[11px] text-zinc-450 leading-relaxed font-light">
+                          <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed font-normal">
                             {item.desc}
                           </p>
                         </div>
                         <div className="mt-4 pt-4 border-t border-zinc-900/50 flex items-center justify-between">
-                          <span className="text-[10px] text-zinc-500 font-mono truncate max-w-[150px]">
+                          <span className="text-xs text-zinc-400 font-mono truncate max-w-[150px]">
                             {item.category}
                           </span>
-                          <FiArrowRight className="text-zinc-500 group-hover:text-rose-500 group-hover:translate-x-1 transition-all duration-300 text-xs" />
+                          <FiArrowRight className="text-zinc-400 group-hover:text-rose-500 group-hover:translate-x-1 transition-all duration-300 text-sm" />
                         </div>
                       </div>
                     ))}
@@ -1844,8 +1844,8 @@ export function DetailedServices({ hideExploreButton = false }: DetailedServices
               {filteredIntegrations.length === 0 && (
                 <div className="flex flex-col items-center justify-center py-20 text-center">
                   <FiSearch className="text-rose-500 text-4xl mb-4 opacity-55 animate-pulse" />
-                  <h4 className="text-sm font-bold text-zinc-300 mb-1">No services or integrations found</h4>
-                  <p className="text-xs text-zinc-500 max-w-xs font-light">
+                  <h4 className="text-base font-semibold text-zinc-200 mb-1">No services or integrations found</h4>
+                  <p className="text-sm text-zinc-400 max-w-xs font-normal">
                     Try adjusting your search terms or select another category from the sidebar.
                   </p>
                 </div>
@@ -1860,10 +1860,10 @@ export function DetailedServices({ hideExploreButton = false }: DetailedServices
           <div className="mt-12 flex justify-center">
             <Link
               href="/services/explore"
-              className="group inline-flex items-center gap-2.5 px-8 py-4 rounded-xl text-xs font-bold uppercase tracking-wider bg-gradient-to-r from-red-650 to-rose-650 hover:from-red-650 hover:to-rose-650 text-white transition-all duration-300 hover:shadow-[0_0_25px_rgba(225,29,72,0.3)] hover:-translate-y-0.5"
+              className="group inline-flex items-center gap-2.5 px-8 py-4 rounded-xl text-xs sm:text-sm font-semibold uppercase tracking-wider bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white transition-all duration-300 hover:shadow-[0_0_25px_rgba(225,29,72,0.3)] hover:-translate-y-0.5"
             >
               <span>Explore Our Full Ecosystem Directory</span>
-              <FiArrowRight className="text-xs group-hover:translate-x-1 transition-transform" />
+              <FiArrowRight className="text-sm group-hover:translate-x-1 transition-transform" />
             </Link>
           </div>
         )}

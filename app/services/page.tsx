@@ -67,8 +67,8 @@ export default function ServicesPage() {
       </div>
 
       {/* Sticky Section Sub-Navbar */}
-      <SectionNavbar sections={servicesSections} />
-      <SvgWaveLine variant="smooth" />
+      {/* <SectionNavbar sections={servicesSections} /> */}
+      {/* <SvgWaveLine variant="smooth" /> */}
 
       {/* 2. Service Categories Grid */}
       <div id="categories">
@@ -86,49 +86,49 @@ export default function ServicesPage() {
       <div id="detailed-services">
         <DetailedServices />
       </div>
-      <SvgWaveLine variant="grid" />
+      {/* <SvgWaveLine variant="grid" /> */}
 
       {/* 5. Delivery Framework (Lifecycle) */}
       <div id="delivery-framework">
         <LifecycleSection />
       </div>
-      <SvgWaveLine variant="liquid" />
+      {/* <SvgWaveLine variant="liquid" /> */}
 
       {/* 6. Industries Served */}
       <div id="industries">
         <IndustriesSection />
       </div>
-      <SvgWaveLine variant="smooth" />
+      {/* <SvgWaveLine variant="smooth" /> */}
 
       {/* 7. Why Devopstrio (Stats & Tabs) */}
-      <div id="why-devopstrio">
+      {/* <div id="why-devopstrio">
         <WhyDevopstrio />
-      </div>
+      </div> */}
       {/* <SvgWaveLine variant="dashed" /> */}
 
       {/* 8. Technology Ecosystem (Tech Stack) */}
-      <div id="technology-ecosystem">
+      {/* <div id="technology-ecosystem">
         <TechStackSection />
-      </div>
+      </div> */}
       {/* <SvgWaveLine variant="particles" /> */}
 
       {/* 9. Client Impact Case Study */}
       <div id="client-impact">
         <CaseStudyHighlight />
       </div>
-      <SvgWaveLine variant="grid" />
+      {/* <SvgWaveLine variant="grid" /> */}
 
       {/* 10. Engagement Models */}
-      <div id="engagement-models">
+      {/* <div id="engagement-models">
         <EngagementModels />
-      </div>
-      <SvgWaveLine variant="liquid" />
+      </div> */}
+      {/* <SvgWaveLine variant="liquid" /> */}
 
       {/* 11. FAQ Accordions */}
       <div id="faq">
         <FaqSection />
       </div>
-      <SvgWaveLine variant="smooth" />
+      {/* <SvgWaveLine variant="smooth" /> */}
 
       {/* 12. Final CTA Section */}
       <ServicesCTA />

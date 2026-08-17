@@ -35,15 +35,12 @@ export const LearningJourney = () => {
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-20">
-          <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
-            The Roadmap
-          </span>
-          <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-4">
+          <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight text-white mb-4 font-sans">
             Your Learning <span className="text-rose-500">Journey</span>
           </h2>
-          <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-bold max-w-2xl mx-auto">
+          {/* <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-bold max-w-2xl mx-auto">
             From your initial application to graduating with certified skills, here is what your engineering experience will look like. Explore our general <Link href="/careers" className="text-rose-500 hover:underline">careers framework</Link> for additional paths.
-          </p>
+          </p> */}
         </div>
 
         {/* Grid-based Roadmap Cards */}

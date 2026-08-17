@@ -76,9 +76,9 @@ export const InternshipHero = () => {
              <h3 className="text-white text-xl sm:text-2xl font-bold mb-3 tracking-tight">
                Leaders in technology incubation
              </h3>
-             <p className="text-zinc-300 text-sm sm:text-base leading-relaxed font-medium">
+             {/* <p className="text-zinc-300 text-sm sm:text-base leading-relaxed font-medium">
                Our internship covers <Link href="/services/cloud-services" className="text-[#E11D48] hover:underline">cloud architecture</Link>, <Link href="/services/data-engineering" className="text-[#E11D48] hover:underline">data pipelines</Link>, <Link href="/services/ai-data-innovation" className="text-[#E11D48] hover:underline">AI models</Link>, and real-world <Link href="/services/software-development" className="text-[#E11D48] hover:underline">software deployments</Link> to turn you into a top-tier engineer.
-             </p>
+             </p> */}
              
              
           </div>

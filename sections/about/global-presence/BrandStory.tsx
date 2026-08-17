@@ -20,32 +20,32 @@ export function BrandStory() {
             <div className="relative grid lg:grid-cols-2 gap-0">
               {/* LEFT CONTENT */}
               <div className="flex flex-col justify-center p-6 md:p-10 lg:p-12">
-                <span className="text-[11px] font-semibold tracking-[0.25em] uppercase text-zinc-500 mb-8">
+                <span className="text-xs sm:text-sm font-semibold tracking-[0.25em] uppercase text-rose-500 mb-6 block">
                   Our Core Philosophy
                 </span>
 
-                <h2 className="text-xl md:text-2xl xl:text-3xl font-bold leading-tight tracking-tight mb-6">
+                <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold leading-tight tracking-tight mb-6 font-sans">
                   Global in Reach.
-                  <span className="block text-[#E11D48] mt-1">
+                  <span className="block text-[#E11D48] mt-1.5">
                     Grounded in Purpose.
                   </span>
                 </h2>
 
-                <div className="space-y-4 text-zinc-400 text-sm leading-relaxed max-w-xl mb-8 font-medium">
-                  <p className="text-zinc-200 font-medium text-base">
+                <div className="space-y-4 text-zinc-300 text-base md:text-lg leading-relaxed max-w-xl mb-8 font-medium">
+                  <p className="text-zinc-100 font-medium text-lg md:text-xl leading-relaxed">
                     Great technology companies are not defined only by where they are headquartered, but by the value they create, the problems they solve, and the trust they build across markets.
                   </p>
-                  <p className="text-zinc-400 text-sm">
+                  {/* <p className="text-zinc-300 text-base md:text-lg leading-relaxed">
                     At Devopstrio, our journey is shaped by that mindset. We are building a company where strong local engineering talent powers global technology delivery—where businesses can access <Link href="/services/cloud-services" className="text-[#E11D48] hover:underline">cloud</Link>, <Link href="/services/ai-data-innovation" className="text-[#E11D48] hover:underline">AI</Link>, <Link href="/services/software-development" className="text-[#E11D48] hover:underline">software development</Link>, <Link href="/services/devops-automation" className="text-[#E11D48] hover:underline">DevOps</Link>, and <Link href="/services/cybersecurity" className="text-[#E11D48] hover:underline">cybersecurity</Link> expertise through a team that is agile, committed, and deeply invested in outcomes.
-                  </p>
-                  <p className="text-zinc-400 text-sm">
+                  </p> */}
+                  <p className="text-zinc-300 text-base md:text-lg leading-relaxed">
                     Our teams may work from focused delivery centres, but our thinking, execution, and ambition are global. Every platform we build, every migration we deliver, and every solution we support is designed to help organizations operate with more speed, resilience, intelligence, and scale. We'd love to help you <Link href="/contact#contact-form" className="text-[#E11D48] hover:underline">get started</Link>.
                   </p>
                 </div>
 
                 <a
                   href="/about"
-                  className="inline-flex items-center gap-2 text-white font-semibold group/link w-fit"
+                  className="inline-flex items-center gap-2 text-white font-semibold text-base group/link w-fit"
                 >
                   Our Leadership Team
                   <span className="w-9 h-9 rounded-full bg-[#E11D48] flex items-center justify-center transition-transform duration-300 group-hover/link:translate-x-1">

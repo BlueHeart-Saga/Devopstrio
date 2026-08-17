@@ -91,7 +91,7 @@ export function InteractiveMap({ locations, filters }: InteractiveMapProps) {
         return { scale: 3.2, origin: "77% 48%" };
       case "Europe":
         return { scale: 3.2, origin: "55% 22%" };
-      case "North America":
+      case "America":
         return { scale: 3.2, origin: "15% 25%" };
       default:
         return { scale: 1, origin: "center" };
@@ -137,25 +137,25 @@ export function InteractiveMap({ locations, filters }: InteractiveMapProps) {
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         
         {/* Title + Filters */}
-        <div className="mb-12 text-center max-w-2xl mx-auto">
+        <div className="mb-14 text-center max-w-3xl mx-auto">
           <Reveal>
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
+            {/* <span className="text-xs sm:text-sm font-semibold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
               Interactive Map
-            </span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">
+            </span> */}
+            <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight text-white mb-6 font-sans">
               Our Global Footprint
             </h2>
           </Reveal>
 
           {/* Region Filters */}
-          <div className="flex flex-wrap justify-center gap-2.5 mt-6">
+          <div className="flex flex-wrap justify-center gap-3 mt-6">
             {filters.map((item, i) => (
               <button
                 key={i}
-                className={`px-5 py-2.5 rounded-full text-xs font-bold tracking-wider uppercase transition-all duration-300 backdrop-blur-md ${
+                className={`px-6 py-2.5 rounded-full text-xs sm:text-sm font-semibold tracking-wider uppercase transition-all duration-300 backdrop-blur-md cursor-pointer ${
                   activeFilter === item
-                    ? "bg-rose-500/10 border border-rose-500/30 text-rose-500 shadow-[0_8px_24px_rgba(225,29,72,0.12)]"
-                    : "bg-zinc-950/20 border border-zinc-900/60 text-zinc-400 hover:border-zinc-700/85 hover:bg-zinc-900/30 hover:text-white"
+                    ? "bg-rose-500 text-white shadow-[0_8px_24px_rgba(225,29,72,0.3)]"
+                    : "bg-zinc-950/40 border border-zinc-800 text-zinc-400 hover:border-zinc-600 hover:bg-zinc-900/60 hover:text-white"
                 }`}
                 onClick={() => setActiveFilter(item)}
               >
@@ -169,14 +169,14 @@ export function InteractiveMap({ locations, filters }: InteractiveMapProps) {
         <div className="flex flex-col lg:flex-row gap-8 items-stretch mt-8">
           
           {/* Left Column: Stats Card */}
-          <div className="w-full lg:w-[320px] border border-zinc-800/80 p-8 bg-zinc-950/40 backdrop-blur-md rounded-2xl transition-all duration-300 hover:border-rose-500/30 hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(225,29,72,0.08)] flex-shrink-0 flex flex-col justify-between">
+          <div className="w-full lg:w-[340px] border border-zinc-800/80 p-8 bg-zinc-950/40 backdrop-blur-md rounded-2xl transition-all duration-300 hover:border-rose-500/30 hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(225,29,72,0.08)] flex-shrink-0 flex flex-col justify-between">
             <div>
               <h1 className="text-6xl md:text-7xl font-bold text-rose-500 leading-none mb-2">
                 {totalOffices}
               </h1>
-              <h3 className="text-xl font-bold text-white mb-2">Offices</h3>
-              <p className="text-zinc-400 text-sm leading-relaxed mb-6">
-                Across {uniqueCountries}+ Countries with <Link href="/careers" className="text-[#E11D48] hover:underline">{totalEmployees} Global Workforce</Link>
+              <h3 className="text-2xl font-semibold text-white mb-2">Offices</h3>
+              <p className="text-zinc-300 text-base leading-relaxed mb-6 font-medium">
+                Across {uniqueCountries}+ Countries with <Link href="/careers" className="text-[#E11D48] hover:underline font-semibold">{totalEmployees} Global Workforce</Link>
               </p>
 
               <div className="my-6 py-6 border-y border-zinc-800/60">
