@@ -22,21 +22,15 @@ export function InsightsHero() {
             </Reveal> */}
 
             <Reveal delay={0.1}>
-              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight leading-[1.12] text-white mb-6">
-                Insights, Blueprints & <span className="text-rose-500">Engineering Intelligence</span>
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.15] text-white mb-8">
+                Insights, Blueprints & <span className="text-rose-500 font-semibold">Engineering Intelligence</span>
               </h1>
             </Reveal>
 
-            <Reveal delay={0.2}>
-              <p className="text-zinc-400 text-sm sm:text-base leading-relaxed max-w-2xl mb-8 font-medium">
-                Deep dives, architectural benchmarks, whitepapers, and operational lessons learned from our global engineering teams building high-availability cloud platforms and enterprise AI runtimes.
-              </p>
-            </Reveal>
-
             {/* Quote Block */}
-            <Reveal delay={0.3}>
+            <Reveal delay={0.2}>
               <div className="border-l-2 border-rose-500 bg-zinc-950/40 px-6 py-4 rounded-r-lg max-w-xl">
-                <p className="text-zinc-300 text-xs md:text-sm font-semibold italic leading-relaxed">
+                <p className="text-zinc-300 text-sm md:text-base font-medium italic leading-relaxed">
                   &ldquo;Knowledge is valuable when shared. We document our production incidents, post-mortems, and cloud blueprints to help teams build resilient architectures.&rdquo;
                 </p>
               </div>

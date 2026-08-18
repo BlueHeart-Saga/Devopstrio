@@ -170,20 +170,20 @@ export function CategoryHero({ categoryName, categorySlug }: CategoryHeroProps) 
 
       <div className="max-w-7xl mx-auto relative z-10 w-full px-12 xl:px-8">
         {/* Breadcrumb Navigation */}
-        <nav className="flex items-center justify-start gap-2.5 text-[9px] md:text-[10px] font-medium tracking-[0.12em] text-zinc-400 mb-4 overflow-x-auto whitespace-nowrap py-1">
+        <nav className="flex items-center justify-start gap-2.5 text-xs sm:text-sm font-medium tracking-wide text-zinc-400 mb-6 overflow-x-auto whitespace-nowrap py-1">
           <Link href="/insights" className="hover:text-white transition-colors text-zinc-400">
             INSIGHTS HUB
           </Link>
-          <ChevronRight size={10} className="text-zinc-600 flex-shrink-0" />
+          <ChevronRight size={12} className="text-zinc-600 flex-shrink-0" />
           <span className="text-rose-500 font-semibold">{categoryName.toUpperCase()}</span>
         </nav>
 
         {/* Headline block */}
-        <div className="max-w-4xl mx-auto text-center flex flex-col items-center justify-center py-4">
+        <div className="max-w-4xl mx-auto text-center flex flex-col items-center justify-center py-6">
           <Reveal>
-            <div className="flex items-center justify-center gap-2.5 mb-3">
+            <div className="flex items-center justify-center gap-2.5 mb-4">
               <span className="h-[1px] w-8 bg-gradient-to-r from-transparent to-rose-600"></span>
-              <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-rose-500">
+              <span className="text-[11px] font-bold tracking-[0.25em] uppercase text-rose-500">
                 Category Archive
               </span>
               <span className="h-[1px] w-8 bg-gradient-to-l from-transparent to-rose-600"></span>
@@ -191,15 +191,9 @@ export function CategoryHero({ categoryName, categorySlug }: CategoryHeroProps) 
           </Reveal>
 
           <Reveal delay={0.05}>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-tight mb-4 text-white text-center">
-              {config.titlePrefix} <span className="text-[#E11D48]">{categoryName}</span>
+            <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold tracking-tight leading-tight mb-2 text-white text-center">
+              {config.titlePrefix} <span className="text-rose-500 font-semibold">{categoryName}</span>
             </h1>
-          </Reveal>
-
-          <Reveal delay={0.1}>
-            <p className="text-zinc-300 text-xs md:text-sm lg:text-base leading-relaxed font-normal max-w-3xl text-center mx-auto opacity-95">
-              {config.description}
-            </p>
           </Reveal>
         </div>
       </div>

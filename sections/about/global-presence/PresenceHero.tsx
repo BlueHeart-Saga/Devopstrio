@@ -24,7 +24,7 @@ const locationSlides = [
     type: "Corporate Office",
     country: "India",
     address: "Embassy Golf Links Business Park, Bengaluru, Karnataka-560071, India",
-    src: "/assets/About-page/building/buildingtopangle.png",
+    src: "/assets/About-page/building/banagaluru.png",
     alt: "Devopstrio Bengaluru Corporate Office",
     heading: (
       <>
@@ -69,7 +69,7 @@ const locationSlides = [
     type: "Technology & Operations Center",
     country: "India",
     address: "Ground Floor, Primus Building, Door No. SP – 7A, Guindy Industrial Estate, SIDCO Industrial Estate, Chennai 600032",
-    src: "/assets/About-page/building/chennai.png",
+    src: "/assets/About-page/building/team2.png",
     alt: "Devopstrio Chennai Technology & Operations Center",
     heading: (
       <>
@@ -127,29 +127,84 @@ export function PresenceHero() {
     };
   }, []);
 
-  // Compute slide-up translation for 6 location slides based on scroll progress
-  const getSlideY = (idx: number) => {
-    if (idx === 0) return 0;
+  // Calibrated scroll-controlled calculations for 6 slides:
+  // Each slide enters from the bottom (100% -> 0%) and moves fully to the top end (0% -> -100%) as the next slide enters
+  const getSlideTransforms = (idx: number) => {
+    const enterStart = idx === 0 ? 0 : 0.08 + (idx - 1) * 0.17;
+    const enterEnd = idx === 0 ? 0 : enterStart + 0.14;
     
-    // Smooth calibrated entry & exit intervals for 6 slides
-    const enterStart = 0.12 + (idx - 1) * 0.15;
-    const enterEnd = enterStart + 0.14;
+    const exitStart = 0.08 + idx * 0.17;
+    const exitEnd = exitStart + 0.14;
 
-    if (scrollProgress <= enterStart) return 100;
-    if (scrollProgress >= enterEnd) return 0;
-    return ((enterEnd - scrollProgress) / (enterEnd - enterStart)) * 100;
+    let slideY = 0;
+
+    if (idx > 0) {
+      if (scrollProgress <= enterStart) {
+        slideY = 100;
+      } else if (scrollProgress < enterEnd) {
+        const enterProgress = (scrollProgress - enterStart) / (enterEnd - enterStart);
+        slideY = (1 - enterProgress) * 100;
+      } else {
+        slideY = 0;
+      }
+    }
+
+    if (idx < locationSlides.length - 1) {
+      if (scrollProgress > exitStart) {
+        if (scrollProgress >= exitEnd) {
+          slideY = -70;
+        } else {
+          const exitProgress = (scrollProgress - exitStart) / (exitEnd - exitStart);
+          slideY = -exitProgress * 70;
+        }
+      }
+    }
+
+    // Scroll-controlled Text Motion (Translate Y in px and Opacity)
+    let textY = 0;
+    let textOpacity = 1;
+
+    if (idx > 0 && scrollProgress < enterEnd) {
+      // Entering from bottom
+      if (scrollProgress <= enterStart) {
+        textY = 60;
+        textOpacity = 0;
+      } else {
+        const enterProgress = (scrollProgress - enterStart) / (enterEnd - enterStart);
+        textY = (1 - enterProgress) * 60;
+        textOpacity = enterProgress;
+      }
+    }
+
+    if (idx < locationSlides.length - 1 && scrollProgress > exitStart) {
+      // Exiting towards top
+      if (scrollProgress >= exitEnd) {
+        textY = -120;
+        textOpacity = 0;
+      } else {
+        const exitProgress = (scrollProgress - exitStart) / (exitEnd - exitStart);
+        textY = -exitProgress * 120;
+        textOpacity = 1 - exitProgress;
+      }
+    }
+
+    return {
+      slideY,
+      textY,
+      textOpacity: Math.max(0, Math.min(1, textOpacity)),
+    };
   };
 
   const activeIndex =
-    scrollProgress < 0.19
+    scrollProgress < 0.15
       ? 0
-      : scrollProgress < 0.34
+      : scrollProgress < 0.32
       ? 1
       : scrollProgress < 0.49
       ? 2
-      : scrollProgress < 0.64
+      : scrollProgress < 0.66
       ? 3
-      : scrollProgress < 0.79
+      : scrollProgress < 0.83
       ? 4
       : 5;
 
@@ -161,7 +216,7 @@ export function PresenceHero() {
         {/* Layered Scroll-Controlled Background Images + Synchronized Headings */}
         <div className="absolute inset-0 z-0 overflow-hidden">
           {locationSlides.map((slide, idx) => {
-            const slideY = getSlideY(idx);
+            const { slideY, textY, textOpacity } = getSlideTransforms(idx);
             const zIndex = (idx + 1) * 10;
 
             return (
@@ -189,14 +244,16 @@ export function PresenceHero() {
                 <div className="absolute inset-x-0 bottom-0 h-64 sm:h-80 md:h-[28rem] bg-gradient-to-t from-black via-black/85 via-40% to-transparent z-10 pointer-events-none" />
                 <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black to-transparent z-10 pointer-events-none" />
 
-                {/* Slide Heading - Bottom Left Positioned */}
-                <div className="absolute inset-x-0 bottom-10 sm:bottom-14 lg:bottom-16 z-20 px-6 sm:px-8 lg:px-12 pointer-events-none">
+                {/* Slide Heading - Bottom Left Positioned with Scroll Parallax */}
+                <div 
+                  className="absolute inset-x-0 bottom-10 sm:bottom-14 lg:bottom-16 z-20 px-6 sm:px-8 lg:px-12 pointer-events-none"
+                  style={{
+                    transform: `translateY(${textY}px)`,
+                    opacity: textOpacity,
+                    willChange: "transform, opacity",
+                  }}
+                >
                   <div className="max-w-7xl mx-auto w-full text-left">
-                    {/* <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black/50 border border-white/15 backdrop-blur-md text-xs font-mono text-zinc-300 mb-3">
-                      <span className="w-1.5 h-1.5 rounded-full bg-rose-500" />
-                      {slide.country} • {slide.type}
-                    </div> */}
-
                     <h1
                       className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-semibold tracking-tight leading-tight text-white select-text max-w-5xl mb-2"
                       style={{

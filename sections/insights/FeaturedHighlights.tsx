@@ -51,15 +51,12 @@ export function FeaturedHighlights({ posts }: FeaturedHighlightsProps) {
     <section className="py-24 bg-[#030303] border-b border-zinc-900/60 overflow-hidden">
       <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 text-center mb-12">
         <Reveal>
-          <span className="text-[10px] font-mono tracking-widest text-zinc-500 uppercase block mb-4 font-bold border border-zinc-800 rounded-full px-3 py-1 w-max mx-auto bg-zinc-950">
+          {/* <span className="text-[11px] font-bold tracking-[0.3em] text-rose-500 uppercase block mb-3">
             Our Philosophy
-          </span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight max-w-3xl mx-auto">
-            At Devopstrio, we move beyond "quick fixes."
+          </span> */}
+          <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold text-white leading-tight max-w-4xl mx-auto">
+            At Devopstrio, we move beyond &quot;quick fixes.&quot;
           </h2>
-          <p className="text-base md:text-lg lg:text-xl text-zinc-400 font-medium leading-relaxed max-w-3xl mx-auto">
-            We believe true innovation is found at the intersection of deep engineering, strategic foresight, and sustainable technology. Explore our <Link href="/services" className="text-rose-500 hover:underline font-bold">engineering services</Link> and read our <Link href="/about/overview" className="text-rose-500 hover:underline font-bold">company overview</Link>.
-          </p>
         </Reveal>
       </div>
 
@@ -85,24 +82,24 @@ export function FeaturedHighlights({ posts }: FeaturedHighlightsProps) {
 
                 {/* Content Area */}
                 <div className="px-3 pb-3 flex flex-col flex-1">
-                  <span className="text-[10px] font-bold tracking-widest text-rose-500 uppercase mb-3 block">
+                  {/* <span className="text-xs font-semibold tracking-widest text-rose-500 uppercase mb-3 block">
                     {post.category.name}
-                  </span>
+                  </span> */}
 
-                  <h3 className="text-white font-bold text-lg md:text-xl leading-snug group-hover:text-rose-400 transition-colors mb-3 line-clamp-2">
+                  <h3 className="text-white font-semibold text-xl md:text-2xl leading-snug group-hover:text-rose-400 transition-colors mb-3 line-clamp-2">
                     {post.title}
                   </h3>
 
-                  <p className="text-zinc-400 text-xs md:text-sm leading-relaxed font-medium line-clamp-3 mb-6 flex-1">
+                  {/* <p className="text-zinc-300 text-sm md:text-base leading-relaxed font-normal line-clamp-3 mb-6 flex-1">
                     {post.excerpt}
-                  </p>
+                  </p> */}
 
                   {/* Footer CTA */}
                   <div className="flex items-center gap-3 mt-auto pt-2">
                     <div className="w-8 h-8 rounded-lg bg-rose-950 border border-rose-900 group-hover:bg-rose-600 group-hover:border-rose-500 flex items-center justify-center transition-all duration-300 shadow-md">
                       <ChevronRight size={14} className="text-rose-500 group-hover:text-white transition-colors" />
                     </div>
-                    <span className="text-xs font-bold text-zinc-300 group-hover:text-rose-400 tracking-wide transition-colors">
+                    <span className="text-sm font-semibold text-zinc-200 group-hover:text-rose-400 tracking-wide transition-colors">
                       Read article
                     </span>
                   </div>
@@ -116,7 +113,7 @@ export function FeaturedHighlights({ posts }: FeaturedHighlightsProps) {
         <div className="flex justify-center mt-4">
           <Link
             href="/insights"
-            className="inline-flex items-center gap-3 px-6 py-3 rounded-full text-xs font-bold tracking-wider uppercase bg-zinc-900 border border-zinc-800 text-white hover:bg-zinc-800 transition-colors hover:border-rose-500/50"
+            className="inline-flex items-center gap-3 px-7 py-3.5 rounded-full text-xs font-semibold tracking-wider uppercase bg-zinc-900 border border-zinc-800 text-white hover:bg-zinc-800 transition-colors hover:border-rose-500/50"
           >
             Explore all insights <div className="w-5 h-5 rounded-full bg-rose-600 flex items-center justify-center"><ArrowRight size={12} className="text-white" /></div>
           </Link>
@@ -136,27 +133,27 @@ export function FeaturedHighlights({ posts }: FeaturedHighlightsProps) {
 
               {/* Text Wrapper (Fades out on hover but keeps layout space) */}
               <div className="flex flex-col transition-all duration-700 ease-in-out group-hover:opacity-0 group-hover:-translate-y-8 group-hover:pointer-events-none">
-                <span className="inline-block px-3 py-1 rounded bg-zinc-900 border border-zinc-800 text-[10px] font-bold tracking-widest text-zinc-400 uppercase w-max mb-8">
+                <span className="inline-block px-3.5 py-1.5 rounded bg-zinc-900 border border-zinc-800 text-xs font-semibold tracking-widest text-rose-400 uppercase w-max mb-8">
                   Featured Highlight
                 </span>
 
-                <h2 className="text-3xl md:text-4xl lg:text-[42px] font-bold text-white mb-6 leading-[1.1] tracking-tight">
+                <h2 className="text-3xl md:text-4xl lg:text-[40px] font-semibold text-white mb-6 leading-[1.15] tracking-tight">
                   {mainPost.title}
                 </h2>
 
                 <div className="space-y-6 mb-10">
                   <div className="border-l-2 border-rose-500 pl-4">
-                    <h4 className="text-sm font-bold text-white mb-1">Strategic Depth</h4>
-                    <p className="text-xs font-medium text-zinc-500 leading-relaxed">{mainPost.excerpt}</p>
+                    <h4 className="text-base md:text-lg font-semibold text-white mb-1.5">Strategic Depth</h4>
+                    <p className="text-sm md:text-base font-normal text-zinc-300 leading-relaxed">{mainPost.excerpt}</p>
                   </div>
                   <div className="border-l-2 border-zinc-800 pl-4">
-                    <h4 className="text-sm font-bold text-white mb-1">Expert Perspectives</h4>
-                    <p className="text-xs font-medium text-zinc-500 leading-relaxed">Read actionable insights curated by Devopstrio principal architects and industry leaders.</p>
+                    <h4 className="text-base md:text-lg font-semibold text-white mb-1.5">Expert Perspectives</h4>
+                    <p className="text-sm md:text-base font-normal text-zinc-300 leading-relaxed">Read actionable insights curated by Devopstrio principal architects and industry leaders.</p>
                   </div>
                 </div>
               </div>
 
-              <div className="inline-flex items-center gap-3 px-8 py-4 rounded-full text-xs font-bold tracking-wider uppercase bg-white text-black group-hover:bg-rose-600 group-hover:text-white transition-all duration-500 w-max shadow-lg group-hover:shadow-[0_0_20px_rgba(225,29,72,0.4)]">
+              <div className="inline-flex items-center gap-3 px-8 py-4 rounded-full text-sm font-semibold tracking-wider uppercase bg-white text-black group-hover:bg-rose-600 group-hover:text-white transition-all duration-500 w-max shadow-lg group-hover:shadow-[0_0_20px_rgba(225,29,72,0.4)]">
                 Read Full Article <div className="w-6 h-6 rounded-full bg-black flex items-center justify-center"><ArrowUpRight size={14} className="text-white" /></div>
               </div>
             </div>

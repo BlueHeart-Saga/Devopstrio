@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
-import { MapPin, Globe, Users } from "lucide-react";
+import { MapPin, Globe, Users, ArrowUpRight } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
 import Link from "next/link";
 
@@ -14,6 +14,8 @@ interface Location {
   employees: string;
   top: number;
   left: number;
+  mapUrl?: string;
+  tag?: string;
 }
 
 interface InteractiveMapProps {
@@ -91,8 +93,9 @@ export function InteractiveMap({ locations, filters }: InteractiveMapProps) {
         return { scale: 3.2, origin: "77% 48%" };
       case "Europe":
         return { scale: 3.2, origin: "55% 22%" };
+      case "North America":
       case "America":
-        return { scale: 3.2, origin: "15% 25%" };
+        return { scale: 3.2, origin: "25% 42%" };
       default:
         return { scale: 1, origin: "center" };
     }
@@ -139,9 +142,6 @@ export function InteractiveMap({ locations, filters }: InteractiveMapProps) {
         {/* Title + Filters */}
         <div className="mb-14 text-center max-w-3xl mx-auto">
           <Reveal>
-            {/* <span className="text-xs sm:text-sm font-semibold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
-              Interactive Map
-            </span> */}
             <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight text-white mb-6 font-sans">
               Our Global Footprint
             </h2>
@@ -210,7 +210,7 @@ export function InteractiveMap({ locations, filters }: InteractiveMapProps) {
             <div className="flex flex-col gap-2 pt-4 border-t border-zinc-900/50">
               <div className="flex items-center gap-2.5 text-xs text-zinc-500">
                 <MapPin className="text-rose-500 filter drop-shadow-[0_0_4px_rgba(225,29,72,0.5)] h-3.5 w-3.5" />
-                <span>Physical Office Location</span>
+                <span>Click pin to view on Google Maps</span>
               </div>
             </div>
           </div>
@@ -230,11 +230,14 @@ export function InteractiveMap({ locations, filters }: InteractiveMapProps) {
 
               <canvas ref={canvasRef} className="w-full h-full block absolute inset-0 bg-transparent" />
 
-              {/* Location Pins with Tooltips */}
+              {/* Location Pins with Tooltips & Direct Google Maps Links */}
               {filteredLocations.map((loc, index) => (
-                <div
+                <a
                   key={index}
-                  className="absolute z-10 cursor-pointer group/pin"
+                  href={loc.mapUrl || "#"}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="absolute z-20 cursor-pointer group/pin focus:outline-none"
                   style={{
                     top: `${loc.top}%`,
                     left: `${loc.left}%`,
@@ -243,25 +246,31 @@ export function InteractiveMap({ locations, filters }: InteractiveMapProps) {
                   }}
                   onMouseEnter={() => setIsPaused(true)}
                   onMouseLeave={() => setIsPaused(false)}
+                  title={`Open ${loc.name} office on Google Maps`}
                 >
-                  <MapPin className="h-[15px] w-[15px] text-rose-500 gp-location-icon-anim group-hover/pin:text-white group-hover/pin:scale-110 transition-all duration-300 stroke-[2.5px]" />
+                  <div className="relative flex items-center justify-center">
+                    <MapPin className="h-5 w-5 text-rose-500 gp-location-icon-anim group-hover/pin:text-white group-hover/pin:scale-125 transition-all duration-300 stroke-[2.5px] filter drop-shadow-[0_0_8px_rgba(225,29,72,0.8)]" />
+                  </div>
 
                   {/* Tooltip */}
-                  <div className="absolute left-full top-1/2 -translate-y-1/2 ml-3 bg-zinc-900/95 border border-rose-500/40 rounded-lg p-3 shadow-xl opacity-0 invisible group-hover/pin:opacity-100 group-hover/pin:visible transition-all duration-300 z-50 pointer-events-none w-max max-w-[240px]">
+                  <div className="absolute left-full top-1/2 -translate-y-1/2 ml-3 bg-zinc-950/95 border border-rose-500/40 rounded-xl p-3.5 shadow-2xl opacity-0 invisible group-hover/pin:opacity-100 group-hover/pin:visible transition-all duration-300 z-50 w-max max-w-[260px] backdrop-blur-md">
                     <div className="flex justify-between items-center gap-3 pb-1.5 mb-1.5 border-b border-zinc-800">
-                      <strong className="text-white text-xs block">{loc.name}</strong>
-                      <span className="text-zinc-500 text-[9px] uppercase tracking-wider font-semibold">{loc.country}</span>
+                      <strong className="text-white text-xs block font-bold">{loc.name}</strong>
+                      <span className="text-zinc-400 text-[9px] uppercase tracking-wider font-semibold">{loc.country}</span>
                     </div>
-                    <div className="mb-1">
-                      <span className="block text-rose-500 text-[10px] font-bold leading-normal">{loc.type}</span>
-                      <p className="text-[10px] text-zinc-400 mt-1 leading-snug">{loc.role}</p>
-                      <span className="flex items-center gap-1.5 text-zinc-450 text-[9px] mt-2">
-                        <Users className="text-rose-500 h-2.5 w-2.5" /> {loc.employees} employees
+                    <div className="mb-2 text-left">
+                      <span className="block text-rose-400 text-[10px] font-bold leading-normal">{loc.type}</span>
+                      <p className="text-[10px] text-zinc-300 mt-1 leading-snug font-normal">{loc.role}</p>
+                      <span className="flex items-center gap-1.5 text-zinc-400 text-[9px] mt-2">
+                        <Users className="text-rose-500 h-3 w-3" /> {loc.employees} employees
                       </span>
                     </div>
-                    <div className="text-[8px] text-zinc-600 uppercase tracking-widest mt-1.5">{loc.region}</div>
+                    <div className="pt-2 border-t border-zinc-800/80 flex items-center justify-between text-[10px] text-rose-400 font-semibold group-hover/pin:underline">
+                      <span>Open on Google Maps</span>
+                      <ArrowUpRight size={12} className="text-rose-400" />
+                    </div>
                   </div>
-                </div>
+                </a>
               ))}
             </div>
           </div>

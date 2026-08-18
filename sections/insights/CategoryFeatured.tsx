@@ -51,7 +51,7 @@ export function CategoryFeatured({ posts, categorySlug }: CategoryFeaturedProps)
         {/* Header Block matching GIF style */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 gap-6">
           <Reveal>
-            <h2 className="text-lg md:text-xl font-medium text-white tracking-wide">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-white tracking-tight">
               Recent Post ({String(posts.length).padStart(2, '0')})
             </h2>
           </Reveal>
@@ -102,36 +102,36 @@ export function CategoryFeatured({ posts, categorySlug }: CategoryFeaturedProps)
               <div className="w-full md:w-[45%] p-8 lg:p-12 flex flex-col bg-[#0a0a0a] border border-zinc-800 rounded-[32px] md:-ml-16 z-10 shadow-[0_20px_50px_rgba(0,0,0,0.6)] mt-[-60px] md:mt-0 relative group">
                 
                 {/* Meta Row */}
-                <div className="flex items-center gap-3 text-[11px] text-zinc-400 font-mono mb-6">
+                <div className="flex items-center gap-3 text-xs sm:text-sm text-zinc-300 font-medium mb-6">
                   <span className="flex items-center gap-1.5 text-zinc-300">
-                    <Calendar size={12} className="text-rose-500" />
+                    <Calendar size={14} className="text-rose-500" />
                     {post.date}
                   </span>
                   <span className="w-1 h-1 rounded-full bg-zinc-700" />
                   <span className="flex items-center gap-1.5 text-zinc-300">
-                    <Clock size={12} className="text-rose-500" />
+                    <Clock size={14} className="text-rose-500" />
                     {post.readTime} min read
                   </span>
                 </div>
                 
                 {/* Title */}
-                <h3 className="text-2xl md:text-3xl lg:text-[32px] font-bold text-white mb-5 leading-[1.2] group-hover:text-rose-500 transition-colors line-clamp-3">
+                <h3 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-white mb-5 leading-[1.25] group-hover:text-rose-500 transition-colors line-clamp-3">
                   {post.title}
                 </h3>
                 
                 {/* Excerpt */}
-                <p className="text-sm text-zinc-400 leading-relaxed mb-10 line-clamp-4">
+                {/* <p className="text-base md:text-lg text-zinc-300 leading-relaxed mb-10 line-clamp-4 font-normal">
                   {post.excerpt}
-                </p>
+                </p> */}
                 
                 {/* Footer Row */}
                 <div className="flex items-center justify-between mt-auto">
                   <div className="flex flex-wrap gap-2">
-                    <span className="px-4 py-1.5 rounded-full border border-zinc-800 text-[10px] font-bold uppercase tracking-wider text-zinc-300 bg-zinc-900/50">
+                    <span className="px-4 py-1.5 rounded-full border border-zinc-800 text-xs font-semibold uppercase tracking-wider text-zinc-200 bg-zinc-900/60">
                       {post.category.name}
                     </span>
                     {post.tags && post.tags.slice(0, 2).map((tag, tIdx) => (
-                      <span key={tIdx} className="px-4 py-1.5 rounded-full border border-zinc-800 text-[10px] font-bold uppercase tracking-wider text-zinc-300 bg-zinc-900/50">
+                      <span key={tIdx} className="px-4 py-1.5 rounded-full border border-zinc-800 text-xs font-semibold uppercase tracking-wider text-zinc-200 bg-zinc-900/60">
                         {tag}
                       </span>
                     ))}

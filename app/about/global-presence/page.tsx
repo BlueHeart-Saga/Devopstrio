@@ -5,6 +5,8 @@ import { BreadcrumbSchema } from "@/components/seo/Schemas";
 import { SectionNavbar } from "@/components/ui/SectionNavbar";
 
 // Import Section Components
+import { PresenceHeroCard } from "@/sections/about/global-presence/PresenceHeroCard";
+import { PresenceTourTrip } from "@/sections/about/global-presence/PresenceTourTrip";
 import { PresenceHero } from "@/sections/about/global-presence/PresenceHero";
 import { StoryIntro } from "@/sections/about/global-presence/StoryIntro";
 import { BrandStory } from "@/sections/about/global-presence/BrandStory";
@@ -19,6 +21,8 @@ import { GlobalCTA } from "@/sections/about/global-presence/GlobalCTA";
 // Section Navbar Items
 const globalPresenceSections = [
   { id: "hero", label: "Overview" },
+  { id: "tour-trip", label: "People & Places" },
+  { id: "locations", label: "Our Hubs" },
   { id: "story", label: "Our Story" },
   { id: "brand-story", label: "Grounded in Purpose" },
   { id: "engineering-story", label: "Engineering Impact" },
@@ -39,7 +43,8 @@ const locations = [
     employees: "200+",
     top: 27.68,
     left: 46.9,
-    tag: "HQ"
+    tag: "HQ",
+    mapUrl: "https://www.google.com/maps/place/Devopstrio+ltd/@51.5245288,-0.1367657,14z/data=!3m1!5s0x4875cee4157f1139:0xd249cf37df391616!4m10!1m2!2m1!1sdevopstrio+ltd+uk!3m6!1s0x48760b08b17623d1:0x6617df320c1480ed!8m2!3d51.5272553!4d-0.0887416!15sChFkZXZvcHN0cmlvIGx0ZCB1a5IBEHNvZnR3YXJlX2NvbXBhbnngAQA!16s%2Fg%2F11s90s3cf8"
   },
   {
     name: "Tennessee",
@@ -50,7 +55,8 @@ const locations = [
     employees: "50+",
     top: 37.5,
     left: 23.5,
-    tag: "Support"
+    tag: "Support",
+    mapUrl: "https://maps.google.com/?q=522+Aventura+Dr,+Mt+Juliet,+TN+37122"
   },
   {
     name: "Bengaluru",
@@ -61,7 +67,8 @@ const locations = [
     employees: "150+",
     top: 51.1,
     left: 68.35,
-    tag: "Corporate"
+    tag: "Corporate",
+    mapUrl: "https://www.google.com/maps/place/Devopstrio+Pvt+Ltd/@11.2597005,71.6100439,6.11z/data=!4m10!1m2!2m1!1sDevopstrio+Pbangalore!3m6!1s0x3bae152b54eca867:0x980925bb507a328c!8m2!3d12.9513154!4d77.6464534!15sChVEZXZvcHN0cmlvIFBiYW5nYWxvcmVaFyIVZGV2b3BzdHJpbyBwYmFuZ2Fsb3JlkgEdY29tcHV0ZXJfc3VwcG9ydF9hbmRfc2VydmljZXPgAQA!16s%2Fg%2F11mdtl382s"
   },
   {
     name: "Chennai",
@@ -72,7 +79,8 @@ const locations = [
     employees: "75+",
     top: 50.9,
     left: 69.1,
-    tag: "Ops"
+    tag: "Ops",
+    mapUrl: "https://www.google.com/maps/place/Devopstrio+Pvt+Ltd/@13.0095316,80.2063518,17z/data=!3m1!4b1!4m6!3m5!1s0x3a5267f2a761f2c5:0x795e4dac8df70296!8m2!3d13.0095264!4d80.2089267!16s%2Fg%2F11nq0wrf8p"
   },
   {
     name: "Thoothukudi",
@@ -83,7 +91,8 @@ const locations = [
     employees: "150+",
     top: 52.99,
     left: 68.53,
-    tag: "Innovation"
+    tag: "Innovation",
+    mapUrl: "https://www.google.com/maps/place/Devopstrio/@9.0039123,77.9576017,17z/data=!3m1!4b1!4m6!3m5!1s0x3b01557677b55437:0xdccfaa15cbbc87ca!8m2!3d9.0039123!4d77.9601766!16s%2Fg%2F11xw9tzf_k"
   },
 ];
 
@@ -101,8 +110,18 @@ export default function GlobalPresencePage() {
       {/* Glow Ambient background */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[radial-gradient(circle_at_center,rgba(225,29,72,0.03),transparent_70%)] pointer-events-none" />
 
-      {/* 1. Hero Section */}
+      {/* 1. Hero Card Section */}
       <div id="hero">
+        <PresenceHeroCard />
+      </div>
+
+      {/* 2. Virtual Tour Trip Section (People & Places) */}
+      <div id="tour-trip">
+        <PresenceTourTrip />
+      </div>
+
+      {/* 3. Sticky Locations Hero Section */}
+      <div id="locations">
         <PresenceHero />
       </div>
 

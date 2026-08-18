@@ -46,20 +46,21 @@ export function DeliveryModel() {
           </Reveal>
         </div>
 
-        {/* Full-Width Image Banner with 360 Surround Shadow & Ambient Glow */}
+        {/* Full-Width Video Banner with 360 Surround Shadow & Ambient Glow */}
         <div className="w-full relative">
           {/* Surround Ambient Glow Halo */}
           <div className="absolute -inset-4 sm:-inset-8 bg-gradient-to-r from-rose-600/15 via-rose-500/10 to-rose-600/15 rounded-[40px] blur-3xl opacity-80 pointer-events-none" />
 
           <Reveal>
-            <div className="relative w-full rounded-2xl md:rounded-3xl overflow-hidden bg-black shadow-[0_0_50px_rgba(244,63,94,0.18),0_0_100px_rgba(225,29,72,0.12),0_30px_90px_rgba(0,0,0,0.95)] group/img">
-              <img
-                src="/assets/About-page/leadership/leadership-banner/Global Operations Engine.png"
-                alt="Devopstrio Delivery Architecture"
-                className="w-full h-auto object-contain md:object-cover transition-transform duration-700 group-hover/img:scale-[1.01]"
+            <div className="relative w-full aspect-video rounded-2xl md:rounded-3xl overflow-hidden bg-zinc-950 border border-zinc-800/80 shadow-[0_0_50px_rgba(244,63,94,0.18),0_0_100px_rgba(225,29,72,0.12),0_30px_90px_rgba(0,0,0,0.95)]">
+              <iframe
+                src="https://www.youtube.com/embed/-EVRIFmJzBM?autoplay=1&mute=1&loop=1&playlist=-EVRIFmJzBM&playsinline=1&si=0L6j12ExtZDQWPxv"
+                title="Devopstrio Delivery Model & Operations Video"
+                className="w-full h-full border-0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
               />
-              {/* Subtle gradient overlay */}
-              <div className="absolute inset-0 bg-gradient-to-tr from-black/25 via-transparent to-transparent pointer-events-none" />
             </div>
           </Reveal>
         </div>

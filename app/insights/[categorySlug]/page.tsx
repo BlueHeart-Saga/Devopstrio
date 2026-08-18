@@ -100,7 +100,21 @@ export default async function CategoryLandingPage({ params }: CategoryPageProps)
       (p) => p.category && p.category.slug === categorySlug
     );
 
-    if (categorySlug === "white-paper" || categorySlug === "our-offerings") {
+    const isPdfCategorySlug = [
+      "white-paper",
+      "white-papers",
+      "white_paper",
+      "whitepaper",
+      "whitepapers",
+      "case-studies",
+      "case-study",
+      "case_studies",
+      "case_study",
+      "our-offerings",
+      "our_offerings"
+    ].includes(categorySlug.toLowerCase());
+
+    if (isPdfCategorySlug) {
       postsList = await Promise.all(
         postsList.map(async (p) => {
           try {

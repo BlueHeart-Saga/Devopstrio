@@ -50,21 +50,16 @@ export function InsightsLibrary({ posts, loading }: InsightsLibraryProps) {
       <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
         
         {/* Header Section */}
-        <div className="max-w-3xl mx-auto text-center mb-16 lg:mb-20 pt-8">
-          <Reveal>
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block drop-shadow-md">
+        <div className="max-w-3xl mx-auto text-center mb-12 lg:mb-16 pt-8">
+          {/* <Reveal>
+            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
               Knowledge Base
             </span>
-          </Reveal>
+          </Reveal> */}
           <Reveal delay={0.1}>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-tight text-white mb-6 drop-shadow-md">
-              Insights & <span className="text-rose-500">Articles</span>
+            <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight text-white mb-4">
+              Insights & <span className="text-rose-500 font-semibold">Articles</span>
             </h2>
-          </Reveal>
-          <Reveal delay={0.2}>
-            <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-bold max-w-2xl mx-auto drop-shadow-md">
-              Explore our latest thinking, strategies, and industry perspectives to accelerate your digital transformation. Read about our <Link href="/services" className="text-rose-550 hover:underline">managed services</Link> and <Link href="/about/overview" className="text-rose-550 hover:underline">company overview</Link>.
-            </p>
           </Reveal>
         </div>
 
@@ -74,7 +69,7 @@ export function InsightsLibrary({ posts, loading }: InsightsLibraryProps) {
           <div className="flex flex-wrap items-center gap-3">
             <button
               onClick={() => { setActiveCategory("all"); setVisibleCount(6); }}
-              className={`px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-widest transition-all duration-300 border ${
+              className={`px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold uppercase tracking-wider transition-all duration-300 border ${
                 activeCategory === "all"
                   ? "border-rose-600 bg-rose-600 text-white shadow-[0_4px_14px_0_rgba(225,29,72,0.39)]"
                   : "border-zinc-800 bg-[#0a0a0a] text-zinc-400 hover:text-white hover:border-zinc-700 hover:bg-[#111]"
@@ -86,7 +81,7 @@ export function InsightsLibrary({ posts, loading }: InsightsLibraryProps) {
               <button
                 key={cat.slug}
                 onClick={() => { setActiveCategory(cat.slug); setVisibleCount(6); }}
-                className={`px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-widest transition-all duration-300 border ${
+                className={`px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold uppercase tracking-wider transition-all duration-300 border ${
                   activeCategory === cat.slug
                     ? "border-rose-600 bg-rose-600 text-white shadow-[0_4px_14px_0_rgba(225,29,72,0.39)]"
                     : "border-zinc-800 bg-[#0a0a0a] text-zinc-400 hover:text-white hover:border-zinc-700 hover:bg-[#111]"
@@ -105,7 +100,7 @@ export function InsightsLibrary({ posts, loading }: InsightsLibraryProps) {
               placeholder="Search articles..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full bg-[#0a0a0a] border border-zinc-800 rounded-full pl-12 pr-6 py-3.5 text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-rose-500 focus:ring-1 focus:ring-rose-500 transition-all shadow-inner"
+              className="w-full bg-[#0a0a0a] border border-zinc-800 rounded-full pl-12 pr-6 py-3 text-sm md:text-base text-white placeholder-zinc-500 focus:outline-none focus:border-rose-500 focus:ring-1 focus:ring-rose-500 transition-all shadow-inner"
             />
           </div>
 
@@ -157,24 +152,24 @@ export function InsightsLibrary({ posts, loading }: InsightsLibraryProps) {
                       
                       {/* Content Area */}
                       <div className="px-3 pb-3 flex flex-col flex-1">
-                        <span className="text-[10px] font-bold tracking-widest text-rose-500 uppercase mb-3 block">
+                        {/* <span className="text-xs font-semibold tracking-widest text-rose-500 uppercase mb-3 block">
                           {post.category.name}
-                        </span>
+                        </span> */}
                         
-                        <h3 className="text-white font-bold text-lg md:text-xl leading-snug group-hover:text-rose-400 transition-colors mb-3 line-clamp-2">
+                        <h3 className="text-white font-semibold text-xl md:text-2xl leading-snug group-hover:text-rose-400 transition-colors mb-3 line-clamp-2">
                           {post.title}
                         </h3>
                         
-                        <p className="text-zinc-400 text-sm leading-relaxed font-medium line-clamp-3 mb-6 flex-1">
+                        {/* <p className="text-zinc-300 text-sm md:text-base leading-relaxed font-normal line-clamp-3 mb-6 flex-1">
                           {post.excerpt}
-                        </p>
+                        </p> */}
                         
                         {/* Footer CTA */}
                         <div className="flex items-center gap-3 mt-auto pt-2">
                           <div className="w-8 h-8 rounded-lg bg-rose-950 border border-rose-900 group-hover:bg-rose-600 group-hover:border-rose-500 flex items-center justify-center transition-all duration-300 shadow-md">
                             <ChevronRight size={14} className="text-rose-500 group-hover:text-white transition-colors" />
                           </div>
-                          <span className="text-xs font-bold text-zinc-300 group-hover:text-rose-400 tracking-wide transition-colors">
+                          <span className="text-sm font-semibold text-zinc-200 group-hover:text-rose-400 tracking-wide transition-colors">
                             Read article
                           </span>
                         </div>
@@ -190,7 +185,7 @@ export function InsightsLibrary({ posts, loading }: InsightsLibraryProps) {
               <Reveal className="mt-12 text-center">
                 <button
                   onClick={() => setVisibleCount(visibleCount + 6)}
-                  className="gap-2 inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase border border-zinc-850 hover:border-zinc-750 bg-zinc-950/60 hover:bg-zinc-900 text-white transition-all duration-300 hover:-translate-y-0.5"
+                  className="gap-2 inline-flex items-center justify-center px-8 py-3.5 rounded-full text-xs sm:text-sm font-semibold tracking-wider uppercase border border-zinc-800 hover:border-zinc-700 bg-zinc-950/80 hover:bg-zinc-900 text-white transition-all duration-300 hover:-translate-y-0.5 shadow-lg"
                 >
                   Load More Publications
                 </button>

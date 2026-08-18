@@ -39,14 +39,14 @@ export function NewsletterSubscription({ className = "" }: { className?: string 
       </div>
 
       {/* Right Side: Form and Text */}
-      <div className="w-full lg:w-[420px] flex flex-col justify-center relative z-10 mt-6 lg:mt-0">
+      <div className="w-full lg:w-[460px] flex flex-col justify-end relative z-10 mt-6 lg:mt-auto">
         <h3 className="text-xl md:text-2xl font-bold text-white mb-4 leading-tight">
           Subscribe to get<br />
           exclusive invites<br />
           to all global events.
         </h3>
 
-        <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 w-full mb-6">
+        <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 w-full">
           <input
             type="email"
             required
@@ -57,32 +57,11 @@ export function NewsletterSubscription({ className = "" }: { className?: string 
           />
           <button
             type="submit"
-            className="inline-flex items-center justify-center px-8 py-3.5 rounded-full text-[13px] font-bold tracking-wider bg-white text-black hover:bg-zinc-200 transition-all duration-300 whitespace-nowrap shrink-0"
+            className="inline-flex items-center justify-center px-8 py-3.5 rounded-full text-[13px] font-bold tracking-wider bg-white text-black hover:bg-zinc-200 transition-all duration-300 whitespace-nowrap shrink-0 cursor-pointer"
           >
             Subscribe Now &rarr;
           </button>
         </form>
-
-        <div className="flex items-end justify-between gap-6 mt-auto">
-          <p className="text-white/80 text-[10px] leading-relaxed max-w-[240px] font-medium">
-            Get the latest case studies, cloud native updates, and priority invitations to our monthly global roundtable events and workshops.
-          </p>
-
-          <div className="flex flex-col items-center gap-2 shrink-0">
-            <div
-              className="w-16 h-16 bg-white rounded-lg flex items-center justify-center shadow-2xl cursor-pointer hover:scale-105 transition-transform"
-              onClick={() => setIsPopupOpen(true)}
-              title="Open Preferences"
-            >
-              {/* Mail Icon */}
-              <svg className="w-8 h-8 text-[#8c2354]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                <polyline points="22,6 12,13 2,6"></polyline>
-              </svg>
-            </div>
-            <span className="text-[7px] font-bold tracking-widest text-white/90 uppercase">Insights Feed</span>
-          </div>
-        </div>
       </div>
 
       {isPopupOpen && (

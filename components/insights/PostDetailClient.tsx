@@ -69,7 +69,19 @@ export function PostDetailClient({ post, relatedPosts, categorySlug, postId }: P
   const [copied, setCopied] = useState(false);
   const [showShareMenu, setShowShareMenu] = useState(false);
   const [previewDocUrl, setPreviewDocUrl] = useState<string | null>(null);
-  const isPdfCategory = categorySlug === "white-paper" || categorySlug === "our-offerings";
+  const isPdfCategory = [
+    "white-paper",
+    "white-papers",
+    "white_paper",
+    "whitepaper",
+    "whitepapers",
+    "case-studies",
+    "case-study",
+    "case_studies",
+    "case_study",
+    "our-offerings",
+    "our_offerings"
+  ].includes(categorySlug.toLowerCase());
 
   useEffect(() => {
     const likedKey = `liked_${postId}`;
@@ -111,7 +123,7 @@ export function PostDetailClient({ post, relatedPosts, categorySlug, postId }: P
         <div className="max-w-7xl mx-auto w-full px-6 md:px-12 lg:px-16">
           <Link
             href={`/insights/${categorySlug}`}
-            className="inline-flex items-center gap-2 text-sm font-medium text-zinc-400 hover:text-white transition-colors mb-8 group"
+            className="inline-flex items-center gap-2 text-sm md:text-base font-semibold text-zinc-400 hover:text-white transition-colors mb-8 group"
           >
             <ArrowLeft size={16} className="group-hover:-translate-x-1 transition-transform" /> Back to {categorySlug.charAt(0).toUpperCase() + categorySlug.slice(1)}
           </Link>
@@ -119,11 +131,11 @@ export function PostDetailClient({ post, relatedPosts, categorySlug, postId }: P
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             <article className="lg:col-span-8 space-y-8 text-left">
               <div className="space-y-6 mb-8">
-                <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-[1.15]">
+                <h1 className="text-3xl md:text-5xl lg:text-6xl font-semibold text-white tracking-tight leading-[1.15]">
                   {post.title}
                 </h1>
 
-                <div className="flex flex-wrap items-center gap-4 text-xs md:text-sm text-zinc-400 font-medium pb-8 border-b border-zinc-900/60">
+                <div className="flex flex-wrap items-center gap-4 text-sm md:text-base text-zinc-300 font-medium pb-8 border-b border-zinc-900/60">
                   <div className="flex items-center gap-2.5 pr-4 border-r border-zinc-800">
                     <div className="w-6 h-6 rounded-full bg-rose-600 text-white flex items-center justify-center font-bold text-[10px]">
                       {post.author.split(" ").map(n => n[0]).join("")}
@@ -145,7 +157,7 @@ export function PostDetailClient({ post, relatedPosts, categorySlug, postId }: P
               )}
 
               {post.excerpt && (
-                <div className="mb-10 text-lg md:text-xl text-zinc-300 font-medium leading-relaxed italic border-l-4 border-rose-500 pl-6 py-2 bg-gradient-to-r from-rose-500/5 to-transparent">
+                <div className="mb-10 text-lg md:text-xl text-zinc-200 font-normal leading-relaxed italic border-l-4 border-rose-500 pl-6 py-2 bg-gradient-to-r from-rose-500/5 to-transparent">
                   {post.excerpt}
                 </div>
               )}
@@ -161,7 +173,7 @@ export function PostDetailClient({ post, relatedPosts, categorySlug, postId }: P
                     />
                   ))
                 ) : (
-                  <div className="prose prose-invert max-w-none text-zinc-300 text-sm md:text-base leading-relaxed space-y-6 font-normal opacity-95">
+                  <div className="prose prose-invert max-w-none text-zinc-300 text-base md:text-lg leading-relaxed space-y-6 font-normal">
                     <ReactMarkdown remarkPlugins={[remarkGfm]}>{post.content}</ReactMarkdown>
                   </div>
                 )}
@@ -185,7 +197,7 @@ export function PostDetailClient({ post, relatedPosts, categorySlug, postId }: P
               
               {/* Share To Section */}
               <div>
-                <h4 className="text-sm font-bold text-white mb-5">Share to</h4>
+                <h4 className="text-base md:text-lg font-semibold text-white mb-5">Share to</h4>
                 <div className="flex items-center gap-3">
                   <a href={shareUrls.linkedin} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-zinc-800 flex items-center justify-center text-zinc-400 hover:text-white hover:bg-zinc-900 hover:border-zinc-700 transition-all shadow-sm hover:shadow-md">
                     <Linkedin size={16} />
@@ -206,7 +218,7 @@ export function PostDetailClient({ post, relatedPosts, categorySlug, postId }: P
               {/* Related Articles Section */}
               {relatedPosts.length > 0 && (
                 <div>
-                  <h4 className="text-sm font-bold text-white mb-6">Related Articles</h4>
+                  <h4 className="text-base md:text-lg font-semibold text-white mb-6">Related Articles</h4>
                   <div className="flex flex-col gap-6">
                     {relatedPosts.map((r) => (
                       <Link
@@ -224,10 +236,10 @@ export function PostDetailClient({ post, relatedPosts, categorySlug, postId }: P
                           )}
                         </div>
                         <div className="text-left flex flex-col justify-center flex-1">
-                          <h5 className="text-xs md:text-sm font-semibold text-zinc-300 group-hover:text-rose-500 transition-colors line-clamp-2 leading-snug mb-1.5">
+                          <h5 className="text-sm md:text-base font-semibold text-zinc-200 group-hover:text-rose-500 transition-colors line-clamp-2 leading-snug mb-1.5">
                             {r.title}
                           </h5>
-                          <span className="text-[10px] text-zinc-500 font-medium">{r.category?.name || categorySlug}</span>
+                          <span className="text-xs text-zinc-400 font-medium">{r.category?.name || categorySlug}</span>
                         </div>
                       </Link>
                     ))}
@@ -314,21 +326,21 @@ function BlockRenderer({
   const { type, data } = block;
   switch (type) {
     case "heading":
-      return <h2 className="text-xl md:text-2xl font-bold text-white mt-12 mb-5 border-b border-zinc-900 pb-3">{data.value}</h2>;
+      return <h2 className="text-2xl md:text-3xl font-semibold text-white mt-12 mb-5 border-b border-zinc-900 pb-3">{data.value}</h2>;
     case "subheading":
-      return <h3 className="text-base md:text-lg font-bold text-rose-500 mt-8 mb-4">{data.value}</h3>;
+      return <h3 className="text-lg md:text-xl font-semibold text-rose-500 mt-8 mb-4">{data.value}</h3>;
     case "text":
-      return <p className="text-zinc-300 text-sm md:text-base leading-relaxed mb-6 font-normal opacity-95">{data.value}</p>;
+      return <p className="text-zinc-300 text-base md:text-lg leading-relaxed mb-6 font-normal">{data.value}</p>;
     case "quote":
       return (
         <blockquote className="border-l-2 border-rose-500 bg-rose-500/[0.03] rounded-r-2xl p-6 my-8 border-y border-r border-rose-500/5">
-          <p className="text-zinc-200 text-xs md:text-sm italic font-light leading-relaxed">&ldquo;{data.value}&rdquo;</p>
+          <p className="text-zinc-200 text-sm md:text-base italic font-normal leading-relaxed">&ldquo;{data.value}&rdquo;</p>
         </blockquote>
       );
     case "list":
     case "bullet-list":
       return (
-        <ul className="list-disc pl-5 mb-6 text-zinc-300 text-sm md:text-base font-normal opacity-95 space-y-2.5">
+        <ul className="list-disc pl-5 mb-6 text-zinc-300 text-base md:text-lg font-normal space-y-2.5">
           {data.items?.map((item, i) => (
             <li key={i}>{item}</li>
           ))}
@@ -336,7 +348,7 @@ function BlockRenderer({
       );
     case "numbered-list":
       return (
-        <ol className="list-decimal pl-5 mb-6 text-zinc-300 text-sm md:text-base font-normal opacity-95 space-y-2.5">
+        <ol className="list-decimal pl-5 mb-6 text-zinc-300 text-base md:text-lg font-normal space-y-2.5">
           {data.items?.map((item, i) => (
             <li key={i}>{item}</li>
           ))}
@@ -368,10 +380,10 @@ function BlockRenderer({
               <BookOpen size={22} />
             </div>
             <div className="text-left">
-              <h4 className="text-sm font-semibold text-zinc-200 leading-none mb-1.5">
+              <h4 className="text-base font-semibold text-zinc-200 leading-none mb-1.5">
                 {data.title || "Research Publication"}
               </h4>
-              <span className="text-[10px] text-zinc-550 font-mono uppercase tracking-wider">
+              <span className="text-xs text-zinc-400 font-mono uppercase tracking-wider">
                 PDF Document / Report
               </span>
             </div>
@@ -379,7 +391,7 @@ function BlockRenderer({
           <div className="flex items-center gap-2.5 w-full sm:w-auto">
             <button
               onClick={() => onPreviewDoc(docUrl)}
-              className={`flex-1 inline-flex items-center justify-center px-6 py-3.5 text-xs font-bold tracking-wider uppercase bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white transition-all duration-300 hover:shadow-[0_0_25px_rgba(225,29,72,0.35)] hover:-translate-y-0.5 ${
+              className={`flex-1 inline-flex items-center justify-center px-6 py-3.5 text-xs font-semibold tracking-wider uppercase bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white transition-all duration-300 hover:shadow-[0_0_25px_rgba(225,29,72,0.35)] hover:-translate-y-0.5 ${
                 isPdfCategory ? "rounded-none" : "rounded-lg"
               }`}
             >
@@ -390,7 +402,7 @@ function BlockRenderer({
               download
               target="_blank"
               rel="noopener noreferrer"
-              className={`flex-1 inline-flex items-center justify-center px-6 py-3.5 text-xs font-bold tracking-wider uppercase border border-zinc-850 hover:border-zinc-750 bg-zinc-950/60 hover:bg-zinc-900 text-white transition-all duration-300 hover:-translate-y-0.5 ${
+              className={`flex-1 inline-flex items-center justify-center px-6 py-3.5 text-xs font-semibold tracking-wider uppercase border border-zinc-850 hover:border-zinc-750 bg-zinc-950/60 hover:bg-zinc-900 text-white transition-all duration-300 hover:-translate-y-0.5 ${
                 isPdfCategory ? "rounded-none" : "rounded-lg"
               }`}
             >

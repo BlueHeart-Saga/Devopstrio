@@ -138,16 +138,13 @@ export function InsightsNavigationCards() {
 
         {/* Section Header */}
         <Reveal>
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+          <div className="text-center max-w-3xl mx-auto mb-12 lg:mb-16">
+            {/* <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
               BROWSE MORE
-            </span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
-              Explore Other <span className="text-rose-500">Sectors & Channels</span>
+            </span> */}
+            <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight mb-4 text-white">
+              Explore Other <span className="text-rose-500 font-semibold">Sectors & Channels</span>
             </h2>
-            <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
-              Navigate directly to strategic perspectives curated specifically for adjacent organizational verticals.
-            </p>
           </div>
         </Reveal>
 
@@ -157,7 +154,7 @@ export function InsightsNavigationCards() {
             Array.from({ length: 4 }).map((_, idx) => (
               <div
                 key={idx}
-                className="rounded-[20px] overflow-hidden bg-zinc-950/60 border border-white/5 animate-pulse"
+                className="rounded-3xl overflow-hidden bg-zinc-950/60 border border-white/5 animate-pulse"
               >
                 <div className="h-44 bg-zinc-900" />
                 <div className="p-5 space-y-3">
@@ -177,7 +174,7 @@ export function InsightsNavigationCards() {
               <Reveal key={item.slug} delay={idx * 0.04}>
                 <Link
                   href={`/insights/${item.slug}`}
-                  className="group relative flex flex-col rounded-[20px] overflow-hidden border border-white/5 hover:border-white/15 bg-zinc-950"
+                  className="group relative flex flex-col rounded-3xl overflow-hidden border border-white/5 hover:border-white/15 bg-zinc-950"
                   style={{ "--accent": item.accentColor } as React.CSSProperties}
                 >
                   {/* Cover Image */}
@@ -189,42 +186,27 @@ export function InsightsNavigationCards() {
                     />
                     {/* Dark gradient overlay */}
                     <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/40 to-transparent" />
-                    {/* Tag badge top-right */}
-                    {/* <span
-                      className="absolute top-3 right-3 text-[9px] font-bold tracking-[0.2em] uppercase px-2.5 py-1 rounded-full backdrop-blur-md border"
-                      style={{
-                        color: item.accentColor,
-                        borderColor: `${item.accentColor}40`,
-                        background: `${item.accentColor}15`,
-                      }}
-                    >
-                      {item.tag}
-                    </span> */}
-                    {/* Number badge bottom-left */}
-                    {/* <span className="absolute bottom-3 left-4 font-mono text-[10px] font-bold text-white/40">
-                      / {item.number}
-                    </span> */}
                   </div>
 
                   {/* Card body */}
                   <div className="flex flex-col flex-1 p-5">
-                    <h3 className="text-sm font-bold text-white mb-2 leading-snug group-hover:text-rose-400 transition-colors duration-250">
+                    <h3 className="text-lg md:text-xl font-semibold text-white mb-2.5 leading-snug group-hover:text-rose-400 transition-colors duration-250">
                       {item.title}
                     </h3>
-                    <p className="text-[11px] text-zinc-400 leading-relaxed font-light line-clamp-3 flex-1">
+                    {/* <p className="text-sm md:text-base text-zinc-300 leading-relaxed font-normal line-clamp-3 flex-1">
                       {item.description}
-                    </p>
+                    </p> */}
 
                     {/* Footer CTA row */}
                     <div
-                      className="flex items-center justify-between mt-4 pt-3 border-t border-white/5 text-[10px] font-bold uppercase tracking-wider transition-colors duration-250"
-                      style={{ color: "rgba(255,255,255,0.35)" }}
+                      className="flex items-center justify-between mt-4 pt-3 border-t border-white/5 text-xs sm:text-sm font-semibold tracking-wide transition-colors duration-250"
+                      style={{ color: "rgba(255,255,255,0.4)" }}
                     >
                       <span className="group-hover:text-white transition-colors">Explore Section</span>
                       <span
-                        className="w-6 h-6 rounded-full flex items-center justify-center border border-white/10 group-hover:border-rose-500/60 group-hover:bg-rose-500/10 transition-all duration-300"
+                        className="w-7 h-7 rounded-full flex items-center justify-center border border-white/10 group-hover:border-rose-500/60 group-hover:bg-rose-500/10 transition-all duration-300"
                       >
-                        <ArrowUpRight size={11} className="group-hover:text-rose-400 transition-colors" />
+                        <ArrowUpRight size={13} className="group-hover:text-rose-400 transition-colors" />
                       </span>
                     </div>
                   </div>
