@@ -165,7 +165,7 @@ export function HeroSection() {
       ),
       primaryBtn: { text: "Explore Services", href: "/services" },
       secondaryBtn: { text: "Contact Us", href: "/contact#contact-form" },
-      image: "/assets/Home-page/homehero/updated_hero/Sermaraj.svg",
+      image: "/assets/Home-page/homehero/updated_hero/Sermaraj2.svg",
       name: "Sermaraj",
       signatureImage: "/assets/sign/serma.png"
     },

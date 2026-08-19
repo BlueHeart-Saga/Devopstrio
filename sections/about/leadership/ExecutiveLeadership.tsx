@@ -334,19 +334,49 @@ export const ExecutiveLeadership = () => {
                           ease: [0.215, 0.61, 0.355, 1] 
                         }}
                       >
-                        {/* Image wrapped in click link - Sized down, borderless and background-free */}
+                        {/* Image wrapped in click link - with 30-degree handwriting signature drawing in front */}
                         <a 
                           href={member.linkedin} 
                           target="_blank" 
                           rel="noopener noreferrer"
-                          className="relative w-full h-full flex items-center justify-center p-3 sm:p-4"
+                          className="relative w-full h-full flex items-center justify-center p-2 sm:p-3 rounded-2xl group/card cursor-pointer"
                           title={`View ${member.name}'s Profile`}
                         >
                           <img
                             src={member.image}
                             alt={member.name}
-                            className="w-full max-w-[185px] sm:max-w-[200px] md:max-w-[220px] h-auto object-contain transition-transform duration-500 group-hover:scale-105 block filter drop-shadow-[0_10px_25px_rgba(0,0,0,0.7)]"
+                            className="w-full max-w-[135px] sm:max-w-[150px] md:max-w-[165px] lg:max-w-[175px] h-auto object-contain transition-transform duration-500 group-hover:scale-105 block filter drop-shadow-[0_8px_20px_rgba(0,0,0,0.7)]"
                           />
+
+                          {/* Dynamic Signature drawing across the front from bottom-right on hover (moved down) */}
+                          <div className="absolute bottom-2 -right-1 sm:bottom-3 sm:right-0 md:bottom-4 md:right-1 pointer-events-none z-30 flex flex-col items-end -rotate-[10deg] origin-bottom-right opacity-0 group-hover:opacity-100 transition-all duration-400 ease-out transform translate-y-2 group-hover:translate-y-0">
+                            <div className="relative flex flex-col items-end">
+                              {/* Signature cursive name with left-to-right handwriting draw reveal */}
+                              <div className="[clip-path:inset(0_100%_0_0)] group-hover:[clip-path:inset(0_0%_0_0)] transition-[clip-path] duration-700 ease-out">
+                                <span
+                                  style={{ fontFamily: "'Alex Brush', 'Caveat', 'Great Vibes', cursive" }}
+                                  className="text-white text-2xl sm:text-3xl md:text-[34px] font-bold tracking-wider select-none drop-shadow-[0_4px_14px_rgba(0,0,0,1)] whitespace-nowrap block leading-none pr-1"
+                                >
+                                  {member.name}
+                                </span>
+                              </div>
+
+                              {/* Signature draw pen stroke underline */}
+                              <svg
+                                className="w-28 sm:w-32 md:w-36 h-4 text-rose-500 filter drop-shadow-[0_0_8px_rgba(244,63,94,1)] -mt-1 overflow-visible"
+                                viewBox="0 0 100 15"
+                                fill="none"
+                              >
+                                <path
+                                  d="M 2 8 C 30 2, 65 14, 98 6"
+                                  stroke="currentColor"
+                                  strokeWidth="2.5"
+                                  strokeLinecap="round"
+                                  className="transition-all duration-700 delay-150 ease-out [stroke-dasharray:120] [stroke-dashoffset:120] group-hover:[stroke-dashoffset:0]"
+                                />
+                              </svg>
+                            </div>
+                          </div>
                         </a>
                       </motion.div>
                     );

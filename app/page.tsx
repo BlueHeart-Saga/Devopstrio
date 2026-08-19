@@ -61,7 +61,7 @@ export default function Home() {
       <CommunityJoinSection />
 
       {/* 7.6. Founder & CEO Vision Quote */}
-      <FounderQuoteSection />
+      {/* <FounderQuoteSection /> */}
 
       {/* 8. Partners */}
       <PartnersSection />

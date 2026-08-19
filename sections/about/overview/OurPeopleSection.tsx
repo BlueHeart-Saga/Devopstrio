@@ -9,75 +9,81 @@ const teamMembers = [
   {
     name: "Suryaprakash S",
     role: "Cloud Solutions Engineer",
-    photo: "/assets/About-page/team/MeetOurTeam/Suriya.png",
+    photo: "/assets/About-page/team/MeetOurTeam/new/Suriya.png",
     rotate: "-rotate-2",
   },
   {
     name: "Hamsavarthiny P",
     role: "DevOps & Automation Lead",
-    photo: "/assets/About-page/team/MeetOurTeam/Humza.png",
+    photo: "/assets/About-page/team/MeetOurTeam/new/Humza.png",
     rotate: "-rotate-1",
   },
   {
     name: "Ananthalakshmi",
     role: "Senior Software Architect",
-    photo: "/assets/About-page/team/MeetOurTeam/Anantha%20Lakshmi.png",
+    photo: "/assets/About-page/team/MeetOurTeam/new/Anantha%20Lakshmi.png",
     rotate: "rotate-2",
   },
   {
     name: "Sagadevan",
     role: "Machine Learning Engineer",
-    photo: "/assets/About-page/team/MeetOurTeam/Sagadevan.png",
+    photo: "/assets/About-page/team/MeetOurTeam/new/Sagadevan.png",
     rotate: "rotate-2",
   },
   {
     name: "Subbiah Muthu",
     role: "Deep Learning Specialist",
-    photo: "/assets/About-page/team/MeetOurTeam/Subbiah.png",
+    photo: "/assets/About-page/team/MeetOurTeam/new/Subbiah.png",
     rotate: "-rotate-1",
   },
   {
     name: "Kishore",
     role: "AI Security Engineer",
-    photo: "/assets/About-page/team/MeetOurTeam/Kishore.png",
+    photo: "/assets/About-page/team/MeetOurTeam/new/Kishore.png",
     rotate: "rotate-3",
   },
   {
     name: "Sermaraja",
     role: "UI/UX Design Manager",
-    photo: "/assets/About-page/team/MeetOurTeam/serma%20raja.png",
+    photo: "/assets/About-page/team/MeetOurTeam/new/serma%20raja.png",
     rotate: "-rotate-2",
   },
   {
     name: "Thangalakshmi",
     role: "Cognitive Success Lead",
-    photo: "/assets/About-page/team/MeetOurTeam/Thanga%20laxmi.png",
+    photo: "/assets/About-page/team/MeetOurTeam/new/Thanga%20laxmi.png",
     rotate: "rotate-1",
   },
   {
     name: "Punitha",
     role: "Design Thinking Lead",
-    photo: "/assets/About-page/team/MeetOurTeam/Punitha.png",
+    photo: "/assets/About-page/team/MeetOurTeam/new/Punitha%20(2).png",
     rotate: "-rotate-3",
   },
   {
     name: "Ooviya",
     role: "SEO & Content Marketing",
-    photo: "/assets/About-page/team/MeetOurTeam/Oviya.png",
+    photo: "/assets/About-page/team/MeetOurTeam/new/Oviya.png",
     rotate: "rotate-2",
   },
   {
     name: "Saravanakumar S",
     role: "Platform Infrastructure Lead",
-    photo: "/assets/About-page/team/MeetOurTeam/Saravana%20Kumar.png",
+    photo: "/assets/About-page/team/MeetOurTeam/new/Saravana%20Kumar.png",
     rotate: "rotate-3",
   },
   {
     name: "Umamaheswari R",
     role: "AI & Data Engineering Lead",
-    photo: "/assets/About-page/team/MeetOurTeam/Uma.png",
+    photo: "/assets/About-page/team/MeetOurTeam/new/Uma.png",
     rotate: "-rotate-3",
   }
+  // {
+  //   name: "Mareeswaran",
+  //   role: "Full Stack Engineer",
+  //   photo: "/assets/About-page/team/MeetOurTeam/new/Mareeswaran.png",
+  //   rotate: "-rotate-2",
+  // },
 ];
 
 const eventImages = [
@@ -303,11 +309,11 @@ export function OurPeopleSection() {
                   </span>
                 </div>
 
-                {/* 4 Cards Per View Sliding Carousel Container */}
-                <div className="w-full overflow-hidden relative pb-4 pt-4 z-10">
+                {/* 4 Cards Per View Sliding Carousel Container (Ample top & bottom padding prevents hover clipping) */}
+                <div className="w-full relative pt-8 sm:pt-12 pb-6 sm:pb-8 -mt-4 sm:-mt-6 z-10">
                   <div
                     ref={teamScrollRef}
-                    className="no-scrollbar flex gap-6 overflow-x-auto snap-x snap-mandatory scroll-smooth pb-6 cursor-grab active:cursor-grabbing"
+                    className="no-scrollbar flex gap-6 overflow-x-auto snap-x snap-mandatory scroll-smooth pt-4 pb-6 px-2 cursor-grab active:cursor-grabbing"
                     style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
                   >
                     {teamMembers.map((member, idx) => (
@@ -316,19 +322,39 @@ export function OurPeopleSection() {
                         className="w-[calc(100%-16px)] sm:w-[calc(50%-12px)] md:w-[calc(33.333%-16px)] lg:w-[calc(25%-18px)] shrink-0 snap-start snap-always"
                       >
                         <motion.div
-                          className={`group relative w-full p-3.5 pb-6 bg-white border border-zinc-200/80 shadow-[0_14px_30px_rgba(0,0,0,0.3)] rounded cursor-pointer ${member.rotate} origin-center transition-all duration-300`}
-                          initial={{ opacity: 0, y: 35 }}
+                          className={`group relative w-full p-3 sm:p-3.5 pb-4 sm:pb-5 bg-white border border-zinc-200/90 shadow-[0_14px_30px_rgba(0,0,0,0.28)] rounded-2xl cursor-pointer ${member.rotate} origin-center transition-all duration-300 ease-out`}
+                          initial={{ opacity: 0, y: 30 }}
                           whileInView={{ opacity: 1, y: 0 }}
                           viewport={{ once: true }}
-                          transition={{ duration: 0.5, delay: (idx % 4) * 0.06 }}
-                          whileHover={{ y: -12, scale: 1.04, rotate: 0, zIndex: 50, boxShadow: "0 25px 50px -12px rgba(225,29,72,0.25)" }}
+                          transition={{ duration: 0.45, delay: (idx % 4) * 0.05 }}
+                          whileHover={{
+                            y: -14,
+                            scale: 1.03,
+                            rotate: 0,
+                            zIndex: 40,
+                            boxShadow: "0 28px 50px -12px rgba(0,0,0,0.45), 0 0 25px rgba(225,29,72,0.18)",
+                          }}
                         >
-                          <div className="relative w-full aspect-[3/4] rounded-sm overflow-hidden bg-zinc-100">
+                          {/* Photo Container */}
+                          <div className="relative w-full aspect-[3/4] rounded-xl overflow-hidden bg-zinc-100 shadow-inner">
                             <img
                               src={member.photo}
                               alt={member.name}
-                              className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                              className="w-full h-full object-cover object-top transition-transform duration-500 ease-out group-hover:scale-105"
+                              loading="lazy"
                             />
+                          </div>
+
+                          {/* Bottom Border / Polaroid Info Area that smoothly expands on hover revealing Signature Name */}
+                          <div className="w-full grid grid-rows-[0fr] group-hover:grid-rows-[1fr] opacity-0 group-hover:opacity-100 transition-all duration-300 ease-out">
+                            <div className="overflow-hidden pt-2 sm:pt-2.5 pb-1 flex items-center justify-center">
+                              <h4
+                                style={{ fontFamily: "'Caveat', 'Alex Brush', 'Kaushan Script', cursive" }}
+                                className="text-zinc-950 font-bold text-2xl sm:text-3xl md:text-[32px] tracking-wide text-center truncate w-full group-hover:text-rose-600 transition-colors duration-200 select-none drop-shadow-sm -rotate-1 inline-block leading-tight"
+                              >
+                                {member.name}
+                              </h4>
+                            </div>
                           </div>
                         </motion.div>
                       </div>

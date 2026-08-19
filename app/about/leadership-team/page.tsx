@@ -57,7 +57,7 @@ export default function LeadershipTeamPage() {
       {/* <SectionNavbar sections={leadershipSections} /> */}
 
       {/* 2. 8 Timeless Leadership Principles (Editorial Deck) */}
-      <LeadershipPrinciples />
+      {/* <LeadershipPrinciples /> */}
 
       {/* 3. 3 Strategic Pillars (Inspire, Empower, Deliver) */}
       <Leadership3Pillars />

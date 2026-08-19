@@ -122,6 +122,16 @@ export const GlobalEngineeringTeams = () => {
         <div className="text-center max-w-4xl mx-auto mb-8 sm:mb-12 pb-8 border-b border-zinc-900/60 relative z-10">
           <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl font-semibold tracking-tight text-white leading-tight font-sans">
             We are shaping the future of engineering,{" "}
+            {/* <span className="relative inline-block text-rose-500 font-semibold px-1">
+              <div className="absolute -top-8 sm:-top-10 md:-top-12 -right-12 sm:-right-16 md:-right-20 z-20 pointer-events-none select-none">
+                <img
+                  src="/assets/components/lefttoright.png"
+                  alt="Arrow indicator"
+                  className="w-14 sm:w-16 md:w-20 lg:w-22 h-auto object-contain filter drop-shadow-[0_0_15px_rgba(244,63,94,0.5)] scale-x-[-1]"
+                />
+              </div>
+              empowering
+            </span> */}
             <span className="text-zinc-400 font-normal">
               empowering visionary leaders and world-class teams to build what&apos;s next.
             </span>

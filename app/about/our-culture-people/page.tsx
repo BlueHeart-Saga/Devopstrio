@@ -57,7 +57,7 @@ export default function LifeAtDevopstrioPage() {
       {/* <EngineeringCulture /> */}
 
       {/* 5. Journey Timeline */}
-      <JourneyTimeline />
+      {/* <JourneyTimeline /> */}
 
         {/* 2. Culture Manifesto */}
       <CultureManifesto />

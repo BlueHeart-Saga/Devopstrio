@@ -1,9 +1,12 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { Reveal } from "@/components/ui/Reveal";
 import { CheckCircle2, Globe2, Users2, TrendingUp, Zap, ShieldCheck, Server, BrainCircuit, ArrowUpRight } from "lucide-react";
 import Link from "next/link";
+import { WhoWeAreVisual } from "./WhoWeAreVisual";
+import { TableToTextVisual } from "./TableToTextVisual";
 
 const stats = [
   { value: "7+", label: "Years of Excellence" },
@@ -13,11 +16,36 @@ const stats = [
 ];
 
 const whatWeDo = [
-  { prefix: "We conduct ", highlight: "AI-centric digital transformation", suffix: " from strategy to scalable execution" },
-  { prefix: "We engineer secure, ", highlight: "cloud-native, data-driven solutions", suffix: " for complex enterprise landscapes" },
-  { prefix: "We modernize ", highlight: "core systems", suffix: " to optimize performance, enable innovation and unlock long-term value" },
-  { prefix: "We apply our deep expertise from highly regulated environments to deliver security by design across ", highlight: "industries", suffix: "" },
-  { prefix: "We partner with ", highlight: "leading technology providers", suffix: " to create resilient, future-ready platforms" },
+  {
+    prefix: "We conduct ",
+    highlight: "AI-centric digital transformation",
+    suffix: " from strategy to scalable execution",
+    tableMessage: "We conduct AI-centric digital transformation.",
+  },
+  {
+    prefix: "We engineer secure, ",
+    highlight: "cloud-native, data-driven solutions",
+    suffix: " for complex enterprise landscapes",
+    tableMessage: "We engineer cloud-native, data-driven solutions.",
+  },
+  {
+    prefix: "We modernize ",
+    highlight: "core systems",
+    suffix: " to optimize performance, enable innovation and unlock long-term value",
+    tableMessage: "We modernize mission-critical core systems.",
+  },
+  {
+    prefix: "We apply our deep expertise from highly regulated environments to deliver security by design across ",
+    highlight: "industries",
+    suffix: "",
+    tableMessage: "We deliver security by design across global industries.",
+  },
+  {
+    prefix: "We partner with ",
+    highlight: "leading technology providers",
+    suffix: " to create resilient, future-ready platforms",
+    tableMessage: "We partner with global tech leaders to build resilient platforms.",
+  },
 ];
 
 const howWeWork = [
@@ -44,6 +72,9 @@ const services = [
 ];
 
 export function CompanyOverviewSection() {
+  const [whoKey, setWhoKey] = useState<"W" | "E">("W");
+  const [selectedTableText, setSelectedTableText] = useState("We are innovative solutions.");
+
   return (
     <section className="bg-black text-white relative overflow-hidden">
       {/* Ambient glow */}
@@ -107,9 +138,9 @@ export function CompanyOverviewSection() {
                 {/* <span className="inline-block px-3 py-1 text-[10px] font-bold tracking-[0.2em] uppercase text-rose-500 border border-rose-500/30 rounded-none bg-black/40">
                   WHO WE ARE
                 </span> */}
-                 <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-rose-500 block">
+                 {/* <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-rose-500 block">
                     OUR PHILOSOPHY
-                  </span>
+                  </span> */}
                 <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight leading-tight text-white max-w-[420px]">
                   Powering Digital Evolution Through Precision Engineering
                 </h3>
@@ -168,48 +199,99 @@ export function CompanyOverviewSection() {
 
       {/* ── 2: Who We Are + What We Do ── */}
       <div className="border-t border-zinc-900">
-        <div className="max-w-7xl mx-auto px-6 lg:px-16 relative z-10 py-16 lg:py-24 space-y-16 lg:space-y-20">
+        <div className="max-w-7xl mx-auto px-6 lg:px-16 relative z-10 py-12 lg:py-16 space-y-12 lg:space-y-16">
 
-          {/* Top: Who We Are */}
+          {/* Top: Who We Are (Seamless Black Theme Centerpiece + Interactive Story Below) */}
           <Reveal>
-            <div className="max-w-4xl lg:max-w-5xl space-y-6">
-              <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight">
-                Who We Are
-              </h3>
-              <p className="text-zinc-300 text-lg sm:text-xl lg:text-2xl leading-relaxed font-normal">
-                We have been called the industry&apos;s &lsquo;best-kept secret&rsquo;. But to those in the know we have delivered complex, high-stakes, business critical digital services for over 7 years. What began as a focused engineering startup has grown into a global force, carrying out responsible AI-enabled digital transformation projects around the world.
-              </p>
+            <div className="space-y-8 sm:space-y-10 max-w-5xl mx-auto">
+              {/* Centered Who [W] [E] ARE visual */}
+              <div className="w-full flex justify-center">
+                <WhoWeAreVisual
+                  className="w-full"
+                  selectedKey={whoKey}
+                  onKeyClick={(key) => setWhoKey(key)}
+                />
+              </div>
+
+              {/* Dynamic Narrative Paragraph that switches on W / E press */}
+              <div className="max-w-4xl mx-auto text-center px-4 min-h-[120px] sm:min-h-[96px] flex items-center justify-center">
+                <AnimatePresence mode="wait">
+                  {whoKey === "W" ? (
+                    <motion.div
+                      key="who-we-are"
+                      initial={{ opacity: 0, y: 8 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -8 }}
+                      transition={{ duration: 0.22 }}
+                    >
+                      <p className="text-zinc-300 text-lg sm:text-xl lg:text-2xl leading-relaxed font-normal">
+                        <span className="text-white font-semibold">We are</span> the industry&apos;s &lsquo;best-kept secret&rsquo;. But to those in the know we have delivered complex, high-stakes, business critical digital services for over 7 years. What began as a focused engineering startup has grown into a global force, carrying out responsible AI-enabled digital transformation projects around the world.
+                      </p>
+                    </motion.div>
+                  ) : (
+                    <motion.div
+                      key="engineering-solutions"
+                      initial={{ opacity: 0, y: 8 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -8 }}
+                      transition={{ duration: 0.22 }}
+                    >
+                      <p className="text-zinc-300 text-lg sm:text-xl lg:text-2xl leading-relaxed font-normal">
+                        <span className="text-white font-semibold">Engineering our solutions</span> with enterprise precision and global scale. We partner with forward-thinking leaders to architect resilient cloud-native ecosystems, automate mission-critical pipelines, and deploy responsible AI systems that deliver measurable business impact.
+                      </p>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
             </div>
           </Reveal>
 
           {/* Horizontal Divider */}
           <div className="border-t border-zinc-800/80 w-full" />
 
-          {/* Bottom: What We Do (Indented to the right) */}
+          {/* Bottom: What We Do (Featuring TableToText Strategy Card + Capabilities) */}
           <Reveal delay={0.08}>
-            <div className="grid grid-cols-1 lg:grid-cols-12">
-              <div className="lg:col-start-3 lg:col-span-10 space-y-8">
-                <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight">
+            <div className="space-y-12 lg:space-y-16">
+              
+              {/* Heading */}
+              <div className="space-y-4 max-w-3xl">
+                {/* <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-500/10 border border-rose-500/25 text-rose-400 text-xs font-mono uppercase tracking-widest">
+                  <span className="w-2 h-2 rounded-full bg-rose-500 animate-pulse" />
+                  WHAT WE DO
+                </div> */}
+                <h3 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-white tracking-tight leading-tight">
                   What We Do
                 </h3>
-                <ul className="space-y-6 lg:space-y-7">
-                  {whatWeDo.map((item, i) => (
-                    <li key={i} className="flex items-start gap-4">
-                      {/* Filled square bullet matching reference */}
-                      <span className="mt-3 w-2 h-2 rounded-none bg-rose-500 shrink-0" />
-                      <span className="text-zinc-300 text-lg sm:text-xl lg:text-2xl leading-relaxed">
-                        {item.prefix}
-                        {item.highlight && (
-                          <span className="text-white font-medium underline underline-offset-4 decoration-rose-500/70 hover:text-rose-400 transition-colors">
-                            {item.highlight}
-                          </span>
-                        )}
-                        {item.suffix}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
               </div>
+
+              {/* Table-To-Text Creative Meeting Table Card with Auto-Rotating Messages */}
+              <TableToTextVisual />
+
+              {/* Capabilities List commented out */}
+              {/* <div className="grid grid-cols-1 lg:grid-cols-12 pt-2">
+                <div className="lg:col-span-12 space-y-6">
+                  <ul className="space-y-5 lg:space-y-6">
+                    {whatWeDo.map((item, i) => (
+                      <li
+                        key={i}
+                        className="flex items-start gap-4 p-4 -mx-4 rounded-2xl hover:bg-zinc-900/60 border border-transparent hover:border-zinc-800 transition-all duration-200 cursor-pointer group"
+                      >
+                        <span className="mt-3 w-2.5 h-2.5 rounded-none bg-rose-500 shrink-0 group-hover:scale-125 transition-transform" />
+                        <span className="text-zinc-300 text-lg sm:text-xl lg:text-2xl leading-relaxed">
+                          {item.prefix}
+                          {item.highlight && (
+                            <span className="text-white font-medium underline underline-offset-4 decoration-rose-500/70 group-hover:text-rose-400 transition-colors">
+                              {item.highlight}
+                            </span>
+                          )}
+                          {item.suffix}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div> */}
+
             </div>
           </Reveal>
 
@@ -222,8 +304,12 @@ export function CompanyOverviewSection() {
           {stats.map((s, i) => (
             <Reveal key={i} delay={i * 0.06}>
               <div className="text-center">
-                <div className="text-4xl sm:text-5xl font-black  font-bold text-rose-500 tracking-tight leading-none mb-2">{s.value}</div>
-                <div className="text-[19px] sm:text-xs font-bold text-zinc-400 uppercase tracking-[0.2em] font-mono">{s.label}</div>
+                <div className="text-4xl sm:text-5xl lg:text-6xl font-black text-rose-500 tracking-tight leading-none mb-2.5">
+                  {s.value}
+                </div>
+                <div className="text-sm sm:text-base lg:text-lg font-semibold text-zinc-300 tracking-wide">
+                  {s.label}
+                </div>
               </div>
             </Reveal>
           ))}
