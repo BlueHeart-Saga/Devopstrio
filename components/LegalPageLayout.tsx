@@ -5,6 +5,7 @@ import Link from "next/link";
 import { ChevronRight, Calendar, ArrowUp, Printer, Mail, Scale } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Reveal } from "@/components/ui/Reveal";
+import { RepresentativeCTA } from "@/components/ui/RepresentativeCTA";
 
 interface Section {
   id: string;
@@ -44,7 +45,6 @@ export function LegalPageLayout({
       (entries) => {
         const visibleEntries = entries.filter((entry) => entry.isIntersecting);
         if (visibleEntries.length > 0) {
-          // Sort by top position to pick the highest visible one
           const sorted = visibleEntries.sort(
             (a, b) => a.boundingClientRect.top - b.boundingClientRect.top
           );
@@ -52,7 +52,7 @@ export function LegalPageLayout({
         }
       },
       {
-        rootMargin: "-10% 0px -70% 0px", // triggers when section is near top of viewport
+        rootMargin: "-10% 0px -70% 0px",
         threshold: 0.1
       }
     );
@@ -72,7 +72,7 @@ export function LegalPageLayout({
   const scrollToSection = (id: string) => {
     const el = document.getElementById(id);
     if (el) {
-      const yOffset = -90; // Adjust for sticky header
+      const yOffset = -90;
       const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
       window.scrollTo({ top: y, behavior: "smooth" });
       setActiveSection(id);
@@ -201,22 +201,17 @@ export function LegalPageLayout({
               </div>
             </div>
 
-            {/* Bottom Help Card */}
-            <div className="bg-gradient-to-r from-zinc-950 via-zinc-950 to-[#0c0305] border border-zinc-850 rounded-3xl p-8 md:p-10 flex flex-col md:flex-row items-center justify-between gap-6 relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-rose-600/[0.015] blur-[80px] rounded-full pointer-events-none" />
-              <div>
-                <h3 className="text-lg font-bold text-white mb-2">Have questions about our terms or practices?</h3>
-                <p className="text-xs text-zinc-500 max-w-xl">
-                  Our dedicated trust, risk, and compliance department is here to help address any inquiries regarding data protection, security controls, or service definitions.
-                </p>
-              </div>
-              <Link
-                href="/contact#contact-form"
-                className="gap-2 inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase border border-zinc-850 hover:border-zinc-750 bg-zinc-950/60 hover:bg-zinc-900 text-white transition-all duration-300 hover:-translate-y-0.5"
-              >
-                <Mail size={13} />
-                Contact Trust Team
-              </Link>
+            {/* Reusable Representative CTA Component */}
+            <div className="-mx-6 sm:-mx-8 lg:-mx-12">
+              <RepresentativeCTA
+                title="Have Questions About Our"
+                highlightText="Terms Or Practices?"
+                description="Our dedicated trust, risk, and compliance department is here to help address any inquiries regarding data protection, security controls, or service definitions."
+                primaryBtnText="CONTACT TRUST TEAM"
+                primaryBtnHref="/contact#contact-form"
+                secondaryBtnText="VIEW PRIVACY POLICY"
+                secondaryBtnHref="/privacy-policy"
+              />
             </div>
           </main>
         </div>

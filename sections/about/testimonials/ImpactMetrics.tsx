@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const metrics = [
   { value: 40, suffix: "%", label: "Average Cloud Cost Savings", decimal: false },
@@ -30,8 +31,6 @@ function AnimatedNumber({ target, suffix, decimal, active }: {
   return <>{decimal ? count.toFixed(2) : count}{suffix}</>;
 }
 
-import Link from "next/link";
-
 export const ImpactMetrics = () => {
   const [visible, setVisible] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
@@ -43,39 +42,22 @@ export const ImpactMetrics = () => {
   }, []);
 
   return (
-    <section className="py-24 bg-[#050505] border-t border-zinc-900 relative overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_60%_at_50%_50%,rgba(255,23,68,0.07),transparent)]" />
-
+    <section className="py-16 sm:py-24 bg-black border-t border-zinc-900 relative overflow-hidden font-sans">
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="text-center mb-16">
-          <motion.span
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 block mb-4"
-          >
-            Impact at Scale
-          </motion.span>
+        
+        {/* Semibold Header, Subtitle Removed */}
+        <div className="text-center mb-14">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-4"
+            className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-white font-sans"
           >
-            Outcomes That <span className="text-rose-500">Speak for Themselves</span>
+            Outcomes That <span className="text-rose-600 font-semibold">Speak for Themselves</span>
           </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-zinc-400 text-sm md:text-base leading-relaxed font-bold max-w-xl mx-auto mb-8"
-          >
-            Delivering high impact across all cloud environments. Learn how our <Link href="/services/managed-services" className="text-rose-500 hover:underline">managed support services</Link> and <Link href="/services/cybersecurity" className="text-rose-500 hover:underline">cybersecurity</Link> audits drive savings.
-          </motion.p>
         </div>
 
-        <div ref={ref} className="grid grid-cols-2 md:grid-cols-3 gap-5">
+        <div ref={ref} className="grid grid-cols-2 md:grid-cols-3 gap-6">
           {metrics.map((m, idx) => (
             <motion.div
               key={idx}
@@ -83,17 +65,16 @@ export const ImpactMetrics = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: idx * 0.08 }}
-              className="relative group bg-zinc-900/40 border border-zinc-800 rounded-2xl p-8 text-center overflow-hidden hover:border-rose-500/30 transition-colors"
+              className="relative group bg-zinc-950/80 border border-zinc-800/80 rounded-2xl p-6 sm:p-8 text-center overflow-hidden hover:border-rose-500/40 transition-all duration-300"
             >
-              <div className="absolute inset-0 bg-gradient-to-b from-rose-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               <div className="relative z-10">
-                <div className="text-5xl md:text-6xl font-black text-rose-500 mb-3 leading-none tabular-nums">
+                <div className="text-3xl sm:text-4xl font-bold font-mono text-rose-500 mb-2 leading-none">
                   {"static" in m
                     ? m.value
                     : <AnimatedNumber target={m.value as number} suffix={m.suffix} decimal={m.decimal} active={visible} />
                   }
                 </div>
-                <p className="text-zinc-400 text-sm font-medium">{m.label}</p>
+                <p className="text-base font-semibold text-zinc-300 font-sans mt-2">{m.label}</p>
               </div>
             </motion.div>
           ))}

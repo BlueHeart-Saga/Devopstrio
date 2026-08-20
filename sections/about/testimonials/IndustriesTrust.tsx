@@ -1,8 +1,8 @@
-
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
+import Link from "next/link";
 
 const industries = [
   { image: "/assets/Home-page/industries-icon/Banking.png", name: "Banking & Finance", projects: "300+ projects" },
@@ -32,42 +32,22 @@ const certifications = [
   { name: "IBM Gold Partner", image: "/assets/Awards/IBM_Gold_Partner.png" },
 ];
 
-import Link from "next/link";
-
 export const IndustriesTrust = () => {
   return (
-    <section className="py-24 bg-[#0A0A0A] border-t border-zinc-900 relative overflow-hidden">
-      <div className="absolute -left-40 bottom-0 w-96 h-96 rounded-full bg-red-500/5 blur-[120px] pointer-events-none" />
-
+    <section className="py-16 sm:py-24 bg-black border-t border-zinc-900 relative overflow-hidden font-sans">
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        {/* Industries */}
-        <div className="mb-32">
-          <div className="text-center max-w-3xl mx-auto mb-14">
-            <motion.span
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block"
-            >
-              Industries We Serve
-            </motion.span>
+        
+        {/* Industries Header, Subtitle Removed */}
+        <div className="mb-20">
+          <div className="text-center max-w-3xl mx-auto mb-12">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white"
+              className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-white font-sans"
             >
-              Expertise Across <span className="text-rose-500">Every Sector</span>
+              Expertise Across <span className="text-rose-600 font-semibold">Every Sector</span>
             </motion.h2>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="text-zinc-400 text-base md:text-lg leading-relaxed"
-            >
-              Delivering tailored technology solutions that address the unique challenges of your specific industry. Check out our <Link href="/services" className="text-rose-500 hover:underline font-bold">digital services</Link> list.
-            </motion.p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -79,31 +59,29 @@ export const IndustriesTrust = () => {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: idx * 0.05 }}
-                className="group flex flex-col justify-between h-full bg-zinc-950/40 border border-white/5 rounded-3xl p-8 hover:border-rose-500/35 hover:bg-zinc-950/60 transition-all duration-300 hover:scale-[1.01] text-center relative overflow-hidden cursor-pointer backdrop-blur-sm shadow-[0_8px_32px_rgba(0,0,0,0.5)]"
+                className="group flex flex-col justify-between h-full bg-zinc-950/80 border border-zinc-800 rounded-3xl p-6 sm:p-8 hover:border-rose-500/40 hover:bg-zinc-900/60 transition-all duration-300 text-center relative overflow-hidden cursor-pointer shadow-xl"
               >
-                <div className="absolute top-0 right-0 w-28 h-28 bg-[radial-gradient(circle_at_center,rgba(244,63,94,0.03),transparent_75%)] opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
-                
                 <div>
-                  <div className="mb-8 flex items-center justify-center">
+                  <div className="mb-6 flex items-center justify-center">
                     <img 
                       src={ind.image} 
                       alt={ind.name} 
-                      className="w-32 h-32 md:w-40 md:h-40 object-contain drop-shadow-2xl group-hover:scale-110 transition-all duration-500 pointer-events-none select-none"
+                      className="w-28 h-28 sm:w-32 sm:h-32 object-contain group-hover:scale-110 transition-transform duration-500"
                     />
                   </div>
                   
-                  <h3 className="text-base md:text-lg font-bold text-rose-500 mb-3 group-hover:text-rose-400 transition-colors uppercase tracking-wide">
+                  <h3 className="text-xl font-bold text-rose-500 mb-2 group-hover:text-rose-400 transition-colors uppercase tracking-wide font-sans">
                     {ind.name}
                   </h3>
                   
-                  <p className="text-xs text-zinc-400 leading-relaxed font-bold transition-colors">
+                  <p className="text-sm text-zinc-300 font-bold font-mono">
                     {ind.projects}
                   </p>
                 </div>
 
-                <div className="border-t border-zinc-900/60 pt-4 mt-6 flex justify-center">
-                  <span className="text-[9px] text-rose-500 font-bold uppercase tracking-wider transition-transform duration-300 inline-flex items-center gap-1.5 group-hover:translate-y-[-2px]">
-                    Explore Sector <ArrowUpRight size={13} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                <div className="border-t border-zinc-800/80 pt-4 mt-6 flex justify-center">
+                  <span className="text-xs text-rose-500 font-bold uppercase tracking-wider inline-flex items-center gap-1.5 font-mono">
+                    Explore Sector <ArrowUpRight size={14} />
                   </span>
                 </div>
               </motion.a>
@@ -112,35 +90,19 @@ export const IndustriesTrust = () => {
         </div>
 
         {/* Strategic partnerships and Awards */}
-        <div className="pt-16 border-t border-zinc-800/60">
-          <div className="text-center max-w-3xl mx-auto mb-14">
-            <motion.span
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block"
-            >
-              Partners & Awards
-            </motion.span>
+        <div className="pt-16 border-t border-zinc-900">
+          <div className="text-center max-w-3xl mx-auto mb-12">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white"
+              className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-white font-sans"
             >
-              Strategic Partnerships &amp; <span className="text-rose-500">Recognition</span>
+              Strategic Partnerships &amp; <span className="text-rose-600 font-semibold">Recognition</span>
             </motion.h2>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-zinc-400 text-base md:text-lg leading-relaxed"
-            >
-              Recognized by industry leaders for delivering excellence in modern <Link href="/services/software-development" className="text-rose-500 hover:underline font-bold">software engineering</Link> and <Link href="/services/cloud-services" className="text-rose-500 hover:underline font-bold">cloud engineering</Link> standards. Read our <Link href="/about/awards-recognition" className="text-rose-500 hover:underline font-bold">awards and recognition</Link> page.
-            </motion.p>
           </div>
 
-          <div className="flex flex-col gap-16">
+          <div className="flex flex-col gap-14">
             {/* Tech Partners */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -150,10 +112,10 @@ export const IndustriesTrust = () => {
             >
               {techPartners.map((partner, idx) => (
                 <div key={idx} className="group flex flex-col items-center gap-3">
-                  <div className="w-16 h-16 md:w-20 md:h-20 bg-zinc-900/40 rounded-2xl border border-zinc-800/80 flex items-center justify-center p-3 md:p-4 group-hover:bg-zinc-800/60 transition-colors shadow-lg group-hover:-translate-y-1 duration-300">
+                  <div className="w-16 h-16 md:w-20 md:h-20 bg-zinc-950/80 rounded-2xl border border-zinc-800 flex items-center justify-center p-3 md:p-4 group-hover:border-rose-500/40 transition-colors shadow-lg">
                     <img src={partner.logo} alt={partner.name} className="w-full h-full object-contain transition-all duration-300" />
                   </div>
-                  <span className="text-xs font-medium text-zinc-500 group-hover:text-zinc-300 transition-colors">{partner.name}</span>
+                  <span className="text-sm font-bold text-zinc-300 group-hover:text-white transition-colors font-sans">{partner.name}</span>
                 </div>
               ))}
             </motion.div>
@@ -167,8 +129,8 @@ export const IndustriesTrust = () => {
               className="flex flex-wrap items-center justify-center gap-6 md:gap-10"
             >
               {certifications.map((cert, idx) => (
-                <div key={idx} className="w-32 md:w-40 bg-zinc-900/20 rounded-2xl border border-white/5 p-4 md:p-6 flex flex-col items-center justify-center group hover:bg-zinc-900/40 hover:border-white/10 transition-all shadow-xl hover:-translate-y-1 duration-300">
-                  <img src={cert.image} alt={cert.name} className="w-full aspect-square object-contain drop-shadow-md transition-all duration-300 group-hover:scale-105" />
+                <div key={idx} className="w-32 md:w-40 bg-zinc-950/80 rounded-2xl border border-zinc-800 p-4 md:p-6 flex flex-col items-center justify-center group hover:border-rose-500/40 transition-all shadow-xl">
+                  <img src={cert.image} alt={cert.name} className="w-full aspect-square object-contain transition-all duration-300 group-hover:scale-105" />
                 </div>
               ))}
             </motion.div>

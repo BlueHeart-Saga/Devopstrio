@@ -3,6 +3,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 type AvatarItem = 
   | { type: "empty" }
@@ -14,33 +15,22 @@ type AvatarColumn = {
 };
 
 const avatarColumns: AvatarColumn[] = [
-  // Col 1 (Far left)
   { hideOn: "lg", items: [{ type: "empty" }, { type: "image", src: "image 164.png" }, { type: "image", src: "image 165.png" }] },
-  // Col 2
   { hideOn: "md", items: [{ type: "image", src: "image 166.png" }, { type: "image", src: "image 167.png" }] },
-  // Col 3
   { hideOn: "none", items: [{ type: "empty" }, { type: "image", src: "image 168.png" }] },
-  // Col 4
   { hideOn: "none", items: [{ type: "image", src: "image 169.png" }] },
-  // Col 5 (Center)
   { hideOn: "none", items: [{ type: "empty" }, { type: "image", src: "image 170.png" }] },
-  // Col 6
   { hideOn: "none", items: [{ type: "image", src: "image 171.png" }] },
-  // Col 7
   { hideOn: "none", items: [{ type: "empty" }, { type: "image", src: "image 172.png" }] },
-  // Col 8
   { hideOn: "md", items: [{ type: "image", src: "image 173.png" }, { type: "image", src: "image 174.png", tilt: true }] },
-  // Col 9 (Far right)
   { hideOn: "lg", items: [{ type: "empty" }, { type: "image", src: "image 175.png" }, { type: "image", src: "image 176.png" }] },
 ];
-
-import Link from "next/link";
 
 export const TestimonialsHero = () => {
   return (
     <section className="relative min-h-[100dvh] flex flex-col justify-end overflow-hidden bg-black pt-32 pb-20 md:pb-28">
       
-      {/* Faint vertical dashed lines background full width */}
+      {/* Faint vertical dashed lines background */}
       <div className="absolute inset-0 flex justify-evenly pointer-events-none opacity-20">
         {[...Array(11)].map((_, i) => (
           <div 
@@ -98,32 +88,23 @@ export const TestimonialsHero = () => {
 
       {/* Text Content */}
       <div className="relative z-20 flex flex-col items-center text-center px-6 mt-auto pt-[40vh]">
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5, delay: 0.4 }}
-          className="px-5 py-2 bg-zinc-900/80 backdrop-blur-md border border-zinc-800 rounded-full text-xs font-semibold tracking-widest uppercase text-zinc-300 mb-8 shadow-xl"
-        >
-          Testimonials
-        </motion.div>
-
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.5 }}
-          className="text-5xl md:text-7xl lg:text-[76px] font-bold text-white tracking-tight mb-8 leading-[1.05] max-w-5xl drop-shadow-2xl"
+          className="text-4xl sm:text-6xl md:text-7xl lg:text-[76px] font-semibold text-white tracking-tight mb-8 leading-[1.05] max-w-5xl drop-shadow-2xl font-sans"
         >
-          Trusted by leaders<br className="hidden md:block"/>
-          <span className="text-zinc-500"> from various industries</span>
+          Trusted by Leaders <br className="hidden md:block"/>
+          <span className="text-rose-600 font-semibold">Across Global Industries</span>
         </motion.h1>
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.6 }}
-          className="text-lg md:text-xl text-zinc-400 max-w-2xl mb-12 font-medium leading-relaxed"
+          className="text-lg md:text-xl text-zinc-300 max-w-2xl mb-10 font-normal leading-relaxed font-sans"
         >
-          Learn why professionals trust our solutions to complete their customer journeys. Discover our <Link href="/services" className="text-white hover:underline font-bold">digital services</Link> and read our <Link href="/about/overview" className="text-white hover:underline font-bold">company overview</Link>.
+          Learn why enterprise technology teams trust our engineering execution models. Discover our <Link href="/services/software-development/product-engineering" className="text-rose-500 hover:underline font-bold">digital services</Link> and read our <Link href="/about/company-overview" className="text-rose-500 hover:underline font-bold font-sans">company overview</Link>.
         </motion.p>
 
         <motion.a
@@ -131,7 +112,7 @@ export const TestimonialsHero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.7 }}
-          className="inline-flex items-center gap-3 px-8 py-4 bg-white hover:bg-zinc-200 text-black rounded-full font-semibold transition-all shadow-[0_10px_30px_rgba(255,255,255,0.1)] hover:shadow-[0_15px_40px_rgba(255,255,255,0.2)] hover:-translate-y-1"
+          className="inline-flex items-center gap-3 px-8 py-4 bg-white hover:bg-zinc-200 text-black rounded-full font-bold transition-all shadow-[0_10px_30px_rgba(255,255,255,0.1)] hover:shadow-[0_15px_40px_rgba(255,255,255,0.2)] hover:-translate-y-1 font-sans"
         >
           Read Success Stories
           <ArrowRight className="w-4 h-4" />

@@ -28,7 +28,7 @@ export const metadata: Metadata = {
 
 export default function TestimonialsPage() {
   return (
-    <main className="min-h-screen bg-[#050505] text-white font-sans overflow-x-hidden">
+    <main className="min-h-screen bg-black text-white font-sans overflow-x-hidden">
       <BreadcrumbSchema
         items={[
           { name: "Home", item: "/" },
@@ -43,10 +43,10 @@ export default function TestimonialsPage() {
       {/* 2. Featured Client Success */}
       <FeaturedSuccess />
 
-      {/* 3. Client Testimonials (filterable) */}
+      {/* 3. Client Testimonials */}
       <ClientTestimonials />
 
-      {/* 4. Impact Metrics (animated counters) */}
+      {/* 4. Impact Metrics */}
       <ImpactMetrics />
 
       {/* 5. Success by Service Area */}
@@ -58,7 +58,7 @@ export default function TestimonialsPage() {
       {/* 7. Industries & Trust Signals */}
       <IndustriesTrust />
 
-      {/* 8. Final CTA */}
+      {/* 8. Global CTA Component */}
       <TestimonialsCTA />
     </main>
   );

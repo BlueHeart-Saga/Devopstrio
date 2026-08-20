@@ -933,7 +933,7 @@ export function Navbar() {
                     <div className="col-span-2 flex flex-col pl-2">
                       {/* Single Heading spanning across */}
                       <div className="pb-3 mb-4 border-b border-zinc-800/80 flex items-center justify-between">
-                        <span className="text-xs font-mono tracking-widest text-zinc-400 uppercase font-semibold">
+                        <span className="text-sm font-semibold tracking-wider text-rose-500 uppercase font-mono">
                           CORE & AI SERVICES
                         </span>
                         <Link
@@ -965,7 +965,7 @@ export function Navbar() {
                               onClick={() => setActiveMenu(null)}
                               className="group/ind block py-1.5 px-3 rounded-lg hover:bg-zinc-900/50 transition-colors"
                             >
-                              <span className="block text-[15px] font-semibold text-zinc-100 group-hover/ind:text-rose-400 transition-colors">
+                              <span className="block text-base font-semibold text-zinc-100 group-hover/ind:text-rose-400 transition-colors">
                                 {item.name}
                               </span>
                             </Link>
@@ -990,7 +990,7 @@ export function Navbar() {
                               onClick={() => setActiveMenu(null)}
                               className="group/ind block py-1.5 px-2.5 rounded-lg hover:bg-zinc-900/40 transition-colors"
                             >
-                              <span className="block text-[14px] font-semibold text-zinc-200 group-hover/ind:text-rose-400 transition-colors">
+                              <span className="block text-base font-semibold text-zinc-200 group-hover/ind:text-rose-400 transition-colors">
                                 {item.name}
                               </span>
                             </Link>
@@ -1080,7 +1080,7 @@ export function Navbar() {
 
                     {/* Right industries list grid */}
                     <div>
-                      <span className="text-xs font-mono tracking-widest text-zinc-500 uppercase block mb-4">Target Sectors</span>
+                      <span className="text-sm font-semibold tracking-wider text-rose-500 uppercase block mb-4 font-mono">Target Sectors</span>
                       <div className="max-h-[380px] overflow-y-auto overscroll-contain pr-2 custom-scrollbar">
                         <div className="grid grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-1">
                           {industriesList.map((ind) => (
@@ -1090,7 +1090,7 @@ export function Navbar() {
                               onClick={() => setActiveMenu(null)}
                               className="group/ind block p-2 rounded-lg hover:bg-zinc-900/30 transition-colors"
                             >
-                              <span className="block text-[15px] font-semibold text-white group-hover/ind:text-rose-500 transition-colors mb-1">
+                              <span className="block text-base font-semibold text-white group-hover/ind:text-rose-500 transition-colors mb-1">
                                 {ind.name}
                               </span>
                               {/* <span className="block text-[13px] text-zinc-400 font-medium leading-relaxed">
@@ -1183,7 +1183,7 @@ export function Navbar() {
                     <div className="col-span-2 flex flex-col pl-2">
                       {/* Single Heading spanning across */}
                       <div className="pb-3 mb-4 border-b border-zinc-800/80 flex items-center justify-between">
-                        <span className="text-xs font-mono tracking-widest text-zinc-400 uppercase font-semibold">
+                        <span className="text-sm font-semibold tracking-wider text-rose-500 uppercase font-mono">
                           ECOSYSTEM PILLARS
                         </span>
                         <a
@@ -1215,7 +1215,7 @@ export function Navbar() {
                               onClick={() => setActiveMenu(null)}
                               className="group/eco block py-2 px-3 rounded-lg hover:bg-zinc-900/40 transition-colors"
                             >
-                              <span className="block text-[15px] font-semibold text-zinc-200 group-hover/eco:text-rose-500 transition-colors mb-0.5">
+                              <span className="block text-base font-semibold text-zinc-200 group-hover/eco:text-rose-500 transition-colors mb-0.5">
                                 {item.name}
                               </span>
                               <span className="block text-xs text-zinc-400 font-medium">
@@ -1239,7 +1239,7 @@ export function Navbar() {
                               onClick={() => setActiveMenu(null)}
                               className="group/eco block py-2 px-3 rounded-lg hover:bg-zinc-900/40 transition-colors"
                             >
-                              <span className="block text-[15px] font-semibold text-zinc-200 group-hover/eco:text-rose-500 transition-colors mb-0.5">
+                              <span className="block text-base font-semibold text-zinc-200 group-hover/eco:text-rose-500 transition-colors mb-0.5">
                                 {item.name}
                               </span>
                               <span className="block text-xs text-zinc-400 font-medium">
@@ -1332,7 +1332,7 @@ export function Navbar() {
 
                     {/* Middle sidebar with dynamic sections */}
                     <div className="flex flex-col border-r border-zinc-900 pr-4 gap-1">
-                      <span className="text-xs font-mono tracking-widest text-zinc-500 uppercase block px-3 mb-2">Insights Hubs</span>
+                      <span className="text-sm font-semibold tracking-wider text-rose-500 uppercase block px-3 mb-2 font-mono">Insights Hubs</span>
                       {insightsSections.map((sec: InsightsSection) => (
                         <button
                           key={sec.slug}
@@ -1353,7 +1353,7 @@ export function Navbar() {
 
                     {/* Right panel with active section categories */}
                     <div className="flex flex-col">
-                      <span className="text-xs font-mono tracking-widest text-zinc-500 uppercase block px-2 mb-2">Categories</span>
+                      <span className="text-sm font-semibold tracking-wider text-rose-500 uppercase block px-2 mb-2 font-mono">Categories</span>
                       <div className="max-h-[420px] overflow-y-auto overscroll-contain pr-2 custom-scrollbar">
                         <div className="grid grid-cols-2 gap-x-4 gap-y-1">
                           {insightsSections.find((s: InsightsSection) => s.slug === activeInsightsSection)?.categories.map((cat: SectionCategory) => (
@@ -1363,7 +1363,7 @@ export function Navbar() {
                               onClick={() => setActiveMenu(null)}
                               className="group/subitem block p-2 rounded-lg hover:bg-zinc-900/30 transition-colors"
                             >
-                              <span className="block text-[15px] font-semibold text-white group-hover/subitem:text-rose-500 transition-colors mb-1">
+                              <span className="block text-base font-semibold text-white group-hover/subitem:text-rose-500 transition-colors mb-1">
                                 {cat.name}
                               </span>
                               {/* {cat.desc && (
@@ -1501,7 +1501,7 @@ export function Navbar() {
 
                     {/* Right about list grid */}
                     <div>
-                      <span className="text-xs font-mono tracking-widest text-zinc-500 uppercase block mb-4">Corporate Directory</span>
+                      <span className="text-sm font-semibold tracking-wider text-rose-500 uppercase block mb-4 font-mono">Corporate Directory</span>
                       <div className="max-h-[380px] overflow-y-auto overscroll-contain pr-2 custom-scrollbar">
                         <div className="grid grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-1">
                           {aboutList.map((item) => (
@@ -1511,7 +1511,7 @@ export function Navbar() {
                               onClick={() => setActiveMenu(null)}
                               className="group/about block p-2 rounded-lg hover:bg-zinc-900/30 transition-colors"
                             >
-                              <span className="block text-[15px] font-semibold text-white group-hover/about:text-rose-500 transition-colors mb-1">
+                              <span className="block text-base font-semibold text-white group-hover/about:text-rose-500 transition-colors mb-1">
                                 {item.name}
                               </span>
                               {/* <span className="block text-[13px] text-zinc-400 font-medium leading-relaxed">

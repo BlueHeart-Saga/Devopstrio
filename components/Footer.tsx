@@ -165,9 +165,8 @@ export function Footer() {
 
           {/* Col 2: Services / Practice Areas */}
           <div>
-            <h4 className="text-sm md:text-base font-bold text-white mb-5 tracking-wider uppercase font-mono">Core Expertise</h4>
-            <ul className="flex flex-col gap-3 text-[14px] md:text-[15px] text-zinc-400 font-medium tracking-wide">
-
+            <h4 className="text-base md:text-lg font-semibold text-white mb-5 tracking-wider uppercase font-sans">Core Expertise</h4>
+            <ul className="flex flex-col gap-3.5 text-base text-zinc-300 font-normal tracking-wide">
               <li><Link href="/services/ai-data-innovation" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">AI & Data Innovation</Link></li>
               <li><Link href="/services/cloud-services" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Cloud Services</Link></li>
               <li><Link href="/services/devops-automation" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">DevOps & Automation</Link></li>
@@ -176,16 +175,13 @@ export function Footer() {
               <li><Link href="/services/digital-transformation" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Digital Transformation</Link></li>
               <li><Link href="/services/data-engineering" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Data Engineering</Link></li>
               <li><Link href="/services/managed-services" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Managed Services</Link></li>
-              {/* <li><Link href="/services/qa-testing" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">QA & Testing</Link></li>
-              <li><Link href="/services/it-consulting" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">IT Consulting</Link></li> */}
-              {/* <li><Link href="/services/explore" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Explore More Services</Link></li> */}
             </ul>
           </div>
 
           {/* Col 3: Industries */}
           <div>
-            <h4 className="text-sm md:text-base font-bold text-white mb-5 tracking-wider uppercase font-mono">Industries</h4>
-            <ul className="flex flex-col gap-3 text-[14px] md:text-[15px] text-zinc-400 font-medium tracking-wide">
+            <h4 className="text-base md:text-lg font-semibold text-white mb-5 tracking-wider uppercase font-sans">Industries</h4>
+            <ul className="flex flex-col gap-3.5 text-base text-zinc-300 font-normal tracking-wide">
               <li><Link href="/industries/banking-finance" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Banking & Finance</Link></li>
               <li><Link href="/industries/healthcare-life-sciences" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Healthcare & Life Sciences</Link></li>
               <li><Link href="/industries/retail-ecommerce" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Retail & E-Commerce</Link></li>
@@ -199,8 +195,8 @@ export function Footer() {
 
           {/* Col 4: Ecosystem */}
           <div>
-            <h4 className="text-sm md:text-base font-bold text-white mb-5 tracking-wider uppercase font-mono">Ecosystem</h4>
-            <ul className="flex flex-col gap-3 text-[14px] md:text-[15px] text-zinc-400 font-medium tracking-wide">
+            <h4 className="text-base md:text-lg font-semibold text-white mb-5 tracking-wider uppercase font-sans">Ecosystem</h4>
+            <ul className="flex flex-col gap-3.5 text-base text-zinc-300 font-normal tracking-wide">
               <li><Link href="/ecosystem/partnerships" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Strategic Partnerships</Link></li>
               <li><Link href="/ecosystem/innovation-labs" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">R&D Innovation Labs</Link></li>
               <li><Link href="/ecosystem/platforms-solutions" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Platforms & Solutions</Link></li>
@@ -214,9 +210,8 @@ export function Footer() {
 
           {/* Col 5: Insights & Events */}
           <div>
-            <h4 className="text-sm md:text-base font-bold text-white mb-5 tracking-wider uppercase font-mono">Insights & Events</h4>
-            <ul className="flex flex-col gap-3 text-[14px] md:text-[15px] text-zinc-400 font-medium tracking-wide">
-              {/* <li><Link href="/insights" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300 text-zinc-300">Insights Hub</Link></li> */}
+            <h4 className="text-base md:text-lg font-semibold text-white mb-5 tracking-wider uppercase font-sans">Insights & Events</h4>
+            <ul className="flex flex-col gap-3.5 text-base text-zinc-300 font-normal tracking-wide">
               <li><Link href="/insights/blogs" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Blogs</Link></li>
               <li><Link href="/insights/case-studies" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Case Studies</Link></li>
               <li><Link href="/insights/white-paper" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">White Paper</Link></li>
@@ -224,26 +219,21 @@ export function Footer() {
               <li><Link href="/insights/industry-events" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Industry Events</Link></li>
               <li><Link href="/insights/celebrations" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Celebrations</Link></li>
               <li><Link href="/insights/team-culture" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Team Culture</Link></li>
-              {/* <li><Link href="/insights/client-transformations" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Client Transformations</Link></li> */}
-              {/* <li><Link href="/insights/impact-metrics" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Impact Metrics</Link></li> */}
               <li><Link href="/insights/our-offerings" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Our Offerings</Link></li>
             </ul>
           </div>
 
           {/* Col 6: Company */}
           <div>
-            <h4 className="text-sm md:text-base font-bold text-white mb-5 tracking-wider uppercase font-mono">Company</h4>
-            <ul className="flex flex-col gap-3 text-[14px] md:text-[15px] text-zinc-400 font-medium tracking-wide">
+            <h4 className="text-base md:text-lg font-semibold text-white mb-5 tracking-wider uppercase font-sans">Company</h4>
+            <ul className="flex flex-col gap-3.5 text-base text-zinc-300 font-normal tracking-wide">
               <li><Link href="/about/company-overview" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Company Overview</Link></li>
-              {/* <li><Link href="/about/leadership-team" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Leadership & Team</Link></li> */}
               <li><Link href="/about/our-culture-people" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Our Culture & People</Link></li>
               <li><Link href="/about/global-internship" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Global Internship</Link></li>
               <li><Link href="/about/global-presence" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Global Presence</Link></li>
               <li><Link href="/about/partnerships-certifications" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Partnerships & Certifications</Link></li>
               <li><Link href="/about/awards-recognition" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Awards & Recognition</Link></li>
               <li><Link href="/about/sustainability-csr" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Sustainability & CSR</Link></li>
-              {/* <li><Link href="/about/testimonials" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Testimonials & Success</Link></li>
-              <li><Link href="/about/customer-support" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Customer Support</Link></li> */}
               <li><Link href="/contact#contact-form" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Contact Us</Link></li>
             </ul>
           </div>

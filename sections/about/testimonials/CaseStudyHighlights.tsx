@@ -3,6 +3,7 @@ import React, { useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { ChevronRight, ChevronLeft } from "lucide-react";
+import Link from "next/link";
 
 const categories = ["All", "Cloud", "DevOps", "Security", "AI"];
 
@@ -100,8 +101,6 @@ const caseStudies = [
   }
 ];
 
-import Link from "next/link";
-
 export const CaseStudyHighlights = () => {
   const [activeCategory, setActiveCategory] = useState("All");
   const carouselRef = useRef<HTMLDivElement>(null);
@@ -123,25 +122,14 @@ export const CaseStudyHighlights = () => {
   };
 
   return (
-    <section className="py-24 bg-[#050505] relative overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_40%_30%_at_50%_10%,rgba(255,23,68,0.05),transparent)] pointer-events-none" />
-      
+    <section className="py-16 sm:py-24 bg-black relative overflow-hidden font-sans border-t border-zinc-900">
       <div className="max-w-[1400px] mx-auto px-6 relative z-10">
         
-        {/* Header Section */}
-        <div className="text-center max-w-3xl mx-auto mb-14">
-          <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
-            INSIGHTS & NEWS
-          </span>
-          <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
-            Case studies, news, and insights
+        {/* Semibold Header, Subtitle Removed */}
+        <div className="text-center max-w-3xl mx-auto mb-10">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-white font-sans">
+            Case Studies & <span className="text-rose-600 font-semibold">Highlights</span>
           </h2>
-          <p className="text-zinc-400 text-base md:text-lg leading-relaxed mb-6 font-medium">
-            Explore Devopstrio's perspective and latest updates highlighting our commitment to transformative innovation. Learn about our <Link href="/services" className="text-rose-500 hover:underline font-bold">digital services</Link> or read our <Link href="/about/overview" className="text-rose-500 hover:underline font-bold">company overview</Link>.
-          </p>
-          <Link href="/insights" className="inline-block bg-rose-600 hover:bg-rose-500 text-white px-8 py-3 rounded-full font-medium transition-all duration-300 shadow-[0_0_20px_rgba(225,29,72,0.3)] hover:shadow-[0_0_30px_rgba(225,29,72,0.5)]">
-            Visit the insights blog
-          </Link>
         </div>
 
         {/* Filter Pills */}
@@ -150,10 +138,10 @@ export const CaseStudyHighlights = () => {
             <button
               key={cat}
               onClick={() => setActiveCategory(cat)}
-              className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+              className={`px-6 py-2.5 rounded-full text-base font-bold transition-all duration-300 ${
                 activeCategory === cat
-                  ? "bg-rose-600 text-white"
-                  : "bg-zinc-900 border border-zinc-800 text-zinc-400 hover:text-white hover:bg-zinc-800"
+                  ? "bg-rose-600 text-white shadow-md shadow-rose-600/30"
+                  : "bg-zinc-900 border border-zinc-800 text-zinc-300 hover:text-white hover:bg-zinc-800"
               }`}
             >
               {cat}
@@ -166,8 +154,7 @@ export const CaseStudyHighlights = () => {
           <motion.div 
             layout
             ref={carouselRef}
-            className="flex overflow-x-auto gap-4 pb-8 snap-x snap-mandatory"
-            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+            className="flex overflow-x-auto gap-5 pb-8 snap-x snap-mandatory hide-scrollbar"
           >
             <AnimatePresence>
               {filteredStudies.map((study) => (
@@ -178,9 +165,8 @@ export const CaseStudyHighlights = () => {
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.9 }}
                   transition={{ duration: 0.3 }}
-                  className="min-w-[300px] max-w-[300px] md:min-w-[340px] md:max-w-[340px] shrink-0 snap-start bg-zinc-900/60 border border-zinc-800 rounded-[28px] p-3 flex flex-col h-full shadow-lg group hover:bg-zinc-800/80 transition-all duration-300"
+                  className="min-w-[300px] max-w-[300px] md:min-w-[340px] md:max-w-[340px] shrink-0 snap-start bg-zinc-950/80 border border-zinc-800 rounded-[28px] p-4 flex flex-col h-full shadow-lg group hover:border-rose-500/40 transition-all duration-300"
                 >
-                  {/* Image half - inset with padding */}
                   <div className="relative h-[180px] w-full rounded-[20px] overflow-hidden bg-zinc-950">
                     <Image
                       src={study.image}
@@ -188,14 +174,13 @@ export const CaseStudyHighlights = () => {
                       fill
                       className="object-cover group-hover:scale-105 transition-transform duration-500"
                     />
-                    <div className="absolute top-4 left-4 bg-zinc-900/80 backdrop-blur-md px-3 py-1 rounded-full text-[11px] font-semibold tracking-wide text-zinc-300 border border-zinc-700/50 uppercase">
+                    <div className="absolute top-3 left-3 bg-black/80 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold font-mono tracking-wide text-rose-400 border border-zinc-800 uppercase">
                       {study.category}
                     </div>
                   </div>
                   
-                  {/* Content half */}
-                  <div className="pt-6 pb-3 px-3 flex flex-col flex-1">
-                    <h3 className="text-lg md:text-[20px] font-semibold text-white leading-snug mb-8 flex-1 group-hover:text-rose-100 transition-colors">
+                  <div className="pt-5 pb-2 px-2 flex flex-col flex-1">
+                    <h3 className="text-lg sm:text-xl font-semibold text-white leading-snug mb-6 flex-1 group-hover:text-rose-400 transition-colors font-sans">
                       {study.title}
                     </h3>
                     
@@ -203,31 +188,31 @@ export const CaseStudyHighlights = () => {
                       <div className="w-8 h-8 rounded-full bg-rose-600 flex items-center justify-center text-white group-hover/btn:bg-rose-500 transition-colors duration-300 shadow-md">
                         <ChevronRight className="w-4 h-4" />
                       </div>
-                      <span className="text-sm font-medium group-hover/btn:text-white transition-colors">Read the story</span>
+                      <span className="text-sm font-bold text-white group-hover/btn:text-rose-400 transition-colors font-sans">Read Story</span>
                     </div>
                   </div>
                 </motion.div>
               ))}
             </AnimatePresence>
             {filteredStudies.length === 0 && (
-               <div className="text-zinc-500 text-center w-full py-20 font-medium">No stories found for this category.</div>
+               <div className="text-zinc-400 text-center w-full py-20 font-medium font-sans">No stories found for this category.</div>
             )}
           </motion.div>
         </div>
         
         {/* Navigation Arrows */}
         {filteredStudies.length > 0 && (
-          <div className="flex gap-3 mt-2 px-2">
+          <div className="flex gap-3 mt-4 justify-center">
             <button 
               onClick={scrollLeft}
-              className="w-10 h-10 rounded-full border border-zinc-700 flex items-center justify-center text-zinc-400 hover:text-white hover:border-zinc-500 hover:bg-zinc-800 transition-all duration-300"
+              className="w-12 h-12 rounded-full border border-zinc-800 bg-zinc-900 flex items-center justify-center text-zinc-300 hover:text-white hover:border-rose-500 transition-all duration-300"
               aria-label="Previous"
             >
               <ChevronLeft className="w-5 h-5" />
             </button>
             <button 
               onClick={scrollRight}
-              className="w-10 h-10 rounded-full border border-zinc-700 flex items-center justify-center text-zinc-400 hover:text-white hover:border-zinc-500 hover:bg-zinc-800 transition-all duration-300"
+              className="w-12 h-12 rounded-full border border-zinc-800 bg-zinc-900 flex items-center justify-center text-zinc-300 hover:text-white hover:border-rose-500 transition-all duration-300"
               aria-label="Next"
             >
               <ChevronRight className="w-5 h-5" />
@@ -235,18 +220,6 @@ export const CaseStudyHighlights = () => {
           </div>
         )}
       </div>
-      
-      <style dangerouslySetInnerHTML={{__html: `
-        /* Hide scrollbar for Chrome, Safari and Opera */
-        .hide-scrollbar::-webkit-scrollbar {
-          display: none;
-        }
-        /* Hide scrollbar for IE, Edge and Firefox */
-        .hide-scrollbar {
-          -ms-overflow-style: none;  /* IE and Edge */
-          scrollbar-width: none;  /* Firefox */
-        }
-      `}} />
     </section>
   );
 };

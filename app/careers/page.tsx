@@ -17,9 +17,8 @@ import { CareersPresence } from "@/sections/careers/CareersPresence";
 import { OpenPositions } from "@/sections/careers/OpenPositions";
 import { HiringProcess } from "@/sections/careers/HiringProcess";
 import { EmployeeStories } from "@/sections/careers/EmployeeStories";
-import { TalentNetwork } from "@/sections/careers/TalentNetwork";
 import { Job } from "@/sections/careers/careersData";
-import { SectionNavbar } from "@/components/ui/SectionNavbar";
+import { RepresentativeCTA } from "@/components/ui/RepresentativeCTA";
 
 export default function CareersPage() {
   const [activeJob, setActiveJob] = useState<Job | null>(null);
@@ -81,7 +80,6 @@ export default function CareersPage() {
       }
     } catch (err) {
       console.error(err);
-      alert("An error occurred. Please try again.");
     } finally {
       setFormSubmitting(false);
     }
@@ -90,19 +88,6 @@ export default function CareersPage() {
   return (
     <main className="min-h-screen bg-black text-white pt-16 font-sans">
 
-      {/* Cinematic Hero Title Header */}
-      {/* <section className="pt-16 pb-4 md:pb-8 text-center relative bg-[#030303]">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(244,63,94,0.05),transparent_50%)] pointer-events-none" />
-        <Reveal>
-          <h1 className="text-4xl md:text-6xl font-light tracking-tight mb-4 text-white">
-            Careers at <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-rose-500">Devopstrio</span>
-          </h1>
-          <p className="text-zinc-400 font-medium max-w-xl mx-auto">
-            Join a high-performance global network of system architects, DevOps experts, and AI engineers.
-          </p>
-        </Reveal>
-      </section> */}
-      {/* Dynamic application modal */}
       {activeJob && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md animate-fadeIn">
           <div className="relative w-full max-w-xl bg-zinc-950 border border-zinc-900 rounded-[32px] p-8 md:p-10 shadow-[0_25px_60px_-15px_rgba(225,29,72,0.15)]">
@@ -201,16 +186,24 @@ export default function CareersPage() {
       <WhyJoin />
       <LifeAtDevopstrio />
       <CoreValues />
-     
       <PerksBenefits />
       <CareersPresence />
       <OpenPositions />
       <HiringProcess />
-       {/* <LearningGrowth /> */}
       <EmployeeStories />
-      {/* <TalentNetwork /> */}
 
-      {/* Floating Side Badge (Increased Length) */}
+      {/* Reusable Representative CTA Component */}
+      <RepresentativeCTA
+        title="Ready To Shape The Next Era Of"
+        highlightText="Digital Engineering?"
+        description="Join a high-performance global network of system architects, DevOps experts, and AI engineers. Build scalable infrastructure and accelerate your technology career."
+        primaryBtnText="VIEW OPEN POSITIONS"
+        primaryBtnHref="#open-positions"
+        secondaryBtnText="GLOBAL INTERNSHIP"
+        secondaryBtnHref="/about/global-internship"
+      />
+
+      {/* Floating Side Badge */}
       <Link
         href="/about/global-internship"
         className="fixed right-0 top-[40%] -translate-y-1/2 z-[40] hidden md:flex items-center justify-center bg-[#581326] hover:bg-[#701a32] text-white font-bold tracking-[0.25em] text-[11px] py-14 px-4 rounded-l-2xl shadow-[0_0_35px_rgba(225,29,72,0.4)] border border-r-0 border-rose-500/30 transition-all duration-300 hover:pl-6 group cursor-pointer"
