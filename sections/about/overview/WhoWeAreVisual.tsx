@@ -97,7 +97,7 @@ export function WhoWeAreVisual({
             </div>
 
             {/* Left Arrow: Curves from below "Who" towards the left shoulder of [W] */}
-            <div className="absolute top-1 sm:top-2 -left-16 sm:-left-22 md:-left-26 w-14 sm:w-18 md:w-22 h-16 sm:h-20 md:h-24 pointer-events-none z-20 text-white/90">
+            <div className="absolute top-1 sm:top-2 -left-16 sm:-left-22 md:-left-26 w-14 sm:w-18 md:w-22 h-16 sm:h-20 md:h-24 pointer-events-none z-20 text-rose-500">
               <svg
                 viewBox="0 0 65 70"
                 fill="none"
@@ -122,7 +122,7 @@ export function WhoWeAreVisual({
               </svg>
             </div>
 
-            {/* Keycap [ W ] */}
+            {/* Keycap [ W ] - Signature Rose Red Theme */}
             <motion.button
               type="button"
               aria-label="Press W key for We Are"
@@ -140,31 +140,31 @@ export function WhoWeAreVisual({
                   pressedKey === "W"
                     ? "shadow-[0_4px_12px_rgba(0,0,0,0.6),inset_0_4px_6px_rgba(0,0,0,0.4)]"
                     : selectedKey === "W"
-                    ? "shadow-[0_20px_40px_-5px_rgba(162,204,100,0.35),0_10px_20px_-2px_rgba(0,0,0,0.6),inset_0_3px_5px_rgba(255,255,255,0.8),inset_0_-8px_10px_rgba(0,0,0,0.25),inset_3px_0_5px_rgba(255,255,255,0.4),inset_-3px_0_5px_rgba(0,0,0,0.2)] ring-2 ring-emerald-400/40"
-                    : "shadow-[0_20px_35px_-5px_rgba(0,0,0,0.8),0_10px_18px_-2px_rgba(0,0,0,0.5),inset_0_3px_5px_rgba(255,255,255,0.7),inset_0_-8px_10px_rgba(0,0,0,0.25),inset_3px_0_5px_rgba(255,255,255,0.35),inset_-3px_0_5px_rgba(0,0,0,0.2)] opacity-85 hover:opacity-100"
+                    ? "shadow-[0_20px_45px_-5px_rgba(225,29,72,0.5),0_10px_20px_-2px_rgba(0,0,0,0.6),inset_0_3px_5px_rgba(255,255,255,0.8),inset_0_-8px_10px_rgba(0,0,0,0.3),inset_3px_0_5px_rgba(255,255,255,0.4),inset_-3px_0_5px_rgba(0,0,0,0.2)] ring-2 ring-rose-500/50"
+                    : "shadow-[0_20px_35px_-5px_rgba(0,0,0,0.8),0_10px_18px_-2px_rgba(0,0,0,0.5),inset_0_3px_5px_rgba(255,255,255,0.7),inset_0_-8px_10px_rgba(0,0,0,0.3),inset_3px_0_5px_rgba(255,255,255,0.35),inset_-3px_0_5px_rgba(0,0,0,0.2)] opacity-85 hover:opacity-100"
                 }`}
                 style={{
-                  background: "linear-gradient(180deg, #A2CC64 0%, #8DBA50 55%, #76A03A 100%)",
+                  background: "linear-gradient(180deg, #e11d48 0%, #be123c 55%, #9f1239 100%)",
                 }}
               >
                 {/* Concave Key Dish */}
                 <div
                   className="w-full h-full rounded-[16px] sm:rounded-[20px] flex items-center justify-center relative overflow-hidden"
                   style={{
-                    background: "radial-gradient(ellipse at 50% 30%, #AED86F 0%, #92C052 60%, #7DA940 100%)",
+                    background: "radial-gradient(ellipse at 50% 30%, #f43f5e 0%, #e11d48 60%, #be123c 100%)",
                     boxShadow: pressedKey === "W"
-                      ? "inset 0 5px 10px rgba(0,0,0,0.25), 0 1px 2px rgba(0,0,0,0.1)"
-                      : "inset 0 3px 6px rgba(0,0,0,0.14), inset 0 -3px 5px rgba(255,255,255,0.45), 0 1px 2px rgba(0,0,0,0.1)",
+                      ? "inset 0 5px 10px rgba(0,0,0,0.3), 0 1px 2px rgba(0,0,0,0.1)"
+                      : "inset 0 3px 6px rgba(0,0,0,0.18), inset 0 -3px 5px rgba(255,255,255,0.45), 0 1px 2px rgba(0,0,0,0.1)",
                   }}
                 >
                   {/* Key specular sheen */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-white/25 via-transparent to-black/10 pointer-events-none" />
+                  <div className="absolute inset-0 bg-gradient-to-br from-white/30 via-transparent to-black/20 pointer-events-none" />
                   
                   {/* Key Legend: W */}
                   <span
-                    className="font-bold text-3xl sm:text-4xl md:text-5xl text-[#224410] select-none tracking-normal font-sans"
+                    className="font-bold text-3xl sm:text-4xl md:text-5xl text-white select-none tracking-normal font-sans"
                     style={{
-                      textShadow: "0 1.5px 2px rgba(255,255,255,0.4), 0 -1px 2px rgba(0,0,0,0.15)",
+                      textShadow: "0 2px 4px rgba(0,0,0,0.4), 0 -1px 2px rgba(255,255,255,0.3)",
                     }}
                   >
                     W
@@ -173,7 +173,7 @@ export function WhoWeAreVisual({
               </div>
 
               {/* Hover tooltip */}
-              <span className="absolute -bottom-6 left-1/2 -translate-x-1/2 text-[10px] font-mono text-zinc-400 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
+              <span className="absolute -bottom-6 left-1/2 -translate-x-1/2 text-[10px] font-mono text-rose-400 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
                 Press [W] • We Are
               </span>
             </motion.button>
@@ -182,7 +182,7 @@ export function WhoWeAreVisual({
           {/* ── COLUMN 2: [ E ] Keycap + Right Curved Arrow + "ARE" text ── */}
           <div className="relative flex flex-col items-center">
             
-            {/* Keycap [ E ] */}
+            {/* Keycap [ E ] - Signature Rose Red Theme */}
             <motion.button
               type="button"
               aria-label="Press E key for Engineering Solutions"
@@ -200,31 +200,31 @@ export function WhoWeAreVisual({
                   pressedKey === "E"
                     ? "shadow-[0_4px_12px_rgba(0,0,0,0.6),inset_0_4px_6px_rgba(0,0,0,0.4)]"
                     : selectedKey === "E"
-                    ? "shadow-[0_20px_40px_-5px_rgba(162,204,100,0.35),0_10px_20px_-2px_rgba(0,0,0,0.6),inset_0_3px_5px_rgba(255,255,255,0.8),inset_0_-8px_10px_rgba(0,0,0,0.25),inset_3px_0_5px_rgba(255,255,255,0.4),inset_-3px_0_5px_rgba(0,0,0,0.2)] ring-2 ring-emerald-400/40"
-                    : "shadow-[0_20px_35px_-5px_rgba(0,0,0,0.8),0_10px_18px_-2px_rgba(0,0,0,0.5),inset_0_3px_5px_rgba(255,255,255,0.7),inset_0_-8px_10px_rgba(0,0,0,0.25),inset_3px_0_5px_rgba(255,255,255,0.35),inset_-3px_0_5px_rgba(0,0,0,0.2)] opacity-85 hover:opacity-100"
+                    ? "shadow-[0_20px_45px_-5px_rgba(225,29,72,0.5),0_10px_20px_-2px_rgba(0,0,0,0.6),inset_0_3px_5px_rgba(255,255,255,0.8),inset_0_-8px_10px_rgba(0,0,0,0.3),inset_3px_0_5px_rgba(255,255,255,0.4),inset_-3px_0_5px_rgba(0,0,0,0.2)] ring-2 ring-rose-500/50"
+                    : "shadow-[0_20px_35px_-5px_rgba(0,0,0,0.8),0_10px_18px_-2px_rgba(0,0,0,0.5),inset_0_3px_5px_rgba(255,255,255,0.7),inset_0_-8px_10px_rgba(0,0,0,0.3),inset_3px_0_5px_rgba(255,255,255,0.35),inset_-3px_0_5px_rgba(0,0,0,0.2)] opacity-85 hover:opacity-100"
                 }`}
                 style={{
-                  background: "linear-gradient(180deg, #A2CC64 0%, #8DBA50 55%, #76A03A 100%)",
+                  background: "linear-gradient(180deg, #e11d48 0%, #be123c 55%, #9f1239 100%)",
                 }}
               >
                 {/* Concave Key Dish */}
                 <div
                   className="w-full h-full rounded-[16px] sm:rounded-[20px] flex items-center justify-center relative overflow-hidden"
                   style={{
-                    background: "radial-gradient(ellipse at 50% 30%, #AED86F 0%, #92C052 60%, #7DA940 100%)",
+                    background: "radial-gradient(ellipse at 50% 30%, #f43f5e 0%, #e11d48 60%, #be123c 100%)",
                     boxShadow: pressedKey === "E"
-                      ? "inset 0 5px 10px rgba(0,0,0,0.25), 0 1px 2px rgba(0,0,0,0.1)"
-                      : "inset 0 3px 6px rgba(0,0,0,0.14), inset 0 -3px 5px rgba(255,255,255,0.45), 0 1px 2px rgba(0,0,0,0.1)",
+                      ? "inset 0 5px 10px rgba(0,0,0,0.3), 0 1px 2px rgba(0,0,0,0.1)"
+                      : "inset 0 3px 6px rgba(0,0,0,0.18), inset 0 -3px 5px rgba(255,255,255,0.45), 0 1px 2px rgba(0,0,0,0.1)",
                   }}
                 >
                   {/* Key specular sheen */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-white/25 via-transparent to-black/10 pointer-events-none" />
+                  <div className="absolute inset-0 bg-gradient-to-br from-white/30 via-transparent to-black/20 pointer-events-none" />
 
                   {/* Key Legend: E */}
                   <span
-                    className="font-bold text-3xl sm:text-4xl md:text-5xl text-[#224410] select-none tracking-normal font-sans"
+                    className="font-bold text-3xl sm:text-4xl md:text-5xl text-white select-none tracking-normal font-sans"
                     style={{
-                      textShadow: "0 1.5px 2px rgba(255,255,255,0.4), 0 -1px 2px rgba(0,0,0,0.15)",
+                      textShadow: "0 2px 4px rgba(0,0,0,0.4), 0 -1px 2px rgba(255,255,255,0.3)",
                     }}
                   >
                     E
@@ -233,13 +233,13 @@ export function WhoWeAreVisual({
               </div>
 
               {/* Hover tooltip */}
-              <span className="absolute -bottom-6 left-1/2 -translate-x-1/2 text-[10px] font-mono text-zinc-400 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
+              <span className="absolute -bottom-6 left-1/2 -translate-x-1/2 text-[10px] font-mono text-rose-400 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
                 Press [E] • Engineering
               </span>
             </motion.button>
 
             {/* Right Arrow: Curves from right edge of [E] down towards "ARE" */}
-            <div className="absolute top-6 sm:top-8 -right-16 sm:-right-22 md:-right-26 w-14 sm:w-18 md:w-22 h-16 sm:h-20 md:h-24 pointer-events-none z-20 text-white/90">
+            <div className="absolute top-6 sm:top-8 -right-16 sm:-right-22 md:-right-26 w-14 sm:w-18 md:w-22 h-16 sm:h-20 md:h-24 pointer-events-none z-20 text-rose-500">
               <svg
                 viewBox="0 0 65 70"
                 fill="none"

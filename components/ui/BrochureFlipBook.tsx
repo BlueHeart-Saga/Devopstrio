@@ -32,7 +32,7 @@ const FlipPage = React.forwardRef<HTMLDivElement, { children: React.ReactNode; c
 );
 FlipPage.displayName = "FlipPage";
 
-type BrochureFlipBookProps = {
+export type BrochureFlipBookProps = {
   pdfUrl: string;
   pdfTitle?: string;
   pdfEdition?: string;
@@ -344,18 +344,18 @@ export default function BrochureFlipBook({
       className="w-full h-full flex flex-col items-center justify-between select-none relative font-sans p-3 sm:p-5 overflow-hidden [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
     >
       
-      {/* ── TOP HEADER (Clean Title Only in Left + Zoom & Utility Controls) ── */}
-      <div className="w-full max-w-6xl flex items-center justify-between z-20 pt-1 pb-2">
-        {/* Left: Clean Simple Title Only */}
-        <div className="flex items-center">
+      {/* ── TOP HEADER (Clean Title Only on Left + Zoom & Utility Controls on Right) ── */}
+      <div className="w-full max-w-6xl flex items-center justify-between z-20 pt-1 pb-2 px-1">
+        {/* Left Side: Clean Simple Title Only (No icon, brand, or edition tags) */}
+        <div className="flex items-center min-w-0 pr-4">
           <h2 className="text-sm sm:text-base md:text-lg font-semibold text-white tracking-tight truncate max-w-xs sm:max-w-md md:max-w-xl font-sans">
             {pdfTitle}
           </h2>
         </div>
 
         {/* Top Right: Zoom & Navigation Controls */}
-        <div className="flex items-center gap-1.5 sm:gap-2">
-          {/* Zoom Controls */}
+        <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
+          {/* Precision Zoom Controls with 75% default */}
           <div className="flex items-center bg-zinc-900/90 rounded-xl p-1 border border-zinc-800 shadow-lg">
             <button
               onClick={handleZoomOut}
@@ -427,7 +427,7 @@ export default function BrochureFlipBook({
         </div>
       </div>
 
-      {/* ── MAIN LARGE CENTERED BROCHURE CANVAS (Zero Mid Darkness) ── */}
+      {/* ── MAIN LARGE CENTERED BROCHURE CANVAS (Zero Mid Darkness & Flat Paper Spread) ── */}
       <div className="w-full flex-1 flex items-center justify-center relative overflow-auto py-2 my-auto [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
         
         {/* Soft Red / Orange Atmospheric Background Glow */}
@@ -443,7 +443,7 @@ export default function BrochureFlipBook({
           </div>
         )}
 
-        {/* ── 3D REACT-PAGEFLIP SPREAD (Zero Mid Darkness & Flat Pure White Pages) ── */}
+        {/* ── 3D REACT-PAGEFLIP SPREAD (Zero Mid Darkness, 75% Zoom Scale) ── */}
         {pages.length > 0 && (
           <div 
             className="relative z-10 [perspective:2000px] transition-transform duration-200 ease-out origin-center"
@@ -535,7 +535,7 @@ export default function BrochureFlipBook({
               download={`${pdfTitle.replace(/\s+/g, "_")}.pdf`}
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl text-xs font-bold text-rose-400 hover:text-white bg-rose-500/10 hover:bg-rose-600 transition-colors cursor-pointer font-sans"
+              className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold text-rose-400 hover:text-white bg-rose-500/10 hover:bg-rose-600 transition-colors cursor-pointer font-sans"
             >
               <Download size={14} /> Download
             </a>

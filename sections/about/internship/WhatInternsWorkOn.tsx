@@ -133,12 +133,12 @@ export const WhatInternsWorkOn = () => {
             </Reveal> */}
             <Reveal>
               <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight text-white mb-4 font-sans">
-                What Interns Will <span className="text-rose-500">Build &amp; Ship</span>
+                Products Our Interns <span className="text-rose-500">Work On</span>
               </h2>
             </Reveal>
             <Reveal>
               <p className="text-zinc-400 text-base md:text-lg leading-relaxed mb-8 max-w-xl">
-                Direct exposure to production-grade architectures. You will write code, build features, and deploy services across our suite of proprietary enterprise <Link href="/ecosystem/platforms-solutions/saas-platforms" className="text-rose-500 hover:underline font-semibold">SaaS platforms</Link>.
+                Get hands-on experience contributing directly to active, production-grade architectures. Our interns collaborate alongside engineering teams to develop features, optimize workflows, and enhance our suite of enterprise <Link href="/ecosystem/platforms-solutions/saas-platforms" className="text-rose-500 hover:underline font-semibold">SaaS platforms</Link>.
               </p>
             </Reveal>
 
@@ -146,12 +146,12 @@ export const WhatInternsWorkOn = () => {
             <Reveal delay={0.1}>
               <div className="grid grid-cols-3 gap-3 mb-8 p-4 rounded-2xl bg-zinc-950/80 border border-white/10 backdrop-blur-sm max-w-lg">
                 <div>
-                  <div className="text-lg sm:text-xl font-bold text-white">Premium</div>
+                  <div className="text-lg sm:text-xl font-bold text-white">Live</div>
                   <div className="text-[11px] text-zinc-400 font-medium">SaaS Platforms</div>
                 </div>
                 <div className="border-l border-white/10 pl-3">
                   <div className="text-lg sm:text-xl font-bold text-rose-400">100%</div>
-                  <div className="text-[11px] text-zinc-400 font-medium">Production Code</div>
+                  <div className="text-[11px] text-zinc-400 font-medium">Real Contributions</div>
                 </div>
                 <div className="border-l border-white/10 pl-3">
                   <div className="text-lg sm:text-xl font-bold text-emerald-400">Multi-Cloud</div>

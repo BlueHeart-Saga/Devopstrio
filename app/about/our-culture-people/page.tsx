@@ -60,16 +60,16 @@ export default function LifeAtDevopstrioPage() {
       {/* <JourneyTimeline /> */}
 
         {/* 2. Culture Manifesto */}
-      <CultureManifesto />
+      {/* <CultureManifesto /> */}
 
       {/* 6. Employee Stories */}
       <EmployeeStoriesSection />
 
       {/* 7. Learning & Growth */}
-      <LearningGrowth />
+      {/* <LearningGrowth /> */}
 
       {/* 8. Benefits & Wellbeing */}
-      <BenefitsWellbeing />
+      {/* <BenefitsWellbeing /> */}
 
       {/* 9. Awards & Recognition */}
       <AwardsRecognition />
