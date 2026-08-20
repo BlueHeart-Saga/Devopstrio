@@ -1,49 +1,40 @@
 "use client";
 import React from "react";
 import { Reveal } from "@/components/ui/Reveal";
-import Link from "next/link";
 
 export function PeopleBehindRecognition() {
   return (
-    <section className="py-24 bg-black relative border-t border-zinc-900">
+    <section className="py-10 sm:py-14 bg-black relative border-t border-zinc-900 font-sans">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           
+          {/* Left Side: Full Image without Borderlines */}
           <div className="order-2 lg:order-1">
             <Reveal>
-              <div className="relative rounded-3xl overflow-hidden border border-zinc-800 shadow-2xl h-[400px] lg:h-[500px]">
+              <div className="relative w-full flex items-center justify-center overflow-hidden">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img 
-                  src="/assets/About-page/card/About_awards.png" 
-                  alt="Team Collaboration & Awards Recognition" 
-                  className="w-full h-full object-cover grayscale-[50%] hover:grayscale-0 transition-all duration-700"
+                  src="/assets/About-page/leader/Mani sir sketch_3.png" 
+                  alt="Leadership & People Behind Recognition" 
+                  className="w-full h-auto max-h-[500px] object-contain"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
-                <div className="absolute bottom-6 left-6 right-6">
-                  <div className="p-4 bg-black/60 backdrop-blur-md rounded-2xl border border-white/10">
-                    <p className="text-white text-sm font-bold italic">
-                      "Recognition matters most when it reflects real value—delivered by strong teams achieving continuous client outcomes."
-                    </p>
-                  </div>
-                </div>
               </div>
             </Reveal>
           </div>
 
+          {/* Right Side: Heading + Feel-Good Quote */}
           <div className="order-1 lg:order-2">
             <Reveal>
-              <div className="text-left mb-14">
-                <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
-                  The People Behind The Work
-                </span>
-                <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
-                  Every Milestone Reflects the People Behind the Work
+              <div className="text-left space-y-6">
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight leading-tight text-white font-sans">
+                  Every Milestone Reflects the <span className="text-rose-600 font-semibold">People Behind the Work</span>
                 </h2>
-                <p className="text-zinc-400 text-base md:text-lg leading-relaxed mb-6">
-                  Behind every recognition, milestone, and achievement is a team of <Link href="/about" className="text-[#E11D48] hover:underline">engineers, designers, and collaborators</Link> committed to building meaningful outcomes.
-                </p>
-                <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
-                  At Devopstrio, recognition is shared across the teams, ideas, partnerships, and learning culture that make progress possible. It is a collective validation of the talent and dedication that drive our <Link href="/contact#contact-form" className="text-[#E11D48] hover:underline">global delivery</Link> forward.
-                </p>
+
+                <div className="border-l-2 border-rose-600 pl-6 py-2">
+                  <p className="text-lg sm:text-xl font-medium italic text-zinc-300 tracking-tight leading-relaxed font-sans">
+                    &ldquo;Recognition matters most when it reflects real value—delivered by strong teams achieving continuous client outcomes.&rdquo;
+                  </p>
+                </div>
               </div>
             </Reveal>
           </div>

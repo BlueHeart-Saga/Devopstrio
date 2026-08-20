@@ -1,10 +1,8 @@
 "use client";
 import React from "react";
 import { Reveal } from "@/components/ui/Reveal";
-
 import Link from "next/link";
 
-// Curated list of top highlights from the larger awards array
 const highlights = [
   { year: "2026", category: "Technology Innovation", title: "Networking Computing Finalist", description: <>Recognized for driving massive-scale <Link href="/services/cloud-services" className="text-[#E11D48] hover:underline">infrastructure modernization</Link>.</>, logo: "/assets/Awards/Netwoking_Computing_Awards_2026 Finalist.png" },
   { year: "2025", category: "Security & Compliance", title: "Computing Security Awards", description: <>Awarded for exceptional <Link href="/services/cybersecurity" className="text-[#E11D48] hover:underline">DevSecOps practices</Link> and zero-trust deployments.</>, logo: "/assets/Awards/2025_Computing_Security_Awards.png" },
@@ -16,16 +14,13 @@ const highlights = [
 
 export function RecognitionHighlights() {
   return (
-    <section className="py-24 bg-black relative z-10 border-t border-zinc-900">
+    <section className="py-10 sm:py-14 bg-black relative z-10 border-t border-zinc-900 font-sans">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         
         <Reveal>
-          <div className="text-center max-w-3xl mx-auto mb-14">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
-              Featured Accolades
-            </span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
-              Highlights from Our Recognition Journey
+          <div className="mb-8">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight leading-tight text-white font-sans">
+              Highlights from Our <span className="text-rose-600 font-semibold">Recognition Journey</span>
             </h2>
           </div>
         </Reveal>
@@ -33,42 +28,44 @@ export function RecognitionHighlights() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {highlights.map((item, idx) => (
             <Reveal key={idx} delay={idx * 0.1}>
-              <div className="bg-[#0A0A0A] border border-zinc-900 rounded-3xl p-6 hover:border-zinc-700 transition-all duration-300 group cursor-pointer flex flex-col h-full hover:-translate-y-1">
+              <div className="bg-zinc-950/80 border border-zinc-800/80 rounded-3xl p-6 sm:p-8 hover:border-rose-500/50 hover:bg-zinc-900/60 transition-all duration-300 group cursor-pointer flex flex-col items-center text-center h-full hover:-translate-y-1">
                 
-                {/* Header (Logo + Year) */}
-                <div className="flex justify-between items-start mb-8">
-                  <div className="w-16 h-16 bg-white rounded-xl flex items-center justify-center p-2 shrink-0">
-                    <img 
-                      src={item.logo} 
-                      alt={item.title}
-                      className="max-w-full max-h-full object-contain"
-                      onError={(e) => { e.currentTarget.style.display = 'none' }}
-                    />
-                  </div>
-                  <div className="px-3 py-1 bg-zinc-900 border border-zinc-800 rounded-md text-zinc-300 font-bold text-xs tracking-wider">
-                    {item.year}
-                  </div>
+                {/* Big Centered Image Container Box */}
+                <div className="w-full h-40 bg-zinc-900/40 border border-zinc-800/60 rounded-2xl flex items-center justify-center p-6 mb-5 group-hover:border-zinc-700 transition-colors">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img 
+                    src={item.logo} 
+                    alt={item.title}
+                    className="max-w-[85%] max-h-[85%] object-contain transition-transform duration-300 group-hover:scale-105"
+                    onError={(e) => { e.currentTarget.style.display = 'none' }}
+                  />
                 </div>
                 
-                {/* Content */}
-                <div className="flex-1 flex flex-col">
-                  <span className="text-[10px] uppercase font-bold tracking-widest text-rose-500 mb-2 font-mono">
-                    {item.category}
+                {/* Year Badge */}
+                <div className="mb-3">
+                  <span className="px-3 py-1 bg-zinc-900 border border-zinc-800 rounded-md text-rose-500 font-bold text-xs tracking-wider font-mono">
+                    {item.year}
                   </span>
-                  <h3 className="text-lg font-bold text-white mb-3">
+                </div>
+
+                {/* Content */}
+                <div className="flex-1 flex flex-col justify-center items-center">
+                  <h3 className="text-xl sm:text-2xl font-semibold text-white font-sans group-hover:text-rose-400 transition-colors leading-tight">
                     {item.title}
                   </h3>
-                  <p className="text-sm text-zinc-400 font-medium leading-relaxed">
-                    {item.description}
-                  </p>
+                  
+                  {/* Description Text (Only visible on hover) */}
+                  <div className="opacity-0 max-h-0 overflow-hidden group-hover:opacity-100 group-hover:max-h-48 group-hover:mt-3 transition-all duration-300 ease-in-out">
+                    <p className="text-base text-zinc-300 font-normal leading-relaxed font-sans">
+                      {item.description}
+                    </p>
+                  </div>
                 </div>
 
               </div>
             </Reveal>
           ))}
         </div>
-        
-        {/* We can use the AllCertifications component as a full gallery below this or in a different tab, but since the user requested specifically an Awards & Recognition structure, this acts as the highlights. */}
       </div>
     </section>
   );

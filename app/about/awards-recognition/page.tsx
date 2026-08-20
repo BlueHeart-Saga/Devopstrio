@@ -54,9 +54,9 @@ export default function AwardsRecognitionPage() {
       </div>
 
       {/* 2) Intro section — "What recognition means to us" */}
-      <RecognitionIntro />
+      {/* <RecognitionIntro /> */}
 
-     
+      <PeopleBehindRecognition />
 
       {/* 3) Awards & Recognition Highlights */}
       <RecognitionHighlights />
@@ -65,10 +65,10 @@ export default function AwardsRecognitionPage() {
       <RecognitionTimeline />
 
       {/* 5) Recognition categories section */}
-      <RecognitionCategories />
+      {/* <RecognitionCategories /> */}
 
       {/* 6) "Why this matters to clients and partners" section */}
-      <WhyRecognitionMatters />
+      {/* <WhyRecognitionMatters /> */}
 
       {/* PREVIOUS SECTION: MetricsStats (By the Numbers) */}
       <div className="bg-black border-t border-zinc-900/60 pb-12">
@@ -76,7 +76,7 @@ export default function AwardsRecognitionPage() {
       </div>
 
       {/* 7) Culture / people recognition strip */}
-      <PeopleBehindRecognition />
+     
 
       {/* 8) Final CTA */}
       <AwardsCTA />

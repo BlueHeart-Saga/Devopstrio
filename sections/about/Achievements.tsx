@@ -28,8 +28,8 @@ const concreteAchievements = [
   }
 ];
 
-// Dynamically generate the 26 certification badge entries
-const ourCerts = Array.from({ length: 26 }, (_, i) => ({
+// Dynamically generate the 10 certification badge entries matching existing asset files
+const ourCerts = Array.from({ length: 10 }, (_, i) => ({
   name: `Certification ${i + 1}`,
   src: `/assets/About-page/our-Certification/Group_${i + 1}.png`
 }));
@@ -71,39 +71,29 @@ export function Achievements() {
       <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
         
         {/* Split Section Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        {/* <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           
-          {/* Left Column: Intro */}
+         
           <div className="lg:col-span-5">
-            <Reveal>
-              <div className="flex items-center gap-2 mb-4">
-                <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-rose-500">
-                  Innovation & Capabilities
-                </span>
-              </div>
-              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">
-                Driving technology transformation through <span className="text-rose-500">innovation, expertise, and measurable business impact.</span>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight leading-tight text-white font-sans">
+                Driving Technology Transformation Through <span className="text-rose-600 font-semibold">Innovation and Expertise</span>
               </h2>
-              {/* <p className="text-zinc-400 text-xs md:text-sm leading-relaxed font-semibold">
-                We combine advanced <Link href="/services/cloud-services" className="text-rose-500 hover:underline">cloud methodologies</Link> with modern <Link href="/services/software-development" className="text-rose-500 hover:underline">software engineering</Link> to build resilient, secure, and cost-efficient digital ecosystems.
-              </p> */}
-            </Reveal>
           </div>
 
-          {/* Right Column: 2x2 Fused Cards Grid */}
+         
           <div className="lg:col-span-7">
-            <Reveal className="border border-zinc-900 bg-zinc-900/40 gap-[1px] grid grid-cols-1 sm:grid-cols-2 overflow-hidden rounded-none">
+            <Reveal className="border border-zinc-800 bg-zinc-900/40 gap-[1px] grid grid-cols-1 sm:grid-cols-2 overflow-hidden rounded-2xl">
               {concreteAchievements.map((item) => (
                 <div 
                   key={item.title} 
-                  className="p-6 bg-zinc-950 hover:bg-zinc-950/80 transition-all duration-300 group min-h-[160px] flex flex-col justify-between"
+                  className="p-6 sm:p-8 bg-zinc-950 hover:bg-zinc-900/80 transition-all duration-300 group flex flex-col justify-between"
                 >
                   <div>
-                    <span className="block text-[9px] font-bold text-rose-500 uppercase tracking-widest mb-3">{item.tag}</span>
-                    <h3 className="text-xs md:text-sm font-bold text-white mb-2 transition-colors duration-300 group-hover:text-rose-500">
+                    <span className="block text-xs font-bold text-rose-500 uppercase tracking-widest mb-3 font-mono">{item.tag}</span>
+                    <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 transition-colors duration-300 group-hover:text-rose-400 font-sans">
                       {item.title}
                     </h3>
-                    <p className="text-[11px] text-zinc-450 leading-relaxed font-semibold">
+                    <p className="text-base text-zinc-300 leading-relaxed font-normal font-sans">
                       {item.desc}
                     </p>
                   </div>
@@ -112,14 +102,14 @@ export function Achievements() {
             </Reveal>
           </div>
 
-        </div>
+        </div> */}
 
         {/* 1st Segment: Our Certifications Marquee */}
         <div className="mt-24 border-t border-zinc-900/60 pt-16 relative">
           <Reveal className="mb-10 text-center">
-            <span className="text-[10px] font-bold tracking-[0.25em] uppercase text-rose-500 mb-3 block">
+            {/* <span className="text-[10px] font-bold tracking-[0.25em] uppercase text-rose-500 mb-3 block">
               Validation
-            </span>
+            </span> */}
             <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight text-white">
               Our Certifications
             </h2>
@@ -149,6 +139,7 @@ export function Achievements() {
                     src={item.src}
                     alt={item.name}
                     className="max-h-full max-w-full object-contain select-none pointer-events-none"
+                    onError={(e) => { e.currentTarget.style.display = 'none'; }}
                   />
                 </div>
               ))}
@@ -159,9 +150,9 @@ export function Achievements() {
         {/* 2nd Segment: Compliance Marquee */}
         <div className="mt-16 relative">
           <Reveal className="mb-10 text-center">
-            <span className="text-[10px] font-bold tracking-[0.25em] uppercase text-rose-500 mb-3 block">
+            {/* <span className="text-[10px] font-bold tracking-[0.25em] uppercase text-rose-500 mb-3 block">
               Security & Trust
-            </span>
+            </span> */}
             <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight text-white">
               Compliance Frameworks
             </h2>
@@ -202,7 +193,7 @@ export function Achievements() {
         {/* 3rd Segment: Awards Showcase */}
         <div className="mt-24 border-t border-zinc-900/60 pt-16">
           <Reveal className="mb-12 text-center">
-            <span className="text-[10px] font-bold tracking-[0.25em] uppercase text-rose-500 mb-3 block">
+            <span className="text-[20px] font-bold tracking-[0.25em] uppercase text-rose-500 mb-3 block">
               Awards & Recognition
             </span>
             <h3 className="text-xl md:text-2xl font-bold tracking-tight text-white">

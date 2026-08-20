@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
 import { Reveal } from "@/components/ui/Reveal";
-
 import Link from "next/link";
 
 const timeline = [
@@ -29,40 +28,37 @@ const timeline = [
 
 export function RecognitionTimeline() {
   return (
-    <section className="py-24 bg-zinc-950 relative border-t border-zinc-900 overflow-hidden">
+    <section className="py-10 sm:py-14 bg-black relative border-t border-zinc-900 overflow-hidden font-sans">
       <div className="absolute top-0 right-[20%] w-96 h-96 bg-rose-500/5 rounded-full blur-3xl pointer-events-none" />
 
-      <div className="max-w-4xl mx-auto px-6 lg:px-12 relative z-10">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
         
         <Reveal>
-          <div className="text-center max-w-3xl mx-auto mb-14">
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
-              A Growing Journey of Progress and Recognition
+          <div className="mb-10 text-center max-w-4xl mx-auto">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight leading-tight text-white font-sans">
+              A Growing Journey of <span className="text-rose-600 font-semibold">Progress and Recognition</span>
             </h2>
-            <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
-              Tracing our path through internal growth, technological maturity, and market acknowledgements.
-            </p>
           </div>
         </Reveal>
 
-        <div className="relative">
+        <div className="relative max-w-4xl mx-auto">
           <div className="space-y-12 relative z-10">
             {timeline.map((item, idx) => {
               const isEven = idx % 2 === 0;
               return (
                 <Reveal key={idx} delay={idx * 0.1}>
-                  <div className={`flex flex-col md:flex-row items-start ${isEven ? 'md:flex-row-reverse' : ''}`}>
+                  <div className={`flex flex-col md:flex-row items-center justify-center ${isEven ? 'md:flex-row-reverse' : ''}`}>
                     
                     {/* Content Half */}
-                    <div className="w-full md:w-1/2 md:px-12 relative">
+                    <div className="w-full md:w-1/2 md:px-8 relative">
                       <div className={`flex flex-col ${isEven ? 'md:text-left' : 'md:text-right'}`}>
-                        <span className="text-4xl font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-br from-zinc-300 to-zinc-700 mb-2">
+                        <span className="text-4xl sm:text-5xl font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-br from-zinc-200 to-zinc-600 mb-2 font-mono">
                           {item.year}
                         </span>
-                        <h3 className="text-lg font-bold text-white mb-2">
+                        <h3 className="text-xl sm:text-2xl font-bold text-white mb-2 font-sans">
                           {item.title}
                         </h3>
-                        <p className="text-base text-zinc-400 leading-relaxed">
+                        <p className="text-base text-zinc-300 leading-relaxed font-normal font-sans">
                           {item.description}
                         </p>
                       </div>

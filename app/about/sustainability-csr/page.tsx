@@ -1,4 +1,3 @@
-
 "use client";
 
 import React, { useState } from "react";
@@ -6,23 +5,26 @@ import { Reveal } from "@/components/ui/Reveal";
 import { AboutCTA } from "@/sections/about/AboutCTA";
 import {
   Leaf,
-  Cpu,
-  TrendingDown,
-  Trees,
-  Zap,
-  Sparkles,
+  Sun,
   ShieldCheck,
-  Check,
   Globe,
-  ArrowUpRight,
+  Trees,
+  TrendingDown,
+  Zap,
+  Users,
+  CheckCircle2,
+  ArrowRight,
+  Sparkles,
+  HeartHandshake,
+  Building2,
   Mail,
   User,
   Building,
-  MapPin,
+  Check,
+  ChevronRight,
   ChevronDown
 } from "lucide-react";
-
-
+import Link from "next/link";
 
 export default function CSRPage() {
   const [cloudBudget, setCloudBudget] = useState(25000);
@@ -30,16 +32,15 @@ export default function CSRPage() {
   const [auditData, setAuditData] = useState({ name: "", email: "", company: "" });
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
-  // Realistic carbon and energy savings logic
+  // Carbon calculator logic
   const co2Saved = ((cloudBudget * 12 * 0.0005) * 0.45).toFixed(1);
   const treesPlanted = Math.round(Number(co2Saved) * 45);
-  const coalPrevented = Math.round(Number(co2Saved) * 1102); // ~1102 lbs of coal burned per ton of CO2
+  const coalPrevented = Math.round(Number(co2Saved) * 1102);
 
   const handleAuditSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (auditData.name && auditData.email) {
       setAuditSubmitted(true);
-      // Auto reset for demo purposes
       setTimeout(() => {
         setAuditSubmitted(false);
         setAuditData({ name: "", email: "", company: "" });
@@ -51,10 +52,78 @@ export default function CSRPage() {
     setOpenFaq(openFaq === index ? null : index);
   };
 
+  const focusAreas = [
+    {
+      icon: <Sun className="w-7 h-7 text-emerald-400" />,
+      title: "Clean Energy",
+      desc: "Promoting renewable energy solutions and zero-carbon grid computing for a cleaner tomorrow."
+    },
+    {
+      icon: <Trees className="w-7 h-7 text-emerald-400" />,
+      title: "Protect Nature",
+      desc: "Conserving forests, wildlife habitats, and biodiversity through verified reforestation programs."
+    },
+    {
+      icon: <TrendingDown className="w-7 h-7 text-emerald-400" />,
+      title: "Reduce Emissions",
+      desc: "Architecting serverless ecosystems that reduce corporate carbon footprints and idle compute waste."
+    },
+    {
+      icon: <Users className="w-7 h-7 text-emerald-400" />,
+      title: "Green Communities",
+      desc: "Empowering tech communities worldwide to build sustainable, energy-efficient software estates."
+    }
+  ];
+
+  const projects = [
+    {
+      title: "Reforestation Drive",
+      desc: "Planting native trees to restore protected forests and absorb legacy industrial emissions.",
+      image: "/assets/About-page/csr/csr_proj_reforestation.png",
+      badge: "36,000+ Trees"
+    },
+    {
+      title: "Solar Grid Access",
+      desc: "Powering remote engineering nodes with clean, 100% renewable solar energy systems.",
+      image: "/assets/About-page/csr/csr_proj_solar_grid.png",
+      badge: "100% Renewable"
+    },
+    {
+      title: "Ocean Cleanup Drive",
+      desc: "Removing plastic waste and protecting marine habitats across global coastlines.",
+      image: "/assets/About-page/csr/csr_proj_ocean_cleanup.png",
+      badge: "Clean Oceans"
+    },
+    {
+      title: "Sustainable Smart Cities",
+      desc: "Building eco-conscious cloud architectures for resilient public sector infrastructure.",
+      image: "/assets/About-page/csr/csr_proj_sustainable_city.png",
+      badge: "707+ Communities"
+    }
+  ];
+
+  const testimonials = [
+    {
+      quote: "Being part of this green tech movement has given our enterprise true purpose. Together, we can achieve real carbon neutral scale.",
+      name: "Ayesha Rahman",
+      role: "Sustainability Lead"
+    },
+    {
+      quote: "We've seen the direct positive impact Devopstrio's green cloud audits have on our cloud budget and carbon reporting. It's life-changing.",
+      name: "Daniel Smith",
+      role: "VP of Engineering"
+    },
+    {
+      quote: "Every small optimization counts. Proud to partner with an organization that genuinely cares for our planet's future.",
+      name: "Priya Sharma",
+      role: "ESG Director"
+    }
+  ];
+
   const faqData = [
     {
       q: "How does cloud optimization reduce our corporate carbon footprint?",
-      a: "Optimizing cloud assets reduces energy consumption at the underlying physical data centers, which directly prevents greenhouse gas emissions from non-renewable energy grids that power them."
+      a: "Optimizing cloud assets reduces energy consumption at underlying physical data centers, directly preventing greenhouse gas emissions from non-renewable energy grids that power them."
     },
     {
       q: "What does the free green cloud audit include?",
@@ -72,513 +141,513 @@ export default function CSRPage() {
 
   return (
     <main className="relative min-h-screen bg-black text-white font-sans overflow-x-hidden selection:bg-emerald-500 selection:text-white">
-      {/* Background Animated Elements */}
-      <div
-        className="absolute inset-0 opacity-[0.03] pointer-events-none z-0"
-        style={{
-          backgroundImage: "linear-gradient(to right, #10b981 1px, transparent 1px), linear-gradient(to bottom, #10b981 1px, transparent 1px)",
-          backgroundSize: "80px 80px",
-          maskImage: "radial-gradient(circle at center, black 30%, transparent 85%)",
-          WebkitMaskImage: "radial-gradient(circle at center, black 30%, transparent 85%)"
-        }}
-      />
-      <div className="absolute top-[-100px] left-[25%] w-[450px] h-[450px] bg-[radial-gradient(circle,rgba(16,185,129,0.08)_0%,transparent_70%)] blur-[60px] pointer-events-none z-0" />
-      <div className="absolute top-[40%] right-[10%] w-[500px] h-[500px] bg-[radial-gradient(circle,rgba(231,158,87,0.06)_0%,transparent_70%)] blur-[80px] pointer-events-none z-0" />
+      
+      {/* Subtle Background Glow */}
+      <div className="absolute top-[-100px] left-[20%] w-[600px] h-[600px] bg-[radial-gradient(circle,rgba(16,185,129,0.08)_0%,transparent_70%)] blur-[120px] pointer-events-none z-0" />
+      <div className="absolute top-[35%] right-[10%] w-[600px] h-[600px] bg-[radial-gradient(circle,rgba(4,120,87,0.06)_0%,transparent_70%)] blur-[140px] pointer-events-none z-0" />
 
-      {/* BRAND NEW HERO SECTION (SPLIT SCREEN FOREST THEME) */}
-      <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-24 lg:min-h-[90vh] flex items-center border-b border-zinc-900/60 overflow-hidden">
-        {/* Full-bleed background forest container on right */}
-        <div className="absolute inset-0 lg:left-auto lg:right-0 lg:w-[55vw] h-full z-[1] pointer-events-none overflow-hidden opacity-25 lg:opacity-100">
-          <img
-            src="https://images.unsplash.com/photo-1511497584788-876760111969?q=80&w=2000&auto=format&fit=crop"
-            alt="Misty deep green pine forest wilderness"
-            className="w-full h-full object-cover opacity-90 brightness-[0.65] contrast-[1.1] saturate-[0.9]"
+      {/* 1. HERO SECTION: Act Today For a Better Tomorrow (Full Screen Height min-h-screen) */}
+      <section className="relative min-h-screen w-full flex items-center justify-start overflow-hidden bg-[#030303] text-white py-20 px-6 lg:px-12 z-10 font-sans border-b border-zinc-900">
+        
+        {/* Full-width generated sustainability hero background image */}
+        <div className="absolute inset-0 z-0 pointer-events-none select-none">
+          <img 
+            src="/assets/About-page/csr/hero-sustainability-bg.png" 
+            alt="Sustainability & Renewable Energy Background"
+            className="w-full h-full object-cover object-center opacity-90 filter contrast-110 brightness-105"
           />
-          {/* Smudge mask to blend left into black */}
-          <div
-            className="absolute inset-0 z-20 hidden lg:block"
-            style={{
-              background: "linear-gradient(90deg, #000000 0%, rgba(0, 0, 0, 0.95) 15%, rgba(0, 0, 0, 0.25) 60%, transparent 100%), linear-gradient(to top, #000000 0%, transparent 20%)"
-            }}
-          />
-          {/* Mobile bottom fade mask */}
-          <div className="absolute inset-0 z-20 lg:hidden" style={{ background: "linear-gradient(to top, #000000 0%, transparent 50%)" }} />
+          
+          {/* Subtle edge gradients for header readability */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-transparent z-10" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-transparent to-black/80 z-10" />
+          
+          {/* Ambient Emerald Glow */}
+          <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[700px] h-[700px] bg-[radial-gradient(circle_at_center,rgba(16,185,129,0.18),transparent_70%)] blur-[140px] z-10" />
         </div>
 
-        <div className="max-w-7xl mx-auto w-full px-6 md:px-12 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Left Content Column */}
-            <div className="flex flex-col justify-center">
-              <Reveal>
-                <h1 className="text-5xl md:text-7xl lg:text-[80px] font-bold leading-[1.1] tracking-tight text-white mb-6">
-                  We can save our <br />
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-orange-400">
-                    Environment.
-                  </span>
-                </h1>
-
-                <p className="text-zinc-400 text-sm md:text-base leading-relaxed max-w-lg mb-10 font-medium">
-                  Clean code and zero-emission digital infrastructure are paramount to a sustainable future.
-                  Devopstrio is committed to helping global enterprises architect hyper-efficient, carbon-conscious
-                  cloud ecosystems that optimize both hardware waste and environmental scale.
-                </p>
-
-                {/* Two buttons */}
-                <div className="flex flex-wrap gap-4 mb-12">
-                  <button
-                    onClick={() => document.getElementById("audit-form")?.scrollIntoView({ behavior: "smooth" })}
-                    className="inline-flex items-center justify-center bg-orange-400 hover:bg-white text-black font-bold text-sm px-8 py-4 rounded-xl transition-all duration-300 shadow-[0_10px_20px_rgba(231,158,87,0.2)] hover:shadow-[0_12px_25px_rgba(255,255,255,0.3)] hover:-translate-y-0.5"
-                  >
-                    Request Audit
-                  </button>
-                  <button
-                    onClick={() => document.getElementById("csr-section")?.scrollIntoView({ behavior: "smooth" })}
-                    className="inline-flex items-center justify-center bg-white/5 hover:bg-white/10 border border-white/15 hover:border-white/30 text-white font-bold text-sm px-8 py-4 rounded-xl transition-all duration-300"
-                  >
-                    Our History
-                  </button>
-                </div>
-
-                {/* Coordinates bottom row */}
-                <div className="flex flex-wrap gap-8">
-                  <div className="flex items-center gap-2.5 text-[13px] text-zinc-400 font-medium">
-                    <Mail className="w-4 h-4 text-emerald-500" />
-                    <span>sustainability@devopstrio.com</span>
-                  </div>
-                  <div className="flex items-center gap-2.5 text-[13px] text-zinc-400 font-medium">
-                    <MapPin className="w-4 h-4 text-emerald-500" />
-                    <span>Silicon Valley, California</span>
-                  </div>
-                </div>
-              </Reveal>
-            </div>
-            {/* Empty Right Column spacer */}
-            <div className="hidden lg:block"></div>
-          </div>
-        </div>
-      </section>
-
-      {/* SECTION 1: TOP FOUR STATS CARDS */}
-      <section className="py-16 relative z-10 border-b border-zinc-900/60 bg-black">
-        <div className="max-w-7xl mx-auto w-full px-6 md:px-12">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-
-            <Reveal delay={0.05} className="bg-zinc-950/60 border border-zinc-800/50 rounded-2xl p-8 backdrop-blur-md hover:-translate-y-1 hover:border-emerald-500/30 hover:shadow-[0_15px_35px_rgba(0,0,0,0.4)] transition-all duration-300 flex flex-col gap-3">
-              <h3 className="text-[42px] font-bold text-white leading-none">98%</h3>
-              <h5 className="text-[15px] font-bold text-emerald-500 leading-tight">Cloud Optimization Efficiency</h5>
-              <p className="text-[13px] text-zinc-500 leading-relaxed font-medium">Achieved across all cloud environments and enterprise workloads.</p>
-            </Reveal>
-
-            <Reveal delay={0.1} className="bg-gradient-to-br from-[#047857] to-[#064e3b] border border-emerald-500/30 shadow-[0_15px_30px_rgba(16,185,129,0.15)] rounded-2xl p-8 backdrop-blur-md hover:-translate-y-1 hover:border-emerald-400/60 hover:shadow-[0_18px_40px_rgba(16,185,129,0.25)] transition-all duration-300 flex flex-col gap-3">
-              <h3 className="text-[42px] font-bold text-white leading-none">565t+</h3>
-              <h5 className="text-[15px] font-bold text-white leading-tight">Annual CO₂ Saved</h5>
-              <p className="text-[13px] text-white/75 leading-relaxed font-medium">Prevented through serverless orchestration and green grid scheduling.</p>
-            </Reveal>
-
-            <Reveal delay={0.15} className="bg-zinc-950/60 border border-zinc-800/50 rounded-2xl p-8 backdrop-blur-md hover:-translate-y-1 hover:border-emerald-500/30 hover:shadow-[0_15px_35px_rgba(0,0,0,0.4)] transition-all duration-300 flex flex-col gap-3">
-              <h3 className="text-[42px] font-bold text-white leading-none">36k+</h3>
-              <h5 className="text-[15px] font-bold text-emerald-500 leading-tight">Trees Planted</h5>
-              <p className="text-[13px] text-zinc-500 leading-relaxed font-medium">Through our verified 'One Migration, One Tree' reforestation program.</p>
-            </Reveal>
-
-            <Reveal delay={0.2} className="bg-zinc-950/60 border border-zinc-800/50 rounded-2xl p-8 backdrop-blur-md hover:-translate-y-1 hover:border-emerald-500/30 hover:shadow-[0_15px_35px_rgba(0,0,0,0.4)] transition-all duration-300 flex flex-col gap-3">
-              <h3 className="text-[42px] font-bold text-white leading-none">100%</h3>
-              <h5 className="text-[15px] font-bold text-emerald-500 leading-tight">Offset Operations</h5>
-              <p className="text-[13px] text-zinc-500 leading-relaxed font-medium">Remote-first workforce and fully balanced operational footprints.</p>
-            </Reveal>
-
-          </div>
-        </div>
-      </section>
-
-      {/* SECTION 2: COMPREHENSIVE GREEN CLOUD SERVICES */}
-      <section id="csr-section" className="py-24 bg-[#030303] border-b border-zinc-900/60 relative">
-        <div className="max-w-7xl mx-auto w-full px-6 md:px-12 relative z-10">
-
-          <div className="flex flex-col items-center text-center mb-16">
+        {/* Main Hero Container */}
+        <div className="max-w-7xl mx-auto w-full relative z-20 my-auto">
+          <div className="max-w-3xl">
             <Reveal>
-              <div className="inline-flex items-center gap-2 bg-emerald-500/10 border border-emerald-500/20 text-emerald-500 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest mb-6">
-                <Leaf className="w-3.5 h-3.5 animate-[pulse_3s_infinite]" />
-                Why Choose Us
+              <h1 className="text-4xl sm:text-6xl lg:text-[4.5rem] font-semibold leading-[1.1] tracking-tight text-white mb-6 font-sans [text-shadow:_0_4px_30px_rgb(0_0_0_/_95%)] drop-shadow-[0_15px_30px_rgba(0,0,0,1)]">
+                Act Today <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-300 to-emerald-500 font-semibold drop-shadow-[0_0_35px_rgba(16,185,129,0.8)]">
+                  For a Better Tomorrow
+                </span>
+              </h1>
+
+              {/* Hero CTA Button */}
+              <div className="mt-8">
+                <button
+                  onClick={() => document.getElementById("projects-section")?.scrollIntoView({ behavior: "smooth" })}
+                  className="inline-flex items-center justify-center bg-emerald-500 hover:bg-emerald-400 text-black font-bold text-base px-8 py-4 rounded-xl transition-all duration-300 shadow-[0_10px_25px_rgba(16,185,129,0.3)] hover:-translate-y-0.5"
+                >
+                  Explore Projects
+                </button>
               </div>
-              <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white">Comprehensive Green Cloud Services</h2>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
+      {/* 2. FOCUS AREAS: Building a Sustainable Future for All */}
+      <section className="py-16 sm:py-24 bg-black border-b border-zinc-900 relative">
+        <div className="max-w-7xl mx-auto w-full px-6 lg:px-12">
+          
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <Reveal>
+              {/* <span className="text-xs font-bold uppercase tracking-widest text-emerald-400 mb-3 block font-mono">
+                OUR FOCUS AREAS
+              </span> */}
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-white mb-4 font-sans">
+                Building a Sustainable <span className="text-emerald-400 font-semibold">Future for All.</span>
+              </h2>
+              {/* <p className="text-base text-zinc-300 leading-relaxed font-normal font-sans">
+                We focus on key operational areas that drive real change, reduce legacy compute waste, and create lasting environmental impact.
+              </p> */}
             </Reveal>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-[0.95fr_1.1fr_0.95fr] gap-10 items-center">
-            {/* Left Image */}
-            <Reveal delay={0.1} className="relative h-[380px] rounded-[120px_120px_24px_24px] border border-zinc-800 overflow-hidden shadow-[0_20px_40px_rgba(0,0,0,0.5)] group order-2 lg:order-1 max-w-[480px] lg:max-w-none mx-auto w-full">
-              <img
-                src="/assets/About-page/csr/Why Choose Us-left.png"
-                alt="Green cloud operations team"
-                className="w-full h-full object-cover transition-transform duration-[800ms] group-hover:scale-110"
-              />
-            </Reveal>
-
-            {/* Middle Content */}
-            <div className="flex flex-col gap-8 order-1 lg:order-2 text-center lg:text-left">
-              <Reveal delay={0.15}>
-                <p className="text-[15px] leading-relaxed text-zinc-400 font-medium m-0">
-                  Discover a wide range of high-efficiency green infrastructure designs engineered to reduce digital waste. We take pride in delivering innovative cloud orchestration solutions that help you achieve optimal scaling in your production environments, whether you are a growing startup or a global enterprise.
-                </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {focusAreas.map((area, idx) => (
+              <Reveal key={area.title} delay={idx * 0.1}>
+                <div className="bg-zinc-950/80 border border-zinc-800/80 rounded-2xl p-6 sm:p-8 hover:border-emerald-500/50 hover:bg-zinc-900/60 transition-all duration-300 group cursor-pointer h-full flex flex-col justify-between hover:-translate-y-1">
+                  <div>
+                    <div className="w-14 h-14 rounded-xl bg-zinc-900 border border-zinc-800 flex items-center justify-center mb-6 group-hover:bg-emerald-950/40 group-hover:border-emerald-700/50 transition-all duration-300">
+                      {area.icon}
+                    </div>
+                    <h3 className="text-xl sm:text-2xl font-semibold text-white font-sans group-hover:text-emerald-400 transition-colors mb-3">
+                      {area.title}
+                    </h3>
+                    <p className="text-base text-zinc-300 font-normal leading-relaxed font-sans">
+                      {area.desc}
+                    </p>
+                  </div>
+                </div>
               </Reveal>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 max-w-[500px] lg:max-w-none mx-auto w-full">
-                <Reveal delay={0.2} className="rounded-2xl p-5 flex flex-col justify-center items-center text-center h-[160px] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_15px_30px_rgba(0,0,0,0.3)] bg-[#047857] text-white border border-emerald-500/20">
-                  <h4 className="text-2xl font-bold mb-2">5+ Years</h4>
-                  <p className="text-[11.5px] font-bold leading-snug opacity-85">Of Experience In Green DevOps</p>
-                </Reveal>
-                <Reveal delay={0.25} className="rounded-2xl p-5 flex flex-col justify-center items-center text-center h-[160px] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_15px_30px_rgba(0,0,0,0.3)] bg-amber-500 text-black border border-amber-500/20">
-                  <h4 className="text-2xl font-bold mb-2">100%</h4>
-                  <p className="text-[11.5px] font-bold leading-snug opacity-85">Carbon Neutral Workloads</p>
-                </Reveal>
-              </div>
-            </div>
-
-            {/* Right Image */}
-            <Reveal delay={0.3} className="relative h-[380px] rounded-[24px_24px_120px_120px] border border-zinc-800 overflow-hidden shadow-[0_20px_40px_rgba(0,0,0,0.5)] group order-3 max-w-[480px] lg:max-w-none mx-auto w-full">
-              <img
-                src="/assets/About-page/csr/Why Choose Us-right.png"
-                alt="Sustainable software optimization"
-                className="w-full h-full object-cover transition-transform duration-[800ms] group-hover:scale-110"
-              />
-            </Reveal>
+            ))}
           </div>
 
         </div>
       </section>
 
-      {/* SECTION 3: EXPLORE OUR ECO-FRAMEWORKS */}
-      <section className="py-24 bg-black border-b border-zinc-900/60 relative">
-        <div className="max-w-7xl mx-auto w-full px-6 md:px-12 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.15fr] gap-14 items-center">
+      {/* 3. IMPACT STATS & GALLERY: Together, We Create Impact */}
+      <section className="py-16 sm:py-24 bg-[#041d14] relative border-b border-emerald-900/40 overflow-hidden font-sans">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(16,185,129,0.12),transparent_70%)] pointer-events-none" />
 
-            {/* Left Box */}
-            <Reveal delay={0.1} className="relative bg-emerald-500/[0.03] border border-emerald-500/10 rounded-3xl p-10 overflow-hidden backdrop-blur-md transition-all duration-300 hover:border-emerald-500/30 hover:bg-emerald-500/5 group">
-              <div className="absolute top-[-150px] left-[-150px] w-[300px] h-[300px] bg-[radial-gradient(circle,rgba(16,185,129,0.12)_0%,transparent_70%)] blur-[40px] pointer-events-none" />
+        <div className="max-w-7xl mx-auto w-full px-6 lg:px-12 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            {/* Impact Left Stats List */}
+            <div className="lg:col-span-5">
+              <Reveal>
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-white mb-3 font-sans">
+                  Together, <br />
+                  <span className="text-emerald-400 font-semibold">We Create Impact</span>
+                </h2>
+                <p className="text-base text-emerald-100/80 leading-relaxed mb-8 font-normal font-sans">
+                  Every action, no matter how small, brings us closer to a sustainable future.
+                </p>
 
-              <div className="w-[60px] h-[60px] bg-emerald-500/10 border border-emerald-500/20 text-emerald-500 rounded-full flex items-center justify-center mb-8">
-                <Sparkles className="w-6 h-6" />
-              </div>
+                <div className="space-y-6">
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 rounded-full bg-emerald-900/60 border border-emerald-700/60 flex items-center justify-center text-emerald-400 shrink-0">
+                      <Users className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <span className="text-2xl sm:text-3xl font-bold text-white font-mono block leading-none mb-1">8,705</span>
+                      <span className="text-sm font-semibold text-emerald-300 font-sans">Volunteers</span>
+                    </div>
+                  </div>
 
-              <h3 className="text-3xl font-bold leading-snug mb-4">Explore Our Green Frameworks</h3>
-              <p className="text-[14.5px] leading-relaxed text-zinc-400 font-medium mb-10">
-                Discover high-performance green architectures designed to optimize computing waste.
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 rounded-full bg-emerald-900/60 border border-emerald-700/60 flex items-center justify-center text-emerald-400 shrink-0">
+                      <Trees className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <span className="text-2xl sm:text-3xl font-bold text-white font-mono block leading-none mb-1">9,450</span>
+                      <span className="text-sm font-semibold text-emerald-300 font-sans">Trees Planted</span>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 rounded-full bg-emerald-900/60 border border-emerald-700/60 flex items-center justify-center text-emerald-400 shrink-0">
+                      <Globe className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <span className="text-2xl sm:text-3xl font-bold text-white font-mono block leading-none mb-1">380</span>
+                      <span className="text-sm font-semibold text-emerald-300 font-sans">Campaigns</span>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 rounded-full bg-emerald-900/60 border border-emerald-700/60 flex items-center justify-center text-emerald-400 shrink-0">
+                      <HeartHandshake className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <span className="text-2xl sm:text-3xl font-bold text-white font-mono block leading-none mb-1">707</span>
+                      <span className="text-sm font-semibold text-emerald-300 font-sans">Communities</span>
+                    </div>
+                  </div>
+                </div>
+              </Reveal>
+            </div>
+
+            {/* Impact Right 3 Stacked Generated Image Rows */}
+            <div className="lg:col-span-7">
+              <Reveal delay={0.2}>
+                <div className="flex flex-col gap-4">
+                  {/* Row 1: Plant Seedling */}
+                  <div className="rounded-2xl overflow-hidden border border-emerald-800/60 h-48 sm:h-52 w-full group">
+                    <img
+                      src="/assets/About-page/csr/csr_impact_plant_seedling1.png"
+                      alt="Volunteer holding seedling"
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                  </div>
+
+                  {/* Row 2: Save Planet Sign */}
+                  <div className="rounded-2xl overflow-hidden border border-emerald-800/60 h-48 sm:h-52 w-full group">
+                    <img
+                      src="/assets/About-page/csr/csr_impact_save_planet1.png"
+                      alt="Volunteers holding SAVE PLANET sign"
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                  </div>
+
+                  {/* Row 3: River Forest Landscape */}
+                  <div className="rounded-2xl overflow-hidden border border-emerald-800/60 h-48 sm:h-52 w-full group">
+                    <img
+                      src="/assets/About-page/csr/csr_impact_river_forest.png"
+                      alt="Rainforest river landscape"
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                  </div>
+                </div>
+              </Reveal>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* 4. FEATURED INITIATIVES: Projects Driving Real Change */}
+      <section id="projects-section" className="py-16 sm:py-24 bg-black border-b border-zinc-900 relative">
+        <div className="max-w-7xl mx-auto w-full px-6 lg:px-12">
+          
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <Reveal>
+            
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-white mb-4 font-sans">
+                Projects Driving <span className="text-emerald-400 font-semibold">Real Change.</span>
+              </h2>
+             
+            </Reveal>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {projects.map((proj, idx) => (
+              <Reveal key={proj.title} delay={idx * 0.1}>
+                <div className="bg-zinc-950/80 border border-zinc-800/80 rounded-2xl overflow-hidden hover:border-emerald-500/50 hover:bg-zinc-900/60 transition-all duration-300 group cursor-pointer h-full flex flex-col justify-between hover:-translate-y-1">
+                  <div>
+                    <div className="h-44 w-full relative overflow-hidden">
+                      <img
+                        src={proj.image}
+                        alt={proj.title}
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      />
+                      <div className="absolute top-3 right-3 bg-black/80 backdrop-blur-md border border-zinc-800 px-3 py-1 rounded-md text-emerald-400 font-bold text-xs font-mono">
+                        {proj.badge}
+                      </div>
+                    </div>
+                    <div className="p-6">
+                      <h3 className="text-xl font-bold text-white font-sans group-hover:text-emerald-400 transition-colors mb-2">
+                        {proj.title}
+                      </h3>
+                      <p className="text-base text-zinc-300 font-normal leading-relaxed font-sans">
+                        {proj.desc}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+
+        </div>
+      </section>
+
+      {/* 5. CLIMATE ACTION SUPPORT BANNER */}
+      <section className="py-16 sm:py-20 bg-[#030303] border-b border-zinc-900 relative font-sans">
+        <div className="max-w-7xl mx-auto w-full px-6 lg:px-12 relative z-10">
+          <Reveal>
+            <div className="bg-gradient-to-br from-emerald-950/60 via-zinc-950 to-emerald-950/40 border border-emerald-800/50 rounded-3xl p-8 sm:p-14 text-center max-w-4xl mx-auto relative overflow-hidden shadow-2xl">
+              <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none" />
+              
+          
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-white mb-3 font-sans">
+                Powers Real <span className="text-emerald-400 font-semibold">Climate Action.</span>
+              </h2>
+              <p className="text-base text-zinc-300 max-w-xl mx-auto mb-8 font-normal font-sans">
+                Choose an amount to contribute and be part of the change toward zero-carbon digital transformation.
               </p>
 
-              <div className="w-12 h-12 rounded-full bg-emerald-500 text-black flex items-center justify-center transition-all duration-300 cursor-pointer group-hover:scale-110 group-hover:bg-white">
-                <ArrowUpRight className="w-[18px] h-[18px] stroke-[2.5px]" />
+              {/* Amount Buttons */}
+              <div className="flex flex-wrap items-center justify-center gap-3 mb-8">
+                {["$20", "$50", "$100", "$250", "$500", "Other"].map((amt, idx) => (
+                  <button
+                    key={amt}
+                    className={`px-6 py-3 rounded-xl border text-sm font-bold font-mono transition-all duration-300 ${
+                      idx === 2
+                        ? "bg-emerald-500 text-black border-emerald-400 shadow-lg shadow-emerald-500/20"
+                        : "bg-zinc-900/80 text-zinc-200 border-zinc-800 hover:border-emerald-500/50 hover:text-white"
+                    }`}
+                  >
+                    {amt}
+                  </button>
+                ))}
+              </div>
+
+              <button className="bg-emerald-500 hover:bg-emerald-400 text-black font-bold text-base px-10 py-4 rounded-xl transition-all duration-300 shadow-[0_10px_25px_rgba(16,185,129,0.3)] hover:-translate-y-0.5">
+                Support Action Now
+              </button>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* 6. WHAT'S HAPPENING IN THE MOVEMENT (NEWS & NEWSLETTER SPLIT) */}
+      <section className="py-16 sm:py-24 bg-black border-b border-zinc-900 relative font-sans">
+        <div className="max-w-7xl mx-auto w-full px-6 lg:px-12 relative z-10">
+          
+          {/* Header with View All Link */}
+          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-12 border-b border-zinc-900 pb-6">
+            <Reveal>
+              <div>
+                <span className="text-xs font-bold uppercase tracking-widest text-emerald-400 mb-2 block font-mono">
+                  WHAT&apos;S HAPPENING
+                </span>
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-white font-sans">
+                  In the <span className="text-emerald-400 font-semibold">Movement</span>
+                </h2>
               </div>
             </Reveal>
+            <Reveal delay={0.1}>
+              <Link href="/insights/news" className="text-sm font-bold text-emerald-400 hover:text-emerald-300 font-mono tracking-wider uppercase mt-4 sm:mt-0 flex items-center gap-1">
+                View All News &rarr;
+              </Link>
+            </Reveal>
+          </div>
 
-            {/* Right List Box */}
-            <div className="flex flex-col gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+            
+            {/* Left Column: 3 News List Items */}
+            <div className="lg:col-span-7 space-y-6">
               {[
-                { num: "1", title: "Serverless & Microservices", desc: "Utilize event-driven models that automatically scale down to zero idle compute capacity." },
-                { num: "2", title: "Autoscaling & Resource Allocation", desc: "Dynamically size VM instances in real-time, eliminating redundant server runtime." },
-                { num: "3", title: "Carbon-Conscious Workloads", desc: "Intelligently schedule high-compute tasks to align with peak renewable energy availability." }
-              ].map((item, idx) => (
-                <Reveal delay={0.15 + (idx * 0.05)} key={idx} className="flex gap-6 items-start transition-all duration-300 group">
-                  <div className="w-12 h-12 rounded-full border border-zinc-700 flex items-center justify-center text-base font-bold text-zinc-300 shrink-0 transition-all duration-300 group-hover:border-emerald-500 group-hover:bg-emerald-500 group-hover:text-black group-hover:shadow-[0_0_15px_rgba(16,185,129,0.3)]">
-                    {item.num}
-                  </div>
-                  <div>
-                    <h4 className="text-lg font-bold text-white mb-2 transition-colors duration-300 group-hover:text-emerald-500">{item.title}</h4>
-                    <p className="text-sm leading-relaxed text-zinc-400 font-medium">{item.desc}</p>
+                {
+                  date: "MAY 20, 2026",
+                  title: "Global Climate Summit 2026",
+                  desc: "World leaders and enterprise partners unite to accelerate zero-carbon computing action.",
+                  image: "/assets/About-page/csr/csr_news_climate_summit.png"
+                },
+                {
+                  date: "MAY 25, 2026",
+                  title: "Youth for Climate Rally",
+                  desc: "Thousands of young voices and engineers demand a greener digital tomorrow.",
+                  image: "/assets/About-page/csr/csr_news_youth_rally.png"
+                },
+                {
+                  date: "MAY 28, 2026",
+                  title: "New Report: Climate Progress",
+                  desc: "Key insights, telemetry, and verified data on global corporate carbon reduction.",
+                  image: "/assets/About-page/csr/csr_news_climate_report.png"
+                }
+              ].map((news, idx) => (
+                <Reveal key={news.title} delay={idx * 0.1}>
+                  <div className="bg-zinc-950/80 border border-zinc-800/80 rounded-2xl p-4 sm:p-5 flex flex-col sm:flex-row items-center gap-6 hover:border-emerald-500/50 hover:bg-zinc-900/60 transition-all duration-300 group cursor-pointer">
+                    <div className="w-full sm:w-44 h-32 rounded-xl overflow-hidden shrink-0 border border-zinc-800">
+                      <img
+                        src={news.image}
+                        alt={news.title}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      />
+                    </div>
+                    <div className="flex-1">
+                      <span className="text-xs font-bold text-emerald-400 font-mono tracking-widest block mb-1">
+                        {news.date}
+                      </span>
+                      <h3 className="text-lg sm:text-xl font-semibold text-white font-sans group-hover:text-emerald-400 transition-colors mb-2">
+                        {news.title}
+                      </h3>
+                      <p className="text-sm text-zinc-300 font-normal leading-relaxed font-sans">
+                        {news.desc}
+                      </p>
+                    </div>
                   </div>
                 </Reveal>
               ))}
             </div>
 
-          </div>
-        </div>
-      </section>
-
-      {/* INTERACTIVE CALCULATOR & SIMULATOR SECTION */}
-      <section className="py-24 bg-[#030303] border-b border-zinc-900/60 relative">
-        <div className="max-w-7xl mx-auto w-full px-6 md:px-12 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-[1.05fr_0.95fr] gap-12 items-stretch">
-
-            {/* Calculator Left: Slider controls */}
-            <Reveal delay={0.1} className="bg-zinc-950/60 border border-zinc-800 rounded-3xl p-8 md:p-12 backdrop-blur-md flex flex-col justify-between">
-              <div>
-                <span className="text-[11px] uppercase tracking-[1.5px] text-orange-400 font-bold mb-3 block">Interactive Tool</span>
-                <h2 className="text-3xl md:text-[32px] font-bold mb-4">Cloud Carbon Estimator</h2>
-                <p className="text-sm leading-[1.6] text-zinc-400 font-medium mb-8">
-                  Adjust the slider below to estimate your organization's monthly hosting expenditure and preview the structural environmental advantages of eco-optimized infrastructure.
-                </p>
-
-                <div className="bg-white/5 border border-white/5 rounded-2xl p-6 mb-8">
-                  <div className="flex justify-between items-center font-bold text-[15px] mb-5">
-                    <span>Monthly Spend</span>
-                    <span className="text-[22px] font-bold text-emerald-500 drop-shadow-[0_0_10px_rgba(16,185,129,0.2)]">${cloudBudget.toLocaleString()}</span>
-                  </div>
-                  <input
-                    type="range"
-                    min="2000"
-                    max="200000"
-                    step="2000"
-                    value={cloudBudget}
-                    onChange={(e) => setCloudBudget(Number(e.target.value))}
-                    className="w-full appearance-none h-1.5 rounded bg-white/10 outline-none cursor-pointer mb-3 accent-emerald-500"
-                  />
-                  <div className="flex justify-between text-[11px] text-zinc-500 font-bold">
-                    <span>$2k</span>
-                    <span>$100k</span>
-                    <span>$200k+</span>
+            {/* Right Column: Newsletter & Quote Card */}
+            <div className="lg:col-span-5 space-y-6">
+              
+              {/* Newsletter Box */}
+              <Reveal delay={0.2}>
+                <div className="bg-zinc-950/80 border border-zinc-800/80 rounded-2xl p-6 sm:p-8">
+                  <h3 className="text-xl font-semibold text-white font-sans mb-2">
+                    Subscribe to Our Newsletter
+                  </h3>
+                  <p className="text-sm text-zinc-300 font-normal leading-relaxed mb-6 font-sans">
+                    Get the latest updates on our sustainability projects and CSR initiatives.
+                  </p>
+                  
+                  <div className="space-y-4">
+                    <input
+                      type="text"
+                      placeholder="Your Name"
+                      className="w-full bg-zinc-900 border border-zinc-800 rounded-xl py-3 px-4 text-sm text-white placeholder:text-zinc-500 outline-none focus:border-emerald-500"
+                    />
+                    <input
+                      type="email"
+                      placeholder="Your Email"
+                      className="w-full bg-zinc-900 border border-zinc-800 rounded-xl py-3 px-4 text-sm text-white placeholder:text-zinc-500 outline-none focus:border-emerald-500"
+                    />
+                    <button className="w-full bg-emerald-500 hover:bg-emerald-400 text-black font-bold text-sm py-3.5 rounded-xl transition-all duration-300 shadow-[0_10px_20px_rgba(16,185,129,0.2)]">
+                      Subscribe Now
+                    </button>
                   </div>
                 </div>
-
-                <ul className="flex flex-col gap-3 m-0 p-0 list-none">
-                  {[
-                    "Up to 50% decrease in waste compute idle times",
-                    "Automatic scaling to zero during off-peak hours",
-                    "Migrated workloads scheduled for green energy grids"
-                  ].map((point, idx) => (
-                    <li key={idx} className="flex gap-3 items-center">
-                      <span className="w-5 h-5 rounded-full bg-emerald-500/10 text-emerald-500 flex items-center justify-center shrink-0">
-                        <Check className="w-3 h-3 stroke-[3.5px]" />
-                      </span>
-                      <p className="text-[13.5px] text-zinc-300 font-medium m-0">{point}</p>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </Reveal>
-
-            {/* Calculator Right: Output Metrics */}
-            <Reveal delay={0.2} className="relative bg-zinc-950/40 border border-zinc-800 rounded-3xl p-8 md:p-12 flex flex-col justify-between overflow-hidden">
-              {/* Internal glow border effect */}
-              <div className="absolute inset-0 rounded-3xl border border-transparent [background:linear-gradient(135deg,rgba(16,185,129,0.15),transparent_70%)_border-box] [-webkit-mask:linear-gradient(#fff_0_0)_padding-box,linear-gradient(#fff_0_0)] [-webkit-mask-composite:xor] mask-composite-exclude pointer-events-none" />
-
-              <div className="absolute top-[-100px] right-[-100px] w-[280px] h-[280px] bg-[radial-gradient(circle,rgba(16,185,129,0.12)_0%,transparent_70%)] blur-[40px] pointer-events-none" />
-
-              <div className="relative z-10">
-                <h3 className="text-xl font-bold mb-6">Projected Annual Savings</h3>
-
-                <div className="bg-gradient-to-br from-[rgba(231,158,87,0.08)] to-[rgba(16,185,129,0.04)] border border-orange-400/15 rounded-2xl p-6 flex flex-col sm:flex-row gap-5 items-center sm:items-start mb-6 text-center sm:text-left">
-                  <div className="w-[54px] h-[54px] rounded-full bg-orange-400/10 text-orange-400 flex items-center justify-center text-2xl shrink-0">
-                    <Trees className="w-6 h-6" />
-                  </div>
-                  <div>
-                    <h4 className="text-2xl font-bold text-orange-400 mb-1 leading-tight">🌲 {treesPlanted.toLocaleString()} Trees</h4>
-                    <p className="text-xs leading-[1.4] text-zinc-400 font-medium m-0">Equivalent ecological absorption capacity over a 10-year period.</p>
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-8">
-                  <div className="bg-white/5 border border-white/5 rounded-2xl p-5">
-                    <div className="w-[38px] h-[38px] rounded-lg bg-emerald-500/10 text-emerald-500 flex items-center justify-center mb-3.5">
-                      <Zap className="w-5 h-5" />
-                    </div>
-                    <h5 className="text-xl font-bold mb-1">{co2Saved} Tons</h5>
-                    <p className="text-[11px] text-zinc-500 font-bold m-0 uppercase tracking-wide">Annual CO₂ Saved</p>
-                  </div>
-                  <div className="bg-white/5 border border-white/5 rounded-2xl p-5">
-                    <div className="w-[38px] h-[38px] rounded-lg bg-[#522c72]/20 text-[#c23681] flex items-center justify-center mb-3.5">
-                      <TrendingDown className="w-5 h-5" />
-                    </div>
-                    <h5 className="text-xl font-bold mb-1">{coalPrevented.toLocaleString()} lbs</h5>
-                    <p className="text-[11px] text-zinc-500 font-bold m-0 uppercase tracking-wide">Coal Burn Prevented</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="flex items-center gap-2.5 border-t border-white/10 pt-5 relative z-10">
-                <ShieldCheck className="text-zinc-600 w-4 h-4 shrink-0" />
-                <p className="text-[11px] text-zinc-500 font-medium m-0">Calculations adhere to GHG Protocols and certified carbon offsets.</p>
-              </div>
-            </Reveal>
-
-          </div>
-        </div>
-      </section>
-
-      {/* SECTION 4: PRODUCT DETAILS (OUR OPERATIONAL IMPACT) */}
-      <section className="py-24 bg-black border-b border-zinc-900/60 relative">
-        <div className="max-w-7xl mx-auto w-full px-6 md:px-12 relative z-10">
-
-          <Reveal>
-            <div className="flex mb-3">
-              <span className="bg-orange-400/10 border border-orange-400/20 text-orange-400 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest">Our Sustainable Impact</span>
-            </div>
-            <h2 className="text-3xl md:text-[38px] font-bold tracking-tight mb-12">We're Leaders in Zero-Waste Digital Solutions</h2>
-          </Reveal>
-
-          <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.15fr] gap-14 items-center">
-            {/* Left Image Box */}
-            <Reveal delay={0.1} className="relative h-[420px] lg:h-[480px] rounded-3xl border border-zinc-800 overflow-hidden shadow-[0_20px_45px_rgba(0,0,0,0.5)] max-w-[600px] lg:max-w-none mx-auto w-full">
-              <img
-                src="/assets/About-page/csr/Zero waste technology forest.png"
-                alt="Zero waste technology forest"
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute bottom-6 left-6 w-[54px] h-[54px] rounded-full bg-emerald-500 text-black flex items-center justify-center shadow-[0_10px_20px_rgba(16,185,129,0.3)]">
-                <Leaf className="w-[22px] h-[22px] animate-[leafPulse_3s_infinite_ease-in-out]" />
-              </div>
-            </Reveal>
-
-            {/* Right Info Box */}
-            <div className="flex flex-col items-start lg:items-start items-center text-center lg:text-left">
-              <Reveal delay={0.15}>
-                <p className="text-[15.5px] leading-[1.65] text-zinc-400 font-medium m-0 mb-7">
-                  We engineer hyper-efficient cloud ecosystems that merge peak system performance with minimal environmental impact. Our designs guarantee cost reduction alongside carbon compliance.
-                </p>
-
-                <button
-                  onClick={() => document.getElementById("audit-form")?.scrollIntoView({ behavior: "smooth" })}
-                  className="inline-flex items-center justify-center bg-orange-400 hover:bg-white text-black font-bold text-sm px-7 py-3.5 rounded-xl transition-all duration-300 shadow-[0_10px_20px_rgba(231,158,87,0.2)] hover:shadow-[0_12px_25px_rgba(255,255,255,0.3)] hover:-translate-y-0.5 mb-11"
-                >
-                  Request Green Audit
-                </button>
               </Reveal>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-7 w-full border-t border-zinc-800 pt-10 text-left">
-                {[
-                  { icon: <Cpu className="w-[18px] h-[18px]" />, color: "text-emerald-500", bg: "bg-emerald-500/10", title: "Green Compute Architecture", desc: "Deploy automated resource scaling that slashes monthly hosting expenses by up to 40%." },
-                  { icon: <TrendingDown className="w-[18px] h-[18px]" />, color: "text-rose-500", bg: "bg-rose-500/10", title: "GHG Certified Reporting", desc: "Generate production-grade greenhouse gas carbon emission reports for compliance audits." },
-                  { icon: <Trees className="w-[18px] h-[18px]" />, color: "text-emerald-500", bg: "bg-emerald-500/10", title: "Ecosystem Restoration", desc: "Every automated workload migration actively funds verified reforestation." },
-                  { icon: <Globe className="w-[18px] h-[18px]" />, color: "text-orange-400", bg: "bg-orange-400/10", title: "Sustainable Goals Alignment", desc: "Ensure your technology stack directly aligns with international ESG and SDG frameworks." }
-                ].map((item, idx) => (
-                  <Reveal delay={0.2 + (idx * 0.05)} key={idx} className="flex gap-4 items-start">
-                    <div className={`w-[42px] h-[42px] rounded-full flex items-center justify-center shrink-0 ${item.bg} ${item.color}`}>
-                      {item.icon}
-                    </div>
-                    <div>
-                      <h4 className="text-[14.5px] font-bold text-white mb-1.5">{item.title}</h4>
-                      <p className="text-[12.5px] leading-[1.5] text-zinc-400 font-medium m-0">{item.desc}</p>
-                    </div>
-                  </Reveal>
-                ))}
-              </div>
+              {/* Quote Box */}
+              <Reveal delay={0.3}>
+                <div className="bg-emerald-950/30 border border-emerald-800/40 rounded-2xl p-6 sm:p-8 relative">
+                  <p className="text-base text-zinc-200 italic leading-relaxed mb-4 font-sans">
+                    &ldquo;The earth does not belong to us: we belong to the earth.&rdquo;
+                  </p>
+                  <span className="text-xs font-bold text-emerald-400 font-mono tracking-wider block uppercase">
+                    &mdash; Chief Seattle
+                  </span>
+                </div>
+              </Reveal>
+
             </div>
+
           </div>
+
         </div>
       </section>
 
-      {/* SECTION 5: FAQ SECTION */}
-      <section className="py-24 bg-[#030303] border-b border-zinc-900/60 relative">
-        <div className="max-w-7xl mx-auto w-full px-6 md:px-12 relative z-10">
-
-          <div className="flex flex-col items-center text-center mb-14">
+      {/* 6. TESTIMONIALS: Our Amazing Community */}
+      <section className="py-16 sm:py-24 bg-black border-b border-zinc-900 relative">
+        <div className="max-w-7xl mx-auto w-full px-6 lg:px-12">
+          
+          <div className="text-center max-w-3xl mx-auto mb-16">
             <Reveal>
-              <span className="inline-flex bg-emerald-500/10 border border-emerald-500/20 text-emerald-500 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest mb-3">FAQ</span>
-              <h2 className="text-3xl md:text-[38px] font-bold tracking-tight text-white">Frequently Answered Questions</h2>
+              <span className="text-xs font-bold uppercase tracking-widest text-emerald-400 mb-3 block font-mono">
+                VOICES OF CHANGE
+              </span>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-white mb-4 font-sans">
+                Our Amazing <span className="text-emerald-400 font-semibold">Community</span>
+              </h2>
             </Reveal>
           </div>
 
-          <div className="max-w-[800px] mx-auto flex flex-col gap-4">
-            {faqData.map((faq, index) => {
-              const isOpen = openFaq === index;
-              return (
-                <Reveal delay={0.1 + (index * 0.05)} key={index}>
-                  <div className={`bg-zinc-950/60 border ${isOpen ? 'border-emerald-500/30 shadow-[0_10px_25px_rgba(0,0,0,0.3)]' : 'border-zinc-800'} rounded-2xl overflow-hidden transition-all duration-300`}>
-                    <button
-                      className="w-full bg-transparent border-none px-8 py-6 flex justify-between items-center text-white text-base md:text-[16px] font-bold text-left cursor-pointer transition-all duration-300"
-                      onClick={() => toggleFaq(index)}
-                    >
-                      <span className={isOpen ? "text-emerald-500" : ""}>{faq.q}</span>
-                      <ChevronDown className={`w-[18px] h-[18px] shrink-0 ml-4 transition-transform duration-300 ${isOpen ? "rotate-180 text-emerald-500" : "text-zinc-500"}`} />
-                    </button>
-                    <div className={`grid transition-[grid-template-rows] duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] overflow-hidden ${isOpen ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'}`}>
-                      <div className="min-h-0">
-                        <p className="px-8 pb-6 m-0 text-[14.5px] leading-[1.6] text-zinc-400 font-medium">
-                          {faq.a}
-                        </p>
-                      </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {testimonials.map((t, idx) => (
+              <Reveal key={t.name} delay={idx * 0.1}>
+                <div className="bg-zinc-950/80 border border-zinc-800/80 rounded-2xl p-6 sm:p-8 hover:border-emerald-500/50 transition-all duration-300 h-full flex flex-col justify-between">
+                  <p className="text-base text-zinc-300 italic leading-relaxed mb-6 font-sans">
+                    &ldquo;{t.quote}&rdquo;
+                  </p>
+                  <div className="flex items-center gap-3 border-t border-zinc-900 pt-4">
+                    <div className="w-10 h-10 rounded-full bg-emerald-950 border border-emerald-800 flex items-center justify-center text-emerald-400 font-bold text-sm font-mono">
+                      {t.name[0]}
+                    </div>
+                    <div>
+                      <h4 className="text-base font-bold text-white font-sans">{t.name}</h4>
+                      <p className="text-xs text-zinc-400 font-sans">{t.role}</p>
                     </div>
                   </div>
-                </Reveal>
-              );
-            })}
+                </div>
+              </Reveal>
+            ))}
           </div>
+
         </div>
       </section>
 
-      {/* AUDIT CALL TO ACTION FORM */}
-      <section id="audit-form" className="py-20 lg:py-[120px] bg-black relative">
-        <div className="max-w-7xl mx-auto w-full px-6 md:px-12 relative z-10">
+      {/* 7. AUDIT FORM: Request a Free Green Cloud Audit */}
+      <section id="audit-form" className="py-16 sm:py-24 bg-[#030303] border-b border-zinc-900 relative">
+        <div className="max-w-7xl mx-auto w-full px-6 lg:px-12 relative z-10">
 
           <Reveal>
-            <div className="relative bg-zinc-950/60 border border-zinc-800 rounded-[28px] p-10 md:p-[60px] grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-[60px] items-center backdrop-blur-md overflow-hidden">
-              {/* Inner glow border */}
-              <div className="absolute inset-0 rounded-[28px] border border-transparent [background:linear-gradient(135deg,rgba(16,185,129,0.15),transparent_70%)_border-box] [-webkit-mask:linear-gradient(#fff_0_0)_padding-box,linear-gradient(#fff_0_0)] [-webkit-mask-composite:xor] mask-composite-exclude pointer-events-none" />
-
-              <div className="relative z-10">
-                <h2 className="text-[28px] md:text-[36px] font-bold leading-tight mb-5 tracking-tight">Request a Free Green Cloud Audit</h2>
-                <p className="text-[15px] leading-[1.6] text-zinc-400 font-medium mb-8">
-                  Ready to cut down cloud waste and establish carbon transparency? Our certified systems engineers will run a comprehensive diagnostic on your hosting structure and provide a thorough optimization plan.
+            <div className="bg-zinc-950/80 border border-zinc-800/80 rounded-3xl p-8 sm:p-12 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4 font-sans">Request a Free Green Cloud Audit</h2>
+                <p className="text-base text-zinc-300 leading-relaxed mb-8 font-sans">
+                  Ready to cut down cloud waste and establish carbon transparency? Our certified systems engineers will run a diagnostic on your hosting structure and provide a thorough optimization plan.
                 </p>
-                <div className="flex flex-col gap-4">
+                <div className="space-y-4">
                   <div className="flex items-center gap-3">
-                    <span className="w-5 h-5 rounded-full bg-emerald-500/15 text-emerald-500 flex items-center justify-center shrink-0">
-                      <Check className="w-3 h-3 stroke-[3.5px]" />
-                    </span>
-                    <span className="text-[14.5px] font-bold text-zinc-200">Analyze idle virtual machine rates</span>
+                    <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0" />
+                    <span className="text-base text-zinc-200 font-medium font-sans">Analyze idle virtual machine rates</span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <span className="w-5 h-5 rounded-full bg-emerald-500/15 text-emerald-500 flex items-center justify-center shrink-0">
-                      <Check className="w-3 h-3 stroke-[3.5px]" />
-                    </span>
-                    <span className="text-[14.5px] font-bold text-zinc-200">Calculate projected carbon tonnage cuts</span>
+                    <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0" />
+                    <span className="text-base text-zinc-200 font-medium font-sans">Calculate projected carbon tonnage cuts</span>
                   </div>
                 </div>
               </div>
 
-              <div className="w-full relative z-10">
+              <div>
                 {!auditSubmitted ? (
-                  <form onSubmit={handleAuditSubmit} className="flex flex-col gap-5">
-                    <div className="relative w-full group">
-                      <User className="absolute left-5 top-1/2 -translate-y-1/2 w-[18px] h-[18px] text-zinc-500 transition-colors group-focus-within:text-emerald-500" />
+                  <form onSubmit={handleAuditSubmit} className="space-y-4">
+                    <div className="relative">
+                      <User className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-zinc-500" />
                       <input
                         type="text"
                         placeholder="Your Name"
                         required
                         value={auditData.name}
                         onChange={(e) => setAuditData({ ...auditData, name: e.target.value })}
-                        className="w-full bg-white/5 border border-white/10 rounded-xl py-4 pl-[54px] pr-4 text-sm text-white placeholder:text-zinc-500 outline-none transition-all focus:border-emerald-500/50 focus:bg-white/10 focus:shadow-[0_0_15px_rgba(16,185,129,0.15)]"
+                        className="w-full bg-zinc-900 border border-zinc-800 rounded-xl py-3.5 pl-12 pr-4 text-base text-white placeholder:text-zinc-500 outline-none focus:border-emerald-500"
                       />
                     </div>
-
-                    <div className="relative w-full group">
-                      <Mail className="absolute left-5 top-1/2 -translate-y-1/2 w-[18px] h-[18px] text-zinc-500 transition-colors group-focus-within:text-emerald-500" />
+                    <div className="relative">
+                      <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-zinc-500" />
                       <input
                         type="email"
                         placeholder="Corporate Email"
                         required
                         value={auditData.email}
                         onChange={(e) => setAuditData({ ...auditData, email: e.target.value })}
-                        className="w-full bg-white/5 border border-white/10 rounded-xl py-4 pl-[54px] pr-4 text-sm text-white placeholder:text-zinc-500 outline-none transition-all focus:border-emerald-500/50 focus:bg-white/10 focus:shadow-[0_0_15px_rgba(16,185,129,0.15)]"
+                        className="w-full bg-zinc-900 border border-zinc-800 rounded-xl py-3.5 pl-12 pr-4 text-base text-white placeholder:text-zinc-500 outline-none focus:border-emerald-500"
                       />
                     </div>
-
-                    <div className="relative w-full group">
-                      <Building className="absolute left-5 top-1/2 -translate-y-1/2 w-[18px] h-[18px] text-zinc-500 transition-colors group-focus-within:text-emerald-500" />
+                    <div className="relative">
+                      <Building className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-zinc-500" />
                       <input
                         type="text"
                         placeholder="Company Name"
                         value={auditData.company}
                         onChange={(e) => setAuditData({ ...auditData, company: e.target.value })}
-                        className="w-full bg-white/5 border border-white/10 rounded-xl py-4 pl-[54px] pr-4 text-sm text-white placeholder:text-zinc-500 outline-none transition-all focus:border-emerald-500/50 focus:bg-white/10 focus:shadow-[0_0_15px_rgba(16,185,129,0.15)]"
+                        className="w-full bg-zinc-900 border border-zinc-800 rounded-xl py-3.5 pl-12 pr-4 text-base text-white placeholder:text-zinc-500 outline-none focus:border-emerald-500"
                       />
                     </div>
-
                     <button
                       type="submit"
-                      className="w-full bg-gradient-to-r from-[#064e3b] via-[#047857] to-[#10b981] border-none text-[15px] font-bold text-black py-[18px] rounded-xl flex items-center justify-center gap-3 transition-all duration-300 shadow-[0_10px_20px_rgba(16,185,129,0.2)] hover:-translate-y-0.5 hover:shadow-[0_12px_25px_rgba(16,185,129,0.35)] hover:bg-white group"
+                      className="w-full bg-emerald-500 hover:bg-emerald-400 text-black font-bold text-base py-4 rounded-xl transition-all duration-300 shadow-[0_10px_20px_rgba(16,185,129,0.2)]"
                     >
-                      <span className="group-hover:text-black">Submit Request</span>
-                      <ArrowUpRight className="w-[18px] h-[18px] transition-transform duration-300 group-hover:translate-x-1 group-hover:text-black" />
+                      Submit Request
                     </button>
                   </form>
                 ) : (
-                  <div className="text-center py-10 px-5 bg-white/[0.01] border border-dashed border-white/10 rounded-[20px] flex flex-col items-center animate-[fadeIn_0.5s_ease-out]">
-                    <div className="w-[60px] h-[60px] rounded-full bg-emerald-500/15 text-emerald-500 flex items-center justify-center text-[26px] mb-6 animate-[bounce_2s_infinite]">
-                      <Check className="w-8 h-8 stroke-[3]" />
-                    </div>
-                    <h3 className="text-2xl font-bold mb-3 text-white">Audit Requested!</h3>
-                    <p className="text-[14px] leading-[1.6] text-zinc-400 font-medium max-w-[380px] m-0">
-                      Thank you, <span className="font-bold text-white">{auditData.name}</span>. Our eco-infrastructure experts will analyze your request and reach out within 24 business hours to schedule your green cloud evaluation.
+                  <div className="text-center p-8 bg-zinc-900/60 border border-emerald-500/40 rounded-2xl">
+                    <CheckCircle2 className="w-12 h-12 text-emerald-400 mx-auto mb-4" />
+                    <h3 className="text-2xl font-bold text-white mb-2">Audit Requested!</h3>
+                    <p className="text-base text-zinc-300 font-sans">
+                      Thank you, <span className="font-bold text-white">{auditData.name}</span>. Our eco-infrastructure experts will analyze your request and reach out within 24 hours.
                     </p>
                   </div>
                 )}
@@ -589,8 +658,48 @@ export default function CSRPage() {
         </div>
       </section>
 
-      {/* Global CTA Section matching the rest of the site */}
-      <AboutCTA />
+      {/* 8. JOIN OUR COMMUNITY CTA BANNER */}
+      <section className="py-16 sm:py-24 bg-black relative font-sans">
+        <div className="max-w-7xl mx-auto w-full px-6 lg:px-12 relative z-10">
+          <Reveal>
+            <div className="relative rounded-3xl overflow-hidden border border-emerald-800/40 p-8 sm:p-14 text-zinc-900 shadow-2xl">
+              
+              {/* Soft Green Vector Landscape Background */}
+              <img
+                src="/assets/About-page/csr/csr_community_banner_bg.png"
+                alt="Community banner background landscape"
+                className="absolute inset-0 w-full h-full object-cover z-0"
+              />
+              
+              {/* Content Overlay */}
+              <div className="relative z-10 max-w-xl">
+                <span className="text-xs font-bold uppercase tracking-widest text-emerald-900 mb-2 block font-mono">
+                  Stay Updated
+                </span>
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-zinc-950 mb-3 font-sans">
+                  Join Our Community!
+                </h2>
+                <p className="text-base text-zinc-800 leading-relaxed mb-8 font-medium font-sans">
+                  Subscribe to our newsletter and be the first to know about our latest projects and impact stories.
+                </p>
+
+                {/* Form Input + Button */}
+                <div className="flex flex-col sm:flex-row items-center gap-3">
+                  <input
+                    type="email"
+                    placeholder="Enter your email"
+                    className="w-full sm:w-80 bg-white border border-emerald-700/30 rounded-xl py-3.5 px-5 text-sm text-zinc-900 placeholder:text-zinc-500 outline-none focus:ring-2 focus:ring-emerald-700 shadow-sm"
+                  />
+                  <button className="w-full sm:w-auto bg-[#043927] hover:bg-[#064e3b] text-white font-bold text-sm px-8 py-3.5 rounded-xl transition-all duration-300 shadow-md shrink-0">
+                    Subscribe Now
+                  </button>
+                </div>
+              </div>
+
+            </div>
+          </Reveal>
+        </div>
+      </section>
 
     </main>
   );

@@ -2,16 +2,15 @@
 
 import React from "react";
 import { Reveal } from "@/components/ui/Reveal";
-import Link from "next/link";
 
 const metrics = [
   // Row 1
-  { value: "2500+", label: "Projects Delivered", desc: "Successful transformations." },
+  { value: "2500+", label: "Projects Delivered", desc: "Successful digital transformations." },
   { value: "1500+", label: "Enterprise Clients", desc: "FTSE 100 & global brands." },
   { value: "525+", label: "Certified Experts", desc: "Cloud & AI architects." },
   { value: "6+", label: "Global Offices", desc: "Locations across 4 countries." },
   // Row 2
-  { value: "98%", label: "Client Retention", desc: "Long-term relationships." },
+  { value: "98%", label: "Client Retention", desc: "Long-term partnerships." },
   { value: "99.9%", label: "Uptime SLA", desc: "Guaranteed platform availability." },
   { value: "73%", label: "Faster Deployments", desc: "Accelerated release frequency." },
   { value: "42%", label: "Avg Cost Reduction", desc: "Optimised cloud spend." },
@@ -24,52 +23,39 @@ const metrics = [
 
 export function MetricsStats() {
   return (
-    <section className="w-full py-20 bg-black text-white relative">
-      <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
+    <section className="w-full py-10 sm:py-14 bg-black text-white relative font-sans">
+      <div className="max-w-7xl mx-auto w-full px-6 lg:px-12">
 
         {/* Header Grid */}
-        <Reveal className="grid grid-cols-1 lg:grid-cols-[1.15fr_0.85fr] gap-8 lg:gap-16 items-center mb-16">
+        <Reveal className="grid grid-cols-1 lg:grid-cols-[1.15fr_0.85fr] gap-8 items-center mb-10">
           <div>
-            <div className="flex items-center gap-2 mb-4">
-              {/* <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-rose-500">
-                By the Numbers
-              </span> */}
-            </div>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-4">
-              The <span className="text-rose-500">results speak for themselves</span> — <span className="font-bold">every time.</span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight leading-tight text-white font-sans">
+              The <span className="text-rose-600 font-semibold">Results Speak for Themselves</span>
             </h2>
-            {/* <p className="text-zinc-400 text-xs md:text-sm leading-relaxed font-semibold">
-              These aren't marketing numbers. They're metrics pulled from <Link href="/insights/case-studies" className="text-rose-500 hover:underline">real client engagements</Link>, measured against real business outcomes, and verified by the enterprises we serve.
-            </p> */}
           </div>
 
-          <div className="p-5 bg-zinc-950/60 border border-zinc-800/80 rounded-none border-r-4 border-r-rose-600">
-            <span className="text-[10px] font-bold text-rose-500 uppercase tracking-widest block mb-1">
-              Our Perspective
-            </span>
-            <p className="text-sm italic text-zinc-200 font-bold leading-relaxed">
-              "Numbers only matter when they mean something to the business behind them. Every metric below represents a client who moved faster, spent less, and worried less about their infrastructure."
+          <div className="p-5 bg-zinc-950/80 border border-zinc-800/80 rounded-lg border-l-4 border-l-rose-600">
+            <p className="text-base italic text-zinc-200 font-medium leading-relaxed font-sans">
+              &ldquo;Numbers only matter when they mean something to the business behind them. Every metric below represents a client who moved faster, spent less, and worried less about their infrastructure.&rdquo;
             </p>
           </div>
         </Reveal>
 
         {/* 12-Stat Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-          {metrics.map((item) => (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {metrics.map((item, idx) => (
             <Reveal
               key={item.label}
-              className="bg-zinc-950/30 border border-zinc-900 p-6 rounded-none flex flex-col justify-between hover:border-rose-600/30 hover:bg-zinc-950/60 transition-all duration-500 relative group"
+              delay={idx * 0.05}
+              className="bg-zinc-950/80 border border-zinc-800/80 p-5 sm:p-6 rounded-lg flex flex-col justify-between hover:border-rose-500/50 hover:bg-zinc-900/60 transition-all duration-300 relative group cursor-pointer hover:-translate-y-1"
             >
               <div>
-                <span className="text-2xl md:text-3xl font-bold text-white group-hover:text-rose-500 transition-colors duration-300 font-mono tracking-tight block mb-2">
+                <span className="text-2xl sm:text-3xl font-bold text-white group-hover:text-rose-400 transition-colors duration-300 font-mono tracking-tight block mb-1.5">
                   {item.value}
                 </span>
-                <strong className="text-[10px] font-bold text-zinc-400 group-hover:text-zinc-200 block mb-1.5 uppercase tracking-widest">
+                <span className="text-sm font-semibold text-zinc-300 group-hover:text-white block font-sans">
                   {item.label}
-                </strong>
-                {/* <p className="text-[10.5px] text-zinc-500 leading-relaxed font-semibold">
-                  {item.desc}
-                </p> */}
+                </span>
               </div>
             </Reveal>
           ))}

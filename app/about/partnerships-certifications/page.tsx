@@ -45,10 +45,10 @@ export default function PartnershipsCertificationsPage() {
       </div>
 
       {/* Section Navbar */}
-      <SectionNavbar sections={partnershipsSections} />
+      {/* <SectionNavbar sections={partnershipsSections} /> */}
 
       {/* Divider */}
-      <SvgWaveLine variant="smooth" />
+      {/* <SvgWaveLine variant="smooth" /> */}
 
       {/* 2. Why Partnerships Matter */}
       <div id="why-partnerships">
@@ -56,7 +56,7 @@ export default function PartnershipsCertificationsPage() {
       </div>
 
       {/* Divider */}
-      <SvgWaveLine variant="liquid" />
+      {/* <SvgWaveLine variant="liquid" /> */}
 
       {/* 3. Strategic Technology Partnerships */}
       <div id="strategic-partners">

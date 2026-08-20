@@ -102,9 +102,6 @@ export function PartnersSection() {
             </div>
             Partnering for <span className="text-rose-500 font-semibold">Innovation</span>
           </h2>
-          {/* <p className="text-zinc-300 text-base md:text-lg leading-relaxed font-normal max-w-2xl mx-auto">
-            The following are just a few of our regular clients and strategic partners worldwide.
-          </p> */}
         </Reveal>
       </div>
 
@@ -114,15 +111,16 @@ export function PartnersSection() {
           {displayedPartners.map((partner, idx) => (
             <div
               key={`${partner.name}-${idx}`}
-              className="w-full h-28 sm:h-32 md:h-36 border-r border-b border-zinc-800/80 bg-[#030303] flex items-center justify-center p-3 sm:p-4 transition-all duration-300 hover:bg-zinc-950/80 relative overflow-hidden group"
+              className="w-full h-28 sm:h-32 md:h-36 border-r border-b border-zinc-800/80 bg-zinc-950/60 flex items-center justify-center p-4 sm:p-5 transition-all duration-300 hover:bg-zinc-900/80 hover:border-rose-500/40 relative overflow-hidden group"
             >
-              <div className="relative z-10 flex items-center justify-center w-full h-full p-1">
+              <div className="relative z-10 flex items-center justify-center w-full h-full p-2">
                 <Image
                   src={partner.logo}
                   alt={`${partner.name} logo`}
                   width={220}
                   height={90}
-                  className="w-auto h-auto max-w-[92%] max-h-[85%] object-contain select-none transition-all duration-300 group-hover:scale-110"
+                  unoptimized
+                  className="w-auto h-auto max-w-[85%] max-h-[80%] object-contain select-none transition-all duration-300 group-hover:scale-105"
                 />
               </div>
             </div>
@@ -146,7 +144,7 @@ export function PartnersSection() {
         {/* Quote Footer */}
         <Reveal>
           <div className="mt-8 text-center max-w-4xl mx-auto border-t border-zinc-900/60 pt-8">
-            <p className="text-zinc-200 text-xl sm:text-2xl md:text-3xl leading-relaxed italic font-semibold">
+            <p className="text-zinc-200 text-xl sm:text-2xl md:text-3xl leading-relaxed italic font-semibold font-sans">
               &ldquo;We&apos;ve created lasting relationships with our clients. Our success is our client&apos;s success.&rdquo;
             </p>
           </div>

@@ -64,8 +64,14 @@ const awardsData: AwardItem[] = [
   {
     title: "Dell Technologies Gold Partner",
     year: "2022",
-    issuer: "Dell",
+    issuer: "Dell Technologies",
     src: "/assets/Awards/Dell_Technologies_Gold_Partner_2022-2023.png"
+  },
+  {
+    title: "European IT & Software Excellence Finalist",
+    year: "2021",
+    issuer: "European IT",
+    src: "/assets/Awards/European_IT_and_Software_Excellence_Awards_2021.png"
   },
   {
     title: "Cyber Essentials Certification",
@@ -74,28 +80,16 @@ const awardsData: AwardItem[] = [
     src: "/assets/Awards/2021-2022_Cyber_Essentials_Certification.png"
   },
   {
-    title: "European IT & Software Excellence Awards Finalist",
-    year: "2021",
-    issuer: "IT Europa",
-    src: "/assets/Awards/European_IT_and_Software_Excellence_Awards_2021.png"
-  },
-  {
-    title: "European IT & Software Excellence Awards",
-    year: "2020",
-    issuer: "IT Europa",
-    src: "/assets/Awards/European_IT&Software_Excellence_Awards_2020.png"
-  },
-  {
     title: "Cyber Essentials Certification",
     year: "2020",
     issuer: "Cyber Essentials",
     src: "/assets/Awards/Cyber_Essentials_(CE)_Certification_2020.png"
   },
   {
-    title: "Highly Commended Recognition",
-    year: "2019",
-    issuer: "IT Europa",
-    src: "/assets/Awards/2019_Highly_Commended.png"
+    title: "European IT & Software Excellence Awards",
+    year: "2020",
+    issuer: "European IT",
+    src: "/assets/Awards/European_IT&Software_Excellence_Awards_2020.png"
   },
   {
     title: "IT Europa Finalist",
@@ -104,34 +98,34 @@ const awardsData: AwardItem[] = [
     src: "/assets/Awards/2019_IT_Europa_Finalist.png"
   },
   {
-    title: "IT Europa Finalist (Four Categories)",
-    year: "2018",
-    issuer: "IT Europa",
-    src: "/assets/Awards/2018_Finalists_in_four_categories.png"
+    title: "Highly Commended Partner",
+    year: "2019",
+    issuer: "Industry Awards",
+    src: "/assets/Awards/2019_Highly_Commended.png"
   },
   {
-    title: "Lenovo Platinum Data Center Partner",
+    title: "Lenovo Platinum Partner Data Center",
     year: "2018",
     issuer: "Lenovo",
     src: "/assets/Awards/2018_Lenovo_Platinum_Partner_Data_Center_Partner.png"
   },
   {
-    title: "Crown Commercial Service Supplier (CCS)",
-    year: "2017",
-    issuer: "UK Gov",
-    src: "/assets/Awards/June_2017- Crown_Commercial_Service_Supplier_(CCS).png"
+    title: "Finalists in Four Categories",
+    year: "2018",
+    issuer: "Industry Awards",
+    src: "/assets/Awards/2018_Finalists_in_four_categories.png"
   },
   {
-    title: "IBM Business Partner Award Winner",
+    title: "European IT & Software Excellence Award",
+    year: "2015",
+    issuer: "European IT",
+    src: "/assets/Awards/2015_European_IT&Software_Excellence_Award.png"
+  },
+  {
+    title: "IBM Business Partner Award",
     year: "2015",
     issuer: "IBM",
     src: "/assets/Awards/IBM_Business_Partner_Award_2015.png"
-  },
-  {
-    title: "European IT & Software Excellence Award Winner",
-    year: "2015",
-    issuer: "IT Europa",
-    src: "/assets/Awards/2015_European_IT&Software_Excellence_Award.png"
   },
   {
     title: "Microsoft Partner of the Year Finalist",
@@ -140,46 +134,48 @@ const awardsData: AwardItem[] = [
     src: "/assets/Awards/2014_Microsoft_Partner_of_the_Year_Award_Finalist.png"
   },
   {
-    title: "IBM Business Partner Award Finalist",
+    title: "IBM Business Partner Award",
     year: "2014",
     issuer: "IBM",
     src: "/assets/Awards/IBM_Business_Partner_Award_2014.png"
   },
   {
-    title: "IBM Platinum Award Winner",
+    title: "IBM Platinum Award",
     year: "2013",
     issuer: "IBM",
     src: "/assets/Awards/IBM_Platinum_Award_2013.png"
   },
+
+  // Active / Ongoing Compliance & Partner Certifications
   {
-    title: "Achilles Network Silver Certification",
+    title: "Achilles Network Silver Member",
     year: "Active",
-    issuer: "Achilles",
+    issuer: "Achilles Network",
     src: "/assets/Awards/Achilles_Network_Silver.png"
   },
   {
-    title: "Arctic Wolf Partner Award",
+    title: "Arctic Wolf Partner Awards",
     year: "Active",
     issuer: "Arctic Wolf",
     src: "/assets/Awards/Arctic_Wolf_Partner_Awards.png"
   },
   {
-    title: "Bramble Hub listings",
+    title: "Bramble Hub Listings Accreditation",
     year: "Active",
     issuer: "Bramble Hub",
     src: "/assets/Awards/Bramble_Hub_listings.png"
   },
   {
-    title: "Certificate of Compliance",
-    year: "Active",
-    issuer: "Compliance",
-    src: "/assets/Awards/Certificate_of_Compliance.png"
-  },
-  {
     title: "Certificate of Compliance Renewal",
     year: "Active",
-    issuer: "Compliance",
+    issuer: "Compliance Board",
     src: "/assets/Awards/Certificate_of_Compliance_Renewal.png"
+  },
+  {
+    title: "Certificate of Compliance",
+    year: "Active",
+    issuer: "Compliance Board",
+    src: "/assets/Awards/Certificate_of_Compliance.png"
   },
   {
     title: "Cloud Solution Provider of the Year",
@@ -188,61 +184,67 @@ const awardsData: AwardItem[] = [
     src: "/assets/Awards/Cloud_Solution_Provider_of_the_Year.png"
   },
   {
+    title: "Crown Commercial Service Supplier (CCS)",
+    year: "Active",
+    issuer: "UK Government",
+    src: "/assets/Awards/June_2017- Crown_Commercial_Service_Supplier_(CCS).png"
+  },
+  {
     title: "Data Estate Modernisation Award",
     year: "Active",
-    issuer: "Data Awards",
+    issuer: "Data Excellence",
     src: "/assets/Awards/Data_Estate_Modernisation_Award.png"
   },
   {
     title: "Data Management Solution of the Year",
     year: "Active",
-    issuer: "Data Awards",
+    issuer: "Data Excellence",
     src: "/assets/Awards/Data_Management_Solution_of_the_Year.png"
   },
   {
-    title: "FSQS Registered Supplier Accreditation",
-    year: "Active",
-    issuer: "FSQS",
-    src: "/assets/Awards/FSQS_Registered_Supplier.png"
-  },
-  {
-    title: "FSQS Registered Renewal",
+    title: "FSQS Registered Supplier Renewal",
     year: "Active",
     issuer: "FSQS",
     src: "/assets/Awards/FSQS_Registered_Renewal.png"
   },
   {
-    title: "G-Cloud 11 Framework Listing",
+    title: "FSQS Registered Supplier",
     year: "Active",
-    issuer: "UK Gov",
+    issuer: "FSQS",
+    src: "/assets/Awards/FSQS_Registered_Supplier.png"
+  },
+  {
+    title: "G-Cloud 11 Framework Award",
+    year: "Active",
+    issuer: "G-Cloud",
     src: "/assets/Awards/G-Cloud_11_Framework_Award.png"
   },
   {
-    title: "IBM Gold Partner Accreditation",
+    title: "IBM Gold Partner Certification",
     year: "Active",
     issuer: "IBM",
     src: "/assets/Awards/IBM_Gold_Partner.png"
   },
   {
-    title: "IBM PartnerWorld Member",
+    title: "IBM PartnerWorld Programme Member",
     year: "Active",
     issuer: "IBM",
     src: "/assets/Awards/IBM_PartnerWorld_Programme.png"
   },
   {
-    title: "ISO Certification Framework",
+    title: "ISO Information Security Standard",
     year: "Active",
     issuer: "ISO",
     src: "/assets/Awards/ISO.png"
   },
   {
-    title: "KnowBe4 Partner Security Certification",
+    title: "KnowBe4 Premier Partner",
     year: "Active",
     issuer: "KnowBe4",
     src: "/assets/Awards/Knowbe4_Partner.png"
   },
   {
-    title: "Accredited Living Wage Employer",
+    title: "Living Wage Employer Accreditation",
     year: "Active",
     issuer: "Living Wage",
     src: "/assets/Awards/Living_Wage_Employer.png"
@@ -318,65 +320,65 @@ function getAwardDescription(title: string, issuer: string, year: string) {
   if (t.includes("european it & software excellence") && t.includes("finalist")) {
     return `Finalist nomination for software engineering excellence, recognizing our custom API gateway designs, SaaS multi-tenancy configurations, and Next.js frontend performance.`;
   }
-  if (t.includes("european it & software excellence") && t.includes("winner")) {
-    return `Winner of the European IT & Software Excellence award for custom enterprise application development, microservices migration, and system decoupling workflows.`;
-  }
-  if (t.includes("highly commended")) {
-    return `Highly commended distinction from IT Europa for superior software quality, developer velocity upgrades, and outstanding client delivery metrics.`;
+  if (t.includes("european it & software excellence")) {
+    return `Honored for outstanding digital transformation solutions, seamless cloud infrastructure scaling, and mission-critical enterprise software reliability.`;
   }
   if (t.includes("it europa finalist")) {
-    return `Recognized as a leading technology provider for deploying secure cloud landing zones, automated Terraform pipelines, and active application monitoring stacks.`;
+    return `Recognized as a leading technology integration partner, delivering high-speed automated deployment pipelines and robust multi-cloud strategy frameworks.`;
   }
-  if (t.includes("lenovo platinum data center")) {
-    return `Platinum-tier Lenovo partnership status representing expert capability in configuring high-density computing clusters, data center migration schedules, and storage networks.`;
+  if (t.includes("highly commended")) {
+    return `Commended for exemplary client service delivery, 99.99% uptime guarantees, and proactive site reliability engineering (SRE) management.`;
   }
-  if (t.includes("crown commercial service")) {
-    return `Approved government framework supplier, enabling public sector organizations to procure secure, compliant cloud-native software and digital transformation consulting.`;
+  if (t.includes("lenovo platinum partner")) {
+    return `Platinum partner accreditation showcasing enterprise data center architecture, high-performance computing clusters, and hybrid cloud server grids.`;
   }
-  if (t.includes("ibm business partner") && t.includes("winner")) {
-    return `Recipient of the IBM Partner Award for exceptional delivery of enterprise database administration, zero-downtime replication clusters, and hybrid cloud integration services.`;
+  if (t.includes("finalists in four categories")) {
+    return `Nominated across 4 core categories: Cloud Migration, DevOps Innovation, Security Architecture, and Managed Engineering Services.`;
   }
   if (t.includes("microsoft partner of the year")) {
-    return `Named a global finalist for outstanding contribution to the Microsoft partner ecosystem, recognized for building custom Azure Cloud solutions and SaaS products.`;
+    return `Finalist recognition from Microsoft for architecting enterprise Azure cloud solutions, AI data platforms, and zero-trust identity architectures.`;
   }
-  if (t.includes("ibm business partner") && t.includes("finalist")) {
-    return `Nominated for technical expertise in database administration, zero-downtime replication clusters, and IBM cloud virtualization workflows.`;
+  if (t.includes("ibm business partner")) {
+    return `Validated IBM Business Partner status for executing high-grade database migrations, enterprise middleware integration, and mainframe modernization.`;
   }
-  if (t.includes("ibm platinum")) {
-    return `IBM Platinum accreditation representing the highest tier of service partnership, technical certification, and successful enterprise deployment volume.`;
+  if (t.includes("ibm platinum award")) {
+    return `Prestigious IBM Platinum Award for top-tier technical delivery, hybrid cloud innovation, and enterprise software implementation.`;
   }
-  if (t.includes("achilles network silver")) {
-    return `Silver-tier certification from the Achilles Network, confirming our verified financial stability, rigorous corporate compliance, and supply chain security frameworks.`;
+  if (t.includes("achilles network")) {
+    return `Silver member accreditation in the Achilles Network, demonstrating transparent ESG practices, supply chain integrity, and corporate governance.`;
   }
-  if (t.includes("arctic wolf partner")) {
-    return `Certified security partner with Arctic Wolf, delivering 24/7 managed detection and response, SIEM telemetry monitoring, and vulnerability patching workflows.`;
+  if (t.includes("arctic wolf")) {
+    return `Certified Arctic Wolf Security Partner, delivering 24/7 managed detection and response (MDR), threat hunting, and SOC operation support.`;
   }
   if (t.includes("bramble hub")) {
-    return `Registered partner listing enabling the streamlined deployment of custom software, DevOps engineering, and digital transformation consulting through public frameworks.`;
+    return `Approved Bramble Hub framework supplier for public sector digital transformation, G-Cloud deployments, and NHS technology contracts.`;
   }
   if (t.includes("certificate of compliance")) {
-    return `Verified compliance accreditation confirming our adherence to global digital data privacy laws, secure development operations, and active system risk assessments.`;
+    return `Audited compliance certification ensuring full alignment with international data privacy, cloud security, and software safety protocols.`;
   }
   if (t.includes("cloud solution provider of the year")) {
-    return `Awarded for exceptional delivery of cloud migration strategies, cost-optimization FinOps consulting, and multi-cloud container orchestration frameworks.`;
+    return `Awarded Cloud Solution Provider of the Year for outstanding multi-cloud governance, serverless architecture deployment, and FinOps optimization.`;
+  }
+  if (t.includes("crown commercial service")) {
+    return `Accredited UK Crown Commercial Service (CCS) supplier, enabling direct public sector procurement of cloud, DevOps, and AI engineering services.`;
   }
   if (t.includes("data estate modernisation")) {
-    return `Honored for outstanding achievements in engineering unified data platforms, Snowflake/Databricks migrations, and high-throughput real-time streaming pipelines.`;
+    return `Awarded for building modern lakehouse architectures, real-time ETL data pipelines, and Snowflake analytical infrastructure.`;
   }
   if (t.includes("data management solution")) {
-    return `Recognized for excellence in data governance, automated data quality controls, and comprehensive metadata lineage auditing setups.`;
+    return `Recognized for high-throughput big data orchestration, automated data quality assertions, and master data management systems.`;
   }
-  if (t.includes("fsqs")) {
-    return `FSQS (Financial Services Qualification System) accreditation, validating our compliance with strict banking security, operational risk mitigation, and data governance policies.`;
+  if (t.includes("fsqs registered")) {
+    return `FSQS (Financial Services Qualification System) registered supplier, qualified to deliver compliant software to top global financial institutions.`;
   }
-  if (t.includes("g-cloud 11")) {
-    return `UK Government G-Cloud framework supplier status, allowing public organizations to directly deploy our secure, cloud-native services and DevOps pipelines.`;
+  if (t.includes("g-cloud 11 framework")) {
+    return `Awarded supplier under the UK G-Cloud framework for cloud support, software development, and infrastructure transformation services.`;
   }
-  if (t.includes("ibm gold")) {
-    return `IBM Gold Partner certification, showing mastery in building enterprise-grade Java/Go web architectures, secure database indexing, and mainframe migrations.`;
+  if (t.includes("ibm gold partner")) {
+    return `IBM Gold Partner status representing specialized expertise in hybrid cloud integrations, AI modeling backends, and enterprise security.`;
   }
   if (t.includes("ibm partnerworld")) {
-    return `Active membership in IBM PartnerWorld, supporting the joint development of containerized middleware and secure hybrid cloud solutions.`;
+    return `Certified member of the IBM PartnerWorld program, committed to continuous technical training, solution validation, and architecture standards.`;
   }
   if (t.includes("iso certification")) {
     return `Audited ISO accreditation validating our global information security management systems (ISMS) and software development lifecycle controls.`;
@@ -412,7 +414,6 @@ export const AwardsList = () => {
 
   const years = useMemo(() => {
     const list = ["All", ...new Set(awardsData.map((item) => item.year))];
-    // Sort years descending but put "Active" first or last
     return list.sort((a, b) => {
       if (a === "All") return -1;
       if (b === "All") return 1;
@@ -432,10 +433,8 @@ export const AwardsList = () => {
     });
   }, [searchQuery, selectedYear]);
 
-  // Load more pagination
   const [visibleCount, setVisibleCount] = useState(12);
 
-  // Reset pagination when filters change
   React.useEffect(() => {
     setVisibleCount(12);
   }, [searchQuery, selectedYear]);
@@ -445,19 +444,14 @@ export const AwardsList = () => {
   };
 
   return (
-    <section className="w-full py-20 bg-[#030303] text-white relative">
-      <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
+    <section className="w-full py-10 sm:py-14 bg-[#030303] text-white relative font-sans">
+      <div className="max-w-7xl mx-auto w-full px-6 lg:px-12">
         
-        {/* Section Intro */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 border-b border-zinc-900 pb-8">
+        {/* Section Intro: Semibold Header Only */}
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-8 border-b border-zinc-900 pb-6">
           <Reveal>
-            <div className="flex items-center gap-2 mb-3">
-              <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500">
-                Official Directory
-              </span>
-            </div>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white">
-              Ecosystem <span className="text-rose-500">Accreditation & Awards</span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-white font-sans leading-tight">
+              Ecosystem <span className="text-rose-600 font-semibold">Accreditation & Awards</span>
             </h2>
           </Reveal>
 
@@ -482,102 +476,94 @@ export const AwardsList = () => {
         </div>
 
         {/* Search Input Bar */}
-        <div className="max-w-lg mb-12">
+        <div className="max-w-lg mb-10">
           <div className="relative flex items-center">
             <Search className="absolute left-4 w-4 h-4 text-rose-500" />
             <input
               type="text"
               placeholder="Search awards by title or authority..."
               value={searchQuery}
-              onChange={(e) => {
-                setSearchQuery(e.target.value);
-              }}
-              className="w-full bg-zinc-950/60 border border-zinc-900 focus:border-rose-500/50 focus:ring-1 focus:ring-rose-500/20 rounded-xl py-3.5 pl-11 pr-4 text-xs font-medium text-white placeholder-zinc-500 transition-all outline-none"
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="w-full pl-11 pr-4 py-3 bg-zinc-950 border border-zinc-800 rounded-xl text-xs font-semibold text-white placeholder-zinc-500 focus:outline-none focus:border-rose-500 transition-colors"
             />
+            {searchQuery && (
+              <button
+                onClick={() => setSearchQuery("")}
+                className="absolute right-4 text-xs font-bold text-zinc-500 hover:text-white"
+              >
+                Clear
+              </button>
+            )}
           </div>
         </div>
 
-        {/* Card Grid Container */}
-        <motion.div 
-          layout 
-          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
-        >
-          <AnimatePresence mode="popLayout">
-            {filteredAwards.slice(0, visibleCount).map((item, idx) => (
-              <motion.div
-                layout
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, scale: 0.95 }}
-                transition={{ duration: 0.3, ease: "easeOut" }}
-                key={item.title + "-" + item.year}
-                className="group relative overflow-hidden rounded-[24px] border border-white/10 bg-zinc-950/30 backdrop-blur-xl p-5 hover:border-rose-500/35 hover:shadow-[0_12px_40px_rgba(244,63,94,0.15)] transition-all duration-300 flex flex-col justify-between"
-              >
-                {/* Background Glow on hover */}
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
-                  <div className="absolute -top-12 -left-12 w-32 h-32 bg-rose-600/10 blur-2xl" />
-                  <div className="absolute -bottom-12 -right-12 w-32 h-32 bg-rose-600/5 blur-2xl" />
-                </div>
-
-                <div className="relative z-10 flex flex-col">
-                  {/* White Logo Container for perfect brand rendering */}
-                  <div className="relative w-full aspect-[16/10] bg-white rounded-xl flex items-center justify-center p-5 mb-4 shadow-[inset_0_2px_8px_rgba(0,0,0,0.06)] overflow-hidden transition-all duration-300 group-hover:scale-[1.02]">
-                    <img
-                      src={item.src}
-                      alt={item.title}
-                      className="max-w-full max-h-full object-contain select-none pointer-events-none filter brightness-100 contrast-100"
-                    />
-                    {/* Subtle overlay reflection */}
-                    <div className="absolute inset-0 bg-gradient-to-tr from-white/0 via-white/10 to-transparent pointer-events-none" />
-                  </div>
-
-                  {/* Year & Authority Badge */}
-                  <div className="flex items-center justify-between mb-3">
-                    <span className="inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white transition-all duration-300 hover:shadow-[0_0_25px_rgba(225,29,72,0.35)] hover:-translate-y-0.5">
-                      {item.year}
-                    </span>
-                    <span className="text-[10px] font-bold text-rose-400 uppercase tracking-widest">
-                      {item.issuer}
-                    </span>
-                  </div>
-
-                  {/* Award Title */}
-                  <h4 className="text-sm font-bold text-white leading-snug tracking-tight mb-2 group-hover:text-rose-400 transition-colors duration-300">
-                    {item.title}
-                  </h4>
-                </div>
-
-                {/* Description - bold, white, high contrast */}
-                <p className="relative z-10 text-xs font-medium text-zinc-400 leading-relaxed border-t border-white/5 pt-3 mt-3">
-                  {getAwardDescription(item.title, item.issuer, item.year)}
-                </p>
-
-              </motion.div>
-            ))}
-          </AnimatePresence>
-        </motion.div>
-
-        {filteredAwards.length === 0 && (
-          <div className="text-center py-24">
-            <Award className="w-10 h-10 text-zinc-850 mx-auto mb-3" />
-            <p className="text-white text-sm font-medium">
-              No certificates found matching your search.
-            </p>
-          </div>
-        )}
-
-        {/* Load More Button */}
-        {visibleCount < filteredAwards.length && (
-          <div className="flex justify-center mt-12">
+        {/* Grid List */}
+        {filteredAwards.length === 0 ? (
+          <div className="py-16 text-center border border-dashed border-zinc-800 rounded-2xl bg-zinc-950/40">
+            <Award className="w-8 h-8 text-zinc-600 mx-auto mb-3" />
+            <p className="text-zinc-400 font-semibold text-sm">No awards found matching &quot;{searchQuery}&quot;.</p>
             <button
-              onClick={handleLoadMore}
-              className="px-8 py-3.5 rounded-full border border-zinc-800 bg-zinc-900/50 hover:bg-zinc-800 hover:border-zinc-700 text-white text-xs font-bold uppercase tracking-wider transition-all duration-300 shadow-[0_0_15px_rgba(0,0,0,0.5)]"
+              onClick={() => {
+                setSearchQuery("");
+                setSelectedYear("All");
+              }}
+              className="mt-3 text-xs text-rose-500 font-bold hover:underline uppercase tracking-wider"
             >
-              Load More
+              Reset Filters
             </button>
           </div>
+        ) : (
+          <>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+              {filteredAwards.slice(0, visibleCount).map((item, idx) => (
+                <Reveal key={`${item.title}-${idx}`} delay={idx * 0.05}>
+                  <div className="group relative bg-zinc-950/80 border border-zinc-800/80 rounded-2xl p-5 hover:border-rose-500/50 transition-all duration-300 flex flex-col justify-between h-full hover:-translate-y-1">
+                    
+                    <div>
+                      {/* Image Logo Box */}
+                      <div className="w-full h-36 bg-zinc-900/40 border border-zinc-800/60 rounded-xl p-4 flex items-center justify-center mb-4 group-hover:border-zinc-700 transition-colors">
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img
+                          src={item.src}
+                          alt={item.title}
+                          className="max-w-[85%] max-h-[85%] object-contain transition-transform duration-300 group-hover:scale-105"
+                          onError={(e) => {
+                            e.currentTarget.style.display = "none";
+                          }}
+                        />
+                      </div>
+
+                      {/* Year Badge & Title */}
+                      <div className="flex items-center justify-end mb-3">
+                        <span className="text-xs font-bold px-2.5 py-1 rounded-md bg-zinc-900 border border-zinc-800 text-rose-500 font-mono">
+                          {item.year}
+                        </span>
+                      </div>
+
+                      <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight leading-snug group-hover:text-rose-400 transition-colors font-sans text-center">
+                        {item.title}
+                      </h3>
+                    </div>
+
+                  </div>
+                </Reveal>
+              ))}
+            </div>
+
+            {/* Load More Button */}
+            {visibleCount < filteredAwards.length && (
+              <div className="mt-12 text-center">
+                <button
+                  onClick={handleLoadMore}
+                  className="px-8 py-3.5 rounded-xl bg-zinc-900 border border-zinc-800 hover:border-rose-500/50 text-white text-xs font-bold uppercase tracking-wider transition-all duration-300 hover:bg-zinc-800 font-sans"
+                >
+                  Load More Awards ({filteredAwards.length - visibleCount} Remaining)
+                </button>
+              </div>
+            )}
+          </>
         )}
-        
+
       </div>
     </section>
   );

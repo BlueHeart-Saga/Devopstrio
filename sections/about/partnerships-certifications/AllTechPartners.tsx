@@ -2,8 +2,6 @@
 
 import { Reveal } from "@/components/ui/Reveal";
 
-import { ArrowUpRight } from "lucide-react";
-
 const techPartners = [
   { 
     name: "AWS", 
@@ -63,119 +61,97 @@ const techPartners = [
   }
 ];
 
-import Link from "next/link";
-
 export function AllTechPartners() {
   return (
-    <section className="py-24 bg-black text-white relative overflow-hidden z-10">
+    <section className="py-10 sm:py-14 bg-black text-white relative overflow-hidden z-10 font-sans">
       <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
         <Reveal>
-          <div className="mb-12">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-[#E11D48] mb-3 block">
-              Technology Stack
-            </span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-4">
-              Our Tech <span className="text-[#E11D48]">Partners</span>
+          <div className="mb-6">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight leading-tight text-white font-sans">
+              Our Tech <span className="text-rose-600">Partners</span>
             </h2>
-            <p className="text-zinc-400 text-xs md:text-sm max-w-2xl leading-relaxed">
-              Our tech stack integrations empower modern engineering architectures. Explore our specialized <Link href="/services/cloud-services" className="text-[#E11D48] hover:underline font-bold">cloud solutions</Link>, <Link href="/services/devops-automation" className="text-[#E11D48] hover:underline font-bold">DevOps pipelines</Link>, and <Link href="/services/ai-data-innovation" className="text-[#E11D48] hover:underline font-bold">AI workflow enablement</Link>.
-            </p>
           </div>
         </Reveal>
 
-      {/* Auto-scrolling Marquee Container */}
-      <div 
-        className="w-full overflow-hidden pb-12 pt-4 relative"
-        style={{
-          maskImage: 'linear-gradient(to right, transparent, black 60px, black calc(100% - 60px), transparent)',
-          WebkitMaskImage: 'linear-gradient(to right, transparent, black 60px, black calc(100% - 60px), transparent)'
-        }}
-      >
-        <style>{`
-          @keyframes marquee-reverse {
-            0% { transform: translateX(-50%); }
-            100% { transform: translateX(0%); }
-          }
-          .animate-marquee-reverse {
-            animation: marquee-reverse 45s linear infinite;
-          }
-          .animate-marquee-reverse:hover {
-            animation-play-state: paused;
-          }
-        `}</style>
+        {/* Auto-scrolling Marquee Container */}
+        <div 
+          className="w-full overflow-hidden pb-8 pt-2 relative"
+          style={{
+            maskImage: 'linear-gradient(to right, transparent, black 60px, black calc(100% - 60px), transparent)',
+            WebkitMaskImage: 'linear-gradient(to right, transparent, black 60px, black calc(100% - 60px), transparent)'
+          }}
+        >
+          <style>{`
+            @keyframes marquee-reverse {
+              0% { transform: translateX(-50%); }
+              100% { transform: translateX(0%); }
+            }
+            .animate-marquee-reverse {
+              animation: marquee-reverse 45s linear infinite;
+            }
+            .animate-marquee-reverse:hover {
+              animation-play-state: paused;
+            }
+          `}</style>
 
-
-
-        <div className="flex w-max animate-marquee-reverse">
-          {/* First Set */}
-          <div className="flex gap-6 pr-6">
-            {techPartners.map((partner, i) => (
-              <div 
-                key={`a-${i}`} 
-                className="w-[360px] shrink-0 p-6 rounded-3xl bg-[#0a0a0a] border border-zinc-800 flex flex-col group hover:border-zinc-700 transition-all duration-300 hover:-translate-y-1 cursor-pointer"
-              >
-                <div className="flex justify-between items-start mb-6">
-                  <div className="h-8 flex items-center justify-start">
+          <div className="flex w-max animate-marquee-reverse">
+            {/* First Set */}
+            <div className="flex gap-6 pr-6">
+              {techPartners.map((partner, i) => (
+                <div 
+                  key={`tech-a-${i}`} 
+                  className="w-[280px] shrink-0 p-6 rounded-3xl bg-zinc-950/80 border border-zinc-800/80 backdrop-blur-md flex flex-col gap-6 hover:border-rose-500/50 hover:bg-zinc-900/60 transition-all duration-300 hover:-translate-y-1 cursor-pointer group"
+                >
+                  <div className="w-full h-36 rounded-2xl bg-zinc-900/40 border border-zinc-800/60 flex items-center justify-center p-6 group-hover:border-zinc-700/80 transition-colors">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img 
                       src={partner.logo} 
                       alt={partner.name}
-                      className="h-full w-auto max-w-[120px] object-contain"
+                      className="max-w-[85%] max-h-[85%] object-contain transition-all duration-300 group-hover:scale-105"
                       onError={(e) => { e.currentTarget.style.display = 'none' }}
                     />
                   </div>
-                  <span className="text-[10px] uppercase font-bold tracking-[0.2em] text-zinc-400 border border-zinc-800 rounded px-2 py-1 shrink-0 ml-2">
-                    {partner.badge}
-                  </span>
+                  <div className="flex flex-col items-center text-center gap-1.5 px-2 pb-1">
+                    <div className="text-rose-500 font-bold text-xs tracking-[0.2em] uppercase font-sans">
+                      {partner.badge}
+                    </div>
+                    <div className="text-white font-bold text-xl sm:text-2xl tracking-tight font-sans group-hover:text-rose-400 transition-colors">
+                      {partner.title}
+                    </div>
+                  </div>
                 </div>
-                
-                <h3 className="text-xl font-bold text-white mb-2">{partner.title}</h3>
-                
-                <p className="text-sm text-zinc-400 leading-relaxed mb-6 flex-1">
-                  {partner.description}
-                </p>
+              ))}
+            </div>
 
-                <div className="flex justify-end mt-auto">
-                  <ArrowUpRight className="w-5 h-5 text-zinc-600 group-hover:text-white transition-colors" />
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Second Set (Duplicate for seamless scroll) */}
-          <div className="flex gap-6 pr-6">
-            {techPartners.map((partner, i) => (
-              <div 
-                key={`b-${i}`} 
-                className="w-[360px] shrink-0 p-6 rounded-3xl bg-[#0a0a0a] border border-zinc-800 flex flex-col group hover:border-zinc-700 transition-all duration-300 hover:-translate-y-1 cursor-pointer"
-              >
-                <div className="flex justify-between items-start mb-6">
-                  <div className="h-8 flex items-center justify-start">
+            {/* Second Set (Duplicate for seamless scroll) */}
+            <div className="flex gap-6 pr-6">
+              {techPartners.map((partner, i) => (
+                <div 
+                  key={`tech-b-${i}`} 
+                  className="w-[280px] shrink-0 p-6 rounded-3xl bg-zinc-950/80 border border-zinc-800/80 backdrop-blur-md flex flex-col gap-6 hover:border-rose-500/50 hover:bg-zinc-900/60 transition-all duration-300 hover:-translate-y-1 cursor-pointer group"
+                >
+                  <div className="w-full h-36 rounded-2xl bg-zinc-900/40 border border-zinc-800/60 flex items-center justify-center p-6 group-hover:border-zinc-700/80 transition-colors">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img 
                       src={partner.logo} 
                       alt={partner.name}
-                      className="h-full w-auto max-w-[120px] object-contain"
+                      className="max-w-[85%] max-h-[85%] object-contain transition-all duration-300 group-hover:scale-105"
                       onError={(e) => { e.currentTarget.style.display = 'none' }}
                     />
                   </div>
-                  <span className="text-[10px] uppercase font-bold tracking-[0.2em] text-zinc-400 border border-zinc-800 rounded px-2 py-1 shrink-0 ml-2">
-                    {partner.badge}
-                  </span>
+                  <div className="flex flex-col items-center text-center gap-1.5 px-2 pb-1">
+                    <div className="text-rose-500 font-bold text-xs tracking-[0.2em] uppercase font-sans">
+                      {partner.badge}
+                    </div>
+                    <div className="text-white font-bold text-xl sm:text-2xl tracking-tight font-sans group-hover:text-rose-400 transition-colors">
+                      {partner.title}
+                    </div>
+                  </div>
                 </div>
-                
-                <h3 className="text-xl font-bold text-white mb-2">{partner.title}</h3>
-                
-                <p className="text-sm text-zinc-400 leading-relaxed mb-6 flex-1">
-                  {partner.description}
-                </p>
-
-                <div className="flex justify-end mt-auto">
-                  <ArrowUpRight className="w-5 h-5 text-zinc-600 group-hover:text-white transition-colors" />
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
-      </div>
       </div>
     </section>
   );
