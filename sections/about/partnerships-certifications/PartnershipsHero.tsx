@@ -7,15 +7,15 @@ export function PartnershipsHero() {
   return (
     <section className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-[#030303] text-white pt-24 pb-16 sm:py-24 z-10 font-sans">
       
-      {/* Background Image Layer: IMG 0001_2.png */}
+      {/* Background Image Layer: bgimage.png */}
       <div className="absolute inset-0 z-0 pointer-events-none select-none overflow-hidden">
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/assets/About-page/hero/IMG-0001_2.png"
+        <img src="/assets/About-page/hero/bgimage.png"
           alt="Hero Background"
           className="w-full h-full object-cover object-center opacity-75 filter contrast-110 brightness-110"
           loading="eager"
           onError={(e) => {
-            e.currentTarget.src = "/assets/About-page/hero/IMG-0001_2.png";
+            e.currentTarget.src = "/assets/About-page/hero/bgimage.png";
           }}
         />
         {/* Soft Ambient Overlay Gradients for High Visibility & Readability */}

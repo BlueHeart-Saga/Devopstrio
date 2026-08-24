@@ -3,8 +3,44 @@
 import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
+function ScrollWordReveal({ text, progress }: { text: string; progress: number }) {
+  const words = text.split(" ");
+  const total = words.length;
+
+  return (
+    <span className="inline">
+      {words.map((word, i) => {
+        const start = i / total;
+        const end = (i + 1) / total;
+        // Word visibility ratio from 0 to 1 based on current step scroll progress
+        const wordRatio = Math.min(Math.max((progress - start) / (end - start), 0), 1);
+        const isRevealed = wordRatio > 0.3;
+
+        return (
+          <span
+            key={`${word}-${i}`}
+            className="inline-block transition-all duration-150 ease-out mr-[0.3em]"
+            style={{
+              opacity: 0.2 + wordRatio * 0.8,
+              transform: `translateY(${(1 - wordRatio) * 5}px)`,
+              filter: `blur(${(1 - wordRatio) * 2}px)`,
+              color: isRevealed ? "#ffffff" : "rgba(255, 255, 255, 0.25)",
+              textShadow: isRevealed
+                ? "0 2px 16px rgba(0, 0, 0, 0.98), 0 0 10px rgba(244, 63, 94, 0.35)"
+                : "none",
+            }}
+          >
+            {word}
+          </span>
+        );
+      })}
+    </span>
+  );
+}
+
 export function OverviewHero() {
   const [activeStep, setActiveStep] = useState(0);
+  const [scrollProgress, setScrollProgress] = useState(0);
   const containerRef = useRef<HTMLDivElement>(null);
 
   const chapters = [
@@ -48,6 +84,8 @@ export function OverviewHero() {
         0.999
       );
 
+      setScrollProgress(progress);
+
       const step = Math.min(
         Math.floor(progress * chapters.length),
         chapters.length - 1
@@ -60,6 +98,13 @@ export function OverviewHero() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [chapters.length]);
 
+  const stepSize = 1 / chapters.length;
+  const stepStart = activeStep * stepSize;
+  const stepProgress = Math.min(
+    Math.max((scrollProgress - stepStart) / (stepSize * 0.85), 0),
+    1
+  );
+
   return (
     <div ref={containerRef} className="relative w-full h-[320vh] bg-black text-white font-sans">
       {/* Pinned Sticky Background & Viewport Container */}
@@ -67,22 +112,24 @@ export function OverviewHero() {
 
         {/* Fixed Pinned Background Image with Scale Zoom */}
         <div className="absolute inset-0 z-0 pointer-events-none">
-          <img src="/assets/About-page/building/thoothukudi.png"
+          <img
+            src="/assets/About-page/building/thoothukudi.png"
             alt="Devopstrio Building"
             className="w-full h-full object-cover object-right filter brightness-110 contrast-105 transition-transform duration-700 ease-out"
             style={{
               transform: `scale(${1 + activeStep * 0.03})`,
             }}
-          loading="eager" />
+            loading="eager"
+          />
           {/* 50% Left Dark Gradient: keeps text 100% legible while right half displays the building */}
-          <div className="absolute inset-y-0 left-0 w-full sm:w-[60%] lg:w-[52%] bg-gradient-to-r from-black via-black/90 to-transparent z-10" />
+          <div className="absolute inset-y-0 left-0 w-full sm:w-[55%] lg:w-[50%] bg-gradient-to-r from-black via-black/90 to-transparent z-10" />
           <div className="absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-black/60 to-transparent z-10" />
           <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-black/60 to-transparent z-10" />
         </div>
 
-        {/* Left 55% Content Area */}
+        {/* Left 50% Content Area */}
         <div className="max-w-7xl mx-auto w-full px-6 sm:px-10 lg:px-16 relative z-20 h-full flex items-center">
-          <div className="max-w-2xl lg:max-w-[58%] w-full flex items-center">
+          <div className="max-w-xl lg:max-w-[50%] w-full flex items-center">
             <AnimatePresence mode="wait">
               <motion.div
                 key={activeStep}
@@ -118,13 +165,15 @@ export function OverviewHero() {
                     initial={{ opacity: 0, y: 12 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.12, duration: 0.35 }}
-                    className="pt-1"
+                    className="pt-2 w-full"
                   >
                     <p
                       style={{ textShadow: "0 2px 20px rgba(0, 0, 0, 0.98)" }}
-                      className="text-base sm:text-lg md:text-xl lg:text-2xl text-zinc-100 font-sans font-medium leading-relaxed max-w-2xl border-l-4 border-rose-500 pl-5 py-3 bg-rose-950/40 backdrop-blur-md rounded-r-2xl drop-shadow-[0_4px_20px_rgba(0,0,0,0.95)]"
+                      className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-zinc-100 font-sans font-medium leading-relaxed w-full max-w-xl drop-shadow-[0_4px_20px_rgba(0,0,0,0.95)]"
                     >
-                      &ldquo;{chapters[activeStep].quote}&rdquo;
+                      <span className="text-rose-500 font-serif text-3xl sm:text-4xl mr-1.5 inline-block align-top leading-none">&ldquo;</span>
+                      <ScrollWordReveal text={chapters[activeStep].quote} progress={stepProgress} />
+                      <span className="text-rose-500 font-serif text-3xl sm:text-4xl ml-1 inline-block align-bottom leading-none">&rdquo;</span>
                     </p>
                   </motion.div>
                 )}
@@ -137,6 +186,7 @@ export function OverviewHero() {
     </div>
   );
 }
+
 
 
 
