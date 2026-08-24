@@ -2,12 +2,12 @@
 
 import React from "react";
 import { Reveal } from "@/components/ui/Reveal";
+import { ScrollWordReveal } from "@/components/ui/ScrollWordReveal";
 import { ArrowUpRight } from "lucide-react";
-import Link from "next/link";
 
 export function BrandStory() {
   return (
-    <section className="w-full pt-8 pb-24 bg-black text-white relative overflow-hidden">
+    <section className="w-full pt-8 pb-24 bg-black text-white relative overflow-hidden font-sans">
       <div className="max-w-7xl mx-auto w-full px-6 lg:px-12">
         <Reveal>
           <div className="group relative overflow-hidden rounded-[32px] border border-zinc-800/60 bg-zinc-950/30 backdrop-blur-xl">
@@ -31,16 +31,13 @@ export function BrandStory() {
                   </span>
                 </h2>
 
-                <div className="space-y-4 text-zinc-300 text-base md:text-lg leading-relaxed max-w-xl mb-8 font-medium">
-                  <p className="text-zinc-100 font-medium text-lg md:text-xl leading-relaxed">
-                    Great technology companies are not defined only by where they are headquartered, but by the value they create, the problems they solve, and the trust they build across markets.
-                  </p>
-                  {/* <p className="text-zinc-300 text-base md:text-lg leading-relaxed">
-                    At Devopstrio, our journey is shaped by that mindset. We are building a company where strong local engineering talent powers global technology delivery—where businesses can access <Link href="/services/cloud-services" className="text-[#E11D48] hover:underline">cloud</Link>, <Link href="/services/ai-data-innovation" className="text-[#E11D48] hover:underline">AI</Link>, <Link href="/services/software-development" className="text-[#E11D48] hover:underline">software development</Link>, <Link href="/services/devops-automation" className="text-[#E11D48] hover:underline">DevOps</Link>, and <Link href="/services/cybersecurity" className="text-[#E11D48] hover:underline">cybersecurity</Link> expertise through a team that is agile, committed, and deeply invested in outcomes.
-                  </p> */}
-                  <p className="text-zinc-300 text-base md:text-lg leading-relaxed">
-                    Our teams may work from focused delivery centres, but our thinking, execution, and ambition are global. Every platform we build, every migration we deliver, and every solution we support is designed to help organizations operate with more speed, resilience, intelligence, and scale. We'd love to help you <Link href="/contact#contact-form" className="text-[#E11D48] hover:underline">get started</Link>.
-                  </p>
+                <div className="mb-8 max-w-xl">
+                  <ScrollWordReveal
+                    paragraphs={[
+                      "Great technology companies are defined not by headquarters, but by the value created and trust built across markets.",
+                      "With focused delivery teams and global vision, we build resilient, high-scale platforms designed to accelerate your growth."
+                    ]}
+                  />
                 </div>
 
                 <a
@@ -58,11 +55,10 @@ export function BrandStory() {
               <div className="p-2.5 md:p-3.5 flex items-stretch bg-zinc-950/20 border-t lg:border-t-0 lg:border-l border-zinc-900/60">
                 <div className="relative w-full min-h-[320px] lg:min-h-0 rounded-2xl overflow-hidden border border-zinc-800/80 shadow-2xl group/img flex-grow">
                   <img
-                    src="/assets/About-page/events/intro.JPG"
+                    src="/assets/About-page/events/speech.png"
                     alt="Devopstrio Global Collaboration"
                     className="w-full h-full object-cover transition-transform duration-700 group-hover/img:scale-[1.02]"
                   />
-                  {/* Subtle glow/reflection */}
                   <div className="absolute inset-0 bg-gradient-to-tr from-white/0 via-white/5 to-transparent pointer-events-none" />
                 </div>
               </div>

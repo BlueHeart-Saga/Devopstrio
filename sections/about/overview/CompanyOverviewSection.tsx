@@ -1,12 +1,38 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Reveal } from "@/components/ui/Reveal";
 import { CheckCircle2, Globe2, Users2, TrendingUp, Zap, ShieldCheck, Server, BrainCircuit, ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 import { WhoWeAreVisual } from "./WhoWeAreVisual";
 import { TableToTextVisual } from "./TableToTextVisual";
+
+const whoWeAreQuotes = [
+  "a passionate team of engineers and innovators dedicated to helping businesses grow, scale, and thrive through reliable IT, Cloud, and AI services built with care.",
+  "your trusted technology partner, bringing together deep domain expertise, creative problem solving, and genuine care for your success.",
+  "dreamers and builders who transform complex technology challenges into seamless, joyful enterprise growth.",
+  "a global family of digital architects committed to delivering excellence, transparency, and innovation in every project we touch.",
+  "pioneers in modern IT services, empowering leaders to automate workloads, secure infrastructures, and lead with confidence.",
+  "customer-obsessed engineers who listen deeply, design thoughtfully, and build resilient platforms that elevate your business.",
+  "driven by integrity, human creativity, and cutting-edge AI—helping enterprises stay ahead in a rapidly evolving digital world.",
+  "problem solvers at heart, making high-scale cloud, DevOps, and software engineering accessible, reliable, and stress-free.",
+  "united by a mission to craft meaningful digital experiences that inspire confidence, foster trust, and fuel long-term value.",
+  "Devopstrio—where technical mastery meets human empathy to engineer a brighter, smarter tomorrow for enterprises worldwide."
+];
+
+const engineeringSolutionsQuotes = [
+  "with simplicity and heart—creating smart technology that solves real challenges, empowers your team, and shapes a brighter future.",
+  "with enterprise precision, building cloud-native architectures that keep your operations fast, resilient, and bulletproof.",
+  "to turn data into actionable intelligence, enabling your organization to make smarter decisions in real-time.",
+  "with zero-trust security built into every layer, protecting your business assets without slowing down innovation.",
+  "through automated CI/CD pipelines and DevOps best practices, accelerating your product delivery from months to minutes.",
+  "to be seamlessly scalable, ensuring your infrastructure effortlessly adapts to explosive user growth.",
+  "around human-centered design, creating intuitive platforms that teams love to use every single day.",
+  "with sustainable, energy-efficient cloud practices that reduce operational costs while caring for our planet.",
+  "using responsible AI guardrails, giving your organization a powerful competitive edge with ethical peace of mind.",
+  "for 99.99% uptime and zero friction—so you can focus on growing your business while we handle the tech."
+];
 
 const stats = [
   { value: "7+", label: "Years of Excellence" },
@@ -17,34 +43,64 @@ const stats = [
 
 const whatWeDo = [
   {
-    prefix: "We conduct ",
-    highlight: "AI-centric digital transformation",
-    suffix: " from strategy to scalable execution",
-    tableMessage: "We conduct AI-centric digital transformation.",
+    prefix: "We craft ",
+    highlight: "AI-driven digital transformation",
+    suffix: " with human empathy and enterprise scale.",
+    tableMessage: "We craft AI-driven digital transformation with heart and scale.",
   },
   {
-    prefix: "We engineer secure, ",
-    highlight: "cloud-native, data-driven solutions",
-    suffix: " for complex enterprise landscapes",
-    tableMessage: "We engineer cloud-native, data-driven solutions.",
+    prefix: "We engineer resilient ",
+    highlight: "cloud-native architectures",
+    suffix: " that keep your business fast, secure, and always online.",
+    tableMessage: "We engineer resilient cloud-native architectures that never fail.",
   },
   {
     prefix: "We modernize ",
-    highlight: "core systems",
-    suffix: " to optimize performance, enable innovation and unlock long-term value",
-    tableMessage: "We modernize mission-critical core systems.",
+    highlight: "mission-critical enterprise systems",
+    suffix: " to unlock agility and accelerate long-term growth.",
+    tableMessage: "We modernize core systems to unlock agility and growth.",
   },
   {
-    prefix: "We apply our deep expertise from highly regulated environments to deliver security by design across ",
-    highlight: "industries",
-    suffix: "",
-    tableMessage: "We deliver security by design across global industries.",
+    prefix: "We embed ",
+    highlight: "zero-trust security by design",
+    suffix: " to protect your data with absolute peace of mind.",
+    tableMessage: "We embed zero-trust security to protect what matters most.",
+  },
+  {
+    prefix: "We automate ",
+    highlight: "high-velocity CI/CD delivery pipelines",
+    suffix: " so your engineering teams ship software faster.",
+    tableMessage: "We automate CI/CD pipelines to accelerate software delivery.",
+  },
+  {
+    prefix: "We architect ",
+    highlight: "intelligent data platforms",
+    suffix: " that turn complex information into real-time wisdom.",
+    tableMessage: "We architect data platforms that turn info into wisdom.",
   },
   {
     prefix: "We partner with ",
-    highlight: "leading technology providers",
-    suffix: " to create resilient, future-ready platforms",
-    tableMessage: "We partner with global tech leaders to build resilient platforms.",
+    highlight: "hyperscale cloud leaders",
+    suffix: " to deliver future-ready digital ecosystems.",
+    tableMessage: "We partner with cloud leaders to build future-ready platforms.",
+  },
+  {
+    prefix: "We provide ",
+    highlight: "24/7 global managed operations",
+    suffix: " ensuring seamless performance and zero downtime.",
+    tableMessage: "We provide 24/7 global operations with zero downtime.",
+  },
+  {
+    prefix: "We build ",
+    highlight: "custom software applications",
+    suffix: " designed with simplicity, precision, and user joy.",
+    tableMessage: "We build custom software with precision and user joy.",
+  },
+  {
+    prefix: "We champion ",
+    highlight: "sustainable cloud optimization",
+    suffix: " reducing carbon footprints while maximizing ROI.",
+    tableMessage: "We champion sustainable cloud tech that reduces carbon footprint.",
   },
 ];
 
@@ -73,7 +129,25 @@ const services = [
 
 export function CompanyOverviewSection() {
   const [whoKey, setWhoKey] = useState<"W" | "E">("W");
+  const [quoteIndexW, setQuoteIndexW] = useState(0);
+  const [quoteIndexE, setQuoteIndexE] = useState(0);
   const [selectedTableText, setSelectedTableText] = useState("We are innovative solutions.");
+
+  // Auto-switch key (W <-> E) and rotate quotes every 5 seconds
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setWhoKey((prevKey) => {
+        if (prevKey === "W") {
+          return "E";
+        } else {
+          setQuoteIndexW((wIndex) => (wIndex + 1) % whoWeAreQuotes.length);
+          setQuoteIndexE((eIndex) => (eIndex + 1) % engineeringSolutionsQuotes.length);
+          return "W";
+        }
+      });
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
 
   return (
     <section className="bg-black text-white relative overflow-hidden">
@@ -213,35 +287,57 @@ export function CompanyOverviewSection() {
                 />
               </div>
 
-              {/* Dynamic Narrative Paragraph that switches on W / E press */}
-              <div className="max-w-4xl mx-auto text-center px-4 min-h-[120px] sm:min-h-[96px] flex items-center justify-center">
+              {/* Dynamic Narrative Paragraph that auto-switches and rotates through 10 quotes */}
+              <div className="max-w-4xl mx-auto text-center px-4 min-h-[140px] sm:min-h-[110px] flex flex-col items-center justify-center">
                 <AnimatePresence mode="wait">
                   {whoKey === "W" ? (
                     <motion.div
-                      key="who-we-are"
-                      initial={{ opacity: 0, y: 8 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: -8 }}
-                      transition={{ duration: 0.22 }}
+                      key={`w-quote-${quoteIndexW}`}
+                      initial={{ opacity: 0, y: 10, filter: "blur(4px)" }}
+                      animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                      exit={{ opacity: 0, y: -10, filter: "blur(4px)" }}
+                      transition={{ duration: 0.35, ease: "easeOut" }}
+                      className="w-full"
                     >
-                      <p className="text-zinc-300 text-lg sm:text-xl lg:text-2xl leading-relaxed font-normal">
-                        <span className="text-white font-semibold">We are</span> the industry&apos;s &lsquo;best-kept secret&rsquo;. But to those in the know we have delivered complex, high-stakes, business critical digital services for over 7 years. What began as a focused engineering startup has grown into a global force, carrying out responsible AI-enabled digital transformation projects around the world.
+                      <p className="text-zinc-200 text-lg sm:text-xl lg:text-2xl leading-relaxed font-normal">
+                        &ldquo;<span className="text-white font-semibold">We are</span> {whoWeAreQuotes[quoteIndexW]}&rdquo;
                       </p>
                     </motion.div>
                   ) : (
                     <motion.div
-                      key="engineering-solutions"
-                      initial={{ opacity: 0, y: 8 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: -8 }}
-                      transition={{ duration: 0.22 }}
+                      key={`e-quote-${quoteIndexE}`}
+                      initial={{ opacity: 0, y: 10, filter: "blur(4px)" }}
+                      animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                      exit={{ opacity: 0, y: -10, filter: "blur(4px)" }}
+                      transition={{ duration: 0.35, ease: "easeOut" }}
+                      className="w-full"
                     >
-                      <p className="text-zinc-300 text-lg sm:text-xl lg:text-2xl leading-relaxed font-normal">
-                        <span className="text-white font-semibold">Engineering our solutions</span> with enterprise precision and global scale. We partner with forward-thinking leaders to architect resilient cloud-native ecosystems, automate mission-critical pipelines, and deploy responsible AI systems that deliver measurable business impact.
+                      <p className="text-zinc-200 text-lg sm:text-xl lg:text-2xl leading-relaxed font-normal">
+                        &ldquo;<span className="text-white font-semibold">Engineering our solutions</span> {engineeringSolutionsQuotes[quoteIndexE]}&rdquo;
                       </p>
                     </motion.div>
                   )}
                 </AnimatePresence>
+
+                {/* 10 Quote Indicators */}
+                <div className="flex items-center gap-1.5 mt-6">
+                  {Array.from({ length: 10 }).map((_, idx) => {
+                    const isActive = whoKey === "W" ? idx === quoteIndexW : idx === quoteIndexE;
+                    return (
+                      <button
+                        key={idx}
+                        onClick={() => {
+                          if (whoKey === "W") setQuoteIndexW(idx);
+                          else setQuoteIndexE(idx);
+                        }}
+                        aria-label={`Jump to quote ${idx + 1}`}
+                        className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${
+                          isActive ? "w-6 bg-rose-500" : "w-1.5 bg-zinc-800 hover:bg-zinc-600"
+                        }`}
+                      />
+                    );
+                  })}
+                </div>
               </div>
             </div>
           </Reveal>
@@ -251,36 +347,32 @@ export function CompanyOverviewSection() {
 
           {/* Bottom: What We Do (Featuring TableToText Strategy Card + Capabilities) */}
           <Reveal delay={0.08}>
-            <div className="space-y-12 lg:space-y-16">
+            <div className="space-y-4 sm:space-y-6">
               
-              {/* Heading */}
-              <div className="space-y-4 max-w-3xl">
-                {/* <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-500/10 border border-rose-500/25 text-rose-400 text-xs font-mono uppercase tracking-widest">
-                  <span className="w-2 h-2 rounded-full bg-rose-500 animate-pulse" />
-                  WHAT WE DO
-                </div> */}
-                <h3 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-white tracking-tight leading-tight">
-                  What We Do
+              {/* Centered Feel-Good Heading */}
+              <div className="max-w-3xl mx-auto text-center">
+                <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight leading-tight">
+                  What We Do <span className="text-rose-500">With Heart.</span>
                 </h3>
               </div>
 
               {/* Table-To-Text Creative Meeting Table Card with Auto-Rotating Messages */}
-              <TableToTextVisual />
+              <TableToTextVisual messages={whatWeDo.map(item => item.tableMessage)} />
 
-              {/* Capabilities List commented out */}
-              {/* <div className="grid grid-cols-1 lg:grid-cols-12 pt-2">
-                <div className="lg:col-span-12 space-y-6">
-                  <ul className="space-y-5 lg:space-y-6">
+              {/* Premium 10 Capabilities Quote List */}
+              {/* <div className="grid grid-cols-1 lg:grid-cols-12 pt-4">
+                <div className="lg:col-span-12 space-y-4">
+                  <ul className="space-y-3.5 lg:space-y-4">
                     {whatWeDo.map((item, i) => (
                       <li
                         key={i}
-                        className="flex items-start gap-4 p-4 -mx-4 rounded-2xl hover:bg-zinc-900/60 border border-transparent hover:border-zinc-800 transition-all duration-200 cursor-pointer group"
+                        className="flex items-start gap-4 p-4 rounded-2xl bg-zinc-950/40 hover:bg-zinc-900/60 border border-zinc-900 hover:border-rose-500/30 transition-all duration-300 group"
                       >
-                        <span className="mt-3 w-2.5 h-2.5 rounded-none bg-rose-500 shrink-0 group-hover:scale-125 transition-transform" />
-                        <span className="text-zinc-300 text-lg sm:text-xl lg:text-2xl leading-relaxed">
+                        <span className="mt-2.5 w-2.5 h-2.5 rounded-full bg-rose-500 shrink-0 group-hover:scale-125 transition-transform drop-shadow-[0_0_8px_rgba(244,63,94,0.6)]" />
+                        <span className="text-zinc-300 text-base sm:text-lg lg:text-xl leading-relaxed font-sans">
                           {item.prefix}
                           {item.highlight && (
-                            <span className="text-white font-medium underline underline-offset-4 decoration-rose-500/70 group-hover:text-rose-400 transition-colors">
+                            <span className="text-white font-semibold underline underline-offset-4 decoration-rose-500/70 group-hover:text-rose-400 transition-colors">
                               {item.highlight}
                             </span>
                           )}

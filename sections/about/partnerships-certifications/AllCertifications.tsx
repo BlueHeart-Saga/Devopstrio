@@ -58,50 +58,67 @@ export function AllCertifications() {
         }
       `}} />
 
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
+      {/* Section Header with Highlighted Capability & Side Arrow */}
+      <div className="max-w-[1240px] mx-auto px-6 sm:px-8 mb-12 relative text-left">
         <Reveal>
-          <div className="mb-6">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight leading-tight text-white font-sans">
-              Our <span className="text-rose-600">Certifications</span>
-            </h2>
-          </div>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight leading-[1.35] text-white font-sans">
+            Industry Certifications & Awards That Validate Our Engineering{" "}
+            <span className="relative inline-block">
+              <span className="inline-block bg-rose-500 text-black font-extrabold px-3.5 py-0.5 mx-1.5 rounded-xs transform -rotate-3 shadow-[0_4px_20px_rgba(225,29,72,0.45)] align-middle">
+                Capability
+              </span>
+              {/* Curved top-to-bottom side arrow image positioned directly AFTER Capability */}
+              <img
+                src="/assets/components/top-to-buttom-side%20-Arrowmid.png"
+                alt="Side arrow pointing down"
+                className="absolute -bottom-14 sm:-bottom-20 md:-bottom-24 -right-8 sm:-right-12 md:-right-16 scale-x-[-1] w-10 sm:w-14 md:w-16 lg:w-18 h-auto object-contain filter drop-shadow-[0_0_15px_rgba(244,63,94,0.5)] pointer-events-none select-none z-20"
+              />
+            </span>
+          </h2>
         </Reveal>
       </div>
 
       {/* Premium Hairline Grid Container matching PartnersSection */}
       <div className="relative max-w-[1240px] mx-auto w-full px-6 sm:px-8 select-none">
-        <div key={page} className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 border-t border-l border-zinc-800/80 bg-[#030303] rounded-2xl overflow-hidden animate-custom-fade shadow-[0_20px_50px_rgba(0,0,0,0.8)]">
+        <div key={page} className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 border-t border-l border-zinc-800/80 bg-[#030303] rounded-2xl overflow-hidden animate-custom-fade shadow-[0_20px_50px_rgba(0,0,0,0.8)]">
           {displayedCertifications.map((item, idx) => (
             <div
               key={`${item.title}-${idx}`}
-              className="w-full h-36 sm:h-40 md:h-44 border-r border-b border-zinc-800/80 bg-zinc-950/70 flex items-center justify-center p-5 relative overflow-hidden group cursor-pointer hover:border-rose-500/50 transition-all duration-300"
+              className="w-full h-36 sm:h-40 md:h-44 border-r border-b border-zinc-800/80 bg-zinc-950/60 flex flex-col items-center justify-between p-4 sm:p-5 relative overflow-hidden group cursor-pointer hover:bg-zinc-900/80 hover:border-rose-500/40 transition-all duration-300"
             >
-              {/* Default State: Clean Centered Logo Only */}
-              <div className="relative z-10 flex items-center justify-center w-full h-full p-2 group-hover:scale-105 transition-transform duration-300">
+              {/* Hover Ambient Glow */}
+              <div className="absolute inset-0 bg-gradient-to-b from-rose-500/10 via-transparent to-rose-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+
+              {/* Year Tag (Top Bar) */}
+              {/* <div className="w-full flex justify-start items-center relative z-10">
+                <span className="text-[10px] sm:text-xs font-mono font-bold tracking-widest text-zinc-500 group-hover:text-rose-400 transition-colors uppercase">
+                  {item.year}
+                </span>
+              </div> */}
+
+              {/* Award / Certification Logo */}
+              <div className="relative z-10 flex items-center justify-center w-full h-full my-auto px-2">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={item.logo}
                   alt={item.title}
-                  className="max-w-[85%] max-h-[80%] object-contain select-none filter contrast-110"
+                  className="max-w-[85%] max-h-[75%] object-contain select-none transition-all duration-300 group-hover:scale-105 filter contrast-105"
                   onError={(e) => { e.currentTarget.style.display = 'none' }}
                 />
               </div>
 
-              {/* Hover State: Glassmorphism Blur Text Overlay */}
-              <div className="absolute inset-0 bg-black/85 backdrop-blur-md flex flex-col items-center justify-center p-4 text-center opacity-0 group-hover:opacity-100 transition-all duration-300 z-20">
-                <span className="text-rose-500 font-bold text-xs uppercase tracking-widest mb-1.5 font-sans">
-                  {item.year}
-                </span>
-                <h4 className="text-white font-bold text-sm sm:text-base leading-snug font-sans max-w-[90%]">
+              {/* Award Title (Bottom Label) */}
+              {/* <div className="w-full relative z-10 text-center pt-1">
+                <h4 className="text-[11px] sm:text-xs font-semibold text-zinc-400 group-hover:text-white transition-colors truncate font-sans">
                   {item.title}
                 </h4>
-              </div>
+              </div> */}
             </div>
           ))}
         </div>
 
         {/* Pagination Dots */}
-        <div className="flex justify-center gap-2 mt-6">
+        <div className="flex justify-center gap-2 mt-8">
           {Array.from({ length: maxPage + 1 }).map((_, i) => (
             <button
               key={i}
@@ -115,3 +132,5 @@ export function AllCertifications() {
     </section>
   );
 }
+
+export default AllCertifications;

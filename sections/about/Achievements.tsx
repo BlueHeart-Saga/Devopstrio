@@ -69,7 +69,7 @@ export function Achievements() {
   return (
     <section className="w-full py-20 bg-black text-white relative">
       <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
-        
+
         {/* Split Section Layout */}
         {/* <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           
@@ -121,7 +121,7 @@ export function Achievements() {
             <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none" />
             <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none" />
 
-            <motion.div 
+            <motion.div
               className="flex flex-nowrap gap-6 items-center w-max whitespace-nowrap"
               animate={{ x: ["0%", "-50%"] }}
               transition={{
@@ -131,8 +131,8 @@ export function Achievements() {
               }}
             >
               {[...ourCerts, ...ourCerts].map((item, idx) => (
-                <div 
-                  key={idx} 
+                <div
+                  key={idx}
                   className="w-36 h-20 flex items-center justify-center shrink-0"
                 >
                   <img
@@ -164,7 +164,7 @@ export function Achievements() {
             <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none" />
             <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none" />
 
-            <motion.div 
+            <motion.div
               className="flex flex-nowrap gap-6 items-center w-max whitespace-nowrap"
               animate={{ x: ["-50%", "0%"] }} // reverse scroll direction
               transition={{
@@ -175,8 +175,8 @@ export function Achievements() {
             >
               {/* Multiply the array to ensure seamless looping length */}
               {[...complianceLogos, ...complianceLogos, ...complianceLogos, ...complianceLogos].map((item, idx) => (
-                <div 
-                  key={idx} 
+                <div
+                  key={idx}
                   className="w-36 h-20 flex items-center justify-center shrink-0"
                 >
                   <img
@@ -203,15 +203,15 @@ export function Achievements() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {awards.map((item) => (
-              <Reveal 
-                key={item.title} 
+              <Reveal
+                key={item.title}
                 className="group bg-zinc-950 border border-zinc-900 overflow-hidden hover:border-rose-600/30 transition-all duration-300 rounded-none"
               >
                 <div className="relative aspect-[16/10] overflow-hidden bg-zinc-900/40 flex items-center justify-center p-6">
-                  <img 
-                    src={item.image} 
+                  <img
+                    src={item.image}
                     alt={item.title}
-                    className="w-full h-full object-contain select-none pointer-events-none group-hover:scale-[1.04] transition-transform duration-500" 
+                    className="w-full h-full object-contain select-none pointer-events-none group-hover:scale-[1.04] transition-transform duration-500"
                   />
                 </div>
               </Reveal>

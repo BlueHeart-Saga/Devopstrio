@@ -29,6 +29,7 @@ import {
 import { FaAws, FaMicrosoft, FaGoogle, FaDocker, FaGithub, FaGitlab, FaJenkins, FaJira } from "react-icons/fa";
 import { Reveal } from "@/components/ui/Reveal";
 import { DetailedServices } from "./DetailedServices";
+import { RepresentativeCTA } from "@/components/ui/RepresentativeCTA";
 
 import {
   exploreCategories,
@@ -1107,45 +1108,15 @@ export function ExploreClient() {
       </section>
 
       {/* SECTION 15 — FINAL CTA / CONSULTATION SECTION */}
-      <section className="relative py-28 bg-[#020202] text-center overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(244,63,94,0.06),transparent_60%)] pointer-events-none" />
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-rose-600/5 rounded-full blur-[100px] pointer-events-none" />
-
-        <div className="max-w-4xl mx-auto px-6 relative z-10 space-y-6">
-          <Reveal>
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-bold tracking-wider uppercase bg-rose-500/10 text-rose-500 border border-rose-500/20">
-              BUILD WITH DEVOPSTRIO
-            </span>
-          </Reveal>
-
-          <Reveal>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6 drop-shadow-md">
-              Let's Build the Right Transformation Path for Your Business
-            </h2>
-          </Reveal>
-
-          <Reveal>
-            <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-medium max-w-2xl mx-auto drop-shadow-md">
-              Whether you need a focused engineering capability, a cloud modernization partner, an AI implementation roadmap, or end-to-end transformation support, Devopstrio can help you design the right engagement model.
-            </p>
-          </Reveal>
-
-          <Reveal className="pt-4 flex flex-wrap gap-4 justify-center">
-            <Link
-              href="/contact#contact-form"
-              className="px-8 py-4 rounded-lg text-xs font-bold uppercase tracking-wider bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white transition-all duration-300 hover:shadow-[0_0_30px_rgba(225,29,72,0.4)] hover:-translate-y-0.5"
-            >
-              Book a Consultation
-            </Link>
-            <Link
-              href="/contact#contact-form"
-              className="px-8 py-4 rounded-lg text-xs font-bold uppercase tracking-wider bg-zinc-900 border border-zinc-800 hover:bg-zinc-800 hover:border-zinc-700 text-white transition-all duration-300 hover:-translate-y-0.5"
-            >
-              Talk to a Service Specialist
-            </Link>
-          </Reveal>
-        </div>
-      </section>
+      <RepresentativeCTA
+        title="Let's Build The Right Transformation Path"
+        highlightText="For Your Business"
+        description="Whether you need a focused engineering capability, a cloud modernization partner, an AI implementation roadmap, or end-to-end transformation support, Devopstrio can help you design the right engagement model."
+        primaryBtnText="BOOK A CONSULTATION"
+        primaryBtnHref="/contact#contact-form"
+        secondaryBtnText="TALK TO A SPECIALIST"
+        secondaryBtnHref="/contact#contact-form"
+      />
     </div>
   );
 }

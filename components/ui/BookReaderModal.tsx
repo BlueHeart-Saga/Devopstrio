@@ -5,7 +5,7 @@ import dynamic from "next/dynamic";
 import { Loader2 } from "lucide-react";
 
 // Dynamically import BrochureFlipBook with SSR disabled
-const BrochureFlipBook = dynamic(() => import("./BrochureFlipBook"), { 
+const BrochureFlipBook = dynamic(() => import("./BrochureFlipBook").then((mod) => mod.default || mod), { 
   ssr: false,
   loading: () => (
     <div className="flex flex-col items-center justify-center p-12 gap-3 text-zinc-300 font-sans my-auto">

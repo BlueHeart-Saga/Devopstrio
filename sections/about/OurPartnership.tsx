@@ -7,7 +7,7 @@ import { Reveal } from "@/components/ui/Reveal";
 
 // Curated tech & partner icons from project assets
 const row1 = [
-  { name: "AWS", path: "/assets/Tech-icons/amazon-aws-logo_svgstack_com_7491780931192.svg" },
+  { name: "AWS", path: "/assets/Devopstrio_Partners/aws.png" },
   { name: "Google Cloud", path: "/assets/Tech-icons/google-cloud-logo_svgstack_com_28371780931185.svg" },
   { name: "Microsoft", path: "/assets/Home-page/partners/Microsoft.svg" },
   { name: "ServiceNow", path: "/assets/Home-page/partners/servicenow.png" },

@@ -6,7 +6,7 @@ import Link from "next/link";
 
 const techStack = [
   // Cloud & Containers
-  { name: "AWS", icon: "/assets/Tech-icons/amazon-aws-logo_svgstack_com_7491780931192.svg", category: "Cloud Infrastructure", desc: "Architecting scalable, fault-tolerant cloud infrastructures, serverless computing with Lambda, and global network systems." },
+  { name: "AWS", icon: "/assets/Devopstrio_Partners/aws.png", category: "Cloud Infrastructure", desc: "Architecting scalable, fault-tolerant cloud infrastructures, serverless computing with Lambda, and global network systems." },
   { name: "Azure", icon: "/assets/Tech-icons/microsoft-azure-logo_svgstack_com_7501780931055.svg", category: "Enterprise Cloud Platforms", desc: "Designing robust enterprise cloud solutions, AKS container management, Active Directory security, and hybrid landing zones." },
   { name: "Google Cloud", icon: "/assets/Tech-icons/google-cloud-logo_svgstack_com_28371780931185.svg", category: "Data & AI Cloud Infrastructure", desc: "Powering real-time data analytics with BigQuery, Kubernetes orchestration with GKE, and AI modeling with Vertex AI." },
   { name: "Docker", icon: "/assets/Tech-icons/docker-logo_svgstack_com_28191780931128.svg", category: "Containerization", desc: "Packaging applications into lightweight, standardized containers for predictable cross-environment execution." },
@@ -46,7 +46,7 @@ const techStack = [
   { name: "GraphQL", icon: "/assets/Tech-icons/graphql_svgstack_com_28421780931889.svg", category: "API Query Language", desc: "Enabling clients to request exactly the data they need, simplifying API orchestration and data fetching." },
   { name: "MuleSoft", icon: "/assets/Home-page/Techtools/mulesoft.svg", category: "Enterprise Middleware & ESB", desc: "Orchestrating complex enterprise API integrations, ESB data buses, real-time message translation, and legacy connectors." },
   { name: "Strapi", icon: "/assets/Home-page/Techtools/strapi-color.svg", category: "Headless Content Infrastructure", desc: "Deploying headless backend APIs, secure content modeling systems, and multi-tenant administrative portals." },
-  
+
   // Fintech Core Banking
   { name: "Mambu", icon: "/assets/Home-page/Techtools/mambu.svg", category: "Cloud Banking Platform", desc: "Orchestrating SaaS cloud-native banking cores, flexible deposit/lending engines, and open financial APIs." },
   { name: "Temenos", icon: "/assets/Home-page/Techtools/temenos.svg", category: "Core Banking Systems", desc: "Running globally dominant enterprise core banking systems, digital wealth management, and transactional layers." },
@@ -179,8 +179,8 @@ export function TechnicalPartnerships() {
                           bg-white rounded-lg flex items-center justify-center p-2 md:p-3 
                           aspect-square shadow-md cursor-pointer transition-all duration-300
                           hover:-translate-y-1 hover:shadow-rose-500/30 hover:shadow-lg
-                          ${isActive 
-                            ? 'opacity-100 scale-105 border border-rose-500/50 shadow-rose-500/20 shadow-md' 
+                          ${isActive
+                            ? 'opacity-100 scale-105 border border-rose-500/50 shadow-rose-500/20 shadow-md'
                             : (isHoveredState ? 'opacity-40 scale-95 grayscale' : 'opacity-70 scale-95')
                           }
                         `}
@@ -199,7 +199,7 @@ export function TechnicalPartnerships() {
 
               {/* Page indicator dots */}
               <div className="flex justify-center gap-2 mt-6">
-                <button 
+                <button
                   onClick={() => {
                     if (page === 0) return;
                     setIsFading(true);
@@ -212,7 +212,7 @@ export function TechnicalPartnerships() {
                   className={`h-2 rounded-full transition-all duration-300 ${page === 0 ? 'bg-rose-500 w-4' : 'bg-zinc-700 w-2'}`}
                   aria-label="Tech Stack Page 1"
                 />
-                <button 
+                <button
                   onClick={() => {
                     if (page === 1) return;
                     setIsFading(true);

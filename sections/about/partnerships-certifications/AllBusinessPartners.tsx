@@ -64,22 +64,15 @@ export function AllBusinessPartners() {
               {partners.map((partner, i) => (
                 <div 
                   key={`a-${i}`} 
-                  className="w-[280px] shrink-0 p-6 rounded-3xl bg-zinc-950/80 border border-zinc-800/80 backdrop-blur-md flex flex-col gap-6 hover:border-rose-500/50 hover:bg-zinc-900/60 transition-all duration-300 hover:-translate-y-1 cursor-pointer group"
+                  className="w-[200px] sm:w-[240px] h-28 sm:h-32 shrink-0 p-5 rounded-2xl bg-zinc-950/70 border border-zinc-800/80 backdrop-blur-xl flex items-center justify-center hover:border-rose-500/50 hover:bg-zinc-900/70 transition-all duration-300 cursor-pointer group shadow-xl"
                 >
-                  <div className="w-full h-36 rounded-2xl bg-zinc-900/40 border border-zinc-800/60 flex items-center justify-center p-6 group-hover:border-zinc-700/80 transition-colors">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img 
-                      src={partner.logo} 
-                      alt={partner.name}
-                      className="max-w-[85%] max-h-[85%] object-contain transition-all duration-300 group-hover:scale-105"
-                      onError={(e) => { e.currentTarget.style.display = 'none' }}
-                    />
-                  </div>
-                  <div className="flex flex-col items-center text-center gap-1.5 px-2 pb-1">
-                    <div className="text-white font-bold text-xl sm:text-2xl tracking-tight font-sans group-hover:text-rose-400 transition-colors">
-                      {partner.name}
-                    </div>
-                  </div>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img 
+                    src={partner.logo} 
+                    alt={partner.name}
+                    className="max-w-[80%] max-h-[75%] object-contain select-none transition-all duration-300 group-hover:scale-105 filter contrast-105"
+                    onError={(e) => { e.currentTarget.style.display = 'none' }}
+                  />
                 </div>
               ))}
             </div>
@@ -89,22 +82,15 @@ export function AllBusinessPartners() {
               {partners.map((partner, i) => (
                 <div 
                   key={`b-${i}`} 
-                  className="w-[280px] shrink-0 p-6 rounded-3xl bg-zinc-950/80 border border-zinc-800/80 backdrop-blur-md flex flex-col gap-6 hover:border-rose-500/50 hover:bg-zinc-900/60 transition-all duration-300 hover:-translate-y-1 cursor-pointer group"
+                  className="w-[200px] sm:w-[240px] h-28 sm:h-32 shrink-0 p-5 rounded-2xl bg-zinc-950/70 border border-zinc-800/80 backdrop-blur-xl flex items-center justify-center hover:border-rose-500/50 hover:bg-zinc-900/70 transition-all duration-300 cursor-pointer group shadow-xl"
                 >
-                  <div className="w-full h-36 rounded-2xl bg-zinc-900/40 border border-zinc-800/60 flex items-center justify-center p-6 group-hover:border-zinc-700/80 transition-colors">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img 
-                      src={partner.logo} 
-                      alt={partner.name}
-                      className="max-w-[85%] max-h-[85%] object-contain transition-all duration-300 group-hover:scale-105"
-                      onError={(e) => { e.currentTarget.style.display = 'none' }}
-                    />
-                  </div>
-                  <div className="flex flex-col items-center text-center gap-1.5 px-2 pb-1">
-                    <div className="text-white font-bold text-xl sm:text-2xl tracking-tight font-sans group-hover:text-rose-400 transition-colors">
-                      {partner.name}
-                    </div>
-                  </div>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img 
+                    src={partner.logo} 
+                    alt={partner.name}
+                    className="max-w-[80%] max-h-[75%] object-contain select-none transition-all duration-300 group-hover:scale-105 filter contrast-105"
+                    onError={(e) => { e.currentTarget.style.display = 'none' }}
+                  />
                 </div>
               ))}
             </div>
@@ -114,3 +100,5 @@ export function AllBusinessPartners() {
     </section>
   );
 }
+
+export default AllBusinessPartners;

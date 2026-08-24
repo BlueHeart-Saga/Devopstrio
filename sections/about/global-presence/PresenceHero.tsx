@@ -39,7 +39,7 @@ const locationSlides = [
     type: "Innovation Hub",
     country: "India",
     address: "4/ 367, Rajeev Colony, Pasuvanthanai, 628718 Thoothukudi, Tamilnadu, IN",
-    src: "/assets/About-page/building/india.png",
+    src: "/assets/About-page/building/thoothukudi.png",
     alt: "Devopstrio Thoothukudi Innovation Hub",
     heading: (
       <>

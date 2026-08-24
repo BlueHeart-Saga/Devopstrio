@@ -77,9 +77,23 @@ export const InternshipTracks = () => {
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(244,63,94,0.03),transparent_70%)] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="text-center max-w-4xl mx-auto mb-16 relative">
+          {/* Left-to-right arrow PNG pointing to header */}
+          <div className="absolute -top-6 sm:-top-8 md:-top-10 left-0 sm:-left-6 md:-left-10 lg:-left-14 z-20 pointer-events-none select-none">
+            <img
+              src="/assets/components/lefttoright.png"
+              alt="Left to right arrow"
+              className="w-12 sm:w-16 md:w-20 h-auto object-contain filter drop-shadow-[0_0_15px_rgba(244,63,94,0.45)]"
+            />
+          </div>
+
           <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight text-white mb-4 font-sans">
-            Internship <span className="text-rose-500">Tracks</span>
+            Internship Tracks Engineered <br className="hidden sm:block" />
+            To{" "}
+            <span className="inline-block bg-rose-500 text-black font-extrabold px-3.5 py-0.5 mx-1.5 rounded-xs transform -rotate-3 shadow-[0_4px_20px_rgba(225,29,72,0.45)] align-middle">
+              Build
+            </span>{" "}
+            Your Future
           </h2>
         </div>
 

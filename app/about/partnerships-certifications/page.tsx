@@ -92,18 +92,18 @@ export default function PartnershipsCertificationsPage() {
       </div>
 
       {/* Divider */}
-      <SvgWaveLine variant="liquid" />
+      {/* <SvgWaveLine variant="liquid" /> */}
 
       {/* 6. The Operating Principles Behind Our Delivery */}
-      <div id="operating-model">
+      {/* <div id="operating-model">
         <OperatingModel />
-      </div>
+      </div> */}
 
       {/* Divider */}
-      <SvgWaveLine variant="grid" />
+      {/* <SvgWaveLine variant="grid" /> */}
 
       {/* 7. Trust Statement */}
-      <TrustStatement />
+      {/* <TrustStatement /> */}
 
       {/* Divider */}
       <SvgWaveLine variant="smooth" />

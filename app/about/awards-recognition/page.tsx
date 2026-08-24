@@ -3,7 +3,7 @@ import React from "react";
 import { Metadata } from "next";
 import { BreadcrumbSchema } from "@/components/seo/Schemas";
 import { AwardsHero } from "@/sections/about/awards-recognition/AwardsHero";
-import { RecognitionIntro } from "@/sections/about/awards-recognition/RecognitionIntro";
+import { AwardsPillars } from "@/sections/about/awards-recognition/AwardsPillars";
 import { RecognitionHighlights } from "@/sections/about/awards-recognition/RecognitionHighlights";
 import { RecognitionTimeline } from "@/sections/about/awards-recognition/RecognitionTimeline";
 import { RecognitionCategories } from "@/sections/about/awards-recognition/RecognitionCategories";
@@ -35,6 +35,9 @@ export default function AwardsRecognitionPage() {
       {/* 1) Hero Section */}
       <AwardsHero />
 
+      {/* 2) Pillars Section: Achievement, Excellence, Impact */}
+      <AwardsPillars />
+
 
        {/* PREVIOUS SECTION: AwardsList (Certifications, Compliance, Industry Validation) */}
       <div className="bg-black border-t border-zinc-900/60">
@@ -49,7 +52,7 @@ export default function AwardsRecognitionPage() {
       </div> */}
 
        {/* PREVIOUS SECTION: Achievements (Innovation & Capabilities) */}
-      <div className="bg-black pt-12">
+      <div className="bg-black pt-2 sm:pt-4">
         <Achievements />
       </div>
 

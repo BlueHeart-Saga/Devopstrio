@@ -147,7 +147,7 @@ const partnerCategories = [
       },
       {
         name: "AWS",
-        logo: "/assets/Tech-icons/amazon-aws-logo_svgstack_com_7491780931192.svg",
+        logo: "/assets/Devopstrio_Partners/aws.png",
         cap: "AWS Ecosystem Delivery",
         value: "Scalable cloud-native infrastructure, DevOps automation, data engineering, and modernization for growth-focused digital platforms."
       },

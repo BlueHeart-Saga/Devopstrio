@@ -50,6 +50,7 @@ import {
   Filter
 } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
+import { RepresentativeCTA } from "@/components/ui/RepresentativeCTA";
 
 // --- Types ---
 interface RepoItem {
@@ -1415,39 +1416,15 @@ Direct Contacts:
       </section>
 
       {/* 16. CTA SECTION */}
-      <section className="py-24 relative overflow-hidden bg-[#030303]">
-        <div className="absolute inset-0 bg-radial-glow pointer-events-none" />
-        <div className="max-w-5xl mx-auto px-6 text-center space-y-8 relative z-10">
-          <h2 className="text-4xl md:text-5xl font-bold text-white tracking-tight">
-            Build Your Enterprise Landing Zone
-          </h2>
-          <p className="text-base text-zinc-300 max-w-2xl mx-auto leading-relaxed font-semibold">
-            Partner with Devopstrio to spin up secure, compliant multi-cloud landing zones with Infrastructure as Code in days.
-          </p>
-          <div className="flex flex-wrap justify-center gap-4 pt-4">
-            <button
-              onClick={() => {
-                setModalMode("demo");
-                setDemoModalOpen(true);
-                setDemoSubmitted(false);
-              }}
-              className="inline-flex items-center justify-center px-8 py-4 rounded-lg text-xs font-bold tracking-wider uppercase bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white transition-all duration-300 hover:shadow-[0_0_25px_rgba(225,29,72,0.35)] hover:-translate-y-0.5 cursor-pointer"
-            >
-              <Sparkles className="w-4 h-4 mr-2" /> Request Demo
-            </button>
-            <button
-              onClick={() => {
-                setModalMode("pdf");
-                setDemoModalOpen(true);
-                setDemoSubmitted(false);
-              }}
-              className="inline-flex items-center justify-center px-8 py-4 rounded-lg text-xs font-bold tracking-wider uppercase border border-zinc-850 hover:border-zinc-750 bg-zinc-950/60 hover:bg-zinc-900 text-white transition-all duration-300 hover:-translate-y-0.5 cursor-pointer"
-            >
-              <Download className="w-4 h-4 text-rose-500 mr-2" /> Download Architecture PDF
-            </button>
-          </div>
-        </div>
-      </section>
+      <RepresentativeCTA
+        title="Ready To Build Your Enterprise"
+        highlightText="Cloud Landing Zone?"
+        description="Partner with Devopstrio to spin up secure, compliant multi-cloud landing zones with Infrastructure as Code, automated governance, and zero-trust policies."
+        primaryBtnText="REQUEST DEMO & BLUEPRINT"
+        primaryBtnHref="/contact#contact-form"
+        secondaryBtnText="EXPLORE ALL REPOSITORIES"
+        secondaryBtnHref="#git-showcase"
+      />
 
       {/* REPOSITORY DETAIL MODAL */}
       {selectedRepoModal && (

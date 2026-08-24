@@ -4,16 +4,10 @@ import { BreadcrumbSchema } from "@/components/seo/Schemas";
 
 // Life-at-Devopstrio sections
 import { LifeHero } from "@/sections/about/life/LifeHero";
-import { CultureManifesto } from "@/sections/about/life/CultureManifesto";
+import CultureAlbumsSection from "@/sections/about/life/CultureAlbumsSection";
 import { LifeMomentsGallery } from "@/sections/about/life/LifeMomentsGallery";
-import { EngineeringCulture } from "@/sections/about/life/EngineeringCulture";
-import { JourneyTimeline } from "@/sections/about/life/JourneyTimeline";
 import { EmployeeStoriesSection } from "@/sections/about/life/EmployeeStoriesSection";
-import { LearningGrowth } from "@/sections/about/life/LearningGrowth";
-import { BenefitsWellbeing } from "@/sections/about/life/BenefitsWellbeing";
 import { AwardsRecognition } from "@/sections/about/life/AwardsRecognition";
-import { CommunityImpact } from "@/sections/about/life/CommunityImpact";
-import { OpenPositionsPreview } from "@/sections/about/life/OpenPositionsPreview";
 import { LifeFinalCTA } from "@/sections/about/life/LifeFinalCTA";
 
 export const metadata: Metadata = {
@@ -45,42 +39,22 @@ export default function LifeAtDevopstrioPage() {
       {/* 1. Hero */}
       <LifeHero />
 
+     
 
-      
       {/* 3. Life Moments Gallery */}
       <LifeMomentsGallery />
 
 
-    
+       {/* 4. Culture Album PDF Banner & Flipbook Reader Section */}
+      <CultureAlbumsSection />
 
-      {/* 4. Engineering Culture */}
-      {/* <EngineeringCulture /> */}
-
-      {/* 5. Journey Timeline */}
-      {/* <JourneyTimeline /> */}
-
-        {/* 2. Culture Manifesto */}
-      {/* <CultureManifesto /> */}
-
-      {/* 6. Employee Stories */}
+      {/* 5. Employee Stories */}
       <EmployeeStoriesSection />
 
-      {/* 7. Learning & Growth */}
-      {/* <LearningGrowth /> */}
-
-      {/* 8. Benefits & Wellbeing */}
-      {/* <BenefitsWellbeing /> */}
-
-      {/* 9. Awards & Recognition */}
+      {/* 6. Awards & Recognition */}
       <AwardsRecognition />
 
-      {/* 10. Community Impact */}
-      {/* <CommunityImpact /> */}
-
-      {/* 11. Open Positions Preview */}
-      {/* <OpenPositionsPreview /> */}
-
-      {/* 12. Final CTA */}
+      {/* 6. Final CTA */}
       <LifeFinalCTA />
     </main>
   );

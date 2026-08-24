@@ -58,9 +58,9 @@ export const AwardsRecognitionLeadership = () => {
         {/* Row 1: Certifications Marquee */}
         <div>
           <div className="text-center mb-10">
-            <span className="text-xs sm:text-sm font-semibold tracking-[0.25em] uppercase text-rose-500 block mb-3">
+            {/* <span className="text-xs sm:text-sm font-semibold tracking-[0.25em] uppercase text-rose-500 block mb-3">
               Validation
-            </span>
+            </span> */}
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight leading-tight text-white mb-4">
               Our <span className="text-rose-500 font-semibold">Certifications</span>
             </h2>
@@ -99,9 +99,9 @@ export const AwardsRecognitionLeadership = () => {
         {/* Row 2: Compliance Frameworks Marquee */}
         <div>
           <div className="text-center mb-10">
-            <span className="text-xs sm:text-sm font-semibold tracking-[0.25em] uppercase text-rose-500 block mb-3">
+            {/* <span className="text-xs sm:text-sm font-semibold tracking-[0.25em] uppercase text-rose-500 block mb-3">
               Security &amp; Trust
-            </span>
+            </span> */}
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight leading-tight text-white mb-4">
               Compliance <span className="text-rose-500 font-semibold">Frameworks</span>
             </h2>
@@ -164,17 +164,17 @@ export const AwardsRecognitionLeadership = () => {
                 </div>
 
                 {/* Info Text */}
-                <div className="text-left">
+                {/* <div className="text-left">
                   <p className="text-rose-500 font-bold text-[9px] uppercase tracking-wider mb-1.5">
                     {award.tag}
                   </p>
                   <p className="text-white font-bold text-base mb-1">
                     {award.title}
                   </p>
-                  {/* <p className="text-zinc-400 text-xs leading-relaxed font-semibold">
+                  <p className="text-zinc-400 text-xs leading-relaxed font-semibold">
                     {award.desc}
-                  </p> */}
-                </div>
+                  </p>
+                </div> */}
               </div>
             ))}
           </div>

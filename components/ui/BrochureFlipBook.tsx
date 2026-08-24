@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState, useEffect, useRef, useCallback } from "react";
-import HTMLFlipBook from "react-pageflip";
 import { 
   ChevronLeft, 
   ChevronRight, 
@@ -91,11 +90,20 @@ function loadLocalPdfJsEngine(): Promise<any> {
   });
 }
 
-export default function BrochureFlipBook({
+export function BrochureFlipBook({
   pdfUrl,
   pdfTitle = "Document",
   onClose
 }: BrochureFlipBookProps) {
+  const [FlipComponent, setFlipComponent] = useState<any>(null);
+
+  useEffect(() => {
+    import("react-pageflip")
+      .then((mod) => {
+        setFlipComponent(() => mod.default || mod);
+      })
+      .catch((err) => console.error("Failed to load pageflip engine", err));
+  }, []);
   const [pages, setPages] = useState<string[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [loadProgress, setLoadProgress] = useState<string>("Initializing document engine...");
@@ -444,12 +452,12 @@ export default function BrochureFlipBook({
         )}
 
         {/* ── 3D REACT-PAGEFLIP SPREAD (Zero Mid Darkness, 75% Zoom Scale) ── */}
-        {pages.length > 0 && (
+        {pages.length > 0 && FlipComponent && (
           <div 
             className="relative z-10 [perspective:2000px] transition-transform duration-200 ease-out origin-center"
             style={{ transform: `scale(${zoomLevel})` }}
           >
-            <HTMLFlipBook
+            <FlipComponent
               width={bookDimensions.width}
               height={bookDimensions.height}
               size="fixed"
@@ -489,7 +497,7 @@ export default function BrochureFlipBook({
                   </div>
                 </FlipPage>
               ))}
-            </HTMLFlipBook>
+            </FlipComponent>
           </div>
         )}
       </div>
@@ -556,3 +564,5 @@ export default function BrochureFlipBook({
     </div>
   );
 }
+
+export default BrochureFlipBook;

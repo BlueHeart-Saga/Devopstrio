@@ -34,13 +34,36 @@ export const LearningJourney = () => {
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(225,29,72,0.02),transparent_70%)] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="text-center max-w-3xl mx-auto mb-20">
-          <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight text-white mb-4 font-sans">
-            Your Learning <span className="text-rose-500">Journey</span>
+        <div className="text-center max-w-4xl mx-auto mb-20 pt-16 sm:pt-24">
+          <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-[1.35] text-white mb-4 font-sans">
+            Your Roadmap To Learn, Build &{" "}
+            <span className="relative inline-block px-3.5 py-0.5 mx-1">
+              {/* Top-to-bottom straight arrow PNG pointing directly down to 'Grow' */}
+              <img
+                src="/assets/components/streight-toptobuttm.png"
+                alt="Top to bottom arrow"
+                className="absolute -top-20 sm:-top-28 md:-top-32 left-1/2 -translate-x-1/2 w-16 sm:w-24 md:w-28 h-auto object-contain filter drop-shadow-[0_0_20px_rgba(244,63,94,0.6)] pointer-events-none select-none z-20"
+              />
+
+              <span className="relative z-10 text-white font-bold">Grow</span>
+              {/* Brand Rose hand-drawn oval circle loop */}
+              <svg
+                className="absolute -inset-x-3.5 -inset-y-2 w-[calc(100%+28px)] h-[calc(100%+16px)] text-rose-500 pointer-events-none"
+                viewBox="0 0 220 60"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12 30 C30 8, 195 5, 208 28 C218 42, 160 54, 70 55 C18 56, 5 45, 18 26"
+                  stroke="currentColor"
+                  strokeWidth="3.2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="opacity-95 filter drop-shadow-[0_0_10px_rgba(244,63,94,0.7)]"
+                />
+              </svg>
+            </span>
           </h2>
-          {/* <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-bold max-w-2xl mx-auto">
-            From your initial application to graduating with certified skills, here is what your engineering experience will look like. Explore our general <Link href="/careers" className="text-rose-500 hover:underline">careers framework</Link> for additional paths.
-          </p> */}
         </div>
 
         {/* Grid-based Roadmap Cards */}

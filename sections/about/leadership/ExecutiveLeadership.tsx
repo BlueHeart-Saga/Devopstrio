@@ -345,7 +345,7 @@ export const ExecutiveLeadership = () => {
                           <img
                             src={member.image}
                             alt={member.name}
-                            className="w-full max-w-[135px] sm:max-w-[150px] md:max-w-[165px] lg:max-w-[175px] h-auto object-contain transition-transform duration-500 group-hover:scale-105 block filter drop-shadow-[0_8px_20px_rgba(0,0,0,0.7)]"
+                            className="w-full max-w-[135px] sm:max-w-[150px] md:max-w-[165px] lg:max-w-[175px] h-auto object-contain transition-transform duration-500 group-hover:scale-105 block"
                           />
 
                           {/* Dynamic Signature drawing across the front from bottom-right on hover (moved down) */}
@@ -355,7 +355,7 @@ export const ExecutiveLeadership = () => {
                               <div className="[clip-path:inset(0_100%_0_0)] group-hover:[clip-path:inset(0_0%_0_0)] transition-[clip-path] duration-700 ease-out">
                                 <span
                                   style={{ fontFamily: "'Alex Brush', 'Caveat', 'Great Vibes', cursive" }}
-                                  className="text-white text-2xl sm:text-3xl md:text-[34px] font-bold tracking-wider select-none drop-shadow-[0_4px_14px_rgba(0,0,0,1)] whitespace-nowrap block leading-none pr-1"
+                                  className="text-white text-2xl sm:text-3xl md:text-[34px] font-bold tracking-wider select-none whitespace-nowrap block leading-none pr-1"
                                 >
                                   {member.name}
                                 </span>
@@ -363,7 +363,7 @@ export const ExecutiveLeadership = () => {
 
                               {/* Signature draw pen stroke underline */}
                               <svg
-                                className="w-28 sm:w-32 md:w-36 h-4 text-rose-500 filter drop-shadow-[0_0_8px_rgba(244,63,94,1)] -mt-1 overflow-visible"
+                                className="w-28 sm:w-32 md:w-36 h-4 text-rose-500 -mt-1 overflow-visible"
                                 viewBox="0 0 100 15"
                                 fill="none"
                               >

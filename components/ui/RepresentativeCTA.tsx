@@ -40,28 +40,25 @@ export function RepresentativeCTA({
     : "text-rose-500 font-bold";
 
   return (
-    <section className="w-full pt-28 sm:pt-36 lg:pt-44 pb-4 sm:pb-8 bg-black border-t border-zinc-900 relative font-sans overflow-visible">
-      <div className="max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12 relative z-10 overflow-visible">
-        <Reveal className="overflow-visible">
-          <div className="bg-[#080808] border border-zinc-800/80 rounded-3xl p-6 sm:p-8 lg:p-10 lg:pl-12 lg:pr-6 relative shadow-2xl flex flex-col lg:flex-row items-center justify-between gap-6 min-h-[280px] sm:min-h-[320px] overflow-visible">
+    <section className="w-full pt-32 sm:pt-40 lg:pt-48 pb-8 sm:pb-12 bg-black border-t border-zinc-900 relative font-sans overflow-x-clip">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
+        <Reveal>
+          <div className="bg-[#080808] border border-zinc-800/80 rounded-3xl p-6 sm:p-10 lg:p-12 lg:pl-14 lg:pr-8 relative shadow-2xl flex flex-col lg:flex-row items-stretch justify-between gap-8 min-h-[320px] sm:min-h-[360px] lg:min-h-[380px]">
             
-            {/* Left Content Column */}
-            <div className="lg:w-[58%] xl:w-[60%] z-20 flex flex-col justify-center my-auto relative">
-              <h2 className="text-3xl sm:text-4xl lg:text-[2.65rem] font-semibold tracking-tight text-white leading-[1.22] font-sans mb-4">
+            {/* Left Content Column: Title at Top, CTA Buttons at Bottom */}
+            <div className="w-full lg:w-[58%] xl:w-[60%] z-20 flex flex-col justify-between items-start text-left relative py-2">
+              {/* Title at Top */}
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-white leading-[1.18] font-sans mb-6 sm:mb-8 max-w-3xl drop-shadow-[0_4px_16px_rgba(0,0,0,0.9)]">
                 {title}{" "}
                 {highlightText && (
-                  <span className={`${highlightColor} block sm:inline mt-1 sm:mt-0 font-bold`}>
+                  <span className={`${highlightColor} block sm:inline mt-1 sm:mt-0 font-semibold`}>
                     {highlightText}
                   </span>
                 )}
               </h2>
 
-              <div className="text-zinc-300 text-base sm:text-lg leading-relaxed font-normal font-sans mb-9 sm:mb-10 max-w-2xl">
-                {description}
-              </div>
-
-              {/* Tactile Dot-Matrix Style CTA Buttons with increased top gap */}
-              <div className="flex flex-wrap items-center gap-5 sm:gap-7 pt-5 sm:pt-6">
+              {/* Tactile CTA Buttons at Bottom with Gap */}
+              <div className="mt-auto pt-6 sm:pt-8 flex flex-wrap items-center gap-5 sm:gap-7">
                 {primaryBtnText && (
                   <Link
                     href={primaryBtnHref}
@@ -92,12 +89,13 @@ export function RepresentativeCTA({
               </div>
             </div>
 
-            {/* Right Representative Image: Bottom flush with card baseline, top head extending outside */}
-            <div className="lg:absolute lg:bottom-0 lg:right-2 xl:right-6 w-full sm:w-[520px] lg:w-[620px] xl:w-[680px] flex justify-center lg:justify-end items-end pointer-events-none z-10 overflow-visible">
+            {/* Right Representative Image: Bottom touches card bottom border line exactly, top extends further outside top border */}
+            <div className="lg:absolute lg:bottom-0 lg:right-2 xl:right-6 w-full sm:w-[520px] lg:w-[640px] xl:w-[700px] flex justify-center lg:justify-end items-end pointer-events-none z-10">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={imageSrc}
                 alt={imageAlt}
-                className="w-full h-auto object-contain pointer-events-none drop-shadow-[0_25px_50px_rgba(0,0,0,0.95)] -mt-16 sm:-mt-24 lg:mt-0"
+                className="w-full h-auto object-contain pointer-events-none drop-shadow-[0_25px_50px_rgba(0,0,0,0.95)] lg:max-h-[calc(100%+160px)] xl:max-h-[calc(100%+180px)] -mt-24 sm:-mt-32 lg:mt-0"
               />
             </div>
 
@@ -107,3 +105,5 @@ export function RepresentativeCTA({
     </section>
   );
 }
+
+export default RepresentativeCTA;

@@ -7,7 +7,7 @@ import Link from "next/link";
 
 export function TechHero() {
   const innerIcons = [
-    { name: "AWS", src: "/assets/Tech-icons/amazon-aws-logo_svgstack_com_7491780931192.svg" },
+    { name: "AWS", src: "/assets/Devopstrio_Partners/aws.png" },
     { name: "Docker", src: "/assets/Tech-icons/docker-logo_svgstack_com_28191780931128.svg" },
     { name: "NextJS", src: "/assets/Tech-icons/nextjs-logo-icon_svgstack_com_28901780931105.svg" },
     { name: "NodeJS", src: "/assets/Tech-icons/nodejs-logo_svgstack_com_28911780931118.svg" },

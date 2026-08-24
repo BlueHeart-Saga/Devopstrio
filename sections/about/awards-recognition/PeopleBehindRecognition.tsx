@@ -4,19 +4,19 @@ import { Reveal } from "@/components/ui/Reveal";
 
 export function PeopleBehindRecognition() {
   return (
-    <section className="py-10 sm:py-14 bg-black relative border-t border-zinc-900 font-sans">
+    <section className="py-12 sm:py-16 bg-black relative border-t border-zinc-900 font-sans">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           
-          {/* Left Side: Full Image without Borderlines */}
+          {/* Left Side: Single Leader Image */}
           <div className="order-2 lg:order-1">
             <Reveal>
-              <div className="relative w-full flex items-center justify-center overflow-hidden">
+              <div className="relative w-full flex items-center justify-center">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img 
-                  src="/assets/About-page/leader/Mani sir sketch_3.png" 
+                  src="/assets/About-page/leader/Mani PS 002-Photoroom.png" 
                   alt="Leadership & People Behind Recognition" 
-                  className="w-full h-auto max-h-[500px] object-contain"
+                  className="w-full h-auto max-h-[500px] object-contain drop-shadow-[0_20px_40px_rgba(0,0,0,0.9)]"
                 />
               </div>
             </Reveal>
@@ -44,3 +44,5 @@ export function PeopleBehindRecognition() {
     </section>
   );
 }
+
+export default PeopleBehindRecognition;

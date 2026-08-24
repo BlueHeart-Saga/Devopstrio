@@ -10,23 +10,23 @@ const techStack = [
     category: "Front-end",
     desc: "We build ultra-fast, responsive web interfaces designed for seamless user experiences.",
     techs: [
-      { 
-        name: "React / Next.js", 
+      {
+        name: "React / Next.js",
         desc: "Dynamic, ultra-fast web applications.",
         icon: "/assets/Tech-icons/react-icon_svgstack_com_29171780931136.svg"
       },
-      { 
-        name: "Angular", 
+      {
+        name: "Angular",
         desc: "Structured enterprise web platforms.",
         icon: "/assets/Tech-icons/free-angular-js-logo_svgstack_com_7451780931851.svg"
       },
-      { 
-        name: "Vue.js", 
+      {
+        name: "Vue.js",
         desc: "Lightweight, reactive interfaces.",
         icon: "/assets/Tech-icons/vue-js-logo_svgstack_com_31551780931568.svg"
       },
-      { 
-        name: "Tailwind CSS", 
+      {
+        name: "Tailwind CSS",
         desc: "Clean, responsive utility-first styles.",
         icon: "/assets/Tech-icons/tailwindcss-logo_svgstack_com_31451780931467.svg"
       },
@@ -56,23 +56,23 @@ const techStack = [
     category: "Back-end",
     desc: "High-performance microservices and secure APIs engineered for speed and reliability.",
     techs: [
-      { 
-        name: "Node.js / TypeScript", 
+      {
+        name: "Node.js / TypeScript",
         desc: "Custom APIs and microservice hooks.",
         icon: "/assets/Tech-icons/nodejs-logo_svgstack_com_28911780931118.svg"
       },
-      { 
-        name: "Go (Golang)", 
+      {
+        name: "Go (Golang)",
         desc: "Highly concurrent backend systems.",
         icon: "/assets/Tech-icons/go-lang-logo_svgstack_com_28411780931472.svg"
       },
-      { 
-        name: "Rust", 
+      {
+        name: "Rust",
         desc: "Memory-safe, lightning-fast execution.",
         icon: "/assets/Tech-icons/rust-logo_svgstack_com_31291780931285.svg"
       },
-      { 
-        name: "Python", 
+      {
+        name: "Python",
         desc: "Powerful data and machine learning runtimes.",
         icon: "/assets/Tech-icons/python-logo_svgstack_com_29121780931061.svg"
       },
@@ -102,23 +102,23 @@ const techStack = [
     category: "Mobile",
     desc: "Stunning iOS and Android applications engineered for fluid motion and native speed.",
     techs: [
-      { 
-        name: "Swift / iOS", 
+      {
+        name: "Swift / iOS",
         desc: "Premium, optimized native iOS apps.",
         icon: "/assets/Tech-icons/swift-logo_svgstack_com_31441780931792.svg"
       },
-      { 
-        name: "Kotlin / Android", 
+      {
+        name: "Kotlin / Android",
         desc: "Modern, high-performance Android apps.",
         icon: "/assets/Tech-icons/green-android-logo_svgstack_com_7441780931950.svg"
       },
-      { 
-        name: "React Native", 
+      {
+        name: "React Native",
         desc: "Cross-platform shared Javascript apps.",
         icon: "/assets/Tech-icons/react-icon_svgstack_com_29171780931136.svg"
       },
-      { 
-        name: "Flutter", 
+      {
+        name: "Flutter",
         desc: "Beautiful, fluid cross-platform screens.",
         icon: "/assets/Tech-icons/flutter-logo_svgstack_com_28331780931244.svg"
       },
@@ -138,23 +138,23 @@ const techStack = [
     category: "Database & Cloud",
     desc: "Secure cloud architectures and resilient database systems scaling automatically.",
     techs: [
-      { 
-        name: "PostgreSQL", 
+      {
+        name: "PostgreSQL",
         desc: "Secure, relational enterprise databases.",
         icon: "/assets/Tech-icons/postgre-sql-logo_svgstack_com_29021780931526.svg"
       },
-      { 
-        name: "Redis", 
+      {
+        name: "Redis",
         desc: "Lightning-fast in-memory cache.",
         icon: "/assets/Tech-icons/redis-logo_svgstack_com_29201780931292.svg"
       },
-      { 
-        name: "AWS", 
+      {
+        name: "AWS",
         desc: "Scalable, high-availability cloud setups.",
-        icon: "/assets/Tech-icons/amazon-aws-logo_svgstack_com_7491780931192.svg"
+        icon: "/assets/Devopstrio_Partners/aws.png"
       },
-      { 
-        name: "Docker & K8s", 
+      {
+        name: "Docker & K8s",
         desc: "Reliable container orchestration.",
         icon: "/assets/Tech-icons/docker-logo_svgstack_com_28191780931128.svg"
       },
@@ -236,9 +236,10 @@ export function TechStackSection() {
 
   return (
     <section className="w-full py-10 bg-[#030303] text-white border-b border-zinc-900">
-      
+
       {/* Inject custom CSS for marquee animations */}
-      <style dangerouslySetInnerHTML={{ __html: `
+      <style dangerouslySetInnerHTML={{
+        __html: `
         @keyframes marquee {
           0% { transform: translateX(0); }
           100% { transform: translateX(-50%); }
@@ -291,7 +292,7 @@ export function TechStackSection() {
         {/* Bottom Full-Width Content and Marquees */}
         <div className="bg-[#030303] border border-zinc-900 rounded-3xl p-6 md:p-8 min-h-[260px] flex flex-col justify-between overflow-hidden relative">
           <div className="absolute top-0 right-1/4 w-[300px] h-[300px] bg-rose-600/5 rounded-full blur-3xl pointer-events-none" />
-          
+
           <Reveal key={activeTab}>
             <div className="mb-6 text-center max-w-3xl mx-auto">
               <span className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest block mb-1 font-semibold">Practice Overview</span>

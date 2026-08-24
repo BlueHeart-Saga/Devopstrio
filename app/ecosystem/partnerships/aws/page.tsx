@@ -403,7 +403,7 @@ export default function AWSSteategicAllianceHub() {
                     <div className="absolute inset-0 bg-gradient-to-br from-orange-500/[0.03] to-transparent rounded-3xl opacity-0 group-hover/logo:opacity-100 transition-opacity" />
                     <div className="absolute -inset-1 rounded-3xl bg-gradient-to-r from-orange-500 to-amber-500 opacity-0 group-hover/logo:opacity-20 blur-md transition-opacity" />
                     <img
-                      src="/assets/Tech-icons/amazon-aws-logo_svgstack_com_7491780931192.svg"
+                      src="/assets/Devopstrio_Partners/aws.png"
                       alt="Amazon AWS Logo"
                       className="w-full h-auto max-h-[85%] object-contain select-none"
                     />
@@ -519,8 +519,8 @@ export default function AWSSteategicAllianceHub() {
                     key={cap.id}
                     onClick={() => setActiveCapability(cap.id)}
                     className={`w-full p-5 rounded-xl border text-left transition-all duration-300 flex items-center justify-between gap-4 ${activeCapability === cap.id
-                        ? "bg-rose-500/10 border-rose-500 text-white shadow-md"
-                        : "bg-zinc-950/40 border-zinc-900 text-zinc-400 hover:text-white hover:border-zinc-800"
+                      ? "bg-rose-500/10 border-rose-500 text-white shadow-md"
+                      : "bg-zinc-950/40 border-zinc-900 text-zinc-400 hover:text-white hover:border-zinc-800"
                       }`}
                   >
                     <div className="flex items-center gap-3">
@@ -630,8 +630,8 @@ export default function AWSSteategicAllianceHub() {
                   key={ind.name}
                   onClick={() => setActiveIndustry(ind.name)}
                   className={`px-4 py-2 rounded-full text-xs font-bold tracking-wider uppercase transition-all duration-300 border ${activeIndustry === ind.name
-                      ? "bg-rose-500 text-white border-rose-500 shadow-md shadow-rose-500/10"
-                      : "bg-zinc-950 text-zinc-400 border-zinc-900 hover:text-white"
+                    ? "bg-rose-500 text-white border-rose-500 shadow-md shadow-rose-500/10"
+                    : "bg-zinc-950 text-zinc-400 border-zinc-900 hover:text-white"
                     }`}
                 >
                   {ind.name}

@@ -32,17 +32,14 @@ export function DeliveryModel() {
       <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
         
         {/* Header Block */}
-        <div className="max-w-4xl mb-20 text-left">
+        <div className="max-w-4xl mb-12 text-left">
           <Reveal>
             <span className="inline-flex items-center px-4 py-1.5 rounded-full bg-rose-500/10 border border-rose-500/20 text-rose-400 text-xs sm:text-sm font-semibold tracking-widest uppercase mb-4">
               Global Operations Engine
             </span>
-            <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight text-white mb-6 font-sans">
+            <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight text-white mb-2 font-sans">
               Engineered Locally. Delivered Globally.
             </h2>
-            <p className="text-zinc-300 text-base md:text-lg leading-relaxed max-w-3xl font-medium">
-              We combine London-led strategic consulting and architect-level advisory with high-performing global <Link href="/services" className="text-[#E11D48] hover:underline font-semibold">engineering centers</Link>. This hybrid model ensures absolute project accountability and direct face-to-face communication, backed by the cost-efficiency, technical depth, and scalability of our distributed <Link href="/ecosystem/engineering-excellence" className="text-[#E11D48] hover:underline font-semibold">delivery network</Link>.
-            </p>
           </Reveal>
         </div>
 
@@ -64,6 +61,15 @@ export function DeliveryModel() {
             </div>
           </Reveal>
         </div>
+
+        {/* Paragraph Description below video banner */}
+        <Reveal delay={0.1}>
+          <div className="mt-10 md:mt-14 w-full text-left">
+            <p className="text-zinc-300 text-base md:text-lg lg:text-xl leading-relaxed font-medium w-full">
+              We combine London-led strategic consulting and architect-level advisory with high-performing global <Link href="/services" className="text-[#E11D48] hover:underline font-semibold">engineering centers</Link>. This hybrid model ensures absolute project accountability and direct face-to-face communication, backed by the cost-efficiency, technical depth, and scalability of our distributed <Link href="/ecosystem/engineering-excellence" className="text-[#E11D48] hover:underline font-semibold">delivery network</Link>.
+            </p>
+          </div>
+        </Reveal>
 
         {/* Right Column: Three Pillars List (Commented out) */}
         {/* <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12 text-left">

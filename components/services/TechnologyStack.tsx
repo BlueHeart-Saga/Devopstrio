@@ -16,7 +16,7 @@ export interface TechnologyStackProps {
 
 function getTechIcon(name: string): string {
   const n = name.toLowerCase();
-  if (n.includes("aws") || n.includes("amazon")) return "/assets/Tech-icons/amazon-aws-logo_svgstack_com_7491780931192.svg";
+  if (n.includes("aws") || n.includes("amazon")) return "/assets/Devopstrio_Partners/aws.png";
   if (n.includes("azure")) return "/assets/Tech-icons/microsoft-azure-logo_svgstack_com_7501780931055.svg";
   if (n.includes("google cloud") || n.includes("gcp")) return "/assets/Tech-icons/google-cloud-logo_svgstack_com_28371780931185.svg";
   if (n.includes("react native")) return "/assets/Tech-icons/react-icon_svgstack_com_29171780931136.svg";
@@ -60,9 +60,9 @@ function getTechIcon(name: string): string {
 }
 
 const standardEcosystem = [
-  { name: "AWS", path: "/assets/Tech-icons/amazon-aws-logo_svgstack_com_7491780931192.svg", backName: "Azure", backPath: "/assets/Tech-icons/microsoft-azure-logo_svgstack_com_7501780931055.svg" },
+  { name: "AWS", path: "/assets/Devopstrio_Partners/aws.png", backName: "Azure", backPath: "/assets/Tech-icons/microsoft-azure-logo_svgstack_com_7501780931055.svg" },
   { name: "Azure", path: "/assets/Tech-icons/microsoft-azure-logo_svgstack_com_7501780931055.svg", backName: "Google Cloud", backPath: "/assets/Tech-icons/google-cloud-logo_svgstack_com_28371780931185.svg" },
-  { name: "Google Cloud", path: "/assets/Tech-icons/google-cloud-logo_svgstack_com_28371780931185.svg", backName: "AWS", backPath: "/assets/Tech-icons/amazon-aws-logo_svgstack_com_7491780931192.svg" },
+  { name: "Google Cloud", path: "/assets/Tech-icons/google-cloud-logo_svgstack_com_28371780931185.svg", backName: "AWS", backPath: "/assets/Devopstrio_Partners/aws.png" },
   { name: "Cloudflare", path: "/assets/Tech-icons/cloudflare-logo-icon_svgstack_com_28071780931769.svg", backName: "Netlify", backPath: "/assets/Tech-icons/netlify-logo-icon_svgstack_com_28881780931932.svg" },
   { name: "Docker", path: "/assets/Tech-icons/docker-logo_svgstack_com_28191780931128.svg", backName: "Git", backPath: "/assets/Tech-icons/git-logo-svg_svgstack_com_28381780931315.svg" },
   { name: "GitLab", path: "/assets/Tech-icons/gitlab-logo_svgstack_com_28401780931548.svg", backName: "GitHub", backPath: "/assets/Tech-icons/github-logo-svg_svgstack_com_28391780931442.svg" },
@@ -86,7 +86,7 @@ const standardEcosystem = [
   { name: "Java", path: "/assets/Tech-icons/java-logo_svgstack_com_28601780931218.svg", backName: "Android", backPath: "/assets/Tech-icons/green-android-logo_svgstack_com_7441780931950.svg" }
 ];
 
-export function TechnologyStack({ 
+export function TechnologyStack({
   techs,
   overrideTitle,
   overrideSubtitle
@@ -137,7 +137,7 @@ export function TechnologyStack({
       <div className="absolute top-[30%] right-[-10%] w-[35%] aspect-square bg-[radial-gradient(circle_at_center,rgba(225,29,72,0.015),transparent_70%)] pointer-events-none z-0" />
 
       <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
-        
+
         {/* Main Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start mb-20">
 
@@ -165,19 +165,19 @@ export function TechnologyStack({
                   <div className="group flex flex-col items-center justify-center bg-white border border-white/20 rounded-2xl p-5 hover:shadow-[0_8px_32px_rgba(255,255,255,0.12)] hover:scale-[1.03] transition-all duration-350 relative overflow-hidden text-center min-h-[140px] cursor-pointer">
                     {/* Hover ambient mesh glow */}
                     <div className="absolute inset-0 bg-gradient-to-br from-zinc-100 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-0" />
-                    
+
                     {/* Icon */}
                     <img
                       src={iconPath}
                       alt={tech.name}
                       className="w-8 h-8 object-contain group-hover:scale-105 transition-all duration-300 mb-3 relative z-10"
                     />
-                    
+
                     {/* Title */}
                     <strong className="text-xs font-bold text-zinc-900 group-hover:text-rose-600 transition-colors mb-1 relative z-10">
                       {tech.name}
                     </strong>
-                    
+
                     {/* Description */}
                     <span className="text-[10px] text-zinc-600 group-hover:text-zinc-800 leading-normal font-semibold max-w-[150px] transition-colors relative z-10">
                       {tech.desc}
@@ -202,7 +202,8 @@ export function TechnologyStack({
           </Reveal>
 
           {/* CSS flip card helper rules */}
-          <style dangerouslySetInnerHTML={{__html: `
+          <style dangerouslySetInnerHTML={{
+            __html: `
             .flip-card {
               perspective: 1000px;
             }
@@ -244,9 +245,9 @@ export function TechnologyStack({
                   <div className="flip-card-inner">
                     {/* Front Face */}
                     <div className="flip-card-front bg-white border border-white/20 p-4 transition-all duration-300 group-hover:border-rose-500/50 shadow-[0_4px_12px_rgba(255,255,255,0.05)]">
-                      <img 
-                        src={partner.path} 
-                        alt={partner.name} 
+                      <img
+                        src={partner.path}
+                        alt={partner.name}
                         className="max-h-7 max-w-[85px] object-contain group-hover:scale-[1.03] transition-all duration-300 filter brightness-105"
                       />
                       {/* Tooltip Front */}
@@ -256,9 +257,9 @@ export function TechnologyStack({
                     </div>
                     {/* Back Face */}
                     <div className="flip-card-back bg-rose-950/[0.12] border border-rose-500/30 p-4 shadow-[inset_0_1px_1px_rgba(255,255,255,0.03),0_0_20px_rgba(244,63,94,0.12)] backdrop-blur-md">
-                      <img 
-                        src={partner.backPath} 
-                        alt={partner.backName} 
+                      <img
+                        src={partner.backPath}
+                        alt={partner.backName}
                         className="max-h-7 max-w-[85px] object-contain opacity-100 filter brightness-105"
                       />
                       {/* Tooltip Back */}

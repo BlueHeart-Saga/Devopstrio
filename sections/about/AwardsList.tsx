@@ -444,7 +444,7 @@ export const AwardsList = () => {
   };
 
   return (
-    <section className="w-full py-10 sm:py-14 bg-[#030303] text-white relative font-sans">
+    <section className="w-full pt-8 sm:pt-12 pb-2 sm:pb-4 bg-[#030303] text-white relative font-sans">
       <div className="max-w-7xl mx-auto w-full px-6 lg:px-12">
         
         {/* Section Intro: Semibold Header Only */}
@@ -517,34 +517,30 @@ export const AwardsList = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
               {filteredAwards.slice(0, visibleCount).map((item, idx) => (
                 <Reveal key={`${item.title}-${idx}`} delay={idx * 0.05}>
-                  <div className="group relative bg-zinc-950/80 border border-zinc-800/80 rounded-2xl p-5 hover:border-rose-500/50 transition-all duration-300 flex flex-col justify-between h-full hover:-translate-y-1">
-                    
-                    <div>
-                      {/* Image Logo Box */}
-                      <div className="w-full h-36 bg-zinc-900/40 border border-zinc-800/60 rounded-xl p-4 flex items-center justify-center mb-4 group-hover:border-zinc-700 transition-colors">
-                        {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img
-                          src={item.src}
-                          alt={item.title}
-                          className="max-w-[85%] max-h-[85%] object-contain transition-transform duration-300 group-hover:scale-105"
-                          onError={(e) => {
-                            e.currentTarget.style.display = "none";
-                          }}
-                        />
-                      </div>
+                  <div className="group relative overflow-hidden rounded-2xl border border-zinc-800/80 bg-zinc-950/70 backdrop-blur-xl p-6 hover:border-rose-500/50 hover:bg-zinc-900/70 transition-all duration-300 h-36 sm:h-44 flex items-center justify-center cursor-pointer shadow-xl">
+                    {/* Logo Image Only */}
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={item.src}
+                      alt={item.title}
+                      className="max-w-[80%] max-h-[75%] object-contain select-none transition-all duration-300 group-hover:scale-105 filter contrast-105"
+                      onError={(e) => {
+                        e.currentTarget.style.display = "none";
+                      }}
+                    />
 
-                      {/* Year Badge & Title */}
-                      <div className="flex items-center justify-end mb-3">
-                        <span className="text-xs font-bold px-2.5 py-1 rounded-md bg-zinc-900 border border-zinc-800 text-rose-500 font-mono">
-                          {item.year}
-                        </span>
-                      </div>
-
-                      <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight leading-snug group-hover:text-rose-400 transition-colors font-sans text-center">
-                        {item.title}
-                      </h3>
+                    {/* Card Text Content (Commented Out as Requested) */}
+                    {/* 
+                    <div className="flex items-center justify-end mb-3">
+                      <span className="text-xs font-bold px-2.5 py-1 rounded-md bg-zinc-900 border border-zinc-800 text-rose-500 font-mono">
+                        {item.year}
+                      </span>
                     </div>
 
+                    <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight leading-snug group-hover:text-rose-400 transition-colors font-sans text-center">
+                      {item.title}
+                    </h3>
+                    */}
                   </div>
                 </Reveal>
               ))}

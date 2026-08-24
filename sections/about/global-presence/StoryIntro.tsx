@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Reveal } from "@/components/ui/Reveal";
-import Link from "next/link";
+import { ScrollWordReveal } from "@/components/ui/ScrollWordReveal";
 
 export function StoryIntro() {
   const storyItems = [
@@ -14,13 +14,13 @@ export function StoryIntro() {
   ];
 
   return (
-    <section className="py-24 md:py-32 relative max-w-7xl mx-auto px-6 lg:px-12">
+    <section className="py-24 md:py-32 relative max-w-7xl mx-auto px-6 lg:px-12 font-sans">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
-        {/* Left: Content */}
-        <div className="lg:col-span-6 space-y-6">
+        {/* Left: Content with Sequential Word-by-Word Scroll Reveal */}
+        <div className="lg:col-span-6 space-y-8">
           <Reveal>
             <span className="text-xs sm:text-sm font-semibold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
-              Intro Story
+              Story
             </span>
             <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight text-white mb-6 font-sans">
               A Global Delivery Model<br />
@@ -28,23 +28,13 @@ export function StoryIntro() {
             </h2>
           </Reveal>
 
-          <Reveal delay={0.1}>
-            <p className="text-zinc-300 text-base md:text-lg leading-relaxed font-medium">
-              Devopstrio was built on a simple belief: world-class technology services do not need to come from one place to create global impact. By combining strong local engineering capabilities with a globally aligned delivery model, we help businesses across regions access the expertise, agility, and support they need to move faster.
-            </p>
-          </Reveal>
-
-          {/* <Reveal delay={0.15}>
-            <p className="text-zinc-300 text-base md:text-lg leading-relaxed font-medium">
-              From <Link href="/services/cloud-services" className="text-[#E11D48] hover:underline">cloud transformation</Link> and <Link href="/services/ai-data-innovation" className="text-[#E11D48] hover:underline">AI engineering</Link> to <Link href="/services/devops-automation" className="text-[#E11D48] hover:underline">DevOps automation</Link>, <Link href="/services/cybersecurity" className="text-[#E11D48] hover:underline">cybersecurity</Link>, and <Link href="/services/software-development" className="text-[#E11D48] hover:underline">software development</Link>, our teams work across time zones and functions to deliver consistent outcomes for clients in the United Kingdom, North America, India, and beyond.
-            </p>
-          </Reveal> */}
-
-          <Reveal delay={0.2}>
-            <p className="text-zinc-300 text-base md:text-lg leading-relaxed font-medium">
-              We may operate from focused delivery hubs, but the solutions we build, the standards we follow, and the businesses we support are global in ambition.
-            </p>
-          </Reveal>
+          {/* Sequential Paragraph Word-by-Word Scroll Text Reveal */}
+          <ScrollWordReveal 
+            paragraphs={[
+              "Devopstrio was founded on a simple belief: world-class technology services know no boundaries. We unite local engineering excellence with a globally aligned delivery model to help ambition move faster.",
+              "Operating across strategic delivery hubs, our solutions, standards, and impact remain truly global."
+            ]}
+          />
         </div>
 
         {/* Right: Premium Typography List Design */}
@@ -63,22 +53,10 @@ export function StoryIntro() {
               {/* Content Area */}
               <div className="relative z-10 flex items-center justify-between gap-4 pointer-events-none">
                 <div className="flex items-baseline gap-3">
-                  {/* <span className="text-[11px] font-mono tracking-widest text-rose-500 group-hover:text-rose-600 transition-colors duration-300 font-bold">
-                    0{idx + 1}
-                  </span> */}
-                  <h4 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tighter text-white group-hover:text-black transition-colors duration-300 uppercase">
+                  <h4 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tighter text-white group-hover:text-black transition-colors duration-300 uppercase font-sans">
                     {item.city}
                   </h4>
                 </div>
-
-                {/* <div className="flex flex-col items-end text-right">
-                  <span className="text-[9px] uppercase font-mono tracking-widest bg-zinc-900 border border-zinc-800 text-zinc-400 px-2 py-0.5 rounded group-hover:bg-zinc-200 group-hover:border-zinc-300 group-hover:text-zinc-900 transition-colors duration-300 mb-1 font-bold">
-                    {item.badge}
-                  </span>
-                  <p className="text-xs text-zinc-500 group-hover:text-zinc-800 font-medium transition-colors duration-300 leading-tight">
-                    {item.desc}
-                  </p>
-                </div> */}
               </div>
             </div>
           ))}

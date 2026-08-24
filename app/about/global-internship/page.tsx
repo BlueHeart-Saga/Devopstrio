@@ -4,6 +4,7 @@ import { BreadcrumbSchema } from "@/components/seo/Schemas";
 
 // Section Components
 import { InternshipHero } from "@/sections/about/internship/InternshipHero";
+import { InternshipPillars } from "@/sections/about/internship/InternshipPillars";
 import { WhyInternship } from "@/sections/about/internship/WhyInternship";
 import { InternshipTracks } from "@/sections/about/internship/InternshipTracks";
 import { LearningJourney } from "@/sections/about/internship/LearningJourney";
@@ -11,6 +12,7 @@ import { WhatInternsWorkOn } from "@/sections/about/internship/WhatInternsWorkOn
 import { MentorshipBenefits } from "@/sections/about/internship/MentorshipBenefits";
 import { SuccessStories } from "@/sections/about/internship/SuccessStories";
 import { ApplicationForm } from "@/sections/about/internship/ApplicationForm";
+import { RepresentativeCTA } from "@/components/ui/RepresentativeCTA";
 
 export const metadata: Metadata = {
   title: "Global Engineering Internship Program | Careers & Mentorship",
@@ -41,26 +43,40 @@ export default function GlobalInternshipPage() {
       {/* 1. Hero & Stats Overview */}
       <InternshipHero />
 
-      {/* 2. Why Our Global Internship & What You'll Experience */}
+      {/* 2. 3 Pillars Section: LEARN, BUILD, GROW */}
+      <InternshipPillars />
+
+      {/* 3. Why Our Global Internship & What You'll Experience */}
       <WhyInternship />
 
-      {/* 3. Internship Tracks & Tech Stack */}
+      {/* 4. Internship Tracks & Tech Stack */}
       <InternshipTracks />
 
-      {/* 4. Learning Journey (Roadmap) */}
+      {/* 5. Learning Journey (Roadmap) */}
       <LearningJourney />
 
-      {/* 5. What Interns Will Work On (3D CardSwap SaaS Platforms Showcase) */}
+      {/* 6. What Interns Will Work On (3D CardSwap SaaS Platforms Showcase) */}
       <WhatInternsWorkOn />
 
-      {/* 6. Mentorship & Benefits (Clean 60/40 Split List View) */}
+      {/* 7. Mentorship & Benefits (Clean 60/40 Split List View) */}
       <MentorshipBenefits />
 
-      {/* 7. Success Stories & Testimonials */}
+      {/* 8. Success Stories & Testimonials */}
       <SuccessStories />
 
-      {/* 8. Application Form & Bottom Submission */}
+      {/* 9. Application Form & Bottom Submission */}
       <ApplicationForm />
+
+      {/* 10. Representative CTA */}
+      <RepresentativeCTA
+        title="Ready To Launch Your Career In"
+        highlightText="Cloud & AI Engineering?"
+        description="Join Devopstrio's Global Internship Program. Work alongside principal architects, co-develop production systems, and accelerate your engineering journey."
+        primaryBtnText="EXPLORE OPEN ROLES"
+        primaryBtnHref="/careers"
+        secondaryBtnText="EXPLORE OUR CULTURE"
+        secondaryBtnHref="/about/our-culture-people"
+      />
     </main>
   );
 }

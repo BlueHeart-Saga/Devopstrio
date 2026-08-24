@@ -17,7 +17,7 @@ const industries = [
 
 const techPartners = [
   { name: "Microsoft Azure", logo: "/assets/Tech-icons/microsoft-azure-logo_svgstack_com_7501780931055.svg" },
-  { name: "AWS", logo: "/assets/Tech-icons/amazon-aws-logo_svgstack_com_7491780931192.svg" },
+  { name: "AWS", logo: "/assets/Devopstrio_Partners/aws.png" },
   { name: "Google Cloud", logo: "/assets/Tech-icons/google-cloud-logo_svgstack_com_28371780931185.svg" },
   { name: "Oracle", logo: "/assets/Tech-icons/oracle-logo_svgstack_com_28991780931429.svg" },
   { name: "Docker", logo: "/assets/Tech-icons/docker-logo_svgstack_com_28191780931128.svg" },
@@ -36,7 +36,7 @@ export const IndustriesTrust = () => {
   return (
     <section className="py-16 sm:py-24 bg-black border-t border-zinc-900 relative overflow-hidden font-sans">
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        
+
         {/* Industries Header, Subtitle Removed */}
         <div className="mb-20">
           <div className="text-center max-w-3xl mx-auto mb-12">
@@ -63,17 +63,17 @@ export const IndustriesTrust = () => {
               >
                 <div>
                   <div className="mb-6 flex items-center justify-center">
-                    <img 
-                      src={ind.image} 
-                      alt={ind.name} 
+                    <img
+                      src={ind.image}
+                      alt={ind.name}
                       className="w-28 h-28 sm:w-32 sm:h-32 object-contain group-hover:scale-110 transition-transform duration-500"
                     />
                   </div>
-                  
+
                   <h3 className="text-xl font-bold text-rose-500 mb-2 group-hover:text-rose-400 transition-colors uppercase tracking-wide font-sans">
                     {ind.name}
                   </h3>
-                  
+
                   <p className="text-sm text-zinc-300 font-bold font-mono">
                     {ind.projects}
                   </p>
