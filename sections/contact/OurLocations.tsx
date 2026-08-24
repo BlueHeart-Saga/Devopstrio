@@ -79,13 +79,12 @@ export function OurLocations() {
               <span className="text-xs font-semibold tracking-wider uppercase text-zinc-200 group-hover:text-rose-400">
                 {isOpen ? "Hide Locations" : "View All Locations"}
               </span>
-              <img
-                src="/assets/components/linearrow.png"
+              <img src="/assets/components/linearrow.png"
                 alt="Toggle arrow"
                 className={`w-5 h-5 object-contain filter drop-shadow-[0_0_8px_rgba(244,63,94,0.5)] transition-transform duration-300 ${
                   isOpen ? "rotate-180" : "rotate-0"
                 }`}
-              />
+              loading="lazy" />
             </button>
           </div>
         </Reveal>
@@ -105,11 +104,10 @@ export function OurLocations() {
                   <div key={idx} className="flex flex-col items-center text-center group cursor-default">
                     
                     <div className="w-full h-48 relative mb-6 overflow-hidden flex items-end justify-center">
-                      <img 
-                        src={office.image} 
+                      <img src={office.image} 
                         alt={`${office.city} Office`}
                         className="object-contain h-full w-full opacity-80 group-hover:opacity-100 transition-opacity duration-500"
-                      />
+                      loading="lazy" />
                     </div>
 
                     <div className={`w-12 h-[3px] rounded-full bg-gradient-to-r ${office.gradient} mb-6 opacity-80`} />

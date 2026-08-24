@@ -88,11 +88,10 @@ export function IndustriesServed() {
                 
                 {/* Image Wrapper */}
                 <div className="relative w-full aspect-[16/10] overflow-hidden rounded-[18px] bg-zinc-900 border border-white/[0.03] mb-4">
-                  <img
-                    src={ind.image}
+                  <img src={ind.image}
                     alt={ind.name}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
-                  />
+                  loading="lazy" />
                   <div className="absolute top-3 right-3 w-8 h-8 rounded-full bg-black/40 backdrop-blur-md flex items-center justify-center border border-white/10 text-rose-500">
                     {ind.icon}
                   </div>

@@ -39,11 +39,10 @@ export const LearningJourney = () => {
             Your Roadmap To Learn, Build &{" "}
             <span className="relative inline-block px-3.5 py-0.5 mx-1">
               {/* Top-to-bottom straight arrow PNG pointing directly down to 'Grow' */}
-              <img
-                src="/assets/components/streight-toptobuttm.png"
+              <img src="/assets/components/streight-toptobuttm.png"
                 alt="Top to bottom arrow"
                 className="absolute -top-20 sm:-top-28 md:-top-32 left-1/2 -translate-x-1/2 w-16 sm:w-24 md:w-28 h-auto object-contain filter drop-shadow-[0_0_20px_rgba(244,63,94,0.6)] pointer-events-none select-none z-20"
-              />
+              loading="lazy" />
 
               <span className="relative z-10 text-white font-bold">Grow</span>
               {/* Brand Rose hand-drawn oval circle loop */}

@@ -192,11 +192,10 @@ export function DeliveryFootprint() {
                 >
                   {/* Card Image Header */}
                   <div className="relative h-28 w-full overflow-hidden bg-zinc-950">
-                    <img
-                      src={loc.image}
+                    <img src={loc.image}
                       alt={loc.city}
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
+                    loading="lazy" />
                     <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/20 to-transparent" />
                     
                     {/* Active State Ping Indicator */}

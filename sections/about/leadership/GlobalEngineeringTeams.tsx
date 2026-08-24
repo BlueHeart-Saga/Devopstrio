@@ -136,11 +136,10 @@ export const GlobalEngineeringTeams = () => {
               Leaders Who{" "}
               <span className="relative inline-block">
                 <div className="absolute -top-6 sm:-top-7 -left-12 sm:-left-14 md:-left-16 z-20 pointer-events-none select-none rotate-[-40deg]">
-                  <img
-                    src="/assets/components/Carrow-right.png"
+                  <img src="/assets/components/Carrow-right.png"
                     alt="Curved arrow"
                     className="w-10 sm:w-12 md:w-14 h-auto object-contain filter drop-shadow-[0_0_15px_rgba(244,63,94,0.4)]"
-                  />
+                  loading="lazy" />
                 </div>
                 <span className="text-rose-500 font-semibold">Empower.</span>
               </span>{" "}
@@ -150,11 +149,10 @@ export const GlobalEngineeringTeams = () => {
 
           <div className="lg:col-span-7 flex items-center justify-center select-none py-2">
             <div className="relative w-full max-w-[340px] sm:max-w-[390px] md:max-w-[440px] rounded-3xl overflow-hidden group">
-              <img
-                src="/assets/About-page/leader/pencilrock.png"
+              <img src="/assets/About-page/leader/pencilrock.png"
                 alt="Engineering Precision & Craftsmanship"
                 className="w-full h-auto object-contain transition-transform duration-700 group-hover:scale-[1.02] block filter drop-shadow-[0_20px_50px_rgba(0,0,0,0.9)]"
-              />
+              loading="lazy" />
             </div>
           </div>
 

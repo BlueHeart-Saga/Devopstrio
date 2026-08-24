@@ -93,7 +93,7 @@ export function IndustriesSection() {
 
   return (
     <section
-      className="w-full pt-20 pb-24 bg-[#030303] text-white relative overflow-hidden"
+      className="w-full py-10 md:py-14 bg-[#030303] text-white relative overflow-hidden"
       id="industries"
     >
       <div className="max-w-7xl mx-auto w-full px-8 xl:px-4 relative z-10 flex flex-col gap-20">
@@ -130,7 +130,7 @@ export function IndustriesSection() {
               >
                 {/* Image */}
                 <div className="relative w-full aspect-[2/1] overflow-hidden rounded-[16px] bg-zinc-900 border border-zinc-800/50 mb-4">
-                  <img src={ind.image} alt={ind.name} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]" />
+                  <img src={ind.image} alt={ind.name} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]" loading="lazy" />
                   <div className="absolute top-3 right-3 w-8 h-8 rounded-full bg-black/40 backdrop-blur-md flex items-center justify-center border border-white/10">
                      <ind.icon size={14} className="text-white" />
                   </div>
@@ -142,10 +142,6 @@ export function IndustriesSection() {
                 <div className="px-3 pb-3 flex flex-col flex-1 justify-between">
                    <div>
                      <h3 className="font-bold text-lg md:text-xl text-white mb-1 group-hover:text-rose-400 transition-colors">{ind.name}</h3>
-                     {/* Description Smooth Reveal on Hover */}
-                     <div className="max-h-0 opacity-0 group-hover:max-h-[200px] group-hover:opacity-100 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] overflow-hidden">
-                       <p className="text-sm md:text-[15px] text-zinc-200 font-normal leading-relaxed pt-1.5 pb-2">{ind.desc}</p>
-                     </div>
                    </div>
                    
                    <div className="flex items-center gap-4 mt-auto pt-4 border-t border-zinc-800/50 text-xs text-zinc-300 font-medium uppercase tracking-wider">
@@ -171,9 +167,9 @@ export function IndustriesSection() {
               <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight mb-6 text-white">
                 We Make Your Industry Journey Seamless
               </h2>
-              <p className="text-zinc-100 text-base md:text-lg leading-relaxed mb-10 font-normal">
+              {/* <p className="text-zinc-100 text-base md:text-lg leading-relaxed mb-10 font-normal">
                 From finding the perfect <Link href="/services/cybersecurity" className="text-rose-500 hover:underline font-medium">compliance strategy</Link> to closing <Link href="/services/it-consulting" className="text-rose-500 hover:underline font-medium">operational gaps</Link>, we're here to make every step smooth and stress-free across regulated and high-growth sectors.
-              </p>
+              </p> */}
               <a
                 href="/industries"
                 className="inline-flex items-center justify-center gap-3 px-7 py-3.5 rounded-xl bg-zinc-100 text-zinc-950 font-bold hover:bg-rose-600 hover:text-white transition-all duration-300"
@@ -217,9 +213,6 @@ export function IndustriesSection() {
                         <h3 className="font-bold text-base md:text-lg text-white mb-2">
                           {ind.name}
                         </h3>
-                        <p className="text-sm md:text-base text-zinc-100 font-normal leading-relaxed flex-1 line-clamp-3">
-                          {ind.desc}
-                        </p>
                         <div className="inline-flex items-center gap-2 text-xs md:text-sm font-semibold text-rose-500 mt-auto">
                           Learn More <ArrowUpRight size={12} className="transition-transform group-hover:translate-x-1" />
                         </div>
@@ -227,7 +220,7 @@ export function IndustriesSection() {
 
                       {/* Back Face */}
                       <div className="absolute inset-0 w-full h-full flex flex-col rounded-2xl overflow-hidden [backface-visibility:hidden] [transform:rotateY(180deg)] border border-rose-500/50">
-                        <img src={ind.image} alt={ind.name} className="w-full h-full object-cover" />
+                        <img src={ind.image} alt={ind.name} className="w-full h-full object-cover" loading="lazy" />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex flex-col justify-end p-6">
                            <h3 className="font-bold text-[15px] text-white mb-2">{ind.name}</h3>
                            <div className="inline-flex items-center gap-2 text-xs font-semibold text-rose-400">
@@ -253,15 +246,13 @@ export function IndustriesSection() {
               className="w-full md:w-[260px] xl:w-[300px] flex flex-col group cursor-pointer"
             >
               <div className="relative w-full h-[400px] md:h-full rounded-2xl overflow-hidden bg-zinc-900 border border-zinc-800/50">
-                <img 
-                  src={tallIndustry.image} 
+                <img src={tallIndustry.image} 
                   alt={tallIndustry.name} 
                   className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
-                />
+                loading="lazy" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent pointer-events-none" />
                 <div className="absolute bottom-6 left-6 right-6">
-                  <h4 className="text-white font-bold text-lg mb-2">{tallIndustry.name}</h4>
-                  <p className="text-zinc-100 text-sm md:text-base leading-relaxed line-clamp-2">{tallIndustry.desc}</p>
+                  <h4 className="text-white font-bold text-lg mb-1 group-hover:text-rose-400 transition-colors">{tallIndustry.name}</h4>
                 </div>
               </div>
             </motion.a>

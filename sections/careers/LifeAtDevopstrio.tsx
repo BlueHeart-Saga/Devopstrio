@@ -139,7 +139,7 @@ export function LifeAtDevopstrio() {
         className={`absolute p-2 pb-6 md:p-2 md:pb-8 bg-zinc-100 shadow-[0_8px_30px_rgba(0,0,0,0.5)] border border-zinc-300 cursor-grab active:cursor-grabbing z-10 hover:z-30 hover:scale-105 transition-transform duration-300 rounded-sm ${className}`}
       >
         <div className="w-24 h-24 md:w-36 md:h-36 bg-zinc-200 overflow-hidden shadow-inner border border-zinc-300/50">
-          <img src={src} alt="Team Event" className="w-full h-full object-cover pointer-events-none" />
+          <img src={src} alt="Team Event" className="w-full h-full object-cover pointer-events-none" loading="lazy" />
         </div>
       </motion.div>
     );

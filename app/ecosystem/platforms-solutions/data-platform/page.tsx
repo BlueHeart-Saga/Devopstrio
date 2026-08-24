@@ -59,11 +59,10 @@ const DataPlatformOverview = () => {
               </Link>
             </div>
             <div className="w-full lg:w-1/2 rounded-[2rem] overflow-hidden aspect-[16/10] bg-zinc-900 border border-zinc-800 relative group">
-              <img
-                src="/assets/data_overview_hero.png"
+              <img src="/assets/data_overview_hero.png"
                 alt="Frontier transformation cover"
                 className="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700"
-              />
+              loading="lazy" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
             </div>
           </div>
@@ -96,11 +95,10 @@ const DataPlatformOverview = () => {
                 <div>
                   {/* Top Image Cover */}
                   <div className="w-full aspect-[16/9] overflow-hidden bg-zinc-900 border-b border-zinc-900 relative">
-                    <img
-                      src={item.img}
+                    <img src={item.img}
                       alt={item.title}
                       className="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700"
-                    />
+                    loading="lazy" />
                     <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/30 to-transparent" />
                   </div>
 
@@ -175,11 +173,10 @@ const DataChallenges = () => {
             <Reveal className="h-full">
               <div className="relative overflow-hidden rounded-3xl h-full flex flex-col justify-end p-8 bg-zinc-900 border border-zinc-800 shadow-[0_8px_32px_0_rgba(0,0,0,0.5)] group">
                 <div className="absolute inset-0 z-0">
-                  <img
-                    src="/assets/data_challenges_cover.png"
+                  <img src="/assets/data_challenges_cover.png"
                     alt="Data challenges team cover"
                     className="w-full h-full object-cover opacity-25 group-hover:scale-105 transition-transform duration-700"
-                  />
+                  loading="lazy" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent" />
                 </div>
 
@@ -867,11 +864,10 @@ const TechnologyStack = () => {
               <div className="p-6 bg-zinc-950/65 border border-zinc-900 rounded-3xl hover:border-rose-500/20 flex flex-col items-center justify-center gap-4 text-center min-h-[150px] group transition-all duration-300 hover:shadow-[0_8px_24px_rgba(0,0,0,0.6)]">
                 {/* Logo wrapper */}
                 <div className="w-14 h-14 flex items-center justify-center bg-zinc-900/80 rounded-2xl border border-zinc-800 group-hover:scale-105 transition-transform duration-300">
-                  <img
-                    src={item.logo}
+                  <img src={item.logo}
                     alt={item.name}
                     className="w-7 h-7 object-contain opacity-70 group-hover:opacity-100 transition-all duration-350 filter brightness-105"
-                  />
+                  loading="lazy" />
                 </div>
                 {/* Title */}
                 <span className="text-[10px] font-bold text-zinc-400 group-hover:text-white transition-colors duration-300 uppercase tracking-widest leading-none">
@@ -965,11 +961,10 @@ const IndustryUseCases = () => {
             <Reveal className="h-full">
               <div className="relative overflow-hidden rounded-3xl h-full flex flex-col justify-end p-8 bg-zinc-900 border border-zinc-800 shadow-[0_8px_32px_0_rgba(0,0,0,0.5)] group">
                 <div className="absolute inset-0 z-0">
-                  <img
-                    src="/assets/data_industry_cover.png"
+                  <img src="/assets/data_industry_cover.png"
                     alt="Layered data security cover"
                     className="w-full h-full object-cover opacity-25 group-hover:scale-105 transition-transform duration-750"
-                  />
+                  loading="lazy" />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#030303] via-[#030303]/60 to-transparent" />
                 </div>
 

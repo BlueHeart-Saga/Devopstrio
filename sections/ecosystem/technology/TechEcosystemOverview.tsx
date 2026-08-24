@@ -86,7 +86,7 @@ export function TechEcosystemOverview() {
 
                 {/* Background image reveal with mix-blend-screen */}
                 <div className="absolute inset-0 z-0 opacity-20 group-hover:opacity-40 transition-opacity duration-700 pointer-events-none overflow-hidden mix-blend-screen">
-                  <img src={dom.image} alt="" className="w-full h-full object-cover scale-110 group-hover:scale-100 transition-transform duration-1000" />
+                  <img src={dom.image} alt="" className="w-full h-full object-cover scale-110 group-hover:scale-100 transition-transform duration-1000" loading="lazy" />
                 </div>
 
                 {/* Content */}

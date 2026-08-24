@@ -110,11 +110,10 @@ const LocationPopup: React.FC<LocationPopupProps> = ({ closePopup }) => {
               >
                 {/* Office Image */}
                 <div className="w-full h-40 relative mb-6 overflow-hidden flex items-end justify-center">
-                  <img 
-                    src={office.image} 
+                  <img src={office.image} 
                     alt={`${office.city} Office`}
                     className="object-contain h-full w-full opacity-80 group-hover:opacity-100 transition-opacity duration-500"
-                  />
+                  loading="lazy" />
                 </div>
 
                 {/* Gradient divider line */}

@@ -1618,7 +1618,7 @@ export function DetailedServices({ hideExploreButton = false }: DetailedServices
   }, []);
 
   return (
-    <section className="w-full py-24 bg-black text-white relative" id="detailed-services">
+    <section className="w-full py-10 md:py-14 bg-black text-white relative" id="detailed-services">
       {/* Mesh grid background */}
       <div 
         className="absolute inset-0 opacity-[0.01] pointer-events-none"
@@ -1635,7 +1635,7 @@ export function DetailedServices({ hideExploreButton = false }: DetailedServices
               ENTERPRISE INTEGRATION SERVICES
             </span> */}
             <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight mb-5 text-white font-sans">
-              Deploy & Orchestrate Your <span className="text-rose-500 font-semibold">Enterprise Technology Stacks</span>
+              Discover & Explore All Our <span className="text-rose-500 font-semibold">Enterprise Services</span>
             </h2>
             {/* <p className="text-zinc-300 text-base md:text-lg leading-relaxed max-w-2xl mx-auto font-medium">
               Explore our extensive practice areas, <Link href="/about" className="text-rose-500 hover:underline">expert engineering capabilities</Link>, and seamless technology integrations. We build, secure, and accelerate your entire <Link href="/services/devops-automation" className="text-rose-500 hover:underline">digital delivery pipeline</Link> with precision.
@@ -1722,9 +1722,13 @@ export function DetailedServices({ hideExploreButton = false }: DetailedServices
                             </span>
                           </div>
                         </div>
-                        <p className="text-sm text-zinc-300 leading-relaxed font-normal mb-4">
-                          {item.desc}
-                        </p>
+                        <div className="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] opacity-0 group-hover:opacity-100 transition-all duration-300 ease-in-out">
+                          <div className="overflow-hidden">
+                            <p className="text-sm text-zinc-300 leading-relaxed font-normal pt-1 pb-2 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300 ease-in-out">
+                              {item.desc}
+                            </p>
+                          </div>
+                        </div>
                         <span className="absolute top-4 right-4 bg-rose-500/10 text-rose-400 text-xs font-semibold px-2.5 py-0.5 rounded-full uppercase tracking-wider">
                           Popular
                         </span>
@@ -1777,9 +1781,13 @@ export function DetailedServices({ hideExploreButton = false }: DetailedServices
                                       )}
                                     </div>
                                   </div>
-                                  <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed font-normal">
-                                    {item.desc}
-                                  </p>
+                                  <div className="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] opacity-0 group-hover:opacity-100 transition-all duration-300 ease-in-out">
+                                    <div className="overflow-hidden">
+                                      <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed font-normal pt-1 pb-1 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300 ease-in-out">
+                                        {item.desc}
+                                      </p>
+                                    </div>
+                                  </div>
                                 </div>
                               </div>
                             ))}
@@ -1825,9 +1833,13 @@ export function DetailedServices({ hideExploreButton = false }: DetailedServices
                           <h4 className="text-base font-semibold text-zinc-100 group-hover:text-white mb-2 transition-colors">
                             {item.name}
                           </h4>
-                          <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed font-normal">
-                            {item.desc}
-                          </p>
+                          <div className="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] opacity-0 group-hover:opacity-100 transition-all duration-300 ease-in-out">
+                            <div className="overflow-hidden">
+                              <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed font-normal pt-1 pb-1 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300 ease-in-out">
+                                {item.desc}
+                              </p>
+                            </div>
+                          </div>
                         </div>
                         <div className="mt-4 pt-4 border-t border-zinc-900/50 flex items-center justify-between">
                           <span className="text-xs text-zinc-400 font-mono truncate max-w-[150px]">

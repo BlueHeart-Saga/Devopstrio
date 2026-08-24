@@ -1,20 +1,20 @@
-"use client";
-
+import dynamic from "next/dynamic";
 import { AboutHero } from "@/sections/about/AboutHero";
 import { CompanyIntro } from "@/sections/about/CompanyIntro";
-import { MissionVision } from "@/sections/about/MissionVision";
-import { OurStory } from "@/sections/about/OurStory";
-import { Leadership } from "@/sections/about/Leadership";
-import { AboutServices } from "@/sections/about/AboutServices";
-import { WhyChoose } from "@/sections/about/WhyChoose";
-import { OurPartnership } from "@/sections/about/OurPartnership";
-import { WorkflowModel } from "@/sections/about/WorkflowModel";
-import { MetricsStats } from "@/sections/about/MetricsStats";
-import { Achievements } from "@/sections/about/Achievements";
-import { AboutCTA } from "@/sections/about/AboutCTA";
-import { GlobalLocations } from "@/sections/home/GlobalLocations";
-import { Reveal } from "@/components/ui/Reveal";
 import { SectionNavbar } from "@/components/ui/SectionNavbar";
+
+// Dynamic Imports for Heavy Below-The-Fold Sections to Reduce Initial JS Payload
+const MissionVision = dynamic(() => import("@/sections/about/MissionVision").then((mod) => mod.MissionVision));
+const OurStory = dynamic(() => import("@/sections/about/OurStory").then((mod) => mod.OurStory));
+const Leadership = dynamic(() => import("@/sections/about/Leadership").then((mod) => mod.Leadership));
+const AboutServices = dynamic(() => import("@/sections/about/AboutServices").then((mod) => mod.AboutServices));
+const WhyChoose = dynamic(() => import("@/sections/about/WhyChoose").then((mod) => mod.WhyChoose));
+const OurPartnership = dynamic(() => import("@/sections/about/OurPartnership").then((mod) => mod.OurPartnership));
+const WorkflowModel = dynamic(() => import("@/sections/about/WorkflowModel").then((mod) => mod.WorkflowModel));
+const MetricsStats = dynamic(() => import("@/sections/about/MetricsStats").then((mod) => mod.MetricsStats));
+const Achievements = dynamic(() => import("@/sections/about/Achievements").then((mod) => mod.Achievements));
+const AboutCTA = dynamic(() => import("@/sections/about/AboutCTA").then((mod) => mod.AboutCTA));
+const GlobalLocations = dynamic(() => import("@/sections/home/GlobalLocations").then((mod) => mod.GlobalLocations));
 
 const aboutSections = [
   { id: "identity", label: "Who We Are" },
@@ -48,8 +48,8 @@ export default function AboutPage() {
       {/* Existing About Components with High-Level Coded SVG Wave Lines */}
       <div id="about-components-start" className="flex flex-col bg-black">
         <AboutHero />
-        <SectionNavbar sections={aboutSections} />
-        <SvgWaveLine variant="smooth" />
+        {/* <SectionNavbar sections={aboutSections} /> */}
+        {/* <SvgWaveLine variant="smooth" /> */}
 
         <div id="identity">
           <CompanyIntro />
@@ -58,53 +58,53 @@ export default function AboutPage() {
 
 
 
-        <div id="vision">
+        {/* <div id="vision">
           <MissionVision />
         </div>
-        <SvgWaveLine variant="grid" />
+        <SvgWaveLine variant="grid" /> */}
 
         <div id="journey">
           <OurStory />
         </div>
-        <SvgWaveLine variant="liquid" />
+        {/* <SvgWaveLine variant="liquid" /> */}
 
-        <div id="capabilities">
+        {/* <div id="capabilities">
           <AboutServices />
         </div>
-        <SvgWaveLine variant="smooth" />
+        <SvgWaveLine variant="smooth" /> */}
 
-        <div id="advantage">
+        {/* <div id="advantage">
           <WhyChoose />
          
             <WorkflowModel />
           
-        </div>
+        </div> */}
         {/* <SvgWaveLine variant="dashed" /> */}
 
-        <div id="leadership">
+        {/* <div id="leadership">
           <Leadership />
-        </div>
+        </div> */}
         {/* <SvgWaveLine variant="particles" /> */}
 
         <div id="impact">
           <MetricsStats />
         </div>
-        <SvgWaveLine variant="liquid" />
+        {/* <SvgWaveLine variant="liquid" /> */}
 
-        <div id="ecosystem">
+        {/* <div id="ecosystem">
           <OurPartnership />
         </div>
-        <SvgWaveLine variant="grid" />
+        <SvgWaveLine variant="grid" /> */}
 
-        <div id="future">
+        {/* <div id="future">
           <Achievements />
         </div>
-        <SvgWaveLine variant="smooth" />
+        <SvgWaveLine variant="smooth" /> */}
 
         <div className="max-w-site mx-auto w-full px-6 md:px-12 lg:px-16 xl:px-20 pb-20">
           <GlobalLocations />
         </div>
-        <SvgWaveLine variant="liquid" />
+        {/* <SvgWaveLine variant="liquid" /> */}
 
         <AboutCTA />
       </div>

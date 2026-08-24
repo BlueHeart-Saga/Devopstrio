@@ -100,13 +100,11 @@ export function TechHero() {
               }}
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={icon.src}
+              <img src={icon.src}
                 alt={icon.name}
                 className="w-full h-full object-contain filter brightness-90 group-hover:brightness-100 group-hover:scale-105 transition-all"
                 title={icon.name}
-                loading="lazy"
-              />
+                loading="eager" />
             </div>
           );
         })}
@@ -129,13 +127,11 @@ export function TechHero() {
               }}
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={icon.src}
+              <img src={icon.src}
                 alt={icon.name}
                 className="w-full h-full object-contain filter opacity-75 brightness-75 group-hover:opacity-100 group-hover:brightness-100 group-hover:scale-105 transition-all"
                 title={icon.name}
-                loading="lazy"
-              />
+                loading="eager" />
             </div>
           );
         })}

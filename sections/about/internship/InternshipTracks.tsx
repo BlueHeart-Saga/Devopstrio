@@ -80,11 +80,10 @@ export const InternshipTracks = () => {
         <div className="text-center max-w-4xl mx-auto mb-16 relative">
           {/* Left-to-right arrow PNG pointing to header */}
           <div className="absolute -top-6 sm:-top-8 md:-top-10 left-0 sm:-left-6 md:-left-10 lg:-left-14 z-20 pointer-events-none select-none">
-            <img
-              src="/assets/components/lefttoright.png"
+            <img src="/assets/components/lefttoright.png"
               alt="Left to right arrow"
               className="w-12 sm:w-16 md:w-20 h-auto object-contain filter drop-shadow-[0_0_15px_rgba(244,63,94,0.45)]"
-            />
+            loading="lazy" />
           </div>
 
           <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight text-white mb-4 font-sans">

@@ -158,7 +158,7 @@ export function FaqSection() {
   };
 
   return (
-    <section id="faq" className="w-full py-20 md:py-28 bg-[#030303] text-white relative">
+    <section id="faq" className="w-full py-10 md:py-14 bg-[#030303] text-white relative">
       <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
         
         {/* Header Block */}

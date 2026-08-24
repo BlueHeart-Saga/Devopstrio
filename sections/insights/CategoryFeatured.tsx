@@ -91,11 +91,10 @@ export function CategoryFeatured({ posts, categorySlug }: CategoryFeaturedProps)
               
               {/* Left Image Container */}
               <div className="w-full md:w-[60%] h-[300px] md:h-[480px] rounded-[32px] overflow-hidden relative shadow-2xl z-0">
-                <img 
-                  src={post.image || getFallbackImage(activeIndex)} 
+                <img src={post.image || getFallbackImage(activeIndex)} 
                   alt={post.title} 
                   className="w-full h-full object-cover transition-transform duration-[10s] hover:scale-105" 
-                />
+                loading="lazy" />
               </div>
               
               {/* Right Overlapping Content Card */}

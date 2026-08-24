@@ -417,7 +417,7 @@ export default function SaaSPlatformsPage() {
                 {/* Logo & Category */}
                 <div className="flex items-center gap-4 mb-8 relative z-10">
                   <div className="w-16 h-16 rounded-2xl bg-zinc-950 border border-zinc-800/80 flex items-center justify-center p-3 shadow-inner">
-                    <img src={activeProduct.logo} alt={`${activeProduct.name} Logo`} className="w-full h-full object-contain drop-shadow-md" />
+                    <img src={activeProduct.logo} alt={`${activeProduct.name} Logo`} className="w-full h-full object-contain drop-shadow-md" loading="lazy" />
                   </div>
                 </div>
 
@@ -489,11 +489,10 @@ export default function SaaSPlatformsPage() {
                       }`}
                   >
                     <div className="h-8 md:h-10 flex items-center justify-center mb-2">
-                      <img
-                        src={p.logo}
+                      <img src={p.logo}
                         alt={p.name}
                         className={`max-h-full w-auto object-contain transition-all duration-300 ${isActive ? "scale-110 drop-shadow-md" : "grayscale group-hover:grayscale-0"}`}
-                      />
+                      loading="lazy" />
                     </div>
                     {/* Optional text label for clarity */}
                     <span className={`text-[10px] font-bold uppercase tracking-widest transition-colors ${isActive ? "text-white" : "text-zinc-600"}`}>

@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export function CaseStudyHighlight() {
   return (
-    <section className="w-full py-24 bg-[#030303] text-white">
+    <section className="w-full py-10 md:py-14 bg-[#030303] text-white">
       <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
 
         <Reveal>
@@ -25,11 +25,10 @@ export function CaseStudyHighlight() {
               <div className="h-full bg-zinc-950/40 border border-white/10 hover:border-rose-500/30 rounded-3xl overflow-hidden relative flex flex-col justify-between p-8 md:p-12 min-h-[460px] group text-left backdrop-blur-md shadow-[0_8px_32px_0_rgba(0,0,0,0.5)] transition-all duration-500">
                 {/* Background Image: Premium Wave Graphic */}
                 <div className="absolute inset-0 z-0">
-                  <img
-                    src="/assets/services/bg-case-study.png"
+                  <img src="/assets/services/bg-case-study.png"
                     alt="Engineering impact wave"
                     className="w-full h-full object-cover opacity-35 group-hover:opacity-45 group-hover:scale-[1.02] transition-all duration-700 pointer-events-none select-none mix-blend-screen"
-                  />
+                  loading="lazy" />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#030303] via-[#030303]/40 to-transparent" />
                 </div>
 

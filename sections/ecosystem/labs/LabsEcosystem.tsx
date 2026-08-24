@@ -84,11 +84,10 @@ export function LabsEcosystem() {
               <div className="absolute -right-10 -top-10 w-48 h-48 bg-rose-600/10 rounded-full blur-3xl pointer-events-none transition-all duration-700 group-hover/tall:scale-110" />
               <div className="absolute -left-10 -bottom-10 w-48 h-48 bg-orange-600/5 rounded-full blur-3xl pointer-events-none transition-all duration-700 group-hover/tall:scale-110" />
 
-              <img
-                src="/assets/ecosystem/grid/ecosystem_innovation-labs-page_grid_5/Generated-Design.png"
+              <img src="/assets/ecosystem/grid/ecosystem_innovation-labs-page_grid_5/Generated-Design.png"
                 alt="Abstract Background"
                 className="absolute inset-0 w-full h-full object-cover mix-blend-screen pointer-events-none opacity-30"
-              />
+              loading="lazy" />
 
               {/* Card top details */}
               <div className="relative z-10">
@@ -123,11 +122,10 @@ export function LabsEcosystem() {
                 <div className="group/card flex flex-col justify-between bg-zinc-950/30 border border-white/5 hover:border-rose-500/20 hover:bg-zinc-950/60 rounded-2xl p-6 transition-all duration-300 min-h-[220px] h-full relative overflow-hidden backdrop-blur-md shadow-[0_8px_32px_0_rgba(0,0,0,0.37)]">
 
                   {/* Background graphic image */}
-                  <img
-                    src={item.image}
+                  <img src={item.image}
                     alt=""
                     className="absolute inset-0 w-full h-full object-cover mix-blend-screen pointer-events-none opacity-25 group-hover/card:opacity-40 transition-opacity duration-500"
-                  />
+                  loading="lazy" />
 
                   {/* Subtle color highlight glow on hover */}
                   <div className="absolute inset-0 bg-gradient-to-br from-rose-600/0 via-rose-600/0 to-rose-600/5 opacity-0 group-hover/card:opacity-100 transition-opacity duration-500 pointer-events-none" />

@@ -350,11 +350,10 @@ export default function SafeSignProductPage() {
                 {/* RIGHT IMAGE */}
                 <div className="p-3 md:p-4 flex items-center justify-center bg-zinc-950/20 border-t lg:border-t-0 lg:border-l border-zinc-900/60">
                   <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden border border-zinc-800/80 shadow-2xl group/img">
-                    <img
-                      src="/assets/common/90361fed0bb781d7c86e451995b4dbce-1.png"
+                    <img src="/assets/common/90361fed0bb781d7c86e451995b4dbce-1.png"
                       alt="SafeSign Platform Overview"
                       className="w-full h-full object-cover transition-transform duration-700 group-hover/img:scale-[1.02]"
-                    />
+                    loading="lazy" />
                     {/* Subtle reflection overlay */}
                     <div className="absolute inset-0 bg-gradient-to-tr from-white/0 via-white/5 to-transparent pointer-events-none" />
                   </div>
@@ -913,7 +912,7 @@ export default function SafeSignProductPage() {
 
                           {/* Back Face */}
                           <div className="absolute inset-0 w-full h-full flex flex-col rounded-2xl overflow-hidden [backface-visibility:hidden] [transform:rotateY(180deg)] border border-emerald-500/30">
-                            <img src={images[i]} alt={int.title} className="w-full h-full object-cover opacity-80" />
+                            <img src={images[i]} alt={int.title} className="w-full h-full object-cover opacity-80" loading="lazy" />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/60 to-black/10 flex flex-col justify-end p-6">
                               <div className="w-10 h-10 mb-4 rounded-full bg-emerald-500/20 backdrop-blur-md border border-emerald-500/40 flex items-center justify-center text-emerald-400">
                                 <Icon size={18} strokeWidth={2} />
@@ -990,7 +989,7 @@ export default function SafeSignProductPage() {
 
                   {/* Expanding Image Layer with Glassmorphism */}
                   <div className="absolute inset-0 z-0 [clip-path:circle(0%_at_100%_100%)] group-hover:[clip-path:circle(150%_at_100%_100%)] transition-all duration-700 ease-in-out pointer-events-none">
-                    <img src={sec.image} alt={sec.title} className="w-full h-full object-cover scale-110 group-hover:scale-100 transition-transform duration-1000 ease-out opacity-40" />
+                    <img src={sec.image} alt={sec.title} className="w-full h-full object-cover scale-110 group-hover:scale-100 transition-transform duration-1000 ease-out opacity-40" loading="lazy" />
                     <div className="absolute inset-0 bg-emerald-950/40 backdrop-blur-md" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-emerald-900/10 border border-emerald-500/10 rounded-[24px]" />
                   </div>

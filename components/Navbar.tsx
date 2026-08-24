@@ -870,11 +870,10 @@ export function Navbar() {
         >
           {/* Brand Logo & Name (Improved Logo Size) */}
           <Link href="/" className="flex items-center gap-1.5 group" onMouseEnter={() => setActiveMenu(null)}>
-            <img
-              src="/assets/logo/logo.png"
+            <img src="/assets/logo/logo.png"
               alt="Devopstrio logo"
               className="w-12 h-12 transition-transform duration-300 group-hover:scale-105 object-contain"
-            />
+            loading="lazy" />
             <span className="text-xl sm:text-2xl font-bold tracking-tight text-white font-sans">
               Devopstrio
             </span>
@@ -903,11 +902,10 @@ export function Navbar() {
 
                     {/* Left Callout Box (Services Interactive Blur & Expand - Theme Matched) */}
                     <div className="relative overflow-hidden rounded-2xl border border-zinc-800/90 p-6 flex flex-col justify-between min-h-[340px] h-full group bg-[#09090C] shadow-2xl transition-all duration-500 hover:border-red-500/50 cursor-pointer">
-                      <img
-                        src="/assets/wavebg/navbar/servicesdrop.jpeg"
+                      <img src="/assets/wavebg/navbar/servicesdrop.jpeg"
                         alt="Enterprise Acceleration"
                         className="absolute inset-0 w-full h-full object-cover opacity-95 group-hover:opacity-70 group-hover:blur-md scale-100 group-hover:scale-105 transition-all duration-700 ease-out pointer-events-none"
-                      />
+                      loading="lazy" />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent group-hover:bg-black/75 transition-all duration-500 pointer-events-none" />
 
                       <div className="relative z-10">
@@ -1045,11 +1043,10 @@ export function Navbar() {
 
                     {/* Left Callout Box (Industries Interactive Blur & Expand) */}
                     <div className="relative overflow-hidden rounded-2xl border border-zinc-800/90 p-6 flex flex-col justify-between min-h-[320px] h-full group bg-[#09090C] shadow-2xl transition-all duration-500 hover:border-red-500/50 cursor-pointer">
-                      <img
-                        src="/assets/wavebg/navbar/industriesdrop.png"
+                      <img src="/assets/wavebg/navbar/industriesdrop.png"
                         alt="Compliance First"
                         className="absolute inset-0 w-full h-full object-cover opacity-95 group-hover:opacity-70 group-hover:blur-md scale-100 group-hover:scale-105 transition-all duration-700 ease-out pointer-events-none"
-                      />
+                      loading="lazy" />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent group-hover:bg-black/75 transition-all duration-500 pointer-events-none" />
 
                       <div className="relative z-10">
@@ -1147,11 +1144,10 @@ export function Navbar() {
 
                     {/* Left Callout Box */}
                     <div className="relative overflow-hidden rounded-2xl border border-zinc-800/90 p-6 flex flex-col justify-between min-h-[320px] h-full group bg-[#09090C] shadow-2xl transition-all duration-500 hover:border-red-500/50 cursor-pointer">
-                      <img
-                        src="/assets/wavebg/navbar/ecosystemdrop.png"
+                      <img src="/assets/wavebg/navbar/ecosystemdrop.png"
                         alt="Ecosystem Infrastructure"
                         className="absolute inset-0 w-full h-full object-cover opacity-95 group-hover:opacity-70 group-hover:blur-md scale-100 group-hover:scale-105 transition-all duration-700 ease-out pointer-events-none"
-                      />
+                      loading="lazy" />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent group-hover:bg-black/75 transition-all duration-500 pointer-events-none" />
 
                       <div className="relative z-10">
@@ -1297,11 +1293,10 @@ export function Navbar() {
 
                     {/* Visual Promo Column (Insights Interactive Blur & Expand) */}
                     <div className="relative overflow-hidden rounded-2xl border border-zinc-800/90 p-6 flex flex-col justify-between min-h-[320px] h-full group bg-[#09090C] shadow-2xl transition-all duration-500 hover:border-red-500/50 cursor-pointer">
-                      <img
-                        src="/assets/wavebg/navbar/insightsdrop.png"
+                      <img src="/assets/wavebg/navbar/insightsdrop.png"
                         alt="Thought Leadership"
                         className="absolute inset-0 w-full h-full object-cover opacity-95 group-hover:opacity-70 group-hover:blur-md scale-100 group-hover:scale-105 transition-all duration-700 ease-out pointer-events-none"
-                      />
+                      loading="lazy" />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent group-hover:bg-black/75 transition-all duration-500 pointer-events-none" />
 
                       <div className="relative z-10">
@@ -1401,7 +1396,7 @@ export function Navbar() {
                           className="transition-all duration-200 hover:scale-110"
                           title="LinkedIn"
                         >
-                          <img src="/assets/social-icons/linkedin.svg" alt="LinkedIn" className="w-8 h-8 object-contain transition-all duration-200" />
+                          <img src="/assets/social-icons/linkedin.svg" alt="LinkedIn" className="w-8 h-8 object-contain transition-all duration-200" loading="lazy" />
                         </a>
                         <a
                           href="https://www.facebook.com/profile.php?id=61579126233218"
@@ -1410,7 +1405,7 @@ export function Navbar() {
                           className="transition-all duration-200 hover:scale-110"
                           title="Facebook"
                         >
-                          <img src="/assets/social-icons/facebook.svg" alt="Facebook" className="w-8 h-8 object-contain transition-all duration-200" />
+                          <img src="/assets/social-icons/facebook.svg" alt="Facebook" className="w-8 h-8 object-contain transition-all duration-200" loading="lazy" />
                         </a>
                         <a
                           href="https://www.instagram.com/devopstrio_offcl/"
@@ -1419,7 +1414,7 @@ export function Navbar() {
                           className="transition-all duration-200 hover:scale-110"
                           title="Instagram"
                         >
-                          <img src="/assets/social-icons/instagram.svg" alt="Instagram" className="w-8 h-8 object-contain transition-all duration-200" />
+                          <img src="/assets/social-icons/instagram.svg" alt="Instagram" className="w-8 h-8 object-contain transition-all duration-200" loading="lazy" />
                         </a>
                         <a
                           href="https://www.youtube.com/@Devopstrioltd"
@@ -1428,7 +1423,7 @@ export function Navbar() {
                           className="transition-all duration-200 hover:scale-110"
                           title="YouTube"
                         >
-                          <img src="/assets/social-icons/youtube.svg" alt="YouTube" className="w-8 h-8 object-contain transition-all duration-200" />
+                          <img src="/assets/social-icons/youtube.svg" alt="YouTube" className="w-8 h-8 object-contain transition-all duration-200" loading="lazy" />
                         </a>
                       </div>
                     </div>
@@ -1466,11 +1461,10 @@ export function Navbar() {
 
                     {/* Left Callout Box (About Interactive Blur & Expand) */}
                     <div className="relative overflow-hidden rounded-2xl border border-zinc-800/90 p-6 flex flex-col justify-between min-h-[320px] h-full group bg-[#09090C] shadow-2xl transition-all duration-500 hover:border-red-500/50 cursor-pointer">
-                      <img
-                        src="/assets/wavebg/navbar/aboutdrop.png"
+                      <img src="/assets/wavebg/navbar/aboutdrop.png"
                         alt="Our Foundation"
                         className="absolute inset-0 w-full h-full object-cover opacity-95 group-hover:opacity-70 group-hover:blur-md scale-100 group-hover:scale-105 transition-all duration-700 ease-out pointer-events-none"
-                      />
+                      loading="lazy" />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent group-hover:bg-black/75 transition-all duration-500 pointer-events-none" />
 
                       <div className="relative z-10">
@@ -1547,7 +1541,7 @@ export function Navbar() {
                           className="transition-all duration-200 hover:scale-110"
                           title="LinkedIn"
                         >
-                          <img src="/assets/social-icons/linkedin.svg" alt="LinkedIn" className="w-8 h-8 object-contain transition-all duration-200" />
+                          <img src="/assets/social-icons/linkedin.svg" alt="LinkedIn" className="w-8 h-8 object-contain transition-all duration-200" loading="lazy" />
                         </a>
                         <a
                           href="https://www.facebook.com/profile.php?id=61579126233218"
@@ -1556,7 +1550,7 @@ export function Navbar() {
                           className="transition-all duration-200 hover:scale-110"
                           title="Facebook"
                         >
-                          <img src="/assets/social-icons/facebook.svg" alt="Facebook" className="w-8 h-8 object-contain transition-all duration-200" />
+                          <img src="/assets/social-icons/facebook.svg" alt="Facebook" className="w-8 h-8 object-contain transition-all duration-200" loading="lazy" />
                         </a>
                         <a
                           href="https://www.instagram.com/devopstrio_offcl/"
@@ -1565,7 +1559,7 @@ export function Navbar() {
                           className="transition-all duration-200 hover:scale-110"
                           title="Instagram"
                         >
-                          <img src="/assets/social-icons/instagram.svg" alt="Instagram" className="w-8 h-8 object-contain transition-all duration-200" />
+                          <img src="/assets/social-icons/instagram.svg" alt="Instagram" className="w-8 h-8 object-contain transition-all duration-200" loading="lazy" />
                         </a>
                         <a
                           href="https://www.youtube.com/@Devopstrioltd"
@@ -1574,7 +1568,7 @@ export function Navbar() {
                           className="transition-all duration-200 hover:scale-110"
                           title="YouTube"
                         >
-                          <img src="/assets/social-icons/youtube.svg" alt="YouTube" className="w-8 h-8 object-contain transition-all duration-200" />
+                          <img src="/assets/social-icons/youtube.svg" alt="YouTube" className="w-8 h-8 object-contain transition-all duration-200" loading="lazy" />
                         </a>
                       </div>
                     </div>

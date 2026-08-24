@@ -129,11 +129,10 @@ export function ContactForm() {
                   {/* Profile Block */}
                   <div className="max-w-[200px]">
                     <div className="w-[64px] h-[64px] rounded-full overflow-hidden mb-4 border-2 border-white/20 shadow-sm bg-white/5">
-                      <img
-                        src="https://api.dicebear.com/7.x/notionists/svg?seed=Alex&backgroundColor=transparent"
+                      <img src="https://api.dicebear.com/7.x/notionists/svg?seed=Alex&backgroundColor=transparent"
                         alt="Alex Coordinator"
                         className="w-full h-full object-cover scale-110"
-                      />
+                      loading="lazy" />
                     </div>
                     <p className="text-xs font-medium text-white/80 leading-relaxed">
                       <span className="font-semibold text-white block">Solutions Architect,</span>
@@ -163,16 +162,16 @@ export function ContactForm() {
 
                   <div className="flex items-center gap-5">
                     <a href="https://www.linkedin.com/company/devopstrioglobal/posts/?feedView=all" target="_blank" rel="noopener noreferrer" className="transition-transform hover:scale-110" title="LinkedIn">
-                      <img src="/assets/social-icons/linkedin.svg" alt="LinkedIn" className="w-5 h-5 object-contain opacity-80 hover:opacity-100 transition-opacity" />
+                      <img src="/assets/social-icons/linkedin.svg" alt="LinkedIn" className="w-5 h-5 object-contain opacity-80 hover:opacity-100 transition-opacity" loading="lazy" />
                     </a>
                     <a href="https://www.facebook.com/profile.php?id=61579126233218" target="_blank" rel="noopener noreferrer" className="transition-transform hover:scale-110" title="Facebook">
-                      <img src="/assets/social-icons/facebook.svg" alt="Facebook" className="w-5 h-5 object-contain opacity-80 hover:opacity-100 transition-opacity" />
+                      <img src="/assets/social-icons/facebook.svg" alt="Facebook" className="w-5 h-5 object-contain opacity-80 hover:opacity-100 transition-opacity" loading="lazy" />
                     </a>
                     <a href="https://www.instagram.com/devopstrio_offcl/" target="_blank" rel="noopener noreferrer" className="transition-transform hover:scale-110" title="Instagram">
-                      <img src="/assets/social-icons/instagram.svg" alt="Instagram" className="w-5 h-5 object-contain opacity-80 hover:opacity-100 transition-opacity" />
+                      <img src="/assets/social-icons/instagram.svg" alt="Instagram" className="w-5 h-5 object-contain opacity-80 hover:opacity-100 transition-opacity" loading="lazy" />
                     </a>
                     <a href="https://www.youtube.com/@Devopstrioltd" target="_blank" rel="noopener noreferrer" className="transition-transform hover:scale-110" title="YouTube">
-                      <img src="/assets/social-icons/youtube.svg" alt="YouTube" className="w-5 h-5 object-contain opacity-80 hover:opacity-100 transition-opacity" />
+                      <img src="/assets/social-icons/youtube.svg" alt="YouTube" className="w-5 h-5 object-contain opacity-80 hover:opacity-100 transition-opacity" loading="lazy" />
                     </a>
                   </div>
                 </div>

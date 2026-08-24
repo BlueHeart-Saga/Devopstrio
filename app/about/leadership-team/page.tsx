@@ -1,19 +1,22 @@
 import React from "react";
 import { Metadata } from "next";
+import dynamic from "next/dynamic";
 import { BreadcrumbSchema } from "@/components/seo/Schemas";
 import { SectionNavbar } from "@/components/ui/SectionNavbar";
 
 import { LeadershipHero } from "@/sections/about/leadership/LeadershipHero";
-import { LeadershipPrinciples } from "@/sections/about/leadership/LeadershipPrinciples";
-import { Leadership3Pillars } from "@/sections/about/leadership/Leadership3Pillars";
-import { ExecutiveLeadership } from "@/sections/about/leadership/ExecutiveLeadership";
-import { PrincipalArchitects } from "@/sections/about/leadership/PrincipalArchitects";
-import { GlobalEngineeringTeams } from "@/sections/about/leadership/GlobalEngineeringTeams";
-import { LeadershipDeliver } from "@/sections/about/leadership/LeadershipDeliver";
-import { LeadershipImpactDeliver } from "@/sections/about/leadership/LeadershipImpactDeliver";
-import { GlobalPresence } from "@/sections/about/leadership/GlobalPresence";
-import { AwardsRecognitionLeadership } from "@/sections/about/leadership/AwardsRecognitionLeadership";
-import { LeadershipCareersCTA } from "@/sections/about/leadership/LeadershipCareersCTA";
+
+// Dynamic Imports for Heavy Below-The-Fold Sections to Reduce Initial JS Payload
+const LeadershipPrinciples = dynamic(() => import("@/sections/about/leadership/LeadershipPrinciples").then((mod) => mod.LeadershipPrinciples));
+const Leadership3Pillars = dynamic(() => import("@/sections/about/leadership/Leadership3Pillars").then((mod) => mod.Leadership3Pillars));
+const ExecutiveLeadership = dynamic(() => import("@/sections/about/leadership/ExecutiveLeadership").then((mod) => mod.ExecutiveLeadership));
+const PrincipalArchitects = dynamic(() => import("@/sections/about/leadership/PrincipalArchitects").then((mod) => mod.PrincipalArchitects));
+const GlobalEngineeringTeams = dynamic(() => import("@/sections/about/leadership/GlobalEngineeringTeams").then((mod) => mod.GlobalEngineeringTeams));
+const LeadershipDeliver = dynamic(() => import("@/sections/about/leadership/LeadershipDeliver").then((mod) => mod.LeadershipDeliver));
+const LeadershipImpactDeliver = dynamic(() => import("@/sections/about/leadership/LeadershipImpactDeliver").then((mod) => mod.LeadershipImpactDeliver));
+const GlobalPresence = dynamic(() => import("@/sections/about/leadership/GlobalPresence").then((mod) => mod.GlobalPresence));
+const AwardsRecognitionLeadership = dynamic(() => import("@/sections/about/leadership/AwardsRecognitionLeadership").then((mod) => mod.AwardsRecognitionLeadership));
+const LeadershipCareersCTA = dynamic(() => import("@/sections/about/leadership/LeadershipCareersCTA").then((mod) => mod.LeadershipCareersCTA));
 
 export const metadata: Metadata = {
   title: "Leadership & Team | Devopstrio — Engineering Excellence Worldwide",
@@ -73,7 +76,7 @@ export default function LeadershipTeamPage() {
       {/* <PrincipalArchitects /> */}
 
       {/* 5. PILLAR 02: EMPOWER — Global Engineering Teams (525+ Specialists) */}
-      <GlobalEngineeringTeams />
+      {/* <GlobalEngineeringTeams /> */}
 
       {/* 6. PILLAR 03: DELIVER — Leaders Who Deliver. Solutions That Matter. */}
       <LeadershipImpactDeliver />

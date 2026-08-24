@@ -18,13 +18,13 @@ export function AboutHero() {
           <div className="lg:col-span-7 flex flex-col items-start text-left justify-center z-20">
 
 
-            {/* Heading */}
+            {/* Heading: Feel-Good Quote Blockquote */}
             <Reveal delay={0.1}>
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold tracking-tight leading-[1.12] text-white mb-6">
-                Driving Innovation.
-                <br />
-                <span className="text-[#E11D48] whitespace-nowrap">Delivering Impact.</span>
-              </h1>
+              <div className="relative pl-6 sm:pl-8 border-l-4 border-rose-500 my-2">
+                <blockquote className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-5xl font-semibold tracking-tight leading-[1.28] text-white font-sans italic">
+                  &ldquo;We don&apos;t just build technology  we empower people, inspire trust, and shape a <span className="text-rose-500 not-italic font-semibold">brighter digital tomorrow.&rdquo;</span>
+                </blockquote>
+              </div>
             </Reveal>
 
             {/* Description */}
@@ -58,11 +58,10 @@ export function AboutHero() {
           {/* Right Column: Globe Image */}
           <div className="lg:col-span-5 flex items-center justify-center lg:justify-end z-10 w-full">
             <Reveal delay={0.2} className="w-full flex items-center justify-center lg:justify-end">
-              <img
-                src="/assets/herocard/aboutpage.png"
+              <img src="/assets/herocard/aboutpage.png"
                 alt="Global Network Globe"
                 className="w-full max-w-[320px] sm:max-w-[380px] lg:max-w-[480px] h-auto object-contain select-none"
-              />
+              loading="eager" />
             </Reveal>
           </div>
 

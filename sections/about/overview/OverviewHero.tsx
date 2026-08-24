@@ -90,14 +90,13 @@ export function OverviewHero() {
 
         {/* Fixed Pinned Background Image with Scale Zoom */}
         <div className="absolute inset-0 z-0 pointer-events-none">
-          <img
-            src="/assets/About-page/building/thoothukudi.png"
+          <img src="/assets/About-page/building/thoothukudi.png"
             alt="Devopstrio Building"
             className="w-full h-full object-cover object-right filter brightness-110 contrast-105 transition-transform duration-700 ease-out"
             style={{
               transform: `scale(${1 + activeStep * 0.03})`,
             }}
-          />
+          loading="eager" />
           {/* 50% Left Dark Gradient: keeps text 100% legible while right half displays the building */}
           <div className="absolute inset-y-0 left-0 w-full sm:w-[60%] lg:w-[52%] bg-gradient-to-r from-black via-black/90 to-transparent z-10" />
           <div className="absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-black/60 to-transparent z-10" />

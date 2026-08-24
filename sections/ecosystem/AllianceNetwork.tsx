@@ -59,11 +59,10 @@ export function AllianceNetwork() {
 
         {/* Right Alliance Network Image */}
         <div className="relative w-full aspect-square max-w-[500px] mx-auto bg-zinc-950/20 border border-white/5 rounded-3xl p-6 backdrop-blur-md shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] flex items-center justify-center overflow-hidden group">
-          <img
-            src="/assets/ecosystem/main-page/alliances.png"
+          <img src="/assets/ecosystem/main-page/alliances.png"
             alt="Strategic Alliance Network"
             className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105"
-          />
+          loading="lazy" />
         </div>
 
       </div>

@@ -87,11 +87,10 @@ export function GlobalPresence() {
           <div className="flex items-center justify-center gap-4 mb-2 relative w-full">
             {/* Carrow-right.png arrow on the left side pointing to header */}
             <div className="absolute left-0 sm:left-4 md:-left-12 lg:-left-16 top-1/2 -translate-y-1/2 pointer-events-none select-none hidden sm:block">
-              <img
-                src="/assets/components/Carrow-right.png"
+              <img src="/assets/components/Carrow-right.png"
                 alt="Arrow indicator"
                 className="w-12 sm:w-16 md:w-20 lg:w-24 h-auto object-contain filter drop-shadow-[0_0_15px_rgba(244,63,94,0.4)]"
-              />
+              loading="lazy" />
             </div>
           </div>
 
@@ -110,12 +109,11 @@ export function GlobalPresence() {
 
             {/* Map image background with edge-to-edge display */}
             <div className="relative w-full h-[380px] sm:h-[500px] md:h-[600px] lg:h-[680px] overflow-hidden">
-              <img
-                src="/assets/Contact-page/map/image1.png"
+              <img src="/assets/Contact-page/map/image1.png"
                 alt="World map showing Devopstrio office locations"
                 className="w-full h-full object-cover sm:object-contain opacity-90"
                 draggable={false}
-              />
+              loading="lazy" />
 
               {/* Ambient radial lighting */}
               <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_50%,#030303_95%)] pointer-events-none" />
@@ -140,15 +138,14 @@ export function GlobalPresence() {
                   >
                     {/* Location Pin PNG Icon */}
                     <div className="relative flex items-center justify-center">
-                      <img
-                        src="/assets/components/location-pin.png"
+                      <img src="/assets/components/location-pin.png"
                         alt={`${loc.city} location pin`}
                         className={`relative z-10 transition-all duration-300 filter drop-shadow-[0_0_10px_rgba(244,63,94,0.7)] ${
                           isActive
                             ? "w-7 h-7 sm:w-8 sm:h-8 scale-110"
                             : "w-5 h-5 sm:w-6 sm:h-6 opacity-90 group-hover:opacity-100 group-hover:scale-110"
                         }`}
-                      />
+                      loading="lazy" />
                     </div>
 
                     {/* Label Pill */}

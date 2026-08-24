@@ -114,11 +114,10 @@ export function FloatingChatbot() {
             <div className="absolute left-[70%] top-1/2 -translate-y-1/2 px-4 py-2.5 bg-white text-zinc-950 text-xs sm:text-sm font-semibold rounded-2xl rounded-bl-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none shadow-[0_8px_30px_rgba(0,0,0,0.15)] border border-zinc-100/50 -translate-x-2 group-hover:translate-x-0 z-0">
               How can we assist you?
             </div>
-            <img 
-              src="/assets/bot/icon.png" 
+            <img src="/assets/bot/icon.png" 
               alt="Chat Bot" 
               className="w-24 h-24 md:w-28 md:h-28 object-contain drop-shadow-[0_15px_25px_rgba(0,0,0,0.6)] relative z-10" 
-            />
+            loading="lazy" />
           </motion.button>
         )}
       </AnimatePresence>
@@ -397,7 +396,7 @@ export function FloatingChatbot() {
                     <div className="p-4 pt-6 border-b border-zinc-800/60 bg-[#1a1b1e]/90 backdrop-blur-md flex items-center gap-3 sticky top-0 z-10">
                       <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-emerald-400 to-emerald-200 p-0.5 flex-shrink-0 shadow-[0_0_10px_rgba(52,211,153,0.2)]">
                         <div className="w-full h-full rounded-full bg-[#1a1b1e] flex items-center justify-center overflow-hidden">
-                          <img src="/assets/bot/icon.png" alt="Echo" className="w-6 h-6 object-contain" />
+                          <img src="/assets/bot/icon.png" alt="Echo" className="w-6 h-6 object-contain" loading="lazy" />
                         </div>
                       </div>
                       <div>
@@ -413,7 +412,7 @@ export function FloatingChatbot() {
                       {/* Intro Message */}
                       <div className="flex gap-3 max-w-[85%]">
                          <div className="w-8 h-8 rounded-full bg-zinc-800 flex-shrink-0 flex items-center justify-center border border-zinc-700 mt-1">
-                            <img src="/assets/bot/icon.png" alt="Echo" className="w-5 h-5 object-contain" />
+                            <img src="/assets/bot/icon.png" alt="Echo" className="w-5 h-5 object-contain" loading="lazy" />
                          </div>
                          <div className="bg-zinc-800 border border-zinc-700/50 rounded-2xl rounded-tl-sm p-4 text-sm text-zinc-300 leading-relaxed shadow-sm">
                            Hi! I'm Echo, Devopstrio's AI assistant. How can I help you accelerate your digital transformation today?
@@ -424,7 +423,7 @@ export function FloatingChatbot() {
                         <div key={idx} className={`flex gap-3 max-w-[85%] ${msg.role === "user" ? "ml-auto flex-row-reverse" : ""}`}>
                           {msg.role === "bot" && (
                             <div className="w-8 h-8 rounded-full bg-zinc-800 flex-shrink-0 flex items-center justify-center border border-zinc-700 mt-1">
-                              <img src="/assets/bot/icon.png" alt="Echo" className="w-5 h-5 object-contain" />
+                              <img src="/assets/bot/icon.png" alt="Echo" className="w-5 h-5 object-contain" loading="lazy" />
                             </div>
                           )}
                           <div className={`p-4 text-sm rounded-2xl leading-relaxed shadow-sm ${

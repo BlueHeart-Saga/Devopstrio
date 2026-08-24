@@ -68,7 +68,7 @@ export function PartnerLabs() {
                   <div className="text-rose-500 flex items-center justify-center">
                     {lab.icon}
                   </div>
-                  <img src={lab.logo} alt={lab.partner} className="h-5 w-auto object-contain" />
+                  <img src={lab.logo} alt={lab.partner} className="h-5 w-auto object-contain" loading="lazy" />
                 </div>
 
                 <h3 className="text-sm md:text-base font-bold text-white uppercase tracking-wider mb-2">{lab.title}</h3>

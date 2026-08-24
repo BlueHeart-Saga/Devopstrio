@@ -15,11 +15,10 @@ export const InternshipHero = () => {
   return (
     <section className="relative w-full min-h-[85vh] sm:min-h-screen bg-black text-white flex items-end justify-start overflow-hidden font-sans select-none pb-14 sm:pb-20 lg:pb-24">
       {/* Background Image */}
-      <img
-        src="/assets/About-page/hero/bg-intern.png"
+      <img src="/assets/About-page/hero/bg-intern.png"
         alt="Global Internship Program"
         className="absolute inset-0 w-full h-full object-cover object-center pointer-events-none scale-[1.01]"
-      />
+      loading="eager" />
 
       {/* Dark Gradient Overlays for Smooth Contrast & Navbar Blend */}
       <div className="absolute inset-0 bg-black/35 z-10 pointer-events-none" />
@@ -52,11 +51,10 @@ export const InternshipHero = () => {
             </div>
 
             {/* Animated GIF Icon */}
-            {/* <img
-              src="/assets/components/XOsX.gif"
+            {/* <img src="/assets/components/XOsX.gif"
               alt="Devopstrio Innovation GIF - Click to Join Our Team"
               className="w-20 h-20 sm:w-28 sm:h-28 lg:w-32 lg:h-32 object-contain rounded-2xl filter drop-shadow-[0_6px_25px_rgba(244,63,94,0.5)] group-hover:scale-110 group-hover:drop-shadow-[0_8px_35px_rgba(244,63,94,0.8)] transition-all duration-300"
-            /> */}
+            loading="eager" /> */}
           </div>
 
           {/* Quote Text */}

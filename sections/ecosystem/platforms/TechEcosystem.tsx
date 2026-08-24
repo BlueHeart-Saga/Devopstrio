@@ -89,11 +89,10 @@ export function TechEcosystem() {
                       className="flex items-center gap-3 bg-white/[0.015] border border-white/[0.03] rounded-xl px-3 py-2 hover:bg-white/[0.03] hover:border-white/[0.06] transition-all duration-300 group"
                     >
                       <div className="w-5 h-5 flex items-center justify-center flex-shrink-0 bg-black/40 rounded-md p-0.5 border border-white/[0.02]">
-                        <img
-                          src={item.iconPath}
+                        <img src={item.iconPath}
                           alt={item.name}
                           className="w-full h-full object-contain filter group-hover:brightness-110 transition-all duration-300"
-                        />
+                        loading="lazy" />
                       </div>
                       <span className="text-[11px] font-semibold text-zinc-300 group-hover:text-white transition-colors duration-300">
                         {item.name}

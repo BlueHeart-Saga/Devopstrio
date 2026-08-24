@@ -46,11 +46,10 @@ export function CareersHero() {
           {/* Right Column: Hero Illustration */}
           <div className="lg:col-span-5 flex items-center justify-center lg:justify-end z-10 w-full">
             <Reveal delay={0.2} className="w-full flex items-center justify-center lg:justify-end">
-              <img
-                src="/assets/herocard/careerspage.png"
+              <img src="/assets/herocard/careerspage.png"
                 alt="Global Careers Illustration"
                 className="w-full max-w-[320px] sm:max-w-[380px] lg:max-w-[460px] h-auto object-contain select-none"
-              />
+              loading="eager" />
             </Reveal>
           </div>
 

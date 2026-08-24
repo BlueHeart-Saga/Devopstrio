@@ -94,11 +94,10 @@ export function PartnersSection() {
           <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight mb-4 text-white relative inline-block">
             {/* Connecting side arrow starting right at left side of "Partnering for Innovation" */}
             <div className="absolute -top-2 sm:-top-4 md:-top-6 -left-4 sm:-left-28 md:-left-36 lg:-left-40 z-30 pointer-events-none select-none">
-              <img
-                src="/assets/components/top-to-buttom-side-Arrowmid.png"
+              <img src="/assets/components/top-to-buttom-side-Arrowmid.png"
                 alt="Connecting section arrow"
                 className="w-12 sm:w-20 md:w-24 lg:w-28 h-auto object-contain filter drop-shadow-[0_0_20px_rgba(225,29,72,0.4)] transform -rotate-[-30deg]"
-              />
+              loading="lazy" />
             </div>
             Partnering for <span className="text-rose-500 font-semibold">Innovation</span>
           </h2>

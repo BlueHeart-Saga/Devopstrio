@@ -1,21 +1,24 @@
 import React, { use } from "react";
 import { notFound } from "next/navigation";
+import dynamic from "next/dynamic";
 import { getServiceByCategory, getCapability } from "@/data/services";
 import { getHeroBgImage } from "@/lib/services-utils";
 import { Hero } from "@/components/services/Hero";
 import { SectionNavbar } from "@/components/ui/SectionNavbar";
 import { CapabilityOverview } from "@/sections/services/capability/CapabilityOverview";
-import { CapabilityProblem } from "@/sections/services/capability/CapabilityProblem";
-import { CapabilityUseCases } from "@/sections/services/capability/CapabilityUseCases";
-import { CapabilityOutcomes } from "@/sections/services/capability/CapabilityOutcomes";
-import { CapabilityArchitecture } from "@/sections/services/capability/CapabilityArchitecture";
-import { TechnologyStack } from "@/components/services/TechnologyStack";
-import { CapabilityBenefits } from "@/sections/services/capability/CapabilityBenefits";
-import { CapabilityIndustries } from "@/sections/services/capability/CapabilityIndustries";
-import { FAQ } from "@/components/services/FAQ";
 import { BreadcrumbSchema, ServiceSchema, FAQSchema } from "@/components/seo/Schemas";
-import { CTA } from "@/components/services/CTA";
-import { RelatedServices } from "@/components/services/RelatedServices";
+
+// Dynamic Imports for Heavy Below-The-Fold Sections to Reduce Initial JS Payload
+const CapabilityProblem = dynamic(() => import("@/sections/services/capability/CapabilityProblem").then((mod) => mod.CapabilityProblem));
+const CapabilityUseCases = dynamic(() => import("@/sections/services/capability/CapabilityUseCases").then((mod) => mod.CapabilityUseCases));
+const CapabilityOutcomes = dynamic(() => import("@/sections/services/capability/CapabilityOutcomes").then((mod) => mod.CapabilityOutcomes));
+const CapabilityArchitecture = dynamic(() => import("@/sections/services/capability/CapabilityArchitecture").then((mod) => mod.CapabilityArchitecture));
+const TechnologyStack = dynamic(() => import("@/components/services/TechnologyStack").then((mod) => mod.TechnologyStack));
+const CapabilityBenefits = dynamic(() => import("@/sections/services/capability/CapabilityBenefits").then((mod) => mod.CapabilityBenefits));
+const CapabilityIndustries = dynamic(() => import("@/sections/services/capability/CapabilityIndustries").then((mod) => mod.CapabilityIndustries));
+const FAQ = dynamic(() => import("@/components/services/FAQ").then((mod) => mod.FAQ));
+const CTA = dynamic(() => import("@/components/services/CTA").then((mod) => mod.CTA));
+const RelatedServices = dynamic(() => import("@/components/services/RelatedServices").then((mod) => mod.RelatedServices));
 
 interface PageProps {
   params: Promise<{ capability: string }>;

@@ -63,11 +63,10 @@ export const SuccessByService = () => {
             className="bg-zinc-950/90 border border-zinc-800 rounded-3xl overflow-hidden flex flex-col md:flex-row mb-8 group hover:border-rose-500/40 transition-all duration-300 shadow-2xl block"
           >
             <div className="w-full md:w-[55%] relative h-[300px] md:h-auto overflow-hidden bg-zinc-950 shrink-0">
-              <img 
-                src={featured.image || "/assets/common/464d8932bca4d6bb552ff2dcf2f3c5ca-1.png"} 
+              <img src={featured.image || "/assets/common/464d8932bca4d6bb552ff2dcf2f3c5ca-1.png"} 
                 alt={featured.title} 
                 className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-90" 
-              />
+              loading="lazy" />
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-zinc-950 md:block hidden" />
               <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-zinc-950 md:hidden block" />
             </div>
@@ -112,11 +111,10 @@ export const SuccessByService = () => {
               className="bg-zinc-950/80 border border-zinc-800 rounded-3xl overflow-hidden flex flex-col group hover:border-rose-500/40 transition-all duration-300 shadow-xl block"
             >
               <div className="relative h-[220px] w-full overflow-hidden bg-zinc-950 shrink-0">
-                <img 
-                  src={area.image || "/assets/common/90361fed0bb781d7c86e451995b4dbce-1.png"} 
+                <img src={area.image || "/assets/common/90361fed0bb781d7c86e451995b4dbce-1.png"} 
                   alt={area.title} 
                   className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-90" 
-                />
+                loading="lazy" />
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent to-zinc-950" />
                 
                 <div className="absolute top-4 right-4">

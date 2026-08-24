@@ -157,11 +157,10 @@ export function IndustryUseCases() {
                   <div>
                     {/* Double-bordered Image Frame with padding */}
                     <div className="relative w-full aspect-[16/10] rounded-[16px] border border-white/10 p-0.5 bg-zinc-950 overflow-hidden group-hover:border-rose-500/20 transition-all duration-300 mb-6">
-                      <img
-                        src={uc.image}
+                      <img src={uc.image}
                         alt={uc.title}
                         className="w-full h-full object-cover rounded-[14px] transition-transform duration-700 group-hover:scale-[1.03] select-none pointer-events-none"
-                      />
+                      loading="lazy" />
                     </div>
 
                     {/* Industry Tag */}

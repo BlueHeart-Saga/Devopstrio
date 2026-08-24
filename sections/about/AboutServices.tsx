@@ -145,11 +145,10 @@ export function AboutServices() {
                 <div className="flex flex-col flex-1">
                   {/* Top Image */}
                   <div className="relative w-full aspect-[2/1] rounded-[16px] overflow-hidden mb-5 bg-zinc-900 border border-zinc-800/50">
-                    <img
-                      src={item.image}
+                    <img src={item.image}
                       alt={item.name}
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
-                    />
+                    loading="lazy" />
                   </div>
 
                   <div className="px-3 flex flex-col flex-1">

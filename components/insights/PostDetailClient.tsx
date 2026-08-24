@@ -152,7 +152,7 @@ export function PostDetailClient({ post, relatedPosts, categorySlug, postId }: P
 
               {post.image && (
                 <div className="h-64 md:h-[450px] w-full rounded-3xl overflow-hidden border border-zinc-900 bg-zinc-950 mb-10 relative shadow-2xl">
-                  <img src={post.image} alt={post.title} className="w-full h-full object-cover" />
+                  <img src={post.image} alt={post.title} className="w-full h-full object-cover" loading="lazy" />
                 </div>
               )}
 
@@ -228,7 +228,7 @@ export function PostDetailClient({ post, relatedPosts, categorySlug, postId }: P
                       >
                         <div className="w-24 h-16 rounded-xl overflow-hidden shrink-0 bg-zinc-900 relative border border-zinc-800 group-hover:border-zinc-600 transition-colors">
                           {r.image ? (
-                            <img src={r.image} alt={r.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                            <img src={r.image} alt={r.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy" />
                           ) : (
                             <div className="w-full h-full bg-gradient-to-tr from-rose-950/20 to-purple-950/10 flex items-center justify-center">
                               <BookOpen size={16} className="text-rose-500/20" />
@@ -357,7 +357,7 @@ function BlockRenderer({
     case "image":
       return (
         <figure className="my-10 rounded-[28px] overflow-hidden border border-white/5 bg-zinc-950 p-3 shadow-2xl">
-          <img src={data.url || `https://mediahub-backend-docker-hgh6hzgacraqbhb2.southindia-01.azurewebsites.net/api/images/${data.file_id}`} alt={data.alt || "CMS Image"} className="w-full rounded-[20px] object-contain max-h-[500px]" />
+          <img src={data.url || `https://mediahub-backend-docker-hgh6hzgacraqbhb2.southindia-01.azurewebsites.net/api/images/${data.file_id}`} alt={data.alt || "CMS Image"} className="w-full rounded-[20px] object-contain max-h-[500px]" loading="lazy" />
           {data.alt && <figcaption className="text-center text-[10px] text-zinc-450 mt-3 font-mono uppercase tracking-wider">{data.alt}</figcaption>}
         </figure>
       );

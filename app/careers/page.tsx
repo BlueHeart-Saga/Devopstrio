@@ -2,23 +2,26 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import dynamic from "next/dynamic";
 import { MapPin, Briefcase, X, Send, Check } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
 
 import { CareersHero } from "@/sections/careers/CareersHero";
-import { Careers3Pillars } from "@/sections/careers/Careers3Pillars";
-import { CareersIntroBanner } from "@/sections/careers/CareersIntroBanner";
-import { WhyJoin } from "@/sections/careers/WhyJoin";
-import { LifeAtDevopstrio } from "@/sections/careers/LifeAtDevopstrio";
-import { CoreValues } from "@/sections/careers/CoreValues";
-import { LearningGrowth } from "@/sections/careers/LearningGrowth";
-import { PerksBenefits } from "@/sections/careers/PerksBenefits";
-import { CareersPresence } from "@/sections/careers/CareersPresence";
-import { OpenPositions } from "@/sections/careers/OpenPositions";
-import { HiringProcess } from "@/sections/careers/HiringProcess";
-import { EmployeeStories } from "@/sections/careers/EmployeeStories";
 import { Job } from "@/sections/careers/careersData";
-import { RepresentativeCTA } from "@/components/ui/RepresentativeCTA";
+
+// Dynamic Imports for Heavy Below-The-Fold Sections to Reduce Initial JS Payload
+const Careers3Pillars = dynamic(() => import("@/sections/careers/Careers3Pillars").then((mod) => mod.Careers3Pillars));
+const CareersIntroBanner = dynamic(() => import("@/sections/careers/CareersIntroBanner").then((mod) => mod.CareersIntroBanner));
+const WhyJoin = dynamic(() => import("@/sections/careers/WhyJoin").then((mod) => mod.WhyJoin));
+const LifeAtDevopstrio = dynamic(() => import("@/sections/careers/LifeAtDevopstrio").then((mod) => mod.LifeAtDevopstrio));
+const CoreValues = dynamic(() => import("@/sections/careers/CoreValues").then((mod) => mod.CoreValues));
+const LearningGrowth = dynamic(() => import("@/sections/careers/LearningGrowth").then((mod) => mod.LearningGrowth));
+const PerksBenefits = dynamic(() => import("@/sections/careers/PerksBenefits").then((mod) => mod.PerksBenefits));
+const CareersPresence = dynamic(() => import("@/sections/careers/CareersPresence").then((mod) => mod.CareersPresence));
+const OpenPositions = dynamic(() => import("@/sections/careers/OpenPositions").then((mod) => mod.OpenPositions));
+const HiringProcess = dynamic(() => import("@/sections/careers/HiringProcess").then((mod) => mod.HiringProcess));
+const EmployeeStories = dynamic(() => import("@/sections/careers/EmployeeStories").then((mod) => mod.EmployeeStories));
+const RepresentativeCTA = dynamic(() => import("@/components/ui/RepresentativeCTA").then((mod) => mod.RepresentativeCTA));
 
 export default function CareersPage() {
   const [activeJob, setActiveJob] = useState<Job | null>(null);

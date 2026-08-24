@@ -173,7 +173,7 @@ export default function DevOpsPlatformPage() {
                 ].map((src, i) => (
                   <div key={i} className={`rounded-full border-4 border-[#030303] bg-zinc-800 flex items-center justify-center overflow-hidden shadow-2xl transition-transform hover:-translate-y-2 duration-300
                     ${i === 2 ? 'w-24 h-24 z-30 ring-2 ring-rose-500/50' : i === 1 || i === 3 ? 'w-20 h-20 z-20 opacity-90' : 'w-16 h-16 z-10 opacity-70'}`}>
-                    <img src={src} alt={`Team member ${i}`} className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" />
+                    <img src={src} alt={`Team member ${i}`} className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" loading="lazy" />
                   </div>
                 ))}
               </div>
@@ -420,7 +420,7 @@ export default function DevOpsPlatformPage() {
                   "Datadog.svg", "New_Relic.svg", "Elastic.svg", "PagerDuty.svg", "Snowflake.svg"
                 ].map((logo, i) => (
                   <Reveal key={i} delay={i * 0.03} className="w-full aspect-square bg-[#0a0a0a] border border-zinc-800 rounded-[0.8rem] flex items-center justify-center p-3 md:p-4 hover:border-rose-500/50 hover:bg-rose-500/10 transition-all shadow-md group">
-                    <img src={`/assets/Tech_logos/${logo}`} alt={logo.replace('.svg', '')} className="w-full h-full object-contain filter brightness-90 group-hover:brightness-110 group-hover:scale-110 transition-all duration-300" />
+                    <img src={`/assets/Tech_logos/${logo}`} alt={logo.replace('.svg', '')} className="w-full h-full object-contain filter brightness-90 group-hover:brightness-110 group-hover:scale-110 transition-all duration-300" loading="lazy" />
                   </Reveal>
                 ))}
               </div>
@@ -442,11 +442,11 @@ export default function DevOpsPlatformPage() {
                 <div className="bg-[#0a0a0a]/90 backdrop-blur-md border border-zinc-700/80 rounded-2xl p-4 flex flex-col items-center gap-4 relative z-20 shadow-[0_0_50px_rgba(168,85,247,0.15)]">
                   {/* Small mini icons inside destination */}
                   <div className="flex items-center gap-3 opacity-50">
-                    <img src="/assets/Tech_logos/AWS.svg" className="w-4 h-4 md:w-5 md:h-5 object-contain grayscale" alt="AWS" />
-                    <img src="/assets/Tech_logos/GitHub.svg" className="w-4 h-4 md:w-5 md:h-5 object-contain grayscale" alt="GitHub" />
-                    <img src="/assets/Tech_logos/Docker.svg" className="w-4 h-4 md:w-5 md:h-5 object-contain grayscale" alt="Docker" />
-                    <img src="/assets/Tech_logos/Datadog.svg" className="w-4 h-4 md:w-5 md:h-5 object-contain grayscale" alt="Datadog" />
-                    <img src="/assets/Tech_logos/Service_now.svg" className="w-4 h-4 md:w-5 md:h-5 object-contain grayscale" alt="ServiceNow" />
+                    <img src="/assets/Tech_logos/AWS.svg" className="w-4 h-4 md:w-5 md:h-5 object-contain grayscale" alt="AWS" loading="lazy" />
+                    <img src="/assets/Tech_logos/GitHub.svg" className="w-4 h-4 md:w-5 md:h-5 object-contain grayscale" alt="GitHub" loading="lazy" />
+                    <img src="/assets/Tech_logos/Docker.svg" className="w-4 h-4 md:w-5 md:h-5 object-contain grayscale" alt="Docker" loading="lazy" />
+                    <img src="/assets/Tech_logos/Datadog.svg" className="w-4 h-4 md:w-5 md:h-5 object-contain grayscale" alt="Datadog" loading="lazy" />
+                    <img src="/assets/Tech_logos/Service_now.svg" className="w-4 h-4 md:w-5 md:h-5 object-contain grayscale" alt="ServiceNow" loading="lazy" />
                   </div>
                   <div className="w-full flex items-center gap-4 bg-zinc-900/80 p-3 rounded-[1rem] border border-zinc-800">
                     <div className="w-12 h-12 rounded-xl bg-rose-600 flex items-center justify-center shrink-0 shadow-[0_0_20px_rgba(168,85,247,0.4)]">
@@ -589,7 +589,7 @@ export default function DevOpsPlatformPage() {
               ].map((item, i) => (
                 <Reveal key={i} delay={i * 0.1} className="flex flex-col items-center group">
                   <div className="w-12 h-12 md:w-16 md:h-16 rounded-[1rem] bg-[#0a0a0a] border border-zinc-800 shadow-[0_0_15px_rgba(255,255,255,0.02)] flex items-center justify-center p-3 md:p-4 relative z-20 group-hover:border-rose-500/50 group-hover:shadow-[0_0_25px_rgba(244,63,94,0.25)] transition-all duration-300">
-                    <img src={`/assets/Tech_logos/${item.logo}`} alt={item.name} className="w-full h-full object-contain filter brightness-90 group-hover:brightness-110 group-hover:scale-110 transition-all duration-300" />
+                    <img src={`/assets/Tech_logos/${item.logo}`} alt={item.name} className="w-full h-full object-contain filter brightness-90 group-hover:brightness-110 group-hover:scale-110 transition-all duration-300" loading="lazy" />
                   </div>
                 </Reveal>
               ))}
@@ -859,9 +859,9 @@ export default function DevOpsPlatformPage() {
                   </div>
                   <div className="hidden md:flex w-1/2 pl-16 items-center">
                     <div className="flex gap-4 opacity-50 grayscale group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500 bg-zinc-950 border border-zinc-900 p-3 rounded-2xl">
-                      <img src="/assets/Tech_logos/AWS.svg" className="w-8 h-8 object-contain" alt="AWS" />
-                      <img src="/assets/Tech_logos/Microsoft-Azure.svg" className="w-8 h-8 object-contain" alt="Azure" />
-                      <img src="/assets/Tech_logos/Google_Cloud.svg" className="w-8 h-8 object-contain" alt="GCP" />
+                      <img src="/assets/Tech_logos/AWS.svg" className="w-8 h-8 object-contain" alt="AWS" loading="lazy" />
+                      <img src="/assets/Tech_logos/Microsoft-Azure.svg" className="w-8 h-8 object-contain" alt="Azure" loading="lazy" />
+                      <img src="/assets/Tech_logos/Google_Cloud.svg" className="w-8 h-8 object-contain" alt="GCP" loading="lazy" />
                     </div>
                   </div>
                 </div>

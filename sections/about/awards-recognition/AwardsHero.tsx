@@ -10,11 +10,10 @@ export function AwardsHero() {
       {/* Normal Full-Brightness Background Image */}
       <div className="absolute inset-0 z-0 pointer-events-none select-none">
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img 
-          src="/assets/About-page/leadership/hero.png" 
+        <img src="/assets/About-page/leadership/hero.png" 
           alt="Awards Background"
           className="w-full h-full object-cover object-center opacity-100"
-        />
+        loading="eager" />
         
         {/* Subtle top & bottom edge gradients for navbar integration */}
         <div className="absolute inset-0 bg-gradient-to-b from-[#030303]/70 via-transparent to-[#030303]/90 z-10" />

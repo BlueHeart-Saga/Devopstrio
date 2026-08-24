@@ -484,7 +484,7 @@ const TechnologyStack = () => {
             <Reveal key={idx} delay={idx * 0.03}>
               <div className="p-4 bg-zinc-950/20 border border-zinc-900 rounded-xl flex flex-col items-center justify-center text-center h-28 hover:border-zinc-800 transition-all duration-300 group">
                 {item.src ? (
-                  <img src={item.src} alt={item.name} className="h-7 object-contain mb-3 grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300" />
+                  <img src={item.src} alt={item.name} className="h-7 object-contain mb-3 grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300" loading="lazy" />
                 ) : (
                   <div className="w-8 h-8 rounded-lg bg-zinc-900 border border-zinc-800 flex items-center justify-center mb-3">
                     <ShieldCheck className="w-4 h-4 text-rose-500" />
@@ -707,11 +707,10 @@ const IndustryUseCases = () => {
             <Reveal className="h-full">
               <div className="relative overflow-hidden rounded-3xl h-full flex flex-col justify-end p-8 bg-zinc-900 border border-zinc-800 shadow-[0_8px_32px_0_rgba(0,0,0,0.5)] group">
                 <div className="absolute inset-0 z-0">
-                  <img
-                    src="/assets/industry_case_cover.png"
+                  <img src="/assets/industry_case_cover.png"
                     alt="Layered security cover"
                     className="w-full h-full object-cover opacity-25 group-hover:scale-105 transition-transform duration-750"
-                  />
+                  loading="lazy" />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#030303] via-[#030303]/60 to-transparent" />
                 </div>
 

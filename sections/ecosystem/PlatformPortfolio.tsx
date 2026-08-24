@@ -105,11 +105,10 @@ export function PlatformPortfolio() {
                   {/* Logo Header Container */}
                   <div className="flex items-center justify-between mb-4 mt-2">
                     <div className="h-8 relative flex items-center">
-                      <img
-                        src={prod.logo}
+                      <img src={prod.logo}
                         alt={prod.name}
                         className="h-7 w-auto object-contain brightness-0 invert opacity-90 group-hover/card:opacity-100 transition-all duration-300"
-                      />
+                      loading="lazy" />
                     </div>
                     <ArrowUpRight size={18} className="text-zinc-500 group-hover/card:text-rose-400 transition-all duration-300" />
                   </div>

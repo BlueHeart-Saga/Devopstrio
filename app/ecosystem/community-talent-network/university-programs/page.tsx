@@ -127,11 +127,10 @@ export default function UniversityProgramsPage() {
             {/* Left Large Image */}
             <div className="lg:col-span-6 relative">
               <div className="relative rounded-[24px] overflow-hidden border border-zinc-800 shadow-2xl bg-zinc-900 group">
-                <img
-                  src="/assets/common/e76e125035885aab9c9070ce85df239e-1.png"
+                <img src="/assets/common/e76e125035885aab9c9070ce85df239e-1.png"
                   alt="Students working in Devopstrio engineering labs"
                   className="w-full h-[420px] object-cover group-hover:scale-105 transition-transform duration-500"
-                />
+                loading="lazy" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
                 <div className="absolute bottom-6 left-6 right-6 p-4 rounded-xl bg-black/80 backdrop-blur-sm border border-zinc-800 text-xs font-mono text-zinc-300">
                   <span className="text-rose-400 font-bold">✓ Industry-Academia Bridge</span> &bull; Hands-on Cloud & AI Engineering Sandbox
@@ -338,11 +337,10 @@ export default function UniversityProgramsPage() {
 
             <div className="lg:col-span-6">
               <div className="rounded-[24px] overflow-hidden border border-zinc-800 shadow-2xl bg-zinc-950 group">
-                <img
-                  src="/assets/common/37b9b888cc479ea7b74d2d9a05c37597-1.png"
+                <img src="/assets/common/37b9b888cc479ea7b74d2d9a05c37597-1.png"
                   alt="Faculty and engineers discussing architecture"
                   className="w-full h-[360px] object-cover group-hover:scale-105 transition-transform duration-500"
-                />
+                loading="lazy" />
                 <div className="p-4 bg-black/80 backdrop-blur-sm border-t border-zinc-800 text-xs font-mono text-zinc-300 flex justify-between items-center">
                   <span>Faculty & Engineer Architecture Review</span>
                   <span className="text-rose-400 font-bold">Devopstrio Campus Hub</span>
@@ -488,7 +486,7 @@ export default function UniversityProgramsPage() {
             ].map((lab, idx) => (
               <div key={idx} className="p-4 rounded-[20px] bg-[#0A0A0A] border border-zinc-800/80 hover:border-rose-500/50 transition-all space-y-3 group">
                 <div className="h-32 rounded-xl overflow-hidden relative">
-                  <img src={lab.img} alt={lab.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                  <img src={lab.img} alt={lab.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy" />
                   <div className="absolute inset-0 bg-black/40" />
                 </div>
                 <h4 className="text-xs font-bold text-white group-hover:text-rose-400 transition-colors">{lab.name}</h4>
@@ -566,7 +564,7 @@ export default function UniversityProgramsPage() {
             ].map((mentor, idx) => (
               <Reveal key={idx} delay={idx * 0.05}>
                 <div className="p-6 rounded-[24px] bg-[#0A0A0A] border border-zinc-800/80 hover:border-rose-500/50 transition-all flex items-center gap-4 group">
-                  <img src={mentor.img} alt={mentor.name} className="w-16 h-16 rounded-2xl object-cover border border-zinc-700 shrink-0" />
+                  <img src={mentor.img} alt={mentor.name} className="w-16 h-16 rounded-2xl object-cover border border-zinc-700 shrink-0" loading="lazy" />
                   <div>
                     <h4 className="text-base font-bold text-white group-hover:text-rose-400 transition-colors">{mentor.name}</h4>
                     <p className="text-xs text-rose-400 font-mono">{mentor.exp}</p>

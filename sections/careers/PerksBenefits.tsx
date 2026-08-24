@@ -87,11 +87,10 @@ export function PerksBenefits() {
                 <span className="relative inline-block">
                   {/* Arrow image placed directly near Grow word */}
                   <div className="absolute -top-10 -left-20 pointer-events-none select-none hidden sm:block">
-                    <img
-                      src="/assets/components/lefttoright.png"
+                    <img src="/assets/components/lefttoright.png"
                       alt="Arrow indicator"
                       className="w-12 sm:w-14 h-auto object-contain filter drop-shadow-[0_0_15px_rgba(244,63,94,0.4)]"
-                    />
+                    loading="lazy" />
                   </div>
 
                   <span className="bg-rose-500 text-white font-semibold px-4 py-1 mr-1 rounded-xl inline-block">
@@ -135,11 +134,10 @@ export function PerksBenefits() {
             >
               {/* Image Box Container */}
               <div className="w-full h-[320px] sm:h-[360px] rounded-2xl overflow-hidden relative shadow-xl bg-zinc-950 border border-zinc-800/80">
-                <img
-                  src={ben.image}
+                <img src={ben.image}
                   alt={ben.name}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 filter brightness-95 group-hover:brightness-100"
-                />
+                loading="lazy" />
               </div>
 
               {/* 50% Inside / 50% Outside Floating White Card Overlay */}

@@ -194,11 +194,10 @@ export const TechnologyExpertise = () => {
                 className="group relative flex flex-col items-center justify-center gap-2.5 p-4 bg-zinc-900/30 backdrop-blur-md border border-zinc-800/40 rounded-xl text-center transition-all duration-500 hover:-translate-y-0.5 shadow-[0_8px_25px_rgba(0,0,0,0.4)] hover:shadow-[0_15px_40px_rgba(244,63,94,0.08)] hover:border-rose-500/30 cursor-pointer min-h-[110px]"
               >
                 <div className="w-9 h-9 flex items-center justify-center transition-all duration-500 relative overflow-hidden">
-                  <img
-                    src={tool.iconPath}
+                  <img src={tool.iconPath}
                     alt={tool.name}
                     className="w-6.5 h-6.5 object-contain opacity-100 filter brightness-110 contrast-110 transition-all duration-500 group-hover:scale-110"
-                  />
+                  loading="lazy" />
                 </div>
 
                 <div className="relative z-10">
@@ -236,11 +235,10 @@ export const TechnologyExpertise = () => {
                     className="group flex items-center gap-3 w-48 h-12 px-3.5 bg-zinc-900/30 backdrop-blur-sm border border-zinc-800/40 rounded-md hover:border-rose-500/20 hover:bg-zinc-900/50 transition-all duration-300 shadow-[0_2px_10px_rgba(0,0,0,0.4)] shrink-0"
                   >
                     <div className="w-8 h-8 flex items-center justify-center shrink-0">
-                      <img
-                        src={tool.iconPath}
+                      <img src={tool.iconPath}
                         alt={tool.name}
                         className="w-8 h-8 object-contain opacity-100 filter brightness-110 contrast-110 transition-all duration-300 group-hover:scale-105"
-                      />
+                      loading="lazy" />
                     </div>
                     <span className="text-[11px] font-bold text-zinc-300 group-hover:text-rose-500 transition-colors truncate">
                       {tool.name}
@@ -259,11 +257,10 @@ export const TechnologyExpertise = () => {
                     className="group flex items-center gap-3 w-48 h-12 px-3.5 bg-zinc-900/30 backdrop-blur-sm border border-zinc-800/40 rounded-md hover:border-rose-500/20 hover:bg-zinc-900/50 transition-all duration-300 shadow-[0_2px_10px_rgba(0,0,0,0.4)] shrink-0"
                   >
                     <div className="w-8 h-8 flex items-center justify-center shrink-0">
-                      <img
-                        src={tool.iconPath}
+                      <img src={tool.iconPath}
                         alt={tool.name}
                         className="w-8 h-8 object-contain opacity-100 filter brightness-110 contrast-110 transition-all duration-300 group-hover:scale-105"
-                      />
+                      loading="lazy" />
                     </div>
                     <span className="text-[11px] font-bold text-zinc-300 group-hover:text-rose-500 transition-colors truncate">
                       {tool.name}

@@ -160,11 +160,10 @@ export function AIStudioShowcase() {
             <div className="relative inline-block">
               {/* Arrow image on the left side (White color filter) */}
               <div className="absolute -top-6 sm:-top-8 md:-top-9 -left-6 sm:-left-10 md:-left-14 z-20 pointer-events-none select-none">
-                <img
-                  src="/assets/components/left-right.png"
+                <img src="/assets/components/left-right.png"
                   alt="Left-Right Arrow indicator"
                   className="w-8 sm:w-11 md:w-14 h-auto object-contain filter brightness-0 invert opacity-75 drop-shadow-[0_0_10px_rgba(255,255,255,0.25)]"
-                />
+                loading="lazy" />
               </div>
 
               <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight text-white mb-6 font-sans leading-relaxed flex flex-wrap items-center justify-center gap-x-3">
@@ -219,19 +218,12 @@ export function AIStudioShowcase() {
                       : "lg:flex-1 bg-[#08080a]/90 hover:bg-[#0d0d10] p-4 sm:p-5 min-h-[70px] lg:min-h-0"
                   }`}
                 >
-                  {/* Microsoft Fluent Ambient Mesh Light Glow & Image Layer (Active state only) */}
+                  {/* Microsoft Fluent Ambient Mesh Light Glow (Active state only) */}
                   {isActive && (
                     <>
                       {/* Ambient Mesh Glow Orbs */}
                       <div className={`absolute -top-16 -right-16 w-72 h-72 rounded-full blur-3xl opacity-50 pointer-events-none ${service.meshGlow}`} />
                       <div className={`absolute -bottom-20 -left-20 w-64 h-64 rounded-full blur-3xl opacity-30 pointer-events-none ${service.meshGlow}`} />
-
-                      {/* Image Backdrop */}
-                      <div
-                        className="absolute inset-0 bg-cover bg-center opacity-25 filter blur-sm pointer-events-none transition-all duration-700"
-                        style={{ backgroundImage: `url(${service.image})` }}
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#030408] via-[#030408]/80 to-transparent pointer-events-none" />
                     </>
                   )}
 
@@ -248,11 +240,11 @@ export function AIStudioShowcase() {
                         <div className="flex items-center gap-3.5">
                           {/* Floating Animated GIF Icon (Full Colorful when Active) */}
                           <div className="w-10 h-10 sm:w-12 sm:h-12 shrink-0 flex items-center justify-center">
-                            <img
-                              src={service.icon}
+                            <img src={service.icon}
                               alt={`${service.title} icon`}
-                              className="w-full h-full object-contain filter-none drop-shadow-[0_0_16px_rgba(244,63,94,0.8)] transition-transform duration-300 group-hover:scale-110"
-                            />
+                              loading="lazy"
+                              decoding="async"
+                              className="w-full h-full object-contain filter-none drop-shadow-[0_0_16px_rgba(244,63,94,0.8)] transition-transform duration-300 group-hover:scale-110" />
                           </div>
                           <div>
                             <h3 className="text-xl sm:text-2xl font-semibold text-white tracking-tight">
@@ -284,11 +276,11 @@ export function AIStudioShowcase() {
                     <div className="h-full flex flex-row lg:flex-col items-center justify-between z-10 py-1 px-2 lg:py-4">
                       {/* Floating Animated GIF Icon (Monochrome when inactive, Colorful on hover) */}
                       <div className="w-9 h-9 sm:w-11 sm:h-11 shrink-0 flex items-center justify-center">
-                        <img
-                          src={service.icon}
+                        <img src={service.icon}
                           alt={`${service.title} icon`}
-                          className="w-full h-full object-contain filter brightness-0 invert opacity-75 group-hover:filter-none group-hover:opacity-100 group-hover:drop-shadow-[0_0_14px_rgba(244,63,94,0.85)] group-hover:scale-110 transition-all duration-300"
-                        />
+                          loading="lazy"
+                          decoding="async"
+                          className="w-full h-full object-contain filter brightness-0 invert opacity-75 group-hover:filter-none group-hover:opacity-100 group-hover:drop-shadow-[0_0_14px_rgba(244,63,94,0.85)] group-hover:scale-110 transition-all duration-300" />
                       </div>
 
                       {/* Vertical Rotated Title on Desktop */}

@@ -488,12 +488,11 @@ export function BrochureFlipBook({
                 <FlipPage key={`pdf_page_${index + 1}`} isCover={index === 0 || index === pages.length - 1}>
                   <div className="w-full h-full relative flex items-center justify-center bg-white overflow-hidden">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                      src={pageDataUrl}
+                    <img src={pageDataUrl}
                       alt={`${pdfTitle} - Page ${index + 1}`}
                       className="w-full h-full object-contain pointer-events-none select-none"
                       draggable={false}
-                    />
+                    loading="lazy" />
                   </div>
                 </FlipPage>
               ))}

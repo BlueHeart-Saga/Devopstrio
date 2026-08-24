@@ -59,13 +59,12 @@ export function LearningGrowth() {
               <span className="text-xs font-semibold tracking-wider uppercase text-zinc-200 group-hover:text-rose-400">
                 {isOpen ? "Hide Entry Levels" : "View Entry Levels"}
               </span>
-              <img
-                src="/assets/components/linearrow.png"
+              <img src="/assets/components/linearrow.png"
                 alt="Toggle arrow"
                 className={`w-5 h-5 object-contain filter drop-shadow-[0_0_8px_rgba(244,63,94,0.5)] transition-transform duration-300 ${
                   isOpen ? "rotate-180" : "rotate-0"
                 }`}
-              />
+              loading="lazy" />
             </button>
           </div>
         </Reveal>
@@ -95,11 +94,10 @@ export function LearningGrowth() {
                       </div>
 
                       <div className="w-full overflow-hidden rounded-2xl border border-zinc-800/80 shadow-2xl bg-zinc-950 group">
-                        <img
-                          src={level.img}
+                        <img src={level.img}
                           alt={level.title}
                           className="w-full h-[260px] sm:h-[360px] md:h-[440px] object-cover transition-transform duration-700 group-hover:scale-[1.03]"
-                        />
+                        loading="lazy" />
                       </div>
                     </Reveal>
                   </div>

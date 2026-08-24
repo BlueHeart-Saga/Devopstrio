@@ -140,11 +140,10 @@ export function StrategicAlliances() {
                 >
                   <div className="bg-zinc-950/40 border border-zinc-900/60 p-10 rounded-3xl relative overflow-hidden flex flex-col items-center justify-center min-h-[300px]">
                     <div className="absolute top-0 right-0 w-[200px] h-[200px] bg-rose-600/[0.015] blur-[80px] rounded-full pointer-events-none" />
-                    <img
-                      src={alliance.logo}
+                    <img src={alliance.logo}
                       alt={alliance.name}
                       className="h-20 w-auto object-contain brightness-95 mb-6 filter drop-shadow-[0_0_15px_rgba(255,255,255,0.05)]"
-                    />
+                    loading="lazy" />
                     <span className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-2">
                       AUTHORIZED PARTNER
                     </span>

@@ -62,11 +62,10 @@ export function StrategicPartnerships() {
                   Credibility
                 </span>
                 {/* Curved top-to-bottom side arrow image positioned directly AFTER Credibility */}
-                <img
-                  src="/assets/components/top-to-buttom-side-Arrowmid.png"
+                <img src="/assets/components/top-to-buttom-side-Arrowmid.png"
                   alt="Side arrow pointing down"
                   className="absolute -bottom-14 sm:-bottom-20 md:-bottom-24 -right-8 sm:-right-12 md:-right-16 scale-x-[-1] w-10 sm:w-14 md:w-16 lg:w-18 h-auto object-contain filter drop-shadow-[0_0_15px_rgba(244,63,94,0.5)] pointer-events-none select-none z-20"
-                />
+                loading="lazy" />
               </span>
             </h2>
           </Reveal>
@@ -86,11 +85,11 @@ export function StrategicPartnerships() {
                   <Reveal key={i} delay={i * 0.1}>
                     <div className="group relative overflow-hidden rounded-2xl border border-zinc-800/80 bg-zinc-950/70 backdrop-blur-xl p-6 hover:border-rose-500/50 hover:bg-zinc-900/70 transition-all duration-300 h-32 sm:h-36 flex items-center justify-center cursor-pointer shadow-xl">
                       {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img
-                        src={partner.logo}
+                      <img src={partner.logo}
                         alt={partner.name}
                         className="max-w-[80%] max-h-[75%] object-contain select-none transition-all duration-300 group-hover:scale-105 filter contrast-105"
-                        onError={(e) => { e.currentTarget.style.display = 'none' }}
+                        loading="lazy"
+                        onError={(e) => { e.currentTarget.style.display = 'none'; }}
                       />
                     </div>
                   </Reveal>

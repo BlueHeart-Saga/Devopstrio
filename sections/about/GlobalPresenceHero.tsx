@@ -16,11 +16,10 @@ export const GlobalPresenceHero = () => {
     <section className="relative min-h-screen flex items-end justify-start overflow-hidden bg-black text-white pb-24 md:pb-28">
       {/* Cinematic Background Image */}
       <div className="absolute inset-0 z-0 pointer-events-none select-none">
-        <img 
-          src="/assets/About-page/global-presence-hero.png" 
+        <img src="/assets/About-page/global-presence-hero.png" 
           alt="Devopstrio Global Presence"
           className="w-full h-full object-cover object-center"
-        />
+        loading="eager" />
         {/* Deep cinematic gradients matching the leadership pattern */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/95 via-black/60 to-transparent z-10" />
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/95 z-10" />

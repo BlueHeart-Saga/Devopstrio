@@ -91,8 +91,7 @@ export function CompanyOverviewPillars() {
                 >
                   {/* Background Image Reveal (Commented out per user request) */}
                   {/* <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
-                    <img
-                      src="/assets/About-page/card/singlecardto3.png"
+                    <img src="/assets/About-page/card/singlecardto3.png"
                       alt={pillar.title}
                       style={{
                         width: "300%",
@@ -102,7 +101,7 @@ export function CompanyOverviewPillars() {
                       className={`h-full object-cover object-center transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
                         isHovered ? "opacity-90 scale-105 filter brightness-105" : "opacity-0 scale-100"
                       }`}
-                    />
+                    loading="lazy" />
                     <div
                       className={`absolute inset-0 bg-gradient-to-t from-black/95 via-black/60 to-black/40 transition-opacity duration-700 ${
                         isHovered ? "opacity-100" : "opacity-0"

@@ -79,11 +79,10 @@ export function EngineeringPrinciples() {
                 <div>
                   {/* Top Image Banner Container */}
                   <div className="relative w-full h-[180px] rounded-[16px] overflow-hidden bg-zinc-900/60 mb-6 border border-zinc-800/40">
-                    <img
-                      src={pr.image}
+                    <img src={pr.image}
                       alt={pr.title}
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-103 filter brightness-[0.8] group-hover:brightness-[0.9]"
-                    />
+                    loading="lazy" />
                     <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/80 via-zinc-950/20 to-transparent" />
                   </div>
 

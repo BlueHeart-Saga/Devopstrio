@@ -146,12 +146,11 @@ export const GlobalSupportNetwork = () => {
           className="relative w-full mb-16"
         >
           <div className="relative w-full" style={{ paddingBottom: "38%" }}>
-            <img
-              src="/assets/Contact-page/map/image1.png"
+            <img src="/assets/Contact-page/map/image1.png"
               alt="World map showing Devopstrio office locations"
               className="absolute inset-0 w-full h-full object-contain opacity-60"
               draggable={false}
-            />
+            loading="lazy" />
 
             {/* Dark vignette overlay at edges */}
             <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_40%,#0A0A0A_100%)] pointer-events-none" />

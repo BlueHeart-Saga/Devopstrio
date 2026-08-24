@@ -268,14 +268,13 @@ export function TechCapabilities() {
 
               {/* Dynamic Abstract Background Image for Left Card */}
               {pillars.map((p) => (
-                <img
-                  key={p.id}
+                <img key={p.id}
                   src={pillarBgImages[p.id]}
                   alt=""
                   className={`absolute inset-0 w-full h-full object-cover mix-blend-screen pointer-events-none transition-opacity duration-700 ease-in-out ${
                     activeTab === p.id ? "opacity-35" : "opacity-0"
                   }`}
-                />
+                loading="lazy" />
               ))}
 
               {/* Card top details */}

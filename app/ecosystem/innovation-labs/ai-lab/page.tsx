@@ -574,7 +574,7 @@ export default function AIInnovationLabPage() {
 
                   {/* Subtle Top-Right Image Integration (like the avatar in EmployeeStories, but as a faded background accent) */}
                   <div className="absolute top-0 right-0 w-40 h-40 opacity-10 group-hover:opacity-30 transition-opacity duration-700 [clip-path:circle(100%_at_100%_0%)]">
-                    <img src={block.image} alt={block.title} className="w-full h-full object-cover" />
+                    <img src={block.image} alt={block.title} className="w-full h-full object-cover" loading="lazy" />
                     <div className="absolute inset-0 bg-gradient-to-bl from-transparent to-zinc-900/50" />
                   </div>
 

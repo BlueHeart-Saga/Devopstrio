@@ -46,12 +46,11 @@ export const SupportHero = () => {
             }}
             className={`absolute -translate-x-1/2 -translate-y-1/2 flex items-center justify-center text-white drop-shadow-2xl`}
           >
-            <img 
-              src={`/assets/About-page/support/social/${item.img}`}
+            <img src={`/assets/About-page/support/social/${item.img}`}
               alt={item.name}
               style={{ width: '100%', height: '100%' }}
               className="object-contain"
-            />
+            loading="eager" />
           </motion.div>
         ))}
 

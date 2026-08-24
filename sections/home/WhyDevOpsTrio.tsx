@@ -350,7 +350,7 @@ export function WhyDevopstrio() {
 
                 
                 <div className="absolute inset-0 z-0 [clip-path:circle(0%_at_100%_100%)] group-hover:[clip-path:circle(150%_at_100%_100%)] transition-all duration-700 ease-in-out pointer-events-none">
-                  <img src="/assets/Home-page/whychoose/partnership-cover.png" alt="Why Devopstrio" className="w-full h-full object-cover scale-110 group-hover:scale-100 transition-transform duration-1000 ease-out" />
+                  <img src="/assets/Home-page/whychoose/partnership-cover.png" alt="Why Devopstrio" className="w-full h-full object-cover scale-110 group-hover:scale-100 transition-transform duration-1000 ease-out" loading="lazy" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-black/20 backdrop-blur-md" />
                 </div>
 

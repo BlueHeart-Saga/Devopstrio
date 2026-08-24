@@ -136,11 +136,10 @@ export const EmployeeStoriesSection = () => {
                   <div>
                     {/* Employee Bio Header */}
                     <div className="flex items-center gap-4 mb-7">
-                      <img
-                        src={story.image}
+                      <img src={story.image}
                         alt={story.name}
                         className="w-16 h-16 rounded-2xl object-cover border-2 border-zinc-800 group-hover:border-rose-500/50 transition-colors shrink-0 shadow-md"
-                      />
+                      loading="lazy" />
                       <div>
                         <h3 className="text-white font-semibold text-xl tracking-tight leading-tight">{story.name}</h3>
                         

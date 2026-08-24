@@ -1,23 +1,24 @@
 import React from "react";
 import { Metadata } from "next";
+import dynamic from "next/dynamic";
+import { IndustriesHero } from "@/sections/industries/IndustriesHero";
+import { BreadcrumbSchema } from "@/components/seo/Schemas";
 import { SectionNavbar } from "@/components/ui/SectionNavbar";
 
-// Component imports
-import { IndustriesHero } from "@/sections/industries/IndustriesHero";
-import { IndustriesGrid } from "@/sections/industries/IndustriesGrid";
-import { ExpertiseBanner } from "@/sections/industries/ExpertiseBanner";
-import { FeaturedIndustries } from "@/sections/industries/FeaturedIndustries";
-import { ChallengesWeSolve } from "@/sections/industries/ChallengesWeSolve";
-import { TechnologySolutions } from "@/sections/industries/TechnologySolutions";
-import { IndustryUseCases } from "@/sections/industries/IndustryUseCases";
-import { BusinessImpact } from "@/sections/industries/BusinessImpact";
-import { SuccessStories } from "@/sections/industries/SuccessStories";
-import { IndustryInnovation } from "@/sections/industries/IndustryInnovation";
-import { WhyChooseDevopstrio } from "@/sections/industries/WhyChooseDevopstrio";
-import { GlobalNetworks } from "@/sections/industries/GlobalNetworks";
-import { RelatedServices } from "@/sections/industries/RelatedServices";
-import { IndustriesCTA } from "@/sections/industries/IndustriesCTA";
-import { BreadcrumbSchema } from "@/components/seo/Schemas";
+// Dynamic Imports for Heavy Below-The-Fold Sections to Reduce Initial JS Payload
+const IndustriesGrid = dynamic(() => import("@/sections/industries/IndustriesGrid").then((mod) => mod.IndustriesGrid));
+const ExpertiseBanner = dynamic(() => import("@/sections/industries/ExpertiseBanner").then((mod) => mod.ExpertiseBanner));
+const FeaturedIndustries = dynamic(() => import("@/sections/industries/FeaturedIndustries").then((mod) => mod.FeaturedIndustries));
+const ChallengesWeSolve = dynamic(() => import("@/sections/industries/ChallengesWeSolve").then((mod) => mod.ChallengesWeSolve));
+const TechnologySolutions = dynamic(() => import("@/sections/industries/TechnologySolutions").then((mod) => mod.TechnologySolutions));
+const IndustryUseCases = dynamic(() => import("@/sections/industries/IndustryUseCases").then((mod) => mod.IndustryUseCases));
+const BusinessImpact = dynamic(() => import("@/sections/industries/BusinessImpact").then((mod) => mod.BusinessImpact));
+const SuccessStories = dynamic(() => import("@/sections/industries/SuccessStories").then((mod) => mod.SuccessStories));
+const IndustryInnovation = dynamic(() => import("@/sections/industries/IndustryInnovation").then((mod) => mod.IndustryInnovation));
+const WhyChooseDevopstrio = dynamic(() => import("@/sections/industries/WhyChooseDevopstrio").then((mod) => mod.WhyChooseDevopstrio));
+const GlobalNetworks = dynamic(() => import("@/sections/industries/GlobalNetworks").then((mod) => mod.GlobalNetworks));
+const RelatedServices = dynamic(() => import("@/sections/industries/RelatedServices").then((mod) => mod.RelatedServices));
+const IndustriesCTA = dynamic(() => import("@/sections/industries/IndustriesCTA").then((mod) => mod.IndustriesCTA));
 
 export const metadata: Metadata = {
   title: "Industries We Serve",

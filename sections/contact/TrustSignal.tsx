@@ -36,11 +36,10 @@ export function TrustSignal() {
         <div className="flex gap-16 items-center animate-marquee">
           {[...certLogos, ...certLogos].map((item, index) => (
             <div key={`${item.name}-${index}`} className="flex-shrink-0 flex items-center justify-center">
-              <img
-                src={item.src}
+              <img src={item.src}
                 alt={item.name}
                 className="h-8 md:h-11 w-auto object-contain pointer-events-none select-none"
-              />
+              loading="lazy" />
             </div>
           ))}
         </div>

@@ -63,7 +63,7 @@ export function SuccessStories() {
               <div>
                 <div className="flex items-center justify-between mb-6 border-b border-zinc-900/60 pb-4">
                   <div className="flex items-center gap-3">
-                    <img src={story.logo} alt={story.partner} className="h-6 w-auto object-contain" />
+                    <img src={story.logo} alt={story.partner} className="h-6 w-auto object-contain" loading="lazy" />
                     <span className="text-xs font-mono text-zinc-400 uppercase tracking-widest font-bold">
                       {story.partner} Alliance
                     </span>

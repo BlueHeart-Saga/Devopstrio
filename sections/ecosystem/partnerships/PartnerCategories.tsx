@@ -303,14 +303,13 @@ export function PartnerCategories() {
 
               {/* Dynamic Abstract Smoky Wave Backgrounds with Crossfade */}
               {categories.map((cat) => (
-                <img
-                  key={cat.id}
+                <img key={cat.id}
                   src={bgWaves[cat.id]}
                   alt=""
                   className={`absolute inset-0 w-full h-full object-cover mix-blend-screen pointer-events-none transition-opacity duration-700 ease-in-out ${
                     activeTab === cat.id ? "opacity-35" : "opacity-0"
                   }`}
-                />
+                loading="lazy" />
               ))}
 
               {/* Card top details */}
@@ -355,11 +354,10 @@ export function PartnerCategories() {
                   <div>
                     <div className="flex items-center gap-3 mb-3 border-b border-zinc-900/60 pb-3">
                       {partner.logo && (
-                        <img
-                          src={partner.logo}
+                        <img src={partner.logo}
                           alt={partner.name}
                           className="w-6 h-6 object-contain opacity-60 group-hover/card:opacity-100 transition-opacity duration-300 filter brightness-100 invert-[0.1]"
-                        />
+                        loading="lazy" />
                       )}
                       <h4 className="text-base font-semibold text-rose-500 group-hover/card:text-rose-450 transition-colors">
                         {partner.name}

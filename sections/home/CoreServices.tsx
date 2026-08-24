@@ -147,7 +147,7 @@ export function CoreServices() {
 
   return (
     <section
-      className="w-full py-8 bg-[#030303] text-white relative overflow-hidden"
+      className="w-full py-6 md:py-8 bg-[#030303] text-white relative overflow-hidden"
       id="capabilities"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
@@ -163,11 +163,10 @@ export function CoreServices() {
           <div className="text-center max-w-3xl mx-auto mb-8 flex flex-col items-center">
             {/* Top-to-bottom straight arrow PNG (cleanly spaced above header) */}
             <div className="mb-2 sm:mb-3 flex justify-center pointer-events-none select-none">
-              <img
-                src="/assets/components/streight-toptobuttm.png"
+              <img src="/assets/components/streight-toptobuttm.png"
                 alt="Top to bottom arrow"
                 className="w-16 sm:w-20 md:w-24 lg:w-28 h-auto object-contain filter drop-shadow-[0_0_20px_rgba(244,63,94,0.5)]"
-              />
+              loading="lazy" />
             </div>
 
             <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-[1.35] mb-5 text-white">
@@ -232,11 +231,10 @@ export function CoreServices() {
               >
                 {/* Cover Image */}
                 <div className="relative w-full aspect-[2/1] overflow-hidden rounded-[16px] bg-zinc-900 border border-zinc-800/50">
-                  <img
-                    src={service.bgImage}
+                  <img src={service.bgImage}
                     alt={service.cta}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
-                  />
+                  loading="lazy" />
                 </div>
 
                 {/* Card Body */}

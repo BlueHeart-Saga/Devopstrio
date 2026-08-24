@@ -84,11 +84,10 @@ export function CapabilityIndustries({ industries }: CapabilityIndustriesProps) 
     }
 
     return (
-      <img 
-        src={src} 
+      <img src={src} 
         alt={slug} 
         className="w-30 h-30 object-contain group-hover:scale-105 transition-transform duration-300 pointer-events-none select-none"
-      />
+      loading="lazy" />
     );
   };
 

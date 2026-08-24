@@ -41,11 +41,10 @@ export function PresenceTourTrip() {
             className="flex flex-col items-center justify-center my-6 cursor-pointer group transition-all duration-500 hover:scale-105"
             title="Click to start tour"
           >
-            <img
-              src="/assets/components/streight-toptobuttm.png"
+            <img src="/assets/components/streight-toptobuttm.png"
               alt="Scroll to Explore Locations"
               className="w-16 sm:w-20 md:w-24 lg:w-28 h-auto object-contain filter drop-shadow-[0_0_25px_rgba(225,29,72,0.55)] group-hover:drop-shadow-[0_0_40px_rgba(225,29,72,0.9)] transition-all duration-500"
-            />
+            loading="lazy" />
           </div>
         </Reveal>
 

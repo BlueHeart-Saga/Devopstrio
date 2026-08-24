@@ -149,11 +149,10 @@ export function CapabilityProblem({
           
           <div className="relative w-full overflow-hidden z-10 flex justify-center items-center">
             {/* The Image */}
-            <img
-              src={data.image}
+            <img src={data.image}
               alt={displayTitle}
               className="w-full h-auto object-contain brightness-[0.95] contrast-[1.02]"
-            />
+            loading="lazy" />
 
             {/* Edge Fades: Top, Bottom, Left, Right into #030303 background */}
             <div className="absolute inset-x-0 top-0 h-12 bg-gradient-to-b from-[#030303] to-transparent pointer-events-none z-20" />

@@ -66,11 +66,10 @@ export function ExcellenceSuccessStories() {
                 
                 {/* Top Image Banner */}
                 <div className="relative w-full h-36 overflow-hidden bg-zinc-900 border-b border-zinc-900">
-                  <img
-                    src={study.image}
+                  <img src={study.image}
                     alt={study.title}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 filter brightness-[0.8] group-hover:brightness-[0.9]"
-                  />
+                  loading="lazy" />
                   <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/20 to-transparent" />
                 </div>
 

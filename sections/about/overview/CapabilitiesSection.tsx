@@ -195,11 +195,10 @@ export function CapabilitiesSection() {
                 
                 {/* Cover Image */}
                 <div className="relative w-full aspect-[16/9] overflow-hidden bg-zinc-900">
-                  <img
-                    src={item.image}
+                  <img src={item.image}
                     alt={item.title}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
-                  />
+                  loading="lazy" />
                   <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/80 via-zinc-950/20 to-transparent" />
                 </div>
 

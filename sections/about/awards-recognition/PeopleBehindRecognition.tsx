@@ -13,11 +13,10 @@ export function PeopleBehindRecognition() {
             <Reveal>
               <div className="relative w-full flex items-center justify-center">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img 
-                  src="/assets/About-page/leader/Mani-PS-002-Photoroom.png" 
+                <img src="/assets/About-page/leader/Mani-PS-002-Photoroom.png" 
                   alt="Leadership & People Behind Recognition" 
                   className="w-full h-auto max-h-[500px] object-contain drop-shadow-[0_20px_40px_rgba(0,0,0,0.9)]"
-                />
+                loading="lazy" />
               </div>
             </Reveal>
           </div>

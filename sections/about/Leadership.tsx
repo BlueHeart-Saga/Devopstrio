@@ -171,11 +171,10 @@ export function Leadership() {
             <div className="grid grid-cols-1 lg:grid-cols-[360px_1fr]">
 
               <div className="relative min-h-[320px] lg:min-h-[420px] overflow-hidden bg-zinc-900">
-                <img
-                  src="/assets/About-page/leader/Founder.png"
+                <img src="/assets/About-page/leader/Founder.png"
                   alt="Manikandan PS"
                   className="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.02]"
-                />
+                loading="lazy" />
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent to-zinc-950/70 pointer-events-none hidden lg:block" />
                 <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/80 to-transparent pointer-events-none lg:hidden" />
               </div>
@@ -246,7 +245,7 @@ export function Leadership() {
                           </div>
                         )}
                         <div className={`w-[200px] h-[130px] rounded-2xl overflow-hidden shrink-0 relative group shadow-lg ${idx % 2 === 0 ? 'bg-[#facc15]' : 'bg-rose-500'}`}>
-                          <img src={eventImages[idx % eventImages.length]} alt="Leadership Event" className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110 drop-shadow-[0_20px_30px_rgba(0,0,0,0.5)]" />
+                          <img src={eventImages[idx % eventImages.length]} alt="Leadership Event" className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110 drop-shadow-[0_20px_30px_rgba(0,0,0,0.5)]" loading="lazy" />
                         </div>
                       </React.Fragment>
                     ))}
@@ -275,7 +274,7 @@ export function Leadership() {
                           </div>
                         )}
                         <div className={`w-[220px] h-[130px] rounded-2xl overflow-hidden shrink-0 relative group shadow-lg ${idx % 2 === 0 ? 'bg-emerald-400' : 'bg-[#facc15]'}`}>
-                          <img src={eventImages[(idx + 7) % eventImages.length]} alt="Leadership Meeting" className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110 drop-shadow-[0_20px_30px_rgba(0,0,0,0.5)]" />
+                          <img src={eventImages[(idx + 7) % eventImages.length]} alt="Leadership Meeting" className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110 drop-shadow-[0_20px_30px_rgba(0,0,0,0.5)]" loading="lazy" />
                         </div>
                       </React.Fragment>
                     ))}
@@ -299,7 +298,7 @@ export function Leadership() {
                           </div>
                         )}
                         <div className={`w-[180px] h-[130px] rounded-2xl overflow-hidden shrink-0 relative group shadow-lg ${idx % 3 === 0 ? 'bg-blue-500' : 'bg-[#facc15]'}`}>
-                          <img src={eventImages[(idx + 14) % eventImages.length]} alt="Team Milestone" className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110 drop-shadow-[0_20px_30px_rgba(0,0,0,0.5)]" />
+                          <img src={eventImages[(idx + 14) % eventImages.length]} alt="Team Milestone" className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110 drop-shadow-[0_20px_30px_rgba(0,0,0,0.5)]" loading="lazy" />
                         </div>
                       </React.Fragment>
                     ))}
@@ -360,16 +359,14 @@ export function Leadership() {
                      
 
                       <div className="relative w-full aspect-[3/4] rounded-sm overflow-hidden bg-zinc-100">
-                        <img
-                          src={member.photoPink}
+                        <img src={member.photoPink}
                           alt={`${member.name} Pink Theme`}
                           className="absolute inset-0 w-full h-full object-cover object-top transition-opacity duration-500 group-hover:opacity-0"
-                        />
-                        <img
-                          src={member.photoGray}
+                        loading="lazy" />
+                        <img src={member.photoGray}
                           alt={`${member.name} Gray Theme`}
                           className="absolute inset-0 w-full h-full object-cover object-top opacity-0 transition-opacity duration-500 group-hover:opacity-100"
-                        />
+                        loading="lazy" />
                       </div>
                       
                       <div className="mt-3 text-center">
@@ -389,11 +386,10 @@ export function Leadership() {
           <div className="relative w-full mt-20 mb-12">
             {/* Top Team Photo Banner */}
             <div className="relative w-full h-[320px] sm:h-[420px] md:h-[500px] overflow-hidden shadow-2xl">
-              <img
-                src="/assets/About-page/overview/team.png"
+              <img src="/assets/About-page/overview/team.png"
                 alt="Devopstrio Global Team"
                 className="w-full h-full object-cover object-center select-none"
-              />
+              loading="lazy" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20 pointer-events-none" />
             </div>
 

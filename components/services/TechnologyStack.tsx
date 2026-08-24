@@ -161,11 +161,10 @@ export function TechnologyStack({
                     <div className="absolute inset-0 bg-gradient-to-br from-zinc-100 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-0" />
 
                     {/* Icon */}
-                    <img
-                      src={iconPath}
+                    <img src={iconPath}
                       alt={tech.name}
                       className="w-8 h-8 object-contain group-hover:scale-105 transition-all duration-300 mb-3 relative z-10"
-                    />
+                    loading="lazy" />
 
                     {/* Title */}
                     <strong className="text-sm sm:text-base font-semibold text-zinc-900 group-hover:text-rose-600 transition-colors mb-1 relative z-10">
@@ -239,11 +238,10 @@ export function TechnologyStack({
                   <div className="flip-card-inner">
                     {/* Front Face */}
                     <div className="flip-card-front bg-white border border-white/20 p-4 transition-all duration-300 group-hover:border-rose-500/50 shadow-[0_4px_12px_rgba(255,255,255,0.05)]">
-                      <img
-                        src={partner.path}
+                      <img src={partner.path}
                         alt={partner.name}
                         className="max-h-7 max-w-[85px] object-contain group-hover:scale-[1.03] transition-all duration-300 filter brightness-105"
-                      />
+                      loading="lazy" />
                       {/* Tooltip Front */}
                       <span className="absolute bottom-full left-[50%] translate-x-[-50%] mb-2 bg-zinc-900 text-white text-[8px] font-bold py-1 px-2 rounded shadow-lg opacity-0 pointer-events-none group-hover:opacity-100 transition-all duration-200 whitespace-nowrap z-50">
                         {partner.name}
@@ -251,11 +249,10 @@ export function TechnologyStack({
                     </div>
                     {/* Back Face */}
                     <div className="flip-card-back bg-rose-950/[0.12] border border-rose-500/30 p-4 shadow-[inset_0_1px_1px_rgba(255,255,255,0.03),0_0_20px_rgba(244,63,94,0.12)] backdrop-blur-md">
-                      <img
-                        src={partner.backPath}
+                      <img src={partner.backPath}
                         alt={partner.backName}
                         className="max-h-7 max-w-[85px] object-contain opacity-100 filter brightness-105"
-                      />
+                      loading="lazy" />
                       {/* Tooltip Back */}
                       <span className="absolute bottom-full left-[50%] translate-x-[-50%] mb-2 bg-zinc-900 text-white text-[8px] font-bold py-1 px-2 rounded shadow-lg opacity-0 pointer-events-none group-hover:opacity-100 transition-all duration-200 whitespace-nowrap z-50">
                         {partner.backName}

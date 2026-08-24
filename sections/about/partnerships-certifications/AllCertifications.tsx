@@ -68,11 +68,10 @@ export function AllCertifications() {
                 Capability
               </span>
               {/* Curved top-to-bottom side arrow image positioned directly AFTER Capability */}
-              <img
-                src="/assets/components/top-to-buttom-side-Arrowmid.png"
+              <img src="/assets/components/top-to-buttom-side-Arrowmid.png"
                 alt="Side arrow pointing down"
                 className="absolute -bottom-14 sm:-bottom-20 md:-bottom-24 -right-8 sm:-right-12 md:-right-16 scale-x-[-1] w-10 sm:w-14 md:w-16 lg:w-18 h-auto object-contain filter drop-shadow-[0_0_15px_rgba(244,63,94,0.5)] pointer-events-none select-none z-20"
-              />
+              loading="lazy" />
             </span>
           </h2>
         </Reveal>
@@ -99,11 +98,11 @@ export function AllCertifications() {
               {/* Award / Certification Logo */}
               <div className="relative z-10 flex items-center justify-center w-full h-full my-auto px-2">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={item.logo}
+                <img src={item.logo}
                   alt={item.title}
                   className="max-w-[85%] max-h-[75%] object-contain select-none transition-all duration-300 group-hover:scale-105 filter contrast-105"
-                  onError={(e) => { e.currentTarget.style.display = 'none' }}
+                  loading="lazy"
+                  onError={(e) => { e.currentTarget.style.display = 'none'; }}
                 />
               </div>
 

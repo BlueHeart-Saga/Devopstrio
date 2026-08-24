@@ -101,11 +101,10 @@ export function EngineeringCertifications() {
               <Reveal key={idx} delay={idx * 0.05} className="h-full">
                 <div className="bg-zinc-950/40 border border-zinc-900/80 rounded-3xl p-5 hover:border-rose-500/10 transition-all duration-300 flex flex-col justify-between h-full min-h-[220px] group">
                   <div className="w-full bg-white/5 border border-white/10 rounded-2xl p-4 flex items-center justify-center h-28 backdrop-blur-sm group-hover:bg-white/10 group-hover:border-white/20 transition-all duration-300 mb-4">
-                    <img
-                      src={cert.image}
+                    <img src={cert.image}
                       alt={cert.name}
                       className="max-h-20 max-w-full object-contain filter brightness-95 group-hover:brightness-100 transition-all duration-300"
-                    />
+                    loading="lazy" />
                   </div>
                   <div className="text-left">
                     <span className="text-[10px] md:text-xs font-bold text-rose-500 uppercase tracking-widest block mb-2">
@@ -128,11 +127,10 @@ export function EngineeringCertifications() {
               <Reveal key={idx} delay={idx * 0.05} className="h-full">
                 <div className="bg-zinc-950/40 border border-zinc-900/80 rounded-3xl p-5 hover:border-rose-500/10 transition-all duration-300 flex flex-col justify-between h-full min-h-[220px] group">
                   <div className="w-full bg-white/5 border border-white/10 rounded-2xl p-4 flex items-center justify-center h-28 backdrop-blur-sm group-hover:bg-white/10 group-hover:border-white/20 transition-all duration-300 mb-4">
-                    <img
-                      src={cert.image}
+                    <img src={cert.image}
                       alt={cert.title}
                       className="max-h-20 max-w-full object-contain filter brightness-95 group-hover:brightness-100 transition-all duration-300"
-                    />
+                    loading="lazy" />
                   </div>
                   <div className="text-left">
                     <h4 className="text-sm md:text-base font-bold text-white uppercase tracking-wider mb-2">{cert.title}</h4>
@@ -152,11 +150,10 @@ export function EngineeringCertifications() {
               <Reveal key={idx} delay={idx * 0.05} className="h-full">
                 <div className="bg-zinc-950/40 border border-zinc-900/80 rounded-3xl p-5 hover:border-rose-500/10 transition-all duration-300 flex flex-col justify-between h-full min-h-[220px] group">
                   <div className="w-full bg-white/5 border border-white/10 rounded-2xl p-4 flex items-center justify-center h-28 backdrop-blur-sm group-hover:bg-white/10 group-hover:border-white/20 transition-all duration-300 mb-4">
-                    <img
-                      src={cert.image}
+                    <img src={cert.image}
                       alt={cert.title}
                       className="max-h-20 max-w-full object-contain filter brightness-95 group-hover:brightness-100 transition-all duration-300"
-                    />
+                    loading="lazy" />
                   </div>
                   <div className="text-left">
                     <h4 className="text-sm md:text-base font-bold text-white uppercase tracking-wider mb-2">{cert.title}</h4>

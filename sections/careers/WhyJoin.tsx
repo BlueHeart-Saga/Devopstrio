@@ -118,11 +118,10 @@ export function WhyJoin() {
               <div className="relative">
                 {/* Arrow image */}
                 <div className="absolute -top-6 -left-10 pointer-events-none select-none hidden sm:block">
-                  <img
-                    src="/assets/components/Carrow-right.png"
+                  <img src="/assets/components/Carrow-right.png"
                     alt="Arrow indicator"
                     className="w-12 sm:w-16 h-auto object-contain filter drop-shadow-[0_0_15px_rgba(244,63,94,0.4)]"
-                  />
+                  loading="lazy" />
                 </div>
 
                 <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-white tracking-tight leading-tight mb-4">
@@ -143,11 +142,10 @@ export function WhyJoin() {
           <div className="lg:col-span-5 flex justify-center lg:justify-end w-full relative z-40 -mt-24 sm:-mt-36 lg:-mt-52 xl:-mt-64">
             <Reveal delay={0.2} className="w-full flex justify-center lg:justify-end">
               <div className="relative w-full max-w-[340px] sm:max-w-[400px] lg:max-w-[440px] rounded-2xl overflow-hidden shadow-[0_30px_70px_rgba(0,0,0,0.85)] border border-zinc-800/80 group">
-                <img
-                  src="/assets/careers/team/gallarey-post-sermaraj-01.png"
+                <img src="/assets/careers/team/gallarey-post-sermaraj-01.png"
                   alt="Devopstrio Career Poster"
                   className="w-full h-auto object-contain select-none transition-transform duration-500 group-hover:scale-[1.02]"
-                />
+                loading="lazy" />
               </div>
             </Reveal>
           </div>
@@ -219,11 +217,10 @@ export function WhyJoin() {
 
           <Reveal className="relative flex justify-center lg:justify-start">
             <div className="relative w-full max-w-[500px] group">
-              <img
-                src="/assets/careers/image2.png"
+              <img src="/assets/careers/image2.png"
                 alt="Devopstrio Career Success"
                 className="w-full h-auto object-contain drop-shadow-[0_15px_35px_rgba(0,0,0,0.6)] group-hover:-translate-y-2 transition-transform duration-700"
-              />
+              loading="lazy" />
             </div>
           </Reveal>
 

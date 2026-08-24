@@ -582,18 +582,17 @@ export function UnifiedIntegrations() {
             <span className="hub-pulse pulse-3" />
 
             <div className="hub-core">
-              <img
-                src="/assets/Home-page/our-products/Devopsrio_Main_logo.png"
+              <img src="/assets/Home-page/our-products/Devopsrio_Main_logo.png"
                 alt="Devopstrio"
                 className="hub-center-logo"
-              />
+              loading="lazy" />
             </div>
           </div>
 
           {/* NODES */}
           {nodes.map((n) => (
             <div key={n.id} className={`hub-node ${n.cls}`}>
-              <img src={n.logo} alt={n.alt} className="node-logo" />
+              <img src={n.logo} alt={n.alt} className="node-logo" loading="lazy" />
             </div>
           ))}
         </div>

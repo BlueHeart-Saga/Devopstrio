@@ -205,7 +205,7 @@ export default function HiringAdminPage() {
 
         {p.image && (
           <div className="absolute inset-0 z-0 pointer-events-none">
-            <img src={p.image} alt="Preview" className={`w-full h-full object-cover mix-blend-overlay ${isActive ? 'opacity-40' : 'opacity-20 grayscale'}`} />
+            <img src={p.image} alt="Preview" className={`w-full h-full object-cover mix-blend-overlay ${isActive ? 'opacity-40' : 'opacity-20 grayscale'}`} loading="lazy" />
             <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#0a0a0a]/80 to-[#0a0a0a]" />
           </div>
         )}
@@ -397,7 +397,7 @@ export default function HiringAdminPage() {
                   </div>
                   {formData.image && (
                     <div className="mt-4 relative w-32 h-32 rounded-lg overflow-hidden border border-zinc-800">
-                      <img src={formData.image} alt="Preview" className="object-cover w-full h-full" />
+                      <img src={formData.image} alt="Preview" className="object-cover w-full h-full" loading="lazy" />
                       <button
                         onClick={() => setFormData(prev => ({ ...prev, image: "" }))}
                         className="absolute top-1 right-1 bg-black/70 p-1 rounded-full hover:bg-red-600 transition-colors"
@@ -449,7 +449,7 @@ export default function HiringAdminPage() {
                 </div>
                 <div className="flex items-center gap-4">
                   {poster.image && (
-                    <img src={poster.image} alt={poster.role} className="w-12 h-12 rounded object-cover border border-zinc-800" />
+                    <img src={poster.image} alt={poster.role} className="w-12 h-12 rounded object-cover border border-zinc-800" loading="lazy" />
                   )}
                   <div>
                     <h3 className="text-xl font-bold mb-1">{poster.role}</h3>

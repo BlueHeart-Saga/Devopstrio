@@ -461,11 +461,10 @@ const TechnologyStack = () => {
               <div className="p-6 bg-zinc-950/65 border border-zinc-900 rounded-3xl hover:border-rose-500/20 flex flex-col items-center justify-center gap-4 text-center min-h-[150px] group transition-all duration-300 hover:shadow-[0_8px_24px_rgba(0,0,0,0.6)]">
                 {/* Logo wrapper */}
                 <div className="w-14 h-14 flex items-center justify-center bg-zinc-900/80 rounded-2xl border border-zinc-800 group-hover:scale-105 transition-transform duration-300">
-                  <img
-                    src={item.logo}
+                  <img src={item.logo}
                     alt={item.name}
                     className="w-7 h-7 object-contain opacity-80 group-hover:opacity-100 transition-all duration-350 filter brightness-110 drop-shadow-[0_0_10px_rgba(255,255,255,0.15)] group-hover:drop-shadow-[0_0_15px_rgba(255,255,255,0.25)]"
-                  />
+                  loading="lazy" />
                 </div>
                 {/* Title */}
                 <span className="text-[10px] font-bold text-zinc-400 group-hover:text-white transition-colors duration-300 uppercase tracking-widest leading-none">

@@ -1,21 +1,24 @@
 import React from "react";
 import { notFound } from "next/navigation";
+import dynamic from "next/dynamic";
 import { getServiceByCategory, servicesData } from "@/data/services";
 import { getHeroBgImage } from "@/lib/services-utils";
 import { Hero } from "@/components/services/Hero";
 import { SectionNavbar } from "@/components/ui/SectionNavbar";
 import { ServiceOverview } from "@/sections/services/category/ServiceOverview";
-import { CapabilityGrid } from "@/components/services/CapabilityGrid";
-import { Challenges } from "@/components/services/Challenges";
-import { TimelineProcess } from "@/components/services/TimelineProcess";
-import { TechnologyStack } from "@/components/services/TechnologyStack";
-import { IndustryCards } from "@/components/services/IndustryCards";
-import { WhyDevopstrio } from "@/sections/home/WhyDevOpsTrio";
-import { ServiceMetrics } from "@/sections/services/category/ServiceMetrics";
-import { ServiceRelated } from "@/sections/services/category/ServiceRelated";
-import { FAQ } from "@/components/services/FAQ";
 import { BreadcrumbSchema, ServiceSchema, FAQSchema } from "@/components/seo/Schemas";
-import { CTA } from "@/components/services/CTA";
+
+// Dynamic Imports for Heavy Below-The-Fold Sections to Reduce Initial JS Payload
+const CapabilityGrid = dynamic(() => import("@/components/services/CapabilityGrid").then((mod) => mod.CapabilityGrid));
+const Challenges = dynamic(() => import("@/components/services/Challenges").then((mod) => mod.Challenges));
+const TimelineProcess = dynamic(() => import("@/components/services/TimelineProcess").then((mod) => mod.TimelineProcess));
+const TechnologyStack = dynamic(() => import("@/components/services/TechnologyStack").then((mod) => mod.TechnologyStack));
+const IndustryCards = dynamic(() => import("@/components/services/IndustryCards").then((mod) => mod.IndustryCards));
+const WhyDevopstrio = dynamic(() => import("@/sections/home/WhyDevOpsTrio").then((mod) => mod.WhyDevopstrio));
+const ServiceMetrics = dynamic(() => import("@/sections/services/category/ServiceMetrics").then((mod) => mod.ServiceMetrics));
+const ServiceRelated = dynamic(() => import("@/sections/services/category/ServiceRelated").then((mod) => mod.ServiceRelated));
+const FAQ = dynamic(() => import("@/components/services/FAQ").then((mod) => mod.FAQ));
+const CTA = dynamic(() => import("@/components/services/CTA").then((mod) => mod.CTA));
 
 export async function generateMetadata() {
   const service = "it-consulting";

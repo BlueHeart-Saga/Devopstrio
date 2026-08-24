@@ -231,11 +231,10 @@ export function PresenceHero() {
                 }}
               >
                 {/* Background Image */}
-                <img
-                  src={slide.src}
+                <img src={slide.src}
                   alt={slide.alt}
                   className="w-full h-full object-cover object-center scale-[1.02]"
-                />
+                loading="eager" />
 
                 {/* Top Fade for smooth navbar blend and clean text contrast */}
                 <div className="absolute inset-x-0 top-0 h-56 sm:h-72 md:h-80 bg-gradient-to-b from-black/85 via-black/45 to-transparent z-10 pointer-events-none" />

@@ -468,10 +468,10 @@ const TechnologyStack = () => {
             <Reveal key={idx} delay={idx * 0.02}>
               <div className="p-4 bg-zinc-950/65 border border-zinc-900 rounded-2xl flex flex-col items-center justify-center gap-3 text-center min-h-[100px] group transition-all duration-300 hover:border-rose-500/20 hover:shadow-[0_8px_24px_rgba(0,0,0,0.6)]">
                 <div className="w-10 h-10 flex items-center justify-center bg-zinc-900/80 rounded-xl border border-zinc-800 group-hover:scale-105 transition-transform duration-300">
-                  <img
-                    src={item.logo}
+                  <img src={item.logo}
                     alt={item.name}
-                    onError={(e) => { e.currentTarget.style.display = 'none' }} // fallback if missing
+                    loading="lazy"
+                    onError={(e) => { e.currentTarget.style.display = 'none'; }}
                     className="w-5 h-5 object-contain opacity-80 group-hover:opacity-100 transition-all duration-350 filter brightness-110 drop-shadow-[0_0_10px_rgba(255,255,255,0.15)] group-hover:drop-shadow-[0_0_15px_rgba(255,255,255,0.25)]"
                   />
                 </div>

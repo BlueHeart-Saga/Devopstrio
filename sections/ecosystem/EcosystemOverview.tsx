@@ -53,11 +53,10 @@ export function EcosystemOverview() {
               {/* RIGHT IMAGE */}
               <div className="p-2 md:p-3 flex items-center justify-center bg-zinc-950/20 border-t lg:border-t-0 lg:border-l border-zinc-900/60">
                 <div className="relative w-full aspect-[16/8.5] rounded-2xl overflow-hidden border border-zinc-800/80 shadow-2xl group/img">
-                  <img
-                    src="/assets/ecosystem/card/ecosystem-main-page_overview-card.png"
+                  <img src="/assets/ecosystem/card/ecosystem-main-page_overview-card.png"
                     alt="Devopstrio Digital Ecosystem"
                     className="w-full h-full object-cover transition-transform duration-700 group-hover/img:scale-[1.02]"
-                  />
+                  loading="lazy" />
                   {/* Subtle glow/reflection */}
                   <div className="absolute inset-0 bg-gradient-to-tr from-white/0 via-white/5 to-transparent pointer-events-none" />
                 </div>

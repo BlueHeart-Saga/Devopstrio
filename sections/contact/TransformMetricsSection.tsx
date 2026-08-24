@@ -31,11 +31,10 @@ export function TransformMetricsSection() {
           <div className="relative">
             {/* Left-to-right arrow PNG pointing to header title */}
             <div className="absolute -top-8 sm:-top-10 md:-top-12 -left-6 sm:-left-10 md:-left-14 z-20 pointer-events-none select-none">
-              <img
-                src="/assets/components/lefttoright.png"
+              <img src="/assets/components/lefttoright.png"
                 alt="Left to right arrow"
                 className="w-12 sm:w-16 md:w-20 h-auto object-contain filter drop-shadow-[0_0_15px_rgba(244,63,94,0.4)]"
-              />
+              loading="lazy" />
             </div>
 
             <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold tracking-tight leading-[1.35] text-white mb-4">

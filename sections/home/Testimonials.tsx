@@ -124,11 +124,10 @@ export function Testimonials() {
   return (
     <section className="w-full py-24 md:py-36 bg-[#030303] text-white  relative overflow-hidden">
       {/* Background Image */}
-      <img
-        src="/assets/wavebg/homepage/testimonals.png"
+      <img src="/assets/wavebg/homepage/testimonals.png"
         alt="Background Wave"
         className="absolute inset-0 w-full h-full object-cover opacity-70 pointer-events-none z-0"
-      />
+      loading="lazy" />
       {/* Ambient Gradient Overlays for readability */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#030303]/95 via-[#030303]/50 to-[#030303]/95 pointer-events-none z-0" />
       <div className="absolute top-1/2 right-0 -translate-y-1/2 w-[400px] h-[400px] bg-[radial-gradient(circle_at_center,rgba(220,38,38,0.05),transparent_70%)] blur-3xl pointer-events-none z-0" />
@@ -230,11 +229,10 @@ export function Testimonials() {
                 <div className="absolute inset-0 bg-gradient-to-t from-[#030303] via-transparent to-transparent opacity-50 z-20 pointer-events-none" />
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,rgba(220,38,38,0.06),transparent_60%)] z-20 pointer-events-none" />
 
-                <img
-                  src={testimonials[current].image}
+                <img src={testimonials[current].image}
                   alt={testimonials[current].author}
                   className="w-full h-full object-cover select-none pointer-events-none"
-                />
+                loading="lazy" />
               </motion.div>
             </AnimatePresence>
           </div>

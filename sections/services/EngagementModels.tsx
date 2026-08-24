@@ -102,11 +102,10 @@ export function EngagementModels() {
             <Reveal key={activeIdx} className="h-full">
               <div className="h-full bg-zinc-950/40 border border-white/10 hover:border-rose-500/30 rounded-3xl overflow-hidden relative min-h-[420px] group backdrop-blur-md shadow-[0_8px_32px_0_rgba(0,0,0,0.5)] transition-all duration-500">
                 {/* Full Card Image: Premium Tech-Art Graphic */}
-                <img
-                  src={activeModel.image}
+                <img src={activeModel.image}
                   alt={activeModel.name}
                   className="w-full h-full object-cover opacity-95 group-hover:opacity-100 group-hover:scale-[1.02] transition-all duration-700 pointer-events-none select-none"
-                />
+                loading="lazy" />
               </div>
             </Reveal>
           </div>

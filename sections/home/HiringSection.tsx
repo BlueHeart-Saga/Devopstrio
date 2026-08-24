@@ -169,12 +169,11 @@ export function HiringSection() {
                   "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&auto=format&fit=crop&q=80",
                   "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&auto=format&fit=crop&q=80"
                 ].map((src, i) => (
-                  <img
-                    key={i}
+                  <img key={i}
                     src={src}
                     alt={`User ${i + 1}`}
                     className="w-9 h-9 rounded-full border-2 border-[#030303] object-cover"
-                  />
+                  loading="lazy" />
                 ))}
               </div>
               <p className="text-xs sm:text-sm text-zinc-400 font-semibold tracking-wide">
@@ -230,11 +229,10 @@ export function HiringSection() {
                           onClick={() => setShowModal(true)}
                           className="flex-1 w-full rounded-lg overflow-hidden relative bg-zinc-900 cursor-zoom-in group"
                         >
-                          <img
-                            src={poster.image}
+                          <img src={poster.image}
                             alt={poster.role}
                             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                          />
+                          loading="lazy" />
                           {/* Hover overlay hint */}
                           <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center pointer-events-none">
                             <span className="bg-black/70 px-3 py-1.5 rounded-full text-[10px] font-bold tracking-widest uppercase text-white border border-white/10 shadow-lg">
@@ -391,11 +389,10 @@ export function HiringSection() {
               className="relative max-w-4xl max-h-[85vh] w-full flex items-center justify-center"
               onClick={(e) => e.stopPropagation()} // Prevent closing when clicking the image itself
             >
-              <img
-                src={poster.image}
+              <img src={poster.image}
                 alt={poster.role}
                 className="max-w-full max-h-[85vh] object-contain rounded-lg shadow-2xl border border-zinc-800/50"
-              />
+              loading="lazy" />
             </motion.div>
           </motion.div>
         )}

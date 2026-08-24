@@ -520,10 +520,10 @@ export const AwardsList = () => {
                   <div className="group relative overflow-hidden rounded-2xl border border-zinc-800/80 bg-zinc-950/70 backdrop-blur-xl p-6 hover:border-rose-500/50 hover:bg-zinc-900/70 transition-all duration-300 h-36 sm:h-44 flex items-center justify-center cursor-pointer shadow-xl">
                     {/* Logo Image Only */}
                     {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                      src={item.src}
+                    <img src={item.src}
                       alt={item.title}
                       className="max-w-[80%] max-h-[75%] object-contain select-none transition-all duration-300 group-hover:scale-105 filter contrast-105"
+                      loading="lazy"
                       onError={(e) => {
                         e.currentTarget.style.display = "none";
                       }}

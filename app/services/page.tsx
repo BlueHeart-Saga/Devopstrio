@@ -1,20 +1,18 @@
 import React from "react";
 import { Metadata } from "next";
+import dynamic from "next/dynamic";
 import { ServicesHero } from "@/sections/services/ServicesHero";
-import { CategoriesGrid } from "@/sections/services/CategoriesGrid";
-import { CoreServices } from "@/sections/home/CoreServices";
-import { DetailedServices } from "@/sections/services/DetailedServices";
-import { LifecycleSection } from "@/sections/services/LifecycleSection";
-import { IndustriesSection } from "@/sections/home/IndustriesSection";
-import { WhyDevopstrio } from "@/sections/home/WhyDevOpsTrio";
-import { TechStackSection } from "@/sections/services/TechStackSection";
-import { CaseStudyHighlight } from "@/sections/services/CaseStudyHighlight";
-import { EngagementModels } from "@/sections/services/EngagementModels";
-import { FaqSection } from "@/sections/services/FaqSection";
-import { ServicesCTA } from "@/sections/services/ServicesCTA";
-import { SectionNavbar } from "@/components/ui/SectionNavbar";
-import { Reveal } from "@/components/ui/Reveal";
 import { BreadcrumbSchema } from "@/components/seo/Schemas";
+
+// Dynamic Imports for Heavy Below-The-Fold Sections to Reduce Initial JS Bundle
+const CategoriesGrid = dynamic(() => import("@/sections/services/CategoriesGrid").then((mod) => mod.CategoriesGrid));
+const CoreServices = dynamic(() => import("@/sections/home/CoreServices").then((mod) => mod.CoreServices));
+const DetailedServices = dynamic(() => import("@/sections/services/DetailedServices").then((mod) => mod.DetailedServices));
+const LifecycleSection = dynamic(() => import("@/sections/services/LifecycleSection").then((mod) => mod.LifecycleSection));
+const IndustriesSection = dynamic(() => import("@/sections/home/IndustriesSection").then((mod) => mod.IndustriesSection));
+const CaseStudyHighlight = dynamic(() => import("@/sections/services/CaseStudyHighlight").then((mod) => mod.CaseStudyHighlight));
+const FaqSection = dynamic(() => import("@/sections/services/FaqSection").then((mod) => mod.FaqSection));
+const ServicesCTA = dynamic(() => import("@/sections/services/ServicesCTA").then((mod) => mod.ServicesCTA));
 
 export const metadata: Metadata = {
   title: "Engineering Services",

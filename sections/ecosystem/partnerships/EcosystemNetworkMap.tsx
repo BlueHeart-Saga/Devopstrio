@@ -60,11 +60,10 @@ export function EcosystemNetworkMap() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center min-h-[480px]">
           {/* Constellation Diagram - Left */}
           <div className="lg:col-span-7 flex items-center justify-center">
-            <img
-              src="/assets/ecosystem/main-page/logoss.png"
+            <img src="/assets/ecosystem/main-page/logoss.png"
               alt="Ecosystem Network Map"
               className="w-full h-auto max-h-[420px] object-contain select-none pointer-events-none"
-            />
+            loading="lazy" />
           </div>
 
           {/* Details Panel - Right */}

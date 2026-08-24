@@ -73,11 +73,10 @@ export function FeaturedHighlights({ posts }: FeaturedHighlightsProps) {
               >
                 {/* Inset Image */}
                 <div className="w-full h-48 md:h-52 overflow-hidden rounded-2xl mb-5">
-                  <img
-                    src={imageSrc}
+                  <img src={imageSrc}
                     alt={post.title}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-90 group-hover:opacity-100"
-                  />
+                  loading="lazy" />
                 </div>
 
                 {/* Content Area */}
@@ -160,11 +159,10 @@ export function FeaturedHighlights({ posts }: FeaturedHighlightsProps) {
 
             {/* Right Image (Expands on Hover) */}
             <div className="relative md:absolute right-0 top-0 bottom-0 w-full md:w-[50%] h-[300px] md:h-auto z-0 transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:md:w-full">
-              <img
-                src={(mainPost as any).image || getFallbackImage(0)}
+              <img src={(mainPost as any).image || getFallbackImage(0)}
                 alt={mainPost.title}
                 className="w-full h-full object-cover object-center mix-blend-luminosity group-hover:mix-blend-normal transition-all duration-1000 scale-105 group-hover:scale-100 opacity-80 group-hover:opacity-100"
-              />
+              loading="lazy" />
               {/* Dark gradient to blend the edge into the left card (fades out on hover) */}
               <div className="absolute inset-0 bg-gradient-to-r from-[#0a0a0a] via-[#0a0a0a]/50 to-transparent opacity-100 group-hover:opacity-0 transition-opacity duration-700 hidden md:block w-48" />
               {/* Subtle dark overlay to ensure text is always readable when expanded */}

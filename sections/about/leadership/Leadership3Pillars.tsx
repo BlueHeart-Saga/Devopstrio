@@ -57,63 +57,14 @@ export function Leadership3Pillars() {
   const [activeHoverId, setActiveHoverId] = useState<string | null>(null);
 
   return (
-    <section id="pillars" className="w-full py-12 sm:py-16 bg-black text-white relative overflow-hidden">
+    <section id="pillars" className="w-full py-6 sm:py-8 bg-black text-white relative overflow-hidden">
       {/* Background Ambient Curved Light Halo */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[95vw] max-w-[1250px] h-[400px] md:h-[550px] bg-gradient-to-r from-rose-600/10 via-rose-500/15 to-rose-600/10 rounded-[100%] blur-[140px] pointer-events-none opacity-80" />
 
       <div className="max-w-7xl mx-auto w-full px-6 sm:px-8 relative z-10">
         
-        {/* Top Tagline with Left-Right Arrow indicator (AIStudioShowcase reference) */}
-        {/* <div className="text-center max-w-4xl mx-auto mb-12 sm:mb-14 relative">
-          <Reveal>
-            <div className="relative inline-block">
-              <div className="absolute -top-5 sm:-top-7 md:-top-8 -left-2 sm:-left-4 md:-left-6 z-20 pointer-events-none select-none">
-                <img
-                  src="/assets/components/lefttoright.png"
-                  alt="Left-Right Arrow indicator"
-                  className="w-10 sm:w-12 md:w-14 h-auto object-contain filter drop-shadow-[0_0_15px_rgba(244,63,94,0.4)]"
-                />
-              </div>
-
-              <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight text-white mb-4 font-sans leading-[1.45]">
-                We lead with{" "}
-                <span className="bg-rose-500 text-white font-semibold px-4 py-1 mx-1.5 rounded-xl inline-block">
-                  every pillar
-                </span>{" "}
-                of{" "}
-                <span className="relative inline-block text-white px-1 mx-1 whitespace-nowrap">
-                  <span className="text-white font-semibold relative z-10">engineering excellence</span>
-                  <svg
-                    className="absolute -bottom-4 left-0 w-full h-5 text-rose-500 pointer-events-none overflow-visible z-0"
-                    viewBox="0 0 250 20"
-                    preserveAspectRatio="none"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M 3 14 C 50 6, 130 17, 245 9"
-                      stroke="currentColor"
-                      strokeWidth="3.2"
-                      strokeLinecap="round"
-                      className="opacity-90 filter drop-shadow-[0_0_10px_rgba(244,63,94,0.6)]"
-                    />
-                    <path
-                      d="M 12 17 C 75 11, 165 18, 238 12"
-                      stroke="currentColor"
-                      strokeWidth="1.8"
-                      strokeLinecap="round"
-                      strokeDasharray="6 3 14 4"
-                      className="opacity-75 filter drop-shadow-[0_0_5px_rgba(244,63,94,0.4)]"
-                    />
-                  </svg>
-                </span>
-              </h2>
-            </div>
-          </Reveal>
-        </div> */}
-
         {/* 3 Pillar Cards Container */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border-t border-b border-zinc-800/80 divide-y md:divide-y-0 md:divide-x divide-zinc-800/80 bg-zinc-950/30 backdrop-blur-md rounded-2xl overflow-hidden min-h-[480px] md:min-h-[530px] transition-all duration-500">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border-t border-zinc-800/80 divide-y md:divide-y-0 md:divide-x divide-zinc-800/80 bg-zinc-950/30 backdrop-blur-md rounded-2xl overflow-hidden min-h-[380px] md:min-h-[420px] transition-all duration-500">
           {pillars.map((pillar, idx) => {
             const isHovered = activeHoverId === pillar.id;
 
@@ -122,7 +73,7 @@ export function Leadership3Pillars() {
                 <div
                   onMouseEnter={() => setActiveHoverId(pillar.id)}
                   onMouseLeave={() => setActiveHoverId(null)}
-                  className={`p-8 md:p-10 flex flex-col justify-between h-full relative transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] min-h-[480px] md:min-h-[530px] cursor-pointer group ${
+                  className={`p-6 md:p-8 flex flex-col justify-between h-full relative transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] min-h-[380px] md:min-h-[420px] cursor-pointer group ${
                     isHovered
                       ? "bg-[#030303] shadow-[0_20px_50px_rgba(0,0,0,0.95)] z-20"
                       : "bg-transparent"
@@ -132,8 +83,8 @@ export function Leadership3Pillars() {
                   <div
                     className={`transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
                       isHovered
-                        ? "translate-y-0 mb-6"
-                        : "translate-y-[135px] md:translate-y-[160px] mb-0"
+                        ? "translate-y-0 mb-4"
+                        : "translate-y-[90px] md:translate-y-[110px] mb-0"
                     }`}
                   >
                     <div className="mb-2 flex items-baseline justify-between">

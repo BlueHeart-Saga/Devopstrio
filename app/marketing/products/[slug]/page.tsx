@@ -153,11 +153,10 @@ export default async function ProductMarketingPage({ params }: { params: Promise
                 <Play className="w-8 h-8 text-white" />
               </div>
             </div>
-            <img 
-              src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop" 
+            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop" 
               alt="Dashboard Preview" 
               className="w-full h-64 object-cover rounded-xl opacity-50 group-hover:scale-105 transition-transform duration-700"
-            />
+            loading="lazy" />
             <div className="absolute bottom-6 left-6 z-20">
               <span className="px-3 py-1 bg-black/60 backdrop-blur-md rounded-full text-xs font-semibold text-white border border-white/20">
                 2:45 • Product Demo

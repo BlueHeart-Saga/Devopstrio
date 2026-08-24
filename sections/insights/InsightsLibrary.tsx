@@ -143,11 +143,10 @@ export function InsightsLibrary({ posts, loading }: InsightsLibraryProps) {
                     >
                       {/* Inset Image */}
                       <div className="w-full h-48 md:h-56 overflow-hidden rounded-2xl mb-5 bg-zinc-900">
-                        <img 
-                          src={imageSrc} 
+                        <img src={imageSrc} 
                           alt={post.title} 
                           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-90 group-hover:opacity-100" 
-                        />
+                        loading="lazy" />
                       </div>
                       
                       {/* Content Area */}

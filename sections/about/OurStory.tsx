@@ -112,36 +112,36 @@ export function OurStory() {
                   OUR STORY
                 </span>
 
-                <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold leading-tight tracking-tight mb-6">
-                  From a Bangalore startup
+                <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold leading-tight tracking-tight mb-6 text-white">
+                  From a UK startup
                   <span className="block text-rose-500 mt-1">
                     to a global engineering force.
                   </span>
                 </h2>
 
-                <div className="space-y-6 text-zinc-400 text-sm leading-relaxed font-bold">
+                <div className="space-y-4 text-zinc-300 text-base md:text-lg leading-relaxed font-normal">
                   <p>
-                    Founded in 2019 with a simple idea — that <Link href="/services/cloud-services" className="text-rose-500 hover:underline">cloud infrastructure</Link> could be smarter, faster, and more human — Devopstrio has grown into a trusted partner for enterprises across four continents.
+                    Founded with a singular vision — to make enterprise <Link href="/services/cloud-services" className="text-rose-500 font-semibold hover:underline">cloud &amp; AI engineering</Link> faster, safer, and human-centric — Devopstrio has grown from a high-velocity UK startup into a global delivery powerhouse.
                   </p>
                   <p>
-                    Devopstrio was born from a clear-eyed frustration: traditional cloud management was too slow for the AI era. Our founders — a team of cloud architects and ML engineers — saw that enterprises were drowning in complexity, held back by brittle infrastructure and disconnected toolchains.
+                    We eliminated the friction of legacy IT models, empowering global enterprises with agile multi-cloud meshes, autonomous MLOps pipelines, and zero-defect software engineering across 4 delivery hubs.
                   </p>
                 </div>
               </div>
 
               {/* RIGHT CONTENT */}
               <div className="lg:col-span-5 p-6 md:p-10 lg:p-12 flex flex-col justify-between bg-zinc-950/20 border-t lg:border-t-0 lg:border-l border-zinc-900/60">
-                <div className="space-y-6 text-zinc-400 text-sm leading-relaxed font-bold">
+                <div className="space-y-5 text-zinc-300 text-base md:text-lg leading-relaxed font-normal">
                   <p>
-                    We opened our first small office in Bangalore, India, in 2019 — reaching early clients through platforms like Upwork. The work was precise, the delivery exceptional, and the reputation grew quickly. What started as a specialist <Link href="/services/devops-automation" className="text-rose-500 hover:underline">DevOps team</Link> became something far larger: a full-spectrum <Link href="/services/digital-transformation" className="text-rose-500 hover:underline">digital transformation</Link> partner.
+                    What began as a specialized team of cloud architects in the UK quickly scaled into a multidisciplinary global network of 525+ technology experts, serving Fortune 500 enterprises and hyper-growth innovators worldwide.
                   </p>
 
-                  <div className="p-5 bg-zinc-950/60 border border-zinc-800/80 rounded-none border-r-4 border-r-rose-600">
-                    <span className="text-[10px] font-bold text-rose-500 uppercase tracking-widest block mb-1">
-                      Our Story in One Line
+                  <div className="p-5 bg-zinc-950/80 border border-zinc-800/80 rounded-2xl border-l-4 border-l-rose-500">
+                    <span className="text-xs font-bold text-rose-500 uppercase tracking-widest block mb-1 font-mono">
+                      Our Mission in One Line
                     </span>
-                    <p className="text-sm italic text-zinc-200 font-bold leading-relaxed">
-                      "We didn't set out to build a company. We set out to fix a problem — and the problem turned out to be everywhere."
+                    <p className="text-base md:text-lg italic text-white font-semibold leading-snug">
+                      &ldquo;We build resilient, scalable technology platforms that turn complex enterprise challenges into measurable market impact.&rdquo;
                     </p>
                   </div>
                 </div>
@@ -235,7 +235,7 @@ export function OurStory() {
                 </h4>
 
                 {/* Event Description */}
-                <p className="text-zinc-400 text-sm md:text-base leading-relaxed max-w-xl font-medium">
+                <p className="text-zinc-300 text-base md:text-lg leading-relaxed max-w-xl font-normal">
                   {activeEvent.description}
                 </p>
               </motion.div>

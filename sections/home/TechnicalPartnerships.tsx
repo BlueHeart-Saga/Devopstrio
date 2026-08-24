@@ -106,11 +106,10 @@ export function TechnicalPartnerships() {
     <section className="w-full py-24 md:py-32 bg-[#030303] text-white relative overflow-hidden">
       {/* Background ambient lighting - Custom Wave Image */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
-        <img
-          src="/assets/wavebg/4.png"
+        <img src="/assets/wavebg/4.png"
           alt="Background Wave"
           className="w-full h-full object-cover opacity-60"
-        />
+        loading="lazy" />
       </div>
 
       <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
@@ -185,12 +184,11 @@ export function TechnicalPartnerships() {
                           }
                         `}
                       >
-                        <img
-                          src={tech.icon}
+                        <img src={tech.icon}
                           alt={tech.name}
                           title={tech.name}
                           className="w-[85%] h-[85%] object-contain transition-transform duration-300"
-                        />
+                        loading="lazy" />
                       </div>
                     );
                   })}

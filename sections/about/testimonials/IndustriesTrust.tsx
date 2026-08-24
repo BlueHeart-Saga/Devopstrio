@@ -63,11 +63,10 @@ export const IndustriesTrust = () => {
               >
                 <div>
                   <div className="mb-6 flex items-center justify-center">
-                    <img
-                      src={ind.image}
+                    <img src={ind.image}
                       alt={ind.name}
                       className="w-28 h-28 sm:w-32 sm:h-32 object-contain group-hover:scale-110 transition-transform duration-500"
-                    />
+                    loading="lazy" />
                   </div>
 
                   <h3 className="text-xl font-bold text-rose-500 mb-2 group-hover:text-rose-400 transition-colors uppercase tracking-wide font-sans">
@@ -113,7 +112,7 @@ export const IndustriesTrust = () => {
               {techPartners.map((partner, idx) => (
                 <div key={idx} className="group flex flex-col items-center gap-3">
                   <div className="w-16 h-16 md:w-20 md:h-20 bg-zinc-950/80 rounded-2xl border border-zinc-800 flex items-center justify-center p-3 md:p-4 group-hover:border-rose-500/40 transition-colors shadow-lg">
-                    <img src={partner.logo} alt={partner.name} className="w-full h-full object-contain transition-all duration-300" />
+                    <img src={partner.logo} alt={partner.name} className="w-full h-full object-contain transition-all duration-300" loading="lazy" />
                   </div>
                   <span className="text-sm font-bold text-zinc-300 group-hover:text-white transition-colors font-sans">{partner.name}</span>
                 </div>
@@ -130,7 +129,7 @@ export const IndustriesTrust = () => {
             >
               {certifications.map((cert, idx) => (
                 <div key={idx} className="w-32 md:w-40 bg-zinc-950/80 rounded-2xl border border-zinc-800 p-4 md:p-6 flex flex-col items-center justify-center group hover:border-rose-500/40 transition-all shadow-xl">
-                  <img src={cert.image} alt={cert.name} className="w-full aspect-square object-contain transition-all duration-300 group-hover:scale-105" />
+                  <img src={cert.image} alt={cert.name} className="w-full aspect-square object-contain transition-all duration-300 group-hover:scale-105" loading="lazy" />
                 </div>
               ))}
             </motion.div>

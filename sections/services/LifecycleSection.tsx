@@ -62,7 +62,7 @@ export function LifecycleSection() {
   ];
 
   return (
-    <section className="w-full pt-24 pb-36 bg-[#030303] text-white relative" id="delivery-framework">
+    <section className="w-full py-10 md:py-14 bg-[#030303] text-white relative" id="delivery-framework">
       {/* Background glowing mesh */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-rose-600/5 rounded-full blur-[140px] pointer-events-none" />
 
@@ -77,9 +77,9 @@ export function LifecycleSection() {
             <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight mb-5 text-white font-sans">
               The Devopstrio <span className="text-rose-500 font-semibold">Delivery Framework</span>
             </h2>
-            <p className="text-zinc-200 text-base md:text-lg font-semibold leading-relaxed">
+            {/* <p className="text-zinc-200 text-base md:text-lg font-semibold leading-relaxed">
               From initial consultation to operational optimization, we ensure full clarity, security alignment, and milestone check-ins.
-            </p>
+            </p> */}
           </div>
         </Reveal>
 
@@ -89,28 +89,35 @@ export function LifecycleSection() {
             const Icon = phase.icon;
             return (
               <Reveal key={phase.step} delay={idx * 0.05}>
-                <div className={`relative overflow-hidden bg-zinc-950/35 border border-white/10 rounded-3xl p-8 min-h-[260px] h-full flex flex-col justify-between backdrop-blur-md shadow-[0_8px_32px_0_rgba(0,0,0,0.4)] hover:bg-zinc-900/10 transition-all duration-300 ${staggerClasses[idx] || ""}`}>
+                <div className={`group relative overflow-hidden rounded-3xl p-8 min-h-[180px] h-full flex flex-col justify-between bg-gradient-to-br from-[#1a060a]/90 via-[#0d0406]/95 to-[#080808]/95 hover:from-[#2c0910] hover:via-[#140508] hover:to-[#0a0a0a] border border-white/10 hover:border-white/20 backdrop-blur-xl shadow-[0_8px_32px_0_rgba(0,0,0,0.5)] transition-all duration-500 ${staggerClasses[idx] || ""}`}>
                   
-                  <div>
+                  {/* Internal ambient glowing mesh */}
+                  <div className="absolute -top-12 -right-12 w-36 h-36 bg-rose-600/15 rounded-full blur-2xl pointer-events-none group-hover:scale-125 transition-transform duration-700" />
+                  
+                  <div className="relative z-10">
                     {/* Header: Large Styled Number & Icon */}
                     <div className="flex items-start justify-between mb-6">
-                      <span className="text-6xl font-mono font-black tracking-tighter leading-none text-transparent bg-clip-text bg-gradient-to-b from-rose-500/30 via-rose-500/15 to-transparent select-none drop-shadow-[0_4px_16px_rgba(225,29,72,0.25)]">
+                      <span className="text-6xl font-mono font-black tracking-tighter leading-none text-transparent bg-clip-text bg-gradient-to-b from-rose-400/50 via-rose-500/20 to-transparent select-none drop-shadow-[0_4px_16px_rgba(225,29,72,0.25)]">
                         {phase.step}
                       </span>
-                      <div className="w-10 h-10 rounded-2xl bg-rose-600/10 text-rose-500 flex items-center justify-center">
+                      <div className="w-11 h-11 rounded-2xl bg-rose-500/10 border border-rose-500/20 text-rose-400 flex items-center justify-center shadow-[0_0_15px_rgba(225,29,72,0.15)] group-hover:scale-105 transition-transform duration-300">
                         <Icon size={18} />
                       </div>
                     </div>
 
                     {/* Step Title */}
-                    <h3 className="text-xl font-semibold text-white mb-3 hover:text-rose-400 transition-colors duration-300 font-sans">
+                    <h3 className="text-xl font-semibold text-white mb-2 group-hover:text-rose-400 transition-colors duration-300 font-sans">
                       {phase.name}
                     </h3>
 
                     {/* Step Description */}
-                    <p className="text-sm sm:text-base text-zinc-300 font-medium leading-relaxed">
-                      {phase.desc}
-                    </p>
+                    <div className="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] opacity-0 group-hover:opacity-100 transition-all duration-300 ease-in-out">
+                      <div className="overflow-hidden">
+                        <p className="text-sm sm:text-base text-zinc-300 font-medium leading-relaxed pt-1 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300 ease-in-out">
+                          {phase.desc}
+                        </p>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </Reveal>

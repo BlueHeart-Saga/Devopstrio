@@ -52,11 +52,10 @@ export function OurStorySection() {
 
       {/* 1. HERO */}
       <section className="relative w-full min-h-[85vh] flex items-center justify-center rounded-3xl overflow-hidden border border-zinc-800 bg-zinc-950 px-6 py-20 text-center">
-        <img
-          src="/assets/About-page/overview/about-devopstrio.png"
+        <img src="/assets/About-page/overview/about-devopstrio.png"
           alt="Engineering Better Digital Futures"
           className="absolute inset-0 w-full h-full object-cover object-center opacity-40 filter brightness-90"
-        />
+        loading="lazy" />
         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-black/30 pointer-events-none" />
 
         <div className="relative z-10 max-w-4xl mx-auto space-y-6">
@@ -94,11 +93,10 @@ export function OurStorySection() {
       <section className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div className="relative rounded-3xl overflow-hidden border border-zinc-800 bg-zinc-950 h-[380px] md:h-[440px] group shadow-2xl">
-            <img
-              src="/assets/About-page/overview/about-devopstrio.png"
+            <img src="/assets/About-page/overview/about-devopstrio.png"
               alt="Every Business Wants to Move Faster"
               className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
-            />
+            loading="lazy" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
           </div>
 
@@ -136,11 +134,10 @@ export function OurStorySection() {
           </div>
 
           <div className="relative rounded-3xl overflow-hidden border border-zinc-800 bg-zinc-950 h-[380px] md:h-[440px] group shadow-2xl order-1 lg:order-2">
-            <img
-              src="/assets/wavebg/navbar/servicesdrop.jpeg"
+            <img src="/assets/wavebg/navbar/servicesdrop.jpeg"
               alt="Team Collaboration"
               className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
-            />
+            loading="lazy" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
           </div>
         </div>
@@ -310,11 +307,10 @@ export function OurStorySection() {
             </div>
 
             <div className="relative rounded-2xl overflow-hidden border border-zinc-800 bg-zinc-900 h-[280px] md:h-[340px] group">
-              <img
-                src="/assets/ecosystem/engineering-excellence-hero/Main.png"
+              <img src="/assets/ecosystem/engineering-excellence-hero/Main.png"
                 alt="Building What's Next"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-90"
-              />
+              loading="lazy" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
             </div>
           </div>

@@ -68,12 +68,10 @@ export function CommunityHero() {
               }}
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={avatar.src}
+              <img src={avatar.src}
                 alt={`Community Member ${avatar.id}`}
                 className="w-full h-full object-cover"
-                loading="lazy"
-              />
+                loading="eager" />
             </div>
           ))}
         </div>

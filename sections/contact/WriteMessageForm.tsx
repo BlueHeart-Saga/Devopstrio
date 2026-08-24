@@ -143,11 +143,10 @@ export function WriteMessageForm() {
         <Reveal className="mb-8 md:mb-10 text-center max-w-3xl mx-auto flex flex-col items-center">
           {/* Top-to-bottom straight arrow PNG (Matching CoreServices.tsx) */}
           <div className="mb-2 sm:mb-3 flex justify-center pointer-events-none select-none">
-            <img
-              src="/assets/components/streight-toptobuttm.png"
+            <img src="/assets/components/streight-toptobuttm.png"
               alt="Top to bottom arrow"
               className="w-16 sm:w-20 md:w-24 lg:w-28 h-auto object-contain filter drop-shadow-[0_0_20px_rgba(244,63,94,0.5)]"
-            />
+            loading="lazy" />
           </div>
 
           <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold tracking-tight leading-[1.35] mb-3 text-white">

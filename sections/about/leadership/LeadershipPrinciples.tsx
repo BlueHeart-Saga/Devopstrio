@@ -247,11 +247,10 @@ export const LeadershipPrinciples = () => {
             <div className="relative my-6 sm:my-8 flex items-center justify-center w-full min-h-[320px] sm:min-h-[380px] lg:min-h-[420px]">
               {/* Illustrated Leader Portrait */}
               <div className="relative z-10 w-64 sm:w-80 md:w-96 lg:w-[400px] h-64 sm:h-80 md:h-96 lg:h-[400px] flex items-center justify-center">
-                <img
-                  src={currentPoster.image}
+                <img src={currentPoster.image}
                   alt={currentPoster.leaderName}
                   className="w-full h-full object-contain filter contrast-105 pointer-events-none drop-shadow-[0_10px_30px_rgba(0,0,0,0.8)]"
-                />
+                loading="lazy" />
               </div>
 
               {/* Hand-Drawn Dotted Curved Arrow & Leader Annotation (Left Side) */}

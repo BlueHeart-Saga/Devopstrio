@@ -44,11 +44,10 @@ export const LifeHero = () => {
               className="relative h-full w-[85vw] sm:w-[65vw] md:w-[50vw] lg:w-[45vw] shrink-0 border-r border-black/40 overflow-hidden"
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={src}
+              <img src={src}
                 alt={`Life at Devopstrio frame ${index + 1}`}
                 className="w-full h-full object-cover object-center filter brightness-105 contrast-105 scale-[1.01]"
-              />
+              loading="eager" />
             </div>
           ))}
         </motion.div>

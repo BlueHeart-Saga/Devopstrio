@@ -14,70 +14,70 @@ export function OurFutureSection() {
       title: "Autonomous DevOps & GitOps",
       desc: <>Architecting self-healing Kubernetes clusters and AI-driven site reliability engineering agents under our <Link href="/services/devops-automation" className="text-rose-500 hover:underline font-bold">DevOps automation</Link> division.</>,
       tag: "DevOps",
-      image: "/assets/About-page/overview/future/devops.png",
+      image: "/assets/careers/jobs/devops.png",
       href: "/services/devops-automation"
     },
     {
       title: "Sustainable Multi-Cloud",
       desc: <>Optimizing code execution and server workloads to reduce costs and carbon footprints across multi-cloud platforms in <Link href="/services/cloud-services" className="text-rose-500 hover:underline font-bold">cloud services</Link>.</>,
       tag: "Cloud Ops",
-      image: "/assets/About-page/overview/future/cloud.png",
+      image: "/assets/careers/jobs/Cloud-Ops.png",
       href: "/services/cloud-services"
     },
     {
       title: "Cognitive AI & Autonomous Agents",
       desc: <>Deploying multi-model consensus swarms, LLMs, and agentic workflows under our <Link href="/services/ai-data-innovation" className="text-rose-500 hover:underline font-bold">AI & data innovation</Link> wing.</>,
       tag: "AI Innovation",
-      image: "/assets/About-page/overview/future/ai-data-innovation.png",
+      image: "/assets/careers/jobs/AI-Innovation.png",
       href: "/services/ai-data-innovation"
     },
     {
       title: "Next-Gen Software Engineering",
       desc: <>Unifying cloud-native microservices, modern distributed backends, and full-stack systems under <Link href="/services/software-development" className="text-rose-500 hover:underline font-bold">software development</Link>.</>,
       tag: "Software",
-      image: "/assets/About-page/overview/future/software-development.png",
+      image: "/assets/careers/jobs/Software.png",
       href: "/services/software-development"
     },
     {
       title: "Quantum & Zero-Trust Security",
       desc: <>Preparing hybrid-cloud computing topologies for zero-trust security and continuous defense with our <Link href="/services/cybersecurity" className="text-rose-500 hover:underline font-bold">cybersecurity</Link> team.</>,
       tag: "Security",
-      image: "/assets/About-page/overview/future/cyber-security.png",
+      image: "/assets/careers/jobs/security.png",
       href: "/services/cybersecurity"
     },
     {
       title: "Unified Lakehouse & Analytics",
       desc: <>Deploying secure, real-time intelligence pipelines, streaming telemetry, and lakehouse storage under <Link href="/services/data-engineering" className="text-rose-500 hover:underline font-bold">data engineering</Link>.</>,
       tag: "Data Engineering",
-      image: "/assets/About-page/overview/future/data-engineering.png",
+      image: "/assets/careers/jobs/data-engineering.png",
       href: "/services/data-engineering"
     },
     {
       title: "Digital Transformation Mesh",
       desc: <>Orchestrating end-to-end digital transformation, industrial automation, and enterprise legacy modernization in <Link href="/services/digital-transformation" className="text-rose-500 hover:underline font-bold">digital transformation</Link>.</>,
       tag: "Transformation",
-      image: "/assets/About-page/overview/future/digital-transformation.png",
+      image: "/assets/careers/jobs/transformation.png",
       href: "/services/digital-transformation"
     },
     {
       title: "Strategic Technology Advisory",
       desc: <>Providing high-impact architecture strategy, technology roadmap design, and enterprise cloud advisory in <Link href="/services/it-consulting" className="text-rose-500 hover:underline font-bold">IT consulting</Link>.</>,
       tag: "Consulting",
-      image: "/assets/About-page/overview/future/it-consulting.png",
+      image: "/assets/careers/jobs/consulting.png",
       href: "/services/it-consulting"
     },
     {
       title: "24/7 Intelligent SRE Operations",
       desc: <>Intelligent round-the-clock infrastructure monitoring, automated incident triage, and SLA assurances in <Link href="/services/managed-services" className="text-rose-500 hover:underline font-bold">managed services</Link>.</>,
       tag: "Managed Ops",
-      image: "/assets/About-page/overview/future/managed-services.png",
+      image: "/assets/careers/jobs/managed-ops.png",
       href: "/services/managed-services"
     },
     {
       title: "Automated & Performance QA",
       desc: <>Continuous end-to-end QA pipelines, chaos testing, security scanning, and reliability verification under our <Link href="/services/qa-testing" className="text-rose-500 hover:underline font-bold">QA & testing</Link> practices.</>,
       tag: "QA Testing",
-      image: "/assets/About-page/overview/future/qa-testing.png",
+      image: "/assets/careers/jobs/qa-testing.png",
       href: "/services/qa-testing"
     }
   ];
@@ -176,11 +176,10 @@ export function OurFutureSection() {
                   
                   {/* Cover Image */}
                   <div className="relative w-full aspect-[2/1] overflow-hidden rounded-[16px] bg-zinc-900 border border-zinc-800/50">
-                    <img
-                      src={focus.image}
+                    <img src={focus.image}
                       alt={typeof focus.title === 'string' ? focus.title : 'Future Focus'}
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
-                    />
+                    loading="lazy" />
                   </div>
 
                   {/* Card Body */}

@@ -1,11 +1,11 @@
 import dynamic from "next/dynamic";
 import { HeroSection } from "@/sections/home/HeroSection";
-import { CoreServices } from "@/sections/home/CoreServices";
-import { ServicesOverviewPillars } from "@/sections/home/ServicesOverviewPillars";
-import { IndustryExpertise } from "@/sections/home/IndustryExpertise";
-import { CaseStudies } from "@/sections/home/CaseStudies";
 
 // Dynamic imports for heavier sections
+const ServicesOverviewPillars = dynamic(() => import("@/sections/home/ServicesOverviewPillars").then((mod) => mod.ServicesOverviewPillars));
+const CoreServices = dynamic(() => import("@/sections/home/CoreServices").then((mod) => mod.CoreServices));
+const IndustryExpertise = dynamic(() => import("@/sections/home/IndustryExpertise").then((mod) => mod.IndustryExpertise));
+const CaseStudies = dynamic(() => import("@/sections/home/CaseStudies").then((mod) => mod.CaseStudies));
 const AIStudioShowcase = dynamic(() => import("@/sections/home/AIStudioShowcase").then((mod) => mod.AIStudioShowcase));
 const ExecutiveTestimonials = dynamic(() => import("@/sections/home/ExecutiveTestimonials").then((mod) => mod.ExecutiveTestimonials));
 const FounderQuoteSection = dynamic(() => import("@/sections/home/FounderQuoteSection").then((mod) => mod.FounderQuoteSection));

@@ -40,7 +40,7 @@ export function RepresentativeCTA({
     : "text-rose-500 font-bold";
 
   return (
-    <section className="w-full pt-32 sm:pt-40 lg:pt-48 pb-8 sm:pb-12 bg-black border-t border-zinc-900 relative font-sans overflow-x-clip">
+    <section className="w-full pt-12 sm:pt-16 lg:pt-20 pb-8 sm:pb-12 bg-black relative font-sans overflow-x-clip">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
         <Reveal>
           <div className="bg-[#080808] border border-zinc-800/80 rounded-3xl p-6 sm:p-10 lg:p-12 lg:pl-14 lg:pr-8 relative shadow-2xl flex flex-col lg:flex-row items-stretch justify-between gap-8 min-h-[320px] sm:min-h-[360px] lg:min-h-[380px]">
@@ -92,11 +92,10 @@ export function RepresentativeCTA({
             {/* Right Representative Image: Bottom touches card bottom border line exactly, top extends further outside top border */}
             <div className="lg:absolute lg:bottom-0 lg:right-2 xl:right-6 w-full sm:w-[520px] lg:w-[640px] xl:w-[700px] flex justify-center lg:justify-end items-end pointer-events-none z-10">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={imageSrc}
+              <img src={imageSrc}
                 alt={imageAlt}
                 className="w-full h-auto object-contain pointer-events-none drop-shadow-[0_25px_50px_rgba(0,0,0,0.95)] lg:max-h-[calc(100%+160px)] xl:max-h-[calc(100%+180px)] -mt-24 sm:-mt-32 lg:mt-0"
-              />
+              loading="lazy" />
             </div>
 
           </div>

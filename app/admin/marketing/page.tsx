@@ -454,7 +454,7 @@ export default function MarketingResourcesAdminPage() {
                   </label>
                   {formData.thumbnailUrl && (
                     <div className="flex items-center gap-3">
-                      <img src={formData.thumbnailUrl} alt="Thumbnail" className="w-16 h-16 rounded-lg object-cover border border-zinc-800" />
+                      <img src={formData.thumbnailUrl} alt="Thumbnail" className="w-16 h-16 rounded-lg object-cover border border-zinc-800" loading="lazy" />
                       <button onClick={() => setFormData(p => ({ ...p, thumbnailUrl: "" }))}
                         className="p-1.5 rounded-lg bg-red-950/40 hover:bg-red-900/40 transition-colors">
                         <X size={12} className="text-red-400" />
@@ -624,7 +624,7 @@ function ResourceRow({
       {/* Left info */}
       <div className="flex items-start gap-4 flex-1 min-w-0">
         {resource.thumbnailUrl ? (
-          <img src={resource.thumbnailUrl} alt={resource.title} className="w-14 h-14 rounded-lg object-cover border border-zinc-800 shrink-0" />
+          <img src={resource.thumbnailUrl} alt={resource.title} className="w-14 h-14 rounded-lg object-cover border border-zinc-800 shrink-0" loading="lazy" />
         ) : (
           <div className="w-14 h-14 rounded-lg bg-zinc-800 border border-zinc-700 flex items-center justify-center shrink-0">
             <FileText size={20} className="text-zinc-500" />

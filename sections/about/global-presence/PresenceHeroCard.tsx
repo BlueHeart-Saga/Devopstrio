@@ -28,11 +28,10 @@ export function PresenceHeroCard() {
       {/* Full Width Graphic Panorama */}
       <Reveal delay={0.2} className="w-full mt-8 md:mt-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex justify-center">
         <div className="relative w-full flex items-center justify-center">
-          <img
-            src="/assets/About-page/hero/image3.png"
+          <img src="/assets/About-page/hero/image3.png"
             alt="Devopstrio Global Presence Story"
             className="w-full h-auto object-contain max-h-[500px] lg:max-h-[600px] select-none"
-          />
+          loading="eager" />
         </div>
       </Reveal>
     </section>

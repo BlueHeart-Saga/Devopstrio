@@ -599,11 +599,10 @@ Direct Contacts:
             {/* Right Column: Hero Image */}
             <div className="lg:col-span-5 flex items-center justify-center lg:justify-end z-10 w-full">
               <Reveal delay={0.2} className="w-full flex items-center justify-center lg:justify-end">
-                <img
-                  src="/assets/herocard/Landingzone.png"
+                <img src="/assets/herocard/Landingzone.png"
                   alt="Enterprise Cloud Landing Zone Architecture"
                   className="w-full max-w-[320px] sm:max-w-[380px] lg:max-w-[480px] h-auto object-contain select-none shadow-2xl rounded-2xl"
-                />
+                loading="lazy" />
               </Reveal>
             </div>
 

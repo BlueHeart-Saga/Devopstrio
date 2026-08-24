@@ -190,11 +190,10 @@ export function TechnologyLandscape() {
                   {/* Icon Node Container */}
                   <div className="w-14 h-14 rounded-2xl bg-zinc-900/40 border border-zinc-850 flex items-center justify-center mb-4 group-hover/tool-card:bg-zinc-900 group-hover/tool-card:scale-105 transition-all duration-300 relative">
                     {tool.logo ? (
-                      <img
-                        src={tool.logo}
+                      <img src={tool.logo}
                         alt={tool.name}
                         className="w-8 h-8 object-contain transition-all duration-300"
-                      />
+                      loading="lazy" />
                     ) : (
                       <span className="text-base font-bold font-mono text-rose-500">
                         {tool.name.charAt(0)}

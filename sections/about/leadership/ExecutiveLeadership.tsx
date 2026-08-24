@@ -85,7 +85,7 @@ export const ExecutiveLeadership = () => {
   const displayedMembers = showMore ? [...initialTeam, ...additionalTeam] : initialTeam;
 
   return (
-    <section id="executive-leadership" className="pt-16 sm:pt-24 pb-24 bg-black relative overflow-visible">
+    <section id="executive-leadership" className="pt-12 sm:pt-16 pb-6 sm:pb-8 bg-black relative overflow-visible">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_40%_at_80%_20%,rgba(255,23,68,0.06),transparent)] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
@@ -93,11 +93,10 @@ export const ExecutiveLeadership = () => {
         {/* Executive Leadership Bento Grid (Commented Out)
         <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-14 relative">
           <div className="absolute -top-6 right-2 sm:right-10 z-20 pointer-events-none select-none">
-            <img
-              src="/assets/components/Carrow-right.png"
+            <img src="/assets/components/Carrow-right.png"
               alt="Curved arrow"
               className="w-14 sm:w-20 h-auto object-contain filter drop-shadow-[0_0_15px_rgba(244,63,94,0.4)] scale-x-[-1]"
-            />
+            loading="lazy" />
           </div>
 
           <Reveal>
@@ -147,11 +146,10 @@ export const ExecutiveLeadership = () => {
 
             <div className="md:col-span-1 md:row-span-2">
               <div className="relative rounded-[1.75rem] overflow-hidden border border-zinc-900 bg-zinc-950/60 h-[444px] hover:border-zinc-800 transition-all duration-500 group shadow-lg flex flex-col justify-end">
-                <img
-                  src="/assets/About-page/card/about-inside-leadership-team_Grid_card.png"
+                <img src="/assets/About-page/card/about-inside-leadership-team_Grid_card.png"
                   alt="Platform Engineering"
                   className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
-                />
+                loading="lazy" />
                 
                 <div className="absolute inset-0 bg-[linear-gradient(to_right,#e11d4808_1px,transparent_1px),linear-gradient(to_bottom,#e11d4808_1px,transparent_1px)] bg-[size:16px_16px] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
@@ -227,11 +225,10 @@ export const ExecutiveLeadership = () => {
                       key={i} 
                       className="relative w-10 h-10 rounded-full border-2 border-zinc-950 overflow-hidden bg-zinc-900 transition-transform duration-300 hover:scale-115 hover:z-30 cursor-pointer shadow-md"
                     >
-                      <img
-                        className="w-full h-full object-cover object-top"
+                      <img className="w-full h-full object-cover object-top"
                         src={src}
                         alt={`Reviewer ${i + 1}`}
-                      />
+                      loading="lazy" />
                     </div>
                   ))}
                   <div className="w-10 h-10 rounded-full border-2 border-zinc-950 bg-zinc-900 flex items-center justify-center text-white text-[10px] font-black tracking-tight shrink-0 select-none">
@@ -260,11 +257,10 @@ export const ExecutiveLeadership = () => {
                 <span className="relative inline-block">
                   {/* Top-to-bottom straight arrow spanning across section boundary (Enlarged) */}
                   <div className="absolute -top-16 sm:-top-20 md:-top-24 lg:-top-28 left-1/2 -translate-x-1/2 pointer-events-none select-none z-30">
-                    <img
-                      src="/assets/components/streight-toptobuttm.png"
+                    <img src="/assets/components/streight-toptobuttm.png"
                       alt="Top to bottom arrow indicator"
                       className="w-14 sm:w-18 md:w-22 lg:w-24 h-auto object-contain filter drop-shadow-[0_0_20px_rgba(244,63,94,0.6)]"
-                    />
+                    loading="lazy" />
                   </div>
                   <span className="text-rose-500">Inspire.</span>
                 </span>{" "}
@@ -297,11 +293,10 @@ export const ExecutiveLeadership = () => {
                     transition={{ duration: 0.5 }}
                   >
                     <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,23,68,0.03),transparent_50%)] pointer-events-none" />
-                    <img
-                      src="/assets/About-page/card/about-inside-leadership-team_Grid_card.png"
+                    <img src="/assets/About-page/card/about-inside-leadership-team_Grid_card.png"
                       alt="Leadership Grid Graphic"
                       className="absolute inset-0 w-full h-full object-cover opacity-30 mix-blend-screen pointer-events-none transition-opacity duration-500 group-hover:opacity-50"
-                    />
+                    loading="lazy" />
                     <div className="relative z-10">
                       <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-white tracking-tight leading-snug">
                         Want to shape the future of Cloud &amp; AI?
@@ -342,11 +337,10 @@ export const ExecutiveLeadership = () => {
                           className="relative w-full h-full flex items-center justify-center p-2 sm:p-3 rounded-2xl group/card cursor-pointer"
                           title={`View ${member.name}'s Profile`}
                         >
-                          <img
-                            src={member.image}
+                          <img src={member.image}
                             alt={member.name}
                             className="w-full max-w-[135px] sm:max-w-[150px] md:max-w-[165px] lg:max-w-[175px] h-auto object-contain transition-transform duration-500 group-hover:scale-105 block"
-                          />
+                          loading="lazy" />
 
                           {/* Dynamic Signature drawing across the front from bottom-right on hover (moved down) */}
                           <div className="absolute bottom-2 -right-1 sm:bottom-3 sm:right-0 md:bottom-4 md:right-1 pointer-events-none z-30 flex flex-col items-end -rotate-[10deg] origin-bottom-right opacity-0 group-hover:opacity-100 transition-all duration-400 ease-out transform translate-y-2 group-hover:translate-y-0">
@@ -392,11 +386,10 @@ export const ExecutiveLeadership = () => {
                     transition={{ duration: 0.5, delay: 0.1 }}
                   >
                     <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,23,68,0.03),transparent_50%)] pointer-events-none" />
-                    <img
-                      src="/assets/About-page/card/about-inside-leadership-team_Grid_card.png"
+                    <img src="/assets/About-page/card/about-inside-leadership-team_Grid_card.png"
                       alt="Leadership Grid Graphic"
                       className="absolute inset-0 w-full h-full object-cover opacity-30 mix-blend-screen pointer-events-none transition-opacity duration-500 group-hover:opacity-50"
-                    />
+                    loading="lazy" />
                     <div className="relative z-10">
                       <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-white tracking-tight leading-snug">
                         Work with Our Experts
@@ -413,7 +406,7 @@ export const ExecutiveLeadership = () => {
                 </div>
 
           {/* View More / Show Less Dropdown Button */}
-          <div className="flex justify-center mt-10 relative z-10">
+          <div className="flex justify-center mt-6 relative z-10">
             <button
               onClick={() => setShowMore(!showMore)}
               className="inline-flex items-center gap-2.5 px-7 py-3.5 bg-zinc-950 border border-zinc-800 hover:border-rose-500/40 text-white hover:text-rose-400 text-xs font-bold rounded-full transition-all duration-300 shadow-xl group cursor-pointer hover:shadow-[0_0_25px_rgba(225,29,72,0.2)]"

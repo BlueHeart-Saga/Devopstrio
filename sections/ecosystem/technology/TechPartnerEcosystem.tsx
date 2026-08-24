@@ -38,12 +38,11 @@ export function TechPartnerEcosystem() {
               className="group bg-zinc-950/40 border border-zinc-900/80 rounded-2xl p-5 hover:border-rose-500/20 hover:bg-zinc-950/70 transition-all duration-300 flex flex-col justify-between items-center text-center min-h-[140px]"
             >
               <div className="w-12 h-12 flex items-center justify-center mb-4 transition-all duration-300 group-hover:scale-110">
-                <img
-                  src={p.logo}
+                <img src={p.logo}
                   alt={`${p.name} logo`}
                   className={`max-w-full max-h-full object-contain transition-all duration-300 ${p.darkLogo ? "invert brightness-200" : "brightness-100 group-hover:brightness-110"
                     }`}
-                />
+                loading="lazy" />
               </div>
               <div>
                 <span className="text-xs font-bold text-white uppercase tracking-wider block mb-1">{p.name}</span>

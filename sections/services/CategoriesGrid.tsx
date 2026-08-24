@@ -240,7 +240,7 @@ export function CategoriesGrid() {
   const stepNumber = (activeIndex + 1).toString().padStart(2, "0");
 
   return (
-    <section className="w-full py-24 bg-[#030303] text-white relative">
+    <section className="w-full py-10 md:py-14 bg-[#030303] text-white relative">
       {/* Background radial glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-rose-600/5 rounded-full blur-[120px] pointer-events-none" />
 
@@ -290,13 +290,13 @@ export function CategoriesGrid() {
 
               {/* Dynamic Generated Design Category Backgrounds with Crossfade */}
               {richServiceCategories.map((cat) => (
-                <img
-                  key={cat.id}
+                <img key={cat.id}
                   src={bgWaves[cat.id]}
                   alt={cat.name}
+                  loading="lazy"
+                  decoding="async"
                   className={`absolute inset-0 w-full h-full object-cover pointer-events-none transition-all duration-700 ease-in-out group-hover/tall:scale-105 ${activeTab === cat.id ? "opacity-50 scale-100" : "opacity-0 scale-105"
-                    }`}
-                />
+                    }`} />
               ))}
 
               {/* Dark Gradient Overlay for High Contrast & Text Legibility */}
@@ -307,9 +307,13 @@ export function CategoriesGrid() {
                 <h3 className="text-2xl md:text-3xl font-semibold text-white tracking-tight leading-snug mb-4 group-hover/tall:text-rose-400 transition-colors font-sans">
                   Grow your business with trustworthy {selectedCategory.name}
                 </h3>
-                <p className="text-zinc-200 text-sm md:text-base font-medium leading-relaxed">
-                  {selectedCategory.desc}
-                </p>
+                <div className="grid grid-rows-[0fr] group-hover/tall:grid-rows-[1fr] opacity-0 group-hover/tall:opacity-100 transition-all duration-300 ease-in-out">
+                  <div className="overflow-hidden">
+                    <p className="text-zinc-200 text-sm md:text-base font-medium leading-relaxed pb-2 transform translate-y-2 group-hover/tall:translate-y-0 transition-transform duration-300 ease-in-out">
+                      {selectedCategory.desc}
+                    </p>
+                  </div>
+                </div>
               </div>
 
               {/* Card bottom button */}
@@ -332,7 +336,7 @@ export function CategoriesGrid() {
           <div className="lg:col-span-3 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {selectedCategory.items.slice(0, 6).map((item, idx) => (
               <Reveal key={item.name} delay={idx * 0.04} className="h-full">
-                <div className="group/card flex flex-col justify-between bg-zinc-950/40 border border-white/10 hover:border-rose-500/30 hover:bg-zinc-950/70 rounded-2xl p-6 md:p-7 transition-all duration-300 min-h-[230px] h-full relative overflow-hidden backdrop-blur-md shadow-[0_8px_32px_0_rgba(0,0,0,0.37)]">
+                <div className="group/card flex flex-col justify-between bg-zinc-950/40 border border-white/10 hover:border-rose-500/30 hover:bg-zinc-950/70 rounded-2xl p-6 md:p-7 transition-all duration-300 min-h-[180px] md:min-h-[200px] h-full relative overflow-hidden backdrop-blur-md shadow-[0_8px_32px_0_rgba(0,0,0,0.37)]">
 
                   {/* Subtle color highlight glow on hover */}
                   <div className="absolute inset-0 bg-gradient-to-br from-rose-600/0 via-rose-600/0 to-rose-600/5 opacity-0 group-hover/card:opacity-100 transition-opacity duration-500 pointer-events-none" />
@@ -342,9 +346,13 @@ export function CategoriesGrid() {
                     <h4 className="text-lg md:text-xl font-semibold text-rose-500 group-hover:text-rose-400 transition-colors mb-2.5">
                       {item.name}
                     </h4>
-                    <p className="text-sm md:text-base text-zinc-300 font-normal leading-relaxed mb-6">
-                      {item.desc}
-                    </p>
+                    <div className="grid grid-rows-[0fr] group-hover/card:grid-rows-[1fr] opacity-0 group-hover/card:opacity-100 transition-all duration-300 ease-in-out">
+                      <div className="overflow-hidden">
+                        <p className="text-sm md:text-base text-zinc-300 font-normal leading-relaxed pb-4 transform translate-y-2 group-hover/card:translate-y-0 transition-transform duration-300 ease-in-out">
+                          {item.desc}
+                        </p>
+                      </div>
+                    </div>
                   </div>
 
                   {/* Link action details */}

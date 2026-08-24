@@ -105,14 +105,13 @@ export const LeadershipHero = () => {
       <div className="sticky top-0 h-screen w-full flex flex-col justify-end pb-16 sm:pb-20 lg:pb-24 overflow-hidden select-none">
         {/* Bright Cinematic Background Image & Targeted Contrast Masks */}
         <div className="absolute inset-0 z-0 pointer-events-none select-none">
-          <img
-            src="/assets/About-page/leadership_hero_bg.png"
+          <img src="/assets/About-page/leadership_hero_bg.png"
             alt="Devopstrio Leadership and Executive Office"
             className="w-full h-full object-cover object-center filter brightness-105 contrast-105 transition-transform duration-700 ease-out"
             style={{
               transform: `scale(${1 + scrollProgress * 0.04})`,
             }}
-          />
+          loading="eager" />
           {/* Targeted Left Gradient: keeps text 100% viewable while the right half remains bright & clear */}
           <div className="absolute inset-y-0 left-0 w-full sm:w-[65%] lg:w-[55%] bg-gradient-to-r from-black/95 via-black/80 to-transparent z-10" />
           <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-black/70 to-transparent z-10" />

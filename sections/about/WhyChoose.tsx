@@ -211,11 +211,10 @@ export function WhyChoose() {
                         : "opacity-0 scale-[1.03] pointer-events-none z-0"
                     }`}
                   >
-                    <img
-                      src={item.image}
+                    <img src={item.image}
                       alt={item.title}
                       className="w-full h-full object-cover opacity-80 select-none pointer-events-none"
-                    />
+                    loading="lazy" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent pointer-events-none" />
                     <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-transparent pointer-events-none" />
                   </div>
@@ -230,11 +229,10 @@ export function WhyChoose() {
         {/* Banner Image */}
         <Reveal className="mt-8 w-full max-w-5xl mx-auto">
           <div className="w-full relative overflow-hidden">
-            <img 
-              src="/assets/About-page/why-choose/banner.png" 
+            <img src="/assets/About-page/why-choose/banner.png" 
               alt="Corporate Advantage Banner" 
               className="w-full h-auto select-none pointer-events-none"
-            />
+            loading="lazy" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none" />
           </div>
         </Reveal>

@@ -85,11 +85,10 @@ export function WhoWeAreWhatWeDoSection() {
 
                       {/* Main Image */}
                       <div className="relative z-10 w-full max-w-[270px] aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl border border-white/10 bg-zinc-950">
-                        <img
-                          src="/assets/About-page/consulting_team.png"
+                        <img src="/assets/About-page/consulting_team.png"
                           alt="Devopstrio Engineering Leaders"
                           className="w-full h-full object-cover object-center filter brightness-[1.02] contrast-[1.05]"
-                        />
+                        loading="lazy" />
                       </div>
 
                     </div>
@@ -181,11 +180,10 @@ export function WhoWeAreWhatWeDoSection() {
 
                       {/* Main Image */}
                       <div className="relative z-10 w-full max-w-[270px] aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl border border-white/10 bg-zinc-950">
-                        <img
-                          src="/assets/About-page/cloud_servers.png"
+                        <img src="/assets/About-page/cloud_servers.png"
                           alt="Devopstrio Infrastructure Systems"
                           className="w-full h-full object-cover object-center filter brightness-[1.02] contrast-[1.05]"
-                        />
+                        loading="lazy" />
                       </div>
 
                     </div>

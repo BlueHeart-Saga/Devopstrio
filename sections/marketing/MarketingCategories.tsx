@@ -100,11 +100,10 @@ export function MarketingCategories({ categories, onSelectCategory }: MarketingC
 
             {/* Image Preview Container */}
             <div className="w-full md:w-1/2 relative min-h-[260px] rounded-3xl overflow-hidden shadow-2xl bg-zinc-950 group border border-white/10">
-              <img
-                src={activeImage}
+              <img src={activeImage}
                 alt={activeCategory?.label || "Category Image"}
                 className="w-full h-full object-cover object-center transition-all duration-700 hover:scale-105 filter brightness-95 contrast-105"
-              />
+              loading="lazy" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none" />
 
               <div className="absolute bottom-4 left-4 right-4 flex justify-between items-center z-10">

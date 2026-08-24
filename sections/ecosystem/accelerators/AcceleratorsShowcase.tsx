@@ -85,11 +85,10 @@ export function AcceleratorsShowcase() {
 
             {/* Right Banner Image */}
             <div className="lg:col-span-7 relative h-[240px] md:h-[360px] rounded-[20px] overflow-hidden border border-zinc-800/40">
-              <img
-                src="/assets/ecosystem/card/Enterprise-Accelerators-Frameworks.png"
+              <img src="/assets/ecosystem/card/Enterprise-Accelerators-Frameworks.png"
                 alt="Devopstrio Cloud Accelerators"
                 className="w-full h-full object-cover transition-transform duration-[1.5s] group-hover:scale-102 filter brightness-[0.8] group-hover:brightness-[0.9]"
-              />
+              loading="lazy" />
               <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/80 via-transparent to-transparent" />
             </div>
           </div>
@@ -117,11 +116,10 @@ export function AcceleratorsShowcase() {
                           {asset.badge}
                         </span>
                       )}
-                      <img
-                        src={asset.image}
+                      <img src={asset.image}
                         alt={asset.title}
                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-103 filter brightness-[0.8] group-hover:brightness-[0.9]"
-                      />
+                      loading="lazy" />
                     </div>
 
                     {/* Title */}

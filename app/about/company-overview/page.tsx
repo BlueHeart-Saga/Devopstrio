@@ -1,18 +1,21 @@
 "use client";
 
 import React from "react";
+import dynamic from "next/dynamic";
 import { BreadcrumbSchema } from "@/components/seo/Schemas";
 import { SectionNavbar } from "@/components/ui/SectionNavbar";
 
 // Import Section Components
 import { OverviewHero } from "@/sections/about/overview/OverviewHero";
-import { CompanyOverviewPillars } from "@/sections/about/overview/CompanyOverviewPillars";
-import { CompanyOverviewSection } from "@/sections/about/overview/CompanyOverviewSection";
-import { WhoWeAreWhatWeDoSection } from "@/sections/about/overview/WhoWeAreWhatWeDoSection";
-import { OurPeopleSection } from "@/sections/about/overview/OurPeopleSection";
-import { MissionVisionValues } from "@/sections/about/overview/MissionVisionValues";
-import { OurFutureSection } from "@/sections/about/overview/OurFutureSection";
-import { EnterpriseCTA } from "@/sections/about/overview/EnterpriseCTA";
+
+// Dynamic Imports for Heavy Below-The-Fold Sections to Reduce Initial JS Payload
+const CompanyOverviewPillars = dynamic(() => import("@/sections/about/overview/CompanyOverviewPillars").then((mod) => mod.CompanyOverviewPillars));
+const CompanyOverviewSection = dynamic(() => import("@/sections/about/overview/CompanyOverviewSection").then((mod) => mod.CompanyOverviewSection));
+const WhoWeAreWhatWeDoSection = dynamic(() => import("@/sections/about/overview/WhoWeAreWhatWeDoSection").then((mod) => mod.WhoWeAreWhatWeDoSection));
+const OurPeopleSection = dynamic(() => import("@/sections/about/overview/OurPeopleSection").then((mod) => mod.OurPeopleSection));
+const MissionVisionValues = dynamic(() => import("@/sections/about/overview/MissionVisionValues").then((mod) => mod.MissionVisionValues));
+const OurFutureSection = dynamic(() => import("@/sections/about/overview/OurFutureSection").then((mod) => mod.OurFutureSection));
+const EnterpriseCTA = dynamic(() => import("@/sections/about/overview/EnterpriseCTA").then((mod) => mod.EnterpriseCTA));
 
 const overviewSections = [
   { id: "hero", label: "Overview" },

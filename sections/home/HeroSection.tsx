@@ -387,11 +387,10 @@ export function HeroSection() {
                   transition={{ duration: 0.5, delay: 0.2 }}
                   className="absolute bottom-8 sm:bottom-12 md:bottom-16 lg:bottom-20 right-4 sm:right-10 md:right-16 lg:right-20 z-30 flex flex-col items-start select-none pointer-events-none"
                 >
-                  <img
-                    src={slides[currentSlide].signatureImage}
+                  <img src={slides[currentSlide].signatureImage}
                     alt={`${slides[currentSlide].name} signature`}
                     className="w-36 sm:w-48 md:w-56 lg:w-64 h-auto object-contain drop-shadow-[0_4px_16px_rgba(0,0,0,0.6)]"
-                  />
+                  loading="eager" />
                 </motion.div>
 
                 {/* Bottom blending gradient */}

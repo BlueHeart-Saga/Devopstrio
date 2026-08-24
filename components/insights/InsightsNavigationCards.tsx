@@ -179,11 +179,10 @@ export function InsightsNavigationCards() {
                 >
                   {/* Cover Image */}
                   <div className="relative h-44 overflow-hidden">
-                    <img
-                      src={item.image}
+                    <img src={item.image}
                       alt={item.title}
                       className="w-full h-full object-cover"
-                    />
+                    loading="lazy" />
                     {/* Dark gradient overlay */}
                     <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/40 to-transparent" />
                   </div>

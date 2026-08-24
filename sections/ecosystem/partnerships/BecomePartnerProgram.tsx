@@ -68,7 +68,7 @@ export function BecomePartnerProgram() {
                 
                 {/* Expanding Image Layer with Glassmorphism */}
                 <div className="absolute inset-0 z-0 [clip-path:circle(0%_at_100%_100%)] group-hover:[clip-path:circle(150%_at_100%_100%)] transition-all duration-700 ease-in-out pointer-events-none">
-                  <img src={prog.image} alt={prog.title} className="w-full h-full object-cover scale-110 group-hover:scale-100 transition-transform duration-1000 ease-out opacity-70" />
+                  <img src={prog.image} alt={prog.title} className="w-full h-full object-cover scale-110 group-hover:scale-100 transition-transform duration-1000 ease-out opacity-70" loading="lazy" />
                   
                   {/* Frosted Glass Blur Overlay */}
                   <div className="absolute inset-0 bg-black/50 backdrop-blur-md" />

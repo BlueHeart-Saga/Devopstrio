@@ -125,7 +125,7 @@ export const ClientTestimonials = () => {
                   <div className="flex items-center gap-3 border-t border-zinc-800/80 pt-4">
                     <div className="w-10 h-10 rounded-full overflow-hidden bg-zinc-800 border border-zinc-700 flex items-center justify-center text-xs font-bold text-zinc-300 shrink-0">
                       {t.image ? (
-                        <img src={t.image} alt={t.author} className="w-full h-full object-cover object-top" />
+                        <img src={t.image} alt={t.author} className="w-full h-full object-cover object-top" loading="lazy" />
                       ) : (
                         t.initials
                       )}
@@ -189,7 +189,7 @@ export const ClientTestimonials = () => {
                   <div className="flex items-center gap-3 px-2">
                     <div className="w-10 h-10 rounded-full overflow-hidden bg-zinc-800 flex items-center justify-center text-xs font-bold text-white shrink-0 shadow-lg border border-zinc-700">
                       {review.image ? (
-                        <img src={review.image} alt={review.name} className="w-full h-full object-cover object-top" />
+                        <img src={review.image} alt={review.name} className="w-full h-full object-cover object-top" loading="lazy" />
                       ) : (
                         review.initials
                       )}

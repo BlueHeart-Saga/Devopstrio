@@ -76,11 +76,10 @@ export function CareersIntroBanner() {
             <div className="relative mb-6 pt-6 sm:pt-8">
               {/* Top-to-bottom arrow PNG above Learn word */}
               <div className="absolute -top-12 sm:-top-16 -left-3 sm:-left-4 pointer-events-none select-none z-20">
-                <img
-                  src="/assets/components/top-to-buttom-side-Arrowmid.png"
+                <img src="/assets/components/top-to-buttom-side-Arrowmid.png"
                   alt="Arrow indicator"
                   className="w-12 sm:w-16 h-auto object-contain filter drop-shadow-[0_0_15px_rgba(244,63,94,0.5)]"
-                />
+                loading="lazy" />
               </div>
 
               <h3 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-semibold text-white tracking-tight leading-[1.25] font-sans">

@@ -164,11 +164,10 @@ export function CaseStudies() {
                   {/* Subtle clean dark gradient overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-[#030303] via-[#030303]/60 to-transparent z-10 pointer-events-none" />
 
-                  <img
-                    src={caseStudies[activeIndex].image}
+                  <img src={caseStudies[activeIndex].image}
                     alt={caseStudies[activeIndex].title}
                     className="absolute inset-0 w-full h-full object-cover opacity-60 transition-transform duration-[1.2s] group-hover:scale-103 group-hover:opacity-85 select-none"
-                  />
+                  loading="lazy" />
 
                   {/* Left/Right Navigation Arrows Inside Image */}
                   <div className="absolute inset-0 flex items-center justify-between px-4 md:px-6 z-30 opacity-0 group-hover:opacity-100 transition-opacity duration-300">

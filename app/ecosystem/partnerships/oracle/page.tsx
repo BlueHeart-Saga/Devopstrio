@@ -451,11 +451,10 @@ export default function OracleStrategicAllianceHub() {
                   <div className="relative group/logo w-[120px] h-[120px] sm:w-[130px] sm:h-[130px] rounded-3xl bg-[#09090b]/80 border border-zinc-800 hover:border-rose-500/30 flex items-center justify-center p-5 shadow-2xl backdrop-blur-md transition-all duration-500 hover:-translate-y-1">
                     <div className="absolute inset-0 bg-gradient-to-br from-rose-500/[0.03] to-transparent rounded-3xl opacity-0 group-hover/logo:opacity-100 transition-opacity" />
                     <div className="absolute -inset-1 rounded-3xl bg-gradient-to-r from-rose-600 to-red-655 opacity-0 group-hover/logo:opacity-20 blur-md transition-opacity" />
-                    <img
-                      src="/assets/logo/logo.png"
+                    <img src="/assets/logo/logo.png"
                       alt="Devopstrio Logo"
                       className="w-full h-auto max-h-[85%] object-contain select-none filter brightness-105"
-                    />
+                    loading="lazy" />
                   </div>
 
                   {/* Plus Connector Indicator */}
@@ -467,11 +466,10 @@ export default function OracleStrategicAllianceHub() {
                   <div className="relative group/logo w-[120px] h-[120px] sm:w-[130px] sm:h-[130px] rounded-3xl bg-[#09090b]/80 border border-zinc-800 hover:border-red-500/30 flex items-center justify-center p-5 shadow-2xl backdrop-blur-md transition-all duration-500 hover:-translate-y-1">
                     <div className="absolute inset-0 bg-gradient-to-br from-red-500/[0.03] to-transparent rounded-3xl opacity-0 group-hover/logo:opacity-100 transition-opacity" />
                     <div className="absolute -inset-1 rounded-3xl bg-gradient-to-r from-red-600 to-rose-500 opacity-0 group-hover/logo:opacity-20 blur-md transition-opacity" />
-                    <img
-                      src="/assets/Tech_logos/Oracle_Cloud.svg"
+                    <img src="/assets/Tech_logos/Oracle_Cloud.svg"
                       alt="Oracle Cloud Logo"
                       className="w-full h-auto max-h-[85%] object-contain select-none"
-                    />
+                    loading="lazy" />
                   </div>
 
                 </div>

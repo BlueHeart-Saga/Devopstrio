@@ -131,11 +131,10 @@ export function SubDomainsGrid({ title, slug, subpages }: SubDomainsGridProps) {
               <div className="absolute -right-10 -top-10 w-48 h-48 bg-rose-600/10 rounded-full blur-3xl pointer-events-none transition-all duration-700 group-hover/tall:scale-110" />
               <div className="absolute -left-10 -bottom-10 w-48 h-48 bg-orange-600/5 rounded-full blur-3xl pointer-events-none transition-all duration-700 group-hover/tall:scale-110" />
               
-              <img
-                src={bgWaves[slug] || "/assets/services/bg-ai.png"}
+              <img src={bgWaves[slug] || "/assets/services/bg-ai.png"}
                 alt=""
                 className="absolute inset-0 w-full h-full object-cover mix-blend-screen pointer-events-none opacity-35 transition-opacity duration-700 ease-in-out"
-              />
+              loading="lazy" />
               
               <div className="relative z-10">
                 <h3 className="text-xl md:text-2xl font-bold text-white tracking-tight leading-tight mb-4 group-hover/tall:text-rose-400 transition-colors">

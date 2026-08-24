@@ -154,11 +154,10 @@ export function IndustryUseCases({ useCases }: IndustryUseCasesProps) {
                   {/* Padded image layout */}
                   <div className="p-3 pb-0">
                     <div className="relative w-full aspect-[16/10] overflow-hidden bg-zinc-900 rounded-[16px] border border-white/5">
-                      <img
-                        src={displayImage}
+                      <img src={displayImage}
                         alt={uc.title}
                         className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-700 pointer-events-none select-none"
-                      />
+                      loading="lazy" />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-transparent pointer-events-none" />
                     </div>
                   </div>

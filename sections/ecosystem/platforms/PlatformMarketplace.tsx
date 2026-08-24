@@ -145,11 +145,10 @@ export function PlatformMarketplace() {
             <div>
               {/* Product Logo with white bg container */}
               <div className="inline-flex items-center justify-center bg-white rounded-xl px-4 py-3 mb-6 border border-white/10 shadow-[0_4px_20px_rgba(255,255,255,0.05)]">
-                <img
-                  src={activeItem.logoPath}
+                <img src={activeItem.logoPath}
                   alt={activeItem.name}
                   className="h-5 object-contain"
-                />
+                loading="lazy" />
               </div>
 
               {/* Testimonial Quote */}
@@ -197,11 +196,10 @@ export function PlatformMarketplace() {
 
           {/* Right mockup view screen - col-span-6 */}
           <div className="lg:col-span-6 relative rounded-2xl overflow-hidden aspect-[16/10] bg-zinc-900 border border-white/[0.04] h-full min-h-[300px] z-10">
-            <img
-              src={activeItem.imagePath}
+            <img src={activeItem.imagePath}
               alt={activeItem.name}
               className="w-full h-full object-cover opacity-95 group-hover:scale-[1.02] transition-transform duration-700 ease-out"
-            />
+            loading="lazy" />
             {/* Play Button Badge */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
               <button className="w-12 h-12 rounded-full bg-rose-600 hover:bg-rose-500 flex items-center justify-center text-white border border-white/20 transition-all duration-300 shadow-[0_0_30px_rgba(244,63,94,0.4)] hover:scale-105">
@@ -229,12 +227,11 @@ export function PlatformMarketplace() {
               >
                 {/* Logo wrapper */}
                 <div className="flex items-center justify-center bg-white rounded-lg p-2.5 max-w-[120px] w-full aspect-[3/1] shadow-sm">
-                  <img
-                    src={item.logoPath}
+                  <img src={item.logoPath}
                     alt={item.name}
                     className={`h-5 object-contain filter transition-all duration-300 ${isActive ? "grayscale-0 opacity-100 scale-105" : "grayscale opacity-40 hover:opacity-75"
                       }`}
-                  />
+                  loading="lazy" />
                 </div>
                 {/* Underline accent */}
                 {isActive && (

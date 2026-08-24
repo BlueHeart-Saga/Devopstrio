@@ -72,11 +72,10 @@ export const GlobalPresence = () => {
         <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-14 relative">
           {/* Curved Arrow PNG on Right Side */}
           <div className="absolute -top-6 right-2 sm:right-10 z-20 pointer-events-none select-none">
-            <img
-              src="/assets/components/Carrow-right.png"
+            <img src="/assets/components/Carrow-right.png"
               alt="Curved arrow"
               className="w-14 sm:w-20 h-auto object-contain filter drop-shadow-[0_0_15px_rgba(244,63,94,0.4)] scale-x-[-1]"
-            />
+            loading="lazy" />
           </div>
 
           <h2 className="text-3xl sm:text-5xl md:text-6xl font-semibold tracking-tight text-white leading-tight">
@@ -105,11 +104,10 @@ export const GlobalPresence = () => {
                 >
                   {/* Card Image Header */}
                   <div className="relative h-28 w-full overflow-hidden bg-zinc-950">
-                    <img
-                      src={loc.image}
+                    <img src={loc.image}
                       alt={loc.city}
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
+                    loading="lazy" />
                     <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/20 to-transparent" />
                     
                     {/* Active State Ping Indicator */}

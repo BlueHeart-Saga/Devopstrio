@@ -75,11 +75,10 @@ const GovernanceAccordion = () => {
         <Reveal key={activeIdx} className="h-full">
           <div className="h-full bg-zinc-950/40 border border-white/10 hover:border-rose-500/30 rounded-3xl overflow-hidden relative min-h-[420px] group backdrop-blur-md shadow-[0_8px_32px_0_rgba(0,0,0,0.5)] transition-all duration-500">
             {/* Full Card Image: Premium Tech-Art Graphic */}
-            <img
-              src={activeModel.image}
+            <img src={activeModel.image}
               alt={activeModel.name}
               className="w-full h-full object-cover opacity-90 group-hover:opacity-100 group-hover:scale-[1.02] transition-all duration-700 pointer-events-none select-none"
-            />
+            loading="lazy" />
           </div>
         </Reveal>
       </div>
@@ -215,11 +214,10 @@ const CloudSecurityCarousel = () => {
             {/* Top Image Section */}
             <div className="h-[200px] w-full overflow-hidden relative bg-[#050505]">
               <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-[0.05] mix-blend-overlay z-10" />
-              <img 
-                src={feat.image} 
+              <img src={feat.image} 
                 alt={feat.title}
                 className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700 ease-out"
-              />
+              loading="lazy" />
             </div>
             
             {/* Bottom Content Section */}
@@ -314,12 +312,12 @@ const CloudPartners = () => {
         <div className="flex w-[200%] overflow-hidden relative group">
           <div className="flex items-center justify-around w-1/2 animate-marquee-left whitespace-nowrap">
             {techLogos.map((src, i) => (
-              <img key={`t1-${i}`} src={src} alt="Tech Logo" className="h-10 mx-10 object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300" />
+              <img key={`t1-${i}`} src={src} alt="Tech Logo" className="h-10 mx-10 object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300" loading="lazy" />
             ))}
           </div>
           <div className="flex items-center justify-around w-1/2 animate-marquee-left whitespace-nowrap">
             {techLogos.map((src, i) => (
-              <img key={`t2-${i}`} src={src} alt="Tech Logo" className="h-10 mx-10 object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300" />
+              <img key={`t2-${i}`} src={src} alt="Tech Logo" className="h-10 mx-10 object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300" loading="lazy" />
             ))}
           </div>
         </div>
@@ -328,12 +326,12 @@ const CloudPartners = () => {
         <div className="flex w-[200%] overflow-hidden relative group mt-4">
           <div className="flex items-center justify-around w-1/2 animate-marquee-right whitespace-nowrap">
             {clientLogos.map((src, i) => (
-              <img key={`c1-${i}`} src={src} alt="Client Logo" className="h-9 mx-12 object-contain grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300" />
+              <img key={`c1-${i}`} src={src} alt="Client Logo" className="h-9 mx-12 object-contain grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300" loading="lazy" />
             ))}
           </div>
           <div className="flex items-center justify-around w-1/2 animate-marquee-right whitespace-nowrap">
             {clientLogos.map((src, i) => (
-              <img key={`c2-${i}`} src={src} alt="Client Logo" className="h-9 mx-12 object-contain grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300" />
+              <img key={`c2-${i}`} src={src} alt="Client Logo" className="h-9 mx-12 object-contain grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300" loading="lazy" />
             ))}
           </div>
         </div>

@@ -84,11 +84,10 @@ export function IndustryExpertise() {
         <div className="text-center max-w-4xl mx-auto mb-10 relative">
           {/* Left-to-right arrow PNG pointing to header */}
           <div className="absolute -top-6 sm:-top-8 md:-top-10 left-0 sm:-left-10 md:-left-14 lg:-left-20 z-20 pointer-events-none select-none">
-            <img
-              src="/assets/components/lefttoright.png"
+            <img src="/assets/components/lefttoright.png"
               alt="Left to right arrow"
               className="w-12 sm:w-16 md:w-20 h-auto object-contain filter drop-shadow-[0_0_15px_rgba(244,63,94,0.4)]"
-            />
+            loading="lazy" />
           </div>
 
           <Reveal>

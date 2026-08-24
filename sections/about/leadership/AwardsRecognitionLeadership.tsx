@@ -85,11 +85,10 @@ export const AwardsRecognitionLeadership = () => {
                   key={idx}
                   className="w-36 h-20 bg-zinc-900/30 backdrop-blur-md border border-zinc-800/40 rounded-xl flex items-center justify-center p-4 hover:border-zinc-700/50 hover:bg-zinc-900/50 transition-all duration-300 shrink-0 cursor-pointer"
                 >
-                  <img
-                    src={cert.path}
+                  <img src={cert.path}
                     alt={cert.name}
                     className="max-h-full max-w-full object-contain filter brightness-110"
-                  />
+                  loading="lazy" />
                 </div>
               ))}
             </motion.div>
@@ -126,11 +125,10 @@ export const AwardsRecognitionLeadership = () => {
                   key={idx}
                   className="w-36 h-20 bg-zinc-900/30 backdrop-blur-md border border-zinc-800/40 rounded-xl flex items-center justify-center p-4 hover:border-zinc-700/50 hover:bg-zinc-900/50 transition-all duration-300 shrink-0 cursor-pointer"
                 >
-                  <img
-                    src={comp.path}
+                  <img src={comp.path}
                     alt={comp.name}
                     className="max-h-full max-w-full object-contain filter brightness-110"
-                  />
+                  loading="lazy" />
                 </div>
               ))}
             </motion.div>
@@ -156,11 +154,10 @@ export const AwardsRecognitionLeadership = () => {
               >
                 {/* Dark Glassy Logo Container (No white layer!) */}
                 <div className="w-full aspect-[16/10] bg-zinc-950/60 border border-zinc-900/80 rounded-xl flex items-center justify-center p-5 mb-5 shadow-inner">
-                  <img
-                    src={award.image}
+                  <img src={award.image}
                     alt={award.title}
                     className="max-h-full max-w-full object-contain filter brightness-110"
-                  />
+                  loading="lazy" />
                 </div>
 
                 {/* Info Text */}

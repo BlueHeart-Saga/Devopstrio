@@ -67,11 +67,11 @@ export function AllBusinessPartners() {
                   className="w-[200px] sm:w-[240px] h-28 sm:h-32 shrink-0 p-5 rounded-2xl bg-zinc-950/70 border border-zinc-800/80 backdrop-blur-xl flex items-center justify-center hover:border-rose-500/50 hover:bg-zinc-900/70 transition-all duration-300 cursor-pointer group shadow-xl"
                 >
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img 
-                    src={partner.logo} 
+                  <img src={partner.logo} 
                     alt={partner.name}
                     className="max-w-[80%] max-h-[75%] object-contain select-none transition-all duration-300 group-hover:scale-105 filter contrast-105"
-                    onError={(e) => { e.currentTarget.style.display = 'none' }}
+                    loading="lazy"
+                    onError={(e) => { e.currentTarget.style.display = 'none'; }}
                   />
                 </div>
               ))}
@@ -85,11 +85,11 @@ export function AllBusinessPartners() {
                   className="w-[200px] sm:w-[240px] h-28 sm:h-32 shrink-0 p-5 rounded-2xl bg-zinc-950/70 border border-zinc-800/80 backdrop-blur-xl flex items-center justify-center hover:border-rose-500/50 hover:bg-zinc-900/70 transition-all duration-300 cursor-pointer group shadow-xl"
                 >
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img 
-                    src={partner.logo} 
+                  <img src={partner.logo} 
                     alt={partner.name}
                     className="max-w-[80%] max-h-[75%] object-contain select-none transition-all duration-300 group-hover:scale-105 filter contrast-105"
-                    onError={(e) => { e.currentTarget.style.display = 'none' }}
+                    loading="lazy"
+                    onError={(e) => { e.currentTarget.style.display = 'none'; }}
                   />
                 </div>
               ))}

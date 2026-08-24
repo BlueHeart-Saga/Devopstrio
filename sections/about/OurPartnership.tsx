@@ -64,11 +64,10 @@ const RowMarquee = ({ items, direction }: { items: typeof row1; direction: "left
             className="mx-1.5 md:mx-2 flex-shrink-0 flex items-center justify-center bg-zinc-950/40 border border-zinc-900 rounded-2xl w-14 h-14 md:w-20 md:h-20 hover:bg-white hover:border-white hover:shadow-[0_10px_30px_rgba(255,255,255,0.15)] transition-all duration-500 hover:-translate-y-1 group relative cursor-pointer"
           >
             <div className="flex flex-col items-center justify-center h-full w-full p-2.5 md:p-4">
-              <img
-                src={logo.path}
+              <img src={logo.path}
                 alt={logo.name}
                 className="w-6.5 h-6.5 md:w-9 md:h-9 object-contain opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300 drop-shadow-sm"
-              />
+              loading="lazy" />
               <span className="absolute bottom-1 md:bottom-2 text-[8px] font-black uppercase tracking-widest opacity-0 group-hover:opacity-100 group-hover:text-black transition-all duration-300 translate-y-1 group-hover:translate-y-0 pointer-events-none">
                 {logo.name}
               </span>
@@ -207,11 +206,10 @@ export function OurPartnership() {
                     key={`${logo.alt}-${index}`}
                     className="flex-shrink-0 flex items-center justify-center transition-all duration-300 opacity-80 hover:opacity-100 hover:scale-105"
                   >
-                    <img
-                      src={logo.src}
+                    <img src={logo.src}
                       alt={logo.alt}
                       className="h-8 md:h-10 lg:h-12 w-auto object-contain"
-                    />
+                    loading="lazy" />
                   </div>
                 ))}
               </motion.div>

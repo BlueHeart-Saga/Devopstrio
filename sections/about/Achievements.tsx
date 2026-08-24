@@ -135,10 +135,10 @@ export function Achievements() {
                   key={idx}
                   className="w-36 h-20 flex items-center justify-center shrink-0"
                 >
-                  <img
-                    src={item.src}
+                  <img src={item.src}
                     alt={item.name}
                     className="max-h-full max-w-full object-contain select-none pointer-events-none"
+                    loading="lazy"
                     onError={(e) => { e.currentTarget.style.display = 'none'; }}
                   />
                 </div>
@@ -179,11 +179,10 @@ export function Achievements() {
                   key={idx}
                   className="w-36 h-20 flex items-center justify-center shrink-0"
                 >
-                  <img
-                    src={item.src}
+                  <img src={item.src}
                     alt={item.name}
                     className="max-h-full max-w-full object-contain select-none pointer-events-none"
-                  />
+                  loading="lazy" />
                 </div>
               ))}
             </motion.div>
@@ -208,11 +207,10 @@ export function Achievements() {
                 className="group bg-zinc-950 border border-zinc-900 overflow-hidden hover:border-rose-600/30 transition-all duration-300 rounded-none"
               >
                 <div className="relative aspect-[16/10] overflow-hidden bg-zinc-900/40 flex items-center justify-center p-6">
-                  <img
-                    src={item.image}
+                  <img src={item.image}
                     alt={item.title}
                     className="w-full h-full object-contain select-none pointer-events-none group-hover:scale-[1.04] transition-transform duration-500"
-                  />
+                  loading="lazy" />
                 </div>
               </Reveal>
             ))}

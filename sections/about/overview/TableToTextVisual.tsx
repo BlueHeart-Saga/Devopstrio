@@ -47,12 +47,10 @@ export function TableToTextVisual({
       <div className="relative w-full max-w-5xl mx-auto">
         
         {/* Table Image */}
-        <img
-          src="/assets/About-page/overview/tabletotext1.png"
+        <img src="/assets/About-page/overview/tabletotext1.png"
           alt="Devopstrio Solutions Collaboration Table"
           className="w-full h-auto object-contain block select-none drop-shadow-[0_20px_45px_rgba(0,0,0,0.8)]"
-          loading="lazy"
-        />
+          loading="lazy" />
 
         {/* Middle of Table Text Overlay (Between the two laptops) */}
         <div className="absolute top-[14%] bottom-[14%] left-[27%] right-[27%] flex flex-col items-center justify-center pointer-events-none px-2 sm:px-4 md:px-6">

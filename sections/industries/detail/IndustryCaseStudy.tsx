@@ -297,11 +297,10 @@ export function IndustryCaseStudy({
             {/* Right Panel: Project Showcase Image */}
             <div className="relative w-full aspect-[16/11] rounded-[16px] border border-white/5 p-0.5 bg-zinc-950 overflow-hidden group/img">
               <div className="absolute inset-0 bg-gradient-to-tr from-[#E11D48]/10 via-transparent to-transparent pointer-events-none z-10" />
-              <img
-                src={displayImage}
+              <img src={displayImage}
                 alt={currentSlide.title}
                 className="w-full h-full object-cover rounded-[14px] transition-transform duration-700 group-hover/img:scale-[1.02] select-none pointer-events-none"
-              />
+              loading="lazy" />
             </div>
 
           </div>

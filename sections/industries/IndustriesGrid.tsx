@@ -80,11 +80,10 @@ export function IndustriesGrid() {
                 className="group block relative aspect-[16/10] rounded-[20px] overflow-hidden border border-white/10 hover:border-rose-500/35 hover:shadow-[0_8px_32px_rgba(244,63,94,0.08)] transition-all duration-350 cursor-pointer"
               >
                 {/* Full-bleed Background Image */}
-                <img
-                  src={ind.image}
+                <img src={ind.image}
                   alt={ind.name}
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04] select-none pointer-events-none z-0"
-                />
+                loading="lazy" />
 
                 {/* Dark Gradient Overlay for Text Visibility */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-black/10 z-10" />

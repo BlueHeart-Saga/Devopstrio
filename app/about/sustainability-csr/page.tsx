@@ -132,11 +132,10 @@ export default function CSRPage() {
       <section className="relative min-h-screen w-full flex items-center justify-start overflow-hidden bg-[#030303] text-white py-20 px-6 lg:px-12 z-10 font-sans border-b border-zinc-900">
         
         <div className="absolute inset-0 z-0 pointer-events-none select-none">
-          <img 
-            src="/assets/About-page/csr/hero-sustainability-bg.png" 
+          <img src="/assets/About-page/csr/hero-sustainability-bg.png" 
             alt="Sustainability Background"
             className="w-full h-full object-cover object-center opacity-90 filter contrast-110 brightness-105"
-          />
+          loading="lazy" />
           
           <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-transparent z-10" />
           <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-transparent to-black/80 z-10" />
@@ -269,27 +268,24 @@ export default function CSRPage() {
               <Reveal delay={0.2}>
                 <div className="flex flex-col gap-4">
                   <div className="rounded-2xl overflow-hidden border border-emerald-800/60 h-48 sm:h-52 w-full group">
-                    <img
-                      src="/assets/About-page/csr/csr_impact_plant_seedling1.png"
+                    <img src="/assets/About-page/csr/csr_impact_plant_seedling1.png"
                       alt="Volunteer holding seedling"
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                    />
+                    loading="lazy" />
                   </div>
 
                   <div className="rounded-2xl overflow-hidden border border-emerald-800/60 h-48 sm:h-52 w-full group">
-                    <img
-                      src="/assets/About-page/csr/csr_impact_save_planet1.png"
+                    <img src="/assets/About-page/csr/csr_impact_save_planet1.png"
                       alt="Volunteers holding SAVE PLANET sign"
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                    />
+                    loading="lazy" />
                   </div>
 
                   <div className="rounded-2xl overflow-hidden border border-emerald-800/60 h-48 sm:h-52 w-full group">
-                    <img
-                      src="/assets/About-page/csr/csr_impact_river_forest.png"
+                    <img src="/assets/About-page/csr/csr_impact_river_forest.png"
                       alt="Rainforest river landscape"
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                    />
+                    loading="lazy" />
                   </div>
                 </div>
               </Reveal>
@@ -317,11 +313,10 @@ export default function CSRPage() {
                 <div className="bg-zinc-950/80 border border-zinc-800/80 rounded-2xl overflow-hidden hover:border-emerald-500/50 hover:bg-zinc-900/60 transition-all duration-300 group cursor-pointer h-full flex flex-col justify-between hover:-translate-y-1">
                   <div>
                     <div className="h-44 w-full relative overflow-hidden">
-                      <img
-                        src={proj.image}
+                      <img src={proj.image}
                         alt={proj.title}
                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                      />
+                      loading="lazy" />
                       <div className="absolute top-3 right-3 bg-black/80 backdrop-blur-md border border-zinc-800 px-3 py-1 rounded-md text-emerald-400 font-bold text-sm font-mono">
                         {proj.badge}
                       </div>
@@ -392,11 +387,10 @@ export default function CSRPage() {
                 <Reveal key={news.title} delay={idx * 0.1}>
                   <div className="bg-zinc-950/80 border border-zinc-800/80 rounded-2xl p-5 sm:p-6 flex flex-col sm:flex-row items-center gap-6 hover:border-emerald-500/50 hover:bg-zinc-900/60 transition-all duration-300 group cursor-pointer">
                     <div className="w-full sm:w-48 h-36 rounded-xl overflow-hidden shrink-0 border border-zinc-800">
-                      <img
-                        src={news.image}
+                      <img src={news.image}
                         alt={news.title}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                      />
+                      loading="lazy" />
                     </div>
                     <div className="flex-1">
                       <span className="text-sm font-bold text-emerald-400 font-mono tracking-widest block mb-1.5">

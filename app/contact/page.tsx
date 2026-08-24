@@ -1,20 +1,23 @@
 import React from "react";
 import { Metadata } from "next";
+import dynamic from "next/dynamic";
 import { ContactHero } from "@/sections/contact/ContactHero";
 import { ContactForm } from "@/sections/contact/ContactForm";
-import { DepartmentContacts } from "@/sections/contact/DepartmentContacts";
-import { WriteMessageForm } from "@/sections/contact/WriteMessageForm";
-import { OurLocations } from "@/sections/contact/OurLocations";
-import { TransformMetricsSection } from "@/sections/contact/TransformMetricsSection";
-import { GlobalPresence } from "@/sections/contact/GlobalPresence";
-import { WhyContactUs } from "@/sections/contact/WhyContactUs";
-import { TrustSignal } from "@/sections/contact/TrustSignal";
-import { FAQ } from "@/sections/contact/FAQ";
-import { ContactCTA } from "@/sections/contact/ContactCTA";
-import { TalkToExpert } from "@/sections/contact/TalkToExpert";
-import { Reveal } from "@/components/ui/Reveal";
 import { BreadcrumbSchema } from "@/components/seo/Schemas";
+import { Reveal } from "@/components/ui/Reveal";
 import { SectionNavbar } from "@/components/ui/SectionNavbar";
+
+// Dynamic Imports for Heavy Below-The-Fold Sections to Reduce Initial JS Payload
+const DepartmentContacts = dynamic(() => import("@/sections/contact/DepartmentContacts").then((mod) => mod.DepartmentContacts));
+const WriteMessageForm = dynamic(() => import("@/sections/contact/WriteMessageForm").then((mod) => mod.WriteMessageForm));
+const OurLocations = dynamic(() => import("@/sections/contact/OurLocations").then((mod) => mod.OurLocations));
+const TransformMetricsSection = dynamic(() => import("@/sections/contact/TransformMetricsSection").then((mod) => mod.TransformMetricsSection));
+const GlobalPresence = dynamic(() => import("@/sections/contact/GlobalPresence").then((mod) => mod.GlobalPresence));
+const WhyContactUs = dynamic(() => import("@/sections/contact/WhyContactUs").then((mod) => mod.WhyContactUs));
+const TrustSignal = dynamic(() => import("@/sections/contact/TrustSignal").then((mod) => mod.TrustSignal));
+const FAQ = dynamic(() => import("@/sections/contact/FAQ").then((mod) => mod.FAQ));
+const ContactCTA = dynamic(() => import("@/sections/contact/ContactCTA").then((mod) => mod.ContactCTA));
+const TalkToExpert = dynamic(() => import("@/sections/contact/TalkToExpert").then((mod) => mod.TalkToExpert));
 
 const contactSections = [
   { id: "form", label: "Start a Conversation" },

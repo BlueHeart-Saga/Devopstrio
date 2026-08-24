@@ -59,11 +59,10 @@ export function Certifications() {
               className="flex flex-col items-center justify-center bg-zinc-950/40 border border-zinc-900 rounded-2xl p-6 hover:border-rose-500/20 transition-all duration-300 text-center gap-4 group"
             >
               <div className="w-20 h-20 md:w-24 md:h-24 flex items-center justify-center p-2 relative group-hover:scale-105 transition-transform duration-300">
-                <img 
-                  src={cert.image} 
+                <img src={cert.image} 
                   alt={cert.name} 
                   className="w-full h-full object-contain filter brightness-95 contrast-105" 
-                />
+                loading="lazy" />
               </div>
               <h4 className="text-xs md:text-sm font-bold text-zinc-350 group-hover:text-white transition-colors leading-snug min-h-[40px] flex items-center justify-center">
                 {cert.name}

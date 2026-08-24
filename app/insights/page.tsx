@@ -1,17 +1,20 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import dynamic from "next/dynamic";
 import { insightsApi, TransformedPost } from "@/lib/insightsApi";
 import { Reveal } from "@/components/ui/Reveal";
 
 import { InsightsHero } from "@/sections/insights/InsightsHero";
-import { FeaturedHighlights } from "@/sections/insights/FeaturedHighlights";
-import { InsightsJourney } from "@/sections/insights/InsightsJourney";
-import { InsightsLibrary } from "@/sections/insights/InsightsLibrary";
-import { InsightsNavigationCards } from "@/components/insights/InsightsNavigationCards";
-import { FAQ } from "@/components/services/FAQ";
-import { CTA } from "@/components/services/CTA";
-import { NewsletterSubscription } from "@/components/NewsletterSubscription";
+
+// Dynamic Imports for Heavy Below-The-Fold Sections to Reduce Initial JS Payload
+const FeaturedHighlights = dynamic(() => import("@/sections/insights/FeaturedHighlights").then((mod) => mod.FeaturedHighlights));
+const InsightsJourney = dynamic(() => import("@/sections/insights/InsightsJourney").then((mod) => mod.InsightsJourney));
+const InsightsLibrary = dynamic(() => import("@/sections/insights/InsightsLibrary").then((mod) => mod.InsightsLibrary));
+const InsightsNavigationCards = dynamic(() => import("@/components/insights/InsightsNavigationCards").then((mod) => mod.InsightsNavigationCards));
+const FAQ = dynamic(() => import("@/components/services/FAQ").then((mod) => mod.FAQ));
+const CTA = dynamic(() => import("@/components/services/CTA").then((mod) => mod.CTA));
+const NewsletterSubscription = dynamic(() => import("@/components/NewsletterSubscription").then((mod) => mod.NewsletterSubscription));
 
 const INSIGHTS_FAQS = [
   {

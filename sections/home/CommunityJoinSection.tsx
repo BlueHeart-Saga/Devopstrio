@@ -321,11 +321,10 @@ export function CommunityJoinSection() {
 
       {/* Decorative top-left arrow image (Matching Reference Style) */}
       <div className="absolute top-10 sm:top-14 md:top-16 left-4 sm:left-8 z-20 pointer-events-none select-none">
-        <img
-          src="/assets/components/top-to-buttom-side-Arrowmid.png"
+        <img src="/assets/components/top-to-buttom-side-Arrowmid.png"
           alt="Top connector arrow"
           className="w-12 sm:w-16 md:w-20 h-auto object-contain opacity-75 filter drop-shadow-[0_0_12px_rgba(244,63,94,0.35)]"
-        />
+        loading="lazy" />
       </div>
 
       <div className="max-w-6xl xl:max-w-7xl mx-auto w-full px-3 sm:px-6 relative z-10">

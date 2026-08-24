@@ -1,18 +1,21 @@
 "use client";
 
 import React from "react";
+import dynamic from "next/dynamic";
 import { EcosystemHero } from "@/sections/ecosystem/EcosystemHero";
-import { EcosystemOverview } from "@/sections/ecosystem/EcosystemOverview";
-import { EcosystemPillars } from "@/sections/ecosystem/EcosystemPillars";
-import { PlatformPortfolio } from "@/sections/ecosystem/PlatformPortfolio";
-import { TechnologyLandscape } from "@/sections/ecosystem/TechnologyLandscape";
-import { AllianceNetwork } from "@/sections/ecosystem/AllianceNetwork";
-import { GlobalDelivery } from "@/sections/ecosystem/GlobalDelivery";
-import { DomainExcellence } from "@/sections/ecosystem/domain/DomainExcellence";
-import { InnovationLabs } from "@/sections/ecosystem/InnovationLabs";
-import { EcosystemMetrics } from "@/sections/ecosystem/EcosystemMetrics";
-import { EcosystemCTA } from "@/sections/ecosystem/EcosystemCTA";
 import { SectionNavbar } from "@/components/ui/SectionNavbar";
+
+// Dynamic Imports for Heavy Below-The-Fold Sections to Reduce Initial JS Payload
+const EcosystemOverview = dynamic(() => import("@/sections/ecosystem/EcosystemOverview").then((mod) => mod.EcosystemOverview));
+const EcosystemPillars = dynamic(() => import("@/sections/ecosystem/EcosystemPillars").then((mod) => mod.EcosystemPillars));
+const PlatformPortfolio = dynamic(() => import("@/sections/ecosystem/PlatformPortfolio").then((mod) => mod.PlatformPortfolio));
+const TechnologyLandscape = dynamic(() => import("@/sections/ecosystem/TechnologyLandscape").then((mod) => mod.TechnologyLandscape));
+const AllianceNetwork = dynamic(() => import("@/sections/ecosystem/AllianceNetwork").then((mod) => mod.AllianceNetwork));
+const GlobalDelivery = dynamic(() => import("@/sections/ecosystem/GlobalDelivery").then((mod) => mod.GlobalDelivery));
+const DomainExcellence = dynamic(() => import("@/sections/ecosystem/domain/DomainExcellence").then((mod) => mod.DomainExcellence));
+const InnovationLabs = dynamic(() => import("@/sections/ecosystem/InnovationLabs").then((mod) => mod.InnovationLabs));
+const EcosystemMetrics = dynamic(() => import("@/sections/ecosystem/EcosystemMetrics").then((mod) => mod.EcosystemMetrics));
+const EcosystemCTA = dynamic(() => import("@/sections/ecosystem/EcosystemCTA").then((mod) => mod.EcosystemCTA));
 
 const ecosystemSections = [
   { id: "overview", label: "Overview" },

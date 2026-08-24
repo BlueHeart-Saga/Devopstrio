@@ -86,11 +86,10 @@ export function PlatformArchitecture() {
                 
                 {/* Left sequence side with bg artwork and giant number */}
                 <div className="col-span-4 md:col-span-3 relative overflow-hidden h-full border-r border-white/[0.04] bg-[#080808]">
-                  <img
-                    src={layer.bgImage}
+                  <img src={layer.bgImage}
                     alt={layer.name}
                     className="absolute inset-0 w-full h-full object-cover opacity-25 group-hover:scale-105 transition-transform duration-700 ease-out"
-                  />
+                  loading="lazy" />
                   <div className="absolute inset-0 bg-gradient-to-tr from-black/80 to-transparent pointer-events-none" />
                   <span className="absolute inset-0 flex items-center justify-center text-5xl md:text-6xl font-black text-white/10 group-hover:text-rose-500/20 group-hover:scale-105 transition-all duration-500 select-none tracking-tighter font-mono">
                     {layer.level}

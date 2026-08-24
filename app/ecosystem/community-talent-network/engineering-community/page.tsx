@@ -131,11 +131,10 @@ export default function EngineeringCommunityPage() {
             {/* Left Large Image */}
             <div className="lg:col-span-6 relative">
               <div className="relative rounded-[24px] overflow-hidden border border-zinc-800 shadow-2xl bg-zinc-900 group">
-                <img
-                  src="/assets/common/e76e125035885aab9c9070ce85df239e-1.png"
+                <img src="/assets/common/e76e125035885aab9c9070ce85df239e-1.png"
                   alt="Devopstrio Team Discussing Architecture"
                   className="w-full h-[400px] object-cover group-hover:scale-105 transition-transform duration-500"
-                />
+                loading="lazy" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
                 <div className="absolute bottom-6 left-6 right-6 p-4 rounded-xl bg-black/80 backdrop-blur-sm border border-zinc-800 text-xs font-mono text-zinc-300">
                   <span className="text-rose-400 font-bold">✓ Real Collaborative Engineering</span> &bull; Solution Architecture Whiteboard Review
@@ -313,11 +312,10 @@ export default function EngineeringCommunityPage() {
             </div>
             <div className="lg:col-span-6">
               <div className="rounded-[24px] overflow-hidden border border-zinc-800 shadow-xl bg-zinc-950 group">
-                <img
-                  src="/assets/common/1b065043b6959827c05a0073c93a4a53-1.png"
+                <img src="/assets/common/1b065043b6959827c05a0073c93a4a53-1.png"
                   alt="Developers reviewing pull requests on monitors"
                   className="w-full h-[320px] object-cover group-hover:scale-105 transition-transform duration-500"
-                />
+                loading="lazy" />
               </div>
             </div>
           </div>
@@ -340,11 +338,10 @@ export default function EngineeringCommunityPage() {
             </div>
             <div className="lg:col-span-6 lg:order-1">
               <div className="rounded-[24px] overflow-hidden border border-zinc-800 shadow-xl bg-zinc-950 group">
-                <img
-                  src="/assets/common/37b9b888cc479ea7b74d2d9a05c37597-1.png"
+                <img src="/assets/common/37b9b888cc479ea7b74d2d9a05c37597-1.png"
                   alt="Cloud architecture design session"
                   className="w-full h-[320px] object-cover group-hover:scale-105 transition-transform duration-500"
-                />
+                loading="lazy" />
               </div>
             </div>
           </div>
@@ -367,11 +364,10 @@ export default function EngineeringCommunityPage() {
             </div>
             <div className="lg:col-span-6">
               <div className="rounded-[24px] overflow-hidden border border-zinc-800 shadow-xl bg-zinc-950 group">
-                <img
-                  src="/assets/common/9d91b93f83e6d4cd494ec13611b3e50e-1.png"
+                <img src="/assets/common/9d91b93f83e6d4cd494ec13611b3e50e-1.png"
                   alt="AI engineering workspace"
                   className="w-full h-[320px] object-cover group-hover:scale-105 transition-transform duration-500"
-                />
+                loading="lazy" />
               </div>
             </div>
           </div>
@@ -394,11 +390,10 @@ export default function EngineeringCommunityPage() {
             </div>
             <div className="lg:col-span-6 lg:order-1">
               <div className="rounded-[24px] overflow-hidden border border-zinc-800 shadow-xl bg-zinc-950 group">
-                <img
-                  src="/assets/common/f317dd71184f5c47d601eeb9508bf92c-1.png"
+                <img src="/assets/common/f317dd71184f5c47d601eeb9508bf92c-1.png"
                   alt="Hackathon team coding overnight"
                   className="w-full h-[320px] object-cover group-hover:scale-105 transition-transform duration-500"
-                />
+                loading="lazy" />
               </div>
             </div>
           </div>
@@ -687,11 +682,10 @@ export default function EngineeringCommunityPage() {
             ].map((gal, idx) => (
               <Reveal key={idx} delay={idx * 0.05}>
                 <div className="relative rounded-[20px] overflow-hidden border border-zinc-800 shadow-lg group h-48 sm:h-60 bg-zinc-950">
-                  <img
-                    src={gal.img}
+                  <img src={gal.img}
                     alt={gal.title}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 opacity-80 group-hover:opacity-100"
-                  />
+                  loading="lazy" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
                   <div className="absolute bottom-4 left-4 right-4">
                     <span className="text-xs font-bold text-white group-hover:text-rose-400 transition-colors block">

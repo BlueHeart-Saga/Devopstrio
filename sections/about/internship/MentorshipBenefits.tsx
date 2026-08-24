@@ -63,11 +63,10 @@ export const MentorshipBenefits = () => {
                   className="py-3 sm:py-3.5 flex items-center gap-3.5 group transition-colors hover:bg-white/[0.02] rounded-lg px-2 -mx-2 cursor-default"
                 >
                   {/* linearrow.png bullet icon */}
-                  <img
-                    src="/assets/components/linearrow.png"
+                  <img src="/assets/components/linearrow.png"
                     alt="Bullet arrow"
                     className="w-3.5 h-3.5 object-contain rotate-0 filter drop-shadow-[0_0_8px_rgba(244,63,94,0.6)] group-hover:translate-x-1.5 transition-transform duration-300 shrink-0"
-                  />
+                  loading="lazy" />
 
                   {/* Title Only */}
                   <h4 className="text-sm sm:text-base font-semibold text-white group-hover:text-rose-400 transition-colors leading-snug">
@@ -102,11 +101,10 @@ export const MentorshipBenefits = () => {
                   className="py-3 sm:py-3.5 flex items-center gap-3.5 group transition-colors hover:bg-white/[0.02] rounded-lg px-2 -mx-2 cursor-default"
                 >
                   {/* linearrow.png bullet icon */}
-                  <img
-                    src="/assets/components/linearrow.png"
+                  <img src="/assets/components/linearrow.png"
                     alt="Bullet arrow"
                     className="w-3.5 h-3.5 object-contain rotate-180 filter drop-shadow-[0_0_8px_rgba(244,63,94,0.6)] group-hover:translate-x-1.5 transition-transform duration-300 shrink-0"
-                  />
+                  loading="lazy" />
 
                   {/* Title Only */}
                   <h4 className="text-sm sm:text-base font-semibold text-white group-hover:text-rose-400 transition-colors leading-snug">

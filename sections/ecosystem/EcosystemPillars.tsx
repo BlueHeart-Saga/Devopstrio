@@ -105,12 +105,11 @@ export function EcosystemPillars() {
 
               {/* Dynamic Abstract Wave Backgrounds with Crossfade */}
               {domainsList.map((dom) => (
-                <img
-                  key={dom.slug}
+                <img key={dom.slug}
                   src={bgWaves[dom.slug]}
                   alt=""
                   className={`absolute inset-0 w-full h-full object-cover mix-blend-screen pointer-events-none transition-opacity duration-700 ease-in-out ${activeTab === dom.slug ? "opacity-35" : "opacity-0"}`}
-                />
+                loading="lazy" />
               ))}
 
               {/* Card top details */}
@@ -186,11 +185,10 @@ export function EcosystemPillars() {
           <div className="relative w-full overflow-hidden rounded-3xl bg-[#030303] flex items-center justify-center">
             {/* Blending gradients to merge the image edges smoothly into the background theme */}
             <div className="absolute inset-0 bg-gradient-to-t from-[#030303] via-transparent to-transparent pointer-events-none z-10" />
-            <img
-              src="/assets/ecosystem/domains/Ecosystem_main_page_poster.png"
+            <img src="/assets/ecosystem/domains/Ecosystem_main_page_poster.png"
               alt="Ecosystem Alliance Map"
               className="w-full h-auto object-contain select-none pointer-events-none z-0"
-            />
+            loading="lazy" />
           </div>
         </Reveal>
 

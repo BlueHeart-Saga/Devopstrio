@@ -214,11 +214,10 @@ export function ExecutiveTestimonials() {
             <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight text-white mb-3 relative inline-block">
               {/* Curved Down Arrow PNG */}
               <div className="absolute -top-10 left-0 sm:-left-10 z-20 pointer-events-none select-none">
-                <img
-                  src="/assets/components/Carrow-right.png"
+                <img src="/assets/components/Carrow-right.png"
                   alt="Curved down arrow"
                   className="w-10 sm:w-14 h-auto object-contain filter drop-shadow-[0_0_15px_rgba(244,63,94,0.4)]"
-                />
+                loading="lazy" />
               </div>
 
               Voices of Our{" "}
@@ -300,11 +299,10 @@ export function ExecutiveTestimonials() {
                   }}
                 >
                   {/* Full-color photo fills entire card */}
-                  <img
-                    src={currentT.image}
+                  <img src={currentT.image}
                     alt={currentT.author}
                     className="absolute inset-0 w-full h-full object-cover object-top"
-                  />
+                  loading="lazy" />
                   {/* Author name only at bottom — no role/company */}
                   <div
                     className="relative z-10 w-full text-center px-3 pb-4 pt-16"
@@ -331,11 +329,10 @@ export function ExecutiveTestimonials() {
                   }}
                 >
                   {/* Background Image: whitepaperbg.png */}
-                  <img
-                    src="/assets/components/whitepaperbg.png"
+                  <img src="/assets/components/whitepaperbg.png"
                     alt="Paper background texture"
                     className="absolute inset-0 w-full h-full object-cover z-0"
-                  />
+                  loading="lazy" />
 
                   {/* Dark overlay for contrast and legibility */}
                   <div className="absolute inset-0 bg-black/65 backdrop-blur-[2px] z-0 pointer-events-none" />

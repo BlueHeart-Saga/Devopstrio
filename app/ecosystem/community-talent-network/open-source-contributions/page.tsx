@@ -125,11 +125,10 @@ export default function OpenSourcePage() {
             {/* Left Large Engineering Image */}
             <div className="lg:col-span-6 relative">
               <div className="relative rounded-[24px] overflow-hidden border border-zinc-800 shadow-2xl bg-zinc-900 group">
-                <img
-                  src="/assets/common/1b065043b6959827c05a0073c93a4a53-1.png"
+                <img src="/assets/common/1b065043b6959827c05a0073c93a4a53-1.png"
                   alt="Developers collaborating on open source code"
                   className="w-full h-[420px] object-cover group-hover:scale-105 transition-transform duration-500"
-                />
+                loading="lazy" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
                 <div className="absolute bottom-6 left-6 right-6 p-4 rounded-xl bg-black/80 backdrop-blur-sm border border-zinc-800 text-xs font-mono text-zinc-300">
                   <span className="text-rose-400 font-bold">✓ Building in Public</span> &bull; 100% Apache 2.0 & MIT Open Source Blueprint

@@ -22,11 +22,10 @@ export function IndustryHero({
     <section className="w-full relative overflow-hidden bg-black text-white min-h-[550px] lg:min-h-[640px] flex items-center border-b border-zinc-900/60 -mt-16">
       {/* Background Graphic Asset with High-End Gradients */}
       <div className="absolute inset-0 z-0">
-        <img 
-          src={bgImage} 
+        <img src={bgImage} 
           alt={`${industryName} Hero Background`} 
           className="w-full h-full object-cover object-center select-none pointer-events-none opacity-75 filter brightness-[1.15] contrast-[1.05]"
-        />
+        loading="eager" />
         {/* Spotlights and dark linear gradient masking */}
         <div className="absolute inset-0 bg-gradient-to-r from-black via-black/95 via-50% to-transparent" />
         <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />

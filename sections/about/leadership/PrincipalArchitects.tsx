@@ -131,11 +131,10 @@ export const PrincipalArchitects = () => {
         <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-14 relative">
           {/* Curved Arrow PNG on Right Side */}
           <div className="absolute -top-6 right-2 sm:right-10 z-20 pointer-events-none select-none">
-            <img
-              src="/assets/components/Carrow-right.png"
+            <img src="/assets/components/Carrow-right.png"
               alt="Curved arrow"
               className="w-14 sm:w-20 h-auto object-contain filter drop-shadow-[0_0_15px_rgba(244,63,94,0.4)] scale-x-[-1]"
-            />
+            loading="lazy" />
           </div>
 
           <h2 className="text-3xl sm:text-5xl md:text-6xl font-semibold tracking-tight text-white leading-tight">
@@ -156,11 +155,10 @@ export const PrincipalArchitects = () => {
                 className={`group relative w-full h-[320px] md:h-[340px] rounded-[1.75rem] overflow-hidden border border-zinc-900 bg-[#0A0A0C] ${c.border} ${c.shadow} select-none transition-all duration-500 hover:-translate-y-1`}
               >
                 {/* Background Image */}
-                <img
-                  src={arch.image}
+                <img src={arch.image}
                   alt={arch.name}
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 ease-out z-0 group-hover:scale-105"
-                />
+                loading="lazy" />
 
                 {/* Dark Gradient Overlay for readability */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/85 to-black/40 z-10" />

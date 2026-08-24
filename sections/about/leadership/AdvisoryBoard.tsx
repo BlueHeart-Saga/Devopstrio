@@ -76,11 +76,10 @@ export const AdvisoryBoard = () => {
         <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-14 relative">
           {/* Curved Arrow PNG on Right Side */}
           <div className="absolute -top-6 right-2 sm:right-10 z-20 pointer-events-none select-none">
-            <img
-              src="/assets/components/Carrow-right.png"
+            <img src="/assets/components/Carrow-right.png"
               alt="Curved arrow"
               className="w-14 sm:w-20 h-auto object-contain filter drop-shadow-[0_0_15px_rgba(244,63,94,0.4)] scale-x-[-1]"
-            />
+            loading="lazy" />
           </div>
 
           <h2 className="text-3xl sm:text-5xl md:text-6xl font-semibold tracking-tight text-white leading-tight">
@@ -97,11 +96,10 @@ export const AdvisoryBoard = () => {
           className="relative w-full aspect-[21/9] overflow-hidden rounded-[2rem] border border-zinc-900 bg-zinc-950 mb-16 group shadow-[0_0_50px_rgba(0,0,0,0.8)]"
         >
           <div className="absolute inset-0 bg-gradient-to-t from-[#030303]/60 via-transparent to-[#030303]/20 z-10 pointer-events-none" />
-          <img
-            src="/assets/About-page/card/about-inside-leadership-team_Governance-banner.png"
+          <img src="/assets/About-page/card/about-inside-leadership-team_Governance-banner.png"
             alt="Advisory Board Governance & Insights"
             className="w-full h-full object-cover object-center group-hover:scale-[1.02] transition-transform duration-1000 ease-out"
-          />
+          loading="lazy" />
         </motion.div>
 
         {/* Row 3: Horizontal Cards Slider */}
@@ -134,11 +132,10 @@ export const AdvisoryBoard = () => {
                   <div>
                     {/* Concentric Image Wrapper with Padding */}
                     <div className="relative w-full aspect-[4/5] bg-zinc-950 overflow-hidden rounded-[12px] block">
-                      <img
-                        src={advisor.photo}
+                      <img src={advisor.photo}
                         alt={advisor.name}
                         className="absolute inset-0 w-full h-full object-cover object-top filter grayscale contrast-110 group-hover:grayscale-0 transition-all duration-500"
-                      />
+                      loading="lazy" />
                     </div>
 
                     {/* Name & Designation Badge below photo */}

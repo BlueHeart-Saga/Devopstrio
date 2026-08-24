@@ -491,11 +491,10 @@ export default function EventsAdminPage() {
             onClick={(e) => e.stopPropagation()}
           >
             <div className="relative w-full h-full max-h-[74vh] flex items-center justify-center">
-              <img
-                src={activePreviewImage.src}
+              <img src={activePreviewImage.src}
                 alt={activePreviewImage.tagname || "Full Resolution Preview"}
                 className="max-h-full max-w-full object-contain rounded-2xl shadow-[0_20px_70px_rgba(0,0,0,0.9)] animate-in zoom-in-95 duration-200"
-              />
+              loading="lazy" />
             </div>
 
             {/* Caption bar below image */}

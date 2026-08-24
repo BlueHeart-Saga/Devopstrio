@@ -135,7 +135,7 @@ export function LabsTechStack() {
                 
                 {/* White Container for Real SVG Icons (Ensures perfect visibility) */}
                 <div className="relative z-10 w-14 h-14 bg-white/95 border border-white rounded-2xl flex items-center justify-center p-2.5 mr-5 shrink-0 group-hover:scale-110 shadow-lg transition-all duration-500 overflow-hidden">
-                  <img src={item.logo} alt={item.name} className="w-full h-full object-contain relative z-10 filter drop-shadow-sm group-hover:drop-shadow-md transition-all duration-300" />
+                  <img src={item.logo} alt={item.name} className="w-full h-full object-contain relative z-10 filter drop-shadow-sm group-hover:drop-shadow-md transition-all duration-300" loading="lazy" />
                 </div>
                 
                 {/* Text Content */}

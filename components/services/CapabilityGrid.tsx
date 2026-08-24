@@ -209,11 +209,10 @@ export function CapabilityGrid({ serviceSlug, capabilities }: CapabilityGridProp
                   >
                     {/* Cover Image */}
                     <div className="relative w-full aspect-[16/9] overflow-hidden bg-zinc-900">
-                      <img
-                        src={bgImage}
+                      <img src={bgImage}
                         alt={cap.title}
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
-                      />
+                      loading="lazy" />
                       <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/60 via-transparent to-transparent" />
                     </div>
 
@@ -266,11 +265,10 @@ export function CapabilityGrid({ serviceSlug, capabilities }: CapabilityGridProp
                     <div className="group h-full flex flex-col bg-zinc-950 border border-zinc-800/60 rounded-2xl overflow-hidden hover:border-rose-500/30 transition-all duration-300 hover:shadow-[0_0_40px_rgba(225,29,72,0.07)]">
                       {/* Cover Image */}
                       <div className="relative w-full aspect-[16/9] overflow-hidden bg-zinc-900">
-                        <img
-                          src={bgImage}
+                        <img src={bgImage}
                           alt={cap.title}
                           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
-                        />
+                        loading="lazy" />
                         <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/60 via-transparent to-transparent" />
                       </div>
 

@@ -390,11 +390,10 @@ export default function CiscoPartnershipPage() {
                   <div className="relative group/logo w-[120px] h-[120px] sm:w-[130px] sm:h-[130px] rounded-3xl bg-[#09090b]/80 border border-zinc-800 hover:border-sky-500/30 flex items-center justify-center p-5 shadow-2xl backdrop-blur-md transition-all duration-500 hover:-translate-y-1">
                     <div className="absolute inset-0 bg-gradient-to-br from-sky-500/[0.03] to-transparent rounded-3xl opacity-0 group-hover/logo:opacity-100 transition-opacity" />
                     <div className="absolute -inset-1 rounded-3xl bg-gradient-to-r from-sky-600 to-blue-500 opacity-0 group-hover/logo:opacity-20 blur-md transition-opacity" />
-                    <img
-                      src="/assets/logo/logo.png"
+                    <img src="/assets/logo/logo.png"
                       alt="Devopstrio Logo"
                       className="w-full h-auto max-h-[85%] object-contain select-none filter brightness-105"
-                    />
+                    loading="lazy" />
                   </div>
 
                   <div className="w-10 h-10 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center shadow-lg relative z-20">
@@ -404,11 +403,10 @@ export default function CiscoPartnershipPage() {
                   <div className="relative group/logo w-[120px] h-[120px] sm:w-[130px] sm:h-[130px] rounded-3xl bg-[#09090b]/80 border border-zinc-800 hover:border-sky-500/30 flex items-center justify-center p-5 shadow-2xl backdrop-blur-md transition-all duration-500 hover:-translate-y-1">
                     <div className="absolute inset-0 bg-gradient-to-br from-sky-500/[0.03] to-transparent rounded-3xl opacity-0 group-hover/logo:opacity-100 transition-opacity" />
                     <div className="absolute -inset-1 rounded-3xl bg-gradient-to-r from-sky-600 to-blue-500 opacity-0 group-hover/logo:opacity-20 blur-md transition-opacity" />
-                    <img
-                      src="/assets/Tech_logos/cisco.svg"
+                    <img src="/assets/Tech_logos/cisco.svg"
                       alt="Cisco Logo"
                       className="w-full h-auto max-h-[85%] object-contain select-none filter brightness-110"
-                    />
+                    loading="lazy" />
                   </div>
 
                 </div>

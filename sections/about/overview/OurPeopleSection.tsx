@@ -135,11 +135,10 @@ export function OurPeopleSection() {
           <div className="text-center max-w-3xl mx-auto mb-16 relative">
             {/* Curved Arrow PNG on Right Side (Mirrored, shifted left) */}
             <div className="absolute -top-6 sm:-top-8 md:-top-10 right-2 sm:right-6 md:right-10 lg:right-12 z-20 pointer-events-none select-none">
-              <img
-                src="/assets/components/Carrow-right.png"
+              <img src="/assets/components/Carrow-right.png"
                 alt="Curved arrow right"
                 className="w-14 sm:w-18 md:w-22 lg:w-24 h-auto object-contain filter drop-shadow-[0_0_15px_rgba(244,63,94,0.4)] scale-x-[-1]"
-              />
+              loading="lazy" />
             </div>
 
             <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight text-white mb-4 font-sans leading-[1.45]">
@@ -205,7 +204,7 @@ export function OurPeopleSection() {
                           </div>
                         )}
                         <div className={`w-[200px] h-[130px] rounded-2xl overflow-hidden shrink-0 relative group shadow-lg ${idx % 2 === 0 ? 'bg-[#facc15]' : 'bg-rose-500'}`}>
-                          <img src={eventImages[idx % eventImages.length]} alt="Leadership Event" className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110 drop-shadow-[0_20px_30px_rgba(0,0,0,0.5)]" />
+                          <img src={eventImages[idx % eventImages.length]} alt="Leadership Event" className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110 drop-shadow-[0_20px_30px_rgba(0,0,0,0.5)]" loading="lazy" />
                         </div>
                       </React.Fragment>
                     ))}
@@ -234,7 +233,7 @@ export function OurPeopleSection() {
                           </div>
                         )}
                         <div className={`w-[220px] h-[130px] rounded-2xl overflow-hidden shrink-0 relative group shadow-lg ${idx % 2 === 0 ? 'bg-emerald-400' : 'bg-[#facc15]'}`}>
-                          <img src={eventImages[(idx + 7) % eventImages.length]} alt="Leadership Meeting" className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110 drop-shadow-[0_20px_30px_rgba(0,0,0,0.5)]" />
+                          <img src={eventImages[(idx + 7) % eventImages.length]} alt="Leadership Meeting" className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110 drop-shadow-[0_20px_30px_rgba(0,0,0,0.5)]" loading="lazy" />
                         </div>
                       </React.Fragment>
                     ))}
@@ -258,7 +257,7 @@ export function OurPeopleSection() {
                           </div>
                         )}
                         <div className={`w-[180px] h-[130px] rounded-2xl overflow-hidden shrink-0 relative group shadow-lg ${idx % 3 === 0 ? 'bg-blue-500' : 'bg-[#facc15]'}`}>
-                          <img src={eventImages[(idx + 14) % eventImages.length]} alt="Team Milestone" className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110 drop-shadow-[0_20px_30px_rgba(0,0,0,0.5)]" />
+                          <img src={eventImages[(idx + 14) % eventImages.length]} alt="Team Milestone" className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110 drop-shadow-[0_20px_30px_rgba(0,0,0,0.5)]" loading="lazy" />
                         </div>
                       </React.Fragment>
                     ))}
@@ -287,11 +286,10 @@ export function OurPeopleSection() {
                 <h3 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight text-white relative inline-block">
                   {/* Connecting side arrow starting at left side */}
                   <div className="absolute -top-2 sm:-top-4 md:-top-6 -left-20 sm:-left-28 md:-left-36 lg:-left-44 z-30 pointer-events-none select-none">
-                    <img
-                      src="/assets/components/top-to-buttom-side-Arrowmid.png"
+                    <img src="/assets/components/top-to-buttom-side-Arrowmid.png"
                       alt="Connecting section arrow"
                       className="w-16 sm:w-20 md:w-24 lg:w-28 h-auto object-contain filter drop-shadow-[0_0_20px_rgba(225,29,72,0.4)] transform -rotate-[-30deg]"
-                    />
+                    loading="lazy" />
                   </div>
                   Meet Our <span className="text-rose-500">Team</span>
                 </h3>
@@ -337,12 +335,10 @@ export function OurPeopleSection() {
                         >
                           {/* Photo Container */}
                           <div className="relative w-full aspect-[3/4] rounded-xl overflow-hidden bg-zinc-100 shadow-inner">
-                            <img
-                              src={member.photo}
+                            <img src={member.photo}
                               alt={member.name}
                               className="w-full h-full object-cover object-top transition-transform duration-500 ease-out group-hover:scale-105"
-                              loading="lazy"
-                            />
+                              loading="lazy" />
                           </div>
 
                           {/* Bottom Border / Polaroid Info Area that smoothly expands on hover revealing Signature Name */}

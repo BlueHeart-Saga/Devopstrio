@@ -43,11 +43,10 @@ export function CompanyIntro() {
 
             {/* Background Collage Image shown fully without desaturation or heavy dark shadows */}
             <div className="absolute inset-0 w-full h-full">
-              <img
-                src="/assets/About-page/team/image.png"
+              <img src="/assets/About-page/team/image.png"
                 alt="Devopstrio Engineering Team"
                 className="w-full h-full object-cover"
-              />
+              loading="lazy" />
             </div>
 
             {/* Grid Layout containing Left Info and Right Card */}
@@ -55,9 +54,9 @@ export function CompanyIntro() {
 
               {/* Left Side: Editorial Heading with a subtle backdrop to ensure readability on full color background */}
               <div className="lg:col-span-6 flex flex-col items-start gap-4 bg-black/60 p-6 border border-zinc-800/50">
-                <span className="inline-block px-3 py-1 text-[10px] font-bold tracking-[0.2em] uppercase text-rose-500 border border-rose-500/30 rounded-none bg-black/40">
+                {/* <span className="inline-block px-3 py-1 text-[10px] font-bold tracking-[0.2em] uppercase text-rose-500 border border-rose-500/30 rounded-none bg-black/40">
                   WHO WE ARE
-                </span>
+                </span> */}
                 <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight leading-tight text-white max-w-[420px]">
                   Powering Digital Evolution Through Precision Engineering
                 </h3>
@@ -66,9 +65,9 @@ export function CompanyIntro() {
               {/* Right Side: High Contrast Floating Card */}
               <div className="lg:col-span-6 flex justify-end">
                 <div className="w-full max-w-[460px] bg-black border-2 border-white/90 p-8 md:p-10 flex flex-col gap-6 text-left shadow-[0_30px_60px_rgba(0,0,0,0.8)]">
-                  <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-rose-500 block mb-0">
+                  {/* <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-rose-500 block mb-0">
                     OUR PHILOSOPHY
-                  </span>
+                  </span> */}
 
                   {/* Elegant Quote */}
                   <blockquote className="text-sm md:text-base italic font-semibold text-white border-l-2 border-rose-500 pl-4 leading-relaxed">

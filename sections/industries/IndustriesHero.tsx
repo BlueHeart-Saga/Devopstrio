@@ -29,11 +29,10 @@ export function IndustriesHero({
       
       {/* Cover Background Image */}
       <div className="absolute inset-0 z-0">
-        <img 
-          src={bgImage} 
+        <img src={bgImage} 
           alt={`${breadcrumbCurrent} Background`} 
           className="w-full h-full object-cover object-center select-none pointer-events-none opacity-40 filter brightness-[0.8] contrast-[1.05]"
-        />
+        loading="eager" />
         {/* Premium Dark Gradient Overlay for Text Readability */}
         <div className="absolute inset-0 bg-gradient-to-r from-[#030303] via-[#030303]/90 via-30% to-transparent" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#030303] via-transparent to-transparent" />

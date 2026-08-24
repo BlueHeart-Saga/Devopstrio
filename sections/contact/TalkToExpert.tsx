@@ -79,11 +79,10 @@ export function TalkToExpert() {
           transition={{ duration: 0.8, ease: "easeInOut" }}
           className="absolute inset-0 w-full h-full"
         >
-          <img
-            src={experts[activeExpert].image}
+          <img src={experts[activeExpert].image}
             alt={experts[activeExpert].name}
             className="w-full h-full object-cover object-top"
-          />
+          loading="lazy" />
           {/* Subtle gradient to ensure white text readability on light backgrounds */}
           <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/60 pointer-events-none" />
         </motion.div>
@@ -138,7 +137,7 @@ export function TalkToExpert() {
                   
                   {/* Avatar */}
                   <div className={`w-12 h-12 md:w-16 md:h-16 rounded-full overflow-hidden border transition-all duration-500 ${activeExpert === idx ? 'border-white scale-110 shadow-xl' : 'border-transparent opacity-50 group-hover:opacity-100 grayscale hover:grayscale-0'}`}>
-                    <img src={expert.image} alt={expert.name} className="w-full h-full object-cover object-top" />
+                    <img src={expert.image} alt={expert.name} className="w-full h-full object-cover object-top" loading="lazy" />
                   </div>
                 </button>
               ))}

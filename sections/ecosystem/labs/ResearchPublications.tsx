@@ -73,11 +73,10 @@ export function ResearchPublications() {
           
           {/* Background Image Layer */}
           <div className="absolute inset-0 z-0">
-            <img 
-              src="/assets/services/bg-ai.png" 
+            <img src="/assets/services/bg-ai.png" 
               alt="Research and Engineering Collaboration" 
               className="w-full h-full object-cover opacity-60"
-            />
+            loading="lazy" />
             {/* Gradient Overlay to ensure text readability at the bottom */}
             <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
           </div>
