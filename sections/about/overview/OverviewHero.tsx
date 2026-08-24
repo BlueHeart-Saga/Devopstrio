@@ -80,9 +80,9 @@ export function OverviewHero() {
           <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-black/60 to-transparent z-10" />
         </div>
 
-        {/* Left 50% Content Area */}
+        {/* Left 55% Content Area */}
         <div className="max-w-7xl mx-auto w-full px-6 sm:px-10 lg:px-16 relative z-20 h-full flex items-center">
-          <div className="max-w-xl lg:max-w-[48%] w-full flex items-center">
+          <div className="max-w-2xl lg:max-w-[58%] w-full flex items-center">
             <AnimatePresence mode="wait">
               <motion.div
                 key={activeStep}
@@ -90,13 +90,13 @@ export function OverviewHero() {
                 animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                 exit={{ opacity: 0, y: -24, filter: "blur(6px)" }}
                 transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-                className="flex flex-col items-start text-left w-full space-y-4"
+                className="flex flex-col items-start text-left w-full space-y-5"
               >
                 {/* Viewable Prominent Tag Name */}
                 {chapters[activeStep].tagline && (
                   <span
                     style={{ textShadow: "0 2px 12px rgba(0, 0, 0, 0.95)" }}
-                    className="text-rose-500 font-sans text-sm sm:text-base md:text-lg font-bold tracking-[0.25em] uppercase drop-shadow-[0_2px_10px_rgba(244,63,94,0.4)]"
+                    className="text-rose-500 font-sans text-base sm:text-lg md:text-xl font-extrabold tracking-[0.25em] uppercase drop-shadow-[0_2px_12px_rgba(244,63,94,0.5)]"
                   >
                     {chapters[activeStep].tagline}
                   </span>
@@ -118,11 +118,11 @@ export function OverviewHero() {
                     initial={{ opacity: 0, y: 12 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.12, duration: 0.35 }}
-                    className="pt-2"
+                    className="pt-1"
                   >
                     <p
-                      style={{ textShadow: "0 2px 16px rgba(0, 0, 0, 0.98)" }}
-                      className="text-sm sm:text-base lg:text-lg text-zinc-200 font-sans font-normal leading-relaxed max-w-xl border-l-2 border-rose-500 pl-4 py-2 bg-rose-950/30 backdrop-blur-sm rounded-r-xl drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]"
+                      style={{ textShadow: "0 2px 20px rgba(0, 0, 0, 0.98)" }}
+                      className="text-base sm:text-lg md:text-xl lg:text-2xl text-zinc-100 font-sans font-medium leading-relaxed max-w-2xl border-l-4 border-rose-500 pl-5 py-3 bg-rose-950/40 backdrop-blur-md rounded-r-2xl drop-shadow-[0_4px_20px_rgba(0,0,0,0.95)]"
                     >
                       &ldquo;{chapters[activeStep].quote}&rdquo;
                     </p>
