@@ -35,16 +35,30 @@ const globalPresenceSections = [
 
 const locations = [
   {
-    name: "London",
+    name: "London (HQ)",
     country: "UK",
     region: "Europe",
     type: "Global HQ / Client Experience Centre",
     role: "Connecting Global Expertise. Supporting Innovation. Delivering Excellence.",
     employees: "200+",
-    top: 27.68,
+    top: 27.2,
     left: 46.9,
     tag: "HQ",
+    address: "London, UK",
     mapUrl: "https://www.google.com/maps/place/Devopstrio+ltd/@51.5245288,-0.1367657,14z/data=!3m1!5s0x4875cee4157f1139:0xd249cf37df391616!4m10!1m2!2m1!1sdevopstrio+ltd+uk!3m6!1s0x48760b08b17623d1:0x6617df320c1480ed!8m2!3d51.5272553!4d-0.0887416!15sChFkZXZvcHN0cmlvIGx0ZCB1a5IBEHNvZnR3YXJlX2NvbXBhbnngAQA!16s%2Fg%2F11s90s3cf8"
+  },
+  {
+    name: "London Support",
+    country: "UK",
+    region: "Europe",
+    type: "London Support Office",
+    role: "Connecting Global Expertise. Supporting Innovation. Delivering Excellence.",
+    employees: "50+",
+    top: 28.5,
+    left: 46.1,
+    tag: "Support",
+    address: "167-169 Great Portland Street, 5th Floor, London, W1W 5PF",
+    mapUrl: "https://www.google.com/maps/search/?api=1&query=167-169+Great+Portland+Street,+5th+Floor,+London,+W1W+5PF"
   },
   {
     name: "Tennessee",

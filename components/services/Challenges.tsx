@@ -42,16 +42,10 @@ export function Challenges({ serviceSlug, capabilities }: ChallengesProps) {
 
         {/* Section Header */}
         <Reveal>
-          <div className="text-left max-w-3xl mb-16">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
-              CHALLENGES & SOLUTIONS
-            </span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white uppercase">
-              Overcoming critical bottlenecks to <span className="text-rose-500">enable growth</span>
+          <div className="text-left max-w-3xl mb-14">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-white font-sans">
+              Overcoming critical bottlenecks to <span className="text-rose-500 font-semibold">enable growth</span>
             </h2>
-            <p className="text-zinc-400 text-sm md:text-base leading-relaxed">
-              Explore the operational challenges inherent to these domains and the specific engineering solutions we implement.
-            </p>
           </div>
         </Reveal>
 

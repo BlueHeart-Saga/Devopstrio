@@ -36,14 +36,9 @@ export function IndustrialFaq() {
       <div className="max-w-4xl mx-auto px-12 xl:px-8 relative z-10 text-left">
 
         {/* Section Header */}
-        <Reveal className="mb-20 text-center">
-          <div className="flex items-center justify-center gap-2 mb-4">
-            <span className="text-[11px] font-semibold tracking-[0.25em] uppercase text-zinc-500">
-              FAQ
-            </span>
-          </div>
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight leading-tight text-white">
-            Common industrial <span className="text-[#E11D48]">queries</span>
+        <Reveal className="mb-14 text-center">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-white font-sans">
+            Common industrial <span className="text-[#E11D48] font-semibold">queries</span>
           </h2>
         </Reveal>
 

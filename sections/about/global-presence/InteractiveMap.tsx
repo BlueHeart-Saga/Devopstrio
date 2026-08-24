@@ -5,7 +5,7 @@ import { MapPin, Globe, Users, ArrowUpRight } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
 import Link from "next/link";
 
-interface Location {
+export interface Location {
   name: string;
   country: string;
   region: string;
@@ -16,14 +16,101 @@ interface Location {
   left: number;
   mapUrl?: string;
   tag?: string;
+  address?: string;
 }
+
+export const defaultLocations: Location[] = [
+  {
+    name: "London (HQ)",
+    country: "UK",
+    region: "Europe",
+    type: "Global HQ / Client Experience Centre",
+    role: "Connecting Global Expertise. Supporting Innovation. Delivering Excellence.",
+    employees: "200+",
+    top: 27.2,
+    left: 46.9,
+    tag: "HQ",
+    address: "London, UK",
+    mapUrl: "https://www.google.com/maps/place/Devopstrio+ltd/@51.5245288,-0.1367657,14z/data=!3m1!5s0x4875cee4157f1139:0xd249cf37df391616!4m10!1m2!2m1!1sdevopstrio+ltd+uk!3m6!1s0x48760b08b17623d1:0x6617df320c1480ed!8m2!3d51.5272553!4d-0.0887416!15sChFkZXZvcHN0cmlvIGx0ZCB1a5IBEHNvZnR3YXJlX2NvbXBhbnngAQA!16s%2Fg%2F11s90s3cf8"
+  },
+  {
+    name: "London Support",
+    country: "UK",
+    region: "Europe",
+    type: "London Support Office",
+    role: "Connecting Global Expertise. Supporting Innovation. Delivering Excellence.",
+    employees: "50+",
+    top: 28.5,
+    left: 46.1,
+    tag: "Support",
+    address: "167-169 Great Portland Street, 5th Floor, London, W1W 5PF",
+    mapUrl: "https://www.google.com/maps/search/?api=1&query=167-169+Great+Portland+Street,+5th+Floor,+London,+W1W+5PF"
+  },
+  {
+    name: "Tennessee",
+    country: "USA",
+    region: "North America",
+    type: "North America Operations",
+    role: "Regional client support, collaboration coverage, and operational continuity for US-based engagements.",
+    employees: "50+",
+    top: 37.5,
+    left: 23.5,
+    tag: "Support",
+    address: "522 Aventura Dr, Mt Juliet, TN 37122",
+    mapUrl: "https://maps.google.com/?q=522+Aventura+Dr,+Mt+Juliet,+TN+37122"
+  },
+  {
+    name: "Bengaluru",
+    country: "India",
+    region: "India",
+    type: "Corporate Office",
+    role: "Leading Strategy. Accelerating Technology. Enabling Global Growth.",
+    employees: "150+",
+    top: 51.1,
+    left: 68.35,
+    tag: "Corporate",
+    address: "Bengaluru, Karnataka, India",
+    mapUrl: "https://www.google.com/maps/place/Devopstrio+Pvt+Ltd/@11.2597005,71.6100439,6.11z/data=!4m10!1m2!2m1!1sDevopstrio+Pbangalore!3m6!1s0x3bae152b54eca867:0x980925bb507a328c!8m2!3d12.9513154!4d77.6464534!15sChVEZXZvcHN0cmlvIFBiYW5nYWxvcmVaFyIVZGV2b3BzdHJpbyBwYmFuZ2Fsb3JlkgEdY29tcHV0ZXJfc3VwcG9ydF9hbmRfc2VydmljZXPgAQA!16s%2Fg%2F11mdtl382s"
+  },
+  {
+    name: "Chennai",
+    country: "India",
+    region: "India",
+    type: "Technology & Operations Center",
+    role: "Managed cloud operations, DevSecOps, infrastructure monitoring, and security-aligned delivery.",
+    employees: "75+",
+    top: 50.9,
+    left: 69.1,
+    tag: "Ops",
+    address: "Chennai, Tamil Nadu, India",
+    mapUrl: "https://www.google.com/maps/place/Devopstrio+Pvt+Ltd/@13.0095316,80.2063518,17z/data=!3m1!4b1!4m6!3m5!1s0x3a5267f2a761f2c5:0x795e4dac8df70296!8m2!3d13.0095264!4d80.2089267!16s%2Fg%2F11nq0wrf8p"
+  },
+  {
+    name: "Thoothukudi",
+    country: "India",
+    region: "India",
+    type: "Innovation Hub",
+    role: "Empowering Talent. Accelerating Innovation. Creating Global Impact.",
+    employees: "150+",
+    top: 52.99,
+    left: 68.53,
+    tag: "Innovation",
+    address: "Thoothukudi, Tamil Nadu, India",
+    mapUrl: "https://www.google.com/maps/place/Devopstrio/@9.0039123,77.9576017,17z/data=!3m1!4b1!4m6!3m5!1s0x3b01557677b55437:0xdccfaa15cbbc87ca!8m2!3d9.0039123!4d77.9601766!16s%2Fg%2F11xw9tzf_k"
+  },
+];
+
+export const defaultFilters = ["All", "India", "Europe", "North America"];
 
 interface InteractiveMapProps {
-  locations: Location[];
-  filters: string[];
+  locations?: Location[];
+  filters?: string[];
 }
 
-export function InteractiveMap({ locations, filters }: InteractiveMapProps) {
+export function InteractiveMap({
+  locations = defaultLocations,
+  filters = defaultFilters,
+}: InteractiveMapProps) {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const [activeFilter, setActiveFilter] = useState<string>("All");
   const [isPaused, setIsPaused] = useState<boolean>(false);
@@ -84,7 +171,7 @@ export function InteractiveMap({ locations, filters }: InteractiveMapProps) {
   // Calculate dynamic stats
   const totalOffices = locations.length;
   const uniqueCountries = [...new Set(locations.map((l) => l.country))].length;
-  const totalEmployees = "525+"; // Standard aligned value
+  const totalEmployees = "525+";
 
   // Map Zoom settings for each region
   const getMapTransform = () => {
@@ -104,7 +191,7 @@ export function InteractiveMap({ locations, filters }: InteractiveMapProps) {
   const mapStyle = getMapTransform();
 
   return (
-    <section className="py-24 md:py-32 relative bg-zinc-950/20">
+    <section className="py-24 md:py-32 relative bg-zinc-950/20 font-sans">
       {/* Custom Keyframes & Continents Mask CSS */}
       <style dangerouslySetInnerHTML={{
         __html: `
@@ -165,7 +252,7 @@ export function InteractiveMap({ locations, filters }: InteractiveMapProps) {
           </div>
         </div>
 
-        {/* main side-by-side split layout */}
+        {/* Main side-by-side split layout */}
         <div className="flex flex-col lg:flex-row gap-8 items-stretch mt-8">
           
           {/* Left Column: Stats Card */}
@@ -174,7 +261,7 @@ export function InteractiveMap({ locations, filters }: InteractiveMapProps) {
               <h1 className="text-6xl md:text-7xl font-bold text-rose-500 leading-none mb-2">
                 {totalOffices}
               </h1>
-              <h3 className="text-2xl font-semibold text-white mb-2">Offices</h3>
+              <h3 className="text-2xl font-semibold text-white mb-2">Global Locations</h3>
               <p className="text-zinc-300 text-base leading-relaxed mb-6 font-medium">
                 Across {uniqueCountries}+ Countries with <Link href="/careers" className="text-[#E11D48] hover:underline font-semibold">{totalEmployees} Global Workforce</Link>
               </p>
@@ -253,11 +340,17 @@ export function InteractiveMap({ locations, filters }: InteractiveMapProps) {
                   </div>
 
                   {/* Tooltip Hover Card */}
-                  <div className="absolute left-full top-1/2 -translate-y-1/2 ml-3 bg-zinc-950/95 border border-rose-500/50 rounded-xl p-4 shadow-2xl opacity-0 invisible group-hover/pin:opacity-100 group-hover/pin:visible transition-all duration-300 z-50 w-max min-w-[200px] backdrop-blur-md">
-                    <div className="flex items-center justify-between gap-4 pb-2.5 mb-2.5 border-b border-zinc-800">
+                  <div className="absolute left-full top-1/2 -translate-y-1/2 ml-3 bg-zinc-950/95 border border-rose-500/50 rounded-xl p-4 shadow-2xl opacity-0 invisible group-hover/pin:opacity-100 group-hover/pin:visible transition-all duration-300 z-50 w-max min-w-[220px] backdrop-blur-md">
+                    <div className="flex items-center justify-between gap-4 pb-2 mb-2 border-b border-zinc-800">
                       <strong className="text-white text-base sm:text-lg font-bold tracking-tight">{loc.name}</strong>
                       <span className="text-rose-400 text-xs font-semibold uppercase tracking-wider px-2 py-0.5 bg-rose-950/40 rounded border border-rose-500/30">{loc.country}</span>
                     </div>
+
+                    {loc.address && (
+                      <p className="text-xs text-zinc-300 mb-2 font-medium max-w-[240px] leading-snug">
+                        {loc.address}
+                      </p>
+                    )}
 
                     <div className="flex items-center justify-between gap-2 text-xs sm:text-sm font-semibold text-rose-400 group-hover/pin:text-rose-300">
                       <span>View on Google Maps</span>
@@ -275,3 +368,5 @@ export function InteractiveMap({ locations, filters }: InteractiveMapProps) {
     </section>
   );
 }
+
+export default InteractiveMap;

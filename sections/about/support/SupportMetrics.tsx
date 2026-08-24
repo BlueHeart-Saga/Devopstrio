@@ -61,32 +61,15 @@ export const SupportMetrics = () => {
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_50%,rgba(255,23,68,0.06),transparent)]" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="text-center mb-16">
-          <motion.span
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 block mb-4"
-          >
-            By The Numbers
-          </motion.span>
+        <div className="text-center mb-14">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-4"
+            className="text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-white font-sans mb-4"
           >
-            Customer Success <span className="text-rose-500">Metrics</span>
+            Customer Success <span className="text-rose-500 font-semibold">Metrics</span>
           </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-zinc-400 text-sm md:text-base leading-relaxed font-bold max-w-xl mx-auto mb-8"
-          >
-            Devopstrio delivers outstanding outcomes across <Link href="/services/cloud-services" className="text-rose-500 hover:underline">cloud services</Link>, <Link href="/services/software-development" className="text-rose-500 hover:underline">software engineering</Link>, and <Link href="/services/managed-services" className="text-rose-500 hover:underline">managed support</Link>.
-          </motion.p>
         </div>
 
         <div className="bg-zinc-900/30 border border-zinc-800 rounded-3xl px-10 py-14">

@@ -113,11 +113,8 @@ export function IndustryUseCases() {
         {/* Section Header with Navigation Arrow Actions */}
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-6 mb-12">
           <Reveal>
-            <span className="text-[11px] font-semibold tracking-[0.25em] uppercase text-zinc-500 mb-4 block">
-              Use Case Inventory
-            </span>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight leading-tight text-white">
-              Proven enterprise <span className="text-[#E11D48]">use cases</span>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-white font-sans">
+              Proven enterprise <span className="text-[#E11D48] font-semibold">use cases</span>
             </h2>
           </Reveal>
 

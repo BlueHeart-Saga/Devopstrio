@@ -456,7 +456,7 @@ export const AwardsList = () => {
           </Reveal>
 
           {/* Year filtering tabs */}
-          <div className="flex flex-wrap gap-1.5 bg-zinc-950/80 border border-zinc-900 p-1.5 rounded-xl">
+          {/* <div className="flex flex-wrap gap-1.5 bg-zinc-950/80 border border-zinc-900 p-1.5 rounded-xl">
             {years.slice(0, 7).map((year) => (
               <button
                 key={year}
@@ -472,11 +472,11 @@ export const AwardsList = () => {
                 {year}
               </button>
             ))}
-          </div>
+          </div> */}
         </div>
 
         {/* Search Input Bar */}
-        <div className="max-w-lg mb-10">
+        {/* <div className="max-w-lg mb-10">
           <div className="relative flex items-center">
             <Search className="absolute left-4 w-4 h-4 text-rose-500" />
             <input
@@ -495,7 +495,7 @@ export const AwardsList = () => {
               </button>
             )}
           </div>
-        </div>
+        </div> */}
 
         {/* Grid List */}
         {filteredAwards.length === 0 ? (

@@ -56,7 +56,7 @@ export default function TestimonialsPage() {
       <CaseStudyHighlights />
 
       {/* 7. Industries & Trust Signals */}
-      <IndustriesTrust />
+      {/* <IndustriesTrust /> */}
 
       {/* 8. Global CTA Component */}
       <TestimonialsCTA />

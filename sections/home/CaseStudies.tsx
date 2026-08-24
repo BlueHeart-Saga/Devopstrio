@@ -36,7 +36,7 @@ const caseStudies: CaseStudy[] = [
     solution: "Secured mission-critical NHS systems ensuring maximum uptime, patient data integrity, and compliance.",
     technologies: ["Zero-Trust Network", "AI Threat Intelligence", "SIEM", "Azure Security"],
     result: "99.99% uptime across critical health networks",
-    image: "/assets/Home-page/case-studies/HEALTHCARE%20CYBERSECURITY.png"
+    image: "/assets/Home-page/case-studies/COMPOSABLE-KYC-AML.png"
   },
   {
     tag: "AI RECRUITMENT INTELLIGENCE",
@@ -46,7 +46,7 @@ const caseStudies: CaseStudy[] = [
     solution: "Deployed AIHIRE, processing massive volumes of candidate records securely to accelerate talent acquisition.",
     technologies: ["Next.js", "OpenAI API", "PostgreSQL", "FastAPI"],
     result: "75% reduction in candidate screening cycle time",
-    image: "/assets/Home-page/case-studies/AI%20RECRUITMENT%20INTELLIGENCE.png"
+    image: "/assets/Home-page/case-studies/COMPOSABLE-KYC-AML.png"
   },
   {
     tag: "INTELLIGENT SEARCH",
@@ -56,7 +56,7 @@ const caseStudies: CaseStudy[] = [
     solution: "Launched an intuitive, conversational search experience that hyper-personalizes recommendations.",
     technologies: ["Vector Databases", "LLM Ensembles", "React", "Python"],
     result: "300% increase in search conversion rates",
-    image: "/assets/Home-page/case-studies/INTELLIGENT%20SEARCH.png"
+    image: "/assets/Home-page/case-studies/COMPOSABLE-KYC-AML.png"
   },
   {
     tag: "EDTECH AUTOMATION",
@@ -66,7 +66,7 @@ const caseStudies: CaseStudy[] = [
     solution: "Delivered a highly accurate, unbiased automated grading system for bulk paper evaluations.",
     technologies: ["Computer Vision", "NLP", "TensorFlow", "AWS Cloud"],
     result: "Evaluated 100,000+ papers with 98% human-parity accuracy",
-    image: "/assets/Home-page/case-studies/EDTECH%20AUTOMATION.png"
+    image: "/assets/Home-page/case-studies/COMPOSABLE-KYC-AML.png"
   }
 ];
 

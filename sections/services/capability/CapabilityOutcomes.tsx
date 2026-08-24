@@ -351,17 +351,9 @@ export function CapabilityOutcomes({
     <section id="solutions-outcomes" className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
       <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 text-left">
         <Reveal className="mb-16">
-          <div className="flex items-center gap-2 mb-4">
-            <span className="text-xs md:text-sm font-extrabold tracking-[0.25em] uppercase text-rose-500 font-mono">
-              OUR SOLUTIONS
-            </span>
-          </div>
-          <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-4 text-white uppercase">
-            {overrideTitle || <>Enterprise-Ready <span className="text-rose-500">{capabilityTitle}</span></>}
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-white font-sans">
+            {overrideTitle || <>Enterprise-Ready <span className="text-rose-500 font-semibold">{capabilityTitle}</span></>}
           </h2>
-          <p className="text-sm md:text-base font-normal text-zinc-350 max-w-3xl leading-relaxed">
-            {overrideDesc || `We design, build, deploy, and optimize custom ${capabilityTitle.toLowerCase()} architectures that transform operations, improve productivity, and create measurable business value.`}
-          </p>
         </Reveal>
 
         {/* Recommended 3-Column Grid Layout */}

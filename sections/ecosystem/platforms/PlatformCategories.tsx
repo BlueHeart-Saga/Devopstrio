@@ -15,11 +15,11 @@ interface CategoryDetail {
 }
 
 const categoryBgImages: Record<string, string> = {
-  saas: "/assets/ecosystem/grid/platforms-solutions page\u00a0_grid_5/Generated Design.png",
-  ai: "/assets/ecosystem/grid/platforms-solutions page\u00a0_grid_5/Generated Design-1.png",
-  cloud: "/assets/ecosystem/grid/platforms-solutions page\u00a0_grid_5/Generated Design-2.png",
-  data: "/assets/ecosystem/grid/platforms-solutions page\u00a0_grid_5/Generated Design-3.png",
-  security: "/assets/ecosystem/grid/platforms-solutions page\u00a0_grid_5/Generated Design-4.png",
+  saas: "/assets/ecosystem/grid/platforms-solutions page_grid_5/Generated Design.png",
+  ai: "/assets/ecosystem/grid/platforms-solutions page_grid_5/Generated Design-1.png",
+  cloud: "/assets/ecosystem/grid/platforms-solutions page_grid_5/Generated Design-2.png",
+  data: "/assets/ecosystem/grid/platforms-solutions page_grid_5/Generated Design-3.png",
+  security: "/assets/ecosystem/grid/platforms-solutions page_grid_5/Generated Design-4.png",
 };
 
 export function PlatformCategories() {

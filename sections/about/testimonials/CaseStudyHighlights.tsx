@@ -174,9 +174,9 @@ export const CaseStudyHighlights = () => {
                       fill
                       className="object-cover group-hover:scale-105 transition-transform duration-500"
                     />
-                    <div className="absolute top-3 left-3 bg-black/80 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold font-mono tracking-wide text-rose-400 border border-zinc-800 uppercase">
+                    {/* <div className="absolute top-3 left-3 bg-black/80 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold font-mono tracking-wide text-rose-400 border border-zinc-800 uppercase">
                       {study.category}
-                    </div>
+                    </div> */}
                   </div>
                   
                   <div className="pt-5 pb-2 px-2 flex flex-col flex-1">

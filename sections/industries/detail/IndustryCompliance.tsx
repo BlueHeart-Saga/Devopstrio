@@ -26,21 +26,9 @@ export function IndustryCompliance({ compliances }: IndustryComplianceProps) {
           {/* Left Block: Narrative text */}
           <div className="relative z-10">
             <Reveal>
-              <span className="text-[11px] font-semibold tracking-[0.25em] uppercase text-zinc-500 mb-4 block">
-                Governance & Audits
-              </span>
-            </Reveal>
-
-            <Reveal delay={0.05}>
-              <h2 className="text-3xl md:text-4xl font-bold tracking-tight leading-tight text-white mb-6">
-                Regulatory safety & <span className="text-[#E11D48]">compliance alignment</span>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight leading-tight text-white font-sans">
+                Regulatory safety & <span className="text-[#E11D48] font-semibold">compliance alignment</span>
               </h2>
-            </Reveal>
-
-            <Reveal delay={0.1}>
-              <p className="text-zinc-400 text-sm leading-relaxed font-medium">
-                We develop software models under strict regulatory guidelines, integrating <Link href="/services/cybersecurity" className="text-rose-500 hover:underline">security audits</Link>, encrypted registries, and <Link href="/services/cybersecurity" className="text-rose-500 hover:underline">automated vulnerability scanners</Link> directly into our builds.
-              </p>
             </Reveal>
           </div>
 
@@ -61,12 +49,12 @@ export function IndustryCompliance({ compliances }: IndustryComplianceProps) {
                     </div>
 
                     <div className="relative z-10">
-                      <strong className="text-sm font-bold text-white mb-1.5 group-hover:text-[#E11D48] transition-colors duration-300 block">
+                      <strong className="text-base font-semibold text-white mb-1.5 group-hover:text-[#E11D48] transition-colors duration-300 block">
                         {title.trim()}
                       </strong>
                       
                       {desc && (
-                        <p className="text-xs text-zinc-400 leading-relaxed font-semibold">
+                        <p className="text-sm sm:text-base text-zinc-300 leading-relaxed font-normal">
                           {desc.trim()}
                         </p>
                       )}

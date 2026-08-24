@@ -401,7 +401,7 @@ const OmnichannelEngagement = () => {
     { name: "Email", logo: "/assets/Tech-icons/google-onedrive-logo_svgstack_com_28961780931782.svg" },
     { name: "Live Chat", logo: "/assets/Tech-icons/slack-logo_svgstack_com_31371780931112.svg" },
     { name: "WhatsApp", logo: "/assets/Tech-icons/facebook-meta-logo_svgstack_com_28791780931068.svg" },
-    { name: "SMS", logo: "/assets/Tech_logos/Twilio.svg" },
+    { name: "SMS", logo: "/assets/Tech_logos/Elastic.svg" },
     { name: "Voice", logo: "/assets/Tech_logos/cisco.svg" },
     { name: "Social Media", logo: "/assets/Tech-icons/google-analytics-logo_svgstack_com_7431780931840.svg" }
   ];
@@ -435,14 +435,14 @@ const OmnichannelEngagement = () => {
 // ==========================================
 const TechnologyStack = () => {
   const techs = [
-    { name: "Salesforce", logo: "/assets/Tech_logos/Service_now.svg" }, // using generic for now if not found, actually let's use text fallback if no image
+    { name: "Salesforce", logo: "/assets/Tech_logos/Service_now.svg" },
     { name: "Dynamics 365", logo: "/assets/Tech-icons/microsoft-logo_svgstack_com_28801780931272.svg" },
-    { name: "HubSpot", logo: "/assets/Tech_logos/HubSpot.svg" },
-    { name: "Zendesk", logo: "/assets/Tech_logos/Zendesk.svg" },
-    { name: "Freshworks", logo: "/assets/Tech_logos/Freshworks.svg" },
+    { name: "HubSpot", logo: "/assets/Tech_logos/Confluent.svg" },
+    { name: "Zendesk", logo: "/assets/Tech_logos/Elastic.svg" },
+    { name: "Freshworks", logo: "/assets/Tech_logos/Datadog.svg" },
     { name: "Adobe Cloud", logo: "/assets/Tech-icons/adobe-xd-logo_svgstack_com_31591780931868.svg" },
     { name: "SAP CX", logo: "/assets/Tech_logos/sap.svg" },
-    { name: "Twilio", logo: "/assets/Tech_logos/Twilio.svg" },
+    { name: "Twilio", logo: "/assets/Tech_logos/PagerDuty.svg" },
     { name: "Azure OpenAI", logo: "/assets/Tech-icons/microsoft-azure-logo_svgstack_com_7501780931055.svg" },
     { name: "Power BI", logo: "/assets/Tech-icons/microsoft-logo_svgstack_com_28801780931272.svg" },
     { name: "Analytics", logo: "/assets/Tech-icons/google-analytics-logo_svgstack_com_7431780931840.svg" },

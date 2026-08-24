@@ -184,15 +184,9 @@ export function CapabilityGrid({ serviceSlug, capabilities }: CapabilityGridProp
         {/* Section Header */}
         <Reveal>
           <div className="text-center max-w-3xl mx-auto mb-14">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
-              CAPABILITIES
-            </span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
-              Core Practice <span className="text-rose-500">Specializations</span>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-white font-sans">
+              Core Practice <span className="text-rose-500 font-semibold">Specializations</span>
             </h2>
-            <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
-              Choose a capability below to view technical solution details, deliverables, and framework processes.
-            </p>
           </div>
         </Reveal>
 

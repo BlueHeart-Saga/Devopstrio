@@ -43,14 +43,9 @@ export function RelatedServices() {
       <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10 text-center">
         
         {/* Section Header */}
-        <Reveal className="mb-20 w-full flex flex-col items-center text-center">
-          <div className="inline-flex items-center justify-center gap-2 px-3 py-1 rounded-full mb-4">
-            <span className="text-[10px] font-bold tracking-widest uppercase text-rose-500">
-              Practice Connectivity
-            </span>
-          </div>
-          <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white uppercase text-center mx-auto">
-            Explore related <span className="text-rose-500">services</span>
+        <Reveal className="mb-14 w-full flex flex-col items-center text-center">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight leading-tight text-white font-sans text-center mx-auto">
+            Explore related <span className="text-rose-500 font-semibold">services</span>
           </h2>
         </Reveal>
 
@@ -76,10 +71,10 @@ export function RelatedServices() {
                   </div>
 
                   <div>
-                    <h3 className="text-base font-bold text-white group-hover:text-rose-500 transition-colors duration-300 mb-2 mt-6">
+                    <h3 className="text-lg font-semibold text-white group-hover:text-rose-500 transition-colors duration-300 mb-2 mt-6">
                       {srv.title}
                     </h3>
-                    <p className="text-xs text-zinc-400 leading-relaxed font-semibold">
+                    <p className="text-sm sm:text-base text-zinc-300 leading-relaxed font-normal">
                       {srv.desc}
                     </p>
                   </div>

@@ -484,19 +484,9 @@ export function ExploreClient() {
 
           <div className="text-center max-w-3xl mx-auto mb-12">
             <Reveal>
-              <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block drop-shadow-md">
-                SEARCH CAPABILITIES
-              </span>
-            </Reveal>
-            <Reveal delay={0.1}>
-              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-4 drop-shadow-md">
+              <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight text-white font-sans mb-4">
                 Master Capability Directory
               </h2>
-            </Reveal>
-            <Reveal delay={0.2}>
-              <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-medium max-w-2xl mx-auto drop-shadow-md">
-                Use our live search engine to quickly lookup any specialized technical capability, pipeline structure, compliance audit, or model setup.
-              </p>
             </Reveal>
           </div>
 

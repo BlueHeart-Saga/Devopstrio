@@ -418,13 +418,8 @@ export function CapabilityOverview({
 
               {/* LEFT CONTENT */}
               <div className="flex flex-col justify-center p-8 md:p-10 lg:p-12 text-left">
-
-                <span className="text-[11px] font-semibold tracking-[0.25em] uppercase text-rose-500 mb-6 block">
-                  Capability Overview
-                </span>
-
-                <h2 className="text-xl md:text-2xl xl:text-3xl font-bold leading-tight tracking-tight mb-6 text-white uppercase">
-                  {overrideHeading || <>Accelerating outcomes for <span className="text-rose-500">{title}</span></>}
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight tracking-tight mb-6 text-white font-sans">
+                  {overrideHeading || <>Transforming operations with <span className="text-rose-500 font-semibold">{title}</span></>}
                 </h2>
 
                 <div className="space-y-4 text-zinc-200 text-xs md:text-sm font-semibold leading-relaxed text-left">
@@ -460,11 +455,8 @@ export function CapabilityOverview({
           <Reveal delay={0.15}>
             {/* Center Main Heading */}
             <div className="text-center mb-8">
-              <span className="text-xs md:text-sm font-extrabold tracking-[0.25em] uppercase text-rose-500 block mb-3 font-mono">
-                Deep Dive Explanation
-              </span>
-              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold leading-tight tracking-tight text-white uppercase">
-                {overrideDeepDiveHeading || <>What is <span className="text-rose-500">{title}</span> ?</>}
+              <h3 className="text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight tracking-tight text-white font-sans">
+                {overrideDeepDiveHeading || <>What is <span className="text-rose-500 font-semibold">{title}</span> ?</>}
               </h3>
             </div>
 

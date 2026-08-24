@@ -65,18 +65,10 @@ export function IndustriesGrid() {
       <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
 
         {/* Section Header */}
-        <Reveal className="mb-20 text-left">
-          <div className="flex items-center gap-2 mb-4">
-            <span className="text-[11px] font-semibold tracking-[0.25em] uppercase text-zinc-500">
-              Core Domains
-            </span>
-          </div>
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight leading-tight text-white max-w-2xl">
-            Specialized solutions for <span className="text-[#E11D48]">global industries</span>
+        <Reveal className="mb-14 text-left">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-white font-sans">
+            Specialized solutions for <span className="text-[#E11D48] font-semibold">global industries</span>
           </h2>
-          <p className="text-zinc-400 text-xs md:text-sm font-semibold leading-relaxed mt-4 max-w-xl">
-            Choose an industry to see our <Link href="/services" className="text-rose-500 hover:underline">specialized software capabilities</Link>, case studies, and <Link href="/services/cybersecurity" className="text-rose-500 hover:underline">compliance alignments</Link>.
-          </p>
         </Reveal>
 
         {/* Premium Full-bleed Rectangular Cards Grid */}
@@ -112,7 +104,7 @@ export function IndustriesGrid() {
 
                   {/* Bottom Block: Industry Name */}
                   <div>
-                    <h3 className="text-base md:text-lg font-bold text-white group-hover:text-[#E11D48] transition-colors duration-300 tracking-tight leading-snug">
+                    <h3 className="text-lg md:text-xl font-semibold text-white group-hover:text-rose-500 transition-colors duration-300 tracking-tight leading-snug font-sans">
                       {ind.name}
                     </h3>
                   </div>

@@ -137,25 +137,10 @@ export function CapabilityProblem({
         
         {/* 1. Centered Heading Block */}
         <div className="max-w-2xl text-center mb-10">
-          <Reveal>
-            <div className="inline-flex items-center gap-2 px-3 py-1 mb-4 mx-auto">
-            
-              <span className="text-[9px] font-bold tracking-[0.2em] uppercase text-rose-500">
-                THE BUSINESS CHALLENGE
-              </span>
-            </div>
-          </Reveal>
-
           <Reveal delay={0.05}>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight leading-tight mb-4 text-white uppercase text-center">
-              Solving <span className="text-[#E11D48]">{displayTitle}</span>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-white font-sans text-center">
+              Solving <span className="text-rose-500 font-semibold">{displayTitle}</span>
             </h2>
-          </Reveal>
-
-          <Reveal delay={0.1}>
-            <p className="text-zinc-400 text-xs sm:text-sm leading-relaxed font-semibold max-w-xl mx-auto text-center">
-              {displaySubtitle}
-            </p>
           </Reveal>
         </div>
 

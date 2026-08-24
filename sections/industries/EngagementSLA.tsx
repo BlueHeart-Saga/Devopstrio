@@ -45,21 +45,9 @@ export function EngagementSLA() {
           {/* Left Block */}
           <div className="lg:col-span-5 relative z-10">
             <Reveal>
-              <span className="text-[11px] font-semibold tracking-[0.25em] uppercase text-zinc-500 mb-4 block">
-                Support Contracts
-              </span>
-            </Reveal>
-
-            <Reveal delay={0.05}>
-              <h2 className="text-3xl md:text-4xl font-bold tracking-tight leading-tight text-white mb-6">
-                Guaranteed operational <span className="text-[#E11D48]">stability</span>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight leading-tight text-white font-sans">
+                Guaranteed operational <span className="text-[#E11D48] font-semibold">stability</span>
               </h2>
-            </Reveal>
-
-            <Reveal delay={0.1}>
-              <p className="text-zinc-400 text-sm leading-relaxed font-medium">
-                We contractually commit to strict latency boundaries, rapid incident resolution times, and <Link href="/services/cloud-services" className="text-rose-500 hover:underline">robust database backups</Link>.
-              </p>
             </Reveal>
           </div>
 

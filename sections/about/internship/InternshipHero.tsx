@@ -52,11 +52,11 @@ export const InternshipHero = () => {
             </div>
 
             {/* Animated GIF Icon */}
-            <img
+            {/* <img
               src="/assets/components/XOsX.gif"
               alt="Devopstrio Innovation GIF - Click to Join Our Team"
               className="w-20 h-20 sm:w-28 sm:h-28 lg:w-32 lg:h-32 object-contain rounded-2xl filter drop-shadow-[0_6px_25px_rgba(244,63,94,0.5)] group-hover:scale-110 group-hover:drop-shadow-[0_8px_35px_rgba(244,63,94,0.8)] transition-all duration-300"
-            />
+            /> */}
           </div>
 
           {/* Quote Text */}

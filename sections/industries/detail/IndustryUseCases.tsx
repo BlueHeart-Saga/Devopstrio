@@ -115,13 +115,8 @@ export function IndustryUseCases({ useCases }: IndustryUseCasesProps) {
 
         {/* Section Header */}
         <Reveal className="mb-12">
-          <div className="flex items-center gap-2 mb-4">
-            <span className="text-[11px] font-semibold tracking-[0.25em] uppercase text-zinc-500">
-              Use Cases
-            </span>
-          </div>
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight leading-tight text-white max-w-2xl">
-            Proven <span className="text-[#E11D48]">use case portfolio</span>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-white font-sans">
+            Proven <span className="text-[#E11D48] font-semibold">use case portfolio</span>
           </h2>
         </Reveal>
 
@@ -170,22 +165,22 @@ export function IndustryUseCases({ useCases }: IndustryUseCasesProps) {
 
                   {/* Card Content */}
                   <div className="p-6 flex flex-col flex-grow text-left">
-                    <span className="text-[10px] font-mono tracking-widest text-[#E11D48] uppercase font-bold block mb-2">
+                    <span className="text-xs font-mono tracking-widest text-[#E11D48] uppercase font-semibold block mb-2">
                       Success Case {(idx + 1).toString().padStart(2, "0")}
                     </span>
 
-                    <h3 className="text-base font-bold text-white mb-2 leading-snug group-hover:text-rose-500 transition-colors">
+                    <h3 className="text-lg font-semibold text-white mb-2 leading-snug group-hover:text-rose-500 transition-colors">
                       {uc.title}
                     </h3>
 
-                    <p className="text-xs text-zinc-400 leading-relaxed font-semibold">
+                    <p className="text-sm sm:text-base text-zinc-300 leading-relaxed font-normal">
                       {uc.result}
                     </p>
                   </div>
 
                   {/* Card Actions Footer */}
                   <div className="px-6 pb-6 pt-3 mt-auto border-t border-white/5 flex items-center justify-between text-[#E11D48] group-hover:text-rose-455 transition-colors">
-                    <span className="text-[9px] uppercase font-bold tracking-wider">
+                    <span className="text-xs uppercase font-semibold tracking-wider">
                       Metrics Verified
                     </span>
                     <ArrowUpRight size={13} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />

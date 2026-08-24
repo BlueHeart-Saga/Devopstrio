@@ -1,46 +1,141 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Reveal } from "@/components/ui/Reveal";
+import {
+  Briefcase,
+  Globe2,
+  GraduationCap,
+  Terminal,
+  Award,
+  Rocket,
+  Code2,
+  Sparkles,
+  ChevronLeft,
+  ChevronRight,
+} from "lucide-react";
+
+const internshipHighlights = [
+  {
+    id: "real-projects",
+    icon: Briefcase,
+    tag: "Hands-On",
+    title: "Real-World Enterprise Projects",
+    desc: "Ship production-ready code on live client systems and cloud environments.",
+  },
+  {
+    id: "global-team",
+    icon: Globe2,
+    tag: "Global",
+    title: "Cross-Border Pod Collaboration",
+    desc: "Work alongside international engineering teams across 4 delivery hubs.",
+  },
+  {
+    id: "mentorship",
+    icon: GraduationCap,
+    tag: "Guidance",
+    title: "1-on-1 Senior Mentorship",
+    desc: "Direct coaching from principal architects and senior technology leads.",
+  },
+  {
+    id: "modern-tech",
+    icon: Terminal,
+    tag: "Tech Stack",
+    title: "Modern Cloud & AI Stack",
+    desc: "Master Next.js, Kubernetes, GenAI, Microservices, Python & Docker.",
+  },
+  {
+    id: "certificate",
+    icon: Award,
+    tag: "Recognition",
+    title: "Certified Professional Growth",
+    desc: "Verified experience certificate, executive reference & career credentials.",
+  },
+  {
+    id: "portfolio",
+    icon: Rocket,
+    tag: "Impact",
+    title: "Production Portfolio",
+    desc: "Build a high-impact portfolio showcasing deployed enterprise applications.",
+  },
+  {
+    id: "engineering",
+    icon: Code2,
+    tag: "Skills",
+    title: "Agile Engineering Practices",
+    desc: "Gain hands-on experience with CI/CD pipelines, code reviews & SRE.",
+  },
+  {
+    id: "career-jump",
+    icon: Sparkles,
+    tag: "Future",
+    title: "Direct Placement Fast-Track",
+    desc: "Top performing interns get fast-tracked for full-time engineering roles.",
+  },
+];
 
 export const WhyInternship = () => {
-  const whyReasons = [
-    "Real-world projects",
-    "Global team exposure",
-    "Mentorship from professionals",
-    "Hands-on technology experience",
-    "Certificate & career recognition",
-  ];
+  const [startIndex, setStartIndex] = useState(0);
+  const [visibleCards, setVisibleCards] = useState(3);
+  const [isPaused, setIsPaused] = useState(false);
 
-  const experiences = [
-    "Work on Real Projects",
-    "Collaborate Globally",
-    "Learn Modern Technologies",
-    "Build Your Portfolio",
-    "Develop Professional Skills",
-  ];
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 1024) {
+        setVisibleCards(3);
+      } else if (window.innerWidth >= 640) {
+        setVisibleCards(2);
+      } else {
+        setVisibleCards(1);
+      }
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const maxIndex = internshipHighlights.length - visibleCards;
+
+  // Auto-scroll loop
+  useEffect(() => {
+    if (isPaused) return;
+
+    const timer = setInterval(() => {
+      setStartIndex((prev) => (prev < maxIndex ? prev + 1 : 0));
+    }, 4000);
+
+    return () => clearInterval(timer);
+  }, [maxIndex, isPaused]);
+
+  const handlePrev = () => {
+    setStartIndex((prev) => (prev > 0 ? prev - 1 : maxIndex));
+  };
+
+  const handleNext = () => {
+    setStartIndex((prev) => (prev < maxIndex ? prev + 1 : 0));
+  };
 
   return (
-    <section className="w-full pt-2 pb-12 md:pb-16 bg-[#030303] text-white relative overflow-hidden font-sans">
-      {/* Background ambient lighting */}
-      <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[600px] h-[350px] bg-rose-950/10 rounded-full blur-[160px] pointer-events-none" />
-      <div className="absolute top-1/3 right-1/4 w-[500px] h-[300px] bg-purple-950/10 rounded-full blur-[160px] pointer-events-none" />
+    <section className="w-full py-4 sm:py-6 bg-[#030303] text-white relative overflow-hidden font-sans">
+      {/* Background ambient glows */}
+      <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[600px] h-[350px] bg-rose-950/15 rounded-full blur-[160px] pointer-events-none" />
+      <div className="absolute top-1/3 right-1/4 w-[500px] h-[300px] bg-purple-950/15 rounded-full blur-[160px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
-
+        
         {/* Section Top Header */}
-        <Reveal className="mb-10 md:mb-14 text-left max-w-4xl pt-20 sm:pt-28">
+        <Reveal className="mb-4 sm:mb-6 text-center max-w-3xl mx-auto pt-14 sm:pt-18">
           <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight text-white leading-[1.35] font-sans">
-            Why You Should{" "}
-            <span className="relative inline-block px-3.5 py-0.5 mx-1">
+            Why{" "}
+            <span className="relative inline-block px-3 py-0.5 mx-1">
               {/* Top-to-bottom straight arrow PNG pointing directly down to 'Learn' */}
               <img
                 src="/assets/components/streight-toptobuttm.png"
                 alt="Top to bottom arrow"
-                className="absolute -top-20 sm:-top-28 md:-top-32 left-1/2 -translate-x-1/2 w-16 sm:w-24 md:w-28 h-auto object-contain filter drop-shadow-[0_0_20px_rgba(244,63,94,0.6)] pointer-events-none select-none z-20"
+                className="absolute -top-14 sm:-top-18 md:-top-20 left-1/2 -translate-x-1/2 w-14 sm:w-18 md:w-20 h-auto object-contain filter drop-shadow-[0_0_20px_rgba(244,63,94,0.6)] pointer-events-none select-none z-20"
               />
 
-              <span className="relative z-10 text-white font-bold">Learn</span>
+              <span className="relative z-10 text-white font-semibold">Learn</span>
               {/* Brand Rose hand-drawn oval circle loop */}
               <svg
                 className="absolute -inset-x-3.5 -inset-y-2 w-[calc(100%+28px)] h-[calc(100%+16px)] text-rose-500 pointer-events-none"
@@ -58,85 +153,104 @@ export const WhyInternship = () => {
                 />
               </svg>
             </span>{" "}
-            With Our <span className="text-rose-500 font-semibold">Global Internship</span>
+            With Our Global Internship
           </h2>
         </Reveal>
 
-        {/* Clean 2-Column Simple List View (Titles Only + linearrow.png) */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 xl:gap-16 items-start">
-          
-          {/* Left Column: Why Our Global Internship */}
-          <Reveal delay={0.1} className="lg:col-span-6 space-y-4">
-            <div className="pb-3 border-b border-white/10 flex items-center justify-between">
-              <div>
-                <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-white">
-                   Our <span className="text-rose-500">Global Internship</span>
-                </h3>
-              </div>
-              {/* <span className="text-xs font-mono text-zinc-500">
-                0{whyReasons.length}
-              </span> */}
+        {/* Premium Interactive Auto-Scrolling Cards Showcase */}
+        <div
+          className="relative"
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
+        >
+          {/* Card Carousel Wrapper */}
+          <div className="overflow-hidden py-2 -mx-2 px-2">
+            <div
+              className="flex gap-6 transition-transform duration-700 ease-out"
+              style={{
+                transform: `translateX(-${startIndex * (100 / visibleCards)}%)`,
+              }}
+            >
+              {internshipHighlights.map((item) => {
+                const IconComponent = item.icon;
+                return (
+                  <div
+                    key={item.id}
+                    className="flex-shrink-0 w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] group"
+                  >
+                    <div className="h-full bg-gradient-to-br from-[#131219] via-[#0E0E14] to-[#09090C] hover:from-[#1A1823] hover:via-[#13121B] hover:to-[#0D0C12] rounded-3xl p-6 sm:p-7 flex flex-col justify-between transition-all duration-500 hover:-translate-y-1.5 shadow-xl relative overflow-hidden backdrop-blur-xl">
+                      {/* Top-Right Microsoft Fluent Radial Glow */}
+                      <div className="absolute -top-12 -right-12 w-40 h-40 bg-[radial-gradient(circle,rgba(225,29,72,0.18),transparent_70%)] pointer-events-none group-hover:scale-150 transition-transform duration-700" />
+
+                      <div className="relative z-10 space-y-4">
+                        {/* Icon & Tag Header */}
+                        <div className="flex items-center justify-between">
+                          <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-gradient-to-br from-rose-500/20 to-rose-600/5 flex items-center justify-center text-rose-400 group-hover:scale-110 group-hover:bg-rose-600 group-hover:text-white transition-all duration-500 shadow-[0_0_20px_rgba(225,29,72,0.25)] group-hover:shadow-[0_0_30px_rgba(225,29,72,0.6)]">
+                            <IconComponent size={24} />
+                          </div>
+                          <span className="text-xs font-semibold text-rose-400 bg-rose-500/10 px-3 py-1 rounded-full font-sans tracking-wide shadow-sm">
+                            {item.tag}
+                          </span>
+                        </div>
+
+                        {/* Title Only (Description avoided, Viewable Font Size) */}
+                        <div className="pt-2">
+                          <h3 className="text-xl sm:text-2xl font-semibold text-white group-hover:text-rose-400 transition-colors font-sans leading-snug">
+                            {item.title}
+                          </h3>
+                        </div>
+                      </div>
+
+                      {/* Bottom Accent Bar */}
+                      <div className="relative z-10 mt-6 pt-4 flex items-center justify-between">
+                        <span className="text-[11px] font-mono text-zinc-400 uppercase tracking-widest font-medium">
+                          Devopstrio Internship
+                        </span>
+                        <div className="w-2.5 h-2.5 rounded-full bg-rose-500/40 group-hover:bg-rose-500 group-hover:scale-125 transition-all duration-300 shadow-[0_0_10px_rgba(225,29,72,0.8)]" />
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
+          </div>
 
-            {/* List View with linearrow.png bullet points */}
-            <div className="flex flex-col divide-y divide-white/5 pt-1">
-              {whyReasons.map((title, idx) => (
-                <div
+          {/* Navigation Controls & Indicators */}
+          <div className="mt-8 flex items-center justify-between">
+            {/* Dots indicator */}
+            <div className="flex items-center gap-2">
+              {Array.from({ length: maxIndex + 1 }).map((_, idx) => (
+                <button
                   key={idx}
-                  className="py-3 sm:py-3.5 flex items-center gap-3.5 group transition-colors hover:bg-white/[0.02] rounded-lg px-2 -mx-2 cursor-default"
-                >
-                  {/* linearrow.png bullet icon */}
-                  <img
-                    src="/assets/components/linearrow.png"
-                    alt="Bullet arrow"
-                    className="w-3.5 h-3.5 object-contain rotate-0 filter drop-shadow-[0_0_8px_rgba(244,63,94,0.6)] group-hover:translate-x-1.5 transition-transform duration-300 shrink-0"
-                  />
-
-                  {/* Title Only */}
-                  <h4 className="text-sm sm:text-base font-semibold text-white group-hover:text-rose-400 transition-colors leading-snug">
-                    {title}
-                  </h4>
-                </div>
+                  onClick={() => setStartIndex(idx)}
+                  className={`h-2 rounded-full transition-all duration-300 ${
+                    startIndex === idx
+                      ? "w-8 bg-rose-500"
+                      : "w-2 bg-zinc-800 hover:bg-zinc-700"
+                  }`}
+                  aria-label={`Go to slide ${idx + 1}`}
+                />
               ))}
             </div>
-          </Reveal>
 
-          {/* Right Column: What You'll Experience */}
-          <Reveal delay={0.2} className="lg:col-span-6 space-y-4">
-            <div className="pb-3 border-b border-white/10 flex items-center justify-between">
-              <div>
-                <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-white">
-                  What You'll <span className="text-rose-500">Experience</span>
-                </h3>
-              </div>
-              {/* <span className="text-xs font-mono text-zinc-500">
-                0{experiences.length}
-              </span> */}
+            {/* Arrows */}
+            <div className="flex items-center gap-3">
+              <button
+                onClick={handlePrev}
+                className="w-10 h-10 rounded-full border border-white/10 hover:border-rose-500/50 bg-white/5 hover:bg-rose-500/10 flex items-center justify-center text-zinc-400 hover:text-white transition-all duration-300"
+                aria-label="Previous slide"
+              >
+                <ChevronLeft size={18} />
+              </button>
+              <button
+                onClick={handleNext}
+                className="w-10 h-10 rounded-full border border-white/10 hover:border-rose-500/50 bg-white/5 hover:bg-rose-500/10 flex items-center justify-center text-zinc-400 hover:text-white transition-all duration-300"
+                aria-label="Next slide"
+              >
+                <ChevronRight size={18} />
+              </button>
             </div>
-
-            {/* List View with linearrow.png bullet points */}
-            <div className="flex flex-col divide-y divide-white/5 pt-1">
-              {experiences.map((title, idx) => (
-                <div
-                  key={idx}
-                  className="py-3 sm:py-3.5 flex items-center gap-3.5 group transition-colors hover:bg-white/[0.02] rounded-lg px-2 -mx-2 cursor-default"
-                >
-                  {/* linearrow.png bullet icon */}
-                  <img
-                    src="/assets/components/linearrow.png"
-                    alt="Bullet arrow"
-                    className="w-3.5 h-3.5 object-contain rotate-10 filter drop-shadow-[0_0_8px_rgba(244,63,94,0.6)] group-hover:translate-x-1.5 transition-transform duration-300 shrink-0"
-                  />
-
-                  {/* Title Only */}
-                  <h4 className="text-sm sm:text-base font-semibold text-white group-hover:text-rose-400 transition-colors leading-snug">
-                    {title}
-                  </h4>
-                </div>
-              ))}
-            </div>
-          </Reveal>
-
+          </div>
         </div>
 
       </div>

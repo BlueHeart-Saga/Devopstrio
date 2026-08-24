@@ -56,10 +56,10 @@ export default function GlobalInternshipPage() {
       <LearningJourney />
 
       {/* 6. What Interns Will Work On (3D CardSwap SaaS Platforms Showcase) */}
-      <WhatInternsWorkOn />
+      {/* <WhatInternsWorkOn /> */}
 
       {/* 7. Mentorship & Benefits (Clean 60/40 Split List View) */}
-      <MentorshipBenefits />
+      {/* <MentorshipBenefits /> */}
 
       {/* 8. Success Stories & Testimonials */}
       <SuccessStories />

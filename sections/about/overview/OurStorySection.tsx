@@ -53,7 +53,7 @@ export function OurStorySection() {
       {/* 1. HERO */}
       <section className="relative w-full min-h-[85vh] flex items-center justify-center rounded-3xl overflow-hidden border border-zinc-800 bg-zinc-950 px-6 py-20 text-center">
         <img
-          src="/assets/about/our-story.jpg"
+          src="/assets/About-page/overview/about-devopstrio.png"
           alt="Engineering Better Digital Futures"
           className="absolute inset-0 w-full h-full object-cover object-center opacity-40 filter brightness-90"
         />
@@ -95,7 +95,7 @@ export function OurStorySection() {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div className="relative rounded-3xl overflow-hidden border border-zinc-800 bg-zinc-950 h-[380px] md:h-[440px] group shadow-2xl">
             <img
-              src="/assets/about/our-story.jpg"
+              src="/assets/About-page/overview/about-devopstrio.png"
               alt="Every Business Wants to Move Faster"
               className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
             />

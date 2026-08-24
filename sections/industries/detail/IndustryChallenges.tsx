@@ -22,14 +22,9 @@ export function IndustryChallenges({ challenges }: IndustryChallengesProps) {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-rose-900/5 rounded-full blur-[140px] pointer-events-none z-0" />
 
       <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10 text-left">
-        <Reveal className="mb-16">
-          <div className="flex items-center gap-2 mb-4">
-            <span className="text-[11px] font-semibold tracking-[0.25em] uppercase text-zinc-500">
-              Challenges We Solve
-            </span>
-          </div>
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight leading-tight text-white max-w-2xl">
-            Key operational <span className="text-[#E11D48]">roadblocks</span> we address
+        <Reveal className="mb-14">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-white font-sans">
+            Key operational <span className="text-[#E11D48] font-semibold">roadblocks</span> we address
           </h2>
         </Reveal>
 
@@ -47,12 +42,12 @@ export function IndustryChallenges({ challenges }: IndustryChallengesProps) {
                 </div>
                 
                 {/* Title */}
-                <h4 className="text-base font-bold text-white mb-3 tracking-tight group-hover:text-[#E11D48] transition-colors duration-300">
+                <h4 className="text-lg font-semibold text-white mb-3 tracking-tight group-hover:text-[#E11D48] transition-colors duration-300">
                   {chal.title}
                 </h4>
                 
                 {/* Description */}
-                <p className="text-zinc-400 text-sm leading-relaxed font-medium">
+                <p className="text-zinc-300 text-sm sm:text-base leading-relaxed font-normal">
                   {chal.desc}
                 </p>
               </div>

@@ -103,7 +103,7 @@ export function Testimonials() {
       quote: "Their robust multi-cloud strategy not only eliminated vendor lock-in but empowered us to leverage the best tools from AWS and Azure simultaneously without friction.",
       author: "William Takahashi",
       role: "Chief Architect, CloudNet Solutions",
-      image: "/assets/Home-page/client-reviews/image%20179.png"
+      image: "/assets/Home-page/client-reviews/image%20180.png"
     }
   ];
 

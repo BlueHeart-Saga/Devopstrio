@@ -74,14 +74,9 @@ export function IndustryFAQ({ faqs }: IndustryFAQProps) {
       <div className="max-w-4xl mx-auto px-12 xl:px-8 relative z-10 text-left">
 
         {/* Section Header */}
-        <Reveal className="mb-20 text-center">
-          <div className="flex items-center justify-center gap-2 mb-4">
-            <span className="text-[11px] font-semibold tracking-[0.25em] uppercase text-zinc-500">
-              FAQ
-            </span>
-          </div>
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight leading-tight text-white">
-            Technical <span className="text-[#E11D48]">clarifications</span>
+        <Reveal className="mb-14 text-center">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-white font-sans">
+            Technical <span className="text-[#E11D48] font-semibold">clarifications</span>
           </h2>
         </Reveal>
 
@@ -102,9 +97,9 @@ export function IndustryFAQ({ faqs }: IndustryFAQProps) {
 
                   <button
                     onClick={() => setOpenFaq(isOpen ? null : idx)}
-                    className="w-full flex items-center justify-between p-6 text-left transition-colors relative z-10"
+                    className="w-full flex items-center justify-between p-6 text-left transition-colors relative z-10 font-sans"
                   >
-                    <span className="text-sm md:text-base font-bold text-zinc-200 group-hover:text-white transition-colors">
+                    <span className="text-base sm:text-lg md:text-xl font-semibold text-zinc-100 group-hover:text-white transition-colors">
                       {faq.q}
                     </span>
                     <span className={`w-8 h-8 rounded-full border border-white/10 flex items-center justify-center text-zinc-400 group-hover:text-white group-hover:bg-rose-950/15 group-hover:border-rose-500/20 transition-all duration-300 ${
@@ -117,7 +112,7 @@ export function IndustryFAQ({ faqs }: IndustryFAQProps) {
                   <div className={`transition-all duration-350 ease-in-out relative z-10 ${
                     isOpen ? "max-h-[300px] border-t border-white/5 p-6 opacity-100" : "max-h-0 overflow-hidden opacity-0"
                   }`}>
-                    <p className="text-xs md:text-sm text-zinc-400 leading-relaxed font-semibold">
+                    <p className="text-sm sm:text-base md:text-lg text-zinc-300 leading-relaxed font-normal">
                       {faq.a}
                     </p>
                   </div>

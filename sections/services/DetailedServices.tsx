@@ -1766,12 +1766,12 @@ export function DetailedServices({ hideExploreButton = false }: DetailedServices
                                     </h4>
                                     <div className="flex items-center gap-1 flex-shrink-0">
                                       {item.isNew && (
-                                        <span className="bg-emerald-500/10 text-emerald-400 text-[9px] font-semibold px-2 py-0.5 rounded uppercase">
+                                        <span className="bg-emerald-500/10 text-emerald-400 text-xs font-semibold px-2.5 py-0.5 rounded uppercase">
                                           New
                                         </span>
                                       )}
                                       {item.ai && (
-                                        <span className="bg-violet-500/10 text-violet-400 text-[9px] font-semibold px-2 py-0.5 rounded uppercase">
+                                        <span className="bg-violet-500/10 text-violet-400 text-xs font-semibold px-2.5 py-0.5 rounded uppercase">
                                           AI
                                         </span>
                                       )}
@@ -1806,17 +1806,17 @@ export function DetailedServices({ hideExploreButton = false }: DetailedServices
                             </div>
                             <div className="flex items-center gap-1">
                               {item.isNew && (
-                                <span className="bg-emerald-500/10 text-emerald-400 text-[9px] font-semibold px-2 py-0.5 rounded uppercase">
+                                <span className="bg-emerald-500/10 text-emerald-400 text-xs font-semibold px-2.5 py-0.5 rounded uppercase">
                                   New
                                 </span>
                               )}
                               {item.trending && (
-                                <span className="bg-rose-500/10 text-rose-400 text-[9px] font-semibold px-2 py-0.5 rounded uppercase">
+                                <span className="bg-rose-500/10 text-rose-400 text-xs font-semibold px-2.5 py-0.5 rounded uppercase">
                                   Popular
                                 </span>
                               )}
                               {item.ai && (
-                                <span className="bg-violet-500/10 text-violet-400 text-[9px] font-semibold px-2 py-0.5 rounded uppercase">
+                                <span className="bg-violet-500/10 text-violet-400 text-xs font-semibold px-2.5 py-0.5 rounded uppercase">
                                   AI
                                 </span>
                               )}

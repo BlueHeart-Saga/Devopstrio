@@ -253,7 +253,7 @@ export function FeedbackWidget() {
             >
               {/* Header */}
               <div className="bg-gradient-to-br from-rose-600 to-rose-900 p-6 flex justify-between items-start relative overflow-hidden shrink-0">
-                <div className="absolute inset-0 bg-[url('/assets/noise.png')] opacity-10 mix-blend-overlay"></div>
+                <div className="absolute inset-0 opacity-10 mix-blend-overlay"></div>
                 <div className="relative z-10">
                   <h3 className="text-2xl font-bold text-white mb-1 tracking-tight">How can we help?</h3>
                   <p className="text-sm text-rose-200 font-medium">Get in touch or schedule a call.</p>

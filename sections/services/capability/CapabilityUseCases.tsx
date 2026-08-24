@@ -165,15 +165,9 @@ export function CapabilityUseCases({
         {/* Section Header */}
         <div className="text-center mb-12 max-w-3xl mx-auto">
           <Reveal>
-            <span className="text-xs md:text-sm font-extrabold tracking-[0.25em] uppercase text-rose-500 block mb-3 font-mono">
-              REAL-WORLD APPLICATIONS
-            </span>
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-white uppercase leading-tight mb-4">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-white font-sans">
               {overrideTitle || `How Organizations Use ${capabilityTitle}`}
             </h2>
-            <p className="text-sm md:text-base font-normal text-zinc-400 leading-relaxed">
-              {overrideSubtitle || `Discover how enterprise leaders adapt and deploy this capability across core sectors to automate operations, protect critical infrastructure, and generate business value.`}
-            </p>
           </Reveal>
         </div>
 

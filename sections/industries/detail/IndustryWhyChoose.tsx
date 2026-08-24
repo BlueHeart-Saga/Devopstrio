@@ -57,14 +57,9 @@ export function IndustryWhyChoose({ whyChoose }: IndustryWhyChooseProps) {
       <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10 text-left">
         
         {/* Section Header */}
-        <Reveal className="mb-20">
-          <div className="flex items-center gap-2 mb-4">
-            <span className="text-[11px] font-semibold tracking-[0.25em] uppercase text-zinc-500">
-              Why Devopstrio
-            </span>
-          </div>
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight leading-tight text-white max-w-2xl">
-            Unrivaled <span className="text-rose-500">engineering advantages</span>
+        <Reveal className="mb-14">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-white font-sans">
+            Unrivaled <span className="text-rose-500 font-semibold">engineering advantages</span>
           </h2>
         </Reveal>
 
@@ -123,18 +118,18 @@ export function IndustryWhyChoose({ whyChoose }: IndustryWhyChooseProps) {
 
                   {/* Card Main Body */}
                   <div className="p-6 flex flex-col flex-grow text-left">
-                    <h3 className={`text-base font-bold text-white mb-2 leading-snug ${titleHoverColors[idx]} transition-colors duration-300`}>
+                    <h3 className={`text-lg font-semibold text-white mb-2 leading-snug ${titleHoverColors[idx]} transition-colors duration-300`}>
                       {why.title}
                     </h3>
                     
-                    <p className="text-xs text-zinc-400 leading-relaxed font-semibold mb-6">
+                    <p className="text-sm sm:text-base text-zinc-300 leading-relaxed font-normal mb-6">
                       {why.desc}
                     </p>
                   </div>
 
                   {/* Card Footer */}
                   <div className="px-6 pb-6 pt-3 mt-auto border-t border-white/5 flex items-center justify-between">
-                    <span className={`text-[10px] ${graphicColors[idx]} font-bold uppercase tracking-wider transition-colors inline-flex items-center gap-1.5`}>
+                    <span className={`text-xs ${graphicColors[idx]} font-semibold uppercase tracking-wider transition-colors inline-flex items-center gap-1.5`}>
                       Enterprise Advantage <ArrowUpRight size={13} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                     </span>
                   </div>

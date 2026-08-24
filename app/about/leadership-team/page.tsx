@@ -10,6 +10,7 @@ import { ExecutiveLeadership } from "@/sections/about/leadership/ExecutiveLeader
 import { PrincipalArchitects } from "@/sections/about/leadership/PrincipalArchitects";
 import { GlobalEngineeringTeams } from "@/sections/about/leadership/GlobalEngineeringTeams";
 import { LeadershipDeliver } from "@/sections/about/leadership/LeadershipDeliver";
+import { LeadershipImpactDeliver } from "@/sections/about/leadership/LeadershipImpactDeliver";
 import { GlobalPresence } from "@/sections/about/leadership/GlobalPresence";
 import { AwardsRecognitionLeadership } from "@/sections/about/leadership/AwardsRecognitionLeadership";
 import { LeadershipCareersCTA } from "@/sections/about/leadership/LeadershipCareersCTA";
@@ -59,6 +60,9 @@ export default function LeadershipTeamPage() {
       {/* 2. 8 Timeless Leadership Principles (Editorial Deck) */}
       {/* <LeadershipPrinciples /> */}
 
+
+       <LeadershipDeliver />
+
       {/* 3. 3 Strategic Pillars (Inspire, Empower, Deliver) */}
       <Leadership3Pillars />
 
@@ -72,13 +76,14 @@ export default function LeadershipTeamPage() {
       <GlobalEngineeringTeams />
 
       {/* 6. PILLAR 03: DELIVER — Leaders Who Deliver. Solutions That Matter. */}
-      <LeadershipDeliver />
+      <LeadershipImpactDeliver />
+     
 
       {/* Optional: Global Presence (Worldwide Locations) */}
       {/* <GlobalPresence /> */}
 
       {/* 7. Awards, Accreditations & Certifications */}
-      <AwardsRecognitionLeadership />
+      {/* <AwardsRecognitionLeadership /> */}
 
       {/* 8. Our Culture & People + Careers CTA */}
       <LeadershipCareersCTA />

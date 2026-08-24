@@ -8,6 +8,7 @@ import { SectionNavbar } from "@/components/ui/SectionNavbar";
 import { OverviewHero } from "@/sections/about/overview/OverviewHero";
 import { CompanyOverviewPillars } from "@/sections/about/overview/CompanyOverviewPillars";
 import { CompanyOverviewSection } from "@/sections/about/overview/CompanyOverviewSection";
+import { WhoWeAreWhatWeDoSection } from "@/sections/about/overview/WhoWeAreWhatWeDoSection";
 import { OurPeopleSection } from "@/sections/about/overview/OurPeopleSection";
 import { MissionVisionValues } from "@/sections/about/overview/MissionVisionValues";
 import { OurFutureSection } from "@/sections/about/overview/OurFutureSection";
@@ -43,6 +44,7 @@ export default function CompanyOverviewPage() {
       {/* Overview Content */}
       <CompanyOverviewPillars />
       <CompanyOverviewSection />
+      {/* <WhoWeAreWhatWeDoSection /> */}
 
       {/* 2. Our People Section */}
       <div id="people">

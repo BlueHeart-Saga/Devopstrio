@@ -43,18 +43,10 @@ export function IndustrialCapabilities() {
       <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
 
         {/* Section Header */}
-        <Reveal className="mb-20 text-center">
-          <div className="flex items-center justify-center gap-2 mb-4">
-            <span className="text-[11px] font-semibold tracking-[0.25em] uppercase text-zinc-500">
-              Trust Deployment
-            </span>
-          </div>
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight leading-tight text-white">
-            Regulatory security by <span className="text-[#E11D48]">default</span>
+        <Reveal className="mb-14 text-center">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-white font-sans">
+            Regulatory security by <span className="text-[#E11D48] font-semibold">default</span>
           </h2>
-          <p className="text-zinc-400 text-xs md:text-sm font-semibold leading-relaxed mt-4 max-w-xl mx-auto">
-            We operate under international security guidelines to guarantee absolute network isolation and software safety.
-          </p>
         </Reveal>
 
         {/* Grid Layout */}

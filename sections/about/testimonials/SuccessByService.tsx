@@ -130,9 +130,9 @@ export const SuccessByService = () => {
                 <h3 className="text-xl sm:text-2xl font-semibold text-white mb-3 leading-snug group-hover:text-rose-400 transition-colors tracking-tight line-clamp-2 font-sans">
                   {area.title}
                 </h3>
-                <p className="text-zinc-200 text-base leading-relaxed mb-6 flex-1 line-clamp-3 font-normal font-sans">
+                {/* <p className="text-zinc-200 text-base leading-relaxed mb-6 flex-1 line-clamp-3 font-normal font-sans">
                   {area.excerpt}
-                </p>
+                </p> */}
                 
                 <div className="mt-auto flex items-center justify-between pt-4 border-t border-zinc-800/80">
                   <span className="text-rose-500 font-bold text-sm font-mono">{area.date}</span>

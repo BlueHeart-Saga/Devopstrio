@@ -405,7 +405,7 @@ export default function CiscoPartnershipPage() {
                     <div className="absolute inset-0 bg-gradient-to-br from-sky-500/[0.03] to-transparent rounded-3xl opacity-0 group-hover/logo:opacity-100 transition-opacity" />
                     <div className="absolute -inset-1 rounded-3xl bg-gradient-to-r from-sky-600 to-blue-500 opacity-0 group-hover/logo:opacity-20 blur-md transition-opacity" />
                     <img
-                      src="/assets/Tech_logos/Cisco.svg"
+                      src="/assets/Tech_logos/cisco.svg"
                       alt="Cisco Logo"
                       className="w-full h-auto max-h-[85%] object-contain select-none filter brightness-110"
                     />

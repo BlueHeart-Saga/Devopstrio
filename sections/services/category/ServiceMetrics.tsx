@@ -24,17 +24,9 @@ export function ServiceMetrics({ stats }: ServiceMetricsProps) {
 
         {/* Header Section */}
         <Reveal className="mb-16 w-full flex flex-col items-center text-center">
-          <div className="inline-flex items-center justify-center gap-2 px-3 py-1 rounded-full mb-4">
-            <span className="text-[10px] font-bold tracking-widest uppercase text-rose-500">
-              Performance Metrics
-            </span>
-          </div>
-          <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white uppercase text-center mx-auto">
-            Quantifiable engineering <span className="text-rose-500">efficiency</span>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-white font-sans text-center mx-auto">
+            Quantifiable engineering <span className="text-rose-500 font-semibold">efficiency</span>
           </h2>
-          <p className="text-zinc-400 text-xs md:text-sm leading-relaxed mt-2 max-w-xl text-center mx-auto">
-            Our deployments are measured against rigid operational SLAs and performance benchmarks.
-          </p>
         </Reveal>
 
         {/* Stats Grid */}
@@ -48,7 +40,7 @@ export function ServiceMetrics({ stats }: ServiceMetricsProps) {
                 <span className="block text-4xl md:text-5xl font-bold font-mono text-rose-500 mb-3 group-hover:scale-[1.03] transition-transform duration-300 origin-center">
                   {stat.value}
                 </span>
-                <span className="block text-[10px] md:text-[11px] font-mono tracking-widest text-zinc-450 uppercase font-semibold">
+                <span className="block text-xs sm:text-sm font-semibold tracking-widest text-zinc-300 uppercase">
                   {stat.label}
                 </span>
               </div>

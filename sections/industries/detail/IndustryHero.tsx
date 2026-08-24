@@ -37,7 +37,7 @@ export function IndustryHero({
         <div className="max-w-3xl text-left">
           
           {/* Custom Breadcrumb */}
-          <Reveal className="flex items-center gap-2 text-[10px] sm:text-xs font-mono text-zinc-500 mb-8 uppercase tracking-widest">
+          <Reveal className="flex items-center gap-2 text-xs md:text-sm font-semibold text-zinc-400 mb-8 uppercase tracking-widest">
             <a href="/" className="hover:text-white transition-colors">Home</a>
             <span className="text-zinc-700">&gt;</span>
             <a href="/industries" className="hover:text-white transition-colors">Industries</a>
@@ -45,25 +45,18 @@ export function IndustryHero({
             <span className="text-rose-500 font-semibold">{industryName}</span>
           </Reveal>
 
-          {/* Premium Tag */}
-          {/* <Reveal delay={0.05}>
-            <span className="mb-6 inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white transition-all duration-300 hover:shadow-[0_0_25px_rgba(225,29,72,0.35)] hover:-translate-y-0.5">
-              Sector Specialization
-            </span>
-          </Reveal> */}
-
           {/* Animated Header */}
           <Reveal delay={0.1}>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold tracking-tight leading-[1.12] text-white mb-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-semibold tracking-tight leading-[1.12] text-white font-sans mb-6">
               {title}
               <br />
-              <span className="text-[#E11D48]">{highlightedWord}</span>
+              <span className="text-rose-500 font-semibold">{highlightedWord}</span>
             </h1>
           </Reveal>
 
           {/* Subtitle block */}
           <Reveal delay={0.2}>
-            <p className="text-zinc-400 text-xs sm:text-sm md:text-base leading-relaxed font-semibold max-w-xl mb-8">
+            <p className="text-zinc-200 text-base md:text-lg leading-relaxed font-medium max-w-xl mb-8">
               {subtitle}
             </p>
           </Reveal>
@@ -72,7 +65,7 @@ export function IndustryHero({
           <Reveal delay={0.3}>
             <a 
               href="#overview" 
-              className="inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white transition-all duration-300 hover:shadow-[0_0_25px_rgba(225,29,72,0.35)] hover:-translate-y-0.5"
+              className="inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs sm:text-sm font-semibold tracking-wider uppercase bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white transition-all duration-300 hover:shadow-[0_0_25px_rgba(225,29,72,0.35)] hover:-translate-y-0.5"
             >
               Explore Capabilities <span className="ml-2">↓</span>
             </a>

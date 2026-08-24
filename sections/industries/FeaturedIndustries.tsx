@@ -17,7 +17,7 @@ const featuredIndustries: FeaturedIndustryItem[] = [
   {
     title: "Banking & Financial Services",
     subtitle: "High-Performance Fintech Systems",
-    desc: <>We engineer <Link href="/services/cloud-services" className="text-rose-500 hover:underline">transaction processing databases</Link> handling over 20,000 requests per second. Our developers configure secure VPC partitions, write <Link href="/services/devops-automation" className="text-rose-500 hover:underline">automated fraud monitoring pipelines</Link>, and implement <Link href="/services/cybersecurity" className="text-rose-500 hover:underline">SOC-2 audit logs</Link>.</>,
+    desc: <>We engineer <span className="text-rose-500 font-semibold">transaction processing databases</span> handling over 20,000 requests per second. Our developers configure secure VPC partitions, write <span className="text-rose-500 font-semibold">automated fraud monitoring pipelines</span>, and implement <span className="text-rose-500 font-semibold">SOC-2 audit logs</span>.</>,
     metrics: [
       { value: "<15ms", label: "Transaction Latency" },
       { value: "SOC-2", label: "Compliance Certified" },
@@ -28,7 +28,7 @@ const featuredIndustries: FeaturedIndustryItem[] = [
   {
     title: "Healthcare & Medical Technology",
     subtitle: "HIPAA-Aligned Platform Engineering",
-    desc: <>Deploying secure patient record structures with full-disk data encryption. We build <Link href="/services/ai-data-innovation" className="text-rose-500 hover:underline">automated data ingestion channels</Link>, model diagnostic assistants, and configure eBPF system call checkers for <Link href="/services/cybersecurity" className="text-rose-500 hover:underline">runtime security</Link>.</>,
+    desc: <>Deploying secure patient record structures with full-disk data encryption. We build <span className="text-rose-500 font-semibold">automated data ingestion channels</span>, model diagnostic assistants, and configure eBPF system call checkers for <span className="text-rose-500 font-semibold">runtime security</span>.</>,
     metrics: [
       { value: "100%", label: "HIPAA Audited" },
       { value: "<500ms", label: "Threat Response" },
@@ -39,7 +39,7 @@ const featuredIndustries: FeaturedIndustryItem[] = [
   {
     title: "Smart Manufacturing & Logistics",
     subtitle: "Predictive Telemetry & IoT Operations",
-    desc: <>Optimizing supply chains with real-time <Link href="/services/ai-data-innovation" className="text-rose-500 hover:underline">stream aggregation pipelines</Link>. Our platform engineers configure IoT gateways, deploy predictive machine failure models, and build low-latency dashboards.</>,
+    desc: <>Optimizing supply chains with real-time <span className="text-rose-500 font-semibold">stream aggregation pipelines</span>. Our platform engineers configure IoT gateways, deploy predictive machine failure models, and build low-latency dashboards.</>,
     metrics: [
       { value: "12 Days", label: "Early Failure Warning" },
       { value: "-35%", label: "Maintenance Expenses" },
@@ -58,14 +58,9 @@ export function FeaturedIndustries() {
       <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10 text-left">
         
         {/* Section Header */}
-        <Reveal className="mb-20">
-          <div className="flex items-center gap-2 mb-4">
-            <span className="text-[11px] font-semibold tracking-[0.25em] uppercase text-zinc-500">
-              Featured Domains
-            </span>
-          </div>
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight leading-tight text-white max-w-2xl">
-            Key specialized <span className="text-[#E11D48]">industry solutions</span>
+        <Reveal className="mb-14">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-white font-sans">
+            Key specialized <span className="text-[#E11D48] font-semibold">industry solutions</span>
           </h2>
         </Reveal>
 
@@ -85,16 +80,16 @@ export function FeaturedIndustries() {
                   
                   {/* Left content block */}
                   <div className="lg:col-span-7 text-left">
-                    <span className="text-[11px] font-semibold tracking-[0.15em] text-[#E11D48] uppercase block mb-2">
+                    <span className="text-xs sm:text-sm font-semibold tracking-widest text-rose-500 uppercase block mb-2">
                       {feat.subtitle}
                     </span>
-                    <h3 className="text-xl md:text-2xl font-bold text-white mb-4 group-hover:text-[#E11D48] transition-colors duration-300">
+                    <h3 className="text-xl md:text-2xl font-bold text-white mb-4 group-hover:text-rose-500 transition-colors duration-300">
                       {feat.title}
                     </h3>
-                    <p className="text-xs md:text-sm text-zinc-400 leading-relaxed font-semibold mb-6">
+                    <p className="text-sm sm:text-base text-zinc-300 leading-relaxed font-normal mb-6">
                       {feat.desc}
                     </p>
-                    <span className="text-xs text-zinc-500 group-hover:text-white transition-colors duration-300 font-bold inline-flex items-center gap-1.5">
+                    <span className="text-xs text-zinc-400 group-hover:text-white transition-colors duration-300 font-semibold inline-flex items-center gap-1.5">
                       Explore Specialization <ArrowUpRight size={14} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-350" />
                     </span>
                   </div>
@@ -103,10 +98,10 @@ export function FeaturedIndustries() {
                   <div className="lg:col-span-5 grid grid-cols-3 gap-6 border-t lg:border-t-0 lg:border-l border-white/10 pt-6 lg:pt-0 lg:pl-12">
                     {feat.metrics.map((met, mIdx) => (
                       <div key={mIdx} className="text-left">
-                        <span className="block text-3xl md:text-4xl font-black text-white group-hover:text-[#E11D48] transition-colors duration-300 mb-1">
+                        <span className="block text-3xl md:text-4xl font-black text-white group-hover:text-rose-500 transition-colors duration-300 mb-1">
                           {met.value}
                         </span>
-                        <span className="block text-[10px] font-bold tracking-widest text-zinc-500 uppercase leading-snug">
+                        <span className="block text-xs sm:text-sm font-semibold tracking-widest text-zinc-400 uppercase leading-snug">
                           {met.label}
                         </span>
                       </div>

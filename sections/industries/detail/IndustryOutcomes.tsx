@@ -23,14 +23,9 @@ export function IndustryOutcomes({ outcomes }: IndustryOutcomesProps) {
       <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10 text-left">
         
         {/* Section Header */}
-        <Reveal className="mb-16">
-          <div className="flex items-center gap-2 mb-4">
-            <span className="text-[11px] font-semibold tracking-[0.25em] uppercase text-zinc-500">
-              Business Outcomes
-            </span>
-          </div>
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight leading-tight text-white max-w-2xl">
-            Quantifiable <span className="text-[#E11D48]">operational value</span>
+        <Reveal className="mb-14">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-white font-sans">
+            Quantifiable <span className="text-[#E11D48] font-semibold">operational value</span>
           </h2>
         </Reveal>
 
@@ -50,22 +45,22 @@ export function IndustryOutcomes({ outcomes }: IndustryOutcomesProps) {
                   </span>
                   
                   {/* Label */}
-                  <h4 className="text-base font-bold text-white mb-2 tracking-tight group-hover:text-[#E11D48] transition-colors duration-300">
+                  <h4 className="text-lg font-semibold text-white mb-2 tracking-tight group-hover:text-[#E11D48] transition-colors duration-300">
                     {out.label}
                   </h4>
                   
                   {/* Description */}
-                  <p className="text-xs text-zinc-400 leading-relaxed font-semibold">
+                  <p className="text-sm sm:text-base text-zinc-300 leading-relaxed font-normal">
                     {out.desc}
                   </p>
                 </div>
 
                 {/* Card Footer decoration */}
-                <div className="mt-6 pt-4 border-t border-white/5 flex items-center justify-between text-zinc-500 group-hover:text-white transition-colors duration-300 relative z-10">
-                  <span className="text-[10px] uppercase font-mono tracking-wider font-bold">
+                <div className="mt-6 pt-4 border-t border-white/5 flex items-center justify-between text-zinc-400 group-hover:text-white transition-colors duration-300 relative z-10">
+                  <span className="text-xs uppercase tracking-wider font-semibold">
                     Outcome Target
                   </span>
-                  <span className="text-[10px] font-bold">
+                  <span className="text-xs font-semibold">
                     ✓ Verified
                   </span>
                 </div>

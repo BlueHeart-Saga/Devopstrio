@@ -129,11 +129,8 @@ export function IndustryInsights({ insights }: IndustryInsightsProps) {
         {/* Section Header with Navigation Buttons */}
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-6 mb-12">
           <Reveal>
-            <span className="text-[11px] font-semibold tracking-[0.25em] uppercase text-zinc-500 mb-4 block">
-              Insights & Research
-            </span>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight leading-tight text-white">
-              Featured industry <span className="text-[#E11D48]">research papers</span>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-white font-sans">
+              Featured industry <span className="text-[#E11D48] font-semibold">research papers</span>
             </h2>
           </Reveal>
 
@@ -187,23 +184,23 @@ export function IndustryInsights({ insights }: IndustryInsightsProps) {
                       </div>
 
                       {/* Title */}
-                      <h4 className="text-base font-bold text-white mb-2 leading-snug group-hover:text-[#E11D48] transition-colors duration-300">
+                      <h4 className="text-lg font-semibold text-white mb-2 leading-snug group-hover:text-[#E11D48] transition-colors duration-300">
                         {ins.title}
                       </h4>
                     </div>
 
                     <div>
                       {/* Description */}
-                      <p className="text-xs text-zinc-400 leading-relaxed font-semibold line-clamp-3">
+                      <p className="text-sm sm:text-base text-zinc-300 leading-relaxed font-normal line-clamp-3">
                         {ins.desc}
                       </p>
 
                       {/* Read Article Indicator Footer */}
-                      <div className="mt-6 pt-4 border-t border-white/5 flex items-center justify-between text-zinc-500 group-hover:text-white transition-colors duration-300">
-                        <span className="text-[10px] uppercase font-mono tracking-wider font-bold">
+                      <div className="mt-6 pt-4 border-t border-white/5 flex items-center justify-between text-zinc-400 group-hover:text-white transition-colors duration-300">
+                        <span className="text-xs uppercase font-semibold tracking-wider">
                           Read Article
                         </span>
-                        <span className="text-[10px] font-bold flex items-center gap-1">
+                        <span className="text-xs font-semibold flex items-center gap-1">
                           Learn More <ArrowUpRight size={12} />
                         </span>
                       </div>

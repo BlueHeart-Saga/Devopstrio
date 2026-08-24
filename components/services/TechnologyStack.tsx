@@ -144,15 +144,9 @@ export function TechnologyStack({
           {/* Left Block */}
           <div className="lg:col-span-5 text-left lg:sticky lg:top-24">
             <Reveal className="text-left">
-              <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
-                INTEGRATION STACK
-              </span>
-              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white uppercase">
-                {overrideTitle || <>Target tech <span className="text-rose-500">frameworks</span></>}
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-white font-sans">
+                {overrideTitle || <>Target tech <span className="text-rose-500 font-semibold">frameworks</span></>}
               </h2>
-              <p className="text-zinc-100 text-xs md:text-sm font-semibold leading-relaxed mt-4 max-w-sm">
-                {overrideSubtitle || "We integrate with high-performance tools, libraries, and microservice hosts optimized to handle large transaction volume and zero-latency workloads."}
-              </p>
             </Reveal>
           </div>
 
@@ -174,12 +168,12 @@ export function TechnologyStack({
                     />
 
                     {/* Title */}
-                    <strong className="text-xs font-bold text-zinc-900 group-hover:text-rose-600 transition-colors mb-1 relative z-10">
+                    <strong className="text-sm sm:text-base font-semibold text-zinc-900 group-hover:text-rose-600 transition-colors mb-1 relative z-10">
                       {tech.name}
                     </strong>
 
                     {/* Description */}
-                    <span className="text-[10px] text-zinc-600 group-hover:text-zinc-800 leading-normal font-semibold max-w-[150px] transition-colors relative z-10">
+                    <span className="text-xs font-medium text-zinc-700 group-hover:text-zinc-900 leading-normal max-w-[170px] transition-colors relative z-10">
                       {tech.desc}
                     </span>
                   </div>

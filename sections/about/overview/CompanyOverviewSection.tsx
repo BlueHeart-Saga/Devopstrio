@@ -272,13 +272,11 @@ export function CompanyOverviewSection() {
       </div>
 
       {/* ── 2: Who We Are + What We Do ── */}
-      <div className="border-t border-zinc-900">
+      {/* <div className="border-t border-zinc-900">
         <div className="max-w-7xl mx-auto px-6 lg:px-16 relative z-10 py-12 lg:py-16 space-y-12 lg:space-y-16">
 
-          {/* Top: Who We Are (Seamless Black Theme Centerpiece + Interactive Story Below) */}
           <Reveal>
             <div className="space-y-8 sm:space-y-10 max-w-5xl mx-auto">
-              {/* Centered Who [W] [E] ARE visual */}
               <div className="w-full flex justify-center">
                 <WhoWeAreVisual
                   className="w-full"
@@ -287,7 +285,6 @@ export function CompanyOverviewSection() {
                 />
               </div>
 
-              {/* Dynamic Narrative Paragraph that auto-switches and rotates through 10 quotes */}
               <div className="max-w-4xl mx-auto text-center px-4 min-h-[140px] sm:min-h-[110px] flex flex-col items-center justify-center">
                 <AnimatePresence mode="wait">
                   {whoKey === "W" ? (
@@ -319,7 +316,6 @@ export function CompanyOverviewSection() {
                   )}
                 </AnimatePresence>
 
-                {/* 10 Quote Indicators */}
                 <div className="flex items-center gap-1.5 mt-6">
                   {Array.from({ length: 10 }).map((_, idx) => {
                     const isActive = whoKey === "W" ? idx === quoteIndexW : idx === quoteIndexE;
@@ -342,53 +338,24 @@ export function CompanyOverviewSection() {
             </div>
           </Reveal>
 
-          {/* Horizontal Divider */}
           <div className="border-t border-zinc-800/80 w-full" />
 
-          {/* Bottom: What We Do (Featuring TableToText Strategy Card + Capabilities) */}
           <Reveal delay={0.08}>
             <div className="space-y-4 sm:space-y-6">
               
-              {/* Centered Feel-Good Heading */}
               <div className="max-w-3xl mx-auto text-center">
                 <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight leading-tight">
                   What We Do <span className="text-rose-500">With Heart.</span>
                 </h3>
               </div>
 
-              {/* Table-To-Text Creative Meeting Table Card with Auto-Rotating Messages */}
               <TableToTextVisual messages={whatWeDo.map(item => item.tableMessage)} />
-
-              {/* Premium 10 Capabilities Quote List */}
-              {/* <div className="grid grid-cols-1 lg:grid-cols-12 pt-4">
-                <div className="lg:col-span-12 space-y-4">
-                  <ul className="space-y-3.5 lg:space-y-4">
-                    {whatWeDo.map((item, i) => (
-                      <li
-                        key={i}
-                        className="flex items-start gap-4 p-4 rounded-2xl bg-zinc-950/40 hover:bg-zinc-900/60 border border-zinc-900 hover:border-rose-500/30 transition-all duration-300 group"
-                      >
-                        <span className="mt-2.5 w-2.5 h-2.5 rounded-full bg-rose-500 shrink-0 group-hover:scale-125 transition-transform drop-shadow-[0_0_8px_rgba(244,63,94,0.6)]" />
-                        <span className="text-zinc-300 text-base sm:text-lg lg:text-xl leading-relaxed font-sans">
-                          {item.prefix}
-                          {item.highlight && (
-                            <span className="text-white font-semibold underline underline-offset-4 decoration-rose-500/70 group-hover:text-rose-400 transition-colors">
-                              {item.highlight}
-                            </span>
-                          )}
-                          {item.suffix}
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div> */}
 
             </div>
           </Reveal>
 
         </div>
-      </div>
+      </div> */}
 
       {/* ── 3: Global Stats Bar ── */}
       <div className="border-t border-b border-zinc-900 bg-black">

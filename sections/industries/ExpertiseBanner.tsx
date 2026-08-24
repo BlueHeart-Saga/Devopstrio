@@ -18,24 +18,21 @@ export function ExpertiseBanner() {
           {/* Left Block */}
           <div className="lg:w-[70%] relative z-10">
             <Reveal>
-              <h3 className="text-2xl md:text-3xl font-bold tracking-tight leading-tight text-white mb-4">
-                Co-engineered compliance & <span className="text-[#E11D48]">security benchmarks</span>
+              <h3 className="text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight leading-tight text-white font-sans">
+                Co-engineered compliance & <span className="text-[#E11D48] font-semibold">security benchmarks</span>
               </h3>
-              <p className="text-xs md:text-sm text-zinc-400 leading-relaxed font-semibold">
-                We actively certify all deployments against <Link href="/services/cybersecurity" className="text-rose-500 hover:underline">strict industry policies</Link>. Our templates support pre-configured <Link href="/services/cybersecurity" className="text-rose-500 hover:underline">ISO-27001 configurations</Link>, HIPAA health isolation parameters, and <Link href="/services/cloud-services" className="text-rose-500 hover:underline">SOC-2 audit databases</Link>.
-              </p>
             </Reveal>
           </div>
 
           {/* Right Block: Stats */}
           <div className="lg:w-[30%] flex justify-start lg:justify-end gap-8 text-left relative z-10 w-full">
-            <div className="border-l-2 border-[#E11D48]/30 pl-4">
-              <span className="block text-4xl font-black text-[#E11D48] mb-1">100%</span>
-              <span className="block text-[10px] font-bold tracking-widest text-zinc-500 uppercase">Audit readiness</span>
+            <div className="border-l-2 border-rose-500/30 pl-4">
+              <span className="block text-4xl font-black text-rose-500 mb-1">100%</span>
+              <span className="block text-xs sm:text-sm font-semibold tracking-widest text-zinc-400 uppercase">Audit readiness</span>
             </div>
-            <div className="border-l-2 border-[#E11D48]/30 pl-4">
-              <span className="block text-4xl font-black text-[#E11D48] mb-1">Zero</span>
-              <span className="block text-[10px] font-bold tracking-widest text-zinc-500 uppercase">Breaches</span>
+            <div className="border-l-2 border-rose-500/30 pl-4">
+              <span className="block text-4xl font-black text-rose-500 mb-1">Zero</span>
+              <span className="block text-xs sm:text-sm font-semibold tracking-widest text-zinc-400 uppercase">Breaches</span>
             </div>
           </div>
 

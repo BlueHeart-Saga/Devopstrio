@@ -504,7 +504,7 @@ export function Hero({
 
       <div className="max-w-7xl mx-auto relative z-10 w-full px-6 md:px-12 xl:px-8 flex-grow flex flex-col justify-between">
         {/* Breadcrumb Navigation - Pinned to the top of the content container */}
-        <nav className="flex items-center justify-start gap-2.5 text-[9px] md:text-[10px] font-bold tracking-[0.15em] text-zinc-400 mb-3 overflow-x-auto whitespace-nowrap py-1">
+        <nav className="flex items-center justify-start gap-2.5 text-xs md:text-sm font-semibold tracking-widest text-zinc-400 mb-3 overflow-x-auto whitespace-nowrap py-1">
           {breadcrumbs.map((crumb, idx) => {
             const isLast = idx === breadcrumbs.length - 1;
             return (
@@ -516,7 +516,7 @@ export function Hero({
                 ) : (
                   <span className="text-rose-500 font-semibold">{crumb.label.toUpperCase()}</span>
                 )}
-                {!isLast && <ChevronRight size={9} className="text-zinc-700 flex-shrink-0" />}
+                {!isLast && <ChevronRight size={12} className="text-zinc-700 flex-shrink-0" />}
               </React.Fragment>
             );
           })}
@@ -525,13 +525,13 @@ export function Hero({
         {/* Headline block - Centered with tight vertical gaps */}
         <div className="max-w-4xl mx-auto text-center flex flex-col items-center justify-center my-auto py-3 md:py-4">
           <Reveal delay={0.05}>
-            <h1 className="text-3xl md:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.18] mb-4 text-white text-center drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]">
+            <h1 className="text-3xl md:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.18] mb-4 text-white text-center font-sans">
               {title}
             </h1>
           </Reveal>
 
           <Reveal delay={0.1}>
-            <p className="text-zinc-400 text-xs md:text-sm lg:text-base leading-relaxed font-normal max-w-3xl text-center mx-auto opacity-90">
+            <p className="text-zinc-200 text-base md:text-lg font-medium leading-relaxed max-w-3xl text-center mx-auto">
               {subtitle}
             </p>
           </Reveal>

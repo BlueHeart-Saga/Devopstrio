@@ -31,7 +31,6 @@ const clientImages = [
   "/assets/Home-page/client-reviews/image%20176.png",
   "/assets/Home-page/client-reviews/image%20177.png",
   "/assets/Home-page/client-reviews/image%20178.png",
-  "/assets/Home-page/client-reviews/image%20179.png",
   "/assets/Home-page/client-reviews/image%20180.png",
   "/assets/Home-page/client-reviews/image%20181.png"
 ];

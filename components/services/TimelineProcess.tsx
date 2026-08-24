@@ -152,16 +152,10 @@ export function TimelineProcess({ steps, serviceSlug }: TimelineProcessProps) {
       <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
 
         {/* Section Header */}
-        <Reveal className="mb-20 text-center max-w-3xl mx-auto">
-          <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-red-500 mb-4 block">
-            METHODOLOGY
-          </span>
-          <h2 className="text-xl md:text-2xl xl:text-3xl font-bold text-white tracking-tight leading-tight uppercase">
-            Our Delivery <span className="text-red-500">Framework</span>
+        <Reveal className="mb-16 text-center max-w-3xl mx-auto">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-white tracking-tight leading-tight font-sans">
+            Our Delivery <span className="text-rose-500 font-semibold">Framework</span>
           </h2>
-          <p className="text-zinc-400 text-sm md:text-base leading-relaxed mt-4">
-            A structured, repeatable engineering process designed to take deployments from diagnostic assessment to stable production scale.
-          </p>
         </Reveal>
 
         {/* Horizontal Inline Timeline */}

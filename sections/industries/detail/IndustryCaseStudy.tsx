@@ -240,14 +240,9 @@ export function IndustryCaseStudy({
       <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10 text-left">
 
         {/* Section Header */}
-        <Reveal className="mb-8">
-          <div className="flex items-center gap-2 mb-3">
-            <span className="text-[11px] font-semibold tracking-[0.25em] uppercase text-zinc-500">
-              Case Validation
-            </span>
-          </div>
-          <h2 className="text-2xl md:text-3xl font-bold tracking-tight leading-tight text-white max-w-2xl">
-            Proven <span className="text-[#E11D48]">milestone achievements</span>
+        <Reveal className="mb-12">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-white font-sans">
+            Proven <span className="text-[#E11D48] font-semibold">milestone achievements</span>
           </h2>
         </Reveal>
 
@@ -262,7 +257,7 @@ export function IndustryCaseStudy({
 
             {/* Left Panel: Title, Description, Highlights, Metrics */}
             <div>
-              <span className="text-[9px] font-mono tracking-widest text-[#E11D48] uppercase font-bold block mb-2">
+              <span className="text-xs font-mono tracking-widest text-[#E11D48] uppercase font-semibold block mb-2">
                 Case Study {(activeIdx + 1).toString().padStart(2, "0")} / {totalSlides.toString().padStart(2, "0")}
               </span>
 
@@ -270,12 +265,12 @@ export function IndustryCaseStudy({
                 {currentSlide.title}
               </h3>
 
-              <p className="text-zinc-400 text-xs leading-relaxed font-semibold mb-4 max-w-xl">
+              <p className="text-zinc-300 text-sm sm:text-base leading-relaxed font-normal mb-4 max-w-xl">
                 {currentSlide.desc}
               </p>
 
               {/* Highlights List (re-positioned to the left side in a clean grid) */}
-              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-6 text-[11px] text-zinc-300 font-semibold max-w-xl">
+              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-6 text-xs sm:text-sm text-zinc-300 font-medium max-w-xl">
                 {currentSlide.highlights.map((hl, i) => (
                   <li key={i} className="flex items-start gap-2">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#E11D48] mt-1.5 flex-shrink-0" />
@@ -291,7 +286,7 @@ export function IndustryCaseStudy({
                     <span className="block text-xl md:text-2xl font-black text-white font-mono tracking-tight">
                       {m.value}
                     </span>
-                    <span className="text-[9px] text-zinc-500 font-bold uppercase tracking-wider block mt-0.5">
+                    <span className="text-xs text-zinc-400 font-semibold uppercase tracking-wider block mt-0.5">
                       {m.label}
                     </span>
                   </div>

@@ -154,17 +154,9 @@ export function IndustryTechStack({ techs }: IndustryTechStackProps) {
           {/* Left Column: Description */}
           <div className="lg:col-span-5 text-left">
             <Reveal>
-              <span className="text-[11px] font-semibold tracking-[0.25em] uppercase text-zinc-500 mb-4 block">
-                STACK INTEGRATION
-              </span>
-
-              <h2 className="text-3xl md:text-4xl font-bold tracking-tight leading-tight text-white mb-6">
-                Target tech <span className="text-[#E11D48]">frameworks</span>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight leading-tight text-white font-sans mb-6">
+                Target tech <span className="text-[#E11D48] font-semibold">frameworks</span>
               </h2>
-
-              <p className="text-zinc-400 text-sm leading-relaxed font-medium">
-                We design with high-performance programming tools, databases, and microservice hosts optimized to handle large transaction volume and zero-latency workloads.
-              </p>
             </Reveal>
           </div>
 
@@ -187,12 +179,12 @@ export function IndustryTechStack({ techs }: IndustryTechStackProps) {
                     />
 
                     {/* Title */}
-                    <strong className="text-xs font-bold text-zinc-900 group-hover:text-rose-600 transition-colors mb-1 relative z-10">
+                    <strong className="text-sm sm:text-base font-semibold text-zinc-900 group-hover:text-rose-600 transition-colors mb-1 relative z-10">
                       {tech.name}
                     </strong>
 
                     {/* Description */}
-                    <span className="text-[10px] text-zinc-600 group-hover:text-zinc-800 leading-normal font-semibold max-w-[150px] transition-colors relative z-10">
+                    <span className="text-xs font-medium text-zinc-700 group-hover:text-zinc-900 leading-normal max-w-[170px] transition-colors relative z-10">
                       {tech.desc}
                     </span>
                   </div>
@@ -206,11 +198,8 @@ export function IndustryTechStack({ techs }: IndustryTechStackProps) {
         {/* Extended Flip-Card Technology Ecosystem Sub-Section */}
         <div className="border-t border-white/5 pt-20 w-full text-center">
           <Reveal className="mb-12">
-            <span className="text-[11px] font-semibold tracking-[0.25em] uppercase text-zinc-500 mb-4 block">
-              GLOBAL SUPPORTED SYSTEM
-            </span>
-            <h3 className="text-2xl md:text-3xl font-bold tracking-tight text-white">
-              Supported Partner &amp; <span className="text-[#E11D48]">Integration Ecosystem</span>
+            <h3 className="text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-white font-sans">
+              Supported Partner &amp; <span className="text-[#E11D48] font-semibold">Integration Ecosystem</span>
             </h3>
           </Reveal>
 
@@ -234,7 +223,7 @@ export function IndustryTechStack({ techs }: IndustryTechStackProps) {
                           className="max-h-7 max-w-[85px] object-contain transition-transform duration-300 group-hover:scale-[1.03]"
                         />
                         {/* Tooltip Front */}
-                        <span className="absolute bottom-full left-[50%] translate-x-[-50%] mb-2 bg-zinc-900 text-white text-[8px] font-bold py-1 px-2 rounded shadow-lg opacity-0 pointer-events-none group-hover:opacity-100 transition-all duration-200 whitespace-nowrap z-50">
+                        <span className="absolute bottom-full left-[50%] translate-x-[-50%] mb-2 bg-zinc-900 text-white text-xs font-semibold py-1 px-2 rounded shadow-lg opacity-0 pointer-events-none group-hover:opacity-100 transition-all duration-200 whitespace-nowrap z-50">
                           {partner.name}
                         </span>
                       </div>
@@ -247,7 +236,7 @@ export function IndustryTechStack({ techs }: IndustryTechStackProps) {
                           className="max-h-7 max-w-[85px] object-contain"
                         />
                         {/* Tooltip Back */}
-                        <span className="absolute bottom-full left-[50%] translate-x-[-50%] mb-2 bg-zinc-900 text-white text-[8px] font-bold py-1 px-2 rounded shadow-lg opacity-0 pointer-events-none group-hover:opacity-100 transition-all duration-200 whitespace-nowrap z-50">
+                        <span className="absolute bottom-full left-[50%] translate-x-[-50%] mb-2 bg-zinc-900 text-white text-xs font-semibold py-1 px-2 rounded shadow-lg opacity-0 pointer-events-none group-hover:opacity-100 transition-all duration-200 whitespace-nowrap z-50">
                           {partner.backName}
                         </span>
                       </div>

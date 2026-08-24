@@ -103,12 +103,12 @@ export function LifecycleSection() {
                     </div>
 
                     {/* Step Title */}
-                    <h3 className="text-lg font-bold text-white mb-3 hover:text-rose-400 transition-colors duration-300">
+                    <h3 className="text-xl font-semibold text-white mb-3 hover:text-rose-400 transition-colors duration-300 font-sans">
                       {phase.name}
                     </h3>
 
                     {/* Step Description */}
-                    <p className="text-sm text-zinc-300 font-semibold leading-relaxed">
+                    <p className="text-sm sm:text-base text-zinc-300 font-medium leading-relaxed">
                       {phase.desc}
                     </p>
                   </div>

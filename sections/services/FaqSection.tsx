@@ -162,16 +162,10 @@ export function FaqSection() {
       <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
         
         {/* Header Block */}
-        <Reveal className="max-w-3xl mb-16">
-          <span className="text-xs sm:text-sm font-semibold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
-            FREQUENTLY ASKED QUESTIONS
-          </span>
-          <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight mb-4 text-white font-sans">
+        <Reveal className="max-w-3xl mb-12 lg:mb-16">
+          <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight text-white font-sans">
             Common Service <span className="text-rose-500 font-semibold">Inquiries</span>
           </h2>
-          <p className="text-zinc-300 text-base sm:text-lg md:text-xl font-medium leading-relaxed">
-            Everything you need to know about our engineering practices, delivery models, and technical standards.
-          </p>
         </Reveal>
 
         {/* Accordion FAQ (Open Line-Item Style Matching Contact FAQ) */}

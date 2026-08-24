@@ -43,7 +43,7 @@ export function IndustriesHero({
         <div className="max-w-3xl text-left">
           
           {/* Breadcrumb Navigation */}
-          <Reveal className="flex items-center gap-2 text-[10px] sm:text-xs font-mono text-zinc-500 mb-8 uppercase tracking-widest">
+          <Reveal className="flex items-center gap-2 text-xs md:text-sm font-semibold text-zinc-400 mb-8 uppercase tracking-widest">
             <a href="/" className="hover:text-white transition-colors">Home</a>
             <span className="text-zinc-700">&gt;</span>
             {breadcrumbCurrent !== "Industries" ? (
@@ -52,20 +52,20 @@ export function IndustriesHero({
                 <span className="text-zinc-700">&gt;</span>
               </>
             ) : null}
-            <span className="text-[#E11D48] font-bold">{breadcrumbCurrent}</span>
+            <span className="text-rose-500 font-semibold">{breadcrumbCurrent}</span>
           </Reveal>
 
           {/* Headline */}
           <Reveal delay={0.1}>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1] text-white mb-6">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold tracking-tight leading-[1.1] text-white font-sans mb-6">
               {titlePrefix} <br className="hidden sm:inline" />
-              <span className="text-[#E11D48]">{titleHighlight}</span>
+              <span className="text-rose-500 font-semibold">{titleHighlight}</span>
             </h1>
           </Reveal>
 
           {/* Subtext description */}
           <Reveal delay={0.2}>
-            <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-semibold max-w-xl mb-10">
+            <p className="text-zinc-200 text-base md:text-lg leading-relaxed font-medium max-w-xl mb-10">
               {subtitle}
             </p>
           </Reveal>
@@ -74,7 +74,7 @@ export function IndustriesHero({
           <Reveal delay={0.3}>
             <Link 
               href="/contact#contact-form" 
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full text-xs font-bold uppercase tracking-wider text-white bg-[#E11D48] hover:bg-rose-700 transition-all duration-300 hover:shadow-[0_8px_32px_rgba(244,63,94,0.2)]"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full text-xs sm:text-sm font-semibold uppercase tracking-wider text-white bg-rose-600 hover:bg-rose-700 transition-all duration-300 hover:shadow-[0_8px_32px_rgba(244,63,94,0.2)]"
             >
               Connect with us <ArrowUpRight size={14} className="stroke-[2.5]" />
             </Link>

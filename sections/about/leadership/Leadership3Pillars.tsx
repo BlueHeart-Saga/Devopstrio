@@ -64,10 +64,9 @@ export function Leadership3Pillars() {
       <div className="max-w-7xl mx-auto w-full px-6 sm:px-8 relative z-10">
         
         {/* Top Tagline with Left-Right Arrow indicator (AIStudioShowcase reference) */}
-        <div className="text-center max-w-4xl mx-auto mb-12 sm:mb-14 relative">
+        {/* <div className="text-center max-w-4xl mx-auto mb-12 sm:mb-14 relative">
           <Reveal>
             <div className="relative inline-block">
-              {/* Arrow image on the left side near heading */}
               <div className="absolute -top-5 sm:-top-7 md:-top-8 -left-2 sm:-left-4 md:-left-6 z-20 pointer-events-none select-none">
                 <img
                   src="/assets/components/lefttoright.png"
@@ -84,7 +83,6 @@ export function Leadership3Pillars() {
                 of{" "}
                 <span className="relative inline-block text-white px-1 mx-1 whitespace-nowrap">
                   <span className="text-white font-semibold relative z-10">engineering excellence</span>
-                  {/* Modern Pencil Art Hand-Sketched Underline */}
                   <svg
                     className="absolute -bottom-4 left-0 w-full h-5 text-rose-500 pointer-events-none overflow-visible z-0"
                     viewBox="0 0 250 20"
@@ -92,7 +90,6 @@ export function Leadership3Pillars() {
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
                   >
-                    {/* Primary artistic pencil stroke */}
                     <path
                       d="M 3 14 C 50 6, 130 17, 245 9"
                       stroke="currentColor"
@@ -100,7 +97,6 @@ export function Leadership3Pillars() {
                       strokeLinecap="round"
                       className="opacity-90 filter drop-shadow-[0_0_10px_rgba(244,63,94,0.6)]"
                     />
-                    {/* Secondary graphite texture pencil stroke overlay */}
                     <path
                       d="M 12 17 C 75 11, 165 18, 238 12"
                       stroke="currentColor"
@@ -114,7 +110,7 @@ export function Leadership3Pillars() {
               </h2>
             </div>
           </Reveal>
-        </div>
+        </div> */}
 
         {/* 3 Pillar Cards Container */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border-t border-b border-zinc-800/80 divide-y md:divide-y-0 md:divide-x divide-zinc-800/80 bg-zinc-950/30 backdrop-blur-md rounded-2xl overflow-hidden min-h-[480px] md:min-h-[530px] transition-all duration-500">

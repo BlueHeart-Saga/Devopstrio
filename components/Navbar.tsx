@@ -981,8 +981,8 @@ export function Navbar() {
                             { name: "Software Development", href: "/services/software-development" },
                             { name: "Digital Transformation", href: "/services/digital-transformation" },
                             { name: "Managed Services", href: "/services/managed-services" },
-                            { name: "QA & Testing", href: "/services/qa-testing" },
-                            { name: "IT Consulting", href: "/services/it-consulting" }
+                            // { name: "QA & Testing", href: "/services/qa-testing" },
+                            // { name: "IT Consulting", href: "/services/it-consulting" }
                           ].map((item) => (
                             <Link
                               key={item.name}

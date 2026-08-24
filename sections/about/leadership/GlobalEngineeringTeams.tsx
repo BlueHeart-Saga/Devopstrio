@@ -111,41 +111,30 @@ export const GlobalEngineeringTeams = () => {
   const card2 = engineeringTeams[(startIndex + 1) % engineeringTeams.length];
 
   return (
-    <section id="global-teams" className="pt-8 pb-10 sm:pt-12 sm:pb-14 bg-black relative overflow-hidden text-white">
+    <section id="global-teams" className="pt-6 pb-2 sm:pt-8 sm:pb-4 bg-black relative overflow-hidden text-white">
       {/* Subtle ambient lighting */}
       <div className="absolute top-1/3 left-1/4 w-[600px] h-[600px] bg-rose-600/5 rounded-full blur-[140px] pointer-events-none" />
       <div className="absolute bottom-10 right-10 w-96 h-96 bg-purple-600/5 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        
+
         {/* Top Feel-Good Leadership Statement */}
-        <div className="text-center max-w-4xl mx-auto mb-8 sm:mb-12 pb-8 border-b border-zinc-900/60 relative z-10">
+        <div className="text-center max-w-4xl mx-auto mb-2 sm:mb-4 relative z-10">
           <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl font-semibold tracking-tight text-white leading-tight font-sans">
             We are shaping the future of engineering,{" "}
-            {/* <span className="relative inline-block text-rose-500 font-semibold px-1">
-              <div className="absolute -top-8 sm:-top-10 md:-top-12 -right-12 sm:-right-16 md:-right-20 z-20 pointer-events-none select-none">
-                <img
-                  src="/assets/components/lefttoright.png"
-                  alt="Arrow indicator"
-                  className="w-14 sm:w-16 md:w-20 lg:w-22 h-auto object-contain filter drop-shadow-[0_0_15px_rgba(244,63,94,0.5)] scale-x-[-1]"
-                />
-              </div>
-              empowering
-            </span> */}
+            <span className="text-rose-500 font-semibold">empowering</span>{" "}
             <span className="text-zinc-400 font-normal">
-              empowering visionary leaders and world-class teams to build what&apos;s next.
+              visionary leaders and world-class teams to build what&apos;s next.
             </span>
           </h3>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+        {/* <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
           
-          {/* Left Column: Section Heading (Shifted right for balanced visual harmony) */}
           <div className="lg:col-span-5 relative space-y-6 text-left pl-3 sm:pl-6 lg:pl-10 xl:pl-14">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-white leading-tight mb-4">
               Leaders Who{" "}
               <span className="relative inline-block">
-                {/* Curved arrow */}
                 <div className="absolute -top-6 sm:-top-7 -left-12 sm:-left-14 md:-left-16 z-20 pointer-events-none select-none rotate-[-40deg]">
                   <img
                     src="/assets/components/Carrow-right.png"
@@ -159,7 +148,6 @@ export const GlobalEngineeringTeams = () => {
             </h2>
           </div>
 
-          {/* Right Column: Single Featured Image (pencilrock.png) */}
           <div className="lg:col-span-7 flex items-center justify-center select-none py-2">
             <div className="relative w-full max-w-[340px] sm:max-w-[390px] md:max-w-[440px] rounded-3xl overflow-hidden group">
               <img
@@ -170,7 +158,7 @@ export const GlobalEngineeringTeams = () => {
             </div>
           </div>
 
-        </div>
+        </div> */}
 
       </div>
     </section>

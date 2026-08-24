@@ -28,24 +28,15 @@ export const SupportChannels = () => {
       </div>
  
       {/* Top Header Section */}
-      <div className="text-center mb-20 relative z-10 px-6 w-full max-w-4xl mx-auto">
+      <div className="text-center mb-16 relative z-10 px-6 w-full max-w-4xl mx-auto">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-6"
+          className="text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-white font-sans"
         >
-          Reach Us Anywhere, <span className="text-rose-500">Anytime</span>
+          Reach Us Anywhere, <span className="text-rose-500 font-semibold">Anytime</span>
         </motion.h2>
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.1 }}
-          className="text-zinc-400 text-base md:text-lg leading-relaxed font-medium max-w-2xl mx-auto"
-        >
-          Multiple channels, one mission — getting you expert support as fast as possible. Check out our <Link href="/services" className="text-rose-500 hover:underline">digital services</Link> or contact support.
-        </motion.p>
       </div>
 
       {/* Two Column Layout */}

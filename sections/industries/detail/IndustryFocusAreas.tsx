@@ -46,14 +46,9 @@ export function IndustryFocusAreas({ focusAreas }: IndustryFocusAreasProps) {
       <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10 text-left">
 
         {/* Section Header */}
-        <Reveal className="mb-16">
-          <div className="flex items-center gap-2 mb-4">
-            <span className="text-[11px] font-semibold tracking-[0.25em] uppercase text-zinc-500">
-              Core Capabilities
-            </span>
-          </div>
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight leading-tight text-white max-w-2xl">
-            Specialized <span className="text-[#E11D48]">capability groups</span>
+        <Reveal className="mb-14">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-white font-sans">
+            Specialized <span className="text-[#E11D48] font-semibold">capability groups</span>
           </h2>
         </Reveal>
 
@@ -67,27 +62,27 @@ export function IndustryFocusAreas({ focusAreas }: IndustryFocusAreasProps) {
                 <div className="absolute inset-0 bg-gradient-to-br from-[#E11D48]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
                 {/* Index Indicator */}
-                <span className="absolute top-6 right-8 text-[10px] font-mono font-bold text-[#E11D48] bg-[#E11D48]/10 px-2 py-1 rounded-md">
+                <span className="absolute top-6 right-8 text-xs font-mono font-semibold text-[#E11D48] bg-[#E11D48]/10 px-2 py-1 rounded-md">
                   {(idx + 1).toString().padStart(2, "0")}
                 </span>
 
                 <div>
-                  <span className="block text-[10px] font-semibold tracking-widest text-zinc-500 uppercase mb-4">
+                  <span className="block text-xs font-semibold tracking-widest text-zinc-400 uppercase mb-4">
                     Focus Domain
                   </span>
                   
-                  <h3 className="text-lg font-bold text-white mb-3 tracking-tight group-hover:text-[#E11D48] transition-colors duration-300">
+                  <h3 className="text-xl font-semibold text-white mb-3 tracking-tight group-hover:text-[#E11D48] transition-colors duration-300">
                     {area.title}
                   </h3>
                   
-                  <p className="text-zinc-400 text-sm leading-relaxed font-medium mb-6">
+                  <p className="text-zinc-300 text-sm sm:text-base leading-relaxed font-normal mb-6">
                     {area.desc}
                   </p>
                 </div>
 
                 {/* Card Footer */}
-                <div className="mt-auto pt-4 border-t border-white/5 flex items-center justify-between text-zinc-500 group-hover:text-white transition-colors duration-300">
-                  <span className="text-[10px] uppercase font-bold tracking-wider">
+                <div className="mt-auto pt-4 border-t border-white/5 flex items-center justify-between text-zinc-400 group-hover:text-white transition-colors duration-300">
+                  <span className="text-xs uppercase font-semibold tracking-wider">
                     Operational Focus
                   </span>
                   <ArrowUpRight size={14} className="opacity-0 group-hover:opacity-100 transition-opacity duration-300" />

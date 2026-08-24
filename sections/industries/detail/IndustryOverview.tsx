@@ -70,15 +70,11 @@ export function IndustryOverview({
 
               {/* LEFT CONTENT: Overview Context & Approach */}
               <div className="flex flex-col justify-center p-8 md:p-10 lg:p-12 text-left">
-                <span className="text-[11px] font-semibold tracking-[0.25em] uppercase text-zinc-500 mb-8 block">
-                  Domain Context
-                </span>
-
-                <h2 className="text-xl md:text-2xl xl:text-3xl font-bold leading-tight tracking-tight mb-6 text-white">
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight tracking-tight mb-6 text-white font-sans">
                   {overviewHeading}
                 </h2>
 
-                <div className="space-y-4 text-zinc-400 text-sm leading-relaxed mb-8 font-medium">
+                <div className="space-y-4 text-zinc-300 text-sm sm:text-base leading-relaxed mb-8 font-normal">
                   <p className="border-l-2 border-[#E11D48] pl-4">{overviewDesc1}</p>
                   <p className="border-l-2 border-zinc-800/80 pl-4">{overviewDesc2}</p>
                 </div>

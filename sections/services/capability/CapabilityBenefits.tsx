@@ -44,20 +44,9 @@ export function CapabilityBenefits({
             {/* Title Block */}
             <div className="flex flex-col items-start z-20">
               <Reveal>
-                <div className="flex items-center gap-2 mb-4">
-                  <span className="text-[10px] font-bold tracking-widest uppercase text-rose-500">
-                    TECHNICAL ADVANTAGE
-                  </span>
-                </div>
-                <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-6 text-white uppercase">
-                  {overrideTitle || <>Key outcomes &amp; <span className="text-rose-500">technical benefits</span></>}
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-white font-sans">
+                  {overrideTitle || <>Key outcomes &amp; <span className="text-rose-500 font-semibold">technical benefits</span></>}
                 </h2>
-              </Reveal>
-
-              <Reveal delay={0.1}>
-                <p className="text-zinc-450 text-xs sm:text-sm leading-relaxed font-semibold max-w-2xl mb-8">
-                  {overrideSubtitle || "We measure our success by the stability, security, and cost efficiency we deliver. Through automated pipelines, continuous optimization, and strict SOC-2 compliance, our capabilities translate directly into quantified business advantage."}
-                </p>
               </Reveal>
             </div>
 

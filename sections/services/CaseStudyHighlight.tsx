@@ -11,15 +11,9 @@ export function CaseStudyHighlight() {
 
         <Reveal>
           <div className="text-center max-w-3xl mx-auto mb-14">
-            <span className="text-xs sm:text-sm font-semibold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
-              BUSINESS IMPACT
-            </span>
-            <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight mb-5 text-white font-sans">
+            <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight text-white font-sans">
               Discover how business leaders are driving value with <span className="text-rose-500 font-semibold">modern architectures</span>
             </h2>
-            {/* <p className="text-zinc-200 text-base md:text-lg font-semibold leading-relaxed">
-              Explore our real-world case studies detailing how leading enterprises partner with Devopstrio to optimize <Link href="/services/cloud-services" className="text-rose-500 hover:underline">core infrastructure</Link>, reduce <Link href="/services/devops-automation" className="text-rose-500 hover:underline">execution latency</Link>, and achieve measurable returns.
-            </p> */}
           </div>
         </Reveal>
 
@@ -50,7 +44,7 @@ export function CaseStudyHighlight() {
                   <span className="block text-5xl md:text-6xl font-mono font-bold text-rose-500 mb-2">
                     180ms
                   </span>
-                  <p className="text-xs md:text-sm text-zinc-200 leading-relaxed font-semibold">
+                  <p className="text-sm sm:text-base text-zinc-200 leading-relaxed font-semibold">
                     Sub-millisecond transaction latency achieved.
                   </p>
                 </div>
@@ -68,12 +62,12 @@ export function CaseStudyHighlight() {
                   <div className="absolute top-0 right-0 w-40 h-40 bg-[radial-gradient(circle_at_center,rgba(244,63,94,0.03),transparent_75%)] pointer-events-none" />
 
                   <div>
-                    <span className="text-[19px] font-mono tracking-widest text-zinc-400 uppercase block mb-3 font-semibold">Service Reliability</span>
+                    <span className="text-sm font-semibold tracking-widest text-zinc-400 uppercase block mb-3">Service Reliability</span>
                     <span className="block text-4xl font-mono font-bold text-white mb-2">
                       99.999%
                     </span>
                   </div>
-                  <p className="text-xs md:text-sm text-zinc-200 leading-relaxed font-semibold">
+                  <p className="text-sm sm:text-base text-zinc-200 leading-relaxed font-semibold">
                     Continuous SLA uptime guaranteed under peak load.
                   </p>
                 </div>
@@ -87,12 +81,12 @@ export function CaseStudyHighlight() {
                   <div className="absolute -bottom-12 -right-12 w-48 h-48 bg-rose-600/10 rounded-full blur-[60px] pointer-events-none" />
 
                   <div>
-                    <span className="text-[19px] font-mono tracking-widest text-rose-400 uppercase block mb-3 font-semibold">Infrastructure Cost</span>
+                    <span className="text-sm font-semibold tracking-widest text-rose-400 uppercase block mb-3">Infrastructure Cost</span>
                     <span className="block text-4xl font-mono font-bold text-rose-500 mb-2">
                       45%
                     </span>
                   </div>
-                  <p className="text-xs md:text-sm text-zinc-200 leading-relaxed font-semibold">
+                  <p className="text-sm sm:text-base text-zinc-200 leading-relaxed font-semibold">
                     Monthly cloud hosting spend saved through auto-scaling.
                   </p>
                 </div>

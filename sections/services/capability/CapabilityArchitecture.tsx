@@ -154,10 +154,7 @@ export function CapabilityArchitecture({
           {/* Left Column: Alternate Zigzag Architecture Flow Diagram */}
           <div className="lg:col-span-6 w-full flex flex-col justify-start relative">
             <Reveal className="mb-12">
-              <span className="text-xs md:text-sm font-extrabold tracking-[0.25em] uppercase text-rose-500 font-mono block mb-2">
-                SYSTEM TOPOLOGY
-              </span>
-              <h3 className="text-lg font-bold text-white uppercase tracking-wider">
+              <h3 className="text-2xl md:text-3xl font-semibold text-white font-sans">
                 {overrideTopologyTitle || flow.title}
               </h3>
             </Reveal>
@@ -230,17 +227,9 @@ export function CapabilityArchitecture({
           {/* Right Column: Title Block and Key Benefits Card Matrix */}
           <div className="lg:col-span-6 flex flex-col justify-start text-left lg:sticky lg:top-28">
             <Reveal className="mb-12">
-              <div className="flex items-center gap-2 mb-4">
-                <span className="text-xs md:text-sm font-extrabold tracking-[0.25em] uppercase text-rose-500 font-mono">
-                  SOLUTION ARCHITECTURE
-                </span>
-              </div>
-              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white uppercase leading-tight mb-4">
-                {overrideTitle || <>Built for Scale, Security &amp; <span className="text-rose-500">Performance</span></>}
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-white font-sans">
+                {overrideTitle || <>Built for Scale, Security &amp; <span className="text-rose-500 font-semibold">Performance</span></>}
               </h2>
-              <p className="text-sm md:text-base font-normal text-zinc-400 leading-relaxed">
-                {overrideSubtitle || "Our architecture combines modern cloud platforms, AI technologies, secure policy controls, and automation frameworks to deliver enterprise-grade solutions."}
-              </p>
             </Reveal>
 
             {/* Benefits Matrix (6 Cards) */}

@@ -32,14 +32,9 @@ export function ChallengesWeSolve() {
       <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10 text-left">
         
         {/* Section Header */}
-        <Reveal className="mb-20">
-          <div className="flex items-center gap-2 mb-4">
-            <span className="text-[11px] font-semibold tracking-[0.25em] uppercase text-zinc-500">
-              Pain Points Resolved
-            </span>
-          </div>
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight leading-tight text-white max-w-2xl">
-            Key roadblocks we <span className="text-[#E11D48]">help you resolve</span>
+        <Reveal className="mb-14">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-white font-sans">
+            Key roadblocks we <span className="text-[#E11D48] font-semibold">help you resolve</span>
           </h2>
         </Reveal>
 
@@ -59,12 +54,12 @@ export function ChallengesWeSolve() {
                   </div>
 
                   {/* Title */}
-                  <h4 className="text-base font-bold text-white mb-2 tracking-tight transition-colors duration-300">
+                  <h4 className="text-lg font-semibold text-white mb-2 tracking-tight transition-colors duration-300">
                     {chal.title}
                   </h4>
                   
                   {/* Description */}
-                  <p className="text-xs text-zinc-400 leading-relaxed font-semibold">
+                  <p className="text-sm sm:text-base text-zinc-300 leading-relaxed font-normal">
                     {chal.desc}
                   </p>
                 </div>
