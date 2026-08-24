@@ -55,7 +55,7 @@ const posters: PrinciplePoster[] = [
     leaderRole: "Data & Cloud Platforms Director",
     coreTakeaway:
       "We empower autonomous teams with complete trust. When unforeseen bottlenecks occur, our leaders step up, take total ownership, and deliver.",
-    image: "/assets/Home-page/homehero/Umamaheswari R.svg",
+    image: "/assets/Home-page/homehero/Umamaheswari-R.svg",
   },
   {
     id: "innovation-mindset",
@@ -81,7 +81,7 @@ const posters: PrinciplePoster[] = [
     leaderRole: "Principal System Architect",
     coreTakeaway:
       "High-velocity teams thrive on unvarnished honesty and constructive debate. Blameless incident analyses turn hiccups into organizational strength.",
-    image: "/assets/Home-page/homehero/updated_hero/Subbiah Muthu.M.svg",
+    image: "/assets/Home-page/homehero/updated_hero/Subbiah-Muthu.M.svg",
   },
   {
     id: "multiplier-mentorship",
@@ -94,7 +94,7 @@ const posters: PrinciplePoster[] = [
     leaderRole: "Talent & Technical Guild Lead",
     coreTakeaway:
       "True leadership is measured by the growth, autonomy, and confidence of teammates. We invest heavily in apprenticeships and career velocity.",
-    image: "/assets/Home-page/homehero/updated_hero/Thanga Lakshmi.svg",
+    image: "/assets/Home-page/homehero/updated_hero/Thanga-Lakshmi.svg",
   },
   {
     id: "speed-with-discipline",

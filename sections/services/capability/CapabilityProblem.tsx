@@ -101,7 +101,7 @@ const problemData: Record<string, { title: string; subtitle: string; points: str
       "Slow manual testing cycles delaying product release windows.",
       "Inconsistent layout validation causing brand damage on mobile browsers."
     ],
-    image: "/assets/Services-Page/capability/banner/QA&Testing.png"
+    image: "/assets/Services-Page/capability/banner/QAandTesting.png"
   },
   "it-consulting": {
     title: "Architecture Bloat & Stack Overlap",

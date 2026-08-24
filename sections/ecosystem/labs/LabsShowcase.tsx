@@ -23,7 +23,7 @@ export function LabsShowcase() {
       id: "ai",
       name: "AI Innovation Lab",
       icon: <Brain size={20} />,
-      image: "/assets/ecosystem/innovation-labs page Showcase _Card/AI.png",
+      image: "/assets/ecosystem/innovation-labs-page-Showcase-_Card/AI.png",
       quote: "\"Accelerating enterprise workflows through autonomous agents and safe cognitive automation frameworks.\"",
       projects: [
         { stat: "Hiring Agent", label: "Autonomous resume matching engine." },
@@ -36,7 +36,7 @@ export function LabsShowcase() {
       id: "cloud",
       name: "Cloud Innovation Lab",
       icon: <Cloud size={20} />,
-      image: "/assets/ecosystem/innovation-labs page Showcase _Card/Cloud.png",
+      image: "/assets/ecosystem/innovation-labs-page-Showcase-_Card/Cloud.png",
       quote: "\"Driving zero-downtime scalability and sustainable green hosting across distributed multicloud architectures.\"",
       projects: [
         { stat: "FinOps Auditor", label: "Automated idle node scale-down." },
@@ -49,7 +49,7 @@ export function LabsShowcase() {
       id: "devops",
       name: "DevOps Innovation Lab",
       icon: <Terminal size={20} />,
-      image: "/assets/ecosystem/innovation-labs page Showcase _Card/Devops.png",
+      image: "/assets/ecosystem/innovation-labs-page-Showcase-_Card/Devops.png",
       quote: "\"Standardizing developer portals and self-healing pipelines to drastically reduce code-to-production lead times.\"",
       projects: [
         { stat: "Portal Dashboard", label: "Unified Backstage scaffold." },
@@ -62,7 +62,7 @@ export function LabsShowcase() {
       id: "cyber",
       name: "Cybersecurity Lab",
       icon: <Shield size={20} />,
-      image: "/assets/ecosystem/innovation-labs page Showcase _Card/cyber.png",
+      image: "/assets/ecosystem/innovation-labs-page-Showcase-_Card/cyber.png",
       quote: "\"Pioneering zero-trust environments with dynamic secret rotation and continuous compliance auditing.\"",
       projects: [
         { stat: "Secrets Rotator", label: "Dynamic cluster key rotation." },
@@ -75,7 +75,7 @@ export function LabsShowcase() {
       id: "data",
       name: "Data & Analytics Lab",
       icon: <Database size={20} />,
-      image: "/assets/ecosystem/innovation-labs page Showcase _Card/Data.png",
+      image: "/assets/ecosystem/innovation-labs-page-Showcase-_Card/Data.png",
       quote: "\"Constructing ultra-low latency telemetry streaming architectures and unified analytical lakehouses.\"",
       projects: [
         { stat: "Stream Parser", label: "Kafka-driven metrics ingestion." },

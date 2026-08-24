@@ -229,14 +229,14 @@ const EnterpriseDataArchitecture = () => {
 // ==========================================
 const DataCapabilities = () => {
   const capabilities = [
-    { title: "Data Integration", tag: "Connect", desc: "Connect enterprise systems, APIs, cloud apps, and databases.", image: "/assets/common/1b065043b6959827c05a0073c93a4a53 1.png" },
-    { title: "ETL / ELT Pipelines", desc: "Reliable and automated data movement.", tag: "Move", image: "/assets/common/260b761ad40c3ad2acba2c6666894539 1.png" },
-    { title: "Data Warehousing", tag: "Centralize", desc: "Build centralized analytics-ready repositories.", image: "/assets/common/315e4fdc6263bfd240f36297e376576e 1.png" },
-    { title: "Data Lake Engineering", tag: "Store", desc: "Store structured and unstructured enterprise data.", image: "/assets/common/37b9b888cc479ea7b74d2d9a05c37597 1.png" },
-    { title: "Real-Time Data Streaming", tag: "Process", desc: "Capture and process live events.", image: "/assets/common/464d8932bca4d6bb552ff2dcf2f3c5ca 1.png" },
-    { title: "Data Transformation", tag: "Enrich", desc: "Clean, enrich, and standardize data.", image: "/assets/common/782e79a0bc5e9f58cb9af6a27727ca7b 1.png" },
-    { title: "Master Data Management", tag: "Govern", desc: "Create trusted enterprise-wide data consistency.", image: "/assets/common/82090d7be4ef5694954ce77f9cc2e627 1.png" },
-    { title: "Metadata & Cataloging", tag: "Discover", desc: "Improve discoverability and governance.", image: "/assets/common/90361fed0bb781d7c86e451995b4dbce 1.png" }
+    { title: "Data Integration", tag: "Connect", desc: "Connect enterprise systems, APIs, cloud apps, and databases.", image: "/assets/common/1b065043b6959827c05a0073c93a4a53-1.png" },
+    { title: "ETL / ELT Pipelines", desc: "Reliable and automated data movement.", tag: "Move", image: "/assets/common/260b761ad40c3ad2acba2c6666894539-1.png" },
+    { title: "Data Warehousing", tag: "Centralize", desc: "Build centralized analytics-ready repositories.", image: "/assets/common/315e4fdc6263bfd240f36297e376576e-1.png" },
+    { title: "Data Lake Engineering", tag: "Store", desc: "Store structured and unstructured enterprise data.", image: "/assets/common/37b9b888cc479ea7b74d2d9a05c37597-1.png" },
+    { title: "Real-Time Data Streaming", tag: "Process", desc: "Capture and process live events.", image: "/assets/common/464d8932bca4d6bb552ff2dcf2f3c5ca-1.png" },
+    { title: "Data Transformation", tag: "Enrich", desc: "Clean, enrich, and standardize data.", image: "/assets/common/782e79a0bc5e9f58cb9af6a27727ca7b-1.png" },
+    { title: "Master Data Management", tag: "Govern", desc: "Create trusted enterprise-wide data consistency.", image: "/assets/common/82090d7be4ef5694954ce77f9cc2e627-1.png" },
+    { title: "Metadata & Cataloging", tag: "Discover", desc: "Improve discoverability and governance.", image: "/assets/common/90361fed0bb781d7c86e451995b4dbce-1.png" }
   ];
 
   return (
@@ -414,13 +414,13 @@ const TechnologyStack = () => {
   const [activeTab, setActiveTab] = useState(0);
 
   const tabs = [
-    { name: "Data Integration", items: [{ name: "Azure Data Factory", logo: "/assets/Tech_logos/Microsoft Azure.svg" }, { name: "Apache NiFi", logo: null }, { name: "Informatica", logo: null }, { name: "Talend", logo: null }, { name: "Fivetran", logo: null }] },
+    { name: "Data Integration", items: [{ name: "Azure Data Factory", logo: "/assets/Tech_logos/Microsoft-Azure.svg" }, { name: "Apache NiFi", logo: null }, { name: "Informatica", logo: null }, { name: "Talend", logo: null }, { name: "Fivetran", logo: null }] },
     { name: "Streaming", items: [{ name: "Apache Kafka", logo: null }, { name: "Apache Flink", logo: null }, { name: "Spark Streaming", logo: null }, { name: "Confluent", logo: "/assets/Tech_logos/Confluent.svg" }] },
     { name: "Processing", items: [{ name: "Apache Spark", logo: null }, { name: "Databricks", logo: "/assets/Tech_logos/Databricks.svg" }, { name: "dbt", logo: null }, { name: "Airflow", logo: null }] },
-    { name: "Warehousing", items: [{ name: "Snowflake", logo: "/assets/Tech_logos/Snowflake.svg" }, { name: "BigQuery", logo: "/assets/Tech_logos/Google_Cloud.svg" }, { name: "Amazon Redshift", logo: "/assets/Tech_logos/AWS.svg" }, { name: "Azure Synapse", logo: "/assets/Tech_logos/Microsoft Azure.svg" }] },
-    { name: "Databases", items: [{ name: "PostgreSQL", logo: null }, { name: "MongoDB", logo: "/assets/Tech_logos/MongoDB.svg" }, { name: "SQL Server", logo: "/assets/Tech_logos/Microsoft Azure.svg" }, { name: "MySQL", logo: null }, { name: "Oracle", logo: "/assets/Tech_logos/Oracle_Cloud.svg" }] },
-    { name: "Analytics", items: [{ name: "Power BI", logo: "/assets/Tech_logos/Microsoft Azure.svg" }, { name: "Tableau", logo: null }, { name: "Looker", logo: "/assets/Tech_logos/Google_Cloud.svg" }] },
-    { name: "Cloud", items: [{ name: "Azure", logo: "/assets/Tech_logos/Microsoft Azure.svg" }, { name: "AWS", logo: "/assets/Tech_logos/AWS.svg" }, { name: "Google Cloud", logo: "/assets/Tech_logos/Google_Cloud.svg" }, { name: "OCI", logo: "/assets/Tech_logos/Oracle_Cloud.svg" }] }
+    { name: "Warehousing", items: [{ name: "Snowflake", logo: "/assets/Tech_logos/Snowflake.svg" }, { name: "BigQuery", logo: "/assets/Tech_logos/Google_Cloud.svg" }, { name: "Amazon Redshift", logo: "/assets/Tech_logos/AWS.svg" }, { name: "Azure Synapse", logo: "/assets/Tech_logos/Microsoft-Azure.svg" }] },
+    { name: "Databases", items: [{ name: "PostgreSQL", logo: null }, { name: "MongoDB", logo: "/assets/Tech_logos/MongoDB.svg" }, { name: "SQL Server", logo: "/assets/Tech_logos/Microsoft-Azure.svg" }, { name: "MySQL", logo: null }, { name: "Oracle", logo: "/assets/Tech_logos/Oracle_Cloud.svg" }] },
+    { name: "Analytics", items: [{ name: "Power BI", logo: "/assets/Tech_logos/Microsoft-Azure.svg" }, { name: "Tableau", logo: null }, { name: "Looker", logo: "/assets/Tech_logos/Google_Cloud.svg" }] },
+    { name: "Cloud", items: [{ name: "Azure", logo: "/assets/Tech_logos/Microsoft-Azure.svg" }, { name: "AWS", logo: "/assets/Tech_logos/AWS.svg" }, { name: "Google Cloud", logo: "/assets/Tech_logos/Google_Cloud.svg" }, { name: "OCI", logo: "/assets/Tech_logos/Oracle_Cloud.svg" }] }
   ];
 
   return (
@@ -513,14 +513,14 @@ const BusinessOutcomes = () => {
 // ==========================================
 const IndustryUseCases = () => {
   const useCases = [
-    { title: "Banking", tag: "Finance", desc: "Transaction analytics and fraud data pipelines.", image: "/assets/common/945ab601f043c558e0a8162da2a1eb4c 1.png" },
-    { title: "Healthcare", tag: "Health", desc: "Clinical data integration and reporting.", image: "/assets/common/9d91b93f83e6d4cd494ec13611b3e50e 1.png" },
-    { title: "Retail", tag: "Commerce", desc: "Customer analytics and demand forecasting.", image: "/assets/common/b384eb0438c55e43c61e7595acc29638 1.png" },
-    { title: "Manufacturing", tag: "Industrial", desc: "Production analytics and IoT integration.", image: "/assets/common/e76e125035885aab9c9070ce85df239e 1.png" },
-    { title: "Telecommunications", tag: "Networking", desc: "Network telemetry and performance analytics.", image: "/assets/common/f03cc521fb070dfae9d87768b791ff70 1.png" },
-    { title: "Government", tag: "Public", desc: "Citizen data platforms and reporting.", image: "/assets/common/f317dd71184f5c47d601eeb9508bf92c 1.png" },
-    { title: "Education", tag: "Learning", desc: "Student analytics and institutional reporting.", image: "/assets/common/45ea830d170d382ade235db479060da7 1.png" },
-    { title: "Logistics", tag: "Supply Chain", desc: "Fleet tracking and supply chain visibility.", image: "/assets/common/2fe7f9184c515b0c515ce38bc8a25efa 1.png" }
+    { title: "Banking", tag: "Finance", desc: "Transaction analytics and fraud data pipelines.", image: "/assets/common/945ab601f043c558e0a8162da2a1eb4c-1.png" },
+    { title: "Healthcare", tag: "Health", desc: "Clinical data integration and reporting.", image: "/assets/common/9d91b93f83e6d4cd494ec13611b3e50e-1.png" },
+    { title: "Retail", tag: "Commerce", desc: "Customer analytics and demand forecasting.", image: "/assets/common/b384eb0438c55e43c61e7595acc29638-1.png" },
+    { title: "Manufacturing", tag: "Industrial", desc: "Production analytics and IoT integration.", image: "/assets/common/e76e125035885aab9c9070ce85df239e-1.png" },
+    { title: "Telecommunications", tag: "Networking", desc: "Network telemetry and performance analytics.", image: "/assets/common/f03cc521fb070dfae9d87768b791ff70-1.png" },
+    { title: "Government", tag: "Public", desc: "Citizen data platforms and reporting.", image: "/assets/common/f317dd71184f5c47d601eeb9508bf92c-1.png" },
+    { title: "Education", tag: "Learning", desc: "Student analytics and institutional reporting.", image: "/assets/common/45ea830d170d382ade235db479060da7-1.png" },
+    { title: "Logistics", tag: "Supply Chain", desc: "Fleet tracking and supply chain visibility.", image: "/assets/common/2fe7f9184c515b0c515ce38bc8a25efa-1.png" }
   ];
 
   return (

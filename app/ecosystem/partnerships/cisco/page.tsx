@@ -575,13 +575,13 @@ export default function CiscoPartnershipPage() {
       <PartnerCertifications 
         title="Cisco Certifications"
         certifications={[
-            { image: "/assets/ecosystem/Cisco_Awards/image 187.png" },
-            { image: "/assets/ecosystem/Cisco_Awards/image 188.png" },
-            { image: "/assets/ecosystem/Cisco_Awards/image 189.png" },
-            { image: "/assets/ecosystem/Cisco_Awards/image 190.png" },
-            { image: "/assets/ecosystem/Cisco_Awards/image 191.png" },
-            { image: "/assets/ecosystem/Cisco_Awards/image 192.png" },
-            { image: "/assets/ecosystem/Cisco_Awards/image 193.png" }
+            { image: "/assets/ecosystem/Cisco_Awards/image-187.png" },
+            { image: "/assets/ecosystem/Cisco_Awards/image-188.png" },
+            { image: "/assets/ecosystem/Cisco_Awards/image-189.png" },
+            { image: "/assets/ecosystem/Cisco_Awards/image-190.png" },
+            { image: "/assets/ecosystem/Cisco_Awards/image-191.png" },
+            { image: "/assets/ecosystem/Cisco_Awards/image-192.png" },
+            { image: "/assets/ecosystem/Cisco_Awards/image-193.png" }
           ]}
       />
 

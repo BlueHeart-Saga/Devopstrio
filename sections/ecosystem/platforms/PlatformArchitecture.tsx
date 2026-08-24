@@ -16,43 +16,43 @@ export function PlatformArchitecture() {
       level: "01",
       name: "Users & Client Access",
       desc: "Corporate administrators, end-users, and API integrations.",
-      bgImage: "/assets/common/2fe7f9184c515b0c515ce38bc8a25efa%201.png"
+      bgImage: "/assets/common/2fe7f9184c515b0c515ce38bc8a25efa-1.png"
     },
     {
       level: "02",
       name: "Web / Mobile Applications",
       desc: "Frontend React, Next.js, and React Native client layers.",
-      bgImage: "/assets/common/315e4fdc6263bfd240f36297e376576e%201.png"
+      bgImage: "/assets/common/315e4fdc6263bfd240f36297e376576e-1.png"
     },
     {
       level: "03",
       name: "API Gateway & Security Layer",
       desc: "Unified authentication protocols, rate limiting, and SSO route proxies.",
-      bgImage: "/assets/common/45ea830d170d382ade235db479060da7%201.png"
+      bgImage: "/assets/common/45ea830d170d382ade235db479060da7-1.png"
     },
     {
       level: "04",
       name: "AI Services Engine",
       desc: "Context vector pipelines, LLM routing nodes, and prompt validations.",
-      bgImage: "/assets/common/464d8932bca4d6bb552ff2dcf2f3c5ca%201.png"
+      bgImage: "/assets/common/464d8932bca4d6bb552ff2dcf2f3c5ca-1.png"
     },
     {
       level: "05",
       name: "Core Business Services",
       desc: "SaaS multi-tenant business routines, billing runs, and transaction queues.",
-      bgImage: "/assets/common/82090d7be4ef5694954ce77f9cc2e627%201.png"
+      bgImage: "/assets/common/82090d7be4ef5694954ce77f9cc2e627-1.png"
     },
     {
       level: "06",
       name: "Database & Storage Layer",
       desc: "Isolated transactional databases (PostgreSQL) and document search engines (MongoDB).",
-      bgImage: "/assets/common/90361fed0bb781d7c86e451995b4dbce%201.png"
+      bgImage: "/assets/common/90361fed0bb781d7c86e451995b4dbce-1.png"
     },
     {
       level: "07",
       name: "Multi-Cloud Infrastructure",
       desc: "Secure host orchestration nodes across Azure, AWS, and OCI.",
-      bgImage: "/assets/common/945ab601f043c558e0a8162da2a1eb4c%201.png"
+      bgImage: "/assets/common/945ab601f043c558e0a8162da2a1eb4c-1.png"
     }
   ];
 

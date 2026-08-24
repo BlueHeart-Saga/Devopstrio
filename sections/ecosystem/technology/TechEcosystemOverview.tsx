@@ -14,47 +14,47 @@ export function TechEcosystemOverview() {
     {
       name: "Artificial Intelligence",
       desc: "Building intelligent systems using neural networks, agents, and predictive engines.",
-      image: "/assets/ecosystem/grid/technology-stack page_categories Grid/Generated Design.png"
+      image: "/assets/ecosystem/grid/technology-stack-page_categories-Grid/Generated-Design.png"
     },
     {
       name: "Cloud Native",
       desc: "Constructing modern infrastructure at scale with serverless and Kubernetes.",
-      image: "/assets/ecosystem/grid/technology-stack page_categories Grid/Generated Design-1.png"
+      image: "/assets/ecosystem/grid/technology-stack-page_categories-Grid/Generated-Design-1.png"
     },
     {
       name: "Software Engineering",
       desc: "Developing highly responsive frontend and enterprise-grade backend systems.",
-      image: "/assets/ecosystem/grid/technology-stack page_categories Grid/Generated Design-2.png"
+      image: "/assets/ecosystem/grid/technology-stack-page_categories-Grid/Generated-Design-2.png"
     },
     {
       name: "Data Engineering",
       desc: "Setting up real-time telemetry streams, data lakehouses, and governance grids.",
-      image: "/assets/ecosystem/grid/technology-stack page_categories Grid/Generated Design-3.png"
+      image: "/assets/ecosystem/grid/technology-stack-page_categories-Grid/Generated-Design-3.png"
     },
     {
       name: "DevOps Toolchain",
       desc: "Continuous delivery configurations using GitOps pipelines and declarative IaC.",
-      image: "/assets/ecosystem/grid/technology-stack page_categories Grid/Generated Design-4.png"
+      image: "/assets/ecosystem/grid/technology-stack-page_categories-Grid/Generated-Design-4.png"
     },
     {
       name: "Cybersecurity",
       desc: "Zero-trust identity routing, security validation pipelines, and scanning services.",
-      image: "/assets/ecosystem/grid/technology-stack page_categories Grid/Generated Design-5.png"
+      image: "/assets/ecosystem/grid/technology-stack-page_categories-Grid/Generated-Design-5.png"
     },
     {
       name: "Platform Engineering",
       desc: "Boosting developer onboarding speeds through unified self-service portal dashboards.",
-      image: "/assets/ecosystem/grid/technology-stack page_categories Grid/Generated Design-6.png"
+      image: "/assets/ecosystem/grid/technology-stack-page_categories-Grid/Generated-Design-6.png"
     },
     {
       name: "Quality Engineering",
       desc: "Continuous quality verification using Playwright, Cypress, and performance load scripts.",
-      image: "/assets/ecosystem/grid/technology-stack page_categories Grid/Generated Design-7.png"
+      image: "/assets/ecosystem/grid/technology-stack-page_categories-Grid/Generated-Design-7.png"
     },
     {
       name: "Emerging Technologies",
       desc: "Researching post-quantum cryptography algorithms, digital twins, and edge networks.",
-      image: "/assets/ecosystem/grid/technology-stack page_categories Grid/Generated Design-8.png"
+      image: "/assets/ecosystem/grid/technology-stack-page_categories-Grid/Generated-Design-8.png"
     }
   ];
 

@@ -11,11 +11,11 @@ export function PartnershipsHero() {
       <div className="absolute inset-0 z-0 pointer-events-none select-none overflow-hidden">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src="/assets/About-page/hero/IMG%200001_2.png"
+          src="/assets/About-page/hero/IMG-0001_2.png"
           alt="Hero Background"
           className="w-full h-full object-cover object-center opacity-75 filter contrast-110 brightness-110"
           onError={(e) => {
-            e.currentTarget.src = "/assets/About-page/hero/IMG 0001_2.png";
+            e.currentTarget.src = "/assets/About-page/hero/IMG-0001_2.png";
           }}
         />
         {/* Soft Ambient Overlay Gradients for High Visibility & Readability */}

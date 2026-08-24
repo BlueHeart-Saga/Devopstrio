@@ -17,7 +17,7 @@ export function TechnologyResourcesSection({
   onDownload: (item: any, e?: React.MouseEvent) => void;
 }) {
   const chromaItems: ChromaItem[] = techResources.map((item, idx) => ({
-    image: item.image || `/assets/common/09ff7846bc8c9998745688779c09f88d 1.png`,
+    image: item.image || `/assets/common/09ff7846bc8c9998745688779c09f88d-1.png`,
     title: item.title,
     subtitle: item.description || "Reference architectures, deployment blueprints & playbooks.",
     handle: item.size || "Tech Spec",

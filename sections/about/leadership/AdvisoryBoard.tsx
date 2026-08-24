@@ -98,7 +98,7 @@ export const AdvisoryBoard = () => {
         >
           <div className="absolute inset-0 bg-gradient-to-t from-[#030303]/60 via-transparent to-[#030303]/20 z-10 pointer-events-none" />
           <img
-            src="/assets/About-page/card/about inside leadership-team_Governance banner.png"
+            src="/assets/About-page/card/about-inside-leadership-team_Governance-banner.png"
             alt="Advisory Board Governance & Insights"
             className="w-full h-full object-cover object-center group-hover:scale-[1.02] transition-transform duration-1000 ease-out"
           />

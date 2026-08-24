@@ -24,7 +24,7 @@ const industryList: IndustryUseCase[] = [
   {
     slug: "banking-finance",
     name: "Banking & Finance",
-    image: "/assets/Industries-page/industries/Banking & Finance.png",
+    image: "/assets/Industries-page/industries/Banking-and-Finance.png",
     desc: "Secure, regulatory-compliant solutions for banking, investing, and digital payments.",
     bulletsMap: {
       "ai-data-innovation": ["AI Fraud Detection", "AI Credit Scoring", "Conversational Portfolio Assistants"],
@@ -38,7 +38,7 @@ const industryList: IndustryUseCase[] = [
   {
     slug: "healthcare-life-sciences",
     name: "Healthcare & Life Sciences",
-    image: "/assets/Industries-page/industries/Healthcare & Life Sciences.png",
+    image: "/assets/Industries-page/industries/Healthcare-and-Life-Sciences.png",
     desc: "HIPAA-compliant telehealth apps, EHR platforms, and research databases.",
     bulletsMap: {
       "ai-data-innovation": ["Clinical Scribes & Summaries", "Genomic Research Accelerations", "Intelligent Patient Ingest Routing"],
@@ -52,7 +52,7 @@ const industryList: IndustryUseCase[] = [
   {
     slug: "retail-ecommerce",
     name: "Retail & E-Commerce",
-    image: "/assets/Industries-page/industries/Retail & E-Commerce.png",
+    image: "/assets/Industries-page/industries/Retail-and-E-Commerce.png",
     desc: "Omni-channel engines, high-speed checkouts, and real-time inventory systems.",
     bulletsMap: {
       "ai-data-innovation": ["Personalized Shopping Feeds", "AI Chat Support Assistants", "Seasonal Demand Forecasts"],
@@ -94,7 +94,7 @@ const industryList: IndustryUseCase[] = [
   {
     slug: "media-entertainment",
     name: "Media & Entertainment",
-    image: "/assets/Industries-page/industries/Media & Entertainment.png",
+    image: "/assets/Industries-page/industries/Media-and-Entertainment.png",
     desc: "High-bandwidth VOD platforms, live broadcasting, and digital assets.",
     bulletsMap: {
       "ai-data-innovation": ["Automatic Video Tagging", "User Content Recommendation", "AI Subtitle Generation"],
@@ -122,7 +122,7 @@ const industryList: IndustryUseCase[] = [
   {
     slug: "government-public-sector",
     name: "Government & Public Sector",
-    image: "/assets/Industries-page/industries/Government & Public Sector.png",
+    image: "/assets/Industries-page/industries/Government-and-Public-Sector.png",
     desc: "Citizen portals, cloud modernization, and strict security compliance.",
     bulletsMap: {
       "ai-data-innovation": ["Citizen Document AI Scanners", "Public Data Analysis Models", "Intelligent Support Systems"],

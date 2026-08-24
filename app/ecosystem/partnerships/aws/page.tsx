@@ -595,17 +595,17 @@ export default function AWSSteategicAllianceHub() {
       <PartnerCertifications
         title="AWS Certifications"
         certifications={[
-          { image: "/assets/ecosystem/aws-awards/Group 1000008904.png" },
-          { image: "/assets/ecosystem/aws-awards/Group 1000008905.png" },
-          { image: "/assets/ecosystem/aws-awards/Group 1000008906.png" },
-          { image: "/assets/ecosystem/aws-awards/Group 1000008907.png" },
-          { image: "/assets/ecosystem/aws-awards/image 118.png" },
-          { image: "/assets/ecosystem/aws-awards/image 119-Photoroom 1.png" },
-          { image: "/assets/ecosystem/aws-awards/image 119-Photoroom 2.png" },
-          { image: "/assets/ecosystem/aws-awards/image 119-Photoroom 3.png" },
-          { image: "/assets/ecosystem/aws-awards/image 120.png" },
-          { image: "/assets/ecosystem/aws-awards/image 141.png" },
-          { image: "/assets/ecosystem/aws-awards/image 144-Photoroom 1.png" }
+          { image: "/assets/ecosystem/aws-awards/Group-1000008904.png" },
+          { image: "/assets/ecosystem/aws-awards/Group-1000008905.png" },
+          { image: "/assets/ecosystem/aws-awards/Group-1000008906.png" },
+          { image: "/assets/ecosystem/aws-awards/Group-1000008907.png" },
+          { image: "/assets/ecosystem/aws-awards/image-118.png" },
+          { image: "/assets/ecosystem/aws-awards/image-119-Photoroom-1.png" },
+          { image: "/assets/ecosystem/aws-awards/image-119-Photoroom-2.png" },
+          { image: "/assets/ecosystem/aws-awards/image-119-Photoroom-3.png" },
+          { image: "/assets/ecosystem/aws-awards/image-120.png" },
+          { image: "/assets/ecosystem/aws-awards/image-141.png" },
+          { image: "/assets/ecosystem/aws-awards/image-144-Photoroom-1.png" }
         ]}
       />
 

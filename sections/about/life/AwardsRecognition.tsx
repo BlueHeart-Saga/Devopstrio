@@ -10,7 +10,7 @@ const awards = [
     title: "Employee Excellence Award",
     subtitle: "Q4 2025 Recognition Night",
     description: <>Celebrating individuals who go beyond their role to deliver extraordinary results and inspire those around them under our <Link href="/careers" className="text-rose-500 hover:underline font-bold">careers development program</Link>.</>,
-    image: "/assets/About-page/life-at-devopstrio/032138c4134fcdf8077d84f8a7737cf9 1.png",
+    image: "/assets/About-page/life-at-devopstrio/032138c4134fcdf8077d84f8a7737cf9-1.png",
     year: "2025",
     count: "12 Awardees"
   },
@@ -18,7 +18,7 @@ const awards = [
     title: "Innovation Award",
     subtitle: "Annual Engineering Summit",
     description: <>Honoring teams who shipped breakthrough features and products that fundamentally changed how our clients operate with <Link href="/services/software-development" className="text-rose-500 hover:underline font-bold">product engineering</Link>.</>,
-    image: "/assets/About-page/life-at-devopstrio/74274f9572786d02b259386996664713 1.png",
+    image: "/assets/About-page/life-at-devopstrio/74274f9572786d02b259386996664713-1.png",
     year: "2025",
     count: "5 Teams"
   },
@@ -26,7 +26,7 @@ const awards = [
     title: "Customer Success Award",
     subtitle: "Client Satisfaction Program",
     description: <>Recognizing delivery teams that achieved outstanding client NPS scores and project outcomes across <Link href="/about/global-presence" className="text-rose-500 hover:underline font-bold">global presence</Link> engagements.</>,
-    image: "/assets/About-page/life-at-devopstrio/a92aaf7afdcc998ac1f4170d0ce4f3bf 1.png",
+    image: "/assets/About-page/life-at-devopstrio/a92aaf7afdcc998ac1f4170d0ce4f3bf-1.png",
     year: "2024",
     count: "8 Teams"
   },
@@ -34,7 +34,7 @@ const awards = [
     title: "Engineering Excellence Award",
     subtitle: "Platform & Architecture Summit",
     description: <>Given to engineers who demonstrate mastery of their craft through performance, reliability, and code quality in <Link href="/services/devops-automation" className="text-rose-500 hover:underline font-bold">DevOps & platform automation</Link>.</>,
-    image: "/assets/About-page/life-at-devopstrio/f06bd1e09e11b43ff330d32ecd4e0377 1.png",
+    image: "/assets/About-page/life-at-devopstrio/f06bd1e09e11b43ff330d32ecd4e0377-1.png",
     year: "2024",
     count: "6 Awardees"
   },

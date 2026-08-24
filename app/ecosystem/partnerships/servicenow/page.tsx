@@ -617,20 +617,20 @@ export default function ServiceNowPartnershipPage() {
       <PartnerCertifications 
         title="ServiceNow Certifications"
         certifications={[
-            { image: "/assets/ecosystem/Servicenow_Aards/image 164.png" },
-            { image: "/assets/ecosystem/Servicenow_Aards/image 165.png" },
-            { image: "/assets/ecosystem/Servicenow_Aards/image 166.png" },
-            { image: "/assets/ecosystem/Servicenow_Aards/image 167.png" },
-            { image: "/assets/ecosystem/Servicenow_Aards/image 168.png" },
-            { image: "/assets/ecosystem/Servicenow_Aards/image 169.png" },
-            { image: "/assets/ecosystem/Servicenow_Aards/image 170.png" },
-            { image: "/assets/ecosystem/Servicenow_Aards/image 171.png" },
-            { image: "/assets/ecosystem/Servicenow_Aards/image 172.png" },
-            { image: "/assets/ecosystem/Servicenow_Aards/image 173.png" },
-            { image: "/assets/ecosystem/Servicenow_Aards/image 174.png" },
-            { image: "/assets/ecosystem/Servicenow_Aards/image 175.png" },
-            { image: "/assets/ecosystem/Servicenow_Aards/image 176.png" },
-            { image: "/assets/ecosystem/Servicenow_Aards/image 177.png" }
+            { image: "/assets/ecosystem/Servicenow_Aards/image-164.png" },
+            { image: "/assets/ecosystem/Servicenow_Aards/image-165.png" },
+            { image: "/assets/ecosystem/Servicenow_Aards/image-166.png" },
+            { image: "/assets/ecosystem/Servicenow_Aards/image-167.png" },
+            { image: "/assets/ecosystem/Servicenow_Aards/image-168.png" },
+            { image: "/assets/ecosystem/Servicenow_Aards/image-169.png" },
+            { image: "/assets/ecosystem/Servicenow_Aards/image-170.png" },
+            { image: "/assets/ecosystem/Servicenow_Aards/image-171.png" },
+            { image: "/assets/ecosystem/Servicenow_Aards/image-172.png" },
+            { image: "/assets/ecosystem/Servicenow_Aards/image-173.png" },
+            { image: "/assets/ecosystem/Servicenow_Aards/image-174.png" },
+            { image: "/assets/ecosystem/Servicenow_Aards/image-175.png" },
+            { image: "/assets/ecosystem/Servicenow_Aards/image-176.png" },
+            { image: "/assets/ecosystem/Servicenow_Aards/image-177.png" }
           ]}
       />
 

@@ -10,19 +10,19 @@ const industries = [
     slug: "banking-finance",
     name: "Banking & Finance",
     href: "/industries/banking-finance",
-    image: "/assets/Industries-page/industries/Banking & Finance.png"
+    image: "/assets/Industries-page/industries/Banking-and-Finance.png"
   },
   {
     slug: "healthcare-life-sciences",
     name: "Healthcare & Life Sciences",
     href: "/industries/healthcare-life-sciences",
-    image: "/assets/Industries-page/industries/Healthcare & Life Sciences.png"
+    image: "/assets/Industries-page/industries/Healthcare-and-Life-Sciences.png"
   },
   {
     slug: "retail-ecommerce",
     name: "Retail & E-Commerce",
     href: "/industries/retail-ecommerce",
-    image: "/assets/Industries-page/industries/Retail & E-Commerce.png"
+    image: "/assets/Industries-page/industries/Retail-and-E-Commerce.png"
   },
   {
     slug: "manufacturing",
@@ -40,7 +40,7 @@ const industries = [
     slug: "media-entertainment",
     name: "Media & Entertainment",
     href: "/industries/media-entertainment",
-    image: "/assets/Industries-page/industries/Media & Entertainment.png"
+    image: "/assets/Industries-page/industries/Media-and-Entertainment.png"
   },
   {
     slug: "education",
@@ -52,7 +52,7 @@ const industries = [
     slug: "government-public-sector",
     name: "Government & Public Sector",
     href: "/industries/government-public-sector",
-    image: "/assets/Industries-page/industries/Government & Public Sector.png"
+    image: "/assets/Industries-page/industries/Government-and-Public-Sector.png"
   }
 ];
 

@@ -128,7 +128,7 @@ export default function UniversityProgramsPage() {
             <div className="lg:col-span-6 relative">
               <div className="relative rounded-[24px] overflow-hidden border border-zinc-800 shadow-2xl bg-zinc-900 group">
                 <img
-                  src="/assets/common/e76e125035885aab9c9070ce85df239e 1.png"
+                  src="/assets/common/e76e125035885aab9c9070ce85df239e-1.png"
                   alt="Students working in Devopstrio engineering labs"
                   className="w-full h-[420px] object-cover group-hover:scale-105 transition-transform duration-500"
                 />
@@ -339,7 +339,7 @@ export default function UniversityProgramsPage() {
             <div className="lg:col-span-6">
               <div className="rounded-[24px] overflow-hidden border border-zinc-800 shadow-2xl bg-zinc-950 group">
                 <img
-                  src="/assets/common/37b9b888cc479ea7b74d2d9a05c37597 1.png"
+                  src="/assets/common/37b9b888cc479ea7b74d2d9a05c37597-1.png"
                   alt="Faculty and engineers discussing architecture"
                   className="w-full h-[360px] object-cover group-hover:scale-105 transition-transform duration-500"
                 />
@@ -480,11 +480,11 @@ export default function UniversityProgramsPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4">
             {[
-              { name: "Cloud Engineering Lab", img: "/assets/common/464d8932bca4d6bb552ff2dcf2f3c5ca 1.png", focus: "Azure & AWS Landing Zones" },
-              { name: "GenAI & LLM Lab", img: "/assets/common/9d91b93f83e6d4cd494ec13611b3e50e 1.png", focus: "Vector DBs & Multi-Agents" },
-              { name: "DevOps & K8s Sandbox", img: "/assets/common/1b065043b6959827c05a0073c93a4a53 1.png", focus: "ArgoCD & GitOps Workflows" },
-              { name: "Cybersecurity Perimeter Lab", img: "/assets/common/f317dd71184f5c47d601eeb9508bf92c 1.png", focus: "Zero Trust & eBPF Networks" },
-              { name: "IoT & Edge Computing Lab", img: "/assets/common/45ea830d170d382ade235db479060da7 1.png", focus: "Edge Data Processing" }
+              { name: "Cloud Engineering Lab", img: "/assets/common/464d8932bca4d6bb552ff2dcf2f3c5ca-1.png", focus: "Azure & AWS Landing Zones" },
+              { name: "GenAI & LLM Lab", img: "/assets/common/9d91b93f83e6d4cd494ec13611b3e50e-1.png", focus: "Vector DBs & Multi-Agents" },
+              { name: "DevOps & K8s Sandbox", img: "/assets/common/1b065043b6959827c05a0073c93a4a53-1.png", focus: "ArgoCD & GitOps Workflows" },
+              { name: "Cybersecurity Perimeter Lab", img: "/assets/common/f317dd71184f5c47d601eeb9508bf92c-1.png", focus: "Zero Trust & eBPF Networks" },
+              { name: "IoT & Edge Computing Lab", img: "/assets/common/45ea830d170d382ade235db479060da7-1.png", focus: "Edge Data Processing" }
             ].map((lab, idx) => (
               <div key={idx} className="p-4 rounded-[20px] bg-[#0A0A0A] border border-zinc-800/80 hover:border-rose-500/50 transition-all space-y-3 group">
                 <div className="h-32 rounded-xl overflow-hidden relative">
@@ -557,12 +557,12 @@ export default function UniversityProgramsPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { name: "Software Architects", exp: "12+ Years Experience", expertise: "Microservices & Distributed Systems", img: "/assets/common/1b065043b6959827c05a0073c93a4a53 1.png" },
-              { name: "Cloud Practice Leads", exp: "15+ Years Experience", expertise: "Azure CAF & AWS Control Tower", img: "/assets/common/37b9b888cc479ea7b74d2d9a05c37597 1.png" },
-              { name: "AI Research Specialists", exp: "10+ Years Experience", expertise: "LLM RAG & Autonomous Agents", img: "/assets/common/9d91b93f83e6d4cd494ec13611b3e50e 1.png" },
-              { name: "DevOps & SRE Leads", exp: "14+ Years Experience", expertise: "Kubernetes & GitOps Pipelines", img: "/assets/common/f317dd71184f5c47d601eeb9508bf92c 1.png" },
-              { name: "Cybersecurity Directors", exp: "16+ Years Experience", expertise: "Zero Trust Architecture & Vault", img: "/assets/common/782e79a0bc5e9f58cb9af6a27727ca7b 1.png" },
-              { name: "Data Engineering Leads", exp: "11+ Years Experience", expertise: "Kafka Streaming & Snowflake", img: "/assets/common/82090d7be4ef5694954ce77f9cc2e627 1.png" }
+              { name: "Software Architects", exp: "12+ Years Experience", expertise: "Microservices & Distributed Systems", img: "/assets/common/1b065043b6959827c05a0073c93a4a53-1.png" },
+              { name: "Cloud Practice Leads", exp: "15+ Years Experience", expertise: "Azure CAF & AWS Control Tower", img: "/assets/common/37b9b888cc479ea7b74d2d9a05c37597-1.png" },
+              { name: "AI Research Specialists", exp: "10+ Years Experience", expertise: "LLM RAG & Autonomous Agents", img: "/assets/common/9d91b93f83e6d4cd494ec13611b3e50e-1.png" },
+              { name: "DevOps & SRE Leads", exp: "14+ Years Experience", expertise: "Kubernetes & GitOps Pipelines", img: "/assets/common/f317dd71184f5c47d601eeb9508bf92c-1.png" },
+              { name: "Cybersecurity Directors", exp: "16+ Years Experience", expertise: "Zero Trust Architecture & Vault", img: "/assets/common/782e79a0bc5e9f58cb9af6a27727ca7b-1.png" },
+              { name: "Data Engineering Leads", exp: "11+ Years Experience", expertise: "Kafka Streaming & Snowflake", img: "/assets/common/82090d7be4ef5694954ce77f9cc2e627-1.png" }
             ].map((mentor, idx) => (
               <Reveal key={idx} delay={idx * 0.05}>
                 <div className="p-6 rounded-[24px] bg-[#0A0A0A] border border-zinc-800/80 hover:border-rose-500/50 transition-all flex items-center gap-4 group">

@@ -313,7 +313,7 @@ export default function SaaSPlatformsPage() {
           >
             {[
               { name: "AWS", src: "/assets/Tech_logos/AWS.svg" },
-              { name: "Azure", src: "/assets/Tech_logos/Microsoft Azure.svg" },
+              { name: "Azure", src: "/assets/Tech_logos/Microsoft-Azure.svg" },
               { name: "Google Cloud", src: "/assets/Tech_logos/Google_Cloud.svg" },
               { name: "Docker", src: "/assets/Tech_logos/Docker.svg" },
               { name: "Kubernetes", src: "/assets/Tech_logos/Kubernetes.svg" },
@@ -325,7 +325,7 @@ export default function SaaSPlatformsPage() {
 
               // Duplicated perfectly for the 50% translation loop
               { name: "AWS", src: "/assets/Tech_logos/AWS.svg" },
-              { name: "Azure", src: "/assets/Tech_logos/Microsoft Azure.svg" },
+              { name: "Azure", src: "/assets/Tech_logos/Microsoft-Azure.svg" },
               { name: "Google Cloud", src: "/assets/Tech_logos/Google_Cloud.svg" },
               { name: "Docker", src: "/assets/Tech_logos/Docker.svg" },
               { name: "Kubernetes", src: "/assets/Tech_logos/Kubernetes.svg" },
@@ -672,14 +672,14 @@ export default function SaaSPlatformsPage() {
           <div className="flex overflow-x-auto gap-6 pb-12 snap-x snap-mandatory [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
             {valueProps.map((prop, idx) => {
               const cardImages = [
-                "/assets/common/09ff7846bc8c9998745688779c09f88d 1.png",
-                "/assets/common/1b065043b6959827c05a0073c93a4a53 1.png",
-                "/assets/common/260b761ad40c3ad2acba2c6666894539 1.png",
-                "/assets/common/2fe7f9184c515b0c515ce38bc8a25efa 1.png",
-                "/assets/common/315e4fdc6263bfd240f36297e376576e 1.png",
-                "/assets/common/37b9b888cc479ea7b74d2d9a05c37597 1.png",
-                "/assets/common/45ea830d170d382ade235db479060da7 1.png",
-                "/assets/common/464d8932bca4d6bb552ff2dcf2f3c5ca 1.png"
+                "/assets/common/09ff7846bc8c9998745688779c09f88d-1.png",
+                "/assets/common/1b065043b6959827c05a0073c93a4a53-1.png",
+                "/assets/common/260b761ad40c3ad2acba2c6666894539-1.png",
+                "/assets/common/2fe7f9184c515b0c515ce38bc8a25efa-1.png",
+                "/assets/common/315e4fdc6263bfd240f36297e376576e-1.png",
+                "/assets/common/37b9b888cc479ea7b74d2d9a05c37597-1.png",
+                "/assets/common/45ea830d170d382ade235db479060da7-1.png",
+                "/assets/common/464d8932bca4d6bb552ff2dcf2f3c5ca-1.png"
               ];
               const image = cardImages[idx % cardImages.length];
 
@@ -853,7 +853,7 @@ export default function SaaSPlatformsPage() {
               // Cloud Providers
               { image: "/assets/Tech_logos/AWS.svg", name: "AWS", categories: ["Cloud Providers", "Technology"] },
               { image: "/assets/Tech_logos/Google_Cloud.svg", name: "Google Cloud", categories: ["Cloud Providers", "AI Agents"] },
-              { image: "/assets/Tech_logos/Microsoft Azure.svg", name: "Azure", categories: ["Cloud Providers", "AI Agents"] },
+              { image: "/assets/Tech_logos/Microsoft-Azure.svg", name: "Azure", categories: ["Cloud Providers", "AI Agents"] },
               { image: "/assets/Tech_logos/IBM_Cloud.svg", name: "IBM Cloud", categories: ["Cloud Providers"] },
               { image: "/assets/Tech_logos/Oracle_Cloud.svg", name: "Oracle Cloud", categories: ["Cloud Providers"] },
 

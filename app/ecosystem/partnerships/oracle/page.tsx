@@ -654,16 +654,16 @@ export default function OracleStrategicAllianceHub() {
       <PartnerCertifications 
         title="Oracle Certifications"
         certifications={[
-            { image: "/assets/ecosystem/ORACLE_Awards/Group 1000008908.png" },
-            { image: "/assets/ecosystem/ORACLE_Awards/Group 1000008909.png" },
-            { image: "/assets/ecosystem/ORACLE_Awards/image 154.png" },
-            { image: "/assets/ecosystem/ORACLE_Awards/image 155.png" },
-            { image: "/assets/ecosystem/ORACLE_Awards/image 156.png" },
-            { image: "/assets/ecosystem/ORACLE_Awards/image 157.png" },
-            { image: "/assets/ecosystem/ORACLE_Awards/image 158.png" },
-            { image: "/assets/ecosystem/ORACLE_Awards/image 159.png" },
-            { image: "/assets/ecosystem/ORACLE_Awards/image 162.png" },
-            { image: "/assets/ecosystem/ORACLE_Awards/image 163.png" }
+            { image: "/assets/ecosystem/ORACLE_Awards/Group-1000008908.png" },
+            { image: "/assets/ecosystem/ORACLE_Awards/Group-1000008909.png" },
+            { image: "/assets/ecosystem/ORACLE_Awards/image-154.png" },
+            { image: "/assets/ecosystem/ORACLE_Awards/image-155.png" },
+            { image: "/assets/ecosystem/ORACLE_Awards/image-156.png" },
+            { image: "/assets/ecosystem/ORACLE_Awards/image-157.png" },
+            { image: "/assets/ecosystem/ORACLE_Awards/image-158.png" },
+            { image: "/assets/ecosystem/ORACLE_Awards/image-159.png" },
+            { image: "/assets/ecosystem/ORACLE_Awards/image-162.png" },
+            { image: "/assets/ecosystem/ORACLE_Awards/image-163.png" }
           ]}
       />
 

@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { Reveal } from "@/components/ui/Reveal";
 
 const certifications = [
-  { year: "2026", title: "Networking Computing", logo: "/assets/Awards/Netwoking_Computing_Awards_2026 Finalist.png" },
+  { year: "2026", title: "Networking Computing", logo: "/assets/Awards/Netwoking_Computing_Awards_2026-Finalist.png" },
   { year: "2025", title: "Computing Security", logo: "/assets/Awards/2025_Computing_Security_Awards-1.png" },
   { year: "2023", title: "HSJ Partnerships", logo: "/assets/Awards/HSJ_Partnership_Awards_2023.png" },
   { year: "2022", title: "Dell Gold Partner", logo: "/assets/Awards/Dell_Technologies_Gold_Partner_2022-2023.png" },
@@ -23,16 +23,16 @@ const certifications = [
   { year: "2021", title: "Data Modernisation", logo: "/assets/Awards/Data_Estate_Modernisation_Award.png" },
   { year: "2021", title: "Risk Management", logo: "/assets/Awards/Risk_Management_Award.png" },
   { year: "2021", title: "Living Wage Employer", logo: "/assets/Awards/Living_Wage_Employer.png" },
-  { year: "2020", title: "European IT Excellence", logo: "/assets/Awards/European_IT&Software_Excellence_Awards_2020.png" },
+  { year: "2020", title: "European IT Excellence", logo: "/assets/Awards/European_ITandSoftware_Excellence_Awards_2020.png" },
   { year: "2020", title: "Microsoft Gold Status", logo: "/assets/Awards/MS_Gold_Status.png" },
   { year: "2020", title: "IBM Gold Partner", logo: "/assets/Awards/IBM_Gold_Partner.png" },
   { year: "2019", title: "IT Europa Finalist", logo: "/assets/Awards/2019_IT_Europa_Finalist.png" },
   { year: "2019", title: "G-Cloud 11", logo: "/assets/Awards/G-Cloud_11_Framework_Award.png" },
   { year: "2018", title: "Lenovo Platinum Partner", logo: "/assets/Awards/2018_Lenovo_Platinum_Partner_Data_Center_Partner.png" },
   { year: "2018", title: "4-Category Finalist", logo: "/assets/Awards/2018_Finalists_in_four_categories.png" },
-  { year: "2017", title: "Crown Commercial Service", logo: "/assets/Awards/June_2017- Crown_Commercial_Service_Supplier_(CCS).png" },
+  { year: "2017", title: "Crown Commercial Service", logo: "/assets/Awards/June_2017-Crown_Commercial_Service_Supplier_CCS.png" },
   { year: "2015", title: "IBM Business Partner", logo: "/assets/Awards/IBM_Business_Partner_Award_2015.png" },
-  { year: "2015", title: "European IT Excellence", logo: "/assets/Awards/2015_European_IT&Software_Excellence_Award.png" },
+  { year: "2015", title: "European IT Excellence", logo: "/assets/Awards/2015_European_ITandSoftware_Excellence_Award.png" },
   { year: "2014", title: "IBM Business Partner", logo: "/assets/Awards/IBM_Business_Partner_Award_2014.png" },
   { year: "2014", title: "Microsoft Partner Finalist", logo: "/assets/Awards/2014_Microsoft_Partner_of_the_Year_Award_Finalist.png" },
   { year: "2013", title: "IBM Platinum Partner", logo: "/assets/Awards/IBM_Platinum_Award_2013.png" },
@@ -69,7 +69,7 @@ export function AllCertifications() {
               </span>
               {/* Curved top-to-bottom side arrow image positioned directly AFTER Capability */}
               <img
-                src="/assets/components/top-to-buttom-side%20-Arrowmid.png"
+                src="/assets/components/top-to-buttom-side-Arrowmid.png"
                 alt="Side arrow pointing down"
                 className="absolute -bottom-14 sm:-bottom-20 md:-bottom-24 -right-8 sm:-right-12 md:-right-16 scale-x-[-1] w-10 sm:w-14 md:w-16 lg:w-18 h-auto object-contain filter drop-shadow-[0_0_15px_rgba(244,63,94,0.5)] pointer-events-none select-none z-20"
               />

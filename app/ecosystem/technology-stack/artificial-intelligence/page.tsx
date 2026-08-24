@@ -322,14 +322,14 @@ const AIArchitecture = () => {
 // ==========================================
 const AICapabilities = () => {
   const capabilities = [
-    { title: "Generative AI", tag: "Create", desc: "Build chat interfaces, copilots, and AI assistants.", image: "/assets/common/1b065043b6959827c05a0073c93a4a53 1.png" },
-    { title: "Machine Learning", tag: "Predict", desc: "Train prediction models and linear regressions.", image: "/assets/common/260b761ad40c3ad2acba2c6666894539 1.png" },
-    { title: "NLP", tag: "Understand", desc: "Extract insights and sentiment from language.", image: "/assets/common/315e4fdc6263bfd240f36297e376576e 1.png" },
-    { title: "Computer Vision", tag: "See", desc: "Automate image analysis and object detection.", image: "/assets/common/37b9b888cc479ea7b74d2d9a05c37597 1.png" },
-    { title: "AI Search", tag: "Discover", desc: "Implement semantic and cognitive data search.", image: "/assets/common/464d8932bca4d6bb552ff2dcf2f3c5ca 1.png" },
-    { title: "AI Agents", tag: "Automate", desc: "Deploy task automation and autonomous logic engines.", image: "/assets/common/782e79a0bc5e9f58cb9af6a27727ca7b 1.png" },
-    { title: "Recommendation Engines", tag: "Personalize", desc: "Deliver personalized and dynamic content.", image: "/assets/common/82090d7be4ef5694954ce77f9cc2e627 1.png" },
-    { title: "Intelligent Automation", tag: "Execute", desc: "Streamline workflows and business process automation.", image: "/assets/common/90361fed0bb781d7c86e451995b4dbce 1.png" }
+    { title: "Generative AI", tag: "Create", desc: "Build chat interfaces, copilots, and AI assistants.", image: "/assets/common/1b065043b6959827c05a0073c93a4a53-1.png" },
+    { title: "Machine Learning", tag: "Predict", desc: "Train prediction models and linear regressions.", image: "/assets/common/260b761ad40c3ad2acba2c6666894539-1.png" },
+    { title: "NLP", tag: "Understand", desc: "Extract insights and sentiment from language.", image: "/assets/common/315e4fdc6263bfd240f36297e376576e-1.png" },
+    { title: "Computer Vision", tag: "See", desc: "Automate image analysis and object detection.", image: "/assets/common/37b9b888cc479ea7b74d2d9a05c37597-1.png" },
+    { title: "AI Search", tag: "Discover", desc: "Implement semantic and cognitive data search.", image: "/assets/common/464d8932bca4d6bb552ff2dcf2f3c5ca-1.png" },
+    { title: "AI Agents", tag: "Automate", desc: "Deploy task automation and autonomous logic engines.", image: "/assets/common/782e79a0bc5e9f58cb9af6a27727ca7b-1.png" },
+    { title: "Recommendation Engines", tag: "Personalize", desc: "Deliver personalized and dynamic content.", image: "/assets/common/82090d7be4ef5694954ce77f9cc2e627-1.png" },
+    { title: "Intelligent Automation", tag: "Execute", desc: "Streamline workflows and business process automation.", image: "/assets/common/90361fed0bb781d7c86e451995b4dbce-1.png" }
   ];
 
   return (
@@ -512,14 +512,14 @@ const AIInfrastructure = () => {
 // ==========================================
 const AIUseCases = () => {
   const useCases = [
-    { title: "Customer Support AI", tag: "Support", desc: "Automate responses and resolve issues faster with AI agents.", image: "/assets/common/945ab601f043c558e0a8162da2a1eb4c 1.png" },
-    { title: "Document Intelligence", tag: "Process", desc: "Extract structured data from unstructured enterprise documents.", image: "/assets/common/9d91b93f83e6d4cd494ec13611b3e50e 1.png" },
-    { title: "Predictive Maintenance", tag: "Optimize", desc: "Forecast equipment failures and schedule proactive maintenance.", image: "/assets/common/b384eb0438c55e43c61e7595acc29638 1.png" },
-    { title: "Fraud Detection", tag: "Secure", desc: "Identify anomalous patterns and prevent financial fraud in real-time.", image: "/assets/common/e76e125035885aab9c9070ce85df239e 1.png" },
-    { title: "Healthcare Diagnostics", tag: "Analyze", desc: "Assist clinicians with AI-driven medical image analysis.", image: "/assets/common/f03cc521fb070dfae9d87768b791ff70 1.png" },
-    { title: "Demand Forecasting", tag: "Forecast", desc: "Optimize inventory and supply chain with ML-based predictions.", image: "/assets/common/f317dd71184f5c47d601eeb9508bf92c 1.png" },
-    { title: "Knowledge Management", tag: "Organize", desc: "Unify company knowledge into an intelligent, searchable hub.", image: "/assets/common/45ea830d170d382ade235db479060da7 1.png" },
-    { title: "Enterprise Search", tag: "Discover", desc: "Find precise answers across your internal document repositories.", image: "/assets/common/2fe7f9184c515b0c515ce38bc8a25efa 1.png" }
+    { title: "Customer Support AI", tag: "Support", desc: "Automate responses and resolve issues faster with AI agents.", image: "/assets/common/945ab601f043c558e0a8162da2a1eb4c-1.png" },
+    { title: "Document Intelligence", tag: "Process", desc: "Extract structured data from unstructured enterprise documents.", image: "/assets/common/9d91b93f83e6d4cd494ec13611b3e50e-1.png" },
+    { title: "Predictive Maintenance", tag: "Optimize", desc: "Forecast equipment failures and schedule proactive maintenance.", image: "/assets/common/b384eb0438c55e43c61e7595acc29638-1.png" },
+    { title: "Fraud Detection", tag: "Secure", desc: "Identify anomalous patterns and prevent financial fraud in real-time.", image: "/assets/common/e76e125035885aab9c9070ce85df239e-1.png" },
+    { title: "Healthcare Diagnostics", tag: "Analyze", desc: "Assist clinicians with AI-driven medical image analysis.", image: "/assets/common/f03cc521fb070dfae9d87768b791ff70-1.png" },
+    { title: "Demand Forecasting", tag: "Forecast", desc: "Optimize inventory and supply chain with ML-based predictions.", image: "/assets/common/f317dd71184f5c47d601eeb9508bf92c-1.png" },
+    { title: "Knowledge Management", tag: "Organize", desc: "Unify company knowledge into an intelligent, searchable hub.", image: "/assets/common/45ea830d170d382ade235db479060da7-1.png" },
+    { title: "Enterprise Search", tag: "Discover", desc: "Find precise answers across your internal document repositories.", image: "/assets/common/2fe7f9184c515b0c515ce38bc8a25efa-1.png" }
   ];
 
   return (

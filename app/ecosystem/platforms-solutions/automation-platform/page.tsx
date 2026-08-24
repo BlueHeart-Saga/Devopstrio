@@ -426,7 +426,7 @@ const IntegrationEcosystem = () => {
 const TechnologyStack = () => {
   const techs = [
     { name: "GitHub Actions", logo: "/assets/Tech_logos/GitHub.svg" },
-    { name: "Azure DevOps", logo: "/assets/Tech_logos/Microsoft Azure.svg" },
+    { name: "Azure DevOps", logo: "/assets/Tech_logos/Microsoft-Azure.svg" },
     { name: "GitLab CI", logo: "/assets/Tech_logos/GitLab.svg" },
     { name: "Jenkins", logo: "/assets/Tech_logos/Jenkins.svg" },
     { name: "Terraform", logo: "/assets/Tech_logos/HashiCorp.svg" },
@@ -439,7 +439,7 @@ const TechnologyStack = () => {
     { name: "Auto Anywhere", logo: "/assets/Tech_logos/vmware.svg" },
     { name: "HashiCorp", logo: "/assets/Tech_logos/HashiCorp.svg" },
     { name: "AWS", logo: "/assets/Tech_logos/AWS.svg" },
-    { name: "Azure", logo: "/assets/Tech_logos/Microsoft Azure.svg" },
+    { name: "Azure", logo: "/assets/Tech_logos/Microsoft-Azure.svg" },
     { name: "Google Cloud", logo: "/assets/Tech_logos/Google_Cloud.svg" },
     { name: "Python", logo: "/assets/Tech-icons/python-logo_svgstack_com_29121780931061.svg" },
     { name: "PowerShell", logo: "/assets/Tech-icons/windows-powershell-logo_svgstack_com_29041780931352.svg" }

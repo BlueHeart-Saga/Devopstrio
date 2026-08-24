@@ -351,7 +351,7 @@ export default function SafeSignProductPage() {
                 <div className="p-3 md:p-4 flex items-center justify-center bg-zinc-950/20 border-t lg:border-t-0 lg:border-l border-zinc-900/60">
                   <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden border border-zinc-800/80 shadow-2xl group/img">
                     <img
-                      src="/assets/common/90361fed0bb781d7c86e451995b4dbce 1.png"
+                      src="/assets/common/90361fed0bb781d7c86e451995b4dbce-1.png"
                       alt="SafeSign Platform Overview"
                       className="w-full h-full object-cover transition-transform duration-700 group-hover/img:scale-[1.02]"
                     />
@@ -884,10 +884,10 @@ export default function SafeSignProductPage() {
                 {integrationDetails.map((int, i) => {
                   const icons = [UserPlus, Activity, Briefcase, Globe];
                   const images = [
-                    "/assets/common/1b065043b6959827c05a0073c93a4a53 1.png",
-                    "/assets/common/260b761ad40c3ad2acba2c6666894539 1.png",
-                    "/assets/common/315e4fdc6263bfd240f36297e376576e 1.png",
-                    "/assets/common/37b9b888cc479ea7b74d2d9a05c37597 1.png"
+                    "/assets/common/1b065043b6959827c05a0073c93a4a53-1.png",
+                    "/assets/common/260b761ad40c3ad2acba2c6666894539-1.png",
+                    "/assets/common/315e4fdc6263bfd240f36297e376576e-1.png",
+                    "/assets/common/37b9b888cc479ea7b74d2d9a05c37597-1.png"
                   ];
                   const Icon = icons[i];
                   return (
@@ -964,25 +964,25 @@ export default function SafeSignProductPage() {
                 icon: Lock,
                 title: "AES-256 Vault Encryption",
                 desc: "Data and metadata are strictly isolated within hardened databases managed by automated KMS rotations.",
-                image: "/assets/common/09ff7846bc8c9998745688779c09f88d 1.png"
+                image: "/assets/common/09ff7846bc8c9998745688779c09f88d-1.png"
               },
               {
                 icon: ShieldCheck,
                 title: "Global Compliance Matrices",
                 desc: "Engineered to exceed eIDAS Advanced criteria and stringent US ESIGN Act certification standards.",
-                image: "/assets/common/1b065043b6959827c05a0073c93a4a53 1.png"
+                image: "/assets/common/1b065043b6959827c05a0073c93a4a53-1.png"
               },
               {
                 icon: Globe,
                 title: "Data Sovereignty Routing",
                 desc: "Maintain absolute control by deploying storage nodes directly into your regional Azure or AWS clusters.",
-                image: "/assets/common/260b761ad40c3ad2acba2c6666894539 1.png"
+                image: "/assets/common/260b761ad40c3ad2acba2c6666894539-1.png"
               },
               {
                 icon: Activity,
                 title: "Cryptographic Integrity Seals",
                 desc: "Final PDF binaries are locked with SHA-256 hashes, instantly invalidating any unauthorized post-execution edits.",
-                image: "/assets/common/2fe7f9184c515b0c515ce38bc8a25efa 1.png"
+                image: "/assets/common/2fe7f9184c515b0c515ce38bc8a25efa-1.png"
               }
             ].map((sec, idx) => (
               <Reveal key={idx} delay={idx * 0.05}>

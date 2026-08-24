@@ -32,28 +32,28 @@ const GovernanceAccordion = () => {
       id: "resource-tagging",
       name: "Enforced Resource Tagging",
       icon: Layers,
-      image: "/assets/common/09ff7846bc8c9998745688779c09f88d%201.png",
+      image: "/assets/common/09ff7846bc8c9998745688779c09f88d-1.png",
       desc: "Automatically label nodes and enforce tagging policies across your multi-cloud footprint."
     },
     {
       id: "compliance-audit",
       name: "Compliance Checklists",
       icon: ShieldAlert,
-      image: "/assets/common/1b065043b6959827c05a0073c93a4a53%201.png",
+      image: "/assets/common/1b065043b6959827c05a0073c93a4a53-1.png",
       desc: "Auditor checklists scanning configurations weekly to guarantee continuous compliance."
     },
     {
       id: "resource-standards",
       name: "Resource Standards",
       icon: Server,
-      image: "/assets/common/260b761ad40c3ad2acba2c6666894539%201.png",
+      image: "/assets/common/260b761ad40c3ad2acba2c6666894539-1.png",
       desc: "Lock down allowed VM sizing families to enforce rigid architectural standards."
     },
     {
       id: "landing-zones",
       name: "Enterprise Landing Zones",
       icon: Cloud,
-      image: "/assets/common/2fe7f9184c515b0c515ce38bc8a25efa%201.png",
+      image: "/assets/common/2fe7f9184c515b0c515ce38bc8a25efa-1.png",
       desc: "Provision pre-isolated virtual networks to isolate traffic and contain blasts."
     }
   ];
@@ -140,52 +140,52 @@ const CloudSecurityCarousel = () => {
     {
       title: "IAM Role Audit",
       desc: "Identify unused root permissions and enforce least-privilege access across AWS, Azure, and GCP.",
-      image: "/assets/common/09ff7846bc8c9998745688779c09f88d%201.png"
+      image: "/assets/common/09ff7846bc8c9998745688779c09f88d-1.png"
     },
     {
       title: "Real-time Monitoring",
       desc: "Trace resource provisioning events and configuration drift instantly with continuous polling.",
-      image: "/assets/common/1b065043b6959827c05a0073c93a4a53%201.png"
+      image: "/assets/common/1b065043b6959827c05a0073c93a4a53-1.png"
     },
     {
       title: "Risk Detection Rules",
       desc: "Automatically alert team leaders to critical vulnerabilities like open public database ports.",
-      image: "/assets/common/260b761ad40c3ad2acba2c6666894539%201.png"
+      image: "/assets/common/260b761ad40c3ad2acba2c6666894539-1.png"
     },
     {
       title: "Secure Audit Logging",
       desc: "Archive immutable API action logs for rigorous SOC2 and ISO27001 compliance reviews.",
-      image: "/assets/common/2fe7f9184c515b0c515ce38bc8a25efa%201.png"
+      image: "/assets/common/2fe7f9184c515b0c515ce38bc8a25efa-1.png"
     },
     {
       title: "Zero-Trust Architecture",
       desc: "Enforce strict micro-segmentation of application perimeters to contain lateral movement.",
-      image: "/assets/common/315e4fdc6263bfd240f36297e376576e%201.png"
+      image: "/assets/common/315e4fdc6263bfd240f36297e376576e-1.png"
     },
     {
       title: "Vulnerability Scanning",
       desc: "Continuous deep-scanning of container images and VM snapshots before production deployment.",
-      image: "/assets/common/37b9b888cc479ea7b74d2d9a05c37597%201.png"
+      image: "/assets/common/37b9b888cc479ea7b74d2d9a05c37597-1.png"
     },
     {
       title: "Secret Management",
       desc: "Seamless encrypted vault integration for dynamic rotation of sensitive database credentials.",
-      image: "/assets/common/45ea830d170d382ade235db479060da7%201.png"
+      image: "/assets/common/45ea830d170d382ade235db479060da7-1.png"
     },
     {
       title: "Automated Threat Response",
       desc: "Instantly quarantine compromised instances and revoke access tokens during security events.",
-      image: "/assets/common/464d8932bca4d6bb552ff2dcf2f3c5ca%201.png"
+      image: "/assets/common/464d8932bca4d6bb552ff2dcf2f3c5ca-1.png"
     },
     {
       title: "DDoS Mitigation Edge",
       desc: "Intelligent edge protection against layer 7 volumetric attacks to guarantee API uptime.",
-      image: "/assets/common/782e79a0bc5e9f58cb9af6a27727ca7b%201.png"
+      image: "/assets/common/782e79a0bc5e9f58cb9af6a27727ca7b-1.png"
     },
     {
       title: "Data Loss Prevention",
       desc: "Proactively identify and restrict exposed PII stored in unencrypted public cloud buckets.",
-      image: "/assets/common/82090d7be4ef5694954ce77f9cc2e627%201.png"
+      image: "/assets/common/82090d7be4ef5694954ce77f9cc2e627-1.png"
     }
   ];
 
@@ -271,7 +271,7 @@ const CloudSecurityCarousel = () => {
 const CloudPartners = () => {
   const techLogos = [
     "/assets/Tech_logos/AWS.svg",
-    "/assets/Tech_logos/Microsoft%20Azure.svg",
+    "/assets/Tech_logos/Microsoft-Azure.svg",
     "/assets/Tech_logos/Google_Cloud.svg",
     "/assets/Tech_logos/Oracle_Cloud.svg",
     "/assets/Tech_logos/IBM_Cloud.svg",

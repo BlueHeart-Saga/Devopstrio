@@ -36,7 +36,7 @@ export function StrategicAlliances() {
         "Secure Landing Zones (CAF)",
         "Managed Cloud Platform Support"
       ],
-      logo: "/assets/Tech_logos/Microsoft Azure.svg",
+      logo: "/assets/Tech_logos/Microsoft-Azure.svg",
       ctaText: "Explore Microsoft Solutions",
       ctaLink: "/ecosystem/partnerships/microsoft",
       icon: <Network size={20} className="text-blue-500" />

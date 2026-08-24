@@ -453,7 +453,7 @@ const TechnologyStack = () => {
   const logos = [
     { name: "AWS Security Hub", src: "/assets/Tech_logos/AWS.svg" },
     { name: "Google SCC", src: "/assets/Tech_logos/Google_Cloud.svg" },
-    { name: "Azure AD", src: "/assets/Tech_logos/Microsoft%20Azure.svg" },
+    { name: "Azure AD", src: "/assets/Tech_logos/Microsoft-Azure.svg" },
     { name: "Cisco Security", src: "/assets/Tech_logos/cisco.svg" },
     { name: "Elastic", src: "/assets/Tech_logos/Elastic.svg" },
     { name: "Microsoft Defender", src: "/assets/Home-page/partners/Microsoft.svg" },

@@ -194,21 +194,21 @@ export const employeeStories = [
     name: "Sarah Jenkins",
     role: "Senior Cloud Infrastructure Architect",
     photoBg: "bg-gradient-to-tr from-rose-500 to-indigo-600",
-    image: "/assets/careers/careers_testimonial people/Sarah Jenkins.png",
+    image: "/assets/careers/careers_testimonial-people/Sarah-Jenkins.png",
     story: "Joining Devopstrio allowed me to transition from legacy maintenance to building zero-trust landing zones for national infrastructure. The learning support here is unmatched—I earned three AWS certificates in my first year."
   },
   {
     name: "Anand Sharma",
     role: "Lead DevOps Specialist",
     photoBg: "bg-gradient-to-tr from-emerald-500 to-teal-600",
-    image: "/assets/careers/careers_testimonial people/Anand Sharma.png",
+    image: "/assets/careers/careers_testimonial-people/Anand-Sharma.png",
     story: "At Devopstrio, we operate as one team. I design Kubernetes architectures in Bangalore, collaborate with our UK strategy lead, and launch container pipelines for clients in New York. Ownership is real here."
   },
   {
     name: "Eleanor Vance",
     role: "AI & Data Engineer",
     photoBg: "bg-gradient-to-tr from-pink-500 to-orange-500",
-    image: "/assets/careers/careers_testimonial people/Eleanor Vance.png",
+    image: "/assets/careers/careers_testimonial-people/Eleanor-Vance.png",
     story: "We don't build standard chatbots. We prototype custom semantic routers and state graphs in our Innovation Labs. It's exciting to work in a company where engineering is the primary strategic focus."
   }
 ];

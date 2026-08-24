@@ -19,35 +19,35 @@ export function EngineeringCOE() {
       name: "Cloud Excellence",
       focus: "Azure, AWS, OCI",
       desc: "Deploying multi-region systems, load balancers, and cost optimization structures.",
-      image: "/assets/ecosystem/innovation-labs page Showcase _Card/Cloud.png"
+      image: "/assets/ecosystem/innovation-labs-page-Showcase-_Card/Cloud.png"
     },
     {
       id: "02",
       name: "AI Excellence",
       focus: "LLMs, Agents, Automation",
       desc: "Connecting secure inference loops, agent routers, and vector pipelines.",
-      image: "/assets/ecosystem/innovation-labs page Showcase _Card/AI.png"
+      image: "/assets/ecosystem/innovation-labs-page-Showcase-_Card/AI.png"
     },
     {
       id: "03",
       name: "DevOps Excellence",
       focus: "CI/CD, IaC, GitOps",
       desc: "Configuring Kubernetes clusters, Terraform scripts, and git workflow steps.",
-      image: "/assets/ecosystem/innovation-labs page Showcase _Card/Devops.png"
+      image: "/assets/ecosystem/innovation-labs-page-Showcase-_Card/Devops.png"
     },
     {
       id: "04",
       name: "Security Excellence",
       focus: "DevSecOps, Compliance",
       desc: "Setting up SAST scanning gates, compliance reviews, and least-privilege policies.",
-      image: "/assets/ecosystem/innovation-labs page Showcase _Card/cyber.png"
+      image: "/assets/ecosystem/innovation-labs-page-Showcase-_Card/cyber.png"
     },
     {
       id: "05",
       name: "Data Excellence",
       focus: "Analytics, Warehousing",
       desc: "Designing lakehouse database grids, stream processing, and SQL views.",
-      image: "/assets/ecosystem/innovation-labs page Showcase _Card/Data.png"
+      image: "/assets/ecosystem/innovation-labs-page-Showcase-_Card/Data.png"
     }
   ];
 

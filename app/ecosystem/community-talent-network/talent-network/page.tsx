@@ -129,7 +129,7 @@ export default function TalentNetworkPage() {
             <div className="lg:col-span-6 relative">
               <div className="relative rounded-[24px] overflow-hidden border border-zinc-800 shadow-2xl bg-zinc-900 group">
                 <img
-                  src="/assets/common/1b065043b6959827c05a0073c93a4a53 1.png"
+                  src="/assets/common/1b065043b6959827c05a0073c93a4a53-1.png"
                   alt="Engineers discussing cloud architecture in modern office"
                   className="w-full h-[420px] object-cover group-hover:scale-105 transition-transform duration-500"
                 />
@@ -407,7 +407,7 @@ export default function TalentNetworkPage() {
             <div className="lg:col-span-6">
               <div className="rounded-[24px] overflow-hidden border border-zinc-800 shadow-2xl bg-zinc-950 group">
                 <img
-                  src="/assets/common/37b9b888cc479ea7b74d2d9a05c37597 1.png"
+                  src="/assets/common/37b9b888cc479ea7b74d2d9a05c37597-1.png"
                   alt="Global engineering teams collaborating"
                   className="w-full h-[360px] object-cover group-hover:scale-105 transition-transform duration-500"
                 />

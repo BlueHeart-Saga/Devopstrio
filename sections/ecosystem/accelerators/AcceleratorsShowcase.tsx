@@ -16,38 +16,38 @@ export function AcceleratorsShowcase() {
     { 
       title: "Cloud Foundation Accelerator", 
       desc: "Deploy enterprise cloud environments in days using audited IaC blueprints.",
-      image: "/assets/common/1b065043b6959827c05a0073c93a4a53 1.png",
+      image: "/assets/common/1b065043b6959827c05a0073c93a4a53-1.png",
       action: "Learn more",
       badge: "New"
     },
     { 
       title: "DevOps Launchpad", 
       desc: "Pre-configured CI/CD pipelines, GitOps setups, and containerization scripts.",
-      image: "/assets/common/260b761ad40c3ad2acba2c6666894539 1.png",
+      image: "/assets/common/260b761ad40c3ad2acba2c6666894539-1.png",
       action: "Learn more"
     },
     { 
       title: "AI Intelligence Framework", 
       desc: "Rapid AI solution deployment including secure LLM proxies and RAG layers.",
-      image: "/assets/common/2fe7f9184c515b0c515ce38bc8a25efa 1.png",
+      image: "/assets/common/2fe7f9184c515b0c515ce38bc8a25efa-1.png",
       action: "Explore AI solutions"
     },
     { 
       title: "Secure Enterprise Framework", 
       desc: "Security controls, identity templates, and automated compliance gates.",
-      image: "/assets/common/315e4fdc6263bfd240f36297e376576e 1.png",
+      image: "/assets/common/315e4fdc6263bfd240f36297e376576e-1.png",
       action: "Learn more"
     },
     { 
       title: "SaaS Starter Platform", 
       desc: "Launch subscription-based platforms using pre-built billing and user management dashboards.",
-      image: "/assets/common/37b9b888cc479ea7b74d2d9a05c37597 1.png",
+      image: "/assets/common/37b9b888cc479ea7b74d2d9a05c37597-1.png",
       action: "Learn more"
     },
     { 
       title: "Data Intelligence Framework", 
       desc: "Modern analytics, real-time logging networks, and warehouse integrations.",
-      image: "/assets/common/45ea830d170d382ade235db479060da7 1.png",
+      image: "/assets/common/45ea830d170d382ade235db479060da7-1.png",
       action: "Learn more"
     }
   ];

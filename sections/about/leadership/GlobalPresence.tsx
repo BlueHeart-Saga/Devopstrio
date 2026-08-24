@@ -9,7 +9,7 @@ const locations = [
     city: "London (HQ)",
     role: "Head Office",
     address: "128 City Road, London, United Kingdom, EC1V 2NX",
-    image: "/assets/About-page/leadership/Locations/2c03183e0217e53e76a080a126aaa23d 1.png",
+    image: "/assets/About-page/leadership/Locations/2c03183e0217e53e76a080a126aaa23d-1.png",
     mapUrl: "https://maps.google.com/maps?q=51.527339,-0.088630&t=&z=15&ie=UTF8&iwloc=&output=embed"
   },
   {
@@ -18,7 +18,7 @@ const locations = [
     city: "Tennessee Office",
     role: "Sub-Regional Office",
     address: "522 Aventura Dr, Mt Juliet, Tennessee, 37122 United States",
-    image: "/assets/About-page/leadership/Locations/3703b6d7a30877eb1ede0b93c90c966a 1.png",
+    image: "/assets/About-page/leadership/Locations/3703b6d7a30877eb1ede0b93c90c966a-1.png",
     mapUrl: "https://maps.google.com/maps?q=36.195230,-86.518600&t=&z=15&ie=UTF8&iwloc=&output=embed"
   },
   {
@@ -27,7 +27,7 @@ const locations = [
     city: "Bengaluru Office",
     role: "Corporate Office",
     address: "Embassy Golf Links Business Park, Bengaluru, Karnataka-560071, India",
-    image: "/assets/About-page/leadership/Locations/3d1cb911d53ef536d25a1c799841964f 1.png",
+    image: "/assets/About-page/leadership/Locations/3d1cb911d53ef536d25a1c799841964f-1.png",
     mapUrl: "https://maps.google.com/maps?q=12.946300,77.648300&t=&z=15&ie=UTF8&iwloc=&output=embed"
   },
   {
@@ -36,7 +36,7 @@ const locations = [
     city: "London Office",
     role: "Support Office",
     address: "167-169 Great Portland Street, 5th Floor, London, W1W 5PF",
-    image: "/assets/About-page/leadership/Locations/8903ee4dd9fe86e48fbc4fb02a1e579d 1.png",
+    image: "/assets/About-page/leadership/Locations/8903ee4dd9fe86e48fbc4fb02a1e579d-1.png",
     mapUrl: "https://maps.google.com/maps?q=51.520440,-0.143210&t=&z=15&ie=UTF8&iwloc=&output=embed"
   },
   {
@@ -45,7 +45,7 @@ const locations = [
     city: "Chennai Office",
     role: "Operations Center",
     address: "Ground Floor, Primus Building, Door No. SP – 7A, Guindy Industrial Estate, SIDCO Industrial Estate, Chennai 600032",
-    image: "/assets/About-page/leadership/Locations/a3522af23a2079d9fdfe727c0fe88cca 1.png",
+    image: "/assets/About-page/leadership/Locations/a3522af23a2079d9fdfe727c0fe88cca-1.png",
     mapUrl: "https://maps.google.com/maps?q=13.018900,80.207800&t=&z=15&ie=UTF8&iwloc=&output=embed"
   },
   {
@@ -54,7 +54,7 @@ const locations = [
     city: "Thoothukudi Office",
     role: "Operations Center",
     address: "4/ 367, Rajeev Colony, Pasuvanthanai, 628718 Thoothukudi, Tamilnadu, IN",
-    image: "/assets/About-page/leadership/Locations/ab86228d389fff2381da37b76b0cb6c3 1.png",
+    image: "/assets/About-page/leadership/Locations/ab86228d389fff2381da37b76b0cb6c3-1.png",
     mapUrl: "https://maps.google.com/maps?q=8.948200,78.016300&t=&z=15&ie=UTF8&iwloc=&output=embed"
   }
 ];

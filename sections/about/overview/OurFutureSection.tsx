@@ -28,56 +28,56 @@ export function OurFutureSection() {
       title: "Cognitive AI & Autonomous Agents",
       desc: <>Deploying multi-model consensus swarms, LLMs, and agentic workflows under our <Link href="/services/ai-data-innovation" className="text-rose-500 hover:underline font-bold">AI & data innovation</Link> wing.</>,
       tag: "AI Innovation",
-      image: "/assets/About-page/overview/future/AI & Data Innovation.png",
+      image: "/assets/About-page/overview/future/ai-data-innovation.png",
       href: "/services/ai-data-innovation"
     },
     {
       title: "Next-Gen Software Engineering",
       desc: <>Unifying cloud-native microservices, modern distributed backends, and full-stack systems under <Link href="/services/software-development" className="text-rose-500 hover:underline font-bold">software development</Link>.</>,
       tag: "Software",
-      image: "/assets/About-page/overview/future/software development.png",
+      image: "/assets/About-page/overview/future/software-development.png",
       href: "/services/software-development"
     },
     {
       title: "Quantum & Zero-Trust Security",
       desc: <>Preparing hybrid-cloud computing topologies for zero-trust security and continuous defense with our <Link href="/services/cybersecurity" className="text-rose-500 hover:underline font-bold">cybersecurity</Link> team.</>,
       tag: "Security",
-      image: "/assets/About-page/overview/future/Cyber security.png",
+      image: "/assets/About-page/overview/future/cyber-security.png",
       href: "/services/cybersecurity"
     },
     {
       title: "Unified Lakehouse & Analytics",
       desc: <>Deploying secure, real-time intelligence pipelines, streaming telemetry, and lakehouse storage under <Link href="/services/data-engineering" className="text-rose-500 hover:underline font-bold">data engineering</Link>.</>,
       tag: "Data Engineering",
-      image: "/assets/About-page/overview/future/Data engineering.png",
+      image: "/assets/About-page/overview/future/data-engineering.png",
       href: "/services/data-engineering"
     },
     {
       title: "Digital Transformation Mesh",
       desc: <>Orchestrating end-to-end digital transformation, industrial automation, and enterprise legacy modernization in <Link href="/services/digital-transformation" className="text-rose-500 hover:underline font-bold">digital transformation</Link>.</>,
       tag: "Transformation",
-      image: "/assets/About-page/overview/future/Digital transformation.png",
+      image: "/assets/About-page/overview/future/digital-transformation.png",
       href: "/services/digital-transformation"
     },
     {
       title: "Strategic Technology Advisory",
       desc: <>Providing high-impact architecture strategy, technology roadmap design, and enterprise cloud advisory in <Link href="/services/it-consulting" className="text-rose-500 hover:underline font-bold">IT consulting</Link>.</>,
       tag: "Consulting",
-      image: "/assets/About-page/overview/future/IT Consulting.png",
+      image: "/assets/About-page/overview/future/it-consulting.png",
       href: "/services/it-consulting"
     },
     {
       title: "24/7 Intelligent SRE Operations",
       desc: <>Intelligent round-the-clock infrastructure monitoring, automated incident triage, and SLA assurances in <Link href="/services/managed-services" className="text-rose-500 hover:underline font-bold">managed services</Link>.</>,
       tag: "Managed Ops",
-      image: "/assets/About-page/overview/future/managed services.png",
+      image: "/assets/About-page/overview/future/managed-services.png",
       href: "/services/managed-services"
     },
     {
       title: "Automated & Performance QA",
       desc: <>Continuous end-to-end QA pipelines, chaos testing, security scanning, and reliability verification under our <Link href="/services/qa-testing" className="text-rose-500 hover:underline font-bold">QA & testing</Link> practices.</>,
       tag: "QA Testing",
-      image: "/assets/About-page/overview/future/q a testing.png",
+      image: "/assets/About-page/overview/future/qa-testing.png",
       href: "/services/qa-testing"
     }
   ];

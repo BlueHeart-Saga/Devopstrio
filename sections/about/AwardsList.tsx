@@ -17,7 +17,7 @@ const awardsData: AwardItem[] = [
     title: "Networking Computing Awards Finalist",
     year: "2026",
     issuer: "Networking Computing",
-    src: "/assets/Awards/Netwoking_Computing_Awards_2026 Finalist.png"
+    src: "/assets/Awards/Netwoking_Computing_Awards_2026-Finalist.png"
   },
   {
     title: "Computing Security Awards Winner",
@@ -83,13 +83,13 @@ const awardsData: AwardItem[] = [
     title: "Cyber Essentials Certification",
     year: "2020",
     issuer: "Cyber Essentials",
-    src: "/assets/Awards/Cyber_Essentials_(CE)_Certification_2020.png"
+    src: "/assets/Awards/Cyber_Essentials_CE_Certification_2020.png"
   },
   {
     title: "European IT & Software Excellence Awards",
     year: "2020",
     issuer: "European IT",
-    src: "/assets/Awards/European_IT&Software_Excellence_Awards_2020.png"
+    src: "/assets/Awards/European_ITandSoftware_Excellence_Awards_2020.png"
   },
   {
     title: "IT Europa Finalist",
@@ -119,7 +119,7 @@ const awardsData: AwardItem[] = [
     title: "European IT & Software Excellence Award",
     year: "2015",
     issuer: "European IT",
-    src: "/assets/Awards/2015_European_IT&Software_Excellence_Award.png"
+    src: "/assets/Awards/2015_European_ITandSoftware_Excellence_Award.png"
   },
   {
     title: "IBM Business Partner Award",
@@ -187,7 +187,7 @@ const awardsData: AwardItem[] = [
     title: "Crown Commercial Service Supplier (CCS)",
     year: "Active",
     issuer: "UK Government",
-    src: "/assets/Awards/June_2017- Crown_Commercial_Service_Supplier_(CCS).png"
+    src: "/assets/Awards/June_2017-Crown_Commercial_Service_Supplier_CCS.png"
   },
   {
     title: "Data Estate Modernisation Award",

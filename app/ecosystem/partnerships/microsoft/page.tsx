@@ -539,7 +539,7 @@ export default function MicrosoftAllianceHub() {
                     <div className="absolute inset-0 bg-gradient-to-br from-blue-500/[0.03] to-transparent rounded-3xl opacity-0 group-hover/logo:opacity-100 transition-opacity" />
                     <div className="absolute -inset-1 rounded-3xl bg-gradient-to-r from-blue-600 to-cyan-500 opacity-0 group-hover/logo:opacity-20 blur-md transition-opacity" />
                     <img
-                      src="/assets/Tech_logos/Microsoft Azure.svg"
+                      src="/assets/Tech_logos/Microsoft-Azure.svg"
                       alt="Microsoft Azure Logo"
                       className="w-full h-auto max-h-[85%] object-contain select-none"
                     />
@@ -755,16 +755,16 @@ export default function MicrosoftAllianceHub() {
       <PartnerCertifications 
         title="Microsoft Certifications"
         certifications={[
-            { image: "/assets/ecosystem/microsofr-awards/Group 1000008903.png" },
-            { image: "/assets/ecosystem/microsofr-awards/image 123.png" },
-            { image: "/assets/ecosystem/microsofr-awards/image 124.png" },
-            { image: "/assets/ecosystem/microsofr-awards/image 125.png" },
-            { image: "/assets/ecosystem/microsofr-awards/image 126.png" },
-            { image: "/assets/ecosystem/microsofr-awards/image 127.png" },
-            { image: "/assets/ecosystem/microsofr-awards/image 128.png" },
-            { image: "/assets/ecosystem/microsofr-awards/image 129.png" },
-            { image: "/assets/ecosystem/microsofr-awards/image 138.png" },
-            { image: "/assets/ecosystem/microsofr-awards/image 139.png" }
+            { image: "/assets/ecosystem/microsofr-awards/Group-1000008903.png" },
+            { image: "/assets/ecosystem/microsofr-awards/image-123.png" },
+            { image: "/assets/ecosystem/microsofr-awards/image-124.png" },
+            { image: "/assets/ecosystem/microsofr-awards/image-125.png" },
+            { image: "/assets/ecosystem/microsofr-awards/image-126.png" },
+            { image: "/assets/ecosystem/microsofr-awards/image-127.png" },
+            { image: "/assets/ecosystem/microsofr-awards/image-128.png" },
+            { image: "/assets/ecosystem/microsofr-awards/image-129.png" },
+            { image: "/assets/ecosystem/microsofr-awards/image-138.png" },
+            { image: "/assets/ecosystem/microsofr-awards/image-139.png" }
           ]}
       />
 

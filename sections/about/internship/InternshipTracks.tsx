@@ -15,7 +15,7 @@ export const InternshipTracks = () => {
       color: "from-blue-500 to-indigo-500",
       accent: "text-blue-500",
       bgGlow: "rgba(59,130,246,0.15)",
-      image: "/assets/About-page/tech_architecture.png",
+      image: "/assets/careers/jobs/Software.png",
       badge: "Full-Stack & Cloud Architecture",
       desc: <>Master modern full-stack development. Build high-performance, responsive web applications and scale secure APIs with our <Link href="/services/software-development" className="text-blue-500 hover:underline">software development</Link> practices.</>,
       techs: ["React.js", "Next.js", "Node.js", "FastAPI", "MongoDB", "PostgreSQL"],
@@ -27,7 +27,7 @@ export const InternshipTracks = () => {
       color: "from-cyan-500 to-teal-500",
       accent: "text-cyan-500",
       bgGlow: "rgba(6,182,212,0.15)",
-      image: "/assets/About-page/cloud_servers.png",
+      image: "/assets/careers/jobs/Cloud-Ops.png",
       badge: "Cloud Infra & Landing Zones",
       desc: <>Architect enterprise public cloud runtimes. Plan zero-downtime database replications and design secure land zones under our <Link href="/services/cloud-services" className="text-cyan-500 hover:underline">cloud services</Link> division.</>,
       techs: ["Azure", "AWS", "Google Cloud", "Terraform", "Kubernetes"],
@@ -39,7 +39,7 @@ export const InternshipTracks = () => {
       color: "from-rose-500 to-pink-500",
       accent: "text-rose-500",
       bgGlow: "rgba(244,63,94,0.15)",
-      image: "/assets/About-page/operations_room.png",
+      image: "/assets/careers/jobs/transformation.png",
       badge: "GitOps & Platform Engineering",
       desc: <>Implement continuous integration and GitOps rollouts. Learn container orchestration, pipelines caching and platform engineering through <Link href="/services/devops-automation" className="text-rose-500 hover:underline">DevOps automation</Link>.</>,
       techs: ["CI/CD", "GitHub Actions", "Azure DevOps", "Docker", "IaC (Terraform)"],
@@ -51,7 +51,7 @@ export const InternshipTracks = () => {
       color: "from-amber-500 to-orange-500",
       accent: "text-amber-500",
       bgGlow: "rgba(245,158,11,0.15)",
-      image: "/assets/About-page/ai_dashboard.png",
+      image: "/assets/careers/jobs/data-engineering.png",
       badge: "LLMOps & Real-Time Analytics",
       desc: <>Design data pipelines and deploy LLMs in production. Work on LLMOps, vector databases, analytics dashboards and machine learning models under <Link href="/services/ai-data-innovation" className="text-amber-500 hover:underline">AI & data engineering</Link>.</>,
       techs: ["Generative AI", "Machine Learning", "LLMOps", "Data Pipelines", "Analytics", "Vector DBs"],
@@ -63,7 +63,7 @@ export const InternshipTracks = () => {
       color: "from-emerald-500 to-green-500",
       accent: "text-emerald-500",
       bgGlow: "rgba(16,185,129,0.15)",
-      image: "/assets/About-page/cyber_security.png",
+      image: "/assets/careers/jobs/security.png",
       badge: "Zero-Trust & DevSecOps",
       desc: <>Audit cloud security posture and establish identity perimeters. Work on threat modeling, vulnerability management, and DevSecOps integrations with our <Link href="/services/cybersecurity" className="text-emerald-500 hover:underline">cybersecurity</Link> team.</>,
       techs: ["Cloud Security", "DevSecOps", "Compliance", "Security Operations", "IAM Policies"],
@@ -153,7 +153,7 @@ export const InternshipTracks = () => {
                       </p>
                     </div>
 
-                    <div>
+                    {/* <div>
                       <h4 className="text-xs font-mono uppercase tracking-widest text-zinc-500 mb-3">Target Technologies</h4>
                       <div className="flex flex-wrap gap-2.5">
                         {track.techs.map((tech, idx) => (
@@ -165,7 +165,7 @@ export const InternshipTracks = () => {
                           </span>
                         ))}
                       </div>
-                    </div>
+                    </div> */}
                   </div>
 
                   {/* Right Column: Track Visual Showcase Image Frame */}

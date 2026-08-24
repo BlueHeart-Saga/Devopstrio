@@ -21,7 +21,7 @@ const teamMembers = [
   {
     name: "Ananthalakshmi",
     role: "Senior Software Architect",
-    photo: "/assets/About-page/team/MeetOurTeam/new/Anantha%20Lakshmi.png",
+    photo: "/assets/About-page/team/MeetOurTeam/new/Anantha-Lakshmi.png",
     rotate: "rotate-2",
   },
   {
@@ -45,19 +45,19 @@ const teamMembers = [
   {
     name: "Sermaraja",
     role: "UI/UX Design Manager",
-    photo: "/assets/About-page/team/MeetOurTeam/new/serma%20raja.png",
+    photo: "/assets/About-page/team/MeetOurTeam/new/serma-raja.png",
     rotate: "-rotate-2",
   },
   {
     name: "Thangalakshmi",
     role: "Cognitive Success Lead",
-    photo: "/assets/About-page/team/MeetOurTeam/new/Thanga%20laxmi.png",
+    photo: "/assets/About-page/team/MeetOurTeam/new/Thanga-laxmi.png",
     rotate: "rotate-1",
   },
   {
     name: "Punitha",
     role: "Design Thinking Lead",
-    photo: "/assets/About-page/team/MeetOurTeam/new/Punitha%20(2).png",
+    photo: "/assets/About-page/team/MeetOurTeam/new/Punitha-2.png",
     rotate: "-rotate-3",
   },
   {
@@ -69,7 +69,7 @@ const teamMembers = [
   {
     name: "Saravanakumar S",
     role: "Platform Infrastructure Lead",
-    photo: "/assets/About-page/team/MeetOurTeam/new/Saravana%20Kumar.png",
+    photo: "/assets/About-page/team/MeetOurTeam/new/Saravana-Kumar.png",
     rotate: "rotate-3",
   },
   {
@@ -288,7 +288,7 @@ export function OurPeopleSection() {
                   {/* Connecting side arrow starting at left side */}
                   <div className="absolute -top-2 sm:-top-4 md:-top-6 -left-20 sm:-left-28 md:-left-36 lg:-left-44 z-30 pointer-events-none select-none">
                     <img
-                      src="/assets/components/top-to-buttom-side%20-Arrowmid.png"
+                      src="/assets/components/top-to-buttom-side-Arrowmid.png"
                       alt="Connecting section arrow"
                       className="w-16 sm:w-20 md:w-24 lg:w-28 h-auto object-contain filter drop-shadow-[0_0_20px_rgba(225,29,72,0.4)] transform -rotate-[-30deg]"
                     />

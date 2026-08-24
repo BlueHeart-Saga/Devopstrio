@@ -6,23 +6,23 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Star } from "lucide-react";
 
 const clientPhotos = [
-  "/assets/Home-page/client-reviews/image%20164.png",
-  "/assets/Home-page/client-reviews/image%20165.png",
-  "/assets/Home-page/client-reviews/image%20166.png",
-  "/assets/Home-page/client-reviews/image%20167.png",
-  "/assets/Home-page/client-reviews/image%20168.png",
-  "/assets/Home-page/client-reviews/image%20169.png",
-  "/assets/Home-page/client-reviews/image%20170.png",
-  "/assets/Home-page/client-reviews/image%20171.png",
-  "/assets/Home-page/client-reviews/image%20172.png",
-  "/assets/Home-page/client-reviews/image%20173.png",
-  "/assets/Home-page/client-reviews/image%20174.png",
-  "/assets/Home-page/client-reviews/image%20175.png",
-  "/assets/Home-page/client-reviews/image%20176.png",
-  "/assets/Home-page/client-reviews/image%20177.png",
-  "/assets/Home-page/client-reviews/image%20178.png",
-  "/assets/Home-page/client-reviews/image%20180.png",
-  "/assets/Home-page/client-reviews/image%20181.png",
+  "/assets/Home-page/client-reviews/image-164.png",
+  "/assets/Home-page/client-reviews/image-165.png",
+  "/assets/Home-page/client-reviews/image-166.png",
+  "/assets/Home-page/client-reviews/image-167.png",
+  "/assets/Home-page/client-reviews/image-168.png",
+  "/assets/Home-page/client-reviews/image-169.png",
+  "/assets/Home-page/client-reviews/image-170.png",
+  "/assets/Home-page/client-reviews/image-171.png",
+  "/assets/Home-page/client-reviews/image-172.png",
+  "/assets/Home-page/client-reviews/image-173.png",
+  "/assets/Home-page/client-reviews/image-174.png",
+  "/assets/Home-page/client-reviews/image-175.png",
+  "/assets/Home-page/client-reviews/image-176.png",
+  "/assets/Home-page/client-reviews/image-177.png",
+  "/assets/Home-page/client-reviews/image-178.png",
+  "/assets/Home-page/client-reviews/image-180.png",
+  "/assets/Home-page/client-reviews/image-181.png",
 ];
 
 const clientReviews = [
@@ -322,7 +322,7 @@ export function CommunityJoinSection() {
       {/* Decorative top-left arrow image (Matching Reference Style) */}
       <div className="absolute top-10 sm:top-14 md:top-16 left-4 sm:left-8 z-20 pointer-events-none select-none">
         <img
-          src="/assets/components/top-to-buttom-side -Arrowmid.png"
+          src="/assets/components/top-to-buttom-side-Arrowmid.png"
           alt="Top connector arrow"
           className="w-12 sm:w-16 md:w-20 h-auto object-contain opacity-75 filter drop-shadow-[0_0_12px_rgba(244,63,94,0.35)]"
         />

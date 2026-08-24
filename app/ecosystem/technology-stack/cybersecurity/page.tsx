@@ -237,14 +237,14 @@ const ZeroTrustArchitecture = () => {
 // ==========================================
 const SecurityDomains = () => {
   const capabilities = [
-    { title: "Identity & Access Security", tag: "Identity", desc: "Secure identities, authentication, authorization, and privileged access.", image: "/assets/common/1b065043b6959827c05a0073c93a4a53 1.png" },
-    { title: "Cloud Security", desc: "Protect workloads across Azure, AWS, GCP, and hybrid environments.", tag: "Cloud", image: "/assets/common/260b761ad40c3ad2acba2c6666894539 1.png" },
-    { title: "Network Security", tag: "Network", desc: "Secure enterprise connectivity, segmentation, VPNs, and Zero Trust networking.", image: "/assets/common/315e4fdc6263bfd240f36297e376576e 1.png" },
-    { title: "Application Security", tag: "DevSecOps", desc: "Integrate security throughout the software development lifecycle.", image: "/assets/common/37b9b888cc479ea7b74d2d9a05c37597 1.png" },
-    { title: "Endpoint Security", tag: "Endpoint", desc: "Protect servers, workstations, mobile devices, and cloud workloads.", image: "/assets/common/464d8932bca4d6bb552ff2dcf2f3c5ca 1.png" },
-    { title: "Data Protection", tag: "Data", desc: "Encrypt, classify, and govern sensitive enterprise information.", image: "/assets/common/782e79a0bc5e9f58cb9af6a27727ca7b 1.png" },
-    { title: "Security Operations", tag: "SOC", desc: "Continuous monitoring, incident response, and operational resilience.", image: "/assets/common/82090d7be4ef5694954ce77f9cc2e627 1.png" },
-    { title: "Governance & Compliance", tag: "Compliance", desc: "Support regulatory compliance and enterprise security policies.", image: "/assets/common/90361fed0bb781d7c86e451995b4dbce 1.png" }
+    { title: "Identity & Access Security", tag: "Identity", desc: "Secure identities, authentication, authorization, and privileged access.", image: "/assets/common/1b065043b6959827c05a0073c93a4a53-1.png" },
+    { title: "Cloud Security", desc: "Protect workloads across Azure, AWS, GCP, and hybrid environments.", tag: "Cloud", image: "/assets/common/260b761ad40c3ad2acba2c6666894539-1.png" },
+    { title: "Network Security", tag: "Network", desc: "Secure enterprise connectivity, segmentation, VPNs, and Zero Trust networking.", image: "/assets/common/315e4fdc6263bfd240f36297e376576e-1.png" },
+    { title: "Application Security", tag: "DevSecOps", desc: "Integrate security throughout the software development lifecycle.", image: "/assets/common/37b9b888cc479ea7b74d2d9a05c37597-1.png" },
+    { title: "Endpoint Security", tag: "Endpoint", desc: "Protect servers, workstations, mobile devices, and cloud workloads.", image: "/assets/common/464d8932bca4d6bb552ff2dcf2f3c5ca-1.png" },
+    { title: "Data Protection", tag: "Data", desc: "Encrypt, classify, and govern sensitive enterprise information.", image: "/assets/common/782e79a0bc5e9f58cb9af6a27727ca7b-1.png" },
+    { title: "Security Operations", tag: "SOC", desc: "Continuous monitoring, incident response, and operational resilience.", image: "/assets/common/82090d7be4ef5694954ce77f9cc2e627-1.png" },
+    { title: "Governance & Compliance", tag: "Compliance", desc: "Support regulatory compliance and enterprise security policies.", image: "/assets/common/90361fed0bb781d7c86e451995b4dbce-1.png" }
   ];
 
   return (
@@ -450,13 +450,13 @@ const TechnologyStack = () => {
   const [activeTab, setActiveTab] = useState(0);
 
   const tabs = [
-    { name: "Identity", items: [{ name: "Microsoft Entra ID", logo: "/assets/Tech_logos/Microsoft Azure.svg" }, { name: "Okta", logo: null }, { name: "Auth0", logo: null }, { name: "Ping Identity", logo: null }] },
-    { name: "Cloud Security", items: [{ name: "Microsoft Defender", logo: "/assets/Tech_logos/Microsoft Azure.svg" }, { name: "AWS Security Hub", logo: "/assets/Tech_logos/AWS.svg" }, { name: "Google Security Command Center", logo: "/assets/Tech_logos/Google_Cloud.svg" }, { name: "Prisma Cloud", logo: null }] },
+    { name: "Identity", items: [{ name: "Microsoft Entra ID", logo: "/assets/Tech_logos/Microsoft-Azure.svg" }, { name: "Okta", logo: null }, { name: "Auth0", logo: null }, { name: "Ping Identity", logo: null }] },
+    { name: "Cloud Security", items: [{ name: "Microsoft Defender", logo: "/assets/Tech_logos/Microsoft-Azure.svg" }, { name: "AWS Security Hub", logo: "/assets/Tech_logos/AWS.svg" }, { name: "Google Security Command Center", logo: "/assets/Tech_logos/Google_Cloud.svg" }, { name: "Prisma Cloud", logo: null }] },
     { name: "Network Security", items: [{ name: "Cisco", logo: null }, { name: "Fortinet", logo: null }, { name: "Palo Alto", logo: null }, { name: "Zscaler", logo: null }, { name: "Cloudflare", logo: null }] },
     { name: "DevSecOps", items: [{ name: "SonarQube", logo: null }, { name: "Trivy", logo: null }, { name: "Snyk", logo: null }, { name: "Checkmarx", logo: null }, { name: "GitHub Advanced Security", logo: "/assets/Tech_logos/GitHub.svg" }] },
-    { name: "SIEM & SOC", items: [{ name: "Microsoft Sentinel", logo: "/assets/Tech_logos/Microsoft Azure.svg" }, { name: "Splunk", logo: null }, { name: "Elastic Security", logo: "/assets/Tech_logos/Elastic.svg" }, { name: "QRadar", logo: null }, { name: "Wazuh", logo: null }] },
-    { name: "Endpoint Security", items: [{ name: "CrowdStrike", logo: null }, { name: "Microsoft Defender", logo: "/assets/Tech_logos/Microsoft Azure.svg" }, { name: "SentinelOne", logo: null }, { name: "Sophos", logo: null }] },
-    { name: "Secrets & IAM", items: [{ name: "HashiCorp Vault", logo: "/assets/Tech_logos/HashiCorp.svg" }, { name: "Azure Key Vault", logo: "/assets/Tech_logos/Microsoft Azure.svg" }, { name: "AWS Secrets Manager", logo: "/assets/Tech_logos/AWS.svg" }, { name: "Google Secret Manager", logo: "/assets/Tech_logos/Google_Cloud.svg" }] }
+    { name: "SIEM & SOC", items: [{ name: "Microsoft Sentinel", logo: "/assets/Tech_logos/Microsoft-Azure.svg" }, { name: "Splunk", logo: null }, { name: "Elastic Security", logo: "/assets/Tech_logos/Elastic.svg" }, { name: "QRadar", logo: null }, { name: "Wazuh", logo: null }] },
+    { name: "Endpoint Security", items: [{ name: "CrowdStrike", logo: null }, { name: "Microsoft Defender", logo: "/assets/Tech_logos/Microsoft-Azure.svg" }, { name: "SentinelOne", logo: null }, { name: "Sophos", logo: null }] },
+    { name: "Secrets & IAM", items: [{ name: "HashiCorp Vault", logo: "/assets/Tech_logos/HashiCorp.svg" }, { name: "Azure Key Vault", logo: "/assets/Tech_logos/Microsoft-Azure.svg" }, { name: "AWS Secrets Manager", logo: "/assets/Tech_logos/AWS.svg" }, { name: "Google Secret Manager", logo: "/assets/Tech_logos/Google_Cloud.svg" }] }
   ];
 
   return (
@@ -549,14 +549,14 @@ const BusinessOutcomes = () => {
 // ==========================================
 const IndustryUseCases = () => {
   const useCases = [
-    { title: "Banking", tag: "Finance", desc: "Fraud prevention, secure digital banking, PCI compliance.", image: "/assets/common/945ab601f043c558e0a8162da2a1eb4c 1.png" },
-    { title: "Healthcare", tag: "Health", desc: "Patient data protection and healthcare compliance.", image: "/assets/common/9d91b93f83e6d4cd494ec13611b3e50e 1.png" },
-    { title: "Retail", tag: "Commerce", desc: "Secure payment systems and customer identity protection.", image: "/assets/common/b384eb0438c55e43c61e7595acc29638 1.png" },
-    { title: "Manufacturing", tag: "Industrial", desc: "Industrial IoT security and operational resilience.", image: "/assets/common/e76e125035885aab9c9070ce85df239e 1.png" },
-    { title: "Telecommunications", tag: "Networking", desc: "Network security and secure service delivery.", image: "/assets/common/f03cc521fb070dfae9d87768b791ff70 1.png" },
-    { title: "Government", tag: "Public", desc: "Citizen data protection and secure digital services.", image: "/assets/common/f317dd71184f5c47d601eeb9508bf92c 1.png" },
-    { title: "Education", tag: "Learning", desc: "Identity management and campus security.", image: "/assets/common/45ea830d170d382ade235db479060da7 1.png" },
-    { title: "Logistics", tag: "Supply Chain", desc: "Supply chain protection and operational security.", image: "/assets/common/2fe7f9184c515b0c515ce38bc8a25efa 1.png" }
+    { title: "Banking", tag: "Finance", desc: "Fraud prevention, secure digital banking, PCI compliance.", image: "/assets/common/945ab601f043c558e0a8162da2a1eb4c-1.png" },
+    { title: "Healthcare", tag: "Health", desc: "Patient data protection and healthcare compliance.", image: "/assets/common/9d91b93f83e6d4cd494ec13611b3e50e-1.png" },
+    { title: "Retail", tag: "Commerce", desc: "Secure payment systems and customer identity protection.", image: "/assets/common/b384eb0438c55e43c61e7595acc29638-1.png" },
+    { title: "Manufacturing", tag: "Industrial", desc: "Industrial IoT security and operational resilience.", image: "/assets/common/e76e125035885aab9c9070ce85df239e-1.png" },
+    { title: "Telecommunications", tag: "Networking", desc: "Network security and secure service delivery.", image: "/assets/common/f03cc521fb070dfae9d87768b791ff70-1.png" },
+    { title: "Government", tag: "Public", desc: "Citizen data protection and secure digital services.", image: "/assets/common/f317dd71184f5c47d601eeb9508bf92c-1.png" },
+    { title: "Education", tag: "Learning", desc: "Identity management and campus security.", image: "/assets/common/45ea830d170d382ade235db479060da7-1.png" },
+    { title: "Logistics", tag: "Supply Chain", desc: "Supply chain protection and operational security.", image: "/assets/common/2fe7f9184c515b0c515ce38bc8a25efa-1.png" }
   ];
 
   return (

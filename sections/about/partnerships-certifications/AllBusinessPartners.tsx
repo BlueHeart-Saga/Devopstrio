@@ -4,25 +4,25 @@ import { Reveal } from "@/components/ui/Reveal";
 
 const partners = [
   { name: "Microsoft", category: "Technology", logo: "/assets/Devopstrio_Partners/Microsoft.svg" },
-  { name: "ServiceNow", category: "Enterprise Workflow", logo: "/assets/Devopstrio_Partners/service now.svg" },
-  { name: "Metro Bank", category: "United Kingdom", logo: "/assets/Devopstrio_Partners/metro bank.svg" },
+  { name: "ServiceNow", category: "Enterprise Workflow", logo: "/assets/Devopstrio_Partners/service-now.svg" },
+  { name: "Metro Bank", category: "United Kingdom", logo: "/assets/Devopstrio_Partners/metro-bank.svg" },
   { name: "Virgin Money", category: "United Kingdom", logo: "/assets/Devopstrio_Partners/virgin.svg" },
   { name: "Appian", category: "Global Low-Code System", logo: "/assets/Devopstrio_Partners/appian.svg" },
   { name: "NHS", category: "Healthcare", logo: "/assets/Devopstrio_Partners/NHS.svg" },
   { name: "ASDA", category: "Retail", logo: "/assets/Devopstrio_Partners/asda.svg" },
   { name: "Airbnb", category: "Hospitality", logo: "/assets/Devopstrio_Partners/airbnb.svg" },
   { name: "BP", category: "Global Energy", logo: "/assets/Devopstrio_Partners/Bp.svg" },
-  { name: "British Heart Foundation", category: "Healthcare & Non-Profit", logo: "/assets/Devopstrio_Partners/British Heart Foundation.svg" },
+  { name: "British Heart Foundation", category: "Healthcare & Non-Profit", logo: "/assets/Devopstrio_Partners/British-Heart-Foundation.svg" },
   { name: "GoDaddy", category: "Cloud & Web Infrastructure", logo: "/assets/Devopstrio_Partners/Godaddy.svg" },
   { name: "Lenovo", category: "Enterprise Hardware", logo: "/assets/Devopstrio_Partners/lenovo.svg" },
-  { name: "Novo Nordisk", category: "Pharmaceuticals", logo: "/assets/Devopstrio_Partners/novo nordisk.svg" },
+  { name: "Novo Nordisk", category: "Pharmaceuticals", logo: "/assets/Devopstrio_Partners/novo-nordisk.svg" },
   { name: "Paymentology", category: "FinTech & Payments", logo: "/assets/Devopstrio_Partners/Paymentology.svg" },
-  { name: "Gov UK", category: "Public Sector", logo: "/assets/Devopstrio_Partners/gov uk.svg" },
+  { name: "Gov UK", category: "Public Sector", logo: "/assets/Devopstrio_Partners/gov-uk.svg" },
   { name: "Dentons", category: "Legal & Advisory", logo: "/assets/Devopstrio_Partners/dentons.svg" },
   { name: "IQVIA", category: "HealthTech & Data", logo: "/assets/Devopstrio_Partners/iqvia.svg" },
   { name: "GXO Logistics", category: "Supply Chain", logo: "/assets/Devopstrio_Partners/gxo.svg" },
   { name: "ThreatLocker", category: "Zero Trust Security", logo: "/assets/Devopstrio_Partners/threatlocker.svg" },
-  { name: "NinjaOne", category: "IT Management", logo: "/assets/Devopstrio_Partners/ninja one.svg" },
+  { name: "NinjaOne", category: "IT Management", logo: "/assets/Devopstrio_Partners/ninja-one.svg" },
 ];
 
 export function AllBusinessPartners() {

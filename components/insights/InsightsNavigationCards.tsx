@@ -36,7 +36,7 @@ const STATIC_METADATA: Record<string, {
   },
   "awards-milestones": {
     description: "Celebrating our team's recognition, benchmark excellence, and engineering milestones.",
-    image: "/assets/Insights-page/nav/Awards&mailstones.png",
+    image: "/assets/Insights-page/nav/Awardsandmailstones.png",
     accentColor: "#a855f7",
     tag: "AWARDS"
   },
@@ -48,7 +48,7 @@ const STATIC_METADATA: Record<string, {
   },
   "impact-metrics": {
     description: "Quantitative analysis, scalability benchmarks, cost-optimization metrics, and measurable business value.",
-    image: "/assets/Insights-page/nav/Impact_ metrics.png",
+    image: "/assets/Insights-page/nav/Impact_-metrics.png",
     accentColor: "#06b6d4",
     tag: "METRICS"
   },
@@ -81,7 +81,7 @@ const STATIC_METADATA: Record<string, {
 const FALLBACK_IMAGES = [
   "/assets/Insights-page/nav/blog.png",
   "/assets/Insights-page/nav/Case_study.png",
-  "/assets/Insights-page/nav/Awards&mailstones.png",
+  "/assets/Insights-page/nav/Awardsandmailstones.png",
   "/assets/Insights-page/nav/Industry_event.png",
 ];
 const FALLBACK_COLORS = ["#f97316", "#3b82f6", "#a855f7", "#f43f5e", "#06b6d4", "#10b981"];

@@ -860,7 +860,7 @@ export default function DevOpsPlatformPage() {
                   <div className="hidden md:flex w-1/2 pl-16 items-center">
                     <div className="flex gap-4 opacity-50 grayscale group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500 bg-zinc-950 border border-zinc-900 p-3 rounded-2xl">
                       <img src="/assets/Tech_logos/AWS.svg" className="w-8 h-8 object-contain" alt="AWS" />
-                      <img src="/assets/Tech_logos/Microsoft Azure.svg" className="w-8 h-8 object-contain" alt="Azure" />
+                      <img src="/assets/Tech_logos/Microsoft-Azure.svg" className="w-8 h-8 object-contain" alt="Azure" />
                       <img src="/assets/Tech_logos/Google_Cloud.svg" className="w-8 h-8 object-contain" alt="GCP" />
                     </div>
                   </div>

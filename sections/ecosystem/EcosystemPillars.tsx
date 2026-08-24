@@ -7,14 +7,14 @@ import { Reveal } from "@/components/ui/Reveal";
 import { ecosystemDomains } from "@/data/ecosystem";
 
 const bgWaves: Record<string, string> = {
-  "partnerships": "/assets/ecosystem/grid/Generated Design.png",
-  "innovation-labs": "/assets/ecosystem/grid/Generated Design-1.png",
-  "platforms-solutions": "/assets/ecosystem/grid/Generated Design-2.png",
-  "technology-stack": "/assets/ecosystem/grid/Generated Design-3.png",
-  "global-delivery": "/assets/ecosystem/grid/Generated Design-4.png",
-  "engineering-excellence": "/assets/ecosystem/grid/Generated Design-5.png",
-  "accelerators-frameworks": "/assets/ecosystem/grid/Generated Design-6.png",
-  "community-talent-network": "/assets/ecosystem/grid/Generated Design-7.png",
+  "partnerships": "/assets/ecosystem/grid/Generated-Design.png",
+  "innovation-labs": "/assets/ecosystem/grid/Generated-Design-1.png",
+  "platforms-solutions": "/assets/ecosystem/grid/Generated-Design-2.png",
+  "technology-stack": "/assets/ecosystem/grid/Generated-Design-3.png",
+  "global-delivery": "/assets/ecosystem/grid/Generated-Design-4.png",
+  "engineering-excellence": "/assets/ecosystem/grid/Generated-Design-5.png",
+  "accelerators-frameworks": "/assets/ecosystem/grid/Generated-Design-6.png",
+  "community-talent-network": "/assets/ecosystem/grid/Generated-Design-7.png",
 };
 
 export function EcosystemPillars() {

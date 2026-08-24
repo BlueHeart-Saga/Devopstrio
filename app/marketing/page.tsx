@@ -208,7 +208,7 @@ export default function MarketingPage() {
       count: "5 Files",
       href: "/marketing",
       description: "Recorded technical webinars, corporate delivery model overviews, and live SaaS product walkthrough demonstrations.",
-      image: "/assets/common/09ff7846bc8c9998745688779c09f88d 1.png",
+      image: "/assets/common/09ff7846bc8c9998745688779c09f88d-1.png",
     },
   ];
 
@@ -236,7 +236,7 @@ export default function MarketingPage() {
       description: "In-depth technical whitepaper on deploying RAG architectures, custom LLM fine-tuning, vector database benchmarking, and AI safety guardrails.",
       downloads: 980,
       badge: "NEW",
-      image: "/assets/common/09ff7846bc8c9998745688779c09f88d 1.png",
+      image: "/assets/common/09ff7846bc8c9998745688779c09f88d-1.png",
     },
     {
       id: "feat-3",

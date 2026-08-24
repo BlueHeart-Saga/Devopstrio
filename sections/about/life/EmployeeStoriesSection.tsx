@@ -10,42 +10,42 @@ const stories = [
     name: "Sarah Jenkins",
     role: "Software Engineer",
     path: "Intern → Software Engineer",
-    image: "/assets/Home-page/client-reviews/image 169.png",
+    image: "/assets/Home-page/client-reviews/image-169.png",
     quote: <>"Starting as an intern in the <Link href="/about/internship" className="text-rose-500 hover:underline font-bold">internship program</Link>, I was immediately given real-world problems to solve. The mentorship here didn't just teach me how to code better; it taught me how to engineer solutions that scale. Within two years, I was leading my own microservices architecture."</>
   },
   {
     name: "David Chen",
     role: "Platform Engineer",
     path: "Developer → Platform Engineer",
-    image: "/assets/Home-page/client-reviews/image 170.png",
+    image: "/assets/Home-page/client-reviews/image-170.png",
     quote: <>"Devopstrio recognized my passion for infrastructure early on. They sponsored my Kubernetes certifications and gave me the autonomy to help build our internal developer platform in <Link href="/services/devops-automation" className="text-rose-500 hover:underline font-bold">DevOps automation</Link>. The growth trajectory here is limited only by your ambition."</>
   },
   {
     name: "Priya Sharma",
     role: "Engineering Team Lead",
     path: "Associate → Team Lead",
-    image: "/assets/Home-page/client-reviews/image 171.png",
+    image: "/assets/Home-page/client-reviews/image-171.png",
     quote: <>"What stands out to me is the culture of ownership. When I proposed a new way to handle our CI/CD pipelines in <Link href="/services/cloud-services" className="text-rose-500 hover:underline font-bold">cloud services</Link>, leadership empowered me to build a team and execute the vision. Now I help others grow in the same way."</>
   },
   {
     name: "Marcus Vance",
     role: "Principal Cloud Architect",
     path: "Cloud Specialist → Principal Architect",
-    image: "/assets/Home-page/client-reviews/image 169.png",
+    image: "/assets/Home-page/client-reviews/image-169.png",
     quote: <>"The cross-disciplinary collaboration at Devopstrio is unmatched. Working alongside top AI practitioners and SRE teams on enterprise <Link href="/services/ai-modernization" className="text-rose-500 hover:underline font-bold">AI modernization</Link> projects has allowed me to architect resilient systems used by millions daily."</>
   },
   {
     name: "Elena Rostova",
     role: "AI Operations Lead",
     path: "AI Specialist → Ops Lead",
-    image: "/assets/Home-page/client-reviews/image 170.png",
+    image: "/assets/Home-page/client-reviews/image-170.png",
     quote: <>"From day one, my ideas were listened to with genuine respect. Devopstrio gave me the freedom to pioneer intelligent automated agents in our <Link href="/services/ai-data-innovation" className="text-rose-500 hover:underline font-bold">AI & Data innovation lab</Link>, turning research prototypes into high-performing client products."</>
   },
   {
     name: "Vikram Malhotra",
     role: "Lead DevSecOps Engineer",
     path: "Security Analyst → Lead DevSecOps",
-    image: "/assets/Home-page/client-reviews/image 171.png",
+    image: "/assets/Home-page/client-reviews/image-171.png",
     quote: <>"Security is embedded into everything we build here. Leadership trusted me to lead zero-trust architecture initiatives across major financial client migrations in <Link href="/services/cybersecurity" className="text-rose-500 hover:underline font-bold">cybersecurity</Link>, making our engineering impact both meaningful and secure."</>
   }
 ];

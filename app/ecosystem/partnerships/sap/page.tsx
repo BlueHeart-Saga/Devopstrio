@@ -275,13 +275,13 @@ export default function SAPStrategicAllianceHub() {
 
   // SAP Certifications
   const certifications = [
-    { name: "SAP Certified Associate - S/4HANA Cloud", image: "/assets/ecosystem/Sap_Awards/image 180.png" },
-    { name: "SAP Certified Technology Associate - SAP HANA", image: "/assets/ecosystem/Sap_Awards/image 181.png" },
-    { name: "SAP Certified Development Associate - SAP BTP", image: "/assets/ecosystem/Sap_Awards/image 183.png" },
-    { name: "SAP Certified Technology Specialist - SAP Activate", image: "/assets/ecosystem/Sap_Awards/image 185.png" },
-    { name: "SAP Certified Integration Associate", image: "/assets/ecosystem/Sap_Awards/image 186.png" },
-    { name: "SAP Gold Partner Competency Award", image: "/assets/ecosystem/Sap_Awards/Group 1000008910.png" },
-    { name: "SAP Cloud Transformation Excellence", image: "/assets/ecosystem/Sap_Awards/image 194-Photoroom 1.png" }
+    { name: "SAP Certified Associate - S/4HANA Cloud", image: "/assets/ecosystem/Sap_Awards/image-180.png" },
+    { name: "SAP Certified Technology Associate - SAP HANA", image: "/assets/ecosystem/Sap_Awards/image-181.png" },
+    { name: "SAP Certified Development Associate - SAP BTP", image: "/assets/ecosystem/Sap_Awards/image-183.png" },
+    { name: "SAP Certified Technology Specialist - SAP Activate", image: "/assets/ecosystem/Sap_Awards/image-185.png" },
+    { name: "SAP Certified Integration Associate", image: "/assets/ecosystem/Sap_Awards/image-186.png" },
+    { name: "SAP Gold Partner Competency Award", image: "/assets/ecosystem/Sap_Awards/Group-1000008910.png" },
+    { name: "SAP Cloud Transformation Excellence", image: "/assets/ecosystem/Sap_Awards/image-194-Photoroom-1.png" }
   ];
 
   // FAQ Accordion Data

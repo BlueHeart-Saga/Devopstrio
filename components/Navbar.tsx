@@ -933,7 +933,7 @@ export function Navbar() {
                     <div className="col-span-2 flex flex-col pl-2">
                       {/* Single Heading spanning across */}
                       <div className="pb-3 mb-4 border-b border-zinc-800/80 flex items-center justify-between">
-                        <span className="text-sm font-semibold tracking-wider text-rose-500 uppercase font-mono">
+                        <span className="text-base font-bold tracking-wider text-rose-500 uppercase font-sans">
                           CORE & AI SERVICES
                         </span>
                         <Link
@@ -1080,7 +1080,7 @@ export function Navbar() {
 
                     {/* Right industries list grid */}
                     <div>
-                      <span className="text-sm font-semibold tracking-wider text-rose-500 uppercase block mb-4 font-mono">Target Sectors</span>
+                      <span className="text-base font-bold tracking-wider text-rose-500 uppercase block mb-4 font-sans">Target Sectors</span>
                       <div className="max-h-[380px] overflow-y-auto overscroll-contain pr-2 custom-scrollbar">
                         <div className="grid grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-1">
                           {industriesList.map((ind) => (
@@ -1183,7 +1183,7 @@ export function Navbar() {
                     <div className="col-span-2 flex flex-col pl-2">
                       {/* Single Heading spanning across */}
                       <div className="pb-3 mb-4 border-b border-zinc-800/80 flex items-center justify-between">
-                        <span className="text-sm font-semibold tracking-wider text-rose-500 uppercase font-mono">
+                        <span className="text-base font-bold tracking-wider text-rose-500 uppercase font-sans">
                           ECOSYSTEM PILLARS
                         </span>
                         <a
@@ -1332,7 +1332,7 @@ export function Navbar() {
 
                     {/* Middle sidebar with dynamic sections */}
                     <div className="flex flex-col border-r border-zinc-900 pr-4 gap-1">
-                      <span className="text-sm font-semibold tracking-wider text-rose-500 uppercase block px-3 mb-2 font-mono">Insights Hubs</span>
+                      <span className="text-base font-bold tracking-wider text-rose-500 uppercase block px-3 mb-2 font-sans">Insights Hubs</span>
                       {insightsSections.map((sec: InsightsSection) => (
                         <button
                           key={sec.slug}
@@ -1353,7 +1353,7 @@ export function Navbar() {
 
                     {/* Right panel with active section categories */}
                     <div className="flex flex-col">
-                      <span className="text-sm font-semibold tracking-wider text-rose-500 uppercase block px-2 mb-2 font-mono">Categories</span>
+                      <span className="text-base font-bold tracking-wider text-rose-500 uppercase block px-2 mb-2 font-sans">Categories</span>
                       <div className="max-h-[420px] overflow-y-auto overscroll-contain pr-2 custom-scrollbar">
                         <div className="grid grid-cols-2 gap-x-4 gap-y-1">
                           {insightsSections.find((s: InsightsSection) => s.slug === activeInsightsSection)?.categories.map((cat: SectionCategory) => (
@@ -1501,7 +1501,7 @@ export function Navbar() {
 
                     {/* Right about list grid */}
                     <div>
-                      <span className="text-sm font-semibold tracking-wider text-rose-500 uppercase block mb-4 font-mono">Corporate Directory</span>
+                      <span className="text-base font-bold tracking-wider text-rose-500 uppercase block mb-4 font-sans">Corporate Directory</span>
                       <div className="max-h-[380px] overflow-y-auto overscroll-contain pr-2 custom-scrollbar">
                         <div className="grid grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-1">
                           {aboutList.map((item) => (
@@ -1674,7 +1674,7 @@ export function Navbar() {
           <div className="fixed inset-0 top-[72px] z-40 bg-[#000000]/98 backdrop-blur-lg flex flex-col p-6 sm:p-8 border-t border-zinc-900 pointer-events-auto animate-fadeIn lg:hidden">
             <div className="flex flex-col gap-6 overflow-y-auto overscroll-contain pb-8">
               <div>
-                <span className="text-xs uppercase tracking-widest text-rose-500 block mb-3 font-mono font-semibold">Services</span>
+                <span className="text-sm uppercase tracking-wider text-rose-500 block mb-3 font-sans font-bold">Services</span>
                 <div className="flex flex-col gap-2 pl-2">
                   {servicesList.map((item) => (
                     <Link
@@ -1690,7 +1690,7 @@ export function Navbar() {
               </div>
 
               <div>
-                <span className="text-xs uppercase tracking-widest text-rose-500 block mb-3 font-mono font-semibold">Industries</span>
+                <span className="text-sm uppercase tracking-wider text-rose-500 block mb-3 font-sans font-bold">Industries</span>
                 <div className="flex flex-col gap-2 pl-2">
                   {industriesList.map((item) => (
                     <Link
@@ -1706,7 +1706,7 @@ export function Navbar() {
               </div>
 
               <div>
-                <span className="text-xs uppercase tracking-widest text-rose-500 block mb-3 font-mono font-semibold">Ecosystem</span>
+                <span className="text-sm uppercase tracking-wider text-rose-500 block mb-3 font-sans font-bold">Ecosystem</span>
                 <div className="flex flex-col gap-2 pl-2">
                   {ecosystemMobileList.map((item) => (
                     <Link
@@ -1722,7 +1722,7 @@ export function Navbar() {
               </div>
 
               <div>
-                <span className="text-xs uppercase tracking-widest text-rose-500 block mb-3 font-mono font-semibold">Insights</span>
+                <span className="text-sm uppercase tracking-wider text-rose-500 block mb-3 font-sans font-bold">Insights</span>
                 <div className="flex flex-col gap-2 pl-2">
                   <Link
                     href="/insights"
@@ -1747,7 +1747,7 @@ export function Navbar() {
               <div className="h-[1px] bg-zinc-900 my-2" />
 
               <div>
-                <span className="text-xs uppercase tracking-widest text-rose-500 block mb-3 font-mono font-semibold">About</span>
+                <span className="text-sm uppercase tracking-wider text-rose-500 block mb-3 font-sans font-bold">About</span>
                 <div className="flex flex-col gap-2 pl-2">
                   <Link
                     href="/about"

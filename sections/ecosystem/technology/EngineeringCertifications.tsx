@@ -4,20 +4,20 @@ import React, { useState } from "react";
 import { Reveal } from "@/components/ui/Reveal";
 
 const PARTNER_AWARDS = [
-  { name: "AWS Specialization", desc: "SysOps & Solutions Architect", image: "/assets/ecosystem/aws-awards/image 118.png", category: "AWS" },
-  { name: "AWS Partner Award", desc: "Top Tier Delivery Excellence", image: "/assets/ecosystem/aws-awards/image 120.png", category: "AWS" },
-  { name: "Microsoft Solutions Partner", desc: "Infrastructure & Azure Specialist", image: "/assets/ecosystem/microsofr-awards/image 123.png", category: "Microsoft" },
-  { name: "Microsoft Gold Competency", desc: "Cloud Platform Gold Tier", image: "/assets/ecosystem/microsofr-awards/image 124.png", category: "Microsoft" },
-  { name: "GCP Premier Partner", desc: "Google Cloud Platform Premium", image: "/assets/ecosystem/GCP-award/image 130.png", category: "Google Cloud" },
-  { name: "GCP Certified Expertise", desc: "Data & Analytics Excellence", image: "/assets/ecosystem/GCP-award/image 131.png", category: "Google Cloud" },
-  { name: "Cisco Partner Award", desc: "Enterprise Networking & Security", image: "/assets/ecosystem/Cisco_Awards/image 187.png", category: "Cisco" },
-  { name: "Cisco Certified Integrator", desc: "Advanced Networking Gold Status", image: "/assets/ecosystem/Cisco_Awards/image 188.png", category: "Cisco" },
-  { name: "Oracle Cloud Solution", desc: "Oracle Cloud Infrastructure (OCI)", image: "/assets/ecosystem/ORACLE_Awards/image 154.png", category: "Oracle" },
-  { name: "Oracle Gold Partner", desc: "Database & Cloud Infrastructure", image: "/assets/ecosystem/ORACLE_Awards/image 155.png", category: "Oracle" },
-  { name: "SAP Partner Excellence", desc: "SAP Cloud Platform Integration", image: "/assets/ecosystem/Sap_Awards/image 180.png", category: "SAP" },
-  { name: "SAP Gold Partner", desc: "ERP Modernization & Platform Specialist", image: "/assets/ecosystem/Sap_Awards/image 181.png", category: "SAP" },
-  { name: "ServiceNow Elite Partner", desc: "Workflow Automation & ESM", image: "/assets/ecosystem/Servicenow_Aards/image 164.png", category: "ServiceNow" },
-  { name: "ServiceNow Certified Partner", desc: "ITSM & ITOM Platform Specialist", image: "/assets/ecosystem/Servicenow_Aards/image 165.png", category: "ServiceNow" }
+  { name: "AWS Specialization", desc: "SysOps & Solutions Architect", image: "/assets/ecosystem/aws-awards/image-118.png", category: "AWS" },
+  { name: "AWS Partner Award", desc: "Top Tier Delivery Excellence", image: "/assets/ecosystem/aws-awards/image-120.png", category: "AWS" },
+  { name: "Microsoft Solutions Partner", desc: "Infrastructure & Azure Specialist", image: "/assets/ecosystem/microsofr-awards/image-123.png", category: "Microsoft" },
+  { name: "Microsoft Gold Competency", desc: "Cloud Platform Gold Tier", image: "/assets/ecosystem/microsofr-awards/image-124.png", category: "Microsoft" },
+  { name: "GCP Premier Partner", desc: "Google Cloud Platform Premium", image: "/assets/ecosystem/GCP-award/image-130.png", category: "Google Cloud" },
+  { name: "GCP Certified Expertise", desc: "Data & Analytics Excellence", image: "/assets/ecosystem/GCP-award/image-131.png", category: "Google Cloud" },
+  { name: "Cisco Partner Award", desc: "Enterprise Networking & Security", image: "/assets/ecosystem/Cisco_Awards/image-187.png", category: "Cisco" },
+  { name: "Cisco Certified Integrator", desc: "Advanced Networking Gold Status", image: "/assets/ecosystem/Cisco_Awards/image-188.png", category: "Cisco" },
+  { name: "Oracle Cloud Solution", desc: "Oracle Cloud Infrastructure (OCI)", image: "/assets/ecosystem/ORACLE_Awards/image-154.png", category: "Oracle" },
+  { name: "Oracle Gold Partner", desc: "Database & Cloud Infrastructure", image: "/assets/ecosystem/ORACLE_Awards/image-155.png", category: "Oracle" },
+  { name: "SAP Partner Excellence", desc: "SAP Cloud Platform Integration", image: "/assets/ecosystem/Sap_Awards/image-180.png", category: "SAP" },
+  { name: "SAP Gold Partner", desc: "ERP Modernization & Platform Specialist", image: "/assets/ecosystem/Sap_Awards/image-181.png", category: "SAP" },
+  { name: "ServiceNow Elite Partner", desc: "Workflow Automation & ESM", image: "/assets/ecosystem/Servicenow_Aards/image-164.png", category: "ServiceNow" },
+  { name: "ServiceNow Certified Partner", desc: "ITSM & ITOM Platform Specialist", image: "/assets/ecosystem/Servicenow_Aards/image-165.png", category: "ServiceNow" }
 ];
 
 const ENGINEERING_CERTS = [

@@ -45,7 +45,7 @@ const useCases = [
     title: "Citizen API Gateway",
     industry: "Public Sector",
     result: "API lookup times reduced from 4.8s to 180ms.",
-    image: "/assets/Industries-page/usecase/Public Sector.png",
+    image: "/assets/Industries-page/usecase/Public-Sector.png",
     path: "/industries/government-public-sector"
   },
   {

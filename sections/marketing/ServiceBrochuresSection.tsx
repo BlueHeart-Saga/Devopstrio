@@ -18,7 +18,7 @@ export function ServiceBrochuresSection({
   onDownload: (item: any, e?: React.MouseEvent) => void;
 }) {
   const galleryItems = services.map((item, idx) => ({
-    image: item.image || `/assets/common/09ff7846bc8c9998745688779c09f88d 1.png`,
+    image: item.image || `/assets/common/09ff7846bc8c9998745688779c09f88d-1.png`,
     text: item.title ? item.title.split(" ")[0] + " " + (item.title.split(" ")[1] || "") : `Service #${idx + 1}`,
   }));
 
@@ -71,7 +71,7 @@ export function ServiceBrochuresSection({
             <div className="space-y-3">
               <div className="relative h-40 rounded-xl overflow-hidden bg-zinc-950 border border-zinc-800">
                 <Image
-                  src={item.image || "/assets/common/09ff7846bc8c9998745688779c09f88d 1.png"}
+                  src={item.image || "/assets/common/09ff7846bc8c9998745688779c09f88d-1.png"}
                   alt={item.title}
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-500 opacity-80"

@@ -15,7 +15,7 @@ export function EmployeeStories() {
       role: "UI/UX Design Intern",
       initials: "OV",
       color: "from-rose-500 to-indigo-600",
-      image: "/assets/careers/careers_testimonial people/Ooviya.png",
+      image: "/assets/careers/careers_testimonial-people/Ooviya.png",
     },
     {
       quote: "The software engineering culture here encourages rapid experimentation, learning, and automated CI/CD releases.",
@@ -23,7 +23,7 @@ export function EmployeeStories() {
       role: "Backend Software Engineer",
       initials: "PN",
       color: "from-emerald-500 to-teal-600",
-      image: "/assets/careers/careers_testimonial people/Punitha.png",
+      image: "/assets/careers/careers_testimonial-people/Punitha.png",
     },
     {
       quote: "The infrastructure automation tools we build are top-notch. It's a fantastic environment for mastering cloud architecture.",
@@ -31,7 +31,7 @@ export function EmployeeStories() {
       role: "DevOps Engineer",
       initials: "AL",
       color: "from-blue-500 to-cyan-500",
-      image: "/assets/careers/careers_testimonial people/Alex.png",
+      image: "/assets/careers/careers_testimonial-people/Alex.png",
     },
     {
       quote: "Building highly interactive frontend applications with modern frameworks here is deeply satisfying.",
@@ -39,7 +39,7 @@ export function EmployeeStories() {
       role: "Frontend Developer",
       initials: "RS",
       color: "from-amber-500 to-orange-600",
-      image: "/assets/careers/careers_testimonial people/Rahul.png",
+      image: "/assets/careers/careers_testimonial-people/Rahul.png",
     },
     {
       quote: "Having access to massive datasets and cutting-edge GPU clusters empowers our AI models to push boundaries.",
@@ -47,7 +47,7 @@ export function EmployeeStories() {
       role: "Data Scientist",
       initials: "ST",
       color: "from-purple-500 to-fuchsia-600",
-      image: "/assets/careers/careers_testimonial people/Sarah.png",
+      image: "/assets/careers/careers_testimonial-people/Sarah.png",
     },
     {
       quote: "We design systems that handle millions of requests gracefully. The engineering challenges are incredibly rewarding.",
@@ -55,7 +55,7 @@ export function EmployeeStories() {
       role: "Cloud Architect",
       initials: "DL",
       color: "from-sky-400 to-indigo-500",
-      image: "/assets/careers/careers_testimonial people/David.png",
+      image: "/assets/careers/careers_testimonial-people/David.png",
     },
     {
       quote: "Quality is never an afterthought. We're empowered to build robust test frameworks that ensure flawless deployments.",
@@ -63,7 +63,7 @@ export function EmployeeStories() {
       role: "QA Automation Engineer",
       initials: "MG",
       color: "from-rose-400 to-pink-600",
-      image: "/assets/careers/careers_testimonial people/Maria.png",
+      image: "/assets/careers/careers_testimonial-people/Maria.png",
     },
     {
       quote: "I love how cross-functional teams work in synergy to deliver measurable value to the user while maintaining excellence.",
@@ -71,7 +71,7 @@ export function EmployeeStories() {
       role: "Product Manager",
       initials: "JK",
       color: "from-emerald-400 to-cyan-500",
-      image: "/assets/careers/careers_testimonial people/James.png",
+      image: "/assets/careers/careers_testimonial-people/James.png",
     },
     {
       quote: "Our zero-trust architecture makes security a first-class citizen. It’s inspiring to work where data protection is taken so seriously.",
@@ -79,7 +79,7 @@ export function EmployeeStories() {
       role: "Security Analyst",
       initials: "AP",
       color: "from-red-500 to-rose-700",
-      image: "/assets/careers/careers_testimonial people/Anita.png",
+      image: "/assets/careers/careers_testimonial-people/Anita.png",
     },
     {
       quote: "From database optimization to pixel-perfect UIs, you get to touch every part of the stack. The mentorship is unmatched.",
@@ -87,7 +87,7 @@ export function EmployeeStories() {
       role: "Full Stack Developer",
       initials: "WC",
       color: "from-violet-500 to-purple-700",
-      image: "/assets/careers/careers_testimonial people/Wei.png",
+      image: "/assets/careers/careers_testimonial-people/Wei.png",
     },
   ];
 

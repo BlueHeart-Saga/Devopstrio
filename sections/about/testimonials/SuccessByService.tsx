@@ -64,7 +64,7 @@ export const SuccessByService = () => {
           >
             <div className="w-full md:w-[55%] relative h-[300px] md:h-auto overflow-hidden bg-zinc-950 shrink-0">
               <img 
-                src={featured.image || "/assets/common/464d8932bca4d6bb552ff2dcf2f3c5ca 1.png"} 
+                src={featured.image || "/assets/common/464d8932bca4d6bb552ff2dcf2f3c5ca-1.png"} 
                 alt={featured.title} 
                 className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-90" 
               />
@@ -113,7 +113,7 @@ export const SuccessByService = () => {
             >
               <div className="relative h-[220px] w-full overflow-hidden bg-zinc-950 shrink-0">
                 <img 
-                  src={area.image || "/assets/common/90361fed0bb781d7c86e451995b4dbce 1.png"} 
+                  src={area.image || "/assets/common/90361fed0bb781d7c86e451995b4dbce-1.png"} 
                   alt={area.title} 
                   className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-90" 
                 />

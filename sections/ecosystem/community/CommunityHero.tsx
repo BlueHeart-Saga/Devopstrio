@@ -8,33 +8,33 @@ import Link from "next/link";
 export function CommunityHero() {
   const avatars = [
     // Center Focus (Large, sharp)
-    { id: 1, x: 0, y: 0, size: 76, filter: "none", src: "/assets/ecosystem/community-talent-network_hero people/image 276.png" },
+    { id: 1, x: 0, y: 0, size: 76, filter: "none", src: "/assets/ecosystem/community-talent-network_hero-people/image-276.png" },
 
     // Ring 1 (Radius 52px, slightly smaller, very minor blur)
-    { id: 2, x: 0, y: -52, size: 56, filter: "blur(0.4px)", src: "/assets/ecosystem/community-talent-network_hero people/image 277.png" },
-    { id: 3, x: 52, y: 0, size: 56, filter: "blur(0.4px)", src: "/assets/ecosystem/community-talent-network_hero people/image 278.png" },
-    { id: 4, x: 0, y: 52, size: 56, filter: "blur(0.4px)", src: "/assets/ecosystem/community-talent-network_hero people/image 279.png" },
-    { id: 5, x: -52, y: 0, size: 56, filter: "blur(0.4px)", src: "/assets/ecosystem/community-talent-network_hero people/image 280.png" },
+    { id: 2, x: 0, y: -52, size: 56, filter: "blur(0.4px)", src: "/assets/ecosystem/community-talent-network_hero-people/image-277.png" },
+    { id: 3, x: 52, y: 0, size: 56, filter: "blur(0.4px)", src: "/assets/ecosystem/community-talent-network_hero-people/image-278.png" },
+    { id: 4, x: 0, y: 52, size: 56, filter: "blur(0.4px)", src: "/assets/ecosystem/community-talent-network_hero-people/image-279.png" },
+    { id: 5, x: -52, y: 0, size: 56, filter: "blur(0.4px)", src: "/assets/ecosystem/community-talent-network_hero-people/image-280.png" },
 
     // Ring 2 (Radius 104px, medium size, medium blur)
-    { id: 6, x: -73, y: -73, size: 44, filter: "blur(1.2px)", src: "/assets/ecosystem/community-talent-network_hero people/image 281.png" },
-    { id: 7, x: 73, y: -73, size: 44, filter: "blur(1.2px)", src: "/assets/ecosystem/community-talent-network_hero people/image 282.png" },
-    { id: 8, x: 73, y: 73, size: 44, filter: "blur(1.2px)", src: "/assets/ecosystem/community-talent-network_hero people/image 283.png" },
-    { id: 9, x: -73, y: 73, size: 44, filter: "blur(1.2px)", src: "/assets/ecosystem/community-talent-network_hero people/image 284.png" },
-    { id: 10, x: 0, y: -104, size: 44, filter: "blur(1.2px)", src: "/assets/ecosystem/community-talent-network_hero people/image 285.png" },
-    { id: 11, x: 104, y: 0, size: 44, filter: "blur(1.2px)", src: "/assets/ecosystem/community-talent-network_hero people/image 286.png" },
-    { id: 12, x: 0, y: 104, size: 44, filter: "blur(1.2px)", src: "/assets/ecosystem/community-talent-network_hero people/image 287.png" },
-    { id: 13, x: -104, y: 0, size: 44, filter: "blur(1.2px)", src: "/assets/ecosystem/community-talent-network_hero people/image 276.png" },
+    { id: 6, x: -73, y: -73, size: 44, filter: "blur(1.2px)", src: "/assets/ecosystem/community-talent-network_hero-people/image-281.png" },
+    { id: 7, x: 73, y: -73, size: 44, filter: "blur(1.2px)", src: "/assets/ecosystem/community-talent-network_hero-people/image-282.png" },
+    { id: 8, x: 73, y: 73, size: 44, filter: "blur(1.2px)", src: "/assets/ecosystem/community-talent-network_hero-people/image-283.png" },
+    { id: 9, x: -73, y: 73, size: 44, filter: "blur(1.2px)", src: "/assets/ecosystem/community-talent-network_hero-people/image-284.png" },
+    { id: 10, x: 0, y: -104, size: 44, filter: "blur(1.2px)", src: "/assets/ecosystem/community-talent-network_hero-people/image-285.png" },
+    { id: 11, x: 104, y: 0, size: 44, filter: "blur(1.2px)", src: "/assets/ecosystem/community-talent-network_hero-people/image-286.png" },
+    { id: 12, x: 0, y: 104, size: 44, filter: "blur(1.2px)", src: "/assets/ecosystem/community-talent-network_hero-people/image-287.png" },
+    { id: 13, x: -104, y: 0, size: 44, filter: "blur(1.2px)", src: "/assets/ecosystem/community-talent-network_hero-people/image-276.png" },
 
     // Ring 3 (Radius 150px, smallest size, highest blur)
-    { id: 14, x: -106, y: -106, size: 34, filter: "blur(2.5px)", src: "/assets/ecosystem/community-talent-network_hero people/image 277.png" },
-    { id: 15, x: 106, y: -106, size: 34, filter: "blur(2.5px)", src: "/assets/ecosystem/community-talent-network_hero people/image 278.png" },
-    { id: 16, x: 106, y: 106, size: 34, filter: "blur(2.5px)", src: "/assets/ecosystem/community-talent-network_hero people/image 279.png" },
-    { id: 17, x: -106, y: 106, size: 34, filter: "blur(2.5px)", src: "/assets/ecosystem/community-talent-network_hero people/image 280.png" },
-    { id: 18, x: -150, y: 0, size: 34, filter: "blur(2.5px)", src: "/assets/ecosystem/community-talent-network_hero people/image 281.png" },
-    { id: 19, x: 150, y: 0, size: 34, filter: "blur(2.5px)", src: "/assets/ecosystem/community-talent-network_hero people/image 282.png" },
-    { id: 20, x: 0, y: -150, size: 34, filter: "blur(2.5px)", src: "/assets/ecosystem/community-talent-network_hero people/image 283.png" },
-    { id: 21, x: 0, y: 150, size: 34, filter: "blur(2.5px)", src: "/assets/ecosystem/community-talent-network_hero people/image 284.png" },
+    { id: 14, x: -106, y: -106, size: 34, filter: "blur(2.5px)", src: "/assets/ecosystem/community-talent-network_hero-people/image-277.png" },
+    { id: 15, x: 106, y: -106, size: 34, filter: "blur(2.5px)", src: "/assets/ecosystem/community-talent-network_hero-people/image-278.png" },
+    { id: 16, x: 106, y: 106, size: 34, filter: "blur(2.5px)", src: "/assets/ecosystem/community-talent-network_hero-people/image-279.png" },
+    { id: 17, x: -106, y: 106, size: 34, filter: "blur(2.5px)", src: "/assets/ecosystem/community-talent-network_hero-people/image-280.png" },
+    { id: 18, x: -150, y: 0, size: 34, filter: "blur(2.5px)", src: "/assets/ecosystem/community-talent-network_hero-people/image-281.png" },
+    { id: 19, x: 150, y: 0, size: 34, filter: "blur(2.5px)", src: "/assets/ecosystem/community-talent-network_hero-people/image-282.png" },
+    { id: 20, x: 0, y: -150, size: 34, filter: "blur(2.5px)", src: "/assets/ecosystem/community-talent-network_hero-people/image-283.png" },
+    { id: 21, x: 0, y: 150, size: 34, filter: "blur(2.5px)", src: "/assets/ecosystem/community-talent-network_hero-people/image-284.png" },
   ];
 
   return (

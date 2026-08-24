@@ -837,8 +837,8 @@ const AIAnalyticsIntegration = () => {
 // ==========================================
 const TechnologyStack = () => {
   const techs = [
-    { name: "Microsoft Fabric", logo: "/assets/Tech_logos/Microsoft Azure.svg" },
-    { name: "Azure Synapse", logo: "/assets/Tech_logos/Microsoft Azure.svg" },
+    { name: "Microsoft Fabric", logo: "/assets/Tech_logos/Microsoft-Azure.svg" },
+    { name: "Azure Synapse", logo: "/assets/Tech_logos/Microsoft-Azure.svg" },
     { name: "Snowflake DB", logo: "/assets/Tech_logos/Snowflake.svg" },
     { name: "Databricks", logo: "/assets/Tech_logos/Databricks.svg" },
     { name: "Google BigQuery", logo: "/assets/Tech_logos/Google_Cloud.svg" },
@@ -846,7 +846,7 @@ const TechnologyStack = () => {
     { name: "Confluent Kafka", logo: "/assets/Tech_logos/Confluent.svg" },
     { name: "MongoDB Atlas", logo: "/assets/Tech_logos/MongoDB.svg" },
     { name: "Cloudera System", logo: "/assets/Tech_logos/Cloudera.svg" },
-    { name: "Data Factory", logo: "/assets/Tech_logos/Microsoft Azure.svg" },
+    { name: "Data Factory", logo: "/assets/Tech_logos/Microsoft-Azure.svg" },
     { name: "Elasticsearch", logo: "/assets/Tech_logos/Elastic.svg" },
     { name: "HashiCorp Stack", logo: "/assets/Tech_logos/HashiCorp.svg" }
   ];

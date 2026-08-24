@@ -15,37 +15,37 @@ export function EngineeringPrinciples() {
     { 
       title: "Build Once, Scale Everywhere", 
       desc: "Using containerization templates and modular service frameworks to ensure quick adaptations on AWS, Azure, or private hardware.", 
-      image: "/assets/common/e76e125035885aab9c9070ce85df239e 1.png",
+      image: "/assets/common/e76e125035885aab9c9070ce85df239e-1.png",
       action: "Explore framework"
     },
     { 
       title: "Security By Design", 
       desc: "Validating inputs, encrypting database records, and scanning container images before code gets merged into mainline branches.", 
-      image: "/assets/common/f317dd71184f5c47d601eeb9508bf92c 1.png",
+      image: "/assets/common/f317dd71184f5c47d601eeb9508bf92c-1.png",
       action: "Verify standard"
     },
     { 
       title: "Automation First", 
       desc: "Replacing manual dashboard configurations with GitOps declarative files and script templates to prevent human setup errors.", 
-      image: "/assets/common/ddb20908c846f1426649343fea590cb7 1.png",
+      image: "/assets/common/ddb20908c846f1426649343fea590cb7-1.png",
       action: "View pipelines"
     },
     { 
       title: "Cloud Native Thinking", 
       desc: "Constructing microservices to run on auto-scalable serverless nodes or dynamic Kubernetes namespaces.", 
-      image: "/assets/common/09ff7846bc8c9998745688779c09f88d 1.png",
+      image: "/assets/common/09ff7846bc8c9998745688779c09f88d-1.png",
       action: "Deploy nodes"
     },
     { 
       title: "Continuous Improvement", 
       desc: "Conducting post-incident write-ups and technology audits to continuously optimize load speeds and uptime parameters.", 
-      image: "/assets/common/b384eb0438c55e43c61e7595acc29638 1.png",
+      image: "/assets/common/b384eb0438c55e43c61e7595acc29638-1.png",
       action: "Audit uptime"
     },
     { 
       title: "Customer-Centric Engineering", 
       desc: "Measuring application success against real-world user latency, availability, and onboarding satisfaction levels.", 
-      image: "/assets/common/ed602acdfd41667c71b96f247eca6d4e 1.png",
+      image: "/assets/common/ed602acdfd41667c71b96f247eca6d4e-1.png",
       action: "Measure metrics"
     }
   ];

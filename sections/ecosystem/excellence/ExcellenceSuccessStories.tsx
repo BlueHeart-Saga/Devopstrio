@@ -16,25 +16,25 @@ export function ExcellenceSuccessStories() {
       title: "Cloud Modernization", 
       metric: "70% faster deployments", 
       desc: "Reconfigured a legacy monolithic API system into decoupled serverless container services, optimizing database latency.",
-      image: "/assets/common/464d8932bca4d6bb552ff2dcf2f3c5ca 1.png"
+      image: "/assets/common/464d8932bca4d6bb552ff2dcf2f3c5ca-1.png"
     },
     { 
       title: "SaaS Platform Scaling", 
       metric: "100K+ active users supported", 
       desc: "Deployed row-level data isolation schemes and unified Stripe billing models, supporting rapid tenant onboarding.",
-      image: "/assets/common/782e79a0bc5e9f58cb9af6a27727ca7b 1.png"
+      image: "/assets/common/782e79a0bc5e9f58cb9af6a27727ca7b-1.png"
     },
     { 
       title: "DevOps Transformation", 
       metric: "10x faster release cycles", 
       desc: "Configured self-service developer templates, automated release check gates, and GitOps loops to decrease ticket wait times.",
-      image: "/assets/common/82090d7be4ef5694954ce77f9cc2e627 1.png"
+      image: "/assets/common/82090d7be4ef5694954ce77f9cc2e627-1.png"
     },
     { 
       title: "Security Modernization", 
       metric: "Compliance-ready setup", 
       desc: "Integrated automated SAST scanning and credentials rotation policies into CI steps to pass audits cleanly.",
-      image: "/assets/common/90361fed0bb781d7c86e451995b4dbce 1.png"
+      image: "/assets/common/90361fed0bb781d7c86e451995b4dbce-1.png"
     }
   ];
 

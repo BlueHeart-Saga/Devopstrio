@@ -9,7 +9,7 @@ const benefits = [
     name: "Health & Wellness",
     tag: "WE CARE ABOUT YOU",
     desc: "Comprehensive medical cover and mental health support for you and your family.",
-    image: "/assets/careers/careers_industries/Healthcare & Life Sciences.png",
+    image: "/assets/careers/careers_industries/Healthcare-and-Life-Sciences.png",
   },
   {
     name: "Learning & Certification",
@@ -21,7 +21,7 @@ const benefits = [
     name: "Hybrid & Remote Work",
     tag: "FLEXIBLE LIFE",
     desc: "Flexible schedules blending home office and modern premium workspaces.",
-    image: "/assets/careers/careers_industries/Government & Public Sector.png",
+    image: "/assets/careers/careers_industries/Government-and-Public-Sector.png",
   },
   {
     name: "Global Opportunities",
@@ -33,7 +33,7 @@ const benefits = [
     name: "Generous Leave Policy",
     tag: "WORK-LIFE BALANCE",
     desc: "Generous time off to rest, recharge, travel, and enjoy life fully with your loved ones.",
-    image: "/assets/careers/careers_industries/Media & Entertainment.png",
+    image: "/assets/careers/careers_industries/Media-and-Entertainment.png",
   },
   {
     name: "Performance Rewards",
@@ -45,13 +45,13 @@ const benefits = [
     name: "Competitive Payouts",
     tag: "COMPENSATION",
     desc: "Premium industry payouts, annual bonuses, equity options, and referral incentives.",
-    image: "/assets/careers/careers_industries/Banking & Finance.png",
+    image: "/assets/careers/careers_industries/Banking-and-Finance.png",
   },
   {
     name: "Career Progression",
     tag: "ADVANCEMENT",
     desc: "Structured promotion tracks, architecture mentoring, and executive leadership paths.",
-    image: "/assets/careers/careers_industries/Retail & E-Commerce.png",
+    image: "/assets/careers/careers_industries/Retail-and-E-Commerce.png",
   },
 ];
 

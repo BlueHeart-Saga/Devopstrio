@@ -448,7 +448,7 @@ const TechnologyStack = () => {
     { name: "Analytics", logo: "/assets/Tech-icons/google-analytics-logo_svgstack_com_7431780931840.svg" },
     { name: "Snowflake", logo: "/assets/Tech_logos/Snowflake.svg" },
     { name: "MongoDB", logo: "/assets/Tech_logos/MongoDB.svg" },
-    { name: "Azure", logo: "/assets/Tech_logos/Microsoft Azure.svg" },
+    { name: "Azure", logo: "/assets/Tech_logos/Microsoft-Azure.svg" },
     { name: "AWS", logo: "/assets/Tech_logos/AWS.svg" },
     { name: "Google Cloud", logo: "/assets/Tech_logos/Google_Cloud.svg" }
   ];

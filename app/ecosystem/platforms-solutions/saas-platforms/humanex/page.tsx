@@ -783,10 +783,10 @@ export default function HumanexProductPage() {
                 {integrations.map((int, i) => {
                   const icons = [UserPlus, Activity, Briefcase, Globe];
                   const images = [
-                    "/assets/common/1b065043b6959827c05a0073c93a4a53 1.png",
-                    "/assets/common/260b761ad40c3ad2acba2c6666894539 1.png",
-                    "/assets/common/315e4fdc6263bfd240f36297e376576e 1.png",
-                    "/assets/common/37b9b888cc479ea7b74d2d9a05c37597 1.png"
+                    "/assets/common/1b065043b6959827c05a0073c93a4a53-1.png",
+                    "/assets/common/260b761ad40c3ad2acba2c6666894539-1.png",
+                    "/assets/common/315e4fdc6263bfd240f36297e376576e-1.png",
+                    "/assets/common/37b9b888cc479ea7b74d2d9a05c37597-1.png"
                   ];
                   const Icon = icons[i % 4];
                   return (
@@ -858,17 +858,17 @@ export default function HumanexProductPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
             {[
-              { icon: Lock, title: "SAML SSO Integrations", desc: "Authenticate employee access using Okta, Azure AD, or corporate catalogs.", image: "/assets/common/09ff7846bc8c9998745688779c09f88d 1.png" },
-              { icon: Upload, title: "Secure Upload Portals", desc: "Upload employee contracts, scans, and IDs with automatic isolation checkups.", image: "/assets/common/1b065043b6959827c05a0073c93a4a53 1.png" },
-              { icon: ShieldCheck, title: "Granular Role Settings (RBAC)", desc: "Enforce strict boundaries between managers, payroll admins, and employees.", image: "/assets/common/260b761ad40c3ad2acba2c6666894539 1.png" },
-              { icon: Activity, title: "Encrypted Audit Records", desc: "Every profile review, salary adjustment, or document check is logged.", image: "/assets/common/2fe7f9184c515b0c515ce38bc8a25efa 1.png" }
+              { icon: Lock, title: "SAML SSO Integrations", desc: "Authenticate employee access using Okta, Azure AD, or corporate catalogs.", image: "/assets/common/09ff7846bc8c9998745688779c09f88d-1.png" },
+              { icon: Upload, title: "Secure Upload Portals", desc: "Upload employee contracts, scans, and IDs with automatic isolation checkups.", image: "/assets/common/1b065043b6959827c05a0073c93a4a53-1.png" },
+              { icon: ShieldCheck, title: "Granular Role Settings (RBAC)", desc: "Enforce strict boundaries between managers, payroll admins, and employees.", image: "/assets/common/260b761ad40c3ad2acba2c6666894539-1.png" },
+              { icon: Activity, title: "Encrypted Audit Records", desc: "Every profile review, salary adjustment, or document check is logged.", image: "/assets/common/2fe7f9184c515b0c515ce38bc8a25efa-1.png" }
             ].map((sec, idx) => (
               <Reveal key={idx} delay={idx * 0.05}>
                 <div className="relative rounded-[24px] border border-zinc-800/80 bg-black p-6 md:p-8 flex flex-col justify-between group h-full shadow-lg overflow-hidden transition-all duration-500 hover:border-rose-500/50 min-h-[380px]">
 
                   {/* Expanding Image Layer with Glassmorphism */}
                   <div className="absolute inset-0 z-0 [clip-path:circle(0%_at_100%_100%)] group-hover:[clip-path:circle(150%_at_100%_100%)] transition-all duration-700 ease-in-out pointer-events-none">
-                    <img src={sec.image || '/assets/common/09ff7846bc8c9998745688779c09f88d 1.png'} alt={sec.title} className="w-full h-full object-cover scale-110 group-hover:scale-100 transition-transform duration-1000 ease-out opacity-40" />
+                    <img src={sec.image || '/assets/common/09ff7846bc8c9998745688779c09f88d-1.png'} alt={sec.title} className="w-full h-full object-cover scale-110 group-hover:scale-100 transition-transform duration-1000 ease-out opacity-40" />
                     <div className="absolute inset-0 bg-rose-950/40 backdrop-blur-md" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-rose-900/10 border border-rose-500/10 rounded-[24px]" />
                   </div>

@@ -3,7 +3,7 @@ import React from "react";
 import { Reveal } from "@/components/ui/Reveal";
 
 const highlights = [
-  { year: "2026", category: "Technology Innovation", title: "Networking Computing Finalist", description: "Recognized for driving massive-scale infrastructure modernization.", logo: "/assets/Awards/Netwoking_Computing_Awards_2026 Finalist.png" },
+  { year: "2026", category: "Technology Innovation", title: "Networking Computing Finalist", description: "Recognized for driving massive-scale infrastructure modernization.", logo: "/assets/Awards/Netwoking_Computing_Awards_2026-Finalist.png" },
   { year: "2025", category: "Security & Compliance", title: "Computing Security Awards", description: "Awarded for exceptional DevSecOps practices and zero-trust deployments.", logo: "/assets/Awards/2025_Computing_Security_Awards-1.png" },
   { year: "2023", category: "Client Trust", title: "HSJ Partnerships Award", description: "Recognized for transformative, long-term impact in public sector tech.", logo: "/assets/Awards/HSJ_Partnership_Awards_2023.png" },
   { year: "2023", category: "Ecosystem Growth", title: "Arctic Wolf Partner", description: "Highlighted for scaling rapid, responsive cybersecurity defense mechanisms.", logo: "/assets/Awards/Arctic_Wolf_Partner_Awards.png" },

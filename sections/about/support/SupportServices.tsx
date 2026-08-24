@@ -11,7 +11,7 @@ const services = [
     tag2: "Azure · AWS · GCP",
     title: "Managed Cloud Support",
     subtitle: "Infrastructure Optimisation",
-    image: "/assets/About-page/overview/customersupport/0d35c8aab4c24170e61d1ea01fc4ee77 1.png",
+    image: "/assets/About-page/overview/customersupport/0d35c8aab4c24170e61d1ea01fc4ee77-1.png",
   },
   {
     id: "devops",
@@ -20,7 +20,7 @@ const services = [
     tag2: "CI/CD · Kubernetes",
     title: "DevOps Engineering",
     subtitle: "Platform Automation",
-    image: "/assets/About-page/overview/customersupport/1d57a7791a12aaa4fb18f8fa649970bd 1.png",
+    image: "/assets/About-page/overview/customersupport/1d57a7791a12aaa4fb18f8fa649970bd-1.png",
   },
   {
     id: "app",
@@ -29,7 +29,7 @@ const services = [
     tag2: "SaaS · APIs",
     title: "Application Support",
     subtitle: "Frontend & Backend",
-    image: "/assets/About-page/overview/customersupport/99acdd4cc45c729c9eae31b4df03ea1b 1.png",
+    image: "/assets/About-page/overview/customersupport/99acdd4cc45c729c9eae31b4df03ea1b-1.png",
   },
   {
     id: "security",
@@ -38,7 +38,7 @@ const services = [
     tag2: "SecOps · Compliance",
     title: "Security & SecOps",
     subtitle: "Zero Trust Architecture",
-    image: "/assets/About-page/overview/customersupport/image 6.png",
+    image: "/assets/About-page/overview/customersupport/image-6.png",
   },
 ];
 

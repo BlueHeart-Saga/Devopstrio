@@ -25,25 +25,25 @@ export function IndustryOverview({
     const src = imgSrc.toLowerCase();
 
     if (src.includes("finance") || src.includes("banking") || src.includes("bank")) {
-      return "/assets/Industries-page/industries/Banking & Finance.png";
+      return "/assets/Industries-page/industries/Banking-and-Finance.png";
     }
     if (src.includes("education")) {
       return "/assets/Industries-page/industries/Education.png";
     }
     if (src.includes("public") || src.includes("government") || src.includes("govt")) {
-      return "/assets/Industries-page/industries/Government & Public Sector.png";
+      return "/assets/Industries-page/industries/Government-and-Public-Sector.png";
     }
     if (src.includes("healthcare") || src.includes("health") || src.includes("life")) {
-      return "/assets/Industries-page/industries/Healthcare & Life Sciences.png";
+      return "/assets/Industries-page/industries/Healthcare-and-Life-Sciences.png";
     }
     if (src.includes("manufactur") || src.includes("manuf")) {
       return "/assets/Industries-page/industries/Manufacturing.png";
     }
     if (src.includes("media") || src.includes("entertainment")) {
-      return "/assets/Industries-page/industries/Media & Entertainment.png";
+      return "/assets/Industries-page/industries/Media-and-Entertainment.png";
     }
     if (src.includes("retail") || src.includes("commerce") || src.includes("retails")) {
-      return "/assets/Industries-page/industries/Retail & E-Commerce.png";
+      return "/assets/Industries-page/industries/Retail-and-E-Commerce.png";
     }
     if (src.includes("telecommunication") || src.includes("telecom") || src.includes("tele")) {
       return "/assets/Industries-page/industries/Telecommunications.png";

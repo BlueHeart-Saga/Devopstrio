@@ -144,7 +144,7 @@ export function WhyJoin() {
             <Reveal delay={0.2} className="w-full flex justify-center lg:justify-end">
               <div className="relative w-full max-w-[340px] sm:max-w-[400px] lg:max-w-[440px] rounded-2xl overflow-hidden shadow-[0_30px_70px_rgba(0,0,0,0.85)] border border-zinc-800/80 group">
                 <img
-                  src="/assets/careers/team/gallarey post sermaraj 01.png"
+                  src="/assets/careers/team/gallarey-post-sermaraj-01.png"
                   alt="Devopstrio Career Poster"
                   className="w-full h-auto object-contain select-none transition-transform duration-500 group-hover:scale-[1.02]"
                 />

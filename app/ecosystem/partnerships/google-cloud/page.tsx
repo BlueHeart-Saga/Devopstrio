@@ -620,20 +620,20 @@ export default function GoogleCloudStrategicAllianceHub() {
       <PartnerCertifications 
         title="Google Cloud Certifications"
         certifications={[
-            { image: "/assets/ecosystem/GCP-award/image 130.png" },
-            { image: "/assets/ecosystem/GCP-award/image 131.png" },
-            { image: "/assets/ecosystem/GCP-award/image 132.png" },
-            { image: "/assets/ecosystem/GCP-award/image 133.png" },
-            { image: "/assets/ecosystem/GCP-award/image 134.png" },
-            { image: "/assets/ecosystem/GCP-award/image 135.png" },
-            { image: "/assets/ecosystem/GCP-award/image 136.png" },
-            { image: "/assets/ecosystem/GCP-award/image 137.png" },
-            { image: "/assets/ecosystem/GCP-award/image 146.png" },
-            { image: "/assets/ecosystem/GCP-award/image 147.png" },
-            { image: "/assets/ecosystem/GCP-award/image 148.png" },
-            { image: "/assets/ecosystem/GCP-award/image 149.png" },
-            { image: "/assets/ecosystem/GCP-award/image 150.png" },
-            { image: "/assets/ecosystem/GCP-award/image 151.png" }
+            { image: "/assets/ecosystem/GCP-award/image-130.png" },
+            { image: "/assets/ecosystem/GCP-award/image-131.png" },
+            { image: "/assets/ecosystem/GCP-award/image-132.png" },
+            { image: "/assets/ecosystem/GCP-award/image-133.png" },
+            { image: "/assets/ecosystem/GCP-award/image-134.png" },
+            { image: "/assets/ecosystem/GCP-award/image-135.png" },
+            { image: "/assets/ecosystem/GCP-award/image-136.png" },
+            { image: "/assets/ecosystem/GCP-award/image-137.png" },
+            { image: "/assets/ecosystem/GCP-award/image-146.png" },
+            { image: "/assets/ecosystem/GCP-award/image-147.png" },
+            { image: "/assets/ecosystem/GCP-award/image-148.png" },
+            { image: "/assets/ecosystem/GCP-award/image-149.png" },
+            { image: "/assets/ecosystem/GCP-award/image-150.png" },
+            { image: "/assets/ecosystem/GCP-award/image-151.png" }
           ]}
       />
 

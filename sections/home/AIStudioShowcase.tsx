@@ -17,9 +17,9 @@ const aiServicesList = [
     title: "AI Solutions",
     subtitle: "Cognitive Enterprise Stacks",
     description: "Custom enterprise solutions built on top-tier cognitive stacks, incorporating semantic retrieval systems and customized LLMs.",
-    image: "/assets/Home-page/Servicescard/AI/Ai solutions.png",
+    image: "/assets/Home-page/Servicescard/AI/Ai-solutions.png",
     link: `${aiWebsiteUrl}/#solutions`,
-    icon: "/assets/Home-page/AI Services Gif/AI_Solutions.gif",
+    icon: "/assets/Home-page/AI-Services-Gif/AI_Solutions.gif",
     gradient: "from-rose-950/30 via-[#0d0d11]/90 to-[#030303]",
     border: "border-rose-500/40",
     glow: "shadow-[0_0_35px_rgba(244,63,94,0.12)]",
@@ -32,9 +32,9 @@ const aiServicesList = [
     title: "AI Services",
     subtitle: "Modernization & Model Training",
     description: "End-to-end consulting, continuous modernization, custom model training, and integration pipelines built for modern businesses.",
-    image: "/assets/Home-page/Servicescard/AI/AI Services.png",
+    image: "/assets/Home-page/Servicescard/AI/AI-Services.png",
     link: `${aiWebsiteUrl}/#services`,
-    icon: "/assets/Home-page/AI Services Gif/Services.gif",
+    icon: "/assets/Home-page/AI-Services-Gif/Services.gif",
     gradient: "from-rose-950/30 via-[#0d0d11]/90 to-[#030303]",
     border: "border-rose-500/40",
     glow: "shadow-[0_0_35px_rgba(244,63,94,0.12)]",
@@ -47,9 +47,9 @@ const aiServicesList = [
     title: "AI Agents",
     subtitle: "Autonomous Digital Workforce",
     description: "Deploy autonomous digital agents trained for IT support operations, sales pipeline execution, finance auditing, and HR operations.",
-    image: "/assets/Home-page/Servicescard/AI/AI Agents.png",
+    image: "/assets/Home-page/Servicescard/AI/AI-Agents.png",
     link: `${aiWebsiteUrl}/#agents`,
-    icon: "/assets/Home-page/AI Services Gif/AI-Agent.gif",
+    icon: "/assets/Home-page/AI-Services-Gif/AI-Agent.gif",
     gradient: "from-rose-950/30 via-[#0d0d11]/90 to-[#030303]",
     border: "border-rose-500/40",
     glow: "shadow-[0_0_35px_rgba(244,63,94,0.12)]",
@@ -62,9 +62,9 @@ const aiServicesList = [
     title: "AI by Industry",
     subtitle: "Sector-Specific Engineering",
     description: "Engineered frameworks optimized specifically for Healthcare workflows, Banking security compliance, and Smart Retail recommendations.",
-    image: "/assets/Home-page/Servicescard/AI/AI by industry.png",
+    image: "/assets/Home-page/Servicescard/AI/AI-by-industry.png",
     link: `${aiWebsiteUrl}/#industries`,
-    icon: "/assets/Home-page/AI Services Gif/Industry.gif",
+    icon: "/assets/Home-page/AI-Services-Gif/Industry.gif",
     gradient: "from-rose-950/30 via-[#0d0d11]/90 to-[#030303]",
     border: "border-rose-500/40",
     glow: "shadow-[0_0_35px_rgba(244,63,94,0.12)]",
@@ -77,9 +77,9 @@ const aiServicesList = [
     title: "AI Technology Ecosystem",
     subtitle: "Leading-Edge Stack Integrations",
     description: "Harness standard-setting integrations with OpenAI, Anthropic, LangChain, vector datastores, and cloud environments.",
-    image: "/assets/Home-page/Servicescard/AI/AI Technology eco system.png",
+    image: "/assets/Home-page/Servicescard/AI/AI-Technology-eco-system.png",
     link: `${aiWebsiteUrl}/#ecosystem`,
-    icon: "/assets/Home-page/AI Services Gif/AI technology ecosystem.gif",
+    icon: "/assets/Home-page/AI-Services-Gif/AI-technology-ecosystem.gif",
     gradient: "from-rose-950/30 via-[#0d0d11]/90 to-[#030303]",
     border: "border-rose-500/40",
     glow: "shadow-[0_0_35px_rgba(244,63,94,0.12)]",
@@ -92,9 +92,9 @@ const aiServicesList = [
     title: "AI Governance",
     subtitle: "Zero-Trust Security & Audit",
     description: "Establish model explainability benchmarks, human-in-the-loop oversight workflows, and zero-trust security audits.",
-    image: "/assets/Home-page/Servicescard/AI/AI Covernance.png",
+    image: "/assets/Home-page/Servicescard/AI/AI-Covernance.png",
     link: `${aiWebsiteUrl}/#governance`,
-    icon: "/assets/Home-page/AI Services Gif/AI Security governance.gif",
+    icon: "/assets/Home-page/AI-Services-Gif/AI-Security-governance.gif",
     gradient: "from-rose-950/30 via-[#0d0d11]/90 to-[#030303]",
     border: "border-rose-500/40",
     glow: "shadow-[0_0_35px_rgba(244,63,94,0.12)]",
@@ -107,9 +107,9 @@ const aiServicesList = [
     title: "AI Platforms & Products",
     subtitle: "Intelligent Search & Matching",
     description: "Activate AIHire matching platforms, cognitive search indexers, and automated academic document evaluation studios.",
-    image: "/assets/Home-page/Servicescard/AI/AI Platforms & Products.png",
+    image: "/assets/Home-page/Servicescard/AI/AI-Platforms-and-Products.png",
     link: `${aiWebsiteUrl}/#platforms`,
-    icon: "/assets/Home-page/AI Services Gif/AI products.gif",
+    icon: "/assets/Home-page/AI-Services-Gif/AI-products.gif",
     gradient: "from-rose-950/30 via-[#0d0d11]/90 to-[#030303]",
     border: "border-rose-500/40",
     glow: "shadow-[0_0_35px_rgba(244,63,94,0.12)]",
@@ -344,21 +344,21 @@ const aiDifferenceItems = [
     title: "Strategic GenAI & Enterprise AI Philosophy",
     description:
       "We believe AI is a core operational transformation engine. We design custom generative copilots, agentic automation frameworks, and enterprise LLM architectures tailored to your unique industry requirements, security standards, and growth goals.",
-    image: "/assets/Services-Page/Our Enterprise AI Engineering Excellence/Strategic GenAI & Enterprise AI Philosophy.png"
+    image: "/assets/Services-Page/our-enterprise-ai-engineering-excellence/strategic-genai-enterprise-ai-philosophy.png"
   },
   {
     id: "system",
     title: "Autonomous AI Systems & MLOps Engineering",
     description:
       "Our battle-tested AI engineering framework automates intelligent code generation, continuous model evaluation, automated data pipelines, and zero-trust security compliance — accelerating time-to-value by up to 50% with enterprise reliability.",
-    image: "/assets/Services-Page/Our Enterprise AI Engineering Excellence/Autonomous AI Systems & MLOps Engineering.png"
+    image: "/assets/Services-Page/our-enterprise-ai-engineering-excellence/autonomous-ai-systems-mlops-engineering.png"
   },
   {
     id: "measurement",
     title: "Measurable Business ROI & AI Governance",
     description:
       "We measure every AI deployment across velocity, accuracy, security, and long-term scalability. With continuous real-time telemetry and strict AI governance, we guarantee transparent business impact and sustainable operational excellence.",
-    image: "/assets/Services-Page/Our Enterprise AI Engineering Excellence/Measurable Business ROI & AI Governance.png"
+    image: "/assets/Services-Page/our-enterprise-ai-engineering-excellence/measurable-business-roi-ai-governance.png"
   }
 ];
 
@@ -369,8 +369,8 @@ const aiTransformationCards = [
     title: "Generative AI & Copilots",
     subtitle: "Custom Enterprise LLMs",
     description: "Architect bespoke GenAI engines, domain-tuned copilot assistants, and semantic RAG systems for intelligent workplace productivity.",
-    image: "/assets/Services-Page/Comprehensive AI Services For Enterprises/Generative AI & Copilots.png",
-    hoverImage: "/assets/Services-Page/Comprehensive AI Services For Enterprises_Hover/Generative AI & Copilots.png",
+    image: "/assets/Services-Page/Comprehensive-AI-Services-For-Enterprises/Generative-AI-and-Copilots.png",
+    hoverImage: "/assets/Services-Page/Comprehensive-AI-Services-For-Enterprises_Hover/Generative-AI-and-Copilots.png",
     link: "/services/ai-data-innovation",
     badge: "GenAI & LLMs"
   },
@@ -378,8 +378,8 @@ const aiTransformationCards = [
     title: "Agentic Automation",
     subtitle: "Autonomous Digital Agents",
     description: "Deploy goal-driven autonomous AI agents that execute complex multi-step enterprise workflows, API orchestrations, and back-office operations.",
-    image: "/assets/Services-Page/Comprehensive AI Services For Enterprises/Agentic Automation.png",
-    hoverImage: "/assets/Services-Page/Comprehensive AI Services For Enterprises_Hover/Agentic Automation.png",
+    image: "/assets/Services-Page/Comprehensive-AI-Services-For-Enterprises/Agentic-Automation.png",
+    hoverImage: "/assets/Services-Page/Comprehensive-AI-Services-For-Enterprises_Hover/Agentic-Automation.png",
     link: "/services/ai-data-innovation",
     badge: "AI Agents"
   },
@@ -387,8 +387,8 @@ const aiTransformationCards = [
     title: "Document & Workflow AI",
     subtitle: "Intelligent Process Automation",
     description: "Transform unstructured contracts, financial PDFs, and medical records into actionable insights with multi-modal Document AI and predictive telemetry.",
-    image: "/assets/Services-Page/Comprehensive AI Services For Enterprises/Document & Workflow AI.png",
-    hoverImage: "/assets/Services-Page/Comprehensive AI Services For Enterprises_Hover/Document & Workflow AI.png",
+    image: "/assets/Services-Page/Comprehensive-AI-Services-For-Enterprises/Document-and-Workflow-AI.png",
+    hoverImage: "/assets/Services-Page/Comprehensive-AI-Services-For-Enterprises_Hover/Document-and-Workflow-AI.png",
     link: "/services/ai-data-innovation",
     badge: "DocAI & Analytics"
   },
@@ -396,8 +396,8 @@ const aiTransformationCards = [
     title: "Enterprise AI R&D Studio",
     subtitle: "Custom ML & Vision Engineering",
     description: "End-to-end Machine Learning model training, computer vision synthesis, vector search platforms, and rapid enterprise AI solution prototyping.",
-    image: "/assets/Services-Page/Comprehensive AI Services For Enterprises/Enterprise AI R&D Studio.png",
-    hoverImage: "/assets/Services-Page/Comprehensive AI Services For Enterprises_Hover/Enterprise AI R&D Studio.png",
+    image: "/assets/Services-Page/Comprehensive-AI-Services-For-Enterprises/Enterprise-AI-RandD-Studio.png",
+    hoverImage: "/assets/Services-Page/Comprehensive-AI-Services-For-Enterprises_Hover/Enterprise-AI-RandD-Studio.png",
     link: azureUrl,
     badge: "AI Lab & MLOps"
   }
@@ -412,49 +412,49 @@ export function OldAIStudioShowcase() {
       id: "solutions",
       title: "AI Solutions",
       description: "Custom enterprise solutions built on top-tier cognitive stacks, incorporating semantic retrieval systems and customized LLMs.",
-      image: "/assets/Home-page/Servicescard/AI/Ai solutions.png",
+      image: "/assets/Home-page/Servicescard/AI/Ai-solutions.png",
       link: `${aiWebsiteUrl}/#solutions`
     },
     {
       id: "services",
       title: "AI Services",
       description: "End-to-end consulting, continuous modernization, custom model training, and integration pipelines built for modern businesses.",
-      image: "/assets/Home-page/Servicescard/AI/AI Services.png",
+      image: "/assets/Home-page/Servicescard/AI/AI-Services.png",
       link: `${aiWebsiteUrl}/#services`
     },
     {
       id: "agents",
       title: "AI Agents",
       description: "Deploy autonomous digital agents trained for IT support operations, sales pipeline execution, finance auditing, and HR operations.",
-      image: "/assets/Home-page/Servicescard/AI/AI Agents.png",
+      image: "/assets/Home-page/Servicescard/AI/AI-Agents.png",
       link: `${aiWebsiteUrl}/#agents`
     },
     {
       id: "industry",
       title: "AI by Industry",
       description: "Engineered frameworks optimized specifically for Healthcare workflows, Banking security compliance, and Smart Retail recommendations.",
-      image: "/assets/Home-page/Servicescard/AI/AI by industry.png",
+      image: "/assets/Home-page/Servicescard/AI/AI-by-industry.png",
       link: `${aiWebsiteUrl}/#industries`
     },
     {
       id: "ecosystem",
       title: "AI Technology Ecosystem",
       description: "Harness standard-setting integrations with OpenAI, Anthropic, LangChain, vector datastores, and cloud environments.",
-      image: "/assets/Home-page/Servicescard/AI/AI Technology eco system.png",
+      image: "/assets/Home-page/Servicescard/AI/AI-Technology-eco-system.png",
       link: `${aiWebsiteUrl}/#ecosystem`
     },
     {
       id: "governance",
       title: "AI Governance",
       description: "Establish model explainability benchmarks, human-in-the-loop oversight workflows, and zero-trust security audits.",
-      image: "/assets/Home-page/Servicescard/AI/AI Covernance.png",
+      image: "/assets/Home-page/Servicescard/AI/AI-Covernance.png",
       link: `${aiWebsiteUrl}/#governance`
     },
     {
       id: "platforms",
       title: "AI Platforms & Products",
       description: "Activate AIHire matching platforms, cognitive search indexers, and automated academic document evaluation studios.",
-      image: "/assets/Home-page/Servicescard/AI/AI Platforms & Products.png",
+      image: "/assets/Home-page/Servicescard/AI/AI-Platforms-and-Products.png",
       link: `${aiWebsiteUrl}/#platforms`
     }
   ];

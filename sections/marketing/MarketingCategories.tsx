@@ -21,18 +21,18 @@ interface MarketingCategoriesProps {
 }
 
 const COMMON_ASSET_IMAGES = [
-  "/assets/common/09ff7846bc8c9998745688779c09f88d 1.png",
-  "/assets/common/1b065043b6959827c05a0073c93a4a53 1.png",
-  "/assets/common/260b761ad40c3ad2acba2c6666894539 1.png",
-  "/assets/common/2fe7f9184c515b0c515ce38bc8a25efa 1.png",
-  "/assets/common/315e4fdc6263bfd240f36297e376576e 1.png",
-  "/assets/common/37b9b888cc479ea7b74d2d9a05c37597 1.png",
-  "/assets/common/45ea830d170d382ade235db479060da7 1.png",
-  "/assets/common/464d8932bca4d6bb552ff2dcf2f3c5ca 1.png",
-  "/assets/common/782e79a0bc5e9f58cb9af6a27727ca7b 1.png",
-  "/assets/common/82090d7be4ef5694954ce77f9cc2e627 1.png",
-  "/assets/common/90361fed0bb781d7c86e451995b4dbce 1.png",
-  "/assets/common/945ab601f043c558e0a8162da2a1eb4c 1.png",
+  "/assets/common/09ff7846bc8c9998745688779c09f88d-1.png",
+  "/assets/common/1b065043b6959827c05a0073c93a4a53-1.png",
+  "/assets/common/260b761ad40c3ad2acba2c6666894539-1.png",
+  "/assets/common/2fe7f9184c515b0c515ce38bc8a25efa-1.png",
+  "/assets/common/315e4fdc6263bfd240f36297e376576e-1.png",
+  "/assets/common/37b9b888cc479ea7b74d2d9a05c37597-1.png",
+  "/assets/common/45ea830d170d382ade235db479060da7-1.png",
+  "/assets/common/464d8932bca4d6bb552ff2dcf2f3c5ca-1.png",
+  "/assets/common/782e79a0bc5e9f58cb9af6a27727ca7b-1.png",
+  "/assets/common/82090d7be4ef5694954ce77f9cc2e627-1.png",
+  "/assets/common/90361fed0bb781d7c86e451995b4dbce-1.png",
+  "/assets/common/945ab601f043c558e0a8162da2a1eb4c-1.png",
 ];
 
 export function MarketingCategories({ categories, onSelectCategory }: MarketingCategoriesProps) {
@@ -41,7 +41,7 @@ export function MarketingCategories({ categories, onSelectCategory }: MarketingC
   const activeCategory = categories[selectedIndex] || categories[0];
   const activeImage =
     COMMON_ASSET_IMAGES[selectedIndex % COMMON_ASSET_IMAGES.length] ||
-    "/assets/common/09ff7846bc8c9998745688779c09f88d 1.png";
+    "/assets/common/09ff7846bc8c9998745688779c09f88d-1.png";
 
   const categoryLabels = categories.map((cat) => cat.label);
 

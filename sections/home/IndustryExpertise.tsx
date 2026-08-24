@@ -11,24 +11,24 @@ const industryTabs = [
     name: "Banking & Finance",
     title: "Banking & Finance",
     description: "Achieve your business goals faster with secure custom solutions, from mobile banking apps and payment systems to fraud detection tools. Serve customers better and meet strict regulatory requirements.",
-    image: "/assets/Industries-page/slider/Bank and finance.png",
-    mobileImage: "/assets/Industries-page/industries/Banking & Finance.png"
+    image: "/assets/Industries-page/slider/Bank-and-finance.png",
+    mobileImage: "/assets/Industries-page/industries/Banking-and-Finance.png"
   },
   {
     id: "healthcare",
     name: "Healthcare & Life Sciences",
     title: "Healthcare & Life Sciences",
     description: "Enable high-performance clinical data pipeline processing, secure HIPAA-compliant telehealth applications, and multi-cloud collaboration spaces.",
-    image: "/assets/Industries-page/slider/Healthcare & Life Sciences.png",
-    mobileImage: "/assets/Industries-page/industries/Healthcare & Life Sciences.png"
+    image: "/assets/Industries-page/slider/Healthcare-and-Life-Sciences.png",
+    mobileImage: "/assets/Industries-page/industries/Healthcare-and-Life-Sciences.png"
   },
   {
     id: "retail",
     name: "Retail & E-Commerce",
     title: "Retail & E-Commerce",
     description: "Deploy omnichannel commerce recommendation engines, high-speed product checkout paths, and dynamic warehouse inventory syncs.",
-    image: "/assets/Industries-page/slider/Retail & E-Commerce.png",
-    mobileImage: "/assets/Industries-page/industries/Retail & E-Commerce.png"
+    image: "/assets/Industries-page/slider/Retail-and-E-Commerce.png",
+    mobileImage: "/assets/Industries-page/industries/Retail-and-E-Commerce.png"
   },
   {
     id: "manufacturing",
@@ -51,8 +51,8 @@ const industryTabs = [
     name: "Media & Entertainment",
     title: "Media & Entertainment",
     description: "Deliver high-bandwidth VOD streaming architectures, intelligent asset distribution pipelines, and real-time digital rendering lobbies.",
-    image: "/assets/Industries-page/slider/Media & Entertainment.png",
-    mobileImage: "/assets/Industries-page/industries/Media & Entertainment.png"
+    image: "/assets/Industries-page/slider/Media-and-Entertainment.png",
+    mobileImage: "/assets/Industries-page/industries/Media-and-Entertainment.png"
   },
   {
     id: "education",
@@ -67,8 +67,8 @@ const industryTabs = [
     name: "Government & Public Sector",
     title: "Government & Public Sector",
     description: "Modernize national security portals, establish cloud migration frameworks, and meet strict federal regulatory and database security compliance.",
-    image: "/assets/Industries-page/slider/Government & Public Sector.png",
-    mobileImage: "/assets/Industries-page/industries/Government & Public Sector.png"
+    image: "/assets/Industries-page/slider/Government-and-Public-Sector.png",
+    mobileImage: "/assets/Industries-page/industries/Government-and-Public-Sector.png"
   }
 ];
 

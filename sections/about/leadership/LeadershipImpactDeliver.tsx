@@ -11,7 +11,7 @@ const caseStudies = [
     summary:
       "Architected an autonomous AI-powered analytics engine for a global financial institution, reducing turnaround from days to milliseconds.",
     image:
-      "/assets/Services-Page/Our Enterprise AI Engineering Excellence/Autonomous AI Systems & MLOps Engineering.png",
+      "/assets/Services-Page/our-enterprise-ai-engineering-excellence/autonomous-ai-systems-mlops-engineering.png",
     link: "/services/ai-data-innovation",
     cta: "Explore AI Systems",
   },
@@ -23,7 +23,7 @@ const caseStudies = [
     summary:
       "Modernized legacy core infrastructure into a hybrid multi-cloud mesh with automated guardrails and multi-region resilience.",
     image:
-      "/assets/Services-Page/Our Enterprise AI Engineering Excellence/Strategic GenAI & Enterprise AI Philosophy.png",
+      "/assets/Services-Page/our-enterprise-ai-engineering-excellence/strategic-genai-enterprise-ai-philosophy.png",
     link: "/services/cloud-services",
     cta: "Explore Strategy",
   },
@@ -35,7 +35,7 @@ const caseStudies = [
     summary:
       "Engineered an enterprise platform handling over 10 million transactions daily with sub-second latency and zero critical security incidents.",
     image:
-      "/assets/Services-Page/Our Enterprise AI Engineering Excellence/Measurable Business ROI & AI Governance.png",
+      "/assets/Services-Page/our-enterprise-ai-engineering-excellence/measurable-business-roi-ai-governance.png",
     link: "/services/devops-automation",
     cta: "Explore Governance",
   },

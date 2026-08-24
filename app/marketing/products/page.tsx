@@ -7,14 +7,14 @@ import {
 } from "lucide-react";
 
 const commonImages = [
-  "/assets/common/09ff7846bc8c9998745688779c09f88d 1.png",
-  "/assets/common/1b065043b6959827c05a0073c93a4a53 1.png",
-  "/assets/common/260b761ad40c3ad2acba2c6666894539 1.png",
-  "/assets/common/2fe7f9184c515b0c515ce38bc8a25efa 1.png",
-  "/assets/common/315e4fdc6263bfd240f36297e376576e 1.png",
-  "/assets/common/37b9b888cc479ea7b74d2d9a05c37597 1.png",
-  "/assets/common/45ea830d170d382ade235db479060da7 1.png",
-  "/assets/common/464d8932bca4d6bb552ff2dcf2f3c5ca 1.png",
+  "/assets/common/09ff7846bc8c9998745688779c09f88d-1.png",
+  "/assets/common/1b065043b6959827c05a0073c93a4a53-1.png",
+  "/assets/common/260b761ad40c3ad2acba2c6666894539-1.png",
+  "/assets/common/2fe7f9184c515b0c515ce38bc8a25efa-1.png",
+  "/assets/common/315e4fdc6263bfd240f36297e376576e-1.png",
+  "/assets/common/37b9b888cc479ea7b74d2d9a05c37597-1.png",
+  "/assets/common/45ea830d170d382ade235db479060da7-1.png",
+  "/assets/common/464d8932bca4d6bb552ff2dcf2f3c5ca-1.png",
 ];
 
 const products = [

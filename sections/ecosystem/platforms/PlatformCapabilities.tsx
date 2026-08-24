@@ -15,31 +15,31 @@ export function PlatformCapabilities() {
     {
       title: "Product Engineering",
       desc: "Comprehensive product design, robust system architectures, modern development, testing, and continuous scaling parameters.",
-      bgImage: "/assets/common/1b065043b6959827c05a0073c93a4a53%201.png",
+      bgImage: "/assets/common/1b065043b6959827c05a0073c93a4a53-1.png",
       bullets: ["Architecture Blueprints", "Responsive Web & Mobile", "MVP to Hyper-Scale"]
     },
     {
       title: "SaaS Engineering",
       desc: "Designing multi-tenant subscriptions, tenant provisioning loops, isolated data schemas, and transactional billing engines.",
-      bgImage: "/assets/common/e76e125035885aab9c9070ce85df239e%201.png",
+      bgImage: "/assets/common/e76e125035885aab9c9070ce85df239e-1.png",
       bullets: ["Multi-Tenant Security", "Billing Integrations", "Dynamic Provisioning"]
     },
     {
       title: "AI Engineering",
       desc: "Integrating large language models (LLMs), orchestrating autonomous AI agents, recommendation algorithms, and business automations.",
-      bgImage: "/assets/common/37b9b888cc479ea7b74d2d9a05c37597%201.png",
+      bgImage: "/assets/common/37b9b888cc479ea7b74d2d9a05c37597-1.png",
       bullets: ["Private LLM Tunings", "Agentic Workflows", "Vector Database RAG"]
     },
     {
       title: "Cloud Engineering",
       desc: "Scale infrastructure across Azure, AWS, and OCI, container orchestrations, and automated deployment pipelines.",
-      bgImage: "/assets/common/782e79a0bc5e9f58cb9af6a27727ca7b%201.png",
+      bgImage: "/assets/common/782e79a0bc5e9f58cb9af6a27727ca7b-1.png",
       bullets: ["Automated IaC Fabrics", "Multi-Cloud Grids", "Kubernetes Management"]
     },
     {
       title: "Security Engineering",
       desc: "Enforcing modern Identity Access Management (IAM), Zero Trust communication boundaries, and compliance audit postures.",
-      bgImage: "/assets/common/f317dd71184f5c47d601eeb9508bf92c%201.png",
+      bgImage: "/assets/common/f317dd71184f5c47d601eeb9508bf92c-1.png",
       bullets: ["IAM Federation", "Zero Trust Endpoints", "SOC-2/HIPAA Readiness"]
     }
   ];

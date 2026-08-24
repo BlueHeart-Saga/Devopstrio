@@ -81,7 +81,7 @@ export function HeroSection() {
       ),
       primaryBtn: { text: "Explore Services", href: "/services" },
       secondaryBtn: { text: "Contact Us", href: "/contact#contact-form" },
-      image: "/assets/Home-page/homehero/Umamaheswari R.svg",
+      image: "/assets/Home-page/homehero/Umamaheswari-R.svg",
       name: "Umamaheswari R",
       signatureImage: "/assets/sign/uma.png"
     },
@@ -102,7 +102,7 @@ export function HeroSection() {
       ),
       primaryBtn: { text: "Explore Services", href: "/services" },
       secondaryBtn: { text: "Contact Us", href: "/contact#contact-form" },
-      image: "/assets/Home-page/homehero/updated_hero/Subbiah Muthu.M.svg",
+      image: "/assets/Home-page/homehero/updated_hero/Subbiah-Muthu.M.svg",
       name: "Subbiah Muthu M",
       signatureImage: "/assets/sign/subbiah.png"
     },
@@ -144,7 +144,7 @@ export function HeroSection() {
       ),
       primaryBtn: { text: "Explore Services", href: "/services" },
       secondaryBtn: { text: "Contact Us", href: "/contact#contact-form" },
-      image: "/assets/Home-page/homehero/updated_hero/Thanga Lakshmi.svg",
+      image: "/assets/Home-page/homehero/updated_hero/Thanga-Lakshmi.svg",
       name: "Thanga Lakshmi",
       signatureImage: "/assets/sign/thangalakshmi.png"
     },
@@ -228,7 +228,7 @@ export function HeroSection() {
       ),
       primaryBtn: { text: "Explore Services", href: "/services" },
       secondaryBtn: { text: "Contact Us", href: "/contact#contact-form" },
-      image: "/assets/Home-page/homehero/Suryaprakash s.svg",
+      image: "/assets/Home-page/homehero/Suryaprakash-s.svg",
       name: "Suryaprakash S",
       signatureImage: "/assets/sign/surya.png"
     },

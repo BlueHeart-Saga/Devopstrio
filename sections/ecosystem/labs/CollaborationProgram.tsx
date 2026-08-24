@@ -25,7 +25,7 @@ export function CollaborationProgram() {
       category: "Co-Investment",
       filter: "featured",
       desc: "Co-invest and design custom accelerators tailored to solve specific scaling and automation issues inside your business.",
-      image: "/assets/ecosystem/innovation-labs page PARTICIPATION OPTIONS section/Frame 1000008714.png",
+      image: "/assets/ecosystem/innovation-labs-page-PARTICIPATION-OPTIONS-section/Frame-1000008714.png",
       cta: "Explore Enterprise"
     },
     {
@@ -33,7 +33,7 @@ export function CollaborationProgram() {
       category: "Early Stage",
       filter: "featured",
       desc: "For pre-seed software builders seeking engineering reviews, sandbox accounts, and integration pathways to our catalog.",
-      image: "/assets/ecosystem/innovation-labs page PARTICIPATION OPTIONS section/Frame 1000008715.png",
+      image: "/assets/ecosystem/innovation-labs-page-PARTICIPATION-OPTIONS-section/Frame-1000008715.png",
       cta: "Join Sandbox"
     },
     {
@@ -41,7 +41,7 @@ export function CollaborationProgram() {
       category: "Academic",
       filter: "academic",
       desc: "Sponsoring student research theses, internship programs, and academic investigation into post-quantum models.",
-      image: "/assets/ecosystem/innovation-labs page PARTICIPATION OPTIONS section/Frame 1000008716.png",
+      image: "/assets/ecosystem/innovation-labs-page-PARTICIPATION-OPTIONS-section/Frame-1000008716.png",
       cta: "View Programs"
     },
     {
@@ -49,7 +49,7 @@ export function CollaborationProgram() {
       category: "Alliance",
       filter: "featured",
       desc: "Collaborative testing of upcoming features with AWS, Microsoft Azure, and GCP alpha/beta developer units.",
-      image: "/assets/ecosystem/innovation-labs page PARTICIPATION OPTIONS section/Frame 1000008717.png",
+      image: "/assets/ecosystem/innovation-labs-page-PARTICIPATION-OPTIONS-section/Frame-1000008717.png",
       cta: "Partner With Us"
     },
     {
@@ -57,7 +57,7 @@ export function CollaborationProgram() {
       category: "Community",
       filter: "academic",
       desc: "Open-source codebase contributions, monthly tech meetups, and hosting community labs prototyping sessions.",
-      image: "/assets/ecosystem/innovation-labs page PARTICIPATION OPTIONS section/Frame 1000008718.png",
+      image: "/assets/ecosystem/innovation-labs-page-PARTICIPATION-OPTIONS-section/Frame-1000008718.png",
       cta: "Join Community"
     },
     {
@@ -65,7 +65,7 @@ export function CollaborationProgram() {
       category: "Co-Investment",
       filter: "featured",
       desc: "Collaborative research on multi-agent cognitive architecture, guardrails, and autonomous workflow loops.",
-      image: "/assets/ecosystem/innovation-labs page PARTICIPATION OPTIONS section/Frame 1000008719.png",
+      image: "/assets/ecosystem/innovation-labs-page-PARTICIPATION-OPTIONS-section/Frame-1000008719.png",
       cta: "Explore Guild"
     },
     {
@@ -73,7 +73,7 @@ export function CollaborationProgram() {
       category: "Alliance",
       filter: "featured",
       desc: "Architecting sustainable zero-downtime multi-cloud deployments and automated resource rightsizing algorithms.",
-      image: "/assets/ecosystem/innovation-labs page PARTICIPATION OPTIONS section/Frame 1000008720.png",
+      image: "/assets/ecosystem/innovation-labs-page-PARTICIPATION-OPTIONS-section/Frame-1000008720.png",
       cta: "View Initiative"
     },
     {
@@ -81,7 +81,7 @@ export function CollaborationProgram() {
       category: "Security",
       filter: "featured",
       desc: "Testing shift-left static security tools, automated secret rotation, and continuous compliance verification.",
-      image: "/assets/ecosystem/innovation-labs page PARTICIPATION OPTIONS section/Frame 1000008721.png",
+      image: "/assets/ecosystem/innovation-labs-page-PARTICIPATION-OPTIONS-section/Frame-1000008721.png",
       cta: "Join Security Lab"
     },
     {
@@ -89,7 +89,7 @@ export function CollaborationProgram() {
       category: "Academic",
       filter: "academic",
       desc: "High-throughput telemetry streaming research and decentralized analytical lakehouse blueprints.",
-      image: "/assets/ecosystem/innovation-labs page PARTICIPATION OPTIONS section/Frame 1000008722.png",
+      image: "/assets/ecosystem/innovation-labs-page-PARTICIPATION-OPTIONS-section/Frame-1000008722.png",
       cta: "Access Research"
     },
     {
@@ -97,7 +97,7 @@ export function CollaborationProgram() {
       category: "Alliance",
       filter: "featured",
       desc: "Designing internal developer portals, automated bootstrapping templates, and standardized CI/CD pipelines.",
-      image: "/assets/ecosystem/innovation-labs page PARTICIPATION OPTIONS section/Frame 1000008723.png",
+      image: "/assets/ecosystem/innovation-labs-page-PARTICIPATION-OPTIONS-section/Frame-1000008723.png",
       cta: "Explore Templates"
     }
   ];

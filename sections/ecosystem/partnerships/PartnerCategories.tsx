@@ -22,11 +22,11 @@ interface Category {
 }
 
 const bgWaves: Record<string, string> = {
-  cloud: "/assets/ecosystem/grid/grid-p/Generated Design.png",
-  "ai-data": "/assets/ecosystem/grid/grid-p/Generated Design-1.png",
-  enterprise: "/assets/ecosystem/grid/grid-p/Generated Design-2.png",
-  security: "/assets/ecosystem/grid/grid-p/Generated Design-3.png",
-  infra: "/assets/ecosystem/grid/grid-p/Generated Design-4.png",
+  cloud: "/assets/ecosystem/grid/grid-p/Generated-Design.png",
+  "ai-data": "/assets/ecosystem/grid/grid-p/Generated-Design-1.png",
+  enterprise: "/assets/ecosystem/grid/grid-p/Generated-Design-2.png",
+  security: "/assets/ecosystem/grid/grid-p/Generated-Design-3.png",
+  infra: "/assets/ecosystem/grid/grid-p/Generated-Design-4.png",
 };
 
 export function PartnerCategories() {
@@ -41,7 +41,7 @@ export function PartnerCategories() {
       partners: [
         { 
           name: "Microsoft Azure", 
-          logo: "/assets/Tech_logos/Microsoft Azure.svg", 
+          logo: "/assets/Tech_logos/Microsoft-Azure.svg", 
           desc: "Enterprise application clouds, Active Directory IAM, and Office environments.", 
           href: "/ecosystem/partnerships/microsoft", 
           action: "Configure Azure" 

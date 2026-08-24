@@ -38,7 +38,7 @@ export function PartnershipHero() {
   // Front row (Densest, closest - 12 cards)
   const rowFront = [
     { name: "AWS", src: "/assets/Tech_logos/AWS.svg" },
-    { name: "Azure", src: "/assets/Tech_logos/Microsoft Azure.svg" },
+    { name: "Azure", src: "/assets/Tech_logos/Microsoft-Azure.svg" },
     { name: "GCP", src: "/assets/Tech_logos/Google_Cloud.svg" },
     { name: "Oracle", src: "/assets/Tech_logos/Oracle_Cloud.svg" },
     { name: "Red Hat", src: "/assets/Tech_logos/red_hat.svg" },

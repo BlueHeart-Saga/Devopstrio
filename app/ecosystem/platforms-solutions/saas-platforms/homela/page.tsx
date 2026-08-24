@@ -787,10 +787,10 @@ export default function HomelaProductPage() {
                 {integrations.map((int, i) => {
                   const icons = [UserPlus, Activity, Briefcase, Globe];
                   const images = [
-                    "/assets/common/1b065043b6959827c05a0073c93a4a53 1.png",
-                    "/assets/common/260b761ad40c3ad2acba2c6666894539 1.png",
-                    "/assets/common/315e4fdc6263bfd240f36297e376576e 1.png",
-                    "/assets/common/37b9b888cc479ea7b74d2d9a05c37597 1.png"
+                    "/assets/common/1b065043b6959827c05a0073c93a4a53-1.png",
+                    "/assets/common/260b761ad40c3ad2acba2c6666894539-1.png",
+                    "/assets/common/315e4fdc6263bfd240f36297e376576e-1.png",
+                    "/assets/common/37b9b888cc479ea7b74d2d9a05c37597-1.png"
                   ];
                   const Icon = icons[i % 4];
                   return (
@@ -862,17 +862,17 @@ export default function HomelaProductPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
             {[
-              { icon: Lock, title: "User Authentication", desc: "Protect client profiles and bank payouts with secure MFA.", image: "/assets/common/09ff7846bc8c9998745688779c09f88d 1.png" },
-              { icon: Upload, title: "Secure File Uploads", desc: "Upload tenancy agreements and property documents with automated malware checks.", image: "/assets/common/1b065043b6959827c05a0073c93a4a53 1.png" },
-              { icon: ShieldCheck, title: "Role Permissions", desc: "Grant custom access boundaries to agents, owners, and tenants.", image: "/assets/common/260b761ad40c3ad2acba2c6666894539 1.png" },
-              { icon: Activity, title: "Encrypted Ledgers", desc: "All lease terms and payment log histories are secured with AES-256.", image: "/assets/common/2fe7f9184c515b0c515ce38bc8a25efa 1.png" }
+              { icon: Lock, title: "User Authentication", desc: "Protect client profiles and bank payouts with secure MFA.", image: "/assets/common/09ff7846bc8c9998745688779c09f88d-1.png" },
+              { icon: Upload, title: "Secure File Uploads", desc: "Upload tenancy agreements and property documents with automated malware checks.", image: "/assets/common/1b065043b6959827c05a0073c93a4a53-1.png" },
+              { icon: ShieldCheck, title: "Role Permissions", desc: "Grant custom access boundaries to agents, owners, and tenants.", image: "/assets/common/260b761ad40c3ad2acba2c6666894539-1.png" },
+              { icon: Activity, title: "Encrypted Ledgers", desc: "All lease terms and payment log histories are secured with AES-256.", image: "/assets/common/2fe7f9184c515b0c515ce38bc8a25efa-1.png" }
             ].map((sec, idx) => (
               <Reveal key={idx} delay={idx * 0.05}>
                 <div className="relative rounded-[24px] border border-zinc-800/80 bg-black p-6 md:p-8 flex flex-col justify-between group h-full shadow-lg overflow-hidden transition-all duration-500 hover:border-amber-500/50 min-h-[380px]">
 
                   {/* Expanding Image Layer with Glassmorphism */}
                   <div className="absolute inset-0 z-0 [clip-path:circle(0%_at_100%_100%)] group-hover:[clip-path:circle(150%_at_100%_100%)] transition-all duration-700 ease-in-out pointer-events-none">
-                    <img src={sec.image || '/assets/common/09ff7846bc8c9998745688779c09f88d 1.png'} alt={sec.title} className="w-full h-full object-cover scale-110 group-hover:scale-100 transition-transform duration-1000 ease-out opacity-40" />
+                    <img src={sec.image || '/assets/common/09ff7846bc8c9998745688779c09f88d-1.png'} alt={sec.title} className="w-full h-full object-cover scale-110 group-hover:scale-100 transition-transform duration-1000 ease-out opacity-40" />
                     <div className="absolute inset-0 bg-amber-950/40 backdrop-blur-md" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-amber-900/10 border border-amber-500/10 rounded-[24px]" />
                   </div>

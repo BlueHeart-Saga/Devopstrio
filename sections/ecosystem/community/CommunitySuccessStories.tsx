@@ -16,19 +16,19 @@ export function CommunitySuccessStories() {
       title: "From Student to Cloud Architect", 
       metric: "Graduate joins architecture team", 
       desc: "Joined Devopstrio via university bootcamps, earned multi-cloud credentials, and now orchestrates AWS landing zones.",
-      image: "/assets/common/945ab601f043c558e0a8162da2a1eb4c 1.png"
+      image: "/assets/common/945ab601f043c558e0a8162da2a1eb4c-1.png"
     },
     { 
       title: "Community Contributor to Team Lead", 
       metric: "Open source contributor promoted", 
       desc: "Contributed modular Helm charts to our public repository, transitioned to full-time engineer, and now leads the DevOps group.",
-      image: "/assets/common/9d230407fdcdb1a78debc2abe0ff1925 1.png"
+      image: "/assets/common/9d230407fdcdb1a78debc2abe0ff1925-1.png"
     },
     { 
       title: "Certification to Career Growth", 
       metric: "Developer passes CKA & AWS Security", 
       desc: "Completed internal certification roadmap courses, earning security and orchestration credentials to lead client delivery projects.",
-      image: "/assets/common/9d91b93f83e6d4cd494ec13611b3e50e 1.png"
+      image: "/assets/common/9d91b93f83e6d4cd494ec13611b3e50e-1.png"
     }
   ];
 

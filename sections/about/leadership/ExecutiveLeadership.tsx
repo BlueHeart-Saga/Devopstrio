@@ -148,7 +148,7 @@ export const ExecutiveLeadership = () => {
             <div className="md:col-span-1 md:row-span-2">
               <div className="relative rounded-[1.75rem] overflow-hidden border border-zinc-900 bg-zinc-950/60 h-[444px] hover:border-zinc-800 transition-all duration-500 group shadow-lg flex flex-col justify-end">
                 <img
-                  src="/assets/About-page/card/about inside leadership-team_Grid_card.png"
+                  src="/assets/About-page/card/about-inside-leadership-team_Grid_card.png"
                   alt="Platform Engineering"
                   className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
                 />
@@ -217,11 +217,11 @@ export const ExecutiveLeadership = () => {
 
                 <div className="flex -space-x-3 overflow-hidden select-none py-2 shrink-0 relative z-10">
                   {[
-                    "/assets/Home-page/client-reviews/image 164.png",
-                    "/assets/Home-page/client-reviews/image 165.png",
-                    "/assets/Home-page/client-reviews/image 166.png",
-                    "/assets/Home-page/client-reviews/image 167.png",
-                    "/assets/Home-page/client-reviews/image 168.png"
+                    "/assets/Home-page/client-reviews/image-164.png",
+                    "/assets/Home-page/client-reviews/image-165.png",
+                    "/assets/Home-page/client-reviews/image-166.png",
+                    "/assets/Home-page/client-reviews/image-167.png",
+                    "/assets/Home-page/client-reviews/image-168.png"
                   ].map((src, i) => (
                     <div 
                       key={i} 
@@ -298,7 +298,7 @@ export const ExecutiveLeadership = () => {
                   >
                     <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,23,68,0.03),transparent_50%)] pointer-events-none" />
                     <img
-                      src="/assets/About-page/card/about inside leadership-team_Grid_card.png"
+                      src="/assets/About-page/card/about-inside-leadership-team_Grid_card.png"
                       alt="Leadership Grid Graphic"
                       className="absolute inset-0 w-full h-full object-cover opacity-30 mix-blend-screen pointer-events-none transition-opacity duration-500 group-hover:opacity-50"
                     />
@@ -393,7 +393,7 @@ export const ExecutiveLeadership = () => {
                   >
                     <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,23,68,0.03),transparent_50%)] pointer-events-none" />
                     <img
-                      src="/assets/About-page/card/about inside leadership-team_Grid_card.png"
+                      src="/assets/About-page/card/about-inside-leadership-team_Grid_card.png"
                       alt="Leadership Grid Graphic"
                       className="absolute inset-0 w-full h-full object-cover opacity-30 mix-blend-screen pointer-events-none transition-opacity duration-500 group-hover:opacity-50"
                     />

@@ -128,7 +128,7 @@ export default function CertificationProgramsPage() {
             <div className="lg:col-span-6 relative">
               <div className="relative rounded-[24px] overflow-hidden border border-zinc-800 shadow-2xl bg-zinc-900 group">
                 <img
-                  src="/assets/common/e76e125035885aab9c9070ce85df239e 1.png"
+                  src="/assets/common/e76e125035885aab9c9070ce85df239e-1.png"
                   alt="Classroom and engineering lab environment"
                   className="w-full h-[420px] object-cover group-hover:scale-105 transition-transform duration-500"
                 />
@@ -408,7 +408,7 @@ export default function CertificationProgramsPage() {
             <div className="lg:col-span-6">
               <div className="rounded-[24px] overflow-hidden border border-zinc-800 shadow-2xl bg-zinc-950 group">
                 <img
-                  src="/assets/common/464d8932bca4d6bb552ff2dcf2f3c5ca 1.png"
+                  src="/assets/common/464d8932bca4d6bb552ff2dcf2f3c5ca-1.png"
                   alt="Students working on cloud portals and Kubernetes clusters"
                   className="w-full h-[360px] object-cover group-hover:scale-105 transition-transform duration-500"
                 />
