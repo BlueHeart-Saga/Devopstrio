@@ -21,40 +21,40 @@ export function OverviewHero() {
       quote: "We turn visionary ideas into living digital experiences that bring joy, confidence, and unlimited potential to every enterprise.",
     },
     {
-      id: "mission",
-      tagline: "OUR MISSION",
-      title: (
-        <>
-          Spreading
-          <br />
-          <span className="text-rose-500 font-bold">Hope & Possibility.</span>
-        </>
-      ),
-      quote: "Uplifting teams and businesses everywhere by turning complex engineering into effortless, human-centric success.",
-    },
-    {
       id: "vision",
       tagline: "OUR VISION",
       title: (
         <>
-          Shaping A
+          Pioneering <span className="text-rose-500 font-bold">Innovation.</span>
           <br />
-          <span className="text-rose-500 font-bold">Brighter Tomorrow.</span>
+          Shaping <span className="text-rose-500 font-bold">Excellence.</span>
         </>
       ),
-      quote: "Creating a harmonious digital world where technology serves humanity with warmth, wisdom, and flawless intelligence.",
+      quote: "To be recognized as a global leader in Cloud, AI, and DevOps solutions by enabling organizations to embrace innovation, accelerate growth, and achieve operational excellence. We envision a future where businesses of all sizes can seamlessly harness the power of multi-cloud environments, intelligent automation, and data-driven decision-making to stay competitive and resilient in the digital-first world. Through trust, innovation, and agility, we aspire to shape the future of technology-driven transformation.",
+    },
+    {
+      id: "mission",
+      tagline: "OUR MISSION",
+      title: (
+        <>
+          Empowering <span className="text-rose-500 font-bold">Businesses.</span>
+          <br />
+          Delivering <span className="text-rose-500 font-bold">Impact.</span>
+        </>
+      ),
+      quote: "Our mission is to empower businesses through innovative Cloud, AI, and DevOps solutions that simplify complexity, accelerate transformation, and deliver measurable impact. We strive to build trust, drive sustainable growth, and foster a culture of innovation and agility.",
     },
     {
       id: "values",
       tagline: "OUR CORE VALUES",
       title: (
         <>
-          Powered By
+          Powered By <span className="text-rose-500 font-bold">Trust.</span>
           <br />
-          <span className="text-rose-500 font-bold">Trust & Heart.</span>
+          Driven By <span className="text-rose-500 font-bold">Agility.</span>
         </>
       ),
-      quote: "Guided by deep empathy, genuine integrity, and a passion for empowering people to achieve their absolute best.",
+      quote: "Built on integrity, transparency, and relentless innovation — delivering sustainable growth and engineering excellence for enterprises worldwide.",
     },
   ];
 
@@ -143,7 +143,7 @@ export function OverviewHero() {
                   >
                     <p
                       style={{ textShadow: "0 2px 16px rgba(0, 0, 0, 0.98)" }}
-                      className="text-base sm:text-lg lg:text-xl text-zinc-200 font-sans font-normal leading-relaxed max-w-lg border-l-2 border-rose-500 pl-4 py-1 bg-rose-950/20 backdrop-blur-sm rounded-r-xl drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]"
+                      className="text-sm sm:text-base lg:text-lg text-zinc-200 font-sans font-normal leading-relaxed max-w-xl border-l-2 border-rose-500 pl-4 py-2 bg-rose-950/30 backdrop-blur-sm rounded-r-xl drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]"
                     >
                       &ldquo;{chapters[activeStep].quote}&rdquo;
                     </p>
