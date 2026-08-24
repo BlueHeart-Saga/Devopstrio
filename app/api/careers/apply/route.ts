@@ -50,7 +50,7 @@ export async function POST(req: Request) {
     const results = await Promise.allSettled([
       transporter.sendMail({
         from: `"Devopstrio Careers" <${smtpUser}>`,
-        to: process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'info@devopstrioglobal.com',
+        to: 'career@devopstrioglobal.com',
         replyTo: email,
         subject: `Job Application for ${jobTitle}: ${name}`,
         html: htmlContent,

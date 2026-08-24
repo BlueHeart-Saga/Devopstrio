@@ -168,8 +168,8 @@ export function LegalPageLayout({
               <div className="bg-gradient-to-br from-rose-500/[0.02] to-transparent border border-zinc-900/60 rounded-2xl p-5 text-xs text-zinc-500 leading-relaxed font-light">
                 <span className="block font-bold text-white mb-2">Need legal assistance?</span>
                 For specific regulatory filings, audit reports, or customized compliance arrangements, contact our Trust team at{" "}
-                <a href={`mailto:${process.env.NEXT_PUBLIC_TRUST_EMAIL}`} className="text-rose-500 hover:underline inline-flex items-center gap-1 font-semibold">
-                  trust@devopstrio.com
+                <a href={`mailto:${process.env.NEXT_PUBLIC_TRUST_EMAIL || "info@devopstrioglobal.com"}`} className="text-rose-500 hover:underline inline-flex items-center gap-1 font-semibold">
+                  {process.env.NEXT_PUBLIC_TRUST_EMAIL || "info@devopstrioglobal.com"}
                 </a>
               </div>
             </div>

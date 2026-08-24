@@ -126,11 +126,11 @@ export function DepartmentContacts() {
                     Careers & Jobs
                   </span>
                   <div className="flex items-center justify-between gap-2">
-                    <a href="mailto:careers@devopstrioglobal.com" className="text-base md:text-lg font-semibold text-white hover:text-rose-400 transition-colors tracking-tight truncate">
-                      careers@devopstrioglobal.com
+                    <a href="mailto:career@devopstrioglobal.com" className="text-base md:text-lg font-semibold text-white hover:text-rose-400 transition-colors tracking-tight truncate">
+                      career@devopstrioglobal.com
                     </a>
-                    <button onClick={() => handleCopy("careers@devopstrioglobal.com")} className="text-zinc-400 hover:text-white p-1 flex-shrink-0" title="Copy">
-                      {copiedEmail === "careers@devopstrioglobal.com" ? <Check size={18} className="text-emerald-400" /> : <Copy size={16} />}
+                    <button onClick={() => handleCopy("career@devopstrioglobal.com")} className="text-zinc-400 hover:text-white p-1 flex-shrink-0" title="Copy">
+                      {copiedEmail === "career@devopstrioglobal.com" ? <Check size={18} className="text-emerald-400" /> : <Copy size={16} />}
                     </button>
                   </div>
                 </div>

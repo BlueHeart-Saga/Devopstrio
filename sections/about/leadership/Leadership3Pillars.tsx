@@ -57,7 +57,7 @@ export function Leadership3Pillars() {
   const [activeHoverId, setActiveHoverId] = useState<string | null>(null);
 
   return (
-    <section id="pillars" className="w-full py-6 sm:py-8 bg-black text-white relative overflow-hidden">
+    <section id="pillars" className="w-full pt-0 pb-6 sm:pb-8 bg-black text-white relative overflow-hidden">
       {/* Background Ambient Curved Light Halo */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[95vw] max-w-[1250px] h-[400px] md:h-[550px] bg-gradient-to-r from-rose-600/10 via-rose-500/15 to-rose-600/10 rounded-[100%] blur-[140px] pointer-events-none opacity-80" />
 
@@ -75,7 +75,7 @@ export function Leadership3Pillars() {
                   onMouseLeave={() => setActiveHoverId(null)}
                   className={`p-6 md:p-8 flex flex-col justify-between h-full relative transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] min-h-[380px] md:min-h-[420px] cursor-pointer group ${
                     isHovered
-                      ? "bg-[#030303] shadow-[0_20px_50px_rgba(0,0,0,0.95)] z-20"
+                      ? "bg-zinc-950/90 shadow-[0_20px_50px_rgba(0,0,0,0.95)] z-20"
                       : "bg-transparent"
                   }`}
                 >

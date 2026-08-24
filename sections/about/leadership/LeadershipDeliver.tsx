@@ -69,13 +69,13 @@ export const LeadershipDeliver = () => {
   return (
     <section
       id="leadership-deliver"
-      className="pt-12 pb-2 sm:pt-16 sm:pb-4 bg-black text-white relative overflow-hidden font-sans"
+      className="pt-12 pb-0 sm:pt-16 sm:pb-0 bg-black text-white relative overflow-hidden font-sans"
     >
       {/* Ambient Lighting & Glows */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[90vw] max-w-[1200px] h-[500px] bg-[radial-gradient(ellipse_at_center,rgba(225,29,72,0.08),transparent_70%)] pointer-events-none z-0" />
       <div className="absolute bottom-10 right-10 w-96 h-96 bg-rose-600/5 rounded-full blur-[140px] pointer-events-none z-0" />
 
-      <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 relative z-10 space-y-4">
+      <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 relative z-10 space-y-0">
         
         {/* Top Tagline with Left-Right Arrow indicator */}
         <div className="text-center max-w-4xl mx-auto mb-6 sm:mb-8 relative z-40">
@@ -133,11 +133,11 @@ export const LeadershipDeliver = () => {
             {/* Ambient Lighting Behind Image */}
             <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 sm:w-[700px] h-96 sm:h-[700px] bg-rose-600/10 rounded-full blur-[140px] pointer-events-none z-0" />
 
-            {/* Big Size Leader Image (Backside Layer) */}
-            <div className="relative z-0 w-full max-w-[400px] sm:max-w-[620px] md:max-w-[800px] lg:max-w-[960px] xl:max-w-[1080px] flex items-center justify-center">
+            {/* Big Size Leader Image (Backside Layer - Flush to Section Bottom) */}
+            <div className="relative z-0 w-full max-w-[400px] sm:max-w-[620px] md:max-w-[800px] lg:max-w-[960px] xl:max-w-[1080px] flex items-end justify-center leading-none">
               <img src="/assets/About-page/leader/Mani-PS-REC-BG003.png"
                 alt="Mani - Leadership"
-                className="w-full h-auto object-contain filter contrast-105 drop-shadow-[0_25px_60px_rgba(0,0,0,0.95)]"
+                className="block w-full h-auto object-contain filter contrast-105 drop-shadow-[0_25px_60px_rgba(0,0,0,0.95)]"
               loading="lazy" />
             </div>
 

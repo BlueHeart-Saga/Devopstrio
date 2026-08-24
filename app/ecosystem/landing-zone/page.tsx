@@ -204,7 +204,7 @@ Direct Contacts:
   root_name        = "Devopstrio Global Enterprise"
   deploy_core_landing_zones = true
   
-  security_contact_email = "security@devopstrio.com"
+  security_contact_email = "info@devopstrioglobal.com"
   log_analytics_retention_days = 90
 }`,
       docsContent: "Comprehensive deployment guide for Azure Cloud Adoption Framework (CAF) Enterprise Landing Zones. Covers management group hierarchy, subscription vending machine, central log analytics workspace, and Azure Firewall policy automation."

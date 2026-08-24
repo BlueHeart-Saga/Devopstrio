@@ -11,49 +11,49 @@ const milestones = [
     year: "2019",
     title: "Company Foundation",
     description:
-      "Devopstrio began its journey in Bangalore, India, serving global clients through digital platforms and remote engineering services. This marked the foundation of our commitment to delivering reliable technology solutions worldwide."
+      "Founded with a bold dream: to engineer digital platforms that inspire trust and empower growing businesses worldwide."
   },
   {
     year: "2020",
     title: "London Headquarters Established",
     description:
-      "During a period of global uncertainty, we expanded internationally by establishing our London headquarters. This milestone strengthened our presence in the United Kingdom and accelerated our focus on Cloud Transformation, Infrastructure Modernization, and Enterprise Technology Services."
+      "Established our London headquarters, uniting world-class tech talent to accelerate enterprise cloud transformation."
   },
   {
     year: "2021",
     title: "Multi-Cloud & Industry Expansion",
     description:
-      "We expanded our capabilities across Microsoft Azure, Amazon Web Services (AWS), and Google Cloud Platform (GCP). At the same time, we entered Healthcare and Financial Services, delivering secure, scalable, and industry-focused digital solutions."
+      "Expanded multi-cloud mastery across AWS, Azure, and GCP, empowering healthcare and financial pioneers."
   },
   {
     year: "2022",
     title: "Enterprise Delivery Growth",
     description:
-      "Our engineering teams scaled significantly, enabling us to support larger enterprise engagements across cloud platforms, automation initiatives, application modernization programs, and managed services."
+      "Scaled our engineering pods globally, delivering resilient DevOps automation and modern digital platforms."
   },
   {
     year: "2023",
     title: "Product Engineering & SaaS Innovation",
     description:
-      "We launched industry-focused digital products and SaaS platforms for Healthcare, Banking, and Retail organizations. These solutions helped customers improve operational efficiency, customer experiences, and business performance."
+      "Pioneered enterprise SaaS & AI solutions, transforming complex ideas into intuitive digital experiences."
   },
   {
     year: "2024",
     title: "United States Expansion",
     description:
-      "Expanding into the United States strengthened our global delivery network and enabled us to support growing demand for Artificial Intelligence, Cloud Engineering, Data Platforms, and Enterprise Transformation services."
+      "Expanded into the United States, bringing cutting-edge AI, data engineering, and cloud platforms to global innovators."
   },
   {
     year: "2025",
     title: "Global Delivery & Strategic Partnerships",
     description:
-      "We expanded our operational footprint with new offices and delivery centers while investing in specialized Data, AI, and Cloud capabilities. Strategic partnerships and enhanced delivery models enabled us to provide faster, scalable, and innovation-driven outcomes for clients worldwide."
+      "Strengthened our global delivery hubs, accelerating digital transformation with agility, speed, and trust."
   },
   {
     year: "2026",
     title: "AI-Driven Global Evolution",
     description:
-      "Today, Devopstrio continues to evolve as a global technology partner, helping enterprises accelerate innovation through Artificial Intelligence, Cloud Platforms, DevOps, Cybersecurity, Data Engineering, and Digital Product Development."
+      "Leading the future of AI-driven engineering — building intelligent digital foundations for a brighter tomorrow."
   }
 ];
 
@@ -87,7 +87,7 @@ export function OurStory() {
   const activeEvent = milestones[activeIdx];
 
   return (
-    <section className="w-full py-24 bg-[#030303] text-white relative overflow-hidden" id="our-story">
+    <section className="w-full pt-10 pb-20 md:pt-12 md:pb-24 bg-black text-white relative overflow-hidden" id="our-story">
       {/* Background ambient mesh grid */}
       <div className="absolute inset-0 opacity-[0.02] pointer-events-none"
         style={{ backgroundImage: "radial-gradient(circle, #fff 1px, transparent 1px)", backgroundSize: "32px 32px" }} />
@@ -113,18 +113,18 @@ export function OurStory() {
                 </span>
 
                 <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold leading-tight tracking-tight mb-6 text-white">
-                  From a UK startup
+                  From a bold vision
                   <span className="block text-rose-500 mt-1">
-                    to a global engineering force.
+                    to global engineering impact.
                   </span>
                 </h2>
 
                 <div className="space-y-4 text-zinc-300 text-base md:text-lg leading-relaxed font-normal">
                   <p>
-                    Founded with a singular vision — to make enterprise <Link href="/services/cloud-services" className="text-rose-500 font-semibold hover:underline">cloud &amp; AI engineering</Link> faster, safer, and human-centric — Devopstrio has grown from a high-velocity UK startup into a global delivery powerhouse.
+                    We started with a simple belief — that great technology should inspire confidence, simplify complexity, and bring human passion to engineering.
                   </p>
                   <p>
-                    We eliminated the friction of legacy IT models, empowering global enterprises with agile multi-cloud meshes, autonomous MLOps pipelines, and zero-defect software engineering across 4 delivery hubs.
+                    Today, our global team works side-by-side with enterprise leaders to turn bold ideas into seamless digital reality.
                   </p>
                 </div>
               </div>
@@ -133,15 +133,15 @@ export function OurStory() {
               <div className="lg:col-span-5 p-6 md:p-10 lg:p-12 flex flex-col justify-between bg-zinc-950/20 border-t lg:border-t-0 lg:border-l border-zinc-900/60">
                 <div className="space-y-5 text-zinc-300 text-base md:text-lg leading-relaxed font-normal">
                   <p>
-                    What began as a specialized team of cloud architects in the UK quickly scaled into a multidisciplinary global network of 525+ technology experts, serving Fortune 500 enterprises and hyper-growth innovators worldwide.
+                    What began as a specialized team of cloud architects has grown into a global network of technology experts serving enterprise leaders worldwide.
                   </p>
 
-                  <div className="p-5 bg-zinc-950/80 border border-zinc-800/80 rounded-2xl border-l-4 border-l-rose-500">
+                  <div className="p-5 bg-zinc-950/80 border border-zinc-800/80 rounded-xl border-l-4 border-l-rose-500">
                     <span className="text-xs font-bold text-rose-500 uppercase tracking-widest block mb-1 font-mono">
-                      Our Mission in One Line
+                      Our Purpose
                     </span>
                     <p className="text-base md:text-lg italic text-white font-semibold leading-snug">
-                      &ldquo;We build resilient, scalable technology platforms that turn complex enterprise challenges into measurable market impact.&rdquo;
+                      &ldquo;We build intelligent digital foundations that empower bold visionaries to shape tomorrow.&rdquo;
                     </p>
                   </div>
                 </div>

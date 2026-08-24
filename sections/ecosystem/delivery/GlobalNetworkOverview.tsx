@@ -25,7 +25,7 @@ const officeLocations: OfficeDetail[] = [
     address: "128 City Road, London, United Kingdom, EC1V 2NX",
     type: "Head Office",
     tel: "+44 (0) 20 7183 0123",
-    email: "london.hq@devopstrio.com",
+    email: "info@devopstrioglobal.com",
     mapQuery: "128 City Road, London, EC1V 2NX, United Kingdom",
     flag: "🇬🇧"
   },
@@ -36,7 +36,7 @@ const officeLocations: OfficeDetail[] = [
     address: "167-169 Great Portland Street, 5th Floor, London, W1W 5PF",
     type: "Support Office",
     tel: "+44 (0) 20 7183 0124",
-    email: "london.support@devopstrio.com",
+    email: "info@devopstrioglobal.com",
     mapQuery: "167-169 Great Portland Street, London, W1W 5PF, United Kingdom",
     flag: "🇬🇧"
   },
@@ -47,7 +47,7 @@ const officeLocations: OfficeDetail[] = [
     address: "522 Aventura Dr, Mt Juliet, Tennessee, 37122 United States",
     type: "Sub-Regional Office",
     tel: "+1 (615) 555-0199",
-    email: "us.support@devopstrio.com",
+    email: "info@devopstrioglobal.com",
     mapQuery: "522 Aventura Dr, Mt Juliet, Tennessee, 37122 United States",
     flag: "🇺🇸"
   },
@@ -58,7 +58,7 @@ const officeLocations: OfficeDetail[] = [
     address: "Embassy Golf Links Business Park, Bengaluru, Karnataka-560071, India",
     type: "Corporate Office",
     tel: "+91 80 4123 4567",
-    email: "india.delivery@devopstrio.com",
+    email: "info@devopstrioglobal.com",
     mapQuery: "Embassy Golf Links Business Park, Bengaluru, Karnataka-560071, India",
     flag: "🇮🇳"
   },
@@ -69,7 +69,7 @@ const officeLocations: OfficeDetail[] = [
     address: "Ground Floor, Primus Building, Door No. SP – 7A, Guindy Industrial Estate, SIDCO Industrial Estate, Chennai 600032",
     type: "Operations Center",
     tel: "+91 44 6123 4567",
-    email: "chennai.ops@devopstrio.com",
+    email: "info@devopstrioglobal.com",
     mapQuery: "Primus Building, Door No. SP - 7A, Guindy Industrial Estate, Chennai 600032, India",
     flag: "🇮🇳"
   },
@@ -80,7 +80,7 @@ const officeLocations: OfficeDetail[] = [
     address: "4/ 367, Rajeev Colony, Pasuvanthanai, 628718 Thoothukudi, Tamilnadu, IN",
     type: "Operations Center",
     tel: "+91 461 234 5678",
-    email: "thoothukudi.ops@devopstrio.com",
+    email: "info@devopstrioglobal.com",
     mapQuery: "Pasuvanthanai, Tamilnadu, India",
     flag: "🇮🇳"
   }

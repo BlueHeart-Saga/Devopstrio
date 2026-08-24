@@ -17,7 +17,7 @@ export function OrganizationSchema() {
     ],
     "contactPoint": {
       "@type": "ContactPoint",
-      "email": "info@devopstrio.co.uk",
+      "email": "info@devopstrioglobal.com",
       "contactType": "customer service",
       "availableLanguage": "English"
     }

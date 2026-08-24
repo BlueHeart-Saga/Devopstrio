@@ -82,7 +82,7 @@ const ChatNowSection = () => (
   <div className="flex items-center gap-2.5">
     <span className="text-zinc-400 text-xs font-medium">Chat now:</span>
     <a
-      href={`mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL || "contact@devopstrio.com"}`}
+      href={`mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL || "info@devopstrioglobal.com"}`}
       className="text-zinc-400 hover:text-white transition-all duration-200 hover:scale-110 flex items-center justify-center p-0.5 rounded"
       title="Email Us"
     >

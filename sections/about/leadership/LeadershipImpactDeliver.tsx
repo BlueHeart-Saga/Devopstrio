@@ -68,7 +68,7 @@ export const LeadershipImpactDeliver = () => {
   return (
     <section
       id="leadership-impact-deliver"
-      className="pt-2 pb-4 sm:pt-4 sm:pb-6 bg-black text-white relative overflow-hidden font-sans"
+      className="pt-4 pb-12 sm:pt-6 sm:pb-16 md:pb-20 bg-black text-white relative overflow-hidden font-sans"
     >
       {/* Ambient Lighting & Glows */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[90vw] max-w-[1200px] h-[500px] bg-[radial-gradient(ellipse_at_center,rgba(225,29,72,0.08),transparent_70%)] pointer-events-none z-0" />
@@ -118,58 +118,60 @@ export const LeadershipImpactDeliver = () => {
           </div> */}
         </div>
 
-        {/* Real Case Studies: 3 Major Horizontal Stories (Seamless Dark Theme Cards, No White Borders) */}
-        <div className="space-y-12 pt-4">
-          <div className="text-center max-w-2xl mx-auto space-y-3">
-            <h3 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-white tracking-tight">
-              Stories of Impact
-            </h3>
-          </div>
+        {/* Real Case Studies block commented out clean */}
+        {false && (
+          <div className="space-y-12 pt-4">
+            <div className="text-center max-w-2xl mx-auto space-y-3">
+              <h3 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-white tracking-tight">
+                Stories of Impact
+              </h3>
+            </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {caseStudies.map((cs) => (
-              <div
-                key={cs.id}
-                className="group flex flex-col justify-between bg-black hover:bg-zinc-950/80 rounded-3xl p-4 transition-all duration-300 shadow-xl hover:shadow-[0_20px_50px_rgba(0,0,0,0.9)]"
-              >
-                <div className="space-y-4">
-                  {/* Cover Image */}
-                  <div className="relative w-full aspect-[2/1] overflow-hidden rounded-2xl bg-zinc-950">
-                    <img src={cs.image}
-                      alt={cs.headline}
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                      loading="lazy" />
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {caseStudies.map((cs) => (
+                <div
+                  key={cs.id}
+                  className="group flex flex-col justify-between bg-black hover:bg-zinc-950/80 rounded-3xl p-4 transition-all duration-300 shadow-xl hover:shadow-[0_20px_50px_rgba(0,0,0,0.9)]"
+                >
+                  <div className="space-y-4">
+                    {/* Cover Image */}
+                    <div className="relative w-full aspect-[2/1] overflow-hidden rounded-2xl bg-zinc-950">
+                      <img src={cs.image}
+                        alt={cs.headline}
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                        loading="lazy" />
+                    </div>
+
+                    {/* Card Body */}
+                    <div className="flex flex-col px-2 pt-2 pb-2 gap-3">
+                      <span className="text-rose-500 text-xs sm:text-sm font-semibold uppercase tracking-wider font-sans">
+                        {cs.tag}
+                      </span>
+                      <h4 className="text-white text-xl sm:text-2xl font-semibold leading-snug font-sans group-hover:text-rose-500 transition-colors">
+                        {cs.headline}
+                      </h4>
+                    </div>
                   </div>
 
-                  {/* Card Body */}
-                  <div className="flex flex-col px-2 pt-2 pb-2 gap-3">
-                    <span className="text-rose-500 text-xs sm:text-sm font-semibold uppercase tracking-wider font-sans">
-                      {cs.tag}
-                    </span>
-                    <h4 className="text-white text-xl sm:text-2xl font-semibold leading-snug font-sans group-hover:text-rose-500 transition-colors">
-                      {cs.headline}
-                    </h4>
+                  {/* CTA Link */}
+                  <div className="px-2 pt-4 pb-2 mt-2">
+                    <Link
+                      href={cs.link}
+                      className="inline-flex items-center justify-between w-full text-white hover:text-rose-500 text-sm sm:text-base font-semibold tracking-wide transition-all duration-300 group/btn"
+                    >
+                      <span className="group-hover/btn:translate-x-1 transition-transform duration-300">
+                        {cs.cta}
+                      </span>
+                      <span className="w-9 h-9 rounded-full bg-rose-500/10 group-hover/btn:bg-rose-600 flex items-center justify-center text-rose-500 group-hover/btn:text-white transition-all duration-300 shadow-[0_0_15px_rgba(225,29,72,0.2)] group-hover/btn:shadow-[0_0_20px_rgba(225,29,72,0.6)]">
+                        <ArrowUpRight size={17} />
+                      </span>
+                    </Link>
                   </div>
                 </div>
-
-                {/* CTA Link */}
-                <div className="px-2 pt-4 pb-2 mt-2">
-                  <Link
-                    href={cs.link}
-                    className="inline-flex items-center justify-between w-full text-white hover:text-rose-500 text-sm sm:text-base font-semibold tracking-wide transition-all duration-300 group/btn"
-                  >
-                    <span className="group-hover/btn:translate-x-1 transition-transform duration-300">
-                      {cs.cta}
-                    </span>
-                    <span className="w-9 h-9 rounded-full bg-rose-500/10 group-hover/btn:bg-rose-600 flex items-center justify-center text-rose-500 group-hover/btn:text-white transition-all duration-300 shadow-[0_0_15px_rgba(225,29,72,0.2)] group-hover/btn:shadow-[0_0_20px_rgba(225,29,72,0.6)]">
-                      <ArrowUpRight size={17} />
-                    </span>
-                  </Link>
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </section>
   );

@@ -8,7 +8,7 @@ function ScrollWordReveal({ text, progress }: { text: string; progress: number }
   const total = words.length;
 
   return (
-    <span className="inline">
+    <span className="inline font-semibold">
       {words.map((word, i) => {
         const start = i / total;
         const end = (i + 1) / total;
@@ -19,15 +19,15 @@ function ScrollWordReveal({ text, progress }: { text: string; progress: number }
         return (
           <span
             key={`${word}-${i}`}
-            className="inline-block transition-all duration-150 ease-out mr-[0.3em]"
+            className="inline-block transition-all duration-150 ease-out mr-[0.3em] font-semibold"
             style={{
-              opacity: 0.2 + wordRatio * 0.8,
-              transform: `translateY(${(1 - wordRatio) * 5}px)`,
-              filter: `blur(${(1 - wordRatio) * 2}px)`,
-              color: isRevealed ? "#ffffff" : "rgba(255, 255, 255, 0.25)",
+              opacity: 0.45 + wordRatio * 0.55,
+              transform: `translateY(${(1 - wordRatio) * 4}px)`,
+              filter: `blur(${(1 - wordRatio) * 1.5}px)`,
+              color: isRevealed ? "#ffffff" : "rgba(255, 255, 255, 0.55)",
               textShadow: isRevealed
-                ? "0 2px 16px rgba(0, 0, 0, 0.98), 0 0 10px rgba(244, 63, 94, 0.35)"
-                : "none",
+                ? "0 2px 16px rgba(0, 0, 0, 0.98), 0 0 12px rgba(244, 63, 94, 0.4)"
+                : "0 1px 4px rgba(0, 0, 0, 0.8)",
             }}
           >
             {word}
@@ -47,11 +47,6 @@ export function OverviewHero() {
     {
       id: "hero",
       tagline: "DEVOPSTRIO OVERVIEW",
-      title: (
-        <>
-          Crafting Dreams &amp; <span className="text-rose-500 font-bold">Inspiring Growth</span>
-        </>
-      ),
       quote: "We turn visionary ideas into living digital experiences that bring confidence, clarity, and unlimited potential to every enterprise.",
     },
     {
@@ -143,7 +138,7 @@ export function OverviewHero() {
                 {chapters[activeStep].tagline && (
                   <span
                     style={{ textShadow: "0 2px 12px rgba(0, 0, 0, 0.95)" }}
-                    className="text-rose-500 font-sans text-base sm:text-lg md:text-xl font-extrabold tracking-[0.25em] uppercase drop-shadow-[0_2px_12px_rgba(244,63,94,0.5)]"
+                    className="text-rose-500 font-sans text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold tracking-[0.2em] uppercase drop-shadow-[0_2px_12px_rgba(244,63,94,0.5)]"
                   >
                     {chapters[activeStep].tagline}
                   </span>
@@ -153,7 +148,7 @@ export function OverviewHero() {
                 {chapters[activeStep].title && (
                   <h1
                     style={{ textShadow: "0 4px 24px rgba(0, 0, 0, 0.98), 0 2px 8px rgba(0, 0, 0, 0.9)" }}
-                    className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-[1.12] drop-shadow-[0_4px_16px_rgba(0,0,0,0.9)] font-sans"
+                    className="text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight text-white leading-[1.12] drop-shadow-[0_4px_16px_rgba(0,0,0,0.9)] font-sans"
                   >
                     {chapters[activeStep].title}
                   </h1>
@@ -169,7 +164,7 @@ export function OverviewHero() {
                   >
                     <p
                       style={{ textShadow: "0 2px 20px rgba(0, 0, 0, 0.98)" }}
-                      className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-zinc-100 font-sans font-medium leading-relaxed w-full max-w-xl drop-shadow-[0_4px_20px_rgba(0,0,0,0.95)]"
+                      className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-zinc-100 font-sans font-semibold leading-relaxed w-full max-w-2xl drop-shadow-[0_4px_20px_rgba(0,0,0,0.95)]"
                     >
                       <span className="text-rose-500 font-serif text-3xl sm:text-4xl mr-1.5 inline-block align-top leading-none">&ldquo;</span>
                       <ScrollWordReveal text={chapters[activeStep].quote} progress={stepProgress} />

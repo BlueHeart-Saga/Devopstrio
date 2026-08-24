@@ -30,7 +30,7 @@ const aboutSections = [
 
 export default function AboutPage() {
   return (
-    <main className="min-h-screen bg-black text-white pt-16 font-sans">
+    <main className="min-h-screen bg-black text-white pt-0 font-sans">
 
       {/* New Cinematic Hero Intro */}
       {/* <section className="pt-16 pb-4 md:pb-8 text-center relative bg-[#030303]">
@@ -47,9 +47,7 @@ export default function AboutPage() {
 
       {/* Existing About Components with High-Level Coded SVG Wave Lines */}
       <div id="about-components-start" className="flex flex-col bg-black">
-        <AboutHero />
-        {/* <SectionNavbar sections={aboutSections} /> */}
-        {/* <SvgWaveLine variant="smooth" /> */}
+        {/* <AboutHero /> */}
 
         <div id="identity">
           <CompanyIntro />
