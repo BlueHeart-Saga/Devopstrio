@@ -13,47 +13,24 @@ export function OverviewHero() {
       tagline: "DEVOPSTRIO OVERVIEW",
       title: (
         <>
-          Crafting <span className="text-rose-500 font-bold">Dreams.</span>
-          <br />
-          Inspiring <span className="text-rose-500 font-bold">Growth.</span>
+          Crafting Dreams &amp; <span className="text-rose-500 font-bold">Inspiring Growth</span>
         </>
       ),
-      quote: "We turn visionary ideas into living digital experiences that bring joy, confidence, and unlimited potential to every enterprise.",
+      quote: "We turn visionary ideas into living digital experiences that bring confidence, clarity, and unlimited potential to every enterprise.",
     },
     {
       id: "vision",
       tagline: "OUR VISION",
-      title: (
-        <>
-          Pioneering <span className="text-rose-500 font-bold">Innovation.</span>
-          <br />
-          Shaping <span className="text-rose-500 font-bold">Excellence.</span>
-        </>
-      ),
-      quote: "To be recognized as a global leader in Cloud, AI, and DevOps solutions by enabling organizations to embrace innovation, accelerate growth, and achieve operational excellence. We envision a future where businesses of all sizes can seamlessly harness the power of multi-cloud environments, intelligent automation, and data-driven decision-making to stay competitive and resilient in the digital-first world. Through trust, innovation, and agility, we aspire to shape the future of technology-driven transformation.",
+      quote: "To be a global leader in Cloud, AI, and DevOps by empowering organizations to harness multi-cloud innovation, intelligent automation, and data-driven decision-making to drive resilient growth.",
     },
     {
       id: "mission",
       tagline: "OUR MISSION",
-      title: (
-        <>
-          Empowering <span className="text-rose-500 font-bold">Businesses.</span>
-          <br />
-          Delivering <span className="text-rose-500 font-bold">Impact.</span>
-        </>
-      ),
-      quote: "Our mission is to empower businesses through innovative Cloud, AI, and DevOps solutions that simplify complexity, accelerate transformation, and deliver measurable impact. We strive to build trust, drive sustainable growth, and foster a culture of innovation and agility.",
+      quote: "To empower businesses with innovative Cloud, AI, and DevOps solutions that simplify complexity, accelerate transformation, and deliver measurable impact through trust and agility.",
     },
     {
       id: "values",
       tagline: "OUR CORE VALUES",
-      title: (
-        <>
-          Powered By <span className="text-rose-500 font-bold">Trust.</span>
-          <br />
-          Driven By <span className="text-rose-500 font-bold">Agility.</span>
-        </>
-      ),
       quote: "Built on integrity, transparency, and relentless innovation — delivering sustainable growth and engineering excellence for enterprises worldwide.",
     },
   ];
@@ -126,12 +103,14 @@ export function OverviewHero() {
                 )}
 
                 {/* Main Short Feel-Good Title */}
-                <h1
-                  style={{ textShadow: "0 4px 24px rgba(0, 0, 0, 0.98), 0 2px 8px rgba(0, 0, 0, 0.9)" }}
-                  className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-[1.12] drop-shadow-[0_4px_16px_rgba(0,0,0,0.9)] font-sans"
-                >
-                  {chapters[activeStep].title}
-                </h1>
+                {chapters[activeStep].title && (
+                  <h1
+                    style={{ textShadow: "0 4px 24px rgba(0, 0, 0, 0.98), 0 2px 8px rgba(0, 0, 0, 0.9)" }}
+                    className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-[1.12] drop-shadow-[0_4px_16px_rgba(0,0,0,0.9)] font-sans"
+                  >
+                    {chapters[activeStep].title}
+                  </h1>
+                )}
 
                 {/* Professional Sub-Text Quote */}
                 {chapters[activeStep].quote && (
