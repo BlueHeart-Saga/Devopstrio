@@ -129,14 +129,14 @@ export function ServiceOverview({
                   Transforming operations with <span className="text-rose-500 font-semibold">{title}</span>
                 </h2>
 
-                <div className="space-y-4 text-zinc-200 text-xs md:text-sm font-semibold leading-relaxed">
+                {/* <div className="space-y-4 text-zinc-200 text-xs md:text-sm font-semibold leading-relaxed">
                   <p className="border-l-2 border-rose-500/50 pl-4">
                     {subtitle}
                   </p>
                   <p className="border-l-2 border-white/10 pl-4 text-zinc-400">
                     We deploy custom automated architectures, low-latency deployment vectors, and security controls built to drive innovation and resilience across your digital products.
                   </p>
-                </div>
+                </div> */}
               </div>
 
               {/* RIGHT IMAGE */}
@@ -168,7 +168,7 @@ export function ServiceOverview({
 
             {/* Centered Professional Paragraph Content Card */}
             <div className="relative max-w-5xl mx-auto p-8 md:p-12 rounded-[32px] border border-white/5 bg-zinc-950/20 backdrop-blur-md overflow-hidden shadow-[0_8px_32px_rgba(0,0,0,0.5)]">
-              {/* Subtle ambient highlight inside the card */}
+             
               <div className="absolute -right-24 -bottom-24 w-80 h-80 bg-rose-600/5 blur-[100px] pointer-events-none" />
               <div className="absolute -left-24 -top-24 w-80 h-80 bg-rose-600/5 blur-[100px] pointer-events-none" />
 
@@ -176,10 +176,10 @@ export function ServiceOverview({
                 <p className="text-base md:text-lg lg:text-xl font-light text-zinc-100 leading-relaxed max-w-4xl mx-auto">
                   {overviewDesc1}
                 </p>
-                <div className="w-24 h-[1px] bg-gradient-to-r from-transparent via-rose-500/40 to-transparent mx-auto my-2" />
+                {/* <div className="w-24 h-[1px] bg-gradient-to-r from-transparent via-rose-500/40 to-transparent mx-auto my-2" />
                 <p className="text-xs md:text-sm lg:text-base font-normal text-zinc-450 leading-relaxed max-w-3xl mx-auto">
                   {overviewDesc2}
-                </p>
+                </p> */}
               </div>
             </div>
           </Reveal>

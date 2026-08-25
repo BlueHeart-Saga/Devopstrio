@@ -51,7 +51,7 @@ export default function ServiceNowPartnershipPage() {
   useEffect(() => {
     let lenis: { raf: (time: number) => void; destroy: () => void } | null = null;
     let raf = 0;
-    let cleanupTriggers = () => {};
+    let cleanupTriggers = () => { };
     let alive = true;
 
     const startMotion = async () => {
@@ -277,10 +277,10 @@ export default function ServiceNowPartnershipPage() {
 
   return (
     <main className="min-h-screen bg-black text-white pt-16 font-sans overflow-x-hidden selection:bg-rose-500 selection:text-white">
-      
+
       {/* 1. HERO SECTION WITH CALM EMERALD/GREEN SERVICENOW WAVE DESIGN */}
       <section className="relative w-full min-h-[95vh] flex flex-col items-center justify-center bg-black overflow-hidden pt-28 pb-20 border-b border-zinc-900/60">
-        
+
         {/* Concentric Wave Elements in ServiceNow Emerald/Green Theme */}
         <div className="absolute right-[-10%] md:right-[-5%] top-1/2 -translate-y-1/2 w-[85%] md:w-[65%] h-[130%] z-0 pointer-events-none select-none overflow-hidden flex items-center justify-end">
           <div className="relative w-full h-full flex items-center justify-end">
@@ -288,10 +288,10 @@ export default function ServiceNowPartnershipPage() {
             <div className="absolute w-[170%] h-[135%] right-[-40%] rounded-[110px] md:rounded-[230px] border border-emerald-500/10 rotate-[-28deg] pointer-events-none" />
             <div className="absolute w-[140%] h-[110%] right-[-30%] rounded-[100px] md:rounded-[200px] border border-green-500/15 rotate-[-28deg] pointer-events-none" />
             <div className="absolute w-[110%] h-[85%] right-[-20%] rounded-[90px] md:rounded-[170px] border border-emerald-600/15 rotate-[-28deg] pointer-events-none" />
-            
+
             <div className="absolute w-[80%] h-[60%] right-[-10%] rounded-[80px] md:rounded-[140px] border border-green-500/20 rotate-[-28deg] pointer-events-none" />
             <div className="absolute w-[50%] h-[35%] right-[0%] rounded-[70px] md:rounded-[110px] border border-emerald-500/25 rotate-[-28deg] pointer-events-none" />
-            
+
             <div className="absolute right-[5%] w-[180px] h-[90px] bg-gradient-to-r from-emerald-600/15 via-green-600/10 to-teal-500/5 rounded-full blur-[50px] opacity-40 animate-pulse" />
           </div>
         </div>
@@ -306,7 +306,7 @@ export default function ServiceNowPartnershipPage() {
 
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            
+
             {/* Hero Left Content */}
             <div className="lg:col-span-7 flex flex-col items-start text-left">
               <Reveal className="mb-6">
@@ -316,13 +316,13 @@ export default function ServiceNowPartnershipPage() {
                   </span>
                 </div>
               </Reveal>
-              
+
               <Reveal delay={0.1}>
                 <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold tracking-tight leading-[1.12] text-white mb-6">
                   ServiceNow <span className="text-[#10b981] whitespace-nowrap">Ecosystem</span>
                 </h1>
               </Reveal>
-              
+
               <Reveal delay={0.2}>
                 <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
                   Transform IT operations, automate enterprise workflows, and deliver seamless digital experiences through the ServiceNow platform and Devopstrio's implementation expertise.
@@ -345,7 +345,7 @@ export default function ServiceNowPartnershipPage() {
                   ))}
                 </div>
               </Reveal>
-              
+
               {/* CTAs */}
               <Reveal delay={0.4} className="flex flex-wrap gap-4">
                 <Link
@@ -366,7 +366,7 @@ export default function ServiceNowPartnershipPage() {
             {/* Hero Right Visual (Logo Integration) */}
             <div className="lg:col-span-5 relative flex items-center justify-center select-none z-10">
               <div className="relative w-full max-w-[420px] aspect-square flex items-center justify-center">
-                
+
                 {/* Connecting glowing line and animation */}
                 <div className="absolute inset-x-12 h-[2px] bg-gradient-to-r from-emerald-500/25 via-green-500/30 to-emerald-500/25 z-0 pointer-events-none">
                   {/* Energy Pulse */}
@@ -374,7 +374,7 @@ export default function ServiceNowPartnershipPage() {
                 </div>
 
                 <div className="flex items-center justify-between w-full relative z-10 px-4">
-                  
+
                   {/* Devopstrio Logo Card */}
                   <div className="relative group/logo w-[120px] h-[120px] sm:w-[130px] sm:h-[130px] rounded-3xl bg-[#09090b]/80 border border-zinc-800 hover:border-emerald-500/30 flex items-center justify-center p-5 shadow-2xl backdrop-blur-md transition-all duration-500 hover:-translate-y-1">
                     <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/[0.03] to-transparent rounded-3xl opacity-0 group-hover/logo:opacity-100 transition-opacity" />
@@ -382,7 +382,7 @@ export default function ServiceNowPartnershipPage() {
                     <img src="/webp/assets/logo/logo.webp"
                       alt="Devopstrio Logo"
                       className="w-full h-auto max-h-[85%] object-contain select-none filter brightness-105"
-                    loading="lazy" />
+                      loading="lazy" />
                   </div>
 
                   {/* Plus Connector Indicator */}
@@ -397,7 +397,7 @@ export default function ServiceNowPartnershipPage() {
                     <img src="/assets/Tech_logos/Service_now.svg"
                       alt="ServiceNow Logo"
                       className="w-full h-auto max-h-[85%] object-contain select-none filter brightness-110"
-                    loading="lazy" />
+                      loading="lazy" />
                   </div>
 
                 </div>
@@ -419,7 +419,7 @@ export default function ServiceNowPartnershipPage() {
       <section id="overview" className="w-full py-24 bg-[#030303] border-b border-zinc-900/60 relative">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
-            
+
             <div className="lg:col-span-5">
               <Reveal className="text-left">
                 <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
@@ -608,31 +608,31 @@ export default function ServiceNowPartnershipPage() {
       </section>
 
       {/* 6. BUSINESS USE CASES */}
-      
 
-      
+
+
       {/* CERTIFICATIONS */}
-      <PartnerCertifications 
+      <PartnerCertifications
         title="ServiceNow Certifications"
         certifications={[
-            { image: "/webp/assets/ecosystem/Servicenow_Aards/image-164.webp" },
-            { image: "/webp/assets/ecosystem/Servicenow_Aards/image-165.webp" },
-            { image: "/webp/assets/ecosystem/Servicenow_Aards/image-166.webp" },
-            { image: "/webp/assets/ecosystem/Servicenow_Aards/image-167.webp" },
-            { image: "/webp/assets/ecosystem/Servicenow_Aards/image-168.webp" },
-            { image: "/webp/assets/ecosystem/Servicenow_Aards/image-169.webp" },
-            { image: "/webp/assets/ecosystem/Servicenow_Aards/image-170.webp" },
-            { image: "/webp/assets/ecosystem/Servicenow_Aards/image-171.webp" },
-            { image: "/webp/assets/ecosystem/Servicenow_Aards/image-172.webp" },
-            { image: "/webp/assets/ecosystem/Servicenow_Aards/image-173.webp" },
-            { image: "/webp/assets/ecosystem/Servicenow_Aards/image-174.webp" },
-            { image: "/webp/assets/ecosystem/Servicenow_Aards/image-175.webp" },
-            { image: "/webp/assets/ecosystem/Servicenow_Aards/image-176.webp" },
-            { image: "/webp/assets/ecosystem/Servicenow_Aards/image-177.webp" }
-          ]}
+          { image: "/webp/assets/ecosystem/Servicenow_Aards/image-164.webp" },
+          { image: "/webp/assets/ecosystem/Servicenow_Aards/image-165.webp" },
+          { image: "/webp/assets/ecosystem/Servicenow_Aards/image-166.webp" },
+          { image: "/webp/assets/ecosystem/Servicenow_Aards/image-167.webp" },
+          { image: "/webp/assets/ecosystem/Servicenow_Aards/image-168.webp" },
+          { image: "/webp/assets/ecosystem/Servicenow_Aards/image-169.webp" },
+          { image: "/webp/assets/ecosystem/Servicenow_Aards/image-170.webp" },
+          { image: "/webp/assets/ecosystem/Servicenow_Aards/image-171.webp" },
+          { image: "/webp/assets/ecosystem/Servicenow_Aards/image-172.webp" },
+          { image: "/webp/assets/ecosystem/Servicenow_Aards/image-173.webp" },
+          { image: "/webp/assets/ecosystem/Servicenow_Aards/image-174.webp" },
+          { image: "/webp/assets/ecosystem/Servicenow_Aards/image-175.webp" },
+          { image: "/webp/assets/ecosystem/Servicenow_Aards/image-176.webp" },
+          { image: "/webp/assets/ecosystem/Servicenow_Aards/image-177.webp" }
+        ]}
       />
 
-      
+
       <section id="use-cases" className="w-full py-24 bg-[#030303] border-b border-zinc-900/60">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
           <Reveal className="mb-16 text-left">
@@ -694,8 +694,8 @@ export default function ServiceNowPartnershipPage() {
                 </h4>
                 <div className="flex flex-col gap-2">
                   {techGroup.items.map((item) => (
-                    <div 
-                      key={item} 
+                    <div
+                      key={item}
                       className="px-3 py-2 bg-zinc-950 border border-zinc-900 rounded-lg text-[10px] font-mono text-zinc-350 font-bold hover:text-white transition-colors"
                     >
                       {item}
@@ -848,7 +848,7 @@ export default function ServiceNowPartnershipPage() {
           {/* Below FAQ callout */}
           <Reveal delay={0.2}>
             <div className="border border-zinc-900 bg-zinc-950/20 p-6 rounded-2xl flex flex-col sm:flex-row justify-between items-center gap-4">
-              <p className="text-zinc-400 text-xs md:text-sm font-bold">
+              <p className="text-sm md:text-base font-semibold text-zinc-200 group-hover:text-white transition-colors">
                 Still have questions? Don&apos;t sit with them. Reach out to our team — we respond to every message personally.
               </p>
               <a
@@ -862,7 +862,7 @@ export default function ServiceNowPartnershipPage() {
         </div>
       </section>
 
-{/* 12. FINAL CTA */}
+      {/* 12. FINAL CTA */}
       <section className="relative w-full py-32 bg-[#030303] overflow-hidden text-center">
         {/* Ambient background blur */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-rose-500/[0.02] rounded-full blur-[140px] pointer-events-none" />

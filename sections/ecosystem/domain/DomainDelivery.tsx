@@ -74,15 +74,15 @@ export function DomainDelivery() {
 
         {/* Header */}
         <Reveal className="mb-12">
-          <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+          {/* <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
             AVAILABILITY MAP
-          </span>
-          <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
+          </span> */}
+          <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight mb-5 text-white">
             Global <span className="text-rose-500">delivery distribution</span>
           </h2>
-          <p className="text-zinc-200 text-base md:text-lg font-semibold leading-relaxed mt-2 max-w-xl">
+          {/* <p className="text-zinc-200 text-base md:text-lg font-semibold leading-relaxed mt-2 max-w-xl">
             Sourcing certified architects and SRE leads globally to support continuous follow-the-sun operations.
-          </p>
+          </p> */}
         </Reveal>
 
         {/* Map Card */}

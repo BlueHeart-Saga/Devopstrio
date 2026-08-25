@@ -163,15 +163,15 @@ export function DeliveryFootprint() {
         
         {/* Header */}
         <Reveal className="mb-16 text-center max-w-2xl mx-auto">
-          <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+          {/* <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
             FACILITIES MAP
-          </span>
-          <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
+          </span> */}
+          <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight mb-5 text-white">
             Global Delivery <span className="text-rose-500">Footprint</span>
           </h2>
-          <p className="text-zinc-400 text-sm font-semibold">
+          {/* <p className="text-zinc-400 text-sm font-semibold">
             A comprehensive mapping of our regional centers of excellence, detailing the core functions and technological focus areas of each office.
-          </p>
+          </p> */}
         </Reveal>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch max-w-6xl mx-auto">
@@ -184,7 +184,7 @@ export function DeliveryFootprint() {
                 <div
                   key={loc.city + "-" + idx}
                   onClick={() => setActiveIndex(idx)}
-                  className={`cursor-pointer group flex flex-col border rounded-3xl overflow-hidden transition-all duration-300 relative select-none min-h-[250px]
+                  className={`cursor-pointer group flex flex-col border rounded-3xl overflow-hidden transition-all duration-300 relative select-none min-h-[200px]
                     ${isActive
                       ? "bg-rose-500/[0.03] border-rose-500/80 shadow-[0_0_25px_rgba(244,63,94,0.12)] -translate-y-1"
                       : "bg-zinc-950/40 border-zinc-900/80 hover:border-zinc-800 hover:bg-zinc-900/10 hover:-translate-y-0.5"
@@ -211,7 +211,7 @@ export function DeliveryFootprint() {
                     <div>
                       <div className="flex items-center gap-2 mb-1.5">
                         <span className="text-xl shrink-0 leading-none">{loc.flag}</span>
-                        <h3 className="text-white font-bold text-sm tracking-wide">{loc.city}</h3>
+                        <h3 className="text-white font-semibold text-base md:text-lg tracking-wide">{loc.city}</h3>
                       </div>
                       
                       <p className="text-rose-500 text-[10px] font-mono tracking-widest uppercase font-bold mb-2">

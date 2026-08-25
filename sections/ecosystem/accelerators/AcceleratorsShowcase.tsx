@@ -67,15 +67,15 @@ export function AcceleratorsShowcase() {
             
             {/* Left Content */}
             <div className="lg:col-span-5 flex flex-col justify-center">
-              <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+              {/* <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
                 FEATURED ACCELERATOR
-              </span>
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-white mb-4 leading-tight">
+              </span> */}
+              <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight text-white mb-4 leading-tight">
                 Engineered for speed today – and scaling <span className="text-rose-500">tomorrow</span>
               </h2>
-              <p className="text-zinc-450 text-xs md:text-sm font-semibold leading-relaxed mb-8 max-w-md">
+              {/* <p className="text-zinc-450 text-xs md:text-sm font-semibold leading-relaxed mb-8 max-w-md">
                 The next-generation of cloud engineering blocks. Standardized, secure, and configuration-ready so your developer teams can focus on delivering core features.
-              </p>
+              </p> */}
               <div>
                 <button className="inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold bg-rose-600 hover:bg-rose-500 text-white transition-all duration-300 w-fit hover:shadow-[0_0_20px_rgba(244,63,94,0.35)]">
                   Explore Blueprints
@@ -97,7 +97,7 @@ export function AcceleratorsShowcase() {
         {/* ── 2. "For business" 4-Column Card Grid ── */}
         <div className="mb-8">
           <Reveal>
-            <h3 className="text-lg md:text-xl font-bold text-white uppercase tracking-wider mb-8">
+            <h3 className="text-lg md:text-xl font-semibold text-white uppercase tracking-wider mb-8">
               Popular Blueprints
             </h3>
           </Reveal>
@@ -106,7 +106,7 @@ export function AcceleratorsShowcase() {
             {assets.map((asset, idx) => (
               <Reveal key={asset.title} delay={idx * 0.05} className="h-full">
                 <div
-                  className="bg-zinc-950/40 border border-zinc-900 rounded-[20px] p-5 hover:border-rose-500/20 hover:bg-zinc-900/10 hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between h-full min-h-[440px] group shadow-lg"
+                  className="bg-zinc-950/40 border border-zinc-900 rounded-[20px] p-5 hover:border-rose-500/20 hover:bg-zinc-900/10 hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between h-full min-h-[220px] group shadow-lg"
                 >
                   <div>
                     {/* Image Banner */}
@@ -123,14 +123,14 @@ export function AcceleratorsShowcase() {
                     </div>
 
                     {/* Title */}
-                    <h4 className="text-sm md:text-base font-bold text-white mb-2 tracking-tight group-hover:text-rose-400 transition-colors duration-300">
+                    <h4 className="text-base md:text-lg font-semibold text-white mb-2 tracking-tight group-hover:text-rose-400 transition-colors duration-300">
                       {asset.title}
                     </h4>
 
                     {/* Description */}
-                    <p className="text-xs md:text-sm text-zinc-400 font-semibold leading-relaxed mb-6">
+                    {/* <p className="text-xs md:text-sm text-zinc-400 font-semibold leading-relaxed mb-6">
                       {asset.desc}
-                    </p>
+                    </p> */}
                   </div>
 
                   {/* Action Button at bottom left */}

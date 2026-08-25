@@ -107,14 +107,14 @@ export default function EngineeringCulturePage() {
         ]}
       >
         <Link
-              href="/contact#contact-form"
-              className="inline-flex items-center gap-3 pl-6 pr-3 py-3 bg-white text-black font-semibold text-xs md:text-sm tracking-wider rounded-full hover:bg-zinc-200 transition-all duration-300 shadow-lg shadow-white/5"
-            >
-              Consult Architects
-              <div className="w-7 h-7 rounded-full bg-black flex items-center justify-center">
-                <ArrowUpRight className="w-3.5 h-3.5 text-white" />
-              </div>
-            </Link>
+          href="/contact#contact-form"
+          className="inline-flex items-center gap-3 pl-6 pr-3 py-3 bg-white text-black font-semibold text-xs md:text-sm tracking-wider rounded-full hover:bg-zinc-200 transition-all duration-300 shadow-lg shadow-white/5"
+        >
+          Consult Architects
+          <div className="w-7 h-7 rounded-full bg-black flex items-center justify-center">
+            <ArrowUpRight className="w-3.5 h-3.5 text-white" />
+          </div>
+        </Link>
       </Hero>
 
       {/* 2. ENGINEERING PRINCIPLES */}
@@ -290,7 +290,7 @@ export default function EngineeringCulturePage() {
           {/* Below FAQ callout */}
           <Reveal delay={0.2}>
             <div className="border border-zinc-900 bg-zinc-950/20 p-6 rounded-2xl flex flex-col sm:flex-row justify-between items-center gap-4">
-              <p className="text-zinc-400 text-xs md:text-sm font-bold">
+              <p className="text-sm md:text-base font-semibold text-zinc-200 group-hover:text-white transition-colors">
                 Still have questions? Don&apos;t sit with them. Reach out to our team — we respond to every message personally.
               </p>
               <a

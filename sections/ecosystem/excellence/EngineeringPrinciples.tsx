@@ -58,15 +58,15 @@ export function EngineeringPrinciples() {
         
         {/* Section Header */}
         <Reveal className="mb-16 text-center max-w-2xl mx-auto">
-          <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+          {/* <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
             CORE MANDATES
-          </span>
-          <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
+          </span> */}
+          <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight mb-5 text-white">
             Engineering <span className="text-rose-500">Principles</span>
           </h2>
-          <p className="text-zinc-400 text-sm font-semibold">
+          {/* <p className="text-zinc-400 text-sm font-semibold">
             Six architectural rules guiding the development, deployment, and security of every digital product we engineer.
-          </p>
+          </p> */}
         </Reveal>
 
         {/* 3-Column Microsoft Card Layout Grid */}
@@ -74,7 +74,7 @@ export function EngineeringPrinciples() {
           {principles.map((pr, idx) => (
             <Reveal key={pr.title} delay={idx * 0.05} className="h-full">
               <div
-                className="bg-zinc-950/40 border border-zinc-900 rounded-[24px] p-6 hover:border-rose-500/20 hover:bg-zinc-900/10 hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between h-full min-h-[460px] group shadow-lg"
+                className="bg-zinc-950/40 border border-zinc-900 rounded-[24px] p-6 hover:border-rose-500/20 hover:bg-zinc-900/10 hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between h-full min-h-[220px] group shadow-lg"
               >
                 <div>
                   {/* Top Image Banner Container */}
@@ -87,14 +87,14 @@ export function EngineeringPrinciples() {
                   </div>
 
                   {/* Title */}
-                  <h4 className="text-base font-bold text-white mb-3 tracking-tight group-hover:text-rose-400 transition-colors duration-300">
+                  <h4 className="text-base md:text-lg font-semibold text-white mb-3 tracking-tight group-hover:text-rose-400 transition-colors duration-300">
                     {pr.title}
                   </h4>
 
                   {/* Description */}
-                  <p className="text-xs md:text-sm text-zinc-400 font-semibold leading-relaxed mb-6">
+                  {/* <p className="text-xs md:text-sm text-zinc-400 font-semibold leading-relaxed mb-6">
                     {pr.desc}
-                  </p>
+                  </p> */}
                 </div>
 
                 {/* Left-Aligned Bottom Action Button */}

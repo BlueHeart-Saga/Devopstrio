@@ -131,15 +131,15 @@ export function IndustryCards({ industries }: IndustryCardsProps) {
                       {name}
                     </h3>
                     
-                    {desc && (
+                    {/* {desc && (
                       <p className="text-xs text-white leading-relaxed font-bold group-hover:text-white transition-colors">
                         {desc.trim()}
                       </p>
-                    )}
+                    )} */}
                   </div>
 
                   <div className="border-t border-zinc-900/60 pt-4 mt-6 flex justify-center">
-                    <span className="text-xs text-rose-500 font-semibold uppercase tracking-wider transition-transform duration-300 inline-flex items-center gap-1.5 group-hover:translate-y-[-2px]">
+                    <span className="text-sm font-semibold uppercase tracking-wider transition-transform duration-300 inline-flex items-center gap-1.5 group-hover:translate-y-[-2px]">
                       Explore Sector <ArrowUpRight size={13} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                     </span>
                   </div>

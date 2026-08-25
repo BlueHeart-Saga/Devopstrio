@@ -67,7 +67,7 @@ export function SubpageHero({
         </nav>
 
         <div className="max-w-4xl mx-auto text-center flex flex-col items-center justify-center my-auto py-8">
-          <Reveal>
+          {/* <Reveal>
             <div className="flex items-center justify-center gap-2.5 mb-5">
               <span className="h-[1px] w-8 bg-gradient-to-r from-transparent to-rose-600"></span>
               <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500">
@@ -75,19 +75,19 @@ export function SubpageHero({
               </span>
               <span className="h-[1px] w-8 bg-gradient-to-l from-transparent to-rose-600"></span>
             </div>
-          </Reveal>
+          </Reveal> */}
 
           <Reveal delay={0.05}>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-tight mb-5 text-white text-center">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight leading-tight mb-5 text-white text-center">
               {title}
             </h1>
           </Reveal>
 
-          <Reveal delay={0.1}>
+          {/* <Reveal delay={0.1}>
             <p className="text-zinc-200 text-base md:text-lg font-semibold leading-relaxed max-w-3xl text-center mx-auto">
               {heroSubtitle}
             </p>
-          </Reveal>
+          </Reveal> */}
         </div>
       </div>
     </section>

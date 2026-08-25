@@ -47,22 +47,22 @@ export function ExcellenceSuccessStories() {
         
         {/* Section Header */}
         <Reveal className="mb-20 text-left">
-          <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+          {/* <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
             CASE STUDIES
-          </span>
-          <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
+          </span> */}
+          <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight mb-5 text-white">
             Success <span className="text-rose-500">Stories</span>
           </h2>
-          <p className="text-zinc-400 text-sm font-semibold max-w-2xl leading-relaxed">
+          {/* <p className="text-zinc-400 text-sm font-semibold max-w-2xl leading-relaxed">
             Real-world outcomes demonstrating the reliability and scaling benefits of our engineering practices.
-          </p>
+          </p> */}
         </Reveal>
 
         {/* Microsoft-Style Card Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {caseStudies.map((study, idx) => (
             <Reveal key={study.title} delay={idx * 0.05} className="h-full">
-              <div className="group flex flex-col justify-between bg-zinc-950/45 border border-zinc-900 hover:border-rose-500/25 rounded-3xl overflow-hidden hover:shadow-[0_0_30px_rgba(244,63,94,0.06)] transition-all duration-300 h-full min-h-[380px]">
+              <div className="group flex flex-col justify-between bg-zinc-950/45 border border-zinc-900 hover:border-rose-500/25 rounded-3xl overflow-hidden hover:shadow-[0_0_30px_rgba(244,63,94,0.06)] transition-all duration-300 h-full min-h-[220px]">
                 
                 {/* Top Image Banner */}
                 <div className="relative w-full h-36 overflow-hidden bg-zinc-900 border-b border-zinc-900">
@@ -77,19 +77,19 @@ export function ExcellenceSuccessStories() {
                 <div className="p-6 flex-grow flex flex-col justify-between">
                   <div>
                     {/* Title */}
-                    <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-2 transition-colors duration-300 group-hover:text-rose-450">
+                    <h4 className="text-base md:text-lg font-semibold text-white uppercase tracking-wider mb-2 transition-colors duration-300 group-hover:text-rose-450">
                       {study.title}
                     </h4>
                     
                     {/* Big Bold Metric */}
-                    <div className="text-lg md:text-xl font-black text-rose-500 tracking-tight mb-3">
+                    <div className="text-lg md:text-xl font-semibold text-rose-500 tracking-tight mb-3">
                       {study.metric}
                     </div>
 
                     {/* Description */}
-                    <p className="text-[12px] text-zinc-400 font-semibold leading-relaxed">
+                    {/* <p className="text-[12px] text-zinc-400 font-semibold leading-relaxed">
                       {study.desc}
-                    </p>
+                    </p> */}
                   </div>
 
                   {/* Card Footer Verification */}

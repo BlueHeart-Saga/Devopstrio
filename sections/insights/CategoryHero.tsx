@@ -145,6 +145,49 @@ const getCategoryConfig = (slug: string): CategoryConfig => {
   };
 };
 
+function renderHeroTitle(categoryName: string, titlePrefix?: string) {
+  const name = categoryName ? categoryName.trim() : "";
+  const prefix = titlePrefix ? titlePrefix.trim() : "";
+
+  if (!name) return null;
+
+  // 1. If categoryName starts with prefix (case-insensitive)
+  if (prefix && name.toLowerCase().startsWith(prefix.toLowerCase())) {
+    const rest = name.slice(prefix.length).trim();
+    if (rest) {
+      return (
+        <>
+          {prefix} <span className="text-rose-500 font-semibold">{rest}</span>
+        </>
+      );
+    }
+  }
+
+  // 2. If categoryName contains 2 or more words
+  const nameWords = name.split(/\s+/);
+  if (nameWords.length >= 2) {
+    const firstPart = nameWords.slice(0, -1).join(" ");
+    const lastWord = nameWords[nameWords.length - 1];
+    return (
+      <>
+        {firstPart} <span className="text-rose-500 font-semibold">{lastWord}</span>
+      </>
+    );
+  }
+
+  // 3. If categoryName is a single word and prefix is available
+  if (prefix) {
+    return (
+      <>
+        {prefix} <span className="text-rose-500 font-semibold">{name}</span>
+      </>
+    );
+  }
+
+  // 4. Single word without prefix
+  return <span className="text-rose-500 font-semibold">{name}</span>;
+}
+
 export function CategoryHero({ categoryName, categorySlug }: CategoryHeroProps) {
   const config = getCategoryConfig(categorySlug);
 
@@ -180,7 +223,7 @@ export function CategoryHero({ categoryName, categorySlug }: CategoryHeroProps) 
 
         {/* Headline block */}
         <div className="max-w-4xl mx-auto text-center flex flex-col items-center justify-center py-6">
-          <Reveal>
+          {/* <Reveal>
             <div className="flex items-center justify-center gap-2.5 mb-4">
               <span className="h-[1px] w-8 bg-gradient-to-r from-transparent to-rose-600"></span>
               <span className="text-[11px] font-bold tracking-[0.25em] uppercase text-rose-500">
@@ -188,12 +231,16 @@ export function CategoryHero({ categoryName, categorySlug }: CategoryHeroProps) 
               </span>
               <span className="h-[1px] w-8 bg-gradient-to-l from-transparent to-rose-600"></span>
             </div>
-          </Reveal>
+          </Reveal> */}
 
           <Reveal delay={0.05}>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold tracking-tight leading-tight mb-2 text-white text-center">
-              {config.titlePrefix} <span className="text-rose-500 font-semibold">{categoryName}</span>
-            </h1>
+            <div className="flex items-center justify-center gap-3 sm:gap-5">
+              <span className="h-[1px] w-6 sm:w-10 bg-gradient-to-r from-transparent to-rose-600 shrink-0"></span>
+              <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold tracking-tight leading-tight text-white text-center">
+                {renderHeroTitle(categoryName, config.titlePrefix)}
+              </h1>
+              <span className="h-[1px] w-6 sm:w-10 bg-gradient-to-l from-transparent to-rose-600 shrink-0"></span>
+            </div>
           </Reveal>
         </div>
       </div>

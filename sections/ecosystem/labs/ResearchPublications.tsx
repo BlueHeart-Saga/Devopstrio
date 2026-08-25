@@ -53,15 +53,15 @@ export function ResearchPublications() {
         {/* Main Section Header */}
         <Reveal>
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+            {/* <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
               R&D REPOSITORY
-            </span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
+            </span> */}
+            <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight mb-5 text-white">
               Research & <span className="text-rose-500">Publications</span>
             </h2>
-            <p className="text-zinc-400 text-sm font-semibold mb-8">
+            {/* <p className="text-zinc-400 text-sm font-semibold mb-8">
               Access our in-depth white papers, technical summaries, and architecture blueprints. Learn how our engineering teams benchmark multi-cloud scaling, fortify LLM interfaces, and secure deployments.
-            </p>
+            </p> */}
             <button className="px-6 py-2.5 rounded-lg text-xs font-bold text-white bg-rose-600 hover:bg-rose-500 transition-colors shadow-lg hover:shadow-[0_0_20px_rgba(225,29,72,0.4)]">
               View All Publications
             </button>
@@ -87,7 +87,7 @@ export function ResearchPublications() {
               {publications.map((pub) => (
                 <div
                   key={pub.title}
-                  className="group flex flex-col justify-between p-8 bg-white/5 backdrop-blur-2xl border border-white/10 hover:border-white/20 rounded-2xl transition-all duration-300 min-h-[300px] shadow-xl hover:bg-white/10"
+                  className="group flex flex-col justify-between p-8 bg-white/5 backdrop-blur-2xl border border-white/10 hover:border-white/20 rounded-2xl transition-all duration-300 min-h-[200px] shadow-xl hover:bg-white/10"
                 >
                   <div>
                     {/* White Rounded Square Icon Container */}
@@ -95,12 +95,12 @@ export function ResearchPublications() {
                       {pub.icon}
                     </div>
 
-                    <h3 className="text-xl font-bold text-white tracking-tight leading-tight mb-4">
+                    <h3 className="text-base md:text-lg font-semibold text-white tracking-tight leading-tight mb-4">
                       {pub.title}
                     </h3>
-                    <p className="text-sm text-zinc-300 font-medium leading-relaxed mb-8">
+                    {/* <p className="text-sm text-zinc-300 font-medium leading-relaxed mb-8">
                       {pub.desc}
-                    </p>
+                    </p> */}
                   </div>
 
                   {/* Text Link CTA */}

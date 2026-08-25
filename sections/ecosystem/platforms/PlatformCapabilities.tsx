@@ -51,21 +51,21 @@ export function PlatformCapabilities() {
 
       <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
         <Reveal className="mb-16 text-center max-w-2xl mx-auto">
-          <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+          {/* <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
             TECHNICAL CAPABILITY
-          </span>
-          <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
+          </span> */}
+          <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight mb-5 text-white">
             Platform <span className="text-rose-500">Capabilities</span>
           </h2>
-          <p className="text-zinc-400 text-sm font-semibold">
+          {/* <p className="text-zinc-400 text-sm font-semibold">
             Our engineering standards across product, SaaS, AI, cloud, and security verticals.
-          </p>
+          </p> */}
         </Reveal>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
           {capabilities.map((cap, idx) => (
             <Reveal key={cap.title} delay={idx * 0.05} className="h-full">
-              <div className="relative rounded-[24px] border border-zinc-900 bg-zinc-950/60 p-6 flex flex-col justify-between group h-full shadow-lg overflow-hidden transition-all duration-500 hover:border-zinc-800 min-h-[370px]">
+              <div className="relative rounded-[24px] border border-zinc-900 bg-zinc-950/60 p-6 flex flex-col justify-between group h-full shadow-lg overflow-hidden transition-all duration-500 hover:border-zinc-800 min-h-[220px]">
                 
                 {/* Expanding Image Layer with Glassmorphism */}
                 <div className="absolute inset-0 z-0 [clip-path:circle(0%_at_100%_100%)] group-hover:[clip-path:circle(150%_at_100%_100%)] transition-all duration-700 ease-in-out pointer-events-none">
@@ -83,13 +83,13 @@ export function PlatformCapabilities() {
                 <div className="relative z-10 flex flex-col h-full">
                   <div>
                     {/* Title */}
-                    <h3 className="text-base font-bold text-white tracking-tight mb-2.5 transition-transform duration-500 group-hover:-translate-y-0.5">
+                    <h3 className="text-base md:text-lg font-semibold text-white tracking-tight mb-2.5 transition-transform duration-500 group-hover:-translate-y-0.5">
                       {cap.title}
                     </h3>
                     {/* Description */}
-                    <p className="text-xs text-zinc-400 font-medium leading-relaxed group-hover:text-zinc-300 transition-colors duration-500">
+                    {/* <p className="text-xs text-zinc-400 font-medium leading-relaxed group-hover:text-zinc-300 transition-colors duration-500">
                       {cap.desc}
-                    </p>
+                    </p> */}
                   </div>
 
                   {/* Bullet Points */}

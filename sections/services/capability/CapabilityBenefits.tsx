@@ -72,10 +72,10 @@ export function CapabilityBenefits({
 
                       {/* Content */}
                       <div className="z-10 pr-12 text-left">
-                        <span className="block text-[9px] font-mono tracking-widest text-rose-500 mb-2 font-semibold">
+                        {/* <span className="block text-xs font-mono tracking-widest text-rose-500 mb-2 font-semibold">
                           {tag}
-                        </span>
-                        <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed font-semibold group-hover:text-white transition-colors duration-300">
+                        </span> */}
+                        <p className="text-base sm:text-lg text-zinc-100 leading-relaxed font-semibold group-hover:text-white transition-colors duration-300">
                           {benefit}
                         </p>
                       </div>

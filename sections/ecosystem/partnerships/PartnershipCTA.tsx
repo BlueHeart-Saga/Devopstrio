@@ -8,7 +8,7 @@ export function PartnershipCTA() {
     <RepresentativeCTA
       title="Build The Future Of Enterprise Systems"
       highlightText="Together?"
-      description="Partner with Devopstrio to co-develop cloud, AI, data engineering, and digital transformation solutions at enterprise scale."
+      description={null}
       primaryBtnText="BECOME A PARTNER"
       primaryBtnHref="/contact#contact-form"
       secondaryBtnText="TALK TO ALLIANCE TEAM"

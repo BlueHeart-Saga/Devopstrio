@@ -50,15 +50,15 @@ export function TechArchitectureFramework() {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-rose-600/[0.015] rounded-full blur-[140px] pointer-events-none" />
       <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
         <Reveal className="mb-20 text-center max-w-2xl mx-auto">
-          <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+          {/* <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
             LOGICAL SCHEMATICS
-          </span>
-          <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
+          </span> */}
+          <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight mb-5 text-white">
             Technology Architecture <span className="text-rose-500">Framework</span>
           </h2>
-          <p className="text-zinc-400 text-sm font-semibold">
+          {/* <p className="text-zinc-400 text-sm font-semibold">
             Our multi-tier logical model ensuring decouple execution, high security, and low operational latency across digital spaces.
-          </p>
+          </p> */}
         </Reveal>
 
         {/* Stack block layout */}
@@ -74,8 +74,8 @@ export function TechArchitectureFramework() {
                   {lvl.icon}
                 </div>
                 <div>
-                  <h4 className="text-sm md:text-base font-bold text-white uppercase tracking-wider mb-1">{lvl.levelName}</h4>
-                  <p className="text-xs md:text-sm text-zinc-300 font-medium leading-relaxed">{lvl.desc}</p>
+                  <h4 className="text-base md:text-lg font-semibold text-white uppercase tracking-wider mb-1">{lvl.levelName}</h4>
+                  {/* <p className="text-xs md:text-sm text-zinc-300 font-medium leading-relaxed">{lvl.desc}</p> */}
                 </div>
               </div>
 

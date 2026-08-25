@@ -186,10 +186,10 @@ export function TechnologyStack({
         {/* Extended Partner Ecosystem Sub-Section */}
         <div className="border-t border-zinc-900/80 pt-16 mt-16 w-full text-center">
           <Reveal className="mb-10 text-center">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+            {/* <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
               GLOBAL SUPPORTED SYSTEM
-            </span>
-            <h3 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white uppercase">
+            </span> */}
+            <h3 className="text-xl md:text-2xl xl:text-3xl font-semibold tracking-tight leading-tight mb-5 text-white uppercase">
               Supported Partner &amp; <span className="text-rose-500">Integration Ecosystem</span>
             </h3>
           </Reveal>

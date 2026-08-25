@@ -182,14 +182,14 @@ export function TimelineProcess({ steps, serviceSlug }: TimelineProcessProps) {
                       {/* <span className="text-[9px] font-bold text-red-500 uppercase tracking-[0.25em] block mb-1">
                         Phase 0{idx + 1}
                       </span> */}
-                      <h4 className="text-[11px] md:text-xs font-bold text-white uppercase tracking-wider group-hover:text-red-400 transition-colors duration-300">
+                      <h4 className="text-xl font-normal text-white uppercase tracking-wider group-hover:text-red-400 transition-colors duration-300">
                         {title}
                       </h4>
-                      {desc && (
+                      {/* {desc && (
                         <p className="text-[10px] md:text-[11px] text-zinc-400 font-semibold leading-relaxed mt-2.5 max-w-[200px] mx-auto lg:mx-0">
                           {desc}
                         </p>
-                      )}
+                      )} */}
                     </div>
 
                   </div>

@@ -12,19 +12,19 @@ export function SubpageChallenge({ challenge, solution }: SubpageChallengeProps)
     <section id="challenge" className="w-full py-24 bg-black border-b border-zinc-900/60 text-zinc-300">
       <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 grid grid-cols-1 lg:grid-cols-2 gap-16 text-left">
         <div className="bg-zinc-950/30 border border-zinc-900 rounded-3xl p-8 lg:p-10 relative overflow-hidden">
-          <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 block mb-4">
+          {/* <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 block mb-4">
             THE TECHNICAL CHALLENGE
-          </span>
-          <p className="text-zinc-400 text-xs md:text-sm font-semibold leading-relaxed">
+          </span> */}
+          <p className="text-base md:text-lg font-semibold text-zinc-300 leading-relaxed">
             {challenge}
           </p>
         </div>
 
         <div className="bg-zinc-950/30 border border-zinc-900 rounded-3xl p-8 lg:p-10 relative overflow-hidden">
-          <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-emerald-500 block mb-4">
+          {/* <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-emerald-500 block mb-4">
             JOINT SOLUTION APPROACH
-          </span>
-          <p className="text-zinc-400 text-xs md:text-sm font-semibold leading-relaxed">
+          </span> */}
+          <p className="text-base md:text-lg font-semibold text-zinc-300 leading-relaxed">
             {solution}
           </p>
         </div>

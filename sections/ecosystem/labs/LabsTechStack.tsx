@@ -86,15 +86,15 @@ export function LabsTechStack() {
     <section id="tech-stack" className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
       <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
         <Reveal className="mb-16 text-left">
-          <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+          {/* <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
             R&D TOOLKITS
-          </span>
-          <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
+          </span> */}
+          <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight mb-5 text-white">
             Technology <span className="text-rose-500">Stack</span>
           </h2>
-          <p className="text-zinc-400 text-sm font-semibold max-w-2xl">
+          {/* <p className="text-zinc-400 text-sm font-semibold max-w-2xl">
             The programming frameworks, clouds, and libraries validated by our labs for production implementation.
-          </p>
+          </p> */}
         </Reveal>
 
         {/* Tab Controls */}
@@ -128,7 +128,7 @@ export function LabsTechStack() {
             {currentCategory.items.map((item) => (
               <div
                 key={item.name}
-                className="group relative overflow-hidden flex items-center p-5 bg-white/5 backdrop-blur-xl border border-white/10 hover:bg-white/10 hover:border-white/30 rounded-3xl transition-all duration-500 shadow-[0_8px_32px_0_rgba(255,255,255,0.02)] hover:shadow-[0_12px_40px_0_rgba(255,255,255,0.08)] min-h-[110px]"
+                className="group relative overflow-hidden flex items-center p-5 bg-white/5 backdrop-blur-xl border border-white/10 hover:bg-white/10 hover:border-white/30 rounded-3xl transition-all duration-500 shadow-[0_8px_32px_0_rgba(255,255,255,0.02)] hover:shadow-[0_12px_40px_0_rgba(255,255,255,0.08)] min-h-[90px]"
               >
                 {/* Subtle white glass gradient flash on hover */}
                 <div className="absolute inset-0 bg-gradient-to-br from-white/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
@@ -140,12 +140,12 @@ export function LabsTechStack() {
                 
                 {/* Text Content */}
                 <div className="relative z-10 flex-1">
-                  <h4 className="text-[14px] font-bold text-white tracking-wide mb-1 drop-shadow-md">
+                  <h4 className="text-base md:text-lg font-semibold text-white tracking-wide mb-1 drop-shadow-md">
                     {item.name}
                   </h4>
-                  <p className="text-[11px] text-zinc-300 font-medium leading-relaxed drop-shadow-sm opacity-90 group-hover:opacity-100 transition-opacity duration-300">
+                  {/* <p className="text-[11px] text-zinc-300 font-medium leading-relaxed drop-shadow-sm opacity-90 group-hover:opacity-100 transition-opacity duration-300">
                     {item.role}
-                  </p>
+                  </p> */}
                 </div>
               </div>
             ))}

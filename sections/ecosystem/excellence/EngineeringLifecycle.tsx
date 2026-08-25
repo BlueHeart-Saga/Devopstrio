@@ -32,15 +32,15 @@ export function EngineeringLifecycle() {
         
         {/* Section Header */}
         <Reveal className="mb-20 text-center max-w-2xl mx-auto">
-          <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+          {/* <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
             WORKFLOW PIPELINE
-          </span>
-          <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
+          </span> */}
+          <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight mb-5 text-white">
             Engineering <span className="text-rose-500">Lifecycle</span>
           </h2>
-          <p className="text-zinc-400 text-sm font-semibold">
+          {/* <p className="text-zinc-400 text-sm font-semibold">
             The standard pipeline used by our engineering boards to build, secure, and operate enterprise cloud solutions.
-          </p>
+          </p> */}
         </Reveal>
 
         {/* 8-Stage Lifecycle Grid */}
@@ -50,7 +50,7 @@ export function EngineeringLifecycle() {
             return (
               <Reveal key={stage.step} delay={idx * 0.05}>
                 <div
-                  className="relative overflow-hidden bg-zinc-950/35 border border-white/10 rounded-3xl p-8 min-h-[240px] h-full flex flex-col justify-between backdrop-blur-md shadow-[0_8px_32px_0_rgba(0,0,0,0.4)] hover:bg-zinc-900/10 hover:border-rose-500/25 hover:-translate-y-1.5 transition-all duration-300 group"
+                  className="relative overflow-hidden bg-zinc-950/35 border border-white/10 rounded-3xl p-8 min-h-[160px] h-full flex flex-col justify-between backdrop-blur-md shadow-[0_8px_32px_0_rgba(0,0,0,0.4)] hover:bg-zinc-900/10 hover:border-rose-500/25 hover:-translate-y-1.5 transition-all duration-300 group"
                 >
                   <div>
                     {/* Large watermark number + icon row */}
@@ -64,14 +64,14 @@ export function EngineeringLifecycle() {
                     </div>
 
                     {/* Stage title */}
-                    <h3 className="text-base md:text-lg font-bold text-white mb-3 hover:text-rose-400 transition-colors duration-300 uppercase tracking-wider">
+                    <h3 className="text-base md:text-lg font-semibold text-white mb-3 hover:text-rose-400 transition-colors duration-300 uppercase tracking-wider">
                       {stage.title}
                     </h3>
 
                     {/* Stage description */}
-                    <p className="text-xs md:text-sm text-zinc-400 leading-relaxed font-semibold">
+                    {/* <p className="text-xs md:text-sm text-zinc-400 leading-relaxed font-semibold">
                       {stage.desc}
-                    </p>
+                    </p> */}
                   </div>
                 </div>
               </Reveal>

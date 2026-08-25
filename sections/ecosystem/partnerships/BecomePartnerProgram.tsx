@@ -50,21 +50,21 @@ export function BecomePartnerProgram() {
     <section id="partner-program" className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
       <div className="max-w-7xl mx-auto w-full px-6 lg:px-8">
         <Reveal className="mb-16 text-left">
-          <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+          {/* <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
             GROWTH CHANNELS
-          </span>
-          <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
+          </span> */}
+          <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight mb-5 text-white">
             Partner Program <span className="text-rose-500">Tracks</span>
           </h2>
-          <p className="text-zinc-400 text-sm font-semibold max-w-2xl">
+          {/* <p className="text-zinc-400 text-sm font-semibold max-w-2xl">
             Choose the path that fits your company's focus and co-engineer value alongside Devopstrio global teams.
-          </p>
+          </p> */}
         </Reveal>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {programs.map((prog, idx) => (
             <Reveal key={prog.title} delay={idx * 0.1}>
-              <div className="relative rounded-[24px] border border-zinc-800/80 bg-[#0A0A0A] p-6 md:p-8 flex flex-col justify-between group h-full shadow-lg overflow-hidden transition-all duration-500 hover:border-rose-500/40 min-h-[340px]">
+              <div className="relative rounded-[24px] border border-zinc-800/80 bg-[#0A0A0A] p-6 md:p-8 flex flex-col justify-between group h-full shadow-lg overflow-hidden transition-all duration-500 hover:border-rose-500/40 min-h-[200px]">
                 
                 {/* Expanding Image Layer with Glassmorphism */}
                 <div className="absolute inset-0 z-0 [clip-path:circle(0%_at_100%_100%)] group-hover:[clip-path:circle(150%_at_100%_100%)] transition-all duration-700 ease-in-out pointer-events-none">
@@ -83,12 +83,12 @@ export function BecomePartnerProgram() {
                     <div className="mb-6 flex items-center justify-center w-12 h-12 rounded-xl bg-zinc-900 border border-zinc-800 text-rose-500 group-hover:bg-rose-500 group-hover:text-white group-hover:border-rose-400 transition-all duration-500">
                       {prog.icon}
                     </div>
-                    <h3 className="text-lg font-bold text-white mb-3 tracking-tight transition-transform duration-500 group-hover:-translate-y-1">
+                    <h3 className="text-base md:text-lg font-semibold text-white mb-3 tracking-tight transition-transform duration-500 group-hover:-translate-y-1">
                       {prog.title}
                     </h3>
-                    <p className="text-zinc-400 text-sm leading-relaxed font-medium group-hover:text-zinc-200 transition-colors duration-500">
+                    {/* <p className="text-zinc-400 text-sm leading-relaxed font-medium group-hover:text-zinc-200 transition-colors duration-500">
                       {prog.desc}
-                    </p>
+                    </p> */}
                   </div>
 
                   <div className="mt-8 pt-4 border-t border-zinc-800/60 group-hover:border-white/20 transition-colors duration-500">

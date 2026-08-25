@@ -8,7 +8,7 @@ export function DeliveryCTA() {
     <RepresentativeCTA
       title="One Global Engineering Team."
       highlightText="Unlimited Possibilities."
-      description="Leverage Devopstrio's global delivery network to accelerate innovation, scale operations, and achieve enterprise outcomes through world-class engineering and consulting expertise."
+      description={null}
       primaryBtnText="EXPLORE GLOBAL PRESENCE"
       primaryBtnHref="/about/global-presence"
       secondaryBtnText="CONNECT WITH DELIVERY TEAM"

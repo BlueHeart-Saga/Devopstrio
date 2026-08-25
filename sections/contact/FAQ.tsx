@@ -50,10 +50,10 @@ export function FAQ() {
   return (
     <section id="faq" className="w-full py-20 md:py-28 bg-[#030303] text-white relative">
       <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
-        
+
         <Reveal className="max-w-3xl mb-16">
           <div className="flex items-center gap-2 mb-4">
-            
+
             {/* <span className="text-[10px] font-medium tracking-[0.2em] uppercase text-zinc-400">
               KNOWLEDGE BASE
             </span> */}
@@ -71,7 +71,7 @@ export function FAQ() {
           {faqItems.map((item, idx) => {
             const isOpen = openIndex === idx;
             return (
-              <div 
+              <div
                 key={item.q}
                 className="border-b border-zinc-900 py-6"
               >
@@ -86,11 +86,11 @@ export function FAQ() {
                     {isOpen ? <Minus size={20} /> : <Plus size={20} />}
                   </div>
                 </button>
-                
+
                 {isOpen && (
                   <div className="mt-4 text-sm sm:text-base md:text-lg text-zinc-300 leading-relaxed font-semibold max-w-4xl animate-fadeIn flex flex-col gap-4">
                     <p>{item.a}</p>
-                    
+
                     {item.proof && (
                       <span className="text-xs sm:text-sm text-emerald-400 font-semibold tracking-wide">
                         {item.proof}
@@ -100,7 +100,7 @@ export function FAQ() {
                     {item.tags && (
                       <div className="flex flex-wrap gap-2 pt-2">
                         {item.tags.map((tag) => (
-                          <span 
+                          <span
                             key={tag}
                             className="px-3 py-1.5 rounded-lg bg-zinc-900 text-zinc-300 border border-zinc-800 text-xs sm:text-sm font-semibold tracking-wide"
                           >
@@ -119,10 +119,10 @@ export function FAQ() {
         {/* Below FAQ callout */}
         <Reveal delay={0.2}>
           <div className="border border-zinc-900 bg-zinc-950/20 p-6 rounded-2xl flex flex-col sm:flex-row justify-between items-center gap-4">
-            <p className="text-zinc-400 text-xs md:text-sm font-bold">
+            <p className="text-sm md:text-base font-semibold text-zinc-200 group-hover:text-white transition-colors">
               Still have questions? Don&apos;t sit with them. Reach out to our team — we respond to every message personally.
             </p>
-            <a 
+            <a
               href={`mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL}`}
               className="gap-2 inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase border border-zinc-850 hover:border-zinc-750 bg-zinc-950/60 hover:bg-zinc-900 text-white transition-all duration-300 hover:-translate-y-0.5"
             >

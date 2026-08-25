@@ -96,7 +96,7 @@ export function FAQ({
         {/* Below FAQ callout */}
         <Reveal delay={0.2}>
           <div className="border border-zinc-900 bg-zinc-950/40 p-6 rounded-2xl flex flex-col sm:flex-row justify-between items-center gap-4">
-            <p className="text-zinc-400 text-xs md:text-sm font-semibold">
+            <p className="text-sm md:text-base font-semibold text-zinc-200 group-hover:text-white transition-colors">
               Still have questions? Reach out to our engineering team — we respond to every message personally.
             </p>
             <Link 

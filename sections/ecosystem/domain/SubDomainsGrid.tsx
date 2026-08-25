@@ -137,12 +137,12 @@ export function SubDomainsGrid({ title, slug, subpages }: SubDomainsGridProps) {
               loading="lazy" />
               
               <div className="relative z-10">
-                <h3 className="text-xl md:text-2xl font-bold text-white tracking-tight leading-tight mb-4 group-hover/tall:text-rose-400 transition-colors">
+                <h3 className="text-lg md:text-xl font-semibold text-white tracking-tight leading-tight mb-4 group-hover/tall:text-rose-400 transition-colors">
                   Accelerate integration with {title}
                 </h3>
-                <p className="text-zinc-100 text-xs font-semibold leading-relaxed">
+                {/* <p className="text-zinc-100 text-xs font-semibold leading-relaxed">
                   Unlock specialized capabilities, custom tools, and frameworks designed to run compliance-first workloads across the global ecosystem.
-                </p>
+                </p> */}
               </div>
               
               <div className="relative z-10 mt-8">
@@ -167,7 +167,7 @@ export function SubDomainsGrid({ title, slug, subpages }: SubDomainsGridProps) {
                 <Reveal key={sub.slug} delay={idx * 0.04} className="h-full">
                   <Link
                     href={`/ecosystem/${slug}/${sub.slug}`}
-                    className="group/card flex flex-col justify-between h-full bg-zinc-950/30 border border-white/5 hover:border-rose-500/20 hover:bg-zinc-950/60 rounded-2xl p-6 transition-all duration-300 min-h-[220px] relative overflow-hidden backdrop-blur-md shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] cursor-pointer"
+                    className="group/card flex flex-col justify-between h-full bg-zinc-950/30 border border-white/5 hover:border-rose-500/20 hover:bg-zinc-950/60 rounded-2xl p-6 transition-all duration-300 min-h-[140px] relative overflow-hidden backdrop-blur-md shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] cursor-pointer"
                   >
                     {/* Subtle color highlight glow on hover */}
                     <div className="absolute inset-0 bg-gradient-to-br from-rose-600/0 via-rose-600/0 to-rose-600/5 opacity-0 group-hover/card:opacity-100 transition-opacity duration-500 pointer-events-none" />
@@ -179,13 +179,13 @@ export function SubDomainsGrid({ title, slug, subpages }: SubDomainsGridProps) {
                         </div>
                       </div>
 
-                      <h3 className="text-base font-semibold text-rose-500 group-hover/card:text-rose-400 transition-colors mb-2">
+                      <h3 className="text-base md:text-lg font-semibold text-rose-500 group-hover/card:text-rose-400 transition-colors mb-2">
                         {sub.title}
                       </h3>
 
-                      <p className="text-[12px] text-zinc-200 font-semibold leading-relaxed mb-6">
+                      {/* <p className="text-[12px] text-zinc-200 font-semibold leading-relaxed mb-6">
                         {sub.description}
-                      </p>
+                      </p> */}
                     </div>
 
                     <div className="inline-flex items-center gap-2.5 group/link mt-auto w-fit">

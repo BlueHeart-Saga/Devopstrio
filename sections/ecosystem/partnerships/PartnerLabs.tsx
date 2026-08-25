@@ -46,22 +46,22 @@ export function PartnerLabs() {
     <section id="innovation-labs" className="w-full py-24 bg-[#030303] border-b border-zinc-900/60 relative">
       <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
         <Reveal className="mb-16 text-center max-w-2xl mx-auto">
-          <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+          {/* <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
             Ecosystem Integrations
-          </span>
-          <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
+          </span> */}
+          <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight mb-5 text-white">
             Innovation Labs + <span className="text-rose-500">Partners</span>
           </h2>
-          <p className="text-zinc-400 text-sm font-semibold">
+          {/* <p className="text-zinc-400 text-sm font-semibold">
             Connecting our strategic alliance competencies to dedicated co-innovation laboratories.
-          </p>
+          </p> */}
         </Reveal>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {labs.map((lab) => (
             <div
               key={lab.title}
-              className="group flex flex-col justify-between p-8 bg-zinc-950/40 border border-zinc-900 hover:border-rose-500/20 rounded-3xl transition-all duration-300 min-h-[300px]"
+              className="group flex flex-col justify-between p-8 bg-zinc-950/40 border border-zinc-900 hover:border-rose-500/20 rounded-3xl transition-all duration-300 min-h-[180px]"
             >
               <div>
                 <div className="flex items-center justify-between mb-6 border-b border-zinc-900/60 pb-4">
@@ -71,13 +71,13 @@ export function PartnerLabs() {
                   <img src={lab.logo} alt={lab.partner} className="h-5 w-auto object-contain" loading="lazy" />
                 </div>
 
-                <h3 className="text-sm md:text-base font-bold text-white uppercase tracking-wider mb-2">{lab.title}</h3>
-                <span className="block text-xs font-mono text-zinc-450 uppercase tracking-widest mb-4">
+                <h3 className="text-base md:text-lg font-semibold text-white uppercase tracking-wider mb-2">{lab.title}</h3>
+                {/* <span className="block text-xs font-mono text-zinc-450 uppercase tracking-widest mb-4">
                   Powered by {lab.partner}
-                </span>
-                <p className="text-sm text-zinc-300 font-medium leading-relaxed">
+                </span> */}
+                {/* <p className="text-sm text-zinc-300 font-medium leading-relaxed">
                   {lab.desc}
-                </p>
+                </p> */}
               </div>
 
               <div className="mt-8 pt-4 border-t border-zinc-900/60 flex items-center justify-between">

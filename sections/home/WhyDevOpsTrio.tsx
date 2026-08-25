@@ -203,7 +203,7 @@ export function WhyDevopstrio() {
         {/* Top Header Block */}
         <div className="max-w-3xl mx-auto text-center mb-16 lg:mb-20">
           <Reveal>
-            <span className="text-xs font-semibold tracking-[0.3em] uppercase text-rose-500 mb-4 block drop-shadow-md">
+            <span className="text-2xl font-semibold tracking-[0.3em] uppercase text-rose-500 mb-4 block drop-shadow-md">
               Why Devopstrio
             </span>
           </Reveal>
@@ -212,11 +212,11 @@ export function WhyDevopstrio() {
               Engineering Innovation. Delivering Business Outcomes.
             </h2>
           </Reveal>
-          <Reveal delay={0.2}>
+          {/* <Reveal delay={0.2}>
             <p className="text-zinc-300 text-sm md:text-base leading-relaxed font-normal max-w-2xl mx-auto drop-shadow-md">
               We combine deep technical expertise, <Link href="/industries" className="text-rose-500 hover:underline font-medium">industry knowledge</Link>, and <Link href="/ecosystem/engineering-excellence" className="text-rose-500 hover:underline font-medium">modern engineering practices</Link> to help organizations innovate faster, <Link href="/services/cybersecurity" className="text-rose-500 hover:underline font-medium">operate securely</Link>, and scale confidently in an increasingly digital world.
             </p>
-          </Reveal>
+          </Reveal> */}
         </div>
 
         {/* Interactive Sticky Hover Grid */}
@@ -247,16 +247,16 @@ export function WhyDevopstrio() {
                     {/* Content */}
                     <div className="relative z-20 p-8 flex flex-col h-full pointer-events-none justify-end">
                       <div className="transition-all duration-500 ease-in-out translate-y-8 group-hover:translate-y-0">
-                        <span className="text-xs font-semibold tracking-[0.2em] uppercase text-rose-500 mb-4 block drop-shadow-md">
+                        {/* <span className="text-xs font-semibold tracking-[0.2em] uppercase text-rose-500 mb-4 block drop-shadow-md">
                           REASON {point.num}
-                        </span>
-                        <h3 className="text-xl font-bold text-white mb-4 tracking-tight drop-shadow-md">
+                        </span> */}
+                        <h3 className="text-2xl font-semibold text-white mb-4 tracking-tight drop-shadow-md">
                           {point.title}
                         </h3>
 
                         <div className="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-all duration-500 ease-in-out">
                           <div className="overflow-hidden">
-                            <p className="text-zinc-200 text-[13px] leading-relaxed font-medium line-clamp-4 drop-shadow-md mb-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+                            <p className="text-zinc-200 text-lg font-bold leading-relaxed font-medium line-clamp-4 drop-shadow-md mb-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
                               {point.desc}
                             </p>
                             <div className="flex justify-end opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-200">
@@ -301,16 +301,16 @@ export function WhyDevopstrio() {
                     {/* Content */}
                     <div className="relative z-20 p-8 flex flex-col h-full pointer-events-none justify-end">
                       <div className="transition-all duration-500 ease-in-out translate-y-8 group-hover:translate-y-0">
-                        <span className="text-xs font-semibold tracking-[0.2em] uppercase text-rose-500 mb-4 block drop-shadow-md">
+                        {/* <span className="text-xs font-semibold tracking-[0.2em] uppercase text-rose-500 mb-4 block drop-shadow-md">
                           REASON {point.num}
-                        </span>
-                        <h3 className="text-xl font-bold text-white mb-4 tracking-tight drop-shadow-md">
+                        </span> */}
+                        <h3 className="text-2xl font-semibold text-white mb-4 tracking-tight drop-shadow-md">
                           {point.title}
                         </h3>
 
                         <div className="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-all duration-500 ease-in-out">
                           <div className="overflow-hidden">
-                            <p className="text-zinc-200 text-[13px] leading-relaxed font-medium line-clamp-4 drop-shadow-md mb-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+                            <p className="text-zinc-200 text-lg font-semibold leading-relaxed font-medium line-clamp-4 drop-shadow-md mb-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
                               {point.desc}
                             </p>
                             <div className="flex justify-end opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-200">

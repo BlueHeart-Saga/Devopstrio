@@ -27,15 +27,15 @@ export function FutureTechnologies() {
       <div className="max-w-7xl mx-auto w-full px-6 lg:px-12 relative z-10">
         
         <Reveal className="mb-20 text-center max-w-3xl mx-auto">
-          <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+          {/* <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
             R&D ROADMAP
-          </span>
-          <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
+          </span> */}
+          <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight mb-5 text-white">
             Future <span className="text-rose-500">Technologies</span>
           </h2>
-          <p className="text-zinc-400 text-sm md:text-base leading-relaxed">
+          {/* <p className="text-zinc-400 text-sm md:text-base leading-relaxed">
             Our strategic vision timeline, researching and prototyping technologies that will define enterprise architectures over the next decade.
-          </p>
+          </p> */}
         </Reveal>
 
         {/* Premium Timeline Container */}
@@ -70,13 +70,13 @@ export function FutureTechnologies() {
                         {item.year} Objective
                       </span>
                       
-                      <h3 className="text-xl md:text-2xl font-bold text-white tracking-tight mb-4 group-hover:text-rose-300 transition-colors duration-300">
+                      <h3 className="text-base md:text-lg font-semibold text-white tracking-tight mb-4 group-hover:text-rose-300 transition-colors duration-300">
                         {item.title}
                       </h3>
                       
-                      <p className="text-sm md:text-base text-zinc-400 font-medium leading-relaxed max-w-2xl">
+                      {/* <p className="text-sm md:text-base text-zinc-400 font-medium leading-relaxed max-w-2xl">
                         {item.desc}
-                      </p>
+                      </p> */}
                     </div>
                   </div>
 

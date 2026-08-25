@@ -30,15 +30,15 @@ export function DeliveryLifecycle() {
         
         {/* Header */}
         <Reveal className="mb-24 text-center max-w-2xl mx-auto">
-          <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+          {/* <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
             PROCESS MAP
-          </span>
-          <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
+          </span> */}
+          <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight mb-5 text-white">
             Global Delivery <span className="text-rose-500">Lifecycle</span>
           </h2>
-          <p className="text-zinc-400 text-sm font-semibold">
+          {/* <p className="text-zinc-400 text-sm font-semibold">
             The sequential engineering phases coordinated across our network to deliver high-quality cloud platforms.
-          </p>
+          </p> */}
         </Reveal>
 
         {/* Infographic Steps Grid */}
@@ -90,13 +90,13 @@ export function DeliveryLifecycle() {
                         <div className={`w-1.5 h-1.5 rounded-full bg-current ${style.textColor} animate-pulse`} />
                       </div>
 
-                      <h3 className={`text-base md:text-lg font-bold uppercase tracking-wider ${style.textColor}`}>
+                      <h3 className={`text-base md:text-lg font-semibold uppercase tracking-wider ${style.textColor}`}>
                         {stage.title}
                       </h3>
                       
-                      <p className="text-xs md:text-sm text-zinc-300 font-semibold leading-relaxed max-w-[90%]">
+                      {/* <p className="text-xs md:text-sm text-zinc-300 font-semibold leading-relaxed max-w-[90%]">
                         {stage.desc}
-                      </p>
+                      </p> */}
                     </div>
 
                   </div>

@@ -18,15 +18,15 @@ export function DomainPartnerships() {
     <section className="py-24 bg-black border-b border-zinc-900/60 relative">
       <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 text-left">
         <Reveal className="mb-16">
-          <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+          {/* <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
             ALLIANCES
-          </span>
-          <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
+          </span> */}
+          <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight mb-5 text-white">
             Strategic <span className="text-rose-500">partnership network</span>
           </h2>
-          <p className="text-zinc-200 text-base md:text-lg font-semibold leading-relaxed mt-2 max-w-xl">
+          {/* <p className="text-zinc-200 text-base md:text-lg font-semibold leading-relaxed mt-2 max-w-xl">
             Technology alliances with AWS, Microsoft Azure, Google Cloud, and Oracle to build pre-certified integration templates.
-          </p>
+          </p> */}
         </Reveal>
 
         <div className="grid grid-cols-2 md:grid-cols-6 gap-6 items-center">

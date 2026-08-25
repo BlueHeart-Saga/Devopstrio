@@ -70,15 +70,15 @@ export function IndustriesServed() {
 
       <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
         <Reveal className="mb-16 text-left">
-          <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+          {/* <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
             VERTICAL ALIGNMENT
-          </span>
-          <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
+          </span> */}
+          <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight mb-5 text-white">
             Industries Using Our <span className="text-rose-500">Platforms</span>
           </h2>
-          <p className="text-zinc-400 text-sm font-semibold max-w-2xl">
+          {/* <p className="text-zinc-400 text-sm font-semibold max-w-2xl">
             Our technology frameworks and SaaS assets are configured to match specific legal and operational demands across eight core industries.
-          </p>
+          </p> */}
         </Reveal>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -99,12 +99,12 @@ export function IndustriesServed() {
 
                 {/* Details */}
                 <div className="px-3 pb-3 flex flex-col flex-1">
-                  <h3 className="font-bold text-xs uppercase tracking-wider text-white mb-2 group-hover:text-rose-400 transition-colors duration-300">
+                  <h3 className="font-semibold text-base md:text-lg uppercase tracking-wider text-white mb-2 group-hover:text-rose-400 transition-colors duration-300">
                     {ind.name}
                   </h3>
-                  <p className="text-[11px] text-zinc-400 leading-relaxed font-semibold">
+                  {/* <p className="text-[11px] text-zinc-400 leading-relaxed font-semibold">
                     {ind.desc}
-                  </p>
+                  </p> */}
                 </div>
 
               </div>

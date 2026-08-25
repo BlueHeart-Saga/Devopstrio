@@ -68,15 +68,15 @@ export function FollowTheSunModel() {
         {/* Header */}
         <div className="text-center mb-16">
           <Reveal>
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 block mb-4">
+            {/* <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 block mb-4">
               WORKFLOW HANDOFFS
-            </span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-4">
+            </span> */}
+            <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight text-white mb-4">
               Follow-The-Sun <span className="text-rose-500">Delivery Model</span>
             </h2>
-            <p className="text-zinc-400 text-sm font-semibold max-w-2xl mx-auto">
+            {/* <p className="text-zinc-400 text-sm font-semibold max-w-2xl mx-auto">
               How we transfer task scopes and active incidents across time zones to maintain continuous operational progress.
-            </p>
+            </p> */}
           </Reveal>
         </div>
 
@@ -104,8 +104,8 @@ export function FollowTheSunModel() {
                   <div className={`w-12 h-12 rounded-xl border flex items-center justify-center mb-6 ${c.icon}`}>
                     <shift.icon className="w-5 h-5" />
                   </div>
-                  <h3 className="text-base font-bold text-white uppercase tracking-wider mb-3">{shift.title}</h3>
-                  <p className="text-sm text-zinc-300 leading-relaxed font-semibold">{shift.description}</p>
+                  <h3 className="text-base md:text-lg font-semibold text-white uppercase tracking-wider mb-3">{shift.title}</h3>
+                  {/* <p className="text-sm text-zinc-300 leading-relaxed font-semibold">{shift.description}</p> */}
                 </div>
               </motion.div>
             );
@@ -120,8 +120,8 @@ export function FollowTheSunModel() {
               <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
             </span>
             <div>
-              <h4 className="text-xs font-bold text-white uppercase tracking-wider">Continuous 24/7 Operations</h4>
-              <p className="text-[10px] text-zinc-500 font-semibold mt-0.5">Timezone-aligned handoffs ensure seamless delivery without operational delay.</p>
+              <h4 className="text-base md:text-lg font-semibold text-white uppercase tracking-wider">Continuous 24/7 Operations</h4>
+              {/* <p className="text-[10px] text-zinc-500 font-semibold mt-0.5">Timezone-aligned handoffs ensure seamless delivery without operational delay.</p> */}
             </div>
           </div>
           <div className="flex flex-wrap gap-2 justify-center">

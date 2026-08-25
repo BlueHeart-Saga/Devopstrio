@@ -67,15 +67,15 @@ export function FeaturedProducts() {
 
       <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
         <Reveal className="mb-16 text-center max-w-2xl mx-auto">
-          <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+          {/* <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
             CORE IP CATALOG
-          </span>
-          <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
+          </span> */}
+          <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight mb-5 text-white">
             Featured Products <span className="text-rose-500">Showcase</span>
           </h2>
-          <p className="text-zinc-400 text-sm font-semibold">
+          {/* <p className="text-zinc-400 text-sm font-semibold">
             Proprietary SaaS platforms and digital products engineered by Devopstrio for rapid deployment.
-          </p>
+          </p> */}
         </Reveal>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -106,15 +106,15 @@ export function FeaturedProducts() {
                 </div>
 
                 {/* Title & Description */}
-                <h3 className="text-base font-bold text-white uppercase tracking-wider mb-1 mt-1 group-hover:text-rose-400 transition-colors">
+                <h3 className="text-base md:text-lg font-semibold text-white uppercase tracking-wider mb-1 mt-1 group-hover:text-rose-400 transition-colors">
                   {prod.name}
                 </h3>
-                <span className="block text-xs font-semibold text-rose-500 mb-3">
+                {/* <span className="block text-xs font-semibold text-rose-500 mb-3">
                   {prod.tagline}
-                </span>
-                <p className="text-[11px] text-zinc-400 font-semibold leading-relaxed mb-6">
+                </span> */}
+                {/* <p className="text-[11px] text-zinc-400 font-semibold leading-relaxed mb-6">
                   {prod.desc}
-                </p>
+                </p> */}
 
                 {/* Image Wrapper */}
                 <div className="relative w-full aspect-[16/10] overflow-hidden rounded-2xl border border-white/[0.03] group-hover:border-rose-500/15 bg-zinc-900/40 transition-all duration-500">

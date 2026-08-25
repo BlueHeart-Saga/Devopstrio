@@ -33,13 +33,13 @@ export function RelatedServices({ currentServiceSlug }: RelatedServicesProps) {
         
         {/* Header Section */}
         <Reveal className="mb-16 w-full flex flex-col items-center text-center">
-          <div className="inline-flex items-center justify-center gap-2 px-3 py-1 rounded-full mb-4">
+          {/* <div className="inline-flex items-center justify-center gap-2 px-3 py-1 rounded-full mb-4">
             
             <span className="text-[10px] font-bold tracking-widest uppercase text-rose-500">
               Internal Ecosystem
             </span>
-          </div>
-          <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white uppercase text-center mx-auto">
+          </div> */}
+          <h2 className="text-xl md:text-2xl xl:text-3xl font-semibold tracking-tight leading-tight mb-5 text-white uppercase text-center mx-auto">
             Explore related <span className="text-rose-500">services</span>
           </h2>
         </Reveal>
@@ -58,27 +58,27 @@ export function RelatedServices({ currentServiceSlug }: RelatedServicesProps) {
 
                   <div>
                     {/* Badge / Indicator */}
-                    <div className="flex items-center justify-between mb-4 border-b border-zinc-900/60 pb-3">
-                      <span className="text-[9px] font-mono tracking-widest text-rose-500 uppercase font-bold">
+                    {/* <div className="flex items-center justify-between mb-4 border-b border-zinc-900/60 pb-3">
+                      <span className="text-xs font-mono tracking-widest text-rose-500 uppercase font-semibold">
                         Service 0{idx + 1}
                       </span>
                       <span className="text-zinc-600 group-hover:text-rose-500 transition-colors">
-                        <Layers size={13} />
+                        <Layers size={15} />
                       </span>
-                    </div>
+                    </div> */}
 
-                    <h3 className="text-xs font-bold text-white group-hover:text-rose-500 transition-colors mb-2">
+                    <h3 className="text-lg md:text-xl font-semibold text-white group-hover:text-rose-500 transition-colors mb-3">
                       {service.title}
                     </h3>
 
-                    <p className="text-xs text-white leading-relaxed font-bold mb-6">
+                    {/* <p className="text-xs text-white leading-relaxed font-bold mb-6">
                       {service.subtitle}
-                    </p>
+                    </p> */}
                   </div>
 
                   <div className="border-t border-zinc-900/60 pt-4 mt-auto">
-                    <span className="text-[9px] text-rose-500 font-bold uppercase tracking-wider group-hover:translate-x-1 transition-transform duration-300 inline-flex items-center gap-1.5">
-                      View Details <ArrowUpRight size={13} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                    <span className="text-xs sm:text-sm text-rose-500 font-semibold uppercase tracking-wider group-hover:translate-x-1 transition-transform duration-300 inline-flex items-center gap-1.5">
+                      View Details <ArrowUpRight size={14} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                     </span>
                   </div>
                 </Link>

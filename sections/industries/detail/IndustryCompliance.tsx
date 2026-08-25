@@ -49,8 +49,8 @@ export function IndustryCompliance({ compliances }: IndustryComplianceProps) {
                     <span className="text-slate-100">CERTIFIED BENCHMARK</span>
                   </div>
 
-                  <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-tight text-white font-sans">
-                    Regulatory safety & <span className="text-rose-500 font-bold">compliance alignment</span>
+                  <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight leading-tight text-white font-sans">
+                    Regulatory safety & <span className="text-rose-500 font-semibold">compliance alignment</span>
                   </h2>
                 </Reveal>
               </div>

@@ -43,22 +43,22 @@ export function SuccessStories() {
     <section id="success-stories" className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
       <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
         <Reveal className="mb-16 text-left">
-          <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+          {/* <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
             CLIENT OUTCOMES
-          </span>
-          <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
+          </span> */}
+          <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight mb-5 text-white">
             Partner-Powered <span className="text-rose-500">Success Stories</span>
           </h2>
-          <p className="text-zinc-400 text-sm font-semibold max-w-2xl">
+          {/* <p className="text-zinc-400 text-sm font-semibold max-w-2xl">
             Real outcomes co-engineered with our technology partners to modernize global operations.
-          </p>
+          </p> */}
         </Reveal>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {stories.map((story) => (
             <div
               key={story.title}
-              className="bg-zinc-950/40 border border-zinc-900 rounded-3xl p-8 flex flex-col justify-between hover:border-rose-500/20 transition-all duration-300 min-h-[350px]"
+              className="bg-zinc-950/40 border border-zinc-900 rounded-3xl p-8 flex flex-col justify-between hover:border-rose-500/20 transition-all duration-300 min-h-[220px]"
             >
               <div>
                 <div className="flex items-center justify-between mb-6 border-b border-zinc-900/60 pb-4">
@@ -70,17 +70,17 @@ export function SuccessStories() {
                   </div>
                 </div>
 
-                <h3 className="text-base font-bold text-white uppercase tracking-wider mb-3">{story.title}</h3>
-                <p className="text-sm text-zinc-300 font-medium leading-relaxed mb-8">
+                <h3 className="text-base md:text-lg font-semibold text-white uppercase tracking-wider mb-3">{story.title}</h3>
+                {/* <p className="text-sm text-zinc-300 font-medium leading-relaxed mb-8">
                   {story.desc}
-                </p>
+                </p> */}
               </div>
 
               {/* Results metrics */}
               <div className="grid grid-cols-3 gap-4 border-t border-zinc-900/60 pt-6 mt-auto">
                 {story.results.map((res) => (
                   <div key={res.label}>
-                    <div className="text-lg md:text-xl font-black text-rose-500 mb-0.5">{res.value}</div>
+                    <div className="text-lg md:text-xl font-semibold text-rose-500 mb-0.5">{res.value}</div>
                     <div className="text-xs font-mono text-zinc-400 uppercase tracking-wider leading-tight">
                       {res.label}
                     </div>

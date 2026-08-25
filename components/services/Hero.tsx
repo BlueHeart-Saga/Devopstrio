@@ -530,19 +530,19 @@ export function Hero({
             </h1>
           </Reveal>
 
-          <Reveal delay={0.1}>
+          {/* <Reveal delay={0.1}>
             <p className="text-zinc-200 text-base md:text-lg font-medium leading-relaxed max-w-3xl text-center mx-auto">
               {subtitle}
             </p>
-          </Reveal>
+          </Reveal> */}
 
-          {children && (
+          {/* {children && (
             <Reveal delay={0.15}>
               <div className="mt-6 flex flex-wrap justify-center gap-4">
                 {children}
               </div>
             </Reveal>
-          )}
+          )} */}
         </div>
 
       </div>

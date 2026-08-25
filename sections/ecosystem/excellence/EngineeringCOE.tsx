@@ -59,15 +59,15 @@ export function EngineeringCOE() {
         
         {/* Section Header */}
         <Reveal className="mb-16 text-center max-w-3xl mx-auto">
-          <span className="text-[11px] md:text-xs font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+          {/* <span className="text-[11px] md:text-xs font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
             VERIFIED PILLARS
-          </span>
-          <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold tracking-tight leading-tight mb-5 text-white">
+          </span> */}
+          <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight mb-5 text-white">
             Centers of <span className="text-rose-500">Excellence</span>
           </h2>
-          <p className="text-zinc-350 text-sm md:text-base font-semibold leading-relaxed">
+          {/* <p className="text-zinc-350 text-sm md:text-base font-semibold leading-relaxed">
             Specialized engineering capability practices designed to accelerate execution and secure software integrations.
-          </p>
+          </p> */}
         </Reveal>
 
         {/* 5-Column Layout Grid with Tall Vertical Rectangle Image Cards */}
@@ -92,18 +92,18 @@ export function EngineeringCOE() {
                   </div>
 
                   {/* Title & Capability Focus */}
-                  <h3 className="text-base md:text-lg font-bold text-white uppercase tracking-wider mb-1.5 group-hover:text-rose-400 transition-colors">
+                  <h3 className="text-base md:text-lg font-semibold text-white uppercase tracking-wider mb-1.5 group-hover:text-rose-400 transition-colors">
                     {center.name}
                   </h3>
                   
-                  <span className="block text-[10px] md:text-xs font-mono text-rose-500/90 uppercase tracking-widest font-bold mb-3.5">
+                  {/* <span className="block text-[10px] md:text-xs font-mono text-rose-500/90 uppercase tracking-widest font-bold mb-3.5">
                     {center.focus}
-                  </span>
+                  </span> */}
 
                   {/* Description */}
-                  <p className="text-xs md:text-sm text-zinc-300 font-normal leading-relaxed">
+                  {/* <p className="text-xs md:text-sm text-zinc-300 font-normal leading-relaxed">
                     {center.desc}
-                  </p>
+                  </p> */}
                 </div>
               </div>
             </Reveal>

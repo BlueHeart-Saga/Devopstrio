@@ -127,20 +127,20 @@ export function CapabilityIndustries({ industries }: CapabilityIndustriesProps) 
                       {getIcon(slug)}
                     </div>
                     
-                    <h3 className="text-base md:text-lg font-bold text-rose-500 mb-3 group-hover:text-rose-400 transition-colors uppercase tracking-wide">
+                    <h3 className="text-lg md:text-xl font-semibold text-rose-500 mb-3 group-hover:text-rose-400 transition-colors uppercase tracking-wide">
                       {name}
                     </h3>
                     
-                    {desc && (
+                    {/* {desc && (
                       <p className="text-xs text-white leading-relaxed font-bold group-hover:text-white transition-colors">
                         {desc.trim()}
                       </p>
-                    )}
+                    )} */}
                   </div>
 
                   <div className="border-t border-zinc-900/60 pt-4 mt-6 flex justify-center">
-                    <span className="text-[9px] text-rose-500 font-bold uppercase tracking-wider transition-transform duration-300 inline-flex items-center gap-1.5 group-hover:translate-y-[-2px]">
-                      Explore Sector <ArrowUpRight size={13} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                    <span className="text-base font-semibold uppercase tracking-wider transition-transform duration-300 inline-flex items-center gap-1.5 group-hover:translate-y-[-2px]">
+                      Explore Sector <ArrowUpRight size={14} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                     </span>
                   </div>
                 </Link>

@@ -28,15 +28,15 @@ export function EcosystemIntegrationLoop() {
         
         {/* Section Header */}
         <Reveal className="mb-20 text-center max-w-2xl mx-auto">
-          <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+          {/* <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
             TALENT ESCALATION
-          </span>
-          <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
+          </span> */}
+          <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight mb-5 text-white">
             Ecosystem <span className="text-rose-500">Integration</span>
           </h2>
-          <p className="text-zinc-400 text-sm font-semibold leading-relaxed">
+          {/* <p className="text-zinc-400 text-sm font-semibold leading-relaxed">
             How academic partnerships transition into talent networks, professional credentials, and client delivery workloads.
-          </p>
+          </p> */}
         </Reveal>
 
         {/* Pipeline Steps Grid */}
@@ -44,7 +44,7 @@ export function EcosystemIntegrationLoop() {
           {steps.map((step, idx) => (
             <Reveal key={step.name} delay={idx * 0.05} className="h-full relative">
               <div
-                className="bg-zinc-950/45 border border-zinc-900 rounded-3xl p-5 hover:border-rose-500/20 hover:bg-zinc-900/10 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between min-h-[190px] h-full relative group shadow-lg backdrop-blur-md"
+                className="bg-zinc-950/45 border border-zinc-900 rounded-3xl p-5 hover:border-rose-500/20 hover:bg-zinc-900/10 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between min-h-[140px] h-full relative group shadow-lg backdrop-blur-md"
               >
                 <div>
                   {/* Step Watermark */}
@@ -53,14 +53,14 @@ export function EcosystemIntegrationLoop() {
                   </span>
 
                   {/* Title */}
-                  <h4 className="text-xs md:text-sm font-bold text-white uppercase tracking-wider mb-2 group-hover:text-rose-400 transition-colors duration-300">
+                  <h4 className="text-base md:text-lg font-semibold text-white uppercase tracking-wider mb-2 group-hover:text-rose-400 transition-colors duration-300">
                     {step.name}
                   </h4>
 
                   {/* Description */}
-                  <p className="text-xs text-zinc-400 font-semibold leading-relaxed">
+                  {/* <p className="text-xs text-zinc-400 font-semibold leading-relaxed">
                     {step.desc}
-                  </p>
+                  </p> */}
                 </div>
               </div>
             </Reveal>

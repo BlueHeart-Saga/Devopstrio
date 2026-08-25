@@ -127,12 +127,12 @@ export function PlatformMarketplace() {
 
         {/* Header Section */}
         <div className="mb-12 text-left max-w-3xl">
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">
+          <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight text-white mb-4">
             Code that's changing the game
           </h2>
-          <p className="text-zinc-400 text-sm font-semibold leading-relaxed">
+          {/* <p className="text-zinc-400 text-sm font-semibold leading-relaxed">
             See how development teams from early-stage startups to global enterprises are disrupting the status quo.
-          </p>
+          </p> */}
         </div>
 
         {/* Dynamic active case study showcase container */}
@@ -152,9 +152,9 @@ export function PlatformMarketplace() {
               </div>
 
               {/* Testimonial Quote */}
-              <p className="text-sm md:text-base lg:text-lg font-medium text-white italic leading-relaxed mb-6">
+              {/* <p className="text-sm md:text-base lg:text-lg font-medium text-white italic leading-relaxed mb-6">
                 "{activeItem.quote}"
-              </p>
+              </p> */}
 
               {/* Author / Client info */}
               <div className="mb-8">

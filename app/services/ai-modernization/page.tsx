@@ -12,7 +12,7 @@ import { BreadcrumbSchema, ServiceSchema, FAQSchema } from "@/components/seo/Sch
 const CapabilityGrid = dynamic(() => import("@/components/services/CapabilityGrid").then((mod) => mod.CapabilityGrid));
 const Challenges = dynamic(() => import("@/components/services/Challenges").then((mod) => mod.Challenges));
 const TimelineProcess = dynamic(() => import("@/components/services/TimelineProcess").then((mod) => mod.TimelineProcess));
-const TechnologyStack = dynamic(() => import("@/components/services/TechnologyStack").then((mod) => mod.TechnologyStack));
+// const TechnologyStack = dynamic(() => import("@/components/services/TechnologyStack").then((mod) => mod.TechnologyStack));
 const IndustryCards = dynamic(() => import("@/components/services/IndustryCards").then((mod) => mod.IndustryCards));
 const WhyDevopstrio = dynamic(() => import("@/sections/home/WhyDevOpsTrio").then((mod) => mod.WhyDevopstrio));
 const ServiceMetrics = dynamic(() => import("@/sections/services/category/ServiceMetrics").then((mod) => mod.ServiceMetrics));
@@ -57,7 +57,7 @@ export default async function ServiceCategoryPage() {
     { id: "capabilities", label: "Capabilities" },
     { id: "challenges", label: "Challenges" },
     { id: "process", label: "Process" },
-    { id: "technology", label: "Technology" },
+    // { id: "technology", label: "Technology" },
     { id: "industries", label: "Industries" },
     { id: "why-devopstrio", label: "Why Us" },
     { id: "metrics", label: "Metrics" },
@@ -106,9 +106,9 @@ export default async function ServiceCategoryPage() {
 
       <TimelineProcess serviceSlug={data.slug} steps={data.deliveryFramework} />
 
-      <div id="technology">
+      {/* <div id="technology">
         <TechnologyStack techs={data.techStack} />
-      </div>
+      </div> */}
 
       <div id="industries">
         <IndustryCards industries={data.industries} />

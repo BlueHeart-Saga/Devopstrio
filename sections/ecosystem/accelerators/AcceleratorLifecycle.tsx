@@ -28,15 +28,15 @@ export function AcceleratorLifecycle() {
         
         {/* Section Header */}
         <Reveal className="mb-20 text-center max-w-2xl mx-auto">
-          <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+          {/* <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
             ASSET EVOLUTION
-          </span>
-          <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
+          </span> */}
+          <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight mb-5 text-white">
             Accelerator <span className="text-rose-500">Lifecycle</span>
           </h2>
-          <p className="text-zinc-400 text-sm font-semibold">
+          {/* <p className="text-zinc-400 text-sm font-semibold">
             How we identify, build, and distribute reusable engineering code assets across our teams.
-          </p>
+          </p> */}
         </Reveal>
 
         {/* Stack flow visualizer */}
@@ -57,12 +57,12 @@ export function AcceleratorLifecycle() {
 
                 {/* Content details */}
                 <div>
-                  <h4 className="text-sm md:text-base font-bold text-white uppercase tracking-wider mb-1">
+                  <h4 className="text-base md:text-lg font-semibold text-white uppercase tracking-wider mb-1">
                     {stage.title}
                   </h4>
-                  <p className="text-xs md:text-sm text-zinc-300 font-semibold leading-relaxed">
+                  {/* <p className="text-xs md:text-sm text-zinc-300 font-semibold leading-relaxed">
                     {stage.desc}
-                  </p>
+                  </p> */}
                 </div>
               </div>
             </Reveal>

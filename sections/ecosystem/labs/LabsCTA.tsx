@@ -8,7 +8,7 @@ export function LabsCTA() {
     <RepresentativeCTA
       title="Let's Build The Future Of Innovation"
       highlightText="Together?"
-      description="Transform breakthrough R&D ideas into enterprise-ready AI, cloud, and quantum-resistant infrastructure solutions through Devopstrio Innovation Labs."
+      description={null}
       primaryBtnText="EXPLORE RESEARCH"
       primaryBtnHref="#showcase"
       secondaryBtnText="TALK TO INNOVATION TEAM"

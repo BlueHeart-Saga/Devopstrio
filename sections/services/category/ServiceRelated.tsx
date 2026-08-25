@@ -47,26 +47,26 @@ export function ServiceRelated({ relatedServices }: ServiceRelatedProps) {
 
                   <div>
                     {/* Badge / Indicator */}
-                    <div className="flex items-center justify-between mb-4 border-b border-zinc-900/60 pb-3">
+                    {/* <div className="flex items-center justify-between mb-4 border-b border-zinc-900/60 pb-3">
                       <span className="text-xs font-semibold tracking-widest text-rose-500 uppercase">
                         {service.badge}
                       </span>
                       <span className="text-zinc-600 group-hover:text-rose-500 transition-colors">
                         <Layers size={14} />
                       </span>
-                    </div>
+                    </div> */}
 
-                    <h3 className="text-base font-bold text-white group-hover:text-rose-500 transition-colors mb-2">
+                    <h3 className="text-2xl font-semibold text-white group-hover:text-rose-500 transition-colors mb-2">
                       {service.title}
                     </h3>
 
-                    <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed font-normal mb-6">
+                    {/* <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed font-normal mb-6">
                       {service.subtitle}
-                    </p>
+                    </p> */}
                   </div>
 
                   <div className="border-t border-zinc-900/60 pt-4 mt-auto">
-                    <span className="text-xs text-rose-500 font-semibold uppercase tracking-wider group-hover:translate-x-1 transition-transform duration-300 inline-flex items-center gap-1.5">
+                    <span className="text-md text-rose-500 font-semibold uppercase tracking-wider group-hover:translate-x-1 transition-transform duration-300 inline-flex items-center gap-1.5">
                       Explore Practice <ArrowUpRight size={13} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                     </span>
                   </div>

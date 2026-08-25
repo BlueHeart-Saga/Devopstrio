@@ -8,7 +8,7 @@ export function ExcellenceCTA() {
     <RepresentativeCTA
       title="Engineering Excellence That Drives"
       highlightText="Real Business Outcomes?"
-      description="From cloud-native platforms to AI-powered solutions, our engineering teams help enterprise organizations innovate faster, operate securely, and scale confidently."
+      description={null}
       primaryBtnText="START YOUR TRANSFORMATION"
       primaryBtnHref="/contact#contact-form"
       secondaryBtnText="MEET OUR ENGINEERS"

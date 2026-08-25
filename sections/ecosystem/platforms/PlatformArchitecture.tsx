@@ -63,15 +63,15 @@ export function PlatformArchitecture() {
 
       <div className="max-w-6xl mx-auto w-full px-12 xl:px-8 relative z-10">
         <Reveal className="mb-20 text-center max-w-2xl mx-auto">
-          <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+          {/* <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
             LOGICAL FRAMEWORK
-          </span>
-          <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
+          </span> */}
+          <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight mb-5 text-white">
             Platform <span className="text-rose-500">Architecture</span>
           </h2>
-          <p className="text-zinc-400 text-sm font-semibold">
+          {/* <p className="text-zinc-400 text-sm font-semibold">
             The multi-layer decoupled architecture layout designed to run highly resilient, scalable, and isolated tenant services.
-          </p>
+          </p> */}
         </Reveal>
 
         {/* Premium split-card grid */}
@@ -82,7 +82,7 @@ export function PlatformArchitecture() {
               delay={idx * 0.05}
               className={`h-full ${layer.level === "07" ? "md:col-span-2 max-w-2xl mx-auto w-full" : ""}`}
             >
-              <div className="relative rounded-[24px] overflow-hidden border border-white/[0.04] hover:border-rose-500/25 bg-zinc-950/40 grid grid-cols-12 min-h-[140px] group transition-all duration-500 hover:shadow-[0_12px_40px_rgba(244,63,94,0.04)] h-full">
+              <div className="relative rounded-[24px] overflow-hidden border border-white/[0.04] hover:border-rose-500/25 bg-zinc-950/40 grid grid-cols-12 min-h-[100px] group transition-all duration-500 hover:shadow-[0_12px_40px_rgba(244,63,94,0.04)] h-full">
                 
                 {/* Left sequence side with bg artwork and giant number */}
                 <div className="col-span-4 md:col-span-3 relative overflow-hidden h-full border-r border-white/[0.04] bg-[#080808]">
@@ -98,12 +98,12 @@ export function PlatformArchitecture() {
 
                 {/* Right content details side */}
                 <div className="col-span-8 md:col-span-9 p-6 flex flex-col justify-center relative z-10 bg-zinc-950/20">
-                  <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-2 group-hover:text-rose-400 transition-colors duration-300">
+                  <h4 className="text-base md:text-lg font-semibold text-white uppercase tracking-wider mb-2 group-hover:text-rose-400 transition-colors duration-300">
                     {layer.name}
                   </h4>
-                  <p className="text-[10px] text-zinc-400 leading-relaxed font-semibold">
+                  {/* <p className="text-[10px] text-zinc-400 leading-relaxed font-semibold">
                     {layer.desc}
-                  </p>
+                  </p> */}
                 </div>
 
               </div>

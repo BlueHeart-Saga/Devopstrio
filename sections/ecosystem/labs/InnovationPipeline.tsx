@@ -39,15 +39,15 @@ export function InnovationPipeline() {
         {/* Section Header */}
         <Reveal>
           <div className="text-center max-w-3xl mx-auto mb-20">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+            {/* <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
               R&D INGESTION PIPELINE
-            </span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white uppercase">
+            </span> */}
+            <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight mb-5 text-white uppercase">
               The Innovation <span className="text-rose-500">Pipeline</span>
             </h2>
-            <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
+            {/* <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
               How breakthrough ideas are systematically researched, validated, piloted, and delivered as enterprise-ready solutions.
-            </p>
+            </p> */}
           </div>
         </Reveal>
 
@@ -57,7 +57,7 @@ export function InnovationPipeline() {
             return (
               <Reveal key={stage.id} delay={idx * 0.05}>
                 <div
-                  className={`relative overflow-hidden bg-zinc-950/35 border border-white/10 rounded-3xl p-8 min-h-[260px] h-full flex flex-col justify-between backdrop-blur-md shadow-[0_8px_32px_0_rgba(0,0,0,0.4)] hover:bg-zinc-900/10 hover:border-rose-500/25 hover:-translate-y-1.5 transition-all duration-300 ${staggerClasses[idx] || ""}`}
+                  className={`relative overflow-hidden bg-zinc-950/35 border border-white/10 rounded-3xl p-8 min-h-[160px] h-full flex flex-col justify-between backdrop-blur-md shadow-[0_8px_32px_0_rgba(0,0,0,0.4)] hover:bg-zinc-900/10 hover:border-rose-500/25 hover:-translate-y-1.5 transition-all duration-300 ${staggerClasses[idx] || ""}`}
                 >
                   <div>
                     {/* Large step number + icon row */}
@@ -71,14 +71,14 @@ export function InnovationPipeline() {
                     </div>
 
                     {/* Value title */}
-                    <h3 className="text-lg font-bold text-white mb-3 hover:text-rose-400 transition-colors duration-300">
+                    <h3 className="text-base md:text-lg font-semibold text-white mb-3 hover:text-rose-400 transition-colors duration-300">
                       {stage.name}
                     </h3>
 
                     {/* Value description */}
-                    <p className="text-sm text-zinc-400 leading-relaxed font-light">
+                    {/* <p className="text-sm text-zinc-400 leading-relaxed font-light">
                       {stage.desc}
-                    </p>
+                    </p> */}
                   </div>
                 </div>
               </Reveal>

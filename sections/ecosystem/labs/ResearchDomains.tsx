@@ -74,15 +74,15 @@ export function ResearchDomains() {
         
         {/* Header */}
         <Reveal className="mb-12 text-left max-w-3xl">
-          <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+          {/* <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
             R&D MATRICES
-          </span>
-          <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
+          </span> */}
+          <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight mb-5 text-white">
             Core Research <span className="text-rose-500">Domains</span>
           </h2>
-          <p className="text-zinc-400 text-sm md:text-base font-medium max-w-2xl leading-relaxed">
+          {/* <p className="text-zinc-400 text-sm md:text-base font-medium max-w-2xl leading-relaxed">
             Broad architectural categories defining our SRE investigations, compliance frameworks, and intelligence products.
-          </p>
+          </p> */}
         </Reveal>
 
         {/* Tabs Menu */}
@@ -106,7 +106,7 @@ export function ResearchDomains() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch">
           
           {/* Left: Domain details Card */}
-          <div className="lg:col-span-5 flex flex-col justify-between p-8 rounded-2xl bg-zinc-950/40 border border-white/5 relative overflow-hidden h-full min-h-[420px]">
+          <div className="lg:col-span-5 flex flex-col justify-between p-8 rounded-2xl bg-zinc-950/40 border border-white/5 relative overflow-hidden h-full min-h-[300px]">
             {/* Accent vertical line */}
             <div className="absolute top-0 left-0 w-1.5 h-full bg-rose-500" />
             
@@ -119,15 +119,15 @@ export function ResearchDomains() {
                   exit={{ opacity: 0, x: 10 }}
                   transition={{ duration: 0.3 }}
                 >
-                  <span className="text-[10px] font-mono tracking-[0.25em] uppercase text-rose-500 block mb-2">
+                  {/* <span className="text-[10px] font-mono tracking-[0.25em] uppercase text-rose-500 block mb-2">
                     Research Area
-                  </span>
-                  <h3 className="text-xl md:text-2xl font-bold text-white tracking-tight leading-tight mb-4">
+                  </span> */}
+                  <h3 className="text-lg md:text-xl font-semibold text-white tracking-tight leading-tight mb-4">
                     {currentDomain.title}
                   </h3>
-                  <p className="text-zinc-300 text-sm md:text-base font-medium leading-relaxed mb-8">
+                  {/* <p className="text-zinc-300 text-sm md:text-base font-medium leading-relaxed mb-8">
                     {currentDomain.desc}
-                  </p>
+                  </p> */}
 
                   <div className="space-y-4 border-t border-zinc-900 pt-6">
                     <span className="text-[10px] font-mono tracking-[0.25em] uppercase text-zinc-500 block mb-4">

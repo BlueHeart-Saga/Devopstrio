@@ -20,16 +20,16 @@ export function PlatformsHero() {
 
         {/* Center Main Heading & Description */}
         <Reveal delay={0.1} className="max-w-4xl">
-          <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight mb-6 text-white text-center">
+          <h1 className="text-3xl md:text-5xl lg:text-6xl font-semibold tracking-tight leading-tight mb-6 text-white text-center">
             Build, Launch & Scale Digital Products
           </h1>
         </Reveal>
 
-        <Reveal delay={0.2} className="max-w-3xl">
+        {/* <Reveal delay={0.2} className="max-w-3xl">
           <p className="text-zinc-300 text-xs md:text-sm lg:text-base leading-relaxed font-normal max-w-3xl text-center mx-auto opacity-95 mb-10">
             Transform ideas into enterprise-grade <Link href="/services/software-development" className="text-rose-500 hover:underline font-bold">SaaS products</Link>, <Link href="/services/ai-data-innovation" className="text-rose-500 hover:underline font-bold">AI-powered platforms</Link>, <Link href="/services/cloud-services" className="text-rose-500 hover:underline font-bold">cloud-native applications</Link>, and digital ecosystems.
           </p>
-        </Reveal>
+        </Reveal> */}
 
         {/* Action Pill Buttons */}
         <Reveal delay={0.3} className="flex flex-wrap justify-center gap-4 mb-16">

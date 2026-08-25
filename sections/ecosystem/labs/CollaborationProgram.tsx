@@ -124,10 +124,10 @@ export function CollaborationProgram() {
         
         {/* Header Section */}
         <Reveal className="mb-10 text-left">
-          <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-zinc-500 mb-4 block">
+          {/* <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-zinc-500 mb-4 block">
             PARTICIPATION OPTIONS
-          </span>
-          <h2 className="text-xl md:text-3xl xl:text-4xl font-bold tracking-tight leading-tight mb-8 text-white max-w-3xl">
+          </span> */}
+          <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight mb-8 text-white max-w-3xl">
             Build smarter with insights from technical leaders
           </h2>
           

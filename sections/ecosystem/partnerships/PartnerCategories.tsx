@@ -257,15 +257,15 @@ export function PartnerCategories() {
         {/* Header Section */}
         <Reveal>
           <div className="text-center max-w-3xl mx-auto mb-14">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+            {/* <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
               Ecosystem Portfolios
-            </span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
+            </span> */}
+            <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight mb-5 text-white">
               Partner <span className="text-rose-500">Categories</span>
             </h2>
-            <p className="text-zinc-200 text-base md:text-lg font-semibold leading-relaxed">
+            {/* <p className="text-zinc-200 text-base md:text-lg font-semibold leading-relaxed">
               We categorize our strategic partnerships across five core domains to provide enterprises with targeted, best-of-breed modernization.
-            </p>
+            </p> */}
           </div>
         </Reveal>
 
@@ -314,15 +314,15 @@ export function PartnerCategories() {
 
               {/* Card top details */}
               <div className="relative z-10">
-                <span className="text-xs font-mono text-rose-500 tracking-widest uppercase block mb-4">
+                {/* <span className="text-xs font-mono text-rose-500 tracking-widest uppercase block mb-4">
                   {stepNumber} / ECOSYSTEM DIVISION
-                </span>
-                <h3 className="text-xl md:text-2xl font-bold text-white tracking-tight leading-tight mb-4 group-hover/tall:text-rose-400 transition-colors">
+                </span> */}
+                <h3 className="text-lg md:text-xl font-semibold text-white tracking-tight leading-tight mb-4 group-hover/tall:text-rose-400 transition-colors">
                   Integrate with our {currentCategory.label}
                 </h3>
-                <p className="text-zinc-200 text-sm md:text-base font-semibold leading-relaxed">
+                {/* <p className="text-zinc-200 text-sm md:text-base font-semibold leading-relaxed">
                   {currentCategory.subtitle}
-                </p>
+                </p> */}
               </div>
 
               {/* Card bottom button */}
@@ -345,7 +345,7 @@ export function PartnerCategories() {
           <div className="lg:col-span-3 grid grid-cols-1 md:grid-cols-2 gap-6">
             {currentCategory.partners.map((partner, idx) => (
               <Reveal key={partner.name} delay={idx * 0.04} className="h-full">
-                <div className="group/card flex flex-col justify-between bg-zinc-950/30 border border-white/5 hover:border-rose-500/20 hover:bg-zinc-950/60 rounded-2xl p-6 transition-all duration-300 min-h-[220px] h-full relative overflow-hidden backdrop-blur-md shadow-[0_8px_32px_0_rgba(0,0,0,0.37)]">
+                <div className="group/card flex flex-col justify-between bg-zinc-950/30 border border-white/5 hover:border-rose-500/20 hover:bg-zinc-950/60 rounded-2xl p-6 transition-all duration-300 min-h-[140px] h-full relative overflow-hidden backdrop-blur-md shadow-[0_8px_32px_0_rgba(0,0,0,0.37)]">
                   
                   {/* Subtle color highlight glow on hover */}
                   <div className="absolute inset-0 bg-gradient-to-br from-rose-600/0 via-rose-600/0 to-rose-600/5 opacity-0 group-hover/card:opacity-100 transition-opacity duration-500 pointer-events-none" />
@@ -359,13 +359,13 @@ export function PartnerCategories() {
                           className="w-6 h-6 object-contain opacity-60 group-hover/card:opacity-100 transition-opacity duration-300 filter brightness-100 invert-[0.1]"
                         loading="lazy" />
                       )}
-                      <h4 className="text-base font-semibold text-rose-500 group-hover/card:text-rose-450 transition-colors">
+                      <h4 className="text-base md:text-lg font-semibold text-rose-500 group-hover/card:text-rose-450 transition-colors">
                         {partner.name}
                       </h4>
                     </div>
-                    <p className="text-sm text-zinc-300 font-medium leading-relaxed mb-6">
+                    {/* <p className="text-sm text-zinc-300 font-medium leading-relaxed mb-6">
                       {partner.desc}
-                    </p>
+                    </p> */}
                   </div>
 
                   {/* Link action details */}

@@ -100,16 +100,16 @@ export function LabsHero() {
 
         {/* Center Main Heading & Description */}
         <Reveal delay={0.2} className="max-w-3xl">
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-tight mb-5 text-white text-center">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight leading-tight mb-5 text-white text-center">
             Where Enterprise Innovation Becomes Reality
           </h1>
         </Reveal>
 
-        <Reveal delay={0.3} className="max-w-2xl">
+        {/* <Reveal delay={0.3} className="max-w-2xl">
           <p className="text-zinc-400 text-xs md:text-sm lg:text-base leading-relaxed font-normal max-w-3xl text-center mx-auto opacity-95 mb-10">
             Devopstrio Innovation Labs accelerate <Link href="/services/ai-data-innovation" className="text-rose-500 hover:underline font-bold">artificial intelligence</Link>, <Link href="/services/cloud-services" className="text-rose-500 hover:underline font-bold">cloud services</Link>, <Link href="/services/devops-automation" className="text-rose-500 hover:underline font-bold">DevOps automation</Link>, <Link href="/services/cybersecurity" className="text-rose-500 hover:underline font-bold">enterprise cybersecurity</Link>, and <Link href="/services/data-engineering" className="text-rose-500 hover:underline font-bold">data engineering</Link> breakthroughs.
           </p>
-        </Reveal>
+        </Reveal> */}
 
         {/* Explorer Pill CTA Button */}
         <Reveal delay={0.4}>

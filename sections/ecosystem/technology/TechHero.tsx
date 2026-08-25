@@ -58,16 +58,16 @@ export function TechHero() {
         {/* Center Text Panel */}
         <div className="w-[280px] md:w-[320px] text-center z-30 flex flex-col items-center justify-center">
           <Reveal delay={0.1}>
-            <h1 className="text-2xl md:text-3xl font-bold tracking-tight leading-tight mb-4 text-white">
+            <h1 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight mb-4 text-white">
               Built on Modern Foundations
             </h1>
           </Reveal>
 
-          <Reveal delay={0.2}>
+          {/* <Reveal delay={0.2}>
             <p className="text-zinc-400 text-[10px] md:text-xs leading-relaxed font-normal mb-6 opacity-95">
               Explore the <Link href="/ecosystem/technology-stack" className="text-rose-500 hover:underline font-bold">technology stack frameworks</Link> and modern <Link href="/services/cloud-services" className="text-rose-500 hover:underline font-bold">cloud platform services</Link> driving our enterprise solutions.
             </p>
-          </Reveal>
+          </Reveal> */}
 
           <Reveal delay={0.3}>
             <Link

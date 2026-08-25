@@ -8,7 +8,7 @@ export function PlatformsCTA() {
     <RepresentativeCTA
       title="Let's Build Your Enterprise"
       highlightText="Platform Infrastructure?"
-      description="Accelerate digital transformation by launching your enterprise-grade SaaS, PaaS, or AI platform solution with Devopstrio."
+      description={null}
       primaryBtnText="REQUEST DEMO"
       primaryBtnHref="/contact#contact-form"
       secondaryBtnText="CONTACT CONSULTING"

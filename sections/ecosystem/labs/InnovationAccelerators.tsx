@@ -89,15 +89,15 @@ export function InnovationAccelerators() {
     <section id="accelerators" className="w-full py-24 bg-[#030303] border-b border-zinc-900/60 relative">
       <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
         <Reveal className="mb-12 text-center max-w-3xl mx-auto">
-          <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+          {/* <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
             PROPRIETARY INTELLECTUAL PROPERTY
-          </span>
-          <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
+          </span> */}
+          <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight mb-5 text-white">
             Innovation <span className="text-rose-500">Accelerators</span>
           </h2>
-          <p className="text-zinc-400 text-sm font-semibold mb-10">
+          {/* <p className="text-zinc-400 text-sm font-semibold mb-10">
             Pre-packaged frameworks and codebase templates engineered by our labs to speed up delivery schedules.
-          </p>
+          </p> */}
         </Reveal>
 
         {/* Top Pill Navigation Menu */}
@@ -151,17 +151,17 @@ export function InnovationAccelerators() {
                   exit={{ opacity: 0, y: -10 }}
                   transition={{ duration: 0.3 }}
                 >
-                  <span className="text-[10px] font-bold tracking-[0.25em] uppercase text-rose-500 mb-4 block drop-shadow-md">
+                  {/* <span className="text-[10px] font-bold tracking-[0.25em] uppercase text-rose-500 mb-4 block drop-shadow-md">
                     {currentAsset.tab}
-                  </span>
+                  </span> */}
 
-                  <h3 className="text-3xl md:text-4xl font-bold text-white tracking-tight leading-[1.1] mb-6">
+                  <h3 className="text-xl md:text-2xl font-semibold text-white tracking-tight leading-[1.1] mb-6">
                     {currentAsset.title}
                   </h3>
 
-                  <p className="text-zinc-400 text-sm md:text-base leading-relaxed mb-10 max-w-lg">
+                  {/* <p className="text-zinc-400 text-sm md:text-base leading-relaxed mb-10 max-w-lg">
                     {currentAsset.desc}
-                  </p>
+                  </p> */}
 
                   {/* Vertical Feature Boxes */}
                   <div className="space-y-4 mb-12">

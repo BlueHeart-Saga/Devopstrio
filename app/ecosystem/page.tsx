@@ -45,13 +45,13 @@ export default function EcosystemLandingPage() {
       <div id="overview">
         <EcosystemOverview />
       </div>
-      <SvgWaveLine variant="smooth" />
+      {/* <SvgWaveLine variant="smooth" /> */}
 
       {/* 3. Core Ecosystem Domains (Pillars) */}
-      <div id="domains">
+      {/* <div id="domains">
         <EcosystemPillars />
-      </div>
-      <SvgWaveLine variant="liquid" />
+      </div> */}
+      {/* <SvgWaveLine variant="liquid" /> */}
 
       {/* 4. Platform Portfolio */}
       <div id="portfolio">

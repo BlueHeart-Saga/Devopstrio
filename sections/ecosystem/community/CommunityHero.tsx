@@ -78,16 +78,16 @@ export function CommunityHero() {
 
         {/* Center Main Heading & Description */}
         <Reveal delay={0.2} className="max-w-3xl">
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-tight mb-5 text-white text-center">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight leading-tight mb-5 text-white text-center">
             Building the Future Technology Workforce
           </h1>
         </Reveal>
 
-        <Reveal delay={0.3} className="max-w-2xl">
+        {/* <Reveal delay={0.3} className="max-w-2xl">
           <p className="text-zinc-400 text-xs md:text-sm lg:text-base leading-relaxed font-normal max-w-3xl text-center mx-auto opacity-95 mb-10">
             Connecting engineers, architects, and industry leaders through a <Link href="/ecosystem/global-delivery" className="text-rose-500 hover:underline font-bold">global delivery ecosystem</Link> of collaboration, and <Link href="/ecosystem/engineering-excellence" className="text-rose-500 hover:underline font-bold">engineering excellence</Link> career growth.
           </p>
-        </Reveal>
+        </Reveal> */}
 
         {/* Join Now Pill Button */}
         <Reveal delay={0.4}>

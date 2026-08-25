@@ -20,16 +20,16 @@ export function DeliveryHero() {
 
         {/* 1st: Center Heading & Subtitle */}
         <Reveal delay={0.1} className="max-w-4xl">
-          <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight mb-4 text-white text-center">
+          <h1 className="text-3xl md:text-5xl lg:text-6xl font-semibold tracking-tight leading-tight mb-4 text-white text-center">
             Global Delivery. Local Expertise.
           </h1>
         </Reveal>
 
-        <Reveal delay={0.2} className="max-w-3xl">
+        {/* <Reveal delay={0.2} className="max-w-3xl">
           <p className="text-zinc-300 text-xs md:text-sm lg:text-base leading-relaxed font-normal max-w-3xl text-center mx-auto opacity-95 mb-6">
             Devopstrio combines strategic <Link href="/services/it-consulting" className="text-rose-500 hover:underline font-bold">IT consulting services</Link>, <Link href="/ecosystem/engineering-excellence" className="text-rose-500 hover:underline font-bold">engineering excellence</Link>, <Link href="/services/cloud-services" className="text-rose-500 hover:underline font-bold">cloud operations</Link>, and 24×7 delivery capabilities.
           </p>
-        </Reveal>
+        </Reveal> */}
 
         {/* Exploration Pill Button */}
         <Reveal delay={0.3}>

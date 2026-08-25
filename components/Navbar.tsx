@@ -80,13 +80,13 @@ const WhatsappIcon = ({ className = "w-5 h-5" }: { className?: string }) => (
 
 const ChatNowSection = () => (
   <div className="flex items-center gap-2.5">
-    <span className="text-zinc-400 text-xs font-medium">Chat now:</span>
+    <span className="text-zinc-300 text-sm sm:text-base font-semibold">Chat now:</span>
     <a
       href={`mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL || "info@devopstrioglobal.com"}`}
       className="text-zinc-400 hover:text-white transition-all duration-200 hover:scale-110 flex items-center justify-center p-0.5 rounded"
       title="Email Us"
     >
-      <EmailIcon className="w-5 h-5" />
+      <EmailIcon className="w-6 h-6" />
     </a>
     <a
       href="https://wa.me/447471482903"
@@ -95,7 +95,7 @@ const ChatNowSection = () => (
       className="text-zinc-400 hover:text-emerald-400 transition-all duration-200 hover:scale-110 flex items-center justify-center p-0.5 rounded"
       title="WhatsApp"
     >
-      <WhatsappIcon className="w-5 h-5" />
+      <WhatsappIcon className="w-6 h-6" />
     </a>
   </div>
 );
@@ -109,7 +109,7 @@ const ConnectSocialIcons = () => (
       className="text-zinc-400 hover:text-white transition-all duration-200 hover:scale-110 flex items-center justify-center"
       title="X (Twitter)"
     >
-      <XIcon className="w-5 h-5" />
+      <XIcon className="w-6 h-6" />
     </a> */}
     <a
       href="https://www.linkedin.com/company/devopstrioglobal/posts/?feedView=all"
@@ -118,7 +118,7 @@ const ConnectSocialIcons = () => (
       className="text-zinc-400 hover:text-white transition-all duration-200 hover:scale-110 flex items-center justify-center"
       title="LinkedIn"
     >
-      <LinkedInIcon className="w-5 h-5" />
+      <LinkedInIcon className="w-6 h-6" />
     </a>
     <a
       href="https://www.facebook.com/profile.php?id=61579126233218"
@@ -127,7 +127,7 @@ const ConnectSocialIcons = () => (
       className="text-zinc-400 hover:text-white transition-all duration-200 hover:scale-110 flex items-center justify-center"
       title="Facebook"
     >
-      <FacebookIcon className="w-5 h-5" />
+      <FacebookIcon className="w-6 h-6" />
     </a>
     <a
       href="https://www.instagram.com/devopstrio_offcl/"
@@ -136,7 +136,7 @@ const ConnectSocialIcons = () => (
       className="text-zinc-400 hover:text-white transition-all duration-200 hover:scale-110 flex items-center justify-center"
       title="Instagram"
     >
-      <InstagramIcon className="w-5 h-5" />
+      <InstagramIcon className="w-6 h-6" />
     </a>
     {/* <a
       href="https://www.youtube.com/@Devopstrioltd"
@@ -145,7 +145,7 @@ const ConnectSocialIcons = () => (
       className="text-zinc-400 hover:text-white transition-all duration-200 hover:scale-110 flex items-center justify-center"
       title="YouTube"
     >
-      <YoutubeIcon className="w-5 h-5" />
+      <YoutubeIcon className="w-6 h-6" />
     </a> */}
   </div>
 );
@@ -931,16 +931,16 @@ export function Navbar() {
                     <div className="col-span-2 flex flex-col pl-2">
                       {/* Single Heading spanning across */}
                       <div className="pb-3 mb-4 border-b border-zinc-800/80 flex items-center justify-between">
-                        <span className="text-base font-bold tracking-wider text-rose-500 uppercase font-sans">
+                        <span className="text-lg font-bold tracking-wider text-rose-500 uppercase font-sans">
                           CORE & AI SERVICES
                         </span>
                         <Link
                           href="/services"
                           onClick={() => setActiveMenu(null)}
-                          className="text-xs font-semibold text-rose-500 hover:text-rose-400 transition-colors flex items-center gap-1"
+                          className="text-sm font-semibold text-rose-500 hover:text-rose-400 transition-colors flex items-center gap-1"
                         >
                           <span>View All Services</span>
-                          <ArrowUpRight size={13} />
+                          <ArrowUpRight size={14} />
                         </Link>
                       </div>
 
@@ -963,7 +963,7 @@ export function Navbar() {
                               onClick={() => setActiveMenu(null)}
                               className="group/ind block py-1.5 px-3 rounded-lg hover:bg-zinc-900/50 transition-colors"
                             >
-                              <span className="block text-base font-semibold text-zinc-100 group-hover/ind:text-rose-400 transition-colors">
+                              <span className="block text-lg font-semibold text-zinc-100 group-hover/ind:text-rose-400 transition-colors">
                                 {item.name}
                               </span>
                             </Link>
@@ -988,7 +988,7 @@ export function Navbar() {
                               onClick={() => setActiveMenu(null)}
                               className="group/ind block py-1.5 px-2.5 rounded-lg hover:bg-zinc-900/40 transition-colors"
                             >
-                              <span className="block text-base font-semibold text-zinc-200 group-hover/ind:text-rose-400 transition-colors">
+                              <span className="block text-lg font-semibold text-zinc-200 group-hover/ind:text-rose-400 transition-colors">
                                 {item.name}
                               </span>
                             </Link>
@@ -1000,12 +1000,11 @@ export function Navbar() {
 
                     {/* Mega Menu Footer (Theme Matched) */}
                     <div className="col-span-full border-t border-zinc-900/60 pt-4 mt-1 flex flex-row justify-between items-center">
-                      <div className="flex items-center gap-4 text-sm sm:text-base font-medium text-zinc-300">
+                      <div className="flex items-center gap-4 text-base sm:text-lg font-semibold text-zinc-300">
                         <Link
                           href="/insights/industry-events"
                           className="hover:text-rose-500 transition-colors flex items-center gap-1.5 font-semibold"
                         >
-                         
                           <span>Events</span>
                         </Link>
                         <span className="text-zinc-800">|</span>
@@ -1013,7 +1012,7 @@ export function Navbar() {
                       </div>
 
                       <div className="flex items-center gap-4">
-                        <span className="text-xs font-semibold tracking-wider uppercase text-zinc-400">Connect With Us</span>
+                        <span className="text-sm sm:text-base font-semibold tracking-wider uppercase text-zinc-300">Connect With Us</span>
                         <ConnectSocialIcons />
                       </div>
                     </div>
@@ -1077,7 +1076,7 @@ export function Navbar() {
 
                     {/* Right industries list grid */}
                     <div>
-                      <span className="text-base font-bold tracking-wider text-rose-500 uppercase block mb-4 font-sans">Target Sectors</span>
+                      <span className="text-lg font-bold tracking-wider text-rose-500 uppercase block mb-4 font-sans">Target Sectors</span>
                       <div className="max-h-[380px] overflow-y-auto overscroll-contain pr-2 custom-scrollbar">
                         <div className="grid grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-1">
                           {industriesList.map((ind) => (
@@ -1087,7 +1086,7 @@ export function Navbar() {
                               onClick={() => setActiveMenu(null)}
                               className="group/ind block p-2 rounded-lg hover:bg-zinc-900/30 transition-colors"
                             >
-                              <span className="block text-base font-semibold text-white group-hover/ind:text-rose-500 transition-colors mb-1">
+                              <span className="block text-lg font-semibold text-white group-hover/ind:text-rose-500 transition-colors mb-1">
                                 {ind.name}
                               </span>
                               {/* <span className="block text-[13px] text-zinc-400 font-medium leading-relaxed">
@@ -1101,12 +1100,11 @@ export function Navbar() {
 
                     {/* Mega Menu Footer */}
                     <div className="col-span-full border-t border-zinc-900/60 pt-4 mt-1 flex flex-row justify-between items-center">
-                      <div className="flex items-center gap-4 text-sm sm:text-base font-medium text-zinc-300">
+                      <div className="flex items-center gap-4 text-base sm:text-lg font-semibold text-zinc-300">
                         <Link
                           href="/insights/industry-events"
                           className="hover:text-rose-500 transition-colors flex items-center gap-1.5 font-semibold"
                         >
-                         
                           <span>Events</span>
                         </Link>
                         <span className="text-zinc-800">|</span>
@@ -1114,7 +1112,7 @@ export function Navbar() {
                       </div>
 
                       <div className="flex items-center gap-4">
-                        <span className="text-xs font-semibold tracking-wider uppercase text-zinc-400">Connect With Us</span>
+                        <span className="text-sm sm:text-base font-semibold tracking-wider uppercase text-zinc-300">Connect With Us</span>
                         <ConnectSocialIcons />
                       </div>
                     </div>
@@ -1179,7 +1177,7 @@ export function Navbar() {
                     <div className="col-span-2 flex flex-col pl-2">
                       {/* Single Heading spanning across */}
                       <div className="pb-3 mb-4 border-b border-zinc-800/80 flex items-center justify-between">
-                        <span className="text-base font-bold tracking-wider text-rose-500 uppercase font-sans">
+                        <span className="text-lg font-bold tracking-wider text-rose-500 uppercase font-sans">
                           ECOSYSTEM PILLARS
                         </span>
                         <a
@@ -1211,12 +1209,12 @@ export function Navbar() {
                               onClick={() => setActiveMenu(null)}
                               className="group/eco block py-2 px-3 rounded-lg hover:bg-zinc-900/40 transition-colors"
                             >
-                              <span className="block text-base font-semibold text-zinc-200 group-hover/eco:text-rose-500 transition-colors mb-0.5">
+                              <span className="block text-lg font-semibold text-zinc-200 group-hover/eco:text-rose-500 transition-colors mb-0.5">
                                 {item.name}
                               </span>
-                              <span className="block text-xs text-zinc-400 font-medium">
+                              {/* <span className="block text-sm text-zinc-400 font-medium">
                                 {item.desc}
-                              </span>
+                              </span> */}
                             </Link>
                           ))}
                         </div>
@@ -1235,12 +1233,12 @@ export function Navbar() {
                               onClick={() => setActiveMenu(null)}
                               className="group/eco block py-2 px-3 rounded-lg hover:bg-zinc-900/40 transition-colors"
                             >
-                              <span className="block text-base font-semibold text-zinc-200 group-hover/eco:text-rose-500 transition-colors mb-0.5">
+                              <span className="block text-lg font-semibold text-zinc-200 group-hover/eco:text-rose-500 transition-colors mb-0.5">
                                 {item.name}
                               </span>
-                              <span className="block text-xs text-zinc-400 font-medium">
+                              {/* <span className="block text-sm text-zinc-400 font-medium">
                                 {item.desc}
-                              </span>
+                              </span> */}
                             </Link>
                           ))}
                         </div>
@@ -1250,12 +1248,11 @@ export function Navbar() {
 
                     {/* Mega Menu Footer */}
                     <div className="col-span-full border-t border-zinc-900/60 pt-4 mt-1 flex flex-row justify-between items-center">
-                      <div className="flex items-center gap-4 text-sm sm:text-base font-medium text-zinc-300">
+                      <div className="flex items-center gap-4 text-base sm:text-lg font-semibold text-zinc-300">
                         <Link
                           href="/insights/industry-events"
                           className="hover:text-rose-500 transition-colors flex items-center gap-1.5 font-semibold"
                         >
-                         
                           <span>Events</span>
                         </Link>
                         <span className="text-zinc-800">|</span>
@@ -1263,7 +1260,7 @@ export function Navbar() {
                       </div>
 
                       <div className="flex items-center gap-4">
-                        <span className="text-xs font-semibold tracking-wider uppercase text-zinc-400">Connect With Us</span>
+                        <span className="text-sm sm:text-base font-semibold tracking-wider uppercase text-zinc-300">Connect With Us</span>
                         <ConnectSocialIcons />
                       </div>
                     </div>
@@ -1327,7 +1324,7 @@ export function Navbar() {
 
                     {/* Middle sidebar with dynamic sections */}
                     <div className="flex flex-col border-r border-zinc-900 pr-4 gap-1">
-                      <span className="text-base font-bold tracking-wider text-rose-500 uppercase block px-3 mb-2 font-sans">Insights Hubs</span>
+                      <span className="text-lg font-bold tracking-wider text-rose-500 uppercase block px-3 mb-2 font-sans">Insights Hubs</span>
                       {insightsSections.map((sec: InsightsSection) => (
                         <button
                           key={sec.slug}
@@ -1335,20 +1332,20 @@ export function Navbar() {
                           onClick={() => {
                             setActiveMenu(null);
                           }}
-                          className={`flex items-center justify-between px-3 py-2 rounded-lg text-[15px] font-semibold transition-all duration-200 text-left ${activeInsightsSection === sec.slug
+                          className={`flex items-center justify-between px-3 py-2 rounded-lg text-base font-semibold transition-all duration-200 text-left ${activeInsightsSection === sec.slug
                             ? "bg-zinc-900 text-rose-500"
                             : "text-zinc-300 hover:text-white hover:bg-zinc-900/30"
                             }`}
                         >
                           <span>{sec.name}</span>
-                          {activeInsightsSection === sec.slug && <span className="text-[11px]">&rarr;</span>}
+                          {activeInsightsSection === sec.slug && <span className="text-xs">&rarr;</span>}
                         </button>
                       ))}
                     </div>
 
                     {/* Right panel with active section categories */}
                     <div className="flex flex-col">
-                      <span className="text-base font-bold tracking-wider text-rose-500 uppercase block px-2 mb-2 font-sans">Categories</span>
+                      <span className="text-lg font-bold tracking-wider text-rose-500 uppercase block px-2 mb-2 font-sans">Categories</span>
                       <div className="max-h-[420px] overflow-y-auto overscroll-contain pr-2 custom-scrollbar">
                         <div className="grid grid-cols-2 gap-x-4 gap-y-1">
                           {insightsSections.find((s: InsightsSection) => s.slug === activeInsightsSection)?.categories.map((cat: SectionCategory) => (
@@ -1358,7 +1355,7 @@ export function Navbar() {
                               onClick={() => setActiveMenu(null)}
                               className="group/subitem block p-2 rounded-lg hover:bg-zinc-900/30 transition-colors"
                             >
-                              <span className="block text-base font-semibold text-white group-hover/subitem:text-rose-500 transition-colors mb-1">
+                              <span className="block text-lg font-semibold text-white group-hover/subitem:text-rose-500 transition-colors mb-1">
                                 {cat.name}
                               </span>
                               {/* {cat.desc && (
@@ -1374,62 +1371,19 @@ export function Navbar() {
 
                     {/* Mega Menu Footer */}
                     <div className="col-span-full border-t border-zinc-900/60 pt-4 mt-1 flex flex-row justify-between items-center">
-                      <div className="flex items-center gap-4 text-[13px] font-medium text-zinc-400">
+                      <div className="flex items-center gap-4 text-base sm:text-lg font-semibold text-zinc-300">
                         <Link
                           href="/insights/industry-events"
-                          className="hover:text-rose-500 transition-colors flex items-center gap-1.5"
+                          className="hover:text-rose-500 transition-colors flex items-center gap-1.5 font-semibold"
                         >
-                         
                           <span>Events</span>
                         </Link>
                         <span className="text-zinc-800">|</span>
                         <ChatNowSection />
                       </div>
-                      {/* 
-                    <div className="flex items-center gap-4">
-                      <span className="text-[10px] font-bold tracking-wider uppercase text-zinc-500">Connect With Us</span>
-                      <div className="flex items-center gap-3 border-l border-zinc-800 pl-4">
-                        <a
-                          href="https://www.linkedin.com/company/devopstrioglobal/posts/?feedView=all"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="transition-all duration-200 hover:scale-110"
-                          title="LinkedIn"
-                        >
-                          <img src="/assets/social-icons/linkedin.svg" alt="LinkedIn" className="w-8 h-8 object-contain transition-all duration-200" loading="lazy" />
-                        </a>
-                        <a
-                          href="https://www.facebook.com/profile.php?id=61579126233218"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="transition-all duration-200 hover:scale-110"
-                          title="Facebook"
-                        >
-                          <img src="/assets/social-icons/facebook.svg" alt="Facebook" className="w-8 h-8 object-contain transition-all duration-200" loading="lazy" />
-                        </a>
-                        <a
-                          href="https://www.instagram.com/devopstrio_offcl/"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="transition-all duration-200 hover:scale-110"
-                          title="Instagram"
-                        >
-                          <img src="/assets/social-icons/instagram.svg" alt="Instagram" className="w-8 h-8 object-contain transition-all duration-200" loading="lazy" />
-                        </a>
-                        <a
-                          href="https://www.youtube.com/@Devopstrioltd"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="transition-all duration-200 hover:scale-110"
-                          title="YouTube"
-                        >
-                          <img src="/assets/social-icons/youtube.svg" alt="YouTube" className="w-8 h-8 object-contain transition-all duration-200" loading="lazy" />
-                        </a>
-                      </div>
-                    </div>
-                    */}
+
                       <div className="flex items-center gap-4">
-                        <span className="text-[10px] font-bold tracking-wider uppercase text-zinc-500">Connect With Us</span>
+                        <span className="text-sm sm:text-base font-semibold tracking-wider uppercase text-zinc-300">Connect With Us</span>
                         <ConnectSocialIcons />
                       </div>
                     </div>
@@ -1495,7 +1449,7 @@ export function Navbar() {
 
                     {/* Right about list grid */}
                     <div>
-                      <span className="text-base font-bold tracking-wider text-rose-500 uppercase block mb-4 font-sans">Corporate Directory</span>
+                      <span className="text-lg font-bold tracking-wider text-rose-500 uppercase block mb-4 font-sans">Corporate Directory</span>
                       <div className="max-h-[380px] overflow-y-auto overscroll-contain pr-2 custom-scrollbar">
                         <div className="grid grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-1">
                           {aboutList.map((item) => (
@@ -1505,7 +1459,7 @@ export function Navbar() {
                               onClick={() => setActiveMenu(null)}
                               className="group/about block p-2 rounded-lg hover:bg-zinc-900/30 transition-colors"
                             >
-                              <span className="block text-base font-semibold text-white group-hover/about:text-rose-500 transition-colors mb-1">
+                              <span className="block text-lg font-semibold text-white group-hover/about:text-rose-500 transition-colors mb-1">
                                 {item.name}
                               </span>
                               {/* <span className="block text-[13px] text-zinc-400 font-medium leading-relaxed">
@@ -1519,62 +1473,19 @@ export function Navbar() {
 
                     {/* Mega Menu Footer */}
                     <div className="col-span-full border-t border-zinc-900/60 pt-4 mt-1 flex flex-row justify-between items-center">
-                      <div className="flex items-center gap-4 text-[13px] font-medium text-zinc-400">
+                      <div className="flex items-center gap-4 text-base sm:text-lg font-semibold text-zinc-300">
                         <Link
                           href="/insights/industry-events"
-                          className="hover:text-rose-500 transition-colors flex items-center gap-1.5"
+                          className="hover:text-rose-500 transition-colors flex items-center gap-1.5 font-semibold"
                         >
-                         
                           <span>Events</span>
                         </Link>
                         <span className="text-zinc-800">|</span>
                         <ChatNowSection />
                       </div>
-                      {/* 
-                    <div className="flex items-center gap-4">
-                      <span className="text-[10px] font-bold tracking-wider uppercase text-zinc-500">Connect With Us</span>
-                      <div className="flex items-center gap-3 border-l border-zinc-800 pl-4">
-                        <a
-                          href="https://www.linkedin.com/company/devopstrioglobal/posts/?feedView=all"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="transition-all duration-200 hover:scale-110"
-                          title="LinkedIn"
-                        >
-                          <img src="/assets/social-icons/linkedin.svg" alt="LinkedIn" className="w-8 h-8 object-contain transition-all duration-200" loading="lazy" />
-                        </a>
-                        <a
-                          href="https://www.facebook.com/profile.php?id=61579126233218"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="transition-all duration-200 hover:scale-110"
-                          title="Facebook"
-                        >
-                          <img src="/assets/social-icons/facebook.svg" alt="Facebook" className="w-8 h-8 object-contain transition-all duration-200" loading="lazy" />
-                        </a>
-                        <a
-                          href="https://www.instagram.com/devopstrio_offcl/"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="transition-all duration-200 hover:scale-110"
-                          title="Instagram"
-                        >
-                          <img src="/assets/social-icons/instagram.svg" alt="Instagram" className="w-8 h-8 object-contain transition-all duration-200" loading="lazy" />
-                        </a>
-                        <a
-                          href="https://www.youtube.com/@Devopstrioltd"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="transition-all duration-200 hover:scale-110"
-                          title="YouTube"
-                        >
-                          <img src="/assets/social-icons/youtube.svg" alt="YouTube" className="w-8 h-8 object-contain transition-all duration-200" loading="lazy" />
-                        </a>
-                      </div>
-                    </div>
-                    */}
+
                       <div className="flex items-center gap-4">
-                        <span className="text-[10px] font-bold tracking-wider uppercase text-zinc-500">Connect With Us</span>
+                        <span className="text-sm sm:text-base font-semibold tracking-wider uppercase text-zinc-300">Connect With Us</span>
                         <ConnectSocialIcons />
                       </div>
                     </div>

@@ -8,7 +8,7 @@ export function AcceleratorsCTA() {
     <RepresentativeCTA
       title="Ready To Build Faster &"
       highlightText="Scale Smarter?"
-      description="Accelerate digital transformation using proven frameworks, automation assets, and enterprise-ready engineering accelerators from Devopstrio."
+      description={null}
       primaryBtnText="START YOUR PROJECT"
       primaryBtnHref="/contact#contact-form"
       secondaryBtnText="EXPLORE FRAMEWORKS"

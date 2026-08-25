@@ -213,7 +213,7 @@ export function CapabilityArchitecture({
                             {numOnly}
                           </span>
                         </div>
-                        <h4 className="text-xs font-bold text-white leading-snug group-hover:text-rose-500 transition-colors uppercase tracking-wider">
+                        <h4 className="text-sm font-semibold text-white leading-snug group-hover:text-rose-500 transition-colors uppercase tracking-wider">
                           {layerTitle}
                         </h4>
                       </div>
@@ -237,17 +237,17 @@ export function CapabilityArchitecture({
               {benefitsList.map((benefit, idx) => (
                 <Reveal key={idx} delay={idx * 0.04}>
                   <div className="group bg-zinc-950/20 border border-white/5 rounded-2xl p-5 hover:border-rose-500/25 hover:bg-zinc-900/5 transition-all duration-300 h-full flex flex-col justify-start text-left">
-                    <div className="flex items-center gap-2 mb-3">
+                    <div className="flex items-center gap-2 mb-1">
                       <div className="w-5 h-5 rounded-md bg-rose-950/20 border border-rose-900/30 flex items-center justify-center text-rose-500 flex-shrink-0 group-hover:bg-rose-500 group-hover:text-white transition-colors duration-300">
                         <Check size={10} strokeWidth={3} />
                       </div>
-                      <h4 className="text-xs font-bold text-white group-hover:text-rose-500 transition-colors">
+                      <h4 className="text-base font-semibold text-white group-hover:text-rose-500 transition-colors">
                         {benefit.title}
                       </h4>
                     </div>
-                    <p className="text-xs text-white leading-relaxed font-bold">
+                    {/* <p className="text-xs text-white leading-relaxed font-bold">
                       {benefit.desc}
-                    </p>
+                    </p> */}
                   </div>
                 </Reveal>
               ))}

@@ -145,22 +145,20 @@ export function CapabilityProblem({
         </div>
 
         {/* 2. Responsive Poster Card with 4-Directional Black Edge Fades */}
-        <Reveal delay={0.15} className="w-full mb-10 max-w-5xl mx-auto relative">
+        {/* <Reveal delay={0.15} className="w-full mb-10 max-w-5xl mx-auto relative">
           
           <div className="relative w-full overflow-hidden z-10 flex justify-center items-center">
-            {/* The Image */}
             <img src={data.image}
               alt={displayTitle}
               className="w-full h-auto object-contain brightness-[0.95] contrast-[1.02]"
             loading="lazy" />
 
-            {/* Edge Fades: Top, Bottom, Left, Right into #030303 background */}
             <div className="absolute inset-x-0 top-0 h-12 bg-gradient-to-b from-[#030303] to-transparent pointer-events-none z-20" />
             <div className="absolute inset-x-0 bottom-0 h-12 bg-gradient-to-t from-[#030303] to-transparent pointer-events-none z-20" />
             <div className="absolute inset-y-0 left-0 w-12 bg-gradient-to-r from-[#030303] to-transparent pointer-events-none z-20" />
             <div className="absolute inset-y-0 right-0 w-12 bg-gradient-to-l from-[#030303] to-transparent pointer-events-none z-20" />
           </div>
-        </Reveal>
+        </Reveal> */}
 
         {/* 3. Problem Points Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6 w-full border-t border-zinc-900/40 pt-10">
@@ -173,7 +171,7 @@ export function CapabilityProblem({
                   <AlertCircle size={12} />
                 </div>
                 
-                <p className="text-xs text-zinc-350 leading-relaxed font-semibold text-left">
+                <p className="text-base md:text-lg text-zinc-200 leading-relaxed font-semibold text-left">
                   {point}
                 </p>
               </div>

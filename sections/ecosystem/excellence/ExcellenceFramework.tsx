@@ -139,15 +139,15 @@ export function ExcellenceFramework() {
         {/* Section Header */}
         <Reveal>
           <div className="text-center max-w-3xl mx-auto mb-14">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+            {/* <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
               DELIVERY STANDARD
-            </span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
+            </span> */}
+            <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight mb-5 text-white">
               Engineering Excellence <span className="text-rose-500">Framework</span>
             </h2>
-            <p className="text-zinc-250 text-base md:text-lg font-semibold leading-relaxed">
+            {/* <p className="text-zinc-250 text-base md:text-lg font-semibold leading-relaxed">
               Our systematic framework outlining core culture, tooling stacks, and design standards ensuring reliable product delivery.
-            </p>
+            </p> */}
           </div>
         </Reveal>
 
@@ -194,15 +194,15 @@ export function ExcellenceFramework() {
 
               {/* Card top details */}
               <div className="relative z-10">
-                <span className="text-[10px] font-mono text-rose-500 tracking-widest uppercase block mb-4">
+                {/* <span className="text-[10px] font-mono text-rose-500 tracking-widest uppercase block mb-4">
                   CORE STANDARD
-                </span>
-                <h3 className="text-xl md:text-2xl font-bold text-white tracking-tight leading-tight mb-4 group-hover/tall:text-rose-400 transition-colors">
+                </span> */}
+                <h3 className="text-lg md:text-xl font-semibold text-white tracking-tight leading-tight mb-4 group-hover/tall:text-rose-400 transition-colors">
                   {currentPillar.name}
                 </h3>
-                <p className="text-zinc-300 text-xs font-semibold leading-relaxed">
+                {/* <p className="text-zinc-300 text-xs font-semibold leading-relaxed">
                   {currentPillar.subtitle}
-                </p>
+                </p> */}
               </div>
 
               {/* Card bottom: SubInfo / Tools stack */}

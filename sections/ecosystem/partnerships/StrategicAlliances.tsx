@@ -113,15 +113,15 @@ export function StrategicAlliances() {
     <section id="alliances" className="w-full py-24 bg-[#030303] border-b border-zinc-900/60 relative">
       <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
         <Reveal className="mb-20 text-center max-w-2xl mx-auto">
-          <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+          {/* <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
             CORE ALLIANCES
-          </span>
-          <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
+          </span> */}
+          <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight mb-5 text-white">
             Strategic Alliance <span className="text-rose-500">Showcase</span>
           </h2>
-          <p className="text-zinc-400 text-sm font-semibold">
+          {/* <p className="text-zinc-400 text-sm font-semibold">
             In-depth co-engineering competencies built in partnership with the world's leading technology organizations.
-          </p>
+          </p> */}
         </Reveal>
 
         <div className="space-y-32">
@@ -161,14 +161,14 @@ export function StrategicAlliances() {
                   <Reveal>
                     <div className="flex items-center gap-3 mb-4">
                       {alliance.icon}
-                      <h3 className="text-lg md:text-xl font-bold text-white tracking-tight">{alliance.name}</h3>
+                      <h3 className="text-base md:text-lg font-semibold text-white tracking-tight">{alliance.name}</h3>
                     </div>
                   </Reveal>
-                  <Reveal delay={0.1}>
+                  {/* <Reveal delay={0.1}>
                     <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
                       {alliance.desc}
                     </p>
-                  </Reveal>
+                  </Reveal> */}
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
                     {/* Capabilities */}

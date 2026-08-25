@@ -78,7 +78,7 @@ const GovernanceAccordion = () => {
             <img src={activeModel.image}
               alt={activeModel.name}
               className="w-full h-full object-cover opacity-90 group-hover:opacity-100 group-hover:scale-[1.02] transition-all duration-700 pointer-events-none select-none"
-            loading="lazy" />
+              loading="lazy" />
           </div>
         </Reveal>
       </div>
@@ -113,8 +113,8 @@ const GovernanceAccordion = () => {
 
               <div
                 className={`transition-all duration-350 ease-in-out ${isSelected
-                    ? "max-h-[160px] opacity-100 border-t border-zinc-900/50 p-6 pt-4"
-                    : "max-h-0 opacity-0 overflow-hidden"
+                  ? "max-h-[160px] opacity-100 border-t border-zinc-900/50 p-6 pt-4"
+                  : "max-h-0 opacity-0 overflow-hidden"
                   }`}
               >
                 <div className="flex gap-4">
@@ -201,25 +201,25 @@ const CloudSecurityCarousel = () => {
   return (
     <div className="w-full relative mt-16">
       {/* Scrollable Container */}
-      <div 
+      <div
         ref={scrollRef}
         className="flex overflow-x-auto gap-6 pb-12 pt-4 px-6 md:px-12 snap-x snap-mandatory hide-scrollbar relative z-10"
         style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
       >
         {secFeaturesList.map((feat, idx) => (
-          <div 
-            key={idx} 
+          <div
+            key={idx}
             className="flex-shrink-0 w-[320px] md:w-[380px] snap-center bg-zinc-950/40 border border-zinc-800/80 hover:border-rose-500/40 rounded-3xl overflow-hidden group hover:shadow-[0_20px_40px_rgba(225,29,72,0.08)] transition-all duration-500 flex flex-col"
           >
             {/* Top Image Section */}
             <div className="h-[200px] w-full overflow-hidden relative bg-[#050505]">
               <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-[0.05] mix-blend-overlay z-10" />
-              <img src={feat.image} 
+              <img src={feat.image}
                 alt={feat.title}
                 className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700 ease-out"
-              loading="lazy" />
+                loading="lazy" />
             </div>
-            
+
             {/* Bottom Content Section */}
             <div className="p-8 flex flex-col flex-grow bg-[#080808] relative z-20">
               <h3 className="text-lg md:text-xl font-bold text-white mb-3 group-hover:text-rose-400 transition-colors duration-300">
@@ -228,7 +228,7 @@ const CloudSecurityCarousel = () => {
               <p className="text-sm text-zinc-400 leading-relaxed mb-8 flex-grow">
                 {feat.desc}
               </p>
-              
+
               <div className="flex items-center gap-2 mt-auto cursor-pointer w-max">
                 <div className="w-6 h-6 rounded-full bg-rose-500/10 border border-rose-500/30 flex items-center justify-center group-hover:bg-rose-500 group-hover:border-rose-500 transition-colors duration-300">
                   <ArrowUpRight className="w-3 h-3 text-rose-500 group-hover:text-white transition-colors duration-300" />
@@ -242,22 +242,23 @@ const CloudSecurityCarousel = () => {
 
       {/* Navigation Arrows */}
       <div className="flex items-center justify-end gap-4 px-6 md:px-12 mt-4 relative z-20">
-        <button 
+        <button
           onClick={() => scroll('left')}
           className="w-12 h-12 rounded-full border border-zinc-800 bg-zinc-950 flex items-center justify-center hover:bg-rose-500 hover:border-rose-500 text-zinc-400 hover:text-white transition-all duration-300 shadow-lg"
         >
           <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>
         </button>
-        <button 
+        <button
           onClick={() => scroll('right')}
           className="w-12 h-12 rounded-full border border-zinc-800 bg-zinc-950 flex items-center justify-center hover:bg-rose-500 hover:border-rose-500 text-zinc-400 hover:text-white transition-all duration-300 shadow-lg"
         >
           <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
         </button>
       </div>
-      
+
       {/* CSS to hide scrollbar */}
-      <style dangerouslySetInnerHTML={{__html: `
+      <style dangerouslySetInnerHTML={{
+        __html: `
         .hide-scrollbar::-webkit-scrollbar {
           display: none;
         }
@@ -337,7 +338,8 @@ const CloudPartners = () => {
         </div>
       </div>
 
-      <style dangerouslySetInnerHTML={{__html: `
+      <style dangerouslySetInnerHTML={{
+        __html: `
         @keyframes marquee-left {
           0% { transform: translateX(0%); }
           100% { transform: translateX(-100%); }
@@ -468,9 +470,9 @@ export default function CloudManagementPlatformPage() {
       <section className="w-full py-32 bg-[#030303] text-white border-b border-zinc-900/60 relative overflow-hidden">
         {/* Ambient Glows */}
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-rose-500/5 blur-[120px] pointer-events-none" />
-        
+
         <div className="max-w-7xl mx-auto w-full px-6 xl:px-8 relative z-10">
-          
+
           {/* Centered Header */}
           <Reveal>
             <div className="text-center max-w-3xl mx-auto mb-16">
@@ -488,12 +490,12 @@ export default function CloudManagementPlatformPage() {
 
           {/* Asymmetric Bento Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
-            
+
             {/* Left card: Large, spanning full height */}
             <div className="lg:col-span-6 flex">
               <Reveal className="w-full h-full" delay={0.1}>
                 <div className="h-full bg-[#0A0A0A] border border-zinc-800/80 hover:border-rose-500/40 rounded-[24px] overflow-hidden relative flex flex-col justify-between p-8 md:p-12 min-h-[460px] group text-left shadow-lg hover:shadow-[0_20px_40px_rgba(225,29,72,0.08)] transition-all duration-500">
-                  
+
                   {/* Background Effects */}
                   <div className="absolute inset-0 z-0">
                     <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-[0.03] mix-blend-overlay" />
@@ -572,9 +574,9 @@ export default function CloudManagementPlatformPage() {
       <section className="w-full py-32 bg-[#030303] border-b border-zinc-900/60 relative overflow-hidden">
         {/* Ambient background */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[radial-gradient(circle_at_center,rgba(225,29,72,0.03),transparent_60%)] blur-3xl pointer-events-none" />
-        
+
         <div className="max-w-7xl mx-auto w-full px-6 xl:px-8 relative z-10">
-          
+
           <div className="text-center max-w-3xl mx-auto mb-20">
             <Reveal>
               <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">UNIFIED GOVERNANCE</span>
@@ -586,13 +588,13 @@ export default function CloudManagementPlatformPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 relative">
-            
+
             {/* Card 1: Cloud Spend */}
             <Reveal delay={0.1}>
               <div className="group relative w-full p-8 md:p-12 bg-[#0a0a0a] rounded-[24px] border border-zinc-800/80 hover:border-rose-500/40 transition-all duration-500 overflow-hidden h-full flex flex-col justify-between shadow-[0_0_0_rgba(0,0,0,0)] hover:shadow-[0_20px_40px_rgba(225,29,72,0.05)]">
                 <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-[0.03] mix-blend-overlay pointer-events-none" />
                 <div className="absolute top-0 right-0 w-64 h-64 bg-[radial-gradient(circle_at_top_right,rgba(225,29,72,0.08),transparent_70%)] rounded-full blur-[40px] group-hover:opacity-100 opacity-50 transition-opacity duration-500" />
-                
+
                 <div className="relative z-10">
                   <div className="w-14 h-14 rounded-[14px] bg-zinc-950 border border-zinc-800 flex items-center justify-center mb-8 group-hover:scale-110 group-hover:border-rose-500/40 group-hover:bg-rose-500/5 transition-all duration-500 shadow-xl">
                     <DollarSign className="w-6 h-6 text-rose-500" />
@@ -610,7 +612,7 @@ export default function CloudManagementPlatformPage() {
               <div className="group relative w-full p-8 md:p-12 bg-[#0a0a0a] rounded-[24px] border border-zinc-800/80 hover:border-rose-500/40 transition-all duration-500 overflow-hidden h-full flex flex-col justify-between shadow-[0_0_0_rgba(0,0,0,0)] hover:shadow-[0_20px_40px_rgba(225,29,72,0.05)]">
                 <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-[0.03] mix-blend-overlay pointer-events-none" />
                 <div className="absolute top-0 left-0 w-64 h-64 bg-[radial-gradient(circle_at_top_left,rgba(225,29,72,0.08),transparent_70%)] rounded-full blur-[40px] group-hover:opacity-100 opacity-50 transition-opacity duration-500" />
-                
+
                 <div className="relative z-10">
                   <div className="w-14 h-14 rounded-[14px] bg-zinc-950 border border-zinc-800 flex items-center justify-center mb-8 group-hover:scale-110 group-hover:border-rose-500/40 group-hover:bg-rose-500/5 transition-all duration-500 shadow-xl">
                     <Layers className="w-6 h-6 text-rose-500" />
@@ -628,7 +630,7 @@ export default function CloudManagementPlatformPage() {
               <div className="group relative w-full p-8 md:p-12 bg-[#0a0a0a] rounded-[24px] border border-zinc-800/80 hover:border-rose-500/40 transition-all duration-500 overflow-hidden h-full flex flex-col justify-between shadow-[0_0_0_rgba(0,0,0,0)] hover:shadow-[0_20px_40px_rgba(225,29,72,0.05)]">
                 <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-[0.03] mix-blend-overlay pointer-events-none" />
                 <div className="absolute bottom-0 right-0 w-64 h-64 bg-[radial-gradient(circle_at_bottom_right,rgba(225,29,72,0.08),transparent_70%)] rounded-full blur-[40px] group-hover:opacity-100 opacity-50 transition-opacity duration-500" />
-                
+
                 <div className="relative z-10">
                   <div className="w-14 h-14 rounded-[14px] bg-zinc-950 border border-zinc-800 flex items-center justify-center mb-8 group-hover:scale-110 group-hover:border-rose-500/40 group-hover:bg-rose-500/5 transition-all duration-500 shadow-xl">
                     <ShieldAlert className="w-6 h-6 text-rose-500" />
@@ -646,7 +648,7 @@ export default function CloudManagementPlatformPage() {
               <div className="group relative w-full p-8 md:p-12 bg-[#0a0a0a] rounded-[24px] border border-zinc-800/80 hover:border-rose-500/40 transition-all duration-500 overflow-hidden h-full flex flex-col justify-between shadow-[0_0_0_rgba(0,0,0,0)] hover:shadow-[0_20px_40px_rgba(225,29,72,0.05)]">
                 <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-[0.03] mix-blend-overlay pointer-events-none" />
                 <div className="absolute bottom-0 left-0 w-64 h-64 bg-[radial-gradient(circle_at_bottom_left,rgba(225,29,72,0.08),transparent_70%)] rounded-full blur-[40px] group-hover:opacity-100 opacity-50 transition-opacity duration-500" />
-                
+
                 <div className="relative z-10">
                   <div className="w-14 h-14 rounded-[14px] bg-zinc-950 border border-zinc-800 flex items-center justify-center mb-8 group-hover:scale-110 group-hover:border-rose-500/40 group-hover:bg-rose-500/5 transition-all duration-500 shadow-xl">
                     <Activity className="w-6 h-6 text-rose-500" />
@@ -681,7 +683,7 @@ export default function CloudManagementPlatformPage() {
               </p>
             </div>
           </Reveal>
-          
+
           <GovernanceAccordion />
         </div>
       </section>
@@ -689,7 +691,7 @@ export default function CloudManagementPlatformPage() {
       {/* 5. CLOUD SECURITY */}
       <section className="w-full py-32 bg-black border-b border-zinc-900/60 relative overflow-hidden">
         <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-[radial-gradient(circle_at_center,rgba(225,29,72,0.02),transparent_70%)] blur-3xl pointer-events-none" />
-        
+
         <div className="w-full relative z-10">
           <Reveal>
             <div className="max-w-7xl mx-auto w-full px-6 xl:px-8 text-center max-w-3xl mb-4">
@@ -700,7 +702,7 @@ export default function CloudManagementPlatformPage() {
               </p>
             </div>
           </Reveal>
-          
+
           {/* 10-Card Premium Carousel */}
           <CloudSecurityCarousel />
         </div>
@@ -739,9 +741,9 @@ export default function CloudManagementPlatformPage() {
       <section className="w-full py-32 bg-[#030303] text-white border-b border-zinc-900/60 relative overflow-hidden">
         {/* Subtle Ambient Glow */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[600px] bg-[radial-gradient(ellipse_at_center,rgba(225,29,72,0.03),transparent_70%)] blur-[100px] pointer-events-none" />
-        
+
         <div className="max-w-7xl mx-auto w-full px-6 xl:px-8 relative z-10">
-          
+
           <Reveal>
             <div className="text-center max-w-3xl mx-auto mb-20">
               <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
@@ -811,12 +813,12 @@ export default function CloudManagementPlatformPage() {
                   <div className="w-16 h-16 rounded-[16px] bg-zinc-950/80 border border-zinc-800 flex items-center justify-center mb-6 group-hover:border-rose-500/40 group-hover:bg-rose-500/5 group-hover:scale-105 transition-all duration-500 shadow-lg">
                     <item.icon className="w-7 h-7 text-rose-500" />
                   </div>
-                  
+
                   {/* Title */}
                   <h3 className="text-xl font-bold text-white mb-3 tracking-tight group-hover:text-rose-400 transition-colors duration-300">
                     {item.title}
                   </h3>
-                  
+
                   {/* Description */}
                   <p className="text-sm md:text-[15px] text-zinc-400 leading-relaxed">
                     {item.desc}
@@ -879,7 +881,7 @@ export default function CloudManagementPlatformPage() {
           {/* Below FAQ callout */}
           <Reveal delay={0.2}>
             <div className="border border-zinc-900 bg-zinc-950/20 p-6 rounded-2xl flex flex-col sm:flex-row justify-between items-center gap-4">
-              <p className="text-zinc-400 text-xs md:text-sm font-bold">
+              <p className="text-sm md:text-base font-semibold text-zinc-200 group-hover:text-white transition-colors">
                 Still have questions? Don&apos;t sit with them. Reach out to our team — we respond to every message personally.
               </p>
               <a

@@ -66,22 +66,22 @@ export function CentersOfExcellence() {
         
         {/* Section Header */}
         <Reveal className="mb-20 text-center max-w-2xl mx-auto">
-          <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+          {/* <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
             CENTRALIZED EXPERTISE
-          </span>
-          <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
+          </span> */}
+          <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight mb-5 text-white">
             Global Centers <span className="text-rose-500">of Excellence</span>
           </h2>
-          <p className="text-zinc-400 text-sm font-semibold">
+          {/* <p className="text-zinc-400 text-sm font-semibold">
             Specialized engineering and operational teams dedicated to specific technological domains across our footprint.
-          </p>
+          </p> */}
         </Reveal>
 
         {/* 3-Column Microsoft Card Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {centers.map((center, idx) => (
             <Reveal key={center.discipline} delay={idx * 0.05} className="h-full">
-              <div className="group flex flex-col justify-between bg-zinc-950/40 border border-zinc-900 hover:border-rose-500/20 rounded-3xl overflow-hidden hover:shadow-[0_0_30px_rgba(244,63,94,0.06)] transition-all duration-300 h-full min-h-[360px]">
+              <div className="group flex flex-col justify-between bg-zinc-950/40 border border-zinc-900 hover:border-rose-500/20 rounded-3xl overflow-hidden hover:shadow-[0_0_30px_rgba(244,63,94,0.06)] transition-all duration-300 h-full min-h-[220px]">
                 
                 {/* Top Image Banner */}
                 <div className="relative w-full h-36 overflow-hidden bg-zinc-900 border-b border-zinc-900">
@@ -100,12 +100,12 @@ export function CentersOfExcellence() {
                       <div className="w-8 h-8 rounded-lg bg-zinc-900 border border-zinc-850 flex items-center justify-center text-rose-500 group-hover:bg-rose-950/20 transition-all duration-300 shrink-0">
                         {center.icon}
                       </div>
-                      <h4 className="text-xs font-bold text-white uppercase tracking-wider">{center.discipline}</h4>
+                      <h4 className="text-base md:text-lg font-semibold text-white uppercase tracking-wider">{center.discipline}</h4>
                     </div>
 
-                    <p className="text-xs text-zinc-400 font-semibold leading-relaxed">
+                    {/* <p className="text-xs text-zinc-400 font-semibold leading-relaxed">
                       {center.desc}
-                    </p>
+                    </p> */}
                   </div>
 
                   {/* Card Footer Location Indicator */}

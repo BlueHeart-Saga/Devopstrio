@@ -134,17 +134,16 @@ export function ExcellenceHero() {
 
         {/* Main Heading */}
         <Reveal delay={0.1} className="max-w-4xl">
-          <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight mb-4 text-white text-center">
+          <h1 className="text-3xl md:text-5xl lg:text-6xl font-semibold tracking-tight leading-tight mb-4 text-white text-center">
             Engineering Excellence at Scale
           </h1>
         </Reveal>
 
-        {/* Subtitle Description */}
-        <Reveal delay={0.2} className="max-w-3xl">
+        {/* <Reveal delay={0.2} className="max-w-3xl">
           <p className="text-zinc-400 text-xs md:text-sm lg:text-base leading-relaxed font-normal max-w-3xl text-center mx-auto opacity-95 mb-6">
             Building resilient, secure systems using our <Link href="/services/cybersecurity" className="text-rose-500 hover:underline font-bold">cybersecurity solutions</Link>, aligned with modern <Link href="/services/cloud-services/cloud-architecture" className="text-rose-500 hover:underline font-bold">cloud architecture services</Link> and continuous deployment practices.
           </p>
-        </Reveal>
+        </Reveal> */}
 
         {/* Exploration Pill Buttons */}
         <Reveal delay={0.25} className="flex items-center justify-center gap-3">

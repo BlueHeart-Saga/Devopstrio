@@ -14,7 +14,7 @@ const CapabilityProblem = dynamic(() => import("@/sections/services/capability/C
 const CapabilityUseCases = dynamic(() => import("@/sections/services/capability/CapabilityUseCases").then((mod) => mod.CapabilityUseCases));
 const CapabilityOutcomes = dynamic(() => import("@/sections/services/capability/CapabilityOutcomes").then((mod) => mod.CapabilityOutcomes));
 const CapabilityArchitecture = dynamic(() => import("@/sections/services/capability/CapabilityArchitecture").then((mod) => mod.CapabilityArchitecture));
-const TechnologyStack = dynamic(() => import("@/components/services/TechnologyStack").then((mod) => mod.TechnologyStack));
+// const TechnologyStack = dynamic(() => import("@/components/services/TechnologyStack").then((mod) => mod.TechnologyStack));
 const CapabilityBenefits = dynamic(() => import("@/sections/services/capability/CapabilityBenefits").then((mod) => mod.CapabilityBenefits));
 const CapabilityIndustries = dynamic(() => import("@/sections/services/capability/CapabilityIndustries").then((mod) => mod.CapabilityIndustries));
 const FAQ = dynamic(() => import("@/components/services/FAQ").then((mod) => mod.FAQ));
@@ -168,7 +168,7 @@ export default function CapabilityPage({ params }: PageProps) {
     { id: "solutions-outcomes", label: "Solutions & Outcomes" },
     { id: "use-cases", label: "Use Cases" },
     { id: "architecture", label: "Architecture" },
-    { id: "tech-stack", label: "Technology" },
+    // { id: "tech-stack", label: "Technology" },
     { id: "benefits", label: "Benefits" },
     { id: "industries", label: "Industries" },
     { id: "faq", label: "FAQ" },
@@ -255,13 +255,13 @@ export default function CapabilityPage({ params }: PageProps) {
       />
 
       {/* 6. Technology Stack Section */}
-      <div id="tech-stack">
+      {/* <div id="tech-stack">
         <TechnologyStack 
           techs={data.techStack} 
           overrideTitle={overrides?.techStackTitle}
           overrideSubtitle={overrides?.techStackSubtitle}
         />
-      </div>
+      </div> */}
 
       {/* 7. Benefits Section */}
       <CapabilityBenefits 

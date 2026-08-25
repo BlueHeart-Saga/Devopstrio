@@ -171,7 +171,7 @@ export function CapabilityGrid({ serviceSlug, capabilities }: CapabilityGridProp
   return (
     <section
       id="capabilities"
-      className="w-full pt-14 md:pt-20 pb-16 md:pb-24 bg-[#030303] text-white relative overflow-hidden"
+      className="w-full pt-4 md:pt-20 pb-16 md:pb-24 bg-[#030303] text-white relative overflow-hidden"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
@@ -218,17 +218,17 @@ export function CapabilityGrid({ serviceSlug, capabilities }: CapabilityGridProp
 
                     {/* Card Body */}
                     <div className="flex flex-col flex-1 p-6 gap-3 text-left">
-                      <span className="text-rose-500 text-[11px] font-bold uppercase tracking-widest">
+                      {/* <span className="text-rose-500 text-[11px] font-bold uppercase tracking-widest">
                         CAPABILITY 0{idx + 1}
-                      </span>
-                      <h3 className="text-white text-base md:text-[17px] font-bold leading-snug">
+                      </span> */}
+                      <h3 className="text-white text-2xl  leading-snug">
                         {cap.title}
                       </h3>
-                      <p className="text-zinc-400 text-sm leading-relaxed mb-2">
+                      {/* <p className="text-zinc-400 text-sm leading-relaxed mb-2">
                         {cap.description}
-                      </p>
+                      </p> */}
 
-                      {cap.items && cap.items.length > 0 && (
+                      {/* {cap.items && cap.items.length > 0 && (
                         <ul className="flex flex-col gap-2.5 mb-6">
                           {cap.items.slice(0, 3).map((item, i) => (
                             <li key={i} className="flex items-start gap-2 text-[11px] text-zinc-400 leading-normal">
@@ -237,7 +237,7 @@ export function CapabilityGrid({ serviceSlug, capabilities }: CapabilityGridProp
                             </li>
                           ))}
                         </ul>
-                      )}
+                      )} */}
 
                       {/* CTA */}
                       <Link

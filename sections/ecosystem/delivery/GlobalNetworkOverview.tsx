@@ -99,15 +99,15 @@ export function GlobalNetworkOverview() {
         {/* Header */}
         <div className="mb-16 text-center max-w-2xl mx-auto">
           <Reveal>
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+            {/* <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
               OPERATIONAL BOUNDARIES
-            </span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
+            </span> */}
+            <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight mb-5 text-white">
               Global Network <span className="text-rose-500">Overview</span>
             </h2>
-            <p className="text-zinc-400 text-sm font-semibold">
+            {/* <p className="text-zinc-400 text-sm font-semibold">
               Strategically located offices providing continuous delivery workflows, design sessions, and enterprise integrations.
-            </p>
+            </p> */}
           </Reveal>
         </div>
 

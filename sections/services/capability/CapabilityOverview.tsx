@@ -422,14 +422,14 @@ export function CapabilityOverview({
                   {overrideHeading || <>Transforming operations with <span className="text-rose-500 font-semibold">{title}</span></>}
                 </h2>
 
-                <div className="space-y-4 text-zinc-200 text-xs md:text-sm font-semibold leading-relaxed text-left">
+                {/* <div className="space-y-4 text-zinc-200 text-xs md:text-sm font-semibold leading-relaxed text-left">
                   <p className="border-l-2 border-rose-500/50 pl-4 text-left">
                     {overrideParagraph1 || subtitle}
                   </p>
                   <p className="border-l-2 border-white/10 pl-4 text-zinc-400 text-left">
                     {overrideParagraph2 || "We deploy automated environments, rigorous telemetry monitoring, and secure VPC routing parameters to align with industry regulatory requirements."}
                   </p>
-                </div>
+                </div> */}
               </div>
 
               {/* RIGHT IMAGE */}
@@ -461,10 +461,10 @@ export function CapabilityOverview({
 
             {/* Centered Professional Paragraph Content */}
             <div className="max-w-6xl mx-auto text-center space-y-6">
-              <p className="text-sm md:text-base lg:text-lg font-normal text-zinc-100 leading-relaxed font-sans">
+              <p className="text-base md:text-lg lg:text-xl font-semibold text-zinc-100 leading-relaxed font-sans">
                 {overrideDeepDiveParagraph1 || def.paragraph1}
               </p>
-              <p className="text-sm md:text-base lg:text-lg font-normal text-zinc-300 leading-relaxed font-sans">
+              <p className="text-base md:text-lg lg:text-xl font-semibold text-zinc-300 leading-relaxed font-sans">
                 {overrideDeepDiveParagraph2 || def.paragraph2}
               </p>
             </div>

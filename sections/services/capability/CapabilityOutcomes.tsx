@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { ChevronDown } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
 
 interface CapabilityOutcomesProps {
@@ -365,29 +366,27 @@ export function CapabilityOutcomes({
                   {/* <span className="block text-[9px] font-mono tracking-widest text-rose-500 uppercase font-bold mb-3">
                     SOLUTION 0{idx + 1}
                   </span> */}
-                  <h3 className="text-base font-bold text-white mb-2 leading-snug group-hover:text-rose-500 transition-colors">
+                  <h3 className="text-lg md:text-xl font-bold text-white mb-2 leading-snug group-hover:text-rose-500 transition-colors">
                     {item.title}
                   </h3>
-                  <p className="text-xs text-white leading-relaxed font-semibold">
+                  {/* <p className="text-xs text-white leading-relaxed font-semibold">
                     {item.desc}
-                  </p>
+                  </p> */}
                 </div>
 
-                {/* Small Architecture Pipeline Preview */}
-                <div className="mt-6 flex flex-col gap-2 border-t border-white/5 pt-4 group-hover:border-rose-500/20 transition-all duration-300">
-                  <span className="text-[8px] font-mono tracking-widest text-zinc-500 uppercase block font-semibold group-hover:text-rose-500/80 transition-colors">
-                    Architecture Pipeline
-                  </span>
-                  <div className="flex items-center gap-1.5 flex-wrap">
+                {/* Vertical Diagram Steps (Top to Bottom) */}
+                <div className="mt-6 border-t border-zinc-900/80 pt-4 group-hover:border-rose-500/20 transition-colors duration-300">
+                  <div className="flex flex-col gap-1.5">
                     {item.previewSteps.map((step, sIdx) => (
                       <React.Fragment key={sIdx}>
-                        <span className="inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase border border-zinc-850 hover:border-zinc-750 bg-zinc-950/60 hover:bg-zinc-900 text-white transition-all duration-300 hover:-translate-y-0.5">
-                          {step}
-                        </span>
+                        <div className="w-full px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold tracking-wide border border-zinc-800/90 bg-zinc-950/80 hover:bg-zinc-900/90 hover:border-rose-500/40 text-zinc-200 hover:text-white transition-all duration-300 shadow-[0_2px_10px_rgba(0,0,0,0.4)] hover:shadow-[0_0_15px_rgba(244,63,94,0.15)] flex items-center justify-between">
+                          <span>{step}</span>
+                        </div>
+
                         {sIdx < item.previewSteps.length - 1 && (
-                          <span className="text-zinc-600 text-[10px] select-none font-sans font-normal opacity-50">
-                            &rarr;
-                          </span>
+                          <div className="flex justify-center py-0.5">
+                            <ChevronDown size={14} strokeWidth={2.5} className="text-zinc-600 group-hover:text-rose-500/60 transition-colors" />
+                          </div>
                         )}
                       </React.Fragment>
                     ))}

@@ -56,15 +56,15 @@ export function CloudEcosystem() {
         {/* Section Header */}
         <Reveal>
           <div className="text-center max-w-3xl mx-auto mb-20">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+            {/* <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
               Cloud & Technology Ecosystem
-            </span>
-            <h2 className="text-3xl md:text-5xl font-light tracking-tight leading-tight mb-6 text-white">
+            </span> */}
+            <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight mb-6 text-white">
               Powered by Leading <span className="font-semibold">Cloud, Platform & Infrastructure</span> Partners
             </h2>
-            <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
+            {/* <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
               We collaborate with globally recognized cloud providers, infrastructure platforms, DevOps ecosystems, and data technology leaders to design, modernize, secure, and scale enterprise digital platforms.
-            </p>
+            </p> */}
           </div>
         </Reveal>
 
@@ -72,7 +72,7 @@ export function CloudEcosystem() {
         <Reveal delay={0.1}>
           <div className="mb-24">
             <div className="flex items-center gap-4 mb-8 border-b border-white/10 pb-4">
-              <h3 className="text-xl font-semibold text-white tracking-tight">Strategic & Official Partners</h3>
+              <h3 className="text-lg md:text-xl font-semibold text-white tracking-tight">Strategic & Official Partners</h3>
               <div className="h-px bg-white/10 flex-grow" />
             </div>
             
@@ -95,7 +95,7 @@ export function CloudEcosystem() {
         <Reveal delay={0.2}>
           <div>
             <div className="flex items-center gap-4 mb-10 border-b border-white/10 pb-4">
-              <h3 className="text-xl font-semibold text-white tracking-tight">Technologies, Platforms & Cloud Ecosystems We Support</h3>
+              <h3 className="text-lg md:text-xl font-semibold text-white tracking-tight">Technologies, Platforms & Cloud Ecosystems We Support</h3>
               <div className="h-px bg-white/10 flex-grow" />
             </div>
             
@@ -109,7 +109,7 @@ export function CloudEcosystem() {
                     <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center border border-white/10">
                       {category.icon}
                     </div>
-                    <h4 className="text-base font-semibold text-white">{category.title}</h4>
+                    <h4 className="text-base md:text-lg font-semibold text-white">{category.title}</h4>
                   </div>
                   
                   <ul className="space-y-3">

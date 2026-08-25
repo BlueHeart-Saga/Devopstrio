@@ -64,15 +64,15 @@ export function TechEcosystemOverview() {
 
         {/* Header Section */}
         <Reveal className="mb-16 text-center max-w-2xl mx-auto">
-          <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+          {/* <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
             CORE MATRICES
-          </span>
-          <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
+          </span> */}
+          <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight mb-5 text-white">
             Technology Ecosystem <span className="text-rose-500">Overview</span>
           </h2>
-          <p className="text-zinc-400 text-sm font-semibold">
+          {/* <p className="text-zinc-400 text-sm font-semibold">
             Our technology stack is structured into nine major pillars, supporting full lifecycle agility from discovery to operations.
-          </p>
+          </p> */}
         </Reveal>
 
         {/* 3x3 Grid of Compact Cards */}
@@ -95,12 +95,12 @@ export function TechEcosystemOverview() {
                     {/* <span className="text-[9px] font-mono text-rose-500 tracking-wider uppercase font-bold block mb-3">
                       PILLAR {(idx + 1).toString().padStart(2, "0")}
                     </span> */}
-                    <h3 className="text-xl md:text-2xl font-bold text-white mb-3 group-hover:text-rose-400 transition-colors">
+                    <h3 className="text-base md:text-lg font-semibold text-white mb-3 group-hover:text-rose-400 transition-colors">
                       {dom.name}
                     </h3>
-                    <p className="text-sm md:text-base text-zinc-300 font-medium leading-relaxed">
+                    {/* <p className="text-sm md:text-base text-zinc-300 font-medium leading-relaxed">
                       {dom.desc}
-                    </p>
+                    </p> */}
                   </div>
 
                   <div className="mt-6 pt-3 border-t border-white/[0.04] flex items-center justify-between">

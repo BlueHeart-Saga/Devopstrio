@@ -26,29 +26,29 @@ export function ProductLifecycle() {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-rose-600/[0.015] rounded-full blur-[140px] pointer-events-none" />
       <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
         <Reveal className="mb-16 text-center max-w-2xl mx-auto">
-          <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+          {/* <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
             ENGINEERING WORKFLOW
-          </span>
-          <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
+          </span> */}
+          <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight mb-5 text-white">
             Product Development <span className="text-rose-500">Lifecycle</span>
           </h2>
-          <p className="text-zinc-400 text-sm font-semibold">
+          {/* <p className="text-zinc-400 text-sm font-semibold">
             Our systematic approach to engineering, deploying, and supporting enterprise-grade SaaS systems.
-          </p>
+          </p> */}
         </Reveal>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {stages.map((stage) => (
             <div
               key={stage.step}
-              className="bg-zinc-950/40 border border-zinc-900 rounded-3xl p-8 hover:border-rose-500/20 transition-all duration-300 flex flex-col justify-between min-h-[200px]"
+              className="bg-zinc-950/40 border border-zinc-900 rounded-3xl p-8 hover:border-rose-500/20 transition-all duration-300 flex flex-col justify-between min-h-[120px]"
             >
               <div>
                 <span className="block text-xl font-mono font-bold text-rose-500 mb-4">{stage.step}</span>
-                <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-2">{stage.title}</h4>
-                <p className="text-[10px] text-zinc-450 font-semibold leading-relaxed">
+                <h4 className="text-base md:text-lg font-semibold text-white uppercase tracking-wider mb-2">{stage.title}</h4>
+                {/* <p className="text-[10px] text-zinc-450 font-semibold leading-relaxed">
                   {stage.desc}
-                </p>
+                </p> */}
               </div>
             </div>
           ))}

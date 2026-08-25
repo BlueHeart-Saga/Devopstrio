@@ -8,7 +8,7 @@ export function CommunityCTA() {
     <RepresentativeCTA
       title="Join The Devopstrio Global"
       highlightText="Technology Community?"
-      description="Connect with engineers, innovators, researchers, and technology leaders shaping the future of digital transformation and open-source infrastructure."
+      description={null}
       primaryBtnText="JOIN COMMUNITY"
       primaryBtnHref="/contact#contact-form"
       secondaryBtnText="EXPLORE CAREERS"

@@ -64,24 +64,24 @@ export function PartnershipHero() {
       <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10 flex flex-col items-center text-center flex-grow justify-center pt-8">
         
         {/* Center Main Heading & Subtitle */}
-        <Reveal className="flex flex-col items-center">
+        {/* <Reveal className="flex flex-col items-center">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 text-rose-500 text-xs font-mono font-bold tracking-wider uppercase mb-6">
-            {/* <Zap size={12} className="animate-pulse" /> */}
+            <Zap size={12} className="animate-pulse" />
             Devopstrio Cloud Ecosystem
           </div>
-        </Reveal>
+        </Reveal> */}
 
         <Reveal delay={0.1} className="max-w-3xl">
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-tight mb-5 text-white text-center">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight leading-tight mb-5 text-white text-center">
             Built on Trusted Cloud Partnerships
           </h1>
         </Reveal>
 
-        <Reveal delay={0.2} className="max-w-3xl">
+        {/* <Reveal delay={0.2} className="max-w-3xl">
           <p className="text-zinc-350 text-xs md:text-sm lg:text-base leading-relaxed font-normal max-w-3xl text-center mx-auto opacity-95 mb-12">
             We work with leading <Link href="/ecosystem/partnerships" className="text-rose-500 hover:underline font-bold">cloud platform partners</Link> and <Link href="/services/devops-automation" className="text-rose-500 hover:underline font-bold">DevOps services</Link> providers to build secure, scalable, and future-ready digital solutions.
           </p>
-        </Reveal>
+        </Reveal> */}
 
         {/* 3D Perspective Floating Integration Grid with Depth Scaling */}
         <div className="relative w-full max-w-[950px] h-[360px] flex items-center justify-center overflow-hidden mb-20">

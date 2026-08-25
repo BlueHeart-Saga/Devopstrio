@@ -55,7 +55,7 @@ const microsoftSections = [
 export default function MicrosoftAllianceHub() {
   // FAQ Accordion State
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
-  
+
   // Use Case Category State
   const [activeUseCase, setActiveUseCase] = useState<string>("cloud");
 
@@ -417,10 +417,10 @@ export default function MicrosoftAllianceHub() {
 
   return (
     <main className="min-h-screen bg-black text-white pt-16 font-sans overflow-x-hidden selection:bg-rose-500 selection:text-white">
-      
+
       {/* 1. HERO SECTION WITH CALM MICROSOFT WAVE DESIGN & PITCH BLACK BACKGROUND */}
       <section className="relative w-full min-h-[95vh] flex flex-col items-center justify-center bg-black overflow-hidden pt-28 pb-20 border-b border-zinc-900/60">
-        
+
         {/* Concentric Wave Elements */}
         <div className="absolute right-[-10%] md:right-[-5%] top-1/2 -translate-y-1/2 w-[85%] md:w-[65%] h-[130%] z-0 pointer-events-none select-none overflow-hidden flex items-center justify-end">
           <div className="relative w-full h-full flex items-center justify-end">
@@ -429,11 +429,11 @@ export default function MicrosoftAllianceHub() {
             <div className="absolute w-[170%] h-[135%] right-[-40%] rounded-[110px] md:rounded-[230px] border border-blue-500/15 rotate-[-28deg] pointer-events-none" />
             <div className="absolute w-[140%] h-[110%] right-[-30%] rounded-[100px] md:rounded-[200px] border border-indigo-500/15 rotate-[-28deg] pointer-events-none" />
             <div className="absolute w-[110%] h-[85%] right-[-20%] rounded-[90px] md:rounded-[170px] border border-indigo-500/20 rotate-[-28deg] pointer-events-none" />
-            
+
             {/* Inner Waves */}
             <div className="absolute w-[80%] h-[60%] right-[-10%] rounded-[80px] md:rounded-[140px] border border-teal-500/20 rotate-[-28deg] pointer-events-none" />
             <div className="absolute w-[50%] h-[35%] right-[0%] rounded-[70px] md:rounded-[110px] border border-teal-500/25 rotate-[-28deg] pointer-events-none" />
-            
+
             {/* Core Glow */}
             <div className="absolute right-[5%] w-[180px] h-[90px] bg-gradient-to-r from-blue-600/15 via-indigo-600/10 to-teal-500/15 rounded-full blur-[50px] opacity-40 animate-pulse" />
           </div>
@@ -449,7 +449,7 @@ export default function MicrosoftAllianceHub() {
 
         <div className="max-w-7xl mx-auto w-full px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            
+
             {/* Hero Left Content */}
             <div className="lg:col-span-7 flex flex-col items-start text-left">
               <Reveal className="mb-6">
@@ -459,13 +459,13 @@ export default function MicrosoftAllianceHub() {
                   </span>
                 </div>
               </Reveal>
-              
+
               <Reveal delay={0.1}>
                 <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold tracking-tight leading-[1.12] text-white mb-6">
                   Microsoft <span className="text-[#E11D48] whitespace-nowrap">Ecosystem</span>
                 </h1>
               </Reveal>
-              
+
               <Reveal delay={0.2}>
                 <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
                   Helping organizations modernize infrastructure, accelerate cloud adoption, strengthen security, and build intelligent enterprise platforms with Microsoft technologies.
@@ -488,7 +488,7 @@ export default function MicrosoftAllianceHub() {
                   ))}
                 </div>
               </Reveal>
-              
+
               {/* CTAs */}
               <Reveal delay={0.4} className="flex flex-wrap gap-4">
                 <Link
@@ -509,7 +509,7 @@ export default function MicrosoftAllianceHub() {
             {/* Hero Right Visual (Logo Integration) */}
             <div className="lg:col-span-5 relative flex items-center justify-center select-none z-10">
               <div className="relative w-full max-w-[420px] aspect-square flex items-center justify-center">
-                
+
                 {/* Connecting glowing line and animation */}
                 <div className="absolute inset-x-12 h-[2px] bg-gradient-to-r from-rose-500/25 via-purple-500/30 to-blue-500/25 z-0 pointer-events-none">
                   {/* Energy Pulse */}
@@ -517,7 +517,7 @@ export default function MicrosoftAllianceHub() {
                 </div>
 
                 <div className="flex items-center justify-between w-full relative z-10 px-4">
-                  
+
                   {/* Devopstrio Logo Card */}
                   <div className="relative group/logo w-[120px] h-[120px] sm:w-[130px] sm:h-[130px] rounded-3xl bg-[#09090b]/80 border border-zinc-800 hover:border-rose-500/30 flex items-center justify-center p-5 shadow-2xl backdrop-blur-md transition-all duration-500 hover:-translate-y-1">
                     <div className="absolute inset-0 bg-gradient-to-br from-rose-500/[0.03] to-transparent rounded-3xl opacity-0 group-hover/logo:opacity-100 transition-opacity" />
@@ -525,7 +525,7 @@ export default function MicrosoftAllianceHub() {
                     <img src="/webp/assets/logo/logo.webp"
                       alt="Devopstrio Logo"
                       className="w-full h-auto max-h-[85%] object-contain select-none filter brightness-105"
-                    loading="lazy" />
+                      loading="lazy" />
                   </div>
 
                   {/* Plus Connector Indicator */}
@@ -540,7 +540,7 @@ export default function MicrosoftAllianceHub() {
                     <img src="/assets/Tech_logos/Microsoft-Azure.svg"
                       alt="Microsoft Azure Logo"
                       className="w-full h-auto max-h-[85%] object-contain select-none"
-                    loading="lazy" />
+                      loading="lazy" />
                   </div>
 
                 </div>
@@ -563,7 +563,7 @@ export default function MicrosoftAllianceHub() {
         <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60 relative">
           <div className="max-w-7xl mx-auto w-full px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
-              
+
               {/* Overview Story Text */}
               <div className="lg:col-span-6 flex flex-col items-start text-left">
                 <Reveal>
@@ -620,7 +620,7 @@ export default function MicrosoftAllianceHub() {
       <div id="capabilities" className="scroll-mt-24">
         <section className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
           <div className="max-w-7xl mx-auto w-full px-6 lg:px-8">
-            
+
             <Reveal className="mb-16 text-center max-w-2xl mx-auto">
               <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
                 OUR DEEP CAPABILITIES
@@ -662,7 +662,7 @@ export default function MicrosoftAllianceHub() {
       <div id="solutions" className="scroll-mt-24">
         <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60">
           <div className="max-w-7xl mx-auto w-full px-6 lg:px-8">
-            
+
             <Reveal className="mb-16 text-left">
               <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
                 ENTERPRISE PLATFORMS
@@ -704,7 +704,7 @@ export default function MicrosoftAllianceHub() {
       <div id="architecture" className="scroll-mt-24">
         <section className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
           <div className="max-w-7xl mx-auto w-full px-6 lg:px-8">
-            
+
             <Reveal className="mb-16 text-center max-w-2xl mx-auto">
               <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
                 SYSTEM ARCHITECTURE
@@ -721,7 +721,7 @@ export default function MicrosoftAllianceHub() {
             <div className="flex flex-col gap-4 max-w-4xl mx-auto select-none">
               {archLayers.map((layer, idx) => (
                 <div key={idx} className={`fade-scroll-item p-6 border rounded-2xl transition-all duration-300 hover:border-rose-500/40 hover:shadow-[0_0_15px_rgba(244,63,94,0.05)] ${layer.color} flex flex-col md:flex-row md:items-center justify-between gap-4`}>
-                  
+
                   {/* Layer Label & Technical Scope */}
                   <div className="max-w-lg">
                     <span className="text-[9px] font-mono text-rose-550 font-bold uppercase tracking-wider block mb-1">
@@ -746,31 +746,31 @@ export default function MicrosoftAllianceHub() {
       </div>
 
       {/* 6. BUSINESS USE CASES */}
-      
 
-        
+
+
       {/* CERTIFICATIONS */}
-      <PartnerCertifications 
+      <PartnerCertifications
         title="Microsoft Certifications"
         certifications={[
-            { image: "/webp/assets/ecosystem/microsofr-awards/Group-1000008903.webp" },
-            { image: "/webp/assets/ecosystem/microsofr-awards/image-123.webp" },
-            { image: "/webp/assets/ecosystem/microsofr-awards/image-124.webp" },
-            { image: "/webp/assets/ecosystem/microsofr-awards/image-125.webp" },
-            { image: "/webp/assets/ecosystem/microsofr-awards/image-126.webp" },
-            { image: "/webp/assets/ecosystem/microsofr-awards/image-127.webp" },
-            { image: "/webp/assets/ecosystem/microsofr-awards/image-128.webp" },
-            { image: "/webp/assets/ecosystem/microsofr-awards/image-129.webp" },
-            { image: "/webp/assets/ecosystem/microsofr-awards/image-138.webp" },
-            { image: "/webp/assets/ecosystem/microsofr-awards/image-139.webp" }
-          ]}
+          { image: "/webp/assets/ecosystem/microsofr-awards/Group-1000008903.webp" },
+          { image: "/webp/assets/ecosystem/microsofr-awards/image-123.webp" },
+          { image: "/webp/assets/ecosystem/microsofr-awards/image-124.webp" },
+          { image: "/webp/assets/ecosystem/microsofr-awards/image-125.webp" },
+          { image: "/webp/assets/ecosystem/microsofr-awards/image-126.webp" },
+          { image: "/webp/assets/ecosystem/microsofr-awards/image-127.webp" },
+          { image: "/webp/assets/ecosystem/microsofr-awards/image-128.webp" },
+          { image: "/webp/assets/ecosystem/microsofr-awards/image-129.webp" },
+          { image: "/webp/assets/ecosystem/microsofr-awards/image-138.webp" },
+          { image: "/webp/assets/ecosystem/microsofr-awards/image-139.webp" }
+        ]}
       />
 
-      
+
       <div id="use-cases" className="scroll-mt-24">
         <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60">
           <div className="max-w-7xl mx-auto w-full px-6 lg:px-8">
-            
+
             <Reveal className="mb-12 text-center max-w-2xl mx-auto">
               <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
                 PRACTICAL USE CASES
@@ -786,11 +786,10 @@ export default function MicrosoftAllianceHub() {
                 <button
                   key={key}
                   onClick={() => setActiveUseCase(key)}
-                  className={`px-5 py-2.5 rounded-full text-xs font-semibold tracking-wider transition-all duration-300 border ${
-                    activeUseCase === key
-                      ? "bg-rose-600 text-white border-rose-600 shadow-md shadow-rose-600/10"
-                      : "bg-zinc-950 text-zinc-400 border-zinc-900 hover:text-white"
-                  }`}
+                  className={`px-5 py-2.5 rounded-full text-xs font-semibold tracking-wider transition-all duration-300 border ${activeUseCase === key
+                    ? "bg-rose-600 text-white border-rose-600 shadow-md shadow-rose-600/10"
+                    : "bg-zinc-950 text-zinc-400 border-zinc-900 hover:text-white"
+                    }`}
                 >
                   {cat.title}
                 </button>
@@ -825,7 +824,7 @@ export default function MicrosoftAllianceHub() {
       <div id="tech-stack" className="scroll-mt-24">
         <section className="w-full py-24 bg-black border-b border-zinc-900/60">
           <div className="max-w-7xl mx-auto w-full px-6 lg:px-8">
-            
+
             <Reveal className="mb-16 text-center max-w-2xl mx-auto">
               <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
                 COMPLETE STACK
@@ -891,9 +890,9 @@ export default function MicrosoftAllianceHub() {
       <div id="outcomes" className="scroll-mt-24">
         <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60 relative">
           <div className="max-w-7xl mx-auto w-full px-6 lg:px-8">
-            
+
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center mb-24">
-              
+
               {/* Outcomes Left */}
               <div className="lg:col-span-5 flex flex-col items-start text-left">
                 <Reveal>
@@ -1012,7 +1011,7 @@ export default function MicrosoftAllianceHub() {
           {/* Below FAQ callout */}
           <Reveal delay={0.2}>
             <div className="border border-zinc-900 bg-zinc-950/20 p-6 rounded-2xl flex flex-col sm:flex-row justify-between items-center gap-4">
-              <p className="text-zinc-400 text-xs md:text-sm font-bold">
+              <p className="text-sm md:text-base font-semibold text-zinc-200 group-hover:text-white transition-colors">
                 Still have questions? Don&apos;t sit with them. Reach out to our team — we respond to every message personally.
               </p>
               <a
@@ -1026,49 +1025,49 @@ export default function MicrosoftAllianceHub() {
         </div>
       </section>
 
-{/* 12. FINAL CTA */}
-        <section className="relative w-full py-32 bg-[#030303] overflow-hidden text-center">
-          {/* Ambient background blur */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-rose-500/[0.02] rounded-full blur-[140px] pointer-events-none" />
+      {/* 12. FINAL CTA */}
+      <section className="relative w-full py-32 bg-[#030303] overflow-hidden text-center">
+        {/* Ambient background blur */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-rose-500/[0.02] rounded-full blur-[140px] pointer-events-none" />
 
-          <div className="max-w-3xl mx-auto px-6 lg:px-8 relative z-10 flex flex-col items-center">
-            <Reveal>
-              <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
-                GET STARTED TODAY
-              </span>
-            </Reveal>
+        <div className="max-w-3xl mx-auto px-6 lg:px-8 relative z-10 flex flex-col items-center">
+          <Reveal>
+            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+              GET STARTED TODAY
+            </span>
+          </Reveal>
 
-            <Reveal delay={0.1}>
-              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
-                Looking to Build, Migrate or Modernize on <span className="text-rose-500">Microsoft?</span>
-              </h2>
-            </Reveal>
+          <Reveal delay={0.1}>
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
+              Looking to Build, Migrate or Modernize on <span className="text-rose-500">Microsoft?</span>
+            </h2>
+          </Reveal>
 
-            <Reveal delay={0.2}>
-              <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
-                Partner with Devopstrio to design secure, scalable, and future-ready Microsoft solutions across cloud, data, AI, DevOps, and enterprise operations.
-              </p>
-            </Reveal>
+          <Reveal delay={0.2}>
+            <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
+              Partner with Devopstrio to design secure, scalable, and future-ready Microsoft solutions across cloud, data, AI, DevOps, and enterprise operations.
+            </p>
+          </Reveal>
 
-            <Reveal delay={0.3} className="flex flex-wrap justify-center gap-4">
-              <Link
-                href="/contact#contact-form"
-                className="inline-flex items-center gap-3 pl-6 pr-3 py-3 bg-white text-black font-semibold text-xs md:text-sm tracking-wider rounded-full hover:bg-zinc-200 transition-all duration-300 shadow-lg shadow-white/5"
-              >
-                Talk to a Microsoft Expert
-                <div className="w-7 h-7 rounded-full bg-black flex items-center justify-center">
-                  <ArrowUpRight className="w-3.5 h-3.5 text-white" />
-                </div>
-              </Link>
-              <Link
-                href="/contact#contact-form"
-                className="inline-flex items-center justify-center px-6 py-3.5 rounded-full text-xs font-bold tracking-wider uppercase border border-zinc-800 hover:border-zinc-750 bg-zinc-950/60 hover:bg-zinc-900 text-white transition-all duration-300"
-              >
-                Start Your Azure Journey
-              </Link>
-            </Reveal>
-          </div>
-        </section>
-      </main>
+          <Reveal delay={0.3} className="flex flex-wrap justify-center gap-4">
+            <Link
+              href="/contact#contact-form"
+              className="inline-flex items-center gap-3 pl-6 pr-3 py-3 bg-white text-black font-semibold text-xs md:text-sm tracking-wider rounded-full hover:bg-zinc-200 transition-all duration-300 shadow-lg shadow-white/5"
+            >
+              Talk to a Microsoft Expert
+              <div className="w-7 h-7 rounded-full bg-black flex items-center justify-center">
+                <ArrowUpRight className="w-3.5 h-3.5 text-white" />
+              </div>
+            </Link>
+            <Link
+              href="/contact#contact-form"
+              className="inline-flex items-center justify-center px-6 py-3.5 rounded-full text-xs font-bold tracking-wider uppercase border border-zinc-800 hover:border-zinc-750 bg-zinc-950/60 hover:bg-zinc-900 text-white transition-all duration-300"
+            >
+              Start Your Azure Journey
+            </Link>
+          </Reveal>
+        </div>
+      </section>
+    </main>
   );
 }

@@ -92,15 +92,15 @@ export function LabsShowcase() {
     <section id="showcase" className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
       <div className="max-w-7xl mx-auto w-full px-6 lg:px-12">
         <Reveal className="mb-12 text-center max-w-3xl mx-auto">
-          <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+          {/* <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
             R&D EXPLORER
-          </span>
-          <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
+          </span> */}
+          <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight mb-5 text-white">
             Discover Our <span className="text-rose-500">Innovation Showcases</span>
           </h2>
-          <p className="text-zinc-400 text-sm md:text-base font-medium max-w-2xl mx-auto leading-relaxed">
+          {/* <p className="text-zinc-400 text-sm md:text-base font-medium max-w-2xl mx-auto leading-relaxed">
             See how Devopstrio is actively pushing the boundaries of enterprise engineering.
-          </p>
+          </p> */}
         </Reveal>
 
         {/* Main Interactive Showcase Container */}
@@ -129,7 +129,7 @@ export function LabsShowcase() {
                   </div>
 
                   {/* Big Quote / Headline */}
-                  <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white leading-tight mb-12 tracking-tight">
+                  <h3 className="text-xl md:text-2xl font-semibold text-white leading-tight mb-12 tracking-tight">
                     {currentLab.quote}
                   </h3>
 

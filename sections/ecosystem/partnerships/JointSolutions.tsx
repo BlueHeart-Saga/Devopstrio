@@ -127,15 +127,15 @@ export function JointSolutions() {
     <section id="solutions" className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
       <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
         <Reveal className="mb-16 text-left">
-          <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+          {/* <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
             INTEGRATED VALUE
-          </span>
-          <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
+          </span> */}
+          <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight mb-5 text-white">
             Joint Solution <span className="text-rose-500">Accelerators</span>
           </h2>
-          <p className="text-zinc-400 text-sm font-semibold max-w-2xl">
+          {/* <p className="text-zinc-400 text-sm font-semibold max-w-2xl">
             Pre-engineered multi-technology architectural blueprints deployed to accelerate enterprise implementation schedules.
-          </p>
+          </p> */}
         </Reveal>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -151,10 +151,10 @@ export function JointSolutions() {
                       {card.icon}
                     </div>
                     <div>
-                      <h4 className="text-base font-bold text-white uppercase tracking-wider">{card.title}</h4>
-                      <span className="text-xs font-mono text-zinc-400 uppercase tracking-widest font-bold">
+                      <h4 className="text-base md:text-lg font-semibold text-white uppercase tracking-wider">{card.title}</h4>
+                      {/* <span className="text-xs font-mono text-zinc-400 uppercase tracking-widest font-bold">
                         {card.combination}
-                      </span>
+                      </span> */}
                     </div>
                   </div>
                 </div>

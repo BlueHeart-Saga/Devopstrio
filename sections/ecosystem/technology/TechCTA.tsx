@@ -8,7 +8,7 @@ export function TechCTA() {
     <RepresentativeCTA
       title="Technology That Powers"
       highlightText="Digital Transformation?"
-      description="Build scalable, secure, and intelligent digital platforms with Devopstrio's comprehensive technology ecosystem."
+      description={null}
       primaryBtnText="SCHEDULE CONSULTATION"
       primaryBtnHref="/contact#contact-form"
       secondaryBtnText="EXPLORE SERVICES"

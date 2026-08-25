@@ -55,21 +55,21 @@ export function PartnershipBenefits() {
     <section id="benefits" className="w-full py-24 bg-[#030303] border-b border-zinc-900/60 relative">
       <div className="max-w-7xl mx-auto w-full px-6 lg:px-8">
         <Reveal className="mb-16 text-center max-w-2xl mx-auto">
-          <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+          {/* <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
             PARTNER VALUE
-          </span>
-          <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
+          </span> */}
+          <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight mb-5 text-white">
             Benefits of <span className="text-rose-500">Partnership</span>
           </h2>
-          <p className="text-zinc-400 text-sm font-semibold">
+          {/* <p className="text-zinc-400 text-sm font-semibold">
             How our strategic alliances translate into reduced engineering risks and superior business capabilities for your enterprise.
-          </p>
+          </p> */}
         </Reveal>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {benefits.map((benefit, idx) => (
             <Reveal key={benefit.title} delay={idx * 0.1}>
-              <div className="relative rounded-[24px] border border-zinc-800/80 bg-[#0A0A0A] p-6 md:p-8 flex flex-col justify-between group h-full shadow-lg overflow-hidden transition-all duration-500 hover:border-rose-500/40 min-h-[300px]">
+              <div className="relative rounded-[24px] border border-zinc-800/80 bg-[#0A0A0A] p-6 md:p-8 flex flex-col justify-between group h-full shadow-lg overflow-hidden transition-all duration-500 hover:border-rose-500/40 min-h-[160px]">
                 
                 {/* Expanding Image Layer with Glassmorphism */}
                 <div className="absolute inset-0 z-0 [clip-path:circle(0%_at_100%_100%)] group-hover:[clip-path:circle(150%_at_100%_100%)] transition-all duration-700 ease-in-out pointer-events-none">
@@ -88,12 +88,12 @@ export function PartnershipBenefits() {
                     {benefit.icon}
                   </div>
                   <div>
-                    <h3 className="text-lg font-bold text-white mb-3 tracking-tight transition-transform duration-500 group-hover:-translate-y-1">
+                    <h3 className="text-base md:text-lg font-semibold text-white mb-3 tracking-tight transition-transform duration-500 group-hover:-translate-y-1">
                       {benefit.title}
                     </h3>
-                    <p className="text-zinc-400 text-sm leading-relaxed font-medium group-hover:text-zinc-200 transition-colors duration-500">
+                    {/* <p className="text-zinc-400 text-sm leading-relaxed font-medium group-hover:text-zinc-200 transition-colors duration-500">
                       {benefit.desc}
-                    </p>
+                    </p> */}
                   </div>
                 </div>
               </div>

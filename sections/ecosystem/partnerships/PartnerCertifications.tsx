@@ -26,15 +26,15 @@ export function PartnerCertifications({
       <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60 relative">
         <div className="max-w-7xl mx-auto w-full px-6 lg:px-12">
           <Reveal className="mb-16 text-center max-w-2xl mx-auto">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block drop-shadow-md">
+            {/* <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block drop-shadow-md">
               VERIFIED EXPERTISE
-            </span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white drop-shadow-md">
+            </span> */}
+            <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight mb-5 text-white drop-shadow-md">
               {title}
             </h2>
-            <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
+            {/* <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
               {subtitle}
-            </p>
+            </p> */}
           </Reveal>
 
           <div className="flex flex-wrap justify-center gap-6">
@@ -50,7 +50,7 @@ export function PartnerCertifications({
                   loading="lazy" />
                 </div>
                 {cert.name && (
-                  <h4 className="text-xs font-bold text-zinc-350 group-hover:text-white transition-colors leading-snug">
+                  <h4 className="text-base md:text-lg font-semibold text-zinc-350 group-hover:text-white transition-colors leading-snug">
                     {cert.name}
                   </h4>
                 )}

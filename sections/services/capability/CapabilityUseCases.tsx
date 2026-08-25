@@ -201,7 +201,7 @@ export function CapabilityUseCases({
               return (
                 <div
                   key={idx}
-                  className="snap-start flex-shrink-0 w-[300px] sm:w-[330px] bg-[#0b0b0c] border border-white/10 rounded-[24px] overflow-hidden flex flex-col justify-between h-[510px] hover:border-rose-500/35 hover:shadow-[0_8px_32px_rgba(244,63,94,0.08)] transition-all duration-300 relative group"
+                  className="snap-start flex-shrink-0 w-[300px] sm:w-[340px] bg-[#0b0b0c] border border-white/10 rounded-[24px] overflow-hidden flex flex-col justify-between hover:border-rose-500/35 hover:shadow-[0_8px_32px_rgba(244,63,94,0.12)] transition-all duration-300 relative group self-start"
                 >
                   {/* Padded image layout */}
                   <div className="p-3 pb-0">
@@ -216,23 +216,23 @@ export function CapabilityUseCases({
 
                   {/* Card Content */}
                   <div className="p-6 flex flex-col flex-grow text-left">
-                    <h3 className="text-base font-bold text-white mb-2 leading-snug group-hover:text-rose-500 transition-colors">
+                    <h3 className="text-lg sm:text-xl font-bold text-white mb-1 leading-snug group-hover:text-rose-500 transition-colors">
                       {industry.name}
                     </h3>
 
-                    <p className="text-xs text-white leading-relaxed font-semibold mb-6">
+                    {/* <p className="text-xs text-white leading-relaxed font-semibold mb-6">
                       {industry.desc}
-                    </p>
+                    </p> */}
 
-                    {/* Bullet Focus Areas */}
-                    <div className="mt-auto space-y-2.5">
-                      <span className="text-[8px] font-mono tracking-widest text-rose-500 uppercase font-bold block mb-1">
+                    {/* Bullet Focus Areas - Reveal on Hover Only */}
+                    <div className="overflow-hidden transition-all duration-300 opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-96 group-hover:mt-4 space-y-2.5">
+                      <span className="text-xs sm:text-sm font-mono tracking-widest text-rose-500 uppercase font-semibold block mb-2">
                         Focus Areas
                       </span>
                       {bullets.slice(0, 3).map((bullet, bIdx) => (
-                        <div key={bIdx} className="flex items-start gap-2">
-                          <span className="w-1.5 h-1.5 rounded-full bg-rose-500 mt-1.5 flex-shrink-0" />
-                          <span className="text-[11px] text-zinc-100 font-semibold leading-relaxed group-hover:text-white transition-colors">
+                        <div key={bIdx} className="flex items-start gap-2.5">
+                          <span className="w-1.5 h-1.5 rounded-full bg-rose-500 mt-2 flex-shrink-0" />
+                          <span className="text-sm sm:text-base text-zinc-100 font-semibold leading-relaxed group-hover:text-white transition-colors">
                             {bullet}
                           </span>
                         </div>
@@ -244,9 +244,9 @@ export function CapabilityUseCases({
                   <div className="px-6 pb-6 pt-3 mt-auto border-t border-white/5 flex items-center justify-between">
                     <Link
                       href={href}
-                      className="text-[10px] text-rose-500 font-bold uppercase tracking-wider group-hover:text-rose-455 transition-colors inline-flex items-center gap-1.5"
+                      className="text-sm text-rose-500 font-semibold uppercase tracking-wider group-hover:text-rose-400 transition-colors inline-flex items-center gap-1.5"
                     >
-                      Learn more <ArrowUpRight size={13} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                      Learn more <ArrowUpRight size={14} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                     </Link>
                   </div>
                 </div>

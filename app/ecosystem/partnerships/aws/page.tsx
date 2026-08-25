@@ -389,7 +389,7 @@ export default function AWSSteategicAllianceHub() {
                     <img src="/webp/assets/logo/logo.webp"
                       alt="Devopstrio Logo"
                       className="w-full h-auto max-h-[85%] object-contain select-none filter brightness-105"
-                    loading="lazy" />
+                      loading="lazy" />
                   </div>
 
                   {/* Plus Connector Indicator */}
@@ -404,7 +404,7 @@ export default function AWSSteategicAllianceHub() {
                     <img src="/webp/assets/Devopstrio_Partners/aws.webp"
                       alt="Amazon AWS Logo"
                       className="w-full h-auto max-h-[85%] object-contain select-none"
-                    loading="lazy" />
+                      loading="lazy" />
                   </div>
 
                 </div>
@@ -769,7 +769,7 @@ export default function AWSSteategicAllianceHub() {
           {/* Below FAQ callout */}
           <Reveal delay={0.2}>
             <div className="border border-zinc-900 bg-zinc-950/20 p-6 rounded-2xl flex flex-col sm:flex-row justify-between items-center gap-4">
-              <p className="text-zinc-400 text-xs md:text-sm font-bold">
+              <p className="text-sm md:text-base font-semibold text-zinc-200 group-hover:text-white transition-colors">
                 Still have questions? Don&apos;t sit with them. Reach out to our team — we respond to every message personally.
               </p>
               <a

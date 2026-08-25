@@ -49,7 +49,7 @@ export default function OracleStrategicAllianceHub() {
   useEffect(() => {
     let lenis: { raf: (time: number) => void; destroy: () => void } | null = null;
     let raf = 0;
-    let cleanupTriggers = () => {};
+    let cleanupTriggers = () => { };
     let alive = true;
 
     const startMotion = async () => {
@@ -352,7 +352,7 @@ export default function OracleStrategicAllianceHub() {
 
       {/* 1. HERO SECTION WITH CALM CRIMSON/RED WAVE DESIGN */}
       <section className="relative w-full min-h-[95vh] flex flex-col items-center justify-center bg-black overflow-hidden pt-28 pb-20 border-b border-zinc-900/60">
-        
+
         {/* Concentric Wave Elements in Oracle Crimson/Red Theme */}
         <div className="absolute right-[-10%] md:right-[-5%] top-1/2 -translate-y-1/2 w-[85%] md:w-[65%] h-[130%] z-0 pointer-events-none select-none overflow-hidden flex items-center justify-end">
           <div className="relative w-full h-full flex items-center justify-end">
@@ -360,10 +360,10 @@ export default function OracleStrategicAllianceHub() {
             <div className="absolute w-[170%] h-[135%] right-[-40%] rounded-[110px] md:rounded-[230px] border border-red-500/10 rotate-[-28deg] pointer-events-none" />
             <div className="absolute w-[140%] h-[110%] right-[-30%] rounded-[100px] md:rounded-[200px] border border-rose-500/10 rotate-[-28deg] pointer-events-none" />
             <div className="absolute w-[110%] h-[85%] right-[-20%] rounded-[90px] md:rounded-[170px] border border-red-600/15 rotate-[-28deg] pointer-events-none" />
-            
+
             <div className="absolute w-[80%] h-[60%] right-[-10%] rounded-[80px] md:rounded-[140px] border border-rose-500/20 rotate-[-28deg] pointer-events-none" />
             <div className="absolute w-[50%] h-[35%] right-[0%] rounded-[70px] md:rounded-[110px] border border-red-500/25 rotate-[-28deg] pointer-events-none" />
-            
+
             <div className="absolute right-[5%] w-[180px] h-[90px] bg-gradient-to-r from-red-600/15 via-rose-600/10 to-amber-500/5 rounded-full blur-[50px] opacity-40 animate-pulse" />
           </div>
         </div>
@@ -378,7 +378,7 @@ export default function OracleStrategicAllianceHub() {
 
         <div className="max-w-7xl mx-auto w-full px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            
+
             {/* Hero Left Content */}
             <div className="lg:col-span-7 flex flex-col items-start text-left">
               <Reveal className="mb-6">
@@ -388,13 +388,13 @@ export default function OracleStrategicAllianceHub() {
                   </span>
                 </div>
               </Reveal>
-              
+
               <Reveal delay={0.1}>
                 <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold tracking-tight leading-[1.12] text-white mb-6">
                   Oracle <span className="text-[#E11D48] whitespace-nowrap">Ecosystem</span>
                 </h1>
               </Reveal>
-              
+
               <Reveal delay={0.2}>
                 <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
                   Modernize enterprise workloads, data platforms, and mission-critical operations with Oracle technologies across cloud infrastructure, databases, applications, and secure digital transformation.
@@ -417,7 +417,7 @@ export default function OracleStrategicAllianceHub() {
                   ))}
                 </div>
               </Reveal>
-              
+
               {/* CTAs */}
               <Reveal delay={0.4} className="flex flex-wrap gap-4">
                 <Link
@@ -438,7 +438,7 @@ export default function OracleStrategicAllianceHub() {
             {/* Hero Right Visual (Logo Integration) */}
             <div className="lg:col-span-5 relative flex items-center justify-center select-none z-10">
               <div className="relative w-full max-w-[420px] aspect-square flex items-center justify-center">
-                
+
                 {/* Connecting glowing line and animation */}
                 <div className="absolute inset-x-12 h-[2px] bg-gradient-to-r from-rose-500/25 via-red-500/30 to-rose-500/25 z-0 pointer-events-none">
                   {/* Energy Pulse */}
@@ -446,7 +446,7 @@ export default function OracleStrategicAllianceHub() {
                 </div>
 
                 <div className="flex items-center justify-between w-full relative z-10 px-4">
-                  
+
                   {/* Devopstrio Logo Card */}
                   <div className="relative group/logo w-[120px] h-[120px] sm:w-[130px] sm:h-[130px] rounded-3xl bg-[#09090b]/80 border border-zinc-800 hover:border-rose-500/30 flex items-center justify-center p-5 shadow-2xl backdrop-blur-md transition-all duration-500 hover:-translate-y-1">
                     <div className="absolute inset-0 bg-gradient-to-br from-rose-500/[0.03] to-transparent rounded-3xl opacity-0 group-hover/logo:opacity-100 transition-opacity" />
@@ -454,7 +454,7 @@ export default function OracleStrategicAllianceHub() {
                     <img src="/webp/assets/logo/logo.webp"
                       alt="Devopstrio Logo"
                       className="w-full h-auto max-h-[85%] object-contain select-none filter brightness-105"
-                    loading="lazy" />
+                      loading="lazy" />
                   </div>
 
                   {/* Plus Connector Indicator */}
@@ -469,7 +469,7 @@ export default function OracleStrategicAllianceHub() {
                     <img src="/assets/Tech_logos/Oracle_Cloud.svg"
                       alt="Oracle Cloud Logo"
                       className="w-full h-auto max-h-[85%] object-contain select-none"
-                    loading="lazy" />
+                      loading="lazy" />
                   </div>
 
                 </div>
@@ -491,7 +491,7 @@ export default function OracleStrategicAllianceHub() {
       <section id="overview" className="w-full py-24 bg-[#030303] border-b border-zinc-900/60 relative">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
-            
+
             {/* Story Direction Left Side */}
             <div className="lg:col-span-5">
               <Reveal className="text-left">
@@ -560,7 +560,7 @@ export default function OracleStrategicAllianceHub() {
                 <div>
                   <h3 className="text-sm md:text-base font-bold text-white mb-2 leading-snug">{cap.title}</h3>
                   <p className="text-xs text-zinc-400 font-bold mb-6 leading-relaxed">{cap.desc}</p>
-                  
+
                   <div className="h-[1px] bg-zinc-900 w-full my-4" />
                   <ul className="space-y-2">
                     {cap.bullets.map((bullet, bIdx) => (
@@ -625,8 +625,8 @@ export default function OracleStrategicAllianceHub() {
           {/* Layered Flow Diagram */}
           <div className="max-w-4xl mx-auto space-y-3 relative z-10">
             {architectureLayers.map((layer, idx) => (
-              <div 
-                key={idx} 
+              <div
+                key={idx}
                 className="group flex flex-col md:flex-row md:items-center justify-between p-6 bg-zinc-950/60 border border-zinc-900 rounded-2xl hover:border-rose-500/20 transition-all duration-300"
               >
                 <div className="flex items-center gap-4 mb-2 md:mb-0">
@@ -645,27 +645,27 @@ export default function OracleStrategicAllianceHub() {
       </section>
 
       {/* 6. BUSINESS USE CASES */}
-      
 
-      
+
+
       {/* CERTIFICATIONS */}
-      <PartnerCertifications 
+      <PartnerCertifications
         title="Oracle Certifications"
         certifications={[
-            { image: "/webp/assets/ecosystem/ORACLE_Awards/Group-1000008908.webp" },
-            { image: "/webp/assets/ecosystem/ORACLE_Awards/Group-1000008909.webp" },
-            { image: "/webp/assets/ecosystem/ORACLE_Awards/image-154.webp" },
-            { image: "/webp/assets/ecosystem/ORACLE_Awards/image-155.webp" },
-            { image: "/webp/assets/ecosystem/ORACLE_Awards/image-156.webp" },
-            { image: "/webp/assets/ecosystem/ORACLE_Awards/image-157.webp" },
-            { image: "/webp/assets/ecosystem/ORACLE_Awards/image-158.webp" },
-            { image: "/webp/assets/ecosystem/ORACLE_Awards/image-159.webp" },
-            { image: "/webp/assets/ecosystem/ORACLE_Awards/image-162.webp" },
-            { image: "/webp/assets/ecosystem/ORACLE_Awards/image-163.webp" }
-          ]}
+          { image: "/webp/assets/ecosystem/ORACLE_Awards/Group-1000008908.webp" },
+          { image: "/webp/assets/ecosystem/ORACLE_Awards/Group-1000008909.webp" },
+          { image: "/webp/assets/ecosystem/ORACLE_Awards/image-154.webp" },
+          { image: "/webp/assets/ecosystem/ORACLE_Awards/image-155.webp" },
+          { image: "/webp/assets/ecosystem/ORACLE_Awards/image-156.webp" },
+          { image: "/webp/assets/ecosystem/ORACLE_Awards/image-157.webp" },
+          { image: "/webp/assets/ecosystem/ORACLE_Awards/image-158.webp" },
+          { image: "/webp/assets/ecosystem/ORACLE_Awards/image-159.webp" },
+          { image: "/webp/assets/ecosystem/ORACLE_Awards/image-162.webp" },
+          { image: "/webp/assets/ecosystem/ORACLE_Awards/image-163.webp" }
+        ]}
       />
 
-      
+
       <section id="use-cases" className="w-full py-24 bg-[#030303] border-b border-zinc-900/60">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
           <Reveal className="mb-16 text-left">
@@ -723,8 +723,8 @@ export default function OracleStrategicAllianceHub() {
                 </h4>
                 <div className="flex flex-col gap-2">
                   {techGroup.techs.map((tech) => (
-                    <div 
-                      key={tech} 
+                    <div
+                      key={tech}
                       className="px-3 py-2 bg-zinc-950 border border-zinc-900 rounded-lg text-[10px] font-mono text-zinc-350 font-bold hover:text-white transition-colors"
                     >
                       {tech}
@@ -769,7 +769,7 @@ export default function OracleStrategicAllianceHub() {
       <section id="outcomes" className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
-            
+
             {/* Metric Highlights Left Side */}
             <div className="lg:col-span-5">
               <Reveal className="text-left">
@@ -900,7 +900,7 @@ export default function OracleStrategicAllianceHub() {
           {/* Below FAQ callout */}
           <Reveal delay={0.2}>
             <div className="border border-zinc-900 bg-zinc-950/20 p-6 rounded-2xl flex flex-col sm:flex-row justify-between items-center gap-4">
-              <p className="text-zinc-400 text-xs md:text-sm font-bold">
+              <p className="text-sm md:text-base font-semibold text-zinc-200 group-hover:text-white transition-colors">
                 Still have questions? Don&apos;t sit with them. Reach out to our team — we respond to every message personally.
               </p>
               <a
@@ -914,7 +914,7 @@ export default function OracleStrategicAllianceHub() {
         </div>
       </section>
 
-{/* 12. FINAL CTA */}
+      {/* 12. FINAL CTA */}
       <section className="relative w-full py-32 bg-[#030303] overflow-hidden text-center">
         {/* Ambient background blur */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-rose-500/[0.02] rounded-full blur-[140px] pointer-events-none" />

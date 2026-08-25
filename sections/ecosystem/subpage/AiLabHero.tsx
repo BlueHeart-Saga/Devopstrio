@@ -44,7 +44,7 @@ export function AiLabHero({ title, bgImage }: AiLabHeroProps) {
 
         {/* Headline block */}
         <div className="max-w-4xl mx-auto text-center flex flex-col items-center justify-center my-auto py-8">
-          <Reveal>
+          {/* <Reveal>
             <div className="flex items-center justify-center gap-2.5 mb-5">
               <span className="h-[1px] w-8 bg-gradient-to-r from-transparent to-rose-600"></span>
               <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500">
@@ -52,19 +52,19 @@ export function AiLabHero({ title, bgImage }: AiLabHeroProps) {
               </span>
               <span className="h-[1px] w-8 bg-gradient-to-l from-transparent to-rose-600"></span>
             </div>
-          </Reveal>
+          </Reveal> */}
 
           <Reveal delay={0.05}>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-tight mb-5 text-white text-center">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight leading-tight mb-5 text-white text-center">
               Building the Future of <span className="text-rose-500 font-semibold">Intelligent</span> Enterprises
             </h1>
           </Reveal>
 
-          <Reveal delay={0.1}>
+          {/* <Reveal delay={0.1}>
             <p className="text-zinc-200 text-base md:text-lg font-semibold leading-relaxed max-w-3xl text-center mx-auto mb-8">
               From Generative AI and Agentic Systems to Enterprise Automation and Predictive Intelligence, our AI Innovation Lab helps organizations transform ideas into production-ready AI solutions.
             </p>
-          </Reveal>
+          </Reveal> */}
 
           <Reveal delay={0.15}>
             <div className="flex flex-wrap items-center justify-center gap-4">

@@ -93,15 +93,15 @@ export function GlobalTalentReach() {
         {/* Header */}
         <div className="mb-16 text-center max-w-2xl mx-auto">
           <Reveal>
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+            {/* <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
               GEOGRAPHICAL SCOPE
-            </span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
+            </span> */}
+            <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight mb-5 text-white">
               Global Talent <span className="text-rose-500">Reach</span>
             </h2>
-            <p className="text-zinc-400 text-sm font-semibold leading-relaxed">
+            {/* <p className="text-zinc-400 text-sm font-semibold leading-relaxed">
               Connecting professionals across our central offices to build cloud platforms and operate secure release cycles.
-            </p>
+            </p> */}
           </Reveal>
         </div>
 
@@ -134,10 +134,10 @@ export function GlobalTalentReach() {
 
             <div className="space-y-6">
               <div>
-                <span className="text-[10px] font-mono tracking-[0.25em] uppercase text-rose-500 block mb-2 font-bold">
+                {/* <span className="text-[10px] font-mono tracking-[0.25em] uppercase text-rose-500 block mb-2 font-bold">
                   Talent Hub Information
-                </span>
-                <h3 className="text-lg font-bold text-white tracking-tight uppercase">
+                </span> */}
+                <h3 className="text-lg md:text-xl font-semibold text-white tracking-tight uppercase">
                   {currentOffice.officeName}
                 </h3>
                 <span className="inline-block mt-2 text-[9px] font-mono tracking-widest uppercase bg-rose-500/10 border border-rose-500/20 text-rose-455 px-2.5 py-0.5 rounded font-bold">

@@ -48,15 +48,15 @@ export function EngineeringCertifications() {
       <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-16">
           <Reveal className="text-left max-w-2xl">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+            {/* <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
               VERIFIED EXPERTISE
-            </span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
+            </span> */}
+            <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight mb-5 text-white">
               Engineering Certifications & <span className="text-rose-500">Awards</span>
             </h2>
-            <p className="text-zinc-400 text-sm font-semibold">
+            {/* <p className="text-zinc-400 text-sm font-semibold">
               Our engineering boards hold validations across public cloud vendors, container platforms, security standards, and industry organizations.
-            </p>
+            </p> */}
           </Reveal>
 
           {/* Premium Tab Bar Selector */}
@@ -99,7 +99,7 @@ export function EngineeringCertifications() {
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
             {PARTNER_AWARDS.map((cert, idx) => (
               <Reveal key={idx} delay={idx * 0.05} className="h-full">
-                <div className="bg-zinc-950/40 border border-zinc-900/80 rounded-3xl p-5 hover:border-rose-500/10 transition-all duration-300 flex flex-col justify-between h-full min-h-[220px] group">
+                <div className="bg-zinc-950/40 border border-zinc-900/80 rounded-3xl p-5 hover:border-rose-500/10 transition-all duration-300 flex flex-col justify-between h-full min-h-[180px] group">
                   <div className="w-full bg-white/5 border border-white/10 rounded-2xl p-4 flex items-center justify-center h-28 backdrop-blur-sm group-hover:bg-white/10 group-hover:border-white/20 transition-all duration-300 mb-4">
                     <img src={cert.image}
                       alt={cert.name}
@@ -107,13 +107,13 @@ export function EngineeringCertifications() {
                     loading="lazy" />
                   </div>
                   <div className="text-left">
-                    <span className="text-[10px] md:text-xs font-bold text-rose-500 uppercase tracking-widest block mb-2">
+                    {/* <span className="text-[10px] md:text-xs font-bold text-rose-500 uppercase tracking-widest block mb-2">
                       {cert.category}
-                    </span>
-                    <h4 className="text-sm md:text-base font-bold text-white uppercase tracking-wider mb-2">{cert.name}</h4>
-                    <p className="text-xs md:text-sm text-zinc-300 font-medium leading-relaxed">
+                    </span> */}
+                    <h4 className="text-base md:text-lg font-semibold text-white uppercase tracking-wider mb-2">{cert.name}</h4>
+                    {/* <p className="text-xs md:text-sm text-zinc-300 font-medium leading-relaxed">
                       {cert.desc}
-                    </p>
+                    </p> */}
                   </div>
                 </div>
               </Reveal>
@@ -125,7 +125,7 @@ export function EngineeringCertifications() {
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {ENGINEERING_CERTS.map((cert, idx) => (
               <Reveal key={idx} delay={idx * 0.05} className="h-full">
-                <div className="bg-zinc-950/40 border border-zinc-900/80 rounded-3xl p-5 hover:border-rose-500/10 transition-all duration-300 flex flex-col justify-between h-full min-h-[220px] group">
+                <div className="bg-zinc-950/40 border border-zinc-900/80 rounded-3xl p-5 hover:border-rose-500/10 transition-all duration-300 flex flex-col justify-between h-full min-h-[180px] group">
                   <div className="w-full bg-white/5 border border-white/10 rounded-2xl p-4 flex items-center justify-center h-28 backdrop-blur-sm group-hover:bg-white/10 group-hover:border-white/20 transition-all duration-300 mb-4">
                     <img src={cert.image}
                       alt={cert.title}
@@ -133,10 +133,10 @@ export function EngineeringCertifications() {
                     loading="lazy" />
                   </div>
                   <div className="text-left">
-                    <h4 className="text-sm md:text-base font-bold text-white uppercase tracking-wider mb-2">{cert.title}</h4>
-                    <p className="text-xs md:text-sm text-zinc-300 font-medium leading-relaxed">
+                    <h4 className="text-base md:text-lg font-semibold text-white uppercase tracking-wider mb-2">{cert.title}</h4>
+                    {/* <p className="text-xs md:text-sm text-zinc-300 font-medium leading-relaxed">
                       {cert.desc}
-                    </p>
+                    </p> */}
                   </div>
                 </div>
               </Reveal>
@@ -148,7 +148,7 @@ export function EngineeringCertifications() {
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {COMPLIANCE_AWARDS.map((cert, idx) => (
               <Reveal key={idx} delay={idx * 0.05} className="h-full">
-                <div className="bg-zinc-950/40 border border-zinc-900/80 rounded-3xl p-5 hover:border-rose-500/10 transition-all duration-300 flex flex-col justify-between h-full min-h-[220px] group">
+                <div className="bg-zinc-950/40 border border-zinc-900/80 rounded-3xl p-5 hover:border-rose-500/10 transition-all duration-300 flex flex-col justify-between h-full min-h-[180px] group">
                   <div className="w-full bg-white/5 border border-white/10 rounded-2xl p-4 flex items-center justify-center h-28 backdrop-blur-sm group-hover:bg-white/10 group-hover:border-white/20 transition-all duration-300 mb-4">
                     <img src={cert.image}
                       alt={cert.title}
@@ -156,10 +156,10 @@ export function EngineeringCertifications() {
                     loading="lazy" />
                   </div>
                   <div className="text-left">
-                    <h4 className="text-sm md:text-base font-bold text-white uppercase tracking-wider mb-2">{cert.title}</h4>
-                    <p className="text-xs md:text-sm text-zinc-300 font-medium leading-relaxed">
+                    <h4 className="text-base md:text-lg font-semibold text-white uppercase tracking-wider mb-2">{cert.title}</h4>
+                    {/* <p className="text-xs md:text-sm text-zinc-300 font-medium leading-relaxed">
                       {cert.desc}
-                    </p>
+                    </p> */}
                   </div>
                 </div>
               </Reveal>

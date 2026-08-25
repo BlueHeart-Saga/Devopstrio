@@ -226,15 +226,15 @@ export function TechCapabilities() {
         {/* Header Section */}
         <Reveal>
           <div className="text-center max-w-3xl mx-auto mb-14">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+            {/* <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
               CAPABILITY DEEP-DIVE
-            </span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
+            </span> */}
+            <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight mb-5 text-white">
               Technology <span className="text-rose-500">Framework</span>
             </h2>
-            <p className="text-zinc-200 text-base md:text-lg font-semibold leading-relaxed">
+            {/* <p className="text-zinc-200 text-base md:text-lg font-semibold leading-relaxed">
               Select a technology pillar to review core architectural capabilities, toolchains, and verified frameworks.
-            </p>
+            </p> */}
           </div>
         </Reveal>
 
@@ -282,12 +282,12 @@ export function TechCapabilities() {
                 <div className="w-10 h-10 rounded-xl bg-rose-500/10 border border-rose-500/20 flex items-center justify-center mb-6 text-rose-500">
                   {currentPillar.icon}
                 </div>
-                <h3 className="text-xl md:text-2xl font-bold text-white tracking-tight leading-tight mb-3 group-hover/tall:text-rose-400 transition-colors">
+                <h3 className="text-xl md:text-2xl font-semibold text-white tracking-tight leading-tight mb-3 group-hover/tall:text-rose-400 transition-colors">
                   {currentPillar.name}
                 </h3>
-                <span className="text-xs font-mono font-bold text-rose-500 uppercase tracking-wider block mb-6">
+                {/* <span className="text-xs font-mono font-bold text-rose-500 uppercase tracking-wider block mb-6">
                   {currentPillar.subtitle}
-                </span>
+                </span> */}
 
                 {/* Verified tool list inside the tall card */}
                 <div className="mt-6">
@@ -343,15 +343,15 @@ export function TechCapabilities() {
 
                     {/* Text details */}
                     <div>
-                      <span className="text-[10px] md:text-xs font-mono text-rose-500 tracking-widest uppercase font-bold block mb-3">
+                      {/* <span className="text-[10px] md:text-xs font-mono text-rose-500 tracking-widest uppercase font-bold block mb-3">
                         CORE CAPABILITY
-                      </span>
-                      <h4 className="text-lg md:text-xl font-bold text-white mb-3 group-hover/card:text-rose-400 transition-colors">
+                      </span> */}
+                      <h4 className="text-base md:text-lg font-semibold text-white mb-3 group-hover/card:text-rose-400 transition-colors">
                         {item.name}
                       </h4>
-                      <p className="text-sm md:text-base text-zinc-300 font-medium leading-relaxed">
+                      {/* <p className="text-sm md:text-base text-zinc-300 font-medium leading-relaxed">
                         {item.desc}
-                      </p>
+                      </p> */}
                     </div>
 
                     {/* Link action details */}

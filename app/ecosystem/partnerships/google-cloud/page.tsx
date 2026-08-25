@@ -322,7 +322,7 @@ export default function GoogleCloudStrategicAllianceHub() {
 
       {/* 1. HERO SECTION */}
       <section className="relative w-full min-h-[95vh] flex flex-col items-center justify-center bg-black overflow-hidden pt-28 pb-20 border-b border-zinc-900/60">
-        
+
         {/* Concentric Wave Elements in Google Cloud Colors */}
         <div className="absolute right-[-10%] md:right-[-5%] top-1/2 -translate-y-1/2 w-[85%] md:w-[65%] h-[130%] z-0 pointer-events-none select-none overflow-hidden flex items-center justify-end">
           <div className="relative w-full h-full flex items-center justify-end">
@@ -330,10 +330,10 @@ export default function GoogleCloudStrategicAllianceHub() {
             <div className="absolute w-[170%] h-[135%] right-[-40%] rounded-[110px] md:rounded-[230px] border border-red-500/15 rotate-[-28deg] pointer-events-none" />
             <div className="absolute w-[140%] h-[110%] right-[-30%] rounded-[100px] md:rounded-[200px] border border-yellow-500/15 rotate-[-28deg] pointer-events-none" />
             <div className="absolute w-[110%] h-[85%] right-[-20%] rounded-[90px] md:rounded-[170px] border border-green-500/20 rotate-[-28deg] pointer-events-none" />
-            
+
             <div className="absolute w-[80%] h-[60%] right-[-10%] rounded-[80px] md:rounded-[140px] border border-blue-500/20 rotate-[-28deg] pointer-events-none" />
             <div className="absolute w-[50%] h-[35%] right-[0%] rounded-[70px] md:rounded-[110px] border border-red-500/25 rotate-[-28deg] pointer-events-none" />
-            
+
             <div className="absolute right-[5%] w-[180px] h-[90px] bg-gradient-to-r from-blue-600/15 via-red-600/10 to-yellow-500/15 rounded-full blur-[50px] opacity-40 animate-pulse" />
           </div>
         </div>
@@ -348,7 +348,7 @@ export default function GoogleCloudStrategicAllianceHub() {
 
         <div className="max-w-7xl mx-auto w-full px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            
+
             {/* Hero Left Content */}
             <div className="lg:col-span-7 flex flex-col items-start text-left">
               <Reveal className="mb-6">
@@ -358,13 +358,13 @@ export default function GoogleCloudStrategicAllianceHub() {
                   </span>
                 </div>
               </Reveal>
-              
+
               <Reveal delay={0.1}>
                 <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold tracking-tight leading-[1.12] text-white mb-6">
                   Google Cloud <span className="text-[#E11D48] whitespace-nowrap">Ecosystem</span>
                 </h1>
               </Reveal>
-              
+
               <Reveal delay={0.2}>
                 <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
                   Build intelligent, cloud-native platforms with Google Cloud—combining modern infrastructure, data engineering, AI/ML, Kubernetes, and secure operations to accelerate digital transformation.
@@ -387,7 +387,7 @@ export default function GoogleCloudStrategicAllianceHub() {
                   ))}
                 </div>
               </Reveal>
-              
+
               {/* CTAs */}
               <Reveal delay={0.4} className="flex flex-wrap gap-4">
                 <Link
@@ -408,14 +408,14 @@ export default function GoogleCloudStrategicAllianceHub() {
             {/* Hero Right Visual (Logo Integration) */}
             <div className="lg:col-span-5 relative flex items-center justify-center select-none z-10">
               <div className="relative w-full max-w-[420px] aspect-square flex items-center justify-center">
-                
+
                 {/* Connecting glowing line and animation */}
                 <div className="absolute inset-x-12 h-[2px] bg-gradient-to-r from-rose-500/25 via-red-500/30 to-blue-500/25 z-0 pointer-events-none">
                   <div className="absolute top-1/2 -translate-y-1/2 w-3 h-3 bg-white rounded-full blur-[2px] shadow-[0_0_12px_#E11D48] animate-ping" style={{ animationDuration: '3s' }} />
                 </div>
 
                 <div className="flex items-center justify-between w-full relative z-10 px-4">
-                  
+
                   {/* Devopstrio Logo Card */}
                   <div className="relative group/logo w-[120px] h-[120px] sm:w-[130px] sm:h-[130px] rounded-3xl bg-[#09090b]/80 border border-zinc-800 hover:border-rose-500/30 flex items-center justify-center p-5 shadow-2xl backdrop-blur-md transition-all duration-500 hover:-translate-y-1">
                     <div className="absolute inset-0 bg-gradient-to-br from-rose-500/[0.03] to-transparent rounded-3xl opacity-0 group-hover/logo:opacity-100 transition-opacity" />
@@ -423,7 +423,7 @@ export default function GoogleCloudStrategicAllianceHub() {
                     <img src="/webp/assets/logo/logo.webp"
                       alt="Devopstrio Logo"
                       className="w-full h-auto max-h-[85%] object-contain select-none filter brightness-105"
-                    loading="lazy" />
+                      loading="lazy" />
                   </div>
 
                   {/* Plus Connector Indicator */}
@@ -438,7 +438,7 @@ export default function GoogleCloudStrategicAllianceHub() {
                     <img src="/assets/Tech_logos/Google_Cloud.svg"
                       alt="Google Cloud Logo"
                       className="w-full h-auto max-h-[85%] object-contain select-none"
-                    loading="lazy" />
+                      loading="lazy" />
                   </div>
 
                 </div>
@@ -586,7 +586,7 @@ export default function GoogleCloudStrategicAllianceHub() {
 
           {/* Vertical Stack Layout */}
           <div className="max-w-3xl mx-auto flex flex-col gap-4 relative">
-            
+
             {/* Connection Line */}
             <div className="absolute left-[30px] md:left-1/2 top-4 bottom-4 w-[2px] bg-gradient-to-b from-blue-500/20 via-red-500/30 to-green-500/20 z-0 hidden md:block" />
 
@@ -611,31 +611,31 @@ export default function GoogleCloudStrategicAllianceHub() {
       </section>
 
       {/* 6. BUSINESS USE CASES */}
-      
 
-      
+
+
       {/* CERTIFICATIONS */}
-      <PartnerCertifications 
+      <PartnerCertifications
         title="Google Cloud Certifications"
         certifications={[
-            { image: "/webp/assets/ecosystem/GCP-award/image-130.webp" },
-            { image: "/webp/assets/ecosystem/GCP-award/image-131.webp" },
-            { image: "/webp/assets/ecosystem/GCP-award/image-132.webp" },
-            { image: "/webp/assets/ecosystem/GCP-award/image-133.webp" },
-            { image: "/webp/assets/ecosystem/GCP-award/image-134.webp" },
-            { image: "/webp/assets/ecosystem/GCP-award/image-135.webp" },
-            { image: "/webp/assets/ecosystem/GCP-award/image-136.webp" },
-            { image: "/webp/assets/ecosystem/GCP-award/image-137.webp" },
-            { image: "/webp/assets/ecosystem/GCP-award/image-146.webp" },
-            { image: "/webp/assets/ecosystem/GCP-award/image-147.webp" },
-            { image: "/webp/assets/ecosystem/GCP-award/image-148.webp" },
-            { image: "/webp/assets/ecosystem/GCP-award/image-149.webp" },
-            { image: "/webp/assets/ecosystem/GCP-award/image-150.webp" },
-            { image: "/webp/assets/ecosystem/GCP-award/image-151.webp" }
-          ]}
+          { image: "/webp/assets/ecosystem/GCP-award/image-130.webp" },
+          { image: "/webp/assets/ecosystem/GCP-award/image-131.webp" },
+          { image: "/webp/assets/ecosystem/GCP-award/image-132.webp" },
+          { image: "/webp/assets/ecosystem/GCP-award/image-133.webp" },
+          { image: "/webp/assets/ecosystem/GCP-award/image-134.webp" },
+          { image: "/webp/assets/ecosystem/GCP-award/image-135.webp" },
+          { image: "/webp/assets/ecosystem/GCP-award/image-136.webp" },
+          { image: "/webp/assets/ecosystem/GCP-award/image-137.webp" },
+          { image: "/webp/assets/ecosystem/GCP-award/image-146.webp" },
+          { image: "/webp/assets/ecosystem/GCP-award/image-147.webp" },
+          { image: "/webp/assets/ecosystem/GCP-award/image-148.webp" },
+          { image: "/webp/assets/ecosystem/GCP-award/image-149.webp" },
+          { image: "/webp/assets/ecosystem/GCP-award/image-150.webp" },
+          { image: "/webp/assets/ecosystem/GCP-award/image-151.webp" }
+        ]}
       />
 
-      
+
       <section id="use-cases" className="w-full py-24 bg-[#030303] border-b border-zinc-900/60">
         <div className="max-w-7xl mx-auto w-full px-6 lg:px-8">
           <Reveal className="mb-12 text-center max-w-2xl mx-auto">
@@ -658,11 +658,10 @@ export default function GoogleCloudStrategicAllianceHub() {
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`px-5 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-all duration-300 border ${
-                  activeTab === tab.id
-                    ? "bg-rose-600 text-white border-rose-600 shadow-md shadow-rose-600/10"
-                    : "bg-zinc-950 text-zinc-400 border-zinc-900 hover:text-white"
-                }`}
+                className={`px-5 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-all duration-300 border ${activeTab === tab.id
+                  ? "bg-rose-600 text-white border-rose-600 shadow-md shadow-rose-600/10"
+                  : "bg-zinc-950 text-zinc-400 border-zinc-900 hover:text-white"
+                  }`}
               >
                 {tab.label}
               </button>
@@ -838,7 +837,7 @@ export default function GoogleCloudStrategicAllianceHub() {
           </Reveal>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
-            
+
             {/* Infrastructure */}
             <div className="p-6 bg-zinc-950/45 border border-zinc-900 rounded-3xl">
               <span className="text-[9px] font-mono text-blue-500 uppercase tracking-widest block mb-4 font-bold">Cloud Infrastructure</span>
@@ -1054,7 +1053,7 @@ export default function GoogleCloudStrategicAllianceHub() {
           {/* Below FAQ callout */}
           <Reveal delay={0.2}>
             <div className="border border-zinc-900 bg-zinc-950/20 p-6 rounded-2xl flex flex-col sm:flex-row justify-between items-center gap-4">
-              <p className="text-zinc-400 text-xs md:text-sm font-bold">
+              <p className="text-sm md:text-base font-semibold text-zinc-200 group-hover:text-white transition-colors">
                 Still have questions? Don&apos;t sit with them. Reach out to our team — we respond to every message personally.
               </p>
               <a
@@ -1068,7 +1067,7 @@ export default function GoogleCloudStrategicAllianceHub() {
         </div>
       </section>
 
-{/* 12. FINAL CTA */}
+      {/* 12. FINAL CTA */}
       <section className="relative w-full py-32 bg-[#030303] overflow-hidden text-center">
         {/* Ambient background blur */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-rose-500/[0.02] rounded-full blur-[140px] pointer-events-none" />

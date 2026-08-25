@@ -64,22 +64,22 @@ export function TechEcosystem() {
 
       <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
         <Reveal className="mb-16 text-center max-w-2xl mx-auto">
-          <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+          {/* <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
             R&D SYSTEM ARCHITECTURE
-          </span>
-          <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
+          </span> */}
+          <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight mb-5 text-white">
             Technology <span className="text-rose-500">Ecosystem</span>
           </h2>
-          <p className="text-zinc-400 text-sm font-semibold">
+          {/* <p className="text-zinc-400 text-sm font-semibold">
             The programming tools, databases, and LLM providers powering our proprietary software products.
-          </p>
+          </p> */}
         </Reveal>
 
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
           {groups.map((group, idx) => (
             <Reveal key={group.category} delay={idx * 0.05} className="h-full">
               <div className="bg-[#0a0a0a]/60 border border-white/[0.03] hover:border-rose-500/20 rounded-[20px] p-5 transition-all duration-300 flex flex-col gap-4 h-full">
-                <h4 className="text-[10px] font-mono font-bold text-rose-500 uppercase tracking-widest border-b border-white/[0.03] pb-2">
+                <h4 className="text-base md:text-lg font-semibold text-rose-500 uppercase tracking-widest border-b border-white/[0.03] pb-2">
                   {group.category}
                 </h4>
                 <ul className="space-y-2.5">
