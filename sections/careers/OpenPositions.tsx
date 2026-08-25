@@ -5,7 +5,26 @@ import { Search, MapPin, ArrowRight } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
 import { useRouter } from "next/navigation";
 
-import Link from "next/link";
+const features = [
+  {
+    title: "Learning & Development",
+  },
+  {
+    title: "Real-World Projects",
+  },
+  {
+    title: "Career Growth",
+  },
+  {
+    title: "Modern Technologies",
+  },
+  {
+    title: "Collaborative Culture",
+  },
+  {
+    title: "Work-Life Balance",
+  },
+];
 
 export function OpenPositions() {
   const router = useRouter();
@@ -14,7 +33,6 @@ export function OpenPositions() {
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
-    // Navigate to the dedicated jobs page with query params
     const query = new URLSearchParams();
     if (keyword) query.set('q', keyword);
     if (location) query.set('loc', location);
@@ -22,20 +40,27 @@ export function OpenPositions() {
     router.push(`/careers/jobs?${query.toString()}`);
   };
 
+  const handleRoleClick = (tag: string) => {
+    const query = new URLSearchParams({ q: tag });
+    router.push(`/careers/jobs?${query.toString()}`);
+  };
+
   return (
-    <section id="open-positions" className="py-32 bg-[#030303] relative overflow-hidden flex items-center justify-center border-b border-zinc-900/60">
+    <section id="open-positions" className="pt-10 pb-20 sm:pt-14 sm:pb-24 bg-[#030303] relative overflow-hidden flex items-center justify-center border-b border-zinc-900/60 font-sans">
       {/* Ambient glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-[radial-gradient(circle_at_center,rgba(225,29,72,0.08),transparent_60%)] pointer-events-none" />
 
-      <div className="max-w-5xl mx-auto w-full px-6 relative z-10 text-center">
+      <div className="max-w-6xl mx-auto w-full px-6 relative z-10 text-center">
         <Reveal>
           <div className="relative mb-6">
-            {/* Top-to-bottom arrow PNG */}
-            <div className="flex justify-center mb-3 pointer-events-none select-none">
-              <img src="/webp/assets/components/streight-toptobuttm.webp"
+            {/* Top-to-bottom arrow PNG (Increased size & reduced top gaps) */}
+            <div className="flex justify-center mb-1 pointer-events-none select-none">
+              <img
+                src="/webp/assets/components/streight-toptobuttm.webp"
                 alt="Arrow indicator"
-                className="w-8 sm:w-10 h-auto object-contain filter drop-shadow-[0_0_12px_rgba(244,63,94,0.4)]"
-              loading="lazy" />
+                className="w-12 sm:w-16 md:w-20 h-auto object-contain filter drop-shadow-[0_0_15px_rgba(244,63,94,0.45)]"
+                loading="lazy"
+              />
             </div>
 
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold text-white tracking-tight leading-tight">
@@ -46,10 +71,6 @@ export function OpenPositions() {
               at Devopstrio.
             </h2>
           </div>
-          
-          {/* <p className="text-zinc-400 text-base md:text-lg max-w-2xl mx-auto mb-12 font-medium">
-            When you're searching for a role, start here to find the perfect team where you can build next-generation enterprise solutions. Explore our <Link href="/services" className="text-rose-500 hover:underline font-bold">digital services</Link> and read our <Link href="/about/overview" className="text-rose-500 hover:underline font-bold">company overview</Link>.
-          </p> */}
 
           {/* Search Bar Form */}
           <form 
@@ -93,17 +114,14 @@ export function OpenPositions() {
           </form>
           
           {/* Popular Tags */}
-          <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 text-xs font-semibold text-zinc-500">
+          <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4 text-xs font-semibold text-zinc-500">
             <span>Popular searches:</span>
             <div className="flex gap-2 flex-wrap justify-center">
               {['Cloud Architect', 'DevOps Engineer', 'AI Specialist'].map(tag => (
                 <button 
                   key={tag} 
                   type="button"
-                  onClick={() => {
-                    setKeyword(tag);
-                    document.getElementById('open-positions')?.scrollIntoView({ behavior: 'smooth' });
-                  }}
+                  onClick={() => handleRoleClick(tag)}
                   className="px-4 py-1.5 bg-zinc-900 border border-zinc-800 rounded-full hover:bg-zinc-800 hover:text-white hover:border-zinc-600 transition-all cursor-pointer"
                 >
                   {tag}
@@ -111,8 +129,44 @@ export function OpenPositions() {
               ))}
             </div>
           </div>
-
         </Reveal>
+
+        {/* ── 6 Feature Cards ── */}
+        {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mt-16 text-left">
+          {features.map((feature, idx) => {
+            return (
+              <Reveal key={idx} delay={idx * 0.05} className="h-full">
+                <div className="group relative flex items-center justify-between p-7 sm:p-8 rounded-3xl bg-zinc-950/90 transition-all duration-300 shadow-xl hover:shadow-[0_15px_35px_rgba(244,63,94,0.18)] hover:-translate-y-1 border-0 border-none">
+                  
+                  <h3 className="text-xl sm:text-2xl font-semibold text-white group-hover:text-rose-400 transition-colors duration-300 tracking-tight">
+                    {feature.title}
+                  </h3>
+
+                  <button
+                    onClick={() => handleRoleClick(feature.title)}
+                    aria-label={feature.title}
+                    className="w-11 h-11 rounded-2xl bg-zinc-900 text-zinc-300 group-hover:text-white flex items-center justify-center shrink-0 transition-all duration-300 group-hover:scale-110 ml-4 border-0 border-none cursor-pointer"
+                  >
+                    <ArrowRight size={20} className="group-hover:translate-x-0.5 transition-transform" />
+                  </button>
+
+                </div>
+              </Reveal>
+            );
+          })}
+        </div> */}
+
+        {/* ── Apply Now Button ── */}
+        {/* <Reveal className="flex justify-center mt-12">
+          <button
+            onClick={() => router.push('/careers/jobs')}
+            className="px-9 py-4 rounded-full text-xs sm:text-sm font-semibold uppercase tracking-wider text-white bg-rose-600 hover:bg-rose-500 transition-all duration-300 shadow-[0_4px_25px_rgba(225,29,72,0.45)] hover:scale-[1.03] flex items-center gap-2.5 group border-0 border-none cursor-pointer"
+          >
+            <span>Apply Now</span>
+            <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
+          </button>
+        </Reveal> */}
+
       </div>
     </section>
   );

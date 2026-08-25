@@ -145,9 +145,9 @@ export function PerksBenefits() {
                 <h3 className="text-lg sm:text-xl font-bold text-zinc-900 mb-1.5 tracking-tight font-sans">
                   {ben.name}
                 </h3>
-                <p className="text-xs sm:text-sm text-zinc-600 leading-relaxed font-medium">
+                {/* <p className="text-xs sm:text-sm text-zinc-600 leading-relaxed font-medium">
                   {ben.desc}
-                </p>
+                </p> */}
               </div>
             </div>
           ))}

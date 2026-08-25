@@ -3,8 +3,7 @@
 import React, { useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
-
-import Link from "next/link";
+import { Reveal } from "@/components/ui/Reveal";
 
 export function LifeAtDevopstrio() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -15,83 +14,81 @@ export function LifeAtDevopstrio() {
       <section 
         id="culture"
         ref={containerRef}
-        className="relative w-full h-[800px] md:h-[900px] bg-[#030303] overflow-hidden border-t border-b border-zinc-900"
+        className="relative w-full bg-[#030303] overflow-hidden border-t border-b border-zinc-900 font-sans"
       >
-        {/* Dot Grid Background */}
-        <div className="absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.1)_1.5px,transparent_1.5px)] [background-size:24px_24px] opacity-50 pointer-events-none" />
-        
-        {/* Ambient Glows */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-[radial-gradient(ellipse_at_center,rgba(225,29,72,0.1),transparent_60%)] pointer-events-none blur-3xl z-0" />
+        {/* Top Family Quote Sub-Banner */}
+        <Reveal className="pt-16 pb-8 text-center relative z-20">
+          <div className="max-w-5xl mx-auto px-4">
+            <h3 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold text-white tracking-tight leading-tight italic">
+              <span className="whitespace-nowrap">&ldquo;We&apos;re more than just a workplace.</span><br />
+              <span className="text-rose-500 not-italic font-semibold inline-block mt-2">
+                We&apos;re a family.&rdquo;
+              </span>
+            </h3>
+          </div>
+        </Reveal>
 
-        {/* Center Title */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center z-10 drop-shadow-2xl">
-          <motion.h2 
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-4xl md:text-6xl font-medium text-white tracking-tight text-center pointer-events-none"
-          >
-            Let's meet
-          </motion.h2>
-          <motion.svg 
-            initial={{ pathLength: 0, opacity: 0 }}
-            whileInView={{ pathLength: 1, opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="w-48 md:w-64 mt-2 mb-6 drop-shadow-[0_0_15px_rgba(225,29,72,0.5)] pointer-events-none" viewBox="0 0 200 20" fill="none" xmlns="http://www.w3.org/2000/svg"
-          >
-            <path d="M5 15C50 5 150 5 195 15" stroke="#E11D48" strokeWidth="4" strokeLinecap="round" />
-          </motion.svg>
-          {/* <motion.p
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.4 }}
-            className="text-base md:text-xl font-bold uppercase tracking-[0.2em] text-zinc-400 pointer-events-none"
-          >
-            Life at Devopstrio
-          </motion.p> */}
-          {/* <motion.p
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.5 }}
-            className="text-xs md:text-sm text-zinc-500 font-bold max-w-xs mt-2 text-center pointer-events-auto z-20"
-          >
-            Explore our <Link href="/about/life" className="text-rose-500 hover:underline">culture and life</Link> details or read the <Link href="/about/overview" className="text-rose-500 hover:underline">company overview</Link>.
-          </motion.p> */}
+        {/* Scattered Interactive Photos Container */}
+        <div className="relative w-full h-[750px] md:h-[850px] overflow-hidden">
+          
+          {/* Dot Grid Background */}
+          <div className="absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.1)_1.5px,transparent_1.5px)] [background-size:24px_24px] opacity-50 pointer-events-none" />
+          
+          {/* Ambient Glows */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-[radial-gradient(ellipse_at_center,rgba(225,29,72,0.1),transparent_60%)] pointer-events-none blur-3xl z-0" />
+
+          {/* Center Title */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center z-10 drop-shadow-2xl">
+            <motion.h2 
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-4xl md:text-6xl font-medium text-white tracking-tight text-center pointer-events-none font-sans"
+            >
+              Let's meet
+            </motion.h2>
+            <motion.svg 
+              initial={{ pathLength: 0, opacity: 0 }}
+              whileInView={{ pathLength: 1, opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="w-48 md:w-64 mt-2 mb-6 drop-shadow-[0_0_15px_rgba(225,29,72,0.5)] pointer-events-none" viewBox="0 0 200 20" fill="none" xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M5 15C50 5 150 5 195 15" stroke="#E11D48" strokeWidth="4" strokeLinecap="round" />
+            </motion.svg>
+          </div>
+
+          {/* --- SCATTERED IMAGES --- */}
+          {/* Top Left Area */}
+          <PhotoCard src="/webp/assets/About-page/events/Picture1.webp" className="top-[8%] left-[4%]" rotate={-4} />
+          <PhotoCard src="/webp/assets/About-page/events/Picture2.webp" className="top-[25%] left-[12%]" rotate={5} />
+          <PhotoCard src="/webp/assets/About-page/events/Picture3.webp" className="top-[45%] left-[5%]" rotate={-2} />
+          <PhotoCard src="/webp/assets/About-page/events/Picture4.webp" className="top-[12%] left-[22%]" rotate={3} />
+          <PhotoCard src="/webp/assets/About-page/events/Picture5.webp" className="top-[5%] left-[38%]" rotate={-6} />
+          
+          {/* Bottom Left Area */}
+          <PhotoCard src="/webp/assets/About-page/events/Picture6.webp" className="bottom-[40%] left-[8%]" rotate={7} />
+          <PhotoCard src="/webp/assets/About-page/events/Picture7.webp" className="bottom-[20%] left-[4%]" rotate={-3} />
+          <PhotoCard src="/webp/assets/About-page/events/Picture8.webp" className="bottom-[8%] left-[15%]" rotate={4} />
+          <PhotoCard src="/webp/assets/About-page/events/Picture9.webp" className="bottom-[25%] left-[25%]" rotate={-5} />
+          <PhotoCard src="/webp/assets/About-page/events/Picture10.webp" className="bottom-[5%] left-[32%]" rotate={2} />
+
+          {/* Top Right Area */}
+          <PhotoCard src="/webp/assets/About-page/events/Picture11.webp" className="top-[10%] right-[5%]" rotate={4} />
+          <PhotoCard src="/webp/assets/About-page/events/Picture12.webp" className="top-[30%] right-[15%]" rotate={-3} />
+          <PhotoCard src="/webp/assets/About-page/events/Picture13.webp" className="top-[50%] right-[8%]" rotate={6} />
+          <PhotoCard src="/webp/assets/About-page/events/Picture14.webp" className="top-[8%] right-[25%]" rotate={-5} />
+          <PhotoCard src="/webp/assets/About-page/events/Picture15.webp" className="top-[20%] right-[35%]" rotate={2} />
+          <PhotoCard src="/webp/assets/About-page/events/Picture16.webp" className="top-[5%] right-[45%]" rotate={-4} />
+
+          {/* Bottom Right Area */}
+          <PhotoCard src="/webp/assets/About-page/events/Picture17.webp" className="bottom-[35%] right-[5%]" rotate={-7} />
+          <PhotoCard src="/webp/assets/About-page/events/Picture18.webp" className="bottom-[15%] right-[8%]" rotate={5} />
+          <PhotoCard src="/webp/assets/About-page/events/Picture19.webp" className="bottom-[8%] right-[28%]" rotate={-2} />
+          <PhotoCard src="/webp/assets/About-page/events/Picture20.webp" className="bottom-[25%] right-[22%]" rotate={4} />
+          <PhotoCard src="/webp/assets/About-page/events/Picture21.webp" className="bottom-[5%] right-[42%]" rotate={-6} />
+
         </div>
-
-        {/* --- SCATTERED IMAGES --- */}
-        {/* Top Left Area */}
-        <PhotoCard src="/webp/assets/About-page/events/Picture1.webp" className="top-[8%] left-[4%]" rotate={-4} />
-        <PhotoCard src="/webp/assets/About-page/events/Picture2.webp" className="top-[25%] left-[12%]" rotate={5} />
-        <PhotoCard src="/webp/assets/About-page/events/Picture3.webp" className="top-[45%] left-[5%]" rotate={-2} />
-        <PhotoCard src="/webp/assets/About-page/events/Picture4.webp" className="top-[12%] left-[22%]" rotate={3} />
-        <PhotoCard src="/webp/assets/About-page/events/Picture5.webp" className="top-[5%] left-[38%]" rotate={-6} />
-        
-        {/* Bottom Left Area */}
-        <PhotoCard src="/webp/assets/About-page/events/Picture6.webp" className="bottom-[40%] left-[8%]" rotate={7} />
-        <PhotoCard src="/webp/assets/About-page/events/Picture7.webp" className="bottom-[20%] left-[4%]" rotate={-3} />
-        <PhotoCard src="/webp/assets/About-page/events/Picture8.webp" className="bottom-[8%] left-[15%]" rotate={4} />
-        <PhotoCard src="/webp/assets/About-page/events/Picture9.webp" className="bottom-[25%] left-[25%]" rotate={-5} />
-        <PhotoCard src="/webp/assets/About-page/events/Picture10.webp" className="bottom-[5%] left-[32%]" rotate={2} />
-
-        {/* Top Right Area */}
-        <PhotoCard src="/webp/assets/About-page/events/Picture11.webp" className="top-[10%] right-[5%]" rotate={4} />
-        <PhotoCard src="/webp/assets/About-page/events/Picture12.webp" className="top-[30%] right-[15%]" rotate={-3} />
-        <PhotoCard src="/webp/assets/About-page/events/Picture13.webp" className="top-[50%] right-[8%]" rotate={6} />
-        <PhotoCard src="/webp/assets/About-page/events/Picture14.webp" className="top-[8%] right-[25%]" rotate={-5} />
-        <PhotoCard src="/webp/assets/About-page/events/Picture15.webp" className="top-[20%] right-[35%]" rotate={2} />
-        <PhotoCard src="/webp/assets/About-page/events/Picture16.webp" className="top-[5%] right-[45%]" rotate={-4} />
-
-        {/* Bottom Right Area */}
-        <PhotoCard src="/webp/assets/About-page/events/Picture17.webp" className="bottom-[35%] right-[5%]" rotate={-7} />
-        <PhotoCard src="/webp/assets/About-page/events/Picture18.webp" className="bottom-[15%] right-[8%]" rotate={5} />
-        <PhotoCard src="/webp/assets/About-page/events/Picture19.webp" className="bottom-[8%] right-[28%]" rotate={-2} />
-        <PhotoCard src="/webp/assets/About-page/events/Picture20.webp" className="bottom-[25%] right-[22%]" rotate={4} />
-        <PhotoCard src="/webp/assets/About-page/events/Picture21.webp" className="bottom-[5%] right-[42%]" rotate={-6} />
-
       </section>
 
       {/* Lightbox Overlay */}

@@ -262,30 +262,27 @@ export function EmployeeStories() {
 
         </div>
 
-        {/* ── BLOCK 3: Feel-Good Words Masonry Wall (Exact Reference Replica) ─── */}
+        {/* ── BLOCK 3: Feel-Good Words Masonry Wall (Commented Out) ─── */}
+        {/*
         <div className="border-t border-zinc-900/60 pt-24 mb-32">
           <Reveal>
             <div className="text-center max-w-3xl mx-auto mb-16">
-              {/* <span className="text-[11px] font-mono font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+              <span className="text-[11px] font-mono font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
                 GLOBAL COMMUNITY FEEDBACK
-              </span> */}
+              </span>
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight leading-tight mb-4 text-white font-sans uppercase">
                 Feel-Good Words <span className="text-rose-500">From Our Team</span>
               </h2>
-              {/* <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-medium">
+              <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-medium">
                 Hear directly from our engineers, designers, and strategic leads across the globe.
-              </p> */}
+              </p>
             </div>
           </Reveal>
 
-          {/* Grid Layout mimicking the reference layout */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 items-start max-w-6xl mx-auto text-zinc-900">
             
-            {/* ── COLUMN 1 (Left: 4 Cols) ─────────────────────────────── */}
             <div className="lg:col-span-4 flex flex-col gap-8">
               
-              {/* Card 1A: Quote mark top-left + Right Avatar */}
-              <Reveal delay={0.05}>
                 <div className="bg-white text-zinc-900 p-6 rounded-2xl shadow-2xl relative flex items-center justify-between gap-4">
                   <div className="flex-1 text-left">
                     <span className="text-3xl font-serif text-rose-600 block mb-1 font-bold leading-none">“</span>
@@ -299,10 +296,7 @@ export function EmployeeStories() {
                     <img src="/webp/assets/Home-page/client-reviews/client_164.webp" alt="Suryaprakash" className="w-full h-full object-cover" loading="lazy" />
                   </div>
                 </div>
-              </Reveal>
 
-              {/* Card 1B: Paragraph + Bottom Right Avatar */}
-              <Reveal delay={0.1}>
                 <div className="bg-white text-zinc-900 p-6 rounded-2xl shadow-2xl relative text-left">
                   <p className="text-sm sm:text-base text-zinc-800 leading-relaxed font-semibold mb-6">
                     "The supportive culture of precision and rapid experimentation here empowers us to build production-ready software solutions with confidence every single day."
@@ -317,10 +311,7 @@ export function EmployeeStories() {
                     </div>
                   </div>
                 </div>
-              </Reveal>
 
-              {/* Card 1C: Wide Card + Bottom Speech Avatars */}
-              <Reveal delay={0.15}>
                 <div className="bg-white text-zinc-900 p-6 rounded-2xl shadow-2xl text-center relative">
                   <h3 className="text-base sm:text-lg font-bold text-zinc-900 mb-2">I was very impressed!</h3>
                   <p className="text-sm sm:text-base text-zinc-800 leading-relaxed font-semibold mb-3">
@@ -328,7 +319,6 @@ export function EmployeeStories() {
                   </p>
                   <span className="text-xs sm:text-sm font-bold text-zinc-900 block mb-4">Umamaheswari R — Data & Cloud Architect</span>
                   
-                  {/* Floating speech bubble avatars sticking out below */}
                   <div className="flex justify-center items-center gap-2 -mb-10 pt-2">
                     <div className="w-9 h-9 rounded-full border-2 border-white shadow-md overflow-hidden bg-zinc-200">
                       <img src="/webp/assets/Home-page/client-reviews/client_166.webp" alt="Team 1" className="w-full h-full object-cover" loading="lazy" />
@@ -341,17 +331,12 @@ export function EmployeeStories() {
                     </div>
                   </div>
                 </div>
-              </Reveal>
 
             </div>
 
-            {/* ── COLUMN 2 (Middle Left: 3 Cols) ──────────────────────── */}
             <div className="lg:col-span-3 flex flex-col gap-8">
               
-              {/* Card 2A: Top Avatar Cutout + Stars + Bottom Quote Badge */}
-              <Reveal delay={0.1}>
                 <div className="bg-white text-zinc-900 p-6 pt-10 rounded-2xl shadow-2xl text-center relative mt-4">
-                  {/* Top Avatar Notch */}
                   <div className="absolute -top-7 left-1/2 -translate-x-1/2 w-16 h-16 rounded-full border-4 border-white shadow-xl overflow-hidden bg-zinc-100">
                     <img src="/webp/assets/Home-page/client-reviews/client_169.webp" alt="Ooviya" className="w-full h-full object-cover" loading="lazy" />
                   </div>
@@ -369,15 +354,11 @@ export function EmployeeStories() {
                     <span className="text-xs sm:text-sm text-rose-600 font-semibold block">UI/UX Design Specialist</span>
                   </div>
 
-                  {/* Black Quote Badge hanging off bottom right */}
                   <div className="absolute -bottom-4 -right-2 bg-zinc-900 text-white w-10 h-10 rounded-xl shadow-xl flex items-center justify-center font-serif text-2xl font-bold">
                     ”
                   </div>
                 </div>
-              </Reveal>
 
-              {/* Card 2B: Speech Pointer Card */}
-              <Reveal delay={0.2}>
                 <div className="bg-white text-zinc-900 p-6 pt-8 rounded-2xl shadow-2xl text-center relative mt-4">
                   <div className="w-12 h-12 rounded-full overflow-hidden mx-auto -mt-12 border-2 border-white shadow-lg mb-3 bg-zinc-100">
                     <img src="/webp/assets/Home-page/client-reviews/client_170.webp" alt="Punitha" className="w-full h-full object-cover" loading="lazy" />
@@ -392,18 +373,13 @@ export function EmployeeStories() {
                   </p>
                   <span className="text-xs sm:text-sm font-bold text-zinc-900 block">Punitha — Backend Engineer</span>
 
-                  {/* Bottom Speech Triangle Pointer */}
                   <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 w-0 h-0 border-l-[10px] border-l-transparent border-r-[10px] border-r-transparent border-t-[10px] border-t-white" />
                 </div>
-              </Reveal>
 
             </div>
 
-            {/* ── COLUMN 3 (Middle Right: 2.5 Cols) ────────────────────── */}
             <div className="lg:col-span-2 flex flex-col gap-8">
               
-              {/* Card 3A: Tall Photo Card */}
-              <Reveal delay={0.15}>
                 <div className="bg-white text-zinc-900 p-4 rounded-2xl shadow-2xl text-left">
                   <div className="w-full h-56 rounded-xl overflow-hidden mb-4 bg-zinc-100">
                     <img src="/webp/assets/Home-page/client-reviews/client_171.webp" alt="Saravanakumar" className="w-full h-full object-cover" loading="lazy" />
@@ -413,15 +389,11 @@ export function EmployeeStories() {
                   </p>
                   <span className="text-sm sm:text-base font-bold text-zinc-900 block">Saravanakumar S</span>
                 </div>
-              </Reveal>
 
             </div>
 
-            {/* ── COLUMN 4 (Right: 3 Cols) ────────────────────────────── */}
             <div className="lg:col-span-3 flex flex-col gap-8">
               
-              {/* Card 4A: Top Avatar Notch + Good Job */}
-              <Reveal delay={0.1}>
                 <div className="bg-white text-zinc-900 p-6 pt-10 rounded-2xl shadow-2xl text-center relative mt-4">
                   <div className="absolute -top-7 left-1/2 -translate-x-1/2 w-16 h-16 rounded-full border-4 border-white shadow-xl overflow-hidden bg-zinc-100">
                     <img src="/webp/assets/Home-page/client-reviews/client_172.webp" alt="Sermaraja" className="w-full h-full object-cover" loading="lazy" />
@@ -437,10 +409,7 @@ export function EmployeeStories() {
                   </p>
                   <span className="text-xs sm:text-sm font-bold text-zinc-900 block mt-3">Sermaraja V — SRE Lead</span>
                 </div>
-              </Reveal>
 
-              {/* Card 4B: Split Photo Left / Text Right */}
-              <Reveal delay={0.2}>
                 <div className="bg-white text-zinc-900 p-4 rounded-2xl shadow-2xl flex flex-col sm:flex-row items-center gap-4 text-left">
                   <div className="w-full sm:w-28 h-28 rounded-xl overflow-hidden shrink-0 bg-zinc-100">
                     <img src="/webp/assets/Home-page/client-reviews/client_173.webp" alt="Sudalairajan" className="w-full h-full object-cover" loading="lazy" />
@@ -453,10 +422,7 @@ export function EmployeeStories() {
                     <span className="text-xs sm:text-sm font-bold text-rose-600 block">Sudalairajan A • Security Lead</span>
                   </div>
                 </div>
-              </Reveal>
 
-              {/* Card 4C: Text Left / Round Avatar Right */}
-              <Reveal delay={0.25}>
                 <div className="bg-white text-zinc-900 p-5 rounded-2xl shadow-2xl flex items-center justify-between gap-4 text-left">
                   <div className="flex-1">
                     <p className="text-sm sm:text-base text-zinc-800 leading-relaxed font-semibold mb-3">
@@ -469,20 +435,19 @@ export function EmployeeStories() {
                     <img src="/webp/assets/Home-page/client-reviews/client_174.webp" alt="Sagadevan" className="w-full h-full object-cover" loading="lazy" />
                   </div>
                 </div>
-              </Reveal>
 
             </div>
 
           </div>
         </div>
+        */}
 
-        {/* ── BLOCK 3: Student Career CTA Banner ─────────────────────── */}
+        {/* ── BLOCK 3: Student Career CTA Banner (Commented Out) ─────────────────────── */}
+        {/*
         <Reveal>
           <div className="relative mt-24 bg-gradient-to-b from-[#090909] to-black border border-white/[0.08] rounded-[32px] p-6 sm:p-8 md:p-10 flex flex-col md:flex-row items-center gap-8 md:gap-12 shadow-[0_30px_60px_rgba(0,0,0,0.8)] group overflow-visible">
-            {/* Ambient glows inside card */}
             <div className="absolute left-[10%] top-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-[radial-gradient(circle_at_center,rgba(244,63,94,0.06),transparent_70%)] pointer-events-none -z-10" />
 
-            {/* Left Side: Student Boy Image popping half outside top of box */}
             <div className="relative w-56 sm:w-64 md:w-72 lg:w-80 shrink-0 self-end -mt-16 sm:-mt-20 md:-mt-24 lg:-mt-28 -mb-6 md:-mb-10 z-20 pointer-events-none">
               <img src="/webp/assets/careers/CTA.webp"
                 alt="Student Career Devopstrio"
@@ -490,12 +455,7 @@ export function EmployeeStories() {
               loading="lazy" />
             </div>
 
-            {/* Right Side: Copy, Points List & Button */}
             <div className="flex-1 text-left space-y-4 relative z-10 py-2">
-              {/* <span className="inline-block border border-rose-500/30 bg-rose-950/20 px-3.5 py-1 rounded-full text-xs font-mono font-bold text-rose-400 tracking-wider uppercase">
-                INTERNSHIP
-              </span> */}
-
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-white tracking-tight leading-tight font-sans">
                 <span className="text-rose-500">Students</span>, build a<br className="hidden sm:block" /> career with purpose
               </h2>
@@ -504,7 +464,6 @@ export function EmployeeStories() {
                 Our student programs help you make a real impact from day one. Apply today to build skills and unlock possibilities through our dedicated <Link href="/about/internship" className="text-rose-500 hover:underline font-bold">internship program</Link>:
               </p>
 
-              {/* Key points for premium look */}
               <ul className="space-y-2.5 pt-1">
                 {[
                   "Work directly on production-grade global infrastructure projects",
@@ -530,6 +489,7 @@ export function EmployeeStories() {
             </div>
           </div>
         </Reveal>
+        */}
 
       </div>
     </section>

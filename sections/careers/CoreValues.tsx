@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import Link from "next/link";
 import { Reveal } from "@/components/ui/Reveal";
 import { Lightbulb, Target, Users, Star, BookOpen, ShieldCheck } from "lucide-react";
 
@@ -46,7 +45,7 @@ const cultureValues = [
 
 export function CoreValues() {
   return (
-    <section id="values" className="w-full py-24 sm:py-28 bg-[#030303] border-b border-zinc-900/80 relative">
+    <section id="values" className="w-full py-24 sm:py-32 bg-[#030303] border-b border-zinc-900/80 relative font-sans">
       
       {/* Dark Ambient Glow Mesh */}
       <div className="absolute top-1/3 left-1/4 -translate-y-1/2 w-[600px] h-[400px] bg-[radial-gradient(ellipse_at_center,rgba(244,63,94,0.04),transparent_70%)] pointer-events-none" />
@@ -55,33 +54,39 @@ export function CoreValues() {
       <div className="max-w-7xl mx-auto w-full px-6 sm:px-8 lg:px-12 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           
-          {/* Left Column: Sticky Title & Description (Stays Fixed while right side scrolls) */}
+          {/* Left Column: Sticky Title */}
           <div className="lg:col-span-5 flex flex-col items-start text-left lg:sticky lg:top-32 self-start z-20">
             <Reveal delay={0.1}>
-              <h2 className="text-2xl md:text-3xl xl:text-4xl font-semibold tracking-tight leading-tight text-white font-sans mb-5">
-                The principles that <span className="text-rose-500">define us.</span>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight leading-tight text-white font-sans mb-5">
+                The principles that <br className="hidden sm:inline" />
+                <span className="text-rose-500 font-semibold">define us.</span>
               </h2>
-            </Reveal>
-
-            <Reveal delay={0.2}>
-              <p className="text-zinc-300 text-base md:text-lg leading-relaxed font-semibold mb-8">
-                Every decision, product, and partnership at Devopstrio is anchored by a core set of principles our teams live by every day. Read our <Link href="/about/overview" className="text-rose-500 hover:underline font-semibold">company overview</Link> or discover our <Link href="/services" className="text-rose-500 hover:underline font-semibold">digital services</Link>.
-              </p>
             </Reveal>
           </div>
 
-          {/* Right Column: Scrollable Cards (Original Design Preserved) */}
+          {/* Right Column: Scrollable Cards (Description revealed ONLY on hover) */}
           <div className="lg:col-span-7 flex flex-col gap-5 sm:gap-6 w-full">
             {cultureValues.map((val) => {
               return (
                 <div key={val.step} className="w-full">
-                  <div className="bg-[#090C15] hover:bg-[#0E1322] border border-zinc-800/80 hover:border-zinc-700 rounded-xl p-6 sm:p-7 shadow-lg backdrop-blur-xl transition-all duration-300">
-                    <h3 className="text-lg sm:text-xl font-bold text-white mb-2.5 font-sans">
-                      {val.title}
-                    </h3>
-                    <p className="text-zinc-300 text-sm sm:text-base leading-relaxed font-medium">
-                      {val.desc}
-                    </p>
+                  <div className="bg-[#090C15] hover:bg-[#0E1322] border border-zinc-800/80 hover:border-rose-500/40 rounded-2xl p-6 sm:p-8 shadow-lg backdrop-blur-xl transition-all duration-300 group cursor-pointer">
+                    <div className="flex items-center justify-between gap-4">
+                      <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold text-white group-hover:text-rose-400 font-sans tracking-tight transition-colors">
+                        {val.title}
+                      </h3>
+                      <span className="font-sans font-bold text-2xl sm:text-3xl text-rose-500 group-hover:scale-110 transition-transform">
+                        {val.step}
+                      </span>
+                    </div>
+
+                    {/* Description revealed smoothly ONLY on hover */}
+                    <div className="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-all duration-400 ease-in-out opacity-0 group-hover:opacity-100 mt-0 group-hover:mt-3.5">
+                      <div className="overflow-hidden">
+                        <p className="text-sm sm:text-base md:text-lg text-zinc-200 font-semibold leading-relaxed m-0 pt-1">
+                          {val.desc}
+                        </p>
+                      </div>
+                    </div>
                   </div>
                 </div>
               );
