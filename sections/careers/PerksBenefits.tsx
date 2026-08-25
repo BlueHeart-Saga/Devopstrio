@@ -9,49 +9,49 @@ const benefits = [
     name: "Health & Wellness",
     tag: "WE CARE ABOUT YOU",
     desc: "Comprehensive medical cover and mental health support for you and your family.",
-    image: "/assets/careers/careers_industries/Healthcare-and-Life-Sciences.png",
+    image: "/webp/assets/careers/careers_industries/Healthcare-and-Life-Sciences.webp",
   },
   {
     name: "Learning & Certification",
     tag: "CONTINUOUS GROWTH",
     desc: "Sponsored cloud certifications, study guides, and global conference access.",
-    image: "/assets/careers/careers_industries/Education.png",
+    image: "/webp/assets/careers/careers_industries/Education.webp",
   },
   {
     name: "Hybrid & Remote Work",
     tag: "FLEXIBLE LIFE",
     desc: "Flexible schedules blending home office and modern premium workspaces.",
-    image: "/assets/careers/careers_industries/Government-and-Public-Sector.png",
+    image: "/webp/assets/careers/careers_industries/Government-and-Public-Sector.webp",
   },
   {
     name: "Global Opportunities",
     tag: "INTERNATIONAL NETWORK",
     desc: "Opportunities to work across our UK, US, Singapore and India office locations.",
-    image: "/assets/careers/careers_industries/Telecommunications.png",
+    image: "/webp/assets/careers/careers_industries/Telecommunications.webp",
   },
   {
     name: "Generous Leave Policy",
     tag: "WORK-LIFE BALANCE",
     desc: "Generous time off to rest, recharge, travel, and enjoy life fully with your loved ones.",
-    image: "/assets/careers/careers_industries/Media-and-Entertainment.png",
+    image: "/webp/assets/careers/careers_industries/Media-and-Entertainment.webp",
   },
   {
     name: "Performance Rewards",
     tag: "RECOGNITION",
     desc: "Performance spot bonuses, annual payouts, and team achievement milestones.",
-    image: "/assets/careers/careers_industries/Manufacturing.png",
+    image: "/webp/assets/careers/careers_industries/Manufacturing.webp",
   },
   {
     name: "Competitive Payouts",
     tag: "COMPENSATION",
     desc: "Premium industry payouts, annual bonuses, equity options, and referral incentives.",
-    image: "/assets/careers/careers_industries/Banking-and-Finance.png",
+    image: "/webp/assets/careers/careers_industries/Banking-and-Finance.webp",
   },
   {
     name: "Career Progression",
     tag: "ADVANCEMENT",
     desc: "Structured promotion tracks, architecture mentoring, and executive leadership paths.",
-    image: "/assets/careers/careers_industries/Retail-and-E-Commerce.png",
+    image: "/webp/assets/careers/careers_industries/Retail-and-E-Commerce.webp",
   },
 ];
 
@@ -87,7 +87,7 @@ export function PerksBenefits() {
                 <span className="relative inline-block">
                   {/* Arrow image placed directly near Grow word */}
                   <div className="absolute -top-10 -left-20 pointer-events-none select-none hidden sm:block">
-                    <img src="/assets/components/lefttoright.png"
+                    <img src="/webp/assets/components/lefttoright.webp"
                       alt="Arrow indicator"
                       className="w-12 sm:w-14 h-auto object-contain filter drop-shadow-[0_0_15px_rgba(244,63,94,0.4)]"
                     loading="lazy" />

@@ -17,37 +17,37 @@ export function PartnershipBenefits() {
       title: "Faster Time-to-Market",
       desc: "Utilize pre-approved solution blueprints and native integrations, saving months of architecture development.",
       icon: <Zap size={24} />,
-      image: "/assets/common/09ff7846bc8c9998745688779c09f88d-1.png"
+      image: "/webp/assets/common/09ff7846bc8c9998745688779c09f88d-1.webp"
     },
     {
       title: "Certified Engineers",
       desc: "Our delivery teams maintain top-tier cloud certificates, guaranteeing professional configuration.",
       icon: <Award size={24} />,
-      image: "/assets/common/1b065043b6959827c05a0073c93a4a53-1.png"
+      image: "/webp/assets/common/1b065043b6959827c05a0073c93a4a53-1.webp"
     },
     {
       title: "Reduced Project Risk",
       desc: "Deployment plans are reviewed against cloud provider validation frames, securing system uptimes.",
       icon: <ShieldCheck size={24} />,
-      image: "/assets/common/260b761ad40c3ad2acba2c6666894539-1.png"
+      image: "/webp/assets/common/260b761ad40c3ad2acba2c6666894539-1.webp"
     },
     {
       title: "Vendor Best Practices",
       desc: "Direct channel alignment ensures architectures strictly adhere to verified infrastructure frameworks.",
       icon: <Compass size={24} />,
-      image: "/assets/common/2fe7f9184c515b0c515ce38bc8a25efa-1.png"
+      image: "/webp/assets/common/2fe7f9184c515b0c515ce38bc8a25efa-1.webp"
     },
     {
       title: "Enterprise support",
       desc: "Priority ticket escalation queues directly to cloud vendor engineering support centers.",
       icon: <HeartHandshake size={24} />,
-      image: "/assets/common/315e4fdc6263bfd240f36297e376576e-1.png"
+      image: "/webp/assets/common/315e4fdc6263bfd240f36297e376576e-1.webp"
     },
     {
       title: "Early Innovation Access",
       desc: "Get exclusive preview updates to alpha and beta products to build tomorrow's toolkits early.",
       icon: <Layers size={24} />,
-      image: "/assets/common/37b9b888cc479ea7b74d2d9a05c37597-1.png"
+      image: "/webp/assets/common/37b9b888cc479ea7b74d2d9a05c37597-1.webp"
     }
   ];
 

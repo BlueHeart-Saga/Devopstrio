@@ -4,14 +4,14 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 
 const logos = [
-  { name: "Humanex", src: "/assets/Home-page/our-products/logo/humanex.png" },
-  { name: "Brio", src: "/assets/Home-page/our-products/logo/brio.png" },
-  { name: "SafeSign", src: "/assets/Home-page/our-products/logo/safesign.png" },
-  { name: "Prestivo", src: "/assets/Home-page/our-products/logo/Prestivo.png" },
-  { name: "Campix", src: "/assets/Home-page/our-products/logo/Campix.png" },
-  { name: "Homela", src: "/assets/Home-page/our-products/logo/homela.png" },
-  { name: "CareSuite", src: "/assets/Home-page/our-products/logo/Caresuite.png" },
-  { name: "Justivon", src: "/assets/Home-page/our-products/logo/Justivon.png" },
+  { name: "Humanex", src: "/webp/assets/Home-page/our-products/logo/humanex.webp" },
+  { name: "Brio", src: "/webp/assets/Home-page/our-products/logo/brio.webp" },
+  { name: "SafeSign", src: "/webp/assets/Home-page/our-products/logo/safesign.webp" },
+  { name: "Prestivo", src: "/webp/assets/Home-page/our-products/logo/Prestivo.webp" },
+  { name: "Campix", src: "/webp/assets/Home-page/our-products/logo/Campix.webp" },
+  { name: "Homela", src: "/webp/assets/Home-page/our-products/logo/homela.webp" },
+  { name: "CareSuite", src: "/webp/assets/Home-page/our-products/logo/Caresuite.webp" },
+  { name: "Justivon", src: "/webp/assets/Home-page/our-products/logo/Justivon.webp" },
 ];
 
 import Link from "next/link";

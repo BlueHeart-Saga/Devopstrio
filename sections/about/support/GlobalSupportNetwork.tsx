@@ -146,7 +146,7 @@ export const GlobalSupportNetwork = () => {
           className="relative w-full mb-16"
         >
           <div className="relative w-full" style={{ paddingBottom: "38%" }}>
-            <img src="/assets/Contact-page/map/image1.png"
+            <img src="/webp/assets/Contact-page/map/image1.webp"
               alt="World map showing Devopstrio office locations"
               className="absolute inset-0 w-full h-full object-contain opacity-60"
               draggable={false}

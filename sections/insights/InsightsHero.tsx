@@ -41,7 +41,7 @@ export function InsightsHero() {
           <div className="lg:col-span-5 flex items-center justify-center lg:justify-end z-10 w-full">
             <Reveal delay={0.2} className="w-full flex items-center justify-center lg:justify-end">
               <Image
-                src="/assets/herocard/insightspage.png"
+                src="/webp/assets/herocard/insightspage.webp"
                 alt="Global Insights Hub"
                 priority
                 width={480}

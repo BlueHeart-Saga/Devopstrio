@@ -207,7 +207,7 @@ export default function GlobalPresencePage() {
       </div> */}
 
       {/* Divider */}
-      <SvgWaveLine variant="smooth" />
+      {/* <SvgWaveLine variant="smooth" /> */}
 
       {/* 8. Connect With a Regional Team (CTA) */}
       <GlobalCTA />

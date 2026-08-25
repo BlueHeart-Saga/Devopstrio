@@ -8,12 +8,12 @@ import Image from "next/image";
 
 export function AcceleratorsHero() {
   const images = [
-    { id: 0, title: "Cloud Infrastructure", src: "/assets/ecosystem/herocard/acc-frameworks/Group-23.png" },
-    { id: 1, title: "AI Prompt Orchestration", src: "/assets/ecosystem/herocard/acc-frameworks/Group-24.png" },
-    { id: 2, title: "DevSecOps Automation", src: "/assets/ecosystem/herocard/acc-frameworks/Group-25-1.png" },
-    { id: 3, title: "Custom SaaS Boilerplate", src: "/assets/ecosystem/herocard/acc-frameworks/Group-26.png" },
-    { id: 4, title: "Identity Integration", src: "/assets/ecosystem/herocard/acc-frameworks/Group-27-1.png" },
-    { id: 5, title: "Serverless Blueprints", src: "/assets/ecosystem/herocard/acc-frameworks/Group-28.png" }
+    { id: 0, title: "Cloud Infrastructure", src: "/webp/assets/ecosystem/herocard/acc-frameworks/Group-23.webp" },
+    { id: 1, title: "AI Prompt Orchestration", src: "/webp/assets/ecosystem/herocard/acc-frameworks/Group-24.webp" },
+    { id: 2, title: "DevSecOps Automation", src: "/webp/assets/ecosystem/herocard/acc-frameworks/Group-25-1.webp" },
+    { id: 3, title: "Custom SaaS Boilerplate", src: "/webp/assets/ecosystem/herocard/acc-frameworks/Group-26.webp" },
+    { id: 4, title: "Identity Integration", src: "/webp/assets/ecosystem/herocard/acc-frameworks/Group-27-1.webp" },
+    { id: 5, title: "Serverless Blueprints", src: "/webp/assets/ecosystem/herocard/acc-frameworks/Group-28.webp" }
   ];
 
   // Duplicate the array to create a seamless infinite loop marquee effect

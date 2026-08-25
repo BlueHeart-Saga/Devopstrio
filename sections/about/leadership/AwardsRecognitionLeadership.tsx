@@ -16,11 +16,11 @@ const certifications = [
 ];
 
 const complianceLogos = [
-  { name: "ISO/IEC 27001", path: "/assets/About-page/complience-Logos/ISO.png" },
-  { name: "GDPR Compliance", path: "/assets/About-page/complience-Logos/GDPR.png" },
-  { name: "HIPAA Compliant", path: "/assets/About-page/complience-Logos/HIPAA.png" },
-  { name: "NIST Framework", path: "/assets/About-page/complience-Logos/NIST.png" },
-  { name: "FDA Compliant", path: "/assets/About-page/complience-Logos/FDA.png" },
+  { name: "ISO/IEC 27001", path: "/webp/assets/About-page/complience-Logos/ISO.webp" },
+  { name: "GDPR Compliance", path: "/webp/assets/About-page/complience-Logos/GDPR.webp" },
+  { name: "HIPAA Compliant", path: "/webp/assets/About-page/complience-Logos/HIPAA.webp" },
+  { name: "NIST Framework", path: "/webp/assets/About-page/complience-Logos/NIST.webp" },
+  { name: "FDA Compliant", path: "/webp/assets/About-page/complience-Logos/FDA.webp" },
 ];
 
 import Link from "next/link";
@@ -29,19 +29,19 @@ const awards = [
   {
     title: "Cloud & Infrastructure Excellence",
     desc: <>Recognised for high-performance multi-cloud architectures across AWS, Azure, and Google Cloud in our <Link href="/services/cloud-services" className="text-[#E11D48] hover:underline">cloud services</Link> programs.</>,
-    image: "/assets/About-page/awards/dockum.png",
+    image: "/webp/assets/About-page/awards/dockum.webp",
     tag: "CLOUD LEADERSHIP"
   },
   {
     title: "AI & Intelligent Automation",
     desc: <>Awarded for enterprise Generative AI integrations, intelligent agents, and operational workflows under <Link href="/services/ai-data-innovation" className="text-[#E11D48] hover:underline">AI & data innovation</Link>.</>,
-    image: "/assets/About-page/awards/techmm.png",
+    image: "/webp/assets/About-page/awards/techmm.webp",
     tag: "AI INNOVATION"
   },
   {
     title: "Enterprise Delivery Partnership",
     desc: <>Delivering sustainable cost reduction, reliable support, and scale for FTSE 100 leaders through <Link href="/services/devops-automation" className="text-[#E11D48] hover:underline">DevOps automation</Link>.</>,
-    image: "/assets/About-page/awards/tuckim.png",
+    image: "/webp/assets/About-page/awards/tuckim.webp",
     tag: "TRUSTED PARTNER"
   }
 ];

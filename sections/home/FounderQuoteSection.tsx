@@ -63,7 +63,7 @@ export const FounderQuoteSection = () => {
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 sm:w-96 h-72 sm:h-96 rounded-full bg-rose-500/10 blur-[100px] pointer-events-none" />
 
             {/* Large Cutout Portrait without borders */}
-            <img src="/assets/About-page/leader/Mani-sir-sketch_3.png"
+            <img src="/webp/assets/About-page/leader/Mani-sir-sketch_3.webp"
               alt="Manikandan PS - Founder & CEO"
               className="relative z-10 w-full max-w-[320px] sm:max-w-[400px] lg:max-w-[460px] xl:max-w-[500px] h-auto object-contain object-bottom filter contrast-105 drop-shadow-[0_25px_50px_rgba(0,0,0,0.9)]"
             loading="lazy" />

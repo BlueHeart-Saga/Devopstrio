@@ -57,7 +57,7 @@ export function PlatformsHero() {
           <div className="flex flex-col gap-5 justify-end">
             <div className="relative h-44 md:h-52 rounded-[24px] overflow-hidden bg-zinc-950 border border-zinc-850 p-5 flex flex-col justify-end text-left group">
               <Image
-                src="/assets/ecosystem/herocard/platform/4.png"
+                src="/webp/assets/ecosystem/herocard/platform/4.webp"
                 alt="Humanex Workspace"
                 fill
                 className="object-cover opacity-35 group-hover:scale-105 transition-transform duration-500"
@@ -85,7 +85,7 @@ export function PlatformsHero() {
           <div className="flex flex-col justify-end">
             <div className="relative h-76 md:h-[380px] rounded-[24px] overflow-hidden bg-zinc-950 border border-zinc-850 p-6 flex flex-col justify-between text-left group">
               <Image
-                src="/assets/ecosystem/herocard/platform/2.png"
+                src="/webp/assets/ecosystem/herocard/platform/2.webp"
                 alt="Brio Dashboard"
                 fill
                 className="object-cover opacity-40 group-hover:scale-105 transition-transform duration-500"
@@ -133,7 +133,7 @@ export function PlatformsHero() {
           <div className="flex flex-col justify-end">
             <div className="relative h-76 md:h-[380px] rounded-[24px] overflow-hidden bg-zinc-950 border border-zinc-850 p-6 flex flex-col justify-between text-left group">
               <Image
-                src="/assets/ecosystem/herocard/platform/3.png"
+                src="/webp/assets/ecosystem/herocard/platform/3.webp"
                 alt="SafeSign Verification"
                 fill
                 className="object-cover opacity-45 group-hover:scale-105 transition-transform duration-500"
@@ -169,7 +169,7 @@ export function PlatformsHero() {
 
             <div className="relative h-44 md:h-52 rounded-[24px] overflow-hidden bg-zinc-950 border border-zinc-850 p-5 flex flex-col justify-end text-left group">
               <Image
-                src="/assets/ecosystem/herocard/platform/1.png"
+                src="/webp/assets/ecosystem/herocard/platform/1.webp"
                 alt="CareSuite Interface"
                 fill
                 className="object-cover opacity-35 group-hover:scale-105 transition-transform duration-500"

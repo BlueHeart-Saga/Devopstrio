@@ -25,7 +25,7 @@ const alliances = [
   { name: "Microsoft", path: "/assets/Home-page/partners/Microsoft.svg" },
   { name: "Airbnb", path: "/assets/Home-page/partners/Airbnb.svg" },
   { name: "GoDaddy", path: "/assets/Home-page/partners/godaddy.svg" },
-  { name: "ServiceNow", path: "/assets/Home-page/partners/servicenow.png" },
+  { name: "ServiceNow", path: "/webp/assets/Home-page/partners/servicenow.webp" },
   { name: "NHS Health", path: "/assets/Home-page/partners/NHS.svg" },
   { name: "Costco Wholesale", path: "/assets/Home-page/partners/Costco.svg" },
   { name: "BT Group", path: "/assets/Home-page/partners/BT.svg" },

@@ -19,107 +19,107 @@ interface CategoryConfig {
 
 const CATEGORY_MAP: Record<string, CategoryConfig> = {
   "awards": {
-    image: "/assets/Insights-page/herocard/1.png",
+    image: "/webp/assets/Insights-page/herocard/1.webp",
     titlePrefix: "Honors &",
     description: <>Celebrating our industry recognition, benchmark excellence, and the milestones achieved by the Devopstrio engineering teams. Learn more in our <Link href="/about/overview" className="text-rose-500 hover:underline font-bold">company overview</Link>.</>
   },
   "blogs": {
-    image: "/assets/Insights-page/herocard/2.png",
+    image: "/webp/assets/Insights-page/herocard/2.webp",
     titlePrefix: "Technical",
     description: <>Deep dives, expert perspectives, and step-by-step guides on modern cloud architecture, security, and developer experience. Explore our specialized <Link href="/services/devops-automation" className="text-rose-500 hover:underline font-bold">DevOps automation</Link> services.</>
   },
   "blog": {
-    image: "/assets/Insights-page/herocard/2.png",
+    image: "/webp/assets/Insights-page/herocard/2.webp",
     titlePrefix: "Technical",
     description: <>Deep dives, expert perspectives, and step-by-step guides on modern cloud architecture, security, and developer experience. Explore our specialized <Link href="/services/devops-automation" className="text-rose-500 hover:underline font-bold">DevOps automation</Link> services.</>
   },
   "case-studies": {
-    image: "/assets/Insights-page/herocard/3.png",
+    image: "/webp/assets/Insights-page/herocard/3.webp",
     titlePrefix: "Enterprise",
     description: <>Detailed breakdowns of real-world challenges solved, systems migrated, and performance optimized for our clients. Discover our <Link href="/services" className="text-rose-500 hover:underline font-bold">digital services</Link> range.</>
   },
   "case-study": {
-    image: "/assets/Insights-page/herocard/3.png",
+    image: "/webp/assets/Insights-page/herocard/3.webp",
     titlePrefix: "Enterprise",
     description: <>Detailed breakdowns of real-world challenges solved, systems migrated, and performance optimized for our clients. Discover our <Link href="/services" className="text-rose-500 hover:underline font-bold">digital services</Link> range.</>
   },
   "case_study": {
-    image: "/assets/Insights-page/herocard/3.png",
+    image: "/webp/assets/Insights-page/herocard/3.webp",
     titlePrefix: "Enterprise",
     description: <>Detailed breakdowns of real-world challenges solved, systems migrated, and performance optimized for our clients. Discover our <Link href="/services" className="text-rose-500 hover:underline font-bold">digital services</Link> range.</>
   },
   "celebration": {
-    image: "/assets/Insights-page/herocard/4.png",
+    image: "/webp/assets/Insights-page/herocard/4.webp",
     titlePrefix: "Milestones &",
     description: <>Commemorating our growth, team events, and the shared successes that shape the vibrant ecosystem of Devopstrio. Read our <Link href="/about/overview" className="text-rose-500 hover:underline font-bold">about overview</Link> details.</>
   },
   "celebrations": {
-    image: "/assets/Insights-page/herocard/4.png",
+    image: "/webp/assets/Insights-page/herocard/4.webp",
     titlePrefix: "Milestones &",
     description: <>Commemorating our growth, team events, and the shared successes that shape the vibrant ecosystem of Devopstrio. Read our <Link href="/about/overview" className="text-rose-500 hover:underline font-bold">about overview</Link> details.</>
   },
   "client": {
-    image: "/assets/Insights-page/herocard/5.png",
+    image: "/webp/assets/Insights-page/herocard/5.webp",
     titlePrefix: "Partner &",
     description: <>Stories of collaboration, digital transformation journeys, and how we empower our clients to achieve market-leading velocity. Read about our <Link href="/about/partnerships-certifications" className="text-rose-500 hover:underline font-bold">partnerships and certifications</Link>.</>
   },
   "clients": {
-    image: "/assets/Insights-page/herocard/5.png",
+    image: "/webp/assets/Insights-page/herocard/5.webp",
     titlePrefix: "Partner &",
     description: <>Stories of collaboration, digital transformation journeys, and how we empower our clients to achieve market-leading velocity. Read about our <Link href="/about/partnerships-certifications" className="text-rose-500 hover:underline font-bold">partnerships and certifications</Link>.</>
   },
   "events": {
-    image: "/assets/Insights-page/herocard/6.png",
+    image: "/webp/assets/Insights-page/herocard/6.webp",
     titlePrefix: "Industry",
     description: <>Stay updated with our upcoming webinars, hackathons, international conferences, and community-driven knowledge sharing. Learn about our <Link href="/about/overview" className="text-rose-500 hover:underline font-bold">company overview</Link>.</>
   },
   "event": {
-    image: "/assets/Insights-page/herocard/6.png",
+    image: "/webp/assets/Insights-page/herocard/6.webp",
     titlePrefix: "Industry",
     description: <>Stay updated with our upcoming webinars, hackathons, international conferences, and community-driven knowledge sharing. Learn about our <Link href="/about/overview" className="text-rose-500 hover:underline font-bold">company overview</Link>.</>
   },
   "impact-metrics": {
-    image: "/assets/Insights-page/herocard/7.png",
+    image: "/webp/assets/Insights-page/herocard/7.webp",
     titlePrefix: "Performance &",
     description: <>Quantitative analysis, scalability benchmarks, cost-optimization metrics, and measurable business value delivered. See our <Link href="/services/cloud-services" className="text-rose-500 hover:underline font-bold">cloud services</Link> for scaling.</>
   },
   "impact_metrics": {
-    image: "/assets/Insights-page/herocard/7.png",
+    image: "/webp/assets/Insights-page/herocard/7.webp",
     titlePrefix: "Performance &",
     description: <>Quantitative analysis, scalability benchmarks, cost-optimization metrics, and measurable business value delivered. See our <Link href="/services/cloud-services" className="text-rose-500 hover:underline font-bold">cloud services</Link> for scaling.</>
   },
   "team-culture": {
-    image: "/assets/Insights-page/herocard/8.png",
+    image: "/webp/assets/Insights-page/herocard/8.webp",
     titlePrefix: "People &",
     description: <>A look inside Devopstrio. Discover our remote-first philosophies, engineering principles, and continuous learning initiatives. Explore <Link href="/about/life" className="text-rose-500 hover:underline font-bold">culture and life</Link> at Devopstrio.</>
   },
   "team_culture": {
-    image: "/assets/Insights-page/herocard/8.png",
+    image: "/webp/assets/Insights-page/herocard/8.webp",
     titlePrefix: "People &",
     description: <>A look inside Devopstrio. Discover our remote-first philosophies, engineering principles, and continuous learning initiatives. Explore <Link href="/about/life" className="text-rose-500 hover:underline font-bold">culture and life</Link> at Devopstrio.</>
   },
   "white-paper": {
-    image: "/assets/Insights-page/herocard/9.png",
+    image: "/webp/assets/Insights-page/herocard/9.webp",
     titlePrefix: "Research &",
     description: <>In-depth research papers, architectural blueprints, and compliance frameworks authored by senior platform engineers. Read about our <Link href="/about/overview" className="text-rose-500 hover:underline font-bold">company overview</Link>.</>
   },
   "white-papers": {
-    image: "/assets/Insights-page/herocard/9.png",
+    image: "/webp/assets/Insights-page/herocard/9.webp",
     titlePrefix: "Research &",
     description: <>In-depth research papers, architectural blueprints, and compliance frameworks authored by senior platform engineers. Read about our <Link href="/about/overview" className="text-rose-500 hover:underline font-bold">company overview</Link>.</>
   },
   "white_paper": {
-    image: "/assets/Insights-page/herocard/9.png",
+    image: "/webp/assets/Insights-page/herocard/9.webp",
     titlePrefix: "Research &",
     description: <>In-depth research papers, architectural blueprints, and compliance frameworks authored by senior platform engineers. Read about our <Link href="/about/overview" className="text-rose-500 hover:underline font-bold">company overview</Link>.</>
   },
   "whitepapers": {
-    image: "/assets/Insights-page/herocard/9.png",
+    image: "/webp/assets/Insights-page/herocard/9.webp",
     titlePrefix: "Research &",
     description: <>In-depth research papers, architectural blueprints, and compliance frameworks authored by senior platform engineers. Read about our <Link href="/about/overview" className="text-rose-500 hover:underline font-bold">company overview</Link>.</>
   },
   "whitepaper": {
-    image: "/assets/Insights-page/herocard/9.png",
+    image: "/webp/assets/Insights-page/herocard/9.webp",
     titlePrefix: "Research &",
     description: <>In-depth research papers, architectural blueprints, and compliance frameworks authored by senior platform engineers. Read about our <Link href="/about/overview" className="text-rose-500 hover:underline font-bold">company overview</Link>.</>
   }
@@ -139,7 +139,7 @@ const getCategoryConfig = (slug: string): CategoryConfig => {
   }
   
   return {
-    image: "/assets/Insights-page/herocard/Blogs.png",
+    image: "/webp/assets/Insights-page/herocard/Blogs.webp",
     titlePrefix: "Insights &",
     description: <>Exploring all resources, guides, and engineering documentation published under the '{slug}' category. Learn about our <Link href="/about/overview" className="text-rose-500 hover:underline font-bold">company overview</Link>.</>
   };

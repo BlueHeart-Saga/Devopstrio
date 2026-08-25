@@ -151,7 +151,7 @@ const techStack = [
       {
         name: "AWS",
         desc: "Scalable, high-availability cloud setups.",
-        icon: "/assets/Devopstrio_Partners/aws.png"
+        icon: "/webp/assets/Devopstrio_Partners/aws.webp"
       },
       {
         name: "Docker & K8s",

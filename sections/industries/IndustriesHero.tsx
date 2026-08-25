@@ -22,10 +22,10 @@ export function IndustriesHero({
       We design, build and scale industrial-grade <Link href="/services/digital-transformation" className="text-rose-500 hover:underline">digital architectures</Link> that <Link href="/services/devops-automation" className="text-rose-500 hover:underline">automate field logistics</Link>, optimize resource planning, and enforce extreme <Link href="/services/cloud-services" className="text-rose-500 hover:underline">telemetry safety standards</Link>.
     </>
   ),
-  bgImage = "/assets/industries_hero_bg.png"
+  bgImage = "/webp/assets/industries_hero_bg.webp"
 }: IndustriesHeroProps) {
   return (
-    <section className="w-full relative overflow-hidden bg-black text-white min-h-[550px] lg:min-h-[640px] flex items-center border-b border-zinc-900/60 -mt-24">
+    <section className="w-full relative overflow-hidden bg-black text-white min-h-[550px] lg:min-h-[640px] flex items-center -mt-24">
       
       {/* Cover Background Image */}
       <div className="absolute inset-0 z-0">
@@ -63,21 +63,21 @@ export function IndustriesHero({
           </Reveal>
 
           {/* Subtext description */}
-          <Reveal delay={0.2}>
+          {/* <Reveal delay={0.2}>
             <p className="text-zinc-200 text-base md:text-lg leading-relaxed font-medium max-w-xl mb-10">
               {subtitle}
             </p>
-          </Reveal>
+          </Reveal> */}
 
           {/* CTA Connect Button */}
-          <Reveal delay={0.3}>
+          {/* <Reveal delay={0.3}>
             <Link 
               href="/contact#contact-form" 
               className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full text-xs sm:text-sm font-semibold uppercase tracking-wider text-white bg-rose-600 hover:bg-rose-700 transition-all duration-300 hover:shadow-[0_8px_32px_rgba(244,63,94,0.2)]"
             >
               Connect with us <ArrowUpRight size={14} className="stroke-[2.5]" />
             </Link>
-          </Reveal>
+          </Reveal> */}
 
         </div>
       </div>

@@ -163,7 +163,7 @@ export function OurAdvantage() {
 
               {/* Image Container (Clipped at the bottom, transparent at the top) */}
               <div className="relative w-full rounded-b-full overflow-hidden flex items-end">
-                <img src="/assets/Home-page/advandage1.png"
+                <img src="/webp/assets/Home-page/advandage1.webp"
                   alt="DevopsTrio Advantage"
                   className="w-full h-auto object-contain object-bottom select-none relative z-10 block"
                 loading="lazy" />

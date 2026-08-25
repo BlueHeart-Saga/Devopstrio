@@ -11,64 +11,64 @@ const industryTabs = [
     name: "Banking & Finance",
     title: "Banking & Finance",
     description: "Achieve your business goals faster with secure custom solutions, from mobile banking apps and payment systems to fraud detection tools. Serve customers better and meet strict regulatory requirements.",
-    image: "/assets/Industries-page/slider/Bank-and-finance.png",
-    mobileImage: "/assets/Industries-page/industries/Banking-and-Finance.png"
+    image: "/webp/assets/Industries-page/slider/Bank-and-finance.webp",
+    mobileImage: "/webp/assets/Industries-page/industries/Banking-and-Finance.webp"
   },
   {
     id: "healthcare",
     name: "Healthcare & Life Sciences",
     title: "Healthcare & Life Sciences",
     description: "Enable high-performance clinical data pipeline processing, secure HIPAA-compliant telehealth applications, and multi-cloud collaboration spaces.",
-    image: "/assets/Industries-page/slider/Healthcare-and-Life-Sciences.png",
-    mobileImage: "/assets/Industries-page/industries/Healthcare-and-Life-Sciences.png"
+    image: "/webp/assets/Industries-page/slider/Healthcare-and-Life-Sciences.webp",
+    mobileImage: "/webp/assets/Industries-page/industries/Healthcare-and-Life-Sciences.webp"
   },
   {
     id: "retail",
     name: "Retail & E-Commerce",
     title: "Retail & E-Commerce",
     description: "Deploy omnichannel commerce recommendation engines, high-speed product checkout paths, and dynamic warehouse inventory syncs.",
-    image: "/assets/Industries-page/slider/Retail-and-E-Commerce.png",
-    mobileImage: "/assets/Industries-page/industries/Retail-and-E-Commerce.png"
+    image: "/webp/assets/Industries-page/slider/Retail-and-E-Commerce.webp",
+    mobileImage: "/webp/assets/Industries-page/industries/Retail-and-E-Commerce.webp"
   },
   {
     id: "manufacturing",
     name: "Manufacturing",
     title: "Manufacturing & Industry 4.0",
     description: "Connect factory-floor IoT sensory networks, orchestrate predictive maintenance logs, and establish cloud-first supply chain monitoring.",
-    image: "/assets/Industries-page/slider/Manufacturing.png",
-    mobileImage: "/assets/Industries-page/industries/Manufacturing.png"
+    image: "/webp/assets/Industries-page/slider/Manufacturing.webp",
+    mobileImage: "/webp/assets/Industries-page/industries/Manufacturing.webp"
   },
   {
     id: "telecom",
     name: "Telecommunications",
     title: "Telecommunications",
     description: "Orchestrate high-density OSS/BSS platforms, scalable 5G network integration nodes, and real-time telecom analytics clusters.",
-    image: "/assets/Industries-page/slider/Telecommunication.png",
-    mobileImage: "/assets/Industries-page/industries/Telecommunications.png"
+    image: "/webp/assets/Industries-page/slider/Telecommunication.webp",
+    mobileImage: "/webp/assets/Industries-page/industries/Telecommunications.webp"
   },
   {
     id: "media",
     name: "Media & Entertainment",
     title: "Media & Entertainment",
     description: "Deliver high-bandwidth VOD streaming architectures, intelligent asset distribution pipelines, and real-time digital rendering lobbies.",
-    image: "/assets/Industries-page/slider/Media-and-Entertainment.png",
-    mobileImage: "/assets/Industries-page/industries/Media-and-Entertainment.png"
+    image: "/webp/assets/Industries-page/slider/Media-and-Entertainment.webp",
+    mobileImage: "/webp/assets/Industries-page/industries/Media-and-Entertainment.webp"
   },
   {
     id: "education",
     name: "Education",
     title: "Education & EdTech",
     description: "Deploy collaborative learning management ecosystems, remote interactive classrooms, and secure academic credential validation nodes.",
-    image: "/assets/Industries-page/slider/Education.png",
-    mobileImage: "/assets/Industries-page/industries/Education.png"
+    image: "/webp/assets/Industries-page/slider/Education.webp",
+    mobileImage: "/webp/assets/Industries-page/industries/Education.webp"
   },
   {
     id: "government",
     name: "Government & Public Sector",
     title: "Government & Public Sector",
     description: "Modernize national security portals, establish cloud migration frameworks, and meet strict federal regulatory and database security compliance.",
-    image: "/assets/Industries-page/slider/Government-and-Public-Sector.png",
-    mobileImage: "/assets/Industries-page/industries/Government-and-Public-Sector.png"
+    image: "/webp/assets/Industries-page/slider/Government-and-Public-Sector.webp",
+    mobileImage: "/webp/assets/Industries-page/industries/Government-and-Public-Sector.webp"
   }
 ];
 
@@ -84,7 +84,7 @@ export function IndustryExpertise() {
         <div className="text-center max-w-4xl mx-auto mb-10 relative">
           {/* Left-to-right arrow PNG pointing to header */}
           <div className="absolute -top-6 sm:-top-8 md:-top-10 left-0 sm:-left-10 md:-left-14 lg:-left-20 z-20 pointer-events-none select-none">
-            <img src="/assets/components/lefttoright.png"
+            <img src="/webp/assets/components/lefttoright.webp"
               alt="Left to right arrow"
               className="w-12 sm:w-16 md:w-20 h-auto object-contain filter drop-shadow-[0_0_15px_rgba(244,63,94,0.4)]"
             loading="lazy" />

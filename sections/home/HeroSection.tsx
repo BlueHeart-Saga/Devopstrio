@@ -41,7 +41,7 @@ export function HeroSection() {
       secondaryBtn: { text: "Contact Us", href: "/contact#contact-form" },
       image: "/assets/Home-page/homehero/updated_hero/Punitha.svg",
       name: "Punitha",
-      signatureImage: "/assets/sign/Punitha.png"
+      signatureImage: "/webp/assets/sign/Punitha.webp"
     },
     {
       eyebrow: "Software & Quality Engineering",
@@ -62,7 +62,7 @@ export function HeroSection() {
       secondaryBtn: { text: "Contact Us", href: "/contact#contact-form" },
       image: "/assets/Home-page/homehero/Ananthalakshmi.svg",
       name: "Ananthalakshmi",
-      signatureImage: "/assets/sign/ananthalakshmi.png"
+      signatureImage: "/webp/assets/sign/ananthalakshmi.webp"
     },
     {
       eyebrow: "Data & Cloud Infrastructure",
@@ -83,7 +83,7 @@ export function HeroSection() {
       secondaryBtn: { text: "Contact Us", href: "/contact#contact-form" },
       image: "/assets/Home-page/homehero/Umamaheswari-R.svg",
       name: "Umamaheswari R",
-      signatureImage: "/assets/sign/uma.png"
+      signatureImage: "/webp/assets/sign/uma.webp"
     },
     {
       eyebrow: "Digital Products & Platforms",
@@ -104,7 +104,7 @@ export function HeroSection() {
       secondaryBtn: { text: "Contact Us", href: "/contact#contact-form" },
       image: "/assets/Home-page/homehero/updated_hero/Subbiah-Muthu.M.svg",
       name: "Subbiah Muthu M",
-      signatureImage: "/assets/sign/subbiah.png"
+      signatureImage: "/webp/assets/sign/subbiah.webp"
     },
     {
       eyebrow: "End-to-End Technology Services",
@@ -125,7 +125,7 @@ export function HeroSection() {
       secondaryBtn: { text: "Contact Us", href: "/contact#contact-form" },
       image: "/assets/Home-page/homehero/updated_hero/Kishore.svg",
       name: "Kishore",
-      signatureImage: "/assets/sign/kishore.png"
+      signatureImage: "/webp/assets/sign/kishore.webp"
     },
     {
       eyebrow: "Ecosystem & Strategic Alliances",
@@ -146,7 +146,7 @@ export function HeroSection() {
       secondaryBtn: { text: "Contact Us", href: "/contact#contact-form" },
       image: "/assets/Home-page/homehero/updated_hero/Thanga-Lakshmi.svg",
       name: "Thanga Lakshmi",
-      signatureImage: "/assets/sign/thangalakshmi.png"
+      signatureImage: "/webp/assets/sign/thangalakshmi.webp"
     },
     {
       eyebrow: "AI & Data Innovation",
@@ -167,7 +167,7 @@ export function HeroSection() {
       secondaryBtn: { text: "Contact Us", href: "/contact#contact-form" },
       image: "/assets/Home-page/homehero/updated_hero/Sermaraj2.svg",
       name: "Sermaraj",
-      signatureImage: "/assets/sign/serma.png"
+      signatureImage: "/webp/assets/sign/serma.webp"
     },
     {
       eyebrow: "Platform & Cloud Operations",
@@ -188,7 +188,7 @@ export function HeroSection() {
       secondaryBtn: { text: "Contact Us", href: "/contact#contact-form" },
       image: "/assets/Home-page/homehero/Hamsavarthiny.P.svg",
       name: "Hamsavarthiny P",
-      signatureImage: "/assets/sign/hamsa.png"
+      signatureImage: "/webp/assets/sign/hamsa.webp"
     },
     {
       eyebrow: "Elite Global Technology Partner",
@@ -209,7 +209,7 @@ export function HeroSection() {
       secondaryBtn: { text: "Contact Us", href: "/contact#contact-form" },
       image: "/assets/Home-page/homehero/updated_hero/Sahadevan1.svg",
       name: "Sagadevan",
-      signatureImage: "/assets/sign/saga.png"
+      signatureImage: "/webp/assets/sign/saga.webp"
     },
     {
       eyebrow: "Modern DevOps & Automation",
@@ -230,7 +230,7 @@ export function HeroSection() {
       secondaryBtn: { text: "Contact Us", href: "/contact#contact-form" },
       image: "/assets/Home-page/homehero/Suryaprakash-s.svg",
       name: "Suryaprakash S",
-      signatureImage: "/assets/sign/surya.png"
+      signatureImage: "/webp/assets/sign/surya.webp"
     },
     {
       eyebrow: "Industry-Focused Expertise",
@@ -251,7 +251,7 @@ export function HeroSection() {
       secondaryBtn: { text: "Contact Us", href: "/contact#contact-form" },
       image: "/assets/Home-page/homehero/updated_hero/Oviya.svg",
       name: "Oviya",
-      signatureImage: "/assets/sign/oviya.png"
+      signatureImage: "/webp/assets/sign/oviya.webp"
     },
     {
       eyebrow: "Enterprise Application Delivery",
@@ -272,7 +272,7 @@ export function HeroSection() {
       secondaryBtn: { text: "Contact Us", href: "/contact#contact-form" },
       image: "/assets/Home-page/homehero/Saravanakumar.s.svg",
       name: "Saravanakumar S",
-      signatureImage: "/assets/sign/saravana.png"
+      signatureImage: "/webp/assets/sign/saravana.webp"
     }
   ];
 

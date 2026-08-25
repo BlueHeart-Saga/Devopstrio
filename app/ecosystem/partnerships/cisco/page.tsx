@@ -390,7 +390,7 @@ export default function CiscoPartnershipPage() {
                   <div className="relative group/logo w-[120px] h-[120px] sm:w-[130px] sm:h-[130px] rounded-3xl bg-[#09090b]/80 border border-zinc-800 hover:border-sky-500/30 flex items-center justify-center p-5 shadow-2xl backdrop-blur-md transition-all duration-500 hover:-translate-y-1">
                     <div className="absolute inset-0 bg-gradient-to-br from-sky-500/[0.03] to-transparent rounded-3xl opacity-0 group-hover/logo:opacity-100 transition-opacity" />
                     <div className="absolute -inset-1 rounded-3xl bg-gradient-to-r from-sky-600 to-blue-500 opacity-0 group-hover/logo:opacity-20 blur-md transition-opacity" />
-                    <img src="/assets/logo/logo.png"
+                    <img src="/webp/assets/logo/logo.webp"
                       alt="Devopstrio Logo"
                       className="w-full h-auto max-h-[85%] object-contain select-none filter brightness-105"
                     loading="lazy" />
@@ -573,13 +573,13 @@ export default function CiscoPartnershipPage() {
       <PartnerCertifications 
         title="Cisco Certifications"
         certifications={[
-            { image: "/assets/ecosystem/Cisco_Awards/image-187.png" },
-            { image: "/assets/ecosystem/Cisco_Awards/image-188.png" },
-            { image: "/assets/ecosystem/Cisco_Awards/image-189.png" },
-            { image: "/assets/ecosystem/Cisco_Awards/image-190.png" },
-            { image: "/assets/ecosystem/Cisco_Awards/image-191.png" },
-            { image: "/assets/ecosystem/Cisco_Awards/image-192.png" },
-            { image: "/assets/ecosystem/Cisco_Awards/image-193.png" }
+            { image: "/webp/assets/ecosystem/Cisco_Awards/image-187.webp" },
+            { image: "/webp/assets/ecosystem/Cisco_Awards/image-188.webp" },
+            { image: "/webp/assets/ecosystem/Cisco_Awards/image-189.webp" },
+            { image: "/webp/assets/ecosystem/Cisco_Awards/image-190.webp" },
+            { image: "/webp/assets/ecosystem/Cisco_Awards/image-191.webp" },
+            { image: "/webp/assets/ecosystem/Cisco_Awards/image-192.webp" },
+            { image: "/webp/assets/ecosystem/Cisco_Awards/image-193.webp" }
           ]}
       />
 

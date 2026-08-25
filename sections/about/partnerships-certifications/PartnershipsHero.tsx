@@ -10,12 +10,12 @@ export function PartnershipsHero() {
       {/* Background Image Layer: bgimage.png */}
       <div className="absolute inset-0 z-0 pointer-events-none select-none overflow-hidden">
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/assets/About-page/hero/bgimage.png"
+        <img src="/webp/assets/About-page/hero/bgimage.webp"
           alt="Hero Background"
           className="w-full h-full object-cover object-center opacity-75 filter contrast-110 brightness-110"
           loading="eager"
           onError={(e) => {
-            e.currentTarget.src = "/assets/About-page/hero/bgimage.png";
+            e.currentTarget.src = "/webp/assets/About-page/hero/bgimage.webp";
           }}
         />
         {/* Soft Ambient Overlay Gradients for High Visibility & Readability */}

@@ -25,7 +25,7 @@ const products: Product[] = [
     desc: "AI-powered property management SaaS connecting landlords, tenants, and agents on a unified platform with smart lease tracking and payment automation.",
     features: ["Lease Tracking", "Payment Flows", "Tenant Portals"],
     tags: ["AI-Powered", "Multi-tenant", "Real Estate"],
-    image: "/assets/Home-page/our-products/homela.png",
+    image: "/webp/assets/Home-page/our-products/homela.webp",
     link: "https://homela.devopstrio.co.uk/"
   },
   {
@@ -34,7 +34,7 @@ const products: Product[] = [
     desc: "Enterprise HR platform for talent acquisition, onboarding, performance telemetry, and automated candidate score analytics for distributed teams.",
     features: ["Talent Scoring", "Telemetry", "Onboarding"],
     tags: ["HR Platform", "Workforce", "Analytics"],
-    image: "/assets/Home-page/our-products/humanex.png",
+    image: "/webp/assets/Home-page/our-products/humanex.webp",
     link: "https://humanex.devopstrio.co.uk/"
   },
   {
@@ -43,7 +43,7 @@ const products: Product[] = [
     desc: "Next-generation payment orchestration platform and telemetry dashboard visualizing active multi-cloud resource allocations and transaction routing.",
     features: ["Multi-Gateway", "WebSockets", "Telemetry"],
     tags: ["Payments", "FinTech", "Routing"],
-    image: "/assets/Home-page/our-products/brio.png",
+    image: "/webp/assets/Home-page/our-products/brio.webp",
     link: "https://brio.devopstrio.co.uk/"
   },
   {
@@ -52,7 +52,7 @@ const products: Product[] = [
     desc: "Adaptive learning management and ERP platform with modular full-stack components for financial dashboards, inventory, and automated audit runs.",
     features: ["AI LMS", "Financial Dashboards", "Auditing"],
     tags: ["EdTech", "AI Learning", "ERP"],
-    image: "/assets/Home-page/our-products/prestivo.png",
+    image: "/webp/assets/Home-page/our-products/prestivo.webp",
     link: "https://prestivo.devopstrio.co.uk/"
   },
   {
@@ -61,7 +61,7 @@ const products: Product[] = [
     desc: "Unified media transformation pipelines and campaign intelligence platform with global CDN caching rules, optimization engines, and asset analytics.",
     features: ["CDN Caching", "Asset Pipelines", "Analytics"],
     tags: ["MarTech", "Analytics", "Omnichannel"],
-    image: "/assets/Home-page/our-products/campix.png",
+    image: "/webp/assets/Home-page/our-products/campix.webp",
     link: "https://campix.devopstrio.co.uk/"
   },
   {
@@ -70,7 +70,7 @@ const products: Product[] = [
     desc: "HIPAA-compliant telehealth SaaS connecting patients, clinicians, and labs with secure WebRTC video, e-prescriptions, and encrypted EHR sync.",
     features: ["HIPAA Compliant", "WebRTC Video", "EHR Sync"],
     tags: ["HealthTech", "Telehealth", "Clinical"],
-    image: "/assets/Home-page/our-products/caresuite.png",
+    image: "/webp/assets/Home-page/our-products/caresuite.webp",
     link: "https://caresuite.devopstrio.co.uk/"
   },
   {
@@ -79,7 +79,7 @@ const products: Product[] = [
     desc: "Enterprise e-signature and document lifecycle security platform with zero-trust validation, multi-party workflows, and verifiable audit trails.",
     features: ["Zero-Trust", "Multi-party Sign", "Audit Trails"],
     tags: ["LegalTech", "eSignature", "Security"],
-    image: "/assets/Home-page/our-products/safesign.png",
+    image: "/webp/assets/Home-page/our-products/safesign.webp",
     link: "https://safesign.devopstrio.co.uk/"
   },
   {
@@ -88,7 +88,7 @@ const products: Product[] = [
     desc: "End-to-end legal case management platform for law firms and corporate legal teams — supporting litigation workflows, e-discovery, and billing engines.",
     features: ["Case Discovery", "Court Filings", "Billing Engine"],
     tags: ["LegalTech", "Case Mgmt", "Azure"],
-    image: "/assets/Home-page/our-products/justivon.png",
+    image: "/webp/assets/Home-page/our-products/justivon.webp",
     link: "https://justivon-d9fbcpgzf0ancchq.southindia-01.azurewebsites.net/"
   }
 ];

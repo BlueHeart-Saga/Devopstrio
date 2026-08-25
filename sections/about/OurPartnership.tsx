@@ -7,10 +7,10 @@ import { Reveal } from "@/components/ui/Reveal";
 
 // Curated tech & partner icons from project assets
 const row1 = [
-  { name: "AWS", path: "/assets/Devopstrio_Partners/aws.png" },
+  { name: "AWS", path: "/webp/assets/Devopstrio_Partners/aws.webp" },
   { name: "Google Cloud", path: "/assets/Tech-icons/google-cloud-logo_svgstack_com_28371780931185.svg" },
   { name: "Microsoft", path: "/assets/Home-page/partners/Microsoft.svg" },
-  { name: "ServiceNow", path: "/assets/Home-page/partners/servicenow.png" },
+  { name: "ServiceNow", path: "/webp/assets/Home-page/partners/servicenow.webp" },
   { name: "Cloudflare", path: "/assets/Tech-icons/cloudflare-logo-icon_svgstack_com_28071780931769.svg" },
 ];
 
@@ -42,7 +42,7 @@ const partnerLogos = [
   { src: "/assets/Home-page/partners/BT.svg", alt: "BT" },
   { src: "/assets/Home-page/partners/bp-logo.svg", alt: "BP" },
   { src: "/assets/Home-page/partners/NHS.svg", alt: "NHS" },
-  { src: "/assets/Home-page/partners/Boviet_Solar.png", alt: "Boviet Solar" },
+  { src: "/webp/assets/Home-page/partners/Boviet_Solar.webp", alt: "Boviet Solar" },
   { src: "/assets/Home-page/partners/gxo.svg", alt: "GXO" },
   { src: "/assets/Home-page/partners/ASDA.svg", alt: "ASDA" },
   { src: "/assets/Home-page/partners/Microsoft.svg", alt: "Microsoft" },

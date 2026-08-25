@@ -870,7 +870,7 @@ export function Navbar() {
         >
           {/* Brand Logo & Name (Improved Logo Size) */}
           <Link href="/" className="flex items-center gap-1.5 group" onMouseEnter={() => setActiveMenu(null)}>
-            <img src="/assets/logo/logo.png"
+            <img src="/webp/assets/logo/logo.webp"
               alt="Devopstrio logo"
               className="w-12 h-12 transition-transform duration-300 group-hover:scale-105 object-contain"
             loading="lazy" />
@@ -902,7 +902,7 @@ export function Navbar() {
 
                     {/* Left Callout Box (Services Interactive Blur & Expand - Theme Matched) */}
                     <div className="relative overflow-hidden rounded-2xl border border-zinc-800/90 p-6 flex flex-col justify-between min-h-[340px] h-full group bg-[#09090C] shadow-2xl transition-all duration-500 hover:border-red-500/50 cursor-pointer">
-                      <img src="/assets/wavebg/navbar/servicesdrop.jpeg"
+                      <img src="/webp/assets/wavebg/navbar/servicesdrop.webp"
                         alt="Enterprise Acceleration"
                         className="absolute inset-0 w-full h-full object-cover opacity-95 group-hover:opacity-70 group-hover:blur-md scale-100 group-hover:scale-105 transition-all duration-700 ease-out pointer-events-none"
                       loading="lazy" />
@@ -1043,7 +1043,7 @@ export function Navbar() {
 
                     {/* Left Callout Box (Industries Interactive Blur & Expand) */}
                     <div className="relative overflow-hidden rounded-2xl border border-zinc-800/90 p-6 flex flex-col justify-between min-h-[320px] h-full group bg-[#09090C] shadow-2xl transition-all duration-500 hover:border-red-500/50 cursor-pointer">
-                      <img src="/assets/wavebg/navbar/industriesdrop.png"
+                      <img src="/webp/assets/wavebg/navbar/industriesdrop.webp"
                         alt="Compliance First"
                         className="absolute inset-0 w-full h-full object-cover opacity-95 group-hover:opacity-70 group-hover:blur-md scale-100 group-hover:scale-105 transition-all duration-700 ease-out pointer-events-none"
                       loading="lazy" />
@@ -1144,7 +1144,7 @@ export function Navbar() {
 
                     {/* Left Callout Box */}
                     <div className="relative overflow-hidden rounded-2xl border border-zinc-800/90 p-6 flex flex-col justify-between min-h-[320px] h-full group bg-[#09090C] shadow-2xl transition-all duration-500 hover:border-red-500/50 cursor-pointer">
-                      <img src="/assets/wavebg/navbar/ecosystemdrop.png"
+                      <img src="/webp/assets/wavebg/navbar/ecosystemdrop.webp"
                         alt="Ecosystem Infrastructure"
                         className="absolute inset-0 w-full h-full object-cover opacity-95 group-hover:opacity-70 group-hover:blur-md scale-100 group-hover:scale-105 transition-all duration-700 ease-out pointer-events-none"
                       loading="lazy" />
@@ -1293,7 +1293,7 @@ export function Navbar() {
 
                     {/* Visual Promo Column (Insights Interactive Blur & Expand) */}
                     <div className="relative overflow-hidden rounded-2xl border border-zinc-800/90 p-6 flex flex-col justify-between min-h-[320px] h-full group bg-[#09090C] shadow-2xl transition-all duration-500 hover:border-red-500/50 cursor-pointer">
-                      <img src="/assets/wavebg/navbar/insightsdrop.png"
+                      <img src="/webp/assets/wavebg/navbar/insightsdrop.webp"
                         alt="Thought Leadership"
                         className="absolute inset-0 w-full h-full object-cover opacity-95 group-hover:opacity-70 group-hover:blur-md scale-100 group-hover:scale-105 transition-all duration-700 ease-out pointer-events-none"
                       loading="lazy" />
@@ -1461,7 +1461,7 @@ export function Navbar() {
 
                     {/* Left Callout Box (About Interactive Blur & Expand) */}
                     <div className="relative overflow-hidden rounded-2xl border border-zinc-800/90 p-6 flex flex-col justify-between min-h-[320px] h-full group bg-[#09090C] shadow-2xl transition-all duration-500 hover:border-red-500/50 cursor-pointer">
-                      <img src="/assets/wavebg/navbar/aboutdrop.png"
+                      <img src="/webp/assets/wavebg/navbar/aboutdrop.webp"
                         alt="Our Foundation"
                         className="absolute inset-0 w-full h-full object-cover opacity-95 group-hover:opacity-70 group-hover:blur-md scale-100 group-hover:scale-105 transition-all duration-700 ease-out pointer-events-none"
                       loading="lazy" />

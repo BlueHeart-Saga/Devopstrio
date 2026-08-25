@@ -64,33 +64,33 @@ export function LifeAtDevopstrio() {
 
         {/* --- SCATTERED IMAGES --- */}
         {/* Top Left Area */}
-        <PhotoCard src="/assets/About-page/events/Picture1.png" className="top-[8%] left-[4%]" rotate={-4} />
-        <PhotoCard src="/assets/About-page/events/Picture2.png" className="top-[25%] left-[12%]" rotate={5} />
-        <PhotoCard src="/assets/About-page/events/Picture3.png" className="top-[45%] left-[5%]" rotate={-2} />
-        <PhotoCard src="/assets/About-page/events/Picture4.png" className="top-[12%] left-[22%]" rotate={3} />
-        <PhotoCard src="/assets/About-page/events/Picture5.png" className="top-[5%] left-[38%]" rotate={-6} />
+        <PhotoCard src="/webp/assets/About-page/events/Picture1.webp" className="top-[8%] left-[4%]" rotate={-4} />
+        <PhotoCard src="/webp/assets/About-page/events/Picture2.webp" className="top-[25%] left-[12%]" rotate={5} />
+        <PhotoCard src="/webp/assets/About-page/events/Picture3.webp" className="top-[45%] left-[5%]" rotate={-2} />
+        <PhotoCard src="/webp/assets/About-page/events/Picture4.webp" className="top-[12%] left-[22%]" rotate={3} />
+        <PhotoCard src="/webp/assets/About-page/events/Picture5.webp" className="top-[5%] left-[38%]" rotate={-6} />
         
         {/* Bottom Left Area */}
-        <PhotoCard src="/assets/About-page/events/Picture6.png" className="bottom-[40%] left-[8%]" rotate={7} />
-        <PhotoCard src="/assets/About-page/events/Picture7.png" className="bottom-[20%] left-[4%]" rotate={-3} />
-        <PhotoCard src="/assets/About-page/events/Picture8.png" className="bottom-[8%] left-[15%]" rotate={4} />
-        <PhotoCard src="/assets/About-page/events/Picture9.png" className="bottom-[25%] left-[25%]" rotate={-5} />
-        <PhotoCard src="/assets/About-page/events/Picture10.png" className="bottom-[5%] left-[32%]" rotate={2} />
+        <PhotoCard src="/webp/assets/About-page/events/Picture6.webp" className="bottom-[40%] left-[8%]" rotate={7} />
+        <PhotoCard src="/webp/assets/About-page/events/Picture7.webp" className="bottom-[20%] left-[4%]" rotate={-3} />
+        <PhotoCard src="/webp/assets/About-page/events/Picture8.webp" className="bottom-[8%] left-[15%]" rotate={4} />
+        <PhotoCard src="/webp/assets/About-page/events/Picture9.webp" className="bottom-[25%] left-[25%]" rotate={-5} />
+        <PhotoCard src="/webp/assets/About-page/events/Picture10.webp" className="bottom-[5%] left-[32%]" rotate={2} />
 
         {/* Top Right Area */}
-        <PhotoCard src="/assets/About-page/events/Picture11.png" className="top-[10%] right-[5%]" rotate={4} />
-        <PhotoCard src="/assets/About-page/events/Picture12.png" className="top-[30%] right-[15%]" rotate={-3} />
-        <PhotoCard src="/assets/About-page/events/Picture13.png" className="top-[50%] right-[8%]" rotate={6} />
-        <PhotoCard src="/assets/About-page/events/Picture14.png" className="top-[8%] right-[25%]" rotate={-5} />
-        <PhotoCard src="/assets/About-page/events/Picture15.png" className="top-[20%] right-[35%]" rotate={2} />
-        <PhotoCard src="/assets/About-page/events/Picture16.png" className="top-[5%] right-[45%]" rotate={-4} />
+        <PhotoCard src="/webp/assets/About-page/events/Picture11.webp" className="top-[10%] right-[5%]" rotate={4} />
+        <PhotoCard src="/webp/assets/About-page/events/Picture12.webp" className="top-[30%] right-[15%]" rotate={-3} />
+        <PhotoCard src="/webp/assets/About-page/events/Picture13.webp" className="top-[50%] right-[8%]" rotate={6} />
+        <PhotoCard src="/webp/assets/About-page/events/Picture14.webp" className="top-[8%] right-[25%]" rotate={-5} />
+        <PhotoCard src="/webp/assets/About-page/events/Picture15.webp" className="top-[20%] right-[35%]" rotate={2} />
+        <PhotoCard src="/webp/assets/About-page/events/Picture16.webp" className="top-[5%] right-[45%]" rotate={-4} />
 
         {/* Bottom Right Area */}
-        <PhotoCard src="/assets/About-page/events/Picture17.png" className="bottom-[35%] right-[5%]" rotate={-7} />
-        <PhotoCard src="/assets/About-page/events/Picture18.png" className="bottom-[15%] right-[8%]" rotate={5} />
-        <PhotoCard src="/assets/About-page/events/Picture19.png" className="bottom-[8%] right-[28%]" rotate={-2} />
-        <PhotoCard src="/assets/About-page/events/Picture20.png" className="bottom-[25%] right-[22%]" rotate={4} />
-        <PhotoCard src="/assets/About-page/events/Picture21.png" className="bottom-[5%] right-[42%]" rotate={-6} />
+        <PhotoCard src="/webp/assets/About-page/events/Picture17.webp" className="bottom-[35%] right-[5%]" rotate={-7} />
+        <PhotoCard src="/webp/assets/About-page/events/Picture18.webp" className="bottom-[15%] right-[8%]" rotate={5} />
+        <PhotoCard src="/webp/assets/About-page/events/Picture19.webp" className="bottom-[8%] right-[28%]" rotate={-2} />
+        <PhotoCard src="/webp/assets/About-page/events/Picture20.webp" className="bottom-[25%] right-[22%]" rotate={4} />
+        <PhotoCard src="/webp/assets/About-page/events/Picture21.webp" className="bottom-[5%] right-[42%]" rotate={-6} />
 
       </section>
 

@@ -87,7 +87,7 @@ export function BusinessOverview() {
               {/* RIGHT IMAGE - Premium Landscape Rectangle with Reduced Border Gap */}
               <div className="p-2.5 sm:p-3.5 lg:p-4 flex items-center justify-center bg-zinc-950/30 border-t lg:border-t-0 lg:border-l border-zinc-900/80">
                 <div className="relative w-full aspect-[16/10] rounded-2xl overflow-hidden border border-zinc-800/80 shadow-2xl group/img">
-                  <img src="/assets/Home-page/business-overview/overview-lifestyle.png"
+                  <img src="/webp/assets/Home-page/business-overview/overview-lifestyle.webp"
                     alt="Devopstrio Digital Transformation"
                     className="w-full h-full object-cover transition-transform duration-700 group-hover/img:scale-[1.03]"
                   loading="lazy" />

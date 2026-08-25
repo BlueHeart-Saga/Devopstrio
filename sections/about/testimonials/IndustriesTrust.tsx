@@ -5,19 +5,19 @@ import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 
 const industries = [
-  { image: "/assets/Home-page/industries-icon/Banking.png", name: "Banking & Finance", projects: "300+ projects" },
-  { image: "/assets/Home-page/industries-icon/Finacial.png", name: "Financial Services", projects: "150+ projects" },
-  { image: "/assets/Home-page/industries-icon/healthcare.png", name: "Healthcare", projects: "200+ projects" },
-  { image: "/assets/Home-page/industries-icon/retails-ecommerce.png", name: "Retail & E-Commerce", projects: "250+ projects" },
-  { image: "/assets/Home-page/industries-icon/manufacture.png", name: "Manufacturing", projects: "120+ projects" },
-  { image: "/assets/Home-page/industries-icon/media-entertainments.png", name: "Media & Entertainment", projects: "100+ projects" },
-  { image: "/assets/Home-page/industries-icon/tel-com.png", name: "Telecommunications", projects: "90+ projects" },
-  { image: "/assets/Home-page/industries-icon/education.png", name: "Education", projects: "80+ projects" },
+  { image: "/webp/assets/Home-page/industries-icon/Banking.webp", name: "Banking & Finance", projects: "300+ projects" },
+  { image: "/webp/assets/Home-page/industries-icon/Finacial.webp", name: "Financial Services", projects: "150+ projects" },
+  { image: "/webp/assets/Home-page/industries-icon/healthcare.webp", name: "Healthcare", projects: "200+ projects" },
+  { image: "/webp/assets/Home-page/industries-icon/retails-ecommerce.webp", name: "Retail & E-Commerce", projects: "250+ projects" },
+  { image: "/webp/assets/Home-page/industries-icon/manufacture.webp", name: "Manufacturing", projects: "120+ projects" },
+  { image: "/webp/assets/Home-page/industries-icon/media-entertainments.webp", name: "Media & Entertainment", projects: "100+ projects" },
+  { image: "/webp/assets/Home-page/industries-icon/tel-com.webp", name: "Telecommunications", projects: "90+ projects" },
+  { image: "/webp/assets/Home-page/industries-icon/education.webp", name: "Education", projects: "80+ projects" },
 ];
 
 const techPartners = [
   { name: "Microsoft Azure", logo: "/assets/Tech-icons/microsoft-azure-logo_svgstack_com_7501780931055.svg" },
-  { name: "AWS", logo: "/assets/Devopstrio_Partners/aws.png" },
+  { name: "AWS", logo: "/webp/assets/Devopstrio_Partners/aws.webp" },
   { name: "Google Cloud", logo: "/assets/Tech-icons/google-cloud-logo_svgstack_com_28371780931185.svg" },
   { name: "Oracle", logo: "/assets/Tech-icons/oracle-logo_svgstack_com_28991780931429.svg" },
   { name: "Docker", logo: "/assets/Tech-icons/docker-logo_svgstack_com_28191780931128.svg" },
@@ -25,11 +25,11 @@ const techPartners = [
 ];
 
 const certifications = [
-  { name: "ISO", image: "/assets/Awards/ISO.png" },
-  { name: "Cyber Essentials", image: "/assets/Awards/2021-2022_Cyber_Essentials_Certification.png" },
-  { name: "MS Gold Status", image: "/assets/Awards/MS_Gold_Status.png" },
-  { name: "G-Cloud Framework", image: "/assets/Awards/G-Cloud_11_Framework_Award.png" },
-  { name: "IBM Gold Partner", image: "/assets/Awards/IBM_Gold_Partner.png" },
+  { name: "ISO", image: "/webp/assets/Awards/ISO.webp" },
+  { name: "Cyber Essentials", image: "/webp/assets/Awards/2021-2022_Cyber_Essentials_Certification.webp" },
+  { name: "MS Gold Status", image: "/webp/assets/Awards/MS_Gold_Status.webp" },
+  { name: "G-Cloud Framework", image: "/webp/assets/Awards/G-Cloud_11_Framework_Award.webp" },
+  { name: "IBM Gold Partner", image: "/webp/assets/Awards/IBM_Gold_Partner.webp" },
 ];
 
 export const IndustriesTrust = () => {

@@ -154,7 +154,7 @@ export function SupportFAQ() {
         {/* Below FAQ callout */}
         <Reveal delay={0.2}>
           <div className="border border-zinc-900 bg-zinc-950/40 p-6 sm:p-8 rounded-2xl flex flex-col sm:flex-row justify-between items-center gap-6">
-            <p className="text-zinc-400 text-xs md:text-sm font-semibold max-w-2xl">
+            <p className="text-zinc-300 text-sm sm:text-base md:text-lg font-semibold max-w-2xl leading-relaxed">
               Still have questions about our support plans or SLAs? Reach out to our engineering helpdesk — we respond to every query personally.
             </p>
             <a 

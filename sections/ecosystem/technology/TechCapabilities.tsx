@@ -34,15 +34,15 @@ interface PillarDetails {
 }
 
 const pillarBgImages: Record<string, string> = {
-  ai: "/assets/ecosystem/grid/technology-stack-page_categories-Grid/Generated-Design.png",
-  cloud: "/assets/ecosystem/grid/technology-stack-page_categories-Grid/Generated-Design-1.png",
-  software: "/assets/ecosystem/grid/technology-stack-page_categories-Grid/Generated-Design-2.png",
-  data: "/assets/ecosystem/grid/technology-stack-page_categories-Grid/Generated-Design-3.png",
-  devops: "/assets/ecosystem/grid/technology-stack-page_categories-Grid/Generated-Design-4.png",
-  security: "/assets/ecosystem/grid/technology-stack-page_categories-Grid/Generated-Design-5.png",
-  platform: "/assets/ecosystem/grid/technology-stack-page_categories-Grid/Generated-Design-6.png",
-  quality: "/assets/ecosystem/grid/technology-stack-page_categories-Grid/Generated-Design-7.png",
-  emerging: "/assets/ecosystem/grid/technology-stack-page_categories-Grid/Generated-Design-8.png",
+  ai: "/webp/assets/ecosystem/grid/technology-stack-page_categories-Grid/Generated-Design.webp",
+  cloud: "/webp/assets/ecosystem/grid/technology-stack-page_categories-Grid/Generated-Design-1.webp",
+  software: "/webp/assets/ecosystem/grid/technology-stack-page_categories-Grid/Generated-Design-2.webp",
+  data: "/webp/assets/ecosystem/grid/technology-stack-page_categories-Grid/Generated-Design-3.webp",
+  devops: "/webp/assets/ecosystem/grid/technology-stack-page_categories-Grid/Generated-Design-4.webp",
+  security: "/webp/assets/ecosystem/grid/technology-stack-page_categories-Grid/Generated-Design-5.webp",
+  platform: "/webp/assets/ecosystem/grid/technology-stack-page_categories-Grid/Generated-Design-6.webp",
+  quality: "/webp/assets/ecosystem/grid/technology-stack-page_categories-Grid/Generated-Design-7.webp",
+  emerging: "/webp/assets/ecosystem/grid/technology-stack-page_categories-Grid/Generated-Design-8.webp",
 };
 
 export function TechCapabilities() {

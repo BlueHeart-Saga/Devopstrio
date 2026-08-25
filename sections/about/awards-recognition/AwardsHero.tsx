@@ -10,7 +10,7 @@ export function AwardsHero() {
       {/* Normal Full-Brightness Background Image */}
       <div className="absolute inset-0 z-0 pointer-events-none select-none">
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/assets/About-page/leadership/hero.png" 
+        <img src="/webp/assets/About-page/leadership/hero.webp" 
           alt="Awards Background"
           className="w-full h-full object-cover object-center opacity-100"
         loading="eager" />

@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-08-25T03:45:59.667Z",
+  "totalFilesScanned": 714,
+  "filesModified": 0,
+  "totalReferencesUpdated": 0,
+  "updatedReferences": [],
+  "remainingReferences": [
+    {
+      "file": "lib/utils.ts",
+      "reference": "/assets/hero.png",
+      "reason": "Corresponding .webp file does not exist in public/webp/"
+    }
+  ]
+}

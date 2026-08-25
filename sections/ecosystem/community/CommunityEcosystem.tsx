@@ -26,7 +26,7 @@ export function CommunityEcosystem() {
       points: ["Developer Meetups", "Architecture Discussions", "Technical Roundtables", "Engineering Forums", "Innovation Challenges", "Community Projects"],
       subTitle: "Ecosystem Members",
       subPoints: ["Cloud Engineers", "DevOps Engineers", "Platform Engineers", "Security Engineers", "AI Engineers", "Data Engineers"],
-      image: "/assets/ecosystem/grid/community-talent-network_categories-Grid/Generated-Design.png"
+      image: "/webp/assets/ecosystem/grid/community-talent-network_categories-Grid/Generated-Design.webp"
     },
     {
       id: "uni-programs",
@@ -36,7 +36,7 @@ export function CommunityEcosystem() {
       points: ["Campus Innovation Labs", "Industry Workshops", "Internship Programs", "Final Year Projects", "Technical Bootcamps", "Research Partnerships"],
       subTitle: "Highlights",
       subPoints: ["Guest Lectures", "Hackathons", "Career Development Programs", "Industry Mentoring"],
-      image: "/assets/ecosystem/grid/community-talent-network_categories-Grid/Generated-Design-1.png"
+      image: "/webp/assets/ecosystem/grid/community-talent-network_categories-Grid/Generated-Design-1.webp"
     },
     {
       id: "talent",
@@ -46,7 +46,7 @@ export function CommunityEcosystem() {
       points: ["Cloud Talent Network", "DevOps Talent Network", "AI Talent Network", "Data Talent Network", "Security Talent Network", "SRE Talent Network"],
       subTitle: "Key Roles",
       subPoints: ["Cloud Architects", "Automation Engineers", "GenAI Engineers", "Platform Advocates"],
-      image: "/assets/ecosystem/grid/community-talent-network_categories-Grid/Generated-Design-2.png"
+      image: "/webp/assets/ecosystem/grid/community-talent-network_categories-Grid/Generated-Design-2.webp"
     },
     {
       id: "open-source",
@@ -56,7 +56,7 @@ export function CommunityEcosystem() {
       points: ["Cloud Modules", "Terraform Templates", "Kubernetes Operators", "AI Starter Kits", "DevOps Toolkits", "Security Frameworks"],
       subTitle: "Repository Stats",
       subPoints: ["25+ Open Source Assets", "1000+ GitHub Stars", "500+ Contributions"],
-      image: "/assets/ecosystem/grid/community-talent-network_categories-Grid/Generated-Design-3.png"
+      image: "/webp/assets/ecosystem/grid/community-talent-network_categories-Grid/Generated-Design-3.webp"
     },
     {
       id: "certs",
@@ -66,7 +66,7 @@ export function CommunityEcosystem() {
       points: ["Azure Certifications", "AWS Certifications", "Kubernetes Certifications", "DevOps Certifications", "Security Certifications", "AI Certifications"],
       subTitle: "Benefits Offered",
       subPoints: ["Sponsored Training", "Certification Paths", "Internal Academies", "Hands-On Labs"],
-      image: "/assets/ecosystem/grid/community-talent-network_categories-Grid/Generated-Design-4.png"
+      image: "/webp/assets/ecosystem/grid/community-talent-network_categories-Grid/Generated-Design-4.webp"
     },
     {
       id: "events",
@@ -76,7 +76,7 @@ export function CommunityEcosystem() {
       points: ["Technology Summits", "Cloud Days", "AI Innovation Forums", "Security Conferences", "Engineering Meetups", "Architecture Workshops"],
       subTitle: "Statistics",
       subPoints: ["100+ Events Hosted", "5000+ Attendees", "50+ Industry Speakers"],
-      image: "/assets/ecosystem/grid/community-talent-network_categories-Grid/Generated-Design-5.png"
+      image: "/webp/assets/ecosystem/grid/community-talent-network_categories-Grid/Generated-Design-5.webp"
     },
     {
       id: "mentorship",
@@ -86,7 +86,7 @@ export function CommunityEcosystem() {
       points: ["Senior Architect Mentorship", "Engineering Leadership Program", "Graduate Mentorship", "Women In Technology", "Fast-Track Intern Programs", "Peer Tech Circles"],
       subTitle: "Advisory Focus",
       subPoints: ["Career Milestones", "System Architectures", "Public Speaking", "Tooling Hardening"],
-      image: "/assets/ecosystem/grid/community-talent-network_categories-Grid/Generated-Design-6.png"
+      image: "/webp/assets/ecosystem/grid/community-talent-network_categories-Grid/Generated-Design-6.webp"
     },
     {
       id: "advocacy",
@@ -96,7 +96,7 @@ export function CommunityEcosystem() {
       points: ["Technical Blogging", "Conference Speaking", "Community Training", "Knowledge Sharing", "Open Source Evangelism", "Community Forums Support"],
       subTitle: "Outreach Channels",
       subPoints: ["Tech Forums", "GitHub issues", "Guild newsletters", "Local developer hubs"],
-      image: "/assets/ecosystem/grid/community-talent-network_categories-Grid/Generated-Design-7.png"
+      image: "/webp/assets/ecosystem/grid/community-talent-network_categories-Grid/Generated-Design-7.webp"
     },
     {
       id: "future-talent",
@@ -106,7 +106,7 @@ export function CommunityEcosystem() {
       points: ["Graduate Engineers", "Internships", "Apprenticeships", "Innovation Challenges", "Research Fellowships", "Tech Bootcamps"],
       subTitle: "Pipeline Handoffs",
       subPoints: ["Learn", "Build", "Mentor", "Certify", "Deploy", "Lead"],
-      image: "/assets/ecosystem/grid/community-talent-network_categories-Grid/Generated-Design-8.png"
+      image: "/webp/assets/ecosystem/grid/community-talent-network_categories-Grid/Generated-Design-8.webp"
     },
     {
       id: "research",
@@ -116,7 +116,7 @@ export function CommunityEcosystem() {
       points: ["Artificial Intelligence", "Cloud Computing", "Cybersecurity", "Data Analytics", "Platform Engineering", "Automation"],
       subTitle: "Key Outcomes",
       subPoints: ["Whitepapers", "R&D Proof of Concepts", "Security Baselines", "Academic Grants"],
-      image: "/assets/ecosystem/grid/community-talent-network_categories-Grid/Generated-Design-9.png"
+      image: "/webp/assets/ecosystem/grid/community-talent-network_categories-Grid/Generated-Design-9.webp"
     }
   ];
 

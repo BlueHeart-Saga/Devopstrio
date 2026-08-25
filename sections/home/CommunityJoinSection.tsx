@@ -6,23 +6,23 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Star } from "lucide-react";
 
 const clientPhotos = [
-  "/assets/Home-page/client-reviews/image-164.png",
-  "/assets/Home-page/client-reviews/image-165.png",
-  "/assets/Home-page/client-reviews/image-166.png",
-  "/assets/Home-page/client-reviews/image-167.png",
-  "/assets/Home-page/client-reviews/image-168.png",
-  "/assets/Home-page/client-reviews/image-169.png",
-  "/assets/Home-page/client-reviews/image-170.png",
-  "/assets/Home-page/client-reviews/image-171.png",
-  "/assets/Home-page/client-reviews/image-172.png",
-  "/assets/Home-page/client-reviews/image-173.png",
-  "/assets/Home-page/client-reviews/image-174.png",
-  "/assets/Home-page/client-reviews/image-175.png",
-  "/assets/Home-page/client-reviews/image-176.png",
-  "/assets/Home-page/client-reviews/image-177.png",
-  "/assets/Home-page/client-reviews/image-178.png",
-  "/assets/Home-page/client-reviews/image-180.png",
-  "/assets/Home-page/client-reviews/image-181.png",
+  "/webp/assets/Home-page/client-reviews/image-164.webp",
+  "/webp/assets/Home-page/client-reviews/image-165.webp",
+  "/webp/assets/Home-page/client-reviews/image-166.webp",
+  "/webp/assets/Home-page/client-reviews/image-167.webp",
+  "/webp/assets/Home-page/client-reviews/image-168.webp",
+  "/webp/assets/Home-page/client-reviews/image-169.webp",
+  "/webp/assets/Home-page/client-reviews/image-170.webp",
+  "/webp/assets/Home-page/client-reviews/image-171.webp",
+  "/webp/assets/Home-page/client-reviews/image-172.webp",
+  "/webp/assets/Home-page/client-reviews/image-173.webp",
+  "/webp/assets/Home-page/client-reviews/image-174.webp",
+  "/webp/assets/Home-page/client-reviews/image-175.webp",
+  "/webp/assets/Home-page/client-reviews/image-176.webp",
+  "/webp/assets/Home-page/client-reviews/image-177.webp",
+  "/webp/assets/Home-page/client-reviews/image-178.webp",
+  "/webp/assets/Home-page/client-reviews/image-180.webp",
+  "/webp/assets/Home-page/client-reviews/image-181.webp",
 ];
 
 const clientReviews = [
@@ -321,7 +321,7 @@ export function CommunityJoinSection() {
 
       {/* Decorative top-left arrow image (Matching Reference Style) */}
       <div className="absolute top-10 sm:top-14 md:top-16 left-4 sm:left-8 z-20 pointer-events-none select-none">
-        <img src="/assets/components/top-to-buttom-side-Arrowmid.png"
+        <img src="/webp/assets/components/top-to-buttom-side-Arrowmid.webp"
           alt="Top connector arrow"
           className="w-12 sm:w-16 md:w-20 h-auto object-contain opacity-75 filter drop-shadow-[0_0_12px_rgba(244,63,94,0.35)]"
         loading="lazy" />

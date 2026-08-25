@@ -10,56 +10,56 @@ const reasons = [
     title: "Enterprise-Ready Technology Expertise",
     desc: "We combine Artificial Intelligence, Cloud Engineering, DevOps, Cybersecurity, and Modern Software Development under one roof—giving organizations access to a complete technology partner capable of delivering complex digital transformation initiatives from strategy to execution.",
     badge: "✓ AI, Cloud, Security & Software Engineering Specialists",
-    image: "/assets/About-page/tech_architecture.png"
+    image: "/webp/assets/About-page/tech_architecture.webp"
   },
   {
     num: "02",
     title: "Business Outcomes Over Deliverables",
     desc: "Technology is only valuable when it creates measurable impact. We focus on reducing costs, improving operational efficiency, accelerating delivery cycles, and unlocking new revenue opportunities through practical, results-driven solutions.",
     badge: "✓ Built to Improve Performance, Efficiency & Growth",
-    image: "/assets/About-page/ai_dashboard.png"
+    image: "/webp/assets/About-page/ai_dashboard.webp"
   },
   {
     num: "03",
     title: "End-to-End Technology Partnership",
     desc: "From consulting and architecture to development, deployment, monitoring, and ongoing support, we manage the entire technology lifecycle. One partner. One team. Complete accountability.",
     badge: "✓ Strategy → Build → Deploy → Manage",
-    image: "/assets/About-page/consulting_team.png"
+    image: "/webp/assets/About-page/consulting_team.webp"
   },
   {
     num: "04",
     title: "Cloud & Infrastructure Excellence",
     desc: "Our engineers design, migrate, modernize, and optimize cloud environments across Azure, AWS, Google Cloud, and hybrid infrastructures—ensuring secure, scalable, and future-ready platforms.",
     badge: "✓ Cloud Migration • DevOps • Infrastructure as Code",
-    image: "/assets/About-page/cloud_servers.png"
+    image: "/webp/assets/About-page/cloud_servers.webp"
   },
   {
     num: "05",
     title: "Security Embedded by Design",
     desc: "Security, compliance, governance, and monitoring are integrated into every solution we build. We help organizations protect critical systems, maintain compliance, and operate with confidence.",
     badge: "✓ Security-First Engineering Approach",
-    image: "/assets/About-page/cyber_security.png"
+    image: "/webp/assets/About-page/cyber_security.webp"
   },
   {
     num: "06",
     title: "Global Delivery. Local Commitment.",
     desc: "With global delivery capabilities and round-the-clock support, we provide the agility of a modern technology partner while maintaining the responsiveness and accountability businesses expect.",
     badge: "✓ 24×7 Operations • Multi-Region Delivery",
-    image: "/assets/About-page/global_network.png"
+    image: "/webp/assets/About-page/global_network.webp"
   },
   {
     num: "07",
     title: "Industry-Focused Innovation",
     desc: "We understand the unique challenges of Financial Services, Healthcare, Telecommunications, Logistics, Retail, Manufacturing, and Public Sector organizations, allowing us to deliver solutions aligned with real-world business needs.",
     badge: "✓ Deep Domain Knowledge Across Key Industries",
-    image: "/assets/About-page/operations_room.png"
+    image: "/webp/assets/About-page/operations_room.webp"
   },
   {
     num: "08",
     title: "Built for Long-Term Success",
     desc: "We don't just deliver projects—we build lasting partnerships. Our focus is helping organizations continuously innovate, adapt, and scale through evolving technologies and changing market demands.",
     badge: "✓ Trusted Technology Partner for Sustainable Growth",
-    image: "/assets/About-page/mission/image.png"
+    image: "/webp/assets/About-page/mission/image.webp"
   }
 ];
 
@@ -229,7 +229,7 @@ export function WhyChoose() {
         {/* Banner Image */}
         <Reveal className="mt-8 w-full max-w-5xl mx-auto">
           <div className="w-full relative overflow-hidden">
-            <img src="/assets/About-page/why-choose/banner.png" 
+            <img src="/webp/assets/About-page/why-choose/banner.webp" 
               alt="Corporate Advantage Banner" 
               className="w-full h-auto select-none pointer-events-none"
             loading="lazy" />

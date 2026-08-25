@@ -1634,8 +1634,11 @@ export function DetailedServices({ hideExploreButton = false }: DetailedServices
             {/* <span className="text-xs sm:text-sm font-semibold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
               ENTERPRISE INTEGRATION SERVICES
             </span> */}
-            <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight mb-5 text-white font-sans">
-              Discover & Explore All Our <span className="text-rose-500 font-semibold">Enterprise Services</span>
+            <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-relaxed text-white font-sans flex flex-wrap items-center justify-center gap-x-3 mb-5">
+              <span className="bg-rose-500 text-white font-semibold px-4 py-1 mx-1.5 rounded-xl inline-block align-middle shadow-[0_4px_20px_rgba(244,63,94,0.35)]">
+                EVOLVE
+              </span>{" "}
+              <span>Your Enterprise with Full-Spectrum Capabilities</span>
             </h2>
             {/* <p className="text-zinc-300 text-base md:text-lg leading-relaxed max-w-2xl mx-auto font-medium">
               Explore our extensive practice areas, <Link href="/about" className="text-rose-500 hover:underline">expert engineering capabilities</Link>, and seamless technology integrations. We build, secure, and accelerate your entire <Link href="/services/devops-automation" className="text-rose-500 hover:underline">digital delivery pipeline</Link> with precision.

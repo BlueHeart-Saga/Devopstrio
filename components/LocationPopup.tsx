@@ -15,7 +15,7 @@ const offices: Office[] = [
     city: "London", 
     region: "(Head Office)", 
     details: "128 City Road, London, United Kingdom\nEC1V 2NX", 
-    image: "/assets/locations/london.png",
+    image: "/webp/assets/locations/london.webp",
     gradient: "from-rose-500 to-red-500",
     mapUrl: "https://www.google.com/maps/place/Devopstrio+Ltd/@51.5272749,-0.0913978,646m/data=!3m2!1e3!4b1!4m6!3m5!1s0x48761de53ed821b3:0x76b8b1beb8ae8846!8m2!3d51.5272749!4d-0.0888229!16s%2Fg%2F11xl88t9lx?entry=ttu&g_ep=EgoyMDI2MDYyOS4wIKXMDSoASAFQAw%3D%3D"
   },
@@ -23,7 +23,7 @@ const offices: Office[] = [
     city: "Tennessee", 
     region: "(Sub-Regional Office)", 
     details: "522 Aventura Dr, Mt Juliet, Tennessee\n37122 United States",
-    image: "/assets/locations/Tennessee.png",
+    image: "/webp/assets/locations/Tennessee.webp",
     gradient: "from-zinc-500 to-zinc-300",
     mapUrl: "https://www.google.com/maps/search/?api=1&query=522+Aventura+Dr,+Mt+Juliet,+Tennessee+37122+United+States"
   },
@@ -31,7 +31,7 @@ const offices: Office[] = [
     city: "Bengaluru", 
     region: "(Corporate Office)", 
     details: "Embassy Golf Links Business Park,\nBengaluru, Karnataka-560071, India",
-    image: "/assets/locations/Bengaluru.png",
+    image: "/webp/assets/locations/Bengaluru.webp",
     gradient: "from-zinc-400 to-zinc-200",
     mapUrl: "https://www.google.com/maps/search/?api=1&query=Embassy+Golf+Links+Business+Park,+Bengaluru,+Karnataka-560071,+India"
   },
@@ -39,7 +39,7 @@ const offices: Office[] = [
     city: "London", 
     region: "(Support Office)", 
     details: "167-169 Great Portland Street, 5th Floor,\nLondon, W1W 5PF",
-    image: "/assets/locations/london.png",
+    image: "/webp/assets/locations/london.webp",
     gradient: "from-rose-600 to-red-700",
     mapUrl: "https://www.google.com/maps/search/?api=1&query=167-169+Great+Portland+Street,+London,+W1W+5PF"
   },
@@ -47,7 +47,7 @@ const offices: Office[] = [
     city: "Chennai", 
     region: "(Operations Center)", 
     details: "Ground Floor, Primus Building, Door No.\nSP – 7A, Guindy Industrial Estate, SIDCO\nIndustrial Estate, Chennai 600032",
-    image: "/assets/locations/chennai.png",
+    image: "/webp/assets/locations/chennai.webp",
     gradient: "from-orange-600 to-amber-500",
     mapUrl: "https://www.google.com/maps/search/?api=1&query=Primus+Building,+Guindy+Industrial+Estate,+Chennai+600032"
   },
@@ -55,7 +55,7 @@ const offices: Office[] = [
     city: "Thoothukudi", 
     region: "(Operations Center)", 
     details: "4/ 367, Rajeev Colony, Pasuvanthanai\n628718 Thoothukudi, Tamilnadu, IN",
-    image: "/assets/locations/Thoothukudi.png",
+    image: "/webp/assets/locations/Thoothukudi.webp",
     gradient: "from-red-600 to-orange-500",
     mapUrl: "https://www.google.com/maps/search/?api=1&query=Rajeev+Colony,+Pasuvanthanai+628718+Thoothukudi"
   }

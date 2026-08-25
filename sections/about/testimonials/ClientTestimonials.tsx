@@ -10,7 +10,7 @@ const featuredTestimonial = {
   author: "Samantha Lee",
   role: "Chief Technology Officer",
   initials: "SL",
-  image: "/assets/About-page/overview/image.png"
+  image: "/webp/assets/About-page/overview/image.webp"
 };
 
 const testimonials = [
@@ -19,44 +19,44 @@ const testimonials = [
     author: "Ali Raza",
     role: "VP of Infrastructure",
     initials: "AR",
-    image: "/assets/Home-page/client-reviews/image-164.png",
+    image: "/webp/assets/Home-page/client-reviews/image-164.webp",
   },
   {
     quote: "The holistic approach to platform engineering made a real difference in our deployment frequency. I feel calmer and much more in control of our release cycles now.",
     author: "Hina Malik",
     role: "Head of Engineering",
     initials: "HM",
-    image: "/assets/Home-page/client-reviews/image-165.png",
+    image: "/webp/assets/Home-page/client-reviews/image-165.webp",
   },
   {
     quote: "I struggled with multi-cloud cost visibility for years, but within a few weeks of their FinOps implementation, our cloud spend was optimized noticeably.",
     author: "John Snow",
     role: "Cloud Operations Lead",
     initials: "JS",
-    image: "/assets/Home-page/client-reviews/image-166.png",
+    image: "/webp/assets/Home-page/client-reviews/image-166.webp",
   },
   {
     quote: "Within weeks, I noticed a significant improvement in our security posture. The personalized DevSecOps approach made all the difference for our compliance goals.",
     author: "Kathie Corl",
     role: "Security Director",
     initials: "KC",
-    image: "/assets/Home-page/client-reviews/image-167.png",
+    image: "/webp/assets/Home-page/client-reviews/image-167.webp",
   },
 ];
 
 const autoScrollReviews = [
-  { id: 1, text: "The cloud migration process was seamless. Their team handled everything professionally, minimizing our downtime to zero.", name: "Sarah Jenkins", time: "1 week ago", initials: "SJ", image: "/assets/Home-page/client-reviews/image-164.png" },
-  { id: 2, text: "Excellent DevOps consultation. We went from chaotic monthly releases to smooth daily deployments. Highly recommended.", name: "Michael Chen", time: "2 weeks ago", initials: "MC", image: "/assets/Home-page/client-reviews/image-165.png" },
-  { id: 3, text: "They helped us implement a robust FinOps culture. We've saved over 30% on our AWS bill in just two months.", name: "David O.", time: "1 month ago", initials: "DO", image: "/assets/Home-page/client-reviews/image-166.png" },
-  { id: 4, text: "Fantastic team to work with. The platform engineering solutions provided were top-tier and highly scalable.", name: "Elena Rodriguez", time: "3 weeks ago", initials: "ER", image: "/assets/Home-page/client-reviews/image-167.png" },
-  { id: 5, text: "Our security posture has never been better. The DevSecOps integration was flawless.", name: "James T.", time: "2 months ago", initials: "JT", image: "/assets/Home-page/client-reviews/image-168.png" },
-  { id: 6, text: "Responsive, knowledgeable, and reliable. They truly understand enterprise cloud architecture.", name: "Anita S.", time: "1 week ago", initials: "AS", image: "/assets/Home-page/client-reviews/image-169.png" },
-  { id: 7, text: "We partnered with them for our AI data pipeline. The performance improvements have been game-changing.", name: "Robert K.", time: "4 days ago", initials: "RK", image: "/assets/Home-page/client-reviews/image-170.png" },
-  { id: 8, text: "My buying experience is so nice, and received me very politely. Very good performance.", name: "Karan P.", time: "1 week ago", initials: "KP", image: "/assets/Home-page/client-reviews/image-171.png" },
-  { id: 9, text: "I love the customer service. They respond in a timely manner with loads of information about best practices.", name: "Catherine", time: "10 days ago", initials: "C", image: "/assets/Home-page/client-reviews/image-172.png" },
-  { id: 10, text: "Product quality is incredible. They looked over all the options with us, and we are incredibly satisfied.", name: "Peter W.", time: "2 weeks ago", initials: "PW", image: "/assets/Home-page/client-reviews/image-173.png" },
-  { id: 11, text: "The kubernetes transition was smooth. Their engineers are top-notch and always available.", name: "Lisa M.", time: "1 month ago", initials: "LM", image: "/assets/Home-page/client-reviews/image-174.png" },
-  { id: 12, text: "Helped us pass our SOC2 compliance with their rigorous infrastructure audits and automation.", name: "Tom H.", time: "3 weeks ago", initials: "TH", image: "/assets/Home-page/client-reviews/image-175.png" },
+  { id: 1, text: "The cloud migration process was seamless. Their team handled everything professionally, minimizing our downtime to zero.", name: "Sarah Jenkins", time: "1 week ago", initials: "SJ", image: "/webp/assets/Home-page/client-reviews/image-164.webp" },
+  { id: 2, text: "Excellent DevOps consultation. We went from chaotic monthly releases to smooth daily deployments. Highly recommended.", name: "Michael Chen", time: "2 weeks ago", initials: "MC", image: "/webp/assets/Home-page/client-reviews/image-165.webp" },
+  { id: 3, text: "They helped us implement a robust FinOps culture. We've saved over 30% on our AWS bill in just two months.", name: "David O.", time: "1 month ago", initials: "DO", image: "/webp/assets/Home-page/client-reviews/image-166.webp" },
+  { id: 4, text: "Fantastic team to work with. The platform engineering solutions provided were top-tier and highly scalable.", name: "Elena Rodriguez", time: "3 weeks ago", initials: "ER", image: "/webp/assets/Home-page/client-reviews/image-167.webp" },
+  { id: 5, text: "Our security posture has never been better. The DevSecOps integration was flawless.", name: "James T.", time: "2 months ago", initials: "JT", image: "/webp/assets/Home-page/client-reviews/image-168.webp" },
+  { id: 6, text: "Responsive, knowledgeable, and reliable. They truly understand enterprise cloud architecture.", name: "Anita S.", time: "1 week ago", initials: "AS", image: "/webp/assets/Home-page/client-reviews/image-169.webp" },
+  { id: 7, text: "We partnered with them for our AI data pipeline. The performance improvements have been game-changing.", name: "Robert K.", time: "4 days ago", initials: "RK", image: "/webp/assets/Home-page/client-reviews/image-170.webp" },
+  { id: 8, text: "My buying experience is so nice, and received me very politely. Very good performance.", name: "Karan P.", time: "1 week ago", initials: "KP", image: "/webp/assets/Home-page/client-reviews/image-171.webp" },
+  { id: 9, text: "I love the customer service. They respond in a timely manner with loads of information about best practices.", name: "Catherine", time: "10 days ago", initials: "C", image: "/webp/assets/Home-page/client-reviews/image-172.webp" },
+  { id: 10, text: "Product quality is incredible. They looked over all the options with us, and we are incredibly satisfied.", name: "Peter W.", time: "2 weeks ago", initials: "PW", image: "/webp/assets/Home-page/client-reviews/image-173.webp" },
+  { id: 11, text: "The kubernetes transition was smooth. Their engineers are top-notch and always available.", name: "Lisa M.", time: "1 month ago", initials: "LM", image: "/webp/assets/Home-page/client-reviews/image-174.webp" },
+  { id: 12, text: "Helped us pass our SOC2 compliance with their rigorous infrastructure audits and automation.", name: "Tom H.", time: "3 weeks ago", initials: "TH", image: "/webp/assets/Home-page/client-reviews/image-175.webp" },
 ];
 const marqueeReviews = [...autoScrollReviews, ...autoScrollReviews];
 
@@ -162,14 +162,18 @@ export const ClientTestimonials = () => {
         </div>
 
         {/* Marquee Row */}
-        <div className="flex flex-col lg:flex-row gap-10 lg:gap-16 items-center">
+        <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-center">
           
-          <div className="lg:w-1/5 shrink-0 flex flex-col items-center lg:items-start text-center lg:text-left">
-             <Quote className="w-16 h-16 text-rose-500 fill-rose-500 mb-4 transform scale-x-[-1]" />
-             <h4 className="text-2xl sm:text-3xl font-semibold text-white leading-tight font-sans">What Our <br /> Clients Say</h4>
+          <div className="lg:w-1/4 shrink-0 flex flex-col items-center lg:items-start text-center lg:text-left pr-0 lg:pr-4">
+             <div className="w-14 h-14 rounded-2xl bg-rose-500/10 flex items-center justify-center mb-5 shrink-0">
+               <Quote className="w-8 h-8 text-rose-500 fill-rose-500 transform scale-x-[-1]" />
+             </div>
+             <h4 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-white leading-tight tracking-tight font-sans">
+               What Our <br className="hidden sm:inline" /> Clients Say
+             </h4>
           </div>
           
-          <div className="lg:w-4/5 overflow-hidden relative w-full [mask-image:linear-gradient(to_right,transparent,black_5%,black_95%,transparent)]">
+          <div className="lg:w-3/4 overflow-hidden relative w-full [mask-image:linear-gradient(to_right,transparent,black_5%,black_95%,transparent)]">
             <motion.div 
               className="flex gap-6 w-max"
               animate={{ x: ["0%", "-50%"] }}

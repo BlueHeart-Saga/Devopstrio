@@ -1,34 +1,34 @@
 [
   {
     "id": 1,
-    "src": "/images/life/team_hero.png",
+    "src": "/webp/images/life/team_hero.webp",
     "category": "Team Celebrations",
     "year": "2026-06-29",
     "title": "Office Inauguration",
     "eventName": "office",
     "images": [
       {
-        "src": "/uploads/1782716593849-building.png",
+        "src": "/webp/uploads/1782716593849-building.webp",
         "tagname": ""
       },
       {
-        "src": "/uploads/1782716595180-Screenshot_25-6-2026_145934_www.magnific.com.jpeg",
+        "src": "/webp/uploads/1782716595180-Screenshot_25-6-2026_145934_www.magnific.com.webp",
         "tagname": ""
       },
       {
-        "src": "/uploads/1782716596227-modern-business-center.jpg",
+        "src": "/webp/uploads/1782716596227-modern-business-center.webp",
         "tagname": ""
       },
       {
-        "src": "/uploads/1782716597179-business-office-sky-cityscape-tourism.jpg",
+        "src": "/webp/uploads/1782716597179-business-office-sky-cityscape-tourism.webp",
         "tagname": ""
       },
       {
-        "src": "/uploads/1782716600666-ChatGPT_Image_Jun_25__2026__02_47_14_PM.png",
+        "src": "/webp/uploads/1782716600666-ChatGPT_Image_Jun_25__2026__02_47_14_PM.webp",
         "tagname": ""
       },
       {
-        "src": "/uploads/1782716601477-IMG_20250822_103409_3.jpg",
+        "src": "/webp/uploads/1782716601477-IMG_20250822_103409_3.webp",
         "tagname": ""
       }
     ]
@@ -42,14 +42,14 @@
   },
   {
     "id": 3,
-    "src": "/images/life/hackathon.png",
+    "src": "/webp/images/life/hackathon.webp",
     "category": "Hackathons",
     "year": "2026",
     "title": "Techspira Hackathon"
   },
   {
     "id": 4,
-    "src": "/images/life/awards.png",
+    "src": "/webp/images/life/awards.webp",
     "category": "Awards",
     "year": "2025",
     "title": "Annual Excellence Awards"

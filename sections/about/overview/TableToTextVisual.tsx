@@ -47,7 +47,7 @@ export function TableToTextVisual({
       <div className="relative w-full max-w-5xl mx-auto">
         
         {/* Table Image */}
-        <img src="/assets/About-page/overview/tabletotext1.png"
+        <img src="/webp/assets/About-page/overview/tabletotext1.webp"
           alt="Devopstrio Solutions Collaboration Table"
           className="w-full h-auto object-contain block select-none drop-shadow-[0_20px_45px_rgba(0,0,0,0.8)]"
           loading="lazy" />

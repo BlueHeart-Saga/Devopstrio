@@ -61,7 +61,7 @@ export const SupportChannels = () => {
           </h2>
 
           {/* Contact List */}
-          <div className="w-full max-w-[380px] flex flex-col gap-5 mb-14">
+          <div className="w-full max-w-[520px] flex flex-col gap-5 mb-14">
             {channels.map((ch, idx) => (
               <motion.a 
                 key={idx}
@@ -74,10 +74,10 @@ export const SupportChannels = () => {
                 transition={{ delay: 0.2 + (idx * 0.1) }}
                 className="flex items-center group cursor-pointer"
               >
-                <div className="w-11 h-11 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-400 group-hover:bg-rose-500 group-hover:text-white group-hover:border-rose-400 transition-all duration-300 shrink-0 mr-5 shadow-sm">
-                  <ch.icon className="w-[18px] h-[18px]" />
+                <div className="flex items-center justify-center text-rose-500 group-hover:text-rose-400 transition-colors duration-300 shrink-0 mr-4 md:mr-5">
+                  <ch.icon className="w-5 h-5 md:w-6 md:h-6" />
                 </div>
-                <span className="text-zinc-200 text-xs md:text-[13px] font-bold tracking-[0.15em] group-hover:text-rose-400 transition-colors uppercase">
+                <span className="text-white text-sm sm:text-base md:text-lg font-semibold tracking-wide group-hover:text-rose-400 transition-colors">
                   {ch.text}
                 </span>
               </motion.a>
@@ -114,7 +114,7 @@ export const SupportChannels = () => {
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] md:w-[450px] md:h-[450px] bg-rose-500/10 rounded-full blur-[100px] -z-10" />
           
           <Image 
-            src="/assets/About-page/support/connect.png"
+            src="/webp/assets/About-page/support/connect.webp"
             alt="Devopstrio Support Professional"
             fill
             className="object-contain object-bottom drop-shadow-2xl"

@@ -10,66 +10,82 @@ const industries = [
     slug: "banking-finance",
     name: "Banking & Finance",
     href: "/industries/banking-finance",
-    image: "/assets/Industries-page/industries/Banking-and-Finance.png"
+    image: "/webp/assets/Industries-page/industries/Banking-and-Finance.webp"
   },
   {
     slug: "healthcare-life-sciences",
     name: "Healthcare & Life Sciences",
     href: "/industries/healthcare-life-sciences",
-    image: "/assets/Industries-page/industries/Healthcare-and-Life-Sciences.png"
+    image: "/webp/assets/Industries-page/industries/Healthcare-and-Life-Sciences.webp"
   },
   {
     slug: "retail-ecommerce",
     name: "Retail & E-Commerce",
     href: "/industries/retail-ecommerce",
-    image: "/assets/Industries-page/industries/Retail-and-E-Commerce.png"
+    image: "/webp/assets/Industries-page/industries/Retail-and-E-Commerce.webp"
   },
   {
     slug: "manufacturing",
     name: "Manufacturing",
     href: "/industries/manufacturing",
-    image: "/assets/Industries-page/industries/Manufacturing.png"
+    image: "/webp/assets/Industries-page/industries/Manufacturing.webp"
   },
   {
     slug: "telecommunications",
     name: "Telecommunications",
     href: "/industries/telecommunications",
-    image: "/assets/Industries-page/industries/Telecommunications.png"
+    image: "/webp/assets/Industries-page/industries/Telecommunications.webp"
   },
   {
     slug: "media-entertainment",
     name: "Media & Entertainment",
     href: "/industries/media-entertainment",
-    image: "/assets/Industries-page/industries/Media-and-Entertainment.png"
+    image: "/webp/assets/Industries-page/industries/Media-and-Entertainment.webp"
   },
   {
     slug: "education",
     name: "Education",
     href: "/industries/education",
-    image: "/assets/Industries-page/industries/Education.png"
+    image: "/webp/assets/Industries-page/industries/Education.webp"
   },
   {
     slug: "government-public-sector",
     name: "Government & Public Sector",
     href: "/industries/government-public-sector",
-    image: "/assets/Industries-page/industries/Government-and-Public-Sector.png"
+    image: "/webp/assets/Industries-page/industries/Government-and-Public-Sector.webp"
   }
 ];
 
 export function IndustriesGrid() {
   return (
-    <section id="overview" className="w-full py-24 bg-[#030303] text-white border-b border-zinc-900/60 relative overflow-hidden">
+    <section id="overview" className="w-full pt-4 pb-14 md:pt-6 md:pb-18 bg-[#030303] text-white relative overflow-hidden">
       {/* Background Graphic Glow */}
       <div className="absolute top-[30%] left-[-10%] w-[35%] aspect-square bg-[radial-gradient(circle_at_center,rgba(244,63,94,0.015),transparent_70%)] pointer-events-none z-0" />
 
-      <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
+      <div className="max-w-7xl mx-auto w-full px-6 sm:px-8 xl:px-8 relative z-10">
 
-        {/* Section Header */}
-        <Reveal className="mb-14 text-left">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-white font-sans">
-            Specialized solutions for <span className="text-[#E11D48] font-semibold">global industries</span>
-          </h2>
-        </Reveal>
+        {/* Section Header (ref: IndustryExpertise.tsx) */}
+        <div className="text-center max-w-4xl mx-auto mb-8 sm:mb-10 relative">
+          {/* Left-to-right arrow PNG pointing to header */}
+          <div className="absolute -top-6 sm:-top-8 md:-top-10 -left-4 sm:-left-8 md:-left-12 lg:-left-16 z-20 pointer-events-none select-none">
+            <img
+              src="/webp/assets/components/lefttoright.webp"
+              alt="Left to right arrow"
+              className="w-12 sm:w-16 md:w-20 h-auto object-contain filter drop-shadow-[0_0_15px_rgba(244,63,94,0.45)]"
+              loading="lazy"
+            />
+          </div>
+
+          <Reveal>
+            <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight text-white mb-2 leading-tight font-sans">
+              Solutions to{" "}
+              <span className="inline-block bg-rose-500 text-black font-extrabold px-3.5 py-1 mx-1.5 rounded-sm transform -rotate-3 shadow-[0_4px_20px_rgba(225,29,72,0.45)] align-middle uppercase tracking-wider text-2xl sm:text-3xl md:text-4xl xl:text-5xl">
+                CONNECT
+              </span>{" "}
+              Industries
+            </h2>
+          </Reveal>
+        </div>
 
         {/* Premium Full-bleed Rectangular Cards Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">

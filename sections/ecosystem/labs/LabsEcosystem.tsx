@@ -20,35 +20,35 @@ export function LabsEcosystem() {
       desc: "Stateful agent networks and vector lookups",
       href: "#ai-lab",
       action: "Explore AI Lab",
-      image: "/assets/ecosystem/grid/ecosystem_innovation-labs-page_grid_5/Generated-Design.png",
+      image: "/webp/assets/ecosystem/grid/ecosystem_innovation-labs-page_grid_5/Generated-Design.webp",
     },
     {
       name: "Cloud Innovation Lab",
       desc: "Green computing and serverless edge WASM",
       href: "#cloud-lab",
       action: "Explore Cloud Lab",
-      image: "/assets/ecosystem/grid/ecosystem_innovation-labs-page_grid_5/Generated-Design-1.png",
+      image: "/webp/assets/ecosystem/grid/ecosystem_innovation-labs-page_grid_5/Generated-Design-1.webp",
     },
     {
       name: "DevOps Innovation Lab",
       desc: "Canary rollouts and dynamic pipeline tasks",
       href: "#devops-lab",
       action: "Explore DevOps Lab",
-      image: "/assets/ecosystem/grid/ecosystem_innovation-labs-page_grid_5/Generated-Design-2.png",
+      image: "/webp/assets/ecosystem/grid/ecosystem_innovation-labs-page_grid_5/Generated-Design-2.webp",
     },
     {
       name: "Cybersecurity Lab",
       desc: "eBPF security rules and SBOM vulnerability scans",
       href: "#cyber-lab",
       action: "Explore Cyber Lab",
-      image: "/assets/ecosystem/grid/ecosystem_innovation-labs-page_grid_5/Generated-Design-3.png",
+      image: "/webp/assets/ecosystem/grid/ecosystem_innovation-labs-page_grid_5/Generated-Design-3.webp",
     },
     {
       name: "Data & Analytics Lab",
       desc: "Flink stream engines and Delta Lake compression",
       href: "#data-lab",
       action: "Explore Data Lab",
-      image: "/assets/ecosystem/grid/ecosystem_innovation-labs-page_grid_5/Generated-Design-4.png",
+      image: "/webp/assets/ecosystem/grid/ecosystem_innovation-labs-page_grid_5/Generated-Design-4.webp",
     },
   ];
 
@@ -84,7 +84,7 @@ export function LabsEcosystem() {
               <div className="absolute -right-10 -top-10 w-48 h-48 bg-rose-600/10 rounded-full blur-3xl pointer-events-none transition-all duration-700 group-hover/tall:scale-110" />
               <div className="absolute -left-10 -bottom-10 w-48 h-48 bg-orange-600/5 rounded-full blur-3xl pointer-events-none transition-all duration-700 group-hover/tall:scale-110" />
 
-              <img src="/assets/ecosystem/grid/ecosystem_innovation-labs-page_grid_5/Generated-Design.png"
+              <img src="/webp/assets/ecosystem/grid/ecosystem_innovation-labs-page_grid_5/Generated-Design.webp"
                 alt="Abstract Background"
                 className="absolute inset-0 w-full h-full object-cover mix-blend-screen pointer-events-none opacity-30"
               loading="lazy" />

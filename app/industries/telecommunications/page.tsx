@@ -41,7 +41,7 @@ const data = {
     title: "Cloud-native &",
     highlightedWord: "Telecom Networks",
     subtitle: "Configuring high-bandwidth network monitors, automated customer billing databases, and 5G edge telemetry nodes.",
-    bgImage: "/assets/Industries-page/herocard/Telecommunication.png"
+    bgImage: "/webp/assets/Industries-page/herocard/Telecommunication.webp"
   },
   overview: {
     heading: "Carrier-grade software architectures for high-throughput networks",

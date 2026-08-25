@@ -27,7 +27,7 @@ export function InnovationAccelerators() {
         "Embedded compliance checks and FinOps tagging."
       ],
       cta: "Explore Cloud Assets",
-      image: "/assets/ecosystem/Innovation-labs-innovation-Accelerators/Cloud-Landing-Zones.png"
+      image: "/webp/assets/ecosystem/Innovation-labs-innovation-Accelerators/Cloud-Landing-Zones.webp"
     },
     {
       id: "devops",
@@ -40,7 +40,7 @@ export function InnovationAccelerators() {
         "Standardized deployment manifests and OpenTelemetry tracing."
       ],
       cta: "View Pipeline Specs",
-      image: "/assets/ecosystem/Innovation-labs-innovation-Accelerators/Devops-Pipeline.png"
+      image: "/webp/assets/ecosystem/Innovation-labs-innovation-Accelerators/Devops-Pipeline.webp"
     },
     {
       id: "ai",
@@ -53,7 +53,7 @@ export function InnovationAccelerators() {
         "Real-time prompt injection safeguards and guardrails."
       ],
       cta: "Deploy AI Framework",
-      image: "/assets/ecosystem/Innovation-labs-innovation-Accelerators/AI-Agent-Framework.png"
+      image: "/webp/assets/ecosystem/Innovation-labs-innovation-Accelerators/AI-Agent-Framework.webp"
     },
     {
       id: "sec",
@@ -66,7 +66,7 @@ export function InnovationAccelerators() {
         "Pre-commit IaC vulnerability scanning."
       ],
       cta: "View Security Tools",
-      image: "/assets/ecosystem/Innovation-labs-innovation-Accelerators/Security-Complaice.png"
+      image: "/webp/assets/ecosystem/Innovation-labs-innovation-Accelerators/Security-Complaice.webp"
     },
     {
       id: "data",
@@ -79,7 +79,7 @@ export function InnovationAccelerators() {
         "Predictive MLOps pipeline integrations."
       ],
       cta: "Explore Data Assets",
-      image: "/assets/ecosystem/Innovation-labs-innovation-Accelerators/Data-lakehouse.png"
+      image: "/webp/assets/ecosystem/Innovation-labs-innovation-Accelerators/Data-lakehouse.webp"
     }
   ];
 

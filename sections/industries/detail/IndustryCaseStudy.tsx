@@ -50,7 +50,7 @@ export function IndustryCaseStudy({
         "Built automated data reconciliation pipelines.",
         "Configured multi-region active-active clusters."
       ],
-      image: "/assets/Industries-page/case-studies/2.png"
+      image: "/webp/assets/Industries-page/case-studies/2.webp"
     },
     {
       title: "Automated SOC-2 Security Audits",
@@ -65,7 +65,7 @@ export function IndustryCaseStudy({
         "Automated IAM policy validation rules.",
         "Self-healing security group policies."
       ],
-      image: "/assets/Industries-page/case-studies/3.png"
+      image: "/webp/assets/Industries-page/case-studies/3.webp"
     },
     {
       title: "Multi-Region Disaster Protection",
@@ -80,7 +80,7 @@ export function IndustryCaseStudy({
         "Automated DNS failover systems.",
         "Chaos monkey stress-test confirmed."
       ],
-      image: "/assets/Industries-page/case-studies/4.png"
+      image: "/webp/assets/Industries-page/case-studies/4.webp"
     },
     {
       title: "Cloud Cost Optimization Initiative",
@@ -95,7 +95,7 @@ export function IndustryCaseStudy({
         "Auto-scaling Kubernetes execution nodes.",
         "Real-time cost telemetry alerts."
       ],
-      image: "/assets/Industries-page/case-studies/5.png"
+      image: "/webp/assets/Industries-page/case-studies/5.webp"
     },
     {
       title: "Generative AI Platform Scale",
@@ -110,7 +110,7 @@ export function IndustryCaseStudy({
         "Distributed GPU scheduling rules.",
         "Secure enterprise tenant isolation."
       ],
-      image: "/assets/Industries-page/case-studies/6.png"
+      image: "/webp/assets/Industries-page/case-studies/6.webp"
     },
     {
       title: "GitOps CD Continuous Deployments",
@@ -125,7 +125,7 @@ export function IndustryCaseStudy({
         "Container validation scans on merge.",
         "Automated canary release testing."
       ],
-      image: "/assets/Industries-page/case-studies/7.png"
+      image: "/webp/assets/Industries-page/case-studies/7.webp"
     },
     {
       title: "24/7 SRE Telemetry & Monitoring",
@@ -140,7 +140,7 @@ export function IndustryCaseStudy({
         "Slack/PagerDuty automated escalations.",
         "Machine learning anomaly detection."
       ],
-      image: "/assets/Industries-page/case-studies/8.png"
+      image: "/webp/assets/Industries-page/case-studies/8.webp"
     },
     {
       title: "Microservices API Mesh Implementation",
@@ -155,7 +155,7 @@ export function IndustryCaseStudy({
         "Granular route policy rules.",
         "Real-time traffic trace mappings."
       ],
-      image: "/assets/Industries-page/case-studies/9.png"
+      image: "/webp/assets/Industries-page/case-studies/9.webp"
     },
     {
       title: "Zero-Trust Network Perimeter",
@@ -170,7 +170,7 @@ export function IndustryCaseStudy({
         "Dynamic firewall rule evaluations.",
         "Continuous device health verification."
       ],
-      image: "/assets/Industries-page/case-studies/10.png"
+      image: "/webp/assets/Industries-page/case-studies/10.webp"
     }
   ];
 
@@ -181,7 +181,7 @@ export function IndustryCaseStudy({
       desc: caseStudyDesc,
       metrics: metrics,
       highlights: caseStudyHighlights,
-      image: "/assets/Industries-page/case-studies/1.png"
+      image: "/webp/assets/Industries-page/case-studies/1.webp"
     },
     ...defaultSlides
   ];
@@ -230,7 +230,7 @@ export function IndustryCaseStudy({
   }, [activeIdx, totalSlides]);
 
   const currentSlide = slides[activeIdx];
-  const displayImage = currentSlide.image || "/assets/Industries-page/case-studies/1.png";
+  const displayImage = currentSlide.image || "/webp/assets/Industries-page/case-studies/1.webp";
 
   return (
     <section id="case-study" className="w-full py-20 bg-[#030303] border-b border-zinc-900/60 relative overflow-hidden text-white">

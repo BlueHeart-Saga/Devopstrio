@@ -91,7 +91,7 @@ export function CompanyOverviewPillars() {
                 >
                   {/* Background Image Reveal (Commented out per user request) */}
                   {/* <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
-                    <img src="/assets/About-page/card/singlecardto3.png"
+                    <img src="/webp/assets/About-page/card/singlecardto3.webp"
                       alt={pillar.title}
                       style={{
                         width: "300%",

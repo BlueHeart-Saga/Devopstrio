@@ -95,7 +95,7 @@ export const LearningGrowth = () => {
               transition={{ duration: 0.7 }}
               className="w-full"
             >
-              <img src="/assets/About-page/life-at-devopstrio/tirtle.png"
+              <img src="/webp/assets/About-page/life-at-devopstrio/tirtle.webp"
                 alt="Accelerate Your Growth at Devopstrio"
                 className="w-full h-auto object-contain rounded-2xl"
               loading="lazy" />

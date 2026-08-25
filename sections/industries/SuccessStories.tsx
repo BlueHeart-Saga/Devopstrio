@@ -8,70 +8,59 @@ import Link from "next/link";
 interface SuccessStoryItem {
   company: string;
   achievement: string;
-  desc: React.ReactNode;
-  metric: string;
+  image: string;
 }
 
 const successStories: SuccessStoryItem[] = [
   {
     company: "Apex Clearing Bank",
     achievement: "Mainframe Modernization",
-    desc: <>Migrated Apex's core transaction ledger to a multi-cloud <Link href="/services/cloud-services" className="text-rose-500 hover:underline">Kubernetes setup</Link>, cutting monthly infrastructure expenditures by 45%.</>,
-    metric: "-45% Costs"
+    image: "/assets/Services-Page/CAPABILITIES-Core-Practice-Specializations/webp/Frame-368.webp"
   },
   {
     company: "Novis Diagnostics",
     achievement: "Secure Medical Ingest",
-    desc: <>Configured an encrypted patient log ingest channel handling 10 million telemetry signals daily with full <Link href="/services/cybersecurity" className="text-rose-500 hover:underline">HIPAA alignment</Link>.</>,
-    metric: "10M Signals/Day"
+    image: "/assets/Services-Page/CAPABILITIES-Core-Practice-Specializations/webp/Frame-369.webp"
   },
   {
     company: "Horizon Retailers",
     achievement: "Black Friday Scaling",
-    desc: <>Automate <Link href="/services/cloud-services" className="text-rose-500 hover:underline">container scaling</Link> thresholds to support 4.5x visitor peaks during high-volume promotional sales events.</>,
-    metric: "99.999% Uptime"
+    image: "/assets/Services-Page/CAPABILITIES-Core-Practice-Specializations/webp/Frame-370.webp"
   },
   {
     company: "Global Telecom",
     achievement: "Zero-Downtime Migration",
-    desc: <>Shifted 85TB of active billing records to a distributed <Link href="/services/cloud-services" className="text-rose-500 hover:underline">multi-region database</Link> structure with zero operational delays.</>,
-    metric: "85TB Migrated"
+    image: "/assets/Services-Page/CAPABILITIES-Core-Practice-Specializations/webp/Frame-371.webp"
   },
   {
     company: "Aerotech Logistics",
     achievement: "Autonomous Scheduling",
-    desc: <>Automated edge logistics routes using distributed <Link href="/services/cloud-services" className="text-rose-500 hover:underline">broker queues</Link>, cutting delivery dispatch times by 30%.</>,
-    metric: "30% Faster Route"
+    image: "/assets/Services-Page/CAPABILITIES-Core-Practice-Specializations/webp/Frame-372.webp"
   },
   {
     company: "EduLearn Portal",
     achievement: "Virtual Class Scaling",
-    desc: <>Scaled interactive video <Link href="/services/cloud-services" className="text-rose-500 hover:underline">streaming servers</Link> to handle 200,000 active remote learners simultaneously.</>,
-    metric: "200K Active Users"
+    image: "/assets/Services-Page/CAPABILITIES-Core-Practice-Specializations/webp/Frame-373.webp"
   },
   {
     company: "Public Safety Net",
     achievement: "High-Availability Gateway",
-    desc: <>Upgraded citizen data gates to handle high-frequency requests under strict government <Link href="/services/cybersecurity" className="text-rose-500 hover:underline">compliance codes</Link>.</>,
-    metric: "180ms Latency"
+    image: "/assets/Services-Page/CAPABILITIES-Core-Practice-Specializations/webp/Frame-374.webp"
   },
   {
     company: "MediaFlow CDN",
     achievement: "Edge Content Cache",
-    desc: <>Optimized live video <Link href="/services/digital-transformation" className="text-rose-500 hover:underline">stream delivery networks</Link> across 12 edge points, slashing buffering issues by 65%.</>,
-    metric: "-65% Buffering"
+    image: "/assets/Services-Page/CAPABILITIES-Core-Practice-Specializations/webp/Frame-375.webp"
   },
   {
     company: "SmartForge IoT",
     achievement: "Predictive Machine Care",
-    desc: <>Configured event-driven <Link href="/services/devops-automation" className="text-rose-500 hover:underline">alert triggers</Link> on 1,250 factory floor machinery systems to automate repair tickets.</>,
-    metric: "92% Auto-Detect"
+    image: "/assets/Services-Page/CAPABILITIES-Core-Practice-Specializations/webp/Frame-376.webp"
   },
   {
     company: "PaySafe Integrations",
     achievement: "Fraud Filtering Pipeline",
-    desc: <>Built an <Link href="/services/ai-data-innovation" className="text-rose-500 hover:underline">AI-driven transaction checking</Link> pipeline that flags suspicious bank ledger anomalies under 12ms.</>,
-    metric: "<12ms Check"
+    image: "/assets/Services-Page/CAPABILITIES-Core-Practice-Specializations/webp/Frame-377.webp"
   }
 ];
 
@@ -80,7 +69,7 @@ export function SuccessStories() {
 
   const scroll = (direction: "left" | "right") => {
     if (scrollContainerRef.current) {
-      const scrollAmount = 374; // Card width (350px) + gap (24px)
+      const scrollAmount = 344; // Card width + gap
       scrollContainerRef.current.scrollBy({
         left: direction === "left" ? -scrollAmount : scrollAmount,
         behavior: "smooth"
@@ -89,7 +78,7 @@ export function SuccessStories() {
   };
 
   return (
-    <section id="success" className="w-full py-24 bg-[#030303] border-b border-zinc-900/60 relative overflow-hidden text-white">
+    <section id="success" className="w-full pt-6 pb-14 md:pt-8 md:pb-18 bg-[#030303] relative overflow-hidden text-white">
       {/* Background Graphic Glow */}
       <div className="absolute top-[30%] left-[-10%] w-[35%] aspect-square bg-[radial-gradient(circle_at_center,rgba(244,63,94,0.015),transparent_70%)] pointer-events-none z-0" />
 
@@ -105,13 +94,13 @@ export function SuccessStories() {
         }
       `}} />
 
-      <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10 text-left">
+      <div className="max-w-7xl mx-auto w-full px-6 sm:px-8 xl:px-8 relative z-10 text-left">
 
         {/* Section Header with Navigation Arrow Actions */}
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-6 mb-12">
           <Reveal>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-white font-sans">
-              Featured client <span className="text-[#E11D48] font-semibold">success stories</span>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-white font-sans leading-tight">
+              Featured client <span className="text-rose-500 font-semibold">success stories</span>
             </h2>
           </Reveal>
 
@@ -120,66 +109,59 @@ export function SuccessStories() {
             <button
               onClick={() => scroll("left")}
               aria-label="Scroll left"
-              className="w-11 h-11 rounded-full border border-white/5 bg-[#0b0b0c] hover:bg-zinc-900 flex items-center justify-center text-zinc-400 hover:text-white transition-colors duration-300"
+              className="w-11 h-11 rounded-full border border-white/10 bg-[#0b0b0c] hover:bg-rose-600 hover:border-rose-600 flex items-center justify-center text-zinc-300 hover:text-white transition-all duration-300"
             >
               <ArrowLeft size={16} />
             </button>
             <button
               onClick={() => scroll("right")}
               aria-label="Scroll right"
-              className="w-11 h-11 rounded-full border border-white/5 bg-[#0b0b0c] hover:bg-zinc-900 flex items-center justify-center text-zinc-400 hover:text-white transition-colors duration-300"
+              className="w-11 h-11 rounded-full border border-white/10 bg-[#0b0b0c] hover:bg-rose-600 hover:border-rose-600 flex items-center justify-center text-zinc-300 hover:text-white transition-all duration-300"
             >
               <ArrowUpRight size={16} />
             </button>
           </Reveal>
         </div>
 
-        {/* Horizontal Slider List */}
+        {/* Horizontal Slider List (Microsoft Style Cards) */}
         <div
           ref={scrollContainerRef}
           className="flex gap-6 overflow-x-auto hide-scrollbar pb-8 pt-4 snap-x snap-mandatory relative"
         >
           {successStories.map((story, idx) => (
             <Reveal key={idx} delay={idx * 0.05} className="flex-shrink-0 snap-start">
-              <div className="group block w-[320px] sm:w-[350px] aspect-[4/3] bg-[#0b0b0c] border border-white/10 rounded-[28px] p-6 hover:border-rose-500/35 hover:shadow-[0_8px_32px_rgba(244,63,94,0.08)] transition-all duration-300 relative overflow-hidden cursor-pointer">
+              <div className="group block w-[290px] sm:w-[320px] bg-[#0b0b0c] border border-white/10 rounded-[24px] p-5 hover:border-rose-500/35 hover:shadow-[0_12px_36px_rgba(244,63,94,0.12)] transition-all duration-300 relative overflow-hidden cursor-pointer flex flex-col justify-between h-full">
 
                 {/* Subtle Inner Glow on Hover */}
-                <div className="absolute inset-0 bg-gradient-to-br from-[#E11D48]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-0" />
+                <div className="absolute inset-0 bg-gradient-to-br from-rose-500/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-0" />
 
-                <div className="flex flex-col h-full justify-between relative z-10">
+                <div className="relative z-10 flex flex-col h-full justify-between">
 
                   <div>
-                    {/* Header: Company & Metric Tag */}
-                    <div className="flex justify-between items-center pb-4 border-b border-white/5">
-                      <span className="text-sm font-bold text-white group-hover:text-[#E11D48] transition-colors duration-300">
-                        {story.company}
-                      </span>
-                      <span className="px-3.5 py-1.5 rounded-full bg-rose-950/20 text-[#E11D48] text-[10px] font-mono border border-rose-500/20 group-hover:bg-[#E11D48] group-hover:text-white transition-all duration-300">
-                        {story.metric}
-                      </span>
+                    {/* Flush Image Container without padding */}
+                    <div className="relative w-full aspect-[16/10] rounded-2xl border border-white/10 overflow-hidden mb-5 group-hover:border-rose-500/30 transition-colors duration-300">
+                      <img
+                        src={story.image}
+                        alt={story.achievement}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 select-none pointer-events-none"
+                        loading="lazy"
+                      />
                     </div>
 
-                    {/* Achievement Title */}
-                    <h4 className="text-base font-bold text-white mt-4 mb-2 tracking-tight group-hover:text-[#E11D48] transition-colors duration-300">
+                    {/* Title */}
+                    <h3 className="text-xl sm:text-2xl font-bold text-white leading-snug group-hover:text-rose-400 transition-colors duration-300 font-sans">
                       {story.achievement}
-                    </h4>
+                    </h3>
                   </div>
 
-                  <div>
-                    {/* Description */}
-                    <p className="text-xs text-zinc-400 leading-relaxed font-semibold">
-                      {story.desc}
-                    </p>
-
-                    {/* Action Footer */}
-                    <div className="mt-6 pt-4 border-t border-white/5 flex items-center justify-between text-zinc-500 group-hover:text-white transition-colors duration-300">
-                      <span className="text-[10px] uppercase font-mono tracking-wider font-bold">
-                        Client Success
-                      </span>
-                      <span className="text-[10px] font-bold flex items-center gap-1">
-                        Read Story <ArrowUpRight size={12} />
-                      </span>
-                    </div>
+                  {/* Simple CTA Footer Link */}
+                  <div className="mt-6 pt-4 border-t border-white/10 flex items-center justify-between text-zinc-400 group-hover:text-white transition-colors duration-300">
+                    <span className="text-xs uppercase font-mono tracking-wider font-semibold text-zinc-400">
+                      Case Study
+                    </span>
+                    <span className="text-xs sm:text-sm font-bold flex items-center gap-1.5 text-rose-400 group-hover:text-white transition-colors">
+                      Read Story <ArrowUpRight size={14} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                    </span>
                   </div>
 
                 </div>

@@ -41,7 +41,7 @@ const data = {
     title: "Omni-channel &",
     highlightedWord: "E-Commerce Engines",
     subtitle: "Implementing high-speed checkout engines, real-time personalization pipelines, and intelligent inventory analytics.",
-    bgImage: "/assets/Industries-page/herocard/retails.png"
+    bgImage: "/webp/assets/Industries-page/herocard/retails.webp"
   },
   overview: {
     heading: "Scalable e-commerce platforms designed for peak traffic and conversion",

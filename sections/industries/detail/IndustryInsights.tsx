@@ -18,14 +18,14 @@ interface IndustryInsightsProps {
 }
 
 const defaultImages = [
-  "/assets/Home-page/arch-design.png",
-  "/assets/Home-page/arch-life.png",
-  "/assets/Home-page/biz-envisioning.png",
-  "/assets/Home-page/biz-life.png",
-  "/assets/Home-page/rapid-prototype.png",
-  "/assets/Home-page/rapid-life.png",
-  "/assets/Home-page/sol-envisioning.png",
-  "/assets/Home-page/sol-life.png"
+  "/webp/assets/Home-page/arch-design.webp",
+  "/webp/assets/Home-page/arch-life.webp",
+  "/webp/assets/Home-page/biz-envisioning.webp",
+  "/webp/assets/Home-page/biz-life.webp",
+  "/webp/assets/Home-page/rapid-prototype.webp",
+  "/webp/assets/Home-page/rapid-life.webp",
+  "/webp/assets/Home-page/sol-envisioning.webp",
+  "/webp/assets/Home-page/sol-life.webp"
 ];
 
 const defaultExtraInsights: InsightItem[] = [
@@ -33,31 +33,31 @@ const defaultExtraInsights: InsightItem[] = [
     title: "Kubernetes Autoscaling Under Flash Load",
     desc: "A quantitative analysis of Karpenter latency against standard cluster autoscalers during peak-hour debit request surges.",
     link: "/insights",
-    image: "/assets/Home-page/arch-life.png"
+    image: "/webp/assets/Home-page/arch-life.webp"
   },
   {
     title: "Securing Edge API Proxies with OAuth2",
     desc: "A framework guide on implementing zero-trust border gateways and token validation brokers inside private subnet boundaries.",
     link: "/insights",
-    image: "/assets/Home-page/sol-life.png"
+    image: "/webp/assets/Home-page/sol-life.webp"
   },
   {
     title: "Comparing GitOps CD Pull vs Push Delivery",
     desc: "A review of synchronization times, drift alert limits, and security properties of ArgoCD against standard runner push systems.",
     link: "/insights",
-    image: "/assets/Home-page/rapid-life.png"
+    image: "/webp/assets/Home-page/rapid-life.webp"
   },
   {
     title: "Optimizing PostgreSQL Concurrency Indexes",
     desc: "Configuring multi-column transaction locks and index buffers to handle high concurrent writes under strict ACID mandates.",
     link: "/insights",
-    image: "/assets/Home-page/biz-life.png"
+    image: "/webp/assets/Home-page/biz-life.webp"
   },
   {
     title: "Architecting Microservices Service Mesh",
     desc: "Measuring the CPU overhead, network latency, and mutual TLS certificate rotation limits of Istio against Linkerd.",
     link: "/insights",
-    image: "/assets/Home-page/arch-design.png"
+    image: "/webp/assets/Home-page/arch-design.webp"
   }
 ];
 

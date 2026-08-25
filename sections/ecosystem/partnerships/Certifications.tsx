@@ -12,27 +12,27 @@ export function Certifications() {
   const certifications: CertBadge[] = [
     { 
       name: "AWS Solutions Architect Pro", 
-      image: "/assets/ecosystem/aws-awards/image-120.png"
+      image: "/webp/assets/ecosystem/aws-awards/image-120.webp"
     },
     { 
       name: "Azure Solutions Architect Expert", 
-      image: "/assets/ecosystem/microsofr-awards/image-123.png"
+      image: "/webp/assets/ecosystem/microsofr-awards/image-123.webp"
     },
     { 
       name: "Google Cloud Professional Architect", 
-      image: "/assets/ecosystem/GCP-award/image-133.png"
+      image: "/webp/assets/ecosystem/GCP-award/image-133.webp"
     },
     { 
       name: "AWS Security Specialty", 
-      image: "/assets/ecosystem/aws-awards/image-141.png"
+      image: "/webp/assets/ecosystem/aws-awards/image-141.webp"
     },
     { 
       name: "Azure Security Engineer Associate", 
-      image: "/assets/ecosystem/microsofr-awards/image-125.png"
+      image: "/webp/assets/ecosystem/microsofr-awards/image-125.webp"
     },
     { 
       name: "Google Cloud Professional Data Engineer", 
-      image: "/assets/ecosystem/GCP-award/image-134.png"
+      image: "/webp/assets/ecosystem/GCP-award/image-134.webp"
     }
   ];
 

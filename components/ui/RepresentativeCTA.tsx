@@ -30,7 +30,7 @@ export function RepresentativeCTA({
   primaryBtnHref = "/about/global-internship",
   secondaryBtnText = "EXPLORE CULTURE",
   secondaryBtnHref = "/about/our-culture-people",
-  imageSrc = "/assets/components/cta-img-001.png",
+  imageSrc = "/webp/assets/components/cta-img-001.webp",
   imageAlt = "Devopstrio Representative",
   theme = "rose"
 }: RepresentativeCTAProps) {

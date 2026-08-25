@@ -8,7 +8,7 @@ const advisors = [
     background: "Former CTO — Global Technology Group",
     expertise: "Enterprise Strategy",
     experience: "20+ Years",
-    photo: "/assets/About-page/advisor_strategy.png",
+    photo: "/webp/assets/About-page/advisor_strategy.webp",
     color: "rose",
   },
   {
@@ -16,7 +16,7 @@ const advisors = [
     background: "Former VP Engineering — Cloud Platform",
     expertise: "Cloud Architecture",
     experience: "18+ Years",
-    photo: "/assets/About-page/advisor_cloud.png",
+    photo: "/webp/assets/About-page/advisor_cloud.webp",
     color: "violet",
   },
   {
@@ -24,7 +24,7 @@ const advisors = [
     background: "Chief Data Scientist — Fortune 100",
     expertise: "AI & Machine Learning",
     experience: "15+ Years",
-    photo: "/assets/About-page/advisor_ai.png",
+    photo: "/webp/assets/About-page/advisor_ai.webp",
     color: "emerald",
   },
   {
@@ -32,7 +32,7 @@ const advisors = [
     background: "Former CISO — Financial Services Group",
     expertise: "Zero Trust Security",
     experience: "22+ Years",
-    photo: "/assets/About-page/advisor_security.png",
+    photo: "/webp/assets/About-page/advisor_security.webp",
     color: "amber",
   },
 ];
@@ -76,7 +76,7 @@ export const AdvisoryBoard = () => {
         <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-14 relative">
           {/* Curved Arrow PNG on Right Side */}
           <div className="absolute -top-6 right-2 sm:right-10 z-20 pointer-events-none select-none">
-            <img src="/assets/components/Carrow-right.png"
+            <img src="/webp/assets/components/Carrow-right.webp"
               alt="Curved arrow"
               className="w-14 sm:w-20 h-auto object-contain filter drop-shadow-[0_0_15px_rgba(244,63,94,0.4)] scale-x-[-1]"
             loading="lazy" />
@@ -96,7 +96,7 @@ export const AdvisoryBoard = () => {
           className="relative w-full aspect-[21/9] overflow-hidden rounded-[2rem] border border-zinc-900 bg-zinc-950 mb-16 group shadow-[0_0_50px_rgba(0,0,0,0.8)]"
         >
           <div className="absolute inset-0 bg-gradient-to-t from-[#030303]/60 via-transparent to-[#030303]/20 z-10 pointer-events-none" />
-          <img src="/assets/About-page/card/about-inside-leadership-team_Governance-banner.png"
+          <img src="/webp/assets/About-page/card/about-inside-leadership-team_Governance-banner.webp"
             alt="Advisory Board Governance & Insights"
             className="w-full h-full object-cover object-center group-hover:scale-[1.02] transition-transform duration-1000 ease-out"
           loading="lazy" />

@@ -13,7 +13,7 @@ export function WeImagine() {
         </>
       ),
       bullets: ["Multi-Cloud Architecture", "AI-First Design", "Secure Data Platforms"],
-      image: "/assets/Home-page/we-imagine/gen/we-design-intelligent.png",
+      image: "/webp/assets/Home-page/we-imagine/gen/we-design-intelligent.webp",
       delay: 0.05
     },
     {
@@ -24,7 +24,7 @@ export function WeImagine() {
         </>
       ),
       bullets: ["Enterprise Scalability", "Secure Architecture", "Full Observability"],
-      image: "/assets/Home-page/we-imagine/gen/we-build-software.png",
+      image: "/webp/assets/Home-page/we-imagine/gen/we-build-software.webp",
       delay: 0.1
     },
     {
@@ -35,7 +35,7 @@ export function WeImagine() {
         </>
       ),
       bullets: ["AI-Driven Automation", "Cloud-Native Migration", "Legacy Re-Architecture"],
-      image: "/assets/Home-page/we-imagine/gen/we-transform-legacy.png",
+      image: "/webp/assets/Home-page/we-imagine/gen/we-transform-legacy.webp",
       delay: 0.15
     },
     {
@@ -46,7 +46,7 @@ export function WeImagine() {
         </>
       ),
       bullets: ["24/7 Proactive Monitoring", "Predictive Maintenance", "Cost Optimisation"],
-      image: "/assets/Home-page/we-imagine/gen/we-manage-operations.png",
+      image: "/webp/assets/Home-page/we-imagine/gen/we-manage-operations.webp",
       delay: 0.2
     }
   ];
@@ -76,7 +76,7 @@ export function WeImagine() {
           <div className="relative rounded-2xl overflow-hidden mb-16 h-[260px] md:h-[380px] w-full border border-zinc-800/40">
             {/* Banner image */}
             <Image
-              src="/assets/Home-page/innovation/image2.png"
+              src="/webp/assets/Home-page/innovation/image2.webp"
               alt="Devopstrio Innovation Lab"
               fill
               sizes="(max-width: 1280px) 100vw, 1280px"

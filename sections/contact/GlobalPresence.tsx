@@ -87,7 +87,7 @@ export function GlobalPresence() {
           <div className="flex items-center justify-center gap-4 mb-2 relative w-full">
             {/* Carrow-right.png arrow on the left side pointing to header */}
             <div className="absolute left-0 sm:left-4 md:-left-12 lg:-left-16 top-1/2 -translate-y-1/2 pointer-events-none select-none hidden sm:block">
-              <img src="/assets/components/Carrow-right.png"
+              <img src="/webp/assets/components/Carrow-right.webp"
                 alt="Arrow indicator"
                 className="w-12 sm:w-16 md:w-20 lg:w-24 h-auto object-contain filter drop-shadow-[0_0_15px_rgba(244,63,94,0.4)]"
               loading="lazy" />
@@ -109,7 +109,7 @@ export function GlobalPresence() {
 
             {/* Map image background with edge-to-edge display */}
             <div className="relative w-full h-[380px] sm:h-[500px] md:h-[600px] lg:h-[680px] overflow-hidden">
-              <img src="/assets/Contact-page/map/image1.png"
+              <img src="/webp/assets/Contact-page/map/image1.webp"
                 alt="World map showing Devopstrio office locations"
                 className="w-full h-full object-cover sm:object-contain opacity-90"
                 draggable={false}
@@ -138,7 +138,7 @@ export function GlobalPresence() {
                   >
                     {/* Location Pin PNG Icon */}
                     <div className="relative flex items-center justify-center">
-                      <img src="/assets/components/location-pin.png"
+                      <img src="/webp/assets/components/location-pin.webp"
                         alt={`${loc.city} location pin`}
                         className={`relative z-10 transition-all duration-300 filter drop-shadow-[0_0_10px_rgba(244,63,94,0.7)] ${
                           isActive

@@ -52,7 +52,7 @@ export function OurStorySection() {
 
       {/* 1. HERO */}
       <section className="relative w-full min-h-[85vh] flex items-center justify-center rounded-3xl overflow-hidden border border-zinc-800 bg-zinc-950 px-6 py-20 text-center">
-        <img src="/assets/About-page/overview/about-devopstrio.png"
+        <img src="/webp/assets/About-page/overview/about-devopstrio.webp"
           alt="Engineering Better Digital Futures"
           className="absolute inset-0 w-full h-full object-cover object-center opacity-40 filter brightness-90"
         loading="lazy" />
@@ -93,7 +93,7 @@ export function OurStorySection() {
       <section className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div className="relative rounded-3xl overflow-hidden border border-zinc-800 bg-zinc-950 h-[380px] md:h-[440px] group shadow-2xl">
-            <img src="/assets/About-page/overview/about-devopstrio.png"
+            <img src="/webp/assets/About-page/overview/about-devopstrio.webp"
               alt="Every Business Wants to Move Faster"
               className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
             loading="lazy" />
@@ -134,7 +134,7 @@ export function OurStorySection() {
           </div>
 
           <div className="relative rounded-3xl overflow-hidden border border-zinc-800 bg-zinc-950 h-[380px] md:h-[440px] group shadow-2xl order-1 lg:order-2">
-            <img src="/assets/wavebg/navbar/servicesdrop.jpeg"
+            <img src="/webp/assets/wavebg/navbar/servicesdrop.webp"
               alt="Team Collaboration"
               className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
             loading="lazy" />
@@ -307,7 +307,7 @@ export function OurStorySection() {
             </div>
 
             <div className="relative rounded-2xl overflow-hidden border border-zinc-800 bg-zinc-900 h-[280px] md:h-[340px] group">
-              <img src="/assets/ecosystem/engineering-excellence-hero/Main.png"
+              <img src="/webp/assets/ecosystem/engineering-excellence-hero/Main.webp"
                 alt="Building What's Next"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-90"
               loading="lazy" />

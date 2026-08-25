@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export function ExpertiseBanner() {
   return (
-    <section id="expertise" className="w-full py-16 bg-[#030303] border-b border-zinc-900/60 relative overflow-hidden text-white">
+    <section id="expertise" className="w-full pt-4 pb-12 md:pt-6 md:pb-14 bg-[#030303] relative overflow-hidden text-white">
       <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10 text-left">
         
         {/* Glassmorphic Banner Container */}

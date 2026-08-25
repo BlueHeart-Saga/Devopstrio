@@ -108,7 +108,7 @@ export default function JustivonProductPage() {
               <div className="relative group rounded-3xl border border-zinc-900 bg-zinc-950/40 p-4 hover:border-rose-500/20 transition-colors">
                 <div className="relative aspect-[16/10] overflow-hidden rounded-2xl border border-zinc-900/60">
                   <Image
-                    src="/assets/Home-page/our-products/justivon.png"
+                    src="/webp/assets/Home-page/our-products/justivon.webp"
                     alt="Justivon Application Interface"
                     fill
                     className="object-cover"

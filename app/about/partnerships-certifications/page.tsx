@@ -106,7 +106,7 @@ export default function PartnershipsCertificationsPage() {
       {/* <TrustStatement /> */}
 
       {/* Divider */}
-      <SvgWaveLine variant="smooth" />
+      {/* <SvgWaveLine variant="smooth" /> */}
 
       {/* 8. Final CTA */}
       <PartnershipsCTA />

@@ -3,12 +3,12 @@ import React from "react";
 import { Reveal } from "@/components/ui/Reveal";
 
 const highlights = [
-  { year: "2026", category: "Technology Innovation", title: "Networking Computing Finalist", description: "Recognized for driving massive-scale infrastructure modernization.", logo: "/assets/Awards/Netwoking_Computing_Awards_2026-Finalist.png" },
-  { year: "2025", category: "Security & Compliance", title: "Computing Security Awards", description: "Awarded for exceptional DevSecOps practices and zero-trust deployments.", logo: "/assets/Awards/2025_Computing_Security_Awards-1.png" },
-  { year: "2023", category: "Client Trust", title: "HSJ Partnerships Award", description: "Recognized for transformative, long-term impact in public sector tech.", logo: "/assets/Awards/HSJ_Partnership_Awards_2023.png" },
-  { year: "2023", category: "Ecosystem Growth", title: "Arctic Wolf Partner", description: "Highlighted for scaling rapid, responsive cybersecurity defense mechanisms.", logo: "/assets/Awards/Arctic_Wolf_Partner_Awards.png" },
-  { year: "2022", category: "Delivery Excellence", title: "Cloud Solution Provider of the Year", description: "Awarded for consistent, high-availability cloud migration excellence.", logo: "/assets/Awards/Cloud_Solution_Provider_of_the_Year.png" },
-  { year: "2021", category: "Industry Leadership", title: "European IT & Software Excellence", description: "Celebrated for engineering robust data estates across Europe.", logo: "/assets/Awards/European_IT_and_Software_Excellence_Awards_2021.png" },
+  { year: "2026", category: "Technology Innovation", title: "Networking Computing Finalist", description: "Recognized for driving massive-scale infrastructure modernization.", logo: "/webp/assets/Awards/Netwoking_Computing_Awards_2026-Finalist.webp" },
+  { year: "2025", category: "Security & Compliance", title: "Computing Security Awards", description: "Awarded for exceptional DevSecOps practices and zero-trust deployments.", logo: "/webp/assets/Awards/2025_Computing_Security_Awards-1.webp" },
+  { year: "2023", category: "Client Trust", title: "HSJ Partnerships Award", description: "Recognized for transformative, long-term impact in public sector tech.", logo: "/webp/assets/Awards/HSJ_Partnership_Awards_2023.webp" },
+  { year: "2023", category: "Ecosystem Growth", title: "Arctic Wolf Partner", description: "Highlighted for scaling rapid, responsive cybersecurity defense mechanisms.", logo: "/webp/assets/Awards/Arctic_Wolf_Partner_Awards.webp" },
+  { year: "2022", category: "Delivery Excellence", title: "Cloud Solution Provider of the Year", description: "Awarded for consistent, high-availability cloud migration excellence.", logo: "/webp/assets/Awards/Cloud_Solution_Provider_of_the_Year.webp" },
+  { year: "2021", category: "Industry Leadership", title: "European IT & Software Excellence", description: "Celebrated for engineering robust data estates across Europe.", logo: "/webp/assets/Awards/European_IT_and_Software_Excellence_Awards_2021.webp" },
 ];
 
 export function RecognitionHighlights() {

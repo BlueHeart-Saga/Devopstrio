@@ -12,7 +12,7 @@ const services = [
     tag: "Innovate",
     title: "Transform operations with AI-driven intelligence and data.",
     desc: "Leverage Generative AI, machine learning, and intelligent automation to modernise business processes and unlock measurable value at scale.",
-    bgImage: "/assets/Home-page/core-services/red/1.png",
+    bgImage: "/webp/assets/Home-page/core-services/red/1.webp",
     href: "/services/ai-data-innovation",
     cta: "AI & Data Innovation"
   },
@@ -21,7 +21,7 @@ const services = [
     tag: "Migrate",
     title: "Move, optimise, and scale confidently on any cloud platform.",
     desc: "Design and manage resilient cloud environments across AWS, Azure, and Google Cloud — built for performance, compliance, and cost efficiency.",
-    bgImage: "/assets/Home-page/core-services/red/1-1.png",
+    bgImage: "/webp/assets/Home-page/core-services/red/1-1.webp",
     href: "/services/cloud-services",
     cta: "Cloud Services"
   },
@@ -30,7 +30,7 @@ const services = [
     tag: "Accelerate",
     title: "Ship faster with fully automated DevOps and IaC pipelines.",
     desc: "CI/CD automation, Kubernetes orchestration, Terraform, and platform engineering practices that eliminate friction and accelerate delivery.",
-    bgImage: "/assets/Home-page/core-services/red/1-2.png",
+    bgImage: "/webp/assets/Home-page/core-services/red/1-2.webp",
     href: "/services/devops-automation",
     cta: "DevOps & Automation"
   },
@@ -39,7 +39,7 @@ const services = [
     tag: "Protect",
     title: "Embed security and compliance into every layer of your stack.",
     desc: "Proactive threat management, SOC services, vulnerability assessments, and zero-trust security frameworks for regulated industries.",
-    bgImage: "/assets/Home-page/core-services/red/new.png",
+    bgImage: "/webp/assets/Home-page/core-services/red/new.webp",
     href: "/services/cybersecurity",
     cta: "Cybersecurity"
   },
@@ -48,7 +48,7 @@ const services = [
     tag: "Build",
     title: "Create enterprise-grade software, apps, and SaaS platforms.",
     desc: "From complex web applications and mobile products to API ecosystems and SaaS platforms — engineered for reliability and business impact.",
-    bgImage: "/assets/Home-page/core-services/red/1-4.png",
+    bgImage: "/webp/assets/Home-page/core-services/red/1-4.webp",
     href: "/services/software-development",
     cta: "Software Development"
   },
@@ -57,7 +57,7 @@ const services = [
     tag: "Transform",
     title: "Modernise business models and legacy systems for the digital age.",
     desc: "IT roadmaps, cloud readiness audits, process automation, and intelligent workflows to future-proof your enterprise architecture.",
-    bgImage: "/assets/Home-page/core-services/red/1-5.png",
+    bgImage: "/webp/assets/Home-page/core-services/red/1-5.webp",
     href: "/services/digital-transformation",
     cta: "Digital Transformation"
   },
@@ -66,7 +66,7 @@ const services = [
     tag: "Analyze",
     title: "Unlock actionable insights with robust enterprise data platforms.",
     desc: "Design columnar databases, unified lakehouses, real-time streaming pipelines, and ETL/ELT workflows using modern data stacks.",
-    bgImage: "/assets/Home-page/core-services/red/1-6.png",
+    bgImage: "/webp/assets/Home-page/core-services/red/1-6.webp",
     href: "/services/data-engineering",
     cta: "Data Engineering"
   },
@@ -75,7 +75,7 @@ const services = [
     tag: "Manage",
     title: "Ensure uninterrupted operations with 24/7 proactive monitoring.",
     desc: "Multi-account cloud administration, SLA bug resolutions, infrastructure management, and continuous incident containment.",
-    bgImage: "/assets/Home-page/core-services/red/1-7.png",
+    bgImage: "/webp/assets/Home-page/core-services/red/1-7.webp",
     href: "/services/managed-services",
     cta: "Managed Services"
   },
@@ -84,7 +84,7 @@ const services = [
     tag: "Ensure",
     title: "Deliver flawless digital experiences with quality engineering.",
     desc: "Automated end-to-end client scripts, performance load testing, API validation, and shift-left methodologies for zero defect escapes.",
-    bgImage: "/assets/Home-page/core-services/red/1-8.png",
+    bgImage: "/webp/assets/Home-page/core-services/red/1-8.webp",
     href: "/services/qa-testing",
     cta: "QA & Testing"
   },
@@ -93,7 +93,7 @@ const services = [
     tag: "Consult",
     title: "Align technology investments with strategic business objectives.",
     desc: "Cost-benefit analyses, distributed architecture planning, compliance alignment, and long-term digital transformation roadmaps.",
-    bgImage: "/assets/Home-page/core-services/red/1-9.png",
+    bgImage: "/webp/assets/Home-page/core-services/red/1-9.webp",
     href: "/services/it-consulting",
     cta: "IT Consulting"
   }
@@ -163,7 +163,7 @@ export function CoreServices() {
           <div className="text-center max-w-3xl mx-auto mb-8 flex flex-col items-center">
             {/* Top-to-bottom straight arrow PNG (cleanly spaced above header) */}
             <div className="mb-2 sm:mb-3 flex justify-center pointer-events-none select-none">
-              <img src="/assets/components/streight-toptobuttm.png"
+              <img src="/webp/assets/components/streight-toptobuttm.webp"
                 alt="Top to bottom arrow"
                 className="w-16 sm:w-20 md:w-24 lg:w-28 h-auto object-contain filter drop-shadow-[0_0_20px_rgba(244,63,94,0.5)]"
               loading="lazy" />

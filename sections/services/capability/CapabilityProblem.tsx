@@ -21,7 +21,7 @@ const problemData: Record<string, { title: string; subtitle: string; points: str
       "High compute latency during model inference causing performance drops and customer churn.",
       "Absence of continuous evaluation, leading to rapid model decay and operational drift."
     ],
-    image: "/assets/Services-Page/capability/banner/aidatainnovation.png"
+    image: "/webp/assets/Services-Page/capability/banner/aidatainnovation.webp"
   },
   "cloud-services": {
     title: "Escalating Cloud Waste & Outages",
@@ -31,7 +31,7 @@ const problemData: Record<string, { title: string; subtitle: string; points: str
       "Lack of geo-redundant configurations resulting in catastrophic system downtime.",
       "Slow, manual response mechanisms to traffic peaks, leading to platform unresponsive states."
     ],
-    image: "/assets/Services-Page/capability/banner/cloudservices.png"
+    image: "/webp/assets/Services-Page/capability/banner/cloudservices.webp"
   },
   "devops-automation": {
     title: "Manual Delivery & Release Chaos",
@@ -41,7 +41,7 @@ const problemData: Record<string, { title: string; subtitle: string; points: str
       "Absence of automated validation loops, causing critical defects to reach live environments.",
       "Slow, manual server builds causing severe deployment bottlenecks and delays."
     ],
-    image: "/assets/Services-Page/capability/banner/devopsautomation.png"
+    image: "/webp/assets/Services-Page/capability/banner/devopsautomation.webp"
   },
   "cybersecurity": {
     title: "Vulnerable Assets & Compliance Risks",
@@ -51,7 +51,7 @@ const problemData: Record<string, { title: string; subtitle: string; points: str
       "Non-compliance with GDPR, HIPAA, or FSQS exposing the firm to heavy legal penalties.",
       "Unmanaged access rights allowing privilege escalation and internal data leakage."
     ],
-    image: "/assets/Services-Page/capability/banner/Cybersecurity.png"
+    image: "/webp/assets/Services-Page/capability/banner/Cybersecurity.webp"
   },
   "software-development": {
     title: "Monolithic Software Sprawl & Tech Debt",
@@ -61,7 +61,7 @@ const problemData: Record<string, { title: string; subtitle: string; points: str
       "Slow, unoptimized page speeds degrading overall search rankings and UX.",
       "High overhead cost of maintaining legacy code compared to microservices."
     ],
-    image: "/assets/Services-Page/capability/banner/Softwaredevelopment.png"
+    image: "/webp/assets/Services-Page/capability/banner/Softwaredevelopment.webp"
   },
   "digital-transformation": {
     title: "Operational Friction & Legacy Lag",
@@ -71,7 +71,7 @@ const problemData: Record<string, { title: string; subtitle: string; points: str
       "Outdated database engines incapable of supporting modern API requirements.",
       "Siloed systems leading to duplicate data processing and operations delays."
     ],
-    image: "/assets/Services-Page/capability/banner/Digital_trasfrormation.png"
+    image: "/webp/assets/Services-Page/capability/banner/Digital_trasfrormation.webp"
   },
   "data-engineering": {
     title: "Siloed Data Clusters & High Latency",
@@ -81,7 +81,7 @@ const problemData: Record<string, { title: string; subtitle: string; points: str
       "No unified schema registry, creating conflicting definitions of core business KPIs.",
       "High cloud database query costs due to unindexed, unstructured data lakes."
     ],
-    image: "/assets/Services-Page/capability/banner/Data_Engineering.png"
+    image: "/webp/assets/Services-Page/capability/banner/Data_Engineering.webp"
   },
   "managed-services": {
     title: "Operational Blindspots & Slow Incidents",
@@ -91,7 +91,7 @@ const problemData: Record<string, { title: string; subtitle: string; points: str
       "High MTTR (Mean Time to Resolution) leading to system downtime.",
       "Inconsistent system backups and failover checks exposing data to loss."
     ],
-    image: "/assets/Services-Page/capability/banner/Managed_Services.png"
+    image: "/webp/assets/Services-Page/capability/banner/Managed_Services.webp"
   },
   "qa-testing": {
     title: "Post-Release Regressions & Bugs",
@@ -101,7 +101,7 @@ const problemData: Record<string, { title: string; subtitle: string; points: str
       "Slow manual testing cycles delaying product release windows.",
       "Inconsistent layout validation causing brand damage on mobile browsers."
     ],
-    image: "/assets/Services-Page/capability/banner/QAandTesting.png"
+    image: "/webp/assets/Services-Page/capability/banner/QAandTesting.webp"
   },
   "it-consulting": {
     title: "Architecture Bloat & Stack Overlap",
@@ -111,7 +111,7 @@ const problemData: Record<string, { title: string; subtitle: string; points: str
       "Vague cloud transition strategies causing delays in transformation cycles.",
       "Complex custom-coded structures where a simpler SaaS product suffices."
     ],
-    image: "/assets/Services-Page/capability/banner/IT_Consulting.png"
+    image: "/webp/assets/Services-Page/capability/banner/IT_Consulting.webp"
   }
 };
 

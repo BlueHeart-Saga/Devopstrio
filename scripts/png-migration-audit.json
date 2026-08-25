@@ -1,0 +1,176 @@
+{
+  "timestamp": "2026-08-25T04:14:17.337Z",
+  "pngReferencesFound": 1,
+  "pngReferencesUpdated": 0,
+  "webpFilesVerified": 0,
+  "dynamicPngUpdated": 0,
+  "totalModifiedFiles": 0,
+  "remainingPngCount": 26,
+  "missingWebpFilesCount": 1,
+  "potentialCaseIssuesCount": 0,
+  "remainingPngReferences": [
+    {
+      "file": "app\\feed.xml\\route.ts",
+      "line": 10,
+      "content": "image_url: \"https://devopstrio.co.uk/apple-touch-icon.png\",",
+      "classification": "B. External URL"
+    },
+    {
+      "file": "components\\seo\\Schemas.tsx",
+      "line": 11,
+      "content": "\"logo\": \"https://devopstrio.co.uk/apple-touch-icon.png\",",
+      "classification": "B. External URL"
+    },
+    {
+      "file": "components\\seo\\Schemas.tsx",
+      "line": 66,
+      "content": "\"logo\": \"https://devopstrio.co.uk/apple-touch-icon.png\"",
+      "classification": "B. External URL"
+    },
+    {
+      "file": "components\\seo\\Schemas.tsx",
+      "line": 139,
+      "content": "\"image\": image || \"https://devopstrio.co.uk/apple-touch-icon.png\",",
+      "classification": "B. External URL"
+    },
+    {
+      "file": "components\\seo\\Schemas.tsx",
+      "line": 151,
+      "content": "\"url\": \"https://devopstrio.co.uk/apple-touch-icon.png\"",
+      "classification": "B. External URL"
+    },
+    {
+      "file": "components\\seo\\Schemas.tsx",
+      "line": 205,
+      "content": "\"image\": \"https://devopstrio.co.uk/apple-touch-icon.png\",",
+      "classification": "B. External URL"
+    },
+    {
+      "file": "components\\seo\\Schemas.tsx",
+      "line": 223,
+      "content": "\"logo\": \"https://devopstrio.co.uk/apple-touch-icon.png\",",
+      "classification": "B. External URL"
+    },
+    {
+      "file": "components\\seo\\Schemas.tsx",
+      "line": 224,
+      "content": "\"image\": \"https://devopstrio.co.uk/apple-touch-icon.png\",",
+      "classification": "B. External URL"
+    },
+    {
+      "file": "components\\seo\\Schemas.tsx",
+      "line": 250,
+      "content": "\"image\": \"https://devopstrio.co.uk/apple-touch-icon.png\",",
+      "classification": "B. External URL"
+    },
+    {
+      "file": "components\\seo\\Schemas.tsx",
+      "line": 305,
+      "content": "\"logo\": \"https://devopstrio.co.uk/apple-touch-icon.png\"",
+      "classification": "B. External URL"
+    },
+    {
+      "file": "sections\\about\\internship\\MentorshipBenefits.tsx",
+      "line": 58,
+      "content": "{/* List View with linearrow.png bullet points */}",
+      "classification": "C. Missing WebP conversion"
+    },
+    {
+      "file": "sections\\about\\internship\\MentorshipBenefits.tsx",
+      "line": 65,
+      "content": "{/* linearrow.png bullet icon */}",
+      "classification": "C. Missing WebP conversion"
+    },
+    {
+      "file": "sections\\about\\internship\\MentorshipBenefits.tsx",
+      "line": 96,
+      "content": "{/* List View with linearrow.png bullet points */}",
+      "classification": "C. Missing WebP conversion"
+    },
+    {
+      "file": "sections\\about\\internship\\MentorshipBenefits.tsx",
+      "line": 103,
+      "content": "{/* linearrow.png bullet icon */}",
+      "classification": "C. Missing WebP conversion"
+    },
+    {
+      "file": "sections\\about\\partnerships-certifications\\PartnershipsHero.tsx",
+      "line": 10,
+      "content": "{/* Background Image Layer: bgimage.png */}",
+      "classification": "C. Missing WebP conversion"
+    },
+    {
+      "file": "sections\\about\\support\\SupportReviews.tsx",
+      "line": 174,
+      "content": "src=\"https://www.google.com/images/branding/googlelogo/2x/googlelogo_light_color_92x30dp.png\"",
+      "classification": "B. External URL"
+    },
+    {
+      "file": "sections\\careers\\LearningGrowth.tsx",
+      "line": 54,
+      "content": "{/* Right Side Interactive Dropdown Button with linearrow.png */}",
+      "classification": "C. Missing WebP conversion"
+    },
+    {
+      "file": "sections\\contact\\GlobalPresence.tsx",
+      "line": 88,
+      "content": "{/* Carrow-right.png arrow on the left side pointing to header */}",
+      "classification": "C. Missing WebP conversion"
+    },
+    {
+      "file": "sections\\contact\\OurLocations.tsx",
+      "line": 74,
+      "content": "{/* Right Side Interactive Dropdown Button with linearrow.png */}",
+      "classification": "C. Missing WebP conversion"
+    },
+    {
+      "file": "sections\\home\\ExecutiveTestimonials.tsx",
+      "line": 331,
+      "content": "{/* Background Image: whitepaperbg.png */}",
+      "classification": "C. Missing WebP conversion"
+    },
+    {
+      "file": "sections\\home\\GlobalLocations.tsx",
+      "line": 78,
+      "content": "{/* Right Side Interactive Dropdown Button with linearrow.png */}",
+      "classification": "C. Missing WebP conversion"
+    },
+    {
+      "file": "sections\\industries\\detail\\IndustryCaseStudy.tsx",
+      "line": 38,
+      "content": "// Define 9 high-quality DevOps case study slides using case-studies images 2.png through 10.png",
+      "classification": "A. Intentionally remaining (Comment)"
+    },
+    {
+      "file": "sections\\industries\\detail\\IndustryCaseStudy.tsx",
+      "line": 177,
+      "content": "// Merge the dynamically provided page case study as Slide 0 (using image 1.png), followed by the default slides",
+      "classification": "A. Intentionally remaining (Comment)"
+    },
+    {
+      "file": "lib\\utils.ts",
+      "line": 9,
+      "content": "* Converts standard image paths (.png, .jpg, .jpeg) to their corresponding /webp/ path.",
+      "classification": "A. Intentionally remaining (Comment)"
+    },
+    {
+      "file": "lib\\utils.ts",
+      "line": 10,
+      "content": "* Example: \"/assets/hero.png\" -> \"/webp/assets/hero.webp\"",
+      "classification": "A. Intentionally remaining (Comment)"
+    },
+    {
+      "file": "data\\hiringPosters.json",
+      "line": 41,
+      "content": "\"image\": \"https://marketingstorein.blob.core.windows.net/devopstrio/uploads/b8b3a802-193d-433e-ae8d-639f802c3d15.png\"",
+      "classification": "B. External URL"
+    }
+  ],
+  "missingWebpFiles": [
+    {
+      "file": "lib\\utils.ts",
+      "reference": "/assets/hero.png"
+    }
+  ],
+  "potentialCaseIssues": []
+}

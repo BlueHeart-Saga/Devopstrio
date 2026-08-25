@@ -16,23 +16,23 @@ interface Testimonial {
 }
 
 const clientImages = [
-  "/assets/Home-page/client-reviews/image-164.png",
-  "/assets/Home-page/client-reviews/image-165.png",
-  "/assets/Home-page/client-reviews/image-166.png",
-  "/assets/Home-page/client-reviews/image-167.png",
-  "/assets/Home-page/client-reviews/image-168.png",
-  "/assets/Home-page/client-reviews/image-169.png",
-  "/assets/Home-page/client-reviews/image-170.png",
-  "/assets/Home-page/client-reviews/image-171.png",
-  "/assets/Home-page/client-reviews/image-172.png",
-  "/assets/Home-page/client-reviews/image-173.png",
-  "/assets/Home-page/client-reviews/image-174.png",
-  "/assets/Home-page/client-reviews/image-175.png",
-  "/assets/Home-page/client-reviews/image-176.png",
-  "/assets/Home-page/client-reviews/image-177.png",
-  "/assets/Home-page/client-reviews/image-178.png",
-  "/assets/Home-page/client-reviews/image-180.png",
-  "/assets/Home-page/client-reviews/image-181.png"
+  "/webp/assets/Home-page/client-reviews/image-164.webp",
+  "/webp/assets/Home-page/client-reviews/image-165.webp",
+  "/webp/assets/Home-page/client-reviews/image-166.webp",
+  "/webp/assets/Home-page/client-reviews/image-167.webp",
+  "/webp/assets/Home-page/client-reviews/image-168.webp",
+  "/webp/assets/Home-page/client-reviews/image-169.webp",
+  "/webp/assets/Home-page/client-reviews/image-170.webp",
+  "/webp/assets/Home-page/client-reviews/image-171.webp",
+  "/webp/assets/Home-page/client-reviews/image-172.webp",
+  "/webp/assets/Home-page/client-reviews/image-173.webp",
+  "/webp/assets/Home-page/client-reviews/image-174.webp",
+  "/webp/assets/Home-page/client-reviews/image-175.webp",
+  "/webp/assets/Home-page/client-reviews/image-176.webp",
+  "/webp/assets/Home-page/client-reviews/image-177.webp",
+  "/webp/assets/Home-page/client-reviews/image-178.webp",
+  "/webp/assets/Home-page/client-reviews/image-180.webp",
+  "/webp/assets/Home-page/client-reviews/image-181.webp"
 ];
 
 // 100 realistic enterprise executive testimonials across all key industries
@@ -214,7 +214,7 @@ export function ExecutiveTestimonials() {
             <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight text-white mb-3 relative inline-block">
               {/* Curved Down Arrow PNG */}
               <div className="absolute -top-10 left-0 sm:-left-10 z-20 pointer-events-none select-none">
-                <img src="/assets/components/Carrow-right.png"
+                <img src="/webp/assets/components/Carrow-right.webp"
                   alt="Curved down arrow"
                   className="w-10 sm:w-14 h-auto object-contain filter drop-shadow-[0_0_15px_rgba(244,63,94,0.4)]"
                 loading="lazy" />
@@ -329,7 +329,7 @@ export function ExecutiveTestimonials() {
                   }}
                 >
                   {/* Background Image: whitepaperbg.png */}
-                  <img src="/assets/components/whitepaperbg.png"
+                  <img src="/webp/assets/components/whitepaperbg.webp"
                     alt="Paper background texture"
                     className="absolute inset-0 w-full h-full object-cover z-0"
                   loading="lazy" />

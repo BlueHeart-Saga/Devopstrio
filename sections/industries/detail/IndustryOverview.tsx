@@ -25,31 +25,31 @@ export function IndustryOverview({
     const src = imgSrc.toLowerCase();
 
     if (src.includes("finance") || src.includes("banking") || src.includes("bank")) {
-      return "/assets/Industries-page/industries/Banking-and-Finance.png";
+      return "/webp/assets/Industries-page/industries/Banking-and-Finance.webp";
     }
     if (src.includes("education")) {
-      return "/assets/Industries-page/industries/Education.png";
+      return "/webp/assets/Industries-page/industries/Education.webp";
     }
     if (src.includes("public") || src.includes("government") || src.includes("govt")) {
-      return "/assets/Industries-page/industries/Government-and-Public-Sector.png";
+      return "/webp/assets/Industries-page/industries/Government-and-Public-Sector.webp";
     }
     if (src.includes("healthcare") || src.includes("health") || src.includes("life")) {
-      return "/assets/Industries-page/industries/Healthcare-and-Life-Sciences.png";
+      return "/webp/assets/Industries-page/industries/Healthcare-and-Life-Sciences.webp";
     }
     if (src.includes("manufactur") || src.includes("manuf")) {
-      return "/assets/Industries-page/industries/Manufacturing.png";
+      return "/webp/assets/Industries-page/industries/Manufacturing.webp";
     }
     if (src.includes("media") || src.includes("entertainment")) {
-      return "/assets/Industries-page/industries/Media-and-Entertainment.png";
+      return "/webp/assets/Industries-page/industries/Media-and-Entertainment.webp";
     }
     if (src.includes("retail") || src.includes("commerce") || src.includes("retails")) {
-      return "/assets/Industries-page/industries/Retail-and-E-Commerce.png";
+      return "/webp/assets/Industries-page/industries/Retail-and-E-Commerce.webp";
     }
     if (src.includes("telecommunication") || src.includes("telecom") || src.includes("tele")) {
-      return "/assets/Industries-page/industries/Telecommunications.png";
+      return "/webp/assets/Industries-page/industries/Telecommunications.webp";
     }
 
-    return "/assets/Home-page/business-overview/overview-lifestyle.png";
+    return "/webp/assets/Home-page/business-overview/overview-lifestyle.webp";
   };
 
   const displayImage = getPremiumIllustration(image || "");

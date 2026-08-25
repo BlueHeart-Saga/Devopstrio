@@ -7,14 +7,14 @@ import { Reveal } from "@/components/ui/Reveal";
 import { ecosystemDomains } from "@/data/ecosystem";
 
 const bgWaves: Record<string, string> = {
-  "partnerships": "/assets/ecosystem/grid/Generated-Design.png",
-  "innovation-labs": "/assets/ecosystem/grid/Generated-Design-1.png",
-  "platforms-solutions": "/assets/ecosystem/grid/Generated-Design-2.png",
-  "technology-stack": "/assets/ecosystem/grid/Generated-Design-3.png",
-  "global-delivery": "/assets/ecosystem/grid/Generated-Design-4.png",
-  "engineering-excellence": "/assets/ecosystem/grid/Generated-Design-5.png",
-  "accelerators-frameworks": "/assets/ecosystem/grid/Generated-Design-6.png",
-  "community-talent-network": "/assets/ecosystem/grid/Generated-Design-7.png",
+  "partnerships": "/webp/assets/ecosystem/grid/Generated-Design.webp",
+  "innovation-labs": "/webp/assets/ecosystem/grid/Generated-Design-1.webp",
+  "platforms-solutions": "/webp/assets/ecosystem/grid/Generated-Design-2.webp",
+  "technology-stack": "/webp/assets/ecosystem/grid/Generated-Design-3.webp",
+  "global-delivery": "/webp/assets/ecosystem/grid/Generated-Design-4.webp",
+  "engineering-excellence": "/webp/assets/ecosystem/grid/Generated-Design-5.webp",
+  "accelerators-frameworks": "/webp/assets/ecosystem/grid/Generated-Design-6.webp",
+  "community-talent-network": "/webp/assets/ecosystem/grid/Generated-Design-7.webp",
 };
 
 export function EcosystemPillars() {
@@ -185,7 +185,7 @@ export function EcosystemPillars() {
           <div className="relative w-full overflow-hidden rounded-3xl bg-[#030303] flex items-center justify-center">
             {/* Blending gradients to merge the image edges smoothly into the background theme */}
             <div className="absolute inset-0 bg-gradient-to-t from-[#030303] via-transparent to-transparent pointer-events-none z-10" />
-            <img src="/assets/ecosystem/domains/Ecosystem_main_page_poster.png"
+            <img src="/webp/assets/ecosystem/domains/Ecosystem_main_page_poster.webp"
               alt="Ecosystem Alliance Map"
               className="w-full h-auto object-contain select-none pointer-events-none z-0"
             loading="lazy" />

@@ -14,7 +14,7 @@ export function VideosSection({
   onPreview: (item: any) => void;
 }) {
   const chromaItems: ChromaItem[] = videos.map((item, idx) => ({
-    image: item.image || `/assets/common/09ff7846bc8c9998745688779c09f88d-1.png`,
+    image: item.image || `/webp/assets/common/09ff7846bc8c9998745688779c09f88d-1.webp`,
     title: item.title,
     subtitle: item.description || "Product walkthroughs, webinars, and technical demos.",
     handle: item.size || "HD Video",

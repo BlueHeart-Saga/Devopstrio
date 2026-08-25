@@ -73,7 +73,7 @@ export function ResearchPublications() {
           
           {/* Background Image Layer */}
           <div className="absolute inset-0 z-0">
-            <img src="/assets/services/bg-ai.png" 
+            <img src="/webp/assets/services/bg-ai.webp" 
               alt="Research and Engineering Collaboration" 
               className="w-full h-full object-cover opacity-60"
             loading="lazy" />

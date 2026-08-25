@@ -707,7 +707,7 @@ const IndustryUseCases = () => {
             <Reveal className="h-full">
               <div className="relative overflow-hidden rounded-3xl h-full flex flex-col justify-end p-8 bg-zinc-900 border border-zinc-800 shadow-[0_8px_32px_0_rgba(0,0,0,0.5)] group">
                 <div className="absolute inset-0 z-0">
-                  <img src="/assets/industry_case_cover.png"
+                  <img src="/webp/assets/industry_case_cover.webp"
                     alt="Layered security cover"
                     className="w-full h-full object-cover opacity-25 group-hover:scale-105 transition-transform duration-750"
                   loading="lazy" />

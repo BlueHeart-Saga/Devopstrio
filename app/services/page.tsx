@@ -2,9 +2,11 @@ import React from "react";
 import { Metadata } from "next";
 import dynamic from "next/dynamic";
 import { ServicesHero } from "@/sections/services/ServicesHero";
+import { ServicesPillars } from "@/sections/services/ServicesPillars";
 import { BreadcrumbSchema } from "@/components/seo/Schemas";
 
 // Dynamic Imports for Heavy Below-The-Fold Sections to Reduce Initial JS Bundle
+const ServicesAIShowcase = dynamic(() => import("@/sections/services/ServicesAIShowcase").then((mod) => mod.ServicesAIShowcase));
 const CategoriesGrid = dynamic(() => import("@/sections/services/CategoriesGrid").then((mod) => mod.CategoriesGrid));
 const CoreServices = dynamic(() => import("@/sections/home/CoreServices").then((mod) => mod.CoreServices));
 const DetailedServices = dynamic(() => import("@/sections/services/DetailedServices").then((mod) => mod.DetailedServices));
@@ -15,25 +17,12 @@ const FaqSection = dynamic(() => import("@/sections/services/FaqSection").then((
 const ServicesCTA = dynamic(() => import("@/sections/services/ServicesCTA").then((mod) => mod.ServicesCTA));
 
 export const metadata: Metadata = {
-  title: "Engineering Services",
-  description: "Explore our practice areas: Cognitive AI pipelines, multi-region AKS/EKS container grids, platform engineering, and compliance hardening.",
+  title: "Engineering & AI Services",
+  description: "Explore our enterprise practice areas: Cognitive AI pipelines, 3 Pillars of AI Transformation, multi-cloud engineering, cybersecurity, and managed IT operations.",
   alternates: {
     canonical: "/services"
   }
 };
-
-const servicesSections = [
-  { id: "categories", label: "Categories" },
-  { id: "capabilities", label: "Capabilities" },
-  { id: "detailed-services", label: "Capability Directory" },
-  { id: "delivery-framework", label: "Framework" },
-  { id: "industries", label: "Industries" },
-  { id: "why-devopstrio", label: "Why Us" },
-  { id: "technology-ecosystem", label: "Tech Ecosystem" },
-  { id: "client-impact", label: "Client Impact" },
-  { id: "engagement-models", label: "Engagement Models" },
-  { id: "faq", label: "FAQ" }
-];
 
 export default function ServicesPage() {
   const breadcrumbs = [
@@ -45,90 +34,53 @@ export default function ServicesPage() {
     <main className="min-h-screen bg-black text-white pt-16 font-sans">
       <BreadcrumbSchema items={breadcrumbs} />
 
-      
-      {/* Cinematic Hero Title Header */}
-      {/* <section className="pt-16 pb-4 md:pb-8 text-center relative bg-[#030303]">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(244,63,94,0.05),transparent_50%)] pointer-events-none" />
-        <Reveal>
-          <h1 className="text-4xl md:text-6xl font-light tracking-tight mb-4 text-white">
-            Services <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-rose-500">Devopstrio</span>
-          </h1>
-          <p className="text-zinc-400 font-medium max-w-xl mx-auto">
-            From cognitive AI pipelines and global cloud orchestration to zero-trust compliance frameworks.
-          </p>
-        </Reveal>
-      </section> */}
-
-      {/* Structured Services Sections with High-Level Coded SVG Wave Lines */}
-      <div className="flex flex-col bg-black">
+      {/* 1. Services Hero & 3 Pillars Flow */}
+      <div className="flex flex-col bg-[#030303]">
         <ServicesHero />
+        <ServicesPillars />
       </div>
 
-      {/* Sticky Section Sub-Navbar */}
-      {/* <SectionNavbar sections={servicesSections} /> */}
-      {/* <SvgWaveLine variant="smooth" /> */}
+      {/* 2. Enterprise AI Showcase */}
+      <div id="ai-studio">
+        <ServicesAIShowcase />
+      </div>
 
-      {/* 2. Service Categories Grid */}
+      {/* 3. All Our Enterprise Services Categories Grid */}
       <div id="categories">
         <CategoriesGrid />
       </div>
-      {/* <SvgWaveLine variant="dashed" /> */}
 
-      {/* 3. Core Capabilities Slider */}
+      {/* 4. Core Capabilities Slider */}
       <div id="capabilities">
         <CoreServices />
       </div>
-      {/* <SvgWaveLine variant="particles" /> */}
 
-      {/* 4. Detailed Services Explorer */}
+      {/* 5. Detailed Services Explorer */}
       <div id="detailed-services">
         <DetailedServices />
       </div>
-      {/* <SvgWaveLine variant="grid" /> */}
 
-      {/* 5. Delivery Framework (Lifecycle) */}
-      <div id="delivery-framework">
+      {/* 6. Delivery Framework (Lifecycle) */}
+      {/* <div id="delivery-framework">
         <LifecycleSection />
-      </div>
-      {/* <SvgWaveLine variant="liquid" /> */}
+      </div> */}
 
-      {/* 6. Industries Served */}
+      {/* 7. Industries Served */}
       <div id="industries">
         <IndustriesSection />
       </div>
-      {/* <SvgWaveLine variant="smooth" /> */}
 
-      {/* 7. Why Devopstrio (Stats & Tabs) */}
-      {/* <div id="why-devopstrio">
-        <WhyDevopstrio />
-      </div> */}
-      {/* <SvgWaveLine variant="dashed" /> */}
-
-      {/* 8. Technology Ecosystem (Tech Stack) */}
-      {/* <div id="technology-ecosystem">
-        <TechStackSection />
-      </div> */}
-      {/* <SvgWaveLine variant="particles" /> */}
-
-      {/* 9. Client Impact Case Study */}
-      <div id="client-impact">
+      {/* 8. Client Impact Case Study */}
+      {/* <div id="client-impact">
         <CaseStudyHighlight />
-      </div>
-      {/* <SvgWaveLine variant="grid" /> */}
-
-      {/* 10. Engagement Models */}
-      {/* <div id="engagement-models">
-        <EngagementModels />
       </div> */}
-      {/* <SvgWaveLine variant="liquid" /> */}
 
-      {/* 11. FAQ Accordions */}
+      {/* 9. FAQ Accordions */}
       <div id="faq">
         <FaqSection />
       </div>
-      {/* <SvgWaveLine variant="smooth" /> */}
 
-      {/* 12. Final CTA Section */}
+      {/* 10. Final CTA Section */}
       <ServicesCTA />
 
     </main>

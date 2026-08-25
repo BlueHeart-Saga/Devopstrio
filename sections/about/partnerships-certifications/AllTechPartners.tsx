@@ -5,7 +5,7 @@ import { Reveal } from "@/components/ui/Reveal";
 const techPartners = [
   {
     name: "AWS",
-    logo: "/assets/Devopstrio_Partners/aws.png"
+    logo: "/webp/assets/Devopstrio_Partners/aws.webp"
   },
   {
     name: "Google Cloud",

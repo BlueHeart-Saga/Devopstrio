@@ -65,7 +65,7 @@ export function Careers3Pillars() {
           <div className="text-center max-w-4xl mx-auto mb-12 sm:mb-16 relative">
             {/* Top-to-bottom arrow PNG */}
             <div className="flex justify-center mb-4 pointer-events-none select-none">
-              <img src="/assets/components/streight-toptobuttm.png"
+              <img src="/webp/assets/components/streight-toptobuttm.webp"
                 alt="Arrow indicator"
                 className="w-12 sm:w-16 md:w-20 h-auto object-contain filter drop-shadow-[0_0_18px_rgba(244,63,94,0.5)]"
               loading="lazy" />

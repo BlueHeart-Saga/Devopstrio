@@ -13,7 +13,7 @@ const corePoints = [
     title: "Global Presence, Local Expertise",
     desc: "Access world-class engineering expertise locally with global delivery teams designed to scale seamlessly under flexible engagement models.",
     gradient: "from-rose-950/40 via-purple-950/30 to-zinc-950/80",
-    image: "/assets/Home-page/whychoose/globalpresence.png",
+    image: "/webp/assets/Home-page/whychoose/globalpresence.webp",
     href: "/about"
   },
   {
@@ -22,7 +22,7 @@ const corePoints = [
     title: "Cloud, Data & AI Excellence",
     desc: "Leverage intelligence-driven automation, GenAI, and cloud platforms (Azure, AWS, GCP) to unlock next-generation product engineering.",
     gradient: "from-blue-950/40 via-indigo-950/30 to-zinc-950/80",
-    image: "/assets/Home-page/whychoose/cloudai.png",
+    image: "/webp/assets/Home-page/whychoose/cloudai.webp",
     href: "/services/ai-data-innovation"
   },
   {
@@ -31,7 +31,7 @@ const corePoints = [
     title: "Outcome-Driven Transformation",
     desc: "We align every project outcome with direct business value, performance milestones, cost-efficiency metrics, and operational goals.",
     gradient: "from-teal-950/40 via-emerald-950/30 to-zinc-950/80",
-    image: "/assets/Home-page/whychoose/outcome.png",
+    image: "/webp/assets/Home-page/whychoose/outcome.webp",
     href: "/about"
   },
   {
@@ -40,7 +40,7 @@ const corePoints = [
     title: "End-to-End Technology Delivery",
     desc: "From conceptualization, design, architecture, implementation to managed operations and continuous delivery—all managed under one strategic partner.",
     gradient: "from-emerald-950/40 via-zinc-900/30 to-zinc-950/80",
-    image: "/assets/Home-page/whychoose/technology.png",
+    image: "/webp/assets/Home-page/whychoose/technology.webp",
     href: "/ecosystem/global-delivery"
   },
   {
@@ -49,7 +49,7 @@ const corePoints = [
     title: "Multi-Cloud Engineering Leadership",
     desc: "Our certified cloud experts build resilient infrastructures on AWS, Azure, Google Cloud, and complex hybrid environments.",
     gradient: "from-indigo-950/40 via-pink-950/30 to-zinc-950/80",
-    image: "/assets/Home-page/whychoose/multicloud.png",
+    image: "/webp/assets/Home-page/whychoose/multicloud.webp",
     href: "/services/cloud-services"
   },
   {
@@ -58,7 +58,7 @@ const corePoints = [
     title: "Enterprise-Grade Security & Reliability",
     desc: "Zero-trust environments, compliance guardrails, automated threat-detection, and highly reliable Site Reliability Engineering built into every delivery.",
     gradient: "from-violet-950/40 via-fuchsia-950/30 to-zinc-950/80",
-    image: "/assets/Home-page/whychoose/gradesecurity.png",
+    image: "/webp/assets/Home-page/whychoose/gradesecurity.webp",
     href: "/services/cybersecurity"
   },
   {
@@ -67,7 +67,7 @@ const corePoints = [
     title: "Scalable Global Delivery Model",
     desc: "Scale teams dynamically with elite developers, DevOps engineers, and cloud architects operating under our optimized global framework.",
     gradient: "from-fuchsia-950/40 via-rose-950/30 to-zinc-950/80",
-    image: "/assets/Home-page/whychoose/globaldeliver.png",
+    image: "/webp/assets/Home-page/whychoose/globaldeliver.webp",
     href: "/ecosystem/global-delivery"
   },
   {
@@ -76,7 +76,7 @@ const corePoints = [
     title: "Long-Term Strategic Partnership",
     desc: "We focus on long-term relationships, strategic consulting, knowledge-sharing, and continuous value creation beyond transactional contracts.",
     gradient: "from-rose-950/40 via-orange-950/30 to-zinc-950/80",
-    image: "/assets/Home-page/whychoose/partnership.png",
+    image: "/webp/assets/Home-page/whychoose/partnership.webp",
     href: "/about"
   }
 ];
@@ -350,7 +350,7 @@ export function WhyDevopstrio() {
 
                 
                 <div className="absolute inset-0 z-0 [clip-path:circle(0%_at_100%_100%)] group-hover:[clip-path:circle(150%_at_100%_100%)] transition-all duration-700 ease-in-out pointer-events-none">
-                  <img src="/assets/Home-page/whychoose/partnership-cover.png" alt="Why Devopstrio" className="w-full h-full object-cover scale-110 group-hover:scale-100 transition-transform duration-1000 ease-out" loading="lazy" />
+                  <img src="/webp/assets/Home-page/whychoose/partnership-cover.webp" alt="Why Devopstrio" className="w-full h-full object-cover scale-110 group-hover:scale-100 transition-transform duration-1000 ease-out" loading="lazy" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-black/20 backdrop-blur-md" />
                 </div>
 

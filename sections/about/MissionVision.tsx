@@ -64,7 +64,7 @@ export function MissionVision() {
             <Reveal delay={0.2}>
               <div className="relative rounded-3xl overflow-hidden aspect-square w-full border border-zinc-900 hover:border-rose-500/30 group shadow-2xl transition-colors duration-500">
                 <motion.img
-                  src="/assets/About-page/mission/core-value.png"
+                  src="/webp/assets/About-page/mission/core-value.webp"
                   alt="Our Core Values"
                   initial={{ filter: "grayscale(100%) brightness(0.75) contrast(1.1)", scale: 1 }}
                   whileInView={{ filter: "grayscale(0%) brightness(1) contrast(1)", scale: 1.03 }}
@@ -92,7 +92,7 @@ export function MissionVision() {
             <Reveal delay={0.2}>
               <div className="relative rounded-3xl overflow-hidden aspect-square w-full border border-zinc-900 hover:border-rose-500/30 group shadow-2xl transition-colors duration-500">
                 <motion.img
-                  src="/assets/About-page/mission/mission.png"
+                  src="/webp/assets/About-page/mission/mission.webp"
                   alt="Our Mission"
                   initial={{ filter: "grayscale(100%) brightness(0.75) contrast(1.1)", scale: 1 }}
                   whileInView={{ filter: "grayscale(0%) brightness(1) contrast(1)", scale: 1.03 }}
@@ -186,7 +186,7 @@ export function MissionVision() {
             <Reveal delay={0.2}>
               <div className="relative rounded-3xl overflow-hidden aspect-square w-full border border-zinc-900 hover:border-rose-500/30 group shadow-2xl transition-colors duration-500">
                 <motion.img
-                  src="/assets/About-page/mission/vision.png"
+                  src="/webp/assets/About-page/mission/vision.webp"
                   alt="Our Vision"
                   initial={{ filter: "grayscale(100%) brightness(0.75) contrast(1.1)", scale: 1 }}
                   whileInView={{ filter: "grayscale(0%) brightness(1) contrast(1)", scale: 1.03 }}

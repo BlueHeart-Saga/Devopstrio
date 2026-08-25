@@ -95,7 +95,7 @@ export function Footer() {
           {/* Col 1: Brand Intro */}
           <div className="flex flex-col items-center text-center gap-0">
             <Link href="/" className="flex flex-col items-center gap-3 group inline-flex mb-4">
-              <img src="/assets/logo/logo.png"
+              <img src="/webp/assets/logo/logo.webp"
                 alt="Devopstrio logo"
                 className="w-16 h-16 object-contain transition-all duration-500 group-hover:scale-105 filter drop-shadow-[0_0_15px_rgba(255,255,255,0.15)]"
               loading="lazy" />
@@ -137,7 +137,7 @@ export function Footer() {
             {/* <div className="rounded-2xl flex flex-col items-start justify-start w-full max-w-[240px]">
              
               <div className="w-24 h-24 mx-auto bg-white p-1 flex items-center justify-center shadow-[0_4px_12px_rgba(0,0,0,0.5)] overflow-hidden">
-                <img src="/assets/scan/Scan-me.png"
+                <img src="/webp/assets/scan/Scan-me.webp"
                   alt="Scan to verify corporate profile"
                   className="w-full h-full object-contain"
                 loading="lazy" />

@@ -24,7 +24,7 @@ export function ServicesHero() {
           <div className="lg:col-span-5 flex items-center justify-center lg:justify-end z-10 w-full">
             <Reveal delay={0.2} className="w-full flex items-center justify-center lg:justify-end">
               <Image
-                src="/assets/herocard/servicespage.png"
+                src="/webp/assets/herocard/servicespage.webp"
                 alt="Services Capabilities"
                 priority
                 width={480}

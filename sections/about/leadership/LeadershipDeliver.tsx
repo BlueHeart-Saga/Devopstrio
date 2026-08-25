@@ -12,7 +12,7 @@ const caseStudies = [
     summary:
       "Architected an autonomous AI-powered analytics engine for a global financial institution, reducing turnaround from days to milliseconds.",
     image:
-      "/assets/Services-Page/our-enterprise-ai-engineering-excellence/autonomous-ai-systems-mlops-engineering.png",
+      "/webp/assets/Services-Page/our-enterprise-ai-engineering-excellence/autonomous-ai-systems-mlops-engineering.webp",
     link: "/services/ai-data-innovation",
     cta: "Explore AI Systems",
   },
@@ -24,7 +24,7 @@ const caseStudies = [
     summary:
       "Modernized legacy core infrastructure into a hybrid multi-cloud mesh with automated guardrails and multi-region resilience.",
     image:
-      "/assets/Services-Page/our-enterprise-ai-engineering-excellence/strategic-genai-enterprise-ai-philosophy.png",
+      "/webp/assets/Services-Page/our-enterprise-ai-engineering-excellence/strategic-genai-enterprise-ai-philosophy.webp",
     link: "/services/cloud-services",
     cta: "Explore Strategy",
   },
@@ -36,7 +36,7 @@ const caseStudies = [
     summary:
       "Engineered an enterprise platform handling over 10 million transactions daily with sub-second latency and zero critical security incidents.",
     image:
-      "/assets/Services-Page/our-enterprise-ai-engineering-excellence/measurable-business-roi-ai-governance.png",
+      "/webp/assets/Services-Page/our-enterprise-ai-engineering-excellence/measurable-business-roi-ai-governance.webp",
     link: "/services/devops-automation",
     cta: "Explore Governance",
   },
@@ -84,7 +84,7 @@ export const LeadershipDeliver = () => {
               <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight text-white mb-4 font-sans leading-[1.45]">
                 <span className="relative inline-block">
                   <div className="absolute -top-5 sm:-top-7 md:-top-8 -left-10 sm:-left-12 md:-left-16 z-20 pointer-events-none select-none">
-                    <img src="/assets/components/lefttoright.png"
+                    <img src="/webp/assets/components/lefttoright.webp"
                       alt="Left-Right Arrow indicator"
                       className="w-10 sm:w-12 md:w-14 h-auto object-contain filter drop-shadow-[0_0_15px_rgba(244,63,94,0.4)]"
                       loading="lazy" />
@@ -135,7 +135,7 @@ export const LeadershipDeliver = () => {
 
             {/* Big Size Leader Image (Backside Layer - Flush to Section Bottom) */}
             <div className="relative z-0 w-full max-w-[400px] sm:max-w-[620px] md:max-w-[800px] lg:max-w-[960px] xl:max-w-[1080px] flex items-end justify-center leading-none">
-              <img src="/assets/About-page/leader/Mani-PS-REC-BG003.png"
+              <img src="/webp/assets/About-page/leader/Mani-PS-REC-BG003.webp"
                 alt="Mani - Leadership"
                 className="block w-full h-auto object-contain filter contrast-105 drop-shadow-[0_25px_60px_rgba(0,0,0,0.95)]"
               loading="lazy" />

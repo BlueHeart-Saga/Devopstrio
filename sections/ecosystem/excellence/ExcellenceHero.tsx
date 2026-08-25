@@ -16,7 +16,7 @@ export function ExcellenceHero() {
       category: "OPERATIONS",
       bgColor: "bg-rose-950/80 border-rose-500/40",
       glowColor: "rgba(244, 63, 94, 0.4)",
-      img: "/assets/ecosystem/engineering-excellence-hero/1.png",
+      img: "/webp/assets/ecosystem/engineering-excellence-hero/1.webp",
       style: {
         transform: "translateX(-440px) translateY(90px) scale(0.92)",
         baseZIndex: 10
@@ -28,7 +28,7 @@ export function ExcellenceHero() {
       category: "INFRASTRUCTURE",
       bgColor: "bg-amber-950/80 border-amber-500/40",
       glowColor: "rgba(245, 158, 11, 0.4)",
-      img: "/assets/ecosystem/engineering-excellence-hero/2.png",
+      img: "/webp/assets/ecosystem/engineering-excellence-hero/2.webp",
       style: {
         transform: "translateX(-330px) translateY(65px) scale(0.94)",
         baseZIndex: 15
@@ -40,7 +40,7 @@ export function ExcellenceHero() {
       category: "SECURITY",
       bgColor: "bg-fuchsia-950/80 border-fuchsia-500/40",
       glowColor: "rgba(217, 70, 239, 0.4)",
-      img: "/assets/ecosystem/engineering-excellence-hero/3.png",
+      img: "/webp/assets/ecosystem/engineering-excellence-hero/3.webp",
       style: {
         transform: "translateX(-220px) translateY(40px) scale(0.96)",
         baseZIndex: 20
@@ -52,7 +52,7 @@ export function ExcellenceHero() {
       category: "AUTOMATION",
       bgColor: "bg-violet-950/80 border-violet-500/40",
       glowColor: "rgba(139, 92, 246, 0.4)",
-      img: "/assets/ecosystem/engineering-excellence-hero/4.png",
+      img: "/webp/assets/ecosystem/engineering-excellence-hero/4.webp",
       style: {
         transform: "translateX(-110px) translateY(18px) scale(0.98)",
         baseZIndex: 25
@@ -65,7 +65,7 @@ export function ExcellenceHero() {
       highlight: true,
       bgColor: "bg-emerald-950/90 border-rose-500/80",
       glowColor: "rgba(244, 63, 94, 0.55)",
-      img: "/assets/ecosystem/engineering-excellence-hero/Main.png",
+      img: "/webp/assets/ecosystem/engineering-excellence-hero/Main.webp",
       style: {
         transform: "translateX(0px) translateY(-10px) scale(1.05)",
         baseZIndex: 35
@@ -77,7 +77,7 @@ export function ExcellenceHero() {
       category: "MONITORING",
       bgColor: "bg-sky-950/80 border-sky-500/40",
       glowColor: "rgba(14, 165, 233, 0.4)",
-      img: "/assets/ecosystem/engineering-excellence-hero/4.png",
+      img: "/webp/assets/ecosystem/engineering-excellence-hero/4.webp",
       style: {
         transform: "translateX(110px) translateY(18px) scale(0.98)",
         baseZIndex: 25
@@ -89,7 +89,7 @@ export function ExcellenceHero() {
       category: "FINANCIALS",
       bgColor: "bg-lime-950/80 border-lime-500/40",
       glowColor: "rgba(132, 204, 22, 0.4)",
-      img: "/assets/ecosystem/engineering-excellence-hero/3.png",
+      img: "/webp/assets/ecosystem/engineering-excellence-hero/3.webp",
       style: {
         transform: "translateX(220px) translateY(40px) scale(0.96)",
         baseZIndex: 20
@@ -101,7 +101,7 @@ export function ExcellenceHero() {
       category: "RESILIENCY",
       bgColor: "bg-orange-950/80 border-orange-500/40",
       glowColor: "rgba(249, 115, 22, 0.4)",
-      img: "/assets/ecosystem/engineering-excellence-hero/2.png",
+      img: "/webp/assets/ecosystem/engineering-excellence-hero/2.webp",
       style: {
         transform: "translateX(330px) translateY(65px) scale(0.94)",
         baseZIndex: 15
@@ -113,7 +113,7 @@ export function ExcellenceHero() {
       category: "COMPLIANCE",
       bgColor: "bg-purple-950/80 border-purple-500/40",
       glowColor: "rgba(168, 85, 247, 0.4)",
-      img: "/assets/ecosystem/engineering-excellence-hero/1.png",
+      img: "/webp/assets/ecosystem/engineering-excellence-hero/1.webp",
       style: {
         transform: "translateX(440px) translateY(90px) scale(0.92)",
         baseZIndex: 10

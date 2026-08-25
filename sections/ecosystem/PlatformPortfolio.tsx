@@ -13,7 +13,7 @@ const products = [
     users: "15,000+ Active Users",
     technology: "React, Node.js, PostgreSQL",
     status: "Scaling",
-    logo: "/assets/Home-page/our-products/logo/humanex.png"
+    logo: "/webp/assets/Home-page/our-products/logo/humanex.webp"
   },
   {
     name: "Homela",
@@ -22,7 +22,7 @@ const products = [
     users: "12,000+ Active Users",
     technology: "Next.js, Tailwind, Postgres",
     status: "Scaling",
-    logo: "/assets/Home-page/our-products/logo/homela.png"
+    logo: "/webp/assets/Home-page/our-products/logo/homela.webp"
   },
   {
     name: "Brio",
@@ -31,7 +31,7 @@ const products = [
     users: "$45M+ Processed",
     technology: "Go, Redis, Kubernetes",
     status: "Production",
-    logo: "/assets/Home-page/our-products/logo/brio.png"
+    logo: "/webp/assets/Home-page/our-products/logo/brio.webp"
   },
   {
     name: "Safesign",
@@ -40,7 +40,7 @@ const products = [
     users: "2,500+ Agreements Signed",
     technology: "TypeScript, Solidity, Hyperledger",
     status: "Stable",
-    logo: "/assets/Home-page/our-products/logo/safesign.png"
+    logo: "/webp/assets/Home-page/our-products/logo/safesign.webp"
   },
   {
     name: "Campix",
@@ -49,7 +49,7 @@ const products = [
     users: "12M+ Impressions Tracked",
     technology: "Python, Kafka, ClickHouse",
     status: "Scaling",
-    logo: "/assets/Home-page/our-products/logo/Campix.png"
+    logo: "/webp/assets/Home-page/our-products/logo/Campix.webp"
   },
   {
     name: "Caresuite",
@@ -58,7 +58,7 @@ const products = [
     users: "45 Clinics Live",
     technology: "Next.js, WebRTC, HIPAA Secure API",
     status: "Live",
-    logo: "/assets/Home-page/our-products/logo/Caresuite.png"
+    logo: "/webp/assets/Home-page/our-products/logo/Caresuite.webp"
   }
 ];
 

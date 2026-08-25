@@ -239,10 +239,10 @@ export function InteractiveMap({
             {filters.map((item, i) => (
               <button
                 key={i}
-                className={`px-6 py-2.5 rounded-full text-xs sm:text-sm font-semibold tracking-wider uppercase transition-all duration-300 backdrop-blur-md cursor-pointer ${
+                className={`px-6 py-2.5 rounded-full text-sm sm:text-base font-semibold tracking-wide transition-all duration-300 backdrop-blur-md cursor-pointer ${
                   activeFilter === item
                     ? "bg-rose-500 text-white shadow-[0_8px_24px_rgba(225,29,72,0.3)]"
-                    : "bg-zinc-950/40 border border-zinc-800 text-zinc-400 hover:border-zinc-600 hover:bg-zinc-900/60 hover:text-white"
+                    : "bg-zinc-950/40 border border-zinc-800 text-zinc-300 hover:border-zinc-600 hover:bg-zinc-900/60 hover:text-white"
                 }`}
                 onClick={() => setActiveFilter(item)}
               >
@@ -256,38 +256,38 @@ export function InteractiveMap({
         <div className="flex flex-col lg:flex-row gap-8 items-stretch mt-8">
           
           {/* Left Column: Stats Card */}
-          <div className="w-full lg:w-[340px] border border-zinc-800/80 p-8 bg-zinc-950/40 backdrop-blur-md rounded-2xl transition-all duration-300 hover:border-rose-500/30 hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(225,29,72,0.08)] flex-shrink-0 flex flex-col justify-between">
+          <div className="w-full lg:w-[360px] border border-zinc-800/80 p-8 bg-zinc-950/40 backdrop-blur-md rounded-2xl transition-all duration-300 hover:border-rose-500/30 hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(225,29,72,0.08)] flex-shrink-0 flex flex-col justify-between">
             <div>
               <h1 className="text-6xl md:text-7xl font-bold text-rose-500 leading-none mb-2">
                 {totalOffices}
               </h1>
-              <h3 className="text-2xl font-semibold text-white mb-2">Global Locations</h3>
-              <p className="text-zinc-300 text-base leading-relaxed mb-6 font-medium">
+              <h3 className="text-2xl sm:text-3xl font-semibold text-white mb-2">Global Locations</h3>
+              <p className="text-zinc-300 text-base sm:text-lg leading-relaxed mb-6 font-medium">
                 Across {uniqueCountries}+ Countries with <Link href="/careers" className="text-[#E11D48] hover:underline font-semibold">{totalEmployees} Global Workforce</Link>
               </p>
 
               <div className="my-6 py-6 border-y border-zinc-800/60">
                 <div className="flex justify-between items-center mb-4">
-                  <span className="flex items-center gap-2.5 text-zinc-400 text-sm">
-                    <MapPin className="text-rose-500 text-base" /> Total Offices
+                  <span className="flex items-center gap-2.5 text-zinc-300 text-base">
+                    <MapPin className="text-rose-500 text-lg" /> Total Offices
                   </span>
-                  <strong className="text-base font-bold text-white">
+                  <strong className="text-base sm:text-lg font-bold text-white">
                     {totalOffices}
                   </strong>
                 </div>
                 <div className="flex justify-between items-center mb-4">
-                  <span className="flex items-center gap-2.5 text-zinc-400 text-sm">
-                    <Globe className="text-rose-500 text-base" /> Countries
+                  <span className="flex items-center gap-2.5 text-zinc-300 text-base">
+                    <Globe className="text-rose-500 text-lg" /> Countries
                   </span>
-                  <strong className="text-base font-bold text-white">
+                  <strong className="text-base sm:text-lg font-bold text-white">
                     {uniqueCountries}+
                   </strong>
                 </div>
                 <div className="flex justify-between items-center">
-                  <span className="flex items-center gap-2.5 text-zinc-400 text-sm">
-                    <Users className="text-rose-500 text-base" /> Total Employees
+                  <span className="flex items-center gap-2.5 text-zinc-300 text-base">
+                    <Users className="text-rose-500 text-lg" /> Total Employees
                   </span>
-                  <strong className="text-base font-bold text-white">
+                  <strong className="text-base sm:text-lg font-bold text-white">
                     {totalEmployees}
                   </strong>
                 </div>
@@ -295,8 +295,8 @@ export function InteractiveMap({
             </div>
 
             <div className="flex flex-col gap-2 pt-4 border-t border-zinc-900/50">
-              <div className="flex items-center gap-2.5 text-xs text-zinc-500">
-                <MapPin className="text-rose-500 filter drop-shadow-[0_0_4px_rgba(225,29,72,0.5)] h-3.5 w-3.5" />
+              <div className="flex items-center gap-2.5 text-sm text-zinc-400 font-medium">
+                <MapPin className="text-rose-500 filter drop-shadow-[0_0_4px_rgba(225,29,72,0.5)] h-4 w-4" />
                 <span>Click pin to view on Google Maps</span>
               </div>
             </div>
@@ -340,19 +340,19 @@ export function InteractiveMap({
                   </div>
 
                   {/* Tooltip Hover Card */}
-                  <div className="absolute left-full top-1/2 -translate-y-1/2 ml-3 bg-zinc-950/95 border border-rose-500/50 rounded-xl p-4 shadow-2xl opacity-0 invisible group-hover/pin:opacity-100 group-hover/pin:visible transition-all duration-300 z-50 w-max min-w-[220px] backdrop-blur-md">
+                  <div className="absolute left-full top-1/2 -translate-y-1/2 ml-3 bg-zinc-950/95 border border-rose-500/50 rounded-xl p-4 shadow-2xl opacity-0 invisible group-hover/pin:opacity-100 group-hover/pin:visible transition-all duration-300 z-50 w-max min-w-[240px] backdrop-blur-md">
                     <div className="flex items-center justify-between gap-4 pb-2 mb-2 border-b border-zinc-800">
-                      <strong className="text-white text-base sm:text-lg font-bold tracking-tight">{loc.name}</strong>
-                      <span className="text-rose-400 text-xs font-semibold uppercase tracking-wider px-2 py-0.5 bg-rose-950/40 rounded border border-rose-500/30">{loc.country}</span>
+                      <strong className="text-white text-lg sm:text-xl font-bold tracking-tight">{loc.name}</strong>
+                      <span className="text-rose-400 text-xs sm:text-sm font-semibold uppercase tracking-wider px-2 py-0.5 bg-rose-950/40 rounded border border-rose-500/30">{loc.country}</span>
                     </div>
 
                     {loc.address && (
-                      <p className="text-xs text-zinc-300 mb-2 font-medium max-w-[240px] leading-snug">
+                      <p className="text-sm text-zinc-200 mb-2.5 font-medium max-w-[260px] leading-relaxed">
                         {loc.address}
                       </p>
                     )}
 
-                    <div className="flex items-center justify-between gap-2 text-xs sm:text-sm font-semibold text-rose-400 group-hover/pin:text-rose-300">
+                    <div className="flex items-center justify-between gap-2 text-sm sm:text-base font-semibold text-rose-400 group-hover/pin:text-rose-300">
                       <span>View on Google Maps</span>
                       <ArrowUpRight size={16} className="text-rose-400 group-hover/pin:translate-x-0.5 group-hover/pin:-translate-y-0.5 transition-transform" />
                     </div>

@@ -59,37 +59,37 @@ export function WhyJoin() {
       title: "Learning & Development",
       desc: "Access continuous learning programs, mentorship from experts, and resources that help you stay ahead.",
       icon: GraduationCap,
-      bgImage: "/assets/careers/why_join/cap_107.png",
+      bgImage: "/webp/assets/careers/why_join/cap_107.webp",
     },
     {
       title: "Real-World Projects",
       desc: "Work on challenging, real-world projects that solve meaningful problems and create real impact.",
       icon: Rocket,
-      bgImage: "/assets/careers/why_join/cap_108.png",
+      bgImage: "/webp/assets/careers/why_join/cap_108.webp",
     },
     {
       title: "Career Growth",
       desc: "Clear career paths, regular feedback, and performance-driven growth opportunities.",
       icon: TrendingUp,
-      bgImage: "/assets/careers/why_join/cap_110.png",
+      bgImage: "/webp/assets/careers/why_join/cap_110.webp",
     },
     {
       title: "Modern Technologies",
       desc: "Work with cutting-edge technologies like AI, Cloud, DevOps, Data, and more to future-proof your skills.",
       icon: Cpu,
-      bgImage: "/assets/careers/why_join/cap_111.png",
+      bgImage: "/webp/assets/careers/why_join/cap_111.webp",
     },
     {
       title: "Collaborative Culture",
       desc: "Be part of a supportive, inclusive, and innovative culture where ideas are valued and teamwork drives success.",
       icon: Users,
-      bgImage: "/assets/careers/why_join/cap_112.png",
+      bgImage: "/webp/assets/careers/why_join/cap_112.webp",
     },
     {
       title: "Work-Life Balance",
       desc: "We believe in balance and well-being with flexible work options and a people-first approach.",
       icon: Heart,
-      bgImage: "/assets/careers/why_join/cap_113.png",
+      bgImage: "/webp/assets/careers/why_join/cap_113.webp",
     },
   ];
 
@@ -118,7 +118,7 @@ export function WhyJoin() {
               <div className="relative">
                 {/* Arrow image */}
                 <div className="absolute -top-6 -left-10 pointer-events-none select-none hidden sm:block">
-                  <img src="/assets/components/Carrow-right.png"
+                  <img src="/webp/assets/components/Carrow-right.webp"
                     alt="Arrow indicator"
                     className="w-12 sm:w-16 h-auto object-contain filter drop-shadow-[0_0_15px_rgba(244,63,94,0.4)]"
                   loading="lazy" />
@@ -142,7 +142,7 @@ export function WhyJoin() {
           <div className="lg:col-span-5 flex justify-center lg:justify-end w-full relative z-40 -mt-24 sm:-mt-36 lg:-mt-52 xl:-mt-64">
             <Reveal delay={0.2} className="w-full flex justify-center lg:justify-end">
               <div className="relative w-full max-w-[340px] sm:max-w-[400px] lg:max-w-[440px] rounded-2xl overflow-hidden shadow-[0_30px_70px_rgba(0,0,0,0.85)] border border-zinc-800/80 group">
-                <img src="/assets/careers/team/gallarey-post-sermaraj-01.png"
+                <img src="/webp/assets/careers/team/gallarey-post-sermaraj-01.webp"
                   alt="Devopstrio Career Poster"
                   className="w-full h-auto object-contain select-none transition-transform duration-500 group-hover:scale-[1.02]"
                 loading="lazy" />
@@ -217,7 +217,7 @@ export function WhyJoin() {
 
           <Reveal className="relative flex justify-center lg:justify-start">
             <div className="relative w-full max-w-[500px] group">
-              <img src="/assets/careers/image2.png"
+              <img src="/webp/assets/careers/image2.webp"
                 alt="Devopstrio Career Success"
                 className="w-full h-auto object-contain drop-shadow-[0_15px_35px_rgba(0,0,0,0.6)] group-hover:-translate-y-2 transition-transform duration-700"
               loading="lazy" />

@@ -275,13 +275,13 @@ export default function SAPStrategicAllianceHub() {
 
   // SAP Certifications
   const certifications = [
-    { name: "SAP Certified Associate - S/4HANA Cloud", image: "/assets/ecosystem/Sap_Awards/image-180.png" },
-    { name: "SAP Certified Technology Associate - SAP HANA", image: "/assets/ecosystem/Sap_Awards/image-181.png" },
-    { name: "SAP Certified Development Associate - SAP BTP", image: "/assets/ecosystem/Sap_Awards/image-183.png" },
-    { name: "SAP Certified Technology Specialist - SAP Activate", image: "/assets/ecosystem/Sap_Awards/image-185.png" },
-    { name: "SAP Certified Integration Associate", image: "/assets/ecosystem/Sap_Awards/image-186.png" },
-    { name: "SAP Gold Partner Competency Award", image: "/assets/ecosystem/Sap_Awards/Group-1000008910.png" },
-    { name: "SAP Cloud Transformation Excellence", image: "/assets/ecosystem/Sap_Awards/image-194-Photoroom-1.png" }
+    { name: "SAP Certified Associate - S/4HANA Cloud", image: "/webp/assets/ecosystem/Sap_Awards/image-180.webp" },
+    { name: "SAP Certified Technology Associate - SAP HANA", image: "/webp/assets/ecosystem/Sap_Awards/image-181.webp" },
+    { name: "SAP Certified Development Associate - SAP BTP", image: "/webp/assets/ecosystem/Sap_Awards/image-183.webp" },
+    { name: "SAP Certified Technology Specialist - SAP Activate", image: "/webp/assets/ecosystem/Sap_Awards/image-185.webp" },
+    { name: "SAP Certified Integration Associate", image: "/webp/assets/ecosystem/Sap_Awards/image-186.webp" },
+    { name: "SAP Gold Partner Competency Award", image: "/webp/assets/ecosystem/Sap_Awards/Group-1000008910.webp" },
+    { name: "SAP Cloud Transformation Excellence", image: "/webp/assets/ecosystem/Sap_Awards/image-194-Photoroom-1.webp" }
   ];
 
   // FAQ Accordion Data
@@ -514,7 +514,7 @@ export default function SAPStrategicAllianceHub() {
                   <div className="relative group/logo w-[120px] h-[120px] sm:w-[130px] sm:h-[130px] rounded-3xl bg-[#09090b]/80 border border-zinc-800 hover:border-blue-500/30 flex items-center justify-center p-5 shadow-2xl backdrop-blur-md transition-all duration-500 hover:-translate-y-1">
                     <div className="absolute inset-0 bg-gradient-to-br from-blue-500/[0.03] to-transparent rounded-3xl opacity-0 group-hover/logo:opacity-100 transition-opacity" />
                     <div className="absolute -inset-1 rounded-3xl bg-gradient-to-r from-blue-600 to-cyan-555 opacity-0 group-hover/logo:opacity-20 blur-md transition-opacity" />
-                    <img src="/assets/logo/logo.png"
+                    <img src="/webp/assets/logo/logo.webp"
                       alt="Devopstrio Logo"
                       className="w-full h-auto max-h-[85%] object-contain select-none filter brightness-105"
                     loading="lazy" />

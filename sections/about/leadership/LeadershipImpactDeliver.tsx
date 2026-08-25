@@ -11,7 +11,7 @@ const caseStudies = [
     summary:
       "Architected an autonomous AI-powered analytics engine for a global financial institution, reducing turnaround from days to milliseconds.",
     image:
-      "/assets/Services-Page/our-enterprise-ai-engineering-excellence/autonomous-ai-systems-mlops-engineering.png",
+      "/webp/assets/Services-Page/our-enterprise-ai-engineering-excellence/autonomous-ai-systems-mlops-engineering.webp",
     link: "/services/ai-data-innovation",
     cta: "Explore AI Systems",
   },
@@ -23,7 +23,7 @@ const caseStudies = [
     summary:
       "Modernized legacy core infrastructure into a hybrid multi-cloud mesh with automated guardrails and multi-region resilience.",
     image:
-      "/assets/Services-Page/our-enterprise-ai-engineering-excellence/strategic-genai-enterprise-ai-philosophy.png",
+      "/webp/assets/Services-Page/our-enterprise-ai-engineering-excellence/strategic-genai-enterprise-ai-philosophy.webp",
     link: "/services/cloud-services",
     cta: "Explore Strategy",
   },
@@ -35,7 +35,7 @@ const caseStudies = [
     summary:
       "Engineered an enterprise platform handling over 10 million transactions daily with sub-second latency and zero critical security incidents.",
     image:
-      "/assets/Services-Page/our-enterprise-ai-engineering-excellence/measurable-business-roi-ai-governance.png",
+      "/webp/assets/Services-Page/our-enterprise-ai-engineering-excellence/measurable-business-roi-ai-governance.webp",
     link: "/services/devops-automation",
     cta: "Explore Governance",
   },
@@ -80,7 +80,7 @@ export const LeadershipImpactDeliver = () => {
         <div className="text-center max-w-4xl mx-auto mb-2 sm:mb-3 relative z-10 flex flex-col items-center">
           {/* Top-to-bottom straight arrow PNG */}
           <div className="mb-2 sm:mb-3 flex justify-center pointer-events-none select-none">
-            <img src="/assets/components/streight-toptobuttm.png"
+            <img src="/webp/assets/components/streight-toptobuttm.webp"
               alt="Top to bottom arrow"
               className="w-16 sm:w-20 md:w-24 lg:w-28 h-auto object-contain filter drop-shadow-[0_0_20px_rgba(244,63,94,0.5)]"
               loading="lazy" />

@@ -4,8 +4,8 @@
  */
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://devopstrio.co.uk';
-const TOP_BANNER_URL = `${SITE_URL}/topbanner.png`;
-const PARTNERS_URL = `${SITE_URL}/partners.png`;
+const TOP_BANNER_URL = `${SITE_URL}/webp/topbanner.webp`;
+const PARTNERS_URL = `${SITE_URL}/webp/partners.webp`;
 
 interface BaseEmailProps {
   title: string;

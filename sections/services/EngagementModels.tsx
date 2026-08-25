@@ -10,7 +10,7 @@ const models = [
     id: "dedicated-teams",
     name: "Dedicated Expert Teams",
     icon: Users,
-    image: "/assets/Services-Page/engagement-model/1.png",
+    image: "/webp/assets/Services-Page/engagement-model/1.webp",
     desc: "Accelerate delivery with fully integrated teams of elite engineers, product builders, and certified DevOps experts working as a natural extension of your tech organization.",
     bullets: [
       "Rapid mobilization within 10 days",
@@ -23,7 +23,7 @@ const models = [
     id: "project-based",
     name: "Strategic Project Delivery",
     icon: Briefcase,
-    image: "/assets/Services-Page/engagement-model/2.png",
+    image: "/webp/assets/Services-Page/engagement-model/2.webp",
     desc: "Complete end-to-end execution of your technical roadmap. From solution design and cloud architecture to implementation and final deployment.",
     bullets: [
       "Predictable outcome-based budgets",
@@ -36,7 +36,7 @@ const models = [
     id: "managed-services",
     name: "24/7 Managed SRE Operations",
     icon: Settings,
-    image: "/assets/Services-Page/engagement-model/3.png",
+    image: "/webp/assets/Services-Page/engagement-model/3.webp",
     desc: "Proactive management of your multi-cloud infrastructure, security compliance, and application health with certified 24/7 site reliability engineering.",
     bullets: [
       "99.99% system uptime guarantees",
@@ -49,7 +49,7 @@ const models = [
     id: "strategic-consulting",
     name: "Strategic Advisory & Architecture",
     icon: Compass,
-    image: "/assets/Services-Page/engagement-model/4.png",
+    image: "/webp/assets/Services-Page/engagement-model/4.webp",
     desc: "High-impact guidance on digital transformation, zero-trust security postures, cloud-native scalability, and generative AI readiness assessments.",
     bullets: [
       "Principal-led architecture design sessions",

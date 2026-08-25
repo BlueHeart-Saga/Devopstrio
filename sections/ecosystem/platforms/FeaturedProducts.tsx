@@ -20,43 +20,43 @@ export function FeaturedProducts() {
       name: "Humanex",
       tagline: "Recruitment & Workforce Management Platform",
       desc: "Enterprise platform streamlining candidate sourcing, assessment scoring, onboarding workflows, and workforce telemetry analytics.",
-      logo: "/assets/Home-page/our-products/logo/humanex.png",
-      image: "/assets/Home-page/our-products/humanex.png"
+      logo: "/webp/assets/Home-page/our-products/logo/humanex.webp",
+      image: "/webp/assets/Home-page/our-products/humanex.webp"
     },
     {
       name: "Brio",
       tagline: "AI-Powered Marketing & Content Platform",
       desc: "Unified analytics solution providing predictive attribution models, intelligent asset scheduling, and automated copy generators.",
-      logo: "/assets/Home-page/our-products/logo/brio.png",
-      image: "/assets/Home-page/our-products/brio.png"
+      logo: "/webp/assets/Home-page/our-products/logo/brio.webp",
+      image: "/webp/assets/Home-page/our-products/brio.webp"
     },
     {
       name: "SafeSign",
       tagline: "Electronic Signature & Digital Trust Platform",
       desc: "Cryptographically secured document e-signature software providing tamper-proof audit trails and compliance reports.",
-      logo: "/assets/Home-page/our-products/logo/safesign.png",
-      image: "/assets/Home-page/our-products/safesign.png"
+      logo: "/webp/assets/Home-page/our-products/logo/safesign.webp",
+      image: "/webp/assets/Home-page/our-products/safesign.webp"
     },
     {
       name: "CareSuite",
       tagline: "Healthcare Operations Management Platform",
       desc: "HIPAA-compliant medical workflow suite coordinating patient consultation queues, video consult rooms, and secure charts.",
-      logo: "/assets/Home-page/our-products/logo/Caresuite.png",
-      image: "/assets/Home-page/our-products/caresuite.png"
+      logo: "/webp/assets/Home-page/our-products/logo/Caresuite.webp",
+      image: "/webp/assets/Home-page/our-products/caresuite.webp"
     },
     {
       name: "Homela",
       tagline: "Property & Accommodation Management Platform",
       desc: "PropTech workspace connecting tenants, managers, and service groups, automating ticket tracking and payment updates.",
-      logo: "/assets/Home-page/our-products/logo/homela.png",
-      image: "/assets/Home-page/our-products/homela.png"
+      logo: "/webp/assets/Home-page/our-products/logo/homela.webp",
+      image: "/webp/assets/Home-page/our-products/homela.webp"
     },
     {
       name: "Campix",
       tagline: "Campaign & Marketing Automation Platform",
       desc: "Omnichannel campaigns manager tracking impression goals, user acquisitions paths, and conversion budgets on one canvas.",
-      logo: "/assets/Home-page/our-products/logo/Campix.png",
-      image: "/assets/Home-page/our-products/campix.png"
+      logo: "/webp/assets/Home-page/our-products/logo/Campix.webp",
+      image: "/webp/assets/Home-page/our-products/campix.webp"
     }
   ];
 

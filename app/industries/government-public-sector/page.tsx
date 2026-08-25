@@ -41,7 +41,7 @@ const data = {
     title: "Secure Gov-Tech &",
     highlightedWord: "Public Operations",
     subtitle: "Migrating public services to secure cloud infrastructures, building citizen access portals, and aligning with federal safety parameters.",
-    bgImage: "/assets/Industries-page/herocard/public.png"
+    bgImage: "/webp/assets/Industries-page/herocard/public.webp"
   },
   overview: {
     heading: "Compliant public systems and secure database migration paths",

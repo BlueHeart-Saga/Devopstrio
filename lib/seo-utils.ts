@@ -62,7 +62,7 @@ export function generatePageMetadata({
     ? [...new Set([...keywords, ...defaultKeywords])]
     : defaultKeywords;
 
-  const image = ogImage || `${baseUrl}/apple-touch-icon.png`;
+  const image = ogImage || `${baseUrl}/webp/apple-touch-icon.webp`;
 
   return {
     title: displayTitle,

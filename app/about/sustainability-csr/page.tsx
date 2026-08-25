@@ -80,25 +80,25 @@ export default function CSRPage() {
     {
       title: "Reforestation Drive",
       desc: "Planting native trees to restore protected forests and absorb legacy industrial emissions.",
-      image: "/assets/About-page/csr/csr_proj_reforestation.png",
+      image: "/webp/assets/About-page/csr/csr_proj_reforestation.webp",
       badge: "36,000+ Trees"
     },
     {
       title: "Solar Grid Access",
       desc: "Powering remote engineering nodes with clean, 100% renewable solar energy systems.",
-      image: "/assets/About-page/csr/csr_proj_solar_grid.png",
+      image: "/webp/assets/About-page/csr/csr_proj_solar_grid.webp",
       badge: "100% Renewable"
     },
     {
       title: "Ocean Cleanup Drive",
       desc: "Removing plastic waste and protecting marine habitats across global coastlines.",
-      image: "/assets/About-page/csr/csr_proj_ocean_cleanup.png",
+      image: "/webp/assets/About-page/csr/csr_proj_ocean_cleanup.webp",
       badge: "Clean Oceans"
     },
     {
       title: "Sustainable Smart Cities",
       desc: "Building eco-conscious cloud architectures for resilient public sector infrastructure.",
-      image: "/assets/About-page/csr/csr_proj_sustainable_city.png",
+      image: "/webp/assets/About-page/csr/csr_proj_sustainable_city.webp",
       badge: "707+ Communities"
     }
   ];
@@ -132,7 +132,7 @@ export default function CSRPage() {
       <section className="relative min-h-screen w-full flex items-center justify-start overflow-hidden bg-[#030303] text-white py-20 px-6 lg:px-12 z-10 font-sans border-b border-zinc-900">
         
         <div className="absolute inset-0 z-0 pointer-events-none select-none">
-          <img src="/assets/About-page/csr/hero-sustainability-bg.png" 
+          <img src="/webp/assets/About-page/csr/hero-sustainability-bg.webp" 
             alt="Sustainability Background"
             className="w-full h-full object-cover object-center opacity-90 filter contrast-110 brightness-105"
           loading="lazy" />
@@ -268,21 +268,21 @@ export default function CSRPage() {
               <Reveal delay={0.2}>
                 <div className="flex flex-col gap-4">
                   <div className="rounded-2xl overflow-hidden border border-emerald-800/60 h-48 sm:h-52 w-full group">
-                    <img src="/assets/About-page/csr/csr_impact_plant_seedling1.png"
+                    <img src="/webp/assets/About-page/csr/csr_impact_plant_seedling1.webp"
                       alt="Volunteer holding seedling"
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                     loading="lazy" />
                   </div>
 
                   <div className="rounded-2xl overflow-hidden border border-emerald-800/60 h-48 sm:h-52 w-full group">
-                    <img src="/assets/About-page/csr/csr_impact_save_planet1.png"
+                    <img src="/webp/assets/About-page/csr/csr_impact_save_planet1.webp"
                       alt="Volunteers holding SAVE PLANET sign"
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                     loading="lazy" />
                   </div>
 
                   <div className="rounded-2xl overflow-hidden border border-emerald-800/60 h-48 sm:h-52 w-full group">
-                    <img src="/assets/About-page/csr/csr_impact_river_forest.png"
+                    <img src="/webp/assets/About-page/csr/csr_impact_river_forest.webp"
                       alt="Rainforest river landscape"
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                     loading="lazy" />
@@ -369,19 +369,19 @@ export default function CSRPage() {
                   date: "MAY 20, 2026",
                   title: "Global Climate Summit 2026",
                   desc: "World leaders and enterprise partners unite to accelerate zero-carbon computing action.",
-                  image: "/assets/About-page/csr/csr_news_climate_summit.png"
+                  image: "/webp/assets/About-page/csr/csr_news_climate_summit.webp"
                 },
                 {
                   date: "MAY 25, 2026",
                   title: "Youth for Climate Rally",
                   desc: "Thousands of young voices and engineers demand a greener digital tomorrow.",
-                  image: "/assets/About-page/csr/csr_news_youth_rally.png"
+                  image: "/webp/assets/About-page/csr/csr_news_youth_rally.webp"
                 },
                 {
                   date: "MAY 28, 2026",
                   title: "New Report: Climate Progress",
                   desc: "Key insights, telemetry, and verified data on global corporate carbon reduction.",
-                  image: "/assets/About-page/csr/csr_news_climate_report.png"
+                  image: "/webp/assets/About-page/csr/csr_news_climate_report.webp"
                 }
               ].map((news, idx) => (
                 <Reveal key={news.title} delay={idx * 0.1}>

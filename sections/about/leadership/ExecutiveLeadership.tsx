@@ -14,43 +14,43 @@ interface TeamMember {
 const initialTeam: TeamMember[] = [
   {
     name: "Sermaraja",
-    image: "/assets/About-page/team/team/sermaraj_.png",
+    image: "/webp/assets/About-page/team/team/sermaraj_.webp",
     linkedin: "https://www.linkedin.com/company/devopstrioglobal/",
   },
   {
     name: "Sagadevan",
-    image: "/assets/About-page/team/team/sagadevan_.png",
+    image: "/webp/assets/About-page/team/team/sagadevan_.webp",
     linkedin: "https://www.linkedin.com/company/devopstrioglobal/",
   },
   {
     name: "Suriya",
-    image: "/assets/About-page/team/team/Surya_.png",
+    image: "/webp/assets/About-page/team/team/Surya_.webp",
     linkedin: "https://www.linkedin.com/company/devopstrioglobal/",
   },
   {
     name: "Anantha Lakshmi",
-    image: "/assets/About-page/team/team/ananthalakshmi_.png",
+    image: "/webp/assets/About-page/team/team/ananthalakshmi_.webp",
     linkedin: "https://www.linkedin.com/company/devopstrioglobal/",
   },
   {
     name: "Kishore",
-    image: "/assets/About-page/team/team/khishore_.png",
+    image: "/webp/assets/About-page/team/team/khishore_.webp",
     linkedin: "https://www.linkedin.com/company/devopstrioglobal/",
   },
  
   {
     name: "Punitha",
-    image: "/assets/About-page/team/team/punitha_.png",
+    image: "/webp/assets/About-page/team/team/punitha_.webp",
     linkedin: "https://www.linkedin.com/company/devopstrioglobal/",
   },
   {
     name: "Oviya",
-    image: "/assets/About-page/team/team/Ooviya_.png",
+    image: "/webp/assets/About-page/team/team/Ooviya_.webp",
     linkedin: "https://www.linkedin.com/company/devopstrioglobal/",
   },
   {
     name: "Hamsavarthiny",
-    image: "/assets/About-page/team/team/Hamsavarthiny_.png",
+    image: "/webp/assets/About-page/team/team/Hamsavarthiny_.webp",
     linkedin: "https://www.linkedin.com/company/devopstrioglobal/",
   },
 ];
@@ -59,23 +59,23 @@ const additionalTeam: TeamMember[] = [
  
   {
     name: "Saravana Kumar",
-    image: "/assets/About-page/team/team/saravana_.png",
+    image: "/webp/assets/About-page/team/team/saravana_.webp",
     linkedin: "https://www.linkedin.com/company/devopstrioglobal/",
   },
   
   {
     name: "Uma",
-    image: "/assets/About-page/team/team/uma_.png",
+    image: "/webp/assets/About-page/team/team/uma_.webp",
     linkedin: "https://www.linkedin.com/company/devopstrioglobal/",
   },
    {
     name: "Subbiah",
-    image: "/assets/About-page/team/team/subbaiya.png",
+    image: "/webp/assets/About-page/team/team/subbaiya.webp",
     linkedin: "https://www.linkedin.com/company/devopstrioglobal/",
   },
    {
     name: "Thangalakshmi",
-    image: "/assets/About-page/team/team/thangalakshmi.png",
+    image: "/webp/assets/About-page/team/team/thangalakshmi.webp",
     linkedin: "https://www.linkedin.com/company/devopstrioglobal/",
   },
 ];
@@ -93,7 +93,7 @@ export const ExecutiveLeadership = () => {
         {/* Executive Leadership Bento Grid (Commented Out)
         <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-14 relative">
           <div className="absolute -top-6 right-2 sm:right-10 z-20 pointer-events-none select-none">
-            <img src="/assets/components/Carrow-right.png"
+            <img src="/webp/assets/components/Carrow-right.webp"
               alt="Curved arrow"
               className="w-14 sm:w-20 h-auto object-contain filter drop-shadow-[0_0_15px_rgba(244,63,94,0.4)] scale-x-[-1]"
             loading="lazy" />
@@ -146,7 +146,7 @@ export const ExecutiveLeadership = () => {
 
             <div className="md:col-span-1 md:row-span-2">
               <div className="relative rounded-[1.75rem] overflow-hidden border border-zinc-900 bg-zinc-950/60 h-[444px] hover:border-zinc-800 transition-all duration-500 group shadow-lg flex flex-col justify-end">
-                <img src="/assets/About-page/card/about-inside-leadership-team_Grid_card.png"
+                <img src="/webp/assets/About-page/card/about-inside-leadership-team_Grid_card.webp"
                   alt="Platform Engineering"
                   className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
                 loading="lazy" />
@@ -215,11 +215,11 @@ export const ExecutiveLeadership = () => {
 
                 <div className="flex -space-x-3 overflow-hidden select-none py-2 shrink-0 relative z-10">
                   {[
-                    "/assets/Home-page/client-reviews/image-164.png",
-                    "/assets/Home-page/client-reviews/image-165.png",
-                    "/assets/Home-page/client-reviews/image-166.png",
-                    "/assets/Home-page/client-reviews/image-167.png",
-                    "/assets/Home-page/client-reviews/image-168.png"
+                    "/webp/assets/Home-page/client-reviews/image-164.webp",
+                    "/webp/assets/Home-page/client-reviews/image-165.webp",
+                    "/webp/assets/Home-page/client-reviews/image-166.webp",
+                    "/webp/assets/Home-page/client-reviews/image-167.webp",
+                    "/webp/assets/Home-page/client-reviews/image-168.webp"
                   ].map((src, i) => (
                     <div 
                       key={i} 
@@ -257,7 +257,7 @@ export const ExecutiveLeadership = () => {
                 <span className="relative inline-block">
                   {/* Top-to-bottom straight arrow spanning across section boundary (Enlarged) */}
                   <div className="absolute -top-16 sm:-top-20 md:-top-24 lg:-top-28 left-1/2 -translate-x-1/2 pointer-events-none select-none z-30">
-                    <img src="/assets/components/streight-toptobuttm.png"
+                    <img src="/webp/assets/components/streight-toptobuttm.webp"
                       alt="Top to bottom arrow indicator"
                       className="w-14 sm:w-18 md:w-22 lg:w-24 h-auto object-contain filter drop-shadow-[0_0_20px_rgba(244,63,94,0.6)]"
                     loading="lazy" />
@@ -293,7 +293,7 @@ export const ExecutiveLeadership = () => {
                     transition={{ duration: 0.5 }}
                   >
                     <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,23,68,0.03),transparent_50%)] pointer-events-none" />
-                    <img src="/assets/About-page/card/about-inside-leadership-team_Grid_card.png"
+                    <img src="/webp/assets/About-page/card/about-inside-leadership-team_Grid_card.webp"
                       alt="Leadership Grid Graphic"
                       className="absolute inset-0 w-full h-full object-cover opacity-30 mix-blend-screen pointer-events-none transition-opacity duration-500 group-hover:opacity-50"
                     loading="lazy" />
@@ -386,7 +386,7 @@ export const ExecutiveLeadership = () => {
                     transition={{ duration: 0.5, delay: 0.1 }}
                   >
                     <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,23,68,0.03),transparent_50%)] pointer-events-none" />
-                    <img src="/assets/About-page/card/about-inside-leadership-team_Grid_card.png"
+                    <img src="/webp/assets/About-page/card/about-inside-leadership-team_Grid_card.webp"
                       alt="Leadership Grid Graphic"
                       className="absolute inset-0 w-full h-full object-cover opacity-30 mix-blend-screen pointer-events-none transition-opacity duration-500 group-hover:opacity-50"
                     loading="lazy" />

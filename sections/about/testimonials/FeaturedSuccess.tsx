@@ -15,7 +15,7 @@ const stories = [
       { name: "Azure VMware Solution", icon: <Cloud className="w-4 h-4" /> },
       { name: "Enterprise Cloud", icon: <Server className="w-4 h-4" /> }
     ],
-    image: "/assets/About-page/overview/partner/microsoft.png",
+    image: "/webp/assets/About-page/overview/partner/microsoft.webp",
   },
   {
     id: "airbnb",
@@ -26,7 +26,7 @@ const stories = [
       { name: "Platform Engineering", icon: <Settings className="w-4 h-4" /> },
       { name: "Global Edge", icon: <Cloud className="w-4 h-4" /> }
     ],
-    image: "/assets/About-page/overview/partner/airhub.png",
+    image: "/webp/assets/About-page/overview/partner/airhub.webp",
   },
   {
     id: "virgin",
@@ -37,7 +37,7 @@ const stories = [
       { name: "DevOps Automation", icon: <Settings className="w-4 h-4" /> },
       { name: "Cloud Migration", icon: <Cloud className="w-4 h-4" /> }
     ],
-    image: "/assets/About-page/overview/partner/virgin.png",
+    image: "/webp/assets/About-page/overview/partner/virgin.webp",
   },
   {
     id: "nhs",
@@ -48,7 +48,7 @@ const stories = [
       { name: "Cybersecurity", icon: <Shield className="w-4 h-4" /> },
       { name: "Managed Ops", icon: <Server className="w-4 h-4" /> }
     ],
-    image: "/assets/About-page/overview/partner/nhs.png",
+    image: "/webp/assets/About-page/overview/partner/nhs.webp",
   },
   {
     id: "asda",
@@ -59,7 +59,7 @@ const stories = [
       { name: "Cloud Analytics", icon: <Cloud className="w-4 h-4" /> },
       { name: "Data Platform", icon: <Server className="w-4 h-4" /> }
     ],
-    image: "/assets/About-page/overview/partner/asda.png",
+    image: "/webp/assets/About-page/overview/partner/asda.webp",
   },
   {
     id: "costco",
@@ -70,7 +70,7 @@ const stories = [
       { name: "Cloud Architecture", icon: <Cloud className="w-4 h-4" /> },
       { name: "Global Edge", icon: <Server className="w-4 h-4" /> }
     ],
-    image: "/assets/About-page/overview/partner/cisco.png",
+    image: "/webp/assets/About-page/overview/partner/cisco.webp",
   },
   {
     id: "godaddy",
@@ -81,7 +81,7 @@ const stories = [
       { name: "Platform Engineering", icon: <Settings className="w-4 h-4" /> },
       { name: "Managed Ops", icon: <Shield className="w-4 h-4" /> }
     ],
-    image: "/assets/About-page/overview/partner/godaddy.png",
+    image: "/webp/assets/About-page/overview/partner/godaddy.webp",
   },
   {
     id: "lenovo",
@@ -92,18 +92,18 @@ const stories = [
       { name: "Data Platform", icon: <Server className="w-4 h-4" /> },
       { name: "Cloud Analytics", icon: <Cloud className="w-4 h-4" /> }
     ],
-    image: "/assets/About-page/overview/partner/lenova.png",
+    image: "/webp/assets/About-page/overview/partner/lenova.webp",
   },
   {
     id: "servicenow",
-    logo: "/assets/Home-page/partners/servicenow.png",
+    logo: "/webp/assets/Home-page/partners/servicenow.webp",
     title: "ServiceNow accelerates enterprise workflow automation",
     description: "With a modernized infrastructure foundation, ServiceNow accelerated their deployment cycles by 3×, enabling faster rollout of critical enterprise workflow features.",
     products: [
       { name: "DevOps Automation", icon: <Settings className="w-4 h-4" /> },
       { name: "Platform Engineering", icon: <Server className="w-4 h-4" /> }
     ],
-    image: "/assets/About-page/overview/partner/servicenow.png",
+    image: "/webp/assets/About-page/overview/partner/servicenow.webp",
   }
 ];
 

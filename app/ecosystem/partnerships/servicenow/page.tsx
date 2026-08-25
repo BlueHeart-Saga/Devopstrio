@@ -379,7 +379,7 @@ export default function ServiceNowPartnershipPage() {
                   <div className="relative group/logo w-[120px] h-[120px] sm:w-[130px] sm:h-[130px] rounded-3xl bg-[#09090b]/80 border border-zinc-800 hover:border-emerald-500/30 flex items-center justify-center p-5 shadow-2xl backdrop-blur-md transition-all duration-500 hover:-translate-y-1">
                     <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/[0.03] to-transparent rounded-3xl opacity-0 group-hover/logo:opacity-100 transition-opacity" />
                     <div className="absolute -inset-1 rounded-3xl bg-gradient-to-r from-emerald-600 to-green-555 opacity-0 group-hover/logo:opacity-20 blur-md transition-opacity" />
-                    <img src="/assets/logo/logo.png"
+                    <img src="/webp/assets/logo/logo.webp"
                       alt="Devopstrio Logo"
                       className="w-full h-auto max-h-[85%] object-contain select-none filter brightness-105"
                     loading="lazy" />
@@ -615,20 +615,20 @@ export default function ServiceNowPartnershipPage() {
       <PartnerCertifications 
         title="ServiceNow Certifications"
         certifications={[
-            { image: "/assets/ecosystem/Servicenow_Aards/image-164.png" },
-            { image: "/assets/ecosystem/Servicenow_Aards/image-165.png" },
-            { image: "/assets/ecosystem/Servicenow_Aards/image-166.png" },
-            { image: "/assets/ecosystem/Servicenow_Aards/image-167.png" },
-            { image: "/assets/ecosystem/Servicenow_Aards/image-168.png" },
-            { image: "/assets/ecosystem/Servicenow_Aards/image-169.png" },
-            { image: "/assets/ecosystem/Servicenow_Aards/image-170.png" },
-            { image: "/assets/ecosystem/Servicenow_Aards/image-171.png" },
-            { image: "/assets/ecosystem/Servicenow_Aards/image-172.png" },
-            { image: "/assets/ecosystem/Servicenow_Aards/image-173.png" },
-            { image: "/assets/ecosystem/Servicenow_Aards/image-174.png" },
-            { image: "/assets/ecosystem/Servicenow_Aards/image-175.png" },
-            { image: "/assets/ecosystem/Servicenow_Aards/image-176.png" },
-            { image: "/assets/ecosystem/Servicenow_Aards/image-177.png" }
+            { image: "/webp/assets/ecosystem/Servicenow_Aards/image-164.webp" },
+            { image: "/webp/assets/ecosystem/Servicenow_Aards/image-165.webp" },
+            { image: "/webp/assets/ecosystem/Servicenow_Aards/image-166.webp" },
+            { image: "/webp/assets/ecosystem/Servicenow_Aards/image-167.webp" },
+            { image: "/webp/assets/ecosystem/Servicenow_Aards/image-168.webp" },
+            { image: "/webp/assets/ecosystem/Servicenow_Aards/image-169.webp" },
+            { image: "/webp/assets/ecosystem/Servicenow_Aards/image-170.webp" },
+            { image: "/webp/assets/ecosystem/Servicenow_Aards/image-171.webp" },
+            { image: "/webp/assets/ecosystem/Servicenow_Aards/image-172.webp" },
+            { image: "/webp/assets/ecosystem/Servicenow_Aards/image-173.webp" },
+            { image: "/webp/assets/ecosystem/Servicenow_Aards/image-174.webp" },
+            { image: "/webp/assets/ecosystem/Servicenow_Aards/image-175.webp" },
+            { image: "/webp/assets/ecosystem/Servicenow_Aards/image-176.webp" },
+            { image: "/webp/assets/ecosystem/Servicenow_Aards/image-177.webp" }
           ]}
       />
 

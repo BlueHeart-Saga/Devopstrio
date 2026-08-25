@@ -190,37 +190,37 @@ export default function AIInnovationLabPage() {
     {
       title: "Enterprise AI Copilots",
       desc: "Internal assistants for employees, operations teams, HR, support, legal, and knowledge workers.",
-      image: "/assets/Home-page/we-imagine/gen/we-design-intelligent.png",
+      image: "/webp/assets/Home-page/we-imagine/gen/we-design-intelligent.webp",
       bullets: ["Custom LLMs", "Secure Agent Workflows", "Enterprise Search"]
     },
     {
       title: "Document AI Platforms",
       desc: "OCR, document extraction, policy intelligence, claims processing, contract review, and document search.",
-      image: "/assets/Home-page/we-imagine/gen/we-transform-legacy.png",
+      image: "/webp/assets/Home-page/we-imagine/gen/we-transform-legacy.webp",
       bullets: ["Intelligent Extraction", "Vector Indexing", "Automated Compliance"]
     },
     {
       title: "Conversational AI Systems",
       desc: "Customer support bots, internal help assistants, knowledge assistants, and AI-enabled service workflows.",
-      image: "/assets/Home-page/we-imagine/gen/we-manage-operations.png",
+      image: "/webp/assets/Home-page/we-imagine/gen/we-manage-operations.webp",
       bullets: ["24/7 Automation", "Multilingual Support", "Contextual Memory"]
     },
     {
       title: "AI-Powered Workflow Automation",
       desc: "Intelligent task routing, ticket classification, summarization, recommendation engines, and process acceleration.",
-      image: "/assets/Home-page/we-imagine/gen/we-build-software.png",
+      image: "/webp/assets/Home-page/we-imagine/gen/we-build-software.webp",
       bullets: ["Task Orchestration", "Predictive Routing", "Data Synthesis"]
     },
     {
       title: "Predictive Business Intelligence",
       desc: "Forecasting, anomaly detection, churn prediction, financial scoring, and operational trend analysis.",
-      image: "/assets/Home-page/we-imagine/gen/we-design-intelligent.png",
+      image: "/webp/assets/Home-page/we-imagine/gen/we-design-intelligent.webp",
       bullets: ["Real-time Analytics", "Risk Modeling", "Market Forecasting"]
     },
     {
       title: "Industry-Specific AI Solutions",
       desc: "AI use cases tailored to finance, healthcare, telecom, retail, manufacturing, and public sector operations.",
-      image: "/assets/Home-page/we-imagine/gen/we-transform-legacy.png",
+      image: "/webp/assets/Home-page/we-imagine/gen/we-transform-legacy.webp",
       bullets: ["Regulatory Compliance", "Custom Taxonomies", "Domain-Specific Models"]
     }
   ];

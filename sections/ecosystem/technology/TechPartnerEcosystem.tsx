@@ -6,7 +6,7 @@ import { Reveal } from "@/components/ui/Reveal";
 export function TechPartnerEcosystem() {
   const partners = [
     { name: "Microsoft", role: "Gold Cloud Partner", logo: "/assets/Tech-icons/microsoft-azure-logo_svgstack_com_7501780931055.svg" },
-    { name: "AWS", role: "Advanced Tier Service Partner", logo: "/assets/Devopstrio_Partners/aws.png" },
+    { name: "AWS", role: "Advanced Tier Service Partner", logo: "/webp/assets/Devopstrio_Partners/aws.webp" },
     { name: "Google Cloud", role: "Premier Integration Partner", logo: "/assets/Tech-icons/google-cloud-logo_svgstack_com_28371780931185.svg" },
     { name: "Oracle", role: "OCI Solution Provider", logo: "/assets/Tech-icons/oracle-logo_svgstack_com_28991780931429.svg" },
     { name: "GitHub", role: "DevOps Toolchain Partner", logo: "/assets/Tech-icons/github-logo-svg_svgstack_com_28391780931442.svg", darkLogo: true },

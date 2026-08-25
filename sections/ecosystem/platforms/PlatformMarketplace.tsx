@@ -26,7 +26,7 @@ export function PlatformMarketplace() {
   const showcaseItems: ShowcaseItem[] = [
     {
       id: "humanex",
-      logoPath: "/assets/Home-page/our-products/logo/humanex.png",
+      logoPath: "/webp/assets/Home-page/our-products/logo/humanex.webp",
       name: "Humanex",
       quote: "Our HR recruitment pipelines and candidate ATS scoring automated 80% of our manual screening workload. The security framework built into Devopstrio is unmatched.",
       authorName: "Sarah Jenkins",
@@ -36,11 +36,11 @@ export function PlatformMarketplace() {
         { name: "HR Payroll Engine", icon: "DollarSign" },
         { name: "Performance Metrics", icon: "BarChart" }
       ],
-      imagePath: "/assets/Home-page/our-products/humanex.png"
+      imagePath: "/webp/assets/Home-page/our-products/humanex.webp"
     },
     {
       id: "brio",
-      logoPath: "/assets/Home-page/our-products/logo/brio.png",
+      logoPath: "/webp/assets/Home-page/our-products/logo/brio.webp",
       name: "Brio",
       quote: "Brio changed the game for our multi-channel marketing campaigns. The trigger-based emails and customer analytics helped us boost retention by 35% in just two quarters.",
       authorName: "David Miller",
@@ -50,11 +50,11 @@ export function PlatformMarketplace() {
         { name: "Email Sequences", icon: "Layers" },
         { name: "Journey Maps", icon: "Map" }
       ],
-      imagePath: "/assets/Home-page/our-products/brio.png"
+      imagePath: "/webp/assets/Home-page/our-products/brio.webp"
     },
     {
       id: "safesign",
-      logoPath: "/assets/Home-page/our-products/logo/safesign.png",
+      logoPath: "/webp/assets/Home-page/our-products/logo/safesign.webp",
       name: "SafeSign",
       quote: "Securing document handshakes across our global offices required strict compliance validation. SafeSign's cryptographic architecture met every standard flawlessly.",
       authorName: "Marcus Chen",
@@ -64,11 +64,11 @@ export function PlatformMarketplace() {
         { name: "Biometric Ledger", icon: "Key" },
         { name: "SSO Integration", icon: "Lock" }
       ],
-      imagePath: "/assets/Home-page/our-products/safesign.png"
+      imagePath: "/webp/assets/Home-page/our-products/safesign.webp"
     },
     {
       id: "homela",
-      logoPath: "/assets/Home-page/our-products/logo/homela.png",
+      logoPath: "/webp/assets/Home-page/our-products/logo/homela.webp",
       name: "Homela",
       quote: "Homela enabled us to coordinate rent escrows and tenancy agreements in real-time. Our user transaction speeds have increased threefold.",
       authorName: "Elena Rostova",
@@ -78,11 +78,11 @@ export function PlatformMarketplace() {
         { name: "Rent Escrow Pipelines", icon: "Coins" },
         { name: "Tenant Portal", icon: "UserCheck" }
       ],
-      imagePath: "/assets/Home-page/our-products/homela.png"
+      imagePath: "/webp/assets/Home-page/our-products/homela.webp"
     },
     {
       id: "caresuite",
-      logoPath: "/assets/Home-page/our-products/logo/Caresuite.png",
+      logoPath: "/webp/assets/Home-page/our-products/logo/Caresuite.webp",
       name: "CareSuite",
       quote: "Patient telemetry and HIPAA-compliant records require strict database isolation. CareSuite gave us the safety we needed while keeping access quick and responsive.",
       authorName: "Dr. Amanda Ross",
@@ -92,7 +92,7 @@ export function PlatformMarketplace() {
         { name: "Telemetry Hub", icon: "Activity" },
         { name: "Patient Portal", icon: "Heart" }
       ],
-      imagePath: "/assets/Home-page/our-products/caresuite.png"
+      imagePath: "/webp/assets/Home-page/our-products/caresuite.webp"
     }
   ];
 

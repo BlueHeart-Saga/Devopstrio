@@ -420,7 +420,7 @@ export default function GoogleCloudStrategicAllianceHub() {
                   <div className="relative group/logo w-[120px] h-[120px] sm:w-[130px] sm:h-[130px] rounded-3xl bg-[#09090b]/80 border border-zinc-800 hover:border-rose-500/30 flex items-center justify-center p-5 shadow-2xl backdrop-blur-md transition-all duration-500 hover:-translate-y-1">
                     <div className="absolute inset-0 bg-gradient-to-br from-rose-500/[0.03] to-transparent rounded-3xl opacity-0 group-hover/logo:opacity-100 transition-opacity" />
                     <div className="absolute -inset-1 rounded-3xl bg-gradient-to-r from-rose-600 to-red-655 opacity-0 group-hover/logo:opacity-20 blur-md transition-opacity" />
-                    <img src="/assets/logo/logo.png"
+                    <img src="/webp/assets/logo/logo.webp"
                       alt="Devopstrio Logo"
                       className="w-full h-auto max-h-[85%] object-contain select-none filter brightness-105"
                     loading="lazy" />
@@ -618,20 +618,20 @@ export default function GoogleCloudStrategicAllianceHub() {
       <PartnerCertifications 
         title="Google Cloud Certifications"
         certifications={[
-            { image: "/assets/ecosystem/GCP-award/image-130.png" },
-            { image: "/assets/ecosystem/GCP-award/image-131.png" },
-            { image: "/assets/ecosystem/GCP-award/image-132.png" },
-            { image: "/assets/ecosystem/GCP-award/image-133.png" },
-            { image: "/assets/ecosystem/GCP-award/image-134.png" },
-            { image: "/assets/ecosystem/GCP-award/image-135.png" },
-            { image: "/assets/ecosystem/GCP-award/image-136.png" },
-            { image: "/assets/ecosystem/GCP-award/image-137.png" },
-            { image: "/assets/ecosystem/GCP-award/image-146.png" },
-            { image: "/assets/ecosystem/GCP-award/image-147.png" },
-            { image: "/assets/ecosystem/GCP-award/image-148.png" },
-            { image: "/assets/ecosystem/GCP-award/image-149.png" },
-            { image: "/assets/ecosystem/GCP-award/image-150.png" },
-            { image: "/assets/ecosystem/GCP-award/image-151.png" }
+            { image: "/webp/assets/ecosystem/GCP-award/image-130.webp" },
+            { image: "/webp/assets/ecosystem/GCP-award/image-131.webp" },
+            { image: "/webp/assets/ecosystem/GCP-award/image-132.webp" },
+            { image: "/webp/assets/ecosystem/GCP-award/image-133.webp" },
+            { image: "/webp/assets/ecosystem/GCP-award/image-134.webp" },
+            { image: "/webp/assets/ecosystem/GCP-award/image-135.webp" },
+            { image: "/webp/assets/ecosystem/GCP-award/image-136.webp" },
+            { image: "/webp/assets/ecosystem/GCP-award/image-137.webp" },
+            { image: "/webp/assets/ecosystem/GCP-award/image-146.webp" },
+            { image: "/webp/assets/ecosystem/GCP-award/image-147.webp" },
+            { image: "/webp/assets/ecosystem/GCP-award/image-148.webp" },
+            { image: "/webp/assets/ecosystem/GCP-award/image-149.webp" },
+            { image: "/webp/assets/ecosystem/GCP-award/image-150.webp" },
+            { image: "/webp/assets/ecosystem/GCP-award/image-151.webp" }
           ]}
       />
 

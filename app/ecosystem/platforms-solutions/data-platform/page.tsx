@@ -19,19 +19,19 @@ const DataPlatformOverview = () => {
     {
       title: "Unified Lakehouse Architectures",
       desc: "Establish optimized data lakehouses combining structured queries and semi-structured storage zones.",
-      img: "/assets/data_lakehouse_card.png",
+      img: "/webp/assets/data_lakehouse_card.webp",
       linkText: "Get the whitepaper"
     },
     {
       title: "Real-Time Pipeline Execution",
       desc: "Automate batch extracts and stream Kafka event logs with sub-second delivery guarantees.",
-      img: "/assets/data_pipelines_card.png",
+      img: "/webp/assets/data_pipelines_card.webp",
       linkText: "Read the execution guide"
     },
     {
       title: "Governed Business Intelligence",
       desc: "Map column lineage, enforce PII masking rules, and deliver clean, AI-ready datasets.",
-      img: "/assets/data_governance_card.png",
+      img: "/webp/assets/data_governance_card.webp",
       linkText: "Access governance frameworks"
     }
   ];
@@ -59,7 +59,7 @@ const DataPlatformOverview = () => {
               </Link>
             </div>
             <div className="w-full lg:w-1/2 rounded-[2rem] overflow-hidden aspect-[16/10] bg-zinc-900 border border-zinc-800 relative group">
-              <img src="/assets/data_overview_hero.png"
+              <img src="/webp/assets/data_overview_hero.webp"
                 alt="Frontier transformation cover"
                 className="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700"
               loading="lazy" />
@@ -173,7 +173,7 @@ const DataChallenges = () => {
             <Reveal className="h-full">
               <div className="relative overflow-hidden rounded-3xl h-full flex flex-col justify-end p-8 bg-zinc-900 border border-zinc-800 shadow-[0_8px_32px_0_rgba(0,0,0,0.5)] group">
                 <div className="absolute inset-0 z-0">
-                  <img src="/assets/data_challenges_cover.png"
+                  <img src="/webp/assets/data_challenges_cover.webp"
                     alt="Data challenges team cover"
                     className="w-full h-full object-cover opacity-25 group-hover:scale-105 transition-transform duration-700"
                   loading="lazy" />
@@ -961,7 +961,7 @@ const IndustryUseCases = () => {
             <Reveal className="h-full">
               <div className="relative overflow-hidden rounded-3xl h-full flex flex-col justify-end p-8 bg-zinc-900 border border-zinc-800 shadow-[0_8px_32px_0_rgba(0,0,0,0.5)] group">
                 <div className="absolute inset-0 z-0">
-                  <img src="/assets/data_industry_cover.png"
+                  <img src="/webp/assets/data_industry_cover.webp"
                     alt="Layered data security cover"
                     className="w-full h-full object-cover opacity-25 group-hover:scale-105 transition-transform duration-750"
                   loading="lazy" />

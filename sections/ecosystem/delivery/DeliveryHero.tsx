@@ -48,7 +48,7 @@ export function DeliveryHero() {
         <Reveal delay={0.4} className="w-full flex justify-center mt-10 mb-2">
           <div className="relative w-full aspect-[16/9] max-h-[580px] md:max-h-[660px]">
             <Image
-              src="/assets/ecosystem/global-delevery-hero.png"
+              src="/webp/assets/ecosystem/global-delevery-hero.webp"
               alt="Global Delivery Ecosystem Showcase"
               fill
               priority

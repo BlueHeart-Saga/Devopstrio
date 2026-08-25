@@ -131,7 +131,7 @@ export default function EngineeringCommunityPage() {
             {/* Left Large Image */}
             <div className="lg:col-span-6 relative">
               <div className="relative rounded-[24px] overflow-hidden border border-zinc-800 shadow-2xl bg-zinc-900 group">
-                <img src="/assets/common/e76e125035885aab9c9070ce85df239e-1.png"
+                <img src="/webp/assets/common/e76e125035885aab9c9070ce85df239e-1.webp"
                   alt="Devopstrio Team Discussing Architecture"
                   className="w-full h-[400px] object-cover group-hover:scale-105 transition-transform duration-500"
                 loading="lazy" />
@@ -312,7 +312,7 @@ export default function EngineeringCommunityPage() {
             </div>
             <div className="lg:col-span-6">
               <div className="rounded-[24px] overflow-hidden border border-zinc-800 shadow-xl bg-zinc-950 group">
-                <img src="/assets/common/1b065043b6959827c05a0073c93a4a53-1.png"
+                <img src="/webp/assets/common/1b065043b6959827c05a0073c93a4a53-1.webp"
                   alt="Developers reviewing pull requests on monitors"
                   className="w-full h-[320px] object-cover group-hover:scale-105 transition-transform duration-500"
                 loading="lazy" />
@@ -338,7 +338,7 @@ export default function EngineeringCommunityPage() {
             </div>
             <div className="lg:col-span-6 lg:order-1">
               <div className="rounded-[24px] overflow-hidden border border-zinc-800 shadow-xl bg-zinc-950 group">
-                <img src="/assets/common/37b9b888cc479ea7b74d2d9a05c37597-1.png"
+                <img src="/webp/assets/common/37b9b888cc479ea7b74d2d9a05c37597-1.webp"
                   alt="Cloud architecture design session"
                   className="w-full h-[320px] object-cover group-hover:scale-105 transition-transform duration-500"
                 loading="lazy" />
@@ -364,7 +364,7 @@ export default function EngineeringCommunityPage() {
             </div>
             <div className="lg:col-span-6">
               <div className="rounded-[24px] overflow-hidden border border-zinc-800 shadow-xl bg-zinc-950 group">
-                <img src="/assets/common/9d91b93f83e6d4cd494ec13611b3e50e-1.png"
+                <img src="/webp/assets/common/9d91b93f83e6d4cd494ec13611b3e50e-1.webp"
                   alt="AI engineering workspace"
                   className="w-full h-[320px] object-cover group-hover:scale-105 transition-transform duration-500"
                 loading="lazy" />
@@ -390,7 +390,7 @@ export default function EngineeringCommunityPage() {
             </div>
             <div className="lg:col-span-6 lg:order-1">
               <div className="rounded-[24px] overflow-hidden border border-zinc-800 shadow-xl bg-zinc-950 group">
-                <img src="/assets/common/f317dd71184f5c47d601eeb9508bf92c-1.png"
+                <img src="/webp/assets/common/f317dd71184f5c47d601eeb9508bf92c-1.webp"
                   alt="Hackathon team coding overnight"
                   className="w-full h-[320px] object-cover group-hover:scale-105 transition-transform duration-500"
                 loading="lazy" />
@@ -673,12 +673,12 @@ export default function EngineeringCommunityPage() {
 
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
             {[
-              { title: "Hackathon Finals", img: "/assets/common/782e79a0bc5e9f58cb9af6a27727ca7b-1.png" },
-              { title: "London Technical Meetup", img: "/assets/common/82090d7be4ef5694954ce77f9cc2e627-1.png" },
-              { title: "Architecture Workshop", img: "/assets/common/90361fed0bb781d7c86e451995b4dbce-1.png" },
-              { title: "University Guest Lecture", img: "/assets/common/945ab601f043c558e0a8162da2a1eb4c-1.png" },
-              { title: "Cloud Lab Session", img: "/assets/common/464d8932bca4d6bb552ff2dcf2f3c5ca-1.png" },
-              { title: "Open Source Sprint", img: "/assets/common/45ea830d170d382ade235db479060da7-1.png" }
+              { title: "Hackathon Finals", img: "/webp/assets/common/782e79a0bc5e9f58cb9af6a27727ca7b-1.webp" },
+              { title: "London Technical Meetup", img: "/webp/assets/common/82090d7be4ef5694954ce77f9cc2e627-1.webp" },
+              { title: "Architecture Workshop", img: "/webp/assets/common/90361fed0bb781d7c86e451995b4dbce-1.webp" },
+              { title: "University Guest Lecture", img: "/webp/assets/common/945ab601f043c558e0a8162da2a1eb4c-1.webp" },
+              { title: "Cloud Lab Session", img: "/webp/assets/common/464d8932bca4d6bb552ff2dcf2f3c5ca-1.webp" },
+              { title: "Open Source Sprint", img: "/webp/assets/common/45ea830d170d382ade235db479060da7-1.webp" }
             ].map((gal, idx) => (
               <Reveal key={idx} delay={idx * 0.05}>
                 <div className="relative rounded-[20px] overflow-hidden border border-zinc-800 shadow-lg group h-48 sm:h-60 bg-zinc-950">

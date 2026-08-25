@@ -10,7 +10,7 @@ const alliances = [
   { name: "Google Cloud", path: "/assets/Tech-icons/google-cloud-logo_svgstack_com_28371780931185.svg" },
   { name: "OpenAI", path: "/assets/Tech-icons/openai-logo_svgstack_com_28971780931370.svg" },
   { name: "Oracle", path: "/assets/Tech-icons/oracle-logo_svgstack_com_28991780931429.svg" },
-  { name: "ServiceNow", path: "/assets/Home-page/partners/servicenow.png" }
+  { name: "ServiceNow", path: "/webp/assets/Home-page/partners/servicenow.webp" }
 ];
 
 export function DomainPartnerships() {

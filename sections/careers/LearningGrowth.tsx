@@ -8,22 +8,22 @@ const entryLevels = [
   {
     title: "Students",
     desc: "Gain experience during your studies and insights into real software solutions. Work on exciting projects, develop your skills, and benefit from our professional development programs, continuous learning, and global network.",
-    img: "/assets/careers/banner/student.png",
+    img: "/webp/assets/careers/banner/student.webp",
   },
   {
     title: "Graduates",
     desc: "Step into the IT industry with challenging projects that build your skills and confidence. Join an inspiring team and take advantage of mentoring and training to accelerate your growth.",
-    img: "/assets/careers/banner/gratuates.png",
+    img: "/webp/assets/careers/banner/gratuates.webp",
   },
   {
     title: "Professionals",
     desc: "Expand your expertise, work on international projects, and take your career to the next level. Opportunities range from technical leadership to strategic project delivery — with the option to move into executive roles.",
-    img: "/assets/careers/banner/professional.png",
+    img: "/webp/assets/careers/banner/professional.webp",
   },
   {
     title: "Executive Leaders",
     desc: "Set the course for success through effective strategies, innovation, and collaboration. Our executive leadership team guides high-impact enterprise missions across global client domains.",
-    img: "/assets/careers/banner/image.png",
+    img: "/webp/assets/careers/banner/image.webp",
   },
 ];
 
@@ -59,7 +59,7 @@ export function LearningGrowth() {
               <span className="text-xs font-semibold tracking-wider uppercase text-zinc-200 group-hover:text-rose-400">
                 {isOpen ? "Hide Entry Levels" : "View Entry Levels"}
               </span>
-              <img src="/assets/components/linearrow.png"
+              <img src="/webp/assets/components/linearrow.webp"
                 alt="Toggle arrow"
                 className={`w-5 h-5 object-contain filter drop-shadow-[0_0_8px_rgba(244,63,94,0.5)] transition-transform duration-300 ${
                   isOpen ? "rotate-180" : "rotate-0"

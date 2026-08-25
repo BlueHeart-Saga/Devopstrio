@@ -5,17 +5,17 @@ import Image from "next/image";
 import Link from "next/link";
 
 const floatingIcons = [
-  { name: "globe", img: "globe.png", left: "5%", top: "20%", size: 48, delay: 0.1 }, 
-  { name: "whatsapp", img: "whatsapp.png", left: "8.5%", top: "46.7%", size: 56, delay: 0.2 }, 
-  { name: "email", img: "email.png", left: "18.2%", top: "69.5%", size: 64, delay: 0.3 }, 
-  { name: "youtube", img: "youtube.png", left: "32.8%", top: "84.6%", size: 72, delay: 0.4 }, 
+  { name: "globe", img: "globe.webp", left: "5%", top: "20%", size: 48, delay: 0.1 }, 
+  { name: "whatsapp", img: "whatsapp.webp", left: "8.5%", top: "46.7%", size: 56, delay: 0.2 }, 
+  { name: "email", img: "email.webp", left: "18.2%", top: "69.5%", size: 64, delay: 0.3 }, 
+  { name: "youtube", img: "youtube.webp", left: "32.8%", top: "84.6%", size: 72, delay: 0.4 }, 
   
-  { name: "instagram", img: "instagram.png", left: "50%", top: "90%", size: 88, delay: 0.5 }, 
+  { name: "instagram", img: "instagram.webp", left: "50%", top: "90%", size: 88, delay: 0.5 }, 
   
-  { name: "facebook", img: "facebook.png", left: "67.2%", top: "84.6%", size: 72, delay: 0.6 }, 
-  { name: "gmail", img: "gmail.png", left: "81.8%", top: "69.5%", size: 64, delay: 0.7 }, 
-  { name: "comments", img: "comments.png", left: "91.5%", top: "46.7%", size: 56, delay: 0.8 }, 
-  { name: "whats-new", img: "whats-new.png", left: "95%", top: "20%", size: 48, delay: 0.9 }, 
+  { name: "facebook", img: "facebook.webp", left: "67.2%", top: "84.6%", size: 72, delay: 0.6 }, 
+  { name: "gmail", img: "gmail.webp", left: "81.8%", top: "69.5%", size: 64, delay: 0.7 }, 
+  { name: "comments", img: "comments.webp", left: "91.5%", top: "46.7%", size: 56, delay: 0.8 }, 
+  { name: "whats-new", img: "whats-new.webp", left: "95%", top: "20%", size: 48, delay: 0.9 }, 
 ];
 
 export const SupportHero = () => {
@@ -46,7 +46,7 @@ export const SupportHero = () => {
             }}
             className={`absolute -translate-x-1/2 -translate-y-1/2 flex items-center justify-center text-white drop-shadow-2xl`}
           >
-            <img src={`/assets/About-page/support/social/${item.img}`}
+            <img src={`/webp/assets/About-page/support/social/${item.img}`}
               alt={item.name}
               style={{ width: '100%', height: '100%' }}
               className="object-contain"

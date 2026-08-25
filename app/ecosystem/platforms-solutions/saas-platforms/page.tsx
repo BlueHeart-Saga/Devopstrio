@@ -105,7 +105,7 @@ export default function SaaSPlatformsPage() {
       tagline: "Tailored operations manager for real estate",
       desc: "Coordinate scheduling, automate lease contract triggers, and aggregate regional rental telemetry for property portfolios.",
       features: ["Lease Workflows", "Asset Telemetry", "Contract Automation", "Regional Analytics"],
-      logo: "/assets/Home-page/our-products/logo/homela.png",
+      logo: "/webp/assets/Home-page/our-products/logo/homela.webp",
       ctaPrimary: "View Platform",
       ctaSecondary: "Request Demo",
       url: "https://homela.devopstrio.co.uk/"
@@ -118,7 +118,7 @@ export default function SaaSPlatformsPage() {
       tagline: "Designed for hospitals and clinics",
       desc: "Centralize clinical workflows, verify patient credentials, manage appointments, and streamline healthcare operations.",
       features: ["Patient Records", "Appointments Scheduler", "Clinical Billing", "Actionable Reports"],
-      logo: "/assets/Home-page/our-products/logo/Caresuite.png",
+      logo: "/webp/assets/Home-page/our-products/logo/Caresuite.webp",
       ctaPrimary: "View Platform",
       ctaSecondary: "Book Demo",
       url: "https://caresuite.devopstrio.co.uk/"
@@ -131,7 +131,7 @@ export default function SaaSPlatformsPage() {
       tagline: "AI-powered Human Resource Platform",
       desc: "Simplify recruitment, onboarding, attendance, payroll, and employee management from one intelligent platform.",
       features: ["Recruitment Automation", "Leave Management", "Dynamic Payroll Engine", "Attendance Tracking"],
-      logo: "/assets/Home-page/our-products/logo/humanex.png",
+      logo: "/webp/assets/Home-page/our-products/logo/humanex.webp",
       ctaPrimary: "View Platform",
       ctaSecondary: "Start Trial",
       url: "https://humanex.devopstrio.co.uk/"
@@ -144,7 +144,7 @@ export default function SaaSPlatformsPage() {
       tagline: "Align marketing execution with conversions",
       desc: "Track cross-channel spending, automate analytics collection, and split traffic dynamically for optimal campaign conversions.",
       features: ["Traffic Splitting", "Spend Auditing", "Analytics Aggregator", "Channel Attribution"],
-      logo: "/assets/Home-page/our-products/logo/Campix.png",
+      logo: "/webp/assets/Home-page/our-products/logo/Campix.webp",
       ctaPrimary: "View Platform",
       ctaSecondary: "Request Demo",
       url: "https://campix.devopstrio.co.uk/"
@@ -157,7 +157,7 @@ export default function SaaSPlatformsPage() {
       tagline: "Collaborative learning workspace platform",
       desc: "Empower schools and training centers with course modules, student logs, task sheets, and grade records.",
       features: ["Course Modules", "Student Logs", "Task Sheets", "Performance Reports"],
-      logo: "/assets/Home-page/our-products/logo/Prestivo.png",
+      logo: "/webp/assets/Home-page/our-products/logo/Prestivo.webp",
       ctaPrimary: "View Platform",
       ctaSecondary: "Learn More",
       url: "https://prestivo.devopstrio.co.uk/"
@@ -170,7 +170,7 @@ export default function SaaSPlatformsPage() {
       tagline: "Empower design teams at scale",
       desc: "Produce brand assets, write copy, and manage creative media using automated neural generative tools.",
       features: ["AI Copywriter & Editor", "Design Asset Generation", "Campaign Coordination", "Media Asset Lake"],
-      logo: "/assets/Home-page/our-products/logo/brio.png",
+      logo: "/webp/assets/Home-page/our-products/logo/brio.webp",
       ctaPrimary: "View Platform",
       ctaSecondary: "Watch Demo",
       url: "https://brio.devopstrio.co.uk/"
@@ -183,7 +183,7 @@ export default function SaaSPlatformsPage() {
       tagline: "Legally compliant digital signing",
       desc: "Accelerate signature loops securely. Fully compliant with European eIDAS and US ESIGN Acts, featuring audit logs.",
       features: ["Compliant eSignatures", "Document Workflows", "Detailed Audit Logs", "Secure Lockers"],
-      logo: "/assets/Home-page/our-products/logo/safesign.png",
+      logo: "/webp/assets/Home-page/our-products/logo/safesign.webp",
       ctaPrimary: "View Platform",
       ctaSecondary: "Start Free",
       url: "https://safesign.devopstrio.co.uk/"
@@ -196,7 +196,7 @@ export default function SaaSPlatformsPage() {
       tagline: "Designed for law firms and legal departments",
       desc: "Automate contract reviews, track billing metrics, organize case documentation, and streamline intake channels.",
       features: ["Legal Case Management", "Document Summarization", "Legal Research Assistant", "Time Tracking & Billing"],
-      logo: "/assets/Home-page/our-products/logo/Justivon.png",
+      logo: "/webp/assets/Home-page/our-products/logo/Justivon.webp",
       ctaPrimary: "View Platform",
       ctaSecondary: "Book Demo",
       url: "https://justivon.devopstrio.co.uk/"
@@ -373,16 +373,16 @@ export default function SaaSPlatformsPage() {
           {/* Circular Orbit Node Diagram */}
           <div>
             <OrbitEcosystem
-              centerLogo="/assets/logo/logo.png"
+              centerLogo="/webp/assets/logo/logo.webp"
               nodes={[
-                { name: "Campix", logo: "/assets/Home-page/our-products/logo/Campix.png" },
-                { name: "CareSuite", logo: "/assets/Home-page/our-products/logo/Caresuite.png" },
-                { name: "Justivon", logo: "/assets/Home-page/our-products/logo/Justivon.png" },
-                { name: "Prestivo", logo: "/assets/Home-page/our-products/logo/Prestivo.png" },
-                { name: "Brio", logo: "/assets/Home-page/our-products/logo/brio.png" },
-                { name: "Homela", logo: "/assets/Home-page/our-products/logo/homela.png" },
-                { name: "Humanex", logo: "/assets/Home-page/our-products/logo/humanex.png" },
-                { name: "SafeSign", logo: "/assets/Home-page/our-products/logo/safesign.png" }
+                { name: "Campix", logo: "/webp/assets/Home-page/our-products/logo/Campix.webp" },
+                { name: "CareSuite", logo: "/webp/assets/Home-page/our-products/logo/Caresuite.webp" },
+                { name: "Justivon", logo: "/webp/assets/Home-page/our-products/logo/Justivon.webp" },
+                { name: "Prestivo", logo: "/webp/assets/Home-page/our-products/logo/Prestivo.webp" },
+                { name: "Brio", logo: "/webp/assets/Home-page/our-products/logo/brio.webp" },
+                { name: "Homela", logo: "/webp/assets/Home-page/our-products/logo/homela.webp" },
+                { name: "Humanex", logo: "/webp/assets/Home-page/our-products/logo/humanex.webp" },
+                { name: "SafeSign", logo: "/webp/assets/Home-page/our-products/logo/safesign.webp" }
               ]}
             />
           </div>
@@ -460,7 +460,7 @@ export default function SaaSPlatformsPage() {
               <div className="w-full lg:w-1/2 relative min-h-[300px] sm:min-h-[400px] lg:min-h-full bg-zinc-950 border-l border-zinc-800/80 p-2">
                 <div className="relative w-full h-full rounded-[1.5rem] overflow-hidden border border-zinc-800/50">
                   <Image
-                    src={`/assets/Home-page/our-products/${activeProduct.slug}.png`}
+                    src={`/webp/assets/Home-page/our-products/${activeProduct.slug}.webp`}
                     alt={`${activeProduct.name} Interface`}
                     fill
                     className="object-cover object-left-top scale-105 transition-transform duration-1000 group-hover:scale-100"
@@ -537,15 +537,15 @@ export default function SaaSPlatformsPage() {
             className="flex overflow-x-auto gap-6 pb-8 snap-x snap-mandatory [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] relative"
           >
             {[
-              { title: "Banking & Finance", subtitle: "Secure financial frameworks · 2026", badge: "Brio", logo: "/assets/Home-page/our-products/logo/brio.png", image: "/assets/Home-page/industries/bankifinance.png" },
-              { title: "Healthcare", subtitle: "Clinical operational suites · 2026", badge: "CareSuite", logo: "/assets/Home-page/our-products/logo/Caresuite.png", image: "/assets/Home-page/industries/healthcaree.png" },
-              { title: "Education", subtitle: "Collaborative learning hubs · 2026", badge: "Prestivo", logo: "/assets/Home-page/our-products/logo/Prestivo.png", image: "/assets/Home-page/industries/educationn.png" },
-              { title: "Government", subtitle: "Public sector automation · 2026", badge: "Justivon", logo: "/assets/Home-page/our-products/logo/Justivon.png", image: "/assets/Home-page/industries/governmentsector.png" },
-              { title: "Manufacturing", subtitle: "Supply chain integrations · 2026", badge: "Humanex", logo: "/assets/Home-page/our-products/logo/humanex.png", image: "/assets/Home-page/industries/manufacturingg.png" },
-              { title: "Media & Ent.", subtitle: "Asset coordination matrix · 2026", badge: "Campix", logo: "/assets/Home-page/our-products/logo/Campix.png", image: "/assets/Home-page/industries/mediaentertainment.png" },
-              { title: "Telecom", subtitle: "Network lifecycle tooling · 2026", badge: "SafeSign", logo: "/assets/Home-page/our-products/logo/safesign.png", image: "/assets/Home-page/industries/telecommunicationn.png" },
-              { title: "Retail", subtitle: "Omnichannel workflows · 2026", badge: "Humanex", logo: "/assets/Home-page/our-products/logo/humanex.png", image: "/assets/Home-page/industries/retailecommerce.png" },
-              { title: "Real Estate", subtitle: "Property asset telemetry · 2026", badge: "Homela", logo: "/assets/Home-page/our-products/logo/homela.png", image: "/assets/Home-page/industries/4.png" }
+              { title: "Banking & Finance", subtitle: "Secure financial frameworks · 2026", badge: "Brio", logo: "/webp/assets/Home-page/our-products/logo/brio.webp", image: "/webp/assets/Home-page/industries/bankifinance.webp" },
+              { title: "Healthcare", subtitle: "Clinical operational suites · 2026", badge: "CareSuite", logo: "/webp/assets/Home-page/our-products/logo/Caresuite.webp", image: "/webp/assets/Home-page/industries/healthcaree.webp" },
+              { title: "Education", subtitle: "Collaborative learning hubs · 2026", badge: "Prestivo", logo: "/webp/assets/Home-page/our-products/logo/Prestivo.webp", image: "/webp/assets/Home-page/industries/educationn.webp" },
+              { title: "Government", subtitle: "Public sector automation · 2026", badge: "Justivon", logo: "/webp/assets/Home-page/our-products/logo/Justivon.webp", image: "/webp/assets/Home-page/industries/governmentsector.webp" },
+              { title: "Manufacturing", subtitle: "Supply chain integrations · 2026", badge: "Humanex", logo: "/webp/assets/Home-page/our-products/logo/humanex.webp", image: "/webp/assets/Home-page/industries/manufacturingg.webp" },
+              { title: "Media & Ent.", subtitle: "Asset coordination matrix · 2026", badge: "Campix", logo: "/webp/assets/Home-page/our-products/logo/Campix.webp", image: "/webp/assets/Home-page/industries/mediaentertainment.webp" },
+              { title: "Telecom", subtitle: "Network lifecycle tooling · 2026", badge: "SafeSign", logo: "/webp/assets/Home-page/our-products/logo/safesign.webp", image: "/webp/assets/Home-page/industries/telecommunicationn.webp" },
+              { title: "Retail", subtitle: "Omnichannel workflows · 2026", badge: "Humanex", logo: "/webp/assets/Home-page/our-products/logo/humanex.webp", image: "/webp/assets/Home-page/industries/retailecommerce.webp" },
+              { title: "Real Estate", subtitle: "Property asset telemetry · 2026", badge: "Homela", logo: "/webp/assets/Home-page/our-products/logo/homela.webp", image: "/webp/assets/Home-page/industries/4.webp" }
             ].map((ind, idx) => (
               <div key={idx} className="min-w-[280px] md:min-w-[340px] snap-start group cursor-pointer bg-[#0c0c0c] border border-zinc-800/80 rounded-[2rem] p-2 hover:border-zinc-700 transition-colors">
                 {/* Visual Box */}
@@ -671,14 +671,14 @@ export default function SaaSPlatformsPage() {
           <div className="flex overflow-x-auto gap-6 pb-12 snap-x snap-mandatory [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
             {valueProps.map((prop, idx) => {
               const cardImages = [
-                "/assets/common/09ff7846bc8c9998745688779c09f88d-1.png",
-                "/assets/common/1b065043b6959827c05a0073c93a4a53-1.png",
-                "/assets/common/260b761ad40c3ad2acba2c6666894539-1.png",
-                "/assets/common/2fe7f9184c515b0c515ce38bc8a25efa-1.png",
-                "/assets/common/315e4fdc6263bfd240f36297e376576e-1.png",
-                "/assets/common/37b9b888cc479ea7b74d2d9a05c37597-1.png",
-                "/assets/common/45ea830d170d382ade235db479060da7-1.png",
-                "/assets/common/464d8932bca4d6bb552ff2dcf2f3c5ca-1.png"
+                "/webp/assets/common/09ff7846bc8c9998745688779c09f88d-1.webp",
+                "/webp/assets/common/1b065043b6959827c05a0073c93a4a53-1.webp",
+                "/webp/assets/common/260b761ad40c3ad2acba2c6666894539-1.webp",
+                "/webp/assets/common/2fe7f9184c515b0c515ce38bc8a25efa-1.webp",
+                "/webp/assets/common/315e4fdc6263bfd240f36297e376576e-1.webp",
+                "/webp/assets/common/37b9b888cc479ea7b74d2d9a05c37597-1.webp",
+                "/webp/assets/common/45ea830d170d382ade235db479060da7-1.webp",
+                "/webp/assets/common/464d8932bca4d6bb552ff2dcf2f3c5ca-1.webp"
               ];
               const image = cardImages[idx % cardImages.length];
 
@@ -838,7 +838,7 @@ export default function SaaSPlatformsPage() {
               { image: "/assets/Home-page/partners/Costco.svg", name: "Costco", categories: ["Partners"] },
               { image: "/assets/Home-page/partners/ASDA.svg", name: "ASDA", categories: ["Partners"] },
               { image: "/assets/Home-page/partners/BT.svg", name: "BT", categories: ["Partners"] },
-              { image: "/assets/Home-page/partners/Boviet_Solar.png", name: "Boviet Solar", categories: ["Partners"] },
+              { image: "/webp/assets/Home-page/partners/Boviet_Solar.webp", name: "Boviet Solar", categories: ["Partners"] },
               { image: "/assets/Home-page/partners/Metrobank.svg", name: "Metrobank", categories: ["Partners"] },
               { image: "/assets/Home-page/partners/Virgin.svg", name: "Virgin", categories: ["Partners"] },
               { image: "/assets/Home-page/partners/appian.svg", name: "Appian", categories: ["Partners"] },

@@ -10,7 +10,7 @@ const offices = [
     city: "London", 
     region: "(Head Office)", 
     details: "128 City Road, London, United Kingdom\nEC1V 2NX", 
-    image: "/assets/locations/london.png",
+    image: "/webp/assets/locations/london.webp",
     gradient: "from-rose-500 to-red-500",
     mapUrl: "https://www.google.com/maps/place/Devopstrio+ltd/@51.5245288,-0.1367657,14z/data=!3m1!5s0x4875cee4157f1139:0xd249cf37df391616!4m10!1m2!2m1!1sdevopstrio+ltd+uk!3m6!1s0x48760b08b17623d1:0x6617df320c1480ed!8m2!3d51.5272553!4d-0.0887416!15sChFkZXZvcHN0cmlvIGx0ZCB1a5IBEHNvZnR3YXJlX2NvbXBhbnngAQA!16s%2Fg%2F11s90s3cf8"
   },
@@ -18,7 +18,7 @@ const offices = [
     city: "Tennessee", 
     region: "(Sub-Regional Office)", 
     details: "522 Aventura Dr, Mt Juliet, Tennessee\n37122 United States",
-    image: "/assets/locations/Tennessee.png",
+    image: "/webp/assets/locations/Tennessee.webp",
     gradient: "from-zinc-500 to-zinc-300",
     mapUrl: "https://maps.google.com/?q=522+Aventura+Dr,+Mt+Juliet,+TN+37122"
   },
@@ -26,7 +26,7 @@ const offices = [
     city: "Bengaluru", 
     region: "(Corporate Office)", 
     details: "Embassy Golf Links Business Park,\nBengaluru, Karnataka-560071, India",
-    image: "/assets/locations/Bengaluru.png",
+    image: "/webp/assets/locations/Bengaluru.webp",
     gradient: "from-zinc-400 to-zinc-200",
     mapUrl: "https://www.google.com/maps/place/Devopstrio+Pvt+Ltd/@11.2597005,71.6100439,6.11z/data=!4m10!1m2!2m1!1sDevopstrio+Pbangalore!3m6!1s0x3bae152b54eca867:0x980925bb507a328c!8m2!3d12.9513154!4d77.6464534!15sChVEZXZvcHN0cmlvIFBiYW5nYWxvcmVaFyIVZGV2b3BzdHJpbyBwYmFuZ2Fsb3JlkgEdY29tcHV0ZXJfc3VwcG9ydF9hbmRfc2VydmljZXPgAQA!16s%2Fg%2F11mdtl382s"
   },
@@ -34,7 +34,7 @@ const offices = [
     city: "London", 
     region: "(Support Office)", 
     details: "167-169 Great Portland Street, 5th Floor,\nLondon, W1W 5PF",
-    image: "/assets/locations/london.png",
+    image: "/webp/assets/locations/london.webp",
     gradient: "from-rose-600 to-red-700",
     mapUrl: "https://www.google.com/maps/place/Devopstrio+Ltd/@51.5217329,-0.1816995,14z/data=!3m1!5s0x48761b2a2ad5bccd:0x14f0e4cbfee2283a!4m10!1m2!2m1!1sdevopstrio+ltd+uk!3m6!1s0x48761bf02b1933c7:0x47453e7d1b549278!8m2!3d51.5217329!4d-0.1435907!15sChFkZXZvcHN0cmlvIGx0ZCB1a5IBHWNvbXB1dGVyX3N1cHBvcnRfYW5kX3NlcnZpY2Vz4AEA!16s%2Fg%2F11zcnb2t_d"
   },
@@ -42,7 +42,7 @@ const offices = [
     city: "Chennai", 
     region: "(Technology & Operations Center)", 
     details: "Ground Floor, Primus Building, Door No.\nSP – 7A, Guindy Industrial Estate, SIDCO\nIndustrial Estate, Chennai 600032",
-    image: "/assets/locations/chennai.png",
+    image: "/webp/assets/locations/chennai.webp",
     gradient: "from-orange-600 to-amber-500",
     mapUrl: "https://www.google.com/maps/place/Devopstrio+Pvt+Ltd/@13.0095316,80.2063518,17z/data=!3m1!4b1!4m6!3m5!1s0x3a5267f2a761f2c5:0x795e4dac8df70296!8m2!3d13.0095264!4d80.2089267!16s%2Fg%2F11nq0wrf8p"
   },
@@ -50,7 +50,7 @@ const offices = [
     city: "Thoothukudi", 
     region: "(Innovation Hub)", 
     details: "4/ 367, Rajeev Colony, Pasuvanthanai\n628718 Thoothukudi, Tamilnadu, IN",
-    image: "/assets/locations/Thoothukudi.png",
+    image: "/webp/assets/locations/Thoothukudi.webp",
     gradient: "from-red-600 to-orange-500",
     mapUrl: "https://www.google.com/maps/place/Devopstrio/@9.0039123,77.9576017,17z/data=!3m1!4b1!4m6!3m5!1s0x3b01557677b55437:0xdccfaa15cbbc87ca!8m2!3d9.0039123!4d77.9601766!16s%2Fg%2F11xw9tzf_k"
   }
@@ -83,7 +83,7 @@ export function GlobalLocations() {
             <span className="text-sm font-bold tracking-wider uppercase text-zinc-100 group-hover:text-rose-400">
               {isOpen ? "Hide Locations" : "View All Locations"}
             </span>
-            <img src="/assets/components/linearrow.png"
+            <img src="/webp/assets/components/linearrow.webp"
               alt="Toggle arrow"
               className={`w-5 h-5 object-contain filter drop-shadow-[0_0_8px_rgba(244,63,94,0.5)] transition-transform duration-300 ${
                 isOpen ? "rotate-180" : "rotate-0"

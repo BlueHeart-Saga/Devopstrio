@@ -31,16 +31,16 @@ const concreteAchievements = [
 // Dynamically generate the 10 certification badge entries matching existing asset files
 const ourCerts = Array.from({ length: 10 }, (_, i) => ({
   name: `Certification ${i + 1}`,
-  src: `/assets/About-page/our-Certification/Group_${i + 1}.png`
+  src: `/webp/assets/About-page/our-Certification/Group_${i + 1}.webp`
 }));
 
 // Static array for compliance logos
 const complianceLogos = [
-  { name: "FDA", src: "/assets/About-page/complience-Logos/FDA.png" },
-  { name: "GDPR", src: "/assets/About-page/complience-Logos/GDPR.png" },
-  { name: "HIPAA", src: "/assets/About-page/complience-Logos/HIPAA.png" },
-  { name: "ISO", src: "/assets/About-page/complience-Logos/ISO.png" },
-  { name: "NIST", src: "/assets/About-page/complience-Logos/NIST.png" }
+  { name: "FDA", src: "/webp/assets/About-page/complience-Logos/FDA.webp" },
+  { name: "GDPR", src: "/webp/assets/About-page/complience-Logos/GDPR.webp" },
+  { name: "HIPAA", src: "/webp/assets/About-page/complience-Logos/HIPAA.webp" },
+  { name: "ISO", src: "/webp/assets/About-page/complience-Logos/ISO.webp" },
+  { name: "NIST", src: "/webp/assets/About-page/complience-Logos/NIST.webp" }
 ];
 
 // Static array for the 3 awards showcasing illustration images
@@ -48,19 +48,19 @@ const awards = [
   {
     title: "Cloud & Infrastructure Excellence",
     desc: "Recognised for high-performance multi-cloud architectures across AWS, Azure, and Google Cloud.",
-    image: "/assets/About-page/awards/dockum.png",
+    image: "/webp/assets/About-page/awards/dockum.webp",
     tag: "CLOUD LEADERSHIP"
   },
   {
     title: "AI & Intelligent Automation",
     desc: "Awarded for enterprise Generative AI integrations, intelligent agents, and operational workflows.",
-    image: "/assets/About-page/awards/techmm.png",
+    image: "/webp/assets/About-page/awards/techmm.webp",
     tag: "AI INNOVATION"
   },
   {
     title: "Enterprise Delivery Partnership",
     desc: "Delivering sustainable cost reduction, reliable support, and scale for FTSE 100 leaders.",
-    image: "/assets/About-page/awards/tuckim.png",
+    image: "/webp/assets/About-page/awards/tuckim.webp",
     tag: "TRUSTED PARTNER"
   }
 ];

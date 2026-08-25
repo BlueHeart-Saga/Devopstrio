@@ -4,6 +4,7 @@ import { BreadcrumbSchema } from "@/components/seo/Schemas";
 
 import { SupportHero } from "@/sections/about/support/SupportHero";
 import { SupportChannels } from "@/sections/about/support/SupportChannels";
+import { DepartmentContacts } from "@/sections/contact/DepartmentContacts";
 import { SupportReviews } from "@/sections/about/support/SupportReviews";
 import { InteractiveMap } from "@/sections/about/global-presence/InteractiveMap";
 import { SupportServices } from "@/sections/about/support/SupportServices";
@@ -125,7 +126,10 @@ export default function CustomerSupportPage() {
       {/* 2. Contact Channels */}
       <SupportChannels />
 
-      {/* 2.5 Google Reviews Spotlight */}
+      {/* 3. Department Direct Contacts */}
+      <DepartmentContacts />
+
+      {/* 3.5 Google Reviews Spotlight */}
       <SupportReviews />
 
       {/* 3. Global Interactive Support Map */}

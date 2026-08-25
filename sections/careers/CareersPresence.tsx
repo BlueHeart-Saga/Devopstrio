@@ -80,7 +80,7 @@ export function CareersPresence() {
           <div className="text-center max-w-3xl mx-auto mb-12 relative flex flex-col items-center">
             {/* Arrow image */}
             <div className="absolute left-0 sm:left-4 md:-left-12 top-1/2 -translate-y-1/2 pointer-events-none select-none hidden sm:block">
-              <img src="/assets/components/Carrow-right.png"
+              <img src="/webp/assets/components/Carrow-right.webp"
                 alt="Arrow indicator"
                 className="w-12 sm:w-16 h-auto object-contain filter drop-shadow-[0_0_15px_rgba(244,63,94,0.4)]"
               loading="lazy" />
@@ -103,7 +103,7 @@ export function CareersPresence() {
           <div className="relative w-full">
             {/* Map image */}
             <div className="relative w-full" style={{ paddingBottom: "38%" }}>
-              <img src="/assets/Contact-page/map/image1.png"
+              <img src="/webp/assets/Contact-page/map/image1.webp"
                 alt="Devopstrio global hiring locations"
                 className="absolute inset-0 w-full h-full object-contain opacity-50"
                 draggable={false}

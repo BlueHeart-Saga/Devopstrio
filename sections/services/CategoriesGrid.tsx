@@ -184,16 +184,16 @@ const richServiceCategories: ServiceCategory[] = [
 ];
 
 const bgWaves: Record<string, string> = {
-  "ai-data-innovation": "/assets/Services_grid/ai-data-innovation.png",
-  "cloud-services": "/assets/Services_grid/cloud-services.png",
-  "devops-automation": "/assets/Services_grid/devops-automation.png",
-  "cybersecurity": "/assets/Services_grid/cybersecurity.png",
-  "software-development": "/assets/Services_grid/software-development.png",
-  "digital-transformation": "/assets/Services_grid/digital-transformation.png",
-  "data-engineering": "/assets/Services_grid/data-engineering.png",
-  "managed-services": "/assets/Services_grid/managed-services.png",
-  "qa-testing": "/assets/Services_grid/qa-testing.png",
-  "it-consulting": "/assets/Services_grid/it-consulting.png",
+  "ai-data-innovation": "/webp/assets/Services_grid/ai-data-innovation.webp",
+  "cloud-services": "/webp/assets/Services_grid/cloud-services.webp",
+  "devops-automation": "/webp/assets/Services_grid/devops-automation.webp",
+  "cybersecurity": "/webp/assets/Services_grid/cybersecurity.webp",
+  "software-development": "/webp/assets/Services_grid/software-development.webp",
+  "digital-transformation": "/webp/assets/Services_grid/digital-transformation.webp",
+  "data-engineering": "/webp/assets/Services_grid/data-engineering.webp",
+  "managed-services": "/webp/assets/Services_grid/managed-services.webp",
+  "qa-testing": "/webp/assets/Services_grid/qa-testing.webp",
+  "it-consulting": "/webp/assets/Services_grid/it-consulting.webp",
 };
 
 export function CategoriesGrid() {
@@ -252,8 +252,12 @@ export function CategoriesGrid() {
             {/* <span className="text-xs sm:text-sm font-semibold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
               CORE PRACTICE AREAS
             </span> */}
-            <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight mb-5 text-white font-sans">
-              Powering engineering excellence for <span className="text-rose-500 font-semibold">modern enterprises</span>
+            <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-relaxed text-white font-sans flex flex-wrap items-center justify-center gap-x-3 mb-5">
+              <span>Powering</span>{" "}
+              <span className="bg-rose-500 text-white font-semibold px-4 py-1 mx-1.5 rounded-xl inline-block align-middle shadow-[0_4px_20px_rgba(244,63,94,0.35)]">
+                ENGINEERING
+              </span>{" "}
+              <span>Excellence for Modern Enterprises</span>
             </h2>
             {/* <p className="text-zinc-200 text-base md:text-lg font-semibold leading-relaxed">
               Explore our core specialized practices designed to <Link href="/services/digital-transformation" className="text-rose-500 hover:underline">modernize legacy architecture</Link>, <Link href="/services/devops-automation" className="text-rose-500 hover:underline">accelerate delivery pipelines</Link>, and <Link href="/services/ai-data-innovation" className="text-rose-500 hover:underline">drive cognitive intelligence</Link>.

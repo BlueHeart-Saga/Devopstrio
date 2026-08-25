@@ -18,14 +18,14 @@ interface SubDomainsGridProps {
 }
 
 const bgWaves: Record<string, string> = {
-  "partnerships": "/assets/services/bg-cloud.png",
-  "innovation-labs": "/assets/services/bg-ai.png",
-  "platforms-solutions": "/assets/services/bg-software.png",
-  "technology-stack": "/assets/services/bg-devops.png",
-  "global-delivery": "/assets/services/bg-managed.png",
-  "engineering-excellence": "/assets/services/bg-testing.png",
-  "accelerators-frameworks": "/assets/services/bg-transformation.png",
-  "community-talent-network": "/assets/services/bg-consulting.png",
+  "partnerships": "/webp/assets/services/bg-cloud.webp",
+  "innovation-labs": "/webp/assets/services/bg-ai.webp",
+  "platforms-solutions": "/webp/assets/services/bg-software.webp",
+  "technology-stack": "/webp/assets/services/bg-devops.webp",
+  "global-delivery": "/webp/assets/services/bg-managed.webp",
+  "engineering-excellence": "/webp/assets/services/bg-testing.webp",
+  "accelerators-frameworks": "/webp/assets/services/bg-transformation.webp",
+  "community-talent-network": "/webp/assets/services/bg-consulting.webp",
 };
 
 // Function to map subpage slugs to representative premium icons
@@ -131,7 +131,7 @@ export function SubDomainsGrid({ title, slug, subpages }: SubDomainsGridProps) {
               <div className="absolute -right-10 -top-10 w-48 h-48 bg-rose-600/10 rounded-full blur-3xl pointer-events-none transition-all duration-700 group-hover/tall:scale-110" />
               <div className="absolute -left-10 -bottom-10 w-48 h-48 bg-orange-600/5 rounded-full blur-3xl pointer-events-none transition-all duration-700 group-hover/tall:scale-110" />
               
-              <img src={bgWaves[slug] || "/assets/services/bg-ai.png"}
+              <img src={bgWaves[slug] || "/webp/assets/services/bg-ai.webp"}
                 alt=""
                 className="absolute inset-0 w-full h-full object-cover mix-blend-screen pointer-events-none opacity-35 transition-opacity duration-700 ease-in-out"
               loading="lazy" />

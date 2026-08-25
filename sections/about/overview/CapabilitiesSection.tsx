@@ -16,70 +16,70 @@ export function CapabilitiesSection() {
       title: "AI & Data Innovation",
       desc: "Leverage Generative AI, machine learning, and intelligent automation to modernise business processes and unlock measurable value at scale.",
       link: "/services/ai-data-innovation",
-      image: "/assets/Home-page/core-services/1.png"
+      image: "/webp/assets/Home-page/core-services/1.webp"
     },
     {
       tag: "Migrate",
       title: "Cloud Services",
       desc: "Design and manage resilient cloud environments across AWS, Azure, and Google Cloud — built for performance, compliance, and cost efficiency.",
       link: "/services/cloud-services",
-      image: "/assets/Home-page/core-services/2.png"
+      image: "/webp/assets/Home-page/core-services/2.webp"
     },
     {
       tag: "Accelerate",
       title: "DevOps & Automation",
       desc: "CI/CD automation, Kubernetes orchestration, Terraform, and platform engineering practices that eliminate friction and accelerate delivery.",
       link: "/services/devops-automation",
-      image: "/assets/Home-page/core-services/3.png"
+      image: "/webp/assets/Home-page/core-services/3.webp"
     },
     {
       tag: "Protect",
       title: "Cybersecurity",
       desc: "Embed security and compliance into every layer of your stack. Proactive threat management, SOC services, and zero-trust security frameworks.",
       link: "/services/cybersecurity",
-      image: "/assets/Home-page/core-services/4.png"
+      image: "/webp/assets/Home-page/core-services/4.webp"
     },
     {
       tag: "Build",
       title: "Software Development",
       desc: "Create enterprise-grade software, apps, and SaaS platforms. Engineered for reliability, API ecosystems, and business impact.",
       link: "/services/software-development",
-      image: "/assets/Home-page/core-services/5.png"
+      image: "/webp/assets/Home-page/core-services/5.webp"
     },
     {
       tag: "Transform",
       title: "Digital Transformation",
       desc: "Modernise business models and legacy systems. IT roadmaps, cloud readiness audits, process automation, and intelligent workflows.",
       link: "/services/digital-transformation",
-      image: "/assets/Home-page/core-services/6.png"
+      image: "/webp/assets/Home-page/core-services/6.webp"
     },
     {
       tag: "Analyze",
       title: "Data Engineering",
       desc: "Unlock actionable insights with robust data platforms. Design columnar databases, unified lakehouses, and real-time streaming pipelines.",
       link: "/services/data-engineering",
-      image: "/assets/Home-page/core-services/7.png"
+      image: "/webp/assets/Home-page/core-services/7.webp"
     },
     {
       tag: "Manage",
       title: "Managed Services",
       desc: "Ensure uninterrupted operations with 24/7 proactive monitoring. Multi-account cloud administration, SLA bug resolutions, and incident containment.",
       link: "/services/managed-services",
-      image: "/assets/Home-page/core-services/8.png"
+      image: "/webp/assets/Home-page/core-services/8.webp"
     },
     {
       tag: "Ensure",
       title: "QA & Testing",
       desc: "Deliver flawless digital experiences with quality engineering. Automated end-to-end client scripts, load testing, and shift-left methodologies.",
       link: "/services/qa-testing",
-      image: "/assets/Home-page/core-services/9.png"
+      image: "/webp/assets/Home-page/core-services/9.webp"
     },
     {
       tag: "Consult",
       title: "IT Consulting",
       desc: "Align technology investments with strategic business objectives. Cost-benefit analyses, compliance alignment, and digital roadmaps.",
       link: "/services/it-consulting",
-      image: "/assets/Home-page/core-services/10.png"
+      image: "/webp/assets/Home-page/core-services/10.webp"
     }
   ];
 

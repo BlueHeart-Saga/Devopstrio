@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { insightsApi, TransformedPost } from "@/lib/insightsApi";
 import Link from "next/link";
+import { getWebPPath } from "@/lib/utils";
 
 export const SuccessByService = () => {
   const [posts, setPosts] = useState<TransformedPost[]>([]);
@@ -63,7 +64,7 @@ export const SuccessByService = () => {
             className="bg-zinc-950/90 border border-zinc-800 rounded-3xl overflow-hidden flex flex-col md:flex-row mb-8 group hover:border-rose-500/40 transition-all duration-300 shadow-2xl block"
           >
             <div className="w-full md:w-[55%] relative h-[300px] md:h-auto overflow-hidden bg-zinc-950 shrink-0">
-              <img src={featured.image || "/assets/common/464d8932bca4d6bb552ff2dcf2f3c5ca-1.png"} 
+              <img src={getWebPPath(featured.image || "/webp/assets/common/464d8932bca4d6bb552ff2dcf2f3c5ca-1.webp")} 
                 alt={featured.title} 
                 className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-90" 
               loading="lazy" />
@@ -72,11 +73,11 @@ export const SuccessByService = () => {
             </div>
             
             <div className="w-full md:w-[45%] p-8 sm:p-12 flex flex-col justify-center relative z-10 bg-zinc-950">
-              <div className="mb-4 self-start">
+              {/* <div className="mb-4 self-start">
                 <span className="px-3 py-1 bg-zinc-900 rounded-full text-xs font-bold font-mono tracking-wider uppercase text-rose-400 border border-zinc-800">
                   {featured.category?.name || "Technology"}
                 </span>
-              </div>
+              </div> */}
               
               <h3 className="text-2xl sm:text-3xl font-semibold text-white mb-4 tracking-tight leading-snug group-hover:text-rose-400 transition-colors font-sans">
                 {featured.title}
@@ -111,7 +112,7 @@ export const SuccessByService = () => {
               className="bg-zinc-950/80 border border-zinc-800 rounded-3xl overflow-hidden flex flex-col group hover:border-rose-500/40 transition-all duration-300 shadow-xl block"
             >
               <div className="relative h-[220px] w-full overflow-hidden bg-zinc-950 shrink-0">
-                <img src={area.image || "/assets/common/90361fed0bb781d7c86e451995b4dbce-1.png"} 
+                <img src={getWebPPath(area.image || "/webp/assets/common/90361fed0bb781d7c86e451995b4dbce-1.webp")} 
                   alt={area.title} 
                   className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-90" 
                 loading="lazy" />

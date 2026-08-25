@@ -62,7 +62,7 @@ export function HiringProcess() {
               <div className="relative my-4">
                 {/* Arrow image */}
                 <div className="absolute -top-7 -left-8 pointer-events-none select-none hidden sm:block">
-                  <img src="/assets/components/lefttoright.png"
+                  <img src="/webp/assets/components/lefttoright.webp"
                     alt="Arrow indicator"
                     className="w-12 sm:w-14 h-auto object-contain filter drop-shadow-[0_0_15px_rgba(244,63,94,0.4)]"
                   loading="lazy" />

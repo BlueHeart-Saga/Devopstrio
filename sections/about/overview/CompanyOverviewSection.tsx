@@ -197,7 +197,7 @@ export function CompanyOverviewSection() {
 
             {/* Background team photo */}
             <div className="absolute inset-0 w-full h-full">
-              <img src="/assets/About-page/team/image.png"
+              <img src="/webp/assets/About-page/team/image.webp"
                 alt="Devopstrio Engineering Team"
                 className="w-full h-full object-cover"
               loading="lazy" />

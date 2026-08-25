@@ -208,16 +208,16 @@ export default function SafeSignProductPage() {
         <div className="w-full max-w-[100vw] overflow-hidden mt-2 relative z-10 flex justify-center">
           <CurvedCarousel
             images={[
-              "/assets/Home-page/our-products/safesign/dashboardpage.png",
-              "/assets/Home-page/our-products/safesign/documenteditor.png",
-              "/assets/Home-page/our-products/safesign/homepage.png",
-              "/assets/Home-page/our-products/safesign/loginpage.png",
-              "/assets/Home-page/our-products/safesign/offers.png",
-              "/assets/Home-page/our-products/safesign/pricing-page.png",
-              "/assets/Home-page/our-products/safesign/recipientpage.png",
-              "/assets/Home-page/our-products/safesign/analyticspage.png",
-              "/assets/Home-page/our-products/safesign/alert.png",
-              "/assets/Home-page/our-products/safesign/aboutpage.png",
+              "/webp/assets/Home-page/our-products/safesign/dashboardpage.webp",
+              "/webp/assets/Home-page/our-products/safesign/documenteditor.webp",
+              "/webp/assets/Home-page/our-products/safesign/homepage.webp",
+              "/webp/assets/Home-page/our-products/safesign/loginpage.webp",
+              "/webp/assets/Home-page/our-products/safesign/offers.webp",
+              "/webp/assets/Home-page/our-products/safesign/pricing-page.webp",
+              "/webp/assets/Home-page/our-products/safesign/recipientpage.webp",
+              "/webp/assets/Home-page/our-products/safesign/analyticspage.webp",
+              "/webp/assets/Home-page/our-products/safesign/alert.webp",
+              "/webp/assets/Home-page/our-products/safesign/aboutpage.webp",
             ]}
           />
         </div>
@@ -350,7 +350,7 @@ export default function SafeSignProductPage() {
                 {/* RIGHT IMAGE */}
                 <div className="p-3 md:p-4 flex items-center justify-center bg-zinc-950/20 border-t lg:border-t-0 lg:border-l border-zinc-900/60">
                   <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden border border-zinc-800/80 shadow-2xl group/img">
-                    <img src="/assets/common/90361fed0bb781d7c86e451995b4dbce-1.png"
+                    <img src="/webp/assets/common/90361fed0bb781d7c86e451995b4dbce-1.webp"
                       alt="SafeSign Platform Overview"
                       className="w-full h-full object-cover transition-transform duration-700 group-hover/img:scale-[1.02]"
                     loading="lazy" />
@@ -540,12 +540,12 @@ export default function SafeSignProductPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
             {[
-              { title: "SafeSign Dashboard", label: "Centralized workspace monitoring documents, pending initials, and templates.", img: "/assets/Home-page/our-products/safesign/dashboardpage.png" },
-              { title: "Document Upload Console", label: "Drag and drop panel featuring metadata tagging and cloud directory synchronization.", img: "/assets/Home-page/our-products/safesign/homepage.png" },
-              { title: "Signer Configuration", label: "Setup sequentials, authorization pins, and two-factor code checks.", img: "/assets/Home-page/our-products/safesign/recipientpage.png" },
-              { title: "Canvas Signature Editor", label: "Responsive draw tools, font stylers, and initial markers.", img: "/assets/Home-page/our-products/safesign/documenteditor.png" },
-              { title: "Real-Time Tracking Panel", label: "Visual telemetry timelines tracking open timestamps and location IPs.", img: "/assets/Home-page/our-products/safesign/analyticspage.png" },
-              { title: "Completed Audit Record", label: "Cryptographically sealed PDF package complete with metadata log files.", img: "/assets/Home-page/our-products/safesign/alert.png" }
+              { title: "SafeSign Dashboard", label: "Centralized workspace monitoring documents, pending initials, and templates.", img: "/webp/assets/Home-page/our-products/safesign/dashboardpage.webp" },
+              { title: "Document Upload Console", label: "Drag and drop panel featuring metadata tagging and cloud directory synchronization.", img: "/webp/assets/Home-page/our-products/safesign/homepage.webp" },
+              { title: "Signer Configuration", label: "Setup sequentials, authorization pins, and two-factor code checks.", img: "/webp/assets/Home-page/our-products/safesign/recipientpage.webp" },
+              { title: "Canvas Signature Editor", label: "Responsive draw tools, font stylers, and initial markers.", img: "/webp/assets/Home-page/our-products/safesign/documenteditor.webp" },
+              { title: "Real-Time Tracking Panel", label: "Visual telemetry timelines tracking open timestamps and location IPs.", img: "/webp/assets/Home-page/our-products/safesign/analyticspage.webp" },
+              { title: "Completed Audit Record", label: "Cryptographically sealed PDF package complete with metadata log files.", img: "/webp/assets/Home-page/our-products/safesign/alert.webp" }
             ].map((scr, idx) => (
               <div key={idx} className="bg-zinc-950/40 border border-zinc-900 rounded-3xl p-6 hover:border-zinc-800 transition-colors">
                 <div className="relative aspect-[16/10] bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-900/80 mb-5">
@@ -567,7 +567,7 @@ export default function SafeSignProductPage() {
           {/* Simulated Demo Video */}
           <div className="max-w-4xl mx-auto rounded-3xl overflow-hidden border border-zinc-900 bg-zinc-950 relative aspect-video shadow-2xl flex flex-col justify-center items-center group">
             <Image
-              src="/assets/Home-page/our-products/safesign/loginpage.png"
+              src="/webp/assets/Home-page/our-products/safesign/loginpage.webp"
               alt="SafeSign Video Walkthrough Background"
               fill
               className="object-cover opacity-35 transition-transform duration-700 group-hover:scale-[1.01]"
@@ -883,10 +883,10 @@ export default function SafeSignProductPage() {
                 {integrationDetails.map((int, i) => {
                   const icons = [UserPlus, Activity, Briefcase, Globe];
                   const images = [
-                    "/assets/common/1b065043b6959827c05a0073c93a4a53-1.png",
-                    "/assets/common/260b761ad40c3ad2acba2c6666894539-1.png",
-                    "/assets/common/315e4fdc6263bfd240f36297e376576e-1.png",
-                    "/assets/common/37b9b888cc479ea7b74d2d9a05c37597-1.png"
+                    "/webp/assets/common/1b065043b6959827c05a0073c93a4a53-1.webp",
+                    "/webp/assets/common/260b761ad40c3ad2acba2c6666894539-1.webp",
+                    "/webp/assets/common/315e4fdc6263bfd240f36297e376576e-1.webp",
+                    "/webp/assets/common/37b9b888cc479ea7b74d2d9a05c37597-1.webp"
                   ];
                   const Icon = icons[i];
                   return (
@@ -963,25 +963,25 @@ export default function SafeSignProductPage() {
                 icon: Lock,
                 title: "AES-256 Vault Encryption",
                 desc: "Data and metadata are strictly isolated within hardened databases managed by automated KMS rotations.",
-                image: "/assets/common/09ff7846bc8c9998745688779c09f88d-1.png"
+                image: "/webp/assets/common/09ff7846bc8c9998745688779c09f88d-1.webp"
               },
               {
                 icon: ShieldCheck,
                 title: "Global Compliance Matrices",
                 desc: "Engineered to exceed eIDAS Advanced criteria and stringent US ESIGN Act certification standards.",
-                image: "/assets/common/1b065043b6959827c05a0073c93a4a53-1.png"
+                image: "/webp/assets/common/1b065043b6959827c05a0073c93a4a53-1.webp"
               },
               {
                 icon: Globe,
                 title: "Data Sovereignty Routing",
                 desc: "Maintain absolute control by deploying storage nodes directly into your regional Azure or AWS clusters.",
-                image: "/assets/common/260b761ad40c3ad2acba2c6666894539-1.png"
+                image: "/webp/assets/common/260b761ad40c3ad2acba2c6666894539-1.webp"
               },
               {
                 icon: Activity,
                 title: "Cryptographic Integrity Seals",
                 desc: "Final PDF binaries are locked with SHA-256 hashes, instantly invalidating any unauthorized post-execution edits.",
-                image: "/assets/common/2fe7f9184c515b0c515ce38bc8a25efa-1.png"
+                image: "/webp/assets/common/2fe7f9184c515b0c515ce38bc8a25efa-1.webp"
               }
             ].map((sec, idx) => (
               <Reveal key={idx} delay={idx * 0.05}>

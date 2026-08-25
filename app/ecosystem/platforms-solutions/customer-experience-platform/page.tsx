@@ -421,7 +421,7 @@ const OmnichannelEngagement = () => {
 
         <div>
           <OrbitEcosystem
-            centerLogo="/assets/logo/logo.png"
+            centerLogo="/webp/assets/logo/logo.webp"
             nodes={channels}
           />
         </div>

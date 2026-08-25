@@ -41,7 +41,7 @@ const data = {
     title: "High-throughput &",
     highlightedWord: "Streaming Platforms",
     subtitle: "Deploying content recommendation algorithms, low-overhead video stream CDNs, and digital rights ledger systems.",
-    bgImage: "/assets/Industries-page/herocard/media.png"
+    bgImage: "/webp/assets/Industries-page/herocard/media.webp"
   },
   overview: {
     heading: "Dynamic streaming infrastructure and asset management pipelines",

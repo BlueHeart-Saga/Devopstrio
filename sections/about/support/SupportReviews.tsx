@@ -82,21 +82,27 @@ export const SupportReviews = () => {
     setCurrentIndex((prev) => (prev - 1 + reviews.length) % reviews.length);
   };
 
-  // Auto slide every 6s
+  // Auto slide every 10s
   useEffect(() => {
     if (isPaused) return;
     const timer = setInterval(() => {
       handleNext();
-    }, 6000);
+    }, 10000);
     return () => clearInterval(timer);
   }, [currentIndex, isPaused]);
 
   return (
-    <section className="py-24 bg-[#050505] relative overflow-hidden border-t border-zinc-900 font-sans">
+    <section className="py-20 md:py-24 bg-black relative overflow-hidden font-sans">
+      <style dangerouslySetInnerHTML={{__html: `
+        @keyframes marqueeSlow {
+          0% { transform: translateX(0%); }
+          100% { transform: translateX(-50%); }
+        }
+      `}} />
       
       {/* Background Glow */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-        <div className="w-[700px] h-[700px] bg-rose-500/5 rounded-full blur-[140px]" />
+        <div className="w-[800px] h-[800px] bg-rose-600/10 rounded-full blur-[160px]" />
       </div>
 
       {/* Huge Outlined Background Text */}
@@ -119,10 +125,6 @@ export const SupportReviews = () => {
         
         {/* Section Header */}
         <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-rose-500/10 border border-rose-500/30 text-rose-400 text-xs sm:text-sm font-semibold mb-4">
-            <CheckCircle2 className="w-4 h-4 text-rose-500" />
-            <span>5.0 ★ Rating from 50+ Verified Global Clients</span>
-          </div>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-white font-sans">
             Loved by Engineering <span className="text-rose-500 font-semibold">Leaders Worldwide</span>
           </h2>
@@ -141,11 +143,11 @@ export const SupportReviews = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.4 }}
-              className="relative bg-zinc-950/80 border border-zinc-800/90 rounded-[32px] p-8 md:p-12 shadow-2xl backdrop-blur-xl"
+              transition={{ duration: 0.5 }}
+              className="relative bg-gradient-to-br from-rose-950/40 via-zinc-950 to-zinc-950 rounded-[32px] p-8 md:p-12 shadow-[0_20px_50px_rgba(225,29,72,0.12)] backdrop-blur-xl"
             >
               {/* Overlapping Heart Accent */}
-              <div className="absolute -top-6 -right-4 md:-top-8 md:-right-6 w-16 h-16 md:w-20 md:h-20 bg-rose-500 rounded-2xl flex items-center justify-center shadow-lg transform rotate-6 hover:scale-105 transition-transform duration-300">
+              <div className="absolute -top-6 -right-4 md:-top-8 md:-right-6 w-16 h-16 md:w-20 md:h-20 bg-rose-600 rounded-2xl flex items-center justify-center shadow-lg transform rotate-6 hover:scale-105 transition-transform duration-300">
                 <Heart className="w-8 h-8 md:w-10 md:h-10 text-white fill-white drop-shadow-md" />
               </div>
 
@@ -154,7 +156,7 @@ export const SupportReviews = () => {
                 <div className="flex items-center gap-4">
                   {/* Initial Avatar */}
                   <div 
-                    className="w-14 h-14 rounded-2xl flex items-center justify-center text-white font-bold text-xl shadow-md border border-white/20 shrink-0"
+                    className="w-14 h-14 rounded-2xl flex items-center justify-center text-white font-bold text-xl shadow-md shrink-0"
                     style={{ backgroundColor: current.avatarColor }}
                   >
                     {current.name.charAt(0)}
@@ -166,7 +168,7 @@ export const SupportReviews = () => {
                 </div>
 
                 {/* Verified Badge */}
-                <div className="flex items-center gap-2 bg-zinc-900 border border-zinc-800 px-3.5 py-1.5 rounded-full">
+                <div className="flex items-center gap-2 bg-rose-950/30 px-3.5 py-1.5 rounded-full">
                   <span className="text-xs text-zinc-300 font-semibold">Verified Google Review</span>
                   <Image 
                     src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_light_color_92x30dp.png" 
@@ -193,8 +195,8 @@ export const SupportReviews = () => {
               </p>
 
               {/* Footer Row: Tag + Controls */}
-              <div className="flex flex-wrap items-center justify-between gap-4 pt-6 border-t border-zinc-900">
-                <span className="px-4 py-1.5 rounded-lg bg-rose-950/30 text-rose-400 border border-rose-500/30 text-xs sm:text-sm font-semibold">
+              <div className="flex flex-wrap items-center justify-between gap-4 pt-6">
+                <span className="px-4 py-1.5 rounded-lg bg-rose-900/30 text-rose-300 text-xs sm:text-sm font-semibold">
                   {current.tag}
                 </span>
 
@@ -205,14 +207,14 @@ export const SupportReviews = () => {
                   </span>
                   <button 
                     onClick={handlePrev}
-                    className="w-10 h-10 rounded-full bg-zinc-900 border border-zinc-800 hover:border-rose-500 text-zinc-400 hover:text-white flex items-center justify-center transition-colors cursor-pointer"
+                    className="w-10 h-10 rounded-full bg-rose-950/40 hover:bg-rose-900/60 text-zinc-300 hover:text-white flex items-center justify-center transition-colors cursor-pointer"
                     aria-label="Previous Review"
                   >
                     <ChevronLeft className="w-5 h-5" />
                   </button>
                   <button 
                     onClick={handleNext}
-                    className="w-10 h-10 rounded-full bg-zinc-900 border border-zinc-800 hover:border-rose-500 text-zinc-400 hover:text-white flex items-center justify-center transition-colors cursor-pointer"
+                    className="w-10 h-10 rounded-full bg-rose-950/40 hover:bg-rose-900/60 text-zinc-300 hover:text-white flex items-center justify-center transition-colors cursor-pointer"
                     aria-label="Next Review"
                   >
                     <ChevronRight className="w-5 h-5" />
@@ -226,26 +228,25 @@ export const SupportReviews = () => {
         </div>
 
         {/* Continuous Horizontal Ticker Marquee for 50+ Reviews */}
-        <div className="mt-20 pt-12 border-t border-zinc-900/80 overflow-hidden relative">
+        <div className="mt-20 pt-12 overflow-hidden relative">
           <p className="text-sm sm:text-base font-bold text-zinc-400 uppercase tracking-widest text-center mb-8">
             Live Stream of 50+ Verified Client Feedbacks
           </p>
 
           <div className="flex w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)]">
-            <motion.div 
-              className="flex gap-6 shrink-0 py-2"
-              animate={{ x: ["0%", "-50%"] }}
-              transition={{ duration: 75, ease: "linear", repeat: Infinity }}
+            <div 
+              className="flex gap-6 shrink-0 py-2 hover:[animation-play-state:paused] cursor-pointer"
+              style={{ animation: "marqueeSlow 200s linear infinite" }}
             >
               {[...reviews, ...reviews].map((rev, idx) => (
                 <div 
                   key={idx}
-                  className="w-96 md:w-[420px] bg-zinc-950/80 border border-zinc-800/90 rounded-2xl p-6 shrink-0 flex flex-col justify-between hover:border-rose-500/50 hover:bg-zinc-900/50 transition-all duration-300 backdrop-blur-md shadow-lg"
+                  className="w-96 md:w-[420px] bg-gradient-to-br from-rose-950/35 via-zinc-950/90 to-zinc-950/90 rounded-2xl p-6 shrink-0 flex flex-col justify-between hover:from-rose-950/60 transition-all duration-500 backdrop-blur-md shadow-lg"
                 >
                   <p className="text-sm sm:text-base text-zinc-200 font-medium leading-relaxed italic mb-4 line-clamp-3">
                     &ldquo;{rev.text}&rdquo;
                   </p>
-                  <div className="flex items-center justify-between text-sm pt-3 border-t border-zinc-800/80">
+                  <div className="flex items-center justify-between text-sm pt-3">
                     <div className="flex items-center gap-2.5">
                       <div 
                         className="w-8 h-8 rounded-full flex items-center justify-center text-white font-bold text-xs shadow-sm shrink-0"
@@ -258,14 +259,14 @@ export const SupportReviews = () => {
                         <span className="text-xs text-rose-400 font-semibold">{rev.tag}</span>
                       </div>
                     </div>
-                    <div className="flex items-center gap-1 bg-amber-500/10 border border-amber-500/30 px-2.5 py-1 rounded-full text-xs sm:text-sm font-bold text-amber-400">
+                    <div className="flex items-center gap-1 bg-amber-500/10 px-2.5 py-1 rounded-full text-xs sm:text-sm font-bold text-amber-400">
                       <Star className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
                       <span>5.0</span>
                     </div>
                   </div>
                 </div>
               ))}
-            </motion.div>
+            </div>
           </div>
         </div>
 

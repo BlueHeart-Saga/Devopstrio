@@ -92,7 +92,7 @@ export function FeaturedResourcesSection({
             {/* Right visual preview */}
             <div className="md:col-span-5 relative h-56 rounded-2xl overflow-hidden border border-zinc-800 bg-zinc-950">
               <Image
-                src={item.image || "/assets/common/09ff7846bc8c9998745688779c09f88d-1.png"}
+                src={item.image || "/webp/assets/common/09ff7846bc8c9998745688779c09f88d-1.webp"}
                 alt={item.title}
                 fill
                 className="object-cover group-hover:scale-105 transition-transform duration-700 opacity-80"

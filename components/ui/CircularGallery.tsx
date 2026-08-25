@@ -564,12 +564,12 @@ class App {
     font: string
   ) {
     const defaultItems = [
-      { image: '/assets/herocard/servicespage.png', text: 'AI Innovation' },
-      { image: '/assets/herocard/industriespage.png', text: 'Cloud Infrastructure' },
-      { image: '/assets/data_overview_hero.png', text: 'DevOps Automation' },
-      { image: '/assets/herocard/homepage.png', text: 'Platform Engineering' },
-      { image: '/assets/herocard/aboutpage.png', text: 'Cybersecurity' },
-      { image: '/assets/herocard/insightspage.png', text: 'Managed Services' },
+      { image: '/webp/assets/herocard/servicespage.webp', text: 'AI Innovation' },
+      { image: '/webp/assets/herocard/industriespage.webp', text: 'Cloud Infrastructure' },
+      { image: '/webp/assets/data_overview_hero.webp', text: 'DevOps Automation' },
+      { image: '/webp/assets/herocard/homepage.webp', text: 'Platform Engineering' },
+      { image: '/webp/assets/herocard/aboutpage.webp', text: 'Cybersecurity' },
+      { image: '/webp/assets/herocard/insightspage.webp', text: 'Managed Services' },
     ];
     const galleryItems = items && items.length ? items : defaultItems;
     this.mediasImages = galleryItems.concat(galleryItems);

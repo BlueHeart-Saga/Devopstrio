@@ -4,16 +4,16 @@
  */
 
 const serviceBgMap: Record<string, string> = {
-  "ai-data-innovation": "/assets/Services-Page/services-hero/h1.png",
-  "cloud-services": "/assets/Services-Page/services-hero/h2.png",
-  "devops-automation": "/assets/Services-Page/services-hero/h3.png",
-  "cybersecurity": "/assets/Services-Page/services-hero/h4.png",
-  "software-development": "/assets/Services-Page/services-hero/h5.png",
-  "digital-transformation": "/assets/Services-Page/services-hero/h6.png",
-  "data-engineering": "/assets/Services-Page/services-hero/h7.png",
-  "managed-services": "/assets/Services-Page/services-hero/h8.png",
-  "qa-testing": "/assets/Services-Page/services-hero/h9.png",
-  "it-consulting": "/assets/Services-Page/services-hero/h10.png",
+  "ai-data-innovation": "/webp/assets/Services-Page/services-hero/h1.webp",
+  "cloud-services": "/webp/assets/Services-Page/services-hero/h2.webp",
+  "devops-automation": "/webp/assets/Services-Page/services-hero/h3.webp",
+  "cybersecurity": "/webp/assets/Services-Page/services-hero/h4.webp",
+  "software-development": "/webp/assets/Services-Page/services-hero/h5.webp",
+  "digital-transformation": "/webp/assets/Services-Page/services-hero/h6.webp",
+  "data-engineering": "/webp/assets/Services-Page/services-hero/h7.webp",
+  "managed-services": "/webp/assets/Services-Page/services-hero/h8.webp",
+  "qa-testing": "/webp/assets/Services-Page/services-hero/h9.webp",
+  "it-consulting": "/webp/assets/Services-Page/services-hero/h10.webp",
 };
 
 /**
@@ -22,7 +22,7 @@ const serviceBgMap: Record<string, string> = {
  */
 export function getHeroBgImage(serviceSlug: string, capabilitySlug?: string): string {
   // Always return the main service image to avoid loading too many separate images
-  return serviceBgMap[serviceSlug] || "/assets/Services-Page/services-hero/h1.png";
+  return serviceBgMap[serviceSlug] || "/webp/assets/Services-Page/services-hero/h1.webp";
 }
 
 export interface ArchitectureStep {
@@ -37,10 +37,10 @@ export function getArchitectureSteps(serviceSlug: string, capabilityTitle: strin
   const title = capabilityTitle;
   
   const stepImages = [
-    "/assets/services/usecase_integration.png",
-    "/assets/services/usecase_security.png",
-    "/assets/services/usecase_synergy.png",
-    "/assets/services/usecase_governance.png"
+    "/webp/assets/services/usecase_integration.webp",
+    "/webp/assets/services/usecase_security.webp",
+    "/webp/assets/services/usecase_synergy.webp",
+    "/webp/assets/services/usecase_governance.webp"
   ];
 
   const getBaseSteps = () => {

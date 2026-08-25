@@ -19,42 +19,42 @@ export function CentersOfExcellence() {
       location: "Bengaluru Office",
       icon: <Brain size={15} />,
       desc: "LLM pipeline tuning, RAG setups, and lakehouse compression routines.",
-      image: "/assets/common/1b065043b6959827c05a0073c93a4a53-1.png"
+      image: "/webp/assets/common/1b065043b6959827c05a0073c93a4a53-1.webp"
     },
     {
       discipline: "Cloud Operations",
       location: "Chennai Office",
       icon: <Cloud size={15} />,
       desc: "SecOps monitoring, multicloud deployments, and performance optimization.",
-      image: "/assets/common/260b761ad40c3ad2acba2c6666894539-1.png"
+      image: "/webp/assets/common/260b761ad40c3ad2acba2c6666894539-1.webp"
     },
     {
       discipline: "DevOps Automation",
       location: "Thoothukudi Office",
       icon: <Workflow size={15} />,
       desc: "Infrastructure as Code, Kubernetes deployments, and automated testing.",
-      image: "/assets/common/2fe7f9184c515b0c515ce38bc8a25efa-1.png"
+      image: "/webp/assets/common/2fe7f9184c515b0c515ce38bc8a25efa-1.webp"
     },
     {
       discipline: "Enterprise Consulting",
       location: "London HQ",
       icon: <Shield size={15} />,
       desc: "Digital strategy, compliance audits, and program orchestration.",
-      image: "/assets/common/315e4fdc6263bfd240f36297e376576e-1.png"
+      image: "/webp/assets/common/315e4fdc6263bfd240f36297e376576e-1.webp"
     },
     {
       discipline: "Customer Experience",
       location: "London Office",
       icon: <Layout size={15} />,
       desc: "Design workshops, executive briefings, and product demonstrations.",
-      image: "/assets/common/37b9b888cc479ea7b74d2d9a05c37597-1.png"
+      image: "/webp/assets/common/37b9b888cc479ea7b74d2d9a05c37597-1.webp"
     },
     {
       discipline: "North America Services",
       location: "Tennessee Office",
       icon: <UserCheck size={15} />,
       desc: "Managed support, incident responses, and client relationship logs.",
-      image: "/assets/common/45ea830d170d382ade235db479060da7-1.png"
+      image: "/webp/assets/common/45ea830d170d382ade235db479060da7-1.webp"
     }
   ];
 

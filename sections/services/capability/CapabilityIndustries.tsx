@@ -63,24 +63,24 @@ function getOfficialIndustryInfo(title: string) {
 
 export function CapabilityIndustries({ industries }: CapabilityIndustriesProps) {
   const getIcon = (slug: string) => {
-    let src = "/assets/Home-page/industries-icon/Finacial.png";
+    let src = "/webp/assets/Home-page/industries-icon/Finacial.webp";
 
     if (slug === "banking-finance") {
-      src = "/assets/Home-page/industries-icon/Banking.png";
+      src = "/webp/assets/Home-page/industries-icon/Banking.webp";
     } else if (slug === "retail-ecommerce") {
-      src = "/assets/Home-page/industries-icon/retails-ecommerce.png";
+      src = "/webp/assets/Home-page/industries-icon/retails-ecommerce.webp";
     } else if (slug === "healthcare-life-sciences") {
-      src = "/assets/Home-page/industries-icon/healthcare.png";
+      src = "/webp/assets/Home-page/industries-icon/healthcare.webp";
     } else if (slug === "manufacturing") {
-      src = "/assets/Home-page/industries-icon/manufacture.png";
+      src = "/webp/assets/Home-page/industries-icon/manufacture.webp";
     } else if (slug === "media-entertainment") {
-      src = "/assets/Home-page/industries-icon/media-entertainments.png";
+      src = "/webp/assets/Home-page/industries-icon/media-entertainments.webp";
     } else if (slug === "telecommunications") {
-      src = "/assets/Home-page/industries-icon/tel-com.png";
+      src = "/webp/assets/Home-page/industries-icon/tel-com.webp";
     } else if (slug === "education") {
-      src = "/assets/Home-page/industries-icon/education.png";
+      src = "/webp/assets/Home-page/industries-icon/education.webp";
     } else if (slug === "government-public-sector") {
-      src = "/assets/Home-page/industries-icon/Finacial.png";
+      src = "/webp/assets/Home-page/industries-icon/Finacial.webp";
     }
 
     return (

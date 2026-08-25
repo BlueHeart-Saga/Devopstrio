@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "node ./node_modules/next/dist/bin/next start",
     "lint": "next lint",
-    "clean": "powershell -Command \"Remove-Item -Recurse -Force .next; Remove-Item -Recurse -Force .next-dev; Remove-Item -Recurse -Force tsconfig.tsbuildinfo; exit 0\""
+    "clean": "powershell -Command \"Remove-Item -Recurse -Force .next; Remove-Item -Recurse -Force .next-dev; Remove-Item -Recurse -Force tsconfig.tsbuildinfo; exit 0\"",
+    "images:webp": "node scripts/convert-images-to-webp.js"
   },
   "dependencies": {
     "@azure/storage-blob": "^12.32.0",

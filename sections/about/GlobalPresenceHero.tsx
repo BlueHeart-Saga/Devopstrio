@@ -16,7 +16,7 @@ export const GlobalPresenceHero = () => {
     <section className="relative min-h-screen flex items-end justify-start overflow-hidden bg-black text-white pb-24 md:pb-28">
       {/* Cinematic Background Image */}
       <div className="absolute inset-0 z-0 pointer-events-none select-none">
-        <img src="/assets/About-page/global-presence-hero.png" 
+        <img src="/webp/assets/About-page/global-presence-hero.webp" 
           alt="Devopstrio Global Presence"
           className="w-full h-full object-cover object-center"
         loading="eager" />

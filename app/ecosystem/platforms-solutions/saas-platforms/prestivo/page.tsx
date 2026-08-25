@@ -107,7 +107,7 @@ export default function PrestivoProductPage() {
               <div className="relative group rounded-3xl border border-zinc-900 bg-zinc-950/40 p-4 hover:border-blue-500/20 transition-colors">
                 <div className="relative aspect-[16/10] overflow-hidden rounded-2xl border border-zinc-900/60">
                   <Image
-                    src="/assets/Home-page/our-products/prestivo.png"
+                    src="/webp/assets/Home-page/our-products/prestivo.webp"
                     alt="Prestivo Application Interface"
                     fill
                     className="object-cover"

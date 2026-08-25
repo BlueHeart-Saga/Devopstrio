@@ -34,7 +34,7 @@ const products: Product[] = [
     category: "PropTech · Real Estate",
     desc: "AI-powered property management SaaS that connects landlords, tenants, and agents on a unified platform with smart lease tracking and payment automation.",
     tags: ["AI-Powered", "Multi-tenant", "Real Estate"],
-    image: "/assets/Home-page/our-products/homela.png",
+    image: "/webp/assets/Home-page/our-products/homela.webp",
     link: "https://homela.devopstrio.co.uk/"
   },
   {
@@ -42,7 +42,7 @@ const products: Product[] = [
     category: "HRTech · People Ops",
     desc: "Enterprise HR platform for talent acquisition, onboarding, performance management, and workforce analytics built for modern distributed teams.",
     tags: ["HR Platform", "Workforce", "Analytics"],
-    image: "/assets/Home-page/our-products/humanex.png",
+    image: "/webp/assets/Home-page/our-products/humanex.webp",
     link: "https://humanex.devopstrio.co.uk/"
   },
   {
@@ -50,7 +50,7 @@ const products: Product[] = [
     category: "FinTech · Payments",
     desc: "A next-generation payment orchestration platform enabling businesses to process, route, and reconcile transactions across multiple payment gateways seamlessly.",
     tags: ["Payments", "FinTech", "Multi-gateway"],
-    image: "/assets/Home-page/our-products/brio.png",
+    image: "/webp/assets/Home-page/our-products/brio.webp",
     link: "https://brio.devopstrio.co.uk/"
   },
   {
@@ -58,7 +58,7 @@ const products: Product[] = [
     category: "EdTech · Learning",
     desc: "An adaptive learning management system delivering personalised education experiences powered by AI content recommendations and real-time progress tracking.",
     tags: ["EdTech", "AI Learning", "LMS"],
-    image: "/assets/Home-page/our-products/prestivo.png",
+    image: "/webp/assets/Home-page/our-products/prestivo.webp",
     link: "https://prestivo.devopstrio.co.uk/"
   },
   {
@@ -66,7 +66,7 @@ const products: Product[] = [
     category: "MarTech · Campaigns",
     desc: "Unified campaign intelligence platform that empowers marketing teams to plan, execute, and analyse omnichannel campaigns with real-time attribution.",
     tags: ["MarTech", "Analytics", "Omnichannel"],
-    image: "/assets/Home-page/our-products/campix.png",
+    image: "/webp/assets/Home-page/our-products/campix.webp",
     link: "https://campix.devopstrio.co.uk/"
   },
   {
@@ -74,7 +74,7 @@ const products: Product[] = [
     category: "HealthTech · Clinical",
     desc: "HIPAA-compliant telehealth and clinical workflow SaaS connecting patients, clinicians, and labs with secure video, e-prescriptions, and EHR integration.",
     tags: ["HealthTech", "HIPAA", "Telehealth"],
-    image: "/assets/Home-page/our-products/caresuite.png",
+    image: "/webp/assets/Home-page/our-products/caresuite.webp",
     link: "https://caresuite.devopstrio.co.uk/"
   },
   {
@@ -82,7 +82,7 @@ const products: Product[] = [
     category: "LegalTech · eSign",
     desc: "Enterprise e-signature and document lifecycle platform with advanced audit trails, multi-party workflows, and blockchain-anchored signature verification.",
     tags: ["LegalTech", "eSignature", "Blockchain"],
-    image: "/assets/Home-page/our-products/safesign.png",
+    image: "/webp/assets/Home-page/our-products/safesign.webp",
     link: "https://safesign.devopstrio.co.uk/"
   },
   {
@@ -90,7 +90,7 @@ const products: Product[] = [
     category: "LegalTech · Case Mgmt",
     desc: "End-to-end legal case management SaaS for law firms and corporate legal departments — from intake and discovery through billing and court filings.",
     tags: ["LegalTech", "Case Mgmt", "Law Firms"],
-    image: "/assets/Home-page/our-products/justivon.png",
+    image: "/webp/assets/Home-page/our-products/justivon.webp",
     link: "https://justivon-d9fbcpgzf0ancchq.southindia-01.azurewebsites.net/"
   }
 ];

@@ -16,19 +16,19 @@ export function AcceleratorSuccessStories() {
       title: "Multi-Cloud Deployment", 
       metric: "8 weeks reduced to 5 days", 
       desc: "Configured target AWS and Azure landing zones using modular Terraform scripts, establishing secure network connections.",
-      image: "/assets/common/e76e125035885aab9c9070ce85df239e-1.png"
+      image: "/webp/assets/common/e76e125035885aab9c9070ce85df239e-1.webp"
     },
     { 
       title: "SaaS Product Launch", 
       metric: "MVP delivered in 60 days", 
       desc: "Built a subscription billing setup and tenant authorization interface using pre-built SaaS starter code, accelerating time-to-market.",
-      image: "/assets/common/f03cc521fb070dfae9d87768b791ff70-1.png"
+      image: "/webp/assets/common/f03cc521fb070dfae9d87768b791ff70-1.webp"
     },
     { 
       title: "AI Assistant Platform", 
       metric: "Production-ready in weeks", 
       desc: "Integrated pre-built AI agent routing models and vector search frameworks, launching an enterprise data assistant.",
-      image: "/assets/common/f317dd71184f5c47d601eeb9508bf92c-1.png"
+      image: "/webp/assets/common/f317dd71184f5c47d601eeb9508bf92c-1.webp"
     }
   ];
 

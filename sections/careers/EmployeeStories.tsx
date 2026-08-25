@@ -15,7 +15,7 @@ export function EmployeeStories() {
       role: "UI/UX Design Intern",
       initials: "OV",
       color: "from-rose-500 to-indigo-600",
-      image: "/assets/careers/careers_testimonial-people/Ooviya.png",
+      image: "/webp/assets/careers/careers_testimonial-people/Ooviya.webp",
     },
     {
       quote: "The software engineering culture here encourages rapid experimentation, learning, and automated CI/CD releases.",
@@ -23,7 +23,7 @@ export function EmployeeStories() {
       role: "Backend Software Engineer",
       initials: "PN",
       color: "from-emerald-500 to-teal-600",
-      image: "/assets/careers/careers_testimonial-people/Punitha.png",
+      image: "/webp/assets/careers/careers_testimonial-people/Punitha.webp",
     },
     {
       quote: "The infrastructure automation tools we build are top-notch. It's a fantastic environment for mastering cloud architecture.",
@@ -31,7 +31,7 @@ export function EmployeeStories() {
       role: "DevOps Engineer",
       initials: "AL",
       color: "from-blue-500 to-cyan-500",
-      image: "/assets/careers/careers_testimonial-people/Alex.png",
+      image: "/webp/assets/careers/careers_testimonial-people/Alex.webp",
     },
     {
       quote: "Building highly interactive frontend applications with modern frameworks here is deeply satisfying.",
@@ -39,7 +39,7 @@ export function EmployeeStories() {
       role: "Frontend Developer",
       initials: "RS",
       color: "from-amber-500 to-orange-600",
-      image: "/assets/careers/careers_testimonial-people/Rahul.png",
+      image: "/webp/assets/careers/careers_testimonial-people/Rahul.webp",
     },
     {
       quote: "Having access to massive datasets and cutting-edge GPU clusters empowers our AI models to push boundaries.",
@@ -47,7 +47,7 @@ export function EmployeeStories() {
       role: "Data Scientist",
       initials: "ST",
       color: "from-purple-500 to-fuchsia-600",
-      image: "/assets/careers/careers_testimonial-people/Sarah.png",
+      image: "/webp/assets/careers/careers_testimonial-people/Sarah.webp",
     },
     {
       quote: "We design systems that handle millions of requests gracefully. The engineering challenges are incredibly rewarding.",
@@ -55,7 +55,7 @@ export function EmployeeStories() {
       role: "Cloud Architect",
       initials: "DL",
       color: "from-sky-400 to-indigo-500",
-      image: "/assets/careers/careers_testimonial-people/David.png",
+      image: "/webp/assets/careers/careers_testimonial-people/David.webp",
     },
     {
       quote: "Quality is never an afterthought. We're empowered to build robust test frameworks that ensure flawless deployments.",
@@ -63,7 +63,7 @@ export function EmployeeStories() {
       role: "QA Automation Engineer",
       initials: "MG",
       color: "from-rose-400 to-pink-600",
-      image: "/assets/careers/careers_testimonial-people/Maria.png",
+      image: "/webp/assets/careers/careers_testimonial-people/Maria.webp",
     },
     {
       quote: "I love how cross-functional teams work in synergy to deliver measurable value to the user while maintaining excellence.",
@@ -71,7 +71,7 @@ export function EmployeeStories() {
       role: "Product Manager",
       initials: "JK",
       color: "from-emerald-400 to-cyan-500",
-      image: "/assets/careers/careers_testimonial-people/James.png",
+      image: "/webp/assets/careers/careers_testimonial-people/James.webp",
     },
     {
       quote: "Our zero-trust architecture makes security a first-class citizen. It’s inspiring to work where data protection is taken so seriously.",
@@ -79,7 +79,7 @@ export function EmployeeStories() {
       role: "Security Analyst",
       initials: "AP",
       color: "from-red-500 to-rose-700",
-      image: "/assets/careers/careers_testimonial-people/Anita.png",
+      image: "/webp/assets/careers/careers_testimonial-people/Anita.webp",
     },
     {
       quote: "From database optimization to pixel-perfect UIs, you get to touch every part of the stack. The mentorship is unmatched.",
@@ -87,7 +87,7 @@ export function EmployeeStories() {
       role: "Full Stack Developer",
       initials: "WC",
       color: "from-violet-500 to-purple-700",
-      image: "/assets/careers/careers_testimonial-people/Wei.png",
+      image: "/webp/assets/careers/careers_testimonial-people/Wei.webp",
     },
   ];
 
@@ -125,7 +125,7 @@ export function EmployeeStories() {
           <div className="text-center max-w-3xl mx-auto mb-16 relative">
             {/* Top-to-bottom arrow PNG */}
             {/* <div className="flex justify-center mb-3 pointer-events-none select-none">
-              <img src="/assets/components/streight-toptobuttm.png"
+              <img src="/webp/assets/components/streight-toptobuttm.webp"
                 alt="Arrow indicator"
                 className="w-8 sm:w-10 h-auto object-contain filter drop-shadow-[0_0_12px_rgba(244,63,94,0.4)]"
               loading="lazy" />
@@ -296,7 +296,7 @@ export function EmployeeStories() {
                     <span className="text-xs sm:text-sm text-rose-600 font-semibold block">Lead DevOps Engineer • @Devopstrio</span>
                   </div>
                   <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-white shadow-md shrink-0 bg-zinc-100">
-                    <img src="/assets/Home-page/client-reviews/client_164.png" alt="Suryaprakash" className="w-full h-full object-cover" loading="lazy" />
+                    <img src="/webp/assets/Home-page/client-reviews/client_164.webp" alt="Suryaprakash" className="w-full h-full object-cover" loading="lazy" />
                   </div>
                 </div>
               </Reveal>
@@ -313,7 +313,7 @@ export function EmployeeStories() {
                       <span className="text-xs sm:text-sm text-rose-600 font-semibold block">Software Engineering Lead</span>
                     </div>
                     <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-white shadow-md shrink-0 bg-zinc-100">
-                      <img src="/assets/Home-page/client-reviews/client_165.png" alt="Ananthalakshmi" className="w-full h-full object-cover" loading="lazy" />
+                      <img src="/webp/assets/Home-page/client-reviews/client_165.webp" alt="Ananthalakshmi" className="w-full h-full object-cover" loading="lazy" />
                     </div>
                   </div>
                 </div>
@@ -331,13 +331,13 @@ export function EmployeeStories() {
                   {/* Floating speech bubble avatars sticking out below */}
                   <div className="flex justify-center items-center gap-2 -mb-10 pt-2">
                     <div className="w-9 h-9 rounded-full border-2 border-white shadow-md overflow-hidden bg-zinc-200">
-                      <img src="/assets/Home-page/client-reviews/client_166.png" alt="Team 1" className="w-full h-full object-cover" loading="lazy" />
+                      <img src="/webp/assets/Home-page/client-reviews/client_166.webp" alt="Team 1" className="w-full h-full object-cover" loading="lazy" />
                     </div>
                     <div className="w-11 h-11 rounded-full border-2 border-white shadow-lg overflow-hidden bg-zinc-200">
-                      <img src="/assets/Home-page/client-reviews/client_167.png" alt="Team 2" className="w-full h-full object-cover" loading="lazy" />
+                      <img src="/webp/assets/Home-page/client-reviews/client_167.webp" alt="Team 2" className="w-full h-full object-cover" loading="lazy" />
                     </div>
                     <div className="w-9 h-9 rounded-full border-2 border-white shadow-md overflow-hidden bg-zinc-200">
-                      <img src="/assets/Home-page/client-reviews/client_168.png" alt="Team 3" className="w-full h-full object-cover" loading="lazy" />
+                      <img src="/webp/assets/Home-page/client-reviews/client_168.webp" alt="Team 3" className="w-full h-full object-cover" loading="lazy" />
                     </div>
                   </div>
                 </div>
@@ -353,7 +353,7 @@ export function EmployeeStories() {
                 <div className="bg-white text-zinc-900 p-6 pt-10 rounded-2xl shadow-2xl text-center relative mt-4">
                   {/* Top Avatar Notch */}
                   <div className="absolute -top-7 left-1/2 -translate-x-1/2 w-16 h-16 rounded-full border-4 border-white shadow-xl overflow-hidden bg-zinc-100">
-                    <img src="/assets/Home-page/client-reviews/client_169.png" alt="Ooviya" className="w-full h-full object-cover" loading="lazy" />
+                    <img src="/webp/assets/Home-page/client-reviews/client_169.webp" alt="Ooviya" className="w-full h-full object-cover" loading="lazy" />
                   </div>
                   <div className="flex justify-center gap-1 text-amber-400 mb-2 mt-2">
                     {Array.from({ length: 5 }).map((_, i) => (
@@ -380,7 +380,7 @@ export function EmployeeStories() {
               <Reveal delay={0.2}>
                 <div className="bg-white text-zinc-900 p-6 pt-8 rounded-2xl shadow-2xl text-center relative mt-4">
                   <div className="w-12 h-12 rounded-full overflow-hidden mx-auto -mt-12 border-2 border-white shadow-lg mb-3 bg-zinc-100">
-                    <img src="/assets/Home-page/client-reviews/client_170.png" alt="Punitha" className="w-full h-full object-cover" loading="lazy" />
+                    <img src="/webp/assets/Home-page/client-reviews/client_170.webp" alt="Punitha" className="w-full h-full object-cover" loading="lazy" />
                   </div>
                   <div className="flex justify-center gap-1 text-amber-400 mb-3">
                     {Array.from({ length: 5 }).map((_, i) => (
@@ -406,7 +406,7 @@ export function EmployeeStories() {
               <Reveal delay={0.15}>
                 <div className="bg-white text-zinc-900 p-4 rounded-2xl shadow-2xl text-left">
                   <div className="w-full h-56 rounded-xl overflow-hidden mb-4 bg-zinc-100">
-                    <img src="/assets/Home-page/client-reviews/client_171.png" alt="Saravanakumar" className="w-full h-full object-cover" loading="lazy" />
+                    <img src="/webp/assets/Home-page/client-reviews/client_171.webp" alt="Saravanakumar" className="w-full h-full object-cover" loading="lazy" />
                   </div>
                   <p className="text-sm sm:text-base text-zinc-800 leading-relaxed font-semibold mb-3">
                     From global client missions to 1-on-1 mentorship, Devopstrio invests deeply in every engineer's potential.
@@ -424,7 +424,7 @@ export function EmployeeStories() {
               <Reveal delay={0.1}>
                 <div className="bg-white text-zinc-900 p-6 pt-10 rounded-2xl shadow-2xl text-center relative mt-4">
                   <div className="absolute -top-7 left-1/2 -translate-x-1/2 w-16 h-16 rounded-full border-4 border-white shadow-xl overflow-hidden bg-zinc-100">
-                    <img src="/assets/Home-page/client-reviews/client_172.png" alt="Sermaraja" className="w-full h-full object-cover" loading="lazy" />
+                    <img src="/webp/assets/Home-page/client-reviews/client_172.webp" alt="Sermaraja" className="w-full h-full object-cover" loading="lazy" />
                   </div>
                   <h3 className="text-base sm:text-lg font-bold text-zinc-900 mb-1 mt-1">Good Job!</h3>
                   <div className="flex justify-center gap-1 text-amber-400 mb-3">
@@ -443,7 +443,7 @@ export function EmployeeStories() {
               <Reveal delay={0.2}>
                 <div className="bg-white text-zinc-900 p-4 rounded-2xl shadow-2xl flex flex-col sm:flex-row items-center gap-4 text-left">
                   <div className="w-full sm:w-28 h-28 rounded-xl overflow-hidden shrink-0 bg-zinc-100">
-                    <img src="/assets/Home-page/client-reviews/client_173.png" alt="Sudalairajan" className="w-full h-full object-cover" loading="lazy" />
+                    <img src="/webp/assets/Home-page/client-reviews/client_173.webp" alt="Sudalairajan" className="w-full h-full object-cover" loading="lazy" />
                   </div>
                   <div className="flex-1">
                     <span className="text-sm sm:text-base font-bold text-zinc-900 block mb-1.5 font-sans">“ Security & zero-trust engineering are embedded in all we build. ”</span>
@@ -466,7 +466,7 @@ export function EmployeeStories() {
                     <span className="text-xs sm:text-sm text-rose-600 font-semibold block">Global Technology Lead</span>
                   </div>
                   <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-white shadow-md shrink-0 bg-zinc-100">
-                    <img src="/assets/Home-page/client-reviews/client_174.png" alt="Sagadevan" className="w-full h-full object-cover" loading="lazy" />
+                    <img src="/webp/assets/Home-page/client-reviews/client_174.webp" alt="Sagadevan" className="w-full h-full object-cover" loading="lazy" />
                   </div>
                 </div>
               </Reveal>
@@ -484,7 +484,7 @@ export function EmployeeStories() {
 
             {/* Left Side: Student Boy Image popping half outside top of box */}
             <div className="relative w-56 sm:w-64 md:w-72 lg:w-80 shrink-0 self-end -mt-16 sm:-mt-20 md:-mt-24 lg:-mt-28 -mb-6 md:-mb-10 z-20 pointer-events-none">
-              <img src="/assets/careers/CTA.png"
+              <img src="/webp/assets/careers/CTA.webp"
                 alt="Student Career Devopstrio"
                 className="w-full h-auto object-contain drop-shadow-[0_20px_40px_rgba(0,0,0,0.9)] group-hover:scale-[1.02] transition-transform duration-700"
               loading="lazy" />

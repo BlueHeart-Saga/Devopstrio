@@ -15,7 +15,7 @@ export const InternshipHero = () => {
   return (
     <section className="relative w-full min-h-[85vh] sm:min-h-screen bg-black text-white flex items-end justify-start overflow-hidden font-sans select-none pb-14 sm:pb-20 lg:pb-24">
       {/* Background Image */}
-      <img src="/assets/About-page/hero/bg-intern.png"
+      <img src="/webp/assets/About-page/hero/bg-intern.webp"
         alt="Global Internship Program"
         className="absolute inset-0 w-full h-full object-cover object-center pointer-events-none scale-[1.01]"
       loading="eager" />

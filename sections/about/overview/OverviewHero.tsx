@@ -43,7 +43,7 @@ export function OverviewHero() {
   const [scrollProgress, setScrollProgress] = useState(0);
   const containerRef = useRef<HTMLDivElement>(null);
 
-  const chapters = [
+  const chapters: { id: string; tagline: string; quote: string; title?: string }[] = [
     {
       id: "hero",
       tagline: "DEVOPSTRIO OVERVIEW",
@@ -108,7 +108,7 @@ export function OverviewHero() {
         {/* Fixed Pinned Background Image with Scale Zoom */}
         <div className="absolute inset-0 z-0 pointer-events-none">
           <img
-            src="/assets/About-page/building/thoothukudi.png"
+            src="/webp/assets/About-page/building/thoothukudi.webp"
             alt="Devopstrio Building"
             className="w-full h-full object-cover object-right filter brightness-110 contrast-105 transition-transform duration-700 ease-out"
             style={{

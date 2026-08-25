@@ -18,7 +18,7 @@ export function TalentNetwork() {
           <div className="relative mb-6">
             {/* Top-to-bottom arrow PNG */}
             {/* <div className="flex justify-center mb-3 pointer-events-none select-none">
-              <img src="/assets/components/streight-toptobuttm.png"
+              <img src="/webp/assets/components/streight-toptobuttm.webp"
                 alt="Arrow indicator"
                 className="w-8 sm:w-10 h-auto object-contain filter drop-shadow-[0_0_12px_rgba(244,63,94,0.4)]"
               loading="lazy" />

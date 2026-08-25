@@ -105,7 +105,7 @@ export const LeadershipHero = () => {
       <div className="sticky top-0 h-screen w-full flex flex-col justify-end pb-16 sm:pb-20 lg:pb-24 overflow-hidden select-none">
         {/* Bright Cinematic Background Image & Targeted Contrast Masks */}
         <div className="absolute inset-0 z-0 pointer-events-none select-none">
-          <img src="/assets/About-page/leadership_hero_bg.png"
+          <img src="/webp/assets/About-page/leadership_hero_bg.webp"
             alt="Devopstrio Leadership and Executive Office"
             className="w-full h-full object-cover object-center filter brightness-105 contrast-105 transition-transform duration-700 ease-out"
             style={{

@@ -19,7 +19,7 @@ export function ResearchDomains() {
       id: "ai",
       title: "Artificial Intelligence",
       desc: "Architecting intelligent agents, fine-tuned foundational models, and safe cognitive workflows.",
-      image: "/assets/ecosystem/innovation-labs-page_metrica-card_4/Image-Artificial-Intelligence.png",
+      image: "/webp/assets/ecosystem/innovation-labs-page_metrica-card_4/Image-Artificial-Intelligence.webp",
       topics: [
         "LLM Engineering & PEFT Tuning",
         "Autonomous Multi-Agent Systems",
@@ -31,7 +31,7 @@ export function ResearchDomains() {
       id: "cloud",
       title: "Cloud Native Systems",
       desc: "Designing scalable Kubernetes environments, zero-downtime serverless platforms, and edge compute.",
-      image: "/assets/ecosystem/innovation-labs-page_metrica-card_4/cloud.png",
+      image: "/webp/assets/ecosystem/innovation-labs-page_metrica-card_4/cloud.webp",
       topics: [
         "Kubernetes Carpenter Optimization",
         "Internal Developer Portals (IDPs)",
@@ -43,7 +43,7 @@ export function ResearchDomains() {
       id: "cyber",
       title: "Cybersecurity & Trust",
       desc: "Implementing zero-trust perimeters, post-quantum cryptography, and autonomous threat defense.",
-      image: "/assets/ecosystem/innovation-labs-page_metrica-card_4/cyber.png",
+      image: "/webp/assets/ecosystem/innovation-labs-page_metrica-card_4/cyber.webp",
       topics: [
         "Zero Trust Microsegmentation",
         "Generative AI Prompt Firewalls",
@@ -55,7 +55,7 @@ export function ResearchDomains() {
       id: "data",
       title: "Modern Data Platform",
       desc: "Building high-performance data mesh architectures and real-time streaming pipelines.",
-      image: "/assets/ecosystem/innovation-labs-page_metrica-card_4/data-platform.png",
+      image: "/webp/assets/ecosystem/innovation-labs-page_metrica-card_4/data-platform.webp",
       topics: [
         "Enterprise Data Mesh Architectures",
         "Unified Lakehouse Storage Engines",

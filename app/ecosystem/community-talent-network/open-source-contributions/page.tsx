@@ -125,7 +125,7 @@ export default function OpenSourcePage() {
             {/* Left Large Engineering Image */}
             <div className="lg:col-span-6 relative">
               <div className="relative rounded-[24px] overflow-hidden border border-zinc-800 shadow-2xl bg-zinc-900 group">
-                <img src="/assets/common/1b065043b6959827c05a0073c93a4a53-1.png"
+                <img src="/webp/assets/common/1b065043b6959827c05a0073c93a4a53-1.webp"
                   alt="Developers collaborating on open source code"
                   className="w-full h-[420px] object-cover group-hover:scale-105 transition-transform duration-500"
                 loading="lazy" />

@@ -27,18 +27,18 @@ interface PageProps {
 
 function getOverviewImage(serviceSlug: string): string {
   const serviceImgMap: Record<string, string> = {
-    "ai-data-innovation": "/assets/services/bg-ai.png",
-    "cloud-services": "/assets/services/bg-cloud.png",
-    "devops-automation": "/assets/services/bg-devops.png",
-    "cybersecurity": "/assets/services/bg-cybersecurity.png",
-    "software-development": "/assets/services/bg-software.png",
-    "digital-transformation": "/assets/services/bg-transformation.png",
-    "data-engineering": "/assets/services/bg-data.png",
-    "managed-services": "/assets/services/bg-managed.png",
-    "qa-testing": "/assets/services/bg-testing.png",
-    "it-consulting": "/assets/services/bg-consulting.png",
+    "ai-data-innovation": "/webp/assets/services/bg-ai.webp",
+    "cloud-services": "/webp/assets/services/bg-cloud.webp",
+    "devops-automation": "/webp/assets/services/bg-devops.webp",
+    "cybersecurity": "/webp/assets/services/bg-cybersecurity.webp",
+    "software-development": "/webp/assets/services/bg-software.webp",
+    "digital-transformation": "/webp/assets/services/bg-transformation.webp",
+    "data-engineering": "/webp/assets/services/bg-data.webp",
+    "managed-services": "/webp/assets/services/bg-managed.webp",
+    "qa-testing": "/webp/assets/services/bg-testing.webp",
+    "it-consulting": "/webp/assets/services/bg-consulting.webp",
   };
-  return serviceImgMap[serviceSlug] || "/assets/services/bg-ai.png";
+  return serviceImgMap[serviceSlug] || "/webp/assets/services/bg-ai.webp";
 }
 
 export async function generateMetadata({ params }: PageProps) {

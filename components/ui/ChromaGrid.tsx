@@ -45,7 +45,7 @@ const ChromaGrid: React.FC<ChromaGridProps> = ({
 
   const demo: ChromaItem[] = [
     {
-      image: '/assets/herocard/homepage.png',
+      image: '/webp/assets/herocard/homepage.webp',
       title: 'DevOps Transformation Journey',
       subtitle: 'Keynote Demo Video &bull; 12:45',
       handle: 'HD Video',
@@ -54,7 +54,7 @@ const ChromaGrid: React.FC<ChromaGridProps> = ({
       gradient: 'linear-gradient(145deg, #f43f5e, #09090b)',
     },
     {
-      image: '/assets/herocard/servicespage.png',
+      image: '/webp/assets/herocard/servicespage.webp',
       title: 'Cloud Security & Compliance',
       subtitle: 'Architecture Deep-Dive &bull; 18:20',
       handle: 'Product Walkthrough',
@@ -63,7 +63,7 @@ const ChromaGrid: React.FC<ChromaGridProps> = ({
       gradient: 'linear-gradient(210deg, #e11d48, #09090b)',
     },
     {
-      image: '/assets/herocard/industriespage.png',
+      image: '/webp/assets/herocard/industriespage.webp',
       title: 'AI Data Innovation Platform',
       subtitle: 'Executive Briefing &bull; 09:15',
       handle: 'Live Stream',
@@ -72,7 +72,7 @@ const ChromaGrid: React.FC<ChromaGridProps> = ({
       gradient: 'linear-gradient(165deg, #be123c, #09090b)',
     },
     {
-      image: '/assets/data_overview_hero.png',
+      image: '/webp/assets/data_overview_hero.webp',
       title: 'SafeSign Enterprise Automation',
       subtitle: 'Solution Showcase &bull; 14:00',
       handle: 'SaaS Platform',

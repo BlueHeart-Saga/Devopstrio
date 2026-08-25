@@ -7,6 +7,7 @@ import { SectionNavbar } from "@/components/ui/SectionNavbar";
 
 // Dynamic Imports for Heavy Below-The-Fold Sections to Reduce Initial JS Payload
 const IndustriesGrid = dynamic(() => import("@/sections/industries/IndustriesGrid").then((mod) => mod.IndustriesGrid));
+const IndustriesPillars = dynamic(() => import("@/sections/industries/IndustriesPillars").then((mod) => mod.IndustriesPillars));
 const ExpertiseBanner = dynamic(() => import("@/sections/industries/ExpertiseBanner").then((mod) => mod.ExpertiseBanner));
 const FeaturedIndustries = dynamic(() => import("@/sections/industries/FeaturedIndustries").then((mod) => mod.FeaturedIndustries));
 const ChallengesWeSolve = dynamic(() => import("@/sections/industries/ChallengesWeSolve").then((mod) => mod.ChallengesWeSolve));
@@ -29,6 +30,7 @@ export const metadata: Metadata = {
 };
 
 const navSections = [
+  { id: "pillars", label: "Pillars" },
   { id: "overview", label: "Overview Grid" },
   { id: "expertise", label: "Expertise Banner" },
   { id: "featured", label: "Featured Industries" },
@@ -58,11 +60,14 @@ export default function IndustriesPage() {
         titlePrefix="Transforming Industries with"
         titleHighlight="Intelligence & Automation"
         subtitle="We design, build and scale industrial-grade digital architectures that automate field logistics, optimize resource planning, and enforce extreme telemetry safety standards."
-        bgImage="/assets/industries_hero_bg.png"
+        bgImage="/webp/assets/industries_hero_bg.webp"
       />
 
+      {/* 1.5 Industries 3 Pillars */}
+      <IndustriesPillars />
+
       {/* Sticky Secondary Navigation */}
-      <SectionNavbar sections={navSections} />
+      {/* <SectionNavbar sections={navSections} /> */}
 
       {/* 2. Industries Overview Grid */}
       <IndustriesGrid />
@@ -74,10 +79,10 @@ export default function IndustriesPage() {
       <FeaturedIndustries />
 
       {/* 5. Challenges We Solve */}
-      <ChallengesWeSolve />
+      {/* <ChallengesWeSolve /> */}
 
       {/* 6. Technology Solutions */}
-      <TechnologySolutions />
+      {/* <TechnologySolutions /> */}
 
       {/* 7. Industry Use Cases */}
       <IndustryUseCases />
@@ -89,16 +94,16 @@ export default function IndustriesPage() {
       <SuccessStories />
 
       {/* 10. Industry Innovation */}
-      <IndustryInnovation />
+      {/* <IndustryInnovation /> */}
 
       {/* 11. Why Choose Devopstrio */}
-      <WhyChooseDevopstrio />
+      {/* <WhyChooseDevopstrio /> */}
 
       {/* 12. Global Coverage */}
-      <GlobalNetworks />
+      {/* <GlobalNetworks /> */}
 
       {/* 13. Related Services */}
-      <RelatedServices />
+      {/* <RelatedServices /> */}
 
       {/* 14. CTA */}
       <IndustriesCTA />

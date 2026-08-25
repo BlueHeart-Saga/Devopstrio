@@ -17,133 +17,133 @@ const awardsData: AwardItem[] = [
     title: "Networking Computing Awards Finalist",
     year: "2026",
     issuer: "Networking Computing",
-    src: "/assets/Awards/Netwoking_Computing_Awards_2026-Finalist.png"
+    src: "/webp/assets/Awards/Netwoking_Computing_Awards_2026-Finalist.webp"
   },
   {
     title: "Computing Security Awards Winner",
     year: "2025",
     issuer: "Computing Security",
-    src: "/assets/Awards/2025_Computing_Security_Awards-1.png"
+    src: "/webp/assets/Awards/2025_Computing_Security_Awards-1.webp"
   },
   {
     title: "Computing Security Awards Finalist",
     year: "2025",
     issuer: "Computing Security",
-    src: "/assets/Awards/2025_Computing_Security_Awards.png"
+    src: "/webp/assets/Awards/2025_Computing_Security_Awards.webp"
   },
   {
     title: "HSJ Partnership Awards Finalist",
     year: "2023",
     issuer: "HSJ Partnerships",
-    src: "/assets/Awards/HSJ_Partnership_Awards_2023.png"
+    src: "/webp/assets/Awards/HSJ_Partnership_Awards_2023.webp"
   },
   {
     title: "IT Europa Channel Awards Winner",
     year: "2023",
     issuer: "IT Europa",
-    src: "/assets/Awards/IT_Europa_Channel_Awards_2023.png"
+    src: "/webp/assets/Awards/IT_Europa_Channel_Awards_2023.webp"
   },
   {
     title: "IT Europa Channel Awards Finalist",
     year: "2023",
     issuer: "IT Europa",
-    src: "/assets/Awards/IT_Europa_Channel_Awards2023.png"
+    src: "/webp/assets/Awards/IT_Europa_Channel_Awards2023.webp"
   },
   {
     title: "Cloudtango MSP Select 2023",
     year: "2023",
     issuer: "Cloudtango",
-    src: "/assets/Awards/Cloudtango_MSP_Select_2023.png"
+    src: "/webp/assets/Awards/Cloudtango_MSP_Select_2023.webp"
   },
   {
     title: "IT Europa Channel Awards Finalist",
     year: "2022",
     issuer: "IT Europa",
-    src: "/assets/Awards/Finalist_IT_Europa_Channel_Awards_2022.png"
+    src: "/webp/assets/Awards/Finalist_IT_Europa_Channel_Awards_2022.webp"
   },
   {
     title: "Dell Technologies Gold Partner",
     year: "2022",
     issuer: "Dell Technologies",
-    src: "/assets/Awards/Dell_Technologies_Gold_Partner_2022-2023.png"
+    src: "/webp/assets/Awards/Dell_Technologies_Gold_Partner_2022-2023.webp"
   },
   {
     title: "European IT & Software Excellence Finalist",
     year: "2021",
     issuer: "European IT",
-    src: "/assets/Awards/European_IT_and_Software_Excellence_Awards_2021.png"
+    src: "/webp/assets/Awards/European_IT_and_Software_Excellence_Awards_2021.webp"
   },
   {
     title: "Cyber Essentials Certification",
     year: "2021",
     issuer: "Cyber Essentials",
-    src: "/assets/Awards/2021-2022_Cyber_Essentials_Certification.png"
+    src: "/webp/assets/Awards/2021-2022_Cyber_Essentials_Certification.webp"
   },
   {
     title: "Cyber Essentials Certification",
     year: "2020",
     issuer: "Cyber Essentials",
-    src: "/assets/Awards/Cyber_Essentials_CE_Certification_2020.png"
+    src: "/webp/assets/Awards/Cyber_Essentials_CE_Certification_2020.webp"
   },
   {
     title: "European IT & Software Excellence Awards",
     year: "2020",
     issuer: "European IT",
-    src: "/assets/Awards/European_ITandSoftware_Excellence_Awards_2020.png"
+    src: "/webp/assets/Awards/European_ITandSoftware_Excellence_Awards_2020.webp"
   },
   {
     title: "IT Europa Finalist",
     year: "2019",
     issuer: "IT Europa",
-    src: "/assets/Awards/2019_IT_Europa_Finalist.png"
+    src: "/webp/assets/Awards/2019_IT_Europa_Finalist.webp"
   },
   {
     title: "Highly Commended Partner",
     year: "2019",
     issuer: "Industry Awards",
-    src: "/assets/Awards/2019_Highly_Commended.png"
+    src: "/webp/assets/Awards/2019_Highly_Commended.webp"
   },
   {
     title: "Lenovo Platinum Partner Data Center",
     year: "2018",
     issuer: "Lenovo",
-    src: "/assets/Awards/2018_Lenovo_Platinum_Partner_Data_Center_Partner.png"
+    src: "/webp/assets/Awards/2018_Lenovo_Platinum_Partner_Data_Center_Partner.webp"
   },
   {
     title: "Finalists in Four Categories",
     year: "2018",
     issuer: "Industry Awards",
-    src: "/assets/Awards/2018_Finalists_in_four_categories.png"
+    src: "/webp/assets/Awards/2018_Finalists_in_four_categories.webp"
   },
   {
     title: "European IT & Software Excellence Award",
     year: "2015",
     issuer: "European IT",
-    src: "/assets/Awards/2015_European_ITandSoftware_Excellence_Award.png"
+    src: "/webp/assets/Awards/2015_European_ITandSoftware_Excellence_Award.webp"
   },
   {
     title: "IBM Business Partner Award",
     year: "2015",
     issuer: "IBM",
-    src: "/assets/Awards/IBM_Business_Partner_Award_2015.png"
+    src: "/webp/assets/Awards/IBM_Business_Partner_Award_2015.webp"
   },
   {
     title: "Microsoft Partner of the Year Finalist",
     year: "2014",
     issuer: "Microsoft",
-    src: "/assets/Awards/2014_Microsoft_Partner_of_the_Year_Award_Finalist.png"
+    src: "/webp/assets/Awards/2014_Microsoft_Partner_of_the_Year_Award_Finalist.webp"
   },
   {
     title: "IBM Business Partner Award",
     year: "2014",
     issuer: "IBM",
-    src: "/assets/Awards/IBM_Business_Partner_Award_2014.png"
+    src: "/webp/assets/Awards/IBM_Business_Partner_Award_2014.webp"
   },
   {
     title: "IBM Platinum Award",
     year: "2013",
     issuer: "IBM",
-    src: "/assets/Awards/IBM_Platinum_Award_2013.png"
+    src: "/webp/assets/Awards/IBM_Platinum_Award_2013.webp"
   },
 
   // Active / Ongoing Compliance & Partner Certifications
@@ -151,139 +151,139 @@ const awardsData: AwardItem[] = [
     title: "Achilles Network Silver Member",
     year: "Active",
     issuer: "Achilles Network",
-    src: "/assets/Awards/Achilles_Network_Silver.png"
+    src: "/webp/assets/Awards/Achilles_Network_Silver.webp"
   },
   {
     title: "Arctic Wolf Partner Awards",
     year: "Active",
     issuer: "Arctic Wolf",
-    src: "/assets/Awards/Arctic_Wolf_Partner_Awards.png"
+    src: "/webp/assets/Awards/Arctic_Wolf_Partner_Awards.webp"
   },
   {
     title: "Bramble Hub Listings Accreditation",
     year: "Active",
     issuer: "Bramble Hub",
-    src: "/assets/Awards/Bramble_Hub_listings.png"
+    src: "/webp/assets/Awards/Bramble_Hub_listings.webp"
   },
   {
     title: "Certificate of Compliance Renewal",
     year: "Active",
     issuer: "Compliance Board",
-    src: "/assets/Awards/Certificate_of_Compliance_Renewal.png"
+    src: "/webp/assets/Awards/Certificate_of_Compliance_Renewal.webp"
   },
   {
     title: "Certificate of Compliance",
     year: "Active",
     issuer: "Compliance Board",
-    src: "/assets/Awards/Certificate_of_Compliance.png"
+    src: "/webp/assets/Awards/Certificate_of_Compliance.webp"
   },
   {
     title: "Cloud Solution Provider of the Year",
     year: "Active",
     issuer: "Cloud Awards",
-    src: "/assets/Awards/Cloud_Solution_Provider_of_the_Year.png"
+    src: "/webp/assets/Awards/Cloud_Solution_Provider_of_the_Year.webp"
   },
   {
     title: "Crown Commercial Service Supplier (CCS)",
     year: "Active",
     issuer: "UK Government",
-    src: "/assets/Awards/June_2017-Crown_Commercial_Service_Supplier_CCS.png"
+    src: "/webp/assets/Awards/June_2017-Crown_Commercial_Service_Supplier_CCS.webp"
   },
   {
     title: "Data Estate Modernisation Award",
     year: "Active",
     issuer: "Data Excellence",
-    src: "/assets/Awards/Data_Estate_Modernisation_Award.png"
+    src: "/webp/assets/Awards/Data_Estate_Modernisation_Award.webp"
   },
   {
     title: "Data Management Solution of the Year",
     year: "Active",
     issuer: "Data Excellence",
-    src: "/assets/Awards/Data_Management_Solution_of_the_Year.png"
+    src: "/webp/assets/Awards/Data_Management_Solution_of_the_Year.webp"
   },
   {
     title: "FSQS Registered Supplier Renewal",
     year: "Active",
     issuer: "FSQS",
-    src: "/assets/Awards/FSQS_Registered_Renewal.png"
+    src: "/webp/assets/Awards/FSQS_Registered_Renewal.webp"
   },
   {
     title: "FSQS Registered Supplier",
     year: "Active",
     issuer: "FSQS",
-    src: "/assets/Awards/FSQS_Registered_Supplier.png"
+    src: "/webp/assets/Awards/FSQS_Registered_Supplier.webp"
   },
   {
     title: "G-Cloud 11 Framework Award",
     year: "Active",
     issuer: "G-Cloud",
-    src: "/assets/Awards/G-Cloud_11_Framework_Award.png"
+    src: "/webp/assets/Awards/G-Cloud_11_Framework_Award.webp"
   },
   {
     title: "IBM Gold Partner Certification",
     year: "Active",
     issuer: "IBM",
-    src: "/assets/Awards/IBM_Gold_Partner.png"
+    src: "/webp/assets/Awards/IBM_Gold_Partner.webp"
   },
   {
     title: "IBM PartnerWorld Programme Member",
     year: "Active",
     issuer: "IBM",
-    src: "/assets/Awards/IBM_PartnerWorld_Programme.png"
+    src: "/webp/assets/Awards/IBM_PartnerWorld_Programme.webp"
   },
   {
     title: "ISO Information Security Standard",
     year: "Active",
     issuer: "ISO",
-    src: "/assets/Awards/ISO.png"
+    src: "/webp/assets/Awards/ISO.webp"
   },
   {
     title: "KnowBe4 Premier Partner",
     year: "Active",
     issuer: "KnowBe4",
-    src: "/assets/Awards/Knowbe4_Partner.png"
+    src: "/webp/assets/Awards/Knowbe4_Partner.webp"
   },
   {
     title: "Living Wage Employer Accreditation",
     year: "Active",
     issuer: "Living Wage",
-    src: "/assets/Awards/Living_Wage_Employer.png"
+    src: "/webp/assets/Awards/Living_Wage_Employer.webp"
   },
   {
     title: "Living Wage Accreditation Movement",
     year: "Active",
     issuer: "Living Wage",
-    src: "/assets/Awards/Living_Wage_Employer_Accreditation_Living_Wage_Movement.png"
+    src: "/webp/assets/Awards/Living_Wage_Employer_Accreditation_Living_Wage_Movement.webp"
   },
   {
     title: "Microsoft Gold Status Certification",
     year: "Active",
     issuer: "Microsoft",
-    src: "/assets/Awards/MS_Gold_Status.png"
+    src: "/webp/assets/Awards/MS_Gold_Status.webp"
   },
   {
     title: "Risk Management Solution Award",
     year: "Active",
     issuer: "Risk Awards",
-    src: "/assets/Awards/Risk_Management_Award.png"
+    src: "/webp/assets/Awards/Risk_Management_Award.webp"
   },
   {
     title: "Solution Provider Tier Accredited Partner",
     year: "Active",
     issuer: "Solution Provider",
-    src: "/assets/Awards/Solution_Provider_Tier-Accredited_Business_Partner.png"
+    src: "/webp/assets/Awards/Solution_Provider_Tier-Accredited_Business_Partner.webp"
   },
   {
     title: "Top 1% of Microsoft Partner Marketers Worldwide",
     year: "Active",
     issuer: "Microsoft",
-    src: "/assets/Awards/Top_1%_of_Microsoft_Partner_Marketers_Across_The_World!.png"
+    src: "/webp/assets/Awards/Top_1%_of_Microsoft_Partner_Marketers_Across_The_World!.webp"
   },
   {
     title: "Top UK Cyber Security Consulting Firms",
     year: "Active",
     issuer: "Cyber Security",
-    src: "/assets/Awards/UK_Cyber_Security_Consulting_Firms.png"
+    src: "/webp/assets/Awards/UK_Cyber_Security_Consulting_Firms.webp"
   }
 ];
 

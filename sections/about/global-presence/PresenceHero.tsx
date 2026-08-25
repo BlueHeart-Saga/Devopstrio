@@ -9,7 +9,7 @@ const locationSlides = [
     type: "Head Office",
     country: "United Kingdom",
     address: "128 City Road, London, United Kingdom EC1V 2NX",
-    src: "/assets/About-page/building/london.png",
+    src: "/webp/assets/About-page/building/london.webp",
     alt: "Devopstrio London Head Office",
     heading: (
       <>
@@ -24,7 +24,7 @@ const locationSlides = [
     type: "Corporate Office",
     country: "India",
     address: "Embassy Golf Links Business Park, Bengaluru, Karnataka-560071, India",
-    src: "/assets/About-page/building/banagaluru.png",
+    src: "/webp/assets/About-page/building/banagaluru.webp",
     alt: "Devopstrio Bengaluru Corporate Office",
     heading: (
       <>
@@ -39,7 +39,7 @@ const locationSlides = [
     type: "Innovation Hub",
     country: "India",
     address: "4/ 367, Rajeev Colony, Pasuvanthanai, 628718 Thoothukudi, Tamilnadu, IN",
-    src: "/assets/About-page/building/thoothukudi.png",
+    src: "/webp/assets/About-page/building/thoothukudi.webp",
     alt: "Devopstrio Thoothukudi Innovation Hub",
     heading: (
       <>
@@ -54,7 +54,7 @@ const locationSlides = [
     type: "Sub-Regional Office",
     country: "United States",
     address: "522 Aventura Dr, Mt Juliet, Tennessee 37122 United States",
-    src: "/assets/About-page/building/USA.png",
+    src: "/webp/assets/About-page/building/USA.webp",
     alt: "Devopstrio Tennessee Sub-Regional Office",
     heading: (
       <>
@@ -69,7 +69,7 @@ const locationSlides = [
     type: "Technology & Operations Center",
     country: "India",
     address: "Ground Floor, Primus Building, Door No. SP – 7A, Guindy Industrial Estate, SIDCO Industrial Estate, Chennai 600032",
-    src: "/assets/About-page/building/team2.png",
+    src: "/webp/assets/About-page/building/team2.webp",
     alt: "Devopstrio Chennai Technology & Operations Center",
     heading: (
       <>
@@ -84,7 +84,7 @@ const locationSlides = [
     type: "Support Office",
     country: "United Kingdom",
     address: "167-169 Great Portland Street, 5th Floor, London, W1W 5PF",
-    src: "/assets/About-page/building/officeroom.png",
+    src: "/webp/assets/About-page/building/officeroom.webp",
     alt: "Devopstrio London Support Office",
     heading: (
       <>
@@ -274,7 +274,12 @@ export function PresenceHero() {
                       </p>
                     )}
 
-                    <p className="text-xs sm:text-sm text-zinc-300/85 font-mono max-w-xl">
+                    <p 
+                      className="text-sm sm:text-base md:text-lg text-zinc-200 font-medium leading-relaxed max-w-2xl select-text"
+                      style={{
+                        textShadow: "0 2px 20px rgba(0, 0, 0, 0.95), 0 1px 5px rgba(0, 0, 0, 0.9)"
+                      }}
+                    >
                       {slide.address}
                     </p>
                   </div>

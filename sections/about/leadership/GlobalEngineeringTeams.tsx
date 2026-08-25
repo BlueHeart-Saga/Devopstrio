@@ -23,63 +23,63 @@ const engineeringTeams: TeamExpert[] = [
     id: "devops",
     name: "DevOps Engineers",
     count: "60+ Experts",
-    image: "/assets/About-page/team/generated/devops.png",
+    image: "/webp/assets/About-page/team/generated/devops.webp",
     href: "/services/devops-automation",
   },
   {
     id: "cloud",
     name: "Cloud Engineers",
     count: "80+ Experts",
-    image: "/assets/About-page/team/generated/cloud.png",
+    image: "/webp/assets/About-page/team/generated/cloud.webp",
     href: "/services/cloud-services",
   },
   {
     id: "platform",
     name: "Platform Engineers",
     count: "40+ Experts",
-    image: "/assets/About-page/team/generated/platform.png",
+    image: "/webp/assets/About-page/team/generated/platform.webp",
     href: "/services/devops-automation",
   },
   {
     id: "software",
     name: "Software Developers",
     count: "120+ Experts",
-    image: "/assets/About-page/team/generated/software.png",
+    image: "/webp/assets/About-page/team/generated/software.webp",
     href: "/services/software-development",
   },
   {
     id: "data",
     name: "Data Engineers",
     count: "50+ Experts",
-    image: "/assets/About-page/team/generated/data.png",
+    image: "/webp/assets/About-page/team/generated/data.webp",
     href: "/services/data-engineering",
   },
   {
     id: "ai",
     name: "AI Specialists",
     count: "35+ Experts",
-    image: "/assets/About-page/team/generated/ai.png",
+    image: "/webp/assets/About-page/team/generated/ai.webp",
     href: "/services/ai-data-innovation",
   },
   {
     id: "cyber",
     name: "Cybersecurity Experts",
     count: "30+ Experts",
-    image: "/assets/About-page/team/generated/cyber.png",
+    image: "/webp/assets/About-page/team/generated/cyber.webp",
     href: "/services/cybersecurity",
   },
   {
     id: "qa",
     name: "QA Engineers",
     count: "45+ Experts",
-    image: "/assets/About-page/team/generated/qa.png",
+    image: "/webp/assets/About-page/team/generated/qa.webp",
     href: "/services/qa-testing",
   },
   {
     id: "consulting",
     name: "IT Consultants",
     count: "65+ Experts",
-    image: "/assets/About-page/team/generated/consulting.png",
+    image: "/webp/assets/About-page/team/generated/consulting.webp",
     href: "/services/it-consulting",
   },
 ];
@@ -136,7 +136,7 @@ export const GlobalEngineeringTeams = () => {
               Leaders Who{" "}
               <span className="relative inline-block">
                 <div className="absolute -top-6 sm:-top-7 -left-12 sm:-left-14 md:-left-16 z-20 pointer-events-none select-none rotate-[-40deg]">
-                  <img src="/assets/components/Carrow-right.png"
+                  <img src="/webp/assets/components/Carrow-right.webp"
                     alt="Curved arrow"
                     className="w-10 sm:w-12 md:w-14 h-auto object-contain filter drop-shadow-[0_0_15px_rgba(244,63,94,0.4)]"
                   loading="lazy" />
@@ -149,7 +149,7 @@ export const GlobalEngineeringTeams = () => {
 
           <div className="lg:col-span-7 flex items-center justify-center select-none py-2">
             <div className="relative w-full max-w-[340px] sm:max-w-[390px] md:max-w-[440px] rounded-3xl overflow-hidden group">
-              <img src="/assets/About-page/leader/pencilrock.png"
+              <img src="/webp/assets/About-page/leader/pencilrock.webp"
                 alt="Engineering Precision & Craftsmanship"
                 className="w-full h-auto object-contain transition-transform duration-700 group-hover:scale-[1.02] block filter drop-shadow-[0_20px_50px_rgba(0,0,0,0.9)]"
               loading="lazy" />

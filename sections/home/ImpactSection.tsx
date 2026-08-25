@@ -63,7 +63,7 @@ export function ImpactSection() {
       {/* Top Full-Bleed Poster Area */}
       <div
         className="w-full min-h-[85vh] lg:min-h-screen relative flex flex-col justify-between bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: "url('/assets/Home-page/impact/meet.png')" }}
+        style={{ backgroundImage: "url('/webp/assets/Home-page/impact/meet.webp')" }}
       >
         {/* Soft edge-blending gradients to merge poster into dark page and optimize text contrast */}
         <div className="absolute inset-0 bg-black/10 pointer-events-none" />

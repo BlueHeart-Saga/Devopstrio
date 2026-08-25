@@ -9,105 +9,105 @@ const teamMembers = [
   {
     name: "Suryaprakash S",
     role: "Cloud Solutions Engineer",
-    photo: "/assets/About-page/team/MeetOurTeam/new/Suriya.png",
+    photo: "/webp/assets/About-page/team/MeetOurTeam/new/Suriya.webp",
     rotate: "-rotate-2",
   },
   {
     name: "Hamsavarthiny P",
     role: "DevOps & Automation Lead",
-    photo: "/assets/About-page/team/MeetOurTeam/new/Humza.png",
+    photo: "/webp/assets/About-page/team/MeetOurTeam/new/Humza.webp",
     rotate: "-rotate-1",
   },
   {
     name: "Ananthalakshmi",
     role: "Senior Software Architect",
-    photo: "/assets/About-page/team/MeetOurTeam/new/Anantha-Lakshmi.png",
+    photo: "/webp/assets/About-page/team/MeetOurTeam/new/Anantha-Lakshmi.webp",
     rotate: "rotate-2",
   },
   {
     name: "Sagadevan",
     role: "Machine Learning Engineer",
-    photo: "/assets/About-page/team/MeetOurTeam/new/Sagadevan.png",
+    photo: "/webp/assets/About-page/team/MeetOurTeam/new/Sagadevan.webp",
     rotate: "rotate-2",
   },
   {
     name: "Subbiah Muthu",
     role: "Deep Learning Specialist",
-    photo: "/assets/About-page/team/MeetOurTeam/new/Subbiah.png",
+    photo: "/webp/assets/About-page/team/MeetOurTeam/new/Subbiah.webp",
     rotate: "-rotate-1",
   },
   {
     name: "Kishore",
     role: "AI Security Engineer",
-    photo: "/assets/About-page/team/MeetOurTeam/new/Kishore.png",
+    photo: "/webp/assets/About-page/team/MeetOurTeam/new/Kishore.webp",
     rotate: "rotate-3",
   },
   {
     name: "Sermaraja",
     role: "UI/UX Design Manager",
-    photo: "/assets/About-page/team/MeetOurTeam/new/serma-raja.png",
+    photo: "/webp/assets/About-page/team/MeetOurTeam/new/serma-raja.webp",
     rotate: "-rotate-2",
   },
   {
     name: "Thangalakshmi",
     role: "Cognitive Success Lead",
-    photo: "/assets/About-page/team/MeetOurTeam/new/Thanga-laxmi.png",
+    photo: "/webp/assets/About-page/team/MeetOurTeam/new/Thanga-laxmi.webp",
     rotate: "rotate-1",
   },
   {
     name: "Punitha",
     role: "Design Thinking Lead",
-    photo: "/assets/About-page/team/MeetOurTeam/new/Punitha-2.png",
+    photo: "/webp/assets/About-page/team/MeetOurTeam/new/Punitha-2.webp",
     rotate: "-rotate-3",
   },
   {
     name: "Ooviya",
     role: "SEO & Content Marketing",
-    photo: "/assets/About-page/team/MeetOurTeam/new/Oviya.png",
+    photo: "/webp/assets/About-page/team/MeetOurTeam/new/Oviya.webp",
     rotate: "rotate-2",
   },
   {
     name: "Saravanakumar S",
     role: "Platform Infrastructure Lead",
-    photo: "/assets/About-page/team/MeetOurTeam/new/Saravana-Kumar.png",
+    photo: "/webp/assets/About-page/team/MeetOurTeam/new/Saravana-Kumar.webp",
     rotate: "rotate-3",
   },
   {
     name: "Umamaheswari R",
     role: "AI & Data Engineering Lead",
-    photo: "/assets/About-page/team/MeetOurTeam/new/Uma.png",
+    photo: "/webp/assets/About-page/team/MeetOurTeam/new/Uma.webp",
     rotate: "-rotate-3",
   }
   // {
   //   name: "Mareeswaran",
   //   role: "Full Stack Engineer",
-  //   photo: "/assets/About-page/team/MeetOurTeam/new/Mareeswaran.png",
+  //   photo: "/webp/assets/About-page/team/MeetOurTeam/new/Mareeswaran.webp",
   //   rotate: "-rotate-2",
   // },
 ];
 
 const eventImages = [
-  "/assets/About-page/events/Picture1.png",
-  "/assets/About-page/events/Picture2.png",
-  "/assets/About-page/events/Picture3.png",
-  "/assets/About-page/events/Picture4.png",
-  "/assets/About-page/events/Picture5.png",
-  "/assets/About-page/events/Picture6.png",
-  "/assets/About-page/events/Picture7.png",
-  "/assets/About-page/events/Picture8.png",
-  "/assets/About-page/events/Picture9.png",
-  "/assets/About-page/events/Picture10.png",
-  "/assets/About-page/events/Picture11.png",
-  "/assets/About-page/events/Picture12.png",
-  "/assets/About-page/events/Picture13.png",
-  "/assets/About-page/events/Picture14.png",
-  "/assets/About-page/events/Picture15.png",
-  "/assets/About-page/events/Picture16.png",
-  "/assets/About-page/events/Picture17.png",
-  "/assets/About-page/events/Picture18.png",
-  "/assets/About-page/events/Picture19.png",
-  "/assets/About-page/events/Picture20.png",
-  "/assets/About-page/events/Picture21.png",
+  "/webp/assets/About-page/events/Picture1.webp",
+  "/webp/assets/About-page/events/Picture2.webp",
+  "/webp/assets/About-page/events/Picture3.webp",
+  "/webp/assets/About-page/events/Picture4.webp",
+  "/webp/assets/About-page/events/Picture5.webp",
+  "/webp/assets/About-page/events/Picture6.webp",
+  "/webp/assets/About-page/events/Picture7.webp",
+  "/webp/assets/About-page/events/Picture8.webp",
+  "/webp/assets/About-page/events/Picture9.webp",
+  "/webp/assets/About-page/events/Picture10.webp",
+  "/webp/assets/About-page/events/Picture11.webp",
+  "/webp/assets/About-page/events/Picture12.webp",
+  "/webp/assets/About-page/events/Picture13.webp",
+  "/webp/assets/About-page/events/Picture14.webp",
+  "/webp/assets/About-page/events/Picture15.webp",
+  "/webp/assets/About-page/events/Picture16.webp",
+  "/webp/assets/About-page/events/Picture17.webp",
+  "/webp/assets/About-page/events/Picture18.webp",
+  "/webp/assets/About-page/events/Picture19.webp",
+  "/webp/assets/About-page/events/Picture20.webp",
+  "/webp/assets/About-page/events/Picture21.webp",
 ];
 
 export function OurPeopleSection() {
@@ -135,7 +135,7 @@ export function OurPeopleSection() {
           <div className="text-center max-w-3xl mx-auto mb-16 relative">
             {/* Curved Arrow PNG on Right Side (Mirrored, shifted left) */}
             <div className="absolute -top-6 sm:-top-8 md:-top-10 right-2 sm:right-6 md:right-10 lg:right-12 z-20 pointer-events-none select-none">
-              <img src="/assets/components/Carrow-right.png"
+              <img src="/webp/assets/components/Carrow-right.webp"
                 alt="Curved arrow right"
                 className="w-14 sm:w-18 md:w-22 lg:w-24 h-auto object-contain filter drop-shadow-[0_0_15px_rgba(244,63,94,0.4)] scale-x-[-1]"
               loading="lazy" />
@@ -286,7 +286,7 @@ export function OurPeopleSection() {
                 <h3 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight text-white relative inline-block">
                   {/* Connecting side arrow starting at left side */}
                   <div className="absolute -top-2 sm:-top-4 md:-top-6 -left-20 sm:-left-28 md:-left-36 lg:-left-44 z-30 pointer-events-none select-none">
-                    <img src="/assets/components/top-to-buttom-side-Arrowmid.png"
+                    <img src="/webp/assets/components/top-to-buttom-side-Arrowmid.webp"
                       alt="Connecting section arrow"
                       className="w-16 sm:w-20 md:w-24 lg:w-28 h-auto object-contain filter drop-shadow-[0_0_20px_rgba(225,29,72,0.4)] transform -rotate-[-30deg]"
                     loading="lazy" />

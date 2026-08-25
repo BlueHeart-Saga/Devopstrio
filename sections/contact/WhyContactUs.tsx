@@ -96,7 +96,7 @@ export function WhyContactUs() {
           {/* Center image */}
           <Reveal delay={0.15} className="flex justify-center">
             <div className="relative w-[260px] md:w-[300px] lg:w-[320px] shrink-0">
-              <img src="/assets/Contact-page/why-choose/image.png"
+              <img src="/webp/assets/Contact-page/why-choose/image.webp"
                 alt="Devopstrio senior engineer"
                 className="w-full h-auto object-contain drop-shadow-2xl"
               loading="lazy" />

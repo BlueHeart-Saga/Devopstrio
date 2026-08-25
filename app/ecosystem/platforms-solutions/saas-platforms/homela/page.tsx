@@ -243,7 +243,7 @@ export default function HomelaProductPage() {
               <div className="relative group rounded-3xl border border-zinc-900 bg-zinc-950/40 p-4 hover:border-amber-500/20 transition-colors shadow-2xl">
                 <div className="relative aspect-[16/10] overflow-hidden rounded-2xl border border-zinc-900/60">
                   <Image
-                    src="/assets/Home-page/our-products/homela.png"
+                    src="/webp/assets/Home-page/our-products/homela.webp"
                     alt="Homela Application Interface"
                     fill
                     className="object-cover transition-transform duration-750 group-hover:scale-[1.02]"
@@ -518,7 +518,7 @@ export default function HomelaProductPage() {
               <div key={idx} className="bg-zinc-950/40 border border-zinc-900 rounded-3xl p-6 hover:border-zinc-800 transition-colors">
                 <div className="relative aspect-[16/10] bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-900/80 mb-5">
                   <Image
-                    src="/assets/Home-page/our-products/homela.png"
+                    src="/webp/assets/Home-page/our-products/homela.webp"
                     alt={scr.title}
                     fill
                     className="object-cover object-top opacity-80 hover:opacity-100 transition-opacity duration-300"
@@ -535,7 +535,7 @@ export default function HomelaProductPage() {
           {/* Simulated Demo Video */}
           <div className="max-w-4xl mx-auto rounded-3xl overflow-hidden border border-zinc-900 bg-zinc-950 relative aspect-video shadow-2xl flex flex-col justify-center items-center group">
             <Image
-              src="/assets/Home-page/our-products/homela.png"
+              src="/webp/assets/Home-page/our-products/homela.webp"
               alt="Homela Video Walkthrough Background"
               fill
               className="object-cover opacity-35 transition-transform duration-700 group-hover:scale-[1.01]"
@@ -787,10 +787,10 @@ export default function HomelaProductPage() {
                 {integrations.map((int, i) => {
                   const icons = [UserPlus, Activity, Briefcase, Globe];
                   const images = [
-                    "/assets/common/1b065043b6959827c05a0073c93a4a53-1.png",
-                    "/assets/common/260b761ad40c3ad2acba2c6666894539-1.png",
-                    "/assets/common/315e4fdc6263bfd240f36297e376576e-1.png",
-                    "/assets/common/37b9b888cc479ea7b74d2d9a05c37597-1.png"
+                    "/webp/assets/common/1b065043b6959827c05a0073c93a4a53-1.webp",
+                    "/webp/assets/common/260b761ad40c3ad2acba2c6666894539-1.webp",
+                    "/webp/assets/common/315e4fdc6263bfd240f36297e376576e-1.webp",
+                    "/webp/assets/common/37b9b888cc479ea7b74d2d9a05c37597-1.webp"
                   ];
                   const Icon = icons[i % 4];
                   return (
@@ -862,17 +862,17 @@ export default function HomelaProductPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
             {[
-              { icon: Lock, title: "User Authentication", desc: "Protect client profiles and bank payouts with secure MFA.", image: "/assets/common/09ff7846bc8c9998745688779c09f88d-1.png" },
-              { icon: Upload, title: "Secure File Uploads", desc: "Upload tenancy agreements and property documents with automated malware checks.", image: "/assets/common/1b065043b6959827c05a0073c93a4a53-1.png" },
-              { icon: ShieldCheck, title: "Role Permissions", desc: "Grant custom access boundaries to agents, owners, and tenants.", image: "/assets/common/260b761ad40c3ad2acba2c6666894539-1.png" },
-              { icon: Activity, title: "Encrypted Ledgers", desc: "All lease terms and payment log histories are secured with AES-256.", image: "/assets/common/2fe7f9184c515b0c515ce38bc8a25efa-1.png" }
+              { icon: Lock, title: "User Authentication", desc: "Protect client profiles and bank payouts with secure MFA.", image: "/webp/assets/common/09ff7846bc8c9998745688779c09f88d-1.webp" },
+              { icon: Upload, title: "Secure File Uploads", desc: "Upload tenancy agreements and property documents with automated malware checks.", image: "/webp/assets/common/1b065043b6959827c05a0073c93a4a53-1.webp" },
+              { icon: ShieldCheck, title: "Role Permissions", desc: "Grant custom access boundaries to agents, owners, and tenants.", image: "/webp/assets/common/260b761ad40c3ad2acba2c6666894539-1.webp" },
+              { icon: Activity, title: "Encrypted Ledgers", desc: "All lease terms and payment log histories are secured with AES-256.", image: "/webp/assets/common/2fe7f9184c515b0c515ce38bc8a25efa-1.webp" }
             ].map((sec, idx) => (
               <Reveal key={idx} delay={idx * 0.05}>
                 <div className="relative rounded-[24px] border border-zinc-800/80 bg-black p-6 md:p-8 flex flex-col justify-between group h-full shadow-lg overflow-hidden transition-all duration-500 hover:border-amber-500/50 min-h-[380px]">
 
                   {/* Expanding Image Layer with Glassmorphism */}
                   <div className="absolute inset-0 z-0 [clip-path:circle(0%_at_100%_100%)] group-hover:[clip-path:circle(150%_at_100%_100%)] transition-all duration-700 ease-in-out pointer-events-none">
-                    <img src={sec.image || '/assets/common/09ff7846bc8c9998745688779c09f88d-1.png'} alt={sec.title} className="w-full h-full object-cover scale-110 group-hover:scale-100 transition-transform duration-1000 ease-out opacity-40" loading="lazy" />
+                    <img src={sec.image || '/webp/assets/common/09ff7846bc8c9998745688779c09f88d-1.webp'} alt={sec.title} className="w-full h-full object-cover scale-110 group-hover:scale-100 transition-transform duration-1000 ease-out opacity-40" loading="lazy" />
                     <div className="absolute inset-0 bg-amber-950/40 backdrop-blur-md" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-amber-900/10 border border-amber-500/10 rounded-[24px]" />
                   </div>

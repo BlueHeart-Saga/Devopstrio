@@ -12,88 +12,88 @@ const teamMembers = [
   // {
   //   name: "Sudalairajan",
   //   role: "Cloud-Native Product Lead",
-  //   photoPink: "/assets/About-page/team/pinkteam/Sudalairajan.png",
-  //   photoGray: "/assets/About-page/team/grayteam/Sudalairajan.png",
+  //   photoPink: "/webp/assets/About-page/team/pinkteam/Sudalairajan.webp",
+  //   photoGray: "/webp/assets/About-page/team/grayteam/Sudalairajan.webp",
   //   rotate: "-rotate-3",
   //   zIndex: "z-[1]",
   // },
   {
     name: "Suryaprakash S",
     role: "Cloud Solutions Engineer",
-    photoPink: "/assets/About-page/team/pinkteam/Suryaprakash-s-pink-with-text.png",
-    photoGray: "/assets/About-page/team/grayteam/Suryaprakash-s-ash-with-text.png",
+    photoPink: "/webp/assets/About-page/team/pinkteam/Suryaprakash-s-pink-with-text.webp",
+    photoGray: "/webp/assets/About-page/team/grayteam/Suryaprakash-s-ash-with-text.webp",
     rotate: "-rotate-2",
     zIndex: "z-[9]",
   },
    {
     name: "Hamsavarthiny P",
     role: "DevOps & Automation Lead",
-    photoPink: "/assets/About-page/team/pinkteam/Hamsavarthiny.P-pink-with-text.png",
-    photoGray: "/assets/About-page/team/grayteam/Hamsavarthiny.P-ash-with-text.png",
+    photoPink: "/webp/assets/About-page/team/pinkteam/Hamsavarthiny.P-pink-with-text.webp",
+    photoGray: "/webp/assets/About-page/team/grayteam/Hamsavarthiny.P-ash-with-text.webp",
     rotate: "-rotate-1",
     zIndex: "z-[11]",
   },
   {
     name: "Ananthalakshmi",
     role: "Senior Software Architect",
-    photoPink: "/assets/About-page/team/pinkteam/Ananthalakshmi-pink-with-text.png",
-    photoGray: "/assets/About-page/team/grayteam/Ananthalakshmi-ash-with-text.png",
+    photoPink: "/webp/assets/About-page/team/pinkteam/Ananthalakshmi-pink-with-text.webp",
+    photoGray: "/webp/assets/About-page/team/grayteam/Ananthalakshmi-ash-with-text.webp",
     rotate: "rotate-2",
     zIndex: "z-[12]",
   },
   {
     name: "Sagadevan",
     role: "Machine Learning Engineer",
-    photoPink: "/assets/About-page/team/pinkteam/Sagadevan.png",
-    photoGray: "/assets/About-page/team/grayteam/Sagadevan.png",
+    photoPink: "/webp/assets/About-page/team/pinkteam/Sagadevan.webp",
+    photoGray: "/webp/assets/About-page/team/grayteam/Sagadevan.webp",
     rotate: "rotate-2",
     zIndex: "z-[2]",
   },
   {
     name: "Subbiah Muthu",
     role: "Deep Learning Specialist",
-    photoPink: "/assets/About-page/team/pinkteam/Subbiahmuthu.png",
-    photoGray: "/assets/About-page/team/grayteam/Subbiahmuthu.png",
+    photoPink: "/webp/assets/About-page/team/pinkteam/Subbiahmuthu.webp",
+    photoGray: "/webp/assets/About-page/team/grayteam/Subbiahmuthu.webp",
     rotate: "-rotate-1",
     zIndex: "z-[3]",
   },
   {
     name: "Kishore",
     role: "AI Security Engineer",
-    photoPink: "/assets/About-page/team/pinkteam/Kishore.png",
-    photoGray: "/assets/About-page/team/grayteam/Kishore.png",
+    photoPink: "/webp/assets/About-page/team/pinkteam/Kishore.webp",
+    photoGray: "/webp/assets/About-page/team/grayteam/Kishore.webp",
     rotate: "rotate-3",
     zIndex: "z-[4]",
   },
   {
     name: "Sermaraja",
     role: "UI/UX Design Manager",
-    photoPink: "/assets/About-page/team/pinkteam/Sermaraj.png",
-    photoGray: "/assets/About-page/team/grayteam/Sermaraj.png",
+    photoPink: "/webp/assets/About-page/team/pinkteam/Sermaraj.webp",
+    photoGray: "/webp/assets/About-page/team/grayteam/Sermaraj.webp",
     rotate: "-rotate-2",
     zIndex: "z-[5]",
   },
   {
     name: "Thangalakshmi",
     role: "Cognitive Success Lead",
-    photoPink: "/assets/About-page/team/pinkteam/Thangalakshmi.png",
-    photoGray: "/assets/About-page/team/grayteam/Thangalakshmi.png",
+    photoPink: "/webp/assets/About-page/team/pinkteam/Thangalakshmi.webp",
+    photoGray: "/webp/assets/About-page/team/grayteam/Thangalakshmi.webp",
     rotate: "rotate-1",
     zIndex: "z-[6]",
   },
   {
     name: "Punitha",
     role: "Design Thinking Lead",
-    photoPink: "/assets/About-page/team/pinkteam/Punitha.png",
-    photoGray: "/assets/About-page/team/grayteam/Punitha.png",
+    photoPink: "/webp/assets/About-page/team/pinkteam/Punitha.webp",
+    photoGray: "/webp/assets/About-page/team/grayteam/Punitha.webp",
     rotate: "-rotate-3",
     zIndex: "z-[7]",
   },
   {
     name: "Ooviya",
     role: "SEO & Content Marketing",
-    photoPink: "/assets/About-page/team/pinkteam/Ooviya.png",
-    photoGray: "/assets/About-page/team/grayteam/Ooviya.png",
+    photoPink: "/webp/assets/About-page/team/pinkteam/Ooviya.webp",
+    photoGray: "/webp/assets/About-page/team/grayteam/Ooviya.webp",
     rotate: "rotate-2",
     zIndex: "z-[8]",
   },
@@ -101,8 +101,8 @@ const teamMembers = [
   {
     name: "Saravanakumar S",
     role: "Platform Infrastructure Lead",
-    photoPink: "/assets/About-page/team/pinkteam/Saravanakumar.s-pink-with-text.png",
-    photoGray: "/assets/About-page/team/grayteam/Saravanakumar.s-ash-with-text.png",
+    photoPink: "/webp/assets/About-page/team/pinkteam/Saravanakumar.s-pink-with-text.webp",
+    photoGray: "/webp/assets/About-page/team/grayteam/Saravanakumar.s-ash-with-text.webp",
     rotate: "rotate-3",
     zIndex: "z-[10]",
   },
@@ -110,35 +110,35 @@ const teamMembers = [
   {
     name: "Umamaheswari R",
     role: "AI & Data Engineering Lead",
-    photoPink: "/assets/About-page/team/pinkteam/Umamaheswari-R-pink-with-text.png",
-    photoGray: "/assets/About-page/team/grayteam/Umamaheswari-R-ash-with-text.png",
+    photoPink: "/webp/assets/About-page/team/pinkteam/Umamaheswari-R-pink-with-text.webp",
+    photoGray: "/webp/assets/About-page/team/grayteam/Umamaheswari-R-ash-with-text.webp",
     rotate: "-rotate-3",
     zIndex: "z-[13]",
   },
 ];
 
 const eventImages = [
-  "/assets/About-page/events/Picture1.png",
-  "/assets/About-page/events/Picture2.png",
-  "/assets/About-page/events/Picture3.png",
-  "/assets/About-page/events/Picture4.png",
-  "/assets/About-page/events/Picture5.png",
-  "/assets/About-page/events/Picture6.png",
-  "/assets/About-page/events/Picture7.png",
-  "/assets/About-page/events/Picture8.png",
-  "/assets/About-page/events/Picture9.png",
-  "/assets/About-page/events/Picture10.png",
-  "/assets/About-page/events/Picture11.png",
-  "/assets/About-page/events/Picture12.png",
-  "/assets/About-page/events/Picture13.png",
-  "/assets/About-page/events/Picture14.png",
-  "/assets/About-page/events/Picture15.png",
-  "/assets/About-page/events/Picture16.png",
-  "/assets/About-page/events/Picture17.png",
-  "/assets/About-page/events/Picture18.png",
-  "/assets/About-page/events/Picture19.png",
-  "/assets/About-page/events/Picture20.png",
-  "/assets/About-page/events/Picture21.png",
+  "/webp/assets/About-page/events/Picture1.webp",
+  "/webp/assets/About-page/events/Picture2.webp",
+  "/webp/assets/About-page/events/Picture3.webp",
+  "/webp/assets/About-page/events/Picture4.webp",
+  "/webp/assets/About-page/events/Picture5.webp",
+  "/webp/assets/About-page/events/Picture6.webp",
+  "/webp/assets/About-page/events/Picture7.webp",
+  "/webp/assets/About-page/events/Picture8.webp",
+  "/webp/assets/About-page/events/Picture9.webp",
+  "/webp/assets/About-page/events/Picture10.webp",
+  "/webp/assets/About-page/events/Picture11.webp",
+  "/webp/assets/About-page/events/Picture12.webp",
+  "/webp/assets/About-page/events/Picture13.webp",
+  "/webp/assets/About-page/events/Picture14.webp",
+  "/webp/assets/About-page/events/Picture15.webp",
+  "/webp/assets/About-page/events/Picture16.webp",
+  "/webp/assets/About-page/events/Picture17.webp",
+  "/webp/assets/About-page/events/Picture18.webp",
+  "/webp/assets/About-page/events/Picture19.webp",
+  "/webp/assets/About-page/events/Picture20.webp",
+  "/webp/assets/About-page/events/Picture21.webp",
 ];
 
 export function Leadership() {
@@ -171,7 +171,7 @@ export function Leadership() {
             <div className="grid grid-cols-1 lg:grid-cols-[360px_1fr]">
 
               <div className="relative min-h-[320px] lg:min-h-[420px] overflow-hidden bg-zinc-900">
-                <img src="/assets/About-page/leader/Founder.png"
+                <img src="/webp/assets/About-page/leader/Founder.webp"
                   alt="Manikandan PS"
                   className="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.02]"
                 loading="lazy" />
@@ -386,7 +386,7 @@ export function Leadership() {
           <div className="relative w-full mt-20 mb-12">
             {/* Top Team Photo Banner */}
             <div className="relative w-full h-[320px] sm:h-[420px] md:h-[500px] overflow-hidden shadow-2xl">
-              <img src="/assets/About-page/overview/team.png"
+              <img src="/webp/assets/About-page/overview/team.webp"
                 alt="Devopstrio Global Team"
                 className="w-full h-full object-cover object-center select-none"
               loading="lazy" />

@@ -52,7 +52,7 @@ const slas = [
 
 export const SLAMatrix = () => {
   return (
-    <section className="py-24 bg-[#0A0A0A] border-t border-zinc-900 font-sans">
+    <section className="py-16 md:py-20 bg-black font-sans">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-14">
           <motion.h2

@@ -9,14 +9,14 @@ const EJECT_DURATION = 1400;
 const COOLDOWN_DURATION = 2800;
 
 const nodes = [
-  { id: "l1", cls: "left l1", logo: "/assets/Home-page/our-products/logo/humanex.png", alt: "Humanex" },
-  { id: "l2", cls: "left l2", logo: "/assets/Home-page/our-products/logo/homela.png", alt: "Homela" },
-  { id: "l3", cls: "left l3", logo: "/assets/Home-page/our-products/logo/brio.png", alt: "Brio" },
-  { id: "l4", cls: "left l4", logo: "/assets/Home-page/our-products/logo/Campix.png", alt: "Campix" },
-  { id: "r1", cls: "right r1", logo: "/assets/Home-page/our-products/logo/Prestivo.png", alt: "Perstivo" },
-  { id: "r2", cls: "right r2", logo: "/assets/Home-page/our-products/logo/Justivon.png", alt: "Justivon" },
-  { id: "r3", cls: "right r3", logo: "/assets/Home-page/our-products/logo/Caresuite.png", alt: "Caresuite" },
-  { id: "r4", cls: "right r4", logo: "/assets/Home-page/our-products/logo/safesign.png", alt: "Safesign" },
+  { id: "l1", cls: "left l1", logo: "/webp/assets/Home-page/our-products/logo/humanex.webp", alt: "Humanex" },
+  { id: "l2", cls: "left l2", logo: "/webp/assets/Home-page/our-products/logo/homela.webp", alt: "Homela" },
+  { id: "l3", cls: "left l3", logo: "/webp/assets/Home-page/our-products/logo/brio.webp", alt: "Brio" },
+  { id: "l4", cls: "left l4", logo: "/webp/assets/Home-page/our-products/logo/Campix.webp", alt: "Campix" },
+  { id: "r1", cls: "right r1", logo: "/webp/assets/Home-page/our-products/logo/Prestivo.webp", alt: "Perstivo" },
+  { id: "r2", cls: "right r2", logo: "/webp/assets/Home-page/our-products/logo/Justivon.webp", alt: "Justivon" },
+  { id: "r3", cls: "right r3", logo: "/webp/assets/Home-page/our-products/logo/Caresuite.webp", alt: "Caresuite" },
+  { id: "r4", cls: "right r4", logo: "/webp/assets/Home-page/our-products/logo/safesign.webp", alt: "Safesign" },
 ];
 
 export function UnifiedIntegrations() {
@@ -582,7 +582,7 @@ export function UnifiedIntegrations() {
             <span className="hub-pulse pulse-3" />
 
             <div className="hub-core">
-              <img src="/assets/Home-page/our-products/Devopsrio_Main_logo.png"
+              <img src="/webp/assets/Home-page/our-products/Devopsrio_Main_logo.webp"
                 alt="Devopstrio"
                 className="hub-center-logo"
               loading="lazy" />

@@ -18,31 +18,31 @@ export function BecomePartnerProgram() {
       title: "Technology Partner",
       desc: "For software vendors and platforms looking to integrate their products directly into our reference architectures.",
       icon: <Code2 size={24} />,
-      image: "/assets/common/45ea830d170d382ade235db479060da7-1.png"
+      image: "/webp/assets/common/45ea830d170d382ade235db479060da7-1.webp"
     },
     {
       title: "Consulting Partner",
       desc: "For systems integrators, consultants, and IT firms aiming to co-deliver migration and modernization services.",
       icon: <Users2 size={24} />,
-      image: "/assets/common/464d8932bca4d6bb552ff2dcf2f3c5ca-1.png"
+      image: "/webp/assets/common/464d8932bca4d6bb552ff2dcf2f3c5ca-1.webp"
     },
     {
       title: "Channel Partner",
       desc: "For agencies and value-added resellers focused on distributing Devopstrio proprietary platforms to wider markets.",
       icon: <Building2 size={24} />,
-      image: "/assets/common/782e79a0bc5e9f58cb9af6a27727ca7b-1.png"
+      image: "/webp/assets/common/782e79a0bc5e9f58cb9af6a27727ca7b-1.webp"
     },
     {
       title: "Startup Partner",
       desc: "For early-stage tech innovators looking for architectural coaching and custom credits to leverage cloud systems.",
       icon: <Rocket size={24} />,
-      image: "/assets/common/82090d7be4ef5694954ce77f9cc2e627-1.png"
+      image: "/webp/assets/common/82090d7be4ef5694954ce77f9cc2e627-1.webp"
     },
     {
       title: "University Partner",
       desc: "For academic research departments and student engineering groups driving technology research initiatives.",
       icon: <GraduationCap size={24} />,
-      image: "/assets/common/90361fed0bb781d7c86e451995b4dbce-1.png"
+      image: "/webp/assets/common/90361fed0bb781d7c86e451995b4dbce-1.webp"
     }
   ];
 

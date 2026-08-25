@@ -24,65 +24,65 @@ const STATIC_METADATA: Record<string, {
 }> = {
   "blogs": {
     description: "Thought leadership, industry insights, and strategic perspectives on global tech and cloud engineering.",
-    image: "/assets/Insights-page/nav/blog.png",
+    image: "/webp/assets/Insights-page/nav/blog.webp",
     accentColor: "#f97316",
     tag: "EDITORIAL"
   },
   "case-studies": {
     description: "Real-world success stories, digital transformation journeys, and metric-driven talent acquisition solutions.",
-    image: "/assets/Insights-page/nav/Case_study.png",
+    image: "/webp/assets/Insights-page/nav/Case_study.webp",
     accentColor: "#3b82f6",
     tag: "CASE STUDY"
   },
   "awards-milestones": {
     description: "Celebrating our team's recognition, benchmark excellence, and engineering milestones.",
-    image: "/assets/Insights-page/nav/Awardsandmailstones.png",
+    image: "/webp/assets/Insights-page/nav/Awardsandmailstones.webp",
     accentColor: "#a855f7",
     tag: "AWARDS"
   },
   "industry-events": {
     description: "Upcoming webinars, leadership roundtables, and international staffing conferences by Devopstrio.",
-    image: "/assets/Insights-page/nav/Industry_event.png",
+    image: "/webp/assets/Insights-page/nav/Industry_event.webp",
     accentColor: "#f43f5e",
     tag: "EVENTS"
   },
   "impact-metrics": {
     description: "Quantitative analysis, scalability benchmarks, cost-optimization metrics, and measurable business value.",
-    image: "/assets/Insights-page/nav/Impact_-metrics.png",
+    image: "/webp/assets/Insights-page/nav/Impact_-metrics.webp",
     accentColor: "#06b6d4",
     tag: "METRICS"
   },
   "team-culture": {
     description: "Discover the collaborative, inclusive, and high-performance culture that drives Devopstrio.",
-    image: "/assets/Insights-page/nav/team_culture.png",
+    image: "/webp/assets/Insights-page/nav/team_culture.webp",
     accentColor: "#10b981",
     tag: "CULTURE"
   },
   "celebrations": {
     description: "Behind-the-scenes looks at our team celebrations, social impact, and core value expressions.",
-    image: "/assets/Insights-page/nav/celebrations.png",
+    image: "/webp/assets/Insights-page/nav/celebrations.webp",
     accentColor: "#ec4899",
     tag: "CULTURE"
   },
   "white-paper": {
     description: "In-depth research papers, architectural blueprints, and compliance frameworks by senior engineers.",
-    image: "/assets/Insights-page/nav/White_paper.png",
+    image: "/webp/assets/Insights-page/nav/White_paper.webp",
     accentColor: "#6366f1",
     tag: "RESEARCH"
   },
   "client-transformations": {
     description: "Stories of collaboration, digital transformation journeys, and how we empower our clients.",
-    image: "/assets/Insights-page/nav/Client_transormation.png",
+    image: "/webp/assets/Insights-page/nav/Client_transormation.webp",
     accentColor: "#f97316",
     tag: "CLIENTS"
   }
 };
 
 const FALLBACK_IMAGES = [
-  "/assets/Insights-page/nav/blog.png",
-  "/assets/Insights-page/nav/Case_study.png",
-  "/assets/Insights-page/nav/Awardsandmailstones.png",
-  "/assets/Insights-page/nav/Industry_event.png",
+  "/webp/assets/Insights-page/nav/blog.webp",
+  "/webp/assets/Insights-page/nav/Case_study.webp",
+  "/webp/assets/Insights-page/nav/Awardsandmailstones.webp",
+  "/webp/assets/Insights-page/nav/Industry_event.webp",
 ];
 const FALLBACK_COLORS = ["#f97316", "#3b82f6", "#a855f7", "#f43f5e", "#06b6d4", "#10b981"];
 

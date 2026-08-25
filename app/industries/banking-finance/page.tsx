@@ -40,7 +40,7 @@ const data = {
     title: "Next-generation Ledger &",
     highlightedWord: "Banking Solutions",
     subtitle: "Building secure transactional ledgers, AI-driven fraud classification layers, and audited payment pathways under SOC-2 guidelines.",
-    bgImage: "/assets/Industries-page/herocard/finance.png"
+    bgImage: "/webp/assets/Industries-page/herocard/finance.webp"
   },
   overview: {
     heading: "Resilient financial platforms designed for transaction volume and security",

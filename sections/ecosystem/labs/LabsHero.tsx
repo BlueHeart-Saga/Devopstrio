@@ -11,7 +11,7 @@ export function LabsHero() {
     {
       id: 1,
       label: "Cybersecurity",
-      src: "/assets/ecosystem/herocard/labs/Cybersecurity.png",
+      src: "/webp/assets/ecosystem/herocard/labs/Cybersecurity.webp",
       alt: "Cybersecurity & Networks",
       heightClass: "h-[200px] md:h-[220px]",
       icon: <Maximize2 className="w-3.5 h-3.5" />
@@ -19,7 +19,7 @@ export function LabsHero() {
     {
       id: 2,
       label: "AI Agents",
-      src: "/assets/ecosystem/herocard/labs/AIAgentt.png",
+      src: "/webp/assets/ecosystem/herocard/labs/AIAgentt.webp",
       alt: "AI Robotic Agents",
       heightClass: "h-[240px] md:h-[270px]",
       icon: <Maximize2 className="w-3.5 h-3.5" />
@@ -27,7 +27,7 @@ export function LabsHero() {
     {
       id: 3,
       label: "Neural Vision",
-      src: "/assets/ecosystem/herocard/labs/Neuralvision.png",
+      src: "/webp/assets/ecosystem/herocard/labs/Neuralvision.webp",
       alt: "Cybernetic Interface Visor",
       heightClass: "h-[280px] md:h-[320px]",
       icon: <Globe className="w-3.5 h-3.5" />,
@@ -36,7 +36,7 @@ export function LabsHero() {
     {
       id: 4,
       label: "Quantum computing",
-      src: "/assets/ecosystem/herocard/labs/quantumcomputing.png",
+      src: "/webp/assets/ecosystem/herocard/labs/quantumcomputing.webp",
       alt: "AI & Neural Networks",
       heightClass: "h-[240px] md:h-[270px]",
       icon: <Maximize2 className="w-3.5 h-3.5" />
@@ -44,7 +44,7 @@ export function LabsHero() {
     {
       id: 5,
       label: "Data Spheres",
-      src: "/assets/ecosystem/herocard/labs/DataSpheres.png",
+      src: "/webp/assets/ecosystem/herocard/labs/DataSpheres.webp",
       alt: "Quantum Data Sphere",
       heightClass: "h-[200px] md:h-[220px]",
       icon: <Maximize2 className="w-3.5 h-3.5" />

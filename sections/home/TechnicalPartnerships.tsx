@@ -6,7 +6,7 @@ import Link from "next/link";
 
 const techStack = [
   // Cloud & Containers
-  { name: "AWS", icon: "/assets/Devopstrio_Partners/aws.png", category: "Cloud Infrastructure", desc: "Architecting scalable, fault-tolerant cloud infrastructures, serverless computing with Lambda, and global network systems." },
+  { name: "AWS", icon: "/webp/assets/Devopstrio_Partners/aws.webp", category: "Cloud Infrastructure", desc: "Architecting scalable, fault-tolerant cloud infrastructures, serverless computing with Lambda, and global network systems." },
   { name: "Azure", icon: "/assets/Tech-icons/microsoft-azure-logo_svgstack_com_7501780931055.svg", category: "Enterprise Cloud Platforms", desc: "Designing robust enterprise cloud solutions, AKS container management, Active Directory security, and hybrid landing zones." },
   { name: "Google Cloud", icon: "/assets/Tech-icons/google-cloud-logo_svgstack_com_28371780931185.svg", category: "Data & AI Cloud Infrastructure", desc: "Powering real-time data analytics with BigQuery, Kubernetes orchestration with GKE, and AI modeling with Vertex AI." },
   { name: "Docker", icon: "/assets/Tech-icons/docker-logo_svgstack_com_28191780931128.svg", category: "Containerization", desc: "Packaging applications into lightweight, standardized containers for predictable cross-environment execution." },
@@ -106,7 +106,7 @@ export function TechnicalPartnerships() {
     <section className="w-full py-24 md:py-32 bg-[#030303] text-white relative overflow-hidden">
       {/* Background ambient lighting - Custom Wave Image */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
-        <img src="/assets/wavebg/4.png"
+        <img src="/webp/assets/wavebg/4.webp"
           alt="Background Wave"
           className="w-full h-full object-cover opacity-60"
         loading="lazy" />

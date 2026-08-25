@@ -57,7 +57,7 @@ import Link from "next/link";
 
 export const SupportMetrics = () => {
   return (
-    <section className="py-24 bg-[#0A0A0A] border-t border-zinc-900 relative overflow-hidden">
+    <section className="py-16 md:py-20 bg-black relative overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_50%,rgba(255,23,68,0.06),transparent)]" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
@@ -72,7 +72,7 @@ export const SupportMetrics = () => {
           </motion.h2>
         </div>
 
-        <div className="bg-zinc-900/30 border border-zinc-800 rounded-3xl px-10 py-14">
+        <div className="bg-zinc-950/50 rounded-3xl px-10 py-14">
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
             {metrics.map((m, idx) => (
               <motion.div

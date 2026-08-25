@@ -136,7 +136,7 @@ export default function MarketingPage() {
       count: "8 Files",
       href: "/marketing/company",
       description: "Official executive corporate decks, global delivery capability statements, CMMI Level 5 credentials, and organization overview presentations.",
-      image: "/assets/herocard/aboutpage.png",
+      image: "/webp/assets/herocard/aboutpage.webp",
     },
     {
       id: "services",
@@ -145,7 +145,7 @@ export default function MarketingPage() {
       count: "10 Files",
       href: "/marketing/services",
       description: "Detailed practice sheets for AI & Data Innovation, Cloud Services, DevOps & Platform Engineering, Cybersecurity, and Managed IT Services.",
-      image: "/assets/herocard/servicespage.png",
+      image: "/webp/assets/herocard/servicespage.webp",
     },
     {
       id: "industries",
@@ -154,7 +154,7 @@ export default function MarketingPage() {
       count: "8 Files",
       href: "/marketing/industries",
       description: "Domain-specific solutions for Banking & Financial Services, Healthcare & Life Sciences, Retail & E-Commerce, and Manufacturing Industry 4.0.",
-      image: "/assets/herocard/industriespage.png",
+      image: "/webp/assets/herocard/industriespage.webp",
     },
     {
       id: "platforms",
@@ -163,7 +163,7 @@ export default function MarketingPage() {
       count: "7 Files",
       href: "/marketing/platforms",
       description: "Product sheets and technical specifications for Humanex AI HR, Homela PropTech, CareSuite Telehealth, and Prestivo Credit Engine.",
-      image: "/assets/herocard/homepage.png",
+      image: "/webp/assets/herocard/homepage.webp",
     },
     {
       id: "technology",
@@ -172,7 +172,7 @@ export default function MarketingPage() {
       count: "8 Files",
       href: "/marketing/technology",
       description: "Reference architectures for Azure AKS, AWS Serverless, GCP Vertex AI, Databricks Lakehouse, and Kubernetes GitOps playbooks.",
-      image: "/assets/data_overview_hero.png",
+      image: "/webp/assets/data_overview_hero.webp",
     },
     {
       id: "case-studies",
@@ -181,7 +181,7 @@ export default function MarketingPage() {
       count: "6 Files",
       href: "/marketing/case-studies",
       description: "Real-world customer success stories detailing 40%+ cloud cost savings, zero-downtime migrations, and high-frequency event scaling.",
-      image: "/assets/herocard/ecosystempage.png",
+      image: "/webp/assets/herocard/ecosystempage.webp",
     },
     {
       id: "whitepapers",
@@ -190,7 +190,7 @@ export default function MarketingPage() {
       count: "6 Files",
       href: "/marketing/whitepapers",
       description: "In-depth technical whitepapers covering RAG architectures, LLM fine-tuning, FinOps ROI frameworks, and Zero Trust security compliance.",
-      image: "/assets/herocard/insightspage.png",
+      image: "/webp/assets/herocard/insightspage.webp",
     },
     {
       id: "presentations",
@@ -199,7 +199,7 @@ export default function MarketingPage() {
       count: "6 Files",
       href: "/marketing/company/corporate-presentation",
       description: "Master client introductory pitch presentations, executive briefing decks, and partner engagement slide templates.",
-      image: "/assets/herocard/Marketinghero.png",
+      image: "/webp/assets/herocard/Marketinghero.webp",
     },
     {
       id: "videos",
@@ -208,7 +208,7 @@ export default function MarketingPage() {
       count: "5 Files",
       href: "/marketing",
       description: "Recorded technical webinars, corporate delivery model overviews, and live SaaS product walkthrough demonstrations.",
-      image: "/assets/common/09ff7846bc8c9998745688779c09f88d-1.png",
+      image: "/webp/assets/common/09ff7846bc8c9998745688779c09f88d-1.webp",
     },
   ];
 
@@ -224,7 +224,7 @@ export default function MarketingPage() {
       description: "Complete executive sales presentation outlining global delivery centers, CMMI Level 5 standards, enterprise AI practice, and cloud engineering.",
       downloads: 1420,
       badge: "POPULAR",
-      image: "/assets/herocard/Marketinghero.png",
+      image: "/webp/assets/herocard/Marketinghero.webp",
     },
     {
       id: "feat-2",
@@ -236,7 +236,7 @@ export default function MarketingPage() {
       description: "In-depth technical whitepaper on deploying RAG architectures, custom LLM fine-tuning, vector database benchmarking, and AI safety guardrails.",
       downloads: 980,
       badge: "NEW",
-      image: "/assets/common/09ff7846bc8c9998745688779c09f88d-1.png",
+      image: "/webp/assets/common/09ff7846bc8c9998745688779c09f88d-1.webp",
     },
     {
       id: "feat-3",
@@ -248,7 +248,7 @@ export default function MarketingPage() {
       description: "Case study detailing how a Fortune 500 financial institution achieved 42% cloud infrastructure cost savings with Devopstrio Azure FinOps.",
       downloads: 1150,
       badge: "UPDATED",
-      image: "/assets/herocard/aboutpage.png",
+      image: "/webp/assets/herocard/aboutpage.webp",
     },
   ];
 

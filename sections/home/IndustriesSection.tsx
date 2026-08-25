@@ -12,7 +12,7 @@ const industries = [
     tag: "Financial Services",
     desc: "Secure, regulatory-compliant solutions for banking, investing, and digital payments.",
     icon: Landmark,
-    image: "/assets/Home-page/industries/bankifinance.png",
+    image: "/webp/assets/Home-page/industries/bankifinance.webp",
     href: "/industries/banking-finance",
   },
   {
@@ -20,7 +20,7 @@ const industries = [
     tag: "Specialized Solutions",
     desc: "HIPAA-compliant telehealth apps, EHR platforms, and research databases.",
     icon: HeartPulse,
-    image: "/assets/Home-page/industries/healthcaree.png",
+    image: "/webp/assets/Home-page/industries/healthcaree.webp",
     href: "/industries/healthcare-life-sciences",
   },
   {
@@ -28,7 +28,7 @@ const industries = [
     tag: "Digital Commerce",
     desc: "Omni-channel engines, high-speed checkouts, and real-time inventory systems.",
     icon: ShoppingCart,
-    image: "/assets/Home-page/industries/retailecommerce.png",
+    image: "/webp/assets/Home-page/industries/retailecommerce.webp",
     href: "/industries/retail-ecommerce",
   },
   {
@@ -36,7 +36,7 @@ const industries = [
     tag: "Industry 4.0",
     desc: "Industrial IoT integrations, predictive maintenance logs, and smart supply chains.",
     icon: Factory,
-    image: "/assets/Home-page/industries/manufacturingg.png",
+    image: "/webp/assets/Home-page/industries/manufacturingg.webp",
     href: "/industries/manufacturing",
   },
   {
@@ -44,7 +44,7 @@ const industries = [
     tag: "Network Solutions",
     desc: "Scalable OSS/BSS infrastructures, 5G cloud services, and telecom analytics.",
     icon: Network,
-    image: "/assets/Home-page/industries/telecommunicationn.png",
+    image: "/webp/assets/Home-page/industries/telecommunicationn.webp",
     href: "/industries/telecommunications",
   },
   {
@@ -52,7 +52,7 @@ const industries = [
     tag: "Digital Media",
     desc: "High-bandwidth VOD platforms, live broadcasting, and digital assets.",
     icon: MonitorPlay,
-    image: "/assets/Home-page/industries/mediaentertainment.png",
+    image: "/webp/assets/Home-page/industries/mediaentertainment.webp",
     href: "/industries/media-entertainment",
   },
   {
@@ -60,7 +60,7 @@ const industries = [
     tag: "EdTech Platforms",
     desc: "LMS environments, remote learning tools, and digital collaboration spaces.",
     icon: GraduationCap,
-    image: "/assets/Home-page/industries/educationn.png",
+    image: "/webp/assets/Home-page/industries/educationn.webp",
     href: "/industries/education",
   },
   {
@@ -68,7 +68,7 @@ const industries = [
     tag: "Government Solutions",
     desc: "Citizen portals, cloud modernization, and strict security compliance.",
     icon: Building2,
-    image: "/assets/Home-page/industries/governmentsector.png",
+    image: "/webp/assets/Home-page/industries/governmentsector.webp",
     href: "/industries/government-public-sector",
   },
 ];

@@ -14,7 +14,7 @@ const partnerLogos: PartnerLogo[] = [
   { src: "/assets/Home-page/partners/BT.svg", alt: "BT" },
   { src: "/assets/Home-page/partners/bp-logo.svg", alt: "BP" },
   { src: "/assets/Home-page/partners/NHS.svg", alt: "NHS" },
-  { src: "/assets/Home-page/partners/Boviet_Solar.png", alt: "Boviet Solar" },
+  { src: "/webp/assets/Home-page/partners/Boviet_Solar.webp", alt: "Boviet Solar" },
   { src: "/assets/Home-page/partners/gxo.svg", alt: "GXO" },
   { src: "/assets/Home-page/partners/ASDA.svg", alt: "ASDA" },
   { src: "/assets/Home-page/partners/Microsoft.svg", alt: "Microsoft" },

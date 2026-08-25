@@ -17,49 +17,49 @@ export function IndustriesServed() {
       name: "Healthcare",
       icon: <Heart size={14} />,
       desc: "HIPAA-compliant telemedicine platforms and EHR system integrations.",
-      image: "/assets/Home-page/industries/healthcaree.png"
+      image: "/webp/assets/Home-page/industries/healthcaree.webp"
     },
     {
       name: "Recruitment",
       icon: <Users2 size={14} />,
       desc: "Enterprise workforce tracking, ATS scoring, and candidate analytics.",
-      image: "/assets/Home-page/industries/telecommunicationn.png"
+      image: "/webp/assets/Home-page/industries/telecommunicationn.webp"
     },
     {
       name: "Finance",
       icon: <Landmark size={14} />,
       desc: "Secure transaction pipelines, PCI compliance, and multi-gateway routing.",
-      image: "/assets/Home-page/industries/bankifinance.png"
+      image: "/webp/assets/Home-page/industries/bankifinance.webp"
     },
     {
       name: "Manufacturing",
       icon: <Factory size={14} />,
       desc: "Industrial IoT dashboards, tracking systems, and supply chains sync.",
-      image: "/assets/Home-page/industries/manufacturingg.png"
+      image: "/webp/assets/Home-page/industries/manufacturingg.webp"
     },
     {
       name: "Retail & E-Commerce",
       icon: <ShoppingCart size={14} />,
       desc: "High-speed multi-tenant inventory networks and custom checkouts.",
-      image: "/assets/Home-page/industries/retailecommerce.png"
+      image: "/webp/assets/Home-page/industries/retailecommerce.webp"
     },
     {
       name: "Education",
       icon: <GraduationCap size={14} />,
       desc: "Remote learning hubs, user onboarding databases, and course managers.",
-      image: "/assets/Home-page/industries/educationn.png"
+      image: "/webp/assets/Home-page/industries/educationn.webp"
     },
     {
       name: "Technology",
       icon: <Laptop size={14} />,
       desc: "Developer self-service portals, API tools, and microservice hosts.",
-      image: "/assets/Home-page/industries/mediaentertainment.png"
+      image: "/webp/assets/Home-page/industries/mediaentertainment.webp"
     },
     {
       name: "Government",
       icon: <GovIcon size={14} />,
       desc: "Strict secure spaces compliance, portal sites, and auditing trails.",
-      image: "/assets/Home-page/industries/governmentsector.png"
+      image: "/webp/assets/Home-page/industries/governmentsector.webp"
     }
   ];
 

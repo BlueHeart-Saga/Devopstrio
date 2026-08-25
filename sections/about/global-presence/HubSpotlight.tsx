@@ -102,10 +102,11 @@ export function HubSpotlight({ locations }: HubSpotlightProps) {
           <button
             key={office.id}
             onClick={() => setActiveTab(office.id)}
-            className={`px-5 py-3 text-xs sm:text-sm md:text-base font-semibold rounded-xl transition-all duration-300 cursor-pointer ${activeTab === office.id
+            className={`px-6 py-3 text-sm sm:text-base font-semibold rounded-xl transition-all duration-300 cursor-pointer ${
+              activeTab === office.id
                 ? "bg-rose-500 text-white shadow-lg shadow-rose-500/25"
-                : "bg-zinc-950/60 border border-zinc-800 text-zinc-400 hover:text-white hover:bg-zinc-900/80"
-              }`}
+                : "bg-zinc-950/60 border border-zinc-800 text-zinc-300 hover:text-white hover:bg-zinc-900/80"
+            }`}
           >
             {office.city} ({office.type})
           </button>
@@ -122,23 +123,23 @@ export function HubSpotlight({ locations }: HubSpotlightProps) {
 
           <div className="space-y-6">
             <div>
-              <h3 className="text-2xl md:text-3xl font-semibold text-white tracking-tight">
+              <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white tracking-tight">
                 {currentOffice.officeName}
               </h3>
               {currentOffice.tagline && (
-                <p className="text-xs sm:text-sm text-rose-400 font-medium mt-1 leading-relaxed">
+                <p className="text-sm sm:text-base md:text-lg text-rose-400 font-medium mt-2 leading-relaxed">
                   {currentOffice.tagline}
                 </p>
               )}
             </div>
 
-            <div className="space-y-5 border-t border-zinc-900 pt-6">
+            <div className="space-y-6 border-t border-zinc-900 pt-6">
               {/* Address */}
               <div className="flex gap-4">
-                <MapPin className="w-5 h-5 text-rose-500 shrink-0 mt-0.5" />
+                <MapPin className="w-5 h-5 text-rose-500 shrink-0 mt-1" />
                 <div>
-                  <h5 className="text-[10px] font-mono uppercase text-zinc-500 tracking-wider">Address</h5>
-                  <p className="text-zinc-300 text-xs md:text-sm font-medium mt-1 leading-relaxed">
+                  <h5 className="text-xs font-semibold uppercase text-zinc-400 tracking-wider font-sans">Address</h5>
+                  <p className="text-zinc-200 text-sm sm:text-base font-medium mt-1.5 leading-relaxed">
                     {currentOffice.address}
                   </p>
                 </div>
@@ -146,10 +147,10 @@ export function HubSpotlight({ locations }: HubSpotlightProps) {
 
               {/* Tel */}
               <div className="flex gap-4">
-                <Phone className="w-5 h-5 text-rose-500 shrink-0 mt-0.5" />
+                <Phone className="w-5 h-5 text-rose-500 shrink-0 mt-1" />
                 <div>
-                  <h5 className="text-[10px] font-mono uppercase text-zinc-500 tracking-wider">Telephone</h5>
-                  <p className="text-zinc-300 text-xs md:text-sm font-medium mt-1">
+                  <h5 className="text-xs font-semibold uppercase text-zinc-400 tracking-wider font-sans">Telephone</h5>
+                  <p className="text-zinc-200 text-sm sm:text-base font-medium mt-1.5">
                     {currentOffice.tel}
                   </p>
                 </div>
@@ -157,10 +158,10 @@ export function HubSpotlight({ locations }: HubSpotlightProps) {
 
               {/* Email */}
               <div className="flex gap-4">
-                <Mail className="w-5 h-5 text-rose-500 shrink-0 mt-0.5" />
+                <Mail className="w-5 h-5 text-rose-500 shrink-0 mt-1" />
                 <div>
-                  <h5 className="text-[10px] font-mono uppercase text-zinc-500 tracking-wider">Email</h5>
-                  <p className="text-zinc-300 text-xs md:text-sm font-medium mt-1">
+                  <h5 className="text-xs font-semibold uppercase text-zinc-400 tracking-wider font-sans">Email</h5>
+                  <p className="text-zinc-200 text-sm sm:text-base font-medium mt-1.5">
                     {currentOffice.email}
                   </p>
                 </div>
@@ -173,7 +174,7 @@ export function HubSpotlight({ locations }: HubSpotlightProps) {
               href={`https://maps.google.com/?q=${encodeURIComponent(currentOffice.mapQuery)}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-rose-500 hover:text-white transition-colors"
+              className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-rose-500 hover:text-white transition-colors"
             >
               Open in Google Maps &rarr;
             </a>

@@ -41,7 +41,7 @@ const data = {
     title: "HIPAA-compliant &",
     highlightedWord: "Healthcare Systems",
     subtitle: "Building clinical dashboard portals, real-time wearable telemetry collectors, and AI-driven medical record sanitizers under tight medical guidelines.",
-    bgImage: "/assets/Industries-page/herocard/healthcare.png"
+    bgImage: "/webp/assets/Industries-page/herocard/healthcare.webp"
   },
   overview: {
     heading: "Secure patient record ecosystems and real-time medical data pipelines",

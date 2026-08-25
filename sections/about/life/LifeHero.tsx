@@ -4,17 +4,17 @@ import React from "react";
 import { motion } from "framer-motion";
 
 const movieImages = [
-  "/assets/About-page/life-at-devopstrio/movie/award-1st.png",
-  "/assets/About-page/life-at-devopstrio/movie/feb-july-dinner.png",
-  "/assets/About-page/life-at-devopstrio/movie/saraswathi-1st.png",
-  "/assets/About-page/life-at-devopstrio/movie/award-2nd-1.png",
-  "/assets/About-page/life-at-devopstrio/movie/new-year-game-1st.png",
-  "/assets/About-page/life-at-devopstrio/movie/saraswathi-2nd.png",
-  "/assets/About-page/life-at-devopstrio/movie/award-3rd-1.png",
-  "/assets/About-page/life-at-devopstrio/movie/new-year-poojai-3rd.png",
-  "/assets/About-page/life-at-devopstrio/movie/saraswathi-3rd.png",
-  "/assets/About-page/life-at-devopstrio/movie/award4th.png",
-  "/assets/About-page/life-at-devopstrio/movie/image-2.png",
+  "/webp/assets/About-page/life-at-devopstrio/movie/award-1st.webp",
+  "/webp/assets/About-page/life-at-devopstrio/movie/feb-july-dinner.webp",
+  "/webp/assets/About-page/life-at-devopstrio/movie/saraswathi-1st.webp",
+  "/webp/assets/About-page/life-at-devopstrio/movie/award-2nd-1.webp",
+  "/webp/assets/About-page/life-at-devopstrio/movie/new-year-game-1st.webp",
+  "/webp/assets/About-page/life-at-devopstrio/movie/saraswathi-2nd.webp",
+  "/webp/assets/About-page/life-at-devopstrio/movie/award-3rd-1.webp",
+  "/webp/assets/About-page/life-at-devopstrio/movie/new-year-poojai-3rd.webp",
+  "/webp/assets/About-page/life-at-devopstrio/movie/saraswathi-3rd.webp",
+  "/webp/assets/About-page/life-at-devopstrio/movie/award4th.webp",
+  "/webp/assets/About-page/life-at-devopstrio/movie/image-2.webp",
 ];
 
 // Duplicate list for infinite smooth loop without any gap

@@ -14,70 +14,70 @@ export function OurFutureSection() {
       title: "Autonomous DevOps & GitOps",
       desc: <>Architecting self-healing Kubernetes clusters and AI-driven site reliability engineering agents under our <Link href="/services/devops-automation" className="text-rose-500 hover:underline font-bold">DevOps automation</Link> division.</>,
       tag: "DevOps",
-      image: "/assets/careers/jobs/devops.png",
+      image: "/webp/assets/careers/jobs/devops.webp",
       href: "/services/devops-automation"
     },
     {
       title: "Sustainable Multi-Cloud",
       desc: <>Optimizing code execution and server workloads to reduce costs and carbon footprints across multi-cloud platforms in <Link href="/services/cloud-services" className="text-rose-500 hover:underline font-bold">cloud services</Link>.</>,
       tag: "Cloud Ops",
-      image: "/assets/careers/jobs/Cloud-Ops.png",
+      image: "/webp/assets/careers/jobs/Cloud-Ops.webp",
       href: "/services/cloud-services"
     },
     {
       title: "Cognitive AI & Autonomous Agents",
       desc: <>Deploying multi-model consensus swarms, LLMs, and agentic workflows under our <Link href="/services/ai-data-innovation" className="text-rose-500 hover:underline font-bold">AI & data innovation</Link> wing.</>,
       tag: "AI Innovation",
-      image: "/assets/careers/jobs/AI-Innovation.png",
+      image: "/webp/assets/careers/jobs/AI-Innovation.webp",
       href: "/services/ai-data-innovation"
     },
     {
       title: "Next-Gen Software Engineering",
       desc: <>Unifying cloud-native microservices, modern distributed backends, and full-stack systems under <Link href="/services/software-development" className="text-rose-500 hover:underline font-bold">software development</Link>.</>,
       tag: "Software",
-      image: "/assets/careers/jobs/Software.png",
+      image: "/webp/assets/careers/jobs/Software.webp",
       href: "/services/software-development"
     },
     {
       title: "Quantum & Zero-Trust Security",
       desc: <>Preparing hybrid-cloud computing topologies for zero-trust security and continuous defense with our <Link href="/services/cybersecurity" className="text-rose-500 hover:underline font-bold">cybersecurity</Link> team.</>,
       tag: "Security",
-      image: "/assets/careers/jobs/security.png",
+      image: "/webp/assets/careers/jobs/security.webp",
       href: "/services/cybersecurity"
     },
     {
       title: "Unified Lakehouse & Analytics",
       desc: <>Deploying secure, real-time intelligence pipelines, streaming telemetry, and lakehouse storage under <Link href="/services/data-engineering" className="text-rose-500 hover:underline font-bold">data engineering</Link>.</>,
       tag: "Data Engineering",
-      image: "/assets/careers/jobs/data-engineering.png",
+      image: "/webp/assets/careers/jobs/data-engineering.webp",
       href: "/services/data-engineering"
     },
     {
       title: "Digital Transformation Mesh",
       desc: <>Orchestrating end-to-end digital transformation, industrial automation, and enterprise legacy modernization in <Link href="/services/digital-transformation" className="text-rose-500 hover:underline font-bold">digital transformation</Link>.</>,
       tag: "Transformation",
-      image: "/assets/careers/jobs/transformation.png",
+      image: "/webp/assets/careers/jobs/transformation.webp",
       href: "/services/digital-transformation"
     },
     {
       title: "Strategic Technology Advisory",
       desc: <>Providing high-impact architecture strategy, technology roadmap design, and enterprise cloud advisory in <Link href="/services/it-consulting" className="text-rose-500 hover:underline font-bold">IT consulting</Link>.</>,
       tag: "Consulting",
-      image: "/assets/careers/jobs/consulting.png",
+      image: "/webp/assets/careers/jobs/consulting.webp",
       href: "/services/it-consulting"
     },
     {
       title: "24/7 Intelligent SRE Operations",
       desc: <>Intelligent round-the-clock infrastructure monitoring, automated incident triage, and SLA assurances in <Link href="/services/managed-services" className="text-rose-500 hover:underline font-bold">managed services</Link>.</>,
       tag: "Managed Ops",
-      image: "/assets/careers/jobs/managed-ops.png",
+      image: "/webp/assets/careers/jobs/managed-ops.webp",
       href: "/services/managed-services"
     },
     {
       title: "Automated & Performance QA",
       desc: <>Continuous end-to-end QA pipelines, chaos testing, security scanning, and reliability verification under our <Link href="/services/qa-testing" className="text-rose-500 hover:underline font-bold">QA & testing</Link> practices.</>,
       tag: "QA Testing",
-      image: "/assets/careers/jobs/qa-testing.png",
+      image: "/webp/assets/careers/jobs/qa-testing.webp",
       href: "/services/qa-testing"
     }
   ];

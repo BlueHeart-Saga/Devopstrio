@@ -15,7 +15,7 @@ export function CompanyIntro() {
       <Reveal delay={0.1}>
         <div className="relative w-full h-[380px] sm:h-[460px] md:h-[520px] lg:h-[580px] overflow-hidden shadow-2xl">
           <img
-            src="/assets/About-page/team/image.png"
+            src="/webp/assets/About-page/team/image.webp"
             alt="Devopstrio Engineering Team"
             className="w-full h-full object-cover object-center filter brightness-105 contrast-105"
             loading="lazy"
