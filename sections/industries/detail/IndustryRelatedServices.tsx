@@ -102,9 +102,9 @@ export function IndustryRelatedServices({ relatedServices }: IndustryRelatedServ
                     <h4 className="text-lg font-semibold text-white group-hover:text-rose-500 transition-colors duration-300">
                       {resolved.title}
                     </h4>
-                    <p className="text-sm sm:text-base text-zinc-300 leading-relaxed font-normal mt-2">
+                    {/* <p className="text-sm sm:text-base text-zinc-300 leading-relaxed font-normal mt-2">
                       {desc}
-                    </p>
+                    </p> */}
                   </div>
 
                 </Link>

@@ -1,13 +1,15 @@
 "use client";
 
 import React from "react";
+import { ChevronRight } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
+import Link from "next/link";
 
 interface IndustryHeroProps {
   industryName: string;
   title: string;
   highlightedWord: string;
-  subtitle: string;
+  subtitle?: string;
   bgImage: string;
 }
 
@@ -15,11 +17,10 @@ export function IndustryHero({
   industryName,
   title,
   highlightedWord,
-  subtitle,
   bgImage
 }: IndustryHeroProps) {
   return (
-    <section className="w-full relative overflow-hidden bg-black text-white min-h-[550px] lg:min-h-[640px] flex items-center border-b border-zinc-900/60 -mt-16">
+    <section className="w-full relative overflow-hidden bg-black text-white min-h-[380px] sm:min-h-[420px] lg:min-h-[480px] flex flex-col justify-between border-b border-zinc-900/60 -mt-16 font-sans">
       {/* Background Graphic Asset with High-End Gradients */}
       <div className="absolute inset-0 z-0">
         <img src={bgImage} 
@@ -32,46 +33,30 @@ export function IndustryHero({
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(225,29,72,0.06),transparent_50%)] pointer-events-none" />
       </div>
 
-      <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10 pt-36 pb-20 lg:pt-44 lg:pb-28">
-        <div className="max-w-3xl text-left">
-          
-          {/* Custom Breadcrumb */}
-          <Reveal className="flex items-center gap-2 text-xs md:text-sm font-semibold text-zinc-400 mb-8 uppercase tracking-widest">
-            <a href="/" className="hover:text-white transition-colors">Home</a>
-            <span className="text-zinc-700">&gt;</span>
-            <a href="/industries" className="hover:text-white transition-colors">Industries</a>
-            <span className="text-zinc-700">&gt;</span>
-            <span className="text-rose-500 font-semibold">{industryName}</span>
-          </Reveal>
+      <div className="max-w-7xl mx-auto w-full px-6 sm:px-8 lg:px-12 xl:px-8 relative z-10 pt-28 sm:pt-32 lg:pt-36 pb-12 sm:pb-16 flex-grow flex flex-col justify-between">
+        
+        {/* Custom Breadcrumb - Pinned at top side right below Navbar */}
+        <Reveal className="flex items-center gap-2 text-xs md:text-sm font-semibold text-zinc-400 mb-6 uppercase tracking-widest">
+          <Link href="/" className="hover:text-white transition-colors">Home</Link>
+          <ChevronRight size={14} className="text-zinc-600 flex-shrink-0" />
+          <Link href="/industries" className="hover:text-white transition-colors">Industries</Link>
+          <ChevronRight size={14} className="text-zinc-600 flex-shrink-0" />
+          <span className="text-rose-500 font-semibold">{industryName}</span>
+        </Reveal>
 
-          {/* Animated Header */}
+        {/* Animated Header */}
+        <div className="max-w-4xl text-left my-auto py-4">
           <Reveal delay={0.1}>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-semibold tracking-tight leading-[1.12] text-white font-sans mb-6">
-              {title}
-              <br />
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-semibold tracking-tight leading-[1.12] text-white font-sans">
+              {title}{" "}
               <span className="text-rose-500 font-semibold">{highlightedWord}</span>
             </h1>
           </Reveal>
-
-          {/* Subtitle block */}
-          <Reveal delay={0.2}>
-            <p className="text-zinc-200 text-base md:text-lg leading-relaxed font-medium max-w-xl mb-8">
-              {subtitle}
-            </p>
-          </Reveal>
-
-          {/* CTA Link */}
-          <Reveal delay={0.3}>
-            <a 
-              href="#overview" 
-              className="inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs sm:text-sm font-semibold tracking-wider uppercase bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white transition-all duration-300 hover:shadow-[0_0_25px_rgba(225,29,72,0.35)] hover:-translate-y-0.5"
-            >
-              Explore Capabilities <span className="ml-2">↓</span>
-            </a>
-          </Reveal>
-
         </div>
+
       </div>
     </section>
   );
 }
+
+

@@ -95,7 +95,7 @@ export function EcosystemRationale() {
           </Reveal>
           <Reveal delay={0.2}>
             <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-bold max-w-2xl">
-              Traditional outsourcing models are broken. We replaced transactional vendor relationships with a unified ecosystem designed to drive continuous transformation and measurable results. Explore our <Link href="/services" className="text-rose-500 hover:underline font-bold">managed engineering services</Link> and read our <Link href="/about/overview" className="text-rose-500 hover:underline font-bold">company overview</Link>.
+              Traditional outsourcing models are broken. We replaced transactional vendor relationships with a unified ecosystem designed to drive continuous transformation and measurable results. Explore our <Link href="/services" className="text-rose-500 hover:underline font-bold">managed engineering services</Link> and read our <Link href="/about/company-overview" className="text-rose-500 hover:underline font-bold">company overview</Link>.
             </p>
           </Reveal>
         </div>

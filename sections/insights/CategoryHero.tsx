@@ -21,7 +21,7 @@ const CATEGORY_MAP: Record<string, CategoryConfig> = {
   "awards": {
     image: "/webp/assets/Insights-page/herocard/1.webp",
     titlePrefix: "Honors &",
-    description: <>Celebrating our industry recognition, benchmark excellence, and the milestones achieved by the Devopstrio engineering teams. Learn more in our <Link href="/about/overview" className="text-rose-500 hover:underline font-bold">company overview</Link>.</>
+    description: <>Celebrating our industry recognition, benchmark excellence, and the milestones achieved by the Devopstrio engineering teams. Learn more in our <Link href="/about/company-overview" className="text-rose-500 hover:underline font-bold">company overview</Link>.</>
   },
   "blogs": {
     image: "/webp/assets/Insights-page/herocard/2.webp",
@@ -51,12 +51,12 @@ const CATEGORY_MAP: Record<string, CategoryConfig> = {
   "celebration": {
     image: "/webp/assets/Insights-page/herocard/4.webp",
     titlePrefix: "Milestones &",
-    description: <>Commemorating our growth, team events, and the shared successes that shape the vibrant ecosystem of Devopstrio. Read our <Link href="/about/overview" className="text-rose-500 hover:underline font-bold">about overview</Link> details.</>
+    description: <>Commemorating our growth, team events, and the shared successes that shape the vibrant ecosystem of Devopstrio. Read our <Link href="/about/company-overview" className="text-rose-500 hover:underline font-bold">about overview</Link> details.</>
   },
   "celebrations": {
     image: "/webp/assets/Insights-page/herocard/4.webp",
     titlePrefix: "Milestones &",
-    description: <>Commemorating our growth, team events, and the shared successes that shape the vibrant ecosystem of Devopstrio. Read our <Link href="/about/overview" className="text-rose-500 hover:underline font-bold">about overview</Link> details.</>
+    description: <>Commemorating our growth, team events, and the shared successes that shape the vibrant ecosystem of Devopstrio. Read our <Link href="/about/company-overview" className="text-rose-500 hover:underline font-bold">about overview</Link> details.</>
   },
   "client": {
     image: "/webp/assets/Insights-page/herocard/5.webp",
@@ -71,12 +71,12 @@ const CATEGORY_MAP: Record<string, CategoryConfig> = {
   "events": {
     image: "/webp/assets/Insights-page/herocard/6.webp",
     titlePrefix: "Industry",
-    description: <>Stay updated with our upcoming webinars, hackathons, international conferences, and community-driven knowledge sharing. Learn about our <Link href="/about/overview" className="text-rose-500 hover:underline font-bold">company overview</Link>.</>
+    description: <>Stay updated with our upcoming webinars, hackathons, international conferences, and community-driven knowledge sharing. Learn about our <Link href="/about/company-overview" className="text-rose-500 hover:underline font-bold">company overview</Link>.</>
   },
   "event": {
     image: "/webp/assets/Insights-page/herocard/6.webp",
     titlePrefix: "Industry",
-    description: <>Stay updated with our upcoming webinars, hackathons, international conferences, and community-driven knowledge sharing. Learn about our <Link href="/about/overview" className="text-rose-500 hover:underline font-bold">company overview</Link>.</>
+    description: <>Stay updated with our upcoming webinars, hackathons, international conferences, and community-driven knowledge sharing. Learn about our <Link href="/about/company-overview" className="text-rose-500 hover:underline font-bold">company overview</Link>.</>
   },
   "impact-metrics": {
     image: "/webp/assets/Insights-page/herocard/7.webp",
@@ -91,37 +91,37 @@ const CATEGORY_MAP: Record<string, CategoryConfig> = {
   "team-culture": {
     image: "/webp/assets/Insights-page/herocard/8.webp",
     titlePrefix: "People &",
-    description: <>A look inside Devopstrio. Discover our remote-first philosophies, engineering principles, and continuous learning initiatives. Explore <Link href="/about/life" className="text-rose-500 hover:underline font-bold">culture and life</Link> at Devopstrio.</>
+    description: <>A look inside Devopstrio. Discover our remote-first philosophies, engineering principles, and continuous learning initiatives. Explore <Link href="/about/our-culture-people" className="text-rose-500 hover:underline font-bold">culture and life</Link> at Devopstrio.</>
   },
   "team_culture": {
     image: "/webp/assets/Insights-page/herocard/8.webp",
     titlePrefix: "People &",
-    description: <>A look inside Devopstrio. Discover our remote-first philosophies, engineering principles, and continuous learning initiatives. Explore <Link href="/about/life" className="text-rose-500 hover:underline font-bold">culture and life</Link> at Devopstrio.</>
+    description: <>A look inside Devopstrio. Discover our remote-first philosophies, engineering principles, and continuous learning initiatives. Explore <Link href="/about/our-culture-people" className="text-rose-500 hover:underline font-bold">culture and life</Link> at Devopstrio.</>
   },
   "white-paper": {
     image: "/webp/assets/Insights-page/herocard/9.webp",
     titlePrefix: "Research &",
-    description: <>In-depth research papers, architectural blueprints, and compliance frameworks authored by senior platform engineers. Read about our <Link href="/about/overview" className="text-rose-500 hover:underline font-bold">company overview</Link>.</>
+    description: <>In-depth research papers, architectural blueprints, and compliance frameworks authored by senior platform engineers. Read about our <Link href="/about/company-overview" className="text-rose-500 hover:underline font-bold">company overview</Link>.</>
   },
   "white-papers": {
     image: "/webp/assets/Insights-page/herocard/9.webp",
     titlePrefix: "Research &",
-    description: <>In-depth research papers, architectural blueprints, and compliance frameworks authored by senior platform engineers. Read about our <Link href="/about/overview" className="text-rose-500 hover:underline font-bold">company overview</Link>.</>
+    description: <>In-depth research papers, architectural blueprints, and compliance frameworks authored by senior platform engineers. Read about our <Link href="/about/company-overview" className="text-rose-500 hover:underline font-bold">company overview</Link>.</>
   },
   "white_paper": {
     image: "/webp/assets/Insights-page/herocard/9.webp",
     titlePrefix: "Research &",
-    description: <>In-depth research papers, architectural blueprints, and compliance frameworks authored by senior platform engineers. Read about our <Link href="/about/overview" className="text-rose-500 hover:underline font-bold">company overview</Link>.</>
+    description: <>In-depth research papers, architectural blueprints, and compliance frameworks authored by senior platform engineers. Read about our <Link href="/about/company-overview" className="text-rose-500 hover:underline font-bold">company overview</Link>.</>
   },
   "whitepapers": {
     image: "/webp/assets/Insights-page/herocard/9.webp",
     titlePrefix: "Research &",
-    description: <>In-depth research papers, architectural blueprints, and compliance frameworks authored by senior platform engineers. Read about our <Link href="/about/overview" className="text-rose-500 hover:underline font-bold">company overview</Link>.</>
+    description: <>In-depth research papers, architectural blueprints, and compliance frameworks authored by senior platform engineers. Read about our <Link href="/about/company-overview" className="text-rose-500 hover:underline font-bold">company overview</Link>.</>
   },
   "whitepaper": {
     image: "/webp/assets/Insights-page/herocard/9.webp",
     titlePrefix: "Research &",
-    description: <>In-depth research papers, architectural blueprints, and compliance frameworks authored by senior platform engineers. Read about our <Link href="/about/overview" className="text-rose-500 hover:underline font-bold">company overview</Link>.</>
+    description: <>In-depth research papers, architectural blueprints, and compliance frameworks authored by senior platform engineers. Read about our <Link href="/about/company-overview" className="text-rose-500 hover:underline font-bold">company overview</Link>.</>
   }
 };
 
@@ -141,7 +141,7 @@ const getCategoryConfig = (slug: string): CategoryConfig => {
   return {
     image: "/webp/assets/Insights-page/herocard/Blogs.webp",
     titlePrefix: "Insights &",
-    description: <>Exploring all resources, guides, and engineering documentation published under the '{slug}' category. Learn about our <Link href="/about/overview" className="text-rose-500 hover:underline font-bold">company overview</Link>.</>
+    description: <>Exploring all resources, guides, and engineering documentation published under the '{slug}' category. Learn about our <Link href="/about/company-overview" className="text-rose-500 hover:underline font-bold">company overview</Link>.</>
   };
 };
 

@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { ArrowUpRight } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
 import Link from "next/link";
 
@@ -25,7 +25,7 @@ export function IndustriesHero({
   bgImage = "/webp/assets/industries_hero_bg.webp"
 }: IndustriesHeroProps) {
   return (
-    <section className="w-full relative overflow-hidden bg-black text-white min-h-screen md:min-h-[100dvh] flex items-center justify-center -mt-24 font-sans">
+    <section className="w-full relative overflow-hidden bg-black text-white min-h-screen md:min-h-[100dvh] flex flex-col justify-between -mt-24 font-sans">
       
       {/* Cover Background Image */}
       <div className="absolute inset-0 z-0">
@@ -40,32 +40,36 @@ export function IndustriesHero({
         <div className="absolute inset-0 bg-gradient-to-t from-[#030303] via-transparent to-transparent" />
       </div>
 
-      <div className="max-w-7xl mx-auto w-full px-6 sm:px-8 lg:px-12 xl:px-8 relative z-10 pt-28 sm:pt-36 lg:pt-40 pb-16 sm:pb-20 lg:pb-24 my-auto">
-        <div className="max-w-4xl text-left">
-          
-          {/* Breadcrumb Navigation */}
-          <Reveal className="flex items-center gap-2 text-xs md:text-sm font-semibold text-zinc-400 mb-6 sm:mb-8 uppercase tracking-widest">
-            <a href="/" className="hover:text-white transition-colors">Home</a>
-            <span className="text-zinc-700">&gt;</span>
-            {breadcrumbCurrent !== "Industries" ? (
-              <>
-                <a href="/industries" className="hover:text-white transition-colors">Industries</a>
-                <span className="text-zinc-700">&gt;</span>
-              </>
-            ) : null}
-            <span className="text-rose-500 font-semibold">{breadcrumbCurrent}</span>
-          </Reveal>
+      <div className="max-w-7xl mx-auto w-full px-6 sm:px-8 lg:px-12 xl:px-8 relative z-10 pt-32 sm:pt-36 lg:pt-40 pb-16 sm:pb-20 lg:pb-24 flex-grow flex flex-col justify-between">
+        
+        {/* Breadcrumb Navigation - Pinned at top side right below Navbar */}
+        <Reveal className="flex items-center gap-2 text-xs md:text-sm font-semibold text-zinc-400 mb-6 sm:mb-8 uppercase tracking-widest">
+          <Link href="/" className="hover:text-white transition-colors">Home</Link>
+          <ChevronRight size={14} className="text-zinc-600 flex-shrink-0" />
+          {breadcrumbCurrent !== "Industries" ? (
+            <>
+              <Link href="/industries" className="hover:text-white transition-colors">Industries</Link>
+              <ChevronRight size={14} className="text-zinc-600 flex-shrink-0" />
+            </>
+          ) : null}
+          <span className="text-rose-500 font-semibold">{breadcrumbCurrent}</span>
+        </Reveal>
 
+        {/* Main Content Area */}
+        <div className="max-w-4xl text-left my-auto py-4">
+          
           {/* Headline */}
           <Reveal delay={0.1}>
-            <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold tracking-tight leading-[1.1] text-white font-sans mb-6">
+            <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold tracking-tight leading-[1.1] text-white font-sans">
               {titlePrefix} <br className="hidden sm:inline" />
               <span className="text-rose-500 font-semibold">{titleHighlight}</span>
             </h1>
           </Reveal>
 
         </div>
+
       </div>
     </section>
   );
 }
+

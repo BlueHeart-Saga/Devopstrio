@@ -33,7 +33,7 @@ function getCapabilityDefinition(title: string, subtitle: string): {
             data engineering platforms
           </Link>{" "}
           and read our{" "}
-          <Link href="/about/overview" className="text-rose-500 hover:underline font-bold">
+          <Link href="/about/company-overview" className="text-rose-500 hover:underline font-bold">
             company overview
           </Link>{" "}
           for compliance.
@@ -109,7 +109,7 @@ function getCapabilityDefinition(title: string, subtitle: string): {
             multi-cloud fabrics
           </Link>{" "}
           and read our{" "}
-          <Link href="/about/overview" className="text-rose-500 hover:underline font-bold">
+          <Link href="/about/company-overview" className="text-rose-500 hover:underline font-bold">
             company overview
           </Link>{" "}
           for details.
@@ -185,7 +185,7 @@ function getCapabilityDefinition(title: string, subtitle: string): {
             digital transformation services
           </Link>{" "}
           and read our{" "}
-          <Link href="/about/overview" className="text-rose-500 hover:underline font-bold">
+          <Link href="/about/company-overview" className="text-rose-500 hover:underline font-bold">
             company overview
           </Link>{" "}
           for design details.
@@ -213,7 +213,7 @@ function getCapabilityDefinition(title: string, subtitle: string): {
             IT consulting services
           </Link>{" "}
           and see our{" "}
-          <Link href="/about/overview" className="text-rose-500 hover:underline font-bold">
+          <Link href="/about/company-overview" className="text-rose-500 hover:underline font-bold">
             company overview
           </Link>{" "}
           for transition templates.
@@ -241,7 +241,7 @@ function getCapabilityDefinition(title: string, subtitle: string): {
             software development services
           </Link>{" "}
           and read our{" "}
-          <Link href="/about/overview" className="text-rose-500 hover:underline font-bold">
+          <Link href="/about/company-overview" className="text-rose-500 hover:underline font-bold">
             company overview
           </Link>{" "}
           to see our approach.
@@ -269,7 +269,7 @@ function getCapabilityDefinition(title: string, subtitle: string): {
             testimonials
           </Link>{" "}
           and explore our{" "}
-          <Link href="/about/overview" className="text-rose-500 hover:underline font-bold">
+          <Link href="/about/company-overview" className="text-rose-500 hover:underline font-bold">
             company overview
           </Link>{" "}
           for architectural audits.
@@ -292,7 +292,7 @@ function getCapabilityDefinition(title: string, subtitle: string): {
     paragraph1: (
       <span>
         {title} is a dedicated operational and engineering capability designed to streamline systems, eliminate tech bottlenecks, and deploy production-grade configurations. By establishing secure, automated environments, this practice helps organizations align their digital platforms. Explore our{" "}
-        <Link href="/about/overview" className="text-rose-500 hover:underline font-bold">
+        <Link href="/about/company-overview" className="text-rose-500 hover:underline font-bold">
           company overview
         </Link>{" "}
         for further info.

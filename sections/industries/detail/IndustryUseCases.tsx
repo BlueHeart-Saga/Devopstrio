@@ -136,7 +136,7 @@ export function IndustryUseCases({ useCases }: IndustryUseCasesProps) {
         <div className="relative w-full">
           <div
             ref={scrollContainerRef}
-            className="flex gap-6 overflow-x-auto hide-scrollbar pb-8 snap-x snap-mandatory scroll-smooth"
+            className="flex items-stretch gap-6 overflow-x-auto hide-scrollbar pb-8 snap-x snap-mandatory scroll-smooth"
             style={{
               WebkitOverflowScrolling: "touch",
               msOverflowStyle: "none",
@@ -149,7 +149,7 @@ export function IndustryUseCases({ useCases }: IndustryUseCasesProps) {
               return (
                 <div
                   key={idx}
-                  className="snap-start flex-shrink-0 w-[290px] sm:w-[320px] bg-[#0b0b0c] border border-white/10 rounded-[24px] overflow-hidden flex flex-col justify-between h-[480px] hover:border-rose-500/35 hover:shadow-[0_8px_32px_rgba(244,63,94,0.08)] transition-all duration-300 relative group"
+                  className="snap-start flex-shrink-0 w-[280px] sm:w-[320px] lg:w-[340px] bg-[#0b0b0c] border border-white/10 rounded-[24px] overflow-hidden flex flex-col justify-between hover:border-rose-500/35 hover:shadow-[0_8px_32px_rgba(244,63,94,0.08)] transition-all duration-300 relative group"
                 >
                   {/* Padded image layout */}
                   <div className="p-3 pb-0">
@@ -164,17 +164,17 @@ export function IndustryUseCases({ useCases }: IndustryUseCasesProps) {
 
                   {/* Card Content */}
                   <div className="p-6 flex flex-col flex-grow text-left">
-                    <span className="text-xs font-mono tracking-widest text-[#E11D48] uppercase font-semibold block mb-2">
+                    {/* <span className="text-xs font-mono tracking-widest text-[#E11D48] uppercase font-semibold block mb-2">
                       Success Case {(idx + 1).toString().padStart(2, "0")}
-                    </span>
+                    </span> */}
 
-                    <h3 className="text-lg font-semibold text-white mb-2 leading-snug group-hover:text-rose-500 transition-colors">
+                    <h3 className="text-xl sm:text-2xl font-bold text-white mb-2 leading-snug group-hover:text-rose-500 transition-colors font-sans">
                       {uc.title}
                     </h3>
 
-                    <p className="text-sm sm:text-base text-zinc-300 leading-relaxed font-normal">
+                    {/* <p className="text-base sm:text-lg text-zinc-300 leading-relaxed font-normal">
                       {uc.result}
-                    </p>
+                    </p> */}
                   </div>
 
                   {/* Card Actions Footer */}

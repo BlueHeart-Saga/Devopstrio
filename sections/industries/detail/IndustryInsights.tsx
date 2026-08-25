@@ -190,9 +190,9 @@ export function IndustryInsights({ insights }: IndustryInsightsProps) {
 
                     <div>
                       {/* Description */}
-                      <p className="text-sm sm:text-base text-zinc-300 leading-relaxed font-normal line-clamp-3">
+                      {/* <p className="text-sm sm:text-base text-zinc-300 leading-relaxed font-normal line-clamp-3">
                         {ins.desc}
-                      </p>
+                      </p> */}
 
                       {/* Read Article Indicator Footer */}
                       <div className="mt-6 pt-4 border-t border-white/5 flex items-center justify-between text-zinc-400 group-hover:text-white transition-colors duration-300">

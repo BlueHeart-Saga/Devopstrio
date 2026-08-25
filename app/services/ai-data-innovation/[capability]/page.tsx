@@ -118,7 +118,7 @@ export default function CapabilityPage({ params }: PageProps) {
     deepDiveParagraph1: (
       <span>
         Generative AI is no longer a future concept it's the competitive edge UK businesses are adopting right now. Unlike rule-based automation that breaks the moment conditions change, generative AI systems understand intent, adapt to context, and produce meaningful outputs across text, code, images, and structured data. Read our{" "}
-        <Link href="/about/overview" className="text-rose-500 hover:underline font-bold">
+        <Link href="/about/company-overview" className="text-rose-500 hover:underline font-bold">
           company overview
         </Link>{" "}
         to learn about our secure infrastructure models.
@@ -175,7 +175,7 @@ export default function CapabilityPage({ params }: PageProps) {
     deepDiveParagraph1: (
       <span>
         Machine learning development services in UK refer to the complete process of building data-driven systems that allow software to learn, adapt, and improve over time without being manually reprogrammed. For UK businesses, this means moving beyond rulebased tools. See our{" "}
-        <Link href="/about/overview" className="text-rose-500 hover:underline font-bold">
+        <Link href="/about/company-overview" className="text-rose-500 hover:underline font-bold">
           company overview
         </Link>{" "}
         to review our approach.

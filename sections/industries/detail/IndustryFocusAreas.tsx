@@ -56,32 +56,23 @@ export function IndustryFocusAreas({ focusAreas }: IndustryFocusAreasProps) {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {mergedFocusAreas.map((area, idx) => (
             <Reveal key={idx} delay={idx * 0.05} className="h-full">
-              <div className="group h-full bg-[#0b0b0c] border border-white/10 rounded-[24px] p-8 flex flex-col justify-between min-h-[260px] hover:border-rose-500/35 hover:shadow-[0_8px_32px_rgba(244,63,94,0.08)] transition-all duration-300 relative overflow-hidden cursor-pointer">
+              <div className="group h-full bg-[#0b0b0c] border border-white/10 rounded-[24px] p-7 sm:p-8 flex flex-col justify-between min-h-[180px] sm:min-h-[200px] hover:border-rose-500/35 hover:shadow-[0_8px_32px_rgba(244,63,94,0.08)] hover:-translate-y-1 transition-all duration-300 relative overflow-hidden cursor-pointer">
                 
                 {/* Subtle Inner Glow on Hover */}
-                <div className="absolute inset-0 bg-gradient-to-br from-[#E11D48]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-
-                {/* Index Indicator */}
-                <span className="absolute top-6 right-8 text-xs font-mono font-semibold text-[#E11D48] bg-[#E11D48]/10 px-2 py-1 rounded-md">
-                  {(idx + 1).toString().padStart(2, "0")}
-                </span>
+                <div className="absolute inset-0 bg-gradient-to-br from-rose-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
                 <div>
-                  <span className="block text-xs font-semibold tracking-widest text-zinc-400 uppercase mb-4">
+                  <span className="block text-xs font-semibold tracking-widest text-zinc-400 uppercase mb-3 font-mono">
                     Focus Domain
                   </span>
                   
-                  <h3 className="text-xl font-semibold text-white mb-3 tracking-tight group-hover:text-[#E11D48] transition-colors duration-300">
+                  <h3 className="text-xl sm:text-2xl font-bold text-white mb-2 tracking-tight group-hover:text-rose-500 transition-colors duration-300 font-sans">
                     {area.title}
                   </h3>
-                  
-                  <p className="text-zinc-300 text-sm sm:text-base leading-relaxed font-normal mb-6">
-                    {area.desc}
-                  </p>
                 </div>
 
                 {/* Card Footer */}
-                <div className="mt-auto pt-4 border-t border-white/5 flex items-center justify-between text-zinc-400 group-hover:text-white transition-colors duration-300">
+                <div className="mt-6 pt-4 border-t border-white/5 flex items-center justify-between text-zinc-400 group-hover:text-white transition-colors duration-300">
                   <span className="text-xs uppercase font-semibold tracking-wider">
                     Operational Focus
                   </span>

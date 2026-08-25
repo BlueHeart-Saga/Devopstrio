@@ -24,7 +24,7 @@ const premiumServicesCopy: Record<string, {
           data engineering platforms
         </Link>{" "}
         and read our{" "}
-        <Link href="/about/overview" className="text-rose-500 hover:underline font-bold">
+        <Link href="/about/company-overview" className="text-rose-500 hover:underline font-bold">
           company overview
         </Link>{" "}
         to see how we comply with SOC-2 Type II, ISO 27001, and HIPAA mandates, guaranteeing absolute prompt confidentiality and strict corporate data isolation.
@@ -44,7 +44,7 @@ const premiumServicesCopy: Record<string, {
     ctaDesc: (
       <span>
         Partner with our principal AI research engineers to evaluate model candidates, run compliance audits on your private datasets, and sketch production-ready RAG topologies. Read our{" "}
-        <Link href="/about/overview" className="text-rose-500 hover:underline font-bold">
+        <Link href="/about/company-overview" className="text-rose-500 hover:underline font-bold">
           company overview
         </Link>{" "}
         or schedule a session today.
@@ -67,7 +67,7 @@ const premiumServicesCopy: Record<string, {
           DevOps automation
         </Link>{" "}
         integrations and explore our{" "}
-        <Link href="/about/overview" className="text-rose-500 hover:underline font-bold">
+        <Link href="/about/company-overview" className="text-rose-500 hover:underline font-bold">
           company overview
         </Link>
         .
@@ -110,7 +110,7 @@ const premiumServicesCopy: Record<string, {
           multi-cloud systems
         </Link>{" "}
         and view our{" "}
-        <Link href="/about/overview" className="text-rose-500 hover:underline font-bold">
+        <Link href="/about/company-overview" className="text-rose-500 hover:underline font-bold">
           company overview
         </Link>
         .
@@ -153,7 +153,7 @@ const premiumServicesCopy: Record<string, {
           managed operations
         </Link>{" "}
         and read our{" "}
-        <Link href="/about/overview" className="text-rose-500 hover:underline font-bold">
+        <Link href="/about/company-overview" className="text-rose-500 hover:underline font-bold">
           company overview
         </Link>
         .
@@ -196,7 +196,7 @@ const premiumServicesCopy: Record<string, {
           digital transformation services
         </Link>{" "}
         and view our{" "}
-        <Link href="/about/overview" className="text-rose-500 hover:underline font-bold">
+        <Link href="/about/company-overview" className="text-rose-500 hover:underline font-bold">
           company overview
         </Link>
         .
@@ -239,7 +239,7 @@ const premiumServicesCopy: Record<string, {
           IT consulting services
         </Link>{" "}
         and read our{" "}
-        <Link href="/about/overview" className="text-rose-500 hover:underline font-bold">
+        <Link href="/about/company-overview" className="text-rose-500 hover:underline font-bold">
           company overview
         </Link>
         .
@@ -282,7 +282,7 @@ const premiumServicesCopy: Record<string, {
           AI and data innovation
         </Link>{" "}
         capabilities and discover our{" "}
-        <Link href="/about/overview" className="text-rose-500 hover:underline font-bold">
+        <Link href="/about/company-overview" className="text-rose-500 hover:underline font-bold">
           company overview
         </Link>
         .
@@ -321,11 +321,11 @@ const premiumServicesCopy: Record<string, {
     overviewDesc1: (
       <span>
         We monitor systems, manage security updates, tune database indexes, and validate backups around the clock. Our support response SLAs are guaranteed. Explore our dedicated{" "}
-        <Link href="/about/support" className="text-rose-500 hover:underline font-bold">
+        <Link href="/about/customer-support" className="text-rose-500 hover:underline font-bold">
           support page
         </Link>{" "}
         and read our{" "}
-        <Link href="/about/overview" className="text-rose-500 hover:underline font-bold">
+        <Link href="/about/company-overview" className="text-rose-500 hover:underline font-bold">
           company overview
         </Link>
         .
@@ -345,7 +345,7 @@ const premiumServicesCopy: Record<string, {
     ctaDesc: (
       <span>
         Talk to our support leads to establish service level agreements, review on-call schedules, and plan backup management. See our dedicated{" "}
-        <Link href="/about/support" className="text-rose-500 hover:underline font-bold">
+        <Link href="/about/customer-support" className="text-rose-500 hover:underline font-bold">
           client support desk
         </Link>
         .
@@ -368,7 +368,7 @@ const premiumServicesCopy: Record<string, {
           custom software engineering
         </Link>{" "}
         and read our{" "}
-        <Link href="/about/overview" className="text-rose-500 hover:underline font-bold">
+        <Link href="/about/company-overview" className="text-rose-500 hover:underline font-bold">
           company overview
         </Link>
         .
@@ -411,7 +411,7 @@ const premiumServicesCopy: Record<string, {
           client testimonials
         </Link>{" "}
         and explore our{" "}
-        <Link href="/about/overview" className="text-rose-500 hover:underline font-bold">
+        <Link href="/about/company-overview" className="text-rose-500 hover:underline font-bold">
           company overview
         </Link>
         .

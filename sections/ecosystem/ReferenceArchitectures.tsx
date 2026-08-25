@@ -18,7 +18,7 @@ export function ReferenceArchitectures() {
             Our standard <span className="text-rose-500">delivery stacks</span>
           </h2>
           <p className="text-zinc-200 text-base md:text-lg font-semibold leading-relaxed mt-2 max-w-xl">
-            Pre-validated, robust technical templates designed to spin up secure production infrastructure in minutes. Explore our <Link href="/services/cloud-services" className="text-rose-500 hover:underline font-bold">cloud services</Link> and read our <Link href="/about/overview" className="text-rose-500 hover:underline font-bold">company overview</Link>.
+            Pre-validated, robust technical templates designed to spin up secure production infrastructure in minutes. Explore our <Link href="/services/cloud-services" className="text-rose-500 hover:underline font-bold">cloud services</Link> and read our <Link href="/about/company-overview" className="text-rose-500 hover:underline font-bold">company overview</Link>.
           </p>
         </Reveal>
 

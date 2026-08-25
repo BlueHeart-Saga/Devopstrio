@@ -32,7 +32,7 @@ export function InsightsJourney() {
             Narrating our <span className="font-semibold text-rose-500">milestones</span>
           </h2>
           <p className="text-zinc-400 text-sm leading-relaxed mt-4 max-w-xl font-semibold">
-            From our inception to our current global presence, we have partnered with enterprises to secure modern infrastructure. Read our <Link href="/about/overview" className="text-rose-500 hover:underline font-bold">company overview</Link> or discover our specialized <Link href="/services/cybersecurity" className="text-rose-500 hover:underline font-bold">cybersecurity</Link> and <Link href="/services/cloud-services" className="text-rose-500 hover:underline font-bold">cloud services</Link>.
+            From our inception to our current global presence, we have partnered with enterprises to secure modern infrastructure. Read our <Link href="/about/company-overview" className="text-rose-500 hover:underline font-bold">company overview</Link> or discover our specialized <Link href="/services/cybersecurity" className="text-rose-500 hover:underline font-bold">cybersecurity</Link> and <Link href="/services/cloud-services" className="text-rose-500 hover:underline font-bold">cloud services</Link>.
           </p>
         </Reveal>
 

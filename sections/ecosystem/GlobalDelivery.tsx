@@ -83,7 +83,7 @@ export function GlobalDelivery() {
             Global <span className="text-rose-500">delivery distribution</span>
           </h2>
           <p className="text-zinc-200 text-base md:text-lg font-semibold leading-relaxed mt-2 max-w-xl">
-            Sourcing certified architects and SRE leads globally to support continuous follow-the-sun operations. Explore our <Link href="/about/overview" className="text-rose-500 hover:underline font-bold">company overview</Link> and read our client <Link href="/about/testimonials" className="text-rose-500 hover:underline font-bold">testimonials</Link>.
+            Sourcing certified architects and SRE leads globally to support continuous follow-the-sun operations. Explore our <Link href="/about/company-overview" className="text-rose-500 hover:underline font-bold">company overview</Link> and read our client <Link href="/about/testimonials" className="text-rose-500 hover:underline font-bold">testimonials</Link>.
           </p>
         </Reveal>
 

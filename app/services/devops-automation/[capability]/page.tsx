@@ -110,7 +110,7 @@ export default function CapabilityPage({ params }: PageProps) {
           multi-cloud architecture models
         </Link>{" "}
         and find templates in our{" "}
-        <Link href="/about/overview" className="text-rose-500 hover:underline font-bold">
+        <Link href="/about/company-overview" className="text-rose-500 hover:underline font-bold">
           company overview
         </Link>{" "}
         documentation.

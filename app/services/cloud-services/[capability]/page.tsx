@@ -161,7 +161,7 @@ export default function CapabilityPage({ params }: PageProps) {
     deepDiveParagraph1: (
       <span>
         AWS cloud services in UK enable businesses to leverage scalable computing, secure storage, and intelligent networking through highly available cloud environments. They help organizations modernize infrastructure and protect critical workloads. Read our{" "}
-        <Link href="/about/overview" className="text-rose-500 hover:underline font-bold">
+        <Link href="/about/company-overview" className="text-rose-500 hover:underline font-bold">
           company overview
         </Link>{" "}
         to see our track record.

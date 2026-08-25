@@ -11,7 +11,7 @@ const stories = [
     role: "Software Engineer",
     path: "Intern → Software Engineer",
     image: "/webp/assets/Home-page/client-reviews/image-169.webp",
-    quote: <>"Starting as an intern in the <Link href="/about/internship" className="text-rose-500 hover:underline font-bold">internship program</Link>, I was immediately given real-world problems to solve. The mentorship here didn't just teach me how to code better; it taught me how to engineer solutions that scale. Within two years, I was leading my own microservices architecture."</>
+    quote: <>"Starting as an intern in the <Link href="/about/global-internship" className="text-rose-500 hover:underline font-bold">internship program</Link>, I was immediately given real-world problems to solve. The mentorship here didn't just teach me how to code better; it taught me how to engineer solutions that scale. Within two years, I was leading my own microservices architecture."</>
   },
   {
     name: "David Chen",

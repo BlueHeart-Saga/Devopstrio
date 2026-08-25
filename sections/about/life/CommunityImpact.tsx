@@ -14,7 +14,7 @@ const initiatives = [
   {
     icon: GraduationCap,
     title: "Education Programs",
-    description:  <>Scholarships and coding bootcamps for underprivileged youth to build the next generation of engineers in our <Link href="/about/internship" className="text-rose-500 hover:underline font-bold">internship track</Link>.</>
+    description:  <>Scholarships and coding bootcamps for underprivileged youth to build the next generation of engineers in our <Link href="/about/global-internship" className="text-rose-500 hover:underline font-bold">internship track</Link>.</>
   },
   {
     icon: MonitorSmartphone,

@@ -102,7 +102,7 @@ export function SystemArchitecture() {
 
           <Reveal delay={0.2}>
             <p className="text-zinc-200 text-xs sm:text-sm md:text-base leading-relaxed font-semibold max-w-2xl">
-              Devopstrio combines strategic technology partnerships, proprietary platforms, engineering accelerators, innovation labs, and global delivery capabilities into a unified ecosystem that enables organizations to build, modernize, and scale with confidence. Read our <Link href="/about/overview" className="text-rose-500 hover:underline font-bold">company overview</Link> and find out more about our <Link href="/services" className="text-rose-500 hover:underline font-bold">engineering services</Link>.
+              Devopstrio combines strategic technology partnerships, proprietary platforms, engineering accelerators, innovation labs, and global delivery capabilities into a unified ecosystem that enables organizations to build, modernize, and scale with confidence. Read our <Link href="/about/company-overview" className="text-rose-500 hover:underline font-bold">company overview</Link> and find out more about our <Link href="/services" className="text-rose-500 hover:underline font-bold">engineering services</Link>.
             </p>
           </Reveal>
         </div>

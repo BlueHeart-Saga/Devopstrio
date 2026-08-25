@@ -406,7 +406,7 @@ export default function DevOpsPlatformPage() {
 
             <div className="text-center relative z-10 mb-12 flex flex-col items-center">
               <h2 className="text-xl md:text-2xl xl:text-3xl font-bold text-zinc-100 mb-4 tracking-tight">Data Ingestion for DevOps Platform</h2>
-              <Link href="/integrations" className="text-rose-400 font-medium hover:text-rose-300 transition-colors inline-flex items-center gap-2 text-sm">
+              <Link href="/ecosystem/technology-stack" className="text-rose-400 font-medium hover:text-rose-300 transition-colors inline-flex items-center gap-2 text-sm">
                 Learn more <ChevronRight className="w-4 h-4" />
               </Link>
             </div>

@@ -242,7 +242,7 @@ export function IndustryCaseStudy({
         {/* Section Header */}
         <Reveal className="mb-12">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-white font-sans">
-            Proven <span className="text-[#E11D48] font-semibold">milestone achievements</span>
+            Our Case Study Proven <span className="text-[#E11D48] font-semibold">milestone achievements</span>
           </h2>
         </Reveal>
 
@@ -257,36 +257,36 @@ export function IndustryCaseStudy({
 
             {/* Left Panel: Title, Description, Highlights, Metrics */}
             <div>
-              <span className="text-xs font-mono tracking-widest text-[#E11D48] uppercase font-semibold block mb-2">
+              {/* <span className="text-xs sm:text-sm font-mono tracking-widest text-rose-500 uppercase font-bold block mb-3">
                 Case Study {(activeIdx + 1).toString().padStart(2, "0")} / {totalSlides.toString().padStart(2, "0")}
-              </span>
+              </span> */}
 
-              <h3 className="text-xl md:text-2xl font-bold text-white mb-3 leading-tight max-w-xl">
+              <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4 leading-tight max-w-xl font-sans">
                 {currentSlide.title}
               </h3>
 
-              <p className="text-zinc-300 text-sm sm:text-base leading-relaxed font-normal mb-4 max-w-xl">
+              {/* <p className="text-zinc-300 text-base sm:text-lg leading-relaxed font-normal mb-5 max-w-xl">
                 {currentSlide.desc}
-              </p>
+              </p> */}
 
-              {/* Highlights List (re-positioned to the left side in a clean grid) */}
-              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-6 text-xs sm:text-sm text-zinc-300 font-medium max-w-xl">
+              {/* Highlights List */}
+              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 mb-6 text-sm sm:text-base text-zinc-300 font-medium max-w-xl">
                 {currentSlide.highlights.map((hl, i) => (
-                  <li key={i} className="flex items-start gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#E11D48] mt-1.5 flex-shrink-0" />
+                  <li key={i} className="flex items-start gap-2.5">
+                    <span className="w-2 h-2 rounded-full bg-rose-500 mt-2 flex-shrink-0" />
                     <span className="leading-relaxed">{hl}</span>
                   </li>
                 ))}
               </ul>
 
               {/* Metrics Row */}
-              <div className="grid grid-cols-3 gap-4 pt-4 border-t border-white/5 max-w-xl">
+              <div className="grid grid-cols-3 gap-4 pt-4 border-t border-white/10 max-w-xl">
                 {currentSlide.metrics.map((m, i) => (
                   <div key={i}>
-                    <span className="block text-xl md:text-2xl font-black text-white font-mono tracking-tight">
+                    <span className="block text-2xl md:text-3xl font-black text-white font-mono tracking-tight">
                       {m.value}
                     </span>
-                    <span className="text-xs text-zinc-400 font-semibold uppercase tracking-wider block mt-0.5">
+                    <span className="text-xs sm:text-sm text-zinc-400 font-semibold uppercase tracking-wider block mt-1">
                       {m.label}
                     </span>
                   </div>

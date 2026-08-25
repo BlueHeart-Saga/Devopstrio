@@ -49,7 +49,7 @@ export const ProductEcosystem = () => {
             transition={{ delay: 0.1 }}
             className="text-zinc-400 text-sm md:text-base leading-relaxed font-bold max-w-xl mx-auto"
           >
-            Full lifecycle support for the entire Devopstrio product portfolio. Explore our <Link href="/ecosystem/our-products" className="text-rose-500 hover:underline">product ecosystem</Link> for detailed specs.
+            Full lifecycle support for the entire Devopstrio product portfolio. Explore our <Link href="/ecosystem/platforms-solutions" className="text-rose-500 hover:underline">product ecosystem</Link> for detailed specs.
           </motion.p>
         </div>
 

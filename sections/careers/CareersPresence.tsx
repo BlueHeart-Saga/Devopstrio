@@ -93,7 +93,7 @@ export function CareersPresence() {
               </span>
             </h2>
             <p className="text-zinc-300 text-base leading-relaxed font-semibold">
-              Join a globally distributed team across the UK, US, and India — with hybrid roles, flexible hours, and open positions in every timezone. Learn more about our <Link href="/about/global-presence" className="text-rose-500 hover:underline font-bold">global presence</Link> and <Link href="/about/overview" className="text-rose-500 hover:underline font-bold">company overview</Link>.
+              Join a globally distributed team across the UK, US, and India — with hybrid roles, flexible hours, and open positions in every timezone. Learn more about our <Link href="/about/global-presence" className="text-rose-500 hover:underline font-bold">global presence</Link> and <Link href="/about/company-overview" className="text-rose-500 hover:underline font-bold">company overview</Link>.
             </p>
           </div>
         </Reveal>

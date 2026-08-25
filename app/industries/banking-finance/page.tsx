@@ -11,8 +11,8 @@ import { IndustryChallenges } from "@/sections/industries/detail/IndustryChallen
 import { IndustrySolutions } from "@/sections/industries/detail/IndustrySolutions";
 import { IndustryFocusAreas } from "@/sections/industries/detail/IndustryFocusAreas";
 import { IndustryUseCases } from "@/sections/industries/detail/IndustryUseCases";
-import { IndustryTechStack } from "@/sections/industries/detail/IndustryTechStack";
-import { IndustryOutcomes } from "@/sections/industries/detail/IndustryOutcomes";
+// import { IndustryTechStack } from "@/sections/industries/detail/IndustryTechStack";
+// import { IndustryOutcomes } from "@/sections/industries/detail/IndustryOutcomes";
 import { IndustryCaseStudy } from "@/sections/industries/detail/IndustryCaseStudy";
 import { IndustryCompliance } from "@/sections/industries/detail/IndustryCompliance";
 import { IndustryWhyChoose } from "@/sections/industries/detail/IndustryWhyChoose";
@@ -27,8 +27,8 @@ const subSections = [
   { id: "solutions", label: "Solutions" },
   { id: "capabilities", label: "Capabilities" },
   { id: "use-cases", label: "Use Cases" },
-  { id: "tech-stack", label: "Tech Stack" },
-  { id: "outcomes", label: "Outcomes" },
+  // { id: "tech-stack", label: "Tech Stack" },
+  // { id: "outcomes", label: "Outcomes" },
   { id: "case-study", label: "Case Study" },
   { id: "compliance", label: "Compliance" },
   { id: "why-choose", label: "Why Choose Us" },
@@ -262,10 +262,10 @@ export default function BankingFinancePage() {
       <IndustryUseCases useCases={data.useCases} />
 
       {/* 7. Technology Stack */}
-      <IndustryTechStack techs={data.techs} />
+      {/* <IndustryTechStack techs={data.techs} /> */}
 
       {/* 8. Business Outcomes */}
-      <IndustryOutcomes outcomes={data.outcomes} />
+      {/* <IndustryOutcomes outcomes={data.outcomes} /> */}
 
       {/* 9. Success Stories */}
       <IndustryCaseStudy

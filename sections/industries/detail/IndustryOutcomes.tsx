@@ -50,9 +50,9 @@ export function IndustryOutcomes({ outcomes }: IndustryOutcomesProps) {
                   </h4>
                   
                   {/* Description */}
-                  <p className="text-sm sm:text-base text-zinc-300 leading-relaxed font-normal">
+                  {/* <p className="text-sm sm:text-base text-zinc-300 leading-relaxed font-normal">
                     {out.desc}
-                  </p>
+                  </p> */}
                 </div>
 
                 {/* Card Footer decoration */}

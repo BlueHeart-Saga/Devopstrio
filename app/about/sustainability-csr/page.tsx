@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { Reveal } from "@/components/ui/Reveal";
 import { AboutCTA } from "@/sections/about/AboutCTA";
 import { RepresentativeCTA } from "@/components/ui/RepresentativeCTA";
+import { CsrScrollStory } from "@/sections/about/sustainability-csr/CsrScrollStory";
 import {
   Leaf,
   Sun,
@@ -122,49 +123,14 @@ export default function CSRPage() {
   ];
 
   return (
-    <main className="relative min-h-screen bg-black text-white font-sans overflow-x-hidden selection:bg-emerald-500 selection:text-white">
+    <main className="relative min-h-screen bg-black text-white font-sans overflow-x-clip selection:bg-emerald-500 selection:text-white">
       
       {/* Subtle Background Glow */}
       <div className="absolute top-[-100px] left-[20%] w-[600px] h-[600px] bg-[radial-gradient(circle,rgba(16,185,129,0.08)_0%,transparent_70%)] blur-[120px] pointer-events-none z-0" />
       <div className="absolute top-[35%] right-[10%] w-[600px] h-[600px] bg-[radial-gradient(circle,rgba(4,120,87,0.06)_0%,transparent_70%)] blur-[140px] pointer-events-none z-0" />
 
-      {/* 1. HERO SECTION */}
-      <section className="relative min-h-screen w-full flex items-center justify-start overflow-hidden bg-[#030303] text-white py-20 px-6 lg:px-12 z-10 font-sans border-b border-zinc-900">
-        
-        <div className="absolute inset-0 z-0 pointer-events-none select-none">
-          <img src="/webp/assets/About-page/csr/hero-sustainability-bg.webp" 
-            alt="Sustainability Background"
-            className="w-full h-full object-cover object-center opacity-90 filter contrast-110 brightness-105"
-          loading="lazy" />
-          
-          <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-transparent z-10" />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-transparent to-black/80 z-10" />
-          
-          <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[700px] h-[700px] bg-[radial-gradient(circle_at_center,rgba(16,185,129,0.18),transparent_70%)] blur-[140px] z-10" />
-        </div>
-
-        <div className="max-w-7xl mx-auto w-full relative z-20 my-auto">
-          <div className="max-w-3xl">
-            <Reveal>
-              <h1 className="text-4xl sm:text-6xl lg:text-[4.5rem] font-semibold leading-[1.1] tracking-tight text-white mb-6 font-sans [text-shadow:_0_4px_30px_rgb(0_0_0_/_95%)] drop-shadow-[0_15px_30px_rgba(0,0,0,1)]">
-                Act Today <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-300 to-emerald-500 font-semibold drop-shadow-[0_0_35px_rgba(16,185,129,0.8)]">
-                  For a Better Tomorrow
-                </span>
-              </h1>
-
-              <div className="mt-8">
-                <button
-                  onClick={() => document.getElementById("projects-section")?.scrollIntoView({ behavior: "smooth" })}
-                  className="inline-flex items-center justify-center bg-emerald-500 hover:bg-emerald-400 text-black font-bold text-lg px-8 py-4 rounded-xl transition-all duration-300 shadow-[0_10px_25px_rgba(16,185,129,0.3)] hover:-translate-y-0.5"
-                >
-                  Explore Projects
-                </button>
-              </div>
-            </Reveal>
-          </div>
-        </div>
-      </section>
+      {/* 1. SCROLL-DRIVEN VIDEO STORYTELLING HERO SECTION */}
+      <CsrScrollStory />
 
       {/* 2. FOCUS AREAS */}
       <section className="py-16 sm:py-24 bg-black border-b border-zinc-900 relative">

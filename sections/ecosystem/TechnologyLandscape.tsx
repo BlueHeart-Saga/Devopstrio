@@ -137,7 +137,7 @@ export function TechnologyLandscape() {
             Our Multi-Cloud <span className="text-rose-500">Tech Stack</span>
           </h2>
           <p className="text-zinc-300 text-base md:text-lg font-semibold leading-relaxed max-w-2xl">
-            We work with the most modern tools across the software engineering lifecycle to ensure scale, security, and velocity. Explore our <Link href="/services" className="text-rose-500 hover:underline font-bold">managed engineering services</Link> or consult our <Link href="/about/overview" className="text-rose-500 hover:underline font-bold">company overview</Link>.
+            We work with the most modern tools across the software engineering lifecycle to ensure scale, security, and velocity. Explore our <Link href="/services" className="text-rose-500 hover:underline font-bold">managed engineering services</Link> or consult our <Link href="/about/company-overview" className="text-rose-500 hover:underline font-bold">company overview</Link>.
           </p>
         </Reveal>
 

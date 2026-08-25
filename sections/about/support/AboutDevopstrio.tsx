@@ -48,7 +48,7 @@ export const AboutDevopstrio = () => {
               transition={{ delay: 0.1 }}
               className="text-zinc-400 text-sm md:text-base leading-relaxed font-bold mb-8"
             >
-              Founded in 2019 and headquartered in London, Devopstrio is a global technology consulting and engineering company helping enterprises modernise their platforms under our <Link href="/about/overview" className="text-rose-500 hover:underline">company overview</Link>, accelerate innovation, and build resilient digital ecosystems.
+              Founded in 2019 and headquartered in London, Devopstrio is a global technology consulting and engineering company helping enterprises modernise their platforms under our <Link href="/about/company-overview" className="text-rose-500 hover:underline">company overview</Link>, accelerate innovation, and build resilient digital ecosystems.
             </motion.p>
 
             <motion.div

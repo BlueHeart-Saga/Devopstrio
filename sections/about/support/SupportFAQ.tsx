@@ -65,7 +65,7 @@ const faqs: FAQItemData[] = [
     a: (
       <span>
         We provide full lifecycle support for our entire product portfolio including Humanex, Brio, SafeSign, Prestivo, Campix, Homela, CareSuite, and Justivon on our{" "}
-        <Link href="/ecosystem/our-products" className="text-rose-500 hover:underline font-bold">
+        <Link href="/ecosystem/platforms-solutions" className="text-rose-500 hover:underline font-bold">
           products page
         </Link>, as well as our cloud and DevOps managed services.
       </span>

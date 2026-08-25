@@ -17,15 +17,15 @@ interface IndustryWhyChooseProps {
 const extraWhyChoose: WhyChooseItem[] = [
   {
     title: "Zero-Downtime Migration Models",
-    desc: <>Every <Link href="/services/cloud-services" className="text-rose-500 hover:underline">cloud refactoring</Link> release is backed by rigorous traffic-shadowing checks, preventing database locks and transactional drops.</>
+    desc: <>Every <Link href="/services/cloud-services" className="text-rose-500 hover:underline font-semibold">cloud refactoring</Link> release is backed by rigorous traffic-shadowing checks, preventing database locks and transactional drops.</>
   },
   {
     title: "100% Declarative Stacks",
-    desc: <>We enforce complete state declarations using Terraform and <Link href="/services/devops-automation" className="text-rose-500 hover:underline">GitOps controllers</Link>, meaning your network, compute, and IAM policies are always auditable.</>
+    desc: <>We enforce complete state declarations using Terraform and <Link href="/services/devops-automation" className="text-rose-500 hover:underline font-semibold">GitOps controllers</Link>, meaning your network, compute, and IAM policies are always auditable.</>
   },
   {
     title: "Pre-Configured Telemetry Baselines",
-    desc: <>Every repository we launch comes integrated with <Link href="/services/devops-automation" className="text-rose-500 hover:underline">OpenTelemetry</Link> agents, giving you instant dashboards for database queries and CPU usage.</>
+    desc: <>Every repository we launch comes integrated with <Link href="/services/devops-automation" className="text-rose-500 hover:underline font-semibold">OpenTelemetry</Link> agents, giving you instant dashboards for database queries and CPU usage.</>
   }
 ];
 
@@ -41,20 +41,20 @@ export function IndustryWhyChoose({ whyChoose }: IndustryWhyChooseProps) {
 
   // Icon mapping list
   const iconsList = [
-    <Award size={22} key="0" className="transition-transform duration-300 group-hover:scale-110" />,
-    <ShieldCheck size={22} key="1" className="transition-transform duration-300 group-hover:scale-110" />,
-    <Cpu size={22} key="2" className="transition-transform duration-300 group-hover:scale-110" />,
-    <Workflow size={22} key="3" className="transition-transform duration-300 group-hover:scale-110" />,
-    <Clock size={22} key="4" className="transition-transform duration-300 group-hover:scale-110" />,
-    <Sliders size={22} key="5" className="transition-transform duration-300 group-hover:scale-110" />
+    <Award size={24} key="0" className="transition-transform duration-300 group-hover:scale-110" />,
+    <ShieldCheck size={24} key="1" className="transition-transform duration-300 group-hover:scale-110" />,
+    <Cpu size={24} key="2" className="transition-transform duration-300 group-hover:scale-110" />,
+    <Workflow size={24} key="3" className="transition-transform duration-300 group-hover:scale-110" />,
+    <Clock size={24} key="4" className="transition-transform duration-300 group-hover:scale-110" />,
+    <Sliders size={24} key="5" className="transition-transform duration-300 group-hover:scale-110" />
   ];
 
   return (
-    <section id="why-choose" className="w-full py-24 bg-[#030303] border-b border-zinc-900/60 relative overflow-hidden text-white">
+    <section id="why-choose" className="w-full py-20 md:py-28 bg-[#030303] border-b border-zinc-900/60 relative overflow-hidden text-white font-sans">
       {/* Background Graphic Glow */}
       <div className="absolute top-[30%] left-[-10%] w-[35%] aspect-square bg-[radial-gradient(circle_at_center,rgba(244,63,94,0.015),transparent_70%)] pointer-events-none z-0" />
 
-      <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10 text-left">
+      <div className="max-w-7xl mx-auto w-full px-6 sm:px-8 xl:px-8 relative z-10 text-left">
         
         {/* Section Header */}
         <Reveal className="mb-14">
@@ -67,28 +67,28 @@ export function IndustryWhyChoose({ whyChoose }: IndustryWhyChooseProps) {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 pb-12">
           {finalWhyChoose.map((why, idx) => {
             const borderColors = [
-              "hover:border-rose-500/35",
-              "hover:border-blue-500/35",
-              "hover:border-emerald-500/35",
-              "hover:border-amber-500/35",
-              "hover:border-purple-500/35",
-              "hover:border-cyan-500/35"
+              "hover:border-rose-500/50",
+              "hover:border-blue-500/50",
+              "hover:border-emerald-500/50",
+              "hover:border-amber-500/50",
+              "hover:border-purple-500/50",
+              "hover:border-cyan-500/50"
             ];
             const glowGradients = [
-              "from-rose-500/5",
-              "from-blue-500/5",
-              "from-emerald-500/5",
-              "from-amber-500/5",
-              "from-purple-500/5",
-              "from-cyan-500/5"
+              "from-rose-500/10",
+              "from-blue-500/10",
+              "from-emerald-500/10",
+              "from-amber-500/10",
+              "from-purple-500/10",
+              "from-cyan-500/10"
             ];
             const titleHoverColors = [
-              "group-hover:text-rose-500",
-              "group-hover:text-blue-500",
-              "group-hover:text-emerald-500",
-              "group-hover:text-amber-500",
-              "group-hover:text-purple-500",
-              "group-hover:text-cyan-500"
+              "group-hover:text-rose-400",
+              "group-hover:text-blue-400",
+              "group-hover:text-emerald-400",
+              "group-hover:text-amber-400",
+              "group-hover:text-purple-400",
+              "group-hover:text-cyan-400"
             ];
             const graphicColors = [
               "text-rose-500",
@@ -101,7 +101,7 @@ export function IndustryWhyChoose({ whyChoose }: IndustryWhyChooseProps) {
 
             return (
               <Reveal key={idx} delay={idx * 0.05} className="h-full">
-                <div className={`group h-full bg-[#0b0b0c] border border-white/10 rounded-[24px] overflow-hidden flex flex-col justify-between min-h-[380px] ${borderColors[idx]} hover:shadow-[0_8px_32px_rgba(244,63,94,0.08)] transition-all duration-300 relative cursor-pointer`}>
+                <div className={`group h-full bg-[#0b0b0c] border border-white/10 rounded-[24px] overflow-hidden flex flex-col justify-between ${borderColors[idx]} hover:shadow-[0_20px_50px_rgba(0,0,0,0.85)] hover:-translate-y-1.5 transition-all duration-500 relative cursor-pointer`}>
                   
                   {/* Subtle Inner Glow on Hover */}
                   <div className={`absolute inset-0 bg-gradient-to-br ${glowGradients[idx]} to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none`} />
@@ -117,14 +117,19 @@ export function IndustryWhyChoose({ whyChoose }: IndustryWhyChooseProps) {
                   </div>
 
                   {/* Card Main Body */}
-                  <div className="p-6 flex flex-col flex-grow text-left">
-                    <h3 className={`text-lg font-semibold text-white mb-2 leading-snug ${titleHoverColors[idx]} transition-colors duration-300`}>
+                  <div className="p-6 sm:p-7 flex flex-col flex-grow text-left">
+                    <h3 className={`text-xl sm:text-2xl font-bold text-white mb-2 leading-snug ${titleHoverColors[idx]} transition-colors duration-300 font-sans`}>
                       {why.title}
                     </h3>
                     
-                    <p className="text-sm sm:text-base text-zinc-300 leading-relaxed font-normal mb-6">
-                      {why.desc}
-                    </p>
+                    {/* Description Revealed ONLY on Hover */}
+                    <div className="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] opacity-0 group-hover:opacity-100 transition-all duration-500 ease-in-out">
+                      <div className="overflow-hidden pt-3">
+                        <div className="text-base sm:text-lg text-zinc-300 leading-relaxed font-normal border-t border-white/10 pt-3">
+                          {why.desc}
+                        </div>
+                      </div>
+                    </div>
                   </div>
 
                   {/* Card Footer */}

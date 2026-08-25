@@ -30,7 +30,7 @@ export function BusinessOutcomes() {
 
             <Reveal delay={0.2}>
               <p className="text-zinc-200 text-base md:text-lg font-semibold leading-relaxed mb-8">
-                By leveraging our integrated ecosystems, enterprises achieve unprecedented efficiency gains, drastically reduced time-to-market, and ironclad security guardrails. Review our <Link href="/about/overview" className="text-rose-500 hover:underline font-bold">company overview</Link> and read our client <Link href="/about/testimonials" className="text-rose-500 hover:underline font-bold">testimonials</Link> to see how we deliver these results.
+                By leveraging our integrated ecosystems, enterprises achieve unprecedented efficiency gains, drastically reduced time-to-market, and ironclad security guardrails. Review our <Link href="/about/company-overview" className="text-rose-500 hover:underline font-bold">company overview</Link> and read our client <Link href="/about/testimonials" className="text-rose-500 hover:underline font-bold">testimonials</Link> to see how we deliver these results.
               </p>
             </Reveal>
 
@@ -96,7 +96,7 @@ export function BusinessOutcomes() {
                 </p>
 
                 <Link
-                  href="/insights-knowledge/white-paper"
+                  href="/marketing/whitepapers"
                   className="inline-flex items-center gap-1.5 text-xs font-bold text-white group-hover:text-rose-500 transition-colors"
                 >
                   Read the Full Announcement <ChevronRight size={14} className="group-hover:translate-x-0.5 transition-transform" />

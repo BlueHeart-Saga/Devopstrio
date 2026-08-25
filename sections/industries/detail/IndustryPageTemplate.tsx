@@ -517,7 +517,7 @@ export function IndustryPageTemplate({
                   className="group block h-full bg-zinc-950/20 border border-zinc-900 rounded-2xl p-6 hover:border-zinc-800 transition-colors"
                 >
                   <h4 className="text-xs font-semibold text-zinc-200 mb-2 group-hover:text-rose-500 transition-colors">{ins.title}</h4>
-                  <p className="text-[10px] text-zinc-500 leading-relaxed font-light mb-4">{ins.desc}</p>
+                  {/* <p className="text-[10px] text-zinc-500 leading-relaxed font-light mb-4">{ins.desc}</p> */}
                   <span className="text-[9px] text-rose-500 font-semibold group-hover:translate-x-1 transition-transform inline-flex items-center gap-1">
                     Read article <span className="transition-transform group-hover:translate-x-0.5">→</span>
                   </span>

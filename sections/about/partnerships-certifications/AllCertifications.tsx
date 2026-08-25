@@ -62,16 +62,16 @@ export function AllCertifications() {
       <div className="max-w-[1240px] mx-auto px-6 sm:px-8 mb-12 relative text-left">
         <Reveal>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight leading-[1.35] text-white font-sans">
-            Industry Certifications & Awards That Validate Our Engineering{" "}
+            Recognized for What We Build. Trusted for How We{" "}
             <span className="relative inline-block">
               <span className="inline-block bg-rose-500 text-black font-extrabold px-3.5 py-0.5 mx-1.5 rounded-xs transform -rotate-3 shadow-[0_4px_20px_rgba(225,29,72,0.45)] align-middle">
-                Capability
+                Deliver
               </span>
-              {/* Curved top-to-bottom side arrow image positioned directly AFTER Capability */}
+              {/* Curved top-to-bottom side arrow image positioned directly AFTER Deliver */}
               <img src="/webp/assets/components/top-to-buttom-side-Arrowmid.webp"
                 alt="Side arrow pointing down"
                 className="absolute -bottom-14 sm:-bottom-20 md:-bottom-24 -right-8 sm:-right-12 md:-right-16 scale-x-[-1] w-10 sm:w-14 md:w-16 lg:w-18 h-auto object-contain filter drop-shadow-[0_0_15px_rgba(244,63,94,0.5)] pointer-events-none select-none z-20"
-              loading="lazy" />
+                loading="lazy" />
             </span>
           </h2>
         </Reveal>

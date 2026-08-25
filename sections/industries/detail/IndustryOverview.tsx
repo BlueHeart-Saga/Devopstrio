@@ -74,10 +74,10 @@ export function IndustryOverview({
                   {overviewHeading}
                 </h2>
 
-                <div className="space-y-4 text-zinc-300 text-sm sm:text-base leading-relaxed mb-8 font-normal">
+                {/* <div className="space-y-4 text-zinc-300 text-sm sm:text-base leading-relaxed mb-8 font-normal">
                   <p className="border-l-2 border-[#E11D48] pl-4">{overviewDesc1}</p>
                   <p className="border-l-2 border-zinc-800/80 pl-4">{overviewDesc2}</p>
-                </div>
+                </div> */}
 
                 <a
                   href="#challenges"
