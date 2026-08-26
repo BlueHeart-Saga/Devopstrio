@@ -1,84 +1,20 @@
 import React from "react";
-import { ArrowUpRight } from "lucide-react";
-import Link from "next/link";
 import { Reveal } from "@/components/ui/Reveal";
-
-const caseStudies = [
-  {
-    id: "autonomous-ai",
-    category: "AI & MLOps",
-    tag: "Innovate",
-    headline: "Autonomous AI Systems & MLOps Engineering",
-    summary:
-      "Architected an autonomous AI-powered analytics engine for a global financial institution, reducing turnaround from days to milliseconds.",
-    image:
-      "/webp/assets/Services-Page/our-enterprise-ai-engineering-excellence/autonomous-ai-systems-mlops-engineering.webp",
-    link: "/services/ai-data-innovation",
-    cta: "Explore AI Systems",
-  },
-  {
-    id: "strategic-genai",
-    category: "Enterprise AI",
-    tag: "Strategize",
-    headline: "Strategic GenAI & Enterprise AI Philosophy",
-    summary:
-      "Modernized legacy core infrastructure into a hybrid multi-cloud mesh with automated guardrails and multi-region resilience.",
-    image:
-      "/webp/assets/Services-Page/our-enterprise-ai-engineering-excellence/strategic-genai-enterprise-ai-philosophy.webp",
-    link: "/services/cloud-services",
-    cta: "Explore Strategy",
-  },
-  {
-    id: "business-roi",
-    category: "AI Governance",
-    tag: "Scale",
-    headline: "Measurable Business ROI & AI Governance",
-    summary:
-      "Engineered an enterprise platform handling over 10 million transactions daily with sub-second latency and zero critical security incidents.",
-    image:
-      "/webp/assets/Services-Page/our-enterprise-ai-engineering-excellence/measurable-business-roi-ai-governance.webp",
-    link: "/services/devops-automation",
-    cta: "Explore Governance",
-  },
-];
-
-const impactStats = [
-  {
-    value: "2,500+",
-    label: "Projects Delivered",
-    subtext: "Across 25+ enterprise industry domains worldwide",
-  },
-  {
-    value: "525+",
-    label: "Technology Experts",
-    subtext: "Architects, engineers & AI practitioners in cross-functional pods",
-  },
-  {
-    value: "7+",
-    label: "Years of Engineering",
-    subtext: "Proven history of scaling resilient digital solutions",
-  },
-  {
-    value: "24×7",
-    label: "Global Delivery",
-    subtext: "Uninterrupted support & SRE across 4 delivery hubs",
-  },
-];
 
 export const LeadershipDeliver = () => {
   return (
     <section
       id="leadership-deliver"
-      className="pt-12 pb-0 sm:pt-16 sm:pb-0 bg-black text-white relative overflow-hidden font-sans"
+      className="pt-12 pb-0 sm:pt-16 sm:pb-0 bg-black text-white relative overflow-visible font-sans"
     >
       {/* Ambient Lighting & Glows */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[90vw] max-w-[1200px] h-[500px] bg-[radial-gradient(ellipse_at_center,rgba(225,29,72,0.08),transparent_70%)] pointer-events-none z-0" />
       <div className="absolute bottom-10 right-10 w-96 h-96 bg-rose-600/5 rounded-full blur-[140px] pointer-events-none z-0" />
 
-      <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 relative z-10 space-y-0">
+      <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 relative z-10 space-y-0 pb-0 mb-0">
         
         {/* Top Tagline with Left-Right Arrow indicator */}
-        <div className="text-center max-w-4xl mx-auto mb-6 sm:mb-8 relative z-40">
+        <div className="text-center max-w-4xl mx-auto mb-4 sm:mb-6 relative z-40">
           <Reveal>
             <div>
               <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight text-white mb-4 font-sans leading-[1.45]">
@@ -127,33 +63,19 @@ export const LeadershipDeliver = () => {
           </Reveal>
         </div>
 
-        {/* Big Size Leader Image (Backside) & Quote */}
-        <Reveal delay={0.15}>
-          <div className="relative max-w-6xl mx-auto flex flex-col items-center text-center -mt-4 sm:-mt-6 md:-mt-10 lg:-mt-14 z-0">
+        {/* Big Size Leader Image (Backside) - Reduced Spacing Below Header Text */}
+        <Reveal delay={0.15} className="w-full flex justify-center items-end leading-none p-0 m-0">
+          <div className="relative max-w-6xl mx-auto flex flex-col items-center text-center -mt-2 sm:-mt-4 md:-mt-6 z-20 pb-0 -mb-2 sm:-mb-3 md:-mb-4 lg:-mb-5">
             {/* Ambient Lighting Behind Image */}
             <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 sm:w-[700px] h-96 sm:h-[700px] bg-rose-600/10 rounded-full blur-[140px] pointer-events-none z-0" />
 
-            {/* Big Size Leader Image (Backside Layer - Flush to Section Bottom) */}
-            <div className="relative z-0 w-full max-w-[400px] sm:max-w-[620px] md:max-w-[800px] lg:max-w-[960px] xl:max-w-[1080px] flex items-end justify-center leading-none">
+            {/* Big Size Leader Image (Sliding Down Into Next Section) */}
+            <div className="relative z-20 w-full max-w-[400px] sm:max-w-[620px] md:max-w-[800px] lg:max-w-[960px] xl:max-w-[1080px] flex items-end justify-center leading-none">
               <img src="/webp/assets/About-page/leader/Mani-PS-REC-BG003.webp"
                 alt="Mani - Leadership"
-                className="block w-full h-auto object-contain filter contrast-105 drop-shadow-[0_25px_60px_rgba(0,0,0,0.95)]"
-              loading="lazy" />
+                className="block w-full h-auto object-contain align-bottom filter contrast-105 drop-shadow-[0_25px_60px_rgba(0,0,0,0.95)]"
+                loading="lazy" />
             </div>
-
-            {/* Simple Clean Quote Text Below Image */}
-            {/* <div className="relative z-10 max-w-3xl mx-auto mt-6 sm:mt-8 space-y-3 px-4">
-              <p className="text-2xl sm:text-3xl md:text-4xl lg:text-[2.6rem] font-semibold text-white tracking-tight leading-[1.25] font-sans">
-                &ldquo;Leadership is{" "}
-                <span className="text-rose-500 font-semibold">not about being in charge.</span>{" "}
-                It is all about{" "}
-                <span className="text-rose-500 font-semibold">taking care of</span>{" "}
-                those in your charge.&rdquo;
-              </p>
-              <p className="text-sm sm:text-base text-zinc-400 font-serif italic pt-2">
-                — Manikandan PS
-              </p>
-            </div> */}
           </div>
         </Reveal>
       </div>

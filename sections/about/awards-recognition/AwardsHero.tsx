@@ -7,17 +7,20 @@ export function AwardsHero() {
   return (
     <section className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-[#030303] text-white pt-24 pb-16 sm:py-24 z-10 font-sans">
       
-      {/* Normal Full-Brightness Background Image */}
+      {/* Background Image Layer */}
       <div className="absolute inset-0 z-0 pointer-events-none select-none">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src="/webp/assets/About-page/leadership/hero.webp" 
           alt="Awards Background"
           className="w-full h-full object-cover object-center opacity-100"
-        loading="eager" />
+          loading="eager" />
         
-        {/* Subtle top & bottom edge gradients for navbar integration */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#030303]/70 via-transparent to-[#030303]/90 z-10" />
+        {/* Top & Bottom Edge Gradients for seamless page integration */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#030303]/80 via-transparent to-[#030303] z-10" />
         
+        {/* Deep Bottom Black Fade Overlay to hide bottom background image lines */}
+        <div className="absolute inset-x-0 bottom-0 h-44 sm:h-64 bg-gradient-to-t from-[#030303] via-[#030303]/90 to-transparent pointer-events-none z-10" />
+
         {/* Ambient Red Glow */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-[radial-gradient(circle_at_center,rgba(225,29,72,0.15),transparent_70%)] blur-[140px] z-10" />
       </div>

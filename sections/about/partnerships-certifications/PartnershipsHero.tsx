@@ -2,31 +2,44 @@
 
 import { motion } from "framer-motion";
 import React from "react";
+import { RibbonGraphic } from "@/components/ui/RibbonGraphic";
 
 export function PartnershipsHero() {
   return (
     <section className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-[#030303] text-white pt-24 pb-16 sm:py-24 z-10 font-sans">
       
-      {/* Background Image Layer: bgimage.png */}
+      {/* Background Speaker Image Layer (Full Background, z-0) */}
       <div className="absolute inset-0 z-0 pointer-events-none select-none overflow-hidden">
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/webp/assets/About-page/hero/bgimage.webp"
+        <img
+          src="/webp/assets/About-page/hero/bgimage.webp"
           alt="Hero Background"
-          className="w-full h-full object-cover object-center opacity-75 filter contrast-110 brightness-110"
+          className="w-full h-full object-cover object-right md:object-center opacity-90 filter contrast-110 brightness-105"
           loading="eager"
           onError={(e) => {
             e.currentTarget.src = "/webp/assets/About-page/hero/bgimage.webp";
           }}
         />
-        {/* Soft Ambient Overlay Gradients for High Visibility & Readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/25 to-black/80" />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-transparent to-black/60" />
-        {/* Ambient Red Glow */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-[radial-gradient(circle_at_center,rgba(225,29,72,0.15),transparent_70%)] blur-[140px]" />
+        {/* Left Dark Gradient for Text Contrast */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/60 to-transparent" />
+        
+        {/* Right Edge & Corner Soft Black Fade */}
+        <div className="absolute inset-0 bg-gradient-to-l from-black/70 via-transparent to-transparent pointer-events-none" />
+        
+        {/* Top and Bottom Dark Theme Fades */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/90 pointer-events-none" />
+
+        {/* Soft Ambient Silver Glow Shadow (No Red Glow) */}
+        <div className="absolute top-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.05),transparent_70%)] blur-[150px]" />
       </div>
 
-      {/* Main Content Container (50% Text Area Left-Aligned at Bottom) */}
-      <div className="max-w-7xl mx-auto w-full px-6 lg:px-12 relative z-20 flex flex-col items-start justify-end text-left mt-auto pb-12 sm:pb-16">
+      {/* 3D Ribbon Graphic Layer - Shifted slightly right (z-5) */}
+      {/* <div className="absolute inset-y-0 left-0 w-full lg:w-3/5 z-5 pointer-events-none overflow-hidden flex items-center justify-start">
+        <RibbonGraphic className="w-full h-full opacity-85" />
+      </div> */}
+
+      {/* Main Content Container (z-10) */}
+      <div className="max-w-7xl mx-auto w-full px-6 lg:px-12 relative z-10 flex flex-col items-start justify-end text-left mt-auto pb-12 sm:pb-16">
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

@@ -24,13 +24,13 @@ export function GlobalInternshipSection({ onOpenDrawer }: GlobalInternshipSectio
       category: "MORE ABOUT OUR CULTURE",
       title: "Culture & Values",
       link: "/about/our-culture-people",
-      image: "/webp/assets/careers/banner/new/culture.jpg",
+      image: "/webp/assets/careers/banner/new/culture2.jpg",
     },
     {
       category: "ENGINEERING EXCELLENCE",
-      title: "Cloud & DevOps Services",
-      link: "/services",
-      image: "/webp/assets/careers/banner/new/services.jpg",
+      title: "Global Internship",
+      link: "/about/global-internship",
+      image: "/webp/assets/careers/banner/new/serces-global.jpg",
     },
     {
       category: "LATEST TECH INSIGHTS",

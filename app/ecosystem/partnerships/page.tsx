@@ -47,7 +47,7 @@ export default function PartnershipsPage() {
       <PartnershipHero />
 
       {/* Sticky Section Sub-Navbar */}
-      <SectionNavbar sections={subSections} />
+      {/* <SectionNavbar sections={subSections} /> */}
 
       {/* 02. Partner Categories */}
       <PartnerCategories />
@@ -59,7 +59,7 @@ export default function PartnershipsPage() {
       <JointSolutions />
 
       {/* 05. Benefits of Partnership */}
-      <PartnershipBenefits />
+      {/* <PartnershipBenefits /> */}
 
       {/* 06. Certifications & Accreditations */}
       <Certifications />
@@ -71,10 +71,10 @@ export default function PartnershipsPage() {
       <SuccessStories />
 
       {/* 09. Innovation Labs + Partners Linkage */}
-      <PartnerLabs />
+      {/* <PartnerLabs /> */}
 
       {/* 10. Partner Program Tracks */}
-      <BecomePartnerProgram />
+      {/* <BecomePartnerProgram /> */}
 
       {/* 11. FAQ */}
       <FAQ faqs={data.faqs} />

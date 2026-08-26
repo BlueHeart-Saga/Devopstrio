@@ -909,13 +909,13 @@ export function Navbar() {
                       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent group-hover:bg-black/75 transition-all duration-500 pointer-events-none" />
 
                       <div className="relative z-10">
-                        <h4 className="text-xl sm:text-2xl font-bold leading-snug text-white tracking-tight mb-2 font-sans drop-shadow-md">
+                        <h4 className="text-xl sm:text-2xl font-semibold leading-snug text-white tracking-tight mb-2 font-sans drop-shadow-md">
                           Powering Next-Gen <span className="text-red-500">Services</span>
                         </h4>
                         <div className="w-10 h-[3px] bg-red-600 rounded-full my-3" />
 
                         <div className="transition-all duration-500 ease-out max-h-0 opacity-0 group-hover:max-h-[140px] group-hover:opacity-100 overflow-hidden">
-                          <p className="text-xs sm:text-sm text-zinc-200 font-semibold leading-relaxed pt-1">
+                          <p className="text-xs sm:text-sm text-zinc-300 font-normal leading-relaxed pt-1">
                             Deploying cloud-native architectures, AI automation, and enterprise software platforms worldwide.
                           </p>
                         </div>
@@ -924,7 +924,7 @@ export function Navbar() {
                       <Link
                         href="/services"
                         onClick={() => setActiveMenu(null)}
-                        className="relative z-10 inline-flex items-center gap-2 text-xs sm:text-sm font-semibold uppercase tracking-wider text-white group-hover:text-rose-400 transition-colors group/cta"
+                        className="relative z-10 inline-flex items-center gap-2 text-xs sm:text-sm font-medium uppercase tracking-wider text-white group-hover:text-rose-400 transition-colors group/cta"
                       >
                         <span>EXPLORE ALL SERVICES</span>
                         <span className="text-rose-500 text-sm group-hover/cta:translate-x-1 transition-transform">
@@ -954,7 +954,7 @@ export function Navbar() {
                       <div className="grid grid-cols-2 gap-x-8">
                         
                         {/* 1st Column: AI Related Services */}
-                        <div className="flex flex-col gap-2">
+                        <div className="flex flex-col gap-0.5">
                           {[
                             { name: "AI Services", href: "/services/ai-data-innovation" },
                             { name: "AI Consulting", href: "/services/ai-consulting" },
@@ -967,9 +967,9 @@ export function Navbar() {
                               key={item.name}
                               href={item.href}
                               onClick={() => setActiveMenu(null)}
-                              className="group/ind block py-1.5 px-3 rounded-lg hover:bg-zinc-900/50 transition-colors"
+                              className="group/ind block py-1 px-2.5 rounded-lg hover:bg-zinc-900/50 transition-colors"
                             >
-                              <span className="block text-lg font-semibold text-zinc-100 group-hover/ind:text-rose-400 transition-colors">
+                              <span className="block text-base xl:text-lg font-normal text-zinc-200 group-hover/ind:text-rose-400 transition-colors leading-tight">
                                 {item.name}
                               </span>
                             </Link>
@@ -977,7 +977,7 @@ export function Navbar() {
                         </div>
 
                         {/* 2nd Column: All Core Services */}
-                        <div className="flex flex-col gap-1.5 border-l border-zinc-800/80 pl-8">
+                        <div className="flex flex-col gap-0.5 border-l border-zinc-800/80 pl-8">
                           {[
                             { name: "Cloud Services", href: "/services/cloud-services" },
                             { name: "DevOps & Automation", href: "/services/devops-automation" },
@@ -985,16 +985,14 @@ export function Navbar() {
                             { name: "Software Development", href: "/services/software-development" },
                             { name: "Digital Transformation", href: "/services/digital-transformation" },
                             { name: "Managed Services", href: "/services/managed-services" },
-                            // { name: "QA & Testing", href: "/services/qa-testing" },
-                            // { name: "IT Consulting", href: "/services/it-consulting" }
                           ].map((item) => (
                             <Link
                               key={item.name}
                               href={item.href}
                               onClick={() => setActiveMenu(null)}
-                              className="group/ind block py-1.5 px-2.5 rounded-lg hover:bg-zinc-900/40 transition-colors"
+                              className="group/ind block py-1 px-2.5 rounded-lg hover:bg-zinc-900/40 transition-colors"
                             >
-                              <span className="block text-lg font-semibold text-zinc-200 group-hover/ind:text-rose-400 transition-colors">
+                              <span className="block text-base xl:text-lg font-normal text-zinc-200 group-hover/ind:text-rose-400 transition-colors leading-tight">
                                 {item.name}
                               </span>
                             </Link>
@@ -1062,7 +1060,7 @@ export function Navbar() {
                         
                         {/* Description Text: Hidden initially, expands on hover */}
                         <div className="transition-all duration-500 ease-out max-h-0 opacity-0 group-hover:max-h-[140px] group-hover:opacity-100 overflow-hidden">
-                          <p className="text-xs sm:text-sm text-zinc-200 font-semibold leading-relaxed pt-1">
+                          <p className="text-xs sm:text-sm text-zinc-300 font-normal leading-relaxed pt-1">
                             Deploying regulatory-safe software runtimes and enterprise digital platforms across international sectors.
                           </p>
                         </div>
@@ -1071,7 +1069,7 @@ export function Navbar() {
                       <Link
                         href="/industries"
                         onClick={() => setActiveMenu(null)}
-                        className="relative z-10 inline-flex items-center gap-2 text-xs sm:text-sm font-semibold uppercase tracking-wider text-white group-hover:text-rose-400 transition-colors mt-6 group/cta"
+                        className="relative z-10 inline-flex items-center gap-2 text-xs sm:text-sm font-medium uppercase tracking-wider text-white group-hover:text-rose-400 transition-colors mt-6 group/cta"
                       >
                         <span>EXPLORE ALL DOMAINS</span>
                         <span className="text-rose-500 text-sm group-hover/cta:translate-x-1 transition-transform">
@@ -1084,20 +1082,17 @@ export function Navbar() {
                     <div>
                       <span className="text-lg font-bold tracking-wider text-rose-500 uppercase block mb-4 font-sans">Target Sectors</span>
                       <div className="max-h-[380px] overflow-y-auto overscroll-contain pr-2 custom-scrollbar">
-                        <div className="grid grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-1">
+                        <div className="grid grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-1.5">
                           {industriesList.map((ind) => (
                             <Link
                               key={ind.name}
                               href={ind.href}
                               onClick={() => setActiveMenu(null)}
-                              className="group/ind block p-2 rounded-lg hover:bg-zinc-900/30 transition-colors"
+                              className="group/ind block py-1.5 px-2.5 rounded-lg hover:bg-zinc-900/30 transition-colors"
                             >
-                              <span className="block text-lg font-semibold text-white group-hover/ind:text-rose-500 transition-colors mb-1">
+                              <span className="block text-base xl:text-lg font-normal text-white group-hover/ind:text-rose-500 transition-colors leading-snug">
                                 {ind.name}
                               </span>
-                              {/* <span className="block text-[13px] text-zinc-400 font-medium leading-relaxed">
-                                {ind.desc}
-                              </span> */}
                             </Link>
                           ))}
                         </div>
@@ -1161,7 +1156,7 @@ export function Navbar() {
                         <div className="w-10 h-[3px] bg-red-600 rounded-full my-3" />
                         
                         <div className="transition-all duration-500 ease-out max-h-0 opacity-0 group-hover:max-h-[140px] group-hover:opacity-100 overflow-hidden">
-                          <p className="text-xs sm:text-sm text-zinc-200 font-semibold leading-relaxed pt-1">
+                          <p className="text-xs sm:text-sm text-zinc-300 font-normal leading-relaxed pt-1">
                             Explore our world-class technology alliances, research innovation labs, and custom platforms built to transform your enterprise.
                           </p>
                         </div>
@@ -1170,7 +1165,7 @@ export function Navbar() {
                       <Link
                         href="/ecosystem"
                         onClick={() => setActiveMenu(null)}
-                        className="relative z-10 inline-flex items-center gap-2 text-xs sm:text-sm font-semibold uppercase tracking-wider text-white group-hover:text-rose-400 transition-colors mt-6 group/cta"
+                        className="relative z-10 inline-flex items-center gap-2 text-xs sm:text-sm font-medium uppercase tracking-wider text-white group-hover:text-rose-400 transition-colors mt-6 group/cta"
                       >
                         <span>EXPLORE ECOSYSTEM</span>
                         <span className="text-rose-500 text-sm group-hover/cta:translate-x-1 transition-transform">
@@ -1213,14 +1208,11 @@ export function Navbar() {
                               key={item.name}
                               href={item.href}
                               onClick={() => setActiveMenu(null)}
-                              className="group/eco block py-2 px-3 rounded-lg hover:bg-zinc-900/40 transition-colors"
+                              className="group/eco block py-1.5 px-3 rounded-lg hover:bg-zinc-900/40 transition-colors"
                             >
-                              <span className="block text-lg font-semibold text-zinc-200 group-hover/eco:text-rose-500 transition-colors mb-0.5">
+                              <span className="block text-base xl:text-lg font-normal text-zinc-200 group-hover/eco:text-rose-500 transition-colors leading-snug">
                                 {item.name}
                               </span>
-                              {/* <span className="block text-sm text-zinc-400 font-medium">
-                                {item.desc}
-                              </span> */}
                             </Link>
                           ))}
                         </div>
@@ -1237,14 +1229,11 @@ export function Navbar() {
                               key={item.name}
                               href={item.href}
                               onClick={() => setActiveMenu(null)}
-                              className="group/eco block py-2 px-3 rounded-lg hover:bg-zinc-900/40 transition-colors"
+                              className="group/eco block py-1.5 px-3 rounded-lg hover:bg-zinc-900/40 transition-colors"
                             >
-                              <span className="block text-lg font-semibold text-zinc-200 group-hover/eco:text-rose-500 transition-colors mb-0.5">
+                              <span className="block text-base xl:text-lg font-normal text-zinc-200 group-hover/eco:text-rose-500 transition-colors leading-snug">
                                 {item.name}
                               </span>
-                              {/* <span className="block text-sm text-zinc-400 font-medium">
-                                {item.desc}
-                              </span> */}
                             </Link>
                           ))}
                         </div>
@@ -1310,7 +1299,7 @@ export function Navbar() {
                         
                         {/* Description Text: Hidden initially, expands on hover */}
                         <div className="transition-all duration-500 ease-out max-h-0 opacity-0 group-hover:max-h-[140px] group-hover:opacity-100 overflow-hidden">
-                          <p className="text-xs sm:text-sm text-zinc-200 font-semibold leading-relaxed pt-1">
+                          <p className="text-xs sm:text-sm text-zinc-300 font-normal leading-relaxed pt-1">
                             Read deep-dive articles, SRE blueprints, and research papers from our global engineering teams.
                           </p>
                         </div>
@@ -1319,7 +1308,7 @@ export function Navbar() {
                       <Link
                         href="/insights"
                         onClick={() => setActiveMenu(null)}
-                        className="relative z-10 inline-flex items-center gap-2 text-xs sm:text-sm font-semibold uppercase tracking-wider text-white group-hover:text-rose-400 transition-colors mt-6 group/cta"
+                        className="relative z-10 inline-flex items-center gap-2 text-xs sm:text-sm font-medium uppercase tracking-wider text-white group-hover:text-rose-400 transition-colors mt-6 group/cta"
                       >
                         <span>ALL PUBLICATIONS</span>
                         <span className="text-rose-500 text-sm group-hover/cta:translate-x-1 transition-transform">
@@ -1353,22 +1342,17 @@ export function Navbar() {
                     <div className="flex flex-col">
                       <span className="text-lg font-bold tracking-wider text-rose-500 uppercase block px-2 mb-2 font-sans">Categories</span>
                       <div className="max-h-[420px] overflow-y-auto overscroll-contain pr-2 custom-scrollbar">
-                        <div className="grid grid-cols-2 gap-x-4 gap-y-1">
+                        <div className="grid grid-cols-2 gap-x-4 gap-y-1.5">
                           {insightsSections.find((s: InsightsSection) => s.slug === activeInsightsSection)?.categories.map((cat: SectionCategory) => (
                             <Link
                               key={cat.slug}
                               href={`/insights/${cat.slug}`}
                               onClick={() => setActiveMenu(null)}
-                              className="group/subitem block p-2 rounded-lg hover:bg-zinc-900/30 transition-colors"
+                              className="group/subitem block py-1.5 px-2.5 rounded-lg hover:bg-zinc-900/30 transition-colors"
                             >
-                              <span className="block text-lg font-semibold text-white group-hover/subitem:text-rose-500 transition-colors mb-1">
+                              <span className="block text-base xl:text-lg font-normal text-white group-hover/subitem:text-rose-500 transition-colors leading-snug">
                                 {cat.name}
                               </span>
-                              {/* {cat.desc && (
-                              <span className="block text-[13px] text-zinc-400 font-medium leading-relaxed">
-                                {cat.desc}
-                              </span>
-                            )} */}
                             </Link>
                           ))}
                         </div>
@@ -1435,7 +1419,7 @@ export function Navbar() {
                         
                         {/* Description Text: Hidden initially, expands on hover */}
                         <div className="transition-all duration-500 ease-out max-h-0 opacity-0 group-hover:max-h-[140px] group-hover:opacity-100 overflow-hidden">
-                          <p className="text-sm sm:text-base text-zinc-200 font-semibold leading-relaxed pt-1">
+                          <p className="text-xs sm:text-sm text-zinc-300 font-normal leading-relaxed pt-1">
                             Learn about our values, engineering philosophy, global presence, and the leadership team driving enterprise innovation.
                           </p>
                         </div>
@@ -1444,7 +1428,7 @@ export function Navbar() {
                       <Link
                         href="/about"
                         onClick={() => setActiveMenu(null)}
-                        className="relative z-10 inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-white group-hover:text-rose-400 transition-colors mt-6 group/cta"
+                        className="relative z-10 inline-flex items-center gap-2 text-xs sm:text-sm font-medium uppercase tracking-wider text-white group-hover:text-rose-400 transition-colors mt-6 group/cta"
                       >
                         <span>ABOUT OVERVIEW</span>
                         <span className="text-rose-500 text-sm group-hover/cta:translate-x-1 transition-transform">
@@ -1457,20 +1441,17 @@ export function Navbar() {
                     <div>
                       <span className="text-lg font-bold tracking-wider text-rose-500 uppercase block mb-4 font-sans">Corporate Directory</span>
                       <div className="max-h-[380px] overflow-y-auto overscroll-contain pr-2 custom-scrollbar">
-                        <div className="grid grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-1">
+                        <div className="grid grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-1.5">
                           {aboutList.map((item) => (
                             <Link
                               key={item.name}
                               href={item.href}
                               onClick={() => setActiveMenu(null)}
-                              className="group/about block p-2 rounded-lg hover:bg-zinc-900/30 transition-colors"
+                              className="group/about block py-1.5 px-2.5 rounded-lg hover:bg-zinc-900/30 transition-colors"
                             >
-                              <span className="block text-lg font-semibold text-white group-hover/about:text-rose-500 transition-colors mb-1">
+                              <span className="block text-base xl:text-lg font-normal text-white group-hover/about:text-rose-500 transition-colors leading-snug">
                                 {item.name}
                               </span>
-                              {/* <span className="block text-[13px] text-zinc-400 font-medium leading-relaxed">
-                                {item.desc}
-                              </span> */}
                             </Link>
                           ))}
                         </div>
@@ -1583,16 +1564,16 @@ export function Navbar() {
         {/* Mobile Drawer */}
         {mobileOpen && (
           <div className="fixed inset-0 top-[72px] z-40 bg-[#000000]/98 backdrop-blur-lg flex flex-col p-6 sm:p-8 border-t border-zinc-900 pointer-events-auto animate-fadeIn lg:hidden">
-            <div className="flex flex-col gap-6 overflow-y-auto overscroll-contain pb-8">
+            <div className="flex flex-col gap-3.5 overflow-y-auto overscroll-contain pb-8">
               <div>
-                <span className="text-sm uppercase tracking-wider text-rose-500 block mb-3 font-sans font-bold">Services</span>
-                <div className="flex flex-col gap-2 pl-2">
+                <span className="text-xs uppercase tracking-wider text-rose-500 block mb-1.5 font-sans font-bold">Services</span>
+                <div className="flex flex-col gap-0.5 pl-2">
                   {servicesList.map((item) => (
                     <Link
                       key={item.name}
                       href={item.href}
                       onClick={() => setMobileOpen(false)}
-                      className="text-sm sm:text-base text-zinc-200 hover:text-rose-400 font-medium transition-all py-1"
+                      className="text-sm sm:text-base text-zinc-200 hover:text-rose-400 font-normal transition-all py-0.5 leading-snug"
                     >
                       {item.name}
                     </Link>
@@ -1601,14 +1582,14 @@ export function Navbar() {
               </div>
 
               <div>
-                <span className="text-sm uppercase tracking-wider text-rose-500 block mb-3 font-sans font-bold">Industries</span>
-                <div className="flex flex-col gap-2 pl-2">
+                <span className="text-xs uppercase tracking-wider text-rose-500 block mb-1.5 font-sans font-bold">Industries</span>
+                <div className="flex flex-col gap-0.5 pl-2">
                   {industriesList.map((item) => (
                     <Link
                       key={item.name}
                       href={item.href}
                       onClick={() => setMobileOpen(false)}
-                      className="text-sm sm:text-base text-zinc-200 hover:text-rose-400 font-medium transition-all py-1"
+                      className="text-sm sm:text-base text-zinc-200 hover:text-rose-400 font-normal transition-all py-0.5 leading-snug"
                     >
                       {item.name}
                     </Link>
@@ -1617,14 +1598,14 @@ export function Navbar() {
               </div>
 
               <div>
-                <span className="text-sm uppercase tracking-wider text-rose-500 block mb-3 font-sans font-bold">Ecosystem</span>
-                <div className="flex flex-col gap-2 pl-2">
+                <span className="text-xs uppercase tracking-wider text-rose-500 block mb-1.5 font-sans font-bold">Ecosystem</span>
+                <div className="flex flex-col gap-0.5 pl-2">
                   {ecosystemMobileList.map((item) => (
                     <Link
                       key={item.name}
                       href={item.href}
                       onClick={() => setMobileOpen(false)}
-                      className="text-sm sm:text-base text-zinc-200 hover:text-rose-400 font-medium transition-all py-1"
+                      className="text-sm sm:text-base text-zinc-200 hover:text-rose-400 font-normal transition-all py-0.5 leading-snug"
                     >
                       {item.name}
                     </Link>
@@ -1633,12 +1614,12 @@ export function Navbar() {
               </div>
 
               <div>
-                <span className="text-sm uppercase tracking-wider text-rose-500 block mb-3 font-sans font-bold">Insights</span>
-                <div className="flex flex-col gap-2 pl-2">
+                <span className="text-xs uppercase tracking-wider text-rose-500 block mb-1.5 font-sans font-bold">Insights</span>
+                <div className="flex flex-col gap-0.5 pl-2">
                   <Link
                     href="/insights"
                     onClick={() => setMobileOpen(false)}
-                    className="text-sm sm:text-base text-white hover:text-rose-400 font-semibold transition-all py-1"
+                    className="text-sm sm:text-base text-white hover:text-rose-400 font-normal transition-all py-0.5 leading-snug"
                   >
                     Insights Hub
                   </Link>
@@ -1647,7 +1628,7 @@ export function Navbar() {
                       key={item.slug}
                       href={`/insights/${item.slug}`}
                       onClick={() => setMobileOpen(false)}
-                      className="text-sm sm:text-base text-zinc-200 hover:text-rose-400 font-medium transition-all py-1"
+                      className="text-sm sm:text-base text-zinc-200 hover:text-rose-400 font-normal transition-all py-0.5 leading-snug"
                     >
                       {item.name}
                     </Link>
@@ -1655,15 +1636,15 @@ export function Navbar() {
                 </div>
               </div>
 
-              <div className="h-[1px] bg-zinc-900 my-2" />
+              <div className="h-[1px] bg-zinc-900 my-1" />
 
               <div>
-                <span className="text-sm uppercase tracking-wider text-rose-500 block mb-3 font-sans font-bold">About</span>
-                <div className="flex flex-col gap-2 pl-2">
+                <span className="text-xs uppercase tracking-wider text-rose-500 block mb-1.5 font-sans font-bold">About</span>
+                <div className="flex flex-col gap-0.5 pl-2">
                   <Link
                     href="/about"
                     onClick={() => setMobileOpen(false)}
-                    className="text-sm sm:text-base text-white hover:text-rose-400 font-semibold transition-all py-1"
+                    className="text-sm sm:text-base text-white hover:text-rose-400 font-normal transition-all py-0.5 leading-snug"
                   >
                     About Overview
                   </Link>
@@ -1672,7 +1653,7 @@ export function Navbar() {
                       key={item.name}
                       href={item.href}
                       onClick={() => setMobileOpen(false)}
-                      className="text-sm sm:text-base text-zinc-200 hover:text-rose-400 font-medium transition-all py-1"
+                      className="text-sm sm:text-base text-zinc-200 hover:text-rose-400 font-normal transition-all py-0.5 leading-snug"
                     >
                       {item.name}
                     </Link>

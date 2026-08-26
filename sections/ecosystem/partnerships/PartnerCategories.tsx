@@ -36,253 +36,290 @@ export function PartnerCategories() {
     {
       id: "cloud",
       label: "Cloud Partners",
-      icon: <Cloud size={14} />,
-      subtitle: "Hyper-scale infrastructure providers running core enterprise operations.",
+      icon: <Cloud size={20} />,
+      subtitle: "Collaborating with industry leaders to deliver secure, scalable, and future-ready solutions.",
       partners: [
         { 
           name: "Microsoft Azure", 
           logo: "/assets/Tech_logos/Microsoft-Azure.svg", 
-          desc: "Enterprise application clouds, Active Directory IAM, and Office environments.", 
+          desc: "Enterprise application clouds and Active Directory IAM environments.", 
           href: "/ecosystem/partnerships/microsoft", 
           action: "Configure Azure" 
         },
         { 
           name: "Amazon Web Services", 
           logo: "/assets/Tech_logos/AWS.svg", 
-          desc: "Scale compute infrastructure, serverless Lambda services, and S3 data lakes.", 
+          desc: "Scale compute infrastructure, serverless Lambda, and S3 data lakes.", 
           href: "/ecosystem/partnerships/aws", 
           action: "Scale compute" 
         },
         { 
           name: "Google Cloud", 
           logo: "/assets/Tech_logos/Google_Cloud.svg", 
-          desc: "Kubernetes GKE orchestrations, Vertex AI pipelines, and BigQuery warehouses.", 
+          desc: "Kubernetes GKE orchestrations, Vertex AI, and BigQuery warehouses.", 
           href: "/ecosystem/partnerships/google-cloud", 
           action: "Vertex pipelines" 
         },
         { 
           name: "Oracle Cloud", 
           logo: "/assets/Tech_logos/Oracle_Cloud.svg", 
-          desc: "OCI databases, Enterprise application ERP, and custom transaction processing.", 
+          desc: "OCI databases, Enterprise application ERP, and transaction processing.", 
           href: "/ecosystem/partnerships/oracle", 
           action: "Deploy OCI" 
+        },
+        { 
+          name: "IBM Cloud", 
+          logo: "/assets/Tech_logos/IBM_Cloud.svg", 
+          desc: "Hybrid cloud integration, Red Hat OpenShift, and enterprise security.", 
+          href: "/ecosystem/partnerships", 
+          action: "IBM Hybrid" 
+        },
+        { 
+          name: "DigitalOcean", 
+          logo: "/assets/Tech_logos/Akamai.svg", 
+          desc: "Simplified cloud compute droplets and managed Kubernetes clusters.", 
+          href: "/ecosystem/partnerships", 
+          action: "Deploy Droplets" 
         }
       ]
     },
     {
       id: "ai-data",
       label: "AI & Data Partners",
-      icon: <Cpu size={14} />,
+      icon: <Cpu size={20} />,
       subtitle: "Industry leaders in large language modeling and real-time database tooling.",
       partners: [
         { 
           name: "OpenAI", 
           logo: "/assets/Tech-icons/openai-logo_svgstack_com_28971780931370.svg", 
-          desc: "Large language models integration, agent assistants, and fine-tuning pipelines.", 
+          desc: "Large language models integration, agent assistants, and fine-tuning.", 
           href: "/ecosystem/partnerships", 
           action: "Integrate LLMs" 
         },
         { 
           name: "Snowflake", 
           logo: "/assets/Tech_logos/Snowflake.svg", 
-          desc: "Unified global data cloud sharing analytics dashboards and structured warehouse operations.", 
+          desc: "Unified global data cloud sharing analytics dashboards and warehouses.", 
           href: "/ecosystem/partnerships", 
           action: "Share analytics" 
         },
         { 
           name: "MongoDB", 
           logo: "/assets/Tech_logos/MongoDB.svg", 
-          desc: "Flexible document-based databases, vector search integrations, and atlas storage.", 
+          desc: "Flexible document-based databases and vector search integrations.", 
           href: "/ecosystem/partnerships", 
           action: "Vector search" 
         },
         { 
           name: "Databricks", 
           logo: "/assets/Tech_logos/Databricks.svg", 
-          desc: "Unified lakehouse engines executing large data streaming runs and ML flows.", 
+          desc: "Unified lakehouse engines executing large data streaming & ML flows.", 
           href: "/ecosystem/partnerships", 
           action: "Run ML flows" 
+        },
+        { 
+          name: "Elasticsearch", 
+          logo: "/assets/Tech_logos/Elastic.svg", 
+          desc: "Distributed search, log analytics, and real-time data indexing.", 
+          href: "/ecosystem/partnerships", 
+          action: "Search Engine" 
+        },
+        { 
+          name: "Confluent", 
+          logo: "/assets/Tech_logos/Confluent.svg", 
+          desc: "Event streaming platform powered by Apache Kafka for enterprise pipelines.", 
+          href: "/ecosystem/partnerships", 
+          action: "Event Streaming" 
         }
       ]
     },
     {
       id: "enterprise",
       label: "Enterprise Partners",
-      icon: <Layout size={14} />,
+      icon: <Layout size={16} />,
       subtitle: "Standardized platform managers driving company workflow automation.",
       partners: [
         { 
           name: "SAP", 
           logo: "/assets/Tech_logos/sap.svg", 
-          desc: "Enterprise resources manager, financial ledger orchestration, and supplier chains.", 
+          desc: "Enterprise resources manager and financial ledger orchestration.", 
           href: "/ecosystem/partnerships/sap", 
           action: "SAP on Cloud" 
         },
         { 
           name: "ServiceNow", 
           logo: "/assets/Tech_logos/Service_now.svg", 
-          desc: "IT operations automation, HR tickets ticketing, and automated customer desk runs.", 
+          desc: "IT operations automation, HR ticketing, and customer desk runs.", 
           href: "/ecosystem/partnerships/servicenow", 
           action: "ServiceNow ITSM" 
         },
         { 
           name: "Salesforce", 
           logo: "/assets/Home-page/Techtools/google-color.svg", 
-          desc: "Enterprise CRM, customers pipeline analytics, and marketing cloud loops.", 
+          desc: "Enterprise CRM, customers pipeline analytics, and marketing cloud.", 
           href: "/ecosystem/partnerships", 
           action: "CRM analytics" 
         },
         { 
           name: "Atlassian", 
           logo: "/assets/Tech-icons/jira-logo_svgstack_com_28621780931167.svg", 
-          desc: "Software engineering Jira boards, internal wiki directories, and collaborative cards.", 
+          desc: "Software engineering Jira boards, wiki directories, and collaborative cards.", 
           href: "/ecosystem/partnerships", 
           action: "Jira boards" 
+        },
+        { 
+          name: "GitLab", 
+          logo: "/assets/Tech_logos/GitLab.svg", 
+          desc: "Complete DevOps platform delivered as a single application.", 
+          href: "/ecosystem/partnerships", 
+          action: "DevOps Lifecycle" 
+        },
+        { 
+          name: "GitHub", 
+          logo: "/assets/Tech_logos/GitHub.svg", 
+          desc: "Enterprise source code management, actions CI/CD, and security.", 
+          href: "/ecosystem/partnerships", 
+          action: "Code & Actions" 
         }
       ]
     },
     {
       id: "security",
       label: "Cybersecurity Partners",
-      icon: <Shield size={14} />,
-      subtitle: "Workloads protection providers validating identity borders.",
+      icon: <Shield size={16} />,
+      subtitle: "Work with trusted technology leaders to strengthen security, ensure compliance, and reduce risk.",
       partners: [
         { 
           name: "Palo Alto Networks", 
-          logo: "/assets/Tech-icons/typescript-logo_svgstack_com_31481780931142.svg", 
-          desc: "Next-gen network firewalls, Prisma cloud posture validation, and threat protection.", 
+          logo: "/assets/Tech_logos/red_hat.svg", 
+          desc: "Next-gen firewalls and advanced threat prevention.", 
           href: "/ecosystem/partnerships", 
           action: "Prisma Cloud" 
         },
         { 
           name: "Cloudflare", 
           logo: "/assets/Tech_logos/Cloud_flaire.svg", 
-          desc: "Global edge CDN networks, Web App Firewalls (WAF), and custom zero-trust corridors.", 
+          desc: "Secure, fast & reliable web infrastructure.", 
           href: "/ecosystem/partnerships", 
           action: "Edge perimeters" 
         },
         { 
+          name: "Prisma Cloud", 
+          logo: "/assets/Tech_logos/HashiCorp.svg", 
+          desc: "Cloud-native security and compliance posture.", 
+          href: "/ecosystem/partnerships", 
+          action: "Posture Validation" 
+        },
+        { 
           name: "HashiCorp", 
           logo: "/assets/Tech_logos/HashiCorp.svg", 
-          desc: "Vault credentials secrets manager, Terraform infrastructure coding, and Consul grids.", 
+          desc: "Infrastructure automation, Vault secrets, and security.", 
           href: "/ecosystem/partnerships", 
           action: "Terraform IaC" 
         },
         { 
           name: "CrowdStrike", 
           logo: "/assets/Tech-icons/python-logo_svgstack_com_29121780931061.svg", 
-          desc: "Endpoint detection and response (EDR), malware defense engines, and audit sweeps.", 
+          desc: "Endpoint protection powered by AI and real-time telemetry.", 
           href: "/ecosystem/partnerships", 
-          action: "EDR sweeps" 
+          action: "EDR Sweeps" 
+        },
+        { 
+          name: "Edge Perimeters", 
+          logo: "/assets/Tech_logos/Akamai.svg", 
+          desc: "Secure access for distributed zero-trust environments.", 
+          href: "/ecosystem/partnerships", 
+          action: "Zero Trust" 
         }
       ]
     },
     {
       id: "infra",
       label: "Infrastructure Partners",
-      icon: <Database size={14} />,
+      icon: <Database size={16} />,
       subtitle: "Physical networking and operations providers handling core server pipelines.",
       partners: [
         { 
           name: "Cisco", 
           logo: "/assets/Tech_logos/cisco.svg", 
-          desc: "Core enterprise switches, software-defined WAN routers, and Webex systems.", 
+          desc: "Core enterprise switches, software-defined WAN routers, and networking.", 
           href: "/ecosystem/partnerships/cisco", 
           action: "SD-WAN routing" 
         },
         { 
           name: "Red Hat", 
           logo: "/assets/Tech_logos/red_hat.svg", 
-          desc: "Enterprise Linux servers, OpenShift Kubernetes, and Ansible scripting hubs.", 
+          desc: "Enterprise Linux servers, OpenShift Kubernetes, and Ansible hubs.", 
           href: "/ecosystem/partnerships", 
           action: "OpenShift grids" 
         },
         { 
           name: "Datadog", 
           logo: "/assets/Tech_logos/Datadog.svg", 
-          desc: "Unified SRE monitoring maps, application trace hooks, and server logs alerts.", 
+          desc: "Unified SRE monitoring maps, application trace hooks, and alerts.", 
           href: "/ecosystem/partnerships", 
           action: "SRE monitors" 
         },
         { 
           name: "Dynatrace", 
           logo: "/assets/Tech_logos/Dynatrace.svg", 
-          desc: "AI-based system SRE observability dashboards, host metrics alerts, and database traces.", 
+          desc: "AI-based system SRE observability dashboards and host metrics.", 
           href: "/ecosystem/partnerships", 
           action: "Observability map" 
+        },
+        { 
+          name: "VMware", 
+          logo: "/assets/Tech_logos/vmware.svg", 
+          desc: "Multi-cloud virtualization, vSphere hypervisors, and cloud foundation.", 
+          href: "/ecosystem/partnerships", 
+          action: "vSphere Cloud" 
+        },
+        { 
+          name: "Kubernetes", 
+          logo: "/assets/Tech_logos/Kubernetes.svg", 
+          desc: "Production-grade container orchestration and automated deployments.", 
+          href: "/ecosystem/partnerships", 
+          action: "K8s Orchestration" 
         }
       ]
     }
   ];
 
-  // Auto cycle tabs every 6 seconds
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      const currentIndex = categories.findIndex((cat) => cat.id === activeTab);
-      const nextIndex = (currentIndex + 1) % categories.length;
-      setActiveTab(categories[nextIndex].id);
-    }, 6000);
-
-    return () => clearTimeout(timer);
-  }, [activeTab]);
-
-  // Smooth scroll active tab pill into view in the horizontal container without triggering page-level scrolling
-  useEffect(() => {
-    const container = document.getElementById("partner-tab-pills-container");
-    const activeEl = document.getElementById(`partner-tab-pill-${activeTab}`);
-    if (container && activeEl) {
-      const containerRect = container.getBoundingClientRect();
-      const activeRect = activeEl.getBoundingClientRect();
-      const relativeLeft = activeRect.left - containerRect.left + container.scrollLeft;
-      const targetScrollLeft = relativeLeft - (containerRect.width / 2) + (activeRect.width / 2);
-
-      container.scrollTo({
-        left: targetScrollLeft,
-        behavior: "smooth",
-      });
-    }
-  }, [activeTab]);
-
   const currentCategory = categories.find((c) => c.id === activeTab) || categories[0];
 
-  const activeIndex = categories.findIndex((cat) => cat.id === activeTab);
-  const stepNumber = (activeIndex + 1).toString().padStart(2, "0");
-
   return (
-    <section id="categories" className="w-full py-24 bg-[#030303] text-white border-b border-zinc-900 relative overflow-hidden">
+    <section id="categories" className="w-full py-24 bg-black text-white border-b border-zinc-900 relative overflow-hidden">
       {/* Background radial glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-rose-600/5 rounded-full blur-[120px] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
+      <div className="max-w-7xl mx-auto w-full px-6 md:px-12 xl:px-8 relative z-10">
+        
         {/* Header Section */}
         <Reveal>
-          <div className="text-center max-w-3xl mx-auto mb-14">
-            {/* <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
-              Ecosystem Portfolios
-            </span> */}
-            <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight mb-5 text-white">
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight leading-tight mb-4 text-white">
               Partner <span className="text-rose-500">Categories</span>
             </h2>
-            {/* <p className="text-zinc-200 text-base md:text-lg font-semibold leading-relaxed">
-              We categorize our strategic partnerships across five core domains to provide enterprises with targeted, best-of-breed modernization.
-            </p> */}
+            <p className="text-zinc-300 text-base md:text-lg font-normal leading-relaxed">
+              &ldquo;Uniting global technology pioneers under a single collaborative ecosystem—driving transformation through <span className="text-rose-500 font-semibold">trusted platforms</span>, joint expertise, and <span className="text-rose-500 font-semibold">cloud innovation</span>.&rdquo;
+            </p>
           </div>
         </Reveal>
 
         {/* Tab Pills Selector */}
         <div 
           id="partner-tab-pills-container" 
-          className="flex items-center gap-2 mb-12 pb-4 overflow-x-auto scrollbar-hide scroll-smooth -mx-6 px-6 md:mx-0 md:px-0 border-b border-zinc-900/60"
+          className="flex items-center justify-start lg:justify-center gap-2.5 md:gap-3.5 mb-14 pb-3 overflow-x-auto scrollbar-hide scroll-smooth -mx-6 px-6 md:mx-0 md:px-0"
         >
           {categories.map((cat) => (
             <button
               key={cat.id}
               id={`partner-tab-pill-${cat.id}`}
               onClick={() => setActiveTab(cat.id)}
-              className={`px-5 py-2.5 rounded-full text-xs font-semibold whitespace-nowrap transition-all duration-300 border flex items-center gap-2 ${
+              className={`px-5 md:px-6 py-2.5 md:py-3 rounded-full text-sm md:text-base font-semibold whitespace-nowrap transition-all duration-300 flex items-center gap-2.5 ${
                 activeTab === cat.id
-                  ? "bg-rose-600 border-rose-600 text-white shadow-[0_4px_20px_rgba(225,29,72,0.35)]"
-                  : "bg-zinc-950/40 border-zinc-900 text-zinc-400 hover:text-white hover:bg-zinc-900/50 hover:border-zinc-800"
+                  ? "bg-rose-600 border border-rose-500 text-white shadow-[0_4px_20px_rgba(225,29,72,0.35)] scale-105"
+                  : "bg-zinc-950/80 border border-white/10 text-zinc-300 hover:text-white hover:bg-zinc-900 hover:border-white/20"
               }`}
             >
               {cat.icon}
@@ -292,97 +329,102 @@ export function PartnerCategories() {
         </div>
 
         {/* Categories Main Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 items-stretch">
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 items-stretch">
           
-          {/* Left Tall Card (Col 1, Spans entire height / 2 rows on desktop) */}
+          {/* Left Featured Card (Col 1) */}
           <Reveal className="lg:col-span-1 h-full">
-            <div className="relative overflow-hidden rounded-3xl border border-white/10 hover:border-rose-500/30 p-8 flex flex-col justify-between h-full min-h-[480px] bg-gradient-to-br from-zinc-950/90 via-[#0a0506]/90 to-[#0f0709]/90 group/tall backdrop-blur-md transition-all duration-500 shadow-[0_8px_32px_0_rgba(0,0,0,0.5)]">
-              {/* Internal decorative glowing meshes */}
-              <div className="absolute -right-10 -top-10 w-48 h-48 bg-rose-600/10 rounded-full blur-3xl pointer-events-none transition-all duration-700 group-hover/tall:scale-110" />
-              <div className="absolute -left-10 -bottom-10 w-48 h-48 bg-orange-600/5 rounded-full blur-3xl pointer-events-none transition-all duration-700 group-hover/tall:scale-110" />
+            <div className="relative overflow-hidden rounded-2xl border border-white/10 p-8 md:p-9 flex flex-col justify-between h-full min-h-[480px] bg-gradient-to-b from-zinc-950 via-[#14080b] to-[#1a090d] group/tall shadow-2xl">
+              
+              {/* Internal glowing accents */}
+              <div className="absolute -right-10 -top-10 w-48 h-48 bg-rose-600/15 rounded-full blur-3xl pointer-events-none" />
+              <div className="absolute -left-10 -bottom-10 w-48 h-48 bg-rose-600/10 rounded-full blur-3xl pointer-events-none" />
 
-              {/* Dynamic Abstract Smoky Wave Backgrounds with Crossfade */}
+              {/* Dynamic Smoky Wave Overlay */}
               {categories.map((cat) => (
-                <img key={cat.id}
+                <img 
+                  key={cat.id}
                   src={bgWaves[cat.id]}
                   alt=""
                   className={`absolute inset-0 w-full h-full object-cover mix-blend-screen pointer-events-none transition-opacity duration-700 ease-in-out ${
                     activeTab === cat.id ? "opacity-35" : "opacity-0"
                   }`}
-                loading="lazy" />
+                  loading="lazy" 
+                />
               ))}
 
-              {/* Card top details */}
+              {/* Card Header Details */}
               <div className="relative z-10">
-                {/* <span className="text-xs font-mono text-rose-500 tracking-widest uppercase block mb-4">
-                  {stepNumber} / ECOSYSTEM DIVISION
-                </span> */}
-                <h3 className="text-lg md:text-xl font-semibold text-white tracking-tight leading-tight mb-4 group-hover/tall:text-rose-400 transition-colors">
-                  Integrate with our {currentCategory.label}
+                <h3 className="text-2xl md:text-3xl font-semibold text-white tracking-tight leading-tight mb-4">
+                  Integrate with our <br />
+                  <span className="text-rose-500 font-semibold">{currentCategory.label}</span>
                 </h3>
-                {/* <p className="text-zinc-200 text-sm md:text-base font-semibold leading-relaxed">
+                <div className="w-10 h-[2px] bg-rose-500 mb-5" />
+                <p className="text-zinc-300 text-base md:text-lg font-normal leading-relaxed mb-6">
                   {currentCategory.subtitle}
-                </p> */}
+                </p>
               </div>
 
-              {/* Card bottom button */}
+              {/* Card Bottom CTA Button */}
               <div className="relative z-10 mt-8">
                 <Link
                   href="/contact#contact-form"
-                  className="gap-2 w-fit inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white transition-all duration-300 hover:shadow-[0_0_25px_rgba(225,29,72,0.35)] hover:-translate-y-0.5"
+                  className="w-full py-4 px-6 rounded-xl text-xs md:text-sm font-semibold uppercase tracking-wider bg-rose-600 hover:bg-rose-500 text-white flex items-center justify-between shadow-lg shadow-rose-600/30 transition-all group/btn"
                 >
-                  Consult Alliance Leads{" "}
+                  <span>CONSULT ALLIANCE LEADS</span>
                   <ArrowUpRight
-                    size={13}
+                    size={16}
                     className="transition-transform duration-300 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5"
                   />
                 </Link>
               </div>
+
             </div>
           </Reveal>
 
-          {/* Right Capabilities Grid (Col 2-4, 2 Columns x 2 Rows of smaller cards) */}
-          <div className="lg:col-span-3 grid grid-cols-1 md:grid-cols-2 gap-6">
+          {/* Right Partner Grid (Col 2-4: 3 Columns x 2 Rows of Glass Cards) */}
+          <div className="lg:col-span-3 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {currentCategory.partners.map((partner, idx) => (
               <Reveal key={partner.name} delay={idx * 0.04} className="h-full">
-                <div className="group/card flex flex-col justify-between bg-zinc-950/30 border border-white/5 hover:border-rose-500/20 hover:bg-zinc-950/60 rounded-2xl p-6 transition-all duration-300 min-h-[140px] h-full relative overflow-hidden backdrop-blur-md shadow-[0_8px_32px_0_rgba(0,0,0,0.37)]">
+                <div className="group/card flex flex-col justify-between bg-white/[0.03] backdrop-blur-xl border border-white/10 hover:border-white/25 hover:bg-white/[0.06] rounded-2xl p-6 transition-all duration-500 h-full relative overflow-hidden shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] min-h-[145px]">
                   
-                  {/* Subtle color highlight glow on hover */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-rose-600/0 via-rose-600/0 to-rose-600/5 opacity-0 group-hover/card:opacity-100 transition-opacity duration-500 pointer-events-none" />
+                  {/* Glass Sheen Gradient & Hover Light Pulse */}
+                  <div className="absolute inset-0 bg-gradient-to-tr from-white/[0.01] via-white/[0.03] to-transparent pointer-events-none" />
+                  <div className="absolute -top-12 -right-12 w-32 h-32 bg-white/5 rounded-full blur-2xl opacity-0 group-hover/card:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
-                  {/* Text details */}
-                  <div>
-                    <div className="flex items-center gap-3 mb-3 border-b border-zinc-900/60 pb-3">
-                      {partner.logo && (
-                        <img src={partner.logo}
+                  {/* Top Header: Logo & Partner Name */}
+                  <div className="relative z-10 flex items-center gap-4 mb-4">
+                    {/* Large Logo without BG or Border */}
+                    {partner.logo && (
+                      <div className="w-12 h-12 md:w-14 md:h-14 flex items-center justify-center flex-shrink-0 drop-shadow-[0_4px_12px_rgba(0,0,0,0.4)]">
+                        <img 
+                          src={partner.logo}
                           alt={partner.name}
-                          className="w-6 h-6 object-contain opacity-60 group-hover/card:opacity-100 transition-opacity duration-300 filter brightness-100 invert-[0.1]"
-                        loading="lazy" />
-                      )}
-                      <h4 className="text-base md:text-lg font-semibold text-rose-500 group-hover/card:text-rose-450 transition-colors">
+                          className="w-full h-full object-contain filter brightness-100 group-hover/card:scale-105 transition-transform duration-300"
+                          loading="lazy" 
+                        />
+                      </div>
+                    )}
+
+                    <div>
+                      <h4 className="text-xl md:text-2xl font-semibold text-white tracking-tight group-hover/card:text-rose-400 transition-colors">
                         {partner.name}
                       </h4>
                     </div>
-                    {/* <p className="text-sm text-zinc-300 font-medium leading-relaxed mb-6">
-                      {partner.desc}
-                    </p> */}
                   </div>
 
-                  {/* Link action details */}
-                  <Link
-                    href={partner.href}
-                    className="inline-flex items-center gap-2.5 group/link mt-auto w-fit"
-                  >
-                    <span className="w-7 h-7 rounded-full bg-rose-600/10 group-hover/link:bg-rose-600 text-rose-500 group-hover/link:text-white flex items-center justify-center transition-all duration-300">
-                      <ChevronRight
-                        size={12}
-                        className="transition-transform duration-300 group-hover/link:translate-x-0.5"
+                  {/* Bottom Side: Explore + Arrow */}
+                  <div className="relative z-10 pt-3.5 border-t border-white/10 flex items-center justify-between">
+                    <Link
+                      href={partner.href}
+                      className="inline-flex items-center gap-2 text-rose-400 hover:text-rose-300 font-semibold text-sm md:text-base tracking-wider transition-colors group/link"
+                    >
+                      <span>Explore</span>
+                      <ArrowUpRight
+                        size={17}
+                        className="transition-transform duration-300 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5"
                       />
-                    </span>
-                    <span className="text-xs md:text-sm font-semibold text-zinc-400 group-hover/link:text-zinc-200 transition-colors">
-                      {partner.action}
-                    </span>
-                  </Link>
+                    </Link>
+                  </div>
 
                 </div>
               </Reveal>
@@ -394,4 +436,3 @@ export function PartnerCategories() {
     </section>
   );
 }
-

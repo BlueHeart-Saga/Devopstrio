@@ -4,168 +4,127 @@ import React from "react";
 import { Reveal } from "@/components/ui/Reveal";
 import { Layers, Workflow, GitMerge, Cpu } from "lucide-react";
 
+interface LogoItem {
+  name: string;
+  src: string;
+}
+
 interface JointCard {
   title: string;
-  combination: string;
+  logo1: LogoItem;
+  logo2: LogoItem;
+  badgeText: string;
   icon: React.ReactNode;
-  diagram: React.ReactNode;
 }
 
 export function JointSolutions() {
   const cards: JointCard[] = [
     {
       title: "Enterprise Copilot Platform",
-      combination: "Azure + OpenAI",
-      icon: <Cpu size={20} className="text-rose-500" />,
-      diagram: (
-        <svg className="w-full h-28 opacity-95 transition-all duration-300 group-hover:scale-[1.03]" viewBox="0 0 200 60" fill="none">
-          <defs>
-            <linearGradient id="grad-azure-openai" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stopColor="#f43f5e" />
-              <stop offset="100%" stopColor="#3b82f6" />
-            </linearGradient>
-          </defs>
-          <rect x="15" y="15" width="40" height="30" rx="6" stroke="#f43f5e" strokeWidth="1.5" fill="#09090b" />
-          <text x="35" y="33" fill="#ffffff" fontSize="7" fontWeight="bold" textAnchor="middle" fontFamily="monospace">Azure</text>
-          
-          <rect x="145" y="15" width="40" height="30" rx="6" stroke="#3b82f6" strokeWidth="1.5" fill="#09090b" />
-          <text x="165" y="33" fill="#ffffff" fontSize="7" fontWeight="bold" textAnchor="middle" fontFamily="monospace">OpenAI</text>
-
-          <path d="M55 30 H145" stroke="url(#grad-azure-openai)" strokeWidth="1.5" strokeDasharray="3 3" />
-          <polygon points="105,26 113,30 105,34" fill="#3b82f6" />
-          <polygon points="95,26 87,30 95,34" fill="#f43f5e" />
-          
-          <circle cx="100" cy="30" r="8" fill="#18181b" stroke="#f43f5e" strokeWidth="1.5" />
-          <text x="100" y="33" fill="#f43f5e" fontSize="7" fontWeight="bold" textAnchor="middle" fontFamily="monospace">AI</text>
-        </svg>
-      )
+      logo1: { name: "Azure", src: "/assets/Tech_logos/Microsoft-Azure.svg" },
+      logo2: { name: "OpenAI", src: "/assets/Tech-icons/openai-logo_svgstack_com_28971780931370.svg" },
+      badgeText: "GenAI Interconnect",
+      icon: <Cpu size={22} className="text-rose-500" />
     },
     {
       title: "Cloud Native Transformation",
-      combination: "AWS + Kubernetes",
-      icon: <Workflow size={20} className="text-rose-500" />,
-      diagram: (
-        <svg className="w-full h-28 opacity-95 transition-all duration-300 group-hover:scale-[1.03]" viewBox="0 0 200 60" fill="none">
-          <defs>
-            <linearGradient id="grad-aws-k8s" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stopColor="#ff9900" />
-              <stop offset="100%" stopColor="#326ce5" />
-            </linearGradient>
-          </defs>
-          <rect x="15" y="15" width="40" height="30" rx="6" stroke="#ff9900" strokeWidth="1.5" fill="#09090b" />
-          <text x="35" y="33" fill="#ffffff" fontSize="7" fontWeight="bold" textAnchor="middle" fontFamily="monospace">AWS</text>
-          
-          <rect x="145" y="15" width="40" height="30" rx="6" stroke="#326ce5" strokeWidth="1.5" fill="#09090b" />
-          <text x="165" y="33" fill="#ffffff" fontSize="7" fontWeight="bold" textAnchor="middle" fontFamily="monospace">K8s</text>
-
-          <path d="M55 30 H145" stroke="url(#grad-aws-k8s)" strokeWidth="1.5" strokeDasharray="3 3" />
-          <polygon points="105,26 113,30 105,34" fill="#326ce5" />
-          <polygon points="95,26 87,30 95,34" fill="#ff9900" />
-          
-          <circle cx="100" cy="30" r="8" fill="#18181b" stroke="#f43f5e" strokeWidth="1.5" />
-          <text x="100" y="33" fill="#f43f5e" fontSize="7" fontWeight="bold" textAnchor="middle" fontFamily="monospace">SRE</text>
-        </svg>
-      )
+      logo1: { name: "AWS", src: "/assets/Tech_logos/AWS.svg" },
+      logo2: { name: "Kubernetes", src: "/assets/Tech_logos/Kubernetes.svg" },
+      badgeText: "K8s Orchestration",
+      icon: <Workflow size={22} className="text-rose-500" />
     },
     {
-      title: "Modern Data Intelligence Platform",
-      combination: "GCP + BigQuery",
-      icon: <Layers size={20} className="text-rose-500" />,
-      diagram: (
-        <svg className="w-full h-28 opacity-95 transition-all duration-300 group-hover:scale-[1.03]" viewBox="0 0 200 60" fill="none">
-          <defs>
-            <linearGradient id="grad-gcp-bq" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stopColor="#4285f4" />
-              <stop offset="100%" stopColor="#ea4335" />
-            </linearGradient>
-          </defs>
-          <rect x="15" y="15" width="40" height="30" rx="6" stroke="#4285f4" strokeWidth="1.5" fill="#09090b" />
-          <text x="35" y="33" fill="#ffffff" fontSize="7" fontWeight="bold" textAnchor="middle" fontFamily="monospace">GCP</text>
-          
-          <rect x="145" y="15" width="40" height="30" rx="6" stroke="#ea4335" strokeWidth="1.5" fill="#09090b" />
-          <text x="165" y="33" fill="#ffffff" fontSize="7" fontWeight="bold" textAnchor="middle" fontFamily="monospace">BigQuery</text>
-
-          <path d="M55 30 H145" stroke="url(#grad-gcp-bq)" strokeWidth="1.5" strokeDasharray="3 3" />
-          <polygon points="105,26 113,30 105,34" fill="#ea4335" />
-          <polygon points="95,26 87,30 95,34" fill="#4285f4" />
-          
-          <circle cx="100" cy="30" r="8" fill="#18181b" stroke="#f43f5e" strokeWidth="1.5" />
-          <text x="100" y="33" fill="#f43f5e" fontSize="7" fontWeight="bold" textAnchor="middle" fontFamily="monospace">SQL</text>
-        </svg>
-      )
+      title: "Modern Data Intelligence",
+      logo1: { name: "Google Cloud", src: "/assets/Tech_logos/Google_Cloud.svg" },
+      logo2: { name: "Snowflake", src: "/assets/Tech_logos/Snowflake.svg" },
+      badgeText: "Data Analytics",
+      icon: <Layers size={22} className="text-rose-500" />
     },
     {
       title: "Enterprise Process Modernization",
-      combination: "Oracle + SAP",
-      icon: <GitMerge size={20} className="text-rose-500" />,
-      diagram: (
-        <svg className="w-full h-28 opacity-95 transition-all duration-300 group-hover:scale-[1.03]" viewBox="0 0 200 60" fill="none">
-          <defs>
-            <linearGradient id="grad-oracle-sap" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stopColor="#f40000" />
-              <stop offset="100%" stopColor="#008fd3" />
-            </linearGradient>
-          </defs>
-          <rect x="15" y="15" width="40" height="30" rx="6" stroke="#f40000" strokeWidth="1.5" fill="#09090b" />
-          <text x="35" y="33" fill="#ffffff" fontSize="7" fontWeight="bold" textAnchor="middle" fontFamily="monospace">Oracle</text>
-          
-          <rect x="145" y="15" width="40" height="30" rx="6" stroke="#008fd3" strokeWidth="1.5" fill="#09090b" />
-          <text x="165" y="33" fill="#ffffff" fontSize="7" fontWeight="bold" textAnchor="middle" fontFamily="monospace">SAP</text>
-
-          <path d="M55 30 H145" stroke="url(#grad-oracle-sap)" strokeWidth="1.5" strokeDasharray="3 3" />
-          <polygon points="105,26 113,30 105,34" fill="#008fd3" />
-          <polygon points="95,26 87,30 95,34" fill="#f40000" />
-          
-          <circle cx="100" cy="30" r="8" fill="#18181b" stroke="#f43f5e" strokeWidth="1.5" />
-          <text x="100" y="33" fill="#f43f5e" fontSize="7" fontWeight="bold" textAnchor="middle" fontFamily="monospace">ERP</text>
-        </svg>
-      )
+      logo1: { name: "Oracle (OCI)", src: "/assets/Tech_logos/Oracle_Cloud.svg" },
+      logo2: { name: "SAP", src: "/assets/Tech_logos/sap.svg" },
+      badgeText: "ERP Automation",
+      icon: <GitMerge size={22} className="text-rose-500" />
     }
   ];
 
   return (
-    <section id="solutions" className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
-      <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
-        <Reveal className="mb-16 text-left">
-          {/* <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
-            INTEGRATED VALUE
-          </span> */}
-          <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight mb-5 text-white">
+    <section id="solutions" className="w-full py-24 bg-black text-white border-b border-zinc-900/60 relative overflow-hidden">
+      {/* Background glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-rose-600/5 rounded-full blur-[140px] pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto w-full px-6 md:px-12 xl:px-8 relative z-10">
+        
+        {/* Header - Title Only */}
+        <Reveal className="mb-14 text-center max-w-3xl mx-auto">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight leading-tight text-white">
             Joint Solution <span className="text-rose-500">Accelerators</span>
           </h2>
-          {/* <p className="text-zinc-400 text-sm font-semibold max-w-2xl">
-            Pre-engineered multi-technology architectural blueprints deployed to accelerate enterprise implementation schedules.
-          </p> */}
         </Reveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {/* 2x2 Grid of Joint Solutions with Real Logo Integrations */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {cards.map((card, idx) => (
-            <div
-              key={card.title}
-              className="group flex flex-col justify-between p-8 bg-zinc-950/40 border border-zinc-900 hover:border-rose-500/20 rounded-3xl transition-all duration-300 min-h-[260px]"
-            >
-              <div>
-                <div className="flex items-center justify-between mb-6 border-b border-zinc-900/60 pb-4">
-                  <div className="flex items-center gap-3">
-                    <div className="text-rose-500 flex items-center justify-center">
+            <Reveal key={card.title} delay={idx * 0.1}>
+              <div className="group flex flex-col justify-between p-8 bg-[#09090b] rounded-2xl transition-all duration-300 shadow-2xl h-full min-h-[250px]">
+                
+                {/* Title Header - Title Only */}
+                <div className="flex items-center justify-between mb-6 pb-4 border-b border-zinc-900/50">
+                  <div className="flex items-center gap-3.5">
+                    <div className="p-3 rounded-xl bg-rose-500/10 text-rose-500 flex items-center justify-center">
                       {card.icon}
                     </div>
-                    <div>
-                      <h4 className="text-base md:text-lg font-semibold text-white uppercase tracking-wider">{card.title}</h4>
-                      {/* <span className="text-xs font-mono text-zinc-400 uppercase tracking-widest font-bold">
-                        {card.combination}
-                      </span> */}
-                    </div>
+                    <h3 className="text-xl md:text-2xl font-semibold text-white tracking-tight">
+                      {card.title}
+                    </h3>
                   </div>
                 </div>
-              </div>
 
-              <div className="flex flex-col items-center justify-center bg-zinc-950/60 border border-zinc-900/80 rounded-2xl p-6">
-                {card.diagram}
+                {/* Real Logos Interconnect Workflow Panel - Borderless */}
+                <div className="relative w-full bg-zinc-950/80 rounded-2xl p-6 md:p-8 flex items-center justify-between gap-3 overflow-hidden transition-all duration-300">
+                  
+                  {/* Left Real Logo */}
+                  <div className="flex items-center justify-center z-10">
+                    <div className="w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-zinc-900/90 flex items-center justify-center p-3 shadow-md group-hover:scale-105 transition-transform duration-300">
+                      <img
+                        src={card.logo1.src}
+                        alt={card.logo1.name}
+                        className="w-9 h-9 md:w-10 md:h-10 object-contain filter brightness-100"
+                        loading="lazy"
+                      />
+                    </div>
+                  </div>
+
+                  {/* Interconnect Connector Line */}
+                  <div className="flex-1 relative flex items-center justify-center px-1">
+                    <div className="w-full h-[2px] bg-gradient-to-r from-rose-500/80 via-rose-500 to-rose-500/80 relative">
+                      <div className="absolute inset-0 bg-rose-500 blur-sm opacity-60" />
+                    </div>
+                    <span className="absolute px-4 py-1.5 bg-zinc-950 border border-rose-500/30 text-rose-500 text-xs md:text-sm font-semibold tracking-wider rounded-full uppercase shadow-md whitespace-nowrap z-10">
+                      {card.badgeText}
+                    </span>
+                  </div>
+
+                  {/* Right Real Logo */}
+                  <div className="flex items-center justify-center z-10">
+                    <div className="w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-zinc-900/90 flex items-center justify-center p-3 shadow-md group-hover:scale-105 transition-transform duration-300">
+                      <img
+                        src={card.logo2.src}
+                        alt={card.logo2.name}
+                        className="w-9 h-9 md:w-10 md:h-10 object-contain filter brightness-100"
+                        loading="lazy"
+                      />
+                    </div>
+                  </div>
+
+                </div>
+
               </div>
-            </div>
+            </Reveal>
           ))}
         </div>
+
       </div>
     </section>
   );
