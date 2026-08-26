@@ -83,11 +83,16 @@ export const LifeMomentsGallery = () => {
               images: item.src ? [{ src: item.src, tagname: item.title || "" }] : []
             };
           });
-          // Show newest events first
-          const reversed = normalizedData.reverse();
-          setEvents(reversed);
-          if (reversed.length > 0) {
-            setActiveCategory(reversed[0].eventName);
+          // Sort events from newest to oldest (new to old order)
+          const sortedNewestFirst = [...normalizedData].sort((a, b) => {
+            const numA = parseInt(a.year, 10) || 0;
+            const numB = parseInt(b.year, 10) || 0;
+            if (numB !== numA) return numB - numA;
+            return b.id.localeCompare(a.id, undefined, { numeric: true });
+          });
+          setEvents(sortedNewestFirst);
+          if (sortedNewestFirst.length > 0) {
+            setActiveCategory(sortedNewestFirst[0].eventName);
           }
         }
       } catch (err) {

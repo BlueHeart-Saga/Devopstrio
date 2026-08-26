@@ -1,69 +1,87 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { Reveal } from "@/components/ui/Reveal";
 
 const metrics = [
-  // Row 1
-  { value: "2500+", label: "Projects Delivered", desc: "Successful digital transformations." },
-  { value: "1500+", label: "Enterprise Clients", desc: "FTSE 100 & global brands." },
-  { value: "525+", label: "Certified Experts", desc: "Cloud & AI architects." },
-  { value: "6+", label: "Global Offices", desc: "Locations across 4 countries." },
-  // Row 2
-  { value: "98%", label: "Client Retention", desc: "Long-term partnerships." },
-  { value: "99.9%", label: "Uptime SLA", desc: "Guaranteed platform availability." },
-  { value: "73%", label: "Faster Deployments", desc: "Accelerated release frequency." },
-  { value: "42%", label: "Avg Cost Reduction", desc: "Optimised cloud spend." },
-  // Row 3
-  { value: "£56k", label: "Monthly Savings (Asda)", desc: "Delivered via Azure Virtual Desktop." },
-  { value: "565t", label: "CO₂ Saved/Year", desc: "Carbon-efficient coding." },
-  { value: "36k+", label: "Trees Planted", desc: "Global reforestation projects." },
-  { value: "24/7", label: "Global Support", desc: "Always-on site reliability." }
+  { value: "2500+", label: "Projects Delivered" },
+  { value: "1500+", label: "Enterprise Clients" },
+  { value: "525+", label: "Certified Experts" },
+  { value: "98%", label: "Client Retention" },
+  { value: "99.9%", label: "Uptime SLA" },
+  { value: "73%", label: "Faster Deployments" },
+  { value: "42%", label: "Avg Cost Reduction" },
+  { value: "565t", label: "CO₂ Saved/Year" },
+  { value: "24/7", label: "Global Support" },
 ];
 
 export function MetricsStats() {
   return (
-    <section className="w-full py-10 sm:py-14 bg-black text-white relative font-sans">
-      <div className="max-w-7xl mx-auto w-full px-6 lg:px-12">
-
-        {/* Header Grid */}
-        <Reveal className="grid grid-cols-1 lg:grid-cols-[1.15fr_0.85fr] gap-8 items-center mb-10">
-          <div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight leading-tight text-white font-sans">
-              The <span className="text-rose-600 font-semibold">Results Speak for Themselves</span>
-            </h2>
-          </div>
-
-          <div className="p-5 bg-zinc-950/80 border border-zinc-800/80 rounded-lg border-l-4 border-l-rose-600">
-            <p className="text-base italic text-zinc-200 font-medium leading-relaxed font-sans">
-              &ldquo;Numbers only matter when they mean something to the business behind them. Every metric below represents a client who moved faster, spent less, and worried less about their infrastructure.&rdquo;
-            </p>
-          </div>
+    <section className="w-full bg-black text-white pt-0 pb-8 sm:pb-12 lg:pb-16 relative overflow-hidden font-sans">
+      
+      {/* Header */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pt-6 sm:pt-8 mb-6 sm:mb-8">
+        <Reveal className="text-center max-w-3xl mx-auto">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-white">
+            The Results Speak for Themselves
+          </h2>
+          <p className="text-zinc-300 text-base sm:text-lg lg:text-xl leading-relaxed mt-4 max-w-3xl mx-auto font-normal">
+            &ldquo;Numbers only matter when they mean something to the business behind them.
+            Every metric below represents a client who moved faster, spent less, and worried
+            less about their infrastructure.&rdquo;
+          </p>
         </Reveal>
-
-        {/* 12-Stat Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {metrics.map((item, idx) => (
-            <Reveal
-              key={item.label}
-              delay={idx * 0.05}
-              className="bg-zinc-950/80 border border-zinc-800/80 p-5 sm:p-6 rounded-lg flex flex-col justify-between hover:border-rose-500/50 hover:bg-zinc-900/60 transition-all duration-300 relative group cursor-pointer hover:-translate-y-1"
-            >
-              <div>
-                <span className="text-2xl sm:text-3xl font-bold text-white group-hover:text-rose-400 transition-colors duration-300 font-mono tracking-tight block mb-1.5">
-                  {item.value}
-                </span>
-                <span className="text-sm font-semibold text-zinc-300 group-hover:text-white block font-sans">
-                  {item.label}
-                </span>
-              </div>
-            </Reveal>
-          ))}
-        </div>
-
       </div>
+
+      {/* Main Content Area: Left Image + Centered Red Box + Right Image */}
+      <Reveal delay={0.15} className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-4 sm:pb-6">
+        <div className="w-full flex items-stretch justify-center relative">
+          
+          {/* Left Landmark Illustration */}
+          <div className="hidden lg:flex flex-1 justify-end items-end pointer-events-none pb-0 overflow-visible self-stretch z-0 -mr-16 lg:-mr-24 xl:-mr-32 relative -translate-y-8 lg:-translate-y-12 xl:-translate-y-14">
+            <Image
+              src="/webp/assets/components/left.png"
+              alt="Landmarks illustration"
+              width={1200}
+              height={800}
+              className="w-auto h-full max-h-[440px] xl:max-h-[520px] 2xl:max-h-[580px] object-contain object-right-bottom scale-120 xl:scale-125 origin-bottom-right"
+            />
+          </div>
+
+          {/* Central Crimson Stats Box */}
+          <div className="w-full max-w-lg lg:max-w-xl xl:max-w-2xl bg-[#D82355] px-6 sm:px-10 lg:px-14 py-6 sm:py-8 lg:py-10 shadow-2xl relative z-10 shrink-0 mx-auto">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-y-6 sm:gap-y-7 lg:gap-y-8 gap-x-6 sm:gap-x-10 text-center">
+              {metrics.map((item, idx) => (
+                <div key={idx} className="flex flex-col items-center justify-center">
+                  <span className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-white tracking-tight block">
+                    {item.value}
+                  </span>
+                  <span className="text-xs sm:text-sm font-normal text-white/90 mt-1 sm:mt-2 block tracking-wide">
+                    {item.label}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Right City Skyline Illustration */}
+          <div className="hidden lg:flex flex-1 justify-start items-end pointer-events-none pb-0 overflow-visible self-stretch z-0 -ml-16 lg:-ml-24 xl:-ml-32 relative -translate-y-8 lg:-translate-y-12 xl:-translate-y-14">
+            <Image
+              src="/webp/assets/components/right.png"
+              alt="City skyline illustration"
+              width={1200}
+              height={800}
+              className="w-auto h-full max-h-[440px] xl:max-h-[520px] 2xl:max-h-[580px] object-contain object-left-bottom scale-120 xl:scale-125 origin-bottom-left"
+            />
+          </div>
+
+        </div>
+      </Reveal>
+
     </section>
   );
 }
 
 export default MetricsStats;
+
