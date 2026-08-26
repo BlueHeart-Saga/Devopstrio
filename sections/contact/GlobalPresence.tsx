@@ -72,8 +72,22 @@ const locations = [
 // Which pins show their label pill by default (others only on hover)
 const defaultVisible = new Set(["london", "tennessee", "bengaluru", "chennai", "thoothukudi"]);
 
-export function GlobalPresence() {
+interface GlobalPresenceProps {
+  title?: React.ReactNode;
+}
+
+export function GlobalPresence({ title }: GlobalPresenceProps) {
   const [active, setActive] = useState<string | null>(null);
+
+  const headerTitle = title || (
+    <>
+      Wherever you build &amp;{" "}
+      <span className="bg-rose-500 text-white font-semibold px-4 py-1 mx-1 rounded-xl inline-block">
+        Collaborate
+      </span>
+      , <span className="text-rose-500 font-semibold">we&apos;re already there.</span>
+    </>
+  );
 
   return (
     <section className="w-full pt-2 pb-2 md:pt-4 md:pb-4 bg-[#030303] text-white relative overflow-hidden">
@@ -95,11 +109,7 @@ export function GlobalPresence() {
           </div>
 
           <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold tracking-tight leading-[1.35] mb-2 text-white">
-            Wherever you build &amp;{" "}
-            <span className="bg-rose-500 text-white font-semibold px-4 py-1 mx-1 rounded-xl inline-block">
-              Collaborate
-            </span>
-            , <span className="text-rose-500 font-semibold">we&apos;re already there.</span>
+            {headerTitle}
           </h2>
         </Reveal>
 
@@ -148,76 +158,64 @@ export function GlobalPresence() {
                       loading="lazy" />
                     </div>
 
-                    {/* Label Pill */}
+                    {/* Label Pill - bg-rose-500 Background with Flag Bold & City SemiBold */}
                     {loc.labelPosition === "right" ? (
                       <div
-                        className={`absolute left-full top-1/2 -translate-y-1/2 ml-2 transition-all duration-300 whitespace-nowrap z-30 flex items-center ${
+                        className={`absolute left-full top-1/2 -translate-y-1/2 ml-2.5 transition-all duration-300 whitespace-nowrap z-30 flex items-center ${
                           showLabel ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-2 pointer-events-none"
                         }`}
                       >
                         {/* Arrow pointing LEFT */}
-                        <div className={`w-2 h-2 rotate-45 -mr-[4px] z-10 border-l border-b ${
-                          isActive ? "bg-zinc-900/95 border-rose-500" : "bg-zinc-950/90 border-zinc-800"
-                        }`} />
-                        <div className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg border shadow-2xl text-xs font-semibold backdrop-blur-md transition-all duration-300 ${
-                          isActive
-                            ? "bg-zinc-900/95 border-rose-500 text-white scale-105 shadow-[0_0_20px_rgba(244,63,94,0.3)]"
-                            : "bg-zinc-950/90 border-zinc-800 text-zinc-200"
+                        <div className="w-2.5 h-2.5 rotate-45 -mr-[5px] z-10 border-l border-b bg-rose-500 border-rose-400" />
+                        <div className={`flex items-center gap-2 px-3.5 py-2 rounded-xl border border-rose-400 bg-rose-500 text-white shadow-lg transition-all duration-300 ${
+                          isActive ? "scale-105 border-white/50" : ""
                         }`}>
-                          <span className="text-sm leading-none">{loc.flag}</span>
-                          <span>{loc.city}</span>
+                          <span className="text-base sm:text-lg leading-none font-bold">{loc.flag}</span>
+                          <span className="text-sm sm:text-base font-semibold text-white tracking-wide">{loc.city}</span>
                         </div>
                       </div>
                     ) : loc.labelPosition === "bottom" ? (
                       <div
-                        className={`absolute top-full mt-2 left-1/2 -translate-x-1/2 transition-all duration-300 whitespace-nowrap z-30 ${
+                        className={`absolute top-full mt-2.5 left-1/2 -translate-x-1/2 transition-all duration-300 whitespace-nowrap z-30 ${
                           showLabel ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-2 pointer-events-none"
                         }`}
                       >
                         {/* Arrow pointing UP */}
-                        <div className={`w-2 h-2 rotate-45 mx-auto -mb-[4px] border-l border-t ${
-                          isActive ? "bg-zinc-900/95 border-rose-500" : "bg-zinc-950/90 border-zinc-800"
-                        }`} />
-                        <div className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg border shadow-2xl text-xs font-semibold backdrop-blur-md transition-all duration-300 ${
-                          isActive
-                            ? "bg-zinc-900/95 border-rose-500 text-white scale-105 shadow-[0_0_20px_rgba(244,63,94,0.3)]"
-                            : "bg-zinc-950/90 border-zinc-800 text-zinc-200"
+                        <div className="w-2.5 h-2.5 rotate-45 mx-auto -mb-[5px] border-l border-t bg-rose-500 border-rose-400" />
+                        <div className={`flex items-center gap-2 px-3.5 py-2 rounded-xl border border-rose-400 bg-rose-500 text-white shadow-lg transition-all duration-300 ${
+                          isActive ? "scale-105 border-white/50" : ""
                         }`}>
-                          <span className="text-sm leading-none">{loc.flag}</span>
-                          <span>{loc.city}</span>
+                          <span className="text-base sm:text-lg leading-none font-bold">{loc.flag}</span>
+                          <span className="text-sm sm:text-base font-semibold text-white tracking-wide">{loc.city}</span>
                         </div>
                       </div>
                     ) : (
                       <div
-                        className={`absolute bottom-full mb-2.5 left-1/2 -translate-x-1/2 transition-all duration-300 whitespace-nowrap z-30 ${
+                        className={`absolute bottom-full mb-3 left-1/2 -translate-x-1/2 transition-all duration-300 whitespace-nowrap z-30 ${
                           showLabel ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2 pointer-events-none"
                         }`}
                       >
-                        <div className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg border shadow-2xl text-xs font-semibold backdrop-blur-md transition-all duration-300 ${
-                          isActive
-                            ? "bg-zinc-900/95 border-rose-500 text-white scale-105 shadow-[0_0_20px_rgba(244,63,94,0.3)]"
-                            : "bg-zinc-950/90 border-zinc-800 text-zinc-200"
+                        <div className={`flex items-center gap-2 px-3.5 py-2 rounded-xl border border-rose-400 bg-rose-500 text-white shadow-lg transition-all duration-300 ${
+                          isActive ? "scale-105 border-white/50" : ""
                         }`}>
-                          <span className="text-sm leading-none">{loc.flag}</span>
-                          <span>{loc.city}</span>
+                          <span className="text-base sm:text-lg leading-none font-bold">{loc.flag}</span>
+                          <span className="text-sm sm:text-base font-semibold text-white tracking-wide">{loc.city}</span>
                         </div>
                         {/* Arrow pointing DOWN */}
-                        <div className={`w-2 h-2 rotate-45 mx-auto -mt-[4px] border-r border-b ${
-                          isActive ? "bg-zinc-900/95 border-rose-500" : "bg-zinc-950/90 border-zinc-800"
-                        }`} />
+                        <div className="w-2.5 h-2.5 rotate-45 mx-auto -mt-[5px] border-r border-b bg-rose-500 border-rose-400" />
                       </div>
                     )}
 
                     {/* Expanded Detail Card on Hover */}
                     {isActive && (
-                      <div className={`absolute ${loc.labelPosition === "bottom" ? "bottom-full mb-10" : "top-full mt-3"} left-1/2 -translate-x-1/2 z-40 animate-fadeIn`}>
-                        <div className="bg-zinc-950/95 border border-rose-500/40 rounded-xl p-3.5 shadow-2xl text-left min-w-[170px] backdrop-blur-md">
-                          <div className="text-[9px] font-semibold text-rose-500 uppercase tracking-widest mb-1">{loc.label}</div>
-                          <div className="text-xs font-bold text-white leading-none mb-1">{loc.city}</div>
-                          <div className="text-[10px] text-zinc-400 font-semibold mb-2">{loc.role}</div>
-                          <div className="pt-2 border-t border-zinc-800/80 flex items-center justify-between text-[10px] text-rose-400 font-semibold group-hover:underline">
+                      <div className={`absolute ${loc.labelPosition === "bottom" ? "bottom-full mb-12" : "top-full mt-4"} left-1/2 -translate-x-1/2 z-40 animate-fadeIn`}>
+                        <div className="bg-zinc-950 border border-zinc-800 rounded-2xl p-4 shadow-[0_20px_50px_rgba(0,0,0,0.9)] text-left min-w-[200px] backdrop-blur-xl">
+                          <div className="text-xs font-semibold text-rose-400 uppercase tracking-wider mb-1.5 font-sans">{loc.label}</div>
+                          <div className="text-base sm:text-lg font-semibold text-white leading-tight mb-1 font-sans">{loc.city}</div>
+                          <div className="text-xs font-semibold text-zinc-300 mb-3 font-sans">{loc.role}</div>
+                          <div className="pt-2.5 border-t border-zinc-800/80 flex items-center justify-between text-xs font-semibold text-rose-400 group-hover:text-rose-300 font-sans">
                             <span>Open on Maps</span>
-                            <ArrowUpRight size={11} />
+                            <ArrowUpRight size={14} />
                           </div>
                         </div>
                       </div>

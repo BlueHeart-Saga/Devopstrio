@@ -63,16 +63,13 @@ export function EcosystemPillars() {
 
         {/* Header Section */}
         <Reveal>
-          <div className="text-center max-w-3xl mx-auto mb-14">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+          <div className="text-center max-w-3xl mx-auto mb-10">
+            <span className="text-xs font-semibold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
               ECOSYSTEM PILLARS
             </span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-white">
               Core <span className="text-rose-500">ecosystem domains</span>
             </h2>
-            <p className="text-zinc-200 text-base md:text-lg font-semibold leading-relaxed">
-              Explore co-engineered software platforms, active innovation labs, and joint technology alliance networks. Learn more about our <Link href="/services" className="text-rose-500 hover:underline font-bold">managed engineering services</Link> and read our <Link href="/about/company-overview" className="text-rose-500 hover:underline font-bold">company overview</Link>.
-            </p>
           </div>
         </Reveal>
 
@@ -98,7 +95,7 @@ export function EcosystemPillars() {
 
           {/* Left Tall Card (Col 1) */}
           <Reveal className="lg:col-span-1 h-full">
-            <div className="relative overflow-hidden rounded-3xl border border-white/10 hover:border-rose-500/30 p-8 flex flex-col justify-between h-full min-h-[480px] bg-gradient-to-br from-zinc-950/90 via-[#0a0506]/90 to-[#0f0709]/90 group/tall backdrop-blur-md transition-all duration-500 shadow-[0_8px_32px_0_rgba(0,0,0,0.5)]">
+            <div className="relative overflow-hidden rounded-3xl border border-white/10 hover:border-rose-500/30 p-8 flex flex-col justify-between h-full min-h-[380px] bg-gradient-to-br from-zinc-950/90 via-[#0a0506]/90 to-[#0f0709]/90 group/tall backdrop-blur-md transition-all duration-500 shadow-[0_8px_32px_0_rgba(0,0,0,0.5)]">
               {/* Internal decorative glowing meshes */}
               <div className="absolute -right-10 -top-10 w-48 h-48 bg-rose-600/10 rounded-full blur-3xl pointer-events-none transition-all duration-700 group-hover/tall:scale-110" />
               <div className="absolute -left-10 -bottom-10 w-48 h-48 bg-orange-600/5 rounded-full blur-3xl pointer-events-none transition-all duration-700 group-hover/tall:scale-110" />
@@ -114,19 +111,16 @@ export function EcosystemPillars() {
 
               {/* Card top details */}
               <div className="relative z-10">
-                <h3 className="text-xl md:text-2xl font-bold text-white tracking-tight leading-tight mb-4 group-hover/tall:text-rose-400 transition-colors">
+                <h3 className="text-xl md:text-2xl font-semibold text-white tracking-tight leading-tight group-hover/tall:text-rose-400 transition-colors">
                   Explore {selectedDomain.title}
                 </h3>
-                <p className="text-zinc-100 text-xs font-semibold leading-relaxed">
-                  {selectedDomain.subtitle}
-                </p>
               </div>
 
               {/* Card bottom button */}
               <div className="relative z-10 mt-8">
                 <Link
                   href={`/ecosystem/${selectedDomain.slug}`}
-                  className="gap-2 w-fit inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white transition-all duration-300 hover:shadow-[0_0_25px_rgba(225,29,72,0.35)] hover:-translate-y-0.5"
+                  className="gap-2 w-fit inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-semibold tracking-wider uppercase bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white transition-all duration-300 hover:shadow-[0_0_25px_rgba(225,29,72,0.35)] hover:-translate-y-0.5"
                 >
                   Explore Pillar{" "}
                   <ArrowUpRight
@@ -142,19 +136,16 @@ export function EcosystemPillars() {
           <div className="lg:col-span-3 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {selectedDomain.subpages.slice(0, 6).map((subpage, idx) => (
               <Reveal key={subpage.slug} delay={idx * 0.04} className="h-full">
-                <div className="group/card flex flex-col justify-between bg-zinc-950/30 border border-white/5 hover:border-rose-500/20 hover:bg-zinc-950/60 rounded-2xl p-6 transition-all duration-300 min-h-[220px] h-full relative overflow-hidden backdrop-blur-md shadow-[0_8px_32px_0_rgba(0,0,0,0.37)]">
+                <div className="group/card flex flex-col justify-between bg-zinc-950/30 border border-white/5 hover:border-rose-500/20 hover:bg-zinc-950/60 rounded-2xl p-6 transition-all duration-300 min-h-[160px] h-full relative overflow-hidden backdrop-blur-md shadow-[0_8px_32px_0_rgba(0,0,0,0.37)]">
 
                   {/* Subtle color highlight glow on hover */}
                   <div className="absolute inset-0 bg-gradient-to-br from-rose-600/0 via-rose-600/0 to-rose-600/5 opacity-0 group-hover/card:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
                   {/* Text details */}
                   <div>
-                    <h4 className="text-base font-semibold text-rose-500 group-hover:text-rose-400 transition-colors mb-2">
+                    <h4 className="text-base font-semibold text-rose-500 group-hover:text-rose-400 transition-colors">
                       {subpage.title}
                     </h4>
-                    <p className="text-[12px] text-zinc-200 font-semibold leading-relaxed mb-6">
-                      {subpage.description}
-                    </p>
                   </div>
 
                   {/* Link action details */}

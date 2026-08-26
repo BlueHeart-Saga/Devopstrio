@@ -89,21 +89,15 @@ export function SystemArchitecture() {
         {/* Top Section: Centered Header & Description */}
         <div className="flex flex-col items-center text-center max-w-3xl mx-auto mb-16">
           <Reveal>
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+            <span className="text-xs font-semibold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
               ECOSYSTEM ARCHITECTURE
             </span>
           </Reveal>
 
           <Reveal delay={0.1}>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-white">
               A Unified Ecosystem Built <span className="text-rose-500">for Global Scale</span>
             </h2>
-          </Reveal>
-
-          <Reveal delay={0.2}>
-            <p className="text-zinc-200 text-xs sm:text-sm md:text-base leading-relaxed font-semibold max-w-2xl">
-              Devopstrio combines strategic technology partnerships, proprietary platforms, engineering accelerators, innovation labs, and global delivery capabilities into a unified ecosystem that enables organizations to build, modernize, and scale with confidence. Read our <Link href="/about/company-overview" className="text-rose-500 hover:underline font-bold">company overview</Link> and find out more about our <Link href="/services" className="text-rose-500 hover:underline font-bold">engineering services</Link>.
-            </p>
           </Reveal>
         </div>
 

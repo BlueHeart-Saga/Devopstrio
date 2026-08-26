@@ -23,54 +23,28 @@ export function BusinessOutcomes() {
             </Reveal>
 
             <Reveal delay={0.1}>
-              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-white mb-8">
                 Proven Business Results <span className="text-rose-500">for Our Clients</span>
               </h2>
-            </Reveal>
-
-            <Reveal delay={0.2}>
-              <p className="text-zinc-200 text-base md:text-lg font-semibold leading-relaxed mb-8">
-                By leveraging our integrated ecosystems, enterprises achieve unprecedented efficiency gains, drastically reduced time-to-market, and ironclad security guardrails. Review our <Link href="/about/company-overview" className="text-rose-500 hover:underline font-bold">company overview</Link> and read our client <Link href="/about/testimonials" className="text-rose-500 hover:underline font-bold">testimonials</Link> to see how we deliver these results.
-              </p>
             </Reveal>
 
             {/* Outcome rows */}
             <div className="flex flex-col gap-6 w-full">
               {[
-                {
-                  title: "50% Faster Delivery",
-                  desc: "Automated CI/CD pipelines and infrastructure-as-code drastically reduce time-to-market."
-                },
-                {
-                  title: "99.99% Availability",
-                  desc: "Self-healing cloud architectures designed for zero downtime and peak resilience."
-                },
-                {
-                  title: "40% Reduced Cloud Spend",
-                  desc: "Continuous resource optimization and dynamic auto-scaling cut unnecessary costs."
-                },
-                {
-                  title: "24×7 Operations",
-                  desc: "Follow-the-sun managed services ensuring continuous system monitoring and support."
-                },
-                {
-                  title: "100+ Certified Engineers",
-                  desc: "A vetted global talent pool certified across AWS, Azure, Google Cloud, and Kubernetes."
-                }
-              ].map((item, idx) => (
+                "50% Faster Delivery",
+                "99.99% Availability",
+                "40% Reduced Cloud Spend",
+                "24×7 Operations",
+                "100+ Certified Engineers"
+              ].map((title, idx) => (
                 <Reveal key={idx} delay={0.25 + idx * 0.05}>
-                  <div className="flex items-start gap-4">
-                    <div className="w-6 h-6 rounded-md bg-rose-950/15 border border-rose-900/20 flex items-center justify-center text-rose-500 mt-0.5 flex-shrink-0">
+                  <div className="flex items-center gap-4">
+                    <div className="w-6 h-6 rounded-md bg-rose-950/15 border border-rose-900/20 flex items-center justify-center text-rose-500 flex-shrink-0">
                       <CheckCircle2 size={13} />
                     </div>
-                    <div>
-                      <strong className="block text-xs font-bold text-white mb-1">
-                        {item.title}
-                      </strong>
-                      <p className="text-[11px] text-zinc-400 leading-relaxed font-semibold">
-                        {item.desc}
-                      </p>
-                    </div>
+                    <strong className="text-base font-semibold text-white">
+                      {title}
+                    </strong>
                   </div>
                 </Reveal>
               ))}
@@ -87,17 +61,13 @@ export function BusinessOutcomes() {
                   STRATEGIC COLLABORATION
                 </span>
 
-                <h3 className="text-base sm:text-lg font-bold text-white leading-snug mb-4 group-hover:text-rose-450 transition-colors">
+                <h3 className="text-base sm:text-lg font-semibold text-white leading-snug mb-6 group-hover:text-rose-450 transition-colors">
                   Devopstrio Partners with Azure to Accelerate Enterprise AI Adoption
                 </h3>
 
-                <p className="text-[11px] text-zinc-400 leading-relaxed mb-8 font-semibold">
-                  We are proud to announce a multi-year technical partnership aimed at accelerating secure cloud-native deployment patterns and custom cognitive service integrations for healthcare and fintech industries.
-                </p>
-
                 <Link
                   href="/marketing/whitepapers"
-                  className="inline-flex items-center gap-1.5 text-xs font-bold text-white group-hover:text-rose-500 transition-colors"
+                  className="inline-flex items-center gap-1.5 text-xs font-semibold text-white group-hover:text-rose-500 transition-colors"
                 >
                   Read the Full Announcement <ChevronRight size={14} className="group-hover:translate-x-0.5 transition-transform" />
                 </Link>

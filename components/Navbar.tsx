@@ -909,16 +909,22 @@ export function Navbar() {
                       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent group-hover:bg-black/75 transition-all duration-500 pointer-events-none" />
 
                       <div className="relative z-10">
-                        <h4 className="text-xl font-bold leading-snug text-white tracking-tight mb-2 font-sans drop-shadow-md">
+                        <h4 className="text-xl sm:text-2xl font-bold leading-snug text-white tracking-tight mb-2 font-sans drop-shadow-md">
                           Powering Next-Gen <span className="text-red-500">Services</span>
                         </h4>
                         <div className="w-10 h-[3px] bg-red-600 rounded-full my-3" />
+
+                        <div className="transition-all duration-500 ease-out max-h-0 opacity-0 group-hover:max-h-[140px] group-hover:opacity-100 overflow-hidden">
+                          <p className="text-xs sm:text-sm text-zinc-200 font-semibold leading-relaxed pt-1">
+                            Deploying cloud-native architectures, AI automation, and enterprise software platforms worldwide.
+                          </p>
+                        </div>
                       </div>
 
                       <Link
                         href="/services"
                         onClick={() => setActiveMenu(null)}
-                        className="relative z-10 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-white group-hover:text-rose-400 transition-colors group/cta"
+                        className="relative z-10 inline-flex items-center gap-2 text-xs sm:text-sm font-semibold uppercase tracking-wider text-white group-hover:text-rose-400 transition-colors group/cta"
                       >
                         <span>EXPLORE ALL SERVICES</span>
                         <span className="text-rose-500 text-sm group-hover/cta:translate-x-1 transition-transform">
@@ -1049,14 +1055,14 @@ export function Navbar() {
                       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent group-hover:bg-black/75 transition-all duration-500 pointer-events-none" />
 
                       <div className="relative z-10">
-                        <h4 className="text-xl font-bold leading-snug text-white tracking-tight mb-2 font-sans drop-shadow-md">
+                        <h4 className="text-xl sm:text-2xl font-bold leading-snug text-white tracking-tight mb-2 font-sans drop-shadow-md">
                           Compliance <span className="text-red-500">First</span> Solutions
                         </h4>
                         <div className="w-10 h-[3px] bg-red-600 rounded-full my-3" />
                         
                         {/* Description Text: Hidden initially, expands on hover */}
                         <div className="transition-all duration-500 ease-out max-h-0 opacity-0 group-hover:max-h-[140px] group-hover:opacity-100 overflow-hidden">
-                          <p className="text-[11px] text-zinc-200 font-medium leading-relaxed pt-1">
+                          <p className="text-xs sm:text-sm text-zinc-200 font-semibold leading-relaxed pt-1">
                             Deploying regulatory-safe software runtimes and enterprise digital platforms across international sectors.
                           </p>
                         </div>
@@ -1065,7 +1071,7 @@ export function Navbar() {
                       <Link
                         href="/industries"
                         onClick={() => setActiveMenu(null)}
-                        className="relative z-10 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-white group-hover:text-rose-400 transition-colors mt-6 group/cta"
+                        className="relative z-10 inline-flex items-center gap-2 text-xs sm:text-sm font-semibold uppercase tracking-wider text-white group-hover:text-rose-400 transition-colors mt-6 group/cta"
                       >
                         <span>EXPLORE ALL DOMAINS</span>
                         <span className="text-rose-500 text-sm group-hover/cta:translate-x-1 transition-transform">
@@ -1149,13 +1155,13 @@ export function Navbar() {
                       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent group-hover:bg-black/75 transition-all duration-500 pointer-events-none" />
 
                       <div className="relative z-10">
-                        <h4 className="text-xl font-bold leading-snug text-white tracking-tight mb-2 font-sans drop-shadow-md">
+                        <h4 className="text-xl sm:text-2xl font-bold leading-snug text-white tracking-tight mb-2 font-sans drop-shadow-md">
                           Everything You Need to <span className="text-red-500">Scale</span>
                         </h4>
                         <div className="w-10 h-[3px] bg-red-600 rounded-full my-3" />
                         
                         <div className="transition-all duration-500 ease-out max-h-0 opacity-0 group-hover:max-h-[140px] group-hover:opacity-100 overflow-hidden">
-                          <p className="text-[11px] text-zinc-200 font-medium leading-relaxed pt-1">
+                          <p className="text-xs sm:text-sm text-zinc-200 font-semibold leading-relaxed pt-1">
                             Explore our world-class technology alliances, research innovation labs, and custom platforms built to transform your enterprise.
                           </p>
                         </div>
@@ -1164,7 +1170,7 @@ export function Navbar() {
                       <Link
                         href="/ecosystem"
                         onClick={() => setActiveMenu(null)}
-                        className="relative z-10 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-white group-hover:text-rose-400 transition-colors mt-6 group/cta"
+                        className="relative z-10 inline-flex items-center gap-2 text-xs sm:text-sm font-semibold uppercase tracking-wider text-white group-hover:text-rose-400 transition-colors mt-6 group/cta"
                       >
                         <span>EXPLORE ECOSYSTEM</span>
                         <span className="text-rose-500 text-sm group-hover/cta:translate-x-1 transition-transform">
@@ -1297,14 +1303,14 @@ export function Navbar() {
                       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent group-hover:bg-black/75 transition-all duration-500 pointer-events-none" />
 
                       <div className="relative z-10">
-                        <h4 className="text-xl font-bold leading-snug text-white tracking-tight mb-2 font-sans drop-shadow-md">
+                        <h4 className="text-xl sm:text-2xl font-bold leading-snug text-white tracking-tight mb-2 font-sans drop-shadow-md">
                           Devopstrio <span className="text-red-500">Insights</span>
                         </h4>
                         <div className="w-10 h-[3px] bg-red-600 rounded-full my-3" />
                         
                         {/* Description Text: Hidden initially, expands on hover */}
                         <div className="transition-all duration-500 ease-out max-h-0 opacity-0 group-hover:max-h-[140px] group-hover:opacity-100 overflow-hidden">
-                          <p className="text-[11px] text-zinc-200 font-medium leading-relaxed pt-1">
+                          <p className="text-xs sm:text-sm text-zinc-200 font-semibold leading-relaxed pt-1">
                             Read deep-dive articles, SRE blueprints, and research papers from our global engineering teams.
                           </p>
                         </div>
@@ -1313,7 +1319,7 @@ export function Navbar() {
                       <Link
                         href="/insights"
                         onClick={() => setActiveMenu(null)}
-                        className="relative z-10 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-white group-hover:text-rose-400 transition-colors mt-6 group/cta"
+                        className="relative z-10 inline-flex items-center gap-2 text-xs sm:text-sm font-semibold uppercase tracking-wider text-white group-hover:text-rose-400 transition-colors mt-6 group/cta"
                       >
                         <span>ALL PUBLICATIONS</span>
                         <span className="text-rose-500 text-sm group-hover/cta:translate-x-1 transition-transform">
@@ -1422,14 +1428,14 @@ export function Navbar() {
                       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent group-hover:bg-black/75 transition-all duration-500 pointer-events-none" />
 
                       <div className="relative z-10">
-                        <h4 className="text-xl font-bold leading-snug text-white tracking-tight mb-2 font-sans drop-shadow-md">
+                        <h4 className="text-2xl sm:text-3xl font-bold leading-snug text-white tracking-tight mb-2 font-sans drop-shadow-md">
                           Our <span className="text-red-500">Engineering</span> Foundation
                         </h4>
                         <div className="w-10 h-[3px] bg-red-600 rounded-full my-3" />
                         
                         {/* Description Text: Hidden initially, expands on hover */}
                         <div className="transition-all duration-500 ease-out max-h-0 opacity-0 group-hover:max-h-[140px] group-hover:opacity-100 overflow-hidden">
-                          <p className="text-[11px] text-zinc-200 font-medium leading-relaxed pt-1">
+                          <p className="text-sm sm:text-base text-zinc-200 font-semibold leading-relaxed pt-1">
                             Learn about our values, engineering philosophy, global presence, and the leadership team driving enterprise innovation.
                           </p>
                         </div>
@@ -1438,7 +1444,7 @@ export function Navbar() {
                       <Link
                         href="/about"
                         onClick={() => setActiveMenu(null)}
-                        className="relative z-10 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-white group-hover:text-rose-400 transition-colors mt-6 group/cta"
+                        className="relative z-10 inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-white group-hover:text-rose-400 transition-colors mt-6 group/cta"
                       >
                         <span>ABOUT OVERVIEW</span>
                         <span className="text-rose-500 text-sm group-hover/cta:translate-x-1 transition-transform">

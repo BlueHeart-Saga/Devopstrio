@@ -25,34 +25,23 @@ export function AllianceNetwork() {
         {/* Left text block */}
         <div>
           <Reveal>
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+            <span className="text-xs font-semibold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
               STRATEGIC ALLIANCES
             </span>
           </Reveal>
           <Reveal>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-6 text-white">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-white mb-6">
               Strategic Alliance <span className="text-rose-500">Network</span>
             </h2>
-          </Reveal>
-          <Reveal>
-            <p className="text-zinc-350 text-base md:text-lg font-semibold leading-relaxed mb-8">
-              We collaborate with cloud providers and technology vendors to architect secure, scalable systems. These alliances grant us access to early feature APIs, direct technical support, and product roadmaps. Read about our <Link href="/about/partnerships-certifications" className="text-rose-500 hover:underline font-bold">partnerships and certifications</Link> or discover our <Link href="/services/cloud-services" className="text-rose-500 hover:underline font-bold">cloud services</Link>.
-            </p>
           </Reveal>
 
           {/* Partner stats / details */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 border-t border-zinc-900/60 pt-8">
             <Reveal>
-              <h4 className="text-sm font-bold text-white mb-2">Direct Channel Escalation</h4>
-              <p className="text-xs text-zinc-450 leading-relaxed font-semibold">
-                Access 15-minute response SLA support lines through our cloud developer partnerships.
-              </p>
+              <h4 className="text-base font-semibold text-white">Direct Channel Escalation</h4>
             </Reveal>
             <Reveal>
-              <h4 className="text-sm font-bold text-white mb-2">Beta API Integrations</h4>
-              <p className="text-xs text-zinc-450 leading-relaxed font-semibold">
-                Utilize upcoming cloud compute runtimes and AI tools before they release publicly.
-              </p>
+              <h4 className="text-base font-semibold text-white">Beta API Integrations</h4>
             </Reveal>
           </div>
         </div>

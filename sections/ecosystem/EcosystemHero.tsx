@@ -19,43 +19,34 @@ export function EcosystemHero() {
 
             {/* Tagline / Eyebrow */}
             <Reveal>
-              <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+              <span className="text-xs font-semibold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
                 CHOICE FOR DEVOPSTRIO
               </span>
             </Reveal>
 
             {/* Heading */}
             <Reveal delay={0.1}>
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold tracking-tight leading-[1.12] text-white mb-6">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-semibold tracking-tight leading-[1.12] text-white mb-8">
                 The Ecosystem Behind
                 <br />
                 <span className="text-[#E11D48]">Exceptional Technology.</span>
               </h1>
             </Reveal>
 
-            {/* Description */}
-            <Reveal delay={0.2}>
-              <p className="text-zinc-200 text-base md:text-lg font-semibold leading-relaxed max-w-xl mb-8">
-                Bringing together cloud providers, innovation labs, proprietary platforms, and engineering excellence to help enterprises innovate faster and scale smarter. Explore our <Link href="/services/cloud-services" className="text-[#E11D48] hover:underline font-bold">cloud services</Link> and read our <Link href="/about/company-overview" className="text-[#E11D48] hover:underline font-bold">company overview</Link>.
-              </p>
-            </Reveal>
-
             {/* CTA Buttons */}
             <Reveal delay={0.3}>
               <div className="flex flex-wrap gap-4 items-center justify-start">
                 <a
-                  className="inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white transition-all duration-300 hover:shadow-[0_0_25px_rgba(225,29,72,0.35)] hover:-translate-y-0.5"
+                  className="inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-semibold tracking-wider uppercase bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white transition-all duration-300 hover:shadow-[0_0_25px_rgba(225,29,72,0.35)] hover:-translate-y-0.5"
                   href="#pillars"
                 >
                   Explore Pillars
-
                 </a>
                 <Link
-                  className="inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase border border-zinc-850 hover:border-zinc-750 bg-zinc-950/60 hover:bg-zinc-900 text-white transition-all duration-300 hover:-translate-y-0.5"
+                  className="inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-semibold tracking-wider uppercase border border-zinc-850 hover:border-zinc-750 bg-zinc-950/60 hover:bg-zinc-900 text-white transition-all duration-300 hover:-translate-y-0.5"
                   href="/contact#contact-form"
                 >
                   Talk to Expert
-
                 </Link>
               </div>
             </Reveal>

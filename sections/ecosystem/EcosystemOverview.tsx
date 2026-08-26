@@ -24,20 +24,14 @@ export function EcosystemOverview() {
               {/* LEFT CONTENT */}
               <div className="flex flex-col justify-center p-6 md:p-8 lg:p-10">
 
-                <span className="text-[10px] font-semibold tracking-[0.25em] uppercase text-rose-500 mb-4">
-                  Ecosystem Overview
-                </span>
+               
 
-                <h2 className="text-xl md:text-2xl xl:text-3xl font-bold leading-tight tracking-tight mb-4">
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold leading-tight tracking-tight mb-8">
                   Connecting Global Technology,
                   <span className="block text-[#E11D48] mt-1">
                     Talent &amp; Strategic Alliances
                   </span>
                 </h2>
-
-                <p className="text-zinc-400 text-sm leading-relaxed max-w-xl mb-6 font-semibold">
-                  Devopstrio combines strategic technology partnerships, proprietary platforms, innovation labs, and global delivery capabilities into a unified ecosystem. We partner with the world's leading cloud and technology providers to help organizations build, modernize, and scale with confidence. Learn more in our <Link href="/about/company-overview" className="text-rose-500 hover:underline font-bold">company overview</Link> or contact our <Link href="/about/customer-support" className="text-rose-500 hover:underline font-bold">support team</Link>.
-                </p>
 
                 <a
                   href="#architecture"

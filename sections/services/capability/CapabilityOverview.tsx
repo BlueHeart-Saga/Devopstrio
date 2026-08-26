@@ -464,9 +464,9 @@ export function CapabilityOverview({
               <p className="text-base md:text-lg lg:text-xl font-semibold text-zinc-100 leading-relaxed font-sans">
                 {overrideDeepDiveParagraph1 || def.paragraph1}
               </p>
-              <p className="text-base md:text-lg lg:text-xl font-semibold text-zinc-300 leading-relaxed font-sans">
+              {/* <p className="text-base md:text-lg lg:text-xl font-semibold text-zinc-300 leading-relaxed font-sans">
                 {overrideDeepDiveParagraph2 || def.paragraph2}
-              </p>
+              </p> */}
             </div>
           </Reveal>
         </div>

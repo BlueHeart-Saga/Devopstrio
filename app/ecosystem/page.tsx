@@ -9,10 +9,11 @@ import { SectionNavbar } from "@/components/ui/SectionNavbar";
 // Dynamic Imports for Heavy Below-The-Fold Sections to Reduce Initial JS Payload
 const EcosystemOverview = dynamic(() => import("@/sections/ecosystem/EcosystemOverview").then((mod) => mod.EcosystemOverview));
 const EcosystemPillars = dynamic(() => import("@/sections/ecosystem/EcosystemPillars").then((mod) => mod.EcosystemPillars));
+const CloudPartnerShowcase = dynamic(() => import("@/sections/ecosystem/CloudPartnerShowcase").then((mod) => mod.CloudPartnerShowcase));
 const PlatformPortfolio = dynamic(() => import("@/sections/ecosystem/PlatformPortfolio").then((mod) => mod.PlatformPortfolio));
 const TechnologyLandscape = dynamic(() => import("@/sections/ecosystem/TechnologyLandscape").then((mod) => mod.TechnologyLandscape));
 const AllianceNetwork = dynamic(() => import("@/sections/ecosystem/AllianceNetwork").then((mod) => mod.AllianceNetwork));
-const GlobalDelivery = dynamic(() => import("@/sections/ecosystem/GlobalDelivery").then((mod) => mod.GlobalDelivery));
+const GlobalPresence = dynamic(() => import("@/sections/contact/GlobalPresence").then((mod) => mod.GlobalPresence));
 const DomainExcellence = dynamic(() => import("@/sections/ecosystem/domain/DomainExcellence").then((mod) => mod.DomainExcellence));
 const InnovationLabs = dynamic(() => import("@/sections/ecosystem/InnovationLabs").then((mod) => mod.InnovationLabs));
 const EcosystemMetrics = dynamic(() => import("@/sections/ecosystem/EcosystemMetrics").then((mod) => mod.EcosystemMetrics));
@@ -41,7 +42,7 @@ export default function EcosystemLandingPage() {
       </div>
 
       {/* Sticky Section Sub-Navbar */}
-      <SectionNavbar sections={ecosystemSections} />
+      {/* <SectionNavbar sections={ecosystemSections} /> */}
 
       {/* 2. Ecosystem Overview */}
       <div id="overview">
@@ -54,6 +55,11 @@ export default function EcosystemLandingPage() {
         <EcosystemPillars />
       </div> */}
       {/* <SvgWaveLine variant="liquid" /> */}
+
+      {/* Cloud Partner Showcase */}
+      <div id="cloud-partners">
+        <CloudPartnerShowcase />
+      </div>
 
       {/* 4. Platform Portfolio */}
       <div id="portfolio">
@@ -68,27 +74,37 @@ export default function EcosystemLandingPage() {
       {/* <SvgWaveLine variant="particles" /> */}
 
       {/* 6. Strategic Alliance Network */}
-      <div id="alliances">
+      {/* <div id="alliances">
         <AllianceNetwork />
       </div>
-      <SvgWaveLine variant="smooth" />
+      <SvgWaveLine variant="smooth" /> */}
 
       {/* 7. Global Delivery Network */}
-      <div id="delivery">
-        <GlobalDelivery />
+      <div id="delivery" className="relative z-10 w-full bg-black">
+        <GlobalPresence
+          title={
+            <>
+              Wherever You Build &amp; Scale, Our{" "}
+              <span className="bg-rose-500 text-white font-semibold px-4 py-1 mx-1 rounded-xl inline-block">
+                Ecosystem
+              </span>{" "}
+              Is Already There.
+            </>
+          }
+        />
       </div>
-      <SvgWaveLine variant="grid" />
+      {/* <SvgWaveLine variant="grid" /> */}
 
       {/* 8. Engineering Excellence */}
-      <div id="excellence">
+      {/* <div id="excellence">
         <DomainExcellence />
       </div>
-      <SvgWaveLine variant="liquid" />
+      <SvgWaveLine variant="liquid" /> */}
 
       {/* 9. Innovation Labs */}
-      <div id="labs">
+      {/* <div id="labs">
         <InnovationLabs />
-      </div>
+      </div> */}
       {/* <SvgWaveLine variant="dashed" /> */}
 
       {/* 10. Ecosystem Metrics (Business Outcomes) */}

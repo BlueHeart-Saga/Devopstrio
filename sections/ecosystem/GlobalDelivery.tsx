@@ -76,15 +76,12 @@ export function GlobalDelivery() {
 
         {/* Header */}
         <Reveal className="mb-12">
-          <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+          <span className="text-xs font-semibold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
             AVAILABILITY MAP
           </span>
-          <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-white">
             Global <span className="text-rose-500">delivery distribution</span>
           </h2>
-          <p className="text-zinc-200 text-base md:text-lg font-semibold leading-relaxed mt-2 max-w-xl">
-            Sourcing certified architects and SRE leads globally to support continuous follow-the-sun operations. Explore our <Link href="/about/company-overview" className="text-rose-500 hover:underline font-bold">company overview</Link> and read our client <Link href="/about/testimonials" className="text-rose-500 hover:underline font-bold">testimonials</Link>.
-          </p>
         </Reveal>
 
         {/* Map Card */}

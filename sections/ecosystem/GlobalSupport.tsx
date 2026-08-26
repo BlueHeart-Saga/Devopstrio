@@ -17,21 +17,15 @@ export function GlobalSupport() {
           {/* Left Column: Support info */}
           <div className="lg:col-span-7 flex flex-col items-start text-left justify-center z-20">
             <Reveal>
-              <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+              <span className="text-xs font-semibold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
                 GLOBAL SUPPORT
               </span>
             </Reveal>
 
             <Reveal delay={0.1}>
-              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-white mb-6">
                 24/7 Enterprise <span className="text-rose-500">Follow-the-Sun Support</span>
               </h2>
-            </Reveal>
-
-            <Reveal delay={0.2}>
-              <p className="text-zinc-200 text-base md:text-lg font-semibold leading-relaxed mb-8">
-                Our technical support desks span critical time zones (London, India, USA) to ensure continuous monitoring, immediate incident management, and seamless pipeline recoveries at all times. Read about our dedicated <Link href="/about/customer-support" className="text-rose-500 hover:underline font-bold">support page</Link> or consult our <Link href="/about/company-overview" className="text-rose-500 hover:underline font-bold">company overview</Link>.
-              </p>
             </Reveal>
 
             {/* Details table / Support Pillars */}

@@ -82,21 +82,16 @@ export function EcosystemRationale() {
       <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
         
         {/* Top Header Block */}
-        <div className="max-w-3xl mb-16 text-left">
+        <div className="max-w-3xl mb-12 text-left">
           <Reveal>
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+            <span className="text-xs font-semibold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
               ECOSYSTEM RATIONALE
             </span>
           </Reveal>
           <Reveal delay={0.1}>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-4">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-white">
               The Ecosystem Advantage: <span className="block md:inline text-rose-500">Why choose Devopstrio?</span>
             </h2>
-          </Reveal>
-          <Reveal delay={0.2}>
-            <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-bold max-w-2xl">
-              Traditional outsourcing models are broken. We replaced transactional vendor relationships with a unified ecosystem designed to drive continuous transformation and measurable results. Explore our <Link href="/services" className="text-rose-500 hover:underline font-bold">managed engineering services</Link> and read our <Link href="/about/company-overview" className="text-rose-500 hover:underline font-bold">company overview</Link>.
-            </p>
           </Reveal>
         </div>
 
@@ -119,7 +114,7 @@ export function EcosystemRationale() {
                   }`} />
                   
                   {/* Tab Name */}
-                  <span className={`text-lg md:text-xl font-bold tracking-tight transition-all duration-300 ${
+                  <span className={`text-lg md:text-xl font-semibold tracking-tight transition-all duration-300 ${
                     isActive 
                       ? "text-white scale-[1.02] origin-left" 
                       : "text-zinc-600 hover:text-zinc-400"
@@ -132,7 +127,7 @@ export function EcosystemRationale() {
           </div>
 
           {/* RIGHT: VS Comparison Split Card */}
-          <div className="flex flex-col relative lg:sticky lg:top-32 min-h-[400px]">
+          <div className="flex flex-col relative lg:sticky lg:top-32 min-h-[220px]">
             
             {comparisonPoints.map((point, idx) => {
               const isActive = idx === activeIndex;
@@ -144,44 +139,38 @@ export function EcosystemRationale() {
                   }`}
                 >
                   {/* TRADITIONAL VENDOR CARD (Negative/Muted) */}
-                  <div className="w-full bg-zinc-950/40 border border-zinc-800/50 rounded-3xl p-8 md:p-10 flex flex-col relative overflow-hidden backdrop-blur-sm">
+                  <div className="w-full bg-zinc-950/40 border border-zinc-800/50 rounded-3xl p-6 flex flex-col relative overflow-hidden backdrop-blur-sm">
                     {/* Visual styling */}
                     <div className="absolute top-0 right-0 w-32 h-32 bg-zinc-800/10 rounded-bl-full blur-2xl" />
                     
-                    <div className="flex items-center gap-3 mb-4">
+                    <div className="flex items-center gap-3">
                       <div className="w-8 h-8 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-500">
                         <XCircle size={16} />
                       </div>
-                      <h3 className="text-base font-bold text-zinc-400 uppercase tracking-widest">
+                      <h3 className="text-base font-semibold text-zinc-400 uppercase tracking-widest">
                         {point.traditionalTitle}
                       </h3>
                     </div>
-                    <p className="text-zinc-500 text-sm md:text-base leading-relaxed font-medium pl-11">
-                      {point.traditionalDesc}
-                    </p>
                   </div>
 
                   {/* VS Divider badge */}
-                  <div className="absolute left-12 top-1/2 -translate-y-1/2 z-20 flex items-center justify-center w-10 h-10 rounded-full bg-[#030303] border border-zinc-800 text-zinc-400 font-bold text-xs shadow-xl hidden sm:flex">
+                  <div className="absolute left-12 top-1/2 -translate-y-1/2 z-20 flex items-center justify-center w-10 h-10 rounded-full bg-[#030303] border border-zinc-800 text-zinc-400 font-semibold text-xs shadow-xl hidden sm:flex">
                     VS
                   </div>
 
                   {/* DEVOPSTRIO ECOSYSTEM CARD (Positive/Highlighted) */}
-                  <div className="w-full bg-gradient-to-br from-rose-950/20 to-zinc-950 border border-rose-500/30 rounded-3xl p-8 md:p-10 flex flex-col relative overflow-hidden shadow-[0_10px_40px_-10px_rgba(225,29,72,0.15)] group">
+                  <div className="w-full bg-gradient-to-br from-rose-950/20 to-zinc-950 border border-rose-500/30 rounded-3xl p-6 flex flex-col relative overflow-hidden shadow-[0_10px_40px_-10px_rgba(225,29,72,0.15)] group">
                     {/* Visual styling */}
                     <div className="absolute top-0 right-0 w-48 h-48 bg-rose-600/10 rounded-bl-full blur-3xl pointer-events-none transition-transform duration-700 group-hover:scale-110" />
                     
-                    <div className="flex items-center gap-3 mb-4 relative z-10">
+                    <div className="flex items-center gap-3 relative z-10">
                       <div className="w-8 h-8 rounded-full bg-rose-600 flex items-center justify-center text-white shadow-[0_0_15px_rgba(225,29,72,0.4)]">
                         <CheckCircle2 size={16} />
                       </div>
-                      <h3 className="text-base font-bold text-white uppercase tracking-widest">
+                      <h3 className="text-base font-semibold text-white uppercase tracking-widest">
                         {point.trioTitle}
                       </h3>
                     </div>
-                    <p className="text-zinc-200 text-sm md:text-base leading-relaxed font-bold pl-11 relative z-10">
-                      {point.trioDesc}
-                    </p>
                   </div>
 
                 </div>

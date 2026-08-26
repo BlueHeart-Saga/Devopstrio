@@ -107,8 +107,8 @@ export function Challenges({
                   >
                     <span
                       className={`
-                        text-xs font-semibold tracking-wide
-                        transition-colors duration-300 md:text-sm
+                        text-sm font-semibold tracking-wide
+                        transition-colors duration-300 sm:text-base md:text-lg
                         ${
                           isActive
                             ? "text-white"
@@ -120,7 +120,7 @@ export function Challenges({
                     </span>
 
                     <ChevronRight
-                      size={14}
+                      size={16}
                       strokeWidth={1.8}
                       className={`
                         transition-all duration-300

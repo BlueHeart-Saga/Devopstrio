@@ -45,16 +45,13 @@ export function EcosystemTopology() {
 
       <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 text-left relative z-10">
 
-        <Reveal className="mb-24">
-          <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+        <Reveal className="mb-16">
+          <span className="text-xs font-semibold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
             ECOSYSTEM TOPOLOGY
           </span>
-          <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-white">
             Connected alliance <span className="text-rose-500">dataflow & layers</span>
           </h2>
-          <p className="text-zinc-200 text-base md:text-lg font-semibold leading-relaxed mt-2 max-w-xl">
-            How our technology partners, accelerators, and R&D labs collaborate to deploy workloads. Explore our <Link href="/services/cloud-services" className="text-rose-500 hover:underline font-bold">cloud services</Link> and read our <Link href="/about/company-overview" className="text-rose-500 hover:underline font-bold">company overview</Link>.
-          </p>
         </Reveal>
 
         {/* Interactive Topology Steps Grid */}
@@ -76,7 +73,7 @@ export function EcosystemTopology() {
             const Icon = step.icon;
             return (
               <Reveal key={idx} delay={idx * 0.05} className={`h-full z-10 ${step.translateClass}`}>
-                <div className="h-full bg-gradient-to-b from-zinc-900/40 to-zinc-950/80 border border-zinc-900 rounded-2xl p-6 relative group hover:border-rose-500/30 hover:bg-zinc-950 transition-all duration-500 flex flex-col justify-between overflow-hidden">
+                <div className="h-full bg-gradient-to-b from-zinc-900/40 to-zinc-950/80 border border-zinc-900 rounded-2xl p-6 relative group hover:border-rose-500/30 hover:bg-zinc-950 transition-all duration-500 flex flex-col justify-between overflow-hidden min-h-[140px]">
 
                   {/* Subtle hover gradient glow overlay */}
                   <div className="absolute -inset-px bg-gradient-to-r from-rose-500 to-rose-700 rounded-2xl opacity-0 group-hover:opacity-[0.03] transition-opacity duration-500 blur-sm pointer-events-none" />
@@ -87,18 +84,15 @@ export function EcosystemTopology() {
                   </span>
 
                   <div>
-                    <span className="block text-[9px] font-mono tracking-widest text-rose-500/60 mb-4 uppercase font-bold">
+                    <span className="block text-[9px] font-mono tracking-widest text-rose-500/60 mb-3 uppercase font-semibold">
                       LAYER {step.num}
                     </span>
-                    <div className="w-10 h-10 rounded-xl bg-zinc-900 border border-zinc-800/80 flex items-center justify-center text-rose-500 mb-5 group-hover:scale-105 group-hover:bg-rose-950/20 group-hover:border-rose-500/30 transition-all duration-300">
+                    <div className="w-10 h-10 rounded-xl bg-zinc-900 border border-zinc-800/80 flex items-center justify-center text-rose-500 mb-4 group-hover:scale-105 group-hover:bg-rose-950/20 group-hover:border-rose-500/30 transition-all duration-300">
                       <Icon size={16} />
                     </div>
-                    <h4 className="text-sm font-bold text-zinc-200 mb-2 group-hover:text-white transition-colors">
+                    <h4 className="text-base font-semibold text-white">
                       {step.title}
                     </h4>
-                    <p className="text-xs text-zinc-400 leading-relaxed font-semibold pr-4">
-                      {step.desc}
-                    </p>
                   </div>
                 </div>
               </Reveal>
