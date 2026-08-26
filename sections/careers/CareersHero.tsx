@@ -3,11 +3,16 @@
 import React from "react";
 import Image from "next/image";
 import { Reveal } from "@/components/ui/Reveal";
+import { RibbonGraphic } from "@/components/ui/RibbonGraphic";
 
 export function CareersHero() {
   return (
     <section id="overview" className="relative w-full min-h-[480px] lg:min-h-[540px] flex items-center justify-center bg-[#030303] text-white pt-20 pb-8 lg:pb-10 overflow-hidden font-sans">
-      
+      {/* Ribbon Graphic Background */}
+      <div className="absolute inset-0 z-0 opacity-30 pointer-events-none">
+        <RibbonGraphic className="w-full h-full" />
+      </div>
+
       {/* Dark Ambient Lighting Glow */}
       <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[500px] h-[350px] bg-[radial-gradient(ellipse_at_center,rgba(244,63,94,0.06),transparent_70%)] pointer-events-none z-0" />
 

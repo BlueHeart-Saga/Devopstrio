@@ -7,6 +7,12 @@ import { motion, AnimatePresence } from "framer-motion";
 import { MapPin, Briefcase, X, Send, Check, ArrowRight } from "lucide-react";
 
 import { CareersHero } from "@/sections/careers/CareersHero";
+import { CareersBeyondHero } from "@/sections/careers/CareersBeyondHero";
+import { GlobalInternshipSection } from "@/sections/careers/GlobalInternshipSection";
+import { WhatMakesUsUnique } from "@/sections/careers/WhatMakesUsUnique";
+import { WorkingAtDevopstrio } from "@/sections/careers/WorkingAtDevopstrio";
+import { YourCareerAtDevopstrio } from "@/sections/careers/YourCareerAtDevopstrio";
+import { DiscoverYourJobFamily } from "@/sections/careers/DiscoverYourJobFamily";
 import { Job } from "@/sections/careers/careersData";
 
 // Dynamic Imports for Heavy Below-The-Fold Sections to Reduce Initial JS Payload
@@ -169,16 +175,17 @@ export default function CareersPage() {
       )}
 
       {/* Structured Careers Components */}
-      <CareersHero />
-      <Careers3Pillars />
-      <CareersIntroBanner />
-      <LifeAtDevopstrio />
-      <WhyJoin />
+      <CareersBeyondHero />
+      <GlobalInternshipSection onOpenDrawer={() => setIsInternshipDrawerOpen(true)} />
+      <WhatMakesUsUnique />
+      <WorkingAtDevopstrio />
+      <YourCareerAtDevopstrio />
+      {/* <DiscoverYourJobFamily /> */}
       <OpenPositions />
-      <HiringProcess />
-      <CoreValues />
-      <PerksBenefits />
-      <InteractiveMap />
+      {/* <HiringProcess /> */}
+      {/* <CoreValues /> */}
+      {/* <PerksBenefits /> */}
+      {/* <InteractiveMap /> */}
       <EmployeeStories />
 
       {/* Reusable Representative CTA Component */}

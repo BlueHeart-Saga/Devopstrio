@@ -1,38 +1,48 @@
 "use client";
 
 import React, { useState } from "react";
-import { Reveal } from "@/components/ui/Reveal";
 import Link from "next/link";
-import { ChevronRight, ArrowRight } from "lucide-react";
+import { ArrowRight, ChevronRight } from "lucide-react";
+import { Reveal } from "@/components/ui/Reveal";
 
-const contactPillars = [
+interface ContactPillar {
+  id: string;
+  title: string;
+  subtitle: string;
+  description: string;
+  mainLink: string;
+  services: { name: string; href: string }[];
+  ctaHref: string;
+}
+
+const contactPillars: ContactPillar[] = [
   {
     id: "consult",
     title: "Consult",
-    subtitle: "AI & Cloud Strategy Advisory",
-    description: "Deep-dive technical assessment with senior cloud architects to map out your custom stack.",
-    mainLink: "/services/ai-data-innovation",
+    subtitle: "Strategic Engineering & Audits",
+    description: "Cloud cost optimization, architecture reviews, compliance assessments, and AI strategy.",
+    mainLink: "/services/cloud-consulting",
     services: [
-      { name: "GenAI & LLM Architecture", href: "/services/ai-data-innovation/generative-ai-solutions" },
-      { name: "Cloud Migration Strategy", href: "/services/cloud-services" },
-      { name: "Zero-Trust Security Assessment", href: "/services/cybersecurity" },
-      { name: "DevOps & SRE Roadmap", href: "/services/devops-automation" },
-      { name: "FinOps Cost Audit", href: "/services/cloud-services/finops-cost-optimization" }
+      { name: "Cloud Cost Optimization & FinOps", href: "/services/cloud-consulting/finops-cost-optimization" },
+      { name: "Multi-Cloud Architecture Review", href: "/services/cloud-consulting/cloud-architecture-review" },
+      { name: "DevSecOps & Compliance Audit", href: "/services/cybersecurity/devsecops-compliance" },
+      { name: "AI & GenAI Strategy Roadmap", href: "/services/ai-data-innovation/ai-strategy-consulting" },
+      { name: "Kubernetes & Infrastructure Health", href: "/services/devops-automation/kubernetes-health-check" }
     ],
-    ctaHref: "/services/ai-data-innovation"
+    ctaHref: "/services/cloud-consulting"
   },
   {
     id: "collaborate",
     title: "Collaborate",
-    subtitle: "Agile Co-Engineering & Design",
-    description: "Direct alignment alongside your core engineering team with zero sales friction.",
+    subtitle: "Modern Platform Engineering",
+    description: "Custom cloud infrastructure, CI/CD automation, microservices, and AI integrations.",
     mainLink: "/services/software-development",
     services: [
-      { name: "Senior Cloud Architect Alignment", href: "/about" },
-      { name: "Custom Product Engineering", href: "/services/software-development/product-engineering" },
-      { name: "Platform Engineering Workshops", href: "/services/devops-automation/platform-engineering" },
-      { name: "Data Lakehouse Engineering", href: "/services/data-engineering/data-warehousing" },
-      { name: "Automated QA & Testing", href: "/services/qa-testing/test-automation" }
+      { name: "Enterprise Cloud Migration", href: "/services/cloud-consulting/cloud-migration" },
+      { name: "CI/CD & DevOps Automation", href: "/services/devops-automation/cicd-pipeline-automation" },
+      { name: "Custom Generative AI Applications", href: "/services/ai-data-innovation/generative-ai-development" },
+      { name: "Cloud-Native App Modernization", href: "/services/software-development/cloud-native-apps" },
+      { name: "Data Engineering & Analytics Pipeline", href: "/services/ai-data-innovation/data-engineering-pipelines" }
     ],
     ctaHref: "/services/software-development"
   },
@@ -57,50 +67,15 @@ export function ContactHero() {
   const [activeHoverId, setActiveHoverId] = useState<string | null>(null);
 
   return (
-    <section className="relative w-full flex flex-col justify-center bg-[#030303] text-white pt-16 pb-4 lg:pt-20 lg:pb-6 overflow-hidden">
+    <section className="relative w-full flex flex-col justify-center bg-[#030303] text-white pt-0 pb-10 md:pb-14 overflow-hidden">
       {/* Background Ambient Glows */}
       <div className="absolute top-[-10%] right-[-10%] w-[50%] aspect-square bg-[radial-gradient(circle_at_center,rgba(244,63,94,0.06),transparent_70%)] pointer-events-none z-0" />
       <div className="absolute bottom-[-10%] left-[-10%] w-[50%] aspect-square bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.01),transparent_70%)] pointer-events-none z-0" />
 
-      <div className="max-w-7xl mx-auto w-full px-6 sm:px-8 relative z-10 space-y-8">
-        {/* Top Split Row */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center w-full">
-          
-          {/* Left Column: Text Content */}
-          <div className="lg:col-span-7 flex flex-col items-start text-left justify-center z-20">
-            {/* Heading */}
-            <Reveal delay={0.1}>
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-semibold tracking-tight leading-[1.12] text-white mb-6">
-                Every Platform Starts
-                <br />
-                <span className="text-[#E11D48] whitespace-nowrap">With a Conversation.</span>
-              </h1>
-            </Reveal>
-
-            {/* Quote Block */}
-            <Reveal delay={0.2}>
-              <div className="border-l-4 border-rose-500 bg-zinc-950/60 px-6 py-4 rounded-r-xl max-w-2xl shadow-lg border-y border-r border-zinc-900/60">
-                <p className="text-zinc-200 text-sm sm:text-base md:text-lg font-semibold italic leading-relaxed">
-                  &ldquo;We don&apos;t do discovery calls with salespeople. You speak directly with a <Link href="/about" className="text-rose-500 hover:underline font-semibold">senior cloud architect</Link> who understands your stack — on day one.&rdquo;
-                </p>
-              </div>
-            </Reveal>
-          </div>
-
-          {/* Right Column: Contact Image */}
-          <div className="lg:col-span-5 flex items-center justify-center lg:justify-end z-10 w-full">
-            <Reveal delay={0.2} className="w-full flex items-center justify-center lg:justify-end">
-              <img src="/webp/assets/herocard/contactpage.webp"
-                alt="Global Contact Network"
-                className="w-full max-w-[320px] sm:max-w-[380px] lg:max-w-[480px] h-auto object-contain select-none"
-              loading="eager" />
-            </Reveal>
-          </div>
-
-        </div>
-
-        {/* 3 Pillar Cards Container (Matching ServicesOverviewPillars.tsx) */}
-        <Reveal delay={0.3}>
+      <div className="max-w-7xl mx-auto w-full px-6 sm:px-8 relative z-10">
+        
+        {/* 3 Pillar Cards Container */}
+        <Reveal delay={0.1}>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border-t border-b border-zinc-800/80 divide-y md:divide-y-0 md:divide-x divide-zinc-800/80 bg-zinc-950/30 backdrop-blur-md rounded-2xl overflow-hidden min-h-[380px] md:min-h-[440px] transition-all duration-500">
             {contactPillars.map((pillar) => {
               const isHovered = activeHoverId === pillar.id;
@@ -193,3 +168,5 @@ export function ContactHero() {
     </section>
   );
 }
+
+export default ContactHero;

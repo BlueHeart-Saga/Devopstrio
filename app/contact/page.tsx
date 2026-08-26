@@ -1,6 +1,7 @@
 import React from "react";
 import { Metadata } from "next";
 import dynamic from "next/dynamic";
+import { ContactTopHero } from "@/sections/contact/ContactTopHero";
 import { ContactHero } from "@/sections/contact/ContactHero";
 import { ContactForm } from "@/sections/contact/ContactForm";
 import { BreadcrumbSchema } from "@/components/seo/Schemas";
@@ -64,6 +65,7 @@ export default function ContactPage() {
       {/* Structured Contact Sections with High-Level Coded SVG Wave Lines */}
       <div className="bg-black relative">
         <div className="relative z-10 bg-black">
+          <ContactTopHero />
           <ContactHero />
           {/* <SvgWaveLine variant="smooth" /> */}
         </div>

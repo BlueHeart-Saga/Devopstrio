@@ -3,6 +3,7 @@ import { Metadata } from "next";
 import { BreadcrumbSchema } from "@/components/seo/Schemas";
 
 // Life-at-Devopstrio sections
+import { CultureHero } from "@/sections/about/life/CultureHero";
 import { LifeHero } from "@/sections/about/life/LifeHero";
 import CultureAlbumsSection from "@/sections/about/life/CultureAlbumsSection";
 import { LifeMomentsGallery } from "@/sections/about/life/LifeMomentsGallery";
@@ -37,6 +38,7 @@ export default function LifeAtDevopstrioPage() {
       />
 
       {/* 1. Hero */}
+      <CultureHero />
       <LifeHero />
 
      

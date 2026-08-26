@@ -41,7 +41,7 @@ export function CompanyIntro() {
                   Transforming The Digital World With
                 </h3>
                 <div className="pt-1">
-                  <span className="text-3xl sm:text-4xl md:text-5xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-rose-400 via-pink-400 to-amber-300 tracking-tight block drop-shadow-[0_2px_10px_rgba(244,63,94,0.3)]">
+                  <span className="text-3xl sm:text-4xl md:text-5xl font-semibold text-rose-500 tracking-tight block">
                     100+ YOUNG TECHIES &amp; ARCHITECTS
                   </span>
                 </div>
@@ -73,7 +73,7 @@ export function CompanyIntro() {
         </div>
 
         {/* BELOW BANNER DESCRIPTION SECTION */}
-        <div className="mt-12 sm:mt-16 md:mt-20 max-w-4xl mx-auto text-left sm:text-center space-y-6 pt-8 border-t border-zinc-800/60">
+        {/* <div className="mt-12 sm:mt-16 md:mt-20 max-w-4xl mx-auto text-left sm:text-center space-y-6 pt-8 border-t border-zinc-800/60">
           <Reveal delay={0.3}>
             <div className="space-y-4">
               <p className="text-base sm:text-lg md:text-xl leading-relaxed text-zinc-400 font-semibold">
@@ -81,7 +81,7 @@ export function CompanyIntro() {
               </p>
             </div>
           </Reveal>
-        </div>
+        </div> */}
 
       </div>
     </section>

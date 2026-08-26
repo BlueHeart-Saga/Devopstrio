@@ -68,9 +68,9 @@ export function TransformMetricsSection() {
                 <strong className="text-xs font-semibold text-zinc-400 group-hover:text-zinc-200 block mb-1.5 uppercase tracking-wider">
                   {item.label}
                 </strong>
-                <p className="text-xs text-zinc-500 leading-relaxed font-semibold">
+                {/* <p className="text-xs text-zinc-500 leading-relaxed font-semibold">
                   {item.desc}
-                </p>
+                </p> */}
               </div>
             </Reveal>
           ))}

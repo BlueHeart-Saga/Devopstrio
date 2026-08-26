@@ -2,6 +2,7 @@
 
 import React from "react";
 import dynamic from "next/dynamic";
+import { EcosystemTopHero } from "@/sections/ecosystem/EcosystemTopHero";
 import { EcosystemHero } from "@/sections/ecosystem/EcosystemHero";
 import { SectionNavbar } from "@/components/ui/SectionNavbar";
 
@@ -35,7 +36,8 @@ export default function EcosystemLandingPage() {
 
       {/* 1. Ecosystem Hero Section */}
       <div className="flex flex-col bg-black">
-        <EcosystemHero />
+        <EcosystemTopHero />
+        {/* <EcosystemHero /> */}
       </div>
 
       {/* Sticky Section Sub-Navbar */}

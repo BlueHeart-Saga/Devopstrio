@@ -5,6 +5,7 @@ import dynamic from "next/dynamic";
 import { insightsApi, TransformedPost } from "@/lib/insightsApi";
 import { Reveal } from "@/components/ui/Reveal";
 
+import { InsightsTopHero } from "@/sections/insights/InsightsTopHero";
 import { InsightsHero } from "@/sections/insights/InsightsHero";
 
 // Dynamic Imports for Heavy Below-The-Fold Sections to Reduce Initial JS Payload
@@ -96,7 +97,8 @@ export default function InsightsLandingPage() {
       </section> */}
 
       {/* Structured Insights Sections */}
-      <InsightsHero />
+      <InsightsTopHero />
+      {/* <InsightsHero /> */}
       <FeaturedHighlights posts={posts} />
       {/* <InsightsJourney /> */}
       <InsightsLibrary posts={posts} loading={loading} />

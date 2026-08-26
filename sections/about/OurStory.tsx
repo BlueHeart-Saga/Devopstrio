@@ -94,66 +94,9 @@ export function OurStory() {
 
       <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
 
-        {/* Redesigned Intro Card Container (BusinessOverview Style) */}
-        <Reveal className="mb-20">
-          <div className="group relative overflow-hidden rounded-[32px] border border-zinc-800/60 bg-zinc-950/30 backdrop-blur-xl">
-
-            {/* Background Glow */}
-            <div className="absolute inset-0 pointer-events-none">
-              <div className="absolute -top-20 -left-20 w-96 h-96 bg-rose-600/10 blur-[120px]" />
-              <div className="absolute -bottom-20 -right-20 w-96 h-96 bg-blue-600/10 blur-[120px]" />
-            </div>
-
-            <div className="relative grid grid-cols-1 lg:grid-cols-12 gap-0">
-
-              {/* LEFT CONTENT */}
-              <div className="lg:col-span-7 flex flex-col justify-center p-6 md:p-10 lg:p-12">
-                <span className="text-xs md:text-sm font-extrabold tracking-[0.25em] uppercase text-rose-500 mb-4 block font-mono">
-                  OUR STORY
-                </span>
-
-                <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold leading-tight tracking-tight mb-6 text-white">
-                  From a bold vision
-                  <span className="block text-rose-500 mt-1">
-                    to global engineering impact.
-                  </span>
-                </h2>
-
-                <div className="space-y-4 text-zinc-300 text-base md:text-lg leading-relaxed font-normal">
-                  <p>
-                    We started with a simple belief — that great technology should inspire confidence, simplify complexity, and bring human passion to engineering.
-                  </p>
-                  <p>
-                    Today, our global team works side-by-side with enterprise leaders to turn bold ideas into seamless digital reality.
-                  </p>
-                </div>
-              </div>
-
-              {/* RIGHT CONTENT */}
-              <div className="lg:col-span-5 p-6 md:p-10 lg:p-12 flex flex-col justify-between bg-zinc-950/20 border-t lg:border-t-0 lg:border-l border-zinc-900/60">
-                <div className="space-y-5 text-zinc-300 text-base md:text-lg leading-relaxed font-normal">
-                  <p>
-                    What began as a specialized team of cloud architects has grown into a global network of technology experts serving enterprise leaders worldwide.
-                  </p>
-
-                  <div className="p-5 bg-zinc-950/80 border border-zinc-800/80 rounded-xl border-l-4 border-l-rose-500">
-                    <span className="text-xs font-bold text-rose-500 uppercase tracking-widest block mb-1 font-mono">
-                      Our Purpose
-                    </span>
-                    <p className="text-base md:text-lg italic text-white font-semibold leading-snug">
-                      &ldquo;We build intelligent digital foundations that empower bold visionaries to shape tomorrow.&rdquo;
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </Reveal>
-
-        {/* Circular Scroll Timeline Interface */}
+        {/* Circular Scroll Timeline Interface (Moved to Top) */}
         <div
-          className="grid grid-cols-1 lg:grid-cols-[1fr_1.5fr] gap-12 lg:gap-6 items-center min-h-[450px]"
+          className="grid grid-cols-1 lg:grid-cols-[1fr_1.5fr] gap-12 lg:gap-6 items-center min-h-[450px] mb-16 md:mb-20"
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
           onWheel={handleWheel}
@@ -240,27 +183,66 @@ export function OurStory() {
                 </p>
               </motion.div>
             </AnimatePresence>
-
-            {/* Navigation Buttons */}
-            {/* <div className="flex items-center gap-3 mt-8 relative z-20">
-              <button
-                onClick={() => setActiveIdx((prev) => (prev - 1 + milestones.length) % milestones.length)}
-                className="w-10 h-10 rounded-full border border-zinc-800 bg-zinc-950/20 hover:border-rose-500 hover:text-rose-400 text-zinc-400 flex items-center justify-center transition-all duration-300"
-                aria-label="Previous story event"
-              >
-                <ArrowLeft size={16} />
-              </button>
-              <button
-                onClick={() => setActiveIdx((prev) => (prev + 1) % milestones.length)}
-                className="w-10 h-10 rounded-full border border-zinc-800 bg-zinc-950/20 hover:border-rose-500 hover:text-rose-400 text-zinc-400 flex items-center justify-center transition-all duration-300"
-                aria-label="Next story event"
-              >
-                <ArrowUpRight size={16} />
-              </button>
-            </div> */}
           </div>
 
         </div>
+
+        {/* Redesigned Intro Card Container (Moved to Below Side) */}
+        <Reveal>
+          <div className="group relative overflow-hidden rounded-[32px] border border-zinc-800/60 bg-zinc-950/30 backdrop-blur-xl">
+
+            {/* Background Glow */}
+            <div className="absolute inset-0 pointer-events-none">
+              <div className="absolute -top-20 -left-20 w-96 h-96 bg-rose-600/10 blur-[120px]" />
+              <div className="absolute -bottom-20 -right-20 w-96 h-96 bg-blue-600/10 blur-[120px]" />
+            </div>
+
+            <div className="relative grid grid-cols-1 lg:grid-cols-12 gap-0">
+
+              {/* LEFT CONTENT */}
+              <div className="lg:col-span-7 flex flex-col justify-center p-6 md:p-10 lg:p-12">
+                <span className="text-xs md:text-sm font-extrabold tracking-[0.25em] uppercase text-rose-500 mb-4 block font-mono">
+                  OUR STORY
+                </span>
+
+                <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold leading-tight tracking-tight mb-6 text-white">
+                  From a bold vision
+                  <span className="block text-rose-500 mt-1">
+                    to global engineering impact.
+                  </span>
+                </h2>
+
+                <div className="space-y-4 text-zinc-300 text-base md:text-lg leading-relaxed font-normal">
+                  <p>
+                    We started with a simple belief — that great technology should inspire confidence, simplify complexity, and bring human passion to engineering.
+                  </p>
+                  <p>
+                    Today, our global team works side-by-side with enterprise leaders to turn bold ideas into seamless digital reality.
+                  </p>
+                </div>
+              </div>
+
+              {/* RIGHT CONTENT */}
+              <div className="lg:col-span-5 p-6 md:p-10 lg:p-12 flex flex-col justify-between bg-zinc-950/20 border-t lg:border-t-0 lg:border-l border-zinc-900/60">
+                <div className="space-y-5 text-zinc-300 text-base md:text-lg leading-relaxed font-normal">
+                  <p>
+                    What began as a specialized team of cloud architects has grown into a global network of technology experts serving enterprise leaders worldwide.
+                  </p>
+
+                  <div className="p-5 bg-zinc-950/80 border border-zinc-800/80 rounded-xl border-l-4 border-l-rose-500">
+                    <span className="text-xs font-bold text-rose-500 uppercase tracking-widest block mb-1 font-mono">
+                      Our Purpose
+                    </span>
+                    <p className="text-base md:text-lg italic text-white font-semibold leading-snug">
+                      &ldquo;We build intelligent digital foundations that empower bold visionaries to shape tomorrow.&rdquo;
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </Reveal>
 
       </div>
     </section>

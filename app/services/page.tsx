@@ -1,6 +1,7 @@
 import React from "react";
 import { Metadata } from "next";
 import dynamic from "next/dynamic";
+import { ServicesTopHero } from "@/sections/services/ServicesTopHero";
 import { ServicesHero } from "@/sections/services/ServicesHero";
 import { ServicesPillars } from "@/sections/services/ServicesPillars";
 import { BreadcrumbSchema } from "@/components/seo/Schemas";
@@ -36,7 +37,8 @@ export default function ServicesPage() {
 
       {/* 1. Services Hero & 3 Pillars Flow */}
       <div className="flex flex-col bg-[#030303]">
-        <ServicesHero />
+        <ServicesTopHero />
+        {/* <ServicesHero /> */}
         <ServicesPillars />
       </div>
 

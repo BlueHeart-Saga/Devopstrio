@@ -57,7 +57,7 @@ const offices = [
 ];
 
 export function OurLocations() {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
 
   return (
     <section className="w-full py-12 md:py-16 bg-[#030303] text-white relative border-t border-zinc-900/60">
@@ -71,7 +71,7 @@ export function OurLocations() {
               </h2>
             </div>
 
-            {/* Right Side Interactive Dropdown Button with linearrow.png */}
+            {/* Right Side Interactive Dropdown Button */}
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="group flex items-center gap-3 px-5 py-3 rounded-xl border border-zinc-800 bg-zinc-950/80 hover:bg-rose-500/10 hover:border-rose-500/50 text-white transition-all duration-300 shrink-0 cursor-pointer shadow-md"
@@ -79,12 +79,14 @@ export function OurLocations() {
               <span className="text-xs font-semibold tracking-wider uppercase text-zinc-200 group-hover:text-rose-400">
                 {isOpen ? "Hide Locations" : "View All Locations"}
               </span>
-              <img src="/webp/assets/components/linearrow.webp"
+              <img 
+                src="/webp/assets/components/linearrow.webp"
                 alt="Toggle arrow"
                 className={`w-5 h-5 object-contain filter drop-shadow-[0_0_8px_rgba(244,63,94,0.5)] transition-transform duration-300 ${
                   isOpen ? "rotate-180" : "rotate-0"
                 }`}
-              loading="lazy" />
+                loading="lazy" 
+              />
             </button>
           </div>
         </Reveal>
@@ -99,47 +101,57 @@ export function OurLocations() {
               transition={{ duration: 0.4, ease: "easeInOut" }}
               className="overflow-hidden"
             >
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-16 gap-x-12 pt-8 pb-4 border-t border-zinc-900">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-10 gap-x-8 pt-6 pb-8 border-t border-zinc-900">
                 {offices.map((office, idx) => (
-                  <div key={idx} className="flex flex-col items-center text-center group cursor-default">
-                    
-                    <div className="w-full h-48 relative mb-6 overflow-hidden flex items-end justify-center">
-                      <img src={office.image} 
+                  <div 
+                    key={idx} 
+                    className="flex flex-col items-center text-center p-6 sm:p-8 bg-black border-none transition-all duration-500 group cursor-pointer relative overflow-hidden"
+                  >
+                    {/* Office Image */}
+                    <div className="w-full h-44 relative mb-5 overflow-hidden flex items-end justify-center">
+                      <img 
+                        src={office.image} 
                         alt={`${office.city} Office`}
-                        className="object-contain h-full w-full opacity-80 group-hover:opacity-100 transition-opacity duration-500"
-                      loading="lazy" />
+                        className="object-contain h-full w-full opacity-85 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
+                        loading="lazy" 
+                      />
                     </div>
 
-                    <div className={`w-12 h-[3px] rounded-full bg-gradient-to-r ${office.gradient} mb-6 opacity-80`} />
+                    {/* Gradient Accent Bar */}
+                    <div className={`w-12 h-[3px] rounded-full bg-gradient-to-r ${office.gradient} mb-3 opacity-90 group-hover:w-20 transition-all duration-500`} />
 
-                    <h4 className="text-2xl md:text-3xl font-bold text-white mb-2 tracking-wide group-hover:text-zinc-200 transition-colors">
+                    {/* City Name */}
+                    <h4 className="text-2xl md:text-3xl font-bold text-white mb-1 tracking-wide group-hover:text-rose-400 transition-colors">
                       {office.city}
                     </h4>
 
-                    <span className="text-xs font-mono font-semibold text-rose-500 uppercase tracking-widest mb-4">
+                    {/* Region Subtitle Tag - Viewable Large Text */}
+                    <span className="text-sm sm:text-base font-bold font-sans text-rose-500 uppercase tracking-wider mb-2">
                       {office.region}
                     </span>
 
-                    <div className="text-xs md:text-sm text-zinc-400 font-semibold leading-relaxed mb-8 max-w-[280px]">
-                      {office.details.split('\n').map((line, i) => (
-                        <React.Fragment key={i}>
-                          {line}
-                          <br />
-                        </React.Fragment>
-                      ))}
-                    </div>
+                    {/* Address Details & Map Button - Appears On Hover */}
+                    <div className="max-h-0 opacity-0 group-hover:max-h-64 group-hover:opacity-100 transition-all duration-500 ease-in-out overflow-hidden flex flex-col items-center">
+                      <div className="pt-3 pb-4 text-base sm:text-lg text-zinc-200 font-normal leading-relaxed max-w-[320px]">
+                        {office.details.split('\n').map((line, i) => (
+                          <React.Fragment key={i}>
+                            {line}
+                            <br />
+                          </React.Fragment>
+                        ))}
+                      </div>
 
-                    {/* Real Google Maps Link Button */}
-                    <a
-                      href={office.mapUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl text-xs font-semibold tracking-wider uppercase border border-zinc-800 hover:border-rose-500/50 bg-zinc-950/80 hover:bg-rose-600 text-zinc-200 hover:text-white transition-all duration-300 hover:-translate-y-0.5 shadow-md group/map cursor-pointer"
-                    >
-                      <MapPin className="w-3.5 h-3.5 text-rose-500 group-hover/map:text-white transition-colors" />
-                      <span>View on Google Maps</span>
-                      <ExternalLink className="w-3.5 h-3.5 text-zinc-500 group-hover/map:text-white transition-colors ml-0.5" />
-                    </a>
+                      <a
+                        href={office.mapUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg text-xs sm:text-sm font-bold tracking-wider uppercase border border-zinc-800 hover:border-rose-500/60 bg-zinc-950 hover:bg-rose-600 text-zinc-100 hover:text-white transition-all duration-300 shadow-lg group/map cursor-pointer mb-2"
+                      >
+                        <MapPin className="w-4 h-4 text-rose-500 group-hover/map:text-white transition-colors" />
+                        <span>View on Google Maps</span>
+                        <ExternalLink className="w-3.5 h-3.5 text-zinc-400 group-hover/map:text-white transition-colors ml-0.5" />
+                      </a>
+                    </div>
 
                   </div>
                 ))}
@@ -152,3 +164,5 @@ export function OurLocations() {
     </section>
   );
 }
+
+export default OurLocations;
