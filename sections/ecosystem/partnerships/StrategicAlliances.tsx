@@ -23,7 +23,7 @@ import {
 import Link from "next/link";
 
 interface PillarItem {
-  icon: React.ElementType;
+  icon: React.ComponentType<{ className?: string }>;
   label: string;
 }
 
