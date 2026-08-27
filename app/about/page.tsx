@@ -1,16 +1,7 @@
-import type { Metadata } from "next";
 import dynamic from "next/dynamic";
 import { AboutHero } from "@/sections/about/AboutHero";
 import { CompanyIntro } from "@/sections/about/CompanyIntro";
 import { SectionNavbar } from "@/components/ui/SectionNavbar";
-
-export const metadata: Metadata = {
-  title: "About Devopstrio | Global Cloud & AI Engineering Leaders",
-  description: "Learn about Devopstrio's mission, global engineering team, and culture delivering enterprise cloud, AI, cybersecurity, and DevOps solutions.",
-  alternates: {
-    canonical: "https://devopstrio.co.uk/about",
-  },
-};
 
 const OurStory = dynamic(() => import("@/sections/about/OurStory").then((mod) => mod.OurStory));
 const MetricsStats = dynamic(() => import("@/sections/about/MetricsStats").then((mod) => mod.MetricsStats));

@@ -1,17 +1,8 @@
 import React from "react";
-import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getEcosystemDomain } from "@/data/ecosystem";
 import { SectionNavbar } from "@/components/ui/SectionNavbar";
 import { FAQ } from "@/components/ecosystem/FAQ";
-
-export const metadata: Metadata = {
-  title: "Community & Global Talent Network | Devopstrio",
-  description: "Join Devopstrio's global community network connecting cloud engineers, open-source contributors, university labs, and technical guilds.",
-  alternates: {
-    canonical: "https://devopstrio.co.uk/ecosystem/community-talent-network",
-  },
-};
 
 // Custom Community Sections
 import { CommunityHero } from "@/sections/ecosystem/community/CommunityHero";

@@ -1,17 +1,8 @@
 import React from "react";
-import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getEcosystemDomain } from "@/data/ecosystem";
 import { SectionNavbar } from "@/components/ui/SectionNavbar";
 import { FAQ } from "@/components/ecosystem/FAQ";
-
-export const metadata: Metadata = {
-  title: "Innovation Labs & Emerging Technology R&D | Devopstrio",
-  description: "Inside Devopstrio Innovation Labs: pioneering agentic AI, quantum computing baselines, zero-trust security, and cloud R&D.",
-  alternates: {
-    canonical: "https://devopstrio.co.uk/ecosystem/innovation-labs",
-  },
-};
 
 // Custom Innovation Labs Sections
 import { LabsHero } from "@/sections/ecosystem/labs/LabsHero";

@@ -1,17 +1,8 @@
 import React from "react";
-import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getEcosystemDomain } from "@/data/ecosystem";
 import { SectionNavbar } from "@/components/ui/SectionNavbar";
 import { FAQ } from "@/components/ecosystem/FAQ";
-
-export const metadata: Metadata = {
-  title: "Engineering Excellence & SRE Automation Practices | Devopstrio",
-  description: "Devopstrio drives engineering excellence through SRE automation, DevSecOps integration, quality engineering, and continuous deployment.",
-  alternates: {
-    canonical: "https://devopstrio.co.uk/ecosystem/engineering-excellence",
-  },
-};
 
 // Custom Engineering Excellence Sections
 import { ExcellenceHero } from "@/sections/ecosystem/excellence/ExcellenceHero";
