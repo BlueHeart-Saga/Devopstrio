@@ -206,10 +206,10 @@ const data = {
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: `${data.hero.title} ${data.hero.highlightedWord}`,
+    title: `${data.hero.title} ${data.hero.highlightedWord} | Devopstrio`,
     description: data.hero.subtitle,
     alternates: {
-      canonical: `/industries/banking-finance`
+      canonical: `https://devopstrio.co.uk/industries/banking-finance`
     }
   };
 }

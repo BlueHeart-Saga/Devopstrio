@@ -4,7 +4,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "GDPR Compliance | Devopstrio",
+  title: "GDPR Compliance & Data Protection Framework | Devopstrio",
   description: "Devopstrio GDPR compliance details our commitments, data subject rights, security safeguards, and sub-processor regulations for European Union clients.",
   alternates: {
     canonical: "/gdpr"

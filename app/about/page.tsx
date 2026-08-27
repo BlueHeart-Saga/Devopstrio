@@ -1,18 +1,19 @@
+import type { Metadata } from "next";
 import dynamic from "next/dynamic";
 import { AboutHero } from "@/sections/about/AboutHero";
 import { CompanyIntro } from "@/sections/about/CompanyIntro";
 import { SectionNavbar } from "@/components/ui/SectionNavbar";
 
-// Dynamic Imports for Heavy Below-The-Fold Sections to Reduce Initial JS Payload
-const MissionVision = dynamic(() => import("@/sections/about/MissionVision").then((mod) => mod.MissionVision));
+export const metadata: Metadata = {
+  title: "About Devopstrio | Global Cloud & AI Engineering Leaders",
+  description: "Learn about Devopstrio's mission, global engineering team, and culture delivering enterprise cloud, AI, cybersecurity, and DevOps solutions.",
+  alternates: {
+    canonical: "https://devopstrio.co.uk/about",
+  },
+};
+
 const OurStory = dynamic(() => import("@/sections/about/OurStory").then((mod) => mod.OurStory));
-const Leadership = dynamic(() => import("@/sections/about/Leadership").then((mod) => mod.Leadership));
-const AboutServices = dynamic(() => import("@/sections/about/AboutServices").then((mod) => mod.AboutServices));
-const WhyChoose = dynamic(() => import("@/sections/about/WhyChoose").then((mod) => mod.WhyChoose));
-const OurPartnership = dynamic(() => import("@/sections/about/OurPartnership").then((mod) => mod.OurPartnership));
-const WorkflowModel = dynamic(() => import("@/sections/about/WorkflowModel").then((mod) => mod.WorkflowModel));
 const MetricsStats = dynamic(() => import("@/sections/about/MetricsStats").then((mod) => mod.MetricsStats));
-const Achievements = dynamic(() => import("@/sections/about/Achievements").then((mod) => mod.Achievements));
 const AboutCTA = dynamic(() => import("@/sections/about/AboutCTA").then((mod) => mod.AboutCTA));
 const GlobalLocations = dynamic(() => import("@/sections/home/GlobalLocations").then((mod) => mod.GlobalLocations));
 

@@ -80,10 +80,10 @@ export async function generateMetadata({ params }: CategoryPageProps): Promise<M
   } catch (e) {}
 
   return {
-    title: `${categoryName} Publications`,
+    title: `${categoryName} Insights & Technical Publications | Devopstrio`,
     description: `Read technical deep-dives, industry briefs, and case studies about ${categoryName.toLowerCase()} on the Devopstrio portal.`,
     alternates: {
-      canonical: `/insights/${categorySlug}`
+      canonical: `https://devopstrio.co.uk/insights/${categorySlug}`
     }
   };
 }

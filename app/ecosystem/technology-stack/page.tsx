@@ -1,10 +1,17 @@
-"use client";
-
 import React from "react";
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getEcosystemDomain } from "@/data/ecosystem";
 import { SectionNavbar } from "@/components/ui/SectionNavbar";
 import { FAQ } from "@/components/ecosystem/FAQ";
+
+export const metadata: Metadata = {
+  title: "Modern Technology Stack & Cloud Native Architecture | Devopstrio",
+  description: "Explore Devopstrio's enterprise technology stack featuring cloud-native architectures, multi-cloud platforms, DevOps toolchains, and AI frameworks.",
+  alternates: {
+    canonical: "https://devopstrio.co.uk/ecosystem/technology-stack",
+  },
+};
 
 // Custom Tech Stack Sections
 import { TechHero } from "@/sections/ecosystem/technology/TechHero";

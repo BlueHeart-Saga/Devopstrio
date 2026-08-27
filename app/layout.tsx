@@ -7,8 +7,8 @@ import { OrganizationSchema, ReviewSchema, ProfessionalServiceSchema, LocalBusin
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://devopstrio.co.uk";
 
 export const metadata: Metadata = {
-  title: "Enterprise AI Consulting, Cloud & Product Engineering Services | Devopstrio",
-  description: "Devopstrio delivers professional consulting, cloud-native architecture, SRE automation, cybersecurity, and production-grade generative AI engineering for global enterprises.",
+  title: "Enterprise AI, Cloud & Product Engineering | Devopstrio",
+  description: "Devopstrio delivers enterprise cloud-native architecture, SRE automation, cybersecurity, and production-grade generative AI engineering globally.",
   metadataBase: new URL(siteUrl),
   robots: {
     index: true,

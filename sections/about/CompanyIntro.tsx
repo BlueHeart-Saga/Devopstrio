@@ -60,9 +60,9 @@ export function CompanyIntro() {
             <Reveal delay={0.25}>
               <div className="space-y-3">
                 
-                <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-white leading-tight drop-shadow-[0_10px_30px_rgba(0,0,0,0.95)]">
+                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-white leading-tight drop-shadow-[0_10px_30px_rgba(0,0,0,0.95)]">
                   Where Innovation Meets Engineering Excellence
-                </h3>
+                </h1>
                 <p className="text-base sm:text-lg md:text-xl font-semibold tracking-tight text-rose-100/90 leading-relaxed max-w-xl lg:ml-auto drop-shadow-[0_6px_20px_rgba(0,0,0,0.95)]">
                   We build the intelligent digital foundations that scale global innovation.
                 </p>

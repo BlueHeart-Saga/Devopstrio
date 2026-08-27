@@ -46,6 +46,7 @@ export function OverviewHero() {
   const chapters: { id: string; tagline: string; quote: string; title?: string }[] = [
     {
       id: "hero",
+      title: "Company Overview",
       tagline: "DEVOPSTRIO OVERVIEW",
       quote: "We turn visionary ideas into living digital experiences that bring confidence, clarity, and unlimited potential to every enterprise.",
     },

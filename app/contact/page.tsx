@@ -31,7 +31,7 @@ const contactSections = [
 ];
 
 export const metadata: Metadata = {
-  title: "Contact Our Engineering Teams",
+  title: "Contact Our Engineering Teams & Global Hubs | Devopstrio",
   description: "Connect with Devopstrio's systems architects and project delivery managers. Speak to our specialists about cloud migrations, AI model setups, or compliance.",
   alternates: {
     canonical: "/contact"

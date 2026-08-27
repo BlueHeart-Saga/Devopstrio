@@ -1,9 +1,16 @@
-"use client";
-
 import React from "react";
+import type { Metadata } from "next";
 import dynamic from "next/dynamic";
 import { BreadcrumbSchema } from "@/components/seo/Schemas";
 import { SectionNavbar } from "@/components/ui/SectionNavbar";
+
+export const metadata: Metadata = {
+  title: "Company Overview & Enterprise Profile | Devopstrio",
+  description: "Learn about Devopstrio's company overview, engineering team, core pillars, and global operations delivering enterprise cloud and AI solutions.",
+  alternates: {
+    canonical: "https://devopstrio.co.uk/about/company-overview",
+  },
+};
 
 // Import Section Components
 import { OverviewHero } from "@/sections/about/overview/OverviewHero";

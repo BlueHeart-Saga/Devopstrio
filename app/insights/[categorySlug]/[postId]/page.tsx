@@ -18,19 +18,25 @@ export async function generateMetadata({ params }: PostDetailPageProps): Promise
     const raw = await insightsApi.getContentById(postId);
     const data = raw?.item ?? raw;
     if (data && data.title) {
-      const title = data.title;
-      const description = data.excerpt || data.subtitle || "Devopstrio technical publication.";
+      let title = data.title;
+      if (title.length > 55) {
+        title = title.substring(0, 55).trim() + "... | Devopstrio";
+      } else if (!title.includes("Devopstrio")) {
+        title = `${title} | Devopstrio`;
+      }
+      const description = data.excerpt || data.subtitle || `${data.title} — Detailed engineering case study and technical breakdown by Devopstrio.`;
+      const canonicalUrl = `https://devopstrio.co.uk/insights/${categorySlug}/${postId}`;
       return {
         title: title,
-        description: description,
+        description: description.length > 155 ? description.substring(0, 152) + "..." : description,
         alternates: {
-          canonical: `/insights/${categorySlug}/${postId}`
+          canonical: canonicalUrl
         },
         openGraph: {
           title: title,
           description: description,
           type: "article",
-          url: `https://devopstrio.co.uk/insights/${categorySlug}/${postId}`,
+          url: canonicalUrl,
           images: data.image ? [{ url: data.image }] : []
         },
         twitter: {

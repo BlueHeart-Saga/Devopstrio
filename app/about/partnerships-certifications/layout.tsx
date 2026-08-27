@@ -1,17 +1,13 @@
-import { Metadata } from "next";
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Partnerships & Certifications | Devopstrio",
-  description: "Our industry certifications and co-engineering alliances with AWS, Microsoft Azure, Google Cloud, and Oracle.",
+  title: "Partnerships & Enterprise Certifications | Devopstrio",
+  description: "Devopstrio's strategic cloud partnerships with AWS, Azure, GCP, and ISO certifications driving enterprise engineering assurance.",
   alternates: {
-    canonical: "/about/partnerships-certifications"
-  }
+    canonical: "https://devopstrio.co.uk/about/partnerships-certifications",
+  },
 };
 
-export default function PartnershipsLayout({
-  children
-}: {
-  children: React.ReactNode;
-}) {
+export default function PartnershipsCertificationsLayout({ children }: { children: React.ReactNode }) {
   return <>{children}</>;
 }

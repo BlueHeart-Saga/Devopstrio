@@ -16,7 +16,7 @@ import { AboutDevopstrio } from "@/sections/about/support/AboutDevopstrio";
 import { SupportCTA } from "@/sections/about/support/SupportCTA";
 
 export const metadata: Metadata = {
-  title: "Customer Support | Devopstrio — Enterprise Cloud, AI & DevOps Support",
+  title: "24/7 Enterprise Customer Support | Devopstrio",
   description:
     "Enterprise-grade 24×7 support for Cloud, AI, DevOps and digital platforms. Global delivery centres in UK, USA, and India with strict SLA commitments and dedicated success teams.",
   alternates: {

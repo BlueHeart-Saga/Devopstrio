@@ -58,9 +58,9 @@ export const InternshipHero = () => {
           </div>
 
           {/* Quote Text */}
-          <p className="text-xl sm:text-2xl md:text-3xl lg:text-[2.25rem] font-medium text-zinc-100 tracking-tight leading-relaxed font-sans drop-shadow-[0_4px_25px_rgba(0,0,0,0.95)] max-w-6xl">
+          <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-[2.25rem] font-medium text-zinc-100 tracking-tight leading-relaxed font-sans drop-shadow-[0_4px_25px_rgba(0,0,0,0.95)] max-w-6xl">
             "Join our team as we work together to pioneer next-generation innovation — empowering curious minds to learn, build real-world tech, and shape the future with <span className="text-rose-500 font-extrabold">heart</span>."
-          </p>
+          </h1>
         </motion.div>
       </div>
     </section>

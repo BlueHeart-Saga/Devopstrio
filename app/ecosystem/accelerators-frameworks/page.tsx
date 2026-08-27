@@ -1,10 +1,17 @@
-"use client";
-
 import React from "react";
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getEcosystemDomain } from "@/data/ecosystem";
 import { SectionNavbar } from "@/components/ui/SectionNavbar";
 import { FAQ } from "@/components/ecosystem/FAQ";
+
+export const metadata: Metadata = {
+  title: "Cloud & AI Accelerators & Landing Zone Modules | Devopstrio",
+  description: "Accelerate enterprise deployments with Devopstrio's open-source IaC modules, Azure landing zones, GenAI starters, and platform blueprints.",
+  alternates: {
+    canonical: "https://devopstrio.co.uk/ecosystem/accelerators-frameworks",
+  },
+};
 
 // Custom Accelerators Sections
 import { AcceleratorsHero } from "@/sections/ecosystem/accelerators/AcceleratorsHero";

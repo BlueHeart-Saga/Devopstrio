@@ -1,10 +1,17 @@
-"use client";
-
 import React from "react";
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getEcosystemDomain } from "@/data/ecosystem";
 import { SectionNavbar } from "@/components/ui/SectionNavbar";
 import { FAQ } from "@/components/ecosystem/FAQ";
+
+export const metadata: Metadata = {
+  title: "Enterprise Platforms & SaaS Solution Ecosystem | Devopstrio",
+  description: "Deploy enterprise-grade platforms for cloud management, customer experience, data analytics, and SaaS solutions.",
+  alternates: {
+    canonical: "https://devopstrio.co.uk/ecosystem/platforms-solutions",
+  },
+};
 
 // Custom Platforms & Solutions Sections
 import { PlatformsHero } from "@/sections/ecosystem/platforms/PlatformsHero";

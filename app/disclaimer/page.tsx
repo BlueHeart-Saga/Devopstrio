@@ -4,7 +4,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Disclaimer | Devopstrio",
+  title: "Legal Disclaimer & Terms of Use | Devopstrio",
   description: "Devopstrio website and services disclaimer outlines general information limits, professional advice exclusions, and liability boundaries.",
   alternates: {
     canonical: "/disclaimer"

@@ -19,11 +19,11 @@ const AwardsRecognitionLeadership = dynamic(() => import("@/sections/about/leade
 const LeadershipCareersCTA = dynamic(() => import("@/sections/about/leadership/LeadershipCareersCTA").then((mod) => mod.LeadershipCareersCTA));
 
 export const metadata: Metadata = {
-  title: "Leadership & Team | Devopstrio — Engineering Excellence Worldwide",
+  title: "Leadership & Executive Team | Devopstrio",
   description:
     "Meet the executive leaders, principal architects, and 525+ technology specialists driving AI, Cloud, DevOps, and Digital Transformation at Devopstrio.",
   alternates: {
-    canonical: "/about/leadership-team",
+    canonical: "https://devopstrio.co.uk/about/leadership-team",
   },
   openGraph: {
     title: "Leadership & Team | Devopstrio",

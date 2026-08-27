@@ -1,8 +1,15 @@
-"use client";
-
 import React from "react";
+import type { Metadata } from "next";
 import { BreadcrumbSchema } from "@/components/seo/Schemas";
 import { SectionNavbar } from "@/components/ui/SectionNavbar";
+
+export const metadata: Metadata = {
+  title: "Global Presence & Regional Engineering Hubs | Devopstrio",
+  description: "Explore Devopstrio's global footprint across UK, USA, and India. Regional client experience centers, managed delivery hubs, and 24/7 engineering operations.",
+  alternates: {
+    canonical: "https://devopstrio.co.uk/about/global-presence",
+  },
+};
 
 // Import Section Components
 import { PresenceHeroCard } from "@/sections/about/global-presence/PresenceHeroCard";

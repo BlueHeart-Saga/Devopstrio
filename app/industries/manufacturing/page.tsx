@@ -207,10 +207,10 @@ const data = {
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: `${data.hero.title} ${data.hero.highlightedWord}`,
+    title: `${data.hero.title} ${data.hero.highlightedWord} | Devopstrio`,
     description: data.hero.subtitle,
     alternates: {
-      canonical: `/industries/manufacturing`
+      canonical: `https://devopstrio.co.uk/industries/manufacturing`
     }
   };
 }

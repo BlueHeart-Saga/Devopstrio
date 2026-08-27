@@ -160,7 +160,7 @@ export function CsrScrollStory() {
                 }}
                 className="w-full transition-all duration-300 ease-out flex justify-center"
               >
-                <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight font-sans drop-shadow-[0_4px_25px_rgba(0,0,0,0.95)] flex flex-wrap items-center justify-center gap-x-3.5 gap-y-2 max-w-5xl">
+                <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight font-sans drop-shadow-[0_4px_25px_rgba(0,0,0,0.95)] flex flex-wrap items-center justify-center gap-x-3.5 gap-y-2 max-w-5xl">
                   {words.map((word, wIdx) => {
                     // Reveal threshold for each word
                     const wordThreshold = wIdx / words.length;
@@ -184,7 +184,7 @@ export function CsrScrollStory() {
                       </span>
                     );
                   })}
-                </h2>
+                </h1>
               </div>
             );
           })}

@@ -15,11 +15,11 @@ import { ApplicationForm } from "@/sections/about/internship/ApplicationForm";
 import { RepresentativeCTA } from "@/components/ui/RepresentativeCTA";
 
 export const metadata: Metadata = {
-  title: "Global Engineering Internship Program | Careers & Mentorship",
+  title: "Global Engineering Internship Program | Devopstrio",
   description:
     "Launch your technology career with Devopstrio. Work alongside cloud architects, AI engineers, and DevOps specialists on real-world projects.",
   alternates: {
-    canonical: "/about/global-internship",
+    canonical: "https://devopstrio.co.uk/about/global-internship",
   },
   openGraph: {
     title: "Global Engineering Internship Program | Careers & Mentorship",

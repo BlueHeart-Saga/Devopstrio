@@ -12,7 +12,7 @@ import { IndustriesTrust } from "@/sections/about/testimonials/IndustriesTrust";
 import { TestimonialsCTA } from "@/sections/about/testimonials/TestimonialsCTA";
 
 export const metadata: Metadata = {
-  title: "Testimonials & Success Center | Devopstrio — Enterprise Cloud, AI & DevOps",
+  title: "Client Testimonials & Success Center | Devopstrio",
   description:
     "See how enterprises partner with Devopstrio to achieve 40% cloud cost reductions, 3× faster deployments, and 99.95% platform availability. Real outcomes, real impact.",
   alternates: {

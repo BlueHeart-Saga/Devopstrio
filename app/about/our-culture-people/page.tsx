@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   description:
     "Discover what it's like to work at Devopstrio — a culture of innovation, ownership, continuous learning, and global collaboration in AI, Cloud, and DevOps.",
   alternates: {
-    canonical: "/about/our-culture-people",
+    canonical: "https://devopstrio.co.uk/about/our-culture-people",
   },
   openGraph: {
     title: "Our Culture & People | Life at Devopstrio",

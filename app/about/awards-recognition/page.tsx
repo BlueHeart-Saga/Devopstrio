@@ -16,10 +16,10 @@ import { AwardsList } from "@/sections/about/AwardsList";
 import { MetricsStats } from "@/sections/about/MetricsStats";
 
 export const metadata: Metadata = {
-  title: "Awards, Recognition & Milestones | Devopstrio",
+  title: "Awards, Recognition & Engineering Milestones | Devopstrio",
   description: "Explore the industry awards, engineering milestones, and external recognition received by Devopstrio.",
   alternates: {
-    canonical: "/about/awards-recognition"
+    canonical: "https://devopstrio.co.uk/about/awards-recognition"
   }
 };
 

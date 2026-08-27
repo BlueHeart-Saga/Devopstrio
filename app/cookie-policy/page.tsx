@@ -4,7 +4,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Cookie Policy | Devopstrio",
+  title: "Cookie Policy & Data Privacy Standards | Devopstrio",
   description: "Devopstrio Cookie Policy explains how and why we use cookies and related tracking technologies on our site.",
   alternates: {
     canonical: "/cookie-policy"

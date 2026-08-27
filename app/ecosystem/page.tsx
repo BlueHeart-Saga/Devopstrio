@@ -1,10 +1,17 @@
-"use client";
-
 import React from "react";
+import type { Metadata } from "next";
 import dynamic from "next/dynamic";
 import { EcosystemTopHero } from "@/sections/ecosystem/EcosystemTopHero";
 import { EcosystemHero } from "@/sections/ecosystem/EcosystemHero";
 import { SectionNavbar } from "@/components/ui/SectionNavbar";
+
+export const metadata: Metadata = {
+  title: "Engineering Ecosystem & Cloud Architecture Hub | Devopstrio",
+  description: "Devopstrio's comprehensive engineering ecosystem integrating technology stack, global delivery, accelerators, and innovation labs.",
+  alternates: {
+    canonical: "https://devopstrio.co.uk/ecosystem",
+  },
+};
 
 // Dynamic Imports for Heavy Below-The-Fold Sections to Reduce Initial JS Payload
 const EcosystemOverview = dynamic(() => import("@/sections/ecosystem/EcosystemOverview").then((mod) => mod.EcosystemOverview));
