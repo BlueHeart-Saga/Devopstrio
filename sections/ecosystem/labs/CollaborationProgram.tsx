@@ -123,11 +123,8 @@ export function CollaborationProgram() {
       <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
         
         {/* Header Section */}
-        <Reveal className="mb-10 text-left">
-          {/* <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-zinc-500 mb-4 block">
-            PARTICIPATION OPTIONS
-          </span> */}
-          <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight mb-8 text-white max-w-3xl">
+        <Reveal className="mb-12 text-left">
+          <h2 className="text-4xl md:text-5xl xl:text-6xl font-semibold tracking-tight leading-[1.15] mb-8 text-white max-w-4xl">
             Build smarter with insights from technical leaders
           </h2>
           
@@ -135,9 +132,9 @@ export function CollaborationProgram() {
           <div className="flex flex-wrap items-center gap-3">
             <button
               onClick={() => setActiveFilter("featured")}
-              className={`px-5 py-2 rounded-full text-xs font-bold transition-all duration-300 ${
+              className={`px-6 py-3 rounded-full text-sm md:text-base font-semibold transition-all duration-300 ${
                 activeFilter === "featured"
-                  ? "bg-rose-600 text-white"
+                  ? "bg-rose-600 text-white shadow-[0_0_15px_rgba(225,29,72,0.35)]"
                   : "bg-zinc-900 text-zinc-400 hover:bg-zinc-800 hover:text-white"
               }`}
             >
@@ -145,9 +142,9 @@ export function CollaborationProgram() {
             </button>
             <button
               onClick={() => setActiveFilter("academic")}
-              className={`px-5 py-2 rounded-full text-xs font-bold transition-all duration-300 ${
+              className={`px-6 py-3 rounded-full text-sm md:text-base font-semibold transition-all duration-300 ${
                 activeFilter === "academic"
-                  ? "bg-rose-600 text-white"
+                  ? "bg-rose-600 text-white shadow-[0_0_15px_rgba(225,29,72,0.35)]"
                   : "bg-zinc-900 text-zinc-400 hover:bg-zinc-800 hover:text-white"
               }`}
             >
@@ -155,9 +152,9 @@ export function CollaborationProgram() {
             </button>
             <button
               onClick={() => setActiveFilter("all")}
-              className={`px-5 py-2 rounded-full text-xs font-bold transition-all duration-300 ${
+              className={`px-6 py-3 rounded-full text-sm md:text-base font-semibold transition-all duration-300 ${
                 activeFilter === "all"
-                  ? "bg-rose-600 text-white"
+                  ? "bg-rose-600 text-white shadow-[0_0_15px_rgba(225,29,72,0.35)]"
                   : "bg-zinc-900 text-zinc-400 hover:bg-zinc-800 hover:text-white"
               }`}
             >
@@ -175,15 +172,15 @@ export function CollaborationProgram() {
           {filteredPrograms.map((prog) => (
             <div
               key={prog.title}
-              className="group min-w-[320px] md:min-w-[400px] w-[320px] md:w-[400px] flex flex-col bg-zinc-950/60 border border-zinc-900 hover:border-zinc-700 rounded-3xl transition-all duration-300 snap-start shrink-0 overflow-hidden"
+              className="group min-w-[340px] md:min-w-[440px] w-[340px] md:w-[440px] flex flex-col bg-zinc-950/60 border border-zinc-900 hover:border-zinc-700 rounded-3xl transition-all duration-300 snap-start shrink-0 overflow-hidden"
             >
               {/* Image Section */}
-              <div className="w-full h-52 md:h-60 overflow-hidden relative bg-zinc-950">
+              <div className="w-full h-56 md:h-64 overflow-hidden relative bg-zinc-950">
                 <Image 
                   src={prog.image} 
                   alt={prog.title}
                   fill
-                  sizes="400px"
+                  sizes="440px"
                   className="object-cover object-center group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent pointer-events-none" />
@@ -191,27 +188,27 @@ export function CollaborationProgram() {
               
               {/* Content Section */}
               <div className="p-8 flex flex-col flex-1 bg-zinc-950/80">
-                <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-rose-500 mb-3 block">
+                {/* <span className="text-xs md:text-sm font-mono font-bold tracking-[0.2em] uppercase text-rose-400 mb-3 block">
                   {prog.category}
-                </span>
+                </span> */}
                 
-                <h3 className="text-lg md:text-xl font-bold text-white tracking-tight leading-snug mb-4 group-hover:text-rose-400 transition-colors">
+                <h3 className="text-xl md:text-2xl font-bold text-white tracking-tight leading-snug mb-4 group-hover:text-rose-400 transition-colors">
                   {prog.title}
                 </h3>
                 
-                <p className="text-sm text-zinc-400 font-medium leading-relaxed mb-8 flex-1">
+                {/* <p className="text-base md:text-lg text-zinc-300 font-normal leading-relaxed mb-8 flex-1">
                   {prog.desc}
-                </p>
+                </p> */}
 
                 {/* Microsoft-style CTA Button */}
                 <Link
                   href="/contact#contact-form"
-                  className="flex items-center gap-4 group/btn"
+                  className="flex items-center gap-4 group/btn mt-auto"
                 >
-                  <div className="w-8 h-8 rounded-lg bg-rose-600 flex items-center justify-center text-white group-hover/btn:bg-rose-500 transition-colors shadow-lg">
-                    <ChevronRight size={16} strokeWidth={3} />
+                  <div className="w-9 h-9 rounded-xl bg-rose-600 flex items-center justify-center text-white group-hover/btn:bg-rose-500 transition-colors shadow-lg">
+                    <ChevronRight size={18} strokeWidth={3} />
                   </div>
-                  <span className="text-xs font-bold text-rose-500 group-hover/btn:text-rose-400 transition-colors">
+                  <span className="text-sm md:text-base font-bold text-rose-500 group-hover/btn:text-rose-400 transition-colors">
                     {prog.cta}
                   </span>
                 </Link>

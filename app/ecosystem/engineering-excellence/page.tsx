@@ -28,17 +28,17 @@ export default function EngineeringExcellencePage() {
   const subSections = [
     { id: "overview", label: "Ecosystem" },
     { id: "framework", label: "Framework" },
-    { id: "metrics", label: "Metrics Dashboard" },
+    { id: "metrics", label: "Metrics" },
     { id: "coe", label: "Centers of Excellence" },
-    { id: "innovation", label: "Innovation Programs" },
+    { id: "innovation", label: "Programs" },
     { id: "lifecycle", label: "Lifecycle" },
     { id: "success-stories", label: "Success Stories" },
-    { id: "principles", label: "Principles" },
+    // { id: "principles", label: "Principles" },
     { id: "faq", label: "FAQ" }
   ];
 
   return (
-    <main className="min-h-screen bg-black text-white pt-16 font-sans">
+    <main className="min-h-screen bg-black text-white pt-12 md:pt-14 font-sans">
       
       {/* 01. Hero Section */}
       <ExcellenceHero />
@@ -73,7 +73,7 @@ export default function EngineeringExcellencePage() {
       </div>
 
       {/* 08. Engineering Principles */}
-      <EngineeringPrinciples />
+      {/* <EngineeringPrinciples /> */}
 
       {/* FAQ */}
       <FAQ faqs={data.faqs} />

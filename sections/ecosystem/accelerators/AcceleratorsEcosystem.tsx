@@ -2,6 +2,8 @@
 
 import React, { useState, useEffect } from "react";
 import { Reveal } from "@/components/ui/Reveal";
+import { ArrowUpRight } from "lucide-react";
+import Link from "next/link";
 
 interface AcceleratorCategory {
   id: string;
@@ -151,16 +153,16 @@ export function AcceleratorsEcosystem() {
           </div>
         </Reveal>
 
-        {/* Tab Pills Selector */}
-        <div id="accelerators-tabs-container" className="flex items-center gap-2 mb-12 pb-4 overflow-x-auto scrollbar-hide scroll-smooth -mx-6 px-6 md:mx-0 md:px-0 border-b border-zinc-900/60">
+        {/* Premium Tab Pills Selector */}
+        <div id="accelerators-tabs-container" className="flex items-center gap-3 mb-12 pb-4 overflow-x-auto scrollbar-hide scroll-smooth -mx-6 px-6 md:mx-0 md:px-0 border-b border-zinc-900/60">
           {categories.map((c) => (
             <button
               key={c.id}
               id={`accelerator-tab-${c.id}`}
               onClick={() => setActiveTab(c.id)}
-              className={`px-5 py-2.5 rounded-full text-xs font-semibold whitespace-nowrap transition-all duration-300 border ${activeTab === c.id
-                ? "bg-rose-600 border-rose-600 text-white shadow-[0_4px_20px_rgba(225,29,72,0.35)]"
-                : "bg-zinc-950/40 border-zinc-900 text-zinc-400 hover:text-white hover:bg-zinc-900/50 hover:border-zinc-800"
+              className={`px-6 py-3 rounded-full text-sm md:text-base font-semibold whitespace-nowrap transition-all duration-300 border ${activeTab === c.id
+                ? "bg-rose-500 border-rose-500 text-white shadow-[0_4px_20px_rgba(244,63,94,0.4)]"
+                : "bg-zinc-950/60 border-zinc-900 text-zinc-400 hover:text-white hover:bg-zinc-900/60"
                 }`}
             >
               {c.name}
@@ -171,9 +173,9 @@ export function AcceleratorsEcosystem() {
         {/* Main Redesigned Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 items-stretch">
           
-          {/* Left Tall Card (Col 1, Spans entire height / 2 rows on desktop) */}
+          {/* Left Tall Card (Quote Style Layout) */}
           <Reveal className="lg:col-span-1 h-full">
-            <div className="relative overflow-hidden rounded-3xl border border-white/10 hover:border-rose-500/30 p-8 flex flex-col justify-between h-full min-h-[480px] bg-gradient-to-br from-zinc-950/90 via-[#0a0506]/90 to-[#0f0709]/90 group/tall backdrop-blur-md transition-all duration-500 shadow-[0_8px_32px_0_rgba(0,0,0,0.5)]">
+            <div className="relative overflow-hidden rounded-3xl border border-white/10 hover:border-rose-500/30 p-8 flex flex-col justify-between h-full min-h-[380px] bg-gradient-to-br from-zinc-950/90 via-[#0a0506]/90 to-[#0f0709]/90 group/tall backdrop-blur-md transition-all duration-500 shadow-[0_8px_32px_0_rgba(0,0,0,0.5)]">
               {/* Decorative meshes */}
               <div className="absolute -right-10 -top-10 w-48 h-48 bg-rose-600/10 rounded-full blur-3xl pointer-events-none transition-all duration-700 group-hover/tall:scale-110" />
               <div className="absolute -left-10 -bottom-10 w-48 h-48 bg-orange-600/5 rounded-full blur-3xl pointer-events-none transition-all duration-700 group-hover/tall:scale-110" />
@@ -192,57 +194,53 @@ export function AcceleratorsEcosystem() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-white/5 border border-white/5 rounded-[24px]" />
               </div>
 
-              {/* Card top details */}
-              <div className="relative z-10">
-                {/* <span className="text-[10px] font-mono text-rose-500 tracking-widest uppercase block mb-4">
-                  CORE CLASSIFICATION
-                </span> */}
-                <h3 className="text-lg md:text-xl font-semibold text-white tracking-tight leading-tight mb-4 group-hover/tall:text-rose-400 transition-colors">
-                  {currentCat.name}
-                </h3>
-                {/* <p className="text-zinc-300 text-xs font-semibold leading-relaxed">
+              {/* Quote Feel Words Only */}
+              <div className="relative z-10 flex flex-col justify-center h-full my-auto">
+                <span className="text-4xl font-serif text-rose-500 block mb-2 leading-none opacity-90">“</span>
+                <h3 className="text-xl md:text-2xl font-semibold text-white tracking-tight leading-snug italic mb-4 group-hover/tall:text-rose-300 transition-colors">
                   {currentCat.subtitle}
-                </p> */}
-              </div>
-
-              {/* Card bottom: Examples / Benefits list */}
-              <div className="relative z-10 mt-8 pt-6 border-t border-zinc-900/60">
-                <span className="block text-[9px] font-mono font-bold text-rose-500 tracking-widest uppercase mb-3">
-                  {currentCat.examplesTitle}
+                </h3>
+                <span className="text-xs md:text-sm font-mono text-rose-500 font-semibold uppercase tracking-widest block">
+                  — {currentCat.name}
                 </span>
-                <div className="flex flex-wrap gap-1.5">
-                  {currentCat.examples.map((item) => (
-                    <span
-                      key={item}
-                      className="px-2.5 py-1.5 rounded-lg bg-zinc-900 border border-zinc-800 text-[9px] font-mono font-bold text-zinc-300 uppercase tracking-wider"
-                    >
-                      {item}
-                    </span>
-                  ))}
-                </div>
               </div>
             </div>
           </Reveal>
 
-          {/* Right Capabilities Grid (Col 2-4, 3 Columns x 2 Rows of smaller cards) */}
+          {/* Right Capabilities Grid */}
           <div className="lg:col-span-3 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {currentCat.capabilities.slice(0, 6).map((cap, idx) => (
               <Reveal key={cap} delay={idx * 0.04} className="h-full">
-                <div className="group/card flex flex-col justify-between bg-zinc-950/30 border border-white/5 hover:border-rose-500/20 hover:bg-zinc-950/60 rounded-2xl p-6 transition-all duration-300 min-h-[220px] h-full relative overflow-hidden backdrop-blur-md shadow-[0_8px_32px_0_rgba(0,0,0,0.37)]">
+                <div className="group/card flex flex-col justify-between bg-zinc-950/30 border border-white/5 hover:border-rose-500/30 hover:bg-zinc-950/60 rounded-2xl p-6 transition-all duration-300 h-full relative overflow-hidden backdrop-blur-md shadow-[0_8px_32px_0_rgba(0,0,0,0.37)]">
                   {/* Subtle color highlight glow on hover */}
                   <div className="absolute inset-0 bg-gradient-to-br from-rose-600/0 via-rose-600/0 to-rose-600/5 opacity-0 group-hover/card:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
-                  {/* Text details */}
-                  <div>
-                    <span className="text-[10px] font-mono text-rose-500 tracking-wider block mb-2">
-                      CAPABILITY 0{idx + 1}
-                    </span>
-                    <h4 className="text-base font-semibold text-rose-500 group-hover:text-rose-400 transition-colors mb-2">
+                  {/* Points Only with Improved Font Size */}
+                  <div className="flex-grow flex items-center pt-2 pb-4">
+                    <h4 className="text-lg md:text-xl font-semibold text-white group-hover/card:text-rose-400 transition-colors tracking-tight leading-snug">
                       {cap}
                     </h4>
-                    <p className="text-[12px] text-zinc-200 font-semibold leading-relaxed">
-                      Deploying modular configurations and audited blueprints to accelerate {cap.toLowerCase()} setups across all clusters.
-                    </p>
+                  </div>
+
+                  {/* Bottom Explore Button with Suitable Link */}
+                  <div className="pt-4 border-t border-white/[0.06] flex items-center justify-between mt-auto z-10">
+                    <Link
+                      href={
+                        currentCat.id === "cloud"
+                          ? "/services/cloud-services/cloud-architecture"
+                          : currentCat.id === "devops"
+                          ? "/services/devops-automation"
+                          : currentCat.id === "ai"
+                          ? "/services/it-consulting/ai-digital-transformation"
+                          : currentCat.id === "security"
+                          ? "/services/cybersecurity"
+                          : "/services/cloud-services"
+                      }
+                      className="inline-flex items-center gap-2 text-xs md:text-sm font-semibold uppercase tracking-wider text-rose-500 group-hover/card:text-white transition-colors"
+                    >
+                      <span>Explore</span>
+                      <ArrowUpRight className="w-3.5 h-3.5" />
+                    </Link>
                   </div>
                 </div>
               </Reveal>

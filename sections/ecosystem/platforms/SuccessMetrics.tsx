@@ -38,10 +38,10 @@ export function SuccessMetrics() {
               key={metric.label}
               className="bg-zinc-950/20 border border-zinc-900/80 rounded-2xl p-6 text-center flex flex-col justify-center items-center min-h-[140px] hover:border-rose-500/10 transition-all duration-300"
             >
-              <div className="text-3xl md:text-4xl font-semibold text-rose-500 tracking-tight mb-2">
+              <div className="text-4xl md:text-5xl font-semibold text-rose-500 tracking-tight mb-3 font-mono">
                 {metric.value}
               </div>
-              <div className="text-[9px] font-mono text-zinc-550 uppercase tracking-widest leading-normal">
+              <div className="text-xs md:text-sm font-mono text-zinc-300 font-semibold uppercase tracking-wider leading-normal">
                 {metric.label}
               </div>
             </div>

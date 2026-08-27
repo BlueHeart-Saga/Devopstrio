@@ -35,8 +35,8 @@ export default function PlatformsSolutionsPage() {
     { id: "metrics", label: "Success Metrics" },
     { id: "industries", label: "Industries" },
     { id: "lifecycle", label: "Lifecycle" },
-    { id: "tech-ecosystem", label: "Tech Ecosystem" },
-    { id: "marketplace", label: "Marketplace Map" },
+    // { id: "tech-ecosystem", label: "Tech Ecosystem" },
+    // { id: "marketplace", label: "Marketplace Map" },
     { id: "faq", label: "FAQ" }
   ];
 
@@ -71,10 +71,10 @@ export default function PlatformsSolutionsPage() {
       <ProductLifecycle />
 
       {/* 09. Tech Ecosystem */}
-      <TechEcosystem />
+      {/* <TechEcosystem /> */}
 
       {/* 10. Platform Marketplace Map */}
-      <PlatformMarketplace />
+      {/* <PlatformMarketplace /> */}
 
       {/* FAQ */}
       <FAQ faqs={data.faqs} />

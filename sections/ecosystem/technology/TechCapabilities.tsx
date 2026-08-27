@@ -240,20 +240,23 @@ export function TechCapabilities() {
 
         {/* Tab Pills Selector */}
         <div id="tech-tab-pills-container" className="flex items-center gap-2 mb-12 pb-4 overflow-x-auto scrollbar-hide scroll-smooth -mx-6 px-6 md:mx-0 md:px-0 border-b border-zinc-900/60">
-          {pillars.map((pillar) => (
-            <button
-              key={pillar.id}
-              id={`tech-tab-pill-${pillar.id}`}
-              onClick={() => setActiveTab(pillar.id)}
-              className={`px-5 py-2.5 rounded-full text-xs font-semibold whitespace-nowrap transition-all duration-300 border flex items-center gap-2 ${
-                activeTab === pillar.id
-                  ? "bg-rose-600 border-rose-600 text-white shadow-[0_4px_20px_rgba(225,29,72,0.35)]"
-                  : "bg-zinc-950/40 border-zinc-900 text-zinc-400 hover:text-white hover:bg-zinc-900/50 hover:border-zinc-800"
-              }`}
-            >
-              {pillar.name}
-            </button>
-          ))}
+          <div className="flex items-center gap-2 bg-zinc-950/80 backdrop-blur-xl border border-white/10 p-2 rounded-full shadow-[0_8px_32px_0_rgba(0,0,0,0.5)]">
+            {pillars.map((pillar) => (
+              <button
+                key={pillar.id}
+                id={`tech-tab-pill-${pillar.id}`}
+                onClick={() => setActiveTab(pillar.id)}
+                className={`px-6 md:px-7 py-3 md:py-3.5 rounded-full text-sm md:text-base font-semibold whitespace-nowrap transition-all duration-300 border flex items-center gap-2.5 ${
+                  activeTab === pillar.id
+                    ? "bg-rose-600 border-rose-600 text-white shadow-[0_4px_20px_rgba(225,29,72,0.4)]"
+                    : "bg-transparent border-transparent text-zinc-400 hover:text-white hover:bg-white/[0.05]"
+                }`}
+              >
+                {pillar.icon}
+                {pillar.name}
+              </button>
+            ))}
+          </div>
         </div>
 
         {/* Capabilities Main Grid */}
@@ -290,7 +293,7 @@ export function TechCapabilities() {
                 </span> */}
 
                 {/* Verified tool list inside the tall card */}
-                <div className="mt-6">
+                {/* <div className="mt-6">
                   <span className="block text-[10px] font-mono font-bold text-rose-500 uppercase tracking-widest mb-4">
                     {currentPillar.toolsLabel}
                   </span>
@@ -304,18 +307,18 @@ export function TechCapabilities() {
                       </span>
                     ))}
                   </div>
-                </div>
+                </div> */}
               </div>
 
               {/* Card bottom button */}
               <div className="relative z-10 mt-8">
                 <Link
                   href="/contact#contact-form"
-                  className="gap-2 w-fit inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white transition-all duration-300 hover:shadow-[0_0_25px_rgba(225,29,72,0.35)] hover:-translate-y-0.5"
+                  className="gap-2.5 w-full inline-flex items-center justify-center px-6 py-3.5 rounded-full text-sm md:text-base font-semibold tracking-wide bg-rose-600 hover:bg-rose-500 text-white transition-all duration-300 shadow-[0_4px_20px_rgba(225,29,72,0.35)] hover:-translate-y-0.5"
                 >
-                  Schedule Strategy Session{" "}
+                  Contact Us{" "}
                   <ArrowUpRight
-                    size={13}
+                    size={16}
                   />
                 </Link>
               </div>
@@ -336,39 +339,43 @@ export function TechCapabilities() {
                 {currentPillar.capabilities.map((item, idx) => (
                   <div
                     key={item.name}
-                    className="group/card flex flex-col justify-between bg-zinc-950/30 border border-white/5 hover:border-rose-500/20 hover:bg-zinc-950/60 rounded-2xl p-6 transition-all duration-300 min-h-[200px] h-full relative overflow-hidden backdrop-blur-md shadow-[0_8px_32px_0_rgba(0,0,0,0.37)]"
+                    className="group/card flex flex-col justify-between bg-zinc-950/40 border border-white/5 hover:border-rose-500/25 hover:bg-zinc-950/70 rounded-2xl p-6 transition-all duration-500 min-h-[200px] h-full relative overflow-hidden backdrop-blur-2xl shadow-[0_8px_32px_0_rgba(0,0,0,0.37)]"
                   >
-                    {/* Subtle color highlight glow on hover */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-rose-600/0 via-rose-600/0 to-rose-600/5 opacity-0 group-hover/card:opacity-100 transition-opacity duration-500 pointer-events-none" />
+                    {/* Blurred background artwork image */}
+                    <img
+                      src={pillarBgImages[activeTab]}
+                      alt=""
+                      className="absolute inset-0 w-full h-full object-cover opacity-25 blur-md pointer-events-none mix-blend-screen scale-110 group-hover/card:scale-105 transition-transform duration-700"
+                      loading="lazy"
+                    />
 
-                    {/* Text details */}
-                    <div>
-                      {/* <span className="text-[10px] md:text-xs font-mono text-rose-500 tracking-widest uppercase font-bold block mb-3">
-                        CORE CAPABILITY
-                      </span> */}
-                      <h4 className="text-base md:text-lg font-semibold text-white mb-3 group-hover/card:text-rose-400 transition-colors">
-                        {item.name}
+                    {/* Subtle color highlight glow on hover */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-rose-600/0 via-rose-600/0 to-rose-600/10 opacity-0 group-hover/card:opacity-100 transition-opacity duration-500 pointer-events-none" />
+
+                    {/* Text details - Simple quote in big font size semi bold */}
+                    <div className="relative z-10">
+                      <h4 className="text-xl md:text-2xl font-semibold text-white tracking-tight leading-snug group-hover/card:text-rose-400 transition-colors">
+                        "{item.name}"
                       </h4>
-                      {/* <p className="text-sm md:text-base text-zinc-300 font-medium leading-relaxed">
-                        {item.desc}
-                      </p> */}
                     </div>
 
-                    {/* Link action details */}
-                    <Link
-                      href="/contact#contact-form"
-                      className="inline-flex items-center gap-2 group/link mt-6 w-fit"
-                    >
-                      <span className="w-6 h-6 rounded-full bg-rose-600/10 group-hover/link:bg-rose-600 text-rose-500 group-hover/link:text-white flex items-center justify-center transition-all duration-300">
-                        <ChevronRight
-                          size={11}
-                          className="transition-transform duration-300 group-hover/link:translate-x-0.5"
-                        />
-                      </span>
-                      <span className="text-[11px] font-semibold text-zinc-400 group-hover/link:text-zinc-200 transition-colors">
-                        Implement Framework
-                      </span>
-                    </Link>
+                    {/* Explore Action Button */}
+                    <div className="relative z-10 mt-6">
+                      <Link
+                        href="/contact#contact-form"
+                        className="inline-flex items-center gap-2 group/link cursor-pointer"
+                      >
+                        <span className="w-7 h-7 rounded-full bg-rose-600/10 group-hover/link:bg-rose-600 text-rose-500 group-hover/link:text-white flex items-center justify-center transition-all duration-300">
+                          <ChevronRight
+                            size={14}
+                            className="transition-transform duration-300 group-hover/link:translate-x-0.5"
+                          />
+                        </span>
+                        <span className="text-xs md:text-sm font-semibold text-zinc-300 group-hover/link:text-white transition-colors">
+                          Explore
+                        </span>
+                      </Link>
+                    </div>
                   </div>
                 ))}
               </motion.div>

@@ -2,8 +2,6 @@
 
 import React from "react";
 import { Reveal } from "@/components/ui/Reveal";
-import { ArrowUpRight } from "lucide-react";
-import Link from "next/link";
 
 export function TechHero() {
   const innerIcons = [
@@ -36,49 +34,27 @@ export function TechHero() {
     { name: "Azure", src: "/assets/Tech-icons/microsoft-azure-logo_svgstack_com_7501780931055.svg" }
   ];
 
-  const innerRadius = 210; // Increased radius to give more gap from center text
-  const outerRadius = 320; // Increased radius to give more gap between rings
+  const innerRadius = 240;
+  const outerRadius = 360;
 
   return (
-    <section className="relative w-full min-h-screen flex items-center justify-center bg-black overflow-hidden pt-12 pb-12 border-b border-zinc-900/60">
+    <section className="relative w-full flex items-center justify-center bg-black overflow-hidden pt-0 pb-0">
       {/* Background Glows */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(244,63,94,0.04),transparent_50%)] pointer-events-none" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-rose-600/[0.012] rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(244,63,94,0.06),transparent_55%)] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[850px] bg-rose-600/[0.015] rounded-full blur-[140px] pointer-events-none" />
 
       {/* Decorative Tech Grid */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#080808_1px,transparent_1px),linear-gradient(to_bottom,#080808_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] pointer-events-none" />
 
-      {/* Outer circular wrapper for absolute scaling on smaller screen sizes */}
-      <div className="relative w-full max-w-[700px] h-[700px] flex items-center justify-center scale-90 sm:scale-100 transition-transform select-none">
-
-        {/* Decorative orbit boundary rings */}
-        <div className="absolute w-[420px] h-[420px] rounded-full border border-zinc-900/35 pointer-events-none" />
-        <div className="absolute w-[640px] h-[640px] rounded-full border border-zinc-900/20 pointer-events-none" />
+      {/* Outer circular wrapper */}
+      <div className="relative w-full max-w-[800px] h-[740px] flex items-center justify-center scale-90 sm:scale-100 transition-transform select-none -mt-6 md:-mt-10">
 
         {/* Center Text Panel */}
-        <div className="w-[280px] md:w-[320px] text-center z-30 flex flex-col items-center justify-center">
+        <div className="w-[320px] md:w-[460px] text-center z-30 flex flex-col items-center justify-center">
           <Reveal delay={0.1}>
-            <h1 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight mb-4 text-white">
+            <h1 className="text-4xl md:text-6xl xl:text-7xl font-semibold tracking-tight leading-tight mb-4 text-white">
               Built on Modern Foundations
             </h1>
-          </Reveal>
-
-          {/* <Reveal delay={0.2}>
-            <p className="text-zinc-400 text-[10px] md:text-xs leading-relaxed font-normal mb-6 opacity-95">
-              Explore the <Link href="/ecosystem/technology-stack" className="text-rose-500 hover:underline font-bold">technology stack frameworks</Link> and modern <Link href="/services/cloud-services" className="text-rose-500 hover:underline font-bold">cloud platform services</Link> driving our enterprise solutions.
-            </p>
-          </Reveal> */}
-
-          <Reveal delay={0.3}>
-            <Link
-              href="#framework"
-              className="inline-flex items-center gap-3 pl-5 pr-2 py-1.5 bg-white text-black font-semibold text-[10px] tracking-wider rounded-full hover:bg-zinc-200 transition-all duration-300 shadow-lg shadow-white/5"
-            >
-              Explore Stack
-              <div className="w-5 h-5 rounded-full bg-black flex items-center justify-center transition-transform duration-300 hover:scale-105">
-                <ArrowUpRight className="w-3.5 h-3.5 text-white" />
-              </div>
-            </Link>
           </Reveal>
         </div>
 
@@ -92,17 +68,17 @@ export function TechHero() {
           return (
             <div
               key={`inner-${icon.name}`}
-              className="absolute w-11 h-11 bg-zinc-950/90 border border-zinc-850 p-2 rounded-xl flex items-center justify-center shadow-lg transition-transform duration-300 hover:scale-115 hover:border-rose-500/35 cursor-pointer z-20 group"
+              className="absolute w-14 h-14 bg-white/[0.06] backdrop-blur-2xl border-0 p-2.5 rounded-2xl flex items-center justify-center shadow-[0_8px_32px_rgba(0,0,0,0.5)] transition-transform duration-300 hover:scale-115 cursor-pointer z-20 group"
               style={{
-                left: `calc(50% + ${x}px - 22px)`,
-                top: `calc(50% + ${y}px - 22px)`,
-                transform: `rotate(${angle}deg)` // Rotated outward from the center
+                left: `calc(50% + ${x}px - 28px)`,
+                top: `calc(50% + ${y}px - 28px)`,
+                transform: `rotate(${angle}deg)`
               }}
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={icon.src}
                 alt={icon.name}
-                className="w-full h-full object-contain filter brightness-90 group-hover:brightness-100 group-hover:scale-105 transition-all"
+                className="w-full h-full object-contain filter brightness-95 group-hover:brightness-100 group-hover:scale-110 transition-all"
                 title={icon.name}
                 loading="eager" />
             </div>
@@ -119,17 +95,17 @@ export function TechHero() {
           return (
             <div
               key={`outer-${icon.name}`}
-              className="absolute w-10 h-10 bg-zinc-950/80 border border-zinc-900 p-2 rounded-xl flex items-center justify-center shadow-md transition-transform duration-300 hover:scale-115 hover:border-rose-500/35 cursor-pointer z-10 group"
+              className="absolute w-12 h-12 bg-white/[0.04] backdrop-blur-2xl border-0 p-2 rounded-2xl flex items-center justify-center shadow-[0_8px_32px_rgba(0,0,0,0.5)] transition-transform duration-300 hover:scale-115 cursor-pointer z-10 group"
               style={{
-                left: `calc(50% + ${x}px - 20px)`,
-                top: `calc(50% + ${y}px - 20px)`,
-                transform: `rotate(${angle}deg)` // Rotated outward from the center
+                left: `calc(50% + ${x}px - 24px)`,
+                top: `calc(50% + ${y}px - 24px)`,
+                transform: `rotate(${angle}deg)`
               }}
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={icon.src}
                 alt={icon.name}
-                className="w-full h-full object-contain filter opacity-75 brightness-75 group-hover:opacity-100 group-hover:brightness-100 group-hover:scale-105 transition-all"
+                className="w-full h-full object-contain filter opacity-85 brightness-90 group-hover:opacity-100 group-hover:brightness-100 group-hover:scale-110 transition-all"
                 title={icon.name}
                 loading="eager" />
             </div>

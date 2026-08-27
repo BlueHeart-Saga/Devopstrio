@@ -106,7 +106,7 @@ export function FeaturedProducts() {
                 </div>
 
                 {/* Title & Description */}
-                <h3 className="text-base md:text-lg font-semibold text-white uppercase tracking-wider mb-1 mt-1 group-hover:text-rose-400 transition-colors">
+                <h3 className="text-xl md:text-2xl font-semibold text-white uppercase tracking-wider mb-2 mt-1 group-hover:text-rose-400 transition-colors">
                   {prod.name}
                 </h3>
                 {/* <span className="block text-xs font-semibold text-rose-500 mb-3">

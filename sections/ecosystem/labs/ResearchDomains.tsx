@@ -74,13 +74,10 @@ export function ResearchDomains() {
         
         {/* Header */}
         <Reveal className="mb-12 text-left max-w-3xl">
-          {/* <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
-            R&D MATRICES
-          </span> */}
-          <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight mb-5 text-white">
+          <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight text-white">
             Core Research <span className="text-rose-500">Domains</span>
           </h2>
-          {/* <p className="text-zinc-400 text-sm md:text-base font-medium max-w-2xl leading-relaxed">
+          {/* <p className="text-zinc-300 text-base md:text-lg font-normal max-w-2xl leading-relaxed mt-3">
             Broad architectural categories defining our SRE investigations, compliance frameworks, and intelligence products.
           </p> */}
         </Reveal>
@@ -91,7 +88,7 @@ export function ResearchDomains() {
             <button
               key={dom.id}
               onClick={() => setActiveTab(dom.id)}
-              className={`px-5 py-2.5 text-xs font-semibold rounded-lg transition-all duration-300 ${
+              className={`px-5 md:px-6 py-3 text-sm md:text-base font-semibold rounded-xl transition-all duration-300 ${
                 activeTab === dom.id
                   ? "bg-rose-500 text-white shadow-md shadow-rose-500/20"
                   : "bg-zinc-950/60 border border-zinc-900 text-zinc-400 hover:text-white hover:bg-zinc-900/60"
@@ -119,24 +116,21 @@ export function ResearchDomains() {
                   exit={{ opacity: 0, x: 10 }}
                   transition={{ duration: 0.3 }}
                 >
-                  {/* <span className="text-[10px] font-mono tracking-[0.25em] uppercase text-rose-500 block mb-2">
-                    Research Area
-                  </span> */}
-                  <h3 className="text-lg md:text-xl font-semibold text-white tracking-tight leading-tight mb-4">
+                  <h3 className="text-xl md:text-2xl font-semibold text-white tracking-tight leading-tight mb-3">
                     {currentDomain.title}
                   </h3>
-                  {/* <p className="text-zinc-300 text-sm md:text-base font-medium leading-relaxed mb-8">
+                  <p className="text-zinc-300 text-sm md:text-base font-normal leading-relaxed mb-6">
                     {currentDomain.desc}
-                  </p> */}
+                  </p>
 
                   <div className="space-y-4 border-t border-zinc-900 pt-6">
-                    <span className="text-[10px] font-mono tracking-[0.25em] uppercase text-zinc-500 block mb-4">
+                    <span className="text-xs md:text-sm font-mono tracking-[0.2em] uppercase text-rose-400 font-semibold block mb-4">
                       Core Investigations
                     </span>
                     {currentDomain.topics.map((topic, idx) => (
-                      <div key={idx} className="flex gap-4">
-                        <Check className="w-4 h-4 text-rose-500 shrink-0 mt-0.5" />
-                        <p className="text-zinc-300 text-xs md:text-sm font-medium leading-relaxed">
+                      <div key={idx} className="flex gap-4 items-start">
+                        <Check className="w-5 h-5 text-rose-500 shrink-0 mt-0.5" />
+                        <p className="text-zinc-200 text-sm md:text-base font-medium leading-relaxed">
                           {topic}
                         </p>
                       </div>

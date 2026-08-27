@@ -62,15 +62,13 @@ export function LabsEcosystem() {
         {/* Header Section */}
         <Reveal>
           <div className="text-center max-w-3xl mx-auto mb-14">
-            {/* <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
-              R&D CONSTELLATION
-            </span> */}
-            <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight mb-5 text-white">
-              Innovation Labs <span className="text-rose-500">Ecosystem</span>
+           
+            <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight mb-4 text-white">
+              Our Innovation Labs <span className="text-rose-500">Ecosystem</span>
             </h2>
-            {/* <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
-              Highly specialized research centers testing next-generation architectural paradigms to future-proof global enterprises.
-            </p> */}
+            <p className="text-zinc-300 text-base md:text-lg lg:text-xl leading-relaxed font-normal italic max-w-3xl mx-auto">
+              “Highly specialized research hubs testing next-generation architectural paradigms to future-proof enterprise technology.”
+            </p>
           </div>
         </Reveal>
 
@@ -91,12 +89,14 @@ export function LabsEcosystem() {
 
               {/* Card top details */}
               <div className="relative z-10">
-                <h3 className="text-lg md:text-xl font-semibold text-white tracking-tight leading-tight mb-4 group-hover/tall:text-rose-400 transition-colors">
-                  Future-proofing delivery with advanced R&D
-                </h3>
-                {/* <p className="text-zinc-100 text-xs font-semibold leading-relaxed">
-                  Our labs act as a testing ground for cutting-edge technologies, ensuring that the solutions we deliver are built on validated, scalable frameworks.
-                </p> */}
+                <div className="mb-2 text-rose-500 font-serif text-3xl leading-none opacity-90 select-none">
+                  “
+                </div>
+                <blockquote className="border-l-2 border-rose-500/70 pl-4 py-0.5">
+                  <h3 className="text-lg md:text-xl font-semibold text-white tracking-tight leading-relaxed group-hover/tall:text-rose-200 transition-colors italic">
+                    In our Innovation Labs, we don&apos;t just anticipate the future—we design, build, and pioneer it.
+                  </h3>
+                </blockquote>
               </div>
 
               {/* Card bottom button */}

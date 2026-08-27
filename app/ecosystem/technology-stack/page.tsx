@@ -35,7 +35,7 @@ export default function TechnologyStackPage() {
   ];
 
   return (
-    <main className="min-h-screen bg-black text-white pt-16 font-sans">
+    <main className="min-h-screen bg-black text-white pt-12 md:pt-14 font-sans">
 
       {/* 01. Hero Section */}
       <TechHero />

@@ -48,21 +48,21 @@ export function CapabilityMatrix() {
           <div className="overflow-x-auto">
             <table className="w-full text-left border-collapse">
               <thead>
-                <tr className="border-b border-zinc-900 bg-zinc-950/80 font-sans text-zinc-400 uppercase tracking-wider text-[10px] font-bold">
-                  <th className="p-6 text-zinc-350">Delivery Node</th>
-                  <th className="p-6 text-center text-zinc-350">Consulting</th>
-                  <th className="p-6 text-center text-zinc-350">Engineering</th>
-                  <th className="p-6 text-center text-zinc-350">Cloud Systems</th>
-                  <th className="p-6 text-center text-zinc-350">SecOps</th>
-                  <th className="p-6 text-center text-zinc-350">DevOps</th>
-                  <th className="p-6 text-center text-zinc-350">24/7 Support</th>
+                <tr className="border-b border-zinc-900 bg-zinc-950/80 font-sans text-rose-500 uppercase tracking-wider text-xs md:text-sm font-semibold">
+                  <th className="p-6">Delivery Node</th>
+                  <th className="p-6 text-center">Consulting</th>
+                  <th className="p-6 text-center">Engineering</th>
+                  <th className="p-6 text-center">Cloud Systems</th>
+                  <th className="p-6 text-center">SecOps</th>
+                  <th className="p-6 text-center">DevOps</th>
+                  <th className="p-6 text-center">24/7 Support</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-zinc-900/60 font-medium">
                 {matrix.map((row) => (
                   <tr key={row.location} className="hover:bg-zinc-900/10 transition-colors duration-200">
                     {/* Location Name */}
-                    <td className="p-6 font-bold text-white tracking-wide text-xs md:text-sm">
+                    <td className="p-6 font-semibold text-white tracking-wide text-sm md:text-base">
                       {row.location}
                     </td>
 

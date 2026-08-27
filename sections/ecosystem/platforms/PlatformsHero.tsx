@@ -8,7 +8,7 @@ import Image from "next/image";
 
 export function PlatformsHero() {
   return (
-    <section className="relative w-full min-h-[95vh] flex flex-col items-center justify-between bg-black overflow-hidden pt-28 border-b border-zinc-900/60">
+    <section className="relative w-full min-h-[90vh] flex flex-col items-center justify-between bg-black overflow-hidden pt-12 md:pt-16 border-b border-zinc-900/60">
       {/* Background Glows */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(244,63,94,0.05),transparent_50%)] pointer-events-none" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-rose-600/[0.012] rounded-full blur-[140px] pointer-events-none" />
@@ -16,46 +16,22 @@ export function PlatformsHero() {
       {/* Decorative Tech Grid */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#080808_1px,transparent_1px),linear-gradient(to_bottom,#080808_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10 flex flex-col items-center text-center flex-grow justify-center pt-8">
+      <div className="max-w-7xl mx-auto w-full px-6 md:px-12 xl:px-8 relative z-10 flex flex-col items-center text-center flex-grow justify-center pt-2">
 
-        {/* Center Main Heading & Description */}
+        {/* Center Main Heading */}
         <Reveal delay={0.1} className="max-w-4xl">
-          <h1 className="text-3xl md:text-5xl lg:text-6xl font-semibold tracking-tight leading-tight mb-6 text-white text-center">
+          <h1 className="text-3xl md:text-5xl lg:text-6xl font-semibold tracking-tight leading-tight mb-4 text-white text-center">
             Build, Launch & Scale Digital Products
           </h1>
         </Reveal>
 
-        {/* <Reveal delay={0.2} className="max-w-3xl">
-          <p className="text-zinc-300 text-xs md:text-sm lg:text-base leading-relaxed font-normal max-w-3xl text-center mx-auto opacity-95 mb-10">
-            Transform ideas into enterprise-grade <Link href="/services/software-development" className="text-rose-500 hover:underline font-bold">SaaS products</Link>, <Link href="/services/ai-data-innovation" className="text-rose-500 hover:underline font-bold">AI-powered platforms</Link>, <Link href="/services/cloud-services" className="text-rose-500 hover:underline font-bold">cloud-native applications</Link>, and digital ecosystems.
-          </p>
-        </Reveal> */}
-
-        {/* Action Pill Buttons */}
-        <Reveal delay={0.3} className="flex flex-wrap justify-center gap-4 mb-16">
-          <Link
-            href="#categories"
-            className="inline-flex items-center gap-3 pl-6 pr-2 py-2 bg-white text-black font-semibold text-xs tracking-wider rounded-full hover:bg-zinc-200 transition-all duration-300 shadow-lg shadow-white/5"
-          >
-            Explore Platforms
-            <div className="w-7 h-7 rounded-full bg-black flex items-center justify-center transition-transform duration-300 hover:scale-105">
-              <ArrowUpRight className="w-3.5 h-3.5 text-white" />
-            </div>
-          </Link>
-          <Link
-            href="/contact#contact-form"
-            className="gap-2 inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase border border-zinc-850 hover:border-zinc-750 bg-zinc-950/60 hover:bg-zinc-900 text-white transition-all duration-300 hover:-translate-y-0.5"
-          >
-            Request Demo
-          </Link>
-        </Reveal>
-
-        {/* Asymmetrical Bento Masonry Grid */}
+        {/* Asymmetrical Bento Masonry Grid - Glassmorphism UI */}
         <div className="grid grid-cols-2 md:grid-cols-5 gap-5 w-full mt-4 select-none overflow-visible pb-10">
 
           {/* Column 1 (HCM Image + Availability Metric) */}
           <div className="flex flex-col gap-5 justify-end">
-            <div className="relative h-44 md:h-52 rounded-[24px] overflow-hidden bg-zinc-950 border border-zinc-850 p-5 flex flex-col justify-end text-left group">
+            <div className="relative h-44 md:h-52 rounded-[24px] overflow-hidden bg-zinc-900/40 backdrop-blur-2xl border-0 p-5 flex flex-col justify-end text-left group shadow-[0_8px_32px_0_rgba(0,0,0,0.5)] hover:bg-zinc-900/60 transition-all duration-500">
+              <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-transparent opacity-30 pointer-events-none" />
               <Image
                 src="/webp/assets/ecosystem/herocard/platform/4.webp"
                 alt="Humanex Workspace"
@@ -64,26 +40,25 @@ export function PlatformsHero() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent z-10" />
               <div className="relative z-20">
-                <span className="text-[8px] font-mono tracking-widest text-rose-500 uppercase block mb-1">Humanex</span>
-                <h3 className="text-[11px] md:text-[13px] font-bold text-white tracking-tight leading-snug">
+                {/* <span className="text-[10px] md:text-xs font-mono tracking-widest text-rose-500 uppercase block mb-1 font-semibold">Humanex</span> */}
+                <h3 className="text-sm md:text-base font-semibold text-white tracking-tight leading-snug">
                   Next-Gen HCM workspace for agile teams.
                 </h3>
               </div>
             </div>
 
-            <div className="h-28 md:h-36 rounded-[24px] bg-rose-500/10 border border-rose-500/20 p-5 flex flex-col justify-between text-left">
-              <span className="text-[24px] md:text-[32px] font-black text-rose-500 font-mono tracking-tighter leading-none">
+            <div className="h-28 md:h-36 rounded-[24px] bg-rose-500/10 backdrop-blur-2xl border-0 p-5 flex flex-col justify-center text-left shadow-[0_8px_32px_0_rgba(244,63,94,0.08)] relative overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-rose-500/20 via-transparent to-transparent opacity-40 pointer-events-none" />
+              <span className="text-3xl md:text-4xl font-semibold text-rose-500 font-mono tracking-tighter leading-none relative z-10">
                 99.9%
               </span>
-              <p className="text-[9px] md:text-[10px] font-mono tracking-wider text-zinc-400 uppercase leading-snug">
-                Platform availability across all custom build assets.
-              </p>
             </div>
           </div>
 
           {/* Column 2 (Tall Analytics Dashboard Card) */}
           <div className="flex flex-col justify-end">
-            <div className="relative h-76 md:h-[380px] rounded-[24px] overflow-hidden bg-zinc-950 border border-zinc-850 p-6 flex flex-col justify-between text-left group">
+            <div className="relative h-76 md:h-[380px] rounded-[24px] overflow-hidden bg-zinc-900/40 backdrop-blur-2xl border-0 p-6 flex flex-col justify-between text-left group shadow-[0_8px_32px_0_rgba(0,0,0,0.5)] hover:bg-zinc-900/60 transition-all duration-500">
+              <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-transparent opacity-30 pointer-events-none" />
               <Image
                 src="/webp/assets/ecosystem/herocard/platform/2.webp"
                 alt="Brio Dashboard"
@@ -93,15 +68,14 @@ export function PlatformsHero() {
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent z-10" />
 
               <div className="relative z-20">
-                <span className="text-[20px] md:text-[28px] font-black text-white font-mono tracking-tight block">
+                <span className="text-3xl md:text-4xl font-semibold text-white font-mono tracking-tight block">
                   100K+
                 </span>
-                <span className="text-[8px] font-mono tracking-wider text-zinc-550 uppercase">ACTIVE USERS DAILY</span>
               </div>
 
               <div className="relative z-20">
-                <span className="text-[8px] font-mono tracking-widest text-rose-500 uppercase block mb-1">Brio Platform</span>
-                <h3 className="text-[12px] md:text-[14px] font-bold text-white tracking-tight leading-snug">
+                {/* <span className="text-[10px] md:text-xs font-mono tracking-widest text-rose-500 uppercase block mb-1 font-semibold">Brio Platform</span> */}
+                <h3 className="text-sm md:text-base font-semibold text-white tracking-tight leading-snug">
                   Advanced multi-tenant analytics dashboard.
                 </h3>
               </div>
@@ -110,28 +84,23 @@ export function PlatformsHero() {
 
           {/* Column 3 (Platform Integrations Callout) */}
           <div className="flex flex-col justify-end">
-            <div className="h-64 md:h-76 rounded-[24px] bg-gradient-to-b from-[#1c1214] to-[#0c0c0e] border border-rose-500/15 p-6 flex flex-col justify-between text-left relative overflow-hidden group">
-              <div className="absolute -top-12 -right-12 w-28 h-28 bg-[radial-gradient(circle_at_center,rgba(244,63,94,0.1),transparent_70%)] rounded-full pointer-events-none" />
+            <div className="h-64 md:h-76 rounded-[24px] bg-gradient-to-br from-rose-950/30 via-zinc-950/80 to-zinc-950/90 backdrop-blur-2xl border-0 p-6 flex flex-col justify-center text-left relative overflow-hidden group shadow-[0_8px_32px_0_rgba(0,0,0,0.5)]">
+              <div className="absolute -top-12 -right-12 w-28 h-28 bg-[radial-gradient(circle_at_center,rgba(244,63,94,0.15),transparent_70%)] rounded-full pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-transparent opacity-25 pointer-events-none" />
 
-              <div>
-                <span className="text-[8px] font-mono tracking-widest text-zinc-550 uppercase block mb-3">INTEGRATIONS</span>
-                <h3 className="text-[13px] md:text-[15px] font-bold text-white tracking-tight leading-snug mb-2">
+              <div className="relative z-10">
+                {/* <span className="text-[10px] md:text-xs font-mono tracking-widest text-rose-500 uppercase block mb-2 font-semibold">INTEGRATIONS</span> */}
+                <h3 className="text-base md:text-lg font-semibold text-white tracking-tight leading-snug">
                   Connect & Scale with 20+ SaaS Integrations
                 </h3>
-                <p className="text-[9px] md:text-[10px] text-zinc-400 leading-relaxed font-normal">
-                  Out-of-the-box connectors for identity, billing, CRM, and cloud platforms.
-                </p>
               </div>
-
-              <button className="w-fit inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase border border-zinc-850 hover:border-zinc-750 bg-zinc-950/60 hover:bg-zinc-900 text-white transition-all duration-300 hover:-translate-y-0.5">
-                Explore API
-              </button>
             </div>
           </div>
 
           {/* Column 4 (Tall AI Platform Visor Card) */}
           <div className="flex flex-col justify-end">
-            <div className="relative h-76 md:h-[380px] rounded-[24px] overflow-hidden bg-zinc-950 border border-zinc-850 p-6 flex flex-col justify-between text-left group">
+            <div className="relative h-76 md:h-[380px] rounded-[24px] overflow-hidden bg-zinc-900/40 backdrop-blur-2xl border-0 p-6 flex flex-col justify-between text-left group shadow-[0_8px_32px_0_rgba(0,0,0,0.5)] hover:bg-zinc-900/60 transition-all duration-500">
+              <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-transparent opacity-30 pointer-events-none" />
               <Image
                 src="/webp/assets/ecosystem/herocard/platform/3.webp"
                 alt="SafeSign Verification"
@@ -141,15 +110,14 @@ export function PlatformsHero() {
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent z-10" />
 
               <div className="relative z-20">
-                <span className="text-[20px] md:text-[28px] font-black text-emerald-500 font-mono tracking-tight block">
+                <span className="text-2xl md:text-3xl font-semibold text-emerald-500 font-mono tracking-tight block">
                   AI-Powered
                 </span>
-                <span className="text-[8px] font-mono tracking-wider text-zinc-550 uppercase">VERIFICATION ENGINE</span>
               </div>
 
               <div className="relative z-20">
-                <span className="text-[8px] font-mono tracking-widest text-rose-500 uppercase block mb-1">SafeSign</span>
-                <h3 className="text-[12px] md:text-[14px] font-bold text-white tracking-tight leading-snug">
+                <span className="text-[10px] md:text-xs font-mono tracking-widest text-rose-500 uppercase block mb-1 font-semibold">SafeSign</span>
+                <h3 className="text-sm md:text-base font-semibold text-white tracking-tight leading-snug">
                   Electronic signature and biometric integrity.
                 </h3>
               </div>
@@ -158,16 +126,15 @@ export function PlatformsHero() {
 
           {/* Column 5 (Ecosystem Badge + HealthTech operations) */}
           <div className="flex flex-col gap-5 justify-end">
-            <div className="h-28 md:h-36 rounded-[24px] bg-[#0c1a16] border border-emerald-500/10 p-5 flex flex-col justify-between text-left">
-              <h3 className="text-[13px] md:text-[14px] font-black text-emerald-500 tracking-tight leading-snug">
+            <div className="h-28 md:h-36 rounded-[24px] bg-emerald-500/10 backdrop-blur-2xl border-0 p-5 flex flex-col justify-center text-left shadow-[0_8px_32px_0_rgba(16,185,129,0.08)] relative overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/20 via-transparent to-transparent opacity-40 pointer-events-none" />
+              <h3 className="text-base md:text-lg font-semibold text-emerald-500 tracking-tight leading-snug relative z-10">
                 One Unified SaaS Ecosystem
               </h3>
-              <p className="text-[9px] md:text-[10px] font-normal text-zinc-400 leading-snug">
-                Shared auth models, global billing schemas, and integrated data.
-              </p>
             </div>
 
-            <div className="relative h-44 md:h-52 rounded-[24px] overflow-hidden bg-zinc-950 border border-zinc-850 p-5 flex flex-col justify-end text-left group">
+            <div className="relative h-44 md:h-52 rounded-[24px] overflow-hidden bg-zinc-900/40 backdrop-blur-2xl border-0 p-5 flex flex-col justify-end text-left group shadow-[0_8px_32px_0_rgba(0,0,0,0.5)] hover:bg-zinc-900/60 transition-all duration-500">
+              <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-transparent opacity-30 pointer-events-none" />
               <Image
                 src="/webp/assets/ecosystem/herocard/platform/1.webp"
                 alt="CareSuite Interface"
@@ -176,9 +143,9 @@ export function PlatformsHero() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent z-10" />
               <div className="relative z-20">
-                <span className="text-[8px] font-mono tracking-widest text-rose-500 uppercase block mb-1">CareSuite</span>
-                <h3 className="text-[11px] md:text-[13px] font-bold text-white tracking-tight leading-snug">
-                  Enterprise operations for modern clinical workflows.
+                {/* <span className="text-[10px] md:text-xs font-mono tracking-widest text-rose-500 uppercase block mb-1 font-semibold">CareSuite</span> */}
+                <h3 className="text-sm md:text-base font-semibold text-white tracking-tight leading-snug">
+                  Enterprise operations for clinical workflows.
                 </h3>
               </div>
             </div>

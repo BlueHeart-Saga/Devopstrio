@@ -44,8 +44,8 @@ export function ProductLifecycle() {
               className="bg-zinc-950/40 border border-zinc-900 rounded-3xl p-8 hover:border-rose-500/20 transition-all duration-300 flex flex-col justify-between min-h-[120px]"
             >
               <div>
-                <span className="block text-xl font-mono font-bold text-rose-500 mb-4">{stage.step}</span>
-                <h4 className="text-base md:text-lg font-semibold text-white uppercase tracking-wider mb-2">{stage.title}</h4>
+                <span className="block text-2xl md:text-3xl font-mono font-semibold text-rose-500 mb-3">{stage.step}</span>
+                <h4 className="text-lg md:text-xl font-semibold text-white uppercase tracking-wider mb-2">{stage.title}</h4>
                 {/* <p className="text-[10px] text-zinc-450 font-semibold leading-relaxed">
                   {stage.desc}
                 </p> */}

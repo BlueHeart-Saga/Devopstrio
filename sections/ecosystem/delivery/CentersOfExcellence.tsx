@@ -81,7 +81,7 @@ export function CentersOfExcellence() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {centers.map((center, idx) => (
             <Reveal key={center.discipline} delay={idx * 0.05} className="h-full">
-              <div className="group flex flex-col justify-between bg-zinc-950/40 border border-zinc-900 hover:border-rose-500/20 rounded-3xl overflow-hidden hover:shadow-[0_0_30px_rgba(244,63,94,0.06)] transition-all duration-300 h-full min-h-[220px]">
+              <div className="group flex flex-col justify-between bg-zinc-950/40 border border-zinc-900 hover:border-rose-500/20 rounded-3xl overflow-hidden hover:shadow-[0_0_30px_rgba(244,63,94,0.06)] transition-all duration-300">
                 
                 {/* Top Image Banner */}
                 <div className="relative w-full h-36 overflow-hidden bg-zinc-900 border-b border-zinc-900">
@@ -93,27 +93,14 @@ export function CentersOfExcellence() {
                 </div>
 
                 {/* Content Area */}
-                <div className="p-6 flex-grow flex flex-col justify-between">
-                  <div>
-                    {/* Icon wrapper & Title */}
-                    <div className="flex items-center gap-3 mb-4">
-                      <div className="w-8 h-8 rounded-lg bg-zinc-900 border border-zinc-850 flex items-center justify-center text-rose-500 group-hover:bg-rose-950/20 transition-all duration-300 shrink-0">
-                        {center.icon}
-                      </div>
-                      <h4 className="text-base md:text-lg font-semibold text-white uppercase tracking-wider">{center.discipline}</h4>
-                    </div>
-
-                    {/* <p className="text-xs text-zinc-400 font-semibold leading-relaxed">
-                      {center.desc}
-                    </p> */}
-                  </div>
+                <div className="p-5 flex flex-col gap-2.5">
+                  <h4 className="text-lg md:text-xl font-semibold text-white uppercase tracking-wider">{center.discipline}</h4>
 
                   {/* Card Footer Location Indicator */}
-                  <div className="mt-6 pt-4 border-t border-zinc-900/60 flex items-center gap-1.5 text-[10px] font-mono text-zinc-300 uppercase font-bold">
-                    <MapPin size={11} className="text-rose-500 shrink-0" />
+                  <div className="flex items-center gap-2 text-xs md:text-sm font-mono text-zinc-300 uppercase font-semibold">
+                    <MapPin size={13} className="text-rose-500 shrink-0" />
                     <span>{center.location}</span>
                   </div>
-
                 </div>
 
               </div>

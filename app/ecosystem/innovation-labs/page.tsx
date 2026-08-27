@@ -35,9 +35,9 @@ export default function InnovationLabsPage() {
     { id: "pipeline", label: "Pipeline" },
     { id: "tech-stack", label: "Tech Stack" },
     { id: "accelerators", label: "Accelerators" },
-    { id: "publications", label: "Publications" },
+    // { id: "publications", label: "Publications" },
     { id: "metrics", label: "Metrics" },
-    { id: "future-tech", label: "Roadmap" },
+    // { id: "future-tech", label: "Roadmap" },
     { id: "collaboration", label: "Collaboration" },
     { id: "faq", label: "FAQ" }
   ];
@@ -70,13 +70,13 @@ export default function InnovationLabsPage() {
       <InnovationAccelerators />
 
       {/* 08. Research Publications */}
-      <ResearchPublications />
+      {/* <ResearchPublications /> */}
 
       {/* 09. Innovation Metrics */}
       <InnovationMetrics />
 
       {/* 10. Future Technologies & Timeline */}
-      <FutureTechnologies />
+      {/* <FutureTechnologies /> */}
 
       {/* 11. Collaboration Programs */}
       <CollaborationProgram />

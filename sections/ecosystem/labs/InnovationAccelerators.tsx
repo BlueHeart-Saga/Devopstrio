@@ -89,29 +89,26 @@ export function InnovationAccelerators() {
     <section id="accelerators" className="w-full py-24 bg-[#030303] border-b border-zinc-900/60 relative">
       <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
         <Reveal className="mb-12 text-center max-w-3xl mx-auto">
-          {/* <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
-            PROPRIETARY INTELLECTUAL PROPERTY
-          </span> */}
-          <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight mb-5 text-white">
+          <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight text-white">
             Innovation <span className="text-rose-500">Accelerators</span>
           </h2>
-          {/* <p className="text-zinc-400 text-sm font-semibold mb-10">
+          {/* <p className="text-zinc-300 text-base md:text-lg font-normal max-w-2xl mx-auto leading-relaxed mt-3">
             Pre-packaged frameworks and codebase templates engineered by our labs to speed up delivery schedules.
           </p> */}
         </Reveal>
 
         {/* Top Pill Navigation Menu */}
         <div className="flex justify-center mb-10">
-          <div className="flex flex-wrap items-center justify-center gap-1.5 md:gap-3 p-1.5 bg-zinc-950/80 backdrop-blur-md border border-zinc-900/80 rounded-full shadow-2xl max-w-full overflow-x-auto mx-auto w-fit relative z-20">
+          <div className="flex flex-wrap items-center justify-center gap-2 md:gap-3 p-2 bg-zinc-950/80 backdrop-blur-md border border-zinc-900/80 rounded-full shadow-2xl max-w-full overflow-x-auto mx-auto w-fit relative z-20">
             {accelerators.map((acc) => {
               const isActive = activeTab === acc.id;
               return (
                 <button
                   key={acc.id}
                   onClick={() => setActiveTab(acc.id)}
-                  className={`px-4 md:px-6 py-2.5 rounded-full text-[11px] md:text-xs font-bold transition-all duration-300 whitespace-nowrap ${isActive
-                      ? "bg-rose-600 text-white shadow-[0_0_15px_rgba(225,29,72,0.3)]"
-                      : "bg-transparent text-zinc-500 hover:bg-zinc-900 hover:text-zinc-300"
+                  className={`px-5 md:px-7 py-3 rounded-full text-sm md:text-base font-semibold transition-all duration-300 whitespace-nowrap ${isActive
+                      ? "bg-rose-600 text-white shadow-[0_0_15px_rgba(225,29,72,0.35)]"
+                      : "bg-transparent text-zinc-400 hover:bg-zinc-900 hover:text-zinc-200"
                     }`}
                 >
                   {acc.tab}
@@ -151,36 +148,32 @@ export function InnovationAccelerators() {
                   exit={{ opacity: 0, y: -10 }}
                   transition={{ duration: 0.3 }}
                 >
-                  {/* <span className="text-[10px] font-bold tracking-[0.25em] uppercase text-rose-500 mb-4 block drop-shadow-md">
-                    {currentAsset.tab}
-                  </span> */}
-
-                  <h3 className="text-xl md:text-2xl font-semibold text-white tracking-tight leading-[1.1] mb-6">
+                  <h3 className="text-2xl md:text-3xl font-semibold text-white tracking-tight leading-snug mb-4">
                     {currentAsset.title}
                   </h3>
 
-                  {/* <p className="text-zinc-400 text-sm md:text-base leading-relaxed mb-10 max-w-lg">
+                  <p className="text-zinc-300 text-sm md:text-base leading-relaxed mb-8 max-w-xl font-normal">
                     {currentAsset.desc}
-                  </p> */}
+                  </p>
 
                   {/* Vertical Feature Boxes */}
-                  <div className="space-y-4 mb-12">
+                  <div className="space-y-3.5 mb-10">
                     {currentAsset.features.map((feature, idx) => (
                       <div
                         key={idx}
-                        className="flex items-center gap-4 p-4 rounded-xl border border-white/5 bg-zinc-900/30 backdrop-blur-sm shadow-[0_4px_20px_rgba(0,0,0,0.2)] hover:bg-zinc-900/50 hover:border-rose-500/20 transition-all duration-300"
+                        className="flex items-center gap-4 p-4 rounded-xl border border-white/5 bg-zinc-900/40 backdrop-blur-sm shadow-[0_4px_20px_rgba(0,0,0,0.2)] hover:bg-zinc-900/60 hover:border-rose-500/20 transition-all duration-300"
                       >
                         <div className="w-6 h-6 rounded-full bg-black flex items-center justify-center shrink-0 shadow-inner border border-zinc-800">
                           <Check size={14} className="text-rose-500" />
                         </div>
-                        <p className="text-xs md:text-sm text-zinc-300 font-medium leading-snug">
+                        <p className="text-sm md:text-base text-zinc-200 font-medium leading-relaxed">
                           {feature}
                         </p>
                       </div>
                     ))}
                   </div>
 
-                  <button className="px-8 py-3.5 rounded-lg text-sm font-bold text-white bg-rose-600 hover:bg-rose-500 transition-colors shadow-[0_0_20px_rgba(225,29,72,0.3)] hover:shadow-[0_0_30px_rgba(225,29,72,0.5)] w-fit">
+                  <button className="px-8 py-4 rounded-xl text-sm md:text-base font-bold text-white bg-rose-600 hover:bg-rose-500 transition-colors shadow-[0_0_20px_rgba(225,29,72,0.3)] hover:shadow-[0_0_30px_rgba(225,29,72,0.5)] w-fit">
                     {currentAsset.cta}
                   </button>
 

@@ -184,7 +184,7 @@ export function DeliveryFootprint() {
                 <div
                   key={loc.city + "-" + idx}
                   onClick={() => setActiveIndex(idx)}
-                  className={`cursor-pointer group flex flex-col border rounded-3xl overflow-hidden transition-all duration-300 relative select-none min-h-[200px]
+                  className={`cursor-pointer group flex flex-col border rounded-3xl overflow-hidden transition-all duration-300 relative select-none
                     ${isActive
                       ? "bg-rose-500/[0.03] border-rose-500/80 shadow-[0_0_25px_rgba(244,63,94,0.12)] -translate-y-1"
                       : "bg-zinc-950/40 border-zinc-900/80 hover:border-zinc-800 hover:bg-zinc-900/10 hover:-translate-y-0.5"
@@ -207,21 +207,15 @@ export function DeliveryFootprint() {
                   </div>
 
                   {/* Card Content Area */}
-                  <div className="p-5 flex-1 flex flex-col justify-between">
-                    <div>
-                      <div className="flex items-center gap-2 mb-1.5">
-                        <span className="text-xl shrink-0 leading-none">{loc.flag}</span>
-                        <h3 className="text-white font-semibold text-base md:text-lg tracking-wide">{loc.city}</h3>
-                      </div>
-                      
-                      <p className="text-rose-500 text-[10px] font-mono tracking-widest uppercase font-bold mb-2">
-                        {loc.role}
-                      </p>
-                      
-                      <p className="text-zinc-300 text-xs leading-relaxed line-clamp-3 font-semibold flex-1">
-                        {loc.address}
-                      </p>
+                  <div className="p-4 flex-1 flex flex-col">
+                    <div className="flex items-center gap-2.5 mb-1.5">
+                      <span className="text-2xl shrink-0 leading-none">{loc.flag}</span>
+                      <h3 className="text-white font-semibold text-lg md:text-xl tracking-wide">{loc.city}</h3>
                     </div>
+                    
+                    <p className="text-zinc-300 text-xs md:text-sm leading-relaxed line-clamp-3 font-semibold">
+                      {loc.address}
+                    </p>
                   </div>
                 </div>
               );
@@ -255,44 +249,38 @@ export function DeliveryFootprint() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -10 }}
                 transition={{ duration: 0.25 }}
-                className="bg-zinc-950/40 border border-zinc-900 rounded-3xl p-6 flex flex-col justify-between flex-grow"
+                className="bg-zinc-950/40 border border-white/5 rounded-3xl p-6 flex flex-col justify-between flex-grow shadow-[0_8px_32px_0_rgba(0,0,0,0.37)]"
               >
                 <div>
                   {/* Title & Role */}
-                  <div className="border-b border-zinc-900 pb-4 mb-4">
-                    <span className="text-[10px] font-mono tracking-[0.25em] uppercase text-rose-500 block mb-1">
-                      ACTIVE CENTRE PROFILE
+                  {/* <div className="border-b border-white/[0.05] pb-4 mb-5">
+                    <h4 className="text-xl md:text-2xl font-semibold text-white uppercase tracking-wider mb-1">
+                      {activeLoc.city}
+                    </h4>
+                    <span className="text-xs font-mono text-rose-500 font-semibold uppercase tracking-widest">
+                      {activeLoc.role}
                     </span>
-                    <h4 className="text-sm md:text-base font-bold text-white uppercase tracking-wider">{activeLoc.city} ({activeLoc.role})</h4>
-                  </div>
+                  </div> */}
 
-                  {/* Core Functions */}
+                  {/* Core Functions List */}
                   <div className="mb-6">
-                    <span className="flex items-center gap-2 text-[9px] font-mono font-bold text-rose-500 uppercase tracking-widest mb-3">
-                      <CheckCircle size={10} />
-                      CORE FUNCTIONS
-                    </span>
-                    <ul className="space-y-2">
+                    <ul className="space-y-3">
                       {activeLoc.functions.map((func) => (
-                        <li key={func} className="text-xs text-zinc-300 font-medium flex items-center gap-2">
-                          <span className="w-1.5 h-1.5 rounded-full bg-rose-500 shrink-0" />
+                        <li key={func} className="text-base md:text-lg text-zinc-200 font-semibold flex items-center gap-3">
+                          <span className="w-2 h-2 rounded-full bg-rose-500 shrink-0 shadow-[0_0_8px_rgba(244,63,94,0.8)]" />
                           {func}
                         </li>
                       ))}
                     </ul>
                   </div>
 
-                  {/* Focus Areas */}
-                  <div className="border-t border-zinc-900/60 pt-4">
-                    <span className="flex items-center gap-2 text-[9px] font-mono font-bold text-rose-500 uppercase tracking-widest mb-3">
-                      <Target size={10} />
-                      FOCUS AREAS
-                    </span>
-                    <div className="flex flex-wrap gap-1.5">
+                  {/* Focus Area Tags */}
+                  <div className="border-t border-white/[0.05] pt-5">
+                    <div className="flex flex-wrap gap-2">
                       {activeLoc.focusAreas.map((area) => (
                         <span
                           key={area}
-                          className="px-2.5 py-1 rounded-lg bg-zinc-900 border border-zinc-850 text-[10px] font-mono text-zinc-200 uppercase font-semibold"
+                          className="px-3.5 py-1.5 rounded-xl bg-white/[0.03] border border-white/[0.06] text-xs md:text-sm font-semibold text-zinc-200 uppercase tracking-wider"
                         >
                           {area}
                         </span>

@@ -11,6 +11,7 @@ import { AcceleratorsHero } from "@/sections/ecosystem/accelerators/Accelerators
 import { WhyAcceleratorsMatter } from "@/sections/ecosystem/accelerators/WhyAcceleratorsMatter";
 import { AcceleratorsEcosystem } from "@/sections/ecosystem/accelerators/AcceleratorsEcosystem";
 import { AcceleratorsShowcase } from "@/sections/ecosystem/accelerators/AcceleratorsShowcase";
+import { GitHubAcceleratorsPortal } from "@/sections/ecosystem/accelerators/GitHubAcceleratorsPortal";
 import { DeliveryImpact } from "@/sections/ecosystem/accelerators/DeliveryImpact";
 import { AcceleratorSuccessStories } from "@/sections/ecosystem/accelerators/AcceleratorSuccessStories";
 import { AcceleratorLifecycle } from "@/sections/ecosystem/accelerators/AcceleratorLifecycle";
@@ -28,16 +29,17 @@ export default function AcceleratorsFrameworksPage() {
   const subSections = [
     { id: "overview", label: "Accelerators" },
     { id: "why-accelerators", label: "Value Model" },
-    { id: "showcase", label: "Showcase" },
+    // { id: "showcase", label: "Showcase" },
+    { id: "github-portal", label: "Repositories & Services" },
     { id: "metrics", label: "Delivery Impact" },
     { id: "success-stories", label: "Success Stories" },
     { id: "lifecycle", label: "Lifecycle" },
-    { id: "integration", label: "Ecosystem Integration" },
+    // { id: "integration", label: "Ecosystem Integration" },
     { id: "faq", label: "FAQ" }
   ];
 
   return (
-    <main className="min-h-screen bg-black text-white pt-16 font-sans">
+    <main className="min-h-screen bg-black text-white pt-12 md:pt-14 font-sans">
       
       {/* 01. Hero Section */}
       <AcceleratorsHero />
@@ -56,8 +58,13 @@ export default function AcceleratorsFrameworksPage() {
       </div>
 
       {/* 04. Accelerators Showcase */}
-      <div id="showcase" className="scroll-mt-20">
+      {/* <div id="showcase" className="scroll-mt-20">
         <AcceleratorsShowcase />
+      </div> */}
+
+      {/* GitHub Live Repos & Main Services Catalog Portal */}
+      <div id="github-portal" className="scroll-mt-20">
+        <GitHubAcceleratorsPortal />
       </div>
 
       {/* 05. Delivery Impact statistics */}
@@ -76,9 +83,9 @@ export default function AcceleratorsFrameworksPage() {
       </div>
 
       {/* 08. Integration Across Ecosystem */}
-      <div id="integration" className="scroll-mt-20">
+      {/* <div id="integration" className="scroll-mt-20">
         <EcosystemIntegration />
-      </div>
+      </div> */}
 
       {/* FAQ */}
       <div id="faq" className="scroll-mt-20">

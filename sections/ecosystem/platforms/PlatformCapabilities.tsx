@@ -83,7 +83,7 @@ export function PlatformCapabilities() {
                 <div className="relative z-10 flex flex-col h-full">
                   <div>
                     {/* Title */}
-                    <h3 className="text-base md:text-lg font-semibold text-white tracking-tight mb-2.5 transition-transform duration-500 group-hover:-translate-y-0.5">
+                    <h3 className="text-lg md:text-xl font-semibold text-white tracking-tight mb-2.5 transition-transform duration-500 group-hover:-translate-y-0.5">
                       {cap.title}
                     </h3>
                     {/* Description */}
@@ -96,7 +96,7 @@ export function PlatformCapabilities() {
                   <div className="border-t border-white/[0.04] group-hover:border-white/20 pt-5 mt-auto transition-colors duration-500">
                     <ul className="space-y-2.5">
                       {cap.bullets.map((bullet) => (
-                        <li key={bullet} className="flex items-center gap-2.5 text-[11px] font-semibold text-zinc-300 group-hover:text-white transition-colors duration-500">
+                        <li key={bullet} className="flex items-center gap-2.5 text-xs md:text-sm font-semibold text-zinc-200 group-hover:text-white transition-colors duration-500">
                           <span className="w-1.5 h-1.5 rounded-full bg-rose-500 shadow-[0_0_8px_rgba(225,29,72,0.8)]" />
                           {bullet}
                         </li>

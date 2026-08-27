@@ -99,7 +99,7 @@ export function IndustriesServed() {
 
                 {/* Details */}
                 <div className="px-3 pb-3 flex flex-col flex-1">
-                  <h3 className="font-semibold text-base md:text-lg uppercase tracking-wider text-white mb-2 group-hover:text-rose-400 transition-colors duration-300">
+                  <h3 className="font-semibold text-lg md:text-xl uppercase tracking-wider text-white mb-2 group-hover:text-rose-400 transition-colors duration-300">
                     {ind.name}
                   </h3>
                   {/* <p className="text-[11px] text-zinc-400 leading-relaxed font-semibold">

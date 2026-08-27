@@ -93,7 +93,7 @@ export function PlatformCategories() {
             <button
               key={cat.id}
               onClick={() => setActiveCategory(cat.id)}
-              className={`px-5 py-2.5 rounded-full text-xs font-semibold whitespace-nowrap transition-all duration-300 border flex items-center gap-2 ${activeCategory === cat.id
+              className={`px-6 py-3 rounded-full text-sm md:text-base font-semibold whitespace-nowrap transition-all duration-300 border flex items-center gap-2 ${activeCategory === cat.id
                 ? "bg-rose-600 border-rose-600 text-white shadow-[0_4px_20px_rgba(225,29,72,0.35)]"
                 : "bg-zinc-950/40 border-zinc-900 text-zinc-400 hover:text-white hover:bg-zinc-900/50 hover:border-zinc-800"
                 }`}
@@ -127,29 +127,23 @@ export function PlatformCategories() {
 
               {/* Card top details */}
               <div className="relative z-10">
-                {/* <span className="text-[9px] font-mono text-rose-500 tracking-widest uppercase block mb-4">
-                  CORE SEGMENT
-                </span> */}
                 <div className="flex items-center gap-3 text-white mb-4">
-                  <div className="w-8 h-8 rounded-lg bg-rose-600/10 flex items-center justify-center text-rose-500">
+                  <div className="w-9 h-9 rounded-xl bg-rose-600/10 flex items-center justify-center text-rose-500">
                     {currentCat.icon}
                   </div>
-                  <h3 className="text-lg md:text-xl font-semibold tracking-tight">
+                  <h3 className="text-xl md:text-2xl font-semibold tracking-tight">
                     {currentCat.label}
                   </h3>
                 </div>
-                {/* <p className="text-zinc-300 text-xs font-semibold leading-relaxed">
-                  {currentCat.desc}
-                </p> */}
               </div>
 
               {/* Card bottom details */}
               <div className="relative z-10 mt-8">
-                <div className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest block mb-2">
+                <div className="text-xs font-mono text-zinc-400 uppercase tracking-widest block mb-2 font-semibold">
                   Status
                 </div>
-                <div className="text-xs text-white font-bold flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                <div className="text-sm md:text-base text-white font-semibold flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
                   Production Ready
                 </div>
               </div>
@@ -173,10 +167,10 @@ export function PlatformCategories() {
                     <div className="absolute inset-0 bg-gradient-to-br from-rose-600/0 via-rose-600/0 to-rose-600/5 opacity-0 group-hover/card:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
                     <div>
-                      <span className="text-[9px] font-mono text-zinc-500 tracking-wider block mb-2">
+                      {/* <span className="text-xs font-mono text-zinc-400 tracking-wider block mb-2 font-semibold">
                         ASSET 0{idx + 1}
-                      </span>
-                      <h4 className="text-base md:text-lg font-semibold text-white group-hover/card:text-rose-400 transition-colors mb-2">
+                      </span> */}
+                      <h4 className="text-lg md:text-xl font-semibold text-white group-hover/card:text-rose-400 transition-colors mb-2">
                         {item}
                       </h4>
                     </div>
@@ -191,7 +185,7 @@ export function PlatformCategories() {
                           className="transition-transform duration-300 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5"
                         />
                       </span>
-                      <span className="text-[11px] font-bold tracking-wider uppercase text-zinc-400 group-hover/link:text-zinc-200 transition-colors">
+                      <span className="text-xs md:text-sm font-semibold tracking-wider uppercase text-zinc-400 group-hover/link:text-zinc-200 transition-colors">
                         Launch System
                       </span>
                     </Link>

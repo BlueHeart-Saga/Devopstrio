@@ -119,28 +119,28 @@ export function LabsShowcase() {
                   className="flex flex-col h-full"
                 >
                   {/* Header / Brand */}
-                  <div className="flex items-center gap-3 mb-10">
-                    <div className="w-10 h-10 rounded-xl bg-zinc-900 border border-zinc-800 flex items-center justify-center text-rose-500">
+                  <div className="flex items-center gap-3 mb-8">
+                    <div className="w-11 h-11 rounded-xl bg-zinc-900 border border-zinc-800 flex items-center justify-center text-rose-500">
                       {currentLab.icon}
                     </div>
-                    <span className="text-sm font-bold text-white uppercase tracking-wider">
+                    <span className="text-base md:text-lg font-bold text-white uppercase tracking-wider">
                       {currentLab.name}
                     </span>
                   </div>
 
                   {/* Big Quote / Headline */}
-                  <h3 className="text-xl md:text-2xl font-semibold text-white leading-tight mb-12 tracking-tight">
+                  <h3 className="text-2xl md:text-3xl font-semibold text-white leading-snug mb-10 tracking-tight">
                     {currentLab.quote}
                   </h3>
 
                   {/* Stats / Projects Row */}
-                  <div className="grid grid-cols-2 gap-8 mb-12 border-l-[3px] border-rose-500 pl-6">
+                  <div className="grid grid-cols-2 gap-8 mb-10 border-l-[3px] border-rose-500 pl-6">
                     {currentLab.projects.map((proj, i) => (
                       <div key={i}>
-                        <div className="text-lg md:text-xl font-black text-white mb-2 tracking-tight">
+                        <div className="text-xl md:text-2xl font-bold text-white mb-1.5 tracking-tight">
                           {proj.stat}
                         </div>
-                        <p className="text-xs text-zinc-400 font-medium leading-relaxed max-w-[200px]">
+                        <p className="text-sm md:text-base text-zinc-300 font-medium leading-relaxed max-w-[240px]">
                           {proj.label}
                         </p>
                       </div>
@@ -149,12 +149,12 @@ export function LabsShowcase() {
 
                   {/* Tags & Services */}
                   <div className="mt-auto">
-                    <span className="block text-[10px] font-mono font-bold text-zinc-500 uppercase tracking-widest mb-4">
+                    <span className="block text-xs md:text-sm font-mono font-semibold text-rose-400 uppercase tracking-widest mb-3">
                       Core Technologies & Focus
                     </span>
-                    <div className="flex flex-wrap gap-2 mb-8">
+                    <div className="flex flex-wrap gap-2.5 mb-8">
                       {currentLab.tags.map(tag => (
-                        <span key={tag} className="px-3 py-1.5 rounded-md bg-zinc-900 border border-zinc-800 text-xs font-semibold text-zinc-300">
+                        <span key={tag} className="px-3.5 py-2 rounded-lg bg-zinc-900 border border-zinc-800 text-xs md:text-sm font-semibold text-zinc-200">
                           {tag}
                         </span>
                       ))}
@@ -162,10 +162,10 @@ export function LabsShowcase() {
 
                     {/* Actions */}
                     <div className="flex flex-wrap gap-4">
-                      <button className="px-6 py-3 rounded-lg text-xs font-bold uppercase tracking-wider bg-rose-600 hover:bg-rose-500 text-white transition-colors">
+                      <button className="px-7 py-3.5 rounded-lg text-xs md:text-sm font-bold uppercase tracking-wider bg-rose-600 hover:bg-rose-500 text-white transition-colors">
                         {currentLab.cta}
                       </button>
-                      <button className="px-6 py-3 rounded-lg text-xs font-bold uppercase tracking-wider border border-zinc-700 hover:border-zinc-500 text-white transition-colors">
+                      <button className="px-7 py-3.5 rounded-lg text-xs md:text-sm font-bold uppercase tracking-wider border border-zinc-700 hover:border-zinc-500 text-white transition-colors">
                         View Case Studies
                       </button>
                     </div>
@@ -213,7 +213,7 @@ export function LabsShowcase() {
                   <span className={`${isActive ? "text-rose-500" : "text-zinc-500"} transition-colors`}>
                     {lab.icon}
                   </span>
-                  <span className="text-xs font-bold uppercase tracking-wider hidden md:block">
+                  <span className="text-xs md:text-sm font-bold uppercase tracking-wider hidden md:block">
                     {lab.name.replace(" Innovation Lab", "")}
                   </span>
                 </div>

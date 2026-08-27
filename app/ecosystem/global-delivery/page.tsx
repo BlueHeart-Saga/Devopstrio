@@ -27,7 +27,7 @@ export default function GlobalDeliveryPage() {
 
   const subSections = [
     { id: "overview", label: "Ecosystem" },
-    { id: "network", label: "Network Overview" },
+    // { id: "network", label: "Network Overview" },
     { id: "footprint", label: "Global Footprint" },
     { id: "operating-model", label: "Follow the Sun" },
     { id: "matrix", label: "Capability Matrix" },
@@ -38,7 +38,7 @@ export default function GlobalDeliveryPage() {
   ];
 
   return (
-    <main className="min-h-screen bg-black text-white pt-16 font-sans">
+    <main className="min-h-screen bg-black text-white pt-12 md:pt-14 font-sans">
       
       {/* 01. Hero Section */}
       <DeliveryHero />

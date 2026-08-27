@@ -158,26 +158,26 @@ export function PlatformMarketplace() {
 
               {/* Author / Client info */}
               <div className="mb-8">
-                <h5 className="text-[11px] font-bold text-white uppercase tracking-wider">
+                <h5 className="text-sm md:text-base font-semibold text-white uppercase tracking-wider">
                   {activeItem.authorName}
                 </h5>
-                <p className="text-[10px] text-zinc-500 font-semibold mt-0.5">
+                <p className="text-xs md:text-sm text-zinc-400 font-semibold mt-0.5">
                   {activeItem.authorRole}
                 </p>
               </div>
 
               {/* Linked Modules / Services */}
               <div className="mb-8">
-                <span className="text-[9px] font-bold text-zinc-500 uppercase tracking-widest block mb-3">
+                <span className="text-xs md:text-sm font-semibold text-zinc-400 uppercase tracking-widest block mb-3">
                   Products and services
                 </span>
                 <div className="flex flex-wrap gap-4">
                   {activeItem.products.map((p) => (
-                    <div key={p.name} className="flex items-center gap-2 bg-white/[0.02] border border-white/[0.04] rounded-lg px-3 py-1.5">
+                    <div key={p.name} className="flex items-center gap-2 bg-white/[0.02] border border-white/[0.04] rounded-lg px-3.5 py-2">
                       <span className="text-rose-500">
                         {getIcon(p.icon)}
                       </span>
-                      <span className="text-[10px] font-bold text-zinc-300 uppercase tracking-wider">
+                      <span className="text-xs md:text-sm font-semibold text-zinc-200 uppercase tracking-wider">
                         {p.name}
                       </span>
                     </div>
@@ -188,7 +188,7 @@ export function PlatformMarketplace() {
 
             {/* CTA Action */}
             <div>
-              <button className="bg-rose-600 hover:bg-rose-500 text-white font-bold text-[10px] px-6 py-3.5 rounded-xl uppercase tracking-widest transition-all duration-300 hover:shadow-[0_0_20px_rgba(244,63,94,0.3)]">
+              <button className="bg-rose-600 hover:bg-rose-500 text-white font-bold text-xs md:text-sm px-7 py-3.5 rounded-xl uppercase tracking-widest transition-all duration-300 hover:shadow-[0_0_20px_rgba(244,63,94,0.3)]">
                 Explore Platform
               </button>
             </div>

@@ -98,7 +98,7 @@ export function PlatformArchitecture() {
 
                 {/* Right content details side */}
                 <div className="col-span-8 md:col-span-9 p-6 flex flex-col justify-center relative z-10 bg-zinc-950/20">
-                  <h4 className="text-base md:text-lg font-semibold text-white uppercase tracking-wider mb-2 group-hover:text-rose-400 transition-colors duration-300">
+                  <h4 className="text-lg md:text-xl font-semibold text-white uppercase tracking-wider mb-2 group-hover:text-rose-400 transition-colors duration-300">
                     {layer.name}
                   </h4>
                   {/* <p className="text-[10px] text-zinc-400 leading-relaxed font-semibold">

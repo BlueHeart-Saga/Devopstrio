@@ -85,28 +85,22 @@ export function LabsTechStack() {
   return (
     <section id="tech-stack" className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
       <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
-        <Reveal className="mb-16 text-left">
-          {/* <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
-            R&D TOOLKITS
-          </span> */}
-          <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight mb-5 text-white">
+        <Reveal className="mb-12 text-left">
+          <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight text-white">
             Technology <span className="text-rose-500">Stack</span>
           </h2>
-          {/* <p className="text-zinc-400 text-sm font-semibold max-w-2xl">
-            The programming frameworks, clouds, and libraries validated by our labs for production implementation.
-          </p> */}
         </Reveal>
 
         {/* Tab Controls */}
-        <div className="flex flex-wrap gap-2.5 mb-12 border-b border-zinc-900 pb-6">
+        <div className="flex flex-wrap gap-3 mb-12 border-b border-zinc-900 pb-6">
           {categories.map((cat) => (
             <button
               key={cat.id}
               onClick={() => setActiveCategory(cat.id)}
-              className={`flex items-center gap-2 px-5 py-3 rounded-xl text-xs font-mono font-bold uppercase tracking-wider transition-all duration-300 ${
+              className={`flex items-center gap-2.5 px-6 md:px-7 py-3.5 rounded-2xl text-sm md:text-base font-semibold tracking-wider uppercase transition-all duration-300 ${
                 activeCategory === cat.id
-                  ? "bg-rose-500/10 text-rose-500 border border-rose-500/20"
-                  : "bg-zinc-950/45 text-zinc-500 border border-zinc-900/80 hover:text-zinc-350 hover:bg-zinc-900/40"
+                  ? "bg-rose-500 text-white shadow-lg shadow-rose-500/25 scale-[1.02]"
+                  : "bg-zinc-950/60 text-zinc-400 border border-zinc-900 hover:text-white hover:bg-zinc-900/60"
               }`}
             >
               {cat.icon}
@@ -140,12 +134,9 @@ export function LabsTechStack() {
                 
                 {/* Text Content */}
                 <div className="relative z-10 flex-1">
-                  <h4 className="text-base md:text-lg font-semibold text-white tracking-wide mb-1 drop-shadow-md">
+                  <h4 className="text-lg md:text-xl font-semibold text-white tracking-wide drop-shadow-md">
                     {item.name}
                   </h4>
-                  {/* <p className="text-[11px] text-zinc-300 font-medium leading-relaxed drop-shadow-sm opacity-90 group-hover:opacity-100 transition-opacity duration-300">
-                    {item.role}
-                  </p> */}
                 </div>
               </div>
             ))}

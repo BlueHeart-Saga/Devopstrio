@@ -39,10 +39,10 @@ export function DeliveryMetrics() {
               key={metric.label}
               className="bg-zinc-950/20 border border-zinc-900/80 rounded-2xl p-6 text-center flex flex-col justify-center items-center min-h-[140px] hover:border-rose-500/10 transition-all duration-300"
             >
-              <div className="text-2xl md:text-3xl font-bold text-rose-500 tracking-tight mb-2">
+              <div className="text-3xl md:text-4xl font-semibold text-rose-500 tracking-tight mb-2 font-mono">
                 {metric.value}
               </div>
-              <div className="text-base md:text-lg font-semibold text-white uppercase tracking-wider leading-normal">
+              <div className="text-xs md:text-sm font-semibold text-zinc-300 uppercase tracking-wider leading-normal font-mono">
                 {metric.label}
               </div>
             </div>

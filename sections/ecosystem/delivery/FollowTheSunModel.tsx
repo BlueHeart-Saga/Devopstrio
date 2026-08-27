@@ -104,7 +104,7 @@ export function FollowTheSunModel() {
                   <div className={`w-12 h-12 rounded-xl border flex items-center justify-center mb-6 ${c.icon}`}>
                     <shift.icon className="w-5 h-5" />
                   </div>
-                  <h3 className="text-base md:text-lg font-semibold text-white uppercase tracking-wider mb-3">{shift.title}</h3>
+                  <h3 className="text-xl md:text-2xl font-semibold text-white uppercase tracking-wider mb-3">{shift.title}</h3>
                   {/* <p className="text-sm text-zinc-300 leading-relaxed font-semibold">{shift.description}</p> */}
                 </div>
               </motion.div>
@@ -113,7 +113,7 @@ export function FollowTheSunModel() {
         </div>
 
         {/* Bottom Benefits Section */}
-        <div className="mt-16 bg-zinc-950/40 border border-zinc-900 rounded-3xl p-8 max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
+        {/* <div className="mt-16 bg-zinc-950/40 border border-zinc-900 rounded-3xl p-8 max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
           <div className="flex items-center gap-4">
             <span className="relative flex h-3 w-3 shrink-0">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
@@ -121,7 +121,7 @@ export function FollowTheSunModel() {
             </span>
             <div>
               <h4 className="text-base md:text-lg font-semibold text-white uppercase tracking-wider">Continuous 24/7 Operations</h4>
-              {/* <p className="text-[10px] text-zinc-500 font-semibold mt-0.5">Timezone-aligned handoffs ensure seamless delivery without operational delay.</p> */}
+              <p className="text-[10px] text-zinc-500 font-semibold mt-0.5">Timezone-aligned handoffs ensure seamless delivery without operational delay.</p>
             </div>
           </div>
           <div className="flex flex-wrap gap-2 justify-center">
@@ -134,7 +134,7 @@ export function FollowTheSunModel() {
               </span>
             ))}
           </div>
-        </div>
+        </div> */}
 
       </div>
     </section>

@@ -90,7 +90,7 @@ export function DeliveryLifecycle() {
                         <div className={`w-1.5 h-1.5 rounded-full bg-current ${style.textColor} animate-pulse`} />
                       </div>
 
-                      <h3 className={`text-base md:text-lg font-semibold uppercase tracking-wider ${style.textColor}`}>
+                      <h3 className={`text-xl md:text-2xl font-semibold uppercase tracking-wider ${style.textColor}`}>
                         {stage.title}
                       </h3>
                       

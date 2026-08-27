@@ -85,8 +85,8 @@ export function TechEcosystemOverview() {
                 <div className="absolute inset-0 bg-gradient-to-br from-rose-600/0 via-rose-600/0 to-rose-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
                 {/* Background image reveal with mix-blend-screen */}
-                <div className="absolute inset-0 z-0 opacity-20 group-hover:opacity-40 transition-opacity duration-700 pointer-events-none overflow-hidden mix-blend-screen">
-                  <img src={dom.image} alt="" className="w-full h-full object-cover scale-110 group-hover:scale-100 transition-transform duration-1000" loading="lazy" />
+                <div className="absolute inset-0 z-0 opacity-25 group-hover:opacity-45 transition-opacity duration-700 pointer-events-none overflow-hidden mix-blend-screen">
+                  <img src={dom.image} alt="" className="w-full h-full object-cover blur-md scale-110 group-hover:scale-105 transition-transform duration-1000" loading="lazy" />
                 </div>
 
                 {/* Content */}
@@ -95,7 +95,7 @@ export function TechEcosystemOverview() {
                     {/* <span className="text-[9px] font-mono text-rose-500 tracking-wider uppercase font-bold block mb-3">
                       PILLAR {(idx + 1).toString().padStart(2, "0")}
                     </span> */}
-                    <h3 className="text-base md:text-lg font-semibold text-white mb-3 group-hover:text-rose-400 transition-colors">
+                    <h3 className="text-xl md:text-2xl font-semibold text-white mb-3 group-hover:text-rose-400 transition-colors tracking-tight leading-snug">
                       {dom.name}
                     </h3>
                     {/* <p className="text-sm md:text-base text-zinc-300 font-medium leading-relaxed">
@@ -104,10 +104,10 @@ export function TechEcosystemOverview() {
                   </div>
 
                   <div className="mt-6 pt-3 border-t border-white/[0.04] flex items-center justify-between">
-                    <span className="text-[10px] md:text-xs font-mono text-zinc-500 font-bold uppercase tracking-widest">
+                    <span className="text-xs md:text-sm font-mono text-zinc-400 font-semibold uppercase tracking-widest">
                       VERIFIED PILLAR
                     </span>
-                    <span className="w-1.5 h-1.5 rounded-full bg-rose-500 shadow-[0_0_8px_rgba(244,63,94,0.8)]" />
+                    <span className="w-2 h-2 rounded-full bg-rose-500 shadow-[0_0_8px_rgba(244,63,94,0.8)]" />
                   </div>
                 </div>
 

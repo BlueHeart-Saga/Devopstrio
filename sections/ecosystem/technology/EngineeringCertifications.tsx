@@ -44,49 +44,48 @@ export function EngineeringCertifications() {
   const [activeTab, setActiveTab] = useState<"partners" | "engineering" | "compliance">("partners");
 
   return (
-    <section id="certifications" className="w-full py-24 bg-[#030303] border-b border-zinc-900/60 relative">
-      <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
-        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-16">
-          <Reveal className="text-left max-w-2xl">
-            {/* <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
-              VERIFIED EXPERTISE
-            </span> */}
-            <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight mb-5 text-white">
-              Engineering Certifications & <span className="text-rose-500">Awards</span>
-            </h2>
-            {/* <p className="text-zinc-400 text-sm font-semibold">
-              Our engineering boards hold validations across public cloud vendors, container platforms, security standards, and industry organizations.
-            </p> */}
-          </Reveal>
+    <section id="certifications" className="w-full py-24 bg-[#030303] border-b border-zinc-900/60 relative overflow-hidden">
+      {/* Background glow highlight */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-rose-650/[0.015] rounded-full blur-[140px] pointer-events-none" />
 
-          {/* Premium Tab Bar Selector */}
-          <div className="flex flex-wrap items-center gap-2 bg-zinc-950 border border-zinc-905 p-1.5 rounded-2xl self-start lg:self-end">
+      <div className="max-w-7xl mx-auto w-full px-6 md:px-12 xl:px-8 relative z-10">
+        
+        {/* Centered Heading */}
+        <Reveal className="text-center max-w-3xl mx-auto mb-10">
+          <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight mb-4 text-white">
+            Engineering Certifications & <span className="text-rose-500">Awards</span>
+          </h2>
+        </Reveal>
+
+        {/* Centered Premium Tab Bar Selector */}
+        <div className="flex justify-center mb-14">
+          <div className="flex items-center justify-center gap-2 bg-zinc-950/80 backdrop-blur-xl border border-white/10 p-2 rounded-full shadow-[0_8px_32px_0_rgba(0,0,0,0.5)] overflow-x-auto max-w-full">
             <button
               onClick={() => setActiveTab("partners")}
-              className={`px-5 py-2.5 rounded-xl text-[11px] font-bold uppercase tracking-wider transition-all duration-300 ${
+              className={`px-6 md:px-7 py-3 md:py-3.5 rounded-full text-sm md:text-base font-semibold tracking-wider whitespace-nowrap transition-all duration-300 ${
                 activeTab === "partners"
-                  ? "bg-rose-600 text-white shadow-md"
-                  : "text-zinc-400 hover:text-white hover:bg-zinc-905"
+                  ? "bg-rose-600 text-white shadow-[0_4px_20px_rgba(225,29,72,0.4)]"
+                  : "text-zinc-400 hover:text-white hover:bg-white/[0.05]"
               }`}
             >
               Partner Awards
             </button>
             <button
               onClick={() => setActiveTab("engineering")}
-              className={`px-5 py-2.5 rounded-xl text-[11px] font-bold uppercase tracking-wider transition-all duration-300 ${
+              className={`px-6 md:px-7 py-3 md:py-3.5 rounded-full text-sm md:text-base font-semibold tracking-wider whitespace-nowrap transition-all duration-300 ${
                 activeTab === "engineering"
-                  ? "bg-rose-600 text-white shadow-md"
-                  : "text-zinc-400 hover:text-white hover:bg-zinc-905"
+                  ? "bg-rose-600 text-white shadow-[0_4px_20px_rgba(225,29,72,0.4)]"
+                  : "text-zinc-400 hover:text-white hover:bg-white/[0.05]"
               }`}
             >
               Engineering Certs
             </button>
             <button
               onClick={() => setActiveTab("compliance")}
-              className={`px-5 py-2.5 rounded-xl text-[11px] font-bold uppercase tracking-wider transition-all duration-300 ${
+              className={`px-6 md:px-7 py-3 md:py-3.5 rounded-full text-sm md:text-base font-semibold tracking-wider whitespace-nowrap transition-all duration-300 ${
                 activeTab === "compliance"
-                  ? "bg-rose-600 text-white shadow-md"
-                  : "text-zinc-400 hover:text-white hover:bg-zinc-905"
+                  ? "bg-rose-600 text-white shadow-[0_4px_20px_rgba(225,29,72,0.4)]"
+                  : "text-zinc-400 hover:text-white hover:bg-white/[0.05]"
               }`}
             >
               Compliance & Awards
@@ -94,78 +93,82 @@ export function EngineeringCertifications() {
           </div>
         </div>
 
-        {/* Dynamic content rendering based on selected tab */}
+        {/* Dynamic content rendering - Single Line Row Horizontal Scroll */}
         {activeTab === "partners" && (
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+          <div className="flex overflow-x-auto scrollbar-hide gap-6 pb-6 pt-2 select-none scroll-smooth snap-x snap-mandatory">
             {PARTNER_AWARDS.map((cert, idx) => (
-              <Reveal key={idx} delay={idx * 0.05} className="h-full">
-                <div className="bg-zinc-950/40 border border-zinc-900/80 rounded-3xl p-5 hover:border-rose-500/10 transition-all duration-300 flex flex-col justify-between h-full min-h-[180px] group">
-                  <div className="w-full bg-white/5 border border-white/10 rounded-2xl p-4 flex items-center justify-center h-28 backdrop-blur-sm group-hover:bg-white/10 group-hover:border-white/20 transition-all duration-300 mb-4">
-                    <img src={cert.image}
-                      alt={cert.name}
-                      className="max-h-20 max-w-full object-contain filter brightness-95 group-hover:brightness-100 transition-all duration-300"
-                    loading="lazy" />
-                  </div>
-                  <div className="text-left">
-                    {/* <span className="text-[10px] md:text-xs font-bold text-rose-500 uppercase tracking-widest block mb-2">
-                      {cert.category}
-                    </span> */}
-                    <h4 className="text-base md:text-lg font-semibold text-white uppercase tracking-wider mb-2">{cert.name}</h4>
-                    {/* <p className="text-xs md:text-sm text-zinc-300 font-medium leading-relaxed">
-                      {cert.desc}
-                    </p> */}
-                  </div>
+              <div
+                key={idx}
+                className="flex-shrink-0 w-64 md:w-72 snap-center bg-zinc-900/40 backdrop-blur-2xl border border-white/[0.05] hover:border-rose-500/30 rounded-[24px] p-6 transition-all duration-500 hover:shadow-[0_12px_40px_rgba(244,63,94,0.08)] flex flex-col justify-between group min-h-[220px]"
+              >
+                <div className="w-full bg-white/[0.04] border border-white/[0.08] rounded-[18px] p-4 flex items-center justify-center h-32 backdrop-blur-md group-hover:bg-white/[0.08] group-hover:border-white/[0.15] transition-all duration-300 mb-4 overflow-hidden">
+                  <img
+                    src={cert.image}
+                    alt={cert.name}
+                    className="h-20 max-w-[85%] object-contain filter brightness-95 group-hover:brightness-100 group-hover:scale-105 transition-all duration-300"
+                    loading="lazy"
+                  />
                 </div>
-              </Reveal>
+                <div className="text-center">
+                  <h4 className="text-lg md:text-xl font-semibold text-white uppercase tracking-wider group-hover:text-rose-400 transition-colors">
+                    {cert.name}
+                  </h4>
+                </div>
+              </div>
             ))}
           </div>
         )}
 
         {activeTab === "engineering" && (
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          <div className="flex overflow-x-auto scrollbar-hide gap-6 pb-6 pt-2 select-none scroll-smooth snap-x snap-mandatory">
             {ENGINEERING_CERTS.map((cert, idx) => (
-              <Reveal key={idx} delay={idx * 0.05} className="h-full">
-                <div className="bg-zinc-950/40 border border-zinc-900/80 rounded-3xl p-5 hover:border-rose-500/10 transition-all duration-300 flex flex-col justify-between h-full min-h-[180px] group">
-                  <div className="w-full bg-white/5 border border-white/10 rounded-2xl p-4 flex items-center justify-center h-28 backdrop-blur-sm group-hover:bg-white/10 group-hover:border-white/20 transition-all duration-300 mb-4">
-                    <img src={cert.image}
-                      alt={cert.title}
-                      className="max-h-20 max-w-full object-contain filter brightness-95 group-hover:brightness-100 transition-all duration-300"
-                    loading="lazy" />
-                  </div>
-                  <div className="text-left">
-                    <h4 className="text-base md:text-lg font-semibold text-white uppercase tracking-wider mb-2">{cert.title}</h4>
-                    {/* <p className="text-xs md:text-sm text-zinc-300 font-medium leading-relaxed">
-                      {cert.desc}
-                    </p> */}
-                  </div>
+              <div
+                key={idx}
+                className="flex-shrink-0 w-64 md:w-72 snap-center bg-zinc-900/40 backdrop-blur-2xl border border-white/[0.05] hover:border-rose-500/30 rounded-[24px] p-6 transition-all duration-500 hover:shadow-[0_12px_40px_rgba(244,63,94,0.08)] flex flex-col justify-between group min-h-[220px]"
+              >
+                <div className="w-full bg-white/[0.04] border border-white/[0.08] rounded-[18px] p-4 flex items-center justify-center h-32 backdrop-blur-md group-hover:bg-white/[0.08] group-hover:border-white/[0.15] transition-all duration-300 mb-4 overflow-hidden">
+                  <img
+                    src={cert.image}
+                    alt={cert.title}
+                    className="h-20 max-w-[85%] object-contain filter brightness-95 group-hover:brightness-100 group-hover:scale-105 transition-all duration-300"
+                    loading="lazy"
+                  />
                 </div>
-              </Reveal>
+                <div className="text-center">
+                  <h4 className="text-lg md:text-xl font-semibold text-white uppercase tracking-wider group-hover:text-rose-400 transition-colors">
+                    {cert.title}
+                  </h4>
+                </div>
+              </div>
             ))}
           </div>
         )}
 
         {activeTab === "compliance" && (
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          <div className="flex overflow-x-auto scrollbar-hide gap-6 pb-6 pt-2 select-none scroll-smooth snap-x snap-mandatory">
             {COMPLIANCE_AWARDS.map((cert, idx) => (
-              <Reveal key={idx} delay={idx * 0.05} className="h-full">
-                <div className="bg-zinc-950/40 border border-zinc-900/80 rounded-3xl p-5 hover:border-rose-500/10 transition-all duration-300 flex flex-col justify-between h-full min-h-[180px] group">
-                  <div className="w-full bg-white/5 border border-white/10 rounded-2xl p-4 flex items-center justify-center h-28 backdrop-blur-sm group-hover:bg-white/10 group-hover:border-white/20 transition-all duration-300 mb-4">
-                    <img src={cert.image}
-                      alt={cert.title}
-                      className="max-h-20 max-w-full object-contain filter brightness-95 group-hover:brightness-100 transition-all duration-300"
-                    loading="lazy" />
-                  </div>
-                  <div className="text-left">
-                    <h4 className="text-base md:text-lg font-semibold text-white uppercase tracking-wider mb-2">{cert.title}</h4>
-                    {/* <p className="text-xs md:text-sm text-zinc-300 font-medium leading-relaxed">
-                      {cert.desc}
-                    </p> */}
-                  </div>
+              <div
+                key={idx}
+                className="flex-shrink-0 w-64 md:w-72 snap-center bg-zinc-900/40 backdrop-blur-2xl border border-white/[0.05] hover:border-rose-500/30 rounded-[24px] p-6 transition-all duration-500 hover:shadow-[0_12px_40px_rgba(244,63,94,0.08)] flex flex-col justify-between group min-h-[220px]"
+              >
+                <div className="w-full bg-white/[0.04] border border-white/[0.08] rounded-[18px] p-4 flex items-center justify-center h-32 backdrop-blur-md group-hover:bg-white/[0.08] group-hover:border-white/[0.15] transition-all duration-300 mb-4 overflow-hidden">
+                  <img
+                    src={cert.image}
+                    alt={cert.title}
+                    className="h-20 max-w-[85%] object-contain filter brightness-95 group-hover:brightness-100 group-hover:scale-105 transition-all duration-300"
+                    loading="lazy"
+                  />
                 </div>
-              </Reveal>
+                <div className="text-center">
+                  <h4 className="text-lg md:text-xl font-semibold text-white uppercase tracking-wider group-hover:text-rose-400 transition-colors">
+                    {cert.title}
+                  </h4>
+                </div>
+              </div>
             ))}
           </div>
         )}
+
       </div>
     </section>
   );

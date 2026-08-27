@@ -79,22 +79,22 @@ export function TechEcosystem() {
           {groups.map((group, idx) => (
             <Reveal key={group.category} delay={idx * 0.05} className="h-full">
               <div className="bg-[#0a0a0a]/60 border border-white/[0.03] hover:border-rose-500/20 rounded-[20px] p-5 transition-all duration-300 flex flex-col gap-4 h-full">
-                <h4 className="text-base md:text-lg font-semibold text-rose-500 uppercase tracking-widest border-b border-white/[0.03] pb-2">
+                <h4 className="text-lg md:text-xl font-semibold text-rose-500 uppercase tracking-widest border-b border-white/[0.03] pb-2">
                   {group.category}
                 </h4>
                 <ul className="space-y-2.5">
                   {group.items.map((item) => (
                     <li
                       key={item.name}
-                      className="flex items-center gap-3 bg-white/[0.015] border border-white/[0.03] rounded-xl px-3 py-2 hover:bg-white/[0.03] hover:border-white/[0.06] transition-all duration-300 group"
+                      className="flex items-center gap-3 bg-white/[0.015] border border-white/[0.03] rounded-xl px-3.5 py-2.5 hover:bg-white/[0.03] hover:border-white/[0.06] transition-all duration-300 group"
                     >
-                      <div className="w-5 h-5 flex items-center justify-center flex-shrink-0 bg-black/40 rounded-md p-0.5 border border-white/[0.02]">
+                      <div className="w-6 h-6 flex items-center justify-center flex-shrink-0 bg-black/40 rounded-md p-0.5 border border-white/[0.02]">
                         <img src={item.iconPath}
                           alt={item.name}
                           className="w-full h-full object-contain filter group-hover:brightness-110 transition-all duration-300"
                         loading="lazy" />
                       </div>
-                      <span className="text-[11px] font-semibold text-zinc-300 group-hover:text-white transition-colors duration-300">
+                      <span className="text-xs md:text-sm font-semibold text-zinc-200 group-hover:text-white transition-colors duration-300">
                         {item.name}
                       </span>
                     </li>

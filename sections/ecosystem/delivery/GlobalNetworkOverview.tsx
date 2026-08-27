@@ -118,7 +118,7 @@ export function GlobalNetworkOverview() {
               <button
                 key={office.id}
                 onClick={() => setActiveTab(office.id)}
-                className={`px-4 py-2.5 text-xs font-semibold rounded-lg transition-all duration-300 flex items-center gap-2 ${activeTab === office.id
+                className={`px-6 py-3 rounded-full text-sm md:text-base font-semibold transition-all duration-300 flex items-center gap-2 ${activeTab === office.id
                     ? "bg-rose-500 text-white shadow-md shadow-rose-500/20"
                     : "bg-zinc-950/60 border border-zinc-900 text-zinc-400 hover:text-white hover:bg-zinc-900/60"
                   }`}
@@ -140,13 +140,13 @@ export function GlobalNetworkOverview() {
 
             <div className="space-y-6">
               <div>
-                <span className="text-[10px] font-mono tracking-[0.25em] uppercase text-rose-500 block mb-2">
+                <span className="text-xs md:text-sm font-mono tracking-[0.25em] uppercase text-rose-500 block mb-2 font-semibold">
                   Office Information
                 </span>
-                <h3 className="text-lg font-bold text-white tracking-tight uppercase">
+                <h3 className="text-xl md:text-2xl font-semibold text-white tracking-tight uppercase">
                   {currentOffice.officeName}
                 </h3>
-                <span className="inline-block mt-2 text-[9px] font-mono tracking-widest uppercase bg-rose-500/10 border border-rose-500/20 text-rose-400 px-2.5 py-0.5 rounded font-bold">
+                <span className="inline-block mt-2 text-xs md:text-sm font-mono tracking-widest uppercase bg-rose-500/10 border border-rose-500/20 text-rose-400 px-3 py-1 rounded-md font-semibold">
                   {currentOffice.type}
                 </span>
               </div>
@@ -156,8 +156,8 @@ export function GlobalNetworkOverview() {
                 <div className="flex gap-4">
                   <MapPin className="w-5 h-5 text-rose-500 shrink-0 mt-0.5" />
                   <div>
-                    <h5 className="text-[10px] font-mono uppercase text-zinc-500 tracking-wider">Address</h5>
-                    <p className="text-zinc-300 text-xs md:text-sm font-semibold mt-1 leading-relaxed">
+                    <h5 className="text-xs md:text-sm font-mono uppercase text-zinc-400 tracking-wider font-semibold">Address</h5>
+                    <p className="text-zinc-200 text-sm md:text-base font-semibold mt-1 leading-relaxed">
                       {currentOffice.address}
                     </p>
                   </div>
@@ -167,8 +167,8 @@ export function GlobalNetworkOverview() {
                 <div className="flex gap-4">
                   <Phone className="w-5 h-5 text-rose-500 shrink-0 mt-0.5" />
                   <div>
-                    <h5 className="text-[10px] font-mono uppercase text-zinc-500 tracking-wider">Telephone</h5>
-                    <p className="text-zinc-300 text-xs md:text-sm font-semibold mt-1">
+                    <h5 className="text-xs md:text-sm font-mono uppercase text-zinc-400 tracking-wider font-semibold">Telephone</h5>
+                    <p className="text-zinc-200 text-sm md:text-base font-semibold mt-1">
                       {currentOffice.tel}
                     </p>
                   </div>
@@ -178,8 +178,8 @@ export function GlobalNetworkOverview() {
                 <div className="flex gap-4">
                   <Mail className="w-5 h-5 text-rose-500 shrink-0 mt-0.5" />
                   <div>
-                    <h5 className="text-[10px] font-mono uppercase text-zinc-500 tracking-wider">Email</h5>
-                    <p className="text-zinc-300 text-xs md:text-sm font-semibold mt-1">
+                    <h5 className="text-xs md:text-sm font-mono uppercase text-zinc-400 tracking-wider font-semibold">Email</h5>
+                    <p className="text-zinc-200 text-sm md:text-base font-semibold mt-1">
                       {currentOffice.email}
                     </p>
                   </div>
@@ -192,7 +192,7 @@ export function GlobalNetworkOverview() {
                 href={`https://maps.google.com/?q=${encodeURIComponent(currentOffice.mapQuery)}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-rose-500 hover:text-white transition-colors"
+                className="inline-flex items-center gap-2 text-sm md:text-base font-semibold uppercase tracking-wider text-rose-500 hover:text-white transition-colors"
               >
                 Open in Google Maps &rarr;
               </a>
