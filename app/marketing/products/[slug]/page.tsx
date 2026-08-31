@@ -10,6 +10,19 @@ import {
   Share2
 } from "lucide-react";
 import { ContactForm } from "@/sections/contact/ContactForm";
+import { generatePageMetadata } from "@/lib/seo-utils";
+import { Metadata } from "next";
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const resolvedParams = await params;
+  const slug = resolvedParams.slug;
+  const productName = slug.charAt(0).toUpperCase() + slug.slice(1);
+  return generatePageMetadata({
+    title: `${productName} SaaS Platform Collateral & Datasheets`,
+    description: `Download official architectural datasheets, pitch decks, and feature specifications for ${productName} platform by Devopstrio.`,
+    path: `/marketing/products/${slug}`
+  });
+}
 
 const commonImages = [
   "/webp/assets/common/09ff7846bc8c9998745688779c09f88d-1.webp",

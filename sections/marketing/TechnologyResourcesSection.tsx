@@ -6,15 +6,17 @@ import { Cpu, ChevronRight, Sparkles } from "lucide-react";
 import ChromaGrid, { ChromaItem } from "@/components/ui/ChromaGrid";
 
 export function TechnologyResourcesSection({
-  techResources,
+  techResources = [],
   getTypeBadge,
   onPreview,
   onDownload,
+  onShare,
 }: {
-  techResources: any[];
-  getTypeBadge: (type: string) => React.ReactNode;
-  onPreview: (item: any) => void;
-  onDownload: (item: any, e?: React.MouseEvent) => void;
+  techResources?: any[];
+  getTypeBadge?: (type: string) => React.ReactNode;
+  onPreview?: (item: any) => void;
+  onDownload?: (item: any, e?: React.MouseEvent) => void;
+  onShare?: (item: any) => void;
 }) {
   const chromaItems: ChromaItem[] = techResources.map((item, idx) => ({
     image: item.image || `/webp/assets/common/09ff7846bc8c9998745688779c09f88d-1.webp`,
@@ -74,7 +76,7 @@ export function TechnologyResourcesSection({
           fadeOut={0.6}
           ease="power3.out"
           onCardClick={(item) => {
-            if (item.rawItem) {
+            if (item.rawItem && onPreview) {
               onPreview(item.rawItem);
             }
           }}

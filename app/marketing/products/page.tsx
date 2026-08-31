@@ -1,10 +1,20 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { 
-  Search,
-  Filter
-} from "lucide-react";
+import { Metadata } from "next";
+import { Search, Filter } from "lucide-react";
+import { generatePageMetadata, getMetadataFromPath } from "@/lib/seo-utils";
+import { BreadcrumbSchema } from "@/components/seo/Schemas";
+
+export function generateMetadata(): Metadata {
+  const seo = getMetadataFromPath("/marketing/products");
+  return generatePageMetadata({
+    title: seo.title,
+    description: seo.description,
+    path: "/marketing/products",
+    keywords: seo.keywords
+  });
+}
 
 const commonImages = [
   "/webp/assets/common/09ff7846bc8c9998745688779c09f88d-1.webp",
@@ -30,63 +40,79 @@ const products = [
 
 export default function ProductsDirectoryPage() {
   return (
-    <div className="space-y-8 pb-12">
-      {/* Header */}
-      <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
-        <div>
-          <h1 className="text-3xl font-bold tracking-tight text-white mb-2">
-            Product Portfolio
-          </h1>
-          <p className="text-gray-400">
-            Browse and download marketing assets for the entire Devopstrio ecosystem.
-          </p>
-        </div>
-        <div className="flex items-center gap-3">
-          <div className="relative">
-            <Search className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-gray-500" />
-            <input 
-              type="text" 
-              placeholder="Search products..." 
-              className="bg-white/5 border border-white/10 rounded-lg pl-9 pr-4 py-2 text-sm text-white focus:outline-none focus:border-rose-500/50 focus:bg-white/10 transition-all w-64"
-            />
+    <>
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", url: "https://devopstrio.co.uk" },
+          { name: "Marketing", url: "https://devopstrio.co.uk/marketing" },
+          { name: "Products", url: "https://devopstrio.co.uk/marketing/products" }
+        ]}
+      />
+      <div className="space-y-8 pb-12">
+        {/* Header */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
+          <div>
+            <h1 className="text-3xl font-bold tracking-tight text-white mb-2">
+              SaaS Product Datasheets & Collateral
+            </h1>
+            <p className="text-gray-400">
+              Browse and download marketing assets for the entire Devopstrio ecosystem.
+            </p>
           </div>
-          <button className="p-2 bg-white/5 hover:bg-white/10 text-white rounded-lg border border-white/10 transition-colors">
-            <Filter className="w-5 h-5" />
-          </button>
-        </div>
-      </div>
-
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-        {products.map((product) => (
-          <Link 
-            key={product.slug} 
-            href={`/marketing/products/${product.slug}`}
-            className="bg-white/5 border border-white/10 rounded-2xl p-6 group hover:bg-white/10 transition-all hover:border-white/20 relative overflow-hidden flex flex-col items-center text-center"
-          >
-            <div className={`absolute inset-0 bg-gradient-to-b ${product.gradient} to-transparent opacity-0 group-hover:opacity-100 transition-opacity`}></div>
-            
-            <div className={`w-24 h-24 rounded-2xl bg-black border border-white/10 flex items-center justify-center mb-6 group-hover:-translate-y-2 group-hover:shadow-[0_10px_30px_rgba(255,255,255,0.05)] transition-all duration-300 relative overflow-hidden shrink-0`}>
-              <Image 
-                src={product.image} 
-                alt={product.name} 
-                fill 
-                className="object-cover"
+          <div className="flex items-center gap-3">
+            <div className="relative">
+              <Search className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-gray-500" />
+              <input 
+                type="text" 
+                placeholder="Search products..." 
+                className="bg-white/5 border border-white/10 rounded-lg pl-9 pr-4 py-2 text-sm text-white focus:outline-none focus:border-rose-500/50 focus:bg-white/10 transition-all w-64"
               />
             </div>
-            
-            <h3 className={`text-xl font-bold text-white mb-1 transition-colors ${product.hoverColor}`}>
-              {product.name}
-            </h3>
-            <p className="text-sm text-gray-400 mb-6">
-              {product.type}
-            </p>
+            <button className="p-2 bg-white/5 hover:bg-white/10 text-white rounded-lg border border-white/10 transition-colors">
+              <Filter className="w-5 h-5" />
+            </button>
+          </div>
+        </div>
 
-            <span className="mt-auto px-4 py-1.5 bg-black/50 border border-white/10 rounded-full text-xs font-medium text-white group-hover:bg-rose-600 group-hover:border-rose-500 transition-colors w-full">
-              View Assets
-            </span>
-          </Link>
-        ))}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          {products.map((product) => (
+            <Link
+              key={product.slug}
+              href={`/marketing/products/${product.slug}`}
+              className="group relative bg-[#0b0b0b] border border-white/10 rounded-2xl overflow-hidden hover:border-rose-500/50 transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between"
+            >
+              <div className={`absolute inset-0 bg-gradient-to-br ${product.gradient} to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
+              
+              <div className="p-6 relative z-10">
+                <div className="aspect-video w-full relative rounded-xl overflow-hidden mb-4 bg-white/5 border border-white/5">
+                  <Image
+                    src={product.image}
+                    alt={product.name}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                  <span className="absolute bottom-2 left-2 text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-black/60 text-gray-300 backdrop-blur-md border border-white/10">
+                    {product.type}
+                  </span>
+                </div>
+
+                <h3 className={`text-xl font-bold text-white transition-colors duration-300 ${product.hoverColor}`}>
+                  {product.name}
+                </h3>
+                <p className="text-xs text-gray-400 mt-1 line-clamp-2">
+                  Access official product decks, feature briefs, and architectural datasheets.
+                </p>
+              </div>
+
+              <div className="px-6 py-4 border-t border-white/5 bg-white/[0.01] relative z-10 flex items-center justify-between text-xs font-semibold text-gray-400 group-hover:text-white transition-colors">
+                <span>View Product Kit</span>
+                <span className="text-rose-500">→</span>
+              </div>
+            </Link>
+          ))}
+        </div>
       </div>
-    </div>
+    </>
   );
 }

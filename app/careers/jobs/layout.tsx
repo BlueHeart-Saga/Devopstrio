@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Open Engineering Jobs & Careers | Devopstrio",
-  description: "Search open cloud architect, AI engineer, SRE, and DevOps jobs at Devopstrio. Explore remote and global positions.",
+  title: "Open Job Positions | Devopstrio Career Opportunities",
+  description: "Browse active job openings, detailed role specifications, and apply to join Devopstrio's elite global engineering team.",
   alternates: {
     canonical: "https://devopstrio.co.uk/careers/jobs",
   },

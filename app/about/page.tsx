@@ -2,6 +2,18 @@ import dynamic from "next/dynamic";
 import { AboutHero } from "@/sections/about/AboutHero";
 import { CompanyIntro } from "@/sections/about/CompanyIntro";
 import { SectionNavbar } from "@/components/ui/SectionNavbar";
+import { generatePageMetadata, getMetadataFromPath } from "@/lib/seo-utils";
+import { Metadata } from "next";
+
+export function generateMetadata(): Metadata {
+  const seo = getMetadataFromPath("/about");
+  return generatePageMetadata({
+    title: seo.title,
+    description: seo.description,
+    path: "/about",
+    keywords: seo.keywords
+  });
+}
 
 const OurStory = dynamic(() => import("@/sections/about/OurStory").then((mod) => mod.OurStory));
 const MetricsStats = dynamic(() => import("@/sections/about/MetricsStats").then((mod) => mod.MetricsStats));

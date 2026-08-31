@@ -253,7 +253,7 @@ export function PresenceHero() {
                   }}
                 >
                   <div className="max-w-7xl mx-auto w-full text-left">
-                    <h1
+                    <h2
                       className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-semibold tracking-tight leading-tight text-white select-text max-w-5xl mb-2"
                       style={{
                         textShadow:
@@ -261,7 +261,7 @@ export function PresenceHero() {
                       }}
                     >
                       {slide.heading}
-                    </h1>
+                    </h2>
 
                     {slide.tagline && (
                       <p 

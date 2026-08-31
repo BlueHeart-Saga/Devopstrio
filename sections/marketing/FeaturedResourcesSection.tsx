@@ -5,15 +5,17 @@ import Image from "next/image";
 import { Sparkles, ChevronLeft, ChevronRight, Calendar, Eye, Download } from "lucide-react";
 
 export function FeaturedResourcesSection({
-  resources,
+  resources = [],
   getTypeBadge,
   onPreview,
   onDownload,
+  onShare,
 }: {
-  resources: any[];
-  getTypeBadge: (type: string) => React.ReactNode;
-  onPreview: (item: any) => void;
-  onDownload: (item: any, e?: React.MouseEvent) => void;
+  resources?: any[];
+  getTypeBadge?: (type: string) => React.ReactNode;
+  onPreview?: (item: any) => void;
+  onDownload?: (item: any, e?: React.MouseEvent) => void;
+  onShare?: (item: any) => void;
 }) {
   const [activeCarouselIndex, setActiveCarouselIndex] = useState(0);
 
@@ -59,7 +61,7 @@ export function FeaturedResourcesSection({
                 <span className="px-3 py-1 rounded-full text-xs font-bold bg-rose-600 text-white tracking-wide">
                   {item.badge}
                 </span>
-                {getTypeBadge(item.type)}
+                {getTypeBadge ? getTypeBadge(item.type) : <span className="px-2 py-0.5 text-[10px] font-bold bg-zinc-800 text-zinc-300 rounded">{item.type || "PDF"}</span>}
                 <span className="text-xs text-zinc-400 flex items-center gap-1">
                   <Calendar className="w-3.5 h-3.5" /> Updated {item.updated}
                 </span>
@@ -75,13 +77,13 @@ export function FeaturedResourcesSection({
 
               <div className="flex flex-wrap items-center gap-3 pt-2">
                 <button
-                  onClick={() => onPreview(item)}
+                  onClick={() => onPreview && onPreview(item)}
                   className="px-5 py-2.5 rounded-xl bg-white text-black font-bold text-sm hover:bg-zinc-200 transition-colors flex items-center gap-2"
                 >
                   <Eye className="w-4 h-4" /> Preview Document
                 </button>
                 <button
-                  onClick={(e) => onDownload(item, e)}
+                  onClick={(e) => onDownload && onDownload(item, e)}
                   className="px-5 py-2.5 rounded-xl bg-rose-600 hover:bg-rose-500 text-white font-bold text-sm transition-colors flex items-center gap-2"
                 >
                   <Download className="w-4 h-4" /> Download ({item.size})

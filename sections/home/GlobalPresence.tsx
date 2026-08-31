@@ -234,9 +234,9 @@ export function GlobalPresence() {
         {/* Left Card */}
         <div className="w-full lg:w-[320px] border border-zinc-800/80 p-8 bg-zinc-950/40 backdrop-blur-md rounded-2xl transition-all duration-300 hover:border-rose-500/30 hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(225,29,72,0.08)] flex-shrink-0 flex flex-col justify-between">
           <div>
-            <h1 className="text-6xl md:text-7xl font-bold text-rose-500 leading-none mb-2">
+            <span className="text-6xl md:text-7xl font-bold text-rose-500 leading-none mb-2 block">
               {totalOffices}
-            </h1>
+            </span>
             <h3 className="text-xl font-bold text-white mb-2">Offices</h3>
             <p className="text-zinc-400 text-sm leading-relaxed mb-6">
               Across {uniqueCountries}+ Countries with {totalEmployees}+ Global Workforce

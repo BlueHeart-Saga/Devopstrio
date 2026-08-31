@@ -40,26 +40,24 @@ function getOverviewImage(serviceSlug: string): string {
   return serviceImgMap[serviceSlug] || "/webp/assets/services/bg-ai.webp";
 }
 
+import { generatePageMetadata, getMetadataFromPath } from "@/lib/seo-utils";
+
 export async function generateMetadata({ params }: PageProps) {
   const { capability } = await params;
   const service = "cybersecurity";
   const data = getCapability(service, capability);
   if (!data) return {};
 
-  const title = data.metaTitle || `${data.title} | Devopstrio`;
-  const description = data.metaDescription || data.heroSubtitle;
+  const seo = getMetadataFromPath(`/services/${service}/${capability}`);
+  const title = data.metaTitle || (seo.title !== data.title ? seo.title : `${data.title} Cybersecurity | Devopstrio`);
+  const description = data.metaDescription || seo.description || data.heroSubtitle;
 
-  return {
+  return generatePageMetadata({
     title,
     description,
-    openGraph: {
-      title,
-      description
-    },
-    alternates: {
-      canonical: `/services/${service}/${capability}`
-    }
-  };
+    path: `/services/${service}/${capability}`,
+    keywords: seo.keywords
+  });
 }
 
 export default function CapabilityPage({ params }: PageProps) {

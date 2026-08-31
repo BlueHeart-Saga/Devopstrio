@@ -20,22 +20,16 @@ const ServiceRelated = dynamic(() => import("@/sections/services/category/Servic
 const FAQ = dynamic(() => import("@/components/services/FAQ").then((mod) => mod.FAQ));
 const CTA = dynamic(() => import("@/components/services/CTA").then((mod) => mod.CTA));
 
-export async function generateMetadata() {
-  const service = "ai-consulting";
-  const data = getServiceByCategory(service);
-  if (!data) return {};
+import { generatePageMetadata, getMetadataFromPath } from "@/lib/seo-utils";
 
-  return {
-    title: `${data.title} | Devopstrio`,
-    description: data.subtitle,
-    openGraph: {
-      title: `${data.title} | Devopstrio`,
-      description: data.subtitle
-    },
-    alternates: {
-      canonical: `/services/${service}`
-    }
-  };
+export async function generateMetadata() {
+  const seo = getMetadataFromPath("/services/ai-consulting");
+  return generatePageMetadata({
+    title: seo.title,
+    description: seo.description,
+    path: "/services/ai-consulting",
+    keywords: seo.keywords
+  });
 }
 
 export default async function ServiceCategoryPage() {

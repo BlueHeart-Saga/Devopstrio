@@ -160,7 +160,7 @@ export function CompanyOverviewSection() {
 
         {/* Large standalone main heading — matching GFT reference */}
         <Reveal>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold tracking-tight text-white leading-[1.08] mb-10">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold tracking-tight text-white leading-[1.08] mb-10">
             The Story of{" "}
             <span className="relative inline-block">
               <span className="text-rose-500">Devopstrio</span>
@@ -177,7 +177,7 @@ export function CompanyOverviewSection() {
                 />
               </svg>
             </span>
-          </h1>
+          </h2>
         </Reveal>
 
         {/* Body paragraphs — indented like GFT reference, max-width constrained */}

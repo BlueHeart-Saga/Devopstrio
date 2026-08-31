@@ -258,9 +258,9 @@ export function InteractiveMap({
           {/* Left Column: Stats Card */}
           <div className="w-full lg:w-[360px] border border-zinc-800/80 p-8 bg-zinc-950/40 backdrop-blur-md rounded-2xl transition-all duration-300 hover:border-rose-500/30 hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(225,29,72,0.08)] flex-shrink-0 flex flex-col justify-between">
             <div>
-              <h1 className="text-6xl md:text-7xl font-bold text-rose-500 leading-none mb-2">
+              <span className="text-6xl md:text-7xl font-bold text-rose-500 leading-none mb-2 block">
                 {totalOffices}
-              </h1>
+              </span>
               <h3 className="text-2xl sm:text-3xl font-semibold text-white mb-2">Global Locations</h3>
               <p className="text-zinc-300 text-base sm:text-lg leading-relaxed mb-6 font-medium">
                 Across {uniqueCountries}+ Countries with <Link href="/careers" className="text-[#E11D48] hover:underline font-semibold">{totalEmployees} Global Workforce</Link>

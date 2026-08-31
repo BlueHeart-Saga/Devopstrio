@@ -1,5 +1,19 @@
+import type { Metadata } from "next";
 import dynamic from "next/dynamic";
 import { HeroSection } from "@/sections/home/HeroSection";
+
+export const metadata: Metadata = {
+  title: "Devopstrio | Enterprise Cloud, DevOps & AI Engineering Services",
+  description: "Devopstrio delivers principal-led cloud-native transformation, SRE automation, Zero-Trust cybersecurity, and production-grade Generative AI solutions for global enterprises.",
+  alternates: {
+    canonical: "https://devopstrio.co.uk",
+  },
+  openGraph: {
+    title: "Devopstrio | Enterprise Cloud, DevOps & AI Engineering Services",
+    description: "Devopstrio delivers principal-led cloud-native transformation, SRE automation, Zero-Trust cybersecurity, and production-grade Generative AI solutions for global enterprises.",
+    url: "https://devopstrio.co.uk",
+  },
+};
 
 // Dynamic imports for heavier sections
 const ServicesOverviewPillars = dynamic(() => import("@/sections/home/ServicesOverviewPillars").then((mod) => mod.ServicesOverviewPillars));

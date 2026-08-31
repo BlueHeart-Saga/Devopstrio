@@ -63,9 +63,9 @@ export function OurStorySection() {
             ABOUT DEVOPSTRIO
           </span>
 
-          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-tight">
+          <h2 className="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-tight">
             Engineering Better <span className="text-[#E11D48]">Digital Futures</span>
-          </h1>
+          </h2>
 
           <p className="text-base sm:text-lg md:text-xl text-zinc-300 max-w-2xl mx-auto font-normal">
             We help businesses build intelligent, secure, and scalable technology.

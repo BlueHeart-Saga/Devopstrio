@@ -3,8 +3,11 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 
 export const metadata = {
-  title: "Devopstrio Marketing & Sales Enablement Portal",
-  description: "Explore Devopstrio's enterprise ecosystem, marketing assets, corporate pitch decks, and technical whitepapers.",
+  title: {
+    default: "Marketing Resource Hub | Decks, Sheets & Assets | Devopstrio",
+    template: "%s | Devopstrio"
+  },
+  description: "Access public-facing corporate presentations, regional deck downloads, brochure sheets, and product capability guides.",
 };
 
 export default function MarketingLayout({

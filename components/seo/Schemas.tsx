@@ -28,19 +28,24 @@ export function OrganizationSchema() {
 // 2. Breadcrumb Schema
 interface BreadcrumbItem {
   name: string;
-  item: string;
+  item?: string;
+  url?: string;
 }
 
 export function BreadcrumbSchema({ items }: { items: BreadcrumbItem[] }) {
   const data = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
-    "itemListElement": items.map((item, idx) => ({
-      "@type": "ListItem",
-      "position": idx + 1,
-      "name": item.name,
-      "item": item.item.startsWith("http") ? item.item : `https://devopstrio.co.uk${item.item}`
-    }))
+    "itemListElement": items.map((item, idx) => {
+      const targetUrl = item.item || item.url || "/";
+      const fullUrl = targetUrl.startsWith("http") ? targetUrl : `https://devopstrio.co.uk${targetUrl.startsWith("/") ? targetUrl : `/${targetUrl}`}`;
+      return {
+        "@type": "ListItem",
+        "position": idx + 1,
+        "name": item.name,
+        "item": fullUrl
+      };
+    })
   };
   return <JsonLd data={data} />;
 }

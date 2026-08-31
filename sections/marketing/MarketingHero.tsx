@@ -4,7 +4,7 @@ import React from "react";
 import { Reveal } from "@/components/ui/Reveal";
 import Link from "next/link";
 
-export function MarketingHero({ onDownloadProfile }: { onDownloadProfile?: () => void }) {
+export function MarketingHero({ onDownloadProfile, onRequestCustomDeck }: { onDownloadProfile?: () => void; onRequestCustomDeck?: () => void }) {
   return (
     <section className="relative w-full min-h-[80vh] flex items-center bg-[#030303] text-white pt-20 pb-16 lg:pt-20 lg:pb-24 overflow-hidden">
       {/* Background Ambient Glows */}

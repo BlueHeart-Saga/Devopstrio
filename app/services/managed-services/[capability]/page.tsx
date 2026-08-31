@@ -40,23 +40,22 @@ function getOverviewImage(serviceSlug: string): string {
   return serviceImgMap[serviceSlug] || "/webp/assets/services/bg-ai.webp";
 }
 
+import { generatePageMetadata, getMetadataFromPath } from "@/lib/seo-utils";
+
 export async function generateMetadata({ params }: PageProps) {
   const { capability } = await params;
   const service = "managed-services";
   const data = getCapability(service, capability);
   if (!data) return {};
 
-  return {
-    title: `${data.title} | Devopstrio`,
-    description: data.heroSubtitle,
-    openGraph: {
-      title: `${data.title} | Devopstrio`,
-      description: data.heroSubtitle
-    },
-    alternates: {
-      canonical: `/services/${service}/${capability}`
-    }
-  };
+  const seo = getMetadataFromPath(`/services/${service}/${capability}`);
+  const title = seo.title !== data.title ? seo.title : `${data.title} Managed Services | Devopstrio`;
+  return generatePageMetadata({
+    title,
+    description: seo.description || data.heroSubtitle,
+    path: `/services/${service}/${capability}`,
+    keywords: seo.keywords
+  });
 }
 
 export default function CapabilityPage({ params }: PageProps) {

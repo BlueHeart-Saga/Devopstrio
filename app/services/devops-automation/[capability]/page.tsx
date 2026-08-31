@@ -41,40 +41,22 @@ function getOverviewImage(serviceSlug: string): string {
   return serviceImgMap[serviceSlug] || "/webp/assets/services/bg-ai.webp";
 }
 
+import { generatePageMetadata, getMetadataFromPath } from "@/lib/seo-utils";
+
 export async function generateMetadata({ params }: PageProps) {
   const { capability } = await params;
   const service = "devops-automation";
   const data = getCapability(service, capability);
   if (!data) return {};
 
-  if (capability === "devsecops") {
-    return {
-      title: "DevSecOps Services in UK | Secure CI/CD & DevOps Solutions",
-      description: "Strengthen software security with DevSecOps services in UK. Integrate CI/CD security, SAST, vulnerability scanning, compliance, and automated DevOps workflows.",
-      openGraph: {
-        title: "DevSecOps Services in UK | Secure CI/CD & DevOps Solutions",
-        description: "Strengthen software security with DevSecOps services in UK. Integrate CI/CD security, SAST, vulnerability scanning, compliance, and automated DevOps workflows."
-      },
-      alternates: {
-        canonical: `/services/${service}/${capability}`
-      }
-    };
-  }
-
-  const title = data.metaTitle || `${data.title} | Devopstrio`;
-  const description = data.metaDescription || data.heroSubtitle;
-
-  return {
+  const seo = getMetadataFromPath(`/services/${service}/${capability}`);
+  const title = seo.title !== data.title ? seo.title : `${data.title} Services | Devopstrio`;
+  return generatePageMetadata({
     title,
-    description,
-    openGraph: {
-      title,
-      description
-    },
-    alternates: {
-      canonical: `/services/${service}/${capability}`
-    }
-  };
+    description: seo.description || data.heroSubtitle,
+    path: `/services/${service}/${capability}`,
+    keywords: seo.keywords
+  });
 }
 
 export default function CapabilityPage({ params }: PageProps) {

@@ -5,15 +5,17 @@ import Image from "next/image";
 import { Presentation, Eye, Download } from "lucide-react";
 
 export function PresentationsSection({
-  presentations,
+  presentations = [],
   getTypeBadge,
   onPreview,
   onDownload,
+  onShare,
 }: {
-  presentations: any[];
-  getTypeBadge: (type: string) => React.ReactNode;
-  onPreview: (item: any) => void;
-  onDownload: (item: any, e?: React.MouseEvent) => void;
+  presentations?: any[];
+  getTypeBadge?: (type: string) => React.ReactNode;
+  onPreview?: (item: any) => void;
+  onDownload?: (item: any, e?: React.MouseEvent) => void;
+  onShare?: (item: any) => void;
 }) {
   return (
     <section id="presentations" className="scroll-mt-36">
@@ -41,7 +43,7 @@ export function PresentationsSection({
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-500 opacity-80"
                 />
-                <div className="absolute top-2 left-2">{getTypeBadge(item.type)}</div>
+                <div className="absolute top-2 left-2">{getTypeBadge ? getTypeBadge(item.type) : <span className="px-2 py-0.5 text-[10px] font-bold bg-zinc-800 text-zinc-300 rounded">{item.type || "PDF"}</span>}</div>
                 <div className="absolute bottom-2 right-2 bg-black/70 backdrop-blur-md px-2 py-0.5 rounded text-[10px] text-zinc-300">
                   {item.size}
                 </div>
@@ -59,13 +61,13 @@ export function PresentationsSection({
 
             <div className="pt-3 border-t border-zinc-800/80 flex items-center justify-between">
               <button
-                onClick={() => onPreview(item)}
+                onClick={() => onPreview && onPreview(item)}
                 className="text-xs text-zinc-400 hover:text-white font-medium flex items-center gap-1"
               >
                 <Eye className="w-3.5 h-3.5" /> Preview
               </button>
               <button
-                onClick={(e) => onDownload(item, e)}
+                onClick={(e) => onDownload && onDownload(item, e)}
                 className="px-3 py-1.5 rounded-lg bg-rose-600/20 hover:bg-rose-600 text-rose-400 hover:text-white font-bold text-xs transition-colors flex items-center gap-1 border border-rose-500/30"
               >
                 <Download className="w-3.5 h-3.5" /> Download

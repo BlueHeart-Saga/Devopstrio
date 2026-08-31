@@ -41,51 +41,22 @@ function getOverviewImage(serviceSlug: string): string {
   return serviceImgMap[serviceSlug] || "/webp/assets/services/bg-ai.webp";
 }
 
+import { generatePageMetadata, getMetadataFromPath } from "@/lib/seo-utils";
+
 export async function generateMetadata({ params }: PageProps) {
   const { capability } = await params;
   const service = "ai-data-innovation";
   const data = getCapability(service, capability);
   if (!data) return {};
 
-  if (capability === "generative-ai-solutions") {
-    return {
-      title: "Generative AI Services UK | Enterprise AI Solutions",
-      description: "Build, deploy, and optimize enterprise Generative AI Services in the UK with secure, scalable solutions tailored to your business goals.",
-      openGraph: {
-        title: "Generative AI Services UK | Enterprise AI Solutions",
-        description: "Build, deploy, and optimize enterprise Generative AI Services in the UK with secure, scalable solutions tailored to your business goals."
-      },
-      alternates: {
-        canonical: `/services/${service}/${capability}`
-      }
-    };
-  }
-
-  if (capability === "machine-learning-engineering") {
-    return {
-      title: "Machine Learning Development Services in UK | Expert ML Company",
-      description: "Expert Machine Learning Development Services in UK for startups and enterprises. Build custom AI models, predictive analytics, automation, and scalable ML solutions.",
-      openGraph: {
-        title: "Machine Learning Development Services in UK | Expert ML Company",
-        description: "Expert Machine Learning Development Services in UK for startups and enterprises. Build custom AI models, predictive analytics, automation, and scalable ML solutions."
-      },
-      alternates: {
-        canonical: `/services/${service}/${capability}`
-      }
-    };
-  }
-
-  return {
-    title: `${data.title} | Devopstrio`,
-    description: data.heroSubtitle,
-    openGraph: {
-      title: `${data.title} | Devopstrio`,
-      description: data.heroSubtitle
-    },
-    alternates: {
-      canonical: `/services/${service}/${capability}`
-    }
-  };
+  const seo = getMetadataFromPath(`/services/${service}/${capability}`);
+  const title = seo.title !== data.title ? seo.title : `${data.title} | Devopstrio AI Services`;
+  return generatePageMetadata({
+    title,
+    description: seo.description || data.heroSubtitle,
+    path: `/services/${service}/${capability}`,
+    keywords: seo.keywords
+  });
 }
 
 export default function CapabilityPage({ params }: PageProps) {

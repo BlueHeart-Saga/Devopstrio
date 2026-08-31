@@ -32,11 +32,11 @@ export function CareersBeyondHero() {
           <div className="lg:col-span-12 flex flex-col text-left">
             {/* Title with Trailing Underscore _ (Semi-Bold) */}
             <Reveal delay={0.05} className="mb-8">
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold tracking-tight text-white leading-[1.12] font-sans max-w-4xl">
+              <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold tracking-tight text-white leading-[1.12] font-sans max-w-4xl">
                 Let&apos;s Go Beyond your <br className="hidden sm:inline" />
                 <span className="font-semibold text-white">Potential</span>
                 <span className="text-rose-500 font-semibold animate-pulse">_</span>
-              </h1>
+              </h2>
             </Reveal>
 
             {/* Description Subtitle - Indented / Offset Right Under Heading */}

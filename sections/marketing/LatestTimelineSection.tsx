@@ -5,8 +5,12 @@ import { Sparkles, Calendar, ArrowRight } from "lucide-react";
 
 export function LatestTimelineSection({
   onPreview,
+  onDownload,
+  onShare,
 }: {
-  onPreview: (item: any) => void;
+  onPreview?: (item: any) => void;
+  onDownload?: (item: any, e?: React.MouseEvent) => void;
+  onShare?: (item: any) => void;
 }) {
   const timelineItems = [
     { date: "July 18, 2026", title: "Devopstrio Corporate Profile 2026 Published", desc: "Updated global delivery metrics, CMMI Level 5 status, and 2026 enterprise strategy.", type: "PDF" },

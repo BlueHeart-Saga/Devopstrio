@@ -16,8 +16,8 @@ export interface CategoryItem {
 }
 
 interface MarketingCategoriesProps {
-  categories: CategoryItem[];
-  onSelectCategory: (id: string) => void;
+  categories?: CategoryItem[];
+  onSelectCategory?: (id: string) => void;
 }
 
 const COMMON_ASSET_IMAGES = [
@@ -35,7 +35,14 @@ const COMMON_ASSET_IMAGES = [
   "/webp/assets/common/945ab601f043c558e0a8162da2a1eb4c-1.webp",
 ];
 
-export function MarketingCategories({ categories, onSelectCategory }: MarketingCategoriesProps) {
+const DEFAULT_CATEGORIES: CategoryItem[] = [
+  { id: "all", label: "All Resources", icon: Layers, count: "50+ Assets", href: "#all-resources", description: "Comprehensive library of technical whitepapers, pitch decks, solution briefs, and brand assets." },
+  { id: "company", label: "Corporate Assets", icon: FileText, count: "12 Assets", href: "/marketing/company", description: "Corporate presentations, company fact sheets, brand guidelines, and leadership profiles." },
+  { id: "services", label: "Service Brochures", icon: Layers, count: "16 Assets", href: "/marketing/services", description: "Practice area brochures for Cloud, DevOps, Generative AI, and Security architecture." },
+  { id: "products", label: "Product Kits", icon: Layers, count: "10 Assets", href: "/marketing/products", description: "SaaS datasheets and product feature briefs for SafeSign, CareSuite, and Brio." },
+];
+
+export function MarketingCategories({ categories = DEFAULT_CATEGORIES, onSelectCategory }: MarketingCategoriesProps) {
   const [selectedIndex, setSelectedIndex] = useState<number>(0);
 
   const activeCategory = categories[selectedIndex] || categories[0];
@@ -144,7 +151,7 @@ export function MarketingCategories({ categories, onSelectCategory }: MarketingC
                 </div>
 
                 <button
-                  onClick={() => onSelectCategory(activeCategory?.id || "company")}
+                  onClick={() => onSelectCategory && onSelectCategory(activeCategory?.id || "company")}
                   className="w-full py-3.5 rounded-2xl bg-rose-600 hover:bg-rose-500 text-white text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 transition-all shadow-xl shadow-rose-950/40 hover:scale-[1.02] active:scale-95"
                 >
                   <span>Browse {activeCategory?.label}</span>

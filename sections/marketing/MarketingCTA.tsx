@@ -3,7 +3,7 @@
 import React from "react";
 import { RepresentativeCTA } from "@/components/ui/RepresentativeCTA";
 
-export function MarketingCTA({ onRequestCustom }: { onRequestCustom: () => void }) {
+export function MarketingCTA({ onRequestCustom, onRequestCustomDeck }: { onRequestCustom?: () => void; onRequestCustomDeck?: () => void }) {
   return (
     <RepresentativeCTA
       title="Need A Customized Presentation Or"

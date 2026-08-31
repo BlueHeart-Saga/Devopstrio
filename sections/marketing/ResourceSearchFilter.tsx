@@ -5,9 +5,11 @@ import { Search, X, Sparkles } from "lucide-react";
 
 interface ResourceSearchFilterProps {
   searchQuery: string;
-  setSearchQuery: (query: string) => void;
+  setSearchQuery?: (query: string) => void;
+  onSearchChange?: (query: string) => void;
   selectedType?: string;
   setSelectedType?: (type: string) => void;
+  onTypeChange?: (type: string) => void;
   typeFilters?: string[];
   quickChips?: string[];
 }
@@ -15,7 +17,15 @@ interface ResourceSearchFilterProps {
 export function ResourceSearchFilter({
   searchQuery,
   setSearchQuery,
+  onSearchChange,
+  selectedType,
+  setSelectedType,
+  onTypeChange,
 }: ResourceSearchFilterProps) {
+  const handleSearchChange = (q: string) => {
+    if (setSearchQuery) setSearchQuery(q);
+    if (onSearchChange) onSearchChange(q);
+  };
   return (
     <div className="relative w-full max-w-3xl mx-auto px-4 my-8 z-30">
       
@@ -42,14 +52,14 @@ export function ResourceSearchFilter({
           type="text"
           placeholder="Search resources..."
           value={searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value)}
+          onChange={(e) => handleSearchChange(e.target.value)}
           className="w-full bg-transparent text-white pl-3 pr-4 py-2.5 sm:py-3 text-base sm:text-lg focus:outline-none placeholder:text-zinc-400 font-medium"
         />
 
         {/* Right Action Box */}
         {searchQuery ? (
           <button
-            onClick={() => setSearchQuery("")}
+            onClick={() => handleSearchChange("")}
             className="w-10 h-10 rounded-2xl bg-zinc-900/90 hover:bg-zinc-800 border border-rose-500/30 flex items-center justify-center text-zinc-400 hover:text-white transition-all shrink-0 mr-1 shadow-md"
             aria-label="Clear Search"
           >

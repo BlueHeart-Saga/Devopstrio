@@ -41,37 +41,22 @@ function getOverviewImage(serviceSlug: string): string {
   return serviceImgMap[serviceSlug] || "/webp/assets/services/bg-ai.webp";
 }
 
+import { generatePageMetadata, getMetadataFromPath } from "@/lib/seo-utils";
+
 export async function generateMetadata({ params }: PageProps) {
   const { capability } = await params;
   const service = "cloud-services";
   const data = getCapability(service, capability);
   if (!data) return {};
 
-  if (capability === "cloud-architecture") {
-    return {
-      title: "Cloud Architecture Services in UK | Secure & Scalable Solutions",
-      description: "Transform your business with cloud architecture services in UK. We design secure, scalable, and cost-efficient cloud infrastructure to improve performance, resilience, and business growth.",
-      openGraph: {
-        title: "Cloud Architecture Services in UK | Secure & Scalable Solutions",
-        description: "Transform your business with cloud architecture services in UK. We design secure, scalable, and cost-efficient cloud infrastructure to improve performance, resilience, and business growth."
-      },
-      alternates: {
-        canonical: `/services/${service}/${capability}`
-      }
-    };
-  }
-
-  return {
-    title: `${data.title} | Devopstrio`,
-    description: data.heroSubtitle,
-    openGraph: {
-      title: `${data.title} | Devopstrio`,
-      description: data.heroSubtitle
-    },
-    alternates: {
-      canonical: `/services/${service}/${capability}`
-    }
-  };
+  const seo = getMetadataFromPath(`/services/${service}/${capability}`);
+  const title = seo.title !== data.title ? seo.title : `${data.title} Cloud Services | Devopstrio`;
+  return generatePageMetadata({
+    title,
+    description: seo.description || data.heroSubtitle,
+    path: `/services/${service}/${capability}`,
+    keywords: seo.keywords
+  });
 }
 
 export default function CapabilityPage({ params }: PageProps) {
