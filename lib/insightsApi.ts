@@ -75,6 +75,10 @@ function getCategorySlug(name: string): string {
   return CATEGORY_SLUG_MAP[name] || name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
 }
 
+const globalServerCache = new Map<string, { data: any; timestamp: number }>();
+const globalPendingRequests = new Map<string, Promise<any>>();
+const SERVER_CACHE_TTL = 10 * 60 * 1000; // 10 minutes in-memory cache
+
 class InsightsApiService {
   private baseUrl: string;
   private companyId: string;
@@ -93,10 +97,21 @@ class InsightsApiService {
     const url = `${this.baseUrl}${API_PREFIX}${endpoint}`;
     const cacheKey = `${url}:${options.method || "GET"}:${JSON.stringify(options.body || "")}`;
 
+    // 1. Check in-memory global server cache (10 min TTL)
+    const cachedItem = globalServerCache.get(cacheKey);
+    if (cachedItem && Date.now() - cachedItem.timestamp < SERVER_CACHE_TTL) {
+      return cachedItem.data;
+    }
+
+    // 2. Check instance cache
     if (this.cache.has(cacheKey)) {
       return this.cache.get(cacheKey);
     }
 
+    // 3. Dedupe in-flight requests
+    if (globalPendingRequests.has(cacheKey)) {
+      return globalPendingRequests.get(cacheKey);
+    }
     if (this.pendingRequests.has(cacheKey)) {
       return this.pendingRequests.get(cacheKey);
     }
@@ -107,7 +122,7 @@ class InsightsApiService {
         "Content-Type": "application/json",
         ...options.headers,
       },
-      next: { revalidate: 60 } // Cache-revalidation for Next.js
+      next: { revalidate: 300 } // Cache-revalidation for Next.js (5 minutes)
     })
       .then(async (response) => {
         if (!response.ok) {
@@ -116,16 +131,20 @@ class InsightsApiService {
         }
 
         const data = await response.json();
+        globalServerCache.set(cacheKey, { data, timestamp: Date.now() });
         this.cache.set(cacheKey, data);
+        globalPendingRequests.delete(cacheKey);
         this.pendingRequests.delete(cacheKey);
         return data;
       })
       .catch((err) => {
+        globalPendingRequests.delete(cacheKey);
         this.pendingRequests.delete(cacheKey);
         if (options.throwError) throw err;
         return null;
       });
 
+    globalPendingRequests.set(cacheKey, requestPromise);
     this.pendingRequests.set(cacheKey, requestPromise);
     return requestPromise;
   }
