@@ -155,7 +155,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // 6. Dynamic Insights Pages (Blogs, Case Studies, etc.)
   const dynamicPostPages: MetadataRoute.Sitemap = [];
   try {
-    const posts = await insightsApi.getAllPosts(300);
+    const fetchPostsWithTimeout = Promise.race([
+      insightsApi.getAllPosts(300),
+      new Promise<any[]>((resolve) => setTimeout(() => resolve([]), 5000))
+    ]);
+    const posts = await fetchPostsWithTimeout;
     posts.forEach((post) => {
       if (post.id && post.category?.slug) {
         dynamicPostPages.push({
