@@ -294,6 +294,36 @@ const ROUTE_SEO_MAP: Record<string, { title: string; description: string; keywor
     description: "Upgrade legacy analytics engines into modern AI inference pipelines with vector indexing and agentic workflows.",
     keywords: ["AI Modernization", "Analytics Refactoring", "Inference Upgrade", "Agentic Workflows"]
   },
+  "/services/ai-data-innovation/data-governance": {
+    title: "Data Governance & Regulatory Compliance Services",
+    description: "Establish automated data lineage, access controls, cataloging, and GDPR/CCPA compliance across corporate data assets.",
+    keywords: ["Data Governance", "Regulatory Compliance", "Data Lineage", "GDPR CCPA"]
+  },
+  "/services/cloud-services/azure-services": {
+    title: "Microsoft Azure Cloud Services & Migration Solutions",
+    description: "Architect secure Azure cloud environments, AKS Kubernetes clusters, Azure AI services, and enterprise landing zones.",
+    keywords: ["Azure Services", "AKS Migration", "Azure Landing Zone", "Microsoft Cloud"]
+  },
+  "/services/cloud-services/cloud-security": {
+    title: "Enterprise Cloud Security & Compliance Hardening",
+    description: "Protect cloud infrastructure with continuous posture management (CSPM), automated compliance checks, and IAM controls.",
+    keywords: ["Cloud Security Services", "CSPM Hardening", "IAM Controls", "Compliance Security"]
+  },
+  "/services/it-consulting/cloud-consulting": {
+    title: "Cloud Consulting & Strategy Advisory Services",
+    description: "Strategic cloud advisory, multi-cloud architecture assessments, and migration roadmaps led by principal architects.",
+    keywords: ["Cloud Consulting", "Strategy Advisory", "Multi-Cloud Assessment"]
+  },
+  "/services/qa-testing/api-testing": {
+    title: "Automated API Testing & Contract Verification",
+    description: "Ensure high-throughput REST and GraphQL API reliability with automated regression testing, mock servers, and contract checks.",
+    keywords: ["API Testing", "Contract Verification", "REST Testing", "GraphQL Automation"]
+  },
+  "/services/qa-testing/security-testing": {
+    title: "Security Testing & Penetration Audit Services",
+    description: "Identify vulnerabilities, secure application endpoints, and conduct comprehensive penetration testing before deployment.",
+    keywords: ["Security Testing", "Penetration Audit", "Vulnerability Assessment"]
+  },
 
   // Ecosystem Hub & Subpages
   "/ecosystem": {
@@ -367,6 +397,46 @@ const ROUTE_SEO_MAP: Record<string, { title: string; description: string; keywor
     title: "Data Engineering Tech Stack & Tools | Devopstrio",
     description: "Our verified technology stack for big data pipelines, distributed engines, vector indexes, and cloud warehouses.",
     keywords: ["Data Stack", "Apache Spark", "Snowflake", "Databricks", "Vector Indexing"]
+  },
+  "/ecosystem/accelerators-frameworks/data-framework": {
+    title: "Enterprise Data Framework Accelerators & Blueprints",
+    description: "Accelerate data engineering and analytics with Devopstrio's pre-built enterprise data frameworks, telemetry pipelines, and schema models.",
+    keywords: ["Data Framework", "Accelerators", "Telemetry Pipelines", "Schema Models"]
+  },
+  "/ecosystem/community-talent-network/talent-network": {
+    title: "Global Engineering Talent Network & Guilds | Devopstrio",
+    description: "Access Devopstrio's specialized network of certified DevOps, SRE, Cloud, and AI engineering practitioners.",
+    keywords: ["Talent Network", "Engineering Guilds", "DevOps Experts", "AI Engineers"]
+  },
+  "/ecosystem/engineering-excellence/devsecops": {
+    title: "DevSecOps Practice & Automated Security Gates",
+    description: "Integrate automated security scanning, SAST/DAST compliance checks, and vulnerability shields into developer CI/CD workflows.",
+    keywords: ["DevSecOps Practice", "Automated Security Gates", "SAST DAST", "CI/CD Shields"]
+  },
+  "/ecosystem/partnerships/cisco": {
+    title: "Cisco Enterprise Networking & Zero-Trust Partnership",
+    description: "Deploy resilient Cisco enterprise networking, SD-WAN topologies, and Zero-Trust network security solutions.",
+    keywords: ["Cisco Partnership", "SD-WAN", "Enterprise Networking", "Zero-Trust"]
+  },
+  "/ecosystem/partnerships/oracle": {
+    title: "Oracle Cloud Infrastructure & Database Alliance",
+    description: "Architect high-performance Oracle Cloud Infrastructure (OCI) migrations, Exadata optimizations, and database automation.",
+    keywords: ["Oracle Alliance", "OCI Migration", "Exadata Optimization", "Oracle Database"]
+  },
+  "/ecosystem/partnerships/sap": {
+    title: "SAP Cloud Modernization & HANA Infrastructure",
+    description: "Migrate and scale mission-critical SAP S/4HANA workloads on enterprise cloud runtimes with zero downtime.",
+    keywords: ["SAP on Cloud", "S/4HANA Migration", "Enterprise Cloud Runtimes"]
+  },
+  "/ecosystem/technology-stack/cloud-native": {
+    title: "Cloud Native Stack | Kubernetes, Service Mesh & Containers",
+    description: "Explore our production-proven cloud-native technology stack including Kubernetes, Istio, Envoy, Helm, and ArgoCD.",
+    keywords: ["Cloud Native Stack", "Kubernetes", "Service Mesh", "Containers", "ArgoCD"]
+  },
+  "/ecosystem/technology-stack/devops-toolchain": {
+    title: "DevOps Toolchain & Infrastructure as Code Stack",
+    description: "Verified DevOps toolchain stack featuring Terraform, GitHub Actions, GitLab CI, Ansible, and Prometheus.",
+    keywords: ["DevOps Toolchain", "Terraform Stack", "GitHub Actions", "GitLab CI"]
   },
 
   // Industry Verticals
@@ -619,30 +689,30 @@ export function getMetadataFromPath(pathname: string) {
 
   const leafSegment = cleanSegment(parts[parts.length - 1]);
   
-  let title = leafSegment;
+  let title = `Professional ${leafSegment} Solutions & Engineering`;
   let description = `Professional ${leafSegment} consulting and systems engineering services. Devopstrio designs, modernizes, and scales compliant architectures.`;
   let keywords = [leafSegment, "Devopstrio", "Enterprise Engineering", "IT Advisory"];
 
   if (parts[0] === "ecosystem") {
     const category = parts[1] ? cleanSegment(parts[1]) : "Ecosystem";
-    title = `Professional ${leafSegment} | ${category} Hub`;
+    title = `${leafSegment} Practice & Architecture Standards`;
     description = `Explore professional ${leafSegment} capabilities under our ${category} practice area at Devopstrio. We engineer compliant frameworks.`;
     keywords.push(category, "Ecosystem Alliance");
   } else if (parts[0] === "services") {
     const category = parts[1] ? cleanSegment(parts[1]) : "Services";
-    title = `Professional ${leafSegment} Services | ${category}`;
+    title = `${leafSegment} Services & Enterprise Solutions`;
     description = `Architect secure, high-availability setups with Devopstrio's professional ${leafSegment} consultants and engineers. Guaranteed SLAs.`;
     keywords.push(category, "Practice Services");
   } else if (parts[0] === "industries") {
-    title = `Professional ${leafSegment} Industry Solutions`;
+    title = `${leafSegment} Digital Solutions & Architecture`;
     description = `Transform and digitize your operations with Devopstrio's professional ${leafSegment} technology platforms and runtimes.`;
     keywords.push("Industry Vertical", "Regulatory Compliance");
   } else if (parts[0] === "marketing") {
-    title = `${leafSegment} Collateral & Solution Briefs`;
+    title = `${leafSegment} Collateral & Technical Solution Briefs`;
     description = `Access marketing specs, executive solution briefs, and data sheets for ${leafSegment} at Devopstrio.`;
     keywords.push("Marketing Collateral", "Data Sheet");
   } else if (parts[0] === "insights") {
-    title = `${leafSegment} | Devopstrio Insights & Research`;
+    title = `${leafSegment} Insights, Case Studies & Research`;
     description = `Read technical publications, research papers, and engineering case studies regarding ${leafSegment}.`;
     keywords.push("Technical Insights", "Engineering Publications");
   }
