@@ -94,7 +94,7 @@ export async function GET() {
       feed.item({
         title: post.title,
         description: post.excerpt || post.title,
-        url: `https://devopstrio.co.uk/insights/${post.category?.slug || "general"}/${post.id}`,
+        url: `https://devopstrio.co.uk/insights/${post.category?.slug || "general"}/${post.slug || post.id}`,
         categories: [post.category?.name || "General", ...(post.tags || [])],
         author: post.author || "Devopstrio Team",
         date: post.date

@@ -18,7 +18,7 @@ const FaqSection = dynamic(() => import("@/sections/services/FaqSection").then((
 const ServicesCTA = dynamic(() => import("@/sections/services/ServicesCTA").then((mod) => mod.ServicesCTA));
 
 export const metadata: Metadata = {
-  title: "Engineering & AI Services",
+  title: "Enterprise Cloud, DevOps & AI Engineering Services | Devopstrio",
   description: "Explore our enterprise practice areas: Cognitive AI pipelines, 3 Pillars of AI Transformation, multi-cloud engineering, cybersecurity, and managed IT operations.",
   alternates: {
     canonical: "/services"

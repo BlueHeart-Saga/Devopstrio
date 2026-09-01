@@ -21,20 +21,28 @@ export function generatePageMetadata({
   const cleanPath = path.startsWith("/") ? path : `/${path}`;
   const canonicalUrl = `${baseUrl}${cleanPath}`;
   
-  // Format title: if already has brand suffix, keep it; otherwise append brand
-  let displayTitle = title.includes("| Devopstrio") || title.endsWith("Devopstrio")
-    ? title
-    : `${title} | Devopstrio`;
+  // Ensure base title is sufficiently long (between 35 and 65 characters) for SEO title length rules
+  let baseTitle = title.replace(/\s*\|\s*Devopstrio$/i, "").trim();
 
-  // Trim display title if longer than 65 characters cleanly
+  // If base title is too short (producing total length < 35 chars), enhance with keyword context
+  if (baseTitle.length + " | Devopstrio".length < 35) {
+    if (!/services|cloud|devops|ai|consulting|solutions|engineering|platform|privacy|terms/i.test(baseTitle)) {
+      baseTitle = `${baseTitle} — Enterprise Cloud & AI Engineering`;
+    } else {
+      baseTitle = `${baseTitle} & Enterprise Solutions`;
+    }
+  }
+
+  let displayTitle = `${baseTitle} | Devopstrio`;
+
+  // Trim display title cleanly if longer than 65 characters
   if (displayTitle.length > 65) {
     const brand = " | Devopstrio";
     const maxLen = 65 - brand.length;
-    let base = title.replace(/\s*\|\s*Devopstrio$/i, "").trim();
-    if (base.length > maxLen) {
-      base = base.substring(0, maxLen).trim().replace(/[\s,.-]+$/, "");
+    if (baseTitle.length > maxLen) {
+      baseTitle = baseTitle.substring(0, maxLen).trim().replace(/[\s,.-]+$/, "");
     }
-    displayTitle = `${base}${brand}`;
+    displayTitle = `${baseTitle}${brand}`;
   }
 
   // Ensure description is cleanly within 120-155 characters

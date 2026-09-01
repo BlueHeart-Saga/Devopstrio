@@ -22,7 +22,7 @@ const RelatedServices = dynamic(() => import("@/sections/industries/RelatedServi
 const IndustriesCTA = dynamic(() => import("@/sections/industries/IndustriesCTA").then((mod) => mod.IndustriesCTA));
 
 export const metadata: Metadata = {
-  title: "Industries We Serve",
+  title: "Industry Verticals & Compliant Cloud Architecture | Devopstrio",
   description: "Explore our specialized industrial solutions: Banking & Finance, Healthcare, Retail & E-commerce, Manufacturing, and Government.",
   alternates: {
     canonical: "/industries"

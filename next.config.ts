@@ -44,7 +44,6 @@ const nextConfig: NextConfig = {
   compress: true,
   poweredByHeader: false,
   reactStrictMode: true,
-  outputFileTracingRoot: path.resolve(__dirname),
   distDir: process.env.NODE_ENV === "development" ? ".next-dev" : ".next",
   experimental: {
     optimizePackageImports: [

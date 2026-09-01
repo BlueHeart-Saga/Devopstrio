@@ -5,12 +5,12 @@ import dynamic from "next/dynamic";
 import { usePathname } from "next/navigation";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { FloatingChatbot } from "@/components/FloatingChatbot";
-import { FeedbackWidget } from "@/components/FeedbackWidget";
-import { StickyContactWidget } from "@/components/StickyContactWidget";
-import { CookieConsent } from "@/components/CookieConsent";
 
 const ClickSpark = dynamic(() => import("@/components/ui/ClickSpark"), { ssr: false });
+const FloatingChatbot = dynamic(() => import("@/components/FloatingChatbot").then((m) => m.FloatingChatbot), { ssr: false });
+const FeedbackWidget = dynamic(() => import("@/components/FeedbackWidget").then((m) => m.FeedbackWidget), { ssr: false });
+const StickyContactWidget = dynamic(() => import("@/components/StickyContactWidget").then((m) => m.StickyContactWidget), { ssr: false });
+const CookieConsent = dynamic(() => import("@/components/CookieConsent").then((m) => m.CookieConsent), { ssr: false });
 
 export function LayoutNavbarWrapper({ children }: { children: React.ReactNode }) {
   const pathname = usePathname() || "/";

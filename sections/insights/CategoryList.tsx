@@ -75,7 +75,7 @@ export function CategoryList({ posts, categorySlug }: CategoryListProps) {
               return (
                 <Reveal key={post.id} delay={idx * 0.03} className="h-full">
                   <Link
-                    href={`/insights/${categorySlug}/${post.id}`}
+                    href={`/insights/${categorySlug}/${post.slug || post.id}`}
                     className={
                       isPdfCategory
                         ? "flex flex-col bg-gradient-to-b from-[#0e0e11] via-[#09090b] to-[#040405] border border-white/20 hover:border-white/40 group-hover:border-rose-500/60 p-2.5 sm:p-3 pb-4 group cursor-pointer transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_0_35px_rgba(225,29,72,0.18),0_10px_30px_rgba(0,0,0,0.8)] text-left h-full rounded-none relative overflow-hidden before:absolute before:inset-x-0 before:top-0 before:h-[1px] before:bg-gradient-to-r before:from-transparent before:via-white/40 before:to-transparent group-hover:before:via-rose-500 transition-all"

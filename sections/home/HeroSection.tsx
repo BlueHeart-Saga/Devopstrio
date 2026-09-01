@@ -342,12 +342,7 @@ export function HeroSection() {
           {/* Right Column: Person Image & Glow Background centered vertically */}
           <div className="lg:absolute lg:top-1/2 lg:-translate-y-1/2 lg:right-0 xl:right-0 relative flex items-center justify-center z-10 w-full max-w-[320px] sm:max-w-[460px] lg:max-w-[580px] xl:max-w-[680px] mt-2 lg:mt-0 pb-0 mb-0 mx-auto">
 
-            {/* Preload images to eliminate network delay on slide change */}
-            <div className="hidden" aria-hidden="true">
-              {slides.map((slide, idx) => (
-                <link key={`preload-${idx}`} rel="preload" as="image" href={slide.image} />
-              ))}
-            </div>
+            {/* Only load images on demand when slide changes */}
 
             {/* Person image */}
             <AnimatePresence mode="wait">

@@ -163,7 +163,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     posts.forEach((post) => {
       if (post.id && post.category?.slug) {
         dynamicPostPages.push({
-          url: `${baseUrl}/insights/${post.category.slug}/${post.id}`,
+          url: `${baseUrl}/insights/${post.category.slug}/${post.slug || post.id}`,
           lastModified: new Date(post.date),
           changeFrequency: "weekly",
           priority: 0.6

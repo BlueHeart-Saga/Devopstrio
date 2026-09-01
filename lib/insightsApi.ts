@@ -22,6 +22,7 @@ export interface PostBlock {
 
 export interface TransformedPost {
   id: string;
+  slug: string;
   title: string;
   section: {
     name: string;
@@ -43,6 +44,16 @@ export interface TransformedPost {
   comments: number;
   featured: boolean;
   rawBlocks?: PostBlock[];
+}
+
+export function slugify(text: string): string {
+  if (!text) return "";
+  return text
+    .toLowerCase()
+    .trim()
+    .replace(/[^\w\s-]/g, "")
+    .replace(/[\s_-]+/g, "-")
+    .replace(/^-+|-+$/g, "");
 }
 
 const SECTION_SLUG_MAP: Record<string, string> = {
@@ -325,8 +336,12 @@ class InsightsApiService {
     const categoryName = category?.name || backendContent.category?.name || backendContent.category_name || "";
     const categorySlug = category?.slug || backendContent.category?.slug || backendContent.category_slug || getCategorySlug(categoryName);
 
+    const titleSlug = slugify(backendContent.title || "");
+    const combinedSlug = titleSlug ? `${titleSlug}-${backendContent.id}` : backendContent.id;
+
     return {
       id: backendContent.id,
+      slug: combinedSlug,
       title: backendContent.title,
       section: {
         name: sectionName,

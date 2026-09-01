@@ -4,7 +4,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Terms of Service | Devopstrio",
+  title: "Terms of Service & Platform Usage Governance | Devopstrio",
   description: "Devopstrio Terms of Service outline the legal terms, client obligations, and governance details for our enterprise technical services.",
   alternates: {
     canonical: "/terms-of-service"
