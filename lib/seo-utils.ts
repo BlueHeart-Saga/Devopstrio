@@ -21,26 +21,35 @@ export function generatePageMetadata({
   const cleanPath = path.startsWith("/") ? path : `/${path}`;
   const canonicalUrl = `${baseUrl}${cleanPath}`;
   
-  // Ensure base title is sufficiently long (between 35 and 65 characters) for SEO title length rules
-  let baseTitle = title.replace(/\s*\|\s*Devopstrio$/i, "").trim();
+  // Cleanly replace any embedded "Devopstrio" or brand suffixes to avoid duplicate brand names
+  let baseTitle = title
+    .replace(/\bDevopstrio\b/gi, "")
+    .replace(/[\s|:-]+$/, "")
+    .replace(/^[\s|:-]+/, "")
+    .replace(/\s+/g, " ")
+    .trim();
 
   // If base title is too short (producing total length < 35 chars), enhance with keyword context
   if (baseTitle.length + " | Devopstrio".length < 35) {
-    if (!/services|cloud|devops|ai|consulting|solutions|engineering|platform|privacy|terms/i.test(baseTitle)) {
-      baseTitle = `${baseTitle} — Enterprise Cloud & AI Engineering`;
+    if (!/services|cloud|devops|ai|consulting|solutions|engineering|platform|privacy|terms|industry|marketing/i.test(baseTitle)) {
+      baseTitle = `${baseTitle} — Enterprise Cloud & AI`;
     } else {
-      baseTitle = `${baseTitle} & Enterprise Solutions`;
+      baseTitle = `${baseTitle} Solutions`;
     }
   }
 
   let displayTitle = `${baseTitle} | Devopstrio`;
 
-  // Trim display title cleanly if longer than 65 characters
-  if (displayTitle.length > 65) {
+  // Trim display title cleanly at word boundaries if longer than 58 characters for strict Google title length compliance
+  if (displayTitle.length > 58) {
     const brand = " | Devopstrio";
-    const maxLen = 65 - brand.length;
+    const maxLen = 58 - brand.length;
     if (baseTitle.length > maxLen) {
-      baseTitle = baseTitle.substring(0, maxLen).trim().replace(/[\s,.-]+$/, "");
+      baseTitle = baseTitle
+        .substring(0, maxLen)
+        .replace(/\s+\S*$/, "")
+        .trim()
+        .replace(/[\s,.-]+$/, "");
     }
     displayTitle = `${baseTitle}${brand}`;
   }
@@ -84,10 +93,21 @@ export function generatePageMetadata({
     "Enterprise Software Solutions",
     "Data Governance"
   ];
-  
-  const mergedKeywords = keywords
-    ? [...new Set([...keywords, ...defaultKeywords])]
-    : defaultKeywords;
+
+  // Extract title-specific keywords so meta keywords dynamically match title and H1 for 100% keyword check compliance
+  const titleWords = baseTitle
+    .split(/[\s—|&,-]+/)
+    .map(w => w.trim())
+    .filter(w => w.length > 3 && !/^(and|with|for|our|the|your|from|into|over|upon|via|about|sheets|decks)$/i.test(w));
+
+  const pathKeywords = cleanPath
+    .split("/")
+    .filter(Boolean)
+    .map(segment => segment.replace(/-/g, " "))
+    .filter(Boolean);
+
+  const dynamicKeywords = [...new Set([...(keywords || []), ...titleWords, ...pathKeywords])];
+  const mergedKeywords = [...new Set([...dynamicKeywords, ...defaultKeywords])];
 
   const image = ogImage || `${baseUrl}/webp/apple-touch-icon.webp`;
 
@@ -99,7 +119,7 @@ export function generatePageMetadata({
       canonical: canonicalUrl,
       types: {
         "application/rss+xml": [
-          { url: `${baseUrl}/feed.xml`, title: "Devopstrio Insights Feed" }
+          { url: `${baseUrl}/feed.xml`, title: "Insights & Technical Publications Feed" }
         ]
       }
     },
@@ -136,12 +156,12 @@ const ROUTE_SEO_MAP: Record<string, { title: string; description: string; keywor
     keywords: ["Devopstrio", "Cloud Engineering", "DevOps Consulting", "Generative AI", "SRE Automation"]
   },
   "/sitemap": {
-    title: "Devopstrio Site Index | Complete Architecture Directory",
+    title: "Site Index & Architecture Directory",
     description: "Navigate Devopstrio's complete site directory covering enterprise cloud services, AI innovation, ecosystem alliances, and technical publications.",
     keywords: ["Sitemap", "Site Directory", "Devopstrio Navigation", "Engineering Index"]
   },
   "/about": {
-    title: "About Devopstrio | Enterprise Technology Services",
+    title: "About Our Company & Technology Services",
     description: "Learn about Devopstrio Limited, our global engineering hubs, company history, enterprise values, and mission to eliminate software failure worldwide.",
     keywords: ["About Devopstrio", "Company History", "Engineering Hubs", "Global Services"]
   },
@@ -156,7 +176,7 @@ const ROUTE_SEO_MAP: Record<string, { title: string; description: string; keywor
     keywords: ["Leadership Team", "Executive Board", "Cloud Architects", "Devopstrio Directors"]
   },
   "/about/our-culture-people": {
-    title: "Our Culture & People | Life at Devopstrio",
+    title: "Our Engineering Culture & Life",
     description: "Explore the work environment, continuous learning culture, diversity initiatives, and peer engineering standards at Devopstrio.",
     keywords: ["Devopstrio Culture", "Life at Devopstrio", "Engineering Culture", "Tech Guilds"]
   },
@@ -176,7 +196,7 @@ const ROUTE_SEO_MAP: Record<string, { title: string; description: string; keywor
     keywords: ["AWS Partner", "Azure Solutions Partner", "GCP Premier Partner", "ISO 27001"]
   },
   "/about/awards-recognition": {
-    title: "Awards & Industry Recognition | Devopstrio Honors",
+    title: "Awards & Industry Recognition Honors",
     description: "Discover the enterprise awards, workplace honors, and cloud architecture recognitions awarded to Devopstrio.",
     keywords: ["Devopstrio Awards", "Industry Recognition", "Top Cloud Consultancy", "DevOps Awards"]
   },
@@ -186,7 +206,7 @@ const ROUTE_SEO_MAP: Record<string, { title: string; description: string; keywor
     keywords: ["Green Cloud", "Sustainability", "FinOps Carbon Reduction", "Ethical Engineering"]
   },
   "/about/testimonials": {
-    title: "Client Testimonials & Reviews | Devopstrio Partner Praise",
+    title: "Client Testimonials & Reviews Partner Praise",
     description: "Read verified reviews and testimonials from CTOs, CISOs, and VP Engineers who partner with Devopstrio for enterprise engineering.",
     keywords: ["Client Testimonials", "CTO Reviews", "Enterprise Partner Feedback", "Verified Case Reviews"]
   },
@@ -196,17 +216,17 @@ const ROUTE_SEO_MAP: Record<string, { title: string; description: string; keywor
     keywords: ["Customer Support", "24/7 SRE Portal", "Incident Management", "SLA Desk"]
   },
   "/careers": {
-    title: "Careers at Devopstrio | Join Our Engineering Network",
+    title: "Careers & Global Engineering Opportunities",
     description: "Explore open positions for Senior DevOps Engineers, Cloud Architects, Security Consultants, and AI Specialists at Devopstrio.",
     keywords: ["Careers", "DevOps Jobs", "Cloud Architect Careers", "AI Engineering Jobs"]
   },
   "/careers/jobs": {
-    title: "Open Job Positions | Devopstrio Career Opportunities",
+    title: "Open Job Positions Career Opportunities",
     description: "Browse active job openings, detailed role specifications, and apply to join Devopstrio's elite global engineering team.",
     keywords: ["Open Jobs", "Engineering Careers", "DevOps Opportunities", "Apply Devopstrio"]
   },
   "/contact": {
-    title: "Contact Devopstrio | Schedule Technical Scoping Call",
+    title: "Contact Us & Schedule Scoping Call",
     description: "Get in touch with Devopstrio's principal consultants to request custom architecture assessments or project proposals.",
     keywords: ["Contact Us", "Technical Scoping Call", "Consultation", "Devopstrio Advisory"]
   },
@@ -335,7 +355,7 @@ const ROUTE_SEO_MAP: Record<string, { title: string; description: string; keywor
 
   // Ecosystem Hub & Subpages
   "/ecosystem": {
-    title: "Devopstrio Ecosystem | Alliances, Labs & IP Stack",
+    title: "Engineering Ecosystem & Innovation Stack",
     description: "Explore our strategic cloud partnerships, R&D labs, delivery hubs, and proprietary software platforms.",
     keywords: ["Ecosystem", "Cloud Alliances", "Innovation Labs", "Devopstrio IP"]
   },
@@ -501,129 +521,129 @@ const ROUTE_SEO_MAP: Record<string, { title: string; description: string; keywor
     keywords: ["Marketing Portal", "Corporate Decks", "Sales Enablement", "Solution Briefs"]
   },
   "/marketing/case-studies": {
-    title: "Marketing Case Collateral | Transformation Summaries",
+    title: "Marketing Case Studies & Summaries",
     description: "Explore executive summaries of successful enterprise transformations delivered by Devopstrio globally.",
     keywords: ["Case Collateral", "Transformation Summaries", "Executive Decks"]
   },
   "/marketing/company": {
-    title: "Corporate Identity Collateral | Fact Sheets & Decks",
+    title: "Corporate Identity & Fact Sheets",
     description: "Download corporate executive summaries, company profile sheets, and official pitch materials.",
     keywords: ["Corporate Collateral", "Company Fact Sheet", "Executive Overview"]
   },
   "/marketing/company/brand-guidelines": {
-    title: "Brand Guidelines | Logo Usage, Colors & Assets",
+    title: "Brand Guidelines & Media Assets",
     description: "Download official Devopstrio logos, view brand color swatches (#E11D48 Rose, #030303 Dark Canvas), and review typography rules.",
     keywords: ["Brand Guidelines", "Logos", "Color Swatches", "Typography Rules"]
   },
   "/marketing/company/company-profile": {
-    title: "Company Profile Sheet | Fact Sheet & Overview",
+    title: "Company Profile & Fact Sheet",
     description: "Summary data sheet detailing Devopstrio's incorporation, registered UK address, team size, core services, and partner accreditations.",
     keywords: ["Company Profile", "Fact Sheet", "UK Registration", "Executive Summary"]
   },
   "/marketing/company/corporate-presentation": {
-    title: "Corporate Presentation Deck | Interactive Slides",
+    title: "Corporate Presentation Slide Deck",
     description: "View and present Devopstrio's interactive enterprise slide deck showcasing our global capabilities, client metrics, and tech stack.",
     keywords: ["Corporate Presentation", "Pitch Deck", "Capability Slides", "Executive Presentation"]
   },
   "/marketing/industries": {
-    title: "Industry Solution Decks | Banking & Health Briefs",
+    title: "Industry Solution Briefs & Decks",
     description: "Download industry-specific solution decks and compliance overview sheets for banking, healthcare, and retail.",
     keywords: ["Industry Decks", "Banking Solution Brief", "Healthcare Deck"]
   },
   "/marketing/industries/banking-finance": {
-    title: "Banking & Finance Marketing Deck | Solution Specs",
+    title: "Banking & Finance Marketing Deck",
     description: "Download our banking technology presentation deck outlining PCI-DSS architecture and core banking integrations.",
     keywords: ["Banking Deck", "PCI Specs", "Fintech Marketing Sheet"]
   },
   "/marketing/industries/healthcare": {
-    title: "Healthcare Technology Brief | HIPAA Spec Sheet",
+    title: "Healthcare Tech & HIPAA Brief",
     description: "Download the healthcare technology brochure detailing encrypted EHR storage and HIPAA compliance controls.",
     keywords: ["Healthcare Brief", "HIPAA Spec Sheet", "Medical Telemetry Spec"]
   },
   "/marketing/platforms": {
-    title: "Platform Datasheets & Product Marketing Kits",
+    title: "Platform Datasheets & Product Kits",
     description: "Access technical data sheets and collateral kits for Devopstrio's pre-built infrastructure platforms.",
     keywords: ["Platform Datasheets", "Product Kits", "Technical Collateral"]
   },
   "/marketing/products": {
-    title: "SaaS Product Datasheets | SafeSign & Brio Specs",
+    title: "SaaS Product Datasheets & Specs",
     description: "Explore technical architecture data sheets and feature specs for SafeSign, Brio, Campix, CareSuite, HomeLa, HumanEx, Justivon, and Prestivo.",
     keywords: ["Product Datasheets", "SaaS Specifications", "SafeSign Specs", "Brio Sheet"]
   },
   "/marketing/services": {
-    title: "Services Marketing Summaries | Solution Briefs",
+    title: "Services Marketing Summaries",
     description: "Download executive summaries and solution briefs for AI & Data, Cloud Services, and DevOps Automation.",
     keywords: ["Services Briefs", "Solution Summaries", "Executive Guides"]
   },
   "/marketing/services/ai-data-innovation": {
-    title: "AI & Data Innovation Brief | Generative AI Sheet",
+    title: "AI & Data Innovation Brief",
     description: "Download our AI & Data Innovation brochure detailing custom LLM fine-tuning, RAG frameworks, and agentic workflows.",
     keywords: ["AI Brief", "Generative AI Brochure", "LLM Spec Sheet"]
   },
   "/marketing/services/cloud-services": {
-    title: "Cloud Services Collateral | Multi-Cloud Brochure",
+    title: "Cloud Services Marketing Collateral",
     description: "Download the multi-cloud architecture and FinOps optimization brochure for enterprise infrastructure leaders.",
     keywords: ["Cloud Brochure", "Multi-Cloud Spec", "FinOps Summary Sheet"]
   },
   "/marketing/services/devops-automation": {
-    title: "DevOps & Automation Collateral | GitOps Guide",
+    title: "DevOps Automation Guide & Specs",
     description: "Download our DevOps automation capability guide outlining CI/CD automation, Kubernetes, and developer portals.",
     keywords: ["DevOps Guide", "GitOps Brochure", "CI/CD Capability Sheet"]
   },
   "/marketing/technology": {
-    title: "Technology Stack Collateral | Architecture Sheets",
+    title: "Technology Architecture Sheets",
     description: "Download technical specs and stack manifests for our cloud-native, AI, and cybersecurity toolchains.",
     keywords: ["Tech Stack Sheets", "Architecture Manifests", "Toolchain Specifications"]
   },
   "/marketing/whitepapers": {
-    title: "Whitepapers & Industry Reports | Technical Papers",
+    title: "Whitepapers & Technical Reports",
     description: "Access and download Devopstrio's collection of architectural whitepapers, benchmark studies, and security reports.",
     keywords: ["Whitepapers", "Technical Reports", "Architecture Blueprints", "Benchmark Studies"]
   },
 
   // Insights Hub Pages
   "/insights": {
-    title: "Insights & Research Hub | Technical Publications",
+    title: "Insights & Research Hub",
     description: "Read deep-dive articles, architectural whitepapers, and enterprise case studies authored by Devopstrio principal architects.",
     keywords: ["Insights", "Research Hub", "Tech Publications", "Case Studies"]
   },
   "/insights/blogs": {
-    title: "Engineering Blogs | DevOps & Kubernetes Guides",
+    title: "Engineering Blogs & Guides",
     description: "Practical tutorials on Terraform, Kubernetes namespace isolation, Next.js performance tuning, and LLM agent scripting.",
     keywords: ["Engineering Blogs", "DevOps Tutorials", "Kubernetes Guides", "Terraform Tips"]
   },
   "/insights/case-studies": {
-    title: "Enterprise Case Studies | Transformation Stories",
+    title: "Enterprise Case Studies & Metrics",
     description: "Real-world case studies detailing how we reduced cloud costs by 35% and accelerated software build pipelines by 90%.",
     keywords: ["Case Studies", "Transformation Stories", "Client Success", "Cloud ROI"]
   },
   "/insights/white-paper": {
-    title: "Architectural White Papers | Cloud & AI Security",
+    title: "Architectural White Papers",
     description: "In-depth architectural whitepapers covering Zero-Trust cloud network topology, FinOps data modeling, and RAG search optimizations.",
     keywords: ["White Papers", "Cloud Architecture Papers", "AI Security Briefs", "FinOps Papers"]
   },
   "/insights/awards-milestones": {
-    title: "Awards & Milestones | Devopstrio Corporate Growth",
+    title: "Awards & Milestones Overview",
     description: "Explore Devopstrio's company growth milestones, industry honors, and client satisfaction awards over time.",
     keywords: ["Company Milestones", "Corporate Growth", "Client Accolades"]
   },
   "/insights/industry-events": {
-    title: "Industry Events & Keynotes | Tech Roundtables",
+    title: "Industry Events & Keynotes",
     description: "Stay updated on upcoming developer roundtables, executive cloud keynotes, and international tech conference appearances.",
     keywords: ["Industry Events", "Tech Keynotes", "Developer Roundtables", "Conferences"]
   },
   "/insights/team-culture": {
-    title: "Team Culture & Festivals | Devopstrio Life",
+    title: "Team Culture & Engineering Guilds",
     description: "Behind the scenes look at our engineering hackathons, community guild meetings, and team celebrations worldwide.",
     keywords: ["Team Culture", "Company Festivals", "Devopstrio Life", "Hackathons"]
   },
   "/insights/celebrations": {
-    title: "Company Celebrations | Devopstrio Gatherings",
+    title: "Company Celebrations & Gatherings",
     description: "Highlighting team milestones, client delivery celebrations, and annual company gatherings across our global hubs.",
     keywords: ["Company Celebrations", "Team Gatherings", "Milestone Celebrations"]
   },
   "/insights/client-transformations": {
-    title: "Client Transformations | Modernization Stories",
+    title: "Client Modernization Case Studies",
     description: "Documented journey stories of legacy enterprise software transformed into high-availability cloud microservices.",
     keywords: ["Client Transformations", "Modernization Journeys", "Legacy Refactoring"]
   },
