@@ -83,7 +83,7 @@ export default async function PostDetailPage({ params }: PostDetailPageProps) {
       // Load related posts from same category
       const allPosts = await insightsApi.getAllPosts(100);
       relatedPosts = allPosts
-        .filter((p) => p.category?.slug === categorySlug && p.id !== post.id)
+        .filter((p) => p.category?.slug === categorySlug && p.id !== data.id)
         .slice(0, 5);
     }
   } catch (err) {
