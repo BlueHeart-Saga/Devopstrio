@@ -157,162 +157,111 @@ export function Challenges({
             CHALLENGE + SOLUTION
             Content-driven height
         ===================================================== */}
-        {capDetail && (
-          <div className="grid grid-cols-1 gap-6 lg:grid-cols-2 lg:gap-8">
+        {activeCapabilities.map((cap, capIdx) => {
+          const isSelected = capIdx === activeIdx;
+          const currentDetail = (getCapability(serviceSlug, cap.slug) as CapabilityDetail) || (isSelected ? capDetail : null);
+          if (!currentDetail) return null;
 
-            {/* =================================================
-                CHALLENGE CARD
-            ================================================= */}
-            <Reveal>
-              <div className="group relative flex flex-col overflow-hidden rounded-3xl border border-zinc-800/80 bg-zinc-950/70 p-7 shadow-[0_12px_40px_rgba(0,0,0,0.35)] transition-all duration-500 hover:border-zinc-700 md:p-9 lg:p-10">
+          return (
+            <div key={cap.slug} className={`gap-6 lg:gap-8 ${isSelected ? "grid grid-cols-1 lg:grid-cols-2" : "hidden"}`}>
+              {/* CHALLENGE CARD */}
+              <Reveal>
+                <div className="group relative flex flex-col overflow-hidden rounded-3xl border border-zinc-800/80 bg-zinc-950/70 p-7 shadow-[0_12px_40px_rgba(0,0,0,0.35)] transition-all duration-500 hover:border-zinc-700 md:p-9 lg:p-10">
+                  <div className="pointer-events-none absolute -right-24 -top-24 h-56 w-56 rounded-full bg-red-500/[0.035] blur-3xl transition-all duration-500 group-hover:bg-red-500/[0.06]" />
 
-                {/* Glow */}
-                <div className="pointer-events-none absolute -right-24 -top-24 h-56 w-56 rounded-full bg-red-500/[0.035] blur-3xl transition-all duration-500 group-hover:bg-red-500/[0.06]" />
-
-                <div className="relative z-10">
-
-                  {/* Card header */}
-                  <div className="mb-7 flex items-center justify-between">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-red-500/20 bg-red-950/20 text-red-500">
-                      <AlertCircle
-                        size={22}
-                        strokeWidth={1.8}
-                      />
+                  <div className="relative z-10">
+                    <div className="mb-7 flex items-center justify-between">
+                      <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-red-500/20 bg-red-950/20 text-red-500">
+                        <AlertCircle size={22} strokeWidth={1.8} />
+                      </div>
                     </div>
 
-                    {/* <span className="font-mono text-xs font-semibold tracking-widest text-zinc-500">
-                      01 / CHALLENGE
-                    </span> */}
+                    <h3 className="mb-4 text-2xl font-semibold uppercase tracking-wider text-zinc-400">
+                      Core Challenge
+                    </h3>
+
+                    <p className="text-base font-normal leading-relaxed text-zinc-200 md:text-lg md:leading-relaxed lg:text-[19px]">
+                      {currentDetail.challenge}
+                    </p>
                   </div>
 
-                  <h3 className="mb-4 text-2xl font-semibold uppercase tracking-wider text-zinc-400">
-                    Core Challenge
-                  </h3>
-
-                  <p className="text-base font-normal leading-relaxed text-zinc-200 md:text-lg md:leading-relaxed lg:text-[19px]">
-                    {capDetail.challenge}
-                  </p>
-                </div>
-
-                {/* Footer follows content */}
-                <div className="relative z-10 mt-8 border-t border-zinc-900 pt-5">
-                  <div className="flex items-center gap-3">
-                    <span className="h-2 w-2 rounded-full bg-red-500" />
-
-                    <span className="text-xs font-bold uppercase tracking-wider text-zinc-400">
-                      Business Bottleneck
-                    </span>
+                  <div className="relative z-10 mt-8 border-t border-zinc-900 pt-5">
+                    <div className="flex items-center gap-3">
+                      <span className="h-2 w-2 rounded-full bg-red-500" />
+                      <span className="text-xs font-bold uppercase tracking-wider text-zinc-400">
+                        Business Bottleneck
+                      </span>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </Reveal>
+              </Reveal>
 
-            {/* =================================================
-                SOLUTION CARD
-            ================================================= */}
-            <Reveal delay={0.05}>
-              <div className="group relative flex flex-col overflow-hidden rounded-3xl border border-rose-500/15 bg-zinc-950/80 p-7 shadow-[0_12px_40px_rgba(0,0,0,0.4)] transition-all duration-500 hover:border-rose-500/30 md:p-9 lg:p-10">
+              {/* SOLUTION CARD */}
+              <Reveal delay={0.05}>
+                <div className="group relative flex flex-col overflow-hidden rounded-3xl border border-rose-500/15 bg-zinc-950/80 p-7 shadow-[0_12px_40px_rgba(0,0,0,0.4)] transition-all duration-500 hover:border-rose-500/30 md:p-9 lg:p-10">
+                  <div className="pointer-events-none absolute -right-24 -top-24 h-56 w-56 rounded-full bg-rose-500/[0.035] blur-3xl transition-all duration-500 group-hover:bg-rose-500/[0.07]" />
 
-                {/* Glow */}
-                <div className="pointer-events-none absolute -right-24 -top-24 h-56 w-56 rounded-full bg-rose-500/[0.035] blur-3xl transition-all duration-500 group-hover:bg-rose-500/[0.07]" />
-
-                <div className="relative z-10">
-
-                  {/* Card header */}
-                  <div className="mb-7 flex items-center justify-between">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-rose-500/20 bg-rose-950/20 text-rose-500">
-                      <CheckCircle
-                        size={22}
-                        strokeWidth={1.8}
-                      />
+                  <div className="relative z-10">
+                    <div className="mb-7 flex items-center justify-between">
+                      <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-rose-500/20 bg-rose-950/20 text-rose-500">
+                        <CheckCircle size={22} strokeWidth={1.8} />
+                      </div>
                     </div>
 
-                    {/* <span className="font-mono text-xs font-semibold tracking-widest text-rose-400/70">
-                      02 / SOLUTION
-                    </span> */}
-                  </div>
+                    <h3 className="mb-4 text-2xl font-semibold uppercase tracking-wider text-rose-400">
+                      Devopstrio Solution
+                    </h3>
 
-                  <h3 className="mb-4 text-2xl font-semibold uppercase tracking-wider text-rose-400">
-                    Devopstrio Solution
-                  </h3>
+                    <p className="text-base font-normal leading-relaxed text-white md:text-lg md:leading-relaxed lg:text-[19px]">
+                      {currentDetail.solution}
+                    </p>
 
-                  <p className="text-base font-normal leading-relaxed text-white md:text-lg md:leading-relaxed lg:text-[19px]">
-                    {capDetail.solution}
-                  </p>
-
-                  {/* =========================================
-                      DELIVERABLES
-                  ========================================= */}
-                  {capDetail.features &&
-                    capDetail.features.length > 0 && (
+                    {currentDetail.features && currentDetail.features.length > 0 && (
                       <div className="mt-8 border-t border-zinc-900 pt-6">
                         <h4 className="mb-4 text-xs font-bold uppercase tracking-wider text-zinc-400">
                           Solution Deliverables
                         </h4>
-
                         <ul className="space-y-3.5">
-                          {capDetail.features.map(
-                            (feature, fIdx) => (
-                              <li
-                                key={fIdx}
-                                className="flex items-start gap-3 text-sm font-medium leading-relaxed text-zinc-200 md:text-base md:leading-relaxed"
-                              >
-                                <CheckCircle
-                                  size={17}
-                                  strokeWidth={2}
-                                  className="mt-0.5 shrink-0 text-rose-500"
-                                />
-
-                                <span>{feature}</span>
-                              </li>
-                            )
-                          )}
+                          {currentDetail.features.map((feature, fIdx) => (
+                            <li key={fIdx} className="flex items-start gap-3 text-sm font-medium leading-relaxed text-zinc-200 md:text-base md:leading-relaxed">
+                              <CheckCircle size={17} strokeWidth={2} className="mt-0.5 shrink-0 text-rose-500" />
+                              <span>{feature}</span>
+                            </li>
+                          ))}
                         </ul>
                       </div>
                     )}
 
-                  {/* =========================================
-                      OUTCOMES
-                  ========================================= */}
-                  {capDetail.benefits &&
-                    capDetail.benefits.length > 0 && (
+                    {currentDetail.benefits && currentDetail.benefits.length > 0 && (
                       <div className="mt-8 border-t border-zinc-900 pt-6">
                         <h4 className="mb-4 text-xs font-bold uppercase tracking-wider text-rose-400">
                           Resolved Outcomes
                         </h4>
-
                         <ul className="space-y-3.5">
-                          {capDetail.benefits.map(
-                            (benefit, bIdx) => (
-                              <li
-                                key={bIdx}
-                                className="flex items-start gap-3 text-sm font-medium leading-relaxed text-zinc-100 md:text-base md:leading-relaxed"
-                              >
-                                <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-rose-500" />
-
-                                <span>{benefit}</span>
-                              </li>
-                            )
-                          )}
+                          {currentDetail.benefits.map((benefit, bIdx) => (
+                            <li key={bIdx} className="flex items-start gap-3 text-sm font-medium leading-relaxed text-zinc-100 md:text-base md:leading-relaxed">
+                              <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-rose-500" />
+                              <span>{benefit}</span>
+                            </li>
+                          ))}
                         </ul>
                       </div>
                     )}
-                </div>
+                  </div>
 
-                {/* Footer follows content */}
-                <div className="relative z-10 mt-8 border-t border-zinc-900 pt-5">
-                  <div className="flex items-center gap-3">
-                    <span className="h-2 w-2 rounded-full bg-rose-500" />
-
-                    <span className="text-xs font-bold uppercase tracking-wider text-rose-400">
-                      Resolved Outcome
-                    </span>
+                  <div className="relative z-10 mt-8 border-t border-zinc-900 pt-5">
+                    <div className="flex items-center gap-3">
+                      <span className="h-2 w-2 rounded-full bg-rose-500" />
+                      <span className="text-xs font-bold uppercase tracking-wider text-rose-400">
+                        Resolved Outcome
+                      </span>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </Reveal>
-          </div>
-        )}
+              </Reveal>
+            </div>
+          );
+        })}
       </div>
     </section>
   );

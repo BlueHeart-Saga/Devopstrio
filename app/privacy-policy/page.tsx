@@ -11,6 +11,19 @@ export const metadata: Metadata = {
   }
 };
 
+import { BreadcrumbSchema, FAQSchema } from "@/components/seo/Schemas";
+
+const privacyFaqs = [
+  {
+    q: "How does Devopstrio protect personal data under GDPR and CCPA?",
+    a: "We act as Data Controller and Data Processor under strict ISO 27001 and SOC-2 guidelines, utilizing TLS 1.3 encryption in transit, AES-256 at rest, and zero-trust RBAC access controls."
+  },
+  {
+    q: "Does Devopstrio sell or share personal data to third parties?",
+    a: "No. Devopstrio maintains a strict policy never to sell, rent, or trade personal data to third parties for marketing purposes."
+  }
+];
+
 export default function PrivacyPolicyPage() {
   const sections = [
     {
@@ -234,11 +247,18 @@ export default function PrivacyPolicyPage() {
   ];
 
   return (
-    <LegalPageLayout
-      title="Privacy Policy"
-      subtitle="How Devopstrio protects, manages, and respects your personal data in connection with our website and enterprise engineering platforms."
-      lastUpdated="June 16, 2026"
-      sections={sections}
-    />
+    <>
+      <BreadcrumbSchema items={[
+        { name: "Home", item: "/" },
+        { name: "Privacy Policy", item: "/privacy-policy" }
+      ]} />
+      <FAQSchema faqs={privacyFaqs} />
+      <LegalPageLayout
+        title="Privacy Policy"
+        subtitle="How Devopstrio protects, manages, and respects your personal data in connection with our website and enterprise engineering platforms."
+        lastUpdated="June 16, 2026"
+        sections={sections}
+      />
+    </>
   );
 }

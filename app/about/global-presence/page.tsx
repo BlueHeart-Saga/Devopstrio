@@ -119,6 +119,32 @@ const locations = [
 
 const filters = ["All", "India", "Europe", "North America"];
 
+import { FAQ } from "@/components/services/FAQ";
+import { FAQSchema } from "@/components/seo/Schemas";
+
+const presenceFaqs = [
+  {
+    q: "Where are Devopstrio's global engineering hubs located?",
+    a: "Our global headquarters are in London, UK, with client support offices in Mt. Juliet, Tennessee, USA, and primary technology & operations centers in Bengaluru, Chennai, and Thoothukudi, India.",
+    proof: "✓ UK HQ · USA Support · India Delivery Centers"
+  },
+  {
+    q: "How does Devopstrio's follow-the-sun delivery model work?",
+    a: "Our distributed delivery nodes span multiple timezones across Europe, North America, and Asia-Pacific. This ensures continuous 24/7 SRE monitoring, seamless handovers, and rapid incident resolution.",
+    tags: ["24/7 Follow-the-Sun", "Multi-Timezone Coverage", "Seamless Handovers"]
+  },
+  {
+    q: "What security measures govern global delivery across locations?",
+    a: "All global hubs operate under strict ISO 27001, SOC-2 Type II, and Cyber Essentials security controls. Data stays localized or encrypted with zero unauthorized cross-border data transfer.",
+    proof: "✓ ISO 27001 & SOC-2 Compliant Global Operations"
+  },
+  {
+    q: "Can clients visit or collaborate directly with regional Devopstrio teams?",
+    a: "Yes. Our London HQ and regional client experience centers host regular architecture workshops, scoping sprints, and joint technical planning sessions with enterprise leadership.",
+    tags: ["Client Experience Centers", "Architecture Sprints", "Joint Governance"]
+  }
+];
+
 export default function GlobalPresencePage() {
   return (
     <main className="min-h-screen bg-black text-white font-sans relative">
@@ -127,6 +153,7 @@ export default function GlobalPresencePage() {
         { name: "About Us", item: "/about/company-overview" },
         { name: "Global Presence", item: "/about/global-presence" }
       ]} />
+      <FAQSchema faqs={presenceFaqs} />
 
       {/* Glow Ambient background */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[radial-gradient(circle_at_center,rgba(225,29,72,0.03),transparent_70%)] pointer-events-none" />
@@ -136,7 +163,7 @@ export default function GlobalPresencePage() {
         <PresenceHeroCard />
       </div>
 
-      {/* 2. Virtual Tour Trip Section (People & Places) */}
+      {/* 2. Virtual Tour Trip Section */}
       <div id="tour-trip">
         <PresenceTourTrip />
       </div>
@@ -146,77 +173,56 @@ export default function GlobalPresencePage() {
         <PresenceHero />
       </div>
 
-      {/* Section Navbar */}
-      {/* <SectionNavbar sections={globalPresenceSections} /> */}
-
-      {/* Divider */}
-      {/* <SvgWaveLine variant="smooth" /> */}
-
-      {/* 2. Global Story Intro */}
+      {/* 4. Global Story Intro */}
       <div id="story">
         <StoryIntro />
       </div>
 
-      {/* Divider */}
-      {/* <SvgWaveLine variant="dashed" /> */}
-
-      {/* Brand Story (Zoho-style) */}
+      {/* Brand Story */}
       <div id="brand-story">
         <BrandStory />
       </div>
 
-      {/* Divider */}
-      {/* <SvgWaveLine variant="particles" /> */}
-
       {/* Engineering Story */}
-      {/* <div id="engineering-story">
+      <div id="engineering-story">
         <EngineeringStory />
-      </div> */}
+      </div>
 
-      {/* Divider */}
       <SvgWaveLine variant="liquid" />
 
-      {/* 3. Interactive World Map */}
+      {/* 5. Interactive World Map */}
       <div id="map">
         <InteractiveMap locations={locations} filters={filters} />
       </div>
 
-      {/* Divider */}
       <SvgWaveLine variant="smooth" />
 
-      {/* 4. Location Spotlight Grid */}
+      {/* 6. Location Spotlight Grid */}
       <div id="hubs">
         <HubSpotlight locations={locations} />
       </div>
 
-      {/* Divider */}
       <SvgWaveLine variant="liquid" />
 
-      {/* 5. How Our Global Delivery Model Works */}
+      {/* 7. Global Delivery Model */}
       <div id="delivery">
         <DeliveryModel />
       </div>
 
-      {/* Divider */}
-      {/* <SvgWaveLine variant="smooth" /> */}
-
-      {/* 6. Why It Matters to Clients */}
-      {/* <div id="benefits">
+      {/* 8. Business Benefits */}
+      <div id="benefits">
         <BusinessBenefits />
-      </div> */}
+      </div>
 
-      {/* Divider */}
-      {/* <SvgWaveLine variant="liquid" /> */}
-
-      {/* 7. Global Operations by the Numbers */}
-      {/* <div id="numbers">
+      {/* 9. Global Metrics */}
+      <div id="numbers">
         <GlobalMetrics />
-      </div> */}
+      </div>
 
-      {/* Divider */}
-      {/* <SvgWaveLine variant="smooth" /> */}
+      {/* 10. Presence FAQs */}
+      <FAQ faqs={presenceFaqs} title="Global Presence" highlight="FAQs" />
 
-      {/* 8. Connect With a Regional Team (CTA) */}
+      {/* 11. Connect With a Regional Team (CTA) */}
       <GlobalCTA />
     </main>
   );

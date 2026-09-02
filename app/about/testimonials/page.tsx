@@ -26,6 +26,27 @@ export const metadata: Metadata = {
   },
 };
 
+import { FAQ } from "@/components/services/FAQ";
+import { ReviewSchema, FAQSchema } from "@/components/seo/Schemas";
+
+const testimonialFaqs = [
+  {
+    q: "How does Devopstrio measure and verify client success metrics?",
+    a: "We establish clear baseline telemetry before every engagement. Outcomes such as 30–50% FinOps cost reduction, 3× deployment velocity, and 99.99% uptime are tracked continuously in Grafana dashboards and audited quarterly.",
+    proof: "✓ 2,500+ Projects Delivered · 98% Verified Client CSAT"
+  },
+  {
+    q: "Can prospective enterprise clients request reference calls?",
+    a: "Yes. For qualified enterprise scoping reviews, we arrange peer-to-peer reference conversations with active CTOs, CISOs, and VP Engineers who partner with Devopstrio across banking, healthcare, and retail verticals.",
+    proof: "✓ Peer-to-Peer Enterprise Reference Connections"
+  },
+  {
+    q: "What industries are represented in Devopstrio's client portfolio?",
+    a: "Our client success references span Banking & Institutional Finance, Healthcare & Life Sciences, Retail & E-Commerce, Smart Manufacturing, Media & Entertainment, Government, and Telecom networks.",
+    tags: ["Banking & Finance", "Healthcare & HIPAA", "E-Commerce", "Gov-Tech"]
+  }
+];
+
 export default function TestimonialsPage() {
   return (
     <main className="min-h-screen bg-black text-white font-sans overflow-x-hidden">
@@ -36,6 +57,8 @@ export default function TestimonialsPage() {
           { name: "Testimonials & Success", item: "/about/testimonials" },
         ]}
       />
+      <ReviewSchema />
+      <FAQSchema faqs={testimonialFaqs} />
 
       {/* 1. Hero */}
       <TestimonialsHero />
@@ -56,9 +79,12 @@ export default function TestimonialsPage() {
       <CaseStudyHighlights />
 
       {/* 7. Industries & Trust Signals */}
-      {/* <IndustriesTrust /> */}
+      <IndustriesTrust />
 
-      {/* 8. Global CTA Component */}
+      {/* 8. Testimonials FAQs */}
+      <FAQ faqs={testimonialFaqs} title="Client Success" highlight="FAQs" />
+
+      {/* 9. Global CTA Component */}
       <TestimonialsCTA />
     </main>
   );

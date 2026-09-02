@@ -15,6 +15,8 @@ import { ExcellenceSuccessStories } from "@/sections/ecosystem/excellence/Excell
 import { EngineeringPrinciples } from "@/sections/ecosystem/excellence/EngineeringPrinciples";
 import { ExcellenceCTA } from "@/sections/ecosystem/excellence/ExcellenceCTA";
 
+import { BreadcrumbSchema, FAQSchema } from "@/components/seo/Schemas";
+
 export default function EngineeringExcellencePage() {
   const domain = "engineering-excellence";
   const data = getEcosystemDomain(domain);
@@ -31,13 +33,19 @@ export default function EngineeringExcellencePage() {
     { id: "innovation", label: "Programs" },
     { id: "lifecycle", label: "Lifecycle" },
     { id: "success-stories", label: "Success Stories" },
-    // { id: "principles", label: "Principles" },
+    { id: "principles", label: "Principles" },
     { id: "faq", label: "FAQ" }
   ];
 
   return (
     <main className="min-h-screen bg-black text-white pt-12 md:pt-14 font-sans">
-      
+      <BreadcrumbSchema items={[
+        { name: "Home", item: "/" },
+        { name: "Ecosystem", item: "/ecosystem" },
+        { name: "Engineering Excellence", item: "/ecosystem/engineering-excellence" }
+      ]} />
+      {data.faqs && <FAQSchema faqs={data.faqs} />}
+
       {/* 01. Hero Section */}
       <ExcellenceHero />
 
@@ -71,7 +79,9 @@ export default function EngineeringExcellencePage() {
       </div>
 
       {/* 08. Engineering Principles */}
-      {/* <EngineeringPrinciples /> */}
+      <div id="principles">
+        <EngineeringPrinciples />
+      </div>
 
       {/* FAQ */}
       <FAQ faqs={data.faqs} />

@@ -29,30 +29,55 @@ const ecosystemSections = [
   { id: "metrics", label: "Metrics" }
 ];
 
+import { FAQ } from "@/components/services/FAQ";
+import { BreadcrumbSchema, FAQSchema } from "@/components/seo/Schemas";
+
+const ecosystemFaqs = [
+  {
+    q: "What components make up Devopstrio's Global Engineering Ecosystem?",
+    a: "Our ecosystem integrates strategic cloud partnerships (AWS, Azure, GCP, NVIDIA), internal accelerators, domain excellence centers, open innovation labs, and a global talent network across the UK, USA, and India.",
+    tags: ["Cloud Partnerships", "Domain COE", "Innovation Labs", "Global Talent"]
+  },
+  {
+    q: "How do Devopstrio's accelerators speed up enterprise deployments?",
+    a: "Our pre-built Terraform landing zones, Karpenter autoscaling blueprints, RAG vector pipelines, and GitOps CI/CD templates reduce initial architecture setup time from months to under 14 days.",
+    proof: "✓ 14-Day Rapid Architecture Deployment Blueprints"
+  },
+  {
+    q: "What is the role of Devopstrio Innovation Labs?",
+    a: "Our R&D labs prototype bleeding-edge technologies including GenAI RAG pipelines, zero-trust micro-segmentation, eBPF kernel observability, and serverless FinOps automation before deployment.",
+    proof: "✓ Continuous R&D · GenAI & Zero-Trust Prototypes"
+  },
+  {
+    q: "How can enterprise partners join the Devopstrio Alliance Network?",
+    a: "Technology vendors, cloud ISVs, and enterprise partners can engage with our strategic alliance team for joint solution engineering, co-selling, and integrated customer delivery.",
+    tags: ["Partner Alliance", "Joint Engineering", "Co-Selling"]
+  }
+];
+
 export default function EcosystemLandingPage() {
   return (
     <main className="min-h-screen bg-black text-white pt-16 font-sans">
+      <BreadcrumbSchema items={[
+        { name: "Home", item: "/" },
+        { name: "Ecosystem", item: "/ecosystem" }
+      ]} />
+      <FAQSchema faqs={ecosystemFaqs} />
 
       {/* 1. Ecosystem Hero Section */}
       <div className="flex flex-col bg-black">
         <EcosystemTopHero />
-        {/* <EcosystemHero /> */}
       </div>
-
-      {/* Sticky Section Sub-Navbar */}
-      {/* <SectionNavbar sections={ecosystemSections} /> */}
 
       {/* 2. Ecosystem Overview */}
       <div id="overview">
         <EcosystemOverview />
       </div>
-      {/* <SvgWaveLine variant="smooth" /> */}
 
       {/* 3. Core Ecosystem Domains (Pillars) */}
-      {/* <div id="domains">
+      <div id="domains">
         <EcosystemPillars />
-      </div> */}
-      {/* <SvgWaveLine variant="liquid" /> */}
+      </div>
 
       {/* Cloud Partner Showcase */}
       <div id="cloud-partners">
@@ -63,19 +88,16 @@ export default function EcosystemLandingPage() {
       <div id="portfolio">
         <PlatformPortfolio />
       </div>
-      {/* <SvgWaveLine variant="dashed" /> */}
 
       {/* 5. Technology Landscape */}
       <div id="landscape">
         <TechnologyLandscape />
       </div>
-      {/* <SvgWaveLine variant="particles" /> */}
 
       {/* 6. Strategic Alliance Network */}
-      {/* <div id="alliances">
+      <div id="alliances">
         <AllianceNetwork />
       </div>
-      <SvgWaveLine variant="smooth" /> */}
 
       {/* 7. Global Delivery Network */}
       <div id="delivery" className="relative z-10 w-full bg-black">
@@ -91,27 +113,26 @@ export default function EcosystemLandingPage() {
           }
         />
       </div>
-      {/* <SvgWaveLine variant="grid" /> */}
 
       {/* 8. Engineering Excellence */}
-      {/* <div id="excellence">
+      <div id="excellence">
         <DomainExcellence />
       </div>
-      <SvgWaveLine variant="liquid" /> */}
 
       {/* 9. Innovation Labs */}
-      {/* <div id="labs">
+      <div id="labs">
         <InnovationLabs />
-      </div> */}
-      {/* <SvgWaveLine variant="dashed" /> */}
+      </div>
 
       {/* 10. Ecosystem Metrics (Business Outcomes) */}
       <div id="metrics">
         <EcosystemMetrics />
       </div>
-      {/* <SvgWaveLine variant="particles" /> */}
 
-      {/* 11. Final CTA */}
+      {/* 11. Ecosystem FAQs */}
+      <FAQ faqs={ecosystemFaqs} title="Ecosystem Architecture" highlight="FAQs" />
+
+      {/* 12. Final CTA */}
       <EcosystemCTA />
 
     </main>

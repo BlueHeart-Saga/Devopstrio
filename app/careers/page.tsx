@@ -29,6 +29,32 @@ const HiringProcess = dynamic(() => import("@/sections/careers/HiringProcess").t
 const EmployeeStories = dynamic(() => import("@/sections/careers/EmployeeStories").then((mod) => mod.EmployeeStories));
 const RepresentativeCTA = dynamic(() => import("@/components/ui/RepresentativeCTA").then((mod) => mod.RepresentativeCTA));
 
+import { FAQ } from "@/components/services/FAQ";
+import { BreadcrumbSchema, FAQSchema } from "@/components/seo/Schemas";
+
+const careersFaqs = [
+  {
+    q: "What engineering roles does Devopstrio hire for globally?",
+    a: "We actively hire Senior Cloud Architects (AWS/Azure/GCP), DevOps & Platform Engineers, Site Reliability Engineers (SRE), DevSecOps Specialists, Data Engineers, and AI Machine Learning Specialists across the UK, USA, and India.",
+    tags: ["Cloud Architects", "DevOps & SRE", "DevSecOps", "AI & Data Engineers"]
+  },
+  {
+    q: "What is Devopstrio's hiring process and interview structure?",
+    a: "Our interview process consists of 4 streamlined stages: 1) Initial Talent Screening (30 mins), 2) Hands-on Architecture/Coding Assessment, 3) Technical Deep-Dive & System Design with Principal Engineers, and 4) Executive Cultural Alignment & Offer Review.",
+    proof: "✓ 4-Stage Transparent Hiring Process · 10–14 Day Total Turnaround"
+  },
+  {
+    q: "Does Devopstrio support remote and hybrid working arrangements?",
+    a: "Yes. We offer flexible work arrangements including 100% remote positions, hybrid options at our regional hubs (London, Chennai, Bengaluru), flexible working hours, and home-office equipment stipends.",
+    tags: ["Remote & Hybrid", "Flexible Hours", "Ergonomic Stipends"]
+  },
+  {
+    q: "What benefits and continuous learning programs are offered?",
+    a: "We provide comprehensive health insurance, annual cloud certification allowances (AWS Pro, Azure Expert, CKA), paid conference passes, 401k/pension matching, and direct 1-on-1 career mentorship.",
+    proof: "✓ 100% Paid Cloud Certification Exams & Learning Stipends"
+  }
+];
+
 export default function CareersPage() {
   const [activeJob, setActiveJob] = useState<Job | null>(null);
   const [formSubmitted, setFormSubmitted] = useState(false);
@@ -75,104 +101,11 @@ export default function CareersPage() {
 
   return (
     <main className="min-h-screen bg-black text-white font-sans overflow-x-clip selection:bg-rose-500 selection:text-white">
-      {/* Quick Application Modal */}
-      {activeJob && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md animate-fadeIn">
-          <div className="relative w-full max-w-lg bg-zinc-950 border border-zinc-800/80 rounded-2xl p-6 sm:p-8 shadow-2xl overflow-hidden max-h-[90vh] overflow-y-auto">
-            {/* Background Ambient Glow */}
-            <div className="absolute top-0 right-0 w-40 h-40 bg-rose-500/10 rounded-full filter blur-3xl pointer-events-none" />
-
-            <button
-              onClick={closeModal}
-              className="absolute top-4 right-4 text-zinc-400 hover:text-white p-2 rounded-full hover:bg-zinc-900 transition-colors"
-            >
-              <X size={20} />
-            </button>
-
-            {!formSubmitted ? (
-              <>
-                <div className="mb-6">
-                  <span className="text-[10px] font-mono uppercase tracking-widest text-rose-500 bg-rose-950/50 border border-rose-800/40 px-2.5 py-1 rounded-md mb-2 inline-block">
-                    Quick Apply
-                  </span>
-                  <h3 className="text-xl font-bold text-white tracking-tight">{activeJob.title}</h3>
-                  <p className="text-xs text-zinc-400 mt-1 flex items-center gap-3">
-                    <span className="flex items-center gap-1"><MapPin size={12} className="text-rose-500" /> {activeJob.location}</span>
-                    <span className="flex items-center gap-1"><Briefcase size={12} className="text-rose-500" /> {activeJob.type}</span>
-                  </p>
-                </div>
-
-                <form onSubmit={handleApplySubmit} className="space-y-4">
-                  <div>
-                    <label className="block text-[10px] font-mono tracking-wider text-zinc-400 uppercase mb-1">Full Name *</label>
-                    <input
-                      type="text"
-                      required
-                      placeholder="e.g. John Doe"
-                      value={formData.name}
-                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className="w-full bg-zinc-900/60 border border-zinc-800 rounded-xl px-4 py-3 text-xs text-white placeholder-zinc-600 focus:border-rose-500 focus:outline-none transition-colors"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-[10px] font-mono tracking-wider text-zinc-400 uppercase mb-1">Work Email *</label>
-                    <input
-                      type="email"
-                      required
-                      placeholder="john@example.com"
-                      value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="w-full bg-zinc-900/60 border border-zinc-800 rounded-xl px-4 py-3 text-xs text-white placeholder-zinc-600 focus:border-rose-500 focus:outline-none transition-colors"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-[10px] font-mono tracking-wider text-zinc-400 uppercase mb-1">LinkedIn / Portfolio URL *</label>
-                    <input
-                      type="url"
-                      required
-                      placeholder="https://linkedin.com/in/johndoe"
-                      value={formData.resume}
-                      onChange={(e) => setFormData({ ...formData, resume: e.target.value })}
-                      className="w-full bg-zinc-900/60 border border-zinc-800 rounded-xl px-4 py-3 text-xs text-white placeholder-zinc-600 focus:border-rose-500 focus:outline-none transition-colors"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-[10px] font-mono tracking-wider text-zinc-400 uppercase mb-1">Cover Note (Optional)</label>
-                    <textarea
-                      rows={3}
-                      placeholder="Tell us why you are interested in joining Devopstrio..."
-                      value={formData.note}
-                      onChange={(e) => setFormData({ ...formData, note: e.target.value })}
-                      className="w-full bg-zinc-900/60 border border-zinc-800 rounded-xl px-4 py-3 text-xs text-white placeholder-zinc-600 focus:border-rose-500 focus:outline-none transition-colors resize-none"
-                    />
-                  </div>
-
-                  <button
-                    type="submit"
-                    disabled={formSubmitting}
-                    className="w-full gap-2 inline-flex items-center justify-center px-6 py-3.5 rounded-xl text-xs font-bold tracking-wider uppercase bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white transition-all duration-300 hover:shadow-[0_0_25px_rgba(225,29,72,0.35)] disabled:opacity-50"
-                  >
-                    {formSubmitting ? "Submitting..." : "Submit Application"} <Send size={13} />
-                  </button>
-                </form>
-              </>
-            ) : (
-              <div className="text-center py-8 flex flex-col items-center justify-center gap-4">
-                <div className="w-16 h-16 rounded-full bg-emerald-950/40 border border-emerald-500/20 flex items-center justify-center text-emerald-500 animate-bounce">
-                  <Check size={28} className="stroke-[3]" />
-                </div>
-                <h4 className="text-lg font-bold text-white">Application Received!</h4>
-                <p className="text-zinc-400 text-xs font-light max-w-sm">
-                  Thank you, <span className="font-semibold text-white">{formData.name}</span>. Our recruitment specialists will review your credentials and follow up within 48 hours.
-                </p>
-              </div>
-            )}
-          </div>
-        </div>
-      )}
+      <BreadcrumbSchema items={[
+        { name: "Home", item: "/" },
+        { name: "Careers", item: "/careers" }
+      ]} />
+      <FAQSchema faqs={careersFaqs} />
 
       {/* Structured Careers Components */}
       <CareersBeyondHero />
@@ -180,13 +113,15 @@ export default function CareersPage() {
       <WhatMakesUsUnique />
       <WorkingAtDevopstrio />
       <YourCareerAtDevopstrio />
-      {/* <DiscoverYourJobFamily /> */}
+      <DiscoverYourJobFamily />
       <OpenPositions />
-      {/* <HiringProcess /> */}
-      {/* <CoreValues /> */}
-      {/* <PerksBenefits /> */}
-      {/* <InteractiveMap /> */}
+      <HiringProcess />
+      <CoreValues />
+      <PerksBenefits />
       <EmployeeStories />
+
+      {/* Careers FAQs */}
+      <FAQ faqs={careersFaqs} title="Careers & Hiring" highlight="FAQs" />
 
       {/* Reusable Representative CTA Component */}
       <RepresentativeCTA

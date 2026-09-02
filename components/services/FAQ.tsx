@@ -64,30 +64,28 @@ export function FAQ({
                   </div>
                 </button>
                 
-                {isOpen && (
-                  <div className="mt-4 text-sm sm:text-base md:text-lg text-zinc-300 leading-relaxed font-normal max-w-4xl animate-fadeIn flex flex-col gap-4">
-                    <p>{item.a}</p>
-                    
-                    {item.proof && (
-                      <span className="text-xs sm:text-sm text-emerald-400 font-semibold tracking-wide">
-                        {item.proof}
-                      </span>
-                    )}
+                <div className={`mt-4 text-sm sm:text-base md:text-lg text-zinc-300 leading-relaxed font-normal max-w-4xl flex flex-col gap-4 ${isOpen ? "block animate-fadeIn" : "hidden"}`}>
+                  <p>{item.a}</p>
+                  
+                  {item.proof && (
+                    <span className="text-xs sm:text-sm text-emerald-400 font-semibold tracking-wide">
+                      {item.proof}
+                    </span>
+                  )}
 
-                    {item.tags && item.tags.length > 0 && (
-                      <div className="flex flex-wrap gap-2 pt-2">
-                        {item.tags.map((tag) => (
-                          <span 
-                            key={tag}
-                            className="px-3 py-1.5 rounded-lg bg-zinc-900 text-zinc-300 border border-zinc-800 text-xs sm:text-sm font-semibold tracking-wide"
-                          >
-                            {tag}
-                          </span>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                )}
+                  {item.tags && item.tags.length > 0 && (
+                    <div className="flex flex-wrap gap-2 pt-2">
+                      {item.tags.map((tag) => (
+                        <span 
+                          key={tag}
+                          className="px-3 py-1.5 rounded-lg bg-zinc-900 text-zinc-300 border border-zinc-800 text-xs sm:text-sm font-semibold tracking-wide"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+                </div>
               </div>
             );
           })}

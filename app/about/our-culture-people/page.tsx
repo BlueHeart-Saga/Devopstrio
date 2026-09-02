@@ -26,6 +26,32 @@ export const metadata: Metadata = {
   },
 };
 
+import { FAQ } from "@/components/services/FAQ";
+import { FAQSchema } from "@/components/seo/Schemas";
+
+const cultureFaqs = [
+  {
+    q: "What defines Devopstrio's engineering culture and work environment?",
+    a: "Our culture is built on continuous learning, peer code reviews, transparent governance, and blameless post-mortems. Engineers have autonomy to experiment with emerging technologies, conduct R&D hackathons, and deploy production systems with extreme ownership.",
+    proof: "✓ Blameless Post-Mortems · 100% Peer Code Audits"
+  },
+  {
+    q: "What learning and career development opportunities are provided?",
+    a: "Every team member receives annual certification allowances for AWS, Azure, GCP, and Kubernetes accreditations, direct 1-on-1 mentorship from principal architects, and access to internal tech guilds.",
+    tags: ["Certification Allowances", "Architect Mentorship", "Internal Tech Guilds"]
+  },
+  {
+    q: "How does Devopstrio support flexible and remote working standards?",
+    a: "We offer flexible hybrid and remote working models, structured follow-the-sun collaboration tools, ergonomic home-office setup stipends, and comprehensive wellness programs.",
+    tags: ["Flexible Hybrid / Remote", "Ergonomic Stipends", "Wellness Support"]
+  },
+  {
+    q: "How does Devopstrio foster diversity and inclusion across global hubs?",
+    a: "We actively champion equal opportunities, inclusive hiring pipelines, and multicultural initiatives across our regional hubs in the UK, USA, and India.",
+    proof: "✓ Multicultural Global Workforce Across UK, USA & India"
+  }
+];
+
 export default function LifeAtDevopstrioPage() {
   return (
     <main className="min-h-screen bg-black text-white font-sans">
@@ -36,18 +62,16 @@ export default function LifeAtDevopstrioPage() {
           { name: "Our Culture & People", item: "/about/our-culture-people" },
         ]}
       />
+      <FAQSchema faqs={cultureFaqs} />
 
       {/* 1. Hero */}
       <CultureHero />
       <LifeHero />
 
-     
-
       {/* 3. Life Moments Gallery */}
       <LifeMomentsGallery />
 
-
-       {/* 4. Culture Album PDF Banner & Flipbook Reader Section */}
+      {/* 4. Culture Album PDF Banner */}
       <CultureAlbumsSection />
 
       {/* 5. Employee Stories */}
@@ -56,7 +80,10 @@ export default function LifeAtDevopstrioPage() {
       {/* 6. Awards & Recognition */}
       <AwardsRecognition />
 
-      {/* 6. Final CTA */}
+      {/* 7. Culture FAQs */}
+      <FAQ faqs={cultureFaqs} title="Culture & People" highlight="FAQs" />
+
+      {/* 8. Final CTA */}
       <LifeFinalCTA />
     </main>
   );

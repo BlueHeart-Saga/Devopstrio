@@ -26,6 +26,32 @@ const partnershipsSections = [
   { id: "operating-model", label: "Delivery Principles" },
 ];
 
+import { FAQ } from "@/components/services/FAQ";
+import { FAQSchema } from "@/components/seo/Schemas";
+
+const partnershipFaqs = [
+  {
+    q: "What cloud hyperscale partnerships does Devopstrio maintain?",
+    a: "Devopstrio holds formal engineering accreditations with AWS (Advanced Consulting Partner), Microsoft Azure (Solutions Partner), and Google Cloud Platform (Premier Tier), enabling client access to cloud migration credits, architectural reviews, and executive support.",
+    proof: "✓ AWS Advanced · Azure Solutions Partner · GCP Premier"
+  },
+  {
+    q: "What enterprise software and platform alliances do you have?",
+    a: "We maintain strategic solution alliances with Cisco (Zero-Trust & Secure Networking), SAP (HANA Cloud Modernization), Oracle (OCI Cloud & Autonomous Database), and ServiceNow (Enterprise Workflow Integration).",
+    tags: ["Cisco Zero-Trust", "SAP HANA Cloud", "Oracle OCI", "ServiceNow"]
+  },
+  {
+    q: "What security and governance certifications protect client projects?",
+    a: "Our operations and delivery infrastructure are certified against ISO 27001 (Information Security Management), ISO 9001 (Quality Management), Cyber Essentials Plus, SOC-2 Type II, and PCI-DSS standards.",
+    proof: "✓ ISO 27001 · ISO 9001 · Cyber Essentials Plus · SOC-2"
+  },
+  {
+    q: "How do client benefits translate from Devopstrio's partner status?",
+    a: "Clients gain pre-tested Infrastructure as Code (IaC) landing zone blueprints, accelerated funding access for cloud migration, priority technical escalation paths, and guaranteed multi-cloud interoperability.",
+    tags: ["IaC Landing Zones", "Cloud Migration Credits", "Priority Support"]
+  }
+];
+
 export default function PartnershipsCertificationsPage() {
   return (
     <main className="min-h-screen bg-black text-white font-sans overflow-x-hidden">
@@ -35,6 +61,7 @@ export default function PartnershipsCertificationsPage() {
         { name: "About Us", item: "/about/company-overview" },
         { name: "Partnerships & Certifications", item: "/about/partnerships-certifications" }
       ]} />
+      <FAQSchema faqs={partnershipFaqs} />
       
       {/* Glow Ambient background */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[radial-gradient(circle_at_center,rgba(225,29,72,0.03),transparent_70%)] pointer-events-none" />
@@ -44,19 +71,10 @@ export default function PartnershipsCertificationsPage() {
         <PartnershipsHero />
       </div>
 
-      {/* Section Navbar */}
-      {/* <SectionNavbar sections={partnershipsSections} /> */}
-
-      {/* Divider */}
-      {/* <SvgWaveLine variant="smooth" /> */}
-
       {/* 2. Why Partnerships Matter */}
       <div id="why-partnerships">
         <WhyPartnershipsMatter />
       </div>
-
-      {/* Divider */}
-      {/* <SvgWaveLine variant="liquid" /> */}
 
       {/* 3. Strategic Technology Partnerships */}
       <div id="strategic-partners">
@@ -75,40 +93,28 @@ export default function PartnershipsCertificationsPage() {
         <AllCertifications />
       </div>
 
-      {/* Divider */}
-      {/* <SvgWaveLine variant="dashed" /> */}
-
       {/* 4. Certifications, Standards, and Delivery Readiness */}
       <div id="certifications">
         <CertificationsAssurance />
       </div>
-
-      {/* Divider */}
-      {/* <SvgWaveLine variant="particles" /> */}
 
       {/* 5. What This Means for Our Clients */}
       <div id="client-benefits">
         <ClientBenefits />
       </div>
 
-      {/* Divider */}
-      {/* <SvgWaveLine variant="liquid" /> */}
-
-      {/* 6. The Operating Principles Behind Our Delivery */}
-      {/* <div id="operating-model">
+      {/* 6. Operating Principles */}
+      <div id="operating-model">
         <OperatingModel />
-      </div> */}
-
-      {/* Divider */}
-      {/* <SvgWaveLine variant="grid" /> */}
+      </div>
 
       {/* 7. Trust Statement */}
-      {/* <TrustStatement /> */}
+      <TrustStatement />
 
-      {/* Divider */}
-      {/* <SvgWaveLine variant="smooth" /> */}
+      {/* 8. Partnerships FAQs */}
+      <FAQ faqs={partnershipFaqs} title="Partnerships & Certifications" highlight="FAQs" />
 
-      {/* 8. Final CTA */}
+      {/* 9. Final CTA */}
       <PartnershipsCTA />
     </main>
   );

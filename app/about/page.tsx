@@ -15,98 +15,94 @@ export function generateMetadata(): Metadata {
   });
 }
 
-const OurStory = dynamic(() => import("@/sections/about/OurStory").then((mod) => mod.OurStory));
-const MetricsStats = dynamic(() => import("@/sections/about/MetricsStats").then((mod) => mod.MetricsStats));
-const AboutCTA = dynamic(() => import("@/sections/about/AboutCTA").then((mod) => mod.AboutCTA));
-const GlobalLocations = dynamic(() => import("@/sections/home/GlobalLocations").then((mod) => mod.GlobalLocations));
+import { FAQ } from "@/components/services/FAQ";
+import { BreadcrumbSchema, FAQSchema } from "@/components/seo/Schemas";
 
-const aboutSections = [
-  { id: "identity", label: "Who We Are" },
-  { id: "vision", label: "Vision" },
-  { id: "journey", label: "Our Journey" },
-  { id: "capabilities", label: "What We Do" },
-  { id: "advantage", label: "Why Devopstrio" },
-  { id: "leadership", label: "Leadership & Culture" },
-  { id: "impact", label: "Impact Metrics" },
-  { id: "ecosystem", label: "Partnerships" },
-  { id: "future", label: "The Future" }
+const MissionVision = dynamic(() => import("@/sections/about/MissionVision").then((mod) => mod.MissionVision));
+const OurStory = dynamic(() => import("@/sections/about/OurStory").then((mod) => mod.OurStory));
+const AboutServices = dynamic(() => import("@/sections/about/AboutServices").then((mod) => mod.AboutServices));
+const WhyChoose = dynamic(() => import("@/sections/about/WhyChoose").then((mod) => mod.WhyChoose));
+const MetricsStats = dynamic(() => import("@/sections/about/MetricsStats").then((mod) => mod.MetricsStats));
+const OurPartnership = dynamic(() => import("@/sections/about/OurPartnership").then((mod) => mod.OurPartnership));
+const Achievements = dynamic(() => import("@/sections/about/Achievements").then((mod) => mod.Achievements));
+const GlobalLocations = dynamic(() => import("@/sections/home/GlobalLocations").then((mod) => mod.GlobalLocations));
+const AboutCTA = dynamic(() => import("@/sections/about/AboutCTA").then((mod) => mod.AboutCTA));
+
+const aboutFaqs = [
+  {
+    q: "Who is Devopstrio and what engineering services do you provide?",
+    a: "Devopstrio Limited is a global enterprise technology partner specializing in cloud-native architecture, SRE automation, Zero-Trust cybersecurity, modern software engineering, and production-grade Generative AI pipelines.",
+    proof: "✓ 250+ Modular Engineering Capabilities · 99.99% Uptime Commitment"
+  },
+  {
+    q: "How does Devopstrio partner with enterprise engineering teams?",
+    a: "We offer flexible engagement models including Dedicated Engineering Pods, Project-Based Technical Roadmaps, and 24/7 Managed SRE Operations under guaranteed SLA commitments.",
+    tags: ["Dedicated Pods", "Outcome-Based Roadmaps", "Managed SRE"]
+  },
+  {
+    q: "What hyperscale cloud alliances does Devopstrio maintain?",
+    a: "We are accredited engineering partners across AWS, Microsoft Azure, Google Cloud Platform (GCP), Cisco, SAP, and ServiceNow, helping clients avoid vendor lock-in with resilient multi-cloud architectures.",
+    tags: ["AWS Advanced", "Azure Partner", "GCP Premier"]
+  },
+  {
+    q: "Where are Devopstrio's primary engineering hubs located?",
+    a: "Our headquarters are in London, UK, supported by international delivery centers in Chennai and Bangalore, India, enabling a continuous follow-the-sun operational footprint.",
+    proof: "✓ London HQ · Follow-the-Sun Delivery Network"
+  },
+  {
+    q: "How do I get started with Devopstrio for a project assessment?",
+    a: "You can schedule a direct scoping session with our principal architects by contacting us through our online portal or emailing info@devopstrioglobal.com.",
+    proof: "✓ Direct Architect Scoping Call within 24 Hours"
+  }
 ];
 
 export default function AboutPage() {
   return (
     <main className="min-h-screen bg-black text-white pt-0 font-sans">
+      <BreadcrumbSchema items={[
+        { name: "Home", item: "/" },
+        { name: "About Devopstrio", item: "/about" }
+      ]} />
+      <FAQSchema faqs={aboutFaqs} />
 
-      {/* New Cinematic Hero Intro */}
-      {/* <section className="pt-16 pb-4 md:pb-8 text-center relative bg-[#030303]">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(220,38,38,0.06),transparent_50%)] pointer-events-none" />
-        <Reveal>
-          <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-4 text-white">
-            About <span className="text-rose-500">Devopstrio</span>
-          </h1>
-          <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-bold max-w-xl mx-auto">
-            Discover the principles, mission, and engineering culture that drives our global technology solutions.
-          </p>
-        </Reveal>
-      </section> */}
-
-      {/* Existing About Components with High-Level Coded SVG Wave Lines */}
       <div id="about-components-start" className="flex flex-col bg-black">
-        {/* <AboutHero /> */}
-
         <div id="identity">
           <CompanyIntro />
         </div>
-        {/* <SvgWaveLine variant="dashed" /> */}
 
-
-
-        {/* <div id="vision">
+        <div id="vision">
           <MissionVision />
         </div>
-        <SvgWaveLine variant="grid" /> */}
 
         <div id="journey">
           <OurStory />
         </div>
-        {/* <SvgWaveLine variant="liquid" /> */}
 
-        {/* <div id="capabilities">
+        <div id="capabilities">
           <AboutServices />
         </div>
-        <SvgWaveLine variant="smooth" /> */}
 
-        {/* <div id="advantage">
+        <div id="advantage">
           <WhyChoose />
-         
-            <WorkflowModel />
-          
-        </div> */}
-        {/* <SvgWaveLine variant="dashed" /> */}
-
-        {/* <div id="leadership">
-          <Leadership />
-        </div> */}
-        {/* <SvgWaveLine variant="particles" /> */}
+        </div>
 
         <div id="impact">
           <MetricsStats />
         </div>
-        {/* <SvgWaveLine variant="liquid" /> */}
 
-        {/* <div id="ecosystem">
+        <div id="ecosystem">
           <OurPartnership />
         </div>
-        <SvgWaveLine variant="grid" /> */}
 
-        {/* <div id="future">
+        <div id="future">
           <Achievements />
         </div>
-        <SvgWaveLine variant="smooth" /> */}
 
-        <div className="max-w-site mx-auto w-full px-6 md:px-12 lg:px-16 xl:px-20 pb-20">
+        <div className="max-w-site mx-auto w-full px-6 md:px-12 lg:px-16 xl:px-20 pb-12">
           <GlobalLocations />
         </div>
-        {/* <SvgWaveLine variant="liquid" /> */}
+
+        <FAQ faqs={aboutFaqs} title="About Devopstrio" highlight="FAQs" />
 
         <AboutCTA />
       </div>

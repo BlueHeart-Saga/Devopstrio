@@ -117,30 +117,28 @@ export function IndustryFAQ({ faqs }: IndustryFAQProps) {
                   </div>
                 </button>
                 
-                {isOpen && (
-                  <div className="mt-5 text-base sm:text-lg md:text-xl text-zinc-300 leading-relaxed font-normal max-w-4xl animate-fadeIn flex flex-col gap-4">
-                    <div>{item.a}</div>
-                    
-                    {item.proof && (
-                      <span className="text-xs sm:text-sm text-emerald-400 font-semibold tracking-wide block mt-1">
-                        {item.proof}
-                      </span>
-                    )}
+                <div className={`mt-5 text-base sm:text-lg md:text-xl text-zinc-300 leading-relaxed font-normal max-w-4xl flex flex-col gap-4 ${isOpen ? "block animate-fadeIn" : "hidden"}`}>
+                  <div>{item.a}</div>
+                  
+                  {item.proof && (
+                    <span className="text-xs sm:text-sm text-emerald-400 font-semibold tracking-wide block mt-1">
+                      {item.proof}
+                    </span>
+                  )}
 
-                    {item.tags && (
-                      <div className="flex flex-wrap gap-2 pt-2">
-                        {item.tags.map((tag) => (
-                          <span 
-                            key={tag}
-                            className="px-3 py-1.5 rounded-lg bg-zinc-900/90 text-zinc-300 border border-zinc-800 text-xs sm:text-sm font-semibold tracking-wide"
-                          >
-                            {tag}
-                          </span>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                )}
+                  {item.tags && (
+                    <div className="flex flex-wrap gap-2 pt-2">
+                      {item.tags.map((tag) => (
+                        <span 
+                          key={tag}
+                          className="px-3 py-1.5 rounded-lg bg-zinc-900/90 text-zinc-300 border border-zinc-800 text-xs sm:text-sm font-semibold tracking-wide"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+                </div>
               </div>
             );
           })}

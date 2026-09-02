@@ -31,6 +31,37 @@ const overviewSections = [
   { id: "future", label: "Our Future" },
 ];
 
+import { FAQ } from "@/components/services/FAQ";
+import { FAQSchema } from "@/components/seo/Schemas";
+
+const overviewFaqs = [
+  {
+    q: "What is Devopstrio's core business and enterprise mission?",
+    a: "Devopstrio Limited is a principal-led technology services and cloud engineering firm based in London, UK. Our mission is to eliminate software failure and accelerate enterprise growth by architecting resilient multi-cloud infrastructures, automated CI/CD pipelines, Zero-Trust security networks, and production-grade Generative AI solutions.",
+    proof: "✓ Registered in England & Wales · Global Delivery Infrastructure"
+  },
+  {
+    q: "Where is Devopstrio headquartered and what regions do you serve?",
+    a: "Devopstrio is headquartered at 128 City Road, London, EC1V 2NX, United Kingdom. We operate global delivery centers across the UK, USA, Europe, and India, delivering 24/7 follow-the-sun engineering support and managed SRE services for multinational enterprises.",
+    tags: ["London UK HQ", "Follow-the-Sun Delivery", "24/7 Global SRE"]
+  },
+  {
+    q: "What cloud and technology platforms does Devopstrio specialize in?",
+    a: "We hold certified partner accreditations across Microsoft Azure, Amazon Web Services (AWS), Google Cloud Platform (GCP), Cisco Zero-Trust Networking, SAP HANA Cloud Modernization, Oracle Cloud Infrastructure (OCI), and ServiceNow enterprise integrations.",
+    tags: ["AWS Advanced Partner", "Azure Solutions Partner", "Google Cloud Premier"]
+  },
+  {
+    q: "How does Devopstrio ensure 99.99% uptime for enterprise operations?",
+    a: "We embed Site Reliability Engineering (SRE) practices, automated self-healing Kubernetes clusters, IaC vulnerability scanning, and multi-region active-active database replication. For managed services, we guarantee sub-15-minute response times for P1 incidents backed by formal SLAs.",
+    proof: "✓ 99.99% SLA Uptime Guarantee · <15 min P1 Response"
+  },
+  {
+    q: "What security compliance standards does Devopstrio adhere to?",
+    a: "All Devopstrio engineering practices, delivery pipelines, and cloud landing zones strictly comply with SOC-2 Type II, ISO 27001, Cyber Essentials Plus, HIPAA, PCI-DSS, and GDPR data privacy standards.",
+    proof: "✓ ISO 27001 · SOC-2 Type II · Cyber Essentials Certified"
+  }
+];
+
 export default function CompanyOverviewPage() {
   return (
     <main className="min-h-screen bg-black text-white font-sans">
@@ -39,6 +70,7 @@ export default function CompanyOverviewPage() {
         { name: "About Us", item: "/about/company-overview" },
         { name: "Company Overview", item: "/about/company-overview" }
       ]} />
+      <FAQSchema faqs={overviewFaqs} />
       
       {/* Glow Ambient background */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[radial-gradient(circle_at_center,rgba(225,29,72,0.03),transparent_70%)] pointer-events-none" />
@@ -54,7 +86,6 @@ export default function CompanyOverviewPage() {
       {/* Overview Content */}
       <CompanyOverviewPillars />
       <CompanyOverviewSection />
-      {/* <WhoWeAreWhatWeDoSection /> */}
 
       {/* 2. Our People Section */}
       <div id="people">
@@ -62,16 +93,19 @@ export default function CompanyOverviewPage() {
       </div>
 
       {/* 3. Our Values Section */}
-      {/* <div id="values">
+      <div id="values">
         <MissionVisionValues />
-      </div> */}
+      </div>
 
       {/* 4. Our Future Section */}
       <div id="future">
         <OurFutureSection />
       </div>
 
-      {/* 5. Enterprise Call to Action */}
+      {/* 5. Company Overview FAQ */}
+      <FAQ faqs={overviewFaqs} title="Company Overview" highlight="FAQs" />
+
+      {/* 6. Enterprise Call to Action */}
       <EnterpriseCTA />
     </main>
   );

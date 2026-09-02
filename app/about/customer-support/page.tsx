@@ -109,6 +109,35 @@ const locations = [
 
 const filters = ["All", "India", "Europe", "North America"];
 
+import { FAQSchema } from "@/components/seo/Schemas";
+
+const supportFaqsData = [
+  {
+    q: "How do I contact support?",
+    a: "You can reach our support team via email at info@devopstrioglobal.com or call us directly at 0461 2940062 or +44 1784 640216. Enterprise customers also have access to dedicated Slack channels and priority escalation lines."
+  },
+  {
+    q: "What are your support hours?",
+    a: "We operate a follow-the-sun support model providing global coverage 24×7. Our delivery centres in the UK, USA, and India coordinate to ensure there is always an engineer available regardless of your timezone."
+  },
+  {
+    q: "Do you provide managed cloud support?",
+    a: "Yes. We provide comprehensive managed support for Azure, AWS, and Google Cloud. This includes infrastructure monitoring, incident response, cost optimisation, and architecture guidance across all major cloud platforms."
+  },
+  {
+    q: "Can I request a dedicated support engineer?",
+    a: "Enterprise customers can engage dedicated support engineers and customer success managers through our managed services programme. Contact our sales team to discuss dedicated resource arrangements and custom SLAs."
+  },
+  {
+    q: "What products does Devopstrio support?",
+    a: "We provide full lifecycle support for our entire product portfolio including Humanex, Brio, SafeSign, Prestivo, Campix, Homela, CareSuite, and Justivon, as well as our cloud and DevOps managed services."
+  },
+  {
+    q: "How are incidents escalated and tracked?",
+    a: "All incidents are tracked via our enterprise ticketing system. Critical incidents (P1) trigger an immediate war-room activation with dedicated engineers. You'll receive real-time updates throughout the resolution process."
+  }
+];
+
 export default function CustomerSupportPage() {
   return (
     <main className="min-h-screen bg-[#050505] text-white font-sans overflow-x-hidden">
@@ -119,6 +148,7 @@ export default function CustomerSupportPage() {
           { name: "Customer Support", item: "/about/customer-support" },
         ]}
       />
+      <FAQSchema faqs={supportFaqsData} />
 
       {/* 1. Hero */}
       <SupportHero />
@@ -137,20 +167,20 @@ export default function CustomerSupportPage() {
         <InteractiveMap locations={locations} filters={filters} />
       </div>
 
-      {/* 4. Support Services (tabbed) */}
+      {/* 4. Support Services */}
       <SupportServices />
 
       {/* 5. SLA Response Matrix */}
       <SLAMatrix />
 
       {/* 6. Product Ecosystem */}
-      {/* <ProductEcosystem /> */}
+      <ProductEcosystem />
 
       {/* 7. Customer Success Metrics */}
       <SupportMetrics />
 
       {/* 8. About Devopstrio */}
-      {/* <AboutDevopstrio /> */}
+      <AboutDevopstrio />
 
       {/* 9. FAQ */}
       <SupportFAQ />

@@ -4,7 +4,7 @@ import dynamic from "next/dynamic";
 import { ContactTopHero } from "@/sections/contact/ContactTopHero";
 import { ContactHero } from "@/sections/contact/ContactHero";
 import { ContactForm } from "@/sections/contact/ContactForm";
-import { BreadcrumbSchema } from "@/components/seo/Schemas";
+import { BreadcrumbSchema, FAQSchema } from "@/components/seo/Schemas";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionNavbar } from "@/components/ui/SectionNavbar";
 
@@ -38,6 +38,29 @@ export const metadata: Metadata = {
   }
 };
 
+const contactFaqsData = [
+  {
+    q: "What makes Devopstrio different from other consultancies?",
+    a: "We send senior architects from day one — practitioners who have built and scaled enterprise infrastructures. Our model is outcome-driven with 98% client retention."
+  },
+  {
+    q: "How do you price your services?",
+    a: "Our global delivery model typically saves clients 15–50% compared to in-house hiring or traditional consultancy rates, with clear fixed-scope or SLA-backed managed contracts."
+  },
+  {
+    q: "Do you work with startups or only enterprises?",
+    a: "Both. We ship lean MVPs in 8–12 weeks for startups and rebuild legacy monoliths into distributed cloud platforms for FTSE 100 enterprises."
+  },
+  {
+    q: "How quickly can you start?",
+    a: "Standard onboarding runs 5–7 business days from contract signature. For critical production or security incidents, we can mobilize within 48 hours."
+  },
+  {
+    q: "What certifications do you hold?",
+    a: "AWS Advanced Tier, Microsoft Azure Partner, Google Cloud Professional, Kubernetes CKA/CKS, ISO 27001, SOC 2, HIPAA, PCI-DSS, Cyber Essentials."
+  }
+];
+
 export default function ContactPage() {
   const breadcrumbs = [
     { name: "Home", item: "/" },
@@ -47,6 +70,7 @@ export default function ContactPage() {
   return (
     <main className="min-h-screen bg-black text-white pt-16 font-sans">
       <BreadcrumbSchema items={breadcrumbs} />
+      <FAQSchema faqs={contactFaqsData} />
 
       
       {/* Cinematic Hero Title Header */}

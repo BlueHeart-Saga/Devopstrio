@@ -189,30 +189,28 @@ export function FaqSection() {
                   </div>
                 </button>
                 
-                {isOpen && (
-                  <div className="mt-5 text-sm sm:text-base md:text-lg text-zinc-300 leading-relaxed font-normal max-w-4xl animate-fadeIn flex flex-col gap-4">
-                    <p>{faq.a}</p>
-                    
-                    {faq.proof && (
-                      <span className="text-xs sm:text-sm text-emerald-400 font-semibold tracking-wide flex items-center gap-1.5">
-                        {faq.proof}
-                      </span>
-                    )}
+                <div className={`mt-5 text-sm sm:text-base md:text-lg text-zinc-300 leading-relaxed font-normal max-w-4xl flex flex-col gap-4 ${isOpen ? "block animate-fadeIn" : "hidden"}`}>
+                  <p>{faq.a}</p>
+                  
+                  {faq.proof && (
+                    <span className="text-xs sm:text-sm text-emerald-400 font-semibold tracking-wide flex items-center gap-1.5">
+                      {faq.proof}
+                    </span>
+                  )}
 
-                    {faq.tags && (
-                      <div className="flex flex-wrap gap-2 pt-2">
-                        {faq.tags.map((tag) => (
-                          <span 
-                            key={tag}
-                            className="px-3.5 py-1.5 rounded-lg bg-zinc-900/90 text-zinc-300 border border-zinc-800 text-xs sm:text-sm font-semibold tracking-wide"
-                          >
-                            {tag}
-                          </span>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                )}
+                  {faq.tags && (
+                    <div className="flex flex-wrap gap-2 pt-2">
+                      {faq.tags.map((tag) => (
+                        <span 
+                          key={tag}
+                          className="px-3.5 py-1.5 rounded-lg bg-zinc-900/90 text-zinc-300 border border-zinc-800 text-xs sm:text-sm font-semibold tracking-wide"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+                </div>
               </div>
             );
           })}

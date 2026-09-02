@@ -43,6 +43,32 @@ const leadershipSections = [
   { id: "awards", label: "Certifications & Awards" },
 ];
 
+import { FAQ } from "@/components/services/FAQ";
+import { FAQSchema } from "@/components/seo/Schemas";
+
+const leadershipFaqs = [
+  {
+    q: "Who leads Devopstrio's technical and executive organization?",
+    a: "Devopstrio is led by principal technology directors, cloud enterprise architects, and executive officers with decades of experience guiding multi-cloud deployments, SRE practices, and AI innovations for Global 2000 enterprises.",
+    proof: "✓ Principal-Led Advisory & Hands-on Architecture"
+  },
+  {
+    q: "What certifications are held by Devopstrio's technical leadership?",
+    a: "Our directors and principal architects hold top-tier certifications including AWS Certified Solutions Architect Professional, Azure Solutions Architect Expert, Google Cloud Professional Cloud Architect, and CKS/CKA Kubernetes certifications.",
+    tags: ["AWS Certified Pro", "Azure Solutions Expert", "GCP Professional Architect", "CKA / CKS"]
+  },
+  {
+    q: "How does Devopstrio's leadership structure support global enterprise clients?",
+    a: "Our leadership team manages over 525+ technical specialists across 4 global locations (UK, USA, and India delivery centers), offering direct executive sponsorship and 24/7 follow-the-sun account governance.",
+    proof: "✓ 525+ Technical Specialists · Executive Account Sponsorship"
+  },
+  {
+    q: "What engineering philosophy guides Devopstrio's leadership?",
+    a: "We believe in technical rigor, zero-downtime architecture, transparent client collaboration, and building high-trust engineering cultures focused on measurable enterprise ROI.",
+    tags: ["Zero-Downtime Culture", "Technical Rigor", "Transparent Governance"]
+  }
+];
+
 export default function LeadershipTeamPage() {
   return (
     <main className="min-h-screen bg-black text-white font-sans">
@@ -53,42 +79,41 @@ export default function LeadershipTeamPage() {
           { name: "Leadership & Team", item: "/about/leadership-team" },
         ]}
       />
+      <FAQSchema faqs={leadershipFaqs} />
 
-      {/* 1. Vision & Story Hero (Sticky 5-Chapter Scroll Sequence) */}
+      {/* 1. Vision & Story Hero */}
       <LeadershipHero />
 
-      {/* Section Sticky Navigator */}
-      {/* <SectionNavbar sections={leadershipSections} /> */}
+      <LeadershipDeliver />
 
-      {/* 2. 8 Timeless Leadership Principles (Editorial Deck) */}
-      {/* <LeadershipPrinciples /> */}
+      {/* 2. 8 Timeless Leadership Principles */}
+      <LeadershipPrinciples />
 
-
-       <LeadershipDeliver />
-
-      {/* 3. 3 Strategic Pillars (Inspire, Empower, Deliver) */}
+      {/* 3. 3 Strategic Pillars */}
       <Leadership3Pillars />
 
       {/* 4. PILLAR 01: INSPIRE — Executive Leadership & Senior Team */}
       <ExecutiveLeadership />
 
-      {/* Optional: Principal Architects & Specialists */}
-      {/* <PrincipalArchitects /> */}
+      {/* Principal Architects & Specialists */}
+      <PrincipalArchitects />
 
-      {/* 5. PILLAR 02: EMPOWER — Global Engineering Teams (525+ Specialists) */}
-      {/* <GlobalEngineeringTeams /> */}
+      {/* 5. PILLAR 02: EMPOWER — Global Engineering Teams */}
+      <GlobalEngineeringTeams />
 
-      {/* 6. PILLAR 03: DELIVER — Leaders Who Deliver. Solutions That Matter. */}
+      {/* 6. PILLAR 03: DELIVER — Leaders Who Deliver */}
       <LeadershipImpactDeliver />
-     
 
-      {/* Optional: Global Presence (Worldwide Locations) */}
-      {/* <GlobalPresence /> */}
+      {/* Global Presence */}
+      <GlobalPresence />
 
-      {/* 7. Awards, Accreditations & Certifications */}
-      {/* <AwardsRecognitionLeadership /> */}
+      {/* 7. Awards & Certifications */}
+      <AwardsRecognitionLeadership />
 
-      {/* 8. Our Culture & People + Careers CTA */}
+      {/* 8. Leadership FAQs */}
+      <FAQ faqs={leadershipFaqs} title="Leadership & Team" highlight="FAQs" />
+
+      {/* 9. Our Culture & People + Careers CTA */}
       <LeadershipCareersCTA />
     </main>
   );

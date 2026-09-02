@@ -11,6 +11,19 @@ export const metadata: Metadata = {
   }
 };
 
+import { BreadcrumbSchema, FAQSchema } from "@/components/seo/Schemas";
+
+const cookieFaqs = [
+  {
+    q: "Why does Devopstrio use cookies?",
+    a: "We use cookies to maintain secure sessions, remember user interface preferences, analyze traffic flow via Google Analytics, and optimize platform performance."
+  },
+  {
+    q: "Can I opt out of performance and marketing cookies?",
+    a: "Yes. You can manage or block cookies through your web browser preferences or opt out of analytics tracking without affecting core site access."
+  }
+];
+
 export default function CookiePolicyPage() {
   const sections = [
     {
@@ -165,11 +178,18 @@ export default function CookiePolicyPage() {
   ];
 
   return (
-    <LegalPageLayout
-      title="Cookie Policy"
-      subtitle="How Devopstrio uses cookies and tracking technologies to optimize website navigation, secure sessions, and analyze usage statistics."
-      lastUpdated="June 16, 2026"
-      sections={sections}
-    />
+    <>
+      <BreadcrumbSchema items={[
+        { name: "Home", item: "/" },
+        { name: "Cookie Policy", item: "/cookie-policy" }
+      ]} />
+      <FAQSchema faqs={cookieFaqs} />
+      <LegalPageLayout
+        title="Cookie Policy"
+        subtitle="How Devopstrio uses cookies and tracking technologies to optimize website navigation, secure sessions, and analyze usage statistics."
+        lastUpdated="June 16, 2026"
+        sections={sections}
+      />
+    </>
   );
 }

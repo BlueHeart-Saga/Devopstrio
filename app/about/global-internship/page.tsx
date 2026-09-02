@@ -29,6 +29,32 @@ export const metadata: Metadata = {
   },
 };
 
+import { FAQ } from "@/components/services/FAQ";
+import { FAQSchema } from "@/components/seo/Schemas";
+
+const internshipFaqs = [
+  {
+    q: "Who is eligible for Devopstrio's Global Internship Program?",
+    a: "The program is open to final-year computer science/engineering undergraduates, recent graduates, and early-career career-changers with strong fundamentals in programming, Linux systems, cloud concepts, or data structures.",
+    proof: "✓ 12-Week Intensive Bootcamp & Real-World Projects"
+  },
+  {
+    q: "What tracks are available in the Devopstrio Internship Program?",
+    a: "We offer specialized tracks in Cloud Architecture (AWS/Azure/GCP), DevOps & GitOps Automation, AI & Data Engineering (LLMs/RAG/MLOps), Cybersecurity & IAM, and Modern Web Development (Next.js/Node/Go).",
+    tags: ["Cloud Track", "DevOps Track", "AI & Data Track", "Cybersecurity Track"]
+  },
+  {
+    q: "Is the internship remote or in-person?",
+    a: "We offer both hybrid internships at our delivery centers (London, Chennai, Bangalore) and fully remote international cohorts with continuous 1-on-1 virtual mentorship.",
+    proof: "✓ Flexible Hybrid & Remote Cohorts Available"
+  },
+  {
+    q: "Does the internship lead to full-time employment at Devopstrio?",
+    a: "Yes. Top-performing interns receive priority full-time employment offers as Junior Cloud Architects, DevOps Engineers, or Software Engineers upon program completion.",
+    proof: "✓ High Conversion Rate to Full-Time Engineering Roles"
+  }
+];
+
 export default function GlobalInternshipPage() {
   return (
     <main className="min-h-screen bg-black text-white font-sans overflow-x-hidden">
@@ -39,6 +65,7 @@ export default function GlobalInternshipPage() {
           { name: "Global Internship Program", item: "/about/global-internship" },
         ]}
       />
+      <FAQSchema faqs={internshipFaqs} />
 
       {/* 1. Hero & Stats Overview */}
       <InternshipHero />
@@ -55,11 +82,11 @@ export default function GlobalInternshipPage() {
       {/* 5. Learning Journey (Roadmap) */}
       <LearningJourney />
 
-      {/* 6. What Interns Will Work On (3D CardSwap SaaS Platforms Showcase) */}
-      {/* <WhatInternsWorkOn /> */}
+      {/* 6. What Interns Will Work On */}
+      <WhatInternsWorkOn />
 
-      {/* 7. Mentorship & Benefits (Clean 60/40 Split List View) */}
-      {/* <MentorshipBenefits /> */}
+      {/* 7. Mentorship & Benefits */}
+      <MentorshipBenefits />
 
       {/* 8. Success Stories & Testimonials */}
       <SuccessStories />
@@ -67,7 +94,10 @@ export default function GlobalInternshipPage() {
       {/* 9. Application Form & Bottom Submission */}
       <ApplicationForm />
 
-      {/* 10. Representative CTA */}
+      {/* 10. Internship FAQs */}
+      <FAQ faqs={internshipFaqs} title="Global Internship" highlight="FAQs" />
+
+      {/* 11. Representative CTA */}
       <RepresentativeCTA
         title="Ready To Launch Your Career In"
         highlightText="Cloud & AI Engineering?"

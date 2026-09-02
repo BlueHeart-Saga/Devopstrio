@@ -28,11 +28,36 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 
+import { FAQ } from "@/components/services/FAQ";
+import { BreadcrumbSchema, FAQSchema } from "@/components/seo/Schemas";
+
+const csrFaqs = [
+  {
+    q: "What is Devopstrio's Green Cloud & Sustainability initiative?",
+    a: "Devopstrio is committed to net-zero carbon cloud hosting, FinOps energy optimization, serverless architecture adoption, and corporate social responsibility (CSR) programs that reduce digital carbon footprints.",
+    proof: "✓ Net-Zero Carbon Commitment · FinOps Green Audits"
+  },
+  {
+    q: "How does cloud cost optimization (FinOps) reduce carbon emissions?",
+    a: "By eliminating idle compute instances, auto-scaling workloads dynamically using Karpenter, and shutting down non-production environments after hours, we reduce energy consumption and cloud server waste by 30% to 50%.",
+    tags: ["FinOps Cost Optimization", "30–50% Energy Reduction", "Zero Idle Compute"]
+  },
+  {
+    q: "What CSR community projects does Devopstrio champion?",
+    a: "We support verified reforestation programs (36,000+ trees planted), solar energy grid access for remote schools, ocean plastic cleanups, and educational STEM grants for underprivileged students.",
+    proof: "✓ 36,000+ Trees Planted · 707+ Communities Supported"
+  },
+  {
+    q: "How can enterprises request a Green Cloud Audit from Devopstrio?",
+    a: "Enterprises can request a complimentary Green Cloud Audit through our portal. Our systems architects analyze server utilization rates, carbon tonnage metrics, and provide actionable optimization blueprints.",
+    proof: "✓ 24-Hour Green Cloud Diagnostic Response"
+  }
+];
+
 export default function CSRPage() {
   const [cloudBudget, setCloudBudget] = useState(25000);
   const [auditSubmitted, setAuditSubmitted] = useState(false);
   const [auditData, setAuditData] = useState({ name: "", email: "", company: "" });
-  const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   // Carbon calculator logic
   const co2Saved = ((cloudBudget * 12 * 0.0005) * 0.45).toFixed(1);
@@ -48,10 +73,6 @@ export default function CSRPage() {
         setAuditData({ name: "", email: "", company: "" });
       }, 5000);
     }
-  };
-
-  const toggleFaq = (index: number) => {
-    setOpenFaq(openFaq === index ? null : index);
   };
 
   const focusAreas = [
@@ -124,6 +145,12 @@ export default function CSRPage() {
 
   return (
     <main className="relative min-h-screen bg-black text-white font-sans overflow-x-clip selection:bg-emerald-500 selection:text-white">
+      <BreadcrumbSchema items={[
+        { name: "Home", item: "/" },
+        { name: "About Us", item: "/about/company-overview" },
+        { name: "Sustainability & CSR", item: "/about/sustainability-csr" }
+      ]} />
+      <FAQSchema faqs={csrFaqs} />
       
       {/* Subtle Background Glow */}
       <div className="absolute top-[-100px] left-[20%] w-[600px] h-[600px] bg-[radial-gradient(circle,rgba(16,185,129,0.08)_0%,transparent_70%)] blur-[120px] pointer-events-none z-0" />
@@ -541,7 +568,10 @@ export default function CSRPage() {
         </div>
       </section>
 
-      {/* 9. Representative CTA */}
+      {/* 9. Sustainability FAQs */}
+      <FAQ faqs={csrFaqs} title="Sustainability & CSR" highlight="FAQs" />
+
+      {/* 10. Representative CTA */}
       <RepresentativeCTA
         theme="emerald"
         title="Join Our Sustainability & CSR"

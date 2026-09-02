@@ -161,11 +161,9 @@ export function OpsOutcomesFooter() {
                       {isOpen ? <Minus size={16} /> : <Plus size={16} />}
                     </div>
                   </button>
-                  {isOpen && (
-                    <div className="mt-4 text-xs md:text-sm text-zinc-400 leading-relaxed font-bold max-w-3xl animate-fadeIn flex flex-col gap-4">
-                      <p>{faq.a}</p>
-                    </div>
-                  )}
+                  <div className={`mt-4 text-xs md:text-sm text-zinc-400 leading-relaxed font-bold max-w-3xl flex flex-col gap-4 ${isOpen ? "block animate-fadeIn" : "hidden"}`}>
+                    <p>{faq.a}</p>
+                  </div>
                 </div>
               );
             })}
