@@ -336,7 +336,18 @@ class InsightsApiService {
     const categoryName = category?.name || backendContent.category?.name || backendContent.category_name || "";
     const categorySlug = category?.slug || backendContent.category?.slug || backendContent.category_slug || getCategorySlug(categoryName);
 
-    const titleSlug = slugify(backendContent.title || "");
+    const titleSlugRaw = slugify(backendContent.title || "");
+    // Ensure total URL (https://devopstrio.co.uk/insights/{categorySlug}/{titleSlug}-{id}) remains under 110 characters (Google limit: 120 chars)
+    // Domain & path prefix = 39 chars. Category + / = categorySlug.length + 1. ID + hyphen = 25 chars.
+    const maxTitleLen = Math.max(15, 45 - (categorySlug ? categorySlug.length : 15));
+    let titleSlug = titleSlugRaw;
+    if (titleSlugRaw.length > maxTitleLen) {
+      titleSlug = titleSlugRaw.substring(0, maxTitleLen);
+      const lastHyphen = titleSlug.lastIndexOf("-");
+      if (lastHyphen > 8) {
+        titleSlug = titleSlug.substring(0, lastHyphen);
+      }
+    }
     const combinedSlug = titleSlug ? `${titleSlug}-${backendContent.id}` : backendContent.id;
 
     return {

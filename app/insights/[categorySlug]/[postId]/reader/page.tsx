@@ -12,10 +12,23 @@ interface ReaderPageProps {
   }>;
 }
 
+function getActualId(param: string): string {
+  if (!param) return param;
+  if (param.includes("-")) {
+    const parts = param.split("-");
+    const lastPart = parts[parts.length - 1];
+    if (/^[a-f0-9]{24}$/i.test(lastPart)) {
+      return lastPart;
+    }
+  }
+  return param;
+}
+
 export default function DocumentReaderPage({ params }: ReaderPageProps) {
   const resolvedParams = React.use(params);
   const categorySlug = resolvedParams.categorySlug;
   const postId = resolvedParams.postId;
+  const actualId = getActualId(postId);
 
   const [post, setPost] = useState<TransformedPost | null>(null);
   const [docUrl, setDocUrl] = useState<string | null>(null);
@@ -25,7 +38,7 @@ export default function DocumentReaderPage({ params }: ReaderPageProps) {
     async function loadPostDoc() {
       try {
         setLoading(true);
-        const raw = await insightsApi.getContentById(postId);
+        const raw = await insightsApi.getContentById(actualId);
         const data = raw?.item ?? raw;
         if (data && data.id) {
           const transformed = insightsApi.transformContent(data);

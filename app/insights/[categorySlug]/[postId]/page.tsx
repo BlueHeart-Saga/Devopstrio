@@ -24,6 +24,8 @@ function getActualId(param: string): string {
   return param;
 }
 
+import { generatePageMetadata } from "@/lib/seo-utils";
+
 export async function generateMetadata({ params }: PostDetailPageProps): Promise<Metadata> {
   const { categorySlug, postId } = await params;
   const actualId = getActualId(postId);
@@ -32,34 +34,13 @@ export async function generateMetadata({ params }: PostDetailPageProps): Promise
     const data = raw?.item ?? raw;
     if (data && data.title) {
       const post = insightsApi.transformContent(data);
-      let title = post.title;
-      if (title.length > 55) {
-        title = title.substring(0, 55).trim() + "... | Devopstrio";
-      } else if (!title.includes("Devopstrio")) {
-        title = `${title} | Devopstrio`;
-      }
-      const description = post.excerpt || `${post.title} — Detailed engineering case study and technical breakdown by Devopstrio.`;
-      const canonicalUrl = `https://devopstrio.co.uk/insights/${categorySlug}/${post.slug}`;
-      return {
-        title: title,
-        description: description.length > 155 ? description.substring(0, 152) + "..." : description,
-        alternates: {
-          canonical: canonicalUrl
-        },
-        openGraph: {
-          title: title,
-          description: description,
-          type: "article",
-          url: canonicalUrl,
-          images: post.image ? [{ url: post.image }] : []
-        },
-        twitter: {
-          card: "summary_large_image",
-          title: title,
-          description: description,
-          images: post.image ? [post.image] : []
-        }
-      };
+      return generatePageMetadata({
+        title: post.title,
+        description: post.excerpt || `${post.title} — Technical publication by Devopstrio.`,
+        path: `/insights/${categorySlug}/${post.slug}`,
+        ogImage: post.image || undefined,
+        keywords: post.tags
+      });
     }
   } catch (e) {
     console.error("Failed to generate metadata for post page:", e);

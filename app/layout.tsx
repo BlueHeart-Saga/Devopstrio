@@ -43,6 +43,23 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark overflow-x-clip">
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Caveat:wght@600;700&family=Great+Vibes&family=Kaushan+Script&family=Permanent+Marker&family=Rock+Salt&family=Sedgwick+Ave&display=swap"
+          media="print"
+          // @ts-expect-error onLoad async stylesheet loading pattern
+          onLoad="this.media='all'"
+        />
+        <noscript>
+          <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Caveat:wght@600;700&family=Great+Vibes&family=Kaushan+Script&family=Permanent+Marker&family=Rock+Salt&family=Sedgwick+Ave&display=swap"
+          />
+        </noscript>
+      </head>
       <body className="overflow-x-clip w-full max-w-[100vw] relative bg-[#030303] text-white">
         {/* Google Analytics 4 (GA4) */}
         <Script

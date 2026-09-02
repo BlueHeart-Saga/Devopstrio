@@ -61,6 +61,8 @@ interface CategoryPageProps {
   }>;
 }
 
+import { generatePageMetadata } from "@/lib/seo-utils";
+
 export async function generateMetadata({ params }: CategoryPageProps): Promise<Metadata> {
   const { categorySlug } = await params;
   
@@ -79,13 +81,11 @@ export async function generateMetadata({ params }: CategoryPageProps): Promise<M
     }
   } catch (e) {}
 
-  return {
-    title: `${categoryName} Insights & Technical Publications | Devopstrio`,
+  return generatePageMetadata({
+    title: `${categoryName} Insights`,
     description: `Read technical deep-dives, industry briefs, and case studies about ${categoryName.toLowerCase()} on the Devopstrio portal.`,
-    alternates: {
-      canonical: `https://devopstrio.co.uk/insights/${categorySlug}`
-    }
-  };
+    path: `/insights/${categorySlug}`
+  });
 }
 
 export default async function CategoryLandingPage({ params }: CategoryPageProps) {

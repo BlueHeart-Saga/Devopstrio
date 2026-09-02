@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { Reveal } from "@/components/ui/Reveal";
 import Link from "next/link";
 
@@ -14,11 +15,14 @@ export function CompanyIntro() {
       {/* 100% FULL SCREEN EDGE-TO-EDGE BANNER IMAGE */}
       <Reveal delay={0.1}>
         <div className="relative w-full h-[380px] sm:h-[460px] md:h-[520px] lg:h-[580px] overflow-hidden shadow-2xl">
-          <img
+          <Image
             src="/webp/assets/About-page/team/image.webp"
             alt="Devopstrio Engineering Team"
-            className="w-full h-full object-cover object-center filter brightness-105 contrast-105"
-            loading="lazy"
+            fill
+            priority
+            sizes="100vw"
+            quality={85}
+            className="object-cover object-center filter brightness-105 contrast-105"
           />
           {/* Overlays for Readability & Depth */}
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-black/30 pointer-events-none" />

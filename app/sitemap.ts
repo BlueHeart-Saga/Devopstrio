@@ -35,6 +35,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/cookie-policy",
     "/gdpr",
     "/services/explore",
+    "/services/ai-consulting",
+    "/services/ai-modernization",
     "/ecosystem/landing-zone",
     "/marketing",
     "/marketing/products",
@@ -156,15 +158,17 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const dynamicPostPages: MetadataRoute.Sitemap = [];
   try {
     const fetchPostsWithTimeout = Promise.race([
-      insightsApi.getAllPosts(300),
-      new Promise<any[]>((resolve) => setTimeout(() => resolve([]), 5000))
+      insightsApi.getAllPosts(500),
+      new Promise<any[]>((resolve) => setTimeout(() => resolve([]), 15000))
     ]);
     const posts = await fetchPostsWithTimeout;
     posts.forEach((post) => {
       if (post.id && post.category?.slug) {
+        const postDate = post.date ? new Date(post.date) : new Date();
+        const validDate = isNaN(postDate.getTime()) ? new Date() : postDate;
         dynamicPostPages.push({
           url: `${baseUrl}/insights/${post.category.slug}/${post.slug || post.id}`,
-          lastModified: new Date(post.date),
+          lastModified: validDate,
           changeFrequency: "weekly",
           priority: 0.6
         });
