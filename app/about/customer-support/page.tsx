@@ -174,7 +174,7 @@ export default function CustomerSupportPage() {
       <SLAMatrix />
 
       {/* 6. Product Ecosystem */}
-      <ProductEcosystem />
+      {/* <ProductEcosystem /> */}
 
       {/* 7. Customer Success Metrics */}
       <SupportMetrics />

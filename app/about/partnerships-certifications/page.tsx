@@ -109,7 +109,7 @@ export default function PartnershipsCertificationsPage() {
       </div>
 
       {/* 7. Trust Statement */}
-      <TrustStatement />
+      {/* <TrustStatement /> */}
 
       {/* 8. Partnerships FAQs */}
       <FAQ faqs={partnershipFaqs} title="Partnerships & Certifications" highlight="FAQs" />

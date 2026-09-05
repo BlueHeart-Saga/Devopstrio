@@ -87,7 +87,9 @@ export default function LeadershipTeamPage() {
       <LeadershipDeliver />
 
       {/* 2. 8 Timeless Leadership Principles */}
+      {/*
       <LeadershipPrinciples />
+      */}
 
       {/* 3. 3 Strategic Pillars */}
       <Leadership3Pillars />
@@ -96,7 +98,9 @@ export default function LeadershipTeamPage() {
       <ExecutiveLeadership />
 
       {/* Principal Architects & Specialists */}
+      {/*
       <PrincipalArchitects />
+      */}
 
       {/* 5. PILLAR 02: EMPOWER — Global Engineering Teams */}
       <GlobalEngineeringTeams />
@@ -105,7 +109,9 @@ export default function LeadershipTeamPage() {
       <LeadershipImpactDeliver />
 
       {/* Global Presence */}
+      {/*
       <GlobalPresence />
+      */}
 
       {/* 7. Awards & Certifications */}
       <AwardsRecognitionLeadership />
