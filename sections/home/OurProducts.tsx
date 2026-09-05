@@ -140,7 +140,7 @@ export function OurProducts() {
           </div>
 
           {/* Right CardSwap */}
-          <div className="w-full lg:w-7/12 h-[650px] relative">
+          <div className="w-full lg:w-7/12 h-[420px] min-[400px]:h-[460px] sm:h-[540px] md:h-[600px] lg:h-[650px] relative flex items-center justify-center overflow-visible">
             {/* Gradient glow behind the cards */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-rose-500/10 rounded-full blur-[120px] pointer-events-none" />
 

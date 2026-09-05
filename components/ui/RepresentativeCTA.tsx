@@ -16,6 +16,7 @@ export interface RepresentativeCTAProps {
   imageSrc?: string;
   imageAlt?: string;
   theme?: "rose" | "emerald";
+  hideImageOnMobile?: boolean;
 }
 
 export function RepresentativeCTA({
@@ -32,7 +33,8 @@ export function RepresentativeCTA({
   secondaryBtnHref = "/about/our-culture-people",
   imageSrc = "/webp/assets/components/cta-img-001.webp",
   imageAlt = "Devopstrio Representative",
-  theme = "rose"
+  theme = "rose",
+  hideImageOnMobile = false
 }: RepresentativeCTAProps) {
   const isEmerald = theme === "emerald";
   const highlightColor = isEmerald
@@ -89,13 +91,15 @@ export function RepresentativeCTA({
               </div>
             </div>
 
-            {/* Right Representative Image: Bottom touches card bottom border line exactly, top extends further outside top border */}
-            <div className="lg:absolute lg:bottom-0 lg:right-2 xl:right-6 w-full sm:w-[520px] lg:w-[640px] xl:w-[700px] flex justify-center lg:justify-end items-end pointer-events-none z-10">
+            {/* Right Representative Image: Bottom touches card bottom border line exactly on desktop */}
+            <div className={`${hideImageOnMobile ? "hidden lg:flex" : "flex"} lg:absolute lg:bottom-0 lg:right-2 xl:right-6 w-full sm:w-[480px] md:w-[540px] lg:w-[640px] xl:w-[700px] justify-center lg:justify-end items-end pointer-events-none z-10 mt-6 sm:mt-8 lg:mt-0 mx-auto lg:mx-0`}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={imageSrc}
+              <img
+                src={imageSrc}
                 alt={imageAlt}
-                className="w-full h-auto object-contain pointer-events-none drop-shadow-[0_25px_50px_rgba(0,0,0,0.95)] lg:max-h-[calc(100%+160px)] xl:max-h-[calc(100%+180px)] -mt-24 sm:-mt-32 lg:mt-0"
-              loading="lazy" />
+                className="w-full h-auto max-h-[240px] sm:max-h-[320px] lg:max-h-[calc(100%+160px)] xl:max-h-[calc(100%+180px)] object-contain object-bottom pointer-events-none drop-shadow-[0_15px_35px_rgba(0,0,0,0.85)] lg:drop-shadow-[0_25px_50px_rgba(0,0,0,0.95)]"
+                loading="lazy"
+              />
             </div>
 
           </div>

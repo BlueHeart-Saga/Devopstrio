@@ -115,14 +115,14 @@ export const WhatInternsWorkOn = () => {
   };
 
   return (
-    <section id="what-interns-work-on" className="w-full pt-20 md:pt-28 pb-20 md:pb-28 bg-[#030303] text-white relative overflow-hidden font-sans border-t border-white/5">
+    <section id="what-interns-work-on" className="w-full pt-16 sm:pt-20 md:pt-28 pb-16 sm:pb-20 md:pb-28 bg-[#030303] text-white relative overflow-hidden font-sans border-t border-white/5">
       {/* Background ambient lighting */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-rose-950/10 rounded-full blur-[160px] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto w-full px-6 sm:px-12 xl:px-8 relative z-10">
+      <div className="max-w-7xl mx-auto w-full px-4 sm:px-8 xl:px-8 relative z-10">
         
         {/* Top 2-Column Hero: Left Text Content & Right 3D CardSwap Deck (Matching OurProducts.tsx) */}
-        <div className="flex flex-col lg:flex-row items-start gap-16 lg:gap-8 mb-24">
+        <div className="flex flex-col lg:flex-row items-start gap-10 sm:gap-14 lg:gap-8 mb-16 md:mb-24">
 
           {/* Left Column */}
           <div className="w-full lg:w-5/12 z-20">
@@ -132,30 +132,30 @@ export const WhatInternsWorkOn = () => {
               </span>
             </Reveal> */}
             <Reveal>
-              <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight text-white mb-4 font-sans">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight text-white mb-4 font-sans">
                 Products Our Interns <span className="text-rose-500">Work On</span>
               </h2>
             </Reveal>
             <Reveal>
-              <p className="text-zinc-400 text-base md:text-lg leading-relaxed mb-8 max-w-xl">
+              <p className="text-zinc-400 text-sm sm:text-base md:text-lg leading-relaxed mb-6 sm:mb-8 max-w-xl">
                 Get hands-on experience contributing directly to active, production-grade architectures. Our interns collaborate alongside engineering teams to develop features, optimize workflows, and enhance our suite of enterprise <Link href="/ecosystem/platforms-solutions/saas-platforms" className="text-rose-500 hover:underline font-semibold">SaaS platforms</Link>.
               </p>
             </Reveal>
 
             {/* Quick Metrics Bar */}
             <Reveal delay={0.1}>
-              <div className="grid grid-cols-3 gap-3 mb-8 p-4 rounded-2xl bg-zinc-950/80 border border-white/10 backdrop-blur-sm max-w-lg">
+              <div className="grid grid-cols-3 gap-2 sm:gap-3 mb-8 p-3 sm:p-4 rounded-2xl bg-zinc-950/80 border border-white/10 backdrop-blur-sm max-w-lg">
                 <div>
-                  <div className="text-lg sm:text-xl font-bold text-white">Live</div>
-                  <div className="text-[11px] text-zinc-400 font-medium">SaaS Platforms</div>
+                  <div className="text-base sm:text-lg md:text-xl font-bold text-white">Live</div>
+                  <div className="text-[10px] sm:text-[11px] text-zinc-400 font-medium">SaaS Platforms</div>
                 </div>
-                <div className="border-l border-white/10 pl-3">
-                  <div className="text-lg sm:text-xl font-bold text-rose-400">100%</div>
-                  <div className="text-[11px] text-zinc-400 font-medium">Real Contributions</div>
+                <div className="border-l border-white/10 pl-2.5 sm:pl-3">
+                  <div className="text-base sm:text-lg md:text-xl font-bold text-rose-400">100%</div>
+                  <div className="text-[10px] sm:text-[11px] text-zinc-400 font-medium">Real Contributions</div>
                 </div>
-                <div className="border-l border-white/10 pl-3">
-                  <div className="text-lg sm:text-xl font-bold text-emerald-400">Multi-Cloud</div>
-                  <div className="text-[11px] text-zinc-400 font-medium">AWS / Azure / GCP</div>
+                <div className="border-l border-white/10 pl-2.5 sm:pl-3 min-w-0">
+                  <div className="text-sm sm:text-base md:text-xl font-bold text-emerald-400 truncate">Multi-Cloud</div>
+                  <div className="text-[10px] sm:text-[11px] text-zinc-400 font-medium truncate">AWS / Azure / GCP</div>
                 </div>
               </div>
             </Reveal>
@@ -179,9 +179,9 @@ export const WhatInternsWorkOn = () => {
           </div>
 
           {/* Right Column: CardSwap 3D Stack */}
-          <div className="w-full lg:w-7/12 h-[600px] sm:h-[650px] relative">
+          <div className="w-full lg:w-7/12 h-[420px] min-[400px]:h-[460px] sm:h-[540px] md:h-[600px] lg:h-[650px] relative flex items-center justify-center overflow-visible">
             {/* Gradient glow behind the cards */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[550px] bg-rose-500/10 rounded-full blur-[120px] pointer-events-none" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] sm:w-[500px] h-[300px] sm:h-[500px] bg-rose-500/10 rounded-full blur-[100px] sm:blur-[120px] pointer-events-none" />
 
             <CardSwap
               width={380}
@@ -200,7 +200,7 @@ export const WhatInternsWorkOn = () => {
                   className="overflow-hidden flex flex-col group shadow-[0_16px_50px_rgba(0,0,0,0.7)] cursor-pointer pointer-events-auto bg-[#0A0A0A] border border-zinc-800/80 rounded-[24px]"
                 >
                   {/* Padded Image Container (Matching OurProducts.tsx) */}
-                  <div className="relative h-[48%] w-full p-2.5 pb-0">
+                  <div className="relative h-[46%] sm:h-[48%] w-full p-2 sm:p-2.5 pb-0">
                     <div className="relative w-full h-full overflow-hidden rounded-[16px] bg-zinc-900 border border-zinc-800/50">
                       <Image
                         src={prod.image}
@@ -213,7 +213,7 @@ export const WhatInternsWorkOn = () => {
 
                       {/* Product Name Overlay */}
                       <div className="absolute bottom-3 left-4 z-20">
-                        <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
+                        <h3 className="text-lg sm:text-2xl font-bold text-white tracking-tight drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
                           {prod.name}
                         </h3>
                       </div>
@@ -221,26 +221,26 @@ export const WhatInternsWorkOn = () => {
                   </div>
 
                   {/* Content Container */}
-                  <div className="h-[52%] p-4 sm:p-5 flex flex-col bg-[#0A0A0A] relative z-10 justify-between">
+                  <div className="h-[54%] sm:h-[52%] p-3.5 sm:p-5 flex flex-col bg-[#0A0A0A] relative z-10 justify-between">
                     <div>
                       {/* Category Badge */}
                       <div className="flex items-center mb-2">
-                        <span className="inline-flex items-center justify-center px-3 py-0.5 rounded-full text-xs font-semibold tracking-wider uppercase bg-rose-500/10 text-rose-500 border border-rose-500/20">
+                        <span className="inline-flex items-center justify-center px-2.5 sm:px-3 py-0.5 rounded-full text-[10px] sm:text-xs font-semibold tracking-wider uppercase bg-rose-500/10 text-rose-500 border border-rose-500/20">
                           {categoryLabel(prod.category)}
                         </span>
                       </div>
 
                       {/* Description */}
-                      <p className="text-zinc-300 text-xs sm:text-sm leading-relaxed mb-3 line-clamp-2 font-normal">
+                      <p className="text-zinc-300 text-xs sm:text-sm leading-relaxed mb-2.5 sm:mb-3 line-clamp-2 font-normal">
                         {prod.desc}
                       </p>
 
                       {/* Features Checkmarks */}
                       {prod.features && prod.features.length > 0 && (
-                        <div className="grid grid-cols-2 gap-x-2 gap-y-1 mb-3 bg-zinc-950/80 p-2 rounded-lg border border-zinc-800/60">
+                        <div className="grid grid-cols-2 gap-x-1.5 sm:gap-x-2 gap-y-1 mb-2.5 sm:mb-3 bg-zinc-950/80 p-1.5 sm:p-2 rounded-lg border border-zinc-800/60">
                           {prod.features.map((feat) => (
-                            <div key={feat} className="flex items-center gap-1.5 text-xs font-medium text-zinc-200">
-                              <span className="text-rose-500 font-bold text-[11px]">✓</span>
+                            <div key={feat} className="flex items-center gap-1 sm:gap-1.5 text-[10px] sm:text-xs font-medium text-zinc-200 min-w-0">
+                              <span className="text-rose-500 font-bold text-[10px] sm:text-[11px] shrink-0">✓</span>
                               <span className="truncate">{feat}</span>
                             </div>
                           ))}
@@ -249,12 +249,12 @@ export const WhatInternsWorkOn = () => {
                     </div>
 
                     {/* Footer Tags & Action */}
-                    <div className="mt-auto flex items-center justify-between gap-3 pt-2 border-t border-white/5">
-                      <div className="flex gap-1 flex-wrap">
+                    <div className="mt-auto flex items-center justify-between gap-2 sm:gap-3 pt-2 border-t border-white/5">
+                      <div className="flex gap-1 flex-wrap overflow-hidden max-h-6">
                         {prod.tags.slice(0, 2).map((tag) => (
                           <span
                             key={tag}
-                            className="text-xs font-medium bg-zinc-900 border border-zinc-800 text-zinc-300 px-2 py-0.5 rounded"
+                            className="text-[10px] sm:text-xs font-medium bg-zinc-900 border border-zinc-800 text-zinc-300 px-1.5 sm:px-2 py-0.5 rounded truncate max-w-[85px] sm:max-w-none"
                           >
                             {tag}
                           </span>
@@ -266,7 +266,7 @@ export const WhatInternsWorkOn = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                         onClick={(e) => e.stopPropagation()}
-                        className="text-xs font-bold text-white bg-rose-600 hover:bg-rose-500 px-3.5 py-1.5 rounded-lg flex items-center gap-1 transition-all shadow-[0_0_14px_rgba(225,29,72,0.4)] whitespace-nowrap shrink-0 cursor-pointer"
+                        className="text-[11px] sm:text-xs font-bold text-white bg-rose-600 hover:bg-rose-500 px-2.5 sm:px-3.5 py-1.5 rounded-lg flex items-center gap-1 transition-all shadow-[0_0_14px_rgba(225,29,72,0.4)] whitespace-nowrap shrink-0 cursor-pointer"
                       >
                         <span>{prod.cta || "Visit site"}</span>
                         <ArrowUpRight size={13} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
