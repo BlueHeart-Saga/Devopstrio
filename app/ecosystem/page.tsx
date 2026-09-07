@@ -80,9 +80,9 @@ export default function EcosystemLandingPage() {
       </div>
 
       {/* Cloud Partner Showcase */}
-      <div id="cloud-partners">
+      {/* <div id="cloud-partners">
         <CloudPartnerShowcase />
-      </div>
+      </div> */}
 
       {/* 4. Platform Portfolio */}
       <div id="portfolio">
@@ -95,9 +95,9 @@ export default function EcosystemLandingPage() {
       </div>
 
       {/* 6. Strategic Alliance Network */}
-      <div id="alliances">
+      {/* <div id="alliances">
         <AllianceNetwork />
-      </div>
+      </div> */}
 
       {/* 7. Global Delivery Network */}
       <div id="delivery" className="relative z-10 w-full bg-black">
@@ -115,14 +115,14 @@ export default function EcosystemLandingPage() {
       </div>
 
       {/* 8. Engineering Excellence */}
-      <div id="excellence">
+      {/* <div id="excellence">
         <DomainExcellence />
-      </div>
+      </div> */}
 
       {/* 9. Innovation Labs */}
-      <div id="labs">
+      {/* <div id="labs">
         <InnovationLabs />
-      </div>
+      </div> */}
 
       {/* 10. Ecosystem Metrics (Business Outcomes) */}
       <div id="metrics">

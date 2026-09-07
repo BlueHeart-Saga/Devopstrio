@@ -172,16 +172,16 @@ export function EcosystemPillars() {
         </div>
 
         {/* Full Size Integrated Ecosystem Image without border, blending into the dark theme */}
-        <Reveal delay={0.2} className="mt-12 w-full">
+        {/* <Reveal delay={0.2} className="mt-12 w-full">
           <div className="relative w-full overflow-hidden rounded-3xl bg-[#030303] flex items-center justify-center">
-            {/* Blending gradients to merge the image edges smoothly into the background theme */}
+            Blending gradients to merge the image edges smoothly into the background theme
             <div className="absolute inset-0 bg-gradient-to-t from-[#030303] via-transparent to-transparent pointer-events-none z-10" />
             <img src="/webp/assets/ecosystem/domains/Ecosystem_main_page_poster.webp"
               alt="Ecosystem Alliance Map"
               className="w-full h-auto object-contain select-none pointer-events-none z-0"
             loading="lazy" />
           </div>
-        </Reveal>
+        </Reveal> */}
 
       </div>
     </section>

@@ -70,33 +70,33 @@ export default function AboutPage() {
           <CompanyIntro />
         </div>
 
-        <div id="vision">
+        {/* <div id="vision">
           <MissionVision />
-        </div>
+        </div> */}
 
         <div id="journey">
           <OurStory />
         </div>
 
-        <div id="capabilities">
+        {/* <div id="capabilities">
           <AboutServices />
-        </div>
+        </div> */}
 
-        <div id="advantage">
+        {/* <div id="advantage">
           <WhyChoose />
-        </div>
+        </div> */}
 
         <div id="impact">
           <MetricsStats />
         </div>
 
-        <div id="ecosystem">
+        {/* <div id="ecosystem">
           <OurPartnership />
-        </div>
+        </div> */}
 
-        <div id="future">
+        {/* <div id="future">
           <Achievements />
-        </div>
+        </div> */}
 
         <div className="max-w-site mx-auto w-full px-6 md:px-12 lg:px-16 xl:px-20 pb-12">
           <GlobalLocations />
