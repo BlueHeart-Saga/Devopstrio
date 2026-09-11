@@ -8,67 +8,67 @@ const aiWebsiteUrl = "https://ai.devopstrio.co.uk";
 
 const aiServicesList = [
   {
-    id: "solutions",
-    title: "AI Solutions",
-    subtitle: "Cognitive Enterprise Stacks",
-    description: "Custom enterprise solutions built on top-tier cognitive stacks, incorporating semantic retrieval systems and customized LLMs.",
-    link: `${aiWebsiteUrl}/#solutions`,
-    icon: "/assets/Home-page/AI-Services-Gif/AI_Solutions.gif",
-    badge: "Cognitive Stacks"
+    id: "industries",
+    title: "Industries",
+    subtitle: "Sector-Specific Intelligence",
+    description: "Engineered AI frameworks tailored specifically for Healthcare, Banking & Finance, Retail, and Manufacturing environments.",
+    link: "https://ai.devopstrio.co.uk/industries/overview",
+    icon: "/assets/Home-page/AI-Services-Gif/Industry.gif",
+    badge: "Sector Solutions"
   },
   {
-    id: "services",
-    title: "AI Services",
-    subtitle: "Modernization & Model Training",
-    description: "End-to-end consulting, continuous modernization, custom model training, and integration pipelines built for modern businesses.",
-    link: `${aiWebsiteUrl}/#services`,
+    id: "capabilities",
+    title: "AI Capabilities",
+    subtitle: "Foundation Models & Inference",
+    description: "Custom LLM fine-tuning, cognitive semantic search, high-throughput inference pipelines, and multimodal enterprise models.",
+    link: "https://ai.devopstrio.co.uk/capabilities/overview",
     icon: "/assets/Home-page/AI-Services-Gif/Services.gif",
-    badge: "Model Training"
+    badge: "Foundation Models"
+  },
+  {
+    id: "solutions",
+    title: "Enterprise Solutions",
+    subtitle: "Scalable Architecture & Workflows",
+    description: "Mission-critical enterprise AI architectures, automated workflows, and end-to-end digital modernization engines.",
+    link: "https://ai.devopstrio.co.uk/solutions/overview",
+    icon: "/assets/Home-page/AI-Services-Gif/AI_Solutions.gif",
+    badge: "Enterprise Stacks"
+  },
+  {
+    id: "products",
+    title: "AI Products",
+    subtitle: "Ready-to-Deploy Platforms",
+    description: "Production-ready AI platforms including AIHire talent matching, cognitive doc indexers, and automated evaluation suites.",
+    link: "https://ai.devopstrio.co.uk/products/overview",
+    icon: "/assets/Home-page/AI-Services-Gif/AI-products.gif",
+    badge: "AI Platforms"
   },
   {
     id: "agents",
     title: "AI Agents",
     subtitle: "Autonomous Digital Workforce",
-    description: "Deploy autonomous digital agents trained for IT support operations, sales pipeline execution, finance auditing, and HR operations.",
-    link: `${aiWebsiteUrl}/#agents`,
+    description: "Deploy autonomous digital agents for automated IT operations, real-time finance auditing, and multi-step customer workflows.",
+    link: "https://ai.devopstrio.co.uk/agents/overview",
     icon: "/assets/Home-page/AI-Services-Gif/AI-Agent.gif",
     badge: "Autonomous Workforce"
   },
   {
-    id: "industry",
-    title: "AI by Industry",
-    subtitle: "Sector-Specific Engineering",
-    description: "Engineered frameworks optimized specifically for Healthcare workflows, Banking security compliance, and Smart Retail recommendations.",
-    link: `${aiWebsiteUrl}/#industries`,
-    icon: "/assets/Home-page/AI-Services-Gif/Industry.gif",
-    badge: "Sector Solutions"
-  },
-  {
-    id: "ecosystem",
-    title: "AI Technology Ecosystem",
-    subtitle: "Leading-Edge Stack Integrations",
-    description: "Harness standard-setting integrations with OpenAI, Anthropic, LangChain, vector datastores, and cloud environments.",
-    link: `${aiWebsiteUrl}/#ecosystem`,
-    icon: "/assets/Home-page/AI-Services-Gif/AI-technology-ecosystem.gif",
-    badge: "Stack Integrations"
-  },
-  {
-    id: "governance",
-    title: "AI Governance",
-    subtitle: "Zero-Trust Security & Audit",
-    description: "Establish model explainability benchmarks, human-in-the-loop oversight workflows, and zero-trust security audits.",
-    link: `${aiWebsiteUrl}/#governance`,
+    id: "innovation",
+    title: "Innovation Lab",
+    subtitle: "Advanced R&D & Experimentation",
+    description: "Cutting-edge experimentation with frontier AI models, novel neural architectures, and rapid proof-of-concept development.",
+    link: "https://ai.devopstrio.co.uk/innovation/overview",
     icon: "/assets/Home-page/AI-Services-Gif/AI-Security-governance.gif",
-    badge: "Zero-Trust Security"
+    badge: "R&D Lab"
   },
   {
-    id: "platforms",
-    title: "AI Platforms & Products",
-    subtitle: "Intelligent Search & Matching",
-    description: "Activate AIHire matching platforms, cognitive search indexers, and automated academic document evaluation studios.",
-    link: `${aiWebsiteUrl}/#platforms`,
-    icon: "/assets/Home-page/AI-Services-Gif/AI-products.gif",
-    badge: "AI Platforms"
+    id: "integrations",
+    title: "Integrations",
+    subtitle: "Unified Ecosystem Connectors",
+    description: "Seamless enterprise connectivity across OpenAI, Anthropic, LangChain, vector databases, and multi-cloud environments.",
+    link: "https://ai.devopstrio.co.uk/integrations/overview",
+    icon: "/assets/Home-page/AI-Services-Gif/AI-technology-ecosystem.gif",
+    badge: "Ecosystem Connectors"
   }
 ];
 
@@ -80,19 +80,19 @@ interface AICardProps {
 
 function AICard({ item, flexClass = "flex-1", delay = 0 }: AICardProps) {
   return (
-    <Reveal delay={delay} className={`w-full ${flexClass} flex flex-col min-h-[160px]`}>
+    <Reveal delay={delay} className={`w-full ${flexClass} flex flex-col min-h-[160px] transition-all duration-500`}>
       <a
         href={item.link}
         target="_blank"
         rel="noopener noreferrer"
-        className="w-full h-full bg-gradient-to-br from-zinc-950/90 via-zinc-950/80 to-[#0a0507]/90 hover:from-rose-950/40 hover:via-zinc-950 hover:to-zinc-950 border border-white/10 hover:border-rose-500/40 rounded-2xl sm:rounded-3xl p-5 sm:p-6 lg:p-7 flex flex-col justify-between transition-all duration-500 group shadow-xl backdrop-blur-md relative overflow-hidden cursor-pointer"
+        className="w-full h-full bg-gradient-to-br from-zinc-950/90 via-zinc-950/80 to-[#0a0507]/90 hover:from-rose-950/40 hover:via-zinc-950 hover:to-zinc-950 border border-white/10 hover:border-rose-500/40 rounded-2xl sm:rounded-3xl p-5 sm:p-6 flex flex-col justify-between transition-all duration-500 group shadow-xl backdrop-blur-md relative overflow-hidden cursor-pointer"
       >
         {/* Glow backdrop effect on card hover */}
         <div className="absolute -right-10 -top-10 w-56 h-56 bg-rose-500/15 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
 
-        {/* Top: Big Icon (NO background, NO border container) */}
+        {/* Top: Icon */}
         <div className="relative z-10 mb-2 sm:mb-4">
-          <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 lg:w-18 lg:h-18 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-500">
+          <div className="w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-500">
             <img
               src={item.icon}
               alt={`${item.title} icon`}
@@ -103,20 +103,19 @@ function AICard({ item, flexClass = "flex-1", delay = 0 }: AICardProps) {
           </div>
         </div>
 
-        {/* Content: Big Title + Hover-revealed details */}
+        {/* Content: Title + Hover-revealed details */}
         <div className="relative z-10 mt-auto">
-          {/* Big Viewable Title */}
-          <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-white tracking-tight font-sans group-hover:text-rose-400 transition-colors leading-tight mb-1">
+          <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight font-sans group-hover:text-rose-400 transition-colors leading-tight mb-1">
             {item.title}
           </h3>
 
           {/* Hover Details: Subtitle & Description (Reveals smoothly on hover) */}
           <div className="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] opacity-0 group-hover:opacity-100 transition-all duration-500 ease-in-out">
             <div className="overflow-hidden pt-2">
-              <p className="text-xs sm:text-sm font-semibold text-rose-400 mb-1.5 font-sans">
+              <p className="text-xs sm:text-sm font-semibold text-rose-400 mb-1 font-sans">
                 {item.subtitle}
               </p>
-              <p className="text-zinc-300 text-xs sm:text-sm leading-relaxed font-normal font-sans line-clamp-3 mb-3">
+              <p className="text-zinc-300 text-xs sm:text-sm leading-relaxed font-normal font-sans line-clamp-2 sm:line-clamp-3 mb-3">
                 {item.description}
               </p>
 
@@ -169,26 +168,26 @@ export function ServicesAIShowcase() {
           </Reveal>
         </div>
 
-        {/* Bento Mosaic 3-Column Grid matching reference pattern with auto-adjusting responsive gaps */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 lg:gap-6 items-stretch max-w-7xl mx-auto h-auto lg:h-[640px] xl:h-[680px]">
+        {/* Bento Mosaic 3-Column Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 lg:gap-6 items-stretch max-w-7xl mx-auto h-auto lg:h-[620px] xl:h-[650px]">
 
-          {/* Column 1: 2 Cards (Large Top, Medium Bottom) */}
+          {/* Column 1: 2 Cards (Equal balanced height) */}
           <div className="flex flex-col gap-4 sm:gap-5 lg:gap-6 h-full">
-            <AICard item={aiServicesList[0]} flexClass="lg:flex-[1.55]" delay={0.05} />
-            <AICard item={aiServicesList[1]} flexClass="lg:flex-[1.0]" delay={0.1} />
+            <AICard item={aiServicesList[0]} flexClass="lg:flex-1 hover:lg:flex-[1.25]" delay={0.05} />
+            <AICard item={aiServicesList[1]} flexClass="lg:flex-1 hover:lg:flex-[1.25]" delay={0.1} />
           </div>
 
-          {/* Column 2: 3 Cards (Top, Middle, Bottom) */}
+          {/* Column 2: 3 Cards (Hover expansion ensures full visibility) */}
           <div className="flex flex-col gap-4 sm:gap-5 lg:gap-6 h-full">
-            <AICard item={aiServicesList[2]} flexClass="lg:flex-1" delay={0.15} />
-            <AICard item={aiServicesList[3]} flexClass="lg:flex-1" delay={0.2} />
-            <AICard item={aiServicesList[4]} flexClass="lg:flex-1" delay={0.25} />
+            <AICard item={aiServicesList[2]} flexClass="lg:flex-1 hover:lg:flex-[1.7]" delay={0.15} />
+            <AICard item={aiServicesList[3]} flexClass="lg:flex-1 hover:lg:flex-[1.7]" delay={0.2} />
+            <AICard item={aiServicesList[4]} flexClass="lg:flex-1 hover:lg:flex-[1.7]" delay={0.25} />
           </div>
 
-          {/* Column 3: 2 Cards (Medium Top, Large Bottom) */}
+          {/* Column 3: 2 Cards (Equal balanced height) */}
           <div className="flex flex-col gap-4 sm:gap-5 lg:gap-6 h-full">
-            <AICard item={aiServicesList[5]} flexClass="lg:flex-[1.0]" delay={0.3} />
-            <AICard item={aiServicesList[6]} flexClass="lg:flex-[1.55]" delay={0.35} />
+            <AICard item={aiServicesList[5]} flexClass="lg:flex-1 hover:lg:flex-[1.25]" delay={0.3} />
+            <AICard item={aiServicesList[6]} flexClass="lg:flex-1 hover:lg:flex-[1.25]" delay={0.35} />
           </div>
 
         </div>

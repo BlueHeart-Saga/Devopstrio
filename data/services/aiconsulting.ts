@@ -17,15 +17,45 @@ export const aiConsultingService: ServiceCategory = {
   capabilities: [
     {
       slug: "ai-readiness-assessment",
-      title: "AI Readiness & Feasibility",
+      title: "AI Readiness & Feasibility Strategy",
       description: "Evaluating data assets, infrastructure readiness, and ROI potential for enterprise AI integration.",
-      items: ["Data maturity & quality audits", "Use-case prioritization matrix", "Technical stack feasibility reports"]
+      items: ["Data maturity & quality audits", "Use-case prioritization matrix", "Technical stack feasibility reports"],
+      href: "/services/ai-data-innovation/generative-ai-solutions"
     },
     {
       slug: "llm-architecture-advisory",
       title: "LLM & Foundation Model Advisory",
       description: "Selecting, sizing, and designing enterprise RAG and foundation model architectures.",
-      items: ["Open-source vs proprietary LLM evaluation", "Cost & latency optimization", "Data privacy & security guardrails"]
+      items: ["Open-source vs proprietary LLM evaluation", "Cost & latency optimization", "Data privacy & security guardrails"],
+      href: "/services/ai-data-innovation/ai-agents-automation"
+    },
+    {
+      slug: "enterprise-ai-governance",
+      title: "Enterprise AI Governance & Compliance",
+      description: "Establishing guardrails, ethical AI guidelines, and compliance frameworks for secure deployments.",
+      items: ["AI safety audits & bias mitigation", "Zero-data-leakage guardrails", "Regulatory compliance roadmaps"],
+      href: "/services/cybersecurity/compliance-governance"
+    },
+    {
+      slug: "agentic-workflow-strategy",
+      title: "Autonomous Agent Strategy & Acceleration",
+      description: "Architecting multi-agent ecosystems and autonomous workflows for enterprise business acceleration.",
+      items: ["Agentic workflow design", "Human-in-the-loop review controls", "Cross-system API orchestration"],
+      href: "/ecosystem/accelerators-frameworks"
+    },
+    {
+      slug: "custom-rag-pipeline-design",
+      title: "Enterprise RAG & Neural Search",
+      description: "Designing semantic search, vector stores, and contextual AI retrieval pipelines.",
+      items: ["Vector database indexing", "Hybrid semantic retrieval", "Knowledge graph integration"],
+      href: "/services/ai-data-innovation/machine-learning-engineering"
+    },
+    {
+      slug: "cognitive-roi-modeling",
+      title: "Cognitive ROI & MLOps Infrastructure",
+      description: "Quantifying token costs, infrastructure ROI, and continuous model observability pipelines.",
+      items: ["Inference cost modeling", "Total cost of ownership analysis", "Real-time telemetry tracking"],
+      href: "/services/ai-data-innovation/mlops-ai-operations"
     }
   ],
   outcomes: [

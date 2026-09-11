@@ -384,7 +384,7 @@ export default function MicrosoftAllianceHub() {
     { name: "AWS Ecosystem", desc: "Enterprise cloud migrations and DevOps automation pipelines on AWS.", href: "/ecosystem/partnerships/aws" },
     { name: "Google Cloud Ecosystem", desc: "Data warehousing, Kubernetes, and analytics services on GCP.", href: "/ecosystem/partnerships/google-cloud" },
     { name: "Oracle Ecosystem", desc: "Database modernization, OCI services, and ERP integrations.", href: "/ecosystem/partnerships/oracle" },
-    { name: "DevOps & Cloud Native Stack", desc: "Explore our core platform engineering and Kubernetes technology stack.", href: "/ecosystem/technology" }
+    { name: "DevOps & Cloud Native Stack", desc: "Explore our core platform engineering and Kubernetes technology stack.", href: "/ecosystem/technology-stack" }
   ];
 
   // 11. FAQ Accordion Data

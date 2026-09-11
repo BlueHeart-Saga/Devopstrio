@@ -170,10 +170,10 @@ const data = {
     }
   ],
   relatedServices: [
-    { title: "Cloud Platform Engineering", href: "/services/cloud-platform-engineering" },
+    { title: "Cloud Platform Engineering", href: "/services/cloud-services" },
     { title: "DevOps & Release Automation", href: "/services/devops-automation" },
-    { title: "Product Engineering", href: "/services/product-engineering" },
-    { title: "Site Reliability Engineering", href: "/services/sre-operations" }
+    { title: "Product Engineering", href: "/services/software-development" },
+    { title: "Site Reliability Engineering", href: "/services/devops-automation" }
   ],
   insights: [
     {

@@ -17,15 +17,45 @@ export const testingService: ServiceCategory = {
   capabilities: [
     {
       slug: "test-automation",
-      title: "Test Automation",
-      description: "Writing automated UI and functional test scenarios using Playwright or Cypress.",
-      items: ["End-to-end user path tests", "Cross-browser validation runs", "Parallel test execution scripts"]
+      title: "End-to-End Test Automation",
+      description: "Writing automated UI and functional test scenarios using Playwright, Cypress, and Selenium.",
+      items: ["End-to-end user path tests", "Cross-browser validation runs", "Parallel test execution scripts"],
+      href: "/services/qa-testing/test-automation"
     },
     {
       slug: "performance-testing",
-      title: "Performance Testing",
-      description: "Measuring application response speeds under peak concurrent user loads using k6.",
-      items: ["High-volume request test runs", "Database lockup checking scripts", "Server memory usage monitors"]
+      title: "Performance & Stress Testing",
+      description: "Measuring application response speeds under peak concurrent user loads using k6 and Locust.",
+      items: ["High-volume request test runs", "Database lockup checking scripts", "Server memory usage monitors"],
+      href: "/services/qa-testing/performance-testing"
+    },
+    {
+      slug: "cicd-quality-gates",
+      title: "Continuous Testing & CI/CD Gates",
+      description: "Embedding automated regression tests and linting into CI/CD release pipelines.",
+      items: ["Automated PR sanity checks", "Branch coverage enforcement", "Continuous smoke testing"],
+      href: "/services/devops-automation/cicd-implementation"
+    },
+    {
+      slug: "security-compliance-testing",
+      title: "DevSecOps & Vulnerability Scanning",
+      description: "Integrating SAST, DAST, and dependency scanning into automated test cycles.",
+      items: ["Static code security analysis", "Dynamic API penetration testing", "Secret scanning guardrails"],
+      href: "/services/devops-automation/devsecops"
+    },
+    {
+      slug: "api-contract-testing",
+      title: "API & Microservices Contract Testing",
+      description: "Validating API schemas, backwards compatibility, and mock service virtualization.",
+      items: ["Pact contract testing", "OpenAPI schema validation", "Mock server virtualization"],
+      href: "/services/software-development/microservices-architecture"
+    },
+    {
+      slug: "ai-model-testing",
+      title: "AI Model Evaluation & Safety Testing",
+      description: "Evaluating LLM outputs, prompt drift, hallucination rates, and guardrail enforcement.",
+      items: ["RAG retrieval precision audits", "Hallucination benchmarking", "Latency profiling under load"],
+      href: "/services/ai-data-innovation/mlops-ai-operations"
     }
   ],
   outcomes: [

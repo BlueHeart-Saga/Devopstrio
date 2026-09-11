@@ -12,6 +12,7 @@ interface ProductCard {
   desc: string;
   logo: string;
   image: string;
+  link: string;
 }
 
 export function FeaturedProducts() {
@@ -21,42 +22,48 @@ export function FeaturedProducts() {
       tagline: "Recruitment & Workforce Management Platform",
       desc: "Enterprise platform streamlining candidate sourcing, assessment scoring, onboarding workflows, and workforce telemetry analytics.",
       logo: "/webp/assets/Home-page/our-products/logo/humanex.webp",
-      image: "/webp/assets/Home-page/our-products/humanex.webp"
+      image: "/webp/assets/Home-page/our-products/humanex.webp",
+      link: "https://humanex.devopstrio.co.uk/login"
     },
     {
       name: "Brio",
       tagline: "AI-Powered Marketing & Content Platform",
       desc: "Unified analytics solution providing predictive attribution models, intelligent asset scheduling, and automated copy generators.",
       logo: "/webp/assets/Home-page/our-products/logo/brio.webp",
-      image: "/webp/assets/Home-page/our-products/brio.webp"
+      image: "/webp/assets/Home-page/our-products/brio.webp",
+      link: "https://brio.devopstrio.co.uk/"
     },
     {
-      name: "SafeSign",
+      name: "eSigniva",
       tagline: "Electronic Signature & Digital Trust Platform",
       desc: "Cryptographically secured document e-signature software providing tamper-proof audit trails and compliance reports.",
       logo: "/webp/assets/Home-page/our-products/logo/safesign.webp",
-      image: "/webp/assets/Home-page/our-products/safesign.webp"
+      image: "/webp/assets/Home-page/our-products/safesign.webp",
+      link: "/ecosystem/platforms-solutions/landingpage-esigniva"
     },
     {
       name: "CareSuite",
       tagline: "Healthcare Operations Management Platform",
       desc: "HIPAA-compliant medical workflow suite coordinating patient consultation queues, video consult rooms, and secure charts.",
       logo: "/webp/assets/Home-page/our-products/logo/Caresuite.webp",
-      image: "/webp/assets/Home-page/our-products/caresuite.webp"
+      image: "/webp/assets/Home-page/our-products/caresuite.webp",
+      link: "https://caresuite.devopstrio.co.uk/"
     },
     {
       name: "Homela",
       tagline: "Property & Accommodation Management Platform",
       desc: "PropTech workspace connecting tenants, managers, and service groups, automating ticket tracking and payment updates.",
       logo: "/webp/assets/Home-page/our-products/logo/homela.webp",
-      image: "/webp/assets/Home-page/our-products/homela.webp"
+      image: "/webp/assets/Home-page/our-products/homela.webp",
+      link: "https://homela.devopstrio.co.uk/"
     },
     {
       name: "Campix",
       tagline: "Campaign & Marketing Automation Platform",
       desc: "Omnichannel campaigns manager tracking impression goals, user acquisitions paths, and conversion budgets on one canvas.",
       logo: "/webp/assets/Home-page/our-products/logo/Campix.webp",
-      image: "/webp/assets/Home-page/our-products/campix.webp"
+      image: "/webp/assets/Home-page/our-products/campix.webp",
+      link: "https://campix.devopstrio.co.uk/"
     }
   ];
 
@@ -100,15 +107,26 @@ export function FeaturedProducts() {
                       />
                     </div>
                   </div>
-                  <Link href={`/contact?product=${encodeURIComponent(prod.name)}`}>
+                  <a
+                    href={prod.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <ArrowUpRight size={14} className="text-zinc-500 hover:text-rose-500 transition-colors cursor-pointer" />
-                  </Link>
+                  </a>
                 </div>
 
                 {/* Title & Description */}
-                <h3 className="text-xl md:text-2xl font-semibold text-white uppercase tracking-wider mb-2 mt-1 group-hover:text-rose-400 transition-colors">
-                  {prod.name}
-                </h3>
+                <a
+                  href={prod.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block"
+                >
+                  <h3 className="text-xl md:text-2xl font-semibold text-white uppercase tracking-wider mb-2 mt-1 hover:text-rose-400 group-hover:text-rose-400 transition-colors">
+                    {prod.name}
+                  </h3>
+                </a>
                 {/* <span className="block text-xs font-semibold text-rose-500 mb-3">
                   {prod.tagline}
                 </span> */}

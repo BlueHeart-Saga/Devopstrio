@@ -11,6 +11,7 @@ export interface CapabilityItem {
   title: string;
   description: string;
   items?: string[];
+  href?: string;
 }
 
 export interface CapabilityGridProps {
@@ -200,7 +201,7 @@ export function CapabilityGrid({ serviceSlug, capabilities }: CapabilityGridProp
             >
               {displayCapabilities.map((cap, idx) => {
                 const originalSlug = cap.slug.split("-dup-")[0];
-                const href = `/services/${serviceSlug}/${originalSlug}`;
+                const href = cap.href || (originalSlug.startsWith("/") || originalSlug.startsWith("#") ? originalSlug : `/services/${serviceSlug}/${originalSlug}`);
                 const bgImage = getCapabilityCardImage(serviceSlug, originalSlug, idx);
                 return (
                   <div
@@ -258,7 +259,7 @@ export function CapabilityGrid({ serviceSlug, capabilities }: CapabilityGridProp
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {displayCapabilities.map((cap, idx) => {
                 const originalSlug = cap.slug.split("-dup-")[0];
-                const href = `/services/${serviceSlug}/${originalSlug}`;
+                const href = cap.href || (originalSlug.startsWith("/") || originalSlug.startsWith("#") ? originalSlug : `/services/${serviceSlug}/${originalSlug}`);
                 const bgImage = getCapabilityCardImage(serviceSlug, originalSlug, idx);
                 return (
                   <Reveal key={cap.slug} delay={idx * 0.05}>

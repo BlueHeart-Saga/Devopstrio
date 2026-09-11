@@ -244,7 +244,7 @@ export default function ServiceNowPartnershipPage() {
     { name: "Oracle Ecosystem", desc: "Enterprise resource planning database modernizations and secure OCI architectures.", href: "/ecosystem/partnerships/oracle" },
     { name: "SAP Ecosystem", desc: "Enterprise resource planning, ERP migrations, and SCM modernizations.", href: "/ecosystem/partnerships/sap" },
     { name: "Cloud Services", desc: "Our core software delivery engineering stack, languages, and protocols.", href: "/ecosystem/technology-stack" },
-    { name: "Managed Services", desc: "24/7 managed support operations, database tuning, and backup pipelines.", href: "/services/managed-operations" },
+    { name: "Managed Services", desc: "24/7 managed support operations, database tuning, and backup pipelines.", href: "/services/managed-services" },
     { name: "IT Consulting", desc: "Strategic technology blueprints, security risk audits, and architecture design.", href: "/services/it-consulting" }
   ];
 

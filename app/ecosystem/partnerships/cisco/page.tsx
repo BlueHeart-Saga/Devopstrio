@@ -263,9 +263,9 @@ export default function CiscoPartnershipPage() {
     { name: "Oracle Ecosystem", desc: "Enterprise database connectivity and secure OCI architectures.", href: "/ecosystem/partnerships/oracle" },
     { name: "ServiceNow Ecosystem", desc: "ITSM monitoring integration and automated operational workflows.", href: "/ecosystem/partnerships/servicenow" },
     { name: "Cybersecurity", desc: "Zero Trust architecture, network segmentation, and advanced threat defense.", href: "/services/cybersecurity" },
-    { name: "Managed Services", desc: "24/7 managed NOC operations, connectivity monitoring, and incident response.", href: "/services/managed-operations" },
+    { name: "Managed Services", desc: "24/7 managed NOC operations, connectivity monitoring, and incident response.", href: "/services/managed-services" },
     { name: "Cloud Services", desc: "Advanced cloud-native design, hybrid cloud routing, and site-to-cloud VPNs.", href: "/ecosystem/technology-stack" },
-    { name: "Global Delivery", desc: "Distributed operations, remote network management, and branch support.", href: "/company/global-delivery" }
+    { name: "Global Delivery", desc: "Distributed operations, remote network management, and branch support.", href: "/ecosystem/global-delivery" }
   ];
 
   const faqs = [

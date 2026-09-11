@@ -829,7 +829,7 @@ export const industryMap: IndustryMap[] = [
       "Zero Trust networks",
       "QA functional & regression testing"
     ],
-    link: "/industries/healthcare"
+    link: "/industries/healthcare-life-sciences"
   },
   {
     name: "Retail & E-Commerce",

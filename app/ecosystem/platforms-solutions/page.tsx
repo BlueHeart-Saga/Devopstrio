@@ -19,6 +19,7 @@ import { PlatformsCTA } from "@/sections/ecosystem/platforms/PlatformsCTA";
 
 export default function PlatformsSolutionsPage() {
   const domain = "platforms-solutions";
+  // Recompile trigger for eSigniva landing page link
   const data = getEcosystemDomain(domain);
 
   if (!data) {

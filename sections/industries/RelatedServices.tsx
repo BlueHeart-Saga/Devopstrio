@@ -21,7 +21,7 @@ const relatedServices: RelatedServiceItem[] = [
   },
   {
     title: "Product Engineering",
-    path: "/services/product-engineering"
+    path: "/services/software-development"
   },
   {
     title: "Site Reliability Engineering",

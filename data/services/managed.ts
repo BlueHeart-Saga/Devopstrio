@@ -17,15 +17,45 @@ export const managedService: ServiceCategory = {
   capabilities: [
     {
       slug: "managed-cloud",
-      title: "Managed Cloud Services",
-      description: "Managing cloud environments, resource allocation, and operating system patching.",
-      items: ["Continuous security patching schedules", "Automated system backup routines", "Cloud resource usage optimization"]
+      title: "24/7 Managed Cloud Operations",
+      description: "Proactive cloud operations, auto-scaling management, and automated OS patching under strict SLAs.",
+      items: ["Continuous security patching schedules", "Automated system backup routines", "Cloud resource usage optimization"],
+      href: "/services/managed-services/managed-cloud"
     },
     {
       slug: "infrastructure-management",
-      title: "Infrastructure Management",
-      description: "Monitoring network firewalls, storage volumes, and server cluster operations.",
-      items: ["Server cluster load monitoring", "Firewall security rule assessments", "DNS server routing updates"]
+      title: "Hybrid & Multi-Cloud Infrastructure",
+      description: "Monitoring network firewalls, storage volumes, and server cluster operations 24/7.",
+      items: ["Server cluster load monitoring", "Firewall security rule assessments", "DNS server routing updates"],
+      href: "/services/managed-services/infrastructure-management"
+    },
+    {
+      slug: "kubernetes-platform-management",
+      title: "Managed Kubernetes & Container Platforms",
+      description: "Cluster lifecycle management, node pool upgrades, and production ingress controllers.",
+      items: ["Automated node upgrades", "EKS/GKE/AKS cluster monitoring", "Service mesh operations"],
+      href: "/services/devops-automation/kubernetes-services"
+    },
+    {
+      slug: "security-operations-soc",
+      title: "24/7 Security Operations & Incident Response",
+      description: "Continuous threat hunting, real-time alert triage, and rapid incident remediation.",
+      items: ["SIEM & SOC alert management", "Automated threat response", "Zero-day vulnerability isolation"],
+      href: "/services/cybersecurity/security-operations-center"
+    },
+    {
+      slug: "finops-cost-governance",
+      title: "Continuous FinOps & Cost Governance",
+      description: "Ongoing cost monitoring, commitment management, and monthly cost reduction reports.",
+      items: ["Monthly cloud cost reviews", "Reserved instance management", "Idle resource decommission"],
+      href: "/services/cloud-services/finops-cost-optimization"
+    },
+    {
+      slug: "landing-zone-management",
+      title: "Landing Zone Guardrail Management",
+      description: "Ongoing policy enforcement, drift detection, and compliance baselines across all subscriptions.",
+      items: ["Drift remediation automation", "Policy as Code updates", "Multi-account access control"],
+      href: "/ecosystem/landing-zone"
     }
   ],
   outcomes: [

@@ -19,13 +19,43 @@ export const aiModernizationService: ServiceCategory = {
       slug: "legacy-to-ai-migration",
       title: "Legacy-to-AI System Refactoring",
       description: "Infusing generative AI capabilities into existing enterprise software without disrupting core services.",
-      items: ["REST API wrap for legacy databases", "Intelligent agent middleware integration", "Semantic search upgrade"]
+      items: ["REST API wrap for legacy databases", "Intelligent agent middleware integration", "Semantic search upgrade"],
+      href: "/services/digital-transformation/legacy-modernization"
     },
     {
       slug: "intelligent-automation-engine",
       title: "Agentic Automation & Decision Engines",
       description: "Replacing brittle manual processes with autonomous AI agents and continuous learning feedback loops.",
-      items: ["Autonomous agent orchestration", "Human-in-the-loop validation dashboards", "Self-healing pipeline automation"]
+      items: ["Autonomous agent orchestration", "Human-in-the-loop validation dashboards", "Self-healing pipeline automation"],
+      href: "/services/ai-data-innovation/ai-agents-automation"
+    },
+    {
+      slug: "cloud-native-modernization",
+      title: "Cloud-Native Platform & AI Infrastructure",
+      description: "Modernizing legacy workloads onto containerized, auto-scaling Kubernetes platforms optimized for AI.",
+      items: ["Kubernetes microservices architecture", "Infrastructure as Code automation", "Zero-downtime blue-green deployments"],
+      href: "/services/devops-automation/platform-engineering"
+    },
+    {
+      slug: "real-time-inference-optimization",
+      title: "Real-Time Inference & Continuous MLOps",
+      description: "Optimizing AI inference latency, caching embeddings, and deploying automated model telemetry.",
+      items: ["Sub-50ms inference optimization", "Automated retraining triggers", "Continuous drift monitoring"],
+      href: "/services/ai-data-innovation/mlops-ai-operations"
+    },
+    {
+      slug: "open-source-landing-zone",
+      title: "Automated Multi-Cloud Landing Zones",
+      description: "Deploying enterprise-grade landing zones pre-hardened with zero-trust security and ISO 27001 guardrails.",
+      items: ["Terraform & Bicep automated blueprints", "Hub-and-spoke multi-cloud networking", "Automated policy compliance"],
+      href: "/ecosystem/landing-zone"
+    },
+    {
+      slug: "enterprise-accelerators",
+      title: "Live Production AI Accelerators",
+      description: "Accelerating time-to-market with pre-built production frameworks and open-source starter engines.",
+      items: ["Pre-validated architecture templates", "Zero-trust reference blueprints", "Production-ready boilerplate modules"],
+      href: "/ecosystem/accelerators-frameworks"
     }
   ],
   outcomes: [

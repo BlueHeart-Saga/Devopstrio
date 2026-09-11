@@ -22,6 +22,16 @@ const categoryBgImages: Record<string, string> = {
   security: "/webp/assets/ecosystem/grid/platforms-solutions-page_grid_5/Generated-Design-4.webp",
 };
 
+const platformLinks: Record<string, string> = {
+  "Humanex": "https://humanex.devopstrio.co.uk/login",
+  "Brio": "https://brio.devopstrio.co.uk/",
+  "eSigniva": "/ecosystem/platforms-solutions/landingpage-esigniva",
+  "SafeSign": "/ecosystem/platforms-solutions/landingpage-esigniva",
+  "CareSuite": "https://caresuite.devopstrio.co.uk/",
+  "Homela": "https://homela.devopstrio.co.uk/",
+  "Campix": "https://campix.devopstrio.co.uk/",
+};
+
 export function PlatformCategories() {
   const [activeCategory, setActiveCategory] = useState("saas");
 
@@ -31,7 +41,7 @@ export function PlatformCategories() {
       label: "SaaS Platforms",
       icon: <Layout size={16} />,
       desc: "Multi-tenant software products built for scalability, subscription management, user onboarding, and business automation.",
-      examples: ["Humanex", "Brio", "SafeSign", "CareSuite", "Homela", "Campix"]
+      examples: ["Humanex", "Brio", "eSigniva", "CareSuite", "Homela", "Campix"]
     },
     {
       id: "ai",
@@ -59,7 +69,7 @@ export function PlatformCategories() {
       label: "Security Platforms",
       icon: <Shield size={16} />,
       desc: "Solutions focused on digital trust, compliance, identity, and governance.",
-      examples: ["SafeSign", "Identity Platform", "Compliance Dashboard", "Security Operations Portal"]
+      examples: ["eSigniva", "Identity Platform", "Compliance Dashboard", "Security Operations Portal"]
     }
   ];
 
@@ -162,34 +172,45 @@ export function PlatformCategories() {
                   transition={{ duration: 0.25, delay: idx * 0.03 }}
                   className="h-full"
                 >
-                  <div className="group/card flex flex-col justify-between bg-zinc-950/30 border border-white/5 hover:border-rose-500/20 hover:bg-zinc-950/60 rounded-2xl p-6 transition-all duration-300 min-h-[160px] h-full relative overflow-hidden backdrop-blur-md shadow-[0_8px_32px_0_rgba(0,0,0,0.37)]">
-                    {/* Subtle color highlight glow on hover */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-rose-600/0 via-rose-600/0 to-rose-600/5 opacity-0 group-hover/card:opacity-100 transition-opacity duration-500 pointer-events-none" />
+                  {(() => {
+                    const targetLink = platformLinks[item] || `/contact?platform=${encodeURIComponent(item)}`;
+                    const isExternal = targetLink.startsWith("http");
 
-                    <div>
-                      {/* <span className="text-xs font-mono text-zinc-400 tracking-wider block mb-2 font-semibold">
-                        ASSET 0{idx + 1}
-                      </span> */}
-                      <h4 className="text-lg md:text-xl font-semibold text-white group-hover/card:text-rose-400 transition-colors mb-2">
-                        {item}
-                      </h4>
-                    </div>
+                    return (
+                      <div className="group/card flex flex-col justify-between bg-zinc-950/30 border border-white/5 hover:border-rose-500/20 hover:bg-zinc-950/60 rounded-2xl p-6 transition-all duration-300 min-h-[160px] h-full relative overflow-hidden backdrop-blur-md shadow-[0_8px_32px_0_rgba(0,0,0,0.37)]">
+                        {/* Subtle color highlight glow on hover */}
+                        <div className="absolute inset-0 bg-gradient-to-br from-rose-600/0 via-rose-600/0 to-rose-600/5 opacity-0 group-hover/card:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
-                    <Link
-                      href={`/contact?platform=${encodeURIComponent(item)}`}
-                      className="inline-flex items-center gap-2.5 group/link mt-auto w-fit cursor-pointer"
-                    >
-                      <span className="w-7 h-7 rounded-full bg-rose-600/10 group-hover/link:bg-rose-600 text-rose-500 group-hover/link:text-white flex items-center justify-center transition-all duration-300">
-                        <ArrowUpRight
-                          size={12}
-                          className="transition-transform duration-300 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5"
-                        />
-                      </span>
-                      <span className="text-xs md:text-sm font-semibold tracking-wider uppercase text-zinc-400 group-hover/link:text-zinc-200 transition-colors">
-                        Launch System
-                      </span>
-                    </Link>
-                  </div>
+                        <div>
+                          <a
+                            href={targetLink}
+                            {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                            className="inline-block hover:text-rose-400 transition-colors"
+                          >
+                            <h4 className="text-lg md:text-xl font-semibold text-white group-hover/card:text-rose-400 transition-colors mb-2">
+                              {item}
+                            </h4>
+                          </a>
+                        </div>
+
+                        <a
+                          href={targetLink}
+                          {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                          className="inline-flex items-center gap-2.5 group/link mt-auto w-fit cursor-pointer"
+                        >
+                          <span className="w-7 h-7 rounded-full bg-rose-600/10 group-hover/link:bg-rose-600 text-rose-500 group-hover/link:text-white flex items-center justify-center transition-all duration-300">
+                            <ArrowUpRight
+                              size={12}
+                              className="transition-transform duration-300 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5"
+                            />
+                          </span>
+                          <span className="text-xs md:text-sm font-semibold tracking-wider uppercase text-zinc-400 group-hover/link:text-zinc-200 transition-colors">
+                            Launch System
+                          </span>
+                        </a>
+                      </div>
+                    );
+                  })()}
                 </motion.div>
               ))}
             </AnimatePresence>

@@ -19,13 +19,43 @@ export const transformationService: ServiceCategory = {
       slug: "digital-strategy",
       title: "Digital Strategy & Consulting",
       description: "Mapping technology ecosystems, finding process inefficiencies, and drafting automation roadmaps.",
-      items: ["Current system technical auditing", "Workflow cost-benefit calculations", "Phased implementation scheduling"]
+      items: ["Current system technical auditing", "Workflow cost-benefit calculations", "Phased implementation scheduling"],
+      href: "/services/digital-transformation/digital-strategy"
     },
     {
       slug: "legacy-modernization",
-      title: "Legacy Modernization",
+      title: "Legacy Systems Modernization",
       description: "Relocating outdated database assets and mainframe codebases to cloud-native microservices.",
-      items: ["COBOL database mapping and export scripts", "Monolithic service decomposition into API nodes", "Continuous automated data validation checks"]
+      items: ["Monolith decomposition into APIs", "Microservices architecture refactoring", "Continuous automated data validation"],
+      href: "/services/digital-transformation/legacy-modernization"
+    },
+    {
+      slug: "cloud-migration-acceleration",
+      title: "Cloud Migration & Modernization",
+      description: "Seamless migration of on-premises workloads to AWS, Azure, and Google Cloud with zero business disruption.",
+      items: ["6R migration assessment", "Automated database replication", "Landing zone guardrails"],
+      href: "/services/cloud-services/cloud-migration"
+    },
+    {
+      slug: "intelligent-automation",
+      title: "Intelligent Process Automation",
+      description: "Embedding AI agents and workflow automation into core operational processes.",
+      items: ["Document processing automation", "Autonomous workflow agents", "Real-time exception routing"],
+      href: "/services/ai-data-innovation/ai-agents-automation"
+    },
+    {
+      slug: "devops-delivery-excellence",
+      title: "DevOps & Continuous Delivery",
+      description: "Accelerating release cycles from months to minutes with automated CI/CD and GitOps.",
+      items: ["Automated deployment pipelines", "Infrastructure as Code", "Continuous quality gates"],
+      href: "/services/devops-automation/cicd-implementation"
+    },
+    {
+      slug: "enterprise-landing-zones",
+      title: "Multi-Cloud Landing Zone Infrastructure",
+      description: "Production-ready foundation blueprints pre-configured with security, governance, and networking.",
+      items: ["Zero-trust network architecture", "Automated compliance baselines", "Centralized observability"],
+      href: "/ecosystem/landing-zone"
     }
   ],
   outcomes: [

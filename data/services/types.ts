@@ -27,6 +27,7 @@ export interface ServiceCapabilityInfo {
   title: string;
   description: string;
   items?: string[];
+  href?: string;
 }
 
 export interface CapabilityDetail {

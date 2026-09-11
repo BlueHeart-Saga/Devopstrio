@@ -406,8 +406,8 @@ export default function SAPStrategicAllianceHub() {
     { name: "Google Cloud", desc: "Next-gen GCP data warehousing and predictive AI models.", href: "/ecosystem/partnerships/google-cloud" },
     { name: "Oracle Alliance", desc: "Database modernization and OCI database migrations.", href: "/ecosystem/partnerships/oracle" },
     { name: "ServiceNow", desc: "IT Service Management and automated workflows.", href: "/ecosystem/partnerships/servicenow" },
-    { name: "Innovation Labs", desc: "Prototyping future workflows and cloud-native solutions.", href: "/ecosystem/labs" },
-    { name: "Technology Stack", desc: "Core software components and deployment strategies.", href: "/ecosystem/platforms" }
+    { name: "Innovation Labs", desc: "Prototyping future workflows and cloud-native solutions.", href: "/ecosystem/innovation-labs" },
+    { name: "Technology Stack", desc: "Core software components and deployment strategies.", href: "/ecosystem/platforms-solutions" }
   ];
 
   return (

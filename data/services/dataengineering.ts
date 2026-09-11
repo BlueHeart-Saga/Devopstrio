@@ -17,15 +17,45 @@ export const dataengineeringService: ServiceCategory = {
   capabilities: [
     {
       slug: "data-warehousing",
-      title: "Data Warehousing",
+      title: "Data Warehousing & Lakes",
       description: "Designing scalable analytical databases using Snowflake, BigQuery, or Amazon Redshift.",
-      items: ["Optimized dimensional database schemas", "Data partition and clustering rules", "Secure role-based column access policies"]
+      items: ["Optimized dimensional database schemas", "Data partition and clustering rules", "Secure role-based column access policies"],
+      href: "/services/data-engineering/data-warehousing"
     },
     {
       slug: "real-time-data-processing",
-      title: "Real-Time Processing",
-      description: "Constructing low-latency streaming pipelines using Apache Kafka and Spark Streaming.",
-      items: ["Real-time event capture lines", "In-memory database aggregation scripts", "Automated anomaly alert triggers"]
+      title: "Real-Time Streaming Pipelines",
+      description: "Constructing low-latency streaming pipelines using Apache Kafka, Flink, and Spark Streaming.",
+      items: ["Real-time event capture lines", "In-memory database aggregation scripts", "Automated anomaly alert triggers"],
+      href: "/services/data-engineering/real-time-data-processing"
+    },
+    {
+      slug: "data-pipeline-orchestration",
+      title: "Automated ETL/ELT & Orchestration",
+      description: "Building resilient data ingestion pipelines with dbt, Airflow, and Dagster.",
+      items: ["Automated data transformation models", "Continuous data quality tests", "DAG dependency scheduling"],
+      href: "/services/devops-automation/platform-engineering"
+    },
+    {
+      slug: "machine-learning-data-prep",
+      title: "Feature Stores & AI Data Platforms",
+      description: "Pre-processing high-dimensional feature stores for enterprise ML training and inference.",
+      items: ["Real-time vector embeddings", "Feature store synchronization", "Data versioning & lineage"],
+      href: "/services/ai-data-innovation/machine-learning-engineering"
+    },
+    {
+      slug: "cloud-data-governance",
+      title: "Data Governance & Compliance",
+      description: "End-to-end data lineage, cataloging, automated masking, and GDPR/SOC-2 compliance guardrails.",
+      items: ["Automated PII data masking", "Metadata catalog integration", "Audit logging & access controls"],
+      href: "/services/cybersecurity/compliance-governance"
+    },
+    {
+      slug: "cloud-analytics-infra",
+      title: "Cloud Analytics & BI Infrastructure",
+      description: "High-performance business intelligence foundations delivering sub-second reporting.",
+      items: ["Semantic reporting layers", "Interactive analytics dashboards", "Automated executive KPI delivery"],
+      href: "/services/cloud-services/cloud-architecture"
     }
   ],
   outcomes: [

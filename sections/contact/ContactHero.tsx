@@ -23,8 +23,8 @@ const contactPillars: ContactPillar[] = [
     description: "Cloud cost optimization, architecture reviews, compliance assessments, and AI strategy.",
     mainLink: "/services/cloud-consulting",
     services: [
-      { name: "Cloud Cost Optimization & FinOps", href: "/services/cloud-consulting/finops-cost-optimization" },
-      { name: "Multi-Cloud Architecture Review", href: "/services/cloud-consulting/cloud-architecture-review" },
+      { name: "Cloud Cost Optimization & FinOps", href: "/services/cloud-services/finops-cost-optimization" },
+      { name: "Multi-Cloud Architecture Review", href: "/services/cloud-services/cloud-architecture" },
       { name: "DevSecOps & Compliance Audit", href: "/services/cybersecurity/devsecops-compliance" },
       { name: "AI & GenAI Strategy Roadmap", href: "/services/ai-data-innovation/ai-strategy-consulting" },
       { name: "Kubernetes & Infrastructure Health", href: "/services/devops-automation/kubernetes-health-check" }
@@ -38,7 +38,7 @@ const contactPillars: ContactPillar[] = [
     description: "Custom cloud infrastructure, CI/CD automation, microservices, and AI integrations.",
     mainLink: "/services/software-development",
     services: [
-      { name: "Enterprise Cloud Migration", href: "/services/cloud-consulting/cloud-migration" },
+      { name: "Enterprise Cloud Migration", href: "/services/cloud-services/cloud-migration" },
       { name: "CI/CD & DevOps Automation", href: "/services/devops-automation/cicd-pipeline-automation" },
       { name: "Custom Generative AI Applications", href: "/services/ai-data-innovation/generative-ai-development" },
       { name: "Cloud-Native App Modernization", href: "/services/software-development/cloud-native-apps" },

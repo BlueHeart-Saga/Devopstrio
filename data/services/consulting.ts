@@ -19,13 +19,43 @@ export const consultingService: ServiceCategory = {
       slug: "technology-consulting",
       title: "Technology Consulting",
       description: "Auditing application codebases, evaluating databases, and finding architectural bottlenecks.",
-      items: ["Code and schema validation checks", "Database capacity assessment logs", "Software delivery speed analysis"]
+      items: ["Code and schema validation checks", "Database capacity assessment logs", "Software delivery speed analysis"],
+      href: "/services/it-consulting/technology-consulting"
     },
     {
       slug: "enterprise-architecture",
-      title: "Enterprise Architecture",
+      title: "Enterprise Cloud Architecture",
       description: "Designing reliable, secure multi-cloud system diagrams and communication layers.",
-      items: ["High-availability network diagrams", "API gateway routing specifications", "Identity access management rules"]
+      items: ["High-availability network diagrams", "API gateway routing specifications", "Identity access management rules"],
+      href: "/services/cloud-services/cloud-architecture"
+    },
+    {
+      slug: "cloud-strategy-consulting",
+      title: "Cloud Strategy & Roadmap",
+      description: "Evaluating multi-cloud readiness, provider selection, and phased migration pathways.",
+      items: ["Cloud readiness assessments", "TCO and ROI forecasting", "Vendor evaluation & licensing strategy"],
+      href: "/services/cloud-services/cloud-strategy-consulting"
+    },
+    {
+      slug: "platform-engineering-advisory",
+      title: "Platform Engineering Strategy",
+      description: "Designing self-service developer portals, automated pipelines, and Kubernetes operating models.",
+      items: ["Developer experience optimization", "Golden path template design", "Platform governance standards"],
+      href: "/services/devops-automation/platform-engineering"
+    },
+    {
+      slug: "security-compliance-audit",
+      title: "Security & Compliance Audits",
+      description: "Comprehensive vulnerability analysis, Zero-Trust posture reviews, and regulatory gap assessments.",
+      items: ["ISO 27001 / SOC 2 alignment", "Zero-Trust architecture reviews", "Threat modeling & risk mitigation"],
+      href: "/services/cybersecurity/security-assessment"
+    },
+    {
+      slug: "finops-cost-optimization",
+      title: "FinOps & Cloud Cost Optimization",
+      description: "Uncovering cloud waste, rightsizing compute resources, and implementing continuous cost controls.",
+      items: ["Unit economics visibility", "Reserved instance optimization", "Automated cost anomaly alerts"],
+      href: "/services/cloud-services/finops-cost-optimization"
     }
   ],
   outcomes: [
