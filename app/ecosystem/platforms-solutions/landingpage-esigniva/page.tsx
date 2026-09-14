@@ -162,25 +162,25 @@ const workSteps = [
     num: 1,
     title: "Upload Document",
     desc: "Upload your PDF, DOCX, or text file.",
-    img: "/webp/assets/landingpage-esigniva/how to work section/upload document.webp?v=2",
+    img: "/webp/assets/landingpage-esigniva/work-step1-upload.webp",
   },
   {
     num: 2,
     title: "Add Recipients",
     desc: "Enter signer emails and set verification.",
-    img: "/webp/assets/landingpage-esigniva/how to work section/Add recipients.webp?v=2",
+    img: "/webp/assets/landingpage-esigniva/work-step2-recipients.webp",
   },
   {
     num: 3,
     title: "Place Signature Fields",
     desc: "Add signatures, initials, dates, and form fields.",
-    img: "/webp/assets/landingpage-esigniva/how to work section/place signature fields.webp?v=2",
+    img: "/webp/assets/landingpage-esigniva/work-step3-fields.webp",
   },
   {
     num: 4,
     title: "Sign & Complete",
     desc: "Recipients sign securely and the document is sealed.",
-    img: "/webp/assets/landingpage-esigniva/how to work section/sign & complete.webp?v=2",
+    img: "/webp/assets/landingpage-esigniva/work-step4-complete.webp",
   },
 ];
 
@@ -352,37 +352,37 @@ export default function ESignivaLandingPage() {
                   </div>
                 </motion.div>
 
-                {/* Floating Card 1 â€“ top-left */}
+                {/* Floating Card 1 – top-left outer edge */}
                 <motion.div
                   initial={{ opacity: 0, y: -8 }}
-                  animate={{ opacity: 1, y: [-8, 7, -8] }}
+                  animate={{ opacity: 1, y: [-6, 6, -6] }}
                   transition={{ opacity: { duration: 0.5, delay: 0.35 }, y: { duration: 4.6, repeat: Infinity, ease: "easeInOut", delay: 0.35 } }}
-                  className="absolute -top-14 left-0 sm:left-6 w-48 sm:w-60 drop-shadow-[0_18px_38px_rgba(0,0,0,0.92)] z-30 pointer-events-none"
-                  style={{ transform: "rotate(-6deg)" }}
+                  className="absolute -top-10 sm:-top-16 md:-top-20 -left-4 sm:-left-8 md:-left-12 w-48 sm:w-56 md:w-60 drop-shadow-[0_20px_45px_rgba(0,0,0,0.95)] z-30 pointer-events-none"
+                  style={{ transform: "rotate(-4deg)" }}
                 >
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img src="/webp/assets/landingpage-esigniva/hero-document-signed.webp" alt="Document Signed" className="w-full h-auto rounded-2xl" />
                 </motion.div>
 
-                {/* Floating Card 2 â€“ top-right */}
+                {/* Floating Card 2 – top-right outer edge (Properly balanced) */}
                 <motion.div
                   initial={{ opacity: 0, y: 8 }}
-                  animate={{ opacity: 1, y: [7, -7, 7] }}
+                  animate={{ opacity: 1, y: [6, -6, 6] }}
                   transition={{ opacity: { duration: 0.5, delay: 0.5 }, y: { duration: 5.1, repeat: Infinity, ease: "easeInOut", delay: 0.5 } }}
-                  className="absolute -top-12 -right-4 sm:-right-8 w-48 sm:w-56 drop-shadow-[0_18px_38px_rgba(0,0,0,0.92)] z-30 pointer-events-none"
-                  style={{ transform: "rotate(5deg)" }}
+                  className="absolute -top-10 sm:-top-16 md:-top-20 -right-4 sm:-right-8 md:-right-12 w-44 sm:w-48 md:w-52 drop-shadow-[0_20px_45px_rgba(0,0,0,0.95)] z-30 pointer-events-none"
+                  style={{ transform: "rotate(4deg)" }}
                 >
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img src="/webp/assets/landingpage-esigniva/hero-offer-letter.webp" alt="Offer Letter" className="w-full h-auto rounded-2xl" />
                 </motion.div>
 
-                {/* Floating Card 3 â€“ bottom-left */}
+                {/* Floating Card 3 – bottom-left outer edge */}
                 <motion.div
                   initial={{ opacity: 0, y: 8 }}
                   animate={{ opacity: 1, y: [-6, 6, -6] }}
                   transition={{ opacity: { duration: 0.5, delay: 0.65 }, y: { duration: 4.3, repeat: Infinity, ease: "easeInOut", delay: 0.65 } }}
-                  className="absolute -bottom-12 -left-6 sm:-left-10 w-52 sm:w-64 drop-shadow-[0_18px_38px_rgba(0,0,0,0.92)] z-30 pointer-events-none"
-                  style={{ transform: "rotate(-4deg)" }}
+                  className="absolute -bottom-10 sm:-bottom-16 md:-bottom-20 -left-4 sm:-left-8 md:-left-12 w-48 sm:w-56 md:w-60 drop-shadow-[0_20px_45px_rgba(0,0,0,0.95)] z-30 pointer-events-none"
+                  style={{ transform: "rotate(-3deg)" }}
                 >
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img src="/webp/assets/landingpage-esigniva/hero-completed-docs.webp" alt="Completed Documents" className="w-full h-auto rounded-2xl" />
@@ -491,9 +491,7 @@ export default function ESignivaLandingPage() {
                       <img
                         src={currentStepData.img}
                         alt={currentStepData.title}
-                        className={`w-full h-auto max-h-[480px] object-contain drop-shadow-[0_18px_48px_rgba(0,0,0,0.9)] transition-transform duration-300 ${
-                          activeStep > 1 ? "scale-[1.06] sm:scale-[1.07]" : "scale-100"
-                        }`}
+                        className="w-full h-auto max-h-[480px] object-contain drop-shadow-[0_18px_48px_rgba(0,0,0,0.9)] transition-transform duration-300"
                       />
                     </motion.div>
                   </AnimatePresence>
