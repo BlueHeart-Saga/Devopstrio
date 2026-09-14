@@ -39,7 +39,7 @@ export function FeaturedProducts() {
       desc: "Cryptographically secured document e-signature software providing tamper-proof audit trails and compliance reports.",
       logo: "/webp/assets/Home-page/our-products/logo/safesign.webp",
       image: "/webp/assets/Home-page/our-products/safesign.webp",
-      link: "/ecosystem/platforms-solutions/landingpage-esigniva"
+      link: "/ecosystem/platforms-solutions/saas-platforms/esigniva"
     },
     {
       name: "CareSuite",
@@ -107,26 +107,22 @@ export function FeaturedProducts() {
                       />
                     </div>
                   </div>
-                  <a
+                  <Link
                     href={prod.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
                   >
                     <ArrowUpRight size={14} className="text-zinc-500 hover:text-rose-500 transition-colors cursor-pointer" />
-                  </a>
+                  </Link>
                 </div>
 
                 {/* Title & Description */}
-                <a
+                <Link
                   href={prod.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
                   className="inline-block"
                 >
                   <h3 className="text-xl md:text-2xl font-semibold text-white uppercase tracking-wider mb-2 mt-1 hover:text-rose-400 group-hover:text-rose-400 transition-colors">
                     {prod.name}
                   </h3>
-                </a>
+                </Link>
                 {/* <span className="block text-xs font-semibold text-rose-500 mb-3">
                   {prod.tagline}
                 </span> */}
@@ -135,7 +131,10 @@ export function FeaturedProducts() {
                 </p> */}
 
                 {/* Image Wrapper */}
-                <div className="relative w-full aspect-[16/10] overflow-hidden rounded-2xl border border-white/[0.03] group-hover:border-rose-500/15 bg-zinc-900/40 transition-all duration-500">
+                <Link
+                  href={prod.link}
+                  className="block relative w-full aspect-[16/10] overflow-hidden rounded-2xl border border-white/[0.03] group-hover:border-rose-500/15 bg-zinc-900/40 transition-all duration-500"
+                >
                   <Image
                     src={prod.image}
                     alt={prod.name}
@@ -144,7 +143,7 @@ export function FeaturedProducts() {
                     className="object-cover object-top opacity-80 group-hover:opacity-100 group-hover:scale-[1.04] transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/80 via-transparent to-transparent pointer-events-none" />
-                </div>
+                </Link>
               </div>
             </div>
           ))}

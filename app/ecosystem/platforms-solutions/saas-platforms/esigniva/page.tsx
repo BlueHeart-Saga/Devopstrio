@@ -302,18 +302,14 @@ export default function ESignivaLandingPage() {
                 {/* Two side-by-side CTA buttons */}
                 <div className="flex flex-wrap items-center gap-4 sm:gap-5 relative z-10">
                   <a
-                    href="https://www.zoho.com/people/signup.html"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    href={signUrl}
                     className="inline-flex items-center justify-center px-7 sm:px-8 py-3.5 rounded-full bg-[#FB2C53] hover:bg-[#d91e40] text-white font-semibold text-base sm:text-lg shadow-[0_10px_32px_rgba(251,44,83,0.5)] hover:shadow-[0_16px_45px_rgba(251,44,83,0.7)] hover:scale-105 active:scale-95 transition-all duration-300 tracking-wide text-center"
                   >
                     Sign up for free trial
                   </a>
 
                   <a
-                    href="https://www.zoho.com/people/free-demo.html"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    href="/contact#contact-form"
                     className="inline-flex items-center justify-center px-7 sm:px-8 py-3.5 rounded-full bg-[#FB2C53] hover:bg-[#d91e40] text-white font-semibold text-base sm:text-lg shadow-[0_10px_32px_rgba(251,44,83,0.5)] hover:shadow-[0_16px_45px_rgba(251,44,83,0.7)] hover:scale-105 active:scale-95 transition-all duration-300 tracking-wide text-center"
                   >
                     Request Demo
@@ -337,10 +333,13 @@ export default function ESignivaLandingPage() {
                 {/* Main dashboard */}
                 <motion.div
                   initial={{ opacity: 0, y: 24 }}
-                  animate={{ opacity: 1, y: 0 }}
+                  animate={{ opacity: 1, y: -10 }}
                   transition={{ duration: 0.7 }}
                   className="relative rounded-2xl border border-white/10 bg-white/5 p-2 shadow-[0_30px_90px_rgba(0,0,0,0.92)] backdrop-blur-md overflow-hidden"
-                  style={{ transform: "perspective(1400px) rotateY(-5deg) rotateX(2deg)" }}
+                  style={{
+                    transform:
+                      "perspective(1400px) rotateY(-5deg) rotateX(2deg)",
+                  }}
                 >
                   <div className="relative w-full aspect-[16/10] rounded-xl overflow-hidden bg-white">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -352,40 +351,76 @@ export default function ESignivaLandingPage() {
                   </div>
                 </motion.div>
 
-                {/* Floating Card 1 – top-left outer edge */}
+                {/* Floating Card 1 – Document Signed */}
                 <motion.div
                   initial={{ opacity: 0, y: -8 }}
                   animate={{ opacity: 1, y: [-6, 6, -6] }}
-                  transition={{ opacity: { duration: 0.5, delay: 0.35 }, y: { duration: 4.6, repeat: Infinity, ease: "easeInOut", delay: 0.35 } }}
+                  transition={{
+                    opacity: { duration: 0.5, delay: 0.35 },
+                    y: {
+                      duration: 4.6,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                      delay: 0.35,
+                    },
+                  }}
                   className="absolute -top-10 sm:-top-16 md:-top-20 -left-4 sm:-left-8 md:-left-12 w-48 sm:w-56 md:w-60 drop-shadow-[0_20px_45px_rgba(0,0,0,0.95)] z-30 pointer-events-none"
                   style={{ transform: "rotate(-4deg)" }}
                 >
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src="/webp/assets/landingpage-esigniva/hero-document-signed.webp" alt="Document Signed" className="w-full h-auto rounded-2xl" />
+                  <img
+                    src="/webp/assets/landingpage-esigniva/hero-document-signed.webp"
+                    alt="Document Signed"
+                    className="w-full h-auto rounded-2xl"
+                  />
                 </motion.div>
 
-                {/* Floating Card 2 – top-right outer edge (Properly balanced) */}
+                {/* Floating Card 2 – Offer Letter */}
                 <motion.div
                   initial={{ opacity: 0, y: 8 }}
                   animate={{ opacity: 1, y: [6, -6, 6] }}
-                  transition={{ opacity: { duration: 0.5, delay: 0.5 }, y: { duration: 5.1, repeat: Infinity, ease: "easeInOut", delay: 0.5 } }}
-                  className="absolute -top-10 sm:-top-16 md:-top-20 -right-4 sm:-right-8 md:-right-12 w-44 sm:w-48 md:w-52 drop-shadow-[0_20px_45px_rgba(0,0,0,0.95)] z-30 pointer-events-none"
+                  transition={{
+                    opacity: { duration: 0.5, delay: 0.5 },
+                    y: {
+                      duration: 5.1,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                      delay: 0.5,
+                    },
+                  }}
+                  className="absolute -top-14 sm:-top-20 md:-top-24 -right-6 sm:-right-10 md:-right-16 w-44 sm:w-48 md:w-52 drop-shadow-[0_20px_45px_rgba(0,0,0,0.95)] z-30 pointer-events-none"
                   style={{ transform: "rotate(4deg)" }}
                 >
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src="/webp/assets/landingpage-esigniva/hero-offer-letter.webp" alt="Offer Letter" className="w-full h-auto rounded-2xl" />
+                  <img
+                    src="/webp/assets/landingpage-esigniva/hero-offer-letter.webp"
+                    alt="Offer Letter"
+                    className="w-full h-auto rounded-2xl"
+                  />
                 </motion.div>
 
-                {/* Floating Card 3 – bottom-left outer edge */}
+                {/* Floating Card 3 – Completed Documents */}
                 <motion.div
                   initial={{ opacity: 0, y: 8 }}
                   animate={{ opacity: 1, y: [-6, 6, -6] }}
-                  transition={{ opacity: { duration: 0.5, delay: 0.65 }, y: { duration: 4.3, repeat: Infinity, ease: "easeInOut", delay: 0.65 } }}
-                  className="absolute -bottom-10 sm:-bottom-16 md:-bottom-20 -left-4 sm:-left-8 md:-left-12 w-48 sm:w-56 md:w-60 drop-shadow-[0_20px_45px_rgba(0,0,0,0.95)] z-30 pointer-events-none"
+                  transition={{
+                    opacity: { duration: 0.5, delay: 0.65 },
+                    y: {
+                      duration: 4.3,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                      delay: 0.65,
+                    },
+                  }}
+                  className="absolute -bottom-14 sm:-bottom-20 md:-bottom-24 -left-4 sm:-left-8 md:-left-12 w-48 sm:w-56 md:w-60 drop-shadow-[0_20px_45px_rgba(0,0,0,0.95)] z-30 pointer-events-none"
                   style={{ transform: "rotate(-3deg)" }}
                 >
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src="/webp/assets/landingpage-esigniva/hero-completed-docs.webp" alt="Completed Documents" className="w-full h-auto rounded-2xl" />
+                  <img
+                    src="/webp/assets/landingpage-esigniva/hero-completed-docs.webp"
+                    alt="Completed Documents"
+                    className="w-full h-auto rounded-2xl"
+                  />
                 </motion.div>
 
               </div>
@@ -476,8 +511,8 @@ export default function ESignivaLandingPage() {
                   );
                 })}
 
-                {/* Inner mockup image — tablet frames */}
-                <div className="relative w-[95%] sm:w-[96%] flex items-center justify-center z-20">
+                {/* Inner mockup image — identical fixed frame for all 4 steps */}
+                <div className="relative w-[95%] sm:w-[96%] z-20">
                   <AnimatePresence mode="wait">
                     <motion.div
                       key={activeStep}
@@ -485,14 +520,17 @@ export default function ESignivaLandingPage() {
                       animate={{ opacity: 1, scale: 1, x: 0 }}
                       exit={{ opacity: 0, scale: 0.97, x: -6 }}
                       transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-                      className="w-full flex items-center justify-center"
+                      className="w-full"
                     >
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img
-                        src={currentStepData.img}
-                        alt={currentStepData.title}
-                        className="w-full h-auto max-h-[480px] object-contain drop-shadow-[0_18px_48px_rgba(0,0,0,0.9)] transition-transform duration-300"
-                      />
+                      {/* Device frame — exact image ratio 1400x1086, object-cover fills uniformly */}
+                      <div className="relative w-full rounded-[1.5rem] border-[10px] border-zinc-800 shadow-[0_0_0_2px_#1f1f1f,0_24px_70px_rgba(0,0,0,0.95)] overflow-hidden bg-zinc-900" style={{ aspectRatio: "1400/1086" }}>
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img
+                          src={currentStepData.img}
+                          alt={currentStepData.title}
+                          className={`absolute inset-0 w-full h-full object-cover ${activeStep === 1 ? "object-center scale-[1.12]" : "object-top"} transition-all duration-300`}
+                        />
+                      </div>
                     </motion.div>
                   </AnimatePresence>
                 </div>
@@ -814,8 +852,6 @@ export default function ESignivaLandingPage() {
                 <div className="mt-auto pt-6 sm:pt-8 flex flex-wrap items-center gap-5 sm:gap-7">
                   <a
                     href={signUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
                     className="btn-tactile group"
                   >
                     <div>
@@ -827,9 +863,7 @@ export default function ESignivaLandingPage() {
                   </a>
 
                   <a
-                    href={signUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    href="/contact#contact-form"
                     className="btn-tactile btn-tactile-secondary group"
                   >
                     <div>

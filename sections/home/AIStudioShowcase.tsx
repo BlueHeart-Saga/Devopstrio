@@ -262,8 +262,6 @@ export function AIStudioShowcase() {
 
                         <a
                           href={service.link}
-                          target="_blank"
-                          rel="noopener noreferrer"
                           className={`inline-flex items-center gap-2 text-xs sm:text-sm font-medium text-white bg-zinc-900/90 ${service.btnHover} px-5 py-2.5 rounded-lg transition-all duration-300 shadow-xl group/btn`}
                         >
                           <span>Explore {service.title}</span>

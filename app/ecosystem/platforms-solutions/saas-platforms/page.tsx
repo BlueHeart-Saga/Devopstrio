@@ -176,8 +176,8 @@ export default function SaaSPlatformsPage() {
       url: "https://brio.devopstrio.co.uk/"
     },
     {
-      slug: "safesign",
-      name: "SafeSign",
+      slug: "esigniva",
+      name: "eSigniva",
       category: "LegalTech",
       badgeColor: "border-emerald-500/30 text-emerald-400 bg-emerald-950/10",
       tagline: "Legally compliant digital signing",
@@ -186,7 +186,7 @@ export default function SaaSPlatformsPage() {
       logo: "/webp/assets/Home-page/our-products/logo/safesign.webp",
       ctaPrimary: "View Platform",
       ctaSecondary: "Start Free",
-      url: "https://safesign.devopstrio.co.uk/"
+      url: "/ecosystem/platforms-solutions/saas-platforms/esigniva"
     },
     {
       slug: "justivon",
@@ -210,7 +210,7 @@ export default function SaaSPlatformsPage() {
     { industry: "Real Estate", product: "Homela", link: "/ecosystem/platforms-solutions/saas-platforms/homela" },
     { industry: "Marketing", product: "Campix", link: "/ecosystem/platforms-solutions/saas-platforms/campix" },
     { industry: "Education", product: "Prestivo", link: "/ecosystem/platforms-solutions/saas-platforms/prestivo" },
-    { industry: "Legal", product: "SafeSign", link: "/ecosystem/platforms-solutions/saas-platforms/safesign" },
+    { industry: "Legal", product: "eSigniva", link: "/ecosystem/platforms-solutions/saas-platforms/esigniva" },
     { industry: "Law Firms", product: "Justivon", link: "/ecosystem/platforms-solutions/saas-platforms/justivon" },
     { industry: "AI Marketing", product: "Brio", link: "/ecosystem/platforms-solutions/saas-platforms/brio" }
   ];
@@ -627,7 +627,7 @@ export default function SaaSPlatformsPage() {
                         <span className="text-zinc-300 font-semibold">{product.category}</span>
                       </div>
                     </div>
-                    <a href={row.url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 text-rose-500 hover:text-rose-400 font-bold text-sm mt-4 transition-colors">
+                    <a href={row.url} className="inline-flex items-center gap-1.5 text-rose-500 hover:text-rose-400 font-bold text-sm mt-4 transition-colors">
                       Visit {row.name} Platform
                       <ArrowUpRight className="w-4 h-4" />
                     </a>

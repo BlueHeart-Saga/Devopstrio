@@ -103,7 +103,7 @@ export function PlatformsHero() {
               <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-transparent opacity-30 pointer-events-none" />
               <Image
                 src="/webp/assets/ecosystem/herocard/platform/3.webp"
-                alt="SafeSign Verification"
+                alt="eSigniva Verification"
                 fill
                 className="object-cover opacity-45 group-hover:scale-105 transition-transform duration-500"
               />
@@ -116,7 +116,7 @@ export function PlatformsHero() {
               </div>
 
               <div className="relative z-20">
-                <span className="text-[10px] md:text-xs font-mono tracking-widest text-rose-500 uppercase block mb-1 font-semibold">SafeSign</span>
+                <span className="text-[10px] md:text-xs font-mono tracking-widest text-rose-500 uppercase block mb-1 font-semibold">eSigniva</span>
                 <h3 className="text-sm md:text-base font-semibold text-white tracking-tight leading-snug">
                   Electronic signature and biometric integrity.
                 </h3>

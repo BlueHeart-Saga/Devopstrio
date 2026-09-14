@@ -263,8 +263,6 @@ export const WhatInternsWorkOn = () => {
 
                       <a
                         href={prod.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
                         onClick={(e) => e.stopPropagation()}
                         className="text-[11px] sm:text-xs font-bold text-white bg-rose-600 hover:bg-rose-500 px-2.5 sm:px-3.5 py-1.5 rounded-lg flex items-center gap-1 transition-all shadow-[0_0_14px_rgba(225,29,72,0.4)] whitespace-nowrap shrink-0 cursor-pointer"
                       >

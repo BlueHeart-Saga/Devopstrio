@@ -60,7 +60,7 @@ const sitemapData: SitemapCategory[] = [
     items: [
       { name: "Ecosystem Overview", href: "/ecosystem", desc: "Co-Engineering Hub & Alliances" },
       { name: "Cloud Landing Zone", href: "/ecosystem/landing-zone", desc: "SOC-2 Compliant Terraform Modules" },
-      { name: "SafeSign Platform", href: "/ecosystem/platforms-solutions/saas-platforms/safesign", desc: "Zero-Trust E-Signatures" },
+      { name: "eSigniva Platform", href: "/ecosystem/platforms-solutions/saas-platforms/esigniva", desc: "Zero-Trust E-Signatures" },
       { name: "Brio Marketing Engine", href: "/ecosystem/platforms-solutions/saas-platforms/brio", desc: "AI Influencer & Creator Portal" },
       { name: "CareSuite Health Grid", href: "/ecosystem/platforms-solutions/saas-platforms/caresuite", desc: "HIPAA Patient Telemetry" },
       { name: "Campix Operations", href: "/ecosystem/platforms-solutions/saas-platforms/campix", desc: "Campaign Operations Hub" },

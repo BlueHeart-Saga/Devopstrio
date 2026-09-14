@@ -25,9 +25,9 @@ const products = [
     logo: "/webp/assets/Home-page/our-products/logo/brio.webp",
   },
   {
-    name: "Safesign",
+    name: "eSigniva",
     industry: "LegalTech · eSign",
-    href: "/ecosystem/platforms-solutions/saas-platforms/safesign",
+    href: "/ecosystem/platforms-solutions/saas-platforms/esigniva",
     logo: "/webp/assets/Home-page/our-products/logo/safesign.webp",
   },
   {

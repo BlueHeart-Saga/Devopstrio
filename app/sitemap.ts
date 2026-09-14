@@ -125,7 +125,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         });
 
         // Add all subpages of saas-platforms
-        const saasSubpages = ["brio", "campix", "caresuite", "homela", "humanex", "justivon", "prestivo", "safesign"];
+        const saasSubpages = ["brio", "campix", "caresuite", "homela", "humanex", "justivon", "prestivo", "esigniva"];
         saasSubpages.forEach((slug) => {
           ecosystemPages.push({
             url: `${baseUrl}/ecosystem/platforms-solutions/saas-platforms/${slug}`,

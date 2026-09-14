@@ -83,8 +83,6 @@ function AICard({ item, flexClass = "flex-1", delay = 0 }: AICardProps) {
     <Reveal delay={delay} className={`w-full ${flexClass} flex flex-col min-h-[160px] transition-all duration-500`}>
       <a
         href={item.link}
-        target="_blank"
-        rel="noopener noreferrer"
         className="w-full h-full bg-gradient-to-br from-zinc-950/90 via-zinc-950/80 to-[#0a0507]/90 hover:from-rose-950/40 hover:via-zinc-950 hover:to-zinc-950 border border-white/10 hover:border-rose-500/40 rounded-2xl sm:rounded-3xl p-5 sm:p-6 flex flex-col justify-between transition-all duration-500 group shadow-xl backdrop-blur-md relative overflow-hidden cursor-pointer"
       >
         {/* Glow backdrop effect on card hover */}

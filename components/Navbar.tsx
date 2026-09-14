@@ -1006,10 +1006,11 @@ export function Navbar() {
                     <div className="col-span-full border-t border-zinc-900/60 pt-4 mt-1 flex flex-row justify-between items-center">
                       <div className="flex items-center gap-4 text-base sm:text-lg font-semibold text-zinc-300">
                         <Link
-                          href="/insights/industry-events"
+                          href="/services/explore"
+                          onClick={() => setActiveMenu(null)}
                           className="hover:text-rose-500 transition-colors flex items-center gap-1.5 font-semibold"
                         >
-                          <span>Events</span>
+                          <span>Explore Services</span>
                         </Link>
                         <span className="text-zinc-800">|</span>
                         <ChatNowSection />
@@ -1182,9 +1183,7 @@ export function Navbar() {
                           ECOSYSTEM PILLARS
                         </span>
                         <a
-                          href="https://devopstrioaiservices-e6dnggh5gxehh9d0.southindia-01.azurewebsites.net"
-                          target="_blank"
-                          rel="noopener noreferrer"
+                          href="https://ai.devopstrio.co.uk"
                           onClick={() => setActiveMenu(null)}
                           className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold border border-rose-500/30 bg-rose-500/10 text-rose-400 hover:bg-rose-600 hover:text-white transition-all shadow-[0_0_12px_rgba(244,63,94,0.15)]"
                         >
@@ -1245,10 +1244,11 @@ export function Navbar() {
                     <div className="col-span-full border-t border-zinc-900/60 pt-4 mt-1 flex flex-row justify-between items-center">
                       <div className="flex items-center gap-4 text-base sm:text-lg font-semibold text-zinc-300">
                         <Link
-                          href="/insights/industry-events"
+                          href="/ecosystem/landing-zone#git-showcase"
+                          onClick={() => setActiveMenu(null)}
                           className="hover:text-rose-500 transition-colors flex items-center gap-1.5 font-semibold"
                         >
-                          <span>Events</span>
+                          <span>Landing Zone</span>
                         </Link>
                         <span className="text-zinc-800">|</span>
                         <ChatNowSection />

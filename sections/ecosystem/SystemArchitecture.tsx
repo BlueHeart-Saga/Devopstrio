@@ -135,7 +135,7 @@ export function SystemArchitecture() {
           <div className="flex flex-col gap-3.5 w-full">
             {[
               { title: "Business Outcomes", items: "Growth • Innovation • Efficiency", color: "text-emerald-400 border-emerald-500/20 bg-emerald-500/2" },
-              { title: "Platforms & Solutions", items: "Humanex • Brio • SafeSign • Campix", color: "text-blue-400 border-blue-500/20 bg-blue-500/2" },
+              { title: "Platforms & Solutions", items: "Humanex • Brio • eSigniva • Campix", color: "text-blue-400 border-blue-500/20 bg-blue-500/2" },
               { title: "Innovation Labs", items: "AI Lab • Cloud Lab • DevOps Lab", color: "text-amber-400 border-emerald-500/20 bg-amber-500/2" },
               { title: "Engineering Frameworks", items: "IaC • CI/CD • Security • Observability", color: "text-indigo-400 border-indigo-500/20 bg-indigo-500/2" },
               { title: "Technology & Partners", items: "Microsoft • AWS • Google • Oracle", color: "text-rose-400 border-rose-500/20 bg-rose-500/2" },

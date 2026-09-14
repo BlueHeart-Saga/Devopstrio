@@ -53,10 +53,10 @@ export function PlatformMarketplace() {
       imagePath: "/webp/assets/Home-page/our-products/brio.webp"
     },
     {
-      id: "safesign",
+      id: "esigniva",
       logoPath: "/webp/assets/Home-page/our-products/logo/safesign.webp",
-      name: "SafeSign",
-      quote: "Securing document handshakes across our global offices required strict compliance validation. SafeSign's cryptographic architecture met every standard flawlessly.",
+      name: "eSigniva",
+      quote: "Securing document handshakes across our global offices required strict compliance validation. eSigniva's cryptographic architecture met every standard flawlessly.",
       authorName: "Marcus Chen",
       authorRole: "Head of Legal Operations, Securitas Corp",
       products: [

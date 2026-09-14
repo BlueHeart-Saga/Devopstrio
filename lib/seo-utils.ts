@@ -369,10 +369,10 @@ const ROUTE_SEO_MAP: Record<string, { title: string; description: string; keywor
     description: "Deploy and scale multi-tenant subscription applications, billing systems, and business platforms built by Devopstrio.",
     keywords: ["SaaS Platforms", "Multi-Tenant Products", "Enterprise Software", "Digital Portals"]
   },
-  "/ecosystem/platforms-solutions/saas-platforms/safesign": {
-    title: "SafeSign Platform | Zero-Trust Digital Signatures",
+  "/ecosystem/platforms-solutions/saas-platforms/esigniva": {
+    title: "eSigniva Platform | Zero-Trust Digital Signatures",
     description: "Enterprise document signing platform featuring biometric authentication, legal compliance, and smart AI workflow routing.",
-    keywords: ["SafeSign", "Zero-Trust Signatures", "AI Document Intelligence", "Legal E-Sign"]
+    keywords: ["eSigniva", "Zero-Trust Signatures", "AI Document Intelligence", "Legal E-Sign"]
   },
   "/ecosystem/platforms-solutions/saas-platforms/brio": {
     title: "Brio Platform | AI Creator & Influencer Engine",
@@ -567,8 +567,8 @@ const ROUTE_SEO_MAP: Record<string, { title: string; description: string; keywor
   },
   "/marketing/products": {
     title: "SaaS Product Datasheets & Specs",
-    description: "Explore technical architecture data sheets and feature specs for SafeSign, Brio, Campix, CareSuite, HomeLa, HumanEx, Justivon, and Prestivo.",
-    keywords: ["Product Datasheets", "SaaS Specifications", "SafeSign Specs", "Brio Sheet"]
+    description: "Explore technical architecture data sheets and feature specs for eSigniva, Brio, Campix, CareSuite, HomeLa, HumanEx, Justivon, and Prestivo.",
+    keywords: ["Product Datasheets", "SaaS Specifications", "eSigniva Specs", "Brio Sheet"]
   },
   "/marketing/services": {
     title: "Services Marketing Summaries",

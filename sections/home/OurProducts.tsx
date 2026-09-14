@@ -78,12 +78,12 @@ const products: Product[] = [
     link: "https://caresuite.devopstrio.co.uk/"
   },
   {
-    name: "SafeSign",
+    name: "eSigniva",
     category: "LegalTech · eSign",
-    desc: "Enterprise e-signature and document lifecycle platform with advanced audit trails, multi-party workflows, and blockchain-anchored signature verification.",
-    tags: ["LegalTech", "eSignature", "Blockchain"],
+    desc: "Enterprise e-signature and document lifecycle platform with advanced audit trails, multi-party workflows, and cryptographic signature verification.",
+    tags: ["LegalTech", "eSignature", "Digital Trust"],
     image: "/webp/assets/Home-page/our-products/safesign.webp",
-    link: "https://safesign.devopstrio.co.uk/"
+    link: "/ecosystem/platforms-solutions/saas-platforms/esigniva"
   },
   {
     name: "Justivon",
@@ -212,8 +212,6 @@ export function OurProducts() {
 
                       <a
                         href={prod.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
                         onClick={(e) => e.stopPropagation()}
                         className="text-xs font-bold text-white bg-rose-600 hover:bg-rose-500 px-3.5 py-1.5 rounded-lg flex items-center gap-1 transition-all shadow-[0_0_14px_rgba(225,29,72,0.4)] whitespace-nowrap"
                       >
