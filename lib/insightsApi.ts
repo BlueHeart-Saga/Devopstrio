@@ -88,12 +88,22 @@ function getCategorySlug(name: string): string {
 
 const globalServerCache = new Map<string, { data: any; timestamp: number }>();
 const globalPendingRequests = new Map<string, Promise<any>>();
-const SERVER_CACHE_TTL = 10 * 60 * 1000; // 10 minutes in-memory cache
+const SERVER_CACHE_TTL = 60 * 1000; // 1 minute in-memory cache for fast publishing updates
+
+export function isPublishedPost(item: any): boolean {
+  if (!item) return false;
+  const status = (item.status || "published").toLowerCase();
+  if (status !== "published") return false;
+  if (item.is_deleted === true || status === "deleted" || status === "archived" || status === "draft") {
+    return false;
+  }
+  return true;
+}
 
 class InsightsApiService {
   private baseUrl: string;
   private companyId: string;
-  private cache: Map<string, any>;
+  private cache: Map<string, { data: any; timestamp: number }>;
   private pendingRequests: Map<string, Promise<any>>;
 
   constructor() {
@@ -104,19 +114,30 @@ class InsightsApiService {
     this.pendingRequests = new Map();
   }
 
+  getImageUrl(fileId?: string): string {
+    if (!fileId) return "";
+    return `${this.baseUrl}${API_PREFIX}/images/${fileId}`;
+  }
+
+  getDocumentUrl(fileId?: string, fallbackUrl?: string): string {
+    if (fileId) return `${this.baseUrl}${API_PREFIX}/documents/${fileId}`;
+    return fallbackUrl || "";
+  }
+
   async fetchApi(endpoint: string, options: any = {}) {
     const url = `${this.baseUrl}${API_PREFIX}${endpoint}`;
     const cacheKey = `${url}:${options.method || "GET"}:${JSON.stringify(options.body || "")}`;
 
-    // 1. Check in-memory global server cache (10 min TTL)
+    // 1. Check in-memory global server cache (1 min TTL)
     const cachedItem = globalServerCache.get(cacheKey);
     if (cachedItem && Date.now() - cachedItem.timestamp < SERVER_CACHE_TTL) {
       return cachedItem.data;
     }
 
-    // 2. Check instance cache
-    if (this.cache.has(cacheKey)) {
-      return this.cache.get(cacheKey);
+    // 2. Check instance cache (1 min TTL)
+    const instCache = this.cache.get(cacheKey);
+    if (instCache && Date.now() - instCache.timestamp < SERVER_CACHE_TTL) {
+      return instCache.data;
     }
 
     // 3. Dedupe in-flight requests
@@ -133,7 +154,7 @@ class InsightsApiService {
         "Content-Type": "application/json",
         ...options.headers,
       },
-      next: { revalidate: 300 } // Cache-revalidation for Next.js (5 minutes)
+      next: { revalidate: 60 } // Next.js cache-revalidation (60 seconds)
     })
       .then(async (response) => {
         if (!response.ok) {
@@ -142,8 +163,9 @@ class InsightsApiService {
         }
 
         const data = await response.json();
-        globalServerCache.set(cacheKey, { data, timestamp: Date.now() });
-        this.cache.set(cacheKey, data);
+        const cacheEntry = { data, timestamp: Date.now() };
+        globalServerCache.set(cacheKey, cacheEntry);
+        this.cache.set(cacheKey, cacheEntry);
         globalPendingRequests.delete(cacheKey);
         this.pendingRequests.delete(cacheKey);
         return data;
@@ -185,17 +207,24 @@ class InsightsApiService {
     return this.fetchApi(`/public/content/${contentId}`);
   }
 
-  async registerLike(postId: string) {
-    // Expected endpoint: /public/content/{postId}/like
+  async registerLike(postId: string): Promise<{ success: boolean; liked?: boolean; likes?: number }> {
     const url = `${this.baseUrl}${API_PREFIX}/public/content/${postId}/like`;
-    return fetch(url, {
-      method: "POST"
-    }).then(async (res) => {
+    try {
+      const res = await fetch(url, {
+        method: "POST"
+      });
       if (res.ok) {
-        return res.json().catch(() => ({ success: true }));
+        const data = await res.json().catch(() => ({}));
+        return {
+          success: true,
+          liked: data.liked,
+          likes: typeof data.likes === "number" ? data.likes : undefined
+        };
       }
-      return null;
-    }).catch(() => null);
+      return { success: false };
+    } catch {
+      return { success: false };
+    }
   }
 
   async subscribe(email: string, sections: string[] = [], categories: string[] = []) {
@@ -247,7 +276,8 @@ class InsightsApiService {
                     return { ...category, section_slug: section.slug, posts: [] };
                   }
 
-                  const posts = (contentRes.items || []).map((item: any) =>
+                  const validItems = (contentRes.items || []).filter(isPublishedPost);
+                  const posts = validItems.map((item: any) =>
                     this.transformContent(item, section, category),
                   );
 
@@ -291,7 +321,8 @@ class InsightsApiService {
           break;
         }
 
-        const posts = contentRes.items.map((item: any) => this.transformContent(item));
+        const validItems = contentRes.items.filter(isPublishedPost);
+        const posts = validItems.map((item: any) => this.transformContent(item));
         allPosts = allPosts.concat(posts);
 
         if (contentRes.items.length < queryLimit) {
@@ -312,10 +343,18 @@ class InsightsApiService {
 
   transformContent(backendContent: any, section: any = null, category: any = null): TransformedPost {
     const renderedContent = this.renderBlocks(backendContent.blocks);
-    const computedReadTime = Math.max(
-      1,
-      Math.ceil((renderedContent || "").trim().split(/\s+/).length / 200),
-    );
+    const words = (renderedContent || "").trim().split(/\s+/).filter(Boolean).length;
+    
+    // Accurate read time computation: prioritize backend stats, then parsed word count, then fallback
+    let computedReadTime = 4;
+    if (backendContent.stats?.read_time && typeof backendContent.stats.read_time === "number" && backendContent.stats.read_time > 0) {
+      computedReadTime = backendContent.stats.read_time;
+    } else if (words > 0) {
+      computedReadTime = Math.max(1, Math.ceil(words / 200));
+    } else if (backendContent.subtitle) {
+      const subWords = backendContent.subtitle.trim().split(/\s+/).filter(Boolean).length;
+      computedReadTime = Math.max(2, Math.ceil(subWords / 25));
+    }
 
     let formattedDate = "";
     try {
@@ -337,8 +376,6 @@ class InsightsApiService {
     const categorySlug = category?.slug || backendContent.category?.slug || backendContent.category_slug || getCategorySlug(categoryName);
 
     const titleSlugRaw = slugify(backendContent.title || "");
-    // Ensure total URL (https://devopstrio.co.uk/insights/{categorySlug}/{titleSlug}-{id}) remains under 110 characters (Google limit: 120 chars)
-    // Domain & path prefix = 39 chars. Category + / = categorySlug.length + 1. ID + hyphen = 25 chars.
     const maxTitleLen = Math.max(15, 45 - (categorySlug ? categorySlug.length : 15));
     let titleSlug = titleSlugRaw;
     if (titleSlugRaw.length > maxTitleLen) {
@@ -364,15 +401,15 @@ class InsightsApiService {
       },
       excerpt: backendContent.subtitle || this.extractExcerpt(backendContent.blocks),
       image: backendContent.cover_image_id
-        ? `${this.baseUrl}${API_PREFIX}/images/${backendContent.cover_image_id}`
+        ? this.getImageUrl(backendContent.cover_image_id)
         : null,
       content: renderedContent,
       date: formattedDate,
       author: backendContent.author?.name || "Devopstrio Team",
-      readTime: backendContent.stats?.read_time || computedReadTime,
+      readTime: computedReadTime,
       tags: backendContent.tags || [],
       views: backendContent.stats?.views || 0,
-      likes: backendContent.stats?.likes || 0,
+      likes: backendContent.like_count ?? backendContent.stats?.likes ?? 0,
       comments: backendContent.stats?.comments || 0,
       featured: backendContent.settings?.is_featured || false,
       rawBlocks: backendContent.blocks

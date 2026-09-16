@@ -90,12 +90,15 @@ export function PostDetailClient({ post, relatedPosts, categorySlug, postId }: P
   }, [postId]);
 
   const handleLike = async () => {
-    if (liked) return;
+    const nextLiked = !liked;
+    setLiked(nextLiked);
+    setLikesCount(prev => (nextLiked ? prev + 1 : Math.max(0, prev - 1)));
+    localStorage.setItem(`liked_${postId}`, String(nextLiked));
     try {
-      setLiked(true);
-      setLikesCount(prev => prev + 1);
-      localStorage.setItem(`liked_${postId}`, "true");
-      await insightsApi.registerLike(postId);
+      const res = await insightsApi.registerLike(postId);
+      if (res && typeof res.likes === "number") {
+        setLikesCount(res.likes);
+      }
     } catch (err) {
       console.error("Failed to register vote:", err);
     }
@@ -355,9 +358,10 @@ function BlockRenderer({
         </ol>
       );
     case "image":
+      const imageUrl = data.url || insightsApi.getImageUrl(data.file_id);
       return (
         <figure className="my-10 rounded-[28px] overflow-hidden border border-white/5 bg-zinc-950 p-3 shadow-2xl">
-          <img src={data.url || `https://mediahub-backend-docker-hgh6hzgacraqbhb2.southindia-01.azurewebsites.net/api/images/${data.file_id}`} alt={data.alt || "CMS Image"} className="w-full rounded-[20px] object-contain max-h-[500px]" loading="lazy" />
+          <img src={imageUrl} alt={data.alt || "CMS Image"} className="w-full rounded-[20px] object-contain max-h-[500px]" loading="lazy" />
           {data.alt && <figcaption className="text-center text-[10px] text-zinc-450 mt-3 font-mono uppercase tracking-wider">{data.alt}</figcaption>}
         </figure>
       );

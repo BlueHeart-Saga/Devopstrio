@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { ArrowLeft, BookOpen, AlertCircle, X } from "lucide-react";
-import { insightsApi, TransformedPost } from "@/lib/insightsApi";
+import { insightsApi, TransformedPost, isPublishedPost } from "@/lib/insightsApi";
 
 interface ReaderPageProps {
   params: Promise<{
@@ -40,16 +40,14 @@ export default function DocumentReaderPage({ params }: ReaderPageProps) {
         setLoading(true);
         const raw = await insightsApi.getContentById(actualId);
         const data = raw?.item ?? raw;
-        if (data && data.id) {
+        if (data && data.id && isPublishedPost(data)) {
           const transformed = insightsApi.transformContent(data);
           setPost(transformed);
           if (transformed.rawBlocks) {
             const docBlock = transformed.rawBlocks.find((b) => b.type === "document");
             if (docBlock?.data) {
-              const url = docBlock.data.file_id
-                ? `https://mediahub-backend-docker-hgh6hzgacraqbhb2.southindia-01.azurewebsites.net/api/documents/${docBlock.data.file_id}`
-                : docBlock.data.url || null;
-              setDocUrl(url);
+              const url = insightsApi.getDocumentUrl(docBlock.data.file_id, docBlock.data.url);
+              setDocUrl(url || null);
             }
           }
         }

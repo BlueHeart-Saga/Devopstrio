@@ -1,7 +1,7 @@
 import React from "react";
 import { Metadata } from "next";
-import { notFound } from "next/navigation";
-import { insightsApi, TransformedPost } from "@/lib/insightsApi";
+import { notFound, redirect } from "next/navigation";
+import { insightsApi, TransformedPost, isPublishedPost } from "@/lib/insightsApi";
 import { PostDetailClient } from "@/components/insights/PostDetailClient";
 import { BreadcrumbSchema, ArticleSchema } from "@/components/seo/Schemas";
 
@@ -32,7 +32,7 @@ export async function generateMetadata({ params }: PostDetailPageProps): Promise
   try {
     const raw = await insightsApi.getContentById(actualId);
     const data = raw?.item ?? raw;
-    if (data && data.title) {
+    if (data && data.title && isPublishedPost(data)) {
       const post = insightsApi.transformContent(data);
       return generatePageMetadata({
         title: post.title,
@@ -59,6 +59,9 @@ export default async function PostDetailPage({ params }: PostDetailPageProps) {
     const raw = await insightsApi.getContentById(actualId);
     const data = raw?.item ?? raw;
     if (data && data.id) {
+      if (!isPublishedPost(data)) {
+        notFound();
+      }
       post = insightsApi.transformContent(data);
 
       // Load related posts from same category
@@ -73,6 +76,11 @@ export default async function PostDetailPage({ params }: PostDetailPageProps) {
 
   if (!post) {
     notFound();
+  }
+
+  // Canonical SEO check: redirect short ID or outdated slug to canonical slug
+  if (postId !== post.slug) {
+    redirect(`/insights/${categorySlug}/${post.slug}`);
   }
 
   const postCanonicalUrl = `https://devopstrio.co.uk/insights/${categorySlug}/${post.slug}`;
