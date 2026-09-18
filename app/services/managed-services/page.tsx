@@ -15,7 +15,7 @@ const Challenges = dynamic(() => import("@/components/services/Challenges").then
 const TimelineProcess = dynamic(() => import("@/components/services/TimelineProcess").then((mod) => mod.TimelineProcess));
 // const TechnologyStack = dynamic(() => import("@/components/services/TechnologyStack").then((mod) => mod.TechnologyStack));
 const IndustryCards = dynamic(() => import("@/components/services/IndustryCards").then((mod) => mod.IndustryCards));
-const WhyDevopstrio = dynamic(() => import("@/sections/home/WhyDevOpsTrio").then((mod) => mod.WhyDevopstrio));
+const WhyDevopstrio = dynamic(() => import("@/sections/services/WhyDevopstrioManaged").then((mod) => mod.WhyDevopstrioManaged));
 const ServiceMetrics = dynamic(() => import("@/sections/services/category/ServiceMetrics").then((mod) => mod.ServiceMetrics));
 const ServiceRelated = dynamic(() => import("@/sections/services/category/ServiceRelated").then((mod) => mod.ServiceRelated));
 const FAQ = dynamic(() => import("@/components/services/FAQ").then((mod) => mod.FAQ));
