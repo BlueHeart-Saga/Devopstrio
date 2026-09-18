@@ -85,7 +85,8 @@ export const capabilityRegistry: Record<string, Record<string, RegistryItem>> = 
     "infrastructure-management": { title: "Infrastructure Management", desc: "SAN configuration, hypervisor updates, and load balancers." },
     "database-administration": { title: "Database Administration", desc: "PostgreSQL index rebuilds, backups, and security hardening." },
     "monitoring-incident-management": { title: "Monitoring & Incident Management", desc: "PagerDuty escalations, custom thresholds, and root-cause post-mortems." },
-    "twenty-four-seven-support": { title: "24/7 Support Services", desc: "Slack and phone developer help desks with fast response SLAs." }
+    "twenty-four-seven-support": { title: "24/7 Support Services", desc: "Slack and phone developer help desks with fast response SLAs." },
+    "managed-parts": { title: "Managed Service Provider UK", desc: "UK-based dedicated SRE governance, Cyber Essentials Plus compliance, and SLA-backed multi-cloud management." }
   },
   "qa-testing": {
     "test-automation": { title: "Test Automation", desc: "Playwright and Cypress end-to-end client scripts." },

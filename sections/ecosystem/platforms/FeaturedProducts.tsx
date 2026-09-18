@@ -59,11 +59,11 @@ export function FeaturedProducts() {
     },
     {
       name: "Campix",
-      tagline: "Campaign & Marketing Automation Platform",
-      desc: "Omnichannel campaigns manager tracking impression goals, user acquisitions paths, and conversion budgets on one canvas.",
+      tagline: "Smart Campus & Institution Management Platform",
+      desc: "Comprehensive campus operations ecosystem connecting students, faculty, administration, hostel, transport, and academic workflows in real time.",
       logo: "/webp/assets/Home-page/our-products/logo/Campix.webp",
-      image: "/webp/assets/Home-page/our-products/campix.webp",
-      link: "https://campix.devopstrio.co.uk/"
+      image: "/webp/assets/landingpage-campix/hero.webp",
+      link: "/ecosystem/platforms-solutions/saas-platforms/campix"
     }
   ];
 
