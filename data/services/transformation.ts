@@ -18,44 +18,90 @@ export const transformationService: ServiceCategory = {
     {
       slug: "digital-strategy",
       title: "Digital Strategy & Consulting",
-      description: "Mapping technology ecosystems, finding process inefficiencies, and drafting automation roadmaps.",
-      items: ["Current system technical auditing", "Workflow cost-benefit calculations", "Phased implementation scheduling"],
+      description: "Map technology ecosystems, identify process bottlenecks, and draft comprehensive, actionable digital transformation roadmaps.",
+      items: [
+        "Current system technical auditing",
+        "Workflow cost-benefit calculations",
+        "Phased implementation scheduling"
+      ],
       href: "/services/digital-transformation/digital-strategy"
+    },
+    {
+      slug: "enterprise-modernization",
+      title: "Enterprise Modernization",
+      description: "Upgrade foundational enterprise software, decouple monolithic silos, and transition legacy core platforms to the cloud.",
+      items: [
+        "Legacy system decoupling & containerization",
+        "Cloud-native microservices architecture",
+        "Automated CI/CD delivery pipelines"
+      ],
+      href: "/services/digital-transformation/enterprise-modernization"
+    },
+    {
+      slug: "process-automation",
+      title: "Intelligent Process Automation",
+      description: "Embed automated robotic workflows, intelligent data pipelines, and self-healing business logic into high-friction operations.",
+      items: [
+        "End-to-end robotic process automation (RPA)",
+        "Automated optical document processing",
+        "Real-time exception triage & alerting"
+      ],
+      href: "/services/digital-transformation/process-automation"
+    },
+    {
+      slug: "intelligent-workflows",
+      title: "Intelligent Workflows & Orchestration",
+      description: "Connect disparate enterprise software, CRM, and ERP applications into dynamic, event-driven automated workflows.",
+      items: [
+        "Event-driven workflow state machines",
+        "Cross-platform ERP & CRM integrations",
+        "Real-time human-in-the-loop task routing"
+      ],
+      href: "/services/digital-transformation/intelligent-workflows"
+    },
+    {
+      slug: "customer-experience-transformation",
+      title: "Customer Experience (CX) Transformation",
+      description: "Design and build fast, responsive digital customer portals, mobile experiences, and personalized omnichannel touchpoints.",
+      items: [
+        "Omnichannel digital portal architectures",
+        "Real-time personalization & telemetry",
+        "Intuitive, accessible customer interfaces"
+      ],
+      href: "/services/digital-transformation/customer-experience-transformation"
     },
     {
       slug: "legacy-modernization",
       title: "Legacy Systems Modernization",
-      description: "Relocating outdated database assets and mainframe codebases to cloud-native microservices.",
-      items: ["Monolith decomposition into APIs", "Microservices architecture refactoring", "Continuous automated data validation"],
+      description: "Migrate mainframe codebases and outdated relational databases to modern cloud-native architectures with zero operational disruption.",
+      items: [
+        "Monolith decomposition into APIs",
+        "Microservices architecture refactoring",
+        "Continuous automated data validation"
+      ],
       href: "/services/digital-transformation/legacy-modernization"
     },
     {
-      slug: "cloud-migration-acceleration",
-      title: "Cloud Migration & Modernization",
-      description: "Seamless migration of on-premises workloads to AWS, Azure, and Google Cloud with zero business disruption.",
-      items: ["6R migration assessment", "Automated database replication", "Landing zone guardrails"],
-      href: "/services/cloud-services/cloud-migration"
+      slug: "business-transformation",
+      title: "Business Transformation",
+      description: "Re-engineer core business operating models with modern data telemetry, cloud scalability, and digital-first operating practices.",
+      items: [
+        "Operating model redesign & telemetry",
+        "Value-stream mapping & optimization",
+        "Scalable technology governance models"
+      ],
+      href: "/services/digital-transformation/business-transformation"
     },
     {
-      slug: "intelligent-automation",
-      title: "Intelligent Process Automation",
-      description: "Embedding AI agents and workflow automation into core operational processes.",
-      items: ["Document processing automation", "Autonomous workflow agents", "Real-time exception routing"],
-      href: "/services/ai-data-innovation/ai-agents-automation"
-    },
-    {
-      slug: "devops-delivery-excellence",
-      title: "DevOps & Continuous Delivery",
-      description: "Accelerating release cycles from months to minutes with automated CI/CD and GitOps.",
-      items: ["Automated deployment pipelines", "Infrastructure as Code", "Continuous quality gates"],
-      href: "/services/devops-automation/cicd-implementation"
-    },
-    {
-      slug: "enterprise-landing-zones",
-      title: "Multi-Cloud Landing Zone Infrastructure",
-      description: "Production-ready foundation blueprints pre-configured with security, governance, and networking.",
-      items: ["Zero-trust network architecture", "Automated compliance baselines", "Centralized observability"],
-      href: "/ecosystem/landing-zone"
+      slug: "change-management",
+      title: "Change Management & Enablement",
+      description: "Ensure smooth organization-wide digital adoption with structured training, cultural enablement, and technical coaching.",
+      items: [
+        "Technical upskilling & staff enablement",
+        "Executive change alignment frameworks",
+        "Continuous adoption & feedback metrics"
+      ],
+      href: "/services/digital-transformation/change-management"
     }
   ],
   outcomes: [

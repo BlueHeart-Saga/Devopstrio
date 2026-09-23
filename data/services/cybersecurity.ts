@@ -17,33 +17,91 @@ export const cybersecurityService: ServiceCategory = {
   capabilities: [
     {
       slug: "security-assessment",
-      title: "Security Assessment",
-      description: "Evaluating digital infrastructure security postures, configuration drift, and asset access roles.",
-      items: ["Comprehensive infrastructure penetration tests", "Identity access role audits", "Vulnerability mapping reviews"]
-    },
-    {
-      slug: "compliance-governance",
-      title: "Compliance & Governance",
-      description: "Aligning web systems with international data privacy laws and compliance frameworks.",
-      items: ["HIPAA data encryption checkers", "SOC-2 access verification logs", "PCI-DSS checkout flow audits"]
-    },
-    {
-      slug: "cloud-security",
-      title: "Cloud Security",
-      description: "Enhancing cloud workload protection and compliance across multi-cloud environments.",
-      items: ["Advanced security controls & Identity management", "Continuous compliance monitoring", "Automated threat detection & risk reduction"]
-    },
-    {
-      slug: "security-operations-center",
-      title: "Security Operations Centre",
-      description: "24/7 threat monitoring, incident detection, and rapid response in the UK.",
-      items: ["Continuous threat intelligence & monitoring", "SIEM log aggregation & alert management", "Automated incident investigation & compliance reporting"]
+      title: "Security Assessment & Posture Audits",
+      description: "Evaluating digital infrastructure security postures, configuration drift, and asset access roles with deep vulnerability assessments.",
+      items: [
+        "Comprehensive infrastructure penetration tests",
+        "Cloud configuration drift & IAM audits",
+        "Vulnerability mapping & posture scoring"
+      ],
+      href: "/services/cybersecurity/security-assessment"
     },
     {
       slug: "vulnerability-management",
       title: "Vulnerability Management",
-      description: "Proactive identification, prioritization, and remediation of business security risks.",
-      items: ["Continuous vulnerability scanning", "Risk-based threat prioritization", "Accelerated patch remediation & compliance support"]
+      description: "Proactive identification, continuous scanning, prioritization, and automated patching of enterprise security risks.",
+      items: [
+        "Continuous network & container scanning",
+        "Risk-based CVSS threat prioritization",
+        "Accelerated patch remediation workflows"
+      ],
+      href: "/services/cybersecurity/vulnerability-management"
+    },
+    {
+      slug: "penetration-testing",
+      title: "Penetration Testing & Red Teaming",
+      description: "Rigorous offensive security assessments simulating real-world cyber adversaries to uncover and patch critical exploits.",
+      items: [
+        "Network boundary & API penetration testing",
+        "Red-team adversary simulation exercises",
+        "Comprehensive exploit mitigation reports"
+      ],
+      href: "/services/cybersecurity/penetration-testing"
+    },
+    {
+      slug: "security-operations-center",
+      title: "Security Operations Centre (SOC UK)",
+      description: "24/7 UK-based continuous threat monitoring, SIEM telemetry correlation, and rapid incident containment.",
+      items: [
+        "Continuous threat intelligence & 24/7 monitoring",
+        "SIEM log aggregation & real-time telemetry",
+        "Automated incident triage & rapid response"
+      ],
+      href: "/services/cybersecurity/security-operations-center"
+    },
+    {
+      slug: "identity-access-management",
+      title: "Identity & Access Management (IAM)",
+      description: "Secure digital perimeters with enterprise single sign-on, least-privilege role management, and continuous credential protection.",
+      items: [
+        "Okta / Microsoft Entra ID Single Sign-On (SSO)",
+        "Adaptive MFA & conditional access policies",
+        "Automated Privileged Access Management (PAM)"
+      ],
+      href: "/services/cybersecurity/identity-access-management"
+    },
+    {
+      slug: "cloud-security",
+      title: "Cloud Security & Workload Protection",
+      description: "Protect multi-cloud workloads, Kubernetes clusters, and serverless applications with continuous CSPM and runtime guardrails.",
+      items: [
+        "Advanced cloud controls & CSPM posture auditing",
+        "Kubernetes runtime threat detection",
+        "Automated zero-drift cloud security guardrails"
+      ],
+      href: "/services/cybersecurity/cloud-security"
+    },
+    {
+      slug: "compliance-governance",
+      title: "Compliance & Governance",
+      description: "Align IT infrastructure and cloud workflows with international standards including ISO 27001, SOC 2, PCI-DSS, and GDPR.",
+      items: [
+        "ISO 27001, SOC 2, PCI-DSS & HIPAA frameworks",
+        "Continuous audit evidence collection",
+        "Automated data privacy & GDPR governance"
+      ],
+      href: "/services/cybersecurity/compliance-governance"
+    },
+    {
+      slug: "zero-trust-architecture",
+      title: "Zero Trust Architecture",
+      description: "Implement strict micro-segmentation, identity-first perimeter defense, and continuous verification across all network traffic.",
+      items: [
+        "Micro-segmented network architectures",
+        "Continuous endpoint trust verification",
+        "SASE perimeter security & encrypted tunnels"
+      ],
+      href: "/services/cybersecurity/zero-trust-architecture"
     }
   ],
   outcomes: [

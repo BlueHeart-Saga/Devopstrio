@@ -9,6 +9,7 @@ interface ServiceOverviewProps {
   overviewHeading: string;
   overviewDesc1: React.ReactNode;
   overviewDesc2: React.ReactNode;
+  cardHeading?: React.ReactNode;
 }
 
 function getOverviewImage(title: string, incomingImage?: string): string {
@@ -59,6 +60,7 @@ function getOverviewImage(title: string, incomingImage?: string): string {
     "/webp/assets/Services-Page/Capability-Overview-section-images/reorder/Frame-318.webp",
     "/webp/assets/Services-Page/Capability-Overview-section-images/reorder/Frame-319.webp",
     "/webp/assets/Services-Page/Capability-Overview-section-images/reorder/Frame-329.webp",
+    "/webp/assets/Services-Page/Capability-Overview-section-images/reorder/Frame-330.webp",
     "/webp/assets/Services-Page/Capability-Overview-section-images/reorder/Frame-331.webp",
     "/webp/assets/Services-Page/Capability-Overview-section-images/reorder/Frame-332.webp",
     "/webp/assets/Services-Page/Capability-Overview-section-images/reorder/Frame-333.webp",
@@ -70,6 +72,19 @@ function getOverviewImage(title: string, incomingImage?: string): string {
     "/webp/assets/Services-Page/Capability-Overview-section-images/reorder/Frame-339.webp",
     "/webp/assets/Services-Page/Capability-Overview-section-images/reorder/Frame-340.webp",
     "/webp/assets/Services-Page/Capability-Overview-section-images/reorder/Frame-341.webp",
+    "/webp/assets/Services-Page/Capability-Overview-section-images/reorder/Frame-342.webp",
+    "/webp/assets/Services-Page/Capability-Overview-section-images/reorder/Frame-343.webp",
+    "/webp/assets/Services-Page/Capability-Overview-section-images/reorder/Frame-344.webp",
+    "/webp/assets/Services-Page/Capability-Overview-section-images/reorder/Frame-345.webp",
+    "/webp/assets/Services-Page/Capability-Overview-section-images/reorder/Frame-346.webp",
+    "/webp/assets/Services-Page/Capability-Overview-section-images/reorder/Frame-347.webp",
+    "/webp/assets/Services-Page/Capability-Overview-section-images/reorder/Frame-348.webp",
+    "/webp/assets/Services-Page/Capability-Overview-section-images/reorder/Frame-349.webp",
+    "/webp/assets/Services-Page/Capability-Overview-section-images/reorder/Frame-350.webp",
+    "/webp/assets/Services-Page/Capability-Overview-section-images/reorder/Frame-351.webp",
+    "/webp/assets/Services-Page/Capability-Overview-section-images/reorder/Frame-352.webp",
+    "/webp/assets/Services-Page/Capability-Overview-section-images/reorder/Frame-353.webp",
+    "/webp/assets/Services-Page/Capability-Overview-section-images/reorder/Frame-354.webp",
     "/webp/assets/Services-Page/Capability-Overview-section-images/reorder/Frame-355.webp",
     "/webp/assets/Services-Page/Capability-Overview-section-images/reorder/Frame-356.webp",
     "/webp/assets/Services-Page/Capability-Overview-section-images/reorder/Frame-357.webp",
@@ -105,6 +120,7 @@ export function ServiceOverview({
   overviewHeading,
   overviewDesc1,
   overviewDesc2,
+  cardHeading,
 }: ServiceOverviewProps) {
   const displayImage = getOverviewImage(title, image);
 
@@ -126,7 +142,13 @@ export function ServiceOverview({
               {/* LEFT CONTENT */}
               <div className="flex flex-col justify-center p-8 md:p-10 lg:p-12 text-left">
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight tracking-tight mb-6 text-white font-sans">
-                  Transforming operations with <span className="text-rose-500 font-semibold">{title}</span>
+                  {cardHeading ? (
+                    cardHeading
+                  ) : (
+                    <>
+                      Transforming operations with <span className="text-rose-500 font-semibold">{title}</span>
+                    </>
+                  )}
                 </h2>
 
                 {/* <div className="space-y-4 text-zinc-200 text-xs md:text-sm font-semibold leading-relaxed">

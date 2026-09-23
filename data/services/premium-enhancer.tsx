@@ -15,30 +15,18 @@ const premiumServicesCopy: Record<string, {
   outcomes: string[];
 }> = {
   "ai-data-innovation": {
-    subtitle: "Accelerate enterprise value creation by deploying private, highly secure cognitive AI systems, autonomous agentic workflow networks, and low-latency feature stores. We bridge fragmented corporate datasets with custom LLM tunings to unlock automated decisioning at hyper-scale.",
-    overviewHeading: "Intelligent cognitive systems engineered for regulatory compliance and numerical precision",
+    subtitle: "AI services built for compliance, accuracy, and reliable business results",
+    overviewHeading: "AI services built for compliance, accuracy, and reliable business results",
     overviewDesc1: (
       <span>
-        We design, build, and deploy production-ready AI solutions, including self-correcting multi-agent networks and domain-specialized foundation models. Discover our{" "}
-        <Link href="/services/data-engineering" className="text-rose-500 hover:underline font-bold">
-          data engineering platforms
-        </Link>{" "}
-        and read our{" "}
+        We help UK businesses use AI in a simple and useful way. Whether you are new to AI, need a new solution, or want to improve your current tools, we are here to help.{" "}
         <Link href="/about/company-overview" className="text-rose-500 hover:underline font-bold">
-          company overview
+          Our AI
         </Link>{" "}
-        to see how we comply with SOC-2 Type II, ISO 27001, and HIPAA mandates, guaranteeing absolute prompt confidentiality and strict corporate data isolation.
+        Service UK solutions include AI assistants, task automation, and tools made for your business. We also keep your data and privacy safe, so you can use AI with confidence and focus on your work.
       </span>
     ),
-    overviewDesc2: (
-      <span>
-        By interfacing enterprise relational databases with secure vector indexes, we facilitate millisecond-level semantic queries, real-time context-augmented analytics, and automated decision-making engines. Check out our{" "}
-        <Link href="/services/cloud-services" className="text-rose-500 hover:underline font-bold">
-          cloud architectures
-        </Link>{" "}
-        that power these cognitive systems.
-      </span>
-    ),
+    overviewDesc2: null,
     ctaTitle: "Co-create your cognitive",
     ctaHighlight: "AI Roadmap & Architecture",
     ctaDesc: (

@@ -18,44 +18,90 @@ export const consultingService: ServiceCategory = {
     {
       slug: "technology-consulting",
       title: "Technology Consulting",
-      description: "Auditing application codebases, evaluating databases, and finding architectural bottlenecks.",
-      items: ["Code and schema validation checks", "Database capacity assessment logs", "Software delivery speed analysis"],
+      description: "Auditing application codebases, evaluating databases, and finding architectural bottlenecks for enterprise modernization.",
+      items: [
+        "Code and schema validation checks",
+        "Database capacity assessment logs",
+        "Software delivery speed analysis"
+      ],
       href: "/services/it-consulting/technology-consulting"
     },
     {
       slug: "enterprise-architecture",
       title: "Enterprise Cloud Architecture",
-      description: "Designing reliable, secure multi-cloud system diagrams and communication layers.",
-      items: ["High-availability network diagrams", "API gateway routing specifications", "Identity access management rules"],
-      href: "/services/cloud-services/cloud-architecture"
+      description: "Designing reliable, secure multi-cloud system diagrams, resilient microservices, and communication layers.",
+      items: [
+        "High-availability network diagrams",
+        "API gateway routing specifications",
+        "Identity access management rules"
+      ],
+      href: "/services/it-consulting/enterprise-architecture"
     },
     {
-      slug: "cloud-strategy-consulting",
-      title: "Cloud Strategy & Roadmap",
-      description: "Evaluating multi-cloud readiness, provider selection, and phased migration pathways.",
-      items: ["Cloud readiness assessments", "TCO and ROI forecasting", "Vendor evaluation & licensing strategy"],
-      href: "/services/cloud-services/cloud-strategy-consulting"
+      slug: "cloud-consulting",
+      title: "Cloud Strategy & Consulting",
+      description: "Evaluating multi-cloud readiness, cloud provider selection, and phased migration pathways for AWS, Azure, and GCP.",
+      items: [
+        "Cloud readiness assessments",
+        "TCO and ROI forecasting models",
+        "Vendor evaluation & licensing strategy"
+      ],
+      href: "/services/it-consulting/cloud-consulting"
     },
     {
-      slug: "platform-engineering-advisory",
-      title: "Platform Engineering Strategy",
-      description: "Designing self-service developer portals, automated pipelines, and Kubernetes operating models.",
-      items: ["Developer experience optimization", "Golden path template design", "Platform governance standards"],
-      href: "/services/devops-automation/platform-engineering"
+      slug: "ai-consulting",
+      title: "AI Strategy & Advisory",
+      description: "Formulating enterprise AI roadmaps, evaluating foundation models, and establishing AI governance and safety standards.",
+      items: [
+        "Executive AI roadmap & business case formulation",
+        "Foundation model evaluation & ROI modeling",
+        "Enterprise AI safety & governance frameworks"
+      ],
+      href: "/services/it-consulting/ai-consulting"
     },
     {
-      slug: "security-compliance-audit",
-      title: "Security & Compliance Audits",
-      description: "Comprehensive vulnerability analysis, Zero-Trust posture reviews, and regulatory gap assessments.",
-      items: ["ISO 27001 / SOC 2 alignment", "Zero-Trust architecture reviews", "Threat modeling & risk mitigation"],
-      href: "/services/cybersecurity/security-assessment"
+      slug: "cybersecurity-consulting",
+      title: "Cybersecurity Consulting & Audits",
+      description: "Comprehensive vulnerability analysis, Zero-Trust posture reviews, and regulatory compliance gap assessments.",
+      items: [
+        "ISO 27001 / SOC 2 alignment audits",
+        "Zero-Trust architecture reviews",
+        "Threat modeling & risk mitigation plans"
+      ],
+      href: "/services/it-consulting/cybersecurity-consulting"
     },
     {
-      slug: "finops-cost-optimization",
-      title: "FinOps & Cloud Cost Optimization",
-      description: "Uncovering cloud waste, rightsizing compute resources, and implementing continuous cost controls.",
-      items: ["Unit economics visibility", "Reserved instance optimization", "Automated cost anomaly alerts"],
-      href: "/services/cloud-services/finops-cost-optimization"
+      slug: "digital-transformation-consulting",
+      title: "Digital Transformation Consulting",
+      description: "Guiding organizations through legacy modernization, automated workflows, and digital business model evolution.",
+      items: [
+        "Legacy system modernization roadmaps",
+        "Business process automation blueprints",
+        "Digital workflow optimization plans"
+      ],
+      href: "/services/it-consulting/digital-transformation-consulting"
+    },
+    {
+      slug: "it-strategy-roadmap",
+      title: "IT Strategy & Roadmap Planning",
+      description: "Developing executive IT strategic roadmaps that align technology investments with business objectives and growth.",
+      items: [
+        "3-5 year technology master plans",
+        "IT portfolio & vendor rationalization",
+        "Budget allocation & executive KPIs"
+      ],
+      href: "/services/it-consulting/it-strategy-roadmap"
+    },
+    {
+      slug: "technology-assessment",
+      title: "Technology Assessment & Code Audits",
+      description: "Conducting thorough codebase, architecture, technical debt, and scalability assessments with actionable remediation paths.",
+      items: [
+        "Full-stack codebase & dependency audits",
+        "High-concurrency scalability bottleneck analysis",
+        "Technical debt remediation blueprints"
+      ],
+      href: "/services/it-consulting/technology-assessment"
     }
   ],
   outcomes: [

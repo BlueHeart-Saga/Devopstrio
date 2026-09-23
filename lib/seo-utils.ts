@@ -243,9 +243,34 @@ const ROUTE_SEO_MAP: Record<string, { title: string; description: string; keywor
     keywords: ["Services Explorer", "Capability Search", "Cloud Blueprints", "DevOps Capabilities"]
   },
   "/services/ai-data-innovation": {
-    title: "AI & Data Innovation Services | Generative AI & MLOps",
-    description: "Deploy production-grade Generative AI, custom LLM fine-tuning, RAG frameworks, and autonomous multi-agent networks.",
-    keywords: ["AI Services", "Generative AI", "MLOps", "LLM Pipelines", "Data Engineering"]
+    title: "AI Service UK | AI Solutions & Business Automation",
+    description: "Explore AI service UK solutions for smarter business operations. Get AI consulting, automation, development and custom AI solutions.",
+    keywords: ["AI Service UK", "AI Solutions", "Business Automation", "AI Consulting UK", "Enterprise AI Development"]
+  },
+  "/services/ai-data-innovation/generative-ai-solutions": {
+    title: "Gen AI Services UK | Generative AI Services & Consulting",
+    description: "Transform business processes with Gen AI services UK. Get generative AI services, consulting and custom AI solutions for business growth.",
+    keywords: ["Gen AI Services UK", "Generative AI Services", "Generative AI Consulting", "Custom AI Solutions", "Enterprise Gen AI"]
+  },
+  "/services/ai-data-innovation/ai-agents-automation": {
+    title: "AI Agents UK | AI Automation & Agent Development",
+    description: "Build smarter workflows with AI agents UK. Get AI automation services, intelligent automation and custom AI agent development for your business.",
+    keywords: ["AI Agents UK", "AI Automation Services", "Intelligent Automation", "AI Agent Development", "Custom AI Agents"]
+  },
+  "/services/ai-data-innovation/machine-learning-engineering": {
+    title: "Machine Learning Engineering Services UK | ML Solutions",
+    description: "Build smarter systems with machine learning engineering services UK. Get ML consulting, model development and custom machine learning solutions.",
+    keywords: ["Machine Learning Engineering Services UK", "ML Solutions UK", "ML Consulting", "Model Development", "Custom Machine Learning Solutions"]
+  },
+  "/services/ai-data-innovation/mlops-ai-operations": {
+    title: "MLOps Services UK | AI Deployment & Model Monitoring",
+    description: "Streamline AI operations with MLOps services UK. Get MLOps consulting, machine learning deployment and AI model monitoring solutions.",
+    keywords: ["MLOps Services UK", "AI Deployment", "AI Model Monitoring", "MLOps Consulting", "Machine Learning Deployment"]
+  },
+  "/services/ai-data-innovation/mlops-pipeline-engineering": {
+    title: "MLOps Services UK | AI Deployment & Model Monitoring",
+    description: "Streamline AI operations with MLOps services UK. Get MLOps consulting, machine learning deployment and AI model monitoring solutions.",
+    keywords: ["MLOps Services UK", "AI Deployment", "AI Model Monitoring", "MLOps Consulting", "Machine Learning Deployment"]
   },
   "/services/cloud-services": {
     title: "Cloud Services & Architecture | AWS, Azure & GCP",
@@ -278,9 +303,24 @@ const ROUTE_SEO_MAP: Record<string, { title: string; description: string; keywor
     keywords: ["Data Engineering", "Data Lakes", "ETL Pipelines", "Delta Lake", "Real-Time Telemetry"]
   },
   "/services/managed-services": {
-    title: "Managed SRE Services | 24/7 Cluster Operations",
-    description: "Outsource cluster maintenance, database optimization, and emergency incident recovery to experienced SREs.",
-    keywords: ["Managed Services", "24/7 SRE", "Cluster Operations", "Database Support", "Incident Recovery"]
+    title: "MSP UK | Secure Managed Services for Businesses",
+    description: "Discover MSP UK services designed for secure and efficient business operations. Get managed service provider support and tailored solutions for your organisation.",
+    keywords: ["MSP UK", "Managed Services", "Managed Service Provider UK", "IT Support UK", "Managed IT Services", "24/7 SRE", "Cluster Operations", "Database Support", "Incident Recovery"]
+  },
+  "/services/managed-services/infrastructure-management": {
+    title: "Infrastructure Management Services UK | Expert Support",
+    description: "Improve performance with infrastructure management services UK. Get secure infrastructure management, monitoring and reliable technical support.",
+    keywords: ["Infrastructure Management Services UK", "IT Infrastructure Management UK", "Managed Infrastructure Services", "Network Infrastructure Management UK", "Infrastructure Management Solutions UK"]
+  },
+  "/services/managed-services/managed-cloud": {
+    title: "Managed Cloud Services UK | Secure Cloud Solutions",
+    description: "Scale securely with managed cloud services UK. Get reliable cloud management, monitoring and expert support for your business.",
+    keywords: ["Managed Cloud Services UK", "Managed Cloud Solutions UK", "Managed Cloud Hosting UK", "Cloud Management Services UK", "Cloud Support UK"]
+  },
+  "/services/managed-services/cloud-managed-services": {
+    title: "Managed Cloud Services UK | Secure Cloud Solutions",
+    description: "Scale securely with managed cloud services UK. Get reliable cloud management, monitoring and expert support for your business.",
+    keywords: ["Managed Cloud Services UK", "Managed Cloud Solutions UK", "Managed Cloud Hosting UK", "Cloud Management Services UK", "Cloud Support UK"]
   },
   "/services/qa-testing": {
     title: "QA & Performance Testing | Playwright & k6 Scripts",

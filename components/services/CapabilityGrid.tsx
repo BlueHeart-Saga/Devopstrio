@@ -17,6 +17,7 @@ export interface CapabilityItem {
 export interface CapabilityGridProps {
   serviceSlug: string;
   capabilities: CapabilityItem[];
+  overrideHeading?: React.ReactNode;
 }
 
 const ALL_CAPABILITY_CARD_IMAGES = [
@@ -109,7 +110,7 @@ function getCapabilityCardImage(serviceSlug: string, capSlug: string, index: num
   return ALL_CAPABILITY_CARD_IMAGES[uniqueIdx];
 }
 
-export function CapabilityGrid({ serviceSlug, capabilities }: CapabilityGridProps) {
+export function CapabilityGrid({ serviceSlug, capabilities, overrideHeading }: CapabilityGridProps) {
   const [startIndex, setStartIndex] = useState(0);
   const [visibleCards, setVisibleCards] = useState(3);
   const [isPaused, setIsPaused] = useState(false);
@@ -186,7 +187,13 @@ export function CapabilityGrid({ serviceSlug, capabilities }: CapabilityGridProp
         <Reveal>
           <div className="text-center max-w-3xl mx-auto mb-14">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-white font-sans">
-              Core Practice <span className="text-rose-500 font-semibold">Specializations</span>
+              {overrideHeading ? (
+                overrideHeading
+              ) : serviceSlug === "ai-data-innovation" ? (
+                <>Smart <span className="text-rose-500 font-semibold">AI Services</span></>
+              ) : (
+                <>Core Practice <span className="text-rose-500 font-semibold">Specializations</span></>
+              )}
             </h2>
           </div>
         </Reveal>

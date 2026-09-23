@@ -17,27 +17,91 @@ export const softwareService: ServiceCategory = {
   capabilities: [
     {
       slug: "enterprise-app-development",
-      title: "Enterprise App Development",
-      description: "Building responsive next-gen web frontends using React and Next.js framework.",
-      items: ["Server-side rendered web dashboards", "State management systems", "Responsive mobile-first pages"]
-    },
-    {
-      slug: "microservices-architecture",
-      title: "Microservices & API Development",
-      description: "Developing scalable, stateless backend services and secure API gateways.",
-      items: ["High-speed Go and Rust backend scripts", "GraphQL and REST API endpoints", "Message queue database integrations"]
+      title: "Enterprise Application Development",
+      description: "Build robust, mission-critical enterprise software architectures designed for high transactional throughput and security.",
+      items: [
+        "Custom enterprise web platforms & portals",
+        "Complex multi-role authorization models",
+        "Scalable cloud-native enterprise architectures"
+      ],
+      href: "/services/software-development/enterprise-app-development"
     },
     {
       slug: "web-app-development",
-      title: "Web App Development",
-      description: "Custom web applications that simplify operations, improve user experience, and scale in the UK.",
-      items: ["User-first responsive web design", "High-performance API and tool integrations", "Flexible cloud architecture & ongoing maintenance"]
+      title: "Web Application Development",
+      description: "Engineer dynamic, responsive Next.js and React web applications optimized for lightning-fast speeds and high conversions.",
+      items: [
+        "High-speed Next.js & React single-page apps",
+        "Responsive mobile-first interface design",
+        "Dynamic server-side rendering & caching"
+      ],
+      href: "/services/software-development/web-app-development"
+    },
+    {
+      slug: "mobile-app-development",
+      title: "Mobile Application Development",
+      description: "Develop high-performance native and cross-platform mobile apps for iOS and Android with seamless offline synchronization.",
+      items: [
+        "Native iOS (Swift) & Android (Kotlin) apps",
+        "Cross-platform Flutter & React Native builds",
+        "Encrypted offline data sync & biometric auth"
+      ],
+      href: "/services/software-development/mobile-app-development"
     },
     {
       slug: "saas-product-development",
       title: "SaaS Product Development",
-      description: "Turn-key SaaS product engineering from MVP concepts to scalable multi-tenant platforms.",
-      items: ["Product strategy & user-centred UI design", "Scalable multi-tenant microservices", "Seamless integrations & subscription billing"]
+      description: "Turnkey SaaS product engineering from rapid MVP inception to highly resilient, multi-tenant subscription platforms.",
+      items: [
+        "Multi-tenant architecture & tenant isolation",
+        "Stripe & billing gateway subscriptions",
+        "Turnkey MVP engineering to scalable rollout"
+      ],
+      href: "/services/software-development/saas-product-development"
+    },
+    {
+      slug: "api-development-integration",
+      title: "API Development & Integration",
+      description: "Architect high-throughput REST, gRPC, and GraphQL API gateways with declarative contract testing and enterprise security.",
+      items: [
+        "High-concurrency gRPC & REST API gateways",
+        "GraphQL federated schema architectures",
+        "Automated rate limiting & OAuth2 security"
+      ],
+      href: "/services/software-development/api-development-integration"
+    },
+    {
+      slug: "microservices-architecture",
+      title: "Microservices Architecture",
+      description: "Transition monolithic codebases into decoupled, containerized microservices communicating over resilient message buses.",
+      items: [
+        "Decoupled event-driven backend microservices",
+        "Kafka & RabbitMQ message broker grids",
+        "Containerized service mesh communication"
+      ],
+      href: "/services/software-development/microservices-architecture"
+    },
+    {
+      slug: "product-engineering",
+      title: "Product Engineering",
+      description: "End-to-end digital product design, rapid sprint execution, and full-lifecycle product engineering for fast-growing companies.",
+      items: [
+        "Agile sprint delivery & rapid MVP buildouts",
+        "User-centric UI/UX design systems",
+        "Scalable cloud-native product architectures"
+      ],
+      href: "/services/software-development/product-engineering"
+    },
+    {
+      slug: "application-modernization",
+      title: "Application Modernization",
+      description: "Refactor and migrate legacy monolithic applications into modern cloud-native architectures with zero service interruptions.",
+      items: [
+        "Monolithic database & service decoupling",
+        "Event-driven serverless architecture refactoring",
+        "Zero-downtime legacy database migration"
+      ],
+      href: "/services/software-development/application-modernization"
     }
   ],
   outcomes: [

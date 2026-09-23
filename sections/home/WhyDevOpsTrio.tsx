@@ -92,7 +92,15 @@ const checklist = [
   "Long-Term Technology Partnership"
 ];
 
-export function WhyDevopstrio() {
+interface WhyDevopstrioProps {
+  badge?: string;
+  title?: string;
+}
+
+export function WhyDevopstrio({ 
+  badge = "Why Devopstrio", 
+  title = "Engineering Innovation. Delivering Business Outcomes." 
+}: WhyDevopstrioProps = {}) {
   /*
   === OLD CODE (Preserved for reference) ===
   const [activeIndex, setActiveIndex] = useState(0);
@@ -204,19 +212,14 @@ export function WhyDevopstrio() {
         <div className="max-w-3xl mx-auto text-center mb-16 lg:mb-20">
           <Reveal>
             <span className="text-2xl font-semibold tracking-[0.3em] uppercase text-rose-500 mb-4 block drop-shadow-md">
-              Why Devopstrio
+              {badge}
             </span>
           </Reveal>
           <Reveal delay={0.1}>
             <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight text-white mb-4">
-              Engineering Innovation. Delivering Business Outcomes.
+              {title}
             </h2>
           </Reveal>
-          {/* <Reveal delay={0.2}>
-            <p className="text-zinc-300 text-sm md:text-base leading-relaxed font-normal max-w-2xl mx-auto drop-shadow-md">
-              We combine deep technical expertise, <Link href="/industries" className="text-rose-500 hover:underline font-medium">industry knowledge</Link>, and <Link href="/ecosystem/engineering-excellence" className="text-rose-500 hover:underline font-medium">modern engineering practices</Link> to help organizations innovate faster, <Link href="/services/cybersecurity" className="text-rose-500 hover:underline font-medium">operate securely</Link>, and scale confidently in an increasingly digital world.
-            </p>
-          </Reveal> */}
         </div>
 
         {/* Interactive Sticky Hover Grid */}

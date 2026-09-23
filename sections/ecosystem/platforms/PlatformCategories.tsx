@@ -25,8 +25,8 @@ const categoryBgImages: Record<string, string> = {
 const platformLinks: Record<string, string> = {
   "Humanex": "https://humanex.devopstrio.co.uk/login",
   "Brio": "https://brio.devopstrio.co.uk/",
-  "eSigniva": "/ecosystem/platforms-solutions/saas-platforms/esigniva",
-  "SafeSign": "/ecosystem/platforms-solutions/saas-platforms/esigniva",
+  "eSigniva": "https://safesign.devopstrio.co.uk/",
+  "SafeSign": "https://safesign.devopstrio.co.uk/",
   "CareSuite": "https://caresuite.devopstrio.co.uk/",
   "Homela": "https://homela.devopstrio.co.uk/",
   "Campix": "https://campix.devopstrio.co.uk/",

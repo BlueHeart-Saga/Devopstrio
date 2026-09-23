@@ -1,17 +1,39 @@
 import { NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
 import { generateCareerEmailHtml, generateThankYouEmailHtml } from '@/lib/email-templates';
+import { createStoredApplication } from '@/lib/applicationsStore';
+
+export const dynamic = 'force-dynamic';
 
 export async function POST(req: Request) {
   try {
     const body = await req.json();
-    const { name, email, resume, note, jobTitle } = body;
+    const { name, email, phone, resume, note, portfolio, jobTitle, location, type, experience } = body;
 
     if (!name || !email || !jobTitle) {
       return NextResponse.json(
         { error: 'Name, email, and job title are required' },
         { status: 400 }
       );
+    }
+
+    // Record application in storage (local JSON file + MongoDB)
+    try {
+      await createStoredApplication({
+        name,
+        email,
+        phone: phone || "",
+        jobTitle,
+        location: location || "",
+        type: type || "",
+        experience: experience || "",
+        resume: resume || "",
+        portfolio: portfolio || "",
+        note: note || "",
+        status: "new"
+      });
+    } catch (storeErr) {
+      console.warn("Application recording warning:", storeErr);
     }
 
     const smtpServer = process.env.SMTP_SERVER || 'smtp.gmail.com';
@@ -32,8 +54,13 @@ export async function POST(req: Request) {
     const htmlContent = generateCareerEmailHtml({
       name,
       email,
+      phone,
       jobTitle,
+      location,
+      type,
+      experience,
       resume,
+      portfolio,
       note,
     });
 
@@ -43,7 +70,12 @@ export async function POST(req: Request) {
       formType: 'Job Application',
       referenceDetails: [
         { label: 'Position Applied', value: jobTitle },
+        ...(location ? [{ label: 'Location', value: location }] : []),
+        ...(type ? [{ label: 'Employment Type', value: type }] : []),
+        ...(experience ? [{ label: 'Experience Level', value: experience }] : []),
         { label: 'Applicant Name', value: name },
+        { label: 'Applicant Email', value: email },
+        ...(phone ? [{ label: 'Contact Phone', value: phone }] : [])
       ],
     });
 

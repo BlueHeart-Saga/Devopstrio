@@ -44,6 +44,12 @@ export interface CapabilityDetail {
   faqs: FAQItem[];
   metaTitle?: string;
   metaDescription?: string;
+  challengeLabel?: string;
+  bottleneckLabel?: string;
+  solutionLabel?: string;
+  deliverablesLabel?: string;
+  outcomesLabel?: string;
+  outcomeBottomLabel?: string;
 }
 
 export interface ServiceCategory {

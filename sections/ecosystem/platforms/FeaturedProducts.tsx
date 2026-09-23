@@ -39,7 +39,7 @@ export function FeaturedProducts() {
       desc: "Cryptographically secured document e-signature software providing tamper-proof audit trails and compliance reports.",
       logo: "/webp/assets/Home-page/our-products/logo/safesign.webp",
       image: "/webp/assets/Home-page/our-products/safesign.webp",
-      link: "/ecosystem/platforms-solutions/saas-platforms/esigniva"
+      link: "https://safesign.devopstrio.co.uk/"
     },
     {
       name: "CareSuite",
@@ -63,7 +63,7 @@ export function FeaturedProducts() {
       desc: "Comprehensive campus operations ecosystem connecting students, faculty, administration, hostel, transport, and academic workflows in real time.",
       logo: "/webp/assets/Home-page/our-products/logo/Campix.webp",
       image: "/webp/assets/landingpage-campix/hero.webp",
-      link: "/ecosystem/platforms-solutions/saas-platforms/campix"
+      link: "https://campix.devopstrio.co.uk/"
     }
   ];
 

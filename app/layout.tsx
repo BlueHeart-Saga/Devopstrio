@@ -76,6 +76,42 @@ export default function RootLayout({
           `}
         </Script>
 
+        {/* Brevo JS Tracker */}
+        <Script
+          src="https://cdn.brevo.com/js/sdk-loader.js"
+          strategy="afterInteractive"
+        />
+        <Script id="brevo-tracker" strategy="afterInteractive">
+          {`
+            window.Brevo = window.Brevo || [];
+            Brevo.push([
+              "init",
+              {
+                client_key: "oezh55rccenyzlune7a4cljy"
+              }
+            ]);
+          `}
+        </Script>
+
+        {/* Brevo Conversations (Live Chat Widget - Configured to Left Side) */}
+        <Script id="brevo-conversations" strategy="afterInteractive">
+          {`
+            window.BrevoConversationsSetup = {
+              buttonPosition: 'bl'
+            };
+            (function(d, w, c) {
+              w.BrevoConversationsID = '6aa97d274d8895174a08c61f';
+              w[c] = w[c] || function() {
+                (w[c].q = w[c].q || []).push(arguments);
+              };
+              var s = d.createElement('script');
+              s.async = true;
+              s.src = 'https://conversations-widget.brevo.com/brevo-conversations.js';
+              if (d.head) d.head.appendChild(s);
+            })(document, window, 'BrevoConversations');
+          `}
+        </Script>
+
         <OrganizationSchema />
         <ReviewSchema />
         <ProfessionalServiceSchema />

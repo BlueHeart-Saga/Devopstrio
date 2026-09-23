@@ -6,10 +6,14 @@ export interface Job {
   type: string;
   experience: string;
   desc: string;
+  skills?: string;
   jdUrl?: string;
+  postedAt?: string;
 }
 
 export const openPositionsData: Job[] = [
+  /* 
+  // Mock jobs commented out per user request - dynamic jobs are populated from Admin / API
   {
     id: "marketing-seo-analytics",
     title: "Marketing & SEO Analytics Specialist",
@@ -111,6 +115,7 @@ export const openPositionsData: Job[] = [
     experience: "6+ Years",
     desc: "Supervise our follow-the-sun SRE support schedules and manage enterprise SLA monitoring systems."
   }
+  */
 ];
 
 export const categories = [

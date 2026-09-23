@@ -70,54 +70,49 @@ export default function CapabilityPage({ params }: PageProps) {
   }
 
   const isGenAI = capability === "generative-ai-solutions";
+  const isAgents = capability === "ai-agents-automation";
   const isML = capability === "machine-learning-engineering";
+  const isMLOps = capability === "mlops-ai-operations" || capability === "mlops-pipeline-engineering";
 
   const overrides = isGenAI ? {
-    overviewHeading: "ACCELERATING BUSINESS GROWTH WITH GENERATIVE AI SERVICES IN UK",
-    overviewParagraph1: "UK enterprises are redefining how they operate and we're the team making it happen. From intelligent document processing to conversational AI platforms, we build generative AI systems that don't just automate tasks but genuinely transform how your business thinks and acts.",
-    overviewParagraph2: (
+    overviewHeading: (
       <span>
-        We engineer production-ready LLM pipelines, private fine-tuning environments, and multi-modal AI interfaces all built to meet UK data residency and compliance standards. Learn more about our{" "}
-        <Link href="/services/data-engineering" className="text-rose-500 hover:underline font-bold">
-          data engineering pipelines
-        </Link>{" "}
-        that clean training datasets.
+        Turning Ideas into Intelligent Solutions with <span className="text-rose-500 font-semibold">Gen AI Services UK</span>
       </span>
     ),
+    overviewParagraph1: undefined,
+    overviewParagraph2: undefined,
     
-    deepDiveHeading: "WHAT IS GENERATIVE AI SERVICES IN UK?",
-    deepDiveParagraph1: (
+    deepDiveHeading: (
       <span>
-        Generative AI is no longer a future concept it's the competitive edge UK businesses are adopting right now. Unlike rule-based automation that breaks the moment conditions change, generative AI systems understand intent, adapt to context, and produce meaningful outputs across text, code, images, and structured data. Read our{" "}
-        <Link href="/about/company-overview" className="text-rose-500 hover:underline font-bold">
-          company overview
-        </Link>{" "}
-        to learn about our secure infrastructure models.
+        What is <span className="text-rose-500 font-semibold">Gen AI Services UK</span>?
       </span>
     ),
-    deepDiveParagraph2: (
-      <span>
-        For UK enterprises, this means something very specific: the ability to unlock value from internal knowledge, customer interactions, and operational data without sending sensitive information outside your control. Deploy these secure pipelines using our{" "}
-        <Link href="/services/cloud-services" className="text-rose-500 hover:underline font-bold">
-          high-performance cloud consulting
-        </Link>{" "}
-        architectures.
-      </span>
-    ),
+    deepDiveParagraph1: "Gen AI Service UK helps businesses get more done by putting generative AI to practical use writing, answering questions, working with data, and taking repetitive tasks off your plate. Rather than following a fixed set of rules like older software, it picks up on context and produces new content itself, whether that's text, code, or images.",
+    deepDiveParagraph2: undefined,
     
-    problemTitle: "the Generative AI Services Production Gap",
-    problemSubtitle: "Why 85% of enterprise Generative AI Services initiatives fail to scale beyond pilot projects and deliver measurable business impact.",
+    problemTitle: undefined,
+    problemFullTitle: (
+      <span>
+        Solving the <span className="text-rose-500 font-semibold">Key Challenges of Gen AI Services UK</span>
+      </span>
+    ),
+    problemSubtitle: undefined,
     problemPoints: [
-      "Fragmented AI deployments that operate in isolation, preventing seamless integration with core business applications and workflows.",
-      "High inference latency and infrastructure inefficiencies that impact user experience, reduce productivity, and increase operational costs.",
-      "Lack of continuous monitoring, evaluation, and optimization, resulting in declining model accuracy, governance challenges, and reduced ROI over time."
+      "You don’t have to replace the software your team uses every day. This makes the move to Gen AI simpler, smoother, and easier for your team to adopt.",
+      "Users expect quick answers, even when demand is high. A well-planned setup helps keep performance steady without unnecessary expense.",
+      "Launching an AI system is only the beginning. Ongoing monitoring and improvements help keep results useful, reliable, and consistent over time."
     ],
     
-    outcomesTitle: "Enterprise-Ready Generative AI Services",
-    outcomesDesc: "We design, develop, deploy, and optimize scalable Generative AI Services that streamline business operations, enhance productivity, automate complex workflows, and deliver measurable business outcomes across the enterprise.",
+    outcomesTitle: (
+      <span>
+        Enterprise-Grade <span className="text-rose-500 font-semibold">Gen AI Services for UK Organisations</span>
+      </span>
+    ),
+    outcomesDesc: undefined,
     
-    useCasesTitle: "How Organizations Use Generative AI Services",
-    useCasesSubtitle: "Discover how leading enterprises leverage Generative AI Services to automate workflows, enhance decision-making, improve customer experiences, and unlock new opportunities for growth across critical business functions.",
+    useCasesTitle: "How Gen AI Is Transforming the Way Organisations Work",
+    useCasesSubtitle: undefined,
     
     architectureTitle: "Scalable, Secure & High-Performance Generative AI Services",
     architectureSubtitle: "Our Generative AI Services architecture combines advanced AI models, cloud-native infrastructure, enterprise-grade security controls, and intelligent automation frameworks to deliver scalable, reliable, and high-performing AI solutions.",
@@ -126,77 +121,206 @@ export default function CapabilityPage({ params }: PageProps) {
     techStackTitle: undefined,
     techStackSubtitle: undefined,
     
-    benefitsTitle: "Key Outcomes & Benefits of Generative AI Services",
-    benefitsSubtitle: "Our Generative AI Services are designed to deliver measurable business outcomes through scalable infrastructure, enterprise-grade security, continuous optimization, and operational efficiency. Every deployment is focused on maximizing performance, reliability, and long-term ROI.",
-    benefitsItems: undefined
-  } : isML ? {
-    overviewHeading: "TRUSTED RESULTS THROUGH MACHINE LEARNING DEVELOPMENT SERVICES IN UK",
-    overviewParagraph1: "Helping UK businesses build, refine, and scale intelligent models that solve real problems.",
-    overviewParagraph2: (
+    benefitsTitle: (
       <span>
-        We provide structured environments, precise performance monitoring, and secure cloud infrastructure to deliver machine learning development services in UK that meet both technical demands and regulatory standards. Work with our{" "}
-        <Link href="/services/devops-automation" className="text-rose-500 hover:underline font-bold">
-          DevOps integration teams
-        </Link>{" "}
-        for GitOps deployment workflows.
+        Key Outcomes &amp; Benefits of <span className="text-rose-500 font-semibold">Gen AI Services UK</span>
       </span>
     ),
+    benefitsSubtitle: undefined,
+    benefitsItems: [
+      "This can save time and help people get the information they need without a long search.",
+      "Your information should always be handled with care.",
+      "Fast answers can make a big difference to the user experience."
+    ],
+    faqTitle: "Technical",
+    faqHighlight: "Insights"
+  } : isAgents ? {
+    overviewHeading: (
+      <span>
+        Smarter operations, powered by <span className="text-rose-500 font-semibold">AI Agents &amp; Automation</span>
+      </span>
+    ),
+    overviewParagraph1: undefined,
+    overviewParagraph2: undefined,
     
-    deepDiveHeading: "WHAT ARE MACHINE LEARNING DEVELOPMENT SERVICES IN UK?",
-    deepDiveParagraph1: (
+    deepDiveHeading: (
       <span>
-        Machine learning development services in UK refer to the complete process of building data-driven systems that allow software to learn, adapt, and improve over time without being manually reprogrammed. For UK businesses, this means moving beyond rulebased tools. See our{" "}
-        <Link href="/about/company-overview" className="text-rose-500 hover:underline font-bold">
-          company overview
-        </Link>{" "}
-        to review our approach.
+        What is <span className="text-rose-500 font-semibold">AI Agents &amp; Automation</span>?
       </span>
     ),
-    deepDiveParagraph2: (
-      <span>
-        Using clean training data, custom model architectures, and low-latency deployment pipelines, our machine learning development services in UK allow your business to anticipate customer needs. Coordinate with our{" "}
-        <Link href="/services/software-development" className="text-rose-500 hover:underline font-bold">
-          custom software development squads
-        </Link>{" "}
-        to design advanced frontends and interfaces.
-      </span>
-    ),
+    deepDiveParagraph1: "Our AI agents UK don't just follow fixed scripts, they read your data, learn your patterns and get on with the work. It's business process automation with AI UK businesses can rely on: systems that study past activity, spot what matters, and carry out day-to-day tasks with barely any hand-holding. As an AI agent development company UK, we build this straight into your existing setup. See what our intelligent automation services UK can do for you.",
+    deepDiveParagraph2: undefined,
     
-    problemTitle: "Closing The Machine Learning Delivery Gap",
-    problemSubtitle: "Why 85% of UK enterprise machine learning development services never move past controlled pilot stages into live business systems.",
+    problemTitle: undefined,
+    problemFullTitle: (
+      <span>
+        Closing The Gap Between <span className="text-rose-500 font-semibold">AI and Real Results</span>
+      </span>
+    ),
+    problemSubtitle: undefined,
     problemPoints: [
-      "Siloed, disconnected models that cannot communicate with core business operations or live transactional workflows.",
-      "Slow inference response times that degrade user experience, increase abandonment, and quietly erode revenue.",
-      "No ongoing performance monitoring in place, leaving models to deteriorate silently as real-world data shifts over time"
+      "Disconnected, one-off models that never quite fit into your live business systems.",
+      "Slow response times when models run, leading to lag and frustrated customers.",
+      "No ongoing checks in place, so accuracy slips and results drift over time."
     ],
     
-    outcomesTitle: "Scalable Machine Learning Development Services In UK",
-    outcomesDesc: "We plan, engineer, launch, and refine tailored machine learning development services in UK that modernise business processes, elevate workforce efficiency, and generate consistent, measurable commercial outcomes.",
+    outcomesTitle: (
+      <span>
+        Built for Business <span className="text-rose-500 font-semibold">AI Agents &amp; Automation</span>
+      </span>
+    ),
+    outcomesDesc: undefined,
     
-    useCasesTitle: "Where Machine Learning Development Services In UK Deliver Results",
-    useCasesSubtitle: "See how UK industry leaders are applying and integrating this capability across key sectors to streamline workflows, secure business-critical systems, and unlock sustainable long-term value.",
+    useCasesTitle: undefined,
+    useCasesSubtitle: undefined,
     
-    architectureTitle: "Engineered for Reliability, Intelligent Performance",
-    architectureSubtitle: "Our architecture integrates leading cloud infrastructure, machine learning development services in UK, robust governance controls, and intelligent automation layers to produce consistent, production-ready enterprise outcomes.",
-    architectureTopologyTitle: "Engineered for Reliability, Compliance & Speed",
+    architectureTitle: undefined,
+    architectureSubtitle: undefined,
+    architectureTopologyTitle: undefined,
 
-    techStackTitle: "Supported Technologies & Frameworks",
-    techStackSubtitle: "Our machine learning development services in UK connect seamlessly with enterprisegrade platforms, specialist libraries, and distributed service architectures built to sustain high data throughput and real-time processing demands.",
+    techStackTitle: undefined,
+    techStackSubtitle: undefined,
     
-    benefitsTitle: "Core Metrics & Measurable Technical Gains",
-    benefitsSubtitle: "We define success through performance reliability, data security, and operational cost reduction. Through intelligent workflows, sustained model refinement, and full ISO27001 adherence, our machine learning development services in UK convert directly into proven, quantifiable business results.",
+    benefitsTitle: (
+      <span>
+        Real Results &amp; <span className="text-rose-500 font-semibold">What You Actually Get</span>
+      </span>
+    ),
+    benefitsSubtitle: undefined,
     benefitsItems: [
-      "Up to 45% reduction in delivery timelines and overall solution deployment efficiency",
-      "End-to-end system visibility with live performance monitoring and automated threshold alerts",
-      "Thoroughly verified infrastructure governance aligned to recognised SOC-2 compliance standards"
-    ]
+      "92% fewer breakdowns in your day-to-day automated workflows",
+      "Fits neatly alongside your existing ERP systems, no rip-and-replace needed",
+      "A person checks in before any high-risk data change goes through"
+    ],
+    faqTitle: "Technical",
+    faqHighlight: "clarifications"
+  } : isML ? {
+    overviewHeading: (
+      <span>
+        REAL RESULTS FROM <span className="text-rose-500 font-semibold">MACHINE LEARNING ENGINEERING SERVICES UK</span>
+      </span>
+    ),
+    overviewParagraph1: undefined,
+    overviewParagraph2: undefined,
+    
+    deepDiveHeading: (
+      <span>
+        WHAT ARE <span className="text-rose-500 font-semibold">MACHINE LEARNING ENGINEERING SERVICES UK</span>?
+      </span>
+    ),
+    deepDiveParagraph1: "Machine learning engineering services UK cover the full journey of building systems that learn from data, spot patterns, and get better over time without someone rewriting the code. For UK businesses, this means moving on from rigid, rule-based tools to custom machine learning solutions UK teams can trust. See our company overview to see how we approach it.",
+    deepDiveParagraph2: undefined,
+    
+    problemTitle: undefined,
+    problemFullTitle: (
+      <span>
+        Solving The Gaps in <span className="text-rose-500 font-semibold">Machine Learning Delivery</span>
+      </span>
+    ),
+    problemSubtitle: undefined,
+    problemPoints: [
+      "Standalone models that don't talk to your core business systems or day-to-day operations.",
+      "Slow response times that frustrate users, drive people away, and quietly cost you revenue.",
+      "No one keeps an eye on performance, so models quietly lose accuracy as your data changes."
+    ],
+    
+    outcomesTitle: (
+      <span>
+        Machine Learning Engineering Services <span className="text-rose-500 font-semibold">That Scale With You</span>
+      </span>
+    ),
+    outcomesDesc: undefined,
+    
+    useCasesTitle: undefined,
+    useCasesSubtitle: undefined,
+    
+    architectureTitle: undefined,
+    architectureSubtitle: undefined,
+    architectureTopologyTitle: undefined,
+
+    techStackTitle: undefined,
+    techStackSubtitle: undefined,
+    
+    benefitsTitle: (
+      <span>
+        Real Results From Our <span className="text-rose-500 font-semibold">Machine Learning Engineering Services UK</span>
+      </span>
+    ),
+    benefitsSubtitle: undefined,
+    benefitsItems: [
+      "Delivery timelines cut by as much as 45%, with faster rollout every step of the way",
+      "Full visibility across your systems, with live monitoring and alerts before small issues become big ones",
+      "Thoroughly checked infrastructure, built to meet recognised SOC-2 compliance standards"
+    ],
+    faqTitle: "Technical",
+    faqHighlight: "clarifications"
+  } : isMLOps ? {
+    overviewHeading: (
+      <span>
+        Smarter operations, powered by <span className="text-rose-500 font-semibold">MLOps &amp; AI Operations</span>
+      </span>
+    ),
+    overviewParagraph1: undefined,
+    overviewParagraph2: undefined,
+    
+    deepDiveHeading: (
+      <span>
+        What is <span className="text-rose-500 font-semibold">MLOps Services UK</span>?
+      </span>
+    ),
+    deepDiveParagraph1: "Our MLOps services UK take your models out of the lab and put them to work inside your live business systems. It's AI operations management UK that goes beyond one-off automation: systems that learn from past activity, spot the patterns that matter, and keep running smoothly with minimal hands-on input. As a team offering machine learning deployment services UK, we build this straight into your existing setup, backed by ongoing AI model monitoring services UK. See what our AI & data innovation work can do for you.",
+    deepDiveParagraph2: undefined,
+    
+    problemTitle: undefined,
+    problemFullTitle: (
+      <span>
+        Closing: The Gap Between <span className="text-rose-500 font-semibold">Models and Results</span>
+      </span>
+    ),
+    problemSubtitle: undefined,
+    problemPoints: [
+      "Disconnected, one-off models that never quite fit into your live business systems.",
+      "Slow response times when models run, leading to lag and frustrated customers.",
+      "No ongoing checks in place, so accuracy slips and results drift over time."
+    ],
+    
+    outcomesTitle: (
+      <span>
+        Enterprise-Ready <span className="text-rose-500 font-semibold">MLOps Services UK</span>
+      </span>
+    ),
+    outcomesDesc: undefined,
+    
+    useCasesTitle: undefined,
+    useCasesSubtitle: undefined,
+    
+    architectureTitle: undefined,
+    architectureSubtitle: undefined,
+    architectureTopologyTitle: undefined,
+
+    techStackTitle: undefined,
+    techStackSubtitle: undefined,
+    
+    benefitsTitle: (
+      <span>
+        Real Results &amp; <span className="text-rose-500 font-semibold">What You Actually Get</span>
+      </span>
+    ),
+    benefitsSubtitle: undefined,
+    benefitsItems: [
+      "Faster releases, with cycle times cut by as much as 45%",
+      "Full visibility across your systems, with alerts the moment something goes wrong",
+      "Infrastructure that's fully audited and aligned with SOC-2 and other key standards"
+    ],
+    faqTitle: "Technical",
+    faqHighlight: "clarifications"
   } : undefined;
 
   const breadcrumbs = [
     { label: "Home", href: "/" },
     { label: "Services", href: "/services" },
     { label: serviceData.title, href: `/services/${service}` },
-    { label: isGenAI ? "Generative AI Services" : isML ? "Machine Learning Development Services" : data.title }
+    { label: isGenAI ? "Gen AI Services UK" : isAgents ? "AI Agents UK" : isML ? "Machine Learning Engineering Services UK" : isMLOps ? "MLOps Services UK" : data.title }
   ];
 
   const subSections = [
@@ -212,13 +336,17 @@ export default function CapabilityPage({ params }: PageProps) {
     { id: "related-services", label: "Related Services" }
   ];
 
-  const pageTitle = isGenAI ? "Generative AI Services" : isML ? "Machine Learning Development Services" : data.title;
-  const pageSchemaName = isGenAI ? "Generative AI Services UK" : isML ? "Machine Learning Development Services in UK" : data.title;
+  const pageTitle = isGenAI ? "Gen AI Services UK" : isAgents ? "AI Agents UK" : isML ? "Machine Learning Engineering Services UK" : isMLOps ? "MLOps Services UK" : data.title;
+  const pageSchemaName = isGenAI ? "Gen AI Services UK" : isAgents ? "AI Agents UK" : isML ? "Machine Learning Engineering Services UK" : isMLOps ? "MLOps Services UK" : data.title;
   const pageSchemaDesc = isGenAI 
-    ? "Build, deploy, and optimize enterprise Generative AI Services in the UK with secure, scalable solutions tailored to your business goals." 
-    : isML 
-      ? "Expert Machine Learning Development Services in UK for startups and enterprises. Build custom AI models, predictive analytics, automation, and scalable ML solutions." 
-      : data.heroSubtitle;
+    ? "Transform business processes with Gen AI services UK. Get generative AI services, consulting and custom AI solutions for business growth." 
+    : isAgents
+      ? "Build smarter workflows with AI agents UK. Get AI automation services, intelligent automation and custom AI agent development for your business."
+      : isML 
+        ? "Build smarter systems with machine learning engineering services UK. Get ML consulting, model development and custom machine learning solutions." 
+        : isMLOps
+          ? "Streamline AI operations with MLOps services UK. Get MLOps consulting, machine learning deployment and AI model monitoring solutions."
+          : data.heroSubtitle;
 
   return (
     <main className="min-h-screen bg-black text-white font-sans">
@@ -265,6 +393,7 @@ export default function CapabilityPage({ params }: PageProps) {
         serviceSlug={service} 
         capabilityTitle={data.title}
         overrideTitle={overrides?.problemTitle}
+        overrideFullTitle={overrides?.problemFullTitle}
         overrideSubtitle={overrides?.problemSubtitle}
         overridePoints={overrides?.problemPoints}
       />
@@ -317,7 +446,7 @@ export default function CapabilityPage({ params }: PageProps) {
       <RelatedServices currentServiceSlug={service} />
       
       {/* 9. FAQ Section */}
-      <FAQ faqs={data.faqs} />
+      <FAQ faqs={data.faqs} title={overrides?.faqTitle} highlight={overrides?.faqHighlight} />
 
       {/* 11. CTA Section */}
       <CTA

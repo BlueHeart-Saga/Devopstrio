@@ -120,6 +120,24 @@ export function FeedbackWidget() {
     const serviceType = activeTab === "contact" ? "QUICK_CONTACT" : "FEEDBACK";
 
     try {
+      if (typeof window !== "undefined" && (window as any).Brevo && email.trim()) {
+        (window as any).Brevo.push([
+          "identify",
+          {
+            email: email.trim(),
+            attributes: {
+              FIRSTNAME: name.trim().split(" ")[0] || name.trim(),
+              LASTNAME: name.trim().split(" ").slice(1).join(" ") || "",
+              PHONE: phone ? phone.trim() : "",
+            }
+          }
+        ]);
+      }
+    } catch (err) {
+      console.warn("Brevo identification error:", err);
+    }
+
+    try {
       const response = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },

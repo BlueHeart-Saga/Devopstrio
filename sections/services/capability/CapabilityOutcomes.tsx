@@ -7,7 +7,7 @@ import { Reveal } from "@/components/ui/Reveal";
 interface CapabilityOutcomesProps {
   serviceSlug: string;
   capabilityTitle: string;
-  overrideTitle?: string;
+  overrideTitle?: React.ReactNode;
   overrideDesc?: string;
 }
 

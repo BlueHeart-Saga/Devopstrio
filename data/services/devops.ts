@@ -17,27 +17,91 @@ export const devopsService: ServiceCategory = {
   capabilities: [
     {
       slug: "cicd-implementation",
-      title: "CI/CD Implementation",
-      description: "Automating code testing, container packaging, and production deployments.",
-      items: ["GitHub Actions and GitLab CI workflows", "Automated code analysis gates", "Blue-green deployment scripts"]
+      title: "CI/CD Implementation & Automation",
+      description: "Automate code testing, container packaging, artifact management, and zero-downtime production deployments with rapid feedback loops.",
+      items: [
+        "GitHub Actions, GitLab CI & Jenkins pipelines",
+        "Automated code analysis & security gates",
+        "Zero-downtime Blue-Green & Canary releases"
+      ],
+      href: "/services/devops-automation/cicd-implementation"
     },
     {
       slug: "platform-engineering",
-      title: "Platform Engineering",
-      description: "Designing self-service developer platforms and standardized workspace configurations.",
-      items: ["Internal Developer Portals (Backstage)", "Standardized deployment templates", "Automated resource request systems"]
+      title: "Platform Engineering & Developer Portals",
+      description: "Design self-service developer platforms, standardized workspace configurations, and automated cloud infrastructure landing zones.",
+      items: [
+        "Internal Developer Portals (Backstage)",
+        "Self-service cloud environment provisioning",
+        "Standardized golden path deployment templates"
+      ],
+      href: "/services/devops-automation/platform-engineering"
+    },
+    {
+      slug: "infrastructure-as-code",
+      title: "Infrastructure as Code (IaC)",
+      description: "Declare, version, and orchestrate secure multi-cloud infrastructure with modular blueprints and automated drift remediation.",
+      items: [
+        "Modular Terraform & OpenTofu blueprints",
+        "Automated drift detection & state locking",
+        "Immutable AMI & container image pipelines"
+      ],
+      href: "/services/devops-automation/infrastructure-as-code"
     },
     {
       slug: "kubernetes-services",
-      title: "Kubernetes Services",
-      description: "Architecting, managing, and securing enterprise Kubernetes cluster environments.",
-      items: ["EKS, AKS, and GKE cluster management", "ArgoCD gitops continuous delivery pipelines", "Calico network policy integrations"]
+      title: "Kubernetes Services & Cluster Management",
+      description: "Architect, manage, secure, and auto-scale enterprise Kubernetes cluster environments across AWS EKS, Azure AKS, and Google GKE.",
+      items: [
+        "EKS, AKS, and GKE cluster management",
+        "ArgoCD & Flux GitOps delivery pipelines",
+        "Calico & Cilium network security policies"
+      ],
+      href: "/services/devops-automation/kubernetes-services"
     },
     {
       slug: "devsecops",
-      title: "DevSecOps Integration",
-      description: "Injecting automated vulnerability scanning and security gates into code pipelines.",
-      items: ["Static Application Security Testing (SAST)", "Container registry scanning", "Secrets detection audits"]
+      title: "DevSecOps & Automated Security Gates",
+      description: "Embed automated vulnerability scanning, container security, and compliance checks directly into your CI/CD delivery pipelines.",
+      items: [
+        "Static Application Security Testing (SAST/DAST)",
+        "Automated container registry & SBOM scanning",
+        "Secret scanning & compliance-as-code policies"
+      ],
+      href: "/services/devops-automation/devsecops"
+    },
+    {
+      slug: "site-reliability-engineering",
+      title: "Site Reliability Engineering (SRE)",
+      description: "Maximize uptime, define clear SLI/SLO reliability frameworks, and implement automated incident response and self-healing systems.",
+      items: [
+        "Guaranteed SLI/SLO availability frameworks",
+        "Automated failover & self-healing clusters",
+        "Blameless post-mortems & root-cause audits"
+      ],
+      href: "/services/devops-automation/site-reliability-engineering"
+    },
+    {
+      slug: "release-automation",
+      title: "Release Automation & GitOps Delivery",
+      description: "Eliminate manual deployment friction with declarative GitOps synchronization, progressive canary routing, and one-click rollbacks.",
+      items: [
+        "ArgoCD & Flux GitOps continuous reconciliation",
+        "Automated Canary & Blue-Green routing",
+        "Progressive delivery with instant rollback gates"
+      ],
+      href: "/services/devops-automation/release-automation"
+    },
+    {
+      slug: "monitoring-observability",
+      title: "Monitoring & Observability Grids",
+      description: "Gain complete full-stack visibility with unified distributed tracing, real-time metrics telemetry, and proactive anomaly alert grids.",
+      items: [
+        "Distributed OpenTelemetry trace collectors",
+        "Centralized Prometheus & Datadog metrics grids",
+        "Proactive anomaly detection & pager alert routing"
+      ],
+      href: "/services/devops-automation/monitoring-observability"
     }
   ],
   outcomes: [

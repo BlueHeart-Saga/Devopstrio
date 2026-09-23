@@ -20,22 +20,20 @@ const ServiceRelated = dynamic(() => import("@/sections/services/category/Servic
 const FAQ = dynamic(() => import("@/components/services/FAQ").then((mod) => mod.FAQ));
 const CTA = dynamic(() => import("@/components/services/CTA").then((mod) => mod.CTA));
 
+import { generatePageMetadata, getMetadataFromPath } from "@/lib/seo-utils";
+
 export async function generateMetadata() {
   const service = "ai-data-innovation";
   const data = getServiceByCategory(service);
   if (!data) return {};
 
-  return {
-    title: `${data.title} | Devopstrio`,
-    description: data.subtitle,
-    openGraph: {
-      title: `${data.title} | Devopstrio`,
-      description: data.subtitle
-    },
-    alternates: {
-      canonical: `/services/${service}`
-    }
-  };
+  const seo = getMetadataFromPath(`/services/${service}`);
+  return generatePageMetadata({
+    title: seo.title || `${data.title} | Devopstrio`,
+    description: seo.description || data.subtitle,
+    path: `/services/${service}`,
+    keywords: seo.keywords
+  });
 }
 
 export default async function ServiceCategoryPage() {
@@ -103,6 +101,12 @@ export default async function ServiceCategoryPage() {
         overviewHeading={data.overviewHeading}
         overviewDesc1={data.overviewDesc1}
         overviewDesc2={data.overviewDesc2}
+        cardHeading={
+          <>
+            Practical AI Services for{" "}
+            <span className="text-rose-500 font-semibold">Everyday Business Needs</span>
+          </>
+        }
       />
 
       {/* 3. Capabilities Grid */}
@@ -126,7 +130,10 @@ export default async function ServiceCategoryPage() {
 
       {/* 8. Why Devopstrio Showcase */}
       <div id="why-devopstrio">
-        <WhyDevopstrio />
+        <WhyDevopstrio 
+          badge="WHY CHOOSE US"
+          title="Smart Engineering. Real Results. Growth You Can Measure."
+        />
       </div>
 
       {/* 9. Metrics Section */}

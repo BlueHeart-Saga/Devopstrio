@@ -14,12 +14,12 @@ export function WhyDevopstrioManaged() {
         <div className="max-w-3xl mx-auto text-center mb-16 lg:mb-20">
           <Reveal>
             <span className="text-2xl font-semibold tracking-[0.3em] uppercase text-rose-500 mb-4 block drop-shadow-md">
-              Why Devopstrio
+              WHY DEVOPSTRIO
             </span>
           </Reveal>
           <Reveal delay={0.1}>
             <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight text-white mb-4">
-              Engineering Innovation. Delivering Business Outcomes.
+              Trusted Cloud Support UK Businesses Rely On.
             </h2>
           </Reveal>
         </div>
@@ -28,45 +28,45 @@ export function WhyDevopstrioManaged() {
           {[
             {
               id: "01",
-              tag: "SRE & ENGINEERING",
-              title: "Principal-Led Engineering Squads & SRE Guilds",
-              desc: "Direct partnership with certified cloud architects and Site Reliability Engineers who design hardened infrastructures without outsourced tier-1 triage layers.",
-              badges: ["Zero Script-Readers", "Direct Engineer Access", "Architectural Governance"]
+              tag: "SUPPORT & ENGINEERING",
+              title: "Real Engineers, Not Call Centres",
+              desc: "As a genuine cloud support provider UK businesses trust, we connect you directly with certified architects and reliability engineers — real cloud support UK teams, not scripted first-line triage.",
+              badges: ["No Script-Readers", "Direct Engineer Access", "Full Accountability"]
             },
             {
               id: "02",
               tag: "MULTI-CLOUD RUNTIMES",
-              title: "Multi-Cloud & Kubernetes Operational Rigor",
-              desc: "Production-grade cluster operations across AWS, Azure, and Google Cloud featuring automated node pool upgrades, GitOps reconciliation, and multi-region failovers.",
-              badges: ["Zero-Downtime Upgrades", "GitOps Synchronization", "Cross-Region HA"]
+              title: "Multi-Cloud & Kubernetes Know-How",
+              desc: "Our cloud managed services span production clusters across AWS, Azure, and Google Cloud, backed by managed cloud services UK expertise in automated upgrades, GitOps deployments, and regional failover.",
+              badges: ["Zero-Downtime Upgrades", "GitOps Deployments", "Regional Failover"]
             },
             {
               id: "03",
-              tag: "OBSERVABILITY & SLA",
-              title: "Proactive Full-Stack Telemetry & 15-Minute Triage",
-              desc: "Continuous synthetic user journey checks, distributed tracing, automated anomaly alerts, and strict 15-minute response guarantees for critical production blockers.",
-              badges: ["15-Min Response SLA", "Synthetic Health Tests", "Blameless RCAs"]
+              tag: "MONITORING & SLA",
+              title: "Always-On Monitoring, Fast Triage",
+              desc: "With 24/7 cloud support UK teams watching your systems, our cloud support services UK include continuous checks, distributed tracing, and automated alerts, all backed by firm response-time commitments.",
+              badges: ["Fast Response Times", "Continuous Monitoring", "No-Blame Reviews"]
             },
             {
               id: "04",
               tag: "FINOPS & GOVERNANCE",
-              title: "Continuous Cloud FinOps & Cost Optimization",
-              desc: "Monthly resource utilization audits, automated idle asset reclamation, and reserved instance commitment strategies delivering 30% to 45% lower cloud bills.",
-              badges: ["Monthly Cost Audits", "Idle Asset Reclamation", "Predictable Budgets"]
+              title: "Smarter Cloud Cost Control",
+              desc: "Through ongoing cloud management services UK, we audit usage regularly, reclaim idle resources automatically, and apply pricing strategies that keep your cloud spend predictable.",
+              badges: ["Regular Usage Audits", "Idle Resource Cleanup", "Lower Cloud Bills"]
             },
             {
               id: "05",
               tag: "SECURITY & COMPLIANCE",
-              title: "Zero-Trust Security & Continuous Audit Readiness",
-              desc: "Automated vulnerability scanning, strict IAM least-privilege enforcement, real-time SIEM event correlation, and weekly encrypted backup restore tests.",
-              badges: ["Continuous Threat Scans", "Least-Privilege IAM", "Automated Restore Tests"]
+              title: "Security Built Into Everything We Do",
+              desc: "As part of our managed cloud support UK, we run continuous vulnerability scans, enforce least-privilege access controls, correlate security events live, and test backup restores every week.",
+              badges: ["Ongoing Threat Scans", "Least-Privilege Access", "Verified Backups"]
             },
             {
               id: "06",
               tag: "STRATEGIC PARTNERSHIP",
-              title: "Outcome-Driven Long-Term Value Creation",
-              desc: "Beyond transactional support, we integrate with your engineering roadmap—providing quarterly architectural reviews, continuous team upskilling, and transparent KPIs.",
-              badges: ["Quarterly Roadmaps", "Shared Slack/Teams Bridges", "Transparent KPIs"]
+              title: "Support That Grows With You",
+              desc: "Rather than one-off fixes, our cloud technical support UK acts as an extension of your team, with quarterly reviews, shared planning, and full transparency into how your systems perform.",
+              badges: ["Quarterly Reviews", "Shared Team Access", "Transparent Reporting"]
             }
           ].map((pillar, idx) => (
             <Reveal key={pillar.id} delay={idx * 0.05}>

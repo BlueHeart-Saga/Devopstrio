@@ -4,44 +4,44 @@ import { FAQItem } from "./types";
 const serviceFaqs: Record<string, FAQItem[]> = {
   "ai-data-innovation": [
     {
-      q: "How does Devopstrio guarantee data privacy for enterprise AI models?",
-      a: "We deploy all models within single-tenant, private VPC boundaries on AWS Bedrock or Azure OpenAI. We sign strict enterprise agreements guaranteeing that your proprietary datasets and queries are never logged, cached, or utilized for public training."
+      q: "How does our AI services UK team keep your data private?",
+      a: "Every model we run sits inside its own private VPC on AWS Bedrock or Azure OpenAI, set up just for you. As an AI consulting services UK provider, we sign strict agreements confirming your data and queries are never logged, cached, or used to train anything else."
     },
     {
-      q: "What model sizes and architectures do you support?",
-      a: "We support a wide array of architectures, ranging from compact, edge-ready open-weights models (like Llama-3 8B, Mistral 7B) to massive state-of-the-art closed enterprise models (like GPT-4o, Claude 3.5 Sonnet, Gemini Pro)."
+      q: "What size and type of models can we work with?",
+      a: "Our AI services UK team works with a broad mix of architectures, from small, efficient open-weight models (like Llama-3 8B or Mistral 7B) to the largest enterprise-grade models available (like GPT-4o, Claude 3.5 Sonnet, or Gemini Pro)."
     },
     {
-      q: "How do you handle unstructured data ingestion for vector search?",
-      a: "We build automated extract-transform-load (ETL) pipelines that ingest PDFs, Word docs, HTML, and audio recordings, normalize them to clean JSON, slice them using semantic chunking, and run them through high-throughput embedding models."
+      q: "How do you prepare messy files for smart search?",
+      a: "Our AI services UK team sets up automated pipelines that pull in PDFs, Word docs, HTML, and audio recordings, clean them into a consistent format, break them into meaningful chunks, and run them through fast embedding models."
     },
     {
-      q: "How do you monitor and prevent LLM hallucinations?",
-      a: "We deploy dual guardrails: structured prompt templates with strict system instructions, and real-time validation layers (such as LangChain Guardrails) that score model outputs against source database facts before rendering them."
+      q: "How do you stop AI models from making things up?",
+      a: "Our AI services UK team uses two layers of protection: carefully structured prompts with clear rules, plus real-time checks (like LangChain Guardrails) that verify what the model says against your actual data before showing it to you."
     },
     {
-      q: "What is the average deployment timeline for an autonomous AI agent workflow?",
-      a: "Initial proof-of-concepts are ready in 3-4 weeks. Fully integrated production agents featuring self-healing retry logic, database syncs, and human-in-the-loop validation dashboards typically take 8-12 weeks."
+      q: "How long does it take to get an AI agent live?",
+      a: "Our AI services UK team usually has a working proof-of-concept ready in 3-4 weeks. A fully built production agent, with self-healing logic, database syncs, and human-in-the-loop checks, typically takes 8-12 weeks."
     },
     {
-      q: "Can we fine-tune open-weight models on our proprietary datasets?",
-      a: "Yes. We configure dedicated GPU clusters and set up training scripts for parameter-efficient fine-tuning (PEFT) using Low-Rank Adaptation (LoRA) and QLoRA to align open-weight models with your corporate voice."
+      q: "Can you train models to match how we write?",
+      a: "Yes. Our AI services UK team sets up dedicated GPU clusters and training scripts using efficient fine-tuning methods (PEFT), including LoRA and QLoRA, to shape open-weight models around your company's own voice."
     },
     {
-      q: "How do you handle rate-limiting and token cost optimization?",
-      a: "We configure semantic caching layers (like Redis or GPTCache) that intercept matching queries, preventing redundant LLM calls. We also set up token-bucket rate limiters per user to keep monthly API costs predictable."
+      q: "How do you keep API costs under control?",
+      a: "Our AI services UK team sets up smart caching (like Redis or GPTCache) that catches repeat questions before they hit the model, cutting unnecessary calls. We also add per-user rate limits so your monthly costs stay predictable."
     },
     {
-      q: "Do your AI solutions integrate with legacy SQL databases?",
-      a: "Yes. We construct secure semantic query layers that translate natural language into SQL queries. These queries are audited against schemas and run inside read-only sandbox database connections to protect database state."
+      q: "Will your AI services UK work with our older SQL databases?",
+      a: "Yes. Our AI services UK team builds secure query layers that turn plain-English questions into SQL, check against your schema and run in a read-only sandbox, so your live database stays untouched."
     },
     {
-      q: "How do you address bias and safety compliance in AI workflows?",
-      a: "We insert toxicity classifiers, prompt injection detectors, and output filters to intercept and block any policy-violating queries or replies before they affect end users."
+      q: "How do you keep AI outputs safe and fair?",
+      a: "Our AI services UK team builds in checks for harmful language, prompt manipulation, and unsafe replies, catching and blocking anything that breaks policy before it ever reaches your users."
     },
     {
-      q: "What support SLAs do you offer for production AI systems?",
-      a: "We provide 24/7 active runtime monitoring, model performance tracking, and incident escalation protocols. For critical production blockages, our engineers guarantee a response within 15 minutes."
+      q: "What kind of support can we count on once we're alive?",
+      a: "Our AI services UK team keeps watch around the clock, tracking performance and flagging issues the moment they arise. If something critical goes wrong in production, our engineers respond within 15 minutes."
     }
   ],
   "cloud-services": [

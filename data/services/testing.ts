@@ -18,44 +18,90 @@ export const testingService: ServiceCategory = {
     {
       slug: "test-automation",
       title: "End-to-End Test Automation",
-      description: "Writing automated UI and functional test scenarios using Playwright, Cypress, and Selenium.",
-      items: ["End-to-end user path tests", "Cross-browser validation runs", "Parallel test execution scripts"],
+      description: "Writing scalable, resilient automated UI and functional test scenarios using Playwright, Cypress, and Selenium.",
+      items: [
+        "End-to-end user journey validations",
+        "Cross-browser and headless execution runs",
+        "Parallelized distributed test runners"
+      ],
       href: "/services/qa-testing/test-automation"
     },
     {
       slug: "performance-testing",
       title: "Performance & Stress Testing",
-      description: "Measuring application response speeds under peak concurrent user loads using k6 and Locust.",
-      items: ["High-volume request test runs", "Database lockup checking scripts", "Server memory usage monitors"],
+      description: "Simulating high-concurrency peak traffic loads using k6, Locust, and JMeter to discover system limits and bottlenecks.",
+      items: [
+        "Distributed high-concurrency load simulations",
+        "Database connection pool & deadlock profiling",
+        "P99 latency & memory leak isolation"
+      ],
       href: "/services/qa-testing/performance-testing"
     },
     {
-      slug: "cicd-quality-gates",
+      slug: "security-testing",
+      title: "Security & Vulnerability Testing",
+      description: "Integrating automated SAST, DAST, dependency vulnerability scanning, and OWASP Top 10 security validations.",
+      items: [
+        "Automated SAST and DAST vulnerability scans",
+        "Dynamic API penetration testing suites",
+        "Dependency CVE & software supply chain audits"
+      ],
+      href: "/services/qa-testing/security-testing"
+    },
+    {
+      slug: "api-testing",
+      title: "API & Contract Testing",
+      description: "Validating REST, GraphQL, and gRPC endpoints for functional accuracy, backward compatibility, and Pact schema contracts.",
+      items: [
+        "Consumer-driven Pact contract testing",
+        "Automated OpenAPI schema validation",
+        "Virtual mock servers for isolated testing"
+      ],
+      href: "/services/qa-testing/api-testing"
+    },
+    {
+      slug: "mobile-app-testing",
+      title: "Mobile Application Testing",
+      description: "Automated and real-device testing for iOS and Android across multiple OS versions, screen resolutions, and network conditions.",
+      items: [
+        "Real device cloud farm automated executions",
+        "Deep biometric & payment flow validations",
+        "Network latency & battery consumption profiling"
+      ],
+      href: "/services/qa-testing/mobile-app-testing"
+    },
+    {
+      slug: "functional-testing",
+      title: "Functional & Regression Testing",
+      description: "Comprehensive functional verification and automated regression suites ensuring zero defect leakage to production.",
+      items: [
+        "Automated regression suite execution",
+        "Structured UAT test scenarios & tracking",
+        "Zero-defect release validation sign-offs"
+      ],
+      href: "/services/qa-testing/functional-testing"
+    },
+    {
+      slug: "continuous-testing",
       title: "Continuous Testing & CI/CD Gates",
-      description: "Embedding automated regression tests and linting into CI/CD release pipelines.",
-      items: ["Automated PR sanity checks", "Branch coverage enforcement", "Continuous smoke testing"],
-      href: "/services/devops-automation/cicd-implementation"
+      description: "Embedding automated quality gates, branch coverage enforcement, and smoke tests directly into developer pipelines.",
+      items: [
+        "Automated PR merge blocking quality gates",
+        "Instant smoke & regression feedback loops",
+        "Code coverage & static analysis enforcement"
+      ],
+      href: "/services/qa-testing/continuous-testing"
     },
     {
-      slug: "security-compliance-testing",
-      title: "DevSecOps & Vulnerability Scanning",
-      description: "Integrating SAST, DAST, and dependency scanning into automated test cycles.",
-      items: ["Static code security analysis", "Dynamic API penetration testing", "Secret scanning guardrails"],
-      href: "/services/devops-automation/devsecops"
-    },
-    {
-      slug: "api-contract-testing",
-      title: "API & Microservices Contract Testing",
-      description: "Validating API schemas, backwards compatibility, and mock service virtualization.",
-      items: ["Pact contract testing", "OpenAPI schema validation", "Mock server virtualization"],
-      href: "/services/software-development/microservices-architecture"
-    },
-    {
-      slug: "ai-model-testing",
-      title: "AI Model Evaluation & Safety Testing",
-      description: "Evaluating LLM outputs, prompt drift, hallucination rates, and guardrail enforcement.",
-      items: ["RAG retrieval precision audits", "Hallucination benchmarking", "Latency profiling under load"],
-      href: "/services/ai-data-innovation/mlops-ai-operations"
+      slug: "quality-engineering",
+      title: "Quality Engineering & Shift-Left QA",
+      description: "Transforming testing culture with shift-left strategies, test data management, and proactive quality engineering architectures.",
+      items: [
+        "Shift-left quality architecture consulting",
+        "Synthetic test data generation pipelines",
+        "Enterprise QA governance & metric dashboards"
+      ],
+      href: "/services/qa-testing/quality-engineering"
     }
   ],
   outcomes: [

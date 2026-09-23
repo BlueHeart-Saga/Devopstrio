@@ -237,19 +237,6 @@ const howItWorksMilestones = [
   },
 ];
 
-// ─── DATA FOR ORBIT NODES (EXACT EQUAL 40° ANGULAR SPACING) ─────────────────
-const nodes = [
-  { label: "Teacher", image: "/webp/assets/landingpage-campix/orbit_teacher.webp", x: 50.0, y: 9.0 },
-  { label: "Library", image: "/webp/assets/landingpage-campix/orbit_library.webp", x: 76.4, y: 18.6 },
-  { label: "Administration", image: "/webp/assets/landingpage-campix/orbit_admin.webp", x: 90.4, y: 42.9 },
-  { label: "Hostel", image: "/webp/assets/landingpage-campix/orbit_hostel.webp", x: 85.5, y: 70.5 },
-  { label: "Students", image: "/webp/assets/landingpage-campix/orbit_students.webp", x: 64.0, y: 88.5 },
-  { label: "Communication", image: "/webp/assets/landingpage-campix/orbit_comm.webp", x: 36.0, y: 88.5 },
-  { label: "Canteen", image: "/webp/assets/landingpage-campix/orbit_canteen.webp", x: 14.5, y: 70.5 },
-  { label: "Analytics", image: "/webp/assets/landingpage-campix/orbit_analytics.webp", x: 9.6, y: 42.9 },
-  { label: "Transport", image: "/webp/assets/landingpage-campix/orbit_transport.webp", x: 23.6, y: 18.6 },
-];
-
 export default function CampixLandingPage() {
   // Modal State for Image Zoom
   const [modalImage, setModalImage] = useState<{ src: string; title: string } | null>(null);
@@ -430,75 +417,35 @@ export default function CampixLandingPage() {
                 {/* Center Glow */}
                 <div className="absolute w-56 h-56 rounded-full bg-[#FFCA54]/25 blur-3xl pointer-events-none z-0" />
 
-                {/* ROTATING SIDE CIRCLES ONLY */}
+                {/* Ecosystem Image */}
                 <motion.div
-                  animate={{ rotate: 360 }}
+                  animate={{ scale: [1, 1.015, 1] }}
                   transition={{
-                    duration: 30,
+                    duration: 6,
                     repeat: Infinity,
-                    ease: "linear",
+                    ease: "easeInOut",
                   }}
-                  className="absolute inset-0 z-10"
+                  className="relative w-full h-full z-10"
                 >
-                  {nodes.map((node, index) => (
-                    <div
-                      key={index}
-                      className="absolute"
-                      style={{
-                        left: `${node.x}%`,
-                        top: `${node.y}%`,
-                        transform: "translate(-50%, -50%)",
-                      }}
-                    >
-                      <motion.div
-                        animate={{ rotate: -360 }}
-                        transition={{
-                          duration: 30,
-                          repeat: Infinity,
-                          ease: "linear",
-                        }}
-                        className="flex flex-col items-center justify-center"
-                      >
-                        {/* Circle Image */}
-                        <div className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-full border-2 border-[#FFCA54] bg-black overflow-hidden shadow-[0_0_25px_rgba(255,202,84,0.45)]">
-                          <Image
-                            src={node.image}
-                            alt={node.label}
-                            fill
-                            className="object-cover"
-                          />
-                        </div>
+                  <Image
+                    src="/webp/assets/landingpage-campix/WHAT IS CAMPIX_.webp"
+                    alt="What is Campix - Connected Education Ecosystem"
+                    fill
+                    priority
+                    className="object-contain"
+                  />
 
-                        {/* Label */}
-                        <span className="text-[10px] sm:text-[11px] font-semibold text-white mt-1.5 whitespace-nowrap drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)]">
-                          {node.label}
-                        </span>
-                      </motion.div>
-                    </div>
-                  ))}
+                  {/* Hide ONLY the outer orbit area */}
+                  <div
+                    className="
+                      absolute inset-0
+                      pointer-events-none
+                      rounded-full
+                      [mask-image:radial-gradient(circle,transparent_0%,transparent_68%,black_68.5%,black_100%)]
+                      bg-black
+                    "
+                  />
                 </motion.div>
-
-                {/* Center Logo — sized to properly fill the black circular frame & vertically centered */}
-                <div className="relative z-20 w-52 h-52 sm:w-60 sm:h-60 flex items-center justify-center">
-
-                  {/* Golden radial glow */}
-                  <div className="absolute inset-[-8px] rounded-full bg-[#FFCA54]/15 blur-md pointer-events-none" />
-
-                  {/* Strong golden outer glow */}
-                  <div className="absolute inset-0 rounded-full shadow-[0_0_60px_rgba(255,202,84,0.8),0_0_100px_rgba(255,202,84,0.35)] pointer-events-none" />
-
-                  {/* Logo — vertically centered to balance top cube and bottom leaves */}
-                  <div className="relative w-full h-full -translate-y-3 sm:-translate-y-4">
-                    <Image
-                      src="/webp/assets/landingpage-campix/orbit_center_logo_perfect.webp"
-                      alt="Campix Central Hub"
-                      fill
-                      priority
-                      className="object-contain" 
-                    />
-                  </div>
-
-                </div>
 
               </div>
             </div>
@@ -757,8 +704,8 @@ export default function CampixLandingPage() {
                   Manage your institution with greater visibility, control, and efficiency.
                 </p>
               </div>
-              {/* Image — contained, right side, from bottom matching other 3 cards */}
-              <div className="absolute right-2 sm:right-4 bottom-0 w-[46%] sm:w-[48%] h-[88%] pointer-events-none">
+              {/* Image — contained, right side, from bottom */}
+              <div className="absolute right-0 bottom-0 w-[52%] h-[110%] pointer-events-none">
                 <Image
                   src="/webp/assets/landingpage-campix/admin rectangle card.webp"
                   alt="Administrator"
@@ -776,7 +723,7 @@ export default function CampixLandingPage() {
                   Manage classes, students, academic activities, and learning more effectively.
                 </p>
               </div>
-              <div className="absolute right-2 sm:right-4 bottom-0 w-[46%] sm:w-[48%] h-[88%] pointer-events-none">
+              <div className="absolute right-0 bottom-0 w-[52%] h-[110%] pointer-events-none">
                 <Image
                   src="/webp/assets/landingpage-campix/Teacher.webp"
                   alt="Teacher"
@@ -794,7 +741,7 @@ export default function CampixLandingPage() {
                   Stay informed about your child&apos;s academic progress, attendance, and institutional activities.
                 </p>
               </div>
-              <div className="absolute right-2 sm:right-4 bottom-0 w-[48%] sm:w-[50%] h-[88%] pointer-events-none">
+              <div className="absolute right-0 bottom-0 w-[52%] h-[110%] pointer-events-none">
                 <Image
                   src="/webp/assets/landingpage-campix/Parent.webp"
                   alt="Parent"
@@ -812,7 +759,7 @@ export default function CampixLandingPage() {
                   Access learning resources, schedules, activities, and important updates in one place.
                 </p>
               </div>
-              <div className="absolute right-2 sm:right-4 bottom-0 w-[46%] sm:w-[48%] h-[88%] pointer-events-none">
+              <div className="absolute right-0 bottom-0 w-[52%] h-[110%] pointer-events-none">
                 <Image
                   src="/webp/assets/landingpage-campix/Student.webp"
                   alt="Student"
@@ -1049,9 +996,9 @@ export default function CampixLandingPage() {
             </div>
 
             {/* Right Column: Platform Highlights Image */}
-            <div className="lg:col-span-7 relative flex items-center justify-center">
+            <div className="lg:col-span-7 relative flex items-center justify-center lg:translate-y-8">
               <div
-                className="relative w-full max-w-[580px] rounded-2xl overflow-hidden shadow-2xl translate-y-4 sm:translate-y-5 lg:translate-y-6"
+                className="relative w-full max-w-[580px] overflow-hidden"
                 style={{ aspectRatio: "4/3.2" }}
               >
                 <Image

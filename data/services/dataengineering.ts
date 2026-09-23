@@ -16,46 +16,92 @@ export const dataengineeringService: ServiceCategory = {
   ],
   capabilities: [
     {
+      slug: "data-platform-development",
+      title: "Data Platform Development",
+      description: "Architect unified, scalable enterprise modern data platforms optimized for analytics, machine learning, and business intelligence.",
+      items: [
+        "Distributed high-throughput data architectures",
+        "Multi-tier analytical storage baselines",
+        "Automated cluster resource auto-scaling"
+      ],
+      href: "/services/data-engineering/data-platform-development"
+    },
+    {
       slug: "data-warehousing",
-      title: "Data Warehousing & Lakes",
-      description: "Designing scalable analytical databases using Snowflake, BigQuery, or Amazon Redshift.",
-      items: ["Optimized dimensional database schemas", "Data partition and clustering rules", "Secure role-based column access policies"],
+      title: "Data Warehousing & Analytics",
+      description: "Design high-performance analytical data warehouses using Snowflake, Google BigQuery, and Amazon Redshift with sub-second queries.",
+      items: [
+        "Optimized dimensional star & snowflake schemas",
+        "Data partitioning, clustering & caching rules",
+        "Role-based column & row-level security"
+      ],
       href: "/services/data-engineering/data-warehousing"
     },
     {
+      slug: "data-lakes-lakehouse",
+      title: "Data Lakes & Lakehouse Architecture",
+      description: "Unify batch and real-time streaming data on open formats like Delta Lake, Apache Iceberg, and Databricks Lakehouse.",
+      items: [
+        "ACID transactions on object storage buckets",
+        "Zero-copy cloning & time-travel data auditing",
+        "Unified structured and unstructured data lakes"
+      ],
+      href: "/services/data-engineering/data-lakes-lakehouse"
+    },
+    {
+      slug: "etl-elt-pipelines",
+      title: "Automated ETL/ELT Pipelines",
+      description: "Build robust, automated data extraction, transformation, and loading pipelines using dbt, Airflow, and Apache Spark.",
+      items: [
+        "Declarative dbt SQL transformation models",
+        "Automated DAG dependency scheduling in Airflow",
+        "Continuous schema validation & anomaly triggers"
+      ],
+      href: "/services/data-engineering/etl-elt-pipelines"
+    },
+    {
       slug: "real-time-data-processing",
-      title: "Real-Time Streaming Pipelines",
-      description: "Constructing low-latency streaming pipelines using Apache Kafka, Flink, and Spark Streaming.",
-      items: ["Real-time event capture lines", "In-memory database aggregation scripts", "Automated anomaly alert triggers"],
+      title: "Real-Time Data Processing",
+      description: "Process and analyze high-velocity event streams in real-time with Apache Kafka, Apache Flink, and Spark Streaming.",
+      items: [
+        "Sub-second event stream ingestion & routing",
+        "Stateful stream transformations & windowing",
+        "Real-time event anomaly detection & alerting"
+      ],
       href: "/services/data-engineering/real-time-data-processing"
     },
     {
-      slug: "data-pipeline-orchestration",
-      title: "Automated ETL/ELT & Orchestration",
-      description: "Building resilient data ingestion pipelines with dbt, Airflow, and Dagster.",
-      items: ["Automated data transformation models", "Continuous data quality tests", "DAG dependency scheduling"],
-      href: "/services/devops-automation/platform-engineering"
+      slug: "data-quality-management",
+      title: "Data Quality Management",
+      description: "Implement automated data quality checks, schema drift alerts, Great Expectations test suites, and continuous data observability.",
+      items: [
+        "Automated Great Expectations validation suites",
+        "Proactive data freshness & anomaly alerting",
+        "Continuous end-to-end data lineage tracing"
+      ],
+      href: "/services/data-engineering/data-quality-management"
     },
     {
-      slug: "machine-learning-data-prep",
-      title: "Feature Stores & AI Data Platforms",
-      description: "Pre-processing high-dimensional feature stores for enterprise ML training and inference.",
-      items: ["Real-time vector embeddings", "Feature store synchronization", "Data versioning & lineage"],
-      href: "/services/ai-data-innovation/machine-learning-engineering"
+      slug: "master-data-management",
+      title: "Master Data Management (MDM)",
+      description: "Create a single, authoritative golden record across disparate enterprise business entities, customers, and product catalogs.",
+      items: [
+        "Automated entity resolution & deduplication",
+        "Centralized master data governance catalogs",
+        "Cross-system bidirectional data synchronization"
+      ],
+      href: "/services/data-engineering/master-data-management"
     },
     {
-      slug: "cloud-data-governance",
-      title: "Data Governance & Compliance",
-      description: "End-to-end data lineage, cataloging, automated masking, and GDPR/SOC-2 compliance guardrails.",
-      items: ["Automated PII data masking", "Metadata catalog integration", "Audit logging & access controls"],
-      href: "/services/cybersecurity/compliance-governance"
-    },
-    {
-      slug: "cloud-analytics-infra",
-      title: "Cloud Analytics & BI Infrastructure",
-      description: "High-performance business intelligence foundations delivering sub-second reporting.",
-      items: ["Semantic reporting layers", "Interactive analytics dashboards", "Automated executive KPI delivery"],
-      href: "/services/cloud-services/cloud-architecture"
+      slug: "big-data-engineering",
+      title: "Big Data Engineering",
+      description: "Scale petabyte-range analytical workloads using distributed Spark, Hadoop, Presto/Trino, and OpenSearch clusters.",
+      items: [
+        "High-volume Spark & Hadoop cluster optimization",
+        "Scalable Elasticsearch & OpenSearch grids",
+        "Sub-second distributed big data queries"
+      ],
+      href: "/services/data-engineering/big-data-engineering"
     }
   ],
   outcomes: [

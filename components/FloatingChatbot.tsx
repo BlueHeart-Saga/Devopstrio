@@ -109,7 +109,7 @@ export function FloatingChatbot() {
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0, opacity: 0 }}
             onClick={() => setIsOpen(true)}
-            className="fixed bottom-4 left-4 z-[100] hover:scale-110 transition-transform hover:-translate-y-1 group"
+            className="fixed bottom-20 left-3 md:bottom-24 md:left-4 z-[100] hover:scale-110 transition-transform hover:-translate-y-1 group"
           >
             <div className="absolute left-[70%] top-1/2 -translate-y-1/2 px-4 py-2.5 bg-white text-zinc-950 text-xs sm:text-sm font-semibold rounded-2xl rounded-bl-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none shadow-[0_8px_30px_rgba(0,0,0,0.15)] border border-zinc-100/50 -translate-x-2 group-hover:translate-x-0 z-0">
               How can we assist you?
@@ -125,7 +125,7 @@ export function FloatingChatbot() {
       {/* Speech Bubble Tooltips */}
       <AnimatePresence>
         {!isOpen && showTooltip && (
-          <div className="fixed bottom-28 left-8 z-[101] flex flex-col gap-2 max-w-[280px] items-start select-none">
+          <div className="fixed bottom-[185px] left-6 md:bottom-[210px] md:left-8 z-[101] flex flex-col gap-2 max-w-[280px] items-start select-none">
             {/* Dismiss Button */}
             <button
               onClick={(e) => {

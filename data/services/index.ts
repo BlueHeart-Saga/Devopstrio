@@ -55,7 +55,9 @@ Object.entries(servicesData).forEach(([slug, service]) => {
 // Enrich and apply premium copywriting to all explicit capabilitiesData
 Object.entries(capabilitiesData).forEach(([serviceSlug, capabilities]) => {
   Object.entries(capabilities).forEach(([capSlug, capDetail]) => {
-    capDetail.faqs = generateFaqsForCapability(serviceSlug, capDetail.title);
+    if (!capDetail.faqs || capDetail.faqs.length === 0) {
+      capDetail.faqs = generateFaqsForCapability(serviceSlug, capDetail.title);
+    }
     capDetail.deliveryApproach = generate6PhaseDeliveryApproach(serviceSlug, capDetail.title);
     capabilities[capSlug] = enrichCapabilityDetail(capDetail, serviceSlug);
   });

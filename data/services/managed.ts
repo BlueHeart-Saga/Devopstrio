@@ -2,12 +2,12 @@ import { ServiceCategory, CapabilityDetail } from "./types";
 
 export const managedService: ServiceCategory = {
   slug: "managed-services",
-  title: "Managed Services",
-  badge: "Operational Stability",
-  subtitle: "Ensure platform uptime, continuous patching, database admin operations, and rapid incident response.",
-  overviewHeading: "Guaranteed platform stability and 24/7 operational coverage",
-  overviewDesc1: "We manage cloud infrastructures, database backups, and software systems. Our SRE teams monitor platform health, patch vulnerabilities, and resolve outages.",
-  overviewDesc2: "We set up automated resource alerts, run daily restore tests, and enforce secure access protocols to keep your business operating.",
+  title: "MSP UK",
+  badge: "Managed Service Provider",
+  subtitle: "Discover MSP UK services designed for secure and efficient business operations. Get managed service provider support and tailored solutions for your organisation.",
+  overviewHeading: "Round-the-clock peace of mind with our managed service provider UK team",
+  overviewDesc1: "As a leading MSP in the UK, we monitor your systems, manage security patches, fine-tune databases, and check backups day and night. Our response times are backed by guaranteed SLAs. Explore our dedicated support page and read our company overview.",
+  overviewDesc2: "",
   stats: [
     { value: "99.99%", label: "Platform Uptime SLA" },
     { value: "<15m", label: "Incident Triage Time" },
@@ -16,52 +16,102 @@ export const managedService: ServiceCategory = {
   ],
   capabilities: [
     {
-      slug: "managed-cloud",
-      title: "24/7 Managed Cloud Operations",
-      description: "Proactive cloud operations, auto-scaling management, and automated OS patching under strict SLAs.",
-      items: ["Continuous security patching schedules", "Automated system backup routines", "Cloud resource usage optimization"],
-      href: "/services/managed-services/managed-cloud"
+      slug: "infrastructure-management",
+      title: "Infrastructure Management Services UK",
+      description: "Comprehensive IT infrastructure management, server provisioning, network monitoring, and system optimization across UK enterprise environments.",
+      items: [
+        "Automated deployment templates for scalable infrastructure management",
+        "Continuous validation, pipeline scanning, and compliance checks",
+        "Native compatibility with Prometheus, Datadog, and PagerDuty setups"
+      ],
+      href: "/services/managed-services/infrastructure-management"
     },
     {
-      slug: "infrastructure-management",
-      title: "Hybrid & Multi-Cloud Infrastructure",
-      description: "Monitoring network firewalls, storage volumes, and server cluster operations 24/7.",
-      items: ["Server cluster load monitoring", "Firewall security rule assessments", "DNS server routing updates"],
-      href: "/services/managed-services/infrastructure-management"
+      slug: "managed-cloud",
+      title: "Managed Cloud Services UK",
+      description: "End-to-end cloud workload operations, auto-scaling configuration, cost governance, and security posture management on AWS, Azure, and GCP.",
+      items: [
+        "Continuous cloud validation, scanning, and compliance verification",
+        "Cloud security monitoring, configuration drift, and performance tuning",
+        "Server resource right-sizing, workload optimization, and cost allocation"
+      ],
+      href: "/services/managed-services/managed-cloud"
     },
     {
       slug: "managed-devops",
       title: "Managed DevOps & Kubernetes",
       description: "Cluster lifecycle management, automated node upgrades, CI/CD runner tuning, and production ingress control.",
-      items: ["Automated Kubernetes node upgrades", "EKS/GKE/AKS cluster health monitoring", "CI/CD runner performance tuning"],
+      items: [
+        "Automated Kubernetes node upgrades",
+        "EKS/GKE/AKS cluster health monitoring",
+        "CI/CD runner performance tuning"
+      ],
       href: "/services/managed-services/managed-devops"
     },
     {
       slug: "managed-security",
       title: "24/7 Managed Security Operations (SOC)",
       description: "Continuous threat hunting, real-time alert triage, vulnerability isolation, and rapid incident remediation.",
-      items: ["SIEM & SOC alert management", "Automated threat containment", "Zero-day vulnerability isolation"],
+      items: [
+        "SIEM & SOC alert management",
+        "Automated threat containment",
+        "Zero-day vulnerability isolation"
+      ],
       href: "/services/managed-services/managed-security"
+    },
+    {
+      slug: "application-support",
+      title: "Application Support & Maintenance (SLA)",
+      description: "Guaranteed SLA response times, proactive bug resolution, dependency patching, and continuous application performance tuning.",
+      items: [
+        "Guaranteed SLA defect resolution response",
+        "Real-time Sentry exception tracking & triage",
+        "Continuous application performance tuning"
+      ],
+      href: "/services/managed-services/application-support"
     },
     {
       slug: "database-administration",
       title: "Database Administration & Governance",
       description: "Ongoing database maintenance, automated snapshot verifications, index tuning, and HA failover drills.",
-      items: ["PostgreSQL & MySQL performance tuning", "Automated point-in-time restore drills", "Replication latency & storage audits"],
+      items: [
+        "PostgreSQL & MySQL performance tuning",
+        "Automated point-in-time restore drills",
+        "Replication latency & storage audits"
+      ],
       href: "/services/managed-services/database-administration"
     },
     {
       slug: "monitoring-incident-management",
       title: "Monitoring & Incident Management",
       description: "Full-stack observability, PagerDuty on-call escalation, synthetic health checks, and 15-minute triage SLAs.",
-      items: ["Prometheus & Datadog telemetry grids", "15-minute incident triage SLA guarantee", "Blameless post-mortem RCA reports"],
+      items: [
+        "Prometheus & Datadog telemetry grids",
+        "15-minute incident triage SLA guarantee",
+        "Blameless post-mortem RCA reports"
+      ],
       href: "/services/managed-services/monitoring-incident-management"
+    },
+    {
+      slug: "twenty-four-seven-support",
+      title: "24/7 Dedicated Support Services",
+      description: "Round-the-clock follow-the-sun engineer coverage, dedicated communication channels, and immediate response for critical outages.",
+      items: [
+        "24/7 follow-the-sun engineer coverage",
+        "Dedicated Slack/Teams war room channels",
+        "15-minute critical outage response SLA"
+      ],
+      href: "/services/managed-services/twenty-four-seven-support"
     },
     {
       slug: "managed-service-provider-msp-uk",
       title: "Managed Service Provider (MSP UK)",
       description: "UK-based premier Managed Service Provider (MSP) delivering 24/7 enterprise IT operations, Cyber Essentials Plus compliance, and SLA-backed multi-cloud management.",
-      items: ["Dedicated London & UK SRE technical account teams", "UK GDPR, Cyber Essentials Plus & ISO 27001 compliance", "24/7 proactive multi-cloud infrastructure & incident SLAs"],
+      items: [
+        "Dedicated London & UK SRE technical account teams",
+        "UK GDPR, Cyber Essentials Plus & ISO 27001 compliance",
+        "24/7 proactive multi-cloud infrastructure & incident SLAs"
+      ],
       href: "/services/managed-services/managed-service-provider-msp-uk"
     }
   ],
@@ -98,12 +148,44 @@ export const managedService: ServiceCategory = {
   ],
   faqs: [
     {
-      q: "What is your backup retention policy?",
-      a: "We configure hourly database snapshots and daily full backups, storing them across distinct physical regions for 7 years."
+      q: "What do Devopstrio's MSP services include?",
+      a: "Our MSP support covers round-the-clock incident response, ongoing system monitoring, cloud cost management, operating system patching, database tuning, and reliable backups."
     },
     {
-      q: "How do you handle critical platform alerts?",
-      a: "Alerts are routed to on-call engineers using PagerDuty, escalating to senior SRE leads automatically if unresolved within 10 minutes."
+      q: "What response time SLAs can we expect from your MSP provider?",
+      a: "As a dependable managed service provider, we respond fastest to critical P1 outages, follow closely behind for P2 system issues, and address non-critical requests within a set turnaround — all backed by clear, guaranteed SLAs."
+    },
+    {
+      q: "How does your MSP monitor our infrastructure?",
+      a: "Our MSP solutions include monitoring agents that keep an eye on CPU, memory, disk, and network performance, plus application health, with every metric feeding straight into our centralised alerting system."
+    },
+    {
+      q: "Do we keep control of our cloud account credentials?",
+      a: "Yes. As your MSP provider, we never take ownership of your infrastructure — everything stays in your own cloud accounts. Our engineers access it through secure, cross-account IAM roles, which you're free to revoke whenever you choose."
+    },
+    {
+      q: "How does your MSP handle backups and restore testing?",
+      a: "Our MSP services include daily snapshots, backups replicated to isolated accounts, and automated recovery tests that confirm your backups actually work when you need them."
+    },
+    {
+      q: "How does your MSP company handle patching and maintenance?",
+      a: "As an experienced managed service provider, we roll out security patches during scheduled maintenance windows, using blue-green deployments to keep service interruptions to a minimum."
+    },
+    {
+      q: "How does your MSP support database administration and tuning?",
+      a: "Our MSP support team handles index rebuilding, configures autovacuum thresholds, adjusts buffer sizes, and keeps an eye on replication lag, so your databases stay fast and responsive."
+    },
+    {
+      q: "Do you help with security incidents and containment?",
+      a: "Yes. As your MSP company, our on-call engineers follow proven containment playbooks — isolating compromised systems, rotating credentials, and supporting forensic investigation until the threat is fully resolved."
+    },
+    {
+      q: "What kind of reporting does your MSP provide?",
+      a: "As part of our MSP services, we send monthly reports covering system uptime, incident history, resource usage, and opportunities to cut costs further."
+    },
+    {
+      q: "How does your MSP manage escalations to our internal team?",
+      a: "Our managed staffing services include clear escalation paths, reaching your designated leads by PagerDuty, Slack, or phone — but only when an incident genuinely needs internal input."
     }
   ],
   ctaTitle: "Secure your platform",
@@ -113,68 +195,28 @@ export const managedService: ServiceCategory = {
 };
 
 export const managedCapabilities: Record<string, CapabilityDetail> = {
-  "managed-cloud": {
-    slug: "managed-cloud",
-    title: "Managed Cloud Services",
-    heroSubtitle: "Manage cloud environments, patch operating systems, and audit resource allocations 24/7.",
-    challenge: "Cloud environments suffer from unpatched operating system vulnerabilities, database snapshot gaps, and rising resource bills.",
-    solution: "We configure automated patch pipelines, run daily backup restore checks, and tune cloud server sizes.",
-    features: [
-      "Automated system patch pipelines and validation tests",
-      "Encrypted cloud backups with daily restore validations",
-      "Server resource size tuning and cost allocations"
-    ],
-    benefits: [
-      "Protection from unpatched security vulnerabilities",
-      "Guaranteed restore success during system outages",
-      "Lower cloud infrastructure bills through size adjustments"
-    ],
-    deliveryApproach: [
-      "Access Setup: Granting secure console permissions.",
-      "Backup Audit: Setting up snapshots and retention times.",
-      "Patch Run: Deploying automated software updates."
-    ],
-    techStack: [
-      { name: "Ansible", desc: "Declarative system patch engine." },
-      { name: "AWS Backup", desc: "Centralized cloud backup controller." },
-      { name: "AWS Systems Manager", desc: "OS patch manager tool." }
-    ],
-    caseStudy: {
-      title: "Managing cloud platform updates for SaaS database host.",
-      desc: "We automated security patching across 150 Linux servers, achieving 100% security coverage with zero service downtime.",
-      metrics: [
-        { value: "150", label: "Linux servers patched automatically" },
-        { value: "100%", label: "Security compliance score" },
-        { value: "0", label: "Service interruptions during patching" }
-      ]
-    },
-    faqs: [
-      {
-        q: "Do you patch database engines?",
-        a: "Yes. We execute database minor version updates during scheduled off-peak maintenance windows."
-      },
-      {
-        q: "How do you secure server access permissions?",
-        a: "We block SSH ports, using AWS Systems Manager Session Manager for console access with multi-factor login checks."
-      }
-    ]
-  },
   "infrastructure-management": {
     slug: "infrastructure-management",
-    title: "Infrastructure Management",
-    heroSubtitle: "24/7 hybrid and multi-cloud infrastructure maintenance, hypervisor tuning, and network routing.",
-    challenge: "Hybrid enterprise infrastructure suffers from hardware degradation, silent network partition failures, and unmonitored storage saturation.",
-    solution: "We provide end-to-end infrastructure oversight covering bare-metal, virtualized, and multi-cloud server clusters with 24/7 telemetry.",
+    title: "Infrastructure Management Services UK",
+    heroSubtitle: "Improve performance with infrastructure management services UK. Get secure infrastructure management, monitoring and reliable technical support.",
+    challengeLabel: "Key Challenges",
+    challenge: "Managing production-grade IT infrastructure presents recurring performance issues, complex system integration challenges, and deployment bottlenecks that slow down engineering teams and business operations.",
+    bottleneckLabel: "IT Infrastructure Bottleneck",
+    solutionLabel: "Our Infrastructure Management Approach",
+    solution: "We deliver infrastructure management services UK with highly available, automated, and secure configurations. Our infrastructure management solutions UK integrate with build workflows, configure validation checks, and establish continuous monitoring dashboards.",
+    deliverablesLabel: "Infrastructure Management Service Deliverables",
     features: [
-      "Continuous server cluster health and hypervisor metrics",
-      "Automated firewall rule audits and routing optimization",
-      "Storage volume auto-expansion and IOPS load balancing"
+      "Automated deployment templates for scalable infrastructure management solutions",
+      "Continuous validation, pipeline scanning, and compliance verification checks",
+      "Native compatibility with Prometheus / Datadog and PagerDuty / Opsgenie setups"
     ],
+    outcomesLabel: "Infrastructure Management Service Benefits",
     benefits: [
-      "Zero unmonitored infrastructure downtime incidents",
-      "Predictable hardware lifecycle and capacity planning",
-      "Unified operational visibility across on-premise and cloud"
+      "Accelerated release frequency and up to 45% reduction in cycle times",
+      "Complete infrastructure observability with real-time incident warning alerts",
+      "Fully-audited infrastructure aligned with SOC-2 and regulatory frameworks"
     ],
+    outcomeBottomLabel: "Infrastructure Management Business Outcome",
     deliveryApproach: [
       "Topology Discovery: Mapping all physical and virtual nodes.",
       "Agent Rollout: Deploying telemetry collectors across clusters.",
@@ -196,12 +238,128 @@ export const managedCapabilities: Record<string, CapabilityDetail> = {
     },
     faqs: [
       {
-        q: "Do you manage on-premise data centers alongside public cloud?",
-        a: "Yes. We manage hybrid topologies connecting private VMware/KVM hypervisors to AWS, Azure, and Google Cloud with dedicated VPN and DirectConnect routing."
+        q: "What Sets Devopstrio Apart in Infrastructure Management Services UK?",
+        a: "We bring together smart automation, skilled engineers, and ready-made Infrastructure as Code (IaC) tools to deliver managed infrastructure services quickly, keeping your data secure and systems fully visible."
       },
       {
-        q: "What SLAs are provided for infrastructure outages?",
-        a: "We offer P1 critical response in under 15 minutes with 24/7 continuous engineer escalation until full recovery."
+        q: "How Do We Track Success in Infrastructure Management Services UK?",
+        a: "We monitor essential metrics like deployment speed, system latency, SLA adherence, compute performance, and security scan results, so every IT infrastructure management UK engagement delivers clear, measurable value."
+      },
+      {
+        q: "What Security Measures Protect Our Infrastructure Management Services UK Setups?",
+        a: "We apply strict least-privilege access, automate credential rotation, deploy network firewalls, and run ongoing vulnerability checks across every layer, keeping your managed infrastructure services UK setup secure and resilient."
+      },
+      {
+        q: "Will Your Infrastructure Management Services UK Work With Our Legacy Systems?",
+        a: "Absolutely. Our network infrastructure management UK team builds secure API connectors, data sync pipelines, and hybrid bridges, such as site-to-site VPNs or Direct Connect, linking new tools to your existing setup."
+      },
+      {
+        q: "How Do We Manage Scaling and Traffic Surges for Your Systems?",
+        a: "Our infrastructure management company UK sets up horizontal pod autoscaling (HPA) and load balancing rules that automatically adjust resources based on CPU, memory, or request demand."
+      },
+      {
+        q: "How Long Does It Take to Launch Our Services?",
+        a: "Most projects go live within 4 to 8 weeks, depending on system complexity, integration needs, and how mature your existing codebase is."
+      },
+      {
+        q: "Will Your Team Train and Support Our Staff Afterward?",
+        a: "Yes. We provide detailed architecture blueprints, configuration runbooks, and hands-on workshops with your engineers, ensuring a smooth handover and confident team."
+      },
+      {
+        q: "How Do We Monitor Speed and Performance Across Your Systems?",
+        a: "We set up OpenTelemetry instrumentation, sending traces, logs, and metrics to centralised dashboards like Grafana or Datadog for real-time visibility."
+      },
+      {
+        q: "Which Compliance Standards Support Our Infrastructure Management Services UK?",
+        a: "Our infrastructure setups align with SOC-2, ISO 27001, HIPAA, and GDPR standards, using strong encryption and audit logging protocols."
+      },
+      {
+        q: "What Cost Savings Come With Infrastructure Management Services UK?",
+        a: "Clients typically see a 30-50% drop in manual operations overhead, better resource efficiency, and reduced hosting costs through smart auto-scaling and caching, with our managed infrastructure services UK."
+      }
+    ]
+  },
+  "managed-cloud": {
+    slug: "managed-cloud",
+    title: "Managed Cloud Services UK",
+    heroSubtitle: "Scale securely with managed cloud services UK. Get reliable cloud management, monitoring and expert support for your business.",
+    challengeLabel: "Key Cloud Management Challenges",
+    challenge: "Managing cloud environments in modern enterprises can create deployment bottlenecks, configuration drift, security risks, and scalability challenges that affect business agility and operational efficiency.",
+    bottleneckLabel: "Cloud Management Bottleneck",
+    solutionLabel: "Our Managed Cloud Approach",
+    solution: "We deliver Managed Cloud Services UK with resilient, secure, and automated cloud environments. Our Managed Cloud Solutions UK integrate with build pipelines, enforce validation parameters, and establish real-time monitoring alerts.",
+    deliverablesLabel: "Managed Cloud Service Deliverables",
+    features: [
+      "Continuous validation, pipeline scanning, and compliance verification checks",
+      "Cloud security monitoring, configuration management, and performance optimisation",
+      "Server resource sizing, workload optimisation, and cost allocation"
+    ],
+    outcomesLabel: "Managed Cloud Service Benefits",
+    benefits: [
+      "Protection from security vulnerabilities through continuous cloud monitoring",
+      "Reliable recovery support during unexpected system outages",
+      "Lower cloud infrastructure costs through resource optimisation"
+    ],
+    outcomeBottomLabel: "Managed Cloud Business Outcome",
+    deliveryApproach: [
+      "Access Setup: Granting secure console permissions.",
+      "Backup Audit: Setting up snapshots and retention times.",
+      "Patch Run: Deploying automated software updates."
+    ],
+    techStack: [
+      { name: "Ansible", desc: "Declarative system patch engine." },
+      { name: "AWS Backup", desc: "Centralized cloud backup controller." },
+      { name: "AWS Systems Manager", desc: "OS patch manager tool." }
+    ],
+    caseStudy: {
+      title: "Managing cloud platform updates for SaaS database host.",
+      desc: "We automated security patching across 150 Linux servers, achieving 100% security coverage with zero service downtime.",
+      metrics: [
+        { value: "150", label: "Linux servers patched automatically" },
+        { value: "100%", label: "Security compliance score" },
+        { value: "0", label: "Service interruptions during patching" }
+      ]
+    },
+    faqs: [
+      {
+        q: "What makes our managed cloud services different?",
+        a: "We bring together hands-on automation, experienced engineers, and ready-made infrastructure code to deliver managed cloud hosting UK businesses can rely on, quickly and without compromising on data security or day-to-day visibility."
+      },
+      {
+        q: "How do you track results from your managed cloud services UK?",
+        a: "We keep an eye on the numbers that matter: how fast we get you live, how quickly systems respond, whether we're hitting agreed SLAs, how efficiently things run, and how well security checks hold up."
+      },
+      {
+        q: "How do you keep your managed cloud services UK secure?",
+        a: "We build in least-privilege access from the start, rotate credentials automatically, put firewalls around your network, and run ongoing vulnerability scans across every layer of the system."
+      },
+      {
+        q: "Will your managed cloud services UK work with our older systems?",
+        a: "Yes. We set up secure API connections, sync your data pipelines, and build hybrid network links (like site-to-site VPNs or Direct Connect) so your new setup works smoothly alongside your existing infrastructure."
+      },
+      {
+        q: "How do your managed cloud services UK handle busy traffic?",
+        a: "We set up automatic pod scaling and smart load balancing, so resources scale up or down on their own depending on CPU use, memory, or how many requests come in."
+      },
+      {
+        q: "How long does a managed cloud services UK rollout take?",
+        a: "Most rollouts take 4 to 8 weeks, depending on how complex your systems are, what needs to connect, and how well your existing codebase is set up."
+      },
+      {
+        q: "Do you train our team and hand everything over properly?",
+        a: "Yes. Our managed cloud services UK team hands over full architecture blueprints, setup guides, and runs hands-on sessions with your engineers so the switch-over goes smoothly."
+      },
+      {
+        q: "How do you keep tabs on your managed cloud services UK?",
+        a: "We set up OpenTelemetry tracking and send traces, logs, and metrics to central dashboards in Grafana or Datadog, so you can see exactly what's happening in real time."
+      },
+      {
+        q: "Which Compliance Standards Do Our UK Managed Cloud Services Support?",
+        a: "Our managed cloud hosting aligns with SOC-2, ISO 27001, HIPAA, and GDPR, backed by encryption and audit logging."
+      },
+      {
+        q: "How Much Can Managed Cloud Services UK Save Your Business?",
+        a: "Businesses using our managed cloud hosting UK typically cut operational overhead by 30-50%, gain better resource efficiency, and reduce hosting costs through smart auto-scaling and caching."
       }
     ]
   },

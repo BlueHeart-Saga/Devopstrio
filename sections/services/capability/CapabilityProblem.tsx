@@ -8,6 +8,7 @@ interface CapabilityProblemProps {
   serviceSlug: string;
   capabilityTitle: string;
   overrideTitle?: string;
+  overrideFullTitle?: React.ReactNode;
   overrideSubtitle?: string;
   overridePoints?: string[];
 }
@@ -119,6 +120,7 @@ export function CapabilityProblem({
   serviceSlug, 
   capabilityTitle,
   overrideTitle,
+  overrideFullTitle,
   overrideSubtitle,
   overridePoints
 }: CapabilityProblemProps) {
@@ -136,10 +138,10 @@ export function CapabilityProblem({
       <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10 flex flex-col items-center">
         
         {/* 1. Centered Heading Block */}
-        <div className="max-w-2xl text-center mb-10">
+        <div className="max-w-3xl text-center mb-10">
           <Reveal delay={0.05}>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-white font-sans text-center">
-              Solving <span className="text-rose-500 font-semibold">{displayTitle}</span>
+              {overrideFullTitle || <>Solving <span className="text-rose-500 font-semibold">{displayTitle}</span></>}
             </h2>
           </Reveal>
         </div>

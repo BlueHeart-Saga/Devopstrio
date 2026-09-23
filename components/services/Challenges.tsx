@@ -71,10 +71,22 @@ export function Challenges({
         <Reveal>
           <div className="mb-6 max-w-4xl md:mb-8">
             <h2 className="text-3xl font-semibold leading-[1.08] tracking-tight text-white md:text-4xl lg:text-5xl">
-              Overcoming critical bottlenecks to{" "}
-              <span className="text-rose-500">
-                enable growth
-              </span>
+              {serviceSlug === "ai-data-innovation" ? (
+                <>
+                  Removing Roadblocks That Hold Your{" "}
+                  <span className="text-rose-500">Business Back</span>
+                </>
+              ) : serviceSlug === "managed-services" ? (
+                <>
+                  Building stronger IT operations for{" "}
+                  <span className="text-rose-500">business growth</span>
+                </>
+              ) : (
+                <>
+                  Overcoming critical bottlenecks to{" "}
+                  <span className="text-rose-500">enable growth</span>
+                </>
+              )}
             </h2>
           </div>
         </Reveal>
@@ -177,7 +189,7 @@ export function Challenges({
                     </div>
 
                     <h3 className="mb-4 text-2xl font-semibold uppercase tracking-wider text-zinc-400">
-                      Core Challenge
+                      {currentDetail.challengeLabel || "Core Challenge"}
                     </h3>
 
                     <p className="text-base font-normal leading-relaxed text-zinc-200 md:text-lg md:leading-relaxed lg:text-[19px]">
@@ -189,7 +201,7 @@ export function Challenges({
                     <div className="flex items-center gap-3">
                       <span className="h-2 w-2 rounded-full bg-red-500" />
                       <span className="text-xs font-bold uppercase tracking-wider text-zinc-400">
-                        Business Bottleneck
+                        {currentDetail.bottleneckLabel || "Business Bottleneck"}
                       </span>
                     </div>
                   </div>
@@ -209,7 +221,7 @@ export function Challenges({
                     </div>
 
                     <h3 className="mb-4 text-2xl font-semibold uppercase tracking-wider text-rose-400">
-                      Devopstrio Solution
+                      {currentDetail.solutionLabel || "Devopstrio Solution"}
                     </h3>
 
                     <p className="text-base font-normal leading-relaxed text-white md:text-lg md:leading-relaxed lg:text-[19px]">
@@ -219,7 +231,7 @@ export function Challenges({
                     {currentDetail.features && currentDetail.features.length > 0 && (
                       <div className="mt-8 border-t border-zinc-900 pt-6">
                         <h4 className="mb-4 text-xs font-bold uppercase tracking-wider text-zinc-400">
-                          Solution Deliverables
+                          {currentDetail.deliverablesLabel || "Solution Deliverables"}
                         </h4>
                         <ul className="space-y-3.5">
                           {currentDetail.features.map((feature, fIdx) => (
@@ -235,7 +247,7 @@ export function Challenges({
                     {currentDetail.benefits && currentDetail.benefits.length > 0 && (
                       <div className="mt-8 border-t border-zinc-900 pt-6">
                         <h4 className="mb-4 text-xs font-bold uppercase tracking-wider text-rose-400">
-                          Resolved Outcomes
+                          {currentDetail.outcomesLabel || "Resolved Outcomes"}
                         </h4>
                         <ul className="space-y-3.5">
                           {currentDetail.benefits.map((benefit, bIdx) => (
@@ -253,7 +265,7 @@ export function Challenges({
                     <div className="flex items-center gap-3">
                       <span className="h-2 w-2 rounded-full bg-rose-500" />
                       <span className="text-xs font-bold uppercase tracking-wider text-rose-400">
-                        Resolved Outcome
+                        {currentDetail.outcomeBottomLabel || "Resolved Outcome"}
                       </span>
                     </div>
                   </div>

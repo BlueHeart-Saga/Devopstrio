@@ -45,6 +45,25 @@ export function ContactForm() {
     if (!form.name || !form.email) return;
     setSubmitting(true);
 
+    // Identify user in Brevo Tracker (Safe & Non-blocking)
+    try {
+      if (typeof window !== "undefined" && (window as any).Brevo) {
+        (window as any).Brevo.push([
+          "identify",
+          {
+            email: form.email.trim(),
+            attributes: {
+              FIRSTNAME: form.name.trim().split(" ")[0] || form.name.trim(),
+              LASTNAME: form.name.trim().split(" ").slice(1).join(" ") || "",
+              PHONE: form.phone ? form.phone.trim() : "",
+            }
+          }
+        ]);
+      }
+    } catch (err) {
+      console.warn("Brevo identification error:", err);
+    }
+
     try {
       const response = await fetch('/api/contact', {
         method: 'POST',

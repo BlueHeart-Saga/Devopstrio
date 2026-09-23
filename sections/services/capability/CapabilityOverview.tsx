@@ -8,10 +8,10 @@ interface CapabilityOverviewProps {
   title: string;
   subtitle: string;
   image: string;
-  overrideHeading?: string;
+  overrideHeading?: React.ReactNode;
   overrideParagraph1?: React.ReactNode;
   overrideParagraph2?: React.ReactNode;
-  overrideDeepDiveHeading?: string;
+  overrideDeepDiveHeading?: React.ReactNode;
   overrideDeepDiveParagraph1?: React.ReactNode;
   overrideDeepDiveParagraph2?: React.ReactNode;
 }

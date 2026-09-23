@@ -6,7 +6,7 @@ import { Shield, Cpu, TrendingUp, Zap, Activity } from "lucide-react";
 
 interface CapabilityBenefitsProps {
   benefits: string[];
-  overrideTitle?: string;
+  overrideTitle?: React.ReactNode;
   overrideSubtitle?: string;
 }
 

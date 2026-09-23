@@ -197,22 +197,60 @@ export function generateContactEmailHtml(data: { name: string; email: string; ph
 }
 
 // 2. Careers Contact / Job Application Template
-export function generateCareerEmailHtml(data: { name: string; email: string; jobTitle: string; resume?: string; note?: string }) {
+export function generateCareerEmailHtml(data: {
+  name: string;
+  email: string;
+  phone?: string;
+  jobTitle: string;
+  location?: string;
+  type?: string;
+  experience?: string;
+  resume?: string;
+  note?: string;
+  portfolio?: string;
+}) {
   const tableRows: Array<{ label: string; value: string; isLink?: boolean; linkUrl?: string }> = [
     { label: 'Position Applied', value: data.jobTitle },
-    { label: 'Applicant Name', value: data.name },
-    { label: 'Email Address', value: data.email, isLink: true, linkUrl: `mailto:${data.email}` },
   ];
 
+  if (data.location && data.location.trim()) {
+    tableRows.push({ label: 'Job Location', value: data.location });
+  }
+  if (data.type && data.type.trim()) {
+    tableRows.push({ label: 'Employment Type', value: data.type });
+  }
+  if (data.experience && data.experience.trim()) {
+    tableRows.push({ label: 'Experience Level', value: data.experience });
+  }
+
+  tableRows.push(
+    { label: 'Applicant Name', value: data.name },
+    { label: 'Email Address', value: data.email, isLink: true, linkUrl: `mailto:${data.email}` }
+  );
+
+  if (data.phone && data.phone.trim()) {
+    tableRows.push({ label: 'Phone Number', value: data.phone, isLink: true, linkUrl: `tel:${data.phone}` });
+  }
+
   if (data.resume && data.resume.trim()) {
-    tableRows.push({ label: 'Resume / Portfolio', value: 'View Link', isLink: true, linkUrl: data.resume });
+    const isUrl = data.resume.startsWith('http') || data.resume.startsWith('/');
+    tableRows.push({
+      label: 'Resume / CV',
+      value: isUrl ? 'View / Download CV' : data.resume,
+      isLink: isUrl,
+      linkUrl: data.resume.startsWith('http') ? data.resume : `${SITE_URL}${data.resume}`
+    });
+  }
+
+  if (data.portfolio && data.portfolio.trim()) {
+    tableRows.push({ label: 'Portfolio / LinkedIn', value: 'View Profile', isLink: true, linkUrl: data.portfolio });
   }
 
   return renderBaseTemplate({
     title: 'New Job Application',
     badgeText: 'Careers Portal',
     tableRows,
-    messageTitle: 'Cover Note',
+    messageTitle: 'Cover Note & Notice Period',
     messageContent: data.note || 'No cover note attached.',
   });
 }

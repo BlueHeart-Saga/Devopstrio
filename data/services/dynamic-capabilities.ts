@@ -9,12 +9,12 @@ export const capabilityRegistry: Record<string, Record<string, RegistryItem>> = 
   "ai-data-innovation": {
     "generative-ai-solutions": { title: "Generative AI Solutions", desc: "Enterprise LLM applications, custom fine-tuning, and semantic caching layers." },
     "ai-agents-automation": { title: "AI Agents & Automation", desc: "Stateful autonomous multi-agent workflows executing complex processes." },
-    "machine-learning-engineering": { title: "Machine Learning Engineering", desc: "Training, validating, and deploying deep learning models at scale." },
+    "machine-learning-engineering": { title: "Machine Learning Engineering Services UK", desc: "Training, validating, and deploying deep learning models at scale." },
     "data-engineering": { title: "Data Engineering", desc: "High-throughput data pipelines, Kafka streaming, and unified lakehouses." },
     "business-intelligence-analytics": { title: "Business Intelligence & Analytics", desc: "Consolidated enterprise dashboards, telemetry, and reporting engines." },
     "predictive-analytics": { title: "Predictive Analytics", desc: "Time-series forecasting, customer churn and predictive models." },
     "data-governance": { title: "Data Governance", desc: "Data compliance audits, cataloging, lineage tracking, and security controls." },
-    "mlops-ai-operations": { title: "MLOps & AI Operations", desc: "Continuous training loops, model registries, and drift detection." }
+    "mlops-ai-operations": { title: "MLOps Services UK", desc: "Continuous training loops, model registries, and drift detection." }
   },
   "cloud-services": {
     "cloud-strategy-consulting": { title: "Cloud Strategy & Consulting", desc: "Designing tailored cloud architecture blueprints, vendor evaluation, and cloud readiness roadmaps." },

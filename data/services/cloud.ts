@@ -19,31 +19,64 @@ export const cloudService: ServiceCategory = {
       slug: "cloud-strategy-consulting",
       title: "Cloud Strategy & Consulting",
       description: "Designing tailored cloud architecture blueprints, vendor evaluation, and cloud readiness roadmaps.",
-      items: ["Multi-cloud feasibility and ROI analysis", "Technical vendor selection matrices", "Cloud architecture audits focusing on reliability"]
+      items: ["Multi-cloud feasibility and ROI analysis", "Technical vendor selection matrices", "Cloud architecture audits focusing on reliability"],
+      href: "/services/cloud-services/cloud-strategy-consulting"
     },
     {
       slug: "cloud-migration",
       title: "Cloud Migration",
       description: "Re-hosting, re-platforming, and refactoring workloads to public and hybrid clouds with zero downtime.",
-      items: ["Live VM migrations using AWS MGN", "Database replication with active sync using Azure DMS", "Automated cutover playbooks minimizing disruptions"]
+      items: ["Live VM migrations using AWS MGN", "Database replication with active sync using Azure DMS", "Automated cutover playbooks minimizing disruptions"],
+      href: "/services/cloud-services/cloud-migration"
     },
     {
       slug: "cloud-architecture",
       title: "Cloud Architecture",
       description: "Design and blueprint enterprise-grade, highly available cloud environments.",
-      items: ["High-availability disaster recovery designs", "Scalable microservices topologies", "Zero-trust network blueprints"]
+      items: ["High-availability disaster recovery designs", "Scalable microservices topologies", "Zero-trust network blueprints"],
+      href: "/services/cloud-services/cloud-architecture"
+    },
+    {
+      slug: "azure-services",
+      title: "Azure Services",
+      description: "Enterprise Azure landing zones, AKS Kubernetes clusters, and Microsoft cloud security governance.",
+      items: ["Landing zones with automated security policies", "Azure Kubernetes (AKS) high-availability grids", "Azure Monitor & centralized Log Analytics"],
+      href: "/services/cloud-services/azure-services"
     },
     {
       slug: "aws-services",
       title: "AWS Services",
       description: "Architecting and managing scalable, secure infrastructures on Amazon Web Services.",
-      items: ["Declarative deployments using AWS CloudFormation and Terraform", "Containerized microservices on AWS EKS and ECS", "Serverless backends with AWS Lambda and DynamoDB"]
+      items: ["Declarative deployments using AWS CloudFormation and Terraform", "Containerized microservices on AWS EKS and ECS", "Serverless backends with AWS Lambda and DynamoDB"],
+      href: "/services/cloud-services/aws-services"
+    },
+    {
+      slug: "google-cloud-services",
+      title: "Google Cloud Services",
+      description: "Scalable GKE autopilot clusters, BigQuery data lakehouse pipelines, and Vertex AI integrations on GCP.",
+      items: ["GKE Autopilot & Cloud Run microservices", "BigQuery multi-region data analytics platforms", "Vertex AI & Cloud Spanner scalable architectures"],
+      href: "/services/cloud-services/google-cloud-services"
+    },
+    {
+      slug: "cloud-security",
+      title: "Cloud Security",
+      description: "Continuous Cloud Security Posture Management (CSPM), automated compliance checks, and Zero-Trust IAM controls.",
+      items: ["Automated Prisma Cloud / Wiz vulnerability scans", "Zero-Trust IAM & least-privilege policies", "Micro-segmentation & VPC firewall boundaries"],
+      href: "/services/cloud-services/cloud-security"
+    },
+    {
+      slug: "cloud-managed-services",
+      title: "Cloud Managed Services",
+      description: "24/7 outsourced multi-cloud management, automated operating system patching, and continuous cloud backup validation.",
+      items: ["24/7 proactive multi-cloud SRE coverage", "Automated patch management & vulnerability mitigation", "Multi-region backup & disaster recovery drills"],
+      href: "/services/cloud-services/cloud-managed-services"
     },
     {
       slug: "finops-cost-optimization",
       title: "FinOps & Cost Optimization",
       description: "Analyzing cloud spend, managing commitments, and pruning underutilized resources.",
-      items: ["Real-time cloud spend dashboard integrations", "Savings Plan optimization algorithms", "Auto-scaling rules matching compute to live traffic metrics"]
+      items: ["Real-time cloud spend dashboard integrations", "Savings Plan optimization algorithms", "Auto-scaling rules matching compute to live traffic metrics"],
+      href: "/services/cloud-services/finops-cost-optimization"
     }
   ],
   outcomes: [
