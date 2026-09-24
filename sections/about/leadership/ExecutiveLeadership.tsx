@@ -253,7 +253,7 @@ export const ExecutiveLeadership = () => {
                 Leadership &amp; Talent
               </span> */}
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight leading-tight text-white mb-4">
-                Leaders Who{" "}
+                Industry Expertise Who{" "}
                 <span className="relative inline-block">
                   {/* Top-to-bottom straight arrow spanning across section boundary (Enlarged) */}
                   <div className="absolute -top-16 sm:-top-20 md:-top-24 lg:-top-28 left-1/2 -translate-x-1/2 pointer-events-none select-none z-30">

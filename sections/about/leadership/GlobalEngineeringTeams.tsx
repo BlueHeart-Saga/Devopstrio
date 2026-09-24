@@ -120,7 +120,7 @@ export const GlobalEngineeringTeams = () => {
 
         {/* Top Feel-Good Leadership Statement */}
         <div className="text-center max-w-4xl mx-auto mb-2 sm:mb-4 relative z-10">
-          <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl font-semibold tracking-tight text-white leading-tight font-sans">
+          <h3 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-white leading-tight font-sans">
             We are shaping the future of engineering,{" "}
             <span className="text-rose-500 font-semibold">empowering</span>{" "}
             <span className="text-zinc-400 font-normal">

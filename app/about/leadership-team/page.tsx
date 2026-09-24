@@ -6,6 +6,9 @@ import { SectionNavbar } from "@/components/ui/SectionNavbar";
 
 import { LeadershipHero } from "@/sections/about/leadership/LeadershipHero";
 
+import { DirectorsSection } from "@/sections/about/leadership/DirectorsSection";
+import { LeadershipTeamGrid } from "@/sections/about/leadership/LeadershipTeamGrid";
+
 // Dynamic Imports for Heavy Below-The-Fold Sections to Reduce Initial JS Payload
 const LeadershipPrinciples = dynamic(() => import("@/sections/about/leadership/LeadershipPrinciples").then((mod) => mod.LeadershipPrinciples));
 const Leadership3Pillars = dynamic(() => import("@/sections/about/leadership/Leadership3Pillars").then((mod) => mod.Leadership3Pillars));
@@ -14,8 +17,7 @@ const PrincipalArchitects = dynamic(() => import("@/sections/about/leadership/Pr
 const GlobalEngineeringTeams = dynamic(() => import("@/sections/about/leadership/GlobalEngineeringTeams").then((mod) => mod.GlobalEngineeringTeams));
 const LeadershipDeliver = dynamic(() => import("@/sections/about/leadership/LeadershipDeliver").then((mod) => mod.LeadershipDeliver));
 const LeadershipImpactDeliver = dynamic(() => import("@/sections/about/leadership/LeadershipImpactDeliver").then((mod) => mod.LeadershipImpactDeliver));
-const GlobalPresence = dynamic(() => import("@/sections/about/leadership/GlobalPresence").then((mod) => mod.GlobalPresence));
-const AwardsRecognitionLeadership = dynamic(() => import("@/sections/about/leadership/AwardsRecognitionLeadership").then((mod) => mod.AwardsRecognitionLeadership));
+const LeadershipIndustryInsights = dynamic(() => import("@/sections/about/leadership/LeadershipIndustryInsights").then((mod) => mod.LeadershipIndustryInsights));
 const LeadershipCareersCTA = dynamic(() => import("@/sections/about/leadership/LeadershipCareersCTA").then((mod) => mod.LeadershipCareersCTA));
 
 export const metadata: Metadata = {
@@ -94,7 +96,13 @@ export default function LeadershipTeamPage() {
       {/* 3. 3 Strategic Pillars */}
       <Leadership3Pillars />
 
-      {/* 4. PILLAR 01: INSPIRE — Executive Leadership & Senior Team */}
+      {/* 4. Directors Section (Executive Board) */}
+      <DirectorsSection />
+
+      {/* 5. Leadership Team Grid (12 Key Enterprise Leaders) */}
+      <LeadershipTeamGrid />
+
+      {/* 6. PILLAR 01: INSPIRE — Seniors Who Inspire & Senior Team */}
       <ExecutiveLeadership />
 
       {/* Principal Architects & Specialists */}
@@ -113,8 +121,8 @@ export default function LeadershipTeamPage() {
       <GlobalPresence />
       */}
 
-      {/* 7. Awards & Certifications */}
-      <AwardsRecognitionLeadership />
+      {/* 7. Industry Insights */}
+      <LeadershipIndustryInsights />
 
       {/* 8. Leadership FAQs */}
       <FAQ faqs={leadershipFaqs} title="Leadership & Team" highlight="FAQs" />
