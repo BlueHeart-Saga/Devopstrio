@@ -69,12 +69,107 @@ export default function CapabilityPage({ params }: PageProps) {
     notFound();
   }
 
+  const isCloudMigration = capability === "cloud-migration";
   const isCloudArch = capability === "cloud-architecture";
   const isAws = capability === "aws-services";
   const isAzure = capability === "azure-services";
   const isGcp = capability === "google-cloud-services";
+  const isCloudSec = capability === "cloud-security";
 
-  const overrides = isCloudArch ? {
+  const overrides = isCloudMigration ? {
+    overviewHeading: "Modernising Operations with Cloud Migration Services UK",
+    overviewParagraph1: "Cloud migration services in UK help organisations move applications, data, and workloads from existing infrastructure into suitable cloud environments.",
+    overviewParagraph2: (
+      <span>
+        Our cloud migration solutions for UK businesses support smoother transitions, better resource management, and improved continuity across public and hybrid cloud platforms. Our cloud migration specialists UK also connect migration with efficient{" "}
+        <Link href="/services/devops-automation" className="text-rose-500 hover:underline font-bold">
+          DevOps automation pipelines
+        </Link>.
+      </span>
+    ),
+    
+    deepDiveHeading: "Modernising Operations with Cloud Migration Services UK",
+    deepDiveParagraph1: (
+      <span>
+        Cloud migration services in UK help organisations move applications, data, and workloads from existing infrastructure into suitable cloud environments. Our cloud migration solutions for UK businesses support smoother transitions, better resource management, and improved continuity across public and hybrid cloud platforms.
+      </span>
+    ),
+    deepDiveParagraph2: (
+      <span>
+        Our cloud migration specialists UK also connect migration with efficient{" "}
+        <Link href="/services/devops-automation" className="text-rose-500 hover:underline font-bold">
+          DevOps automation pipelines
+        </Link>{" "}
+        designed to optimize cloud efficiency.
+      </span>
+    ),
+    
+    problemTitle: "Addressing Rising Cloud Costs & Downtime",
+    problemSubtitle: "How unoptimized cloud migration and legacy dependencies increase operational risk.",
+    problemPoints: [
+      "Unused cloud resources increasing unnecessary spending and unexpected billing costs.",
+      "Limited redundancy across environments creating greater exposure to service interruptions.",
+      "Manual workload management making traffic spikes harder to handle efficiently."
+    ],
+    
+    outcomesTitle: "Business Outcomes from Cloud Migration",
+    outcomesDesc: "Our UK cloud migration services provide structured planning, workload assessment, and controlled transitions across modern cloud environments.",
+    
+    useCasesTitle: "Cloud Migration Services UK Across Core Industries",
+    useCasesSubtitle: "Discover how UK businesses migrate critical workloads to public and hybrid clouds with minimal disruption and maximum operational resilience.",
+    
+    architectureTitle: "Modern Cloud Migration Architecture & Framework",
+    architectureSubtitle: "Our cloud migration solutions in UK combine structured discovery, workload validation, and automated cutover playbooks to deliver seamless transitions.",
+    
+    techStackTitle: "Cloud Migration Technologies",
+    techStackSubtitle: "We integrate enterprise-grade migration utilities, active replication streams, and hybrid cloud bridges to support safe data transitions.",
+    
+    benefitsTitle: "Business Outcomes from Cloud Migration",
+    benefitsSubtitle: "Smoother transitions, greater visibility across migrated workloads, and faster recovery when migration issues arise."
+  } : isCloudSec ? {
+    overviewHeading: "Transforming operations with Cloud Security Services UK",
+    overviewParagraph1: "Cloud security services UK provide structured protection for cloud infrastructure, applications, data, and user access across highly-available cloud environments.",
+    overviewParagraph2: (
+      <span>
+        They enable organisations to secure sensitive workloads, manage access controls, identify vulnerabilities, and maintain stronger security standards while operating across modern cloud architectures.
+      </span>
+    ),
+    
+    deepDiveHeading: "Transforming operations with Cloud Security Services UK",
+    deepDiveParagraph1: (
+      <span>
+        Cloud security services UK provide structured protection for cloud infrastructure, applications, data, and user access across highly-available cloud environments.
+      </span>
+    ),
+    deepDiveParagraph2: (
+      <span>
+        They enable organisations to secure sensitive workloads, manage access controls, identify vulnerabilities, and maintain stronger security standards while operating across modern cloud architectures.
+      </span>
+    ),
+    
+    problemTitle: "Addressing Cloud Security & Compliance Risks",
+    problemSubtitle: "Unidentified vulnerabilities and unmanaged access rights exposing cloud environments to severe operational and compliance risks.",
+    problemPoints: [
+      "Unidentified cloud vulnerabilities reaching production without proper security validation.",
+      "Non-compliance with GDPR, HIPAA, or FSQS exposing organisations to regulatory and financial risks.",
+      "Unmanaged access rights allowing privilege escalation and unauthorised internal data access."
+    ],
+    
+    outcomesTitle: "Key Outcomes from Cloud Security Services UK",
+    outcomesDesc: "We provide comprehensive cloud security services in UK, combining continuous posture management, zero-trust IAM policies, and automated compliance auditing.",
+    
+    useCasesTitle: "Cloud Security Services UK for Stronger Protection",
+    useCasesSubtitle: "Discover how UK enterprises secure multi-cloud environments, protect sensitive data, and maintain continuous compliance across core industry verticals.",
+    
+    architectureTitle: "Security That Supports Everyday Cloud Operations",
+    architectureSubtitle: "Our cloud security architecture combines automated posture management, zero-trust access controls, and real-time threat intelligence to protect mission-critical workloads.",
+    
+    techStackTitle: "Cloud Security Technology Stack",
+    techStackSubtitle: "We deploy industry-leading CSPM, vulnerability scanning, and IAM governance platforms to ensure complete infrastructure visibility and compliance.",
+    
+    benefitsTitle: "Enterprise-Ready Cloud Security services uk",
+    benefitsSubtitle: "Improved cloud security across production environments, audited setups aligned with SOC 2, and enhanced day-to-day threat monitoring."
+  } : isCloudArch ? {
     overviewHeading: "DELIVERING RESULTS WITH CLOUD ARCHITECTURE SERVICES",
     overviewParagraph1: "Design and deploy enterprise-grade, highly available cloud environments across the UK.",
     overviewParagraph2: (
@@ -142,14 +237,14 @@ export default function CapabilityPage({ params }: PageProps) {
       </span>
     ),
     
-    deepDiveHeading: "What Are AWS Cloud Services?",
+    deepDiveHeading: "What Are AWS Services?",
     deepDiveParagraph1: (
       <span>
-        AWS cloud services in UK enable businesses to leverage scalable computing, secure storage, and intelligent networking through highly available cloud environments. They help organizations modernize infrastructure and protect critical workloads. Read our{" "}
+        AWS services in UK give businesses access to cloud computing, storage, databases, networking, and security capabilities. They support infrastructure modernisation, workload management, and flexible resource usage across different business requirements. Our AWS cloud solutions help organisations make better use of their cloud environment. Read our{" "}
         <Link href="/about/company-overview" className="text-rose-500 hover:underline font-bold">
           company overview
         </Link>{" "}
-        to see our track record.
+        to learn more.
       </span>
     ),
     deepDiveParagraph2: (
@@ -162,15 +257,15 @@ export default function CapabilityPage({ params }: PageProps) {
       </span>
     ),
     
-    problemTitle: "Reducing AWS cloud Costs & Downtime",
-    problemSubtitle: "How inefficient AWS cloud environments increase costs, downtime, and operational risk",
+    problemTitle: "Addressing AWS Cloud Costs & Downtime",
+    problemSubtitle: "How inefficient AWS cloud environments increase costs, downtime, and operational risk.",
     problemPoints: [
-      "Over-provisioned AWS resources driving excessive cloud costs and unpredictable monthly billing.",
-      "Limited multi-region AWS deployments increasing the risk of critical application downtime.",
-      "Manual infrastructure scaling during traffic spikes causing performance bottlenecks and service disruptions."
+      "Unused AWS resources increasing monthly spending and creating unnecessary infrastructure costs.",
+      "Single-region deployments leaving critical applications exposed to unexpected service interruptions.",
+      "Manual resource adjustments during demand increases causing slower performance and operational disruption."
     ],
     
-    outcomesTitle: "Enterprise AWS Cloud Services in UK",
+    outcomesTitle: "AWS Capabilities Built for Modern Infrastructure",
     outcomesDesc: "We design, deploy, manage, and optimize AWS cloud services that improve performance, enhance productivity, and deliver measurable business value for UK businesses.",
     
     useCasesTitle: "AWS Cloud Services Across UK Industries",
@@ -182,8 +277,8 @@ export default function CapabilityPage({ params }: PageProps) {
     techStackTitle: "AWS cloud Technology Stack",
     techStackSubtitle: "We integrate industry-leading AWS services, automation tools, and cloud-native technologies to deliver AWS cloud services in UK with high availability, security, and enterprise performance.",
     
-    benefitsTitle: "AWS Performance & Benefits",
-    benefitsSubtitle: "Our AWS cloud services in UK improve performance, strengthen security, and optimize cloud costs through automation, continuous monitoring, and enterprise-grade compliance."
+    benefitsTitle: "Business Benefits of AWS Cloud Services",
+    benefitsSubtitle: "Faster deployments with smoother release processes and fewer delays, clearer infrastructure visibility with continuous performance monitoring, and better governance with consistent security and compliance controls."
   } : isAzure ? {
     overviewHeading: "Accelerating outcomes with Microsoft Azure services in UK",
     overviewParagraph1: "Delivering landing zones, AKS clusters, and serverless applications through Microsoft Azure services in UK to support scalable, cloud-native environments.",
@@ -391,6 +486,7 @@ export default function CapabilityPage({ params }: PageProps) {
         serviceSlug={service} 
         capabilityTitle={data.title}
         overrideTitle={overrides?.problemTitle}
+        overrideFullTitle={overrides?.problemTitle}
         overrideSubtitle={overrides?.problemSubtitle}
         overridePoints={overrides?.problemPoints}
       />

@@ -5,20 +5,16 @@ import { BreadcrumbSchema } from "@/components/seo/Schemas";
 import { SectionNavbar } from "@/components/ui/SectionNavbar";
 
 import { LeadershipHero } from "@/sections/about/leadership/LeadershipHero";
-
+import { LeadershipDeliver } from "@/sections/about/leadership/LeadershipDeliver";
+import { Leadership3Pillars } from "@/sections/about/leadership/Leadership3Pillars";
 import { DirectorsSection } from "@/sections/about/leadership/DirectorsSection";
 import { LeadershipTeamGrid } from "@/sections/about/leadership/LeadershipTeamGrid";
-
-// Dynamic Imports for Heavy Below-The-Fold Sections to Reduce Initial JS Payload
-const LeadershipPrinciples = dynamic(() => import("@/sections/about/leadership/LeadershipPrinciples").then((mod) => mod.LeadershipPrinciples));
-const Leadership3Pillars = dynamic(() => import("@/sections/about/leadership/Leadership3Pillars").then((mod) => mod.Leadership3Pillars));
-const ExecutiveLeadership = dynamic(() => import("@/sections/about/leadership/ExecutiveLeadership").then((mod) => mod.ExecutiveLeadership));
-const PrincipalArchitects = dynamic(() => import("@/sections/about/leadership/PrincipalArchitects").then((mod) => mod.PrincipalArchitects));
-const GlobalEngineeringTeams = dynamic(() => import("@/sections/about/leadership/GlobalEngineeringTeams").then((mod) => mod.GlobalEngineeringTeams));
-const LeadershipDeliver = dynamic(() => import("@/sections/about/leadership/LeadershipDeliver").then((mod) => mod.LeadershipDeliver));
-const LeadershipImpactDeliver = dynamic(() => import("@/sections/about/leadership/LeadershipImpactDeliver").then((mod) => mod.LeadershipImpactDeliver));
-const LeadershipIndustryInsights = dynamic(() => import("@/sections/about/leadership/LeadershipIndustryInsights").then((mod) => mod.LeadershipIndustryInsights));
-const LeadershipCareersCTA = dynamic(() => import("@/sections/about/leadership/LeadershipCareersCTA").then((mod) => mod.LeadershipCareersCTA));
+import { IndustryDomainLeadership } from "@/sections/about/leadership/IndustryDomainLeadership";
+import { ExecutiveLeadership } from "@/sections/about/leadership/ExecutiveLeadership";
+import { GlobalEngineeringTeams } from "@/sections/about/leadership/GlobalEngineeringTeams";
+import { LeadershipImpactDeliver } from "@/sections/about/leadership/LeadershipImpactDeliver";
+import { LeadershipIndustryInsights } from "@/sections/about/leadership/LeadershipIndustryInsights";
+import { LeadershipCareersCTA } from "@/sections/about/leadership/LeadershipCareersCTA";
 
 export const metadata: Metadata = {
   title: "Leadership & Executive Team | Devopstrio",
@@ -96,13 +92,16 @@ export default function LeadershipTeamPage() {
       {/* 3. 3 Strategic Pillars */}
       <Leadership3Pillars />
 
-      {/* 4. Directors Section (Executive Board) */}
+      {/* 4. 01 — Board of Directors (Executive Board) */}
       <DirectorsSection />
 
-      {/* 5. Leadership Team Grid (12 Key Enterprise Leaders) */}
+      {/* 5. 02 — Executive Leadership (12 Members — 3 Rows of 4) */}
       <LeadershipTeamGrid />
 
-      {/* 6. PILLAR 01: INSPIRE — Seniors Who Inspire & Senior Team */}
+      {/* 6. 03 — Industry & Domain Leadership (8 Members) */}
+      <IndustryDomainLeadership />
+
+      {/* 7. 04 — A Global Delivery Model Built on Local Strength */}
       <ExecutiveLeadership />
 
       {/* Principal Architects & Specialists */}

@@ -277,6 +277,36 @@ const ROUTE_SEO_MAP: Record<string, { title: string; description: string; keywor
     description: "Accelerate cloud migration, build multi-account landing zones, and reduce cloud spend by 35%+ with expert FinOps.",
     keywords: ["Cloud Services", "AWS Migration", "Azure Architecture", "GCP Consulting", "FinOps"]
   },
+  "/services/cloud-services/cloud-migration": {
+    title: "Cloud Migration Services UK | Devopstrio",
+    description: "Explore cloud migration services in UK for secure workload transitions, modern infrastructure, hybrid cloud adoption and smoother operations.",
+    keywords: ["Cloud Migration Services UK", "UK Cloud Migration", "Cloud Migration Specialists UK", "Workload Transition", "Hybrid Cloud Adoption"]
+  },
+  "/services/cloud-services/cloud-architecture": {
+    title: "Cloud Architecture Services in UK | Devopstrio",
+    description: "Explore cloud architecture services in the UK for secure, flexible infrastructure, modern cloud environments, and architectures aligned with business needs.",
+    keywords: ["Cloud Architecture Services in UK", "Cloud Architecture UK", "Enterprise Cloud Architecture", "Cloud Infrastructure Design"]
+  },
+  "/services/cloud-services/aws-services": {
+    title: "AWS Cloud Services UK | Devopstrio",
+    description: "AWS services in UK give businesses access to cloud computing, storage, databases, networking, and security capabilities for modern infrastructure.",
+    keywords: ["AWS Services UK", "AWS Cloud Services UK", "AWS Consulting UK", "Amazon Web Services UK"]
+  },
+  "/services/cloud-services/cloud-security": {
+    title: "Cloud Security Services UK | Secure Cloud Operations",
+    description: "Cloud security services UK to protect cloud infrastructure, data, workloads and access while addressing vulnerabilities, compliance risks and security threats.",
+    keywords: ["Cloud Security Services UK", "Secure Cloud Operations", "Cloud Workload Protection", "Cloud Compliance UK"]
+  },
+  "/services/cybersecurity/security-assessment": {
+    title: "Security Assessment Services UK | Devopstrio",
+    description: "Security assessment services UK to identify vulnerabilities, review security controls, and address compliance risks across applications, networks, and cloud environments.",
+    keywords: ["Security Assessment Services UK", "Security Assessment UK", "Vulnerability Review", "Compliance Risk Assessment"]
+  },
+  "/services/cybersecurity/vulnerability-management": {
+    title: "Vulnerability Management Services UK | Risk & Threat Protection",
+    description: "Vulnerability management services UK help identify, assess and remediate security weaknesses across networks, endpoints, applications and cloud environments.",
+    keywords: ["Vulnerability Management Services UK", "Risk & Threat Protection", "Vulnerability Remediation", "Threat Visibility"]
+  },
   "/services/devops-automation": {
     title: "DevOps & Automation Services | GitOps & CI/CD",
     description: "Automate software delivery pipelines, provision self-service developer portals, and orchestrate production Kubernetes.",
@@ -371,11 +401,6 @@ const ROUTE_SEO_MAP: Record<string, { title: string; description: string; keywor
     title: "Microsoft Azure Cloud Services & Migration Solutions",
     description: "Architect secure Azure cloud environments, AKS Kubernetes clusters, Azure AI services, and enterprise landing zones.",
     keywords: ["Azure Services", "AKS Migration", "Azure Landing Zone", "Microsoft Cloud"]
-  },
-  "/services/cloud-services/cloud-security": {
-    title: "Enterprise Cloud Security & Compliance Hardening",
-    description: "Protect cloud infrastructure with continuous posture management (CSPM), automated compliance checks, and IAM controls.",
-    keywords: ["Cloud Security Services", "CSPM Hardening", "IAM Controls", "Compliance Security"]
   },
   "/services/it-consulting/cloud-consulting": {
     title: "Cloud Consulting & Strategy Advisory Services",

@@ -155,23 +155,25 @@ export const cybersecurityCapabilities: Record<string, CapabilityDetail> = {
   "security-assessment": {
     slug: "security-assessment",
     title: "Security Assessment",
-    heroSubtitle: "Audit system configurations, map access hierarchies, and find critical security gaps.",
-    challenge: "Enterprise cloud configurations suffer from legacy wildcard permissions, database storage drift, and unprotected API endpoints.",
-    solution: "We run deep automated tests, scan repositories for credentials, map identity access pathways, and audit container setups.",
+    metaTitle: "Security Assessment Services UK | Devopstrio",
+    metaDescription: "Security assessment services UK to identify vulnerabilities, review security controls, and address compliance risks across applications, networks, and cloud environments.",
+    heroSubtitle: "Security assessment services help identify weaknesses in your systems, networks, and user access before they lead to security threats or data breaches. Our approach includes vulnerability checks, access reviews, and compliance support for standards such as SOC-2, ISO-27001, and HIPAA. Explore our managed security operations for 24/7 security coverage.",
+    challenge: "Hidden vulnerabilities can reach production without proper security assessment or validation. Security assessments uncover GDPR and HIPAA compliance gaps before they create regulatory risks, and UK security assessment services identify excessive access privileges to reduce data exposure.",
+    solution: "Security assessment services help identify weaknesses in your systems, networks, and user access before they lead to security threats or data breaches. Our approach includes vulnerability checks, access reviews, and compliance support for standards such as SOC-2, ISO-27001, and HIPAA.",
     features: [
-      "Automated repository credential scanning pipelines",
-      "Network route vulnerability tests",
-      "Cloud platform identity access audits"
+      "Discovery of hidden security vulnerabilities",
+      "Removal of excessive database permissions",
+      "Detailed security assessment findings for engineering teams"
     ],
     benefits: [
       "Discovery of hidden security vulnerabilities",
       "Removal of excessive database permissions",
-      "Detailed fix lists for engineering teams"
+      "Detailed security assessment findings for engineering teams"
     ],
     deliveryApproach: [
-      "Access Audit: Scanning identity roles and permissions.",
-      "Vulnerability Sweep: Running port scans and check scripts.",
-      "Fix Roadmap: Delivering vulnerability remediation plans."
+      "Phase 1: Vulnerability Mapping & Network Route Testing.",
+      "Phase 2: Identity, Access Hierarchy & Database Permission Audits.",
+      "Phase 3: Detailed Security Assessment Findings & Remediation Plan."
     ],
     techStack: [
       { name: "Nmap / Burp Suite", desc: "Advanced security testing tools." },
@@ -189,12 +191,44 @@ export const cybersecurityCapabilities: Record<string, CapabilityDetail> = {
     },
     faqs: [
       {
-        q: "How often should assessments be performed?",
-        a: "We recommend full assessments annually and continuous automated scans with every deployment."
+        q: "What are security assessment services?",
+        a: "Security assessment services identify vulnerabilities across systems, applications, networks, access controls, and data."
       },
       {
-        q: "Do you assess third-party SaaS integrations?",
-        a: "Yes. We evaluate API token permissions and data storage practices of connected applications."
+        q: "Why do UK businesses need security assessment services?",
+        a: "They help UK businesses identify security gaps, reduce risks, and strengthen existing security controls."
+      },
+      {
+        q: "What does a security assessment include?",
+        a: "A security assessment can include vulnerability checks, access reviews, application testing, configuration checks, and compliance reviews."
+      },
+      {
+        q: "How often should a security assessment be performed?",
+        a: "Assessment frequency depends on your security risks, regulatory requirements, IT environment, and system changes."
+      },
+      {
+        q: "Can security assessments identify hidden vulnerabilities?",
+        a: "Yes, security assessments can uncover weaknesses across applications, infrastructure, networks, configurations, and access controls."
+      },
+      {
+        q: "Can security assessment services support GDPR compliance?",
+        a: "Yes, they can identify security and access-control gaps that may affect GDPR compliance and data protection."
+      },
+      {
+        q: "What is the difference between security and vulnerability assessments?",
+        a: "A vulnerability assessment focuses on weaknesses, while a security assessment reviews broader controls, risks, access, and compliance."
+      },
+      {
+        q: "Can security assessments review user access?",
+        a: "Yes, they can review permissions, privileged accounts, user roles, and access controls for unnecessary privileges."
+      },
+      {
+        q: "Can security assessment services cover cloud environments?",
+        a: "Yes, assessments can review cloud configurations, identities, access controls, workloads, networks, and security settings."
+      },
+      {
+        q: "Why choose security assessment services UK from Devopstrio?",
+        a: "Devopstrio helps UK businesses identify vulnerabilities, review security controls, and address risks across their IT environment."
       }
     ]
   },
@@ -303,28 +337,29 @@ export const cybersecurityCapabilities: Record<string, CapabilityDetail> = {
   "vulnerability-management": {
     slug: "vulnerability-management",
     title: "Vulnerability Management",
-    metaTitle: "Vulnerability Management Services in UK | Cybersecurity Experts",
-    metaDescription: "Protect your business with Vulnerability Management Services in UK. Identify, prioritize, and remediate security risks while improving compliance and cyber resilience.",
-    heroSubtitle: "Every business faces new security risks every day, and Vulnerability Management Services help identify and address those risks before they become costly incidents.",
-    challenge: "Unpatched security vulnerabilities increase business risk, while limited visibility across IT assets, networks, and cloud environments creates compliance and regulatory challenges.",
-    solution: "Our Vulnerability Management Services provide a proactive approach to securing your systems against evolving cyber threats. We combine expert analysis with continuous monitoring to uncover security gaps before attackers can take advantage of them.",
+    metaTitle: "Vulnerability Management Services UK | Risk & Threat Protection",
+    metaDescription: "Vulnerability management services UK help identify, assess and remediate security weaknesses across networks, endpoints, applications and cloud environments.",
+    heroSubtitle: "Vulnerability Management is the systematic identification, assessment, and remediation of weaknesses across digital assets, network boundaries, applications, and user identities. It helps organisations maintain a stronger security posture through regular vulnerability assessments, risk-based remediation, access controls, and alignment with security and compliance requirements.",
+    challenge: "Undetected vulnerabilities reaching production without proper assessment or remediation, unresolved security weaknesses creating compliance risks across GDPR, HIPAA, or FSQS requirements, and unmanaged vulnerabilities and access controls increasing the risk of privilege escalation and internal data exposure.",
+    solution: "Vulnerability management services UK help organisations identify, assess, prioritise, and remediate security vulnerabilities across their IT environments through automated scanning, risk assessment, and continuous monitoring.",
     features: [
-      "Continuous Monitoring: Identify new vulnerabilities as they emerge across digital systems",
-      "Risk Prioritization: Focus on threats with the highest potential business impact",
-      "Faster Remediation: Resolve critical security issues and unpatched vulnerabilities quickly",
-      "Compliance Support: Strengthen security requirements and pass regulatory audits",
-      "Complete Visibility: Monitor networks, endpoints, databases, and cloud applications",
-      "Proactive Protection: Reduce cyber risks before they escalate into security breaches"
+      "01 Asset Discovery",
+      "02 Vulnerability Scanning",
+      "03 Risk Assessment",
+      "04 Remediation",
+      "05 Continuous Monitoring"
     ],
     benefits: [
-      "Reduced security risks through faster vulnerability identification and remediation",
-      "Continuous visibility across networks, endpoints, and cloud environments",
-      "Stronger compliance with industry standards and proactive risk management"
+      "Reduced Exposure: Faster identification and remediation of vulnerabilities across critical assets.",
+      "Continuous Visibility: Ongoing visibility across networks, endpoints, applications, and cloud environments.",
+      "Stronger Compliance: Audited security environments aligned with SOC 2 and relevant regulatory requirements."
     ],
     deliveryApproach: [
-      "Discovery & Asset Mapping: Scanning networks, servers, application repositories, and endpoints.",
-      "Risk Scoring & Prioritization: Evaluating threat impact based on CVSS scores and business criticality.",
-      "Guided Patching & Rescanning: Deploying remediation patches and executing verification scans."
+      "01 Asset Discovery: Scanning networks, endpoints, applications, and cloud assets.",
+      "02 Vulnerability Scanning: Running automated vulnerability checks across all layers.",
+      "03 Risk Assessment: Prioritising security weaknesses based on severity and exploitability.",
+      "04 Remediation: Deploying targeted fixes and patches with verification checks.",
+      "05 Continuous Monitoring: Maintaining real-time security posture and threat intelligence."
     ],
     techStack: [
       { name: "Tenable / Nessus", desc: "Enterprise vulnerability scanner and asset discovery engine." },
@@ -342,12 +377,44 @@ export const cybersecurityCapabilities: Record<string, CapabilityDetail> = {
     },
     faqs: [
       {
-        q: "Why do businesses need Vulnerability Management Services in UK?",
-        a: "Vulnerability Management Services uncover weak points before attackers can exploit them, providing continuous monitoring, regulatory compliance support, and long-term business resilience."
+        q: "What are vulnerability management services UK?",
+        a: "Vulnerability management services UK help organisations identify, assess, prioritise, and remediate security vulnerabilities across their IT environments."
       },
       {
-        q: "How does vulnerability prioritization work?",
-        a: "We analyze threat intelligence, asset business criticality, and exploitation likelihood to ensure your team focuses on patching high-impact risks first."
+        q: "What is vulnerability management?",
+        a: "Vulnerability management is an ongoing process of discovering security weaknesses, assessing their risk, and taking action to reduce exposure."
+      },
+      {
+        q: "Why is vulnerability management important?",
+        a: "It helps organisations identify security weaknesses early and reduce the risk of breaches, data exposure, and operational disruption."
+      },
+      {
+        q: "How are vulnerabilities identified?",
+        a: "Vulnerabilities can be identified through automated scanning, security assessments, configuration reviews, and continuous monitoring."
+      },
+      {
+        q: "What systems can vulnerability management cover?",
+        a: "Vulnerability management can cover networks, endpoints, servers, applications, cloud environments, and other connected assets."
+      },
+      {
+        q: "How are vulnerabilities prioritised?",
+        a: "Vulnerabilities are prioritised based on factors such as severity, asset importance, exploitability, and potential business impact."
+      },
+      {
+        q: "Can vulnerability management support compliance?",
+        a: "Yes, vulnerability management can support compliance by providing security assessments, remediation records, monitoring, and audit evidence."
+      },
+      {
+        q: "How often should vulnerability scans be performed?",
+        a: "Scanning frequency depends on the environment, risk level, regulatory requirements, and how frequently systems or applications change."
+      },
+      {
+        q: "What happens after a vulnerability is identified?",
+        a: "The vulnerability is assessed, prioritised according to risk, assigned for remediation, and reviewed to confirm that the issue has been addressed."
+      },
+      {
+        q: "Can vulnerability management help cloud environments?",
+        a: "Yes, vulnerability management can identify and track security weaknesses across cloud infrastructure, workloads, applications, and configurations."
       }
     ]
   }

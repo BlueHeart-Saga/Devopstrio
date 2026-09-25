@@ -14,17 +14,17 @@ interface Director {
 const directorsData: Director[] = [
   {
     id: "director-1",
-    name: "Tim Passingham",
+    name: "Manikandan P S",
     role: "Executive Chairman",
-    image: "/webp/assets/About-page/team/team/sermaraj_.webp",
-    bio: "Executive Chairman with over 25 years leading global cloud transformation and strategic enterprise governance.",
+    image: "/webp/assets/About-page/leadership/director_manikandan_ps.webp",
+    bio: "Senior Executive Chairman leading strategic enterprise governance, high-level corporate advisory, and global client alignment.",
   },
   {
     id: "director-2",
     name: "Richard Brown",
-    role: "Non-Executive Director & Board Advisor",
-    image: "/webp/assets/About-page/team/team/sagadevan_.webp",
-    bio: "Guiding enterprise architecture and corporate growth across UK, US, and international enterprise operations.",
+    role: "Non-Executive Director",
+    image: "/webp/assets/About-page/leadership/director_richard_brown.webp",
+    bio: "Senior Non-Executive Director guiding enterprise architecture standards, corporate risk governance, and international expansion.",
   },
 ];
 
@@ -55,8 +55,8 @@ export const DirectorsSection: React.FC = () => {
                 transition={{ duration: 0.5, delay: index * 0.15 }}
                 className="group flex flex-col bg-[#0b0b0d]/90 border border-zinc-900 hover:border-zinc-800 rounded-2xl overflow-hidden shadow-xl transition-all duration-300"
               >
-                {/* Image Container with smooth aspect ratio and hover zoom */}
-                <div className="relative w-full aspect-[4/3] bg-[#121214] overflow-hidden">
+                {/* Image Container with crisp square ratio and hover zoom */}
+                <div className="relative w-full aspect-square bg-[#121214] overflow-hidden">
                   <img
                     src={director.image}
                     alt={director.name}

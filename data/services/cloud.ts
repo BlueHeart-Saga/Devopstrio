@@ -176,23 +176,23 @@ export const cloudCapabilities: Record<string, CapabilityDetail> = {
   "cloud-migration": {
     slug: "cloud-migration",
     title: "Cloud Migration",
-    heroSubtitle: "Migrate critical production workloads, relational databases, and microservices to secure clouds with zero downtime.",
-    challenge: "Traditional database migrations cause service interruptions, data drift, and database synchronization failures.",
-    solution: "We use continuous replication engines to mirror databases live, validating transaction integrity before initiating final DNS cutovers.",
+    heroSubtitle: "Cloud migration services in UK help organisations move applications, data, and workloads from existing infrastructure into suitable cloud environments. Our cloud migration solutions for UK businesses support smoother transitions, better resource management, and improved continuity across public and hybrid cloud platforms. Our cloud migration specialists UK also connect migration with efficient DevOps automation pipelines.",
+    challenge: "Moving critical workloads to the cloud can expose organisations to application dependencies, data transfer issues, security gaps, and unexpected compatibility problems that delay migration projects and disrupt daily operations.",
+    solution: "Our UK cloud migration services provide structured planning, workload assessment, and controlled transitions across modern cloud environments. Our cloud migration specialists coordinate each stage with your existing infrastructure, helping maintain visibility, security, and operational control.",
     features: [
-      "Live VM migration with continuous background block-level replication",
-      "Database schema conversion and active replication replication streams",
-      "Automated fallback check scripts for safe rollback paths"
+      "Application and workload assessment before migration",
+      "Secure data transfer with workload validation",
+      "Planned cutover procedures with recovery options"
     ],
     benefits: [
-      "Zero business downtime during migration cycles",
-      "No transactional data loss or record duplication",
-      "Automated rollbacks preventing service lockups"
+      "Smoother transitions with minimal operational disruption",
+      "Greater visibility across migrated workloads",
+      "Faster recovery when migration issues arise"
     ],
     deliveryApproach: [
-      "Setup Sync: Establishing live replication tunnels between source and target.",
-      "Dry-run Validation: Running transaction scoring tests on target replicas.",
-      "DNS Cutover: Executing final redirects and archiving legacy nodes."
+      "Phase 1: Application and workload assessment before migration.",
+      "Phase 2: Secure data transfer with workload validation.",
+      "Phase 3: Planned cutover procedures with recovery options."
     ],
     techStack: [
       { name: "AWS Application Migration Service", desc: "Low-level block replication engine." },
@@ -210,12 +210,200 @@ export const cloudCapabilities: Record<string, CapabilityDetail> = {
     },
     faqs: [
       {
-        q: "What database engines can you migrate?",
-        a: "We regularly migrate PostgreSQL, MySQL, Oracle, Microsoft SQL Server, and legacy MongoDB databases."
+        q: "What are cloud migration services in the UK?",
+        a: "Cloud migration services help UK businesses move applications, data, and workloads from existing infrastructure to suitable cloud environments."
       },
       {
-        q: "How do you verify migration checksums?",
-        a: "We compute automated row-count checks and transaction hash validations between target and source databases."
+        q: "What is involved in a cloud migration?",
+        a: "Cloud migration typically involves assessment, planning, workload preparation, data transfer, testing, deployment, and post-migration support."
+      },
+      {
+        q: "Can you migrate legacy applications to the cloud?",
+        a: "Yes. Our specialists can assess legacy applications and identify suitable migration approaches based on dependencies, performance, and business requirements."
+      },
+      {
+        q: "Which cloud platforms do you support?",
+        a: "We support leading platforms including Microsoft Azure, AWS, and Google Cloud, depending on your workloads and infrastructure requirements."
+      },
+      {
+        q: "How long does cloud migration take?",
+        a: "Migration timelines vary according to workload size, application complexity, data volume, dependencies, and the chosen migration approach."
+      },
+      {
+        q: "Can cloud migration reduce IT costs?",
+        a: "It can. Moving suitable workloads to the cloud may reduce infrastructure overhead and improve resource usage when the environment is properly managed."
+      },
+      {
+        q: "How do you protect data during migration?",
+        a: "We use controlled migration processes, validation checks, access controls, and security measures to protect data throughout the transition."
+      },
+      {
+        q: "Do you provide cloud migration support after deployment?",
+        a: "Yes. Cloud migration support UK can include monitoring, troubleshooting, optimisation, security reviews, and ongoing infrastructure assistance."
+      },
+      {
+        q: "Can you support hybrid cloud migrations?",
+        a: "Yes. Our UK cloud migration services can support transitions involving public, private, and hybrid cloud environments."
+      },
+      {
+        q: "How do I choose the right cloud migration solution?",
+        a: "The right cloud migration solution depends on your applications, data, security needs, existing infrastructure, budget, and long-term business requirements."
+      }
+    ]
+  },
+  "aws-services": {
+    slug: "aws-services",
+    title: "AWS Services",
+    heroSubtitle: "AWS services in UK give businesses access to cloud computing, storage, databases, networking, and security capabilities. They support infrastructure modernisation, workload management, and flexible resource usage across different business requirements. Our AWS cloud solutions help organisations make better use of their cloud environment. Read our company overview to learn more.",
+    challenge: "Managing enterprise AWS environments can introduce performance constraints, integration complexity, configuration issues, and deployment delays that affect engineering efficiency.",
+    solution: "We provide secure, automated AWS infrastructure solutions aligned with your existing workflows. Our AWS cloud services include configuration controls, validation checks, and continuous monitoring to maintain visibility across your environment.",
+    features: [
+      "Automated deployment templates for AWS environments",
+      "Continuous pipeline validation and compliance checks",
+      "Terraform, OpenTofu, and AWS CloudFormation integration"
+    ],
+    benefits: [
+      "Faster deployments with smoother release processes and fewer delays",
+      "Clearer infrastructure visibility with continuous performance monitoring",
+      "Better governance with consistent security and compliance controls"
+    ],
+    deliveryApproach: [
+      "Phase 1: AWS Architecture & Security Assessment.",
+      "Phase 2: Automated IaC Template Deployment & Pipeline Integration.",
+      "Phase 3: Real-Time Telemetry, Monitoring & Governance Setup."
+    ],
+    techStack: [
+      { name: "AWS CloudFormation", desc: "Native infrastructure orchestration." },
+      { name: "Terraform / OpenTofu", desc: "Declarative infrastructure as code." },
+      { name: "Amazon EKS & Lambda", desc: "Scalable container and serverless compute." }
+    ],
+    caseStudy: {
+      title: "Automated AWS infrastructure for high-scale enterprise SaaS.",
+      desc: "Deployed automated, multi-region AWS environments using Terraform and CloudFormation, achieving high availability and automated compliance validation.",
+      metrics: [
+        { value: "45%", label: "Faster Deployment Cycles" },
+        { value: "99.99%", label: "Uptime Achieved" },
+        { value: "100%", label: "IaC Automation" }
+      ]
+    },
+    faqs: [
+      {
+        q: "What are AWS services in UK?",
+        a: "AWS services provide UK businesses with cloud computing, storage, networking, databases, security, and infrastructure resources."
+      },
+      {
+        q: "What AWS services can businesses use?",
+        a: "Businesses can use AWS services for computing, storage, databases, networking, security, analytics, automation, and application deployment."
+      },
+      {
+        q: "What are AWS cloud services used for?",
+        a: "AWS cloud services help organisations run applications, manage data, improve infrastructure flexibility, and support changing workload demands."
+      },
+      {
+        q: "Can you migrate existing systems to AWS?",
+        a: "Yes. AWS migration services help businesses move applications, data, and workloads from existing infrastructure to AWS environments."
+      },
+      {
+        q: "Are AWS services suitable for UK businesses?",
+        a: "Yes. AWS solutions can support UK businesses with flexible infrastructure, security controls, workload management, and cloud operations."
+      },
+      {
+        q: "How can AWS help reduce cloud costs?",
+        a: "AWS can help control costs through resource right-sizing, automated scaling, usage monitoring, and removal of unused resources."
+      },
+      {
+        q: "Can AWS support hybrid cloud environments?",
+        a: "Yes. AWS supports hybrid cloud connectivity, allowing businesses to connect AWS infrastructure with existing on-premises environments."
+      },
+      {
+        q: "How secure are AWS cloud environments?",
+        a: "AWS provides security tools for access management, encryption, monitoring, compliance, and protection of cloud workloads."
+      },
+      {
+        q: "Do you provide AWS support services?",
+        a: "Yes. AWS support services can include monitoring, troubleshooting, optimisation, infrastructure management, and ongoing technical assistance."
+      },
+      {
+        q: "How do I choose the right AWS solution?",
+        a: "The right AWS solution depends on your workloads, security requirements, existing infrastructure, budget, performance needs, and business objectives."
+      }
+    ]
+  },
+  "cloud-security": {
+    slug: "cloud-security",
+    title: "Cloud Security",
+    heroSubtitle: "Cloud security services UK provide structured protection for cloud infrastructure, applications, data, and user access across highly-available cloud environments. They enable organisations to secure sensitive workloads, manage access controls, identify vulnerabilities, and maintain stronger security standards while operating across modern cloud architectures.",
+    challenge: "Unidentified cloud vulnerabilities reaching production without proper security validation, non-compliance with GDPR, HIPAA, or FSQS, and unmanaged access rights allowing privilege escalation.",
+    solution: "We deliver structured cloud security services UK combining continuous posture management, zero-trust IAM policies, least-privilege controls, and automated compliance auditing.",
+    features: [
+      "Automated vulnerability scanning and security posture auditing",
+      "Zero-Trust IAM controls and least-privilege enforcement",
+      "Continuous compliance monitoring aligned with SOC-2, ISO-27001, and GDPR"
+    ],
+    benefits: [
+      "Stronger Protection: Improved cloud security across production environments and critical workloads.",
+      "Better Compliance: Audited cloud environments aligned with SOC 2 and relevant regulatory requirements.",
+      "Greater Visibility: Improved threat monitoring, access control, workload protection, and day-to-day cloud security."
+    ],
+    deliveryApproach: [
+      "Phase 1: Cloud Security Posture Audit & Vulnerability Assessment.",
+      "Phase 2: IAM Hardening, Zero-Trust Controls & Network Micro-Segmentation.",
+      "Phase 3: Continuous Threat Monitoring & Compliance Reporting."
+    ],
+    techStack: [
+      { name: "Prisma Cloud", desc: "Cloud security posture management." },
+      { name: "Wiz", desc: "Vulnerability and risk scanning." },
+      { name: "AWS Security Hub / Azure Defender", desc: "Native cloud security suites." }
+    ],
+    caseStudy: {
+      title: "Hardening cloud infrastructure and SOC 2 alignment for financial tech firm.",
+      desc: "Implemented automated CSPM scanners and Zero-Trust access controls across multi-cloud environments, achieving full compliance pass rate.",
+      metrics: [
+        { value: "100%", label: "Audit Pass Rate" },
+        { value: "0", label: "Critical Vulnerabilities" },
+        { value: "24/7", label: "Threat Monitoring" }
+      ]
+    },
+    faqs: [
+      {
+        q: "What are cloud security services UK?",
+        a: "Cloud security services UK protect cloud infrastructure, applications, data, identities, and workloads from vulnerabilities, unauthorised access, and security threats."
+      },
+      {
+        q: "What does cloud security protect?",
+        a: "Cloud security protects sensitive data, applications, workloads, user identities, networks, and cloud infrastructure from security risks."
+      },
+      {
+        q: "Why is cloud security important for businesses?",
+        a: "Cloud security helps businesses reduce security risks, protect sensitive information, control access, and maintain secure cloud operations."
+      },
+      {
+        q: "How does cloud security prevent unauthorised access?",
+        a: "It uses identity controls, access policies, authentication, monitoring, and permission management to restrict unauthorised access."
+      },
+      {
+        q: "Can cloud security help with compliance?",
+        a: "Yes, cloud security can support compliance by strengthening access controls, data protection, monitoring, and security practices."
+      },
+      {
+        q: "What cloud environments can be secured?",
+        a: "Cloud security can be applied across public, private, hybrid, and multi-cloud environments depending on the organisation's setup."
+      },
+      {
+        q: "How are cloud vulnerabilities identified?",
+        a: "Vulnerabilities can be identified through security assessments, configuration reviews, vulnerability scanning, access reviews, and continuous monitoring."
+      },
+      {
+        q: "Does cloud security protect data from internal threats?",
+        a: "Yes, appropriate access controls, permissions, monitoring, and activity logging can help reduce the risk of internal data exposure."
+      },
+      {
+        q: "How often should cloud security be assessed?",
+        a: "Cloud security should be reviewed regularly and whenever there are significant changes to infrastructure, applications, users, or security requirements."
+      },
+      {
+        q: "How can organisations improve their cloud security?",
+        a: "Organisations can improve cloud security by reviewing access rights, monitoring workloads, addressing vulnerabilities, protecting sensitive data, and maintaining appropriate security controls."
       }
     ]
   }

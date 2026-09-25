@@ -11,82 +11,82 @@ interface Leader {
 }
 
 const leadershipTeamData: Leader[] = [
-  // Row 1 (1 to 4)
+  // Row 1 — C-Suite & Senior Executive Board
   {
-    id: "lead-1",
+    id: "exec-1",
+    name: "Victoria Sterling",
+    role: "Chief Financial Officer (CFO)",
+    image: "/webp/assets/About-page/leadership/exec_victoria_sterling.webp",
+  },
+  {
+    id: "exec-2",
     name: "Rajesh Subramanian",
-    role: "Chief Operating Officer",
-    image: "/webp/assets/About-page/leadership/leader_10.webp",
+    role: "Chief Operating Officer (COO)",
+    image: "/webp/assets/About-page/leadership/exec_rajesh_subramanian.webp",
   },
   {
-    id: "lead-2",
-    name: "Claire Montgomery",
-    role: "Managing Director — UK & EMEA",
-    image: "/webp/assets/About-page/leadership/leader_02.webp",
-  },
-  {
-    id: "lead-3",
-    name: "Kate Hancock",
-    role: "Executive Director — Client Success & Delivery",
-    image: "/webp/assets/About-page/leadership/leader_03.webp",
-  },
-  {
-    id: "lead-4",
-    name: "Stuart Curzon",
-    role: "Managing Partner — AI & Cognitive Innovation",
-    image: "/webp/assets/About-page/leadership/leader_09.webp",
-  },
-
-  // Row 2 (5 to 8)
-  {
-    id: "lead-5",
-    name: "Andrew Fleming",
-    role: "Managing Director — Cloud & Infrastructure",
-    image: "/webp/assets/About-page/leadership/leader_05.webp",
-  },
-  {
-    id: "lead-6",
+    id: "exec-3",
     name: "Jason Jennings",
-    role: "Managing Director — Enterprise Architecture",
-    image: "/webp/assets/About-page/leadership/leader_06.webp",
+    role: "Managing Director — UK & Europe",
+    image: "/webp/assets/About-page/leadership/exec_jason_jennings.webp",
   },
   {
-    id: "lead-7",
-    name: "Marcus Thorne",
-    role: "Managing Partner — Digital Transformation",
-    image: "/webp/assets/About-page/leadership/leader_07.webp",
-  },
-  {
-    id: "lead-8",
-    name: "Pete Nisbet",
-    role: "Managing Partner — Global Energy & Utilities",
-    image: "/webp/assets/About-page/leadership/leader_08.webp",
+    id: "exec-4",
+    name: "Claire Montgomery",
+    role: "Chief Commercial Officer (CCO)",
+    image: "/webp/assets/About-page/leadership/exec_claire_montgomery.webp",
   },
 
-  // Row 3 (9 to 12)
+  // Row 2 — Executive Directors & Functional Heads
   {
-    id: "lead-9",
-    name: "Rachel Adams",
-    role: "Chief Commercial Officer",
-    image: "/webp/assets/About-page/leadership/leader_04.webp",
+    id: "exec-5",
+    name: "Sarah Jenkins",
+    role: "Chief Human Resources Officer (CHRO)",
+    image: "/webp/assets/About-page/leadership/exec_sarah_jenkins.webp",
   },
   {
-    id: "lead-10",
-    name: "Emily Watson",
-    role: "Managing Partner — Strategy & Global Delivery",
-    image: "/webp/assets/About-page/leadership/leader_01.webp",
+    id: "exec-6",
+    name: "Andrew Fleming",
+    role: "Executive Director — Cloud & SRE Platforms",
+    image: "/webp/assets/About-page/leadership/exec_andrew_fleming.webp",
   },
   {
-    id: "lead-11",
-    name: "Arun Karthik",
-    role: "VP of Global DevOps & SRE",
-    image: "/webp/assets/About-page/leadership/leader_11.webp",
-  },
-  {
-    id: "lead-12",
+    id: "exec-7",
     name: "Siddharth Menon",
-    role: "VP of Cybersecurity & Zero-Trust",
-    image: "/webp/assets/About-page/leadership/leader_12.webp",
+    role: "Executive Director — Cybersecurity & Enterprise Risk",
+    image: "/webp/assets/About-page/leadership/exec_siddharth_menon.webp",
+  },
+  {
+    id: "exec-8",
+    name: "Kate Hancock",
+    role: "Executive Director — Global Client Delivery",
+    image: "/webp/assets/About-page/leadership/exec_kate_hancock.webp",
+  },
+
+  // Row 3 — Operations, Governance & Strategy Directors
+  {
+    id: "exec-9",
+    name: "Ananya Ranganathan",
+    role: "Executive Director — Quality & Enterprise Governance",
+    image: "/webp/assets/About-page/leadership/exec_ananya_ranganathan.webp",
+  },
+  {
+    id: "exec-10",
+    name: "Divya Nambiar",
+    role: "Executive Director — Enterprise Agile & Product Operations",
+    image: "/webp/assets/About-page/leadership/exec_divya_nambiar.webp",
+  },
+  {
+    id: "exec-11",
+    name: "Marcus Thorne",
+    role: "Executive Director — AI & Digital Engineering",
+    image: "/webp/assets/About-page/leadership/exec_marcus_thorne.webp",
+  },
+  {
+    id: "exec-12",
+    name: "Emily Watson",
+    role: "Executive Director — Strategy & Global Delivery",
+    image: "/webp/assets/About-page/leadership/exec_emily_watson.webp",
   },
 ];
 
@@ -101,7 +101,7 @@ export const LeadershipTeamGrid: React.FC = () => {
           {/* Section Heading with Reference Red/Rose Line */}
           <div className="mb-12 text-left">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-white mb-3">
-              Leadership Team
+              Executive Leadership
             </h2>
             <div className="w-20 h-1 bg-rose-600 rounded-full" />
           </div>

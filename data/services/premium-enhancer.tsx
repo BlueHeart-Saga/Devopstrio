@@ -434,7 +434,7 @@ const premiumServicesCopy: Record<string, {
   }
 };
 
-// Central capability text enhancer (makes challenges, solutions, features, and case studies premium)
+// Central capability text enhancer (preserves explicit content while enriching defaults)
 export function enrichCapabilityDetail(
   capability: CapabilityDetail,
   serviceSlug: string
@@ -442,32 +442,29 @@ export function enrichCapabilityDetail(
   const title = capability.title;
   const lowerTitle = title.toLowerCase();
 
-  // Premium text enhancements
-  const premiumChallenge = `Implementing production-grade ${lowerTitle} setups in modern enterprise environments regularly reveals complex deployment bottlenecks, configuration drift, security exposures, and scalability limits that impact business agility.`;
-  const premiumSolution = `We engineer resilient, secure, and fully automated ${lowerTitle} frameworks. Our configurations integrate directly with your build pipelines, enforce strict validation parameters, and set up real-time telemetry alerts.`;
+  const challenge = capability.challenge && capability.challenge.length > 20
+    ? capability.challenge
+    : `Implementing production-grade ${lowerTitle} setups in modern enterprise environments regularly reveals complex deployment bottlenecks, configuration drift, security exposures, and scalability limits that impact business agility.`;
 
-  const premiumFeatures = capability.features.map(f => {
-    if (f.startsWith("Automated environment") || f.toLowerCase().includes("automated deployment")) {
-      return `Automated, high-fidelity deployment templates for ${lowerTitle}`;
-    }
-    if (f.toLowerCase().includes("testing") || f.toLowerCase().includes("validation")) {
-      return `Continuous validation, pipeline scanning, and compliance verification checks`;
-    }
-    return f;
-  });
+  const solution = capability.solution && capability.solution.length > 20
+    ? capability.solution
+    : `We engineer resilient, secure, and fully automated ${lowerTitle} frameworks. Our configurations integrate directly with your build pipelines, enforce strict validation parameters, and set up real-time telemetry alerts.`;
 
-  const premiumBenefits = capability.benefits.map(b => {
-    if (b.toLowerCase().includes("improvement") || b.toLowerCase().includes("release")) {
-      return `Accelerated release frequency and up to 45% reduction in cycle times`;
-    }
-    if (b.toLowerCase().includes("observability") || b.toLowerCase().includes("telemetry")) {
-      return `Total system trace observability with real-time incident warning alerts`;
-    }
-    if (b.toLowerCase().includes("compliance") || b.toLowerCase().includes("audited")) {
-      return `Fully-audited infrastructure setups aligned with SOC-2 and regulatory frameworks`;
-    }
-    return b;
-  });
+  const features = capability.features && capability.features.length > 0
+    ? capability.features
+    : [
+        `Automated deployment templates for ${lowerTitle}`,
+        `Continuous validation, pipeline scanning, and compliance verification checks`,
+        `Native infrastructure integration and telemetry configurations`
+      ];
+
+  const benefits = capability.benefits && capability.benefits.length > 0
+    ? capability.benefits
+    : [
+        `Accelerated release frequency and up to 45% reduction in cycle times`,
+        `Total system trace observability with real-time incident warning alerts`,
+        `Fully-audited infrastructure setups aligned with SOC-2 and regulatory frameworks`
+      ];
 
   const caseStudyTitle = capability.caseStudy?.title || `Accelerating ${title} operations.`;
   const caseStudyDesc = capability.caseStudy?.desc || `We overhauled our client's ${lowerTitle} setups. By replacing manual operations with secure automation and active log alerts, we achieved high availability and zero configuration drift.`;
@@ -479,10 +476,10 @@ export function enrichCapabilityDetail(
 
   return {
     ...capability,
-    challenge: capability.challenge.length < 150 ? premiumChallenge : capability.challenge,
-    solution: capability.solution.length < 150 ? premiumSolution : capability.solution,
-    features: premiumFeatures,
-    benefits: premiumBenefits,
+    challenge,
+    solution,
+    features,
+    benefits,
     caseStudy: {
       ...capability.caseStudy,
       title: caseStudyTitle,

@@ -253,18 +253,10 @@ export const ExecutiveLeadership = () => {
                 Leadership &amp; Talent
               </span> */}
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight leading-tight text-white mb-4">
-                Industry Expertise Who{" "}
+                A Global Delivery Model Built on{" "}
                 <span className="relative inline-block">
-                  {/* Top-to-bottom straight arrow spanning across section boundary (Enlarged) */}
-                  <div className="absolute -top-16 sm:-top-20 md:-top-24 lg:-top-28 left-1/2 -translate-x-1/2 pointer-events-none select-none z-30">
-                    <img src="/webp/assets/components/streight-toptobuttm.webp"
-                      alt="Top to bottom arrow indicator"
-                      className="w-14 sm:w-18 md:w-22 lg:w-24 h-auto object-contain filter drop-shadow-[0_0_20px_rgba(244,63,94,0.6)]"
-                    loading="lazy" />
-                  </div>
-                  <span className="text-rose-500">Inspire.</span>
-                </span>{" "}
-                Team That Innovates.
+                  <span className="text-rose-500">Local Strength.</span>
+                </span>
               </h2>
             </div>
             {/* <div className="lg:col-span-5 pt-2">
