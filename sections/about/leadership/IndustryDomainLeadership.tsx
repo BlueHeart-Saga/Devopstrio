@@ -33,9 +33,9 @@ const industryLeadershipData: IndustryLeader[] = [
   },
   {
     id: "ind-4",
-    name: "Kofi Boateng",
-    role: "Industry Director — Retail, E-Commerce & Logistics",
-    image: "/webp/assets/About-page/leadership/industry_kofi_boateng.webp",
+    name: "Rohan Varma",
+    role: "Domain Principal — Cybersecurity & Zero-Trust Governance",
+    image: "/webp/assets/About-page/leadership/industry_rohan_varma.webp",
   },
 
   // Row 2 (5 to 8)
@@ -59,9 +59,9 @@ const industryLeadershipData: IndustryLeader[] = [
   },
   {
     id: "ind-8",
-    name: "Rohan Varma",
-    role: "Domain Principal — Cybersecurity & Zero-Trust Governance",
-    image: "/webp/assets/About-page/leadership/industry_rohan_varma.webp",
+    name: "Kofi Boateng",
+    role: "Industry Director — Retail, E-Commerce & Logistics",
+    image: "/webp/assets/About-page/leadership/industry_kofi_boateng.webp",
   },
 ];
 

@@ -93,7 +93,9 @@ export default function LeadershipTeamPage() {
       <Leadership3Pillars />
 
       {/* 4. 01 — Board of Directors (Executive Board) */}
+      {/*
       <DirectorsSection />
+      */}
 
       {/* 5. 02 — Executive Leadership (12 Members — 3 Rows of 4) */}
       <LeadershipTeamGrid />

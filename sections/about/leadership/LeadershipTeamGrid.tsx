@@ -84,9 +84,9 @@ const leadershipTeamData: Leader[] = [
   },
   {
     id: "exec-12",
-    name: "Emily Watson",
+    name: "Sofia",
     role: "Executive Director — Strategy & Global Delivery",
-    image: "/webp/assets/About-page/leadership/exec_emily_watson.webp",
+    image: "/webp/assets/About-page/leadership/exec_sofia.webp",
   },
 ];
 
