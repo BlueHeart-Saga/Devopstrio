@@ -10,7 +10,8 @@ import { Leadership3Pillars } from "@/sections/about/leadership/Leadership3Pilla
 import { DirectorsSection } from "@/sections/about/leadership/DirectorsSection";
 import { LeadershipTeamGrid } from "@/sections/about/leadership/LeadershipTeamGrid";
 import { IndustryDomainLeadership } from "@/sections/about/leadership/IndustryDomainLeadership";
-import { ExecutiveLeadership } from "@/sections/about/leadership/ExecutiveLeadership";
+// import { ExecutiveLeadership } from "@/sections/about/leadership/ExecutiveLeadership";
+import { GlobalDeliveryStrength } from "@/sections/about/leadership/GlobalDeliveryStrength";
 import { GlobalEngineeringTeams } from "@/sections/about/leadership/GlobalEngineeringTeams";
 import { LeadershipImpactDeliver } from "@/sections/about/leadership/LeadershipImpactDeliver";
 import { LeadershipIndustryInsights } from "@/sections/about/leadership/LeadershipIndustryInsights";
@@ -90,7 +91,9 @@ export default function LeadershipTeamPage() {
       */}
 
       {/* 3. 3 Strategic Pillars */}
+      {/*
       <Leadership3Pillars />
+      */}
 
       {/* 4. 01 — Board of Directors (Executive Board) */}
       {/*
@@ -104,7 +107,10 @@ export default function LeadershipTeamPage() {
       <IndustryDomainLeadership />
 
       {/* 7. 04 — A Global Delivery Model Built on Local Strength */}
+      {/*
       <ExecutiveLeadership />
+      */}
+      <GlobalDeliveryStrength />
 
       {/* Principal Architects & Specialists */}
       {/*

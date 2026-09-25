@@ -5,13 +5,13 @@ export const LeadershipDeliver = () => {
   return (
     <section
       id="leadership-deliver"
-      className="pt-12 pb-0 sm:pt-16 sm:pb-0 bg-black text-white relative overflow-visible font-sans"
+      className="pt-12 pb-8 sm:pt-16 sm:pb-12 bg-black text-white relative overflow-visible font-sans"
     >
       {/* Ambient Lighting & Glows */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[90vw] max-w-[1200px] h-[500px] bg-[radial-gradient(ellipse_at_center,rgba(225,29,72,0.08),transparent_70%)] pointer-events-none z-0" />
       <div className="absolute bottom-10 right-10 w-96 h-96 bg-rose-600/5 rounded-full blur-[140px] pointer-events-none z-0" />
 
-      <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 relative z-10 space-y-0 pb-0 mb-0">
+      <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 relative z-10 space-y-0">
         
         {/* Top Tagline with Left-Right Arrow indicator */}
         <div className="text-center max-w-4xl mx-auto mb-4 sm:mb-6 relative z-40">
@@ -65,17 +65,26 @@ export const LeadershipDeliver = () => {
 
         {/* Big Size Leader Image (Backside) - Reduced Spacing Below Header Text */}
         <Reveal delay={0.15} className="w-full flex justify-center items-end leading-none p-0 m-0">
-          <div className="relative max-w-6xl mx-auto flex flex-col items-center text-center -mt-2 sm:-mt-4 md:-mt-6 z-20 pb-0 -mb-2 sm:-mb-3 md:-mb-4 lg:-mb-5">
+          <div className="relative max-w-6xl mx-auto flex flex-col items-center text-center -mt-2 sm:-mt-4 md:-mt-6 z-20 pb-0">
             {/* Ambient Lighting Behind Image */}
             <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 sm:w-[700px] h-96 sm:h-[700px] bg-rose-600/10 rounded-full blur-[140px] pointer-events-none z-0" />
 
-            {/* Big Size Leader Image (Sliding Down Into Next Section) */}
+            {/* Big Size Leader Image */}
             <div className="relative z-20 w-full max-w-[400px] sm:max-w-[620px] md:max-w-[800px] lg:max-w-[960px] xl:max-w-[1080px] flex items-end justify-center leading-none">
               <img src="/webp/assets/About-page/leader/Mani-PS-REC-BG003.webp"
                 alt="Mani - Leadership"
                 className="block w-full h-auto object-contain align-bottom filter contrast-105 drop-shadow-[0_25px_60px_rgba(0,0,0,0.95)]"
                 loading="lazy" />
             </div>
+          </div>
+        </Reveal>
+
+        {/* Quote Below Leader Image */}
+        <Reveal delay={0.25} className="w-full flex justify-center pt-8 sm:pt-10 relative z-30">
+          <div className="text-center max-w-4xl mx-auto px-4">
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl font-medium text-zinc-300 italic tracking-wide leading-relaxed">
+              &ldquo;I believe our greatest strength is our people, and our greatest opportunity is what we build together.&rdquo;
+            </p>
           </div>
         </Reveal>
       </div>

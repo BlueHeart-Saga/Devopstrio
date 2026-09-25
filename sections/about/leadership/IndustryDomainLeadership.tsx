@@ -27,9 +27,9 @@ const industryLeadershipData: IndustryLeader[] = [
   },
   {
     id: "ind-3",
-    name: "Kwame Mensah",
+    name: "Nancy Carell",
     role: "Domain Director — Cloud Infrastructure & SRE",
-    image: "/webp/assets/About-page/leadership/industry_kwame_mensah.webp",
+    image: "/webp/assets/About-page/leadership/industry_nancy_carell.webp",
   },
   {
     id: "ind-4",
@@ -105,10 +105,10 @@ export const IndustryDomainLeadership: React.FC = () => {
 
                 {/* Leader Text Info */}
                 <div className="p-5 text-left space-y-1 flex-1 flex flex-col justify-start">
-                  <h3 className="text-base sm:text-lg font-bold text-white group-hover:text-rose-400 transition-colors duration-200 leading-snug">
+                  <h3 className="text-base sm:text-lg font-semibold text-white group-hover:text-rose-400 transition-colors duration-200 leading-snug">
                     {leader.name}
                   </h3>
-                  <p className="text-xs font-medium text-rose-500 leading-normal pt-0.5">
+                  <p className="text-[13px] sm:text-[13.5px] font-medium text-zinc-400 tracking-wide leading-snug pt-1">
                     {leader.role}
                   </p>
                 </div>
