@@ -1,896 +1,1096 @@
 "use client";
 
-import React, { useState, useRef, useEffect, useCallback } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, Star } from "lucide-react";
+import React, { useState, useRef, useEffect } from "react";
+import Link from "next/link";
+import {
+  ArrowRight,
+  PlayCircle,
+  ShieldCheck,
+  Lock,
+  CheckCircle2,
+  Crosshair,
+  Key,
+  FileCheck,
+  Scale,
+  XCircle,
+  MinusCircle,
+  ChevronLeft,
+  ChevronRight,
+} from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
-import { RepresentativeCTA } from "@/components/ui/RepresentativeCTA";
+import { GlowImage } from "@/components/ui/GlowImage";
 
-const signUrl = "https://safesign.devopstrio.co.uk/login";
-
-const RedStar = ({ className = "w-4 h-4 text-[#FB2C53] shrink-0" }: { className?: string }) => (
-  <svg viewBox="0 0 24 24" fill="currentColor" className={className}>
-    <path d="M12 0C12 6.627 6.627 12 0 12C6.627 12 12 17.373 12 24C12 17.373 17.373 12 24 12C17.373 12 12 6.627 12 0Z" />
-  </svg>
-);
-
-const SectionBadge = ({ label }: { label: string }) => (
-  <div className="inline-flex items-center gap-3.5 px-9 py-3 sm:px-10 sm:py-3.5 rounded-full border-2 border-[#FB2C53] bg-black text-white text-lg sm:text-xl font-bold tracking-wider uppercase shadow-[0_0_28px_rgba(251,44,83,0.4)] hover:shadow-[0_0_38px_rgba(251,44,83,0.6)] transition-all duration-300">
-    <RedStar className="w-5 h-5 text-[#FB2C53]" />
-    <span>{label}</span>
-  </div>
-);
-
-function usePresentationSection(totalSteps: number, debounceMs = 600) {
-  const [step, setStep] = useState(0);
-  const sectionRef = useRef<HTMLElement>(null);
-  const stepRef       = useRef(0);
-  const pinnedRef     = useRef(false);
-  const cooldownRef   = useRef(false);
-  const releasingRef  = useRef(false);
-  const touchStartRef = useRef<number | null>(null);
-
-  useEffect(() => { stepRef.current = step; }, [step]);
-
-  const goToStep = useCallback((n: number) => {
-    setStep(n);
-    stepRef.current = n;
-  }, []);
-
-  useEffect(() => {
-    const el = sectionRef.current;
-    if (!el) return;
-
-    const startCooldown = () => {
-      cooldownRef.current = true;
-      window.setTimeout(() => { cooldownRef.current = false; }, debounceMs);
-    };
-
-    const releaseDown = () => {
-      if (releasingRef.current) return;
-      releasingRef.current = true;
-      pinnedRef.current = false;
-      detachWheel();
-      const rect = el.getBoundingClientRect();
-      window.scrollTo({ top: window.scrollY + rect.bottom, behavior: "smooth" });
-      window.setTimeout(() => { releasingRef.current = false; }, 800);
-    };
-
-    const releaseUp = () => {
-      if (releasingRef.current) return;
-      releasingRef.current = true;
-      pinnedRef.current = false;
-      detachWheel();
-      const rect = el.getBoundingClientRect();
-      window.scrollTo({ top: Math.max(0, window.scrollY + rect.top - window.innerHeight), behavior: "smooth" });
-      window.setTimeout(() => { releasingRef.current = false; }, 800);
-    };
-
-    const handleWheel = (e: WheelEvent) => {
-      if (!pinnedRef.current) return;
-      e.preventDefault();
-      e.stopPropagation();
-      if (releasingRef.current || cooldownRef.current) return;
-      const delta = e.deltaY;
-      if (Math.abs(delta) < 2) return;
-      const going = delta > 0 ? 1 : -1;
-      const next = stepRef.current + going;
-      if (next >= 0 && next < totalSteps) {
-        setStep(next);
-        stepRef.current = next;
-        startCooldown();
-      } else if (going > 0) {
-        releaseDown();
-      } else {
-        releaseUp();
-      }
-    };
-
-    const handleTouchStart = (e: TouchEvent) => {
-      touchStartRef.current = e.touches[0]?.clientY ?? null;
-    };
-
-    const handleTouchMove = (e: TouchEvent) => {
-      if (!pinnedRef.current) return;
-      e.preventDefault();
-      if (releasingRef.current || cooldownRef.current) return;
-      const startY = touchStartRef.current;
-      if (startY === null) return;
-      const currentY = e.touches[0]?.clientY ?? startY;
-      const delta = startY - currentY;
-      if (Math.abs(delta) < 40) return;
-      touchStartRef.current = currentY;
-      const going = delta > 0 ? 1 : -1;
-      const next = stepRef.current + going;
-      if (next >= 0 && next < totalSteps) {
-        setStep(next);
-        stepRef.current = next;
-        startCooldown();
-      } else if (going > 0) {
-        releaseDown();
-      } else {
-        releaseUp();
-      }
-    };
-
-    let wheelAttached = false;
-    const attachWheel = () => {
-      if (wheelAttached) return;
-      window.addEventListener("wheel", handleWheel, { passive: false });
-      window.addEventListener("touchstart", handleTouchStart, { passive: true });
-      window.addEventListener("touchmove", handleTouchMove, { passive: false });
-      wheelAttached = true;
-    };
-    const detachWheel = () => {
-      if (!wheelAttached) return;
-      window.removeEventListener("wheel", handleWheel);
-      window.removeEventListener("touchstart", handleTouchStart);
-      window.removeEventListener("touchmove", handleTouchMove);
-      wheelAttached = false;
-    };
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        const ratio = entry.intersectionRatio;
-        if (ratio >= 0.92 && !pinnedRef.current && !releasingRef.current) {
-          pinnedRef.current = true;
-          attachWheel();
-        } else if (ratio < 0.5 && pinnedRef.current) {
-          pinnedRef.current = false;
-          detachWheel();
-        }
-      },
-      { threshold: [0, 0.5, 0.92, 1.0] }
-    );
-
-    observer.observe(el);
-    return () => {
-      observer.disconnect();
-      detachWheel();
-      pinnedRef.current = false;
-      cooldownRef.current = false;
-      releasingRef.current = false;
-    };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [totalSteps, debounceMs]);
-
-  return { step, goToStep, sectionRef };
-}
-
-const workSteps = [
-  {
-    num: 1,
-    title: "Upload Document",
-    desc: "Upload your PDF, DOCX, or text file.",
-    img: "/webp/assets/landingpage-esigniva/work-step1-upload.webp",
-  },
-  {
-    num: 2,
-    title: "Add Recipients",
-    desc: "Enter signer emails and set verification.",
-    img: "/webp/assets/landingpage-esigniva/work-step2-recipients.webp",
-  },
-  {
-    num: 3,
-    title: "Place Signature Fields",
-    desc: "Add signatures, initials, dates, and form fields.",
-    img: "/webp/assets/landingpage-esigniva/work-step3-fields.webp",
-  },
-  {
-    num: 4,
-    title: "Sign & Complete",
-    desc: "Recipients sign securely and the document is sealed.",
-    img: "/webp/assets/landingpage-esigniva/work-step4-complete.webp",
-  },
-];
-
-const featuresData = [
-  {
-    id: "document-center",
-    title: "Smart Document Center",
-    desc: "Manage, organize, and access every document from one place.",
-    img: "/webp/assets/landingpage-esigniva/feat-document-center.webp",
-  },
-  {
-    id: "reminders",
-    title: "Automated Reminders",
-    desc: "Keep every signing request on track with smart reminders.",
-    img: "/webp/assets/landingpage-esigniva/feat-reminders.webp",
-  },
-  {
-    id: "signing-order",
-    title: "Signing Order",
-    desc: "Set the right signing sequence and keep every document moving smoothly.",
-    img: "/webp/assets/landingpage-esigniva/feat-signing-order.webp",
-  },
-  {
-    id: "secure-signing",
-    title: "Secure & Verified Signing",
-    desc: "Keep every document protected with secure, trusted signing.",
-    img: "/webp/assets/landingpage-esigniva/feat-secure-signing.webp",
-  },
-];
-
-const reviewsData = [
-  {
-    name: "Divya R",
-    role: "Operations Manager",
-    quote: "The platform is easy to use and has simplified the way our team manages documents.",
-    avatar: "/webp/assets/landingpage-esigniva/avatars/divya.png?v=2",
-    pos: "object-top",
-  },
-  {
-    name: "Sarah J",
-    role: "Finance Executive",
-    quote: "Esigniva has made our contract process faster, simpler, and more secure.",
-    avatar: "/webp/assets/landingpage-esigniva/avatars/sarah.png?v=2",
-    pos: "object-center",
-  },
-  {
-    name: "Vignesh K",
-    role: "Operations Head",
-    quote: "Sending and signing documents has never been this fast and seamless.",
-    avatar: "/webp/assets/landingpage-esigniva/avatars/vignesh.png?v=2",
-    pos: "object-top",
-  },
-  {
-    name: "John M",
-    role: "Team Lead",
-    quote: "We can manage agreements confidently without the hassle of paperwork.",
-    avatar: "/webp/assets/landingpage-esigniva/avatars/john.png?v=2",
-    pos: "object-top",
-  },
-  {
-    name: "Keerthana V",
-    role: "Business Manager",
-    quote: "From sending documents to tracking completion, everything feels effortless.",
-    avatar: "/webp/assets/landingpage-esigniva/avatars/keerthana.png?v=2",
-    pos: "object-center",
-  },
-  {
-    name: "Karthik P",
-    role: "Business Analyst",
-    quote: "Our team now has a more organised and professional way to handle agreements.",
-    avatar: "/webp/assets/landingpage-esigniva/avatars/karthik.png?v=2",
-    pos: "object-top",
-  },
-];
-
-const whyItems = ["Send in seconds", "Sign from anywhere", "Track in real time", "Stay secure"];
-
-export default function ESignivaLandingPage() {
-  const [activeFeature, setActiveFeature] = useState("document-center");
-
-  const { step: workStep, goToStep: goWorkStep, sectionRef: workSectionRef } = usePresentationSection(4, 600);
-  const { step: whyStep, goToStep: goWhyStep, sectionRef: whySectionRef } = usePresentationSection(4, 600);
-
-  const activeStep = workStep + 1;
-  const radius = 220;
-  const circumference = 2 * Math.PI * radius;
-  const arcDashOffset =
-    activeStep === 1 ? circumference * 0.75
-    : activeStep === 2 ? circumference * 0.5
-    : activeStep === 3 ? circumference * 0.25
-    : 0;
-
-  const currentFeature  = featuresData.find((f) => f.id === activeFeature) || featuresData[0];
-  const currentStepData = workSteps.find((s) => s.num === activeStep) || workSteps[0];
-
+/* =========================================================================
+   1. HERO SECTION
+   ========================================================================= */
+const EsignivaHero: React.FC = () => {
   return (
-    <main className="min-h-screen bg-black text-white selection:bg-[#FB2C53]/30 overflow-x-hidden font-sans">
-
-      {/* â•â•â•â•â•â•â•â•â•â•â•â•â•â• 1. HERO (40% Text / 60% Image) â•â•â•â•â•â•â•â•â•â•â•â•â•â• */}
-      <section className="relative w-full min-h-screen pt-24 pb-12 overflow-hidden bg-black flex items-center">
-        <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_50%_70%_at_8%_50%,#4a0718_0%,#1a0208_45%,#000000_85%)]" />
-        <div className="w-full max-w-[1480px] mx-auto px-6 sm:px-10 lg:px-16 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-[40%_60%] gap-8 lg:gap-0 items-center">
-
-            {/* LEFT 40%: Text + button + curved arrow */}
-            <div className="flex flex-col items-start relative z-20 lg:pr-8">
-              <motion.h1
-                initial={{ opacity: 0, y: 28 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
-                className="text-4xl sm:text-5xl xl:text-[3.6rem] font-semibold tracking-tight text-white leading-[1.1] mb-8 uppercase"
-              >
-                SIGN SMARTER
-                <br />
-                WORK FASTER
-              </motion.h1>
-
-              <div className="relative flex flex-col items-start w-full">
-                {/* Two side-by-side CTA buttons */}
-                <div className="flex flex-wrap items-center gap-4 sm:gap-5 relative z-10">
-                  <a
-                    href={signUrl}
-                    className="inline-flex items-center justify-center px-7 sm:px-8 py-3.5 rounded-full bg-[#FB2C53] hover:bg-[#d91e40] text-white font-semibold text-base sm:text-lg shadow-[0_10px_32px_rgba(251,44,83,0.5)] hover:shadow-[0_16px_45px_rgba(251,44,83,0.7)] hover:scale-105 active:scale-95 transition-all duration-300 tracking-wide text-center"
-                  >
-                    Sign up for free trial
-                  </a>
-
-                  <a
-                    href="/contact#contact-form"
-                    className="inline-flex items-center justify-center px-7 sm:px-8 py-3.5 rounded-full bg-[#FB2C53] hover:bg-[#d91e40] text-white font-semibold text-base sm:text-lg shadow-[0_10px_32px_rgba(251,44,83,0.5)] hover:shadow-[0_16px_45px_rgba(251,44,83,0.7)] hover:scale-105 active:scale-95 transition-all duration-300 tracking-wide text-center"
-                  >
-                    Request Demo
-                  </a>
-                </div>
-
-                {/* Curved dashed arrow: centered below the two buttons, curving up from the dashboard side toward the center of the buttons */}
-                <div className="hidden sm:block absolute -bottom-20 left-1/4 sm:left-[30%] w-40 h-20 pointer-events-none select-none text-white/70">
-                  <svg viewBox="0 0 150 80" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
-                    <path d="M140 68 C 105 76, 55 60, 20 14" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeDasharray="4 4" />
-                    <path d="M36 12 L 18 12 L 20 30" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-                </div>
-              </div>
-            </div>
-
-            {/* RIGHT 60%: Slanted stacked cards */}
-            <div className="relative flex items-center justify-center lg:justify-end min-h-[420px] sm:min-h-[520px] lg:min-h-[580px]">
-              <div className="relative w-full max-w-[740px]">
-
-                {/* Main dashboard */}
-                <motion.div
-                  initial={{ opacity: 0, y: 24 }}
-                  animate={{ opacity: 1, y: -10 }}
-                  transition={{ duration: 0.7 }}
-                  className="relative rounded-2xl border border-white/10 bg-white/5 p-2 shadow-[0_30px_90px_rgba(0,0,0,0.92)] backdrop-blur-md overflow-hidden"
-                  style={{
-                    transform:
-                      "perspective(1400px) rotateY(-5deg) rotateX(2deg)",
-                  }}
-                >
-                  <div className="relative w-full aspect-[16/10] rounded-xl overflow-hidden bg-white">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                      src="/webp/assets/landingpage-esigniva/hero-dashboard.webp"
-                      alt="eSigniva Dashboard"
-                      className="w-full h-full object-cover object-left-top"
-                    />
-                  </div>
-                </motion.div>
-
-                {/* Floating Card 1 – Document Signed */}
-                <motion.div
-                  initial={{ opacity: 0, y: -8 }}
-                  animate={{ opacity: 1, y: [-6, 6, -6] }}
-                  transition={{
-                    opacity: { duration: 0.5, delay: 0.35 },
-                    y: {
-                      duration: 4.6,
-                      repeat: Infinity,
-                      ease: "easeInOut",
-                      delay: 0.35,
-                    },
-                  }}
-                  className="absolute -top-10 sm:-top-16 md:-top-20 -left-4 sm:-left-8 md:-left-12 w-48 sm:w-56 md:w-60 drop-shadow-[0_20px_45px_rgba(0,0,0,0.95)] z-30 pointer-events-none"
-                  style={{ transform: "rotate(-4deg)" }}
-                >
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src="/webp/assets/landingpage-esigniva/hero-document-signed.webp"
-                    alt="Document Signed"
-                    className="w-full h-auto rounded-2xl"
-                  />
-                </motion.div>
-
-                {/* Floating Card 2 – Offer Letter */}
-                <motion.div
-                  initial={{ opacity: 0, y: 8 }}
-                  animate={{ opacity: 1, y: [6, -6, 6] }}
-                  transition={{
-                    opacity: { duration: 0.5, delay: 0.5 },
-                    y: {
-                      duration: 5.1,
-                      repeat: Infinity,
-                      ease: "easeInOut",
-                      delay: 0.5,
-                    },
-                  }}
-                  className="absolute -top-14 sm:-top-20 md:-top-24 -right-6 sm:-right-10 md:-right-16 w-44 sm:w-48 md:w-52 drop-shadow-[0_20px_45px_rgba(0,0,0,0.95)] z-30 pointer-events-none"
-                  style={{ transform: "rotate(4deg)" }}
-                >
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src="/webp/assets/landingpage-esigniva/hero-offer-letter.webp"
-                    alt="Offer Letter"
-                    className="w-full h-auto rounded-2xl"
-                  />
-                </motion.div>
-
-                {/* Floating Card 3 – Completed Documents */}
-                <motion.div
-                  initial={{ opacity: 0, y: 8 }}
-                  animate={{ opacity: 1, y: [-6, 6, -6] }}
-                  transition={{
-                    opacity: { duration: 0.5, delay: 0.65 },
-                    y: {
-                      duration: 4.3,
-                      repeat: Infinity,
-                      ease: "easeInOut",
-                      delay: 0.65,
-                    },
-                  }}
-                  className="absolute -bottom-14 sm:-bottom-20 md:-bottom-24 -left-4 sm:-left-8 md:-left-12 w-48 sm:w-56 md:w-60 drop-shadow-[0_20px_45px_rgba(0,0,0,0.95)] z-30 pointer-events-none"
-                  style={{ transform: "rotate(-3deg)" }}
-                >
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src="/webp/assets/landingpage-esigniva/hero-completed-docs.webp"
-                    alt="Completed Documents"
-                    className="w-full h-auto rounded-2xl"
-                  />
-                </motion.div>
-
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* â•â•â•â•â•â•â•â•â•â•â•â•â•â• 2. TRUSTED BY â•â•â•â•â•â•â•â•â•â•â•â•â•â• */}
-      <section className="w-full py-12 bg-black border-y border-zinc-900 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 text-center mb-8">
-          <SectionBadge label="Trusted by" />
-        </div>
-        <div className="relative w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent_0%,black_6%,black_94%,transparent_100%)]">
-          <div className="flex w-max animate-marquee gap-20 sm:gap-32 items-center py-2">
-            {[1, 2, 3].map((rep) => (
-              <React.Fragment key={rep}>
-                {["paymentology", "ncpl", "vdcapital", "startupfuel", "topland", "godaddy"].map((name) => (
-                  <div key={`${rep}-${name}`} className="flex items-center shrink-0 opacity-80 hover:opacity-100 transition-opacity px-2">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                      src={`/webp/assets/landingpage-esigniva/logos/${name}.png`}
-                      alt={name}
-                      className="h-8 sm:h-10 w-auto max-w-[150px] object-contain brightness-110"
-                    />
-                  </div>
-                ))}
-              </React.Fragment>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* â•â•â•â•â•â•â•â•â•â•â•â•â•â• 3. HOW IT WORKS â•â•â•â•â•â•â•â•â•â•â•â•â•â• */}
-      <section
-        ref={workSectionRef as React.RefObject<HTMLElement>}
-        className="w-full h-screen bg-black border-b border-zinc-900 flex items-center justify-center overflow-hidden py-8"
-      >
-        <div className="w-full max-w-[1400px] mx-auto px-4 sm:px-8 lg:px-10 relative z-10">
-          <div className="text-center mb-8">
-            <SectionBadge label="How to work" />
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-[1fr_420px] gap-6 lg:gap-12 items-center">
-
-            {/* LEFT: Large circle orbit */}
-            <div className="flex items-center justify-center">
-              <div className="relative w-full max-w-[530px] sm:max-w-[600px] aspect-square flex items-center justify-center mx-auto">
-
-                {/* Orbit SVG */}
-                <svg className="absolute inset-0 w-full h-full -rotate-90 pointer-events-none" viewBox="0 0 500 500">
-                  <circle cx="250" cy="250" r={radius} fill="none" stroke="#2e0810" strokeWidth="2" />
-                  <motion.circle
-                    cx="250" cy="250" r={radius}
-                    fill="none" stroke="#FB2C53" strokeWidth="3"
-                    strokeDasharray={circumference}
-                    animate={{ strokeDashoffset: arcDashOffset }}
-                    transition={{ duration: 0.45, ease: "easeOut" }}
-                    strokeLinecap="round"
-                    style={activeStep === 4 ? { filter: "drop-shadow(0 0 14px #FB2C53)" } : undefined}
-                  />
-                </svg>
-
-                {/* Step buttons at 12/3/6/9 o'clock */}
-                {[
-                  { num: 1, cls: "absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1" },
-                  { num: 2, cls: "absolute right-0 top-1/2 -translate-y-1/2 translate-x-1" },
-                  { num: 3, cls: "absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1" },
-                  { num: 4, cls: "absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1" },
-                ].map(({ num, cls }) => {
-                  const isReached = activeStep >= num;
-                  const isCurrent = activeStep === num;
-                  return (
-                    <button
-                      key={num}
-                      onClick={() => goWorkStep(num - 1)}
-                      aria-label={`Step ${num}`}
-                      className={`${cls} flex items-center justify-center w-11 h-11 sm:w-13 sm:h-13 rounded-full border-2 font-semibold text-sm transition-all duration-500 z-30 cursor-pointer ${
-                        isCurrent
-                          ? "bg-[#FB2C53] border-[#FB2C53] text-white shadow-[0_0_26px_rgba(251,44,83,0.9)] scale-115"
-                          : isReached
-                          ? "bg-[#1a0507] border-[#FB2C53] text-[#FB2C53]"
-                          : "bg-[#0d0c0e] border-zinc-700 text-zinc-500"
-                      }`}
-                    >
-                      {num}
-                    </button>
-                  );
-                })}
-
-                {/* Inner mockup image — identical fixed frame for all 4 steps */}
-                <div className="relative w-[95%] sm:w-[96%] z-20">
-                  <AnimatePresence mode="wait">
-                    <motion.div
-                      key={activeStep}
-                      initial={{ opacity: 0, scale: 0.97, x: 6 }}
-                      animate={{ opacity: 1, scale: 1, x: 0 }}
-                      exit={{ opacity: 0, scale: 0.97, x: -6 }}
-                      transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-                      className="w-full"
-                    >
-                      {/* Device frame — exact image ratio 1400x1086, object-cover fills uniformly */}
-                      <div className="relative w-full rounded-[1.5rem] border-[10px] border-zinc-800 shadow-[0_0_0_2px_#1f1f1f,0_24px_70px_rgba(0,0,0,0.95)] overflow-hidden bg-zinc-900" style={{ aspectRatio: "1400/1086" }}>
-                        {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img
-                          src={currentStepData.img}
-                          alt={currentStepData.title}
-                          className={`absolute inset-0 w-full h-full object-cover ${activeStep === 1 ? "object-center scale-[1.12]" : "object-top"} transition-all duration-300`}
-                        />
-                      </div>
-                    </motion.div>
-                  </AnimatePresence>
-                </div>
-              </div>
-            </div>
-
-            {/* RIGHT: Step list with crimson left-border accent */}
-            <div className="flex flex-col justify-center space-y-7">
-              {workSteps.map((step) => {
-                const isCurrent = activeStep === step.num;
-                const isReached = activeStep >= step.num;
-                return (
-                  <div
-                    key={step.num}
-                    onClick={() => goWorkStep(step.num - 1)}
-                    className={`cursor-pointer group border-l-[3px] pl-5 py-1 transition-all duration-300 ${
-                      isCurrent
-                        ? "border-[#FB2C53]"
-                        : isReached
-                        ? "border-[#FB2C53]/40"
-                        : "border-zinc-800 hover:border-zinc-600"
-                    }`}
-                  >
-                    <h3
-                      className={`text-xl sm:text-2xl font-semibold transition-colors duration-300 ${
-                        isCurrent
-                          ? "text-[#FB2C53]"
-                          : isReached
-                          ? "text-[#FB2C53]/65"
-                          : "text-zinc-700 group-hover:text-zinc-400"
-                      }`}
-                    >
-                      {step.title}
-                    </h3>
-                    <p
-                      className={`text-sm leading-relaxed mt-1 transition-colors duration-300 ${
-                        isCurrent ? "text-white/90" : "text-zinc-600 group-hover:text-zinc-400"
-                      }`}
-                    >
-                      {step.desc}
-                    </p>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ══════════════ 4. FEATURES ══════════════ */}
-      <section className="w-full py-12 md:py-16 relative bg-black border-b border-zinc-900 overflow-hidden">
-        {/* Subtle ambient background grid texture (3-4% opacity) */}
-        <div
-          className="absolute inset-0 pointer-events-none bg-[linear-gradient(to_right,rgba(255,255,255,0.035)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.035)_1px,transparent_1px)] bg-[size:52px_52px] [mask-image:radial-gradient(ellipse_75%_65%_at_50%_50%,#000_40%,transparent_100%)]"
-          aria-hidden="true"
-        />
-
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
-          <div className="text-center mb-10">
-            <SectionBadge label="Features" />
-          </div>
-          <div className="grid grid-cols-1 lg:grid-cols-[44%_56%] gap-8 lg:gap-12 items-center">
-
-            {/* LEFT: 4 Feature cards — exactly equal height & width, compact & balanced */}
-            <div className="flex flex-col space-y-3 w-full">
-              {featuresData.map((feat) => {
-                const isSelected = activeFeature === feat.id;
-                return (
-                  <div
-                    key={feat.id}
-                    onClick={() => setActiveFeature(feat.id)}
-                    className={`w-full h-[86px] sm:h-[90px] rounded-2xl border px-4 sm:px-5 py-3 transition-all duration-300 cursor-pointer flex flex-col justify-center ${
-                      isSelected
-                        ? "bg-[#1f1619] border-[#FB2C53] shadow-[0_0_28px_rgba(251,44,83,0.24)] scale-[1.01]"
-                        : "bg-[#0f0e10] border-white/10 hover:border-[#FB2C53]/60 hover:shadow-[0_0_22px_rgba(251,44,83,0.16)] hover:bg-[#161214] hover:scale-[1.01]"
-                    }`}
-                  >
-                    <div className="flex items-center justify-between mb-1">
-                      <h3 className="text-base font-semibold text-[#FB2C53] truncate">{feat.title}</h3>
-                      <RedStar className="w-4 h-4 text-[#FB2C53] shrink-0 ml-2" />
-                    </div>
-                    <p className="text-white/80 text-xs sm:text-[0.82rem] leading-snug font-normal line-clamp-2">{feat.desc}</p>
-                  </div>
-                );
-              })}
-            </div>
-
-            {/* RIGHT: Feature preview — standalone mockup image with ambient crimson glow */}
-            <div className="flex items-center justify-center w-full relative">
-              <div className="relative w-full h-[500px] sm:h-[535px] lg:h-[555px] flex items-center justify-center">
-                {/* Large diffused radial ambient glow centered behind the vertical feature image */}
-                <div
-                  className="absolute inset-0 m-auto w-[120%] h-[120%] max-w-[640px] max-h-[640px] rounded-full bg-[radial-gradient(ellipse_at_center,rgba(251,44,83,0.18)_0%,rgba(251,44,83,0.06)_45%,transparent_75%)] blur-[70px] pointer-events-none"
-                  aria-hidden="true"
+    <section className="relative bg-[#000000] text-white font-sans pt-24 pb-6 sm:pt-28 sm:pb-8 lg:pt-32 overflow-hidden">
+      <div className="max-w-[1280px] mx-auto px-6 sm:px-8 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-[minmax(0,1fr)_680px] gap-8 items-center min-h-[440px]">
+          {/* Left Text Block */}
+          <div className="text-left space-y-6 max-w-[488px]">
+            {/* Esigniva Brand Logo */}
+            <Reveal>
+              <div className="flex items-center gap-3">
+                <img
+                  src="/webp/assets/landingpage-esigniva/Images/esigniva_logo_icon.webp"
+                  alt="eSigniva"
+                  className="w-[34px] h-[34px] object-contain shrink-0"
                 />
-
-                <AnimatePresence mode="wait">
-                  <motion.div
-                    key={currentFeature.id}
-                    initial={{ opacity: 0, scale: 0.985 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: 0.985 }}
-                    transition={{ duration: 0.35, ease: "easeOut" }}
-                    className="relative w-full h-full flex items-center justify-center z-10"
-                  >
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                      src={currentFeature.img}
-                      alt={currentFeature.title}
-                      className="w-full h-full object-contain drop-shadow-[0_22px_50px_rgba(0,0,0,0.9)]"
-                    />
-                  </motion.div>
-                </AnimatePresence>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ══════════════ 5. WHY ESIGNIVA (50/50 Balanced Layout) ══════════════ */}
-      <section
-        ref={whySectionRef as React.RefObject<HTMLElement>}
-        className="w-full h-screen bg-black border-b border-zinc-900 flex items-center justify-center overflow-hidden py-8"
-      >
-        <div className="w-full max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-14 relative z-10">
-          <div className="text-center mb-10">
-            <SectionBadge label="Why Esigniva" />
-          </div>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center">
-
-            {/* LEFT HALF (50%): Content occupies the full left half */}
-            <div className="flex flex-col items-start w-full">
-              <h2 className="text-3xl sm:text-4xl lg:text-[2.85rem] xl:text-[3.25rem] font-semibold tracking-tight text-white leading-[1.1] whitespace-nowrap">
-                Simple steps to smart
-              </h2>
-              <div className="flex items-center mt-3 sm:mt-3.5 mb-3.5 sm:mb-4">
-                <div className="w-2 h-10 sm:w-2.5 sm:h-11 bg-[#FB2C53] rounded-full mr-3 shrink-0" />
-                <span className="px-5 py-2 sm:px-6 sm:py-2.5 rounded-2xl bg-[#80182C] text-white text-xl sm:text-2xl lg:text-3xl xl:text-[2.2rem] font-semibold tracking-wide shadow-[0_6px_28px_rgba(251,44,83,0.4)]">
-                  digital signing
+                <span className="text-[28px] sm:text-[32px] font-bold text-white tracking-[-0.5px] font-sans">
+                  Esigniva
                 </span>
               </div>
-              <p className="text-zinc-300 text-sm sm:text-base lg:text-lg xl:text-xl leading-relaxed whitespace-nowrap font-normal">
-                Send, Sign, track, and manage documents – all in one place.
+            </Reveal>
+
+            <Reveal delay={0.04}>
+              <h1 className="text-[36px] sm:text-[44px] lg:text-[48px] font-bold text-white leading-[1.12] lg:leading-[56px] tracking-[-1.2px]">
+                Sign Documents. <br />
+                Simplify Business.
+              </h1>
+            </Reveal>
+
+            <Reveal delay={0.07}>
+              <p className="text-[16px] lg:text-[18px] text-white leading-[26px] font-normal max-w-[482px]">
+                eSigniva brings electronic signatures and document workflows together in one simple experience. Send documents, collect signatures, manage signing activities, and keep your agreements moving digitally.
               </p>
-            </div>
+            </Reveal>
 
-            {/* RIGHT HALF (50%): Starts at the center line and extends rightward with natural breathing room on the right */}
-            <div className="flex flex-col justify-center space-y-6 w-full lg:pr-6">
-              {whyItems.map((title, idx) => {
-                const isReached = whyStep >= idx;
-                const isCurrent = whyStep === idx;
-                return (
-                  <motion.div
-                    key={title}
-                    onClick={() => goWhyStep(idx)}
-                    animate={{
-                      opacity: isCurrent ? 1 : isReached ? 0.62 : 0.18,
-                      scale: isCurrent ? 1.04 : 1,
-                      x: isCurrent ? 10 : 0,
-                    }}
-                    transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-                    className="cursor-pointer border-l-4 pl-6 transition-colors duration-300"
-                    style={{
-                      borderColor: isCurrent
-                        ? "#FB2C53"
-                        : isReached
-                        ? "rgba(251,44,83,0.38)"
-                        : "rgba(255,255,255,0.04)",
-                      filter: isCurrent ? "drop-shadow(0 0 10px rgba(251,44,83,0.4))" : "none",
-                    }}
-                  >
-                    <h3
-                      className={`text-3xl sm:text-4xl lg:text-5xl xl:text-[3.4rem] font-semibold tracking-tight ${
-                        isCurrent
-                          ? "text-white drop-shadow-[0_0_24px_rgba(255,255,255,0.6)]"
-                          : isReached
-                          ? "text-[#FB2C53]/55"
-                          : "text-zinc-800"
-                      }`}
-                    >
-                      {title}
-                    </h3>
-                  </motion.div>
-                );
-              })}
-            </div>
+            <Reveal delay={0.1}>
+              <div className="flex flex-wrap items-center gap-4 pt-1">
+                <Link
+                  href="https://safesign.devopstrio.co.uk/login"
+                  target="_blank"
+                  className="w-[158px] h-[42px] inline-flex items-center justify-center gap-2 rounded-lg bg-[#26756E] text-[13px] font-semibold text-white transition-all hover:bg-[#1f5f59]"
+                >
+                  <span>Get Started</span>
+                  <ArrowRight size={15} />
+                </Link>
+
+                <a
+                  href="#how-it-works"
+                  className="w-[205px] h-[42px] inline-flex items-center justify-center gap-2 rounded-lg border border-zinc-700 bg-black/40 text-[13px] font-medium text-white transition-all hover:border-zinc-500"
+                >
+                  <PlayCircle size={15} className="text-zinc-300" />
+                  <span>Explore How It Works</span>
+                </a>
+              </div>
+            </Reveal>
+          </div>
+
+          {/* Right Hero Image: Static, Subtle Glow */}
+          <div className="flex justify-center lg:justify-end">
+            <Reveal delay={0.12} className="w-full flex justify-center lg:justify-end">
+              <GlowImage
+                src="/webp/assets/landingpage-esigniva/Images/hero_clean.webp"
+                alt="Sign Documents with eSigniva"
+                maxW="max-w-[680px]"
+                eager
+                glow="w-[110%] h-[80%]"
+                interactive={false}
+              />
+            </Reveal>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
+  );
+};
 
-      {/* ────────────────── 6. REVIEWS ────────────────── */}
-      <section className="w-full py-16 md:py-24 relative bg-black border-b border-zinc-900 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
+/* =========================================================================
+   2. WHAT IS ESIGNIVA?
+   ========================================================================= */
+const whatIsFeatures = [
+  "Frictionless Workflow Automation",
+  "Hardware-Backed Security",
+  "Developer-First API & Integrations",
+  "Legally Binding & Court-Admissible",
+];
 
-          <div className="text-center mb-12">
-            <div className="mb-6 flex justify-center">
-              <SectionBadge label="Reviews" />
-            </div>
+const EsignivaWhatIs: React.FC = () => {
+  return (
+    <section className="relative bg-[#000000] text-white font-sans pt-6 pb-12 sm:pt-10 sm:pb-16 overflow-hidden">
+      <div className="max-w-[1280px] mx-auto px-6 sm:px-8 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-[minmax(0,1fr)_650px] gap-8 items-center">
+          {/* Left Column */}
+          <div className="space-y-5 text-left">
+            <Reveal>
+              <div className="space-y-2.5">
+                <span className="text-[14px] leading-[14px] font-semibold text-[#2DD4BF] tracking-[0.55px] uppercase block">
+                  WHAT IS ESIGNIVA?
+                </span>
+                <h2 className="text-[32px] sm:text-[40px] lg:text-[48px] font-bold text-white leading-[1.12] lg:leading-[56px] tracking-[-1.2px] max-w-[591px]">
+                  A Smarter Way to Manage <br />
+                  Digital Signatures
+                </h2>
+              </div>
+            </Reveal>
 
-            <h2 className="text-3xl sm:text-5xl font-semibold tracking-tight text-white mb-5 whitespace-nowrap">
-              Trusted by Teams{" "}
-              <span className="inline-block px-4 py-1.5 rounded-xl bg-gradient-to-r from-[#7a1526] to-[#FB2C53] text-white font-semibold">
-                Who Sign Smart
-              </span>
-            </h2>
+            <Reveal delay={0.06}>
+              <p className="text-[16px] lg:text-[18px] text-white font-normal leading-[26px] max-w-[467px]">
+                eSigniva helps businesses move away from manual document signing by bringing document preparation, electronic signatures, and signing workflows into one streamlined platform.
+              </p>
+            </Reveal>
 
-            <div className="flex items-center justify-center gap-3.5 sm:gap-4 mt-4 flex-wrap">
-              {/* 5 Stacked Reviewer Avatars */}
-              <div className="flex items-center -space-x-2.5 sm:-space-x-3 overflow-visible shrink-0 py-0.5 px-0.5">
-                {[
-                  { name: "Divya", src: "/webp/assets/landingpage-esigniva/avatars/divya.png?v=2", pos: "object-top" },
-                  { name: "Sarah", src: "/webp/assets/landingpage-esigniva/avatars/sarah.png?v=2", pos: "object-center" },
-                  { name: "Vignesh", src: "/webp/assets/landingpage-esigniva/avatars/vignesh.png?v=2", pos: "object-top" },
-                  { name: "John", src: "/webp/assets/landingpage-esigniva/avatars/john.png?v=2", pos: "object-top" },
-                  { name: "Keerthana", src: "/webp/assets/landingpage-esigniva/avatars/keerthana.png?v=2", pos: "object-center" },
-                ].map((item, i) => (
-                  <div
-                    key={i}
-                    className="relative w-9 h-9 sm:w-10 sm:h-10 rounded-full overflow-hidden border-2 border-black bg-zinc-900 shadow-md shrink-0 ring-1 ring-white/20 flex items-center justify-center"
-                  >
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                      src={item.src}
-                      alt={item.name}
-                      className={`w-full h-full object-cover ${item.pos}`}
-                    />
+            <Reveal delay={0.12}>
+              <div className="space-y-[10px] pt-2">
+                {whatIsFeatures.map((item, idx) => (
+                  <div key={idx} className="flex items-center gap-3">
+                    <CheckCircle2 className="w-[14px] h-[14px] text-[#2DD4BF] shrink-0" />
+                    <span className="text-[14px] leading-[22px] font-normal text-white">
+                      {item}
+                    </span>
                   </div>
                 ))}
               </div>
-              <div className="flex text-amber-400 gap-0.5 items-center">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} size={18} fill="currentColor" />
-                ))}
-              </div>
-              <span className="text-sm sm:text-base font-medium text-zinc-300">2,500+ customer reviews</span>
-            </div>
+            </Reveal>
           </div>
 
-          {/* Review cards — matching Careers "What Our Team Is Saying" template */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-            {reviewsData.map((rev, index) => (
-              <motion.div
-                key={rev.name}
-                initial={{ opacity: 0, y: 18 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-40px" }}
-                transition={{ duration: 0.5, delay: index * 0.08, ease: "easeOut" }}
-                className="flex flex-col gap-5 text-left group"
-              >
-                {/* Quote bubble card */}
-                <div className="relative bg-[#0d0d0d] border border-white/[0.08] hover:border-[#FB2C53]/35 p-6 sm:p-7 rounded-[24px] shadow-xl hover:shadow-[0_12px_40px_rgba(251,44,83,0.12)] transition-all duration-300 flex flex-col justify-between min-h-[175px] group-hover:-translate-y-1">
-                  <p className="text-zinc-100 text-base sm:text-[1.05rem] font-semibold italic leading-relaxed mb-6">
-                    &ldquo;{rev.quote}&rdquo;
-                  </p>
-
-                  {/* Star rating */}
-                  <div className="flex gap-1 text-amber-400">
-                    {Array.from({ length: 5 }).map((_, i) => (
-                      <Star key={i} size={15} fill="currentColor" />
-                    ))}
-                  </div>
-                </div>
-
-                {/* Profile details under the card */}
-                <div className="flex items-center gap-3.5 px-2">
-                  <div className="w-12 h-12 rounded-full overflow-hidden shrink-0 shadow-lg ring-2 ring-[#FB2C53]/30 bg-zinc-900 border-2 border-black flex items-center justify-center">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                      src={rev.avatar}
-                      alt={rev.name}
-                      className={`w-full h-full object-cover ${rev.pos || "object-top"}`}
-                      loading="lazy"
-                    />
-                  </div>
-                  <div>
-                    <span className="text-base font-bold text-white block leading-tight">
-                      {rev.name}
-                    </span>
-                    <span className="text-sm text-zinc-400 font-medium block mt-1 leading-tight">
-                      {rev.role}
-                    </span>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
+          {/* Right Column Visual: 558px with Anchored Glow */}
+          <div className="flex justify-center lg:justify-end">
+            <Reveal delay={0.1} className="w-full flex justify-center lg:justify-end">
+              <GlowImage
+                src="/webp/assets/landingpage-esigniva/Images/what_is_clean.webp"
+                alt="What is eSigniva"
+                maxW="max-w-[650px]"
+                glow="w-[95%] h-[80%]"
+              />
+            </Reveal>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
+  );
+};
 
-      {/* ══════════════ 7. FINAL CTA (Contact Page Design) ══════════════ */}
-      <section className="w-full pt-12 sm:pt-16 lg:pt-20 pb-8 sm:pb-12 bg-black relative font-sans overflow-x-clip">
-        {/* Subtle ambient background grid texture (3-4% opacity) */}
-        <div
-          className="absolute inset-0 pointer-events-none bg-[linear-gradient(to_right,rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:52px_52px] [mask-image:radial-gradient(ellipse_75%_65%_at_50%_50%,#000_40%,transparent_100%)]"
-          aria-hidden="true"
-        />
+/* =========================================================================
+   3. HOW ESIGNIVA WORKS (Scroll-Driven Light Curves)
+   ========================================================================= */
+const howSteps = [
+  {
+    n: "01",
+    title: "Build & Smart Upload",
+    desc: "Upload any PDF/DOCX or construct dynamic agreement templates. Our AI engine auto-detects signatures and form fields in milliseconds.",
+    img: "/webp/assets/landingpage-esigniva/Images/HOW ESIGNIVA WORKS/step1_clean.webp",
+    alt: "Build and Smart Upload",
+    maxW: "max-w-[680px]",
+    flip: false,
+  },
+  {
+    n: "02",
+    title: "Choose Recipients & Smart Order",
+    desc: "Configure multi-party signing flows with sequential or parallel approvals, identity challenges, and custom sign-order rules.",
+    img: "/webp/assets/landingpage-esigniva/Images/HOW ESIGNIVA WORKS/step2_clean.webp",
+    alt: "Choose Recipients and Smart Order",
+    maxW: "max-w-[620px]",
+    flip: true,
+  },
+  {
+    n: "03",
+    title: "Send, Track & Manage",
+    desc: "Deliver documents to the right recipients, track their activity in real time, and send timely reminders until every signature is complete.",
+    img: "/webp/assets/landingpage-esigniva/Images/HOW ESIGNIVA WORKS/step3_clean.webp",
+    alt: "Send, Track and Manage",
+    maxW: "max-w-[670px]",
+    flip: false,
+  },
+];
 
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
+const clamp01 = (v: number) => Math.min(1, Math.max(0, v));
+
+const EsignivaHowItWorks: React.FC = () => {
+  const boxRef = useRef<HTMLDivElement>(null);
+  const rowRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const dotRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const metrics = useRef({ a: 0, b: 0, c: 0, h: 0 });
+  const [paths, setPaths] = useState({ d1: "", d2: "", d3: "", w: 0, h: 0 });
+  const [prog, setProg] = useState({
+    p1: 0,
+    p2: 0,
+    p3: 0,
+    on: [false, false, false],
+  });
+
+  // scroll -> how far the light has travelled
+  const update = () => {
+    const box = boxRef.current;
+    const { a, b, c, h } = metrics.current;
+    if (!box || !h) return;
+    const anchor = window.innerHeight * 0.6 - box.getBoundingClientRect().top;
+    const p1 = clamp01((anchor - a) / (b - a));
+    const p2 = clamp01((anchor - b) / (c - b));
+    const p3 = clamp01((anchor - c) / (h - c));
+    const on = [anchor >= a - 40, p1 >= 0.98, p2 >= 0.98];
+    setProg((prev) =>
+      prev.p1 === p1 &&
+      prev.p2 === p2 &&
+      prev.p3 === p3 &&
+      prev.on.every((v, i) => v === on[i])
+        ? prev
+        : { p1, p2, p3, on }
+    );
+  };
+
+  useEffect(() => {
+    const box = boxRef.current;
+    if (!box) return;
+
+    const centerOf = (el: HTMLElement) => {
+      let x = 0,
+        y = 0;
+      let n: HTMLElement | null = el;
+      while (n && n !== box) {
+        x += n.offsetLeft;
+        y += n.offsetTop;
+        n = n.offsetParent as HTMLElement | null;
+      }
+      return { x: x + el.offsetWidth / 2, y: y + el.offsetHeight / 2 };
+    };
+
+    const calc = () => {
+      const dots = dotRefs.current;
+      const rows = rowRefs.current;
+      if (!dots[0] || !dots[1] || !dots[2] || !rows[0] || !rows[1] || !rows[2]) return;
+
+      const a = centerOf(dots[0]);
+      const b = centerOf(dots[1]);
+      const c = centerOf(dots[2]);
+      const w = box.offsetWidth;
+      const h = box.offsetHeight;
+      const r = 48;
+
+      const gap1 = (rows[0].offsetTop + rows[0].offsetHeight + rows[1].offsetTop) / 2;
+      const gap2 = (rows[1].offsetTop + rows[1].offsetHeight + rows[2].offsetTop) / 2;
+
+      metrics.current = { a: a.y, b: b.y, c: c.y, h };
+      setPaths({
+        d1: `M ${a.x} ${a.y + r} C ${a.x} ${gap1}, ${b.x} ${gap1}, ${b.x} ${b.y - r}`,
+        d2: `M ${b.x} ${b.y + r} C ${b.x} ${gap2}, ${c.x} ${gap2}, ${c.x} ${c.y - r}`,
+        d3: `M ${c.x} ${c.y + r} C ${c.x} ${h + 40}, ${c.x + (w - c.x) * 0.35} ${h + 40}, ${w * 0.85} ${h + 40}`,
+        w,
+        h,
+      });
+      update();
+    };
+
+    calc();
+    const ro = new ResizeObserver(calc);
+    ro.observe(box);
+    const t = setTimeout(calc, 1200);
+
+    let raf = 0;
+    const onScroll = () => {
+      cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(update);
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+
+    return () => {
+      ro.disconnect();
+      clearTimeout(t);
+      cancelAnimationFrame(raf);
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+    };
+  }, []);
+
+  const segs = [
+    { d: paths.d1, p: prog.p1 },
+    { d: paths.d2, p: prog.p2 },
+    { d: paths.d3, p: prog.p3 },
+  ];
+
+  return (
+    <section
+      id="how-it-works"
+      className="relative bg-[#000000] text-white font-sans pt-12 pb-20 sm:pt-16 sm:pb-24 overflow-hidden"
+    >
+      <div className="max-w-[1280px] mx-auto px-6 sm:px-8 relative z-10">
+        {/* Section Header */}
+        <div className="text-center max-w-[945px] mx-auto mb-16 sm:mb-20 space-y-3">
           <Reveal>
-            <div className="bg-[#080808] border border-zinc-800/80 rounded-3xl p-6 sm:p-10 lg:p-12 lg:pl-14 lg:pr-8 relative shadow-2xl flex flex-col lg:flex-row items-stretch justify-between gap-8 min-h-[340px] sm:min-h-[380px] lg:min-h-[400px]">
-              
-              {/* Left Content Column: Title, Subheading & CTA Buttons */}
-              <div className="w-full lg:w-[58%] xl:w-[60%] z-20 flex flex-col justify-between items-start text-left relative py-2">
-                <div>
-                  <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-white leading-[1.18] font-sans mb-4 max-w-3xl drop-shadow-[0_4px_16px_rgba(0,0,0,0.9)]">
-                    Sign smarter,{" "}
-                    <span className="text-rose-500 font-semibold block sm:inline mt-1 sm:mt-0">
-                      anywhere.
-                    </span>
-                  </h2>
+            <span className="text-[14px] leading-[14px] font-semibold text-[#89D4CB] tracking-[0.55px] uppercase block">
+              HOW ESIGNIVA WORKS
+            </span>
+          </Reveal>
 
-                  <p className="text-zinc-300 text-base sm:text-lg leading-relaxed font-normal mb-6 max-w-2xl">
-                    Manage documents, send for signatures, and track every step —
-                    <br className="hidden sm:inline" /> all in one secure place with eSigniva.
-                  </p>
-                </div>
+          <Reveal delay={0.05}>
+            <h2 className="text-[28px] sm:text-[38px] lg:text-[48px] font-bold text-[#E4E2E1] leading-[1.12] lg:leading-[56px] tracking-[-1.2px] whitespace-normal lg:whitespace-nowrap">
+              From Document to Signed in Simple Steps
+            </h2>
+          </Reveal>
 
-                {/* Tactile CTA Buttons */}
-                <div className="mt-auto pt-6 sm:pt-8 flex flex-wrap items-center gap-5 sm:gap-7">
-                  <a
-                    href={signUrl}
-                    className="btn-tactile group"
-                  >
-                    <div>
-                      <span>
-                        Start Your Free Journey
-                        <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                      </span>
-                    </div>
-                  </a>
+          <Reveal delay={0.08}>
+            <p className="text-[16px] lg:text-[18px] text-white font-normal leading-[26px] max-w-[677px] mx-auto">
+              eSigniva simplifies the entire signing journey—from preparing your document to managing the completed agreement.
+            </p>
+          </Reveal>
+        </div>
 
-                  <a
-                    href="/contact#contact-form"
-                    className="btn-tactile btn-tactile-secondary group"
-                  >
-                    <div>
-                      <span>
-                        TALK TO AN EXPERT
-                        <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                      </span>
-                    </div>
-                  </a>
-                </div>
-              </div>
-
-              {/* Right Representative Image */}
-              <div className="flex lg:absolute lg:bottom-0 lg:right-2 xl:right-6 w-full sm:w-[480px] md:w-[540px] lg:w-[640px] xl:w-[700px] justify-center lg:justify-end items-end pointer-events-none z-10 mt-6 sm:mt-8 lg:mt-0 mx-auto lg:mx-0">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src="/webp/assets/components/cta-img-001.webp"
-                  alt="eSigniva Representative"
-                  className="w-full h-auto max-h-[240px] sm:max-h-[320px] lg:max-h-[calc(100%+160px)] xl:max-h-[calc(100%+180px)] object-contain object-bottom pointer-events-none drop-shadow-[0_15px_35px_rgba(0,0,0,0.85)] lg:drop-shadow-[0_25px_50px_rgba(0,0,0,0.95)]"
-                  loading="lazy"
+        {/* Steps */}
+        <div ref={boxRef} className="relative space-y-20 sm:space-y-28 lg:space-y-32">
+          {/* Connecting line (desktop only) */}
+          {paths.d1 && (
+            <svg
+              className="hidden lg:block absolute left-0 top-0 z-0 pointer-events-none overflow-visible"
+              width={paths.w}
+              height={paths.h}
+              aria-hidden="true"
+            >
+              {segs.map((s, i) => (
+                <path
+                  key={`base-${i}`}
+                  d={s.d}
+                  fill="none"
+                  stroke="rgba(45,212,191,0.14)"
+                  strokeWidth="2"
+                  strokeLinecap="round"
                 />
-              </div>
+              ))}
 
+              {segs.map((s, i) => (
+                <path
+                  key={`lit-${i}`}
+                  d={s.d}
+                  pathLength={1}
+                  fill="none"
+                  stroke="#2DD4BF"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
+                  strokeDasharray="1"
+                  strokeDashoffset={1 - s.p}
+                  style={{
+                    opacity: s.p > 0.001 ? 1 : 0,
+                    filter: "drop-shadow(0 0 8px rgba(45,212,191,.9))",
+                  }}
+                />
+              ))}
+            </svg>
+          )}
+
+          {howSteps.map((s, i) => {
+            const active = prog.on[i];
+            return (
+              <div
+                key={s.n}
+                ref={(el) => {
+                  rowRefs.current[i] = el;
+                }}
+                className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-7 lg:gap-8 items-center"
+              >
+                {/* Circle + text in one row */}
+                <div
+                  className={`lg:col-span-5 w-full max-w-[454px] ${
+                    s.flip ? "order-1 lg:order-2 lg:ml-auto" : ""
+                  }`}
+                >
+                  <div
+                    className={`flex items-center gap-5 text-left ${
+                      s.flip ? "lg:flex-row-reverse lg:text-right" : ""
+                    }`}
+                  >
+                    {/* Circle (ref used by the line) */}
+                    <Reveal>
+                      <div
+                        ref={(el) => {
+                          dotRefs.current[i] = el;
+                        }}
+                        className={`shrink-0 w-[80.69px] h-[80.69px] rounded-full flex items-center justify-center text-[20px] font-semibold transition-all duration-500 ${
+                          active ? "bg-white text-[#26756E]" : "bg-zinc-800 text-zinc-500"
+                        }`}
+                        style={{
+                          boxShadow: active
+                            ? "0 0 0 6px rgba(45,212,191,.25), 0 0 32px rgba(45,212,191,.8)"
+                            : "0 0 0 1px rgba(45,212,191,.15)",
+                        }}
+                      >
+                        {s.n}
+                      </div>
+                    </Reveal>
+
+                    {/* Text beside the circle */}
+                    <div className="min-w-0 flex-1 space-y-2">
+                      <Reveal delay={0.06}>
+                        <h3 className="text-[18px] leading-[26px] font-semibold text-white">
+                          {s.title}
+                        </h3>
+                      </Reveal>
+                      <Reveal delay={0.1}>
+                        <p className="text-[14px] leading-[22px] text-white font-normal">
+                          {s.desc}
+                        </p>
+                      </Reveal>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Image */}
+                <div
+                  className={`lg:col-span-7 flex justify-center ${
+                    s.flip ? "order-2 lg:order-1 lg:justify-start" : "lg:justify-end"
+                  }`}
+                >
+                  <Reveal delay={0.08} className="w-full flex justify-center">
+                    <GlowImage
+                      src={s.img}
+                      alt={s.alt}
+                      maxW={s.maxW}
+                      glow="w-[90%] h-[75%]"
+                    />
+                  </Reveal>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+/* =========================================================================
+   4. SMART BUILDER STUDIO
+   ========================================================================= */
+const EsignivaBuilderStudio: React.FC = () => {
+  return (
+    <section className="relative bg-[#000000] text-white font-sans pt-10 pb-16 sm:pt-14 sm:pb-20">
+      <div className="max-w-[1280px] mx-auto px-6 sm:px-8 relative z-10">
+        <div className="text-center max-w-[821px] mx-auto mb-10 space-y-3">
+          <Reveal>
+            <span className="text-[14px] leading-[14px] font-semibold text-[#89D4CB] tracking-[0.55px] uppercase block">
+              SMART BUILDER STUDIO
+            </span>
+          </Reveal>
+
+          <Reveal delay={0.05}>
+            <h2 className="text-[30px] sm:text-[40px] lg:text-[48px] font-bold text-white leading-[1.12] lg:leading-[56px] tracking-[-1.2px] whitespace-normal lg:whitespace-nowrap">
+              Make Every Document Ready to Sign
+            </h2>
+          </Reveal>
+
+          <Reveal delay={0.08}>
+            <p className="text-[16px] lg:text-[18px] text-white font-normal leading-[26px] max-w-[739px] mx-auto">
+              Prepare documents with the information and fields your recipients need. Intuitive drag-and-drop field orchestration with automated cryptographic compliance rules.
+            </p>
+          </Reveal>
+
+          {/* Stats Bar */}
+          <Reveal delay={0.12}>
+            <div className="max-w-[861px] h-auto sm:h-[48px] mx-auto mt-6 px-6 py-3 sm:py-0 rounded-2xl sm:rounded-full bg-[#0b0f10] border border-zinc-800/80 flex flex-wrap sm:flex-nowrap items-center justify-between gap-4 text-[13px] sm:text-[14px] text-zinc-300">
+              <div className="flex items-center gap-2">
+                <ShieldCheck size={16} className="text-[#2DD4BF]" />
+                <span>SOC2 Type II Compliant</span>
+              </div>
+              <div className="hidden sm:block text-zinc-700">•</div>
+              <div className="flex items-center gap-2">
+                <Crosshair size={16} className="text-[#2DD4BF]" />
+                <span>Sub-Pixel Vector Snapping</span>
+              </div>
+              <div className="hidden sm:block text-zinc-700">•</div>
+              <div className="flex items-center gap-2">
+                <Key size={16} className="text-[#2DD4BF]" />
+                <span>SHA-256 Coordinate Seal</span>
+              </div>
             </div>
           </Reveal>
         </div>
-      </section>
+
+        {/* Builder Image: 1240px */}
+        <Reveal delay={0.15} className="w-full flex justify-center">
+          <GlowImage
+            src="/webp/assets/landingpage-esigniva/Images/builder_clean.webp"
+            alt="Smart Builder Studio"
+            maxW="max-w-[1240px]"
+            mask={false}
+            glow="w-[95%] h-[60%]"
+          />
+        </Reveal>
+      </div>
+    </section>
+  );
+};
+
+/* =========================================================================
+   5. SIGNING WORKFLOW
+   ========================================================================= */
+const EsignivaSigningWorkflow: React.FC = () => {
+  return (
+    <section className="relative bg-[#000000] text-white font-sans pt-10 pb-16 sm:pt-14 sm:pb-20">
+      <div className="max-w-[1280px] mx-auto px-6 sm:px-8 relative z-10">
+        <div className="text-center max-w-[768px] mx-auto mb-10 space-y-3">
+          <Reveal>
+            <span className="text-[14px] leading-[14px] font-semibold text-[#44E2CD] tracking-[0.55px] uppercase block">
+              SIGNING WORKFLOW
+            </span>
+          </Reveal>
+
+          <Reveal delay={0.05}>
+            <h2 className="text-[32px] sm:text-[40px] lg:text-[48px] font-bold text-white leading-[1.12] lg:leading-[56px] tracking-[-1.2px]">
+              Everyone Has a Role. <br />
+              Every Signature Has a Place.
+            </h2>
+          </Reveal>
+
+          <Reveal delay={0.08}>
+            <p className="text-[16px] lg:text-[18px] text-white font-normal leading-[26px] max-w-[672px] mx-auto">
+              From creating and sending to reviewing and signing, eSigniva brings everyone together in a secure and simple way — because great workflows work for everyone.
+            </p>
+          </Reveal>
+        </div>
+
+        <Reveal delay={0.12} className="w-full flex justify-center">
+          <GlowImage
+            src="/webp/assets/landingpage-esigniva/Images/workflow_clean.webp"
+            alt="Signing Workflow Roles"
+            maxW="max-w-[1240px]"
+            mask={false}
+            glow="w-[95%] h-[65%]"
+          />
+        </Reveal>
+      </div>
+    </section>
+  );
+};
+
+/* =========================================================================
+   6. DYNAMIC DEVICE RESPONSIVE ENGINE
+   ========================================================================= */
+const EsignivaDeviceEngine: React.FC = () => {
+  return (
+    <section className="relative bg-[#000000] text-white font-sans pt-10 pb-16 sm:pt-14 sm:pb-20 overflow-hidden">
+      <div className="max-w-[1280px] mx-auto px-6 sm:px-8 relative z-10">
+        <div className="text-center max-w-[702px] mx-auto mb-10 space-y-3">
+          <Reveal>
+            <span className="text-[14px] leading-[14px] font-semibold text-[#44E2CD] tracking-[0.55px] uppercase block">
+              DYNAMIC DEVICE RESPONSIVE ENGINE
+            </span>
+          </Reveal>
+
+          <Reveal delay={0.05}>
+            <h2 className="text-[32px] sm:text-[40px] lg:text-[48px] font-bold text-white leading-[1.12] lg:leading-[56px] tracking-[-1.2px]">
+              SIGN FROM ANYWHERE. <br />
+              Your Documents. Your Devices.
+            </h2>
+          </Reveal>
+
+          <Reveal delay={0.08}>
+            <p className="text-[16px] lg:text-[18px] text-white font-normal leading-[26px] max-w-[629px] mx-auto">
+              Give users the flexibility to review and sign documents wherever business happens. Author on desktop, verify on tablet, execute securely on mobile.
+            </p>
+          </Reveal>
+        </div>
+
+        {/* Multi-Device Graphic inside standard 1280px layout container */}
+        <Reveal delay={0.12} className="w-full flex justify-center">
+          <GlowImage
+            src="/webp/assets/landingpage-esigniva/Images/devices_clean.webp"
+            alt="Dynamic Device Responsive Engine"
+            maxW="max-w-[1240px]"
+            mask={false}
+            glow="w-[95%] h-[60%]"
+          />
+        </Reveal>
+      </div>
+    </section>
+  );
+};
+
+/* =========================================================================
+   7. REAL-TIME TELEMETRY
+   ========================================================================= */
+const EsignivaTelemetry: React.FC = () => {
+  return (
+    <section className="relative bg-[#000000] text-white font-sans pt-10 pb-16 sm:pt-14 sm:pb-20 overflow-hidden">
+      <div className="max-w-[1280px] mx-auto px-6 sm:px-8 relative z-10">
+        <div className="text-center max-w-[763px] mx-auto mb-10 space-y-3">
+          <Reveal>
+            <span className="text-[14px] leading-[14px] font-semibold text-[#44E2CD] tracking-[0.55px] uppercase block">
+              REAL-TIME TELEMETRY
+            </span>
+          </Reveal>
+
+          <Reveal delay={0.05}>
+            <h2 className="text-[32px] sm:text-[40px] lg:text-[48px] font-bold text-[#E4E2E1] leading-[1.12] lg:leading-[56px] tracking-[-1.2px] max-w-[577px] mx-auto">
+              Always Know Where Your <br />
+              Document Stands.
+            </h2>
+          </Reveal>
+
+          <Reveal delay={0.08}>
+            <p className="text-[16px] lg:text-[18px] text-[#BEC9C6] font-normal leading-[26px]">
+              Remove the uncertainty around pending signatures. Track document progress throughout the signing journey so you know what has been completed and what still needs attention.
+            </p>
+          </Reveal>
+        </div>
+
+        {/* Telemetry Visual: 1080px */}
+        <Reveal delay={0.12} className="w-full flex justify-center">
+          <GlowImage
+            src="/webp/assets/landingpage-esigniva/Images/telemetry_clean.webp"
+            alt="Real-Time Telemetry"
+            maxW="max-w-[1080px]"
+            mask={false}
+            glow="w-[95%] h-[65%]"
+          />
+        </Reveal>
+      </div>
+    </section>
+  );
+};
+
+/* =========================================================================
+   8. DOCUMENT MANAGEMENT
+   ========================================================================= */
+const EsignivaDocManagement: React.FC = () => {
+  return (
+    <section className="relative bg-[#000000] text-white font-sans pt-10 pb-16 sm:pt-14 sm:pb-20 overflow-hidden">
+      <div className="max-w-[1280px] mx-auto px-6 sm:px-8 relative z-10">
+        <div className="text-center max-w-[780px] mx-auto mb-10 space-y-3">
+          <Reveal>
+            <span className="text-[14px] leading-[14px] font-semibold text-[#44E2CD] tracking-[0.55px] uppercase block">
+              DOCUMENT MANAGEMENT
+            </span>
+          </Reveal>
+
+          <Reveal delay={0.05}>
+            <h2 className="text-[32px] sm:text-[40px] lg:text-[48px] font-bold text-white leading-[1.12] lg:leading-[56px] tracking-[-1.2px]">
+              Keep Every Document Organized &amp; <br />
+              Accessible
+            </h2>
+          </Reveal>
+
+          <Reveal delay={0.08}>
+            <p className="text-[16px] lg:text-[18px] text-white font-normal leading-[26px] max-w-[767px] mx-auto">
+              Store, organize, track, and manage documents from one secure place — from the moment they are uploaded to the final signed copy.
+            </p>
+          </Reveal>
+        </div>
+
+        {/* Composite Visual: 1240px */}
+        <Reveal delay={0.12} className="w-full flex justify-center">
+          <GlowImage
+            src="/webp/assets/landingpage-esigniva/Images/DOCUMENT MANAGEMENT.webp"
+            alt="Document Management"
+            maxW="max-w-[1240px]"
+            mask={false}
+            glow="w-[95%] h-[60%]"
+          />
+        </Reveal>
+      </div>
+    </section>
+  );
+};
+
+/* =========================================================================
+   9. SECURITY & DOCUMENT TRUST
+   ========================================================================= */
+const securityFeatures = [
+  {
+    icon: Lock,
+    title: "End-to-End Encryption",
+    desc: "Data encrypted at rest and in transit via TLS 1.3 cryptographic pipelines.",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Verified Identities",
+    desc: "Verify authentic signers using passkeys, government ID scans, and live SMS OTPs.",
+  },
+  {
+    icon: FileCheck,
+    title: "Tamper-Proof Records",
+    desc: "Immutable forensic audit trail. Instantly invalidates if a single pixel shifts.",
+  },
+  {
+    icon: Scale,
+    title: "Compliance Ready",
+    desc: "Meets global statutory requirements for court-admissible legal enforceability.",
+  },
+];
+
+const EsignivaSecurityTrust: React.FC = () => {
+  return (
+    <section className="relative bg-[#000000] text-white font-sans pt-10 pb-16 sm:pt-14 sm:pb-20 overflow-hidden">
+      <div className="max-w-[1280px] mx-auto px-6 sm:px-8 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-[minmax(0,1fr)_640px] gap-8 items-center">
+          <div className="space-y-5 text-left">
+            <Reveal>
+              <div className="space-y-2.5">
+                <span className="text-[14px] leading-[14px] font-semibold text-[#44E2CD] tracking-[0.55px] uppercase block">
+                  SECURITY &amp; DOCUMENT TRUST
+                </span>
+                <h2 className="text-[32px] sm:text-[40px] lg:text-[48px] font-bold text-white leading-[1.12] lg:leading-[56px] tracking-[-1.2px] max-w-[690px]">
+                  Your Documents. <br />
+                  Safe, Secure &amp; Trusted.
+                </h2>
+              </div>
+            </Reveal>
+
+            <Reveal delay={0.06}>
+              <p className="text-[16px] lg:text-[18px] text-white font-normal leading-[26px] max-w-[471px]">
+                We use advanced security measures and industry standards to protect your documents, identities, and signatures — so you can sign with total sovereign confidence.
+              </p>
+            </Reveal>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 pt-2 max-w-[560px]">
+              {securityFeatures.map((item, idx) => {
+                const Icon = item.icon;
+                return (
+                  <Reveal key={idx} delay={0.1 + idx * 0.04}>
+                    <div className="space-y-1.5 text-left max-w-[240px]">
+                      <div className="flex items-center gap-2">
+                        <Icon className="w-4 h-4 text-[#2DD4BF] shrink-0" />
+                        <h3 className="text-[16px] sm:text-[18px] leading-[26px] font-semibold text-white">
+                          {item.title}
+                        </h3>
+                      </div>
+                      <p className="text-[14px] leading-[22px] text-zinc-300 font-normal">
+                        {item.desc}
+                      </p>
+                    </div>
+                  </Reveal>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* Right: Security image with anchored Glow */}
+          <div className="flex justify-center lg:justify-end">
+            <Reveal delay={0.1} className="w-full flex justify-center lg:justify-end">
+              <GlowImage
+                src="/webp/assets/landingpage-esigniva/Images/security_clean.webp"
+                alt="Security and Document Trust"
+                maxW="max-w-[640px]"
+                glow="w-[95%] h-[80%]"
+              />
+            </Reveal>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+/* =========================================================================
+   10. BUILT FOR MODERN BUSINESSES (Auto-Slide Carousel with Arrows)
+   ========================================================================= */
+const businessCards = [
+  {
+    id: "card-1",
+    title: "HR & Recruitment",
+    image: "/webp/assets/landingpage-esigniva/Images/BUILT FOR MODERN BUSINESSES/CARD 1_ HR & Recruitment.webp",
+  },
+  {
+    id: "card-2",
+    title: "Legal & Compliance",
+    image: "/webp/assets/landingpage-esigniva/Images/BUILT FOR MODERN BUSINESSES/CARD 2_ Legal & Compliance.webp",
+  },
+  {
+    id: "card-3",
+    title: "Sales Teams",
+    image: "/webp/assets/landingpage-esigniva/Images/BUILT FOR MODERN BUSINESSES/CARD 3_ Sales Teams.webp",
+  },
+  {
+    id: "card-4",
+    title: "Finance & Operations",
+    image: "/webp/assets/landingpage-esigniva/Images/BUILT FOR MODERN BUSINESSES/CARD 4_ Finance & Operations.webp",
+  },
+  {
+    id: "card-5",
+    title: "Real Estate",
+    image: "/webp/assets/landingpage-esigniva/Images/BUILT FOR MODERN BUSINESSES/CARD 5_ Real Estate (1).webp",
+  },
+  {
+    id: "card-6",
+    title: "Service Businesses & Agencies",
+    image: "/webp/assets/landingpage-esigniva/Images/BUILT FOR MODERN BUSINESSES/CARD 6_ Service Businesses & Agencies (1).webp",
+  },
+];
+
+const EsignivaModernBusinesses: React.FC = () => {
+  const scrollerRef = useRef<HTMLDivElement>(null);
+  const pausedRef = useRef(false);
+
+  const getStep = () => {
+    const el = scrollerRef.current;
+    const card = el?.querySelector<HTMLElement>("[data-card]");
+    return card ? card.offsetWidth + 6 : 300;
+  };
+
+  const goNext = () => {
+    const el = scrollerRef.current;
+    if (!el) return;
+    const atEnd = el.scrollLeft + el.clientWidth >= el.scrollWidth - 4;
+    if (atEnd) el.scrollTo({ left: 0, behavior: "smooth" });
+    else el.scrollBy({ left: getStep(), behavior: "smooth" });
+  };
+
+  const goPrev = () => {
+    const el = scrollerRef.current;
+    if (!el) return;
+    if (el.scrollLeft <= 4) el.scrollTo({ left: el.scrollWidth, behavior: "smooth" });
+    else el.scrollBy({ left: -getStep(), behavior: "smooth" });
+  };
+
+  // auto-change every 2 seconds (pauses while hovering)
+  useEffect(() => {
+    const id = setInterval(() => {
+      if (!pausedRef.current) goNext();
+    }, 2000);
+    return () => clearInterval(id);
+  }, []);
+
+  return (
+    <section className="relative bg-[#000000] text-white font-sans pt-10 pb-16 sm:pt-14 sm:pb-20 overflow-hidden">
+      <div className="max-w-[1280px] mx-auto px-6 sm:px-8 relative z-10">
+        <div className="text-center max-w-[1002px] mx-auto mb-10 space-y-3">
+          <Reveal>
+            <span className="text-[14px] leading-[14px] font-semibold text-[#44E2CD] tracking-[0.55px] uppercase block">
+              BUILT FOR MODERN BUSINESSES
+            </span>
+          </Reveal>
+          <Reveal delay={0.05}>
+            <h2 className="text-[28px] sm:text-[38px] lg:text-[48px] font-bold text-white leading-[1.12] lg:leading-[56px] tracking-[-1.2px] whitespace-normal lg:whitespace-nowrap">
+              One Signing Platform. Many Business Needs.
+            </h2>
+          </Reveal>
+          <Reveal delay={0.08}>
+            <p className="text-[16px] lg:text-[18px] text-white font-normal leading-[26px] max-w-[775px] mx-auto">
+              eSigniva supports digital signing workflows across teams and industries where agreements must be reviewed, signed, and audited with velocity.
+            </p>
+          </Reveal>
+        </div>
+      </div>
+
+      {/* Auto-sliding cards */}
+      <div
+        ref={scrollerRef}
+        onMouseEnter={() => (pausedRef.current = true)}
+        onMouseLeave={() => (pausedRef.current = false)}
+        onTouchStart={() => (pausedRef.current = true)}
+        onTouchEnd={() => (pausedRef.current = false)}
+        className="w-full overflow-x-auto no-scrollbar scroll-smooth pt-2 pb-4"
+        style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+      >
+        <div className="flex gap-[6px] min-w-max px-4 sm:px-8 lg:px-12">
+          {businessCards.map((card) => (
+            <div
+              key={card.id}
+              data-card
+              className="flex-shrink-0 w-[300px] sm:w-[350px] lg:w-[389px] h-auto rounded-lg overflow-hidden shadow-md shadow-black/40"
+            >
+              <img
+                src={card.image}
+                alt={card.title}
+                width={389}
+                height={439}
+                className="w-full h-auto object-contain block rounded-lg"
+                loading="lazy"
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Navigation arrows */}
+      <div className="flex items-center justify-center gap-4 mt-4">
+        <button
+          type="button"
+          onClick={goPrev}
+          aria-label="Previous"
+          className="w-11 h-11 rounded-full border border-zinc-700 bg-black/40 flex items-center justify-center text-white transition-all hover:border-[#2DD4BF] hover:text-[#2DD4BF]"
+        >
+          <ChevronLeft size={20} />
+        </button>
+        <button
+          type="button"
+          onClick={goNext}
+          aria-label="Next"
+          className="w-11 h-11 rounded-full border border-zinc-700 bg-black/40 flex items-center justify-center text-white transition-all hover:border-[#2DD4BF] hover:text-[#2DD4BF]"
+        >
+          <ChevronRight size={20} />
+        </button>
+      </div>
+    </section>
+  );
+};
+
+/* =========================================================================
+   11. WHY ESIGNIVA?
+   ========================================================================= */
+const traditionalPoints = [
+  "Printing, scanning, and mailing physical paper stacks.",
+  "Important attachments lost in messy, untracked email threads.",
+  "Awkward manual follow-ups and unverified signer reminders.",
+  "Zero visibility into whether a contract was even viewed.",
+  "Fragile, missing, or non-compliant paper audit records.",
+];
+
+const esignivaPoints = [
+  "100% digital, paperless execution on desktop, tablet, and mobile.",
+  "Centralized encrypted repository with structured search and tags.",
+  "Automated email and SMS reminders.",
+  "Real-time live telemetry tracking.",
+  "Court-admissible cryptographic Certificate of Completion.",
+];
+
+const EsignivaWhy: React.FC = () => {
+  return (
+    <section className="relative bg-[#000000] text-white font-sans pt-10 pb-16 sm:pt-14 sm:pb-20 overflow-hidden">
+      <div className="max-w-[1280px] mx-auto px-6 sm:px-8 relative z-10">
+        <div className="text-center max-w-[819px] mx-auto mb-12 space-y-3">
+          <Reveal>
+            <span className="text-[14px] leading-[14px] font-semibold text-[#44E2CD] tracking-[0.55px] uppercase block">
+              WHY ESIGNIVA?
+            </span>
+          </Reveal>
+
+          <Reveal delay={0.05}>
+            <h2 className="text-[32px] sm:text-[40px] lg:text-[48px] font-bold text-white leading-[1.12] lg:leading-[56px] tracking-[-1.2px]">
+              Less Chasing. Less Paperwork. More <br />
+              Progress.
+            </h2>
+          </Reveal>
+
+          <Reveal delay={0.08}>
+            <p className="text-[16px] lg:text-[18px] text-white font-normal leading-[26px] max-w-[735px] mx-auto">
+              Bring your entire signing workflow into one streamlined digital experience designed for <br className="hidden sm:inline" />
+              modern velocity.
+            </p>
+          </Reveal>
+        </div>
+
+        <div className="max-w-[1280px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-start">
+          {/* Left: Traditional Process */}
+          <div className="lg:col-span-6 space-y-5 text-left max-w-[562px]">
+            <Reveal delay={0.08}>
+              <div className="flex items-center gap-3 h-[28px]">
+                <XCircle className="w-5 h-5 text-[#EF4444] shrink-0" />
+                <h3 className="text-[18px] sm:text-[20px] font-bold text-white">
+                  Traditional Process (Before)
+                </h3>
+              </div>
+            </Reveal>
+
+            <Reveal delay={0.12}>
+              <div className="space-y-3.5 pt-2 max-w-[512px]">
+                {traditionalPoints.map((point, idx) => (
+                  <div key={idx} className="flex items-start gap-3">
+                    <MinusCircle className="w-4 h-4 text-[#EF4444] shrink-0 mt-0.5" />
+                    <span className="text-[14px] sm:text-[15px] leading-[22px] text-zinc-300 font-normal">
+                      {point}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </Reveal>
+          </div>
+
+          {/* Right Card: 630x312, White */}
+          <div className="lg:col-span-6">
+            <Reveal delay={0.1}>
+              <div className="w-full max-w-[630px] min-h-[312px] rounded-lg bg-white p-7 sm:p-8 text-left space-y-4 shadow-xl flex flex-col justify-between">
+                <div className="flex items-center gap-3 h-[28px]">
+                  <CheckCircle2 className="w-5 h-5 text-[#26756E] shrink-0" />
+                  <h3 className="text-[18px] sm:text-[20px] font-bold text-zinc-900">
+                    With eSigniva (After)
+                  </h3>
+                </div>
+
+                <div className="space-y-3 pt-1">
+                  {esignivaPoints.map((point, idx) => (
+                    <div key={idx} className="flex items-start gap-3">
+                      <CheckCircle2 className="w-4 h-4 text-[#26756E] shrink-0 mt-0.5" />
+                      <span className="text-[14px] leading-[22px] text-zinc-800 font-normal">
+                        {point}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </Reveal>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+/* =========================================================================
+   12. CTA BANNER (Compact & Modern)
+   ========================================================================= */
+const EsignivaCTA: React.FC = () => {
+  return (
+    <section className="relative bg-[#000000] text-white font-sans pt-6 pb-14 sm:pt-8 sm:pb-16 overflow-hidden">
+      <div className="max-w-[1280px] mx-auto px-6 sm:px-8 relative z-10 flex justify-center">
+        <Reveal className="w-full max-w-[1040px]">
+          <div className="relative w-full rounded-[12px] border border-[#158A8C]/40 bg-gradient-to-r from-[#158A8C]/25 via-[#158A8C]/10 to-[#158A8C]/25 px-6 sm:px-10 py-6 sm:py-7 flex flex-col lg:flex-row items-center justify-between gap-5 text-center lg:text-left">
+            <div className="max-w-[560px] space-y-1.5">
+              <h2 className="text-[24px] sm:text-[28px] lg:text-[32px] font-bold text-white tracking-[-0.6px] leading-[1.2]">
+                Ready to Move Beyond Paper?
+              </h2>
+              <p className="text-[14px] lg:text-[15px] text-zinc-300 font-normal leading-[22px]">
+                Create, send, sign, and manage documents with a simpler, faster, and more reliable digital signing experience.
+              </p>
+            </div>
+
+            <Link
+              href="https://safesign.devopstrio.co.uk/login"
+              target="_blank"
+              className="shrink-0 w-full sm:w-[200px] h-[44px] inline-flex items-center justify-center gap-2 rounded-lg bg-[#26756E] hover:bg-[#1f5f59] text-white text-[14px] font-semibold transition-all"
+            >
+              <span>Get Started Today</span>
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+        </Reveal>
+      </div>
+    </section>
+  );
+};
+
+/* =========================================================================
+   MAIN PAGE EXPORT
+   ========================================================================= */
+export default function EsignivaPage() {
+  return (
+    <main className="min-h-screen bg-[#000000] text-white selection:bg-[#26756E]/30 selection:text-white font-sans overflow-x-hidden">
+      {/* 1. Hero */}
+      <EsignivaHero />
+
+      {/* 2. What is eSigniva? */}
+      <EsignivaWhatIs />
+
+      {/* 3. How eSigniva Works */}
+      <EsignivaHowItWorks />
+
+      {/* 4. Smart Builder Studio */}
+      <EsignivaBuilderStudio />
+
+      {/* 5. Signing Workflow */}
+      <EsignivaSigningWorkflow />
+
+      {/* 6. Dynamic Device Responsive Engine */}
+      <EsignivaDeviceEngine />
+
+      {/* 7. Real-Time Telemetry */}
+      <EsignivaTelemetry />
+
+      {/* 8. Document Management */}
+      <EsignivaDocManagement />
+
+      {/* 9. Security & Document Trust */}
+      <EsignivaSecurityTrust />
+
+      {/* 10. Built for Modern Businesses */}
+      <EsignivaModernBusinesses />
+
+      {/* 11. Why eSigniva? */}
+      <EsignivaWhy />
+
+      {/* 12. CTA */}
+      <EsignivaCTA />
     </main>
   );
 }

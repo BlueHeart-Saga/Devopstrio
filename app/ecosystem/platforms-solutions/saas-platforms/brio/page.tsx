@@ -1,1227 +1,585 @@
 "use client";
 
-import React, { useState } from "react";
-import { Reveal } from "@/components/ui/Reveal";
-import {
-
-  ArrowUpRight,
-  Plus,
-  Minus,
-  Check,
-  TrendingUp,
-  ShieldCheck,
-  Zap,
-  Activity,
-  Layers,
-  Sparkles,
-  Play,
-  Mail,
-  Building,
-  User,
-  Phone,
-  Briefcase,
-  AlertTriangle,
-  FileText,
-  Clock,
-  RefreshCw,
-  Cpu,
-  Lock,
-  Globe,
-  Upload,
-  UserPlus,
-  Eye,
-  Settings,
-  X
-  ,
-  Star,
-  Quote
-} from "lucide-react";
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
+import { useEffect, useRef, useState, type CSSProperties, type ReactNode } from "react";
+import { ArrowRight, Building2, KeyRound, UserSearch, Play } from "lucide-react";
 
-export default function BrioProductPage() {
-  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
-  const [activeTab, setActiveTab] = useState<"team" | "industry">("team");
-  const [activeSubTab, setActiveSubTab] = useState<string>("finance");
-  const [isVideoOpen, setIsVideoOpen] = useState(false);
+/* =========================================================================
+   ASSET PATHS  (place files in /public at exactly these paths)
+   ========================================================================= */
+const BASE = "/webp/assets/Home-page/brio";
 
-  // Book a Demo Form State
-  const [formState, setFormState] = useState({
-    name: "",
-    email: "",
-    company: "",
-    phone: "",
-    industry: "FinTech",
-    useCase: "Payment Orchestration",
-    message: ""
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [formSubmitted, setFormSubmitted] = useState(false);
+const A = {
+  logo: `${BASE}/hero/logo.webp`,
+  hero: `${BASE}/hero/brio hero.webp`,
+  fragments: {
+    create: `${BASE}/what-is-brio/FRAGMENT 01_ CREATE.webp`,
+    discover: `${BASE}/what-is-brio/FRAGMENT 02_ DISCOVER.webp`,
+    collaborate: `${BASE}/what-is-brio/FRAGMENT 03_ COLLABORATE.webp`,
+    content: `${BASE}/what-is-brio/FRAGMENT 04_ CONTENT.webp`,
+    approve: `${BASE}/what-is-brio/FRAGMENT 05_ APPROVE.webp`,
+    pay: `${BASE}/what-is-brio/FRAGMENT 06_ PAY (1).webp`,
+    measure: `${BASE}/what-is-brio/FRAGMENT 07_ MEASURE (1).webp`,
+  },
+  aiCreator: `${BASE}/ai-campaign-creator/AI CAMPAIGN CREATOR.webp`,
+  discovery: `${BASE}/creator-discovery/CREATOR DISCOVERY.webp`,
+  collab: `${BASE}/campaign-collaboration/CAMPAIGN COLLABORATION.webp`,
+  settlement: `${BASE}/automated-settlement/AUTOMATED SETTLEMENT.webp`,
+  profiles: `${BASE}/creator-profiles/CREATOR PROFILES.webp`,
+  attribution: `${BASE}/predictive-attribution-telemetry/PREDICTIVE ATTRIBUTION & TELEMETRY.webp`,
+};
 
-  const toggleFaq = (index: number) => {
-    setOpenFaqIndex(openFaqIndex === index ? null : index);
-  };
+const TOOLKIT_DIR = `${BASE}/ai-engine-toolkit-architecture`;
+const TOOLS = [
+  { alt: "FastPost AI", file: "Tool 1_ FastPost AI.webp" },
+  { alt: "Hashtag AI", file: "Tool 2_ Hashtag AI.webp" },
+  { alt: "VoiceToText AI", file: "Tool 3_ VoiceToText AI (1).webp" },
+  { alt: "Influencer Finder", file: "Tool 4_ Influencer Finder (1).webp" },
+  { alt: "Content Analyzer", file: "Tool 5_ Content Analyzer.webp" },
+  { alt: "ROI Calculator", file: "Tool 6_ ROI Calculator.webp" },
+  { alt: "Content Intelligence", file: "Tool 7_ Content Intelligence.webp" },
+  { alt: "Automation", file: "Tool 8_ Automation.webp" },
+];
 
-  const handleFormSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name: formState.name,
-          email: formState.email,
-          message: `Company: ${formState.company}\nPhone: ${formState.phone}\nIndustry: ${formState.industry}\nPrimary Use Case: ${formState.useCase}\n\nRequirements:\n${formState.message}`,
-          selectedServices: ["Brio Demo Request"],
-          toEmail: "info@devopstrioglobal.com"
-        })
-      });
-      if (response.ok) {
-        setFormSubmitted(true);
-      } else {
-        alert("Failed to submit demo request. Please try again.");
-      }
-    } catch (err) {
-      console.error(err);
-      alert("An error occurred. Please try again.");
-    } finally {
-      setIsSubmitting(false);
+/* =========================================================================
+   TOKENS
+   ========================================================================= */
+const CONTAINER = "max-w-[1280px] mx-auto px-6 sm:px-8 relative z-10";
+/** One gap between every heading block and its visual (measured from the reference). */
+const GAP = "mt-[72px]";
+const CTA_HREF = "/contact";
+
+/* =========================================================================
+   SHARED HELPERS
+   ========================================================================= */
+
+/** Scroll-reveal wrapper (fade + slide up once in view). */
+function Reveal({
+  children,
+  delay = 0,
+  className = "",
+}: {
+  children: ReactNode;
+  delay?: number;
+  className?: string;
+}) {
+  const ref = useRef<HTMLDivElement>(null);
+  const [shown, setShown] = useState(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    if (typeof IntersectionObserver === "undefined") {
+      setShown(true);
+      return;
     }
-  };
-
-  const steps = [
-    { icon: UserPlus, title: "1. Customer Checkout", desc: "Buyer initiates checkout inside your checkout window or mobile app screen." },
-    { icon: Cpu, title: "2. Intelligent Routing", desc: "AI checks gateway status rates and routes transactions to optimal networks." },
-    { icon: ShieldCheck, title: "3. Fraud Screening", desc: "Analyse transaction variables against active risk factors in real time." },
-    { icon: Zap, title: "4. Process Gateway", desc: "Execute billing transaction directly on selected processor pipeline." },
-    { icon: RefreshCw, title: "5. Auto-Reconciliation", desc: "Match transaction entries against processor invoices automatically." },
-    { icon: FileText, title: "6. Reports & Payouts", desc: "Publish settlement telemetry logs and distribute funds to merchant accounts." }
-  ];
-
-  const features = [
-    { title: "Multi-Gateway Orchestration", desc: "Connect Stripe, PayPal, Adyen, and other billing networks in one panel." },
-    { title: "Smart Transaction Routing", desc: "Route billing events dynamically to minimize failed payments and charges." },
-    { title: "Unified Reconciliation Ledger", desc: "Audit and reconcile multi-processor transaction records automatically." },
-    { title: "Real-Time Fraud Radar", desc: "Shield checkouts against card testers and chargebacks with automated blocks." },
-    { title: "Localized Payment Modules", desc: "Support digital wallets, localized banking apps, and split checkouts." },
-    { title: "Instant Settlement Logs", desc: "Export ledger lists, transaction fees, and compiled net revenues instantly." }
-  ];
-
-  const aiCapabilities = [
-    {
-      title: "Intelligent Routing Engine",
-      desc: "Our neural net tracks processing failure rates across global networks to select the highest-success path for each card checkout."
-    },
-    {
-      title: "Fraud Pattern Classifier",
-      desc: "Scans checkout variables in milliseconds to block fraudulent attempts before processors flag chargebacks."
-    },
-    {
-      title: "Fee Optimization Advisor",
-      desc: "Calculates interchange fees to direct transactions to lowest-cost processors based on card regions."
-    }
-  ];
-
-  const useCases = [
-    { title: "E-Commerce", desc: "Connect checkout pages with multiple gateways to prevent cart drop-offs." },
-    { title: "SaaS Platforms", desc: "Manage subscription plans, retry logics, and local recurring billing." },
-    { title: "Global Marketplaces", desc: "Coordinate merchant payouts, split checkouts, and multi-currency billing." }
-  ];
-
-  const teamSolutions = {
-    finance: {
-      title: "Finance & Accounting",
-      useCase: "Consolidate accounting logs. Eliminate manual matching entries and download audit-ready ledgers in one click.",
-      metrics: "Reconciliation time reduced: -70%"
-    },
-    product: {
-      title: "Product Engineers",
-      useCase: "Integrate a single checkout SDK and activate new payment methods from Brio console without rewriting code.",
-      metrics: "Dev hours saved: 120+ hrs per gateway"
-    },
-    operations: {
-      title: "Ops & Management",
-      useCase: "Track global payment success metrics, optimize billing pipelines, and review checkout transaction failures.",
-      metrics: "Transaction success rate: +4.2%"
-    }
-  };
-
-  const industrySolutions = {
-    retail: {
-      title: "Retail & E-Commerce",
-      useCase: "Enable localized payment integrations and route transactions dynamically during peak checkout rushes.",
-      compliance: "PCI-DSS Level 1 Compliant"
-    },
-    saas: {
-      title: "Subscription SaaS",
-      useCase: "Setup recurring invoice cards, handle dunning retry sequences, and monitor MRR metrics.",
-      compliance: "Automated dunning scripts"
-    },
-    marketplace: {
-      title: "Marketplaces",
-      useCase: "Route multi-party checkout transactions, hold escrows, and automate payouts to sellers.",
-      compliance: "Granular payout split controls"
-    }
-  };
-
-  const integrations = [
-    { title: "Stripe", desc: "Process card payments and support digital wallet checkouts." },
-    { title: "Adyen", desc: "Route enterprise global payments and localize checkouts." },
-    { title: "PayPal", desc: "Offer express checkout buttons and wallet balances." },
-    { title: "Checkout.com", desc: "Process credit card transactions across international regions." }
-  ];
-
-  const faqs = [
-    { q: "Is Brio PCI-DSS compliant?", a: "Yes, Brio maintains PCI-DSS Level 1 compliance using isolated tokenization vaults to secure transaction details." },
-    { q: "Can we configure fallback processors?", a: "Absolutely. If a primary processor goes down, Brio automatically routes transactions to active fallbacks in milliseconds." },
-    { q: "How long does integration take?", a: "Using our unified checkout SDK, most engineering teams go live with multiple gateways within a week." }
-  ];
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setShown(true);
+          io.disconnect();
+        }
+      },
+      { threshold: 0.1, rootMargin: "0px 0px -6% 0px" }
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
 
   return (
-    <main className="min-h-screen bg-black text-white pt-24 font-sans overflow-x-hidden selection:bg-rose-500 selection:text-white">
-      {/* Background ambient mesh grid */}
-      <div className="absolute inset-0 opacity-[0.015] pointer-events-none z-0" style={{ backgroundImage: "radial-gradient(circle, #fff 1px, transparent 1px)", backgroundSize: "32px 32px" }} />
+    <div
+      ref={ref}
+      style={{ transitionDelay: `${delay}ms` }}
+      className={`transition-[opacity,transform] duration-700 ease-out motion-reduce:transform-none motion-reduce:opacity-100 motion-reduce:transition-none ${
+        shown ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"
+      } ${className}`}
+    >
+      {children}
+    </div>
+  );
+}
 
-      {/* 1. HERO SECTION */}
-      <section className="relative w-full py-24 bg-black border-b border-zinc-900/60 overflow-hidden">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-[radial-gradient(circle_at_center,rgba(240,73,153,0.03),transparent_60%)] pointer-events-none" />
+type Trim = { l?: number; t?: number; r?: number; b?: number };
 
-        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            {/* Left Content */}
-            <div className="lg:col-span-6 flex flex-col justify-center text-left">
-              <Reveal className="mb-4">
-                <span className="gap-2 inline-flex items-center justify-center px-4 py-1.5 rounded-full text-[10px] font-mono font-bold tracking-wider uppercase border border-fuchsia-500/30 text-fuchsia-400 bg-fuchsia-955/15">
-                  <TrendingUp className="w-3.5 h-3.5 text-fuchsia-400 animate-pulse" />
-                  Featured FinTech Platform
-                </span>
-              </Reveal>
+/**
+ * Renders an asset at its natural aspect ratio (never cropped, no object-cover).
+ * `w`/`h` are the file's pixel size; `trim` is the transparent glow/shadow padding
+ * (in file pixels) that gets pulled off with negative margins so the *visible*
+ * content lines up with the layout. Assets are exported at 3x, so visible width
+ * in px at the 1440 frame = (w - l - r) / 3.
+ */
+function Visual({
+  src,
+  alt,
+  w,
+  h,
+  trim = {},
+  fluid = false,
+  priority = false,
+  className = "",
+  children,
+}: {
+  src: string;
+  alt: string;
+  w: number;
+  h: number;
+  trim?: Trim;
+  fluid?: boolean;
+  priority?: boolean;
+  className?: string;
+  children?: ReactNode;
+}) {
+  const { l = 0, t = 0, r = 0, b = 0 } = trim;
+  const cw = w - l - r; // visible width in file px
+  return (
+    <div
+      className={`relative z-0 mx-auto flow-root w-full ${className}`}
+      style={fluid ? undefined : { maxWidth: cw / 3 }}
+    >
+      <Image
+        src={src}
+        alt={alt}
+        width={w}
+        height={h}
+        priority={priority}
+        sizes={`${Math.round(w / 3)}px`}
+        draggable={false}
+        className="pointer-events-none block h-auto max-w-none select-none"
+        style={{
+          width: `${(w / cw) * 100}%`,
+          marginLeft: `${-(l / cw) * 100}%`,
+          marginTop: `${-(t / cw) * 100}%`,
+          marginBottom: `${-(b / cw) * 100}%`,
+        }}
+      />
+      {children}
+    </div>
+  );
+}
 
-              <Reveal delay={0.1}>
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-2 leading-tight tracking-tight">
-                  Brio
-                </h1>
-                <p className="text-xl md:text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-400 to-pink-400 mb-6">
-                  Payment Orchestration Simplified
-                </p>
-              </Reveal>
+/** Eyebrow + h1 + body, identical type spec in every section. */
+function SectionHeading({
+  eyebrow,
+  title,
+  body,
+  bodyMax = "max-w-[780px]",
+  titleMax = "",
+}: {
+  eyebrow: string;
+  title: ReactNode;
+  body: string;
+  bodyMax?: string;
+  titleMax?: string;
+}) {
+  return (
+    <Reveal className="relative z-10 text-center">
+      <p className="text-[14px] font-semibold uppercase leading-[14px] tracking-[0.55px] text-[#3B82F6]">
+        {eyebrow}
+      </p>
+      <h2
+        className={`mx-auto mt-6 text-[32px] font-bold leading-[40px] tracking-[-1.2px] text-white sm:text-[40px] sm:leading-[48px] lg:text-[48px] lg:leading-[56px] ${titleMax}`}
+      >
+        {title}
+      </h2>
+      <p
+        className={`mx-auto mt-6 text-[16px] font-normal leading-[24px] tracking-normal text-white sm:text-[18px] sm:leading-[26px] ${bodyMax}`}
+      >
+        {body}
+      </p>
+    </Reveal>
+  );
+}
 
-              <Reveal delay={0.2} className="mb-8">
-                <p className="text-zinc-350 text-sm md:text-base leading-relaxed font-bold max-w-xl">
-                  Orchestrate payment gateways, automate transaction routing, reconcile ledger accounts, and audit processing fees from one unified compliant workspace.
-                </p>
-              </Reveal>
-
-              <Reveal delay={0.3} className="flex flex-wrap gap-4">
-                <a
-                  href="#book-demo"
-                  className="inline-flex items-center gap-3 pl-6 pr-3 py-3 bg-white text-black font-semibold text-xs md:text-sm tracking-wider rounded-full hover:bg-zinc-200 transition-all duration-300 shadow-lg"
-                >
-                  Book a Demo
-                  <div className="w-7 h-7 rounded-full bg-black flex items-center justify-center">
-                    <ArrowUpRight className="w-3.5 h-3.5 text-white" />
-                  </div>
-                </a>
-                <button
-                  onClick={() => setIsVideoOpen(true)}
-                  className="gap-2 inline-flex items-center justify-center px-6 py-3.5 rounded-full text-xs font-bold tracking-wider uppercase border border-zinc-800 hover:border-zinc-700 bg-zinc-950/60 hover:bg-zinc-900 text-white transition-all duration-300"
-                >
-                  <Play className="w-3.5 h-3.5 text-fuchsia-400 fill-fuchsia-400/20" />
-                  Watch Demo
-                </button>
-              </Reveal>
-            </div>
-
-            {/* Right Showcase Interface */}
-            <div className="lg:col-span-6">
-              <div className="relative group rounded-3xl border border-zinc-900 bg-zinc-950/40 p-4 hover:border-fuchsia-500/20 transition-colors shadow-2xl">
-                <div className="relative aspect-[16/10] overflow-hidden rounded-2xl border border-zinc-900/60">
-                  <Image
-                    src="/webp/assets/Home-page/our-products/brio.webp"
-                    alt="Brio Application Interface"
-                    fill
-                    className="object-cover transition-transform duration-750 group-hover:scale-[1.02]"
-                    priority
-                    unoptimized
-                  />
-                  {/* Play Button Overlay */}
-                  <div className="absolute inset-0 bg-black/45 flex items-center justify-center group-hover:bg-black/35 transition-colors cursor-pointer" onClick={() => setIsVideoOpen(true)}>
-                    <div className="w-16 h-16 rounded-full bg-fuchsia-500 hover:bg-fuchsia-600 text-white flex items-center justify-center shadow-lg transition-transform group-hover:scale-105 duration-300">
-                      <Play className="w-6 h-6 fill-white ml-1" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 2. THE BUSINESS PROBLEM SECTION */}
-      <section className="w-full py-24 bg-black border-b border-zinc-900/60">
-        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
-          <Reveal className="text-center max-w-2xl mx-auto mb-16">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
-              THE STATUS QUO
-            </span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-4">
-              The Friction of Fragmented Billing Gateways
-            </h2>
-            <p className="text-zinc-400 text-xs md:text-sm font-bold leading-relaxed">
-              Why manual transaction checks and single processor dependencies hurt conversion rates.
-            </p>
-          </Reveal>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            {/* The Old Way */}
-            <div className="p-8 bg-zinc-950/20 border border-zinc-900 rounded-3xl relative">
-              <div className="absolute top-6 right-6 text-red-500/80 bg-red-950/20 border border-red-500/20 rounded-full px-3 py-1 text-[9px] font-mono font-bold uppercase tracking-wider">
-                Outdated Method
-              </div>
-              <h3 className="text-base font-bold text-white mb-6 flex items-center gap-2">
-                <AlertTriangle className="w-5 h-5 text-red-500" /> Disconnected Billing Platforms
-              </h3>
-              <ul className="space-y-4 text-xs md:text-sm text-zinc-400 font-bold leading-relaxed">
-                <li className="flex items-start gap-3">
-                  <span className="text-red-500 font-bold">✕</span>
-                  <span><strong>Single Processor Vulnerability:</strong> A simple API downtime halts checkout pages globally, dropping sales.</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-red-500 font-bold">✕</span>
-                  <span><strong>Static Checkout Routing:</strong> Card transactions fail from lack of routing fallbacks across international borders.</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-red-500 font-bold">✕</span>
-                  <span><strong>Complex Reconciliation Ledger:</strong> Matching bank bank statements with ad-hoc processor CSVs saves hours of admin work.</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-red-500 font-bold">✕</span>
-                  <span><strong>Hidden Processing Fees:</strong> Dynamic cross-border card fees eat profit margins without warnings.</span>
-                </li>
-              </ul>
-            </div>
-
-            {/* The Brio Way */}
-            <div className="p-8 bg-fuchsia-955/5 border border-fuchsia-500/10 rounded-3xl relative">
-              <div className="absolute top-6 right-6 text-fuchsia-400 bg-fuchsia-955/30 border border-fuchsia-500/20 rounded-full px-3 py-1 text-[9px] font-mono font-bold uppercase tracking-wider">
-                Brio Flow
-              </div>
-              <h3 className="text-base font-bold text-white mb-6 flex items-center gap-2">
-                <ShieldCheck className="w-5 h-5 text-fuchsia-400" /> Orchestrated Payments
-              </h3>
-              <ul className="space-y-4 text-xs md:text-sm text-zinc-350 font-bold leading-relaxed">
-                <li className="flex items-start gap-3">
-                  <span className="text-fuchsia-400 font-bold">✔</span>
-                  <span><strong>Fail-Safe Orchestration:</strong> Automatically fall back to active processors during gateway drops.</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-fuchsia-400 font-bold">✔</span>
-                  <span><strong>Intelligent AI Routing:</strong> Route transactions dynamically to maximize success rates.</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-fuchsia-400 font-bold">✔</span>
-                  <span><strong>Unified Ledger Suite:</strong> Auto-reconcile payouts from Stripe, PayPal, and Adyen in one sheet.</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-fuchsia-400 font-bold">✔</span>
-                  <span><strong>Optimized Fees Console:</strong> Smart routes card charges to minimize exchange and network fees.</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 3. ABOUT BRIO SECTION */}
-      <section className="w-full py-24 bg-black border-b border-zinc-900/60">
-        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
-            <div className="lg:col-span-6">
-              <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-fuchsia-400 mb-3 block">
-                ABOUT BRIO
-              </span>
-              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-6">
-                Connected Financial Operations
-              </h2>
-              <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-bold mb-6">
-                Brio is an enterprise-grade payment orchestration platform that empowers businesses to manage multiple payment processors, configure smart routing rules, and automate accounting reconciliation.
-              </p>
-              <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-bold">
-                Designed to run alongside popular checkout suites and API banks, Brio reduces transaction checkout failures and saves finance teams hours of invoice audits.
-              </p>
-            </div>
-
-            <div className="lg:col-span-6 bg-zinc-950/30 border border-zinc-900 rounded-3xl p-8 md:p-12 relative overflow-hidden">
-              <div className="absolute -right-20 -bottom-20 w-[300px] h-[300px] bg-fuchsia-500/[0.01] rounded-full blur-3xl pointer-events-none" />
-              <h3 className="text-base font-bold text-white mb-6">Core Operational Statistics</h3>
-              <div className="grid grid-cols-2 gap-6">
-                <div className="p-4 bg-black border border-zinc-900 rounded-xl">
-                  <div className="text-2xl font-black text-fuchsia-400 font-mono">+4.2%</div>
-                  <div className="text-[10px] text-zinc-500 font-mono uppercase tracking-wider mt-1">Checkout Success Rates</div>
-                </div>
-                <div className="p-4 bg-black border border-zinc-900 rounded-xl">
-                  <div className="text-2xl font-black text-fuchsia-400 font-mono">-70%</div>
-                  <div className="text-[10px] text-zinc-500 font-mono uppercase tracking-wider mt-1">Reconciliation Hours</div>
-                </div>
-                <div className="p-4 bg-black border border-zinc-900 rounded-xl">
-                  <div className="text-2xl font-black text-fuchsia-400 font-mono">100%</div>
-                  <div className="text-[10px] text-zinc-500 font-mono uppercase tracking-wider mt-1">PCI-DSS vault compliant</div>
-                </div>
-                <div className="p-4 bg-black border border-zinc-900 rounded-xl">
-                  <div className="text-2xl font-black text-fuchsia-400 font-mono">&lt;50ms</div>
-                  <div className="text-[10px] text-zinc-500 font-mono uppercase tracking-wider mt-1">API routing lag</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 4. HOW IT WORKS (STEP BY STEP) */}
-      <section className="w-full py-24 bg-black border-b border-zinc-900/60">
-        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
-
-            {/* Left Side: Copy and CTA */}
-            <div className="sticky top-32">
-              <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-white mb-6">
-                How it works
-              </h2>
-              <p className="text-zinc-400 text-base md:text-lg leading-relaxed mb-10 max-w-md">
-                Get up and running in minutes. No steep learning curve, no complex setup — just a clear path from zero to productive.
-              </p>
-
-              <button className="px-8 py-3 bg-white text-black text-xs font-bold uppercase tracking-[0.2em] rounded-full hover:bg-zinc-200 transition-colors mb-8 shadow-lg shadow-white/10">
-                GET STARTED
-              </button>
-
-              <p className="text-sm text-zinc-500 font-medium">
-                Need a custom plan for large teams? <Link href="/contact#contact-form" className="text-white hover:underline">Contact us</Link>.
-              </p>
-            </div>
-
-            {/* Right Side: Vertical Steps */}
-            <div className="flex flex-col gap-12">
-              {steps.map((step, idx) => (
-                <div key={idx} className="flex gap-6 md:gap-8 items-start group">
-                  <div className="w-10 h-10 md:w-12 md:h-12 shrink-0 rounded-full bg-white text-black font-bold flex items-center justify-center text-lg mt-1 group-hover:scale-110 transition-transform shadow-lg shadow-white/5">
-                    {idx + 1}
-                  </div>
-                  <div>
-                    <h3 className="text-lg md:text-xl font-bold text-white mb-2">{step.title}</h3>
-                    <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-medium">
-                      {step.desc}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      {/* 5. KEY FEATURES */}
-      <section className="w-full py-24 bg-black border-b border-zinc-900/60">
-        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
-          <Reveal className="mb-20 text-center">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
-              CAPABILITIES
-            </span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-4">
-              Platform Key Features
-            </h2>
-            <p className="text-zinc-400 text-xs md:text-sm font-bold leading-relaxed max-w-md mx-auto">
-              Everything required to orchestrate checkout gateways, route payments, and audit costs.
-            </p>
-          </Reveal>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {features.map((feat, idx) => (
-              <div key={idx} className="p-8 bg-zinc-950/40 border border-zinc-900 hover:border-fuchsia-500/15 rounded-3xl transition-all duration-300 flex flex-col justify-between">
-                <div>
-                  <h3 className="text-sm md:text-base font-bold text-white mb-3 flex items-center gap-3">
-                    <div className="w-5 h-5 rounded-full bg-fuchsia-500/10 border border-fuchsia-500/30 flex items-center justify-center">
-                      <Check className="w-3 h-3 text-fuchsia-500" />
-                    </div>
-                    {feat.title}
-                  </h3>
-                  <p className="text-xs md:text-sm text-zinc-355 font-bold leading-relaxed">{feat.desc}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 6. AI CAPABILITIES */}
-      <section className="w-full py-24 bg-black border-b border-zinc-900/60">
-        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
-          <Reveal className="text-center max-w-2xl mx-auto mb-20">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-fuchsia-400 mb-3 block">
-              INTELLIGENT ROUTING
-            </span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-4">
-              AI Capabilities inside Brio
-            </h2>
-            <p className="text-zinc-400 text-xs md:text-sm font-bold leading-relaxed">
-              Discover the machine learning models driving checkout pipelines.
-            </p>
-          </Reveal>
-
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {aiCapabilities.map((ai, idx) => (
-              <div key={idx} className="p-8 bg-zinc-950/30 border border-zinc-900 rounded-3xl hover:border-fuchsia-500/20 transition-all duration-300 flex flex-col justify-between group">
-                <div>
-                  <div className="w-10 h-10 rounded-2xl bg-fuchsia-500/10 border border-fuchsia-500/25 flex items-center justify-center text-fuchsia-400 mb-6 shadow-inner group-hover:scale-105 transition-transform duration-300">
-                    <Cpu className="w-5 h-5" />
-                  </div>
-                  <h3 className="text-base font-bold text-white mb-4 tracking-wide">{ai.title}</h3>
-                  <p className="text-xs md:text-sm text-zinc-400 leading-relaxed font-bold">{ai.desc}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 7. PRODUCT SCREENSHOTS & DEMO VIDEO */}
-      <section className="w-full py-24 bg-black border-b border-zinc-900/60">
-        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
-          <Reveal className="text-center max-w-2xl mx-auto mb-20">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
-              MEDIA SHOWCASE
-            </span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-4">
-              Explore the Interface
-            </h2>
-            <p className="text-zinc-400 text-xs md:text-sm font-bold leading-relaxed">
-              Inspect transaction ledgers, routing charts, and gateway toggles inside Brio.
-            </p>
-          </Reveal>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-            {[
-              { title: "Main Payments Dashboard", label: "Central console monitoring checkout volume, revenues, and success rates." },
-              { title: "Transaction Ledger View", label: "Detailed grid checking payouts, merchant codes, and routing parameters." },
-              { title: "Routing Rules Console", label: "Drag and drop panel configuring processor fallbacks and filters." },
-              { title: "Gateway Settings Panel", label: "One-click connection screen linking Stripe, PayPal, and Adyen accounts." },
-              { title: "Reconciliation Ledger Sheet", label: "Matching ledger checking payouts against processor invoices automatically." },
-              { title: "Fraud Pattern Radar", label: "Telemetry panel checking IP tags, card testing warnings, and blocks." }
-            ].map((scr, idx) => (
-              <div key={idx} className="bg-zinc-950/40 border border-zinc-900 rounded-3xl p-6 hover:border-zinc-800 transition-colors">
-                <div className="relative aspect-[16/10] bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-900/80 mb-5">
-                  <Image
-                    src="/webp/assets/Home-page/our-products/brio.webp"
-                    alt={scr.title}
-                    fill
-                    className="object-cover object-top opacity-80 hover:opacity-100 transition-opacity duration-300"
-                    unoptimized
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
-                </div>
-                <h4 className="text-xs font-bold text-white mb-2 tracking-wide">{scr.title}</h4>
-                <p className="text-[10px] text-zinc-500 font-semibold leading-relaxed">{scr.label}</p>
-              </div>
-            ))}
-          </div>
-
-          {/* Simulated Demo Video */}
-          <div className="max-w-4xl mx-auto rounded-3xl overflow-hidden border border-zinc-900 bg-zinc-950 relative aspect-video shadow-2xl flex flex-col justify-center items-center group">
+/* =========================================================================
+   1. HERO
+   ========================================================================= */
+function Hero() {
+  return (
+    <section id="hero" className="relative overflow-x-clip pb-20 pt-24 sm:pt-28 lg:pt-[112px]">
+      <div className={CONTAINER}>
+        {/* logo — positioned top-left aligned nicely under Devopstrio navbar */}
+        <Reveal>
+          <div className="flex items-center justify-start pl-1 sm:pl-2 lg:pl-4">
             <Image
-              src="/webp/assets/Home-page/our-products/brio.webp"
-              alt="Brio Video Walkthrough Background"
-              fill
-              className="object-cover opacity-35 transition-transform duration-700 group-hover:scale-[1.01]"
-              unoptimized
+              src={A.logo}
+              alt="Brio"
+              width={109}
+              height={42}
+              priority
+              className="h-auto w-[115px] sm:w-[130px] lg:w-[140px] object-contain"
             />
-            <div className="absolute inset-0 bg-black/60 z-0" />
-
-            <div className="relative z-10 text-center px-6">
-              <button onClick={() => setIsVideoOpen(true)} className="w-20 h-20 rounded-full bg-fuchsia-500 text-white flex items-center justify-center mx-auto hover:bg-fuchsia-650 transition-all shadow-[0_0_50px_rgba(240,73,153,0.3)] hover:scale-105 duration-300 mb-6">
-                <Play className="w-8 h-8 fill-white ml-1.5" />
-              </button>
-              <h3 className="text-lg md:text-xl font-bold text-white mb-2 tracking-wide">Watch Brio in Action</h3>
-              <p className="text-xs md:text-sm text-zinc-400 font-bold max-w-sm mx-auto">
-                A 3-minute walkthrough showcasing gateway integrations, fallback routing setups, and payout logs.
-              </p>
-            </div>
           </div>
-        </div>
-      </section>
+        </Reveal>
 
-      {/* 8. BUSINESS USE CASES */}
-      <section className="w-full py-24 bg-black border-b border-zinc-900/60">
-        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
-          <Reveal className="text-center max-w-2xl mx-auto mb-20">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
-              PRACTICAL USE CASES
-            </span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-4">
-              Supported Payment Workflows
-            </h2>
-            <p className="text-zinc-400 text-xs md:text-sm font-bold leading-relaxed">
-              Standardize payment processing layouts across daily financial operations.
-            </p>
-          </Reveal>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {useCases.map((uc, idx) => (
-              <div key={idx} className="p-8 bg-zinc-950/20 border border-zinc-900 rounded-3xl hover:border-zinc-800 transition-colors">
-                <h3 className="text-sm md:text-base font-bold text-white mb-3 flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-fuchsia-500" />
-                  {uc.title}
-                </h3>
-                <p className="text-xs md:text-sm text-zinc-400 leading-relaxed font-bold">{uc.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 9. SOLUTIONS BY TEAM OR INDUSTRY */}
-      <section className="w-full py-24 bg-black border-b border-zinc-900/60">
-        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
-          <Reveal className="text-center max-w-2xl mx-auto mb-16">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
-              ALIGNMENT INDEX
-            </span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-4">
-              Tailored Solutions
-            </h2>
-            <p className="text-zinc-400 text-xs md:text-sm font-bold leading-relaxed">
-              Find how Brio solves challenges for your specific team responsibilities or industry sector.
-            </p>
-          </Reveal>
-
-          {/* Toggle Tab Bar */}
-          <div className="flex items-center justify-center gap-4 mb-12">
-            <button
-              onClick={() => { setActiveTab("team"); setActiveSubTab("finance"); }}
-              className={`px-5 py-2.5 rounded-full text-xs font-bold tracking-wider uppercase border transition-all ${activeTab === "team" ? "bg-white text-black border-white" : "bg-transparent text-zinc-400 border-zinc-850 hover:border-zinc-700"}`}
-            >
-              By Business Team
-            </button>
-            <button
-              onClick={() => { setActiveTab("industry"); setActiveSubTab("retail"); }}
-              className={`px-5 py-2.5 rounded-full text-xs font-bold tracking-wider uppercase border transition-all ${activeTab === "industry" ? "bg-white text-black border-white" : "bg-transparent text-zinc-400 border-zinc-850 hover:border-zinc-700"}`}
-            >
-              By Sector / Industry
-            </button>
-          </div>
-
-          <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-8 items-center bg-zinc-950/40 border border-zinc-900 p-8 rounded-3xl">
-            {/* Sub Tabs Selection */}
-            <div className="md:col-span-4 flex flex-col gap-2.5">
-              {activeTab === "team" ? (
-                Object.keys(teamSolutions).map((key) => {
-                  const s = teamSolutions[key as keyof typeof teamSolutions];
-                  return (
-                    <button
-                      key={key}
-                      onClick={() => setActiveSubTab(key)}
-                      className={`w-full text-left px-5 py-3 rounded-xl text-xs font-bold transition-all border ${activeSubTab === key ? "bg-fuchsia-500/10 text-fuchsia-455 border-fuchsia-500/35" : "bg-black/40 text-zinc-400 border-zinc-900 hover:border-zinc-800"}`}
-                    >
-                      {s.title}
-                    </button>
-                  );
-                })
-              ) : (
-                Object.keys(industrySolutions).map((key) => {
-                  const s = industrySolutions[key as keyof typeof industrySolutions];
-                  return (
-                    <button
-                      key={key}
-                      onClick={() => setActiveSubTab(key)}
-                      className={`w-full text-left px-5 py-3 rounded-xl text-xs font-bold transition-all border ${activeSubTab === key ? "bg-fuchsia-500/10 text-fuchsia-455 border-fuchsia-500/35" : "bg-black/40 text-zinc-400 border-zinc-900 hover:border-zinc-800"}`}
-                    >
-                      {s.title}
-                    </button>
-                  );
-                })
-              )}
-            </div>
-
-            {/* Sub Tab Panel Detail */}
-            <div className="md:col-span-8 flex flex-col justify-center min-h-[200px]">
-              {activeTab === "team" ? (
-                (() => {
-                  const s = teamSolutions[activeSubTab as keyof typeof teamSolutions];
-                  if (!s) return null;
-                  return (
-                    <div>
-                      <h3 className="text-lg font-bold text-white mb-3">{s.title} Portal</h3>
-                      <p className="text-xs md:text-sm text-zinc-400 leading-relaxed font-bold mb-6">{s.useCase}</p>
-                      <div className="inline-block px-3 py-1 bg-zinc-900 border border-zinc-850 rounded text-[10px] font-mono text-fuchsia-400 font-bold">
-                        Key Value: {s.metrics}
-                      </div>
-                    </div>
-                  );
-                })()
-              ) : (
-                (() => {
-                  const s = industrySolutions[activeSubTab as keyof typeof industrySolutions];
-                  if (!s) return null;
-                  return (
-                    <div>
-                      <h3 className="text-lg font-bold text-white mb-3">{s.title} Solutions</h3>
-                      <p className="text-xs md:text-sm text-zinc-400 leading-relaxed font-bold mb-6">{s.useCase}</p>
-                      <div className="inline-block px-3 py-1 bg-zinc-900 border border-zinc-850 rounded text-[10px] font-mono text-fuchsia-400 font-bold">
-                        Compliance Basis: {s.compliance}
-                      </div>
-                    </div>
-                  );
-                })()
-              )}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 10. BUSINESS BENEFITS (PREMIUM) */}
-      <section className="relative w-full py-24 md:py-32 bg-[#030303] border-b border-zinc-900/60 overflow-hidden">
-        {/* Subtle background glow */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-[1px] bg-gradient-to-r from-transparent via-fuchsia-500/50 to-transparent opacity-50" />
-
-        <div className="max-w-7xl mx-auto w-full px-4 sm:px-8 xl:px-12 relative z-10">
-          <Reveal className="text-center max-w-3xl mx-auto mb-24">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-fuchsia-500 mb-4 block">
-              INVESTMENT RETURN
-            </span>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-6">
-              Measurable Business Benefits
-            </h2>
-            <p className="text-zinc-400 text-base md:text-lg font-medium leading-relaxed">
-              Why transitioning payment logic to Brio saves operating capital.
-            </p>
-          </Reveal>
-
-          <div className="flex flex-wrap justify-center gap-6 lg:gap-8">
-            {[
-              { title: "Higher Success Rates", desc: "Intelligent AI routing checks gateway channels to prevent failed customer card payments." },
-              { title: "Lower Processing Fees", desc: "Dynamic route sorting selects lowest-cost processors based on transaction regions." },
-              { title: "Automated Matching Logs", desc: "Reconcile Stripe, PayPal, and Adyen ledger payouts with bank accounts instantly." }
-            ].map((ben, idx) => (
-              <div
-                key={idx}
-                className="group relative flex-1 min-w-[280px] max-w-[400px] p-8 md:p-10 bg-[#0a0a0a] border border-zinc-800/80 rounded-[2rem] overflow-hidden hover:bg-zinc-900/50 transition-colors duration-500 shadow-lg hover:shadow-2xl hover:shadow-fuchsia-500/10"
-              >
-                {/* Background Huge Number */}
-                <div className="absolute -right-4 -bottom-8 text-8xl md:text-[120px] font-black text-zinc-800/20 group-hover:text-fuchsia-500/10 transition-colors duration-500 pointer-events-none select-none">
-                  0{idx + 1}
-                </div>
-
-                {/* Top Accent Line */}
-                <div className="absolute top-0 left-8 right-8 h-[2px] bg-gradient-to-r from-fuchsia-500/0 via-fuchsia-500/50 to-fuchsia-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
-                <div className="relative z-10">
-                  <div className="w-12 h-12 rounded-2xl bg-fuchsia-500/10 border border-fuchsia-500/20 flex items-center justify-center text-fuchsia-400 mb-8 group-hover:scale-110 transition-transform duration-500">
-                    <span className="font-mono font-bold text-lg">0{idx + 1}</span>
-                  </div>
-                  <h4 className="text-lg md:text-xl font-bold text-white mb-4 tracking-tight group-hover:text-fuchsia-400 transition-colors duration-300">
-                    {ben.title}
-                  </h4>
-                  <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-medium group-hover:text-zinc-300 transition-colors duration-300">
-                    {ben.desc}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 11. WHY BRIO, CUSTOMIZATION & INTEGRATION (PREMIUM) */}
-      <section className="w-full py-32 bg-black border-b border-zinc-900/60 overflow-hidden">
-        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
-          <div className="flex flex-col lg:flex-row gap-16 lg:gap-12 items-start">
-
-            {/* Left Column: Text & List */}
-            <div className="lg:w-5/12 flex flex-col items-start text-left lg:sticky lg:top-32">
-              <Reveal>
-                <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-fuchsia-400 mb-4 block">
-                  EXTENSIBILITY
-                </span>
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-tight mb-6 text-white">
-                  Customization &amp; Personalization
-                </h2>
-                <p className="text-zinc-400 text-base md:text-lg leading-relaxed font-medium mb-10">
-                  Setup custom branding and gateway routing rules. Configure specific fallback options, currencies, and dunning retry frequencies.
-                </p>
-
-                <ul className="space-y-6">
-                  {[
-                    "Branded Checkout Sheets: Adapt payment layouts to your UI style.",
-                    "Custom Payout Splits: Setup split fees rules for marketplaces.",
-                    "Local Currency Profiles: Activate cards and wallets by country."
-                  ].map((txt, idx) => (
-                    <li key={idx} className="flex items-start gap-4 text-sm md:text-base text-zinc-300 font-bold">
-                      <div className="w-6 h-6 rounded-full bg-fuchsia-500/10 border border-fuchsia-500/30 flex items-center justify-center shrink-0 mt-0.5 shadow-lg shadow-fuchsia-500/20">
-                        <Check className="w-3.5 h-3.5 text-fuchsia-400" />
-                      </div>
-                      <span className="leading-relaxed">{txt}</span>
-                    </li>
-                  ))}
-                </ul>
-              </Reveal>
-            </div>
-
-            {/* Right Column: 3D Flip Cards Grid */}
-            <div className="lg:w-7/12 w-full">
-              <Reveal className="mb-6">
-                <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-fuchsia-400 mb-2 block">
-                  CONNECTIVITY
-                </span>
-                <h3 className="text-xl md:text-2xl font-bold text-white">
-                  Enterprise Ecosystem Connectors
-                </h3>
-              </Reveal>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {integrations.map((int, i) => {
-                  const icons = [UserPlus, Activity, Briefcase, Globe];
-                  const images = [
-                    "/webp/assets/common/1b065043b6959827c05a0073c93a4a53-1.webp",
-                    "/webp/assets/common/260b761ad40c3ad2acba2c6666894539-1.webp",
-                    "/webp/assets/common/315e4fdc6263bfd240f36297e376576e-1.webp",
-                    "/webp/assets/common/37b9b888cc479ea7b74d2d9a05c37597-1.webp"
-                  ];
-                  const Icon = icons[i % 4];
-                  return (
-                    <Reveal key={i} delay={i * 0.1}>
-                      <div className="group relative h-[260px] md:h-[280px] [perspective:1000px] cursor-pointer">
-                        <div className="absolute inset-0 w-full h-full transition-all duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
-
-                          {/* Front Face */}
-                          <div className="absolute inset-0 w-full h-full flex flex-col justify-start bg-black border border-zinc-800/80 hover:border-zinc-700 rounded-2xl p-6 shadow-sm [backface-visibility:hidden] transition-colors">
-                            <div className="w-12 h-12 mb-5 rounded-xl bg-zinc-900 border border-zinc-800 flex items-center justify-center text-fuchsia-400">
-                              <Icon size={24} strokeWidth={1.5} />
-                            </div>
-                            <h3 className="font-bold text-lg text-zinc-100 mb-3">
-                              {int.title}
-                            </h3>
-                            <p className="text-sm text-zinc-400 leading-relaxed flex-1 font-medium">
-                              {int.desc}
-                            </p>
-                            <div className="inline-flex items-center gap-2 text-xs font-bold text-fuchsia-500 mt-auto opacity-70 group-hover:opacity-100 transition-opacity">
-                              View Integration <ArrowUpRight size={14} className="transition-transform group-hover:translate-x-1" />
-                            </div>
-                          </div>
-
-                          {/* Back Face */}
-                          <div className="absolute inset-0 w-full h-full flex flex-col rounded-2xl overflow-hidden [backface-visibility:hidden] [transform:rotateY(180deg)] border border-fuchsia-500/30">
-                            <img src={images[i % 4]} alt={int.title} className="w-full h-full object-cover opacity-80" loading="lazy" />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/60 to-black/10 flex flex-col justify-end p-6">
-                              <div className="w-10 h-10 mb-4 rounded-full bg-fuchsia-500/20 backdrop-blur-md border border-fuchsia-500/40 flex items-center justify-center text-fuchsia-400">
-                                <Icon size={18} strokeWidth={2} />
-                              </div>
-                              <h3 className="font-bold text-lg text-white mb-2">{int.title}</h3>
-                              <div className="inline-flex items-center gap-2 text-xs font-bold text-fuchsia-400">
-                                Explore Capabilities <ArrowUpRight size={14} />
-                              </div>
-                            </div>
-                          </div>
-
-                        </div>
-                      </div>
-                    </Reveal>
-                  );
-                })}
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </section>
-      \n\n{/* 12. SECURITY & DATA PRIVACY (PREMIUM) */}
-      <section className="relative w-full py-24 bg-black text-white overflow-hidden border-b border-zinc-900/60">
-        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
-          <div className="mb-16 text-center max-w-3xl mx-auto">
-            <Reveal>
-              <span className="text-[11px] font-bold tracking-[0.25em] uppercase text-fuchsia-400 mb-4 block">
-                COMPLIANCE &amp; ARCHITECTURE
-              </span>
-            </Reveal>
-            <Reveal>
-              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-6">
-                Security &amp; Card Compliance
-              </h2>
-            </Reveal>
-            <Reveal>
-              <p className="text-zinc-400 text-sm leading-relaxed font-bold">
-                Card records demand high-security compliance. Brio keeps all sensitive parameters inside secure token vaults with multi-tenant isolation.
-              </p>
-            </Reveal>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
-            {[
-              { icon: Lock, title: "PCI-DSS Level 1 Vault", desc: "Isolate card numbers and tokenise payloads using bank-level algorithms.", image: "/webp/assets/common/09ff7846bc8c9998745688779c09f88d-1.webp" },
-              { icon: Upload, title: "Secure Payout Logs", desc: "Verify merchant payout checks and upload tax forms with isolation tags.", image: "/webp/assets/common/1b065043b6959827c05a0073c93a4a53-1.webp" },
-              { icon: ShieldCheck, title: "Role-Based Access (RBAC)", desc: "Enforce strict check boundaries between finance admins and support reps.", image: "/webp/assets/common/260b761ad40c3ad2acba2c6666894539-1.webp" },
-              { icon: Activity, title: "Encrypted Ledger Audits", desc: "Every transaction, checkout route edit, or payout check is logged.", image: "/webp/assets/common/2fe7f9184c515b0c515ce38bc8a25efa-1.webp" }
-            ].map((sec, idx) => (
-              <Reveal key={idx} delay={idx * 0.05}>
-                <div className="relative rounded-[24px] border border-zinc-800/80 bg-black p-6 md:p-8 flex flex-col justify-between group h-full shadow-lg overflow-hidden transition-all duration-500 hover:border-fuchsia-500/50 min-h-[380px]">
-
-                  {/* Expanding Image Layer with Glassmorphism */}
-                  <div className="absolute inset-0 z-0 [clip-path:circle(0%_at_100%_100%)] group-hover:[clip-path:circle(150%_at_100%_100%)] transition-all duration-700 ease-in-out pointer-events-none">
-                    <img src={sec.image || '/webp/assets/common/09ff7846bc8c9998745688779c09f88d-1.webp'} alt={sec.title} className="w-full h-full object-cover scale-110 group-hover:scale-100 transition-transform duration-1000 ease-out opacity-40" loading="lazy" />
-                    <div className="absolute inset-0 bg-fuchsia-950/40 backdrop-blur-md" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-fuchsia-900/10 border border-fuchsia-500/10 rounded-[24px]" />
-                  </div>
-
-                  {/* Content Layer */}
-                  <div className="relative z-10 flex flex-col h-full">
-                    <div className="w-12 h-12 rounded-xl bg-fuchsia-500/10 border border-fuchsia-500/30 flex items-center justify-center text-fuchsia-400 shrink-0 mb-6 group-hover:scale-110 transition-transform duration-500">
-                      <sec.icon className="w-6 h-6" />
-                    </div>
-                    <div>
-                      <h3 className="text-lg md:text-xl font-bold text-white mb-4 tracking-tight transition-transform duration-500 group-hover:-translate-y-1">
-                        {sec.title}
-                      </h3>
-                      <p className="text-zinc-400 text-xs md:text-sm leading-relaxed mb-6 font-medium group-hover:text-zinc-300 transition-colors duration-500">
-                        {sec.desc}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-      \n\n
-
-      {/* 13. CLIENT TESTIMONIALS (PREMIUM) */}
-      <section className="w-full py-24 md:py-32 bg-[#030303] border-b border-zinc-900/60 relative overflow-hidden">
-        {/* Decorative background glow */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-fuchsia-500/10 blur-[120px] rounded-full pointer-events-none" />
-
-        <div className="max-w-7xl mx-auto w-full px-4 sm:px-8 xl:px-12 relative z-10">
-          <Reveal className="text-center max-w-3xl mx-auto mb-20">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-fuchsia-500 mb-4 block">
-              CLIENT TESTIMONIALS
-            </span>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-6">
-              Trusted by Finance Leaders
-            </h2>
-            <p className="text-zinc-400 text-base md:text-lg font-medium leading-relaxed">
-              Read how operating groups automate reconciliation using Brio.
-            </p>
-          </Reveal>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto">
-            {[
-              {
-                quote: "Brio completely simplified our multi-country checkouts. The automated routing features reduced our payment failures by 15%.",
-                author: "Sarah Mercer",
-                role: "Director of Payments, Global Scale Retail",
-                avatar: "https://i.pravatar.cc/150?u=director"
-              },
-              {
-                quote: "Reconciling checkout payouts was a weekly nightmare for our finance team. Brio matches ledger accounts programmatically.",
-                author: "James Vance",
-                role: "VP of Finance, Acme SaaS Hub",
-                avatar: "https://i.pravatar.cc/150?u=vpoffina"
-              },
-              {
-                quote: "Security was key for our marketplace. Brio's PCI-DSS Level 1 token vault gives our risk team complete confidence.",
-                author: "Danielle Ross",
-                role: "Chief Compliance Officer, Prime Escrows",
-                avatar: "https://i.pravatar.cc/150?u=chiefcom"
-              }
-            ].map((t, idx) => (
-              <div
-                key={idx}
-                className={`p-8 md:p-10 bg-[#0c0c0c] border border-zinc-800/80 rounded-[2rem] flex flex-col justify-between relative group hover:border-fuchsia-500/50 hover:bg-zinc-900/50 transition-all duration-500 shadow-xl hover:shadow-2xl hover:shadow-fuchsia-500/10 ${idx === 1 ? 'md:-translate-y-6' : ''}`}
-              >
-                {/* Large Quotation Icon Background */}
-                <div className="absolute top-6 right-6 text-zinc-800/30 group-hover:text-fuchsia-500/10 transition-colors pointer-events-none">
-                  <Quote size={80} />
-                </div>
-
-                <div className="relative z-10">
-                  <div className="flex gap-1.5 mb-8">
-                    {[1, 2, 3, 4, 5].map(i => (
-                      <Star key={i} className="w-4 h-4 fill-fuchsia-500 text-fuchsia-500" />
-                    ))}
-                  </div>
-
-                  <p className="text-zinc-300 text-base md:text-lg leading-relaxed font-medium mb-12">
-                    "{t.quote}"
-                  </p>
-                </div>
-
-                <div className="flex items-center gap-4 relative z-10 mt-auto pt-6 border-t border-zinc-800/50 group-hover:border-zinc-700 transition-colors">
-                  <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-zinc-800 group-hover:border-fuchsia-500/30 transition-colors">
-                    <Image
-                      src={t.avatar || 'https://i.pravatar.cc/150?u=fallback'}
-                      alt={t.author}
-                      width={48}
-                      height={48}
-                      className="w-full h-full object-cover"
-                      unoptimized
-                    />
-                  </div>
-                  <div>
-                    <div className="text-sm font-bold text-white tracking-wide">{t.author}</div>
-                    <div className="text-[10px] text-fuchsia-400 font-mono tracking-widest uppercase mt-1">{t.role}</div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 14. FAQS */}
-      <section className="w-full py-24 bg-black border-b border-zinc-900/60">
-        <div className="max-w-3xl mx-auto w-full px-12 xl:px-8">
-          <Reveal className="mb-16 text-center">
-            <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-zinc-400 mb-3 block">
-              QUESTIONS & ANSWERS
-            </span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-4">
-              Frequently Asked Questions
-            </h2>
-          </Reveal>
-
-          <div className="flex flex-col border-t border-zinc-900">
-            {faqs.map((faq, idx) => {
-              const isOpen = openFaqIndex === idx;
-              return (
-                <div key={idx} className="border-b border-zinc-900 py-6">
-                  <button
-                    onClick={() => toggleFaq(idx)}
-                    className="w-full flex justify-between items-center text-left focus:outline-none group"
-                  >
-                    <span className="text-xs md:text-sm font-semibold text-zinc-200 group-hover:text-white transition-colors">
-                      {faq.q}
-                    </span>
-                    <div className="text-zinc-550 group-hover:text-rose-500 transition-colors ml-4 flex-shrink-0">
-                      {isOpen ? <Minus size={16} /> : <Plus size={16} />}
-                    </div>
-                  </button>
-                  {isOpen && (
-                    <div className="mt-4 text-xs md:text-sm text-zinc-400 font-bold leading-relaxed animate-fadeIn">
-                      <p>{faq.a}</p>
-                    </div>
-                  )}
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* 15. BOOK A DEMO FORM SECTION */}
-      <section id="book-demo" className="w-full py-24 bg-black border-b border-zinc-900/60">
-        <div className="max-w-4xl mx-auto px-12 xl:px-8">
-          <div className="text-center mb-16">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
-              DEMO REQUEST
-            </span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-4">
-              Book a Brio Demo
-            </h2>
-            <p className="text-zinc-400 text-xs md:text-sm font-bold max-w-md mx-auto leading-relaxed">
-              Schedule a call with our financial technology architects to evaluate payment pipelines.
-            </p>
-            <p className="text-zinc-500 text-xs font-bold mt-4">
-              Prefer speaking with an expert? Call us directly at{" "}
-              <a href="tel:04612940062" className="text-rose-500 hover:text-rose-400 font-bold transition-colors">
-                0461 2940062 / +44 1784 640216
-              </a>
-            </p>
-          </div>
-
-          <div className="bg-zinc-950 border border-zinc-900 p-8 md:p-12 rounded-3xl relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-[200px] h-[200px] bg-fuchsia-500/[0.015] rounded-full blur-xl pointer-events-none" />
-
-            {formSubmitted ? (
-              <div className="text-center py-12 flex flex-col items-center">
-                <div className="w-12 h-12 rounded-full bg-fuchsia-500/10 border border-fuchsia-500/30 flex items-center justify-center text-fuchsia-400 mb-6">
-                  <Check className="w-6 h-6" />
-                </div>
-                <h3 className="text-xl font-bold text-white mb-2">Request Received</h3>
-                <p className="text-xs md:text-sm text-zinc-400 font-bold max-w-sm">
-                  Thank you! Our solutions engineers will contact you at your business email to schedule a live demo.
-                </p>
-              </div>
-            ) : (
-              <form onSubmit={handleFormSubmit} className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label className="block text-[10px] font-mono text-zinc-500 uppercase tracking-wider mb-2 font-bold flex items-center gap-1.5">
-                      <User className="w-3.5 h-3.5 text-zinc-500" /> Your Name
-                    </label>
-                    <input
-                      type="text"
-                      required
-                      value={formState.name}
-                      onChange={(e) => setFormState({ ...formState, name: e.target.value })}
-                      className="w-full bg-black border border-zinc-900 focus:border-fuchsia-500/50 rounded-xl px-4 py-3 text-xs md:text-sm text-white focus:outline-none transition-colors"
-                      placeholder="Jane Doe"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-[10px] font-mono text-zinc-500 uppercase tracking-wider mb-2 font-bold flex items-center gap-1.5">
-                      <Mail className="w-3.5 h-3.5 text-zinc-500" /> Business Email
-                    </label>
-                    <input
-                      type="email"
-                      required
-                      value={formState.email}
-                      onChange={(e) => setFormState({ ...formState, email: e.target.value })}
-                      className="w-full bg-black border border-zinc-900 focus:border-fuchsia-500/50 rounded-xl px-4 py-3 text-xs md:text-sm text-white focus:outline-none transition-colors"
-                      placeholder="jane@company.com"
-                    />
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label className="block text-[10px] font-mono text-zinc-500 uppercase tracking-wider mb-2 font-bold flex items-center gap-1.5">
-                      <Building className="w-3.5 h-3.5 text-zinc-500" /> Company Name
-                    </label>
-                    <input
-                      type="text"
-                      required
-                      value={formState.company}
-                      onChange={(e) => setFormState({ ...formState, company: e.target.value })}
-                      className="w-full bg-black border border-zinc-900 focus:border-fuchsia-500/50 rounded-xl px-4 py-3 text-xs md:text-sm text-white focus:outline-none transition-colors"
-                      placeholder="Acme Corp"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-[10px] font-mono text-zinc-500 uppercase tracking-wider mb-2 font-bold flex items-center gap-1.5">
-                      <Phone className="w-3.5 h-3.5 text-zinc-500" /> Phone Number
-                    </label>
-                    <input
-                      type="text"
-                      required
-                      value={formState.phone}
-                      onChange={(e) => setFormState({ ...formState, phone: e.target.value })}
-                      className="w-full bg-black border border-zinc-900 focus:border-fuchsia-500/50 rounded-xl px-4 py-3 text-xs md:text-sm text-white focus:outline-none transition-colors"
-                      placeholder="+44 1784 640216"
-                    />
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label className="block text-[10px] font-mono text-zinc-500 uppercase tracking-wider mb-2 font-bold flex items-center gap-1.5">
-                      <Globe className="w-3.5 h-3.5 text-zinc-500" /> Industry Sector
-                    </label>
-                    <select
-                      value={formState.industry}
-                      onChange={(e) => setFormState({ ...formState, industry: e.target.value })}
-                      className="w-full bg-black border border-zinc-900 focus:border-fuchsia-500/50 rounded-xl px-4 py-3 text-xs md:text-sm text-white focus:outline-none transition-colors appearance-none font-bold"
-                    >
-                      <option value="FinTech">FinTech</option>
-                      <option value="E-Commerce">E-Commerce</option>
-                      <option value="SaaS Platforms">SaaS Platforms</option>
-                    </select>
-                  </div>
-                  <div>
-                    <label className="block text-[10px] font-mono text-zinc-500 uppercase tracking-wider mb-2 font-bold flex items-center gap-1.5">
-                      <Briefcase className="w-3.5 h-3.5 text-zinc-500" /> Primary Use Case
-                    </label>
-                    <select
-                      value={formState.useCase}
-                      onChange={(e) => setFormState({ ...formState, useCase: e.target.value })}
-                      className="w-full bg-black border border-zinc-900 focus:border-fuchsia-500/50 rounded-xl px-4 py-3 text-xs md:text-sm text-white focus:outline-none transition-colors appearance-none font-bold"
-                    >
-                      <option value="Payment Orchestration">Payment Orchestration</option>
-                      <option value="Smart Routing">Smart Routing</option>
-                      <option value="Unified Reconciliation">Unified Reconciliation</option>
-                      <option value="Fraud Screening">Fraud Screening</option>
-                    </select>
-                  </div>
-                </div>
-
-                <div>
-                  <label className="block text-[10px] font-mono text-zinc-500 uppercase tracking-wider mb-2 font-bold">Message / Additional Requirements</label>
-                  <textarea
-                    rows={4}
-                    required
-                    value={formState.message}
-                    onChange={(e) => setFormState({ ...formState, message: e.target.value })}
-                    className="w-full bg-black border border-zinc-900 focus:border-fuchsia-500/50 rounded-xl px-4 py-3 text-xs md:text-sm text-white focus:outline-none transition-colors resize-none"
-                    placeholder="Describe your current transaction challenges or gateway plans..."
-                  />
-                </div>
-
-                <div className="pt-4">
-                  <button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="w-full py-4 bg-white text-black font-bold text-xs md:text-sm uppercase tracking-wider rounded-xl hover:bg-zinc-200 transition-colors shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
-                  >
-                    {isSubmitting ? "Submitting Request..." : "Request Brio Demo"}
-                  </button>
-                </div>
-              </form>
-            )}
-          </div>
-        </div>
-      </section>
-
-      {/* 16. FINAL CTA & CONTACT SECTION */}
-      <section className="w-full py-28 bg-black text-center relative overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-[radial-gradient(circle_at_center,rgba(240,73,153,0.02),transparent_60%)] pointer-events-none" />
-        <div className="max-w-3xl mx-auto px-12 xl:px-8 relative z-10">
-          <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-6">
-            Ready to simplify your payment operations?
-          </h2>
-          <p className="text-zinc-400 text-xs md:text-sm font-bold mb-10 max-w-lg mx-auto leading-relaxed">
-            Connect with our product specialist team at <a href={`mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL}`} className="text-rose-500 hover:underline">{process.env.NEXT_PUBLIC_CONTACT_EMAIL}</a> or call sales at <a href="tel:+441784640216" className="text-rose-500 hover:underline">0461 2940062</a>.
+        <Reveal delay={80} className="mt-8 sm:mt-10 lg:mt-12 text-center">
+          <h1 className="mx-auto text-[34px] font-bold leading-[42px] tracking-[-1.2px] text-white sm:text-[44px] sm:leading-[52px] lg:text-[48px] lg:leading-[56px]">
+            Find Creators. Build Influence. Grow Brands.
+          </h1>
+          <p className="mx-auto mt-6 sm:mt-8 max-w-[800px] text-[16px] font-normal leading-[24px] text-white sm:text-[18px] sm:leading-[26px]">
+            BRIO connects brands with the right creators, helping you discover authentic
+            voices, launch campaigns, collaborate effortlessly, and turn influence into
+            measurable growth.
           </p>
-          <a
-            href="#book-demo"
-            className="inline-flex items-center gap-3 pl-6 pr-3 py-3 bg-white text-black font-semibold text-xs md:text-sm tracking-wider rounded-full hover:bg-zinc-200 transition-all duration-300"
-          >
-            Book a Brio Demo
-            <div className="w-7 h-7 rounded-full bg-black flex items-center justify-center">
-              <ArrowUpRight className="w-3.5 h-3.5 text-white" />
-            </div>
-          </a>
-        </div>
-      </section>
 
-      {/* VIDEO LIGHTBOX MODAL */}
-      {isVideoOpen && (
-        <div className="fixed inset-0 z-[100] bg-black/90 backdrop-blur-md flex items-center justify-center p-6">
-          <div className="relative w-full max-w-4xl bg-zinc-950 border border-zinc-900 rounded-3xl overflow-hidden aspect-video shadow-2xl flex flex-col justify-center items-center">
-            {/* Close Button */}
-            <button
-              onClick={() => setIsVideoOpen(false)}
-              className="absolute top-4 right-4 z-20 w-8 h-8 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-400 hover:text-white hover:border-zinc-700 transition-all"
+          <div className="mt-10 sm:mt-12 flex flex-wrap items-center justify-center gap-4">
+            <Link
+              href="#what-is-brio"
+              className="inline-flex h-12 w-[175px] items-center justify-center gap-2 rounded bg-white text-[13px] font-semibold leading-[18px] tracking-[0.13px] text-black transition-transform duration-300 hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#3B82F6]"
             >
-              <X className="w-4 h-4" />
-            </button>
+              Discover BRIO
+              <ArrowRight className="h-4 w-4" strokeWidth={2} />
+            </Link>
 
-            {/* Video content overlay */}
-            <div className="text-center p-8 z-10 max-w-md">
-              <div className="w-12 h-12 rounded-full bg-fuchsia-500/10 border border-fuchsia-500/30 flex items-center justify-center text-fuchsia-400 mx-auto mb-4">
-                <Play className="w-5 h-5 fill-fuchsia-400" />
+            <Link
+              href="#creator-discovery"
+              className="inline-flex h-12 w-[224px] rounded-[5px] bg-gradient-to-r from-[#7EE0C6] to-[#3B62D9] p-px transition-transform duration-300 hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#3B82F6]"
+            >
+              <span className="flex h-full w-full items-center justify-center gap-2 rounded-[4px] bg-black text-[13px] font-semibold leading-[18px] tracking-[0.13px] text-white">
+                <span className="flex h-4 w-4 items-center justify-center rounded-full bg-gradient-to-r from-[#8FD8F5] to-[#3B82F6]">
+                  <Play className="h-2 w-2 fill-[#0B1B4D] text-[#0B1B4D]" strokeWidth={0} />
+                </span>
+                Explore the Platform
+              </span>
+            </Link>
+          </div>
+        </Reveal>
+
+        <Reveal delay={160} className={GAP}>
+          <Visual
+            src={A.hero}
+            alt="BRIO creator discovery: search filters and matched creator cards with match scores"
+            w={3267}
+            h={2136}
+            trim={{ t: 37, r: 42, b: 6 }}
+            priority
+          />
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
+/* =========================================================================
+   2. WHAT IS BRIO?
+   ========================================================================= */
+const FRAGMENTS = [
+  { src: A.fragments.create, alt: "01 Campaign Brief — autonomous prompt-to-brief orchestration engine", w: 918, span: 1 },
+  { src: A.fragments.discover, alt: "02 AI Matchmaking — real-time cultural and demographic affinity graph", w: 918, span: 1 },
+  { src: A.fragments.collaborate, alt: "03 Collaborate — live workspace, dynamic SLAs and native messaging", w: 918, span: 1 },
+  { src: A.fragments.content, alt: "04 Content Lab — draft video intake and automated QA verification", w: 918, span: 1 },
+  { src: A.fragments.approve, alt: "05 1-Click Approve — instant compliance audit and release gatekeeper", w: 918, span: 1 },
+  { src: A.fragments.pay, alt: "06 Smart Escrow — automated milestone disbursement and tax compliance", w: 918, span: 1 },
+  { src: A.fragments.measure, alt: "07 Attribution & ROI — continuous telemetry, revenue pixel and ROAS measurement", w: 1740, span: 2 },
+];
+
+function WhatIsBrio() {
+  return (
+    <section id="what-is-brio" className="relative overflow-x-clip py-20">
+      <div className={CONTAINER}>
+        <SectionHeading
+          eyebrow="What is Brio?"
+          title="One Platform. Every Campaign."
+          body="From discovering creators to managing campaigns, content, agreements, payments, and performance, BRIO connects the entire influencer marketing journey in one intelligent platform."
+        />
+
+        {/* 4-col grid: 264px cards, 10px column gap, 40px row gap; card 07 spans two columns (538px) */}
+        <div
+          className={`${GAP} mx-auto grid max-w-[1086px] grid-cols-2 gap-x-[10px] gap-y-[40px] lg:grid-cols-4`}
+        >
+          {FRAGMENTS.map((f, i) => (
+            <Reveal
+              key={f.src}
+              delay={(i % 4) * 80}
+              className={f.span === 2 ? "col-span-2" : "col-span-1"}
+            >
+              <div className="transition-transform duration-300 ease-out hover:-translate-y-1.5">
+                <Visual
+                  src={f.src}
+                  alt={f.alt}
+                  w={f.w}
+                  h={1313}
+                  trim={{ l: 63, t: 53, r: 63, b: 74 }}
+                  fluid
+                />
               </div>
-              <h3 className="text-base font-bold text-white mb-2">Brio Walkthrough Video</h3>
-              <p className="text-xs text-zinc-400 font-bold leading-relaxed mb-6">
-                Interactive video stream simulation. Real environments render custom client platform streams directly.
-              </p>
-              <button
-                onClick={() => setIsVideoOpen(false)}
-                className="px-6 py-2.5 bg-white text-black text-xs font-bold rounded-lg hover:bg-zinc-200 transition-colors"
+            </Reveal>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* =========================================================================
+   3. AI CAMPAIGN CREATOR
+   ========================================================================= */
+function AICampaignCreator() {
+  return (
+    <section id="ai-campaign-creator" className="relative overflow-x-clip py-20">
+      <div className={CONTAINER}>
+        <SectionHeading
+          eyebrow="AI Campaign Creator"
+          title="Product In. Campaign Out."
+          body="Simply add your product link or details. BRIO AI generates the campaign title, description, requirements, category, budget suggestions, and campaign creative in seconds."
+        />
+        <Reveal className={GAP}>
+          <Visual
+            src={A.aiCreator}
+            alt="BRIO AI turns a product link into a campaign: title, description, category, budget and deadline"
+            w={4320}
+            h={5055}
+            trim={{ l: 816, t: 1721, r: 816, b: 1724 }}
+          />
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
+/* =========================================================================
+   4. CREATOR DISCOVERY
+   ========================================================================= */
+function CreatorDiscovery() {
+  return (
+    <section id="creator-discovery" className="relative overflow-x-clip py-20">
+      <div className={CONTAINER}>
+        <SectionHeading
+          eyebrow="Creator Discovery"
+          title="Find Your Perfect Match."
+          body="Discover creators based on category, audience, region, engagement, and campaign relevance. Backed by real-time audience telemetry and automated brand safety screening."
+          bodyMax="max-w-[830px]"
+        />
+        <Reveal className={GAP}>
+          <Visual
+            src={A.discovery}
+            alt="Creator search with three top matches and additional high-affinity creator matches"
+            w={4320}
+            h={5055}
+            trim={{ l: 384, t: 1439, r: 384, b: 1016 }}
+          />
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
+/* =========================================================================
+   5. CAMPAIGN COLLABORATION
+   ========================================================================= */
+function CampaignCollaboration() {
+  return (
+    <section id="campaign-collaboration" className="relative overflow-x-clip py-20">
+      <div className={CONTAINER}>
+        <SectionHeading
+          eyebrow="Campaign Collaboration"
+          title="From Match to Partnership"
+          body="Creators discover campaigns and apply. Brands review applications, select creators, and manage the collaboration from one connected workflow."
+        />
+        {/* visual is 1224px wide in the frame, 8px wider than the container */}
+        <Reveal className={GAP}>
+          <div className="-mx-1">
+            <Visual
+              src={A.collab}
+              alt="Campaign applications list beside a selected creator's pitch, deliverables and approval controls"
+              w={3678}
+              h={2189}
+              trim={{ t: 3, r: 6, b: 379 }}
+            />
+          </div>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
+/* =========================================================================
+   6. AUTOMATED SETTLEMENT
+   ========================================================================= */
+function AutomatedSettlement() {
+  return (
+    <section id="automated-settlement" className="relative overflow-x-clip py-20">
+      <div className={CONTAINER}>
+        <SectionHeading
+          eyebrow="Automated Settlement"
+          title="Approved Content. Automatically Paid."
+          body="Connect campaign milestone completion directly with instant local and global payment rails. Once content is approved, escrow triggers zero-latency disbursements across UPI, SEPA, Wire, and digital wallets."
+          bodyMax="max-w-[950px]"
+        />
+        <Reveal className={GAP}>
+          <Visual
+            src={A.settlement}
+            alt="Content approved triggers an instant escrow payout of ₹35,000 to the creator"
+            w={3660}
+            h={1839}
+            trim={{ l: 15, t: 72, r: 36, b: 66 }}
+          />
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
+/* =========================================================================
+   7. AI ENGINE & TOOLKIT ARCHITECTURE  (full-bleed auto-scrolling row)
+   ========================================================================= */
+function AIToolkit() {
+  const loop = [...TOOLS, ...TOOLS];
+  return (
+    <section id="ai-toolkit" className="relative overflow-x-clip py-20">
+      <style>{`
+        @keyframes brio-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+        .brio-marquee { animation: brio-marquee 60s linear infinite; }
+        .brio-marquee-wrap:hover .brio-marquee { animation-play-state: paused; }
+        @media (prefers-reduced-motion: reduce) {
+          .brio-marquee { animation: none; }
+          .brio-marquee-wrap { overflow-x: auto; }
+        }
+      `}</style>
+
+      <div className={CONTAINER}>
+        <SectionHeading
+          eyebrow="AI Engine & Toolkit Architecture"
+          title="Brio AI Toolkit. Your Creator & Brand AI Toolbox."
+          body="A unified suite of intelligent cognitive models designed to empower brands and creators to generate, analyze, discover, and optimize high-velocity campaigns from a single neural nucleus."
+          bodyMax="max-w-[890px]"
+        />
+      </div>
+
+      {/* 332px cards (328 visible) + 16px margin = 348px pitch, as in the frame */}
+      <Reveal className="-mb-2 mt-[64px]">
+        <div className="brio-marquee-wrap overflow-hidden py-2">
+          <div
+            className="brio-marquee flex w-max"
+            style={{ animationDelay: "-14.3s" }}
+          >
+            {loop.map((tool, i) => (
+              <div
+                key={`${tool.file}-${i}`}
+                aria-hidden={i >= TOOLS.length}
+                className="mr-4 shrink-0 transition-transform duration-300 ease-out hover:-translate-y-1.5"
               >
-                Close Walkthrough
-              </button>
-            </div>
+                <Image
+                  src={`${TOOLKIT_DIR}/${tool.file}`}
+                  alt={i >= TOOLS.length ? "" : tool.alt}
+                  width={996}
+                  height={1419}
+                  sizes="332px"
+                  draggable={false}
+                  className="block h-auto w-[332px] max-w-none select-none"
+                />
+              </div>
+            ))}
           </div>
         </div>
-      )}
+      </Reveal>
+    </section>
+  );
+}
+
+/* =========================================================================
+   8. CREATOR PROFILES
+   ========================================================================= */
+function CreatorProfiles() {
+  return (
+    <section id="creator-profiles" className="relative overflow-x-clip py-20">
+      <div className={CONTAINER}>
+        <SectionHeading
+          eyebrow="Creator Profiles"
+          title="Your Influence Has a Home. Public Profiles & Media Kits."
+          titleMax="max-w-[860px]"
+          body="Build an institutional creator or brand presence with verified public profiles, live portfolio engagement telemetry, 1-click rate cards, and on-chain collaboration history."
+        />
+        <Reveal className={GAP}>
+          <Visual
+            src={A.profiles}
+            alt="Maya Lin's public creator profile with live stats and portfolio of top-performing content"
+            w={3552}
+            h={4488}
+            trim={{ t: 3, b: 102 }}
+          />
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
+/* =========================================================================
+   9. PREDICTIVE ATTRIBUTION & TELEMETRY
+   ========================================================================= */
+function PredictiveAttribution() {
+  return (
+    <section id="predictive-attribution" className="relative overflow-x-clip py-20">
+      <div className={CONTAINER}>
+        <SectionHeading
+          eyebrow="Predictive Attribution & Telemetry"
+          title="Turn Content into Insight. Real-Time Attribution."
+          body="Understand campaign performance, content quality, engagement, sentiment, conversions, and ROI with AI-powered insights and cognitive synthesis."
+          bodyMax="max-w-[800px]"
+        />
+        <Reveal className={GAP}>
+          <Visual
+            src={A.attribution}
+            alt="Live attribution dashboard: total reach, engagement rate, verified clicks and attributed GMV"
+            w={3669}
+            h={1080}
+            trim={{ l: 6, t: 3, r: 15, b: 57 }}
+          />
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
+/* =========================================================================
+   10. CTA  (compact: text left, button right)
+   ========================================================================= */
+function FinalCTA() {
+  return (
+    <section id="get-started" className="relative overflow-x-clip py-20">
+      <div className={CONTAINER}>
+        <Reveal>
+          <div className="flex min-h-[274px] flex-col items-start justify-between gap-8 rounded-xl bg-[#3B67D8] px-6 py-10 sm:px-12 md:flex-row md:items-center md:gap-10 md:pb-[52px] md:pt-[75px]">
+            <div className="max-w-[660px]">
+              <h2 className="text-[32px] font-bold leading-[40px] tracking-[-1.2px] text-white sm:text-[40px] sm:leading-[48px] lg:text-[48px] lg:leading-[56px]">
+                Make Every Campaign Count
+              </h2>
+              <p className="mt-7 text-[16px] font-normal leading-[24px] text-white sm:text-[18px] sm:leading-[26px]">
+                Bring your brand and the right creators together with smarter AI-powered
+                influencer marketing.
+              </p>
+            </div>
+
+            <Link
+              href={CTA_HREF}
+              className="inline-flex h-[62px] w-full shrink-0 items-center justify-center gap-2 rounded-lg bg-[#F7F9FB] text-[20px] font-medium leading-[28px] text-[#0B0B0F] transition-transform duration-300 hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:w-[296px]"
+            >
+              Get Started Today
+              <ArrowRight className="h-5 w-5" strokeWidth={2} />
+            </Link>
+          </div>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
+/* =========================================================================
+   PAGE
+   ========================================================================= */
+export default function Page() {
+  return (
+    <main className="bg-black text-white [font-family:Inter,ui-sans-serif,system-ui,sans-serif]">
+      <Hero />
+      <WhatIsBrio />
+      <AICampaignCreator />
+      <CreatorDiscovery />
+      <CampaignCollaboration />
+      <AutomatedSettlement />
+      <AIToolkit />
+      <CreatorProfiles />
+      <PredictiveAttribution />
+      <FinalCTA />
     </main>
   );
 }

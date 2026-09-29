@@ -17,25 +17,25 @@ const industryLeadershipData: IndustryLeader[] = [
     id: "ind-1",
     name: "Arun Karthik",
     role: "Industry Practice Lead — Financial Services & Banking",
-    image: "/webp/assets/About-page/leadership/industry_arun_karthik.webp",
+    image: "/webp/assets/About-page/leadership/v2/dev_emp_0010.webp",
   },
   {
     id: "ind-2",
     name: "David O'Connor",
     role: "Industry Director — Healthcare & Life Sciences",
-    image: "/webp/assets/About-page/leadership/industry_david_oconnor.webp",
+    image: "/webp/assets/About-page/leadership/v2/dev_emp_015.webp",
   },
   {
     id: "ind-3",
     name: "Nancy Carell",
     role: "Domain Director — Cloud Infrastructure & SRE",
-    image: "/webp/assets/About-page/leadership/industry_nancy_carell.webp",
+    image: "/webp/assets/About-page/leadership/v2/1.webp",
   },
   {
     id: "ind-4",
     name: "Rohan Varma",
     role: "Domain Principal — Cybersecurity & Zero-Trust Governance",
-    image: "/webp/assets/About-page/leadership/industry_rohan_varma.webp",
+    image: "/webp/assets/About-page/leadership/v2/dev_emp_023.webp",
   },
 
   // Row 2 (5 to 8)
@@ -43,25 +43,25 @@ const industryLeadershipData: IndustryLeader[] = [
     id: "ind-5",
     name: "Pradeep Verma",
     role: "Industry Principal — Manufacturing & Energy",
-    image: "/webp/assets/About-page/leadership/industry_pradeep_verma.webp",
+    image: "/webp/assets/About-page/leadership/v2/dev_emp_024.webp",
   },
   {
     id: "ind-6",
     name: "Vikramaditya Rao",
     role: "Industry Solutions Director — Telecom & Media",
-    image: "/webp/assets/About-page/leadership/industry_vikramaditya_rao.webp",
+    image: "/webp/assets/About-page/leadership/v2/dev_emp_021.webp",
   },
   {
     id: "ind-7",
     name: "Nikhil Sharma",
     role: "Sector Lead — Public Sector & Higher Education",
-    image: "/webp/assets/About-page/leadership/industry_nikhil_sharma.webp",
+    image: "/webp/assets/About-page/leadership/v2/dev_emp_022.webp",
   },
   {
     id: "ind-8",
     name: "Kofi Boateng",
     role: "Industry Director — Retail, E-Commerce & Logistics",
-    image: "/webp/assets/About-page/leadership/industry_kofi_boateng.webp",
+    image: "/webp/assets/About-page/leadership/v2/dev_emp_019.webp",
   },
 ];
 
@@ -73,7 +73,7 @@ export const IndustryDomainLeadership: React.FC = () => {
 
       <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 relative z-10">
         <Reveal>
-          {/* Section Heading with Reference Red/Rose Line */}
+          {/* Section Heading with Red/Rose Accent Line */}
           <div className="mb-12 text-left">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-white mb-3">
               Industry & Domain Leadership
@@ -81,7 +81,7 @@ export const IndustryDomainLeadership: React.FC = () => {
             <div className="w-20 h-1 bg-rose-600 rounded-full" />
           </div>
 
-          {/* 4x2 Grid (4 columns on lg, 2 columns on sm, 1 on mobile) */}
+          {/* 4-column Grid for Landscape/Rectangular Profile Cards */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-7">
             {industryLeadershipData.map((leader, index) => (
               <motion.div
@@ -89,26 +89,26 @@ export const IndustryDomainLeadership: React.FC = () => {
                 initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.45, delay: (index % 4) * 0.1 }}
-                className="group flex flex-col bg-[#0b0b0d]/90 border border-zinc-900 hover:border-zinc-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-rose-950/10 transition-all duration-300"
+                transition={{ duration: 0.45, delay: (index % 4) * 0.08 }}
+                className="group flex flex-col bg-[#0b0b0e] border border-zinc-900/90 hover:border-zinc-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-rose-950/20 transition-all duration-300"
               >
-                {/* Image Container with crisp square ratio */}
-                <div className="relative w-full aspect-square bg-[#121214] overflow-hidden">
+                {/* Rectangular Image Container (1487x1058 exact ratio) */}
+                <div className="relative w-full aspect-[1487/1058] bg-zinc-950 overflow-hidden">
                   <img
-                    src={leader.image}
+                    src={`${leader.image}?v=3`}
                     alt={leader.name}
-                    className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                    className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
                     loading="lazy"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-transparent opacity-60 group-hover:opacity-30 transition-opacity duration-300" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0b0b0e] via-transparent to-transparent opacity-40 pointer-events-none" />
                 </div>
 
                 {/* Leader Text Info */}
-                <div className="p-5 text-left space-y-1 flex-1 flex flex-col justify-start">
+                <div className="p-5 text-left flex-1 flex flex-col justify-start">
                   <h3 className="text-base sm:text-lg font-semibold text-white group-hover:text-rose-400 transition-colors duration-200 leading-snug">
                     {leader.name}
                   </h3>
-                  <p className="text-[13px] sm:text-[13.5px] font-medium text-zinc-400 tracking-wide leading-snug pt-1">
+                  <p className="text-[13px] sm:text-[13.5px] font-medium text-zinc-400 tracking-normal leading-relaxed pt-1.5">
                     {leader.role}
                   </p>
                 </div>
