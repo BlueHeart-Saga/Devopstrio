@@ -7,7 +7,7 @@ import { Reveal } from "@/components/ui/Reveal";
 interface CapabilityArchitectureProps {
   serviceSlug: string;
   capabilityTitle: string;
-  overrideTitle?: string;
+  overrideTitle?: React.ReactNode;
   overrideSubtitle?: string;
   overrideTopologyTitle?: string;
 }

@@ -49,9 +49,12 @@ export async function generateMetadata({ params }: PageProps) {
   if (!data) return {};
 
   const seo = getMetadataFromPath(`/services/${service}/${capability}`);
+  const title = data.metaTitle || (seo.title !== data.title ? seo.title : `${data.title} Consulting | Devopstrio Services`);
+  const description = data.metaDescription || seo.description || data.heroSubtitle;
+
   return generatePageMetadata({
-    title: seo.title !== data.title ? seo.title : `${data.title} Consulting | Devopstrio Services`,
-    description: seo.description || data.heroSubtitle,
+    title,
+    description,
     path: `/services/${service}/${capability}`,
     keywords: seo.keywords
   });
@@ -115,30 +118,41 @@ export default function CapabilityPage({ params }: PageProps) {
         title={data.title} 
         subtitle={data.heroSubtitle} 
         image={getOverviewImage(service)} 
+        overrideHeading={data.overviewHeading ? <>{data.overviewHeading}</> : undefined}
+        overrideDeepDiveHeading={data.whatIsHeading ? data.whatIsHeading : undefined}
+        overrideDeepDiveParagraph1={data.whatIsDescription ? data.whatIsDescription : undefined}
       />
 
       {/* Business Problem Section */}
       <CapabilityProblem 
         serviceSlug={service} 
         capabilityTitle={data.title} 
+        overrideTitle={data.problemTitle}
+        overrideSubtitle={data.problemSubtitle}
+        overridePoints={data.problemPoints}
       />
 
       {/* 4. Solutions, Benefits & Outcomes Section */}
       <CapabilityOutcomes
         serviceSlug={service}
         capabilityTitle={data.title}
+        overrideTitle={data.enterpriseTitle ? (
+          <><span className="text-rose-500 font-semibold">{data.enterpriseTitle}</span></>
+        ) : undefined}
       />
 
       {/* 3. Use Cases (Key Deliverables) Section */}
       <CapabilityUseCases 
         serviceSlug={service}
         capabilityTitle={data.title}
+        overrideTitle={data.useCasesTitle}
       />
 
       {/* 5. Architecture Section */}
       <CapabilityArchitecture 
         serviceSlug={service}
         capabilityTitle={data.title}
+        overrideTitle={data.architectureTitle ? <>{data.architectureTitle}</> : undefined}
       />
 
       {/* 6. Technology Stack Section */}
@@ -147,7 +161,10 @@ export default function CapabilityPage({ params }: PageProps) {
       </div> */}
 
       {/* 7. Benefits Section */}
-      <CapabilityBenefits benefits={data.benefits} />
+      <CapabilityBenefits 
+        benefits={data.benefits} 
+        overrideTitle={data.benefitsTitle ? <>{data.benefitsTitle}</> : undefined}
+      />
 
       {/* 8. Industries Section */}
       <CapabilityIndustries industries={serviceData.industries} />

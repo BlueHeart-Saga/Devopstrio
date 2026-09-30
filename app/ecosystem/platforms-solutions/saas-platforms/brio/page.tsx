@@ -223,23 +223,25 @@ function Hero() {
           </p>
 
           <div className="mt-10 sm:mt-12 flex flex-wrap items-center justify-center gap-4">
-            <Link
-              href="#what-is-brio"
+            <a
+              href="https://brio.devopstrio.co.uk/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex h-12 w-[175px] items-center justify-center gap-2 rounded bg-white text-[13px] font-semibold leading-[18px] tracking-[0.13px] text-black transition-transform duration-300 hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#3B82F6]"
             >
-              Discover BRIO
+              Explore BRIO
               <ArrowRight className="h-4 w-4" strokeWidth={2} />
-            </Link>
+            </a>
 
             <Link
-              href="#creator-discovery"
+              href="/contact"
               className="inline-flex h-12 w-[224px] rounded-[5px] bg-gradient-to-r from-[#7EE0C6] to-[#3B62D9] p-px transition-transform duration-300 hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#3B82F6]"
             >
               <span className="flex h-full w-full items-center justify-center gap-2 rounded-[4px] bg-black text-[13px] font-semibold leading-[18px] tracking-[0.13px] text-white">
                 <span className="flex h-4 w-4 items-center justify-center rounded-full bg-gradient-to-r from-[#8FD8F5] to-[#3B82F6]">
                   <Play className="h-2 w-2 fill-[#0B1B4D] text-[#0B1B4D]" strokeWidth={0} />
                 </span>
-                Explore the Platform
+                Get Started
               </span>
             </Link>
           </div>
@@ -444,11 +446,10 @@ function AIToolkit() {
           body="A unified suite of intelligent cognitive models designed to empower brands and creators to generate, analyze, discover, and optimize high-velocity campaigns from a single neural nucleus."
           bodyMax="max-w-[890px]"
         />
-      </div>
 
-      {/* 332px cards (328 visible) + 16px margin = 348px pitch, as in the frame */}
-      <Reveal className="-mb-2 mt-[64px]">
-        <div className="brio-marquee-wrap overflow-hidden py-2">
+        {/* 332px cards (328 visible) + 16px margin = 348px pitch, contained in page layout */}
+        <Reveal className="-mb-2 mt-[64px]">
+          <div className="brio-marquee-wrap overflow-hidden py-2 rounded-2xl">
           <div
             className="brio-marquee flex w-max"
             style={{ animationDelay: "-14.3s" }}
@@ -472,7 +473,8 @@ function AIToolkit() {
             ))}
           </div>
         </div>
-      </Reveal>
+        </Reveal>
+      </div>
     </section>
   );
 }
@@ -551,7 +553,7 @@ function FinalCTA() {
             </div>
 
             <Link
-              href={CTA_HREF}
+              href="/contact"
               className="inline-flex h-[62px] w-full shrink-0 items-center justify-center gap-2 rounded-lg bg-[#F7F9FB] text-[20px] font-medium leading-[28px] text-[#0B0B0F] transition-transform duration-300 hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:w-[296px]"
             >
               Get Started Today

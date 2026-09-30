@@ -144,6 +144,66 @@ const nextConfig: NextConfig = {
         destination: "/ecosystem/platforms-solutions/saas-platforms/esigniva",
         permanent: false,
       },
+      {
+        source: "/ecosystem/platforms-solutions/landingpage-prestivo",
+        destination: "/ecosystem/platforms-solutions/saas-platforms/prestivo",
+        permanent: false,
+      },
+      {
+        source: "/landingpage-prestivo",
+        destination: "/ecosystem/platforms-solutions/saas-platforms/prestivo",
+        permanent: false,
+      },
+      {
+        source: "/prestivo",
+        destination: "/ecosystem/platforms-solutions/saas-platforms/prestivo",
+        permanent: false,
+      },
+      {
+        source: "/ecosystem/platforms-solutions/landingpage-caresuite",
+        destination: "/ecosystem/platforms-solutions/saas-platforms/caresuite",
+        permanent: false,
+      },
+      {
+        source: "/landingpage-caresuite",
+        destination: "/ecosystem/platforms-solutions/saas-platforms/caresuite",
+        permanent: false,
+      },
+      {
+        source: "/caresuite",
+        destination: "/ecosystem/platforms-solutions/saas-platforms/caresuite",
+        permanent: false,
+      },
+      {
+        source: "/ecosystem/platforms-solutions/landingpage-justivon",
+        destination: "/ecosystem/platforms-solutions/saas-platforms/justivon",
+        permanent: false,
+      },
+      {
+        source: "/landingpage-justivon",
+        destination: "/ecosystem/platforms-solutions/saas-platforms/justivon",
+        permanent: false,
+      },
+      {
+        source: "/justivon",
+        destination: "/ecosystem/platforms-solutions/saas-platforms/justivon",
+        permanent: false,
+      },
+      {
+        source: "/ecosystem/platforms-solutions/landingpage-humanex",
+        destination: "/ecosystem/platforms-solutions/saas-platforms/humanex",
+        permanent: false,
+      },
+      {
+        source: "/landingpage-humanex",
+        destination: "/ecosystem/platforms-solutions/saas-platforms/humanex",
+        permanent: false,
+      },
+      {
+        source: "/humanex",
+        destination: "/ecosystem/platforms-solutions/saas-platforms/humanex",
+        permanent: false,
+      },
     ];
   },
   async rewrites() {

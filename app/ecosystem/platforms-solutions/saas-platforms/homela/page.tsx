@@ -221,6 +221,22 @@ const HomelaHero = () => (
           UK through property search, personalized recommendations, location
           insights, and support throughout the home-finding journey.
         </p>
+        <div className="mt-4 flex flex-wrap items-center justify-center gap-4">
+          <Link
+            href="/contact"
+            className="group inline-flex h-[43px] items-center gap-2 rounded-lg bg-[#BA0035] px-[26px] text-[13px] leading-[18px] font-semibold text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-[#D4003C]"
+          >
+            Get Started <ArrowRight className="h-[14px] w-[14px] transition group-hover:translate-x-0.5" />
+          </Link>
+          <a
+            href="https://homela.devopstrio.co.uk/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex h-[43px] items-center gap-2 rounded-lg border border-white/80 px-[22px] text-[13px] leading-[18px] font-semibold text-white transition hover:-translate-y-0.5 hover:bg-white/10"
+          >
+            Explore Homela
+          </a>
+        </div>
       </Reveal>
 
       {/* Hero.webp has ~17% transparent padding on top — trimmed so the search bar sits ~90px under the paragraph, like the reference */}
@@ -639,10 +655,7 @@ const HomelaCTA = () => (
             </p>
           </div>
 
-          <Link
-            href="#find-what-fits"
-            className="inline-flex h-[50px] w-full shrink-0 items-center justify-center gap-3 rounded-full bg-white px-8 text-[16px] font-medium leading-[24.8px] tracking-[0.22px] text-black shadow-xl transition-all hover:bg-zinc-100 sm:w-auto sm:text-[18px]"
-          >
+          <Link href="/contact" className="inline-flex h-[50px] w-full shrink-0 items-center justify-center gap-3 rounded-full bg-white px-8 text-[16px] font-medium leading-[24.8px] tracking-[0.22px] text-black shadow-xl transition-all hover:bg-zinc-100 sm:w-auto sm:text-[18px]">
             <span>Get Started Today</span>
             <ArrowRight className="h-5 w-5" />
           </Link>

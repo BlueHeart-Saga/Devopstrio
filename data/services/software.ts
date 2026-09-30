@@ -251,12 +251,18 @@ export const softwareCapabilities: Record<string, CapabilityDetail> = {
   },
   "saas-product-development": {
     slug: "saas-product-development",
-    title: "SaaS Product Development",
-    metaTitle: "SaaS Product Development in UK | Custom SaaS Services",
-    metaDescription: "Build innovative software with our SaaS Product Development in UK. We create custom SaaS platforms that improve user experience, support business growth, and adapt to changing needs.",
+    title: "SaaS Product Development UK",
+    metaTitle: "SaaS Product Development UK | Custom Cloud Software Solutions",
+    metaDescription: "Expert SaaS product development UK teams trust from MVP to enterprise scale. We design, build, and grow secure, multi-tenant SaaS platforms tailored to your business.",
     heroSubtitle: "From early-stage startups to established businesses, our SaaS Product Development in the UK focuses on building software products that are practical, easy to manage, and ready for growth.",
+    overviewHeading: "Transforming operations with SaaS Product Development UK",
+    whatIsHeading: "What is a SaaS Product Development UK?",
+    whatIsDescription: "SaaS product development UK helps businesses plan, build, launch, and scale cloud-based software platforms that serve multiple users and companies securely. It provides modern subscription platforms, customer portals, and enterprise software that eliminate complex local installations, scale resources dynamically as demand grows, protect tenant data, and run day-to-day operations with flexible cloud systems.",
     challenge: "Legacy systems make it difficult to add new features, slow application performance impacts user experience, and rising maintenance costs reduce time for product improvements.",
     solution: "Our SaaS Product Development in UK helps businesses shape product concepts into functional platforms with intuitive user journeys. Whether building a subscription platform, customer portal, or cloud business app, we provide the flexibility to build around your product vision.",
+    enterpriseTitle: "Reshaping business outcomes through SaaS Product Development UK",
+    useCasesTitle: "How Organizations Use SaaS Product Development UK",
+    architectureTitle: "Built for SaaS Product Development UK",
     features: [
       "Product Strategy: Clear planning from day one to guide product roadmap execution",
       "User-Centred Design: Interface layouts built around real customer needs",
@@ -277,8 +283,8 @@ export const softwareCapabilities: Record<string, CapabilityDetail> = {
     ],
     techStack: [
       { name: "Next.js / TypeScript", desc: "Frontend SaaS dashboard and customer portal." },
-      { name: "Go / Kubernetes", desc: "Multi-tenant backend microservices and auto-scaling pods." },
-      { name: "Stripe API / PostgreSQL", desc: "Subscription billing engine and multi-tenant database schema." }
+      { name: "Node.js / .NET / Go", desc: "Multi-tenant backend microservices and auto-scaling pods." },
+      { name: "AWS / Azure", desc: "Secure multi-tenant cloud hosting and database segregation." }
     ],
     caseStudy: {
       title: "SaaS Product Development for Growing Businesses in UK",
@@ -291,12 +297,44 @@ export const softwareCapabilities: Record<string, CapabilityDetail> = {
     },
     faqs: [
       {
-        q: "What types of SaaS products do you develop?",
-        a: "We build multi-tenant subscription platforms, enterprise customer portals, B2B SaaS applications, financial tools, and industry-specific cloud software."
+        q: "What kind of SaaS product development UK services do you offer?",
+        a: "From multi-tenant subscription platforms and enterprise client portals to B2B SaaS tools, fintech applications, and sector-specific cloud software, we deliver solutions tailored to your business."
       },
       {
-        q: "How do you handle multi-tenant data isolation?",
-        a: "We implement strict tenant isolation at the API and database levels, utilizing schema segregation or tenant ID encryption to ensure complete privacy."
+        q: "How does your SaaS Product Development UK team keep tenant data properly separated?",
+        a: "As part of our SaaS Product Development UK approach, tenant isolation is built in both the API and database layers, using schema separation or tenant ID encryption to keep every customer's data fully private and secure."
+      },
+      {
+        q: "What is included in your SaaS product development UK services?",
+        a: "Our SaaS product development UK services cover everything from product strategy and UX design to architecture, development, testing, and ongoing support. We work closely with you at every stage to ensure the final product truly fits your business goals."
+      },
+      {
+        q: "How long does SaaS product development UK typically take?",
+        a: "Timelines for SaaS product development UK projects vary by scope, but most MVPs launch within 8 to 12 weeks, with full platforms taking longer. We always share a realistic project roadmap upfront so you know exactly what to expect."
+      },
+      {
+        q: "Do you build MVPs as part of SaaS product development UK?",
+        a: "Yes, MVP development is a core part of our SaaS product development UK offering, helping you validate ideas quickly before scaling further. This approach reduces risk and lets you gather real user feedback early on."
+      },
+      {
+        q: "What tech stack do you use for SaaS product development UK projects?",
+        a: "We select the right stack for each client, but our SaaS product development UK team commonly works with React, Node.js, .NET, and cloud-native tools on AWS or Azure. Our goal is always long-term performance, not just what's trending."
+      },
+      {
+        q: "Can you help migrate a legacy app through SaaS product development UK?",
+        a: "Absolutely. Our SaaS product development UK experts specialize in modernizing legacy systems into scalable, cloud-based SaaS platforms. We handle the transition carefully to minimize disruption to your existing operations."
+      },
+      {
+        q: "How do you ensure security in SaaS product development UK projects?",
+        a: "Security is built into every stage of our SaaS product development UK process, including encryption, tenant isolation, and regular vulnerability testing. We also follow UK data protection standards to keep your platform fully compliant."
+      },
+      {
+        q: "Do you offer ongoing support after SaaS product development UK delivery?",
+        a: "Yes, our SaaS product development UK packages include maintenance, monitoring, and feature updates to keep your platform running smoothly. Our team stays available to fix issues quickly and support your product as it evolves."
+      },
+      {
+        q: "What industries do you serve with SaaS product development UK?",
+        a: "Our SaaS product development UK clients span fintech, healthcare, retail, logistics, and other sectors needing custom cloud software. Each solution is shaped around the specific rules and needs of that industry."
       }
     ]
   }

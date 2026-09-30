@@ -186,7 +186,7 @@ export default function SaaSPlatformsPage() {
       logo: "/webp/assets/Home-page/our-products/logo/safesign.webp",
       ctaPrimary: "View Platform",
       ctaSecondary: "Start Free",
-      url: "/ecosystem/platforms-solutions/saas-platforms/esigniva"
+      url: "https://safesign.devopstrio.co.uk/"
     },
     {
       slug: "justivon",

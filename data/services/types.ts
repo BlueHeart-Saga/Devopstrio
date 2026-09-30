@@ -50,6 +50,16 @@ export interface CapabilityDetail {
   deliverablesLabel?: string;
   outcomesLabel?: string;
   outcomeBottomLabel?: string;
+  overviewHeading?: string;
+  whatIsHeading?: string;
+  whatIsDescription?: string;
+  problemTitle?: string;
+  problemSubtitle?: string;
+  problemPoints?: string[];
+  enterpriseTitle?: string;
+  useCasesTitle?: string;
+  architectureTitle?: string;
+  benefitsTitle?: string;
 }
 
 export interface ServiceCategory {

@@ -403,9 +403,19 @@ const ROUTE_SEO_MAP: Record<string, { title: string; description: string; keywor
     keywords: ["Azure Services", "AKS Migration", "Azure Landing Zone", "Microsoft Cloud"]
   },
   "/services/it-consulting/cloud-consulting": {
-    title: "Cloud Consulting & Strategy Advisory Services",
-    description: "Strategic cloud advisory, multi-cloud architecture assessments, and migration roadmaps led by principal architects.",
-    keywords: ["Cloud Consulting", "Strategy Advisory", "Multi-Cloud Assessment"]
+    title: "Cloud Consulting UK | Expert Cloud Strategy & Migration",
+    description: "Trusted cloud consulting UK experts helping businesses migrate, optimize, and scale on Azure, AWS, and GCP. Get secure, cost-effective cloud solutions today.",
+    keywords: ["Cloud Consulting UK", "Cloud Strategy", "Cloud Migration", "Azure AWS GCP", "Cloud Consulting Services"]
+  },
+  "/services/it-consulting/cybersecurity-consulting": {
+    title: "Cybersecurity Consulting UK | Trusted Security Experts",
+    description: "Protect your business with expert cybersecurity consulting UK companies rely on. From risk assessments to threat protection, we help you stay secure, compliant, and resilient.",
+    keywords: ["Cybersecurity Consulting UK", "Cybersecurity Experts", "Threat Protection", "Risk Assessments", "SOC 2 ISO 27001"]
+  },
+  "/services/software-development/saas-product-development": {
+    title: "SaaS Product Development UK | Custom Cloud Software Solutions",
+    description: "Expert SaaS product development UK teams trust from MVP to enterprise scale. We design, build, and grow secure, multi-tenant SaaS platforms tailored to your business.",
+    keywords: ["SaaS Product Development UK", "Custom Cloud Software Solutions", "Multi-Tenant SaaS", "MVP Development", "SaaS Engineering UK"]
   },
   "/services/qa-testing/api-testing": {
     title: "Automated API Testing & Contract Verification",

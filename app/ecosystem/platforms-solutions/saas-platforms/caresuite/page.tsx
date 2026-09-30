@@ -1,1227 +1,803 @@
 "use client";
 
-import React, { useState } from "react";
-import { Reveal } from "@/components/ui/Reveal";
-import {
-
-  ArrowUpRight,
-  Plus,
-  Minus,
-  Check,
-  HeartPulse,
-  ShieldCheck,
-  Zap,
-  Activity,
-  Layers,
-  Sparkles,
-  Play,
-  Mail,
-  Building,
-  User,
-  Phone,
-  Briefcase,
-  AlertTriangle,
-  FileText,
-  Clock,
-  RefreshCw,
-  Cpu,
-  Lock,
-  Globe,
-  Upload,
-  UserPlus,
-  Eye,
-  Settings,
-  X
-  ,
-  Star,
-  Quote
-} from "lucide-react";
 import Link from "next/link";
+
+
 import Image from "next/image";
+import { useEffect, useRef, useState, type ReactNode } from "react";
+import { ArrowRight, PlayCircle } from "lucide-react";
 
-export default function CareSuiteProductPage() {
-  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
-  const [activeTab, setActiveTab] = useState<"team" | "industry">("team");
-  const [activeSubTab, setActiveSubTab] = useState<string>("doctors");
-  const [isVideoOpen, setIsVideoOpen] = useState(false);
+/* =========================================================================
+   TOKENS  (from the typography tables + colours sampled from the reference)
+   ========================================================================= */
+const GREEN = "#2F7E33"; // eyebrow + buttons + CTA card
+const CONTAINER = "max-w-[1280px] mx-auto px-6 sm:px-8 relative z-10";
+const SEC = "py-[72px]"; // vertical rhythm between sections
+const HEAD_GAP = "mt-14"; // identical heading -> visual gap in every section
+const lift = "transition-transform duration-300 ease-out hover:-translate-y-1.5";
 
-  // Book a Demo Form State
-  const [formState, setFormState] = useState({
-    name: "",
-    email: "",
-    company: "",
-    phone: "",
-    industry: "Healthcare",
-    useCase: "EMR Implementation",
-    message: ""
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [formSubmitted, setFormSubmitted] = useState(false);
+const H1 =
+  "text-[32px] leading-[40px] sm:text-[40px] sm:leading-[48px] lg:text-[48px] lg:leading-[56px] font-bold tracking-[-1.2px] text-white";
+const BODY = "text-[16px] leading-[24px] sm:text-[18px] sm:leading-[26px] font-normal text-white";
+const EYEBROW = "text-[14px] leading-[14px] font-semibold uppercase tracking-[0.55px]";
 
-  const toggleFaq = (index: number) => {
-    setOpenFaqIndex(openFaqIndex === index ? null : index);
-  };
+/* =========================================================================
+   ASSETS  – every file lives in /public/webp/assets/Home-page/caresuite/<section>/
+   w/h = natural export size (3x). Rendered at w/3 = Figma size.
+   t/b = empty (transparent glow) padding to trim, in Figma px (natural/3).
+   ========================================================================= */
+const BASE = "/webp/assets/Home-page/caresuite";
 
-  const handleFormSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name: formState.name,
-          email: formState.email,
-          message: `Company/Hospital: ${formState.company}\nPhone: ${formState.phone}\nIndustry: ${formState.industry}\nPrimary Use Case: ${formState.useCase}\n\nRequirements:\n${formState.message}`,
-          selectedServices: ["CareSuite Demo Request"],
-          toEmail: "info@devopstrioglobal.com"
-        })
-      });
-      if (response.ok) {
-        setFormSubmitted(true);
-      } else {
-        alert("Failed to submit demo request. Please try again.");
-      }
-    } catch (err) {
-      console.error(err);
-      alert("An error occurred. Please try again.");
-    } finally {
-      setIsSubmitting(false);
+type Asset = { src: string; w: number; h: number; t?: number; b?: number };
+const a = (dir: string, file: string, w: number, h: number, t = 0, b = 0): Asset => ({
+  src: `${BASE}/${dir}/${encodeURIComponent(file)}`,
+  w,
+  h,
+  t,
+  b,
+});
+
+const A = {
+  logo: a("hero", "Container (CareSuite - Healthcare Connected).png", 718, 255),
+  hero: a("hero", "HERO CARESUITE.webp", 2772, 2163),
+  challenge: a("healthcare-challenge", "THE HEALTHCARE CHALLENGE.webp", 3582, 1920, 1, 9),
+  arch: a("architectural-overview", "ARCHITECTURAL OVERVIEW.webp", 2743, 2339, 160, 211),
+  appointment: a("appointment-management", "APPOINTMENT MANAGEMENT.webp", 3567, 1203, 1, 9),
+  mobile: a(
+    "patient-wellness-hub",
+    "Mobile Phone Showcase + Floating Snippets (7 cols).webp",
+    2471,
+    2458,
+    146,
+    157,
+  ),
+  tele: a("telemedicine-excellence", "TELEMEDICINE EXCELLENCE.webp", 3192, 1626, 0, 40),
+  clinician: a("clinician-efficiency", "CLINICIAN EFFICIENCY.webp", 3582, 1368, 1, 9),
+  emr: a("unified-emr", "UNIFIED EMR.webp", 3582, 1326, 1, 9),
+  reception: a("role-based-collaboration", "reception.webp", 2760, 918, 2, 22),
+  nurse: a("role-based-collaboration", "nurse.webp", 2760, 918, 2, 22),
+  lab: a("role-based-collaboration", "lab.webp", 2760, 918, 2, 22),
+  pharmacy: a("role-based-collaboration", "pharmacy.webp", 2760, 918, 2, 22),
+  diagnostic: a("diagnostic-dispensing", "DIAGNOSTIC & DISPENSING.webp", 3582, 1464, 1, 9),
+  data: a("data-protection", "DATA PROTECTION.webp", 1490, 1456, 74, 16),
+};
+
+// 1x icons, rendered at natural size, all #FFFFFF
+const ICON = {
+  patients: a("architectural-overview", "Icon.png", 12, 12),
+  care: a("architectural-overview", "Icon (1).png", 12, 15),
+  operations: a("architectural-overview", "Icon (2).png", 14, 14),
+  insights: a("architectural-overview", "Icon (3).png", 17, 13),
+  labReports: a("patient-wellness-hub", "Icon (4).png", 14, 17),
+  appointments: a("patient-wellness-hub", "Icon (5).png", 16, 17),
+  prescriptions: a("patient-wellness-hub", "Icon (6).png", 17, 19),
+  records: a("patient-wellness-hub", "Icon (7).png", 14, 17),
+  encrypted: a("data-protection", "Icon (8).png", 16, 21),
+  audit: a("data-protection", "Icon (9).png", 20, 16),
+  rbac: a("data-protection", "Icon (10).png", 18, 20),
+  compliance: a("data-protection", "Icon (11).png", 16, 20),
+};
+
+/* =========================================================================
+   PRIMITIVES
+   ========================================================================= */
+
+/** Scroll-reveal wrapper. */
+function Reveal({
+  children,
+  className = "",
+  delay = 0,
+}: {
+  children: ReactNode;
+  className?: string;
+  delay?: number;
+}) {
+  const ref = useRef<HTMLDivElement>(null);
+  const [shown, setShown] = useState(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    if (typeof IntersectionObserver === "undefined") {
+      setShown(true);
+      return;
     }
-  };
-
-  const steps = [
-    { icon: UserPlus, title: "1. Register Patient", desc: "Input demographics, verify credentials, and create isolated Electronic Health Records." },
-    { icon: Clock, title: "2. Appointment Booking", desc: "Schedule slots automatically based on clinician timetables and queue limits." },
-    { icon: Activity, title: "3. Consultation", desc: "Log active symptoms, capture vital signs, and update historical files." },
-    { icon: FileText, title: "4. Treatment Plan", desc: "Formulate prescriptions, order lab workflows, and structure next actions." },
-    { icon: Layers, title: "5. Billing & Coding", desc: "Generate invoices automatically using integrated medical code sets." },
-    { icon: ShieldCheck, title: "6. Reports & Auditing", desc: "Compile telemetry summaries, compliance logs, and export performance audits." }
-  ];
-
-  const features = [
-    { title: "Unified Patient Management", desc: "Centralize profile histories, treatment notes, and demographic parameters." },
-    { title: "Secure EMR Engine", desc: "Electronic Medical Records vault isolating patient documents under strict compliance protocols." },
-    { title: "Dynamic Appointment Booking", desc: "Automate booking pages, SMS notifications, and clinician calendar limits." },
-    { title: "Integrated Billing Matrix", desc: "Coordinate medical billing claims, billing routes, and payments seamlessly." },
-    { title: "Pharmacy Dispensing Portal", desc: "Manage clinic prescriptions, inventory lists, and conflict alarms." },
-    { title: "Actionable Telemetry Reports", desc: "Compile analytics, patient metrics, and billing summaries instantly." }
-  ];
-
-  const aiCapabilities = [
-    {
-      title: "Clinician Scheduling Predictor",
-      desc: "Our scheduling intelligence examines patient check-in histories and weather metrics to predict appointment no-show probabilities, helping clinics optimize active slots."
-    },
-    {
-      title: "Medical Report Summarizer",
-      desc: "AI engines parse detailed diagnostic files and lab reports, outputting natural language summaries to reduce cognitive load on doctors."
-    },
-    {
-      title: "Predictive Health Trends",
-      desc: "Machine learning algorithms scan aggregated telemetry logs to flag emerging population health trends or departmental resource crunches."
-    }
-  ];
-
-  const useCases = [
-    { title: "Hospitals", desc: "Coordinate multiple departments, manage patient databases, and centralize billing." },
-    { title: "Clinics", desc: "Empower local practitioners with scheduling pages, EMR, and direct patient portals." },
-    { title: "Medical Centers", desc: "Link pharmacy logs with diagnostic labs to maintain absolute workflow cohesion." }
-  ];
-
-  const teamSolutions = {
-    doctors: {
-      title: "Doctors & Clinicians",
-      useCase: "Access EMR sheets, input diagnosis codes quickly, manage digital prescriptions, and check daily patient checklists from any screen.",
-      metrics: "Average checkout time reduced: -30%"
-    },
-    reception: {
-      title: "Reception & Admin",
-      useCase: "Register incoming patients, organize appointment schedules, verify identities, and send auto-reminders to signatories.",
-      metrics: "60% less reception phone time"
-    },
-    finance: {
-      title: "Finance & Billing",
-      useCase: "Review billing codes, submit insurance claims programmatically, and coordinate tenant collections safely.",
-      metrics: "99% billing accuracy achieved"
-    }
-  };
-
-  const industrySolutions = {
-    healthcare: {
-      title: "Healthcare Systems",
-      useCase: "Centralize operations across multiple clinic locations. Enforce unified medical record standards and sync data seamlessly.",
-      compliance: "HIPAA & regional health protocol compliant"
-    },
-    clinics: {
-      title: "Specialty Clinics",
-      useCase: "Tailor input forms and templates to match specific disciplines. Access custom diagnostic workflows easily.",
-      compliance: "Highly customizable treatment plans"
-    },
-    diagnostic: {
-      title: "Diagnostic Labs",
-      useCase: "Share lab results securely with patients and prescribing physicians. Integrate testing records directly into EMR catalogs.",
-      compliance: "Secure HL7 & FHIR data protocols"
-    }
-  };
-
-  const integrations = [
-    { title: "Lab Systems", desc: "Integrate testing laboratories and sync diagnostic charts dynamically." },
-    { title: "Pharmacy Networks", desc: "Push prescription coordinates directly to pharmacy systems." },
-    { title: "Insurance Databases", desc: "Submit electronic medical coding claims and verify active coverage." },
-    { title: "SMS & Email Nodes", desc: "Send patient alerts, appointment schedules, and secure invite keys." }
-  ];
-
-  const faqs = [
-    { q: "Is CareSuite HIPAA compliant?", a: "Yes, CareSuite satisfies HIPAA regulations, utilizing AES-256 data protection, strict isolation boundaries, and full audit trail histories." },
-    { q: "Can we migrate data from legacy EHR databases?", a: "Yes, our engineers assist in mapping and migrating historical clinical records using HL7 and FHIR API connectors." },
-    { q: "Is the practitioner panel mobile friendly?", a: "Yes, doctors and nurses can view EHR files, manage schedules, and input notes using tablets or mobile phones." }
-  ];
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setShown(true);
+          io.disconnect();
+        }
+      },
+      { threshold: 0.1, rootMargin: "0px 0px -6% 0px" },
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
 
   return (
-    <main className="min-h-screen bg-black text-white pt-24 font-sans overflow-x-hidden selection:bg-rose-500 selection:text-white">
-      {/* Background ambient mesh grid */}
-      <div className="absolute inset-0 opacity-[0.015] pointer-events-none z-0" style={{ backgroundImage: "radial-gradient(circle, #fff 1px, transparent 1px)", backgroundSize: "32px 32px" }} />
+    <div
+      ref={ref}
+      style={{ transitionDelay: `${delay}ms` }}
+      className={`transition-all duration-700 ease-out motion-reduce:translate-y-0 motion-reduce:opacity-100 motion-reduce:transition-none ${
+        shown ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
+      } ${className}`}
+    >
+      {children}
+    </div>
+  );
+}
 
-      {/* 1. HERO SECTION */}
-      <section className="relative w-full py-24 bg-black border-b border-zinc-900/60 overflow-hidden">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-[radial-gradient(circle_at_center,rgba(6,182,212,0.03),transparent_60%)] pointer-events-none" />
+/**
+ * Natural-aspect image, never cropped / framed.
+ * Wrapper is capped at the Figma width (natural/3); transparent padding is trimmed with
+ * negative margins expressed in % of the image width, so the trim scales with the image.
+ */
+function Pic({
+  asset,
+  alt = "",
+  w,
+  wrap = "",
+  className = "",
+  priority,
+  noMax,
+}: {
+  asset: Asset;
+  alt?: string;
+  w?: number;
+  wrap?: string;
+  className?: string;
+  priority?: boolean;
+  noMax?: boolean;
+}) {
+  const W = w ?? asset.w / 3;
+  const H = (W * asset.h) / asset.w;
+  const base = asset.w / 3;
+  const pct = (px?: number) => (px ? `-${((px / base) * 100).toFixed(3)}%` : undefined);
+  return (
+    <div className={`flow-root w-full ${wrap}`} style={noMax ? undefined : { maxWidth: W }}>
+      <Image
+        src={asset.src}
+        alt={alt}
+        width={Math.round(W)}
+        height={Math.round(H)}
+        quality={90}
+        priority={priority}
+        draggable={false}
+        className={`block h-auto w-full max-w-none select-none ${className}`}
+        style={{ marginTop: pct(asset.t), marginBottom: pct(asset.b) }}
+      />
+    </div>
+  );
+}
 
-        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            {/* Left Content */}
-            <div className="lg:col-span-6 flex flex-col justify-center text-left">
-              <Reveal className="mb-4">
-                <span className="gap-2 inline-flex items-center justify-center px-4 py-1.5 rounded-full text-[10px] font-mono font-bold tracking-wider uppercase border border-cyan-500/30 text-cyan-400 bg-cyan-950/15">
-                  <HeartPulse className="w-3.5 h-3.5 text-cyan-400 animate-pulse" />
-                  Featured HealthTech Platform
-                </span>
-              </Reveal>
+/** 1x icon at its natural size. */
+function Icon({ asset }: { asset: Asset }) {
+  return (
+    <Image
+      src={asset.src}
+      alt=""
+      width={asset.w}
+      height={asset.h}
+      unoptimized
+      draggable={false}
+      className="block select-none"
+      style={{ width: asset.w, height: asset.h }}
+    />
+  );
+}
 
-              <Reveal delay={0.1}>
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-2 leading-tight tracking-tight">
-                  CareSuite
-                </h1>
-                <p className="text-xl md:text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-teal-400 mb-6">
-                  Healthcare Management Simplified
-                </p>
-              </Reveal>
+/** Eyebrow + h1 + paragraph, identical in every section. */
+function SectionHeader({
+  eyebrow,
+  title,
+  body,
+  bodyMax = "max-w-[920px]",
+}: {
+  eyebrow: string;
+  title: ReactNode;
+  body: ReactNode;
+  bodyMax?: string;
+}) {
+  return (
+    <Reveal className="text-center">
+      <p className={EYEBROW} style={{ color: GREEN }}>
+        {eyebrow}
+      </p>
+      <h2 className={`${H1} mt-[18px]`}>{title}</h2>
+      <p className={`${BODY} mx-auto mt-5 ${bodyMax}`}>{body}</p>
+    </Reveal>
+  );
+}
 
-              <Reveal delay={0.2} className="mb-8">
-                <p className="text-zinc-350 text-sm md:text-base leading-relaxed font-bold max-w-xl">
-                  Centralize patient records, manage appointments automatically, optimize pharmacy catalogs, and secure clinical billing loops under strict HIPAA compliance rules.
-                </p>
-              </Reveal>
+const Br = () => <br className="hidden lg:block" />;
 
-              <Reveal delay={0.3} className="flex flex-wrap gap-4">
-                <a
-                  href="#book-demo"
-                  className="inline-flex items-center gap-3 pl-6 pr-3 py-3 bg-white text-black font-semibold text-xs md:text-sm tracking-wider rounded-full hover:bg-zinc-200 transition-all duration-300 shadow-lg"
-                >
-                  Book a Demo
-                  <div className="w-7 h-7 rounded-full bg-black flex items-center justify-center">
-                    <ArrowUpRight className="w-3.5 h-3.5 text-white" />
-                  </div>
-                </a>
-                <button
-                  onClick={() => setIsVideoOpen(true)}
-                  className="gap-2 inline-flex items-center justify-center px-6 py-3.5 rounded-full text-xs font-bold tracking-wider uppercase border border-zinc-800 hover:border-zinc-700 bg-zinc-950/60 hover:bg-zinc-900 text-white transition-all duration-300"
-                >
-                  <Play className="w-3.5 h-3.5 text-cyan-400 fill-cyan-400/20" />
-                  Watch Demo
-                </button>
-              </Reveal>
-            </div>
+/* =========================================================================
+   1. HERO
+   ========================================================================= */
+function Hero() {
+  return (
+    <section className="relative overflow-x-clip pt-[147px] lg:min-h-[665px]">
+      {/* glow image: 924x721 @ top-0, flush to the right edge of the 1440 page */}
+      <div className="pointer-events-none absolute left-1/2 top-0 hidden w-[1440px] -translate-x-1/2 lg:block">
+        <Pic asset={A.hero} alt="Doctors and nurse of the CareSuite care team" priority wrap="ml-auto" />
+      </div>
 
-            {/* Right Showcase Interface */}
-            <div className="lg:col-span-6">
-              <div className="relative group rounded-3xl border border-zinc-900 bg-zinc-950/40 p-4 hover:border-cyan-500/20 transition-colors shadow-2xl">
-                <div className="relative aspect-[16/10] overflow-hidden rounded-2xl border border-zinc-900/60">
-                  <Image
-                    src="/webp/assets/Home-page/our-products/caresuite.webp"
-                    alt="CareSuite Application Interface"
-                    fill
-                    className="object-cover transition-transform duration-750 group-hover:scale-[1.02]"
-                    priority
-                    unoptimized
-                  />
-                  {/* Play Button Overlay */}
-                  <div className="absolute inset-0 bg-black/45 flex items-center justify-center group-hover:bg-black/35 transition-colors cursor-pointer" onClick={() => setIsVideoOpen(true)}>
-                    <div className="w-16 h-16 rounded-full bg-cyan-500 hover:bg-cyan-600 text-white flex items-center justify-center shadow-lg transition-transform group-hover:scale-105 duration-300">
-                      <Play className="w-6 h-6 fill-white ml-1" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+      <div className={CONTAINER}>
+        <Reveal className="lg:pl-9">
+          <div className="-ml-1.5 w-[180px]">
+            <Pic asset={A.logo} alt="CareSuite" w={180} priority />
           </div>
+
+          <h1 className={`${H1} mt-5`}>
+            Smarter Healthcare.
+            <br />
+            Seamless Operations.
+          </h1>
+
+          <p className={`${BODY} mt-9 max-w-[520px] lg:whitespace-nowrap`}>
+            One Connected Platform for Modern Healthcare. CareSuite
+            <Br />
+            brings patients, doctors, staff, appointments, medical records,
+            <Br />
+            pharmacy, laboratory, and hospital operations together in one
+            <Br />
+            secure healthcare ecosystem.
+          </p>
+
+          <div className="mt-16 flex flex-wrap items-center gap-4">
+            <a
+              href="https://caresuite.devopstrio.co.uk/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex h-12 w-[203px] items-center justify-center rounded-md text-[13px] font-semibold leading-[18px] tracking-[0.13px] text-white transition-transform duration-300 hover:-translate-y-1"
+              style={{ backgroundColor: GREEN }}
+            >
+              Explore CareSuite
+            </a>
+            <Link
+              href="/contact"
+              className="inline-flex h-12 w-[190px] items-center justify-center gap-2 rounded-md bg-white text-[13px] font-semibold leading-[18px] tracking-[0.13px] text-[#282723] transition-transform duration-300 hover:-translate-y-1"
+            >
+              <PlayCircle size={16} strokeWidth={2} style={{ color: GREEN }} />
+              Get Started
+            </Link>
+          </div>
+        </Reveal>
+
+        {/* < lg : image sits under the copy */}
+        <div className="mt-10 lg:hidden">
+          <Pic asset={A.hero} alt="Doctors and nurse of the CareSuite care team" wrap="mx-auto" />
         </div>
-      </section>
+      </div>
+    </section>
+  );
+}
 
-      {/* 2. THE BUSINESS PROBLEM SECTION */}
-      <section className="w-full py-24 bg-black border-b border-zinc-900/60">
-        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
-          <Reveal className="text-center max-w-2xl mx-auto mb-16">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
-              THE STATUS QUO
-            </span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-4">
-              The Pain of Scattered Healthcare Operations
-            </h2>
-            <p className="text-zinc-400 text-xs md:text-sm font-bold leading-relaxed">
-              Why manual paperwork and disconnected clinic systems degrade patient experiences.
-            </p>
-          </Reveal>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            {/* The Old Way */}
-            <div className="p-8 bg-zinc-950/20 border border-zinc-900 rounded-3xl relative">
-              <div className="absolute top-6 right-6 text-red-500/80 bg-red-950/20 border border-red-500/20 rounded-full px-3 py-1 text-[9px] font-mono font-bold uppercase tracking-wider">
-                Outdated Method
-              </div>
-              <h3 className="text-base font-bold text-white mb-6 flex items-center gap-2">
-                <AlertTriangle className="w-5 h-5 text-red-500" /> Disconnected Clinic Workflows
-              </h3>
-              <ul className="space-y-4 text-xs md:text-sm text-zinc-400 font-bold leading-relaxed">
-                <li className="flex items-start gap-3">
-                  <span className="text-red-500 font-bold">✕</span>
-                  <span><strong>Paper Record Hurdles:</strong> Hardcopy patient logs are slow to index, prone to errors, and difficult to share.</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-red-500 font-bold">✕</span>
-                  <span><strong>Appointment Bottlenecks:</strong> Manual queue slots cause massive waiting room delays.</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-red-500 font-bold">✕</span>
-                  <span><strong>Complex Billing Loops:</strong> Medical codes, insurance validations, and payouts processed on separate sheets.</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-red-500 font-bold">✕</span>
-                  <span><strong>Vulnerable Storage:</strong> Patient files sitting in physical folders with poor access auditing.</span>
-                </li>
-              </ul>
-            </div>
-
-            {/* The CareSuite Way */}
-            <div className="p-8 bg-cyan-950/5 border border-cyan-500/10 rounded-3xl relative">
-              <div className="absolute top-6 right-6 text-cyan-400 bg-cyan-950/30 border border-cyan-500/20 rounded-full px-3 py-1 text-[9px] font-mono font-bold uppercase tracking-wider">
-                CareSuite Flow
-              </div>
-              <h3 className="text-base font-bold text-white mb-6 flex items-center gap-2">
-                <ShieldCheck className="w-5 h-5 text-cyan-400" /> Unified HealthTech
-              </h3>
-              <ul className="space-y-4 text-xs md:text-sm text-zinc-350 font-bold leading-relaxed">
-                <li className="flex items-start gap-3">
-                  <span className="text-cyan-400 font-bold">✔</span>
-                  <span><strong>Centralized EMR:</strong> Update patient profiles instantly across clinical units with full security audits.</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-cyan-400 font-bold">✔</span>
-                  <span><strong>Auto-Scheduling:</strong> Let patients book, reschedule, and receive notifications via automated pipelines.</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-cyan-400 font-bold">✔</span>
-                  <span><strong>Integrated Billing Matrix:</strong> Process codes and insurance programmatically in one console.</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-cyan-400 font-bold">✔</span>
-                  <span><strong>HIPAA Compliant Vault:</strong> Secure diagnostic records with AES-256 and granular RBAC permissions.</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 3. ABOUT CARESUITE SECTION */}
-      <section className="w-full py-24 bg-black border-b border-zinc-900/60">
-        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
-            <div className="lg:col-span-6">
-              <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-cyan-400 mb-3 block">
-                ABOUT CARESUITE
-              </span>
-              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-6">
-                Connected Medical Architecture
-              </h2>
-              <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-bold mb-6">
-                CareSuite is an enterprise-grade medical operations platform that centralizes patient data, clinician calendars, pharmacy inventories, and billing pipelines into a single compliant portal.
-              </p>
-              <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-bold">
-                Built to support hospitals, multi-specialty clinics, and diagnostic labs, CareSuite replaces paper administrative loops with secure, automated digital workflows.
-              </p>
-            </div>
-
-            <div className="lg:col-span-6 bg-zinc-950/30 border border-zinc-900 rounded-3xl p-8 md:p-12 relative overflow-hidden">
-              <div className="absolute -right-20 -bottom-20 w-[300px] h-[300px] bg-cyan-500/[0.01] rounded-full blur-3xl pointer-events-none" />
-              <h3 className="text-base font-bold text-white mb-6">Core Operational Statistics</h3>
-              <div className="grid grid-cols-2 gap-6">
-                <div className="p-4 bg-black border border-zinc-900 rounded-xl">
-                  <div className="text-2xl font-black text-cyan-400 font-mono">-35%</div>
-                  <div className="text-[10px] text-zinc-500 font-mono uppercase tracking-wider mt-1">Patient Lobby Delays</div>
-                </div>
-                <div className="p-4 bg-black border border-zinc-900 rounded-xl">
-                  <div className="text-2xl font-black text-cyan-400 font-mono">100%</div>
-                  <div className="text-[10px] text-zinc-500 font-mono uppercase tracking-wider mt-1">HIPAA Compliant logs</div>
-                </div>
-                <div className="p-4 bg-black border border-zinc-900 rounded-xl">
-                  <div className="text-2xl font-black text-cyan-400 font-mono">99.99%</div>
-                  <div className="text-[10px] text-zinc-500 font-mono uppercase tracking-wider mt-1">System Uptime</div>
-                </div>
-                <div className="p-4 bg-black border border-zinc-900 rounded-xl">
-                  <div className="text-2xl font-black text-cyan-400 font-mono">FHIR</div>
-                  <div className="text-[10px] text-zinc-500 font-mono uppercase tracking-wider mt-1">Ready APIs</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 4. HOW IT WORKS (STEP BY STEP) */}
-      <section className="w-full py-24 bg-black border-b border-zinc-900/60">
-        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
-
-            {/* Left Side: Copy and CTA */}
-            <div className="sticky top-32">
-              <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-white mb-6">
-                How it works
-              </h2>
-              <p className="text-zinc-400 text-base md:text-lg leading-relaxed mb-10 max-w-md">
-                Get up and running in minutes. No steep learning curve, no complex setup — just a clear path from zero to productive.
-              </p>
-
-              <button className="px-8 py-3 bg-white text-black text-xs font-bold uppercase tracking-[0.2em] rounded-full hover:bg-zinc-200 transition-colors mb-8 shadow-lg shadow-white/10">
-                GET STARTED
-              </button>
-
-              <p className="text-sm text-zinc-500 font-medium">
-                Need a custom plan for large teams? <Link href="/contact#contact-form" className="text-white hover:underline">Contact us</Link>.
-              </p>
-            </div>
-
-            {/* Right Side: Vertical Steps */}
-            <div className="flex flex-col gap-12">
-              {steps.map((step, idx) => (
-                <div key={idx} className="flex gap-6 md:gap-8 items-start group">
-                  <div className="w-10 h-10 md:w-12 md:h-12 shrink-0 rounded-full bg-white text-black font-bold flex items-center justify-center text-lg mt-1 group-hover:scale-110 transition-transform shadow-lg shadow-white/5">
-                    {idx + 1}
-                  </div>
-                  <div>
-                    <h3 className="text-lg md:text-xl font-bold text-white mb-2">{step.title}</h3>
-                    <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-medium">
-                      {step.desc}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      {/* 5. KEY FEATURES */}
-      <section className="w-full py-24 bg-black border-b border-zinc-900/60">
-        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
-          <Reveal className="mb-20 text-center">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
-              CAPABILITIES
-            </span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-4">
-              Platform Key Features
-            </h2>
-            <p className="text-zinc-400 text-xs md:text-sm font-bold leading-relaxed max-w-md mx-auto">
-              Everything required to coordinate clinicians, store records, and manage hospital accounts.
-            </p>
-          </Reveal>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {features.map((feat, idx) => (
-              <div key={idx} className="p-8 bg-zinc-950/40 border border-zinc-900 hover:border-cyan-500/15 rounded-3xl transition-all duration-300 flex flex-col justify-between">
-                <div>
-                  <h3 className="text-sm md:text-base font-bold text-white mb-3 flex items-center gap-3">
-                    <div className="w-5 h-5 rounded-full bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center">
-                      <Check className="w-3 h-3 text-cyan-500" />
-                    </div>
-                    {feat.title}
-                  </h3>
-                  <p className="text-xs md:text-sm text-zinc-350 font-bold leading-relaxed">{feat.desc}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 6. AI CAPABILITIES */}
-      <section className="w-full py-24 bg-black border-b border-zinc-900/60">
-        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
-          <Reveal className="text-center max-w-2xl mx-auto mb-20">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-cyan-400 mb-3 block">
-              INTELLIGENT HEALTH
-            </span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-4">
-              AI Capabilities inside CareSuite
-            </h2>
-            <p className="text-zinc-400 text-xs md:text-sm font-bold leading-relaxed">
-              Discover the smart models driving appointment flow optimization.
-            </p>
-          </Reveal>
-
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {aiCapabilities.map((ai, idx) => (
-              <div key={idx} className="p-8 bg-zinc-950/30 border border-zinc-900 rounded-3xl hover:border-cyan-500/20 transition-all duration-300 flex flex-col justify-between group">
-                <div>
-                  <div className="w-10 h-10 rounded-2xl bg-cyan-500/10 border border-cyan-500/25 flex items-center justify-center text-cyan-400 mb-6 shadow-inner group-hover:scale-105 transition-transform duration-300">
-                    <Cpu className="w-5 h-5" />
-                  </div>
-                  <h3 className="text-base font-bold text-white mb-4 tracking-wide">{ai.title}</h3>
-                  <p className="text-xs md:text-sm text-zinc-400 leading-relaxed font-bold">{ai.desc}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 7. PRODUCT SCREENSHOTS & DEMO VIDEO */}
-      <section className="w-full py-24 bg-black border-b border-zinc-900/60">
-        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
-          <Reveal className="text-center max-w-2xl mx-auto mb-20">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
-              MEDIA SHOWCASE
-            </span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-4">
-              Explore the Interface
-            </h2>
-            <p className="text-zinc-400 text-xs md:text-sm font-bold leading-relaxed">
-              Inspect doctor dashboards, scheduling grids, and patient records inside CareSuite.
-            </p>
-          </Reveal>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-            {[
-              { title: "Main Hospital Dashboard", label: "Central control console monitoring departmental admissions and telemetry." },
-              { title: "Patient Profile EMR", label: "Detailed record showing vitals, history, diagnostic tags, and documents." },
-              { title: "Appointments Scheduler", label: "Clinician grid managing bookings, calendar limits, and queues." },
-              { title: "Billing & Claims Panel", label: "Integrated ledger processing medical codes, bills, and insurance payout tracking." },
-              { title: "Telemetry Reports Room", label: "Analytics dashboards visualising clinic occupancy, budgets, and times." },
-              { title: "Doctor Workstation Panel", label: "Accessible screen for clinicians managing active daily patients." }
-            ].map((scr, idx) => (
-              <div key={idx} className="bg-zinc-950/40 border border-zinc-900 rounded-3xl p-6 hover:border-zinc-800 transition-colors">
-                <div className="relative aspect-[16/10] bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-900/80 mb-5">
-                  <Image
-                    src="/webp/assets/Home-page/our-products/caresuite.webp"
-                    alt={scr.title}
-                    fill
-                    className="object-cover object-top opacity-80 hover:opacity-100 transition-opacity duration-300"
-                    unoptimized
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
-                </div>
-                <h4 className="text-xs font-bold text-white mb-2 tracking-wide">{scr.title}</h4>
-                <p className="text-[10px] text-zinc-500 font-semibold leading-relaxed">{scr.label}</p>
-              </div>
-            ))}
-          </div>
-
-          {/* Simulated Demo Video */}
-          <div className="max-w-4xl mx-auto rounded-3xl overflow-hidden border border-zinc-900 bg-zinc-950 relative aspect-video shadow-2xl flex flex-col justify-center items-center group">
-            <Image
-              src="/webp/assets/Home-page/our-products/caresuite.webp"
-              alt="CareSuite Video Walkthrough Background"
-              fill
-              className="object-cover opacity-35 transition-transform duration-700 group-hover:scale-[1.01]"
-              unoptimized
+/* =========================================================================
+   2. THE HEALTHCARE CHALLENGE
+   ========================================================================= */
+function Challenge() {
+  return (
+    <section className={SEC}>
+      <div className={CONTAINER}>
+        <SectionHeader
+          eyebrow="The Healthcare Challenge"
+          title={
+            <>
+              Healthcare Shouldn&apos;t Run on
+              <Br /> Disconnected Systems
+            </>
+          }
+          body={
+            <>
+              Hospitals can struggle with fragmented patient information, manual processes, communication gaps, and
+              <Br /> limited real-time visibility.
+            </>
+          }
+          bodyMax="max-w-[900px]"
+        />
+        <Reveal delay={100} className={HEAD_GAP}>
+          <div className={lift}>
+            <Pic
+              asset={A.challenge}
+              wrap="mx-auto"
+              alt="Fragmented data, manual processes, disconnected teams and limited visibility, bridged by the CareSuite Unified Connection Layer"
             />
-            <div className="absolute inset-0 bg-black/60 z-0" />
-
-            <div className="relative z-10 text-center px-6">
-              <button onClick={() => setIsVideoOpen(true)} className="w-20 h-20 rounded-full bg-cyan-500 text-white flex items-center justify-center mx-auto hover:bg-cyan-600 transition-all shadow-[0_0_50px_rgba(6,182,212,0.3)] hover:scale-105 duration-300 mb-6">
-                <Play className="w-8 h-8 fill-white ml-1.5" />
-              </button>
-              <h3 className="text-lg md:text-xl font-bold text-white mb-2 tracking-wide">Watch CareSuite in Action</h3>
-              <p className="text-xs md:text-sm text-zinc-400 font-bold max-w-sm mx-auto">
-                A 3-minute walkthrough showcasing patient entry, EMR updates, and automated doctor scheduling limits.
-              </p>
-            </div>
           </div>
-        </div>
-      </section>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
 
-      {/* 8. BUSINESS USE CASES */}
-      <section className="w-full py-24 bg-black border-b border-zinc-900/60">
-        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
-          <Reveal className="text-center max-w-2xl mx-auto mb-20">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
-              PRACTICAL USE CASES
-            </span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-4">
-              Supported Healthcare Workflows
-            </h2>
-            <p className="text-zinc-400 text-xs md:text-sm font-bold leading-relaxed">
-              Standardize medical workflows across daily clinical operations.
-            </p>
-          </Reveal>
+/* =========================================================================
+   3. ARCHITECTURAL OVERVIEW
+   ========================================================================= */
+const ARCH_ITEMS = [
+  {
+    icon: ICON.patients,
+    title: "PATIENTS",
+    body: "Manage the complete patient journey from self-service intake and wellness records to post-discharge care.",
+  },
+  {
+    icon: ICON.care,
+    title: "CARE",
+    body: "Support doctors and clinical workflows with frictionless EMR, rapid prescription generators, and digital chart notes.",
+  },
+  {
+    icon: ICON.operations,
+    title: "OPERATIONS",
+    body: "Coordinate hospital departments, real-time bed allocations, shift rosters, pharmacy fulfillment, and audit logging.",
+  },
+  {
+    icon: ICON.insights,
+    title: "INSIGHTS",
+    body: "Turn healthcare data into actionable operational visibility, department throughput analytics, and predictive resource allocation.",
+  },
+];
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {useCases.map((uc, idx) => (
-              <div key={idx} className="p-8 bg-zinc-950/20 border border-zinc-900 rounded-3xl hover:border-zinc-800 transition-colors">
-                <h3 className="text-sm md:text-base font-bold text-white mb-3 flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-cyan-500" />
-                  {uc.title}
-                </h3>
-                <p className="text-xs md:text-sm text-zinc-400 leading-relaxed font-bold">{uc.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+function Architecture() {
+  return (
+    <section id="architecture" className={`${SEC} overflow-x-clip`}>
+      <div className={CONTAINER}>
+        <SectionHeader
+          eyebrow="Architectural Overview"
+          title="One Platform. The Entire Care Journey."
+          body={
+            <>
+              CareSuite is a centralized healthcare management platform designed to streamline operations and improve
+              <Br /> care delivery.
+            </>
+          }
+          bodyMax="max-w-[900px]"
+        />
 
-      {/* 9. SOLUTIONS BY TEAM OR INDUSTRY */}
-      <section className="w-full py-24 bg-black border-b border-zinc-900/60">
-        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
-          <Reveal className="text-center max-w-2xl mx-auto mb-16">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
-              ALIGNMENT INDEX
-            </span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-4">
-              Tailored Solutions
-            </h2>
-            <p className="text-zinc-400 text-xs md:text-sm font-bold leading-relaxed">
-              Find how CareSuite solves challenges for your specific team responsibilities or industry sector.
-            </p>
-          </Reveal>
-
-          {/* Toggle Tab Bar */}
-          <div className="flex items-center justify-center gap-4 mb-12">
-            <button
-              onClick={() => { setActiveTab("team"); setActiveSubTab("doctors"); }}
-              className={`px-5 py-2.5 rounded-full text-xs font-bold tracking-wider uppercase border transition-all ${activeTab === "team" ? "bg-white text-black border-white" : "bg-transparent text-zinc-400 border-zinc-850 hover:border-zinc-700"}`}
-            >
-              By Business Team
-            </button>
-            <button
-              onClick={() => { setActiveTab("industry"); setActiveSubTab("healthcare"); }}
-              className={`px-5 py-2.5 rounded-full text-xs font-bold tracking-wider uppercase border transition-all ${activeTab === "industry" ? "bg-white text-black border-white" : "bg-transparent text-zinc-400 border-zinc-850 hover:border-zinc-700"}`}
-            >
-              By Sector / Industry
-            </button>
-          </div>
-
-          <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-8 items-center bg-zinc-950/40 border border-zinc-900 p-8 rounded-3xl">
-            {/* Sub Tabs Selection */}
-            <div className="md:col-span-4 flex flex-col gap-2.5">
-              {activeTab === "team" ? (
-                Object.keys(teamSolutions).map((key) => {
-                  const s = teamSolutions[key as keyof typeof teamSolutions];
-                  return (
-                    <button
-                      key={key}
-                      onClick={() => setActiveSubTab(key)}
-                      className={`w-full text-left px-5 py-3 rounded-xl text-xs font-bold transition-all border ${activeSubTab === key ? "bg-cyan-500/10 text-cyan-400 border-cyan-500/35" : "bg-black/40 text-zinc-400 border-zinc-900 hover:border-zinc-800"}`}
-                    >
-                      {s.title}
-                    </button>
-                  );
-                })
-              ) : (
-                Object.keys(industrySolutions).map((key) => {
-                  const s = industrySolutions[key as keyof typeof industrySolutions];
-                  return (
-                    <button
-                      key={key}
-                      onClick={() => setActiveSubTab(key)}
-                      className={`w-full text-left px-5 py-3 rounded-xl text-xs font-bold transition-all border ${activeSubTab === key ? "bg-cyan-500/10 text-cyan-400 border-cyan-500/35" : "bg-black/40 text-zinc-400 border-zinc-900 hover:border-zinc-800"}`}
-                    >
-                      {s.title}
-                    </button>
-                  );
-                })
-              )}
-            </div>
-
-            {/* Sub Tab Panel Detail */}
-            <div className="md:col-span-8 flex flex-col justify-center min-h-[200px]">
-              {activeTab === "team" ? (
-                (() => {
-                  const s = teamSolutions[activeSubTab as keyof typeof teamSolutions];
-                  if (!s) return null;
-                  return (
-                    <div>
-                      <h3 className="text-lg font-bold text-white mb-3">{s.title} Workspace</h3>
-                      <p className="text-xs md:text-sm text-zinc-400 leading-relaxed font-bold mb-6">{s.useCase}</p>
-                      <div className="inline-block px-3 py-1 bg-zinc-900 border border-zinc-850 rounded text-[10px] font-mono text-cyan-400 font-bold">
-                        Key Value: {s.metrics}
-                      </div>
-                    </div>
-                  );
-                })()
-              ) : (
-                (() => {
-                  const s = industrySolutions[activeSubTab as keyof typeof industrySolutions];
-                  if (!s) return null;
-                  return (
-                    <div>
-                      <h3 className="text-lg font-bold text-white mb-3">{s.title} Solutions</h3>
-                      <p className="text-xs md:text-sm text-zinc-400 leading-relaxed font-bold mb-6">{s.useCase}</p>
-                      <div className="inline-block px-3 py-1 bg-zinc-900 border border-zinc-850 rounded text-[10px] font-mono text-cyan-400 font-bold">
-                        Compliance Basis: {s.compliance}
-                      </div>
-                    </div>
-                  );
-                })()
-              )}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 10. BUSINESS BENEFITS (PREMIUM) */}
-      <section className="relative w-full py-24 md:py-32 bg-[#030303] border-b border-zinc-900/60 overflow-hidden">
-        {/* Subtle background glow */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-[1px] bg-gradient-to-r from-transparent via-cyan-500/50 to-transparent opacity-50" />
-
-        <div className="max-w-7xl mx-auto w-full px-4 sm:px-8 xl:px-12 relative z-10">
-          <Reveal className="text-center max-w-3xl mx-auto mb-24">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-cyan-500 mb-4 block">
-              INVESTMENT RETURN
-            </span>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-6">
-              Measurable Business Benefits
-            </h2>
-            <p className="text-zinc-400 text-base md:text-lg font-medium leading-relaxed">
-              Why transitioning clinical operations to CareSuite saves resources and hours.
-            </p>
-          </Reveal>
-
-          <div className="flex flex-wrap justify-center gap-6 lg:gap-8">
-            {[
-              { title: "Reduce Manual Operations", desc: "Digital patient records and automated scheduling eliminate error-prone hand-written notes." },
-              { title: "Minimize Appointment Friction", desc: "SMS and email notifications let patients check slots in real time to optimize queues." },
-              { title: "Centralized Clinical Records", desc: "Secure EMR vault compiles historical treatment plans, scripts, and logs in one dashboard." }
-            ].map((ben, idx) => (
-              <div
-                key={idx}
-                className="group relative flex-1 min-w-[280px] max-w-[400px] p-8 md:p-10 bg-[#0a0a0a] border border-zinc-800/80 rounded-[2rem] overflow-hidden hover:bg-zinc-900/50 transition-colors duration-500 shadow-lg hover:shadow-2xl hover:shadow-cyan-500/10"
-              >
-                {/* Background Huge Number */}
-                <div className="absolute -right-4 -bottom-8 text-8xl md:text-[120px] font-black text-zinc-800/20 group-hover:text-cyan-500/10 transition-colors duration-500 pointer-events-none select-none">
-                  0{idx + 1}
-                </div>
-
-                {/* Top Accent Line */}
-                <div className="absolute top-0 left-8 right-8 h-[2px] bg-gradient-to-r from-cyan-500/0 via-cyan-500/50 to-cyan-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
-                <div className="relative z-10">
-                  <div className="w-12 h-12 rounded-2xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 mb-8 group-hover:scale-110 transition-transform duration-500">
-                    <span className="font-mono font-bold text-lg">0{idx + 1}</span>
-                  </div>
-                  <h4 className="text-lg md:text-xl font-bold text-white mb-4 tracking-tight group-hover:text-cyan-400 transition-colors duration-300">
-                    {ben.title}
-                  </h4>
-                  <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-medium group-hover:text-zinc-300 transition-colors duration-300">
-                    {ben.desc}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 11. WHY CARESUITE, CUSTOMIZATION & INTEGRATION (PREMIUM) */}
-      <section className="w-full py-32 bg-black border-b border-zinc-900/60 overflow-hidden">
-        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
-          <div className="flex flex-col lg:flex-row gap-16 lg:gap-12 items-start">
-
-            {/* Left Column: Text & List */}
-            <div className="lg:w-5/12 flex flex-col items-start text-left lg:sticky lg:top-32">
-              <Reveal>
-                <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-cyan-400 mb-4 block">
-                  EXTENSIBILITY
-                </span>
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-tight mb-6 text-white">
-                  Customization &amp; Personalization
-                </h2>
-                <p className="text-zinc-400 text-base md:text-lg leading-relaxed font-medium mb-10">
-                  Configure patient input screens to fit your clinical specialty. Set customized fields, alerts, SMS notifications, and billing ledger categories.
-                </p>
-
-                <ul className="space-y-6">
-                  {[
-                    "Branded Clinic Panels: Set custom logos, headers, and colors.",
-                    "Specialized Treatment Cards: Tailor record templates by discipline.",
-                    "Custom Reminder Intervals: Setup alert rules for appointments."
-                  ].map((txt, idx) => (
-                    <li key={idx} className="flex items-start gap-4 text-sm md:text-base text-zinc-300 font-bold">
-                      <div className="w-6 h-6 rounded-full bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center shrink-0 mt-0.5 shadow-lg shadow-cyan-500/20">
-                        <Check className="w-3.5 h-3.5 text-cyan-400" />
-                      </div>
-                      <span className="leading-relaxed">{txt}</span>
-                    </li>
-                  ))}
-                </ul>
-              </Reveal>
-            </div>
-
-            {/* Right Column: 3D Flip Cards Grid */}
-            <div className="lg:w-7/12 w-full">
-              <Reveal className="mb-6">
-                <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-cyan-400 mb-2 block">
-                  CONNECTIVITY
-                </span>
-                <h3 className="text-xl md:text-2xl font-bold text-white">
-                  Enterprise Ecosystem Connectors
-                </h3>
-              </Reveal>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {integrations.map((int, i) => {
-                  const icons = [UserPlus, Activity, Briefcase, Globe];
-                  const images = [
-                    "/webp/assets/common/1b065043b6959827c05a0073c93a4a53-1.webp",
-                    "/webp/assets/common/260b761ad40c3ad2acba2c6666894539-1.webp",
-                    "/webp/assets/common/315e4fdc6263bfd240f36297e376576e-1.webp",
-                    "/webp/assets/common/37b9b888cc479ea7b74d2d9a05c37597-1.webp"
-                  ];
-                  const Icon = icons[i % 4];
-                  return (
-                    <Reveal key={i} delay={i * 0.1}>
-                      <div className="group relative h-[260px] md:h-[280px] [perspective:1000px] cursor-pointer">
-                        <div className="absolute inset-0 w-full h-full transition-all duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
-
-                          {/* Front Face */}
-                          <div className="absolute inset-0 w-full h-full flex flex-col justify-start bg-black border border-zinc-800/80 hover:border-zinc-700 rounded-2xl p-6 shadow-sm [backface-visibility:hidden] transition-colors">
-                            <div className="w-12 h-12 mb-5 rounded-xl bg-zinc-900 border border-zinc-800 flex items-center justify-center text-cyan-400">
-                              <Icon size={24} strokeWidth={1.5} />
-                            </div>
-                            <h3 className="font-bold text-lg text-zinc-100 mb-3">
-                              {int.title}
-                            </h3>
-                            <p className="text-sm text-zinc-400 leading-relaxed flex-1 font-medium">
-                              {int.desc}
-                            </p>
-                            <div className="inline-flex items-center gap-2 text-xs font-bold text-cyan-500 mt-auto opacity-70 group-hover:opacity-100 transition-opacity">
-                              View Integration <ArrowUpRight size={14} className="transition-transform group-hover:translate-x-1" />
-                            </div>
-                          </div>
-
-                          {/* Back Face */}
-                          <div className="absolute inset-0 w-full h-full flex flex-col rounded-2xl overflow-hidden [backface-visibility:hidden] [transform:rotateY(180deg)] border border-cyan-500/30">
-                            <img src={images[i % 4]} alt={int.title} className="w-full h-full object-cover opacity-80" loading="lazy" />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/60 to-black/10 flex flex-col justify-end p-6">
-                              <div className="w-10 h-10 mb-4 rounded-full bg-cyan-500/20 backdrop-blur-md border border-cyan-500/40 flex items-center justify-center text-cyan-400">
-                                <Icon size={18} strokeWidth={2} />
-                              </div>
-                              <h3 className="font-bold text-lg text-white mb-2">{int.title}</h3>
-                              <div className="inline-flex items-center gap-2 text-xs font-bold text-cyan-400">
-                                Explore Capabilities <ArrowUpRight size={14} />
-                              </div>
-                            </div>
-                          </div>
-
-                        </div>
-                      </div>
-                    </Reveal>
-                  );
-                })}
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </section>
-      \n\n{/* 12. SECURITY & DATA PRIVACY (PREMIUM) */}
-      <section className="relative w-full py-24 bg-black text-white overflow-hidden border-b border-zinc-900/60">
-        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
-          <div className="mb-16 text-center max-w-3xl mx-auto">
-            <Reveal>
-              <span className="text-[11px] font-bold tracking-[0.25em] uppercase text-cyan-400 mb-4 block">
-                COMPLIANCE &amp; ARCHITECTURE
-              </span>
-            </Reveal>
-            <Reveal>
-              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-6">
-                Security &amp; Health Governance
-              </h2>
-            </Reveal>
-            <Reveal>
-              <p className="text-zinc-400 text-sm leading-relaxed font-bold">
-                Medical logs contain highly sensitive records. CareSuite enforces zero-compromise encryption layers and isolation boundaries.
-              </p>
-            </Reveal>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
-            {[
-              { icon: Lock, title: "MFA Authentication", desc: "Clinicians and patient profiles are secured with secure multi-factor checks.", image: "/webp/assets/common/09ff7846bc8c9998745688779c09f88d-1.webp" },
-              { icon: Upload, title: "Secure EMR Uploads", desc: "Upload diagnostic files, reports, and scans securely with isolation.", image: "/webp/assets/common/1b065043b6959827c05a0073c93a4a53-1.webp" },
-              { icon: ShieldCheck, title: "Role-Based Access (RBAC)", desc: "Limit details visibility based on doctors, receptionists, or billing admins.", image: "/webp/assets/common/260b761ad40c3ad2acba2c6666894539-1.webp" },
-              { icon: Activity, title: "Encrypted Audit Trails", desc: "Every record review or edit is cryptographically logged and stored.", image: "/webp/assets/common/2fe7f9184c515b0c515ce38bc8a25efa-1.webp" }
-            ].map((sec, idx) => (
-              <Reveal key={idx} delay={idx * 0.05}>
-                <div className="relative rounded-[24px] border border-zinc-800/80 bg-black p-6 md:p-8 flex flex-col justify-between group h-full shadow-lg overflow-hidden transition-all duration-500 hover:border-cyan-500/50 min-h-[380px]">
-
-                  {/* Expanding Image Layer with Glassmorphism */}
-                  <div className="absolute inset-0 z-0 [clip-path:circle(0%_at_100%_100%)] group-hover:[clip-path:circle(150%_at_100%_100%)] transition-all duration-700 ease-in-out pointer-events-none">
-                    <img src={sec.image || '/webp/assets/common/09ff7846bc8c9998745688779c09f88d-1.webp'} alt={sec.title} className="w-full h-full object-cover scale-110 group-hover:scale-100 transition-transform duration-1000 ease-out opacity-40" loading="lazy" />
-                    <div className="absolute inset-0 bg-cyan-950/40 backdrop-blur-md" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-cyan-900/10 border border-cyan-500/10 rounded-[24px]" />
-                  </div>
-
-                  {/* Content Layer */}
-                  <div className="relative z-10 flex flex-col h-full">
-                    <div className="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 shrink-0 mb-6 group-hover:scale-110 transition-transform duration-500">
-                      <sec.icon className="w-6 h-6" />
-                    </div>
-                    <div>
-                      <h3 className="text-lg md:text-xl font-bold text-white mb-4 tracking-tight transition-transform duration-500 group-hover:-translate-y-1">
-                        {sec.title}
-                      </h3>
-                      <p className="text-zinc-400 text-xs md:text-sm leading-relaxed mb-6 font-medium group-hover:text-zinc-300 transition-colors duration-500">
-                        {sec.desc}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-      \n\n
-
-      {/* 13. CLIENT TESTIMONIALS (PREMIUM) */}
-      <section className="w-full py-24 md:py-32 bg-[#030303] border-b border-zinc-900/60 relative overflow-hidden">
-        {/* Decorative background glow */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-cyan-500/10 blur-[120px] rounded-full pointer-events-none" />
-
-        <div className="max-w-7xl mx-auto w-full px-4 sm:px-8 xl:px-12 relative z-10">
-          <Reveal className="text-center max-w-3xl mx-auto mb-20">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-cyan-500 mb-4 block">
-              CLIENT TESTIMONIALS
-            </span>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-6">
-              Trusted by Clinic Leaders
-            </h2>
-            <p className="text-zinc-400 text-base md:text-lg font-medium leading-relaxed">
-              Read how hospital managers coordinate clinic workflows using CareSuite.
-            </p>
-          </Reveal>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto">
-            {[
-              {
-                quote: "CareSuite completely unified our EMR files. Doctors can view treatment notes instantly and coordinate with reception to minimize patient wait times.",
-                author: "Dr. Alistair Vance",
-                role: "Chief Medical Officer, St. Jude Clinic",
-                avatar: "https://i.pravatar.cc/150?u=chiefmed"
-              },
-              {
-                quote: "The billing code matrix and automatic insurance payouts have eliminated invoicing delays. Our billing team saves hours daily.",
-                author: "Laura Mercer",
-                role: "VP of Finance, Valley Medical Center",
-                avatar: "https://i.pravatar.cc/150?u=vpoffina"
-              },
-              {
-                quote: "Patient data protection is our number one priority. CareSuite's secure HIPAA-ready logs give our IT team absolute peace of mind.",
-                author: "James Vance",
-                role: "Director of IT, City Health Group",
-                avatar: "https://i.pravatar.cc/150?u=director"
-              }
-            ].map((t, idx) => (
-              <div
-                key={idx}
-                className={`p-8 md:p-10 bg-[#0c0c0c] border border-zinc-800/80 rounded-[2rem] flex flex-col justify-between relative group hover:border-cyan-500/50 hover:bg-zinc-900/50 transition-all duration-500 shadow-xl hover:shadow-2xl hover:shadow-cyan-500/10 ${idx === 1 ? 'md:-translate-y-6' : ''}`}
-              >
-                {/* Large Quotation Icon Background */}
-                <div className="absolute top-6 right-6 text-zinc-800/30 group-hover:text-cyan-500/10 transition-colors pointer-events-none">
-                  <Quote size={80} />
-                </div>
-
-                <div className="relative z-10">
-                  <div className="flex gap-1.5 mb-8">
-                    {[1, 2, 3, 4, 5].map(i => (
-                      <Star key={i} className="w-4 h-4 fill-cyan-500 text-cyan-500" />
-                    ))}
-                  </div>
-
-                  <p className="text-zinc-300 text-base md:text-lg leading-relaxed font-medium mb-12">
-                    "{t.quote}"
-                  </p>
-                </div>
-
-                <div className="flex items-center gap-4 relative z-10 mt-auto pt-6 border-t border-zinc-800/50 group-hover:border-zinc-700 transition-colors">
-                  <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-zinc-800 group-hover:border-cyan-500/30 transition-colors">
-                    <Image
-                      src={t.avatar || 'https://i.pravatar.cc/150?u=fallback'}
-                      alt={t.author}
-                      width={48}
-                      height={48}
-                      className="w-full h-full object-cover"
-                      unoptimized
-                    />
-                  </div>
-                  <div>
-                    <div className="text-sm font-bold text-white tracking-wide">{t.author}</div>
-                    <div className="text-[10px] text-cyan-400 font-mono tracking-widest uppercase mt-1">{t.role}</div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 14. FAQS */}
-      <section className="w-full py-24 bg-black border-b border-zinc-900/60">
-        <div className="max-w-3xl mx-auto w-full px-12 xl:px-8">
-          <Reveal className="mb-16 text-center">
-            <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-zinc-400 mb-3 block">
-              QUESTIONS & ANSWERS
-            </span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-4">
-              Frequently Asked Questions
-            </h2>
-          </Reveal>
-
-          <div className="flex flex-col border-t border-zinc-900">
-            {faqs.map((faq, idx) => {
-              const isOpen = openFaqIndex === idx;
-              return (
-                <div key={idx} className="border-b border-zinc-900 py-6">
-                  <button
-                    onClick={() => toggleFaq(idx)}
-                    className="w-full flex justify-between items-center text-left focus:outline-none group"
-                  >
-                    <span className="text-xs md:text-sm font-semibold text-zinc-200 group-hover:text-white transition-colors">
-                      {faq.q}
+        <div className={`${HEAD_GAP} grid items-center gap-10 lg:grid-cols-[520px_minmax(0,1fr)] lg:gap-0`}>
+          <div className="space-y-7 lg:pl-[43px]">
+            {ARCH_ITEMS.map((it, i) => (
+              <Reveal key={it.title} delay={i * 90}>
+                <div className={lift}>
+                  <div className="flex items-center">
+                    <span className="flex w-[45px] shrink-0 pl-[9px]">
+                      <Icon asset={it.icon} />
                     </span>
-                    <div className="text-zinc-550 group-hover:text-rose-500 transition-colors ml-4 flex-shrink-0">
-                      {isOpen ? <Minus size={16} /> : <Plus size={16} />}
-                    </div>
-                  </button>
-                  {isOpen && (
-                    <div className="mt-4 text-xs md:text-sm text-zinc-400 font-bold leading-relaxed animate-fadeIn">
-                      <p>{faq.a}</p>
-                    </div>
-                  )}
+                    <h3 className="text-[17px] font-medium uppercase leading-[26px] tracking-[0.3px] text-white">
+                      {it.title}
+                    </h3>
+                  </div>
+                  <p className="mt-2 max-w-[460px] text-[14px] leading-[22px] text-white">{it.body}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+
+          <Reveal delay={150}>
+            <Pic
+              asset={A.arch}
+              alt="CareSuite hospital ecosystem connecting patients, doctors, pharmacy and lab"
+              noMax
+              wrap="mx-auto max-w-[560px] lg:mx-0 lg:w-[914px] lg:max-w-none lg:-ml-[107px]"
+            />
+          </Reveal>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* =========================================================================
+   4. APPOINTMENT MANAGEMENT
+   ========================================================================= */
+function Appointment() {
+  return (
+    <section className={SEC}>
+      <div className={CONTAINER}>
+        <SectionHeader
+          eyebrow="Appointment Management"
+          title={
+            <>
+              Make Every Appointment Easier to
+              <Br /> Manage
+            </>
+          }
+          body={
+            <>
+              CareSuite supports online and walk-in appointments, real-time slot updates, staff-assisted booking, doctor
+              <Br /> availability, and appointment confirmations.
+            </>
+          }
+          bodyMax="max-w-[860px]"
+        />
+        <Reveal delay={100} className={HEAD_GAP}>
+          <div className={lift}>
+            <Pic
+              asset={A.appointment}
+              wrap="mx-auto"
+              alt="Cardiology department schedule with booking, availability, walk-in queue and reminder cards"
+            />
+          </div>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
+/* =========================================================================
+   5. PATIENT WELLNESS HUB
+   ========================================================================= */
+const PATIENT_ITEMS = [
+  {
+    icon: ICON.labReports,
+    title: "View Lab Reports",
+    body: "Instant access to verified digital diagnostics, biochemical charts, and pathology notes.",
+  },
+  {
+    icon: ICON.appointments,
+    title: "Track Appointments",
+    body: "Real-time status tracking of upcoming consultations, doctor check-ins, and reminders.",
+  },
+  {
+    icon: ICON.prescriptions,
+    title: "Manage Prescriptions",
+    body: "Refill medication with one tap and receive dosage reminders directly to mobile devices.",
+  },
+  {
+    icon: ICON.records,
+    title: "View Health Records",
+    body: "Secure, encrypted access to complete historical vitals, immunization, and clinical summaries.",
+  },
+];
+
+function PatientHub() {
+  return (
+    <section className={`${SEC} overflow-x-clip`}>
+      <div className={CONTAINER}>
+        <SectionHeader
+          eyebrow="Patient Wellness Hub"
+          title={
+            <>
+              Give Patients One Place for Their
+              <Br /> Healthcare
+            </>
+          }
+          body="Patients can access key healthcare information and stay connected with their care journey."
+          bodyMax="max-w-[820px]"
+        />
+
+        <div
+          className={`${HEAD_GAP} grid items-center gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:gap-0`}
+        >
+          <div className="space-y-7 lg:pl-[54px]">
+            {PATIENT_ITEMS.map((it, i) => (
+              <Reveal key={it.title} delay={i * 90}>
+                <div className={lift}>
+                  <div className="flex items-center">
+                    <span className="flex w-[44px] shrink-0 pl-2">
+                      <Icon asset={it.icon} />
+                    </span>
+                    <h3 className="text-[20px] font-medium leading-[26px] text-white">{it.title}</h3>
+                  </div>
+                  <p className="mt-2 max-w-[400px] text-[12.56px] leading-[20px] text-white">{it.body}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+
+          <Reveal delay={150}>
+            <Pic
+              asset={A.mobile}
+              alt="CareSuite patient mobile app with refill request and verified lab report"
+              noMax
+              wrap="mx-auto max-w-[560px] lg:mx-0 lg:w-[824px] lg:max-w-none lg:-ml-[144px]"
+            />
+          </Reveal>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* =========================================================================
+   6. TELEMEDICINE EXCELLENCE
+   ========================================================================= */
+function Telemedicine() {
+  return (
+    <section className={SEC}>
+      <div className={CONTAINER}>
+        <SectionHeader
+          eyebrow="Telemedicine Excellence"
+          title="Care Beyond the Hospital"
+          body="CareSuite supports remote consultations to reduce unnecessary physical visits and help maintain continuity of care."
+          bodyMax="max-w-[920px]"
+        />
+        <Reveal delay={100} className={HEAD_GAP}>
+          <div className={lift}>
+            <Pic
+              asset={A.tele}
+              wrap="mx-auto"
+              alt="Encrypted HD telehealth session between Dr. Elena Rostova and patient Marcus Vance"
+            />
+          </div>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
+/* =========================================================================
+   7. CLINICIAN EFFICIENCY
+   ========================================================================= */
+function Clinician() {
+  return (
+    <section className={SEC}>
+      <div className={CONTAINER}>
+        <SectionHeader
+          eyebrow="Clinician Efficiency"
+          title="Give Doctors More Time for What Matters"
+          body="CareSuite helps doctors manage clinical activities while reducing operational complexity."
+        />
+        <Reveal delay={100} className={HEAD_GAP}>
+          <div className={lift}>
+            <Pic
+              asset={A.clinician}
+              wrap="mx-auto"
+              alt="Doctor dashboard with today's schedule and active consultation record"
+            />
+          </div>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
+/* =========================================================================
+   8. UNIFIED EMR
+   ========================================================================= */
+function UnifiedEmr() {
+  return (
+    <section className={SEC}>
+      <div className={CONTAINER}>
+        <SectionHeader
+          eyebrow="Unified EMR"
+          title="Every Patient Story, Securely Connected"
+          body="CareSuite maintains centralized Electronic Medical Records for patients."
+        />
+        <Reveal delay={100} className={HEAD_GAP}>
+          <div className={lift}>
+            <Pic
+              asset={A.emr}
+              wrap="mx-auto"
+              alt="Patient vitals summary and 2026 chronological medical history"
+            />
+          </div>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
+/* =========================================================================
+   9. ROLE-BASED COLLABORATION  (tabs -> own card image)
+   ========================================================================= */
+const ROLES = [
+  { id: "reception", label: "Reception", asset: A.reception, alt: "Reception workflow: front-desk and admissions" },
+  { id: "nurse", label: "Nurse", asset: A.nurse, alt: "Nurse workflow: triage and clinical vitals" },
+  { id: "lab", label: "Lab", asset: A.lab, alt: "Laboratory workflow: specimen diagnostics" },
+  { id: "pharmacy", label: "Pharmacy", asset: A.pharmacy, alt: "Pharmacy workflow: prescription dispense" },
+] as const;
+
+function Roles() {
+  const [active, setActive] = useState<(typeof ROLES)[number]["id"]>("nurse");
+
+  return (
+    <section id="roles" className={SEC}>
+      <div className={CONTAINER}>
+        <SectionHeader
+          eyebrow="Role-Based Collaboration"
+          title="Every Role Has a Connected Workflow"
+          body="CareSuite connects different hospital staff around the same patient journey."
+        />
+
+        <Reveal delay={100} className={HEAD_GAP}>
+          <div role="tablist" aria-label="Hospital roles" className="flex flex-wrap items-center justify-center gap-3">
+            {ROLES.map((r) => {
+              const on = r.id === active;
+              return (
+                <button
+                  key={r.id}
+                  type="button"
+                  role="tab"
+                  id={`tab-${r.id}`}
+                  aria-selected={on}
+                  aria-controls={`panel-${r.id}`}
+                  onClick={() => setActive(r.id)}
+                  className={`h-[38px] rounded-lg px-[26px] text-[13px] font-medium uppercase leading-[18px] tracking-[0.19px] transition-all duration-300 hover:-translate-y-0.5 ${
+                    on ? "bg-[#01685F] text-white" : "bg-[#EFF4FF] text-[#0B1B2B]"
+                  }`}
+                >
+                  {r.label}
+                </button>
+              );
+            })}
+          </div>
+
+          {/* all four cards share one grid cell -> zero layout shift, instant switch */}
+          <div className={`mt-10 grid ${lift}`}>
+            {ROLES.map((r) => {
+              const on = r.id === active;
+              return (
+                <div
+                  key={r.id}
+                  role="tabpanel"
+                  id={`panel-${r.id}`}
+                  aria-labelledby={`tab-${r.id}`}
+                  aria-hidden={!on}
+                  className={`col-start-1 row-start-1 transition-opacity duration-500 ${
+                    on ? "opacity-100" : "pointer-events-none opacity-0"
+                  }`}
+                >
+                  <Pic asset={r.asset} alt={r.alt} wrap="mx-auto" />
                 </div>
               );
             })}
           </div>
-        </div>
-      </section>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
 
-      {/* 15. BOOK A DEMO FORM SECTION */}
-      <section id="book-demo" className="w-full py-24 bg-black border-b border-zinc-900/60">
-        <div className="max-w-4xl mx-auto px-12 xl:px-8">
-          <div className="text-center mb-16">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
-              DEMO REQUEST
-            </span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-4">
-              Book a CareSuite Demo
-            </h2>
-            <p className="text-zinc-400 text-xs md:text-sm font-bold max-w-md mx-auto leading-relaxed">
-              Schedule a call with our health technology architects to evaluate deployment parameters.
-            </p>
-            <p className="text-zinc-500 text-xs font-bold mt-4">
-              Prefer speaking with an expert? Call us directly at{" "}
-              <a href="tel:04612940062" className="text-rose-500 hover:text-rose-400 font-bold transition-colors">
-                0461 2940062 / +44 1784 640216
-              </a>
-            </p>
+/* =========================================================================
+   10. DIAGNOSTIC & DISPENSING
+   ========================================================================= */
+function Diagnostic() {
+  return (
+    <section className={SEC}>
+      <div className={CONTAINER}>
+        <SectionHeader
+          eyebrow="Diagnostic & Dispensing"
+          title="Connect Diagnosis to the Next Step in Care"
+          body="CareSuite connects pharmacy and laboratory workflows with appointments and prescriptions."
+        />
+        <Reveal delay={100} className={HEAD_GAP}>
+          <div className={lift}>
+            <Pic
+              asset={A.diagnostic}
+              wrap="mx-auto"
+              alt="Laboratory specimen stream and pharmacy automated fulfillment workflows"
+            />
           </div>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
 
-          <div className="bg-zinc-950 border border-zinc-900 p-8 md:p-12 rounded-3xl relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-[200px] h-[200px] bg-cyan-500/[0.015] rounded-full blur-xl pointer-events-none" />
+/* =========================================================================
+   11. DATA PROTECTION
+   ========================================================================= */
+const DATA_ITEMS = [
+  {
+    icon: ICON.encrypted,
+    title: "Encrypted Data (AES-256 & TLS 1.3)",
+    body: "Zero-knowledge end-to-end encryption for all patient charts in transit and at rest.",
+  },
+  {
+    icon: ICON.audit,
+    title: "Comprehensive Immutable Audit Logs",
+    body: "Every record view, amendment, and prescription transaction timestamped irrevocably.",
+  },
+  {
+    icon: ICON.rbac,
+    title: "Granular Role-Based Access (RBAC)",
+    body: "Nurses, doctors, lab specialists, and front-desk staff only see relevant authorized data.",
+  },
+  {
+    icon: ICON.compliance,
+    title: "Compliance-Ready Architecture",
+    body: "Engineered to exceed strict HIPAA, GDPR, SOC 2 Type II, and ISO 27001 requirements.",
+  },
+];
 
-            {formSubmitted ? (
-              <div className="text-center py-12 flex flex-col items-center">
-                <div className="w-12 h-12 rounded-full bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 mb-6">
-                  <Check className="w-6 h-6" />
-                </div>
-                <h3 className="text-xl font-bold text-white mb-2">Request Received</h3>
-                <p className="text-xs md:text-sm text-zinc-400 font-bold max-w-sm">
-                  Thank you! Our solutions engineers will contact you at your business email to schedule a live demo.
-                </p>
-              </div>
-            ) : (
-              <form onSubmit={handleFormSubmit} className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label className="block text-[10px] font-mono text-zinc-500 uppercase tracking-wider mb-2 font-bold flex items-center gap-1.5">
-                      <User className="w-3.5 h-3.5 text-zinc-500" /> Your Name
-                    </label>
-                    <input
-                      type="text"
-                      required
-                      value={formState.name}
-                      onChange={(e) => setFormState({ ...formState, name: e.target.value })}
-                      className="w-full bg-black border border-zinc-900 focus:border-cyan-500/50 rounded-xl px-4 py-3 text-xs md:text-sm text-white focus:outline-none transition-colors"
-                      placeholder="Jane Doe"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-[10px] font-mono text-zinc-500 uppercase tracking-wider mb-2 font-bold flex items-center gap-1.5">
-                      <Mail className="w-3.5 h-3.5 text-zinc-500" /> Business Email
-                    </label>
-                    <input
-                      type="email"
-                      required
-                      value={formState.email}
-                      onChange={(e) => setFormState({ ...formState, email: e.target.value })}
-                      className="w-full bg-black border border-zinc-900 focus:border-cyan-500/50 rounded-xl px-4 py-3 text-xs md:text-sm text-white focus:outline-none transition-colors"
-                      placeholder="jane@company.com"
-                    />
-                  </div>
-                </div>
+function DataProtection() {
+  return (
+    <section className={`${SEC} overflow-x-clip`}>
+      <div className={CONTAINER}>
+        <SectionHeader
+          eyebrow="Data Protection"
+          title="Healthcare Data Deserves Strong Protection"
+          body="CareSuite's enterprise-grade security approach focused on healthcare data protection."
+        />
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label className="block text-[10px] font-mono text-zinc-500 uppercase tracking-wider mb-2 font-bold flex items-center gap-1.5">
-                      <Building className="w-3.5 h-3.5 text-zinc-500" /> Clinic / Hospital Name
-                    </label>
-                    <input
-                      type="text"
-                      required
-                      value={formState.company}
-                      onChange={(e) => setFormState({ ...formState, company: e.target.value })}
-                      className="w-full bg-black border border-zinc-900 focus:border-cyan-500/50 rounded-xl px-4 py-3 text-xs md:text-sm text-white focus:outline-none transition-colors"
-                      placeholder="Acme Health"
-                    />
+        <div className={`${HEAD_GAP} grid items-center gap-10 lg:grid-cols-[minmax(0,1fr)_497px] lg:gap-0`}>
+          <ul className="space-y-6 lg:pl-[110px]">
+            {DATA_ITEMS.map((it, i) => (
+              <li key={it.title}>
+                <Reveal delay={i * 90}>
+                  <div className={`${lift} grid max-w-[560px] grid-cols-[32px_minmax(0,1fr)] gap-y-1.5`}>
+                    <span className="flex items-center self-center">
+                      <Icon asset={it.icon} />
+                    </span>
+                    <h3 className="text-[18px] font-medium leading-[26px] text-white">{it.title}</h3>
+                    <p className="col-start-2 max-w-[480px] text-[13px] leading-[22px] text-white">{it.body}</p>
                   </div>
-                  <div>
-                    <label className="block text-[10px] font-mono text-zinc-500 uppercase tracking-wider mb-2 font-bold flex items-center gap-1.5">
-                      <Phone className="w-3.5 h-3.5 text-zinc-500" /> Phone Number
-                    </label>
-                    <input
-                      type="text"
-                      required
-                      value={formState.phone}
-                      onChange={(e) => setFormState({ ...formState, phone: e.target.value })}
-                      className="w-full bg-black border border-zinc-900 focus:border-cyan-500/50 rounded-xl px-4 py-3 text-xs md:text-sm text-white focus:outline-none transition-colors"
-                      placeholder="+44 1784 640216"
-                    />
-                  </div>
-                </div>
+                </Reveal>
+              </li>
+            ))}
+          </ul>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label className="block text-[10px] font-mono text-zinc-500 uppercase tracking-wider mb-2 font-bold flex items-center gap-1.5">
-                      <Globe className="w-3.5 h-3.5 text-zinc-500" /> Industry Sector
-                    </label>
-                    <select
-                      value={formState.industry}
-                      onChange={(e) => setFormState({ ...formState, industry: e.target.value })}
-                      className="w-full bg-black border border-zinc-900 focus:border-cyan-500/50 rounded-xl px-4 py-3 text-xs md:text-sm text-white focus:outline-none transition-colors appearance-none font-bold"
-                    >
-                      <option value="Healthcare">Healthcare</option>
-                      <option value="Clinics">Clinics</option>
-                      <option value="Diagnostic Centers">Diagnostic Centers</option>
-                    </select>
-                  </div>
-                  <div>
-                    <label className="block text-[10px] font-mono text-zinc-500 uppercase tracking-wider mb-2 font-bold flex items-center gap-1.5">
-                      <Briefcase className="w-3.5 h-3.5 text-zinc-500" /> Primary Use Case
-                    </label>
-                    <select
-                      value={formState.useCase}
-                      onChange={(e) => setFormState({ ...formState, useCase: e.target.value })}
-                      className="w-full bg-black border border-zinc-900 focus:border-cyan-500/50 rounded-xl px-4 py-3 text-xs md:text-sm text-white focus:outline-none transition-colors appearance-none font-bold"
-                    >
-                      <option value="EMR Implementation">EMR Implementation</option>
-                      <option value="Appointment Booking">Appointment Booking</option>
-                      <option value="Clinical Billing">Clinical Billing</option>
-                      <option value="Pharmacy Management">Pharmacy Management</option>
-                    </select>
-                  </div>
-                </div>
-
-                <div>
-                  <label className="block text-[10px] font-mono text-zinc-500 uppercase tracking-wider mb-2 font-bold">Message / Additional Requirements</label>
-                  <textarea
-                    rows={4}
-                    required
-                    value={formState.message}
-                    onChange={(e) => setFormState({ ...formState, message: e.target.value })}
-                    className="w-full bg-black border border-zinc-900 focus:border-cyan-500/50 rounded-xl px-4 py-3 text-xs md:text-sm text-white focus:outline-none transition-colors resize-none"
-                    placeholder="Describe your current clinic challenges or active EHR solutions..."
-                  />
-                </div>
-
-                <div className="pt-4">
-                  <button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="w-full py-4 bg-white text-black font-bold text-xs md:text-sm uppercase tracking-wider rounded-xl hover:bg-zinc-200 transition-colors shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
-                  >
-                    {isSubmitting ? "Submitting Request..." : "Request CareSuite Demo"}
-                  </button>
-                </div>
-              </form>
-            )}
-          </div>
+          <Reveal delay={150}>
+            <Pic
+              asset={A.data}
+              alt="Doctor using a tablet with security badges: strict RBAC, end-to-end encryption, zero-trust identity, immutable audit trails"
+              wrap="mx-auto max-w-[420px] lg:mx-0 lg:mr-[14px] lg:ml-auto"
+            />
+          </Reveal>
         </div>
-      </section>
+      </div>
+    </section>
+  );
+}
 
-      {/* 16. FINAL CTA & CONTACT SECTION */}
-      <section className="w-full py-28 bg-black text-center relative overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-[radial-gradient(circle_at_center,rgba(6,182,212,0.02),transparent_60%)] pointer-events-none" />
-        <div className="max-w-3xl mx-auto px-12 xl:px-8 relative z-10">
-          <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-6">
-            Ready to simplify your medical operations?
-          </h2>
-          <p className="text-zinc-400 text-xs md:text-sm font-bold mb-10 max-w-lg mx-auto leading-relaxed">
-            Connect with our product specialist team at <a href={`mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL}`} className="text-rose-500 hover:underline">{process.env.NEXT_PUBLIC_CONTACT_EMAIL}</a> or call sales at <a href="tel:+441784640216" className="text-rose-500 hover:underline">0461 2940062</a>.
-          </p>
-          <a
-            href="#book-demo"
-            className="inline-flex items-center gap-3 pl-6 pr-3 py-3 bg-white text-black font-semibold text-xs md:text-sm tracking-wider rounded-full hover:bg-zinc-200 transition-all duration-300"
+/* =========================================================================
+   12. CTA  (compact: text left, button right)
+   ========================================================================= */
+function Cta() {
+  return (
+    <section className="pb-[120px] pt-0">
+      <div className={CONTAINER}>
+        <Reveal>
+          <div
+            className="flex flex-col gap-8 rounded-[20px] p-8 sm:p-12 md:flex-row md:items-center md:justify-between"
+            style={{ backgroundColor: GREEN }}
           >
-            Book a CareSuite Demo
-            <div className="w-7 h-7 rounded-full bg-black flex items-center justify-center">
-              <ArrowUpRight className="w-3.5 h-3.5 text-white" />
-            </div>
-          </a>
-        </div>
-      </section>
-
-      {/* VIDEO LIGHTBOX MODAL */}
-      {isVideoOpen && (
-        <div className="fixed inset-0 z-[100] bg-black/90 backdrop-blur-md flex items-center justify-center p-6">
-          <div className="relative w-full max-w-4xl bg-zinc-950 border border-zinc-900 rounded-3xl overflow-hidden aspect-video shadow-2xl flex flex-col justify-center items-center">
-            {/* Close Button */}
-            <button
-              onClick={() => setIsVideoOpen(false)}
-              className="absolute top-4 right-4 z-20 w-8 h-8 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-400 hover:text-white hover:border-zinc-700 transition-all"
-            >
-              <X className="w-4 h-4" />
-            </button>
-
-            {/* Video content overlay */}
-            <div className="text-center p-8 z-10 max-w-md">
-              <div className="w-12 h-12 rounded-full bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 mx-auto mb-4">
-                <Play className="w-5 h-5 fill-cyan-400" />
-              </div>
-              <h3 className="text-base font-bold text-white mb-2">CareSuite Walkthrough Video</h3>
-              <p className="text-xs text-zinc-400 font-bold leading-relaxed mb-6">
-                Interactive video stream simulation. Real environments render custom client platform streams directly.
+            <div className="max-w-[640px]">
+              <h2 className={H1}>
+                Ready to Transform Your
+                <Br /> Hospital Operations?
+              </h2>
+              <p className={`${BODY} mt-4`}>
+                Bring patients, doctors, staff, departments, and healthcare workflows together
+                <Br /> with CareSuite. Smarter Healthcare. Seamless Operations.
               </p>
-              <button
-                onClick={() => setIsVideoOpen(false)}
-                className="px-6 py-2.5 bg-white text-black text-xs font-bold rounded-lg hover:bg-zinc-200 transition-colors"
-              >
-                Close Walkthrough
-              </button>
             </div>
+
+            <Link
+              href="/contact"
+              className="inline-flex h-[61px] w-full shrink-0 items-center justify-center gap-3 rounded-[10px] bg-[#F7F9FB] text-[21.7px] font-medium leading-[24.8px] tracking-[0.22px] text-black transition-transform duration-300 hover:-translate-y-1 md:w-[295px]"
+            >
+              Get Started Today
+              <ArrowRight size={24} strokeWidth={2} />
+            </Link>
           </div>
-        </div>
-      )}
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
+/* =========================================================================
+   PAGE
+   ========================================================================= */
+export default function CareSuitePage() {
+  return (
+    <main
+      className="relative w-full overflow-x-clip bg-black text-white"
+      style={{ fontFamily: "Inter, ui-sans-serif, system-ui, sans-serif" }}
+    >
+      <Hero />
+      <Challenge />
+      <Architecture />
+      <Appointment />
+      <PatientHub />
+      <Telemedicine />
+      <Clinician />
+      <UnifiedEmr />
+      <Roles />
+      <Diagnostic />
+      <DataProtection />
+      <Cta />
     </main>
   );
 }

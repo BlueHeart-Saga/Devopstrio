@@ -197,5 +197,185 @@ export const consultingCapabilities: Record<string, CapabilityDetail> = {
         a: "Yes. Our engineering squads can be booked to execute the remediation roadmaps we design."
       }
     ]
+  },
+  "cloud-consulting": {
+    slug: "cloud-consulting",
+    title: "Cloud Consulting UK",
+    metaTitle: "Cloud Consulting UK | Expert Cloud Strategy & Migration",
+    metaDescription: "Trusted cloud consulting UK experts helping businesses migrate, optimize, and scale on Azure, AWS, and GCP. Get secure, cost-effective cloud solutions today.",
+    heroSubtitle: "Cloud consulting uk helps businesses plan, build, and manage cloud environments that are secure, flexible, and ready to grow.",
+    overviewHeading: "Transforming operations with Cloud Consulting",
+    whatIsHeading: "What is Cloud Consulting UK?",
+    whatIsDescription: "Cloud consulting uk helps businesses plan, build, and manage cloud environments that are secure, flexible, and ready to grow. It brings computing, storage, and connectivity together, helping teams move away from costly hardware, adapt resources as needs change, protect important workloads, and run day-to-day operations more smoothly with practical cloud solutions.",
+    challenge: "Solving Architecture Bloat & Stack Overlap",
+    problemTitle: "Architecture Bloat & Stack Overlap",
+    problemPoints: [
+      "Unnecessary SaaS subscriptions and server costs across separate teams.",
+      "Unclear cloud migration plans can delay transformation across teams.",
+      "Complex custom systems when a simpler SaaS option works."
+    ],
+    solution: "We provide structured cloud strategy, automated Infrastructure as Code blueprints, and cloud cost optimization across AWS, Azure, and GCP.",
+    enterpriseTitle: "Enterprise-Level Cloud Consulting UK",
+    features: [
+      "Multi-Cloud Readiness Assessments across AWS, Azure, and GCP",
+      "Infrastructure as Code (IaC) modular templates with Terraform",
+      "Continuous compliance alignment with SOC 2, ISO 27001, and HIPAA"
+    ],
+    benefits: [
+      "Faster release cycles with up to 45% less time spent on deployments",
+      "Complete system visibility with real-time incident alerts and monitoring",
+      "Fully reviewed infrastructure designed to meet SOC-2 and regulatory requirements"
+    ],
+    deliveryApproach: [
+      "Cloud Readiness Audit: Analyzing existing workloads, dependency maps, and TCO projections.",
+      "Target Architecture Design: Architecting multi-region landing zones and automated CI/CD deployment pipelines.",
+      "Execution & Handover: Hands-on migration, telemetry monitoring integration, and engineering team training."
+    ],
+    techStack: [
+      { name: "AWS / Azure / GCP", desc: "Enterprise hyperscaler cloud platforms." },
+      { name: "Terraform / OpenTofu", desc: "Modular Infrastructure as Code blueprints." },
+      { name: "OpenTelemetry / Datadog", desc: "Unified cloud observability and real-time alerts." }
+    ],
+    caseStudy: {
+      title: "Cloud Transformation & FinOps Migration for UK Enterprise",
+      desc: "Delivered a comprehensive cloud strategy and migration blueprint, lowering infrastructure costs by 38% and accelerating deployment cycles.",
+      metrics: [
+        { value: "45%", label: "Deployment Time Reduction" },
+        { value: "38%", label: "Cloud Spend Savings" },
+        { value: "99.99%", label: "Target Availability SLA" }
+      ]
+    },
+    faqs: [
+      {
+        q: "What sets Devopstrio’s Cloud Consulting uk approach apart?",
+        a: "We bring together practical automation, skilled cloud engineers, and ready-to-use Infrastructure as Code (IaC) modules to provide Cloud Consulting UK services faster, while keeping your data secure and your systems easy to monitor."
+      },
+      {
+        q: "How do you track results and performance across Cloud Consulting projects?",
+        a: "We monitor key measures such as deployment time, application speed, SLA performance, resource usage, and security checks to show clear and measurable results."
+      },
+      {
+        q: "What security measures are included in your Cloud Consulting setup?",
+        a: "We apply role-based access controls, automate secret updates, configure network firewalls, and carry out regular vulnerability checks across your cloud infrastructure to help keep systems secure."
+      },
+      {
+        q: "Will this Cybersecurity Consulting service uk work with our existing on-premise systems?",
+        a: "Absolutely. Our team designs secure API connectors, reliable data sync pipelines, and hybrid network links (such as site-to-site VPNs or Direct Connect) so your setup works smoothly alongside your current on-premise infrastructure."
+      },
+      {
+        q: "How do you manage sudden traffic surges for Cloud Consulting systems?",
+        a: "We set up horizontal pod autoscaling (HPA) along with smart load balancing, so resources scale up or down automatically based on CPU usage, memory, or incoming request volume."
+      },
+      {
+        q: "What is the usual timeframe for implementing Cloud Consulting UK?",
+        a: "Most projects can be completed within 4 to 8 weeks, based on the existing systems, integration needs, and overall complexity of the current infrastructure."
+      },
+      {
+        q: "Do you offer training and clear handover guidance for our team?",
+        a: "Yes. We provide clear architecture plans, practical setup guides, and hands-on sessions with your team to make the move to your new cloud environment simple and smooth."
+      },
+      {
+        q: "How do you monitor performance and response times for Cloud Consulting UK?",
+        a: "We use OpenTelemetry to collect traces, logs, and performance data, then bring them into central dashboards such as Grafana or Datadog for clear, real-time monitoring."
+      },
+      {
+        q: "What compliance standards can you support Cloud Consulting UK?",
+        a: "Our cloud setups can be aligned with SOC 2, ISO 27001, HIPAA, and GDPR requirements, with built-in encryption and audit logging to help protect data and support compliance needs."
+      },
+      {
+        q: "What cost savings can you achieve with Cloud Consulting UK?",
+        a: "Businesses can often reduce manual operations by 30% to 50%, improve resource use, and lower cloud hosting costs through smart scaling and caching."
+      }
+    ]
+  },
+  "cybersecurity-consulting": {
+    slug: "cybersecurity-consulting",
+    title: "Cybersecurity Consulting UK",
+    metaTitle: "Cybersecurity Consulting UK | Trusted Security Experts",
+    metaDescription: "Protect your business with expert cybersecurity consulting UK companies rely on. From risk assessments to threat protection, we help you stay secure, compliant, and resilient.",
+    heroSubtitle: "Cybersecurity consulting UK helps businesses protect their digital systems, networks, and user accounts from cyber threats and data breaches.",
+    overviewHeading: "Transforming your business with Cybersecurity Consulting UK",
+    whatIsHeading: "What is Cybersecurity Consulting UK?",
+    whatIsDescription: "Cybersecurity consulting UK helps businesses protect their digital systems, networks, and user accounts from cyber threats and data breaches. It strengthens your security through regular vulnerability checks, controlled access, and compliance with recognized standards such as SOC 2, ISO 27001, and HIPAA. Explore our managed security operations for reliable 24/7 protection and ongoing security support.",
+    challenge: "Solving Architecture Bloat & Tool Overlap",
+    problemTitle: "Architecture Bloat & Tool Overlap",
+    problemPoints: [
+      "Unnecessary security tools and license costs across disconnected teams.",
+      "Unclear security strategies causing delays in risk reduction efforts.",
+      "Complex custom-built systems when a simpler security platform works."
+    ],
+    solution: "We deliver comprehensive threat audits, zero-trust architectures, automated compliance scanning, and proactive SOC advisory.",
+    enterpriseTitle: "Enterprise-Grade Cybersecurity Consulting UK",
+    features: [
+      "Zero-Trust Network Access (ZTNA) and strict role-based access controls",
+      "Automated continuous vulnerability scanning and secrets management",
+      "SOC-2, ISO 27001, HIPAA, and GDPR regulatory compliance gap remediation"
+    ],
+    benefits: [
+      "Faster threat detection and up to 45% reduction in response times",
+      "Clear security visibility with real-time threat monitoring and alerts",
+      "Fully-reviewed security environments aligned with SOC-2 and compliance standards"
+    ],
+    deliveryApproach: [
+      "Security & Posture Audit: Scanning networks, application code, and cloud access policies for vulnerabilities.",
+      "Zero-Trust Remediation: Designing least-privilege IAM, automated secrets rotation, and network segmentation.",
+      "Managed SecOps Handover: Setting up SIEM alerting dashboards, incident playbooks, and security team training."
+    ],
+    techStack: [
+      { name: "Wazuh / Splunk", desc: "SIEM log monitoring and real-time threat detection." },
+      { name: "HashiCorp Vault", desc: "Automated secret management and dynamic encryption." },
+      { name: "Trivy / Snyk", desc: "Continuous container and codebase vulnerability scanning." }
+    ],
+    caseStudy: {
+      title: "Enterprise Zero-Trust Security Overhaul for UK Financial Provider",
+      desc: "Architected end-to-end zero-trust network boundaries, automated secrets rotation, and achieved full SOC 2 Type II certification.",
+      metrics: [
+        { value: "45%", label: "Faster Threat Detection & MTTR" },
+        { value: "100%", label: "SOC 2 Compliance Alignment" },
+        { value: "0", label: "Security Breaches / Leaks" }
+      ]
+    },
+    faqs: [
+      {
+        q: "What makes Devopstrio’s Cybersecurity Consulting UK approach different?",
+        a: "We bring together smart automation, experienced security engineers, and ready-made security modules to deliver Cybersecurity Consulting UK solutions efficiently, while helping protect sensitive data and maintain clear visibility across your systems."
+      },
+      {
+        q: "How do you measure results and performance across Cybersecurity Consulting UK projects?",
+        a: "We monitor important measures such as response times, security coverage, SLA performance, system efficiency, and vulnerability scan results to track progress and deliver clear, measurable value."
+      },
+      {
+        q: "What security measures are included in your Cybersecurity Consulting UK setup?",
+        a: "We use strong access controls, automated password and secret updates, network firewalls, and regular vulnerability checks to help protect your systems across every layer."
+      },
+      {
+        q: "Can your Cybersecurity Consulting service UK connect with existing on-premise systems?",
+        a: "Yes. We can use secure APIs, data integration, and hybrid network connections such as site-to-site VPNs or Direct Connect to link modern security solutions with your existing infrastructure."
+      },
+      {
+        q: "How do you manage security workloads during traffic spikes?",
+        a: "We use flexible scaling and load balancing to adjust resources automatically as demand changes, helping maintain stable performance during busy periods and higher request volumes."
+      },
+      {
+        q: "What is the usual timeframe for starting Cybersecurity Consulting UK?",
+        a: "Most projects take around 4 to 8 weeks to launch, depending on your current systems, integration needs, security requirements, and the complexity of your existing infrastructure."
+      },
+      {
+        q: "Do you offer team training and clear handover support?",
+        a: "Yes. We provide easy-to-follow security plans, setup guides, and practical workshops with your team to help them understand the new environment and make the transition smooth."
+      },
+      {
+        q: "How do you monitor security performance and response times?",
+        a: "We use Open Telemetry to capture traces, logs, and key metrics, bringing them together in dashboards such as Grafana or Datadog for simple, real-time security monitoring."
+      },
+      {
+        q: "What compliance standards can your Cybersecurity Consulting service support UK?",
+        a: "Our security solutions can support SOC 2, ISO 27001, HIPAA, and GDPR requirements, with built-in encryption and audit logging to help protect sensitive information and meet key compliance needs."
+      },
+      {
+        q: "What savings can businesses achieve with Cybersecurity Consulting UK?",
+        a: "Companies can often cut manual security work by 30% to 50%, make better use of existing resources, and reduce infrastructure costs through smarter automation, scaling, and system management."
+      }
+    ]
   }
 };

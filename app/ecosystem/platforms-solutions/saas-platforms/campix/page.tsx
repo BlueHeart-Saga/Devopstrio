@@ -17,6 +17,8 @@ import {
   ChevronLeft,
   ChevronRight,
   Maximize2,
+  ArrowRight,
+  Check,
 } from "lucide-react";
 
 // ─── PRESENTATION / PINNED SCROLL HOOK (FOR HOW CAMPIX WORKS STEPPER) ─────────
@@ -237,6 +239,208 @@ const howItWorksMilestones = [
   },
 ];
 
+
+const GOLD = "#FFCA54";
+const ASSETS = "/webp/assets/landingpage-campix";
+
+/* ---------- Campix logo (icon + wordmark) ---------- */
+function CampixLogo() {
+  return (
+    <div className="flex items-center gap-3">
+      <Image
+        src={`${ASSETS}/campix-logo.webp`}
+        alt="Campix Logo"
+        width={46}
+        height={38}
+        unoptimized
+        priority
+        className="w-[46px] h-auto object-contain"
+      />
+      <span className="text-[32px] leading-none font-semibold tracking-[-0.5px] text-white">Campix</span>
+    </div>
+  );
+}
+
+/* ---------- 1. HERO ---------- */
+function HeroSection() {
+  return (
+    <section className="relative w-full bg-black pt-[112px] pb-20">
+      <div className="w-full max-w-[1240px] mx-auto px-6 sm:px-8 lg:px-12">
+        <CampixLogo />
+
+        <div className="mt-[56px] text-center">
+          <h1 className="text-[28px] sm:text-[36px] leading-[1.22] font-semibold tracking-[-0.4px] text-white max-w-[860px] mx-auto">
+            All-in-One Platform for Complete Educational Institution Management
+          </h1>
+          <p className="mt-6 text-[17px] leading-[28px] font-normal text-white/90 max-w-[680px] mx-auto">
+            Campix brings academics, administration, communication, student management, and analytics together in one
+            powerful platform—helping educational institutions manage their operations efficiently from a single place.
+          </p>
+
+          <div className="mt-9 flex flex-wrap items-center justify-center gap-4">
+            <a
+              href="https://campix.devopstrio.co.uk/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 h-[42px] px-6 rounded-md bg-[#FFCA54] text-black text-[14px] font-semibold transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_0_30px_rgba(255,202,84,0.55)]"
+            >
+              Explore Campix <ArrowRight className="w-4 h-4" />
+            </a>
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-2 h-[42px] px-6 rounded-md bg-white text-black text-[14px] font-medium transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_0_30px_rgba(255,255,255,0.45)]"
+            >
+              Get Started <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+        </div>
+
+        {/* Hero image is a composite: the dashboard overhangs the photo. Never clip / round / cover it. */}
+        <div className="mt-16 flex justify-center">
+          <Image
+            src={`${ASSETS}/hero.webp`}
+            alt="Campix Educational Institution Management Platform"
+            width={1169}
+            height={847}
+            priority
+            className="block w-full max-w-[1169px] h-auto select-none"
+          />
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ---------- 6. BUILT FOR EVERY ROLE ---------- */
+const YELLOW_BG = "linear-gradient(135deg,#FFC846 0%,#FFD160 55%,#FFDC7E 100%)";
+const DARK_BG =
+  "radial-gradient(55% 75% at 88% 40%, rgba(255,202,84,.9) 0%, rgba(255,202,84,0) 70%), linear-gradient(90deg,#555 0%,#666 55%,#5a5a5a 100%)";
+
+const ROLES = [
+  { t: "Administrator", d: "Manage your institution with greater visibility, control, and efficiency.", img: "admin rectangle card.webp", light: true },
+  { t: "Teacher", d: "Manage classes, students, academic activities, and learning more effectively.", img: "Teacher.webp", light: false },
+  { t: "Parent", d: "Stay informed about your child's academic progress, attendance, and institutional activities.", img: "Parent.webp", light: false },
+  { t: "Student", d: "Access learning resources, schedules, activities, and important updates in one place.", img: "Student.webp", light: true },
+];
+
+function RolesSection() {
+  return (
+    <section className="relative w-full pt-[110px] pb-[100px] bg-black border-t border-zinc-900">
+      <div className="w-full max-w-[1240px] mx-auto px-6 sm:px-8 lg:px-12">
+        <div className="text-center max-w-3xl mx-auto">
+          <span className="text-[14px] font-semibold tracking-[0.6px] text-[#FFCA54] uppercase block mb-3">BUILT FOR EVERY ROLE</span>
+          <h2 className="text-2xl sm:text-4xl lg:text-[32px] font-bold text-white tracking-[-0.64px] leading-[40px] mb-4">
+            One Platform. Every Member of Your Institution.
+          </h2>
+          <p className="text-[16px] sm:text-[18px] text-white/80 leading-[28px]">
+            Campix provides role-based experiences that help every member of your educational community work, communicate, and stay connected more effectively.
+          </p>
+        </div>
+
+        <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-x-[27px] gap-y-[23px] max-w-[1200px] mx-auto">
+          {ROLES.map((r) => (
+            <article
+              key={r.t}
+              className="group relative h-[388px] rounded-[10px] overflow-hidden border border-white/15 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_50px_rgba(255,202,84,0.25)]"
+              style={{ background: r.light ? YELLOW_BG : DARK_BG }}
+            >
+              {/* title top-left, description bottom-left (as in reference) */}
+              <div className="relative z-10 h-full w-[56%] pl-9 pt-[84px] pb-[52px] flex flex-col justify-between">
+                <h3 className={`text-[28px] leading-8 font-semibold ${r.light ? "text-black" : "text-white"}`}>{r.t}</h3>
+                <p className={`text-[18px] leading-[25px] font-medium max-w-[250px] ${r.light ? "text-black" : "text-white"}`}>{r.d}</p>
+              </div>
+              {/* person: contained (never cropped), pinned bottom-right */}
+              <div className="absolute right-0 bottom-0 h-full w-[52%] pointer-events-none">
+                <Image
+                  src={`${ASSETS}/${r.img}`}
+                  alt={r.t}
+                  fill
+                  sizes="(max-width: 768px) 60vw, 320px"
+                  className="object-contain object-[right_bottom] transition-transform duration-500 origin-bottom group-hover:scale-[1.04]"
+                />
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ---------- 9. PLATFORM HIGHLIGHTS ---------- */
+function HighlightsSection() {
+  return (
+    <section className="relative w-full py-[70px] bg-black border-t border-zinc-900">
+      <div className="w-full max-w-[1240px] mx-auto px-6 sm:px-8 lg:px-12">
+        <div className="max-w-[1080px] mx-auto grid grid-cols-1 lg:grid-cols-[1fr_480px] gap-12 lg:gap-6 items-start">
+          <div className="flex flex-col items-start">
+            <span className="text-[12px] font-semibold tracking-[1.2px] text-[#FFCA54] uppercase block mb-3">PLATFORM HIGHLIGHTS</span>
+            <h2 className="text-[30px] leading-[39px] font-bold text-white tracking-[-0.5px] max-w-[500px]">
+              Everything Your Institution Needs. One Powerful Platform.
+            </h2>
+            <p className="mt-5 text-[16px] leading-[28px] text-white/90 max-w-[410px]">
+              Campix provides a comprehensive suite of tools designed to streamline educational management, empowering administrators and educators to focus on what matters most.
+            </p>
+            <ul className="mt-7 space-y-4">
+              {["Multiple Modules", "Role-Based Access", "Scalable & Flexible"].map((t) => (
+                <li key={t} className="flex items-center gap-3 text-[16px] text-white">
+                  <span className="w-5 h-5 rounded-full bg-[#FFCA54] grid place-items-center shrink-0">
+                    <Check className="w-3 h-3 text-black stroke-[3.5]" />
+                  </span>
+                  {t}
+                </li>
+              ))}
+            </ul>
+            <a
+              href="https://campix.devopstrio.co.uk/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-8 inline-flex items-center gap-2 h-[38px] px-5 rounded-md bg-[#FFCA54] text-black text-[13px] font-semibold transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_0_28px_rgba(255,202,84,0.5)]"
+            >
+              Explore Campix <ArrowRight className="w-3.5 h-3.5" />
+            </a>
+          </div>
+
+          {/* natural aspect ratio, no frame / overflow box (asset fades out at the bottom by itself) */}
+          <div className="flex justify-center lg:justify-end">
+            <Image
+              src={`${ASSETS}/PLATFORM HIGHLIGHTS.webp`}
+              alt="Campix Platform Highlights"
+              width={960}
+              height={960}
+              className="block w-full max-w-[480px] h-auto select-none"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ---------- 10. BOTTOM CTA ---------- */
+function CtaBanner() {
+  return (
+    <section className="relative w-full pt-10 pb-24 bg-black">
+      <div className="w-full max-w-[1240px] mx-auto px-6 sm:px-8 lg:px-12">
+        <div className="max-w-[1216px] mx-auto min-h-[275px] rounded-[12px] bg-[#FFCA54] px-8 sm:px-12 flex flex-col md:flex-row items-center justify-between gap-8 py-10">
+          <div className="text-center md:text-left">
+            <h2 className="text-[28px] sm:text-[32px] leading-[40px] font-bold tracking-[-0.5px] text-black">Ready to transform your institution?</h2>
+            <p className="mt-2 text-[16px] sm:text-[18px] font-medium text-black/90">
+              Join thousands of educators streamlining their daily operations with Campix.
+            </p>
+          </div>
+          <Link
+            href="/contact"
+            className="shrink-0 inline-flex items-center gap-3 h-[62px] px-9 rounded-[12px] bg-white text-black text-[20px] font-medium shadow-lg transition-all duration-300 hover:-translate-y-1 hover:bg-black hover:text-white"
+          >
+            Get Started Today <ArrowRight className="w-5 h-5" />
+          </Link>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export default function CampixLandingPage() {
   // Modal State for Image Zoom
   const [modalImage, setModalImage] = useState<{ src: string; title: string } | null>(null);
@@ -268,56 +472,7 @@ export default function CampixLandingPage() {
     <main className="min-h-screen bg-[#000000] text-white selection:bg-[#FFCA54]/30 overflow-x-hidden font-sans">
 
       {/* ─── 1. HERO SECTION ────────────────────────────────────────────────── */}
-      <section className="relative w-full pt-28 sm:pt-36 pb-16 bg-[#000000] flex flex-col items-center justify-center overflow-hidden">
-        <div className="w-full max-w-[1240px] mx-auto px-6 sm:px-8 lg:px-12 text-center relative">
-          
-          {/* Eyebrow Pill Badge */}
-          <div className="inline-flex items-center gap-2 px-6 py-2 rounded-full border border-[#FFCA54] bg-black text-[#FFCA54] text-[12px] sm:text-[14px] font-semibold tracking-wider uppercase mb-8 shadow-[0_0_20px_rgba(255,202,84,0.2)]">
-            <span>ALL-IN-ONE EDUCATIONAL MANAGEMENT PLATFORM</span>
-          </div>
-
-          {/* H1 Heading — reduced weight, reference-matched line structure */}
-          <h1 className="text-[28px] sm:text-[36px] lg:text-[42px] font-semibold text-white tracking-[-0.5px] leading-[1.25] max-w-[780px] mx-auto mb-6">
-            All-in-One Platform for Complete Educational Institution Management
-          </h1>
-
-          {/* Subtitle — same 3-line structure, slightly lighter tone */}
-          <p className="text-base sm:text-lg lg:text-[17px] text-white/75 font-normal leading-[27px] max-w-[650px] mx-auto mb-9">
-            Campix brings academics, administration, communication, student <br className="hidden md:inline" />
-            management, and analytics together in one powerful platform—helping <br className="hidden md:inline" />
-            educational institutions manage their operations efficiently from a single place.
-          </p>
-
-          {/* CTA Buttons with Hover Glow */}
-          <div className="flex flex-wrap items-center justify-center gap-4 mb-16">
-            <Link
-              href="/contact?service=campix-explore"
-              className="inline-flex items-center justify-center gap-2 px-7 py-3 rounded-lg bg-[#FFCA54] text-black font-semibold text-[15px] hover:bg-[#ffc233] hover:shadow-[0_0_35px_rgba(255,202,84,0.65)] hover:scale-[1.03] transition-all duration-300 cursor-pointer"
-            >
-              Explore Campix →
-            </Link>
-            <Link
-              href="/contact?service=campix-start"
-              className="inline-flex items-center justify-center gap-2 px-7 py-3 rounded-lg bg-white text-black font-semibold text-[15px] hover:bg-zinc-100 hover:shadow-[0_0_35px_rgba(255,255,255,0.6)] hover:scale-[1.03] transition-all duration-300 cursor-pointer"
-            >
-              Get Started →
-            </Link>
-          </div>
-
-          {/* Hero Dashboard Showcase — no ring */}
-          <div className="relative w-full max-w-[1169px] mx-auto rounded-[28px] overflow-hidden shadow-2xl">
-            <Image
-              src="/webp/assets/landingpage-campix/hero.webp"
-              alt="Campix Educational Institution Management Platform"
-              width={1169}
-              height={847}
-              priority
-              className="w-full h-auto object-cover"
-            />
-          </div>
-
-        </div>
-      </section>
+      <HeroSection />
 
       {/* ─── 2. WHAT IS CAMPIX? SECTION ────────────────────────────────────── */}
       <section className="relative w-full py-28 bg-[#000000] border-t border-zinc-900 overflow-hidden">
@@ -456,10 +611,9 @@ export default function CampixLandingPage() {
 
       {/* ─── 3. CORE FEATURES SECTION (CAROUSEL) ────────────────────────────── */}
       <section className="relative w-full py-28 bg-[#000000] border-t border-zinc-900 overflow-hidden">
-
-        {/* Header stays in normal container */}
-        <div className="w-full max-w-[1240px] mx-auto px-6 sm:px-8 lg:px-12 mb-16">
-          <div className="text-center max-w-3xl mx-auto">
+        <div className="w-full max-w-[1240px] mx-auto px-6 sm:px-8 lg:px-12">
+          {/* Header */}
+          <div className="text-center max-w-3xl mx-auto mb-16">
             <span className="text-[14px] font-semibold tracking-[0.6px] text-[#FFCA54] uppercase block mb-3">
               CORE FEATURES
             </span>
@@ -470,60 +624,59 @@ export default function CampixLandingPage() {
               From student management and academics to administration and analytics, Campix brings essential institutional functions together through one connected platform.
             </p>
           </div>
-        </div>
 
-        {/* Carousel Track — FULL PAGE WIDTH, tight 2px gap, image + caption */}
-        <div
-          className="relative w-full overflow-hidden mb-10"
-          onMouseEnter={() => setIsCarouselPaused(true)}
-          onMouseLeave={() => setIsCarouselPaused(false)}
-        >
-          <motion.div
-            className="flex gap-2 pl-6 sm:pl-10 lg:pl-16"
-            animate={{ x: `-${carouselIndex * 358}px` }}
-            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+          {/* Carousel Track — Contained within page layout container */}
+          <div
+            className="relative w-full overflow-hidden mb-10"
+            onMouseEnter={() => setIsCarouselPaused(true)}
+            onMouseLeave={() => setIsCarouselPaused(false)}
           >
-            {carouselCards.concat(carouselCards).map((card, idx) => (
-              <div
-                key={`${card.id}-${idx}`}
-                className="w-[336px] sm:w-[348px] shrink-0 flex flex-col cursor-pointer group"
-                onClick={() => setModalImage({ src: card.img, title: card.title })}
-              >
-                {/* Image Card */}
+            <motion.div
+              className="flex gap-4"
+              animate={{ x: `-${carouselIndex * 364}px` }}
+              transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            >
+              {carouselCards.concat(carouselCards).map((card, idx) => (
                 <div
-                  className="relative w-full rounded-[20px] overflow-hidden shadow-xl transition-transform duration-500 group-hover:scale-[1.02]"
-                  style={{ height: "440px" }}
+                  key={`${card.id}-${idx}`}
+                  className="w-[336px] sm:w-[348px] shrink-0 flex flex-col cursor-pointer group"
+                  onClick={() => setModalImage({ src: card.img, title: card.title })}
                 >
-                  <Image
-                    src={card.img}
-                    alt={card.title}
-                    fill
-                    className="object-cover object-top"
-                  />
+                  {/* Image Card */}
+                  <div
+                    className="relative w-full rounded-[20px] overflow-hidden shadow-xl transition-transform duration-500 group-hover:scale-[1.02]"
+                    style={{ height: "440px" }}
+                  >
+                    <Image
+                      src={card.img}
+                      alt={card.title}
+                      fill
+                      className="object-cover object-top"
+                    />
+                  </div>
                 </div>
-              </div>
-            ))}
-          </motion.div>
-        </div>
+              ))}
+            </motion.div>
+          </div>
 
-        {/* Carousel Navigation Buttons */}
-        <div className="flex items-center gap-4 px-6 sm:px-10 lg:px-16">
-          <button
-            onClick={handlePrev}
-            aria-label="Previous Slide"
-            className="w-12 h-12 rounded-full border border-white/20 bg-zinc-900/80 hover:bg-[#FFCA54] hover:text-black text-white flex items-center justify-center transition-all duration-300 cursor-pointer"
-          >
-            <ChevronLeft className="w-6 h-6" />
-          </button>
-          <button
-            onClick={handleNext}
-            aria-label="Next Slide"
-            className="w-12 h-12 rounded-full border border-white/20 bg-zinc-900/80 hover:bg-[#FFCA54] hover:text-black text-white flex items-center justify-center transition-all duration-300 cursor-pointer"
-          >
-            <ChevronRight className="w-6 h-6" />
-          </button>
+          {/* Carousel Navigation Buttons */}
+          <div className="flex items-center gap-4">
+            <button
+              onClick={handlePrev}
+              aria-label="Previous Slide"
+              className="w-12 h-12 rounded-full border border-white/20 bg-zinc-900/80 hover:bg-[#FFCA54] hover:text-black text-white flex items-center justify-center transition-all duration-300 cursor-pointer"
+            >
+              <ChevronLeft className="w-6 h-6" />
+            </button>
+            <button
+              onClick={handleNext}
+              aria-label="Next Slide"
+              className="w-12 h-12 rounded-full border border-white/20 bg-zinc-900/80 hover:bg-[#FFCA54] hover:text-black text-white flex items-center justify-center transition-all duration-300 cursor-pointer"
+            >
+              <ChevronRight className="w-6 h-6" />
+            </button>
+          </div>
         </div>
-
       </section>
 
       {/* ─── 4. ACADEMIC MANAGEMENT SECTION ─────────────────────────────────── */}
@@ -565,7 +718,7 @@ export default function CampixLandingPage() {
 
               {/* CTA Button */}
               <Link
-                href="/contact?service=academic-management"
+                href="https://campix.devopstrio.co.uk/" target="_blank" rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-lg bg-[#FFCA54] text-black font-semibold text-[15px] hover:bg-[#eab344] hover:shadow-[0_0_28px_rgba(255,202,84,0.5)] transition-all duration-300"
               >
                 Explore Academic Management →
@@ -663,7 +816,7 @@ export default function CampixLandingPage() {
 
               {/* CTA Button */}
               <Link
-                href="/contact?service=institution-administration"
+                href="https://campix.devopstrio.co.uk/" target="_blank" rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-lg bg-[#FFCA54] text-black font-semibold text-[15px] hover:bg-[#eab344] hover:shadow-[0_0_28px_rgba(255,202,84,0.5)] transition-all duration-300"
               >
                 Explore Administration →
@@ -674,105 +827,8 @@ export default function CampixLandingPage() {
         </div>
       </section>
 
-      {/* ─── 6. BUILT FOR EVERY ROLE (2x2 GRID CARDS) ──────────────────────── */}
-      {/* FIX: Added hover — card scale + image lift + glow shadow */}
-      <section className="relative w-full py-28 bg-[#000000] border-t border-zinc-900 overflow-hidden">
-        <div className="w-full max-w-[1240px] mx-auto px-6 sm:px-8 lg:px-12">
-
-          {/* Header */}
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-[14px] font-semibold tracking-[0.6px] text-[#FFCA54] uppercase block mb-3">
-              BUILT FOR EVERY ROLE
-            </span>
-            <h2 className="text-2xl sm:text-4xl lg:text-[32px] font-bold text-white tracking-[-0.64px] leading-[40px] mb-4">
-              One Platform. Every Member of Your Institution.
-            </h2>
-            <p className="text-[16px] sm:text-[18px] text-white/80 font-normal leading-[28px]">
-              Campix provides role-based experiences that help every member of your educational community work, communicate, and stay connected more effectively.
-            </p>
-          </div>
-
-          {/* 2x2 Card Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto">
-
-            {/* 1. Administrator (Yellow) */}
-            <div className="group relative rounded-[20px] bg-[#FFCA54] overflow-hidden min-h-[280px] shadow-xl cursor-pointer transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_20px_60px_rgba(255,202,84,0.40)]">
-              {/* Text — top-left, constrained width so image shows */}
-              <div className="relative z-10 p-7 sm:p-8 max-w-[52%]">
-                <h3 className="text-2xl sm:text-[26px] font-bold text-black mb-3 tracking-tight leading-[32px]">Administrator</h3>
-                <p className="text-[13px] sm:text-[14px] text-black/80 font-medium leading-[21px]">
-                  Manage your institution with greater visibility, control, and efficiency.
-                </p>
-              </div>
-              {/* Image — contained, right side, from bottom */}
-              <div className="absolute right-0 bottom-0 w-[52%] h-[110%] pointer-events-none">
-                <Image
-                  src="/webp/assets/landingpage-campix/admin rectangle card.webp"
-                  alt="Administrator"
-                  fill
-                  className="object-contain object-bottom transition-transform duration-500 group-hover:scale-[1.04]"
-                />
-              </div>
-            </div>
-
-            {/* 2. Teacher (Dark) */}
-            <div className="group relative rounded-[20px] bg-[#2a2a2e] overflow-hidden min-h-[280px] shadow-xl cursor-pointer border border-white/8 transition-all duration-300 hover:scale-[1.02] hover:border-[#FFCA54]/20 hover:shadow-[0_20px_60px_rgba(255,202,84,0.14)]">
-              <div className="relative z-10 p-7 sm:p-8 max-w-[52%]">
-                <h3 className="text-2xl sm:text-[26px] font-bold text-white mb-3 tracking-tight leading-[32px]">Teacher</h3>
-                <p className="text-[13px] sm:text-[14px] text-zinc-300 font-normal leading-[21px]">
-                  Manage classes, students, academic activities, and learning more effectively.
-                </p>
-              </div>
-              <div className="absolute right-0 bottom-0 w-[52%] h-[110%] pointer-events-none">
-                <Image
-                  src="/webp/assets/landingpage-campix/Teacher.webp"
-                  alt="Teacher"
-                  fill
-                  className="object-contain object-bottom transition-transform duration-500 group-hover:scale-[1.04]"
-                />
-              </div>
-            </div>
-
-            {/* 3. Parent (Dark) */}
-            <div className="group relative rounded-[20px] bg-[#2a2a2e] overflow-hidden min-h-[280px] shadow-xl cursor-pointer border border-white/8 transition-all duration-300 hover:scale-[1.02] hover:border-[#FFCA54]/20 hover:shadow-[0_20px_60px_rgba(255,202,84,0.14)]">
-              <div className="relative z-10 p-7 sm:p-8 max-w-[52%]">
-                <h3 className="text-2xl sm:text-[26px] font-bold text-white mb-3 tracking-tight leading-[32px]">Parent</h3>
-                <p className="text-[13px] sm:text-[14px] text-zinc-300 font-normal leading-[21px]">
-                  Stay informed about your child&apos;s academic progress, attendance, and institutional activities.
-                </p>
-              </div>
-              <div className="absolute right-0 bottom-0 w-[52%] h-[110%] pointer-events-none">
-                <Image
-                  src="/webp/assets/landingpage-campix/Parent.webp"
-                  alt="Parent"
-                  fill
-                  className="object-contain object-bottom transition-transform duration-500 group-hover:scale-[1.04]"
-                />
-              </div>
-            </div>
-
-            {/* 4. Student (Yellow) */}
-            <div className="group relative rounded-[20px] bg-[#FFCA54] overflow-hidden min-h-[280px] shadow-xl cursor-pointer transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_20px_60px_rgba(255,202,84,0.40)]">
-              <div className="relative z-10 p-7 sm:p-8 max-w-[52%]">
-                <h3 className="text-2xl sm:text-[26px] font-bold text-black mb-3 tracking-tight leading-[32px]">Student</h3>
-                <p className="text-[13px] sm:text-[14px] text-black/80 font-medium leading-[21px]">
-                  Access learning resources, schedules, activities, and important updates in one place.
-                </p>
-              </div>
-              <div className="absolute right-0 bottom-0 w-[52%] h-[110%] pointer-events-none">
-                <Image
-                  src="/webp/assets/landingpage-campix/Student.webp"
-                  alt="Student"
-                  fill
-                  className="object-contain object-bottom transition-transform duration-500 group-hover:scale-[1.04]"
-                />
-              </div>
-            </div>
-
-          </div>
-
-        </div>
-      </section>
+      {/* ─── 6. BUILT FOR EVERY ROLE ────────────────────────────────────────── */}
+      <RolesSection />
 
       {/* ─── 7. HOW CAMPIX WORKS (SCROLL-DRIVEN INTERACTIVE BUS STEPPER) ─── */}
       {/* FIX: Road section full page width, trees 2× bigger, bus 2× bigger, no max-w restriction */}
@@ -954,92 +1010,10 @@ export default function CampixLandingPage() {
       </section>
 
       {/* ─── 9. PLATFORM HIGHLIGHTS SECTION ─────────────────────────────────── */}
-      <section className="relative w-full py-28 bg-[#000000] border-t border-zinc-900 overflow-hidden">
-        <div className="w-full max-w-[1240px] mx-auto px-6 sm:px-8 lg:px-12">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center max-w-6xl mx-auto">
-            
-            {/* Left Column: Text + Checklist + CTA */}
-            <div className="lg:col-span-5 flex flex-col items-start">
-              <span className="text-[14px] font-semibold tracking-[1.2px] text-[#FFCA54] uppercase block mb-3">
-                PLATFORM HIGHLIGHTS
-              </span>
-              <h2 className="text-2xl sm:text-4xl lg:text-[32px] font-bold text-white tracking-[-0.64px] leading-[40px] mb-4">
-                Everything Your Institution Needs. One Powerful Platform.
-              </h2>
-              <p className="text-[16px] sm:text-[18px] text-white/80 font-normal leading-[28px] mb-8">
-                Campix provides a comprehensive suite of tools designed to streamline educational management, empowering administrators and educators to focus on what matters most.
-              </p>
-
-              {/* Checklist */}
-              <div className="space-y-4 w-full mb-10">
-                <div className="flex items-center gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-[#FFCA54] shrink-0" />
-                  <span className="text-[15px] sm:text-[16px] text-white font-medium">Multiple Modules</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-[#FFCA54] shrink-0" />
-                  <span className="text-[15px] sm:text-[16px] text-white font-medium">Role-Based Access</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-[#FFCA54] shrink-0" />
-                  <span className="text-[15px] sm:text-[16px] text-white font-medium">Scalable & Flexible</span>
-                </div>
-              </div>
-
-              {/* CTA Button */}
-              <Link
-                href="/contact?service=campix-highlights"
-                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-lg bg-[#FFCA54] text-black font-semibold text-[15px] hover:bg-[#eab344] transition-all duration-300"
-              >
-                Explore Campix →
-              </Link>
-            </div>
-
-            {/* Right Column: Platform Highlights Image */}
-            <div className="lg:col-span-7 relative flex items-center justify-center lg:translate-y-8">
-              <div
-                className="relative w-full max-w-[580px] overflow-hidden"
-                style={{ aspectRatio: "4/3.2" }}
-              >
-                <Image
-                  src="/webp/assets/landingpage-campix/PLATFORM HIGHLIGHTS.webp"
-                  alt="Campix Platform Highlights — mother and son using tablet"
-                  fill
-                  className="object-contain object-center"
-                />
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </section>
+      <HighlightsSection />
 
       {/* ─── 10. BOTTOM CTA BANNER ─────────────────────────────────────────── */}
-      <section className="relative w-full py-16 bg-[#000000]">
-        <div className="w-full max-w-[1240px] mx-auto px-6 sm:px-8 lg:px-12">
-          
-          <div className="relative w-full max-w-6xl mx-auto rounded-[20px] bg-[#FFCA54] text-black p-8 sm:p-12 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-8">
-            <div className="max-w-xl text-center md:text-left">
-              <h2 className="text-2xl sm:text-4xl font-bold text-black tracking-tight leading-tight mb-3">
-                Ready to transform your institution?
-              </h2>
-              <p className="text-base sm:text-lg text-black/85 font-medium leading-relaxed">
-                Join thousands of educators streamlining their daily operations with Campix.
-              </p>
-            </div>
-
-            <div className="shrink-0">
-              <Link
-                href="/contact?service=campix-transform"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-white text-black font-bold text-[18px] hover:bg-zinc-950 hover:text-white shadow-xl transition-all duration-300"
-              >
-                Get Started Today →
-              </Link>
-            </div>
-          </div>
-
-        </div>
-      </section>
+      <CtaBanner />
 
       {/* ─── LIGHTBOX DIALOG MODAL (ZOOM ON CLICK WITH BACKDROP BLUR) ────────── */}
       <AnimatePresence>
