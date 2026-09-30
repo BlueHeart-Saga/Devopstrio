@@ -97,6 +97,55 @@ const nextConfig: NextConfig = {
       },
     ];
   },
+  async redirects() {
+    return [
+      {
+        source: "/ecosystem/platforms-solutions/landingpage-homela",
+        destination: "/ecosystem/platforms-solutions/saas-platforms/homela",
+        permanent: false,
+      },
+      {
+        source: "/ecosystem/platforms-solutions/landingpage-brio",
+        destination: "/ecosystem/platforms-solutions/saas-platforms/brio",
+        permanent: false,
+      },
+      {
+        source: "/ecosystem/platforms-solutions/landingpage-esigniva",
+        destination: "/ecosystem/platforms-solutions/saas-platforms/esigniva",
+        permanent: false,
+      },
+      {
+        source: "/landingpage-homela",
+        destination: "/ecosystem/platforms-solutions/saas-platforms/homela",
+        permanent: false,
+      },
+      {
+        source: "/landingpage-brio",
+        destination: "/ecosystem/platforms-solutions/saas-platforms/brio",
+        permanent: false,
+      },
+      {
+        source: "/landingpage-esigniva",
+        destination: "/ecosystem/platforms-solutions/saas-platforms/esigniva",
+        permanent: false,
+      },
+      {
+        source: "/homela",
+        destination: "/ecosystem/platforms-solutions/saas-platforms/homela",
+        permanent: false,
+      },
+      {
+        source: "/brio",
+        destination: "/ecosystem/platforms-solutions/saas-platforms/brio",
+        permanent: false,
+      },
+      {
+        source: "/esigniva",
+        destination: "/ecosystem/platforms-solutions/saas-platforms/esigniva",
+        permanent: false,
+      },
+    ];
+  },
   async rewrites() {
     const backendUrl = (process.env.NEXT_PUBLIC_API_URL || "https://mediahub-backend-docker-hgh6hzgacraqbhb2.southindia-01.azurewebsites.net").replace(/\/$/, "");
     return [
