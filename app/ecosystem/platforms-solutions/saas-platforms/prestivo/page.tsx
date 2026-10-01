@@ -36,10 +36,10 @@ const A = {
   heroDash: a("hero/PRODUCT ILLUSTRATION UNDER HERO.webp", 3162, 2604),
   onePlatform: a("one-platform-complete-control/ONE PLATFORM. COMPLETE CONTROL..webp", 1347, 1263),
   faster: [
-    a("get-online-faster/01 — CREATE.webp", 845, 936),
-    a("get-online-faster/02 — CUSTOMIZE.webp", 845, 936),
-    a("get-online-faster/03 — ADD PRODUCTS.webp", 845, 936),
-    a("get-online-faster/04 — GO LIVE.webp", 845, 936),
+    a("get-online-faster/01 - CREATE.webp", 845, 936),
+    a("get-online-faster/02 - CUSTOMIZE.webp", 845, 936),
+    a("get-online-faster/03 - ADD PRODUCTS.webp", 845, 936),
+    a("get-online-faster/04 - GO LIVE.webp", 845, 936),
   ],
   central: a("centralized-store-management/CENTRALIZED STORE MANAGEMENT.webp", 2094, 1509),
   smart: a("smart-product-discovery/SMART PRODUCT DISCOVERY.webp", 1850, 1257),
@@ -108,6 +108,7 @@ function Pic({
       width={Math.round(W)}
       height={Math.round((W * asset.h) / asset.w)}
       quality={90}
+      unoptimized
       priority={priority}
       draggable={false}
       className={`select-none ${className}`}

@@ -261,6 +261,8 @@ function Art({
 
         quality={90}
 
+        unoptimized
+
         sizes={`(min-width: 1280px) ${dw}px, 100vw`}
 
         draggable={false}

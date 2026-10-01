@@ -88,62 +88,65 @@ export function FeaturedProducts() {
       {/* Glow highlight */}
       <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[800px] h-[350px] bg-rose-650/[0.02] rounded-full blur-[130px] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
+      <div className="max-w-7xl mx-auto w-full px-6 md:px-12 xl:px-8 relative z-10">
         <Reveal className="mb-16 text-center max-w-2xl mx-auto">
           <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight mb-5 text-white">
             Featured Products <span className="text-rose-500">Showcase</span>
           </h2>
         </Reveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          {products.map((prod) => (
-            <Link
-              key={prod.name}
-              href={prod.link}
-              className="bg-zinc-950/60 border border-white/[0.04] hover:border-rose-500/35 rounded-3xl p-6 transition-all duration-500 relative group overflow-hidden flex flex-col justify-between h-full hover:shadow-[0_12px_40px_rgba(244,63,94,0.08)] hover:-translate-y-1 block cursor-pointer"
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {products.map((prod, idx) => (
+            <div
+              key={idx}
+              className="group relative rounded-3xl border border-white/[0.05] bg-zinc-950/60 p-6 backdrop-blur-xl transition-all duration-500 hover:border-rose-500/20 hover:bg-zinc-900/40"
             >
-              {/* Corner Ambient Mesh */}
-              <div className="absolute -top-12 -right-12 w-32 h-32 bg-rose-600/[0.03] blur-[40px] rounded-full pointer-events-none transition-opacity duration-500 group-hover:opacity-100" />
-              
-              <div>
-                {/* Header Row */}
-                <div className="flex items-center justify-between mb-5 pb-4 border-b border-white/[0.04]">
-                  <div className="w-10 h-10 rounded-xl bg-white/[0.02] border border-white/[0.05] flex items-center justify-center overflow-hidden transition-all duration-300 relative group-hover:bg-white/[0.04] group-hover:border-white/[0.1]">
-                    <div className="relative w-6 h-6">
+              {/* Inner ambient glow */}
+              <div className="absolute inset-0 rounded-3xl bg-gradient-to-b from-white/[0.02] to-transparent pointer-events-none" />
+
+              <div className="relative z-10 flex flex-col justify-between h-full">
+                {/* Header (Logo & Link) */}
+                <div className="flex items-center justify-between mb-4">
+                  <div className="flex items-center gap-3">
+                    <div className="relative w-8 h-8 rounded-lg overflow-hidden flex items-center justify-center p-1 bg-zinc-900/80 border border-white/[0.05]">
                       <Image
                         src={prod.logo}
                         alt={`${prod.name} logo`}
                         fill
-                        className="object-contain"
+                        unoptimized
+                        className="object-contain p-1"
                       />
                     </div>
                   </div>
-                  <div className="w-7 h-7 rounded-full bg-white/[0.03] flex items-center justify-center group-hover:bg-rose-500/15 group-hover:text-rose-500 text-zinc-500 transition-colors">
-                    <ArrowUpRight size={15} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-                  </div>
+                  <Link href={prod.link}>
+                    <ArrowUpRight size={14} className="text-zinc-500 hover:text-rose-500 transition-colors cursor-pointer" />
+                  </Link>
                 </div>
 
-                {/* Title & Tagline */}
-                <h3 className="text-xl md:text-2xl font-semibold text-white uppercase tracking-wider mb-1 mt-1 group-hover:text-rose-400 transition-colors">
-                  {prod.name}
-                </h3>
-                <span className="block text-xs font-semibold text-rose-500 mb-4 line-clamp-1">
-                  {prod.tagline}
-                </span>
+                {/* Title & Description */}
+                <Link href={prod.link} className="inline-block">
+                  <h3 className="text-xl md:text-2xl font-semibold text-white uppercase tracking-wider mb-2 mt-1 hover:text-rose-400 group-hover:text-rose-400 transition-colors">
+                    {prod.name}
+                  </h3>
+                </Link>
 
                 {/* Image Wrapper */}
-                <div className="block relative w-full aspect-[16/10] overflow-hidden rounded-2xl border border-white/[0.03] group-hover:border-rose-500/15 bg-zinc-900/40 transition-all duration-500">
+                <Link
+                  href={prod.link}
+                  className="block relative w-full aspect-[16/10] overflow-hidden rounded-2xl border border-white/[0.03] group-hover:border-rose-500/15 bg-zinc-900/40 transition-all duration-500"
+                >
                   <Image
                     src={prod.image}
                     alt={prod.name}
                     fill
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
-                    className="object-cover object-top opacity-85 group-hover:opacity-100 group-hover:scale-[1.04] transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]"
+                    unoptimized
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    className="object-cover object-top opacity-80 group-hover:opacity-100 group-hover:scale-[1.04] transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/80 via-transparent to-transparent pointer-events-none" />
-                </div>
+                </Link>
               </div>
-            </Link>
+            </div>
           ))}
         </div>
       </div>

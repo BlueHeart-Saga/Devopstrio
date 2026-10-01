@@ -162,6 +162,7 @@ function Pic({
         width={Math.round(W)}
         height={Math.round(H)}
         quality={90}
+        unoptimized
         priority={priority}
         draggable={false}
         className={`block h-auto w-full max-w-none select-none ${className}`}

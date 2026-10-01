@@ -142,6 +142,7 @@ function Visual({
         alt={alt}
         width={w}
         height={h}
+        unoptimized
         priority={priority}
         sizes={`${Math.round(w / 3)}px`}
         draggable={false}
@@ -206,6 +207,7 @@ function Hero() {
               alt="Brio"
               width={109}
               height={42}
+              unoptimized
               priority
               className="h-auto w-[115px] sm:w-[130px] lg:w-[140px] object-contain"
             />
@@ -465,6 +467,7 @@ function AIToolkit() {
                   alt={i >= TOOLS.length ? "" : tool.alt}
                   width={996}
                   height={1419}
+                  unoptimized
                   sizes="332px"
                   draggable={false}
                   className="block h-auto w-[332px] max-w-none select-none"

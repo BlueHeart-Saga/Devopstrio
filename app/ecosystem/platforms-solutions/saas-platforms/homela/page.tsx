@@ -137,6 +137,7 @@ function GlowImage({
         height={natH}
         priority={priority}
         quality={90}
+        unoptimized
         sizes={`(min-width: 1280px) ${maxW}px, 100vw`}
         className="block h-auto w-full"
       />
@@ -388,6 +389,7 @@ const HomelaExpressInterest = () => (
             width={1812}
             height={1578}
             quality={90}
+            unoptimized
             sizes="(min-width: 1024px) 500px, 100vw"
             className="h-auto w-full"
           />
@@ -402,6 +404,7 @@ const HomelaExpressInterest = () => (
             width={113}
             height={292}
             quality={90}
+            unoptimized
             className="h-[292.3px] w-[112.66px] object-contain"
           />
 </div>
@@ -415,6 +418,7 @@ const HomelaExpressInterest = () => (
             width={1750}
             height={1743}
             quality={90}
+            unoptimized
             sizes="(min-width: 1024px) 487px, 100vw"
             className="h-auto w-full"
           />
@@ -570,6 +574,7 @@ const HomelaBuiltForEveryRole = () => {
               width={role.cardSize[0]}
               height={role.cardSize[1]}
               quality={90}
+              unoptimized
               className="h-auto w-full"
             />
           </div>

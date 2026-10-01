@@ -63,6 +63,7 @@ function Pic({ a, w, trim = true, priority, className = "" }: { a: Asset; w: num
       width={Math.round(w)}
       height={Math.round(a.h * s)}
       quality={90}
+      unoptimized
       priority={priority}
       draggable={false}
       className={`block h-auto max-w-none select-none ${className}`}
@@ -354,6 +355,7 @@ function Explore() {
                   alt={s.t}
                   width={1244}
                   height={1089}
+                  unoptimized
                   className="w-full h-auto object-cover select-none rounded-2xl"
                   draggable={false}
                 />
