@@ -1,6 +1,9 @@
+"use client";
+
 import React from "react";
 import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 const caseStudies = [
   {
@@ -91,31 +94,53 @@ export const LeadershipImpactDeliver = () => {
           </h3>
         </div>
 
-        {/* Real Business Impact Numbers (Open Borderless Layout with Viewable Font Size) */}
+        {/* Real Business Impact Numbers */}
         <div className="relative py-6">
           {/* Ambient Lighting Behind Numbers */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-4xl h-48 bg-rose-600/5 rounded-full blur-[100px] pointer-events-none" />
 
-          {/* 4 Open Borderless Impact Stats */}
-          <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 text-center">
-            {impactStats.map((stat, i) => (
-              <div key={i} className="space-y-2 group">
-                <p className="text-5xl sm:text-6xl lg:text-7xl font-semibold font-sans tracking-tight text-rose-500 leading-none mb-3 group-hover:scale-105 transition-transform duration-300">
-                  {stat.value}
-                </p>
-                <h4 className="text-lg sm:text-xl font-semibold text-white tracking-normal font-sans group-hover:text-rose-500 transition-colors">
-                  {stat.label}
-                </h4>
-              </div>
-            ))}
+          {/* 4 Impact Stats */}
+          <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-0 text-center">
+            {impactStats.map((stat, i) => {
+              const isLast = i === impactStats.length - 1;
+              return (
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: i * 0.1 }}
+                  key={i}
+                  className={`flex flex-col items-center justify-center p-8 group border-y border-rose-500 hover:bg-zinc-950/50 transition-colors ${
+                    isLast
+                      ? "bg-gradient-to-br from-rose-600 to-rose-800 border-rose-600 hover:bg-gradient-to-br hover:from-rose-500 hover:to-rose-700"
+                      : "bg-black"
+                  }`}
+                >
+                  <p
+                    className={`text-5xl sm:text-6xl font-semibold font-sans tracking-tight mb-2 group-hover:scale-105 transition-transform duration-300 ${
+                      isLast ? "text-white" : "text-rose-500"
+                    }`}
+                  >
+                    {stat.value}
+                  </p>
+                  <h4
+                    className={`text-lg font-bold tracking-normal font-sans mb-3 transition-colors ${
+                      isLast ? "text-white" : "text-white group-hover:text-rose-400"
+                    }`}
+                  >
+                    {stat.label}
+                  </h4>
+                  <p
+                    className={`text-sm max-w-xs mx-auto ${
+                      isLast ? "text-rose-100" : "text-zinc-400"
+                    }`}
+                  >
+                    {stat.subtext}
+                  </p>
+                </motion.div>
+              );
+            })}
           </div>
-
-          {/* Bottom Statement (No boxing) */}
-          {/* <div className="relative z-10 mt-14 sm:mt-20 text-center">
-            <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-serif italic text-zinc-100 leading-snug tracking-tight max-w-4xl mx-auto drop-shadow-sm">
-              &ldquo;Built to perform. Designed to scale. Delivered to create impact.&rdquo;
-            </p>
-          </div> */}
         </div>
 
         {/* Real Case Studies block commented out clean */}

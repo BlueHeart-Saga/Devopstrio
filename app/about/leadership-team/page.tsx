@@ -14,6 +14,7 @@ import { IndustryDomainLeadership } from "@/sections/about/leadership/IndustryDo
 import { GlobalDeliveryStrength } from "@/sections/about/leadership/GlobalDeliveryStrength";
 import { GlobalEngineeringTeams } from "@/sections/about/leadership/GlobalEngineeringTeams";
 import { LeadershipImpactDeliver } from "@/sections/about/leadership/LeadershipImpactDeliver";
+import { LeadershipEnterpriseShowcase } from "@/sections/about/leadership/LeadershipEnterpriseShowcase";
 import { LeadershipIndustryInsights } from "@/sections/about/leadership/LeadershipIndustryInsights";
 import { LeadershipCareersCTA } from "@/sections/about/leadership/LeadershipCareersCTA";
 
@@ -122,6 +123,9 @@ export default function LeadershipTeamPage() {
 
       {/* 6. PILLAR 03: DELIVER — Leaders Who Deliver */}
       <LeadershipImpactDeliver />
+
+      {/* Enterprise AI Engineering Showcase Carousel */}
+      <LeadershipEnterpriseShowcase />
 
       {/* Global Presence */}
       {/*

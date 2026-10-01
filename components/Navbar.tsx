@@ -321,6 +321,7 @@ const industriesList = [
 ];
 
 const aboutList = [
+  { name: "About Us", desc: "Discover our vision, engineering philosophy, and enterprise capabilities.", href: "/about" },
   { name: "Company Overview", desc: "Our history, mission, core values, and corporate strategy.", href: "/about/company-overview" },
   { name: "Leadership & Team", desc: "Meet the executive board, advisors, and principal architects.", href: "/about/leadership-team" },
   { name: "Our Culture & People", desc: "Explore our co-engineering culture, team events, and active careers.", href: "/about/our-culture-people" },
@@ -953,7 +954,7 @@ export function Navbar() {
                       {/* 2 Columns */}
                       <div className="grid grid-cols-2 gap-x-8">
                         
-                        {/* 1st Column: AI Related Services */}
+                        {/* 1st Column: AI & Cloud Related Services */}
                         <div className="flex flex-col gap-0.5">
                           {[
                             { name: "AI Services", href: "/services/ai-data-innovation" },
@@ -961,7 +962,8 @@ export function Navbar() {
                             { name: "AI Modernization", href: "/services/ai-modernization" },
                             { name: "Generative AI Solutions", href: "/services/ai-data-innovation/generative-ai-solutions" },
                             { name: "AI Agents & Workflows", href: "/services/ai-data-innovation/ai-agents-automation" },
-                            { name: "Data Services", href: "/services/data-engineering" }
+                            { name: "Data Services", href: "/services/data-engineering" },
+                            { name: "Cloud Services", href: "/services/cloud-services" },
                           ].map((item) => (
                             <Link
                               key={item.name}
@@ -976,15 +978,16 @@ export function Navbar() {
                           ))}
                         </div>
 
-                        {/* 2nd Column: All Core Services */}
+                        {/* 2nd Column: Core Engineering & Consulting Services */}
                         <div className="flex flex-col gap-0.5 border-l border-zinc-800/80 pl-8">
                           {[
-                            { name: "Cloud Services", href: "/services/cloud-services" },
                             { name: "DevOps & Automation", href: "/services/devops-automation" },
                             { name: "Cybersecurity", href: "/services/cybersecurity" },
                             { name: "Software Development", href: "/services/software-development" },
                             { name: "Digital Transformation", href: "/services/digital-transformation" },
                             { name: "Managed Services", href: "/services/managed-services" },
+                            { name: "QA & Testing", href: "/services/qa-testing" },
+                            { name: "IT Consulting", href: "/services/it-consulting" },
                           ].map((item) => (
                             <Link
                               key={item.name}
@@ -1389,13 +1392,13 @@ export function Navbar() {
             <div
               onMouseEnter={() => setActiveMenu("about")}
             >
-              <Link
-                href="/about"
-                onClick={() => setActiveMenu(null)}
+              <button
+                type="button"
+                onClick={() => setActiveMenu(activeMenu === "about" ? null : "about")}
                 className="flex items-center gap-1 xl:gap-1.5 px-2 xl:px-3 py-1.5 text-base xl:text-[17px] 2xl:text-[19px] font-semibold tracking-[0.3px] text-white hover:text-rose-500 transition-colors"
               >
                 About <ChevronDown size={15} className={`transition-transform duration-300 ${activeMenu === "about" ? "rotate-180" : ""}`} />
-              </Link>
+              </button>
               {activeMenu === "about" && (
                 <div className="absolute left-1/2 -translate-x-1/2 top-full mt-3 w-[1200px] max-w-[95vw] pointer-events-auto z-50">
                   <div className="animate-fadeIn bg-black border border-zinc-900 rounded-2xl pt-8 px-8 pb-5 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.9)] grid grid-cols-[220px_1fr] xl:grid-cols-[280px_1fr] gap-x-4 xl:gap-x-8 gap-y-3 text-left relative">
@@ -1641,13 +1644,6 @@ export function Navbar() {
               <div>
                 <span className="text-xs uppercase tracking-wider text-rose-500 block mb-1.5 font-sans font-bold">About</span>
                 <div className="flex flex-col gap-0.5 pl-2">
-                  <Link
-                    href="/about"
-                    onClick={() => setMobileOpen(false)}
-                    className="text-sm sm:text-base text-white hover:text-rose-400 font-normal transition-all py-0.5 leading-snug"
-                  >
-                    About Overview
-                  </Link>
                   {aboutList.map((item) => (
                     <Link
                       key={item.name}

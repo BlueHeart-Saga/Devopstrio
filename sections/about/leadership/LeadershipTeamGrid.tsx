@@ -92,7 +92,7 @@ const leadershipTeamData: Leader[] = [
 
 export const LeadershipTeamGrid: React.FC = () => {
   return (
-    <section className="py-16 sm:py-20 bg-black text-white relative overflow-hidden font-sans">
+    <section id="executive-leadership" className="py-16 sm:py-20 bg-black text-white relative overflow-hidden font-sans scroll-mt-10">
       {/* Ambient background glow */}
       <div className="absolute top-1/3 right-1/4 w-[500px] h-[500px] bg-rose-600/5 rounded-full blur-[160px] pointer-events-none" />
 
