@@ -469,7 +469,7 @@ function Hero() {
             </p>
             <div className="mt-[71px] flex gap-[10px]">
               <Link
-                href="/contact"
+                href="/contact#contact-form"
                 className="inline-flex h-[48px] w-[188px] items-center justify-center gap-1 rounded-[4px] text-[13px] leading-[18px] font-semibold text-white transition-transform hover:-translate-y-0.5"
                 style={{ ...INTER, background: BLUE }}
               >
@@ -1087,7 +1087,7 @@ function Cta() {
               </p>
             </div>
             <Link
-              href="/contact"
+              href="/contact#contact-form"
               className="shrink-0 inline-flex h-[62px] w-[296px] items-center justify-center gap-2 rounded-[10px] bg-[#F8FAFC] text-[21.7px] leading-[24.8px] font-medium tracking-[0.22px] text-black transition-transform hover:-translate-y-1"
               style={INTER}
             >

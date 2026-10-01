@@ -133,7 +133,7 @@ function Hero() {
             Connect with verified solicitors across immigration, family, criminal, property, corporate, employment and more.
           </p>
           <div className="mt-8 flex flex-wrap gap-5">
-            <Link href="/contact" className={`${lift} ${BTN_CLS} text-white`} style={{ background: BTN }}>
+            <Link href="/contact#contact-form" className={`${lift} ${BTN_CLS} text-white`} style={{ background: BTN }}>
               Get Started <ArrowRight size={16} />
             </Link>
             <a href="https://justivon.devopstrio.co.uk/" target="_blank" rel="noopener noreferrer" className={`${lift} ${BTN_CLS} bg-white text-[#2B2723]`}>
@@ -488,7 +488,7 @@ function CTA() {
                 Find the right professional, make informed connections, and keep your legal journey organized in one place.
               </p>
             </div>
-            <Link href="/contact" className={`${lift} shrink-0 inline-flex items-center gap-2 rounded-lg px-6 h-12 text-[13px] leading-[18px] font-semibold tracking-[0.13px] text-white`} style={{ background: BTN }}>
+            <Link href="/contact#contact-form" className={`${lift} shrink-0 inline-flex items-center gap-2 rounded-lg px-6 h-12 text-[13px] leading-[18px] font-semibold tracking-[0.13px] text-white`} style={{ background: BTN }}>
               Get Started Today <ArrowRight size={16} />
             </Link>
           </div>

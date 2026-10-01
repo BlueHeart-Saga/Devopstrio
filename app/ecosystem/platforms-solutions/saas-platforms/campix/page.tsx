@@ -287,7 +287,7 @@ function HeroSection() {
               Explore Campix <ArrowRight className="w-4 h-4" />
             </a>
             <Link
-              href="/contact"
+              href="/contact#contact-form"
               className="inline-flex items-center gap-2 h-[42px] px-6 rounded-md bg-white text-black text-[14px] font-medium transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_0_30px_rgba(255,255,255,0.45)]"
             >
               Get Started <ArrowRight className="w-4 h-4" />
@@ -430,7 +430,7 @@ function CtaBanner() {
             </p>
           </div>
           <Link
-            href="/contact"
+            href="/contact#contact-form"
             className="shrink-0 inline-flex items-center gap-3 h-[62px] px-9 rounded-[12px] bg-white text-black text-[20px] font-medium shadow-lg transition-all duration-300 hover:-translate-y-1 hover:bg-black hover:text-white"
           >
             Get Started Today <ArrowRight className="w-5 h-5" />

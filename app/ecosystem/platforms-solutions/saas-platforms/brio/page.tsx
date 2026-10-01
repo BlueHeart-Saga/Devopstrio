@@ -236,7 +236,7 @@ function Hero() {
             </a>
 
             <Link
-              href="/contact"
+              href="/contact#contact-form"
               className="inline-flex h-12 w-[224px] rounded-[5px] bg-gradient-to-r from-[#7EE0C6] to-[#3B62D9] p-px transition-transform duration-300 hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#3B82F6]"
             >
               <span className="flex h-full w-full items-center justify-center gap-2 rounded-[4px] bg-black text-[13px] font-semibold leading-[18px] tracking-[0.13px] text-white">
@@ -556,7 +556,7 @@ function FinalCTA() {
             </div>
 
             <Link
-              href="/contact"
+              href="/contact#contact-form"
               className="inline-flex h-[62px] w-full shrink-0 items-center justify-center gap-2 rounded-lg bg-[#F7F9FB] text-[20px] font-medium leading-[28px] text-[#0B0B0F] transition-transform duration-300 hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:w-[296px]"
             >
               Get Started Today

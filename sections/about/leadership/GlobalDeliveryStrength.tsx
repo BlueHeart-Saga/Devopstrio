@@ -134,7 +134,7 @@ export const GlobalDeliveryStrength: React.FC = () => {
                 {/* Rectangular Image Container (1487x1058 exact ratio) */}
                 <div className="relative w-full aspect-[1487/1058] bg-zinc-950 overflow-hidden">
                   <img
-                    src={`${member.image}?v=3`}
+                    src={`${member.image}?v=4`}
                     alt={member.name}
                     className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
                     loading="lazy"

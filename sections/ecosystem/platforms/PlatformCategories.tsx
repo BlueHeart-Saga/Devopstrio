@@ -23,15 +23,15 @@ const categoryBgImages: Record<string, string> = {
 };
 
 const platformLinks: Record<string, string> = {
-  "Humanex": "/ecosystem/platforms-solutions/saas-platforms/humanex",
-  "Brio": "/ecosystem/platforms-solutions/saas-platforms/brio",
-  "eSigniva": "/ecosystem/platforms-solutions/saas-platforms/esigniva",
-  "SafeSign": "/ecosystem/platforms-solutions/saas-platforms/esigniva",
-  "CareSuite": "/ecosystem/platforms-solutions/saas-platforms/caresuite",
-  "Homela": "/ecosystem/platforms-solutions/saas-platforms/homela",
-  "Campix": "/ecosystem/platforms-solutions/saas-platforms/campix",
-  "Justivon": "/ecosystem/platforms-solutions/saas-platforms/justivon",
-  "Prestivo": "/ecosystem/platforms-solutions/saas-platforms/prestivo",
+  "Humanex": "https://humanex.devopstrio.co.uk/",
+  "Brio": "https://brio.devopstrio.co.uk/",
+  "eSigniva": "https://safesign.devopstrio.co.uk/",
+  "SafeSign": "https://safesign.devopstrio.co.uk/",
+  "CareSuite": "https://caresuite.devopstrio.co.uk/",
+  "Homela": "https://homela.devopstrio.co.uk/",
+  "Campix": "https://campix.devopstrio.co.uk/",
+  "Justivon": "https://justivon.devopstrio.co.uk/",
+  "Prestivo": "https://prestivo.devopstrio.co.uk/",
 };
 
 export function PlatformCategories() {

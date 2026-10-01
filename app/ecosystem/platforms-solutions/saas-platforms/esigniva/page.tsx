@@ -181,7 +181,7 @@ const Hero = () => (
           </Reveal>
           <Reveal delay={0.18}>
             <div className="mt-[26px] flex flex-wrap gap-4">
-              <Link href="/contact" className="group inline-flex h-[43px] items-center gap-2 rounded-lg bg-[#26756E] px-[26px] text-[13px] leading-[18px] font-semibold tracking-[0.13px] text-white shadow-[0_8px_28px_rgba(45,212,191,0.25)] transition hover:-translate-y-0.5 hover:bg-[#2C877F]">
+              <Link href="/contact#contact-form" className="group inline-flex h-[43px] items-center gap-2 rounded-lg bg-[#26756E] px-[26px] text-[13px] leading-[18px] font-semibold tracking-[0.13px] text-white shadow-[0_8px_28px_rgba(45,212,191,0.25)] transition hover:-translate-y-0.5 hover:bg-[#2C877F]">
                 Get Started <ArrowRight className="h-[14px] w-[14px] transition group-hover:translate-x-0.5" />
               </Link>
               <a href="https://safesign.devopstrio.co.uk/" target="_blank" rel="noopener noreferrer" className="inline-flex h-[43px] items-center gap-2 rounded-lg border border-white px-[22px] text-[13px] leading-[18px] font-semibold tracking-[0.13px] text-white transition hover:-translate-y-0.5 hover:bg-white/10">
@@ -594,7 +594,7 @@ const Cta = () => (
             Create, send, sign, and manage documents with a simpler, faster, and more reliable digital signing experience.
           </p>
         </div>
-        <Link href="/contact" className="group inline-flex h-[61px] shrink-0 items-center justify-center gap-2.5 self-start rounded-[10px] bg-[#F8FAFC] px-[30px] text-[21.7px] leading-[24.8px] font-medium tracking-[0.22px] text-black transition hover:-translate-y-0.5 hover:bg-white xl:self-auto">
+        <Link href="/contact#contact-form" className="group inline-flex h-[61px] shrink-0 items-center justify-center gap-2.5 self-start rounded-[10px] bg-[#F8FAFC] px-[30px] text-[21.7px] leading-[24.8px] font-medium tracking-[0.22px] text-black transition hover:-translate-y-0.5 hover:bg-white xl:self-auto">
           Get Started Today <ArrowRight className="h-6 w-6 transition group-hover:translate-x-1" />
         </Link>
       </Reveal>

@@ -257,7 +257,7 @@ function Hero() {
               Explore CareSuite
             </a>
             <Link
-              href="/contact"
+              href="/contact#contact-form"
               className="inline-flex h-12 w-[190px] items-center justify-center gap-2 rounded-md bg-white text-[13px] font-semibold leading-[18px] tracking-[0.13px] text-[#282723] transition-transform duration-300 hover:-translate-y-1"
             >
               <PlayCircle size={16} strokeWidth={2} style={{ color: GREEN }} />
@@ -765,7 +765,7 @@ function Cta() {
             </div>
 
             <Link
-              href="/contact"
+              href="/contact#contact-form"
               className="inline-flex h-[61px] w-full shrink-0 items-center justify-center gap-3 rounded-[10px] bg-[#F7F9FB] text-[21.7px] font-medium leading-[24.8px] tracking-[0.22px] text-black transition-transform duration-300 hover:-translate-y-1 md:w-[295px]"
             >
               Get Started Today

@@ -41,7 +41,7 @@ const industryLeadershipData: IndustryLeader[] = [
   // Row 2 (5 to 8)
   {
     id: "ind-5",
-    name: "Pradeep Verma",
+    name: "Gayathri Raghuram",
     role: "Industry Principal — Manufacturing & Energy",
     image: "/webp/assets/About-page/leadership/v2/dev_emp_024.webp",
   },
@@ -95,7 +95,7 @@ export const IndustryDomainLeadership: React.FC = () => {
                 {/* Rectangular Image Container (1487x1058 exact ratio) */}
                 <div className="relative w-full aspect-[1487/1058] bg-zinc-950 overflow-hidden">
                   <img
-                    src={`${leader.image}?v=3`}
+                    src={`${leader.image}?v=4`}
                     alt={leader.name}
                     className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
                     loading="lazy"

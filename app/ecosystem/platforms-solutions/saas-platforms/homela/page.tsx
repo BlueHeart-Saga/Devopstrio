@@ -224,7 +224,7 @@ const HomelaHero = () => (
         </p>
         <div className="mt-4 flex flex-wrap items-center justify-center gap-4">
           <Link
-            href="/contact"
+            href="/contact#contact-form"
             className="group inline-flex h-[43px] items-center gap-2 rounded-lg bg-[#BA0035] px-[26px] text-[13px] leading-[18px] font-semibold text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-[#D4003C]"
           >
             Get Started <ArrowRight className="h-[14px] w-[14px] transition group-hover:translate-x-0.5" />
@@ -660,7 +660,7 @@ const HomelaCTA = () => (
             </p>
           </div>
 
-          <Link href="/contact" className="inline-flex h-[50px] w-full shrink-0 items-center justify-center gap-3 rounded-full bg-white px-8 text-[16px] font-medium leading-[24.8px] tracking-[0.22px] text-black shadow-xl transition-all hover:bg-zinc-100 sm:w-auto sm:text-[18px]">
+          <Link href="/contact#contact-form" className="inline-flex h-[50px] w-full shrink-0 items-center justify-center gap-3 rounded-full bg-white px-8 text-[16px] font-medium leading-[24.8px] tracking-[0.22px] text-black shadow-xl transition-all hover:bg-zinc-100 sm:w-auto sm:text-[18px]">
             <span>Get Started Today</span>
             <ArrowRight className="h-5 w-5" />
           </Link>
