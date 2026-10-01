@@ -321,7 +321,7 @@ const industriesList = [
 ];
 
 const aboutList = [
-  { name: "About Us", desc: "Discover our vision, engineering philosophy, and enterprise capabilities.", href: "/about" },
+  { name: "Our Story", desc: "Discover our vision, engineering philosophy, and enterprise capabilities.", href: "/about" },
   { name: "Company Overview", desc: "Our history, mission, core values, and corporate strategy.", href: "/about/company-overview" },
   { name: "Leadership & Team", desc: "Meet the executive board, advisors, and principal architects.", href: "/about/leadership-team" },
   { name: "Our Culture & People", desc: "Explore our co-engineering culture, team events, and active careers.", href: "/about/our-culture-people" },
@@ -962,8 +962,8 @@ export function Navbar() {
                             { name: "AI Modernization", href: "/services/ai-modernization" },
                             { name: "Generative AI Solutions", href: "/services/ai-data-innovation/generative-ai-solutions" },
                             { name: "AI Agents & Workflows", href: "/services/ai-data-innovation/ai-agents-automation" },
-                            { name: "Data Services", href: "/services/data-engineering" },
                             { name: "Cloud Services", href: "/services/cloud-services" },
+                            { name: "Managed Services", href: "/services/managed-services" },
                           ].map((item) => (
                             <Link
                               key={item.name}
@@ -985,7 +985,7 @@ export function Navbar() {
                             { name: "Cybersecurity", href: "/services/cybersecurity" },
                             { name: "Software Development", href: "/services/software-development" },
                             { name: "Digital Transformation", href: "/services/digital-transformation" },
-                            { name: "Managed Services", href: "/services/managed-services" },
+                            { name: "Data Services", href: "/services/data-engineering" },
                             { name: "QA & Testing", href: "/services/qa-testing" },
                             { name: "IT Consulting", href: "/services/it-consulting" },
                           ].map((item) => (

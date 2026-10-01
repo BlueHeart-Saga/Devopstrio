@@ -55,8 +55,8 @@ const A = {
   ],
   biz: [
     a("flexible-for-different-business-types/Retail Businesses.webp", 1071, 669),
-    a("flexible-for-different-business-types/Startups & Scaleups.webp", 1071, 669),
-    a("flexible-for-different-business-types/Local Brick-&-Mortar.webp", 1071, 669),
+    a("flexible-for-different-business-types/Startups-and-Scaleups.webp", 1071, 669),
+    a("flexible-for-different-business-types/Local-Brick-and-Mortar.webp", 1071, 669),
     a("flexible-for-different-business-types/Solo Entrepreneurs.webp", 1071, 669),
     a("flexible-for-different-business-types/B2B Wholesalers.webp", 1071, 669),
     a("flexible-for-different-business-types/Global Sellers.webp", 1071, 669),
@@ -103,7 +103,7 @@ function Pic({
   const W = w ?? asset.w / 3;
   return (
     <Image
-      src={encodeURI(asset.p)}
+      src={asset.p}
       alt={alt}
       width={Math.round(W)}
       height={Math.round((W * asset.h) / asset.w)}

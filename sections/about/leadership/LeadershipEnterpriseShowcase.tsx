@@ -11,46 +11,52 @@ import { ArrowRight, ArrowLeft } from "lucide-react";
 
 const showcaseItems = [
   {
-    title: "AI & Data Innovation",
+    title: "AI Services",
     description: "Transform your enterprise with cutting-edge AI solutions, from machine learning engineering to agentic automation and GenAI copilots.",
     link: "https://devopstrio.co.uk/services/ai-data-innovation",
-    image: "/webp/assets/Services-Page/Comprehensive-AI-Services-For-Enterprises/Generative-AI-and-Copilots.webp",
+    image: "/webp/assets/About-page/leadership/showcase/ai-services.webp",
   },
   {
-    title: "Cloud Services & Infrastructure",
+    title: "Cloud Services",
     description: "Architect resilient multi-cloud environments with automated provisioning, FinOps governance, and zero-downtime deployments.",
     link: "https://devopstrio.co.uk/services/cloud-services",
-    image: "/webp/assets/Services-Page/Capability-Overview-section-images/Frame-108.webp",
+    image: "/webp/assets/About-page/leadership/showcase/cloud-services.webp",
   },
   {
-    title: "Explore All Services",
-    description: "Discover our complete portfolio of engineering services spanning AI, Cloud, DevOps, Quality Engineering, and Digital Transformation.",
-    link: "https://devopstrio.co.uk/services/explore",
-    image: "/webp/assets/Services-Page/Capability-Overview-section-images/Frame-110.webp",
+    title: "Managed Services",
+    description: "Ensure high availability, proactive monitoring, and 24x7 enterprise SRE operations across hybrid and multi-cloud environments.",
+    link: "https://devopstrio-global-qa-e2gehkbdfmbfgddy.southindia-01.azurewebsites.net/services/managed-services",
+    image: "/webp/assets/About-page/leadership/showcase/managed-services.webp",
   },
   {
     title: "Careers at Devopstrio",
     description: "Join a global team of 525+ engineers building next-generation enterprise solutions. Shape your career in AI, Cloud, and DevOps.",
     link: "https://devopstrio.co.uk/careers",
-    image: "/webp/assets/careers/CTA.webp",
+    image: "/webp/assets/About-page/leadership/showcase/careers.webp",
   },
   {
-    title: "Partnerships & Certifications",
+    title: "Partnerships",
     description: "See how we collaborate with technology leaders like AWS, Azure, and Google Cloud to deliver certified, enterprise-grade solutions.",
     link: "https://devopstrio.co.uk/about/partnerships-certifications",
-    image: "/webp/assets/About-page/overview/getaward.webp",
+    image: "/webp/assets/About-page/leadership/showcase/partnerships.webp",
   },
   {
     title: "Our Culture & People",
     description: "Experience an engineering culture built on innovation, inclusion, and continuous learning across our global delivery centers.",
     link: "https://devopstrio.co.uk/about/our-culture-people",
-    image: "/webp/assets/About-page/life-at-devopstrio/hero.webp",
+    image: "/webp/assets/About-page/leadership/showcase/our-culture.webp",
   },
   {
     title: "Global Internship Programme",
     description: "Launch your tech career with hands-on experience in enterprise AI, cloud architecture, and DevOps engineering at scale.",
     link: "https://devopstrio.co.uk/about/global-internship",
-    image: "/webp/assets/careers/banner/internbanner.webp",
+    image: "/webp/assets/About-page/leadership/showcase/global-internship.webp",
+  },
+  {
+    title: "Explore All Services",
+    description: "Discover our complete portfolio of engineering services spanning AI, Cloud, DevOps, Quality Engineering, and Digital Transformation.",
+    link: "https://devopstrio.co.uk/services/explore",
+    image: "/webp/assets/About-page/leadership/showcase/explore-services.webp",
   },
 ];
 

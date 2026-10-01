@@ -30,7 +30,7 @@ const BASE = "/webp/assets/Home-page/caresuite";
 
 type Asset = { src: string; w: number; h: number; t?: number; b?: number };
 const a = (dir: string, file: string, w: number, h: number, t = 0, b = 0): Asset => ({
-  src: `${BASE}/${dir}/${encodeURIComponent(file)}`,
+  src: `${BASE}/${dir}/${file}`,
   w,
   h,
   t,
@@ -45,7 +45,7 @@ const A = {
   appointment: a("appointment-management", "APPOINTMENT MANAGEMENT.webp", 3567, 1203, 1, 9),
   mobile: a(
     "patient-wellness-hub",
-    "Mobile Phone Showcase + Floating Snippets (7 cols).webp",
+    "Mobile-Phone-Showcase-Floating-Snippets.webp",
     2471,
     2458,
     146,
@@ -58,7 +58,7 @@ const A = {
   nurse: a("role-based-collaboration", "nurse.webp", 2760, 918, 2, 22),
   lab: a("role-based-collaboration", "lab.webp", 2760, 918, 2, 22),
   pharmacy: a("role-based-collaboration", "pharmacy.webp", 2760, 918, 2, 22),
-  diagnostic: a("diagnostic-dispensing", "DIAGNOSTIC & DISPENSING.webp", 3582, 1464, 1, 9),
+  diagnostic: a("diagnostic-dispensing", "DIAGNOSTIC-AND-DISPENSING.webp", 3582, 1464, 1, 9),
   data: a("data-protection", "DATA PROTECTION.webp", 1490, 1456, 74, 16),
 };
 

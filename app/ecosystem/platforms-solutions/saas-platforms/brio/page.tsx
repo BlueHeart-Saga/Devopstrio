@@ -27,7 +27,7 @@ const A = {
   collab: `${BASE}/campaign-collaboration/CAMPAIGN COLLABORATION.webp`,
   settlement: `${BASE}/automated-settlement/AUTOMATED SETTLEMENT.webp`,
   profiles: `${BASE}/creator-profiles/CREATOR PROFILES.webp`,
-  attribution: `${BASE}/predictive-attribution-telemetry/PREDICTIVE ATTRIBUTION & TELEMETRY.webp`,
+  attribution: `${BASE}/predictive-attribution-telemetry/PREDICTIVE-ATTRIBUTION-AND-TELEMETRY.webp`,
 };
 
 const TOOLKIT_DIR = `${BASE}/ai-engine-toolkit-architecture`;

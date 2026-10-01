@@ -122,24 +122,24 @@ function Ico({ i, className = "", size }: { i: (typeof ICON)[keyof typeof ICON];
 const HERO = img("hero", "hero (1).webp", 3203, 2453, [410, 68, 89, 288], 0.334, "eSigniva signing a document on a tablet");
 const WHAT = img("what-is-esigniva", "WHAT IS ESIGNIVA_.webp", 3065, 2685, [407, 278, 0, 277], 0.335, "eSigniva document editor with signature fields");
 const HOW = [
-  img("how-esigniva-works", "Build & Smart Upload.webp", 3323, 2964, [340, 278, 0, 277], 0.334, "AI field detection on an uploaded agreement"),
-  img("how-esigniva-works", "Choose Recipients & Smart Order.webp", 3014, 3018, [0, 283, 333, 282], 0.335, "Set signing order dialog"),
-  img("how-esigniva-works", "Send, Track & Manage.webp", 2939, 3114, [321, 283, 0, 283], 0.335, "Recipient details and tracking"),
+  img("how-esigniva-works", "Build-and-Smart-Upload.webp", 3323, 2964, [340, 278, 0, 277], 0.334, "AI field detection on an uploaded agreement"),
+  img("how-esigniva-works", "Choose-Recipients-and-Smart-Order.webp", 3014, 3018, [0, 283, 333, 282], 0.335, "Set signing order dialog"),
+  img("how-esigniva-works", "Send-Track-and-Manage.webp", 2939, 3114, [321, 283, 0, 283], 0.335, "Recipient details and tracking"),
 ];
 const SMART = img("smart-builder-studio", "SMART BUILDER STUDIO.webp", 3603, 2714, [0, 9, 19, 75], 0.3335, "Smart builder studio with standard fields and inspector");
 const SIGN = img("signing-workflow", "SIGNING WORKFLOW.webp", 3798, 1740, [74, 96, 74, 128], 0.288, "Document owner, reviewer, signer and observer roles");
 const DYN = img("dynamic-device-responsive-engine", "DYNAMIC DEVICE RESPONSIVE ENGINE (2).webp", 3800, 2198, [86, 227, 387, 225], 0.334, "Agreement on laptop, tablet and phone");
 const TELE = img("real-time-telemetry", "REAL-TIME TELEMETRY (1) (1).webp", 2523, 2577, [248, 278, 0, 249], 0.334, "Document list with live activity timeline");
-const DOC = img("document-management", "DOCUMENT MANAGEMENT.webp", 3574, 1572, [6, 3, 13, 7], 0.334, "Recent agreements repository");
-const SEC_IMG = img("security-document-trust", "SECURITY & DOCUMENT TRUST (3).webp", 2938, 3571, [291, 354, 292, 353], 0.264, "Verified partnership agreement with security badges");
+const DOC = img("document-management", "DOCUMENT-MANAGEMENT.webp", 3574, 1572, [6, 3, 13, 7], 0.334, "Recent agreements repository");
+const SEC_IMG = img("security-document-trust", "SECURITY-AND-DOCUMENT-TRUST.webp", 2938, 3571, [291, 354, 292, 353], 0.264, "Verified partnership agreement with security badges");
 const CARDS = [
-  "CARD 1_ HR & Recruitment.webp",
-  "CARD 2_ Legal & Compliance.webp",
-  "CARD 3_ Sales Teams.webp",
-  "CARD 4_ Finance & Operations.webp",
-  "CARD 5_ Real Estate (1).webp",
-  "CARD 6_ Service Businesses & Agencies (1).webp",
-].map((f) => img("built-for-modern-businesses", f, 996, 1121, [5, 2, 5, 6], 0.3335, f.replace(/^CARD \d_ /, "").replace(/ \(1\)/, "").replace(".webp", "")));
+  "CARD-1-HR-and-Recruitment.webp",
+  "CARD-2-Legal-and-Compliance.webp",
+  "CARD-3-Sales-Teams.webp",
+  "CARD-4-Finance-and-Operations.webp",
+  "CARD-5-Real-Estate.webp",
+  "CARD-6-Service-Businesses-and-Agencies.webp",
+].map((f) => img("built-for-modern-businesses", f, 996, 1121, [5, 2, 5, 6], 0.3335, f.replace(/^CARD-\d-/, "").replace(".webp", "").replace(/-/g, " ")));
 
 /* ───────────────────────── shared heading block ───────────────────────── */
 function Head({

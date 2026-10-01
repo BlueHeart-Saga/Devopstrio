@@ -58,7 +58,7 @@ function Pic({ a, w, trim = true, priority, className = "" }: { a: Asset; w: num
   const [l, t, r, b] = trim && a.pad ? a.pad : [0, 0, 0, 0];
   return (
     <Image
-      src={encodeURI(a.src)}
+      src={a.src}
       alt={a.alt}
       width={Math.round(w)}
       height={Math.round(a.h * s)}
@@ -288,7 +288,7 @@ function Book() {
 
 /* ============================ 5. EXPLORE LEGAL SERVICES (layout-aligned carousel) ============================ */
 const SERVICES = [
-  { t: "Immigration & Nationality Law", img: `${BASE}/explore-legal-services/Immigration & Nationality Law.webp` },
+  { t: "Immigration & Nationality Law", img: `${BASE}/explore-legal-services/Immigration-and-Nationality-Law.webp` },
   { t: "Family Law", img: `${BASE}/explore-legal-services/Family Law.webp` },
   { t: "Criminal Law", img: `${BASE}/explore-legal-services/Criminal Law.webp` },
   { t: "Property Law", img: `${BASE}/explore-legal-services/Property Law.webp` },
@@ -351,7 +351,7 @@ function Explore() {
                 className={`${lift} flex-none w-[280px] sm:w-[360px] lg:w-[380px] rounded-2xl overflow-hidden`}
               >
                 <Image
-                  src={encodeURI(s.img)}
+                  src={s.img}
                   alt={s.t}
                   width={1244}
                   height={1089}
