@@ -56,8 +56,12 @@ const offices = [
   }
 ];
 
-export function GlobalLocations() {
-  const [isOpen, setIsOpen] = useState(true);
+interface GlobalLocationsProps {
+  defaultOpen?: boolean;
+}
+
+export function GlobalLocations({ defaultOpen = false }: GlobalLocationsProps) {
+  const [isOpen, setIsOpen] = useState(defaultOpen);
 
   return (
     <div className="pt-8 pb-4 border-t border-zinc-900/60">

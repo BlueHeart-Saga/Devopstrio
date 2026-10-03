@@ -161,7 +161,7 @@ export const LeadershipEnterpriseShowcase = () => {
 
   return (
     <section
-      className="relative w-full py-16 sm:py-20 md:py-24 bg-black overflow-hidden font-sans text-white"
+      className="relative w-full py-6 sm:py-8 md:py-10 bg-black overflow-hidden font-sans text-white"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => {
         setIsPaused(false);
@@ -184,7 +184,7 @@ export const LeadershipEnterpriseShowcase = () => {
       <div className="relative max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 z-10">
         
         {/* Section Heading */}
-        <div className="mb-10 sm:mb-12">
+        <div className="mb-4 sm:mb-6">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -252,11 +252,11 @@ export const LeadershipEnterpriseShowcase = () => {
                         />
                       </span>
 
-                      <div className="flex flex-col flex-grow min-h-[10.5rem]">
-                        <h3 className="text-white font-semibold text-lg sm:text-xl mb-2.5 tracking-tight group-hover:text-rose-500 transition-colors">
+                      <div className="flex flex-col flex-grow min-h-[11rem]">
+                        <h3 className="text-white font-bold text-xl sm:text-2xl mb-2.5 tracking-tight group-hover:text-rose-500 transition-colors">
                           {item.title}
                         </h3>
-                        <p className="text-zinc-400 text-sm leading-relaxed mb-6 flex-grow line-clamp-3">
+                        <p className="text-zinc-300 font-semibold text-sm sm:text-base leading-relaxed mb-6 flex-grow line-clamp-3">
                           {item.description}
                         </p>
                         <a
@@ -264,7 +264,7 @@ export const LeadershipEnterpriseShowcase = () => {
                           target="_blank"
                           rel="noopener noreferrer"
                           draggable={false}
-                          className="relative inline-flex items-center gap-2 self-start text-sm font-medium text-rose-500 hover:text-rose-400 transition-colors rounded-sm"
+                          className="relative inline-flex items-center gap-2 self-start text-sm sm:text-base font-semibold text-rose-500 hover:text-rose-400 transition-colors rounded-sm"
                         >
                           <span className="relative">
                             Learn more

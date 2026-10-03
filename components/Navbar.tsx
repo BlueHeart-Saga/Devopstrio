@@ -321,9 +321,9 @@ const industriesList = [
 ];
 
 const aboutList = [
-  { name: "Our Story", desc: "Discover our vision, engineering philosophy, and enterprise capabilities.", href: "/about" },
-  { name: "Company Overview", desc: "Our history, mission, core values, and corporate strategy.", href: "/about/company-overview" },
-  { name: "Leadership & Team", desc: "Meet the executive board, advisors, and principal architects.", href: "/about/leadership-team" },
+  { name: "About Us", desc: "Discover our vision, engineering philosophy, and enterprise capabilities.", href: "/about" },
+  // { name: "Company Overview", desc: "Our history, mission, core values, and corporate strategy.", href: "/about/company-overview" },
+  { name: "Leadership", desc: "Meet the executive board, advisors, and principal architects.", href: "/about/leadership-team" },
   { name: "Our Culture & People", desc: "Explore our co-engineering culture, team events, and active careers.", href: "/about/our-culture-people" },
   // { name: "Global Internship", desc: "Attracting students, graduates, and aspiring engineers to launch their technology career.", href: "/about/global-internship" },
   { name: "Global Presence", desc: "Our international delivery centers, office sites, and local operations.", href: "/about/global-presence" },

@@ -21,7 +21,7 @@ const contactPillars: ContactPillar[] = [
     title: "Consult",
     subtitle: "Strategic Engineering & Audits",
     description: "Cloud cost optimization, architecture reviews, compliance assessments, and AI strategy.",
-    mainLink: "/services/cloud-consulting",
+    mainLink: "/services/cloud-services",
     services: [
       { name: "Cloud Cost Optimization & FinOps", href: "/services/cloud-services/finops-cost-optimization" },
       { name: "Multi-Cloud Architecture Review", href: "/services/cloud-services/cloud-architecture" },
@@ -29,7 +29,7 @@ const contactPillars: ContactPillar[] = [
       { name: "AI & GenAI Strategy Roadmap", href: "/services/ai-data-innovation/ai-strategy-consulting" },
       { name: "Kubernetes & Infrastructure Health", href: "/services/devops-automation/kubernetes-health-check" }
     ],
-    ctaHref: "/services/cloud-consulting"
+    ctaHref: "/services/cloud-services"
   },
   {
     id: "collaborate",

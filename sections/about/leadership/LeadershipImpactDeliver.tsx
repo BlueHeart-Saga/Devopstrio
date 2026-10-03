@@ -48,22 +48,18 @@ const impactStats = [
   {
     value: "2,500+",
     label: "Projects Delivered",
-    subtext: "Across 25+ enterprise industry domains worldwide",
   },
   {
     value: "525+",
     label: "Technology Experts",
-    subtext: "Architects, engineers & AI practitioners in cross-functional pods",
   },
   {
     value: "7+",
     label: "Years of Engineering",
-    subtext: "Proven history of scaling resilient digital solutions",
   },
   {
     value: "24×7",
     label: "Global Delivery",
-    subtext: "Uninterrupted support & SRE across 4 delivery hubs",
   },
 ];
 
@@ -124,19 +120,12 @@ export const LeadershipImpactDeliver = () => {
                     {stat.value}
                   </p>
                   <h4
-                    className={`text-lg font-bold tracking-normal font-sans mb-3 transition-colors ${
+                    className={`text-lg font-bold tracking-normal font-sans transition-colors ${
                       isLast ? "text-white" : "text-white group-hover:text-rose-400"
                     }`}
                   >
                     {stat.label}
                   </h4>
-                  <p
-                    className={`text-sm max-w-xs mx-auto ${
-                      isLast ? "text-rose-100" : "text-zinc-400"
-                    }`}
-                  >
-                    {stat.subtext}
-                  </p>
                 </motion.div>
               );
             })}

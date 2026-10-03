@@ -5,7 +5,7 @@ export const LeadershipDeliver = () => {
   return (
     <section
       id="leadership-deliver"
-      className="pt-12 pb-8 sm:pt-16 sm:pb-12 bg-black text-white relative overflow-visible font-sans"
+      className="pt-4 pb-2 sm:pt-6 sm:pb-4 bg-black text-white relative overflow-visible font-sans"
     >
       {/* Ambient Lighting & Glows */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[90vw] max-w-[1200px] h-[500px] bg-[radial-gradient(ellipse_at_center,rgba(225,29,72,0.08),transparent_70%)] pointer-events-none z-0" />
@@ -14,10 +14,10 @@ export const LeadershipDeliver = () => {
       <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 relative z-10 space-y-0">
         
         {/* Top Tagline with Left-Right Arrow indicator */}
-        <div className="text-center max-w-4xl mx-auto mb-4 sm:mb-6 relative z-40">
+        <div className="text-center max-w-4xl mx-auto mb-2 sm:mb-4 relative z-40">
           <Reveal>
             <div>
-              <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight text-white mb-4 font-sans leading-[1.45]">
+              <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight text-white mb-2 font-sans leading-[1.45]">
                 <span className="relative inline-block">
                   <div className="absolute -top-5 sm:-top-7 md:-top-8 -left-10 sm:-left-12 md:-left-16 z-20 pointer-events-none select-none">
                     <img src="/webp/assets/components/lefttoright.webp"
@@ -80,13 +80,13 @@ export const LeadershipDeliver = () => {
         </Reveal>
 
         {/* Quote Below Leader Image */}
-        <Reveal delay={0.25} className="w-full flex justify-center pt-8 sm:pt-10 relative z-30">
+        {/* <Reveal delay={0.25} className="w-full flex justify-center pt-8 sm:pt-10 relative z-30">
           <div className="text-center max-w-4xl mx-auto px-4">
             <p className="text-base sm:text-lg md:text-xl lg:text-2xl font-medium text-zinc-300 italic tracking-wide leading-relaxed">
               &ldquo;I believe our greatest strength is our people, and our greatest opportunity is what we build together.&rdquo;
             </p>
           </div>
-        </Reveal>
+        </Reveal> */}
       </div>
     </section>
   );

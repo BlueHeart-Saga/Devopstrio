@@ -1,456 +1,87 @@
 "use client";
 
-import React, { useRef } from "react";
-import { motion, useAnimationFrame, useReducedMotion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
+import React from "react";
 import Link from "next/link";
+import { ArrowRight } from "lucide-react";
+import { Reveal } from "@/components/ui/Reveal";
+import { FlowerRadialGraphic } from "@/components/ui/FlowerRadialGraphic";
 
-const EASE = [0.22, 1, 0.36, 1] as const;
-
-const headingWords = [
-  "Leaders",
-  "who",
-  "turn",
-  "engineering",
-  "into",
-  "lasting",
-  "impact",
-];
-
-/* ---------------- perspective grid geometry ---------------- */
-const W = 1200;
-const H = 400;
-const H_LINES = 6;
-const V_RANGE = 4; // cleaner perspective grid
-const V_STEP = 240;
-const SPEED = 0.16; // slow, calm
-
-const lineY = (i: number, phase: number) =>
-  H * Math.pow((i + phase) / H_LINES, 2.2);
-
-const lineOpacity = (i: number, phase: number) =>
-  Math.min(1, ((i + phase) / H_LINES) * 1.5) * 0.12;
-
-export const LeadershipHero = () => {
-  const still = useReducedMotion() ?? false;
-
-  const hRefs = useRef<(SVGLineElement | null)[]>([]);
-  const vRefs = useRef<(SVGLineElement | null)[]>([]);
-  const glowRef = useRef<HTMLDivElement>(null);
-  const mouse = useRef({ target: 0, current: 0 });
-
-  const onMove = (e: React.MouseEvent<HTMLElement>) => {
-    const r = e.currentTarget.getBoundingClientRect();
-
-    mouse.current.target =
-      ((e.clientX - r.left) / r.width - 0.5) * 2;
-  };
-
-  useAnimationFrame((t) => {
-    if (still) return;
-
-    const m = mouse.current;
-
-    m.current += (m.target - m.current) * 0.05;
-
-    const phase = ((t / 1000) * SPEED) % 1;
-
-    const vpX = W / 2 + m.current * 90;
-
-    hRefs.current.forEach((el, i) => {
-      if (!el) return;
-
-      const y = lineY(i, phase);
-
-      el.setAttribute("y1", String(y));
-      el.setAttribute("y2", String(y));
-      el.setAttribute(
-        "stroke-opacity",
-        String(lineOpacity(i, phase))
-      );
-    });
-
-    vRefs.current.forEach((el) =>
-      el?.setAttribute("x2", String(vpX))
-    );
-
-    if (glowRef.current) {
-      glowRef.current.style.transform = `translateX(${m.current * 28}px)`;
-    }
-  });
-
+export function LeadershipHero() {
   return (
-    <section
-      id="hero"
-      onMouseMove={still ? undefined : onMove}
-      className="
-        relative w-full min-h-[100svh]
-        bg-black
-        bg-[radial-gradient(ellipse_at_50%_75%,rgba(244,63,94,0.045),transparent_60%)]
-        text-white
-        overflow-hidden
-        flex flex-col
-      "
-    >
-      {/* ---------- text ---------- */}
-      <div
-        className="
-          relative z-10
-          max-w-5xl mx-auto w-full
-          px-6 sm:px-10
-          pt-32 sm:pt-36 lg:pt-40
-          pb-12
-          flex flex-col items-center text-center
-        "
-      >
-        {/* badge */}
-        <motion.span
-          initial={still ? false : { opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: EASE }}
-          className="
-            mb-7
-            inline-flex items-center gap-2
-            rounded-full
-            border border-rose-500/20
-            bg-rose-500/[0.03]
-            px-4 py-1.5
-            text-xs font-medium
-            tracking-[0.18em]
-            uppercase
-            text-rose-400
-          "
-        >
-          <span className="h-1.5 w-1.5 rounded-full bg-rose-500" />
+    <section className="relative w-full min-h-screen bg-[#030303] text-white pt-32 sm:pt-36 md:pt-44 lg:pt-48 pb-16 sm:pb-24 lg:pb-28 flex flex-col justify-center overflow-hidden font-sans">
 
-          Leadership &amp; Executive Team
-        </motion.span>
-
-        {/* heading */}
-        <h1
-          className="
-            text-4xl
-            sm:text-5xl
-            lg:text-6xl
-            xl:text-6xl
-            font-semibold
-            tracking-tight
-            leading-[1.08]
-            flex flex-wrap
-            justify-center
-            gap-x-[0.28em]
-          "
-        >
-          {headingWords.map((w, i) => (
-            <span
-              key={w}
-              className="overflow-hidden inline-block pb-[0.12em]"
-            >
-              <motion.span
-                className="inline-block"
-                initial={still ? false : { y: "110%" }}
-                animate={{ y: 0 }}
-                transition={{
-                  duration: 0.9,
-                  delay: 0.15 + i * 0.07,
-                  ease: EASE,
-                }}
-              >
-                {w}
-              </motion.span>
-            </span>
-          ))}
-        </h1>
-
-        {/* description */}
-        <motion.p
-          initial={still ? false : { opacity: 0, y: 14 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{
-            duration: 0.9,
-            delay: 0.8,
-            ease: EASE,
-          }}
-          className="
-            mt-8
-            max-w-2xl
-            text-zinc-300
-            text-base sm:text-lg
-            leading-relaxed
-          "
-        >
-          Meet the people guiding 525+ engineers across four global hubs,
-          and the principles behind every system we build.
-        </motion.p>
-
-        {/* CTA */}
-        <motion.div
-          initial={still ? false : { opacity: 0, y: 14 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{
-            duration: 0.9,
-            delay: 0.95,
-            ease: EASE,
-          }}
-          className="
-            mt-10
-            flex flex-wrap
-            items-center
-            justify-center
-            gap-4 sm:gap-6
-          "
-        >
-          <a
-            href="#executive-leadership"
-            className="btn-tactile group"
-          >
-            <div>
-              <span>
-                Meet Our Leaders
-
-                <ArrowRight
-                  className="
-                    w-4 h-4
-                    transition-transform
-                    duration-200
-                    group-hover:translate-x-1
-                  "
-                />
-              </span>
-            </div>
-          </a>
-
-          <Link
-            href="/careers"
-            className="btn-tactile btn-tactile-secondary group"
-          >
-            <div>
-              <span>Join Our Team</span>
-            </div>
-          </Link>
-        </motion.div>
+      {/* Right Side Premium Flower Radial Graphic Background */}
+      <div className="absolute -right-12 sm:right-0 md:right-8 lg:right-16 top-10 sm:top-14 md:top-16 bottom-0 w-full lg:w-[55%] h-[85vh] pointer-events-none z-0">
+        <FlowerRadialGraphic className="w-full h-full" />
       </div>
 
-      {/* ---------- horizon stage ---------- */}
-      <div className="relative mt-auto h-[26svh] min-h-[200px]">
+      {/* Ambient Red Glow Spotlight */}
+      <div className="absolute top-1/3 left-1/4 -translate-x-1/2 w-[600px] h-[400px] bg-[radial-gradient(ellipse_at_center,rgba(244,63,94,0.08),transparent_70%)] pointer-events-none z-0" />
 
-        {/* halo arcs */}
-        <div
-          ref={glowRef}
-          aria-hidden
-          className="
-            absolute
-            bottom-full
-            left-1/2
-            -translate-x-1/2
-            w-[min(900px,120vw)]
-            h-[450px]
-            overflow-hidden
-            pointer-events-none
-            will-change-transform
-          "
-        >
-          {[100, 68, 38].map((pct, i) => (
-            <div
-              key={pct}
-              className="
-                absolute
-                left-1/2
-                bottom-0
-                aspect-square
-                -translate-x-1/2
-                translate-y-1/2
-              "
-              style={{
-                width: `${pct}%`,
-              }}
-            >
-              <motion.div
-                initial={
-                  still
-                    ? false
-                    : {
-                        opacity: 0,
-                        scale: 0.85,
-                      }
-                }
-                animate={{
-                  opacity: 1,
-                  scale: 1,
-                }}
-                transition={{
-                  duration: 1.6,
-                  delay: 0.3 + i * 0.2,
-                  ease: EASE,
-                }}
-                className={`w-full h-full rounded-full border ${
-                  i === 2
-                    ? "border-rose-400/20 bg-[radial-gradient(circle,rgba(251,113,133,0.12),rgba(251,113,133,0.02)_60%,transparent_72%)]"
-                    : i === 1
-                    ? "border-rose-400/10"
-                    : "border-rose-400/5"
-                }`}
-              />
+      <div className="max-w-7xl mx-auto w-full px-6 sm:px-8 xl:px-12 relative z-10 my-auto">
+
+        {/* Main Grid Content - Left Title & Offset Right Quote */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center min-h-[50vh]">
+
+          <div className="lg:col-span-12 flex flex-col text-left">
+            {/* Header: Leadership & Team */}
+            <Reveal delay={0.05} className="mb-8 sm:mb-10">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight text-white leading-[1.12] font-sans max-w-4xl">
+                Leadership &amp; Executive Team
+                <span className="text-rose-500 font-semibold animate-pulse">_</span>
+              </h1>
+            </Reveal>
+
+            {/* Quote Block - Indented / Offset Right Under Heading */}
+            <div className="ml-0 sm:ml-16 md:ml-36 lg:ml-52 max-w-2xl">
+              <Reveal delay={0.15}>
+                <blockquote className="relative pl-6 border-l-2 border-rose-500 mb-8 sm:mb-10">
+                  <p className="text-zinc-200 text-lg sm:text-xl md:text-2xl font-normal leading-relaxed italic">
+                    &ldquo;Meet the leaders guiding 525+ engineers across global hubs, uniting technical mastery with strategic domain expertise.&rdquo;
+                  </p>
+                  <footer className="mt-3 text-xs sm:text-sm font-semibold uppercase tracking-widest text-rose-500">
+                    — Devopstrio Leadership Philosophy
+                  </footer>
+                </blockquote>
+              </Reveal>
+
+              {/* Action Buttons */}
+              <Reveal delay={0.25}>
+                <div className="flex flex-wrap items-center gap-4">
+                  {/* Primary CTA */}
+                  <a
+                    href="#executive-leadership"
+                    className="inline-flex items-center bg-zinc-950 hover:bg-rose-600 border border-zinc-700/90 hover:border-rose-500 rounded-md overflow-hidden transition-all duration-300 group cursor-pointer shadow-2xl hover:shadow-[0_0_30px_rgba(225,29,72,0.4)]"
+                  >
+                    {/* Left Text */}
+                    <span className="px-7 py-4 text-sm md:text-base font-semibold text-white tracking-wide border-r border-zinc-800 group-hover:border-rose-500/60 transition-colors">
+                      Meet Our Leaders
+                    </span>
+
+                    {/* Right Arrow Box */}
+                    <span className="px-4 py-4 text-white bg-zinc-900 group-hover:bg-rose-700 transition-colors flex items-center justify-center">
+                      <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform duration-300" />
+                    </span>
+                  </a>
+
+                  {/* Secondary CTA */}
+                  <Link
+                    href="/careers"
+                    className="inline-flex items-center px-6 py-4 text-sm md:text-base font-semibold text-zinc-300 hover:text-white border border-zinc-800 hover:border-zinc-700 rounded-md bg-zinc-950/60 hover:bg-zinc-900 transition-all duration-300"
+                  >
+                    Join Our Team
+                  </Link>
+                </div>
+              </Reveal>
             </div>
-          ))}
+
+          </div>
+
         </div>
 
-        {/* horizon glow */}
-        <div
-          aria-hidden
-          className="
-            absolute
-            -top-16
-            inset-x-0
-            h-32
-            bg-[radial-gradient(ellipse_at_center_bottom,rgba(251,113,133,0.12),transparent_65%)]
-            blur-2xl
-            pointer-events-none
-          "
-        />
-
-        {/* horizon line */}
-        <motion.div
-          aria-hidden
-          initial={
-            still
-              ? false
-              : {
-                  scaleX: 0,
-                  opacity: 0,
-                }
-          }
-          animate={{
-            scaleX: 1,
-            opacity: 1,
-          }}
-          transition={{
-            duration: 1.8,
-            delay: 0.2,
-            ease: EASE,
-          }}
-          className="
-            absolute
-            top-0
-            inset-x-0
-            h-px
-            bg-gradient-to-r
-            from-transparent
-            via-rose-400/50
-            to-transparent
-            shadow-[0_0_18px_rgba(244,63,94,0.22)]
-          "
-        />
-
-        {/* perspective grid */}
-        <motion.svg
-          aria-hidden
-          viewBox={`0 0 ${W} ${H}`}
-          preserveAspectRatio="xMidYMin slice"
-          className="absolute inset-0 w-full h-full"
-          style={{
-            WebkitMaskImage:
-              "linear-gradient(to right, transparent, #000 18%, #000 82%, transparent)",
-            maskImage:
-              "linear-gradient(to right, transparent, #000 18%, #000 82%, transparent)",
-          }}
-          initial={
-            still
-              ? false
-              : {
-                  opacity: 0,
-                }
-          }
-          animate={{
-            opacity: 1,
-          }}
-          transition={{
-            duration: 1.6,
-            delay: 0.5,
-          }}
-        >
-          <defs>
-            <linearGradient
-              id="hz-v"
-              gradientUnits="userSpaceOnUse"
-              x1="0"
-              y1="0"
-              x2="0"
-              y2={H}
-            >
-              <stop
-                offset="0"
-                stopColor="#f43f5e"
-                stopOpacity="0"
-              />
-
-              <stop
-                offset="1"
-                stopColor="#fb7185"
-                stopOpacity="0.11"
-              />
-            </linearGradient>
-          </defs>
-
-          {/* converging vertical lines */}
-          {Array.from(
-            {
-              length: V_RANGE * 2 + 1,
-            },
-            (_, n) => n - V_RANGE
-          ).map((k, idx) => (
-            <line
-              key={k}
-              ref={(el) => {
-                vRefs.current[idx] = el;
-              }}
-              x1={W / 2 + k * V_STEP}
-              y1={H}
-              x2={W / 2}
-              y2={0}
-              stroke="url(#hz-v)"
-              strokeWidth={0.8}
-            />
-          ))}
-
-          {/* horizontal travelling lines */}
-          {Array.from(
-            {
-              length: H_LINES,
-            },
-            (_, i) => (
-              <line
-                key={i}
-                ref={(el) => {
-                  hRefs.current[i] = el;
-                }}
-                x1={-1500}
-                x2={W + 1500}
-                y1={lineY(i, 0.35)}
-                y2={lineY(i, 0.35)}
-                stroke="#fb7185"
-                strokeOpacity={lineOpacity(i, 0.35)}
-                strokeWidth={1}
-              />
-            )
-          )}
-        </motion.svg>
-
-        {/* fade into next section */}
-        <div
-          aria-hidden
-          className="
-            absolute
-            inset-x-0
-            bottom-0
-            h-56
-            bg-gradient-to-t
-            from-black
-            to-transparent
-            pointer-events-none
-          "
-        />
       </div>
     </section>
   );
-};
+}
+
+export default LeadershipHero;

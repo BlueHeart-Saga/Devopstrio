@@ -64,30 +64,6 @@ const defaultLeadershipInsights: LeadershipInsight[] = [
     title: "Case Study: A Rapid Strategy Stress Test to Accelerate a Go-to-Market Engine",
     image: "/webp/assets/Home-page/sol-envisioning.webp",
   },
-  {
-    id: "lead-insight-7",
-    slug: "digital-transformation-people-over-tech",
-    category: "Leadership & Culture",
-    categorySlug: "blogs",
-    title: "Your Digital Transformation Isn't Failing Because of the Tech — It's Culture",
-    image: "/webp/assets/Home-page/rapid-prototype.webp",
-  },
-  {
-    id: "lead-insight-8",
-    slug: "5-ai-use-cases-90-days",
-    category: "AI & Cognitive Strategy",
-    categorySlug: "our-offerings",
-    title: "5 Enterprise AI Use Cases You Can Stand Up in 90 Days",
-    image: "/webp/assets/Home-page/biz-envisioning.webp",
-  },
-  {
-    id: "lead-insight-9",
-    slug: "internal-developer-platforms-velocity",
-    category: "Platform Engineering",
-    categorySlug: "white-paper",
-    title: "From Legacy Ops to Internal Developer Platforms: Engineering at Scale",
-    image: "/webp/assets/Home-page/arch-design.webp",
-  },
 ];
 
 export const LeadershipIndustryInsights: React.FC = () => {
@@ -96,9 +72,9 @@ export const LeadershipIndustryInsights: React.FC = () => {
   useEffect(() => {
     async function fetchLiveInsights() {
       try {
-        const posts = await insightsApi.getAllPosts(9);
-        if (posts && posts.length >= 3) {
-          const mapped: LeadershipInsight[] = posts.slice(0, 9).map((p, idx) => ({
+        const posts = await insightsApi.getAllPosts(6);
+        if (posts && posts.length > 0) {
+          const mapped: LeadershipInsight[] = posts.slice(0, 6).map((p, idx) => ({
             id: p.id,
             slug: p.slug || p.id,
             category: p.category?.name || defaultLeadershipInsights[idx % defaultLeadershipInsights.length].category,
@@ -106,31 +82,25 @@ export const LeadershipIndustryInsights: React.FC = () => {
             title: p.title,
             image: p.image || defaultLeadershipInsights[idx % defaultLeadershipInsights.length].image,
           }));
-          // If fewer than 9 from API, fill remaining with defaults
-          if (mapped.length < 9) {
-            const combined = [...mapped, ...defaultLeadershipInsights.slice(mapped.length, 9)];
-            setInsightsList(combined);
-          } else {
-            setInsightsList(mapped);
-          }
+          setInsightsList(mapped);
         }
       } catch {
-        // Fallback to defaultLeadershipInsights seamlessly
+        // Fallback seamlessly to 6 real default insights
       }
     }
     fetchLiveInsights();
   }, []);
 
   return (
-    <section className="py-20 sm:py-28 bg-black text-white relative overflow-hidden font-sans">
+    <section className="py-16 sm:py-20 bg-black text-white relative overflow-hidden font-sans">
       {/* Background ambient lighting */}
       <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-rose-600/5 rounded-full blur-[160px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto w-full px-6 sm:px-10 lg:px-12 relative z-10 text-left">
         
-        {/* Section Header: Styled after reference "Industry insights" */}
+        {/* Section Header */}
         <Reveal>
-          <div className="text-center max-w-3xl mx-auto mb-16">
+          <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-14">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-white mb-3">
               Industry <span className="text-rose-500 font-semibold">Insights</span>
             </h2>
@@ -138,7 +108,7 @@ export const LeadershipIndustryInsights: React.FC = () => {
           </div>
         </Reveal>
 
-        {/* 3x3 Publications Grid using the exact CategoryList card template */}
+        {/* 2x3 Publications Grid (Max 6 Cards) */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {insightsList.map((item, idx) => (
             <Reveal key={item.id} delay={idx * 0.04} className="h-full">
@@ -187,12 +157,12 @@ export const LeadershipIndustryInsights: React.FC = () => {
           ))}
         </div>
 
-        {/* Reference Bottom Action Button: SHOW MORE */}
+        {/* Bottom Action Button: SHOW MORE (Theme Simple Red Button, No Gradient) */}
         <Reveal>
-          <div className="text-center mt-16 pt-4">
+          <div className="text-center mt-12 sm:mt-14 pt-2">
             <Link
               href="/insights"
-              className="inline-flex items-center justify-center px-10 py-3.5 rounded-xl bg-gradient-to-r from-red-600 via-rose-600 to-purple-600 hover:from-red-500 hover:to-purple-500 text-white font-bold text-xs sm:text-sm uppercase tracking-wider transition-all duration-300 shadow-xl shadow-rose-950/30 active:scale-95"
+              className="inline-flex items-center justify-center px-9 py-3.5 rounded-xl bg-rose-600 hover:bg-rose-500 text-white font-bold text-xs sm:text-sm uppercase tracking-wider transition-all duration-300 shadow-lg shadow-rose-600/30 active:scale-95"
             >
               <span>SHOW MORE</span>
             </Link>

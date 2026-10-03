@@ -3,57 +3,55 @@
 import React, { useState, useEffect } from "react";
 import { Reveal } from "@/components/ui/Reveal";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowLeft, ArrowUpRight } from "lucide-react";
-import Link from "next/link";
 
 const milestones = [
   {
     year: "2019",
     title: "Company Foundation",
     description:
-      "Founded with a bold dream: to engineer digital platforms that inspire trust and empower growing businesses worldwide."
+      "Founded with an unwavering vision — to build digital foundations that empower bold visionaries to shape tomorrow."
   },
   {
     year: "2020",
     title: "London Headquarters Established",
     description:
-      "Established our London headquarters, uniting world-class tech talent to accelerate enterprise cloud transformation."
+      "Established our London headquarters, bringing together passionate tech minds to pioneer enterprise cloud transformation."
   },
   {
     year: "2021",
     title: "Multi-Cloud & Industry Expansion",
     description:
-      "Expanded multi-cloud mastery across AWS, Azure, and GCP, empowering healthcare and financial pioneers."
+      "Mastered multi-cloud ecosystems across AWS, Azure, and GCP, empowering healthcare and finance pioneers with seamless reliability."
   },
   {
     year: "2022",
     title: "Enterprise Delivery Growth",
     description:
-      "Scaled our engineering pods globally, delivering resilient DevOps automation and modern digital platforms."
+      "Scaled high-performing engineering pods globally, delivering resilient DevOps automation and transformational platforms."
   },
   {
     year: "2023",
     title: "Product Engineering & SaaS Innovation",
     description:
-      "Pioneered enterprise SaaS & AI solutions, transforming complex ideas into intuitive digital experiences."
+      "Pioneered production-grade GenAI and SaaS platforms, turning complex technological challenges into elegant human experiences."
   },
   {
     year: "2024",
     title: "United States Expansion",
     description:
-      "Expanded into the United States, bringing cutting-edge AI, data engineering, and cloud platforms to global innovators."
+      "Expanded across the United States, bringing next-generation AI, data engineering, and cloud platforms to global innovators."
   },
   {
     year: "2025",
     title: "Global Delivery & Strategic Partnerships",
     description:
-      "Strengthened our global delivery hubs, accelerating digital transformation with agility, speed, and trust."
+      "Accelerated international delivery networks with 24/7 follow-the-sun excellence, building trust and speed at scale."
   },
   {
     year: "2026",
     title: "AI-Driven Global Evolution",
     description:
-      "Leading the future of AI-driven engineering — building intelligent digital foundations for a brighter tomorrow."
+      "Leading the frontier of AI-driven global engineering — crafting intelligent digital ecosystems for a brighter, connected world."
   }
 ];
 
@@ -87,82 +85,26 @@ export function OurStory() {
   const activeEvent = milestones[activeIdx];
 
   return (
-    <section className="w-full py-24 bg-[#030303] text-white relative overflow-hidden" id="our-story">
+    <section className="w-full pt-0 pb-8 sm:pb-12 bg-[#030303] text-white relative overflow-hidden" id="our-story">
       {/* Background ambient mesh grid */}
       <div className="absolute inset-0 opacity-[0.02] pointer-events-none"
         style={{ backgroundImage: "radial-gradient(circle, #fff 1px, transparent 1px)", backgroundSize: "32px 32px" }} />
 
-      <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
-
-        {/* Redesigned Intro Card Container (BusinessOverview Style) */}
-        <Reveal className="mb-20">
-          <div className="group relative overflow-hidden rounded-[32px] border border-zinc-800/60 bg-zinc-950/30 backdrop-blur-xl">
-
-            {/* Background Glow */}
-            <div className="absolute inset-0 pointer-events-none">
-              <div className="absolute -top-20 -left-20 w-96 h-96 bg-rose-600/10 blur-[120px]" />
-              <div className="absolute -bottom-20 -right-20 w-96 h-96 bg-blue-600/10 blur-[120px]" />
-            </div>
-
-            <div className="relative grid grid-cols-1 lg:grid-cols-12 gap-0">
-
-              {/* LEFT CONTENT */}
-              <div className="lg:col-span-7 flex flex-col justify-center p-6 md:p-10 lg:p-12">
-                <span className="text-xs md:text-sm font-extrabold tracking-[0.25em] uppercase text-rose-500 mb-4 block font-mono">
-                  OUR STORY
-                </span>
-
-                <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold leading-tight tracking-tight mb-6 text-white">
-                  From a bold vision
-                  <span className="block text-rose-500 mt-1">
-                    to global engineering impact.
-                  </span>
-                </h2>
-
-                <div className="space-y-4 text-zinc-300 text-base md:text-lg leading-relaxed font-normal">
-                  <p>
-                    We started with a simple belief — that great technology should inspire confidence, simplify complexity, and bring human passion to engineering.
-                  </p>
-                  <p>
-                    Today, our global team works side-by-side with enterprise leaders to turn bold ideas into seamless digital reality.
-                  </p>
-                </div>
-              </div>
-
-              {/* RIGHT CONTENT */}
-              <div className="lg:col-span-5 p-6 md:p-10 lg:p-12 flex flex-col justify-between bg-zinc-950/20 border-t lg:border-t-0 lg:border-l border-zinc-900/60">
-                <div className="space-y-5 text-zinc-300 text-base md:text-lg leading-relaxed font-normal">
-                  <p>
-                    What began as a specialized team of cloud architects has grown into a global network of technology experts serving enterprise leaders worldwide.
-                  </p>
-
-                  <div className="p-5 bg-zinc-950/80 border border-zinc-800/80 rounded-xl border-l-4 border-l-rose-500">
-                    {/* <span className="text-xs font-bold text-rose-500 uppercase tracking-widest block mb-1 font-mono">
-                      Our Purpose
-                    </span> */}
-                    <p className="text-base md:text-lg italic text-white font-semibold leading-snug">
-                      &ldquo;We build intelligent digital foundations that empower bold visionaries to shape tomorrow.&rdquo;
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </Reveal>
+      <div className="max-w-7xl mx-auto w-full px-6 sm:px-12 xl:px-8 relative z-10">
 
         {/* Circular Scroll Timeline Interface */}
         <div
-          className="grid grid-cols-1 lg:grid-cols-[1fr_1.5fr] gap-12 lg:gap-6 items-center min-h-[450px]"
+          className="grid grid-cols-1 lg:grid-cols-[1fr_1.5fr] gap-8 lg:gap-6 items-center min-h-[440px] md:min-h-[520px]"
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
           onWheel={handleWheel}
         >
           {/* LEFT: Half-Circle Dial (Center is pinned to the left edge of this container) */}
-          <div className="relative w-full h-[320px] md:h-[480px] flex items-center overflow-hidden select-none">
-            {/* The actual circle positioned half off-screen left */}
-            <div className="absolute w-[360px] h-[360px] md:w-[500px] md:h-[500px] left-[-180px] md:left-[-250px] top-1/2 -translate-y-1/2 flex items-center justify-center shrink-0">
-              {/* Dashed circular timeline track */}
+          <div className="relative w-full h-[400px] sm:h-[480px] md:h-[580px] flex items-center overflow-hidden select-none">
+            {/* The actual circle positioned half off-screen left with enlarged size */}
+            <div className="absolute w-[420px] h-[420px] sm:w-[520px] sm:h-[520px] md:w-[620px] md:h-[620px] left-[-210px] sm:left-[-260px] md:left-[-310px] top-1/2 -translate-y-1/2 flex items-center justify-center shrink-0">
+              
+              {/* Dashed circular timeline track (Previous clean design) */}
               <svg className="absolute inset-0 w-full h-full text-zinc-800/40 pointer-events-none" viewBox="0 0 100 100">
                 <circle
                   cx="50"
@@ -195,9 +137,9 @@ export function OurStory() {
                   <button
                     key={event.year}
                     onClick={() => setActiveIdx(idx)}
-                    className={`absolute w-20 h-10 flex items-center justify-center rounded-full transition-all duration-700 focus:outline-none ${isActive
-                      ? "text-[#ebd0be] scale-125 font-black z-20 text-xl md:text-2xl drop-shadow-[0_0_15px_rgba(235,208,190,0.5)]"
-                      : "text-zinc-600 hover:text-[#ebd0be]/70 scale-95 font-medium z-10 text-xs md:text-sm"
+                    className={`absolute w-24 h-12 flex items-center justify-center rounded-full transition-all duration-700 focus:outline-none ${isActive
+                      ? "text-[#ebd0be] scale-125 font-black z-20 text-2xl md:text-3xl drop-shadow-[0_0_15px_rgba(235,208,190,0.5)]"
+                      : "text-zinc-600 hover:text-[#ebd0be]/70 scale-95 font-medium z-10 text-sm md:text-base"
                       }`}
                     style={{
                       left: `${x}%`,
@@ -214,7 +156,7 @@ export function OurStory() {
           </div>
 
           {/* RIGHT: Active Details Content */}
-          <div className="flex flex-col justify-center pl-0 lg:pl-10 min-h-[260px]">
+          <div className="flex flex-col justify-center pl-0 lg:pl-10 min-h-[280px]">
             <AnimatePresence mode="wait">
               <motion.div
                 key={activeIdx}
@@ -225,39 +167,21 @@ export function OurStory() {
                 className="flex flex-col"
               >
                 {/* Large Year Display */}
-                <span className="text-transparent bg-clip-text bg-gradient-to-b from-[#ebd0be] to-[#b39580] text-7xl md:text-[8rem] xl:text-[10rem] font-black tracking-tighter leading-none mb-2 select-none font-sans block drop-shadow-[0_10px_20px_rgba(235,208,190,0.1)]">
+                <span className="text-[#ebd0be] text-7xl sm:text-8xl md:text-[9rem] xl:text-[11rem] font-extrabold tracking-tighter leading-none mb-2 select-none font-sans block drop-shadow-[0_10px_35px_rgba(235,208,190,0.25)]">
                   {activeEvent.year}
                 </span>
 
                 {/* Event Title */}
-                <h4 className="text-2xl md:text-3xl xl:text-4xl font-semibold text-white mb-4 tracking-tight leading-tight">
+                <h3 className="text-3xl sm:text-4xl xl:text-5xl font-semibold text-white mb-4 tracking-tight leading-tight font-sans">
                   {activeEvent.title}
-                </h4>
+                </h3>
 
-                {/* Event Description */}
-                <p className="text-zinc-300 text-base md:text-lg leading-relaxed max-w-xl font-normal">
+                {/* Event Description (Subtext) */}
+                <p className="text-zinc-200 text-lg sm:text-xl xl:text-2xl leading-relaxed max-w-2xl font-medium font-sans">
                   {activeEvent.description}
                 </p>
               </motion.div>
             </AnimatePresence>
-
-            {/* Navigation Buttons */}
-            {/* <div className="flex items-center gap-3 mt-8 relative z-20">
-              <button
-                onClick={() => setActiveIdx((prev) => (prev - 1 + milestones.length) % milestones.length)}
-                className="w-10 h-10 rounded-full border border-zinc-800 bg-zinc-950/20 hover:border-rose-500 hover:text-rose-400 text-zinc-400 flex items-center justify-center transition-all duration-300"
-                aria-label="Previous story event"
-              >
-                <ArrowLeft size={16} />
-              </button>
-              <button
-                onClick={() => setActiveIdx((prev) => (prev + 1) % milestones.length)}
-                className="w-10 h-10 rounded-full border border-zinc-800 bg-zinc-950/20 hover:border-rose-500 hover:text-rose-400 text-zinc-400 flex items-center justify-center transition-all duration-300"
-                aria-label="Next story event"
-              >
-                <ArrowUpRight size={16} />
-              </button>
-            </div> */}
           </div>
 
         </div>
@@ -266,3 +190,5 @@ export function OurStory() {
     </section>
   );
 }
+
+export default OurStory;

@@ -18,11 +18,14 @@ export function generateMetadata(): Metadata {
 import { FAQ } from "@/components/services/FAQ";
 import { BreadcrumbSchema, FAQSchema } from "@/components/seo/Schemas";
 
+const AboutStoryIntro = dynamic(() => import("@/sections/about/AboutStoryIntro").then((mod) => mod.AboutStoryIntro));
+const CompanyOverviewPillars = dynamic(() => import("@/sections/about/overview/CompanyOverviewPillars").then((mod) => mod.CompanyOverviewPillars));
 const MissionVision = dynamic(() => import("@/sections/about/MissionVision").then((mod) => mod.MissionVision));
 const OurStory = dynamic(() => import("@/sections/about/OurStory").then((mod) => mod.OurStory));
 const AboutServices = dynamic(() => import("@/sections/about/AboutServices").then((mod) => mod.AboutServices));
 const WhyChoose = dynamic(() => import("@/sections/about/WhyChoose").then((mod) => mod.WhyChoose));
 const MetricsStats = dynamic(() => import("@/sections/about/MetricsStats").then((mod) => mod.MetricsStats));
+const OurPeopleSection = dynamic(() => import("@/sections/about/overview/OurPeopleSection").then((mod) => mod.OurPeopleSection));
 const OurPartnership = dynamic(() => import("@/sections/about/OurPartnership").then((mod) => mod.OurPartnership));
 const Achievements = dynamic(() => import("@/sections/about/Achievements").then((mod) => mod.Achievements));
 const GlobalLocations = dynamic(() => import("@/sections/home/GlobalLocations").then((mod) => mod.GlobalLocations));
@@ -66,13 +69,15 @@ export default function AboutPage() {
       <FAQSchema faqs={aboutFaqs} />
 
       <div id="about-components-start" className="flex flex-col bg-black">
-        <div id="identity">
-          <CompanyIntro />
+        <AboutHero />
+
+        <div id="pillars">
+          <CompanyOverviewPillars />
         </div>
 
-        {/* <div id="vision">
-          <MissionVision />
-        </div> */}
+        <div id="story-intro">
+          <AboutStoryIntro />
+        </div>
 
         <div id="journey">
           <OurStory />
@@ -88,6 +93,10 @@ export default function AboutPage() {
 
         <div id="impact">
           <MetricsStats />
+        </div>
+
+        <div id="people">
+          <OurPeopleSection />
         </div>
 
         {/* <div id="ecosystem">
