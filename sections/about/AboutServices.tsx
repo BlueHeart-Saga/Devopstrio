@@ -10,6 +10,7 @@ const services = [
     num: "01",
     name: "AI & Data Innovation",
     category: "Innovate",
+    href: "/services/ai-data-innovation",
     image: "/webp/assets/Home-page/core-services/1.webp",
     desc: "Leverage Generative AI, machine learning, and intelligent automation to modernise business processes and unlock measurable value at scale.",
     tags: ["Gen AI", "ML Models", "Data Engineering"]
@@ -18,6 +19,7 @@ const services = [
     num: "02",
     name: "Cloud Services",
     category: "Migrate",
+    href: "/services/cloud-services",
     image: "/webp/assets/Home-page/core-services/2.webp",
     desc: "Move, optimise, and scale confidently on any cloud platform. Design and manage resilient environments across AWS, Azure, and Google Cloud.",
     tags: ["Azure", "AWS", "GCP", "Cloud Native"]
@@ -26,6 +28,7 @@ const services = [
     num: "03",
     name: "DevOps & Automation",
     category: "Accelerate",
+    href: "/services/devops-automation",
     image: "/webp/assets/Home-page/core-services/3.webp",
     desc: "Ship faster with fully automated DevOps and IaC pipelines. CI/CD automation, Kubernetes orchestration, and platform engineering.",
     tags: ["CI/CD", "Kubernetes", "Terraform", "IaC"]
@@ -34,6 +37,7 @@ const services = [
     num: "04",
     name: "Cybersecurity",
     category: "Protect",
+    href: "/services/cybersecurity",
     image: "/webp/assets/Home-page/core-services/4.webp",
     desc: "Embed security and compliance into every layer. Proactive threat management, SOC services, and zero-trust security frameworks.",
     tags: ["Zero Trust", "SOC", "ISO 27001", "GDPR"]
@@ -42,6 +46,7 @@ const services = [
     num: "05",
     name: "Software Development",
     category: "Build",
+    href: "/services/software-development",
     image: "/webp/assets/Home-page/core-services/5.webp",
     desc: "Create enterprise-grade software, apps, and SaaS platforms engineered for reliability, high performance, and business impact.",
     tags: ["Web Dev", "Mobile", "SaaS", "API"]
@@ -50,6 +55,7 @@ const services = [
     num: "06",
     name: "Digital Transformation",
     category: "Transform",
+    href: "/services/digital-transformation",
     image: "/webp/assets/Home-page/core-services/6.webp",
     desc: "Modernise business models and legacy systems for the digital age with IT roadmaps, process automation, and intelligent workflows.",
     tags: ["Modernization", "Workflows", "RPA", "Strategy"]
@@ -58,6 +64,7 @@ const services = [
     num: "07",
     name: "Data Engineering",
     category: "Analyze",
+    href: "/services/data-engineering",
     image: "/webp/assets/Home-page/core-services/7.webp",
     desc: "Unlock actionable insights with robust enterprise data platforms. Design columnar databases, unified lakehouses, and real-time streaming.",
     tags: ["Data Lakes", "ETL", "Analytics", "BigQuery"]
@@ -66,6 +73,7 @@ const services = [
     num: "08",
     name: "Managed Services",
     category: "Manage",
+    href: "/services/managed-services",
     image: "/webp/assets/Home-page/core-services/8.webp",
     desc: "Ensure uninterrupted operations with 24/7 proactive monitoring, SLA bug resolutions, and continuous incident containment.",
     tags: ["24/7 Support", "SLA", "Cloud Admin", "Monitoring"]
@@ -74,6 +82,7 @@ const services = [
     num: "09",
     name: "QA & Testing",
     category: "Ensure",
+    href: "/services/qa-testing",
     image: "/webp/assets/Home-page/core-services/9.webp",
     desc: "Deliver flawless digital experiences with automated end-to-end client scripts, performance load testing, and API validation.",
     tags: ["Automation", "Performance", "Security", "Shift-Left"]
@@ -82,9 +91,28 @@ const services = [
     num: "10",
     name: "IT Consulting",
     category: "Consult",
+    href: "/services/it-consulting",
     image: "/webp/assets/Home-page/core-services/10.webp",
     desc: "Align technology investments with strategic business objectives via distributed architecture planning and digital roadmaps.",
     tags: ["Strategy", "Architecture", "Compliance", "Roadmaps"]
+  },
+  {
+    num: "11",
+    name: "AI Consulting",
+    category: "Strategy",
+    href: "/services/ai-consulting",
+    image: "/webp/assets/Home-page/core-services/1.webp",
+    desc: "Strategic AI roadmaps, generative AI governance frameworks, use case prioritization, and business case value realization.",
+    tags: ["AI Strategy", "Governance", "Readiness"]
+  },
+  {
+    num: "12",
+    name: "AI Modernization",
+    category: "Re-architect",
+    href: "/services/ai-modernization",
+    image: "/webp/assets/Home-page/core-services/6.webp",
+    desc: "Re-architect legacy enterprise systems with embedded AI models, automated code refactoring, and AI quality engineering.",
+    tags: ["Legacy AI", "Refactoring", "Monolith"]
   }
 ];
 
@@ -123,11 +151,6 @@ export function AboutServices() {
               AI &amp; Cloud in the flow of work—built for scale and trust
             </h2>
           </Reveal>
-          {/* <Reveal delay={0.2}>
-            <p className="text-zinc-400 text-sm md:text-base leading-relaxed max-w-2xl mx-auto font-bold">
-              Enrich employee experiences, reshape business processes, and <Link href="/services/digital-transformation" className="text-rose-500 hover:underline">accelerate innovation</Link> with Devopstrio—embedding trusted intelligence into everyday workflows. Move beyond <Link href="/services/devops-automation" className="text-rose-500 hover:underline">task automation</Link> to connect knowledge, improve decisions, and achieve measurable outcomes.
-            </p>
-          </Reveal> */}
         </div>
 
         {/* Carousel Scroll Container */}
@@ -171,8 +194,8 @@ export function AboutServices() {
 
                 {/* Footer Action Link */}
                 <div className="px-3 pb-2 pt-2 border-t border-zinc-800/40 mt-auto">
-                  <a
-                    href="/contact#contact-form"
+                  <Link
+                    href={item.href}
                     className="inline-flex items-center gap-3 group/footer w-fit transition-all duration-300"
                   >
                     <span className="w-8 h-8 rounded-lg bg-zinc-800 group-hover/footer:bg-[#E11D48] text-white flex items-center justify-center transition-colors duration-300 border border-zinc-700 group-hover/footer:border-[#E11D48]">
@@ -181,7 +204,7 @@ export function AboutServices() {
                     <span className="text-xs font-semibold tracking-wide text-zinc-300 group-hover/footer:text-white transition-colors">
                       Explore {item.name}
                     </span>
-                  </a>
+                  </Link>
                 </div>
               </div>
             ))}

@@ -40,6 +40,8 @@ const sitemapData: SitemapCategory[] = [
     accentColor: "from-rose-500 to-red-600",
     items: [
       { name: "Services Explorer", href: "/services/explore", desc: "Interactive Capability Matrix" },
+      { name: "AI Strategy & Advisory", href: "/services/ai-consulting", desc: "GenAI Strategy, AI Governance & CoE" },
+      { name: "AI System Modernization", href: "/services/ai-modernization", desc: "Legacy Refactoring & AI Ingestion" },
       { name: "AI & Data Innovation", href: "/services/ai-data-innovation", desc: "LLMs, RAG & Cognitive Automation" },
       { name: "Cloud Services", href: "/services/cloud-services", desc: "Azure, AWS & GCP Architecture" },
       { name: "DevOps & Automation", href: "/services/devops-automation", desc: "CI/CD, IaC & GitOps Automation" },
@@ -60,6 +62,7 @@ const sitemapData: SitemapCategory[] = [
     items: [
       { name: "Ecosystem Overview", href: "/ecosystem", desc: "Co-Engineering Hub & Alliances" },
       { name: "Cloud Landing Zone", href: "/ecosystem/landing-zone", desc: "SOC-2 Compliant Terraform Modules" },
+      { name: "Platforms & Solutions", href: "/ecosystem/platforms-solutions", desc: "SaaS Platforms & Enterprise Grid" },
       { name: "eSigniva Platform", href: "/ecosystem/platforms-solutions/saas-platforms/esigniva", desc: "Zero-Trust E-Signatures" },
       { name: "Brio Marketing Engine", href: "/ecosystem/platforms-solutions/saas-platforms/brio", desc: "AI Influencer & Creator Portal" },
       { name: "CareSuite Health Grid", href: "/ecosystem/platforms-solutions/saas-platforms/caresuite", desc: "HIPAA Patient Telemetry" },

@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useCallback, useRef } from "react";
+import Link from "next/link";
 import {
   motion,
   useAnimationControls,
@@ -13,50 +14,50 @@ const showcaseItems = [
   {
     title: "AI Services",
     description: "Transform your enterprise with cutting-edge AI solutions, from machine learning engineering to agentic automation and GenAI copilots.",
-    link: "https://devopstrio.co.uk/services/ai-data-innovation",
-    image: "/webp/assets/About-page/leadership/showcase/ai-services.webp",
+    link: "/services/ai-data-innovation",
+    image: "/webp/assets/About-page/leadership/sourcecard/AI services.webp",
   },
   {
     title: "Cloud Services",
     description: "Architect resilient multi-cloud environments with automated provisioning, FinOps governance, and zero-downtime deployments.",
-    link: "https://devopstrio.co.uk/services/cloud-services",
-    image: "/webp/assets/About-page/leadership/showcase/cloud-services.webp",
+    link: "/services/cloud-services",
+    image: "/webp/assets/About-page/leadership/sourcecard/Cloud Services.webp",
   },
   {
     title: "Managed Services",
     description: "Ensure high availability, proactive monitoring, and 24x7 enterprise SRE operations across hybrid and multi-cloud environments.",
-    link: "https://devopstrio-global-qa-e2gehkbdfmbfgddy.southindia-01.azurewebsites.net/services/managed-services",
-    image: "/webp/assets/About-page/leadership/showcase/managed-services.webp",
+    link: "/services/managed-services",
+    image: "/webp/assets/About-page/leadership/sourcecard/Managed Services.webp",
   },
   {
     title: "Careers at Devopstrio",
     description: "Join a global team of 525+ engineers building next-generation enterprise solutions. Shape your career in AI, Cloud, and DevOps.",
-    link: "https://devopstrio.co.uk/careers",
-    image: "/webp/assets/About-page/leadership/showcase/careers.webp",
+    link: "/careers",
+    image: "/webp/assets/About-page/leadership/sourcecard/Careers at Devopstrio.webp",
   },
   {
     title: "Partnerships",
     description: "See how we collaborate with technology leaders like AWS, Azure, and Google Cloud to deliver certified, enterprise-grade solutions.",
-    link: "https://devopstrio.co.uk/about/partnerships-certifications",
-    image: "/webp/assets/About-page/leadership/showcase/partnerships.webp",
+    link: "/about/partnerships-certifications",
+    image: "/webp/assets/About-page/leadership/sourcecard/Partnerships.webp",
   },
   {
     title: "Our Culture & People",
     description: "Experience an engineering culture built on innovation, inclusion, and continuous learning across our global delivery centers.",
-    link: "https://devopstrio.co.uk/about/our-culture-people",
-    image: "/webp/assets/About-page/leadership/showcase/our-culture.webp",
+    link: "/about/our-culture-people",
+    image: "/webp/assets/About-page/leadership/sourcecard/Our Culture & People.webp",
   },
   {
     title: "Global Internship Programme",
     description: "Launch your tech career with hands-on experience in enterprise AI, cloud architecture, and DevOps engineering at scale.",
-    link: "https://devopstrio.co.uk/about/global-internship",
-    image: "/webp/assets/About-page/leadership/showcase/global-internship.webp",
+    link: "/about/global-internship",
+    image: "/webp/assets/About-page/leadership/sourcecard/Global Internship Programme.webp",
   },
   {
     title: "Explore All Services",
     description: "Discover our complete portfolio of engineering services spanning AI, Cloud, DevOps, Quality Engineering, and Digital Transformation.",
-    link: "https://devopstrio.co.uk/services/explore",
-    image: "/webp/assets/About-page/leadership/showcase/explore-services.webp",
+    link: "/services/explore",
+    image: "/webp/assets/About-page/leadership/sourcecard/Explore All Services.webp",
   },
 ];
 
@@ -259,10 +260,8 @@ export const LeadershipEnterpriseShowcase = () => {
                         <p className="text-zinc-300 font-semibold text-sm sm:text-base leading-relaxed mb-6 flex-grow line-clamp-3">
                           {item.description}
                         </p>
-                        <a
+                        <Link
                           href={item.link}
-                          target="_blank"
-                          rel="noopener noreferrer"
                           draggable={false}
                           className="relative inline-flex items-center gap-2 self-start text-sm sm:text-base font-semibold text-rose-500 hover:text-rose-400 transition-colors rounded-sm"
                         >
@@ -271,7 +270,7 @@ export const LeadershipEnterpriseShowcase = () => {
                             <span className="absolute left-0 -bottom-0.5 h-px w-full bg-current origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
                           </span>
                           <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
-                        </a>
+                        </Link>
                       </div>
                     </div>
                   </div>

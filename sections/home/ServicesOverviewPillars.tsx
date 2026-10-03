@@ -46,7 +46,7 @@ const pillars = [
       "Enterprise-grade managed services that combine SRE, cybersecurity validation, and cloud optimization to keep systems secure, highly resilient, and cost-effective.",
     mainLink: "/services/managed-services",
     services: [
-      { name: "24/7 Managed Cloud Services", href: "/services/managed-services/managed-cloud" },
+      { name: "24/7 Managed Cloud Services", href: "/services/managed-services/managed-cloud-services" },
       { name: "Site Reliability Engineering (SRE)", href: "/services/devops-automation/site-reliability-engineering" },
       { name: "Cybersecurity & SOC Operations", href: "/services/cybersecurity/security-operations-center" },
       { name: "FinOps & Cost Optimization", href: "/services/cloud-services/finops-cost-optimization" },

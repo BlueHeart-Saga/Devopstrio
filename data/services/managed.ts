@@ -16,6 +16,17 @@ export const managedService: ServiceCategory = {
   ],
   capabilities: [
     {
+      slug: "msp-uk",
+      title: "Managed Service Provider UK (MSP Services)",
+      description: "UK-based premier Managed Service Provider (MSP) delivering 24/7 enterprise IT operations, Cyber Essentials Plus compliance, and SLA-backed multi-cloud management.",
+      items: [
+        "Dedicated London & UK SRE technical account teams",
+        "UK GDPR, Cyber Essentials Plus & ISO 27001 compliance governance",
+        "24/7 proactive multi-cloud infrastructure & incident SLAs"
+      ],
+      href: "/services/managed-services/msp-uk"
+    },
+    {
       slug: "infrastructure-management",
       title: "Infrastructure Management Services UK",
       description: "Comprehensive IT infrastructure management, server provisioning, network monitoring, and system optimization across UK enterprise environments.",
@@ -27,7 +38,7 @@ export const managedService: ServiceCategory = {
       href: "/services/managed-services/infrastructure-management"
     },
     {
-      slug: "managed-cloud",
+      slug: "managed-cloud-services",
       title: "Managed Cloud Services UK",
       description: "End-to-end cloud workload operations, auto-scaling configuration, cost governance, and security posture management on AWS, Azure, and GCP.",
       items: [
@@ -35,29 +46,29 @@ export const managedService: ServiceCategory = {
         "Cloud security monitoring, configuration drift, and performance tuning",
         "Server resource right-sizing, workload optimization, and cost allocation"
       ],
-      href: "/services/managed-services/managed-cloud"
+      href: "/services/managed-services/managed-cloud-services"
     },
     {
-      slug: "managed-devops",
-      title: "Managed DevOps & Kubernetes",
+      slug: "managed-devops-services",
+      title: "Managed DevOps Services",
       description: "Cluster lifecycle management, automated node upgrades, CI/CD runner tuning, and production ingress control.",
       items: [
         "Automated Kubernetes node upgrades",
         "EKS/GKE/AKS cluster health monitoring",
         "CI/CD runner performance tuning"
       ],
-      href: "/services/managed-services/managed-devops"
+      href: "/services/managed-services/managed-devops-services"
     },
     {
-      slug: "managed-security",
-      title: "24/7 Managed Security Operations (SOC)",
+      slug: "managed-security-services",
+      title: "Managed Security Services",
       description: "Continuous threat hunting, real-time alert triage, vulnerability isolation, and rapid incident remediation.",
       items: [
         "SIEM & SOC alert management",
         "Automated threat containment",
         "Zero-day vulnerability isolation"
       ],
-      href: "/services/managed-services/managed-security"
+      href: "/services/managed-services/managed-security-services"
     },
     {
       slug: "application-support",
@@ -93,26 +104,15 @@ export const managedService: ServiceCategory = {
       href: "/services/managed-services/monitoring-incident-management"
     },
     {
-      slug: "twenty-four-seven-support",
-      title: "24/7 Dedicated Support Services",
-      description: "Round-the-clock follow-the-sun engineer coverage, dedicated communication channels, and immediate response for critical outages.",
+      slug: "24-7-support-services",
+      title: "24/7 IT Support & Managed Operations",
+      description: "Round-the-clock IT support, infrastructure, application, cloud, platform, incident, and operational support with guaranteed SLA response times.",
       items: [
         "24/7 follow-the-sun engineer coverage",
         "Dedicated Slack/Teams war room channels",
         "15-minute critical outage response SLA"
       ],
-      href: "/services/managed-services/twenty-four-seven-support"
-    },
-    {
-      slug: "managed-service-provider-msp-uk",
-      title: "Managed Service Provider (MSP UK)",
-      description: "UK-based premier Managed Service Provider (MSP) delivering 24/7 enterprise IT operations, Cyber Essentials Plus compliance, and SLA-backed multi-cloud management.",
-      items: [
-        "Dedicated London & UK SRE technical account teams",
-        "UK GDPR, Cyber Essentials Plus & ISO 27001 compliance",
-        "24/7 proactive multi-cloud infrastructure & incident SLAs"
-      ],
-      href: "/services/managed-services/managed-service-provider-msp-uk"
+      href: "/services/managed-services/24-7-support-services"
     }
   ],
   outcomes: [
@@ -641,9 +641,9 @@ export const managedCapabilities: Record<string, CapabilityDetail> = {
       }
     ]
   },
-  "managed-parts": {
-    slug: "managed-parts",
-    title: "Managed Service Provider UK",
+  "msp-uk": {
+    slug: "msp-uk",
+    title: "Managed Service Provider UK (MSP Services)",
     heroSubtitle: "UK-based dedicated SRE governance, Cyber Essentials Plus compliance, and SLA-backed multi-cloud management.",
     challenge: "UK enterprises and regulated organizations face strict compliance hurdles (GDPR, Cyber Essentials, ISO 27001), rising IT talent costs, and lack of dedicated UK-timezone technical leadership to manage mission-critical cloud platforms.",
     solution: "We act as your premier UK Managed Service Provider (MSP), delivering proactive 24/7 SRE operations, UK data sovereignty assurance, Cyber Essentials Plus alignment, and dedicated London/UK-based technical account management.",
@@ -685,6 +685,99 @@ export const managedCapabilities: Record<string, CapabilityDetail> = {
       {
         q: "Do you assist with UK compliance and data residency?",
         a: "Absolutely. We ensure all workload hosting, backups, and data processing remain strictly within UK cloud regions (e.g., AWS London eu-west-2 / Azure UK South) in full accordance with UK GDPR and Cyber Essentials guidelines."
+      }
+    ]
+  },
+  "managed-parts": {
+    slug: "msp-uk",
+    title: "Managed Service Provider UK (MSP Services)",
+    heroSubtitle: "UK-based dedicated SRE governance, Cyber Essentials Plus compliance, and SLA-backed multi-cloud management.",
+    challenge: "UK enterprises and regulated organizations face strict compliance hurdles (GDPR, Cyber Essentials, ISO 27001), rising IT talent costs, and lack of dedicated UK-timezone technical leadership to manage mission-critical cloud platforms.",
+    solution: "We act as your premier UK Managed Service Provider (MSP), delivering proactive 24/7 SRE operations, UK data sovereignty assurance, Cyber Essentials Plus alignment, and dedicated London/UK-based technical account management.",
+    features: [
+      "Dedicated UK-based SRE and Technical Account Management",
+      "UK GDPR, Cyber Essentials Plus, and ISO 27001 compliance governance",
+      "24/7/365 proactive multi-cloud infrastructure monitoring and incident management",
+      "Strict 15-minute SLA response with transparent UK business hours escalation"
+    ],
+    benefits: [
+      "Guaranteed UK data residency and regulatory compliance",
+      "Over 45% reduction in operational IT overhead vs in-house teams",
+      "99.99% platform uptime backed by enterprise financial SLAs"
+    ],
+    deliveryApproach: [
+      "Compliance & Architecture Audit: Evaluating cloud infrastructure against UK Cyber Essentials and GDPR standards.",
+      "SLA & Escalation Framework: Aligning UK business hours coverage and 24/7 emergency response runbooks.",
+      "Continuous Managed Operations: Deploying dedicated SRE oversight, regular security reviews, and cost optimization."
+    ],
+    techStack: [
+      { name: "AWS / Azure / GCP (UK Regions)", desc: "London (eu-west-2) & UK multi-cloud enterprise hosting." },
+      { name: "Cyber Essentials Plus & ISO 27001", desc: "UK cybersecurity & governance standards." },
+      { name: "Datadog / Prometheus / PagerDuty", desc: "Enterprise observability and 24/7 UK incident routing." }
+    ],
+    caseStudy: {
+      title: "Full-stack Managed Service Provider engagement for UK Fintech firm.",
+      desc: "Delivered 24/7 cloud management and Cyber Essentials Plus compliance for a London-based financial services platform, achieving 99.99% uptime and passing annual regulatory audits with zero findings.",
+      metrics: [
+        { value: "99.99%", label: "Platform uptime SLA maintained" },
+        { value: "100%", label: "UK Cyber Essentials Plus compliance" },
+        { value: "< 10m", label: "Average emergency incident response time" }
+      ]
+    },
+    faqs: [
+      {
+        q: "Are your engineers and support teams based in the UK?",
+        a: "Yes. We provide dedicated UK-based technical account managers and SREs aligned with UK business hours, backed by our 24/7 global follow-the-sun support."
+      },
+      {
+        q: "Do you assist with UK compliance and data residency?",
+        a: "Absolutely. We ensure all workload hosting, backups, and data processing remain strictly within UK cloud regions (e.g., AWS London eu-west-2 / Azure UK South) in full accordance with UK GDPR and Cyber Essentials guidelines."
+      }
+    ]
+  },
+  "24-7-support-services": {
+    slug: "24-7-support-services",
+    title: "24/7 IT Support & Managed Operations",
+    heroSubtitle: "Always-on IT support, infrastructure, application, cloud, platform, incident, and operational support with guaranteed SLA response times.",
+    challenge: "Off-hours outages, slow response times from generic ticketing queues, and lack of senior engineer availability create massive business exposure during non-business hours.",
+    solution: "We provide 24/7/365 follow-the-sun engineer coverage with direct Slack/Teams escalation channels, immediate live diagnostics, and guaranteed response SLAs.",
+    features: [
+      "Direct Slack/Microsoft Teams shared channels with on-duty SREs",
+      "Follow-the-sun global operational coverage across UK, EU, and APAC",
+      "Immediate live debugging sessions for urgent production blockers"
+    ],
+    benefits: [
+      "Zero unassisted off-hours downtime incidents",
+      "Direct communication with senior engineers—no tier-1 script readers",
+      "Complete peace of mind for leadership during mission-critical launches"
+    ],
+    deliveryApproach: [
+      "Channel Onboarding: Setting up dedicated shared Slack/Teams bridges.",
+      "Escalation Matrix: Defining critical paging protocols and on-call rotations.",
+      "Live Coverage: Launching continuous 24/7 SRE engineer rotations."
+    ],
+    techStack: [
+      { name: "Slack / Teams", desc: "Direct enterprise communication channels." },
+      { name: "PagerDuty", desc: "Live on-call escalation and paging." },
+      { name: "Zendesk / Jira", desc: "SLA ticket tracking and audit histories." }
+    ],
+    caseStudy: {
+      title: "24/7 SRE developer desk for high-volume retail platform.",
+      desc: "Provided 24/7 live developer support across Black Friday peak shopping seasons, achieving 100% SLA compliance with average response time under 4 minutes.",
+      metrics: [
+        { value: "< 4 min", label: "Average live chat engineer response" },
+        { value: "100%", label: "Peak season uptime sustained" },
+        { value: "24/7/365", label: "Always-on senior SRE availability" }
+      ]
+    },
+    faqs: [
+      {
+        q: "How does our team reach your on-call engineers?",
+        a: "You can reach our engineers directly through your dedicated shared Slack/Teams channel, emergency phone hotline, or priority ticket portal."
+      },
+      {
+        q: "Are your support engineers junior or senior?",
+        a: "All support rotations are staffed by certified senior DevOps, Cloud, and SRE engineers capable of making architectural decisions and code-level fixes."
       }
     ]
   },

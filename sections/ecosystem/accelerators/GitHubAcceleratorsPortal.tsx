@@ -243,7 +243,7 @@ export function GitHubAcceleratorsPortal() {
     {
       title: "AI Transformation & Data Engineering",
       icon: <Sparkles className="w-6 h-6 text-rose-500" />,
-      link: "/services/it-consulting/ai-digital-transformation",
+      link: "/services/ai-consulting",
       linkText: "Explore AI Services",
       items: ["Azure OpenAI & Vector Search", "LLMOps & Prompt Orchestration", "Enterprise Lakehouse Architecture"]
     },

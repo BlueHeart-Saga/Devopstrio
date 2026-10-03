@@ -71,15 +71,15 @@ export const transformationService: ServiceCategory = {
       href: "/services/digital-transformation/customer-experience-transformation"
     },
     {
-      slug: "legacy-modernization",
-      title: "Legacy Systems Modernization",
+      slug: "legacy-system-modernization",
+      title: "Legacy System Modernization",
       description: "Migrate mainframe codebases and outdated relational databases to modern cloud-native architectures with zero operational disruption.",
       items: [
         "Monolith decomposition into APIs",
         "Microservices architecture refactoring",
         "Continuous automated data validation"
       ],
-      href: "/services/digital-transformation/legacy-modernization"
+      href: "/services/digital-transformation/legacy-system-modernization"
     },
     {
       slug: "business-transformation",

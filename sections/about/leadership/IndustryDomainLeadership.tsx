@@ -17,25 +17,25 @@ const industryLeadershipData: IndustryLeader[] = [
     id: "ind-1",
     name: "Arun Karthik",
     role: "Industry Practice Lead — Financial Services & Banking",
-    image: "/webp/assets/About-page/leadership/sourcecard/AI services.webp",
+    image: "/webp/assets/About-page/leadership/v2/dev_emp_0010.webp",
   },
   {
     id: "ind-2",
     name: "David O'Connor",
     role: "Industry Director — Healthcare & Life Sciences",
-    image: "/webp/assets/About-page/leadership/sourcecard/Cloud Services.webp",
+    image: "/webp/assets/About-page/leadership/v2/dev_emp_015.webp",
   },
   {
     id: "ind-3",
     name: "Nancy Carell",
     role: "Domain Director — Cloud Infrastructure & SRE",
-    image: "/webp/assets/About-page/leadership/sourcecard/Managed Services.webp",
+    image: "/webp/assets/About-page/leadership/v2/1.webp",
   },
   {
     id: "ind-4",
     name: "Rohan Varma",
     role: "Domain Principal — Cybersecurity & Zero-Trust Governance",
-    image: "/webp/assets/About-page/leadership/sourcecard/Explore All Services.webp",
+    image: "/webp/assets/About-page/leadership/v2/dev_emp_023.webp",
   },
 
   // Row 2 (5 to 8)
@@ -43,25 +43,25 @@ const industryLeadershipData: IndustryLeader[] = [
     id: "ind-5",
     name: "Gayathri Raghuram",
     role: "Industry Principal — Manufacturing & Energy",
-    image: "/webp/assets/About-page/leadership/sourcecard/Partnerships.webp",
+    image: "/webp/assets/About-page/leadership/v2/dev_emp_030.webp",
   },
   {
     id: "ind-6",
     name: "Vikramaditya Rao",
     role: "Industry Solutions Director — Telecom & Media",
-    image: "/webp/assets/About-page/leadership/sourcecard/Our Culture & People.webp",
+    image: "/webp/assets/About-page/leadership/v2/dev_emp_021.webp",
   },
   {
     id: "ind-7",
     name: "Nikhil Sharma",
     role: "Sector Lead — Public Sector & Higher Education",
-    image: "/webp/assets/About-page/leadership/sourcecard/Careers at Devopstrio.webp",
+    image: "/webp/assets/About-page/leadership/v2/dev_emp_022.webp",
   },
   {
     id: "ind-8",
     name: "Kofi Boateng",
     role: "Industry Director — Retail, E-Commerce & Logistics",
-    image: "/webp/assets/About-page/leadership/sourcecard/Global Internship Programme.webp",
+    image: "/webp/assets/About-page/leadership/v2/dev_emp_019.webp",
   },
 ];
 

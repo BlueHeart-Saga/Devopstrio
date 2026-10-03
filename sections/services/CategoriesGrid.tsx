@@ -91,9 +91,9 @@ const richServiceCategories: ServiceCategory[] = [
     desc: "Build highly responsive React/Next.js platforms, scalable multi-tenant SaaS products, and event-driven microservice networks.",
     href: "/services/software-development",
     items: [
-      { name: "Enterprise Application Development", desc: "High-throughput database design and monolithic splits.", href: "/services/software-development/enterprise-app-development", action: "Design app" },
-      { name: "Web Application Development", desc: "Responsive React/Next.js platforms with advanced SEO layouts.", href: "/services/software-development/web-app-development", action: "Build web app" },
-      { name: "Mobile Application Development", desc: "Flutter and native iOS/Android builds with hardware integration.", href: "/services/software-development/mobile-app-development", action: "Launch app" },
+      { name: "Enterprise Application Development", desc: "High-throughput database design and monolithic splits.", href: "/services/software-development/enterprise-application-development", action: "Design app" },
+      { name: "Web Application Development", desc: "Responsive React/Next.js platforms with advanced SEO layouts.", href: "/services/software-development/web-application-development", action: "Build web app" },
+      { name: "Mobile Application Development", desc: "Flutter and native iOS/Android builds with hardware integration.", href: "/services/software-development/mobile-application-development", action: "Launch app" },
       { name: "SaaS Product Development", desc: "Multi-tenant system configurations and subscription gateways.", href: "/services/software-development/saas-product-development", action: "Build SaaS" },
       { name: "API Development & Integration", desc: "gRPC microservices, REST/GraphQL gateways, and OpenAPI specs.", href: "/services/software-development/api-development-integration", action: "Integrate APIs" },
       { name: "Microservices Architecture", desc: "Event-driven Apache Kafka loops and saga pattern integration.", href: "/services/software-development/microservices-architecture", action: "Decouple services" },
@@ -112,7 +112,7 @@ const richServiceCategories: ServiceCategory[] = [
       { name: "Process Automation", desc: "OCR tools integration and cross-platform RPA pipelines.", href: "/services/digital-transformation/process-automation", action: "Automate flows" },
       { name: "Intelligent Workflows", desc: "Customer service routing systems based on sentiment scoring.", href: "/services/digital-transformation/intelligent-workflows", action: "Deploy routing" },
       { name: "Customer Experience Transformation", desc: "Omni-channel client portals and ML-driven recommendation flows.", href: "/services/digital-transformation/customer-experience-transformation", action: "Build portal" },
-      { name: "Legacy System Modernization", desc: "Migrating legacy ColdFusion/COBOL/PHP workloads to Go and NodeJS.", href: "/services/digital-transformation/legacy-modernization", action: "Upgrade code" },
+      { name: "Legacy System Modernization", desc: "Migrating legacy ColdFusion/COBOL/PHP workloads to Go and NodeJS.", href: "/services/digital-transformation/legacy-system-modernization", action: "Upgrade code" },
       { name: "Business Transformation", desc: "Scaling Scrum frameworks and corporate KPI transparency models.", href: "/services/digital-transformation/business-transformation", action: "Scale agile" },
       { name: "Change Management", desc: "Internal developer coaching and technology adoption guides.", href: "/services/digital-transformation/change-management", action: "Coaching guides" }
     ]
@@ -125,7 +125,7 @@ const richServiceCategories: ServiceCategory[] = [
     items: [
       { name: "Data Platform Development", desc: "Columnar databases design and multi-tier data storage setups.", href: "/services/data-engineering/data-platform-development", action: "Build platform" },
       { name: "Data Warehousing", desc: "Snowflake, Databricks, and Google BigQuery analytical platforms.", href: "/services/data-engineering/data-warehousing", action: "Configure warehouse" },
-      { name: "Data Lakes & Lakehouse", desc: "Apache Iceberg configurations and S3 parquet partitioning.", href: "/services/data-engineering/data-lakes-lakehouse", action: "Set up lakehouse" },
+      { name: "Data Lakes & Lakehouse", desc: "Apache Iceberg configurations and S3 parquet partitioning.", href: "/services/data-engineering/data-lakes-lakehouse-architecture", action: "Set up lakehouse" },
       { name: "ETL/ELT Pipelines", desc: "Airflow orchestrators and dbt models checking raw entries.", href: "/services/data-engineering/etl-elt-pipelines", action: "Orchestrate flow" },
       { name: "Real-Time Data Processing", desc: "Apache Spark Streaming, Flink loops, and Druid databases.", href: "/services/data-engineering/real-time-data-processing", action: "Process streams" },
       { name: "Data Quality Management", desc: "Great Expectations assertions and anomaly alerts.", href: "/services/data-engineering/data-quality-management", action: "Verify quality" },
@@ -139,10 +139,10 @@ const richServiceCategories: ServiceCategory[] = [
     desc: "Maintain multi-account cloud configurations, run OS patching, index PostgreSQL databases, and define incident response SLA escalations.",
     href: "/services/managed-services",
     items: [
-      { name: "24/7 Support Services", desc: "Slack and phone developer help desks with fast response SLAs.", href: "/services/managed-services/twenty-four-seven-support", action: "Contact desk" },
-      { name: "Managed Cloud Services", desc: "Multi-account admin support, security patches, OS updates.", href: "/services/managed-services/managed-cloud", action: "Get support" },
-      { name: "Managed DevOps Services", desc: "CI/CD cache optimization, environment updates, and pipeline tuning.", href: "/services/managed-services/managed-devops", action: "Optimize pipeline" },
-      { name: "Managed Security Services", desc: "24/7 threat monitoring, WAF policies, and incident containment.", href: "/services/managed-services/managed-security", action: "Monitor threats" },
+      { name: "24/7 Support Services", desc: "Slack and phone developer help desks with fast response SLAs.", href: "/services/managed-services/24-7-support-services", action: "Contact desk" },
+      { name: "Managed Cloud Services", desc: "Multi-account admin support, security patches, OS updates.", href: "/services/managed-services/managed-cloud-services", action: "Get support" },
+      { name: "Managed DevOps Services", desc: "CI/CD cache optimization, environment updates, and pipeline tuning.", href: "/services/managed-services/managed-devops-services", action: "Optimize pipeline" },
+      { name: "Managed Security Services", desc: "24/7 threat monitoring, WAF policies, and incident containment.", href: "/services/managed-services/managed-security-services", action: "Monitor threats" },
       { name: "Application Support", desc: "SLA bug resolutions, Sentry monitoring, and performance tuning.", href: "/services/managed-services/application-support", action: "Open ticket" },
       { name: "Infrastructure Management", desc: "SAN configuration, hypervisor updates, and load balancers.", href: "/services/managed-services/infrastructure-management", action: "Configure SAN" },
       { name: "Database Administration", desc: "PostgreSQL index rebuilds, backups, and security hardening.", href: "/services/managed-services/database-administration", action: "Harden database" },
@@ -180,6 +180,38 @@ const richServiceCategories: ServiceCategory[] = [
       { name: "IT Strategy & Roadmap", desc: "IT capability adoption steps, budget planning, skill gap audits.", href: "/services/it-consulting/it-strategy-roadmap", action: "Request roadmap" },
       { name: "Technology Assessment", desc: "Scalability audits, query bottlenecks tracking, and code checks.", href: "/services/it-consulting/technology-assessment", action: "Audit code" }
     ]
+  },
+  {
+    id: "ai-consulting",
+    name: "AI Consulting",
+    desc: "Strategic AI advisory, readiness assessments, generative AI governance, and value realization business cases for leadership teams.",
+    href: "/services/ai-consulting",
+    items: [
+      { name: "AI Strategy & Advisory", desc: "Executive roadmap engineering, AI capability mapping, and ROI modeling.", href: "/services/ai-consulting/ai-strategy-advisory", action: "Plan AI strategy" },
+      { name: "AI Readiness Assessment", desc: "Data maturity checks, infrastructure readiness, and skill gap audits.", href: "/services/ai-consulting/ai-readiness-assessment", action: "Assess readiness" },
+      { name: "Generative AI Consulting", desc: "LLM platform selection, fine-tuning roadmaps, and enterprise RAG architecture.", href: "/services/ai-consulting/generative-ai-consulting", action: "Consult GenAI" },
+      { name: "AI Use Case Discovery", desc: "Prioritizing high-impact automation candidates and feasibility checkouts.", href: "/services/ai-consulting/ai-use-case-discovery", action: "Discover cases" },
+      { name: "AI Governance & Risk", desc: "Responsible AI frameworks, data privacy compliance, and bias mitigation.", href: "/services/ai-consulting/ai-governance-risk", action: "Audit governance" },
+      { name: "AI Operating Model", desc: "Establishing AI Centre of Excellence (CoE) and team scaling blueprints.", href: "/services/ai-consulting/ai-operating-model", action: "Scale CoE" },
+      { name: "AI ROI & Business Case", desc: "Financial modeling, TCO projections, and measurable value tracking.", href: "/services/ai-consulting/ai-roi-business-case", action: "Model ROI" },
+      { name: "AI Vendor Selection", desc: "Unbiased evaluation of hyperscaler AI services, models, and platforms.", href: "/services/ai-consulting/ai-vendor-platform-selection", action: "Evaluate vendors" }
+    ]
+  },
+  {
+    id: "ai-modernization",
+    name: "AI Modernization",
+    desc: "Re-architect legacy enterprise systems with embedded AI models, automated code refactoring, and AI-powered quality engineering.",
+    href: "/services/ai-modernization",
+    items: [
+      { name: "Legacy Application Modernization", desc: "Embedding LLM capabilities into legacy monolith applications seamlessly.", href: "/services/ai-modernization/legacy-application-ai-modernization", action: "Modernize legacy" },
+      { name: "AI-Enabled App Modernization", desc: "Augmenting existing application workflows with intelligent automation.", href: "/services/ai-modernization/ai-enabled-application-modernization", action: "Augment app" },
+      { name: "Code Refactoring & Translation", desc: "AI-assisted translation of legacy COBOL, Fortran, and monolith codebases.", href: "/services/ai-modernization/code-modernization-refactoring", action: "Refactor code" },
+      { name: "Legacy System Intelligence", desc: "Extracting business rules and schema knowledge from legacy databases.", href: "/services/ai-modernization/legacy-system-intelligence", action: "Extract rules" },
+      { name: "AI Integration & Gateway", desc: "Building secure API gateways and model connectors into legacy software.", href: "/services/ai-modernization/ai-integration-existing-applications", action: "Integrate AI" },
+      { name: "Monolith Modernization", desc: "Decomposing legacy monoliths into AI-orchestrated microservices.", href: "/services/ai-modernization/monolith-modernization", action: "Split monolith" },
+      { name: "AI-Powered Testing", desc: "Autonomous test generation, regression suites, and bug detection.", href: "/services/ai-modernization/ai-powered-testing-modernization", action: "Automate test" },
+      { name: "Modernization Assessment", desc: "Technical debt auditing and AI modernization prioritization roadmaps.", href: "/services/ai-modernization/modernization-assessment-roadmap", action: "Assess roadmap" }
+    ]
   }
 ];
 
@@ -194,6 +226,8 @@ const bgWaves: Record<string, string> = {
   "managed-services": "/webp/assets/Services_grid/managed-services.webp",
   "qa-testing": "/webp/assets/Services_grid/qa-testing.webp",
   "it-consulting": "/webp/assets/Services_grid/it-consulting.webp",
+  "ai-consulting": "/webp/assets/Services_grid/it-consulting.webp",
+  "ai-modernization": "/webp/assets/Services_grid/ai-data-innovation.webp",
 };
 
 export function CategoriesGrid() {

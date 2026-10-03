@@ -16,7 +16,7 @@ export const softwareService: ServiceCategory = {
   ],
   capabilities: [
     {
-      slug: "enterprise-app-development",
+      slug: "enterprise-application-development",
       title: "Enterprise Application Development",
       description: "Build robust, mission-critical enterprise software architectures designed for high transactional throughput and security.",
       items: [
@@ -24,10 +24,10 @@ export const softwareService: ServiceCategory = {
         "Complex multi-role authorization models",
         "Scalable cloud-native enterprise architectures"
       ],
-      href: "/services/software-development/enterprise-app-development"
+      href: "/services/software-development/enterprise-application-development"
     },
     {
-      slug: "web-app-development",
+      slug: "web-application-development",
       title: "Web Application Development",
       description: "Engineer dynamic, responsive Next.js and React web applications optimized for lightning-fast speeds and high conversions.",
       items: [
@@ -35,10 +35,10 @@ export const softwareService: ServiceCategory = {
         "Responsive mobile-first interface design",
         "Dynamic server-side rendering & caching"
       ],
-      href: "/services/software-development/web-app-development"
+      href: "/services/software-development/web-application-development"
     },
     {
-      slug: "mobile-app-development",
+      slug: "mobile-application-development",
       title: "Mobile Application Development",
       description: "Develop high-performance native and cross-platform mobile apps for iOS and Android with seamless offline synchronization.",
       items: [
@@ -46,7 +46,7 @@ export const softwareService: ServiceCategory = {
         "Cross-platform Flutter & React Native builds",
         "Encrypted offline data sync & biometric auth"
       ],
-      href: "/services/software-development/mobile-app-development"
+      href: "/services/software-development/mobile-application-development"
     },
     {
       slug: "saas-product-development",

@@ -387,9 +387,9 @@ export function Footer() {
             <div>
               <h5 className="font-bold text-white mb-2 uppercase text-[9px] tracking-wider text-rose-500/80">Software Development</h5>
               <ul className="flex flex-col gap-1.5">
-                <li><a href="/services/software-development/enterprise-app-development" className="hover:text-white transition-colors">Enterprise Application Dev</a></li>
-                <li><a href="/services/software-development/web-app-development" className="hover:text-white transition-colors">Web Application Dev</a></li>
-                <li><a href="/services/software-development/mobile-app-development" className="hover:text-white transition-colors">Mobile Application Dev</a></li>
+                <li><Link href="/services/software-development/enterprise-application-development" className="hover:text-white transition-colors">Enterprise Application Dev</Link></li>
+                <li><Link href="/services/software-development/web-application-development" className="hover:text-white transition-colors">Web Application Dev</Link></li>
+                <li><Link href="/services/software-development/mobile-application-development" className="hover:text-white transition-colors">Mobile Application Dev</Link></li>
                 <li><a href="/services/software-development/saas-product-development" className="hover:text-white transition-colors">SaaS Product Dev</a></li>
                 <li><a href="/services/software-development/api-development-integration" className="hover:text-white transition-colors">API Dev & Integration</a></li>
                 <li><a href="/services/software-development/microservices-architecture" className="hover:text-white transition-colors">Microservices Architecture</a></li>

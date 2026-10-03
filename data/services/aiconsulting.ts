@@ -16,67 +16,113 @@ export const aiConsultingService: ServiceCategory = {
   ],
   capabilities: [
     {
+      slug: "ai-strategy-advisory",
+      title: "AI Strategy & Executive Advisory",
+      description: "Executive AI strategy formulation, technology roadmap planning, and C-suite alignment for enterprise AI adoption.",
+      items: [
+        "C-suite AI vision & strategy alignment workshops",
+        "Multi-year enterprise AI roadmap development",
+        "Competitive AI positioning & disruption analysis"
+      ],
+      href: "/services/ai-consulting/ai-strategy-advisory"
+    },
+    {
       slug: "ai-readiness-assessment",
-      title: "AI Readiness & Feasibility Strategy",
-      description: "Evaluating data assets, infrastructure readiness, and ROI potential for enterprise AI integration.",
-      items: ["Data maturity & quality audits", "Use-case prioritization matrix", "Technical stack feasibility reports"],
-      href: "/services/ai-data-innovation/generative-ai-solutions"
+      title: "AI Readiness Assessment",
+      description: "Comprehensive evaluation of data infrastructure, technical debt, security posture, and organizational AI maturity.",
+      items: [
+        "Data quality, pipeline & telemetry readiness audits",
+        "Cloud infrastructure & GPU compute capacity check",
+        "Technical debt & legacy integration barrier scoring"
+      ],
+      href: "/services/ai-consulting/ai-readiness-assessment"
     },
     {
-      slug: "llm-architecture-advisory",
-      title: "LLM & Foundation Model Advisory",
-      description: "Selecting, sizing, and designing enterprise RAG and foundation model architectures.",
-      items: ["Open-source vs proprietary LLM evaluation", "Cost & latency optimization", "Data privacy & security guardrails"],
-      href: "/services/ai-data-innovation/ai-agents-automation"
+      slug: "generative-ai-consulting",
+      title: "Generative AI Consulting",
+      description: "Tailored Generative AI strategy, LLM selection, RAG architecture design, and custom prompt engineering frameworks.",
+      items: [
+        "Proprietary vs open-source LLM selection matrices",
+        "Enterprise RAG & vector database architecture design",
+        "Custom fine-tuning & prompt security governance"
+      ],
+      href: "/services/ai-consulting/generative-ai-consulting"
     },
     {
-      slug: "enterprise-ai-governance",
-      title: "Enterprise AI Governance & Compliance",
-      description: "Establishing guardrails, ethical AI guidelines, and compliance frameworks for secure deployments.",
-      items: ["AI safety audits & bias mitigation", "Zero-data-leakage guardrails", "Regulatory compliance roadmaps"],
-      href: "/services/cybersecurity/compliance-governance"
+      slug: "ai-use-case-discovery",
+      title: "AI Use Case Discovery & Prioritization",
+      description: "Identify, evaluate, and rank enterprise AI use cases based on business impact, feasibility, and time-to-value.",
+      items: [
+        "Cross-departmental AI opportunity mapping",
+        "Impact vs complexity matrix scoring",
+        "Rapid proof-of-concept (PoC) scoping"
+      ],
+      href: "/services/ai-consulting/ai-use-case-discovery"
     },
     {
-      slug: "agentic-workflow-strategy",
-      title: "Autonomous Agent Strategy & Acceleration",
-      description: "Architecting multi-agent ecosystems and autonomous workflows for enterprise business acceleration.",
-      items: ["Agentic workflow design", "Human-in-the-loop review controls", "Cross-system API orchestration"],
-      href: "/ecosystem/accelerators-frameworks"
+      slug: "ai-governance-risk",
+      title: "AI Governance, Risk & Responsible AI",
+      description: "Establish Responsible AI frameworks, ethical guardrails, regulatory compliance policies, and risk mitigation strategies.",
+      items: [
+        "EU AI Act & global regulatory compliance frameworking",
+        "Bias mitigation, explainability & fairness auditing",
+        "Data privacy, hallucination controls & IP protection"
+      ],
+      href: "/services/ai-consulting/ai-governance-risk"
     },
     {
-      slug: "custom-rag-pipeline-design",
-      title: "Enterprise RAG & Neural Search",
-      description: "Designing semantic search, vector stores, and contextual AI retrieval pipelines.",
-      items: ["Vector database indexing", "Hybrid semantic retrieval", "Knowledge graph integration"],
-      href: "/services/ai-data-innovation/machine-learning-engineering"
+      slug: "ai-operating-model",
+      title: "AI Operating Model & Centre of Excellence",
+      description: "Design scalable AI organizational structures, talent upskilling plans, and enterprise AI Centres of Excellence (CoE).",
+      items: [
+        "AI Centre of Excellence (CoE) structure design",
+        "Cross-functional MLOps & data engineering workflow alignment",
+        "Developer enablement & AI upskilling programs"
+      ],
+      href: "/services/ai-consulting/ai-operating-model"
     },
     {
-      slug: "cognitive-roi-modeling",
-      title: "Cognitive ROI & MLOps Infrastructure",
-      description: "Quantifying token costs, infrastructure ROI, and continuous model observability pipelines.",
-      items: ["Inference cost modeling", "Total cost of ownership analysis", "Real-time telemetry tracking"],
-      href: "/services/ai-data-innovation/mlops-ai-operations"
+      slug: "ai-roi-business-case",
+      title: "AI ROI, Business Case & Value Realisation",
+      description: "Build rigorous financial models, token cost estimations, TCO projections, and value tracking for AI investments.",
+      items: [
+        "Token consumption & GPU inference cost modeling",
+        "Total Cost of Ownership (TCO) vs return calculations",
+        "Continuous KPI tracking & value realization dashboards"
+      ],
+      href: "/services/ai-consulting/ai-roi-business-case"
+    },
+    {
+      slug: "ai-vendor-platform-selection",
+      title: "AI Vendor & Platform Selection",
+      description: "Unbiased technical evaluation and procurement advisory for AI platforms, vector databases, and cloud LLM providers.",
+      items: [
+        "Cloud AI provider evaluation (AWS Bedrock, Azure OpenAI, GCP Vertex)",
+        "Vector database benchmark & vendor selection",
+        "Commercial contract review & API cost negotiation"
+      ],
+      href: "/services/ai-consulting/ai-vendor-platform-selection"
     }
   ],
   outcomes: [
-    "Executive AI strategy & implementation roadmap",
-    "Comprehensive model selection & security guidelines",
-    "Phased ROI delivery plan with risk mitigation"
+    "Clear, actionable enterprise AI adoption roadmap",
+    "Quantified ROI calculations and inference budget models",
+    "Complete Responsible AI governance & compliance alignment"
   ],
   industries: [
-    "Finance: Fraud detection & risk modeling advisory",
-    "Healthcare: Clinical data AI compliance & strategy",
-    "Retail: Personalized AI recommendation engines"
+    "Finance: Fraud detection, automated underwriting & risk modeling",
+    "Healthcare: Patient data privacy, clinical AI compliance & RAG search",
+    "Retail & E-commerce: Hyper-personalized recommendation engines"
   ],
   techStack: [
-    { name: "OpenAI / Anthropic / Llama 3", desc: "Foundation LLMs & enterprise models." },
-    { name: "LangChain / LlamaIndex", desc: "AI orchestration and retrieval frameworks." },
-    { name: "Pinecone / Qdrant", desc: "High-performance vector storage." }
+    { name: "OpenAI / Anthropic / Llama 3", desc: "Enterprise foundation LLM models." },
+    { name: "AWS Bedrock / Azure OpenAI / Vertex AI", desc: "Managed cloud AI platforms." },
+    { name: "Pinecone / Qdrant / Milvus", desc: "High-performance vector databases." }
   ],
   deliveryFramework: [
-    "Phase 1: Discovery & Data Maturity Audit",
-    "Phase 2: AI Opportunity Mapping & Model Selection",
-    "Phase 3: Architecture Blueprinting & Strategy Delivery"
+    "Phase 1: Discovery & Executive Alignment",
+    "Phase 2: AI Maturity Audit & Use Case Prioritization",
+    "Phase 3: Architecture Blueprinting & CoE Roadmap"
   ],
   caseStudies: [
     {
@@ -91,8 +137,8 @@ export const aiConsultingService: ServiceCategory = {
   ],
   faqs: [
     {
-      q: "How does Devopstrio conduct an AI readiness audit?",
-      a: "We evaluate your existing data architecture, security compliance, infrastructure capacity, and business use-cases to deliver an actionable AI implementation roadmap."
+      q: "How does Devopstrio conduct an AI readiness assessment?",
+      a: "We evaluate your existing data architecture, security compliance, infrastructure capacity, and business use cases to deliver an actionable AI implementation roadmap."
     },
     {
       q: "Which LLM and AI models do you recommend?",
@@ -100,9 +146,9 @@ export const aiConsultingService: ServiceCategory = {
     }
   ],
   ctaTitle: "Accelerate Your Enterprise AI Strategy",
-  ctaHighlight: "Consult with Our AI Experts Today",
-  ctaDesc: "Transform raw data assets into automated intelligent workflows with our strategic AI consulting services.",
-  ctaBtnText: "Schedule AI Consultation"
+  ctaHighlight: "Consult with Our AI Strategists",
+  ctaDesc: "Transform raw enterprise data assets into automated intelligent workflows with strategic AI consulting.",
+  ctaBtnText: "Schedule AI Advisory Session"
 };
 
 export const aiConsultingCapabilities: Record<string, CapabilityDetail> = {};

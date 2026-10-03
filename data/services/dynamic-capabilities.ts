@@ -14,7 +14,8 @@ export const capabilityRegistry: Record<string, Record<string, RegistryItem>> = 
     "business-intelligence-analytics": { title: "Business Intelligence & Analytics", desc: "Consolidated enterprise dashboards, telemetry, and reporting engines." },
     "predictive-analytics": { title: "Predictive Analytics", desc: "Time-series forecasting, customer churn and predictive models." },
     "data-governance": { title: "Data Governance", desc: "Data compliance audits, cataloging, lineage tracking, and security controls." },
-    "mlops-ai-operations": { title: "MLOps Services UK", desc: "Continuous training loops, model registries, and drift detection." }
+    "mlops-ai-operations": { title: "MLOps Services UK", desc: "Continuous training loops, model registries, and drift detection." },
+    "generative-ai-mlops-engineering": { title: "Generative AI & MLOps Engineering", desc: "Comprehensive enterprise Generative AI architectures, LLM fine-tuning, vector database pipelines, and production MLOps operations." }
   },
   "cloud-services": {
     "cloud-strategy-consulting": { title: "Cloud Strategy & Consulting", desc: "Designing tailored cloud architecture blueprints, vendor evaluation, and cloud readiness roadmaps." },
@@ -25,17 +26,20 @@ export const capabilityRegistry: Record<string, Record<string, RegistryItem>> = 
     "google-cloud-services": { title: "Google Cloud Services", desc: "GKE autopilot setups, BigQuery data platforms, and Vertex AI integrations on GCP." },
     "cloud-security": { title: "Cloud Security", desc: "Wiz security posture management, IAM policies, and key rotations." },
     "cloud-managed-services": { title: "Cloud Managed Services", desc: "24/7 outsourced management, OS patching, and active cloud backups." },
-    "finops-cost-optimization": { title: "FinOps & Cost Optimization", desc: "Spend optimization, Savings Plan allocations, and traffic auto-scaling." }
+    "finops-cost-optimization": { title: "FinOps & Cost Optimization", desc: "Spend optimization, Savings Plan allocations, and traffic auto-scaling." },
+    "multi-cloud-migration-ops": { title: "Multi-Cloud Migration & Operations", desc: "Comprehensive multi-cloud infrastructure strategy, seamless migration execution, landing zone automation, and 24/7 cloud management." }
   },
   "devops-automation": {
     "cicd-implementation": { title: "CI/CD Implementation", desc: "Automated Git-triggered builds and testing environments." },
+    "cicd-pipeline-automation": { title: "CI/CD Pipeline Automation", desc: "Comprehensive enterprise CI/CD pipeline automation, GitOps continuous delivery, automated testing gates, and deployment acceleration." },
     "platform-engineering": { title: "Platform Engineering", desc: "Developer self-service templates and Backstage portal configurations." },
     "infrastructure-as-code": { title: "Infrastructure as Code", desc: "Reusable Terraform, Ansible, and Packer infrastructure setups." },
     "kubernetes-services": { title: "Kubernetes Services", desc: "Multi-tenant EKS, AKS, GKE clusters with Karpenter and service mesh." },
+    "kubernetes-container-orchestration": { title: "Kubernetes & Container Orchestration", desc: "Production-grade Kubernetes cluster design, automated auto-scaling, GitOps delivery, container security, and service mesh management." },
     "devsecops": { title: "DevSecOps", desc: "Sonarqube SAST checks and Snyk vulnerability scanning inside pipelines." },
     "site-reliability-engineering": { title: "Site Reliability Engineering (SRE)", desc: "SLI/SLO definition, error budget tracking, and pager alerts." },
     "release-automation": { title: "Release Automation", desc: "Canary deployments, blue-green releases, and rollback alerts." },
-    "monitoring-observability": { title: "Monitoring & Observability", desc: "Distributed OpenTelemetry tracing, Jaeger dashboards, and ELK logs." }
+    "monitoring-observability": { title: "Monitoring, Observability & APM", desc: "Distributed OpenTelemetry tracing, Jaeger dashboards, APM metrics, and ELK logs." }
   },
   "cybersecurity": {
     "security-assessment": { title: "Security Assessment", desc: "Threat modeling, network configuration audits, and risk assessments." },
@@ -45,15 +49,20 @@ export const capabilityRegistry: Record<string, Record<string, RegistryItem>> = 
     "identity-access-management": { title: "Identity & Access Management", desc: "Okta single sign-on (SSO), adaptive MFA, and PAM tools." },
     "cloud-security": { title: "Cloud Security", desc: "Prisma Cloud audits, micro-segmentation, and least-privilege rules." },
     "compliance-governance": { title: "Compliance & Governance", desc: "Audit readiness for SOC2, ISO27001, HIPAA, and policy planning." },
-    "zero-trust-architecture": { title: "Zero Trust Architecture", desc: "Endpoint checks, SDP setups, and SASE security perimeters." }
+    "zero-trust-architecture": { title: "Zero Trust Architecture & Identity-Centric Security", desc: "Endpoint checks, identity verification, SDP setups, and SASE security boundaries." },
+    "zero-trust-architecture-iam": { title: "Zero Trust Architecture & IAM", desc: "Comprehensive Zero Trust identity architecture, least-privilege IAM controls, adaptive MFA, continuous micro-segmentation, and compliance enforcement." }
   },
   "software-development": {
+    "enterprise-application-development": { title: "Enterprise Application Development", desc: "High-throughput database design and monolithic splits." },
     "enterprise-app-development": { title: "Enterprise Application Development", desc: "High-throughput database design and monolithic splits." },
+    "web-application-development": { title: "Web Application Development", desc: "Responsive React/Next.js platforms with advanced SEO layouts." },
     "web-app-development": { title: "Web Application Development", desc: "Responsive React/Next.js platforms with advanced SEO layouts." },
+    "mobile-application-development": { title: "Mobile Application Development", desc: "Flutter and native iOS/Android builds with hardware integration." },
     "mobile-app-development": { title: "Mobile Application Development", desc: "Flutter and native iOS/Android builds with hardware integration." },
     "saas-product-development": { title: "SaaS Product Development", desc: "Multi-tenant system configurations and subscription gateways." },
     "api-development-integration": { title: "API Development & Integration", desc: "gRPC microservices, REST/GraphQL gateways, and OpenAPI specs." },
     "microservices-architecture": { title: "Microservices Architecture", desc: "Event-driven Apache Kafka loops and saga pattern integration." },
+    "microservices-api-architecture": { title: "Microservices & API Architecture", desc: "Decoupled cloud-native microservices, event-driven architecture, gRPC/REST API gateways, and scalable backend platforms." },
     "product-engineering": { title: "Product Engineering", desc: "Rapid MVP prototyping and customer experience design sprints." },
     "application-modernization": { title: "Application Modernization", desc: "Monolith database decoupling and serverless architecture migrations." }
   },
@@ -62,31 +71,44 @@ export const capabilityRegistry: Record<string, Record<string, RegistryItem>> = 
     "enterprise-modernization": { title: "Enterprise Modernization", desc: "Refactoring legacy mainframes to cloud-native stacks." },
     "process-automation": { title: "Process Automation", desc: "OCR tools integration and cross-platform RPA pipelines." },
     "intelligent-workflows": { title: "Intelligent Workflows", desc: "Customer service routing systems based on sentiment scoring." },
-    "customer-experience-transformation": { title: "Customer Experience Transformation", desc: "Omni-channel client portals and ML-driven recommendation flows." },
+    "cx-transformation": { title: "Customer Experience (CX) Transformation", desc: "Omni-channel client portals and ML-driven recommendation flows." },
+    "customer-experience-transformation": { title: "Customer Experience (CX) Transformation", desc: "Omni-channel client portals and ML-driven recommendation flows." },
+    "legacy-system-modernization": { title: "Legacy System Modernization", desc: "Migrating legacy ColdFusion/COBOL/PHP workloads to Go and NodeJS." },
     "legacy-modernization": { title: "Legacy System Modernization", desc: "Migrating legacy ColdFusion/COBOL/PHP workloads to Go and NodeJS." },
     "business-transformation": { title: "Business Transformation", desc: "Scaling Scrum frameworks and corporate KPI transparency models." },
     "change-management": { title: "Change Management", desc: "Internal developer coaching and technology adoption guides." }
   },
   "data-engineering": {
     "data-platform-development": { title: "Data Platform Development", desc: "Columnar databases design and multi-tier data storage setups." },
-    "data-warehousing": { title: "Data Warehousing", desc: "Snowflake, Databricks, and Google BigQuery analytical platforms." },
-    "data-lakes-lakehouse": { title: "Data Lakes & Lakehouse", desc: "Apache Iceberg configurations and S3 parquet partitioning." },
-    "etl-elt-pipelines": { title: "ETL/ELT Pipelines", desc: "Airflow orchestrators and dbt models checking raw entries." },
-    "real-time-data-processing": { title: "Real-Time Data Processing", desc: "Apache Spark Streaming, Flink loops, and Druid databases." },
+    "data-warehousing": { title: "Data Warehousing", desc: "Snowflake, BigQuery, Redshift, and Synapse analytical warehouses for sub-second SQL metrics." },
+    "data-lakes-lakehouse-architecture": { title: "Data Lakes & Lakehouse Architecture", desc: "Object storage (S3/ADLS/GCS), Delta Lake, Databricks, and Apache Iceberg lakehouse patterns." },
+    "data-lakes-lakehouse": { title: "Data Lakes & Lakehouse Architecture", desc: "Object storage (S3/ADLS/GCS), Delta Lake, Databricks, and Apache Iceberg lakehouse patterns." },
+    "etl-elt-pipelines": { title: "ETL/ELT Pipelines", desc: "Apache Airflow, Dagster, and dbt batch ingestion and transformation pipelines." },
+    "real-time-data-processing": { title: "Real-Time Data Processing", desc: "Apache Kafka, event streaming, Apache Flink, and Spark Streaming low-latency event processing." },
     "data-quality-management": { title: "Data Quality Management", desc: "Great Expectations assertions and anomaly alerts." },
     "master-data-management": { title: "Master Data Management", desc: "Deduplication algorithms and master record sync tools." },
-    "big-data-engineering": { title: "Big Data Engineering", desc: "Hadoop ecosystems, Spark cluster optimizations, and Elasticsearch grids." }
+    "big-data-engineering": { title: "Big Data Engineering", desc: "Hadoop ecosystems, Spark cluster optimizations, and Elasticsearch grids." },
+    "data-warehousing-lakehouses": { title: "Data Warehousing & Lakehouses", desc: "Modern analytical data warehousing on Snowflake, BigQuery, and Databricks Lakehouse architectures for high-speed BI." },
+    "etl-realtime-pipelines": { title: "ETL & Real-Time Data Pipelines", desc: "High-throughput batch ETL/ELT pipelines, dbt transformations, Apache Kafka event streaming, and real-time data processing." }
   },
   "managed-services": {
+    "msp-uk": { title: "Managed Service Provider UK (MSP Services)", desc: "UK-based dedicated SRE governance, Cyber Essentials Plus compliance, and SLA-backed multi-cloud management." },
+    "managed-parts": { title: "Managed Service Provider UK (MSP Services)", desc: "UK-based dedicated SRE governance, Cyber Essentials Plus compliance, and SLA-backed multi-cloud management." },
+    "managed-service-provider-msp-uk": { title: "Managed Service Provider UK (MSP Services)", desc: "UK-based dedicated SRE governance, Cyber Essentials Plus compliance, and SLA-backed multi-cloud management." },
+    "managed-service-provider": { title: "Managed Service Provider UK (MSP Services)", desc: "UK-based dedicated SRE governance, Cyber Essentials Plus compliance, and SLA-backed multi-cloud management." },
     "managed-cloud": { title: "Managed Cloud Services", desc: "Multi-account admin support, security patches, OS updates." },
+    "managed-cloud-services": { title: "Managed Cloud Services", desc: "Multi-account admin support, security patches, OS updates." },
+    "managed-devops-services": { title: "Managed DevOps Services", desc: "CI/CD cache optimization, environment updates, and pipeline tuning." },
     "managed-devops": { title: "Managed DevOps Services", desc: "CI/CD cache optimization, environment updates, and pipeline tuning." },
+    "managed-security-services": { title: "Managed Security Services", desc: "24/7 threat monitoring, WAF policies, and incident containment." },
     "managed-security": { title: "Managed Security Services", desc: "24/7 threat monitoring, WAF policies, and incident containment." },
-    "application-support": { title: "Application Support", desc: "SLA bug resolutions, Sentry monitoring, and performance tuning." },
+    "application-support": { title: "Application Support & Maintenance", desc: "SLA bug resolutions, Sentry monitoring, and performance tuning." },
     "infrastructure-management": { title: "Infrastructure Management", desc: "SAN configuration, hypervisor updates, and load balancers." },
     "database-administration": { title: "Database Administration", desc: "PostgreSQL index rebuilds, backups, and security hardening." },
     "monitoring-incident-management": { title: "Monitoring & Incident Management", desc: "PagerDuty escalations, custom thresholds, and root-cause post-mortems." },
-    "twenty-four-seven-support": { title: "24/7 Support Services", desc: "Slack and phone developer help desks with fast response SLAs." },
-    "managed-parts": { title: "Managed Service Provider UK", desc: "UK-based dedicated SRE governance, Cyber Essentials Plus compliance, and SLA-backed multi-cloud management." }
+    "24-7-support-services": { title: "24/7 IT Support & Managed Operations", desc: "Round-the-clock IT support, infrastructure, application, cloud, platform, incident, and operational support with guaranteed SLA response times." },
+    "twenty-four-seven-support": { title: "24/7 IT Support & Managed Operations", desc: "Round-the-clock IT support, infrastructure, application, cloud, platform, incident, and operational support with guaranteed SLA response times." },
+    "247-managed-devops-secops": { title: "24/7 Managed DevOps & SecOps", desc: "24/7 dedicated SRE monitoring, managed DevOps pipelines, cloud security operations, and incident management with guaranteed SLAs." }
   },
   "qa-testing": {
     "test-automation": { title: "Test Automation", desc: "Playwright and Cypress end-to-end client scripts." },
@@ -96,7 +118,8 @@ export const capabilityRegistry: Record<string, Record<string, RegistryItem>> = 
     "mobile-app-testing": { title: "Mobile Application Testing", desc: "Appium browser farms testing native application packages." },
     "functional-testing": { title: "Functional Testing", desc: "Regression testing suites and User Acceptance Testing boards." },
     "continuous-testing": { title: "Continuous Testing", desc: "Parallel build integrations, code coverage checkers." },
-    "quality-engineering": { title: "Quality Engineering", desc: "Shift-left methodologies, defect escape reports, and standards." }
+    "quality-engineering": { title: "Quality Engineering", desc: "Shift-left methodologies, defect escape reports, and standards." },
+    "automated-qa-performance-testing": { title: "Automated QA & Performance Testing", desc: "Enterprise automated test frameworks, k6 performance load testing, API contract testing, continuous testing, and quality engineering." }
   },
   "it-consulting": {
     "technology-consulting": { title: "Technology Consulting", desc: "Cost-benefit analyses, legacy upgrade guides, and stacks selection." },
@@ -105,8 +128,28 @@ export const capabilityRegistry: Record<string, Record<string, RegistryItem>> = 
     "ai-consulting": { title: "AI Consulting", desc: "Generative AI workshops, feasibility checkouts, and alignment policies." },
     "cybersecurity-consulting": { title: "Cybersecurity Consulting", desc: "Incident response plan drafts and risk register configuration." },
     "digital-transformation-consulting": { title: "Digital Transformation Consulting", desc: "Digital transformation roadmaps, design thinking sprints." },
-    "it-strategy-roadmap": { title: "IT Strategy & Roadmap", desc: "IT capability adoption steps, budget planning, skill gap audits." },
-    "technology-assessment": { title: "Technology Assessment", desc: "Scalability audits, query bottlenecks tracking, and code checks." }
+    "technology-assessment": { title: "Technology Assessment", desc: "Scalability audits, query bottlenecks tracking, and code checks." },
+    "cloud-ai-transformation-advisory": { title: "Cloud & AI Transformation Advisory", desc: "Strategic technology advisory, enterprise architecture planning, cloud strategy, AI roadmap design, and digital transformation consulting." }
+  },
+  "ai-consulting": {
+    "ai-strategy-advisory": { title: "AI Strategy & Executive Advisory", desc: "Executive AI strategy formulation, technology roadmap planning, and C-suite alignment for enterprise AI adoption." },
+    "ai-readiness-assessment": { title: "AI Readiness Assessment", desc: "Comprehensive evaluation of data infrastructure, technical debt, security posture, and organizational AI maturity." },
+    "generative-ai-consulting": { title: "Generative AI Consulting", desc: "Tailored Generative AI strategy, LLM selection, RAG architecture design, and custom prompt engineering frameworks." },
+    "ai-use-case-discovery": { title: "AI Use Case Discovery & Prioritization", desc: "Identify, evaluate, and rank enterprise AI use cases based on business impact, feasibility, and time-to-value." },
+    "ai-governance-risk": { title: "AI Governance, Risk & Responsible AI", desc: "Establish Responsible AI frameworks, ethical guardrails, regulatory compliance policies, and risk mitigation strategies." },
+    "ai-operating-model": { title: "AI Operating Model & Centre of Excellence", desc: "Design scalable AI organizational structures, talent upskilling plans, and enterprise AI Centres of Excellence (CoE)." },
+    "ai-roi-business-case": { title: "AI ROI, Business Case & Value Realisation", desc: "Build rigorous financial models, token cost estimations, TCO projections, and value tracking for AI investments." },
+    "ai-vendor-platform-selection": { title: "AI Vendor & Platform Selection", desc: "Unbiased technical evaluation and procurement advisory for AI platforms, vector databases, and cloud LLM providers." }
+  },
+  "ai-modernization": {
+    "legacy-application-ai-modernization": { title: "Legacy Application AI Modernization", desc: "Transform legacy enterprise applications into AI-enabled intelligent platforms without risky full-codebase rewrites." },
+    "ai-enabled-application-modernization": { title: "AI-Enabled Application Modernization", desc: "Enhance existing software with embedded foundation models, RAG search, intelligent document processing, and predictive agents." },
+    "code-modernization-refactoring": { title: "AI-Assisted Code Modernization & Refactoring", desc: "Accelerate legacy codebase refactoring, COBOL/Java/C# translation, and unit test generation using specialized AI code models." },
+    "legacy-system-intelligence": { title: "Legacy System Discovery & Intelligence", desc: "Use LLM intelligence to reverse-engineer undocumented legacy codebases, schema structures, and business logic rules." },
+    "ai-integration-existing-applications": { title: "AI Integration for Existing Applications", desc: "Integrate vector search, natural language interfaces, and autonomous AI agents smoothly into active enterprise software." },
+    "monolith-modernization": { title: "Monolith Modernization with AI-Assisted Engineering", desc: "Decompose monolithic enterprise architectures into modular microservices using AI-guided domain-driven design." },
+    "ai-powered-testing-modernization": { title: "AI-Powered Testing & Quality Modernization", desc: "Modernize legacy QA processes with AI test case generation, self-healing Playwright scripts, and intelligent bug triage." },
+    "modernization-assessment-roadmap": { title: "Modernization Assessment & Roadmap", desc: "Evaluate technical debt, calculate modernization ROI, and map a multi-phase AI-assisted system refactoring roadmap." }
   }
 };
 
@@ -267,6 +310,24 @@ export function generate6PhaseDeliveryApproach(serviceSlug: string, capabilityTi
         `Phase 4: Proof-of-Concept Validation - Building sandbox deployments to test architecture choices before rollout.`,
         `Phase 5: Migration Runbook Strategy - Drafting step-by-step migration guides, fallback parameters, and deployment sequences.`,
         `Phase 6: Knowledge Handoff Workshops - Running technical hand-off classes and delivering systems runbooks.`
+      ];
+    case "ai-consulting":
+      return [
+        `Phase 1: Executive Discovery & Alignment - Auditing C-suite objectives, business process bottlenecks, and high-impact AI targets.`,
+        `Phase 2: AI Maturity & Data Readiness Audit - Evaluating enterprise data quality, infrastructure scalability, and security posture for ${title}.`,
+        `Phase 3: Use-Case Scoping & ROI Modeling - Scoring candidate AI initiatives by feasibility, business impact, and token cost projections.`,
+        `Phase 4: Responsible AI & Governance Blueprint - Formulating ethical guidelines, regulatory compliance maps, and zero-data-retention rules.`,
+        `Phase 5: Proof-of-Concept (PoC) Validation - Deploying rapid sandbox prototypes to validate model precision and latency parameters.`,
+        `Phase 6: CoE Blueprint & Production Hand-off - Delivering the AI Centre of Excellence charter, upskilling modules, and operational roadmaps.`
+      ];
+    case "ai-modernization":
+      return [
+        `Phase 1: Legacy Codebase & Dependency Audit - Scanning legacy monoliths, database schemas, and API boundaries using LLM analysis tools.`,
+        `Phase 2: Target Architecture Blueprint - Designing AI middleware layers, vector database indexes, and microservice wrappers for ${title}.`,
+        `Phase 3: AI-Assisted Code Refactoring - Translating legacy business logic, generating unit test suites, and decoupling database access.`,
+        `Phase 4: Embedded AI Feature Integration - Injecting semantic RAG search, intelligent document extraction, and autonomous agent hooks.`,
+        `Phase 5: Parallel Validation & Shadow Run - Running modernized AI microservices alongside legacy platforms to verify output accuracy.`,
+        `Phase 6: Cutover & Continuous MLOps - Switching live traffic to AI-enabled cloud runtimes with zero downtime and active drift monitoring.`
       ];
     default:
       return [

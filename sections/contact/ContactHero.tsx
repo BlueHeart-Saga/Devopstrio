@@ -25,9 +25,9 @@ const contactPillars: ContactPillar[] = [
     services: [
       { name: "Cloud Cost Optimization & FinOps", href: "/services/cloud-services/finops-cost-optimization" },
       { name: "Multi-Cloud Architecture Review", href: "/services/cloud-services/cloud-architecture" },
-      { name: "DevSecOps & Compliance Audit", href: "/services/cybersecurity/devsecops-compliance" },
-      { name: "AI & GenAI Strategy Roadmap", href: "/services/ai-data-innovation/ai-strategy-consulting" },
-      { name: "Kubernetes & Infrastructure Health", href: "/services/devops-automation/kubernetes-health-check" }
+      { name: "DevSecOps & Compliance Audit", href: "/services/cybersecurity/compliance-governance" },
+      { name: "AI & GenAI Strategy Roadmap", href: "/services/ai-consulting/ai-strategy-advisory" },
+      { name: "Kubernetes & Infrastructure Health", href: "/services/devops-automation/kubernetes-services" }
     ],
     ctaHref: "/services/cloud-services"
   },
@@ -39,10 +39,10 @@ const contactPillars: ContactPillar[] = [
     mainLink: "/services/software-development",
     services: [
       { name: "Enterprise Cloud Migration", href: "/services/cloud-services/cloud-migration" },
-      { name: "CI/CD & DevOps Automation", href: "/services/devops-automation/cicd-pipeline-automation" },
-      { name: "Custom Generative AI Applications", href: "/services/ai-data-innovation/generative-ai-development" },
-      { name: "Cloud-Native App Modernization", href: "/services/software-development/cloud-native-apps" },
-      { name: "Data Engineering & Analytics Pipeline", href: "/services/ai-data-innovation/data-engineering-pipelines" }
+      { name: "CI/CD & DevOps Automation", href: "/services/devops-automation/cicd-implementation" },
+      { name: "Custom Generative AI Applications", href: "/services/ai-data-innovation/generative-ai-solutions" },
+      { name: "Cloud-Native App Modernization", href: "/services/software-development/application-modernization" },
+      { name: "Data Engineering & Analytics Pipeline", href: "/services/ai-data-innovation/data-engineering" }
     ],
     ctaHref: "/services/software-development"
   },
@@ -53,7 +53,7 @@ const contactPillars: ContactPillar[] = [
     description: "Deploy scalable platforms, automated pipelines, and resilient 24/7 cloud ecosystems.",
     mainLink: "/services/managed-services",
     services: [
-      { name: "24/7 Managed Cloud Operations", href: "/services/managed-services/managed-cloud" },
+      { name: "24/7 Managed Cloud Operations", href: "/services/managed-services/managed-cloud-services" },
       { name: "Site Reliability Engineering (SRE)", href: "/services/devops-automation/site-reliability-engineering" },
       { name: "SOC & Security Operations", href: "/services/cybersecurity/security-operations-center" },
       { name: "Autonomous AI Agent Deployment", href: "/services/ai-data-innovation/ai-agents-automation" },

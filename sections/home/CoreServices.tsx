@@ -96,6 +96,24 @@ const services = [
     bgImage: "/webp/assets/Home-page/core-services/red/1-9.webp",
     href: "/services/it-consulting",
     cta: "IT Consulting"
+  },
+  {
+    id: "ai-consulting",
+    tag: "Strategy",
+    title: "Executive AI advisory, readiness assessment & CoE operating models.",
+    desc: "Strategic AI roadmaps, generative AI governance frameworks, use case prioritization, and business case value realization.",
+    bgImage: "/webp/assets/Home-page/core-services/red/1.webp",
+    href: "/services/ai-consulting",
+    cta: "AI Consulting"
+  },
+  {
+    id: "ai-modernization",
+    tag: "Re-architect",
+    title: "Infuse legacy applications with embedded AI & automated refactoring.",
+    desc: "AI-assisted code refactoring, legacy monolith decomposition, AI testing automation, and intelligent API gateways.",
+    bgImage: "/webp/assets/Home-page/core-services/red/1-5.webp",
+    href: "/services/ai-modernization",
+    cta: "AI Modernization"
   }
 ];
 

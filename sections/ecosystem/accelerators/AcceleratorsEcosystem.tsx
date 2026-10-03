@@ -231,7 +231,7 @@ export function AcceleratorsEcosystem() {
                           : currentCat.id === "devops"
                           ? "/services/devops-automation"
                           : currentCat.id === "ai"
-                          ? "/services/it-consulting/ai-digital-transformation"
+                          ? "/services/ai-consulting"
                           : currentCat.id === "security"
                           ? "/services/cybersecurity"
                           : "/services/cloud-services"

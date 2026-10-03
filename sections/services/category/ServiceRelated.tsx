@@ -39,7 +39,7 @@ export function ServiceRelated({ relatedServices }: ServiceRelatedProps) {
             return (
               <Reveal key={service.slug} delay={idx * 0.05} className="h-full">
                 <Link
-                  href={`/services/${service.slug}`}
+                  href={service.slug.startsWith('/') ? service.slug : `/services/${service.slug}`}
                   className="group flex flex-col justify-between h-full bg-zinc-950/20 border border-zinc-900 hover:border-rose-500/35 hover:bg-zinc-900/10 rounded-[24px] p-6 transition-all duration-300 relative overflow-hidden text-left cursor-pointer hover:scale-[1.01] hover:shadow-[0_8px_32px_rgba(0,0,0,0.5)]"
                 >
                   {/* Subtle hover background accent */}

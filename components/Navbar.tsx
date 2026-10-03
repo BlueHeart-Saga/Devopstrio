@@ -217,9 +217,9 @@ const serviceCategories = [
     name: "Software Development",
     href: "/services/software-development",
     items: [
-      { name: "Enterprise Application Development", desc: "High-throughput database design and monolithic splits.", href: "/services/software-development/enterprise-app-development" },
-      { name: "Web Application Development", desc: "Responsive React/Next.js platforms with advanced SEO layouts.", href: "/services/software-development/web-app-development" },
-      { name: "Mobile Application Development", desc: "Flutter and native iOS/Android builds with hardware integration.", href: "/services/software-development/mobile-app-development" },
+      { name: "Enterprise Application Development", desc: "High-throughput database design and monolithic splits.", href: "/services/software-development/enterprise-application-development" },
+      { name: "Web Application Development", desc: "Responsive React/Next.js platforms with advanced SEO layouts.", href: "/services/software-development/web-application-development" },
+      { name: "Mobile Application Development", desc: "Flutter and native iOS/Android builds with hardware integration.", href: "/services/software-development/mobile-application-development" },
       { name: "SaaS Product Development", desc: "Multi-tenant system configurations and subscription gateways.", href: "/services/software-development/saas-product-development" },
       { name: "API Development & Integration", desc: "gRPC microservices, REST/GraphQL gateways, and OpenAPI specs.", href: "/services/software-development/api-development-integration" },
       { name: "Microservices Architecture", desc: "Event-driven Apache Kafka loops and saga pattern integration.", href: "/services/software-development/microservices-architecture" },
@@ -237,7 +237,7 @@ const serviceCategories = [
       { name: "Process Automation", desc: "OCR tools integration and cross-platform RPA pipelines.", href: "/services/digital-transformation/process-automation" },
       { name: "Intelligent Workflows", desc: "Customer service routing systems based on sentiment scoring.", href: "/services/digital-transformation/intelligent-workflows" },
       { name: "Customer Experience Transformation", desc: "Omni-channel client portals and ML-driven recommendation flows.", href: "/services/digital-transformation/customer-experience-transformation" },
-      { name: "Legacy System Modernization", desc: "Migrating legacy ColdFusion/COBOL/PHP workloads to Go and NodeJS.", href: "/services/digital-transformation/legacy-modernization" },
+      { name: "Legacy System Modernization", desc: "Migrating legacy ColdFusion/COBOL/PHP workloads to Go and NodeJS.", href: "/services/digital-transformation/legacy-system-modernization" },
       { name: "Business Transformation", desc: "Scaling Scrum frameworks and corporate KPI transparency models.", href: "/services/digital-transformation/business-transformation" },
       { name: "Change Management", desc: "Internal developer coaching and technology adoption guides.", href: "/services/digital-transformation/change-management" }
     ]
@@ -249,7 +249,7 @@ const serviceCategories = [
     items: [
       { name: "Data Platform Development", desc: "Columnar databases design and multi-tier data storage setups.", href: "/services/data-engineering/data-platform-development" },
       { name: "Data Warehousing", desc: "Snowflake, Databricks, and Google BigQuery analytical platforms.", href: "/services/data-engineering/data-warehousing" },
-      { name: "Data Lakes & Lakehouse", desc: "Apache Iceberg configurations and S3 parquet partitioning.", href: "/services/data-engineering/data-lakes-lakehouse" },
+      { name: "Data Lakes & Lakehouse", desc: "Apache Iceberg configurations and S3 parquet partitioning.", href: "/services/data-engineering/data-lakes-lakehouse-architecture" },
       { name: "ETL/ELT Pipelines", desc: "Airflow orchestrators and dbt models checking raw entries.", href: "/services/data-engineering/etl-elt-pipelines" },
       { name: "Real-Time Data Processing", desc: "Apache Spark Streaming, Flink loops, and Druid databases.", href: "/services/data-engineering/real-time-data-processing" },
       { name: "Data Quality Management", desc: "Great Expectations assertions and anomaly alerts.", href: "/services/data-engineering/data-quality-management" },
@@ -262,14 +262,14 @@ const serviceCategories = [
     name: "Managed Services",
     href: "/services/managed-services",
     items: [
-      { name: "Managed Cloud Services", desc: "Multi-account admin support, security patches, OS updates.", href: "/services/managed-services/managed-cloud" },
-      { name: "Managed DevOps Services", desc: "CI/CD cache optimization, environment updates, and pipeline tuning.", href: "/services/managed-services/managed-devops" },
-      { name: "Managed Security Services", desc: "24/7 threat monitoring, WAF policies, and incident containment.", href: "/services/managed-services/managed-security" },
+      { name: "Managed Cloud Services", desc: "Multi-account admin support, security patches, OS updates.", href: "/services/managed-services/managed-cloud-services" },
+      { name: "Managed DevOps Services", desc: "CI/CD cache optimization, environment updates, and pipeline tuning.", href: "/services/managed-services/managed-devops-services" },
+      { name: "Managed Security Services", desc: "24/7 threat monitoring, WAF policies, and incident containment.", href: "/services/managed-services/managed-security-services" },
       { name: "Application Support", desc: "SLA bug resolutions, Sentry monitoring, and performance tuning.", href: "/services/managed-services/application-support" },
       { name: "Infrastructure Management", desc: "SAN configuration, hypervisor updates, and load balancers.", href: "/services/managed-services/infrastructure-management" },
       { name: "Database Administration", desc: "PostgreSQL index rebuilds, backups, and security hardening.", href: "/services/managed-services/database-administration" },
       { name: "Monitoring & Incident Management", desc: "PagerDuty escalations, custom thresholds, and root-cause post-mortems.", href: "/services/managed-services/monitoring-incident-management" },
-      { name: "24/7 Support Services", desc: "Slack and phone developer help desks with fast response SLAs.", href: "/services/managed-services/twenty-four-seven-support" }
+      { name: "24/7 Support Services", desc: "Slack and phone developer help desks with fast response SLAs.", href: "/services/managed-services/24-7-support-services" }
     ]
   },
   {
@@ -562,7 +562,7 @@ const serviceDetailsMap: Record<string, {
       { name: "Process Automation", href: "/services/digital-transformation/process-automation" },
       { name: "Intelligent Workflows", href: "/services/digital-transformation/intelligent-workflows" },
       { name: "Enterprise Modernization", href: "/services/digital-transformation/enterprise-modernization" },
-      { name: "Legacy Modernization", href: "/services/digital-transformation/legacy-modernization" },
+      { name: "Legacy Modernization", href: "/services/digital-transformation/legacy-system-modernization" },
       { name: "Business Transformation", href: "/services/digital-transformation/business-transformation" },
       { name: "Change Management", href: "/services/digital-transformation/change-management" }
     ]
@@ -575,7 +575,7 @@ const serviceDetailsMap: Record<string, {
     capabilities: [
       { name: "Data Platform Development", href: "/services/data-engineering/data-platform-development" },
       { name: "Data Warehousing", href: "/services/data-engineering/data-warehousing" },
-      { name: "Data Lakes & Lakehouse", href: "/services/data-engineering/data-lakes-lakehouse" },
+      { name: "Data Lakes & Lakehouse", href: "/services/data-engineering/data-lakes-lakehouse-architecture" },
       { name: "ETL/ELT Pipelines", href: "/services/data-engineering/etl-elt-pipelines" },
       { name: "Real-Time Data Processing", href: "/services/data-engineering/real-time-data-processing" },
       { name: "Data Governance", href: "/services/data-engineering/data-quality-management" }
@@ -601,9 +601,9 @@ const serviceDetailsMap: Record<string, {
     href: "/services/software-development",
     desc: "React/Next.js web portals, Flutter mobile apps, multi-tenant SaaS, and gRPC APIs.",
     capabilities: [
-      { name: "Enterprise App Development", href: "/services/software-development/enterprise-app-development" },
-      { name: "Web App Development", href: "/services/software-development/web-app-development" },
-      { name: "Mobile App Development", href: "/services/software-development/mobile-app-development" },
+      { name: "Enterprise App Development", href: "/services/software-development/enterprise-application-development" },
+      { name: "Web App Development", href: "/services/software-development/web-application-development" },
+      { name: "Mobile App Development", href: "/services/software-development/mobile-application-development" },
       { name: "SaaS Product Development", href: "/services/software-development/saas-product-development" },
       { name: "API Development & Integration", href: "/services/software-development/api-development-integration" },
       { name: "Microservices Architecture", href: "/services/software-development/microservices-architecture" }
@@ -658,9 +658,9 @@ const serviceDetailsMap: Record<string, {
     href: "/services/managed-services",
     desc: "24/7 cloud upkeep, managed DevOps, application SLA support, and database DBA.",
     capabilities: [
-      { name: "Managed Cloud Services", href: "/services/managed-services/managed-cloud" },
-      { name: "Managed DevOps Services", href: "/services/managed-services/managed-devops" },
-      { name: "Managed Security Operations", href: "/services/managed-services/managed-security" },
+      { name: "Managed Cloud Services", href: "/services/managed-services/managed-cloud-services" },
+      { name: "Managed DevOps Services", href: "/services/managed-services/managed-devops-services" },
+      { name: "Managed Security Operations", href: "/services/managed-services/managed-security-services" },
       { name: "Application Support (SLA)", href: "/services/managed-services/application-support" },
       { name: "Infrastructure Management", href: "/services/managed-services/infrastructure-management" },
       { name: "Incident Management", href: "/services/managed-services/monitoring-incident-management" }

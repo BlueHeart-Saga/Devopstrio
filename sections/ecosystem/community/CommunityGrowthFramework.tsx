@@ -18,7 +18,7 @@ export function CommunityGrowthFramework() {
       title: "AI & GenAI Innovation Guild",
       icon: <Cpu className="w-6 h-6 text-rose-500" />,
       desc: "Community space for enterprise LLMOps, RAG pipelines, vector search, and autonomous AI agent architectures.",
-      link: "/services/it-consulting/ai-digital-transformation",
+      link: "/services/ai-consulting",
       items: ["Azure OpenAI & Vector Search", "Prompt Engineering Masterclasses", "LLMOps Pipeline Benchmarks"]
     },
     {

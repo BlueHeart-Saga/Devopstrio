@@ -16,56 +16,102 @@ export const aiModernizationService: ServiceCategory = {
   ],
   capabilities: [
     {
-      slug: "legacy-to-ai-migration",
-      title: "Legacy-to-AI System Refactoring",
-      description: "Infusing generative AI capabilities into existing enterprise software without disrupting core services.",
-      items: ["REST API wrap for legacy databases", "Intelligent agent middleware integration", "Semantic search upgrade"],
-      href: "/services/digital-transformation/legacy-modernization"
+      slug: "legacy-application-ai-modernization",
+      title: "Legacy Application AI Modernization",
+      description: "Transform legacy enterprise applications into AI-enabled intelligent platforms without risky full-codebase rewrites.",
+      items: [
+        "AI middleware integration wrappers around legacy databases",
+        "Legacy UI modernization with conversational AI interfaces",
+        "Zero-downtime incremental microservice extraction"
+      ],
+      href: "/services/ai-modernization/legacy-application-ai-modernization"
     },
     {
-      slug: "intelligent-automation-engine",
-      title: "Agentic Automation & Decision Engines",
-      description: "Replacing brittle manual processes with autonomous AI agents and continuous learning feedback loops.",
-      items: ["Autonomous agent orchestration", "Human-in-the-loop validation dashboards", "Self-healing pipeline automation"],
-      href: "/services/ai-data-innovation/ai-agents-automation"
+      slug: "ai-enabled-application-modernization",
+      title: "AI-Enabled Application Modernization",
+      description: "Enhance existing software with embedded foundation models, RAG search, intelligent document processing, and predictive agents.",
+      items: [
+        "Embedded LLM inference & contextual RAG search integration",
+        "Intelligent OCR & document processing automation",
+        "Predictive analytics & automated decision-making engines"
+      ],
+      href: "/services/ai-modernization/ai-enabled-application-modernization"
     },
     {
-      slug: "cloud-native-modernization",
-      title: "Cloud-Native Platform & AI Infrastructure",
-      description: "Modernizing legacy workloads onto containerized, auto-scaling Kubernetes platforms optimized for AI.",
-      items: ["Kubernetes microservices architecture", "Infrastructure as Code automation", "Zero-downtime blue-green deployments"],
-      href: "/services/devops-automation/platform-engineering"
+      slug: "code-modernization-refactoring",
+      title: "AI-Assisted Code Modernization & Refactoring",
+      description: "Accelerate legacy codebase refactoring, COBOL/Java/C# translation, and unit test generation using specialized AI code models.",
+      items: [
+        "AI-driven automated code translation & syntax modernization",
+        "Legacy monolithic code analysis & dependency graph mapping",
+        "Automated unit test & regression suite generation"
+      ],
+      href: "/services/ai-modernization/code-modernization-refactoring"
     },
     {
-      slug: "real-time-inference-optimization",
-      title: "Real-Time Inference & Continuous MLOps",
-      description: "Optimizing AI inference latency, caching embeddings, and deploying automated model telemetry.",
-      items: ["Sub-50ms inference optimization", "Automated retraining triggers", "Continuous drift monitoring"],
-      href: "/services/ai-data-innovation/mlops-ai-operations"
+      slug: "legacy-system-intelligence",
+      title: "Legacy System Discovery & Intelligence",
+      description: "Use LLM intelligence to reverse-engineer undocumented legacy codebases, schema structures, and business logic rules.",
+      items: [
+        "Automated documentation generation for legacy repos",
+        "Business rule extraction from COBOL, Fortran & legacy PL/SQL",
+        "Code complexity scoring & modernization priority mapping"
+      ],
+      href: "/services/ai-modernization/legacy-system-intelligence"
     },
     {
-      slug: "open-source-landing-zone",
-      title: "Automated Multi-Cloud Landing Zones",
-      description: "Deploying enterprise-grade landing zones pre-hardened with zero-trust security and ISO 27001 guardrails.",
-      items: ["Terraform & Bicep automated blueprints", "Hub-and-spoke multi-cloud networking", "Automated policy compliance"],
-      href: "/ecosystem/landing-zone"
+      slug: "ai-integration-existing-applications",
+      title: "AI Integration for Existing Applications",
+      description: "Integrate vector search, natural language interfaces, and autonomous AI agents smoothly into active enterprise software.",
+      items: [
+        "REST & gRPC API gateways for LLM inference",
+        "pgvector & Redis semantic caching integration",
+        "Event-driven Kafka messaging hooks for AI agents"
+      ],
+      href: "/services/ai-modernization/ai-integration-existing-applications"
     },
     {
-      slug: "enterprise-accelerators",
-      title: "Live Production AI Accelerators",
-      description: "Accelerating time-to-market with pre-built production frameworks and open-source starter engines.",
-      items: ["Pre-validated architecture templates", "Zero-trust reference blueprints", "Production-ready boilerplate modules"],
-      href: "/ecosystem/accelerators-frameworks"
+      slug: "monolith-modernization",
+      title: "Monolith Modernization with AI-Assisted Engineering",
+      description: "Decompose monolithic enterprise architectures into modular microservices using AI-guided domain-driven design.",
+      items: [
+        "AI-guided domain-driven bounded context identification",
+        "Automated microservice scaffolding & API contract generation",
+        "Database schema decoupling & real-time sync gates"
+      ],
+      href: "/services/ai-modernization/monolith-modernization"
+    },
+    {
+      slug: "ai-powered-testing-modernization",
+      title: "AI-Powered Testing & Quality Modernization",
+      description: "Modernize legacy QA processes with AI test case generation, self-healing Playwright scripts, and intelligent bug triage.",
+      items: [
+        "Autonomous E2E test script generation from user stories",
+        "Self-healing Playwright & Cypress test locator models",
+        "AI-driven visual regression & anomaly detection"
+      ],
+      href: "/services/ai-modernization/ai-powered-testing-modernization"
+    },
+    {
+      slug: "modernization-assessment-roadmap",
+      title: "Modernization Assessment & Roadmap",
+      description: "Evaluate technical debt, calculate modernization ROI, and map a multi-phase AI-assisted system refactoring roadmap.",
+      items: [
+        "Technical debt quantification & risk profiling",
+        "Phased modernization timeline & budget allocation",
+        "Architecture reference blueprints for cloud-native AI systems"
+      ],
+      href: "/services/ai-modernization/modernization-assessment-roadmap"
     }
   ],
   outcomes: [
-    "AI-enabled legacy software ecosystem",
-    "Streamlined automated data extraction & search",
-    "Reduced technical debt and operational costs"
+    "AI-enabled legacy software ecosystem without full rewrites",
+    "Streamlined automated document extraction & semantic search",
+    "Up to 60% reduction in legacy maintenance technical debt"
   ],
   industries: [
     "Insurance: AI-automated claims processing & document ingestion",
-    "Banking: Legacy core modernization with intelligent fraud agents",
+    "Banking: Core banking modernization with intelligent fraud agents",
     "Supply Chain: Predictive logistics & automated inventory management"
   ],
   techStack: [

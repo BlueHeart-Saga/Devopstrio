@@ -35,9 +35,12 @@ export function AboutStoryIntro() {
         {/* Body paragraphs — indented, max-width constrained */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
           <Reveal delay={0.08} className="lg:col-start-5 lg:col-span-8">
-            <div className="space-y-5">
-              <p className="text-zinc-300 text-base sm:text-lg leading-relaxed">
-                Devopstrio was founded with a single purpose: to empower businesses by turning complex technology into simple, scalable, and high-impact digital solutions. Today, we partner with enterprise leaders worldwide to accelerate innovation across AI, Cloud, DevOps, and modern software engineering.
+            <div className="space-y-6">
+              <p className="text-zinc-100 text-lg sm:text-xl md:text-2xl font-semibold leading-relaxed">
+                Devopstrio was founded on a clear belief: technology should make business simpler, stronger, and ready for what comes next.
+              </p>
+              <p className="text-zinc-200 text-base sm:text-lg md:text-xl font-semibold leading-relaxed">
+                We help organisations turn complex challenges into practical digital solutions that scale with their ambitions. By bringing together expertise in AI, Cloud, DevOps, and modern software engineering, we work alongside our clients to modernise critical systems, move faster with confidence, and create lasting business value.
               </p>
             </div>
           </Reveal>

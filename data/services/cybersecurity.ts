@@ -94,8 +94,8 @@ export const cybersecurityService: ServiceCategory = {
     },
     {
       slug: "zero-trust-architecture",
-      title: "Zero Trust Architecture",
-      description: "Implement strict micro-segmentation, identity-first perimeter defense, and continuous verification across all network traffic.",
+      title: "Zero Trust Architecture & Identity-Centric Security",
+      description: "Implement strict micro-segmentation, identity-centric verification, least-privilege IAM controls, and continuous verification across all network traffic.",
       items: [
         "Micro-segmented network architectures",
         "Continuous endpoint trust verification",

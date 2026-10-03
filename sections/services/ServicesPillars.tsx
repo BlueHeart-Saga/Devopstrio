@@ -46,7 +46,7 @@ const pillars = [
       "Enterprise-grade zero-trust security, 24/7 SRE managed operations, and continuous digital transformation that drives long-term value.",
     mainLink: "/services/managed-services",
     services: [
-      { name: "24/7 Managed Cloud Services", href: "/services/managed-services/managed-cloud" },
+      { name: "24/7 Managed Cloud Services", href: "/services/managed-services/managed-cloud-services" },
       { name: "Site Reliability Engineering (SRE)", href: "/services/devops-automation/site-reliability-engineering" },
       { name: "Zero Trust & Cybersecurity", href: "/services/cybersecurity" },
       { name: "Digital Transformation Strategy", href: "/services/digital-transformation" },

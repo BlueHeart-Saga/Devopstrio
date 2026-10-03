@@ -35,8 +35,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/cookie-policy",
     "/gdpr",
     "/services/explore",
-    "/services/ai-consulting",
-    "/services/ai-modernization",
     "/ecosystem/landing-zone",
     "/marketing",
     "/marketing/products",

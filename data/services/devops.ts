@@ -94,7 +94,7 @@ export const devopsService: ServiceCategory = {
     },
     {
       slug: "monitoring-observability",
-      title: "Monitoring & Observability Grids",
+      title: "Monitoring, Observability & APM",
       description: "Gain complete full-stack visibility with unified distributed tracing, real-time metrics telemetry, and proactive anomaly alert grids.",
       items: [
         "Distributed OpenTelemetry trace collectors",

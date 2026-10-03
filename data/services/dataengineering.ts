@@ -28,33 +28,33 @@ export const dataengineeringService: ServiceCategory = {
     },
     {
       slug: "data-warehousing",
-      title: "Data Warehousing & Analytics",
-      description: "Design high-performance analytical data warehouses using Snowflake, Google BigQuery, and Amazon Redshift with sub-second queries.",
+      title: "Data Warehousing",
+      description: "Design high-performance analytical data warehouses using Snowflake, Google BigQuery, Amazon Redshift, and Azure Synapse with sub-second SQL queries.",
       items: [
+        "Snowflake, BigQuery & Redshift analytical data warehouses",
         "Optimized dimensional star & snowflake schemas",
-        "Data partitioning, clustering & caching rules",
-        "Role-based column & row-level security"
+        "Role-based column & row-level security controls"
       ],
       href: "/services/data-engineering/data-warehousing"
     },
     {
-      slug: "data-lakes-lakehouse",
+      slug: "data-lakes-lakehouse-architecture",
       title: "Data Lakes & Lakehouse Architecture",
-      description: "Unify batch and real-time streaming data on open formats like Delta Lake, Apache Iceberg, and Databricks Lakehouse.",
+      description: "Unify batch and real-time streaming data on object storage using Delta Lake, Databricks, and Apache Iceberg lakehouse patterns.",
       items: [
-        "ACID transactions on object storage buckets",
-        "Zero-copy cloning & time-travel data auditing",
-        "Unified structured and unstructured data lakes"
+        "AWS S3, Azure ADLS & GCP object storage partitions",
+        "Apache Iceberg & Delta Lake ACID transactions",
+        "Databricks Lakehouse unified structured and unstructured storage"
       ],
-      href: "/services/data-engineering/data-lakes-lakehouse"
+      href: "/services/data-engineering/data-lakes-lakehouse-architecture"
     },
     {
       slug: "etl-elt-pipelines",
       title: "Automated ETL/ELT Pipelines",
-      description: "Build robust, automated data extraction, transformation, and loading pipelines using dbt, Airflow, and Apache Spark.",
+      description: "Build robust, batch extraction, transformation, and loading pipelines using dbt, Apache Airflow, and Dagster.",
       items: [
         "Declarative dbt SQL transformation models",
-        "Automated DAG dependency scheduling in Airflow",
+        "Automated DAG dependency scheduling in Apache Airflow",
         "Continuous schema validation & anomaly triggers"
       ],
       href: "/services/data-engineering/etl-elt-pipelines"
@@ -62,11 +62,11 @@ export const dataengineeringService: ServiceCategory = {
     {
       slug: "real-time-data-processing",
       title: "Real-Time Data Processing",
-      description: "Process and analyze high-velocity event streams in real-time with Apache Kafka, Apache Flink, and Spark Streaming.",
+      description: "Process and analyze high-velocity event streams in real time with Apache Kafka, Apache Flink, and Spark Streaming.",
       items: [
-        "Sub-second event stream ingestion & routing",
-        "Stateful stream transformations & windowing",
-        "Real-time event anomaly detection & alerting"
+        "Sub-second event stream ingestion with Apache Kafka & Confluent",
+        "Stateful stream transformations & windowing with Apache Flink",
+        "Real-time event anomaly detection & low-latency pipeline routing"
       ],
       href: "/services/data-engineering/real-time-data-processing"
     },
