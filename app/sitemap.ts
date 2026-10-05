@@ -52,7 +52,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/marketing/company/corporate-presentation",
     "/marketing/company/brand-guidelines",
     "/marketing/platforms",
-    "/marketing/technology"
+    "/marketing/technology",
+    "/marketing/downloads",
+    "/marketing/latest"
   ].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date(),

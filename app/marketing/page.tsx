@@ -1,7 +1,7 @@
 import React from "react";
 import { Metadata } from "next";
 import { generatePageMetadata, getMetadataFromPath } from "@/lib/seo-utils";
-import { MarketingPageClient } from "@/components/marketing/MarketingPageClient";
+import MarketingPage from "@/sections/marketing/marketing";
 import { BreadcrumbSchema } from "@/components/seo/Schemas";
 
 export function generateMetadata(): Metadata {
@@ -14,7 +14,7 @@ export function generateMetadata(): Metadata {
   });
 }
 
-export default function MarketingPage() {
+export default function Page() {
   return (
     <>
       <BreadcrumbSchema
@@ -23,7 +23,7 @@ export default function MarketingPage() {
           { name: "Marketing", url: "https://devopstrio.co.uk/marketing" }
         ]}
       />
-      <MarketingPageClient />
+      <MarketingPage />
     </>
   );
 }

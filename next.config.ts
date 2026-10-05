@@ -46,6 +46,10 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
   distDir: process.env.NODE_ENV === "development" ? ".next-dev" : ".next",
   experimental: {
+    middlewareClientMaxBodySize: "150mb" as any,
+    serverActions: {
+      bodySizeLimit: "150mb",
+    },
     optimizePackageImports: [
       "lucide-react",
       "react-icons",

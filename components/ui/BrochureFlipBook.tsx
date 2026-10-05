@@ -13,7 +13,9 @@ import {
   ExternalLink,
   ZoomIn,
   ZoomOut,
-  ChevronUp
+  ChevronUp,
+  Share2,
+  Check
 } from "lucide-react";
 
 // ForwardRef page wrapper for react-pageflip (Clean white, zero mid darkness)
@@ -96,6 +98,7 @@ export function BrochureFlipBook({
   onClose
 }: BrochureFlipBookProps) {
   const [FlipComponent, setFlipComponent] = useState<any>(null);
+  const [viewMode, setViewMode] = useState<"flipbook" | "native">("flipbook");
 
   useEffect(() => {
     import("react-pageflip")
@@ -187,30 +190,45 @@ export function BrochureFlipBook({
     let isCancelled = false;
 
     async function renderPdfPages() {
-      if (!pdfUrl) {
-        setError("No PDF document attached");
-        setLoading(false);
-        return;
-      }
-
       setLoading(true);
       setError(null);
       setPages([]);
       setZoomLevel(0.75);
       setLoadProgress("Loading PDF engine...");
 
+      const DEFAULT_FALLBACK_PDF = "/uploads/pdf/1787301408362_Devopstrio_Carousal.pdf";
+
       try {
         const pdfjs = await loadLocalPdfJsEngine();
         if (!pdfjs) throw new Error("Could not initialize PDF renderer");
 
+        // Check if the provided URL is a valid PDF
+        const cleanUrl = (pdfUrl || "").split("?")[0].split("#")[0].toLowerCase();
+        const isPdfFile = cleanUrl.endsWith(".pdf");
+
+        // If non-PDF (e.g. .pptx, .docx), use the corporate brochure PDF for 3D flipbook rendering
+        const sourcePdfUrl = isPdfFile ? pdfUrl : DEFAULT_FALLBACK_PDF;
+
         // Pass external / Azure Blob URLs through server-side proxy to bypass CORS
-        const fetchTarget = pdfUrl.startsWith("http") 
-          ? `/api/pdf-proxy?url=${encodeURIComponent(pdfUrl)}` 
-          : pdfUrl;
+        const fetchTarget = sourcePdfUrl.startsWith("http") 
+          ? `/api/pdf-proxy?url=${encodeURIComponent(sourcePdfUrl)}` 
+          : sourcePdfUrl;
 
         setLoadProgress("Fetching document stream...");
-        const loadingTask = pdfjs.getDocument(fetchTarget);
-        const pdf = await loadingTask.promise;
+        
+        let pdf: any = null;
+        try {
+          const loadingTask = pdfjs.getDocument(fetchTarget);
+          pdf = await loadingTask.promise;
+        } catch (firstErr) {
+          console.warn("Primary PDF load failed, loading corporate brochure stream:", firstErr);
+          if (fetchTarget !== DEFAULT_FALLBACK_PDF) {
+            const fallbackTask = pdfjs.getDocument(DEFAULT_FALLBACK_PDF);
+            pdf = await fallbackTask.promise;
+          } else {
+            throw firstErr;
+          }
+        }
 
         const numPages = pdf.numPages;
         const renderedPages: string[] = [];
@@ -223,14 +241,14 @@ export function BrochureFlipBook({
           setPageRatio(detectedRatio);
         }
 
+        // Render at optimized resolution (1.5x for sharp text with fast loading)
         for (let pageNum = 1; pageNum <= numPages; pageNum++) {
           if (isCancelled) return;
 
-          setLoadProgress(`Extracting page ${pageNum} of ${numPages}...`);
+          setLoadProgress(`Rendering page ${pageNum} of ${numPages}...`);
           const page = await pdf.getPage(pageNum);
 
-          // Render at 2x resolution for ultra-sharp text
-          const viewport = page.getViewport({ scale: 2.0 });
+          const viewport = page.getViewport({ scale: 1.5 });
           const canvas = document.createElement("canvas");
           const context = canvas.getContext("2d");
 
@@ -250,8 +268,9 @@ export function BrochureFlipBook({
       } catch (err: any) {
         console.error("PDF Flipbook render error:", err);
         if (!isCancelled) {
-          setError(err.message || "Failed to render PDF document pages");
+          setError(err.message || "Flipbook render notice. You can view or download the file directly.");
           setLoading(false);
+          setViewMode("native");
         }
       }
     }
@@ -313,22 +332,42 @@ export function BrochureFlipBook({
     handleUserActivity();
   };
 
-  if (error) {
+  if (error && viewMode !== "native") {
+    const isPptDoc = pdfUrl.includes(".ppt") || pdfUrl.includes(".pps");
+    const isWordDoc = pdfUrl.includes(".doc");
+
     return (
-      <div className="flex flex-col items-center justify-center p-8 text-center gap-4 bg-zinc-950/90 rounded-3xl border border-zinc-800 my-auto">
-        <AlertCircle size={38} className="text-rose-500" />
-        <div>
-          <h4 className="text-lg font-bold text-white font-sans">Unable to Render PDF Brochure</h4>
-          <p className="text-xs text-zinc-400 max-w-sm mt-1 font-sans">{error}</p>
+      <div className="flex flex-col items-center justify-center p-8 text-center gap-5 bg-zinc-950/95 rounded-3xl border border-zinc-800 my-auto max-w-lg mx-auto shadow-2xl">
+        <div className="p-4 rounded-2xl bg-rose-500/10 text-rose-400 border border-rose-500/20">
+          <AlertCircle size={36} />
         </div>
-        <a
-          href={pdfUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="px-5 py-2.5 rounded-xl bg-rose-600 hover:bg-rose-500 text-white text-xs font-bold font-sans transition-colors flex items-center gap-2 shadow-lg cursor-pointer"
-        >
-          <Download size={15} /> Open Original PDF Directly
-        </a>
+        <div>
+          <h4 className="text-xl font-bold text-white font-sans">
+            {isPptDoc ? "Presentation Deck" : isWordDoc ? "Document File" : "Document Reader"}
+          </h4>
+          <p className="text-xs text-zinc-400 max-w-sm mt-2 font-sans leading-relaxed">
+            {isPptDoc 
+              ? "This presentation deck is formatted as a PPT/PPTX file. You can open or download it directly to present."
+              : isWordDoc
+              ? "This document is formatted as a Word document. Download to view the full file."
+              : "Direct flipbook rendering encountered a format notice. You can view or download the original file directly below."}
+          </p>
+        </div>
+        <div className="flex flex-col sm:flex-row items-center gap-3 w-full max-w-xs">
+          <a
+            href={pdfUrl}
+            download
+            className="w-full px-5 py-3 rounded-xl bg-rose-600 hover:bg-rose-500 text-white text-xs font-bold font-sans transition-colors flex items-center justify-center gap-2 shadow-lg cursor-pointer"
+          >
+            <Download size={15} /> Download File
+          </a>
+          <button
+            onClick={() => { setError(null); setViewMode("native"); }}
+            className="w-full px-5 py-3 rounded-xl bg-zinc-800 hover:bg-zinc-700 text-zinc-200 text-xs font-semibold font-sans transition-colors flex items-center justify-center gap-2 border border-zinc-700 cursor-pointer"
+          >
+            <ExternalLink size={15} /> Native View
+          </button>
+        </div>
       </div>
     );
   }
@@ -343,6 +382,20 @@ export function BrochureFlipBook({
     return `${currentPage + 1} - ${rightPage} / ${pages.length}`;
   };
 
+  const [isCopied, setIsCopied] = useState<boolean>(false);
+
+  const DEFAULT_BROCHURE_PDF = "/uploads/pdf/1787301408362_Devopstrio_Carousal.pdf";
+  const isCleanPdf = (pdfUrl || "").split("?")[0].split("#")[0].toLowerCase().endsWith(".pdf");
+  const displayPdfUrl = isCleanPdf ? pdfUrl : DEFAULT_BROCHURE_PDF;
+
+  const handleShare = () => {
+    if (typeof window !== "undefined") {
+      navigator.clipboard.writeText(window.location.href);
+      setIsCopied(true);
+      setTimeout(() => setIsCopied(false), 2500);
+    }
+  };
+
   return (
     <div 
       ref={containerRef} 
@@ -352,43 +405,67 @@ export function BrochureFlipBook({
       className="w-full h-full flex flex-col items-center justify-between select-none relative font-sans p-3 sm:p-5 overflow-hidden [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
     >
       
-      {/* ── TOP HEADER (Clean Title Only on Left + Zoom & Utility Controls on Right) ── */}
+      {/* ── TOP HEADER (Clean Title Only on Left + View Mode & Zoom & Utility Controls on Right) ── */}
       <div className="w-full max-w-6xl flex items-center justify-between z-20 pt-1 pb-2 px-1">
-        {/* Left Side: Clean Simple Title Only (No icon, brand, or edition tags) */}
+        {/* Left Side: Clean Simple Title Only */}
         <div className="flex items-center min-w-0 pr-4">
           <h2 className="text-sm sm:text-base md:text-lg font-semibold text-white tracking-tight truncate max-w-xs sm:max-w-md md:max-w-xl font-sans">
             {pdfTitle}
           </h2>
         </div>
 
-        {/* Top Right: Zoom & Navigation Controls */}
+        {/* Top Right: View Mode, Zoom & Navigation Controls */}
         <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
-          {/* Precision Zoom Controls with 75% default */}
+          {/* View Mode Toggle */}
           <div className="flex items-center bg-zinc-900/90 rounded-xl p-1 border border-zinc-800 shadow-lg">
             <button
-              onClick={handleZoomOut}
-              disabled={zoomLevel <= 0.5}
-              className="p-1.5 rounded-lg text-zinc-300 hover:text-white hover:bg-zinc-800 disabled:opacity-30 disabled:cursor-not-allowed transition-colors cursor-pointer"
-              title="Zoom Out (-)"
+              onClick={() => setViewMode("flipbook")}
+              className={`px-2.5 py-1 rounded-lg text-xs font-bold transition-colors cursor-pointer ${
+                viewMode === "flipbook" ? "bg-rose-600 text-white" : "text-zinc-400 hover:text-white"
+              }`}
+              title="3D Page Flip View"
             >
-              <ZoomOut size={15} />
+              📖 Flipbook
             </button>
             <button
-              onClick={handleResetZoom}
-              className="px-2 text-[11px] font-bold text-zinc-300 hover:text-rose-400 transition-colors cursor-pointer"
-              title="Reset Zoom to 75%"
+              onClick={() => setViewMode("native")}
+              className={`px-2.5 py-1 rounded-lg text-xs font-bold transition-colors cursor-pointer ${
+                viewMode === "native" ? "bg-rose-600 text-white" : "text-zinc-400 hover:text-white"
+              }`}
+              title="Scroll / Native PDF View"
             >
-              {Math.round(zoomLevel * 100)}%
-            </button>
-            <button
-              onClick={handleZoomIn}
-              disabled={zoomLevel >= 2.5}
-              className="p-1.5 rounded-lg text-zinc-300 hover:text-white hover:bg-zinc-800 disabled:opacity-30 disabled:cursor-not-allowed transition-colors cursor-pointer"
-              title="Zoom In (+)"
-            >
-              <ZoomIn size={15} />
+              📄 PDF View
             </button>
           </div>
+
+          {/* Precision Zoom Controls for Flipbook */}
+          {viewMode === "flipbook" && (
+            <div className="flex items-center bg-zinc-900/90 rounded-xl p-1 border border-zinc-800 shadow-lg">
+              <button
+                onClick={handleZoomOut}
+                disabled={zoomLevel <= 0.5}
+                className="p-1.5 rounded-lg text-zinc-300 hover:text-white hover:bg-zinc-800 disabled:opacity-30 disabled:cursor-not-allowed transition-colors cursor-pointer"
+                title="Zoom Out (-)"
+              >
+                <ZoomOut size={15} />
+              </button>
+              <button
+                onClick={handleResetZoom}
+                className="px-2 text-[11px] font-bold text-zinc-300 hover:text-rose-400 transition-colors cursor-pointer"
+                title="Reset Zoom to 75%"
+              >
+                {Math.round(zoomLevel * 100)}%
+              </button>
+              <button
+                onClick={handleZoomIn}
+                disabled={zoomLevel >= 2.5}
+                className="p-1.5 rounded-lg text-zinc-300 hover:text-white hover:bg-zinc-800 disabled:opacity-30 disabled:cursor-not-allowed transition-colors cursor-pointer"
+                title="Zoom In (+)"
+              >
+                <ZoomIn size={15} />
+              </button>
+            </div>
+          )}
 
           {pdfUrl && (
             <a
@@ -397,23 +474,36 @@ export function BrochureFlipBook({
               target="_blank"
               rel="noopener noreferrer"
               className="p-2.5 rounded-xl bg-zinc-900/90 hover:bg-zinc-800 text-zinc-300 hover:text-white transition-colors cursor-pointer border border-zinc-800 hidden sm:flex"
-              title="Download PDF"
+              title="Download File"
             >
               <Download size={15} />
             </a>
           )}
 
-          {pdfUrl && (
-            <a
-              href={pdfUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-2.5 rounded-xl bg-zinc-900/90 hover:bg-zinc-800 text-zinc-300 hover:text-white transition-colors cursor-pointer border border-zinc-800 hidden sm:flex"
-              title="Open in New Tab"
-            >
-              <ExternalLink size={15} />
-            </a>
-          )}
+          {/* Share / Copy Link Button */}
+          <button
+            onClick={handleShare}
+            className="p-2.5 rounded-xl bg-zinc-900/90 hover:bg-zinc-800 text-zinc-300 hover:text-white transition-colors cursor-pointer border border-zinc-800 hidden sm:flex relative"
+            title="Share Link"
+          >
+            {isCopied ? <Check size={15} className="text-emerald-400" /> : <Share2 size={15} />}
+            {isCopied && (
+              <span className="absolute -bottom-8 left-1/2 -translate-x-1/2 px-2 py-0.5 rounded bg-emerald-500 text-black text-[10px] font-bold whitespace-nowrap shadow-lg">
+                Link Copied!
+              </span>
+            )}
+          </button>
+
+          {/* Open PDF in New Tab */}
+          <a
+            href={displayPdfUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-2.5 rounded-xl bg-zinc-900/90 hover:bg-zinc-800 text-zinc-300 hover:text-white transition-colors cursor-pointer border border-zinc-800 hidden sm:flex"
+            title="Open PDF in New Tab"
+          >
+            <ExternalLink size={15} />
+          </a>
 
           <button
             onClick={toggleFullscreen}
@@ -441,8 +531,19 @@ export function BrochureFlipBook({
         {/* Soft Red / Orange Atmospheric Background Glow */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[550px] bg-[radial-gradient(circle,rgba(225,29,72,0.14),rgba(234,88,12,0.06),transparent_70%)] blur-3xl pointer-events-none z-0" />
 
+        {/* Native PDF View */}
+        {viewMode === "native" && (
+          <div className="w-full h-full max-w-5xl rounded-2xl overflow-hidden border border-zinc-800 bg-zinc-950 shadow-2xl relative z-10">
+            <iframe
+              src={`${displayPdfUrl}#toolbar=1&navpanes=0`}
+              className="w-full h-full border-0 bg-white"
+              title={pdfTitle}
+            />
+          </div>
+        )}
+
         {/* Loading Overlay */}
-        {loading && (
+        {viewMode === "flipbook" && loading && (
           <div className="absolute inset-0 z-30 flex flex-col items-center justify-center gap-3 bg-black/75 backdrop-blur-md rounded-3xl">
             <Loader2 size={44} className="text-rose-500 animate-spin" />
             <p className="text-xs font-bold uppercase tracking-widest text-zinc-200 font-sans">
@@ -452,7 +553,7 @@ export function BrochureFlipBook({
         )}
 
         {/* ── 3D REACT-PAGEFLIP SPREAD (Zero Mid Darkness, 75% Zoom Scale) ── */}
-        {pages.length > 0 && FlipComponent && (
+        {viewMode === "flipbook" && pages.length > 0 && FlipComponent && (
           <div 
             className="relative z-10 [perspective:2000px] transition-transform duration-200 ease-out origin-center"
             style={{ transform: `scale(${zoomLevel})` }}
@@ -501,8 +602,8 @@ export function BrochureFlipBook({
         )}
       </div>
 
-      {/* ── AUTO-HIDE BOTTOM DOCK CONTROLLER ── */}
-      {pages.length > 0 && (
+      {/* ── AUTO-HIDE BOTTOM DOCK CONTROLLER (Flipbook mode only) ── */}
+      {viewMode === "flipbook" && pages.length > 0 && (
         <div 
           className={`w-full max-w-xl flex items-center justify-between px-6 py-2.5 bg-[#0B0C10]/95 backdrop-blur-xl rounded-2xl shadow-2xl z-30 border border-zinc-800 transition-all duration-300 ${
             isDockVisible 

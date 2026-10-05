@@ -119,6 +119,8 @@ const sitemapData: SitemapCategory[] = [
     accentColor: "from-purple-500 to-pink-600",
     items: [
       { name: "Marketing Collateral Portal", href: "/marketing", desc: "Public Sales & Pitch Assets" },
+      { name: "Downloads Library", href: "/marketing/downloads", desc: "Complete Downloadable Collateral Repository" },
+      { name: "Latest Collateral Releases", href: "/marketing/latest", desc: "Recently Published Decks & Papers" },
       { name: "Corporate Presentation", href: "/marketing/company/corporate-presentation", desc: "45-Slide Pitch Deck" },
       { name: "Company Fact Sheet", href: "/marketing/company/company-profile", desc: "Executive Summary PDF" },
       { name: "Brand Guidelines", href: "/marketing/company/brand-guidelines", desc: "Logos, Colors & Typography" },

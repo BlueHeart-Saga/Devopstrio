@@ -50,6 +50,18 @@ const CATEGORIES = [
 
 const RESOURCE_TYPES: ResourceType[] = ["PDF", "PPT", "Word", "Video", "Brochure", "Whitepaper", "Case Study", "Datasheet", "Blueprint"];
 
+const TYPE_CONSTRAINTS: Record<ResourceType, { accept: string; extensions: string[]; label: string }> = {
+  PDF: { accept: ".pdf,application/pdf", extensions: [".pdf"], label: "PDF Document (.pdf)" },
+  Brochure: { accept: ".pdf,application/pdf", extensions: [".pdf"], label: "PDF Brochure (.pdf)" },
+  Whitepaper: { accept: ".pdf,application/pdf", extensions: [".pdf"], label: "PDF Whitepaper (.pdf)" },
+  Datasheet: { accept: ".pdf,application/pdf", extensions: [".pdf"], label: "PDF Datasheet (.pdf)" },
+  Blueprint: { accept: ".pdf,application/pdf", extensions: [".pdf"], label: "PDF Blueprint (.pdf)" },
+  "Case Study": { accept: ".pdf,application/pdf", extensions: [".pdf"], label: "PDF Case Study (.pdf)" },
+  PPT: { accept: ".ppt,.pptx,application/vnd.ms-powerpoint,application/vnd.openxmlformats-officedocument.presentationml.presentation", extensions: [".ppt", ".pptx"], label: "PowerPoint Presentation (.ppt, .pptx)" },
+  Word: { accept: ".doc,.docx,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document", extensions: [".doc", ".docx"], label: "Word Document (.doc, .docx)" },
+  Video: { accept: ".mp4,.mov,.webm,video/mp4,video/quicktime,video/webm", extensions: [".mp4", ".mov", ".webm"], label: "Video (.mp4, .mov, .webm)" },
+};
+
 const TYPE_COLORS: Record<string, string> = {
   PDF: "bg-red-500/10 text-red-400 border-red-500/20",
   PPT: "bg-orange-500/10 text-orange-400 border-orange-500/20",
@@ -129,23 +141,42 @@ export default function MarketingResourcesAdminPage() {
     isThumbnail ? setIsUploadingThumb(true) : setIsUploadingFile(true);
     setUploadError(null);
 
+    // Validate file type alignment BEFORE uploading
+    if (field === "fileUrl") {
+      const chosenType = (formData.type || "PDF") as ResourceType;
+      const constraint = TYPE_CONSTRAINTS[chosenType] || TYPE_CONSTRAINTS.PDF;
+      const fileExt = "." + (file.name.split(".").pop()?.toLowerCase() || "");
+
+      if (!constraint.extensions.includes(fileExt)) {
+        setUploadError(
+          `Validation Error: Selected Resource Type is "${chosenType}" (requires ${constraint.extensions.join(" or ")}), but you selected "${file.name}" (${fileExt}). Please select a valid ${constraint.extensions.join(" or ")} file, or change the Resource Type dropdown first.`
+        );
+        isThumbnail ? setIsUploadingThumb(false) : setIsUploadingFile(false);
+        return;
+      }
+    }
+
     const fd = new FormData();
     fd.append("file", file);
 
     try {
       const res = await fetch("/api/upload", { method: "POST", body: fd });
       const result = await res.json();
-      if (result.success) {
+      const uploadedUrl = result.url || result.files?.[0]?.url;
+
+      if (res.ok && uploadedUrl) {
         setFormData((prev) => ({
           ...prev,
-          [field]: result.url,
+          [field]: uploadedUrl,
           ...(field === "fileUrl" ? { fileName: file.name, fileSize: formatBytes(file.size) } : {}),
         }));
       } else {
-        setUploadError("Upload failed. Please try again.");
+        const errMsg = result.details || result.error || "Upload failed. Please check server logs.";
+        setUploadError(`Upload failed: ${errMsg}`);
       }
-    } catch {
-      setUploadError("Upload failed. Please try again.");
+    } catch (err: any) {
+      console.error("Upload request error:", err);
+      setUploadError(`Upload error: ${err?.message || "Failed to reach upload server."}`);
     } finally {
       isThumbnail ? setIsUploadingThumb(false) : setIsUploadingFile(false);
     }
@@ -160,6 +191,22 @@ export default function MarketingResourcesAdminPage() {
 
   const handleInput = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     const { name, value, type } = e.target;
+    
+    // When changing Resource Type, check if existing fileUrl is still compatible
+    if (name === "type" && formData.fileUrl) {
+      const newType = value as ResourceType;
+      const constraint = TYPE_CONSTRAINTS[newType] || TYPE_CONSTRAINTS.PDF;
+      const currentExt = "." + (formData.fileUrl.split(".").pop()?.split("?")[0]?.toLowerCase() || "");
+      
+      if (!constraint.extensions.includes(currentExt)) {
+        setUploadError(
+          `Warning: Changing type to "${newType}" (${constraint.extensions.join(" or ")}) conflicts with current uploaded file "${formData.fileName || currentExt}". Please upload a matching ${constraint.extensions.join(" or ")} file.`
+        );
+      } else {
+        setUploadError(null);
+      }
+    }
+
     setFormData((prev) => ({
       ...prev,
       [name]: type === "checkbox" ? (e.target as HTMLInputElement).checked : value,
@@ -207,6 +254,21 @@ export default function MarketingResourcesAdminPage() {
       setUploadError("Title and category are required.");
       return;
     }
+
+    // Validate file type alignment before saving
+    if (formData.fileUrl) {
+      const chosenType = (formData.type || "PDF") as ResourceType;
+      const constraint = TYPE_CONSTRAINTS[chosenType] || TYPE_CONSTRAINTS.PDF;
+      const fileExt = "." + (formData.fileUrl.split(".").pop()?.split("?")[0]?.toLowerCase() || "");
+
+      if (!constraint.extensions.includes(fileExt)) {
+        setUploadError(
+          `Validation Error: Resource Type is set to "${chosenType}" (requires ${constraint.extensions.join(" or ")}), but the uploaded file "${formData.fileName || ''}" has extension "${fileExt}". Please change the Resource Type to match the file or upload a new file.`
+        );
+        return;
+      }
+    }
+
     try {
       if (isAdding) {
         await fetch("/api/marketing-resources", {
@@ -408,15 +470,24 @@ export default function MarketingResourcesAdminPage() {
               {/* File Upload */}
               <div className="md:col-span-2">
                 <label className="block text-xs font-bold text-zinc-400 uppercase tracking-widest mb-2">
-                  Document / File Upload <span className="text-zinc-600 font-normal normal-case">(PDF, PPT, PPTX, DOC, DOCX, MP4, MOV)</span>
+                  Document / File Upload{" "}
+                  <span className="text-rose-400 font-semibold normal-case">
+                    (Accepts {TYPE_CONSTRAINTS[(formData.type || "PDF") as ResourceType]?.label || "PDF Document (.pdf)"})
+                  </span>
                 </label>
                 <div className="flex items-center gap-4">
                   <label className="flex items-center gap-2 px-5 py-3 bg-zinc-800 hover:bg-zinc-700 border border-zinc-700 rounded-lg text-sm font-bold text-white cursor-pointer transition-colors">
                     <Upload size={15} />
-                    {isUploadingFile ? "Uploading..." : "Choose File"}
+                    {isUploadingFile ? "Uploading (may take a moment for large files)..." : "Choose File"}
                     <input
-                      type="file" accept={ACCEPT_TYPES} className="hidden"
-                      onChange={(e) => { const f = e.target.files?.[0]; if (f) uploadFile(f, "fileUrl"); }}
+                      type="file"
+                      accept={TYPE_CONSTRAINTS[(formData.type || "PDF") as ResourceType]?.accept || ".pdf"}
+                      className="hidden"
+                      onChange={(e) => {
+                        const f = e.target.files?.[0];
+                        if (f) uploadFile(f, "fileUrl");
+                        e.target.value = ""; // reset for re-selection
+                      }}
                     />
                   </label>
                   {formData.fileUrl && (
