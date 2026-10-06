@@ -40,7 +40,7 @@ const PRODUCTS: Product[] = [
     tagline: "Zero-Trust Electronic Signature & Digital Trust",
     desc: "Cryptographically secured e-signature and digital document trust platform delivering immutable audit trails, biometric validation, and global regulatory compliance.",
     logo: "/webp/assets/Home-page/our-products/logo/safesign.webp",
-    image: "/webp/assets/Home-page/our-products/safesign.webp",
+    image: "/webp/assets/Home-page/our-products/esigniva.webp",
     link: "/ecosystem/platforms-solutions/saas-platforms/esigniva",
     accent: "#fb923c",
   },
@@ -67,7 +67,7 @@ const PRODUCTS: Product[] = [
     tagline: "Smart Campus & Higher Education Operations",
     desc: "Unified campus ERP ecosystem connecting students, faculty, hostel, transport, fee billing, and real-time academic governance into a single digital platform.",
     logo: "/webp/assets/Home-page/our-products/logo/Campix.webp",
-    image: "/webp/assets/landingpage-campix/hero.webp",
+    image: "/webp/assets/Home-page/our-products/campix.webp",
     link: "/ecosystem/platforms-solutions/saas-platforms/campix",
     accent: "#fbbf24",
   },
@@ -179,21 +179,23 @@ export function FeaturedProducts() {
                 >
                   <span
                     aria-hidden
-                    className="absolute bottom-3 left-0 top-3 hidden w-0.5 rounded-full transition-opacity duration-300 lg:block"
+                    className="absolute bottom-2.5 left-0 top-2.5 hidden w-1 rounded-full transition-opacity duration-300 lg:block"
                     style={{ background: p.accent, opacity: on ? 1 : 0 }}
                   />
-                  <span className="relative h-9 w-9 shrink-0 overflow-hidden rounded-lg border border-white/[0.06] bg-zinc-900/80 lg:h-10 lg:w-10">
+                  <span className="relative h-9 w-9 shrink-0 overflow-hidden rounded-xl border border-white/[0.08] bg-zinc-900/90 lg:h-11 lg:w-11">
                     <Image src={p.logo} alt="" fill unoptimized className="object-contain p-1.5" />
                   </span>
                   <span className="min-w-0 flex-1">
-                    <span className={`block text-sm font-semibold uppercase tracking-wider transition-colors lg:text-base ${on ? "text-white" : "text-zinc-400 group-hover:text-zinc-200"}`}>
+                    <span className={`block text-sm font-bold uppercase tracking-wider transition-colors lg:text-[16px] ${on ? "text-white" : "text-zinc-300 group-hover:text-white"}`}>
                       {p.name}
                     </span>
-                    <span className="hidden truncate text-xs text-zinc-500 lg:block">{p.tagline}</span>
+                    <span className={`hidden truncate text-xs transition-colors lg:block lg:text-[13px] ${on ? "text-zinc-300" : "text-zinc-400 group-hover:text-zinc-300"}`}>
+                      {p.tagline}
+                    </span>
                   </span>
                   <ArrowUpRight
                     aria-hidden
-                    className="hidden h-4 w-4 shrink-0 transition-all duration-300 lg:block"
+                    className="hidden h-4 w-4 shrink-0 transition-all duration-300 lg:block lg:h-4.5 lg:w-4.5"
                     style={{ color: p.accent, opacity: on ? 1 : 0, transform: on ? "none" : "translate(-4px, 4px)" }}
                   />
                 </button>

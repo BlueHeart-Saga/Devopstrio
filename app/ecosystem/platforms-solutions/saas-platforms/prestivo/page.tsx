@@ -450,9 +450,9 @@ function Hero() {
       <At x={134} y={118} className="z-10 !justify-start px-6 xl:px-0">
         <Reveal>
           <div className="max-w-[560px] xl:max-w-[520px]">
-            <div className="flex items-center" style={{ height: 60 }}>
-              <Pic asset={A.logoMark} w={72} alt="" style={{ marginLeft: 13 }} />
-              <Pic asset={A.logoWord} w={112} alt="Prestivo" style={{ marginLeft: -12, marginTop: 4 }} />
+            <div className="flex items-center gap-3.5" style={{ height: 60 }}>
+              <Pic asset={A.logoMark} w={64} alt="Prestivo" />
+              <Pic asset={A.logoWord} w={125} alt="Prestivo" style={{ marginTop: 2 }} />
             </div>
             <h1
               className="mt-[62px] text-[40px] leading-[48px] xl:text-[53px] xl:leading-[64px] font-bold tracking-[-1.4px] text-white"

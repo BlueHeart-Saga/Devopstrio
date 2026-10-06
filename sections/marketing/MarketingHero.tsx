@@ -41,10 +41,6 @@ export function MarketingHero({
 
       <div className="mx-auto grid max-w-7xl items-center gap-14 px-4 sm:px-6 lg:grid-cols-[1.15fr_0.85fr] lg:px-8">
         <div className="mkt-rise">
-          <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-zinc-800 bg-zinc-900/70 px-3.5 py-1.5 text-xs font-medium text-zinc-300">
-            <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" aria-hidden />
-            Sales enablement hub
-          </p>
           <h1 className="max-w-2xl text-4xl font-semibold leading-[1.08] tracking-tight sm:text-5xl lg:text-6xl">
             Every deck, brochure and blueprint,{" "}
             <span className="text-zinc-400">ready to send.</span>

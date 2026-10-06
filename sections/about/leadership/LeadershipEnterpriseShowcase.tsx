@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useCallback, useRef } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import {
   motion,
   useAnimationControls,
@@ -45,7 +46,7 @@ const showcaseItems = [
     title: "Our Culture & People",
     description: "Experience an engineering culture built on innovation, inclusion, and continuous learning across our global delivery centers.",
     link: "/about/our-culture-people",
-    image: "/webp/assets/About-page/leadership/sourcecard/Our Culture & People.webp",
+    image: "/webp/assets/About-page/leadership/sourcecard/our-culture-people.webp",
   },
   {
     title: "Global Internship Programme",
@@ -233,11 +234,13 @@ export const LeadershipEnterpriseShowcase = () => {
                   >
                     {/* Card Top Image */}
                     <div className="relative w-full aspect-[16/10] overflow-hidden bg-zinc-800">
-                      <img
+                      <Image
                         src={item.image}
                         alt={item.title}
+                        fill
+                        unoptimized
                         draggable={false}
-                        className="object-cover w-full h-full transition-transform duration-700 ease-out group-hover:scale-105 select-none"
+                        className="object-cover transition-transform duration-700 ease-out group-hover:scale-105 select-none"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                     </div>
