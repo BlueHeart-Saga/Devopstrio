@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@azure/storage-blob": "^12.32.0",
+    "@iconify/react": "^6.0.2",
     "@radix-ui/react-slot": "^1.2.4",
     "@react-three/fiber": "^9.6.1",
     "@react-three/postprocessing": "^3.0.4",
@@ -42,6 +43,9 @@
     "uuid": "^14.0.1"
   },
   "devDependencies": {
+    "@iconify-json/devicon": "^1.2.68",
+    "@iconify-json/logos": "^1.2.15",
+    "@iconify-json/simple-icons": "^1.2.99",
     "@types/node": "^22.10.2",
     "@types/nodemailer": "^8.0.1",
     "@types/react": "^19.1.10",

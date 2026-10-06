@@ -8,6 +8,7 @@ import { FAQ } from "@/components/ecosystem/FAQ";
 import { PlatformsHero } from "@/sections/ecosystem/platforms/PlatformsHero";
 import { PlatformCategories } from "@/sections/ecosystem/platforms/PlatformCategories";
 import { FeaturedProducts } from "@/sections/ecosystem/platforms/FeaturedProducts";
+import { AIAgentsSection } from "@/sections/ecosystem/platforms/AIAgentsSection";
 import { PlatformCapabilities } from "@/sections/ecosystem/platforms/PlatformCapabilities";
 import { PlatformArchitecture } from "@/sections/ecosystem/platforms/PlatformArchitecture";
 import { SuccessMetrics } from "@/sections/ecosystem/platforms/SuccessMetrics";
@@ -29,6 +30,7 @@ export default function PlatformsSolutionsPage() {
   const subSections = [
     { id: "categories", label: "Categories" },
     { id: "showcase", label: "Featured Products" },
+    { id: "ai-agents", label: "AI Agents" },
     { id: "capabilities", label: "Capabilities" },
     { id: "architecture", label: "Architecture" },
     { id: "metrics", label: "Success Metrics" },
@@ -54,7 +56,10 @@ export default function PlatformsSolutionsPage() {
       {/* 03. Featured Products Showcase */}
       <FeaturedProducts />
 
-      {/* 04. Platform Capabilities */}
+      {/* 04. AI Agents */}
+      <AIAgentsSection />
+
+      {/* 05. Platform Capabilities */}
       <PlatformCapabilities />
 
       {/* 05. Platform Architecture */}
