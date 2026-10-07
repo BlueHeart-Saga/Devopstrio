@@ -84,7 +84,7 @@ export default function LeadershipTeamPage() {
       {/* 1. Vision & Story Hero */}
       <LeadershipHero />
 
-      <LeadershipDeliver />
+      {/* <LeadershipDeliver /> */}
 
       {/* 2. 8 Timeless Leadership Principles */}
       {/*
