@@ -71,14 +71,10 @@ export default function AwardsRecognitionPage() {
       </div>
 
       {/* Complete Awards Gallery Grid */}
-      <div className="bg-zinc-950 border-t border-zinc-900 pb-12">
-        <AllCertifications />
-      </div>
+      <AllCertifications />
 
       {/* Achievements (Innovation & Capabilities) */}
-      <div className="bg-black pt-2 sm:pt-4">
-        <Achievements />
-      </div>
+      <Achievements />
 
       {/* <PeopleBehindRecognition /> */}
 
