@@ -80,7 +80,7 @@ export default function AwardsRecognitionPage() {
         <Achievements />
       </div>
 
-      <PeopleBehindRecognition />
+      {/* <PeopleBehindRecognition /> */}
 
       {/* 3) Awards & Recognition Highlights */}
       <RecognitionHighlights />
