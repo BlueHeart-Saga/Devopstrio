@@ -80,7 +80,7 @@ const products: Product[] = [
     features: ["Zero-Trust", "Multi-party Sign", "Audit Trails"],
     tags: ["LegalTech", "eSignature", "Security"],
     image: "/webp/assets/Home-page/our-products/safesign.webp",
-    link: "https://safesign.devopstrio.co.uk/"
+    link: "https://esigniva.com/"
   },
   {
     name: "Justivon",

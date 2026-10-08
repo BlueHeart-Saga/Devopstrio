@@ -186,7 +186,7 @@ export default function SaaSPlatformsPage() {
       logo: "/webp/assets/Home-page/our-products/logo/safesign.webp",
       ctaPrimary: "View Platform",
       ctaSecondary: "Start Free",
-      url: "https://safesign.devopstrio.co.uk/"
+      url: "https://esigniva.com/"
     },
     {
       slug: "justivon",
@@ -223,7 +223,7 @@ export default function SaaSPlatformsPage() {
     { name: "Campix", bestFor: "Campaign management", users: "Marketing teams", url: "https://campix.devopstrio.co.uk/" },
     { name: "Prestivo", bestFor: "Learning management", users: "Schools & training providers", url: "https://prestivo.devopstrio.co.uk/" },
     { name: "Brio", bestFor: "AI marketing", users: "Brands & agencies", url: "https://brio.devopstrio.co.uk/" },
-    { name: "SafeSign", bestFor: "Digital signatures", users: "Legal, HR, Finance", url: "https://safesign.devopstrio.co.uk/" },
+    { name: "SafeSign", bestFor: "Digital signatures", users: "Legal, HR, Finance", url: "https://esigniva.com/" },
     { name: "Justivon", bestFor: "Legal case management", users: "Law firms & legal departments", url: "https://justivon.devopstrio.co.uk/" }
   ];
 
