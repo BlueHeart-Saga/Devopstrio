@@ -82,7 +82,7 @@ export default function AwardsRecognitionPage() {
       <RecognitionHighlights />
 
       {/* 4) Recognition Timeline / Journey section */}
-      <RecognitionTimeline />
+      {/* <RecognitionTimeline /> */}
 
       {/* 5) Recognition categories section */}
       <RecognitionCategories />
@@ -91,9 +91,9 @@ export default function AwardsRecognitionPage() {
       <WhyRecognitionMatters />
 
       {/* PREVIOUS SECTION: MetricsStats (By the Numbers) */}
-      <div className="bg-black border-t border-zinc-900/60 pb-12">
+      {/* <div className="bg-black border-t border-zinc-900/60 pb-12">
         <MetricsStats />
-      </div>
+      </div> */}
 
       {/* 7) Awards FAQ Section */}
       <FAQ faqs={awardsFaqs} title="Awards & Recognitions" highlight="FAQs" />

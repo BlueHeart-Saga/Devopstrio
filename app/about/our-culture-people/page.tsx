@@ -66,7 +66,7 @@ export default function LifeAtDevopstrioPage() {
 
       {/* 1. Hero */}
       <CultureHero />
-      <LifeHero />
+      {/* <LifeHero /> */}
 
       {/* 3. Life Moments Gallery */}
       <LifeMomentsGallery />
