@@ -455,7 +455,7 @@ export function PlatformsHero() {
       );
       raycaster.setFromCamera(pointer, camera);
       const hit = raycaster.intersectObjects(cardMeshes, false)[0];
-      return hit ? cardMeshes.indexOf(hit.object as THREE.Mesh) : -1;
+      return hit ? cardMeshes.indexOf(hit.object as any) : -1;
     };
 
     const onCanvasMove = (e: PointerEvent) => {

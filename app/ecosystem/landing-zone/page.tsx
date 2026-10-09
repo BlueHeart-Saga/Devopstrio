@@ -54,6 +54,8 @@ import { Reveal } from "@/components/ui/Reveal";
 import { RepresentativeCTA } from "@/components/ui/RepresentativeCTA";
 import { LandingZoneHeroGraphic } from "@/components/ui/LandingZoneHeroGraphic";
 
+import rawFallbackRepos from "@/data/real-repos.json";
+
 // --- Types ---
 interface RepoItem {
   id: string;
@@ -75,6 +77,181 @@ interface RepoItem {
   docsContent: string;
   htmlUrl: string;
 }
+
+// Comprehensive Multi-Category Intelligence Engine
+function classifyRepo(name: string, desc: string = "", topics: string[] = [], lang: string = ""): {
+  primaryCategory: RepoItem["category"];
+  categories: string[];
+  cloud: RepoItem["cloud"];
+  features: string[];
+} {
+  const text = `${name} ${desc || ""} ${lang || ""} ${(topics || []).join(" ")}`.toLowerCase();
+  const cats = new Set<string>();
+  const matches = (terms: string[]) => terms.some((term) => text.includes(term.toLowerCase()));
+
+  // 1. AI & Data
+  const isAI = matches([
+    "ai", "genai", "rag", "llm", "agent", "prompt", "openai", "copilot", "databricks",
+    "fabric", "vector", "embedding", "dataset", "inference", "model", "neural", "vision",
+    "speech", "cognitive", "lakehouse", "analytics", "data", "ml", "mlops", "mlflow",
+    "deepseek", "gemini", "bedrock", "langchain", "llamaindex", "qdrant", "chroma", "pinecone"
+  ]);
+  if (isAI) cats.add("AI & Data");
+
+  // 2. Security
+  const isSecurity = matches([
+    "security", "zero-trust", "zerotrust", "compliance", "sentinel", "defender", "vault",
+    "keyvault", "identity", "siem", "soc2", "cis", "hipaa", "iso27001", "auth", "rbac",
+    "iam", "guardrail", "audit", "policy", "encryption", "waf", "firewall", "privilege",
+    "scanner", "secret", "trivy", "sonar", "hsm", "pam"
+  ]);
+  if (isSecurity) cats.add("Security");
+
+  // 3. VDI / AVD
+  const isVDI = matches([
+    "vdi", "avd", "w365", "desktop", "citrix", "fslogix", "session-host", "session",
+    "remote-desktop", "workspace", "virtual-desktop", "horizon", "packer"
+  ]);
+  if (isVDI) cats.add("VDI / AVD");
+
+  // 4. Industry
+  const isIndustry = matches([
+    "fintech", "banking", "finance", "healthcare", "health", "life-sciences", "retail",
+    "ecommerce", "e-commerce", "saas", "telecom", "telecommunications", "pharma", "energy",
+    "automotive", "insurance", "public-sector", "government", "pci", "pci-dss", "hipaa",
+    "finops", "carbon", "sustainability", "cost", "budget", "marketplace", "broker", "payment"
+  ]);
+  if (isIndustry) cats.add("Industry");
+
+  // 5. Landing Zone
+  const isLZ = matches([
+    "landing-zone", "landingzone", "landing", "caf", "foundation", "starter", "alz",
+    "platform-engineering", "control-tower", "subscription-vending", "subscription"
+  ]);
+  if (isLZ) cats.add("Landing Zone");
+
+  // 6. Multicloud
+  const isMulticloud = matches([
+    "multicloud", "multi-cloud", "cross-cloud", "hybrid", "aws", "azure", "gcp", "google", "oci",
+    "oracle", "cloud", "bicep", "terraform", "cloudformation", "opentofu", "hub-spoke", "transit",
+    "vpc", "vnet", "s3", "blob", "compute", "eks", "aks", "gke"
+  ]);
+  if (isMulticloud) cats.add("Multicloud");
+
+  // 7. DevOps
+  const isDevOps = matches([
+    "devops", "terraform", "bicep", "actions", "cicd", "pipeline", "yaml", "gitops",
+    "ansible", "docker", "kubernetes", "k8s", "helm", "argo", "automation", "iac",
+    "sdk", "cli", "edge", "observability", "prometheus", "grafana", "monitor", "telemetry"
+  ]);
+  if (isDevOps || cats.size === 0) cats.add("DevOps");
+
+  let primaryCategory: RepoItem["category"] = "DevOps";
+  if (isAI) primaryCategory = "AI & Data";
+  else if (isSecurity) primaryCategory = "Security";
+  else if (isVDI) primaryCategory = "VDI / AVD";
+  else if (isIndustry) primaryCategory = "Industry";
+  else if (isLZ) primaryCategory = "Landing Zone";
+  else if (isMulticloud) primaryCategory = "Multicloud";
+  else primaryCategory = "DevOps";
+
+  let cloud: RepoItem["cloud"] = "Multi-Cloud";
+  if (matches(["azure", "entra", "bicep", "vnet", "avd", "fabric"])) cloud = "Azure";
+  else if (matches(["aws", "bedrock", "control-tower", "s3", "lambda", "ecs"])) cloud = "AWS";
+  else if (matches(["gcp", "google", "vertex", "bigquery"])) cloud = "Google Cloud";
+  else if (matches(["oci", "oracle"])) cloud = "Oracle Cloud";
+
+  let features: string[] = [];
+  if (primaryCategory === "AI & Data") {
+    if (text.includes("rag")) features.push("RAG Pipeline");
+    if (text.includes("openai") || text.includes("gpt")) features.push("OpenAI Setup");
+    if (text.includes("vector") || text.includes("qdrant") || text.includes("pinecone")) features.push("Vector DB Guardrails");
+    if (text.includes("agent")) features.push("Agentic Workflow");
+    if (text.includes("databricks") || text.includes("lakehouse") || text.includes("spark")) features.push("Unity Catalog Lakehouse");
+    if (text.includes("bedrock")) features.push("AWS Bedrock LLM");
+    if (features.length < 3) features.push("OpenAI Setup", "RAG Pipeline", "Vector DB Guardrails");
+  } else if (primaryCategory === "Security") {
+    if (text.includes("sentinel") || text.includes("siem")) features.push("Sentinel SIEM");
+    if (text.includes("vault") || text.includes("hsm") || text.includes("key")) features.push("Key Vault HSM");
+    if (text.includes("zero-trust") || text.includes("zerotrust")) features.push("Zero-Trust Baseline");
+    if (text.includes("compliance") || text.includes("soc2") || text.includes("cis")) features.push("SOC2 & CIS Controls");
+    if (features.length < 3) features.push("Zero-Trust Baseline", "Key Vault HSM", "Sentinel SIEM");
+  } else if (primaryCategory === "VDI / AVD") {
+    if (text.includes("fslogix")) features.push("FSLogix Profiles");
+    if (text.includes("session") || text.includes("pool") || text.includes("host")) features.push("Host Pool Scaling");
+    if (text.includes("packer") || text.includes("image")) features.push("Golden Image Automation");
+    if (features.length < 3) features.push("FSLogix Profiles", "Host Pool Scaling", "Golden Image");
+  } else if (primaryCategory === "Industry") {
+    if (text.includes("pci") || text.includes("fintech") || text.includes("bank") || text.includes("payment")) features.push("PCI-DSS Baseline");
+    if (text.includes("hipaa") || text.includes("health") || text.includes("pharma")) features.push("HIPAA Compliance Vault");
+    if (text.includes("finops") || text.includes("cost")) features.push("FinOps Cost Optimization");
+    if (features.length < 3) features.push("PCI-DSS / HIPAA", "Immutable Storage", "SOC2 Controls");
+  } else if (primaryCategory === "Multicloud") {
+    if (text.includes("transit") || text.includes("hub") || text.includes("mesh")) features.push("Hub-Spoke Transit");
+    if (text.includes("aws") && text.includes("azure")) features.push("AWS & Azure Mesh");
+    if (text.includes("gcp") || text.includes("google")) features.push("GCP Shared VPC");
+    if (features.length < 3) features.push("AWS / Azure / GCP", "Hub-Spoke Transit", "Cloud Governance");
+  } else if (primaryCategory === "Landing Zone") {
+    if (text.includes("caf")) features.push("CAF Architecture");
+    if (text.includes("vending") || text.includes("account")) features.push("Subscription Vending");
+    if (text.includes("policy") || text.includes("guardrail")) features.push("Policy Guardrails");
+    if (features.length < 3) features.push("CAF Architecture", "Subscription Vending", "Policy Guardrails");
+  } else {
+    if (text.includes("k8s") || text.includes("kubernetes")) features.push("K8s Cluster Engine");
+    if (text.includes("argo") || text.includes("gitops")) features.push("GitOps ArgoCD");
+    if (text.includes("terraform") || text.includes("bicep")) features.push("IaC Automation");
+    if (features.length < 3) features.push("IaC Module", "CI/CD Pipeline", "GitOps Automation");
+  }
+  features = Array.from(new Set(features)).slice(0, 3);
+
+  return {
+    primaryCategory,
+    categories: Array.from(cats),
+    cloud,
+    features,
+  };
+}
+
+function parseRawRepo(item: any): RepoItem {
+  const rawName = item.name || "";
+  const rawDesc = item.desc || item.description || "";
+  const rawTopics = item.topics || [];
+  const rawLang = item.lang || item.language || "HCL / Terraform";
+
+  const classification = classifyRepo(rawName, rawDesc, rawTopics, rawLang);
+  const lastPushDate = item.pushed_at
+    ? new Date(item.pushed_at).toLocaleDateString("en-GB", { month: "short", day: "numeric", year: "numeric" })
+    : "Recently";
+
+  const readableName = rawName
+    .split(/[-_]/)
+    .map((w: string) => w.charAt(0).toUpperCase() + w.slice(1))
+    .join(" ");
+
+  return {
+    id: item.id ? String(item.id) : rawName,
+    name: readableName,
+    desc: rawDesc || `Enterprise ${classification.primaryCategory.toLowerCase()} cloud accelerator and production-ready IaC blueprint by Devopstrio.`,
+    language: rawLang,
+    framework: rawLang === "HCL" ? "Terraform Module" : rawLang === "Python" ? "Python Engine" : "DevOps Engine",
+    version: "v1.0",
+    status: "🟢 Active",
+    stars: item.stars || item.stargazers_count || 0,
+    rating: "★★★★★",
+    lastUpdated: lastPushDate,
+    tags: [classification.cloud, classification.primaryCategory, rawLang, "Enterprise", ...classification.categories],
+    cloud: classification.cloud,
+    category: classification.primaryCategory,
+    categories: classification.categories,
+    features: classification.features,
+    htmlUrl: item.url || item.html_url || `https://github.com/Devopstrio/${rawName}`,
+    codeSnippet: `module "${rawName.replace(/[^a-zA-Z0-9]/g, "_")}" {\n  source  = "Devopstrio/${rawName}/azurerm"\n  version = "1.0.0"\n\n  environment = "production"\n  enable_monitoring = true\n  enable_governance = true\n}`,
+    docsContent: `Official architecture blueprint and deployment code for ${readableName}. Integrates directly with Devopstrio CI/CD pipelines and multi-cloud governance rules.`,
+  };
+}
+
+const verifiedInitialRepos: RepoItem[] = (rawFallbackRepos as any[]).map(parseRawRepo);
+
 
 export default function EnterpriseLandingZonePage() {
   const [activeFilter, setActiveFilter] = useState<string>("All");
@@ -183,346 +360,8 @@ Direct Contacts:
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [pageSize, setPageSize] = useState<number>(6);
 
-  // Baseline Initial Repositories
-  // Baseline Initial Repositories
-  const baselineRepositories: RepoItem[] = [
-    // 1. Landing Zones
-    {
-      id: "repo-azure-lz",
-      name: "Azure Enterprise Landing Zone",
-      desc: "Production-ready Azure CAF Enterprise Landing Zone topology using Terraform. Includes Hub-and-Spoke VNet, Log Analytics, Azure Firewall, Azure Defender, and Privileged Identity Management.",
-      language: "HCL / Terraform",
-      framework: "Azure CAF",
-      version: "v2.4",
-      status: "🟢 Active",
-      stars: 342,
-      rating: "★★★★★",
-      lastUpdated: "2 days ago",
-      tags: ["Azure", "Terraform", "Networking", "Security", "Landing Zone"],
-      cloud: "Azure",
-      category: "Landing Zone",
-      features: ["CAF Architecture", "Subscription Vending", "Policy Guardrails"],
-      htmlUrl: "https://github.com/Devopstrio/caf-landing-zone",
-      codeSnippet: `module "enterprise_landing_zone" {\n  source  = "Devopstrio/caf-landing-zone/azurerm"\n  version = "2.4.0"\n\n  root_parent_id   = var.root_management_group_id\n  root_id          = "devopstrio"\n  root_name        = "Devopstrio Global Enterprise"\n  deploy_core_landing_zones = true\n}`,
-      docsContent: "Comprehensive deployment guide for Azure Cloud Adoption Framework (CAF) Enterprise Landing Zones."
-    },
-    {
-      id: "repo-aws-lz",
-      name: "AWS Enterprise Landing Zone",
-      desc: "Hardened multi-account AWS landing zone blueprint leveraging Control Tower, AWS Organizations, Transit Gateway, and GuardDuty centralization.",
-      language: "HCL / Terraform",
-      framework: "AWS Control Tower",
-      version: "v1.8",
-      status: "🟢 Active",
-      stars: 289,
-      rating: "★★★★☆",
-      lastUpdated: "5 days ago",
-      tags: ["AWS", "Terraform", "Networking", "Security", "Landing Zone"],
-      cloud: "AWS",
-      category: "Landing Zone",
-      features: ["AWS Control Tower", "Account Factory", "Transit Gateway"],
-      htmlUrl: "https://github.com/Devopstrio/aws-control-tower-lz",
-      codeSnippet: `module "aws_landing_zone" {\n  source  = "Devopstrio/control-tower-lz/aws"\n  version = "1.8.2"\n\n  organization_unit_name = "Core-Workloads"\n  enable_guardduty       = true\n}`,
-      docsContent: "AWS Control Tower custom Landing Zone engine with automated Account Factory setup."
-    },
-    {
-      id: "repo-gcp-lz",
-      name: "Google Cloud Landing Zone",
-      desc: "Standardized GCP organization hierarchy with Shared VPC networks, Cloud IAM roles, Cloud Armor policies, and Vertex AI private VPC perimeters.",
-      language: "HCL / Terraform",
-      framework: "GCP Foundations",
-      version: "v2.1",
-      status: "🟢 Active",
-      stars: 215,
-      rating: "★★★★★",
-      lastUpdated: "3 days ago",
-      tags: ["Google Cloud", "Terraform", "Networking", "Security", "Landing Zone"],
-      cloud: "Google Cloud",
-      category: "Landing Zone",
-      features: ["GCP Organization", "Shared VPC Host", "Cloud Armor"],
-      htmlUrl: "https://github.com/Devopstrio/gcp-foundations-lz",
-      codeSnippet: `module "gcp_landing_zone" {\n  source  = "Devopstrio/foundations/google"\n  version = "2.1.0"\n\n  org_id = "1234567890"\n  shared_vpc_host_project = "devopstrio-vpc-host"\n}`,
-      docsContent: "GCP Cloud Foundation Fabric module supporting multi-folder landing zone hierarchy."
-    },
-
-    // 2. AI & Data
-    {
-      id: "repo-ai-data-lz",
-      name: "AI & GenAI Enterprise Landing Zone",
-      desc: "Secure Azure OpenAI, AWS Bedrock, and Databricks RAG landing zone topology with private endpoints and vector store guardrails.",
-      language: "Python / Terraform",
-      framework: "AI Platform Engine",
-      version: "v3.0",
-      status: "🟢 Active",
-      stars: 312,
-      rating: "★★★★★",
-      lastUpdated: "1 day ago",
-      tags: ["AI & Data", "Azure", "AWS", "Terraform", "Security"],
-      cloud: "Multi-Cloud",
-      category: "AI & Data",
-      features: ["OpenAI Setup", "RAG Pipeline", "Vector DB Guardrails"],
-      htmlUrl: "https://github.com/Devopstrio/genai-enterprise-lz",
-      codeSnippet: `module "ai_landing_zone" {\n  source  = "Devopstrio/ai-landing-zone/azurerm"\n  version = "3.0.0"\n\n  deploy_azure_openai = true\n  enable_private_endpoint = true\n  vector_db_type = "qdrant"\n}`,
-      docsContent: "AI-ready enterprise foundation delivering private OpenAI network perimeters and secure RAG deployment templates."
-    },
-    {
-      id: "repo-azure-openai-rag",
-      name: "Azure OpenAI & RAG Accelerator",
-      desc: "Production enterprise RAG blueprint with Azure OpenAI GPT-4o, Cognitive Search indexer, LangChain orchestrator, and VPC peering.",
-      language: "Python / Bicep",
-      framework: "GenAI Engine",
-      version: "v2.2",
-      status: "🟢 Active",
-      stars: 265,
-      rating: "★★★★★",
-      lastUpdated: "2 days ago",
-      tags: ["AI & Data", "Azure", "OpenAI", "RAG", "Python"],
-      cloud: "Azure",
-      category: "AI & Data",
-      features: ["OpenAI Setup", "RAG Pipeline", "Vector DB Guardrails"],
-      htmlUrl: "https://github.com/Devopstrio/azure-openai-rag-accelerator",
-      codeSnippet: `module "openai_rag" {\n  source = "Devopstrio/openai-rag/azure"\n  model_deployment = "gpt-4o"\n  enable_vector_search = true\n}`,
-      docsContent: "Enterprise RAG deployment blueprint for high-throughput enterprise knowledge bases."
-    },
-    {
-      id: "repo-databricks-lakehouse",
-      name: "Databricks Unity Catalog & Lakehouse LZ",
-      desc: "Governed Databricks lakehouse architecture with Unity Catalog access controls, Delta Lake storage perimeters, and automated ETL clusters.",
-      language: "Python / Terraform",
-      framework: "Data Lakehouse",
-      version: "v1.7",
-      status: "🟢 Active",
-      stars: 198,
-      rating: "★★★★★",
-      lastUpdated: "4 days ago",
-      tags: ["AI & Data", "Databricks", "Lakehouse", "Terraform"],
-      cloud: "Multi-Cloud",
-      category: "AI & Data",
-      features: ["Unity Catalog Lakehouse", "RAG Pipeline", "Vector DB Guardrails"],
-      htmlUrl: "https://github.com/Devopstrio/databricks-lakehouse-lz",
-      codeSnippet: `module "databricks_lz" {\n  source = "Devopstrio/databricks/lakehouse"\n  unity_catalog_enabled = true\n}`,
-      docsContent: "Databricks multi-cloud workspace provisioning with automated Unity Catalog governance."
-    },
-
-    // 3. Security
-    {
-      id: "repo-zero-trust-security",
-      name: "Zero Trust Security Baseline Module",
-      desc: "Automated SIEM logging, Privileged Access Management, Defender for Cloud policies, and HashiCorp Vault key vault integrations.",
-      language: "HCL / Terraform",
-      framework: "Zero Trust",
-      version: "v2.1",
-      status: "🟢 Active",
-      stars: 278,
-      rating: "★★★★★",
-      lastUpdated: "3 days ago",
-      tags: ["Security", "Terraform", "Azure", "AWS", "Zero Trust"],
-      cloud: "Multi-Cloud",
-      category: "Security",
-      features: ["Zero-Trust Baseline", "Key Vault HSM", "Sentinel SIEM"],
-      htmlUrl: "https://github.com/Devopstrio/zero-trust-security-baseline",
-      codeSnippet: `module "security_baseline" {\n  source  = "Devopstrio/security-baseline/tf"\n  version = "2.1.0"\n\n  enable_sentinel_siem = true\n  enable_key_vault_hsm = true\n}`,
-      docsContent: "Enterprise security baseline module deploying Azure Sentinel SIEM and Key Vault HSMs."
-    },
-    {
-      id: "repo-sentinel-defender-siem",
-      name: "Azure Sentinel & Defender SIEM Pipeline",
-      desc: "Centralized SIEM/SOAR pipeline with automated threat hunting workbooks, incident response playbooks, and Microsoft Defender connector.",
-      language: "KQL / Bicep",
-      framework: "SIEM Operations",
-      version: "v2.0",
-      status: "🟢 Active",
-      stars: 231,
-      rating: "★★★★★",
-      lastUpdated: "5 days ago",
-      tags: ["Security", "Azure", "SIEM", "Sentinel", "Compliance"],
-      cloud: "Azure",
-      category: "Security",
-      features: ["Sentinel SIEM", "Zero-Trust Baseline", "SOC2 & CIS Controls"],
-      htmlUrl: "https://github.com/Devopstrio/sentinel-defender-pipeline",
-      codeSnippet: `module "sentinel_siem" {\n  source = "Devopstrio/sentinel/azure"\n  retention_days = 365\n  enable_defender_sync = true\n}`,
-      docsContent: "End-to-end security incident detection and automated remediation workflows."
-    },
-
-    // 4. VDI / AVD
-    {
-      id: "repo-vdi-avd-lz",
-      name: "Azure Virtual Desktop (AVD) Landing Zone",
-      desc: "Enterprise AVD host pool automation, FSLogix profile container storage, and automated golden image pipeline using Packer & Bicep.",
-      language: "Bicep / Terraform",
-      framework: "AVD Accelerator",
-      version: "v1.9",
-      status: "🟢 Active",
-      stars: 198,
-      rating: "★★★★☆",
-      lastUpdated: "4 days ago",
-      tags: ["VDI / AVD", "Azure", "Terraform", "Bicep"],
-      cloud: "Azure",
-      category: "VDI / AVD",
-      features: ["FSLogix Profiles", "Host Pool Scaling", "Golden Image Automation"],
-      htmlUrl: "https://github.com/Devopstrio/avd-enterprise-landingzone",
-      codeSnippet: `module "avd_landing_zone" {\n  source  = "Devopstrio/avd-landing-zone/azurerm"\n  version = "1.9.0"\n\n  host_pool_type = "Pooled"\n  max_sessions   = 16\n  enable_fslogix = true\n}`,
-      docsContent: "Automated Virtual Desktop Infrastructure (VDI) blueprint for enterprise workforce streaming."
-    },
-    {
-      id: "repo-avd-fslogix-cloudcache",
-      name: "AVD FSLogix Cloud Cache & Profile Engine",
-      desc: "High-resiliency FSLogix multi-region profile replication engine using Azure Premium Files and active Cloud Cache mirroring.",
-      language: "PowerShell / Bicep",
-      framework: "Storage Optimization",
-      version: "v1.5",
-      status: "🟢 Active",
-      stars: 167,
-      rating: "★★★★★",
-      lastUpdated: "1 week ago",
-      tags: ["VDI / AVD", "Azure", "Storage", "FSLogix"],
-      cloud: "Azure",
-      category: "VDI / AVD",
-      features: ["FSLogix Profiles", "Host Pool Scaling", "Golden Image Automation"],
-      htmlUrl: "https://github.com/Devopstrio/avd-fslogix-cloudcache",
-      codeSnippet: `module "fslogix_cache" {\n  source = "Devopstrio/fslogix/azure"\n  cache_mode = "CloudCache"\n  storage_redundancy = "ZRS"\n}`,
-      docsContent: "Resilient FSLogix profile architecture ensuring sub-second login times across AVD pools."
-    },
-
-    // 5. Industry
-    {
-      id: "repo-fintech-lz",
-      name: "FinTech Compliance Landing Zone",
-      desc: "PCI-DSS and SOC2 aligned enterprise cloud foundation with immutability logs, HSM encryption keys, and automated audit checks.",
-      language: "HCL / Terraform",
-      framework: "Compliance LZ",
-      version: "v2.0",
-      status: "🟢 Active",
-      stars: 245,
-      rating: "★★★★★",
-      lastUpdated: "1 week ago",
-      tags: ["Industry", "Security", "Azure", "AWS", "PCI-DSS"],
-      cloud: "Multi-Cloud",
-      category: "Industry",
-      features: ["PCI-DSS Baseline", "Immutable Storage", "SOC2 Controls"],
-      htmlUrl: "https://github.com/Devopstrio/fintech-compliance-lz",
-      codeSnippet: `module "fintech_landing_zone" {\n  source  = "Devopstrio/fintech-lz/azurerm"\n  version = "2.0.0"\n\n  enable_pci_compliance = true\n  enable_immutable_logs = true\n}`,
-      docsContent: "FinTech landing zone tailored for banking, payment processing, and regulated workloads."
-    },
-    {
-      id: "repo-healthcare-hipaa",
-      name: "Healthcare HIPAA Compliance Vault",
-      desc: "HIPAA and HITRUST certified healthcare data perimeters with encrypted EHR ingestion channels, private clusters, and BAA compliance policies.",
-      language: "HCL / Terraform",
-      framework: "HealthTech Platform",
-      version: "v1.8",
-      status: "🟢 Active",
-      stars: 210,
-      rating: "★★★★★",
-      lastUpdated: "6 days ago",
-      tags: ["Industry", "Healthcare", "HIPAA", "Terraform", "Security"],
-      cloud: "Multi-Cloud",
-      category: "Industry",
-      features: ["HIPAA Compliance Vault", "PCI-DSS Baseline", "SOC2 Controls"],
-      htmlUrl: "https://github.com/Devopstrio/healthcare-hipaa-compliance",
-      codeSnippet: `module "healthcare_vault" {\n  source = "Devopstrio/hipaa-vault/aws"\n  phi_encryption_at_rest = true\n  enable_audit_retention = true\n}`,
-      docsContent: "Zero-trust clinical and healthcare landing zone satisfying HIPAA Security and Privacy rules."
-    },
-    {
-      id: "repo-retail-ecommerce-lz",
-      name: "Retail Omnichannel E-Commerce LZ",
-      desc: "Scalable retail architecture handling Black Friday traffic spikes with CDN edge caching, serverless checkout queues, and real-time inventory sync.",
-      language: "HCL / Terraform",
-      framework: "Retail Cloud",
-      version: "v2.1",
-      status: "🟢 Active",
-      stars: 185,
-      rating: "★★★★★",
-      lastUpdated: "1 week ago",
-      tags: ["Industry", "Retail", "E-Commerce", "Multi-Cloud"],
-      cloud: "Multi-Cloud",
-      category: "Industry",
-      features: ["FinOps Cost Optimization", "PCI-DSS Baseline", "SOC2 Controls"],
-      htmlUrl: "https://github.com/Devopstrio/retail-ecommerce-landingzone",
-      codeSnippet: `module "ecommerce_lz" {\n  source = "Devopstrio/retail-lz/azure"\n  enable_edge_caching = true\n  auto_scale_max = 50\n}`,
-      docsContent: "High-density retail cloud infrastructure with automated auto-scaling and payment gateway isolation."
-    },
-
-    // 6. Multicloud
-    {
-      id: "repo-hub-spoke",
-      name: "Hub-and-Spoke Multi-Cloud Network",
-      desc: "Cross-cloud Virtual Network and Transit Gateway orchestration with automated BGP peering, NSGs, and Azure Firewall egress.",
-      language: "HCL / Terraform",
-      framework: "Network Architecture",
-      version: "v1.4",
-      status: "🟢 Active",
-      stars: 184,
-      rating: "★★★★★",
-      lastUpdated: "6 days ago",
-      tags: ["Multicloud", "Networking", "Azure", "AWS", "Terraform"],
-      cloud: "Multi-Cloud",
-      category: "Multicloud",
-      features: ["AWS / Azure / GCP", "Hub-Spoke Transit", "Cloud Governance"],
-      htmlUrl: "https://github.com/Devopstrio/hub-spoke-network",
-      codeSnippet: `module "hub_spoke_network" {\n  source  = "Devopstrio/hub-spoke/network"\n  version = "1.4.0"\n\n  hub_vnet_cidr   = "10.0.0.0/16"\n  spoke_vnets     = ["10.1.0.0/16", "10.2.0.0/16"]\n  enable_azure_firewall = true\n}`,
-      docsContent: "Cross-cloud network topology providing isolated spokes and secure egress firewalls."
-    },
-    {
-      id: "repo-directconnect-expressroute",
-      name: "AWS & Azure DirectConnect Transit Mesh",
-      desc: "Automated interconnect mesh linking AWS DirectConnect Gateway with Azure ExpressRoute and GCP Cloud Interconnect via Megaport/Equinix.",
-      language: "HCL / Terraform",
-      framework: "Transit Mesh",
-      version: "v1.9",
-      status: "🟢 Active",
-      stars: 202,
-      rating: "★★★★★",
-      lastUpdated: "3 days ago",
-      tags: ["Multicloud", "Networking", "AWS", "Azure", "GCP"],
-      cloud: "Multi-Cloud",
-      category: "Multicloud",
-      features: ["AWS & Azure Mesh", "Hub-Spoke Transit", "Cloud Governance"],
-      htmlUrl: "https://github.com/Devopstrio/directconnect-expressroute-mesh",
-      codeSnippet: `module "transit_mesh" {\n  source = "Devopstrio/transit-mesh/tf"\n  bgp_asn = 65000\n  redundant_circuits = true\n}`,
-      docsContent: "Dedicated high-speed interconnect fabric for latency-sensitive multi-cloud workloads."
-    },
-
-    // 7. DevOps
-    {
-      id: "repo-k8s-gitops-engine",
-      name: "Kubernetes GitOps & ArgoCD Enterprise Engine",
-      desc: "Turnkey AKS, EKS, and GKE cluster vending machine with ArgoCD application sets, sealed secrets, Kyverno policies, and Cilium eBPF mesh.",
-      language: "Helm / Terraform",
-      framework: "GitOps Platform",
-      version: "v3.1",
-      status: "🟢 Active",
-      stars: 356,
-      rating: "★★★★★",
-      lastUpdated: "1 day ago",
-      tags: ["DevOps", "Kubernetes", "ArgoCD", "Terraform", "GitOps"],
-      cloud: "Multi-Cloud",
-      category: "DevOps",
-      features: ["K8s Cluster Engine", "GitOps ArgoCD", "CI/CD Pipeline"],
-      htmlUrl: "https://github.com/Devopstrio/k8s-gitops-engine",
-      codeSnippet: `module "gitops_engine" {\n  source = "Devopstrio/k8s-gitops/module"\n  argocd_sync_wave = true\n  cilium_cni_enabled = true\n}`,
-      docsContent: "Enterprise Kubernetes platform bootstrap with automated day-2 add-ons."
-    },
-    {
-      id: "repo-terraform-github-actions",
-      name: "Terraform GitHub Actions CI/CD Pipeline Suite",
-      desc: "Reusable GitHub Actions workflows for automated Terraform plan/apply, OIDC authentication, tfsec scanning, and Infracost checks.",
-      language: "YAML / Actions",
-      framework: "CI/CD Suite",
-      version: "v2.5",
-      status: "🟢 Active",
-      stars: 289,
-      rating: "★★★★★",
-      lastUpdated: "2 days ago",
-      tags: ["DevOps", "CI/CD", "GitHub Actions", "Terraform"],
-      cloud: "Multi-Cloud",
-      category: "DevOps",
-      features: ["IaC Module", "CI/CD Pipeline", "GitOps Automation"],
-      htmlUrl: "https://github.com/Devopstrio/terraform-github-actions-suite",
-      codeSnippet: `uses: Devopstrio/terraform-pipeline@v2\nwith:\n  terraform_version: 1.8.0\n  enable_infracost: true\n  enable_tfsec: true`,
-      docsContent: "Production CI/CD pipelines enforcing security gates before applying infrastructure changes."
-    }
-  ];
+  // Baseline Initial Repositories (100% Real Verified Repositories)
+  const baselineRepositories: RepoItem[] = verifiedInitialRepos;
 
   // Keyboard shortcut listener for Search (Ctrl + K / Cmd + K)
   useEffect(() => {
@@ -580,241 +419,41 @@ Direct Contacts:
     }
   };
 
-  // Comprehensive Multi-Category Intelligence Engine
-  function classifyRepo(name: string, desc: string = "", topics: string[] = [], lang: string = ""): {
-    primaryCategory: RepoItem["category"];
-    categories: string[];
-    cloud: RepoItem["cloud"];
-    features: string[];
-  } {
-    const text = `${name} ${desc} ${lang} ${(topics || []).join(" ")}`.toLowerCase();
-    const cats = new Set<string>();
-
-    const matches = (terms: string[]) => terms.some((term) => text.includes(term.toLowerCase()));
-
-    // 1. AI & Data
-    const isAI = matches([
-      "ai", "genai", "rag", "llm", "agent", "prompt", "openai", "copilot", "databricks",
-      "fabric", "vector", "embedding", "dataset", "inference", "model", "neural", "vision",
-      "speech", "cognitive", "lakehouse", "analytics", "data", "ml", "mlops", "mlflow",
-      "deepseek", "gemini", "bedrock", "langchain", "llamaindex", "qdrant", "chroma", "pinecone"
-    ]);
-    if (isAI) cats.add("AI & Data");
-
-    // 2. Security
-    const isSecurity = matches([
-      "security", "zero-trust", "zerotrust", "compliance", "sentinel", "defender", "vault",
-      "keyvault", "identity", "siem", "soc2", "cis", "hipaa", "iso27001", "auth", "rbac",
-      "iam", "guardrail", "audit", "policy", "encryption", "waf", "firewall", "privilege",
-      "scanner", "secret", "trivy", "sonar", "hsm", "pam"
-    ]);
-    if (isSecurity) cats.add("Security");
-
-    // 3. VDI / AVD
-    const isVDI = matches([
-      "vdi", "avd", "w365", "desktop", "citrix", "fslogix", "session-host", "session",
-      "remote-desktop", "workspace", "virtual-desktop", "horizon", "packer"
-    ]);
-    if (isVDI) cats.add("VDI / AVD");
-
-    // 4. Industry
-    const isIndustry = matches([
-      "fintech", "banking", "finance", "healthcare", "health", "life-sciences", "retail",
-      "ecommerce", "e-commerce", "saas", "telecom", "telecommunications", "pharma", "energy",
-      "automotive", "insurance", "public-sector", "government", "pci", "pci-dss", "hipaa",
-      "finops", "carbon", "sustainability", "cost", "budget", "marketplace", "broker", "payment"
-    ]);
-    if (isIndustry) cats.add("Industry");
-
-    // 5. Landing Zone
-    const isLZ = matches([
-      "landing-zone", "landingzone", "landing", "caf", "foundation", "starter", "alz",
-      "platform-engineering", "control-tower", "subscription-vending", "subscription"
-    ]);
-    if (isLZ) cats.add("Landing Zone");
-
-    // 6. Multicloud
-    const isMulticloud = matches([
-      "multicloud", "multi-cloud", "cross-cloud", "hybrid", "aws", "azure", "gcp", "google", "oci",
-      "oracle", "cloud", "bicep", "terraform", "cloudformation", "opentofu", "hub-spoke", "transit",
-      "vpc", "vnet", "s3", "blob", "compute", "eks", "aks", "gke"
-    ]);
-    if (isMulticloud) cats.add("Multicloud");
-
-    // 7. DevOps
-    const isDevOps = matches([
-      "devops", "terraform", "bicep", "actions", "cicd", "pipeline", "yaml", "gitops",
-      "ansible", "docker", "kubernetes", "k8s", "helm", "argo", "automation", "iac",
-      "sdk", "cli", "edge", "observability", "prometheus", "grafana", "monitor", "telemetry"
-    ]);
-    if (isDevOps || cats.size === 0) cats.add("DevOps");
-
-    // Priority Category Selection (Specific domain categories take precedence over generic Landing Zone or DevOps)
-    let primaryCategory: RepoItem["category"] = "DevOps";
-    if (isAI) primaryCategory = "AI & Data";
-    else if (isSecurity) primaryCategory = "Security";
-    else if (isVDI) primaryCategory = "VDI / AVD";
-    else if (isIndustry) primaryCategory = "Industry";
-    else if (isLZ) primaryCategory = "Landing Zone";
-    else if (isMulticloud) primaryCategory = "Multicloud";
-    else primaryCategory = "DevOps";
-
-    // Cloud tag
-    let cloud: RepoItem["cloud"] = "Multi-Cloud";
-    if (matches(["azure", "entra", "bicep", "vnet", "avd", "fabric"])) cloud = "Azure";
-    else if (matches(["aws", "bedrock", "control-tower", "s3", "lambda", "ecs"])) cloud = "AWS";
-    else if (matches(["gcp", "google", "vertex", "bigquery"])) cloud = "Google Cloud";
-    else if (matches(["oci", "oracle"])) cloud = "Oracle Cloud";
-
-    // Dynamic, Rich Feature Chips tailored per repo
-    let features: string[] = [];
-    if (primaryCategory === "AI & Data") {
-      if (text.includes("rag")) features.push("RAG Pipeline");
-      if (text.includes("openai") || text.includes("gpt")) features.push("OpenAI Setup");
-      if (text.includes("vector") || text.includes("qdrant") || text.includes("pinecone")) features.push("Vector DB Guardrails");
-      if (text.includes("agent")) features.push("Agentic Workflow");
-      if (text.includes("databricks") || text.includes("lakehouse") || text.includes("spark")) features.push("Unity Catalog Lakehouse");
-      if (text.includes("bedrock")) features.push("AWS Bedrock LLM");
-      if (features.length < 3) features.push("OpenAI Setup", "RAG Pipeline", "Vector DB Guardrails");
-    } else if (primaryCategory === "Security") {
-      if (text.includes("sentinel") || text.includes("siem")) features.push("Sentinel SIEM");
-      if (text.includes("vault") || text.includes("hsm") || text.includes("key")) features.push("Key Vault HSM");
-      if (text.includes("zero-trust") || text.includes("zerotrust")) features.push("Zero-Trust Baseline");
-      if (text.includes("compliance") || text.includes("soc2") || text.includes("cis")) features.push("SOC2 & CIS Controls");
-      if (features.length < 3) features.push("Zero-Trust Baseline", "Key Vault HSM", "Sentinel SIEM");
-    } else if (primaryCategory === "VDI / AVD") {
-      if (text.includes("fslogix")) features.push("FSLogix Profiles");
-      if (text.includes("session") || text.includes("pool") || text.includes("host")) features.push("Host Pool Scaling");
-      if (text.includes("packer") || text.includes("image")) features.push("Golden Image Automation");
-      if (features.length < 3) features.push("FSLogix Profiles", "Host Pool Scaling", "Golden Image");
-    } else if (primaryCategory === "Industry") {
-      if (text.includes("pci") || text.includes("fintech") || text.includes("bank") || text.includes("payment")) features.push("PCI-DSS Baseline");
-      if (text.includes("hipaa") || text.includes("health") || text.includes("pharma")) features.push("HIPAA Compliance Vault");
-      if (text.includes("finops") || text.includes("cost")) features.push("FinOps Cost Optimization");
-      if (features.length < 3) features.push("PCI-DSS / HIPAA", "Immutable Storage", "SOC2 Controls");
-    } else if (primaryCategory === "Multicloud") {
-      if (text.includes("transit") || text.includes("hub") || text.includes("mesh")) features.push("Hub-Spoke Transit");
-      if (text.includes("aws") && text.includes("azure")) features.push("AWS & Azure Mesh");
-      if (text.includes("gcp") || text.includes("google")) features.push("GCP Shared VPC");
-      if (features.length < 3) features.push("AWS / Azure / GCP", "Hub-Spoke Transit", "Cloud Governance");
-    } else if (primaryCategory === "Landing Zone") {
-      if (text.includes("caf")) features.push("CAF Architecture");
-      if (text.includes("vending") || text.includes("account")) features.push("Subscription Vending");
-      if (text.includes("policy") || text.includes("guardrail")) features.push("Policy Guardrails");
-      if (features.length < 3) features.push("CAF Architecture", "Subscription Vending", "Policy Guardrails");
-    } else {
-      if (text.includes("k8s") || text.includes("kubernetes")) features.push("K8s Cluster Engine");
-      if (text.includes("argo") || text.includes("gitops")) features.push("GitOps ArgoCD");
-      if (text.includes("terraform") || text.includes("bicep")) features.push("IaC Automation");
-      if (features.length < 3) features.push("IaC Module", "CI/CD Pipeline", "GitOps Automation");
-    }
-    features = Array.from(new Set(features)).slice(0, 3);
-
-    return {
-      primaryCategory,
-      categories: Array.from(cats),
-      cloud,
-      features
-    };
-  }
-
-  // Live Fetch 100% of GitHub Repositories via Multi-Page Loop on Mount
+  // Live Fetch 100% of Verified GitHub Repositories on Mount
   useEffect(() => {
     async function fetchOrgRepos() {
       setReposLoading(true);
       try {
-        let page = 1;
-        let allRawRepos: any[] = [];
-        let hasMore = true;
-
-        // Multi-page fetch loop up to 10 pages (1000 repositories)
-        while (hasMore && page <= 10) {
-          const response = await fetch(
-            `https://api.github.com/orgs/Devopstrio/repos?per_page=100&page=${page}&sort=pushed&type=public`,
-            { headers: { Accept: "application/vnd.github.v3+json" } }
-          );
-
-          if (!response.ok) break;
-
+        const response = await fetch("/api/github-repos");
+        if (response.ok) {
           const data = await response.json();
-          if (Array.isArray(data) && data.length > 0) {
-            allRawRepos = allRawRepos.concat(data);
-            if (data.length < 100) {
-              hasMore = false;
-            } else {
-              page++;
-            }
-          } else {
-            hasMore = false;
+          if (data.success && Array.isArray(data.repos) && data.repos.length > 0) {
+            const parsedRepos: RepoItem[] = data.repos.map(parseRawRepo);
+            setLiveRepos(parsedRepos);
+            setLiveRepoCount(parsedRepos.length);
+            return;
           }
         }
 
-        if (allRawRepos.length > 0) {
-          const parsedRepos: RepoItem[] = allRawRepos.map((item: any) => {
-            const rawName = item.name || "";
-            const rawDesc = item.description || "";
-            const rawTopics = item.topics || [];
-            const rawLang = item.language || "HCL / Terraform";
-
-            const classification = classifyRepo(rawName, rawDesc, rawTopics, rawLang);
-
-            const lastPushDate = item.pushed_at
-              ? new Date(item.pushed_at).toLocaleDateString("en-GB", { month: "short", day: "numeric", year: "numeric" })
-              : "Recently";
-
-            const readableName = rawName
-              .split(/[-_]/)
-              .map((w: string) => w.charAt(0).toUpperCase() + w.slice(1))
-              .join(" ");
-
-            return {
-              id: item.id ? String(item.id) : rawName,
-              name: readableName,
-              desc: rawDesc || `Enterprise ${classification.primaryCategory.toLowerCase()} cloud accelerator and production-ready IaC blueprint by Devopstrio.`,
-              language: rawLang,
-              framework: rawLang === "HCL" ? "Terraform Module" : "DevOps Engine",
-              version: "v1.0",
-              status: "🟢 Active",
-              stars: item.stargazers_count || 0,
-              rating: "★★★★★",
-              lastUpdated: lastPushDate,
-              tags: [classification.cloud, classification.primaryCategory, rawLang, "Enterprise", ...classification.categories],
-              cloud: classification.cloud,
-              category: classification.primaryCategory,
-              categories: classification.categories,
-              features: classification.features,
-              htmlUrl: item.html_url || `https://github.com/Devopstrio/${rawName}`,
-              codeSnippet: `module "${rawName.replace(/[^a-zA-Z0-9]/g, "_")}" {\n  source  = "Devopstrio/${rawName}/azurerm"\n  version = "1.0.0"\n\n  environment = "production"\n  enable_monitoring = true\n  enable_governance = true\n}`,
-              docsContent: `Official architecture blueprint and deployment code for ${readableName}. Integrates directly with Devopstrio CI/CD pipelines and multi-cloud governance rules.`
-            };
-          });
-
-          // Enforce category classification for baseline repositories too
-          const enrichedBaseline: RepoItem[] = baselineRepositories.map((r) => {
-            const classification = classifyRepo(r.name, r.desc, r.tags, r.language);
-            return {
-              ...r,
-              category: classification.primaryCategory,
-              categories: classification.categories,
-              features: classification.features,
-              cloud: classification.cloud
-            };
-          });
-
-          // Combine unique repositories
-          const combinedMap = new Map<string, RepoItem>();
-          enrichedBaseline.forEach((r) => combinedMap.set(r.name.toLowerCase(), r));
-          parsedRepos.forEach((r) => combinedMap.set(r.name.toLowerCase(), r));
-          const combinedList = Array.from(combinedMap.values());
-
-          setLiveRepos(combinedList);
-          setLiveRepoCount(combinedList.length);
-        } else {
-          setLiveRepos(baselineRepositories);
-          setLiveRepoCount(baselineRepositories.length);
+        // Direct GitHub API fallback
+        const directRes = await fetch("https://api.github.com/orgs/Devopstrio/repos?per_page=100&sort=pushed", {
+          headers: { Accept: "application/vnd.github.v3+json" }
+        });
+        if (directRes.ok) {
+          const rawData = await directRes.json();
+          if (Array.isArray(rawData) && rawData.length > 0) {
+            const parsedRepos: RepoItem[] = rawData.filter((r: any) => r.name !== ".github").map(parseRawRepo);
+            setLiveRepos(parsedRepos);
+            setLiveRepoCount(parsedRepos.length);
+            return;
+          }
         }
+
+        // Offline / Rate-limited fallback to verified real repos
+        setLiveRepos(baselineRepositories);
+        setLiveRepoCount(baselineRepositories.length);
       } catch (err) {
-        console.warn("Failed to fetch live GitHub API repos, using baseline list:", err);
+        console.warn("Failed to fetch live GitHub repos, using verified fallback list:", err);
         setLiveRepos(baselineRepositories);
         setLiveRepoCount(baselineRepositories.length);
       } finally {
@@ -823,7 +462,7 @@ Direct Contacts:
     }
 
     fetchOrgRepos();
-  }, []);
+  }, [baselineRepositories]);
 
   const activeRepoList = liveRepos.length > 0 ? liveRepos : baselineRepositories;
 

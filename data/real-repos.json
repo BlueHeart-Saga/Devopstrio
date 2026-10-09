@@ -1,0 +1,3377 @@
+[
+  {
+    "name": "devopstrio-landing-zone",
+    "desc": "Enterprise-ready Landing Zone accelerators for Azure, AWS, and GCP.",
+    "lang": null,
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/devopstrio-landing-zone",
+    "pushed_at": "2026-05-02T09:38:59Z",
+    "topics": []
+  },
+  {
+    "name": "azure-enterprise-landing-zone-starter",
+    "desc": null,
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/azure-enterprise-landing-zone-starter",
+    "pushed_at": "2026-05-05T12:19:50Z",
+    "topics": []
+  },
+  {
+    "name": "azure-openai-secure-reference",
+    "desc": null,
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/azure-openai-secure-reference",
+    "pushed_at": "2026-05-05T12:14:56Z",
+    "topics": []
+  },
+  {
+    "name": "terraform-enterprise-networking",
+    "desc": null,
+    "lang": "HCL",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/terraform-enterprise-networking",
+    "pushed_at": "2026-05-05T06:46:24Z",
+    "topics": []
+  },
+  {
+    "name": "devsecops-pipeline-templates",
+    "desc": null,
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/devsecops-pipeline-templates",
+    "pushed_at": "2026-05-05T10:49:53Z",
+    "topics": []
+  },
+  {
+    "name": "cloud-finops-dashboard",
+    "desc": null,
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/cloud-finops-dashboard",
+    "pushed_at": "2026-05-05T11:50:57Z",
+    "topics": []
+  },
+  {
+    "name": "data-lakehouse-blueprint",
+    "desc": null,
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/data-lakehouse-blueprint",
+    "pushed_at": "2026-05-05T11:32:44Z",
+    "topics": []
+  },
+  {
+    "name": "aks-production-foundation",
+    "desc": null,
+    "lang": "HCL",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/aks-production-foundation",
+    "pushed_at": "2026-04-27T06:53:04Z",
+    "topics": []
+  },
+  {
+    "name": "zero-trust-reference-model",
+    "desc": null,
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/zero-trust-reference-model",
+    "pushed_at": "2026-05-05T09:07:00Z",
+    "topics": []
+  },
+  {
+    "name": "ai-landing-zone",
+    "desc": null,
+    "lang": "HCL",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/ai-landing-zone",
+    "pushed_at": "2026-04-27T06:09:43Z",
+    "topics": []
+  },
+  {
+    "name": "data-platform-zone",
+    "desc": null,
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/data-platform-zone",
+    "pushed_at": "2026-05-05T11:27:10Z",
+    "topics": []
+  },
+  {
+    "name": "devops-accelerator",
+    "desc": null,
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/devops-accelerator",
+    "pushed_at": "2026-05-05T10:53:48Z",
+    "topics": []
+  },
+  {
+    "name": "terraform-modules",
+    "desc": null,
+    "lang": "HCL",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/terraform-modules",
+    "pushed_at": "2026-05-06T04:24:27Z",
+    "topics": []
+  },
+  {
+    "name": "bicep-modules",
+    "desc": null,
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/bicep-modules",
+    "pushed_at": "2026-05-05T12:04:39Z",
+    "topics": []
+  },
+  {
+    "name": "security-baselines",
+    "desc": null,
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/security-baselines",
+    "pushed_at": "2026-05-05T07:12:34Z",
+    "topics": []
+  },
+  {
+    "name": "architecture-blueprints",
+    "desc": null,
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/architecture-blueprints",
+    "pushed_at": "2026-04-27T08:50:09Z",
+    "topics": []
+  },
+  {
+    "name": "starter-kits",
+    "desc": null,
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/starter-kits",
+    "pushed_at": "2026-05-05T06:58:54Z",
+    "topics": []
+  },
+  {
+    "name": "12-factor-app-scanner",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "HCL",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/12-factor-app-scanner",
+    "pushed_at": "2026-04-27T06:18:35Z",
+    "topics": []
+  },
+  {
+    "name": "ai-engineering-maturity-model",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/ai-engineering-maturity-model",
+    "pushed_at": "2026-04-27T06:14:06Z",
+    "topics": []
+  },
+  {
+    "name": "ai-model-registry",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/ai-model-registry",
+    "pushed_at": "2026-04-27T06:29:15Z",
+    "topics": []
+  },
+  {
+    "name": "aiops-incident-predictor",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/aiops-incident-predictor",
+    "pushed_at": "2026-04-27T06:43:13Z",
+    "topics": []
+  },
+  {
+    "name": "api-first-design-studio",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/api-first-design-studio",
+    "pushed_at": "2026-04-27T07:02:20Z",
+    "topics": []
+  },
+  {
+    "name": "app-landingzone",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/app-landingzone",
+    "pushed_at": "2026-04-27T07:11:07Z",
+    "topics": []
+  },
+  {
+    "name": "application-dependency-mapper",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/application-dependency-mapper",
+    "pushed_at": "2026-04-27T07:20:05Z",
+    "topics": []
+  },
+  {
+    "name": "application-security-baseline",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/application-security-baseline",
+    "pushed_at": "2026-04-27T07:27:46Z",
+    "topics": []
+  },
+  {
+    "name": "arc-enabled-servers",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/arc-enabled-servers",
+    "pushed_at": "2026-04-27T07:34:53Z",
+    "topics": []
+  },
+  {
+    "name": "artifact-management-strategy",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/artifact-management-strategy",
+    "pushed_at": "2026-04-27T09:02:06Z",
+    "topics": []
+  },
+  {
+    "name": "audit-evidence-automation",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "HCL",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/audit-evidence-automation",
+    "pushed_at": "2026-04-27T09:14:54Z",
+    "topics": []
+  },
+  {
+    "name": "audit-trail-immutability",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/audit-trail-immutability",
+    "pushed_at": "2026-04-27T09:19:20Z",
+    "topics": []
+  },
+  {
+    "name": "automated-release-notes",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/automated-release-notes",
+    "pushed_at": "2026-04-27T09:27:33Z",
+    "topics": []
+  },
+  {
+    "name": "automotive-lz",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/automotive-lz",
+    "pushed_at": "2026-04-27T09:30:09Z",
+    "topics": []
+  },
+  {
+    "name": "avd-application-delivery",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/avd-application-delivery",
+    "pushed_at": "2026-05-06T04:37:49Z",
+    "topics": []
+  },
+  {
+    "name": "avd-automation-runbook",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/avd-automation-runbook",
+    "pushed_at": "2026-05-06T04:37:22Z",
+    "topics": []
+  },
+  {
+    "name": "avd-cost-optimizer",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/avd-cost-optimizer",
+    "pushed_at": "2026-05-06T04:36:57Z",
+    "topics": []
+  },
+  {
+    "name": "avd-dr-multi-region",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/avd-dr-multi-region",
+    "pushed_at": "2026-05-06T04:35:44Z",
+    "topics": []
+  },
+  {
+    "name": "avd-for-developers",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/avd-for-developers",
+    "pushed_at": "2026-05-06T04:35:07Z",
+    "topics": []
+  },
+  {
+    "name": "avd-image-factory",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/avd-image-factory",
+    "pushed_at": "2026-05-05T12:31:46Z",
+    "topics": []
+  },
+  {
+    "name": "avd-landingzone",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/avd-landingzone",
+    "pushed_at": "2026-05-05T12:31:09Z",
+    "topics": []
+  },
+  {
+    "name": "avd-monitoring-pack",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/avd-monitoring-pack",
+    "pushed_at": "2026-05-05T12:30:32Z",
+    "topics": []
+  },
+  {
+    "name": "avd-network-isolation",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/avd-network-isolation",
+    "pushed_at": "2026-05-05T12:33:00Z",
+    "topics": []
+  },
+  {
+    "name": "avd-onboarding-accelerator",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/avd-onboarding-accelerator",
+    "pushed_at": "2026-05-05T12:29:52Z",
+    "topics": []
+  },
+  {
+    "name": "avd-security-baseline",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/avd-security-baseline",
+    "pushed_at": "2026-05-05T12:32:23Z",
+    "topics": []
+  },
+  {
+    "name": "avd-user-profile",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/avd-user-profile",
+    "pushed_at": "2026-05-05T12:29:07Z",
+    "topics": []
+  },
+  {
+    "name": "aws-bedrock-blueprints",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/aws-bedrock-blueprints",
+    "pushed_at": "2026-05-05T12:21:30Z",
+    "topics": []
+  },
+  {
+    "name": "aws-mgn-automation",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/aws-mgn-automation",
+    "pushed_at": "2026-05-05T12:20:44Z",
+    "topics": []
+  },
+  {
+    "name": "azure-migrate-extension",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/azure-migrate-extension",
+    "pushed_at": "2026-05-05T12:17:37Z",
+    "topics": []
+  },
+  {
+    "name": "azure-openai-terraform",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/azure-openai-terraform",
+    "pushed_at": "2026-05-05T12:12:20Z",
+    "topics": []
+  },
+  {
+    "name": "backup-cost-analyzer",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/backup-cost-analyzer",
+    "pushed_at": "2026-05-05T12:10:05Z",
+    "topics": []
+  },
+  {
+    "name": "backup-policy-as-code",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/backup-policy-as-code",
+    "pushed_at": "2026-05-05T12:09:06Z",
+    "topics": []
+  },
+  {
+    "name": "bcdr-accelerator",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/bcdr-accelerator",
+    "pushed_at": "2026-05-05T12:07:57Z",
+    "topics": []
+  },
+  {
+    "name": "bcdr-landingzone",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/bcdr-landingzone",
+    "pushed_at": "2026-05-05T12:06:44Z",
+    "topics": []
+  },
+  {
+    "name": "blockchain-enterprise-lz",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/blockchain-enterprise-lz",
+    "pushed_at": "2026-05-05T12:02:40Z",
+    "topics": []
+  },
+  {
+    "name": "capacity-forecast-dashboard",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/capacity-forecast-dashboard",
+    "pushed_at": "2026-05-05T12:01:33Z",
+    "topics": []
+  },
+  {
+    "name": "change-orchestration",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/change-orchestration",
+    "pushed_at": "2026-05-05T11:57:49Z",
+    "topics": []
+  },
+  {
+    "name": "chatbot-accelerator",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/chatbot-accelerator",
+    "pushed_at": "2026-05-05T11:56:35Z",
+    "topics": []
+  },
+  {
+    "name": "ci-cd-maturity-assessment",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/ci-cd-maturity-assessment",
+    "pushed_at": "2026-05-05T11:58:46Z",
+    "topics": []
+  },
+  {
+    "name": "ciam-reference-architecture",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/ciam-reference-architecture",
+    "pushed_at": "2026-05-05T11:54:57Z",
+    "topics": []
+  },
+  {
+    "name": "cloud-cost-anomaly-detection",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/cloud-cost-anomaly-detection",
+    "pushed_at": "2026-05-05T11:53:15Z",
+    "topics": []
+  },
+  {
+    "name": "cloud-economics-calculator",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/cloud-economics-calculator",
+    "pushed_at": "2026-05-05T11:51:50Z",
+    "topics": []
+  },
+  {
+    "name": "cloud-native-cicd",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/cloud-native-cicd",
+    "pushed_at": "2026-05-05T11:49:10Z",
+    "topics": []
+  },
+  {
+    "name": "cloud-native-firewall",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/cloud-native-firewall",
+    "pushed_at": "2026-05-05T11:48:16Z",
+    "topics": []
+  },
+  {
+    "name": "cloud-security-benchmark",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/cloud-security-benchmark",
+    "pushed_at": "2026-05-05T11:47:05Z",
+    "topics": []
+  },
+  {
+    "name": "cloud-vpn-benchmark",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/cloud-vpn-benchmark",
+    "pushed_at": "2026-05-05T11:45:36Z",
+    "topics": []
+  },
+  {
+    "name": "commitment-analyzer",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/commitment-analyzer",
+    "pushed_at": "2026-05-05T11:44:14Z",
+    "topics": []
+  },
+  {
+    "name": "compliance-as-code",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/compliance-as-code",
+    "pushed_at": "2026-05-05T11:42:38Z",
+    "topics": []
+  },
+  {
+    "name": "compliance-scorecard",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/compliance-scorecard",
+    "pushed_at": "2026-05-05T11:41:14Z",
+    "topics": []
+  },
+  {
+    "name": "container-app-patterns",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/container-app-patterns",
+    "pushed_at": "2026-05-05T11:39:53Z",
+    "topics": []
+  },
+  {
+    "name": "container-security-pipeline",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/container-security-pipeline",
+    "pushed_at": "2026-05-05T11:38:31Z",
+    "topics": []
+  },
+  {
+    "name": "cross-cloud-dr-patterns",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/cross-cloud-dr-patterns",
+    "pushed_at": "2026-05-05T11:36:53Z",
+    "topics": []
+  },
+  {
+    "name": "data-catalog-benchmark",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/data-catalog-benchmark",
+    "pushed_at": "2026-05-05T11:35:41Z",
+    "topics": []
+  },
+  {
+    "name": "data-classification-engine",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/data-classification-engine",
+    "pushed_at": "2026-05-05T11:34:12Z",
+    "topics": []
+  },
+  {
+    "name": "data-landingzone",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/data-landingzone",
+    "pushed_at": "2026-05-05T11:31:12Z",
+    "topics": []
+  },
+  {
+    "name": "data-mesh-reference",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/data-mesh-reference",
+    "pushed_at": "2026-05-05T11:30:03Z",
+    "topics": []
+  },
+  {
+    "name": "data-migration-factory",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/data-migration-factory",
+    "pushed_at": "2026-05-05T11:25:05Z",
+    "topics": []
+  },
+  {
+    "name": "data-observability",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/data-observability",
+    "pushed_at": "2026-05-05T11:25:00Z",
+    "topics": []
+  },
+  {
+    "name": "data-platform-accelerator",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/data-platform-accelerator",
+    "pushed_at": "2026-05-05T11:28:53Z",
+    "topics": []
+  },
+  {
+    "name": "data-quality-framework",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/data-quality-framework",
+    "pushed_at": "2026-05-05T11:08:42Z",
+    "topics": []
+  },
+  {
+    "name": "data-replication-strategies",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/data-replication-strategies",
+    "pushed_at": "2026-05-05T11:07:25Z",
+    "topics": []
+  },
+  {
+    "name": "data-residency-blueprints",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/data-residency-blueprints",
+    "pushed_at": "2026-05-05T11:03:17Z",
+    "topics": []
+  },
+  {
+    "name": "database-migration-hub",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/database-migration-hub",
+    "pushed_at": "2026-05-05T11:01:59Z",
+    "topics": []
+  },
+  {
+    "name": "database-point-in-time-recovery",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/database-point-in-time-recovery",
+    "pushed_at": "2026-05-05T11:00:50Z",
+    "topics": []
+  },
+  {
+    "name": "databricks-unity-catalog-blueprint",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/databricks-unity-catalog-blueprint",
+    "pushed_at": "2026-05-05T10:59:11Z",
+    "topics": []
+  },
+  {
+    "name": "dataops-ci-cd",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/dataops-ci-cd",
+    "pushed_at": "2026-05-05T10:58:04Z",
+    "topics": []
+  },
+  {
+    "name": "ddos-waf-baseline",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/ddos-waf-baseline",
+    "pushed_at": "2026-05-05T10:56:29Z",
+    "topics": []
+  },
+  {
+    "name": "developer-experience-dashboard",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/developer-experience-dashboard",
+    "pushed_at": "2026-05-05T10:55:16Z",
+    "topics": []
+  },
+  {
+    "name": "devops-platform",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/devops-platform",
+    "pushed_at": "2026-05-05T10:52:37Z",
+    "topics": []
+  },
+  {
+    "name": "devprod-measurement",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/devprod-measurement",
+    "pushed_at": "2026-05-05T10:51:03Z",
+    "topics": []
+  },
+  {
+    "name": "digital-experience-monitoring",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/digital-experience-monitoring",
+    "pushed_at": "2026-05-05T10:48:12Z",
+    "topics": []
+  },
+  {
+    "name": "dr-orchestration-toolkit",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/dr-orchestration-toolkit",
+    "pushed_at": "2026-05-05T10:46:51Z",
+    "topics": []
+  },
+  {
+    "name": "dr-testing-automation",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/dr-testing-automation",
+    "pushed_at": "2026-05-05T10:45:09Z",
+    "topics": []
+  },
+  {
+    "name": "edge-computing-blueprints",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/edge-computing-blueprints",
+    "pushed_at": "2026-05-05T10:43:56Z",
+    "topics": []
+  },
+  {
+    "name": "education-lz",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/education-lz",
+    "pushed_at": "2026-05-05T10:41:44Z",
+    "topics": []
+  },
+  {
+    "name": "energy-lz",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/energy-lz",
+    "pushed_at": "2026-05-05T10:40:25Z",
+    "topics": []
+  },
+  {
+    "name": "enterprise-platform-accelerator",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/enterprise-platform-accelerator",
+    "pushed_at": "2026-05-05T10:36:19Z",
+    "topics": []
+  },
+  {
+    "name": "enterprise-scaffolder",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/enterprise-scaffolder",
+    "pushed_at": "2026-05-05T10:35:06Z",
+    "topics": []
+  },
+  {
+    "name": "entra-id-conditional-access-toolkit",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/entra-id-conditional-access-toolkit",
+    "pushed_at": "2026-05-05T10:33:45Z",
+    "topics": []
+  },
+  {
+    "name": "entra-id-maestro",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/entra-id-maestro",
+    "pushed_at": "2026-05-05T10:32:27Z",
+    "topics": []
+  },
+  {
+    "name": "event-driven-architecture-lab",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/event-driven-architecture-lab",
+    "pushed_at": "2026-05-05T10:31:08Z",
+    "topics": []
+  },
+  {
+    "name": "expressroute-direct-design",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/expressroute-direct-design",
+    "pushed_at": "2026-05-05T10:29:28Z",
+    "topics": []
+  },
+  {
+    "name": "fedramp-acp",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/fedramp-acp",
+    "pushed_at": "2026-05-05T10:28:16Z",
+    "topics": []
+  },
+  {
+    "name": "financial-services-lz",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/financial-services-lz",
+    "pushed_at": "2026-05-05T10:26:56Z",
+    "topics": []
+  },
+  {
+    "name": "finops-culture-playbook",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/finops-culture-playbook",
+    "pushed_at": "2026-05-05T10:25:36Z",
+    "topics": []
+  },
+  {
+    "name": "finops-policy-as-code",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/finops-policy-as-code",
+    "pushed_at": "2026-05-05T10:24:18Z",
+    "topics": []
+  },
+  {
+    "name": "finops-showback-tool",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/finops-showback-tool",
+    "pushed_at": "2026-05-05T10:22:40Z",
+    "topics": []
+  },
+  {
+    "name": "firewall-as-code",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/firewall-as-code",
+    "pushed_at": "2026-05-05T10:20:50Z",
+    "topics": []
+  },
+  {
+    "name": "gdpr-dpia-toolkit",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/gdpr-dpia-toolkit",
+    "pushed_at": "2026-05-05T10:19:25Z",
+    "topics": []
+  },
+  {
+    "name": "genai-gateway",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/genai-gateway",
+    "pushed_at": "2026-05-05T10:17:53Z",
+    "topics": []
+  },
+  {
+    "name": "genai-security-scanner",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/genai-security-scanner",
+    "pushed_at": "2026-05-05T10:16:31Z",
+    "topics": []
+  },
+  {
+    "name": "global-load-balancer-patterns",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/global-load-balancer-patterns",
+    "pushed_at": "2026-05-05T10:14:28Z",
+    "topics": []
+  },
+  {
+    "name": "government-lz",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/government-lz",
+    "pushed_at": "2026-05-05T10:13:07Z",
+    "topics": []
+  },
+  {
+    "name": "healthcare-lz",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/healthcare-lz",
+    "pushed_at": "2026-05-05T10:11:33Z",
+    "topics": []
+  },
+  {
+    "name": "hipaa-baa-templates",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/hipaa-baa-templates",
+    "pushed_at": "2026-05-05T10:10:11Z",
+    "topics": []
+  },
+  {
+    "name": "hybrid-dns-resolution",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/hybrid-dns-resolution",
+    "pushed_at": "2026-05-05T10:08:57Z",
+    "topics": []
+  },
+  {
+    "name": "hybrid-kubernetes-pattern",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/hybrid-kubernetes-pattern",
+    "pushed_at": "2026-05-05T10:07:38Z",
+    "topics": []
+  },
+  {
+    "name": "hybrid-landingzone",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/hybrid-landingzone",
+    "pushed_at": "2026-05-05T10:06:19Z",
+    "topics": []
+  },
+  {
+    "name": "identity-governance-framework",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/identity-governance-framework",
+    "pushed_at": "2026-05-05T10:05:00Z",
+    "topics": []
+  },
+  {
+    "name": "identity-landingzone",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/identity-landingzone",
+    "pushed_at": "2026-05-05T10:03:42Z",
+    "topics": []
+  },
+  {
+    "name": "identity-security-scorecard",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/identity-security-scorecard",
+    "pushed_at": "2026-05-05T10:02:03Z",
+    "topics": []
+  },
+  {
+    "name": "identity-threat-detection",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/identity-threat-detection",
+    "pushed_at": "2026-05-05T10:00:52Z",
+    "topics": []
+  },
+  {
+    "name": "identity-threat-protection",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/identity-threat-protection",
+    "pushed_at": "2026-05-05T09:59:35Z",
+    "topics": []
+  },
+  {
+    "name": "idp-benchmark",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/idp-benchmark",
+    "pushed_at": "2026-05-05T09:58:21Z",
+    "topics": []
+  },
+  {
+    "name": "image-hardening-pipeline",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/image-hardening-pipeline",
+    "pushed_at": "2026-05-05T09:57:05Z",
+    "topics": []
+  },
+  {
+    "name": "immutable-backup-design",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/immutable-backup-design",
+    "pushed_at": "2026-05-05T09:55:45Z",
+    "topics": []
+  },
+  {
+    "name": "incident-management-automation",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/incident-management-automation",
+    "pushed_at": "2026-05-05T09:54:25Z",
+    "topics": []
+  },
+  {
+    "name": "incident-response-runbooks",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/incident-response-runbooks",
+    "pushed_at": "2026-05-05T09:52:55Z",
+    "topics": []
+  },
+  {
+    "name": "infrastructure-as-code-testing",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/infrastructure-as-code-testing",
+    "pushed_at": "2026-05-05T09:51:24Z",
+    "topics": []
+  },
+  {
+    "name": "inner-source-playbook",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/inner-source-playbook",
+    "pushed_at": "2026-05-05T09:50:16Z",
+    "topics": []
+  },
+  {
+    "name": "insurance-lz",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/insurance-lz",
+    "pushed_at": "2026-05-05T09:47:59Z",
+    "topics": []
+  },
+  {
+    "name": "internal-audit-bot",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/internal-audit-bot",
+    "pushed_at": "2026-05-05T09:46:19Z",
+    "topics": []
+  },
+  {
+    "name": "internal-marketplace",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/internal-marketplace",
+    "pushed_at": "2026-05-05T09:45:02Z",
+    "topics": []
+  },
+  {
+    "name": "just-in-time-access",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/just-in-time-access",
+    "pushed_at": "2026-05-05T09:43:36Z",
+    "topics": []
+  },
+  {
+    "name": "kubecost-enterprise",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/kubecost-enterprise",
+    "pushed_at": "2026-05-05T09:42:06Z",
+    "topics": []
+  },
+  {
+    "name": "kubernetes-backup-blueprint",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/kubernetes-backup-blueprint",
+    "pushed_at": "2026-05-05T09:40:51Z",
+    "topics": []
+  },
+  {
+    "name": "lakehouse-iac",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/lakehouse-iac",
+    "pushed_at": "2026-05-05T09:39:28Z",
+    "topics": []
+  },
+  {
+    "name": "legacy-ad-modernisation",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/legacy-ad-modernisation",
+    "pushed_at": "2026-05-05T09:38:16Z",
+    "topics": []
+  },
+  {
+    "name": "legacy-modernization-assessment",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/legacy-modernization-assessment",
+    "pushed_at": "2026-05-05T09:36:59Z",
+    "topics": []
+  },
+  {
+    "name": "llm-cost-optimizer",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/llm-cost-optimizer",
+    "pushed_at": "2026-05-05T09:35:39Z",
+    "topics": []
+  },
+  {
+    "name": "log-aggregation-blueprint",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/log-aggregation-blueprint",
+    "pushed_at": "2026-05-05T09:34:16Z",
+    "topics": []
+  },
+  {
+    "name": "maintenance-window-orchestrator",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/maintenance-window-orchestrator",
+    "pushed_at": "2026-05-05T09:32:58Z",
+    "topics": []
+  },
+  {
+    "name": "manufacturing-lz",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/manufacturing-lz",
+    "pushed_at": "2026-05-05T09:31:27Z",
+    "topics": []
+  },
+  {
+    "name": "media-entertainment-lz",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/media-entertainment-lz",
+    "pushed_at": "2026-05-05T09:30:06Z",
+    "topics": []
+  },
+  {
+    "name": "microservices-reference",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/microservices-reference",
+    "pushed_at": "2026-05-05T09:28:44Z",
+    "topics": []
+  },
+  {
+    "name": "migration-business-case",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/migration-business-case",
+    "pushed_at": "2026-05-05T09:27:07Z",
+    "topics": []
+  },
+  {
+    "name": "migration-factory",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/migration-factory",
+    "pushed_at": "2026-05-05T09:25:43Z",
+    "topics": []
+  },
+  {
+    "name": "mlflow-enterprise-template",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/mlflow-enterprise-template",
+    "pushed_at": "2026-05-05T09:24:24Z",
+    "topics": []
+  },
+  {
+    "name": "monitoring-cost-frugal",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/monitoring-cost-frugal",
+    "pushed_at": "2026-05-05T09:23:08Z",
+    "topics": []
+  },
+  {
+    "name": "multi-cloud-federation",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/multi-cloud-federation",
+    "pushed_at": "2026-05-05T09:21:11Z",
+    "topics": []
+  },
+  {
+    "name": "multi-region-application-patterns",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/multi-region-application-patterns",
+    "pushed_at": "2026-05-05T09:19:53Z",
+    "topics": []
+  },
+  {
+    "name": "multicloud-billing-dashboard",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/multicloud-billing-dashboard",
+    "pushed_at": "2026-05-05T09:18:35Z",
+    "topics": []
+  },
+  {
+    "name": "network-automation-toolkit",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/network-automation-toolkit",
+    "pushed_at": "2026-05-05T09:17:16Z",
+    "topics": []
+  },
+  {
+    "name": "network-cost-optimization",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/network-cost-optimization",
+    "pushed_at": "2026-05-05T09:15:59Z",
+    "topics": []
+  },
+  {
+    "name": "network-landingzone",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/network-landingzone",
+    "pushed_at": "2026-05-05T09:14:35Z",
+    "topics": []
+  },
+  {
+    "name": "network-observability",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/network-observability",
+    "pushed_at": "2026-05-05T09:12:52Z",
+    "topics": []
+  },
+  {
+    "name": "network-security-group-governance",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/network-security-group-governance",
+    "pushed_at": "2026-05-05T09:11:25Z",
+    "topics": []
+  },
+  {
+    "name": "observability-superstore",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/observability-superstore",
+    "pushed_at": "2026-05-05T09:10:07Z",
+    "topics": []
+  },
+  {
+    "name": "operations-landingzone",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/operations-landingzone",
+    "pushed_at": "2026-05-05T09:08:41Z",
+    "topics": []
+  },
+  {
+    "name": "passwordless-journey",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/passwordless-journey",
+    "pushed_at": "2026-05-05T08:57:33Z",
+    "topics": []
+  },
+  {
+    "name": "pci-dss-environment",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/pci-dss-environment",
+    "pushed_at": "2026-05-05T08:56:15Z",
+    "topics": []
+  },
+  {
+    "name": "pipeline-cost-optimizer",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/pipeline-cost-optimizer",
+    "pushed_at": "2026-05-05T08:55:02Z",
+    "topics": []
+  },
+  {
+    "name": "pipeline-orchestrator",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/pipeline-orchestrator",
+    "pushed_at": "2026-05-05T08:53:42Z",
+    "topics": []
+  },
+  {
+    "name": "platform-api-gateway",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/platform-api-gateway",
+    "pushed_at": "2026-05-05T08:52:22Z",
+    "topics": []
+  },
+  {
+    "name": "platform-chaos-engineering",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/platform-chaos-engineering",
+    "pushed_at": "2026-05-05T08:50:52Z",
+    "topics": []
+  },
+  {
+    "name": "platform-compliance-guardrails",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/platform-compliance-guardrails",
+    "pushed_at": "2026-05-05T08:49:41Z",
+    "topics": []
+  },
+  {
+    "name": "platform-foundation",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/platform-foundation",
+    "pushed_at": "2026-05-05T08:48:35Z",
+    "topics": []
+  },
+  {
+    "name": "platform-observability-hub",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/platform-observability-hub",
+    "pushed_at": "2026-05-05T08:47:24Z",
+    "topics": []
+  },
+  {
+    "name": "platform-runtime-landingzone",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/platform-runtime-landingzone",
+    "pushed_at": "2026-05-05T08:46:14Z",
+    "topics": []
+  },
+  {
+    "name": "policy-as-code-library",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/policy-as-code-library",
+    "pushed_at": "2026-05-05T08:45:05Z",
+    "topics": []
+  },
+  {
+    "name": "post-migration-optimization",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/post-migration-optimization",
+    "pushed_at": "2026-05-05T08:43:48Z",
+    "topics": []
+  },
+  {
+    "name": "privacy-by-design-patterns",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/privacy-by-design-patterns",
+    "pushed_at": "2026-05-05T07:37:23Z",
+    "topics": []
+  },
+  {
+    "name": "private-link-everywhere",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/private-link-everywhere",
+    "pushed_at": "2026-05-05T07:36:12Z",
+    "topics": []
+  },
+  {
+    "name": "privileged-access-workstation",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/privileged-access-workstation",
+    "pushed_at": "2026-05-05T07:35:02Z",
+    "topics": []
+  },
+  {
+    "name": "prompt-engineering-playbook",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/prompt-engineering-playbook",
+    "pushed_at": "2026-05-05T07:33:39Z",
+    "topics": []
+  },
+  {
+    "name": "rag-reference-architecture",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/rag-reference-architecture",
+    "pushed_at": "2026-05-05T07:32:17Z",
+    "topics": []
+  },
+  {
+    "name": "ransomware-response-runbook",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/ransomware-response-runbook",
+    "pushed_at": "2026-05-05T07:31:02Z",
+    "topics": []
+  },
+  {
+    "name": "regulatory-change-feed",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/regulatory-change-feed",
+    "pushed_at": "2026-05-05T07:29:01Z",
+    "topics": []
+  },
+  {
+    "name": "reserved-instance-marketplace",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/reserved-instance-marketplace",
+    "pushed_at": "2026-05-05T07:26:42Z",
+    "topics": []
+  },
+  {
+    "name": "responsible-ai-toolkit",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/responsible-ai-toolkit",
+    "pushed_at": "2026-05-05T07:25:14Z",
+    "topics": []
+  },
+  {
+    "name": "retail-lz",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/retail-lz",
+    "pushed_at": "2026-05-05T07:23:45Z",
+    "topics": []
+  },
+  {
+    "name": "rpo-rto-benchmark",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/rpo-rto-benchmark",
+    "pushed_at": "2026-05-05T07:22:18Z",
+    "topics": []
+  },
+  {
+    "name": "runbook-automation",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/runbook-automation",
+    "pushed_at": "2026-05-05T07:18:40Z",
+    "topics": []
+  },
+  {
+    "name": "secret-management-blueprint",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/secret-management-blueprint",
+    "pushed_at": "2026-05-05T07:17:21Z",
+    "topics": []
+  },
+  {
+    "name": "secret-scanning-remediation",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/secret-scanning-remediation",
+    "pushed_at": "2026-05-05T07:13:54Z",
+    "topics": []
+  },
+  {
+    "name": "security-posture-management",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/security-posture-management",
+    "pushed_at": "2026-05-05T07:11:20Z",
+    "topics": []
+  },
+  {
+    "name": "serverless-best-practices",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/serverless-best-practices",
+    "pushed_at": "2026-05-05T07:10:11Z",
+    "topics": []
+  },
+  {
+    "name": "service-catalog-spec",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/service-catalog-spec",
+    "pushed_at": "2026-05-05T07:08:50Z",
+    "topics": []
+  },
+  {
+    "name": "service-continuity-calendar",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/service-continuity-calendar",
+    "pushed_at": "2026-05-05T07:07:46Z",
+    "topics": []
+  },
+  {
+    "name": "service-mesh-networking",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/service-mesh-networking",
+    "pushed_at": "2026-05-05T07:06:24Z",
+    "topics": []
+  },
+  {
+    "name": "service-principal-lifecycle",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/service-principal-lifecycle",
+    "pushed_at": "2026-05-05T07:04:54Z",
+    "topics": []
+  },
+  {
+    "name": "siem-soar-integration",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/siem-soar-integration",
+    "pushed_at": "2026-05-05T07:03:46Z",
+    "topics": []
+  },
+  {
+    "name": "slo-burn-rate-dashboard",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/slo-burn-rate-dashboard",
+    "pushed_at": "2026-05-05T07:02:30Z",
+    "topics": []
+  },
+  {
+    "name": "snowflake-security-toolkit",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/snowflake-security-toolkit",
+    "pushed_at": "2026-05-05T07:01:14Z",
+    "topics": []
+  },
+  {
+    "name": "sox-itgc-controls",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/sox-itgc-controls",
+    "pushed_at": "2026-05-05T07:00:03Z",
+    "topics": []
+  },
+  {
+    "name": "status-page-as-code",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/status-page-as-code",
+    "pushed_at": "2026-05-05T06:56:39Z",
+    "topics": []
+  },
+  {
+    "name": "streaming-ingestion-hub",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/streaming-ingestion-hub",
+    "pushed_at": "2026-05-05T06:54:59Z",
+    "topics": []
+  },
+  {
+    "name": "sustainability-cost-integration",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/sustainability-cost-integration",
+    "pushed_at": "2026-05-05T06:53:40Z",
+    "topics": []
+  },
+  {
+    "name": "sustainability-lz",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/sustainability-lz",
+    "pushed_at": "2026-05-05T06:52:24Z",
+    "topics": []
+  },
+  {
+    "name": "synthetic-monitoring-grid",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/synthetic-monitoring-grid",
+    "pushed_at": "2026-05-05T06:50:46Z",
+    "topics": []
+  },
+  {
+    "name": "tagging-governance-toolkit",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/tagging-governance-toolkit",
+    "pushed_at": "2026-05-05T06:49:38Z",
+    "topics": []
+  },
+  {
+    "name": "telecom-lz",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/telecom-lz",
+    "pushed_at": "2026-05-05T06:48:25Z",
+    "topics": []
+  },
+  {
+    "name": "terraform-identity-modules",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "HCL",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/terraform-identity-modules",
+    "pushed_at": "2026-05-05T06:44:57Z",
+    "topics": []
+  },
+  {
+    "name": "terraform-platform-modules",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "HCL",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/terraform-platform-modules",
+    "pushed_at": "2026-05-05T06:41:41Z",
+    "topics": []
+  },
+  {
+    "name": "traffic-mirroring-for-ids",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/traffic-mirroring-for-ids",
+    "pushed_at": "2026-05-06T04:25:45Z",
+    "topics": []
+  },
+  {
+    "name": "vault-central-management",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/vault-central-management",
+    "pushed_at": "2026-05-06T04:28:14Z",
+    "topics": []
+  },
+  {
+    "name": "vectordb-benchmark",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/vectordb-benchmark",
+    "pushed_at": "2026-05-06T04:28:59Z",
+    "topics": []
+  },
+  {
+    "name": "vmware-to-cloud-playbook",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/vmware-to-cloud-playbook",
+    "pushed_at": "2026-05-06T04:22:48Z",
+    "topics": []
+  },
+  {
+    "name": "waste-reduction-automation",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/waste-reduction-automation",
+    "pushed_at": "2026-05-05T08:59:26Z",
+    "topics": []
+  },
+  {
+    "name": "windows-365-hybrid",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/windows-365-hybrid",
+    "pushed_at": "2026-05-05T09:00:22Z",
+    "topics": []
+  },
+  {
+    "name": "workload-landingzone-iac",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "HCL",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/workload-landingzone-iac",
+    "pushed_at": "2026-05-05T09:01:18Z",
+    "topics": []
+  },
+  {
+    "name": "zero-downtime-deployment-strategies",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/zero-downtime-deployment-strategies",
+    "pushed_at": "2026-05-05T09:02:35Z",
+    "topics": []
+  },
+  {
+    "name": "zero-trust-network-blueprint",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/zero-trust-network-blueprint",
+    "pushed_at": "2026-05-05T09:03:35Z",
+    "topics": []
+  },
+  {
+    "name": "zero-trust-network-lz",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "HCL",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/zero-trust-network-lz",
+    "pushed_at": "2026-05-05T09:04:40Z",
+    "topics": []
+  },
+  {
+    "name": "zero-trust-reference",
+    "desc": "Devopstrio Landing Zone Accelerator",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/zero-trust-reference",
+    "pushed_at": "2026-05-05T09:05:51Z",
+    "topics": []
+  },
+  {
+    "name": "enterprise-data-platform-accelerator",
+    "desc": "High-Performance Enterprise Data Platform Accelerator (EDPA) - Foundation Layer",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/enterprise-data-platform-accelerator",
+    "pushed_at": "2026-05-05T10:39:04Z",
+    "topics": []
+  },
+  {
+    "name": "enterprise-landing-zone",
+    "desc": null,
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/enterprise-landing-zone",
+    "pushed_at": "2026-05-05T10:37:39Z",
+    "topics": []
+  },
+  {
+    "name": "agent-gpt",
+    "desc": "Browser-based AI agents executing tasks",
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/agent-gpt",
+    "pushed_at": "2026-04-30T07:01:01Z",
+    "topics": []
+  },
+  {
+    "name": "auto-gpt",
+    "desc": "Autonomous AI agent executing complex tasks",
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/auto-gpt",
+    "pushed_at": "2026-04-30T07:33:34Z",
+    "topics": []
+  },
+  {
+    "name": "chatgpt-retrieval-plugin",
+    "desc": "Retrieve external data for ChatGPT",
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/chatgpt-retrieval-plugin",
+    "pushed_at": "2026-04-30T08:47:53Z",
+    "topics": []
+  },
+  {
+    "name": "devopstrio.github.io",
+    "desc": "Devopstrio platform showcasing enterprise landing zones, AI architectures, DevOps accelerators, and cloud solutions.",
+    "lang": "HTML",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/devopstrio.github.io",
+    "pushed_at": "2026-09-11T04:54:12Z",
+    "topics": []
+  },
+  {
+    "name": "Devopstrio_QA",
+    "desc": null,
+    "lang": "JavaScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/Devopstrio_QA",
+    "pushed_at": "2026-05-28T12:38:13Z",
+    "topics": []
+  },
+  {
+    "name": "Presentation-Viewer",
+    "desc": null,
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/Presentation-Viewer",
+    "pushed_at": "2026-07-17T07:28:40Z",
+    "topics": []
+  },
+  {
+    "name": "campix-server",
+    "desc": null,
+    "lang": "JavaScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/campix-server",
+    "pushed_at": "2026-07-20T04:15:23Z",
+    "topics": []
+  },
+  {
+    "name": "homelaweb",
+    "desc": null,
+    "lang": null,
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/homelaweb",
+    "pushed_at": "2026-07-20T04:19:03Z",
+    "topics": []
+  },
+  {
+    "name": "prestivo-server",
+    "desc": null,
+    "lang": "JavaScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/prestivo-server",
+    "pushed_at": "2026-07-20T05:15:05Z",
+    "topics": []
+  },
+  {
+    "name": "campixweb",
+    "desc": null,
+    "lang": "JavaScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/campixweb",
+    "pushed_at": "2026-07-20T05:22:13Z",
+    "topics": []
+  },
+  {
+    "name": "humanex-server",
+    "desc": null,
+    "lang": "JavaScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/humanex-server",
+    "pushed_at": "2026-07-20T05:05:04Z",
+    "topics": []
+  },
+  {
+    "name": "humanex-web",
+    "desc": null,
+    "lang": "JavaScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/humanex-web",
+    "pushed_at": "2026-07-20T05:10:55Z",
+    "topics": []
+  },
+  {
+    "name": "prestivo-client",
+    "desc": null,
+    "lang": "JavaScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/prestivo-client",
+    "pushed_at": "2026-07-20T05:27:04Z",
+    "topics": []
+  },
+  {
+    "name": "prestivo-mobileapp",
+    "desc": null,
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/prestivo-mobileapp",
+    "pushed_at": "2026-07-20T05:32:22Z",
+    "topics": []
+  },
+  {
+    "name": "enterprise-agent-engineering",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/enterprise-agent-engineering",
+    "pushed_at": "2026-07-28T06:06:55Z",
+    "topics": []
+  },
+  {
+    "name": "cloudops-ai-agent",
+    "desc": "CloudOps AI Agent is an autonomous IT operations and incident triage platform built for enterprise cloud environments. It is designed to automatically ingest operational alerts, analyze incident signatures, gather real-time performance telemetry, and execute safe remediation workflows.",
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/cloudops-ai-agent",
+    "pushed_at": "2026-07-22T10:04:31Z",
+    "topics": []
+  },
+  {
+    "name": "terraform-agent-framework",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/terraform-agent-framework",
+    "pushed_at": "2026-07-22T10:16:01Z",
+    "topics": []
+  },
+  {
+    "name": "landingzone-ai-agent",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/landingzone-ai-agent",
+    "pushed_at": "2026-07-22T10:54:09Z",
+    "topics": []
+  },
+  {
+    "name": "multi-agent-orchestrator",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/multi-agent-orchestrator",
+    "pushed_at": "2026-07-22T10:37:04Z",
+    "topics": []
+  },
+  {
+    "name": "agent-governance-framework-",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/agent-governance-framework-",
+    "pushed_at": "2026-07-22T11:14:12Z",
+    "topics": []
+  },
+  {
+    "name": "multicloud-control-plane",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/multicloud-control-plane",
+    "pushed_at": "2026-07-23T07:11:27Z",
+    "topics": []
+  },
+  {
+    "name": "multicloud-network-hub",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/multicloud-network-hub",
+    "pushed_at": "2026-07-23T09:08:12Z",
+    "topics": []
+  },
+  {
+    "name": "cloud-policy-manager",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/cloud-policy-manager",
+    "pushed_at": "2026-07-23T10:54:13Z",
+    "topics": []
+  },
+  {
+    "name": "multicloud-observability",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/multicloud-observability",
+    "pushed_at": "2026-07-24T03:44:21Z",
+    "topics": []
+  },
+  {
+    "name": "terraform-multicloud-blueprints",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/terraform-multicloud-blueprints",
+    "pushed_at": "2026-07-24T05:09:20Z",
+    "topics": []
+  },
+  {
+    "name": "Enterprise-AI-Runtime-Inference",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/Enterprise-AI-Runtime-Inference",
+    "pushed_at": "2026-07-24T05:25:59Z",
+    "topics": []
+  },
+  {
+    "name": "ai-runtime-manager",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/ai-runtime-manager",
+    "pushed_at": "2026-07-24T06:32:07Z",
+    "topics": []
+  },
+  {
+    "name": "inference-gateway",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/inference-gateway",
+    "pushed_at": "2026-07-24T06:36:48Z",
+    "topics": []
+  },
+  {
+    "name": "model-serving-engine",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/model-serving-engine",
+    "pushed_at": "2026-07-24T07:12:44Z",
+    "topics": []
+  },
+  {
+    "name": "llm-routing-engine",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/llm-routing-engine",
+    "pushed_at": "2026-08-05T05:24:53Z",
+    "topics": []
+  },
+  {
+    "name": "gpu-workload-manager",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/gpu-workload-manager",
+    "pushed_at": "2026-07-24T07:36:17Z",
+    "topics": []
+  },
+  {
+    "name": "-model-lifecycle-manager",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/-model-lifecycle-manager",
+    "pushed_at": "2026-07-24T08:39:43Z",
+    "topics": []
+  },
+  {
+    "name": "Enterprise-Knowledge-Intelligence",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/Enterprise-Knowledge-Intelligence",
+    "pushed_at": "2026-07-24T08:45:07Z",
+    "topics": []
+  },
+  {
+    "name": "knowledge-graph-engine",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/knowledge-graph-engine",
+    "pushed_at": "2026-07-24T08:48:55Z",
+    "topics": []
+  },
+  {
+    "name": "graph-rag-platform",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/graph-rag-platform",
+    "pushed_at": "2026-07-24T08:52:22Z",
+    "topics": []
+  },
+  {
+    "name": "enterprise-search-ai",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/enterprise-search-ai",
+    "pushed_at": "2026-07-24T08:55:47Z",
+    "topics": []
+  },
+  {
+    "name": "semantic-indexer",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/semantic-indexer",
+    "pushed_at": "2026-07-24T09:03:56Z",
+    "topics": []
+  },
+  {
+    "name": "knowledge-sync-service",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/knowledge-sync-service",
+    "pushed_at": "2026-07-24T09:07:54Z",
+    "topics": []
+  },
+  {
+    "name": "document-intelligence-engine",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/document-intelligence-engine",
+    "pushed_at": "2026-07-24T10:41:03Z",
+    "topics": []
+  },
+  {
+    "name": "-AI-Integration-Platform",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/-AI-Integration-Platform",
+    "pushed_at": "2026-07-27T04:51:24Z",
+    "topics": []
+  },
+  {
+    "name": "ai-integration-hub",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/ai-integration-hub",
+    "pushed_at": "2026-07-27T04:56:34Z",
+    "topics": []
+  },
+  {
+    "name": "enterprise-event-gateway",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/enterprise-event-gateway",
+    "pushed_at": "2026-07-27T06:56:21Z",
+    "topics": []
+  },
+  {
+    "name": "api-orchestration-engine",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/api-orchestration-engine",
+    "pushed_at": "2026-07-27T07:16:56Z",
+    "topics": []
+  },
+  {
+    "name": "connector-factory",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/connector-factory",
+    "pushed_at": "2026-07-27T09:25:17Z",
+    "topics": []
+  },
+  {
+    "name": "workflow-integration-kit",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/workflow-integration-kit",
+    "pushed_at": "2026-07-27T08:51:11Z",
+    "topics": []
+  },
+  {
+    "name": "enterprise-adapter-sdk",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/enterprise-adapter-sdk",
+    "pushed_at": "2026-07-27T09:25:28Z",
+    "topics": []
+  },
+  {
+    "name": "-AI-Evaluation-Platform",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/-AI-Evaluation-Platform",
+    "pushed_at": "2026-07-27T09:14:39Z",
+    "topics": []
+  },
+  {
+    "name": "prompt-quality-bench",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/prompt-quality-bench",
+    "pushed_at": "2026-07-27T09:35:11Z",
+    "topics": []
+  },
+  {
+    "name": "llm-evaluation-engine",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/llm-evaluation-engine",
+    "pushed_at": "2026-07-27T09:59:20Z",
+    "topics": []
+  },
+  {
+    "name": "agent-test-framework",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/agent-test-framework",
+    "pushed_at": "2026-07-27T10:06:29Z",
+    "topics": []
+  },
+  {
+    "name": "hallucination-analyzer",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/hallucination-analyzer",
+    "pushed_at": "2026-07-27T10:12:02Z",
+    "topics": []
+  },
+  {
+    "name": "guardrail-validator",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/guardrail-validator",
+    "pushed_at": "2026-07-27T10:28:26Z",
+    "topics": []
+  },
+  {
+    "name": "model-scorecard",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/model-scorecard",
+    "pushed_at": "2026-07-27T10:22:15Z",
+    "topics": []
+  },
+  {
+    "name": "-Intelligent-Cloud-Automation",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/-Intelligent-Cloud-Automation",
+    "pushed_at": "2026-07-27T10:28:12Z",
+    "topics": []
+  },
+  {
+    "name": "opentofu-blueprints",
+    "desc": null,
+    "lang": "HCL",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/opentofu-blueprints",
+    "pushed_at": "2026-07-27T10:56:39Z",
+    "topics": []
+  },
+  {
+    "name": "automation-workflow-engine",
+    "desc": null,
+    "lang": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/automation-workflow-engine",
+    "pushed_at": "2026-07-27T11:01:19Z",
+    "topics": []
+  },
+  {
+    "name": "cloud-bootstrap-kit",
+    "desc": null,
+    "lang": "Shell",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/cloud-bootstrap-kit",
+    "pushed_at": "2026-07-27T11:12:20Z",
+    "topics": []
+  },
+  {
+    "name": "runbook-orchestrator",
+    "desc": null,
+    "lang": "Go",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/runbook-orchestrator",
+    "pushed_at": "2026-07-27T11:15:46Z",
+    "topics": []
+  },
+  {
+    "name": "python-cloud-toolkit",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/python-cloud-toolkit",
+    "pushed_at": "2026-07-27T11:19:53Z",
+    "topics": []
+  },
+  {
+    "name": "Event-Driven-Cloud-Platform",
+    "desc": null,
+    "lang": "Go",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/Event-Driven-Cloud-Platform",
+    "pushed_at": "2026-07-27T11:23:15Z",
+    "topics": []
+  },
+  {
+    "name": "event-stream-hub",
+    "desc": null,
+    "lang": "Go",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/event-stream-hub",
+    "pushed_at": "2026-07-27T11:27:21Z",
+    "topics": []
+  },
+  {
+    "name": "message-routing-engine",
+    "desc": null,
+    "lang": "Go",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/message-routing-engine",
+    "pushed_at": "2026-07-27T11:30:01Z",
+    "topics": []
+  },
+  {
+    "name": "event-schema-registry",
+    "desc": null,
+    "lang": "Go",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/event-schema-registry",
+    "pushed_at": "2026-07-27T11:32:43Z",
+    "topics": []
+  },
+  {
+    "name": "stream-processing-kit",
+    "desc": null,
+    "lang": "Go",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/stream-processing-kit",
+    "pushed_at": "2026-07-28T04:18:40Z",
+    "topics": []
+  },
+  {
+    "name": "pubsub-blueprints",
+    "desc": null,
+    "lang": "HCL",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/pubsub-blueprints",
+    "pushed_at": "2026-07-28T04:24:33Z",
+    "topics": []
+  },
+  {
+    "name": "event-replay-engine",
+    "desc": null,
+    "lang": "Go",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/event-replay-engine",
+    "pushed_at": "2026-07-28T04:28:13Z",
+    "topics": []
+  },
+  {
+    "name": "-Cloud-FinOps-Sustainability",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/-Cloud-FinOps-Sustainability",
+    "pushed_at": "2026-07-28T04:31:31Z",
+    "topics": []
+  },
+  {
+    "name": "cloud-cost-governance",
+    "desc": null,
+    "lang": "Go",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/cloud-cost-governance",
+    "pushed_at": "2026-07-28T04:41:23Z",
+    "topics": []
+  },
+  {
+    "name": "budget-as-code",
+    "desc": null,
+    "lang": "HCL",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/budget-as-code",
+    "pushed_at": "2026-07-28T05:04:52Z",
+    "topics": []
+  },
+  {
+    "name": "cloud-cost-analyzer",
+    "desc": null,
+    "lang": "HCL",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/cloud-cost-analyzer",
+    "pushed_at": "2026-07-28T06:14:04Z",
+    "topics": []
+  },
+  {
+    "name": "cost-anomaly-detector",
+    "desc": null,
+    "lang": "Go",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/cost-anomaly-detector",
+    "pushed_at": "2026-07-28T05:42:24Z",
+    "topics": []
+  },
+  {
+    "name": "cloud-cost-optimizer",
+    "desc": null,
+    "lang": "Go",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/cloud-cost-optimizer",
+    "pushed_at": "2026-07-28T06:24:43Z",
+    "topics": []
+  },
+  {
+    "name": "carbon-usage-analyzer",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/carbon-usage-analyzer",
+    "pushed_at": "2026-07-29T06:23:50Z",
+    "topics": []
+  },
+  {
+    "name": "cloud-efficiency-score",
+    "desc": null,
+    "lang": "Go",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/cloud-efficiency-score",
+    "pushed_at": "2026-07-29T06:30:28Z",
+    "topics": []
+  },
+  {
+    "name": "Enterprise-AI-Governance",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/Enterprise-AI-Governance",
+    "pushed_at": "2026-07-29T06:37:14Z",
+    "topics": []
+  },
+  {
+    "name": "model-risk-governance",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/model-risk-governance",
+    "pushed_at": "2026-07-29T08:35:52Z",
+    "topics": []
+  },
+  {
+    "name": "ai-policy-engine",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/ai-policy-engine",
+    "pushed_at": "2026-07-29T09:03:06Z",
+    "topics": []
+  },
+  {
+    "name": "-ai-compliance-mapper",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/-ai-compliance-mapper",
+    "pushed_at": "2026-07-29T10:06:34Z",
+    "topics": []
+  },
+  {
+    "name": "model-transparency-kit",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/model-transparency-kit",
+    "pushed_at": "2026-07-29T10:13:22Z",
+    "topics": []
+  },
+  {
+    "name": "ai-audit-framework",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/ai-audit-framework",
+    "pushed_at": "2026-07-30T04:16:49Z",
+    "topics": []
+  },
+  {
+    "name": "enterprise-mcp-ecosystem",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/enterprise-mcp-ecosystem",
+    "pushed_at": "2026-07-31T05:53:34Z",
+    "topics": []
+  },
+  {
+    "name": "mcp-gateway",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/mcp-gateway",
+    "pushed_at": "2026-07-31T06:07:52Z",
+    "topics": []
+  },
+  {
+    "name": "mcp-runtime",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/mcp-runtime",
+    "pushed_at": "2026-07-31T07:11:03Z",
+    "topics": []
+  },
+  {
+    "name": "mcp-registry",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/mcp-registry",
+    "pushed_at": "2026-07-31T07:20:56Z",
+    "topics": []
+  },
+  {
+    "name": "mcp-security",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/mcp-security",
+    "pushed_at": "2026-07-31T08:57:00Z",
+    "topics": []
+  },
+  {
+    "name": "mcp-tool-catalog",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/mcp-tool-catalog",
+    "pushed_at": "2026-07-31T09:08:17Z",
+    "topics": []
+  },
+  {
+    "name": "mcp-observability",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/mcp-observability",
+    "pushed_at": "2026-07-31T10:40:15Z",
+    "topics": []
+  },
+  {
+    "name": "mcp-enterprise-sdk",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/mcp-enterprise-sdk",
+    "pushed_at": "2026-07-31T11:00:41Z",
+    "topics": []
+  },
+  {
+    "name": "enterprise-agentops",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/enterprise-agentops",
+    "pushed_at": "2026-07-31T11:07:52Z",
+    "topics": []
+  },
+  {
+    "name": "agent-tracing",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/agent-tracing",
+    "pushed_at": "2026-07-31T11:53:51Z",
+    "topics": []
+  },
+  {
+    "name": "agent-observability",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/agent-observability",
+    "pushed_at": "2026-07-31T11:59:49Z",
+    "topics": []
+  },
+  {
+    "name": "agent-lifecycle-manager",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/agent-lifecycle-manager",
+    "pushed_at": "2026-08-01T07:29:15Z",
+    "topics": []
+  },
+  {
+    "name": "agent-session-manager",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/agent-session-manager",
+    "pushed_at": "2026-08-01T07:37:32Z",
+    "topics": []
+  },
+  {
+    "name": "agent-cost-analyzer",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/agent-cost-analyzer",
+    "pushed_at": "2026-08-01T08:48:39Z",
+    "topics": []
+  },
+  {
+    "name": "agent-performance-dashboard",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/agent-performance-dashboard",
+    "pushed_at": "2026-08-01T09:02:19Z",
+    "topics": []
+  },
+  {
+    "name": "agent-runtime-monitor",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/agent-runtime-monitor",
+    "pushed_at": "2026-08-01T09:10:23Z",
+    "topics": []
+  },
+  {
+    "name": "ai-platform-engineering",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/ai-platform-engineering",
+    "pushed_at": "2026-08-03T04:11:13Z",
+    "topics": []
+  },
+  {
+    "name": "ai-platform-foundation",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/ai-platform-foundation",
+    "pushed_at": "2026-08-03T04:35:01Z",
+    "topics": []
+  },
+  {
+    "name": "ai-developer-platform",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/ai-developer-platform",
+    "pushed_at": "2026-08-03T04:46:36Z",
+    "topics": []
+  },
+  {
+    "name": "ai-self-service-portal",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/ai-self-service-portal",
+    "pushed_at": "2026-08-03T06:20:39Z",
+    "topics": []
+  },
+  {
+    "name": "ai-golden-paths",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/ai-golden-paths",
+    "pushed_at": "2026-08-03T06:31:35Z",
+    "topics": []
+  },
+  {
+    "name": "ai-runtime-factory",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/ai-runtime-factory",
+    "pushed_at": "2026-08-03T06:48:40Z",
+    "topics": []
+  },
+  {
+    "name": "ai-platform-observability",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/ai-platform-observability",
+    "pushed_at": "2026-08-03T07:05:58Z",
+    "topics": []
+  },
+  {
+    "name": "ai-platform-blueprints",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/ai-platform-blueprints",
+    "pushed_at": "2026-08-03T09:32:16Z",
+    "topics": []
+  },
+  {
+    "name": "enterprise-ai-gateway",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/enterprise-ai-gateway",
+    "pushed_at": "2026-08-03T09:55:19Z",
+    "topics": []
+  },
+  {
+    "name": "provider-router",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/provider-router",
+    "pushed_at": "2026-08-03T10:23:13Z",
+    "topics": []
+  },
+  {
+    "name": "model-failover-engine",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/model-failover-engine",
+    "pushed_at": "2026-08-03T10:32:43Z",
+    "topics": []
+  },
+  {
+    "name": "semantic-cache",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/semantic-cache",
+    "pushed_at": "2026-08-03T10:42:02Z",
+    "topics": []
+  },
+  {
+    "name": "prompt-router",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/prompt-router",
+    "pushed_at": "2026-08-04T03:38:04Z",
+    "topics": []
+  },
+  {
+    "name": "gateway-observability",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/gateway-observability",
+    "pushed_at": "2026-08-04T04:40:29Z",
+    "topics": []
+  },
+  {
+    "name": "gateway-security",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/gateway-security",
+    "pushed_at": "2026-08-04T04:54:49Z",
+    "topics": []
+  },
+  {
+    "name": "enterprise-context-engineering",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/enterprise-context-engineering",
+    "pushed_at": "2026-08-05T10:25:29Z",
+    "topics": []
+  },
+  {
+    "name": "context-router",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/context-router",
+    "pushed_at": "2026-08-06T11:54:25Z",
+    "topics": []
+  },
+  {
+    "name": "context-memory",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/context-memory",
+    "pushed_at": "2026-08-07T06:05:54Z",
+    "topics": []
+  },
+  {
+    "name": "context-cache",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/context-cache",
+    "pushed_at": "2026-08-07T09:19:46Z",
+    "topics": []
+  },
+  {
+    "name": "session-manager",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/session-manager",
+    "pushed_at": "2026-08-07T09:45:13Z",
+    "topics": []
+  },
+  {
+    "name": "context-security",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/context-security",
+    "pushed_at": "2026-08-07T11:09:05Z",
+    "topics": []
+  },
+  {
+    "name": "context-observability",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/context-observability",
+    "pushed_at": "2026-08-10T05:03:36Z",
+    "topics": []
+  },
+  {
+    "name": "memory-orchestrator",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/memory-orchestrator",
+    "pushed_at": "2026-08-10T06:38:54Z",
+    "topics": []
+  },
+  {
+    "name": "ai-identity-trust",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/ai-identity-trust",
+    "pushed_at": "2026-08-10T07:12:40Z",
+    "topics": []
+  },
+  {
+    "name": "agent-identity",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/agent-identity",
+    "pushed_at": "2026-08-10T08:29:05Z",
+    "topics": []
+  },
+  {
+    "name": "tool-authentication",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/tool-authentication",
+    "pushed_at": "2026-08-10T09:06:11Z",
+    "topics": []
+  },
+  {
+    "name": "ai-access-control",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/ai-access-control",
+    "pushed_at": "2026-08-10T10:20:37Z",
+    "topics": []
+  },
+  {
+    "name": "ai-token-service",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/ai-token-service",
+    "pushed_at": "2026-08-10T10:57:21Z",
+    "topics": []
+  },
+  {
+    "name": "identity-broker",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/identity-broker",
+    "pushed_at": "2026-08-10T11:05:08Z",
+    "topics": []
+  },
+  {
+    "name": "ai-trust-engine",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/ai-trust-engine",
+    "pushed_at": "2026-08-10T11:14:50Z",
+    "topics": []
+  },
+  {
+    "name": "agent-authz",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/agent-authz",
+    "pushed_at": "2026-08-10T11:42:56Z",
+    "topics": []
+  },
+  {
+    "name": "enterprise-ai-workspace",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/enterprise-ai-workspace",
+    "pushed_at": "2026-08-12T03:53:21Z",
+    "topics": []
+  },
+  {
+    "name": "developer-workspace",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/developer-workspace",
+    "pushed_at": "2026-08-12T04:01:42Z",
+    "topics": []
+  },
+  {
+    "name": "business-workspace",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/business-workspace",
+    "pushed_at": "2026-08-12T04:17:33Z",
+    "topics": []
+  },
+  {
+    "name": "prompt-workspace",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/prompt-workspace",
+    "pushed_at": "2026-08-12T05:06:35Z",
+    "topics": []
+  },
+  {
+    "name": "knowledge-workspace",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/knowledge-workspace",
+    "pushed_at": "2026-08-12T05:17:08Z",
+    "topics": []
+  },
+  {
+    "name": "workspace-runtime",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/workspace-runtime",
+    "pushed_at": "2026-08-12T05:34:46Z",
+    "topics": []
+  },
+  {
+    "name": "workspace-api",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/workspace-api",
+    "pushed_at": "2026-08-12T06:10:04Z",
+    "topics": []
+  },
+  {
+    "name": "workspace-manager",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/workspace-manager",
+    "pushed_at": "2026-08-12T06:20:33Z",
+    "topics": []
+  },
+  {
+    "name": "enterprise-ai-marketplace",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/enterprise-ai-marketplace",
+    "pushed_at": "2026-08-12T08:18:35Z",
+    "topics": []
+  },
+  {
+    "name": "agent-marketplace",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/agent-marketplace",
+    "pushed_at": "2026-08-12T09:18:23Z",
+    "topics": []
+  },
+  {
+    "name": "model-marketplace",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/model-marketplace",
+    "pushed_at": "2026-08-12T11:41:09Z",
+    "topics": []
+  },
+  {
+    "name": "tool-marketplace",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/tool-marketplace",
+    "pushed_at": "2026-08-12T11:51:07Z",
+    "topics": []
+  },
+  {
+    "name": "workflow-marketplace",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/workflow-marketplace",
+    "pushed_at": "2026-08-13T03:40:36Z",
+    "topics": []
+  },
+  {
+    "name": "prompt-marketplace",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/prompt-marketplace",
+    "pushed_at": "2026-08-13T04:00:36Z",
+    "topics": []
+  },
+  {
+    "name": "marketplace-registry",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/marketplace-registry",
+    "pushed_at": "2026-08-13T04:54:00Z",
+    "topics": []
+  },
+  {
+    "name": "marketplace-governance",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/marketplace-governance",
+    "pushed_at": "2026-08-13T05:08:00Z",
+    "topics": []
+  },
+  {
+    "name": "ai-data-foundation",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/ai-data-foundation",
+    "pushed_at": "2026-08-13T09:16:34Z",
+    "topics": []
+  },
+  {
+    "name": "embedding-platform",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/embedding-platform",
+    "pushed_at": "2026-08-13T09:30:38Z",
+    "topics": []
+  },
+  {
+    "name": "feature-store",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/feature-store",
+    "pushed_at": "2026-08-13T10:20:22Z",
+    "topics": []
+  },
+  {
+    "name": "vector-platform",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/vector-platform",
+    "pushed_at": "2026-08-17T04:51:14Z",
+    "topics": []
+  },
+  {
+    "name": "metadata-service",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/metadata-service",
+    "pushed_at": "2026-08-17T05:09:22Z",
+    "topics": []
+  },
+  {
+    "name": "dataset-manager",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/dataset-manager",
+    "pushed_at": "2026-08-17T05:21:14Z",
+    "topics": []
+  },
+  {
+    "name": "embedding-pipeline",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/embedding-pipeline",
+    "pushed_at": "2026-08-17T05:41:57Z",
+    "topics": []
+  },
+  {
+    "name": "knowledge-storage",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/knowledge-storage",
+    "pushed_at": "2026-08-17T08:22:58Z",
+    "topics": []
+  },
+  {
+    "name": "enterprise-edge-ai",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/enterprise-edge-ai",
+    "pushed_at": "2026-08-17T09:00:48Z",
+    "topics": []
+  },
+  {
+    "name": "edge-runtime",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/edge-runtime",
+    "pushed_at": "2026-08-17T10:32:47Z",
+    "topics": []
+  },
+  {
+    "name": "edge-inference",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/edge-inference",
+    "pushed_at": "2026-08-17T11:33:09Z",
+    "topics": []
+  },
+  {
+    "name": "edge-agent",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/edge-agent",
+    "pushed_at": "2026-08-18T05:19:25Z",
+    "topics": []
+  },
+  {
+    "name": "edge-management",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/edge-management",
+    "pushed_at": "2026-08-18T06:17:19Z",
+    "topics": []
+  },
+  {
+    "name": "edge-security",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/edge-security",
+    "pushed_at": "2026-08-18T06:54:46Z",
+    "topics": []
+  },
+  {
+    "name": "edge-observability",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/edge-observability",
+    "pushed_at": "2026-08-18T07:30:40Z",
+    "topics": []
+  },
+  {
+    "name": "edge-gateway",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/edge-gateway",
+    "pushed_at": "2026-08-18T08:30:49Z",
+    "topics": []
+  },
+  {
+    "name": "llm-api-gateway",
+    "desc": null,
+    "lang": "Python",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/llm-api-gateway",
+    "pushed_at": "2026-08-29T06:56:05Z",
+    "topics": []
+  },
+  {
+    "name": "Ai-Services-Website",
+    "desc": null,
+    "lang": "JavaScript",
+    "stars": 0,
+    "url": "https://github.com/Devopstrio/Ai-Services-Website",
+    "pushed_at": "2026-10-06T08:46:31Z",
+    "topics": []
+  }
+]
