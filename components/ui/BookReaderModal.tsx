@@ -1,88 +1,84 @@
 "use client";
 
-import React, { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import dynamic from "next/dynamic";
 import { Loader2 } from "lucide-react";
 
-// Dynamically import BrochureFlipBook with SSR disabled
-const BrochureFlipBook = dynamic(() => import("./BrochureFlipBook").then((mod) => mod.default || mod), { 
-  ssr: false,
-  loading: () => (
-    <div className="flex flex-col items-center justify-center p-12 gap-3 text-zinc-300 font-sans my-auto">
-      <Loader2 size={40} className="text-rose-500 animate-spin" />
-      <span className="text-xs font-bold uppercase tracking-widest text-zinc-400">
-        Loading Interactive PDF Brochure...
-      </span>
-    </div>
-  )
-});
+const BrochureFlipBook = dynamic(
+  () => import("@/components/ui/BrochureFlipBook").then(m => m.BrochureFlipBook),
+  {
+    ssr: false,
+    loading: () => <div className="flex h-full w-full items-center justify-center bg-black"><Loader2 className="h-8 w-8 animate-spin text-rose-500" /></div>,
+  }
+);
 
-export type AnnouncementReport = {
-  id?: number | string;
-  titlePrefix?: string;
+export interface AnnouncementReport {
+  id?: string | number;
   titleHighlight?: string;
+  titlePrefix?: string;
   titleSuffix?: string;
-  description?: string;
-  reportType?: string;
   coverTitleLine1?: string;
   coverTitleLine2?: string;
-  coverEdition?: string;
   coverBrand?: string;
+  coverEdition?: string;
+  reportType?: string;
   pdfUrl?: string;
   pdfName?: string;
   pdfSize?: number;
-  coverImage?: string;
-};
+  [key: string]: any;
+}
 
-type Props = {
+export interface BookReaderModalProps {
   isOpen: boolean;
   onClose: () => void;
-  report?: AnnouncementReport | null;
-};
+  report: AnnouncementReport | null;
+}
 
-export const BookReaderModal: React.FC<Props> = ({ isOpen, onClose, report }) => {
-  const pdfUrl = report?.pdfUrl || "";
-  const pdfTitle = (
-    report?.pdfName || 
-    `${report?.coverTitleLine1 || ""} ${report?.coverTitleLine2 || ""}`.trim() || 
-    "Document"
-  ).replace(/\.pdf$/i, "");
-  const pdfEdition = report?.coverEdition || "";
-  const pdfBrand = report?.coverBrand || "Devopstrio";
+export function BookReaderModal({ isOpen, onClose, report }: BookReaderModalProps) {
+  const dialogRef = useRef<HTMLDivElement>(null);
+  const onCloseRef = useRef(onClose);
+  useEffect(() => { onCloseRef.current = onClose; }, [onClose]);
 
-  // Keyboard close on Escape
   useEffect(() => {
-    if (!isOpen) return;
-
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "Escape") {
-        onClose();
-      }
+    if (!isOpen || !report) return;
+    const oldOverflow = document.body.style.overflow;
+    const focused = document.activeElement;
+    document.body.style.overflow = "hidden";
+    dialogRef.current?.focus();
+    const handleKeys = (e: KeyboardEvent) => {
+      if (e.key === "Escape") onCloseRef.current();
+      if (e.key !== "Tab" || !dialogRef.current) return;
+      const elements = Array.from(dialogRef.current.querySelectorAll<HTMLElement>(
+        'button:not([disabled]), a[href], input:not([disabled]), [tabindex]:not([tabindex="-1"])'
+      )).filter(el => el.getClientRects().length > 0);
+      if (!elements.length) { e.preventDefault(); dialogRef.current.focus(); return; }
+      const first = elements[0], last = elements[elements.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
     };
+    document.addEventListener("keydown", handleKeys);
+    return () => {
+      document.removeEventListener("keydown", handleKeys);
+      document.body.style.overflow = oldOverflow;
+      if (focused instanceof HTMLElement) focused.focus();
+    };
+  }, [isOpen, report]);
 
-    window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [isOpen, onClose]);
-
-  if (!isOpen) return null;
+  if (!isOpen || !report) return null;
+  const cover = [report.coverTitleLine1, report.coverTitleLine2].filter(Boolean).join(" ").trim();
+  const fallback = [report.titlePrefix, report.titleHighlight, report.titleSuffix].filter(Boolean).join("").trim();
+  const title = cover || fallback || "Document Preview";
+  const pdfUrl = report.pdfUrl || "/uploads/pdf/1787301408362_Devopstrio_Carousal.pdf";
 
   return (
-    <div 
-      className="fixed inset-0 z-50 bg-[#030305]/98 backdrop-blur-2xl flex flex-col items-center justify-center font-sans select-none overflow-hidden [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden animate-in fade-in duration-200"
-      onClick={onClose}
-    >
-      <div 
-        className="w-full h-full max-w-7xl flex flex-col items-center justify-between relative overflow-hidden [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
-        onClick={(e) => e.stopPropagation()}
-      >
-        <BrochureFlipBook 
-          pdfUrl={pdfUrl} 
-          pdfTitle={pdfTitle} 
-          pdfEdition={pdfEdition}
-          pdfBrand={pdfBrand}
-          onClose={onClose}
-        />
-      </div>
+    <div ref={dialogRef} role="dialog" aria-modal="true" aria-label={title} tabIndex={-1}
+      className="fixed inset-0 z-[100] h-[100dvh] w-screen overflow-hidden bg-[#DDDDDD] outline-none">
+      {/* Intentionally fullscreen: no inner max-w, max-h, border, padding or nested card. */}
+      <BrochureFlipBook key={pdfUrl} pdfUrl={pdfUrl} pdfTitle={title}
+        pdfBrand={report.coverBrand || "Devopstrio"}
+        pdfEdition={report.coverEdition || "2026 EDITION"} onClose={onClose}/>
     </div>
   );
-};
+}
+
+export default BookReaderModal;

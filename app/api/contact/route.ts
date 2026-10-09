@@ -23,7 +23,11 @@ export async function POST(req: Request) {
     const smtpServer = process.env.SMTP_SERVER || 'smtp.gmail.com';
     const smtpPort = Number(process.env.SMTP_PORT) || 587;
     const smtpUser = process.env.SMTP_USER || 'devopstrioglobal@gmail.com';
-    const smtpPass = process.env.SMTP_PASS || 'rvaanwlmdcixyvbx';
+    const smtpPass = process.env.SMTP_PASS;
+
+    if (!smtpPass) {
+      console.warn("SMTP_PASS is not configured in environment variables.");
+    }
 
     // Configure nodemailer using environment variables
     const transporter = nodemailer.createTransport({

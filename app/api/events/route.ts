@@ -1,5 +1,7 @@
 import { NextResponse } from "next/server";
 import { connectToDatabase } from "@/lib/mongodb";
+import { requireAdmin, AdminAuthError } from "@/lib/admin/require-admin";
+import { recordAuditLog } from "@/lib/admin/audit-log";
 
 export const dynamic = 'force-dynamic';
 
@@ -21,13 +23,14 @@ export async function GET() {
     
     return NextResponse.json(formattedItems);
   } catch (error) {
-    console.error("Failed to fetch events from database:", error);
-    return NextResponse.json({ error: "Failed to fetch events" }, { status: 500 });
+    console.warn("Failed to fetch events from database:", error);
+    return NextResponse.json([]);
   }
 }
 
 export async function POST(req: Request) {
   try {
+    const admin = await requireAdmin("events", req);
     const body = await req.json();
     const { db } = await connectToDatabase();
     
@@ -51,9 +54,22 @@ export async function POST(req: Request) {
       id: result.insertedId.toString(),
       ...newItem
     };
+
+    await recordAuditLog({
+      actorId: admin.id,
+      username: admin.username,
+      action: "event.create",
+      resource: "events",
+      resourceId: result.insertedId.toString(),
+      result: "success",
+      details: { eventName: newItem.eventName, year: newItem.year },
+    });
     
     return NextResponse.json(createdItem, { status: 201 });
-  } catch (error) {
+  } catch (error: any) {
+    if (error instanceof AdminAuthError) {
+      return NextResponse.json({ error: error.message }, { status: error.status });
+    }
     console.error("Failed to add event to database:", error);
     return NextResponse.json({ error: "Failed to add event" }, { status: 500 });
   }

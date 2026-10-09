@@ -238,8 +238,7 @@ export default function CultureAlbumsAdminPage() {
   };
 
   return (
-    <div className="min-h-screen bg-black text-white pt-28 sm:pt-36 lg:pt-40 pb-16 px-6 sm:px-10 font-sans relative">
-      
+    <div className="w-full space-y-8 animate-in fade-in duration-200">
       {/* ── HIGH-LEVEL 3D PDF PAGEFLIP MODAL PREVIEW ── */}
       <BookReaderModal
         isOpen={isPreviewOpen}

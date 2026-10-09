@@ -1,6 +1,8 @@
 import { NextResponse } from "next/server";
 import { connectToDatabase } from "@/lib/mongodb";
 import { ObjectId } from "mongodb";
+import { requireAdmin, AdminAuthError } from "@/lib/admin/require-admin";
+import { recordAuditLog } from "@/lib/admin/audit-log";
 
 export const dynamic = "force-dynamic";
 
@@ -53,6 +55,7 @@ export async function PUT(
   { params }: { params: Promise<{ id: string }> }
 ) {
   try {
+    const admin = await requireAdmin("cultureAlbums", req);
     const { id } = await params;
     if (!ObjectId.isValid(id)) {
       return NextResponse.json({ error: "Invalid album ID" }, { status: 400 });
@@ -90,6 +93,15 @@ export async function PUT(
       return NextResponse.json({ error: "Culture album not found" }, { status: 404 });
     }
 
+    await recordAuditLog({
+      actorId: admin.id,
+      username: admin.username,
+      action: "culture_album.update",
+      resource: "cultureAlbums",
+      resourceId: id,
+      result: "success",
+    });
+
     return NextResponse.json({
       id: result._id.toString(),
       titlePrefix: result.titlePrefix || "",
@@ -109,7 +121,10 @@ export async function PUT(
       created_at: result.created_at,
       updated_at: result.updated_at
     });
-  } catch (error) {
+  } catch (error: any) {
+    if (error instanceof AdminAuthError) {
+      return NextResponse.json({ error: error.message }, { status: error.status });
+    }
     console.error("Failed to update culture album:", error);
     return NextResponse.json({ error: "Failed to update culture album" }, { status: 500 });
   }
@@ -120,6 +135,7 @@ export async function DELETE(
   { params }: { params: Promise<{ id: string }> }
 ) {
   try {
+    const admin = await requireAdmin("cultureAlbums", req);
     const { id } = await params;
     if (!ObjectId.isValid(id)) {
       return NextResponse.json({ error: "Invalid album ID" }, { status: 400 });
@@ -132,8 +148,20 @@ export async function DELETE(
       return NextResponse.json({ error: "Culture album not found" }, { status: 404 });
     }
 
+    await recordAuditLog({
+      actorId: admin.id,
+      username: admin.username,
+      action: "culture_album.delete",
+      resource: "cultureAlbums",
+      resourceId: id,
+      result: "success",
+    });
+
     return NextResponse.json({ message: "Culture album deleted successfully" });
-  } catch (error) {
+  } catch (error: any) {
+    if (error instanceof AdminAuthError) {
+      return NextResponse.json({ error: error.message }, { status: error.status });
+    }
     console.error("Failed to delete culture album:", error);
     return NextResponse.json({ error: "Failed to delete culture album" }, { status: 500 });
   }

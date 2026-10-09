@@ -332,8 +332,8 @@ export default function MarketingResourcesAdminPage() {
   // ── Render ─────────────────────────────────────────────────────────────────
 
   return (
-    <div className="min-h-screen bg-[#030303] text-white pt-32 pb-20 px-6 md:px-14">
-      <div className="max-w-7xl mx-auto">
+    <div className="w-full space-y-8 animate-in fade-in duration-200">
+      <div>
 
         {/* Header */}
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6 mb-10">

@@ -46,9 +46,10 @@ export default function HiringAdminPage() {
     try {
       const res = await fetch("/api/hiring-posters");
       const data = await res.json();
-      setPosters(data);
+      setPosters(Array.isArray(data) ? data : []);
     } catch (err) {
       console.error("Failed to fetch posters", err);
+      setPosters([]);
     } finally {
       setIsLoading(false);
     }
@@ -191,10 +192,6 @@ export default function HiringAdminPage() {
     }
   };
 
-  if (isLoading) {
-    return <div className="p-20 text-white min-h-screen bg-[#030303]">Loading admin panel...</div>;
-  }
-
   const renderPreview = () => {
     const isActive = formData.status === "active";
     const p = formData as Poster;
@@ -268,17 +265,17 @@ export default function HiringAdminPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#030303] text-white pt-32 pb-16 px-8 md:px-16">
-      <div className="max-w-7xl mx-auto">
-        <div className="flex justify-between items-center mb-12">
+    <div className="w-full space-y-8 animate-in fade-in duration-200">
+      <div>
+        <div className="flex justify-between items-center mb-8">
           <div>
-            <h1 className="text-3xl font-bold tracking-tight mb-2">Hiring Posters Admin</h1>
-            <p className="text-zinc-400">Manage your open roles and career posters for the website.</p>
+            <h1 className="text-2xl sm:text-3xl font-bold tracking-tight mb-1 text-white">Hiring Posters Admin</h1>
+            <p className="text-zinc-400 text-sm">Manage open roles and visual career posters displayed across the website.</p>
           </div>
           {!isAdding && !editingId && (
             <button
               onClick={handleAddNew}
-              className="gap-2 inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white transition-all duration-300 hover:shadow-[0_0_25px_rgba(225,29,72,0.35)] hover:-translate-y-0.5"
+              className="gap-2 inline-flex items-center justify-center px-5 py-2.5 rounded-lg text-xs font-bold tracking-wider uppercase bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white transition-all duration-200 hover:shadow-[0_0_20px_rgba(225,29,72,0.35)]"
             >
               <Plus size={16} /> Add New Poster
             </button>
@@ -435,50 +432,68 @@ export default function HiringAdminPage() {
 
         {/* List view */}
         <div className="grid grid-cols-1 gap-4">
-          {posters.map((poster) => (
-            <div key={poster.id} className="bg-zinc-900 border border-zinc-800 p-6 rounded-xl flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
-              <div>
-                <div className="flex items-center gap-3 mb-2">
-                  <span className={`px-2 py-0.5 text-[10px] font-mono font-bold uppercase rounded border ${poster.status === 'active'
-                      ? "bg-rose-500/10 text-rose-400 border-rose-500/30"
-                      : "bg-zinc-800 text-zinc-500 border-zinc-700"
-                    }`}>
-                    {poster.status}
-                  </span>
-                  <span className="text-xs font-mono text-zinc-500">{poster.req}</span>
+          {isLoading ? (
+            Array.from({ length: 3 }).map((_, idx) => (
+              <div key={idx} className="bg-zinc-900/60 border border-zinc-800 p-6 rounded-xl animate-pulse flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+                <div className="space-y-3 w-full max-w-md">
+                  <div className="h-4 w-24 bg-zinc-800 rounded" />
+                  <div className="h-6 w-48 bg-zinc-800 rounded" />
+                  <div className="h-4 w-64 bg-zinc-800/60 rounded" />
                 </div>
-                <div className="flex items-center gap-4">
-                  {poster.image && (
-                    <img src={poster.image} alt={poster.role} className="w-12 h-12 rounded object-cover border border-zinc-800" loading="lazy" />
-                  )}
+                <div className="flex gap-2 w-full md:w-auto">
+                  <div className="h-9 w-20 bg-zinc-800 rounded-lg" />
+                  <div className="h-9 w-20 bg-zinc-800 rounded-lg" />
+                </div>
+              </div>
+            ))
+          ) : (
+            <>
+              {Array.isArray(posters) && posters.map((poster) => (
+                <div key={poster.id} className="bg-zinc-900 border border-zinc-800 p-6 rounded-xl flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
                   <div>
-                    <h3 className="text-xl font-bold mb-1">{poster.role}</h3>
-                    <p className="text-sm text-zinc-400 font-medium">{poster.location} • {poster.type} • {poster.date}</p>
+                    <div className="flex items-center gap-3 mb-2">
+                      <span className={`px-2 py-0.5 text-[10px] font-mono font-bold uppercase rounded border ${poster.status === 'active'
+                          ? "bg-rose-500/10 text-rose-400 border-rose-500/30"
+                          : "bg-zinc-800 text-zinc-500 border-zinc-700"
+                        }`}>
+                        {poster.status}
+                      </span>
+                      <span className="text-xs font-mono text-zinc-500">{poster.req}</span>
+                    </div>
+                    <div className="flex items-center gap-4">
+                      {poster.image && (
+                        <img src={poster.image} alt={poster.role} className="w-12 h-12 rounded object-cover border border-zinc-800" loading="lazy" />
+                      )}
+                      <div>
+                        <h3 className="text-xl font-bold mb-1">{poster.role}</h3>
+                        <p className="text-sm text-zinc-400 font-medium">{poster.location} • {poster.type} • {poster.date}</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="flex gap-2 w-full md:w-auto">
+                    <button
+                      onClick={() => handleEdit(poster)}
+                      className="flex-1 md:flex-none flex items-center justify-center gap-2 bg-zinc-800 hover:bg-zinc-700 text-white px-4 py-2.5 rounded-lg font-bold text-xs tracking-wide transition-colors"
+                    >
+                      <Pencil size={14} /> Edit
+                    </button>
+                    <button
+                      onClick={() => handleDelete(poster.id)}
+                      className="flex-1 md:flex-none flex items-center justify-center gap-2 bg-red-950 hover:bg-red-900 text-red-500 border border-red-900/50 px-4 py-2.5 rounded-lg font-bold text-xs tracking-wide transition-colors"
+                    >
+                      <Trash2 size={14} /> Delete
+                    </button>
                   </div>
                 </div>
-              </div>
+              ))}
 
-              <div className="flex gap-2 w-full md:w-auto">
-                <button
-                  onClick={() => handleEdit(poster)}
-                  className="flex-1 md:flex-none flex items-center justify-center gap-2 bg-zinc-800 hover:bg-zinc-700 text-white px-4 py-2.5 rounded-lg font-bold text-xs tracking-wide transition-colors"
-                >
-                  <Pencil size={14} /> Edit
-                </button>
-                <button
-                  onClick={() => handleDelete(poster.id)}
-                  className="flex-1 md:flex-none flex items-center justify-center gap-2 bg-red-950 hover:bg-red-900 text-red-500 border border-red-900/50 px-4 py-2.5 rounded-lg font-bold text-xs tracking-wide transition-colors"
-                >
-                  <Trash2 size={14} /> Delete
-                </button>
-              </div>
-            </div>
-          ))}
-
-          {posters.length === 0 && (
-            <div className="text-center py-20 text-zinc-500 font-medium">
-              No posters found. Click 'Add New Poster' to create one.
-            </div>
+              {(!Array.isArray(posters) || posters.length === 0) && (
+                <div className="text-center py-20 text-zinc-500 font-medium">
+                  No posters found. Click &apos;Add New Poster&apos; to create one.
+                </div>
+              )}
+            </>
           )}
         </div>
       </div>

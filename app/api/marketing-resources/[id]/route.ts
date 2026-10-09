@@ -4,13 +4,14 @@ import { connectToDatabase } from "@/lib/mongodb";
 import { readFile, writeFile, mkdir } from "fs/promises";
 import path from "path";
 import fs from "fs";
+import { requireAdmin, AdminAuthError } from "@/lib/admin/require-admin";
+import { recordAuditLog } from "@/lib/admin/audit-log";
 
 export const dynamic = "force-dynamic";
 
 const COLLECTION = "marketing_resources";
 const LOCAL_DB_FILE = path.join(process.cwd(), "data", "local-marketing-db.json");
 
-// Helper to read local JSON database
 async function getLocalResources(): Promise<any[]> {
   try {
     if (!fs.existsSync(LOCAL_DB_FILE)) return [];
@@ -22,7 +23,6 @@ async function getLocalResources(): Promise<any[]> {
   }
 }
 
-// Helper to save local JSON database
 async function saveLocalResources(items: any[]): Promise<void> {
   try {
     const dir = path.dirname(LOCAL_DB_FILE);
@@ -71,6 +71,7 @@ export async function PUT(
   { params }: { params: Promise<{ id: string }> }
 ) {
   try {
+    const admin = await requireAdmin("marketingResources", req);
     const { id } = await params;
     const body = await req.json();
 
@@ -87,6 +88,14 @@ export async function PUT(
         );
 
         if (result) {
+          await recordAuditLog({
+            actorId: admin.id,
+            username: admin.username,
+            action: "marketing_resource.update",
+            resource: "marketingResources",
+            resourceId: id,
+            result: "success",
+          });
           return NextResponse.json({ id: result._id.toString(), ...result, _id: undefined });
         }
       }
@@ -106,11 +115,24 @@ export async function PUT(
       };
       localItems[index] = updated;
       await saveLocalResources(localItems);
+
+      await recordAuditLog({
+        actorId: admin.id,
+        username: admin.username,
+        action: "marketing_resource.update",
+        resource: "marketingResources",
+        resourceId: id,
+        result: "success",
+      });
+
       return NextResponse.json(updated);
     }
 
     return NextResponse.json({ error: "Resource not found" }, { status: 404 });
-  } catch (error) {
+  } catch (error: any) {
+    if (error instanceof AdminAuthError) {
+      return NextResponse.json({ error: error.message }, { status: error.status });
+    }
     console.error("Failed to update resource:", error);
     return NextResponse.json({ error: "Failed to update resource" }, { status: 500 });
   }
@@ -121,6 +143,7 @@ export async function DELETE(
   { params }: { params: Promise<{ id: string }> }
 ) {
   try {
+    const admin = await requireAdmin("marketingResources", req);
     const { id } = await params;
 
     // 1. Try MongoDB
@@ -129,6 +152,14 @@ export async function DELETE(
         const { db } = await connectToDatabase();
         const result = await db.collection(COLLECTION).deleteOne({ _id: new ObjectId(id) });
         if (result.deletedCount > 0) {
+          await recordAuditLog({
+            actorId: admin.id,
+            username: admin.username,
+            action: "marketing_resource.delete",
+            resource: "marketingResources",
+            resourceId: id,
+            result: "success",
+          });
           return NextResponse.json({ success: true });
         }
       }
@@ -141,11 +172,22 @@ export async function DELETE(
     const filtered = localItems.filter((r) => r.id !== id);
     if (filtered.length !== localItems.length) {
       await saveLocalResources(filtered);
+      await recordAuditLog({
+        actorId: admin.id,
+        username: admin.username,
+        action: "marketing_resource.delete",
+        resource: "marketingResources",
+        resourceId: id,
+        result: "success",
+      });
       return NextResponse.json({ success: true });
     }
 
     return NextResponse.json({ error: "Resource not found" }, { status: 404 });
-  } catch (error) {
+  } catch (error: any) {
+    if (error instanceof AdminAuthError) {
+      return NextResponse.json({ error: error.message }, { status: error.status });
+    }
     console.error("Failed to delete resource:", error);
     return NextResponse.json({ error: "Failed to delete resource" }, { status: 500 });
   }

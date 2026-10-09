@@ -1,665 +1,437 @@
 "use client";
 
-import React, { useState, useEffect, useRef, useCallback } from "react";
-import { 
-  ChevronLeft, 
-  ChevronRight, 
-  Loader2, 
-  Download, 
-  Maximize2, 
-  Minimize2, 
-  X, 
-  AlertCircle, 
-  ExternalLink,
-  ZoomIn,
-  ZoomOut,
-  ChevronUp,
-  Share2,
-  Check
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import {
+  BookOpen, Download, ExternalLink,
+  FileText, Loader2, Maximize2, Minimize2, RotateCcw, X,
+  ZoomIn, ZoomOut,
 } from "lucide-react";
+import type { PDFDocumentProxy } from "pdfjs-dist";
+import { CurvedPageTurn } from "./CurvedPageTurn";
 
-// ForwardRef page wrapper for react-pageflip (Clean white, zero mid darkness)
-const FlipPage = React.forwardRef<HTMLDivElement, { children: React.ReactNode; className?: string; isCover?: boolean }>(
-  ({ children, className = "" }, ref) => {
-    return (
-      <div 
-        ref={ref} 
-        className={`page relative bg-white overflow-hidden select-none ${className}`}
-      >
-        {children}
-      </div>
-    );
-  }
-);
-FlipPage.displayName = "FlipPage";
-
-export type BrochureFlipBookProps = {
+export interface BrochureFlipBookProps {
   pdfUrl: string;
   pdfTitle?: string;
-  pdfEdition?: string;
   pdfBrand?: string;
+  pdfEdition?: string;
   onClose?: () => void;
-};
+  /** Optional original file URL when the preview PDF was converted from DOCX/PPTX. */
+  originalFileUrl?: string;
+}
 
-// Safe browser loader for local PDF.js engine (immune to tracking prevention and CORS)
-function loadLocalPdfJsEngine(): Promise<any> {
-  if (typeof window === "undefined") return Promise.resolve(null);
-  if ((window as any).pdfjsLib) return Promise.resolve((window as any).pdfjsLib);
+type ViewMode = "flipbook" | "pdf";
+type Direction = "next" | "prev";
+type Asset = { canvas: HTMLCanvasElement; width: number; height: number; resolution: number };
+type Dimensions = { width: number; height: number };
+const TURN_MS = 900;
+// Bound total canvas memory, while allowing higher-quality output on capable desktops.
+const MAX_CACHED_PAGES = 20;
+const MAX_RENDER_EDGE = 4096;
+const MAX_CACHE_BYTES = 160 * 1024 * 1024;
+function renderPixelBudget() {
+  if (typeof window === "undefined") return 4_000_000;
+  const memory = (navigator as Navigator & { deviceMemory?: number }).deviceMemory ?? 4;
+  return window.innerWidth < 768 || memory <= 2 ? 3_000_000 : memory >= 8 ? 10_000_000 : 6_000_000;
+}
 
-  return new Promise((resolve, reject) => {
-    const existing = document.querySelector('script[src*="pdf.min.js"]');
-    if (existing) {
-      const timer = setInterval(() => {
-        if ((window as any).pdfjsLib) {
-          clearInterval(timer);
-          const pdfjs = (window as any).pdfjsLib;
-          pdfjs.GlobalWorkerOptions.workerSrc = "/vendor/pdfjs/pdf.worker.min.js";
-          resolve(pdfjs);
-        }
-      }, 50);
-      return;
-    }
+/** Reuses a prerendered canvas without encoding its pixels to JPEG/data URL. */
+function PageFace({ asset, label, onClick }: {
+  asset?: Asset;
+  label: string;
+  onClick?: () => void;
+}) {
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  useEffect(() => {
+    const element = canvasRef.current;
+    if (!element || !asset) return;
+    element.width = asset.canvas.width;
+    element.height = asset.canvas.height;
+    element.getContext("2d", { alpha: false })?.drawImage(asset.canvas, 0, 0);
+  }, [asset]);
 
-    const script = document.createElement("script");
-    script.src = "/vendor/pdfjs/pdf.min.js";
-    script.async = true;
-    script.onload = () => {
-      const pdfjs = (window as any).pdfjsLib;
-      if (pdfjs) {
-        pdfjs.GlobalWorkerOptions.workerSrc = "/vendor/pdfjs/pdf.worker.min.js";
-        resolve(pdfjs);
-      } else {
-        reject(new Error("PDF.js failed to initialize"));
-      }
-    };
-    script.onerror = () => {
-      // Fallback to CDN if local file is missing
-      const cdnScript = document.createElement("script");
-      cdnScript.src = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js";
-      cdnScript.onload = () => {
-        const pdfjs = (window as any).pdfjsLib;
-        if (pdfjs) {
-          pdfjs.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
-          resolve(pdfjs);
-        } else {
-          reject(new Error("PDF.js CDN fallback failed"));
-        }
-      };
-      cdnScript.onerror = () => reject(new Error("Failed to load PDF.js engine"));
-      document.head.appendChild(cdnScript);
-    };
-    document.head.appendChild(script);
-  });
+  return (
+    <div
+      aria-label={label}
+      onClick={onClick}
+      className={`relative h-full w-full overflow-hidden bg-white ${onClick ? "cursor-pointer" : ""}`}
+    >
+      <canvas ref={canvasRef} className="block h-full w-full" aria-hidden="true" />
+      {!asset && (
+        <div className="absolute inset-0 flex items-center justify-center bg-zinc-100 text-zinc-500">
+          <Loader2 className="h-5 w-5 animate-spin" />
+        </div>
+      )}
+    </div>
+  );
 }
 
 export function BrochureFlipBook({
   pdfUrl,
-  pdfTitle = "Document",
-  onClose
+  pdfTitle = "Document Preview",
+  pdfBrand = "Devopstrio",
+  pdfEdition = "2026 EDITION",
+  onClose,
+  originalFileUrl,
 }: BrochureFlipBookProps) {
-  const [FlipComponent, setFlipComponent] = useState<any>(null);
-  const [viewMode, setViewMode] = useState<"flipbook" | "native">("flipbook");
+  const rootRef = useRef<HTMLDivElement>(null);
+  const stageRef = useRef<HTMLDivElement>(null);
+  const pdfRef = useRef<PDFDocumentProxy | null>(null);
+  const cacheRef = useRef(new Map<number, Asset>());
+  const pendingRef = useRef(new Map<number, Promise<void>>());
+  const metaRef = useRef(new Map<number, Dimensions>());
+  const mountedRef = useRef(true);
+  const generationRef = useRef(0);
+  const turningRef = useRef(false);
+  const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const [pdf, setPdf] = useState<PDFDocumentProxy | null>(null);
+  const [total, setTotal] = useState(0);
+  const [page, setPage] = useState(1);
+  const [mode, setMode] = useState<ViewMode>("flipbook");
+  const [zoom, setZoom] = useState(1);
+  const [fullscreen, setFullscreen] = useState(false);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
+  const [retry, setRetry] = useState(0);
+  const [size, setSize] = useState({ width: 1, height: 1 });
+  const [revision, setRevision] = useState(0);
+  const [turn, setTurn] = useState<{ direction: Direction; from: number; to: number } | null>(null);
+
 
   useEffect(() => {
-    import("react-pageflip")
-      .then((mod) => {
-        setFlipComponent(() => mod.default || mod);
-      })
-      .catch((err) => console.error("Failed to load pageflip engine", err));
-  }, []);
-  const [pages, setPages] = useState<string[]>([]);
-  const [loading, setLoading] = useState<boolean>(true);
-  const [loadProgress, setLoadProgress] = useState<string>("Initializing document engine...");
-  const [error, setError] = useState<string | null>(null);
-  const [currentPage, setCurrentPage] = useState<number>(0);
-  
-  // Dynamic Aspect Ratio
-  const [pageRatio, setPageRatio] = useState<number>(0.707);
-  const [isLandscapeDoc, setIsLandscapeDoc] = useState<boolean>(false);
-  
-  const [bookDimensions, setBookDimensions] = useState<{ width: number; height: number }>({ width: 460, height: 650 });
-  const [isMobile, setIsMobile] = useState<boolean>(false);
-  const [isFullscreen, setIsFullscreen] = useState<boolean>(false);
-
-  // Zoom Controls state (Default 75%)
-  const [zoomLevel, setZoomLevel] = useState<number>(0.75);
-
-  // Auto-hide bottom controls state
-  const [isDockVisible, setIsDockVisible] = useState<boolean>(true);
-  const idleTimerRef = useRef<NodeJS.Timeout | null>(null);
-
-  const flipBookRef = useRef<any>(null);
-  const containerRef = useRef<HTMLDivElement>(null);
-
-  // Auto-hide activity tracker
-  const handleUserActivity = useCallback(() => {
-    setIsDockVisible(true);
-    if (idleTimerRef.current) clearTimeout(idleTimerRef.current);
-    idleTimerRef.current = setTimeout(() => {
-      setIsDockVisible(false);
-    }, 4000);
+    mountedRef.current = true;
+    return () => { mountedRef.current = false; };
   }, []);
 
   useEffect(() => {
-    handleUserActivity();
-    return () => {
-      if (idleTimerRef.current) clearTimeout(idleTimerRef.current);
-    };
-  }, [handleUserActivity]);
+    let active = true;
+    let task: { promise: Promise<PDFDocumentProxy>; destroy: () => Promise<void> } | undefined;
+    setLoading(true);
+    setError("");
+    setPage(1);
+    setZoom(1);
+    setPdf(null);
+    setTotal(0);
+    generationRef.current += 1;
+    cacheRef.current.clear();
+    pendingRef.current.clear();
+    metaRef.current.clear();
+    setRevision(v => v + 1);
 
-  // Resize listener adapting dynamically to A4 portrait, landscape, or custom size
-  useEffect(() => {
-    const updateSize = () => {
-      if (!containerRef.current) return;
-      const containerW = containerRef.current.clientWidth;
-      const containerH = containerRef.current.clientHeight || window.innerHeight - 140;
-      const mobile = containerW < 820;
-      setIsMobile(mobile);
-
-      const ratio = pageRatio || 0.707;
-      const isLandscape = ratio > 1.15;
-      setIsLandscapeDoc(isLandscape);
-
-      if (mobile || isLandscape) {
-        // Single page mode (Mobile or Landscape presentations)
-        const maxW = Math.min(containerW - 32, isLandscape ? 850 : 480);
-        const calcH = Math.round(maxW / ratio);
-        const finalH = Math.min(calcH, containerH - 90);
-        const finalW = Math.round(finalH * ratio);
-        setBookDimensions({ width: finalW, height: finalH });
-      } else {
-        // Dual Spread Mode (Standard A4 Portrait book spread)
-        const availableHeight = containerH - 100;
-        const pageWByHeight = Math.round(availableHeight * ratio);
-        const maxAllowedPageW = Math.floor((containerW - 60) / 2);
-        
-        const finalPageW = Math.min(pageWByHeight, maxAllowedPageW, 580);
-        const finalPageH = Math.round(finalPageW / ratio);
-
-        setBookDimensions({ width: finalPageW, height: finalPageH });
-      }
-    };
-
-    updateSize();
-    window.addEventListener("resize", updateSize);
-    return () => window.removeEventListener("resize", updateSize);
-  }, [pageRatio]);
-
-  // Split and render each real page of the original PDF using PDF.js
-  useEffect(() => {
-    let isCancelled = false;
-
-    async function renderPdfPages() {
-      setLoading(true);
-      setError(null);
-      setPages([]);
-      setZoomLevel(0.75);
-      setLoadProgress("Loading PDF engine...");
-
-      const DEFAULT_FALLBACK_PDF = "/uploads/pdf/1787301408362_Devopstrio_Carousal.pdf";
-
+    const open = async () => {
       try {
-        const pdfjs = await loadLocalPdfJsEngine();
-        if (!pdfjs) throw new Error("Could not initialize PDF renderer");
-
-        // Check if the provided URL is a valid PDF
-        const cleanUrl = (pdfUrl || "").split("?")[0].split("#")[0].toLowerCase();
-        const isPdfFile = cleanUrl.endsWith(".pdf");
-
-        // If non-PDF (e.g. .pptx, .docx), use the corporate brochure PDF for 3D flipbook rendering
-        const sourcePdfUrl = isPdfFile ? pdfUrl : DEFAULT_FALLBACK_PDF;
-
-        // Pass external / Azure Blob URLs through server-side proxy to bypass CORS
-        const fetchTarget = sourcePdfUrl.startsWith("http") 
-          ? `/api/pdf-proxy?url=${encodeURIComponent(sourcePdfUrl)}` 
-          : sourcePdfUrl;
-
-        setLoadProgress("Fetching document stream...");
-        
-        let pdf: any = null;
-        try {
-          const loadingTask = pdfjs.getDocument(fetchTarget);
-          pdf = await loadingTask.promise;
-        } catch (firstErr) {
-          console.warn("Primary PDF load failed, loading corporate brochure stream:", firstErr);
-          if (fetchTarget !== DEFAULT_FALLBACK_PDF) {
-            const fallbackTask = pdfjs.getDocument(DEFAULT_FALLBACK_PDF);
-            pdf = await fallbackTask.promise;
-          } else {
-            throw firstErr;
-          }
-        }
-
-        const numPages = pdf.numPages;
-        const renderedPages: string[] = [];
-
-        // Detect aspect ratio from page 1
-        const firstPage = await pdf.getPage(1);
-        const initialViewport = firstPage.getViewport({ scale: 1.0 });
-        const detectedRatio = initialViewport.width / initialViewport.height;
-        if (!isCancelled) {
-          setPageRatio(detectedRatio);
-        }
-
-        // Render at optimized resolution (1.5x for sharp text with fast loading)
-        for (let pageNum = 1; pageNum <= numPages; pageNum++) {
-          if (isCancelled) return;
-
-          setLoadProgress(`Rendering page ${pageNum} of ${numPages}...`);
-          const page = await pdf.getPage(pageNum);
-
-          const viewport = page.getViewport({ scale: 1.5 });
-          const canvas = document.createElement("canvas");
-          const context = canvas.getContext("2d");
-
-          canvas.height = viewport.height;
-          canvas.width = viewport.width;
-
-          if (context) {
-            await page.render({ canvasContext: context, viewport }).promise;
-            renderedPages.push(canvas.toDataURL("image/png"));
-          }
-        }
-
-        if (!isCancelled) {
-          setPages(renderedPages);
-          setLoading(false);
-        }
-      } catch (err: any) {
-        console.error("PDF Flipbook render error:", err);
-        if (!isCancelled) {
-          setError(err.message || "Flipbook render notice. You can view or download the file directly.");
-          setLoading(false);
-          setViewMode("native");
-        }
-      }
-    }
-
-    renderPdfPages();
-
-    return () => {
-      isCancelled = true;
-    };
-  }, [pdfUrl]);
-
-  const flipNext = () => {
-    if (flipBookRef.current) {
-      try {
-        flipBookRef.current.pageFlip().flipNext();
+        const pdfjs = await import("pdfjs-dist");
+        // Worker must be copied from *this installed pdfjs-dist version* into public/workers.
+        pdfjs.GlobalWorkerOptions.workerSrc = "/workers/pdf.worker.min.mjs";
+        if (!active) return;
+        task = pdfjs.getDocument({ url: pdfUrl, rangeChunkSize: 262144 });
+        const document = await task.promise;
+        if (!active) return;
+        pdfRef.current = document;
+        setPdf(document);
+        setTotal(document.numPages);
+        setLoading(false);
       } catch (e) {
-        console.warn(e);
+        if (!active) return;
+        console.error("Cannot load document preview", e);
+        setError("Unable to open this document. Check the preview URL and PDF.js worker.");
+        setLoading(false);
       }
-    }
-  };
+    };
+    void open();
+    return () => {
+      active = false;
+      if (timerRef.current) clearTimeout(timerRef.current);
+      turningRef.current = false;
+      pdfRef.current = null;
+      void task?.destroy().catch(() => undefined);
+    };
+  }, [pdfUrl, retry]);
 
-  const flipPrev = () => {
-    if (flipBookRef.current) {
-      try {
-        flipBookRef.current.pageFlip().flipPrev();
-      } catch (e) {
-        console.warn(e);
-      }
-    }
-  };
+  useEffect(() => {
+    const element = stageRef.current;
+    if (!element) return;
+    const observer = new ResizeObserver(([entry]) => {
+      if (!entry) return;
+      setSize({
+        width: Math.max(1, Math.floor(entry.contentRect.width)),
+        height: Math.max(1, Math.floor(entry.contentRect.height)),
+      });
+    });
+    observer.observe(element);
+    return () => observer.disconnect();
+  }, [mode]);
 
-  const handleFlip = useCallback((e: { data: number }) => {
-    setCurrentPage(e.data);
+  useEffect(() => {
+    const update = () => setFullscreen(document.fullscreenElement === rootRef.current);
+    document.addEventListener("fullscreenchange", update);
+    return () => document.removeEventListener("fullscreenchange", update);
   }, []);
 
-  const handleZoomIn = () => {
-    setZoomLevel((prev) => Math.min(prev + 0.25, 2.5));
-    handleUserActivity();
-  };
-
-  const handleZoomOut = () => {
-    setZoomLevel((prev) => Math.max(prev - 0.25, 0.5));
-    handleUserActivity();
-  };
-
-  const handleResetZoom = () => {
-    setZoomLevel(0.75);
-    handleUserActivity();
-  };
-
-  const toggleFullscreen = () => {
-    if (!document.fullscreenElement) {
-      document.documentElement.requestFullscreen().catch(() => {});
-      setIsFullscreen(true);
-    } else {
-      document.exitFullscreen().catch(() => {});
-      setIsFullscreen(false);
+  const single = size.width < 700;
+  // Physical brochure pagination: cover 1, interior 2–3, 4–5, ...,
+  // back cover N. For odd-sized documents, the penultimate page is
+  // displayed individually so the final page can be a single back cover.
+  const spreads = useMemo(() => {
+    if (!total) return [] as number[][];
+    if (single) return Array.from({ length: total }, (_, i) => [i + 1]);
+    const result: number[][] = [[1]];
+    for (let n = 2; n < total; n += 2) {
+      if (n + 1 < total) result.push([n, n + 1]);
+      else result.push([n]);
     }
-    handleUserActivity();
+    if (total > 1) result.push([total]);
+    return result;
+  }, [single, total]);
+  const spreadIndex = Math.max(0, spreads.findIndex(group => group.includes(page)));
+  const visible = spreads[spreadIndex] ?? [];
+  const nextGroup = spreads[spreadIndex + 1] ?? null;
+  const previousGroup = spreads[spreadIndex - 1] ?? null;
+  const canPrev = !!previousGroup;
+  const canNext = !!nextGroup;
+  const spreadForIndex = useCallback((index: number): number[] => spreads[index] ?? [], [spreads]);
+
+  // Request page metadata independently from images, preserving arbitrary page shapes.
+  const metadata = useCallback(async (n: number): Promise<Dimensions> => {
+    const cached = metaRef.current.get(n);
+    if (cached) return cached;
+    const document = pdfRef.current;
+    if (!document) return { width: 595, height: 842 };
+    const p = await document.getPage(n);
+    const viewport = p.getViewport({ scale: 1 });
+    const result = { width: viewport.width, height: viewport.height };
+    metaRef.current.set(n, result);
+    if (mountedRef.current) setRevision(x => x + 1);
+    return result;
+  }, []);
+
+  const dims = (n: number): Dimensions => {
+    if (n > total) return metaRef.current.get(Math.max(1, n - 1)) ?? { width: 595, height: 842 };
+    return metaRef.current.get(n) ?? { width: 595, height: 842 };
   };
 
-  if (error && viewMode !== "native") {
-    const isPptDoc = pdfUrl.includes(".ppt") || pdfUrl.includes(".pps");
-    const isWordDoc = pdfUrl.includes(".doc");
+  // Scale both pages uniformly to fit the viewport. Non-A4 pages remain undistorted.
+  const pageNumbers = visible.filter(n => n <= total);
+  const documentDims = pageNumbers.map(dims);
+  const baseSum = documentDims.reduce((sum, p) => sum + p.width, 0) || 595;
+  const baseHeight = Math.max(1, ...documentDims.map(p => p.height));
+  const margin = 56; // Comfortable paper margins like the reference brochure
+  const fitScale = Math.min(
+    (size.width - margin * 2) / (single ? baseSum : Math.max(baseSum, 2 * Math.max(...documentDims.map(p => p.width), 595))),
+    (size.height - margin * 2) / baseHeight
+  );
+  const scale = Math.max(0.05, fitScale) * zoom;
 
-    return (
-      <div className="flex flex-col items-center justify-center p-8 text-center gap-5 bg-zinc-950/95 rounded-3xl border border-zinc-800 my-auto max-w-lg mx-auto shadow-2xl">
-        <div className="p-4 rounded-2xl bg-rose-500/10 text-rose-400 border border-rose-500/20">
-          <AlertCircle size={36} />
-        </div>
-        <div>
-          <h4 className="text-xl font-bold text-white font-sans">
-            {isPptDoc ? "Presentation Deck" : isWordDoc ? "Document File" : "Document Reader"}
-          </h4>
-          <p className="text-xs text-zinc-400 max-w-sm mt-2 font-sans leading-relaxed">
-            {isPptDoc 
-              ? "This presentation deck is formatted as a PPT/PPTX file. You can open or download it directly to present."
-              : isWordDoc
-              ? "This document is formatted as a Word document. Download to view the full file."
-              : "Direct flipbook rendering encountered a format notice. You can view or download the original file directly below."}
-          </p>
-        </div>
-        <div className="flex flex-col sm:flex-row items-center gap-3 w-full max-w-xs">
-          <a
-            href={pdfUrl}
-            download
-            className="w-full px-5 py-3 rounded-xl bg-rose-600 hover:bg-rose-500 text-white text-xs font-bold font-sans transition-colors flex items-center justify-center gap-2 shadow-lg cursor-pointer"
-          >
-            <Download size={15} /> Download File
-          </a>
-          <button
-            onClick={() => { setError(null); setViewMode("native"); }}
-            className="w-full px-5 py-3 rounded-xl bg-zinc-800 hover:bg-zinc-700 text-zinc-200 text-xs font-semibold font-sans transition-colors flex items-center justify-center gap-2 border border-zinc-700 cursor-pointer"
-          >
-            <ExternalLink size={15} /> Native View
-          </button>
-        </div>
-      </div>
-    );
-  }
-
-  // Display page numbers
-  const getPageIndicator = () => {
-    if (pages.length === 0) return "0 / 0";
-    if (isMobile || isLandscapeDoc || currentPage === 0 || currentPage === pages.length - 1) {
-      return `${currentPage + 1} / ${pages.length}`;
+  const loadPage = useCallback(async (n: number, targetScale: number) => {
+    const pdfDoc = pdfRef.current;
+    if (!pdfDoc || n < 1 || n > pdfDoc.numPages) return;
+    const existing = cacheRef.current.get(n);
+    // Avoid repeating work unless new zoom/display size needs materially more detail.
+    if (existing && existing.resolution >= Math.min(targetScale * Math.min(window.devicePixelRatio || 1, 2), 2.5) * 0.85) {
+      cacheRef.current.delete(n);
+      cacheRef.current.set(n, existing);
+      return;
     }
-    const rightPage = Math.min(currentPage + 2, pages.length);
-    return `${currentPage + 1} - ${rightPage} / ${pages.length}`;
-  };
+    const pending = pendingRef.current.get(n);
+    if (pending) return pending;
 
-  const [isCopied, setIsCopied] = useState<boolean>(false);
+    const generation = generationRef.current;
+    const task = (async () => {
+      const pdfPage = await pdfDoc.getPage(n);
+      const raw = pdfPage.getViewport({ scale: 1 });
+      metaRef.current.set(n, { width: raw.width, height: raw.height });
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      // Render near display resolution, bounded for large files / mobile memory.
+      let resolution = Math.max(0.3, targetScale * dpr);
+      resolution = Math.min(resolution, MAX_RENDER_EDGE / Math.max(raw.width, raw.height));
+      resolution = Math.min(resolution, Math.sqrt(renderPixelBudget() / (raw.width * raw.height)));
+      const viewport = pdfPage.getViewport({ scale: resolution });
+      const canvas = document.createElement("canvas");
+      canvas.width = Math.max(1, Math.round(viewport.width));
+      canvas.height = Math.max(1, Math.round(viewport.height));
+      const ctx = canvas.getContext("2d", { alpha: false });
+      if (!ctx) throw new Error("Unable to create canvas");
+      await pdfPage.render({ canvasContext: ctx, viewport }).promise;
+      if (pdfRef.current !== pdfDoc || generationRef.current !== generation) return;
+      cacheRef.current.set(n, { canvas, width: raw.width, height: raw.height, resolution });
+      // Account for RGBA canvas storage, not just number of pages.
+      const cacheBytes = () => Array.from(cacheRef.current.values()).reduce(
+        (sum, item) => sum + item.canvas.width * item.canvas.height * 4, 0
+      );
+      while (cacheRef.current.size > 1 &&
+        (cacheRef.current.size > MAX_CACHED_PAGES || cacheBytes() > MAX_CACHE_BYTES)) {
+        const oldest = cacheRef.current.keys().next().value;
+        if (oldest === undefined) break;
+        cacheRef.current.delete(oldest);
+      }
+      if (mountedRef.current) setRevision(x => x + 1);
+    })();
+    pendingRef.current.set(n, task);
+    try { await task; } finally { pendingRef.current.delete(n); }
+  }, []);
 
-  const DEFAULT_BROCHURE_PDF = "/uploads/pdf/1787301408362_Devopstrio_Carousal.pdf";
-  const isCleanPdf = (pdfUrl || "").split("?")[0].split("#")[0].toLowerCase().endsWith(".pdf");
-  const displayPdfUrl = isCleanPdf ? pdfUrl : DEFAULT_BROCHURE_PDF;
+  // First paint only the visible spread, then quietly prepare two neighboring spreads.
+  useEffect(() => {
+    if (!pdf || mode !== "flipbook" || total < 1) return;
+    let cancelled = false;
+    const near = Array.from(new Set([
+      ...spreadForIndex(spreadIndex),
+      ...spreadForIndex(spreadIndex + 1),
+      ...spreadForIndex(spreadIndex + 2),
+      ...spreadForIndex(spreadIndex - 1),
+    ])).filter(n => n >= 1 && n <= total);
+    const run = async () => {
+      const first = spreadForIndex(spreadIndex).filter(n => n <= total);
+      await Promise.all(first.map(n => metadata(n)));
+      if (cancelled) return;
+      await Promise.all(first.map(n => loadPage(n, scale)));
+      if (cancelled) return;
+      // Neighboring pages render concurrently (with controlled concurrency) so
+      // page turns usually reuse their cached canvas rather than showing spinners.
+      const candidates = near.filter(n => !first.includes(n));
+      for (let index = 0; index < candidates.length && !cancelled; index += 2) {
+        await Promise.all(candidates.slice(index, index + 2).map(async n => {
+          await metadata(n);
+          if (!cancelled) await loadPage(n, scale);
+        }));
+      }
+    };
+    void run().catch(e => console.warn("PDF page prefetch error", e));
+    return () => { cancelled = true; };
+    // revision reflects cache updates, not a reason to restart prefetch.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [pdf, mode, spreadIndex, total, single, Math.round(scale * 10), metadata, loadPage, spreadForIndex]);
 
-  const handleShare = () => {
-    if (typeof window !== "undefined") {
-      navigator.clipboard.writeText(window.location.href);
-      setIsCopied(true);
-      setTimeout(() => setIsCopied(false), 2500);
+  const navigate = useCallback(async (direction: Direction) => {
+    if (turningRef.current || !pdfRef.current || total < 1) return;
+    const destinationIndex = spreadIndex + (direction === "next" ? 1 : -1);
+    const needed = spreadForIndex(destinationIndex);
+    if (!needed.length) return;
+    turningRef.current = true;
+    try {
+      await Promise.all(needed.map(n => metadata(n)));
+      await Promise.all(needed.map(n => loadPage(n, scale)));
+      if (!mountedRef.current) return;
+      setTurn({ direction, from: spreadIndex, to: destinationIndex });
+
+    } catch (e) {
+      console.warn("Unable to prepare next spread", e);
+      turningRef.current = false;
     }
+  }, [spreadIndex, total, scale, spreadForIndex, loadPage, metadata]);
+
+  useEffect(() => {
+    if (mode !== "flipbook") return;
+    const handle = (event: KeyboardEvent) => {
+      if (event.target instanceof HTMLElement && /INPUT|TEXTAREA|SELECT/.test(event.target.tagName)) return;
+      if (event.key === "ArrowRight") { event.preventDefault(); void navigate("next"); }
+      if (event.key === "ArrowLeft") { event.preventDefault(); void navigate("prev"); }
+    };
+    window.addEventListener("keydown", handle);
+    return () => window.removeEventListener("keydown", handle);
+  }, [mode, navigate]);
+
+  const toggleFullscreen = async () => {
+    try {
+      if (document.fullscreenElement) await document.exitFullscreen();
+      else await rootRef.current?.requestFullscreen();
+    } catch (e) { console.warn("Fullscreen not supported", e); }
   };
+
+  const shown = (n: number) => cacheRef.current.get(n);
+  const fromSpread = turn ? spreadForIndex(turn.from) : visible;
+  const toSpread = turn ? spreadForIndex(turn.to) : visible;
+  const isTurnNext = turn?.direction === "next";
+  const activePage = turn ? (isTurnNext ? fromSpread[fromSpread.length - 1] : fromSpread[0]) : undefined;
+  // The turning sheet reverse face is the destination-facing page.
+  const backPage = turn ? (isTurnNext ? toSpread[0] : toSpread[toSpread.length - 1]) : undefined;
+  const baseSpread = turn ? toSpread : visible;
+  // Keep the stationary page from the source spread visible under the curl.
+  const stationarySlots: (number | undefined)[] = !turn ? [] : isTurnNext
+    ? [fromSpread.length > 1 ? fromSpread[0] : undefined, toSpread.length > 1 ? toSpread[toSpread.length - 1] : undefined]
+    : [toSpread.length > 1 ? toSpread[0] : undefined, fromSpread.length > 1 ? fromSpread[fromSpread.length - 1] : undefined];
+  const layoutPages = turn ? Array.from(new Set([...fromSpread, ...toSpread])) : visible;
+  const layoutDims = layoutPages.map(dims);
+  const layoutHeight = Math.max(1, ...layoutDims.map(p => p.height));
+  const slotWidth = Math.max(1, ...layoutDims.map(p => p.width)) * scale;
+  const bookSlots = single ? 1 : 2;
+  const displayBookWidth = bookSlots * slotWidth;
+  const displayBookHeight = layoutHeight * scale;
+  const turnWidth = slotWidth;
 
   return (
-    <div 
-      ref={containerRef} 
-      onMouseMove={handleUserActivity}
-      onTouchStart={handleUserActivity}
-      onClick={handleUserActivity}
-      className="w-full h-full flex flex-col items-center justify-between select-none relative font-sans p-3 sm:p-5 overflow-hidden [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
-    >
-      
-      {/* ── TOP HEADER (Clean Title Only on Left + View Mode & Zoom & Utility Controls on Right) ── */}
-      <div className="w-full max-w-6xl flex items-center justify-between z-20 pt-1 pb-2 px-1">
-        {/* Left Side: Clean Simple Title Only */}
-        <div className="flex items-center min-w-0 pr-4">
-          <h2 className="text-sm sm:text-base md:text-lg font-semibold text-white tracking-tight truncate max-w-xs sm:max-w-md md:max-w-xl font-sans">
-            {pdfTitle}
-          </h2>
+    <div ref={rootRef} className="flex h-full min-h-0 w-full flex-col overflow-hidden bg-[#DDDDDD] font-sans text-white">
+      <header className="z-30 flex min-h-14 shrink-0 flex-wrap items-center justify-between gap-2 border-b border-white/10 bg-[#090909] px-3 py-2 sm:px-6">
+        <div className="min-w-0 flex-1">
+          <h2 className="truncate text-sm font-semibold sm:text-base" title={pdfTitle}>{pdfTitle}</h2>
+          <p className="hidden truncate text-[11px] text-zinc-500 sm:block">{pdfBrand} · {pdfEdition}</p>
         </div>
-
-        {/* Top Right: View Mode, Zoom & Navigation Controls */}
-        <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
-          {/* View Mode Toggle */}
-          <div className="flex items-center bg-zinc-900/90 rounded-xl p-1 border border-zinc-800 shadow-lg">
-            <button
-              onClick={() => setViewMode("flipbook")}
-              className={`px-2.5 py-1 rounded-lg text-xs font-bold transition-colors cursor-pointer ${
-                viewMode === "flipbook" ? "bg-rose-600 text-white" : "text-zinc-400 hover:text-white"
-              }`}
-              title="3D Page Flip View"
-            >
-              📖 Flipbook
-            </button>
-            <button
-              onClick={() => setViewMode("native")}
-              className={`px-2.5 py-1 rounded-lg text-xs font-bold transition-colors cursor-pointer ${
-                viewMode === "native" ? "bg-rose-600 text-white" : "text-zinc-400 hover:text-white"
-              }`}
-              title="Scroll / Native PDF View"
-            >
-              📄 PDF View
-            </button>
+        <div className="flex shrink-0 items-center gap-1.5">
+          <div className="flex rounded-lg border border-white/10 bg-zinc-900 p-1" aria-label="Document view mode">
+            <button type="button" onClick={() => setMode("flipbook")} aria-pressed={mode === "flipbook"} className={`rounded-md px-2.5 py-1.5 text-xs font-medium ${mode === "flipbook" ? "bg-rose-600" : "text-zinc-400 hover:text-white"}`}><BookOpen className="mr-1 inline h-3.5 w-3.5" />Flipbook</button>
+            <button type="button" onClick={() => setMode("pdf")} aria-pressed={mode === "pdf"} className={`rounded-md px-2.5 py-1.5 text-xs font-medium ${mode === "pdf" ? "bg-rose-600" : "text-zinc-400 hover:text-white"}`}><FileText className="mr-1 inline h-3.5 w-3.5" />PDF View</button>
           </div>
-
-          {/* Precision Zoom Controls for Flipbook */}
-          {viewMode === "flipbook" && (
-            <div className="flex items-center bg-zinc-900/90 rounded-xl p-1 border border-zinc-800 shadow-lg">
-              <button
-                onClick={handleZoomOut}
-                disabled={zoomLevel <= 0.5}
-                className="p-1.5 rounded-lg text-zinc-300 hover:text-white hover:bg-zinc-800 disabled:opacity-30 disabled:cursor-not-allowed transition-colors cursor-pointer"
-                title="Zoom Out (-)"
-              >
-                <ZoomOut size={15} />
-              </button>
-              <button
-                onClick={handleResetZoom}
-                className="px-2 text-[11px] font-bold text-zinc-300 hover:text-rose-400 transition-colors cursor-pointer"
-                title="Reset Zoom to 75%"
-              >
-                {Math.round(zoomLevel * 100)}%
-              </button>
-              <button
-                onClick={handleZoomIn}
-                disabled={zoomLevel >= 2.5}
-                className="p-1.5 rounded-lg text-zinc-300 hover:text-white hover:bg-zinc-800 disabled:opacity-30 disabled:cursor-not-allowed transition-colors cursor-pointer"
-                title="Zoom In (+)"
-              >
-                <ZoomIn size={15} />
-              </button>
+          {mode === "flipbook" && (
+            <div className="hidden items-center rounded-lg border border-white/10 bg-zinc-900 sm:flex">
+              <button type="button" aria-label="Zoom out" onClick={() => setZoom(z => Math.max(0.5, z - 0.25))} className="p-2"><ZoomOut size={16} /></button>
+              <span className="min-w-12 text-center text-xs">{Math.round(zoom * 100)}%</span>
+              <button type="button" aria-label="Zoom in" onClick={() => setZoom(z => Math.min(2, z + 0.25))} className="p-2"><ZoomIn size={16} /></button>
             </div>
           )}
-
-          {pdfUrl && (
-            <a
-              href={pdfUrl}
-              download={`${pdfTitle.replace(/\s+/g, "_")}.pdf`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-2.5 rounded-xl bg-zinc-900/90 hover:bg-zinc-800 text-zinc-300 hover:text-white transition-colors cursor-pointer border border-zinc-800 hidden sm:flex"
-              title="Download File"
-            >
-              <Download size={15} />
-            </a>
-          )}
-
-          {/* Share / Copy Link Button */}
-          <button
-            onClick={handleShare}
-            className="p-2.5 rounded-xl bg-zinc-900/90 hover:bg-zinc-800 text-zinc-300 hover:text-white transition-colors cursor-pointer border border-zinc-800 hidden sm:flex relative"
-            title="Share Link"
-          >
-            {isCopied ? <Check size={15} className="text-emerald-400" /> : <Share2 size={15} />}
-            {isCopied && (
-              <span className="absolute -bottom-8 left-1/2 -translate-x-1/2 px-2 py-0.5 rounded bg-emerald-500 text-black text-[10px] font-bold whitespace-nowrap shadow-lg">
-                Link Copied!
-              </span>
-            )}
-          </button>
-
-          {/* Open PDF in New Tab */}
-          <a
-            href={displayPdfUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="p-2.5 rounded-xl bg-zinc-900/90 hover:bg-zinc-800 text-zinc-300 hover:text-white transition-colors cursor-pointer border border-zinc-800 hidden sm:flex"
-            title="Open PDF in New Tab"
-          >
-            <ExternalLink size={15} />
-          </a>
-
-          <button
-            onClick={toggleFullscreen}
-            className="hidden sm:flex p-2.5 rounded-xl bg-zinc-900/90 hover:bg-zinc-800 text-zinc-300 hover:text-white transition-colors cursor-pointer border border-zinc-800"
-            title="Toggle Fullscreen"
-          >
-            {isFullscreen ? <Minimize2 size={15} /> : <Maximize2 size={15} />}
-          </button>
-
-          {onClose && (
-            <button
-              onClick={onClose}
-              className="p-2.5 rounded-xl bg-rose-600 hover:bg-rose-500 text-white transition-colors cursor-pointer shadow-lg ml-1"
-              title="Close (Esc)"
-            >
-              <X size={17} />
-            </button>
-          )}
+          <a href={originalFileUrl || pdfUrl} download aria-label="Download original document" className="rounded-lg bg-zinc-900 p-2.5"><Download size={16}/></a>
+          <a href={pdfUrl} target="_blank" rel="noopener noreferrer" aria-label="Open preview in new tab" className="hidden rounded-lg bg-zinc-900 p-2.5 sm:inline-flex"><ExternalLink size={16}/></a>
+          <button type="button" onClick={toggleFullscreen} aria-label="Toggle fullscreen" className="rounded-lg bg-zinc-900 p-2.5">{fullscreen ? <Minimize2 size={16}/> : <Maximize2 size={16}/>}</button>
+          {onClose && <button type="button" onClick={onClose} aria-label="Close document" className="rounded-lg bg-rose-600 p-2.5"><X size={16}/></button>}
         </div>
-      </div>
+      </header>
 
-      {/* ── MAIN LARGE CENTERED BROCHURE CANVAS (Zero Mid Darkness & Flat Paper Spread) ── */}
-      <div className="w-full flex-1 flex items-center justify-center relative overflow-auto py-2 my-auto [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
-        
-        {/* Soft Red / Orange Atmospheric Background Glow */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[550px] bg-[radial-gradient(circle,rgba(225,29,72,0.14),rgba(234,88,12,0.06),transparent_70%)] blur-3xl pointer-events-none z-0" />
-
-        {/* Native PDF View */}
-        {viewMode === "native" && (
-          <div className="w-full h-full max-w-5xl rounded-2xl overflow-hidden border border-zinc-800 bg-zinc-950 shadow-2xl relative z-10">
-            <iframe
-              src={`${displayPdfUrl}#toolbar=1&navpanes=0`}
-              className="w-full h-full border-0 bg-white"
-              title={pdfTitle}
-            />
+      <main className="relative min-h-0 flex-1 overflow-hidden">
+        {mode === "pdf" ? (
+          <iframe title={`PDF: ${pdfTitle}`} src={`${pdfUrl}${pdfUrl.includes("#") ? "&" : "#"}view=FitH`} className="h-full w-full border-0 bg-white" />
+        ) : (
+          <div ref={stageRef} className="relative h-full w-full overflow-auto bg-[#DDDDDD]">
+            {loading ? (
+              <div className="flex h-full items-center justify-center gap-2 text-sm text-zinc-700"><Loader2 className="h-5 w-5 animate-spin"/>Opening document…</div>
+            ) : error ? (
+              <div role="alert" className="flex h-full flex-col items-center justify-center gap-4"><span>{error}</span><button className="rounded bg-rose-600 px-4 py-2" onClick={() => setRetry(n => n + 1)}><RotateCcw className="mr-2 inline h-4 w-4"/>Retry</button></div>
+            ) : pdf ? (
+              <div className="flex min-h-full min-w-full items-center justify-center px-2 py-3">
+                <div className="relative flex shrink-0 shadow-[0_12px_25px_rgba(0,0,0,.28)]" style={{ width: displayBookWidth, height: displayBookHeight, perspective: "1800px" }}>
+                  {/* The cover sits on the right half, the back cover on the left. */}
+                  {Array.from({ length: bookSlots }, (_, slot) => {
+                    const isCover = baseSpread.length === 1;
+                    const side = single ? 0 : isCover ? (baseSpread[0] === 1 ? 1 : 0) : slot;
+                    const number = turn && !single ? stationarySlots[slot] : single ? baseSpread[0] : isCover ? (slot === side ? baseSpread[0] : undefined) : baseSpread[slot];
+                    return <div key={`slot-${slot}-${number ?? "blank"}`} className="relative h-full shrink-0" style={{ width: slotWidth, background: number ? "white" : "transparent", boxShadow: number ? "0 8px 16px rgba(0,0,0,.12)" : "none" }}>
+                      {number && <PageFace asset={shown(number)} label={`Page ${number}`} onClick={() => {
+                        if (single || isCover) void navigate(canNext ? "next" : "prev");
+                        else void navigate(slot === 0 ? "prev" : "next");
+                      }} />}
+                    </div>;
+                  })}
+                  {turn && activePage && backPage && shown(activePage) && shown(backPage) && (
+                    <div className="pointer-events-none absolute inset-0 z-20" style={{ left: !single && isTurnNext ? slotWidth : 0, width: slotWidth, height: "100%" }}>
+                      <CurvedPageTurn
+                        key={`${turn.from}-${turn.to}`}
+                        direction={turn.direction}
+                        front={shown(activePage)!}
+                        back={shown(backPage)!}
+                        width={slotWidth}
+                        height={displayBookHeight}
+                        onFinished={() => {
+                          setPage(toSpread[0]);
+                          setTurn(null);
+                          turningRef.current = false;
+                        }}
+                      />
+                    </div>
+                  )}
+                </div>
+              </div>
+            ) : null}
           </div>
         )}
-
-        {/* Loading Overlay */}
-        {viewMode === "flipbook" && loading && (
-          <div className="absolute inset-0 z-30 flex flex-col items-center justify-center gap-3 bg-black/75 backdrop-blur-md rounded-3xl">
-            <Loader2 size={44} className="text-rose-500 animate-spin" />
-            <p className="text-xs font-bold uppercase tracking-widest text-zinc-200 font-sans">
-              {loadProgress}
-            </p>
-          </div>
-        )}
-
-        {/* ── 3D REACT-PAGEFLIP SPREAD (Zero Mid Darkness, 75% Zoom Scale) ── */}
-        {viewMode === "flipbook" && pages.length > 0 && FlipComponent && (
-          <div 
-            className="relative z-10 [perspective:2000px] transition-transform duration-200 ease-out origin-center"
-            style={{ transform: `scale(${zoomLevel})` }}
-          >
-            <FlipComponent
-              width={bookDimensions.width}
-              height={bookDimensions.height}
-              size="fixed"
-              minWidth={280}
-              maxWidth={880}
-              minHeight={380}
-              maxHeight={950}
-              maxShadowOpacity={0}
-              showCover={true}
-              mobileScrollSupport={true}
-              onFlip={handleFlip}
-              ref={flipBookRef}
-              className="flip-book shadow-[0_20px_60px_rgba(0,0,0,0.7)] mx-auto"
-              style={{ margin: "0 auto" }}
-              startPage={0}
-              drawShadow={false}
-              flippingTime={600}
-              usePortrait={isMobile || isLandscapeDoc}
-              startZIndex={0}
-              autoSize={true}
-              clickEventForward={true}
-              useMouseEvents={true}
-              swipeDistance={25}
-              showPageCorners={true}
-              disableFlipByClick={false}
-            >
-              {pages.map((pageDataUrl, index) => (
-                <FlipPage key={`pdf_page_${index + 1}`} isCover={index === 0 || index === pages.length - 1}>
-                  <div className="w-full h-full relative flex items-center justify-center bg-white overflow-hidden">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src={pageDataUrl}
-                      alt={`${pdfTitle} - Page ${index + 1}`}
-                      className="w-full h-full object-contain pointer-events-none select-none"
-                      draggable={false}
-                    loading="lazy" />
-                  </div>
-                </FlipPage>
-              ))}
-            </FlipComponent>
-          </div>
-        )}
-      </div>
-
-      {/* ── AUTO-HIDE BOTTOM DOCK CONTROLLER (Flipbook mode only) ── */}
-      {viewMode === "flipbook" && pages.length > 0 && (
-        <div 
-          className={`w-full max-w-xl flex items-center justify-between px-6 py-2.5 bg-[#0B0C10]/95 backdrop-blur-xl rounded-2xl shadow-2xl z-30 border border-zinc-800 transition-all duration-300 ${
-            isDockVisible 
-              ? "opacity-100 translate-y-0" 
-              : "opacity-0 translate-y-6 pointer-events-none"
-          }`}
-          onMouseEnter={() => setIsDockVisible(true)}
-        >
-          {/* Left: Previous Page Button */}
-          <button
-            disabled={currentPage === 0}
-            onClick={flipPrev}
-            className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl text-xs font-bold text-zinc-300 hover:text-white disabled:opacity-30 disabled:cursor-not-allowed bg-zinc-900 hover:bg-zinc-800 transition-colors cursor-pointer font-sans"
-          >
-            <ChevronLeft size={16} /> Prev
-          </button>
-
-          {/* Center: Live Page Number Display */}
-          <div className="flex items-center gap-2 px-4 py-1.5 rounded-xl bg-zinc-900/80 border border-zinc-800 text-xs font-bold text-white font-sans">
-            <span className="text-rose-500">Page</span>
-            <span>{getPageIndicator()}</span>
-          </div>
-
-          {/* Right: Next Page Button */}
-          <button
-            disabled={currentPage >= pages.length - 1}
-            onClick={flipNext}
-            className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl text-xs font-bold text-zinc-300 hover:text-white disabled:opacity-30 disabled:cursor-not-allowed bg-zinc-900 hover:bg-zinc-800 transition-colors cursor-pointer font-sans"
-          >
-            Next <ChevronRight size={16} />
-          </button>
-
-          {/* Secondary Action: Download Button */}
-          {pdfUrl && (
-            <a
-              href={pdfUrl}
-              download={`${pdfTitle.replace(/\s+/g, "_")}.pdf`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold text-rose-400 hover:text-white bg-rose-500/10 hover:bg-rose-600 transition-colors cursor-pointer font-sans"
-            >
-              <Download size={14} /> Download
-            </a>
-          )}
-        </div>
-      )}
-
-      {/* Dock Reveal Trigger Pill (appears when dock is hidden) */}
-      {!isDockVisible && pages.length > 0 && (
-        <button
-          onClick={() => setIsDockVisible(true)}
-          className="fixed bottom-3 z-30 px-3 py-1 rounded-full bg-zinc-900/80 hover:bg-zinc-800 border border-zinc-700 text-[11px] font-bold text-zinc-400 hover:text-white flex items-center gap-1 shadow-2xl transition-all cursor-pointer animate-in fade-in"
-        >
-          <ChevronUp size={13} /> Controls
-        </button>
-      )}
+      </main>
 
     </div>
   );

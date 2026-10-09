@@ -231,15 +231,6 @@ export default function AnnouncementsAdminPage() {
     return parseFloat((bytes / Math.pow(k, i)).toFixed(1)) + " " + sizes[i];
   };
 
-  if (isLoading) {
-    return (
-      <div className="p-20 text-white min-h-screen bg-[#030303] flex flex-col items-center justify-center gap-4 font-sans">
-        <div className="w-12 h-12 border-3 border-rose-500 border-t-transparent rounded-full animate-spin" />
-        <p className="text-zinc-300 font-sans text-sm font-semibold tracking-wider">Loading Announcements Admin...</p>
-      </div>
-    );
-  }
-
   const renderPreview = () => {
     const isActive = formData.status === "active";
     const p = formData as Announcement;
@@ -293,8 +284,7 @@ export default function AnnouncementsAdminPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#030303] text-white pt-28 pb-20 px-6 sm:px-10 lg:px-16 font-sans selection:bg-rose-500 selection:text-white">
-      
+    <div className="w-full space-y-8 animate-in fade-in duration-200">
       {/* ── INTERACTIVE BOOK READER MODAL ── */}
       <BookReaderModal
         isOpen={isPreviewOpen}

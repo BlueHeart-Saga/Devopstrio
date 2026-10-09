@@ -104,6 +104,79 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      // SEO & Legacy URL Permanent Redirects
+      {
+        source: "/industry-knowledge",
+        destination: "/industries",
+        permanent: true,
+      },
+      {
+        source: "/knowledge",
+        destination: "/insights",
+        permanent: true,
+      },
+      {
+        source: "/knowledge-base",
+        destination: "/insights",
+        permanent: true,
+      },
+      {
+        source: "/industry",
+        destination: "/industries",
+        permanent: true,
+      },
+      {
+        source: "/blog",
+        destination: "/insights/blogs",
+        permanent: true,
+      },
+      {
+        source: "/blogs",
+        destination: "/insights/blogs",
+        permanent: true,
+      },
+      {
+        source: "/case-study",
+        destination: "/insights/case-studies",
+        permanent: true,
+      },
+      {
+        source: "/case-studies",
+        destination: "/insights/case-studies",
+        permanent: true,
+      },
+      {
+        source: "/whitepaper",
+        destination: "/insights/white-paper",
+        permanent: true,
+      },
+      {
+        source: "/whitepapers",
+        destination: "/insights/white-paper",
+        permanent: true,
+      },
+      {
+        source: "/landing-zone",
+        destination: "/ecosystem/landing-zone",
+        permanent: true,
+      },
+      {
+        source: "/accelerators",
+        destination: "/ecosystem/accelerators",
+        permanent: true,
+      },
+      {
+        source: "/excellence",
+        destination: "/ecosystem/excellence",
+        permanent: true,
+      },
+      {
+        source: "/saas-platforms",
+        destination: "/ecosystem/platforms-solutions/saas-platforms",
+        permanent: true,
+      },
+
+      // SaaS Platforms Legacy Shortcuts
       {
         source: "/ecosystem/platforms-solutions/landingpage-homela",
         destination: "/ecosystem/platforms-solutions/saas-platforms/homela",

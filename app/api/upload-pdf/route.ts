@@ -2,11 +2,14 @@ import { NextRequest, NextResponse } from "next/server";
 import { writeFile, mkdir } from "fs/promises";
 import path from "path";
 import { connectToDatabase } from "@/lib/mongodb";
+import { requireAdmin, AdminAuthError } from "@/lib/admin/require-admin";
+import { recordAuditLog } from "@/lib/admin/audit-log";
 
 export const dynamic = "force-dynamic";
 
 export async function POST(req: NextRequest) {
   try {
+    const admin = await requireAdmin("uploads", req);
     const formData = await req.formData();
     const file = (formData.get("file") || formData.get("pdf")) as File;
 
@@ -37,11 +40,21 @@ export async function POST(req: NextRequest) {
         url: publicUrl,
         size: file.size,
         type: file.type || "application/pdf",
+        uploaded_by: admin.id,
         created_at: new Date()
       });
     } catch (dbErr) {
       console.warn("MongoDB recording skipped (continuing with local file):", dbErr);
     }
+
+    await recordAuditLog({
+      actorId: admin.id,
+      username: admin.username,
+      action: "pdf.upload",
+      resource: "uploads",
+      result: "success",
+      details: { fileName: file.name, size: file.size },
+    });
 
     return NextResponse.json({
       success: true,
@@ -50,6 +63,9 @@ export async function POST(req: NextRequest) {
       size: file.size
     });
   } catch (error: any) {
+    if (error instanceof AdminAuthError) {
+      return NextResponse.json({ error: error.message }, { status: error.status });
+    }
     console.error("PDF Upload error:", error);
     return NextResponse.json({ error: error?.message || "Failed to save PDF file" }, { status: 500 });
   }

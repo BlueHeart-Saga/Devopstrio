@@ -1,5 +1,7 @@
 import { NextResponse } from "next/server";
 import { connectToDatabase } from "@/lib/mongodb";
+import { requireAdmin, AdminAuthError } from "@/lib/admin/require-admin";
+import { recordAuditLog } from "@/lib/admin/audit-log";
 
 export const dynamic = "force-dynamic";
 
@@ -32,13 +34,14 @@ export async function GET() {
 
     return NextResponse.json(formatted);
   } catch (error) {
-    console.error("Failed to fetch culture albums from database:", error);
-    return NextResponse.json({ error: "Failed to fetch culture albums" }, { status: 500 });
+    console.warn("Failed to fetch culture albums from database:", error);
+    return NextResponse.json([]);
   }
 }
 
 export async function POST(req: Request) {
   try {
+    const admin = await requireAdmin("cultureAlbums", req);
     const body = await req.json();
     const { db } = await connectToDatabase();
 
@@ -64,11 +67,23 @@ export async function POST(req: Request) {
 
     const result = await db.collection(COLLECTION).insertOne(newItem);
 
+    await recordAuditLog({
+      actorId: admin.id,
+      username: admin.username,
+      action: "culture_album.create",
+      resource: "cultureAlbums",
+      resourceId: result.insertedId.toString(),
+      result: "success",
+    });
+
     return NextResponse.json(
       { id: result.insertedId.toString(), ...newItem },
       { status: 201 }
     );
-  } catch (error) {
+  } catch (error: any) {
+    if (error instanceof AdminAuthError) {
+      return NextResponse.json({ error: error.message }, { status: error.status });
+    }
     console.error("Failed to add culture album to database:", error);
     return NextResponse.json({ error: "Failed to add culture album" }, { status: 500 });
   }

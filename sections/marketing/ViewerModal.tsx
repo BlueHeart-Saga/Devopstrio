@@ -25,11 +25,10 @@ export function ViewerModal({ item, onClose }: { item: MarketingResourceItem; on
       role="dialog"
       aria-modal="true"
       aria-label={item.title}
-      className="mkt-fade fixed inset-0 z-50 flex items-center justify-center bg-black/95 p-2 backdrop-blur-md sm:p-4"
+      className="fixed inset-0 z-[100] h-[100dvh] w-screen overflow-hidden bg-[#080808] outline-none"
     >
-      <div className="relative flex h-full max-h-[96vh] w-full max-w-7xl flex-col overflow-hidden rounded-2xl border border-zinc-800 bg-[#070707] shadow-2xl">
-        {/* Close Button for Video Player only (BrochureFlipBook has its own toolbar close button) */}
-        {isVideoItem && (
+      {isVideoItem && item.fileUrl ? (
+        <div className="relative flex h-full w-full flex-col items-center justify-center gap-4 p-6 text-center">
           <button
             onClick={onClose}
             aria-label="Close preview (Esc)"
@@ -37,32 +36,27 @@ export function ViewerModal({ item, onClose }: { item: MarketingResourceItem; on
           >
             <X className="h-5 w-5" />
           </button>
-        )}
-
-        {/* Video Player or 3D Flipbook */}
-        {isVideoItem && item.fileUrl ? (
-          <div className="flex h-full w-full flex-col items-center justify-center gap-4 p-6 text-center">
-            <div className="flex items-center gap-2 rounded-full border border-rose-500/30 bg-rose-500/10 px-3.5 py-1 text-xs font-semibold text-rose-400">
-              <Video className="h-3.5 w-3.5" /> Video Preview
-            </div>
-            <h3 className="max-w-2xl text-xl font-bold text-white sm:text-2xl">{item.title}</h3>
-            {item.description && (
-              <p className="max-w-xl text-xs text-zinc-400">{item.description}</p>
-            )}
-            <div className="aspect-video w-full max-w-4xl overflow-hidden rounded-2xl border border-zinc-800 bg-black shadow-2xl">
-              <video src={fileUrl} controls autoPlay className="h-full w-full object-contain" />
-            </div>
+          <div className="flex items-center gap-2 rounded-full border border-rose-500/30 bg-rose-500/10 px-3.5 py-1 text-xs font-semibold text-rose-400">
+            <Video className="h-3.5 w-3.5" /> Video Preview
           </div>
-        ) : (
-          <BrochureFlipBook
-            pdfUrl={fileUrl}
-            pdfTitle={item.title}
-            pdfBrand="Devopstrio Global"
-            pdfEdition={item.category}
-            onClose={onClose}
-          />
-        )}
-      </div>
+          <h3 className="max-w-2xl text-xl font-bold text-white sm:text-2xl">{item.title}</h3>
+          {item.description && (
+            <p className="max-w-xl text-xs text-zinc-400">{item.description}</p>
+          )}
+          <div className="aspect-video w-full max-w-4xl overflow-hidden rounded-2xl border border-zinc-800 bg-black shadow-2xl">
+            <video src={fileUrl} controls autoPlay className="h-full w-full object-contain" />
+          </div>
+        </div>
+      ) : (
+        <BrochureFlipBook
+          key={fileUrl}
+          pdfUrl={fileUrl}
+          pdfTitle={item.title}
+          pdfBrand="Devopstrio Global"
+          pdfEdition={item.category}
+          onClose={onClose}
+        />
+      )}
     </div>
   );
 }

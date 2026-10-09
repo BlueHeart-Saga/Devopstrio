@@ -1,5 +1,7 @@
 import { NextResponse } from "next/server";
 import { connectToDatabase } from "@/lib/mongodb";
+import { requireAdmin, AdminAuthError } from "@/lib/admin/require-admin";
+import { recordAuditLog } from "@/lib/admin/audit-log";
 
 export const dynamic = "force-dynamic";
 
@@ -22,13 +24,14 @@ export async function GET() {
 
     return NextResponse.json(formatted);
   } catch (error) {
-    console.error("Failed to fetch hiring posters:", error);
-    return NextResponse.json({ error: "Failed to fetch hiring posters" }, { status: 500 });
+    console.warn("Failed to fetch hiring posters:", error);
+    return NextResponse.json([]);
   }
 }
 
 export async function POST(req: Request) {
   try {
+    const admin = await requireAdmin("hiringPosters", req);
     const body = await req.json();
     const { db } = await connectToDatabase();
 
@@ -46,11 +49,24 @@ export async function POST(req: Request) {
 
     const result = await db.collection("hiring_posters").insertOne(newPoster);
 
+    await recordAuditLog({
+      actorId: admin.id,
+      username: admin.username,
+      action: "hiring_poster.create",
+      resource: "hiringPosters",
+      resourceId: result.insertedId.toString(),
+      result: "success",
+      details: { role: newPoster.role },
+    });
+
     return NextResponse.json(
       { id: result.insertedId.toString(), ...newPoster },
       { status: 201 }
     );
-  } catch (error) {
+  } catch (error: any) {
+    if (error instanceof AdminAuthError) {
+      return NextResponse.json({ error: error.message }, { status: error.status });
+    }
     console.error("Failed to create hiring poster:", error);
     return NextResponse.json({ error: "Failed to create hiring poster" }, { status: 500 });
   }

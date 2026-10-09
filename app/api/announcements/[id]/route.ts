@@ -2,6 +2,8 @@ import { NextResponse } from "next/server";
 import { ObjectId } from "mongodb";
 import { connectToDatabase } from "@/lib/mongodb";
 import { BlobServiceClient } from "@azure/storage-blob";
+import { requireAdmin, AdminAuthError } from "@/lib/admin/require-admin";
+import { recordAuditLog } from "@/lib/admin/audit-log";
 
 export const dynamic = 'force-dynamic';
 
@@ -9,11 +11,9 @@ const COLLECTION = "announcements";
 const AZURE_CONNECTION_STRING = process.env.AZURE_STORAGE_CONNECTION_STRING || "";
 const AZURE_CONTAINER = process.env.AZURE_STORAGE_CONTAINER || "devopstrio";
 
-// Helper to clean up PDF blob from Azure Storage
 async function cleanupBlob(db: any, url: string) {
   if (!url || !url.startsWith("http")) return;
   try {
-    // Delete from images/documents metadata collection
     await db.collection("documents").deleteOne({ url });
     await db.collection("images").deleteOne({ url });
 
@@ -35,7 +35,6 @@ async function cleanupBlob(db: any, url: string) {
     }
 
     if (blobName) {
-      console.log(`Deleting unused announcement blob: ${blobName}`);
       const blobServiceClient = BlobServiceClient.fromConnectionString(AZURE_CONNECTION_STRING);
       const containerClient = blobServiceClient.getContainerClient(AZURE_CONTAINER);
       const blockBlobClient = containerClient.getBlockBlobClient(blobName);
@@ -46,7 +45,6 @@ async function cleanupBlob(db: any, url: string) {
   }
 }
 
-// Helper to parse query ID supporting both ObjectId and legacy numeric IDs
 function getQueryId(id: string): { query: Record<string, any>; parsedId: ObjectId | number | string } {
   if (ObjectId.isValid(id)) {
     const objId = new ObjectId(id);
@@ -63,6 +61,7 @@ function getQueryId(id: string): { query: Record<string, any>; parsedId: ObjectI
 
 export async function PUT(req: Request, { params }: { params: Promise<{ id: string }> }) {
   try {
+    const admin = await requireAdmin("announcements", req);
     const { id } = await params;
     const body = await req.json();
     const { db } = await connectToDatabase();
@@ -98,13 +97,23 @@ export async function PUT(req: Request, { params }: { params: Promise<{ id: stri
 
     await db.collection(COLLECTION).updateOne(query, { $set: updateData });
 
-    const updatedItem = {
+    await recordAuditLog({
+      actorId: admin.id,
+      username: admin.username,
+      action: "announcement.update",
+      resource: "announcements",
+      resourceId: id,
+      result: "success",
+    });
+
+    return NextResponse.json({
       id: existing._id.toString(),
       ...updateData
-    };
-
-    return NextResponse.json(updatedItem);
-  } catch (error) {
+    });
+  } catch (error: any) {
+    if (error instanceof AdminAuthError) {
+      return NextResponse.json({ error: error.message }, { status: error.status });
+    }
     console.error("Failed to update announcement in database:", error);
     return NextResponse.json({ error: "Failed to update announcement" }, { status: 500 });
   }
@@ -112,6 +121,7 @@ export async function PUT(req: Request, { params }: { params: Promise<{ id: stri
 
 export async function DELETE(req: Request, { params }: { params: Promise<{ id: string }> }) {
   try {
+    const admin = await requireAdmin("announcements", req);
     const { id } = await params;
     const { db } = await connectToDatabase();
     
@@ -121,15 +131,26 @@ export async function DELETE(req: Request, { params }: { params: Promise<{ id: s
       return NextResponse.json({ error: "Announcement not found" }, { status: 404 });
     }
 
-    // Clean up attached PDF from Azure Blob Storage
     if (existing.pdfUrl) {
       await cleanupBlob(db, existing.pdfUrl);
     }
 
     await db.collection(COLLECTION).deleteOne(query);
 
+    await recordAuditLog({
+      actorId: admin.id,
+      username: admin.username,
+      action: "announcement.delete",
+      resource: "announcements",
+      resourceId: id,
+      result: "success",
+    });
+
     return NextResponse.json({ success: true });
-  } catch (error) {
+  } catch (error: any) {
+    if (error instanceof AdminAuthError) {
+      return NextResponse.json({ error: error.message }, { status: error.status });
+    }
     console.error("Failed to delete announcement from database:", error);
     return NextResponse.json({ error: "Failed to delete announcement" }, { status: 500 });
   }

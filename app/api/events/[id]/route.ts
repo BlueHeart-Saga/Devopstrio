@@ -2,6 +2,8 @@ import { NextResponse } from "next/server";
 import { ObjectId } from "mongodb";
 import { connectToDatabase } from "@/lib/mongodb";
 import { BlobServiceClient } from "@azure/storage-blob";
+import { requireAdmin, AdminAuthError } from "@/lib/admin/require-admin";
+import { recordAuditLog } from "@/lib/admin/audit-log";
 
 export const dynamic = 'force-dynamic';
 
@@ -27,7 +29,6 @@ async function isImageUrlUsedElsewhere(db: any, url: string, excludeEventId: Obj
 // Helper to delete a blob from Azure Storage and clean up its metadata in MongoDB
 async function cleanupBlob(db: any, url: string) {
   try {
-    // Delete from images collection in DB
     await db.collection("images").deleteOne({ url });
 
     if (!AZURE_CONNECTION_STRING) return;
@@ -48,7 +49,6 @@ async function cleanupBlob(db: any, url: string) {
     }
 
     if (blobName) {
-      console.log(`Deleting unused blob: ${blobName}`);
       const blobServiceClient = BlobServiceClient.fromConnectionString(AZURE_CONNECTION_STRING);
       const containerClient = blobServiceClient.getContainerClient(AZURE_CONTAINER);
       const blockBlobClient = containerClient.getBlockBlobClient(blobName);
@@ -59,7 +59,6 @@ async function cleanupBlob(db: any, url: string) {
   }
 }
 
-// Helper to parse query ID supporting both ObjectId and legacy numbers
 function getQueryId(id: string): { query: Record<string, any>; parsedId: ObjectId | number | string } {
   if (ObjectId.isValid(id)) {
     const objId = new ObjectId(id);
@@ -76,6 +75,7 @@ function getQueryId(id: string): { query: Record<string, any>; parsedId: ObjectI
 
 export async function PUT(req: Request, { params }: { params: Promise<{ id: string }> }) {
   try {
+    const admin = await requireAdmin("events", req);
     const { id } = await params;
     const body = await req.json();
     const { db } = await connectToDatabase();
@@ -100,7 +100,6 @@ export async function PUT(req: Request, { params }: { params: Promise<{ id: stri
       }
     }
 
-    // Update document
     const updateData = {
       eventName: body.eventName,
       year: body.year,
@@ -110,13 +109,23 @@ export async function PUT(req: Request, { params }: { params: Promise<{ id: stri
 
     await db.collection("events").updateOne(query, { $set: updateData });
 
-    const updatedEvent = {
+    await recordAuditLog({
+      actorId: admin.id,
+      username: admin.username,
+      action: "event.update",
+      resource: "events",
+      resourceId: id,
+      result: "success",
+    });
+
+    return NextResponse.json({
       id: existingEvent._id.toString(),
       ...updateData
-    };
-
-    return NextResponse.json(updatedEvent);
-  } catch (error) {
+    });
+  } catch (error: any) {
+    if (error instanceof AdminAuthError) {
+      return NextResponse.json({ error: error.message }, { status: error.status });
+    }
     console.error("Failed to update event in database:", error);
     return NextResponse.json({ error: "Failed to update event" }, { status: 500 });
   }
@@ -124,6 +133,7 @@ export async function PUT(req: Request, { params }: { params: Promise<{ id: stri
 
 export async function DELETE(req: Request, { params }: { params: Promise<{ id: string }> }) {
   try {
+    const admin = await requireAdmin("events", req);
     const { id } = await params;
     const { db } = await connectToDatabase();
     
@@ -144,11 +154,22 @@ export async function DELETE(req: Request, { params }: { params: Promise<{ id: s
       }
     }
 
-    // Delete event document
     await db.collection("events").deleteOne(query);
 
+    await recordAuditLog({
+      actorId: admin.id,
+      username: admin.username,
+      action: "event.delete",
+      resource: "events",
+      resourceId: id,
+      result: "success",
+    });
+
     return NextResponse.json({ success: true });
-  } catch (error) {
+  } catch (error: any) {
+    if (error instanceof AdminAuthError) {
+      return NextResponse.json({ error: error.message }, { status: error.status });
+    }
     console.error("Failed to delete event from database:", error);
     return NextResponse.json({ error: "Failed to delete event" }, { status: 500 });
   }

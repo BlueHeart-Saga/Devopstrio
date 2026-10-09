@@ -6,6 +6,8 @@ import crypto from "crypto";
 import { writeFile, mkdir } from "fs/promises";
 import path from "path";
 import { connectToDatabase } from "@/lib/mongodb";
+import { requireAdmin, AdminAuthError } from "@/lib/admin/require-admin";
+import { recordAuditLog } from "@/lib/admin/audit-log";
 
 export const dynamic = "force-dynamic";
 export const maxDuration = 120;
@@ -202,6 +204,7 @@ async function parseMultipartBuffer(rawBuffer: Buffer) {
 
 export async function POST(req: NextRequest) {
   try {
+    const admin = await requireAdmin("uploads", req);
     const contentType = req.headers.get("content-type") || "";
 
     // Parse multipart body directly from raw buffer to support 20MB - 150MB+ uploads
@@ -234,6 +237,9 @@ export async function POST(req: NextRequest) {
 
     return NextResponse.json({ success: false, error: "No valid files received" }, { status: 400 });
   } catch (error: any) {
+    if (error instanceof AdminAuthError) {
+      return NextResponse.json({ error: error.message }, { status: error.status });
+    }
     console.error("File upload failed:", error);
     return NextResponse.json(
       { success: false, error: "File upload failed", details: error?.message || String(error) },

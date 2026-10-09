@@ -3,13 +3,14 @@ import { connectToDatabase } from "@/lib/mongodb";
 import { readFile, writeFile, mkdir } from "fs/promises";
 import path from "path";
 import fs from "fs";
+import { requireAdmin, AdminAuthError } from "@/lib/admin/require-admin";
+import { recordAuditLog } from "@/lib/admin/audit-log";
 
 export const dynamic = "force-dynamic";
 
 const COLLECTION = "marketing_resources";
 const LOCAL_DB_FILE = path.join(process.cwd(), "data", "local-marketing-db.json");
 
-// Helper to read local JSON database
 async function getLocalResources(): Promise<any[]> {
   try {
     if (!fs.existsSync(LOCAL_DB_FILE)) {
@@ -23,7 +24,6 @@ async function getLocalResources(): Promise<any[]> {
   }
 }
 
-// Helper to save local JSON database
 async function saveLocalResources(items: any[]): Promise<void> {
   try {
     const dir = path.dirname(LOCAL_DB_FILE);
@@ -116,6 +116,7 @@ export async function GET(req: Request) {
 
 export async function POST(req: Request) {
   try {
+    const admin = await requireAdmin("marketingResources", req);
     const body = await req.json();
     const now = new Date();
 
@@ -137,25 +138,35 @@ export async function POST(req: Request) {
       updated_at: now,
     };
 
-    // 1. Try MongoDB
+    let resultId = "";
+
     try {
       const { db } = await connectToDatabase();
       const result = await db.collection(COLLECTION).insertOne(newResource);
-      return NextResponse.json(
-        { id: result.insertedId.toString(), ...newResource },
-        { status: 201 }
-      );
+      resultId = result.insertedId.toString();
     } catch (mongoErr) {
-      // 2. Fallback to Local JSON DB
       const localItems = await getLocalResources();
-      const localId = `local_${Date.now()}_${Math.random().toString(36).substring(2, 9)}`;
-      const savedItem = { id: localId, ...newResource };
+      resultId = `local_${Date.now()}_${Math.random().toString(36).substring(2, 9)}`;
+      const savedItem = { id: resultId, ...newResource };
       localItems.unshift(savedItem);
       await saveLocalResources(localItems);
-
-      return NextResponse.json(savedItem, { status: 201 });
     }
+
+    await recordAuditLog({
+      actorId: admin.id,
+      username: admin.username,
+      action: "marketing_resource.create",
+      resource: "marketingResources",
+      resourceId: resultId,
+      result: "success",
+      details: { title: newResource.title },
+    });
+
+    return NextResponse.json({ id: resultId, ...newResource }, { status: 201 });
   } catch (error: any) {
+    if (error instanceof AdminAuthError) {
+      return NextResponse.json({ error: error.message }, { status: error.status });
+    }
     console.error("Failed to create marketing resource:", error);
     return NextResponse.json(
       { error: "Failed to create resource", details: error?.message || String(error) },

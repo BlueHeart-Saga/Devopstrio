@@ -300,13 +300,9 @@ export default function JobsAdminPage() {
     (a.location || "").toLowerCase().includes(appSearch.toLowerCase())
   );
 
-  if (isLoadingJobs && isLoadingApps) {
-    return <div className="p-20 text-white min-h-screen bg-[#030303] flex items-center justify-center font-mono text-purple-400">Loading Devopstrio Admin...</div>;
-  }
-
   return (
-    <div className="min-h-screen bg-[#030303] text-white pt-32 pb-16 px-6 md:px-16 font-sans">
-      <div className="max-w-6xl mx-auto">
+    <div className="w-full space-y-8 animate-in fade-in duration-200">
+      <div>
         {/* Notification Toast */}
         {notification && (
           <div
