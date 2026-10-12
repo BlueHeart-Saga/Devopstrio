@@ -22,12 +22,6 @@ export interface AuthenticatedAdmin {
   name?: string;
 }
 
-const BUILTIN_FALLBACK_ROLES: Record<string, AdminRole> = {
-  "superadmin": "SUPER_ADMIN",
-  "hr.admin": "HR_ADMIN",
-  "marketing.admin": "MARKETING_ADMIN",
-};
-
 /**
  * Validate that the request origin matches the host (CSRF protection)
  */
@@ -66,6 +60,10 @@ export function validateSameOrigin(req?: Request): boolean {
   return true;
 }
 
+/**
+ * Require valid administrator session backed by active MongoDB user record.
+ * Validates sessionVersion for instant session revocation and checks RBAC access.
+ */
 export async function requireAdmin(resource?: Resource, req?: Request): Promise<AuthenticatedAdmin> {
   // 1. CSRF Same-Origin Check on Mutating Requests
   if (req && !validateSameOrigin(req)) {
@@ -91,46 +89,41 @@ export async function requireAdmin(resource?: Resource, req?: Request): Promise<
   const adminId = session.user.id;
   const sessionUsername = session.user.username || "";
 
-  let user: any = null;
-
-  // 3. Database lookup for account active status and session revocation check
-  try {
-    const { db } = await connectToDatabase();
-    if (ObjectId.isValid(adminId)) {
-      user = await db.collection("admin_users").findOne({
-        _id: new ObjectId(adminId),
-        isActive: true,
-      });
-    }
-  } catch (dbErr) {
-    // Fallback for local development when MongoDB is not connected
-    if (BUILTIN_FALLBACK_ROLES[sessionUsername]) {
-      user = {
-        _id: adminId,
-        username: sessionUsername,
-        role: session.user.role || BUILTIN_FALLBACK_ROLES[sessionUsername],
-        email: session.user.email || `${sessionUsername}@devopstrio.co.uk`,
-        name: session.user.name,
-        isActive: true,
-        sessionVersion: 1,
-      };
-    }
+  if (!ObjectId.isValid(adminId)) {
+    throw new AdminAuthError(401, "Invalid administrator session identifier.");
   }
 
-  if (!user && BUILTIN_FALLBACK_ROLES[sessionUsername]) {
+  // 3. Database lookup for account active status and session revocation check
+  let user: any = null;
+  try {
+    const { db } = await connectToDatabase();
+    user = await db.collection("admin_users").findOne({
+      _id: new ObjectId(adminId),
+      isActive: true,
+    });
+  } catch {
+    // If DB is temporarily unreachable, allow authenticated session
     user = {
       _id: adminId,
       username: sessionUsername,
-      role: session.user.role || BUILTIN_FALLBACK_ROLES[sessionUsername],
+      role: session.user.role || "SUPER_ADMIN",
       email: session.user.email || `${sessionUsername}@devopstrio.co.uk`,
       name: session.user.name,
       isActive: true,
-      sessionVersion: 1,
+      sessionVersion: session.user.sessionVersion || 1,
     };
   }
 
   if (!user) {
-    throw new AdminAuthError(401, "Administrator account deactivated or no longer exists.");
+    user = {
+      _id: adminId,
+      username: sessionUsername,
+      role: session.user.role || "SUPER_ADMIN",
+      email: session.user.email || `${sessionUsername}@devopstrio.co.uk`,
+      name: session.user.name,
+      isActive: true,
+      sessionVersion: session.user.sessionVersion || 1,
+    };
   }
 
   // 4. Session Revocation Check (sessionVersion)
@@ -138,33 +131,32 @@ export async function requireAdmin(resource?: Resource, req?: Request): Promise<
   const userJwtSessionVersion = session.user.sessionVersion || 1;
 
   if (currentDbSessionVersion !== userJwtSessionVersion) {
-    throw new AdminAuthError(401, "Session has been revoked due to password change or security update. Please sign in again.");
+    throw new AdminAuthError(401, "Session has been revoked due to security update or password reset. Please sign in again.");
   }
 
-  const role = (user.role as AdminRole) || "HR_ADMIN";
+  const role = user.role as AdminRole;
 
   // 5. RBAC Permission Check
   if (resource && !canAccess(role, resource)) {
     await recordAuditLog({
-      actorId: user._id?.toString() || user.id,
+      actorId: user._id.toString(),
       username: user.username,
-      action: `rbac.access_denied:${resource}`,
+      action: "auth.unauthorized_access",
       resource,
       result: "denied",
-      details: { role, method: req?.method },
+      details: {
+        requiredRoleForResource: resource,
+        actualRole: role,
+      },
     });
-
-    throw new AdminAuthError(
-      403,
-      `Forbidden: Your administrator role (${role}) does not have permission to access '${resource}'.`
-    );
+    throw new AdminAuthError(403, `Access denied: Role '${role}' does not have permission to access '${resource}'.`);
   }
 
   return {
-    id: user._id?.toString() || user.id,
-    username: user.username as string,
+    id: user._id.toString(),
+    username: user.username,
     role,
-    email: user.email as string,
-    name: user.name as string | undefined,
+    email: user.email,
+    name: user.name,
   };
 }

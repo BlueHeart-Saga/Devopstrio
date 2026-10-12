@@ -2,37 +2,34 @@ import NextAuth from "next-auth";
 import Credentials from "next-auth/providers/credentials";
 import argon2 from "argon2";
 import { z } from "zod";
-import { authenticator } from "otplib";
 import { connectToDatabase } from "@/lib/mongodb";
-import { verifyTotp, encryptTotpSecret } from "@/lib/admin/mfa";
 import { checkLoginRateLimit, resetLoginRateLimit } from "@/lib/admin/login-rate-limit";
 import { recordAuditLog } from "@/lib/admin/audit-log";
 import { type AdminRole } from "@/lib/admin/permissions";
 
 const loginSchema = z.object({
-  username: z.string().min(1, "Username is required").max(100),
-  password: z.string().min(1, "Password is required"),
-  otp: z.string().min(6, "Authenticator code must be at least 6 digits"),
+  username: z
+    .string()
+    .trim()
+    .min(1, "Username is required")
+    .max(100)
+    .regex(/^[a-zA-Z0-9._-]+$/, "Invalid username characters"),
+  password: z
+    .string()
+    .min(1, "Password is required"), // password MUST NOT be trimmed
+  otp: z.string().optional(), // MFA optional/commented out as requested
 });
 
-export const KNOWN_TOTP_SECRETS: Record<string, string> = {
-  "superadmin": "KIRHA2CHM4YTEOJW",
-  "hr.admin": "CRAGGNIDJB5RYZIU",
-  "marketing.admin": "DFUC6W3VGRHGYZLA",
-};
-
-// Built-in seed accounts for local dev and cloud fallback
-export const BUILTIN_LOCAL_ADMINS: Record<string, any> = {
+// Seed credentials with password 'Tamil1234$'
+export const LOCAL_SEED_ADMINS: Record<string, any> = {
   "superadmin": {
     id: "670000000000000000000001",
     username: "superadmin",
     name: "Super Administrator",
     email: "admin@devopstrio.co.uk",
     role: "SUPER_ADMIN" as AdminRole,
-    passwordHash: "$argon2id$v=19$m=65536,p=4,t=3$pxa2BY6+Vl46BTSwPpX81w$YlofILOkGaiOgjjf4OJdLgc2b3/+cH3dPxwv7ns71UE",
-    totpSecretEncrypted: encryptTotpSecret("KIRHA2CHM4YTEOJW"),
+    passwordHash: "$argon2id$v=19$m=65536,p=4,t=3$uBV8ey2o5qCcBXR8O9kM6A$5ibdBz1/qUPtDIx4KoyLvEvxUlEC9JCQGVsmQNGr/Bk",
     isActive: true,
-    mfaEnabled: true,
     sessionVersion: 1,
   },
   "hr.admin": {
@@ -41,10 +38,8 @@ export const BUILTIN_LOCAL_ADMINS: Record<string, any> = {
     name: "HR Administrator",
     email: "hr@devopstrio.co.uk",
     role: "HR_ADMIN" as AdminRole,
-    passwordHash: "$argon2id$v=19$m=65536,p=4,t=3$UpHTxZBIsP2MfXxzj/IROw$PkvqOyOcJRbUqUtlWsPDHZeeaUs83OLQUgE93/UWf9E",
-    totpSecretEncrypted: encryptTotpSecret("CRAGGNIDJB5RYZIU"),
+    passwordHash: "$argon2id$v=19$m=65536,p=4,t=3$uBV8ey2o5qCcBXR8O9kM6A$5ibdBz1/qUPtDIx4KoyLvEvxUlEC9JCQGVsmQNGr/Bk",
     isActive: true,
-    mfaEnabled: true,
     sessionVersion: 1,
   },
   "marketing.admin": {
@@ -53,17 +48,20 @@ export const BUILTIN_LOCAL_ADMINS: Record<string, any> = {
     name: "Marketing Administrator",
     email: "marketing@devopstrio.co.uk",
     role: "MARKETING_ADMIN" as AdminRole,
-    passwordHash: "$argon2id$v=19$m=65536,p=4,t=3$u07ji/xWubym7Ydx6yRGGA$P/LF/Vbb305838vNZmRLSn9JhZccBIXY9Zv9jW7C8nA",
-    totpSecretEncrypted: encryptTotpSecret("DFUC6W3VGRHGYZLA"),
+    passwordHash: "$argon2id$v=19$m=65536,p=4,t=3$uBV8ey2o5qCcBXR8O9kM6A$5ibdBz1/qUPtDIx4KoyLvEvxUlEC9JCQGVsmQNGr/Bk",
     isActive: true,
-    mfaEnabled: true,
     sessionVersion: 1,
   },
 };
 
+const authSecret = process.env.AUTH_SECRET;
+if (!authSecret) {
+  console.warn("⚠️ AUTH_SECRET is not configured in environment variables. NextAuth requires AUTH_SECRET.");
+}
+
 export const { handlers, auth, signIn, signOut } = NextAuth({
   trustHost: true,
-  secret: process.env.AUTH_SECRET || "devopstrio-admin-portal-auth-secret-jwt-key-2026",
+  secret: authSecret,
   session: {
     strategy: "jwt",
     maxAge: 8 * 60 * 60, // 8 hours session duration
@@ -85,12 +83,11 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
           return null;
         }
 
-        const { username, password, otp } = parsed.data;
-        const normalizedUsername = username.trim().toLowerCase();
-        const cleanPassword = password.trim();
-        const cleanOtp = otp.replace(/\s+/g, "").trim();
+        const { username, password } = parsed.data;
+        const normalizedUsername = username.toLowerCase();
+        const rawPassword = password;
 
-        // 1. Rate limiting check (10 attempts per 10 minutes)
+        // 1. Enforce login rate limit
         const rateLimit = await checkLoginRateLimit(normalizedUsername);
         if (!rateLimit.success) {
           await recordAuditLog({
@@ -103,24 +100,23 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
           throw new Error("Too many failed attempts. Please try again in 10 minutes.");
         }
 
+        // 2. Query MongoDB first, fallback to LOCAL_SEED_ADMINS if DB is not connected
         let user: any = null;
-
-        // 2. Fetch administrator account from MongoDB if connected
         try {
           const { db } = await connectToDatabase();
           user = await db.collection("admin_users").findOne({
             username: normalizedUsername,
           });
-        } catch (dbErr) {
-          console.warn("MongoDB not connected, checking fallback admin accounts:", dbErr);
+        } catch {
+          // If MongoDB is not reachable or still being configured, fallback to verified seed accounts
+          user = LOCAL_SEED_ADMINS[normalizedUsername];
         }
 
-        // Fallback to built-in seed accounts if not found or inactive in DB
-        const fallbackUser = BUILTIN_LOCAL_ADMINS[normalizedUsername];
-        if (!user && fallbackUser) {
-          user = fallbackUser;
+        if (!user && LOCAL_SEED_ADMINS[normalizedUsername]) {
+          user = LOCAL_SEED_ADMINS[normalizedUsername];
         }
 
+        // 3. User existence and account state check
         if (!user) {
           await recordAuditLog({
             username: normalizedUsername,
@@ -132,82 +128,72 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
           return null;
         }
 
-        // 3. Verify password: check against DB hash first, fallback to builtin seed hash
-        let isPasswordValid = false;
-        if (user.passwordHash) {
-          try {
-            isPasswordValid = await argon2.verify(user.passwordHash, cleanPassword);
-          } catch {
-            isPasswordValid = false;
-          }
+        if (!user.isActive) {
+          await recordAuditLog({
+            actorId: user._id?.toString() || user.id,
+            username: normalizedUsername,
+            action: "auth.login_failed",
+            resource: "auth",
+            result: "denied",
+            details: { reason: "Account is deactivated" },
+          });
+          return null;
         }
 
-        if (!isPasswordValid && fallbackUser?.passwordHash) {
-          try {
-            isPasswordValid = await argon2.verify(fallbackUser.passwordHash, cleanPassword);
-          } catch {
-            isPasswordValid = false;
+        // 4. Verify password with Argon2id (without trimming password)
+        let isPasswordValid = false;
+        try {
+          if (user.passwordHash) {
+            isPasswordValid = await argon2.verify(user.passwordHash, rawPassword);
           }
+        } catch (err) {
+          console.error("Argon2 verification error:", err);
+          isPasswordValid = false;
         }
 
         if (!isPasswordValid) {
           await recordAuditLog({
-            actorId: user.id || user._id?.toString(),
+            actorId: user._id?.toString() || user.id,
             username: normalizedUsername,
             action: "auth.login_invalid_password",
             resource: "auth",
             result: "failure",
+            details: { reason: "Invalid password" },
           });
           return null;
         }
 
-        // 4. Verify 6-digit TOTP code
-        let isOtpValid = false;
-        const secretToCheck = user.totpSecretEncrypted || user.totpSecret;
-        if (secretToCheck) {
-          isOtpValid = verifyTotp(secretToCheck, cleanOtp);
-        }
+        /* 
+         * 5. [MFA TEMPORARILY COMMENTED OUT AS REQUESTED]
+         * To re-enable MFA, uncomment the block below:
+         * 
+         * if (user.mfaEnabled && user.totpSecretEncrypted) {
+         *   const isOtpValid = await verifyTotp(user.totpSecretEncrypted, cleanOtp, normalizedUsername);
+         *   if (!isOtpValid) return null;
+         * }
+         */
 
-        // Fallback check against known master secret if DB encryption key differed
-        if (!isOtpValid && KNOWN_TOTP_SECRETS[normalizedUsername]) {
-          try {
-            isOtpValid = authenticator.check(cleanOtp, KNOWN_TOTP_SECRETS[normalizedUsername]);
-          } catch {
-            isOtpValid = false;
-          }
-        }
-
-        if (!isOtpValid) {
-          await recordAuditLog({
-            actorId: user.id || user._id?.toString(),
-            username: normalizedUsername,
-            action: "auth.login_invalid_mfa",
-            resource: "auth",
-            result: "failure",
-          });
-          return null;
-        }
-
-        // 5. Success - Reset rate limit and record audit
+        // 6. Reset rate limit on successful credentials verification
         resetLoginRateLimit(normalizedUsername);
+
         await recordAuditLog({
-          actorId: user.id || user._id?.toString(),
+          actorId: user._id?.toString() || user.id,
           username: normalizedUsername,
           action: "auth.login_success",
           resource: "auth",
           result: "success",
-          details: { role: user.role || fallbackUser?.role },
+          details: { role: user.role },
         });
 
-        const userId = user.id || user._id?.toString() || fallbackUser?.id;
+        const userId = user._id?.toString() || user.id;
 
         return {
           id: userId,
-          name: user.name || user.username || fallbackUser?.name,
-          email: user.email || fallbackUser?.email,
-          username: user.username || fallbackUser?.username,
-          role: (user.role as AdminRole) || fallbackUser?.role || "HR_ADMIN",
-          sessionVersion: user.sessionVersion || fallbackUser?.sessionVersion || 1,
+          name: user.name || user.username,
+          email: user.email,
+          username: user.username,
+          role: user.role as AdminRole,
+          sessionVersion: user.sessionVersion || 1,
         };
       },
     }),

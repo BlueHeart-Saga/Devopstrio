@@ -3,7 +3,8 @@
  * 
  * Usage:
  *   npx tsx scripts/create-admin.ts
- *   npx tsx scripts/create-admin.ts --force (to overwrite existing accounts)
+ *   npx tsx scripts/create-admin.ts --force (to overwrite/reset existing accounts)
+ *   npx tsx scripts/create-admin.ts --user superadmin --force (reset single user)
  */
 
 import argon2 from "argon2";
@@ -80,49 +81,68 @@ function generateSecureRandomPassword(): string {
 
 async function main() {
   const forceOverwrite = process.argv.includes("--force") || process.argv.includes("-f");
+  const targetUserArgIndex = process.argv.indexOf("--user");
+  const targetUsername = targetUserArgIndex !== -1 ? process.argv[targetUserArgIndex + 1]?.toLowerCase() : null;
 
   console.log("=================================================");
   console.log(" 🛡️  DEVOPSTRIO ADMIN PROVISIONING & MFA SEEDER");
   console.log("=================================================\n");
 
-  const mongoUri = process.env.MONGODB_URI || process.env.MONGO_URI;
-  const dbName = process.env.MONGODB_DB || process.env.DB_NAME || "devopstrio";
+  const mfaKey = process.env.MFA_ENCRYPTION_KEY?.trim();
+  if (!mfaKey || !/^[0-9a-fA-F]{64}$/.test(mfaKey)) {
+    console.error("❌ ERROR: MFA_ENCRYPTION_KEY must be a 64-character hex string (32 bytes).");
+    console.error("   Please configure MFA_ENCRYPTION_KEY in .env.local before running provisioning.\n");
+    process.exit(1);
+  }
+
+  const mongoUri = process.env.MONGO_URI || process.env.MONGODB_URI;
+  const dbName = process.env.DB_NAME || process.env.MONGODB_DB || "podcast";
+
+  if (!mongoUri) {
+    console.error("❌ ERROR: Neither MONGO_URI nor MONGODB_URI is defined.");
+    console.error("   Please provide a valid MongoDB connection string.\n");
+    process.exit(1);
+  }
 
   let client: MongoClient | null = null;
   let db: any = null;
 
-  if (mongoUri) {
-    try {
-      console.log(`Connecting to MongoDB database '${dbName}'...`);
-      client = new MongoClient(mongoUri);
-      await client.connect();
-      db = client.db(dbName);
-      console.log("✅ Successfully connected to MongoDB.\n");
+  try {
+    console.log(`Connecting to MongoDB database '${dbName}'...`);
+    client = new MongoClient(mongoUri);
+    await client.connect();
+    db = client.db(dbName);
+    console.log("✅ Successfully connected to MongoDB.\n");
 
-      // Ensure unique indexes on admin_users
-      await db.collection("admin_users").createIndex({ username: 1 }, { unique: true });
-      await db.collection("admin_users").createIndex({ email: 1 }, { unique: true });
-      console.log("✅ Ensured unique indexes on `username` and `email`.\n");
-    } catch (dbErr) {
-      console.warn("⚠️ Could not connect to live MongoDB, generating credentials locally only.\n", dbErr);
-    }
-  } else {
-    console.log("ℹ️ No MONGODB_URI found. Generating credentials locally...\n");
+    // Ensure unique indexes on admin_users collection
+    await db.collection("admin_users").createIndex({ username: 1 }, { unique: true });
+    await db.collection("admin_users").createIndex({ email: 1 }, { unique: true });
+    console.log("✅ Ensured unique indexes on `username` and `email`.\n");
+  } catch (dbErr) {
+    console.error("❌ Fatal: Failed to connect to MongoDB:", dbErr);
+    process.exit(1);
   }
 
-  for (const spec of DEFAULT_ADMIN_SPECS) {
+  const specsToProcess = targetUsername
+    ? DEFAULT_ADMIN_SPECS.filter((s) => s.username === targetUsername)
+    : DEFAULT_ADMIN_SPECS;
+
+  if (specsToProcess.length === 0) {
+    console.error(`❌ No matching administrator found for target username '${targetUsername}'.`);
+    if (client) await client.close();
+    process.exit(1);
+  }
+
+  for (const spec of specsToProcess) {
     console.log(`-------------------------------------------------`);
-    console.log(`🔑 Provisioning Account: [${spec.role}] ${spec.username}`);
+    console.log(`🔑 Processing Account: [${spec.role}] ${spec.username}`);
     console.log(`-------------------------------------------------`);
 
-    // Check if account already exists in DB
-    if (db && !forceOverwrite) {
-      const existingUser = await db.collection("admin_users").findOne({ username: spec.username });
-      if (existingUser) {
-        console.log(`ℹ️ Account '${spec.username}' already exists in MongoDB.`);
-        console.log(`   (Skipping to prevent credential overwrite. Use --force to reset).\n`);
-        continue;
-      }
+    const existingUser = await db.collection("admin_users").findOne({ username: spec.username });
+    if (existingUser && !forceOverwrite) {
+      console.log(`ℹ️ Account '${spec.username}' already exists in MongoDB.`);
+      console.log(`   (Skipping to prevent credential overwrite. Use --force to reset).\n`);
+      continue;
     }
 
     // Determine password from environment variable or generate strong password
@@ -150,35 +170,33 @@ async function main() {
       const qrCodeAscii = await qrcode.toString(totpUri, { type: "terminal", small: true });
       console.log("\n📱 Scan this QR Code in Google Authenticator / Microsoft Authenticator / 1Password:\n");
       console.log(qrCodeAscii);
-    } catch (qrErr) {
+    } catch {
       console.log("(QR terminal rendering skipped)");
     }
 
-    if (db) {
-      const now = new Date();
-      await db.collection("admin_users").updateOne(
-        { username: spec.username },
-        {
-          $set: {
-            username: spec.username,
-            name: spec.name,
-            email: spec.email,
-            role: spec.role,
-            passwordHash,
-            totpSecretEncrypted,
-            isActive: true,
-            mfaEnabled: true,
-            sessionVersion: 1,
-            updatedAt: now,
-          },
-          $setOnInsert: {
-            createdAt: now,
-          },
+    const now = new Date();
+    await db.collection("admin_users").updateOne(
+      { username: spec.username },
+      {
+        $set: {
+          username: spec.username,
+          name: spec.name,
+          email: spec.email,
+          role: spec.role,
+          passwordHash,
+          totpSecretEncrypted,
+          isActive: true,
+          mfaEnabled: true,
+          sessionVersion: (existingUser?.sessionVersion || 0) + 1, // Bump sessionVersion to revoke existing sessions
+          updatedAt: now,
         },
-        { upsert: true }
-      );
-      console.log(`✅ Account [${spec.username}] saved to MongoDB admin_users.\n`);
-    }
+        $setOnInsert: {
+          createdAt: now,
+        },
+      },
+      { upsert: true }
+    );
+    console.log(`✅ Account [${spec.username}] saved to MongoDB admin_users.\n`);
   }
 
   if (client) {

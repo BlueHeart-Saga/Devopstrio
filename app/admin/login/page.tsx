@@ -9,7 +9,11 @@ import Link from "next/link";
 export default function AdminLoginPage() {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const callbackUrl = searchParams.get("callbackUrl") || "/admin/jobs";
+  const rawCallbackUrl = searchParams.get("callbackUrl");
+  // Restrict callback URL to approved internal /admin paths, default to /admin
+  const callbackUrl = (rawCallbackUrl && rawCallbackUrl.startsWith("/admin") && !rawCallbackUrl.startsWith("/admin/login"))
+    ? rawCallbackUrl
+    : "/admin";
 
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -28,16 +32,10 @@ export default function AdminLoginPage() {
     e.preventDefault();
     setErrorMessage("");
 
-    const cleanOtp = otp.replace(/\s+/g, "").trim();
     const cleanUsername = username.trim();
 
-    if (!cleanUsername || !password || !cleanOtp) {
-      setErrorMessage("Please enter your username, password, and 6-digit authenticator code.");
-      return;
-    }
-
-    if (!/^\d{6}$/.test(cleanOtp)) {
-      setErrorMessage("Authenticator code must be exactly 6 digits.");
+    if (!cleanUsername || !password) {
+      setErrorMessage("Please enter your username and password.");
       return;
     }
 
@@ -46,17 +44,16 @@ export default function AdminLoginPage() {
     try {
       const res = await signIn("credentials", {
         username: cleanUsername,
-        password: password.trim(),
-        otp: cleanOtp,
+        password: password, // DO NOT TRIM: preserve exact user password input
+        otp: otp ? otp.replace(/\s+/g, "").trim() : "",
         redirect: false,
       });
 
       if (res?.error) {
-        setErrorMessage("Invalid credentials or authenticator code. Please try again.");
+        setErrorMessage("Invalid credentials. Please try again.");
         setIsLoading(false);
       } else if (res?.ok) {
-        router.push(callbackUrl);
-        router.refresh();
+        window.location.href = callbackUrl;
       } else {
         setErrorMessage("An unexpected authentication error occurred.");
         setIsLoading(false);
@@ -150,7 +147,7 @@ export default function AdminLoginPage() {
               </div>
             </div>
 
-            {/* 6-Digit MFA / TOTP Code */}
+            {/* 6-Digit MFA / TOTP Code (Commented out)
             <div>
               <label className="block text-xs font-semibold text-zinc-300 uppercase tracking-wider mb-1.5 flex items-center justify-between">
                 <span>Authenticator Code (MFA)</span>
@@ -163,7 +160,6 @@ export default function AdminLoginPage() {
                   inputMode="numeric"
                   pattern="[0-9]*"
                   maxLength={6}
-                  required
                   value={otp}
                   onChange={(e) => setOtp(e.target.value.replace(/\D/g, ""))}
                   placeholder="123456"
@@ -174,6 +170,7 @@ export default function AdminLoginPage() {
                 Open Google Authenticator, Microsoft Authenticator, or 1Password.
               </p>
             </div>
+            */}
 
             {/* Submit Button */}
             <button

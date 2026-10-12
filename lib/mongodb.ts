@@ -1,7 +1,7 @@
 import { MongoClient, type MongoClientOptions } from "mongodb";
 
-const MONGO_URI = process.env.MONGO_URI || "";
-const DB_NAME = process.env.DB_NAME || "podcast";
+const MONGO_URI = process.env.MONGO_URI || process.env.MONGODB_URI || "";
+const DB_NAME = process.env.DB_NAME || process.env.MONGODB_DB || "podcast";
 
 // Direct MongoDB connection options for Azure Cosmos DB
 const clientOptions: MongoClientOptions = {
