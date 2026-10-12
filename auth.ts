@@ -217,5 +217,17 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
       }
       return session;
     },
+    async redirect({ url, baseUrl }) {
+      if (url.includes("localhost:8080")) {
+        try {
+          const u = new URL(url);
+          return `${baseUrl}${u.pathname}${u.search}`;
+        } catch {
+          return `${baseUrl}/admin`;
+        }
+      }
+      if (url.startsWith("/")) return `${baseUrl}${url}`;
+      return url;
+    },
   },
 });

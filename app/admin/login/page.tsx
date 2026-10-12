@@ -57,7 +57,21 @@ export default function AdminLoginPage() {
         }
         setIsLoading(false);
       } else if (res?.ok || (res?.url && !res?.error)) {
-        window.location.href = res?.url || callbackUrl;
+        let destination = callbackUrl || "/admin";
+        if (res?.url) {
+          try {
+            const parsed = new URL(res.url);
+            // If internal Azure container host localhost:8080, use current origin
+            if (parsed.hostname === "localhost" || parsed.port === "8080") {
+              destination = parsed.pathname + parsed.search;
+            } else {
+              destination = res.url;
+            }
+          } catch {
+            destination = callbackUrl || "/admin";
+          }
+        }
+        window.location.href = destination;
       } else {
         setErrorMessage("An unexpected authentication error occurred. Please try again.");
         setIsLoading(false);
