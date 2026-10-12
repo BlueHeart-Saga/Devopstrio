@@ -1,7 +1,10 @@
 import { MongoClient, type MongoClientOptions } from "mongodb";
 
-const MONGO_URI = process.env.MONGO_URI || process.env.MONGODB_URI || "";
-const DB_NAME = process.env.DB_NAME || process.env.MONGODB_DB || "podcast";
+const MONGO_URI =
+  process.env.MONGO_URI ||
+  process.env.MONGODB_URI ||
+  "mongodb+srv://justivondbadmin:Tamil1234%24@justivon.global.mongocluster.cosmos.azure.com/devopstrio?tls=true&authMechanism=SCRAM-SHA-256&retrywrites=false&maxIdleTimeMS=120000";
+const DB_NAME = process.env.DB_NAME || process.env.MONGODB_DB || "devopstrio";
 
 // Direct MongoDB connection options for Azure Cosmos DB
 const clientOptions: MongoClientOptions = {

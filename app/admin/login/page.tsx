@@ -50,12 +50,16 @@ export default function AdminLoginPage() {
       });
 
       if (res?.error) {
-        setErrorMessage("Invalid credentials. Please try again.");
+        if (res.error === "CredentialsSignin") {
+          setErrorMessage("Invalid credentials. Please verify your username and password.");
+        } else {
+          setErrorMessage(`Authentication notice: ${res.error}`);
+        }
         setIsLoading(false);
-      } else if (res?.ok) {
-        window.location.href = callbackUrl;
+      } else if (res?.ok || (res?.url && !res?.error)) {
+        window.location.href = res?.url || callbackUrl;
       } else {
-        setErrorMessage("An unexpected authentication error occurred.");
+        setErrorMessage("An unexpected authentication error occurred. Please try again.");
         setIsLoading(false);
       }
     } catch (err: any) {

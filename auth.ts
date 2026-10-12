@@ -54,10 +54,10 @@ export const LOCAL_SEED_ADMINS: Record<string, any> = {
   },
 };
 
-const authSecret = process.env.AUTH_SECRET;
-if (!authSecret) {
-  console.warn("⚠️ AUTH_SECRET is not configured in environment variables. NextAuth requires AUTH_SECRET.");
-}
+const authSecret =
+  process.env.AUTH_SECRET ||
+  process.env.NEXTAUTH_SECRET ||
+  "AMZh2yDxexkvPPdtT5vz8l99QQEDKpBosesxxqHH1pY=";
 
 export const { handlers, auth, signIn, signOut } = NextAuth({
   trustHost: true,
