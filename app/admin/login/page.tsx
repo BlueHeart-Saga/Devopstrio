@@ -15,7 +15,14 @@ export default function AdminLoginPage() {
   const [password, setPassword] = useState("");
   const [otp, setOtp] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const [errorMessage, setErrorMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState(() => {
+    const err = searchParams.get("error");
+    if (!err) return "";
+    if (err === "CredentialsSignin") return "Invalid credentials or authenticator code.";
+    if (err === "Configuration") return "Server authentication configuration error.";
+    if (err === "AccessDenied") return "Access denied. You do not have administrator permissions.";
+    return "Authentication failed. Please sign in again.";
+  });
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();

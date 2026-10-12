@@ -55,6 +55,7 @@ export const BUILTIN_LOCAL_ADMINS: Record<string, any> = {
 };
 
 export const { handlers, auth, signIn, signOut } = NextAuth({
+  trustHost: true,
   secret: process.env.AUTH_SECRET || "devopstrio-admin-portal-auth-secret-jwt-key-2026",
   session: {
     strategy: "jwt",
@@ -62,6 +63,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
   },
   pages: {
     signIn: "/admin/login",
+    error: "/admin/login",
   },
   providers: [
     Credentials({
