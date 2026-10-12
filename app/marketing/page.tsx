@@ -1,7 +1,7 @@
 import React from "react";
 import { Metadata } from "next";
 import { generatePageMetadata, getMetadataFromPath } from "@/lib/seo-utils";
-import MarketingPage from "@/sections/marketing/marketing";
+import MarketingPage from "@/sections/marketing/MarketingPage";
 import { BreadcrumbSchema } from "@/components/seo/Schemas";
 
 export function generateMetadata(): Metadata {

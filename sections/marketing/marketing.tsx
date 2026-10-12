@@ -7,4 +7,4 @@ export * from "./CategoryBlock";
 export * from "./ViewerModal";
 export * from "./RequestModal";
 export * from "./SkeletonGrid";
-export { default, MarketingPageClient } from "./MarketingPage";
+export { default } from "./MarketingPage";

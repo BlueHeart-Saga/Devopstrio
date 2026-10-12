@@ -302,6 +302,22 @@ export function BrochureFlipBook({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pdf, mode, spreadIndex, total, single, Math.round(scale * 10), metadata, loadPage, spreadForIndex]);
 
+  // When in PDF mode, load document pages for smooth canvas-based continuous scrolling (no iframe auto-downloads)
+  useEffect(() => {
+    if (!pdf || mode !== "pdf" || total < 1) return;
+    let cancelled = false;
+    const run = async () => {
+      for (let n = 1; n <= total; n++) {
+        if (cancelled) break;
+        await metadata(n);
+        if (cancelled) break;
+        await loadPage(n, scale);
+      }
+    };
+    void run().catch((e) => console.warn("PDF scroll mode load error", e));
+    return () => { cancelled = true; };
+  }, [pdf, mode, total, scale, metadata, loadPage]);
+
   const navigate = useCallback(async (direction: Direction) => {
     if (turningRef.current || !pdfRef.current || total < 1) return;
     const destinationIndex = spreadIndex + (direction === "next" ? 1 : -1);
@@ -371,13 +387,11 @@ export function BrochureFlipBook({
             <button type="button" onClick={() => setMode("flipbook")} aria-pressed={mode === "flipbook"} className={`rounded-md px-2.5 py-1.5 text-xs font-medium ${mode === "flipbook" ? "bg-rose-600" : "text-zinc-400 hover:text-white"}`}><BookOpen className="mr-1 inline h-3.5 w-3.5" />Flipbook</button>
             <button type="button" onClick={() => setMode("pdf")} aria-pressed={mode === "pdf"} className={`rounded-md px-2.5 py-1.5 text-xs font-medium ${mode === "pdf" ? "bg-rose-600" : "text-zinc-400 hover:text-white"}`}><FileText className="mr-1 inline h-3.5 w-3.5" />PDF View</button>
           </div>
-          {mode === "flipbook" && (
-            <div className="hidden items-center rounded-lg border border-white/10 bg-zinc-900 sm:flex">
-              <button type="button" aria-label="Zoom out" onClick={() => setZoom(z => Math.max(0.5, z - 0.25))} className="p-2"><ZoomOut size={16} /></button>
-              <span className="min-w-12 text-center text-xs">{Math.round(zoom * 100)}%</span>
-              <button type="button" aria-label="Zoom in" onClick={() => setZoom(z => Math.min(2, z + 0.25))} className="p-2"><ZoomIn size={16} /></button>
-            </div>
-          )}
+          <div className="hidden items-center rounded-lg border border-white/10 bg-zinc-900 sm:flex">
+            <button type="button" aria-label="Zoom out" onClick={() => setZoom(z => Math.max(0.5, z - 0.25))} className="p-2"><ZoomOut size={16} /></button>
+            <span className="min-w-12 text-center text-xs">{Math.round(zoom * 100)}%</span>
+            <button type="button" aria-label="Zoom in" onClick={() => setZoom(z => Math.min(2, z + 0.25))} className="p-2"><ZoomIn size={16} /></button>
+          </div>
           <a href={originalFileUrl || pdfUrl} download aria-label="Download original document" className="rounded-lg bg-zinc-900 p-2.5"><Download size={16}/></a>
           <a href={pdfUrl} target="_blank" rel="noopener noreferrer" aria-label="Open preview in new tab" className="hidden rounded-lg bg-zinc-900 p-2.5 sm:inline-flex"><ExternalLink size={16}/></a>
           <button type="button" onClick={toggleFullscreen} aria-label="Toggle fullscreen" className="rounded-lg bg-zinc-900 p-2.5">{fullscreen ? <Minimize2 size={16}/> : <Maximize2 size={16}/>}</button>
@@ -387,7 +401,26 @@ export function BrochureFlipBook({
 
       <main className="relative min-h-0 flex-1 overflow-hidden">
         {mode === "pdf" ? (
-          <iframe title={`PDF: ${pdfTitle}`} src={`${pdfUrl}${pdfUrl.includes("#") ? "&" : "#"}view=FitH`} className="h-full w-full border-0 bg-white" />
+          <div className="relative h-full w-full overflow-y-auto bg-[#262626] p-4 sm:p-8 flex flex-col items-center gap-6">
+            {Array.from({ length: total }, (_, i) => i + 1).map((pageNum) => {
+              const pDims = dims(pageNum);
+              const baseWidth = Math.min(840, pDims.width || 600);
+              const pWidth = baseWidth * zoom;
+              const pHeight = (pDims.width ? (baseWidth / pDims.width) * pDims.height : 840) * zoom;
+              return (
+                <div
+                  key={`pdf-scroll-page-${pageNum}`}
+                  className="relative shadow-[0_10px_30px_rgba(0,0,0,0.5)] rounded-sm overflow-hidden bg-white shrink-0 transition-all duration-200"
+                  style={{ width: pWidth, height: pHeight }}
+                >
+                  <PageFace asset={shown(pageNum)} label={`Page ${pageNum}`} />
+                  <div className="absolute bottom-2.5 right-2.5 px-2.5 py-1 rounded bg-black/75 backdrop-blur-sm text-[11px] font-mono text-white select-none shadow pointer-events-none">
+                    {pageNum} / {total}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
         ) : (
           <div ref={stageRef} className="relative h-full w-full overflow-auto bg-[#DDDDDD]">
             {loading ? (
