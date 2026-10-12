@@ -61,8 +61,16 @@ export async function GET() {
 
     return NextResponse.json(formatted);
   } catch (error) {
-    console.warn("Failed to fetch announcements from database:", error);
-    return NextResponse.json([]);
+    console.warn("Failed to fetch announcements from database, falling back to local data:", error);
+    try {
+      const fs = await import("fs/promises");
+      const path = await import("path");
+      const filePath = path.join(process.cwd(), "data", "announcements.json");
+      const content = await fs.readFile(filePath, "utf-8");
+      return NextResponse.json(JSON.parse(content));
+    } catch {
+      return NextResponse.json([]);
+    }
   }
 }
 

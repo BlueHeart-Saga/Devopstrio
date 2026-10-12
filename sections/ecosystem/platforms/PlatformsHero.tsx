@@ -45,7 +45,7 @@ const SAAS_PRODUCTS = [
   { name: "eSigniva", logo: "/webp/assets/Home-page/our-products/logo/safesign.webp" },
   { name: "CareSuite", logo: "/webp/assets/Home-page/our-products/logo/Caresuite.webp" },
   { name: "Homela", logo: "/webp/assets/Home-page/our-products/logo/homela.webp" },
-  { name: "Campix", logo: "/webp/assets/Home-page/our-products/logo/Campix.webp" },
+  { name: "Campix", logo: "/webp/assets/Home-page/our-products/logo/Campix.webp?v=2" },
   { name: "Justivon", logo: "/webp/assets/Home-page/our-products/logo/Justivon.webp" },
   { name: "Prestivo", logo: "/webp/assets/Home-page/our-products/logo/Prestivo.webp" },
 ];
@@ -218,31 +218,29 @@ export function PlatformsHero() {
     const emblem = new THREE.Group();
     world.add(emblem);
 
-    const backingMat = new THREE.MeshBasicMaterial({
-      color: 0x0a0a0d,
-      transparent: true,
-      opacity: 0.96,
-      depthWrite: false,
-    });
-    const backingGeo = new THREE.CircleGeometry(0.48, 48);
-    const backing = new THREE.Mesh(backingGeo, backingMat);
-    emblem.add(backing);
-
     const logoTex = texLoader.load("/webp/assets/logo/logo.webp");
     logoTex.anisotropy = maxAniso;
-    const logoMat = new THREE.SpriteMaterial({ map: logoTex, transparent: true, depthWrite: false });
+    logoTex.colorSpace = THREE.SRGBColorSpace;
+    const logoMat = new THREE.SpriteMaterial({ 
+      map: logoTex, 
+      transparent: true, 
+      depthWrite: false,
+    });
     const logoSprite = new THREE.Sprite(logoMat);
-    logoSprite.scale.set(0.7, 0.7, 1);
+    // Keep exact aspect ratio (594 / 800 = 0.7425) with crisp sizing
+    logoSprite.scale.set(0.74, 1.0, 1);
+    logoSprite.renderOrder = 25;
     emblem.add(logoSprite);
 
     const core = new THREE.Group();
     world.add(core);
     const wireGeo = new THREE.IcosahedronGeometry(0.82, 1);
+    // Soft, elegant graphite-slate wireframe so it doesn't clash with the logo
     const wireMat = new THREE.MeshBasicMaterial({
-      color: 0xf43f5e,
+      color: 0x94a3b8,
       wireframe: true,
       transparent: true,
-      opacity: 0.18,
+      opacity: 0.08,
     });
     const wire = new THREE.Mesh(wireGeo, wireMat);
     core.add(wire);
@@ -251,9 +249,11 @@ export function PlatformsHero() {
     glowCanvas.width = glowCanvas.height = 256;
     const gctx = glowCanvas.getContext("2d");
     if (gctx) {
+      // Very soft, refined ambient glow: subtle warm violet/rose falloff that complements the brand
       const g = gctx.createRadialGradient(128, 128, 0, 128, 128, 128);
-      g.addColorStop(0, "rgba(244, 63, 94, 0.35)");
-      g.addColorStop(0.4, "rgba(244, 63, 94, 0.08)");
+      g.addColorStop(0, "rgba(244, 63, 94, 0.12)");
+      g.addColorStop(0.35, "rgba(168, 85, 247, 0.05)");
+      g.addColorStop(0.7, "rgba(14, 165, 233, 0.02)");
       g.addColorStop(1, "rgba(0, 0, 0, 0)");
       gctx.fillStyle = g;
       gctx.fillRect(0, 0, 256, 256);
@@ -264,10 +264,10 @@ export function PlatformsHero() {
       blending: THREE.AdditiveBlending,
       depthWrite: false,
       transparent: true,
-      opacity: 0.55,
+      opacity: 0.35,
     });
     const halo = new THREE.Sprite(haloMat);
-    halo.scale.set(3.8, 3.8, 1);
+    halo.scale.set(3.4, 3.4, 1);
     world.add(halo);
 
     /* ----- Rings ----- */
@@ -287,7 +287,7 @@ export function PlatformsHero() {
     const innerRing = makeRingLine(INNER_R, 0.08);
 
     const pulseMat = new THREE.MeshBasicMaterial({
-      color: 0xf43f5e,
+      color: 0xe2e8f0,
       transparent: true,
       opacity: 0,
       side: THREE.DoubleSide,
@@ -346,33 +346,58 @@ export function PlatformsHero() {
 
     /* ----- SaaS logo badges ----- */
 
-    const badgeGeo = new THREE.PlaneGeometry(LOGO_WORLD, LOGO_WORLD);
+    const badgeGeo = new THREE.PlaneGeometry(LOGO_WORLD * 1.15, LOGO_WORLD * 1.15);
     const badges = SAAS_PRODUCTS.map((prod, i) => {
       const cv = document.createElement("canvas");
-      cv.width = cv.height = 160;
+      cv.width = cv.height = 256;
       const ctx = cv.getContext("2d");
       const tex = new THREE.CanvasTexture(cv);
-      tex.anisotropy = 4;
+      tex.anisotropy = maxAniso;
+      tex.colorSpace = THREE.SRGBColorSpace;
 
       const img = new Image();
       img.onload = () => {
         if (!ctx) return;
-        ctx.clearRect(0, 0, 160, 160);
+        ctx.clearRect(0, 0, 256, 256);
+
+        // Outer ambient glow ring
         ctx.beginPath();
-        ctx.arc(80, 80, 76, 0, TAU);
-        ctx.fillStyle = "rgba(12, 12, 16, 0.94)";
+        ctx.arc(128, 128, 122, 0, TAU);
+        ctx.fillStyle = "rgba(255, 255, 255, 0.05)";
         ctx.fill();
+
+        // High contrast, ultra clean luminous backdrop
+        const grad = ctx.createRadialGradient(128, 128, 0, 128, 128, 120);
+        grad.addColorStop(0, "rgba(35, 35, 45, 0.98)");
+        grad.addColorStop(0.7, "rgba(20, 20, 26, 0.98)");
+        grad.addColorStop(1, "rgba(12, 12, 16, 1)");
+        ctx.beginPath();
+        ctx.arc(128, 128, 118, 0, TAU);
+        ctx.fillStyle = grad;
+        ctx.fill();
+
+        // Draw crisp logo with full brightness and high fidelity
         ctx.save();
         ctx.beginPath();
-        ctx.arc(80, 80, 66, 0, TAU);
+        ctx.arc(128, 128, 106, 0, TAU);
         ctx.clip();
-        ctx.drawImage(img, 22, 22, 116, 116);
+        ctx.drawImage(img, 28, 28, 200, 200);
         ctx.restore();
+
+        // Bright silver-rose inner border ring
         ctx.beginPath();
-        ctx.arc(80, 80, 74, 0, TAU);
-        ctx.lineWidth = 3;
-        ctx.strokeStyle = "rgba(255, 255, 255, 0.14)";
+        ctx.arc(128, 128, 116, 0, TAU);
+        ctx.lineWidth = 4;
+        ctx.strokeStyle = "rgba(255, 255, 255, 0.45)";
         ctx.stroke();
+
+        // Subtle outer accent hairline
+        ctx.beginPath();
+        ctx.arc(128, 128, 120, 0, TAU);
+        ctx.lineWidth = 1.5;
+        ctx.strokeStyle = "rgba(244, 63, 94, 0.6)";
+        ctx.stroke();
+
         tex.needsUpdate = true;
       };
       img.src = prod.logo;
@@ -522,8 +547,8 @@ export function PlatformsHero() {
       core.rotation.y = t * 0.16;
       core.rotation.x = t * 0.07;
       core.scale.setScalar(intro);
-      wireMat.opacity = 0.18 * intro;
-      haloMat.opacity = 0.55 * intro + (reduce ? 0 : Math.sin(t * 1.2) * 0.03);
+      wireMat.opacity = 0.12 * intro;
+      haloMat.opacity = 0.65 * intro + (reduce ? 0 : Math.sin(t * 1.2) * 0.04);
       parts.rotation.y = t * 0.01;
 
       const k = (t - pulseAt) / 1.4;
@@ -567,9 +592,10 @@ export function PlatformsHero() {
 
         b.mesh.position.copy(v);
         b.mesh.quaternion.copy(camera.quaternion);
-        b.mesh.scale.setScalar(base * (0.85 + 0.15 * depth));
-        b.mat.opacity = intro * (0.35 + 0.65 * depth);
-        b.mesh.renderOrder = 15 + Math.round(depth * 10);
+        b.mesh.scale.setScalar(base * (0.92 + 0.14 * depth));
+        // High, vibrant opacity even when rotating towards back
+        b.mat.opacity = intro * (0.75 + 0.25 * depth);
+        b.mesh.renderOrder = 20 + Math.round(depth * 10);
       });
 
       renderer.render(scene, camera);
@@ -599,8 +625,6 @@ export function PlatformsHero() {
       });
       badgeGeo.dispose();
 
-      backingGeo.dispose();
-      backingMat.dispose();
       logoTex.dispose();
       logoMat.dispose();
       wireGeo.dispose();

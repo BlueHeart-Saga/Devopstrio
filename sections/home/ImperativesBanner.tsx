@@ -3,7 +3,7 @@
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import { Reveal } from "@/components/ui/Reveal";
 import { Mail, ArrowUpRight, FileText, BookOpen, ChevronLeft, ChevronRight } from "lucide-react";
-import { BookReaderModal } from "@/components/ui/BookReaderModal";
+import { HomeImperativesReaderModal } from "./HomeImperativesReaderModal";
 
 type Announcement = {
   id: string | number;
@@ -99,8 +99,8 @@ export function ImperativesBanner() {
       onMouseLeave={() => setIsHovered(false)}
     >
       
-      {/* ── HIGH-LEVEL 3D PDF PAGEFLIP MODAL ── */}
-      <BookReaderModal
+      {/* ── HIGH-LEVEL 3D PDF PAGEFLIP MODAL (ISOLATED HOME VIEWER) ── */}
+      <HomeImperativesReaderModal
         isOpen={isReaderOpen}
         onClose={() => setIsReaderOpen(false)}
         report={current}

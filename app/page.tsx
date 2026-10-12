@@ -80,7 +80,7 @@ export default function Home() {
       {/* 8. Partners */}
       <PartnersSection />
 
-      {/* 10. Announcement Banner */}
+      {/* 10. Announcement Banner (Flipbook) */}
       <ImperativesBanner />
 
       {/* Commented-out sections */}

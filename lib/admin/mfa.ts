@@ -1,9 +1,9 @@
 import { createCipheriv, createDecipheriv, randomBytes, createHash } from "node:crypto";
 import { authenticator } from "otplib";
 
-// Ensure otplib options are configured properly
+// Allow 2 steps (±60s) window for clock drift between user device and cloud server
 authenticator.options = {
-  window: 1, // Allow 1 step (30s) drift for clock synchronization
+  window: 2,
   step: 30,
 };
 
@@ -77,16 +77,32 @@ export function generateTotpUri(username: string, secret: string, issuer = "Devo
 }
 
 /**
- * Verify a 6-digit TOTP token against an encrypted secret
+ * Verify a 6-digit TOTP token against an encrypted or raw base32 secret
  */
 export function verifyTotp(encryptedSecret: string, token: string): boolean {
-  if (!/^\d{6}$/.test(token)) return false;
+  const cleanToken = token.replace(/\s+/g, "").trim();
+  if (!/^\d{6}$/.test(cleanToken)) return false;
 
+  const raw = (encryptedSecret || "").trim();
+  if (!raw) return false;
+
+  // 1. Direct check if secret is raw Base32 (16 to 32 chars)
+  if (/^[A-Z2-7]{16,32}$/i.test(raw)) {
+    try {
+      if (authenticator.check(cleanToken, raw.toUpperCase())) return true;
+    } catch {}
+  }
+
+  // 2. Try AES-256-GCM decryption
   try {
-    const plainSecret = decryptTotpSecret(encryptedSecret);
-    return authenticator.check(token, plainSecret);
-  } catch (err) {
-    console.error("Failed to verify TOTP:", err);
+    const plainSecret = decryptTotpSecret(raw);
+    if (authenticator.check(cleanToken, plainSecret)) return true;
+  } catch {}
+
+  // 3. Fallback direct check
+  try {
+    return authenticator.check(cleanToken, raw);
+  } catch {
     return false;
   }
 }

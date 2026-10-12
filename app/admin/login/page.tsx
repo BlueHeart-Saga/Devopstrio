@@ -28,12 +28,15 @@ export default function AdminLoginPage() {
     e.preventDefault();
     setErrorMessage("");
 
-    if (!username.trim() || !password || !otp.trim()) {
+    const cleanOtp = otp.replace(/\s+/g, "").trim();
+    const cleanUsername = username.trim();
+
+    if (!cleanUsername || !password || !cleanOtp) {
       setErrorMessage("Please enter your username, password, and 6-digit authenticator code.");
       return;
     }
 
-    if (!/^\d{6}$/.test(otp.trim())) {
+    if (!/^\d{6}$/.test(cleanOtp)) {
       setErrorMessage("Authenticator code must be exactly 6 digits.");
       return;
     }
@@ -42,9 +45,9 @@ export default function AdminLoginPage() {
 
     try {
       const res = await signIn("credentials", {
-        username: username.trim(),
-        password,
-        otp: otp.trim(),
+        username: cleanUsername,
+        password: password.trim(),
+        otp: cleanOtp,
         redirect: false,
       });
 
