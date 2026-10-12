@@ -1,25 +1,30 @@
-import { MetadataRoute } from "next";
+import type { MetadataRoute } from "next";
 import { headers } from "next/headers";
 
 export default async function robots(): Promise<MetadataRoute.Robots> {
   let host = "";
   try {
     const headersList = await headers();
-    host = headersList.get("host") || "";
-  } catch (e) {
-    // Fallback if headers() is not available (e.g. during static build)
+    host = (headersList.get("host") || "").split(":")[0].toLowerCase();
+  } catch {
+    // Fallback if headers() is unavailable during static build phases
   }
 
-  const prodDomain = process.env.NEXT_PUBLIC_PRODUCTION_DOMAIN || "devopstrio.co.uk";
-  const cleanHost = host.split(":")[0].toLowerCase();
-  const isProduction = !cleanHost || cleanHost === prodDomain || cleanHost === `www.${prodDomain}`;
+  const prodDomain = (
+    process.env.NEXT_PUBLIC_PRODUCTION_DOMAIN ||
+    "devopstrio.co.uk"
+  ).toLowerCase();
+
+  const isProduction =
+    host === prodDomain ||
+    host === `www.${prodDomain}`;
 
   if (!isProduction) {
     return {
       rules: {
         userAgent: "*",
-        disallow: "/"
-      }
+        disallow: "/",
+      },
     };
   }
 
@@ -27,8 +32,11 @@ export default async function robots(): Promise<MetadataRoute.Robots> {
     rules: {
       userAgent: "*",
       allow: "/",
-      disallow: "/admin/"
+      disallow: [
+        "/admin",
+        "/api/",
+      ],
     },
-    sitemap: `https://${prodDomain}/sitemap.xml`
+    sitemap: `https://${prodDomain}/sitemap.xml`,
   };
 }
