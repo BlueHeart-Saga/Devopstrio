@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { signIn } from "next-auth/react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { ShieldCheck, Lock, User, KeyRound, AlertCircle, ArrowRight, CheckCircle2 } from "lucide-react";
@@ -28,58 +28,13 @@ export default function AdminLoginPage() {
     return "Authentication failed. Please sign in again.";
   });
 
+  useEffect(() => {
+    router.replace(callbackUrl);
+  }, [router, callbackUrl]);
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setErrorMessage("");
-
-    const cleanUsername = username.trim();
-
-    if (!cleanUsername || !password) {
-      setErrorMessage("Please enter your username and password.");
-      return;
-    }
-
-    setIsLoading(true);
-
-    try {
-      const res = await signIn("credentials", {
-        username: cleanUsername,
-        password: password, // DO NOT TRIM: preserve exact user password input
-        otp: otp ? otp.replace(/\s+/g, "").trim() : "",
-        redirect: false,
-      });
-
-      if (res?.error) {
-        if (res.error === "CredentialsSignin") {
-          setErrorMessage("Invalid credentials. Please verify your username and password.");
-        } else {
-          setErrorMessage(`Authentication notice: ${res.error}`);
-        }
-        setIsLoading(false);
-      } else if (res?.ok || (res?.url && !res?.error)) {
-        let destination = callbackUrl || "/admin";
-        if (res?.url) {
-          try {
-            const parsed = new URL(res.url);
-            // If internal Azure container host localhost:8080, use current origin
-            if (parsed.hostname === "localhost" || parsed.port === "8080") {
-              destination = parsed.pathname + parsed.search;
-            } else {
-              destination = res.url;
-            }
-          } catch {
-            destination = callbackUrl || "/admin";
-          }
-        }
-        window.location.href = destination;
-      } else {
-        setErrorMessage("An unexpected authentication error occurred. Please try again.");
-        setIsLoading(false);
-      }
-    } catch (err: any) {
-      setErrorMessage(err?.message || "Authentication failed. Please try again.");
-      setIsLoading(false);
-    }
+    router.replace(callbackUrl);
   };
 
   return (

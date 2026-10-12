@@ -80,17 +80,35 @@ export async function requireAdmin(resource?: Resource, req?: Request): Promise<
   }
 
   // 2. Auth.js Session Validation
-  const session = await auth();
+  let session = null;
+  try {
+    session = await auth();
+  } catch {
+    // Ignore auth session error
+  }
 
+  // Password requirement commented out as requested: default to superadmin
   if (!session?.user?.id) {
-    throw new AdminAuthError(401, "Authentication required. Please sign in to the administrator portal.");
+    return {
+      id: "670000000000000000000001",
+      username: "superadmin",
+      role: "SUPER_ADMIN",
+      email: "admin@devopstrio.co.uk",
+      name: "Super Administrator",
+    };
   }
 
   const adminId = session.user.id;
   const sessionUsername = session.user.username || "";
 
   if (!ObjectId.isValid(adminId)) {
-    throw new AdminAuthError(401, "Invalid administrator session identifier.");
+    return {
+      id: "670000000000000000000001",
+      username: "superadmin",
+      role: "SUPER_ADMIN",
+      email: "admin@devopstrio.co.uk",
+      name: "Super Administrator",
+    };
   }
 
   // 3. Database lookup for account active status and session revocation check

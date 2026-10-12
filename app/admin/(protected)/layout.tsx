@@ -8,8 +8,17 @@ export default async function AdminProtectedLayout({
 }: {
   children: React.ReactNode;
 }) {
-  let admin;
+  // [PASSWORD AUTHENTICATION COMMENTED OUT AS REQUESTED]
+  // Directly provides superadmin access so admin portal and flipbook preview work seamlessly.
+  const admin = {
+    username: "superadmin",
+    role: "SUPER_ADMIN" as const,
+    name: "Super Administrator",
+    email: "admin@devopstrio.co.uk",
+  };
 
+  /*
+  let admin;
   try {
     admin = await requireAdmin();
   } catch (error) {
@@ -18,6 +27,7 @@ export default async function AdminProtectedLayout({
     }
     redirect("/admin/login");
   }
+  */
 
   return (
     <div className="min-h-screen bg-black text-white font-sans flex flex-col">
