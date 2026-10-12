@@ -251,7 +251,7 @@ export function BrochureFlipBook({
       canvas.height = Math.max(1, Math.round(viewport.height));
       const ctx = canvas.getContext("2d", { alpha: false });
       if (!ctx) throw new Error("Unable to create canvas");
-      await pdfPage.render({ canvasContext: ctx, viewport }).promise;
+      await (pdfPage.render as any)({ canvas, canvasContext: ctx, viewport }).promise;
       if (pdfRef.current !== pdfDoc || generationRef.current !== generation) return;
       cacheRef.current.set(n, { canvas, width: raw.width, height: raw.height, resolution });
       // Account for RGBA canvas storage, not just number of pages.
