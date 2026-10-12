@@ -121,20 +121,53 @@ export function BrochureFlipBook({
     const open = async () => {
       try {
         const pdfjs = await import("pdfjs-dist");
-        // Worker must be copied from *this installed pdfjs-dist version* into public/workers.
-        pdfjs.GlobalWorkerOptions.workerSrc = "/workers/pdf.worker.min.mjs";
+        const workerPath = typeof window !== "undefined"
+          ? `${window.location.origin}/workers/pdf.worker.min.mjs`
+          : "/workers/pdf.worker.min.mjs";
+        pdfjs.GlobalWorkerOptions.workerSrc = workerPath;
+
         if (!active) return;
-        task = pdfjs.getDocument({ url: pdfUrl, rangeChunkSize: 262144 });
-        const document = await task.promise;
-        if (!active) return;
-        pdfRef.current = document;
-        setPdf(document);
-        setTotal(document.numPages);
-        setLoading(false);
-      } catch (e) {
+
+        // Support both relative and absolute URLs
+        const targetUrl = pdfUrl.startsWith("/") && typeof window !== "undefined"
+          ? `${window.location.origin}${pdfUrl}`
+          : pdfUrl;
+
+        try {
+          task = pdfjs.getDocument({
+            url: targetUrl,
+            cMapUrl: "https://unpkg.com/pdfjs-dist@4.10.38/cmaps/",
+            cMapPacked: true,
+            standardFontDataUrl: "https://unpkg.com/pdfjs-dist@4.10.38/standard_fonts/",
+          });
+          const document = await task.promise;
+          if (!active) return;
+          pdfRef.current = document;
+          setPdf(document);
+          setTotal(document.numPages);
+          setLoading(false);
+          return;
+        } catch (firstErr) {
+          console.warn("First PDF load attempt failed, trying fallback CDN worker:", firstErr);
+          // Fallback to official CDN worker matching pdfjs-dist
+          pdfjs.GlobalWorkerOptions.workerSrc = `https://unpkg.com/pdfjs-dist@${pdfjs.version || "4.10.38"}/build/pdf.worker.min.mjs`;
+          task = pdfjs.getDocument({
+            url: targetUrl,
+            cMapUrl: "https://unpkg.com/pdfjs-dist@4.10.38/cmaps/",
+            cMapPacked: true,
+          });
+          const document = await task.promise;
+          if (!active) return;
+          pdfRef.current = document;
+          setPdf(document);
+          setTotal(document.numPages);
+          setLoading(false);
+          return;
+        }
+      } catch (e: any) {
         if (!active) return;
         console.error("Cannot load document preview", e);
-        setError("Unable to open this document. Check the preview URL and PDF.js worker.");
+        setError(`Unable to open document: ${e?.message || "Check the preview URL and PDF.js worker."}`);
         setLoading(false);
       }
     };
