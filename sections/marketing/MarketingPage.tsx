@@ -159,7 +159,14 @@ export default function MarketingPage() {
   }, [grouped, router]);
 
   const profile = useMemo(
-    () => resources.find((r) => r.category === "Company Documents" && r.fileUrl),
+    () =>
+      resources.find(
+        (r) =>
+          r.fileUrl &&
+          (/company[\s_-]*profile/i.test(r.title) ||
+            /company[\s_-]*profile/i.test(r.fileName || "") ||
+            (r.category === "Company Documents" && /profile/i.test(r.title)))
+      ),
     [resources]
   );
 
