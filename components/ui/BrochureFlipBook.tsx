@@ -4,7 +4,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import {
   BookOpen, Download, ExternalLink,
   FileText, Loader2, Maximize2, Minimize2, RotateCcw, X,
-  ZoomIn, ZoomOut,
+  ZoomIn, ZoomOut, Share2, Check,
 } from "lucide-react";
 import type { PDFDocumentProxy } from "pdfjs-dist";
 import { CurvedPageTurn } from "./CurvedPageTurn";
@@ -96,6 +96,7 @@ export function BrochureFlipBook({
   const [size, setSize] = useState({ width: 1, height: 1 });
   const [revision, setRevision] = useState(0);
   const [turn, setTurn] = useState<{ direction: Direction; from: number; to: number } | null>(null);
+  const [copied, setCopied] = useState(false);
 
 
   useEffect(() => {
@@ -442,10 +443,38 @@ export function BrochureFlipBook({
             <span className="min-w-12 text-center text-xs">{Math.round(zoom * 100)}%</span>
             <button type="button" aria-label="Zoom in" onClick={() => setZoom(z => Math.min(2, z + 0.25))} className="p-2"><ZoomIn size={16} /></button>
           </div>
-          <a href={originalFileUrl || pdfUrl} download aria-label="Download original document" className="rounded-lg bg-zinc-900 p-2.5"><Download size={16}/></a>
-          <a href={pdfUrl} target="_blank" rel="noopener noreferrer" aria-label="Open preview in new tab" className="hidden rounded-lg bg-zinc-900 p-2.5 sm:inline-flex"><ExternalLink size={16}/></a>
-          <button type="button" onClick={toggleFullscreen} aria-label="Toggle fullscreen" className="rounded-lg bg-zinc-900 p-2.5">{fullscreen ? <Minimize2 size={16}/> : <Maximize2 size={16}/>}</button>
-          {onClose && <button type="button" onClick={onClose} aria-label="Close document" className="rounded-lg bg-rose-600 p-2.5"><X size={16}/></button>}
+          <button
+            type="button"
+            onClick={async () => {
+              const shareUrl = typeof window !== "undefined"
+                ? (originalFileUrl || pdfUrl).startsWith("http")
+                  ? (originalFileUrl || pdfUrl)
+                  : `${window.location.origin}${originalFileUrl || pdfUrl}`
+                : pdfUrl;
+              if (navigator.share) {
+                try {
+                  await navigator.share({ title: pdfTitle, url: shareUrl });
+                  return;
+                } catch {
+                  // Fall back to clipboard if user cancelled or unsupported
+                }
+              }
+              if (navigator.clipboard) {
+                await navigator.clipboard.writeText(shareUrl);
+                setCopied(true);
+                setTimeout(() => setCopied(false), 2000);
+              }
+            }}
+            aria-label="Share document link"
+            title={copied ? "Link copied!" : "Share document link"}
+            className={`rounded-lg p-2.5 transition-colors ${copied ? "bg-emerald-600 text-white" : "bg-zinc-900 text-zinc-300 hover:text-white"}`}
+          >
+            {copied ? <Check size={16} /> : <Share2 size={16} />}
+          </button>
+          <a href={originalFileUrl || pdfUrl} download aria-label="Download original document" title="Download document" className="rounded-lg bg-zinc-900 p-2.5 text-zinc-300 hover:text-white"><Download size={16}/></a>
+          <a href={originalFileUrl || pdfUrl} target="_blank" rel="noopener noreferrer" aria-label="Open in new tab" title="Open in new tab" className="rounded-lg bg-zinc-900 p-2.5 text-zinc-300 hover:text-white inline-flex"><ExternalLink size={16}/></a>
+          <button type="button" onClick={toggleFullscreen} aria-label="Toggle fullscreen" title="Toggle fullscreen" className="rounded-lg bg-zinc-900 p-2.5 text-zinc-300 hover:text-white">{fullscreen ? <Minimize2 size={16}/> : <Maximize2 size={16}/>}</button>
+          {onClose && <button type="button" onClick={onClose} aria-label="Close document" title="Close" className="rounded-lg bg-rose-600 p-2.5 text-white hover:bg-rose-500"><X size={16}/></button>}
         </div>
       </header>
 

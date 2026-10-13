@@ -10,7 +10,7 @@ import {
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
-type ResourceType = "PDF" | "PPT" | "Word" | "Video" | "Brochure" | "Whitepaper" | "Case Study" | "Datasheet" | "Blueprint";
+type ResourceType = "PDF" | "Video" | "Brochure" | "Whitepaper" | "Case Study" | "Datasheet" | "Blueprint";
 type ResourceStatus = "published" | "draft" | "archived";
 
 type MarketingResource = {
@@ -48,7 +48,7 @@ const CATEGORIES = [
   { id: "Latest Releases", label: "Latest Resource Additions & Releases", icon: Clock },
 ];
 
-const RESOURCE_TYPES: ResourceType[] = ["PDF", "PPT", "Word", "Video", "Brochure", "Whitepaper", "Case Study", "Datasheet", "Blueprint"];
+const RESOURCE_TYPES: ResourceType[] = ["PDF", "Video", "Brochure", "Whitepaper", "Case Study", "Datasheet", "Blueprint"];
 
 const TYPE_CONSTRAINTS: Record<ResourceType, { accept: string; extensions: string[]; label: string }> = {
   PDF: { accept: ".pdf,application/pdf", extensions: [".pdf"], label: "PDF Document (.pdf)" },
@@ -57,15 +57,11 @@ const TYPE_CONSTRAINTS: Record<ResourceType, { accept: string; extensions: strin
   Datasheet: { accept: ".pdf,application/pdf", extensions: [".pdf"], label: "PDF Datasheet (.pdf)" },
   Blueprint: { accept: ".pdf,application/pdf", extensions: [".pdf"], label: "PDF Blueprint (.pdf)" },
   "Case Study": { accept: ".pdf,application/pdf", extensions: [".pdf"], label: "PDF Case Study (.pdf)" },
-  PPT: { accept: ".ppt,.pptx,application/vnd.ms-powerpoint,application/vnd.openxmlformats-officedocument.presentationml.presentation", extensions: [".ppt", ".pptx"], label: "PowerPoint Presentation (.ppt, .pptx)" },
-  Word: { accept: ".doc,.docx,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document", extensions: [".doc", ".docx"], label: "Word Document (.doc, .docx)" },
   Video: { accept: ".mp4,.mov,.webm,video/mp4,video/quicktime,video/webm", extensions: [".mp4", ".mov", ".webm"], label: "Video (.mp4, .mov, .webm)" },
 };
 
 const TYPE_COLORS: Record<string, string> = {
   PDF: "bg-red-500/10 text-red-400 border-red-500/20",
-  PPT: "bg-orange-500/10 text-orange-400 border-orange-500/20",
-  Word: "bg-blue-500/10 text-blue-400 border-blue-500/20",
   Video: "bg-purple-500/10 text-purple-400 border-purple-500/20",
   Brochure: "bg-teal-500/10 text-teal-400 border-teal-500/20",
   Whitepaper: "bg-indigo-500/10 text-indigo-400 border-indigo-500/20",
