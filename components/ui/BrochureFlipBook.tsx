@@ -128,17 +128,22 @@ export function BrochureFlipBook({
 
         if (!active) return;
 
-        // Support both relative and absolute URLs
-        const targetUrl = pdfUrl.startsWith("/") && typeof window !== "undefined"
-          ? `${window.location.origin}${pdfUrl}`
-          : pdfUrl;
+        // Resolve document URL: route external/Azure Blob URLs through same-origin secure proxy to prevent CORS blocks
+        let targetUrl = pdfUrl;
+        const isExternal = /^https?:\/\//i.test(pdfUrl);
+        if (isExternal) {
+          targetUrl = `/api/pdf-proxy?url=${encodeURIComponent(pdfUrl)}`;
+        } else if (pdfUrl.startsWith("/") && typeof window !== "undefined") {
+          targetUrl = `${window.location.origin}${pdfUrl}`;
+        }
 
+        const pdfVer = pdfjs.version || "4.10.38";
         try {
           task = pdfjs.getDocument({
             url: targetUrl,
-            cMapUrl: "https://unpkg.com/pdfjs-dist@4.10.38/cmaps/",
+            cMapUrl: `https://unpkg.com/pdfjs-dist@${pdfVer}/cmaps/`,
             cMapPacked: true,
-            standardFontDataUrl: "https://unpkg.com/pdfjs-dist@4.10.38/standard_fonts/",
+            standardFontDataUrl: `https://unpkg.com/pdfjs-dist@${pdfVer}/standard_fonts/`,
           });
           const document = await task.promise;
           if (!active) return;
@@ -150,11 +155,12 @@ export function BrochureFlipBook({
         } catch (firstErr) {
           console.warn("First PDF load attempt failed, trying fallback CDN worker:", firstErr);
           // Fallback to official CDN worker matching pdfjs-dist
-          pdfjs.GlobalWorkerOptions.workerSrc = `https://unpkg.com/pdfjs-dist@${pdfjs.version || "4.10.38"}/build/pdf.worker.min.mjs`;
+          pdfjs.GlobalWorkerOptions.workerSrc = `https://unpkg.com/pdfjs-dist@${pdfVer}/build/pdf.worker.min.mjs`;
           task = pdfjs.getDocument({
             url: targetUrl,
-            cMapUrl: "https://unpkg.com/pdfjs-dist@4.10.38/cmaps/",
+            cMapUrl: `https://unpkg.com/pdfjs-dist@${pdfVer}/cmaps/`,
             cMapPacked: true,
+            standardFontDataUrl: `https://unpkg.com/pdfjs-dist@${pdfVer}/standard_fonts/`,
           });
           const document = await task.promise;
           if (!active) return;
@@ -209,11 +215,20 @@ export function BrochureFlipBook({
     if (!total) return [] as number[][];
     if (single) return Array.from({ length: total }, (_, i) => [i + 1]);
     const result: number[][] = [[1]];
-    for (let n = 2; n < total; n += 2) {
-      if (n + 1 < total) result.push([n, n + 1]);
-      else result.push([n]);
+    let n = 2;
+    while (n < total) {
+      if (n + 1 < total) {
+        result.push([n, n + 1]);
+        n += 2;
+      } else {
+        // Penultimate single page if total is odd, leaving [total] as the back cover
+        result.push([n]);
+        n += 1;
+      }
     }
-    if (total > 1) result.push([total]);
+    if (total > 1) {
+      result.push([total]);
+    }
     return result;
   }, [single, total]);
   const spreadIndex = Math.max(0, spreads.findIndex(group => group.includes(page)));
@@ -243,15 +258,17 @@ export function BrochureFlipBook({
     return metaRef.current.get(n) ?? { width: 595, height: 842 };
   };
 
-  // Scale both pages uniformly to fit the viewport. Non-A4 pages remain undistorted.
-  const pageNumbers = visible.filter(n => n <= total);
-  const documentDims = pageNumbers.map(dims);
-  const baseSum = documentDims.reduce((sum, p) => sum + p.width, 0) || 595;
-  const baseHeight = Math.max(1, ...documentDims.map(p => p.height));
+  // Scale pages uniformly to fit the viewport based on document page dimensions.
+  // Using reference page 1 (or max dimensions) ensures the stage slot dimensions remain
+  // completely stationary and rock-solid during page turns, preventing viewer jerking/shaking.
+  const refDims = dims(1);
+  const basePageWidth = refDims.width || 595;
+  const basePageHeight = refDims.height || 842;
+  const fullBookWidth = single ? basePageWidth : basePageWidth * 2;
   const margin = 56; // Comfortable paper margins like the reference brochure
   const fitScale = Math.min(
-    (size.width - margin * 2) / (single ? baseSum : Math.max(baseSum, 2 * Math.max(...documentDims.map(p => p.width), 595))),
-    (size.height - margin * 2) / baseHeight
+    (size.width - margin * 2) / fullBookWidth,
+    (size.height - margin * 2) / basePageHeight
   );
   const scale = Math.max(0.05, fitScale) * zoom;
 
@@ -402,10 +419,10 @@ export function BrochureFlipBook({
   const layoutPages = turn ? Array.from(new Set([...fromSpread, ...toSpread])) : visible;
   const layoutDims = layoutPages.map(dims);
   const layoutHeight = Math.max(1, ...layoutDims.map(p => p.height));
-  const slotWidth = Math.max(1, ...layoutDims.map(p => p.width)) * scale;
+  const slotWidth = basePageWidth * scale;
   const bookSlots = single ? 1 : 2;
   const displayBookWidth = bookSlots * slotWidth;
-  const displayBookHeight = layoutHeight * scale;
+  const displayBookHeight = basePageHeight * scale;
   const turnWidth = slotWidth;
 
   return (
@@ -455,7 +472,7 @@ export function BrochureFlipBook({
             })}
           </div>
         ) : (
-          <div ref={stageRef} className="relative h-full w-full overflow-auto bg-[#DDDDDD]">
+          <div ref={stageRef} className="relative h-full w-full overflow-hidden bg-[#DDDDDD]">
             {loading ? (
               <div className="flex h-full items-center justify-center gap-2 text-sm text-zinc-700"><Loader2 className="h-5 w-5 animate-spin"/>Opening document…</div>
             ) : error ? (
@@ -470,8 +487,17 @@ export function BrochureFlipBook({
                     const number = turn && !single ? stationarySlots[slot] : single ? baseSpread[0] : isCover ? (slot === side ? baseSpread[0] : undefined) : baseSpread[slot];
                     return <div key={`slot-${slot}-${number ?? "blank"}`} className="relative h-full shrink-0" style={{ width: slotWidth, background: number ? "white" : "transparent", boxShadow: number ? "0 8px 16px rgba(0,0,0,.12)" : "none" }}>
                       {number && <PageFace asset={shown(number)} label={`Page ${number}`} onClick={() => {
-                        if (single || isCover) void navigate(canNext ? "next" : "prev");
-                        else void navigate(slot === 0 ? "prev" : "next");
+                        if (single) {
+                          void navigate(canNext ? "next" : "prev");
+                        } else if (isCover) {
+                          // Front cover on right slot advances forward; back cover on left slot goes backward
+                          if (baseSpread[0] === 1) void navigate("next");
+                          else void navigate("prev");
+                        } else {
+                          // Left half always turns backward; right half always turns forward
+                          if (slot === 0) void navigate("prev");
+                          else void navigate("next");
+                        }
                       }} />}
                     </div>;
                   })}
