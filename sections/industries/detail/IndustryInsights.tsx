@@ -2,7 +2,7 @@
 
 import React, { useRef, useState, useEffect } from "react";
 import Link from "next/link";
-import { ArrowLeft, ArrowUpRight } from "lucide-react";
+import { ArrowLeft, ArrowRight, ArrowUpRight } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
 import { insightsApi } from "@/lib/insightsApi";
 
@@ -148,7 +148,7 @@ export function IndustryInsights({ insights }: IndustryInsightsProps) {
               aria-label="Scroll right"
               className="w-11 h-11 rounded-full border border-white/5 bg-[#0b0b0c] hover:bg-zinc-900 flex items-center justify-center text-zinc-400 hover:text-white transition-colors duration-300"
             >
-              <ArrowUpRight size={16} />
+              <ArrowRight size={16} />
             </button>
           </Reveal>
         </div>

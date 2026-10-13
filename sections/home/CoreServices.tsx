@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { ArrowLeft, ArrowUpRight } from "lucide-react";
+import { ArrowLeft, ArrowRight, ArrowUpRight } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
 import Link from "next/link";
 
@@ -286,24 +286,26 @@ export function CoreServices() {
         </div>
 
         {/* Navigation Controls */}
-        <div className="flex items-center gap-3 mt-8">
-          <button
-            onClick={prev}
-            className="w-11 h-11 rounded-full border border-zinc-700 hover:border-rose-500 hover:bg-rose-500/10 text-white flex items-center justify-center transition-all duration-300 active:scale-95"
-            aria-label="Previous services"
-          >
-            <ArrowLeft size={16} />
-          </button>
-          <button
-            onClick={next}
-            className="w-11 h-11 rounded-full border border-zinc-700 hover:border-rose-500 hover:bg-rose-500/10 text-white flex items-center justify-center transition-all duration-300 active:scale-95"
-            aria-label="Next services"
-          >
-            <ArrowUpRight size={16} />
-          </button>
+        <div className="flex flex-wrap items-center justify-between gap-4 mt-8">
+          <div className="flex items-center gap-3">
+            <button
+              onClick={prev}
+              className="w-11 h-11 rounded-full border border-zinc-700 hover:border-rose-500 hover:bg-rose-500/10 text-white flex items-center justify-center transition-all duration-300 active:scale-95"
+              aria-label="Previous services"
+            >
+              <ArrowLeft size={16} />
+            </button>
+            <button
+              onClick={next}
+              className="w-11 h-11 rounded-full border border-zinc-700 hover:border-rose-500 hover:bg-rose-500/10 text-white flex items-center justify-center transition-all duration-300 active:scale-95"
+              aria-label="Next services"
+            >
+              <ArrowRight size={16} />
+            </button>
+          </div>
           <Link
             href="/services"
-            className="ml-4 text-base font-semibold text-rose-500 hover:text-rose-400 transition-colors uppercase tracking-wider flex items-center gap-1.5"
+            className="text-sm sm:text-base font-semibold text-rose-500 hover:text-rose-400 transition-colors uppercase tracking-wider flex items-center gap-1.5"
           >
             All capabilities <ArrowUpRight size={16} />
           </Link>

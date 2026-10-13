@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowLeft, ArrowUpRight, CheckCircle2 } from "lucide-react";
+import { ArrowLeft, ArrowRight, ArrowUpRight, CheckCircle2 } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
 
 export interface CapabilityItem {
@@ -181,7 +181,7 @@ export function CapabilityGrid({ serviceSlug, capabilities, overrideHeading }: C
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[radial-gradient(circle_at_top_right,rgba(220,38,38,0.05),transparent_70%)] blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[radial-gradient(circle_at_bottom_left,rgba(225,29,72,0.04),transparent_70%)] blur-3xl pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
+      <div className="max-w-7xl mx-auto w-full px-6 sm:px-8 lg:px-12 relative z-10">
 
         {/* Section Header */}
         <Reveal>
@@ -337,7 +337,7 @@ export function CapabilityGrid({ serviceSlug, capabilities, overrideHeading }: C
               className="w-11 h-11 rounded-full border border-zinc-700 hover:border-rose-500 hover:bg-rose-500/10 text-white flex items-center justify-center transition-all duration-300 active:scale-95"
               aria-label="Next capabilities"
             >
-              <ArrowUpRight size={16} />
+              <ArrowRight size={16} />
             </button>
           </div>
         )}

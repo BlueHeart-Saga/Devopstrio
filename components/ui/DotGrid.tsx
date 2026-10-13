@@ -5,7 +5,7 @@ import { gsap } from "gsap";
 
 let hasInertia = false;
 try {
-  // eslint-disable-next-line @typescript-eslint/no-require-imports
+  // eslint-disable-next-line
   const plugin = require("gsap/InertiaPlugin")?.InertiaPlugin;
   if (plugin) {
     gsap.registerPlugin(plugin);

@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { ArrowLeft, ArrowUpRight, Star, ArrowUpRight as ArrowUpRightIcon } from "lucide-react";
+import { ArrowLeft, ArrowRight, ArrowUpRight, Star, ArrowUpRight as ArrowUpRightIcon } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
 import { employeeStories } from "./careersData";
 
@@ -212,7 +212,7 @@ export function EmployeeStories() {
                   onClick={handleNext}
                   className="w-11 h-11 rounded-full border border-white/10 hover:border-rose-500/40 flex items-center justify-center text-white hover:text-rose-400 bg-zinc-950/40 hover:bg-rose-950/10 transition-all duration-300 cursor-pointer"
                 >
-                  <ArrowUpRight size={18} />
+                  <ArrowRight size={18} />
                 </button>
               </div>
             </Reveal>

@@ -2,7 +2,7 @@
 
 import React, { useRef } from "react";
 import { Reveal } from "@/components/ui/Reveal";
-import { ArrowLeft, ArrowUpRight } from "lucide-react";
+import { ArrowLeft, ArrowRight, ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 
 const services = [
@@ -224,7 +224,7 @@ export function AboutServices() {
               className="w-11 h-11 rounded-full border border-zinc-850 bg-zinc-950/20 hover:border-rose-500 hover:text-rose-400 text-zinc-400 flex items-center justify-center transition-all duration-300"
               aria-label="Scroll right"
             >
-              <ArrowUpRight size={18} />
+              <ArrowRight size={18} />
             </button>
           </div>
         </div>

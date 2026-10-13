@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
-import { ArrowLeft, ArrowUpRight } from "lucide-react";
+import { ArrowLeft, ArrowRight, ArrowUpRight } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
 import Link from "next/link";
 
@@ -325,16 +325,16 @@ export function IndustryCaseStudy({
               <button
                 onClick={handlePrev}
                 aria-label="Previous slide"
-                className="w-9 h-9 rounded-full border border-white/5 bg-[#0b0b0c] hover:bg-zinc-900 flex items-center justify-center text-zinc-400 hover:text-white transition-colors duration-300"
+                className="w-11 h-11 rounded-full border border-white/5 bg-[#0b0b0c] hover:bg-zinc-900 flex items-center justify-center text-zinc-400 hover:text-white transition-colors duration-300"
               >
-                <ArrowLeft size={14} />
+                <ArrowLeft size={16} />
               </button>
               <button
                 onClick={handleNext}
                 aria-label="Next slide"
-                className="w-9 h-9 rounded-full border border-white/5 bg-[#0b0b0c] hover:bg-zinc-900 flex items-center justify-center text-zinc-400 hover:text-white transition-colors duration-300"
+                className="w-11 h-11 rounded-full border border-white/5 bg-[#0b0b0c] hover:bg-zinc-900 flex items-center justify-center text-zinc-400 hover:text-white transition-colors duration-300"
               >
-                <ArrowUpRight size={14} />
+                <ArrowRight size={16} />
               </button>
             </div>
 

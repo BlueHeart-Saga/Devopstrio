@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useRef } from "react";
-import { ArrowLeft, ArrowUpRight } from "lucide-react";
+import { ArrowLeft, ArrowRight, ArrowUpRight } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
 import Link from "next/link";
 
@@ -204,7 +204,7 @@ export function IndustryUseCases({ useCases }: IndustryUseCasesProps) {
             aria-label="Scroll right"
             className="w-12 h-12 rounded-full border border-zinc-800 bg-zinc-950/60 hover:bg-zinc-900 hover:border-white/20 flex items-center justify-center text-zinc-400 hover:text-white transition-all duration-300"
           >
-            <ArrowUpRight size={18} />
+            <ArrowRight size={18} />
           </button>
         </div>
 

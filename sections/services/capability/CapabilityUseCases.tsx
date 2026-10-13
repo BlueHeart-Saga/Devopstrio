@@ -2,7 +2,7 @@
 
 import React, { useRef } from "react";
 import Link from "next/link";
-import { ArrowLeft, ArrowUpRight } from "lucide-react";
+import { ArrowLeft, ArrowRight, ArrowUpRight } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
 
 interface CapabilityUseCasesProps {
@@ -160,7 +160,7 @@ export function CapabilityUseCases({
       {/* Background graphic glow */}
       <div className="absolute top-[30%] left-[-10%] w-[35%] aspect-square bg-[radial-gradient(circle_at_center,rgba(244,63,94,0.015),transparent_70%)] pointer-events-none z-0" />
 
-      <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
+      <div className="max-w-7xl mx-auto w-full px-6 sm:px-8 lg:px-12 relative z-10">
 
         {/* Section Header */}
         <div className="text-center mb-12 max-w-3xl mx-auto">
@@ -269,7 +269,7 @@ export function CapabilityUseCases({
             aria-label="Scroll right"
             className="w-12 h-12 rounded-full border border-zinc-800 bg-zinc-950/60 hover:bg-zinc-900 hover:border-white/20 flex items-center justify-center text-zinc-400 hover:text-white transition-all duration-300"
           >
-            <ArrowUpRight size={18} />
+            <ArrowRight size={18} />
           </button>
         </div>
 

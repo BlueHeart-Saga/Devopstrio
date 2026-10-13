@@ -50,7 +50,7 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Caveat:wght@600;700&family=Great+Vibes&family=Kaushan+Script&family=Permanent+Marker&family=Rock+Salt&family=Sedgwick+Ave&display=swap"
         />
       </head>
-      <body className="overflow-x-clip w-full max-w-[100vw] relative bg-[#030303] text-white">
+      <body className="overflow-x-clip w-full max-w-full relative bg-[#030303] text-white">
         {/* Google Analytics 4 (GA4) */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-NGV5DC74RW"

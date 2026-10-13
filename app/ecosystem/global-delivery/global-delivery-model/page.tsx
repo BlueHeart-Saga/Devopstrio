@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { Reveal } from "@/components/ui/Reveal";
 import { Hero } from "@/components/services/Hero";
 import {
+  ArrowRight,
   ArrowUpRight,
   Plus,
   Minus,
@@ -320,7 +321,7 @@ export default function GlobalDeliveryModelPage() {
                     </div>
                   </div>
                   {idx < deliveryLifecycle.length - 1 && (
-                    <ArrowUpRight className="w-5 h-5 text-zinc-700 rotate-45 hidden md:block" />
+                    <ArrowRight className="w-5 h-5 text-zinc-700 hidden md:block" />
                   )}
                 </React.Fragment>
               ))}
