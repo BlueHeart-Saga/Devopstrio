@@ -158,8 +158,8 @@ export function AIStudioShowcase() {
         <div className="text-center max-w-4xl mx-auto mb-8 sm:mb-10">
           <Reveal>
             <div className="relative inline-block">
-              {/* Arrow image on the left side (White color filter) */}
-              <div className="absolute -top-6 sm:-top-8 md:-top-9 -left-6 sm:-left-10 md:-left-14 z-20 pointer-events-none select-none">
+              {/* Arrow image on the left side (White color filter, hidden on mobile to avoid edge clipping) */}
+              <div className="hidden sm:block absolute -top-6 sm:-top-8 md:-top-9 sm:-left-10 md:-left-14 z-20 pointer-events-none select-none">
                 <img src="/webp/assets/components/left-right.webp"
                   alt="Left-Right Arrow indicator"
                   className="w-8 sm:w-11 md:w-14 h-auto object-contain filter brightness-0 invert opacity-75 drop-shadow-[0_0_10px_rgba(255,255,255,0.25)]"

@@ -135,7 +135,7 @@ export const GlobalEngineeringTeams = () => {
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-white leading-tight mb-4">
               Leaders Who{" "}
               <span className="relative inline-block">
-                <div className="absolute -top-6 sm:-top-7 -left-12 sm:-left-14 md:-left-16 z-20 pointer-events-none select-none rotate-[-40deg]">
+                <div className="hidden sm:block absolute -top-6 sm:-top-7 -left-12 sm:-left-14 md:-left-16 z-20 pointer-events-none select-none rotate-[-40deg]">
                   <img src="/webp/assets/components/Carrow-right.webp"
                     alt="Curved arrow"
                     className="w-10 sm:w-12 md:w-14 h-auto object-contain filter drop-shadow-[0_0_15px_rgba(244,63,94,0.4)]"

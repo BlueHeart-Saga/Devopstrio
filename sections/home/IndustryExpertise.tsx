@@ -77,13 +77,13 @@ export function IndustryExpertise() {
   const activeData = industryTabs.find((tab) => tab.id === activeTab) || industryTabs[0];
 
   return (
-    <section className="w-full py-8 bg-[#030303] text-white relative overflow-hidden">
+    <section className="w-full pt-10 pb-14 sm:py-16 md:py-20 bg-[#030303] text-white relative overflow-hidden">
       <div className="max-w-7xl mx-auto w-full px-6 sm:px-8 relative z-10">
         
         {/* Section Title */}
         <div className="text-center max-w-4xl mx-auto mb-10 relative">
-          {/* Left-to-right arrow PNG pointing to header */}
-          <div className="absolute -top-6 sm:-top-8 md:-top-10 left-0 sm:-left-10 md:-left-14 lg:-left-20 z-20 pointer-events-none select-none">
+          {/* Left-to-right arrow PNG pointing to header (hidden on mobile to prevent text collision) */}
+          <div className="hidden sm:block absolute -top-6 sm:-top-8 md:-top-10 sm:-left-10 md:-left-14 lg:-left-20 z-20 pointer-events-none select-none">
             <img src="/webp/assets/components/lefttoright.webp"
               alt="Left to right arrow"
               className="w-12 sm:w-16 md:w-20 h-auto object-contain filter drop-shadow-[0_0_15px_rgba(244,63,94,0.4)]"

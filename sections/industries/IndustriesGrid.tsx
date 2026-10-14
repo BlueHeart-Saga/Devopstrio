@@ -66,8 +66,8 @@ export function IndustriesGrid() {
 
         {/* Section Header (ref: IndustryExpertise.tsx) */}
         <div className="text-center max-w-4xl mx-auto mb-8 sm:mb-10 relative">
-          {/* Left-to-right arrow PNG pointing to header */}
-          <div className="absolute -top-6 sm:-top-8 md:-top-10 -left-4 sm:-left-8 md:-left-12 lg:-left-16 z-20 pointer-events-none select-none">
+          {/* Left-to-right arrow PNG pointing to header (hidden on mobile) */}
+          <div className="hidden sm:block absolute -top-6 sm:-top-8 md:-top-10 -left-4 sm:-left-8 md:-left-12 lg:-left-16 z-20 pointer-events-none select-none">
             <img
               src="/webp/assets/components/lefttoright.webp"
               alt="Left to right arrow"

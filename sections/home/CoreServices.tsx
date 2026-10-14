@@ -165,7 +165,7 @@ export function CoreServices() {
 
   return (
     <section
-      className="w-full py-6 md:py-8 bg-[#030303] text-white relative overflow-hidden"
+      className="w-full pt-8 pb-12 sm:py-16 md:py-20 bg-[#030303] text-white relative overflow-hidden"
       id="capabilities"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
@@ -307,7 +307,7 @@ export function CoreServices() {
             href="/services"
             className="text-sm sm:text-base font-semibold text-rose-500 hover:text-rose-400 transition-colors uppercase tracking-wider flex items-center gap-1.5"
           >
-            All capabilities <ArrowUpRight size={16} />
+            All capabilities <ArrowRight size={16} />
           </Link>
         </div>
 

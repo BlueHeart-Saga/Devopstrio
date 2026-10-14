@@ -63,7 +63,7 @@ export function StrategicPartnerships() {
                 {/* Curved top-to-bottom side arrow image positioned directly AFTER Credibility */}
                 <img src="/webp/assets/components/top-to-buttom-side-Arrowmid.webp"
                   alt="Side arrow pointing down"
-                  className="absolute -bottom-14 sm:-bottom-20 md:-bottom-24 -right-8 sm:-right-12 md:-right-16 scale-x-[-1] w-10 sm:w-14 md:w-16 lg:w-18 h-auto object-contain filter drop-shadow-[0_0_15px_rgba(244,63,94,0.5)] pointer-events-none select-none z-20"
+                  className="hidden sm:block absolute -bottom-14 sm:-bottom-20 md:-bottom-24 -right-8 sm:-right-12 md:-right-16 scale-x-[-1] w-10 sm:w-14 md:w-16 lg:w-18 h-auto object-contain filter drop-shadow-[0_0_15px_rgba(244,63,94,0.5)] pointer-events-none select-none z-20"
                   loading="lazy" />
               </span>
             </h2>

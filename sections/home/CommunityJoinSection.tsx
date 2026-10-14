@@ -319,8 +319,8 @@ export function CommunityJoinSection() {
       {/* Background ambient lighting */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[450px] bg-rose-600/5 rounded-full blur-[140px] pointer-events-none" />
 
-      {/* Decorative top-left arrow image (Matching Reference Style) */}
-      <div className="absolute top-10 sm:top-14 md:top-16 left-4 sm:left-8 z-20 pointer-events-none select-none">
+      {/* Decorative top-left arrow image (Matching Reference Style, hidden on mobile to avoid text clash) */}
+      <div className="hidden sm:block absolute top-10 sm:top-14 md:top-16 left-4 sm:left-8 z-20 pointer-events-none select-none">
         <img src="/webp/assets/components/top-to-buttom-side-Arrowmid.webp"
           alt="Top connector arrow"
           className="w-12 sm:w-16 md:w-20 h-auto object-contain opacity-75 filter drop-shadow-[0_0_12px_rgba(244,63,94,0.35)]"

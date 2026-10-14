@@ -19,7 +19,7 @@ export const LeadershipDeliver = () => {
             <div>
               <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight text-white mb-2 font-sans leading-[1.45]">
                 <span className="relative inline-block">
-                  <div className="absolute -top-5 sm:-top-7 md:-top-8 -left-10 sm:-left-12 md:-left-16 z-20 pointer-events-none select-none">
+                  <div className="hidden sm:block absolute -top-5 sm:-top-7 md:-top-8 -left-10 sm:-left-12 md:-left-16 z-20 pointer-events-none select-none">
                     <img src="/webp/assets/components/lefttoright.webp"
                       alt="Left-Right Arrow indicator"
                       className="w-10 sm:w-12 md:w-14 h-auto object-contain filter drop-shadow-[0_0_15px_rgba(244,63,94,0.4)]"

@@ -119,8 +119,8 @@ export function IndustryUseCases() {
                 <span className="inline-block bg-rose-500 text-black font-extrabold px-3.5 py-1 mx-1.5 rounded-sm transform -rotate-3 shadow-[0_4px_20px_rgba(225,29,72,0.45)] align-middle uppercase tracking-wider text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
                   GROW
                 </span>
-                {/* Horizontally Flipped Arrow on Right Side of GROW */}
-                <div className="absolute -top-6 sm:-top-8 md:-top-10 -right-12 sm:-right-20 md:-right-24 lg:-right-28 z-30 pointer-events-none select-none">
+                {/* Horizontally Flipped Arrow on Right Side of GROW (hidden on mobile) */}
+                <div className="hidden sm:block absolute -top-6 sm:-top-8 md:-top-10 -right-12 sm:-right-20 md:-right-24 lg:-right-28 z-30 pointer-events-none select-none">
                   <img
                     src="/webp/assets/components/top-to-buttom-side-Arrowmid.webp"
                     alt="Connecting section arrow"

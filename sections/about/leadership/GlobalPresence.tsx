@@ -70,8 +70,8 @@ export const GlobalPresence = () => {
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-14 relative">
-          {/* Curved Arrow PNG on Right Side */}
-          <div className="absolute -top-6 right-2 sm:right-10 z-20 pointer-events-none select-none">
+          {/* Curved Arrow PNG on Right Side (hidden on mobile to prevent text clash) */}
+          <div className="hidden sm:block absolute -top-6 right-2 sm:right-10 z-20 pointer-events-none select-none">
             <img src="/webp/assets/components/Carrow-right.webp"
               alt="Curved arrow"
               className="w-14 sm:w-20 h-auto object-contain filter drop-shadow-[0_0_15px_rgba(244,63,94,0.4)] scale-x-[-1]"

@@ -132,8 +132,8 @@ export function OurPeopleSection() {
         {/* Section Header */}
         <Reveal>
           <div className="text-center max-w-3xl mx-auto mb-16 relative">
-            {/* Curved Arrow PNG on Right Side (Mirrored, shifted left) */}
-            <div className="absolute -top-6 sm:-top-8 md:-top-10 right-2 sm:right-6 md:right-10 lg:right-12 z-20 pointer-events-none select-none">
+            {/* Curved Arrow PNG on Right Side (Mirrored, shifted left, hidden on mobile) */}
+            <div className="hidden sm:block absolute -top-6 sm:-top-8 md:-top-10 right-2 sm:right-6 md:right-10 lg:right-12 z-20 pointer-events-none select-none">
               <img src="/webp/assets/components/Carrow-right.webp"
                 alt="Curved arrow right"
                 className="w-14 sm:w-18 md:w-22 lg:w-24 h-auto object-contain filter drop-shadow-[0_0_15px_rgba(244,63,94,0.4)] scale-x-[-1]"
@@ -283,8 +283,8 @@ export function OurPeopleSection() {
               {/* Centered Heading with Connecting Side Arrow (matching PartnersSection style) */}
               <div className="text-center max-w-xl mx-auto mb-16 relative z-10">
                 <h3 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight text-white relative inline-block">
-                  {/* Connecting side arrow starting at left side */}
-                  <div className="absolute -top-2 sm:-top-4 md:-top-6 -left-20 sm:-left-28 md:-left-36 lg:-left-44 z-30 pointer-events-none select-none">
+                  {/* Connecting side arrow starting at left side (hidden on mobile) */}
+                  <div className="hidden sm:block absolute -top-2 sm:-top-4 md:-top-6 -left-20 sm:-left-28 md:-left-36 lg:-left-44 z-30 pointer-events-none select-none">
                     <img src="/webp/assets/components/top-to-buttom-side-Arrowmid.webp"
                       alt="Connecting section arrow"
                       className="w-16 sm:w-20 md:w-24 lg:w-28 h-auto object-contain filter drop-shadow-[0_0_20px_rgba(225,29,72,0.4)] transform -rotate-[-30deg]"
