@@ -62,9 +62,13 @@ export default function CompanyProfileResourcePage() {
             </div>
 
             <div className="pt-6 border-t border-neutral-800 flex items-center gap-4">
-              <button className="px-6 py-3.5 rounded-xl bg-rose-600 hover:bg-rose-500 text-white font-bold text-sm flex items-center gap-2 transition-colors">
-                <Download className="w-4 h-4" /> Download PDF (14.2 MB)
-              </button>
+              <a
+                href="/documents/Devopstrio_Corporate_Profile_2026.pdf?download=true"
+                download="Devopstrio_Corporate_Profile_2026.pdf"
+                className="px-6 py-3.5 rounded-xl bg-rose-600 hover:bg-rose-500 text-white font-bold text-sm flex items-center gap-2 transition-colors cursor-pointer"
+              >
+                <Download className="w-4 h-4" /> Download PDF
+              </a>
               <Link href="/marketing" className="px-6 py-3.5 rounded-xl bg-neutral-800 hover:bg-neutral-700 text-neutral-200 font-bold text-sm transition-colors">
                 Return to Hub
               </Link>

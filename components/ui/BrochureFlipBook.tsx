@@ -426,6 +426,27 @@ export function BrochureFlipBook({
   const displayBookHeight = basePageHeight * scale;
   const turnWidth = slotWidth;
 
+  const effectiveFileUrl = originalFileUrl || pdfUrl;
+  const cleanDocName = `${(pdfTitle || "document").replace(/[^a-zA-Z0-9_-]/g, "_")}.pdf`;
+
+  let blobFileParam = "";
+  const blobMatch = effectiveFileUrl.match(/marketingstorein\.blob\.core\.windows\.net\/devopstrio\/uploads\/(.*)/i);
+  if (blobMatch) {
+    blobFileParam = blobMatch[1];
+  }
+
+  const secureDownloadUrl = blobFileParam
+    ? `/documents/${encodeURIComponent(cleanDocName)}?file=${encodeURIComponent(blobFileParam)}&download=true`
+    : `/api/pdf-proxy?url=${encodeURIComponent(effectiveFileUrl)}&filename=${encodeURIComponent(cleanDocName)}&download=true`;
+
+  const secureViewUrl = blobFileParam
+    ? `/documents/${encodeURIComponent(cleanDocName)}?file=${encodeURIComponent(blobFileParam)}`
+    : `/api/pdf-proxy?url=${encodeURIComponent(effectiveFileUrl)}&filename=${encodeURIComponent(cleanDocName)}`;
+
+  const secureShareUrl = typeof window !== "undefined"
+    ? `${window.location.origin}${blobFileParam ? `/documents/${encodeURIComponent(cleanDocName)}?file=${encodeURIComponent(blobFileParam)}` : `/api/pdf-proxy?url=${encodeURIComponent(effectiveFileUrl)}&filename=${encodeURIComponent(cleanDocName)}`}`
+    : effectiveFileUrl;
+
   return (
     <div ref={rootRef} className="flex h-full min-h-0 w-full flex-col overflow-hidden bg-[#DDDDDD] font-sans text-white">
       <header className="z-30 flex min-h-14 shrink-0 flex-wrap items-center justify-between gap-2 border-b border-white/10 bg-[#090909] px-3 py-2 sm:px-6">
@@ -446,21 +467,16 @@ export function BrochureFlipBook({
           <button
             type="button"
             onClick={async () => {
-              const shareUrl = typeof window !== "undefined"
-                ? (originalFileUrl || pdfUrl).startsWith("http")
-                  ? (originalFileUrl || pdfUrl)
-                  : `${window.location.origin}${originalFileUrl || pdfUrl}`
-                : pdfUrl;
               if (navigator.share) {
                 try {
-                  await navigator.share({ title: pdfTitle, url: shareUrl });
+                  await navigator.share({ title: pdfTitle, url: secureShareUrl });
                   return;
                 } catch {
                   // Fall back to clipboard if user cancelled or unsupported
                 }
               }
               if (navigator.clipboard) {
-                await navigator.clipboard.writeText(shareUrl);
+                await navigator.clipboard.writeText(secureShareUrl);
                 setCopied(true);
                 setTimeout(() => setCopied(false), 2000);
               }
@@ -471,8 +487,8 @@ export function BrochureFlipBook({
           >
             {copied ? <Check size={16} /> : <Share2 size={16} />}
           </button>
-          <a href={originalFileUrl || pdfUrl} download aria-label="Download original document" title="Download document" className="rounded-lg bg-zinc-900 p-2.5 text-zinc-300 hover:text-white"><Download size={16}/></a>
-          <a href={originalFileUrl || pdfUrl} target="_blank" rel="noopener noreferrer" aria-label="Open in new tab" title="Open in new tab" className="rounded-lg bg-zinc-900 p-2.5 text-zinc-300 hover:text-white inline-flex"><ExternalLink size={16}/></a>
+          <a href={secureDownloadUrl} download={cleanDocName} aria-label="Download original document" title="Download document" className="rounded-lg bg-zinc-900 p-2.5 text-zinc-300 hover:text-white"><Download size={16}/></a>
+          <a href={secureViewUrl} target="_blank" rel="noopener noreferrer" aria-label="Open in new tab" title="Open in new tab" className="rounded-lg bg-zinc-900 p-2.5 text-zinc-300 hover:text-white inline-flex"><ExternalLink size={16}/></a>
           <button type="button" onClick={toggleFullscreen} aria-label="Toggle fullscreen" title="Toggle fullscreen" className="rounded-lg bg-zinc-900 p-2.5 text-zinc-300 hover:text-white">{fullscreen ? <Minimize2 size={16}/> : <Maximize2 size={16}/>}</button>
           {onClose && <button type="button" onClick={onClose} aria-label="Close document" title="Close" className="rounded-lg bg-rose-600 p-2.5 text-white hover:bg-rose-500"><X size={16}/></button>}
         </div>

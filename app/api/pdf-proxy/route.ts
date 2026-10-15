@@ -13,10 +13,20 @@ const ALLOWED_HOST_PATTERNS = [
 export async function GET(req: NextRequest) {
   try {
     const { searchParams } = new URL(req.url);
-    const targetUrl = searchParams.get("url");
+    let targetUrl = searchParams.get("url");
+    const fileParam = searchParams.get("file");
+    const filenameParam = searchParams.get("filename") || "Devopstrio_Document.pdf";
+    const cleanFilename = filenameParam.replace(/[^a-zA-Z0-9._-]/g, "_");
+    const isDownload = searchParams.get("download") === "true";
+
+    // Auto-resolve relative file path to Azure Blob storage
+    if (!targetUrl && fileParam) {
+      const sanitizedFile = fileParam.replace(/^\/+/, "").replace(/\.\./g, "");
+      targetUrl = `https://marketingstorein.blob.core.windows.net/devopstrio/uploads/${sanitizedFile}`;
+    }
 
     if (!targetUrl) {
-      return NextResponse.json({ error: "Missing url parameter" }, { status: 400 });
+      return NextResponse.json({ error: "Missing url or file parameter" }, { status: 400 });
     }
 
     let parsed: URL;
@@ -108,6 +118,10 @@ export async function GET(req: NextRequest) {
     responseHeaders.set("Access-Control-Expose-Headers", "Content-Range, Content-Length, Accept-Ranges");
     responseHeaders.set("Cache-Control", "public, max-age=86400, s-maxage=86400");
     responseHeaders.set("Accept-Ranges", "bytes");
+    responseHeaders.set(
+      "Content-Disposition",
+      `${isDownload ? "attachment" : "inline"}; filename="${cleanFilename}"`
+    );
 
     const contentLength = upstreamRes.headers.get("content-length");
     if (contentLength) responseHeaders.set("Content-Length", contentLength);

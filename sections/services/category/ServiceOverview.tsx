@@ -60,7 +60,6 @@ function getOverviewImage(title: string, incomingImage?: string): string {
     "/webp/assets/Services-Page/Capability-Overview-section-images/reorder/Frame-318.webp",
     "/webp/assets/Services-Page/Capability-Overview-section-images/reorder/Frame-319.webp",
     "/webp/assets/Services-Page/Capability-Overview-section-images/reorder/Frame-329.webp",
-    "/webp/assets/Services-Page/Capability-Overview-section-images/reorder/Frame-330.webp",
     "/webp/assets/Services-Page/Capability-Overview-section-images/reorder/Frame-331.webp",
     "/webp/assets/Services-Page/Capability-Overview-section-images/reorder/Frame-332.webp",
     "/webp/assets/Services-Page/Capability-Overview-section-images/reorder/Frame-333.webp",
@@ -72,19 +71,6 @@ function getOverviewImage(title: string, incomingImage?: string): string {
     "/webp/assets/Services-Page/Capability-Overview-section-images/reorder/Frame-339.webp",
     "/webp/assets/Services-Page/Capability-Overview-section-images/reorder/Frame-340.webp",
     "/webp/assets/Services-Page/Capability-Overview-section-images/reorder/Frame-341.webp",
-    "/webp/assets/Services-Page/Capability-Overview-section-images/reorder/Frame-342.webp",
-    "/webp/assets/Services-Page/Capability-Overview-section-images/reorder/Frame-343.webp",
-    "/webp/assets/Services-Page/Capability-Overview-section-images/reorder/Frame-344.webp",
-    "/webp/assets/Services-Page/Capability-Overview-section-images/reorder/Frame-345.webp",
-    "/webp/assets/Services-Page/Capability-Overview-section-images/reorder/Frame-346.webp",
-    "/webp/assets/Services-Page/Capability-Overview-section-images/reorder/Frame-347.webp",
-    "/webp/assets/Services-Page/Capability-Overview-section-images/reorder/Frame-348.webp",
-    "/webp/assets/Services-Page/Capability-Overview-section-images/reorder/Frame-349.webp",
-    "/webp/assets/Services-Page/Capability-Overview-section-images/reorder/Frame-350.webp",
-    "/webp/assets/Services-Page/Capability-Overview-section-images/reorder/Frame-351.webp",
-    "/webp/assets/Services-Page/Capability-Overview-section-images/reorder/Frame-352.webp",
-    "/webp/assets/Services-Page/Capability-Overview-section-images/reorder/Frame-353.webp",
-    "/webp/assets/Services-Page/Capability-Overview-section-images/reorder/Frame-354.webp",
     "/webp/assets/Services-Page/Capability-Overview-section-images/reorder/Frame-355.webp",
     "/webp/assets/Services-Page/Capability-Overview-section-images/reorder/Frame-356.webp",
     "/webp/assets/Services-Page/Capability-Overview-section-images/reorder/Frame-357.webp",
@@ -167,7 +153,11 @@ export function ServiceOverview({
                   <img src={displayImage}
                     alt={title}
                     className="w-full h-full object-cover opacity-90 transition-transform duration-700 group-hover/img:scale-[1.02] pointer-events-none select-none"
-                  loading="lazy" />
+                    loading="lazy"
+                    onError={(e) => {
+                      e.currentTarget.src = "/webp/assets/Services-Page/Capability-Overview-section-images/reorder/Frame-108.webp";
+                    }}
+                  />
                   {/* Subtle glow/reflection */}
                   <div className="absolute inset-0 bg-gradient-to-tr from-white/0 via-white/5 to-transparent pointer-events-none" />
                 </div>

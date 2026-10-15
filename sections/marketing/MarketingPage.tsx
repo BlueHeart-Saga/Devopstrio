@@ -128,10 +128,22 @@ export default function MarketingPage() {
   const handleDownload = useCallback((item: MarketingResourceItem) => {
     if (!item.fileUrl) return;
     const ext = getExt(item.fileUrl) || getExt(item.fileName) || "pdf";
+    const cleanDocName = `${item.title.replace(/[^a-zA-Z0-9_-]/g, "_")}.${ext}`;
+
+    // Extract blob filename if from Azure Blob storage to avoid exposing blob domain
+    let fileParam = "";
+    const match = item.fileUrl.match(/marketingstorein\.blob\.core\.windows\.net\/devopstrio\/uploads\/(.*)/i);
+    if (match) {
+      fileParam = match[1];
+    }
+
+    const downloadUrl = fileParam
+      ? `/documents/${encodeURIComponent(cleanDocName)}?file=${encodeURIComponent(fileParam)}&download=true`
+      : `/api/pdf-proxy?url=${encodeURIComponent(item.fileUrl)}&filename=${encodeURIComponent(cleanDocName)}&download=true`;
+
     const a = document.createElement("a");
-    a.href = item.fileUrl;
-    a.download = `${item.title.replace(/[^a-zA-Z0-9_-]/g, "_")}.${ext}`;
-    a.rel = "noopener";
+    a.href = downloadUrl;
+    a.download = cleanDocName;
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
@@ -194,6 +206,7 @@ export default function MarketingPage() {
         onSubmit={submitSearch}
         onRequest={() => setRequestOpen(true)}
         onProfile={profile ? () => handleDownload(profile) : undefined}
+        onPreview={(item) => setViewerItem(item)}
         stats={stats}
         covers={covers}
         loading={status === "loading"}

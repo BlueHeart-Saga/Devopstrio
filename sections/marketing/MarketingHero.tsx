@@ -6,13 +6,14 @@ import { FileText, Download, Send, X, Search } from "lucide-react";
 import { MarketingResourceItem, POPULAR } from "./config";
 
 export function MarketingHero({
-  query, onQuery, onSubmit, onRequest, onProfile, stats, covers, loading,
+  query, onQuery, onSubmit, onRequest, onProfile, onPreview, stats, covers, loading,
 }: {
   query: string;
   onQuery: (q: string) => void;
   onSubmit: () => void;
   onRequest: () => void;
   onProfile?: () => void;
+  onPreview?: (item: MarketingResourceItem) => void;
   stats: { resources: number; categories: number; formats: number };
   covers: MarketingResourceItem[];
   loading: boolean;
@@ -22,9 +23,16 @@ export function MarketingHero({
   // 0 covers -> one placeholder, 1 -> single card, 2 -> pair, 3 -> full fan.
   const stack: (MarketingResourceItem | undefined)[] = covers.length ? covers.slice(0, 3) : [undefined];
   const layouts: Record<number, string[]> = {
-    1: ["z-10"],
-    2: ["z-10 -rotate-3 -translate-x-14", "rotate-3 translate-x-14 translate-y-4 opacity-80"],
-    3: ["z-10", "-rotate-6 -translate-x-24 translate-y-6 opacity-80", "rotate-6 translate-x-24 translate-y-6 opacity-80"],
+    1: ["z-20 -translate-x-1/2 -translate-y-1/2"],
+    2: [
+      "z-20 -translate-x-1/2 -translate-y-1/2 -rotate-2 hover:rotate-0",
+      "z-10 -translate-x-[calc(50%-16px)] -translate-y-[calc(50%-14px)] rotate-3 opacity-75 hover:opacity-100"
+    ],
+    3: [
+      "z-30 -translate-x-1/2 -translate-y-1/2 hover:scale-[1.02]",
+      "z-20 -translate-x-[calc(50%+18px)] -translate-y-[calc(50%+14px)] -rotate-3 scale-[0.96] opacity-80 hover:opacity-100",
+      "z-10 -translate-x-[calc(50%-20px)] -translate-y-[calc(50%-16px)] rotate-3 scale-[0.92] opacity-65 hover:opacity-100",
+    ],
   };
   const positions = layouts[stack.length] || layouts[1];
 
@@ -113,26 +121,40 @@ export function MarketingHero({
           </dl>
         </div>
 
-        {/* Fanned document stack, built from real latest covers */}
-        <div className="relative mx-auto hidden h-[420px] w-full max-w-md lg:block" aria-hidden>
-          <div className="absolute inset-0 -z-10 rounded-full bg-[radial-gradient(circle,rgba(244,63,94,0.16),transparent_65%)]" />
+        {/* Fanned document stack, built from real latest covers in landscape presentation ratio */}
+        <div className="relative mx-auto hidden h-[420px] w-full max-w-lg lg:flex items-center justify-center">
+          <div className="absolute inset-0 -z-10 rounded-full bg-[radial-gradient(circle,rgba(244,63,94,0.18),transparent_65%)]" />
           {stack.map((c, i) => {
             return (
-              <div key={c?.id ?? `placeholder-${i}`}
-                className={`absolute left-1/2 top-1/2 h-72 w-52 overflow-hidden rounded-xl border border-zinc-700/70 bg-zinc-900 shadow-2xl shadow-black/70 transition duration-500 hover:-translate-y-2 ${positions[i]}`}
-                style={{ marginLeft: "-6.5rem", marginTop: "-9rem" }}>
+              <div
+                key={c?.id ?? `placeholder-${i}`}
+                onClick={() => c && onPreview?.(c)}
+                role={c && onPreview ? "button" : undefined}
+                tabIndex={c && onPreview ? 0 : undefined}
+                aria-label={c ? `Preview ${c.title}` : undefined}
+                className={`group absolute left-1/2 top-1/2 w-[340px] sm:w-[380px] aspect-[16/10] overflow-hidden rounded-2xl border border-zinc-700/80 bg-zinc-900 shadow-2xl shadow-black/80 transition-all duration-500 ${positions[i]} ${c && onPreview ? "cursor-pointer" : ""}`}
+              >
                 {c?.thumbnailUrl ? (
-                  <Image src={c.thumbnailUrl} alt="" fill sizes="208px" className="object-cover" />
+                  <Image
+                    src={c.thumbnailUrl}
+                    alt={c.title || ""}
+                    fill
+                    sizes="380px"
+                    className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                  />
                 ) : (
-                  <div className="flex h-full flex-col justify-end gap-2 bg-gradient-to-br from-zinc-800 to-zinc-950 p-4">
-                    <FileText className="h-8 w-8 text-rose-400/80" />
-                    <div className="h-2 w-3/4 rounded bg-zinc-700" />
+                  <div className="flex h-full flex-col justify-end gap-2 bg-gradient-to-br from-zinc-800 to-zinc-950 p-6">
+                    <FileText className="h-10 w-10 text-rose-400/80" />
+                    <div className="h-2.5 w-3/4 rounded bg-zinc-700" />
                     <div className="h-2 w-1/2 rounded bg-zinc-800" />
                   </div>
                 )}
                 {c && (
-                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/90 to-transparent p-3 pt-10">
-                    <p className="line-clamp-2 text-xs font-medium text-white">{c.title}</p>
+                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/95 via-black/70 to-transparent p-3.5 pt-8">
+                    <p className="line-clamp-1 text-xs sm:text-sm font-semibold text-white drop-shadow-sm">{c.title}</p>
+                    {c.category && (
+                      <span className="text-[10px] text-zinc-400 uppercase tracking-wider">{c.category}</span>
+                    )}
                   </div>
                 )}
               </div>
