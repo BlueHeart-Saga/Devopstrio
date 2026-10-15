@@ -206,7 +206,7 @@ export default function MarketingPage() {
         onSubmit={submitSearch}
         onRequest={() => setRequestOpen(true)}
         onProfile={profile ? () => handleDownload(profile) : undefined}
-        onPreview={(item) => setViewerItem(item)}
+        onPreview={handlePreview}
         stats={stats}
         covers={covers}
         loading={status === "loading"}
