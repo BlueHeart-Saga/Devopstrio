@@ -4,21 +4,21 @@ import { getCapabilityData } from "@/data/ecosystem/capabilities-registry";
 import CapabilityMasterTemplate from "@/components/ecosystem/technology/CapabilityMasterTemplate";
 
 interface PageProps {
-  params: Promise<{ capability: string }> | { capability: string };
+  params: Promise<{ capability: string }>;
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const resolved = await Promise.resolve(params);
+  const resolved = await params;
   const data = getCapabilityData("software-engineering", resolved.capability);
   if (!data) return { title: "Capability Not Found | DevOpsTrio" };
   return {
     title: `${data.title} | DevOpsTrio Software Architecture`,
-    description: data.description,
+    description: data.description || data.subtitle,
   };
 }
 
 export default async function SoftwareCapabilityPage({ params }: PageProps) {
-  const resolved = await Promise.resolve(params);
+  const resolved = await params;
   const data = getCapabilityData("software-engineering", resolved.capability);
 
   if (!data) {

@@ -41,7 +41,7 @@ import Link from "next/link";
 import { CapabilityPageData } from "@/data/ecosystem/capabilities-registry";
 
 // Icon mapping helper
-const iconMap: Record<string, React.ElementType> = {
+const iconMap: Record<string, any> = {
   Zap,
   Layers,
   Lock,
@@ -474,7 +474,7 @@ export function CapabilityMasterTemplate({ data }: { data: CapabilityPageData })
                   {group.category}
                 </span>
                 <div className="flex flex-wrap gap-2">
-                  {group.items.map((item, i) => (
+                  {(group.items || group.tools || []).map((item, i) => (
                     <span 
                       key={i}
                       className="px-3 py-1 rounded-lg bg-zinc-950 border border-zinc-800 text-xs font-medium text-zinc-300 hover:border-rose-500/30 transition-colors"

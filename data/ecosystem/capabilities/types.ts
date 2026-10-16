@@ -35,7 +35,8 @@ export interface CapabilityFeatureCard {
 
 export interface CapabilityTechStackGroup {
   category: string;
-  items: string[];
+  items?: string[];
+  tools?: string[];
 }
 
 export interface CapabilityFaq {
@@ -51,6 +52,12 @@ export interface CapabilityPageData {
   tag: string;
   badge: string;
   subtitle: string;
+  tagline?: string;
+  description?: string;
+  primaryMetric?: { value: string; label: string; detail: string };
+  heroStats?: { label: string; value: string; detail: string }[];
+  terminalCommand?: string;
+  terminalOutput?: string[];
   metrics: { val: string; label: string; sub: string }[];
   capabilities: CapabilityPillarSubItem[];
   pipelineStages: CapabilityPipelineStage[];
