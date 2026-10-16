@@ -650,18 +650,78 @@ export default function OracleStrategicAllianceHub() {
 
       {/* CERTIFICATIONS */}
       <PartnerCertifications
-        title="Oracle Certifications"
+        title="Oracle Certifications & Awards"
         certifications={[
-          { image: "/webp/assets/ecosystem/ORACLE_Awards/Group-1000008908.webp" },
-          { image: "/webp/assets/ecosystem/ORACLE_Awards/Group-1000008909.webp" },
-          { image: "/webp/assets/ecosystem/ORACLE_Awards/image-154.webp" },
-          { image: "/webp/assets/ecosystem/ORACLE_Awards/image-155.webp" },
-          { image: "/webp/assets/ecosystem/ORACLE_Awards/image-156.webp" },
-          { image: "/webp/assets/ecosystem/ORACLE_Awards/image-157.webp" },
-          { image: "/webp/assets/ecosystem/ORACLE_Awards/image-158.webp" },
-          { image: "/webp/assets/ecosystem/ORACLE_Awards/image-159.webp" },
-          { image: "/webp/assets/ecosystem/ORACLE_Awards/image-162.webp" },
-          { image: "/webp/assets/ecosystem/ORACLE_Awards/image-163.webp" }
+          {
+            name: "Health & Life Sciences Award",
+            category: "Partner Awards",
+            year: "2025",
+            subtitle: "Industry Solutions Partner",
+            image: "/webp/assets/ecosystem/ORACLE_Awards/Group-1000008908.webp"
+          },
+          {
+            name: "Communications Award",
+            category: "Partner Awards",
+            year: "2025",
+            subtitle: "Industry Solutions Partner",
+            image: "/webp/assets/ecosystem/ORACLE_Awards/Group-1000008909.webp"
+          },
+          {
+            name: "Customer Success Award",
+            category: "Partner Awards",
+            year: "2024",
+            subtitle: "Best-in-Class Applications",
+            image: "/webp/assets/ecosystem/ORACLE_Awards/image-154.webp"
+          },
+          {
+            name: "GenAI Innovation Award",
+            category: "Excellence Awards",
+            year: "2025",
+            subtitle: "Oracle Excellence Accreditations",
+            image: "/webp/assets/ecosystem/ORACLE_Awards/image-155.webp"
+          },
+          {
+            name: "Cloud & Tech Innovation (EMEA)",
+            category: "Cloud/Tech Partner",
+            year: "2024",
+            subtitle: "Europe, Middle East & Africa",
+            image: "/webp/assets/ecosystem/ORACLE_Awards/image-156.webp"
+          },
+          {
+            name: "Business Impact Award (EMEA)",
+            category: "Cloud/Tech Partner",
+            year: "2024",
+            subtitle: "Europe, Middle East & Africa",
+            image: "/webp/assets/ecosystem/ORACLE_Awards/image-157.webp"
+          },
+          {
+            name: "Cloud & Tech Innovation (Europe West)",
+            category: "Cloud/Tech Partner",
+            year: "2024",
+            subtitle: "Europe West Region",
+            image: "/webp/assets/ecosystem/ORACLE_Awards/image-158.webp"
+          },
+          {
+            name: "Business Impact Award (Europe West)",
+            category: "Cloud/Tech Partner",
+            year: "2024",
+            subtitle: "Europe West Region",
+            image: "/webp/assets/ecosystem/ORACLE_Awards/image-159.webp"
+          },
+          {
+            name: "Oracle Excellence Award Winner",
+            category: "Excellence Awards",
+            year: "2018",
+            subtitle: "Global Partner Recognition",
+            image: "/webp/assets/ecosystem/ORACLE_Awards/image-162.webp"
+          },
+          {
+            name: "Partner of the Year (Ireland)",
+            category: "Country Awards",
+            year: "2018",
+            subtitle: "Oracle Vertice Regional Award",
+            image: "/webp/assets/ecosystem/ORACLE_Awards/image-163.webp"
+          }
         ]}
       />
 

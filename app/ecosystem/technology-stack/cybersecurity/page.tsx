@@ -40,7 +40,7 @@ const CybersecurityOverview = () => {
             <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-4">
               Engineering Security into Every Layer
             </h2>
-            <p className="text-zinc-450 text-sm leading-relaxed font-semibold mb-8 max-w-2xl">
+            <p className="text-zinc-400 text-base md:text-lg leading-relaxed font-normal mb-8 max-w-2xl">
               Cybersecurity is no longer a standalone function—it is an essential part of modern digital transformation. At Devopstrio, we integrate security across cloud infrastructure, software engineering, identities, data, and operations to build resilient, compliant, and enterprise-ready environments.
             </p>
           </div>
@@ -56,10 +56,10 @@ const CybersecurityOverview = () => {
                     <div className="w-12 h-12 rounded-2xl bg-rose-500/10 text-rose-500 flex items-center justify-center mb-6">
                       <Icon size={20} />
                     </div>
-                    <h3 className="text-base font-bold text-white mb-3 tracking-tight group-hover:text-rose-400 transition-colors">
+                    <h3 className="text-lg md:text-xl font-bold text-white mb-2.5 tracking-tight group-hover:text-rose-400 transition-colors">
                       {item.title}
                     </h3>
-                    <p className="text-xs text-zinc-400 leading-relaxed font-semibold">
+                    <p className="text-sm text-zinc-400 leading-relaxed font-normal">
                       {item.desc}
                     </p>
                   </div>
@@ -237,14 +237,14 @@ const ZeroTrustArchitecture = () => {
 // ==========================================
 const SecurityDomains = () => {
   const capabilities = [
-    { title: "Identity & Access Security", tag: "Identity", desc: "Secure identities, authentication, authorization, and privileged access.", image: "/webp/assets/common/1b065043b6959827c05a0073c93a4a53-1.webp" },
-    { title: "Cloud Security", desc: "Protect workloads across Azure, AWS, GCP, and hybrid environments.", tag: "Cloud", image: "/webp/assets/common/260b761ad40c3ad2acba2c6666894539-1.webp" },
-    { title: "Network Security", tag: "Network", desc: "Secure enterprise connectivity, segmentation, VPNs, and Zero Trust networking.", image: "/webp/assets/common/315e4fdc6263bfd240f36297e376576e-1.webp" },
-    { title: "Application Security", tag: "DevSecOps", desc: "Integrate security throughout the software development lifecycle.", image: "/webp/assets/common/37b9b888cc479ea7b74d2d9a05c37597-1.webp" },
-    { title: "Endpoint Security", tag: "Endpoint", desc: "Protect servers, workstations, mobile devices, and cloud workloads.", image: "/webp/assets/common/464d8932bca4d6bb552ff2dcf2f3c5ca-1.webp" },
-    { title: "Data Protection", tag: "Data", desc: "Encrypt, classify, and govern sensitive enterprise information.", image: "/webp/assets/common/782e79a0bc5e9f58cb9af6a27727ca7b-1.webp" },
-    { title: "Security Operations", tag: "SOC", desc: "Continuous monitoring, incident response, and operational resilience.", image: "/webp/assets/common/82090d7be4ef5694954ce77f9cc2e627-1.webp" },
-    { title: "Governance & Compliance", tag: "Compliance", desc: "Support regulatory compliance and enterprise security policies.", image: "/webp/assets/common/90361fed0bb781d7c86e451995b4dbce-1.webp" }
+    { title: "Identity & Access Security", tag: "Identity", desc: "Secure identities, authentication, authorization, and privileged access.", image: "/webp/assets/common/1b065043b6959827c05a0073c93a4a53-1.webp", href: "/ecosystem/technology-stack/cybersecurity/identity-access-management" },
+    { title: "Cloud Security", desc: "Protect workloads across Azure, AWS, GCP, and hybrid environments.", tag: "Cloud", image: "/webp/assets/common/260b761ad40c3ad2acba2c6666894539-1.webp", href: "/ecosystem/technology-stack/cybersecurity/security-assessments" },
+    { title: "Network Security", tag: "Network", desc: "Secure enterprise connectivity, segmentation, VPNs, and Zero Trust networking.", image: "/webp/assets/common/315e4fdc6263bfd240f36297e376576e-1.webp", href: "/ecosystem/technology-stack/cybersecurity/zero-trust-architectures" },
+    { title: "Application Security", tag: "DevSecOps", desc: "Integrate security throughout the software development lifecycle.", image: "/webp/assets/common/37b9b888cc479ea7b74d2d9a05c37597-1.webp", href: "/ecosystem/technology-stack/cybersecurity/devsecops-pipelines" },
+    { title: "Endpoint Security", tag: "Endpoint", desc: "Protect servers, workstations, mobile devices, and cloud workloads.", image: "/webp/assets/common/464d8932bca4d6bb552ff2dcf2f3c5ca-1.webp", href: "/ecosystem/technology-stack/cybersecurity/security-assessments" },
+    { title: "Data Protection", tag: "Data", desc: "Encrypt, classify, and govern sensitive enterprise information.", image: "/webp/assets/common/782e79a0bc5e9f58cb9af6a27727ca7b-1.webp", href: "/ecosystem/technology-stack/cybersecurity/zero-trust-architectures" },
+    { title: "Security Operations", tag: "SOC", desc: "Continuous monitoring, incident response, and operational resilience.", image: "/webp/assets/common/82090d7be4ef5694954ce77f9cc2e627-1.webp", href: "/ecosystem/technology-stack/cybersecurity/security-assessments" },
+    { title: "Governance & Compliance", tag: "Compliance", desc: "Support regulatory compliance and enterprise security policies.", image: "/webp/assets/common/90361fed0bb781d7c86e451995b4dbce-1.webp", href: "/ecosystem/technology-stack/cybersecurity/compliance-audits" }
   ];
 
   return (
@@ -266,14 +266,17 @@ const SecurityDomains = () => {
                 </div>
                 <div className="p-6 flex flex-col flex-grow">
                   <span className="text-[10px] font-bold tracking-[0.2em] text-rose-500 uppercase mb-2 block">{item.tag}</span>
-                  <h3 className="text-base font-bold text-white mb-3 leading-tight tracking-tight">{item.title}</h3>
-                  <p className="text-xs text-zinc-400 leading-relaxed font-semibold mb-6 flex-grow">{item.desc}</p>
-                  <div className="mt-auto flex items-center gap-2 text-rose-500 text-xs font-bold hover:text-white transition-colors cursor-pointer w-fit">
-                    <div className="w-6 h-6 rounded-full bg-rose-500/10 flex items-center justify-center group-hover:bg-rose-500 group-hover:text-white transition-colors">
+                  <h3 className="text-lg md:text-xl font-bold text-white mb-2.5 leading-tight tracking-tight">{item.title}</h3>
+                  <p className="text-sm text-zinc-400 leading-relaxed font-normal mb-6 flex-grow">{item.desc}</p>
+                  <Link 
+                    href={item.href}
+                    className="mt-auto flex items-center gap-2 text-rose-500 text-xs font-bold hover:text-white transition-colors cursor-pointer w-fit group/btn"
+                  >
+                    <div className="w-6 h-6 rounded-full bg-rose-500/10 flex items-center justify-center group-hover/btn:bg-rose-500 group-hover/btn:text-white transition-colors">
                       <ChevronRight size={14} />
                     </div>
                     Explore {item.title}
-                  </div>
+                  </Link>
                 </div>
               </div>
             </Reveal>
@@ -549,14 +552,14 @@ const BusinessOutcomes = () => {
 // ==========================================
 const IndustryUseCases = () => {
   const useCases = [
-    { title: "Banking", tag: "Finance", desc: "Fraud prevention, secure digital banking, PCI compliance.", image: "/webp/assets/common/945ab601f043c558e0a8162da2a1eb4c-1.webp" },
-    { title: "Healthcare", tag: "Health", desc: "Patient data protection and healthcare compliance.", image: "/webp/assets/common/9d91b93f83e6d4cd494ec13611b3e50e-1.webp" },
-    { title: "Retail", tag: "Commerce", desc: "Secure payment systems and customer identity protection.", image: "/webp/assets/common/b384eb0438c55e43c61e7595acc29638-1.webp" },
-    { title: "Manufacturing", tag: "Industrial", desc: "Industrial IoT security and operational resilience.", image: "/webp/assets/common/e76e125035885aab9c9070ce85df239e-1.webp" },
-    { title: "Telecommunications", tag: "Networking", desc: "Network security and secure service delivery.", image: "/webp/assets/common/f03cc521fb070dfae9d87768b791ff70-1.webp" },
-    { title: "Government", tag: "Public", desc: "Citizen data protection and secure digital services.", image: "/webp/assets/common/f317dd71184f5c47d601eeb9508bf92c-1.webp" },
-    { title: "Education", tag: "Learning", desc: "Identity management and campus security.", image: "/webp/assets/common/45ea830d170d382ade235db479060da7-1.webp" },
-    { title: "Logistics", tag: "Supply Chain", desc: "Supply chain protection and operational security.", image: "/webp/assets/common/2fe7f9184c515b0c515ce38bc8a25efa-1.webp" }
+    { title: "Banking", tag: "Finance", desc: "Fraud prevention, secure digital banking, PCI compliance.", image: "/webp/assets/common/945ab601f043c558e0a8162da2a1eb4c-1.webp", href: "/industries/banking-finance" },
+    { title: "Healthcare", tag: "Health", desc: "Patient data protection and healthcare compliance.", image: "/webp/assets/common/9d91b93f83e6d4cd494ec13611b3e50e-1.webp", href: "/industries/healthcare-life-sciences" },
+    { title: "Retail", tag: "Commerce", desc: "Secure payment systems and customer identity protection.", image: "/webp/assets/common/b384eb0438c55e43c61e7595acc29638-1.webp", href: "/industries/retail-ecommerce" },
+    { title: "Manufacturing", tag: "Industrial", desc: "Industrial IoT security and operational resilience.", image: "/webp/assets/common/e76e125035885aab9c9070ce85df239e-1.webp", href: "/industries/manufacturing" },
+    { title: "Telecommunications", tag: "Networking", desc: "Network security and secure service delivery.", image: "/webp/assets/common/f03cc521fb070dfae9d87768b791ff70-1.webp", href: "/industries/telecommunications" },
+    { title: "Government", tag: "Public", desc: "Citizen data protection and secure digital services.", image: "/webp/assets/common/f317dd71184f5c47d601eeb9508bf92c-1.webp", href: "/industries/government-public-sector" },
+    { title: "Education", tag: "Learning", desc: "Identity management and campus security.", image: "/webp/assets/common/45ea830d170d382ade235db479060da7-1.webp", href: "/industries/education" },
+    { title: "Logistics", tag: "Supply Chain", desc: "Supply chain protection and operational security.", image: "/webp/assets/common/2fe7f9184c515b0c515ce38bc8a25efa-1.webp", href: "/industries/retail-ecommerce" }
   ];
 
   return (
@@ -580,14 +583,17 @@ const IndustryUseCases = () => {
                 </div>
                 <div className="p-6 flex flex-col flex-grow">
                   <span className="text-[10px] font-bold tracking-[0.2em] text-rose-500 uppercase mb-2 block">{item.tag}</span>
-                  <h3 className="text-base font-bold text-white mb-3 leading-tight tracking-tight">{item.title}</h3>
-                  <p className="text-xs text-zinc-400 leading-relaxed font-semibold mb-6 flex-grow">{item.desc}</p>
-                  <div className="mt-auto flex items-center gap-2 text-rose-500 text-xs font-bold hover:text-white transition-colors cursor-pointer w-fit">
-                    <div className="w-6 h-6 rounded-full bg-rose-500/10 flex items-center justify-center group-hover:bg-rose-500 group-hover:text-white transition-colors">
+                  <h3 className="text-lg md:text-xl font-bold text-white mb-2.5 leading-tight tracking-tight">{item.title}</h3>
+                  <p className="text-sm text-zinc-400 leading-relaxed font-normal mb-6 flex-grow">{item.desc}</p>
+                  <Link 
+                    href={item.href}
+                    className="mt-auto flex items-center gap-2 text-rose-500 text-xs font-bold hover:text-white transition-colors cursor-pointer w-fit group/btn"
+                  >
+                    <div className="w-6 h-6 rounded-full bg-rose-500/10 flex items-center justify-center group-hover/btn:bg-rose-500 group-hover/btn:text-white transition-colors">
                       <ChevronRight size={14} />
                     </div>
                     Learn More
-                  </div>
+                  </Link>
                 </div>
               </div>
             </Reveal>
@@ -676,7 +682,7 @@ const TechnologyFAQ = () => {
                   </div>
                 </button>
                 {isOpen && (
-                  <div className="mt-4 text-xs text-zinc-400 font-bold max-w-3xl leading-relaxed">
+                  <div className="mt-4 text-sm text-zinc-400 font-normal max-w-3xl leading-relaxed">
                     <p>{faq.a}</p>
                   </div>
                 )}

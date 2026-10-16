@@ -19,7 +19,8 @@ import {
   Server,
   Activity,
   GitBranch,
-  Code
+  Code,
+  ChevronRight
 } from "lucide-react";
 import Link from "next/link";
 
@@ -160,6 +161,15 @@ export default function SoftwareEngineeringPage() {
               <p className="text-zinc-300 text-base md:text-lg leading-relaxed font-medium">
                 Deliver responsive user interfaces. Deploy server-rendered Next.js components and enforce type checking using TypeScript.
               </p>
+              <Link 
+                href="/ecosystem/technology-stack/software-engineering/responsive-edge-frontends"
+                className="inline-flex items-center gap-2 mt-6 text-rose-500 text-xs font-bold hover:text-white transition-colors group/btn"
+              >
+                <div className="w-6 h-6 rounded-full bg-rose-500/10 flex items-center justify-center group-hover/btn:bg-rose-500 group-hover/btn:text-white transition-colors">
+                  <ChevronRight size={14} />
+                </div>
+                Explore Responsive Edge Frontends
+              </Link>
             </div>
             <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
               {frontFeatures.map((feat, idx) => (
@@ -196,6 +206,15 @@ export default function SoftwareEngineeringPage() {
               <p className="text-zinc-300 text-base md:text-lg leading-relaxed font-medium">
                 Build high-throughput backend APIs. Write asynchronous FastAPI threads and Node.js event integrations.
               </p>
+              <Link 
+                href="/ecosystem/technology-stack/software-engineering/high-throughput-backends"
+                className="inline-flex items-center gap-2 mt-6 text-rose-500 text-xs font-bold hover:text-white transition-colors group/btn"
+              >
+                <div className="w-6 h-6 rounded-full bg-rose-500/10 flex items-center justify-center group-hover/btn:bg-rose-500 group-hover/btn:text-white transition-colors">
+                  <ChevronRight size={14} />
+                </div>
+                Explore High-Throughput Backends
+              </Link>
             </div>
           </div>
         </div>
@@ -211,6 +230,15 @@ export default function SoftwareEngineeringPage() {
               <p className="text-zinc-300 text-base md:text-lg leading-relaxed font-medium">
                 Standardize routing interfaces. Coordinate REST schemas, deploy GraphQL query links, and configure internal gRPC calls.
               </p>
+              <Link 
+                href="/ecosystem/technology-stack/software-engineering/tamper-proof-integrations"
+                className="inline-flex items-center gap-2 mt-6 text-rose-500 text-xs font-bold hover:text-white transition-colors group/btn"
+              >
+                <div className="w-6 h-6 rounded-full bg-rose-500/10 flex items-center justify-center group-hover/btn:bg-rose-500 group-hover/btn:text-white transition-colors">
+                  <ChevronRight size={14} />
+                </div>
+                Explore Tamper-Proof Integrations
+              </Link>
             </div>
             <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
               {apiFeatures.map((feat, idx) => (
@@ -247,6 +275,15 @@ export default function SoftwareEngineeringPage() {
               <p className="text-zinc-300 text-base md:text-lg leading-relaxed font-medium">
                 Enforce software design hygiene. Utilize Domain-Driven Design (DDD) rules and configure split read-write CQRS pathways.
               </p>
+              <Link 
+                href="/ecosystem/technology-stack/software-engineering/cross-platform-mobile-apps"
+                className="inline-flex items-center gap-2 mt-6 text-rose-500 text-xs font-bold hover:text-white transition-colors group/btn"
+              >
+                <div className="w-6 h-6 rounded-full bg-rose-500/10 flex items-center justify-center group-hover/btn:bg-rose-500 group-hover/btn:text-white transition-colors">
+                  <ChevronRight size={14} />
+                </div>
+                Explore Cross-Platform Mobile Apps
+              </Link>
             </div>
           </div>
         </div>

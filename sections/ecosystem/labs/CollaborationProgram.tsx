@@ -13,6 +13,7 @@ interface Program {
   desc: string;
   image: string;
   cta: string;
+  href: string;
 }
 
 export function CollaborationProgram() {
@@ -26,7 +27,8 @@ export function CollaborationProgram() {
       filter: "featured",
       desc: "Co-invest and design custom accelerators tailored to solve specific scaling and automation issues inside your business.",
       image: "/webp/assets/ecosystem/innovation-labs-page-PARTICIPATION-OPTIONS-section/Frame-1000008714.webp",
-      cta: "Explore Enterprise"
+      cta: "Explore Enterprise",
+      href: "/ecosystem/accelerators-frameworks"
     },
     {
       title: "Startup Sandbox Collaboration",
@@ -34,7 +36,8 @@ export function CollaborationProgram() {
       filter: "featured",
       desc: "For pre-seed software builders seeking engineering reviews, sandbox accounts, and integration pathways to our catalog.",
       image: "/webp/assets/ecosystem/innovation-labs-page-PARTICIPATION-OPTIONS-section/Frame-1000008715.webp",
-      cta: "Join Sandbox"
+      cta: "Join Sandbox",
+      href: "/contact#contact-form"
     },
     {
       title: "University & Academic Partnerships",
@@ -42,7 +45,8 @@ export function CollaborationProgram() {
       filter: "academic",
       desc: "Sponsoring student research theses, internship programs, and academic investigation into post-quantum models.",
       image: "/webp/assets/ecosystem/innovation-labs-page-PARTICIPATION-OPTIONS-section/Frame-1000008716.webp",
-      cta: "View Programs"
+      cta: "View Programs",
+      href: "/ecosystem/community-talent-network/university-programs"
     },
     {
       title: "Technology Vendor Alliances",
@@ -50,7 +54,8 @@ export function CollaborationProgram() {
       filter: "featured",
       desc: "Collaborative testing of upcoming features with AWS, Microsoft Azure, and GCP alpha/beta developer units.",
       image: "/webp/assets/ecosystem/innovation-labs-page-PARTICIPATION-OPTIONS-section/Frame-1000008717.webp",
-      cta: "Partner With Us"
+      cta: "Partner With Us",
+      href: "/ecosystem/partnerships"
     },
     {
       title: "Open Source Research Community",
@@ -58,7 +63,8 @@ export function CollaborationProgram() {
       filter: "academic",
       desc: "Open-source codebase contributions, monthly tech meetups, and hosting community labs prototyping sessions.",
       image: "/webp/assets/ecosystem/innovation-labs-page-PARTICIPATION-OPTIONS-section/Frame-1000008718.webp",
-      cta: "Join Community"
+      cta: "Join Community",
+      href: "/ecosystem/community-talent-network/open-source-contributions"
     },
     {
       title: "AI & Agentic Workflows Guild",
@@ -66,7 +72,8 @@ export function CollaborationProgram() {
       filter: "featured",
       desc: "Collaborative research on multi-agent cognitive architecture, guardrails, and autonomous workflow loops.",
       image: "/webp/assets/ecosystem/innovation-labs-page-PARTICIPATION-OPTIONS-section/Frame-1000008719.webp",
-      cta: "Explore Guild"
+      cta: "Explore Guild",
+      href: "/ecosystem/innovation-labs/ai-lab"
     },
     {
       title: "Green Cloud & FinOps Initiative",
@@ -74,7 +81,8 @@ export function CollaborationProgram() {
       filter: "featured",
       desc: "Architecting sustainable zero-downtime multi-cloud deployments and automated resource rightsizing algorithms.",
       image: "/webp/assets/ecosystem/innovation-labs-page-PARTICIPATION-OPTIONS-section/Frame-1000008720.webp",
-      cta: "View Initiative"
+      cta: "View Initiative",
+      href: "/ecosystem/innovation-labs/cloud-lab"
     },
     {
       title: "Zero-Trust DevSecOps Lab",
@@ -82,7 +90,8 @@ export function CollaborationProgram() {
       filter: "featured",
       desc: "Testing shift-left static security tools, automated secret rotation, and continuous compliance verification.",
       image: "/webp/assets/ecosystem/innovation-labs-page-PARTICIPATION-OPTIONS-section/Frame-1000008721.webp",
-      cta: "Join Security Lab"
+      cta: "Join Security Lab",
+      href: "/ecosystem/innovation-labs/cybersecurity-lab"
     },
     {
       title: "Quantum & Distributed Data Mesh",
@@ -90,7 +99,8 @@ export function CollaborationProgram() {
       filter: "academic",
       desc: "High-throughput telemetry streaming research and decentralized analytical lakehouse blueprints.",
       image: "/webp/assets/ecosystem/innovation-labs-page-PARTICIPATION-OPTIONS-section/Frame-1000008722.webp",
-      cta: "Access Research"
+      cta: "Access Research",
+      href: "/ecosystem/innovation-labs/data-analytics-lab"
     },
     {
       title: "Platform Engineering Golden Paths",
@@ -98,7 +108,8 @@ export function CollaborationProgram() {
       filter: "featured",
       desc: "Designing internal developer portals, automated bootstrapping templates, and standardized CI/CD pipelines.",
       image: "/webp/assets/ecosystem/innovation-labs-page-PARTICIPATION-OPTIONS-section/Frame-1000008723.webp",
-      cta: "Explore Templates"
+      cta: "Explore Templates",
+      href: "/ecosystem/engineering-excellence/platform-engineering"
     }
   ];
 
@@ -188,21 +199,21 @@ export function CollaborationProgram() {
               
               {/* Content Section */}
               <div className="p-8 flex flex-col flex-1 bg-zinc-950/80">
-                {/* <span className="text-xs md:text-sm font-mono font-bold tracking-[0.2em] uppercase text-rose-400 mb-3 block">
+                <span className="text-xs md:text-sm font-mono font-bold tracking-[0.2em] uppercase text-rose-500 mb-2 block">
                   {prog.category}
-                </span> */}
+                </span>
                 
-                <h3 className="text-xl md:text-2xl font-bold text-white tracking-tight leading-snug mb-4 group-hover:text-rose-400 transition-colors">
+                <h3 className="text-xl md:text-2xl font-bold text-white tracking-tight leading-snug mb-3 group-hover:text-rose-400 transition-colors">
                   {prog.title}
                 </h3>
                 
-                {/* <p className="text-base md:text-lg text-zinc-300 font-normal leading-relaxed mb-8 flex-1">
+                <p className="text-sm md:text-base text-zinc-300 font-normal leading-relaxed mb-6 flex-1">
                   {prog.desc}
-                </p> */}
+                </p>
 
-                {/* Microsoft-style CTA Button */}
+                {/* CTA Button */}
                 <Link
-                  href="/contact#contact-form"
+                  href={prog.href}
                   className="flex items-center gap-4 group/btn mt-auto"
                 >
                   <div className="w-9 h-9 rounded-xl bg-rose-600 flex items-center justify-center text-white group-hover/btn:bg-rose-500 transition-colors shadow-lg">

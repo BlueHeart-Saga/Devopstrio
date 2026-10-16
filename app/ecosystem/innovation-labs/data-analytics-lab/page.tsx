@@ -85,63 +85,63 @@ export default function DataAnalyticsInnovationLabPage() {
   // 2) Mini overview cards
   const miniMissionCards = [
     {
-      title: "Unified Data Foundations",
-      desc: "Bring together fragmented data across applications, business units, and operational systems into a single, structured ecosystem."
+      title: "Open Lakehouse Formats",
+      desc: "Apache Iceberg and Delta Lake metadata catalogs providing ACID transactions, time-travel queries, and schema evolution."
     },
     {
-      title: "Trusted Reporting & Insights",
-      desc: "Build reliable dashboards, KPIs, and reporting layers that help teams make faster, more confident decisions."
+      title: "Sub-Second OLAP Engines",
+      desc: "ClickHouse and Trino distributed clusters enabling low-latency queries across petabyte-scale event telemetry."
     },
     {
-      title: "Real-Time Intelligence",
-      desc: "Enable streaming data, live operational visibility, and event-driven analytics for time-sensitive business workflows."
+      title: "Stateful Stream Processing",
+      desc: "Apache Flink pipelines executing event-time windowing, sessionization, and real-time fraud scoring over Kafka streams."
     },
     {
-      title: "AI-Ready Data Platforms",
-      desc: "Prepare clean, governed, and scalable data environments that support predictive analytics and AI-driven innovation."
+      title: "Automated Data Quality & CI",
+      desc: "Great Expectations and dbt tests halting downstream analytics pipelines upon schema drift or null anomalies."
     }
   ];
 
   // 3) Core Areas of Data & Analytics Innovation
   const innovationAreas: CoreArea[] = [
     {
-      title: "Modern Data Platform Engineering",
-      desc: "Design cloud-native data platforms that centralize enterprise data across applications, operations, customer systems, and business workflows.",
+      title: "Open Table Format Lakehouse",
+      desc: "Engineer Apache Iceberg and Delta Lake storage formats over object storage with metadata pruning and ACID partition isolation.",
       icon: <Database className="w-5 h-5 text-rose-500" />
     },
     {
-      title: "Data Pipeline & Integration Engineering",
-      desc: "Build reliable ingestion, transformation, and orchestration pipelines that move data efficiently between source systems, cloud platforms, and analytics environments.",
-      icon: <Workflow className="w-5 h-5 text-rose-500" />
-    },
-    {
-      title: "Analytics Engineering & Semantic Modeling",
-      desc: "Structure raw data into clean, business-ready models that support consistent reporting, KPI tracking, and self-service analytics across teams.",
-      icon: <Layers className="w-5 h-5 text-rose-500" />
-    },
-    {
-      title: "Business Intelligence & Executive Dashboards",
-      desc: "Create interactive dashboards, leadership reporting layers, and visual analytics experiences that turn complex data into actionable insight.",
-      icon: <BarChart3 className="w-5 h-5 text-rose-500" />
-    },
-    {
-      title: "Real-Time & Streaming Analytics",
-      desc: "Enable event-driven data pipelines, operational dashboards, and near real-time analytics for monitoring, alerts, and decision support.",
+      title: "Sub-Second Real-Time OLAP",
+      desc: "Deploy distributed ClickHouse and StarRocks clusters indexing billions of telemetry events with LZ4 compression and sub-second p99 latency.",
       icon: <Activity className="w-5 h-5 text-rose-500" />
     },
     {
-      title: "Data Governance, Quality & Trust",
-      desc: "Improve data accuracy, consistency, lineage, validation, and stewardship through governance controls and quality monitoring frameworks.",
-      icon: <Settings className="w-5 h-5 text-rose-500" />
+      title: "Stateful Event Stream Processing",
+      desc: "Build fault-tolerant Apache Flink and Kafka Streams applications supporting exactly-once semantics and out-of-order event watermarks.",
+      icon: <Workflow className="w-5 h-5 text-rose-500" />
     },
     {
-      title: "AI & Machine Learning Data Readiness",
-      desc: "Prepare analytics environments for forecasting, recommendation engines, anomaly detection, and AI use cases with high-quality, well-structured data.",
+      title: "Change Data Capture (CDC)",
+      desc: "Implement Debezium log-based replication streaming transactional database mutations from PostgreSQL and MySQL into analytics lakes.",
+      icon: <Layers className="w-5 h-5 text-rose-500" />
+    },
+    {
+      title: "Modular Analytics Engineering (dbt)",
+      desc: "Structure transformation logic with dbt Core, automated DAG scheduling via Airflow/Dagster, and centralized semantic metric layers.",
+      icon: <BarChart3 className="w-5 h-5 text-rose-500" />
+    },
+    {
+      title: "Distributed Federated Querying",
+      desc: "Construct Trino query virtualization layers connecting analytical object lakes, transactional stores, and key-value databases in unified SQL.",
       icon: <Cpu className="w-5 h-5 text-rose-500" />
     },
     {
-      title: "Data Strategy & Insight Operating Models",
-      desc: "Help organizations define the right architecture, reporting model, governance standards, and analytics operating approach to scale insight delivery.",
+      title: "Automated Data Quality & Lineage",
+      desc: "Embed Great Expectations validation suites into ingestion pipelines with OpenLineage metadata tracking and circuit breaker alerts.",
+      icon: <Settings className="w-5 h-5 text-rose-500" />
+    },
+    {
+      title: "Feature Store & ML Data Readiness",
+      desc: "Provide dual offline-to-online feature stores using Feast and Redis, ensuring zero training-serving skew for production predictive models.",
       icon: <LineChart className="w-5 h-5 text-rose-500" />
     }
   ];
@@ -151,68 +151,68 @@ export default function DataAnalyticsInnovationLabPage() {
     {
       num: "01",
       title: "Discover",
-      desc: "Assess data sources, reporting gaps, quality issues, decision workflows, business KPIs, and platform limitations."
+      desc: "Audit source telemetry schemas, ingestion volumes, query latency SLAs, data freshness requirements, and reporting bottlenecks."
     },
     {
       num: "02",
       title: "Architect",
-      desc: "Define the target data platform, ingestion approach, transformation model, reporting layer, governance standards, and operating model."
+      desc: "Design lakehouse storage layout, table partitioning keys, CDC ingestion patterns, dbt model DAGs, and caching strategies."
     },
     {
       num: "03",
       title: "Integrate",
-      desc: "Connect source systems, applications, files, APIs, and operational platforms into structured ingestion pipelines."
+      desc: "Deploy Debezium CDC connectors, Kafka/Redpanda topic topologies, and streaming ingest pipelines with schema registry validation."
     },
     {
       num: "04",
       title: "Transform",
-      desc: "Clean, standardize, model, and enrich data into analytics-ready structures aligned to business use cases and reporting needs."
+      desc: "Build layered bronze-silver-gold dbt models with automated schema assertions, incremental materialization, and semantic metrics."
     },
     {
       num: "05",
-      title: "Visualize",
-      desc: "Build dashboards, BI workspaces, performance reports, and operational analytics views for teams, managers, and executives."
+      title: "Serve",
+      desc: "Configure ClickHouse and Trino query worker pools, optimize vector/columnar indexes, and connect executive BI dashboards."
     },
     {
       num: "06",
       title: "Optimize",
-      desc: "Improve pipeline performance, data quality, reporting trust, governance, and AI readiness as data maturity evolves."
+      desc: "Analyze query profile graphs, automate Parquet compaction runs, optimize object storage lifecycle tiers, and enforce governance."
     }
   ];
 
   // 5) Solutions Built in the Lab
   const solutionBlocks: SolutionBlock[] = [
     {
-      title: "Enterprise Data Platform Foundations",
-      desc: "Cloud-based data platforms that consolidate data from ERP, CRM, finance, product, support, and operational systems."
+      title: "Open Lakehouse Format (Iceberg)",
+      desc: "High-performance Apache Iceberg storage layers decoupling compute and storage with ACID guarantees on S3/MinIO."
     },
     {
-      title: "Executive Reporting & KPI Dashboards",
-      desc: "Leadership dashboards and reporting environments designed to track performance, risk, revenue, operations, and strategic KPIs."
+      title: "Real-Time ClickHouse OLAP Clusters",
+      desc: "Sub-second analytical query clusters processing billions of log events, user interactions, and IoT telemetry."
     },
     {
-      title: "Analytics Engineering & Reporting Models",
-      desc: "Business-ready data models that standardize metrics, simplify reporting logic, and improve consistency across departments."
+      title: "Stateful Flink Stream Pipelines",
+      desc: "Real-time event processing with exactly-once semantics, stateful sessionization, and event-time joins."
     },
     {
-      title: "Real-Time Operational Analytics",
-      desc: "Streaming data pipelines and live dashboards for operations monitoring, workflow visibility, event tracking, and response management."
+      title: "Change Data Capture (Debezium)",
+      desc: "Zero-overhead transactional log-based CDC streaming database mutations from PostgreSQL and MySQL into lakehouses."
     },
     {
-      title: "Customer & Product Intelligence Platforms",
-      desc: "Analytics foundations that help organizations understand customer behavior, engagement trends, product usage, and conversion patterns."
+      title: "dbt Modular Analytics Engineering",
+      desc: "Version-controlled SQL transformations, automated data documentation, lineage graphs, and semantic layer metrics."
     },
     {
-      title: "Data Governance & Quality Frameworks",
-      desc: "Policies, validation layers, lineage visibility, and stewardship models that improve trust in reporting and analytics outputs."
+      title: "Distributed Federated Trino Engine",
+      desc: "Interactive SQL query abstraction layer querying across Iceberg, PostgreSQL, MongoDB, and object stores in a single query."
     },
     {
-      title: "AI-Ready Data Lakehouse Environments",
-      desc: "Structured, scalable data environments designed to support machine learning, forecasting, and advanced analytics initiatives."
+      title: "Automated Data Observability & Tests",
+      desc: "Great Expectations testing pipelines validating null constraints, distribution shifts, and foreign key integrity."
     },
     {
-      title: "Cross-Functional Data Integration Ecosystems",
-      desc: "Integrated architectures that connect multiple business systems into a unified analytics environment without fragmented reporting silos."
+      title: "Feature Stores for Real-Time ML",
+      desc: "Low-latency offline-to-online feature replication systems powering low-latency predictive ML inference."
     }
   ];
 
@@ -220,45 +220,49 @@ export default function DataAnalyticsInnovationLabPage() {
   const archLayers: ArchLayer[] = [
     {
       num: "LAYER 1",
-      name: "Source Systems",
-      desc: "ERP systems • CRM platforms • HR / finance applications • product applications • support platforms • marketing systems • spreadsheets / flat files • external APIs / third-party data"
+      name: "Source Telemetry & Transactional Systems",
+      desc: "OLTP databases (PostgreSQL/MySQL) • Kafka/Redpanda event streams • REST APIs • microservices telemetry • third-party webhooks"
     },
     {
       num: "LAYER 2",
-      name: "Ingestion & Integration",
-      desc: "ETL / ELT pipelines • API ingestion • batch sync jobs • event / stream ingestion • orchestration workflows • data connectors"
+      name: "Real-Time Ingestion & CDC Layer",
+      desc: "Debezium change data capture • Airbyte connectors • Kafka Connect workers • Flink stream ingest • schema registry validation"
     },
     {
       num: "LAYER 3",
-      name: "Storage & Processing",
-      desc: "cloud data warehouse • data lake / lakehouse • staging zones • transformation jobs • processing engines • analytics-ready marts"
+      name: "Storage & Open Table Lakehouse Layer",
+      desc: "Apache Iceberg metadata catalogs • Delta Lake storage • Parquet columnar files • MinIO / AWS S3 object storage • z-order clustering"
     },
     {
       num: "LAYER 4",
-      name: "Modeling & Governance",
-      desc: "semantic models • business metrics layer • quality checks • lineage tracking • master data rules • governance controls"
+      name: "Transformation & Semantic Modeling Layer",
+      desc: "dbt Core SQL models • DAG orchestration via Airflow/Dagster • semantic metric layer • data quality circuit breakers"
     },
     {
       num: "LAYER 5",
-      name: "Analytics & Consumption",
-      desc: "executive dashboards • BI reports • self-service analytics • operational monitoring dashboards • embedded analytics • ad hoc exploration"
+      name: "Distributed Query & OLAP Acceleration Layer",
+      desc: "ClickHouse columnar clusters • Trino distributed query workers • DuckDB in-process queries • Redis query result caches"
     },
     {
       num: "LAYER 6",
-      name: "AI / Advanced Intelligence Layer",
-      desc: "forecasting models • anomaly detection • recommendation engines • segmentation models • copilots / AI analytics assistants • decision intelligence workflows"
+      name: "BI, Observability & Decision Intelligence Layer",
+      desc: "Apache Superset / Power BI dashboards • real-time Grafana alerts • Great Expectations quality telemetry • feature store APIs"
     }
   ];
 
   const techChips = [
-    "Azure Data / Microsoft Fabric stack",
-    "AWS analytics stack",
-    "Google Cloud analytics stack",
-    "Snowflake / BigQuery / Synapse",
-    "dbt / orchestration / transformation tooling",
-    "Power BI / Looker / Tableau BI layers",
-    "Kafka / event streaming pipelines",
-    "ML / notebook / model-serving integrations"
+    "Apache Iceberg",
+    "Delta Lake",
+    "Apache Flink",
+    "ClickHouse",
+    "Trino",
+    "dbt Core",
+    "Redpanda / Kafka",
+    "DuckDB",
+    "Debezium (CDC)",
+    "Great Expectations",
+    "Apache Airflow",
+    "MinIO / S3"
   ];
 
   // 7) Use Cases
@@ -266,84 +270,96 @@ export default function DataAnalyticsInnovationLabPage() {
     {
       name: "Executive Performance Reporting",
       items: [
-        "Leadership dashboards that unify operational, financial, delivery, and growth metrics in one trusted reporting environment."
+        "unified executive dashboards with single-source-of-truth KPIs",
+        "semantic metric layer ensuring cross-department calculation parity",
+        "automated daily snapshot materialization and trend analysis",
+        "role-based security scoping data access to business divisions"
       ]
     },
     {
       name: "Customer Analytics & Segmentation",
       items: [
-        "Insight models for customer behavior, churn signals, engagement trends, and campaign or product performance analysis."
+        "real-time behavioral cohorting and churn risk indicator scoring",
+        "event-stream sessionization linking multi-device customer journeys",
+        "reverse ETL syncing enriched customer traits directly into CRMs",
+        "zero-copy feature generation for targeted recommendation algorithms"
       ]
     },
     {
       name: "Revenue, Sales & Commercial Intelligence",
       items: [
-        "Reporting systems that improve visibility into pipeline health, revenue trends, account performance, and growth opportunities."
+        "automated pipeline velocity and contract conversion attribution",
+        "multi-currency ARR/MRR reconciliation across payment gateways",
+        "anomaly detection flagging billing drop-offs or account degradation",
+        "automated financial audit trails with immutable snapshot history"
       ]
     },
     {
       name: "Operations & Delivery Analytics",
       items: [
-        "Dashboards for service performance, team productivity, delivery SLAs, support metrics, and platform operations."
+        "real-time service availability monitoring and SLA burn-rate tracking",
+        "engineering throughput analysis linking GitHub, Jira, and CI metrics",
+        "infrastructure resource cost attribution mapped by microservice",
+        "incident response telemetry tracking MTTA and MTTR percentiles"
       ]
     },
     {
       name: "Real-Time Monitoring & Alerts",
       items: [
-        "Streaming analytics environments that surface live events, exceptions, anomalies, and operational changes as they happen."
+        "sub-second sliding window telemetry over millions of IoT events",
+        "automated circuit breakers halting pipelines upon unexpected null rates",
+        "event-driven alerting via PagerDuty and Slack webhooks",
+        "ClickHouse query acceleration for live ops control room dashboards"
       ]
     },
     {
       name: "AI & Predictive Data Foundations",
       items: [
-        "Clean, governed, model-ready data platforms that support forecasting, classification, recommendations, and intelligent automation."
+        "low-latency Feast feature store syncing offline lakes to Redis online caches",
+        "automated data quality profiling and distribution drift monitoring",
+        "point-in-time correct historical feature joins for ML model training",
+        "schema-enforced Parquet storage optimized for high-throughput GPU training"
       ]
     }
   ];
 
   // 8) Outcomes
   const labDeliverables: Deliverable[] = [
-    { title: "Faster, better-informed decision-making" },
-    { title: "Unified reporting across fragmented systems" },
-    { title: "Higher confidence in data quality and KPIs" },
-    { title: "Real-time visibility into operations and performance" },
-    { title: "Reduced manual reporting effort" },
-    { title: "Stronger foundation for AI and advanced analytics" }
+    { title: "Sub-second query response times across multi-billion-row datasets" },
+    { title: "Zero schema drift downtime with automated contract testing" },
+    { title: "10x storage cost compression using Parquet with Zstandard algorithms" },
+    { title: "Single source of truth via unified dbt semantic metric layers" },
+    { title: "Real-time CDC streaming replacing fragile nightly batch jobs" },
+    { title: "ACID transaction guarantees and time-travel rollbacks on S3 lakehouses" },
+    { title: "Point-in-time correct feature stores eliminating ML training-serving skew" },
+    { title: "Continuous automated data quality validation with Great Expectations" }
   ];
 
   const stats = [
-    { value: "faster", label: "reporting cycles" },
-    { value: "improved", label: "data quality confidence" },
-    { value: "reduced", label: "manual spreadsheet work" },
-    { value: "higher", label: "analytics adoption across teams" },
-    { value: "faster", label: "access to executive KPIs" }
+    { value: "<500ms", label: "sub-second query response" },
+    { value: "99.9%", label: "pipeline ingestion SLA" },
+    { value: "10x", label: "compression ratio via Parquet" },
+    { value: "Zero", label: "schema drift downtime" },
+    { value: "24×7", label: "data quality circuit breakers" }
   ];
 
   // 9) Why work with us
   const whyWorkWithUs: WhyChoose[] = [
     {
-      title: "We connect business goals to data architecture",
-      desc: "We don’t build data platforms in isolation — we design them around the reporting, visibility, automation, and decision-making outcomes the business actually needs."
+      title: "Data Platform Engineering, Not Just BI Dashboards",
+      desc: "We engineer resilient, distributed lakehouse foundations from storage primitives and CDC streaming up to the semantic query layer."
     },
     {
-      title: "We combine engineering, analytics, and cloud capability",
-      desc: "Our teams bring together platform engineering, data integration, analytics modeling, BI, and cloud delivery expertise in one execution model."
+      title: "Open Formats Without Vendor Lock-in",
+      desc: "We build on open table standards like Apache Iceberg and Parquet, giving you total ownership of your data on cost-effective object storage."
     },
     {
-      title: "We design for trust, not just dashboards",
-      desc: "Strong analytics depends on data quality, consistency, lineage, and governance — not just attractive reports. We build the foundations behind trustworthy insight."
+      title: "Data Quality as Code",
+      desc: "We embed automated assertions, schema contracts, and circuit breakers into every pipeline, treating data pipelines with the same rigor as production code."
     },
     {
-      title: "We support both operational and executive intelligence",
-      desc: "From live monitoring dashboards to board-level KPI reporting, we create data experiences for every layer of the enterprise."
-    },
-    {
-      title: "We prepare data for what comes next",
-      desc: "Our platforms are designed not only for today’s reporting needs, but also for AI, predictive analytics, automation, and future-scale intelligence use cases."
-    },
-    {
-      title: "We build long-term analytics maturity",
-      desc: "We help organizations evolve from fragmented reporting to repeatable, governed, scalable analytics operating models that continue to improve over time."
+      title: "Engineered for AI and Analytics Together",
+      desc: "Our architectures serve business intelligence dashboards and high-throughput ML feature pipelines from the same unified lakehouse foundation."
     }
   ];
 
@@ -448,10 +464,10 @@ export default function DataAnalyticsInnovationLabPage() {
                 <Reveal key={card.title} delay={idx * 0.05}>
                   <div className="bg-zinc-950/40 border border-white/[0.03] hover:border-rose-500/20 rounded-[20px] p-5 transition-all duration-300 min-h-[140px] flex flex-col justify-between">
                     <div>
-                      <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-2">
+                      <h4 className="text-sm md:text-base font-bold text-white tracking-wide mb-2">
                         {card.title}
                       </h4>
-                      <p className="text-xs md:text-sm text-zinc-400 font-semibold leading-relaxed">
+                      <p className="text-xs md:text-sm text-zinc-400 font-normal leading-relaxed">
                         {card.desc}
                       </p>
                     </div>
@@ -487,10 +503,10 @@ export default function DataAnalyticsInnovationLabPage() {
                     <div className="w-9 h-9 rounded-xl bg-rose-500/10 flex items-center justify-center mb-5">
                       {area.icon}
                     </div>
-                    <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-2.5">
+                    <h4 className="text-base md:text-lg font-bold text-white tracking-tight mb-2.5">
                       {area.title}
                     </h4>
-                    <p className="text-xs md:text-sm text-zinc-400 leading-relaxed font-semibold">
+                    <p className="text-sm text-zinc-400 leading-relaxed font-normal">
                       {area.desc}
                     </p>
                   </div>
@@ -712,7 +728,7 @@ export default function DataAnalyticsInnovationLabPage() {
                       <Icon className="w-5 h-5" />
                     </div>
                     <div>
-                      <p className="font-bold text-xs leading-tight tracking-wide uppercase">{cat.name}</p>
+                      <p className="font-bold text-xs md:text-sm leading-tight tracking-wide uppercase">{cat.name}</p>
                     </div>
                   </button>
                 );
@@ -952,11 +968,11 @@ export default function DataAnalyticsInnovationLabPage() {
                   className="group bg-zinc-950/60 border border-white/[0.03] hover:border-rose-500/20 rounded-2xl p-5 transition-all duration-300 flex flex-col justify-between min-h-[160px]"
                 >
                   <div>
-                    <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-2.5 flex items-center justify-between">
+                    <h4 className="text-sm md:text-base font-bold text-white tracking-wide mb-2.5 flex items-center justify-between">
                       {lab.name}
                       <ChevronRight size={14} className="text-zinc-650 group-hover:translate-x-1 group-hover:text-rose-500 transition-all" />
                     </h4>
-                    <p className="text-xs md:text-sm text-zinc-400 leading-relaxed font-semibold">
+                    <p className="text-xs md:text-sm text-zinc-400 leading-relaxed font-normal">
                       {lab.desc}
                     </p>
                   </div>

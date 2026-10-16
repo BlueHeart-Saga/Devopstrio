@@ -45,7 +45,7 @@ const SAAS_PRODUCTS = [
   { name: "eSigniva", logo: "/webp/assets/Home-page/our-products/logo/safesign.webp" },
   { name: "CareSuite", logo: "/webp/assets/Home-page/our-products/logo/Caresuite.webp" },
   { name: "Homela", logo: "/webp/assets/Home-page/our-products/logo/homela.webp" },
-  { name: "Campix", logo: "/webp/assets/Home-page/our-products/logo/Campix.webp?v=2" },
+  { name: "Campix", logo: "/webp/assets/Home-page/our-products/logo/Campix.webp?v=3" },
   { name: "Justivon", logo: "/webp/assets/Home-page/our-products/logo/Justivon.webp" },
   { name: "Prestivo", logo: "/webp/assets/Home-page/our-products/logo/Prestivo.webp" },
 ];

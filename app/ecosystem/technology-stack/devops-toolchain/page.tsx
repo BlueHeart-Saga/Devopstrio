@@ -39,7 +39,7 @@ const DevOpsOverview = () => {
             <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-4">
               Engineering Better Software Delivery
             </h2>
-            <p className="text-zinc-450 text-sm leading-relaxed font-semibold mb-8 max-w-2xl">
+            <p className="text-zinc-400 text-base md:text-lg leading-relaxed font-normal mb-8 max-w-2xl">
               Modern software delivery requires automation, collaboration, security, and operational excellence. Devopstrio's DevOps Toolchain combines cloud-native technologies, CI/CD pipelines, Infrastructure as Code, platform engineering, and observability to help teams release software faster, more securely, and with greater reliability.
             </p>
           </div>
@@ -55,10 +55,10 @@ const DevOpsOverview = () => {
                     <div className="w-12 h-12 rounded-2xl bg-rose-500/10 text-rose-500 flex items-center justify-center mb-6">
                       <Icon size={20} />
                     </div>
-                    <h3 className="text-base font-bold text-white mb-3 tracking-tight group-hover:text-rose-400 transition-colors">
+                    <h3 className="text-lg md:text-xl font-bold text-white mb-2.5 tracking-tight group-hover:text-rose-400 transition-colors">
                       {item.title}
                     </h3>
-                    <p className="text-xs text-zinc-400 leading-relaxed font-semibold">
+                    <p className="text-sm text-zinc-400 leading-relaxed font-normal">
                       {item.desc}
                     </p>
                   </div>
@@ -282,14 +282,14 @@ const CICDPipeline = () => {
 // ==========================================
 const ToolchainCapabilities = () => {
   const capabilities = [
-    { title: "Source Control", tag: "Code", desc: "Git-based collaboration and version control.", image: "/webp/assets/common/1b065043b6959827c05a0073c93a4a53-1.webp" },
-    { title: "Continuous Integration", tag: "Build", desc: "Automated builds and unit testing.", image: "/webp/assets/common/260b761ad40c3ad2acba2c6666894539-1.webp" },
-    { title: "Continuous Delivery", tag: "Release", desc: "Reliable automated deployment pipelines.", image: "/webp/assets/common/315e4fdc6263bfd240f36297e376576e-1.webp" },
-    { title: "Release Automation", tag: "Deploy", desc: "Controlled, secure software releases.", image: "/webp/assets/common/37b9b888cc479ea7b74d2d9a05c37597-1.webp" },
-    { title: "Infrastructure Automation", tag: "Provision", desc: "Provision environments automatically.", image: "/webp/assets/common/464d8932bca4d6bb552ff2dcf2f3c5ca-1.webp" },
-    { title: "Configuration Management", tag: "Configure", desc: "Maintain consistent environments.", image: "/webp/assets/common/782e79a0bc5e9f58cb9af6a27727ca7b-1.webp" },
-    { title: "Platform Engineering", tag: "Empower", desc: "Developer self-service platforms.", image: "/webp/assets/common/82090d7be4ef5694954ce77f9cc2e627-1.webp" },
-    { title: "Monitoring", tag: "Observe", desc: "Continuous operational visibility.", image: "/webp/assets/common/90361fed0bb781d7c86e451995b4dbce-1.webp" }
+    { title: "Source Control", tag: "Code", desc: "Git-based collaboration and version control.", image: "/webp/assets/common/1b065043b6959827c05a0073c93a4a53-1.webp", href: "/ecosystem/technology-stack/devops-toolchain/gitops-deployments" },
+    { title: "Continuous Integration", tag: "Build", desc: "Automated builds and unit testing.", image: "/webp/assets/common/260b761ad40c3ad2acba2c6666894539-1.webp", href: "/ecosystem/technology-stack/devops-toolchain/continuous-delivery-cicd" },
+    { title: "Continuous Delivery", tag: "Release", desc: "Reliable automated deployment pipelines.", image: "/webp/assets/common/315e4fdc6263bfd240f36297e376576e-1.webp", href: "/ecosystem/technology-stack/devops-toolchain/continuous-delivery-cicd" },
+    { title: "Release Automation", tag: "Deploy", desc: "Controlled, secure software releases.", image: "/webp/assets/common/37b9b888cc479ea7b74d2d9a05c37597-1.webp", href: "/ecosystem/technology-stack/devops-toolchain/release-automation" },
+    { title: "Infrastructure Automation", tag: "Provision", desc: "Provision environments automatically.", image: "/webp/assets/common/464d8932bca4d6bb552ff2dcf2f3c5ca-1.webp", href: "/ecosystem/technology-stack/devops-toolchain/declarative-infrastructure-as-code" },
+    { title: "Configuration Management", tag: "Configure", desc: "Maintain consistent environments.", image: "/webp/assets/common/782e79a0bc5e9f58cb9af6a27727ca7b-1.webp", href: "/ecosystem/technology-stack/devops-toolchain/declarative-infrastructure-as-code" },
+    { title: "Platform Engineering", tag: "Empower", desc: "Developer self-service platforms.", image: "/webp/assets/common/82090d7be4ef5694954ce77f9cc2e627-1.webp", href: "/ecosystem/technology-stack/platform-engineering/internal-developer-platforms" },
+    { title: "Monitoring", tag: "Observe", desc: "Continuous operational visibility.", image: "/webp/assets/common/90361fed0bb781d7c86e451995b4dbce-1.webp", href: "/ecosystem/technology-stack/devops-toolchain/telemetry-monitoring" }
   ];
 
   return (
@@ -311,14 +311,17 @@ const ToolchainCapabilities = () => {
                 </div>
                 <div className="p-6 flex flex-col flex-grow">
                   <span className="text-[10px] font-bold tracking-[0.2em] text-rose-500 uppercase mb-2 block">{item.tag}</span>
-                  <h3 className="text-base font-bold text-white mb-3 leading-tight tracking-tight">{item.title}</h3>
-                  <p className="text-xs text-zinc-400 leading-relaxed font-semibold mb-6 flex-grow">{item.desc}</p>
-                  <div className="mt-auto flex items-center gap-2 text-rose-500 text-xs font-bold hover:text-white transition-colors cursor-pointer w-fit">
-                    <div className="w-6 h-6 rounded-full bg-rose-500/10 flex items-center justify-center group-hover:bg-rose-500 group-hover:text-white transition-colors">
+                  <h3 className="text-lg md:text-xl font-bold text-white mb-2.5 leading-tight tracking-tight">{item.title}</h3>
+                  <p className="text-sm text-zinc-400 leading-relaxed font-normal mb-6 flex-grow">{item.desc}</p>
+                  <Link 
+                    href={item.href}
+                    className="mt-auto flex items-center gap-2 text-rose-500 text-xs font-bold hover:text-white transition-colors cursor-pointer w-fit group/btn"
+                  >
+                    <div className="w-6 h-6 rounded-full bg-rose-500/10 flex items-center justify-center group-hover/btn:bg-rose-500 group-hover/btn:text-white transition-colors">
                       <ChevronRight size={14} />
                     </div>
                     Explore {item.title}
-                  </div>
+                  </Link>
                 </div>
               </div>
             </Reveal>
@@ -600,14 +603,14 @@ const BusinessOutcomes = () => {
 // ==========================================
 const IndustryUseCases = () => {
   const useCases = [
-    { title: "Banking", tag: "Finance", desc: "Continuous delivery for digital banking.", image: "/webp/assets/common/945ab601f043c558e0a8162da2a1eb4c-1.webp" },
-    { title: "Healthcare", tag: "Health", desc: "Secure application deployment.", image: "/webp/assets/common/9d91b93f83e6d4cd494ec13611b3e50e-1.webp" },
-    { title: "Retail", tag: "Commerce", desc: "Rapid e-commerce releases.", image: "/webp/assets/common/b384eb0438c55e43c61e7595acc29638-1.webp" },
-    { title: "Manufacturing", tag: "Industrial", desc: "IoT platform deployment.", image: "/webp/assets/common/e76e125035885aab9c9070ce85df239e-1.webp" },
-    { title: "Government", tag: "Public", desc: "Secure software pipelines.", image: "/webp/assets/common/f317dd71184f5c47d601eeb9508bf92c-1.webp" },
-    { title: "Telecommunications", tag: "Networking", desc: "Cloud-native network deployment.", image: "/webp/assets/common/f03cc521fb070dfae9d87768b791ff70-1.webp" },
-    { title: "Education", tag: "Learning", desc: "Digital learning platforms.", image: "/webp/assets/common/45ea830d170d382ade235db479060da7-1.webp" },
-    { title: "Logistics", tag: "Supply Chain", desc: "Supply chain application delivery.", image: "/webp/assets/common/2fe7f9184c515b0c515ce38bc8a25efa-1.webp" }
+    { title: "Banking", tag: "Finance", desc: "Continuous delivery for digital banking.", image: "/webp/assets/common/945ab601f043c558e0a8162da2a1eb4c-1.webp", href: "/industries/banking-finance" },
+    { title: "Healthcare", tag: "Health", desc: "Secure application deployment.", image: "/webp/assets/common/9d91b93f83e6d4cd494ec13611b3e50e-1.webp", href: "/industries/healthcare-life-sciences" },
+    { title: "Retail", tag: "Commerce", desc: "Rapid e-commerce releases.", image: "/webp/assets/common/b384eb0438c55e43c61e7595acc29638-1.webp", href: "/industries/retail-ecommerce" },
+    { title: "Manufacturing", tag: "Industrial", desc: "IoT platform deployment.", image: "/webp/assets/common/e76e125035885aab9c9070ce85df239e-1.webp", href: "/industries/manufacturing" },
+    { title: "Government", tag: "Public", desc: "Secure software pipelines.", image: "/webp/assets/common/f317dd71184f5c47d601eeb9508bf92c-1.webp", href: "/industries/government-public-sector" },
+    { title: "Telecommunications", tag: "Networking", desc: "Cloud-native network deployment.", image: "/webp/assets/common/f03cc521fb070dfae9d87768b791ff70-1.webp", href: "/industries/telecommunications" },
+    { title: "Education", tag: "Learning", desc: "Digital learning platforms.", image: "/webp/assets/common/45ea830d170d382ade235db479060da7-1.webp", href: "/industries/education" },
+    { title: "Logistics", tag: "Supply Chain", desc: "Supply chain application delivery.", image: "/webp/assets/common/2fe7f9184c515b0c515ce38bc8a25efa-1.webp", href: "/industries/retail-ecommerce" }
   ];
 
   return (
@@ -631,14 +634,17 @@ const IndustryUseCases = () => {
                 </div>
                 <div className="p-6 flex flex-col flex-grow">
                   <span className="text-[10px] font-bold tracking-[0.2em] text-rose-500 uppercase mb-2 block">{item.tag}</span>
-                  <h3 className="text-base font-bold text-white mb-3 leading-tight tracking-tight">{item.title}</h3>
-                  <p className="text-xs text-zinc-400 leading-relaxed font-semibold mb-6 flex-grow">{item.desc}</p>
-                  <div className="mt-auto flex items-center gap-2 text-rose-500 text-xs font-bold hover:text-white transition-colors cursor-pointer w-fit">
-                    <div className="w-6 h-6 rounded-full bg-rose-500/10 flex items-center justify-center group-hover:bg-rose-500 group-hover:text-white transition-colors">
+                  <h3 className="text-lg md:text-xl font-bold text-white mb-2.5 leading-tight tracking-tight">{item.title}</h3>
+                  <p className="text-sm text-zinc-400 leading-relaxed font-normal mb-6 flex-grow">{item.desc}</p>
+                  <Link 
+                    href={item.href}
+                    className="mt-auto flex items-center gap-2 text-rose-500 text-xs font-bold hover:text-white transition-colors cursor-pointer w-fit group/btn"
+                  >
+                    <div className="w-6 h-6 rounded-full bg-rose-500/10 flex items-center justify-center group-hover/btn:bg-rose-500 group-hover/btn:text-white transition-colors">
                       <ChevronRight size={14} />
                     </div>
                     Learn More
-                  </div>
+                  </Link>
                 </div>
               </div>
             </Reveal>
@@ -727,7 +733,7 @@ const TechnologyFAQ = () => {
                   </div>
                 </button>
                 {isOpen && (
-                  <div className="mt-4 text-xs text-zinc-400 font-bold max-w-3xl leading-relaxed">
+                  <div className="mt-4 text-sm text-zinc-400 font-normal max-w-3xl leading-relaxed">
                     <p>{faq.a}</p>
                   </div>
                 )}

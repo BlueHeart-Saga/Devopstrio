@@ -38,7 +38,7 @@ const AIOverview = () => {
             <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-4">
               Enterprise AI for Modern Businesses
             </h2>
-            <p className="text-zinc-450 text-sm leading-relaxed font-semibold mb-8 max-w-2xl">
+            <p className="text-zinc-400 text-base md:text-lg leading-relaxed font-normal mb-8 max-w-2xl">
               Artificial Intelligence has become the foundation of modern digital transformation. Devopstrio helps organizations integrate AI into business operations, customer experiences, analytics, automation, and enterprise software through secure and scalable architectures.
             </p>
           </div>
@@ -54,10 +54,10 @@ const AIOverview = () => {
                     <div className="w-12 h-12 rounded-2xl bg-rose-500/10 text-rose-500 flex items-center justify-center mb-6">
                       <Icon size={20} />
                     </div>
-                    <h3 className="text-base font-bold text-white mb-3 tracking-tight group-hover:text-rose-400 transition-colors">
+                    <h3 className="text-lg md:text-xl font-bold text-white mb-2.5 tracking-tight group-hover:text-rose-400 transition-colors">
                       {item.title}
                     </h3>
-                    <p className="text-xs text-zinc-400 leading-relaxed font-semibold">
+                    <p className="text-sm text-zinc-400 leading-relaxed font-normal">
                       {item.desc}
                     </p>
                   </div>
@@ -322,14 +322,14 @@ const AIArchitecture = () => {
 // ==========================================
 const AICapabilities = () => {
   const capabilities = [
-    { title: "Generative AI", tag: "Create", desc: "Build chat interfaces, copilots, and AI assistants.", image: "/webp/assets/common/1b065043b6959827c05a0073c93a4a53-1.webp" },
-    { title: "Machine Learning", tag: "Predict", desc: "Train prediction models and linear regressions.", image: "/webp/assets/common/260b761ad40c3ad2acba2c6666894539-1.webp" },
-    { title: "NLP", tag: "Understand", desc: "Extract insights and sentiment from language.", image: "/webp/assets/common/315e4fdc6263bfd240f36297e376576e-1.webp" },
-    { title: "Computer Vision", tag: "See", desc: "Automate image analysis and object detection.", image: "/webp/assets/common/37b9b888cc479ea7b74d2d9a05c37597-1.webp" },
-    { title: "AI Search", tag: "Discover", desc: "Implement semantic and cognitive data search.", image: "/webp/assets/common/464d8932bca4d6bb552ff2dcf2f3c5ca-1.webp" },
-    { title: "AI Agents", tag: "Automate", desc: "Deploy task automation and autonomous logic engines.", image: "/webp/assets/common/782e79a0bc5e9f58cb9af6a27727ca7b-1.webp" },
-    { title: "Recommendation Engines", tag: "Personalize", desc: "Deliver personalized and dynamic content.", image: "/webp/assets/common/82090d7be4ef5694954ce77f9cc2e627-1.webp" },
-    { title: "Intelligent Automation", tag: "Execute", desc: "Streamline workflows and business process automation.", image: "/webp/assets/common/90361fed0bb781d7c86e451995b4dbce-1.webp" }
+    { title: "Generative AI", tag: "Create", desc: "Build chat interfaces, copilots, and AI assistants.", image: "/webp/assets/common/1b065043b6959827c05a0073c93a4a53-1.webp", href: "/ecosystem/technology-stack/artificial-intelligence/generative-ai-pipelines" },
+    { title: "Machine Learning", tag: "Predict", desc: "Train prediction models and linear regressions.", image: "/webp/assets/common/260b761ad40c3ad2acba2c6666894539-1.webp", href: "/ecosystem/technology-stack/artificial-intelligence/deep-machine-learning" },
+    { title: "NLP", tag: "Understand", desc: "Extract insights and sentiment from language.", image: "/webp/assets/common/315e4fdc6263bfd240f36297e376576e-1.webp", href: "/ecosystem/technology-stack/artificial-intelligence/natural-language-processing" },
+    { title: "Computer Vision", tag: "See", desc: "Automate image analysis and object detection.", image: "/webp/assets/common/37b9b888cc479ea7b74d2d9a05c37597-1.webp", href: "/ecosystem/technology-stack/artificial-intelligence/computer-vision-models" },
+    { title: "AI Search", tag: "Discover", desc: "Implement semantic and cognitive data search.", image: "/webp/assets/common/464d8932bca4d6bb552ff2dcf2f3c5ca-1.webp", href: "/ecosystem/technology-stack/artificial-intelligence/generative-ai-pipelines" },
+    { title: "AI Agents", tag: "Automate", desc: "Deploy task automation and autonomous logic engines.", image: "/webp/assets/common/782e79a0bc5e9f58cb9af6a27727ca7b-1.webp", href: "/ecosystem/technology-stack/artificial-intelligence/stateful-ai-agents" },
+    { title: "Recommendation Engines", tag: "Personalize", desc: "Deliver personalized and dynamic content.", image: "/webp/assets/common/82090d7be4ef5694954ce77f9cc2e627-1.webp", href: "/ecosystem/technology-stack/artificial-intelligence/predictive-analytics" },
+    { title: "Intelligent Automation", tag: "Execute", desc: "Streamline workflows and business process automation.", image: "/webp/assets/common/90361fed0bb781d7c86e451995b4dbce-1.webp", href: "/ecosystem/technology-stack/artificial-intelligence/mlops-automation" }
   ];
 
   return (
@@ -357,15 +357,18 @@ const AICapabilities = () => {
                 </div>
                 <div className="p-6 flex flex-col flex-grow">
                   <span className="text-[10px] font-bold tracking-[0.2em] text-rose-500 uppercase mb-2 block">{item.tag}</span>
-                  <h3 className="text-base font-bold text-white mb-3 leading-tight tracking-tight">{item.title}</h3>
-                  <p className="text-xs text-zinc-400 leading-relaxed font-semibold mb-6 flex-grow">{item.desc}</p>
+                  <h3 className="text-lg md:text-xl font-bold text-white mb-2.5 leading-tight tracking-tight">{item.title}</h3>
+                  <p className="text-sm text-zinc-400 leading-relaxed font-normal mb-6 flex-grow">{item.desc}</p>
                   
-                  <div className="mt-auto flex items-center gap-2 text-rose-500 text-xs font-bold hover:text-white transition-colors cursor-pointer w-fit">
-                    <div className="w-6 h-6 rounded-full bg-rose-500/10 flex items-center justify-center group-hover:bg-rose-500 group-hover:text-white transition-colors">
+                  <Link 
+                    href={item.href}
+                    className="mt-auto flex items-center gap-2 text-rose-500 text-xs font-bold hover:text-white transition-colors cursor-pointer w-fit group/btn"
+                  >
+                    <div className="w-6 h-6 rounded-full bg-rose-500/10 flex items-center justify-center group-hover/btn:bg-rose-500 group-hover/btn:text-white transition-colors">
                       <ChevronRight size={14} />
                     </div>
                     Explore {item.title}
-                  </div>
+                  </Link>
                 </div>
               </div>
             </Reveal>
@@ -512,14 +515,14 @@ const AIInfrastructure = () => {
 // ==========================================
 const AIUseCases = () => {
   const useCases = [
-    { title: "Customer Support AI", tag: "Support", desc: "Automate responses and resolve issues faster with AI agents.", image: "/webp/assets/common/945ab601f043c558e0a8162da2a1eb4c-1.webp" },
-    { title: "Document Intelligence", tag: "Process", desc: "Extract structured data from unstructured enterprise documents.", image: "/webp/assets/common/9d91b93f83e6d4cd494ec13611b3e50e-1.webp" },
-    { title: "Predictive Maintenance", tag: "Optimize", desc: "Forecast equipment failures and schedule proactive maintenance.", image: "/webp/assets/common/b384eb0438c55e43c61e7595acc29638-1.webp" },
-    { title: "Fraud Detection", tag: "Secure", desc: "Identify anomalous patterns and prevent financial fraud in real-time.", image: "/webp/assets/common/e76e125035885aab9c9070ce85df239e-1.webp" },
-    { title: "Healthcare Diagnostics", tag: "Analyze", desc: "Assist clinicians with AI-driven medical image analysis.", image: "/webp/assets/common/f03cc521fb070dfae9d87768b791ff70-1.webp" },
-    { title: "Demand Forecasting", tag: "Forecast", desc: "Optimize inventory and supply chain with ML-based predictions.", image: "/webp/assets/common/f317dd71184f5c47d601eeb9508bf92c-1.webp" },
-    { title: "Knowledge Management", tag: "Organize", desc: "Unify company knowledge into an intelligent, searchable hub.", image: "/webp/assets/common/45ea830d170d382ade235db479060da7-1.webp" },
-    { title: "Enterprise Search", tag: "Discover", desc: "Find precise answers across your internal document repositories.", image: "/webp/assets/common/2fe7f9184c515b0c515ce38bc8a25efa-1.webp" }
+    { title: "Customer Support AI", tag: "Support", desc: "Automate responses and resolve issues faster with AI agents.", image: "/webp/assets/common/945ab601f043c558e0a8162da2a1eb4c-1.webp", href: "/services/ai-consulting" },
+    { title: "Document Intelligence", tag: "Process", desc: "Extract structured data from unstructured enterprise documents.", image: "/webp/assets/common/9d91b93f83e6d4cd494ec13611b3e50e-1.webp", href: "/services/ai-data-innovation" },
+    { title: "Predictive Maintenance", tag: "Optimize", desc: "Forecast equipment failures and schedule proactive maintenance.", image: "/webp/assets/common/b384eb0438c55e43c61e7595acc29638-1.webp", href: "/industries/manufacturing" },
+    { title: "Fraud Detection", tag: "Secure", desc: "Identify anomalous patterns and prevent financial fraud in real-time.", image: "/webp/assets/common/e76e125035885aab9c9070ce85df239e-1.webp", href: "/industries/banking-finance" },
+    { title: "Healthcare Diagnostics", tag: "Analyze", desc: "Assist clinicians with AI-driven medical image analysis.", image: "/webp/assets/common/f03cc521fb070dfae9d87768b791ff70-1.webp", href: "/industries/healthcare-life-sciences" },
+    { title: "Demand Forecasting", tag: "Forecast", desc: "Optimize inventory and supply chain with ML-based predictions.", image: "/webp/assets/common/f317dd71184f5c47d601eeb9508bf92c-1.webp", href: "/industries/retail-ecommerce" },
+    { title: "Knowledge Management", tag: "Organize", desc: "Unify company knowledge into an intelligent, searchable hub.", image: "/webp/assets/common/45ea830d170d382ade235db479060da7-1.webp", href: "/services/ai-modernization" },
+    { title: "Enterprise Search", tag: "Discover", desc: "Find precise answers across your internal document repositories.", image: "/webp/assets/common/2fe7f9184c515b0c515ce38bc8a25efa-1.webp", href: "/services/ai-data-innovation" }
   ];
 
   return (
@@ -549,15 +552,18 @@ const AIUseCases = () => {
                 </div>
                 <div className="p-6 flex flex-col flex-grow">
                   <span className="text-[10px] font-bold tracking-[0.2em] text-rose-500 uppercase mb-2 block">{item.tag}</span>
-                  <h3 className="text-base font-bold text-white mb-3 leading-tight tracking-tight">{item.title}</h3>
-                  <p className="text-xs text-zinc-400 leading-relaxed font-semibold mb-6 flex-grow">{item.desc}</p>
+                  <h3 className="text-lg md:text-xl font-bold text-white mb-2.5 leading-tight tracking-tight">{item.title}</h3>
+                  <p className="text-sm text-zinc-400 leading-relaxed font-normal mb-6 flex-grow">{item.desc}</p>
                   
-                  <div className="mt-auto flex items-center gap-2 text-rose-500 text-xs font-bold hover:text-white transition-colors cursor-pointer w-fit">
-                    <div className="w-6 h-6 rounded-full bg-rose-500/10 flex items-center justify-center group-hover:bg-rose-500 group-hover:text-white transition-colors">
+                  <Link 
+                    href={item.href}
+                    className="mt-auto flex items-center gap-2 text-rose-500 text-xs font-bold hover:text-white transition-colors cursor-pointer w-fit group/btn"
+                  >
+                    <div className="w-6 h-6 rounded-full bg-rose-500/10 flex items-center justify-center group-hover/btn:bg-rose-500 group-hover/btn:text-white transition-colors">
                       <ChevronRight size={14} />
                     </div>
                     Learn More
-                  </div>
+                  </Link>
                 </div>
               </div>
             </Reveal>
@@ -725,7 +731,7 @@ const TechnologyFAQ = () => {
                   </div>
                 </button>
                 {isOpen && (
-                  <div className="mt-4 text-xs text-zinc-400 font-bold max-w-3xl leading-relaxed">
+                  <div className="mt-4 text-sm text-zinc-400 font-normal max-w-3xl leading-relaxed">
                     <p>{faq.a}</p>
                   </div>
                 )}

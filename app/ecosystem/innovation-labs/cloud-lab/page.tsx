@@ -251,16 +251,18 @@ export default function CloudInnovationLabPage() {
   ];
 
   const techChips = [
-    "Azure",
     "AWS",
+    "Microsoft Azure",
     "Google Cloud",
     "Terraform",
     "Kubernetes",
     "Docker",
-    "GitHub Actions / CI pipelines",
-    "Prometheus / Grafana / observability stack",
-    "Vault / secrets / policy tooling",
-    "PostgreSQL / MongoDB / object storage"
+    "GitHub Actions",
+    "Prometheus",
+    "Grafana",
+    "HashiCorp Vault",
+    "PostgreSQL",
+    "Cilium"
   ];
 
   // 7) Industry / Workload Use Cases
@@ -452,8 +454,8 @@ export default function CloudInnovationLabPage() {
                   Mission Overview
                 </span>
                 <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
-                  Where Cloud Strategy Becomes <br />
-                  <span className="text-rose-500">Production-Ready Infrastructure</span>
+                  Architecting Resilient Platforms <br />
+                  <span className="text-rose-500">For Modern Enterprise Scale</span>
                 </h2>
                 <p className="text-zinc-400 text-base md:text-lg leading-relaxed mb-6">
                   The Devopstrio Cloud Innovation Lab is dedicated to designing, testing, and operationalizing cloud-native architectures that support modern enterprise workloads. We help organizations move from fragmented infrastructure to secure, scalable, automated cloud platforms by combining architecture design, platform engineering, DevOps, observability, and governance.
@@ -467,10 +469,10 @@ export default function CloudInnovationLabPage() {
                 <Reveal key={card.title} delay={idx * 0.05}>
                   <div className="bg-zinc-950/40 border border-white/[0.03] hover:border-rose-500/20 rounded-[20px] p-5 transition-all duration-300 min-h-[140px] flex flex-col justify-between">
                     <div>
-                      <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-2">
+                      <h4 className="text-sm md:text-base font-bold text-white tracking-wide mb-2">
                         {card.title}
                       </h4>
-                      <p className="text-xs md:text-sm text-zinc-400 font-semibold leading-relaxed">
+                      <p className="text-xs md:text-sm text-zinc-400 font-normal leading-relaxed">
                         {card.desc}
                       </p>
                     </div>
@@ -506,10 +508,10 @@ export default function CloudInnovationLabPage() {
                     <div className="w-9 h-9 rounded-xl bg-rose-500/10 flex items-center justify-center mb-5">
                       {area.icon}
                     </div>
-                    <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-2.5">
+                    <h4 className="text-base md:text-lg font-bold text-white tracking-tight mb-2.5">
                       {area.title}
                     </h4>
-                    <p className="text-xs md:text-sm text-zinc-400 leading-relaxed font-semibold">
+                    <p className="text-sm text-zinc-400 leading-relaxed font-normal">
                       {area.desc}
                     </p>
                   </div>
@@ -731,7 +733,7 @@ export default function CloudInnovationLabPage() {
                       <Icon className="w-5 h-5" />
                     </div>
                     <div>
-                      <p className="font-bold text-xs leading-tight tracking-wide uppercase">{cat.name}</p>
+                      <p className="font-bold text-xs md:text-sm leading-tight tracking-wide uppercase">{cat.name}</p>
                     </div>
                   </button>
                 );
@@ -971,11 +973,11 @@ export default function CloudInnovationLabPage() {
                   className="group bg-zinc-950/60 border border-white/[0.03] hover:border-rose-500/20 rounded-2xl p-5 transition-all duration-300 flex flex-col justify-between min-h-[160px]"
                 >
                   <div>
-                    <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-2.5 flex items-center justify-between">
+                    <h4 className="text-sm md:text-base font-bold text-white tracking-wide mb-2.5 flex items-center justify-between">
                       {lab.name}
                       <ChevronRight size={14} className="text-zinc-650 group-hover:translate-x-1 group-hover:text-rose-500 transition-all" />
                     </h4>
-                    <p className="text-xs md:text-sm text-zinc-400 leading-relaxed font-semibold">
+                    <p className="text-xs md:text-sm text-zinc-400 leading-relaxed font-normal">
                       {lab.desc}
                     </p>
                   </div>

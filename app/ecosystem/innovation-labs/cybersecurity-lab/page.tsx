@@ -89,63 +89,63 @@ export default function CybersecurityInnovationLabPage() {
   // 2) Mini overview cards
   const miniMissionCards = [
     {
-      title: "Security by Design",
-      desc: "Embedding protection, policy, and governance into systems from the beginning — not after deployment."
+      title: "Zero Trust Architecture",
+      desc: "Cryptographic workload identity (SPIFFE/SPIRE), least-privilege mTLS networks, and boundary attestation."
     },
     {
-      title: "Threat Visibility & Detection",
-      desc: "Improving monitoring, alerting, and investigation across cloud, infrastructure, applications, and identities."
+      title: "Kernel Runtime Security",
+      desc: "Tracing process execution, network sockets, and file integrity via in-kernel eBPF probes without userspace overhead."
     },
     {
-      title: "Resilience & Risk Reduction",
-      desc: "Strengthening recovery readiness, operational continuity, and security posture across critical systems."
+      title: "Supply Chain Attestation",
+      desc: "Enforcing SLSA Level 3 compliance, automated SBOM generation (Syft), and container signing via Cosign."
     },
     {
-      title: "Compliance & Governance",
-      desc: "Aligning security controls to industry, regulatory, and internal governance requirements."
+      title: "Automated Posture & CSPM",
+      desc: "Continuous CIS benchmark auditing, automated Terraform drift remediation, and IAM boundary enforcement."
     }
   ];
 
   // 3) Core Areas of Cybersecurity Innovation
   const innovationAreas: CoreArea[] = [
     {
-      title: "Zero Trust Security Architecture",
-      desc: "Design identity-centric, least-privilege, segmented security models that protect users, workloads, devices, and critical systems across modern enterprise environments.",
+      title: "Zero Trust Workload Attestation",
+      desc: "Design identity-centric, least-privilege architectures with SPIFFE/SPIRE X.509 certificates and wire-speed mTLS service mesh routing.",
       icon: <Lock className="w-5 h-5 text-rose-500" />
     },
     {
       title: "Cloud Security & Posture Management",
-      desc: "Secure cloud environments across Azure, AWS, Google Cloud, and hybrid infrastructure with hardened configurations, policy controls, visibility, and continuous posture improvement.",
+      desc: "Harden multi-cloud environments across AWS and Azure with continuous CIS benchmark scanning, policy enforcement, and drift remediation.",
       icon: <Shield className="w-5 h-5 text-rose-500" />
     },
     {
-      title: "Application Security & DevSecOps",
-      desc: "Embed security testing, secrets management, dependency validation, code scanning, and policy controls into modern software delivery workflows.",
+      title: "eBPF Kernel-Level Runtime Defense",
+      desc: "Intercept malicious system calls, file integrity breaches, and socket anomalies at the Linux kernel boundary using Tetragon and Cilium.",
       icon: <Terminal className="w-5 h-5 text-rose-500" />
     },
     {
-      title: "Identity & Access Security",
-      desc: "Strengthen authentication, authorization, privileged access, role governance, and identity lifecycle controls across workforce and platform environments.",
+      title: "Dynamic Secrets & Vault Brokering",
+      desc: "Eliminate static credentials using HashiCorp Vault dynamic database engines, automated secret rotation, and PKI cert leasing.",
       icon: <Key className="w-5 h-5 text-rose-500" />
     },
     {
-      title: "Threat Detection & Security Monitoring",
-      desc: "Build visibility across systems, logs, networks, applications, and cloud environments to support faster detection, triage, and response to suspicious activity.",
+      title: "Software Supply Chain Security (SLSA)",
+      desc: "Generate Syft SBOMs, sign OCI container images with Sigstore/Cosign, and block unverified binaries at Kubernetes admission time.",
       icon: <Eye className="w-5 h-5 text-rose-500" />
     },
     {
-      title: "Security Automation & Incident Readiness",
-      desc: "Automate security workflows, enrich alerts, streamline incident response, and improve operational readiness through repeatable playbooks and integrated tooling.",
+      title: "Policy-as-Code & Admission Controls",
+      desc: "Automate security gatekeeping in Kubernetes using Kyverno and Open Policy Agent (OPA) to disallow root containers and host mounts.",
       icon: <AlertTriangle className="w-5 h-5 text-rose-500" />
     },
     {
-      title: "Data Protection & Governance",
-      desc: "Protect sensitive business and customer data through encryption, access policies, secure storage patterns, classification, and governance controls.",
+      title: "Data Protection & Envelope Encryption",
+      desc: "Protect sensitive data using AES-256-GCM envelope encryption, KMS customer-managed keys (CMK), and field-level tokenization.",
       icon: <Layers className="w-5 h-5 text-rose-500" />
     },
     {
-      title: "Compliance, Risk & Security Assurance",
-      desc: "Support regulatory alignment, audit readiness, security baselines, control validation, and governance frameworks across enterprise technology estates.",
+      title: "Automated Compliance & Audit Telemetry",
+      desc: "Aggregate immutable runtime audit logs and map control evidence directly to SOC 2 Type II, ISO 27001, and Cyber Essentials Plus.",
       icon: <FileCheck className="w-5 h-5 text-rose-500" />
     }
   ];
@@ -155,68 +155,68 @@ export default function CybersecurityInnovationLabPage() {
     {
       num: "01",
       title: "Assess",
-      desc: "Evaluate current security posture, architecture gaps, access risks, cloud exposure, compliance obligations, and operational vulnerabilities."
+      desc: "Evaluate current attack surfaces, IAM over-privileging, cloud misconfigurations, supply chain risks, and compliance gaps."
     },
     {
       num: "02",
-      title: "Model",
-      desc: "Define the target security architecture, trust boundaries, identity model, control framework, and risk priorities."
+      title: "Threat Model",
+      desc: "Map STRIDE threat vectors, define zero-trust perimeters, design ephemeral credential lifecycles, and establish audit standards."
     },
     {
       num: "03",
-      title: "Validate",
-      desc: "Prototype controls, run threat modeling, test security workflows, review integrations, and confirm technical feasibility across environments."
+      title: "Prototype",
+      desc: "Deploy sandboxed eBPF sensors, test Kyverno admission rules, and simulate lateral movement attacks in controlled staging clusters."
     },
     {
       num: "04",
-      title: "Implement",
-      desc: "Deploy security controls, access governance, monitoring, automation, policy enforcement, and platform protections across the stack."
+      title: "Engineer",
+      desc: "Implement HashiCorp Vault dynamic secret engines, configure CI/CD container signing pipelines, and harden cloud network boundaries."
     },
     {
       num: "05",
-      title: "Monitor",
-      desc: "Enable ongoing logging, alerting, posture monitoring, incident workflows, and operational visibility to detect and respond to threats quickly."
+      title: "Enforce",
+      desc: "Activate blocking admission controllers, enforce mandatory mTLS workload encryption, and connect telemetry to 24/7 SIEM detectors."
     },
     {
       num: "06",
-      title: "Improve",
-      desc: "Continuously refine controls, close vulnerabilities, strengthen compliance posture, improve detection quality, and adapt to new threats."
+      title: "Assure",
+      desc: "Execute continuous penetration tests, automate SOC 2 / ISO 27001 evidence collection, and tune anomaly detection false positives."
     }
   ];
 
   // 5) Solutions Built in the Lab
   const solutionBlocks: SolutionBlock[] = [
     {
-      title: "Zero Trust Security Foundations",
-      desc: "Identity-first access models, segmentation patterns, privileged access controls, and secure user/workload trust boundaries."
+      title: "Zero Trust Workload Attestation",
+      desc: "SPIFFE/SPIRE automated X.509 certificate issuance and mTLS wire-speed encryption between containerized services."
     },
     {
-      title: "Cloud Security Baselines",
-      desc: "Secure landing zone controls, cloud posture management, network protection, workload security, and policy enforcement across cloud environments."
+      title: "Kernel-Level eBPF Runtime Defense",
+      desc: "Tetragon and Cilium security agents blocking privilege escalation and unexpected socket connections at the Linux kernel boundary."
     },
     {
-      title: "DevSecOps & Secure Delivery Pipelines",
-      desc: "Application security checks, secrets controls, dependency scanning, artifact validation, and policy-as-code integrated into delivery workflows."
+      title: "DevSecOps & Supply Chain Attestation",
+      desc: "CI/CD automated vulnerability scanning, secret detection (Gitleaks), and tamper-evident container signing via Sigstore."
     },
     {
-      title: "Security Monitoring & Detection Foundations",
-      desc: "Centralized logging, detection logic, alert pipelines, monitoring dashboards, and incident escalation workflows for security operations."
+      title: "Ephemeral Secrets & Vault Brokering",
+      desc: "HashiCorp Vault integration providing dynamic, short-lived database credentials and automated certificate rotation."
     },
     {
-      title: "Identity & Access Governance Models",
-      desc: "Role design, access review processes, MFA strategy, privileged access workflows, and identity governance foundations."
+      title: "Continuous CSPM & Policy-as-Code",
+      desc: "Automated cloud posture enforcement across AWS and Azure using Open Policy Agent and Kyverno admission rules."
     },
     {
-      title: "Data Protection & Encryption Controls",
-      desc: "Sensitive data protection, key management integration, secure storage controls, access restrictions, and classification-aware handling."
+      title: "Identity-Aware Access Gateways",
+      desc: "Teleport-backed zero-trust bastions replacing legacy VPNs with certificate-based SSH, Kubernetes, and database proxies."
     },
     {
-      title: "Incident Response & Automation Playbooks",
-      desc: "Automated response actions, alert triage workflows, escalation paths, enrichment logic, and security runbooks."
+      title: "Automated Incident Response SOAR",
+      desc: "Event-driven SOAR pipelines executing automated token revocations, IP isolation, and forensic snapshot capture."
     },
     {
-      title: "Compliance & Audit Readiness Frameworks",
-      desc: "Security controls aligned to governance requirements, audit evidence collection, control mapping, and operational compliance support."
+      title: "Continuous Compliance & Audit Telemetry",
+      desc: "Automated evidence aggregation pipelines mapping runtime telemetry directly to SOC 2 Type II, ISO 27001, and Cyber Essentials Plus."
     }
   ];
 
@@ -224,45 +224,49 @@ export default function CybersecurityInnovationLabPage() {
   const archLayers: ArchLayer[] = [
     {
       num: "LAYER 1",
-      name: "Users, Devices & Access Layer",
-      desc: "workforce users • privileged administrators • remote users • devices / endpoints • partner access • MFA / access gateways"
+      name: "Users, Workloads & Device Attestation Layer",
+      desc: "ephemeral X.509 certificates • hardware-backed MFA • device trust telemetry • SPIFFE client IDs • least-privilege tokens"
     },
     {
       num: "LAYER 2",
-      name: "Application & Workload Layer",
-      desc: "enterprise applications • APIs • microservices • container workloads • internal tools • business platforms"
+      name: "Identity-Aware Edge & Proxy Layer",
+      desc: "Teleport access bastions • mTLS ingress proxies • Cloudflare Zero Trust gateways • dynamic JWT verification • WAF rate limiters"
     },
     {
       num: "LAYER 3",
-      name: "Cloud, Infrastructure & Network Layer",
-      desc: "cloud workloads • virtual networks • firewalls / segmentation • compute environments • storage and databases • hybrid connectivity"
+      name: "Workload Runtime & Kernel Security Layer",
+      desc: "in-kernel eBPF Tetragon sensors • Cilium network policies • Falco system call monitors • read-only root filesystems • seccomp profiles"
     },
     {
       num: "LAYER 4",
-      name: "Security Controls & Policy Layer",
-      desc: "IAM / RBAC • secrets management • vulnerability controls • endpoint / workload protection • policy enforcement • encryption and key controls"
+      name: "Secret Brokering & Cryptographic Control Layer",
+      desc: "HashiCorp Vault dynamic engines • AWS KMS / Azure Key Vault • KMS envelope encryption • automated PKI cert rotation"
     },
     {
       num: "LAYER 5",
-      name: "Monitoring, Detection & Response Layer",
-      desc: "centralized logs • SIEM-style monitoring • alerts • detection rules • threat investigation workflows • incident response orchestration"
+      name: "CI/CD Pipeline & Supply Chain Security Layer",
+      desc: "Syft SBOM generation • Cosign binary signing • Trivy container scanning • Kyverno admission webhooks • SLSA Level 3 attestations"
     },
     {
       num: "LAYER 6",
-      name: "Governance, Risk & Compliance Layer",
-      desc: "compliance controls • audit evidence • risk reviews • access governance • security baselines • resilience / recovery policies"
+      name: "Detection, Telemetry & Compliance Layer",
+      desc: "centralized Wazuh / SIEM telemetry • immutable audit trails • automated evidence collection • SOC 2 / ISO 27001 mapping engines"
     }
   ];
 
   const techChips = [
-    "Azure / AWS / GCP security services",
-    "SIEM / monitoring stack",
-    "IAM / privileged access tooling",
-    "secrets & key management",
-    "container / workload security",
-    "policy-as-code",
-    "vulnerability scanning",
-    "audit / governance tooling"
+    "Cilium (eBPF)",
+    "Tetragon",
+    "SPIFFE / SPIRE",
+    "HashiCorp Vault",
+    "Trivy",
+    "Sigstore / Cosign",
+    "Kyverno / OPA",
+    "Falco",
+    "Teleport",
+    "Wazuh",
+    "AWS KMS / Azure Key Vault",
+    "Semgrep / Gitleaks"
   ];
 
   // 7) Industry / Workload Use Cases
@@ -454,8 +458,8 @@ export default function CybersecurityInnovationLabPage() {
                   Mission Overview
                 </span>
                 <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
-                  Where Security Engineering <br />
-                  <span className="text-rose-500">Meets Operational Resilience</span>
+                  Proactive Defense Architecture <br />
+                  <span className="text-rose-500">For Cloud-Native Estates</span>
                 </h2>
                 <p className="text-zinc-400 text-base md:text-lg leading-relaxed mb-6">
                   The Devopstrio Cybersecurity Innovation Lab is focused on building secure-by-design technology environments that protect modern enterprises from evolving threats. We combine security architecture, DevSecOps, cloud security, identity governance, threat monitoring, and compliance engineering to help organizations move from reactive security controls to proactive, resilient defense strategies.
@@ -469,10 +473,10 @@ export default function CybersecurityInnovationLabPage() {
                 <Reveal key={card.title} delay={idx * 0.05}>
                   <div className="bg-zinc-950/40 border border-white/[0.03] hover:border-rose-500/20 rounded-[20px] p-5 transition-all duration-300 min-h-[140px] flex flex-col justify-between">
                     <div>
-                      <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-2">
+                      <h4 className="text-sm md:text-base font-bold text-white tracking-wide mb-2">
                         {card.title}
                       </h4>
-                      <p className="text-xs md:text-sm text-zinc-400 font-semibold leading-relaxed">
+                      <p className="text-xs md:text-sm text-zinc-400 font-normal leading-relaxed">
                         {card.desc}
                       </p>
                     </div>
@@ -508,10 +512,10 @@ export default function CybersecurityInnovationLabPage() {
                     <div className="w-9 h-9 rounded-xl bg-rose-500/10 flex items-center justify-center mb-5">
                       {area.icon}
                     </div>
-                    <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-2.5">
+                    <h4 className="text-base md:text-lg font-bold text-white tracking-tight mb-2.5">
                       {area.title}
                     </h4>
-                    <p className="text-xs md:text-sm text-zinc-400 leading-relaxed font-semibold">
+                    <p className="text-sm text-zinc-400 leading-relaxed font-normal">
                       {area.desc}
                     </p>
                   </div>
@@ -733,7 +737,7 @@ export default function CybersecurityInnovationLabPage() {
                       <Icon className="w-5 h-5" />
                     </div>
                     <div>
-                      <p className="font-bold text-xs leading-tight tracking-wide uppercase">{cat.name}</p>
+                      <p className="font-bold text-xs md:text-sm leading-tight tracking-wide uppercase">{cat.name}</p>
                     </div>
                   </button>
                 );
@@ -973,11 +977,11 @@ export default function CybersecurityInnovationLabPage() {
                   className="group bg-zinc-950/60 border border-white/[0.03] hover:border-rose-500/20 rounded-2xl p-5 transition-all duration-300 flex flex-col justify-between min-h-[160px]"
                 >
                   <div>
-                    <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-2.5 flex items-center justify-between">
+                    <h4 className="text-sm md:text-base font-bold text-white tracking-wide mb-2.5 flex items-center justify-between">
                       {lab.name}
                       <ChevronRight size={14} className="text-zinc-650 group-hover:translate-x-1 group-hover:text-rose-500 transition-all" />
                     </h4>
-                    <p className="text-xs md:text-sm text-zinc-400 leading-relaxed font-semibold">
+                    <p className="text-xs md:text-sm text-zinc-400 leading-relaxed font-normal">
                       {lab.desc}
                     </p>
                   </div>

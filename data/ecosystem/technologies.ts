@@ -20,7 +20,10 @@ export const technologiesDomain: EcosystemDomain = {
     { slug: "devops-toolchain", title: "DevOps Toolchain", description: "CI/CD execution pipelines, automatic tests, and package registries." },
     { slug: "data-engineering", title: "Data Engineering", description: "High-speed streaming pipelines, Spark analytics, and database replicas." },
     { slug: "cybersecurity", title: "Cybersecurity", description: "Container security scanners, Okta MFA systems, and network rules." },
-    { slug: "software-engineering", title: "Software Engineering", description: "React frontend interfaces, Next.js server routing, and TypeScript strict checks." }
+    { slug: "software-engineering", title: "Software Engineering", description: "React frontend interfaces, Next.js server routing, and TypeScript strict checks." },
+    { slug: "platform-engineering", title: "Platform Engineering", description: "Internal developer platforms, Backstage portals, golden path scaffolding, and multi-cloud control planes." },
+    { slug: "quality-engineering", title: "Quality Engineering", description: "Continuous test automation, Playwright E2E suites, k6 load testing, and contract verification." },
+    { slug: "emerging-technologies", title: "Emerging Technologies", description: "Post-quantum cryptography, confidential computing enclaves, WebAssembly, and eBPF kernel telemetry." }
   ],
   benefits: [
     "Clean component-driven frontends built for maximum responsiveness",
@@ -246,6 +249,111 @@ export const technologiesSubpages: Record<string, EcosystemSubpageDetail> = {
     faqs: [
       { q: "Why standardize on Next.js and TypeScript?", a: "Next.js integrates server-side page rendering, styling compilers, and route bundling out of the box, while TypeScript prevents runtime type mismatch errors." },
       { q: "How is API performance optimized under high loads?", a: "We run asynchronous FastAPI threads, configure connection pooling for PostgreSQL, and use Redis caches for repeating query reads." }
+    ]
+  },
+  "platform-engineering": {
+    slug: "platform-engineering",
+    title: "Platform Engineering",
+    heroSubtitle: "Empower engineering teams with self-service developer portals, Backstage scaffolding, and automated multi-cloud control planes.",
+    challenge: "Engineering teams face prolonged delays waiting on centralized operations to provision cloud environments, IAM roles, and databases.",
+    solution: "We build Internal Developer Platforms (IDPs) using Backstage, Crossplane, and GitOps, turning infrastructure into reusable self-service products.",
+    features: [
+      "Backstage software catalog unifying API documentation and ownership",
+      "Golden path templates with automated repo and CI/CD bootstrapping",
+      "Ephemeral preview environments created dynamically on pull requests"
+    ],
+    benefits: [
+      "85% reduction in developer onboarding time",
+      "Zero ticket-queue delays for infrastructure provisioning",
+      "Automated compliance and cost tagging built into every component"
+    ],
+    techStack: [
+      { name: "Backstage", desc: "Open-source developer portal by Spotify." },
+      { name: "Crossplane", desc: "Cloud-native control planes using Kubernetes CRDs." },
+      { name: "ArgoCD", desc: "Declarative GitOps continuous delivery engine." }
+    ],
+    caseStudy: {
+      title: "Self-service internal developer platform for fintech enterprise.",
+      desc: "Delivered an IDP supporting 400+ developers, slashing new service deployment time from 3 weeks to under 15 minutes.",
+      metrics: [
+        { value: "15m", label: "New service provisioning time" },
+        { value: "400+", label: "Engineers onboarded" },
+        { value: "0", label: "Manual infrastructure tickets" }
+      ]
+    },
+    faqs: [
+      { q: "What is an Internal Developer Platform (IDP)?", a: "An IDP provides self-service infrastructure and service catalogs so engineers can autonomously build, test, and deploy applications." },
+      { q: "How does Backstage integrate with our cloud providers?", a: "Backstage uses plugins to connect directly to AWS, Azure, GCP, Kubernetes clusters, and GitHub Actions." }
+    ]
+  },
+  "quality-engineering": {
+    slug: "quality-engineering",
+    title: "Quality Engineering",
+    heroSubtitle: "Automate continuous testing, shift-left static analysis, API contract verification, and resilience testing to ship software with zero defects.",
+    challenge: "Manual QA and brittle UI automation create delivery bottlenecks and allow regressions to slip into production.",
+    solution: "We implement multi-tier continuous testing using Playwright, consumer-driven Pact contracts, and distributed k6 load testing in CI/CD.",
+    features: [
+      "Playwright end-to-end regression suites running in parallel in CI/CD",
+      "Consumer-driven Pact contract testing preventing microservice mismatches",
+      "Automated k6 load tests and Chaos Mesh resilience injection"
+    ],
+    benefits: [
+      "80% reduction in post-release bugs",
+      "95%+ automated test coverage across critical user flows",
+      "Sub-15 minute pipeline test execution with zero flakiness"
+    ],
+    techStack: [
+      { name: "Playwright", desc: "Modern cross-browser end-to-end automation." },
+      { name: "Pact", desc: "Consumer-driven microservice contract testing." },
+      { name: "k6", desc: "Developer-centric performance and load testing." }
+    ],
+    caseStudy: {
+      title: "Automated regression testing for global healthcare SaaS.",
+      desc: "Replaced 48 hours of manual regression with a 12-minute parallel Playwright suite, catching 100% of breaking contract changes before release.",
+      metrics: [
+        { value: "12m", label: "Full regression runtime" },
+        { value: "98%", label: "Test automation coverage" },
+        { value: "0", label: "Production API breaking incidents" }
+      ]
+    },
+    faqs: [
+      { q: "Why use Playwright instead of Cypress or Selenium?", a: "Playwright offers multi-tab/context support, native mobile emulation, automatic waiting, and parallel execution speeds." },
+      { q: "How do you handle flaky tests?", a: "We eliminate hard sleeps, leverage Playwright auto-waiting assertions, isolate test state via Testcontainers, and enforce strict test retries." }
+    ]
+  },
+  "emerging-technologies": {
+    slug: "emerging-technologies",
+    title: "Emerging Technologies",
+    heroSubtitle: "Future-proof enterprise architectures with Post-Quantum Cryptography, Confidential Computing enclaves, WebAssembly micro-runtimes, and kernel eBPF.",
+    challenge: "Legacy systems face impending quantum decryption threats, hypervisor memory snooping, and high serverless cold-start latencies.",
+    solution: "We prototype and deploy NIST-standard post-quantum lattice algorithms, AMD SEV confidential VMs, and sub-millisecond WebAssembly modules.",
+    features: [
+      "NIST-standard ML-KEM (Kyber) and ML-DSA (Dilithium) quantum-resistant encryption",
+      "Hardware-isolated memory enclaves with AMD SEV-SNP and Intel SGX",
+      "eBPF in-kernel telemetry eliminating proxy sidecars and socket latency"
+    ],
+    benefits: [
+      "100% cryptographic defensibility against future quantum decryption",
+      "Complete protection of sensitive in-memory financial and medical data",
+      "Sub-2ms WebAssembly module cold starts on distributed edge nodes"
+    ],
+    techStack: [
+      { name: "ML-KEM / Kyber", desc: "Post-quantum lattice key encapsulation mechanism." },
+      { name: "AMD SEV-SNP", desc: "Hardware-isolated confidential virtual machines." },
+      { name: "Cilium eBPF", desc: "In-kernel network routing and telemetry." }
+    ],
+    caseStudy: {
+      title: "Post-quantum hybrid TLS migration for banking infrastructure.",
+      desc: "Implemented dual classical + ML-KEM post-quantum key exchange across international payment gateways with zero measurable latency degradation.",
+      metrics: [
+        { value: "100%", label: "PQC hybrid key compliance" },
+        { value: "<3ms", label: "Handshake latency delta" },
+        { value: "0", label: "Disruption to existing clients" }
+      ]
+    },
+    faqs: [
+      { q: "Why migrate to Post-Quantum Cryptography today?", a: "To safeguard sensitive enterprise data from 'Harvest Now, Decrypt Later' threat models where adversaries steal encrypted data now for future decryption." },
+      { q: "What is Confidential Computing?", a: "It protects data in-use by performing computations in a hardware-isolated, cryptographically attested memory enclave." }
     ]
   }
 };

@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { Reveal } from "@/components/ui/Reveal";
 import { Check } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
 
 interface Accelerator {
   title: string;
@@ -20,6 +21,7 @@ export function InnovationAccelerators() {
       id: "cloud",
       tab: "Cloud Landing Zone",
       title: "Enterprise Cloud Landing Zone Accelerator",
+      href: "/ecosystem/accelerators-frameworks/cloud-accelerator",
       desc: "Spin up a highly secure, modular AWS or Azure environment in minutes with our pre-built Terraform configurations.",
       features: [
         "Modular IaC scripts for instant account boundary setup.",
@@ -33,6 +35,7 @@ export function InnovationAccelerators() {
       id: "devops",
       tab: "DevOps Pipeline",
       title: "Zero-Touch CI/CD Delivery Pipeline",
+      href: "/ecosystem/accelerators-frameworks/devops-accelerator",
       desc: "Accelerate software delivery with a standardized GitOps workflow leveraging GitHub Actions and ArgoCD.",
       features: [
         "Automated image vulnerability scanning and reporting.",
@@ -46,6 +49,7 @@ export function InnovationAccelerators() {
       id: "ai",
       tab: "AI Agent Framework",
       title: "Cognitive AI Agent Framework",
+      href: "/ecosystem/accelerators-frameworks/ai-framework",
       desc: "Rapidly build and deploy LLM-powered enterprise assistants using our structured Python class abstractions.",
       features: [
         "Multi-agent task orchestration and loop routing.",
@@ -59,6 +63,7 @@ export function InnovationAccelerators() {
       id: "sec",
       tab: "Security Compliance",
       title: "Automated Security & Compliance Framework",
+      href: "/ecosystem/accelerators-frameworks/security-framework",
       desc: "Ensure day-one compliance with continuous Kubernetes daemon checks and dynamic secret rotation protocols.",
       features: [
         "Automated CIS benchmark verification against clusters.",
@@ -72,6 +77,7 @@ export function InnovationAccelerators() {
       id: "data",
       tab: "Data Lakehouse",
       title: "Unified Data Lakehouse Framework",
+      href: "/ecosystem/accelerators-frameworks/data-framework",
       desc: "Instantly deploy real-time telemetry ingestion pipelines mapping perfectly into scalable Databricks lakehouses.",
       features: [
         "Scaffolded Kafka event streaming architectures.",
@@ -173,9 +179,12 @@ export function InnovationAccelerators() {
                     ))}
                   </div>
 
-                  <button className="px-8 py-4 rounded-xl text-sm md:text-base font-bold text-white bg-rose-600 hover:bg-rose-500 transition-colors shadow-[0_0_20px_rgba(225,29,72,0.3)] hover:shadow-[0_0_30px_rgba(225,29,72,0.5)] w-fit">
+                  <Link
+                    href={currentAsset.href}
+                    className="inline-flex items-center justify-center px-8 py-4 rounded-xl text-sm md:text-base font-bold text-white bg-rose-600 hover:bg-rose-500 transition-colors shadow-[0_0_20px_rgba(225,29,72,0.3)] hover:shadow-[0_0_30px_rgba(225,29,72,0.5)] w-fit"
+                  >
                     {currentAsset.cta}
-                  </button>
+                  </Link>
 
                 </motion.div>
               </AnimatePresence>

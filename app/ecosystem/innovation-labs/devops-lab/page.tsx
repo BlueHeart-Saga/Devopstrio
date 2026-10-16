@@ -252,16 +252,18 @@ export default function DevOpsInnovationLabPage() {
   ];
 
   const techChips = [
-    "GitHub Actions / Azure DevOps / GitLab CI",
+    "GitHub Actions",
+    "Azure DevOps",
     "Terraform",
     "Docker",
     "Kubernetes",
     "Helm",
-    "ArgoCD / GitOps style delivery",
-    "Prometheus / Grafana",
-    "ELK / OpenSearch style logging",
-    "Sonar / scanning tools",
-    "secrets / policy tooling"
+    "ArgoCD (GitOps)",
+    "Prometheus",
+    "Grafana",
+    "OpenSearch",
+    "SonarQube",
+    "HashiCorp Vault"
   ];
 
   // 7) Industry / Workload Use Cases
@@ -469,10 +471,10 @@ export default function DevOpsInnovationLabPage() {
                 <Reveal key={card.title} delay={idx * 0.05}>
                   <div className="bg-zinc-950/40 border border-white/[0.03] hover:border-rose-500/20 rounded-[20px] p-5 transition-all duration-300 min-h-[140px] flex flex-col justify-between">
                     <div>
-                      <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-2">
+                      <h4 className="text-sm md:text-base font-bold text-white tracking-wide mb-2">
                         {card.title}
                       </h4>
-                      <p className="text-xs md:text-sm text-zinc-400 font-semibold leading-relaxed">
+                      <p className="text-xs md:text-sm text-zinc-400 font-normal leading-relaxed">
                         {card.desc}
                       </p>
                     </div>
@@ -508,10 +510,10 @@ export default function DevOpsInnovationLabPage() {
                     <div className="w-9 h-9 rounded-xl bg-rose-500/10 flex items-center justify-center mb-5">
                       {area.icon}
                     </div>
-                    <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-2.5">
+                    <h4 className="text-base md:text-lg font-bold text-white tracking-tight mb-2.5">
                       {area.title}
                     </h4>
-                    <p className="text-xs md:text-sm text-zinc-400 leading-relaxed font-semibold">
+                    <p className="text-sm text-zinc-400 leading-relaxed font-normal">
                       {area.desc}
                     </p>
                   </div>
@@ -733,7 +735,7 @@ export default function DevOpsInnovationLabPage() {
                       <Icon className="w-5 h-5" />
                     </div>
                     <div>
-                      <p className="font-bold text-xs leading-tight tracking-wide uppercase">{cat.name}</p>
+                      <p className="font-bold text-xs md:text-sm leading-tight tracking-wide uppercase">{cat.name}</p>
                     </div>
                   </button>
                 );
@@ -973,11 +975,11 @@ export default function DevOpsInnovationLabPage() {
                   className="group bg-zinc-950/60 border border-white/[0.03] hover:border-rose-500/20 rounded-2xl p-5 transition-all duration-300 flex flex-col justify-between min-h-[160px]"
                 >
                   <div>
-                    <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-2.5 flex items-center justify-between">
+                    <h4 className="text-sm md:text-base font-bold text-white tracking-wide mb-2.5 flex items-center justify-between">
                       {lab.name}
                       <ChevronRight size={14} className="text-zinc-650 group-hover:translate-x-1 group-hover:text-rose-500 transition-all" />
                     </h4>
-                    <p className="text-xs md:text-sm text-zinc-400 leading-relaxed font-semibold">
+                    <p className="text-xs md:text-sm text-zinc-400 leading-relaxed font-normal">
                       {lab.desc}
                     </p>
                   </div>

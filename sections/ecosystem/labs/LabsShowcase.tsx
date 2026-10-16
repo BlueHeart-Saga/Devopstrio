@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { Reveal } from "@/components/ui/Reveal";
 import { Brain, Cloud, Terminal, Shield, Database, CheckSquare, PlusCircle } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
 
 interface ShowcaseDetails {
   id: string;
@@ -22,6 +23,7 @@ export function LabsShowcase() {
     {
       id: "ai",
       name: "AI Innovation Lab",
+      href: "/ecosystem/innovation-labs/ai-lab",
       icon: <Brain size={20} />,
       image: "/webp/assets/ecosystem/innovation-labs-page-Showcase-_Card/AI.webp",
       quote: "\"Accelerating enterprise workflows through autonomous agents and safe cognitive automation frameworks.\"",
@@ -35,6 +37,7 @@ export function LabsShowcase() {
     {
       id: "cloud",
       name: "Cloud Innovation Lab",
+      href: "/ecosystem/innovation-labs/cloud-lab",
       icon: <Cloud size={20} />,
       image: "/webp/assets/ecosystem/innovation-labs-page-Showcase-_Card/Cloud.webp",
       quote: "\"Driving zero-downtime scalability and sustainable green hosting across distributed multicloud architectures.\"",
@@ -48,6 +51,7 @@ export function LabsShowcase() {
     {
       id: "devops",
       name: "DevOps Innovation Lab",
+      href: "/ecosystem/innovation-labs/devops-lab",
       icon: <Terminal size={20} />,
       image: "/webp/assets/ecosystem/innovation-labs-page-Showcase-_Card/Devops.webp",
       quote: "\"Standardizing developer portals and self-healing pipelines to drastically reduce code-to-production lead times.\"",
@@ -61,6 +65,7 @@ export function LabsShowcase() {
     {
       id: "cyber",
       name: "Cybersecurity Lab",
+      href: "/ecosystem/innovation-labs/cybersecurity-lab",
       icon: <Shield size={20} />,
       image: "/webp/assets/ecosystem/innovation-labs-page-Showcase-_Card/cyber.webp",
       quote: "\"Pioneering zero-trust environments with dynamic secret rotation and continuous compliance auditing.\"",
@@ -74,6 +79,7 @@ export function LabsShowcase() {
     {
       id: "data",
       name: "Data & Analytics Lab",
+      href: "/ecosystem/innovation-labs/data-analytics-lab",
       icon: <Database size={20} />,
       image: "/webp/assets/ecosystem/innovation-labs-page-Showcase-_Card/Data.webp",
       quote: "\"Constructing ultra-low latency telemetry streaming architectures and unified analytical lakehouses.\"",
@@ -162,12 +168,18 @@ export function LabsShowcase() {
 
                     {/* Actions */}
                     <div className="flex flex-wrap gap-4">
-                      <button className="px-7 py-3.5 rounded-lg text-xs md:text-sm font-bold uppercase tracking-wider bg-rose-600 hover:bg-rose-500 text-white transition-colors">
+                      <Link
+                        href={currentLab.href}
+                        className="inline-flex items-center justify-center px-7 py-3.5 rounded-lg text-xs md:text-sm font-bold uppercase tracking-wider bg-rose-600 hover:bg-rose-500 text-white transition-colors"
+                      >
                         {currentLab.cta}
-                      </button>
-                      <button className="px-7 py-3.5 rounded-lg text-xs md:text-sm font-bold uppercase tracking-wider border border-zinc-700 hover:border-zinc-500 text-white transition-colors">
+                      </Link>
+                      <Link
+                        href="/insights/case-studies"
+                        className="inline-flex items-center justify-center px-7 py-3.5 rounded-lg text-xs md:text-sm font-bold uppercase tracking-wider border border-zinc-700 hover:border-zinc-500 text-white transition-colors"
+                      >
                         View Case Studies
-                      </button>
+                      </Link>
                     </div>
                   </div>
 
