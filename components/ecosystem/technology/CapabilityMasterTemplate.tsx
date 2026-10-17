@@ -73,7 +73,41 @@ export function CapabilityMasterTemplate({ data }: { data: CapabilityPageData })
   const [openFaq, setOpenFaq] = useState<number | null>(0);
   const [copied, setCopied] = useState(false);
 
-  const activeCapability = data.capabilities[activeTab] || data.capabilities[0];
+  const capabilitiesList = (data.capabilities && data.capabilities.length > 0)
+    ? data.capabilities
+    : [
+        {
+          id: data.slug || "core",
+          title: data.title,
+          tag: data.tag || data.badge || "Architecture",
+          badge: data.badge || "Enterprise",
+          latencyBadge: "< 15ms Response",
+          desc: data.description || data.subtitle || data.tagline || "",
+          stats: (data.heroStats || []).map((s: any) => `${s.label}: ${s.value} (${s.detail})`),
+          terminal: {
+            command: data.terminalCommand || "deploy.sh",
+            status: "200 OK | OPERATIONAL",
+            logs: (data.terminalOutput || []).map((text: string) => ({ type: "step" as const, text }))
+          }
+        }
+      ];
+
+  const activeCapability = capabilitiesList[activeTab] || capabilitiesList[0];
+
+  const metricsList = (data.metrics && data.metrics.length > 0)
+    ? data.metrics
+    : (data.heroStats || []).map((s: any) => ({ val: s.value, label: s.label, sub: s.detail }));
+
+  const stagesList = (data.pipelineStages && data.pipelineStages.length > 0)
+    ? data.pipelineStages
+    : (data.workflowSteps || []).map((s: any) => ({ step: s.step || "01", title: s.title, tag: "Phase", desc: s.desc }));
+
+  const featureCardsList = (data.featureCards && data.featureCards.length > 0)
+    ? data.featureCards
+    : (data.features || []).map((f: any) => ({ title: f.title, tags: [], desc: f.desc }));
+
+  const techStackList = data.techStack || [];
+  const faqsList = data.faqs || [];
 
   const handleCopyCommand = () => {
     if (activeCapability?.terminal?.command) {
@@ -152,7 +186,7 @@ export function CapabilityMasterTemplate({ data }: { data: CapabilityPageData })
             transition={{ delay: 0.2 }}
             className="mt-6 text-base sm:text-lg text-zinc-400 max-w-2xl mx-auto font-normal leading-relaxed"
           >
-            {data.subtitle}
+            {data.subtitle || data.tagline || data.description}
           </motion.p>
 
           {/* CTA Buttons */}
@@ -178,7 +212,7 @@ export function CapabilityMasterTemplate({ data }: { data: CapabilityPageData })
 
           {/* Metrics Strip */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16 max-w-5xl mx-auto border-t border-zinc-900/90 pt-10">
-            {data.metrics.map((m, i) => (
+            {metricsList.map((m, i) => (
               <div key={i} className="text-center group p-4 rounded-xl hover:bg-white/[0.02] transition-colors">
                 <p className="text-2xl sm:text-3xl font-bold text-white tracking-tight group-hover:text-rose-400 transition-colors">{m.val}</p>
                 <p className="text-xs uppercase font-semibold text-zinc-400 mt-1">{m.label}</p>
@@ -213,7 +247,7 @@ export function CapabilityMasterTemplate({ data }: { data: CapabilityPageData })
 
           {/* Tab Navigation Pill Bar */}
           <div className="flex gap-2 p-1.5 bg-zinc-950/80 border border-zinc-800/80 rounded-2xl w-fit mb-8 overflow-x-auto max-w-full backdrop-blur-md shadow-lg">
-            {data.capabilities.map((feat, idx) => (
+            {capabilitiesList.map((feat, idx) => (
               <button
                 key={feat.id}
                 onClick={() => setActiveTab(idx)}
@@ -356,15 +390,15 @@ export function CapabilityMasterTemplate({ data }: { data: CapabilityPageData })
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-5 gap-4 relative">
-            {data.pipelineStages.map((stage, i) => {
+            {stagesList.map((stage: any, i: number) => {
               const Icon = iconMap[stage.iconName || "Cpu"] || Cpu;
               return (
                 <div 
-                  key={stage.step}
+                  key={stage.step || i}
                   className="bg-zinc-900/40 border border-zinc-800/70 hover:border-rose-500/50 rounded-2xl p-6 flex flex-col justify-between transition-all duration-300 group hover:-translate-y-1 relative"
                 >
                   {/* Step connector on desktop */}
-                  {i < data.pipelineStages.length - 1 && (
+                  {i < stagesList.length - 1 && (
                     <div className="hidden lg:block absolute -right-3 top-1/2 -translate-y-1/2 z-20 text-zinc-700 pointer-events-none">
                       <ChevronRight size={18} />
                     </div>
@@ -412,7 +446,7 @@ export function CapabilityMasterTemplate({ data }: { data: CapabilityPageData })
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {data.featureCards.map((card, idx) => {
+            {featureCardsList.map((card: any, idx: number) => {
               const Icon = iconMap[card.iconName || "Zap"] || Zap;
               return (
                 <div 
@@ -433,7 +467,7 @@ export function CapabilityMasterTemplate({ data }: { data: CapabilityPageData })
                   </div>
 
                   <div className="flex flex-wrap gap-1.5 pt-4 border-t border-zinc-900">
-                    {card.tags.map((t, i) => (
+                    {(card.tags || []).map((t: string, i: number) => (
                       <span key={i} className="text-[10px] font-mono font-medium text-zinc-400 bg-zinc-900 px-2 py-0.5 rounded border border-white/5">
                         {t}
                       </span>
@@ -465,7 +499,7 @@ export function CapabilityMasterTemplate({ data }: { data: CapabilityPageData })
           </div>
 
           <div className="space-y-4 max-w-4xl mx-auto">
-            {data.techStack.map((group, idx) => (
+            {techStackList.map((group: any, idx: number) => (
               <div 
                 key={idx}
                 className="p-5 rounded-2xl bg-zinc-900/30 border border-zinc-800/80 flex flex-col sm:flex-row sm:items-center justify-between gap-4 hover:border-zinc-700/80 transition-colors"
@@ -474,7 +508,7 @@ export function CapabilityMasterTemplate({ data }: { data: CapabilityPageData })
                   {group.category}
                 </span>
                 <div className="flex flex-wrap gap-2">
-                  {(group.items || group.tools || []).map((item, i) => (
+                  {(group.items || group.tools || []).map((item: string, i: number) => (
                     <span 
                       key={i}
                       className="px-3 py-1 rounded-lg bg-zinc-950 border border-zinc-800 text-xs font-medium text-zinc-300 hover:border-rose-500/30 transition-colors"
@@ -492,98 +526,102 @@ export function CapabilityMasterTemplate({ data }: { data: CapabilityPageData })
       {/* =========================================================================
           6. BEFORE VS AFTER COMPARISON
       ========================================================================= */}
-      <section className="py-20 border-t border-zinc-900 bg-black">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
-              THE IMPACT
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-bold text-white tracking-tight">
-              Legacy Approaches vs Managed Enterprise Architecture
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            {/* Before */}
-            <div className="p-8 rounded-3xl bg-zinc-950 border border-zinc-900">
-              <span className="text-xs font-bold uppercase tracking-widest text-zinc-500 block mb-6">
-                {data.beforeVsAfter.beforeTitle}
+      {data.beforeVsAfter && data.beforeVsAfter.beforePoints && data.beforeVsAfter.afterPoints && (
+        <section className="py-20 border-t border-zinc-900 bg-black">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center max-w-3xl mx-auto mb-16">
+              <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
+                THE IMPACT
               </span>
-              <ul className="space-y-4 text-sm text-zinc-400">
-                {data.beforeVsAfter.beforePoints.map((point, i) => (
-                  <li key={i} className="flex items-start gap-3">
-                    <span className="text-red-500 mt-0.5">✕</span>
-                    <span>{point}</span>
-                  </li>
-                ))}
-              </ul>
+              <h2 className="text-3xl sm:text-4xl font-bold text-white tracking-tight">
+                Legacy Approaches vs Managed Enterprise Architecture
+              </h2>
             </div>
 
-            {/* With Devopstrio */}
-            <div className="p-8 rounded-3xl bg-gradient-to-br from-rose-950/20 via-zinc-950 to-zinc-950 border border-rose-900/40 relative shadow-[0_0_30px_rgba(225,29,72,0.1)]">
-              <div className="flex items-center justify-between mb-6">
-                <span className="text-xs font-bold uppercase tracking-widest text-rose-500">
-                  {data.beforeVsAfter.afterTitle}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+              {/* Before */}
+              <div className="p-8 rounded-3xl bg-zinc-950 border border-zinc-900">
+                <span className="text-xs font-bold uppercase tracking-widest text-zinc-500 block mb-6">
+                  {data.beforeVsAfter.beforeTitle || "Legacy Architecture"}
                 </span>
-                <span className="text-[10px] font-mono uppercase bg-rose-500/10 text-rose-300 px-2 py-0.5 rounded border border-rose-500/20">
-                  RECOMMENDED
-                </span>
+                <ul className="space-y-4 text-sm text-zinc-400">
+                  {(data.beforeVsAfter.beforePoints || []).map((point: string, i: number) => (
+                    <li key={i} className="flex items-start gap-3">
+                      <span className="text-red-500 mt-0.5">✕</span>
+                      <span>{point}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
-              <ul className="space-y-4 text-sm text-white font-medium">
-                {data.beforeVsAfter.afterPoints.map((point, i) => (
-                  <li key={i} className="flex items-start gap-3">
-                    <Check className="w-4 h-4 text-rose-500 mt-0.5 shrink-0" />
-                    <span>{point}</span>
-                  </li>
-                ))}
-              </ul>
+
+              {/* With Devopstrio */}
+              <div className="p-8 rounded-3xl bg-gradient-to-br from-rose-950/20 via-zinc-950 to-zinc-950 border border-rose-900/40 relative shadow-[0_0_30px_rgba(225,29,72,0.1)]">
+                <div className="flex items-center justify-between mb-6">
+                  <span className="text-xs font-bold uppercase tracking-widest text-rose-500">
+                    {data.beforeVsAfter.afterTitle || "Devopstrio Managed Architecture"}
+                  </span>
+                  <span className="text-[10px] font-mono uppercase bg-rose-500/10 text-rose-300 px-2 py-0.5 rounded border border-rose-500/20">
+                    RECOMMENDED
+                  </span>
+                </div>
+                <ul className="space-y-4 text-sm text-white font-medium">
+                  {(data.beforeVsAfter.afterPoints || []).map((point: string, i: number) => (
+                    <li key={i} className="flex items-start gap-3">
+                      <Check className="w-4 h-4 text-rose-500 mt-0.5 shrink-0" />
+                      <span>{point}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* =========================================================================
           7. TECHNICAL FAQS
       ========================================================================= */}
-      <section className="py-20 border-t border-zinc-900 bg-zinc-950/60">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-14">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
-              ARCHITECTURE FAQS
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-bold text-white tracking-tight">
-              Frequently Asked Questions
-            </h2>
-          </div>
+      {faqsList.length > 0 && (
+        <section className="py-20 border-t border-zinc-900 bg-zinc-950/60">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-14">
+              <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
+                ARCHITECTURE FAQS
+              </span>
+              <h2 className="text-3xl sm:text-4xl font-bold text-white tracking-tight">
+                Frequently Asked Questions
+              </h2>
+            </div>
 
-          <div className="space-y-4">
-            {data.faqs.map((faq, i) => {
-              const isOpen = openFaq === i;
-              return (
-                <div 
-                  key={i}
-                  className="rounded-2xl border border-zinc-900 bg-zinc-950/80 overflow-hidden transition-colors hover:border-zinc-800"
-                >
-                  <button
-                    onClick={() => setOpenFaq(isOpen ? null : i)}
-                    className="w-full p-6 text-left flex items-center justify-between text-base font-semibold text-white hover:text-rose-400 transition-colors"
+            <div className="space-y-4">
+              {faqsList.map((faq: any, i: number) => {
+                const isOpen = openFaq === i;
+                return (
+                  <div 
+                    key={i}
+                    className="rounded-2xl border border-zinc-900 bg-zinc-950/80 overflow-hidden transition-colors hover:border-zinc-800"
                   >
-                    <span>{faq.q}</span>
-                    <div className="w-7 h-7 rounded-full bg-zinc-900 flex items-center justify-center text-zinc-400 shrink-0 ml-4">
-                      {isOpen ? <Minus size={14} /> : <Plus size={14} />}
-                    </div>
-                  </button>
-                  {isOpen && (
-                    <div className="px-6 pb-6 text-sm text-zinc-400 leading-relaxed font-normal border-t border-zinc-900/60 pt-4">
-                      {faq.a}
-                    </div>
-                  )}
-                </div>
-              );
-            })}
+                    <button
+                      onClick={() => setOpenFaq(isOpen ? null : i)}
+                      className="w-full p-6 text-left flex items-center justify-between text-base font-semibold text-white hover:text-rose-400 transition-colors"
+                    >
+                      <span>{faq.q || faq.question}</span>
+                      <div className="w-7 h-7 rounded-full bg-zinc-900 flex items-center justify-center text-zinc-400 shrink-0 ml-4">
+                        {isOpen ? <Minus size={14} /> : <Plus size={14} />}
+                      </div>
+                    </button>
+                    {isOpen && (
+                      <div className="px-6 pb-6 text-sm text-zinc-400 leading-relaxed font-normal border-t border-zinc-900/60 pt-4">
+                        {faq.a || faq.answer}
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* =========================================================================
           8. CALL TO ACTION (BOTTOM BANNER)

@@ -1,6 +1,7 @@
 export interface CapabilityTerminalLog {
-  type: "comment" | "step" | "success" | "info";
+  type: "comment" | "step" | "success" | "info" | string;
   text: string;
+  [key: string]: any;
 }
 
 export interface CapabilityPillarSubItem {
@@ -8,14 +9,16 @@ export interface CapabilityPillarSubItem {
   title: string;
   tag: string;
   badge: string;
-  latencyBadge: string;
+  latencyBadge?: string;
   desc: string;
   stats: string[];
   terminal: {
     command: string;
     status: string;
     logs: CapabilityTerminalLog[];
+    [key: string]: any;
   };
+  [key: string]: any;
 }
 
 export interface CapabilityPipelineStage {
@@ -24,6 +27,7 @@ export interface CapabilityPipelineStage {
   tag: string;
   desc: string;
   iconName?: string;
+  [key: string]: any;
 }
 
 export interface CapabilityFeatureCard {
@@ -31,17 +35,20 @@ export interface CapabilityFeatureCard {
   title: string;
   tags: string[];
   desc: string;
+  [key: string]: any;
 }
 
 export interface CapabilityTechStackGroup {
   category: string;
   items?: string[];
   tools?: string[];
+  [key: string]: any;
 }
 
 export interface CapabilityFaq {
   q: string;
   a: string;
+  [key: string]: any;
 }
 
 export interface CapabilityPageData {
@@ -49,25 +56,27 @@ export interface CapabilityPageData {
   pillarSlug: string;
   pillarName: string;
   title: string;
-  tag: string;
-  badge: string;
-  subtitle: string;
+  tag?: string;
+  badge?: string;
+  subtitle?: string;
   tagline?: string;
   description?: string;
   primaryMetric?: { value: string; label: string; detail: string };
   heroStats?: { label: string; value: string; detail: string }[];
   terminalCommand?: string;
   terminalOutput?: string[];
-  metrics: { val: string; label: string; sub: string }[];
-  capabilities: CapabilityPillarSubItem[];
-  pipelineStages: CapabilityPipelineStage[];
-  featureCards: CapabilityFeatureCard[];
-  techStack: CapabilityTechStackGroup[];
-  beforeVsAfter: {
-    beforeTitle: string;
-    beforePoints: string[];
-    afterTitle: string;
-    afterPoints: string[];
+  metrics?: { val: string; label: string; sub: string }[];
+  capabilities?: CapabilityPillarSubItem[];
+  pipelineStages?: CapabilityPipelineStage[];
+  featureCards?: CapabilityFeatureCard[];
+  techStack?: CapabilityTechStackGroup[];
+  beforeVsAfter?: {
+    beforeTitle?: string;
+    beforePoints?: string[];
+    afterTitle?: string;
+    afterPoints?: string[];
+    [key: string]: any;
   };
-  faqs: CapabilityFaq[];
+  faqs?: CapabilityFaq[];
+  [key: string]: any;
 }
